@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PolicyCraft — Sustainability Policy Builder</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/tabler-icons.min.css">
+<style>
+/* ─── Reset & Root ─────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#1a5c3a;--green-hover:#14482e;--green-light:#e8f5ee;--green-mid:#2d8a5e;
+  --gold:#9a7000;--gold-light:#faf3e0;
+  --ink:#1a1a1a;--ink2:#4a4a4a;--muted:#888;
+  --surface:#ffffff;--bg:#f5f5f3;--bg2:#ebebea;
+  --border:#e0ddd8;--border-mid:#ccc9c3;
+  --r:8px;--rl:12px;--rxl:16px;
+  --shadow:0 1px 3px rgba(0,0,0,.07),0 4px 12px rgba(0,0,0,.04);
+  --shadow-lg:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);
+  --font:'Segoe UI',system-ui,-apple-system,sans-serif
+}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);font-size:14px;line-height:1.6;min-height:100vh}
+button{font-family:var(--font)}
+input,select,textarea{font-family:var(--font)}
+
+/* ─── Layout ────────────────────────────────────────────── */
+#app{display:flex;height:100vh;overflow:hidden}
+
+/* ─── Sidebar ───────────────────────────────────────────── */
+#sidebar{
+  width:240px;min-width:240px;background:var(--surface);
+  border-right:1px solid var(--border);display:flex;flex-direction:column;
+  overflow:hidden;box-shadow:2px 0 8px rgba(0,0,0,.04)
+}
+#sidebar-header{padding:18px 16px 14px;border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{
+  width:34px;height:34px;background:linear-gradient(135deg,var(--green) 0%,var(--green-mid) 100%);
+  border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0
+}
+.logo-mark i{color:#fff;font-size:18px}
+.logo-text{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
+.logo-sub{font-size:11px;color:var(--muted);margin-top:1px}
+
+.policy-badge{
+  margin:12px 16px 0;padding:6px 10px;border-radius:var(--r);
+  background:var(--green-light);border:1px solid #c8e8d8;
+  font-size:11px;font-weight:600;color:var(--green);
+  display:flex;align-items:center;gap:6px
+}
+
+#steps-nav{flex:1;overflow-y:auto;padding:8px 0;scrollbar-width:thin}
+.step-section{padding:8px 16px 4px;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.step-item{
+  display:flex;align-items:center;gap:10px;padding:8px 16px;
+  cursor:pointer;transition:all .15s;border-left:3px solid transparent;
+  user-select:none
+}
+.step-item:hover{background:var(--bg)}
+.step-item.active{background:var(--green-light);border-left-color:var(--green)}
+.step-item.done .step-num{background:var(--green);border-color:var(--green);color:#fff}
+.step-item.active .step-num{background:var(--green);border-color:var(--green);color:#fff}
+.step-num{
+  width:22px;height:22px;border-radius:50%;border:1.5px solid var(--border-mid);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:600;color:var(--muted);flex-shrink:0;transition:all .2s
+}
+.step-label{font-size:12.5px;color:var(--ink2);line-height:1.2}
+.step-item.active .step-label{color:var(--green);font-weight:600}
+.step-item.done .step-label{color:var(--ink)}
+
+#sidebar-bottom{padding:12px 16px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:7px}
+.sb-btn{
+  width:100%;padding:8px 12px;font-size:12px;border-radius:var(--r);border:1px solid var(--border-mid);
+  background:var(--bg);color:var(--ink);cursor:pointer;
+  display:flex;align-items:center;gap:7px;transition:all .15s;font-weight:500
+}
+.sb-btn:hover{background:var(--bg2);border-color:var(--border-mid)}
+.sb-btn.green{background:var(--green);border-color:var(--green);color:#fff}
+.sb-btn.green:hover{background:var(--green-hover)}
+
+/* ─── Main ──────────────────────────────────────────────── */
+#main{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
+
+#topbar{
+  padding:12px 24px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--surface);box-shadow:0 1px 4px rgba(0,0,0,.05);flex-shrink:0
+}
+.topbar-left h1{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.2px}
+.topbar-left p{font-size:12px;color:var(--muted);margin-top:1px}
+.topbar-actions{display:flex;gap:8px;align-items:center}
+
+/* ─── Buttons ───────────────────────────────────────────── */
+.btn{
+  padding:7px 14px;font-size:12.5px;border-radius:var(--r);border:1px solid var(--border-mid);
+  background:var(--surface);color:var(--ink);cursor:pointer;
+  display:inline-flex;align-items:center;gap:6px;font-weight:500;
+  transition:all .15s;white-space:nowrap
+}
+.btn:hover{background:var(--bg);border-color:var(--border-mid)}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--green);border-color:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-hover);border-color:var(--green-hover)}
+.btn-ai{background:linear-gradient(135deg,#2d6a8a,#1a5c6e);border-color:#2d6a8a;color:#fff}
+.btn-ai:hover{background:linear-gradient(135deg,#245a77,#154e5e)}
+.btn-sm{padding:5px 10px;font-size:11.5px}
+.btn-xs{padding:3px 8px;font-size:11px}
+.btn-danger{background:#fff0f0;border-color:#f5c1c1;color:#c0392b}
+.btn-danger:hover{background:#ffe0e0}
+
+/* ─── Content Area ──────────────────────────────────────── */
+#content-area{flex:1;overflow-y:auto;padding:24px;scrollbar-width:thin}
+
+/* ─── Panels / Cards ────────────────────────────────────── */
+.panel{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);
+  margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden
+}
+.panel-header{
+  padding:13px 18px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  background:linear-gradient(to bottom,#fafaf8,#f7f6f3)
+}
+.panel-title{font-size:13px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.panel-title i{color:var(--green);font-size:17px}
+.panel-body{padding:18px}
+
+/* ─── Forms ─────────────────────────────────────────────── */
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-row.cols3{grid-template-columns:1fr 1fr 1fr}
+.form-row.full{grid-template-columns:1fr;margin-bottom:14px}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-label{font-size:11.5px;color:var(--ink2);font-weight:600;letter-spacing:.1px}
+.req{color:#e04040}
+.form-input{
+  padding:8px 11px;border:1px solid var(--border-mid);border-radius:var(--r);
+  background:var(--surface);color:var(--ink);font-size:13px;
+  transition:border-color .15s,box-shadow .15s;width:100%
+}
+.form-input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(26,92,58,.08)}
+.form-input::placeholder{color:#bbb}
+textarea.form-input{resize:vertical;min-height:90px;line-height:1.6}
+select.form-input{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
+
+/* ─── Tags / Pills ──────────────────────────────────────── */
+.tag-row{display:flex;flex-wrap:wrap;gap:7px}
+.tag{
+  padding:5px 12px;border-radius:20px;font-size:12px;cursor:pointer;
+  border:1px solid var(--border);color:var(--ink2);background:var(--bg);
+  transition:all .15s;display:inline-flex;align-items:center;gap:5px;font-weight:500
+}
+.tag:hover{border-color:var(--green);color:var(--green);background:var(--green-light)}
+.tag.selected{background:var(--green-light);border-color:var(--green);color:var(--green);font-weight:600}
+
+/* ─── Item Lists ────────────────────────────────────────── */
+.item-list{display:flex;flex-direction:column;gap:7px}
+.item-row{
+  display:flex;align-items:flex-start;gap:10px;padding:10px 12px;
+  background:var(--bg);border-radius:var(--r);border:1px solid var(--border);
+  transition:border-color .15s
+}
+.item-row:hover{border-color:var(--border-mid)}
+.item-num{
+  width:22px;height:22px;border-radius:50%;background:var(--green-light);
+  color:var(--green);font-size:10px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px
+}
+.item-text{flex:1;font-size:13px;color:var(--ink);line-height:1.5}
+.item-actions{display:flex;gap:5px;flex-shrink:0}
+.icon-btn{
+  width:26px;height:26px;border-radius:6px;border:1px solid var(--border);
+  background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:var(--muted);transition:all .15s
+}
+.icon-btn:hover{background:var(--surface);color:var(--ink);border-color:var(--border-mid)}
+.icon-btn.danger:hover{background:#fff0f0;color:#c0392b;border-color:#f5c1c1}
+
+.add-row{display:flex;gap:8px;margin-top:10px}
+.add-row input{
+  flex:1;padding:7px 11px;border:1px dashed var(--border-mid);border-radius:var(--r);
+  background:var(--bg);color:var(--ink);font-size:13px;font-family:var(--font)
+}
+.add-row input:focus{outline:none;border-color:var(--green);border-style:solid;background:var(--surface)}
+
+/* ─── SDG Grid ──────────────────────────────────────────── */
+.sdg-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.sdg-tile{
+  padding:8px 4px;border-radius:var(--r);border:2px solid transparent;
+  cursor:pointer;text-align:center;font-size:9.5px;font-weight:600;
+  line-height:1.3;transition:all .2s;opacity:.45;user-select:none
+}
+.sdg-tile.sel{opacity:1;border-color:currentColor;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.sdg-tile:hover{opacity:.85}
+.sdg-num{font-size:15px;font-weight:800;display:block;margin-bottom:2px}
+
+/* ─── Quantitative Table ────────────────────────────────── */
+.quant-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.quant-table th{
+  padding:8px 11px;border:1px solid var(--border);
+  background:var(--bg);font-weight:600;color:var(--ink2);text-align:left
+}
+.quant-table td{padding:5px 8px;border:1px solid var(--border);color:var(--ink);vertical-align:middle}
+.quant-table td input{
+  width:100%;border:none;background:transparent;font-size:12.5px;
+  color:var(--ink);font-family:var(--font);padding:3px 4px
+}
+.quant-table td input:focus{outline:2px solid var(--green);outline-offset:1px;border-radius:3px;background:var(--green-light)}
+.quant-table tr:hover td{background:#fafaf8}
+
+/* ─── Responsibilities ──────────────────────────────────── */
+.resp-row{
+  display:grid;grid-template-columns:180px 1fr;gap:10px;align-items:center;
+  padding:8px 12px;background:var(--bg);border-radius:var(--r);
+  border:1px solid var(--border);margin-bottom:7px
+}
+
+/* ─── Info Bar ──────────────────────────────────────────── */
+.info-bar{
+  display:flex;align-items:center;gap:9px;padding:10px 14px;
+  border-radius:var(--r);background:var(--green-light);
+  border:1px solid #c8e8d8;font-size:12.5px;color:var(--green);margin-bottom:14px;font-weight:500
+}
+.info-bar i{font-size:17px;flex-shrink:0}
+.warn-bar{background:#fdf6e0;border-color:#f0d98c;color:var(--gold)}
+
+/* ─── Upload Zone ───────────────────────────────────────── */
+.upload-zone{
+  border:2px dashed var(--border-mid);border-radius:var(--rl);padding:28px 20px;
+  text-align:center;cursor:pointer;transition:all .2s;background:var(--bg)
+}
+.upload-zone:hover,.upload-zone.drag{border-color:var(--green);background:var(--green-light)}
+.upload-zone i{font-size:34px;color:var(--muted);margin-bottom:10px;display:block}
+.upload-zone .uz-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.upload-zone .uz-sub{font-size:12px;color:var(--muted)}
+
+/* ─── Preview / Export ──────────────────────────────────── */
+.export-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px}
+.export-card{
+  padding:16px 10px;border:1px solid var(--border);border-radius:var(--rl);
+  cursor:pointer;transition:all .2s;text-align:center;background:var(--surface)
+}
+.export-card:hover{background:var(--green-light);border-color:var(--green);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.export-card i{font-size:26px;color:var(--green);margin-bottom:8px;display:block}
+.export-card .ec-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.export-card .ec-sub{font-size:11px;color:var(--muted)}
+
+.preview-wrap{
+  border:1px solid var(--border);border-radius:var(--rl);background:var(--surface);
+  padding:28px 32px;font-family:Georgia,serif;max-height:480px;overflow-y:auto
+}
+.preview-wrap h1{font-size:20px;text-align:center;margin-bottom:6px;font-weight:700;letter-spacing:-.2px}
+.preview-wrap .doc-meta{
+  display:flex;justify-content:center;gap:18px;font-size:11.5px;
+  color:var(--muted);margin-bottom:20px;font-family:var(--font)
+}
+.preview-wrap h2{
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
+  color:var(--green);margin:18px 0 8px;font-family:var(--font);padding-bottom:4px;
+  border-bottom:1px solid var(--green-light)
+}
+.preview-wrap p{font-size:13px;margin-bottom:10px;line-height:1.75;color:#333}
+.preview-wrap ul{padding-left:20px;margin-bottom:10px}
+.preview-wrap li{font-size:13px;margin-bottom:5px;line-height:1.6;color:#333}
+.preview-wrap .doc-footer{
+  margin-top:24px;padding-top:14px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:var(--font)
+}
+.sdg-chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.sdg-chip{
+  padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;
+  font-family:var(--font)
+}
+.section-divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+
+/* ─── AI Loading Overlay ────────────────────────────────── */
+#ai-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);
+  z-index:1000;align-items:center;justify-content:center
+}
+#ai-overlay.show{display:flex}
+#ai-card{
+  background:var(--surface);border-radius:var(--rxl);padding:28px 32px;
+  text-align:center;min-width:280px;box-shadow:var(--shadow-lg)
+}
+.ai-spinner{
+  width:40px;height:40px;border:3px solid var(--green-light);
+  border-top-color:var(--green);border-radius:50%;
+  animation:spin .8s linear infinite;margin:0 auto 14px
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+#ai-card p{font-size:13px;color:var(--muted)}
+#ai-card strong{font-size:15px;color:var(--ink);display:block;margin-bottom:6px}
+
+/* ─── Toast ─────────────────────────────────────────────── */
+#toast{
+  display:none;position:fixed;bottom:24px;right:24px;padding:11px 18px;
+  border-radius:var(--rl);font-size:13px;font-weight:500;z-index:2000;
+  box-shadow:var(--shadow-lg);display:none;align-items:center;gap:8px;
+  max-width:320px;animation:fadeUp .25s ease
+}
+#toast.show{display:flex}
+#toast.success{background:#1a5c3a;color:#fff}
+#toast.error{background:#8B0000;color:#fff}
+#toast.info{background:#1a4a6e;color:#fff}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── Progress Bar ──────────────────────────────────────── */
+.progress-wrap{height:3px;background:var(--border);border-radius:2px;margin:8px 16px 0}
+.progress-fill{height:100%;background:var(--green);border-radius:2px;transition:width .4s ease}
+
+/* ─── Status Badge ──────────────────────────────────────── */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-green{background:var(--green-light);color:var(--green);border:1px solid #c8e8d8}
+.badge-amber{background:var(--gold-light);color:var(--gold);border:1px solid #e8d888}
+.badge-blue{background:#e6f1fb;color:#185fa5;border:1px solid #b5d4f4}
+
+/* ─── Divider ───────────────────────────────────────────── */
+.divider{height:1px;background:var(--border);margin:16px 0}
+
+/* ─── Step Counter ──────────────────────────────────────── */
+.step-counter{
+  display:flex;gap:5px;align-items:center;padding:0 16px;margin:4px 0 8px
+}
+.sc-dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:background .3s}
+.sc-dot.done{background:var(--green)}
+.sc-dot.active{background:var(--green);width:18px;border-radius:3px}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--border-mid)}
+
+/* ─── API Key Modal ─────────────────────────────────────── */
+#api-modal{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);
+  z-index:1500;align-items:center;justify-content:center
+}
+#api-modal.show{display:flex}
+#api-card{
+  background:var(--surface);border-radius:var(--rxl);padding:28px 32px;
+  min-width:400px;max-width:480px;box-shadow:var(--shadow-lg)
+}
+#api-card h2{font-size:17px;margin-bottom:6px;color:var(--ink)}
+#api-card p{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media(max-width:768px){
+  #sidebar{display:none}
+  .form-row,.form-row.cols3{grid-template-columns:1fr}
+  .export-grid{grid-template-columns:1fr 1fr}
+  .sdg-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- API Key Modal -->
+<div id="api-modal">
+  <div id="api-card">
+    <h2><i class="ti ti-key" style="vertical-align:-3px;color:var(--green)"></i> Anthropic API Key</h2>
+    <p>Enter your Anthropic API key to enable AI-powered policy generation. Your key is stored only in this browser session and never sent anywhere except the Anthropic API.</p>
+    <div class="form-group" style="margin-bottom:14px">
+      <label class="form-label">API Key <span class="req">*</span></label>
+      <input class="form-input" type="password" id="api-key-input" placeholder="sk-ant-..." autocomplete="off">
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-primary" style="flex:1" onclick="saveApiKey()"><i class="ti ti-check"></i> Save & Continue</button>
+      <button class="btn" onclick="skipApiKey()">Skip (manual mode)</button>
+    </div>
+    <p style="margin-top:12px;font-size:11px;color:var(--muted)">Get your key at <a href="https://console.anthropic.com" target="_blank" style="color:var(--green)">console.anthropic.com</a>. You can change it any time via the Settings button.</p>
+  </div>
+</div>
+
+<!-- AI Loading Overlay -->
+<div id="ai-overlay">
+  <div id="ai-card">
+    <div class="ai-spinner"></div>
+    <strong id="ai-msg">Generating with AI...</strong>
+    <p>Using sustainability best practices from<br>GRI, EcoVadis, CDP, CSRD, UNGC & SDGs</p>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast"><i class="ti ti-check" id="toast-icon"></i><span id="toast-text"></span></div>
+
+<!-- Hidden file input -->
+<input type="file" id="file-input" accept=".pdf,.txt,.json" style="display:none" onchange="handleFileUpload(event)">
+
+<div id="app">
+  <!-- ── Sidebar ── -->
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">
+        <div class="logo-mark"><i class="ti ti-leaf"></i></div>
+        <div>
+          <div class="logo-text">PolicyCraft</div>
+          <div class="logo-sub">Sustainability Suite</div>
+        </div>
+      </div>
+    </div>
+    <div id="policy-badge-wrap"></div>
+    <div class="progress-wrap"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="step-counter" id="step-counter"></div>
+    <div id="steps-nav"></div>
+    <div id="sidebar-bottom">
+      <button class="sb-btn" onclick="document.getElementById('file-input').click()">
+        <i class="ti ti-upload"></i> Upload existing policy
+      </button>
+      <button class="sb-btn" onclick="showApiModal()">
+        <i class="ti ti-key"></i> API key settings
+      </button>
+      <button class="sb-btn green" onclick="goStep(7)">
+        <i class="ti ti-eye"></i> Preview & Export
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Main ── -->
+  <div id="main">
+    <div id="topbar">
+      <div class="topbar-left">
+        <h1 id="topbar-title">Company Setup</h1>
+        <p id="topbar-sub">Step 1 of 8 — Enter your company details to begin</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-sm" onclick="prevStep()"><i class="ti ti-arrow-left"></i> Back</button>
+        <button class="btn btn-ai btn-sm" onclick="aiGenerateCurrent()"><i class="ti ti-wand"></i> AI Generate All</button>
+        <button class="btn btn-primary btn-sm" onclick="nextStep()">Continue <i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+    <div id="content-area"></div>
+  </div>
+</div>
+
+<script>
+// ────────────────────────────────────────────────────────────
+// DATA
+// ────────────────────────────────────────────────────────────
+const STEPS = [
+  { id: 'setup',           label: 'Company setup',         icon: 'ti-building',        desc: 'Enter company details and policy type' },
+  { id: 'declaration',     label: 'Declaration & scope',   icon: 'ti-file-description', desc: 'Write the preface, declaration and scope' },
+  { id: 'focus',           label: 'Key focus areas',       icon: 'ti-target',           desc: 'Define what this policy covers' },
+  { id: 'qualitative',     label: 'Qualitative objectives',icon: 'ti-list-check',       desc: 'Set qualitative goals per focus area' },
+  { id: 'quantitative',    label: 'Quantitative targets',  icon: 'ti-chart-bar',        desc: 'Set measurable targets with deadlines' },
+  { id: 'sdg',             label: 'SDG alignment',         icon: 'ti-world',            desc: 'Link to UN Sustainable Development Goals' },
+  { id: 'responsibilities',label: 'Responsibilities',      icon: 'ti-users',            desc: 'Assign roles and review mechanism' },
+  { id: 'export',          label: 'Preview & export',      icon: 'ti-download',         desc: 'Review and download your policy' }
+];
+
+const POLICY_TYPES = [
+  { id: 'env',         label: 'Environmental Policy',       icon: 'ti-leaf',          color: '#1a5c3a' },
+  { id: 'labour',      label: 'Labour & Human Rights',      icon: 'ti-users',         color: '#185fa5' },
+  { id: 'ethics',      label: 'Ethical Conduct Policy',     icon: 'ti-scale',         color: '#3b6d11' },
+  { id: 'procurement', label: 'Sustainable Procurement',    icon: 'ti-shopping-cart', color: '#854f0b' },
+  { id: 'social',      label: 'Social Policy',              icon: 'ti-heart',         color: '#993556' },
+  { id: 'climate',     label: 'Climate Action Policy',      icon: 'ti-temperature',   color: '#0f6e56' },
+  { id: 'health',      label: 'Health & Safety Policy',     icon: 'ti-first-aid-kit', color: '#a32d2d' },
+  { id: 'diversity',   label: 'Diversity & Inclusion',      icon: 'ti-gender-bigender',color: '#534ab7' }
+];
+
+const STANDARDS = ['EcoVadis','CDP','GRI','BRSR','CSRD','UNGC','ISO 14001','ISO 45001','ISO 26000','SA8000','SDGs','TCFD','SBTi','RBA'];
+
+const SDG_DATA = [
+  {n:1,label:'No Poverty',c:'#E5243B'},{n:2,label:'Zero Hunger',c:'#DDA63A'},{n:3,label:'Good Health',c:'#4C9F38'},
+  {n:4,label:'Quality Education',c:'#C5192D'},{n:5,label:'Gender Equality',c:'#FF3A21'},{n:6,label:'Clean Water',c:'#26BDE2'},
+  {n:7,label:'Clean Energy',c:'#FCC30B'},{n:8,label:'Decent Work',c:'#A21942'},{n:9,label:'Industry',c:'#FD6925'},
+  {n:10,label:'Reduced Inequalities',c:'#DD1367'},{n:11,label:'Sustainable Cities',c:'#FD9D24'},{n:12,label:'Resp. Consumption',c:'#BF8B2E'},
+  {n:13,label:'Climate Action',c:'#3F7E44'},{n:14,label:'Life Below Water',c:'#0A97D9'},{n:15,label:'Life on Land',c:'#56C02B'},
+  {n:16,label:'Peace & Justice',c:'#00689D'},{n:17,label:'Partnerships',c:'#19486A'}
+];
+
+const FOCUS_DEFAULTS = {
+  env:         ['Energy Consumption & GHG Emissions','Air Emissions','Materials & Waste Management','Water Management','Biodiversity Protection','Customer Health & Safety','Product End-of-Life & Circularity','Environmental Risk & Emergency Management'],
+  labour:      ['Employee Health & Safety','Working Conditions','Social Dialogue','Career Management & Training','Child Labor, Forced Labor & Human Trafficking Prevention','Discrimination & Harassment','External Stakeholder Human Rights','Diversity, Equity & Inclusion','Work-Life Balance'],
+  ethics:      ['Preventing Corruption','Conflict of Interest','Fraud Prevention','Anti-Money Laundering (AML)','Information Security','Responsible Use of Company Assets'],
+  procurement: ['Environmentally Responsible Sourcing','Supplier Social Responsibility','Ethical Supplier Conduct','Local & Inclusive Sourcing','Supply Chain Transparency & Traceability'],
+  social:      ['Community Engagement & Development','Social Impact Assessment','Employee Well-being','Stakeholder Relations','Philanthropy & CSR'],
+  climate:     ['GHG Emissions Reduction','Climate Risk Management','Renewable Energy Transition','Carbon Neutrality & Net Zero','Climate Adaptation','Green Finance'],
+  health:      ['Workplace Safety','Occupational Health','Incident & Near-Miss Reporting','Emergency Preparedness','Mental Health & Well-being','Contractor Safety'],
+  diversity:   ['Equal Opportunity & Inclusion','Gender Equity','Disability Inclusion','Cultural Diversity','Anti-Harassment','Inclusive Recruitment']
+};
+
+const RESP_DEFAULTS = {
+  env:         [['Management Team','Drive environmental strategy and allocate resources to achieve targets.'],['Environmental Compliance Team','Ensure regulatory compliance, monitor performance, and report progress.'],['Production & Operations Team','Implement energy, water and waste management initiatives and maintain pollution controls.'],['Procurement & Supply Chain Team','Promote responsible sourcing and collaborate with suppliers for sustainable practices.'],['All Employees','Follow environmental procedures, adopt sustainability practices, and participate in training.'],['External Stakeholders','Support the company\'s environmental objectives through partnerships and responsible engagement.']],
+  labour:      [['Senior Management','Ensure implementation of fair labor policies and allocate resources for employee well-being.'],['Human Resources Team','Monitor labor conditions, oversee training programs, and address grievances.'],['Operations & Manufacturing','Implement workplace safety and ethical labor standards.'],['Supply Chain & Procurement','Ensure responsible sourcing and compliance with supplier labor policies.'],['Employees','Adhere to workplace policies, report concerns, and participate in training initiatives.']],
+  ethics:      [['Compliance Officer','Monitor compliance, investigate concerns, maintain records, and provide guidance.'],['HR Manager','Promote ethical culture, ensure training, manage reporting and disciplinary processes.'],['IT Manager','Safeguard all types of data through secure information systems.'],['Internal Audit Team','Conduct audits, investigate breaches, maintain records, and recommend improvements.'],['Senior Management','Foster integrity, transparency, and accountability; provide resources for continuous improvement.'],['Employees','Act ethically, disclose conflicts, report violations, and complete mandatory compliance training.']],
+  procurement: [['Procurement Team','Integrate responsible sourcing principles into supplier selection, contract terms, and evaluations.'],['Sustainability Team','Monitor supplier performance on environmental, social, and ethical parameters.'],['Suppliers','Comply with sourcing standards, provide required disclosures, and cooperate during audits.'],['Senior Management','Ensure oversight, resource allocation, and enforcement of the policy through regular reviews.'],['All Employees','Uphold this policy and report any violations or concerns through established channels.']],
+};
+
+// ────────────────────────────────────────────────────────────
+// STATE
+// ────────────────────────────────────────────────────────────
+let apiKey = '';
+let state = {
+  step: 0,
+  company: { name:'', industry:'', site:'', docNum:'', revNum:'01', effectiveDate:'', reviewDate:'', approver:'' },
+  policyType: 'env',
+  standards: ['GRI','SDGs','EcoVadis'],
+  declaration: { preface:'', declaration:'', scope:'' },
+  focusAreas: [],
+  qualitative: {},
+  quantitative: [],
+  sdgs: [],
+  responsibilities: [],
+  reviewMechanism: '',
+  monitoring: ''
+};
+
+// ────────────────────────────────────────────────────────────
+// INIT
+// ────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  apiKey = sessionStorage.getItem('pc_api_key') || '';
+  const saved = sessionStorage.getItem('pc_state');
+  if (saved) { try { state = JSON.parse(saved); } catch(e){} }
+  if (!state.focusAreas.length) state.focusAreas = [...(FOCUS_DEFAULTS[state.policyType] || [])];
+  if (!apiKey) showApiModal();
+  renderAll();
+});
+
+function saveState() {
+  try { sessionStorage.setItem('pc_state', JSON.stringify(state)); } catch(e) {}
+}
+
+// ────────────────────────────────────────────────────────────
+// NAVIGATION
+// ────────────────────────────────────────────────────────────
+function renderAll() {
+  renderSidebar();
+  renderContent();
+  saveState();
+}
+
+function renderSidebar() {
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  // Badge
+  document.getElementById('policy-badge-wrap').innerHTML = `<div class="policy-badge"><i class="ti ${pt.icon}" style="font-size:14px"></i>${pt.label}</div>`;
+  // Progress
+  document.getElementById('progress-fill').style.width = `${((state.step + 1) / STEPS.length) * 100}%`;
+  // Dots
+  document.getElementById('step-counter').innerHTML = STEPS.map((s,i) =>
+    `<div class="sc-dot ${i < state.step ? 'done' : i === state.step ? 'active' : ''}"></div>`).join('');
+  // Steps
+  document.getElementById('steps-nav').innerHTML = STEPS.map((s,i) => `
+    <div class="step-item ${i === state.step ? 'active' : ''} ${i < state.step ? 'done' : ''}"
+         onclick="goStep(${i})" role="button" tabindex="0"
+         onkeydown="if(event.key==='Enter')goStep(${i})">
+      <div class="step-num">${i < state.step ? '<i class="ti ti-check" style="font-size:10px"></i>' : i+1}</div>
+      <span class="step-label">${s.label}</span>
+    </div>`).join('');
+  // Topbar
+  const step = STEPS[state.step];
+  document.getElementById('topbar-title').textContent = step.label;
+  document.getElementById('topbar-sub').textContent = `Step ${state.step + 1} of ${STEPS.length} — ${step.desc}`;
+}
+
+function goStep(i) { state.step = i; renderAll(); }
+function prevStep() { if (state.step > 0) { state.step--; renderAll(); } }
+function nextStep() { if (state.step < STEPS.length - 1) { state.step++; renderAll(); } }
+
+// ────────────────────────────────────────────────────────────
+// RENDER STEPS
+// ────────────────────────────────────────────────────────────
+function renderContent() {
+  const el = document.getElementById('content-area');
+  const id = STEPS[state.step].id;
+  el.innerHTML = {
+    setup:           renderSetup(),
+    declaration:     renderDeclaration(),
+    focus:           renderFocus(),
+    qualitative:     renderQualitative(),
+    quantitative:    renderQuantitative(),
+    sdg:             renderSDG(),
+    responsibilities:renderResponsibilities(),
+    export:          renderExport()
+  }[id] || '';
+}
+
+// ── STEP 1: Setup ──────────────────────────────────────────
+function renderSetup() {
+  const c = state.company;
+  return `
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-building"></i> Company information</div>
+      <span class="badge badge-blue"><i class="ti ti-info-circle"></i> Required for document header</span>
+    </div>
+    <div class="panel-body">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Company name <span class="req">*</span></label>
+          <input class="form-input" value="${esc(c.name)}" oninput="state.company.name=this.value;saveState()" placeholder="e.g. Ravindra Heraeus Pvt. Ltd."></div>
+        <div class="form-group"><label class="form-label">Industry / sector</label>
+          <input class="form-input" value="${esc(c.industry)}" oninput="state.company.industry=this.value;saveState()" placeholder="e.g. Precious metals manufacturing"></div>
+      </div>
+      <div class="form-row full">
+        <div class="form-group"><label class="form-label">Site address</label>
+          <input class="form-input" value="${esc(c.site)}" oninput="state.company.site=this.value;saveState()" placeholder="e.g. A-196(A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India"></div>
+      </div>
+      <div class="form-row cols3">
+        <div class="form-group"><label class="form-label">Document number</label>
+          <input class="form-input" value="${esc(c.docNum)}" oninput="state.company.docNum=this.value;saveState()" placeholder="RHPL-POL-01"></div>
+        <div class="form-group"><label class="form-label">Revision number</label>
+          <input class="form-input" value="${esc(c.revNum)}" oninput="state.company.revNum=this.value;saveState()" placeholder="01"></div>
+        <div class="form-group"><label class="form-label">Approved by</label>
+          <input class="form-input" value="${esc(c.approver)}" oninput="state.company.approver=this.value;saveState()" placeholder="Name / designation"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Effective date</label>
+          <input class="form-input" type="date" value="${c.effectiveDate}" oninput="state.company.effectiveDate=this.value;saveState()"></div>
+        <div class="form-group"><label class="form-label">Next review date</label>
+          <input class="form-input" type="date" value="${c.reviewDate}" oninput="state.company.reviewDate=this.value;saveState()"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div class="panel-title"><i class="ti ti-file-certificate"></i> Policy type</div></div>
+    <div class="panel-body">
+      <div class="tag-row">
+        ${POLICY_TYPES.map(p => `
+          <div class="tag ${state.policyType === p.id ? 'selected' : ''}" onclick="selectPolicyType('${p.id}')">
+            <i class="ti ${p.icon}"></i>${p.label}
+          </div>`).join('')}
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div class="panel-title"><i class="ti ti-certificate"></i> Sustainability standards to align with</div></div>
+    <div class="panel-body">
+      <div class="tag-row">
+        ${STANDARDS.map(s => `
+          <div class="tag ${state.standards.includes(s) ? 'selected' : ''}" onclick="toggleStandard('${s}')">${s}</div>`).join('')}
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);margin-top:10px">Selected: ${state.standards.length ? state.standards.join(', ') : 'None'}</p>
+    </div>
+  </div>`;
+}
+
+function selectPolicyType(id) {
+  state.policyType = id;
+  state.focusAreas = [...(FOCUS_DEFAULTS[id] || [])];
+  state.qualitative = {};
+  state.quantitative = [];
+  saveState();
+  renderAll();
+}
+
+function toggleStandard(s) {
+  const i = state.standards.indexOf(s);
+  if (i >= 0) state.standards.splice(i, 1); else state.standards.push(s);
+  saveState();
+  renderContent();
+  renderSidebar();
+}
+
+// ── STEP 2: Declaration ────────────────────────────────────
+function renderDeclaration() {
+  return `
+  <div class="info-bar"><i class="ti ti-wand"></i>
+    Click "AI Generate All" in the top bar to auto-fill all three sections at once, or use individual generate buttons.
+  </div>
+  ${['preface','declaration','scope'].map(key => {
+    const titles = { preface: 'Preface', declaration: 'Policy declaration', scope: 'Scope' };
+    const icons  = { preface: 'ti-book', declaration: 'ti-flag', scope: 'ti-map-pin' };
+    const hints  = { preface: 'Company background, commitment, and values (3-4 sentences)...', declaration: 'Core commitment statement of this policy (2-3 sentences)...', scope: 'Who and what this policy covers — employees, contractors, sites, activities...' };
+    return `
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title"><i class="ti ${icons[key]}"></i> ${titles[key]}</div>
+        <button class="btn btn-ai btn-xs" onclick="generateSection('${key}')"><i class="ti ti-wand"></i> AI Write</button>
+      </div>
+      <div class="panel-body">
+        <textarea class="form-input" style="min-height:110px"
+          oninput="state.declaration.${key}=this.value;saveState()"
+          placeholder="${hints[key]}">${esc(state.declaration[key])}</textarea>
+      </div>
+    </div>`;
+  }).join('')}`;
+}
+
+// ── STEP 3: Focus Areas ───────────────────────────────────
+function renderFocus() {
+  if (!state.focusAreas.length) state.focusAreas = [...(FOCUS_DEFAULTS[state.policyType] || [])];
+  return `
+  <div class="info-bar"><i class="ti ti-info-circle"></i>
+    These are the core topics your policy covers. Drag to reorder, or add custom focus areas relevant to your business.
+  </div>
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-target"></i> Key focus areas <span class="badge badge-green" style="margin-left:8px">${state.focusAreas.length} areas</span></div>
+      <button class="btn btn-ai btn-xs" onclick="generateSection('focus')"><i class="ti ti-wand"></i> AI Suggest</button>
+    </div>
+    <div class="panel-body">
+      <div class="item-list" id="focus-list">
+        ${state.focusAreas.map((f, i) => `
+          <div class="item-row">
+            <div class="item-num">${i+1}</div>
+            <input class="item-text" style="border:none;background:transparent;font-size:13px;color:var(--ink);flex:1;outline:none"
+              value="${esc(f)}" oninput="state.focusAreas[${i}]=this.value;saveState()">
+            <div class="item-actions">
+              <button class="icon-btn danger" onclick="removeFocus(${i})" title="Remove"><i class="ti ti-trash"></i></button>
+            </div>
+          </div>`).join('')}
+      </div>
+      <div class="add-row" style="margin-top:12px">
+        <input id="focus-new" placeholder="Type a new focus area and press Enter..."
+          onkeydown="if(event.key==='Enter'){addFocus();event.preventDefault()}">
+        <button class="btn btn-primary btn-sm" onclick="addFocus()"><i class="ti ti-plus"></i> Add</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function addFocus() {
+  const v = (document.getElementById('focus-new')?.value || '').trim();
+  if (v) { state.focusAreas.push(v); saveState(); renderContent(); }
+}
+function removeFocus(i) { state.focusAreas.splice(i, 1); saveState(); renderContent(); }
+
+// ── STEP 4: Qualitative ───────────────────────────────────
+function renderQualitative() {
+  const areas = state.focusAreas.slice(0, 8);
+  areas.forEach(a => { if (!state.qualitative[a]) state.qualitative[a] = []; });
+  return `
+  <div class="info-bar"><i class="ti ti-list-check"></i>
+    Write policy commitment statements for each focus area. These are qualitative — what the company commits to doing, not measurable numbers.
+  </div>
+  ${areas.map((area, ai) => `
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-list-check"></i> ${ai+1}. ${area}</div>
+      <button class="btn btn-ai btn-xs" onclick="generateQual(${ai})"><i class="ti ti-wand"></i> AI Generate</button>
+    </div>
+    <div class="panel-body">
+      <div class="item-list">
+        ${(state.qualitative[area] || []).map((obj, oi) => `
+          <div class="item-row">
+            <div class="item-num">•</div>
+            <input class="item-text" style="border:none;background:transparent;font-size:13px;flex:1;color:var(--ink);outline:none"
+              value="${esc(obj)}" oninput="state.qualitative['${area.replace(/'/g,"\\'").replace(/\\/g,'\\\\')}'][${oi}]=this.value;saveState()">
+            <div class="item-actions">
+              <button class="icon-btn danger" onclick="removeQual(${ai},${oi})" title="Remove"><i class="ti ti-x"></i></button>
+            </div>
+          </div>`).join('')}
+      </div>
+      <div class="add-row" style="margin-top:8px">
+        <input id="qin-${ai}" placeholder="Add a qualitative objective..."
+          onkeydown="if(event.key==='Enter'){addQual(${ai});event.preventDefault()}">
+        <button class="btn btn-primary btn-sm" onclick="addQual(${ai})"><i class="ti ti-plus"></i> Add</button>
+      </div>
+    </div>
+  </div>`).join('')}`;
+}
+
+function addQual(ai) {
+  const area = state.focusAreas[ai];
+  const v = (document.getElementById(`qin-${ai}`)?.value || '').trim();
+  if (v && area) {
+    if (!state.qualitative[area]) state.qualitative[area] = [];
+    state.qualitative[area].push(v);
+    saveState(); renderContent();
+  }
+}
+function removeQual(ai, oi) {
+  const area = state.focusAreas[ai];
+  if (area && state.qualitative[area]) {
+    state.qualitative[area].splice(oi, 1);
+    saveState(); renderContent();
+  }
+}
+
+// ── STEP 5: Quantitative ───────────────────────────────────
+function renderQuantitative() {
+  if (!state.quantitative.length) {
+    state.quantitative = state.focusAreas.slice(0, 6).map(a => ({
+      area: a,
+      targets: [{ target:'', baseline:'FY 2022-23', deadline:'FY 2029-30' }]
+    }));
+  }
+  return `
+  <div class="info-bar"><i class="ti ti-chart-bar"></i>
+    Set measurable, time-bound targets. Baseline year is FY 2022-23 by default. These form the KPI framework for annual reporting.
+  </div>
+  ${state.quantitative.map((q, qi) => `
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-target"></i> ${qi+1}. ${q.area}</div>
+      <div style="display:flex;gap:6px">
+        <button class="btn btn-ai btn-xs" onclick="generateQuant(${qi})"><i class="ti ti-wand"></i> AI Generate</button>
+        <button class="btn btn-xs" onclick="addQuantRow(${qi})"><i class="ti ti-plus"></i> Add row</button>
+      </div>
+    </div>
+    <div class="panel-body" style="padding:0;overflow-x:auto">
+      <table class="quant-table" style="width:100%">
+        <thead><tr>
+          <th style="width:55%">Target description</th>
+          <th style="width:18%">Baseline year</th>
+          <th style="width:18%">Deadline</th>
+          <th style="width:9%">Remove</th>
+        </tr></thead>
+        <tbody>
+          ${q.targets.map((t, ti) => `<tr>
+            <td><input value="${esc(t.target)}" oninput="state.quantitative[${qi}].targets[${ti}].target=this.value;saveState()" placeholder="e.g. Reduce energy consumption per unit by 5%"></td>
+            <td><input value="${esc(t.baseline)}" oninput="state.quantitative[${qi}].targets[${ti}].baseline=this.value;saveState()"></td>
+            <td><input value="${esc(t.deadline)}" oninput="state.quantitative[${qi}].targets[${ti}].deadline=this.value;saveState()"></td>
+            <td style="text-align:center"><button class="icon-btn danger" onclick="removeQuantRow(${qi},${ti})" title="Remove"><i class="ti ti-trash"></i></button></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  </div>`).join('')}`;
+}
+
+function addQuantRow(qi) { state.quantitative[qi].targets.push({ target:'', baseline:'FY 2022-23', deadline:'FY 2029-30' }); saveState(); renderContent(); }
+function removeQuantRow(qi, ti) { state.quantitative[qi].targets.splice(ti, 1); saveState(); renderContent(); }
+
+// ── STEP 6: SDG ───────────────────────────────────────────
+function renderSDG() {
+  return `
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-world"></i> UN Sustainable Development Goals alignment
+        <span class="badge badge-green" style="margin-left:8px">${state.sdgs.length} selected</span>
+      </div>
+      <button class="btn btn-ai btn-xs" onclick="generateSection('sdg')"><i class="ti ti-wand"></i> AI Suggest</button>
+    </div>
+    <div class="panel-body">
+      <div class="sdg-grid">
+        ${SDG_DATA.map(s => `
+          <div class="sdg-tile ${state.sdgs.includes(s.n) ? 'sel' : ''}"
+            style="background:${s.c}15;color:${s.c}"
+            onclick="toggleSDG(${s.n})" role="checkbox"
+            aria-checked="${state.sdgs.includes(s.n)}"
+            title="SDG ${s.n}: ${s.label}">
+            <span class="sdg-num">${s.n}</span>
+            ${s.label}
+          </div>`).join('')}
+      </div>
+      ${state.sdgs.length ? `
+      <div style="margin-top:14px">
+        <p style="font-size:12px;font-weight:600;color:var(--ink2);margin-bottom:8px">Selected SDGs:</p>
+        <div class="sdg-chips">
+          ${state.sdgs.map(n => { const s = SDG_DATA.find(d => d.n === n); return `<span class="sdg-chip" style="background:${s.c}15;color:${s.c};border:1px solid ${s.c}40">SDG ${n}: ${s.label}</span>`; }).join('')}
+        </div>
+      </div>` : `<p style="font-size:12.5px;color:var(--muted);margin-top:12px">Click the goals above to select them, or use AI Suggest based on your policy type.</p>`}
+    </div>
+  </div>`;
+}
+
+function toggleSDG(n) {
+  const i = state.sdgs.indexOf(n);
+  if (i >= 0) state.sdgs.splice(i, 1); else state.sdgs.push(n);
+  state.sdgs.sort((a, b) => a - b);
+  saveState(); renderContent();
+}
+
+// ── STEP 7: Responsibilities ───────────────────────────────
+function renderResponsibilities() {
+  if (!state.responsibilities.length) {
+    const defs = RESP_DEFAULTS[state.policyType] || RESP_DEFAULTS.env;
+    state.responsibilities = defs.map(([role, duty]) => ({ role, duty }));
+  }
+  return `
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-users"></i> Roles & responsibilities</div>
+      <div style="display:flex;gap:6px">
+        <button class="btn btn-ai btn-xs" onclick="generateSection('resp')"><i class="ti ti-wand"></i> AI Generate</button>
+        <button class="btn btn-xs btn-primary" onclick="addResp()"><i class="ti ti-plus"></i> Add role</button>
+      </div>
+    </div>
+    <div class="panel-body">
+      ${state.responsibilities.map((r, i) => `
+        <div class="resp-row" style="margin-bottom:8px">
+          <input class="form-input" style="font-size:12.5px;font-weight:600" value="${esc(r.role)}"
+            oninput="state.responsibilities[${i}].role=this.value;saveState()" placeholder="Role / Department">
+          <div style="display:flex;gap:8px;align-items:center">
+            <input class="form-input" style="font-size:12.5px;flex:1" value="${esc(r.duty)}"
+              oninput="state.responsibilities[${i}].duty=this.value;saveState()" placeholder="Responsibility description">
+            <button class="icon-btn danger" onclick="removeResp(${i})" title="Remove" style="flex-shrink:0"><i class="ti ti-trash"></i></button>
+          </div>
+        </div>`).join('')}
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-chart-area"></i> Monitoring, reporting & transparency</div>
+      <button class="btn btn-ai btn-xs" onclick="generateSection('monitoring')"><i class="ti ti-wand"></i> Generate</button>
+    </div>
+    <div class="panel-body">
+      <textarea class="form-input" style="min-height:100px"
+        oninput="state.monitoring=this.value;saveState()"
+        placeholder="Describe how performance will be monitored, what KPIs will be tracked, how often they will be reviewed, and how findings will be reported...">${esc(state.monitoring)}</textarea>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-refresh"></i> Review mechanism & continuous improvement</div>
+      <button class="btn btn-ai btn-xs" onclick="generateSection('review')"><i class="ti ti-wand"></i> Generate</button>
+    </div>
+    <div class="panel-body">
+      <textarea class="form-input" style="min-height:100px"
+        oninput="state.reviewMechanism=this.value;saveState()"
+        placeholder="Describe how and when this policy will be reviewed, who is responsible, and how changes will be communicated...">${esc(state.reviewMechanism)}</textarea>
+    </div>
+  </div>`;
+}
+
+function addResp() { state.responsibilities.push({ role:'New Role', duty:'' }); saveState(); renderContent(); }
+function removeResp(i) { state.responsibilities.splice(i, 1); saveState(); renderContent(); }
+
+// ── STEP 8: Export ────────────────────────────────────────
+function renderExport() {
+  const co = state.company;
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  const areas = state.focusAreas.filter(Boolean);
+  const qualEntries = Object.entries(state.qualitative).filter(([k,v]) => v && v.length);
+  const quantEntries = state.quantitative.filter(q => q.targets && q.targets.some(t => t.target));
+  const completeness = [
+    !!co.name, !!state.declaration.preface, !!state.declaration.declaration,
+    !!state.declaration.scope, areas.length > 0, qualEntries.length > 0,
+    quantEntries.length > 0, state.sdgs.length > 0, state.responsibilities.length > 0
+  ].filter(Boolean).length;
+
+  return `
+  <div class="info-bar" style="${completeness >= 7 ? '' : 'background:var(--gold-light);border-color:#e8d888;color:var(--gold)'}">
+    <i class="ti ti-${completeness >= 7 ? 'check-circle' : 'alert-triangle'}"></i>
+    Policy completeness: ${completeness}/9 sections filled.
+    ${completeness < 7 ? 'Go back and fill in more sections for a comprehensive policy.' : 'Your policy is ready to export!'}
+  </div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-title"><i class="ti ti-eye"></i> Policy document preview</div>
+      <span class="badge badge-green"><i class="ti ti-check"></i> Live preview</span>
+    </div>
+    <div class="panel-body" style="padding:12px">
+      <div class="preview-wrap" id="policy-preview">
+        <h1>${pt.label.toUpperCase()}</h1>
+        <p style="text-align:center;font-size:13px;color:#666;font-family:var(--font);margin-bottom:6px">${co.name || '[Company Name]'}</p>
+        <div class="doc-meta">
+          <span>Doc No: ${co.docNum || '–'}</span>
+          <span>Rev: ${co.revNum || '01'}</span>
+          <span>Effective: ${co.effectiveDate || '–'}</span>
+          <span>Next Review: ${co.reviewDate || '–'}</span>
+        </div>
+        <hr class="section-divider">
+        ${state.declaration.preface ? `<h2>Preface</h2><p>${esc(state.declaration.preface)}</p>` : ''}
+        ${state.declaration.declaration ? `<h2>Policy Declaration</h2><p>${esc(state.declaration.declaration)}</p>` : ''}
+        ${state.declaration.scope ? `<h2>Scope</h2>
+          <p>${esc(state.declaration.scope)}</p>
+          ${co.site ? `<table style="width:100%;border-collapse:collapse;font-size:12px;margin-top:8px"><tr style="background:#f0f0ee"><th style="border:1px solid #ddd;padding:6px 10px;text-align:left">Site</th><th style="border:1px solid #ddd;padding:6px 10px;text-align:left">Address</th></tr><tr><td style="border:1px solid #ddd;padding:6px 10px;font-weight:600">${esc(co.name)}</td><td style="border:1px solid #ddd;padding:6px 10px">${esc(co.site)}</td></tr></table>` : ''}` : ''}
+        ${areas.length ? `<h2>Key Focus Areas</h2><ul>${areas.map(a => `<li><strong>${esc(a)}</strong></li>`).join('')}</ul>` : ''}
+        ${qualEntries.length ? `<h2>Qualitative Objectives</h2>${qualEntries.map(([k,v],i) => `<p style="font-weight:700;margin-bottom:4px;font-size:13px">${i+1}. ${esc(k)}</p><ul>${v.map(o => `<li>${esc(o)}</li>`).join('')}</ul>`).join('')}` : ''}
+        ${quantEntries.length ? `<h2>Quantitative Targets</h2>${quantEntries.map((q,qi) => `<p style="font-weight:700;margin-bottom:4px;font-size:13px">${qi+1}. ${esc(q.area)}</p><ul>${q.targets.filter(t=>t.target).map(t => `<li>${esc(t.target)} <em style="color:#888">(Baseline: ${esc(t.baseline)} → ${esc(t.deadline)})</em></li>`).join('')}</ul>`).join('')}` : ''}
+        ${state.sdgs.length ? `<h2>SDG Alignment</h2><div class="sdg-chips" style="margin-bottom:8px">${state.sdgs.map(n => { const s = SDG_DATA.find(d=>d.n===n); return `<span class="sdg-chip" style="background:${s.c}15;color:${s.c};border:1px solid ${s.c}40">SDG ${n}: ${s.label}</span>`; }).join('')}</div>` : ''}
+        ${state.responsibilities.length ? `<h2>Responsibilities</h2>${state.responsibilities.map(r => `<p><strong>${esc(r.role)}:</strong> ${esc(r.duty)}</p>`).join('')}` : ''}
+        ${state.monitoring ? `<h2>Monitoring, Reporting & Transparency</h2><p>${esc(state.monitoring)}</p>` : ''}
+        ${state.reviewMechanism ? `<h2>Review Mechanism</h2><p>${esc(state.reviewMechanism)}</p>` : ''}
+        <hr class="section-divider">
+        <div class="doc-footer">
+          <span>Effective Date: ${co.effectiveDate || '–'}</span>
+          <span>Next Review: ${co.reviewDate || '–'}</span>
+          <span>Approved by: ${co.approver || '___________________'}</span>
+        </div>
+        <div style="height:40px;border-top:1px solid #eee;margin-top:12px;display:flex;align-items:center;justify-content:center">
+          <p style="font-size:11px;color:#bbb;font-family:var(--font)">Rev No.: ${co.revNum || '01'} &nbsp;|&nbsp; ${co.name || ''} &nbsp;|&nbsp; ${co.docNum || ''}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div class="panel-title"><i class="ti ti-download"></i> Export format</div></div>
+    <div class="panel-body">
+      <div class="export-grid">
+        <div class="export-card" onclick="exportPDF()">
+          <i class="ti ti-file-type-pdf"></i>
+          <div class="ec-title">PDF</div>
+          <div class="ec-sub">Print-ready policy</div>
+        </div>
+        <div class="export-card" onclick="exportHTML()">
+          <i class="ti ti-file-type-html"></i>
+          <div class="ec-title">HTML</div>
+          <div class="ec-sub">Web document</div>
+        </div>
+        <div class="export-card" onclick="exportWord()">
+          <i class="ti ti-file-type-doc"></i>
+          <div class="ec-title">Word Doc</div>
+          <div class="ec-sub">Editable .doc</div>
+        </div>
+        <div class="export-card" onclick="exportJSON()">
+          <i class="ti ti-file-type-json"></i>
+          <div class="ec-title">JSON / Backup</div>
+          <div class="ec-sub">Save & reimport</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header"><div class="panel-title"><i class="ti ti-signature"></i> Employee acknowledgment form preview</div></div>
+    <div class="panel-body">
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:18px;font-size:13px;line-height:1.75">
+        <p style="font-weight:700;font-size:14px;margin-bottom:10px;text-align:center">Employee Acknowledgment Form</p>
+        <p>I hereby acknowledge that I have read and understood the <strong>${pt.label}</strong> of ${co.name || '[Company Name]'}. I am aware of the company's commitment to responsible practices as outlined in this policy and agree to uphold these standards in my daily work.</p>
+        <p style="margin-top:10px">By signing below, I confirm my commitment to the values and obligations set forth in this policy.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px">
+          ${['Employee Name','Employee ID','Department','Signature'].map(f => `
+            <div style="border-bottom:1px solid var(--border-mid);padding-bottom:4px">
+              <span style="font-size:11px;color:var(--muted);font-weight:600">${f}</span>
+              <div style="height:20px"></div>
+            </div>`).join('')}
+        </div>
+        <div style="text-align:right;margin-top:14px;font-size:11px;color:var(--muted)">Date: __________</div>
+      </div>
+      <button class="btn btn-sm" style="margin-top:10px" onclick="exportAcknowledgment()"><i class="ti ti-download"></i> Export acknowledgment form</button>
+    </div>
+  </div>`;
+}
+
+// ────────────────────────────────────────────────────────────
+// EXPORT FUNCTIONS
+// ────────────────────────────────────────────────────────────
+function buildPolicyHTML(forExport = false) {
+  const co = state.company;
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  const areas = state.focusAreas.filter(Boolean);
+  const qualEntries = Object.entries(state.qualitative).filter(([k,v]) => v && v.length);
+  const quantEntries = state.quantitative.filter(q => q.targets && q.targets.some(t => t.target));
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>${pt.label} — ${co.name}</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,'Times New Roman',serif;color:#1a1a1a;font-size:13px;line-height:1.75;max-width:820px;margin:0 auto;padding:40px 50px;background:#fff}
+  @page{margin:25mm}
+  @media print{body{padding:0}}
+  .cover{text-align:center;padding:40px 0 30px;border-bottom:2px solid #1a5c3a;margin-bottom:30px}
+  .cover h1{font-size:26px;font-weight:700;letter-spacing:1px;color:#1a1a1a;margin-bottom:8px}
+  .cover .company{font-size:14px;color:#555;margin-bottom:18px;font-family:Arial,sans-serif}
+  .meta-table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:11px;margin-top:12px}
+  .meta-table td{padding:5px 12px;border:1px solid #1a5c3a;text-align:center}
+  .meta-table td:first-child,.meta-table td:nth-child(3){background:#1a5c3a;color:#fff;font-weight:600}
+  h2{font-size:13.5px;font-weight:700;font-family:Arial,sans-serif;color:#1a5c3a;text-transform:uppercase;letter-spacing:.7px;margin:22px 0 8px;padding-bottom:5px;border-bottom:1px solid #c8e8d8}
+  p{margin-bottom:10px}
+  ul{padding-left:22px;margin-bottom:10px}
+  li{margin-bottom:5px}
+  table.data{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0 12px;font-family:Arial,sans-serif}
+  table.data th{background:#1a5c3a;color:#fff;padding:7px 10px;text-align:left;font-weight:600}
+  table.data td{padding:6px 10px;border:1px solid #ddd}
+  table.data tr:nth-child(even) td{background:#f8faf8}
+  .sdg-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+  .sdg-chip{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;font-family:Arial,sans-serif}
+  .footer{margin-top:30px;padding-top:14px;border-top:2px solid #1a5c3a;display:flex;justify-content:space-between;font-size:11px;color:#888;font-family:Arial,sans-serif}
+  .sign-section{margin-top:20px;padding:14px;border:1px solid #ddd;border-radius:8px;font-family:Arial,sans-serif}
+  .sign-section h3{font-size:13px;text-align:center;margin-bottom:14px;font-weight:700}
+  .sign-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .sign-field{border-bottom:1px solid #aaa;padding-bottom:4px}
+  .sign-field label{font-size:10px;color:#888;display:block;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+  .sign-field .line{height:22px}
+  .page-break{page-break-before:always}
+</style>
+</head>
+<body>
+<div class="cover">
+  <h1>${pt.label.toUpperCase()}</h1>
+  <div class="company">${esc(co.name) || '[Company Name]'}</div>
+  <table class="meta-table">
+    <tr>
+      <td>Document No.</td><td>${esc(co.docNum) || '–'}</td>
+      <td>Effective Date</td><td>${co.effectiveDate || '–'}</td>
+    </tr>
+    <tr>
+      <td>Revision No.</td><td>${esc(co.revNum) || '01'}</td>
+      <td>Next Review Date</td><td>${co.reviewDate || '–'}</td>
+    </tr>
+  </table>
+</div>
+
+${state.declaration.preface ? `<h2>Preface</h2><p>${esc(state.declaration.preface)}</p>` : ''}
+${state.declaration.declaration ? `<h2>Policy Declaration</h2><p>${esc(state.declaration.declaration)}</p>` : ''}
+${state.declaration.scope ? `<h2>Scope</h2><p>${esc(state.declaration.scope)}</p>
+  ${co.site ? `<table class="data"><thead><tr><th>Site</th><th>Address</th></tr></thead><tbody><tr><td>${esc(co.name)}</td><td>${esc(co.site)}</td></tr></tbody></table>` : ''}` : ''}
+
+${areas.length ? `<h2>Key Focus Areas</h2><ul>${areas.map((a,i) => `<li><strong>${i+1}. ${esc(a)}</strong></li>`).join('')}</ul>` : ''}
+
+${qualEntries.length ? `<h2>Qualitative Objectives</h2>${qualEntries.map(([k,v],i) => `
+  <p style="font-weight:700;margin:12px 0 5px">${i+1}) ${esc(k)}</p>
+  <ul>${v.map(o=>`<li>${esc(o)}</li>`).join('')}</ul>`).join('')}` : ''}
+
+${quantEntries.length ? `<h2>Quantitative Targets</h2>
+  <p style="font-size:12px;color:#666;margin-bottom:12px">Baseline year: FY 2022-23. All targets to be achieved by the stated deadline.</p>
+  <table class="data">
+    <thead><tr><th>#</th><th>Focus Area</th><th>Target</th><th>Baseline</th><th>Deadline</th></tr></thead>
+    <tbody>${quantEntries.flatMap((q,qi) => q.targets.filter(t=>t.target).map((t,ti) => `
+      <tr><td>${ti===0?qi+1:''}</td><td>${ti===0?esc(q.area):''}</td><td>${esc(t.target)}</td><td>${esc(t.baseline)}</td><td>${esc(t.deadline)}</td></tr>`)).join('')}
+    </tbody>
+  </table>` : ''}
+
+${state.sdgs.length ? `<h2>SDG Alignment</h2>
+  <p>This policy aligns with the following United Nations Sustainable Development Goals:</p>
+  <div class="sdg-row">${state.sdgs.map(n => { const s=SDG_DATA.find(d=>d.n===n); return `<span class="sdg-chip" style="background:${s.c}20;color:${s.c};border:1px solid ${s.c}60">SDG ${n}: ${s.label}</span>`; }).join('')}</div>` : ''}
+
+${state.responsibilities.length ? `<h2>Responsibilities</h2>
+  <table class="data">
+    <thead><tr><th style="width:30%">Role / Department</th><th>Responsibility</th></tr></thead>
+    <tbody>${state.responsibilities.map(r=>`<tr><td><strong>${esc(r.role)}</strong></td><td>${esc(r.duty)}</td></tr>`).join('')}</tbody>
+  </table>` : ''}
+
+${state.monitoring ? `<h2>Monitoring, Reporting & Transparency</h2><p>${esc(state.monitoring)}</p>` : ''}
+${state.reviewMechanism ? `<h2>Review Mechanism & Continuous Improvement</h2><p>${esc(state.reviewMechanism)}</p>` : ''}
+
+<div class="footer">
+  <span>Effective Date: ${co.effectiveDate || '–'}</span>
+  <span>Next Review Date: ${co.reviewDate || '–'}</span>
+  <span>Revision No.: ${esc(co.revNum) || '01'}</span>
+</div>
+<p style="font-size:12px;margin-top:10px;font-family:Arial,sans-serif"><strong>Approved by:</strong> ${esc(co.approver) || '_____________________'}</p>
+
+<div class="page-break"></div>
+<div class="sign-section">
+  <h3>Employee Acknowledgment Form</h3>
+  <p style="font-size:12px;margin-bottom:12px;line-height:1.7">I hereby acknowledge that I have read and understood the <strong>${pt.label}</strong> of ${esc(co.name) || '[Company Name]'}. I am aware of the company's commitment to responsible practices as outlined in this policy and agree to uphold these standards in my daily work. By signing below, I confirm my personal commitment to the values and obligations set forth in this policy.</p>
+  <div class="sign-grid">
+    ${['Employee Name','Employee ID','Department','Signature'].map(f=>`<div class="sign-field"><label>${f}</label><div class="line"></div></div>`).join('')}
+  </div>
+  <p style="text-align:right;font-size:11px;margin-top:12px;color:#888">Date: __________</p>
+</div>
+</body></html>`;
+}
+
+function exportPDF() {
+  const win = window.open('', '_blank');
+  win.document.write(buildPolicyHTML(true));
+  win.document.close();
+  win.addEventListener('load', () => { win.focus(); win.print(); });
+  showToast('Opening print dialog...', 'success');
+}
+
+function exportHTML() {
+  const co = state.company;
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  downloadFile(buildPolicyHTML(false), `${pt.label.replace(/\s+/g,'-')}_${co.name.replace(/\s+/g,'-') || 'Policy'}.html`, 'text/html');
+  showToast('HTML file downloaded!', 'success');
+}
+
+function exportWord() {
+  const co = state.company;
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  const areas = state.focusAreas.filter(Boolean);
+  const qualEntries = Object.entries(state.qualitative).filter(([k,v]) => v && v.length);
+  const quantEntries = state.quantitative.filter(q => q.targets && q.targets.some(t => t.target));
+  let txt = `${pt.label.toUpperCase()}\n${'='.repeat(60)}\n\n`;
+  txt += `Company: ${co.name || ''}\nDocument No.: ${co.docNum || ''} | Revision: ${co.revNum || '01'}\nEffective Date: ${co.effectiveDate || ''} | Next Review: ${co.reviewDate || ''}\n\n`;
+  if (state.declaration.preface) txt += `PREFACE\n${'-'.repeat(40)}\n${state.declaration.preface}\n\n`;
+  if (state.declaration.declaration) txt += `POLICY DECLARATION\n${'-'.repeat(40)}\n${state.declaration.declaration}\n\n`;
+  if (state.declaration.scope) txt += `SCOPE\n${'-'.repeat(40)}\n${state.declaration.scope}\n${co.site ? `\nSite: ${co.name}\nAddress: ${co.site}\n` : ''}\n`;
+  if (areas.length) txt += `KEY FOCUS AREAS\n${'-'.repeat(40)}\n${areas.map((a,i)=>`${i+1}. ${a}`).join('\n')}\n\n`;
+  if (qualEntries.length) { txt += `QUALITATIVE OBJECTIVES\n${'-'.repeat(40)}\n`; qualEntries.forEach(([k,v],i) => { txt += `\n${i+1}) ${k}\n${v.map(o=>`   • ${o}`).join('\n')}\n`; }); txt += '\n'; }
+  if (quantEntries.length) { txt += `QUANTITATIVE TARGETS\n${'-'.repeat(40)}\n`; quantEntries.forEach((q,qi) => { txt += `\n${qi+1}) ${q.area}\n${q.targets.filter(t=>t.target).map(t=>`   • ${t.target}\n     Baseline: ${t.baseline} → Deadline: ${t.deadline}`).join('\n')}\n`; }); txt += '\n'; }
+  if (state.sdgs.length) { txt += `SDG ALIGNMENT\n${'-'.repeat(40)}\n${state.sdgs.map(n=>`SDG ${n}: ${SDG_DATA.find(d=>d.n===n)?.label}`).join(', ')}\n\n`; }
+  if (state.responsibilities.length) { txt += `RESPONSIBILITIES\n${'-'.repeat(40)}\n${state.responsibilities.map(r=>`${r.role}: ${r.duty}`).join('\n')}\n\n`; }
+  if (state.monitoring) txt += `MONITORING, REPORTING & TRANSPARENCY\n${'-'.repeat(40)}\n${state.monitoring}\n\n`;
+  if (state.reviewMechanism) txt += `REVIEW MECHANISM\n${'-'.repeat(40)}\n${state.reviewMechanism}\n\n`;
+  txt += `${'='.repeat(60)}\nApproved by: ${co.approver || '_____________________'}\n`;
+  txt += `\n\nEMPLOYEE ACKNOWLEDGMENT FORM\n${'='.repeat(60)}\n`;
+  txt += `Employee Name: _______________________   Employee ID: _____________\n\nDepartment: __________________________   Date: ___________________\n\nSignature: ______________________________________________________________`;
+  const html = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="UTF-8"></head><body><pre style="font-family:Arial;font-size:12pt">${txt.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre></body></html>`;
+  downloadFile(html, `${(pt.label).replace(/\s+/g,'-')}_Policy.doc`, 'application/msword');
+  showToast('Word document downloaded!', 'success');
+}
+
+function exportJSON() {
+  const co = state.company;
+  downloadFile(JSON.stringify(state, null, 2), `policy_backup_${co.name.replace(/\s+/g,'-') || 'data'}.json`, 'application/json');
+  showToast('JSON backup downloaded!', 'success');
+}
+
+function exportAcknowledgment() {
+  const co = state.company;
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Employee Acknowledgment</title>
+  <style>body{font-family:Arial,sans-serif;max-width:680px;margin:40px auto;padding:20px;font-size:13px;line-height:1.7}
+  h2{text-align:center;margin-bottom:16px;font-size:16px}p{margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+  .field{border-bottom:1px solid #aaa;padding-bottom:4px}
+  .field label{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.4px;font-weight:700;display:block}
+  .field .line{height:24px}@media print{body{padding:0}}</style>
+  </head><body>
+  <h2>Employee Acknowledgment Form</h2>
+  <p><strong>Policy:</strong> ${esc(pt.label)} — ${esc(co.name)}</p>
+  <p>I hereby acknowledge that I have read and understood the above-mentioned policy. I am aware of the company's commitment to responsible practices and agree to uphold these standards in my daily work.</p>
+  <p>I understand that it is my duty to follow this policy and report any suspected violations through designated channels. Any breach may result in appropriate disciplinary action.</p>
+  <p>By signing below, I confirm my personal commitment to the values and obligations set forth in this policy.</p>
+  <div class="grid">
+    ${['Employee Name','Employee ID','Department','Date'].map(f=>`<div class="field"><label>${f}</label><div class="line"></div></div>`).join('')}
+  </div>
+  <div style="margin-top:22px;border-bottom:1px solid #aaa;padding-bottom:4px"><span style="font-size:10px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:.4px">Signature</span><div style="height:36px"></div></div>
+  </body></html>`;
+  downloadFile(html, 'Employee_Acknowledgment_Form.html', 'text/html');
+  showToast('Acknowledgment form downloaded!', 'success');
+}
+
+function downloadFile(content, filename, type) {
+  const a = document.createElement('a');
+  a.href = 'data:' + type + ';charset=utf-8,' + encodeURIComponent(content);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+// ────────────────────────────────────────────────────────────
+// FILE UPLOAD & IMPORT
+// ────────────────────────────────────────────────────────────
+async function handleFileUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  // JSON reimport
+  if (file.name.endsWith('.json')) {
+    const text = await readText(file);
+    try {
+      const data = JSON.parse(text);
+      Object.assign(state, data);
+      saveState(); renderAll();
+      showToast('Policy data imported from JSON!', 'success');
+      return;
+    } catch(err) {}
+  }
+  // Text/PDF — send to AI
+  const text = await readText(file);
+  if (!text) { showToast('Could not read file', 'error'); return; }
+  if (!apiKey) { showToast('Please set your API key first', 'error'); showApiModal(); return; }
+  aiShow('Analyzing uploaded policy document...');
+  try {
+    const resp = await callClaude(`Analyze this policy document and extract all information. Return ONLY valid JSON with these exact keys:
+{
+  "company_name": "string",
+  "industry": "string",
+  "doc_num": "string",
+  "rev_num": "string",
+  "effective_date": "string",
+  "review_date": "string",
+  "approver": "string",
+  "site": "string",
+  "policy_type": "one of: env, labour, ethics, procurement, social, climate, health, diversity",
+  "standards": ["array of standard names"],
+  "preface": "string",
+  "declaration": "string",
+  "scope": "string",
+  "focus_areas": ["array"],
+  "qualitative": {"area_name": ["objective1", "objective2"]},
+  "quantitative": [{"area": "name", "targets": [{"target": "text", "baseline": "FY YYYY-YY", "deadline": "FY YYYY-YY"}]}],
+  "sdgs": [1, 7, 13],
+  "responsibilities": [{"role": "name", "duty": "description"}],
+  "monitoring": "string",
+  "review_mechanism": "string"
+}
+Document content:
+${text.slice(0, 5000)}`, 'Return only valid JSON, no markdown, no extra text.');
+    const clean = resp.replace(/```json|```/g, '').trim();
+    const data = JSON.parse(clean);
+    if (data.company_name) state.company.name = data.company_name;
+    if (data.industry) state.company.industry = data.industry;
+    if (data.doc_num) state.company.docNum = data.doc_num;
+    if (data.rev_num) state.company.revNum = data.rev_num;
+    if (data.effective_date) state.company.effectiveDate = data.effective_date;
+    if (data.review_date) state.company.reviewDate = data.review_date;
+    if (data.approver) state.company.approver = data.approver;
+    if (data.site) state.company.site = data.site;
+    if (data.policy_type) state.policyType = data.policy_type;
+    if (data.standards?.length) state.standards = data.standards;
+    if (data.preface) state.declaration.preface = data.preface;
+    if (data.declaration) state.declaration.declaration = data.declaration;
+    if (data.scope) state.declaration.scope = data.scope;
+    if (data.focus_areas?.length) state.focusAreas = data.focus_areas;
+    if (data.qualitative) state.qualitative = data.qualitative;
+    if (data.quantitative?.length) state.quantitative = data.quantitative;
+    if (data.sdgs?.length) state.sdgs = data.sdgs.filter(n => n >= 1 && n <= 17);
+    if (data.responsibilities?.length) state.responsibilities = data.responsibilities;
+    if (data.monitoring) state.monitoring = data.monitoring;
+    if (data.review_mechanism) state.reviewMechanism = data.review_mechanism;
+    aiHide(); saveState(); renderAll();
+    showToast('Policy imported! Review and edit each section.', 'success');
+  } catch(err) {
+    aiHide();
+    showToast('Import failed. Try a .json export for reimporting.', 'error');
+  }
+  e.target.value = '';
+}
+
+function readText(file) {
+  return new Promise(res => {
+    const r = new FileReader();
+    r.onload = e => res(e.target.result || '');
+    r.onerror = () => res('');
+    r.readAsText(file);
+  });
+}
+
+// ────────────────────────────────────────────────────────────
+// AI GENERATION
+// ────────────────────────────────────────────────────────────
+async function callClaude(userMsg, systemMsg = 'You are a professional sustainability consultant who writes formal policy documents aligned with GRI, EcoVadis, CDP, CSRD, BRSR, UNGC, ISO 14001, ISO 45001 and the UN SDGs.') {
+  if (!apiKey) { showApiModal(); throw new Error('No API key'); }
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1500, system: systemMsg, messages: [{ role: 'user', content: userMsg }] })
+  });
+  if (!res.ok) { const err = await res.json(); throw new Error(err.error?.message || 'API error'); }
+  const data = await res.json();
+  return data.content?.map(c => c.text || '').join('') || '';
+}
+
+async function generateSection(type) {
+  if (!apiKey) { showApiModal(); return; }
+  const co = state.company;
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  const stds = state.standards.join(', ') || 'GRI, EcoVadis, SDGs';
+  const ctx = `Company: ${co.name || 'a manufacturing company'}, Industry: ${co.industry || 'industrial sector'}, Policy: ${pt.label}, Standards: ${stds}`;
+
+  let prompt = '';
+  aiShow(`Generating ${type}...`);
+  try {
+    if (type === 'preface') {
+      prompt = `Write a Preface paragraph (3-4 sentences) for a ${pt.label}. Context: ${ctx}. Be formal, reference the industry, and mention commitment to sustainability and the relevant standards. Return only the paragraph text.`;
+      const r = await callClaude(prompt);
+      state.declaration.preface = r.trim();
+    } else if (type === 'declaration') {
+      prompt = `Write a Policy Declaration (2-3 sentences) for a ${pt.label}. Context: ${ctx}. It should clearly state the company's core commitment. Return only the paragraph.`;
+      const r = await callClaude(prompt);
+      state.declaration.declaration = r.trim();
+    } else if (type === 'scope') {
+      prompt = `Write a Scope paragraph for a ${pt.label}. Context: ${ctx}, Site: ${co.site || 'industrial facility'}. Mention it covers all employees, contractors, suppliers, and all operational activities. Return only the paragraph.`;
+      const r = await callClaude(prompt);
+      state.declaration.scope = r.trim();
+    } else if (type === 'focus') {
+      prompt = `List 7-9 key focus areas for a ${pt.label} aligned with ${stds}. These are the main topics the policy covers. Return as a JSON array of strings only. No other text.`;
+      const r = await callClaude(prompt, 'Return only a valid JSON array of strings. No markdown, no preamble.');
+      const arr = JSON.parse(r.replace(/```json|```/g,'').trim());
+      state.focusAreas = arr;
+    } else if (type === 'sdg') {
+      prompt = `For a ${pt.label} aligned with ${stds} in ${co.industry || 'manufacturing'}, which UN SDG numbers are most relevant? Return as a JSON array of integers (1-17 only). Example: [6,7,12,13,15,17]. Return only the JSON array.`;
+      const r = await callClaude(prompt, 'Return only a valid JSON array of integers. No markdown, no text.');
+      const arr = JSON.parse(r.replace(/```json|```/g,'').trim());
+      state.sdgs = arr.filter(n => Number.isInteger(n) && n >= 1 && n <= 17).sort((a,b)=>a-b);
+    } else if (type === 'resp') {
+      prompt = `Write 5-6 responsibilities for a ${pt.label}. Include management, compliance/HR, operations, supply chain, and all employees. Return as JSON array of {role, duty} objects. No other text.`;
+      const r = await callClaude(prompt, 'Return only a valid JSON array of {role, duty} objects. No markdown.');
+      const arr = JSON.parse(r.replace(/```json|```/g,'').trim());
+      state.responsibilities = arr;
+    } else if (type === 'monitoring') {
+      prompt = `Write a Monitoring, Reporting and Transparency section (3-4 sentences) for a ${pt.label}. Mention KPIs, quarterly reviews, annual assessments, and stakeholder reporting. Context: ${ctx}. Return only the paragraph.`;
+      const r = await callClaude(prompt);
+      state.monitoring = r.trim();
+    } else if (type === 'review') {
+      prompt = `Write a Review Mechanism and Continuous Improvement section (3-4 sentences) for a ${pt.label}. Mention annual review, who reviews it, how feedback is incorporated, and communication of changes. Context: ${ctx}. Return only the paragraph.`;
+      const r = await callClaude(prompt);
+      state.reviewMechanism = r.trim();
+    }
+    aiHide(); saveState(); renderContent();
+    showToast('AI generation complete!', 'success');
+  } catch(err) {
+    aiHide();
+    showToast('Generation failed: ' + (err.message || 'Check API key'), 'error');
+  }
+}
+
+async function generateQual(ai) {
+  if (!apiKey) { showApiModal(); return; }
+  const area = state.focusAreas[ai];
+  if (!area) return;
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  aiShow(`Generating objectives for "${area}"...`);
+  try {
+    const r = await callClaude(
+      `Write 3-4 qualitative objectives for "${area}" in a ${pt.label} for ${state.company.name || 'a manufacturing company'} in ${state.company.industry || 'industrial sector'}. These are formal policy commitment statements (not measurable targets). Return as a JSON array of strings only. No markdown.`,
+      'Return only a valid JSON array of strings. No markdown, no preamble.'
+    );
+    const arr = JSON.parse(r.replace(/```json|```/g,'').trim());
+    if (!state.qualitative[area]) state.qualitative[area] = [];
+    state.qualitative[area] = [...state.qualitative[area], ...arr];
+    aiHide(); saveState(); renderContent();
+    showToast('Objectives generated!', 'success');
+  } catch(err) {
+    aiHide(); showToast('Generation failed: ' + (err.message || ''), 'error');
+  }
+}
+
+async function generateQuant(qi) {
+  if (!apiKey) { showApiModal(); return; }
+  const q = state.quantitative[qi];
+  if (!q) return;
+  const pt = POLICY_TYPES.find(p => p.id === state.policyType) || POLICY_TYPES[0];
+  aiShow(`Generating targets for "${q.area}"...`);
+  try {
+    const r = await callClaude(
+      `Write 2-3 quantitative targets for "${q.area}" in a ${pt.label} for ${state.company.name || 'a company'} in ${state.company.industry || 'manufacturing'}. Use "FY 2022-23" as baseline and "FY 2029-30" as typical deadline. Each target should be specific and measurable. Return ONLY a JSON array of {target, baseline, deadline} objects. No markdown.`,
+      'Return only a valid JSON array of {target, baseline, deadline} objects. No markdown, no preamble.'
+    );
+    const arr = JSON.parse(r.replace(/```json|```/g,'').trim());
+    state.quantitative[qi].targets = arr;
+    aiHide(); saveState(); renderContent();
+    showToast('Targets generated!', 'success');
+  } catch(err) {
+    aiHide(); showToast('Generation failed: ' + (err.message || ''), 'error');
+  }
+}
+
+async function aiGenerateCurrent() {
+  if (!apiKey) { showApiModal(); return; }
+  const id = STEPS[state.step].id;
+  if (id === 'setup') { showToast('Fill in company details manually', 'info'); return; }
+  if (id === 'declaration') { await generateSection('preface'); await generateSection('declaration'); await generateSection('scope'); }
+  else if (id === 'focus') { await generateSection('focus'); }
+  else if (id === 'qualitative') { for (let i = 0; i < Math.min(state.focusAreas.length, 5); i++) { await generateQual(i); } }
+  else if (id === 'quantitative') { for (let i = 0; i < Math.min(state.quantitative.length, 4); i++) { await generateQuant(i); } }
+  else if (id === 'sdg') { await generateSection('sdg'); }
+  else if (id === 'responsibilities') { await generateSection('resp'); await generateSection('monitoring'); await generateSection('review'); }
+  else if (id === 'export') { showToast('Use the export buttons below to download', 'info'); }
+}
+
+// ────────────────────────────────────────────────────────────
+// API KEY MODAL
+// ────────────────────────────────────────────────────────────
+function showApiModal() {
+  document.getElementById('api-key-input').value = apiKey;
+  document.getElementById('api-modal').classList.add('show');
+}
+function saveApiKey() {
+  const v = document.getElementById('api-key-input').value.trim();
+  if (!v) { showToast('Please enter a valid API key', 'error'); return; }
+  apiKey = v;
+  sessionStorage.setItem('pc_api_key', v);
+  document.getElementById('api-modal').classList.remove('show');
+  showToast('API key saved!', 'success');
+}
+function skipApiKey() {
+  document.getElementById('api-modal').classList.remove('show');
+  showToast('Running in manual mode. AI features disabled.', 'info');
+}
+
+// ────────────────────────────────────────────────────────────
+// AI OVERLAY
+// ────────────────────────────────────────────────────────────
+function aiShow(msg) {
+  document.getElementById('ai-msg').textContent = msg || 'Generating with AI...';
+  document.getElementById('ai-overlay').classList.add('show');
+}
+function aiHide() { document.getElementById('ai-overlay').classList.remove('show'); }
+
+// ────────────────────────────────────────────────────────────
+// TOAST
+// ────────────────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  const icons = { success: 'ti-check', error: 'ti-x', info: 'ti-info-circle' };
+  t.className = `show ${type}`;
+  document.getElementById('toast-icon').className = `ti ${icons[type] || 'ti-check'}`;
+  document.getElementById('toast-text').textContent = msg;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.className = ''; }, 3500);
+}
+
+// ────────────────────────────────────────────────────────────
+// HELPERS
+// ────────────────────────────────────────────────────────────
+function esc(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+</script>
+</body>
+</html>
