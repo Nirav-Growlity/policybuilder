@@ -331,7 +331,7 @@ function cleanInline(nodes: HtmlNode[]): string {
 function buildPolicy(blocks: Block[], rawText: string): Partial<Policy> {
   const policy: Partial<Policy> = {
     policyType: "environmental",
-    company: { name: "", industry: "", site: "", docNum: "", revNum: "01", effectiveDate: "", reviewDate: "", approver: "" },
+    company: { name: "", industry: "", site: "", sites: [], docNum: "", revNum: "01", effectiveDate: "", reviewDate: "", approver: "" },
     standards: [],
     declaration: { preface: "", declaration: "", scope: "" },
     focusAreas: [],
@@ -345,6 +345,7 @@ function buildPolicy(blocks: Block[], rawText: string): Partial<Policy> {
 
   const cleaned = stripToc(blocks);
   extractCover(cleaned, rawText, policy);
+  extractSites(cleaned, rawText, policy);
   const sections = sliceByHeadings(cleaned);
   fillSections(sections, policy);
   extractSdgs(cleaned, rawText, policy);
@@ -502,6 +503,64 @@ function extractCover(blocks: Block[], rawText: string, policy: Partial<Policy>)
   if (!policy.company!.approver) {
     const m = rawText.match(/Approved\s+By\s*[:\.][ \t]*([^\n]+)/i);
     if (m && m[1].length < 80 && !/^\s*$/.test(m[1])) policy.company!.approver = m[1].trim();
+  }
+}
+
+function extractSites(blocks: Block[], rawText: string, policy: Partial<Policy>) {
+  if (!policy.company) return;
+  if (!policy.company.sites) policy.company.sites = [];
+
+  const sites: { location?: string; address: string; primaryFunction?: string }[] = [];
+
+  for (const b of blocks) {
+    if (b.type !== "table" || b.rows.length < 2) continue;
+
+    const firstRowStr = b.rows[0].map((c) => c.toLowerCase()).join(" ");
+    const isSiteTable =
+      /location|unit|site|facility|plant|address/i.test(firstRowStr) &&
+      !/document\s*no|rev(ision)?\s*no|effective\s*date|approved\s*by/i.test(firstRowStr);
+
+    if (isSiteTable) {
+      const headerRow = b.rows[0].map((c) => c.toLowerCase().trim());
+      let locIdx = headerRow.findIndex((h) => /location|unit|site|facility|plant|name/i.test(h));
+      let addrIdx = headerRow.findIndex((h) => /address|location\s*address|premise/i.test(h));
+      let funcIdx = headerRow.findIndex((h) => /function|activity|operation|primary\s*function|purpose|scope/i.test(h));
+
+      if (locIdx === -1) locIdx = 0;
+      if (addrIdx === -1) addrIdx = locIdx === 0 && b.rows[0].length > 1 ? 1 : locIdx;
+
+      for (let r = 1; r < b.rows.length; r++) {
+        const row = b.rows[r];
+        if (!row || row.length < 1) continue;
+
+        const locVal = (row[locIdx] || row[0] || "").trim();
+        const addrVal = (row[addrIdx] || row[1] || locVal).trim();
+        const funcVal = funcIdx !== -1 && row[funcIdx] ? row[funcIdx].trim() : (row[2] || "").trim();
+
+        if (addrVal && addrVal.length > 5 && !/^(location|address|primary function|site)$/i.test(addrVal)) {
+          sites.push({
+            location: locVal && locVal !== addrVal ? locVal : (policy.company.name || "Site"),
+            address: addrVal,
+            primaryFunction: funcVal || "Operating Site",
+          });
+        }
+      }
+    }
+  }
+
+  if (sites.length === 0 && policy.company.site) {
+    sites.push({
+      location: policy.company.name || "Main Site",
+      address: policy.company.site,
+      primaryFunction: "Operating Facility",
+    });
+  }
+
+  if (sites.length > 0) {
+    policy.company.sites = sites;
+    if (!policy.company.site) {
+      policy.company.site = sites[0].address;
+    }
   }
 }
 

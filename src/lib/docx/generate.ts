@@ -15,7 +15,7 @@ import {
   InternalHyperlink,
   Bookmark,
 } from "docx";
-import type { Policy } from "../types";
+import { getCompanySites, type Policy } from "../types";
 import { SDG_DATA, POLICY_TYPE_META } from "../constants";
 
 const FOREST = "1a5c3a";
@@ -25,6 +25,7 @@ const INK = "1a1a1a";
 
 export async function generateDocx(policy: Policy): Promise<Buffer> {
   const co = policy.company;
+  const sites = getCompanySites(co);
   const areas = policy.focusAreas.filter(Boolean);
   const qualEntries = Object.entries(policy.qualitative).filter(([, v]) => v && v.length);
   const quantEntries = policy.quantitative.filter((q) => q.targets && q.targets.some((t) => t.target));

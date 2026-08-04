@@ -8,7 +8,15 @@
     "policyType": "environmental",
     "company": {
       "name": "Arminak Solutions LLC dba KBL Cosmetics",
-      "address": "475 N Sheridan St, Corona, CA 92880"
+      "address": "475 N Sheridan St, Corona, CA 92880",
+      "sites": [
+        {
+          "location": "ARMINAK SOLUTIONS LLC DBA KBL COSMETICS",
+          "address": "475 N Sheridan St, Corona, CA 92880",
+          "primaryFunction": "designing, manufacturing, and delivering high-quality cosmetic products"
+        }
+      ],
+      "site": "475 N Sheridan St, Corona, CA 92880"
     },
     "standards": [
       "United Nations Global Compact (UNGC)",
@@ -22,7 +30,6 @@
     },
     "focusAreas": [
       "Environmental Compliance",
-      "Journey to Sustainability",
       "Water usage reduction and recycling",
       "Renewable energy and energy efficiency",
       "Greenhouse gas (GHG) reduction",
@@ -51,7 +58,6 @@
         "Sustainable Consumption: We promote sustainable consumption by advocating for environmentally friendly alternatives to synthetic materials.",
         "Product End-of-Life: We promote responsible end-of-life management of products and packaging by supporting reuse, recycling, compostability, refillable systems, and environmentally responsible disposal practices to reduce landfill waste and encourage circular economy principles."
       ],
-      "Journey to Sustainability": [],
       "Water usage reduction and recycling": [],
       "Renewable energy and energy efficiency": [],
       "Greenhouse gas (GHG) reduction": [],
@@ -268,7 +274,7 @@
         "area": "Promoting sustainable consumption",
         "targets": [
           {
-            "target": "launch an educational campaign to inform consumers about sustainable beauty routines",
+            "target": "launch an educational campaign",
             "baseline": "2022",
             "deadline": "2030"
           }
@@ -277,16 +283,6 @@
       {
         "area": "Environmental Services and Advocacy",
         "targets": [
-          {
-            "target": "join industry-wide initiatives aimed at developing standardized environmental impact assessment and scoring systems",
-            "baseline": "2022",
-            "deadline": "2030"
-          },
-          {
-            "target": "allocate funding to environmental research projects",
-            "baseline": "2022",
-            "deadline": "2030"
-          },
           {
             "target": "participate in public campaigns to raise awareness about environmental issues",
             "baseline": "2022",
@@ -318,7 +314,7 @@
             "deadline": "2030"
           },
           {
-            "target": "collaborate with recycling and waste management partners to improve collection and recovery systems",
+            "target": "collaborate with recycling and waste management partners",
             "baseline": "2022",
             "deadline": "2030"
           }
@@ -395,7 +391,7 @@
         "duty": "They are expected to adhere to sustainable practices, report any environmental concerns, and contribute ideas for continuous improvement."
       }
     ],
-    "monitoring": "An annual performance review is conducted to assess progress towards sustainability goals and targets.\n\nKey achievements, challenges, and areas for improvement are identified through a comprehensive evaluation process.\n\nFeedback from performance reviews, internal audits, and stakeholder engagement activities is used to identify opportunities for continuous improvement.\n\nAdjustments to strategies, policies, and action plans are made as necessary to enhance sustainability performance and address emerging issues.\n\nThe Chief Sustainability Officer reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations.\n\nCompany can also change or review policy if any necessary changes is required.\n\nUpdates to the policy are communicated internally, and relevant training is provided to ensure awareness and compliance.",
-    "reviewMechanism": "Annual Performance Review:\n\nAn annual performance review is conducted to assess progress towards sustainability goals and targets.\n\nKey achievements, challenges, and areas for improvement are identified through a comprehensive evaluation process.\n\nContinuous Improvement:\n\nFeedback from performance reviews, internal audits, and stakeholder engagement activities is used to identify opportunities for continuous improvement.\n\nAdjustments to strategies, policies, and action plans are made as necessary to enhance sustainability performance and address emerging issues.\n\nPolicy Review and Update:\n\nThe Chief Sustainability Officer reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations.\n\nCompany can also change or review policy if any necessary changes is required.\n\nUpdates to the policy are communicated internally, and relevant training is provided to ensure awareness and compliance."
+    "monitoring": "Annual Performance Review: An annual performance review is conducted to assess progress towards sustainability goals and targets.\n\nContinuous Improvement: Feedback from performance reviews, internal audits, and stakeholder engagement activities is used to identify opportunities for continuous improvement.\n\nPolicy Review and Update: The Chief Sustainability Officer reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations.",
+    "reviewMechanism": "Annual Performance Review: An annual performance review is conducted to assess progress towards sustainability goals and targets.\n\nContinuous Improvement: Feedback from performance reviews, internal audits, and stakeholder engagement activities is used to identify opportunities for continuous improvement.\n\nPolicy Review and Update: The Chief Sustainability Officer reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations."
   }
 }

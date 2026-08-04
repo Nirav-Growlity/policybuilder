@@ -8,7 +8,8 @@
     "policyType": "environmental",
     "company": {
       "name": "Quality Rubbers",
-      "address": "10/587, Azhiyannur Post, Kadampazhipuram, Palakkad, Kerala, 678633, India"
+      "address": "10/587, Azhiyannur Post, Kadampazhipuram, Palakkad, Kerala, 678633, India.",
+      "site": "10/587, Azhiyannur Post, Kadampazhipuram, Palakkad, Kerala, 678633, India."
     },
     "standards": [],
     "declaration": {
@@ -29,25 +30,33 @@
     ],
     "qualitative": {
       "Sustainable Raw Material Sourcing": [
-        "We aim to promote responsible sourcing of natural and synthetic rubber by encouraging procurement from certified suppliers, ensuring traceability, and supporting practices that help prevent deforestation and biodiversity loss.",
-        "We aim to improve energy efficiency by monitoring energy consumption, optimizing processes, enhancing equipment efficiency, and adopting energy-saving and renewable energy solutions wherever feasible.",
-        "We aim to measure and reduce greenhouse gas emissions (Scope 1 and Scope 2) through cleaner fuels, operational improvements, and promotion of low-carbon initiatives.",
-        "We aim to control air emissions by using appropriate pollution control systems, monitoring key pollutants such as particulate matter and VOCs, and ensuring regulatory compliance.",
-        "We aim to strengthen water stewardship by promoting efficient use, reuse and recycling of water, and ensuring proper treatment of wastewater before discharge.",
-        "We aim to minimize waste generation by improving process efficiency, promoting recycling and reuse of materials, and ensuring safe disposal of hazardous and non-hazardous waste.",
-        "We aim to ensure safe chemical management through proper storage, labeling, handling practices, and reduction of hazardous substances wherever alternatives exist.",
-        "We aim to support biodiversity protection by avoiding sourcing from ecologically sensitive areas and encouraging conservation practices across stakeholders.",
-        "We aim to ensure environmental compliance through adherence to applicable laws, monitoring of environmental performance, and internal audits.",
-        "We aim to promote environmental awareness and engagement by encouraging employee participation, supporting community initiatives, and strengthening sustainability communication."
+        "Promote responsible sourcing of natural and synthetic rubber by encouraging procurement from certified suppliers, ensuring traceability, and supporting practices that help prevent deforestation and biodiversity loss.",
+        "Improve environmental compliance among suppliers."
       ],
-      "Energy Consumption and Efficiency": [],
-      "Greenhouse Gas (GHG) Emissions Reduction": [],
-      "Air Emissions Management": [],
-      "Water Stewardship and Wastewater Management": [],
-      "Waste Reduction and Circular Economy": [],
-      "Biodiversity and Land Use Protection": [],
-      "Compliance and Environmental Governance": [],
-      "Environmental Engagement & Advocacy": []
+      "Energy Consumption and Efficiency": [
+        "Improve energy efficiency by monitoring energy consumption, optimizing processes, enhancing equipment efficiency, and adopting energy-saving and renewable energy solutions wherever feasible."
+      ],
+      "Greenhouse Gas (GHG) Emissions Reduction": [
+        "Measure and reduce greenhouse gas emissions (Scope 1 and Scope 2) through cleaner fuels, operational improvements, and promotion of low-carbon initiatives."
+      ],
+      "Air Emissions Management": [
+        "Control air emissions by using appropriate pollution control systems, monitoring key pollutants such as particulate matter and VOCs, and ensuring regulatory compliance."
+      ],
+      "Water Stewardship and Wastewater Management": [
+        "Strengthen water stewardship by promoting efficient use, reuse and recycling of water, and ensuring proper treatment of wastewater before discharge."
+      ],
+      "Waste Reduction and Circular Economy": [
+        "Minimize waste generation by improving process efficiency, promoting recycling and reuse of materials, and ensuring safe disposal of hazardous and non-hazardous waste."
+      ],
+      "Biodiversity and Land Use Protection": [
+        "Support biodiversity protection by avoiding sourcing from ecologically sensitive areas and encouraging conservation practices across stakeholders."
+      ],
+      "Compliance and Environmental Governance": [
+        "Ensure environmental compliance through adherence to applicable laws, monitoring of environmental performance, and internal audits."
+      ],
+      "Environmental Engagement & Advocacy": [
+        "Promote environmental awareness and engagement by encouraging employee participation, supporting community initiatives, and strengthening sustainability communication."
+      ]
     },
     "quantitative": [
       {

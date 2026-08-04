@@ -8,7 +8,95 @@
     "policyType": "environmental",
     "company": {
       "name": "Shilpa Medicare Limited",
-      "address": "Formulation Development Centre, Plot No. 29/A, Phase IV, Averahalli Industrial Area, Sompura (Dobbspet), Bengaluru – 560111, Karnataka, India"
+      "address": "Plot No. 4A, Deosugur Industrial Area, Deosugur, Shaktinagar – 584 170. Karnataka, India.",
+      "sites": [
+        {
+          "location": "Unit 1",
+          "address": "Plot. No. 4A, Deosugur Industrial Area, Deosugur, Shaktinagar – 584 170. Karnataka, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Unit 2 & R&D",
+          "address": "Plot No. 33, 33A & 40-47, Raichur Industrial Growth Centre, Wadloor Road, Chicksugur Post, Raichur – 584 134. Karnataka, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "HO",
+          "address": "Formulation Development Centre, Plot No. 29/A, Phase IV, Averahalli Industrial Area, Sompura (Dobbspet), Bengaluru – 560111. Karnataka, India.",
+          "primaryFunction": "Formulation Development"
+        },
+        {
+          "location": "Unit 3",
+          "address": "Formulation Development Centre, Plot No. 29/A, Phase IV, Averahalli Industrial Area, Sompura (Dobbspet), Bengaluru – 560111. Karnataka, India.",
+          "primaryFunction": "R&D"
+        },
+        {
+          "location": "Unit 4",
+          "address": "Formulation Unit, Plot No: S20 to S24A, Green Industrial Park, Polepally (V), Jadcherla (M), Mahaboobnagar Dist., Telangana – 509 301. India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Unit 6",
+          "address": "Formulation Unit, Plot No. 29/A, Phase IV, Averahalli Industrial Area, Sompura (Dobbspet), Bengaluru – 560111. Karnataka, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Unit 7",
+          "address": "Unit – VII, Plot No. 79, Road No. 15, Survey No. 125, IDA Mallpur, Nacharam, Uppal Mandal, Medchal-Malkajgiri District, Hyderabad – 500 076. Telangana, India.",
+          "primaryFunction": "Analytical Services Lab & Bio Analytical Lab"
+        },
+        {
+          "location": "Shilpa Therapeutics Pvt. Ltd.",
+          "address": "118, I.D.A, Phase III, Cherlapally, Rangareddy District, Hyderabad – 500 051. Telangana, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Shilpa Biologicals Pvt. Ltd.",
+          "address": "Plot No. 531, 532/A, Belur Industrial Area, Dharwad – 580011. Karnataka, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Shilpa Biocare Pvt. Ltd.",
+          "address": "Plot No's: 286, 287 & 288, Kadechur Industrial Area, Yadgir – 585221. Karnataka, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "FTF Pharma Pvt. Ltd.",
+          "address": "Block No. 193 (Part) + 211 (Part), XCELON Industrial Park, Chak-De India Weigh Bridge Road, Vasana Chacharwadi, Tal. Sanand, Ahmedabad – 382213. Gujarat, India.",
+          "primaryFunction": "R&D"
+        },
+        {
+          "location": "Indo Biotech Sdn.Bhd",
+          "address": "Landesgericht Korneuburg, Gerichtsabteilung 1, Korneuburg, 7. Juli 2016, Mag. Werner Jarec, Richter",
+          "primaryFunction": "Sales Offices"
+        },
+        {
+          "location": "KOANAA Healthcare Gmbh",
+          "address": "79 College Road, Harrow, Middlesex, United Kingdom HAl lBD",
+          "primaryFunction": "Sales Offices"
+        },
+        {
+          "location": "Koanaa Healthcare Limited Uk",
+          "address": "SBAM0175, Service Block, Al Jazirah Al Hamra, Al Hamra Industrial Zone- FZ, Ras Al Khaimah, United Arab Emirates",
+          "primaryFunction": "Sales Offices"
+        },
+        {
+          "location": "Koanaa Healthcare International",
+          "address": "Calle Mallorca 272, 3rd Floor, 08037, Barcelona, Spain",
+          "primaryFunction": "Sales Offices"
+        },
+        {
+          "location": "Koanaa Healthcare Spain, S.L.",
+          "address": "668 Route 206, Ste C, Hillsborough, NJ 08844 USA",
+          "primaryFunction": "Sales Offices"
+        },
+        {
+          "location": "Pilnova Pharma, Inc",
+          "address": "1980, S. Easton Road, Suite 220, Doylestown PA, 18901 Bucks",
+          "primaryFunction": "Sales Offices"
+        }
+      ],
+      "site": "Plot No. 4A, Deosugur Industrial Area, Deosugur, Shaktinagar – 584 170. Karnataka, India."
     },
     "standards": [
       "Environment Protection Act",
@@ -220,7 +308,7 @@
           },
           {
             "target": "Plant & maintain native trees / plants annually on facility campuses",
-            "baseline": "",
+            "baseline": "FY 2022-23",
             "deadline": "FY 2022-23 onwards"
           },
           {
@@ -235,7 +323,7 @@
           },
           {
             "target": "Participate in community biodiversity / environmental restoration programmes",
-            "baseline": "",
+            "baseline": "FY 2025-26",
             "deadline": "FY 2025-26 onwards"
           }
         ]
@@ -275,7 +363,7 @@
           },
           {
             "target": "Conduct regular stake and ambient air monitoring",
-            "baseline": "",
+            "baseline": "FY 2022-23",
             "deadline": "FY 2022-23 onwards"
           }
         ]
@@ -375,7 +463,7 @@
           },
           {
             "target": "Complete climate scenario analysis (1.5°C and 4°C scenarios) for top-5 risk-exposed facilities",
-            "baseline": "",
+            "baseline": "FY 2022-23",
             "deadline": "FY 2028-29"
           }
         ]
@@ -547,6 +635,6 @@
       }
     ],
     "monitoring": "Shilpa Medicare Limited is committed to the continuous improvement of its environmental performance across all manufacturing facilities, R&D centers, offices, and warehouses. Environmental considerations are embedded into day-to-day operations with the aim of systematically reducing resource consumption, minimizing waste and air emissions, improving solvent recovery, and preventing pollution at source. Key environmental parameters including energy consumption, water usage, specific waste generation, air quality and stack emissions, GHG emissions (Scope 1, 2, and identified Scope 3 categories), biodiversity indicators, and regulatory compliance status are monitored at facility level on a regular basis and tracked against the quantitative targets set out in this Policy.\n\nKey Components of Continuous Improvement & Monitoring\n\nParameter Monitoring\n\nEnergy, water, waste, solvent recovery, air quality, effluent quality, GHG emissions, biodiversity, and regulatory compliance are tracked at each facility on a regular basis.\n\nInternal & External Audits\n\nPeriodic internal EHS audits and third-party environmental audits assess compliance status, identify improvement opportunities, and verify progress against targets.\n\nIncident Reporting & CAPA\n\nAll environmental incidents, near-misses, spills, and regulatory non-compliances are reported, investigated for root cause, and closed through the CAPA system.\n\nManagement Review\n\nEnvironmental performance data is reviewed by Senior Management at least annually to assess target achievement, resource adequacy, and policy effectiveness.\n\nBRSR & ESG Disclosure\n\nPerformance data is compiled and disclosed in the Company's Annual Report and Business Responsibility and Sustainability Report (BRSR) under SEBI LODR Regulations.",
-    "reviewMechanism": "This Environmental Responsibility Policy is reviewed at least once every year, or whenever triggered by significant changes in business operations, new or amended applicable environmental legislation, changes in regulatory requirements, material changes in manufacturing scale or technology, stakeholder expectations, or the occurrence of a significant environmental incident. The review is conducted by the EHS & Sustainability Head in consultation with Senior Management and relevant facility heads.\n\nEffective Date\n\n01st January 2025\n\nLast Review Date\n\n01 January 2026\n\nNext Review Date\n\n01 January 2027\n\nRevision Number\n\n1.0\n\nApproved by:\n\nManaging Director, Shilpa Medicare Limited (Group)"
+    "reviewMechanism": "This Environmental Responsibility Policy is reviewed at least once every year, or whenever triggered by significant changes in business operations, new or amended applicable environmental legislation, changes in regulatory requirements, material changes in manufacturing scale or technology, stakeholder expectations, or the occurrence of a significant environmental incident. The review is conducted by the EHS & Sustainability Head in consultation with Senior Management and relevant facility heads."
   }
 }

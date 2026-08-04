@@ -8,7 +8,30 @@
     "policyType": "environmental",
     "company": {
       "name": "R L Fine Chem Pvt. Ltd.",
-      "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092."
+      "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092.",
+      "sites": [
+        {
+          "location": "R L Fine Chem Pvt. Ltd (REFEX) – Head Office",
+          "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092.",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "R&D Centre",
+          "address": "RLFC House, C-10, Ist Cross, KSSIDC, Industrial Estate Yelahanka New Town Bengaluru - 560 064 Karnataka, India",
+          "primaryFunction": "Research and Development"
+        },
+        {
+          "location": "Hindupur Plant",
+          "address": "M/s RL FINE CHEM PRIVATE LIMITEDPlot No.165–182, APIIC Growth Centre, Thumakunta, Hindupur – 515 211, Sri Sathya Sai District, Andhra Pradesh, India",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Gauribidanur Plant",
+          "address": "R L Fine Chem Pvt. Ltd.Plot No IP-27-29, KIADB Industrial Area Ist Phase, Kudumalakunte Village Gauribidanur, Chikkaballapur Distt Karnataka - 561208",
+          "primaryFunction": "Manufacturing"
+        }
+      ],
+      "site": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092."
     },
     "standards": [
       "ISO 14001",
@@ -16,7 +39,7 @@
       "SA 8000"
     ],
     "declaration": {
-      "preface": "The objective of this Environmental Responsibility Policy is to establish a structured framework for managing environmental aspects arising from the operations, products, and services of R L Fine Chem Pvt. Ltd. The Company is committed to minimizing its environmental footprint, preventing pollution, conserving natural resources, enhancing resource efficiency, and complying with all applicable environmental laws and regulations.\n\nThrough this Policy, RLFC aims to:\n\nPromote sustainable manufacturing practices across all facilities and operations.\n\nReduce energy consumption and greenhouse gas emissions.\n\nOptimize water use and protect water resources.\n\nPrevent air, water, and soil pollution.\n\nEnsure environmentally sound management of chemicals, materials, and waste.\n\nFoster a culture of environmental awareness and accountability among employees, contractors, suppliers, and business partners.",
+      "preface": "The objective of this Environmental Responsibility Policy is to establish a structured framework for managing environmental aspects arising from the operations, products, and services of R L Fine Chem Pvt. Ltd. The Company is committed to minimizing its environmental footprint, preventing pollution, conserving natural resources, enhancing resource efficiency, and complying with all applicable environmental laws and regulations.\n\nThrough this Policy, RLFC aims to:\n\nPromote sustainable manufacturing practices across all facilities and operations.",
       "declaration": "I hereby acknowledge my commitment to adhere to the Environmental Responsibility Policy and contribute towards the organization’s environmental objectives and sustainability goals.",
       "scope": "This Policy applies to all operations of R L Fine Chem Pvt. Ltd., including its Registered Office, Corporate Office, Manufacturing Plants, laboratories and all associated business activities. It covers all permanent, temporary, and contract employees across all functions, as well as suppliers, contractors, service providers, and other stakeholders directly or indirectly associated with the Company."
     },

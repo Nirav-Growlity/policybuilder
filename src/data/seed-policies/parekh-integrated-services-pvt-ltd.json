@@ -8,7 +8,80 @@
     "policyType": "environmental",
     "company": {
       "name": "Parekh Integrated Services Pvt. Ltd. (PISPL)",
-      "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+      "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "BOM 2",
+          "address": "BOM 2 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 10, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 3",
+          "address": "BOM 3 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 6, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 4",
+          "address": "BOM 4 LC, Parekh Integrated Services Pvt. Ltd., Warehouse 7B, BGR Logistics Park, Village:-Vahuli, Padgha, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "CCU 1",
+          "address": "CCU 1 LC, Parekh Integrated Services Pvt. Ltd., Co. Mayur Ply Pvt. Ltd., Serampore, NH-2, Old Delhi Road, Belumlki, Sheoraphuli, Hooghly- 712223, West Bengal. Land mark: Belumore, Opp Royal Hotel.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "DEL 1",
+          "address": "DEL 1 LC, Parekh Integrated Services Pvt. Ltd., Village Bhangrola, Sector M 12, Manesar, Dist: Gurugram, Haryana 122505",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 2",
+          "address": "MAA 2 LC, Parekh Integrated Services Pvt. Ltd., A-07 Block, M/s RAR Retail and Infra LLP, Chinnambedu Village, Ponneri Taluk, Thiruvallur District, Tamil Nadu 601206",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 3",
+          "address": "MAA 3 LC, Parekh E-Com and Warehousing Services Pvt. Ltd., 117/3C and 3D, Padmavathi Garden, Numbal, Thiruverkadu P.O., Chennai, Tiruvallur, Tamil Nadu 600071",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BLR 2",
+          "address": "BLR 2, Parekh Integrated Services Pvt. Ltd., C/o Siemens Healthineers, Survey No. - 121/1, 121/2, Dandupalya Village, Kasaba Hobli, Hoskote - Kadapa Highway, Hoskote Taluk, Bangalore-562114",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "TVM 1",
+          "address": "TVM 1 LC, Parekh Integrated Services Pvt. Ltd., Rajadhani Warehouse, Behind Popular Tata Motors, Pallichal P.O, Trivandrum, Kerala 695020",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "South Stock Points",
+          "address": "Bengaluru, Chennai, Cochin, Coimbatore, Hubli, Hyderabad, Madurai, Mangalore, Trichy, Trivandrum, Vellore, Vijayawada",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "West Stock Points",
+          "address": "Ahmedabad, Aurangabad, Baroda, Goa, Nagpur, Pune, Rajkot, Surat",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "East Stock Points",
+          "address": "Chandrasekharpur, Guwahati, Indore, Jabalpur, Kolkata, Patna, Raipur, Ranchi",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "North Stock Points",
+          "address": "Chandigarh, Dehradun, Dharuhera, Jaipur, Jalandhar, Jodhpur, Karnal, Lucknow, Ludhiana, Srinagar",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "site": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
     },
     "standards": [
       "Indian Green Building Council (IGBC)",
@@ -54,19 +127,27 @@
         "We strive to embed energy conservation into daily operations through employee awareness and engagement.",
         "Increase the use of renewable energy within warehouse operations by expanding existing rooftop solar infrastructure and optimizing its utilization to reduce dependence on conventional energy sources.",
         "We are committed to monitoring and managing greenhouse gas emissions in a structured and transparent manner.",
-        "We will prioritize procurement of energy-efficient equipment across all facilities by selecting high-efficiency and low-energy consumption alternatives."
+        "We will prioritize procurement of energy-efficient equipment across all facilities by selecting high-efficiency and low-energy consumption alternatives.",
+        "We strive to align our logistics operations with low-carbon practices over time by optimizing routes and adopting cleaner transportation methods.",
+        "We aim to incorporate sustainability considerations into all infrastructure expansion decisions by evaluating environmental impact and adopting green building practices."
       ],
       "Resource and Waste Optimization": [
         "We commit to optimizing material usage and minimizing waste generation across operations by improving material planning and reducing excess consumption.",
         "We will promote recycling, reuse, and responsible disposal practices by implementing structured waste management programs and awareness initiatives.",
         "We strive to ensure safe handling and storage of all chemicals through proper labelling, training, and adherence to safety protocols.",
-        "We will implement waste segregation at source across all facilities by providing designated bins and clear segregation guidelines."
+        "We will implement waste segregation at source across all facilities by providing designated bins and clear segregation guidelines.",
+        "We are committed to full compliance with waste management regulations by adhering to applicable laws and conducting regular compliance checks.",
+        "We strive to strengthen partnerships with authorized recycling vendors by engaging certified agencies and monitoring their performance.",
+        "We aim to maintain complete transparency in hazardous waste handling by ensuring proper documentation and reporting practices.",
+        "We will continuously improve waste management systems and practices through regular reviews and adoption of best practices."
       ],
       "Water Stewardship": [
         "We commit to using water responsibly and reducing consumption across all operations by implementing efficient usage practices and conservation measures.",
         "Strengthen water conservation practices within warehouse operations by maintaining and optimizing the existing rainwater harvesting system, and implementing reuse mechanisms supported by appropriate infrastructure and monitoring systems.",
         "We aim to regularly monitor water consumption and identify improvement opportunities through periodic tracking and analysis.",
-        "We will promote reuse and recycling of water wherever operationally feasible by implementing treatment and reuse systems."
+        "We will promote reuse and recycling of water wherever operationally feasible by implementing treatment and reuse systems.",
+        "Incorporate water-efficient systems in warehouse facility designs by implementing low-flow and sensor-based fixtures, dual-flush systems, rainwater harvesting integration, greywater reuse, and leak detection with efficient planning practices.",
+        "We will encourage employees to adopt responsible water usage practices through training and awareness programs."
       ]
     },
     "quantitative": [
@@ -91,12 +172,12 @@
           {
             "target": "Implement dust control measures in all warehouse facilities",
             "baseline": "FY 2022–23",
-            "deadline": "FY 2024–25"
+            "deadline": "2024–25"
           },
           {
             "target": "Train all drivers in eco-driving practices",
             "baseline": "FY 2022–23",
-            "deadline": "FY 2024–25"
+            "deadline": "2024–25"
           },
           {
             "target": "Conduct annual air quality monitoring at major facilities",
@@ -135,8 +216,8 @@
         "targets": [
           {
             "target": "50% of power consumption to be sourced from on-site solar photovoltaic (PV) systems",
-            "baseline": "ongoing",
-            "deadline": "ongoing"
+            "baseline": "N/A",
+            "deadline": "N/A"
           },
           {
             "target": "100% of air conditioning units comply with ECBC 2017 (or latest) efficiency standards",
@@ -154,14 +235,24 @@
             "deadline": "2029-30"
           },
           {
-            "target": "Achieve a 5% reduction in electricity consumption intensity",
+            "target": "100% of plumbing pumps and motors comply with ECBC 2017 (or latest) efficiency standards",
+            "baseline": "FY 2022-23",
+            "deadline": "2029-30"
+          },
+          {
+            "target": "5% reduction in electricity consumption intensity",
             "baseline": "FY 2022–23",
             "deadline": "FY 2029-30"
           },
           {
-            "target": "Ensure 100% LED lighting coverage across all facilities",
-            "baseline": "FY 2022–23",
-            "deadline": "FY 2024–25"
+            "target": "100% LED lighting coverage across all facilities",
+            "baseline": "FY 2022-23",
+            "deadline": "2024–25"
+          },
+          {
+            "target": "Source at least 10% of total energy from renewable sources",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
           },
           {
             "target": "Reduce GHG emissions Scope 1, 2 and 3 by 15%",
@@ -171,6 +262,21 @@
           {
             "target": "Reduce overall carbon intensity by 5%",
             "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct energy audits at all major facilities at least once every 2 years",
+            "baseline": "FY 2029-30",
+            "deadline": "ongoing"
+          },
+          {
+            "target": "Train at least 90% of relevant employees on energy conservation and GHG management practices",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 5% improvement in HVAC/cold storage energy efficiency",
+            "baseline": "FY 2022-23",
             "deadline": "FY 2029-30"
           }
         ]
@@ -189,18 +295,38 @@
             "deadline": "2026-27"
           },
           {
-            "target": "Achieve 100% waste segregation at source",
+            "target": "At least 20% of materials procured contain recycled content as per industry norms",
+            "baseline": "N/A",
+            "deadline": "N/A"
+          },
+          {
+            "target": "100% of engineered wood products are free from added urea formaldehyde",
             "baseline": "FY 2022-23",
-            "deadline": "FY 2024–25"
+            "deadline": "2029–30"
+          },
+          {
+            "target": "At least 50% of wood used is sourced as salvaged wood, certified wood (FSC/PEFC), rapidly renewable, or urea-formaldehyde-free composite wood",
+            "baseline": "FY 2022-23",
+            "deadline": "2029–30"
+          },
+          {
+            "target": "100% waste segregation at source",
+            "baseline": "FY 2022-23",
+            "deadline": "2024–25"
           },
           {
             "target": "Recycle or reuse at least 70% of non-hazardous waste",
-            "baseline": "FY 2022–23",
+            "baseline": "FY 2022-23",
             "deadline": "FY 2029-30"
           },
           {
+            "target": "100% disposal of hazardous waste through authorized vendors",
+            "baseline": "FY 2023–24",
+            "deadline": "ongoing"
+          },
+          {
             "target": "Reduce damaged or expired inventory waste by 5%",
-            "baseline": "FY 2022–23",
+            "baseline": "FY 2022-23",
             "deadline": "FY 2029-30"
           }
         ]
@@ -214,7 +340,7 @@
             "deadline": "2026-27"
           },
           {
-            "target": "Achieve a 5% reduction in water consumption intensity",
+            "target": "5% reduction in water consumption intensity",
             "baseline": "FY 2022–23",
             "deadline": "FY 2029-30"
           },
@@ -224,12 +350,37 @@
             "deadline": "FY 2029-30"
           },
           {
+            "target": "Ensure all identified leaks are rectified within 48 hours",
+            "baseline": "FY 2023–24",
+            "deadline": "ongoing"
+          },
+          {
             "target": "Reuse at least 10% of treated water",
             "baseline": "FY 2022-23",
             "deadline": "FY 2029-30"
           },
           {
+            "target": "Track water usage annually across all major facilities",
+            "baseline": "FY 2023–24",
+            "deadline": "ongoing"
+          },
+          {
             "target": "Install water meters in 80% of facilities",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce potable water usage in non-essential activities by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct annual awareness programs on water conservation",
+            "baseline": "FY 2029-30",
+            "deadline": "ongoing"
+          },
+          {
+            "target": "Reduce water usage by 5%",
             "baseline": "FY 2022-23",
             "deadline": "FY 2029-30"
           }

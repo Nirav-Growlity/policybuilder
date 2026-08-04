@@ -13,6 +13,7 @@ const initialPolicy = (): Policy => ({
     name: "",
     industry: "",
     site: "",
+    sites: [],
     docNum: "",
     revNum: "01",
     effectiveDate: "",
@@ -89,7 +90,7 @@ export const useBuilder = create<BuilderState>()(
       reset: () => set({ policy: initialPolicy(), step: "setup" }),
       loadSample: () => {
         const sample = makeSamplePolicy();
-        set({ policy: sample, step: "export" });
+        set({ policy: sample, step: "setup" });
       },
     }),
     {
@@ -132,6 +133,13 @@ export function makeSamplePolicy(): Policy {
       name: "Acme Specialty Chemicals Pvt. Ltd.",
       industry: "Specialty chemicals manufacturing",
       site: "Plot 14, Sector 4, IMT Manesar, Gurugram - 122051, Haryana, India",
+      sites: [
+        {
+          location: "Manesar Plant",
+          address: "Plot 14, Sector 4, IMT Manesar, Gurugram - 122051, Haryana, India",
+          primaryFunction: "Manufacturing & R&D",
+        },
+      ],
       docNum: "ASC-ENV-001",
       revNum: "01",
       effectiveDate: "2025-01-15",
@@ -239,6 +247,13 @@ export function makeTemplatePolicy(): Policy {
       name: "[Company Name]",
       industry: "[Industry]",
       site: "[Site Address]",
+      sites: [
+        {
+          location: "[Location / Unit Name]",
+          address: "[Site Address]",
+          primaryFunction: "[Primary Function]",
+        },
+      ],
       docNum: "[DOC-001]",
       revNum: "[01]",
       effectiveDate: "[YYYY-MM-DD]",

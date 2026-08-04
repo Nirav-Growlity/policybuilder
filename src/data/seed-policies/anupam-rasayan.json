@@ -8,7 +8,45 @@
     "policyType": "environmental",
     "company": {
       "name": "Anupam Rasayan India Limited",
-      "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230"
+      "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+      "sites": [
+        {
+          "location": "Sachin Unit 1",
+          "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 2",
+          "address": "Plot No. 701, 2419/1, 2419/2, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 3",
+          "address": "Plot No. 8104 and 8106, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 6",
+          "address": "Plot No. 2423 and 2425, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "R&D and Manufacturing"
+        },
+        {
+          "location": "Jhagadia Unit 4",
+          "address": "Plot No. 907/3, 907/4, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Jhagadia Unit 5",
+          "address": "Plot No. 905/1, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Tanfac Industries Limited",
+          "address": "Plot No. 14, SIPCOT Industrial Complex, Kudikadu, Cuddalore – 607005, Tamil Nadu",
+          "primaryFunction": "Fluorochemical Manufacturing"
+        }
+      ],
+      "site": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230"
     },
     "standards": [
       "UN Global Compact",
@@ -45,6 +83,7 @@
       ],
       "Water Management": [
         "We recognize water as a precious natural resource and are committed to responsible water management across all manufacturing sites.",
+        "Our goal is to achieve Zero Liquid Discharge (ZLD) and progress toward water-positive operations by maximizing wastewater recycling and reuse.",
         "Continuous improvements in water-efficient processes, rainwater harvesting, and wastewater treatment systems are implemented to reduce dependency on freshwater sources and safeguard local ecosystems."
       ],
       "Air Pollution Control": [
@@ -55,27 +94,34 @@
       "Materials, Chemicals, and Waste Management": [
         "Our material management approach focuses on sustainable sourcing, safe handling, and efficient utilization of all raw materials and chemicals.",
         "We promote green chemistry principles by substituting hazardous substances with safer alternatives wherever feasible.",
-        "Waste is segregated at source, treated responsibly, and recycled to minimize landfill disposal."
+        "Waste is segregated at source, treated responsibly, and recycled to minimize landfill disposal.",
+        "Hazardous waste is managed in full compliance with the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016."
       ],
       "Biodiversity Conservation": [
         "Anupam Rasayan acknowledges the importance of preserving biodiversity in and around its operational areas.",
         "We ensure that all business activities avoid impacts on ecologically sensitive regions.",
-        "Extensive greenbelt development, native species plantation, and habitat restoration programs are implemented to enhance the natural environment."
+        "Extensive greenbelt development, native species plantation, and habitat restoration programs are implemented to enhance the natural environment.",
+        "Through these initiatives, we contribute to local biodiversity conservation and environmental balance."
       ],
       "Customer Health and Safety": [
         "We prioritize customer and end-user safety by providing comprehensive Material Safety Data Sheets (MSDS) and clear handling guidelines for all our products.",
-        "All chemicals are designed and tested in accordance with REACH, GHS, and CLP standards."
+        "All chemicals are designed and tested in accordance with REACH, GHS, and CLP standards.",
+        "Our technical support teams provide training and awareness programs to ensure that customers and distributors manage and store products safely throughout their use cycle."
       ],
       "Product Use": [
         "We are committed to developing high-quality specialty chemicals that promote sustainable industrial, agricultural, and pharmaceutical applications.",
-        "Product formulations are designed to be safer, efficient, and compliant with environmental regulations."
+        "Product formulations are designed to be safer, efficient, and compliant with environmental regulations.",
+        "Our R&D teams continuously work on creating environmentally friendly molecules that reduce downstream emissions and enhance process safety for customers."
       ],
       "Product End of Life": [
         "Anupam Rasayan actively promotes a circular economy approach by encouraging customers and partners to manage chemical waste responsibly at the end of the product’s life cycle.",
-        "We engage in product stewardship initiatives, including take-back programs, solvent recovery, and resource regeneration projects."
+        "We engage in product stewardship initiatives, including take-back programs, solvent recovery, and resource regeneration projects.",
+        "These efforts aim to reduce waste generation, improve material reuse, and extend the lifecycle of valuable resources."
       ],
       "Environmental Services and Advocacy": [
-        "Beyond our internal operations, Anupam Rasayan actively collaborates with industry associations, academic institutions, and government agencies to promote environmental awareness and sustainable development."
+        "Beyond our internal operations, Anupam Rasayan actively collaborates with industry associations, academic institutions, and government agencies to promote environmental awareness and sustainable development.",
+        "We participate in forums, workshops, and community initiatives that encourage resource conservation, waste reduction, and renewable energy adoption.",
+        "Through these advocacy efforts, we aim to foster a culture of environmental responsibility within and beyond the organization."
       ]
     },
     "quantitative": [
@@ -194,7 +240,7 @@
         "targets": [
           {
             "target": "Develop and commercialize five new green chemistry molecules annually",
-            "baseline": "2022",
+            "baseline": "2023",
             "deadline": "2027"
           },
           {
@@ -454,7 +500,7 @@
         "duty": "Support company goals for resource conservation, safety, and zero pollution."
       }
     ],
-    "monitoring": "Track key environmental KPIs, including energy use, GHG emissions, water consumption, and waste generation at all sites.\n\nConduct regular internal audits and site inspections to ensure environmental compliance and identify improvement areas.",
+    "monitoring": "1. Environmental Performance Monitoring\n\nTrack key environmental KPIs, including energy use, GHG emissions, water consumption, and waste generation at all sites.\n\nConduct regular internal audits and site inspections to ensure environmental compliance and identify improvement areas.\n\n2.  Reporting Framework\n\nPublish an Annual Sustainability Report aligned with GRI Standards and disclose progress on environmental targets.\n\nShare periodic performance reports with the management and sustainability committee for review and action.\n\n3. Compliance and Certification\n\nMaintain ISO 14001:2015 certification across all facilities through regular audits and compliance checks.\n\nEngage third-party auditors for independent verification of environmental performance and legal adherence.",
     "reviewMechanism": "The Sustainability Committee, in coordination with the Environmental, Health & Safety (EHS) Department, shall be responsible for conducting the annual review of this Environmental Management Policy.\n\nThe review will evaluate the policy’s effectiveness, progress toward environmental targets, and compliance with legal and organizational requirements.\n\nNecessary updates or revisions arising from operational changes, new regulations, or stakeholder feedback will be approved by the Board of Directors and communicated across all sites to ensure ongoing alignment with Anupam Rasayan’s sustainability commitments."
   }
 }

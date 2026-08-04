@@ -8,7 +8,15 @@
     "policyType": "environmental",
     "company": {
       "name": "Kraftwares (India) Pvt. Ltd.",
-      "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India."
+      "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India.",
+      "sites": [
+        {
+          "location": "Kraftwares (India) Pvt. Ltd.",
+          "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India.",
+          "primaryFunction": "Manufacturing"
+        }
+      ],
+      "site": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India."
     },
     "standards": [
       "ISO 14001 Environmental Management System",
@@ -38,7 +46,7 @@
       "Waste Management": [
         "Reduce material consumption through efficient resource use, reuse of scrap materials, and process optimization.",
         "Ensure safe handling and disposal of chemicals and waste through segregation systems, compliant storage, and authorized treatment and disposal methods.",
-        "Achieve 15% recovery of total waste generated, including metal scrap, packaging waste, and other reusable industrial materials, by year 2030."
+        "Promote responsible end-of-life management through recycling, material recovery, and collaboration with authorized recyclers."
       ],
       "Product Safety": [
         "Ensure product safety by complying with applicable safety standards, quality controls, and risk prevention measures during design and manufacturing.",
@@ -103,17 +111,7 @@
             "deadline": "2030"
           },
           {
-            "target": "Achieve a 10% reduction in resource consumption associated with product use and maintenance",
-            "baseline": "2022",
-            "deadline": "2030"
-          },
-          {
-            "target": "Recover 30% of stainless steel products at end-of-life through take-back, recycling initiatives and partnerships with authorized recycling facilities",
-            "baseline": "2022",
-            "deadline": "2030"
-          },
-          {
-            "target": "Partner with at 3 authorized recyclers agencies for product end-of-life management",
+            "target": "Achieve 15% recovery of total waste generated, including metal scrap, packaging waste, and other reusable industrial materials",
             "baseline": "2022",
             "deadline": "2030"
           }
@@ -128,7 +126,7 @@
             "deadline": "2030"
           },
           {
-            "target": "Achieve 95% customer satisfaction score on product safety and quality through customer feedback surveys forms",
+            "target": "Achieve 95% customer satisfaction score on product safety and quality through customer feedback surveys",
             "baseline": "2022",
             "deadline": "2030"
           },
@@ -148,7 +146,7 @@
             "deadline": "2030"
           },
           {
-            "target": "Organize two environmental awareness campaigns to promote responsible resource use and environmental protection among employees and local communities",
+            "target": "Organize two environmental awareness campaigns",
             "baseline": "2022",
             "deadline": "2030"
           }

@@ -8,7 +8,20 @@
     "policyType": "environmental",
     "company": {
       "name": "CTX Lifesciences Pvt. Ltd.",
-      "address": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Surat – 394230, Gujarat, India"
+      "address": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Surat – 394230, Gujarat, India",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Surat – 394230, Gujarat, India",
+          "primaryFunction": "Corporate Headquarters"
+        },
+        {
+          "location": "Factory",
+          "address": "Block Nos. 251/B, 252/B, 253, 254, 255, 256, 258/B, 276, 277, 278/P, 279, 280, 281, 282, 283/P, 284/P, Sachin GIDC, Near Gabheni Chokdi, Sachin, Surat – 394230, Gujarat, India",
+          "primaryFunction": "Manufacturing of Active Pharmaceutical Ingredients (APIs) and intermediates"
+        }
+      ],
+      "site": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Surat – 394230, Gujarat, India"
     },
     "standards": [
       "ISO 14001",
@@ -108,7 +121,7 @@
             "deadline": "FY 2029–30"
           },
           {
-            "target": "Reduce total energy consumption by 25% compared to the FY 2022–23 baseline",
+            "target": "Reduce total energy consumption by 25%",
             "baseline": "FY 2022–23",
             "deadline": "FY 2029–30"
           },
@@ -128,7 +141,7 @@
             "deadline": "FY 2029–30"
           },
           {
-            "target": "Achieve a 30% reduction in air pollutant emissions compared to FY 2022–23",
+            "target": "Achieve a 30% reduction in air pollutant emissions",
             "baseline": "FY 2022–23",
             "deadline": "FY 2029–30"
           },
@@ -188,7 +201,7 @@
             "deadline": "FY 2029–30"
           },
           {
-            "target": "Maintain 100% compliance with effluent discharge standards regularly",
+            "target": "Maintain 100% compliance with effluent discharge standards",
             "baseline": "N/A",
             "deadline": "N/A"
           }
@@ -203,7 +216,7 @@
             "deadline": "FY 2029–30"
           },
           {
-            "target": "Implement 2 habitat restoration projects in collaboration with community and environmental partners",
+            "target": "Implement 2 habitat restoration projects",
             "baseline": "N/A",
             "deadline": "FY 2029–30"
           },
@@ -243,7 +256,7 @@
             "deadline": "FY 2029–30"
           },
           {
-            "target": "Ensure provision for 100% safe disposal of expired or off-spec products through authorized waste management facilities",
+            "target": "Ensure provision for 100% safe disposal of expired or off-spec products",
             "baseline": "N/A",
             "deadline": "FY 2029–30"
           },

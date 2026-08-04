@@ -1,14 +1,40 @@
 export type PolicyType = "environmental";
 
+export interface Site {
+  id?: string;
+  location?: string;
+  address: string;
+  primaryFunction?: string;
+}
+
 export interface Company {
   name: string;
   industry: string;
-  site: string;
+  site?: string;
+  sites?: Site[];
   docNum: string;
   revNum: string;
   effectiveDate: string;
   reviewDate: string;
   approver: string;
+}
+
+export function getCompanySites(company?: Company): Site[] {
+  if (!company) return [];
+  if (Array.isArray(company.sites) && company.sites.length > 0) {
+    return company.sites;
+  }
+  const legacyAddr = company.site || (company as any)?.address;
+  if (legacyAddr && String(legacyAddr).trim()) {
+    return [
+      {
+        location: company.name || "Main Site",
+        address: String(legacyAddr).trim(),
+        primaryFunction: "Operating Facility",
+      },
+    ];
+  }
+  return [];
 }
 
 export interface Declaration {

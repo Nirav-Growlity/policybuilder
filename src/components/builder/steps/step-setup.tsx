@@ -7,7 +7,8 @@ import { Panel, Badge, InfoBar } from "@/components/ui/panel";
 import { Field, Input, Textarea } from "@/components/ui/input";
 import { Tag } from "@/components/ui/tag";
 import { Icon } from "@/components/icons";
-import { Building2, Award, Sparkles, Info as InfoIcon } from "lucide-react";
+import { getCompanySites, type Site } from "@/lib/types";
+import { Building2, Award, Sparkles, Info as InfoIcon, MapPin, Plus, Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { Modal } from "@/components/ui/modal";
 import { PolicyPreview } from "@/components/policy/policy-preview";
@@ -76,14 +77,149 @@ export function StepSetup() {
             />
           </Field>
         </div>
-        <div className="mt-4">
-          <Field label="Site address">
-            <Input
-              value={co.site || ""}
-              onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, site: e.target.value } }))}
-              placeholder="e.g. Plot 14, Sector 4, IMT Manesar, Gurugram - 122051, Haryana, India"
-            />
-          </Field>
+        <div className="mt-6 pt-5 border-t border-[var(--color-line)] space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h4 className="text-[13.5px] font-semibold text-[var(--color-ink)] flex items-center gap-1.5">
+                <MapPin size={15} className="text-[var(--color-forest)] shrink-0" />
+                Site Coverage / Operating Sites
+              </h4>
+              <p className="text-[12px] text-[var(--color-muted)] mt-0.5">
+                Add all units, facilities, R&D centers, or operating sites covered by this policy.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                const currentSites = getCompanySites(co);
+                const updated = [
+                  ...currentSites,
+                  { location: "", address: "", primaryFunction: "" },
+                ];
+                updatePolicy((p) => ({
+                  company: {
+                    ...p.company,
+                    sites: updated,
+                    site: updated[0]?.address || "",
+                  },
+                }));
+              }}
+              className="inline-flex items-center gap-1.5 h-8 px-3.5 rounded-lg bg-[var(--color-forest)] text-white text-[12px] font-medium hover:bg-[var(--color-forest-hover)] transition-colors shadow-sm self-start sm:self-auto cursor-pointer"
+            >
+              <Plus size={14} /> Add site row
+            </button>
+          </div>
+
+          {getCompanySites(co).length === 0 ? (
+            <div className="p-4 text-center border border-dashed border-[var(--color-line-2)] rounded-xl bg-[var(--color-paper)] text-[var(--color-muted)] text-[12.5px]">
+              No sites added yet. Click <strong>&quot;Add site row&quot;</strong> to specify operational locations.
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <div className="hidden md:grid grid-cols-12 gap-3 px-1 text-[11px] font-semibold uppercase tracking-wider text-[var(--color-muted)]">
+                <div className="col-span-3">Location / Unit</div>
+                <div className="col-span-5">Address</div>
+                <div className="col-span-3">Primary Function</div>
+                <div className="col-span-1 text-center">Action</div>
+              </div>
+
+              {getCompanySites(co).map((siteItem, idx) => {
+                const sitesList = getCompanySites(co);
+                return (
+                  <div
+                    key={idx}
+                    className="grid grid-cols-1 md:grid-cols-12 gap-2.5 p-3 rounded-xl bg-[var(--color-cream-2)]/50 border border-[var(--color-line)] items-center"
+                  >
+                    <div className="col-span-12 md:col-span-3">
+                      <label className="text-[10px] uppercase font-semibold text-[var(--color-muted)] block mb-1 md:hidden">
+                        Location / Unit
+                      </label>
+                      <Input
+                        value={siteItem.location || ""}
+                        onChange={(e) => {
+                          const updated = sitesList.map((s, i) =>
+                            i === idx ? { ...s, location: e.target.value } : s
+                          );
+                          updatePolicy((p) => ({
+                            company: {
+                              ...p.company,
+                              sites: updated,
+                              site: updated[0]?.address || "",
+                            },
+                          }));
+                        }}
+                        placeholder="e.g. Sachin Unit 1"
+                        className="bg-white text-[12.5px]"
+                      />
+                    </div>
+                    <div className="col-span-12 md:col-span-5">
+                      <label className="text-[10px] uppercase font-semibold text-[var(--color-muted)] block mb-1 md:hidden">
+                        Address
+                      </label>
+                      <Input
+                        value={siteItem.address || ""}
+                        onChange={(e) => {
+                          const updated = sitesList.map((s, i) =>
+                            i === idx ? { ...s, address: e.target.value } : s
+                          );
+                          updatePolicy((p) => ({
+                            company: {
+                              ...p.company,
+                              sites: updated,
+                              site: updated[0]?.address || "",
+                            },
+                          }));
+                        }}
+                        placeholder="e.g. Plot No. 8109, GIDC Sachin, Surat, Gujarat"
+                        className="bg-white text-[12.5px]"
+                      />
+                    </div>
+                    <div className="col-span-12 md:col-span-3">
+                      <label className="text-[10px] uppercase font-semibold text-[var(--color-muted)] block mb-1 md:hidden">
+                        Primary Function
+                      </label>
+                      <Input
+                        value={siteItem.primaryFunction || ""}
+                        onChange={(e) => {
+                          const updated = sitesList.map((s, i) =>
+                            i === idx ? { ...s, primaryFunction: e.target.value } : s
+                          );
+                          updatePolicy((p) => ({
+                            company: {
+                              ...p.company,
+                              sites: updated,
+                              site: updated[0]?.address || "",
+                            },
+                          }));
+                        }}
+                        placeholder="e.g. Manufacturing Site"
+                        className="bg-white text-[12.5px]"
+                      />
+                    </div>
+                    <div className="col-span-12 md:col-span-1 flex justify-end md:justify-center">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const updated = sitesList.filter((_, i) => i !== idx);
+                          updatePolicy((p) => ({
+                            company: {
+                              ...p.company,
+                              sites: updated,
+                              site: updated[0]?.address || "",
+                            },
+                          }));
+                        }}
+                        className="p-1.5 rounded-lg text-[var(--color-muted)] hover:text-red-600 hover:bg-red-50 border border-transparent hover:border-red-200 transition-colors cursor-pointer"
+                        title="Delete site"
+                      >
+                        <Trash2 size={15} />
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
           <Field label="Document number">

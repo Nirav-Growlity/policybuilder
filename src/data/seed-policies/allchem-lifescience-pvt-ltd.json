@@ -8,7 +8,8 @@
     "policyType": "environmental",
     "company": {
       "name": "Allchem Lifescience Pvt. Ltd.",
-      "address": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India."
+      "address": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+      "site": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India."
     },
     "standards": [
       "cGMP",
@@ -141,11 +142,6 @@
         "targets": [
           {
             "target": "Increase green cover by planting 100 native trees annually",
-            "baseline": "2022",
-            "deadline": "2028"
-          },
-          {
-            "target": "Allocate 10% of facility land for eco-friendly landscaping",
             "baseline": "2022",
             "deadline": "2028"
           }

@@ -8,7 +8,20 @@
     "policyType": "environmental",
     "company": {
       "name": "Naxpar Pharma Pvt. Ltd.",
-      "address": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India."
+      "address": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India.",
+      "sites": [
+        {
+          "location": "Head office",
+          "address": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India.",
+          "primaryFunction": "Corporate headquarters"
+        },
+        {
+          "location": "Plant",
+          "address": "182, Village Gurumajra, Kishanpura, Tehsil Baddi, Dist. Solan – 174101. (H.P), India.",
+          "primaryFunction": "Manufacturing facility"
+        }
+      ],
+      "site": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India."
     },
     "standards": [],
     "declaration": {
@@ -242,17 +255,17 @@
           {
             "target": "Conduct 2 customer awareness or training programs on safe product handling and use",
             "baseline": "FY 2022–23",
-            "deadline": "FY 2029-30"
+            "deadline": "FY 2029–30"
           },
           {
             "target": "Maintain zero product recalls or regulatory actions related to customer health and safety annually",
             "baseline": "FY 2022–23",
-            "deadline": "FY 2029-30"
+            "deadline": "Ongoing"
           },
           {
             "target": "Ensure 100% of products have accurate labeling, hazard communication, and up-to-date SDS",
             "baseline": "FY 2022–23",
-            "deadline": "FY 2029-30"
+            "deadline": "FY 2029–30"
           }
         ]
       },
@@ -262,7 +275,7 @@
           {
             "target": "Conduct 3 training programs annually for employees on environmental and sustainability topics",
             "baseline": "FY 2022–23",
-            "deadline": "FY 2029-30"
+            "deadline": "Ongoing"
           },
           {
             "target": "Achieve 90% active employee participation in sustainability initiatives",

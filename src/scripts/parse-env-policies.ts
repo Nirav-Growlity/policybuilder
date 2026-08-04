@@ -67,6 +67,16 @@ CRITICAL INSTRUCTIONS FOR PARAGRAPHS:
 
 Schema format (Output ONLY valid JSON, no markdown blocks):
 {
+  "company": {
+    "address": "string (primary address if found)",
+    "sites": [
+      {
+        "location": "string (location/unit/facility name)",
+        "address": "string (full address)",
+        "primaryFunction": "string (function/activity)"
+      }
+    ]
+  },
   "declaration": {
     "preface_paragraphs": ["string array of verbatim paragraphs in preface/introduction/preamble"],
     "declaration_paragraphs": ["string array of verbatim paragraphs in policy declaration/statement/aims"],
@@ -148,6 +158,11 @@ async function main() {
       existing.policy = {
         ...existing.policy,
         policyType: "environmental",
+        company: {
+          ...existing.policy.company,
+          ...(data.company?.sites?.length ? { sites: data.company.sites } : {}),
+          ...(data.company?.address ? { address: data.company.address, site: data.company.address } : {}),
+        },
         declaration: {
           preface: joinParas(data.declaration?.preface_paragraphs, existing.policy.declaration?.preface),
           declaration: joinParas(data.declaration?.declaration_paragraphs, existing.policy.declaration?.declaration),

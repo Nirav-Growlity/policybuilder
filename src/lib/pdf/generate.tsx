@@ -7,7 +7,7 @@ import {
   pdf,
   Font,
 } from "@react-pdf/renderer";
-import type { Policy } from "../types";
+import { getCompanySites, type Policy } from "../types";
 import { SDG_DATA, POLICY_TYPE_META } from "../constants";
 import * as React from "react";
 
@@ -224,6 +224,7 @@ export async function generatePdf(policy: Policy): Promise<Buffer> {
 
 function PdfBody({ policy }: { policy: Policy }) {
   const co = policy.company;
+  const sites = getCompanySites(co);
   const tpl = policy.presentationTemplate || "standard";
   const isModern = policy.visualStyle === "modern";
 
@@ -298,16 +299,20 @@ function PdfBody({ policy }: { policy: Policy }) {
           <View wrap={false}>
             <Text style={styles.sectionTitle}>{title}</Text>
             <Text style={styles.paragraph}>{policy.declaration.scope}</Text>
-            {co.site && (
+            {sites.length > 0 && (
               <View style={styles.siteTable}>
                 <View style={[styles.tr, { backgroundColor: "#f3eee3" }]}>
-                  <Text style={[styles.td, { fontFamily: "Helvetica-Bold", width: "30%" }]}>Site</Text>
-                  <Text style={[styles.td, { fontFamily: "Helvetica-Bold" }]}>Address</Text>
+                  <Text style={[styles.td, { fontFamily: "Helvetica-Bold", width: "25%" }]}>Location</Text>
+                  <Text style={[styles.td, { fontFamily: "Helvetica-Bold", width: "50%" }]}>Address</Text>
+                  <Text style={[styles.td, { fontFamily: "Helvetica-Bold", width: "25%" }]}>Primary Function</Text>
                 </View>
-                <View style={styles.tr}>
-                  <Text style={[styles.td, { width: "30%", fontFamily: "Helvetica-Bold" }]}>{co.name}</Text>
-                  <Text style={styles.td}>{co.site}</Text>
-                </View>
+                {sites.map((st, i) => (
+                  <View key={i} style={styles.tr}>
+                    <Text style={[styles.td, { width: "25%", fontFamily: "Helvetica-Bold" }]}>{st.location || co.name || `Site ${i + 1}`}</Text>
+                    <Text style={[styles.td, { width: "50%" }]}>{st.address}</Text>
+                    <Text style={[styles.td, { width: "25%" }]}>{st.primaryFunction || "Operating Site"}</Text>
+                  </View>
+                ))}
               </View>
             )}
           </View>

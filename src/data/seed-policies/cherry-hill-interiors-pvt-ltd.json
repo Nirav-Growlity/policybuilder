@@ -8,7 +8,40 @@
     "policyType": "environmental",
     "company": {
       "name": "Cherry Hill Interiors Pvt. Ltd.",
-      "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020"
+      "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020.",
+      "sites": [
+        {
+          "location": "Cherry Hill Interiors Pvt. Ltd. (CHIPL)",
+          "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020.",
+          "primaryFunction": "Head Quarter"
+        },
+        {
+          "location": "Bengaluru (Branch Office)",
+          "address": "First floor, no 1, 14th a Main, Hall 2nd Stage, Bangaluru, Karnataka, India - 560008",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Chennai (Branch Office)",
+          "address": "GN Chetty Road, Anmol Palani, 88, T Nagar, Chennai, Tamil Nadu, India - 600017",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Pune (Branch Office)",
+          "address": "Liberty phase-2, Plot no. 323, Flat no.1, North Main Road, Koregaon Park, Pune, Maharashtra, India - 411001",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Hyderabad (Branch Office)",
+          "address": "Third floor, Sreshta Marvel, Sy no 136, Gachibowli Konadpur Main Road, Gachibowli, Hyderabad, Telangana, India - 500032",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Plot no. 81-a, sector-5, IMT Manesar, Gurugram, Haryana, India - 122050",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "site": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020."
     },
     "standards": [
       "USGBC",
@@ -69,7 +102,7 @@
             "deadline": "2028"
           },
           {
-            "target": "To lower the GHG emissions intensity by 5%",
+            "target": "lower the GHG emissions intensity by 5%",
             "baseline": "2022",
             "deadline": "2028"
           },
@@ -129,7 +162,7 @@
             "deadline": "2028"
           },
           {
-            "target": "To reduce hazardous waste generation intensity by 15% through recycling and recovery",
+            "target": "To reduce hazardous waste generation intensity by 15%",
             "baseline": "2022",
             "deadline": "2028"
           }
@@ -144,7 +177,7 @@
             "deadline": "2028"
           },
           {
-            "target": "To dedicate 5% of our outdoor office spaces to green landscaping",
+            "target": "dedicating 5% of our outdoor office spaces to green landscaping",
             "baseline": "2022",
             "deadline": "2028"
           }

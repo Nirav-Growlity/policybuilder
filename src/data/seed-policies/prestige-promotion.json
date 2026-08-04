@@ -8,7 +8,15 @@
     "policyType": "environmental",
     "company": {
       "name": "Prestige Promotion Verkaufsförderung & Werbeservice GmbH",
-      "address": "Borsigstraße 2, D-63755 Alzenau"
+      "address": "Borsigstraße 2, D-63755 Alzenau",
+      "sites": [
+        {
+          "location": "Prestige Promotion – Headquarters & Operations",
+          "address": "Borsigstraße 2, D-63755 Alzenau",
+          "primaryFunction": "Headquarters & Operations"
+        }
+      ],
+      "site": "Borsigstraße 2, D-63755 Alzenau"
     },
     "standards": [
       "ISO 14001",
@@ -30,7 +38,7 @@
     "declaration": {
       "preface": "This Environmental Policy sets out the binding environmental commitments of Prestige Promotion Verkaufsförderung & Werbeservice GmbH (hereinafter referred to as \"Prestige Promotion\"). It defines qualitative and quantitative objectives for the relevant environmental risk topics and forms the basis for systematic environmental management.\n\nThis policy applies to all sites, business processes, personnel and stakeholders of Prestige Promotion. The only  Prestige Promotion site is fully covered under this Environmental Policy and is located at:",
       "declaration": "This policy applies to all sites, business processes, personnel and stakeholders of Prestige Promotion. The only Prestige Promotion site is fully covered under this Environmental Policy and is located at: Prestige Promotion – Headquarters & Operations, Borsigstraße 2, D-63755 Alzenau. In addition, this policy applies to the following groups and processes: All business processes: secondary packaging, repackaging, contract packaging and storage of pharmaceuticals and medical devices. All employees (full-time, part-time, temporary workers). Contracted service providers and suppliers on company premises. Internal and external stakeholders (customers, authorities, inspection bodies).",
-      "scope": "This policy applies to all sites, business processes, personnel and stakeholders of Prestige Promotion. The only  Prestige Promotion site is fully covered under this Environmental Policy and is located at:\n\nIn addition, this policy applies to the following groups and processes: All business processes: secondary packaging, repackaging, contract packaging and storage of pharmaceuticals and medical devices All employees (full-time, part-time, temporary workers) Contracted service providers and suppliers on company premises Internal and external stakeholders (customers, authorities, inspection bodies)"
+      "scope": "In addition, this policy applies to the following groups and processes:\n\nAll business processes: secondary packaging, repackaging, contract packaging and storage of pharmaceuticals and medical devices\n\nAll employees (full-time, part-time, temporary workers)\n\nContracted service providers and suppliers on company premises\n\nInternal and external stakeholders (customers, authorities, inspection bodies)"
     },
     "focusAreas": [
       "Energy Consumption & Energy Efficiency",
@@ -76,7 +84,7 @@
           },
           {
             "target": "Share of green/renewable electricity (%)",
-            "baseline": "Baseline data will be collected from energy invoices",
+            "baseline": "100%",
             "deadline": "2027"
           },
           {
@@ -95,19 +103,19 @@
         "area": "Greenhouse Gas Emissions (GHG / CO₂)",
         "targets": [
           {
-            "target": "Scope 1 emissions (tCO₂e/year) – company vehicles, heating",
+            "target": "Scope 1 emissions (tCO₂e/year)",
             "baseline": "Initial report prepared",
-            "deadline": "2027"
+            "deadline": "2026"
           },
           {
-            "target": "Scope 2 emissions (tCO₂e/year) – electricity (market-based)",
+            "target": "Scope 2 emissions (tCO₂e/year)",
             "baseline": "Initial report prepared",
-            "deadline": "2027"
+            "deadline": "2026"
           },
           {
             "target": "Scope 3 emissions (tCO₂e/year)",
             "baseline": "Initial report prepared",
-            "deadline": "2027"
+            "deadline": "2026"
           },
           {
             "target": "GHG calculation methodology documented (GHG Protocol)",
@@ -117,7 +125,7 @@
           {
             "target": "CO₂ savings through repackaging processes (tCO₂e/year)",
             "baseline": "Calculation approach developed",
-            "deadline": "2027"
+            "deadline": "2026"
           }
         ]
       },
@@ -131,27 +139,27 @@
           },
           {
             "target": "Overall recycling rate (% of total waste)",
-            "baseline": "Collecting",
+            "baseline": "≥55%",
             "deadline": "2027"
           },
           {
             "target": "Share of cardboard recycling (%)",
-            "baseline": "Ongoing",
+            "baseline": "≥80%",
             "deadline": "2027"
           },
           {
             "target": "Share of plastic film recycling (%)",
-            "baseline": "Collecting",
+            "baseline": "≥60%",
             "deadline": "2027"
           },
           {
             "target": "Pharmaceutical waste properly disposed & documented (%)",
-            "baseline": "Ongoing",
+            "baseline": "100% with disposal certificates",
             "deadline": "2027"
           },
           {
             "target": "Residual waste per order (kg / 1,000 orders)",
-            "baseline": "Collecting",
+            "baseline": "≤5% below baseline",
             "deadline": "2027"
           },
           {
@@ -172,7 +180,7 @@
           {
             "target": "Safety Data Sheets (SDS) available for all substances",
             "baseline": "100% complete",
-            "deadline": "2027"
+            "deadline": "2026"
           },
           {
             "target": "Substitution reviews conducted & documented",
@@ -201,22 +209,22 @@
           },
           {
             "target": "Share of sustainable materials (FSC/PEFC/recycle) (%)",
-            "baseline": "Not started",
+            "baseline": "≥15%",
             "deadline": "2027"
           },
           {
             "target": "Material rejection rate (%)",
-            "baseline": "Collecting",
+            "baseline": "≤5% below baseline",
             "deadline": "2027"
           },
           {
             "target": "Suppliers with sustainability certification (%)",
-            "baseline": "Not started",
+            "baseline": "≥10% of key suppliers",
             "deadline": "2027"
           },
           {
             "target": "Paper consumption – administration (sheets or kg/year)",
-            "baseline": "Collecting",
+            "baseline": "≥10% below baseline",
             "deadline": "2027"
           }
         ]
@@ -227,17 +235,17 @@
           {
             "target": "Product quality complaints per year (customer-facing)",
             "baseline": "Complaints log reviewed; root cause analysis for all cases",
-            "deadline": "2027"
+            "deadline": "2026"
           },
           {
             "target": "GMP/GDP compliance rate – internal audits (%)",
             "baseline": "100% compliance; audit programme formalised",
-            "deadline": "2027"
+            "deadline": "2026"
           },
           {
             "target": "FMD serialisation compliance rate (%)",
             "baseline": "100% maintained; no regulatory notifications",
-            "deadline": "2027"
+            "deadline": "2026"
           },
           {
             "target": "Customer satisfaction score (annual survey)",
@@ -262,7 +270,7 @@
           {
             "target": "Customers and suppliers trained on environmental topics (%)",
             "baseline": "Training concept developed; first sessions delivered",
-            "deadline": "2027"
+            "deadline": "2026"
           },
           {
             "target": "Website sustainability / environmental policy page published",
@@ -309,6 +317,6 @@
       }
     ],
     "monitoring": "This Environmental Policy is subject to an annual review process to ensure that it is always current, complete and effective.",
-    "reviewMechanism": "This Environmental Policy is subject to an annual review process to ensure that it is always current, complete and effective."
+    "reviewMechanism": "Review for currency, new legal requirements, EcoVadis updates, achievement of objectives\n\nIntegration of environmental objectives into the annual QM management review (Chapter 5.7)\n\nRegular review of quantitative environmental targets by QMO/HSE\n\nIn the event of material changes (new legislation, incidents, site changes, EcoVadis feedback)\n\nRecording of review results and approval by management\n\nEnter actual values, assess target achievement, set new objectives for following year"
   }
 }

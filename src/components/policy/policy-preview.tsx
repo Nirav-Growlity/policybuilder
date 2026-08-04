@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import type { Policy } from "@/lib/types";
+import { getCompanySites, type Policy } from "@/lib/types";
 import { SDG_DATA, POLICY_TYPE_META } from "@/lib/constants";
 
 export function PolicyPreview({ policy }: { policy: Policy }) {
   const co = policy.company;
+  const sites = getCompanySites(co);
   const areas = policy.focusAreas.filter(Boolean);
   const qualEntries = Object.entries(policy.qualitative).filter(([, v]) => v && v.length);
   const quantEntries = policy.quantitative.filter((q) => q.targets && q.targets.some((t) => t.target));
@@ -67,20 +68,27 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
             {policy.declaration.scope.split(/\r?\n+/).map((p, i) => (
               <p key={i} className="text-[14px] leading-[1.8] text-[#1f1f1f] text-justify mb-3 last:mb-0">{p}</p>
             ))}
-            {co.site && (
+            {sites.length > 0 && (
               <div className="mt-4 border border-[#e5e1d3] rounded-md overflow-hidden font-sans">
-                <table className="w-full text-[12.5px]">
-                  <thead className="bg-[#f3eee3]">
+                <div className="bg-[#f3eee3] px-4 py-2 font-semibold text-[12px] text-[var(--color-ink)] border-b border-[#e5e1d3]">
+                  Site Coverage
+                </div>
+                <table className="w-full text-[12px]">
+                  <thead className="bg-[#fcfaf4]">
                     <tr>
-                      <th className="text-left font-semibold text-[var(--color-ink-2)] px-4 py-2.5 border-b border-[#e5e1d3]">Site</th>
-                      <th className="text-left font-semibold text-[var(--color-ink-2)] px-4 py-2.5 border-b border-[#e5e1d3]">Address</th>
+                      <th className="text-left font-semibold text-[var(--color-ink-2)] px-4 py-2 border-b border-[#e5e1d3] w-1/4">Location</th>
+                      <th className="text-left font-semibold text-[var(--color-ink-2)] px-4 py-2 border-b border-[#e5e1d3] w-1/2">Address</th>
+                      <th className="text-left font-semibold text-[var(--color-ink-2)] px-4 py-2 border-b border-[#e5e1d3] w-1/4">Primary Function</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="px-4 py-2.5 font-semibold">{co.name}</td>
-                      <td className="px-4 py-2.5">{co.site}</td>
-                    </tr>
+                    {sites.map((st, i) => (
+                      <tr key={i} className="border-b border-[#e5e1d3] last:border-b-0">
+                        <td className="px-4 py-2 font-medium">{st.location || co.name || `Site ${i + 1}`}</td>
+                        <td className="px-4 py-2">{st.address}</td>
+                        <td className="px-4 py-2 text-[var(--color-muted)]">{st.primaryFunction || "Operating Site"}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>

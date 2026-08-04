@@ -8,7 +8,20 @@
     "policyType": "environmental",
     "company": {
       "name": "DRT-Anthea Aroma Chemicals Pvt. Ltd.",
-      "address": "Unit I: Plot Nos. 49, 50 & 51 A, MIDC Dhatav, Roha, Dist. Raigad – 402116, Maharashtra, India; Unit II: Plot No. 51 A/1, Roha Industrial Area, Village Roth Budruk, Roha, Dist. Raigad – 402116, Maharashtra, India"
+      "address": "Plot Nos. 49, 50 & 51 A, MIDC Dhatav, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+      "sites": [
+        {
+          "location": "Unit I",
+          "address": "Plot Nos. 49, 50 & 51 A, MIDC Dhatav, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+          "primaryFunction": "Manufacturing of specialty aroma chemicals"
+        },
+        {
+          "location": "Unit II",
+          "address": "Plot No. 51 A/1, Roha Industrial Area, Village Roth Budruk, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+          "primaryFunction": "Manufacturing of specialty aroma chemicals"
+        }
+      ],
+      "site": "Plot Nos. 49, 50 & 51 A, MIDC Dhatav, Roha, Dist. Raigad – 402116, Maharashtra, India."
     },
     "standards": [
       "ISO 14001",

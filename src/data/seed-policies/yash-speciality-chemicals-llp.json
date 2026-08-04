@@ -8,7 +8,15 @@
     "policyType": "environmental",
     "company": {
       "name": "Yash Speciality Chemicals LLP",
-      "address": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India."
+      "address": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India.",
+      "sites": [
+        {
+          "location": "Yash Speciality Chemicals LLP",
+          "address": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India.",
+          "primaryFunction": "chemical manufacturing"
+        }
+      ],
+      "site": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India."
     },
     "standards": [],
     "declaration": {
@@ -112,11 +120,11 @@
           {
             "target": "Maintain 100% compliance with national ambient air quality standards for indoor and outdoor emissions",
             "baseline": "N/A",
-            "deadline": "Ongoing"
+            "deadline": "N/A"
           },
           {
             "target": "Reduce diesel vehicle use by 15%",
-            "baseline": "FY 2022-23",
+            "baseline": "N/A",
             "deadline": "FY 2029-30"
           }
         ]
@@ -131,7 +139,7 @@
           },
           {
             "target": "Reduce process waste and material losses by 10%",
-            "baseline": "FY 2022-23",
+            "baseline": "N/A",
             "deadline": "FY 2029-30"
           }
         ]
@@ -141,7 +149,7 @@
         "targets": [
           {
             "target": "Reduce water consumption across operations by 30%",
-            "baseline": "FY 2022-23",
+            "baseline": "N/A",
             "deadline": "FY 2029-30"
           },
           {
@@ -202,12 +210,12 @@
           {
             "target": "Conduct 2 customer safety awareness or communication initiative annually for key products",
             "baseline": "N/A",
-            "deadline": "Ongoing"
+            "deadline": "N/A"
           },
           {
             "target": "Ensure 100% of products have accurate labeling, hazard communication, and up-to-date Safety Data Sheets (SDS)",
             "baseline": "N/A",
-            "deadline": "Ongoing"
+            "deadline": "N/A"
           }
         ]
       },
@@ -217,7 +225,7 @@
           {
             "target": "Achieve 100% employee coverage under environmental, health, and safety training annually",
             "baseline": "N/A",
-            "deadline": "Ongoing"
+            "deadline": "N/A"
           },
           {
             "target": "Conduct 3 employee engagement initiatives related to sustainability or environmental performance",
@@ -237,7 +245,7 @@
           {
             "target": "Train 80% of key suppliers on sustainability practices and environmental management",
             "baseline": "N/A",
-            "deadline": "FY 2029-30"
+            "deadline": "FY 2029–30"
           }
         ]
       }

@@ -47,7 +47,14 @@ const SYSTEM_PROMPT = `You are a data extraction assistant. You will be provided
     "policyType": "environmental",
     "company": {
       "name": "Company Name",
-      "address": "Company Address (if not found, empty string)"
+      "address": "Primary Company Address (if not found, empty string)",
+      "sites": [
+        {
+          "location": "Location or Unit name (e.g. Sachin Unit 1, Head Office, Plant A)",
+          "address": "Full physical address of the site",
+          "primaryFunction": "Function or primary activity (e.g. Manufacturing Site, R&D, Corporate Office)"
+        }
+      ]
     },
     "standards": ["List of ISO or other standards mentioned, e.g. 'ISO 14001:2015'"],
     "declaration": {

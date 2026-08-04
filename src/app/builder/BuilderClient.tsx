@@ -53,7 +53,7 @@ export function BuilderClient() {
         if (data.template?.policy) {
           setPolicy(data.template.policy);
           push(`Loaded template: ${data.template.name}`, "success");
-          setStep("declaration");
+          setStep("setup");
         }
       } catch {
         // ignore
@@ -161,7 +161,7 @@ export function BuilderClient() {
         policyType: "environmental",
       }));
       push("Document parsed. Review the fields below.", "success");
-      setStep("declaration");
+      setStep("setup");
     } catch (e) {
       push("Could not parse file", "error");
     }
