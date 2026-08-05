@@ -5,8 +5,10 @@ import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
 import { Field, Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { BarChart3, Plus, RefreshCw, Sparkles, Trash2, Users, Wand2 } from "lucide-react";
+import { parseRequestedCount } from "@/lib/ai/prompts";
+import { BarChart3, Plus, RefreshCw, Sparkles, Trash2, Users } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 
 export function StepResponsibilities() {
@@ -14,13 +16,20 @@ export function StepResponsibilities() {
   const { push } = useToast();
   const [busy, setBusy] = React.useState<Record<string, boolean>>({});
 
-  const generateResp = async () => {
+  const generateResp = async (customPrompt?: string) => {
     setBusy((b) => ({ ...b, resp: true }));
     try {
-      const r = await callAI({ type: "responsibilities", policy });
+      const existing = policy.responsibilities;
+      const r = await callAI({ type: "responsibilities", policy, customPrompt, existingContent: existing });
       if (r.responsibilities) {
-        updatePolicy((p) => ({ responsibilities: r.responsibilities! }));
-        push("Responsibilities generated", "success");
+        const existingRolesLower = new Set(existing.map((x) => x.role.toLowerCase().trim()));
+        let uniqueNew = r.responsibilities.filter((x) => !existingRolesLower.has(x.role.toLowerCase().trim()));
+        const reqCount = parseRequestedCount(customPrompt);
+        if (reqCount && reqCount > 0) {
+          uniqueNew = uniqueNew.slice(0, reqCount);
+        }
+        updatePolicy((p) => ({ responsibilities: [...p.responsibilities, ...uniqueNew] }));
+        push(`Added ${uniqueNew.length} role responsibility details`, "success");
       }
     } catch {
       push("AI generation failed", "error");
@@ -29,10 +38,11 @@ export function StepResponsibilities() {
     }
   };
 
-  const generateMonitoring = async () => {
+  const generateMonitoring = async (customPrompt?: string) => {
     setBusy((b) => ({ ...b, monitoring: true }));
     try {
-      const r = await callAI({ type: "monitoring", policy });
+      const existing = policy.monitoring;
+      const r = await callAI({ type: "monitoring", policy, customPrompt, existingContent: existing });
       if (r.text) {
         updatePolicy((p) => ({ monitoring: r.text! }));
         push("Monitoring section generated", "success");
@@ -44,10 +54,11 @@ export function StepResponsibilities() {
     }
   };
 
-  const generateReview = async () => {
+  const generateReview = async (customPrompt?: string) => {
     setBusy((b) => ({ ...b, review: true }));
     try {
-      const r = await callAI({ type: "review", policy });
+      const existing = policy.reviewMechanism;
+      const r = await callAI({ type: "review", policy, customPrompt, existingContent: existing });
       if (r.text) {
         updatePolicy((p) => ({ reviewMechanism: r.text! }));
         push("Review section generated", "success");
@@ -88,9 +99,11 @@ export function StepResponsibilities() {
             <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={addRole}>
               Add role
             </Button>
-            <Button variant="ai" size="sm" icon={<Wand2 size={13} />} loading={busy.resp} onClick={generateResp}>
-              AI Generate
-            </Button>
+            <AIActionButton
+              label="AI Generate"
+              loading={busy.resp}
+              onGenerate={(prompt) => generateResp(prompt)}
+            />
           </>
         }
       >
@@ -102,15 +115,16 @@ export function StepResponsibilities() {
             >
               <Input
                 value={r.role}
-                onChange={(e) => updateRole(i, "role", e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRole(i, "role", e.target.value)}
                 placeholder="Role / department"
                 className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] font-semibold text-[13px]"
               />
-              <Input
+              <Textarea
+                rows={Math.max(2, Math.ceil((r.duty || "").length / 50))}
                 value={r.duty}
-                onChange={(e) => updateRole(i, "duty", e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateRole(i, "duty", e.target.value)}
                 placeholder="Responsibility description"
-                className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"
+                className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] resize-y"
               />
               <button
                 onClick={() => removeRole(i)}
@@ -129,14 +143,16 @@ export function StepResponsibilities() {
         description="How performance is tracked, reviewed and disclosed."
         icon={<BarChart3 size={17} strokeWidth={1.8} />}
         actions={
-          <Button variant="ai" size="sm" icon={<Wand2 size={13} />} loading={busy.monitoring} onClick={generateMonitoring}>
-            Generate
-          </Button>
+          <AIActionButton
+            label="AI Write"
+            loading={busy.monitoring}
+            onGenerate={(prompt) => generateMonitoring(prompt)}
+          />
         }
       >
         <Textarea
           value={policy.monitoring}
-          onChange={(e) => updatePolicy((p) => ({ monitoring: e.target.value }))}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy((p) => ({ monitoring: e.target.value }))}
           rows={5}
           placeholder="Describe how performance is monitored, which KPIs are tracked, review frequency, and how findings are reported..."
         />
@@ -147,14 +163,16 @@ export function StepResponsibilities() {
         description="When and how this policy is revisited."
         icon={<RefreshCw size={17} strokeWidth={1.8} />}
         actions={
-          <Button variant="ai" size="sm" icon={<Wand2 size={13} />} loading={busy.review} onClick={generateReview}>
-            Generate
-          </Button>
+          <AIActionButton
+            label="AI Write"
+            loading={busy.review}
+            onGenerate={(prompt) => generateReview(prompt)}
+          />
         }
       >
         <Textarea
           value={policy.reviewMechanism}
-          onChange={(e) => updatePolicy((p) => ({ reviewMechanism: e.target.value }))}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy((p) => ({ reviewMechanism: e.target.value }))}
           rows={5}
           placeholder="Describe how and when this policy is reviewed, who owns the review, and how changes are communicated..."
         />

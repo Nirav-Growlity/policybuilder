@@ -104,7 +104,7 @@ async function processFile(filePath, companyName) {
     try {
         console.log(`Sending to OpenAI (length: ${text.length})...`);
         const response = await openai.chat.completions.create({
-            model: "gpt-5.4-mini",
+            model: "gpt-5.6-luna",
             response_format: { type: "json_object" },
             messages: [
                 { role: "system", content: SYSTEM_PROMPT },

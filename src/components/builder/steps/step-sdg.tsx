@@ -4,9 +4,9 @@ import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { SDG_DATA } from "@/lib/constants";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
-import { Button } from "@/components/ui/button";
+import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { Globe2, Sparkles, Wand2, X } from "lucide-react";
+import { Globe2, Sparkles, X } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { clsx } from "clsx";
 
@@ -24,10 +24,10 @@ export function StepSDG() {
     });
   };
 
-  const generate = async () => {
+  const generate = async (customPrompt?: string) => {
     setBusy(true);
     try {
-      const r = await callAI({ type: "sdg", policy });
+      const r = await callAI({ type: "sdg", policy, customPrompt });
       if (r.sdgs) {
         updatePolicy((p) => ({ sdgs: r.sdgs!.filter((n) => n >= 1 && n <= 17).sort((a, b) => a - b) }));
         push("SDGs suggested", "success");
@@ -52,9 +52,11 @@ export function StepSDG() {
         actions={
           <>
             <Badge variant="muted">{policy.sdgs.length} selected</Badge>
-            <Button variant="ai" size="sm" icon={<Wand2 size={13} />} loading={busy} onClick={generate}>
-              AI Suggest
-            </Button>
+            <AIActionButton
+              label="AI Suggest"
+              loading={busy}
+              onGenerate={generate}
+            />
           </>
         }
       >

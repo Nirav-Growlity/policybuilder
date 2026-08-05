@@ -3,10 +3,12 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
-import { Input } from "@/components/ui/input";
+import { Field, Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { Info, Plus, Sparkles, Target, Trash2, Wand2 } from "lucide-react";
+import { parseRequestedCount } from "@/lib/ai/prompts";
+import { Info, Plus, Sparkles, Target, Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 
 export function StepFocus() {
@@ -30,13 +32,20 @@ export function StepFocus() {
     updatePolicy((p) => ({ focusAreas: p.focusAreas.map((x, idx) => (idx === i ? v : x)) }));
   };
 
-  const generate = async () => {
+  const generate = async (customPrompt?: string) => {
     setBusy(true);
     try {
-      const r = await callAI({ type: "focus", policy });
+      const existing = policy.focusAreas;
+      const r = await callAI({ type: "focus", policy, customPrompt, existingContent: existing });
       if (r.areas) {
-        updatePolicy((p) => ({ focusAreas: r.areas! }));
-        push("Focus areas suggested", "success");
+        const existingLower = new Set(existing.map((a) => a.toLowerCase().trim()));
+        let uniqueNew = r.areas.filter((a) => !existingLower.has(a.toLowerCase().trim()));
+        const reqCount = parseRequestedCount(customPrompt);
+        if (reqCount && reqCount > 0) {
+          uniqueNew = uniqueNew.slice(0, reqCount);
+        }
+        updatePolicy((p) => ({ focusAreas: [...p.focusAreas, ...uniqueNew] }));
+        push(`Added ${uniqueNew.length} focus area${uniqueNew.length === 1 ? "" : "s"}`, "success");
       }
     } catch {
       push("AI generation failed", "error");
@@ -47,9 +56,8 @@ export function StepFocus() {
 
   return (
     <div className="space-y-6">
-      <InfoBar icon={<Info size={16} />}>
-        The core topics your policy covers. Add custom focus areas relevant to your business or use the AI suggestion
-        to start from a curated set.
+      <InfoBar icon={<Target size={16} className="text-[var(--color-forest)]" />}>
+        Choose 7 to 9 focus areas. Each area will have qualitative commitments, quantitative targets, and SDGs attached in subsequent steps.
       </InfoBar>
 
       <Panel
@@ -59,9 +67,11 @@ export function StepFocus() {
         actions={
           <>
             <Badge variant="muted">{policy.focusAreas.length} areas</Badge>
-            <Button variant="ai" size="sm" icon={<Wand2 size={13} />} loading={busy} onClick={generate}>
-              AI Suggest
-            </Button>
+            <AIActionButton
+              label="AI Suggest"
+              loading={busy}
+              onGenerate={generate}
+            />
           </>
         }
       >
@@ -69,15 +79,16 @@ export function StepFocus() {
           {policy.focusAreas.map((area, i) => (
             <li
               key={i}
-              className="group flex items-center gap-3 px-4 py-3 rounded-lg bg-[var(--color-cream-2)]/60 border border-[var(--color-line)] hover:border-[var(--color-line-2)] transition-colors"
+              className="group flex items-start gap-3 px-4 py-3 rounded-lg bg-[var(--color-cream-2)]/60 border border-[var(--color-line)] hover:border-[var(--color-line-2)] transition-colors"
             >
-              <div className="w-7 h-7 rounded-md bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)] flex items-center justify-center text-[12px] font-semibold flex-shrink-0 font-mono">
+              <div className="w-7 h-7 rounded-md bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)] flex items-center justify-center text-[12px] font-semibold flex-shrink-0 font-mono mt-0.5">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <Input
+              <Textarea
+                rows={Math.max(1, Math.ceil((area || "").length / 60))}
                 value={area}
-                onChange={(e) => update(i, e.target.value)}
-                className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] px-2.5 -mx-2.5"
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => update(i, e.target.value)}
+                className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] px-2.5 -mx-2.5 text-[13.5px] resize-y"
               />
               <button
                 onClick={() => remove(i)}
@@ -93,7 +104,7 @@ export function StepFocus() {
         <div className="flex gap-2 mt-4 pt-4 border-t border-[var(--color-line)]">
           <Input
             value={newArea}
-            onChange={(e) => setNewArea(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewArea(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 e.preventDefault();

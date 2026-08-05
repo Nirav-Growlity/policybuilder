@@ -4,9 +4,9 @@ import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar } from "@/components/ui/panel";
 import { Field, Textarea } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { BookOpen, Flag, MapPin, Sparkles, Wand2 } from "lucide-react";
+import { BookOpen, Flag, MapPin, Sparkles } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { clsx } from "clsx";
 
@@ -45,10 +45,11 @@ export function StepDeclaration() {
   const { push } = useToast();
   const [busy, setBusy] = React.useState<Record<string, boolean>>({});
 
-  const generate = async (key: "preface" | "declaration" | "scope") => {
+  const generate = async (key: "preface" | "declaration" | "scope", customPrompt?: string) => {
     setBusy((b) => ({ ...b, [key]: true }));
     try {
-      const r = await callAI({ type: key, policy });
+      const existing = policy.declaration[key];
+      const r = await callAI({ type: key, policy, customPrompt, existingContent: existing });
       if (r.text) {
         updatePolicy((p) => ({ declaration: { ...p.declaration, [key]: r.text! } }));
         push(`${key[0].toUpperCase() + key.slice(1)} generated`, "success");
@@ -100,21 +101,17 @@ export function StepDeclaration() {
             description={s.desc}
             icon={s.icon}
             actions={
-              <Button
-                variant="ai"
-                size="sm"
-                icon={<Wand2 size={13} />}
+              <AIActionButton
+                label="AI Write"
                 loading={isBusy}
-                onClick={() => generate(s.key)}
-              >
-                AI Write
-              </Button>
+                onGenerate={(prompt) => generate(s.key, prompt)}
+              />
             }
           >
             <Field hint={s.hint}>
               <Textarea
                 value={value}
-                onChange={(e) =>
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                   updatePolicy((p) => ({ declaration: { ...p.declaration, [s.key]: e.target.value } }))
                 }
                 placeholder={s.hint}

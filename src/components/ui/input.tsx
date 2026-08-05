@@ -38,13 +38,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Inp
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
-  { className, ...rest },
+  { className, rows, ...rest },
   ref
 ) {
   return (
     <textarea
       ref={ref}
-      className={clsx(baseInput, "h-auto min-h-[100px] py-2.5 leading-relaxed resize-y", className)}
+      rows={rows}
+      className={clsx(
+        baseInput,
+        "h-auto py-2 leading-relaxed resize-y",
+        !rows && "min-h-[100px]",
+        className
+      )}
       {...rest}
     />
   );

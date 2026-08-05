@@ -3,10 +3,12 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
-import { Input } from "@/components/ui/input";
+import { Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { BarChart3, Plus, Sparkles, Target, Trash2, Wand2 } from "lucide-react";
+import { parseRequestedCount } from "@/lib/ai/prompts";
+import { Plus, Sparkles, Target, Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 
 export function StepQuantitative() {
@@ -18,26 +20,17 @@ export function StepQuantitative() {
 
   React.useEffect(() => {
     updatePolicy((p) => {
-      let changed = false;
-      const currentQuants = [...p.quantitative];
-      
-      // Check if we need to add new areas
-      for (const area of areas) {
-        if (!currentQuants.find(q => q.area === area)) {
-          currentQuants.push({
-            area,
-            targets: [{ target: "", baseline: "FY 2022-23", deadline: "FY 2029-30" }]
-          });
-          changed = true;
-        }
-      }
+      const currentMap = new Map(p.quantitative.map((q) => [q.area, q.targets]));
+      const syncedQuants = areas.map((area) => ({
+        area,
+        targets: currentMap.get(area) || [
+          { target: "", baseline: "FY 2022-23", deadline: "FY 2029-30" },
+        ],
+      }));
 
-      // Ensure the order matches focusAreas and remove obsolete ones
-      const syncedQuants = areas.map(a => currentQuants.find(q => q.area === a)).filter(Boolean) as typeof currentQuants;
-      
-      // Check if order or length changed
+      let changed = false;
       if (
-        syncedQuants.length !== p.quantitative.length || 
+        syncedQuants.length !== p.quantitative.length ||
         syncedQuants.some((q, i) => q.area !== p.quantitative[i]?.area)
       ) {
         changed = true;
@@ -47,17 +40,32 @@ export function StepQuantitative() {
     });
   }, [areas.join("|")]);
 
-  const generate = async (qi: number) => {
+  const generate = async (qi: number, customPrompt?: string) => {
     const area = policy.quantitative[qi]?.area;
     if (!area) return;
     setBusy((b) => ({ ...b, [qi]: true }));
     try {
-      const r = await callAI({ type: "quantitative", policy, areaIndex: qi });
+      const existing = policy.quantitative[qi]?.targets || [];
+      const r = await callAI({
+        type: "quantitative",
+        policy,
+        areaIndex: qi,
+        customPrompt,
+        existingContent: existing,
+      });
       if (r.targets) {
+        const existingLower = new Set(existing.map((t) => t.target.toLowerCase().trim()));
+        let uniqueNew = r.targets.filter((t) => !existingLower.has(t.target.toLowerCase().trim()));
+        const reqCount = parseRequestedCount(customPrompt);
+        if (reqCount && reqCount > 0) {
+          uniqueNew = uniqueNew.slice(0, reqCount);
+        }
         updatePolicy((p) => ({
-          quantitative: p.quantitative.map((q, i) => (i === qi ? { ...q, targets: r.targets! } : q)),
+          quantitative: p.quantitative.map((q, i) =>
+            i === qi ? { ...q, targets: [...q.targets, ...uniqueNew] } : q
+          ),
         }));
-        push("Targets generated", "success");
+        push(`Added ${uniqueNew.length} target${uniqueNew.length === 1 ? "" : "s"}`, "success");
       }
     } catch {
       push("AI generation failed", "error");
@@ -112,9 +120,11 @@ export function StepQuantitative() {
                 <Button variant="secondary" size="sm" icon={<Plus size={13} />} onClick={() => addRow(qi)}>
                   Add row
                 </Button>
-                <Button variant="ai" size="sm" icon={<Wand2 size={13} />} loading={isBusy} onClick={() => generate(qi)}>
-                  AI Generate
-                </Button>
+                <AIActionButton
+                  label="AI Generate"
+                  loading={isBusy}
+                  onGenerate={(prompt) => generate(qi, prompt)}
+                />
               </>
             }
           >
@@ -132,24 +142,25 @@ export function StepQuantitative() {
                   {q.targets.map((t, ti) => (
                     <tr key={ti} className="border-t border-[var(--color-line)] hover:bg-[#fafaf5]">
                       <td className="px-3 py-2">
-                        <Input
+                        <Textarea
+                          rows={Math.max(2, Math.ceil((t.target || "").length / 45))}
                           value={t.target}
-                          onChange={(e) => updateCell(qi, ti, "target", e.target.value)}
+                          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateCell(qi, ti, "target", e.target.value)}
                           placeholder="e.g. Reduce specific energy consumption by 15%"
-                          className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"
+                          className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] resize-y py-1.5"
                         />
                       </td>
                       <td className="px-3 py-2">
                         <Input
                           value={t.baseline}
-                          onChange={(e) => updateCell(qi, ti, "baseline", e.target.value)}
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateCell(qi, ti, "baseline", e.target.value)}
                           className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"
                         />
                       </td>
                       <td className="px-3 py-2">
                         <Input
                           value={t.deadline}
-                          onChange={(e) => updateCell(qi, ti, "deadline", e.target.value)}
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateCell(qi, ti, "deadline", e.target.value)}
                           className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"
                         />
                       </td>

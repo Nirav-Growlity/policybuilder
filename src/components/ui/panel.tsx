@@ -15,9 +15,9 @@ interface PanelProps {
 
 export function Panel({ title, description, icon, actions, children, className, bodyClassName }: PanelProps) {
   return (
-    <section className={clsx("doc-card overflow-hidden", className)}>
+    <section className={clsx("doc-card overflow-visible", className)}>
       {(title || actions) && (
-        <header className="flex items-center justify-between gap-3 px-6 py-4 border-b border-[var(--color-line)] bg-gradient-to-b from-[#fafaf5] to-[var(--color-cream-2)]">
+        <header className="flex items-center justify-between gap-3 px-6 py-4 border-b border-[var(--color-line)] bg-gradient-to-b from-[#fafaf5] to-[var(--color-cream-2)] rounded-t-[inherit]">
           <div className="flex items-center gap-2.5 min-w-0">
             {icon && <span className="text-[var(--color-forest)] flex-shrink-0">{icon}</span>}
             <div className="min-w-0">

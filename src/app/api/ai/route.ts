@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { mockGenerate } from "@/lib/ai/mock";
-import type { AIContext } from "@/lib/ai/prompts";
+import { parseRequestedCount, type AIContext } from "@/lib/ai/prompts";
 import fs from "fs";
 import path from "path";
 
@@ -45,66 +45,85 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
   const industry = co.industry || "manufacturing";
   const company = co.name || "a manufacturing company";
 
+  const existingStr =
+    ctx.existingContent &&
+    (Array.isArray(ctx.existingContent)
+      ? ctx.existingContent.length > 0
+      : Boolean(ctx.existingContent))
+      ? `\n\nEXISTING CONTENT ALREADY WRITTEN IN THIS SECTION:\n${JSON.stringify(
+          ctx.existingContent
+        )}\nCRITICAL INSTRUCTION: Do NOT duplicate or rewrite any of the points listed above. Generate ONLY NEW, distinct points that complement the existing ones.`
+      : "";
+
+  const reqCount = parseRequestedCount(ctx.customPrompt);
+  const customStr = ctx.customPrompt
+    ? `\n\nHIGHEST PRIORITY USER DIRECTIVE: "${ctx.customPrompt}".\n${
+        reqCount
+          ? `CRITICAL QUANTITY REQUIREMENT: Generate EXACTLY ${reqCount} new unique item(s). Do NOT output more than ${reqCount} item(s).`
+          : "Strictly follow the user directive for content, tone, and quantity."
+      }`
+    : "";
+
   switch (ctx.type) {
     case "preface":
       return {
         system: SYSTEM,
-        user: `Write a Preface for an Environmental Policy of ${company} in ${industry}, aligned with ${stds}. Ensure the length exactly matches the typical length of the preface section in the reference policies (usually 1 paragraph). Return JSON: {"text": "..."}`,
+        user: `Write a Preface for an Environmental Policy of ${company} in ${industry}, aligned with ${stds}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "declaration":
       return {
         system: SYSTEM,
-        user: `Write a Policy Declaration for an Environmental Policy of ${company}. Ensure the length exactly matches the typical length of the declaration section in the reference policies (usually 2-3 sentences). Return JSON: {"text": "..."}`,
+        user: `Write a Policy Declaration for an Environmental Policy of ${company}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "scope":
       return {
         system: SYSTEM,
-        user: `Write a Scope section for an Environmental Policy of ${company} operating at ${co.site || "an industrial facility"}. Mention all employees, contractors, suppliers and operations. Match the exact length of the scope sections in the reference policies. Return JSON: {"text": "..."}`,
+        user: `Write a Scope section for an Environmental Policy of ${company} operating at ${co.site || "an industrial facility"}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "focus":
       return {
         system: SYSTEM,
-        user: `Suggest 7-9 key focus areas for an Environmental Policy of ${company} in ${industry}, aligned with ${stds}. Return JSON: {"areas": ["...", "..."]}`,
+        user: `Suggest key focus areas for an Environmental Policy of ${company} in ${industry}, aligned with ${stds}.${existingStr}${customStr}\nIf no count is specified in the user directive, suggest 7-9 areas. Return JSON: {"areas": ["...", "..."]}`,
       };
     case "qualitative": {
       const area = p.focusAreas[ctx.areaIndex ?? 0] || "this focus area";
       return {
         system: SYSTEM,
-        user: `Write 3 qualitative objectives for "${area}" in an Environmental Policy of ${company}. Ensure the level of detail matches the qualitative objectives in the reference policies. Return JSON: {"objectives": ["...", "..."]}`,
+        user: `Write qualitative objectives for "${area}" in an Environmental Policy of ${company}.${existingStr}${customStr}\nIf no count is specified in the user directive, generate 3 new objectives. Return JSON: {"objectives": ["...", "..."]}`,
       };
     }
     case "quantitative": {
       const area = p.quantitative[ctx.areaIndex ?? 0]?.area || "this area";
       return {
         system: SYSTEM,
-        user: `Write 3 quantitative targets for "${area}" in an Environmental Policy of ${company}. Use baseline "FY 2022-23" and typical deadline "FY 2029-30". Return JSON: {"targets": [{"target": "...", "baseline": "...", "deadline": "..."}]}`,
+        user: `Write quantitative targets for "${area}" in an Environmental Policy of ${company}. Use baseline "FY 2022-23" and deadline "FY 2029-30".${existingStr}${customStr}\nIf no count is specified in the user directive, generate 3 new targets. Return JSON: {"targets": [{"target": "...", "baseline": "...", "deadline": "..."}]}`,
       };
     }
     case "sdg":
       return {
         system: SYSTEM,
-        user: `For an Environmental Policy of ${company} in ${industry}, which UN SDG numbers are most relevant? Return JSON: {"sdgs": [6,7,13]}`,
+        user: `For an Environmental Policy of ${company} in ${industry}, which UN SDG numbers are relevant?${existingStr}${customStr}\nReturn JSON: {"sdgs": [6,7,13]}`,
       };
     case "responsibilities":
       return {
         system: SYSTEM,
-        user: `Write 5-6 responsibilities for an Environmental Policy of ${company}. Include management, EHS, operations, supply chain, all employees, contractors. Match the concise length of responsibilities found in the reference policies. Return JSON: {"responsibilities": [{"role": "...", "duty": "..."}]}`,
+        user: `Write responsibilities for an Environmental Policy of ${company}.${existingStr}${customStr}\nIf no count is specified in the user directive, generate 5-6 responsibilities. Return JSON: {"responsibilities": [{"role": "...", "duty": "..."}]}`,
       };
     case "monitoring":
       return {
         system: SYSTEM,
-        user: `Write a Monitoring, Reporting & Transparency section for an Environmental Policy of ${company}. Mention KPIs, dashboards, internal reviews, third-party audits and annual sustainability reporting. Match the exact length of the monitoring sections in the reference policies (usually 1 paragraph). Return JSON: {"text": "..."}`,
+        user: `Write a Monitoring, Reporting & Transparency section for an Environmental Policy of ${company}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "review":
       return {
         system: SYSTEM,
-        user: `Write a Review Mechanism & Continuous Improvement section for an Environmental Policy of ${company}. Mention biennial review, owner, stakeholder feedback, communication. Match the exact length of the review sections in the reference policies (usually 1 paragraph). Return JSON: {"text": "..."}`,
+        user: `Write a Review Mechanism & Continuous Improvement section for an Environmental Policy of ${company}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "all":
     default:
       return {
         system: SYSTEM,
-        user: `Write a 2-sentence summary for an Environmental Policy of ${company}. Return JSON: {"text": "..."}`,
+        user: `Write a 2-sentence summary for an Environmental Policy of ${company}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
   }
 }
@@ -126,7 +145,7 @@ export async function POST(req: NextRequest) {
         "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-5.4-mini",
+        model: "gpt-5.6-luna",
         response_format: { type: "json_object" },
         messages: [
           { role: "system", content: system },

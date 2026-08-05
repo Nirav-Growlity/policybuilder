@@ -48,13 +48,24 @@ export function mockGenerate(ctx: AIContext): AIResponse {
       return { source: "mock", sdgs: [...SDGS_POOL] };
     case "qualitative": {
       const area = p.focusAreas[ctx.areaIndex ?? 0] || "this area";
+      const existing = Array.isArray(ctx.existingContent) ? ctx.existingContent : [];
+      let count = 3;
+      if (ctx.customPrompt) {
+        const match = ctx.customPrompt.match(/\b([1-9])\b/);
+        if (match) count = parseInt(match[1], 10);
+      }
+      const pool = [
+        `Implement robust management procedures and continuous monitoring to optimize ${area.toLowerCase()}.`,
+        `Engage key stakeholders, suppliers and employees to support ${area.toLowerCase()} goals.`,
+        `Conduct regular internal and external audits to ensure compliance and best practices in ${area.toLowerCase()}.`,
+        `Adopt innovative clean technology and resource-efficient solutions for ${area.toLowerCase()}.`,
+        `Publish annual progress updates and performance indicators related to ${area.toLowerCase()}.`,
+      ];
+      const existingSet = new Set(existing.map((s: string) => String(s).toLowerCase().trim()));
+      const available = pool.filter((item) => !existingSet.has(item.toLowerCase().trim()));
       return {
         source: "mock",
-        objectives: [
-          `Establish governance, KPIs and accountability mechanisms to manage ${area.toLowerCase()} in line with leading international standards.`,
-          `Engage employees, contractors and suppliers to embed ${area.toLowerCase()} into day-to-day operations and decision-making.`,
-          `Track and publicly disclose performance against ${area.toLowerCase()} targets in the annual sustainability report.`,
-        ],
+        objectives: (available.length > 0 ? available : pool).slice(0, count),
       };
     }
     case "quantitative": {
