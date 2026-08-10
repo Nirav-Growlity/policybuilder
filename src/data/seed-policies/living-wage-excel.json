@@ -1,0 +1,212 @@
+{
+  "id": "living-wage-excel",
+  "name": "Excel",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage template from 104. Living Wage Policy (Corr KSIL 03.11.25).docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Excel",
+      "industry": "",
+      "site": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+      "sites": [
+        {
+          "location": "Corporate Head Office",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "Roha Manufacturing Site",
+          "address": "Plot No. 112, 20/1, OS-2, MIDC, Dhatav, Roha, Raigad, Maharashtra 402116, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Lote Manufacturing Site",
+          "address": "D-9, MIDC, Lote Parshuram, Ratnagiri, Maharashtra 415722, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Visakhapatnam Manufacturing Site",
+          "address": "Plot No. 15 & 15A, APSEZ, Atchutapuram, Vishakhapatnam, Andhra Pradesh, 531011, India",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Excel Bioresources Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Subsidiary"
+        },
+        {
+          "location": "Kamaljyot Investments Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Subsidiary"
+        },
+        {
+          "location": "Excel Rajkot C&D waste recycling Private Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Subsidiary"
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Excel Industries Ltd. is committed to ensuring that all employees and contracted workers receive fair, equitable and living wages that meet or exceed legal and industry standards.\n\nThis policy aims to promote financial well-being, reduce inequality and strengthen social responsibility across all operations and supply chains.\n\nIt outlines the company’s approach to providing compensation that supports a decent standard of living, covering essential needs such as food, housing, healthcare, education and discretionary needs.\n\nThrough this policy, Excel Industries Limited ensures transparency, fairness, and accountability in wage practices, aligning with our sustainability principles and ethical business values to contribute to a more inclusive and equitable future for all.",
+      "declaration": "Excel Industries Limited recognizes that fair pay is a foundation of human dignity, productivity, and sustainable development. The company is committed to ensuring that every employee and contract worker earns a living wage that provides for basic needs such as food, housing, healthcare, education, and savings while supporting an adequate standard of living for their families.\n\nIt is the Company’s endeavor to:\n\nEnsure that all employees and contract workers receive wages that meet or exceed statutory minimum wage and are benchmarked against living wage data.\n\nConduct periodic wage assessments based on inflation, cost-of-living and independent benchmarks.\n\nGuarantee equal pay for work of equal value, free from gender, caste or other forms of discrimination.\n\nMaintain transparency in wage structures and ensure that no unauthorized deductions are made.\n\nProvide a confidential grievance redressal mechanism for employees to report wage-related concerns.\n\nEncourage suppliers, contractors and service providers to adopt living wage principles.\n\nContinually improve compensation practices through stakeholder feedback and periodic review.\n\nThis policy reaffirms Excel Industries Limited’s commitment to social equity, ethical labour practices, and sustainable growth across its value chain.",
+      "scope": "This policy applies to all employees, contract workers and third-party labor engaged directly or indirectly by Excel Industries Limited across all operations. It also applies to all business units and functions within Excel Industries Limited, including procurement, manufacturing, research and development, logistics and corporate offices. It applies to all workmen working for the company including our own employees, contractors and their workmen working inside the premises, all stakeholders and external providers associated with the company.\n\nThis policy is applicable across all operating sites of Excel Industries Limited as listed below:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Excel Industries Limited recognizes that fair pay is a foundation of human dignity, productivity, and sustainable development. The company is committed to ensuring that every employee and contract worker earns a living wage that provides for basic needs such as food, housing, healthcare, education, and savings while supporting an adequate standard of living for their families.\n\nEnsure that all employees and contract workers receive wages that meet or exceed statutory minimum wage and are benchmarked against living wage data.\n\nConduct periodic wage assessments based on inflation, cost-of-living and independent benchmarks.\n\nThis policy applies to all employees, contract workers and third-party labor engaged directly or indirectly by Excel Industries Limited across all operations. It also applies to all business units and functions within Excel Industries Limited, including procurement, manufacturing, research and development, logistics and corporate offices. It applies to all workmen working for the company including our own employees, contractors and their workmen working inside the premises, all stakeholders and external providers associated with the company.\n\nReview wage structures annually to account for inflation, cost of living and industry benchmarks.\n\nThis policy will be reviewed Monthly for its adequacy and continued relevance to the organization’s business and sustainability objectives."
+    },
+    "focusAreas": [
+      "Fair and Equitable Compensation",
+      "Transparency and Compliance",
+      "Capacity Building",
+      "Continuous Improvement",
+      "General Targets",
+      "Wage and Cost-of-Living Adjustments",
+      "Employee Welfare and Awareness",
+      "Implementation and Accountability"
+    ],
+    "qualitative": {
+      "Fair and Equitable Compensation": [
+        "Ensure that all employees and contract workers are paid fair and equitable wages that meet or exceed statutory minimum wage requirements.",
+        "Adopt compensation structures that reflect cost-of-living adjustments and maintain parity across roles and locations."
+      ],
+      "Transparency and Compliance": [
+        "Maintain transparent wage determination and review mechanisms to ensure alignment with internal standards and external regulations.",
+        "Regularly communicate wage-related policies and updates to all employees and worker representatives."
+      ],
+      "Capacity Building": [
+        "Conduct periodic training and awareness sessions for HR teams, supervisors and management on fair wage practices and compliance obligations.",
+        "Promote understanding among employees regarding wage structures, entitlements and grievance redressal mechanisms."
+      ],
+      "Continuous Improvement": [
+        "Review wage structures annually to account for inflation, cost of living and industry benchmarks.",
+        "Implement systems to regularly monitor wage compliance across all operational locations."
+      ],
+      "Implementation and Accountability": [
+        "Compliance: Ensure compliance with national wage laws, labor codes and internal compensation standards.",
+        "Training: Conduct periodic training for HR, payroll and procurement staff on living wage implementation.",
+        "Performance Monitoring: Set measurable wage improvement goals and track progress annually.",
+        "Transparency: Maintain wage data, audit results and corrective action reports for internal and external review."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "Ensure 100% of direct employees and contract workers receive wages that meet or exceed living wage standards every year.",
+            "baseline": "FY 2021-22",
+            "deadline": "every year"
+          },
+          {
+            "target": "Publicly disclose Excel Industries’ Living Wage Commitment and progress through the BRSR and Sustainability Report by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Achieve 100% living wage implementation across all sites and supplier networks by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Wage and Cost-of-Living Adjustments",
+        "targets": [
+          {
+            "target": "Implement annual wage revisions ensuring wages remain at least 10% above the national minimum wage by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% wage adjustments reflect inflation and local cost-of-living variations by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Employee Welfare and Awareness",
+        "targets": [
+          {
+            "target": "Provide living wage awareness training to 100% of HR staff, site managers and contractors annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Establish grievance redressal mechanisms for wage-related concerns at 100% of sites by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Achieve zero wage-related grievances unresolved beyond 30 days by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director and President & COO",
+        "duty": "Oversight of Living Wage Policy and Performance."
+      },
+      {
+        "role": "Vice President Operations",
+        "duty": "Development and implementation of Living Wage strategies."
+      },
+      {
+        "role": "Management Review Meeting (MRM) committee",
+        "duty": "Responsible for monthly review of the Policy at all sites to assess progress and make necessary amendments as required. Evaluates Living Wage performance metrics and KPIs. Ensures cross-functional coordination on Living Wage initiatives."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Responsible for providing regular training, awareness programs, and updates related to wage laws, living wage benchmarks, and policy compliance."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Ensure accurate, timely, and fair payment of wages."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Incorporate living wage requirements into all supplier and contractor evaluations."
+      },
+      {
+        "role": "Site HR Heads",
+        "duty": "Ensure on-ground implementation and compliance at respective locations."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Adhere to the company’s compensation framework and report non-compliance through proper channels."
+      }
+    ],
+    "monitoring": "Implement systems to regularly monitor wage compliance across all operational locations.\n\nPerformance Monitoring: Set measurable wage improvement goals and track progress annually.\n\nTransparency: Maintain wage data, audit results and corrective action reports for internal and external review.\n\nPerformance Reporting: Regular reporting on wage and social performance to the MRM Committee will take place on a six monthly basis. The Board of Directors and stakeholders will review performance reporting through the Business Responsibility and Sustainability Report (BRSR) and Annual Sustainability Report (ASR) on a yearly basis.",
+    "reviewMechanism": "Monthly Review: The Policy will be reviewed monthly at all sites during the Management Review Meeting (MRM) to assess progress and make necessary amendments, if required.\n\nStakeholder Engagement: Maintain continuous dialogue with employees, contractors, suppliers and other stakeholders to incorporate feedback and drive continual improvement in living wage and fair pay practices\n\nThis policy will be reviewed Monthly for its adequacy and continued relevance to the organization’s business and sustainability objectives."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Excel\\104. Living Wage Policy (Corr KSIL 03.11.25).docx",
+  "sourceTextLength": 11696,
+  "parsedAt": "2026-08-10T09:20:54.923Z"
+}

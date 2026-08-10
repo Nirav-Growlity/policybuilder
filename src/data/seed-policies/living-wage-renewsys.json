@@ -1,0 +1,152 @@
+{
+  "id": "living-wage-renewsys",
+  "name": "Renewsys",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage template from 16 REN IMS Fair Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Renewsys",
+      "industry": "",
+      "site": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "sites": [
+        {
+          "location": "RenewSys India Pvt. Ltd.",
+          "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot No. E-141, Additional Patalganga MIDC Industrial Area, Village - Karade Khurd, Taluka Panvel, District Raigad, Maharashtra - 410 206, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot No. 6, Survey # 114/P, Srinagar Village, Maheshwaram Mandal, Rangareddy Dist. - 501 359,Telangana, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot Nos. 21, 22, 23, Bommasandra - Jigani Link Road Industrial Area, Taluk Anekal, Bengaluru - 560 105, Karnataka, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "RenewSys India Pvt. Ltd. is committed to ensuring that its employees are compensated fairly for their contributions. The Fair Wage Policy reflects its commitment to providing equitable, transparent, and competitive remuneration aligned with applicable industry standards and workforce needs.\n\nThe Company regularly benchmarks its compensation structure against relevant industry pay practices, considering factors such as job role, experience, and performance to ensure fairness and consistency.\n\nFair compensation is recognized as a key driver of employee well-being, satisfaction, and engagement, enabling employees to meet their essential needs and contribute effectively to organizational objectives in a respectful and supportive work environment.",
+      "declaration": "At RenewSys India Pvt. Ltd., we are committed to ensuring that all employees receive fair, competitive wages aligned with their skills and contributions. With a baseline set for the FY 2022- 23, we will regularly assess market rates and maintain internal pay equity. Transparent communication regarding compensation matters will be prioritized, fostering an inclusive workplace for equal opportunities in career advancement.",
+      "scope": "This Policy is applicable to all sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "RenewSys India Pvt. Ltd. is committed to ensuring that its employees are compensated fairly for their contributions. The Fair Wage Policy reflects its commitment to providing equitable, transparent, and competitive remuneration aligned with applicable industry standards and workforce needs.\n\nThe Company regularly benchmarks its compensation structure against relevant industry pay practices, considering factors such as job role, experience, and performance to ensure fairness and consistency.\n\nThis Policy is applicable to all sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Fair and competitive wages",
+      "Annual wage reviews",
+      "Transparent communication regarding compensation",
+      "Internal pay equity",
+      "Employee satisfaction and feedback",
+      "Career advancement and skill development",
+      "Employee retention"
+    ],
+    "qualitative": {
+      "Focus Area": [
+        "Ensure that employees receive clear and timely communication on any changes to their wages, explaining the rationale behind adjustments, to foster trust and transparency.",
+        "Maintain a feedback mechanism for employees to voice concerns and suggestions related to wage fairness and job satisfaction.",
+        "Develop comprehensive career advancement programs that equip employees with the necessary skills for professional growth, thereby facilitating opportunities for fair wage increases."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Annual wage review",
+        "targets": [
+          {
+            "target": "Regularly conduct an annual review of wages to ensure equitable compensation across all departments, regardless of gender, age, or background.",
+            "baseline": "",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Employee satisfaction",
+        "targets": [
+          {
+            "target": "Maintain an employee satisfaction score of at least 70% in annual surveys by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Wage adjustments",
+        "targets": [
+          {
+            "target": "Ensure that 100% of identified wage adjustments are implemented within six months of the annual review.",
+            "baseline": "",
+            "deadline": "Within six months of the annual review"
+          }
+        ]
+      },
+      {
+        "area": "Performance- and skill-based wage increases",
+        "targets": [
+          {
+            "target": "Ensure that at least 75% of employees receive a wage increase based on performance and skill development every year.",
+            "baseline": "",
+            "deadline": "Every year"
+          }
+        ]
+      },
+      {
+        "area": "Employee retention",
+        "targets": [
+          {
+            "target": "Aim for an employee retention rate of 70% or higher annually, indicating satisfaction with compensation and overall job satisfaction.",
+            "baseline": "",
+            "deadline": "Annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      5,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "The Human Resources (HR) Manager will be responsible for preparing and compiling the Fair Wage Performance Report."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Finance Department for wage-related financial data and budgeting."
+      },
+      {
+        "role": "Performance Management Team",
+        "duty": "Performance Management Team for data on skill-based and performance-linked wage increases."
+      }
+    ],
+    "monitoring": "The tracking and reporting on the effectiveness of the Fair Wage Policy will be presented through the annual Fair Wage Performance Report. This report will provide transparency on key metrics such as wage growth, compliance with industry standards, and feedback from employees on wage fairness. These metrics will help identify areas for improvement and ensure that wages remain competitive.\n\nThe report will be presented to the senior management annually and shared with employee representatives to maintain transparency.",
+    "reviewMechanism": "The Fair Wage Policy will be reviewed annually by the HR, in collaboration with the Compliance Officer. The review will consider current economic trends, inflation rates, industry standards, and employee feedback. Any necessary updates to the wage structure will be made to ensure continuous alignment with best practices and the company's commitment to wage fairness."
+  },
+  "sourcePath": "Hetvi- Policies\\Renewsys\\16 REN IMS Fair Wage Policy.docx",
+  "sourceTextLength": 5833,
+  "parsedAt": "2026-08-10T09:22:42.633Z"
+}

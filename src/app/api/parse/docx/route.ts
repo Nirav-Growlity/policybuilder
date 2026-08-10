@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { parseDocxBuffer } from "@/lib/docx/parse";
+import type { PolicyType } from "@/lib/types";
 
 export const runtime = "nodejs";
 
@@ -12,7 +13,9 @@ export async function POST(req: NextRequest) {
     }
     const arr = await file.arrayBuffer();
     const buf = Buffer.from(arr);
-    const { policy, text } = await parseDocxBuffer(buf);
+    const requestedType = fd.get("policyType");
+    const policyType: PolicyType = requestedType === "labour-human-rights" || requestedType === "living-wage" ? requestedType : "environmental";
+    const { policy, text } = await parseDocxBuffer(buf, policyType);
     return NextResponse.json({ policy, textLength: text.length });
   } catch (e) {
     console.error("Parse failed", e);

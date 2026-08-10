@@ -1,0 +1,259 @@
+{
+  "id": "labour-human-rights-cherry-hill",
+  "name": "Cherry Hill",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from Labor and Human rights.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Cherry Hill",
+      "industry": "",
+      "site": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020.",
+      "sites": [
+        {
+          "location": "Delhi (Head Quarter)",
+          "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020.",
+          "primaryFunction": "Head Quarter"
+        },
+        {
+          "location": "Bengaluru (Branch Office)",
+          "address": "First floor, no 1, 14th a Main, Hall 2nd Stage, Bangalore, Karnataka, India - 560008",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Chennai (Branch Office)",
+          "address": "GN Chetty Road, Anmol Palani, 88, T Nagar, , Chennai, Tamil Nadu, India - 600017",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Pune (Branch Office)",
+          "address": "Liberty phase-2, Plot no. 323, Flat no.1, North Main Road, Koregaon Park, Pune, Maharashtra, India - 411001",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Hyderabad (Branch Office)",
+          "address": "Third floor, Sreshta Marvel, Sy no 136, Gachibowli Konadpur Main Road, Gachibowli, Hyderabad, Telangana, India - 500032",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Plot no. 81-a, sector-5, IMT Manesar, Gurugram, Haryana, India - 122050",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Cherry Hill Interiors Pvt. Ltd. upholds the highest ethical standards in the workplace, ensuring fair labor practices, human rights, and a culture of integrity. We strive to maintain a safe, inclusive, and equitable work environment that respects the dignity and well-being of all employees and stakeholders. Our approach integrates ethical business conduct, diversity and inclusion, health and safety measures, and compliance with all relevant regulations, including ISO 18001:2007 (Occupational Health & Safety Management), Occupational Safety and Health Act (OSHA), the International Labour Organization (ILO) conventions, the Universal Declaration of Human Rights (UDHR), and national labor laws. Through continuous improvement, training, and engagement, we foster a workplace built on fairness, transparency, and accountability.",
+      "declaration": "Ethical responsibility and inclusivity form the foundation of Cherry Hill Interiors Pvt. Ltd.’s workplace culture. With 2022 as our baseline year, we ensure to achieve our set targets in   compliance with labor laws, human rights frameworks, and industry benchmarks. This policy reinforces our dedication to workplace safety, ethical employment practices, and transparent stakeholder engagement. Through governance, training, and collaboration, we continuously strengthen our workplace ethics and uphold the highest standards of integrity.",
+      "scope": "This policy applies to all business operations, including office spaces, project sites, supply chains, and interactions with stakeholders. It extends to employees, contractors, suppliers, and partners engaged in our business activities."
+    },
+    "focusAreas": [
+      "Ensuring Workplace Health and Safety: Occupational health, safety management, and accident prevention measures.",
+      "Ethical Workplace Conditions: Fair labor practices, employee welfare, and respectful working conditions.",
+      "Enhancing Communication and Employee Engagement: Employee participation, feedback mechanisms, and organizational communication.",
+      "Supporting Career Growth and Learning: Training, skill development, and professional advancement opportunities.",
+      "Eliminating Child Labor, Forced Labor, and Human Trafficking: Human rights safeguards and responsible labor practices across operations and supply chains.",
+      "Non-Discrimination and Harassment: Equal opportunity, non-discrimination, and inclusive workplace practices.",
+      "External Stakeholder Human Rights: Protection and promotion of human rights throughout the value chain."
+    ],
+    "qualitative": {
+      "Ensuring Workplace Health and Safety": [
+        "Foster a culture of safety through awareness initiatives such as regular safety drills, hazard identification training, and interactive safety workshops.",
+        "Strengthen emergency preparedness and response systems by training designated response teams, and equipping workplaces with emergency resources."
+      ],
+      "Ethical Workplace Conditions": [
+        "Ensure all workplaces meet statutory requirements related to cleanliness, ventilation, lighting, and welfare facilities.",
+        "Promote respectful supervision and ethical management practices at all levels of the organization."
+      ],
+      "Enhancing Communication and Employee Engagement": [
+        "Encourage open and transparent communication through structured internal channels.",
+        "Hold periodic labour–management interactions with documented discussions and follow-up actions.",
+        "Support employee representation and participation in workplace matters in line with applicable laws."
+      ],
+      "Supporting Career Growth and Learning": [
+        "Establish partnerships with industry experts to conduct guest lectures on sustainable designing solutions.",
+        "Support employee development through structured learning opportunities and performance feedback."
+      ],
+      "Eliminating Child Labor, Forced Labor, and Human Trafficking": [
+        "Establish strict supplier accountability for ethical labor practices by implementing contractual obligations and conducting regular compliance audits.",
+        "Conduct due diligence on suppliers and business partners regarding labor practices."
+      ],
+      "Non-Discrimination and Harassment": [
+        "Maintain a respectful, inclusive, and professional workplace with zero tolerance for discrimination, harassment, or abusive behavior."
+      ],
+      "External Stakeholder Human Rights": [
+        "Promote respect, dignity, and fair treatment across supply chain by embedding internationally recognized human rights principles in supplier engagement.",
+        "Strengthen ethical partnerships with suppliers and stakeholders by requiring compliance with labour laws, human rights expectations, and responsible business practices."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Ensuring Workplace Health and Safety",
+        "targets": [
+          {
+            "target": "Increase planned safety inspections by 10% by year 2028 to proactively identify and mitigate workplace risks.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Enhance all the required safety protocols to maintain zero workplace incidents till year 2028.",
+            "baseline": "",
+            "deadline": "till year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Workplace Conditions",
+        "targets": [
+          {
+            "target": "Conduct an workplace condition audit till year 2028 to identify and rectify any non-compliance issues.",
+            "baseline": "",
+            "deadline": "till year 2028"
+          },
+          {
+            "target": "Provide statutory healthcare and insurance benefits to 100% of eligible employees by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Enhancing Communication and Employee Engagement",
+        "targets": [
+          {
+            "target": "Achieve 100% participation in employee engagement or feedback activities by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Conduct 8 structured employee engagement initiatives by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Supporting Career Growth and Learning",
+        "targets": [
+          {
+            "target": "Ensure 30% of designers obtain certifications in sustainable design practices by 2028.",
+            "baseline": "",
+            "deadline": "by 2028"
+          },
+          {
+            "target": "Achieve a 15% increase in internal promotions to managerial/senior managerial roles by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Conduct training workshops/programs to facilitate cross-functional learning, with 50% employee participation by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Eliminating Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Conduct supplier due diligence assessments covering 100% of suppliers by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Maintain 0 confirmed cases of child labor, forced labor, or human trafficking across Cherry Hill’s operations annually.",
+            "baseline": "",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Non-Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Conduct 2 workplace climate surveys on discrimination and harassment till year 2028 through survey forms filled by 100% employees.",
+            "baseline": "",
+            "deadline": "till year 2028"
+          },
+          {
+            "target": "Maintain zero confirmed cases of discrimination or harassment till year 2028 and thereafter",
+            "baseline": "",
+            "deadline": "till year 2028 and thereafter"
+          },
+          {
+            "target": "Provide mandatory anti-harassment, POSH training to 100% employees annually.",
+            "baseline": "",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Ensure that 100% of supplier contracts include and comply with human rights clauses by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Conduct one annual stakeholder engagement or awareness initiative on human rights issues involving suppliers, contractors, or local communities till year 2028.",
+            "baseline": "",
+            "deadline": "till year 2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources Manager",
+        "duty": "oversees policy implementation, ensures adherence to workplace ethics, and coordinates compliance with labor and human rights standards."
+      },
+      {
+        "role": "Department Heads and Supervisors",
+        "duty": "ensure ethical labor practices, provide a supportive work environment, and address violations or grievances."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "conducts evaluations, audits, and risk assessments to identify breaches and implement corrective actions."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "uphold workplace ethics, report concerns, and participate in training programs."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "ensures supplier compliance with the Supplier Code of Conduct, conducts audits, and enforces ethical sourcing practices."
+      }
+    ],
+    "monitoring": "Cherry Hill Interiors monitors its labour and human rights performance across key areas, including workplace health and safety, ethical working conditions, employee engagement, learning and development, diversity and inclusion, prevention of child and forced labour, and the protection of human rights across its value chain. Relevant Key Performance Indicators (KPIs) are tracked through established internal processes to assess progress against the company's objectives and commitments.\n\nPerformance is reviewed periodically by management to support informed decision-making and continuous improvement. Regular assessments are conducted to identify achievements, gaps, and improvement opportunities, with appropriate corrective actions implemented where necessary. Relevant information is communicated to stakeholders, as appropriate, to promote transparency and accountability. All monitoring and reporting activities are conducted in alignment with applicable labour laws, internationally recognized human rights principles, and industry best practices.",
+    "reviewMechanism": "The Labor and Human Rights Policy is reviewed once after every two years or as required by the Human Resources Manager to ensure compliance with regulations and best practices.\n\nAnnual audits assess policy effectiveness, identify gaps, and drive improvements.\n\nEmployee and stakeholder feedback is gathered to refine policy execution.\n\nCorrective actions are implemented based on audit findings to enhance workplace conditions.\n\nCompliance reports and updates are presented to senior management for accountability and continuous improvement.\n\nBenchmarking against industry standards ensures leadership in ethical workplace practices."
+  },
+  "sourcePath": "Hetvi- Policies\\Cherry Hill\\Labor and Human rights.docx",
+  "sourceTextLength": 11316,
+  "parsedAt": "2026-08-10T09:22:05.947Z"
+}

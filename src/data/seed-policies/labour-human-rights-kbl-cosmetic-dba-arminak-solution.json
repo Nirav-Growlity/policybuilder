@@ -1,0 +1,382 @@
+{
+  "id": "labour-human-rights-kbl-cosmetic-dba-arminak-solution",
+  "name": "KBL Cosmetic dba Arminak Solution",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from Labor and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "KBL Cosmetic dba Arminak Solution",
+      "industry": "",
+      "site": "475 N Sheridan St, Corona, CA 92880",
+      "sites": [
+        {
+          "location": "Arminak Solutions LLC dba KBL Cosmetics",
+          "address": "475 N Sheridan St, Corona, CA 92880",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "475 N Sheridan St, Corona, CA 92880"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Arminak Solutions LLC dba KBL Cosmetics  is committed to upholding the highest standards of labor and human rights in all aspects of its operations. We recognize that a strong labor and human rights framework is essential for fostering a positive and inclusive work environment, ensuring fair treatment of employees, and promoting ethical business practices across our supply chain. We believe that respect for human rights is a fundamental responsibility and a key component of sustainable business growth. By embedding ethical labor practices within our corporate culture, we not only protect the rights of our employees but also contribute to the broader global movement for social justice and human dignity.",
+      "declaration": "We establish our goals on an annual basis, ensuring that we not only develop the essential capabilities required but also allocate the appropriate resources necessary to effectively implement this policy. Our approach is around fostering innovation and enhancing operational efficiency, all while aligning the supply chain of Arminak Solutions LLC dba KBL Cosmetics with the overarching objectives of this policy. Furthermore, our commitment transcends mere adherence to labor laws; we are dedicated to cultivating a workplace environment where diversity is not only recognized but celebrated. We actively work to eliminate any form of discrimination, empowering our employees to unlock their full potential and thrive in a supportive and inclusive atmosphere.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:"
+    },
+    "focusAreas": [
+      "Compliance with International Standards",
+      "Non-Discrimination",
+      "Equal Opportunity",
+      "Fair Compensation",
+      "Workplace Safety",
+      "Anti-Human Trafficking",
+      "Prohibition of Forced and Child Labor",
+      "Freedom of Association",
+      "Anti-Harassment and Workplace Dignity",
+      "Ethical Supply Chain",
+      "Monitoring and Continuous Improvement",
+      "Reporting Violations",
+      "Whistleblower Protection",
+      "Learning and Development",
+      "Employees Health and Safety",
+      "Working Conditions",
+      "Social Dialogue",
+      "Career Management and Training",
+      "Child labor, forced labor, and human trafficking",
+      "Diversity, equity, and inclusion",
+      "External stakeholder human rights"
+    ],
+    "qualitative": {
+      "Compliance with International Standards": [
+        "Arminak Solutions LLC dba KBL Cosmetics adheres to the principles outlined in the United Nations Universal Declaration of Human Rights, the International Labour Organization (ILO) Conventions, and other relevant international frameworks, including the UN Guiding Principles on Business and Human Rights. We also align our practices with the United Nations Global Compact (UNGC) and other sustainability charters where applicable."
+      ],
+      "Non-Discrimination": [
+        "We prohibit discrimination in hiring, promotion, compensation, or any other employment-related decisions based on race, gender, age, religion, disability, sexual orientation, nationality, or any other protected characteristic."
+      ],
+      "Equal Opportunity": [
+        "We provide equal opportunities for all employees and ensure a diverse and inclusive work environment."
+      ],
+      "Fair Compensation": [
+        "Employees are paid at least the legal minimum wage and provided with benefits in accordance with local labor laws and industry standards."
+      ],
+      "Workplace Safety": [
+        "We are committed to maintaining a safe and healthy work environment, ensuring compliance with occupational health and safety regulations, and conducting periodic risk assessments."
+      ],
+      "Anti-Human Trafficking": [
+        "Arminak Solutions LLC dba KBL Cosmetics has zero tolerance for human trafficking in any form. We prohibit any involvement in the recruitment, transportation, transfer, harbouring, or receipt of persons through force, fraud, or coercion."
+      ],
+      "Prohibition of Forced and Child Labor": [
+        "Arminak Solutions LLC dba KBL Cosmetics  strictly prohibits the use of forced, bonded, or involuntary labor in any form and do not engage in or tolerate child labor, ensuring compliance with the minimum employment age as defined by ILO standards and national laws."
+      ],
+      "Freedom of Association": [
+        "We respect employees’ rights to freely associate, form labor unions, and engage in collective bargaining. Employees have the right to voice their concerns and negotiate working conditions without fear of retaliation."
+      ],
+      "Anti-Harassment and Workplace Dignity": [
+        "We maintain a zero-tolerance policy for harassment, abuse, or any form of intimidation in the workplace. Employees have access to grievance mechanisms to report any workplace misconduct confidentially."
+      ],
+      "Ethical Supply Chain": [
+        "Ethical Supply Suppliers, contractors, and business partners are expected to adhere we conduct due diligence to assess labor practices within our supply chain and take corrective actions if violations are identified."
+      ],
+      "Monitoring and Continuous Improvement": [
+        "We regularly monitor compliance with this policy through audits, employee feedback, and external assessments. Training programs are provided to employees and management to enhance awareness and implementation of labor and human rights principles."
+      ],
+      "Reporting Violations": [
+        "Employees and stakeholders are encouraged to report any violations of this policy through established grievance mechanisms."
+      ],
+      "Whistleblower Protection": [
+        "We ensure that whistleblowers are protected against retaliation for reporting violations in good faith."
+      ],
+      "Learning and Development": [
+        "We encourage continuous improvement by providing periodic training programs related to ethics, compliance, workplace conduct, health and safety, information security, leadership development, and job-specific competencies to enhance employee knowledge, performance, and long-term career progression."
+      ],
+      "Employees Health and Safety": [
+        "We uphold a strict policy of zero tolerance regarding the Total Recordable Incident Rate (TRIR), emphasizing our commitment to maintaining the highest safety standards in the workplace."
+      ],
+      "Working Conditions": [],
+      "Social Dialogue": [],
+      "Career Management and Training": [],
+      "Child labor, forced labor, and human trafficking": [
+        " We are committed to ensuring that We have successfully eradicated any instances of child labor, forced labor, or human trafficking within our operations and supply chains."
+      ],
+      "Diversity, equity, and inclusion": [],
+      "External stakeholder human rights": []
+    },
+    "quantitative": [
+      {
+        "area": "Employees Health and Safety",
+        "targets": [
+          {
+            "target": "We guarantee that all employees complete mandatory health and safety training programs each year, ensuring full compliance by the annual deadline.",
+            "baseline": "2022",
+            "deadline": "each year"
+          },
+          {
+            "target": "We intend to ensure that 100% of employees in high-risk areas have access to and properly use Personal Protective Equipment (PPE) by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to perform quarterly safety audits across all facilities, aiming for a 100% completion rate each year.",
+            "baseline": "2022",
+            "deadline": "each year"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "We aim to achieve an employee satisfaction score of 85% or higher in annual surveys by the end of 2030.",
+            "baseline": "2022",
+            "deadline": "end of 2030"
+          },
+          {
+            "target": "We plan to implement flexible work arrangements for at least 60% of eligible positions by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to achieve that 90% of employees participate in professional development programs annually by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "We aim to achieve a 90% participation rate in annual employee engagement surveys by the end of 2030.",
+            "baseline": "2022",
+            "deadline": "end of 2030"
+          },
+          {
+            "target": "We plan to resolve 95% of employee grievances within 30 days by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to ensure that 100% of eligible employees are informed about their rights to union representation by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "We aim to ensure that each employee completes a minimum of 20 hours of job-specific training annually by the end of 2030.",
+            "baseline": "2022",
+            "deadline": "end of 2030"
+          },
+          {
+            "target": "We plan to enrol 15% of employees in leadership development programs by 2030 to cultivate internal talent for managerial positions.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to achieve a 95% certification rate for employees undergoing professional development courses by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to attain an 85% satisfaction rate in post-training evaluations by 2030, ensuring the effectiveness and relevance of training programs.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to conduct annual performance and career development discussions for 100% of employees by 2030 to support professional growth and succession planning.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to increase employee participation in cross-functional learning and skill enhancement programs by 25% by 2030 to strengthen workforce adaptability and competency development.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to enhance digital learning accessibility by implementing online or hybrid learning platforms for employee training and development by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Child labor, forced labor, and human trafficking",
+        "targets": [
+          {
+            "target": "We plan to provide training on ethical labor practices to 100% of employees and suppliers by 2030 to prevent labor rights violations.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to partner with NGOs to strengthen anti-trafficking efforts by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to develop rehabilitation programs for victims of forced labor by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, equity, and inclusion",
+        "targets": [
+          {
+            "target": "We aim to achieve 15% representation of women and 10% representation of underrepresented minorities in leadership positions by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to allocate 20% of our procurement budget to minority-owned and women-owned suppliers by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to establish and support at least three Employee Resource Groups (ERGs) by 2030, focusing on various aspects of diversity, to promote inclusivity and provide support networks within the company.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We ensure 100% of employees complete annual Diversity, Equity, and Inclusion (DEI) training programs, with a focus on unconscious bias, cultural competency, and inclusive practices, by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "External stakeholder human rights",
+        "targets": [
+          {
+            "target": "We aim to implement human rights training programs for 90% of suppliers by 2030 to promote awareness and compliance throughout our supply chain.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to ensure that 100% of external stakeholders, including suppliers and contractors, have access to effective grievance mechanisms by 2030 to report human rights concerns.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Ensuring that labor and human rights principles are embedded into corporate governance and business strategy."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Identifying and mitigating labor and human rights risks across all business operations and supply chains."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Conducting annual reviews of the policy's effectiveness and ensuring the publication of progress reports in sustainability disclosures."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Leading the overall strategy for labor and human rights across the organization."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Ensuring alignment with global sustainability frameworks and best practices."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Reports directly to the CEO and provides regular updates to the Board of Directors."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Embedding labor and human rights policies into daily business operations."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensuring that necessary resources are allocated to enforce compliance."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Overseeing corrective measures for non-compliance."
+      },
+      {
+        "role": "Sustainability Committee",
+        "duty": "Monitoring policy adherence and driving continuous improvement."
+      },
+      {
+        "role": "Sustainability Committee",
+        "duty": "Engaging with external stakeholders, including NGOs and industry groups."
+      },
+      {
+        "role": "Sustainability Committee",
+        "duty": "Recommending policy updates based on emerging risks and best practices."
+      },
+      {
+        "role": "Departmental Heads",
+        "duty": "Implementing policy guidelines within their respective departments."
+      },
+      {
+        "role": "Departmental Heads",
+        "duty": "Conducting regular assessments to ensure compliance with labor and human rights standards."
+      },
+      {
+        "role": "Departmental Heads",
+        "duty": "Encouraging a culture of ethical labor practices among employees."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Conducting audits and risk assessments related to labor and human rights."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Investigating reported violations and ensuring corrective actions are taken."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Maintaining comprehensive records of compliance initiatives and reports."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhering to the principles outlined in this policy."
+      },
+      {
+        "role": "Employees",
+        "duty": "Reporting any labor rights violations or unethical practices through designated channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participating in training programs and fostering an inclusive workplace."
+      }
+    ],
+    "monitoring": "The Chief Human Resources Officer (CHRO) presents a comprehensive labor and human rights dashboard to senior management and the Board.\n\nThe dashboard highlights progress towards annual labor and human rights targets, emerging trends, and areas needing attention.\n\nA dedicated system for employees to report labor rights violations, discrimination, harassment, or unsafe working conditions.\n\nThe Compliance Manager investigates all reports and ensures corrective actions are implemented in a timely manner.\n\nExternal reporting is conducted annually to communicate our labor and human rights performance to stakeholders, including employees, customers, investors, and regulatory bodies.\n\nReports are prepared in accordance with internationally recognized standards such as the United Nations Guiding Principles on Business and Human Rights (UNGPs) and Global Reporting Initiative (GRI) guidelines.\n\nWe require suppliers to submit annual reports on their labor and human rights compliance, including any corrective actions taken.\n\nAudits and third-party assessments are conducted to verify compliance with our Supplier Code of Conduct.\n\nWe actively engage with employees, suppliers, and other stakeholders to gather feedback, address concerns, and foster transparency in our labor and human rights practices.\n\nRegular stakeholder meetings and surveys help assess the effectiveness of our initiatives and inform continuous improvement efforts.\n\nA formal grievance mechanism is in place to ensure employees and external stakeholders can report violations confidentially and without fear of retaliation.\n\nGrievance reports are reviewed by the Compliance Manager and addressed according to established procedures.",
+    "reviewMechanism": "An annual performance review is conducted to assess progress towards labor and human rights goals and targets.\n\nKey achievements, challenges, and areas for improvement are identified through a comprehensive evaluation process.\n\nFeedback from performance reviews, internal audits, and stakeholder engagement activities is used to identify opportunities for continuous improvement.\n\nAdjustments to labor and human rights strategies, policies, and action plans are made as necessary to enhance compliance and address emerging issues.\n\nThe Chief Sustainability Officer reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations.\n\nCompany can also change or review policy if any necessary changes is required.\n\nUpdates to the policy are communicated internally, and relevant training is provided to ensure awareness and compliance with labor and human rights standards."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\KBL Cosmetic dba Arminak Solution\\Labor and Human Rights Policy.docx",
+  "sourceTextLength": 16001,
+  "parsedAt": "2026-08-10T09:21:37.005Z"
+}

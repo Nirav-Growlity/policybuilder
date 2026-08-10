@@ -1,6 +1,6 @@
 import mammoth from "mammoth";
-import type { Policy, Responsibility, QuantitativeArea } from "../types";
-import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT } from "../constants";
+import type { Policy, PolicyType, Responsibility, QuantitativeArea } from "../types";
+import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, getPolicyProfile } from "../constants";
 
 export interface ParseResult {
   text: string;
@@ -58,7 +58,7 @@ const SECTION_NAMES: Record<string, string[]> = {
   declaration: [
     "policy declaration", "policy statement", "declaration", "statement of policy",
     "our commitment", "environmental commitment", "aims", "objectives", "the {x} commitment",
-    "commitment", "policy aim", "our aim",
+    "commitment", "policy aim", "our aim", "labour and human rights commitments", "living wage commitments",
   ],
   scope: [
     "scope", "applicability", "1.0 scope", "1. scope", "scope of the policy",
@@ -70,17 +70,17 @@ const SECTION_NAMES: Record<string, string[]> = {
     "key performance areas", "commitments & targets", "our commitments & approach",
     "key environmental priorities", "{x} sustainability commitments",
     "what's expected", "what we do", "key priorities", "environmental priorities",
-    "commitments and approach", "policy focus areas", "focus",
+    "commitments and approach", "policy focus areas", "focus", "key labor and human rights priorities", "key labour and human rights areas", "workforce and human rights objectives and targets", "living wage determination and application",
   ],
   qualitative: [
     "qualitative objectives", "qualitative commitments", "qualitative targets",
     "qualitative goals", "objectives and targets", "qualitative",
-    "commitments and qualitative objectives",
+    "commitments and qualitative objectives", "our strategic approach", "our commitments & approach", "human rights and labour commitments", "living wage commitments", "action framework",
   ],
   quantitative: [
     "quantitative objectives", "quantitative targets", "measurable targets",
     "goals", "quantitative goals", "measurable objectives",
-    "quantitative commitments", "targets and goals", "performance areas",
+    "quantitative commitments", "targets and goals", "performance areas", "performance and target metrics", "performance targets",
   ],
   sdgs: [
     "alignment with the united nations sustainable development goals",
@@ -112,6 +112,7 @@ const SECTION_NAMES: Record<string, string[]> = {
     "policy review and update mechanism", "review mechanism and review process",
     "review and update", "review process",
   ],
+  definitions: ["definition", "definitions", "living wage determination", "living wage assessment", "wage review and implementation"],
   ack: [
     "employee acknowledgment form", "acknowledgement form",
     "employee acknowledgement", "acknowledgement",
@@ -187,7 +188,7 @@ function matchCompanyInText(text: string): string | null {
   return best ? best.text : null;
 }
 
-export async function parseDocxBuffer(buf: Buffer): Promise<ParseResult> {
+export async function parseDocxBuffer(buf: Buffer, policyType: PolicyType = "environmental"): Promise<ParseResult> {
   const [raw, htmlResult] = await Promise.all([
     mammoth.extractRawText({ buffer: buf }),
     mammoth.convertToHtml({ buffer: buf }),
@@ -195,7 +196,7 @@ export async function parseDocxBuffer(buf: Buffer): Promise<ParseResult> {
   const text = (raw.value || "").replace(/\u00A0/g, " ");
   const html = (htmlResult.value || "").replace(/\u00A0/g, " ");
   const blocks = htmlToBlocks(html);
-  return { text, html, policy: buildPolicy(blocks, text) };
+  return { text, html, policy: buildPolicy(blocks, text, policyType) };
 }
 
 function htmlToBlocks(html: string): Block[] {
@@ -328,9 +329,9 @@ function cleanInline(nodes: HtmlNode[]): string {
   return inlineToText(nodes).text;
 }
 
-function buildPolicy(blocks: Block[], rawText: string): Partial<Policy> {
+function buildPolicy(blocks: Block[], rawText: string, policyType: PolicyType = "environmental"): Partial<Policy> {
   const policy: Partial<Policy> = {
-    policyType: "environmental",
+    policyType,
     company: { name: "", industry: "", site: "", sites: [], docNum: "", revNum: "01", effectiveDate: "", reviewDate: "", approver: "" },
     standards: [],
     declaration: { preface: "", declaration: "", scope: "" },
@@ -351,7 +352,12 @@ function buildPolicy(blocks: Block[], rawText: string): Partial<Policy> {
   extractSdgs(cleaned, rawText, policy);
   extractResponsibilities(sections, policy);
   extractStandards(rawText, policy);
-  applyDefaults(policy);
+  if (policyType === "living-wage") {
+    const definitions = sections.get("definitions") || [];
+    const content = definitions.filter((block) => block.type === "para" || block.type === "list").map((block) => block.type === "list" ? block.items.join("\n") : block.text).join("\n\n").trim();
+    if (content) policy.definitions = { title: "Living Wage Definition & Methodology", content };
+  }
+  applyDefaults(policy, policyType);
   return policy;
 }
 
@@ -1098,7 +1104,7 @@ function dedupeResponsibilities(list: Responsibility[]): Responsibility[] {
 }
 
 function extractStandards(rawText: string, policy: Partial<Policy>) {
-  const stds = ["EcoVadis", "CDP", "GRI", "BRSR", "CSRD", "UNGC", "ISO 14001", "ISO 14001:2015", "ISO 45001", "ISO 45001:2018", "ISO 26000", "SA8000", "TCFD", "SBTi", "RBA", "SDGs", "PSCI"];
+  const stds = ["EcoVadis", "CDP", "GRI", "BRSR", "CSRD", "UNGC", "ILO", "ISO 14001", "ISO 14001:2015", "ISO 45001", "ISO 45001:2018", "ISO 26000", "SA8000", "TCFD", "SBTi", "RBA", "SDGs", "PSCI"];
   const found: string[] = [];
   for (const s of stds) {
     if (rawText.toLowerCase().includes(s.toLowerCase())) found.push(s);
@@ -1106,7 +1112,20 @@ function extractStandards(rawText: string, policy: Partial<Policy>) {
   if (found.length) policy.standards = Array.from(new Set(found));
 }
 
-function applyDefaults(policy: Partial<Policy>) {
+function applyDefaults(policy: Partial<Policy>, policyType: PolicyType = "environmental") {
+  if (policyType !== "environmental") {
+    const profile = getPolicyProfile(policyType);
+    if (!policy.focusAreas || policy.focusAreas.length === 0) policy.focusAreas = [...profile.focusAreas];
+    else policy.focusAreas = dedupe(policy.focusAreas.map((area) => area.replace(/^\d+(?:\.\d+)*\.?\s*/, "").trim()).filter(Boolean)).slice(0, 16);
+    if (!policy.responsibilities || policy.responsibilities.length < 2) policy.responsibilities = profile.responsibilities.map((item) => ({ ...item }));
+    if (!policy.standards || policy.standards.length === 0) policy.standards = [...profile.standards];
+    if (!policy.declaration) policy.declaration = { preface: "", declaration: "", scope: "" };
+    if (!policy.qualitative) policy.qualitative = {};
+    if (!policy.quantitative) policy.quantitative = [];
+    if (!policy.sdgs || policy.sdgs.length === 0) policy.sdgs = [...profile.sdgs];
+    if (!policy.company) policy.company = { name: "", industry: "", site: "", docNum: "", revNum: "01", effectiveDate: "", reviewDate: "", approver: "" };
+    return;
+  }
   if (!policy.focusAreas || policy.focusAreas.length === 0) {
     policy.focusAreas = [...FOCUS_AREAS_DEFAULT];
   } else {

@@ -1,0 +1,292 @@
+{
+  "id": "labour-human-rights-renewsys",
+  "name": "Renewsys",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from 17 REN IMS Workplace Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Renewsys",
+      "industry": "",
+      "site": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "sites": [
+        {
+          "location": "RenewSys India Pvt. Ltd.",
+          "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot No. E-141, Additional Patalganga MIDC Industrial Area, Village - Karade Khurd, Taluka Panvel, District Raigad, Maharashtra - 410 206, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot No. 6, Survey # 114/P, Srinagar Village, Maheshwaram Mandal, Rangareddy Dist. - 501 359,Telangana, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot Nos. 21, 22, 23, Bommasandra - Jigani Link Road Industrial Area, Taluk Anekal, Bengaluru - 560 105, Karnataka, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "RenewSys India Pvt. Ltd. recognizes that respect for labour rights and human rights is fundamental to responsible business conduct and sustainable organizational growth. The Company is committed to upholding the dignity, equality, and well-being of all employees by ensuring fair working conditions, promoting equal opportunities, and fostering a safe, inclusive, and respectful workplace environment.\n\nThis Labour and Human Rights Policy reflects RenewSys India Pvt. Ltd.’s commitment as a participant of the United Nations Global Compact (UNGC) to uphold and integrate the principles of the UNGC into its operations, particularly those related to human rights and labour standards.\n\nThe policy is further guided by internationally recognized frameworks, including the International Labour Organization Declaration on Fundamental Principles and Rights at Work and the United Nations International Bill of Human Rights, reinforcing the Company’s commitment to ethical labour practices, protection of human rights, and compliance with applicable labour laws and regulations across its operations and business relationships.",
+      "declaration": "We are committed to ensuring fair treatment, safety, and respect for all employees, while preventing labor abuses and promoting diversity and inclusion. Through continuous improvement, teamwork, and training, we enhance labor relations, employee well-being, and health and safety. Compliance with all labor laws and human rights standards is a priority, with FY 2022-23 as our baseline year for tracking progress and driving measurable improvements across our operations.",
+      "scope": "This Policy is applicable to all sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Health, safety and emergency preparedness",
+      "Working hours and wages",
+      "Employee well-being and engagement",
+      "Labor relations and social dialogue",
+      "Training and career development",
+      "Child labour and forced labour prevention",
+      "Equality, diversity and inclusion",
+      "Human rights stakeholder engagement"
+    ],
+    "qualitative": {
+      "Health, safety and emergency preparedness": [
+        "To regularly assess and upgrade workplace ergonomics, providing employees with comfortable and safe workstations, including ergonomic chairs, desks, and equipment to reduce physical strain.",
+        "Increase employee involvement in safety initiatives by forming active safety committees at each location and encouraging two-way communication on health and safety concerns."
+      ],
+      "Working hours and wages": [
+        "Ensure 100% employees receive adequate wages in compliance with applicable wage laws and industry standards, supported by periodic reviews and an annual wage monitoring report."
+      ],
+      "Employee well-being and engagement": [
+        "Promote employee well-being and work–life balance through family-friendly programs and enhanced employee benefits.",
+        "Encourage employee participation in workplace decision-making processes related to working conditions and employee welfare."
+      ],
+      "Labor relations and social dialogue": [
+        "To focus on establishing regular dialogues with employee representatives to address concerns and foster collaboration."
+      ],
+      "Training and career development": [
+        "To launch a mentorship program to support the career progression of junior staff and high- potential employees."
+      ],
+      "Child labour and forced labour prevention": [
+        "Strengthen the Company’s commitment to preventing child labour, forced labour, and unethical labour practices across all operations through robust due diligence, awareness, and control mechanisms ensuring ethical and lawful employment practices."
+      ],
+      "Equality, diversity and inclusion": [
+        "Foster a workplace culture of equality, respect, and zero tolerance for discrimination, harassment, and any form of abuse, ensuring employee dignity and safety."
+      ],
+      "Human rights stakeholder engagement": [
+        "Engage with external stakeholders, including NGOs and local communities, to collaborate on human rights initiatives.",
+        "Establish regular reviews of external partner practices to ensure alignment with our human rights commitments."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Health, safety and emergency preparedness",
+        "targets": [
+          {
+            "target": "Strengthen emergency preparedness through annual on-site and off-site emergency drills, ensuring employees are trained to respond effectively to unforeseen hazards.",
+            "baseline": "",
+            "deadline": "annual"
+          },
+          {
+            "target": "Maintain zero lost time injuries across all plant locations by FY 2029-30, through proactive safety measures and continuous monitoring.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain the practice of equipping 100% of employees with all required personal protective equipment (PPE) that meets safety standards by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Aim to increase the coverage of annual health check-ups to 100% of eligible employees by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% investigation of all incidents and near-miss events is conducted within 7 working days of reporting.",
+            "baseline": "",
+            "deadline": "within 7 working days of reporting"
+          },
+          {
+            "target": "Ensure the Employee Assistance Program (EAP) remains fully operational and accessible to 100% of employees, with one annual awareness initiative conducted till FY 2029-30.",
+            "baseline": "",
+            "deadline": "till FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Working hours and wages",
+        "targets": [
+          {
+            "target": "Maintain weekly working hours within legal limits and ensure overtime does not exceed 10% of total working hours per month by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% employees receive adequate wages in compliance with applicable wage laws and industry standards, supported by periodic reviews and an annual wage monitoring report.",
+            "baseline": "",
+            "deadline": "annual"
+          }
+        ]
+      },
+      {
+        "area": "Employee well-being and engagement",
+        "targets": [
+          {
+            "target": "Conduct one employee satisfaction survey annually in line with the Gallup Q12 Employee Engagement framework and achieve a minimum satisfaction score of 80% by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Labor relations and social dialogue",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with collective bargaining agreements by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the participation of employee representatives to 100% from all the relevant departments in structured social dialogue meetings by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Training and career development",
+        "targets": [
+          {
+            "target": "Allocate 8 hours of training per employee annually for cross-functional and inter-departmental learning programs to enhance knowledge sharing and organizational capability.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "Offer career development training programs to 100% of eligible employees annually.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "Fill at least 20% of leadership positions through internal mobility/promotions by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of the eligible employees undergo annual performance and career development review discussions by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Child labour and forced labour prevention",
+        "targets": [
+          {
+            "target": "Conduct 100% supplier audits annually to ensure compliance with child and forced labor prevention policies and hence maintain zero reported cases of child or forced labor in the supply chain.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "Partner with 2 NGOs or industry initiatives to raise awareness and drive systemic change against child and forced labor by FY 2029-30",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct annual training session on identification of unethical labour practices for 100% employees.",
+            "baseline": "",
+            "deadline": "annual"
+          }
+        ]
+      },
+      {
+        "area": "Equality, diversity and inclusion",
+        "targets": [
+          {
+            "target": "Increase the representation of women in leadership positions by 10% by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of recruitment panels are trained on equal opportunity and non-discriminatory hiring practices annually.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "Develop and maintain 3 Employee Resource Groups (ERGs) by FY 2029–30 to strengthen inclusion, and employee support.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide workplace accommodations (reasonable adjustments) for 100% of employees with disabilities based on individual needs by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct two workplace climate surveys on discrimination and harassment by FY 2029–30, with participation from 100% of employees through confidential survey forms.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Human rights stakeholder engagement",
+        "targets": [
+          {
+            "target": "Engage 80% of External Stakeholders in Human Rights Dialogues by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      3,
+      5,
+      10,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "The Human Resources (HR) Manager",
+        "duty": "will be responsible for compiling and preparing the annual labor and human rights performance report."
+      },
+      {
+        "role": "The Safety and Health Officer",
+        "duty": "for health and safety metrics."
+      },
+      {
+        "role": "The Supplier Relations Team",
+        "duty": "for supplier audits and compliance data."
+      },
+      {
+        "role": "The Diversity and Inclusion Council",
+        "duty": "for reporting on inclusivity efforts."
+      },
+      {
+        "role": "The Labor Relations Committee",
+        "duty": "for progress on labor relations and grievance handling."
+      }
+    ],
+    "monitoring": "We at RenewSys India Pvt. Ltd. are committed to maintain transparency and accountability in the implementation of our Labor and Human Rights Policy. The progress of our initiatives will be reported annually through a detailed performance report which will include key performance indicators (KPIs) that are aligned with both the quantitative and qualitative targets set forth in this policy, offering a clear evaluation of our achievements, challenges, and areas for improvement.\n\nOur reporting will cover a wide range of topics, including:\n\nProgress on employee health and safety initiatives\n\nCompliance with working conditions and labor relations standards\n\nChild labor and forced labor prevention measures\n\nDiversity, equity, and inclusion programs\n\nExternal stakeholder engagements on human rights\n\nAdditionally, the results of our annual employee satisfaction surveys, supplier audits, and safety assessments will be published by the HR Department and made available to all stakeholders, including employees, trade unions, suppliers, and external partners, ensuring that they are informed and engaged in our efforts to uphold human rights and fair labor practices.",
+    "reviewMechanism": "Our Workplace Rights Policy will be reviewed annually by the Human Resources Manager to ensure accountability and transparency. This review will assess compliance with the policy, evaluate its effectiveness, and incorporate feedback from audits and stakeholders. Necessary updates will be made to maintain alignment with best practices, legal requirements, and the organization’s objectives."
+  },
+  "sourcePath": "Hetvi- Policies\\Renewsys\\17 REN IMS Workplace Rights Policy.docx",
+  "sourceTextLength": 12690,
+  "parsedAt": "2026-08-10T09:22:47.924Z"
+}

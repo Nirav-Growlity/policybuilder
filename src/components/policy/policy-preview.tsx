@@ -2,9 +2,12 @@
 
 import * as React from "react";
 import { getCompanySites, type Policy } from "@/lib/types";
-import { SDG_DATA, POLICY_TYPE_META } from "@/lib/constants";
+import { SDG_DATA, FRAMEWORK_ALIGNMENT, getPolicyProfile } from "@/lib/constants";
+import { normalizePolicyQuantitative } from "@/lib/quantitative";
 
-export function PolicyPreview({ policy }: { policy: Policy }) {
+export function PolicyPreview({ policy: incomingPolicy }: { policy: Policy }) {
+  const policy = normalizePolicyQuantitative(incomingPolicy);
+  const profile = getPolicyProfile(policy.policyType);
   const co = policy.company;
   const sites = getCompanySites(co);
   const areas = policy.focusAreas.filter(Boolean);
@@ -15,17 +18,19 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
     <article className="bg-[#fffdf7] text-[#1a1a1a] font-serif shadow-[var(--shadow-lift)] rounded-2xl overflow-hidden border border-[var(--color-line)]">
       {/* Cover */}
       <header className="text-center px-12 py-14 border-b-2 border-[var(--color-forest)] relative">
+        {co.companyLogo ? <img src={co.companyLogo} alt={`${co.name || "Company"} logo`} className="absolute top-5 left-6 h-12 w-20 object-contain" /> : null}
         <div className="absolute top-6 left-6 right-6 flex items-center justify-between text-[10.5px] uppercase tracking-[0.18em] text-[var(--color-muted)] font-sans">
-          <span>{POLICY_TYPE_META.label}</span>
+          <span>{profile.label}</span>
           <span className="font-mono normal-case tracking-normal">Doc · {co.docNum || "—"}</span>
         </div>
         <div className="mt-6 mb-4 text-[10.5px] uppercase tracking-[0.24em] text-[var(--color-forest)] font-sans font-semibold">
           Sustainability Policy
         </div>
         <h1 className="font-display text-[40px] font-semibold leading-[1.05] tracking-tight text-[var(--color-ink)]">
-          {POLICY_TYPE_META.label}
+          {profile.label}
         </h1>
         <p className="text-[16px] text-[var(--color-ink-2)] mt-3 font-sans">{co.name || "[Company Name]"}</p>
+        {(co.industry || co.subCategory || co.country || co.websiteLink) && <p className="text-[10.5px] text-[var(--color-muted)] mt-2 font-sans">{[co.industry, co.subCategory, co.country].filter(Boolean).join(" · ")}{co.websiteLink ? ` · ${co.websiteLink}` : ""}</p>}
         <table className="w-full border-collapse mt-8 font-sans text-[11.5px]">
           <tbody>
             <tr>
@@ -96,6 +101,26 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
           </section>
         )}
 
+        {policy.definitions?.content && (
+          <section>
+            <SectionHeading>{policy.definitions.title || "Definitions"}</SectionHeading>
+            {policy.definitions.content.split(/\r?\n+/).map((p, i) => (
+              <p key={i} className="text-[14px] leading-[1.8] text-[#1f1f1f] text-justify mb-3 last:mb-0">{p}</p>
+            ))}
+          </section>
+        )}
+
+        {policy.standards.some((standard) => FRAMEWORK_ALIGNMENT[standard]) && (
+          <section>
+            <SectionHeading>Framework Alignment</SectionHeading>
+            <ul className="space-y-2 list-none pl-0">
+              {policy.standards.filter((standard) => FRAMEWORK_ALIGNMENT[standard]).map((standard) => (
+                <li key={standard} className="text-[13.5px] leading-[1.7] text-[#1f1f1f]"><strong>{standard}:</strong> {FRAMEWORK_ALIGNMENT[standard]}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {policy.presentationTemplate !== "executive" && areas.length > 0 && (
           <section>
             <SectionHeading>Key Focus Areas</SectionHeading>
@@ -141,7 +166,7 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
           <section>
             <SectionHeading>Quantitative Targets</SectionHeading>
             <p className="text-[12px] text-[var(--color-muted)] mb-3 font-sans italic">
-              Baseline year: FY 2022-23. All targets to be achieved by the stated deadline.
+              Targets are either tracked against a defined period or reported annually as ongoing commitments.
             </p>
             {policy.visualStyle === "modern" ? (
               <div className="space-y-4">
@@ -153,7 +178,7 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
                     <div className="space-y-2">
                       {q.targets.filter((t) => t.target).map((t, ti) => (
                         <p key={ti} className="text-[13.5px] leading-[1.7] text-[#1f1f1f] m-0">
-                          {t.target} (Baseline: {t.baseline}, Deadline: {t.deadline}).
+                          {t.target}{t.reportingFrequency === "Annually" ? " (Reported annually)." : ` (Baseline: ${t.baseline}, Deadline: ${t.deadline}).`}
                         </p>
                       ))}
                     </div>
@@ -170,6 +195,7 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
                       <th className="text-left font-semibold px-3 py-2">Target</th>
                       <th className="text-left font-semibold px-3 py-2">Baseline</th>
                       <th className="text-left font-semibold px-3 py-2">Deadline</th>
+                      <th className="text-left font-semibold px-3 py-2">Reporting</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -185,8 +211,9 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
                               {ti === 0 ? q.area : ""}
                             </td>
                             <td className="px-3 py-2 border-t border-[#e5e1d3]">{t.target}</td>
-                            <td className="px-3 py-2 border-t border-[#e5e1d3] align-top">{t.baseline}</td>
-                            <td className="px-3 py-2 border-t border-[#e5e1d3] align-top">{t.deadline}</td>
+                            <td className="px-3 py-2 border-t border-[#e5e1d3] align-top">{t.reportingFrequency === "Annually" ? "" : t.baseline}</td>
+                            <td className="px-3 py-2 border-t border-[#e5e1d3] align-top">{t.reportingFrequency === "Annually" ? "" : t.deadline}</td>
+                            <td className="px-3 py-2 border-t border-[#e5e1d3] align-top">{t.reportingFrequency || "Target period"}</td>
                           </tr>
                         ))
                     )}
@@ -295,13 +322,13 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
       {/* Acknowledgment form (always shown at the end of the doc) */}
       <div className="px-12 lg:px-16 py-10 border-t border-dashed border-[#e5e1d3] font-sans bg-[#fbf9f3]">
         <h3 className="font-display text-[18px] font-semibold text-center mb-1 text-[var(--color-ink)]">
-          Employee Acknowledgment Form
+          Employee Acknowledgement Form
         </h3>
         <p className="text-center text-[11px] text-[var(--color-muted)] mb-6">
-          {POLICY_TYPE_META.label} · {co.name}
+          {profile.label} · {co.name}
         </p>
         <p className="text-[12.5px] leading-[1.75] text-[#1f1f1f] mb-3">
-          I hereby acknowledge that I have read and understood the <strong>{POLICY_TYPE_META.label}</strong> of{" "}
+          I hereby acknowledge that I have read and understood the <strong>{profile.label}</strong> of{" "}
           {co.name || "[Company Name]"}. I am aware of the company's commitment to responsible practices as outlined
           in this policy and agree to uphold these standards in my daily work.
         </p>

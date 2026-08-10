@@ -1,0 +1,291 @@
+{
+  "id": "living-wage-pispl",
+  "name": "PISPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage template from 5. Living Wage Policy_GRW 08-05.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "PISPL",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "BOM 2",
+          "address": "BOM 2 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 10, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 3",
+          "address": "BOM 3 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 6, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 4",
+          "address": "BOM 4 LC, Parekh Integrated Services Pvt. Ltd., Warehouse 7B, BGR Logistics Park, Village:-Vahuli, Padgha, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "CCU 1",
+          "address": "CCU 1 LC, Parekh Integrated Services Pvt. Ltd., Co. Mayur Ply Pvt. Ltd., Serampore, NH-2, Old Delhi Road, Belumlki, Sheoraphuli, Hooghly- 712223, West Bengal. Land mark: Belumore, Opp Royal Hotel.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "DEL 1",
+          "address": "DEL 1 LC, Parekh Integrated Services Pvt. Ltd., Village Bhangrola, Sector M 12, Manesar, Dist: Gurugram, Haryana 122505",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 2",
+          "address": "MAA 2 LC, Parekh Integrated Services Pvt. Ltd., A-07 Block, M/s RAR Retail and Infra LLP, Chinnambedu Village, Ponneri Taluk, Thiruvallur District, Tamil Nadu 601206",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 3",
+          "address": "MAA 3 LC, Parekh E-Com and Warehousing Services Pvt. Ltd., 117/3C and 3D, Padmavathi Garden, Numbal, Thiruverkadu P.O., Chennai, Tiruvallur, Tamil Nadu 600071",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BLR 2",
+          "address": "BLR 2, Parekh Integrated Services Pvt. Ltd., C/o Siemens Healthineers, Survey No. - 121/1, 121/2, Dandupalya Village, Kasaba Hobli, Hoskote - Kadapa Highway, Hoskote Taluk, Bangalore-562114",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "TVM 1",
+          "address": "TVM 1 LC, Parekh Integrated Services Pvt. Ltd., Rajadhani Warehouse, Behind Popular Tata Motors, Pallichal P.O, Trivandrum, Kerala 695020",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "South Stock Points",
+          "address": "Bengaluru, Chennai, Cochin, Coimbatore, Hubli, Hyderabad, Madurai, Mangalore, Trichy, Trivandrum, Vellore, Vijayawada",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "West Stock Points",
+          "address": "Ahmedabad, Aurangabad, Baroda, Goa, Nagpur, Pune, Rajkot, Surat",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "East Stock Points",
+          "address": "Chandrasekharpur, Guwahati, Indore, Jabalpur, Kolkata, Patna, Raipur, Ranchi",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "North Stock Points",
+          "address": "Chandigarh, Dehradun, Dharuhera, Jaipur, Jalandhar, Jodhpur, Karnal, Lucknow, Ludhiana, Srinagar",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "A Living Wage Policy reflects PISPL’s commitment to fair and responsible employment practices by ensuring that employees receive wages that enable them and their families to maintain a decent standard of living. The policy is aligned with applicable labour laws, ethical business principles, and internationally recognized human rights standards, promoting dignity, equality, and economic well-being across the workforce. Through this policy, PISPL aims to foster a fair, inclusive, and sustainable workplace by supporting compensation practices that consider basic living needs, social well-being, and long-term financial security for employees.",
+      "declaration": "At PISPL, we recognize the importance of providing fair compensation that enables our employees to meet their basic needs and maintain a decent standard of living. This Minimum Living Wage Policy ensures that all employees, including full-time, part-time, and temporary staff, receive wages that align with the concept of a minimum living wage. Our commitment to fair compensation reflects our values of dignity, respect, and social responsibility.",
+      "scope": "This policy applies to all PISPL operations, including warehouses, transportation, and office locations across all national and international locations. It covers all permanent, temporary, and contract employees across all functions, as well as all internal and external stakeholders associated with the PISPL Group, whether directly or indirectly."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "The minimum living wage is defined as the wage level that enables an individual to meet their basic needs, including food, shelter, clothing, healthcare, transportation, education, and other essential expenses, while also allowing for participation in the social, cultural, and economic life of the community. It is based on local cost-of-living factors and is regularly reviewed and adjusted to ensure its relevance.\n\nPISPL will establish a transparent and consistent process to determine the minimum living wage, taking into account factors such as local cost of living, inflation rates, and prevailing industry standards.\n\nAll employees, regardless of their employment status, will be compensated at or above the minimum living wage set by PISPL.\n\nThe minimum living wage will be the baseline for compensation, and employees with more experience, skills, or responsibilities may be eligible for higher wages based on fair and objective criteria.\n\nThe minimum living wage will be reviewed annually or as needed by Human Resource Department to ensure it remains in line with the changing cost of living and economic conditions."
+    },
+    "focusAreas": [
+      "Determining the Minimum Living Wage",
+      "Compliance",
+      "Benefits and Allowances",
+      "Grievance Redressal Mechanism",
+      "Continuous Improvement",
+      "Communication and Transparency",
+      "Compliance Monitoring",
+      "Review Mechanism"
+    ],
+    "qualitative": {
+      "Determining the Minimum Living Wage": [
+        "We will regularly review and assess the minimum living wage to ensure it remains fair and adequate, considering changes in economic conditions and the cost of living."
+      ],
+      "Compliance": [
+        "All employees, regardless of their employment status, will be compensated at or above the minimum living wage set by PISPL.",
+        "The minimum living wage will be the baseline for compensation, and employees with more experience, skills, or responsibilities may be eligible for higher wages based on fair and objective criteria."
+      ],
+      "Benefits and Allowances": [
+        "In addition to the minimum living wage, PISPL will provide a comprehensive benefits package to support employees' well-being, including healthcare, retirement plans, paid time off, and other relevant benefits.",
+        "Where feasible and within legal limits, PISPL will consider providing additional allowances or benefits to assist employees with specific needs, such as transportation or childcare.",
+        "We will aim to enhance employee access to healthcare, leave, and wellness-related benefits through continuous improvement initiatives from the baseline FY 2022–23 to be strengthened by FY 2029–30."
+      ],
+      "Grievance Redressal Mechanism": [
+        "At PISPL, we value open communication and strive to maintain a positive work environment for all employees. We understand that concerns or grievances may arise from time to time, and we are committed to providing a fair and effective system for their resolution. Our Grievance Redressal Mechanism offers a platform for employees to express their concerns and seek appropriate resolutions.",
+        "If the employees have a grievance or concern that they would like to address, we encourage them to reach out to us via our dedicated email address, hr@pispl.in.  The communication will be treated with utmost confidentiality, and the team will review and address the employee’s grievance promptly.",
+        "We assure the employees that all complaints will be thoroughly investigated, and appropriate actions will be taken to resolve the matter in a fair and impartial manner."
+      ],
+      "Continuous Improvement": [
+        "PISPL is committed to continuously improving its compensation practices and will explore partnerships, research, and benchmarking to ensure our wages align with best practices and evolving standards.",
+        "Feedback from employees, stakeholders, and external experts will be sought to identify opportunities for enhancement and innovation in our compensation approach.",
+        "By implementing this Minimum Living Wage Policy, PISPL affirms its commitment to fair compensation, employee well-being, and creating a workplace that respects the dignity and financial security of all employees."
+      ],
+      "Communication and Transparency": [
+        "PISPL will communicate the minimum living wage policy to all employees and make it easily accessible through employee handbooks, intranet portals, or other relevant channels.",
+        "PISPL will provide clear information on how the minimum living wage is calculated, updated, and how employees can address any concerns or questions related to their compensation."
+      ],
+      "Compliance Monitoring": [
+        "PISPL will establish mechanisms to monitor compliance with the minimum living wage policy.",
+        "Regular audits, payroll reviews, and data analysis will be conducted to ensure that all employees receive wages in accordance with the minimum living wage policy."
+      ],
+      "Review Mechanism": [
+        "PISPL will engage in regular dialogue with employees, labor unions (if applicable), and external stakeholders to gather feedback and insights on the adequacy of the minimum living wage."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Determining the Minimum Living Wage",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% alignment of employee compensation with internally assessed living wage benchmarks from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct periodic compensation benchmarking exercises at least once every two years from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to improve employee satisfaction related to compensation and benefits by 85% from the baseline FY 2022–23 by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Compliance",
+        "targets": [
+          {
+            "target": "We commit to ensuring 100% employees are compensated at or above the minimum wages prescribed under applicable laws, including the Code on Wages, 2019, from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We commit to maintaining zero confirmed cases of delayed wage payments from the baseline FY 2022–23 to be sustained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% employees receive salary payments through formal and traceable payment channels from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% compliance with statutory employee benefits and social security requirements from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Benefits and Allowances",
+        "targets": [
+          {
+            "target": "We will ensure 100% coverage of eligible employees under statutory insurance, provident fund, and other applicable welfare schemes from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to increase employee awareness on wage structure, benefits, and compensation policies to at least 90% employee awareness levels from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We commit to periodically reviewing employee allowance structures, including transportation and welfare support, from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Ensure implementation and effective governance of the Living Wage Policy across all operations."
+      },
+      {
+        "role": "Management",
+        "duty": "Review and approve wage structures, employee welfare measures, and periodic revisions aligned with legal and business requirements."
+      },
+      {
+        "role": "Management",
+        "duty": "Promote fair, transparent, and ethical compensation practices across the organization."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Conduct periodic assessments of living wage requirements considering inflation, cost of living, and statutory obligations."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Ensure employees are compensated in accordance with applicable wage laws and company commitments."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Maintain employee records related to wages, benefits, allowances, and statutory compliance."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Facilitate employee awareness regarding compensation structures, benefits, and grievance mechanisms."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Address employee concerns related to wages, benefits, and working conditions in a fair and timely manner."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Ensure timely and accurate salary disbursement through formal and traceable payment systems."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Maintain transparent payroll records and ensure compliance with applicable financial and statutory requirements."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Support budgeting and financial planning for employee compensation, benefits, and welfare initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with company policies, procedures, and documentation requirements related to compensation and benefits."
+      },
+      {
+        "role": "Employees",
+        "duty": "Raise concerns or grievances related to wages, benefits, or workplace practices through designated channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Maintain accurate and updated records or information required for payroll and statutory compliance purposes."
+      }
+    ],
+    "monitoring": "PISPL will establish mechanisms to monitor compliance with the minimum living wage policy.\n\nRegular audits, payroll reviews, and data analysis will be conducted to ensure that all employees receive wages in accordance with the minimum living wage policy.",
+    "reviewMechanism": "The minimum living wage will be reviewed annually or as needed by Human Resource Department to ensure it remains in line with the changing cost of living and economic conditions.\n\nPISPL will engage in regular dialogue with employees, labor unions (if applicable), and external stakeholders to gather feedback and insights on the adequacy of the minimum living wage."
+  },
+  "sourcePath": "KUSH\\PISPL\\5. Living Wage Policy_GRW 08-05.docx",
+  "sourceTextLength": 13710,
+  "parsedAt": "2026-08-10T09:18:13.131Z"
+}

@@ -1,0 +1,218 @@
+{
+  "id": "living-wage-vasuda-pharma",
+  "name": "Vasuda Pharma",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage template from 5. Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Vasuda Pharma",
+      "industry": "",
+      "site": "Vasudha Pharma Chem Ltd - Registered Office, 78/A, Vengal Rao Nagar Rd, Mothi Nagar, Vengal Rao Nagar, Sanjeeva Reddy Nagar, Hyderabad, Telangana 500038, India",
+      "sites": [
+        {
+          "location": "Unit I",
+          "address": "M/s. Vasudha Pharma Chem Limited, Plot No.39 A & B, Phase I, IDA, Jeedimetla, Quthubullapur (M), Medchal-Malkajgiri District.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Unit II",
+          "address": "M/s. Vasudha Pharma Chem. Ltd., Unit – II, (After expansion), Plot No. 79, JN Pharmacity, Parawada, Anakapalli District (Earlier Visakhapatnam District).",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Unit III",
+          "address": "M/s. Vasudha Pharma Chem. Ltd., Unit – III, (After Expansion) Plot No. 23 & 24, Visakha Pharmacity Limited, Parawada, Anakapalli District.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Unit IV",
+          "address": "M/s Vasudha Pharm Chem Ltd., Unit-IV, Plot No. 01. J.N. Pharmacity, Thadi (V), Parawada (M), Anakapalli District (Earlier Visakhapatnam District).",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Unit V",
+          "address": "M/s. Vasudha Pharma Chem Limited, Unit - V, (Change of Product Mix) Plot No. 24, 24A & 24B, De-Notified Area, APSEZ, Lalamkoduru(V), Rambilli (M), Visakhapatnam District.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "R&D",
+          "address": "M/s. Vasudha Pharma Chem Limited, R&D Centre, Ramky Commercial Hub, JN Pharmacity, Parawada, Anakapalli District.",
+          "primaryFunction": "Research and development"
+        },
+        {
+          "location": "Corporate Office",
+          "address": "Vasudha Pharma Chem Ltd - Corporate Office, 4th Floor, Vamsiram Jyothi Galaxy, Kavuri Hills, Jubilee Hills, Hyderabad, Telangana 500033",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "Registered Office",
+          "address": "Vasudha Pharma Chem Ltd - Registered Office, 78/A, Vengal Rao Nagar Rd, Mothi Nagar, Vengal Rao Nagar, Sanjeeva Reddy Nagar, Hyderabad, Telangana 500038, India",
+          "primaryFunction": "Registered office"
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Vasudha Pharma Chem Ltd - Registered Office, 78/A, Vengal Rao Nagar Rd, Mothi Nagar, Vengal Rao Nagar, Sanjeeva Reddy Nagar, Hyderabad, Telangana 500038, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Vasudha Pharma Chem Ltd. recognizes that fair and equitable compensation is fundamental to protecting employee dignity, promoting financial well-being, and fostering an engaged and productive workforce. As a responsible pharmaceutical manufacturer, the Company is committed to maintaining compensation practices that support sustainable livelihoods while contributing to long-term business success and responsible corporate citizenship.\n\nThe Company acknowledges that a Living Wage extends beyond statutory minimum wage requirements and represents remuneration that enables employees and their families to meet their essential living needs, including food, housing, healthcare, education, transportation, clothing, utilities, and a modest provision for unforeseen circumstances. Providing fair compensation strengthens employee welfare, enhances workplace stability, and supports the Company's commitment to ethical employment practices.\n\nThis Policy establishes the Company's framework for assessing, implementing, and continuously maintaining living wage practices across its operations. It reflects the Company's commitment to periodically reviewing its wage structure in consideration of economic conditions, legal requirements, cost of living, and recognized living wage methodologies to ensure compensation remains fair, competitive, and sustainable.",
+      "declaration": "The purpose of this Policy is to establish a structured framework through which Vasudha Pharma Chem Ltd. promotes responsible wage practices and progressively ensures that eligible employees receive compensation that supports a decent standard of living.\n\nEstablish a transparent approach for determining, implementing, and periodically reviewing living wages across the Company's operations.\n\nPromote fair, equitable, and non-discriminatory compensation practices that recognize employee contributions and uphold workplace dignity.\n\nEnsure compliance with applicable wage-related legislation, regulations, and statutory obligations in all locations where the Company operates.\n\nSupport employee financial well-being through compensation practices that consider evolving economic conditions and cost-of-living requirements.\n\nIntegrate living wage principles into the Company's broader Environmental, Social, and Governance (ESG) commitments and responsible business strategy.\n\nEncourage responsible employment practices throughout the Company's value chain by promoting awareness of fair wage principles among contractors and business partners, where appropriate.\n\nEstablish measurable objectives, governance mechanisms, and performance indicators to monitor progress toward achieving and maintaining living wage commitments.",
+      "scope": "This Policy applies to all operations, manufacturing facilities, offices, and business locations owned or managed by Vasudha Pharma Chem Ltd.\n\nThe Policy is applicable to:\n\nAll permanent employees of the Company.\n\nProbationary employees.\n\nFixed-term employees.\n\nTemporary employees engaged directly by the Company.\n\nApprentices and trainees, where applicable and in accordance with statutory provisions.\n\nEmployees working across manufacturing, laboratory, warehouse, administrative, sales, and corporate functions."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Living Wage: A Living Wage refers to remuneration received for a standard workweek that is sufficient to enable an employee and their family to afford a decent standard of living. It is intended to cover essential needs such as food, housing, healthcare, education, transportation, clothing, utilities, and other basic living expenses, while allowing for a reasonable level of discretionary income or savings for unforeseen circumstances. A Living Wage is determined using recognized methodologies and may exceed the applicable statutory minimum wage.\n\nVasudha Pharma Chem Ltd. is committed to adopting a structured, transparent, and evidence-based approach for determining, implementing, and maintaining living wage practices. The Company recognizes that a Living Wage is a dynamic concept influenced by economic, social, and regional factors and, therefore, requires periodic evaluation to ensure that compensation remains fair, competitive, and responsive to changing circumstances.\n\nThe Company shall determine its Living Wage framework by considering, at a minimum, the following factors:\n\nApplicable minimum wages notified by the Central Government or the respective State Government under the Code on Wages, 2019, and other applicable labour regulations.\n\nGeographic location of operations and regional variations in the cost of living.\n\nPrevailing inflation trends and relevant Consumer Price Index (CPI) data published by competent authorities.\n\nEstimated cost of meeting essential household needs, including food, housing, healthcare, education, transportation, clothing, utilities, communication, and other basic necessities.\n\nHousehold size and reasonable family dependency assumptions based on recognized living wage methodologies.\n\nIndustry compensation benchmarks and market competitiveness within the pharmaceutical and chemical manufacturing sector.\n\nInternal compensation structures, employee roles, skills, qualifications, experience, and responsibilities.\n\nBusiness sustainability, operational requirements, and long-term financial viability while maintaining fair employment practices.\n\nThe Human Resources Department, in coordination with the Finance Department and senior management, shall conduct periodic Living Wage assessments to evaluate the adequacy of employee compensation.\n\nThe overall compensation framework may include statutory social security benefits, Provident Fund contributions, Employees' State Insurance (ESI), where applicable, gratuity, paid leave entitlements, maternity and other statutory benefits, performance-based incentives and bonuses, where applicable, learning and development opportunities, and health, safety, and employee welfare initiatives.\n\nThe Company shall review its compensation framework at least annually or more frequently where significant changes occur in statutory wage notifications, inflation or economic conditions, cost-of-living indicators, labour market conditions, business operations, or regulatory requirements."
+    },
+    "focusAreas": [
+      "Living Wage and Fair Remuneration",
+      "Compliance with Labour and Wage Legislation",
+      "Equal Pay and Non-Discriminatory Compensation",
+      "Employee Well-being and Financial Resilience",
+      "Transparent and Responsible Compensation Practices",
+      "Periodic Wage Assessment and Continuous Review"
+    ],
+    "qualitative": {
+      "Living Wage and Fair Remuneration": [
+        "The Company is committed to providing compensation that progressively aligns with living wage principles, ensuring that remuneration supports employees in meeting their essential living needs while recognizing their skills, responsibilities, and contributions to the organization."
+      ],
+      "Compliance with Labour and Wage Legislation": [
+        "The Company ensures that all wage-related practices comply with the provisions of the Code on Wages, 2019, applicable Central and State Government notifications, and other relevant employment and social security laws. Where Company standards exceed statutory requirements, the higher standard shall be promoted wherever practicable."
+      ],
+      "Equal Pay and Non-Discriminatory Compensation": [
+        "Compensation decisions are based on objective factors such as job responsibilities, qualifications, experience, competencies, and performance. The Company promotes equal remuneration for work of equal value and prohibits discrimination in compensation based on gender or any other protected characteristic."
+      ],
+      "Employee Well-being and Financial Resilience": [
+        "The Company recognizes that fair compensation contributes to employees' overall quality of life. Through responsible wage practices and statutory employee benefits, the Company seeks to enhance financial stability, improve employee morale, support workforce retention, and contribute to long-term employee well-being."
+      ],
+      "Transparent and Responsible Compensation Practices": [
+        "The Company maintains transparent compensation processes by clearly communicating wage structures, statutory benefits, payroll practices, and applicable employment terms. Employees are provided with accurate wage records and have access to established channels for raising wage-related queries or concerns."
+      ],
+      "Periodic Wage Assessment and Continuous Review": [
+        "Recognizing that economic conditions and living costs evolve over time, the Company periodically reviews its compensation framework by considering statutory wage revisions, inflation, regional cost-of-living variations, industry benchmarks, and recognized living wage methodologies to ensure that wage practices remain appropriate and sustainable."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Coverage",
+        "targets": [
+          {
+            "target": "Achieve 100% Living Wage coverage for all eligible employees across the Company's operations.",
+            "baseline": "Baseline Year 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Wage Assessment",
+        "targets": [
+          {
+            "target": "Conduct comprehensive Living Wage assessments across all operating locations on a regular basis.",
+            "baseline": "Baseline Year 2023-24",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Compensation Review",
+        "targets": [
+          {
+            "target": "Review employee compensation considering statutory wage revisions, inflation, cost-of-living changes, and internal equity.",
+            "baseline": "Baseline Year 2023-24",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Statutory Wage Compliance",
+        "targets": [
+          {
+            "target": "Maintain full compliance with applicable wage-related legislation and ensure no eligible employee receives remuneration below the applicable statutory minimum wage.",
+            "baseline": "Baseline Year 2023-24",
+            "deadline": "Continuous"
+          }
+        ]
+      },
+      {
+        "area": "Equal Pay",
+        "targets": [
+          {
+            "target": "Promote equal remuneration for work of equal value by periodically reviewing compensation practices for fairness and consistency.",
+            "baseline": "Baseline Year 2023-24",
+            "deadline": "By March 2028 and thereafter annually"
+          }
+        ]
+      },
+      {
+        "area": "Wage-related Grievance Resolution",
+        "targets": [
+          {
+            "target": "Ensure wage-related concerns are addressed promptly through established grievance mechanisms.",
+            "baseline": "Baseline Year 2023-24",
+            "deadline": "Continuous"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Labour Practices",
+        "targets": [
+          {
+            "target": "Encourage key contractors and labour service providers to comply with applicable labour laws and responsible wage practices.",
+            "baseline": "Baseline Year 2023-24",
+            "deadline": "31 March 2029"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide strategic oversight for the implementation of the Living Wage Policy and ensure that responsible compensation practices are integrated into the Company's overall governance and sustainability strategy. Review the effectiveness of the Living Wage framework through periodic management updates and performance reports. Support a corporate culture that promotes fairness, employee well-being, ethical employment practices, and long-term value creation."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Ensure the effective implementation of the Living Wage Policy across all Company operations. Allocate appropriate financial, technological, and human resources to support the achievement of the Company's Living Wage commitments. Review progress against the Company's Living Wage targets and provide strategic direction for continual improvement. Promote responsible compensation practices as an integral part of the Company's ESG and human capital management strategy."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Lead the implementation and administration of the Living Wage Policy. Conduct periodic Living Wage assessments and compensation reviews using the Company's approved methodology. Monitor compliance with applicable wage legislation and Company compensation policies. Maintain accurate payroll and compensation records. Facilitate employee awareness programs and communicate the principles of this Policy across the organization. Monitor performance against established Living Wage targets and key performance indicators. Coordinate periodic policy reviews and recommend improvements based on legal developments, industry practices, and organizational needs."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Support the implementation of responsible compensation practices through effective budgeting and financial planning. Collaborate with the Human Resources Department during wage assessments and annual compensation reviews. Verify the accuracy of payroll processing and statutory wage payments. Provide relevant financial information to support management decision-making relating to Living Wage implementation."
+      },
+      {
+        "role": "Department Heads and Line Managers",
+        "duty": "Support the consistent implementation of this Policy within their respective functions. Ensure employees are informed of compensation-related policies and procedures. Encourage open communication regarding wage-related concerns and direct employees to appropriate grievance channels where necessary. Cooperate with Human Resources during wage reviews, employee assessments, and policy implementation activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Familiarize themselves with the principles and requirements of this Policy. Provide accurate employment-related information required for compensation administration. Raise wage-related concerns or queries through the Company's established communication or grievance mechanisms. Participate in awareness programs and support the Company's commitment to responsible workplace practices."
+      }
+    ],
+    "monitoring": "Progress against these targets shall be monitored by the Human Resources Department in collaboration with the Finance Department and reviewed periodically by Executive Management. Performance shall be evaluated through internal wage assessments, statutory compliance reviews, payroll analysis, employee feedback, and other relevant management information.\n\nWhere opportunities for improvement or wage gaps are identified, appropriate corrective actions shall be incorporated into the Company's compensation planning and continuous improvement initiatives to support the achievement and long-term maintenance of its Living Wage commitments.",
+    "reviewMechanism": "This Policy shall be reviewed at least annually, or earlier if required due to changes in applicable laws, business operations, or economic conditions. The Human Resources Department shall be responsible for coordinating the review in consultation with relevant departments and Executive Management. Any revisions shall be approved through the Company's governance process and communicated to relevant stakeholders to ensure the Policy remains effective, compliant, and aligned with the Company's Living Wage commitments."
+  },
+  "sourcePath": "KUSH\\Vasuda Pharma\\5. Living Wage Policy.docx",
+  "sourceTextLength": 25119,
+  "parsedAt": "2026-08-10T09:20:04.813Z"
+}

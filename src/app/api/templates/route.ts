@@ -5,11 +5,12 @@ import path from "node:path";
 export const runtime = "nodejs";
 
 const SEED_DIR = path.join(process.cwd(), "data", "seed-policies");
+type TemplateMeta = { id: string; name: string; industry: string; summary: string; tagline: string; policyType: string };
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
     const files = await fs.readdir(SEED_DIR);
-    const templates = await Promise.all(
+    const templates: TemplateMeta[] = await Promise.all(
       files
         .filter((f) => f.endsWith(".json"))
         .map(async (f) => {
@@ -21,10 +22,12 @@ export async function GET() {
             industry: data.industry,
             summary: data.summary,
             tagline: data.tagline,
+            policyType: data.policy?.policyType || "environmental",
           };
         })
     );
-    return NextResponse.json({ templates });
+    const type = new URL(req.url).searchParams.get("policyType");
+    return NextResponse.json({ templates: type ? templates.filter((t) => t.policyType === type) : templates });
   } catch (e) {
     console.error("Templates list failed", e);
     return NextResponse.json({ templates: [] });

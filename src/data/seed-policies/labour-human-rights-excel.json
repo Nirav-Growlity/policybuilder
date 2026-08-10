@@ -1,0 +1,393 @@
+{
+  "id": "labour-human-rights-excel",
+  "name": "Excel",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from 101. Labour and Human Rights Policy V01 01.08.2025 Corr. Sekar.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Excel",
+      "industry": "",
+      "site": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+      "sites": [
+        {
+          "location": "Corporate Head Office",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "Roha Manufacturing Site",
+          "address": "Plot No. 112, 20/1, OS-2, MIDC, Dhatav, Roha, Raigad, Maharashtra 402116, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Lote Manufacturing Site",
+          "address": "D-9, MIDC, Lote Parshuram, Ratnagiri, Maharashtra 415722, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Visakhapatnam Manufacturing Site",
+          "address": "Plot No. 15 & 15A, APSEZ, Atchutapuram, Vishakhapatnam, Andhra Pradesh, 531011, India",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Excel Bioresources Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Subsidiary"
+        },
+        {
+          "location": "Kamaljyot Investments Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Subsidiary"
+        },
+        {
+          "location": "Excel Rajkot C&D waste recycling Private Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Subsidiary"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Excel Industries Limited, through this Labour and Human Rights Policy (LHR) policy is committed to the continual improvement of our labor and human rights practices and business sustainability by upholding the highest standards of labor and human rights in all our operations. We will work diligently to create a work environment that upholds the dignity, rights of all our employees and contribute positively to the broader community thereby enhancing the organizations long-term competitiveness. This LHR Policy reflects our dedication to providing a safe, positive, respectful, fair and inclusive work environment, promoting social dialogue, and respecting the rights of well-being of all our stakeholders.",
+      "declaration": "Excel Industries Limited, a responsible manufacturer of industrial chemicals, intermediates, specialty chemicals, agrochemical intermediates and pharmaceutical products, is committed to upholding the highest standards of labor and human rights across all our sites and operations.\n\nIt is the Company’s endeavor to:\n\nComply with all applicable labour laws, human rights conventions and international standards (including ILO Conventions and UN Global Compact Principles).\n\nProvide a safe, healthy and respectful workplace free from discrimination, harassment, child labour, and forced labour.\n\nRespect freedom of association and collective bargaining, ensuring open dialogue between management and employees.\n\nSupport diversity, equity and equal opportunities in recruitment, training, and career development.\n\nEnsure fair wages and working conditions for all employees, contractors and their workmen engaged at our sites.\n\nPromote social dialogue and employee engagement for continuous improvement in workplace culture.\n\nProvide continuous training and development programs to enhance employee skills and career growth.\n\nExtend human rights expectations across our supply chain, engaging with suppliers, service providers and stakeholders to adopt responsible practices.\n\nSafeguard external stakeholders and communities, ensuring that our operations do not adversely impact their human rights.\n\nContinually review objectives and set measurable targets to improve our labour and human rights performance.\n\nThis Labour & Human Rights Policy provides a comprehensive framework for Excel Industries Limited to manage and strengthen workplace practices responsibly and sustainably.It will be reviewed monthly for its continuing adequacy and suitability to our business. The policy will be made available to stakeholders, customers, suppliers and the wider community, wherever required.",
+      "scope": "This policy applies to all functions within Excel Industries Limited, including manufacturing, design and development, logistics, human resources, and corporate offices. It applies to all employees, contractors, service providers, suppliers, their workmen, and all stakeholders associated with the company. This policy is applicable across all operating sites of Excel Industries Limited as listed below."
+    },
+    "focusAreas": [
+      "Employee Health & Safety",
+      "Social Dialogue",
+      "Working Conditions",
+      "Discrimination & Harassment",
+      "Child Labor",
+      "Forced Labor & Human Trafficking",
+      "Diversity, Equity, and Inclusion",
+      "Career Management & Training",
+      "External Stakeholder Human Rights"
+    ],
+    "qualitative": {
+      "Employee Health & Safety": [
+        "Ensure a safe and healthy work environment by rigorously implementing health and safety programs.",
+        "Regularly assess workplace risks and take proactive measures to minimize hazards.",
+        "Continually provide employees with trainings, resources to improve Safety and Occupational Health."
+      ],
+      "Social Dialogue": [
+        "Foster open and constructive communication between management and employees.",
+        "Encourage employee participation in decision-making processes.",
+        "Respect and support the rights of employees to form and join labor unions."
+      ],
+      "Working Conditions": [
+        "Offer fair wages and benefits in compliance with local laws and industry standards.",
+        "Maintain reasonable working hours, ensure rest periods and leave entitlements.",
+        "Provide a respectful and non-discriminatory work environment."
+      ],
+      "Discrimination & Harassment": [
+        "Promote and maintain a workplace free from discrimination, harassment, bullying, or retaliation.",
+        "Provide employees with awareness training on workplace rights, dignity, and respect.",
+        "Ensure the availability of a confidential and accessible grievance redressal mechanism for all employees."
+      ],
+      "Child Labor": [
+        "Prohibit the employment of individuals under the legal working age at all locations.",
+        "Conduct regular audits to ensure compliance with child labor laws and standards."
+      ],
+      "Forced Labor & Human Trafficking": [
+        "Strictly prohibit any form of forced or involuntary labor, including human trafficking.",
+        "Implement measures to identify and eliminate forced labor within all our activities."
+      ],
+      "Diversity, Equity, and Inclusion": [
+        "Promote a diverse and inclusive workplace where all employees are treated with respect and dignity.",
+        "Implement policies to prevent discrimination based on race, gender, age, disability, religion, or any other protected characteristic.",
+        "Support equal opportunities for all employees in hiring, promotion, and professional development."
+      ],
+      "Career Management & Training": [
+        "Provide opportunities for continuous learning and professional development.",
+        "Support employees in their career growth through training programs, mentorship, and advancement opportunities.",
+        "Ensure access to resources for skill enhancement and career progression."
+      ],
+      "External Stakeholder Human Rights": [
+        "Respect and support human rights in our interactions with external stakeholders, including suppliers, customers, and communities.",
+        "Engage with stakeholders to understand and address human rights impacts.",
+        "Promote responsible business practices throughout our supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health & Safety",
+        "targets": [
+          {
+            "target": "Maintain zero fatalities and Lost Time Injury Frequency Rate (LTIFR) annually.",
+            "baseline": "FY 2021-22",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% of employees receive Health & Safety training annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct bi-annual health checkups for 100% of the workforce every year.",
+            "baseline": "FY 2021-22",
+            "deadline": ""
+          },
+          {
+            "target": "Install and maintain emergency response and first-aid facilities at 100% of sites by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Achieve 100% incident reporting and closure within defined timelines every year.",
+            "baseline": "FY 2021-22",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Conduct employee engagement and satisfaction surveys annually and achieve 80-85% satisfaction score by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% of eligible employees are covered under collective bargaining agreements.",
+            "baseline": "FY 2021-22",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve zero unresolved employee grievances by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable labor laws and wage regulations annually.",
+            "baseline": "FY 2021-22",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% workforce receives fair wages and benefits as per legal standards.",
+            "baseline": "FY 2021-22",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain average working hours within legal limits at all sites by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Provide annual awareness training on employee rights to 100% of employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% of sites have rest and welfare facilities meeting legal and company standards.",
+            "baseline": "FY 2021-22",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Discrimination & Harassment",
+        "targets": [
+          {
+            "target": "Achieve zero incidents of workplace harassment and discrimination reported and substantiated by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct annual anti-discrimination and harassment training for 100% of employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Establish and maintain a confidential reporting and grievance mechanism at 100% of sites by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Investigate and close 100% of complaints within defined timelines by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor",
+        "targets": [
+          {
+            "target": "Conduct 100% supplier and contractor audits annually to ensure no child labor by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Provide awareness training on child labor laws to 100% of contractors and procurement staff by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Include child labor prohibition clauses in 100% of supplier contracts by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Forced Labor & Human Trafficking",
+        "targets": [
+          {
+            "target": "Conduct 100% periodic audits of contractors and suppliers annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Train 100% HR, procurement and security teams on forced labor prevention by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Include forced labor prevention clauses in 100% of supplier contracts by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity, and Inclusion",
+        "targets": [
+          {
+            "target": "Achieve at least 8-10% Gender diversity in total workforce by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Provide annual DEI training to 100% of employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Achieve equal pay for equal work across all employee categories by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Career Management & Training",
+        "targets": [
+          {
+            "target": "Provide minimum 8 hours of training per employee annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% employees receive performance appraisals and career discussions annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Launch at least 3 structured development programs (technical, leadership, soft skills) by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Achieve 95% training completion rate across all employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% new joiners receive structured onboarding and induction training by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Achieve 100% supplier and contractor compliance with human rights clauses by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct annual human rights due diligence for 100% tier-1 suppliers by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Provide training to 100% employees of procurement and business development teams on human rights due diligence by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director and President & COO",
+        "duty": "Oversight of the labor and human rights policy and performance."
+      },
+      {
+        "role": "Vice President Operations",
+        "duty": "Development and implementation of environmental strategies and policies."
+      },
+      {
+        "role": "Management Review Meeting (MRM) committee",
+        "duty": "Responsible for reviewing of the Policy at all sites to assess progress and make necessary amendments as required. Evaluates environmental performance metrics and KPIs. Ensures cross-functional coordination on environmental initiatives."
+      },
+      {
+        "role": "Human Rights and Labour Committee",
+        "duty": "Ensures Policy implementation, monitors compliance, and reports to the Board. Development and implementation of HR strategies and policies."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Responsible for day-to-day management of labor and human rights programs, training, and reporting. Ensures adherence to the policy across all functions."
+      },
+      {
+        "role": "Business Unit Heads",
+        "duty": "Responsible for integrating LHR policy and practices within their units."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure compliance with labor and human rights policies and targets within their departments. Report progress and issues to the HR Department."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Expected to adhere to the Labour & Human Rights Policy and report any violations or concerns."
+      }
+    ],
+    "monitoring": "Compliance: Ensure compliance with all relevant Labour & Human Rights laws, regulations, and standards.\n\nTraining: Provide regular training for employees on Labour & Human Rights policies, practices, and responsibilities.\n\nPerformance Monitoring: Set measurable Labour & Human Rights performance goals and regularly review progress towards achieving these goals.\n\nTransparency: Report our Labour & Human Rights performance and progress in a transparent manner to stakeholders.\n\nPerformance Reporting: Regular reporting on Labour & Human Rights performance to the MRM Committee, Board of Directors, and stakeholders through Business Responsibility and Sustainability Report (BRSR) and Annual Sustainability Report (ASR).\n\nStakeholder Engagement: Continuous dialogue with stakeholders to incorporate feedback and improve our Labour and Human Rights practices.",
+    "reviewMechanism": "This Labour & Human Rights Policy provides a comprehensive framework for Excel Industries Limited to manage and strengthen workplace practices responsibly and sustainably.It will be reviewed monthly for its continuing adequacy and suitability to our business. The policy will be made available to stakeholders, customers, suppliers and the wider community, wherever required.\n\nReview: This Labour & Human Rights Policy will be reviewed six monthly at all the sites during Management Review Meeting (MRM) committee to assess progress and ensure its effectiveness and relevance and adapting to new legal and regulatory requirements and make necessary amendments, if required.\n\nThis policy will be reviewed monthly for its continuing suitability to the organization’s current business. We will make this policy available to our employees, customers, and other stakeholders, wherever required."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Excel\\101. Labour and Human Rights Policy V01 01.08.2025 Corr. Sekar.docx",
+  "sourceTextLength": 15702,
+  "parsedAt": "2026-08-10T09:21:00.252Z"
+}

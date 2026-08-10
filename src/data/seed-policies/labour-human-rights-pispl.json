@@ -1,0 +1,547 @@
+{
+  "id": "labour-human-rights-pispl",
+  "name": "PISPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from 3.Human Rights - Fair Labour Practices Policy_GRW 08-05.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "PISPL",
+      "industry": "",
+      "site": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "BOM 2",
+          "address": "BOM 2 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 10, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 3",
+          "address": "BOM 3 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 6, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 4",
+          "address": "BOM 4 LC, Parekh Integrated Services Pvt. Ltd., Warehouse 7B, BGR Logistics Park, Village:-Vahuli, Padgha, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "CCU 1",
+          "address": "CCU 1 LC, Parekh Integrated Services Pvt. Ltd., Co. Mayur Ply Pvt. Ltd., Serampore, NH-2, Old Delhi Road, Belumlki, Sheoraphuli, Hooghly- 712223, West Bengal. Land mark: Belumore, Opp Royal Hotel.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "DEL 1",
+          "address": "DEL 1 LC, Parekh Integrated Services Pvt. Ltd., Village Bhangrola, Sector M 12, Manesar, Dist: Gurugram, Haryana 122505",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 2",
+          "address": "MAA 2 LC, Parekh Integrated Services Pvt. Ltd., A-07 Block, M/s RAR Retail and Infra LLP, Chinnambedu Village, Ponneri Taluk, Thiruvallur District, Tamil Nadu 601206",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 3",
+          "address": "MAA 3 LC, Parekh E-Com and Warehousing Services Pvt. Ltd., 117/3C and 3D, Padmavathi Garden, Numbal, Thiruverkadu P.O., Chennai, Tiruvallur, Tamil Nadu 600071",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BLR 2",
+          "address": "BLR 2, Parekh Integrated Services Pvt. Ltd., C/o Siemens Healthineers, Survey No. - 121/1, 121/2, Dandupalya Village, Kasaba Hobli, Hoskote - Kadapa Highway, Hoskote Taluk, Bangalore-562114",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "TVM 1",
+          "address": "TVM 1 LC, Parekh Integrated Services Pvt. Ltd., Rajadhani Warehouse, Behind Popular Tata Motors, Pallichal P.O, Trivandrum, Kerala 695020",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "South Stock Points",
+          "address": "Bengaluru, Chennai, Cochin, Coimbatore, Hubli, Hyderabad, Madurai, Mangalore, Trichy, Trivandrum, Vellore, Vijayawada",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "West Stock Points",
+          "address": "Ahmedabad, Aurangabad, Baroda, Goa, Nagpur, Pune, Rajkot, Surat",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "East Stock Points",
+          "address": "Chandrasekharpur, Guwahati, Indore, Jabalpur, Kolkata, Patna, Raipur, Ranchi",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "North Stock Points",
+          "address": "Chandigarh, Dehradun, Dharuhera, Jaipur, Jalandhar, Jodhpur, Karnal, Lucknow, Ludhiana, Srinagar",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Parekh Integrated Services Pvt. Ltd. (PISPL) is committed to upholding and promoting fundamental labour and human rights across all its operations and value chain. The Company recognizes that respect for human dignity, fair working conditions, and ethical labour practices are essential to sustainable business operations.\n\nPISPL aligns its practices with applicable national laws and internationally recognized standards, including principles of fair labour, non-discrimination, and protection of human rights. The Company is committed to providing a safe, inclusive, and respectful workplace where all employees are treated with dignity and respect.",
+      "declaration": "The purpose of this policy is to establish a framework for ensuring that labour and human rights are respected, protected, and promoted across all areas of PISPL’s operations and value chain.\n\nThis policy aims to:\n\nEnsure compliance with applicable labour laws and regulations\n\nPromote fair, safe, and healthy working conditions\n\nPrevent and address any form of exploitation, discrimination, or abuse\n\nFoster a culture of respect, inclusion, and ethical conduct\n\nDefine clear expectations for employees, contractors, and suppliers\n\nThe policy further supports the Company’s commitment to responsible business practices and continuous improvement in social performance.",
+      "scope": "This policy applies to all PISPL operations, including warehouses, transportation, and office locations across all national and international locations. It covers all permanent, temporary, and contract employees across all functions, as well as all internal and external stakeholders associated with the PISPL Group, whether directly or indirectly."
+    },
+    "focusAreas": [
+      "Workplace Health & Safety Management",
+      "Fair Working Conditions & Employment Standards",
+      "Employee Engagement & Grievance Redressal",
+      "Employee Development & Training",
+      "Child Labour Prevention & Compliance",
+      "Modern Slavery & Forced Labour Prohibition",
+      "Diversity, Equity & Equal Opportunity",
+      "Prevention of Workplace Harassment"
+    ],
+    "qualitative": {
+      "Workplace Health & Safety Management": [
+        "We commit to establishing a zero-harm workplace culture by embedding safety accountability across all operations.",
+        "We will ensure that employees perform their duties in a safe and competent manner in line with workplace health and safety policies and applicable legislation.",
+        "We will ensure that no employee engages in unsafe practices or behaviours that may put themselves or others at risk, including misuse of alcohol or substances.",
+        "We strive to identify and mitigate workplace hazards proactively through regular risk assessments and preventive controls.",
+        "We will ensure availability and proper use of personal protective equipment (PPE) through strict enforcement and supervision.",
+        "We aim to strengthen emergency preparedness and response systems across all facilities through regular drills and readiness checks.",
+        "We will promote a transparent reporting culture for near-misses and unsafe conditions through awareness and non-retaliation practices.",
+        "We commit to continuous improvement through incident analysis and timely corrective actions.",
+        "We aim to train employees on workplace health and safety hazards that may arise within the premises, along with the necessary preventive and precautionary measures to ensure a safe working environment."
+      ],
+      "Fair Working Conditions & Employment Standards": [
+        "We commit to providing safe, fair, dignified, and positive working conditions across all locations.",
+        "We commit to providing a secure and positive work environment that enables employees to perform at their highest level.",
+        "We strive to maintain ethical workplace practices aligned with integrity, accountability, and professional conduct.",
+        "We commit to ensuring that employees have access to safe drinking water, sanitation, and hygienic workplace facilities.",
+        "We will ensure that company resources, facilities, and funds are used responsibly and for organizational purposes only.",
+        "We aim to train employees on workplace health and safety hazards that may arise within the premises, along with the necessary preventive and precautionary measures, in compliance with applicable occupational health and safety laws and regulatory requirements, including the Occupational Safety, Health and Working Conditions (OSHWC) Code, 2020.",
+        "We strive to promote work-life balance through effective workforce planning and scheduling practices.",
+        "We commit to ensuring equal working conditions for contract and third-party workers across all operations."
+      ],
+      "Employee Engagement & Grievance Redressal": [
+        "We commit to fostering an open and transparent communication culture across all levels of the organization.",
+        "We will ensure that employees can raise concerns, suggestions, and grievances confidentially without fear of retaliation.",
+        "We strive to promote honesty, trust, and integrity in all internal communications and interactions.",
+        "We commit to maintaining effective grievance redressal mechanisms that ensure fair and prompt resolution.",
+        "We strive to promote honesty, trust, and integrity in all internal communications and interactions.",
+        "We commit to maintaining effective grievance redressal mechanisms that ensure fair and timely resolution.",
+        "We will ensure respect for freedom of association and employee representation in accordance with applicable laws.",
+        "We will promote regular interaction between management and employees through structured forums."
+      ],
+      "Employee Development & Training": [
+        "We will ensure that employees understand their roles, responsibilities, and performance expectations clearly.",
+        "We aim to encourage employees to achieve mutually agreed performance targets through structured guidance and support.",
+        "We will conduct regular performance evaluations linked to individual development plans.",
+        "We commit to encouraging internal mobility and leadership development initiatives.",
+        "We will support employee upskilling aligned with evolving business and technological requirements.",
+        "We will establish succession planning processes for critical organizational roles."
+      ],
+      "Child Labour Prevention & Compliance": [
+        "We commit to maintaining zero tolerance for child labor across all operations and business relationships.",
+        "We will ensure that no individuals below the legally permitted age are employed in any part of our operations.",
+        "We strive to implement robust age verification processes during recruitment and onboarding.",
+        "We will ensure robust age verification processes during recruitment and onboarding.",
+        "We strive to extend child labor compliance requirements to contractors and suppliers.",
+        "We will promote awareness of child labor laws and ethical employment practices among employees and partners.",
+        "We commit to taking immediate corrective action in the event of any identified non-compliance."
+      ],
+      "Modern Slavery & Forced Labour Prohibition": [
+        "We will ensure that all employees work out of their own free will and are not subjected to any form of forced or compulsory labor.",
+        "We strive to ensure that employment terms are transparent and agreed upon at the time of hiring.",
+        "We will ensure that employees are not restricted from leaving employment in accordance with applicable laws and contractual terms.",
+        "We commit to enforcing zero tolerance for forced labor and human trafficking across all operations and supply chains.",
+        "We will ensure all employment is voluntary and governed by fair and transparent contracts.",
+        "We strive to eliminate any form of coercion, retention of personal documents, or unethical employment practices.",
+        "We will extend human rights compliance requirements to contractors and suppliers.",
+        "We commit to strengthening ethical recruitment practices and due diligence processes."
+      ],
+      "Diversity, Equity & Equal Opportunity": [
+        "We commit to maintaining a workplace that is free from discrimination, harassment, and any form of inappropriate behavior.",
+        "We will ensure that all employees are treated with dignity, respect, and courtesy at all times.",
+        "We strive to provide equal opportunity in hiring, development, promotion, and compensation based on qualifications, performance, skills, and experience.",
+        "We will ensure that no discrimination occurs on the basis of race, gender, religion, age, disability, or any other protected characteristic.",
+        "We strive to ensure that all complaints are handled confidentially and without retaliation.",
+        "We commit to building a diverse, equitable, and inclusive workplace environment.",
+        "We will enforce zero tolerance for discrimination, harassment, and inappropriate workplace behavior.",
+        "We strive to ensure equal opportunity in hiring, development, promotion, and compensation practices.",
+        "We will maintain robust mechanisms for prevention, reporting, and redressal of workplace harassment.",
+        "We commit to promoting an inclusive culture through awareness, leadership engagement, and continuous improvement initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Workplace Health & Safety Management",
+        "targets": [
+          {
+            "target": "We commit to achieving zero fatalities annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will reduce Lost Time Injury Frequency Rate (LTIFR) by at least 5% year-on-year",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% safety training coverage for all employees and contract workers annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct a minimum of 2 safety audits per site annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% PPE compliance across all operational sites",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct at least 2 emergency drills per site annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Fair Working Conditions & Employment Standards",
+        "targets": [
+          {
+            "target": "We will ensure 100% compliance with applicable labour laws across all locations",
+            "baseline": "FY 2022–23 compliant",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% coverage of employees under statutory benefits",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to provide health insurance to 100% of eligible employees",
+            "baseline": "FY 2029-30",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve greater than 90% employee satisfaction score on working conditions",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% resolution of workplace grievances within 30 days",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to improve employee retention by 5%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Engagement & Grievance Redressal",
+        "targets": [
+          {
+            "target": "We will ensure 100% employee access to formal grievance mechanisms",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct quarterly interaction sessions between management and employees",
+            "baseline": "FY 2022–23 periodic target",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We commit to maintaining zero cases of retaliation against employees raising concerns",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to cover 100% employees on the collective bargaining agreement and Employee representative procedure",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will conduct a minimum of 2 structured engagement sessions per site annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Development & Training",
+        "targets": [
+          {
+            "target": "We will provide a minimum of 12 training hours per employee annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% employees receive at least one training annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve at least 70% internal hiring for mid-level roles",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct annual performance appraisals for 100% employees",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% completion of induction training for new hires",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% identification of critical roles with succession plans",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Child Labour Prevention & Compliance",
+        "targets": [
+          {
+            "target": "We will maintain 100% compliance with child labor laws",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We commit to achieving zero instances of child labor",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% age verification for all employees and workers",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% training of HR and hiring teams on child labor compliance annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Modern Slavery & Forced Labour Prohibition",
+        "targets": [
+          {
+            "target": "We will maintain zero cases of forced labor or human trafficking",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% employees are covered under formal employment contracts",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will audit 100% of high-risk contractors annually",
+            "baseline": "FY 2022–23 limited target",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% training of HR and procurement teams on human rights annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% workers retain control over their personal documents",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity & Equal Opportunity",
+        "targets": [
+          {
+            "target": "We will ensure 100% employees receive POSH and DEI training annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We commit to maintaining zero unresolved cases of discrimination or harassment",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve at least 20% female workforce representation or a 5% increase",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% complaints are resolved within 30 days",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will maintain 100% compliance with applicable POSH regulations",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide overall direction and oversight on labour and human rights commitments across the organization."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Approve the Labour and Human Rights Policy and ensure alignment with applicable laws and international standards."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Promote a culture of respect, fairness, and zero tolerance towards human rights violations."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Allocate adequate resources for effective implementation of the policy."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Periodically review risks, performance, and significant issues related to labour and human rights."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Demonstrate leadership commitment to uphold labour and human rights principles across all operations."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure integration of policy requirements into business strategy and operational practices."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Provide necessary resources and support for policy implementation."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure compliance with applicable labour laws and human rights standards."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Review performance and address risks related to labour and human rights."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Implement and monitor labour and human rights practices across the organization."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Ensure fair recruitment, equal opportunity, and non-discriminatory employment practices."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Prohibit child labour, forced labour, and any form of harassment or abuse."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Facilitate employee training and awareness on labour rights and workplace conduct."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Maintain records related to employment, working conditions, and employee grievances."
+      },
+      {
+        "role": "Operations / Line Managers",
+        "duty": "Ensure implementation of fair labour practices at site level."
+      },
+      {
+        "role": "Operations / Line Managers",
+        "duty": "Provide safe and healthy working conditions for all employees and workers."
+      },
+      {
+        "role": "Operations / Line Managers",
+        "duty": "Ensure working hours, wages, and benefits comply with applicable laws."
+      },
+      {
+        "role": "Operations / Line Managers",
+        "duty": "Promote respectful workplace behavior and prevent discrimination or harassment."
+      },
+      {
+        "role": "Operations / Line Managers",
+        "duty": "Address concerns raised by employees in a timely and fair manner."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with all labour and human rights policies and procedures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Treat colleagues with dignity, respect, and fairness."
+      },
+      {
+        "role": "Employees",
+        "duty": "Refrain from any form of discrimination, harassment, or unethical behavior."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any violations or concerns related to labour or human rights."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in training and awareness programs."
+      },
+      {
+        "role": "Grievance Redressal Mechanism / Ethics Committee",
+        "duty": "Ensure a transparent, confidential, and accessible grievance mechanism."
+      },
+      {
+        "role": "Grievance Redressal Mechanism / Ethics Committee",
+        "duty": "Address complaints related to labour and human rights in a fair and timely manner."
+      },
+      {
+        "role": "Grievance Redressal Mechanism / Ethics Committee",
+        "duty": "Protect whistleblowers from retaliation."
+      },
+      {
+        "role": "Grievance Redressal Mechanism / Ethics Committee",
+        "duty": "Ensure proper investigation and closure of reported issues."
+      },
+      {
+        "role": "Grievance Redressal Mechanism / Ethics Committee",
+        "duty": "Maintain records of grievances and corrective actions taken."
+      }
+    ],
+    "monitoring": "PISPL commits to continuously strengthening its labour and human rights practices across all operations by promoting fair employment, safe working conditions, and equal opportunity. The Company will encourage awareness, training, and employee engagement while integrating learnings from audits, grievances, and feedback to enhance workplace practices and ensure alignment with applicable laws and standards.\n\nAll incidents, concerns, or violations related to labour and human rights shall be reported promptly through appropriate channels and addressed in a timely manner. Periodic reports will be shared with management to support informed decision-making and continuous improvement.",
+    "reviewMechanism": "Reviewed by the Human Resources at annual basis or as required, PISPL will periodically review this policy and its implementation to ensure effectiveness and compliance with legal and regulatory requirements. The Company will assess risks, monitor performance, and update practices based on audit findings, stakeholder feedback, and changes in applicable laws."
+  },
+  "sourcePath": "KUSH\\PISPL\\3.Human Rights - Fair Labour Practices Policy_GRW 08-05.docx",
+  "sourceTextLength": 22512,
+  "parsedAt": "2026-08-10T09:17:54.794Z"
+}

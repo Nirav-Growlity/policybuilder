@@ -8,7 +8,8 @@ import {
   Font,
 } from "@react-pdf/renderer";
 import { getCompanySites, type Policy } from "../types";
-import { SDG_DATA, POLICY_TYPE_META } from "../constants";
+import { SDG_DATA, getPolicyProfile } from "../constants";
+import { normalizePolicyQuantitative } from "../quantitative";
 import * as React from "react";
 
 const styles = StyleSheet.create({
@@ -210,7 +211,9 @@ const styles = StyleSheet.create({
   ackSignature: { borderBottom: "1 solid #aaa", height: 36, marginTop: 6 },
 });
 
-export async function generatePdf(policy: Policy): Promise<Buffer> {
+export async function generatePdf(inputPolicy: Policy): Promise<Buffer> {
+  const policy = normalizePolicyQuantitative(inputPolicy);
+  const profile = getPolicyProfile(policy.policyType);
   const doc = (
     <Document>
       <Page size="A4" style={styles.page} wrap>
@@ -223,6 +226,7 @@ export async function generatePdf(policy: Policy): Promise<Buffer> {
 }
 
 function PdfBody({ policy }: { policy: Policy }) {
+  const profile = getPolicyProfile(policy.policyType);
   const co = policy.company;
   const sites = getCompanySites(co);
   const tpl = policy.presentationTemplate || "standard";
@@ -249,6 +253,7 @@ function PdfBody({ policy }: { policy: Policy }) {
       { id: "scope", label: "Scope" },
       { id: "quantitative", label: "Key Quantitative Targets" },
       { id: "sdg", label: "SDG Alignment" }
+      ,{ id: "review", label: "Review Mechanism & Continuous Improvement" }
     ],
     comprehensive: [
       { id: "preface", label: "Executive Preface" },
@@ -264,10 +269,13 @@ function PdfBody({ policy }: { policy: Policy }) {
     ]
   };
 
-  const sections = SECTION_CONFIGS[tpl].filter(s => {
+  const sectionConfig = [...SECTION_CONFIGS[tpl]];
+  if (policy.definitions?.content) sectionConfig.splice(3, 0, { id: "definitions", label: policy.definitions.title || "Definitions" });
+  const sections = sectionConfig.filter(s => {
     if (s.id === "preface" && !policy.declaration.preface) return false;
     if (s.id === "declaration" && !policy.declaration.declaration) return false;
     if (s.id === "scope" && !policy.declaration.scope) return false;
+    if (s.id === "definitions" && !policy.definitions?.content) return false;
     if (s.id === "focus" && areas.length === 0) return false;
     if (s.id === "qualitative" && qualEntries.length === 0) return false;
     if (s.id === "quantitative" && quantEntries.length === 0) return false;
@@ -317,6 +325,13 @@ function PdfBody({ policy }: { policy: Policy }) {
             )}
           </View>
         );
+      case "definitions":
+        return (
+          <View wrap={false}>
+            <Text style={styles.sectionTitle}>{title}</Text>
+            <Text style={styles.paragraph}>{policy.definitions?.content || ""}</Text>
+          </View>
+        );
       case "focus":
         return (
           <View wrap={false}>
@@ -353,7 +368,7 @@ function PdfBody({ policy }: { policy: Policy }) {
           <View>
             <Text style={styles.sectionTitle} wrap={false}>{title}</Text>
             <Text style={{ fontSize: 9, color: "#666", marginBottom: 6 }} wrap={false}>
-              Baseline year: FY 2022-23. All targets to be achieved by the stated deadline.
+              Targets are either tracked against a defined period or reported annually as ongoing commitments.
             </Text>
             {isModern ? (
               <View>
@@ -367,7 +382,7 @@ function PdfBody({ policy }: { policy: Policy }) {
                         <Text style={styles.bulletDot}>▸</Text>
                         <Text style={[styles.bulletText, { fontSize: 10 }]}>
                           <Text style={{ fontFamily: "Helvetica-Bold" }}>Target: </Text>{t.target}
-                          <Text style={{ color: "#666", fontSize: 9 }}> (Baseline: {t.baseline} | Deadline: {t.deadline})</Text>
+                          <Text style={{ color: "#666", fontSize: 9 }}>{t.reportingFrequency === "Annually" ? " (Reported annually)" : ` (Baseline: ${t.baseline} | Deadline: ${t.deadline})`}</Text>
                         </Text>
                       </View>
                     ))}
@@ -377,26 +392,28 @@ function PdfBody({ policy }: { policy: Policy }) {
             ) : (
               <View style={styles.table}>
                 <View style={styles.tableHeader} wrap={false}>
-                  <Text style={[styles.th, { width: "6%" }]}>#</Text>
-                  <Text style={[styles.th, { width: "26%" }]}>Focus Area</Text>
-                  <Text style={[styles.th, { width: "40%" }]}>Target</Text>
-                  <Text style={[styles.th, { width: "14%" }]}>Baseline</Text>
-                  <Text style={[styles.th, { width: "14%" }]}>Deadline</Text>
+                  <Text style={[styles.th, { width: "5%" }]}>#</Text>
+                  <Text style={[styles.th, { width: "20%" }]}>Focus Area</Text>
+                  <Text style={[styles.th, { width: "35%" }]}>Target</Text>
+                  <Text style={[styles.th, { width: "13%" }]}>Baseline</Text>
+                  <Text style={[styles.th, { width: "13%" }]}>Deadline</Text>
+                  <Text style={[styles.th, { width: "14%" }]}>Reporting</Text>
                 </View>
                 {quantEntries.flatMap((q, qi) =>
                   q.targets
                     .filter((t) => t.target)
                     .map((t, ti) => (
                       <View key={`${qi}-${ti}`} style={styles.tr} wrap={false}>
-                        <Text style={[styles.td, { width: "6%", fontFamily: "Helvetica-Bold" }]}>
+                        <Text style={[styles.td, { width: "5%", fontFamily: "Helvetica-Bold" }]}>
                           {ti === 0 ? qi + 1 : ""}
                         </Text>
-                        <Text style={[styles.td, { width: "26%", fontFamily: "Helvetica-Bold" }]}>
+                        <Text style={[styles.td, { width: "20%", fontFamily: "Helvetica-Bold" }]}>
                           {ti === 0 ? q.area : ""}
                         </Text>
-                        <Text style={[styles.td, { width: "40%" }]}>{t.target}</Text>
-                        <Text style={[styles.td, { width: "14%" }]}>{t.baseline}</Text>
-                        <Text style={[styles.td, { width: "14%" }]}>{t.deadline}</Text>
+                        <Text style={[styles.td, { width: "35%" }]}>{t.target}</Text>
+                        <Text style={[styles.td, { width: "13%" }]}>{t.reportingFrequency === "Annually" ? "" : t.baseline}</Text>
+                        <Text style={[styles.td, { width: "13%" }]}>{t.reportingFrequency === "Annually" ? "" : t.deadline}</Text>
+                        <Text style={[styles.td, { width: "14%" }]}>{t.reportingFrequency || "Target period"}</Text>
                       </View>
                     ))
                 )}
@@ -479,7 +496,7 @@ function PdfBody({ policy }: { policy: Policy }) {
       {/* Cover */}
       <View style={styles.cover}>
         <Text style={styles.coverLabel}>SUSTAINABILITY POLICY</Text>
-        <Text style={styles.coverTitle}>{POLICY_TYPE_META.label}</Text>
+        <Text style={styles.coverTitle}>{profile.label}</Text>
         <Text style={styles.coverSubtitle}>{co.name || "[Company Name]"}</Text>
         <View style={styles.metaTable}>
           <View style={styles.metaRow}>
@@ -507,6 +524,10 @@ function PdfBody({ policy }: { policy: Policy }) {
               <Text style={{ flex: 1, fontFamily: 'Helvetica' }}>{s.label}</Text>
             </View>
           ))}
+          <View style={{ flexDirection: 'row', marginBottom: 8 }}>
+            <Text style={{ width: 30, fontFamily: 'Helvetica-Bold', color: '#1a5c3a' }}>{String(sections.length + 1).padStart(2, "0")}.</Text>
+            <Text style={{ flex: 1, fontFamily: 'Helvetica' }}>Employee Acknowledgement Form</Text>
+          </View>
         </View>
       </View>
 
@@ -522,11 +543,11 @@ function PdfBody({ policy }: { policy: Policy }) {
         {co.approver || "_____________________"}
       </Text>
 
-      {/* Acknowledgment form */}
+      {/* Acknowledgement form */}
       <View style={styles.ackBox} break>
-        <Text style={styles.ackTitle}>Employee Acknowledgment Form</Text>
+        <Text style={styles.ackTitle}>Employee Acknowledgement Form</Text>
         <Text style={{ fontSize: 9.5, lineHeight: 1.65 }}>
-          I hereby acknowledge that I have read and understood the <Text style={{ fontFamily: "Helvetica-Bold" }}>{POLICY_TYPE_META.label}</Text> of {co.name || "[Company Name]"}. I am aware of the company's commitment to responsible practices as outlined in this policy and agree to uphold these standards in my daily work. By signing below, I confirm my personal commitment to the values and obligations set forth in this policy.
+          I hereby acknowledge that I have read and understood the <Text style={{ fontFamily: "Helvetica-Bold" }}>{profile.label}</Text> of {co.name || "[Company Name]"}. I am aware of the company's commitment to responsible practices as outlined in this policy and agree to uphold these standards in my daily work. By signing below, I confirm my personal commitment to the values and obligations set forth in this policy.
         </Text>
         <View style={styles.ackGrid}>
           {["Employee Name", "Employee ID", "Department", "Date"].map((f) => (

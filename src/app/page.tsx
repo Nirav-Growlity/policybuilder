@@ -57,19 +57,17 @@ export default function Home() {
           <div className="lg:col-span-7 animate-fade-up">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--color-line-2)] bg-[var(--color-paper)]/70 backdrop-blur text-[11.5px] font-medium tracking-wide text-[var(--color-ink-2)]">
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-forest)] animate-pulse" />
-              Environmental Policy · PoC
+              Sustainability Policy Builder · PoC
             </div>
             <h1 className="font-display text-[56px] lg:text-[80px] leading-[0.95] font-semibold tracking-[-0.03em] mt-6 text-[var(--color-ink)]">
               Author a <em className="text-[var(--color-forest)] not-italic">production-grade</em>
-              <br /> environmental policy
+              <br /> sustainability policy
               <br />
               <span className="text-[var(--color-muted)]">in under twenty minutes.</span>
             </h1>
             <p className="text-[17px] leading-[1.65] text-[var(--color-ink-2)] mt-7 max-w-xl">
-              A guided, AI-assisted workbench for sustainability and EHS teams. Aligned with{" "}
-              <span className="font-semibold text-[var(--color-ink)]">GRI, EcoVadis, BRSR, CSRD, ISO 14001</span> and the
-              UN Sustainable Development Goals. Start from a curated template, drop in an existing .docx, or build from
-              scratch.
+              A guided, AI-assisted workbench for environmental, labour and human-rights, and living-wage policies. Aligned with{" "}
+              <span className="font-semibold text-[var(--color-ink)]">EcoVadis, UNGC, ILO, BRSR, ISO</span> and the UN Sustainable Development Goals.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
@@ -162,7 +160,7 @@ export default function Home() {
             </div>
             <h2 className="font-display text-[40px] font-semibold leading-[1.05] tracking-tight">
               Eight steps. <br />
-              <span className="text-[var(--color-muted)]">One publication-ready document.</span>
+              <span className="text-[var(--color-muted)]">Three policy paths, one publication-ready document.</span>
             </h2>
             <p className="text-[14px] text-[var(--color-ink-2)] mt-5 leading-[1.7] max-w-sm">
               Each step is informed by real environmental policy documents from leading manufacturing and

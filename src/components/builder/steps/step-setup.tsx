@@ -2,13 +2,13 @@
 
 import * as React from "react";
 import { useBuilder, makeSamplePolicy, makeTemplatePolicy } from "@/lib/store";
-import { STANDARDS, FOCUS_AREAS_DEFAULT, POLICY_TYPE_META } from "@/lib/constants";
+import { STANDARDS, INDUSTRY_SECTORS, INDUSTRY_SUBSECTORS, FRAMEWORK_ALIGNMENT } from "@/lib/constants";
 import { Panel, Badge, InfoBar } from "@/components/ui/panel";
-import { Field, Input, Textarea } from "@/components/ui/input";
+import { Combobox, Field, Input, Textarea } from "@/components/ui/input";
 import { Tag } from "@/components/ui/tag";
 import { Icon } from "@/components/icons";
 import { getCompanySites, type Site } from "@/lib/types";
-import { Building2, Award, Sparkles, Info as InfoIcon, MapPin, Plus, Trash2 } from "lucide-react";
+import { Building2, Award, Sparkles, Info as InfoIcon, MapPin, Plus, Trash2, Upload } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { Modal } from "@/components/ui/modal";
 import { PolicyPreview } from "@/components/policy/policy-preview";
@@ -69,12 +69,78 @@ export function StepSetup() {
               placeholder="e.g. Acme Specialty Chemicals Pvt. Ltd."
             />
           </Field>
-          <Field label="Industry / sector">
-            <Input
+          <Field label="Industry sector">
+            <Combobox
               value={co.industry || ""}
-              onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, industry: e.target.value } }))}
-              placeholder="e.g. Specialty chemicals manufacturing"
+              onValueChange={(industry) => updatePolicy((p) => ({ company: { ...p.company, industry, subCategory: p.company.industry === industry ? p.company.subCategory : "" } }))}
+              placeholder="Select or type a sector"
+              options={INDUSTRY_SECTORS}
             />
+          </Field>
+          <Field label="Industry sub-category">
+            <Combobox
+              value={co.subCategory || ""}
+              onValueChange={(subCategory) => updatePolicy((p) => ({ company: { ...p.company, subCategory } }))}
+              placeholder={co.industry ? "Select or type a sub-category" : "Select an industry sector first"}
+              options={INDUSTRY_SUBSECTORS[co.industry] || []}
+              disabled={!co.industry}
+            />
+          </Field>
+          <Field label="Country">
+            <Input
+              value={co.country || ""}
+              onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, country: e.target.value } }))}
+              placeholder="e.g. India"
+            />
+          </Field>
+          <Field label="Website link">
+            <Input
+              type="url"
+              value={co.websiteLink || ""}
+              onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, websiteLink: e.target.value } }))}
+              placeholder="https://www.company.com"
+            />
+          </Field>
+          <Field label="Financial reporting period">
+            <div className="flex rounded-lg border border-[var(--color-line)] overflow-hidden h-10">
+              {(["FY", "CY"] as const).map((period) => (
+                <button
+                  key={period}
+                  type="button"
+                  onClick={() => updatePolicy((p) => ({ company: { ...p.company, reportingPeriod: period } }))}
+                  className={`flex-1 text-[12px] font-semibold transition-colors cursor-pointer ${
+                    (co.reportingPeriod || "FY") === period
+                      ? "bg-[var(--color-forest)] text-white"
+                      : "bg-white text-[var(--color-ink-2)] hover:bg-[var(--color-cream)]"
+                  }`}
+                >
+                  {period === "FY" ? "Financial Year (FY)" : "Calendar Year (CY)"}
+                </button>
+              ))}
+            </div>
+          </Field>
+          <Field label="Company logo">
+            <div className="flex items-center gap-3 h-10">
+              {co.companyLogo ? (
+                <img src={co.companyLogo} alt="Company logo" className="h-9 w-14 object-contain rounded border border-[var(--color-line)] bg-white" />
+              ) : null}
+              <label className="inline-flex items-center gap-1.5 px-3 h-9 rounded-lg border border-[var(--color-line-2)] bg-white text-[12px] font-medium text-[var(--color-ink-2)] cursor-pointer hover:bg-[var(--color-cream)]">
+                <Upload size={14} /> {co.companyLogo ? "Replace logo" : "Upload logo"}
+                <input
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                  className="hidden"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (!file) return;
+                    const reader = new FileReader();
+                    reader.onload = () => updatePolicy((p) => ({ company: { ...p.company, companyLogo: String(reader.result) } }));
+                    reader.readAsDataURL(file);
+                  }}
+                />
+              </label>
+              {co.companyLogo ? <button type="button" onClick={() => updatePolicy((p) => ({ company: { ...p.company, companyLogo: "" } }))} className="text-[11px] text-red-600 cursor-pointer">Remove</button> : null}
+            </div>
           </Field>
         </div>
         <div className="mt-6 pt-5 border-t border-[var(--color-line)] space-y-4">
@@ -244,7 +310,14 @@ export function StepSetup() {
             />
           </Field>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <Field label="Last review date">
+            <Input
+              type="date"
+              value={co.lastReviewDate || ""}
+              onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, lastReviewDate: e.target.value } }))}
+            />
+          </Field>
           <Field label="Effective date">
             <Input
               type="date"
@@ -297,6 +370,13 @@ export function StepSetup() {
             {policy.standards.length ? policy.standards.join(", ") : "None"}
           </span>
         </p>
+        <div className="mt-4 rounded-lg border border-[var(--color-line)] bg-[var(--color-paper)] p-3">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-muted)] mb-1.5">Dynamic framework alignment</p>
+          <ul className="space-y-1 text-[12px] text-[var(--color-ink-2)]">
+            {policy.standards.filter((standard) => FRAMEWORK_ALIGNMENT[standard]).map((standard) => <li key={standard}>• {FRAMEWORK_ALIGNMENT[standard]}</li>)}
+            {!policy.standards.some((standard) => FRAMEWORK_ALIGNMENT[standard]) && <li>Select a framework to see the relevant policy coverage.</li>}
+          </ul>
+        </div>
       </Panel>
 
       <Panel
@@ -416,6 +496,8 @@ export function StepSetup() {
                       </span>
                     </li>
                   )}
+                  <li className="text-[12px] text-[#1f1f1f] flex gap-3"><span className="font-mono text-[var(--color-forest)] font-bold">{policy.presentationTemplate === "executive" ? "05." : policy.presentationTemplate === "standard" ? "06." : "08."}</span> Review Mechanism</li>
+                  <li className="text-[12px] text-[#1f1f1f] flex gap-3"><span className="font-mono text-[var(--color-forest)] font-bold">{policy.presentationTemplate === "executive" ? "06." : policy.presentationTemplate === "standard" ? "07." : "09."}</span> Employee Acknowledgement Form</li>
                 </ol>
               </div>
               <div className="p-4 bg-[var(--color-cream)] border-t border-[var(--color-line)]">

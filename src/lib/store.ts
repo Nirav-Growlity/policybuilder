@@ -2,34 +2,45 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { Policy, StepId } from "./types";
-import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT } from "./constants";
+import type { Policy, PolicyType, StepId } from "./types";
+import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, getPolicyProfile } from "./constants";
+import { normalizePolicyQuantitative } from "./quantitative";
 
-const initialPolicy = (): Policy => ({
-  policyType: "environmental",
+export const initialPolicy = (policyType: PolicyType = "environmental"): Policy => {
+  const profile = getPolicyProfile(policyType);
+  return ({
+  policyType,
   presentationTemplate: "standard",
   visualStyle: "corporate",
   company: {
     name: "",
     industry: "",
+    subCategory: "",
+    country: "",
+    websiteLink: "",
+    companyLogo: "",
+    reportingPeriod: "FY",
     site: "",
     sites: [],
     docNum: "",
     revNum: "01",
     effectiveDate: "",
+    lastReviewDate: "",
     reviewDate: "",
     approver: "",
   },
-  standards: ["GRI", "SDGs", "ISO 14001"],
+  standards: [...profile.standards],
   declaration: { preface: "", declaration: "", scope: "" },
-  focusAreas: [...FOCUS_AREAS_DEFAULT],
+  focusAreas: [...profile.focusAreas],
   qualitative: {},
   quantitative: [],
   sdgs: [],
-  responsibilities: RESPONSIBILITIES_DEFAULT.map((r) => ({ ...r })),
+  responsibilities: profile.responsibilities.map((r) => ({ ...r })),
   monitoring: "",
   reviewMechanism: "",
+  definitions: policyType === "living-wage" ? { title: "Living Wage", content: "A living wage is remuneration sufficient to provide a decent standard of living for a worker and their family, considering local conditions and statutory requirements." } : undefined,
 });
+};
 
 interface BuilderState {
   step: StepId;
@@ -40,6 +51,7 @@ interface BuilderState {
   prev: () => void;
   updatePolicy: (updater: (p: Policy) => Partial<Policy> | void) => void;
   setPolicy: (p: Policy) => void;
+  startPolicy: (type: PolicyType) => void;
   reset: () => void;
   loadSample: () => void;
 }
@@ -84,13 +96,14 @@ export const useBuilder = create<BuilderState>()(
       updatePolicy: (updater) => {
         const current = get().policy;
         const patch = updater(current);
-        set({ policy: patch ? { ...current, ...patch } : current });
+        set({ policy: normalizePolicyQuantitative(patch ? { ...current, ...patch } : current) });
       },
-      setPolicy: (p) => set({ policy: p }),
+      setPolicy: (p) => set({ policy: normalizePolicyQuantitative(p) }),
+      startPolicy: (type) => set({ policy: initialPolicy(type), step: "setup" }),
       reset: () => set({ policy: initialPolicy(), step: "setup" }),
       loadSample: () => {
         const sample = makeSamplePolicy();
-        set({ policy: sample, step: "setup" });
+        set({ policy: normalizePolicyQuantitative(sample), step: "setup" });
       },
     }),
     {
@@ -107,7 +120,10 @@ export const useBuilder = create<BuilderState>()(
       }),
       partialize: (s) => ({ step: s.step, policy: s.policy }),
       onRehydrateStorage: () => (state) => {
-        if (state) state.hydrated = true;
+        if (state) {
+          state.policy = normalizePolicyQuantitative(state.policy);
+          state.hydrated = true;
+        }
       },
     }
   )
@@ -132,6 +148,10 @@ export function makeSamplePolicy(): Policy {
     company: {
       name: "Acme Specialty Chemicals Pvt. Ltd.",
       industry: "Specialty chemicals manufacturing",
+      subCategory: "Specialty chemical products",
+      country: "India",
+      websiteLink: "https://www.acmespecialtychemicals.example",
+      reportingPeriod: "FY",
       site: "Plot 14, Sector 4, IMT Manesar, Gurugram - 122051, Haryana, India",
       sites: [
         {
@@ -143,6 +163,7 @@ export function makeSamplePolicy(): Policy {
       docNum: "ASC-ENV-001",
       revNum: "01",
       effectiveDate: "2025-01-15",
+      lastReviewDate: "2025-01-14",
       reviewDate: "2027-01-14",
       approver: "Managing Director",
     },
@@ -246,6 +267,10 @@ export function makeTemplatePolicy(): Policy {
     company: {
       name: "[Company Name]",
       industry: "[Industry]",
+      subCategory: "[Industry Sub-category]",
+      country: "[Country]",
+      websiteLink: "[https://www.company.com]",
+      reportingPeriod: "FY",
       site: "[Site Address]",
       sites: [
         {
@@ -257,6 +282,7 @@ export function makeTemplatePolicy(): Policy {
       docNum: "[DOC-001]",
       revNum: "[01]",
       effectiveDate: "[YYYY-MM-DD]",
+      lastReviewDate: "[YYYY-MM-DD]",
       reviewDate: "[YYYY-MM-DD]",
       approver: "[Approver Title]",
     },

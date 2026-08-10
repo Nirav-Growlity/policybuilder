@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Leaf, ArrowRight, Building2, FileText, Sparkles } from "lucide-react";
+import { Leaf, ArrowRight, Building2, FileText } from "lucide-react";
+import { POLICY_PROFILES } from "@/lib/constants";
+import type { PolicyType } from "@/lib/types";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -9,6 +11,7 @@ interface TemplateMeta {
   industry: string;
   summary: string;
   tagline: string;
+  policyType: PolicyType;
 }
 
 async function getTemplates(): Promise<TemplateMeta[]> {
@@ -25,6 +28,7 @@ async function getTemplates(): Promise<TemplateMeta[]> {
           industry: data.industry,
           summary: data.summary,
           tagline: data.tagline,
+          policyType: data.policy?.policyType || "environmental",
         } as TemplateMeta;
       })
     );
@@ -34,8 +38,10 @@ async function getTemplates(): Promise<TemplateMeta[]> {
   }
 }
 
-export default async function TemplatesPage() {
+export default async function TemplatesPage({ searchParams }: { searchParams: Promise<{ type?: string }> }) {
   const templates = await getTemplates();
+  const activeType = (await searchParams).type as PolicyType | undefined;
+  const shownTemplates = activeType ? templates.filter((template) => template.policyType === activeType) : templates;
   return (
     <main className="min-h-screen bg-[var(--color-cream)] text-[var(--color-ink)]">
       <header className="px-8 lg:px-14 py-5 flex items-center justify-between max-w-7xl mx-auto">
@@ -64,14 +70,17 @@ export default async function TemplatesPage() {
           Start from a real-world policy.
         </h1>
         <p className="text-[16px] text-[var(--color-ink-2)] mt-5 max-w-2xl leading-[1.65]">
-          Hand-curated environmental policies from leading manufacturing and pharmaceutical companies. Pick a
-          template, edit in the builder, export to PDF or Word.
+          Source-inspired templates for environmental stewardship, labour and human rights, and living-wage commitments.
         </p>
       </section>
 
+      <section className="max-w-7xl mx-auto px-8 lg:px-14 py-5 flex flex-wrap gap-3 border-y border-[var(--color-line)]">
+        <Link href="/templates" className={`text-[12px] font-semibold ${!activeType ? "text-[var(--color-ink)]" : "text-[var(--color-muted)]"}`}>All templates</Link>
+        {Object.values(POLICY_PROFILES).map((profile) => <Link key={profile.id} href={`/templates?type=${profile.id}`} className={`text-[12px] font-semibold ${activeType === profile.id ? "text-[var(--color-forest)]" : "text-[var(--color-muted)]"}`}>{profile.short}</Link>)}
+      </section>
       <section className="max-w-7xl mx-auto px-8 lg:px-14 py-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {templates.map((t) => (
+          {shownTemplates.map((t) => (
             <TemplateCard key={t.id} t={t} />
           ))}
         </div>
@@ -83,7 +92,7 @@ export default async function TemplatesPage() {
 function TemplateCard({ t }: { t: TemplateMeta }) {
   return (
     <Link
-      href={`/builder?template=${t.id}`}
+      href={`/builder?template=${t.id}&type=${t.policyType}`}
       className="group relative block doc-card p-7 hover:border-[var(--color-forest)]/40 hover:shadow-[var(--shadow-lift)] transition-all duration-300"
     >
       <div className="flex items-start gap-3 mb-4">
@@ -91,7 +100,7 @@ function TemplateCard({ t }: { t: TemplateMeta }) {
           <Building2 size={18} strokeWidth={1.8} />
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-[10.5px] font-mono uppercase tracking-wider text-[var(--color-muted)]">{t.tagline}</div>
+          <div className="text-[10.5px] font-mono uppercase tracking-wider text-[var(--color-muted)]">{POLICY_PROFILES[t.policyType].short}</div>
           <h3 className="font-display text-[20px] font-semibold leading-tight mt-0.5">{t.name}</h3>
         </div>
       </div>

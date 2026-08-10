@@ -1,5 +1,7 @@
 import type { AIContext, AIResponse } from "./prompts";
 import type { Policy } from "../types";
+import { normalizeQuantitativeTarget } from "../quantitative";
+import { getPolicyProfile } from "../constants";
 
 const FOCUS_AREAS_POOL = [
   "Energy Consumption & GHG Emissions",
@@ -23,6 +25,7 @@ function ctxText(p: Policy): string {
 
 export function mockGenerate(ctx: AIContext): AIResponse {
   const p = ctx.policy;
+  const profile = getPolicyProfile(p.policyType);
   const t = ctx.type;
   const company = ctxText(p);
 
@@ -30,22 +33,22 @@ export function mockGenerate(ctx: AIContext): AIResponse {
     case "preface":
       return {
         source: "mock",
-        text: `${p.company.name || "The Company"} is committed to environmental stewardship across every facility, process and product. Operating in ${p.company.industry || "the manufacturing sector"}, the Company recognizes its responsibility to minimize ecological impact, conserve natural resources and align with internationally recognized environmental standards. This Environmental Policy establishes the framework through which the Company sets objectives, allocates resources and measures progress toward a more sustainable future.`,
+        text: `${p.company.name || "The Company"} is committed to the principles set out in this ${profile.label}. Operating in ${p.company.industry || "its sector"}, the Company will align its practices with applicable laws, recognized standards, and the needs of people and stakeholders affected by its operations. This policy establishes the framework for clear commitments, accountable implementation, and continual improvement.`,
       };
     case "declaration":
       return {
         source: "mock",
-        text: `${p.company.name || "The Company"} affirms its unwavering commitment to protecting the environment, preventing pollution, and continually improving its environmental performance. The Company will comply with all applicable legal requirements, reduce its carbon and water intensity, manage waste responsibly, and integrate environmental considerations into every business decision.`,
+        text: `${p.company.name || "The Company"} affirms its commitment to implement this ${profile.label} across its operations. The Company will comply with applicable legal requirements, prevent adverse impacts, provide clear accountability, and continually improve performance through transparent monitoring and engagement.`,
       };
     case "scope":
       return {
         source: "mock",
-        text: `This Environmental Policy applies to all operations, sites and activities of ${p.company.name || "the Company"}, including manufacturing, R&D, warehousing, logistics, and corporate functions. It covers all employees, contractors, suppliers and visitors acting on behalf of the Company, regardless of geography. Where local requirements are stricter than this Policy, the more stringent standard applies.`,
+        text: `This ${profile.label} applies to all operations, sites and activities of ${p.company.name || "the Company"}, including employees, workers, contractors, suppliers and business partners acting on its behalf. Where local requirements are stricter than this policy, the more stringent standard applies.`,
       };
     case "focus":
-      return { source: "mock", areas: FOCUS_AREAS_POOL.slice(0, 8) };
+      return { source: "mock", areas: profile.focusAreas };
     case "sdg":
-      return { source: "mock", sdgs: [...SDGS_POOL] };
+      return { source: "mock", sdgs: [...profile.sdgs] };
     case "qualitative": {
       const area = p.focusAreas[ctx.areaIndex ?? 0] || "this area";
       const existing = Array.isArray(ctx.existingContent) ? ctx.existingContent : [];
@@ -68,32 +71,30 @@ export function mockGenerate(ctx: AIContext): AIResponse {
         objectives: (available.length > 0 ? available : pool).slice(0, count),
       };
     }
-    case "quantitative": {
-      const area = p.quantitative[ctx.areaIndex ?? 0]?.area || "this focus area";
+    case "quantitative":
+    case "quantitative-topic":
+    case "quantitative-refine": {
+      const area = ctx.areaName || p.quantitative[ctx.areaIndex ?? 0]?.area || "this focus area";
+      const reportingPeriod = p.company.reportingPeriod || "FY";
+      const targets = [
+        normalizeQuantitativeTarget({ target: `Reduce ${area.toLowerCase()} intensity per unit of production by 20%` }, reportingPeriod),
+        normalizeQuantitativeTarget({ target: `Achieve 100% compliance with applicable regulatory and voluntary standards related to ${area.toLowerCase()}` }, reportingPeriod),
+        normalizeQuantitativeTarget({ target: `Engage 100% of strategic suppliers on ${area.toLowerCase()} requirements` }, reportingPeriod),
+      ];
       return {
         source: "mock",
-        targets: [
-          { target: `Reduce ${area.toLowerCase()} intensity per unit of production by 20%`, baseline: "FY 2022-23", deadline: "FY 2029-30" },
-          { target: `Achieve 100% compliance with applicable regulatory and voluntary standards related to ${area.toLowerCase()}`, baseline: "FY 2022-23", deadline: "Ongoing" },
-          { target: `Engage 100% of strategic suppliers on ${area.toLowerCase()} requirements`, baseline: "FY 2024-25", deadline: "FY 2027-28" },
-        ],
+        targets: t === "quantitative-refine" ? targets.slice(0, 1) : targets,
       };
     }
     case "responsibilities":
       return {
         source: "mock",
-        responsibilities: [
-          { role: "Board & Senior Management", duty: "Provide strategic direction, approve the policy, allocate resources, and review environmental performance at the highest level." },
-          { role: "EHS / Sustainability Team", duty: "Maintain the environmental management system, ensure regulatory compliance, track KPIs, coordinate audits, and report progress to leadership." },
-          { role: "Production & Operations", duty: "Implement energy, water and waste management initiatives on the shop floor, maintain pollution control equipment, and minimize process losses." },
-          { role: "Procurement & Supply Chain", duty: "Engage suppliers on sustainability criteria, source environmentally responsible materials, and integrate ESG clauses into contracts." },
-          { role: "All Employees", duty: "Follow environmental procedures, identify improvement opportunities, participate in training, and report incidents or concerns." },
-        ],
+        responsibilities: profile.responsibilities,
       };
     case "monitoring":
       return {
         source: "mock",
-        text: `Environmental performance is monitored continuously through a centralized EHS dashboard, with KPIs reviewed monthly by site leadership and quarterly by the Executive Committee. Independent third-party audits are conducted annually for ISO 14001 and as required by customers. Findings, progress against targets, and incidents are reported in the annual Sustainability Report prepared in line with GRI Standards and BRSR.`,
+        text: `Performance against this ${profile.label} is monitored through defined KPIs, worker and stakeholder feedback, internal reviews, and periodic management oversight. Findings, progress against targets, concerns, and corrective actions are documented and reported to leadership at least annually.`,
       };
     case "review":
       return {

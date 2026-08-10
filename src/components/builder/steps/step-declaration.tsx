@@ -122,6 +122,14 @@ export function StepDeclaration() {
           </Panel>
         );
       })}
+
+      {policy.policyType === "living-wage" && (
+        <Panel title={policy.definitions?.title || "Definition & Methodology"} description="Define the living-wage benchmark, covered remuneration and review approach." icon={<BookOpen size={17} strokeWidth={1.8} />}>
+          <Field hint="State how the company defines a living wage, determines the benchmark, and reviews it over time.">
+            <Textarea value={policy.definitions?.content || ""} onChange={(e) => updatePolicy((p) => ({ definitions: { title: p.definitions?.title || "Living Wage", content: e.target.value } }))} rows={9} />
+          </Field>
+        </Panel>
+      )}
     </div>
   );
 }

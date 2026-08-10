@@ -1,0 +1,307 @@
+{
+  "id": "labour-human-rights-ctx",
+  "name": "CTX",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from 2. Labour and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "CTX",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Surat – 394230, Gujarat, India",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Block Nos. 251/B, 252/B, 253, 254, 255, 256, 258/B, 276, 277, 278/P, 279, 280, 281, 282, 283/P, 284/P, Sachin GIDC, Near Gabheni Chokdi, Sachin, Surat – 394230, Gujarat, India",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "CTX Lifesciences Pvt. Ltd. recognizes that respect for human rights and fair labour practices are fundamental to ethical business conduct and long-term sustainability. The Company is committed to ensuring that all individuals working for or on behalf of CTX Lifesciences are treated with dignity, fairness, and respect, and that their rights are protected throughout all operations.\n\nThis Labour and Human Rights Policy sets out CTX Lifesciences’ principles and expectations related to lawful employment, equal opportunity, safe and healthy working conditions, and responsible labour practices. The policy is aligned with applicable labour legislation and internationally accepted human rights standards and serves as a framework for creating a workplace that promotes inclusion, well-being, accountability, and responsible business growth.",
+      "declaration": "CTX Lifesciences Pvt. Ltd. is committed to upholding fundamental human and labour rights across its operations by ensuring fair wages, safe and healthy working conditions, equal opportunity, and full compliance with applicable labour laws. The Company strictly prohibits child labour, forced labour, discrimination, harassment, and unethical employment practices, and expects its employees, suppliers, and business partners to uphold these principles in line with responsible and ethical business conduct.",
+      "scope": "This policy applies to all employees, contractors, suppliers, business partners, and service providers engaged with CTX Lifesciences across its operations. It governs all aspects of the employment relationship, including hiring practices, wages and benefits, working hours, career development, workplace conditions, occupational health and safety, and overall employee well-being. All covered parties are required to comply with labour and human rights standards in line with the Company’s commitment to ethical, fair, and responsible business conduct."
+    },
+    "focusAreas": [
+      "Employee Health & Safety – Maintain safe, healthy workplaces through risk control and regular training.",
+      "Working Conditions – Provide respectful, clean, and ergonomically safe work environments.",
+      "Social Dialogue – Enable open communication, employee participation, and effective grievance handling.",
+      "Career Development & Training – Promote skill development, performance growth, and equal advancement opportunities.",
+      "Child Labor, Forced Labor & Human Trafficking – Strictly prohibit child labour, forced labour, and human trafficking.",
+      "Non-Discrimination & Harassment – Ensure fair treatment and zero tolerance for harassment or abuse.",
+      "External Stakeholder Human Rights – Respect human rights across suppliers, communities, and customers.",
+      "Fair Wages & Benefits – Ensure lawful, timely, and fair compensation in line with statutory and industry standards.",
+      "Work-Life Balance – Encourage healthy work arrangements that support employee well-being."
+    ],
+    "qualitative": {
+      "Employee Health and Safety": [
+        "Integrate health and safety risk assessments into all operational planning and change-management processes.",
+        "Build and sustain a safety-first culture across all manufacturing, laboratory, and support operations.",
+        "Strengthen occupational health and safety systems to proactively identify, assess, and control workplace risks, with the objective of reducing incidents, injuries, and work-related absenteeism."
+      ],
+      "Working Conditions": [
+        "Ensure all workplaces meet statutory requirements related to cleanliness, ventilation, lighting, and welfare facilities.",
+        "Promote respectful supervision and ethical management practices at all levels of the organization."
+      ],
+      "Social Dialogue": [
+        "Encourage open and transparent communication through structured internal channels.",
+        "Hold periodic labour–management interactions with documented discussions and follow-up actions.",
+        "Support employee representation and participation in workplace matters in line with applicable laws."
+      ],
+      "Career Management & Training": [
+        "Align training programs with operational needs, technological advancements, and regulatory requirements.",
+        "Support internal talent development through mentoring, cross-functional exposure, and succession planning."
+      ],
+      "Child Labor, Forced Labor, & Human Trafficking": [
+        "Prevent child labor, forced labor, discrimination, and unfair employment practices across operations.",
+        "Uphold dignity, fairness, and equal treatment for all employees and contract workers.",
+        "Conduct due diligence on suppliers and business partners regarding labor practices."
+      ],
+      "Non-Discrimination & Harassment": [
+        "Maintain a respectful, inclusive, and professional workplace with zero tolerance for discrimination, harassment, or abusive behavior.",
+        "Strengthen and continuously improve grievance redressal mechanisms to ensure fair, timely, and transparent resolution of concerns."
+      ],
+      "External Stakeholder Human Rights": [
+        "Respect and promote human rights across the value chain, including suppliers, customers, contractors, and local communities.",
+        "Maintain open communication and grievance mechanisms to address stakeholder concerns transparently and build trust."
+      ],
+      "Fair Wages & Benefits": [
+        "Ensure wages, benefits, and statutory contributions meet or exceed applicable legal and industry requirements.",
+        "Promote transparent wage structures and timely payment of salaries and benefits.",
+        "Periodically review compensation practices to ensure fairness, consistency, and compliance."
+      ],
+      "Work-Life Balance": [
+        "Encourage responsible workload planning to avoid excessive working hours.",
+        "Promote leave utilization and rest periods to support employee health, productivity, and morale.",
+        "Ensure workloads are properly managed to maintain productivity and well-being."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% employee access to health & safety policies, emergency procedures, and safety instructions.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Increase planned safety inspections by 5% by FY 2029–30 to proactively identify and mitigate workplace risks.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain a zero-fatality objective across all operational sites.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Achieve ≥95% positive employee satisfaction scores in annual working-condition surveys by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide statutory healthcare and insurance benefits to 100% eligible employees by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Ensure 100% employees have access to formal grievance and feedback mechanisms.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% participation in employee engagement or feedback activities by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct 4 structured engagement initiatives till FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Conduct annual performance reviews and maintain documented development plans for 100% eligible employees.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Allocate 10% of the annual HR budget toward training, skill development, and upskilling initiatives till FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase internal promotions by 10% by FY 2029–30 through structured career pathways and targeted training.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Conduct labor compliance checks for 100% key suppliers and contractors by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% employee completion of annual human rights and ethics training.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain 0 confirmed cases of child labor, forced labor, or human trafficking across CTX operations annually.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Conduct 2 workplace climate surveys on discrimination and harassment till FY 2029-30 through survey forms filled by 100% employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain zero confirmed cases of discrimination or harassment.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Provide mandatory anti-harassment, POSH and DEI training to 100% employees annually.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Ensure that 100% of supplier contracts include and comply with human rights clauses by the FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train 100% of procurement and supply-chain personnel annually on human rights policies.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct human rights impact assessments across 100% operations annually.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Fair wages & Benefits",
+        "targets": [
+          {
+            "target": "Provide statutory and company-sponsored benefits (including insurance, social security, and retirement benefits) to 100% eligible employees.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% compliance with all applicable minimum wage, wage payment, and statutory benefit requirements across locations, with zero instances of wage-related non-compliance.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Work-Life Balance",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with statutory working hours, overtime limits, and leave entitlements.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Offer flexible work arrangements for 100% eligible employees, subject to role feasibility.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Ensure implementation of fair labor policies and allocate resources for employee well-being."
+      },
+      {
+        "role": "Human Resources Team",
+        "duty": "Monitor labor conditions, oversee training programs, and address grievances."
+      },
+      {
+        "role": "Operations & Logistics Team",
+        "duty": "Implement workplace safety and ethical labor standards."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Ensure responsible sourcing and compliance with supplier labor policies."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to workplace policies, report concerns, and participate in training initiatives."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Support labor and human rights initiatives through responsible business practices."
+      }
+    ],
+    "monitoring": "CTX Lifesciences Pvt. Ltd. undertakes continuous monitoring of its labor standards and human rights performance across key areas such as employee health and safety, working conditions, social dialogue, learning and career development, prevention of child and forced labor, non-discrimination and harassment, and the protection of external stakeholder human rights. The Company tracks defined Key Performance Indicators (KPIs) through established internal monitoring mechanisms, with quarterly reviews and consolidated reporting to senior management to support informed decision-making. Annual evaluations assess overall progress, identify improvement areas, and drive corrective actions, while appropriate disclosures are made to stakeholders to enhance transparency and accountability. All monitoring and reporting processes are aligned with applicable labor regulations, international human rights principles, and industry best practices to ensure accuracy, reliability, and credibility.",
+    "reviewMechanism": "This policy shall be reviewed on an annual basis by the Human Resources Manager to evaluate its effectiveness and continued alignment with applicable labor laws, human rights commitments, and evolving regulatory and business requirements. Inputs from internal and external audits, employee feedback, and stakeholder consultations will be considered while undertaking revisions. Updates will be implemented, as necessary, to strengthen labor and human rights practices and support continuous improvement, and any material changes will be communicated to all employees and relevant stakeholders to ensure effective awareness and implementation."
+  },
+  "sourcePath": "Hetvi- Policies\\CTX\\2. Labour and Human Rights Policy.docx",
+  "sourceTextLength": 13356,
+  "parsedAt": "2026-08-10T09:22:08.759Z"
+}

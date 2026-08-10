@@ -15,8 +15,11 @@ import { StepResponsibilities } from "@/components/builder/steps/step-responsibi
 import { StepExport } from "@/components/builder/steps/step-export";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { ArrowLeft, ArrowRight, Wand2, FileUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, FileUp } from "lucide-react";
 import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { PolicySelector } from "@/components/builder/policy-selector";
+import type { PolicyType } from "@/lib/types";
 
 const STEP_RENDERERS: Record<string, React.ComponentType> = {
   setup: StepSetup,
@@ -30,10 +33,12 @@ const STEP_RENDERERS: Record<string, React.ComponentType> = {
 };
 
 export function BuilderClient() {
-  const { step, policy, setStep, next, prev, updatePolicy, setPolicy, hydrated } = useBuilder();
+  const { step, policy, setStep, next, prev, updatePolicy, setPolicy, startPolicy, hydrated } = useBuilder();
   const { push } = useToast();
   const searchParams = useSearchParams();
   const templateId = searchParams.get("template");
+  const selectedType = searchParams.get("type") as PolicyType | null;
+  const router = useRouter();
   const [aiBusy, setAiBusy] = React.useState(false);
   const [dragOver, setDragOver] = React.useState(false);
   const [templateLoaded, setTemplateLoaded] = React.useState(false);
@@ -153,13 +158,14 @@ export function BuilderClient() {
       push("Parsing document…", "info");
       const fd = new FormData();
       fd.append("file", file);
+      fd.append("policyType", policy.policyType);
       const res = await fetch("/api/parse/docx", { method: "POST", body: fd });
       if (!res.ok) throw new Error("Parse failed");
       const data = await res.json();
       updatePolicy((cur) => ({
         ...cur,
         ...data.policy,
-        policyType: "environmental",
+        policyType: data.policy.policyType || cur.policyType,
       }));
       push("Document parsed. Review the fields below.", "success");
       setStep("setup");
@@ -169,6 +175,10 @@ export function BuilderClient() {
   };
 
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+  if (!templateId && !selectedType) {
+    return <PolicySelector onSelect={(type) => { startPolicy(type); router.push(`/builder?type=${type}`); }} />;
+  }
 
   const topActions = (
     <>

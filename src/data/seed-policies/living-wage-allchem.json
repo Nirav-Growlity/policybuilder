@@ -1,0 +1,142 @@
+{
+  "id": "living-wage-allchem",
+  "name": "Allchem",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage template from 5) Living Wage Policy.doc.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Allchem",
+      "industry": "",
+      "site": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+      "sites": [
+        {
+          "location": "Allchem Lifescience Pvt. Ltd.",
+          "address": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Fair and equitable wages are essential for employee well-being and sustainable business growth. This Living Wage Policy ensures that all employees receive wages that cover basic living costs, supporting a decent standard of living for them and their families.\n\nA structured approach has been established to determine, implement, and periodically review living wages across all operations. This policy aligns with broader efforts to uphold ethical labor practices, human rights, and social responsibility.\n\nBy prioritizing fair compensation, the goal is to create a positive impact within the workforce and the communities in which Allchem operates.",
+      "declaration": "Allchem Lifescience Pvt. Ltd. upholds fair compensation practices by ensuring all employees receive a living wage that meets their basic needs and enables a decent standard of living. Using year 2022 as the baseline year, we continuously assess wage structures, implement necessary adjustments, and engage with stakeholders to uphold equitable pay practices across our operations and supply chain.",
+      "scope": "This policy applies to all Allchem employees, including permanent, contractual, and temporary workers. It ensures wages remain aligned with the cost of living through periodic reviews. Suppliers and partners are encouraged to follow similar fair wage practices."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Allchem Lifescience Pvt. Ltd. upholds fair compensation practices by ensuring all employees receive a living wage that meets their basic needs and enables a decent standard of living.\n\nRegularly evaluate wage levels against living wage benchmarks.\n\nImplement necessary revisions to align wages with inflation, cost of living changes, and industry standards.\n\nThe HR Department ensures fair wages through periodic assessments and alignment with living wage benchmarks.\n\nThis policy applies to all Allchem employees, including permanent, contractual, and temporary workers.\n\nThe Living Wage Policy will be reviewed every two years, or sooner if required by the HR Manager, to ensure it remains aligned with inflation rates, cost-of-living changes, industry standards, and regulatory developments."
+    },
+    "focusAreas": [
+      "Ensuring Fair and Sustainable Compensation",
+      "Strengthening Wage Policies and Transparency",
+      "Extending Living Wage Commitment to the Supply Chain",
+      "Supporting Employee Financial Well-being"
+    ],
+    "qualitative": {
+      "Ensuring Fair and Sustainable Compensation": [
+        "Ensure that all employees at Allchem Lifescience Pvt. Ltd. regularly receive a living wage, with periodic reviews and adjustments to maintain alignment with recognized living wage benchmarks."
+      ],
+      "Strengthening Wage Policies and Transparency": [
+        "Publish annual reports on living wage progress, wage structure updates, and related policy improvements.",
+        "Implement grievance mechanisms to address wage-related concerns and promote accountability."
+      ],
+      "Extending Living Wage Commitment to the Supply Chain": [
+        "Engage with 100% key suppliers to assess wage structures and support the adoption of living wage policies by year 2028.",
+        "Integrate living wage criteria into supplier audits and procurement policies to encourage responsible sourcing ensure it's compliance by year 2028."
+      ],
+      "Supporting Employee Financial Well-being": [
+        "Provide additional employee benefits, such as health insurance, education support, and financial assistance, to improve overall economic stability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Ensuring Fair and Sustainable Compensation",
+        "targets": [
+          {
+            "target": "Maintain Zero identified living wage gaps till year 2028 through structured wage adjustments and periodic reviews.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Conduct annual wage assessments to align salaries with inflation, cost-of-living changes, and industry benchmarks.",
+            "baseline": "",
+            "deadline": "annual"
+          }
+        ]
+      },
+      {
+        "area": "Extending Living Wage Commitment to the Supply Chain",
+        "targets": [
+          {
+            "target": "Engage with 100% key suppliers to assess wage structures and support the adoption of living wage policies by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Integrate living wage criteria into supplier audits and procurement policies to encourage responsible sourcing ensure it's compliance by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Supporting Employee Financial Well-being",
+        "targets": [
+          {
+            "target": "Introduce one financial literacy program tiil year 2028 to enhance employees understanding of personal finance, savings, and long-term financial planning.",
+            "baseline": "",
+            "deadline": "year 2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      8,
+      10,
+      12
+    ],
+    "responsibilities": [
+      {
+        "role": "HR Department",
+        "duty": "The HR Department ensures fair wages through periodic assessments and alignment with living wage benchmarks."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "The Procurement Team integrates living wage criteria into sourcing and monitors supplier compliance."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "The Finance Department evaluates wage adjustments for financial feasibility and long-term sustainability."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "The Compliance Team audits adherence to living wage commitments and enforces corrective actions."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Senior Management oversees policy execution, wage revisions, and ESG alignment."
+      }
+    ],
+    "monitoring": "Annual wage assessments and internal audits will be conducted to evaluate compliance with living wage commitments, identify gaps, and implement corrective actions. Findings will be documented and reported to senior management for review and policy refinement.\n\nCompliance with living wage requirements will be monitored through periodic supplier audits, ensuring key partners align with fair wage principles and corrective actions are taken when necessary.",
+    "reviewMechanism": "The Living Wage Policy will be reviewed every two years, or sooner if required by the HR Manager, to ensure it remains aligned with inflation rates, cost-of-living changes, industry standards, and regulatory developments.\n\nEmployee feedback, supplier inputs, and insights from labor organizations, industry bodies, and external stakeholders will be actively gathered and integrated to enhance wage structures and address any concerns."
+  },
+  "sourcePath": "Hetvi- Policies\\Allchem\\5) Living Wage Policy.doc",
+  "sourceTextLength": 6894,
+  "parsedAt": "2026-08-10T09:22:06.605Z"
+}

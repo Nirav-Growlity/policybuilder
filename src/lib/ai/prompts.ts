@@ -7,6 +7,8 @@ export type AIRequestType =
   | "focus"
   | "qualitative"
   | "quantitative"
+  | "quantitative-topic"
+  | "quantitative-refine"
   | "sdg"
   | "responsibilities"
   | "monitoring"
@@ -17,6 +19,7 @@ export interface AIContext {
   type: AIRequestType;
   policy: Policy;
   areaIndex?: number;
+  areaName?: string;
   customPrompt?: string;
   existingContent?: any;
 }
@@ -25,7 +28,7 @@ export interface AIResponse {
   text?: string;
   areas?: string[];
   objectives?: string[];
-  targets?: { target: string; baseline: string; deadline: string }[];
+  targets?: { target: string; baseline: string; deadline: string; reportingFrequency?: "Annually" | "Target period" }[];
   sdgs?: number[];
   responsibilities?: { role: string; duty: string }[];
   source: "mock" | "claude";

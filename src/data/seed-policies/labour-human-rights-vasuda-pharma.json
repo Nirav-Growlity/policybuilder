@@ -1,0 +1,615 @@
+{
+  "id": "labour-human-rights-vasuda-pharma",
+  "name": "Vasuda Pharma",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from 2. Human and Labor Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Vasuda Pharma",
+      "industry": "",
+      "site": "78/A, Vengal Rao Nagar Road, Hyderabad, Telangana.",
+      "sites": [
+        {
+          "location": "Unit I",
+          "address": "M/s. Vasudha Pharma Chem Limited, Plot No. 39 A & B, Phase I, IDA, Jeedimetla, Quthubullapur (M), Medchal-Malkajgiri District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit II",
+          "address": "M/s. Vasudha Pharma Chem Ltd., Unit II, Plot No. 79, JN Pharmacity, Parawada, Anakapalli District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit III",
+          "address": "M/s. Vasudha Pharma Chem Ltd., Unit III, Plot No. 23 & 24, Visakha Pharmacity Limited, Parawada, Anakapalli District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit IV",
+          "address": "M/s. Vasudha Pharma Chem Ltd., Unit IV, Plot No. 01, JN Pharmacity, Thadi (V), Parawada (M), Anakapalli District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit V",
+          "address": "M/s. Vasudha Pharma Chem Ltd., Plot No. 24, 24A & 24B, APSEZ, Lalamkoduru (V), Rambilli (M), Visakhapatnam District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "R&D Centre",
+          "address": "Ramky Commercial Hub, JN Pharmacity, Parawada, Anakapalli District.",
+          "primaryFunction": "Research and development"
+        },
+        {
+          "location": "Corporate Office",
+          "address": "4th Floor, Vamsiram Jyothi Galaxy, Kavuri Hills, Jubilee Hills, Hyderabad, Telangana.",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "Registered Office",
+          "address": "78/A, Vengal Rao Nagar Road, Hyderabad, Telangana.",
+          "primaryFunction": "Registered office"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "78/A, Vengal Rao Nagar Road, Hyderabad, Telangana."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Vasudha Pharma Chem Ltd. is committed to fostering a workplace that respects, protects, and promotes the dignity, rights, health, safety, and well-being of every individual associated with its operations. As a responsible manufacturer of Active Pharmaceutical Ingredients (APIs), pharmaceutical intermediates, API pellets, and specialty chemical products, the Company recognizes that respect for human rights and responsible labor practices are fundamental to sustainable business growth, operational excellence, and long-term stakeholder trust.\n\nThe Company believes that every employee, contractor, business partner, and stakeholder has the right to work in an environment that is safe, inclusive, respectful, free from discrimination, harassment, forced labor, child labor, and any form of exploitation.",
+      "declaration": "Vasudha Pharma Chem Ltd. is committed to respecting internationally recognized human rights and maintaining responsible labor practices throughout its operations and business relationships. The Company believes that protecting the dignity, safety, equality, and well-being of people is fundamental to sustainable business success and responsible corporate citizenship.\n\nThe Company is committed to providing safe and healthy working conditions, promoting equal employment opportunities, preventing discrimination and workplace harassment, eliminating child labor and forced labor, supporting fair working conditions, encouraging employee engagement, and investing in employee development.",
+      "scope": "This Labor and Human Rights Policy applies to all operations, manufacturing facilities, research and development centers, warehouses, utilities, laboratories, and corporate offices of Vasudha Pharma Chem Ltd. under its operational control.\n\nThe Policy is applicable to:\n\nAll permanent, temporary, contractual, probationary, trainee, apprentice, and part-time employees of the Company.\n\nThe Board of Directors, senior management, department heads, supervisors, and all personnel responsible for implementing labor and human rights commitments.\n\nContractors, consultants, agency personnel, outsourced workers, interns, and service providers performing work on behalf of the Company.\n\nSuppliers, vendors, logistics providers, business partners, and other organizations engaged with the Company, who are expected to uphold labor and human rights principles consistent with this Policy.\n\nAll employment practices, workplace activities, recruitment processes, business operations, and interactions with internal and external stakeholders that may influence labor standards and human rights performance."
+    },
+    "focusAreas": [
+      "Occupational Health and Safety",
+      "Equal Opportunity and Harassment Prevention",
+      "Ethical Labor Practices",
+      "Terms of Employment",
+      "Employee Engagement & Dialogue",
+      "Learning and Development",
+      "Human Rights in the Value Chain",
+      "Employee Well-being and Welfare",
+      "Diversity, Equity and Inclusion (DEI)"
+    ],
+    "qualitative": {
+      "Policy Aims": [
+        "Establish a structured framework for promoting responsible labor practices and protecting human rights across all Company operations.",
+        "Ensure compliance with applicable labor laws, employment regulations, statutory requirements, and internationally recognized human rights principles.",
+        "Provide and maintain a safe, healthy, and secure workplace that minimizes occupational risks and promotes employee well-being.",
+        "Promote equal opportunity, diversity, inclusion, and a workplace free from discrimination, harassment, retaliation, and any form of unfair treatment.",
+        "Prohibit child labor, forced labor, bonded labor, compulsory labor, and all forms of modern slavery and human trafficking throughout the Company's operations and value chain.",
+        "Ensure fair employment conditions, including lawful working hours, equitable remuneration, appropriate benefits, and humane working conditions.",
+        "Encourage open communication, employee participation, and constructive social dialogue to strengthen workplace relationships and organizational effectiveness.",
+        "Support employee learning, career development, competency enhancement, and equal access to professional growth opportunities.",
+        "Promote respect for human rights among suppliers, contractors, business partners, and other external stakeholders through responsible business practices."
+      ],
+      "Guiding Principles": [
+        "Respect for Human Rights: Respect internationally recognized human rights and conduct business in a manner that protects the dignity, equality, and fundamental freedoms of all individuals.",
+        "Legal and Ethical Compliance: Comply with all applicable labor laws, employment regulations, occupational health and safety requirements, and internationally recognized human rights standards relevant to the Company's operations.",
+        "Safe and Healthy Workplace: Maintain a safe, secure, and healthy working environment by identifying workplace risks, implementing preventive measures, and promoting employee well-being.",
+        "Equal Opportunity and Inclusion: Provide equal employment opportunities and ensure that employment-related decisions are based solely on qualifications, competence, performance, and business requirements without discrimination.",
+        "Zero Tolerance for Harassment and Discrimination: Maintain a workplace free from discrimination, harassment, bullying, intimidation, retaliation, and any other behavior that undermines dignity and mutual respect.",
+        "Elimination of Child Labor and Forced Labor: Prohibit child labor, forced labor, bonded labor, compulsory labor, human trafficking, and any form of modern slavery throughout the Company's operations and encourage the same standards within its supply chain.",
+        "Fair Employment Practices: Promote fair wages, lawful working hours, appropriate benefits, humane treatment, and respectful working conditions in accordance with applicable legal requirements and Company policies.",
+        "Employee Participation and Social Dialogue: Encourage open communication, employee consultation, grievance mechanisms, and constructive workplace dialogue to strengthen trust, collaboration, and organizational effectiveness.",
+        "Learning and Career Development: Support continuous learning, competency development, leadership growth, and equal access to training and career advancement opportunities for employees."
+      ],
+      "Occupational Health and Safety": [
+        "We are committed to providing a safe, healthy, and secure working environment across all manufacturing facilities, laboratories, warehouses, utilities, research and development centres, and corporate offices by implementing effective occupational health and safety management systems, hazard identification processes, and preventive controls.",
+        "Aim to conduct comprehensive workplace safety audits at all manufacturing and support facilities to proactively identify and eliminate workplace hazards.",
+        "Plan to implement a Behaviour-Based Safety (BBS) program to strengthen safe work practices and encourage employee participation in accident prevention.",
+        "Seek to digitize incident, near-miss, and corrective action reporting through a centralized health and safety management platform.",
+        "Plan to install smart safety monitoring systems, including gas detection, emergency alarms, and real-time monitoring for high-risk operational areas.",
+        "We will identify, assess, and manage occupational health and safety risks associated with our operations through periodic workplace inspections, risk assessments, incident investigations, and implementation of appropriate corrective and preventive actions to reduce workplace injuries and occupational illnesses.",
+        "We are committed to complying with all applicable occupational health and safety laws, regulations, statutory requirements, and recognized industry standards while continually strengthening workplace safety practices across all business operations.",
+        "We will provide employees, contractors, and visitors with appropriate safety induction, periodic training, emergency preparedness programs, and awareness initiatives to strengthen safety culture and ensure safe work practices throughout the organization.",
+        "We will regularly monitor health and safety performance, encourage proactive reporting of hazards, near misses, unsafe conditions, and safety observations, and utilize performance data to drive continual improvement in occupational health and safety management.",
+        "We are committed to promoting employee health through occupational health surveillance, preventive healthcare initiatives, workplace wellness programs, and access to appropriate medical support wherever applicable."
+      ],
+      "Equal Opportunity and Harassment Prevention": [
+        "We are committed to maintaining a workplace where every individual is treated with dignity, fairness, professionalism, and mutual respect, irrespective of their role, employment status, or background.",
+        "We prohibit discrimination in recruitment, employment, promotion, compensation, training, career development, performance evaluation, and termination based on gender, age, religion, caste, ethnicity, nationality, disability, marital status, sexual orientation, or any other characteristic protected under applicable law.",
+        "We maintain zero tolerance for any form of workplace harassment, bullying, intimidation, retaliation, abuse, or inappropriate behaviour that undermines an individual's dignity, safety, or ability to perform their work effectively.",
+        "We will establish confidential grievance and complaint mechanisms that enable employees to report concerns without fear of retaliation and ensure that all reported matters are investigated fairly, promptly, and impartially.",
+        "We are committed to promoting awareness through regular communication, training programs, and leadership engagement to foster an inclusive, respectful, and harassment-free workplace culture.",
+        "Plan to strengthen the Internal Committee (IC/POSH Committee) through periodic competency training and awareness sessions on grievance handling and legal requirements.",
+        "Seek to introduce anonymous whistleblowing and grievance reporting channels to encourage safe reporting without fear of retaliation.",
+        "Plan to conduct periodic workplace culture and inclusion surveys to identify areas requiring improvement.",
+        "Aim to implement periodic pay equity and promotion reviews to strengthen fairness and equal employment opportunities."
+      ],
+      "Ethical Labor Practices": [
+        "We are committed to protecting fundamental human rights by strictly prohibiting child labour, forced labour, bonded labour, compulsory labour, prison labour, debt bondage, human trafficking, and all forms of modern slavery throughout our operations.",
+        "Aim to conduct periodic human rights and ethical labour risk assessments across company operations and high-risk business activities.",
+        "Plan to implement responsible recruitment due diligence for labour contractors and manpower agencies to verify compliance with ethical recruitment principles.",
+        "We will implement robust recruitment and employment verification processes to ensure that all employees meet the minimum legal working age and that employment is freely chosen without coercion, intimidation, or unlawful restriction.",
+        "We prohibit the withholding of identity documents, unreasonable recruitment fees, financial coercion, restriction of movement, or any employment practice that limits an individual's freedom or violates internationally recognized human rights.",
+        "We expect suppliers, contractors, labour providers, and business partners to uphold equivalent labour standards and shall encourage responsible labour practices throughout the Company's value chain through appropriate due diligence and engagement.",
+        "We will establish mechanisms to identify, assess, and address labour-related human rights risks within our operations and supply chain and take appropriate corrective actions where non-conformities are identified.",
+        "We are committed to raising employee and supplier awareness regarding responsible recruitment, ethical labour practices, and human rights obligations through regular communication and training initiatives."
+      ],
+      "Terms of Employment": [
+        "We are committed to providing fair, lawful, and humane working conditions that promote employee well-being, dignity, productivity, and long-term organizational sustainability.",
+        "We will ensure compliance with applicable laws governing wages, statutory benefits, working hours, overtime, rest periods, leave entitlements, and other employment conditions while maintaining transparent and equitable employment practices.",
+        "We are committed to providing workplace facilities that support employee health, hygiene, sanitation, drinking water, dining, welfare amenities, and appropriate working environments consistent with applicable legal requirements.",
+        "We will promote responsible workforce planning and operational practices that contribute to work-life balance, employee engagement, and sustainable productivity across all business functions.",
+        "We will periodically assess workplace conditions, employee feedback, and operational practices to identify opportunities for improving employee experience, workplace efficiency, and organizational effectiveness.",
+        "We encourage managers and supervisors to maintain respectful workplace relationships, communicate openly with employees, and promptly address workplace concerns in a fair and transparent manner."
+      ],
+      "Employee Engagement & Dialogue": [
+        "We recognize that open communication, employee participation, and constructive workplace dialogue are essential for building trust, improving organizational performance, and strengthening long-term employee relationships.",
+        "We are committed to maintaining transparent communication channels through which employees may express opinions, provide suggestions, raise concerns, and participate in workplace improvement initiatives without fear of retaliation.",
+        "We respect employees' rights to freedom of association and collective bargaining in accordance with applicable laws and regulations.",
+        "We will establish effective grievance management mechanisms that ensure employee concerns are received, evaluated, addressed, and resolved fairly, confidentially, and within reasonable timelines.",
+        "Aim to establish structured employee engagement forums to encourage regular communication between employees and management.",
+        "Seek to conduct periodic employee engagement and satisfaction surveys to strengthen workplace communication."
+      ],
+      "Learning and Development": [
+        "We are committed to providing employees with equal access to learning, professional development, technical competency enhancement, leadership development, and career advancement opportunities based on merit, capability, and organizational requirements.",
+        "We will identify training needs through competency assessments, performance management processes, business requirements, and technological developments to support continuous workforce capability enhancement.",
+        "We are committed to providing regular training programs covering technical skills, quality, safety, compliance, ethics, sustainability, leadership, and functional competencies relevant to employees' roles.",
+        "We will promote objective performance evaluation processes that recognize individual contributions, encourage continuous improvement, and support career progression through fair and transparent practices.",
+        "We encourage employees to actively participate in learning opportunities, knowledge-sharing initiatives, cross-functional collaboration, and professional development programs to strengthen organizational capability.",
+        "Aim to establish annual individual development plans (IDPs) for employees based on competency assessments and career aspirations.",
+        "Plan to implement a digital Learning Management System (LMS) for tracking mandatory and professional development training.",
+        "Seek to increase leadership development programs for supervisors and future managers."
+      ],
+      "Human Rights in the Value Chain": [
+        "We recognize that our responsibility to respect human rights extends beyond our direct workforce and includes suppliers, contractors, customers, local communities, and other stakeholders associated with our business operations.",
+        "We are committed to promoting responsible business conduct by encouraging suppliers, contractors, and business partners to respect internationally recognized human rights principles and comply with applicable labour and employment laws.",
+        "We will incorporate human rights considerations into supplier engagement, business relationships, procurement practices, and risk assessment processes wherever appropriate.",
+        "Aim to integrate human rights due diligence into supplier onboarding and qualification processes.",
+        "Plan to conduct periodic supplier human rights assessments for critical suppliers based on risk.",
+        "Seek to incorporate human rights requirements into supplier agreements and procurement contracts."
+      ],
+      "Employee Well-being and Welfare": [
+        "We are committed to fostering a workplace that supports the physical, mental, emotional, and social well-being of employees through comprehensive welfare initiatives and a positive work environment.",
+        "We will provide appropriate employee welfare facilities, including hygienic workplace amenities, drinking water, sanitation, rest areas, canteen facilities where applicable, and access to occupational health services.",
+        "We encourage work-life balance by promoting responsible workload management, employee engagement initiatives, wellness programs, and supportive workplace practices that contribute to employee satisfaction and long-term well-being.",
+        "We are committed to organizing periodic health awareness programs, preventive health check-ups, wellness campaigns, and employee assistance initiatives to promote healthy lifestyles and overall well-being.",
+        "We will periodically assess employee well-being through feedback mechanisms, engagement surveys, and workplace assessments to identify opportunities for enhancing employee welfare and organizational effectiveness.",
+        "Seek to strengthen mental health support through employee assistance programs (EAP), counselling services, and stress management initiatives.",
+        "Plan to introduce structured work-life balance initiatives, including wellness events and employee engagement activities."
+      ],
+      "Diversity, Equity and Inclusion (DEI)": [
+        "We are committed to building a diverse, equitable, and inclusive workplace where individuals are valued for their skills, experience, perspectives, and contributions irrespective of their personal characteristics or backgrounds.",
+        "We will promote fair and inclusive recruitment, selection, promotion, compensation, and career development practices that provide equal opportunities for all qualified individuals based on merit and capability.",
+        "We are committed to fostering an inclusive workplace culture that encourages respect for diversity across gender, age, disability, religion, caste, ethnicity, nationality, and other legally protected characteristics.",
+        "We will encourage leadership accountability, employee awareness programs, and inclusive workplace practices that strengthen diversity, eliminate unconscious bias, and promote equal participation across the organization.",
+        "Aim to establish employee resource groups (ERGs) or diversity forums to promote inclusion, collaboration, and employee engagement.",
+        "Aim to develop a formal Diversity, Equity and Inclusion (DEI) strategy with measurable objectives and periodic performance reviews."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Occupational Health and Safety",
+        "targets": [
+          {
+            "target": "Aim to maintain 0 major work place incidents in future years",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Reduce Lost Time Injury Frequency Rate (LTIFR) by 10%",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance with applicable occupational health and safety requirements",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Achieve 100% annual health and safety training for relevant employees and contractors",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct occupational health and safety risk assessments across 100% operational facilities",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Investigate and close 100% reportable incidents with corrective actions",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Equal Opportunity and Harassment Prevention",
+        "targets": [
+          {
+            "target": "Train 100% employees on anti-discrimination and anti-harassment policies",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain zero substantiated cases of discrimination and workplace harassment",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Resolve 100% reported grievances within established timelines",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct at least 2 awareness programs annually",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Complete annual review of workplace conduct and POSH compliance",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Practices",
+        "targets": [
+          {
+            "target": "Maintain zero incidents of child labour, forced labour or human trafficking",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Complete 100% age and employment verification for new hires",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Assess 100% critical suppliers against labour and human rights requirements",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029"
+          },
+          {
+            "target": "Train 100% HR and procurement personnel on responsible labour practices",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct annual labour compliance assessments across all manufacturing facilities",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Terms of Employment",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable labour laws and employment regulations",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain welfare facilities across 100% operational locations",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Improve employee satisfaction score by 15%",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2030"
+          },
+          {
+            "target": "Maintain 100% compliance with statutory working hour requirements",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct annual workplace condition assessments across all facilities",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Employee Engagement & Dialogue",
+        "targets": [
+          {
+            "target": "Conduct at least 2 employee engagement surveys annually",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Aim to cover 100% of employees in employee selection procedure",
+            "baseline": "FY 2023–24",
+            "deadline": "Fy 2029-30"
+          },
+          {
+            "target": "Aim to cover 100% of employees in Collective Bargaining Agreement",
+            "baseline": "FY 2023–24",
+            "deadline": "Fy 2029-30"
+          },
+          {
+            "target": "Resolve 95% employee grievances within defined timelines",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct quarterly employee-management interaction meetings",
+            "baseline": "FY 2023–24",
+            "deadline": "Quarterly"
+          },
+          {
+            "target": "Maintain awareness of grievance mechanisms among 100% employees",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Increase employee participation in engagement initiatives by 20%",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2030"
+          }
+        ]
+      },
+      {
+        "area": "Learning and Development",
+        "targets": [
+          {
+            "target": "Provide annual training to 100% employees",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Deliver a minimum of 16 training hours per employee annually",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Complete annual performance reviews for 100% eligible employees",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Develop succession plans for all critical leadership positions",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Fill at least 60% managerial vacancies through internal promotions",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Human Rights in the Value Chain",
+        "targets": [
+          {
+            "target": "Communicate human rights expectations to 100% critical suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct labour and human rights assessments for 100% high-risk suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct annual supplier awareness programs on responsible labour practices",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct at least 2 stakeholder engagement initiatives annually",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Integrate human rights considerations into major supplier evaluations",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Well-being and Welfare",
+        "targets": [
+          {
+            "target": "Conduct at least 4 employee wellness programs annually",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Provide annual health check-ups for 100% eligible employees",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Establish employee well-being support mechanisms across all facilities",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 80% participation in wellness initiatives",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Improve employee well-being satisfaction score by 15%",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity and Inclusion (DEI)",
+        "targets": [
+          {
+            "target": "Train 100% employees on diversity, equity and inclusion",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Increase diversity in new hiring by 20%, where feasible",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase representation of women in the workforce by 15%",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% equal opportunity compliance in recruitment and promotion processes",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct annual diversity and inclusion climate assessments",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Approving the Labor and Human Rights Policy."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Reviewing labor and human rights performance and long-term objectives."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensuring labor and human rights risks are integrated into business strategy and governance."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Promoting a culture of ethical employment, inclusion, and respect for human rights throughout the organization."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Implementing the Labor and Human Rights Policy across all business functions."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Allocating adequate financial, technological, and human resources."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Periodically reviewing labor and human rights performance and driving continual improvement."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Fostering a workplace culture that values employee well-being, diversity, inclusion, and ethical conduct."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Developing and maintaining policies, procedures, and management systems supporting responsible employment practices."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Ensuring compliance with applicable labor laws, regulations, and human rights commitments."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Managing recruitment, training, employee engagement, grievance handling, performance management, and employee welfare."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Monitoring workforce diversity, inclusion, competency development, and employee satisfaction."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Conducting awareness programs on labor rights, workplace conduct, and ethical employment practices."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Implementing occupational health and safety programs across all operational locations."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Conducting workplace risk assessments, safety inspections, incident investigations, and emergency preparedness activities."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Monitoring occupational health performance and regulatory compliance."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Coordinating employee health surveillance, medical programs, and safety awareness initiatives."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Integrating labor and human rights requirements into departmental operations."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensuring employees work in safe, respectful, and legally compliant conditions."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Promoting equal opportunity, employee participation, competency development, and workplace discipline."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Addressing employee concerns promptly and implementing corrective actions where required."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Demonstrating ethical leadership and promoting respect, inclusion, and workplace safety."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Ensuring fair treatment of employees and preventing discrimination and harassment."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Supporting employee development, performance management, and effective communication."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Encouraging employees to report concerns without fear of retaliation."
+      },
+      {
+        "role": "Employees",
+        "duty": "Complying with this Policy and all applicable workplace procedures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Treating colleagues, contractors, and stakeholders with dignity, respect, and professionalism."
+      },
+      {
+        "role": "Employees",
+        "duty": "Promptly reporting unsafe conditions, unethical conduct, discrimination, harassment, or human rights concerns."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participating in training, health and safety initiatives, employee engagement activities, and professional development programs."
+      }
+    ],
+    "monitoring": "Vasudha Pharma Chem Ltd. shall regularly monitor the implementation and effectiveness of this Labor and Human Rights Policy through defined Key Performance Indicators (KPIs), compliance evaluations, workplace inspections, employee engagement surveys, grievance monitoring, occupational health and safety assessments, internal audits, and management reviews. Progress against the Company's labor and human rights objectives and quantitative targets shall be periodically reviewed to identify improvement opportunities, strengthen workplace practices, and ensure ongoing legal and ethical compliance.",
+    "reviewMechanism": "This Labor and Human Rights Policy shall be reviewed by HR Head at least once every year, or earlier if required due to changes in applicable legal or regulatory requirements, organizational structure, business operations, stakeholder expectations, emerging labor and human rights risks, or internationally recognized standards. Any revisions shall be approved by the appropriate management authority before implementation."
+  },
+  "sourcePath": "KUSH\\Vasuda Pharma\\2. Human and Labor Rights Policy.docx",
+  "sourceTextLength": 37198,
+  "parsedAt": "2026-08-10T09:20:12.785Z"
+}

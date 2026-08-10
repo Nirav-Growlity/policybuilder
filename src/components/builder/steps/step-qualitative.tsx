@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar } from "@/components/ui/panel";
-import { Field, Input, Textarea } from "@/components/ui/input";
+import { Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
@@ -14,7 +14,7 @@ import { useToast } from "@/components/ui/toast";
 export function StepQualitative() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
-  const [busy, setBusy] = React.useState<Record<number, boolean>>({});
+  const [busy, setBusy] = React.useState<Record<string, boolean>>({});
   const [newObj, setNewObj] = React.useState<Record<number, string>>({});
 
   const areas = policy.focusAreas.filter(Boolean);
@@ -36,7 +36,8 @@ export function StepQualitative() {
   const generate = async (idx: number, customPrompt?: string) => {
     const area = areas[idx];
     if (!area) return;
-    setBusy((b) => ({ ...b, [idx]: true }));
+    const busyKey = `area-${idx}`;
+    setBusy((b) => ({ ...b, [busyKey]: true }));
     try {
       const existing = policy.qualitative[area] || [];
       const r = await callAI({
@@ -67,7 +68,35 @@ export function StepQualitative() {
     } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy((b) => ({ ...b, [idx]: false }));
+      setBusy((b) => ({ ...b, [busyKey]: false }));
+    }
+  };
+
+  const generateObjective = async (area: string, areaIndex: number, objectiveIndex: number, customPrompt?: string) => {
+    const current = policy.qualitative[area]?.[objectiveIndex];
+    if (!current) return;
+
+    const busyKey = `objective-${areaIndex}-${objectiveIndex}`;
+    setBusy((b) => ({ ...b, [busyKey]: true }));
+    try {
+      const r = await callAI({
+        type: "qualitative",
+        policy,
+        areaIndex: policy.focusAreas.indexOf(area),
+        customPrompt: `Generate exactly 1 new objective to replace this objective: "${current}".${customPrompt ? ` ${customPrompt}` : ""}`,
+        existingContent: policy.qualitative[area] || [],
+      });
+      const replacement = r.objectives?.[0]?.trim();
+      if (!replacement) {
+        push("No objective was generated", "info");
+        return;
+      }
+      update(area, objectiveIndex, replacement);
+      push("Objective updated", "success");
+    } catch {
+      push("AI generation failed", "error");
+    } finally {
+      setBusy((b) => ({ ...b, [busyKey]: false }));
     }
   };
 
@@ -104,7 +133,7 @@ export function StepQualitative() {
 
       {areas.map((area, i) => {
         const objs = policy.qualitative[area] || [];
-        const isBusy = busy[i];
+        const isBusy = busy[`area-${i}`];
         return (
           <Panel
             key={area}
@@ -119,28 +148,38 @@ export function StepQualitative() {
               />
             }
           >
-            <ol className="space-y-2.5">
+            <ol className="space-y-2">
               {objs.map((obj, oi) => (
                 <li
                   key={oi}
-                  className="group flex items-start gap-3 px-4 py-3 rounded-lg bg-[var(--color-cream-2)]/60 border border-[var(--color-line)]"
+                  className="group flex items-start gap-3 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]/45 px-3.5 py-2.5 transition-colors hover:border-[var(--color-line-2)]"
                 >
                   <div className="w-5 h-5 rounded-full bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)] flex items-center justify-center flex-shrink-0 mt-1 text-[10px] font-bold">
                     •
                   </div>
                   <Textarea
-                    rows={Math.max(2, Math.ceil((obj || "").length / 75))}
+                    rows={Math.max(1, Math.ceil((obj || "").length / 110))}
                     value={obj}
                     onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => update(area, oi, e.target.value)}
-                    className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] px-2 -mx-2 leading-relaxed text-[13px] resize-y"
+                    className="min-w-0 border-transparent bg-transparent px-1.5 -mx-1.5 py-1 leading-6 text-[13px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] resize-y"
                   />
-                  <button
-                    onClick={() => remove(area, oi)}
-                    className="text-[var(--color-muted)] hover:text-[#9b2929] hover:bg-[#fdecec] p-1.5 rounded-md transition-colors opacity-0 group-hover:opacity-100 mt-1"
-                    aria-label="Remove"
-                  >
-                    <X size={14} />
-                  </button>
+                  <div className="flex shrink-0 items-center gap-1 self-center">
+                    <AIActionButton
+                      label="Refine"
+                      variant="ghost"
+                      loading={busy[`objective-${i}-${oi}`]}
+                      onGenerate={(prompt) => generateObjective(area, i, oi, prompt)}
+                      placeholder="e.g. Make this more specific to our manufacturing operations..."
+                      className="text-[12px]"
+                    />
+                    <button
+                      onClick={() => remove(area, oi)}
+                      className="rounded-md p-1.5 text-[var(--color-muted)] transition-colors hover:bg-[#fdecec] hover:text-[#9b2929]"
+                      aria-label="Remove objective"
+                    >
+                      <X size={14} />
+                    </button>
+                  </div>
                 </li>
               ))}
               {objs.length === 0 && (
@@ -149,13 +188,12 @@ export function StepQualitative() {
                 </li>
               )}
             </ol>
-            <div className="flex items-start gap-2 mt-4 pt-4 border-t border-[var(--color-line)]">
-              <Textarea
-                rows={2}
+            <div className="mt-4 flex gap-2 border-t border-[var(--color-line)] pt-4">
+              <Input
                 value={newObj[i] || ""}
-                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setNewObj((s) => ({ ...s, [i]: e.target.value }))}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewObj((s) => ({ ...s, [i]: e.target.value }))}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
+                  if (e.key === "Enter") {
                     e.preventDefault();
                     add(area, i);
                   }
@@ -163,8 +201,8 @@ export function StepQualitative() {
                 placeholder="Add a qualitative objective..."
                 className="border-dashed text-[13px]"
               />
-              <Button variant="primary" size="md" icon={<Plus size={14} />} onClick={() => add(area, i)} className="mt-0.5">
-                Add
+              <Button variant="primary" size="md" icon={<Plus size={14} />} onClick={() => add(area, i)}>
+                Add Objective
               </Button>
             </div>
           </Panel>

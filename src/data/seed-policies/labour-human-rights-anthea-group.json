@@ -1,0 +1,445 @@
+{
+  "id": "labour-human-rights-anthea-group",
+  "name": "Anthea Group",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from Responsible Workforce Management Framework.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Anthea Group",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Unit I",
+          "address": "Plot Nos. 49, 50 & 51 A, MIDC Dhatav, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit II",
+          "address": "Plot No. 51 A/1, Roha Industrial Area, Village Roth Budruk, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+          "primaryFunction": "Manufacturing facility"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "To support and align with the people-centric vision, workforce commitments, and strategic objectives of the Anthea Group, DRT-Anthea Aroma Chemicals Pvt. Ltd. has established this Responsible Workforce Management Framework as a comprehensive approach for managing its workforce responsibilities across all business operations. The Framework is designed to foster a safe, inclusive, respectful, and engaging workplace while promoting employee well-being, fair labour practices, diversity, equal opportunity, capability development, and compliance with applicable labour laws and international standards.\n\nTo facilitate the effective implementation of this Framework, the Company has also developed an internal Responsible Workforce Management Roadmap, which translates the Group's workforce priorities into site-specific objectives, targets, action plans, and performance monitoring mechanisms. This Roadmap supports the continuous enhancement of workforce management practices, employee engagement, occupational health and safety, talent development, and organizational culture, while reinforcing the Company's commitment to responsible and sustainable business operations.\n\nDRT – Anthea Aroma Chemicals Pvt. Ltd. is committed to fostering a workplace where human rights are respected, employees are treated with dignity and fairness, and everyone has the opportunity to work in a safe, inclusive, and supportive environment. As a manufacturer of specialty aroma chemicals, the Company recognizes that protecting labor and human rights is fundamental to sustainable business growth, operational excellence, regulatory compliance, and long-term value creation for employees, customers, business partners, and other stakeholders.\n\nThis Responsible Workforce Management Framework establishes the Company's commitment to upholding internationally recognized human rights principles and complying with all applicable labor laws and regulations across its manufacturing facilities located at Unit I and Unit II in Roha, Raigad, Maharashtra. The policy provides a comprehensive framework for promoting occupational health and safety, preventing discrimination and harassment, ensuring fair working conditions, supporting employee learning and career development, prohibiting child labor, forced labor, and human trafficking, and fostering open social dialogue and employee engagement. Through this policy, DRT–Anthea Aroma Chemicals Pvt. Ltd. aims to cultivate a respectful, ethical, and responsible workplace culture while driving continual improvement in labor and human rights performance across its operations and business relationships.",
+      "declaration": "The objective of this Responsible Workforce Management Frameworkis to establish a comprehensive framework for promoting and protecting labor and human rights across the operations of DRT – Anthea Aroma Chemicals Pvt. Ltd. and to foster a safe, inclusive, ethical, and respectful workplace for all employees and workers associated with the Company.\n\nEnsure compliance with all applicable labor laws, employment regulations, human rights principles, and other statutory requirements.\n\nProtect the health, safety, and wellbeing of employees by maintaining a safe and healthy working environment and preventing occupational injuries and illnesses.\n\nPromote equal employment opportunities and maintain a workplace free from discrimination, harassment, bullying, retaliation, and any form of unfair treatment.\n\nProvide fair and lawful working conditions, including equitable wages, working hours, employee benefits, leave entitlements, welfare facilities, and respectful treatment in accordance with applicable legal requirements.\n\nSupport employee growth through continuous learning, competency development, performance management, and equal access to career development opportunities.\n\nProhibit all forms of child labor, forced labor, bonded labor, compulsory labor, human trafficking, and any other form of modern slavery throughout the Company's operations and, where applicable, within its supply chain.\n\nRespect employees' rights to freedom of association, collective bargaining where legally applicable, and constructive social dialogue while encouraging open communication and employee participation.\n\nProvide accessible, confidential, and transparent grievance mechanisms that enable employees to raise concerns without fear of retaliation and ensure timely investigation and resolution.",
+      "scope": "This Responsible Workforce Management Frameworkapplies to all business activities and employment practices of DRT–Anthea Aroma Chemicals Pvt. Ltd. The policy is applicable to all permanent employees, temporary employees, contract workers, trainees, apprentices, interns, consultants, and other personnel working on behalf of the Company. The Company also expects contractors, suppliers, service providers, and business partners to uphold the principles set forth in this policy and to conduct their operations in a manner consistent with applicable labor laws, human rights standards, and ethical business practices.\n\nThis policy encompasses all employment-related activities, including recruitment and hiring, onboarding, working conditions, occupational health and safety, wages and benefits, working hours, employee welfare, performance management, learning and development, career advancement, equal opportunity, diversity and inclusion, prevention of discrimination and harassment, grievance management, social dialogue, and the prevention of child labor, forced labor, bonded labor, human trafficking, and other forms of modern slavery across the Company's operations and, where applicable, within its supply chain."
+    },
+    "focusAreas": [
+      "Occupational Health and Safety",
+      "Discrimination and Harassment",
+      "Workplace Practices",
+      "Skill & Career Management and Training",
+      "Child Labor, Forced Labor, and Human Trafficking",
+      "Social Dialogue",
+      "Employee Wellbeing and Welfare",
+      "Grievance Mechanism and Ethical Workplace"
+    ],
+    "qualitative": {
+      "Occupational Health and Safety": [
+        "Promote a safe, healthy, and secure working environment by preventing occupational injuries and illnesses, identifying and mitigating workplace hazards, ensuring emergency preparedness, and fostering a proactive safety culture through employee participation, training, and continual improvement."
+      ],
+      "Discrimination and Harassment": [
+        "Maintain a workplace that is free from discrimination, harassment, bullying, retaliation, and any form of inappropriate behavior by promoting equal opportunity, diversity, inclusion, dignity, respect, and fair treatment for all employees."
+      ],
+      "Workplace Practices": [
+        "Provide fair, safe, and lawful working conditions by ensuring compliance with applicable labor laws relating to working hours, wages, benefits, leave, welfare facilities, employment practices, and workplace wellbeing while promoting work-life balance."
+      ],
+      "Skill & Career Management and Training": [
+        "Support employee growth and long-term career development through fair performance management, competency development, equal access to learning opportunities, leadership development, succession planning, and continuous professional training."
+      ],
+      "Child Labor, Forced Labor, and Human Trafficking": [
+        "Maintain zero tolerance for child labor, forced labor, bonded labor, compulsory labor, prison labor, debt bondage, human trafficking, and any other form of modern slavery throughout the Company's operations and, where applicable, its supply chain."
+      ],
+      "Social Dialogue": [
+        "Promote open, transparent, and constructive communication between management and employees by respecting freedom of association, enabling employee participation, encouraging consultation, supporting grievance mechanisms, and maintaining positive industrial relations."
+      ],
+      "Employee Wellbeing and Welfare": [
+        "Promote the physical, mental, and social wellbeing of employees by providing appropriate welfare facilities, supporting work-life balance, encouraging wellness initiatives, and fostering a healthy, respectful, and engaging work environment that enhances employee satisfaction and productivity."
+      ],
+      "Grievance Mechanism and Ethical Workplace": [
+        "Maintain accessible, confidential, and transparent grievance mechanisms that enable employees and workers to raise concerns without fear of retaliation. Promote ethical conduct, accountability, fair investigation of complaints, and timely resolution of workplace issues while strengthening trust and integrity across the organization."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Maintain Zero Fatalities and reduce the Lost Time Injury Frequency Rate (LTIFR) through continual improvement by FY 2029-30.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance with applicable occupational health and safety legal and regulatory requirements annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide annual occupational health and safety training to 100% of employees, trainees, and relevant contractors.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Investigate 100% of reportable incidents and near misses and implement corrective actions within defined timelines.",
+            "baseline": "FY 2023-24",
+            "deadline": "within defined timelines"
+          },
+          {
+            "target": "Conduct at least two emergency preparedness and response drills annually at each manufacturing facility.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct 100% periodic occupational health assessments for employees exposed to identified occupational hazards, in accordance with applicable legal and operational requirements.",
+            "baseline": "FY 2023-24",
+            "deadline": "periodic"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with the Company's Equal Employment Opportunity principles and applicable anti-discrimination laws annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Achieve Zero Tolerance for substantiated cases of discrimination, harassment, or workplace bullying through timely investigation and corrective actions.",
+            "baseline": "FY 2023-24",
+            "deadline": "timely"
+          },
+          {
+            "target": "Provide annual discrimination and harassment prevention training to 100% of employees, supervisors, managers, and relevant contractors.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Investigate and address 100% of reported discrimination and harassment complaints within established timelines.",
+            "baseline": "FY 2023-24",
+            "deadline": "within established timelines"
+          },
+          {
+            "target": "Conduct an employee workplace culture or satisfaction survey at least once every two years and implement improvement actions where applicable.",
+            "baseline": "FY 2023-24",
+            "deadline": "at least once every two years"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable labor laws relating to wages, working hours, leave, and statutory benefits annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain 100% availability and periodic inspection of applicable employee welfare facilities annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure 100% timely payment of wages and statutory benefits in accordance with applicable legal requirements.",
+            "baseline": "FY 2023-24",
+            "deadline": "timely"
+          },
+          {
+            "target": "Conduct workplace condition assessments at all manufacturing facilities at least once every year.",
+            "baseline": "FY 2023-24",
+            "deadline": "at least once every year"
+          },
+          {
+            "target": "Provide annual awareness training on employee rights, workplace conduct, and Company policies to 100% of employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Provide at least one structured training program annually to 100% of employees, based on role and business requirements.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct 100% annual performance evaluations for eligible employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Prepare Individual Development Plans (IDPs) for 100% of eligible employees where applicable.",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct at least one leadership development program annually for identified employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct annual competency assessments for employees performing critical functions.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Achieve 100% employee participation in mandatory compliance and competency training annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Maintain Zero Child Labor across all operations annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain Zero Incidents of Forced or Bonded Labor annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain Zero Cases of Human Trafficking or Modern Slavery annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Communicate labor and human rights expectations to 100% of strategic suppliers by FY 2029-30.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide annual awareness training to 100% of HR personnel, managers, and relevant employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct annual labor and human rights risk assessments and internal audit at manufacturing facilities.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Conduct at least two employee communication sessions annually at each manufacturing facility.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain 100% compliance with applicable legal requirements relating to employee representation and collective bargaining agreement annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Implement at least one employee engagement initiative annually in each department.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Achieve 100% communication of significant policy updates to all relevant employees.",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct employee engagement surveys at least once every two years and implement improvement actions where applicable.",
+            "baseline": "FY 2023-24",
+            "deadline": "at least once every two years"
+          }
+        ]
+      },
+      {
+        "area": "Employee Wellbeing and Welfare",
+        "targets": [
+          {
+            "target": "Conduct at least one employee wellbeing initiative annually at each manufacturing facility.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct periodic health check-ups for 100% of eligible employees in accordance with applicable legal and operational requirements.",
+            "baseline": "FY 2023-24",
+            "deadline": "periodic"
+          },
+          {
+            "target": "Maintain 100% operational availability of applicable welfare facilities annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Review employee wellbeing indicators annually and implement improvement initiatives where applicable.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Cover 100% of the employees in health care plan",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct annual reviews of employee wellbeing and welfare programs and implement improvement actions where required.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Grievance Mechanism and Ethical Workplace",
+        "targets": [
+          {
+            "target": "Investigate and respond to 100% of reported grievances within established timelines.",
+            "baseline": "FY 2023-24",
+            "deadline": "within established timelines"
+          },
+          {
+            "target": "Maintain Zero Tolerance for retaliation against employees raising concerns in good faith.",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Management",
+        "duty": "Provide strategic direction and leadership for labor and human rights management."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Approve the Responsible Workforce Management Framework and related objectives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Allocate adequate financial, technological, and human resources for policy implementation."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Review labor and human rights performance and ensure continual improvement through Management Review meetings."
+      },
+      {
+        "role": "Plant Head",
+        "duty": "Ensure effective implementation of the Responsible Workforce Management Framework across Unit I and Unit II."
+      },
+      {
+        "role": "Plant Head",
+        "duty": "Ensure compliance with applicable labor laws, human rights requirements, and Company policies."
+      },
+      {
+        "role": "Plant Head",
+        "duty": "Monitor achievement of labor and human rights objectives, targets, and KPIs."
+      },
+      {
+        "role": "Plant Head",
+        "duty": "Foster a safe, inclusive, respectful, and ethical workplace culture."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Develop, implement, and maintain labor and human rights management practices."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Ensure fair recruitment, employment, compensation, performance management, and employee welfare practices."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Coordinate employee induction, competency development, awareness, and training programs."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Manage grievance mechanisms, employee engagement initiatives, and workplace investigations where applicable."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Monitor compliance with labor laws and maintain employee-related records."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Promote occupational health and safety across all operations."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Conduct workplace risk assessments, safety inspections, and emergency preparedness activities."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Monitor occupational health and safety performance and recommend corrective actions."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Conduct health and safety awareness programs and support employee wellbeing initiatives."
+      },
+      {
+        "role": "Supervisors & Line Managers",
+        "duty": "Ensure employees work in accordance with Company policies, procedures, and applicable labor requirements."
+      },
+      {
+        "role": "Supervisors & Line Managers",
+        "duty": "Promote a workplace free from discrimination, harassment, and retaliation."
+      },
+      {
+        "role": "Supervisors & Line Managers",
+        "duty": "Encourage open communication, promptly address employee concerns, and report workplace issues."
+      },
+      {
+        "role": "Supervisors & Line Managers",
+        "duty": "Support employee development, performance feedback, and wellbeing initiatives."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Comply with this Responsible Workforce Management Framework and all applicable Company procedures."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Treat colleagues with dignity, respect, and professionalism."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Report unsafe conditions, discrimination, harassment, unethical conduct, or labor and human rights concerns through appropriate reporting channels."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Participate in mandatory training programs and contribute to maintaining a safe, inclusive, and respectful workplace."
+      }
+    ],
+    "monitoring": "DRT – Anthea Aroma Chemicals Pvt. Ltd. shall establish and maintain a systematic process for monitoring, recording, and reporting its labor and human rights performance across Unit I and Unit II. Reporting shall include key performance indicators such as occupational health and safety performance, employee training and competency development, working conditions, employee wellbeing, discrimination and harassment cases, grievances, employee engagement, compliance with applicable labor laws, and the prevention of child labor, forced labor, and human trafficking.\n\nThe Human Resources (HR) Department, in coordination with the Environment, Health & Safety (EHS) Department and other relevant functions, shall periodically review labor and human rights performance and report progress against the Company's objectives, commitments, and targets to the Management. Relevant records shall be maintained to demonstrate legal compliance, support customer and stakeholder requirements, facilitate internal audits and management reviews, and drive the continual improvement of the Company's labor and human rights management practices.",
+    "reviewMechanism": "This Responsible Workforce Management Framework shall be reviewed at least once every year, or earlier if required due to changes in applicable labor laws, human rights standards, regulatory requirements, business operations, organizational structure, stakeholder expectations, or emerging labor and human rights risks. The review shall ensure that the policy remains relevant, effective, and aligned with the Company's strategic objectives, sustainability commitments, and internationally recognized labor and human rights principles.\n\nThe review shall be coordinated by the Human Resources (HR) Department in consultation with the Environment, Health & Safety (EHS) Department and approved by the Management. Any revisions arising from the review shall be communicated to all relevant employees and stakeholders, and appropriate actions shall be implemented to support the continual improvement of the Company's labor and human rights management practices."
+  },
+  "sourcePath": "KUSH\\Anthea Group\\Responsible Workforce Management Framework.docx",
+  "sourceTextLength": 31301,
+  "parsedAt": "2026-08-10T09:17:29.514Z"
+}

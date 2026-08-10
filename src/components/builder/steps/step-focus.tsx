@@ -68,7 +68,7 @@ export function StepFocus() {
           <>
             <Badge variant="muted">{policy.focusAreas.length} areas</Badge>
             <AIActionButton
-              label="AI Suggest"
+              label="AI Generate Focus Areas"
               loading={busy}
               onGenerate={generate}
             />

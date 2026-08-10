@@ -1,0 +1,460 @@
+{
+  "id": "labour-human-rights-rl-finechem",
+  "name": "RL FINECHEM",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from Workforce and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "RL FINECHEM",
+      "industry": "",
+      "site": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092.",
+      "sites": [
+        {
+          "location": "R L Fine Chem Pvt. Ltd (REFEX) – Head Office",
+          "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092.",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "R&D Centre",
+          "address": "RLFC House, C-10, Ist Cross, KSSIDC, Industrial Estate Yelahanka New Town Bengaluru - 560 064 Karnataka, India",
+          "primaryFunction": "R&D Centre"
+        },
+        {
+          "location": "Hindupur Plant",
+          "address": "M/s RL FINE CHEM PRIVATE LIMITEDPlot No.165–182, APIIC Growth Centre, Thumakunta, Hindupur – 515 211, Sri Sathya Sai District, Andhra Pradesh, India",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gauribidanur Plant",
+          "address": "R L Fine Chem Pvt. Ltd.Plot No IP-27-29, KIADB Industrial Area Ist Phase, Kudumalakunte Village Gauribidanur, Chikkaballapur Distt Karnataka - 561208",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "The objective of this Workforce and Human Rights Policy is to establish a clear framework to uphold and promote ethical, safe, inclusive, and fair workplace practices across all operations of RL Fine Chem Pvt. Ltd. It ensures respect for internationally recognized human rights principles and compliance with applicable labour laws, while fostering a work environment that supports employee wellbeing, dignity, and professional growth.\n\nSpecifically, this policy aims to:\n\nEnsure respect for internationally recognized human rights across all operations and business relationships.\n\nPromote a safe, healthy, and inclusive workplace free from discrimination, harassment, and retaliation.\n\nUphold fair labor practices, including prohibition of forced labor, child labor, and any form of modern slavery.\n\nProvide equal opportunity in recruitment, compensation, training, and career development without bias.\n\nEnsure compliance with applicable labor laws, regulatory requirements, and global ESG expectations.\n\nEncourage freedom of association and effective communication between employees and management.\n\nStrengthen accountability across the workforce, contractors, and supply chain partners regarding human rights standards.\n\nFoster a culture of dignity, respect, and ethical behavior in all workplace interactions.",
+      "declaration": "I hereby acknowledge my commitment to adhere to the Workforce and Human Rights Policy and contribute towards fostering a safe, respectful, inclusive, and ethical work environment for all.",
+      "scope": "This Policy applies to all operations of R L Fine Chem Pvt. Ltd., including its Registered Office, Corporate Office, Manufacturing Plants, laboratories and all associated business activities. It covers all permanent, temporary, and contract employees across all functions, as well as suppliers, contractors, service providers, and other stakeholders directly or indirectly associated with the Company."
+    },
+    "focusAreas": [
+      "Workplace Employee Health & Safety",
+      "Workplace Respect and Non-Discrimination",
+      "Fair and Responsible Working Conditions",
+      "Employee Representation and Participation",
+      "Human Rights in the Value Chain",
+      "Learning, Development and Career Growth",
+      "Prohibition of Child Labor and Forced Labor"
+    ],
+    "qualitative": {
+      "Workplace Employee Health & Safety": [
+        "We will strengthen workplace safety by implementing machine guarding systems, permit-to-work procedures, lockout/tagout (LOTO) controls, and hazard identification mechanisms across operational areas.",
+        "We will enhance process safety by implementing chemical handling protocols, Safety Data Sheet (SDS) management systems, engineering controls, and preventive maintenance programs for critical equipment.",
+        "We will improve emergency preparedness by maintaining fire detection and suppression systems, emergency response equipment, evacuation procedures, and periodic mock drills.",
+        "We will strengthen occupational health management by implementing health surveillance programs, exposure monitoring, personal protective equipment (PPE) controls, and workplace hygiene measures.",
+        "We aim to strengthen safety performance by conducting regular safety inspections, risk assessments, and corrective action reviews.",
+        "We aim to build a strong safety culture by delivering periodic safety training, awareness programs, and emergency preparedness drills."
+      ],
+      "Workplace Respect and Non-Discrimination": [
+        "We will strengthen the prevention of workplace harassment by maintaining an Internal Committee (IC), complaint handling procedures, and awareness programs in accordance with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013.",
+        "We aim to prevent discrimination and harassment through awareness programs, clear behavioural expectations, and effective grievance mechanisms.",
+        "We will cultivate a culture of dignity and mutual respect by encouraging professional conduct across all levels of the organization.",
+        "We strive to ensure that employment-related decisions are based solely on merit, qualifications, performance, and business requirements.",
+        "We aim to strengthen employee confidence in reporting concerns by maintaining accessible, confidential, and impartial complaint channels.",
+        "We strive to ensure that all complaints of discrimination or harassment are handled fairly, promptly, and without retaliation."
+      ],
+      "Fair and Responsible Working Conditions": [
+        "We will enhance employee well-being by implementing employee welfare programs, health initiatives, workplace amenities, and engagement activities that support physical and mental health.",
+        "We will support employee work-life balance by implementing leave management practices, flexible work arrangements where feasible, and employee assistance mechanisms.",
+        "We will promote mental well-being by implementing awareness programs, counselling support mechanisms, stress management initiatives, and regular employee engagement activities.",
+        "We will strengthen workplace conditions by maintaining adequate welfare facilities, sanitation infrastructure, drinking water facilities, rest areas, and other employee support amenities.",
+        "We will strengthen workplace well-being by conducting periodic employee feedback surveys, well-being assessments, and action planning initiatives to address employee concerns and improve workplace conditions.",
+        "We strive to provide equitable employment conditions for permanent, temporary, and contract workers engaged in our operations."
+      ],
+      "Employee Representation and Participation": [
+        "We will enhance employee communication and consultation by conducting regular town hall meetings, employee-management interaction forums, feedback sessions, and engagement surveys to foster transparency, trust, and collaboration.",
+        "We aim to encourage employee participation in workplace discussions by providing appropriate platforms for feedback, consultation, and engagement.",
+        "We will strengthen workplace communication by implementing digital and physical communication channels for sharing organizational updates, policies, and employee welfare information.",
+        "We aim to improve employee engagement by facilitating regular communication on workplace matters, organizational changes, and employee welfare initiatives.",
+        "We aim to foster collaborative and mutually respectful relationships with employees and their recognized representatives through open communication, consultation, and constructive engagement."
+      ],
+      "Human Rights in the Value Chain": [
+        "We will strengthen human rights due diligence by incorporating human rights requirements into supplier onboarding, contractor management, procurement processes, and business partner evaluations.",
+        "We strive to identify, prevent, and mitigate potential human rights risks associated with our operations, products, and value chain activities.",
+        "We aim to foster transparent and responsible engagement with external stakeholders through open communication and mutual respect.",
+        "We aim to strengthen human rights awareness across our value chain through communication, collaboration, and capacity-building initiatives."
+      ],
+      "Learning, Development and Career Growth": [
+        "We will strengthen employee capability development by implementing annual training plans, competency-based learning programs, technical skill enhancement initiatives, and professional development opportunities.",
+        "We will enhance workforce skills by conducting periodic training needs assessments, maintaining individual development plans, and tracking employee participation in learning and development programs.",
+        "We strive to encourage knowledge sharing and cross-functional learning to enhance organizational capability and innovation.",
+        "We aim to develop leadership capabilities by providing targeted development opportunities for current and future leaders.",
+        "We will support professional growth through periodic assessment of training needs and individualized development planning."
+      ],
+      "Prohibition of Child Labor and Forced Labor": [
+        "We will strengthen responsible employment practices by implementing age-verification procedures, employee documentation checks, ethical recruitment controls, and periodic compliance reviews to prevent child labor, forced labor, bonded labor, and human trafficking.",
+        "We aim to strengthen responsible recruitment practices by ensuring that all employment relationships are voluntary and based on informed consent.",
+        "We strive to maintain transparent hiring and employment processes that safeguard employee rights and freedom of movement.",
+        "We aim to enhance awareness of labor rights and ethical employment practices among employees, contractors, and business partners.",
+        "We strive to establish effective grievance mechanisms that enable workers to report concerns related to labor rights without fear of retaliation."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Workplace Employee Health & Safety",
+        "targets": [
+          {
+            "target": "We aim to achieve a Lost Time Injury Frequency Rate (LTIFR) of zero across all operations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to increase near-miss reporting by at least 55% annually to strengthen proactive risk identification.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to close at least 95% of corrective and preventive actions arising from safety inspections, audits, and incident investigations within the defined timeline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure that 100% of critical safety observations are addressed within 30 days of identification.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve at least 90% employee participation in health and wellness initiatives annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to maintain 100% statutory compliance related to occupational health and safety requirements.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will achieve at least 95% closure of identified workplace hazards within the defined corrective action period.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Respect and Non-Discrimination",
+        "targets": [
+          {
+            "target": "We will ensure 100% of reported discrimination and harassment complaints are formally reviewed and investigated in accordance with established procedures.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to resolve at least 95% of workplace grievance cases within the defined resolution timeline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve 100% compliance with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013, including timely constitution of the Internal Committee, awareness programs, and complaint resolution processes.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve 100% employee coverage under anti-discrimination and anti-harassment awareness programs annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will provide annual awareness and sensitization training to 100% of managerial and supervisory employees.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve 100% accessibility of grievance reporting mechanisms across all operational locations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fair and Responsible Working Conditions",
+        "targets": [
+          {
+            "target": "We strive to achieve at least 90% employee participation in mental health, wellness, or stress management initiatives annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to implement 100% of high-priority corrective actions identified through employee well-being and workplace satisfaction assessments within the defined timeline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to maintain 100% compliance with applicable provisions of the Factories Act, 1948 (or Occupational Safety, Health and Working Conditions Code, 2020, as notified), including requirements related to working hours, welfare facilities, and workplace conditions.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to achieve 100% compliance with applicable wage and employment regulations, including the Code on Wages, 2019, ensuring timely and accurate payment of wages and benefits.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to address at least 95% of employee grievances related to working conditions within the defined resolution timeline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve greater than 90% employee satisfaction score on working conditions.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Representation and Participation",
+        "targets": [
+          {
+            "target": "We strive to maintain 100% coverage of eligible employees under applicable collective bargaining agreements or recognized employee representation mechanisms.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to conduct at least two formal employee engagement or consultation sessions annually to facilitate communication between employees and management.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to achieve at least 90% employee participation in engagement surveys, feedback mechanisms, or dialogue forums annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will maintain 100% compliance with applicable provisions related to freedom of association and employee representation under the Industrial Relations Code, 2020, as notified, and other applicable labor laws.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to maintain zero regulatory penalties or notices related to employee representation, consultation, or labor relations matters under applicable laws and regulations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Human Rights in the Value Chain",
+        "targets": [
+          {
+            "target": "We strive to include human rights, labor standards, and ethical conduct clauses in 100% of new supplier and contractor agreements.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to provide annual communication or awareness initiatives on human rights expectations to 100% of critical suppliers and contractors.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will achieve 100% compliance with applicable human rights-related legal and regulatory requirements governing business operations, labor practices, and stakeholder engagement.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Learning, Development and Career Growth",
+        "targets": [
+          {
+            "target": "We aim to provide a minimum of 12 hours of learning and development training per employee annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to ensure 100% onboarding and role-specific training completion for newly hired employees within the defined timeline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to maintain at least 90% employee participation in learning and development programs annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure that 100% of employees undergo annual performance and development discussions to support career planning and growth.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to fill at least 50% of eligible leadership and critical positions through internal talent development and succession planning initiatives by 2030.",
+            "baseline": "FY 2022-23",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "We strive to achieve 100% compliance with training requirements related to Good Manufacturing Practices (GMP), quality systems, and applicable regulatory standards.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will provide at least one professional or technical skill enhancement program annually for each functional area.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Prohibition of Child Labor and Forced Labor",
+        "targets": [
+          {
+            "target": "We aim to maintain zero confirmed cases of child labor, forced labor, bonded labor, or human trafficking across our operations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to verify the age and employment eligibility of 100% of newly recruited employees through documented pre-employment screening processes.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure 100% compliance with the Child and Adolescent Labour (Prohibition and Regulation) Act, 1986 and maintain zero violations related to underage employment.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to assess 100% of labor contractors and manpower service providers against applicable labor rights requirements before engagement or renewal.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to provide annual awareness and human rights training to 100% of employees involved in recruitment, contractor management, and human resource functions.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will achieve 100% inclusion of child labor, forced labor, and human trafficking prohibitions within relevant supplier, contractor, and service provider agreements.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Provide strategic oversight for workforce welfare and human rights practices."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure adequate resources are available for implementing this Policy."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Review workforce-related performance, compliance status, and improvement initiatives."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Promote a culture of respect, safety, inclusion, and ethical conduct across the organization."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Implement and communicate the requirements of this Policy across the workforce."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Ensure fair recruitment, employment, compensation, and workplace practices."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Facilitate employee training, career development, and performance management processes."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Manage grievance mechanisms and investigate reported concerns in a confidential and timely manner."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Monitor compliance with labour laws and human rights requirements."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Review this policy periodically."
+      },
+      {
+        "role": "Environment, Health and Safety (EHS) Team",
+        "duty": "Establish and maintain systems to protect employee health, safety, and wellbeing."
+      },
+      {
+        "role": "Environment, Health and Safety (EHS) Team",
+        "duty": "Conduct workplace risk assessments, safety inspections, and awareness programs."
+      },
+      {
+        "role": "Environment, Health and Safety (EHS) Team",
+        "duty": "Monitor incidents, corrective actions, and occupational health performance."
+      },
+      {
+        "role": "Environment, Health and Safety (EHS) Team",
+        "duty": "Support continuous improvement in workplace safety practices."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Ensure implementation of this Policy within their respective functions."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Foster a respectful, inclusive, and harassment-free work environment."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Support employee development through coaching, training, and performance discussions."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Encourage open communication and address workplace concerns promptly."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Comply with the requirements of this Policy and related procedures."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Treat colleagues, contractors, and stakeholders with dignity and respect."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Participate in required training and safety programs."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Report unsafe conditions, human rights concerns, discrimination, harassment, or policy violations through established channels."
+      }
+    ],
+    "monitoring": "RL Fine Chem shall monitor and periodically report workforce and human rights-related performance, including employee wellbeing, workplace safety, training, grievances, and compliance with applicable requirements. Employees and stakeholders are encouraged to report concerns through designated channels, and all reported matters will be reviewed and addressed confidentially, fairly, and without retaliation.",
+    "reviewMechanism": "This Policy shall be reviewed annually, or earlier if required, by the Human Resources to ensure its continued relevance, effectiveness, and alignment with applicable legal, regulatory, and business requirements. Any necessary revisions shall be approved and communicated to relevant stakeholders."
+  },
+  "sourcePath": "KUSH\\RL FINECHEM\\Workforce and Human Rights Policy.docx",
+  "sourceTextLength": 20670,
+  "parsedAt": "2026-08-10T09:19:01.186Z"
+}

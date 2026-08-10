@@ -1,4 +1,4 @@
-export type PolicyType = "environmental";
+export type PolicyType = "environmental" | "labour-human-rights" | "living-wage";
 
 export interface Site {
   id?: string;
@@ -10,11 +10,17 @@ export interface Site {
 export interface Company {
   name: string;
   industry: string;
+  subCategory?: string;
+  country?: string;
+  websiteLink?: string;
+  companyLogo?: string;
+  reportingPeriod?: "FY" | "CY";
   site?: string;
   sites?: Site[];
   docNum: string;
   revNum: string;
   effectiveDate: string;
+  lastReviewDate?: string;
   reviewDate: string;
   approver: string;
 }
@@ -43,10 +49,16 @@ export interface Declaration {
   scope: string;
 }
 
+export interface PolicyDefinitions {
+  title: string;
+  content: string;
+}
+
 export interface QuantitativeTarget {
   target: string;
   baseline: string;
   deadline: string;
+  reportingFrequency?: "Annually" | "Target period";
 }
 
 export interface QuantitativeArea {
@@ -83,6 +95,7 @@ export interface Policy {
   company: Company;
   standards: string[];
   declaration: Declaration;
+  definitions?: PolicyDefinitions;
   focusAreas: string[];
   qualitative: Record<string, string[]>;
   quantitative: QuantitativeArea[];

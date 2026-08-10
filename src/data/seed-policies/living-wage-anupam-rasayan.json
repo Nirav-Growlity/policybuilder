@@ -1,0 +1,245 @@
+{
+  "id": "living-wage-anupam-rasayan",
+  "name": "Anupam Rasayan",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage template from Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Anupam Rasayan",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Sachin Unit 1",
+          "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 2",
+          "address": "Plot No. 701, 2419/1, 2419/2, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 3",
+          "address": "Plot No. 8104 and 8106, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 6",
+          "address": "Plot No. 2423 and 2425, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "R&D and Manufacturing"
+        },
+        {
+          "location": "Jhagadia Unit 4",
+          "address": "Plot No. 907/3, 907/4, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Jhagadia Unit 5",
+          "address": "Plot No. 905/1, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Tanfac Industries Limited",
+          "address": "Plot No. 14, SIPCOT Industrial Complex, Kudikadu, Cuddalore – 607005, Tamil Nadu",
+          "primaryFunction": "Fluorochemical Manufacturing"
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Anupam Rasayan India Limited (ARIL), established in 1984, is committed to fostering a fair, safe, and equitable workplace for all employees and contract workers. The company recognizes that paying a living wage — one that meets the basic needs of employees and their families — is a cornerstone of social responsibility and sustainable business growth.\n\nThrough this Living Wage Policy, ARIL affirms its commitment to ensuring that every individual within its operations and value chain receives fair and adequate compensation that supports a decent standard of living, well-being, and financial security.\n\nThis policy is guided by the principles of the International Labour Organization (ILO) Conventions 95 and 131, the UN Universal Declaration of Human Rights, the UN Global Compact, and India’s Code on Wages, 2019, reinforcing our belief that dignified livelihoods are fundamental to long-term sustainability and ethical business practices.",
+      "declaration": "Anupam Rasayan India Limited (ARIL) is committed to ensuring that all employees, contract workers, and key partners receive fair compensation that allows them and their families to maintain a decent standard of living. Paying a living wage is fundamental to our values of equality, dignity, and social responsibility.\n\nFair and Equitable Compensation: ARIL ensures that all employees and contract workers receive wages that meet or exceed statutory requirements and are sufficient to support a decent standard of living. Compensation practices are free from discrimination based on gender, age, or employment type.\n\nCommitment to Living Wage Principles: The company adheres to the principles of the International Labour Organization (ILO) and the UN Global Compact, ensuring that remuneration practices align with the cost of living, family welfare, and economic realities of the regions in which we operate.\n\nContinuous Review and Improvement: ARIL conducts regular reviews of wage structures in consultation with HR, site management, and worker representatives to ensure ongoing fairness and alignment with changing living costs and inflationary trends.\n\nEmployee Engagement and Transparency: We believe in maintaining open communication regarding wage practices. Employees and worker representatives are encouraged to provide feedback, ensuring that compensation policies remain transparent, inclusive, and fair.\n\nCommitment to Sustained Fair Pay: ARIL views the payment of fair and living wages as a continuous commitment — an integral part of our social and human rights responsibilities, embedded within our broader sustainability and corporate governance framework.",
+      "scope": "This Living Wage Policy applies to all Anupam Rasayan India Limited (ARIL) facilities, employees, contract workers, apprentices, and key suppliers across all operational locations.\n\nIt covers all aspects of wage determination, compensation, and fair pay practices, ensuring that every worker engaged directly or indirectly by ARIL receives wages that meet or exceed the statutory minimum and reflect the cost of living for a decent standard of life.\n\nThe policy applies to all manufacturing units, R&D facilities, administrative offices, and associated contractors. It also extends to third-party service providers and major suppliers, encouraging them to align with ARIL’s commitment to fair compensation and decent working conditions."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "The company recognizes that paying a living wage — one that meets the basic needs of employees and their families — is a cornerstone of social responsibility and sustainable business growth.\n\nIt covers all aspects of wage determination, compensation, and fair pay practices, ensuring that every worker engaged directly or indirectly by ARIL receives wages that meet or exceed the statutory minimum and reflect the cost of living for a decent standard of life.\n\nCommitment to Living Wage Principles: The company adheres to the principles of the International Labour Organization (ILO) and the UN Global Compact, ensuring that remuneration practices align with the cost of living, family welfare, and economic realities of the regions in which we operate.\n\nConduct annual wage benchmarking studies based on reliable data sources, including government notifications, third-party reports, and local economic indicators, to ensure wages align with cost-of-living standards.\n\nDevelop and maintain a living wage calculation model based on family size, regional cost of living, and welfare components by FY2025–26.\n\nContinuous Review and Improvement: ARIL conducts regular reviews of wage structures in consultation with HR, site management, and worker representatives to ensure ongoing fairness and alignment with changing living costs and inflationary trends."
+    },
+    "focusAreas": [
+      "Living Wage Implementation",
+      "Continuous Review and Wage Parity",
+      "Transparency and Disclosure",
+      "Fair and Equitable Compensation",
+      "Employee Engagement and Transparency",
+      "Supplier and Value Chain Responsibility"
+    ],
+    "qualitative": {
+      "Living Wage Implementation": [
+        "Integrate living wage principles into all employment contracts, compensation structures, and procurement processes to ensure equitable and consistent wage practices across the organization and value chain.",
+        "Implement a standardized wage assessment tool to identify any gaps between current wages and living wage thresholds across direct and contract workers.",
+        "Provide training and awareness programs for HR, finance, and procurement teams to strengthen internal capacity on wage calculation, wage parity assessment, and fair pay management."
+      ],
+      "Continuous Review and Wage Parity": [
+        "Review and update wage frameworks bi-annually to account for changes in inflation, regional cost of living, and statutory wage revisions.",
+        "Establish a confidential employee grievance mechanism to address wage-related concerns, ensuring quick resolution and protection from retaliation."
+      ],
+      "Transparency and Disclosure": [
+        "Maintain complete documentation of wage benchmarking and audit reports for external review and assurance.",
+        "Report annual progress on living wage implementation, third-party verification, and corrective actions through the company’s Sustainability Report and internal ESG dashboards."
+      ],
+      "Fair and Equitable Compensation": [
+        "Compensation practices are free from discrimination based on gender, age, or employment type.",
+        "ARIL views the payment of fair and living wages as a continuous commitment — an integral part of our social and human rights responsibilities, embedded within our broader sustainability and corporate governance framework."
+      ],
+      "Employee Engagement and Transparency": [
+        "Employees and worker representatives are encouraged to provide feedback, ensuring that compensation policies remain transparent, inclusive, and fair."
+      ],
+      "Supplier and Value Chain Responsibility": [
+        "Promote local and inclusive procurement to support small and medium enterprises (SMEs), women-led businesses, and regional vendors contributing to community development.",
+        "Implement a supplier grievance and feedback mechanism to ensure transparent communication, quick issue resolution, and continuous improvement in supplier relationships."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Baseline",
+        "targets": [
+          {
+            "target": "Sets 2022 as the baseline for tracking progress in sustainable procurement, supplier responsibility, and ethical sourcing across all operations and supply chain partners.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Living Wage Implementation",
+        "targets": [
+          {
+            "target": "Ensure 100% of direct employees and contract workers receive a verified living wage across all sites by 2027.",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct annual wage benchmarking to align with cost-of-living adjustments and inflationary trends from FY2023–24 onward.",
+            "baseline": "",
+            "deadline": "FY2023–24 onward"
+          },
+          {
+            "target": "Undertake Internal verification of living wage compliance across 100% of operational units by 2027.",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Develop and maintain a living wage calculation model based on family size, regional cost of living, and welfare components by FY2025–26.",
+            "baseline": "",
+            "deadline": "FY2025–26"
+          }
+        ]
+      },
+      {
+        "area": "Continuous Review and Wage Parity",
+        "targets": [
+          {
+            "target": "Conduct bi-annual wage reviews across all sites to ensure continued alignment with living wage standards.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve zero (0) wage disparity between permanent and contractual employees performing equivalent roles by 2027.",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Establish a wage parity index for internal monitoring and inclusion in the Annual Sustainability Report starting FY2025–26.",
+            "baseline": "",
+            "deadline": "FY2025–26"
+          },
+          {
+            "target": "Implement a structured wage grievance redressal mechanism to resolve pay-related issues within 30 working days of reporting.",
+            "baseline": "",
+            "deadline": "Within 30 working days of reporting"
+          }
+        ]
+      },
+      {
+        "area": "Transparency and Disclosure",
+        "targets": [
+          {
+            "target": "Disclose living wage progress and verification outcomes annually through ARIL’s Sustainability Report and EcoVadis submissions.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Publish regional wage review findings and progress updates beginning FY2025–26.",
+            "baseline": "",
+            "deadline": "FY2025–26"
+          }
+        ]
+      },
+      {
+        "area": "Independent Verification",
+        "targets": [
+          {
+            "target": "Engage an independent external agency by FY2025–26 to verify compliance with living wage targets and provide certification for transparency and credibility.",
+            "baseline": "",
+            "deadline": "FY2025–26"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Approve and oversee the implementation of the Living Wage Policy across all business units; Review annual performance reports, wage benchmarking results, and third-party verification findings; Ensure that wage practices align with ARIL’s ethical, social, and sustainability objectives; Allocate adequate resources for achieving and maintaining living wage standards."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Lead the implementation of living wage practices at all sites; Ensure timely review and correction of any wage gaps identified through audits or benchmarking; Promote fair compensation principles and maintain accountability across departments; Report wage-related compliance updates and progress to the Sustainability Committee."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Develop and maintain transparent wage structures based on living wage calculations; Conduct annual wage reviews and ensure timely revisions in line with inflation and cost-of-living trends; Coordinate with contractors to verify compliance with wage standards; Manage grievance redressal processes related to compensation or wage disputes."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Ensure budgetary provisions support fair and living wage implementation across all operations; Collaborate with HR to validate wage data and manage financial planning for periodic wage adjustments; Maintain documentation for wage benchmarking and third-party audit verification."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Oversee compliance with legal and ethical wage standards across ARIL’s operations and value chain; Review wage audit outcomes and recommend corrective or disciplinary actions for non-compliance; Ensure contractor and supplier adherence to living wage clauses in agreements."
+      },
+      {
+        "role": "EHS & Sustainability Team",
+        "duty": "Integrate living wage practices within ARIL’s broader ESG and social responsibility framework; Monitor wage parity, inclusion, and fair treatment metrics as part of internal sustainability reporting; Support third-party audits and sustainability disclosures related to living wage compliance."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Include living wage requirements in all vendor contracts and supplier evaluations; Conduct supplier wage compliance reviews during audits and site visits; Engage suppliers in capacity-building and training sessions on fair compensation practices."
+      },
+      {
+        "role": "Contractors & Service Providers",
+        "duty": "Comply fully with ARIL’s living wage standards and applicable labor laws; Maintain transparent wage records for all workers engaged in ARIL operations; Participate in audits and provide proof of fair payment to employees."
+      },
+      {
+        "role": "Employees and Worker Representatives",
+        "duty": "Understand and support ARIL’s commitment to living wages; Report any wage-related irregularities or unfair treatment through designated grievance channels; Cooperate during wage reviews and provide input on cost-of-living factors impacting fair pay."
+      }
+    ],
+    "monitoring": "ARIL will conduct annual wage reviews across all operational sites to evaluate compliance with living wage benchmarks and identify any wage gaps.\n\nPeriodic internal audits and risk assessments will be performed by the HR and Compliance teams to ensure all employees, contractors, and service providers meet living wage standards.\n\nAll wage data will be monitored through a centralized payroll and compliance system, ensuring accuracy, traceability, and transparency.\n\nResults of each assessment will be reviewed by the Living Wage Review Committee for corrective or preventive actions where necessary.\n\nProgress on living wage implementation will be reported annually in ARIL’s Sustainability Report, aligned with BRSR Principle 3 and GRI 202: Market Presence.\n\nPeriodic updates on wage benchmarking, parity status, and contractor compliance will be shared with the Sustainability Committee and Board of Directors.\n\nARIL will maintain transparent communication with employees and stakeholders through internal briefings, awareness programs, and ESG disclosures.\n\nAn independent third-party verification of wage compliance and benchmarking accuracy will be conducted periodically to validate progress toward living wage commitments.\n\nFindings from internal and external reviews will be documented, with action plans developed to address any identified gaps or non-compliance issues.\n\nFeedback from employees, worker representatives, and external stakeholders will be integrated into annual policy reviews to drive continuous improvement.",
+    "reviewMechanism": "The Sustainability Committee, in coordination with the Human Resources Department, Finance Department, and Ethics & Compliance Committee, shall be responsible for conducting the annual review of this Living Wage Policy.\n\nThe review will assess the policy’s effectiveness, progress toward living wage implementation, and compliance with fair compensation standards across all employees, contract workers, and suppliers. It will also evaluate wage benchmarking results, internal and external audit findings, and corrective actions implemented during the reporting period.\n\nAny updates or revisions arising from operational changes, new regulations, cost-of-living adjustments, or stakeholder feedback will be submitted to the Board of Directors for approval. Once approved, the revised policy will be communicated to all relevant employees, contractors, and business partners to ensure continued alignment with Anupam Rasayan’s commitment to fair pay, employee welfare, and human rights principles."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Anupam Rasayan\\Living Wage Policy.docx",
+  "sourceTextLength": 15472,
+  "parsedAt": "2026-08-10T09:20:03.959Z"
+}

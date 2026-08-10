@@ -1,0 +1,302 @@
+{
+  "id": "labour-human-rights-naxpar",
+  "name": "Naxpar",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from 2. Labour and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Naxpar",
+      "industry": "",
+      "site": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India.",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Plant",
+          "address": "182, Village Gurumajra, Kishanpura, Tehsil Baddi, Dist. Solan – 174101. (H.P), India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Naxpar Pharma Pvt. Ltd. recognizes that respect for human rights and fair labour practices are fundamental to ethical business conduct and long-term sustainability. As a manufacturer and developer of pharmaceutical formulations, cosmetics, herbal and nutraceutical products, the Company is committed to conducting its operations with integrity, responsibility, and respect for human dignity. Naxpar Pharma Pvt. Ltd. strives to ensure that all individuals working for or on behalf of the Company are treated with dignity, fairness, and respect, and that their rights are protected across all areas of its operations.\n\nThis Labour and Human Rights Policy set out Naxpar Pharma Pvt. Ltd.’s principles and expectations relating to lawful employment, non-discrimination, equal opportunity, and safe and healthy working conditions. The policy is aligned with applicable labour laws and internationally recognized human rights standards, and serves as a framework for fostering a workplace culture that promotes inclusion, employee well-being, accountability, and responsible business growth.",
+      "declaration": "Naxpar Pharma Pvt. Ltd. is committed to upholding labour and human rights in all operations, in line with national laws and international standards. The Company strictly prohibits forced, bonded, and child labour and ensures the dignity and rights of every individual. We provide a safe, healthy, and inclusive workplace, with employment decisions based on merit and free from discrimination. Employees have the right to freely associate, receive fair and compliant wages, work in a harassment-free environment. Our suppliers and partners are expected to uphold the same labour and human rights standards.",
+      "scope": "This policy applies to all employees, contractors, suppliers, business partners, and service providers engaged with Naxpar Pharma across it’s operations. It governs all aspects of the employment relationship, including hiring practices, wages and benefits, working hours, career development, workplace conditions, occupational health and safety, and overall employee well-being. All covered parties are required to comply with labour and human rights standards in line with the Company’s commitment to ethical, fair, and responsible business conduct."
+    },
+    "focusAreas": [
+      "Employee Health & Safety",
+      "Working Conditions",
+      "Social Dialogue",
+      "Career Development & Training",
+      "Child Labor, Forced Labor & Human Trafficking",
+      "Non-Discrimination & Harassment",
+      "External Stakeholder Human Rights",
+      "Fair Wages & Benefits",
+      "Work-Life Balance"
+    ],
+    "qualitative": {
+      "Employee Health & Safety": [
+        "Conduct regular employee health & safety risk assessments and implement hazard controls across all manufacturing, laboratory, and support operations.",
+        "Build and sustain a safety-first culture across all operations.",
+        "Strengthen occupational health and safety systems to proactively identify, assess, and control workplace risks, with the objective of reducing incidents, injuries, and work-related absenteeism."
+      ],
+      "Working Conditions": [
+        "Ensure all workplaces comply with statutory requirements for cleanliness, lighting, ventilation, and welfare facilities.",
+        "Promote ethical, respectful, and professional management practices at all levels of the organization."
+      ],
+      "Social Dialogue": [
+        "Maintain open communication channels between employees and management.",
+        "Conduct regular labour–management discussions and follow up on employee feedback.",
+        "Encourage employee participation in workplace decisions within the framework of applicable laws."
+      ],
+      "Career Development & Training": [
+        "Align training programs with operational needs, technological developments, and regulatory requirements.",
+        "Support talent growth through mentoring, cross-functional exposure, and succession planning."
+      ],
+      "Child Labor, Forced Labor & Human Trafficking": [
+        "Prohibit child labor, forced labor, and unfair employment practices across all operations.",
+        "Ensure dignity, fairness, and equal treatment for all employees and contract workers.",
+        "Conduct due diligence on suppliers and business partners regarding labor practices."
+      ],
+      "Non-Discrimination & Harassment": [
+        "Maintain a respectful, inclusive, and professional workplace with zero tolerance for discrimination, harassment, or abusive behavior.",
+        "Strengthen and continuously improve grievance redressal mechanisms to ensure fair, timely, and transparent resolution of concerns."
+      ],
+      "External Stakeholder Human Rights": [
+        "Respect and promote human rights across suppliers, customers, contractors, and local communities.",
+        "Maintain open communication and grievance mechanisms to address stakeholder concerns transparently and build trust."
+      ],
+      "Fair Wages & Benefits": [
+        "Ensure wages, benefits, and statutory contributions meet or exceed legal and industry standards.",
+        "Maintain transparent compensation structures and regularly review them for fairness and equity."
+      ],
+      "Work-Life Balance": [
+        "Promote responsible workload planning to prevent overwork and fatigue.",
+        "Encourage proper use of leave and rest periods to support employee health and productivity.",
+        "Ensure initiatives that balance professional commitments with personal well-being."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Increase planned safety inspections by 5% by FY 2029–30 to proactively identify and mitigate workplace risks.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain a zero-fatality objective across all operational sites annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure 100% employee access to updates made in health & safety policies, emergency procedures, and safety instructions regularly.",
+            "baseline": "FY 2022–23",
+            "deadline": "regularly"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Achieve 95% positive employee satisfaction scores in annual working-condition surveys by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide statutory healthcare and insurance benefits to 100% eligible employees by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Ensure 100% employee participation in employee engagement & feedback activities by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct 4 structured engagement initiatives till FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% employees have access to formal grievance and feedback mechanisms.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Career Development & Training",
+        "targets": [
+          {
+            "target": "Conduct annual performance reviews and maintain documented development plans for 100% eligible employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Allocate 10% of the annual HR budget toward training, skill development, and upskilling initiatives till FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase internal promotions by 10% by FY 2029–30 through structured career pathways and targeted training.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor, & Human Trafficking",
+        "targets": [
+          {
+            "target": "Complete labor and human rights compliance checks for 100% of suppliers and contractors by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of employees complete annual training on human rights, ethical conduct, and responsible labor practices.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain zero confirmed incidents of child labor, forced labor, or human trafficking across all operations each year.",
+            "baseline": "FY 2022–23",
+            "deadline": "each year"
+          }
+        ]
+      },
+      {
+        "area": "Non-Discrimination & Harassment",
+        "targets": [
+          {
+            "target": "Conduct workplace climate surveys on discrimination and harassment by FY 2029–30, with participation from 100% of employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide 3 mandatory training on anti-harassment, POSH, diversity, equity, and inclusion to 100% of employees till FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Ensure grievance mechanisms are accessible to 100% of suppliers, contractors, and community stakeholders by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure that 100% of supplier contracts include and comply with human rights clauses by the FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train 100% of procurement and supply-chain personnel annually on human rights policies.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Fair wages & Benefits",
+        "targets": [
+          {
+            "target": "Review compensation structures annually to ensure 100% of employees receive fair and equitable pay till FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of employees receive wages and benefits on time, meeting or exceeding legal and industry standards.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Work-Life Balance",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with statutory working hours, overtime limits, and leave entitlements annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide flexible work arrangements to 100% of eligible employees and track participation by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Lead and support the implementation of fair labour and human rights practices, ensuring resources for employee well-being and compliance."
+      },
+      {
+        "role": "Human Resources Team",
+        "duty": "Oversee labour conditions, training, grievances, and compliance with labour laws and company policies."
+      },
+      {
+        "role": "Operations & Manufacturing Team",
+        "duty": "Maintain safe, healthy workplaces and uphold ethical labour practices."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Ensure responsible sourcing and supplier compliance with labour standards."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow workplace policies, attend training, and report concerns."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Uphold labour and human rights through responsible business conduct."
+      }
+    ],
+    "monitoring": "Naxpar Pharma Pvt. Ltd. is committed to continuous monitoring of labour standards and human rights performance across areas such as employee health and safety, working conditions, social dialogue, training and career development, prevention of child and forced labour, non-discrimination, and stakeholder rights.\n\nThe Company tracks relevant Key Performance Indicators (KPIs) through internal monitoring systems, with periodic reviews and reporting to senior management to enable informed decisions. Annual evaluations are conducted to assess progress, identify gaps, and implement corrective actions. Where appropriate, the Company shares relevant information with stakeholders to promote transparency and accountability.\n\nAll monitoring and reporting practices are aligned with applicable labour laws, internationally recognized human rights principles, and industry best practices to ensure reliability and credibility.",
+    "reviewMechanism": "This policy shall be reviewed once in every three years or earlier if required by the Human Resources Manager to ensure its effectiveness and alignment with applicable labour laws, human rights commitments, and evolving regulatory and business needs. Inputs from audits, employee feedback, and stakeholder consultations will be considered during the review process.\n\nNecessary updates will be made to strengthen labour and human rights practices and support continuous improvement. Any significant revisions will be communicated to employees and relevant stakeholders to ensure awareness and effective implementation."
+  },
+  "sourcePath": "Hetvi- Policies\\Naxpar\\2. Labour and Human Rights Policy.docx",
+  "sourceTextLength": 13808,
+  "parsedAt": "2026-08-10T09:22:46.384Z"
+}

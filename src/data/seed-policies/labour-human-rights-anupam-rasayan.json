@@ -1,0 +1,430 @@
+{
+  "id": "labour-human-rights-anupam-rasayan",
+  "name": "Anupam Rasayan",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from Human Rights and Labour Standards Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Anupam Rasayan",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Sachin Unit 1",
+          "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 2",
+          "address": "Plot No. 701, 2419/1, 2419/2, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 3",
+          "address": "Plot No. 8104 and 8106, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 6",
+          "address": "Plot No. 2423 and 2425, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "R&D and Manufacturing"
+        },
+        {
+          "location": "Jhagadia Unit 4",
+          "address": "Plot No. 907/3, 907/4, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Jhagadia Unit 5",
+          "address": "Plot No. 905/1, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Tanfac Industries Limited",
+          "address": "Plot No. 14, SIPCOT Industrial Complex, Kudikadu, Cuddalore – 607005, Tamil Nadu",
+          "primaryFunction": "Fluorochemical Manufacturing"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Anupam Rasayan India Limited (ARIL), established in 1984, is a leading manufacturer of life science–related specialty chemicals.",
+      "declaration": "We are committed to upholding and promoting the principles of human rights, ethical labour practices, and inclusive growth across all levels of our organization.\n\nThrough respect for human dignity, fair employment, and equal opportunity, we aim to create a workplace built on integrity, safety, and respect. This policy aligns with the UN Guiding Principles on Business and Human Rights (UNGPs), ILO Core Conventions, UN Global Compact Principles, and the UN Sustainable Development Goals (SDGs), reinforcing our commitment to responsible and sustainable business conduct.",
+      "scope": "This Human Rights and Labour Standards Policy apply to all Anupam Rasayan India Limited facilities, employees, contract workers, apprentices, suppliers, contractors, and stakeholders associated with the company’s operations and value chain.\n\nIt covers all business functions, including manufacturing, research and development, procurement, logistics, and community engagements, ensuring ethical, fair, and safe working conditions. The policy also extends to subsidiaries, joint ventures, and third-party service providers, promoting consistent adherence to international human rights and labour standards across the organization."
+    },
+    "focusAreas": [
+      "Employee Health and Safety",
+      "Working Conditions",
+      "Social Dialogue",
+      "Career Management and Training",
+      "Child Labour, Forced Labour, and Human Trafficking",
+      "Discrimination and Harassment",
+      "External Stakeholder Human Rights"
+    ],
+    "qualitative": {
+      "Employee Health and Safety": [
+        "Employee Health and Safety: We prioritize the health, safety, and well-being of every employee and contract worker by maintaining a zero-harm culture across all operations. Stringent occupational health and safety (OHS) standards, risk assessments, and emergency preparedness programs are implemented at all sites. Regular safety audits, training sessions, and continuous improvement measures are undertaken to ensure compliance with the Factories Act, 1948, and ISO 45001 standards."
+      ],
+      "Working Conditions": [
+        "Working Conditions: We are dedicated to providing a professional, respectful, and fair working environment. All employees and contract workers receive fair wages, regulated working hours, and access to welfare facilities in line with applicable labour laws. Our commitment to decent work ensures job security, safe workspaces, and equitable treatment for all."
+      ],
+      "Social Dialogue": [
+        "Social Dialogue: We recognize the importance of transparent communication between management and employees to promote mutual trust and collaboration. Anupam Rasayan respects the right of employees to form or join associations and participate in collective bargaining. Through structured dialogues, suggestion programs, and open grievance channels, we ensure that employee voices are heard and valued."
+      ],
+      "Career Management and Training": [
+        "Career Management and Training: We are committed to empowering our workforce through continuous learning, professional development, and skill enhancement. Tailored training programs on technical, managerial, and sustainability topics are conducted regularly to support career progression and leadership growth. Equal access to training and performance-based promotions ensures a culture of merit and opportunity."
+      ],
+      "Child Labour, Forced Labour, and Human Trafficking": [
+        "Child Labour, Forced Labour, and Human Trafficking: Anupam Rasayan maintains a strict zero-tolerance policy towards the use of child labour, forced labour, bonded labour, or any form of human trafficking. All employment and contractor engagements undergo mandatory age and identity verification. Suppliers and partners are required to adhere to the same standards through our supplier code of conduct and periodic compliance audits."
+      ],
+      "Discrimination and Harassment": [
+        "Discrimination and Harassment: We foster an inclusive, equitable, and discrimination-free workplace. Employment decisions are based solely on merit, competence, and performance. The company enforces a zero-tolerance policy toward harassment, bullying, or discrimination of any kind. An Internal Complaints Committee (ICC), in accordance with the POSH Act, 2013, ensures timely and confidential resolution of grievances."
+      ],
+      "External Stakeholder Human Rights": [
+        "External Stakeholder Human Rights: Anupam Rasayan respects the rights and well-being of external stakeholders, including local communities, business partners, and customers. We engage transparently with surrounding communities to minimize operational impacts on health, safety, and livelihoods. Our community initiatives focus on education, healthcare, and social welfare, contributing to inclusive and sustainable local development."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Maintain a Zero Fatality and Lost Time Injury (LTI) record across all facilities each year through 2027.",
+            "baseline": "2022",
+            "deadline": "through 2027"
+          },
+          {
+            "target": "Achieve 100% employee and contractor participation in annual occupational health and safety (OHS) training programs by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Conduct annual risk assessments at 100% of operational units to identify and mitigate potential hazards.",
+            "baseline": "2022",
+            "deadline": "annual"
+          },
+          {
+            "target": "Implement 100% PPE compliance and emergency preparedness drills across all manufacturing sites by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees and contract workers receive wages that meet or exceed statutory and living wage standards by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Achieve 100% compliance with regulated working hours, rest periods, and paid leave provisions by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Conduct annual independent labour audits at all sites to verify working condition standards and fair employment practices.",
+            "baseline": "2022",
+            "deadline": "annual"
+          },
+          {
+            "target": "Maintain zero(0) reported cases of labour rights violations or unsafe workplace conditions each year.",
+            "baseline": "2022",
+            "deadline": "each year"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Conduct annual management–employee consultation meetings at 100% of sites by 2027 to promote transparent communication.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Ensure 100% of employees are aware of grievance channels and their right to association by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Achieve 100% resolution of valid employee grievances within 30 working days.",
+            "baseline": "2022",
+            "deadline": "within 30 working days"
+          },
+          {
+            "target": "Implement employee feedback systems across all sites and integrate results into annual HR performance reviews by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Provide a minimum of 20 training hours per employee annually by 2027, focusing on skill development, leadership, and compliance.",
+            "baseline": "2022",
+            "deadline": "annually by 2027"
+          },
+          {
+            "target": "Achieve 100% coverage of employees and contract workers under structured learning and development programs by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Increase female participation in training programs to at least 50% of total trainees by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Introduce annual talent assessment and career growth planning for 100% of permanent employees by 2027.",
+            "baseline": "2022",
+            "deadline": "annually by 2027"
+          }
+        ]
+      },
+      {
+        "area": "Child Labour, Forced Labour, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Maintain zero(0) tolerance for child, forced, or bonded labour across all operations and supply chain partners.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct human rights due diligence audits for 100% of critical suppliers by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Ensure 100% age verification for all employees, contract workers, and third-party hires.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Integrate human rights clauses in 100% of supplier and contractor agreements by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Conduct annual risk assessments at 100% of operational units to identify and mitigate potential issue by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Achieve 100% workforce coverage under anti-discrimination and POSH (Prevention of Sexual Harassment) training programs by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Maintain zero incidents of workplace harassment or discrimination through awareness and preventive actions.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% functioning of Internal Complaints Committee (ICC) across all operating sites.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct annual risk assessments at 100% of operational units to identify and mitigate potential issue by 2027.",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          },
+          {
+            "target": "Conduct annual diversity and inclusion (D&I) audits to assess representation and equality indicators.",
+            "baseline": "2022",
+            "deadline": "annual"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Conduct annual human rights and community impact assessments at all major sites by 2027.",
+            "baseline": "2022",
+            "deadline": "annually by 2027"
+          },
+          {
+            "target": "Engage with at least three local community initiatives annually focused on education, health, or livelihood improvement.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure zero(0) human rights violations in areas affected by company operations through proactive stakeholder dialogue.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Allocate a minimum of 2% of CSR budget annually to community development and human rights enhancement projects through 2027.",
+            "baseline": "2022",
+            "deadline": "annually through 2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Approve and oversee the implementation of the Human Rights and Labour Standards Policy across all facilities."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Review annual human rights performance, risk assessments, and compliance outcomes."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Allocate adequate resources for the implementation of human rights and labour initiatives."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Ensure alignment of human rights objectives with corporate values and long-term sustainability strategy."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Lead and promote a culture of fairness, equality, and ethical conduct across all units."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Ensure compliance with applicable labour and human rights laws at each site."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Monitor progress on key workforce and social performance indicators."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Report policy implementation outcomes and issues to the Sustainability Committee."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Implement fair employment practices, compensation systems, and equal opportunity programs."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Conduct periodic human rights and labour risk assessments."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Ensure 100% workforce coverage under training programs on POSH, ethics, and workplace conduct."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Facilitate employee grievance redressal and maintain confidentiality in investigations."
+      },
+      {
+        "role": "EHS (Environment, Health & Safety) Department",
+        "duty": "Maintain safe and healthy working conditions in line with ISO 45001 standards."
+      },
+      {
+        "role": "EHS (Environment, Health & Safety) Department",
+        "duty": "Conduct regular occupational risk assessments and safety audits."
+      },
+      {
+        "role": "EHS (Environment, Health & Safety) Department",
+        "duty": "Oversee health surveillance, emergency preparedness, and incident management systems."
+      },
+      {
+        "role": "EHS (Environment, Health & Safety) Department",
+        "duty": "Support site-level implementation of health and safety initiatives."
+      },
+      {
+        "role": "Ethics and Compliance Team",
+        "duty": "Monitor adherence to UNGPs, ILO conventions, and applicable national laws."
+      },
+      {
+        "role": "Ethics and Compliance Team",
+        "duty": "Conduct internal audits on ethical conduct and human rights due diligence."
+      },
+      {
+        "role": "Ethics and Compliance Team",
+        "duty": "Manage grievance redressal mechanisms and ensure non-retaliation."
+      },
+      {
+        "role": "Ethics and Compliance Team",
+        "duty": "Review supplier compliance with human rights and labour standards."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Integrate human rights and labour standards into supplier selection and contracts."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Conduct supplier due diligence and periodic compliance assessments."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Implement supplier training and capacity-building programs on ethical sourcing."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Address and escalate any identified supply chain human rights risks."
+      },
+      {
+        "role": "Training and Development Team",
+        "duty": "Plan and execute employee training on ethics, diversity, inclusion, and workplace conduct."
+      },
+      {
+        "role": "Training and Development Team",
+        "duty": "Track and evaluate the effectiveness of awareness programs."
+      },
+      {
+        "role": "Training and Development Team",
+        "duty": "Support leadership development and succession planning aligned with equal opportunity principles."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Comply with the Human Rights and Labour Standards Policy and company Code of Conduct."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Participate actively in safety, ethics, and diversity training sessions."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Report any violations, unsafe practices, or harassment incidents through formal channels."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Promote teamwork, respect, and inclusion within their respective work areas."
+      }
+    ],
+    "monitoring": "Track key indicators such as employee turnover, training hours, grievance resolutions, diversity ratio, and safety performance across all sites.\n\nConduct regular internal audits, risk assessments, and third-party evaluations to ensure compliance with labour and human rights standards.\n\nReview supplier performance on human rights and ethical labour practices through periodic due diligence assessments.\n\nPublish annual disclosures on human rights and labour performance within the Sustainability Report, aligned with GRI, BRSR, and EcoVadis frameworks.\n\nShare progress updates, audit results, and improvement plans with the Sustainability Committee and Board of Directors.\n\nMaintain transparent communication with employees, suppliers, and stakeholders on policy implementation outcomes.\n\nEnsure adherence to UN Guiding Principles on Business and Human Rights, ILO Core Conventions, and applicable Indian labour laws through periodic reviews.\n\nEngage accredited external auditors to independently verify compliance and continuous improvement.\n\nReport all identified risks, corrective actions, and preventive measures annually to ensure accountability and transparency.",
+    "reviewMechanism": "The Sustainability Committee, in coordination with the Human Resources, Ethics and Compliance, and EHS Departments, shall be responsible for conducting the annual review of this Human Rights and Labour Standards Policy. The review will assess the policy’s effectiveness, progress toward established human rights and labour targets, and compliance with applicable legal and organizational requirements.\n\nAny updates or revisions resulting from operational changes, new regulations, audit findings, or stakeholder feedback will be reviewed and approved by the Board of Directors. The revised policy will be communicated across all sites and value chain partners to ensure continued alignment with Anupam Rasayan’s corporate values, sustainability commitments, and international human rights standards."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Anupam Rasayan\\Human Rights and Labour Standards Policy.docx",
+  "sourceTextLength": 17739,
+  "parsedAt": "2026-08-10T09:20:05.089Z"
+}

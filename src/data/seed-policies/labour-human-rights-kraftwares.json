@@ -1,0 +1,234 @@
+{
+  "id": "labour-human-rights-kraftwares",
+  "name": "Kraftwares",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights template from 2. Labor and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Kraftwares",
+      "industry": "",
+      "site": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India.",
+      "sites": [
+        {
+          "location": "Kraftwares (India) Pvt. Ltd.",
+          "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Kraftwares (India) Pvt. Ltd. is dedicated to upholding and advancing human rights across all aspects of its operations and interactions. Our commitment is deeply rooted in the principles enshrined in the United Nations Universal Declaration of Human Rights, the International Labour Organization's Declaration on Fundamental Principles and Rights at Work, and the United Nations Guiding Principles on Business and Human Rights. We firmly believe that respect for human rights is not only a moral obligation but also a cornerstone of sustainable and ethical business practices.\n\nWe are devoted to fostering a culture where the dignity, safety, and equality of every individual are respected and upheld. This commitment extends to our employees, ensuring they are treated fairly and provided with a safe, inclusive, and equitable workplace. It also encompasses our suppliers, clients, and the communities where we operate, promoting ethical conduct, fair labor practices, and the protection of fundamental rights throughout our value chain.\n\nBy embedding these principles into our policies and practices, Kraftwares (India) Pvt. Ltd. strives to create positive social impact while driving responsible growth and fostering trust among all our stakeholders.",
+      "declaration": "Kraftwares (India) Pvt. Ltd. ensures its business operations and partnerships adhere to the highest ethical standards. We actively work to prevent complicity in human rights violations by maintaining and improving robust systems and processes. This commitment includes:\n\nProhibiting child labor, forced labor, and any form of exploitation across all operations.\n\nFostering a workplace free from discrimination, harassment, and abuse, ensuring equal opportunities for all employees.\n\nUpholding the right to fair wages, safe working conditions, and freedom of association.\n\nKraftwares (India) Pvt. Ltd. aligns its practices with global labor laws and principles, ensuring that:\n\nEmployees are provided with fair compensation, benefits, and safe working environments.\n\nWork hours comply with applicable laws and industry standards, avoiding excessive or exploitative practices.\n\nWorkers’ rights to collective bargaining and freedom of association are respected without retaliation.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Occupational health and safety",
+      "Fair and decent working conditions",
+      "Employee engagement and social dialogue",
+      "Employee development and talent mobility",
+      "Child labour and forced labour",
+      "Non-discrimination, harassment, equality and inclusion",
+      "Human rights across the value chain"
+    ],
+    "qualitative": {
+      "Occupational health and safety": [
+        "Promote a safe and healthy workplace by implementing effective occupational health and safety measures to prevent work-related injuries and illnesses."
+      ],
+      "Fair and decent working conditions": [
+        "Ensure fair and decent working conditions by complying with applicable labour laws, maintaining reasonable working hours, and providing a safe and respectful work environment.",
+        "Ensure that all employment is voluntary and prohibit any form of forced labour, bonded labour, or human trafficking in the company’s operations and supply chain."
+      ],
+      "Employee engagement and social dialogue": [
+        "Facilitate Quarterly open forums between management and employees to discuss and address workplace concerns transparently and to work on the discussed concerns actively.",
+        "Implement a reward system for employees providing constructive feedback on improving working conditions."
+      ],
+      "Employee development and talent mobility": [
+        "Support employee development by providing equal opportunities for skill enhancement, training, and career advancement.",
+        "Implement a talent mobility platform to increase internal transfers and job rotations across departments,"
+      ],
+      "Child labour and forced labour": [
+        "Prohibit the employment of child labour and strictly comply with applicable laws regarding the minimum age for employment."
+      ],
+      "Non-discrimination, harassment, equality and inclusion": [
+        "Promote a workplace free from discrimination, harassment, and unfair treatment by ensuring equal opportunity, respect, and dignity for all employees.",
+        "Foster a positive and inclusive work culture that supports employee well-being, dignity, and mutual respect across all levels of the organization."
+      ],
+      "Human rights across the value chain": [
+        "Respect and promote human rights across the value chain by encouraging suppliers, contractors, and business partners to adhere to responsible labour and human rights standards."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Labour and Human Rights",
+        "targets": [
+          {
+            "target": "Ensure 100% reporting and investigation of workplace incidents and near-miss cases within 48 hours.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "within 48 hours"
+          },
+          {
+            "target": "To conduct 2 ergonomic assessments for 100% of desk-based employees till year 2030",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "till year 2030"
+          },
+          {
+            "target": "Maintain Zero Lost Time Injury Frequency Rate (LTIFR) annually through improved safety practices, hazard identification, and preventive maintenance.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually"
+          },
+          {
+            "target": "Achieve occupational health and safety training coverage for 100% employees and workers annually.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain weekly working hours within legal limits and ensure overtime does not exceed 5% of total working hours per month by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Increase employee participation in wellness programs to 100% by 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "To continuously organize annual employee satisfaction surveys with a target of achieving an 85% positive satisfaction rate by 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Ensure 100% employees receive adequate wages annually in compliance with applicable wage laws and industry standards, supported by periodic reviews and an annual wage monitoring report.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually"
+          },
+          {
+            "target": "Increase the participation of employee representatives to 100% from all the relevant departments in structured social dialogue meetings by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Maintain 100% compliance with collective bargaining agreements annually till year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually till year 2030"
+          },
+          {
+            "target": "Ensure 100% of employee grievances are acknowledged within 3 days and resolved within 30 days.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "acknowledged within 3 days and resolved within 30 days"
+          },
+          {
+            "target": "Conduct five structured employee engagement meetings to discuss workplace issues and improvements by 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Establish partnerships with 3 leading educational institutions to offer employees access to advanced certifications and degree programs till year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "till year 2030"
+          },
+          {
+            "target": "Fill 5% of leadership positions through internal mobility/promotions by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Offer career development training programs to 100% of eligible employees annually.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually"
+          },
+          {
+            "target": "Partner with 2 NGOs and or industry initiatives to raise awareness and drive systemic change against child and forced labor by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Conduct annual training session on identification of unethical labour practices for 100% employees.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure 100% supplier compliance with child & forced labor policies by conducting on-site audits of all suppliers by 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Ensure 100% of recruitment panels are trained on equal opportunity and non-discriminatory hiring practices annually.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually"
+          },
+          {
+            "target": "Develop and maintain 3 Employee Resource Groups (ERGs) by year 2030 to strengthen inclusion, and employee support.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Conduct two workplace climate surveys on discrimination and harassment by year 2030 with participation from 100% of employees through confidential survey forms.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Engage 80% of Key External Stakeholders in Human Rights Dialogues by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Oversee policy alignment, allocate resources, and promote a culture of respect for labor and human rights."
+      },
+      {
+        "role": "HR Department",
+        "duty": "Implement procedures, conduct training, maintain grievance records, and ensure compliance."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Monitor adherence to laws, conduct audits, and address non-compliance."
+      },
+      {
+        "role": "Managers",
+        "duty": "Enforce policy, address concerns, and report updates to HR."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow guidelines, report violations, and engage in feedback mechanisms."
+      },
+      {
+        "role": "Suppliers/Partners",
+        "duty": "Comply with standards, undergo assessments, and align practices with the policy."
+      }
+    ],
+    "monitoring": "Kraftwares (India) Pvt. Ltd. continuously monitors its labour standards and human rights performance across key areas such as employee health and safety, working conditions, social dialogue, career development, prevention of child and forced labour, non-discrimination, and protection of external stakeholder rights.\n\nKey Performance Indicators (KPIs) are tracked through internal monitoring mechanisms, and a KPI monitoring sheet is maintained to assess performance against established objectives and targets. Performance is reviewed quarterly, with consolidated reports submitted to senior management for evaluation and decision-making.\n\nAnnual assessments are conducted to evaluate progress, identify improvement opportunities, and implement corrective actions where required. All monitoring and reporting activities are carried out in accordance with applicable labour laws and internationally recognized human rights principles promoted by the International Labour Organization and the United Nations to ensure transparency and accountability.",
+    "reviewMechanism": "Kraftwares (India) Pvt. Ltd. is committed to the continuous improvement of its labour and human rights practices. The Company periodically reviews its policies, procedures, and performance against established targets and Key Performance Indicators (KPIs) to ensure alignment with applicable laws, international standards such as the International Labour Organization principles, and industry best practices. Based on the review findings, necessary corrective and preventive actions are implemented to strengthen compliance and enhance workplace practices.\n\nThe Labor and Human Rights Policy is reviewed annually by the HR manager for compliance with laws and goals. Quarterly monitoring and annual audits track key performance indicators, while feedback is gathered through surveys and grievance systems. Incidents are logged, tracked, and resolved promptly."
+  },
+  "sourcePath": "Hetvi- Policies\\Kraftwares\\2. Labor and Human Rights Policy.docx",
+  "sourceTextLength": 12294,
+  "parsedAt": "2026-08-10T09:22:48.087Z"
+}

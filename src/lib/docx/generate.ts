@@ -16,14 +16,17 @@ import {
   Bookmark,
 } from "docx";
 import { getCompanySites, type Policy } from "../types";
-import { SDG_DATA, POLICY_TYPE_META } from "../constants";
+import { SDG_DATA, getPolicyProfile } from "../constants";
+import { normalizePolicyQuantitative } from "../quantitative";
 
 const FOREST = "1a5c3a";
 const CREAM = "f3eee3";
 const LINE = "e5e1d3";
 const INK = "1a1a1a";
 
-export async function generateDocx(policy: Policy): Promise<Buffer> {
+export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
+  const policy = normalizePolicyQuantitative(inputPolicy);
+  const profile = getPolicyProfile(policy.policyType);
   const co = policy.company;
   const sites = getCompanySites(co);
   const areas = policy.focusAreas.filter(Boolean);
@@ -53,7 +56,7 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
       spacing: { after: 100 },
       children: [
         new TextRun({
-          text: POLICY_TYPE_META.label,
+          text: profile.label,
           bold: true,
           font: "Georgia",
           color: INK,
@@ -117,6 +120,7 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
       { id: "scope", label: "Scope" },
       { id: "quantitative", label: "Key Quantitative Targets" },
       { id: "sdg", label: "SDG Alignment" }
+      ,{ id: "review", label: "Review Mechanism & Continuous Improvement" }
     ],
     comprehensive: [
       { id: "preface", label: "Executive Preface" },
@@ -132,10 +136,13 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
     ]
   };
 
-  const sections = SECTION_CONFIGS[tpl].filter(s => {
+  const sectionConfig = [...SECTION_CONFIGS[tpl]];
+  if (policy.definitions?.content) sectionConfig.splice(3, 0, { id: "definitions", label: policy.definitions.title || "Definitions" });
+  const sections = sectionConfig.filter(s => {
     if (s.id === "preface" && !policy.declaration.preface) return false;
     if (s.id === "declaration" && !policy.declaration.declaration) return false;
     if (s.id === "scope" && !policy.declaration.scope) return false;
+    if (s.id === "definitions" && !policy.definitions?.content) return false;
     if (s.id === "focus" && areas.length === 0) return false;
     if (s.id === "qualitative" && qualEntries.length === 0) return false;
     if (s.id === "quantitative" && quantEntries.length === 0) return false;
@@ -165,6 +172,15 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
       })
     );
   });
+  children.push(
+    new Paragraph({
+      spacing: { after: 120 },
+      children: [
+        new TextRun({ text: `${String(sections.length + 1).padStart(2, "0")}. `, bold: true, color: FOREST, size: 24 }),
+        new TextRun({ text: "Employee Acknowledgement Form", size: 24 }),
+      ],
+    })
+  );
   
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
@@ -192,6 +208,9 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
             })
           );
         }
+        break;
+      case "definitions":
+        children.push(...bodyParagraphs(policy.definitions?.content || ""));
         break;
       case "focus":
         areas.forEach((a, i) =>
@@ -233,7 +252,7 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
             spacing: { after: 100 },
             children: [
               new TextRun({
-                text: "Baseline year: FY 2022-23. All targets to be achieved by the stated deadline.",
+                text: "Targets are either tracked against a defined period or reported annually as ongoing commitments.",
                 italics: true,
                 size: 18,
                 color: "666666",
@@ -256,7 +275,7 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
                 new Paragraph({
                   spacing: { after: 60 },
                   children: [
-                    new TextRun({ text: `${t.target} (Baseline: ${t.baseline}, Deadline: ${t.deadline}).`, size: 22 }),
+                    new TextRun({ text: t.reportingFrequency === "Annually" ? `${t.target} (Reported annually).` : `${t.target} (Baseline: ${t.baseline}, Deadline: ${t.deadline}).`, size: 22 }),
                   ],
                 })
               );
@@ -267,11 +286,12 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
             new TableRow({
               tableHeader: true,
               children: [
-                headerCell("#", "6%"),
-                headerCell("Focus Area", "26%"),
-                headerCell("Target", "40%"),
-                headerCell("Baseline", "14%"),
-                headerCell("Deadline", "14%"),
+                headerCell("#", "5%"),
+                headerCell("Focus Area", "20%"),
+                headerCell("Target", "35%"),
+                headerCell("Baseline", "13%"),
+                headerCell("Deadline", "13%"),
+                headerCell("Reporting", "14%"),
               ],
             }),
           ];
@@ -282,11 +302,12 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
                 targetRows.push(
                   new TableRow({
                     children: [
-                      bodyCell(ti === 0 ? String(qi + 1) : "", "6%", true),
-                      bodyCell(ti === 0 ? q.area : "", "26%", true),
-                      bodyCell(t.target, "40%"),
-                      bodyCell(t.baseline, "14%"),
-                      bodyCell(t.deadline, "14%"),
+                      bodyCell(ti === 0 ? String(qi + 1) : "", "5%", true),
+                      bodyCell(ti === 0 ? q.area : "", "20%", true),
+                      bodyCell(t.target, "35%"),
+                      bodyCell(t.reportingFrequency === "Annually" ? "" : t.baseline, "13%"),
+                      bodyCell(t.reportingFrequency === "Annually" ? "" : t.deadline, "13%"),
+                      bodyCell(t.reportingFrequency || "Target period", "14%"),
                     ],
                   })
                 );
@@ -403,17 +424,17 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
     new Paragraph({
       alignment: AlignmentType.CENTER,
       spacing: { after: 80 },
-      children: [new TextRun({ text: "Employee Acknowledgment Form", bold: true, size: 28 })],
+      children: [new TextRun({ text: "Employee Acknowledgement Form", bold: true, size: 28 })],
     }),
     new Paragraph({
       alignment: AlignmentType.CENTER,
       spacing: { after: 200 },
       children: [
-        new TextRun({ text: `${POLICY_TYPE_META.label} · ${co.name}`, italics: true, size: 18, color: "666666" }),
+        new TextRun({ text: `${profile.label} · ${co.name}`, italics: true, size: 18, color: "666666" }),
       ],
     }),
     ...bodyParagraphs(
-      `I hereby acknowledge that I have read and understood the ${POLICY_TYPE_META.label} of ${
+      `I hereby acknowledge that I have read and understood the ${profile.label} of ${
         co.name || "[Company Name]"
       }. I am aware of the company's commitment to responsible practices as outlined in this policy and agree to uphold these standards in my daily work.`
     ),
@@ -449,7 +470,7 @@ export async function generateDocx(policy: Policy): Promise<Buffer> {
 
   const doc = new Document({
     creator: "PolicyCraft",
-    title: `${POLICY_TYPE_META.label} - ${co.name || "Policy"}`,
+    title: `${profile.label} - ${co.name || "Policy"}`,
     styles: {
       default: {
         document: { run: { font: "Georgia", size: 21, color: INK } },

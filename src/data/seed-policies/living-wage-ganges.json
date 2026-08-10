@@ -1,0 +1,235 @@
+{
+  "id": "living-wage-ganges",
+  "name": "Ganges",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage template from Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Ganges",
+      "industry": "",
+      "site": "Bansberia, Hooghly District, West Bengal, India",
+      "sites": [
+        {
+          "location": "Ganges Jute Pvt Ltd",
+          "address": "Bansberia, Hooghly District, West Bengal, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Bansberia, Hooghly District, West Bengal, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Ganges Jute Pvt Ltd is committed to ensuring fair compensation for all employees, promoting economic stability, and extending our commitment to living wages across our entire supply chain. This commitment is not only an important social responsibility but also creates value for our business, customers, stakeholders, and employees by fostering a motivated and productive workforce.",
+      "declaration": "It is the policy of Ganges Jute Pvt Ltd to compensate our employees with a living wage that allows them to meet their basic needs and those of their families. This includes fair remuneration, benefits, and working conditions that promote dignity and economic security. We extend this commitment across our value chain, encouraging our suppliers and partners to adopt similar practices.\n\nWe set annual goals, develop necessary capabilities, and commit appropriate resources to achieve this policy through fair labor practices, operational efficiency, and aligning Ganges Jute's supply chain with this policy.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "It is the policy of Ganges Jute Pvt Ltd to compensate our employees with a living wage that allows them to meet their basic needs and those of their families. This includes fair remuneration, benefits, and working conditions that promote dignity and economic security.\n\nWe aim to ensure 100% of our direct employees receive a living wage by 2030, using a locally-adjusted living wage calculator.\n\nImplementing a living wage calculation methodology that considers local cost of living;\n\nProviding comprehensive benefits packages that support employees' well-being;\n\nWe aim to provide comprehensive health insurance coverage for 100% of employees and their immediate family members by 2030.\n\nAnnual updates to our living wage calculations, taking into account changes in local cost of living. Results are communicated to all employees and used to adjust wage scales as necessary.\n\nThe Chief Human Resources Officer reviews this policy every two years to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations."
+    },
+    "focusAreas": [
+      "Living Wage Compliance",
+      "Benefits Enhancement",
+      "Wage Equity",
+      "Supply Chain Living Wage",
+      "Transparency and Communication"
+    ],
+    "qualitative": {
+      "Living Wage Compliance": [
+        "Ganges Jute Pvt Ltd complies with all applicable labor laws and regulations, while also striving to provide wages that exceed minimum requirements. We foster employee engagement, set performance standards, and utilize a Wage Management System to drive compliance and continuous improvement, including through:",
+        "Supporting skills development and career progression opportunities;",
+        "Managing subcontractors and suppliers to ensure living wage standards are met throughout our supply chain;",
+        "Advocating for industry-wide adoption of living wage standards."
+      ],
+      "Benefits Enhancement": [
+        "Providing comprehensive benefits packages that support employees' well-being;"
+      ],
+      "Wage Equity": [
+        "Setting and achieving wage equity targets across all levels of the organization;",
+        "Minimizing wage gaps between different employee categories;"
+      ],
+      "Supply Chain Living Wage": [
+        "We extend this commitment across our value chain, encouraging our suppliers and partners to adopt similar practices."
+      ],
+      "Transparency and Communication": [
+        "We set annual goals, develop necessary capabilities, and commit appropriate resources to achieve this policy through fair labor practices, operational efficiency, and aligning Ganges Jute's supply chain with this policy."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Implementation",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% of our direct employees receive a living wage by 2030, using a locally-adjusted living wage calculator.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to extend living wage requirements to 60% of our tier 1 suppliers by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to implement a wage progression system, allowing employees to reach 120% of the living wage within 3 years of employment.",
+            "baseline": "",
+            "deadline": "within 3 years of employment"
+          }
+        ]
+      },
+      {
+        "area": "Benefits Enhancement",
+        "targets": [
+          {
+            "target": "We aim to provide comprehensive health insurance coverage for 100% of employees and their immediate family members by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to implement a retirement savings program with company matching contributions up to 5% of salary by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to offer paid parental leave of 16 weeks for 100% of primary caregivers and 4 weeks for 100% of secondary caregivers by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Wage Equity",
+        "targets": [
+          {
+            "target": "We aim to achieve a maximum 10:1 ratio between the highest and lowest paid employees for 100% of our workforce by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to eliminate 100% of gender pay gaps across all job categories by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to implement transparent pay scales and job grading systems 100% of positions by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supply Chain Living Wage",
+        "targets": [
+          {
+            "target": "We plan to provide training and support to help 80% of our suppliers implement living wage policies by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to include living wage clauses in 100% of new supplier contracts by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Transparency and Communication",
+        "targets": [
+          {
+            "target": "We aim to implement a digital payroll system with individual employee access for 100% of our workforce by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We intend to publish an annual wage report detailing our progress towards living wage goals, covering 100% of our workforce, by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Oversees the overall living wage strategy and approves long-term fair compensation goals."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensures alignment of living wage initiatives with business objectives and stakeholder expectations."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Leads the development and implementation of the Living Wage policy across the organization."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Reports directly to the CEO and provides regular updates to the Board of Directors."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provides leadership in implementing the Living Wage policy within their respective divisions."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Allocates necessary resources and integrates fair compensation metrics into performance evaluations."
+      },
+      {
+        "role": "Fair Compensation Committee",
+        "duty": "A dedicated committee comprising representatives from HR, Finance, and Operations is established to oversee the execution of living wage initiatives."
+      },
+      {
+        "role": "Fair Compensation Committee",
+        "duty": "The committee is tasked with developing action plans, monitoring performance, and recommending improvements to meet fair compensation objectives."
+      },
+      {
+        "role": "Departmental Heads",
+        "duty": "Departmental heads are responsible for integrating fair compensation practices into their respective areas of operation."
+      },
+      {
+        "role": "Departmental Heads",
+        "duty": "They ensure compliance with labor regulations, promote wage equity, and support employee engagement in living wage efforts."
+      },
+      {
+        "role": "Compensation and Benefits Manager",
+        "duty": "Ensures adherence to all applicable labor laws, regulations, and living wage standards."
+      },
+      {
+        "role": "Compensation and Benefits Manager",
+        "duty": "Conducts regular wage audits and maintains documentation for compliance."
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are encouraged to actively participate in fair compensation discussions."
+      },
+      {
+        "role": "Employees",
+        "duty": "They are expected to understand their compensation packages, report any wage-related concerns, and contribute ideas for continuous improvement."
+      }
+    ],
+    "monitoring": "The CHRO presents a comprehensive fair compensation dashboard to senior management and the Board.\n\nThe dashboard highlights progress towards annual targets, wage trends, and areas needing attention.\n\nA dedicated system for employees to report wage discrepancies or concerns.\n\nThe Compensation and Benefits Manager investigates all reports and implements corrective actions.\n\nExternal reporting is conducted annually to communicate our fair compensation performance to stakeholders, including employees, investors, and regulatory bodies.\n\nReports are prepared in accordance with internationally recognized standards such as the Global Reporting Initiative (GRI) guidelines or UN Guiding Principles Reporting Framework.\n\nWe actively engage with stakeholders to gather feedback, address concerns, and foster transparency in our fair compensation practices.\n\nStakeholder input is considered in decision-making processes and incorporated into living wage initiatives where applicable.\n\nAnnual audits of supplier wage practices are conducted to ensure compliance with our living wage standards.\n\nResults are reported internally and used to guide supplier engagement and development programs.\n\nRegular analysis of pay equity across gender, race, and other protected categories is conducted.\n\nResults are reported to senior management and used to inform wage adjustment strategies.\n\nAnnual updates to our living wage calculations, taking into account changes in local cost of living.\n\nResults are communicated to all employees and used to adjust wage scales as necessary.",
+    "reviewMechanism": "An annual performance review is conducted to assess progress towards living wage goals and targets.\n\nKey achievements, challenges, and areas for improvement are identified through a comprehensive evaluation process.\n\nFeedback from performance reviews, internal audits, and stakeholder engagement activities is used to identify opportunities for continuous improvement in our living wage practices.\n\nAdjustments to strategies, policies, and action plans are made as necessary to enhance fair compensation performance and address emerging issues.\n\nThe Chief Human Resources Officer reviews this policy every two years to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations.\n\nUpdates to the policy are communicated internally, and relevant training is provided to ensure awareness and compliance."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Ganges\\Living Wage Policy.docx",
+  "sourceTextLength": 10238,
+  "parsedAt": "2026-08-10T09:20:58.224Z"
+}

@@ -4,9 +4,9 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useBuilder, getStepOrder } from "@/lib/store";
-import { STEPS, POLICY_TYPE_META } from "@/lib/constants";
+import { getPolicyProfile, getPolicySteps } from "@/lib/constants";
 import { Icon } from "@/components/icons";
-import { Leaf, ArrowLeft, Sparkles, FileText, RotateCcw } from "lucide-react";
+import { Leaf, ArrowLeft, Sparkles, FileText, RotateCcw, Users, BadgeIndianRupee } from "lucide-react";
 import { clsx } from "clsx";
 
 export function BuilderShell({
@@ -20,9 +20,11 @@ export function BuilderShell({
 }) {
   const { step, setStep, policy, reset, loadSample } = useBuilder();
   const pathname = usePathname();
+  const policyMeta = getPolicyProfile(policy.policyType);
+  const PolicyIcon = policyMeta.icon === "Users" ? Users : policyMeta.icon === "BadgeIndianRupee" ? BadgeIndianRupee : Leaf;
 
   const order = getStepOrder(policy.presentationTemplate);
-  const visibleSteps = STEPS.filter((s) => order.includes(s.id));
+  const visibleSteps = getPolicySteps(policy.policyType).filter((s) => order.includes(s.id));
   const currentIndex = Math.max(0, visibleSteps.findIndex((s) => s.id === step));
   const progress = ((currentIndex + 1) / visibleSteps.length) * 100;
 
@@ -50,20 +52,20 @@ export function BuilderShell({
             <div
               className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg border"
               style={{
-                background: POLICY_TYPE_META.accentSoft,
+                background: policyMeta.accentSoft,
                 borderColor: "#cfe2d7",
-                color: POLICY_TYPE_META.accent,
+                color: policyMeta.accent,
               }}
             >
               <div
                 className="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0"
-                style={{ background: POLICY_TYPE_META.accent }}
+                style={{ background: policyMeta.accent }}
               >
-                <Leaf size={14} className="text-white" strokeWidth={2.2} />
+                <PolicyIcon size={14} className="text-white" strokeWidth={2.2} />
               </div>
               <div className="min-w-0">
                 <div className="text-[10px] font-semibold uppercase tracking-wider opacity-70">Active policy</div>
-                <div className="text-[13px] font-semibold truncate">{POLICY_TYPE_META.label}</div>
+                <div className="text-[13px] font-semibold truncate">{policyMeta.label}</div>
               </div>
             </div>
           </div>
@@ -174,7 +176,7 @@ export function BuilderShell({
               {currentStep?.label}
             </h1>
             <p className="text-[12.5px] text-[var(--color-muted)] mt-0.5 truncate">
-              Step {currentIndex + 1} of {STEPS.length} — {currentStep?.desc}
+              Step {currentIndex + 1} of {visibleSteps.length} — {currentStep?.desc}
             </p>
           </div>
           <div className="flex items-center gap-2 flex-shrink-0">{topActions}</div>

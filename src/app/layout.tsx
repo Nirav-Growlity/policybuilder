@@ -22,9 +22,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PolicyCraft — Environmental Policy Builder",
+  title: "PolicyCraft — Sustainability Policy Builder",
   description:
-    "Author production-grade environmental policies in minutes. Aligned with GRI, EcoVadis, BRSR, ISO 14001, SDGs and more.",
+    "Author production-grade environmental, labour and human-rights, and living-wage policies in minutes.",
 };
 
 export default function RootLayout({
