@@ -2,12 +2,14 @@ import type { PolicyType, Responsibility, StepDef } from "./types";
 
 export const STEPS: StepDef[] = [
   { id: "setup", label: "Company setup", desc: "Enter company details and policy metadata", icon: "Building2" },
+  { id: "structure", label: "Document structure", desc: "Arrange the sections in your policy", icon: "FileText" },
   { id: "declaration", label: "Declaration & scope", desc: "Write the preface, declaration and scope", icon: "ScrollText" },
   { id: "focus", label: "Key focus areas", desc: "Define what this policy covers", icon: "Target" },
   { id: "qualitative", label: "Qualitative objectives", desc: "Set qualitative goals per focus area", icon: "ListChecks" },
   { id: "quantitative", label: "Quantitative targets", desc: "Set measurable targets with deadlines", icon: "BarChart3" },
   { id: "sdg", label: "SDG alignment", desc: "Link to UN Sustainable Development Goals", icon: "Globe2" },
   { id: "responsibilities", label: "Responsibilities", desc: "Assign roles and review mechanism", icon: "Users" },
+  { id: "custom", label: "Custom sections", desc: "Write added policy sections", icon: "Edit3" },
   { id: "export", label: "Preview & export", desc: "Review and download your policy", icon: "Download" },
 ];
 

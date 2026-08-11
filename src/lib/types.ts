@@ -73,12 +73,14 @@ export interface Responsibility {
 
 export type StepId =
   | "setup"
+  | "structure"
   | "declaration"
   | "focus"
   | "qualitative"
   | "quantitative"
   | "sdg"
   | "responsibilities"
+  | "custom"
   | "export";
 
 export type PresentationTemplate =
@@ -88,10 +90,37 @@ export type PresentationTemplate =
 
 export type VisualStyle = "corporate" | "modern";
 
+export type StandardSectionKind =
+  | "preface" | "declaration" | "scope" | "definitions" | "framework"
+  | "focus" | "qualitative" | "quantitative" | "sdg" | "responsibilities"
+  | "monitoring" | "review";
+
+export type RichTextBlock = {
+  id: string;
+  type: "paragraph" | "bullets" | "numbered" | "table";
+  text: string;
+  columns?: string[];
+  rows?: string[][];
+};
+
+export interface PolicySection {
+  id: string;
+  kind: StandardSectionKind | "custom";
+  title: string;
+  enabled: boolean;
+  blocks?: RichTextBlock[];
+}
+
+export type SdgDisplayMode = "names" | "tiles";
+
 export interface Policy {
   policyType: PolicyType;
   presentationTemplate?: PresentationTemplate;
   visualStyle?: VisualStyle;
+  sections?: PolicySection[];
+  showTableOfContents?: boolean;
+  showAcknowledgement?: boolean;
+  sdgDisplay?: SdgDisplayMode;
   company: Company;
   standards: string[];
   declaration: Declaration;

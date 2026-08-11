@@ -5,13 +5,16 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import type { Policy, PolicyType, StepId } from "./types";
 import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, getPolicyProfile } from "./constants";
 import { normalizePolicyQuantitative } from "./quantitative";
+import { getWorkflowSteps, normalizePolicyStructure } from "./sections";
 
 export const initialPolicy = (policyType: PolicyType = "environmental"): Policy => {
   const profile = getPolicyProfile(policyType);
-  return ({
+  return normalizePolicyStructure({
   policyType,
-  presentationTemplate: "standard",
   visualStyle: "corporate",
+  showTableOfContents: true,
+  showAcknowledgement: true,
+  sdgDisplay: "tiles",
   company: {
     name: "",
     industry: "",
@@ -56,24 +59,8 @@ interface BuilderState {
   loadSample: () => void;
 }
 
-export function getStepOrder(tpl?: string): StepId[] {
-  if (tpl === "executive") {
-    return ["setup", "declaration", "quantitative", "sdg", "export"];
-  }
-  if (tpl === "standard") {
-    return ["setup", "declaration", "focus", "quantitative", "responsibilities", "export"];
-  }
-  // comprehensive
-  return [
-    "setup",
-    "declaration",
-    "focus",
-    "qualitative",
-    "quantitative",
-    "sdg",
-    "responsibilities",
-    "export",
-  ];
+export function getStepOrder(policy: Policy): StepId[] {
+  return getWorkflowSteps(policy);
 }
 
 export const useBuilder = create<BuilderState>()(
@@ -84,21 +71,21 @@ export const useBuilder = create<BuilderState>()(
       hydrated: false,
       setStep: (s) => set({ step: s }),
       next: () => {
-        const order = getStepOrder(get().policy.presentationTemplate);
+        const order = getStepOrder(get().policy);
         const i = order.indexOf(get().step);
         if (i < order.length - 1) set({ step: order[i + 1] });
       },
       prev: () => {
-        const order = getStepOrder(get().policy.presentationTemplate);
+        const order = getStepOrder(get().policy);
         const i = order.indexOf(get().step);
         if (i > 0) set({ step: order[i - 1] });
       },
       updatePolicy: (updater) => {
         const current = get().policy;
         const patch = updater(current);
-        set({ policy: normalizePolicyQuantitative(patch ? { ...current, ...patch } : current) });
+        set({ policy: normalizePolicyStructure(normalizePolicyQuantitative(patch ? { ...current, ...patch } : current)) });
       },
-      setPolicy: (p) => set({ policy: normalizePolicyQuantitative(p) }),
+      setPolicy: (p) => set({ policy: normalizePolicyStructure(normalizePolicyQuantitative(p)) }),
       startPolicy: (type) => set({ policy: initialPolicy(type), step: "setup" }),
       reset: () => set({ policy: initialPolicy(), step: "setup" }),
       loadSample: () => {
@@ -121,7 +108,7 @@ export const useBuilder = create<BuilderState>()(
       partialize: (s) => ({ step: s.step, policy: s.policy }),
       onRehydrateStorage: () => (state) => {
         if (state) {
-          state.policy = normalizePolicyQuantitative(state.policy);
+          state.policy = normalizePolicyStructure(normalizePolicyQuantitative(state.policy));
           state.hydrated = true;
         }
       },
@@ -131,12 +118,14 @@ export const useBuilder = create<BuilderState>()(
 
 export const ALL_STEPS: StepId[] = [
   "setup",
+  "structure",
   "declaration",
   "focus",
   "qualitative",
   "quantitative",
   "sdg",
   "responsibilities",
+  "custom",
   "export",
 ];
 

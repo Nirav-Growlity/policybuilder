@@ -14,10 +14,14 @@ import {
   PageBreak,
   InternalHyperlink,
   Bookmark,
+  ImageRun,
 } from "docx";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { getCompanySites, type Policy } from "../types";
 import { SDG_DATA, getPolicyProfile } from "../constants";
 import { normalizePolicyQuantitative } from "../quantitative";
+import { getEnabledSections, sectionHasContent } from "../sections";
 
 const FOREST = "1a5c3a";
 const CREAM = "f3eee3";
@@ -100,60 +104,14 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
 
   children.push(spacer(360));
 
-  const tpl = policy.presentationTemplate || "standard";
   const isModern = policy.visualStyle === "modern";
-  
-  const SECTION_CONFIGS: Record<string, { id: string, label: string }[]> = {
-    standard: [
-      { id: "preface", label: "Preface" },
-      { id: "declaration", label: "Policy Declaration" },
-      { id: "scope", label: "Scope" },
-      { id: "focus", label: "Key Focus Areas" },
-      { id: "quantitative", label: "Quantitative Targets" },
-      { id: "responsibilities", label: "Responsibilities" },
-      { id: "monitoring", label: "Monitoring, Reporting & Transparency" },
-      { id: "review", label: "Review Mechanism & Continuous Improvement" }
-    ],
-    executive: [
-      { id: "preface", label: "Preface" },
-      { id: "declaration", label: "Executive Declaration" },
-      { id: "scope", label: "Scope" },
-      { id: "quantitative", label: "Key Quantitative Targets" },
-      { id: "sdg", label: "SDG Alignment" }
-      ,{ id: "review", label: "Review Mechanism & Continuous Improvement" }
-    ],
-    comprehensive: [
-      { id: "preface", label: "Executive Preface" },
-      { id: "declaration", label: "Policy Declaration" },
-      { id: "scope", label: "Scope of Application" },
-      { id: "focus", label: "Material Focus Areas" },
-      { id: "qualitative", label: "Detailed Qualitative Objectives" },
-      { id: "quantitative", label: "Quantitative ESG Targets" },
-      { id: "sdg", label: "United Nations SDG Alignment" },
-      { id: "responsibilities", label: "Governance and Responsibilities" },
-      { id: "monitoring", label: "Monitoring, Reporting & Transparency" },
-      { id: "review", label: "Review Mechanism & Continuous Improvement" }
-    ]
-  };
-
-  const sectionConfig = [...SECTION_CONFIGS[tpl]];
-  if (policy.definitions?.content) sectionConfig.splice(3, 0, { id: "definitions", label: policy.definitions.title || "Definitions" });
-  const sections = sectionConfig.filter(s => {
-    if (s.id === "preface" && !policy.declaration.preface) return false;
-    if (s.id === "declaration" && !policy.declaration.declaration) return false;
-    if (s.id === "scope" && !policy.declaration.scope) return false;
-    if (s.id === "definitions" && !policy.definitions?.content) return false;
-    if (s.id === "focus" && areas.length === 0) return false;
-    if (s.id === "qualitative" && qualEntries.length === 0) return false;
-    if (s.id === "quantitative" && quantEntries.length === 0) return false;
-    if (s.id === "sdg" && policy.sdgs.length === 0) return false;
-    if (s.id === "responsibilities" && policy.responsibilities.length === 0) return false;
-    if (s.id === "monitoring" && !policy.monitoring) return false;
-    if (s.id === "review" && !policy.reviewMechanism) return false;
-    return true;
-  });
+  const sections = getEnabledSections(policy).filter((section) => section.kind === "preface" || sectionHasContent(policy, section));
+  const sdgImages = policy.sdgDisplay === "tiles"
+    ? new Map<number, Uint8Array>(await Promise.all(policy.sdgs.map(async (n) => [n, await readFile(path.join(process.cwd(), "public", "E SDG Icons PRINT", `E_SDG_PRINT-${String(n).padStart(2, "0")}.jpg`))] as [number, Uint8Array])))
+    : new Map<number, Uint8Array>();
 
   // Table of Contents
+  if (policy.showTableOfContents) {
   children.push(new Paragraph({ children: [new PageBreak()] }));
   children.push(sectionTitle("Table of Contents"));
   sections.forEach((s, i) => {
@@ -165,13 +123,14 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
             anchor: s.id,
             children: [
               new TextRun({ text: `${String(i + 1).padStart(2, "0")}. `, bold: true, color: FOREST, size: 24 }),
-              new TextRun({ text: s.label, size: 24 }),
+              new TextRun({ text: s.title, size: 24 }),
             ]
           })
         ],
       })
     );
   });
+  if (policy.showAcknowledgement) {
   children.push(
     new Paragraph({
       spacing: { after: 120 },
@@ -181,14 +140,15 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
       ],
     })
   );
+  }
   
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
   // Render Sections
   sections.forEach((s) => {
-    children.push(sectionTitle(s.label, s.id));
+    children.push(sectionTitle(s.title, s.id));
     
-    switch (s.id) {
+    switch (s.kind) {
       case "preface":
         children.push(...bodyParagraphs(policy.declaration.preface));
         break;
@@ -197,13 +157,17 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
         break;
       case "scope":
         children.push(...bodyParagraphs(policy.declaration.scope));
-        if (co.site) {
+        if (sites.length > 0) {
           children.push(
             new Table({
               width: { size: 100, type: WidthType.PERCENTAGE },
               rows: [
-                new TableRow({ children: [lightHeaderCell("Site", "50%"), lightHeaderCell("Address", "50%")] }),
-                new TableRow({ children: [bodyCell(co.name, "50%", true), bodyCell(co.site, "50%")] }),
+                new TableRow({ children: [lightHeaderCell("Location / Unit", "25%"), lightHeaderCell("Address", "50%"), lightHeaderCell("Primary Function", "25%")] }),
+                ...sites.map((site, index) => new TableRow({ children: [
+                  bodyCell(site.location || co.name || `Site ${index + 1}`, "25%", true),
+                  bodyCell(site.address, "50%"),
+                  bodyCell(site.primaryFunction || "Operating Site", "25%"),
+                ] })),
               ],
             })
           );
@@ -211,6 +175,9 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
         break;
       case "definitions":
         children.push(...bodyParagraphs(policy.definitions?.content || ""));
+        break;
+      case "framework":
+        policy.standards.forEach((standard) => children.push(...bodyParagraphs(standard)));
         break;
       case "focus":
         areas.forEach((a, i) =>
@@ -332,6 +299,17 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
         );
         policy.sdgs.forEach((n) => {
           const s = SDG_DATA.find((d) => d.n === n)!;
+          if (policy.sdgDisplay === "tiles" && sdgImages.has(n)) {
+            children.push(new Table({
+              width: { size: 100, type: WidthType.PERCENTAGE },
+              borders: { top: { style: BorderStyle.NONE, size: 0 }, bottom: { style: BorderStyle.NONE, size: 0 }, left: { style: BorderStyle.NONE, size: 0 }, right: { style: BorderStyle.NONE, size: 0 } },
+              rows: [new TableRow({ children: [
+                new TableCell({ width: { size: 16, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new ImageRun({ data: sdgImages.get(n)!, type: "jpg", transformation: { width: 58, height: 58 } })] })] }),
+                new TableCell({ width: { size: 84, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: `SDG ${s.n}: ${s.label}`, bold: true, color: s.c, size: 20 })] })] }),
+              ] })],
+            }));
+            return;
+          }
           children.push(
             new Table({
               width: { size: 100, type: WidthType.PERCENTAGE },
@@ -401,11 +379,24 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
       case "review":
         children.push(...bodyParagraphs(policy.reviewMechanism));
         break;
+      case "custom":
+        (s.blocks || []).forEach((block) => {
+          if (block.type === "paragraph") children.push(...bodyParagraphs(block.text));
+          else if (block.type === "table") {
+            const columns = block.columns || [];
+            if (columns.length) children.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [
+              new TableRow({ tableHeader: true, children: columns.map((column) => lightHeaderCell(column, `${100 / columns.length}%`)) }),
+              ...(block.rows || []).map((row) => new TableRow({ children: columns.map((_, index) => bodyCell(row[index] || "", `${100 / columns.length}%`)) })),
+            ] }));
+          }
+          else block.text.split(/\r?\n+/).filter(Boolean).forEach((item, index) => children.push(new Paragraph({ indent: { left: 360 }, children: [new TextRun({ text: block.type === "bullets" ? "•  " : `${index + 1}.  `, color: FOREST, bold: true }), new TextRun({ text: item })] })));
+        });
+        break;
     }
   });
 
   children.push(spacer(120));
-  children.push(
+  if (policy.showAcknowledgement) children.push(
     new Paragraph({
       children: [
         new TextRun({ text: "Approved by: ", bold: true }),
@@ -414,13 +405,8 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
     })
   );
 
-  // Page break for acknowledgment form
-  children.push(
-    new Paragraph({ children: [new PageBreak()] })
-  );
-
   // Acknowledgment form
-  children.push(
+  if (policy.showAcknowledgement) children.push(
     new Paragraph({
       alignment: AlignmentType.CENTER,
       spacing: { after: 80 },
@@ -467,6 +453,7 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
       children: [new TextRun({ text: " " })],
     })
   );
+  }
 
   const doc = new Document({
     creator: "PolicyCraft",

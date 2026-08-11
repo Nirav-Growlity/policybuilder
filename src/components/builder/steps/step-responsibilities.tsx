@@ -10,6 +10,7 @@ import { callAI } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { BarChart3, Plus, RefreshCw, Sparkles, Trash2, Users } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
+import { getSection } from "@/lib/sections";
 
 export function StepResponsibilities() {
   const { policy, updatePolicy } = useBuilder();
@@ -90,7 +91,7 @@ export function StepResponsibilities() {
         Define who owns the policy, how performance is monitored, and how the policy is reviewed over time.
       </InfoBar>
 
-      <Panel
+      {getSection(policy, "responsibilities")?.enabled && <Panel
         title="Roles & responsibilities"
         description="Assign ownership of the policy across the organization."
         icon={<Users size={17} strokeWidth={1.8} />}
@@ -136,9 +137,9 @@ export function StepResponsibilities() {
             </div>
           ))}
         </div>
-      </Panel>
+      </Panel>}
 
-      <Panel
+      {getSection(policy, "monitoring")?.enabled && <Panel
         title="Monitoring, reporting & transparency"
         description="How performance is tracked, reviewed and disclosed."
         icon={<BarChart3 size={17} strokeWidth={1.8} />}
@@ -156,9 +157,9 @@ export function StepResponsibilities() {
           rows={5}
           placeholder="Describe how performance is monitored, which KPIs are tracked, review frequency, and how findings are reported..."
         />
-      </Panel>
+      </Panel>}
 
-      <Panel
+      {getSection(policy, "review")?.enabled && <Panel
         title="Review mechanism & continuous improvement"
         description="When and how this policy is revisited."
         icon={<RefreshCw size={17} strokeWidth={1.8} />}
@@ -176,7 +177,7 @@ export function StepResponsibilities() {
           rows={5}
           placeholder="Describe how and when this policy is reviewed, who owns the review, and how changes are communicated..."
         />
-      </Panel>
+      </Panel>}
     </div>
   );
 }

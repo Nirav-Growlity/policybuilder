@@ -380,6 +380,14 @@ export function StepSetup() {
       </Panel>
 
       <Panel
+        title="Next: document structure"
+        description="After saving company details, use the Document Structure step to rename, hide, and arrange the final policy outline."
+        icon={<Sparkles size={17} strokeWidth={1.8} />}
+      >
+        <div className="flex items-center justify-between gap-4 py-2"><p className="text-[12.5px] text-[var(--color-ink-2)]">Choose the final Corporate or Modern output format in the Preview & Export step.</p><span className="text-[11px] font-semibold text-[var(--color-forest)]">Custom outline enabled</span></div>
+      </Panel>
+
+      {false && <Panel
         title="Presentation Format & Visual Style"
         description="Choose the table of contents structure and the visual formatting style for the final document."
         icon={<Sparkles size={17} strokeWidth={1.8} />}
@@ -511,7 +519,7 @@ export function StepSetup() {
             </div>
           </div>
         </div>
-      </Panel>
+      </Panel>}
 
       <Modal open={showPreview} onClose={() => setShowPreview(false)} width={800} title="Live Document Preview">
         <div className="max-h-[70vh] overflow-y-auto scrollbar-thin bg-gray-50 border border-[var(--color-line)] rounded-xl p-6">

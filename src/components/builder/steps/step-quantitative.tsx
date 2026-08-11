@@ -117,7 +117,18 @@ export function StepQuantitative() {
   const updateReportingFrequency = (qi: number, ti: number, reportingFrequency: typeof REPORTING_FREQUENCY | typeof TARGET_PERIOD) => {
     updatePolicy((p) => ({
       quantitative: p.quantitative.map((q, i) => i === qi
-        ? { ...q, targets: q.targets.map((t, j) => j === ti ? normalizeQuantitativeTarget({ ...t, reportingFrequency }, p.company.reportingPeriod || "FY") : t) }
+        ? {
+            ...q,
+            targets: q.targets.map((t, j) => j === ti
+              ? normalizeQuantitativeTarget({
+                  ...t,
+                  reportingFrequency,
+                  // Clear date fields before normalizing an annual target. Otherwise
+                  // the migration safeguard treats it as an old date-based row.
+                  ...(reportingFrequency === REPORTING_FREQUENCY ? { baseline: "", deadline: "" } : {}),
+                }, p.company.reportingPeriod || "FY")
+              : t),
+          }
         : q),
     }));
   };

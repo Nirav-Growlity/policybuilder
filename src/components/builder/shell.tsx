@@ -23,7 +23,7 @@ export function BuilderShell({
   const policyMeta = getPolicyProfile(policy.policyType);
   const PolicyIcon = policyMeta.icon === "Users" ? Users : policyMeta.icon === "BadgeIndianRupee" ? BadgeIndianRupee : Leaf;
 
-  const order = getStepOrder(policy.presentationTemplate);
+  const order = getStepOrder(policy);
   const visibleSteps = getPolicySteps(policy.policyType).filter((s) => order.includes(s.id));
   const currentIndex = Math.max(0, visibleSteps.findIndex((s) => s.id === step));
   const progress = ((currentIndex + 1) / visibleSteps.length) * 100;

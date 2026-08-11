@@ -3,13 +3,12 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
-import { Button } from "@/components/ui/button";
 import { PolicyPreview } from "@/components/policy/policy-preview";
 import { Download, FileText, Sparkles, Check, AlertTriangle, FileType, BookOpen } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 
 export function StepExport() {
-  const { policy } = useBuilder();
+  const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
   const [exporting, setExporting] = React.useState<"pdf" | "docx" | null>(null);
 
@@ -67,14 +66,19 @@ export function StepExport() {
         </div>
       </InfoBar>
 
-      <div className="grid lg:grid-cols-[1fr_320px] gap-6">
-        <div className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[#f3eee3]/30 p-6 lg:p-10">
-          <div className="max-h-[calc(100vh-260px)] overflow-y-auto scrollbar-thin">
+      <div className="grid lg:grid-cols-[1fr_320px] gap-6 items-start">
+        <div className="self-start min-h-0 rounded-2xl border border-[var(--color-line)] bg-[#f3eee3]/30 p-6 lg:p-10">
+          <div className="max-h-[calc(100vh-80px)] overflow-y-auto scrollbar-thin pr-1">
             <PolicyPreview policy={policy} />
           </div>
         </div>
 
         <div className="space-y-4">
+          <Panel title="Document format" description="Choose the output treatment for structured policy content." icon={<Sparkles size={17} strokeWidth={1.8} />}>
+            <div className="grid grid-cols-2 gap-2"><button onClick={() => updatePolicy(() => ({ visualStyle: "corporate" }))} className={`p-3 rounded-lg border text-left text-[12px] ${policy.visualStyle === "corporate" ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}><b>Corporate</b><span className="block text-[10px] mt-1 opacity-75">Formal tables</span></button><button onClick={() => updatePolicy(() => ({ visualStyle: "modern" }))} className={`p-3 rounded-lg border text-left text-[12px] ${policy.visualStyle === "modern" ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}><b>Modern</b><span className="block text-[10px] mt-1 opacity-75">Clean bullet points</span></button></div>
+            <label className="mt-4 flex items-center justify-between text-[12px]"><span>Show table of contents</span><input type="checkbox" checked={policy.showTableOfContents !== false} onChange={(e) => updatePolicy(() => ({ showTableOfContents: e.target.checked }))}/></label><label className="mt-3 flex items-center justify-between text-[12px]"><span>Include acknowledgement</span><input type="checkbox" checked={policy.showAcknowledgement !== false} onChange={(e) => updatePolicy(() => ({ showAcknowledgement: e.target.checked }))}/></label>
+            <div className="mt-4 text-[11px] text-[var(--color-muted)]">SDG appearance</div><div className="mt-2 flex gap-2"><button onClick={() => updatePolicy(() => ({ sdgDisplay: "tiles" }))} className={`text-[11px] px-2.5 py-1.5 rounded border ${policy.sdgDisplay === "tiles" ? "border-[var(--color-forest)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}>Goal tiles</button><button onClick={() => updatePolicy(() => ({ sdgDisplay: "names" }))} className={`text-[11px] px-2.5 py-1.5 rounded border ${policy.sdgDisplay === "names" ? "border-[var(--color-forest)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}>Names only</button></div>
+          </Panel>
           <Panel
             title="Export"
             description="Generate a print-ready PDF or an editable Word document."

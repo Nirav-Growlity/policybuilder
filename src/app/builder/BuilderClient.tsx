@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/toast";
 import { BuilderShell } from "@/components/builder/shell";
 import { StepSetup } from "@/components/builder/steps/step-setup";
+import { StepStructure } from "@/components/builder/steps/step-structure";
+import { StepCustom } from "@/components/builder/steps/step-custom";
 import { StepDeclaration } from "@/components/builder/steps/step-declaration";
 import { StepFocus } from "@/components/builder/steps/step-focus";
 import { StepQualitative } from "@/components/builder/steps/step-qualitative";
@@ -23,12 +25,14 @@ import type { PolicyType } from "@/lib/types";
 
 const STEP_RENDERERS: Record<string, React.ComponentType> = {
   setup: StepSetup,
+  structure: StepStructure,
   declaration: StepDeclaration,
   focus: StepFocus,
   qualitative: StepQualitative,
   quantitative: StepQuantitative,
   sdg: StepSDG,
   responsibilities: StepResponsibilities,
+  custom: StepCustom,
   export: StepExport,
 };
 
@@ -43,11 +47,15 @@ export function BuilderClient() {
   const [dragOver, setDragOver] = React.useState(false);
   const [templateLoaded, setTemplateLoaded] = React.useState(false);
 
-  const order = getStepOrder(policy.presentationTemplate);
+  const order = getStepOrder(policy);
   const currentIndex = Math.max(0, order.indexOf(step));
   const isFirst = currentIndex === 0;
   const isLast = currentIndex === order.length - 1;
   const StepCmp = STEP_RENDERERS[step] || StepSetup;
+
+  React.useEffect(() => {
+    if (hydrated && !order.includes(step)) setStep(order[0]);
+  }, [hydrated, order, setStep, step]);
 
   React.useEffect(() => {
     if (!hydrated || templateLoaded || !templateId) return;
@@ -142,6 +150,7 @@ export function BuilderClient() {
   };
 
   const handleDrop = async (e: React.DragEvent) => {
+    if (!Array.from(e.dataTransfer.types).includes("Files")) return;
     e.preventDefault();
     setDragOver(false);
     const file = e.dataTransfer.files?.[0];
@@ -226,10 +235,13 @@ export function BuilderClient() {
   return (
     <div
       onDragOver={(e) => {
+        if (!Array.from(e.dataTransfer.types).includes("Files")) return;
         e.preventDefault();
         setDragOver(true);
       }}
-      onDragLeave={() => setDragOver(false)}
+      onDragLeave={(e) => {
+        if (Array.from(e.dataTransfer.types).includes("Files")) setDragOver(false);
+      }}
       onDrop={handleDrop}
       className="relative"
     >

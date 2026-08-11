@@ -7,9 +7,10 @@ import {
   pdf,
   Font,
 } from "@react-pdf/renderer";
-import { getCompanySites, type Policy } from "../types";
+import { getCompanySites, type Policy, type RichTextBlock } from "../types";
 import { SDG_DATA, getPolicyProfile } from "../constants";
 import { normalizePolicyQuantitative } from "../quantitative";
+import { getEnabledSections, sectionHasContent } from "../sections";
 import * as React from "react";
 
 const styles = StyleSheet.create({
@@ -229,64 +230,15 @@ function PdfBody({ policy }: { policy: Policy }) {
   const profile = getPolicyProfile(policy.policyType);
   const co = policy.company;
   const sites = getCompanySites(co);
-  const tpl = policy.presentationTemplate || "standard";
   const isModern = policy.visualStyle === "modern";
 
   const areas = policy.focusAreas.filter(Boolean);
   const qualEntries = Object.entries(policy.qualitative).filter(([, v]) => v && v.length);
   const quantEntries = policy.quantitative.filter((q) => q.targets && q.targets.some((t) => t.target));
 
-  const SECTION_CONFIGS: Record<string, { id: string, label: string }[]> = {
-    standard: [
-      { id: "preface", label: "Preface" },
-      { id: "declaration", label: "Policy Declaration" },
-      { id: "scope", label: "Scope" },
-      { id: "focus", label: "Key Focus Areas" },
-      { id: "quantitative", label: "Quantitative Targets" },
-      { id: "responsibilities", label: "Responsibilities" },
-      { id: "monitoring", label: "Monitoring, Reporting & Transparency" },
-      { id: "review", label: "Review Mechanism & Continuous Improvement" }
-    ],
-    executive: [
-      { id: "preface", label: "Preface" },
-      { id: "declaration", label: "Executive Declaration" },
-      { id: "scope", label: "Scope" },
-      { id: "quantitative", label: "Key Quantitative Targets" },
-      { id: "sdg", label: "SDG Alignment" }
-      ,{ id: "review", label: "Review Mechanism & Continuous Improvement" }
-    ],
-    comprehensive: [
-      { id: "preface", label: "Executive Preface" },
-      { id: "declaration", label: "Policy Declaration" },
-      { id: "scope", label: "Scope of Application" },
-      { id: "focus", label: "Material Focus Areas" },
-      { id: "qualitative", label: "Detailed Qualitative Objectives" },
-      { id: "quantitative", label: "Quantitative ESG Targets" },
-      { id: "sdg", label: "United Nations SDG Alignment" },
-      { id: "responsibilities", label: "Governance and Responsibilities" },
-      { id: "monitoring", label: "Monitoring, Reporting & Transparency" },
-      { id: "review", label: "Review Mechanism & Continuous Improvement" }
-    ]
-  };
+  const sections = getEnabledSections(policy).filter((section) => section.kind === "preface" || sectionHasContent(policy, section));
 
-  const sectionConfig = [...SECTION_CONFIGS[tpl]];
-  if (policy.definitions?.content) sectionConfig.splice(3, 0, { id: "definitions", label: policy.definitions.title || "Definitions" });
-  const sections = sectionConfig.filter(s => {
-    if (s.id === "preface" && !policy.declaration.preface) return false;
-    if (s.id === "declaration" && !policy.declaration.declaration) return false;
-    if (s.id === "scope" && !policy.declaration.scope) return false;
-    if (s.id === "definitions" && !policy.definitions?.content) return false;
-    if (s.id === "focus" && areas.length === 0) return false;
-    if (s.id === "qualitative" && qualEntries.length === 0) return false;
-    if (s.id === "quantitative" && quantEntries.length === 0) return false;
-    if (s.id === "sdg" && policy.sdgs.length === 0) return false;
-    if (s.id === "responsibilities" && policy.responsibilities.length === 0) return false;
-    if (s.id === "monitoring" && !policy.monitoring) return false;
-    if (s.id === "review" && !policy.reviewMechanism) return false;
-    return true;
-  });
-
-  const renderSectionContent = (id: string, title: string) => {
+  const renderSectionContent = (id: string, title: string, blocks?: RichTextBlock[]) => {
     switch (id) {
       case "preface":
         return (
@@ -332,6 +284,8 @@ function PdfBody({ policy }: { policy: Policy }) {
             <Text style={styles.paragraph}>{policy.definitions?.content || ""}</Text>
           </View>
         );
+      case "framework":
+        return <View wrap={false}><Text style={styles.sectionTitle}>{title}</Text>{policy.standards.map((standard) => <Text key={standard} style={styles.paragraph}>{standard}</Text>)}</View>;
       case "focus":
         return (
           <View wrap={false}>
@@ -486,6 +440,12 @@ function PdfBody({ policy }: { policy: Policy }) {
             <Text style={styles.paragraph}>{policy.reviewMechanism}</Text>
           </View>
         );
+      case "custom":
+        return <View><Text style={styles.sectionTitle}>{title}</Text>{(blocks || []).map((block) => {
+          if (block.type === "paragraph") return <Text key={block.id} style={styles.paragraph}>{block.text}</Text>;
+          if (block.type === "table") { const columns = block.columns || []; return <View key={block.id} style={styles.table}><View style={styles.tableHeader}>{columns.map((column, index) => <Text key={index} style={[styles.th, { width: `${100 / columns.length}%` }]}>{column}</Text>)}</View>{(block.rows || []).map((row, rowIndex) => <View key={rowIndex} style={styles.tr}>{columns.map((_, columnIndex) => <Text key={columnIndex} style={[styles.td, { width: `${100 / columns.length}%` }]}>{row[columnIndex] || ""}</Text>)}</View>)}</View>; }
+          return block.text.split(/\r?\n+/).filter(Boolean).map((item, index) => <View key={`${block.id}-${index}`} style={styles.bullet}><Text style={styles.bulletDot}>{block.type === "bullets" ? "•" : `${index + 1}.`}</Text><Text style={styles.bulletText}>{item}</Text></View>);
+        })}</View>;
       default:
         return null;
     }
@@ -515,26 +475,26 @@ function PdfBody({ policy }: { policy: Policy }) {
       </View>
 
       {/* Table of Contents */}
-      <View break style={{ marginBottom: 30 }}>
+      {policy.showTableOfContents && <View break style={{ marginBottom: 30 }}>
         <Text style={styles.sectionTitle}>Table of Contents</Text>
         <View style={{ marginTop: 10 }}>
           {sections.map((s, i) => (
             <View key={s.id} style={{ flexDirection: 'row', marginBottom: 8 }}>
               <Text style={{ width: 30, fontFamily: 'Helvetica-Bold', color: '#1a5c3a' }}>{String(i + 1).padStart(2, "0")}.</Text>
-              <Text style={{ flex: 1, fontFamily: 'Helvetica' }}>{s.label}</Text>
+              <Text style={{ flex: 1, fontFamily: 'Helvetica' }}>{s.title}</Text>
             </View>
           ))}
-          <View style={{ flexDirection: 'row', marginBottom: 8 }}>
+          {policy.showAcknowledgement && <View style={{ flexDirection: 'row', marginBottom: 8 }}>
             <Text style={{ width: 30, fontFamily: 'Helvetica-Bold', color: '#1a5c3a' }}>{String(sections.length + 1).padStart(2, "0")}.</Text>
             <Text style={{ flex: 1, fontFamily: 'Helvetica' }}>Employee Acknowledgement Form</Text>
-          </View>
+          </View>}
         </View>
-      </View>
+      </View>}
 
       {/* Content Sections */}
       {sections.map((s) => (
         <React.Fragment key={s.id}>
-          {renderSectionContent(s.id, s.label)}
+          {renderSectionContent(s.kind, s.title, s.blocks)}
         </React.Fragment>
       ))}
 
@@ -544,7 +504,7 @@ function PdfBody({ policy }: { policy: Policy }) {
       </Text>
 
       {/* Acknowledgement form */}
-      <View style={styles.ackBox} break>
+      {policy.showAcknowledgement && <View style={styles.ackBox} break>
         <Text style={styles.ackTitle}>Employee Acknowledgement Form</Text>
         <Text style={{ fontSize: 9.5, lineHeight: 1.65 }}>
           I hereby acknowledge that I have read and understood the <Text style={{ fontFamily: "Helvetica-Bold" }}>{profile.label}</Text> of {co.name || "[Company Name]"}. I am aware of the company's commitment to responsible practices as outlined in this policy and agree to uphold these standards in my daily work. By signing below, I confirm my personal commitment to the values and obligations set forth in this policy.
@@ -561,7 +521,7 @@ function PdfBody({ policy }: { policy: Policy }) {
           <Text style={styles.ackLabel}>Signature</Text>
           <View style={styles.ackSignature} />
         </View>
-      </View>
+      </View>}
 
       {/* Footer */}
       <Text style={styles.footer} fixed>

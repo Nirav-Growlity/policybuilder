@@ -9,6 +9,7 @@ import { callAI } from "@/lib/ai/client";
 import { BookOpen, Flag, MapPin, Sparkles } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { clsx } from "clsx";
+import { getSection } from "@/lib/sections";
 
 const SECTIONS: {
   key: "preface" | "declaration" | "scope";
@@ -39,6 +40,43 @@ const SECTIONS: {
     hint: "Mention all employees, contractors, suppliers, sites and operational activities.",
   },
 ];
+
+function AutosizingDeclarationTextarea({
+  value,
+  onChange,
+  placeholder,
+  className,
+}: {
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  placeholder: string;
+  className?: string;
+}) {
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+
+  const resize = React.useCallback(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    textarea.style.height = "0px";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  }, []);
+
+  React.useLayoutEffect(resize, [resize, value]);
+
+  return (
+    <Textarea
+      ref={textareaRef}
+      value={value}
+      onChange={(event) => {
+        onChange(event);
+        resize();
+      }}
+      placeholder={placeholder}
+      rows={3}
+      className={clsx("min-h-20 overflow-hidden", className)}
+    />
+  );
+}
 
 export function StepDeclaration() {
   const { policy, updatePolicy } = useBuilder();
@@ -91,13 +129,14 @@ export function StepDeclaration() {
         <span className="font-semibold">AI Generate All</span> in the top bar to fill the three sections at once.
       </InfoBar>
 
-      {SECTIONS.map((s) => {
+      {SECTIONS.filter((s) => getSection(policy, s.key)?.enabled).map((s) => {
         const value = policy.declaration[s.key];
         const isBusy = busy[s.key];
+        const configured = getSection(policy, s.key);
         return (
           <Panel
             key={s.key}
-            title={s.title}
+            title={configured?.title || s.title}
             description={s.desc}
             icon={s.icon}
             actions={
@@ -109,13 +148,12 @@ export function StepDeclaration() {
             }
           >
             <Field hint={s.hint}>
-              <Textarea
+              <AutosizingDeclarationTextarea
                 value={value}
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                   updatePolicy((p) => ({ declaration: { ...p.declaration, [s.key]: e.target.value } }))
                 }
                 placeholder={s.hint}
-                rows={Math.max(8, (value || "").split("\n").length * 3 + 2)}
                 className={clsx(isBusy && "opacity-60")}
               />
             </Field>
@@ -123,8 +161,8 @@ export function StepDeclaration() {
         );
       })}
 
-      {policy.policyType === "living-wage" && (
-        <Panel title={policy.definitions?.title || "Definition & Methodology"} description="Define the living-wage benchmark, covered remuneration and review approach." icon={<BookOpen size={17} strokeWidth={1.8} />}>
+      {getSection(policy, "definitions")?.enabled && (
+        <Panel title={getSection(policy, "definitions")?.title || "Definition & Methodology"} description="Define the living-wage benchmark, covered remuneration and review approach." icon={<BookOpen size={17} strokeWidth={1.8} />}>
           <Field hint="State how the company defines a living wage, determines the benchmark, and reviews it over time.">
             <Textarea value={policy.definitions?.content || ""} onChange={(e) => updatePolicy((p) => ({ definitions: { title: p.definitions?.title || "Living Wage", content: e.target.value } }))} rows={9} />
           </Field>
