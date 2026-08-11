@@ -6,7 +6,7 @@ import { Panel, InfoBar, Badge } from "@/components/ui/panel";
 import { Field, Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI } from "@/lib/ai/client";
+import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { Info, Plus, Sparkles, Target, Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
@@ -16,12 +16,25 @@ export function StepFocus() {
   const { push } = useToast();
   const [newArea, setNewArea] = React.useState("");
   const [busy, setBusy] = React.useState(false);
+  const [checkingNewArea, setCheckingNewArea] = React.useState(false);
 
-  const add = () => {
+  const add = async () => {
     const v = newArea.trim();
     if (!v) return;
-    updatePolicy((p) => ({ focusAreas: [...p.focusAreas, v] }));
-    setNewArea("");
+    setCheckingNewArea(true);
+    try {
+      const corrected = await correctGrammar(v);
+      updatePolicy((p) => ({ focusAreas: [...p.focusAreas, corrected] }));
+      setNewArea("");
+      if (corrected !== v) push("Spelling and grammar corrected", "success");
+    } catch {
+      // Adding manually authored content must remain possible if the check is unavailable.
+      updatePolicy((p) => ({ focusAreas: [...p.focusAreas, v] }));
+      setNewArea("");
+      push("Added without a spelling and grammar check", "info");
+    } finally {
+      setCheckingNewArea(false);
+    }
   };
 
   const remove = (i: number) => {
@@ -104,6 +117,7 @@ export function StepFocus() {
         <div className="flex gap-2 mt-4 pt-4 border-t border-[var(--color-line)]">
           <Input
             value={newArea}
+            data-grammar-checking={checkingNewArea ? "true" : undefined}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewArea(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
@@ -113,8 +127,9 @@ export function StepFocus() {
             }}
             placeholder="Type a new focus area and press Enter..."
             className="border-dashed"
+            disabled={checkingNewArea}
           />
-          <Button variant="primary" size="md" icon={<Plus size={14} />} onClick={add}>
+          <Button variant="primary" size="md" icon={<Plus size={14} />} onClick={add} disabled={checkingNewArea}>
             Add
           </Button>
         </div>

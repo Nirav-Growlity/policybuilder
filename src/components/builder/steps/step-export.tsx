@@ -4,8 +4,10 @@ import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
 import { PolicyPreview } from "@/components/policy/policy-preview";
+import { Select } from "@/components/ui/input";
 import { Download, FileText, Sparkles, Check, AlertTriangle, FileType, BookOpen } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
+import { DEFAULT_TYPOGRAPHY, FONT_FAMILY_OPTIONS } from "@/lib/typography";
 
 export function StepExport() {
   const { policy, updatePolicy } = useBuilder();
@@ -66,9 +68,9 @@ export function StepExport() {
         </div>
       </InfoBar>
 
-      <div className="grid lg:grid-cols-[1fr_320px] gap-6 items-start">
-        <div className="self-start min-h-0 rounded-2xl border border-[var(--color-line)] bg-[#f3eee3]/30 p-6 lg:p-10">
-          <div className="max-h-[calc(100vh-80px)] overflow-y-auto scrollbar-thin pr-1">
+      <div className="grid lg:grid-cols-[1fr_320px] gap-6 items-stretch">
+        <div className="flex min-h-[calc(100vh-10rem)] rounded-2xl border border-[var(--color-line)] bg-[#f3eee3]/30 p-6 lg:p-10">
+          <div className="min-h-0 flex-1 overflow-y-auto scrollbar-thin pr-1">
             <PolicyPreview policy={policy} />
           </div>
         </div>
@@ -78,6 +80,10 @@ export function StepExport() {
             <div className="grid grid-cols-2 gap-2"><button onClick={() => updatePolicy(() => ({ visualStyle: "corporate" }))} className={`p-3 rounded-lg border text-left text-[12px] ${policy.visualStyle === "corporate" ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}><b>Corporate</b><span className="block text-[10px] mt-1 opacity-75">Formal tables</span></button><button onClick={() => updatePolicy(() => ({ visualStyle: "modern" }))} className={`p-3 rounded-lg border text-left text-[12px] ${policy.visualStyle === "modern" ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}><b>Modern</b><span className="block text-[10px] mt-1 opacity-75">Clean bullet points</span></button></div>
             <label className="mt-4 flex items-center justify-between text-[12px]"><span>Show table of contents</span><input type="checkbox" checked={policy.showTableOfContents !== false} onChange={(e) => updatePolicy(() => ({ showTableOfContents: e.target.checked }))}/></label><label className="mt-3 flex items-center justify-between text-[12px]"><span>Include acknowledgement</span><input type="checkbox" checked={policy.showAcknowledgement !== false} onChange={(e) => updatePolicy(() => ({ showAcknowledgement: e.target.checked }))}/></label>
             <div className="mt-4 text-[11px] text-[var(--color-muted)]">SDG appearance</div><div className="mt-2 flex gap-2"><button onClick={() => updatePolicy(() => ({ sdgDisplay: "tiles" }))} className={`text-[11px] px-2.5 py-1.5 rounded border ${policy.sdgDisplay === "tiles" ? "border-[var(--color-forest)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}>Goal tiles</button><button onClick={() => updatePolicy(() => ({ sdgDisplay: "names" }))} className={`text-[11px] px-2.5 py-1.5 rounded border ${policy.sdgDisplay === "names" ? "border-[var(--color-forest)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}>Names only</button></div>
+            <div className="mt-4 text-[11px] text-[var(--color-muted)]">Company logo position</div><div className="mt-2 grid grid-cols-3 gap-1.5">{(["left", "center", "right"] as const).map((position) => <button key={position} onClick={() => updatePolicy(() => ({ logoPosition: position }))} className={`rounded border px-2 py-1.5 text-[11px] capitalize ${policy.logoPosition === position ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)] text-[var(--color-ink-2)]"}`}>{position}</button>)}</div>
+          </Panel>
+          <Panel title="Typography" description="Applies to the preview and exported Word document." icon={<FileText size={17} strokeWidth={1.8} />}>
+            <div className="grid grid-cols-2 gap-3 text-[11px]">{(() => { const type = policy.typography || DEFAULT_TYPOGRAPHY; const updateType = (patch: Partial<typeof type>) => updatePolicy(() => ({ typography: { ...type, ...patch } })); return <><label className="col-span-2">Font family<Select value={type.fontFamily} onChange={(e) => updateType({ fontFamily: e.target.value })} className="mt-1 h-8 text-[11px]">{FONT_FAMILY_OPTIONS.map((font) => <option key={font}>{font}</option>)}</Select></label><label>Heading size<input type="number" min="10" max="24" step="1" value={type.headingSize} onChange={(e) => updateType({ headingSize: Number(e.target.value) })} className="mt-1 h-8 w-full rounded border border-[var(--color-line-2)] px-2 text-[11px]"/></label><label>Subheading size<input type="number" min="9" max="20" step="1" value={type.subheadingSize} onChange={(e) => updateType({ subheadingSize: Number(e.target.value) })} className="mt-1 h-8 w-full rounded border border-[var(--color-line-2)] px-2 text-[11px]"/></label><label>Paragraph size<input type="number" min="8" max="16" step="0.5" value={type.paragraphSize} onChange={(e) => updateType({ paragraphSize: Number(e.target.value) })} className="mt-1 h-8 w-full rounded border border-[var(--color-line-2)] px-2 text-[11px]"/></label><label>Line spacing<Select value={String(type.lineSpacing)} onChange={(e) => updateType({ lineSpacing: Number(e.target.value) })} className="mt-1 h-8 text-[11px]"><option value="1.15">1.15</option><option value="1.5">1.5</option><option value="1.75">1.75</option><option value="2">2.0</option></Select></label></>; })()}</div>
           </Panel>
           <Panel
             title="Export"

@@ -6,7 +6,7 @@ import { Panel, InfoBar } from "@/components/ui/panel";
 import { Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI } from "@/lib/ai/client";
+import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { ListChecks, Plus, Sparkles, X } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
@@ -16,6 +16,7 @@ export function StepQualitative() {
   const { push } = useToast();
   const [busy, setBusy] = React.useState<Record<string, boolean>>({});
   const [newObj, setNewObj] = React.useState<Record<number, string>>({});
+  const [checkingNewObjective, setCheckingNewObjective] = React.useState<Record<number, boolean>>({});
 
   const areas = policy.focusAreas.filter(Boolean);
 
@@ -100,13 +101,26 @@ export function StepQualitative() {
     }
   };
 
-  const add = (area: string, idx: number) => {
+  const add = async (area: string, idx: number) => {
     const v = (newObj[idx] || "").trim();
     if (!v) return;
-    updatePolicy((p) => ({
-      qualitative: { ...p.qualitative, [area]: [...(p.qualitative[area] || []), v] },
-    }));
-    setNewObj((s) => ({ ...s, [idx]: "" }));
+    setCheckingNewObjective((state) => ({ ...state, [idx]: true }));
+    try {
+      const corrected = await correctGrammar(v);
+      updatePolicy((p) => ({
+        qualitative: { ...p.qualitative, [area]: [...(p.qualitative[area] || []), corrected] },
+      }));
+      setNewObj((state) => ({ ...state, [idx]: "" }));
+      if (corrected !== v) push("Spelling and grammar corrected", "success");
+    } catch {
+      updatePolicy((p) => ({
+        qualitative: { ...p.qualitative, [area]: [...(p.qualitative[area] || []), v] },
+      }));
+      setNewObj((state) => ({ ...state, [idx]: "" }));
+      push("Added without a spelling and grammar check", "info");
+    } finally {
+      setCheckingNewObjective((state) => ({ ...state, [idx]: false }));
+    }
   };
 
   const remove = (area: string, oi: number) => {
@@ -191,17 +205,19 @@ export function StepQualitative() {
             <div className="mt-4 flex gap-2 border-t border-[var(--color-line)] pt-4">
               <Input
                 value={newObj[i] || ""}
+                data-grammar-checking={checkingNewObjective[i] ? "true" : undefined}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewObj((s) => ({ ...s, [i]: e.target.value }))}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     e.preventDefault();
-                    add(area, i);
+                    void add(area, i);
                   }
                 }}
                 placeholder="Add a qualitative objective..."
                 className="border-dashed text-[13px]"
+                disabled={checkingNewObjective[i]}
               />
-              <Button variant="primary" size="md" icon={<Plus size={14} />} onClick={() => add(area, i)}>
+              <Button variant="primary" size="md" icon={<Plus size={14} />} onClick={() => { void add(area, i); }} disabled={checkingNewObjective[i]}>
                 Add Objective
               </Button>
             </div>

@@ -6,7 +6,7 @@ import { Panel, InfoBar } from "@/components/ui/panel";
 import { Input, Select, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI } from "@/lib/ai/client";
+import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, TARGET_PERIOD } from "@/lib/quantitative";
 import { Plus, Sparkles, Target, Trash2 } from "lucide-react";
@@ -18,6 +18,7 @@ export function StepQuantitative() {
   const [busy, setBusy] = React.useState<Record<string, boolean>>({});
   const [addingTopic, setAddingTopic] = React.useState(false);
   const [topicName, setTopicName] = React.useState("");
+  const [checkingTopic, setCheckingTopic] = React.useState(false);
   const reportingPeriod = policy.company.reportingPeriod || "FY";
   const yearOptions = React.useMemo(() => getQuantitativeYearOptions(reportingPeriod), [reportingPeriod]);
   const areas = policy.focusAreas.filter(Boolean);
@@ -72,14 +73,17 @@ export function StepQuantitative() {
   };
 
   const addTopic = async () => {
-    const area = topicName.trim();
-    if (!area) return;
-    if (policy.quantitative.some((q) => q.area.toLowerCase() === area.toLowerCase())) {
-      push("A quantitative topic with this name already exists", "info");
-      return;
-    }
-    setBusy((b) => ({ ...b, topic: true }));
+    const draft = topicName.trim();
+    if (!draft || checkingTopic) return;
+    setCheckingTopic(true);
     try {
+      const area = await correctGrammar(draft);
+      if (policy.quantitative.some((q) => q.area.toLowerCase() === area.toLowerCase())) {
+        push("A quantitative topic with this name already exists", "info");
+        return;
+      }
+      if (area !== draft) push("Spelling and grammar corrected", "success");
+      setBusy((b) => ({ ...b, topic: true }));
       const r = await callAI({ type: "quantitative-topic", policy, areaName: area });
       updatePolicy((p) => ({
         quantitative: [...p.quantitative, { area, targets: r.targets?.length ? generatedTargets(r.targets) : [normalize({})] }],
@@ -88,8 +92,9 @@ export function StepQuantitative() {
       setAddingTopic(false);
       push("Quantitative topic added", "success");
     } catch {
-      push("AI generation failed", "error");
+      push("Could not add the quantitative topic", "error");
     } finally {
+      setCheckingTopic(false);
       setBusy((b) => ({ ...b, topic: false }));
     }
   };
@@ -168,8 +173,8 @@ export function StepQuantitative() {
           <Button variant="secondary" size="sm" icon={<Plus size={13} />} onClick={() => setAddingTopic(true)}>Add topic</Button>
         ) : (
           <div className="flex w-full max-w-xl gap-2 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]/50 p-2">
-            <Input value={topicName} onChange={(e) => setTopicName(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") addTopic(); }} placeholder="Name a new quantitative-only topic..." />
-            <Button variant="primary" size="sm" loading={busy.topic} onClick={addTopic}>Generate targets</Button>
+            <Input value={topicName} data-grammar-checking={checkingTopic ? "true" : undefined} disabled={checkingTopic || busy.topic} onChange={(e) => setTopicName(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); void addTopic(); } }} placeholder="Name a new quantitative-only topic..." />
+            <Button variant="primary" size="sm" loading={busy.topic} disabled={checkingTopic} onClick={() => { void addTopic(); }}>Generate targets</Button>
             <Button variant="ghost" size="sm" onClick={() => { setAddingTopic(false); setTopicName(""); }}>Cancel</Button>
           </div>
         )}

@@ -2,6 +2,7 @@
 import { getCompanySites, type Policy, type RichTextBlock } from "@/lib/types";
 import { getEnabledSections } from "@/lib/sections";
 import { SDG_DATA, FRAMEWORK_ALIGNMENT, getPolicyProfile } from "@/lib/constants";
+import { DEFAULT_TYPOGRAPHY } from "@/lib/typography";
 
 const Paras = ({ text }: { text: string }) => <>{text.split(/\r?\n+/).filter(Boolean).map((p, i) => <p key={i} className="text-[13px] leading-[1.8] text-[#1f1f1f] text-justify mb-3 last:mb-0">{p}</p>)}</>;
 const Blocks = ({ blocks = [] }: { blocks?: RichTextBlock[] }) => <>{blocks.map((block) => {
@@ -13,11 +14,27 @@ const Blocks = ({ blocks = [] }: { blocks?: RichTextBlock[] }) => <>{blocks.map(
 export function PolicyPreview({ policy }: { policy: Policy }) {
   const co = policy.company; const profile = getPolicyProfile(policy.policyType); const sections = getEnabledSections(policy); const sites = getCompanySites(co);
   const quant = policy.quantitative.filter((q) => q.targets.some((t) => t.target)); const qual = Object.entries(policy.qualitative).filter(([, v]) => v.length);
-  return <article className="bg-white shadow-[0_16px_45px_rgba(42,50,42,.13)] max-w-4xl mx-auto text-[var(--color-ink)]">
-    <header className="px-10 py-12 border-b-2 border-[var(--color-forest)] text-center"><div className="text-[10px] tracking-[.23em] text-[var(--color-forest)] font-bold">SUSTAINABILITY POLICY</div><h1 className="font-display text-[34px] font-semibold mt-3">{profile.label}</h1><p className="text-[15px] text-[var(--color-muted)] mt-2">{co.name || "[Company Name]"}</p><div className="grid grid-cols-2 sm:grid-cols-4 text-left border border-[var(--color-forest)] mt-8 text-[10px]"><Meta label="Document No." value={co.docNum}/><Meta label="Effective Date" value={co.effectiveDate}/><Meta label="Revision" value={co.revNum || "01"}/><Meta label="Next Review" value={co.reviewDate}/></div></header>
+  const logoAlign = policy.logoPosition === "left" ? "justify-start" : policy.logoPosition === "right" ? "justify-end" : "justify-center";
+  const typography = policy.typography || DEFAULT_TYPOGRAPHY;
+  const typeStyle = {
+    "--policy-font": typography.fontFamily,
+    "--policy-heading-size": `${typography.headingSize}px`,
+    "--policy-subheading-size": `${typography.subheadingSize}px`,
+    "--policy-paragraph-size": `${typography.paragraphSize}px`,
+    "--policy-line-height": String(typography.lineSpacing),
+  } as React.CSSProperties;
+  return <article style={typeStyle} className="policy-preview-document bg-white shadow-[0_16px_45px_rgba(42,50,42,.13)] max-w-4xl mx-auto text-[var(--color-ink)]">
+    <style>{`
+      .policy-preview-document, .policy-preview-document input, .policy-preview-document textarea { font-family: var(--policy-font), sans-serif !important; }
+      .policy-preview-document p, .policy-preview-document li, .policy-preview-document td, .policy-preview-document th { font-size: var(--policy-paragraph-size) !important; line-height: var(--policy-line-height) !important; }
+      .policy-preview-document h2 { font-size: var(--policy-heading-size) !important; }
+      .policy-preview-document h3, .policy-preview-document main section > div > b { font-size: var(--policy-subheading-size) !important; }
+      .policy-preview-document h1 { font-size: calc(var(--policy-heading-size) * 2.45) !important; }
+    `}</style>
+    <header className="px-10 py-10 border-b-2 border-[var(--color-forest)] text-center">{co.companyLogo && <div className="flex justify-center mb-6"><img src={co.companyLogo} alt={`${co.name || "Company"} logo`} className="h-24 max-w-[260px] object-contain"/></div>}<div className="text-[10px] tracking-[.23em] text-[var(--color-forest)] font-bold">SUSTAINABILITY POLICY</div><h1 className="font-display text-[34px] font-semibold mt-3">{profile.label}</h1><p className="text-[15px] text-[var(--color-muted)] mt-2">{co.name || "[Company Name]"}</p><div className="grid grid-cols-2 sm:grid-cols-4 text-left border border-[var(--color-forest)] mt-8 text-[10px]"><Meta label="Document No." value={co.docNum}/><Meta label="Effective Date" value={co.effectiveDate}/><Meta label="Revision" value={co.revNum || "01"}/><Meta label="Next Review" value={co.reviewDate}/></div></header>
     {policy.showTableOfContents && <section className="px-10 py-9 border-b border-[var(--color-line)]"><Heading>Table of Contents</Heading><ol className="mt-5 space-y-2">{sections.map((s,i)=><li key={s.id} className="flex gap-3 text-[12.5px]"><b className="font-mono text-[var(--color-forest)]">{String(i+1).padStart(2,"0")}</b>{s.title}</li>)}{policy.showAcknowledgement && <li className="flex gap-3 text-[12.5px]"><b className="font-mono text-[var(--color-forest)]">{String(sections.length+1).padStart(2,"0")}</b>Employee Acknowledgement Form</li>}</ol></section>}
-    <main className="px-10 py-10 space-y-9">{sections.map((s) => <section key={s.id}><Heading>{s.title}</Heading>{renderSection(s.kind, policy, sites, qual, quant, s.blocks)}</section>)}</main>
-    <footer className="px-10 py-6 border-t-2 border-[var(--color-forest)] text-[11px] text-[var(--color-muted)] flex justify-between"><span>Effective Date: {co.effectiveDate || "—"}</span><span>Approved by: {co.approver || "_____________________"}</span><span>Revision: {co.revNum || "01"}</span></footer>
+    <div className={`mx-10 py-3 border-b border-[var(--color-line)] flex ${logoAlign}`}>{co.companyLogo && <img src={co.companyLogo} alt="Company logo" className="h-10 max-w-[150px] object-contain"/>}</div><main className="px-10 py-10 space-y-9">{sections.map((s) => <section key={s.id}><Heading>{s.title}</Heading>{renderSection(s.kind, policy, sites, qual, quant, s.blocks)}</section>)}</main>
+    <footer className="px-10 py-6 border-t-2 border-[var(--color-forest)] text-[11px] text-[var(--color-muted)] flex gap-4"><span>Effective Date: {co.effectiveDate || "—"}</span><span>Approved by: {co.approver || "_____________________"}</span><span>Revision: {co.revNum || "01"}</span><span className="ml-auto">Page 1</span></footer>
     {policy.showAcknowledgement && <section className="px-10 py-9 bg-[#fbf9f3] border-t border-dashed border-[var(--color-line)]"><h3 className="font-display text-[18px] font-semibold text-center">Employee Acknowledgement Form</h3><p className="mt-4 text-[12.5px] leading-[1.7]">I acknowledge that I have read and understood this policy and agree to uphold its commitments in my work.</p><div className="grid grid-cols-2 gap-x-8 gap-y-5 mt-6">{["Employee Name","Employee ID","Department","Date"].map(x=><div key={x}><div className="text-[9px] uppercase tracking-wider text-[var(--color-muted)]">{x}</div><div className="h-7 border-b border-[#aaa]"/></div>)}</div></section>}
   </article>;
 }

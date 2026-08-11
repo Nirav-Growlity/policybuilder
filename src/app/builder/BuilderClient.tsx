@@ -15,8 +15,6 @@ import { StepQuantitative } from "@/components/builder/steps/step-quantitative";
 import { StepSDG } from "@/components/builder/steps/step-sdg";
 import { StepResponsibilities } from "@/components/builder/steps/step-responsibilities";
 import { StepExport } from "@/components/builder/steps/step-export";
-import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI } from "@/lib/ai/client";
 import { ArrowLeft, ArrowRight, FileUp } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
@@ -43,7 +41,6 @@ export function BuilderClient() {
   const templateId = searchParams.get("template");
   const selectedType = searchParams.get("type") as PolicyType | null;
   const router = useRouter();
-  const [aiBusy, setAiBusy] = React.useState(false);
   const [dragOver, setDragOver] = React.useState(false);
   const [templateLoaded, setTemplateLoaded] = React.useState(false);
 
@@ -76,78 +73,6 @@ export function BuilderClient() {
       }
     })();
   }, [hydrated, templateId, templateLoaded]);
-
-  const runAiAll = async (customPrompt?: string) => {
-    setAiBusy(true);
-    try {
-      if (step === "declaration") {
-        const [p, d, s] = await Promise.all([
-          callAI({ type: "preface", policy, customPrompt }),
-          callAI({ type: "declaration", policy, customPrompt }),
-          callAI({ type: "scope", policy, customPrompt }),
-        ]);
-        updatePolicy((cur) => ({
-          declaration: {
-            preface: p.text ?? cur.declaration.preface,
-            declaration: d.text ?? cur.declaration.declaration,
-            scope: s.text ?? cur.declaration.scope,
-          },
-        }));
-        push("All declaration sections generated", "success");
-      } else if (step === "focus") {
-        const r = await callAI({ type: "focus", policy, customPrompt });
-        if (r.areas) updatePolicy((p) => ({ focusAreas: r.areas! }));
-        push("Focus areas generated", "success");
-      } else if (step === "qualitative") {
-        const count = Math.min(policy.focusAreas.length, 5);
-        for (let i = 0; i < count; i++) {
-          const r = await callAI({ type: "qualitative", policy, areaIndex: i, customPrompt });
-          if (r.objectives) {
-            const area = policy.focusAreas[i];
-            updatePolicy((p) => ({
-              qualitative: { ...p.qualitative, [area]: [...(p.qualitative[area] || []), ...r.objectives!] },
-            }));
-          }
-        }
-        push("Objectives generated", "success");
-      } else if (step === "quantitative") {
-        const count = Math.min(policy.quantitative.length, 4);
-        for (let i = 0; i < count; i++) {
-          const r = await callAI({ type: "quantitative", policy, areaIndex: i, customPrompt });
-          if (r.targets) {
-            updatePolicy((p) => ({
-              quantitative: p.quantitative.map((q, j) => (i === j ? { ...q, targets: r.targets! } : q)),
-            }));
-          }
-        }
-        push("Targets generated", "success");
-      } else if (step === "sdg") {
-        const r = await callAI({ type: "sdg", policy, customPrompt });
-        if (r.sdgs) updatePolicy((p) => ({ sdgs: r.sdgs!.filter((n) => n >= 1 && n <= 17).sort((a, b) => a - b) }));
-        push("SDGs suggested", "success");
-      } else if (step === "responsibilities") {
-        const [r1, r2, r3] = await Promise.all([
-          callAI({ type: "responsibilities", policy, customPrompt }),
-          callAI({ type: "monitoring", policy, customPrompt }),
-          callAI({ type: "review", policy, customPrompt }),
-        ]);
-        updatePolicy((cur) => ({
-          responsibilities: r1.responsibilities ?? cur.responsibilities,
-          monitoring: r2.text ?? cur.monitoring,
-          reviewMechanism: r3.text ?? cur.reviewMechanism,
-        }));
-        push("Responsibilities, monitoring & review generated", "success");
-      } else if (step === "export") {
-        push("Use the export buttons to download", "info");
-      } else {
-        push("Fill company details manually", "info");
-      }
-    } catch (e) {
-      push("AI generation failed", "error");
-    } finally {
-      setAiBusy(false);
-    }
-  };
 
   const handleDrop = async (e: React.DragEvent) => {
     if (!Array.from(e.dataTransfer.types).includes("Files")) return;
@@ -210,12 +135,6 @@ export function BuilderClient() {
       >
         Import .docx
       </Button>
-      <AIActionButton
-        label="AI Generate All"
-        size="md"
-        loading={aiBusy}
-        onGenerate={(prompt) => runAiAll(prompt)}
-      />
       <div className="w-px h-6 bg-[var(--color-line-2)] mx-1" />
       <Button variant="secondary" size="md" icon={<ArrowLeft size={14} />} onClick={prev} disabled={isFirst}>
         Back

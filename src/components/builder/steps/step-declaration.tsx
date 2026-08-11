@@ -99,34 +99,10 @@ export function StepDeclaration() {
     }
   };
 
-  const generateAll = async () => {
-    setBusy({ preface: true, declaration: true, scope: true });
-    try {
-      const [p, d, s] = await Promise.all([
-        callAI({ type: "preface", policy }),
-        callAI({ type: "declaration", policy }),
-        callAI({ type: "scope", policy }),
-      ]);
-      updatePolicy((cur) => ({
-        declaration: {
-          preface: p.text ?? cur.declaration.preface,
-          declaration: d.text ?? cur.declaration.declaration,
-          scope: s.text ?? cur.declaration.scope,
-        },
-      }));
-      push("All sections generated", "success");
-    } catch (e) {
-      push("AI generation failed", "error");
-    } finally {
-      setBusy({});
-    }
-  };
-
   return (
     <div className="space-y-6">
       <InfoBar icon={<Sparkles size={16} className="text-[var(--color-forest)]" />}>
-        Click <span className="font-semibold">AI Write</span> on each section for a tailored draft, or use{" "}
-        <span className="font-semibold">AI Generate All</span> in the top bar to fill the three sections at once.
+        Click <span className="font-semibold">AI Write</span> on each section for a tailored draft.
       </InfoBar>
 
       {SECTIONS.filter((s) => getSection(policy, s.key)?.enabled).map((s) => {

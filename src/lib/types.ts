@@ -112,6 +112,14 @@ export interface PolicySection {
 }
 
 export type SdgDisplayMode = "names" | "tiles";
+export type LogoPosition = "left" | "center" | "right";
+export type DocumentTypography = {
+  fontFamily: string;
+  headingSize: number;
+  subheadingSize: number;
+  paragraphSize: number;
+  lineSpacing: number;
+};
 
 export interface Policy {
   policyType: PolicyType;
@@ -121,6 +129,8 @@ export interface Policy {
   showTableOfContents?: boolean;
   showAcknowledgement?: boolean;
   sdgDisplay?: SdgDisplayMode;
+  logoPosition?: LogoPosition;
+  typography?: DocumentTypography;
   company: Company;
   standards: string[];
   declaration: Declaration;

@@ -15,6 +15,9 @@ import {
   InternalHyperlink,
   Bookmark,
   ImageRun,
+  Header,
+  Footer,
+  PageNumber,
 } from "docx";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -22,16 +25,21 @@ import { getCompanySites, type Policy } from "../types";
 import { SDG_DATA, getPolicyProfile } from "../constants";
 import { normalizePolicyQuantitative } from "../quantitative";
 import { getEnabledSections, sectionHasContent } from "../sections";
+import { DEFAULT_TYPOGRAPHY } from "../typography";
 
 const FOREST = "1a5c3a";
 const CREAM = "f3eee3";
 const LINE = "e5e1d3";
 const INK = "1a1a1a";
+type Typography = NonNullable<Policy["typography"]>;
 
 export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   const policy = normalizePolicyQuantitative(inputPolicy);
   const profile = getPolicyProfile(policy.policyType);
   const co = policy.company;
+  const logoImage = logoFromDataUrl(co.companyLogo);
+  const logoAlignment = policy.logoPosition === "left" ? AlignmentType.LEFT : policy.logoPosition === "right" ? AlignmentType.RIGHT : AlignmentType.CENTER;
+  const typography = policy.typography || DEFAULT_TYPOGRAPHY;
   const sites = getCompanySites(co);
   const areas = policy.focusAreas.filter(Boolean);
   const qualEntries = Object.entries(policy.qualitative).filter(([, v]) => v && v.length);
@@ -41,6 +49,7 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
 
   // Cover
   children.push(
+    ...(logoImage ? [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 180 }, children: [new ImageRun({ data: logoImage.data, type: logoImage.type, transformation: { width: 180, height: 90 } })] })] : []),
     new Paragraph({
       alignment: AlignmentType.CENTER,
       spacing: { before: 200, after: 80 },
@@ -113,7 +122,7 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   // Table of Contents
   if (policy.showTableOfContents) {
   children.push(new Paragraph({ children: [new PageBreak()] }));
-  children.push(sectionTitle("Table of Contents"));
+  children.push(sectionTitle("Table of Contents", undefined, typography));
   sections.forEach((s, i) => {
     children.push(
       new Paragraph({
@@ -146,17 +155,17 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
 
   // Render Sections
   sections.forEach((s) => {
-    children.push(sectionTitle(s.title, s.id));
+    children.push(sectionTitle(s.title, s.id, typography));
     
     switch (s.kind) {
       case "preface":
-        children.push(...bodyParagraphs(policy.declaration.preface));
+        children.push(...bodyParagraphs(policy.declaration.preface, typography));
         break;
       case "declaration":
-        children.push(...bodyParagraphs(policy.declaration.declaration));
+        children.push(...bodyParagraphs(policy.declaration.declaration, typography));
         break;
       case "scope":
-        children.push(...bodyParagraphs(policy.declaration.scope));
+        children.push(...bodyParagraphs(policy.declaration.scope, typography));
         if (sites.length > 0) {
           children.push(
             new Table({
@@ -174,10 +183,10 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
         }
         break;
       case "definitions":
-        children.push(...bodyParagraphs(policy.definitions?.content || ""));
+        children.push(...bodyParagraphs(policy.definitions?.content || "", typography));
         break;
       case "framework":
-        policy.standards.forEach((standard) => children.push(...bodyParagraphs(standard)));
+        policy.standards.forEach((standard) => children.push(...bodyParagraphs(standard, typography)));
         break;
       case "focus":
         areas.forEach((a, i) =>
@@ -196,14 +205,14 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
         qualEntries.forEach(([k, v], i) => {
           children.push(
             new Paragraph({
-              spacing: { before: 120, after: 60 },
-              children: [new TextRun({ text: `${i + 1}. ${k}`, bold: true })],
+              spacing: { before: 160, after: 80 },
+              children: [new TextRun({ text: `${i + 1}. ${k}`, bold: true, size: Math.round(typography.subheadingSize * 2), font: typography.fontFamily })],
             })
           );
           v.forEach((o) =>
             children.push(
               new Paragraph({
-                spacing: { after: 60 },
+                spacing: { after: 100, line: Math.round(240 * typography.lineSpacing) },
                 indent: { left: 360 },
                 children: [
                   new TextRun({ text: "▸  ", color: FOREST, bold: true }),
@@ -231,18 +240,18 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
           quantEntries.forEach((q) => {
             children.push(
               new Paragraph({
-                spacing: { before: 120, after: 60 },
+              spacing: { before: 160, after: 80 },
                 children: [
-                  new TextRun({ text: q.area, bold: true, color: INK, size: 24 }),
+                  new TextRun({ text: q.area, bold: true, color: INK, size: Math.round(typography.subheadingSize * 2), font: typography.fontFamily }),
                 ],
               })
             );
             q.targets.filter(t => t.target).forEach((t) => {
               children.push(
                 new Paragraph({
-                  spacing: { after: 60 },
+                  spacing: { after: 100, line: Math.round(240 * typography.lineSpacing) },
                   children: [
-                    new TextRun({ text: t.reportingFrequency === "Annually" ? `${t.target} (Reported annually).` : `${t.target} (Baseline: ${t.baseline}, Deadline: ${t.deadline}).`, size: 22 }),
+                    new TextRun({ text: t.reportingFrequency === "Annually" ? `${t.target} (Reported annually).` : `${t.target} (Baseline: ${t.baseline}, Deadline: ${t.deadline}).`, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily }),
                   ],
                 })
               );
@@ -343,10 +352,10 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
           policy.responsibilities.forEach((r) => {
             children.push(
               new Paragraph({
-                spacing: { after: 80 },
+                spacing: { after: 100, line: Math.round(240 * typography.lineSpacing) },
                 children: [
-                  new TextRun({ text: r.role + " ", bold: true, size: 22 }),
-                  new TextRun({ text: r.duty, size: 22 }),
+                  new TextRun({ text: r.role + " ", bold: true, size: Math.round(typography.subheadingSize * 2), font: typography.fontFamily }),
+                  new TextRun({ text: r.duty, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily }),
                 ],
               })
             );
@@ -374,14 +383,14 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
         }
         break;
       case "monitoring":
-        children.push(...bodyParagraphs(policy.monitoring));
+        children.push(...bodyParagraphs(policy.monitoring, typography));
         break;
       case "review":
-        children.push(...bodyParagraphs(policy.reviewMechanism));
+        children.push(...bodyParagraphs(policy.reviewMechanism, typography));
         break;
       case "custom":
         (s.blocks || []).forEach((block) => {
-          if (block.type === "paragraph") children.push(...bodyParagraphs(block.text));
+          if (block.type === "paragraph") children.push(...bodyParagraphs(block.text, typography));
           else if (block.type === "table") {
             const columns = block.columns || [];
             if (columns.length) children.push(new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [
@@ -423,10 +432,10 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
       `I hereby acknowledge that I have read and understood the ${profile.label} of ${
         co.name || "[Company Name]"
       }. I am aware of the company's commitment to responsible practices as outlined in this policy and agree to uphold these standards in my daily work.`
-    ),
+    , typography),
     ...bodyParagraphs(
       "By signing below, I confirm my personal commitment to the values and obligations set forth in this policy."
-    )
+    , typography)
   );
 
   ["Employee Name", "Employee ID", "Department", "Date"].forEach((f) => {
@@ -460,7 +469,7 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
     title: `${profile.label} - ${co.name || "Policy"}`,
     styles: {
       default: {
-        document: { run: { font: "Georgia", size: 21, color: INK } },
+        document: { run: { font: typography.fontFamily, size: Math.round(typography.paragraphSize * 2), color: INK } },
       },
     },
     sections: [
@@ -469,7 +478,10 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
           page: {
             margin: { top: 1000, right: 1000, bottom: 1000, left: 1000 },
           },
+          titlePage: true,
         },
+        headers: logoImage ? { default: new Header({ children: [new Paragraph({ alignment: logoAlignment, border: { bottom: { color: FOREST, space: 1, style: BorderStyle.SINGLE, size: 6 } }, children: [new ImageRun({ data: logoImage.data, type: logoImage.type, transformation: { width: 100, height: 50 } })] })] }) } : undefined,
+        footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "Page ", size: 16, color: "666666" }), new TextRun({ children: [PageNumber.CURRENT], size: 16, color: "666666" })] })] }) },
         children,
       },
     ],
@@ -479,7 +491,13 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   return buf as Buffer;
 }
 
-function sectionTitle(title: string, bookmarkId?: string): Paragraph {
+function logoFromDataUrl(source?: string): { data: Uint8Array; type: "png" | "jpg" } | null {
+  const match = source?.match(/^data:image\/(png|jpeg|jpg);base64,([\s\S]+)$/i);
+  if (!match) return null;
+  return { data: Buffer.from(match[2], "base64"), type: match[1].toLowerCase() === "png" ? "png" : "jpg" };
+}
+
+function sectionTitle(title: string, bookmarkId?: string, typography: Typography = DEFAULT_TYPOGRAPHY): Paragraph {
   const titleChildren: any[] = [];
   if (bookmarkId) {
     titleChildren.push(new Bookmark({ id: bookmarkId, children: [] }));
@@ -488,8 +506,8 @@ function sectionTitle(title: string, bookmarkId?: string): Paragraph {
     new TextRun({
       text: title.toUpperCase(),
       bold: true,
-      size: 20,
-      font: "Arial",
+      size: Math.round(typography.headingSize * 2),
+      font: typography.fontFamily,
       color: FOREST,
       characterSpacing: 40,
     })
@@ -504,15 +522,15 @@ function sectionTitle(title: string, bookmarkId?: string): Paragraph {
   });
 }
 
-function bodyParagraphs(text: string): Paragraph[] {
+function bodyParagraphs(text: string, typography: Typography = DEFAULT_TYPOGRAPHY): Paragraph[] {
   if (!text) return [];
   const parts = text.split(/\r?\n+/).map((p) => p.trim()).filter(Boolean);
   return parts.map(
     (p) =>
       new Paragraph({
-        spacing: { after: 120, line: 320 },
+        spacing: { after: 150, line: Math.round(240 * typography.lineSpacing) },
         alignment: AlignmentType.JUSTIFIED,
-        children: [new TextRun({ text: p, size: 21 })],
+        children: [new TextRun({ text: p, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })],
       })
   );
 }

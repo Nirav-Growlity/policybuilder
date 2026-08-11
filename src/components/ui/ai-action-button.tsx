@@ -4,6 +4,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import { Sparkles, Wand2, MessageSquarePlus, Send, X, Loader2 } from "lucide-react";
 import { clsx } from "clsx";
+import { Textarea } from "./input";
 
 interface AIActionButtonProps {
   onGenerate: (customPrompt?: string) => Promise<void> | void;
@@ -197,7 +198,7 @@ export function AIActionButton({
                   </button>
                 </div>
 
-                <textarea
+                <Textarea
                   autoFocus
                   rows={3}
                   value={customPrompt}

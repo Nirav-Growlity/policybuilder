@@ -1,4 +1,5 @@
 import type { Policy, PolicySection, StandardSectionKind, StepId } from "./types";
+import { DEFAULT_TYPOGRAPHY } from "./typography";
 
 export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] = [
   { kind: "preface", title: "Preface" },
@@ -16,6 +17,15 @@ export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] =
 ];
 
 export const sectionId = (kind: StandardSectionKind) => `standard-${kind}`;
+
+function usesPreviousTypographyDefaults(policy: Policy) {
+  const typography = policy.typography;
+  return typography?.fontFamily === "Arial"
+    && typography.headingSize === 14
+    && typography.subheadingSize === 11
+    && typography.paragraphSize === 10.5
+    && typography.lineSpacing === 1.5;
+}
 
 export function defaultSections(policy?: Partial<Policy>): PolicySection[] {
   const templateKinds: Record<string, StandardSectionKind[]> = {
@@ -40,6 +50,10 @@ export function normalizePolicyStructure<T extends Policy>(policy: T): T {
     showTableOfContents: policy.showTableOfContents ?? true,
     showAcknowledgement: policy.showAcknowledgement ?? true,
     sdgDisplay: policy.sdgDisplay ?? "tiles",
+    logoPosition: policy.logoPosition ?? "center",
+    typography: !policy.typography || usesPreviousTypographyDefaults(policy)
+      ? DEFAULT_TYPOGRAPHY
+      : policy.typography,
     visualStyle: policy.visualStyle ?? "corporate",
   };
 }

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { clsx } from "clsx";
+import { useToast } from "./toast";
 
 interface FieldProps {
   label?: React.ReactNode;
@@ -120,19 +121,72 @@ export function Combobox({ value, options, onValueChange, placeholder, emptyMess
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
-  { className, rows, ...rest },
+  { className, rows, onBlur, onChange, ...rest },
   ref
 ) {
+  const { push } = useToast();
+  const [checking, setChecking] = React.useState(false);
+  const manuallyEdited = React.useRef(false);
+  const editVersion = React.useRef(0);
+
+  const handleChange = React.useCallback((event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    // AI-generated values arrive through props. Only a real user edit can make a
+    // textarea eligible for a correction request.
+    if (event.nativeEvent.isTrusted) {
+      manuallyEdited.current = true;
+      editVersion.current += 1;
+    }
+    onChange?.(event);
+  }, [onChange]);
+
+  const handleBlur = React.useCallback(async (event: React.FocusEvent<HTMLTextAreaElement>) => {
+    onBlur?.(event);
+    const textarea = event.currentTarget;
+    const original = textarea.value;
+    if (!manuallyEdited.current || !original.trim() || checking) return;
+
+    manuallyEdited.current = false;
+    const requestVersion = editVersion.current;
+    setChecking(true);
+
+    try {
+      const response = await fetch("/api/grammar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: original }),
+      });
+      if (!response.ok) throw new Error("Grammar request failed");
+      const { text: corrected } = await response.json() as { text?: string };
+
+      // Do not overwrite a new edit made while the check was in flight.
+      if (typeof corrected !== "string" || editVersion.current !== requestVersion) return;
+      if (corrected !== original) {
+        const setter = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")?.set;
+        setter?.call(textarea, corrected);
+        textarea.dispatchEvent(new Event("input", { bubbles: true }));
+        push("Spelling and grammar corrected", "success");
+      }
+    } catch {
+      manuallyEdited.current = true;
+      push("Could not check spelling and grammar", "error");
+    } finally {
+      setChecking(false);
+    }
+  }, [checking, onBlur, push]);
+
   return (
     <textarea
       ref={ref}
       rows={rows}
+      data-grammar-checking={checking ? "true" : undefined}
       className={clsx(
         baseInput,
         "h-auto py-2 leading-relaxed resize-y",
         !rows && "min-h-[100px]",
         className
       )}
+      onChange={handleChange}
+      onBlur={handleBlur}
       {...rest}
     />
   );
