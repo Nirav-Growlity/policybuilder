@@ -5,7 +5,6 @@ import { useBuilder, getStepOrder } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/toast";
 import { BuilderShell } from "@/components/builder/shell";
-import { StepSetup } from "@/components/builder/steps/step-setup";
 import { StepStructure } from "@/components/builder/steps/step-structure";
 import { StepCustom } from "@/components/builder/steps/step-custom";
 import { StepDeclaration } from "@/components/builder/steps/step-declaration";
@@ -19,10 +18,10 @@ import { ArrowLeft, ArrowRight, FileUp } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { PolicySelector } from "@/components/builder/policy-selector";
+import { CompanySetupScreen } from "@/components/builder/company-setup-screen";
 import type { PolicyType } from "@/lib/types";
 
 const STEP_RENDERERS: Record<string, React.ComponentType> = {
-  setup: StepSetup,
   structure: StepStructure,
   declaration: StepDeclaration,
   focus: StepFocus,
@@ -48,7 +47,7 @@ export function BuilderClient() {
   const currentIndex = Math.max(0, order.indexOf(step));
   const isFirst = currentIndex === 0;
   const isLast = currentIndex === order.length - 1;
-  const StepCmp = STEP_RENDERERS[step] || StepSetup;
+  const StepCmp = STEP_RENDERERS[step] || StepStructure;
 
   React.useEffect(() => {
     if (hydrated && !order.includes(step)) setStep(order[0]);
@@ -64,7 +63,7 @@ export function BuilderClient() {
         if (data.template?.policy) {
           setPolicy(data.template.policy);
           push(`Loaded template: ${data.template.name}`, "success");
-          setStep("setup");
+          setStep("structure");
         }
       } catch {
         // ignore
@@ -102,16 +101,28 @@ export function BuilderClient() {
         policyType: data.policy.policyType || cur.policyType,
       }));
       push("Document parsed. Review the fields below.", "success");
-      setStep("setup");
+      setStep("structure");
     } catch (e) {
       push("Could not parse file", "error");
     }
   };
 
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const [setupPhase, setSetupPhase] = React.useState<"company" | "policy">("company");
 
   if (!templateId && !selectedType) {
-    return <PolicySelector onSelect={(type) => { startPolicy(type); router.push(`/builder?type=${type}`); }} />;
+    if (setupPhase === "company") {
+      return <CompanySetupScreen onContinue={() => setSetupPhase("policy")} />;
+    }
+    return (
+      <PolicySelector
+        onSelect={(type) => {
+          startPolicy(type);
+          router.push(`/builder?type=${type}`);
+        }}
+        onBack={() => setSetupPhase("company")}
+      />
+    );
   }
 
   const topActions = (

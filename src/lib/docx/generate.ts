@@ -185,9 +185,6 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
       case "definitions":
         children.push(...bodyParagraphs(policy.definitions?.content || "", typography));
         break;
-      case "framework":
-        policy.standards.forEach((standard) => children.push(...bodyParagraphs(standard, typography)));
-        break;
       case "focus":
         areas.forEach((a, i) =>
           children.push(

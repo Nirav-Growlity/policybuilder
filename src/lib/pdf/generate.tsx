@@ -284,8 +284,6 @@ function PdfBody({ policy }: { policy: Policy }) {
             <Text style={styles.paragraph}>{policy.definitions?.content || ""}</Text>
           </View>
         );
-      case "framework":
-        return <View wrap={false}><Text style={styles.sectionTitle}>{title}</Text>{policy.standards.map((standard) => <Text key={standard} style={styles.paragraph}>{standard}</Text>)}</View>;
       case "focus":
         return (
           <View wrap={false}>

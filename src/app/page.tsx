@@ -169,7 +169,7 @@ export default function Home() {
           </div>
           <div className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
             {[
-              { icon: Building2, title: "Company setup", desc: "Name, industry, site, document number, approver, dates." },
+              { icon: FileText, title: "Document structure", desc: "Customize and arrange policy sections." },
               { icon: ScrollText, title: "Declaration & scope", desc: "Preface, declaration and scope - with AI writing assist." },
               { icon: Target, title: "Key focus areas", desc: "Curated environmental topics you can edit or augment." },
               { icon: ListChecks, title: "Qualitative objectives", desc: "Per-focus-area commitment statements, AI-suggested." },

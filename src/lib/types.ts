@@ -72,7 +72,6 @@ export interface Responsibility {
 }
 
 export type StepId =
-  | "setup"
   | "structure"
   | "declaration"
   | "focus"
@@ -91,7 +90,7 @@ export type PresentationTemplate =
 export type VisualStyle = "corporate" | "modern";
 
 export type StandardSectionKind =
-  | "preface" | "declaration" | "scope" | "definitions" | "framework"
+  | "preface" | "declaration" | "scope" | "definitions"
   | "focus" | "qualitative" | "quantitative" | "sdg" | "responsibilities"
   | "monitoring" | "review";
 

@@ -32,7 +32,7 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
     reviewDate: "",
     approver: "",
   },
-  standards: [...profile.standards],
+  standards: [],
   declaration: { preface: "", declaration: "", scope: "" },
   focusAreas: [...profile.focusAreas],
   qualitative: {},
@@ -66,7 +66,7 @@ export function getStepOrder(policy: Policy): StepId[] {
 export const useBuilder = create<BuilderState>()(
   persist(
     (set, get) => ({
-      step: "setup",
+      step: "structure",
       policy: initialPolicy(),
       hydrated: false,
       setStep: (s) => set({ step: s }),
@@ -86,11 +86,24 @@ export const useBuilder = create<BuilderState>()(
         set({ policy: normalizePolicyStructure(normalizePolicyQuantitative(patch ? { ...current, ...patch } : current)) });
       },
       setPolicy: (p) => set({ policy: normalizePolicyStructure(normalizePolicyQuantitative(p)) }),
-      startPolicy: (type) => set({ policy: initialPolicy(type), step: "setup" }),
-      reset: () => set({ policy: initialPolicy(), step: "setup" }),
+      startPolicy: (type) => {
+        const currentCompany = get().policy.company;
+        const newPolicy = initialPolicy(type);
+        set({
+          policy: {
+            ...newPolicy,
+            company: {
+              ...newPolicy.company,
+              ...currentCompany,
+            },
+          },
+          step: "structure",
+        });
+      },
+      reset: () => set({ policy: initialPolicy(), step: "structure" }),
       loadSample: () => {
         const sample = makeSamplePolicy();
-        set({ policy: normalizePolicyQuantitative(sample), step: "setup" });
+        set({ policy: normalizePolicyQuantitative(sample), step: "structure" });
       },
     }),
     {
@@ -117,7 +130,6 @@ export const useBuilder = create<BuilderState>()(
 );
 
 export const ALL_STEPS: StepId[] = [
-  "setup",
   "structure",
   "declaration",
   "focus",

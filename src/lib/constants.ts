@@ -1,7 +1,6 @@
 import type { PolicyType, Responsibility, StepDef } from "./types";
 
 export const STEPS: StepDef[] = [
-  { id: "setup", label: "Company setup", desc: "Enter company details and policy metadata", icon: "Building2" },
   { id: "structure", label: "Document structure", desc: "Arrange the sections in your policy", icon: "FileText" },
   { id: "declaration", label: "Declaration & scope", desc: "Write the preface, declaration and scope", icon: "ScrollText" },
   { id: "focus", label: "Key focus areas", desc: "Define what this policy covers", icon: "Target" },
@@ -13,22 +12,7 @@ export const STEPS: StepDef[] = [
   { id: "export", label: "Preview & export", desc: "Review and download your policy", icon: "Download" },
 ];
 
-export const STANDARDS = [
-  "EcoVadis",
-  "CDP",
-  "GRI",
-  "BRSR",
-  "CSRD",
-  "UNGC",
-  "ISO 14001",
-  "ISO 45001",
-  "ISO 26000",
-  "SA8000",
-  "SDGs",
-  "TCFD",
-  "SBTi",
-  "RBA",
-];
+export const STANDARDS: string[] = [];
 
 export const INDUSTRY_SUBSECTORS: Record<string, string[]> = {
   "Food & Beverage": ["Distilling, rectifying and blending of spirits", "Manufacture of dairy products", "Manufacture of grain mill products, starches and starch products", "Manufacture of malt liquors and malt", "Manufacture of other food products", "Manufacture of prepared animal feeds", "Manufacture of soft drinks; production of mineral waters and other bottled waters", "Manufacture of vegetable and animal oils and fats", "Manufacture of wines", "Processing and preserving of fish, crustaceans and molluscs", "Processing and preserving of fruit and vegetables", "Processing and preserving of meat"],
@@ -46,16 +30,7 @@ export const INDUSTRY_SUBSECTORS: Record<string, string[]> = {
 
 export const INDUSTRY_SECTORS = Object.keys(INDUSTRY_SUBSECTORS);
 
-export const FRAMEWORK_ALIGNMENT: Record<string, string> = {
-  EcoVadis: "EcoVadis themes: Environment, Labour & Human Rights, Ethics, and Sustainable Procurement.",
-  UNGC: "UN Global Compact principles: human rights, labour, environment, and anti-corruption.",
-  "ISO 14001": "ISO 14001: environmental management system, compliance obligations, objectives, and continual improvement.",
-  "ISO 45001": "ISO 45001: occupational health and safety management, worker participation, and risk control.",
-  "ISO 26000": "ISO 26000: organizational governance, human rights, labour practices, environment, fair operating practices, consumers, and community involvement.",
-  GRI: "GRI: material topics, stakeholder-focused disclosures, metrics, and transparent reporting.",
-  BRSR: "BRSR: National Guidelines on Responsible Business Conduct principles and ESG disclosures.",
-  CSRD: "CSRD: double materiality, governance, strategy, impacts, risks, opportunities, and performance metrics.",
-};
+export const FRAMEWORK_ALIGNMENT: Record<string, string> = {};
 
 export const FOCUS_AREAS_DEFAULT = [
   "Energy Consumption & GHG Emissions",

@@ -6,7 +6,6 @@ export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] =
   { kind: "declaration", title: "Policy Declaration" },
   { kind: "scope", title: "Scope" },
   { kind: "definitions", title: "Definitions" },
-  { kind: "framework", title: "Framework Alignment" },
   { kind: "focus", title: "Key Focus Areas" },
   { kind: "qualitative", title: "Qualitative Objectives" },
   { kind: "quantitative", title: "Quantitative Targets" },
@@ -72,7 +71,6 @@ export function sectionHasContent(policy: Policy, section: PolicySection) {
     case "declaration": return Boolean(policy.declaration.declaration);
     case "scope": return Boolean(policy.declaration.scope);
     case "definitions": return Boolean(policy.definitions?.content);
-    case "framework": return policy.standards.length > 0;
     case "focus": return policy.focusAreas.some(Boolean);
     case "qualitative": return Object.values(policy.qualitative).some((v) => v.length);
     case "quantitative": return policy.quantitative.some((q) => q.targets.some((t) => t.target));
@@ -86,7 +84,7 @@ export function sectionHasContent(policy: Policy, section: PolicySection) {
 
 export function getWorkflowSteps(policy: Policy): StepId[] {
   const enabled = new Set(getEnabledSections(policy).map((s) => s.kind));
-  const result: StepId[] = ["setup", "structure"];
+  const result: StepId[] = ["structure"];
   if (["preface", "declaration", "scope", "definitions"].some((k) => enabled.has(k as StandardSectionKind))) result.push("declaration");
   if (enabled.has("focus") || enabled.has("qualitative") || enabled.has("quantitative")) result.push("focus");
   if (enabled.has("qualitative")) result.push("qualitative");
