@@ -1,0 +1,231 @@
+{
+  "id": "sustainable-procurement-cherry-hill",
+  "name": "Cherry Hill",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from Responsible Sourcing Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Cherry Hill Interiors Pvt. Ltd.",
+      "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020.",
+      "sites": [
+        {
+          "location": "Delhi (Head Quarter)",
+          "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020.",
+          "primaryFunction": "Head Quarter"
+        },
+        {
+          "location": "Bengaluru (Branch Office)",
+          "address": "First floor, no 1, 14th a Main, Hall 2nd Stage, Bangalore, Karnataka, India - 560008",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Chennai (Branch Office)",
+          "address": "GN Chetty Road, Anmol Palani, 88, T Nagar, Chennai, Tamil Nadu, India - 600017",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Pune (Branch Office)",
+          "address": "Liberty phase-2, Plot no. 323, Flat no.1, North Main Road, Koregaon Park, Pune, Maharashtra, India - 411001",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Hyderabad (Branch Office)",
+          "address": "Third floor, Sreshta Marvel, Sy no 136, Gachibowli Konadpur Main Road, Gachibowli, Hyderabad, Telangana, India - 500032",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Plot no. 81-a, sector-5, IMT Manesar, Gurugram, Haryana, India - 122050",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "site": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "We at Cherry Hill Interiors Pvt. Ltd. integrate responsible sourcing into procurement decisions by prioritizing sustainability, ethical business practices, and social responsibility. Suppliers are expected to uphold environmental stewardship, fair labor practices, and regulatory compliance while minimizing environmental impact and promoting sustainable materials.\n\nThis policy ensures transparency, integrity, and accountability across the supply chain. By embedding responsible sourcing into operations, the goal is to drive positive change, support ethical business conduct, and contribute to a more sustainable future.",
+      "declaration": "Cherry Hill Interiors Pvt. Ltd. ensures responsible sourcing by prioritizing ethical procurement, supplier accountability, and sustainable material selection. With Year 2022 as the baseline year, sourcing decisions are guided by transparency, fair labor practices, and environmental sustainability. Continuous improvements are made through supplier engagement, risk assessments, and collaboration with industry partners to uphold high standards across the supply chain.",
+      "scope": "This policy covers all sourcing activities across office operations, project sites, and supply chains, ensuring ethical and sustainable procurement practices. It applies to employees, contractors, suppliers, and business partners involved in sourcing and procurement processes."
+    },
+    "focusAreas": [
+      "Environmentally Responsible Sourcing",
+      "Supplier Social Responsibility",
+      "Ethical Supplier Practices",
+      "Local & Inclusive Sourcing",
+      "Capacity Building & Training",
+      "Sustainable Wood Sourcing"
+    ],
+    "qualitative": {
+      "Environmentally Responsible Sourcing": [
+        "Focus on engagement with the suppliers that comply with environmental certifications such as FSC, PEFC, and ISO 14001.",
+        "Encourage suppliers to adopt sustainable production practices and comply with environmental regulations.",
+        "Prioritize sourcing materials with low carbon footprints, high recycled content, or certified sustainability credentials."
+      ],
+      "Supplier Social Responsibility": [
+        "Collaborate with suppliers who uphold labor rights, fair working conditions, and human rights.",
+        "Conduct supplier self-assessments, audits, and remediation programs to monitor social responsibility performance and drive continuous improvement."
+      ],
+      "Ethical Supplier Practice": [
+        "Ensure suppliers comply with all applicable laws, regulations, and anti-bribery and anti-corruption standards.",
+        "Promote transparency, accountability, and integrity in supplier business operations.",
+        "Foster a culture of ethical behavior and responsible decision-making throughout the supply chain."
+      ],
+      "Local & Inclusive Sourcing": [
+        "Support local suppliers and communities, promoting regional economic development.",
+        "Promote diverse supplier participation through inclusive procurement practices that consider cost, quality, and social impact."
+      ],
+      "Capacity Building & Training": [
+        "Strengthen ESG knowledge and skills among suppliers and procurement teams through structured training programs.",
+        "Support continuous improvement in supplier ESG performance through guidance, collaboration, and follow-up."
+      ],
+      "Sustainable Wood Sourcing": [
+        "To promote responsible forest management through the procurement of sustainably sourced wood and wood-based materials.",
+        "To strengthen supply chain sustainability by integrating environmental and legal sourcing considerations into wood procurement decisions."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible sourcing",
+        "targets": [
+          {
+            "target": "Reduce procurement-related carbon emissions by 15% till year 2028 by prioritizing local suppliers and low-emission materials.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Reduce overall procurement costs by 5% through sustainable and resource-efficient sourcing strategies by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Increase sourcing from suppliers holding recognized ISO certifications, public ESG disclosures, or validated sustainability commitments by 20% by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility",
+        "targets": [
+          {
+            "target": "Ensure 50% suppliers have implemented grievance mechanisms accessible to their workers and relevant stakeholders by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Ensure that 50% of active suppliers are assessed against social responsibility criteria, including labor practices, human rights, and workplace health and safety requirements, by 2028.",
+            "baseline": "Year 2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Practices",
+        "targets": [
+          {
+            "target": "Train 100% procurement staff and key suppliers on ethical sourcing, labor rights, and responsible supply chain management by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Implement a supplier whistleblower mechanism with 80% of suppliers informed of the process by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase procurement spend with local and diverse suppliers to 20% of total procurement spend by year 2028",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Achieve a 5% increase in engagement with women-owned suppliers by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Capacity Building & Training",
+        "targets": [
+          {
+            "target": "Provide ESG capacity-building training to 65% of suppliers by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Conduct two supplier capacity-building or collaboration initiatives per year focused on ESG improvement areas.",
+            "baseline": "Year 2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Wood Sourcing",
+        "targets": [
+          {
+            "target": "Procure 100% of wood and wood-based products from FSC, PEFC, or equivalent certified sustainable sources by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Reduce the use of virgin wood by ensuring 30% of wood-based materials in Cherry Hill Interiors’ projects are reclaimed or recycled by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Ensure 50% of sourced materials for interior projects, including wood, fabrics, and finishes, are recycled, renewable, or eco-certified by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "year 2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "The Procurement Head",
+        "duty": "ensures responsible sourcing practices and supplier compliance."
+      },
+      {
+        "role": "The Compliance Officer",
+        "duty": "monitors adherence and conducts regular audits."
+      },
+      {
+        "role": "Project Managers and Designers",
+        "duty": "integrate sustainability and ethical sourcing into all projects."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "follow responsible procurement guidelines and report violations."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "maintain transparency and align with sourcing standards."
+      }
+    ],
+    "monitoring": "Cherry Hill monitors its sustainable procurement performance across all the above mentioned key focus areas. Defined Key Performance Indicators (KPIs) are tracked through procurement and supplier management processes to assess progress against established sustainability objectives and targets.\n\nPerformance is reviewed periodically and reported to management to support informed decision-making and continuous improvement. Regular assessments are conducted to identify achievements, gaps, and opportunities for enhancing supply chain sustainability performance. Relevant information and progress updates are communicated to internal and external stakeholders, as appropriate, to promote transparency and accountability.\n\nAll monitoring, reporting, and disclosure activities are undertaken in alignment with applicable legal requirements, industry best practices, and recognized sustainability standards.",
+    "reviewMechanism": "The Procurement Head reviews this policy once after every two years or as required to ensure its relevance and effectiveness.\n\nPeriodic internal audits and supplier assessments identify gaps and improvement areas.\n\nFeedback from employees, suppliers, and stakeholders is gathered to refine sourcing practices.\n\nNecessary revisions are made to align with evolving regulations, industry standards, and business needs.\n\nSenior Management evaluates findings and approves policy updates for continuous improvement."
+  },
+  "sourcePath": "Hetvi- Policies\\Cherry Hill\\Responsible Sourcing Policy.docx",
+  "sourceTextLength": 10153,
+  "parsedAt": "2026-08-12T06:32:47.681Z"
+}

@@ -1,0 +1,321 @@
+{
+  "id": "ethics-excel",
+  "name": "Excel",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from 102. Business Ethics Policy V03 01.08.2025 (Corr KSIL).docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Excel Industries Limited",
+      "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+      "site": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+      "sites": [
+        {
+          "location": "Corporate Head Office",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Corporate Head Office"
+        },
+        {
+          "location": "Roha Manufacturing Site",
+          "address": "Plot No. 112, 20/1, OS-2, MIDC, Dhatav, Roha, Raigad, Maharashtra 402116, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Lote Manufacturing Site",
+          "address": "D-9, MIDC, Lote Parshuram, Ratnagiri, Maharashtra 415722, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Visakhapatnam Manufacturing Site",
+          "address": "Plot No. 15 & 15A, APSEZ, Atchutapuram, Vishakhapatnam, Andhra Pradesh, 531011, India",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Excel Bioresources Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Subsidiary"
+        },
+        {
+          "location": "Kamaljyot Investments Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Subsidiary"
+        },
+        {
+          "location": "Excel Rajkot C&D waste recycling Private Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Subsidiary"
+        }
+      ]
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Excel Industries Ltd is committed to maintaining the highest standards of ethics and integrity in all aspects of our business operations. This policy outlines our stance on corruption, anticompetitive practices, conflict of interest, fraud, money laundering, sensitive transactions and responsible information management. It applies to all employees, contractors, and associates of Excel Industries Ltd.",
+      "declaration": "Excel Industries Limited, a responsible manufacturer of Industrial chemicals, Intermediates, specialty chemicals, agricultural chemicals and pharmaceutical products is committed to provide adequate resources related to Business Ethics and Ethical Behavior, promoting a healthy atmosphere inside the company and protecting the rights and well-being of our employees and stakeholders across all its functions and locations.\n\nTo achieve the same, we will ensure the following:\n\nZero Tolerance towards any form of corruption, including bribery, fraud, money laundering, sensitive transactions and embezzlement.\n\nCompliance of all employees with all applicable anti-corruption laws and regulations.\n\nProhibition from offering, giving, or receiving gifts, hospitality, or benefits that could influence their routine activities, work and their business decisions.\n\nCommitment of the company and its Management to Fair and Ethical Competition in the marketplace.\n\nNon engagement of any employee in any practices that restrict competition, including but not limited to price-fixing, market division and bid-rigging.\n\nCompliance of all employees with applicable antitrust and competition laws.\n\nAdequate training will be provided to all the concerned employees to ensure understanding and compliance of the Ethics Policy.\n\nThe company through its practices and policies protects the confidentiality and integrity of all business-related data, intellectual property, documents of eternal origin, personal data of employees, customers and partners.\n\nEmployees must comply with all applicable information / data privacy laws and regulations.\n\nEmployees must follow all company policies and procedures related to information security to its protect against unauthorized access, disclosure, alteration, or destruction.\n\nEmployees must report suspected or actual instances of corruption, anticompetitive behavior, and breaches of information security or data privacy to the respective HR Heads or Members of ethics committee.\n\nThis policy will be reviewed in each Management Review Meeting, monthly for its continuing suitability to the organization’s current business and to ensure its relevance and effectiveness. We will make this policy available to our customers and stake holders, wherever required.",
+      "scope": "This policy applies to all business units and functions within Excel Industries Ltd, including manufacturing, research and development, purchase, sales, marketing, logistics, and corporate offices. It also applies to the contractors and their workmen, service providers, stakeholders, working inside the premises of Excel Industries Limited. This policy is applicable across all operating sites of Excel Industries Limited as listed below."
+    },
+    "focusAreas": [
+      "Corruption",
+      "Anticompetitive Practices",
+      "Fraud",
+      "Conflict of Interest",
+      "Money Laundering",
+      "Sensitive Transactions",
+      "Responsible Information Management"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Foster a company-wide culture of honesty, integrity, and transparency in all operations and business decisions.",
+        "Eliminate all forms of corruption, bribery, embezzlement, and unethical inducements within company operations and the value chain.",
+        "Promote zero tolerance for bribery or unethical practices in any form, whether internal or external.",
+        "Strengthen ethical decision-making through regular communication, awareness, and leadership commitment.",
+        "Ensure transparency and accountability in financial and procurement transactions.",
+        "Encourage employees and third parties to report unethical conduct without fear of retaliation."
+      ],
+      "Anticompetitive Practices": [
+        "Promote fair competition and ensure that business growth is driven by innovation, quality, and ethical practices.",
+        "Build awareness among employees regarding antitrust laws and fair business competition principles.",
+        "Prevent any form of price-fixing, bid-rigging, or market allocation through strong internal compliance controls.",
+        "Encourage ethical marketing and transparent business dealings with customers and partners."
+      ],
+      "Fraud": [
+        "Establish a fraud-free organizational culture built on trust, transparency, and ethical behavior.",
+        "Strengthen internal control systems to prevent and detect any form of fraud or financial irregularity.",
+        "Encourage employees to act with integrity and report suspicious activities immediately.",
+        "Promote zero tolerance for misrepresentation, falsification of data, or misuse of company resources.",
+        "Enhance awareness and vigilance through regular training, audits, and compliance programs."
+      ],
+      "Conflict of Interest": [
+        "Promote a work environment of impartiality and ethical judgment free from personal or financial bias.",
+        "Encourage transparent disclosure of any relationships or interests that could influence professional decisions.",
+        "Build a culture where organizational interests take precedence over personal gains.",
+        "Ensure equitable decision-making in procurement, hiring, promotions, and partnerships.",
+        "Reinforce the importance of integrity, independence, and objectivity in all business dealings."
+      ],
+      "Money Laundering": [
+        "Promote transparency and accountability in all financial transactions and relationships.",
+        "Conduct due diligence and background checks for third-party vendors, customers, and partners.",
+        "Strengthen awareness of anti-money laundering obligations among employees at all levels.",
+        "Foster a corporate culture where compliance with legal and financial regulations is non-negotiable."
+      ],
+      "Sensitive Transactions": [
+        "Ensure all transactions involving gifts, entertainment, sponsorships, and donations are conducted ethically and transparently.",
+        "Promote clear documentation and justification for all sensitive or high-risk transactions.",
+        "Prevent conflicts of interest or misuse of authority in decision-making involving external entities.",
+        "Reinforce management oversight for sensitive financial and contractual activities.",
+        "Build stakeholder trust through openness and consistent application of ethical standards."
+      ],
+      "Responsible Information Management": [
+        "Promote a culture of confidentiality, integrity, and respect for data privacy across all functions.",
+        "Ensure all employees handle information responsibly and in compliance with data protection laws.",
+        "Protect intellectual property, trade secrets, and personal data from unauthorized access or misuse.",
+        "Strengthen cybersecurity awareness and accountability among employees and partners.",
+        "Integrate information security best practices into daily operations and business systems."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption and Bribery",
+        "targets": [
+          {
+            "target": "Maintain zero (0) incidents of corruption, bribery, or unethical financial transactions diligently every year.",
+            "baseline": "FY 2021-22",
+            "deadline": "every year"
+          },
+          {
+            "target": "Conduct annual anti-corruption training for 100% of employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Include anti-corruption clauses in 100% of supplier and vendor contracts by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct annual third-party due diligence audits covering 100% of high-risk vendors by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Maintain 100% disclosure and approval of gifts and hospitality transactions by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Anticompetitive Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with applicable antitrust and competition laws every year.",
+            "baseline": "FY 2021-22",
+            "deadline": "every year"
+          },
+          {
+            "target": "Conduct annual fair competition and compliance training for 100% of employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Maintain zero (0) regulatory penalties or legal actions related to anticompetitive behavior every year.",
+            "baseline": "FY 2021-22",
+            "deadline": "every year"
+          },
+          {
+            "target": "Perform internal audits on competition compliance at 100% of sites annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention and Detection",
+        "targets": [
+          {
+            "target": "Maintain zero (0) confirmed incidents of internal or external fraud every year.",
+            "baseline": "FY 2021-22",
+            "deadline": "every year"
+          },
+          {
+            "target": "Conduct quarterly internal audits to detect and mitigate potential fraud risks.",
+            "baseline": "FY 2021-22",
+            "deadline": "quarterly"
+          },
+          {
+            "target": "Ensure 100% of employees in finance, procurement, and administration receive fraud awareness training annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with conflict-of-interest disclosures by employees in key decision-making roles by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct annual conflict of interest declaration reviews and updates for all senior and managerial employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Provide training on ethical decision-making and conflict management to 100% of employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Maintain zero (0) unreported or unresolved conflict of interest cases every year.",
+            "baseline": "FY 2021-22",
+            "deadline": "every year"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering and Sensitive Transactions",
+        "targets": [
+          {
+            "target": "Maintain zero (0) incidents of money laundering or suspicious financial activity by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% of financial and procurement staff receive AML (Anti-Money Laundering) training annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct due diligence on 100% of high-value financial transactions by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure zero (0) non-compliance cases related to donation, sponsorship, or high-risk transactions by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Management",
+        "targets": [
+          {
+            "target": "Maintain zero (0) data breaches by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Achieve 100% compliance with data protection laws (e.g., GDPR) by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct annual data privacy and information security training for 100% of employees by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Implement regular cybersecurity audits and risk assessments at 100% of operational sites by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% encryption and secure access controls for sensitive business and employee data by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director and President & COO",
+        "duty": "Oversight of the Business Ethics policy and performance."
+      },
+      {
+        "role": "Vice President Operations",
+        "duty": "Development and implementation of Business Ethics strategies."
+      },
+      {
+        "role": "Management Review Meeting (MRM) committee",
+        "duty": "Responsible for monthly review of the Policy at all sites to assess progress and make necessary amendments as required. Evaluates Business Ethics performance metrics and KPIs. Ensures cross-functional coordination on Business Ethics initiatives."
+      },
+      {
+        "role": "Ethics Committee",
+        "duty": "Ensure Policy implementation, monitors compliance and reports to the Board. Handling and resolution of ethics related complaints, development and implementation of HR strategies and policies. Chaired by the HR Head and / or President of the company."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Responsible for day-to-day management of Ethical practices and programs, code of conduct, training, and reporting. Ensures adherence to the policy across all functions."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure compliance with Ethics Policy and targets within their departments. Report progress and issues to the HR Department."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Expected to adhere to the Ethics Policy and report any violations or concerns."
+      }
+    ],
+    "monitoring": "Compliance: Ensure compliance with all relevant laws, regulations, standards related to Ethics and Governance.\n\nTraining: Provide regular training and awareness to employees on Ethics policy, practices, and responsibilities.\n\nPerformance Monitoring: Set measurable Business Ethics performance goals and regularly review progress towards achieving these goals.\n\nTransparency: Report our Business Ethics performance and progress in a transparent manner to stakeholders.\n\nRegular reporting on Business Ethics performance to the MRM Committee, Board of Directors, and stakeholders through Business Responsibility and Sustainability Report (BRSR) and Annual Sustainability Report (ASR).",
+    "reviewMechanism": "This Ethics Policy will be reviewed monthly at all the sites during Management Review Meeting (MRM) by the committee to assess progress and ensure its effectiveness and relevance and adapting to new legal and regulatory requirements and make necessary amendments, if required.\n\nContinuous dialogue with stakeholders to incorporate feedback and improve our Ethical practices."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Excel\\102. Business Ethics Policy V03 01.08.2025 (Corr KSIL).docx",
+  "sourceTextLength": 21295,
+  "parsedAt": "2026-08-12T06:23:51.741Z"
+}

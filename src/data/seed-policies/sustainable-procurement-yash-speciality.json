@@ -1,0 +1,187 @@
+{
+  "id": "sustainable-procurement-yash-speciality",
+  "name": "Yash Speciality",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from Supply Chain Policy YASH-PU-001, R02.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Yash Speciality Chemicals LLP",
+      "address": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India.",
+      "sites": [
+        {
+          "location": "Yash Speciality Chemicals LLP",
+          "address": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "site": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Yash Speciality Chemicals LLP recognizes that responsible procurement plays a critical role in achieving sustainable business growth and minimizing environmental, social, and ethical risks across the value chain. Through this Sustainable Procurement Policy, the Company commits to integrating environmental stewardship, social responsibility, and ethical business practices into its purchasing decisions and supplier relationships. This policy aims to promote transparency, regulatory compliance, resource efficiency, and responsible sourcing while encouraging suppliers to align with Yash Speciality Chemicals LLP’s sustainability values and long-term sustainability objectives.",
+      "declaration": "Yash Speciality Chemicals LLP is committed to responsible and sustainable procurement, ensuring environmental, social, and ethical standards are upheld across the supply chain. All suppliers and partners are expected to comply with applicable laws and the Company’s sustainability requirements. Through collaboration and monitoring, we aim to promote ethical sourcing, reduce risks, and strengthen supply chain sustainability.",
+      "scope": "This policy applies to all procurement activities conducted by Yash Speciality. It extends to all departments involved in the procurement process, including sourcing of raw materials and associated supply-chain services. It covers all direct and indirect suppliers, contractors and service providers associated with our operations, and extends to evaluation, onboarding, performance monitoring and partnership development."
+    },
+    "focusAreas": [
+      "Environmentally Responsible sourcing: Prioritize eco-friendly materials, recycled content, and low-carbon suppliers to reduce environmental impact.",
+      "Supplier Social Responsibility Framework: Partner with suppliers who ensure fair labor practices, safe workplaces, and respect for human rights.",
+      "Ethical Supplier Conduct: Maintain integrity and transparency by working only with suppliers who follow ethical, legal, and anti-corruption standards.",
+      "Local & Inclusive Sourcing: Encourage sourcing from local, regional, and diverse suppliers to support community growth and minimize transport emissions.",
+      "Capacity Building & Training: Provide training for suppliers and procurement teams to strengthen ESG knowledge, improve sustainability performance, and support continuous improvement."
+    ],
+    "qualitative": {
+      "Environmentally Responsible sourcing": [
+        "Seek suppliers who operate with robust environmental management systems (e.g., ISO 14001) and demonstrate continuous improvement in resource use, emissions, and waste reduction.",
+        "Encourage and support suppliers to provide transparency on life-cycle impacts of their products and to adopt innovations that enable closed-loop circular economy practices.",
+        "Prioritize procurement of materials with lower carbon footprints, higher recycled content, or certified sustainability credentials, thereby reducing the upstream environmental impact."
+      ],
+      "Supplier Social Responsibility Framework": [
+        "Promote awareness and compliance with anti-child labor and anti-forced labor practices across the supply chain.",
+        "Foster partnerships with suppliers that promote workforce development, inclusion, diversity and the well-being of employees in the supply chain.",
+        "Integrate supplier self‐assessment, audit and remediation systems to monitor social responsibility performance and drive continuous improvement across the supplier base."
+      ],
+      "Ethical Supplier Conduct": [
+        "Ensure suppliers comply with all applicable laws, regulations, and anti-bribery & anti-corruption standards.",
+        "Encourage transparency, accountability & integrity in supplier business operations.",
+        "Promote a culture of ethical behavior and responsible decision-making among all supply chain partners."
+      ],
+      "Local & Inclusive Sourcing": [
+        "Ensure all procurement decisions uphold high standards of ethics, transparency, and compliance with legal and regulatory requirements.",
+        "Support diversity and inclusion by integrating underrepresented suppliers into the supply base.",
+        "Foster long-term partnerships with suppliers who demonstrate social and environmental responsibility."
+      ],
+      "Capacity Building & Training": [
+        "Strengthen ESG awareness and competence among suppliers and procurement teams through structured and targeted training programs.",
+        "Promote proactive risk identification and responsible decision-making within procurement and supplier operations.",
+        "Support continuous improvement in supplier environmental, social, and governance performance through guidance, collaboration, and follow-up."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible sourcing",
+        "targets": [
+          {
+            "target": "Integrate ESG and environmental criteria into 100% of supplier onboarding, supplier code of conduct and sourcing decisions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase procurement from suppliers with recognized ISO certification / public disclosure & commitment on ESG by 50%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility Framework",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers are assessed for social compliance (labor rights, health & safety, human rights)",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure that 50% of suppliers implement one worker welfare or social improvement initiative",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Conduct",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers sign and comply with the YASH Supplier Code of Conduct",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of procurement and supplier management employees complete annual ethics and compliance training.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase procurement spend with local suppliers to 60% & Diversify Supplier to 10% of total spend",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of sourcing events consider one local or diverse supplier option where available.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Capacity Building &Training",
+        "targets": [
+          {
+            "target": "Provide ESG capacity-building training to 100% of suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct two supplier capacity-building or collaboration initiatives per year focused on ESG improvement areas",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Corporate Responsibility Committee",
+        "duty": "Provides strategic oversight, approves the policy and targets, and reviews overall ESG performance and risks."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "Integrates ESG criteria into sourcing and contracts and ensures suppliers comply with the Supplier Code of Conduct."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Defines ESG standards, supports implementation, and monitors and reports performance."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Comply with the Supplier Code of Conduct and participate in assessments and improvement actions."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Delivers ESG and ethics training and supports diversity, equity, and inclusion initiatives."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow the policy and report any suspected violations or risks."
+      }
+    ],
+    "monitoring": "Supplier compliance will be assessed through regular audits, sustainability scorecards, and feedback mechanisms.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed once in every three years, or earlier if required by Procurement officer to ensure its continued relevance, effectiveness, and alignment with evolving regulatory requirements, international best practices, and business priorities. The review process will be overseen by the Procurement and Sustainability Teams, in coordination with relevant department heads. Supplier compliance will be assessed through regular audits, sustainability scorecards, and feedback mechanisms. Any significant updates or improvements to the policy will be approved by senior management and communicated across the supply chain."
+  },
+  "sourcePath": "Hetvi- Policies\\Yash Speciality\\Supply Chain Policy YASH-PU-001, R02.docx",
+  "sourceTextLength": 10086,
+  "parsedAt": "2026-08-12T06:34:01.476Z"
+}

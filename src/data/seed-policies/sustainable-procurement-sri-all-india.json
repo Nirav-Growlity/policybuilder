@@ -1,0 +1,168 @@
+{
+  "id": "sustainable-procurement-sri-all-india",
+  "name": "Sri All India",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Sri All India Exports",
+      "address": "23, Velammal Layout, Sengunthapuram, Karur-639002, India.",
+      "sites": [
+        {
+          "location": "Sri All India Exports",
+          "address": "23, Velammal Layout, Sengunthapuram, Karur-639002, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "site": "23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Sri All India Exports is committed to sustainable procurement practices that protect the environment, uphold labor rights, and respect human rights. As a leader in the textile industry, we recognize our responsibility to ensure that our procurement processes contribute to a sustainable future. This Sustainable Procurement Policy outlines our approach to environmental issues, labor practices, and human rights, ensuring that our supply chain aligns with our values and ethical standards.",
+      "declaration": "Sri All India Exports is dedicated to integrating sustainability into our procurement practices. We commit to sourcing materials and services in a way that minimizes environmental impact, respects labor rights, and upholds human rights. This policy provides a framework for ensuring that our procurement processes align with these commitments and comply with applicable laws and regulations.",
+      "scope": "This policy is exclusively applicable to the operations of Sri All India Exports, covering all employees, workers, subcontractors, and other stakeholders directly affiliated with our site."
+    },
+    "focusAreas": [
+      "Environmental Issues",
+      "Labor Practices",
+      "Human Rights"
+    ],
+    "qualitative": {
+      "Environmental Issues": [
+        "Develop and implement a sustainable sourcing program, including criteria for selecting eco-friendly suppliers. For example, evaluate suppliers based on their environmental certifications and practices.",
+        "Provide training for suppliers on waste management and recycling practices. For instance, host workshops on effective waste reduction strategies..",
+        "Encourage suppliers to participate in energy efficiency initiatives and share best practices. For example, offer resources and incentives for adopting energy-saving technologies."
+      ],
+      "Labor Practices": [
+        "Provide training to suppliers on fair labor practices and compliance with labor laws. For example, conduct annual workshops on labor rights and workplace safety.",
+        "Develop and enforce a supplier code of conduct prohibiting child and forced labor. For instance, require suppliers to sign a commitment to these standards.",
+        "Promote awareness of worker rights and provide resources for addressing labor issues. For example, distribute materials on workers' rights and grievance mechanisms."
+      ],
+      "Human Rights": [
+        "Conduct assessments of suppliers' human rights practices and provide feedback for improvement. For instance, perform annual audits of supplier compliance with human rights standards.",
+        "Offer training on anti-discrimination and harassment prevention for suppliers. For example, provide resources and workshops on creating inclusive workplaces.",
+        "Promote transparency and ethical practices among suppliers. For example, develop a supplier ethics guide and offer support for implementing ethical practices."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Sustainable Procurement Targets",
+        "targets": [
+          {
+            "target": "By 2030, 100% of SRI’s suppliers will undergo annual sustainability assessments and audits to verify compliance with environmental, social, and governance (ESG) standards.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "By 2030, 100% of all purchased goods and services will be sourced exclusively from suppliers holding internationally recognized sustainability certifications (e.g., ISO 14001, SA8000, Fair Trade, FSC, or equivalent certifications relevant to export markets).",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "By 2030, 100% of suppliers will participate annually in sustainability training and development programs, receiving resources to strengthen environmental stewardship, labor standards, and ethical practices.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Issues",
+        "targets": [
+          {
+            "target": "Achieve 80% of procurement from suppliers with recognized environmental certifications by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce supplier waste generation by 25% by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 75% of suppliers adopt energy-efficient technologies by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Labor Practices",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with fair labor practices among suppliers by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 100% of suppliers are verified as free from child and forced labor by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 90% supplier participation in worker rights training by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Human Rights",
+        "targets": [
+          {
+            "target": "Ensure that 100% of suppliers comply with human rights standards by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 90% adherence to anti-discrimination policies among suppliers by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 100% of suppliers adopt ethical business practices by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Purchase Officer / Supply Chain Department",
+        "duty": "Oversees implementation of the Sustainability Procurement Policy, ensures suppliers meet environmental, social, and ethical standards, and maintains reporting mechanisms."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Provides oversight to ensure the procurement policy aligns with the company’s sustainability strategy, corporate values, and long-term objectives."
+      },
+      {
+        "role": "Managers / Supervisors",
+        "duty": "Ensure procurement practices in their teams follow sustainability guidelines, encourage responsible sourcing, and address supplier-related concerns."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow sustainable procurement procedures, support responsible purchasing decisions, and are encouraged to suggest improvements that promote sustainability in procurement practices."
+      }
+    ],
+    "monitoring": "At Sri All India Exports, transparent and thorough reporting on our sustainable procurement practices is essential for maintaining accountability and trust with our stakeholders. Our reporting mechanism ensures that key information is accurately and timely communicated:\n\nConduct monthly evaluations of sustainability performance indicators, including environmental impact, labor practices, and human rights compliance.\n\nUtilize data collection methods such as surveys and reporting systems to ensure accurate and real-time data.\n\nPublish a detailed annual sustainability report outlining our procurement practices, achievements, challenges, and future goals.\n\nInclude case studies and success stories, such as improvements in waste management or energy efficiency.\n\nHave the report independently audited to ensure accuracy and credibility.\n\nDocument and report on feedback received from suppliers, including participant numbers, key themes, and actions taken in response.\n\nShare feedback trends and improvement actions with suppliers to maintain transparency and engagement.\n\nProvide reports on stakeholder engagement activities, including meetings, consultations, and feedback received.\n\nSummarize the outcomes of these engagements and how they have influenced our sustainable procurement practices and policies.\n\nEstablish a system for reporting and addressing any issues related to sustainable procurement.\n\nProvide monthly summaries of incidents, including root cause analysis, corrective actions taken, and any improvements implemented.",
+    "reviewMechanism": "Sri All India Exports is committed to continually enhancing our sustainable procurement practices. We will regularly review and update this policy, conduct supplier audits, and seek feedback to identify areas for improvement. By fostering a culture of sustainability and ethical behavior, we aim to achieve excellence in our procurement practices and uphold our commitment to environmental stewardship and human rights.\n\nThe Procurement Office is responsible for the implementation, oversight, and review of this policy. This policy will be reviewed every year, and any updates will be communicated as necessary."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Sri All India\\4. Sustainable Procurement Policy.docx",
+  "sourceTextLength": 11252,
+  "parsedAt": "2026-08-12T06:32:19.775Z"
+}

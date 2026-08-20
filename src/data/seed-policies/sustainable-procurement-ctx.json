@@ -1,0 +1,207 @@
+{
+  "id": "sustainable-procurement-ctx",
+  "name": "CTX",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "CTX Lifesciences Pvt. Ltd.",
+      "address": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Sachin, Surat – 394230, Gujarat, India",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Surat – 394230, Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Factory",
+          "address": "Block Nos. 251/B, 252/B, 253, 254, 255, 256, 258/B, 276, 277, 278/P, 279, 280, 281, 282, 283/P, 284/P, Sachin GIDC, Near Gabheni Chokdi, Sachin, Surat – 394230, Gujarat, India",
+          "primaryFunction": ""
+        }
+      ],
+      "site": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Sachin, Surat – 394230, Gujarat, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "CTX Lifesciences Pvt. Ltd. acknowledges that responsible procurement is essential for fostering sustainable business growth and managing environmental, social, and ethical risks throughout the supply chain. Through this Sustainable Procurement Policy, the Company commits to embedding environmental responsibility, social accountability, and ethical practices into all purchasing decisions and supplier engagements. The policy aims to ensure transparency, regulatory compliance, efficient resource use, and responsible sourcing, while encouraging suppliers to adopt practices that align with CTX Lifesciences’ sustainability values and long-term environmental and social objectives.",
+      "declaration": "CTX Lifesciences Pvt. Ltd. is committed to responsible and sustainable procurement, ensuring environmental, social, and ethical standards are upheld across the supply chain. All suppliers and partners are expected to comply with applicable laws and the Company’s sustainability requirements. Through collaboration and monitoring, we aim to promote ethical sourcing, reduce risks, and strengthen supply chain sustainability.",
+      "scope": "This policy applies to all procurement activities undertaken by CTX Lifesciences and encompasses every stage of the sourcing process. It is relevant to all departments involved in procurement, including the acquisition of raw materials, goods, and services that support our operations. The policy covers all direct and indirect suppliers, contractors, and service providers, and extends to activities such as supplier evaluation, onboarding, performance monitoring, and long-term partnership development."
+    },
+    "focusAreas": [
+      "Environmentally Responsible Sourcing: Prefer eco-friendly, recycled, and low-carbon materials and suppliers.",
+      "Supplier Social Responsibility: Work with suppliers who ensure fair labor, safe workplaces, and respect human rights.",
+      "Ethical Supplier Practices: Engage only with suppliers who follow legal, ethical, and anti-corruption standards.",
+      "Local and Inclusive Sourcing: Promote local, regional, and diverse suppliers to support communities and reduce transport impact.",
+      "Capacity Building & Training: Provide ESG training to suppliers and procurement teams to improve sustainability performance."
+    ],
+    "qualitative": {
+      "Environmentally Responsible sourcing": [
+        "Partner with suppliers who implement recognized environmental management systems (e.g., ISO 14001) and demonstrate measurable improvements in resource efficiency, emissions, and waste reduction.",
+        "Encourage suppliers to report product life-cycle impacts and adopt circular economy practices.",
+        "Prioritize sourcing materials with low carbon footprints, high recycled content, or certified sustainability standards."
+      ],
+      "Supplier Social Responsibility": [
+        "Ensure suppliers adhere to anti-child labor, anti-forced labor, and human rights principles.",
+        "Collaborate with suppliers that promote workforce development, inclusion, diversity, and employee well-being.",
+        "Implement supplier self-assessments, audits, and remediation programs to monitor social responsibility performance and drive continuous improvement."
+      ],
+      "Ethical Supplier Practices": [
+        "Ensure suppliers comply with all applicable laws, regulations, and anti-bribery & anti-corruption standards.",
+        "Encourage transparency, accountability & integrity in supplier business operations.",
+        "Promote a culture of ethical behavior and responsible decision-making among all supply chain partners."
+      ],
+      "Local and Inclusive Sourcing": [
+        "Ensure procurement decisions maintain high standards of ethics, transparency, and regulatory compliance.",
+        "Support supplier diversity by including local and diverse vendors in the supply base.",
+        "Develop long-term partnerships with suppliers demonstrating social and environmental responsibility."
+      ],
+      "Capacity Building and Training": [
+        "Enhance ESG knowledge and skills among suppliers and procurement teams through structured training programs.",
+        "Encourage proactive risk management and responsible decision-making in procurement and supplier operations.",
+        "Support ongoing improvement in supplier ESG performance through guidance, collaboration, and follow-up."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible Sourcing",
+        "targets": [
+          {
+            "target": "Integrate ESG and environmental criteria into 100% of supplier onboarding, supplier code of conduct and sourcing decisions by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase procurement from suppliers with recognized ISO certifications, public ESG disclosures, or verified sustainability commitments by 50% by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 75% of purchased materials are from low-carbon, recycled, or sustainably certified sources by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility",
+        "targets": [
+          {
+            "target": "Assess 100% of suppliers for social compliance covering labor rights, health & safety, and human rights by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure that 10% of suppliers implement one worker welfare or social improvement initiative by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Engage 100% of suppliers in awareness programs on responsible labor practices and human rights by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers sign and comply with the CTX Supplier Code of Conduct by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% participation of procurement and supplier management employees in annual ethics and compliance training.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Implement a supplier whistleblower mechanism with 100% of suppliers informed of the process by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Local and Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase procurement spend with local, MSME, and diverse suppliers to 25% of total spend by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Target 5% growth in engagement with women-owned suppliers by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Capacity Building &Training",
+        "targets": [
+          {
+            "target": "Provide ESG capacity-building training to 100% of suppliers by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct two supplier capacity-building or collaboration initiatives per year focused on ESG improvement areas.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Corporate Responsibility Committee",
+        "duty": "Provides strategic oversight, approves the policy and targets, and reviews overall ESG performance and risks."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "Integrates ESG criteria into sourcing and contracts and ensures suppliers comply with the Supplier Code of Conduct."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Defines ESG standards, supports implementation, and monitors and reports performance."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Comply with the Supplier Code of Conduct and participate in assessments and improvement actions."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Delivers ESG and ethics training and supports diversity, equity, and inclusion initiatives."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow the policy and report any suspected violations or risks."
+      }
+    ],
+    "monitoring": "CTX Lifesciences Pvt. Ltd. regularly monitors its sustainable procurement performance across key areas such as ethical sourcing, supplier environmental and social compliance, health and safety standards, and regulatory adherence. Defined Key Performance Indicators (KPIs) are tracked through internal procurement and supplier management systems to assess progress against sustainability expectations. Performance is reviewed quarterly and consolidated for senior management to support responsible sourcing and risk-based decision-making. Annual evaluations identify achievements, gaps, and improvement actions, while relevant outcomes are shared with stakeholders to ensure transparency and accountability. All monitoring and reporting activities align with applicable laws, recognized sustainability frameworks, and industry best practices to ensure accuracy, consistency, and credibility.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed annually by the Procurement Officer to ensure its continued relevance, effectiveness, and alignment with evolving regulations, industry best practices, and business objectives. The review will be conducted in coordination with the Procurement and Sustainability Teams and relevant department heads. Supplier compliance will be monitored through regular audits, sustainability scorecards, and feedback mechanisms. Any significant revisions or enhancements to the policy will require senior management approval and will be communicated to all relevant stakeholders across the supply chain."
+  },
+  "sourcePath": "Hetvi- Policies\\CTX\\4. Sustainable Procurement Policy.docx",
+  "sourceTextLength": 10673,
+  "parsedAt": "2026-08-12T06:33:02.519Z"
+}

@@ -1,0 +1,276 @@
+{
+  "id": "sustainable-procurement-anthea-group",
+  "name": "Anthea Group",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from Sustainable Supply Chain Framework.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Anthea Group",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Unit I",
+          "address": "Plot Nos. 49, 50 & 51 A, MIDC Dhatav, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+          "primaryFunction": "Manufacturing of specialty aroma chemicals"
+        },
+        {
+          "location": "Unit II",
+          "address": "Plot No. 51 A/1, Roha Industrial Area, Village Roth Budruk, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+          "primaryFunction": "Manufacturing of specialty aroma chemicals"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "To support and align with the sustainability vision, responsible sourcing commitments, and strategic objectives of the Anthea Group, DRT-Anthea Aroma Chemicals Pvt. Ltd. has established this Sustainable Supply Chain Framework as a comprehensive approach for managing environmental, social, ethical, and governance considerations throughout its supply chain. The Framework promotes responsible procurement, supplier engagement, ethical sourcing, environmental stewardship, human rights, labour standards, and compliance with applicable laws and internationally recognized standards.\n\nTo facilitate the effective implementation of this Framework, the Company has also developed an internal Sustainable Supply Chain Roadmap, which translates the Group's responsible sourcing priorities into site-specific objectives, targets, action plans, and performance monitoring mechanisms. This Roadmap supports the continuous enhancement of supplier sustainability performance, responsible procurement practices, supply chain resilience, risk management, and collaborative value creation, while reinforcing the Company's commitment to responsible and sustainable business operations.\n\nDRT-Anthea Aroma Chemicals Pvt. Ltd. recognizes that sustainable procurement is a key driver of responsible business growth and long-term value creation. As a manufacturer of specialty aroma chemicals, the Company is committed to integrating environmental, social, ethical, and governance (ESG) considerations into its procurement processes to ensure that goods, materials, and services are sourced in a responsible, transparent, and sustainable manner.\n\nThis Sustainable Supply Chain Framework establishes the Company's commitment to working collaboratively with suppliers, contractors, and service providers who share its values of environmental stewardship, ethical business conduct, respect for human rights, and regulatory compliance. Through responsible sourcing practices, supplier engagement, risk-based assessments, and continual improvement, DRT-Anthea Aroma Chemicals Pvt. Ltd. aims to strengthen the sustainability and resilience of its supply chain while creating positive value for its customers, employees, business partners, and the communities in which it operates.",
+      "declaration": "The objective of this Sustainable Supply Chain Framework is to establish a framework for integrating environmental, social, ethical, and governance (ESG) principles into the procurement activities of DRT-Anthea Aroma Chemicals Pvt. Ltd. and to promote responsible sourcing practices across its supply chain.\n\nThis policy aims to:\n\nEnsure that procurement decisions consider environmental, social, ethical, quality, and business continuity aspects in addition to cost and performance.\n\nPromote responsible sourcing by engaging suppliers who demonstrate compliance with applicable legal, regulatory, environmental, labour, human rights, and ethical requirements.\n\nEncourage suppliers to adopt sustainable environmental practices, including efficient resource utilization, pollution prevention, waste reduction, climate action, and responsible chemical management.\n\nFoster fair labour practices, respect for human rights, occupational health and safety, diversity, equity, and inclusion throughout the supply chain.\n\nPromote ethical business conduct by preventing bribery, corruption, conflicts of interest, fraud, and other unethical practices within procurement activities.\n\nStrengthen supplier sustainability performance through risk-based assessments, supplier evaluations, audits, corrective action plans, and continuous engagement.\n\nBuild long-term partnerships with suppliers that support innovation, transparency, resilience, and continual improvement in sustainability performance.\n\nContribute to the Company's sustainability objectives while creating long-term value for customers, employees, suppliers, and other stakeholders.",
+      "scope": "This Sustainable Supply Chain Framework applies to all procurement activities of DRT-Anthea Aroma Chemicals Pvt. Ltd. and is applicable to all employees involved in purchasing and sourcing decisions, as well as suppliers, contractors, service providers, consultants, logistics partners, and other business associates engaged by the Company.\n\nThe scope of this policy covers all operational locations of the Company, including:\n\nUnit I: Plot Nos. 49, 50 & 51 A, MIDC Dhatav, Roha, Dist. Raigad – 402116, Maharashtra, India.\n\nUnit II: Plot No. 51 A/1, Roha Industrial Area, Village Roth Budruk, Roha, Dist. Raigad – 402116, Maharashtra, India.\n\nThe policy establishes the minimum sustainability expectations for suppliers by promoting responsible environmental practices, ethical business conduct, respect for human rights and labour standards, regulatory compliance, and continual improvement. DRT-Anthea Aroma Chemicals Pvt. Ltd. encourages its suppliers and business partners to align with the principles outlined in this policy and work collaboratively towards building a responsible, transparent, and sustainable supply chain."
+    },
+    "focusAreas": [
+      "Sustainable Procurement and Responsible Sourcing",
+      "Supplier Environmental Practices",
+      "Supplier Social Practices",
+      "Supplier Ethics and Governance",
+      "Supplier Performance, Risk Management and Continuous Improvement"
+    ],
+    "qualitative": {
+      "Sustainable Procurement and Responsible Sourcing": [
+        "Promote sustainable procurement practices by integrating environmental, social, ethical, quality, risk, and business continuity considerations into supplier selection, evaluation, and purchasing decisions."
+      ],
+      "Supplier Environmental Practices": [
+        "Encourage suppliers to adopt environmentally responsible practices, including efficient resource utilization, climate change mitigation, pollution prevention, water conservation, responsible chemical management, waste minimization, and compliance with applicable environmental laws and standards.",
+        "Encourage suppliers to comply with applicable environmental laws and regulations",
+        "Promote the adoption of environmental management systems",
+        "Encourage suppliers to improve energy efficiency, reduce GHG emissions, and conserve natural resources",
+        "Strengthen the environmental knowledge and competencies of the procurement team to integrate sustainability into supplier selection and engagement",
+        "Increase procurement from local suppliers to reduce transportation-related greenhouse gas emissions and support regional economic development",
+        "Drive continual improvement in supplier environmental performance"
+      ],
+      "Supplier Social Practices": [
+        "Promote respect for human rights, fair labour practices, occupational health and safety, diversity, equity and inclusion, employee welfare, and compliance with applicable labour laws throughout the supply chain.",
+        "Integrate occupational health and safety criteria into supplier selection and evaluation",
+        "Promote respect for internationally recognized human rights across the supply chain",
+        "Encourage fair labour practices and prohibit child labour, forced labour and discrimination",
+        "Encourage suppliers to provide safe and healthy workplaces",
+        "Strengthen the procurement team's understanding of social sustainability and responsible sourcing practices",
+        "Promote procurement from local and socially responsible suppliers while integrating occupational health and safety criteria into supplier selection"
+      ],
+      "Supplier Ethics and Governance": [
+        "Promote ethical business conduct by encouraging suppliers to maintain high standards of integrity, transparency, anti-bribery and anti-corruption practices, conflict of interest management, regulatory compliance, data confidentiality, and responsible corporate governance.",
+        "Ensure suppliers understand and commit to the Company's sustainability, ethical, and compliance expectations",
+        "Integrate environmental, social, and governance (ESG) requirements into supplier agreements",
+        "Aim to tarin our procurement employees on governance issues associated with procurement"
+      ],
+      "Supplier Performance, Risk Management and Continuous Improvement": [
+        "Strengthen supply chain resilience by conducting supplier sustainability assessments, monitoring supplier performance, managing procurement-related risks, implementing corrective action plans where necessary, and fostering collaboration for continual improvement in sustainability performance.",
+        "Strengthen sustainability due diligence across the supply chain",
+        "Strengthen governance through risk-based supplier management"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Assess 100% of strategic suppliers for environmental compliance by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Have 15-% of strategic suppliers to implement or maintain an Environmental Management System (e.g., ISO 14001) by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Engage 30% of strategic suppliers on climate and resource efficiency initiatives by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide annual environmental sustainability training to 100% of procurement employees by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase procurement spend from local suppliers by 20% by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct annual sustainability performance reviews for strategic suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social and Labour Practices",
+        "targets": [
+          {
+            "target": "Increase the proportion of strategic suppliers with ISO 45001 or equivalent Occupational Health & Safety certification to 30% by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Assess 100% of strategic suppliers against the Company's human rights expectations by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Obtain acknowledgement of the Supplier Code of Conduct from 100% of new strategic suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          },
+          {
+            "target": "Evaluate occupational health and safety practices of high-risk suppliers by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide annual social sustainability training to 100% of procurement employees by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase procurement spend from local suppliers by 20%",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Procurement Goals",
+        "targets": [
+          {
+            "target": "Include sustainability criteria in 100% of strategic sourcing decisions by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct sustainability assessments for 100% of strategic suppliers by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase procurement from compliant local suppliers, where technically and commercially feasible, by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Obtain acceptance of the Supplier Code of Conduct from 100% of strategic suppliers by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Include ESG clauses in 70% of strategic supplier contracts by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Governance Goals",
+        "targets": [
+          {
+            "target": "Conduct sustainability risk assessments for 100% of high-risk suppliers annually",
+            "baseline": "FY 2023-24",
+            "deadline": "Annually"
+          },
+          {
+            "target": "100% on employee  trained on the governance issues associated with procurement",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Management",
+        "duty": "Provide strategic direction and approve the Green Procurement Policy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Allocate adequate resources for effective implementation."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Review procurement sustainability performance and support continual improvement initiatives."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Implement the Sustainable Supply Chain Frameworkin all sourcing and purchasing activities."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Integrate environmental, social, labour, ethical, and governance (ESG) criteria into supplier selection, evaluation, and contract management."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Conduct supplier sustainability assessments and maintain procurement records."
+      },
+      {
+        "role": "EHS (Environment, Health & Safety) Department",
+        "duty": "Support the evaluation of suppliers on environmental performance and regulatory compliance."
+      },
+      {
+        "role": "EHS (Environment, Health & Safety) Department",
+        "duty": "Provide technical guidance on environmental sustainability requirements and participate in supplier audits where applicable."
+      },
+      {
+        "role": "Quality Assurance Department",
+        "duty": "Verify that procured materials and services meet applicable quality, regulatory, and customer requirements."
+      },
+      {
+        "role": "Quality Assurance Department",
+        "duty": "Support supplier qualification, performance monitoring, and continuous improvement activities."
+      },
+      {
+        "role": "Employees Involved in Procurement",
+        "duty": "Comply with this policy and applicable procurement procedures."
+      },
+      {
+        "role": "Employees Involved in Procurement",
+        "duty": "Conduct procurement activities ethically, transparently, and responsibly."
+      },
+      {
+        "role": "Employees Involved in Procurement",
+        "duty": "Report any non-compliance, unethical practices, or sustainability concerns related to suppliers."
+      },
+      {
+        "role": "Suppliers, Contractors & Service Providers",
+        "duty": "Comply with applicable legal, environmental, labour, health & safety, and ethical requirements."
+      },
+      {
+        "role": "Suppliers, Contractors & Service Providers",
+        "duty": "Support the Company's sustainability expectations and participate in assessments, audits, and continual improvement initiatives where applicable."
+      }
+    ],
+    "monitoring": "DRT-Anthea Aroma Chemicals Pvt. Ltd. shall establish and maintain a systematic process for monitoring and reporting the implementation and effectiveness of this Green Procurement Policy. Reporting shall include supplier sustainability assessments, supplier environmental and social performance, procurement-related ESG indicators, supplier audits, corrective action plans, training activities, and compliance with applicable legal, regulatory, and Company requirements.\n\nThe Procurement Department, in coordination with relevant functions, shall periodically review supplier sustainability performance and report progress against the Company's sustainable procurement objectives and targets to the Management. Relevant records and documentation shall be maintained to support internal audits, customer requirements, management reviews, regulatory compliance, and continual improvement of the sustainable procurement program.",
+    "reviewMechanism": "This Sustainable Supply Chain Framework shall be reviewed at least once every year, or earlier if required due to changes in applicable laws and regulations, business operations, supply chain risks, stakeholder expectations, or the Company's sustainability objectives. The review shall ensure that the policy remains relevant, effective, and aligned with the Company's sustainable procurement commitments and business strategy.\n\nThe review shall be coordinated by the Procurement Department, in consultation with relevant functions, and approved by the Management. Any revisions to the policy shall be communicated to all relevant employees, suppliers, contractors, and other applicable stakeholders to support effective implementation and continual improvement of the Company's sustainable procurement practices."
+  },
+  "sourcePath": "KUSH\\Anthea Group\\Sustainable Supply Chain Framework.docx",
+  "sourceTextLength": 19414,
+  "parsedAt": "2026-08-12T06:28:34.793Z"
+}

@@ -1,0 +1,332 @@
+{
+  "id": "sustainable-procurement-prestige-promotion",
+  "name": "Prestige Promotion",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from Sustainable_Procurement_Policy_v2.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Prestige Promotion Verkaufsförderung & Werbeservice GmbH",
+      "address": "Borsigstraße 2, D-63755 Alzenau | www.prestige-promotion-web.de",
+      "sites": [
+        {
+          "location": "Prestige Promotion – Headquarters & Procurement",
+          "address": "Borsigstraße 2, D-63755 Alzenau",
+          "primaryFunction": "Headquarters & Procurement"
+        }
+      ],
+      "site": "Borsigstraße 2, D-63755 Alzenau | www.prestige-promotion-web.de"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "This Sustainable Procurement Policy sets out the binding commitments, requirements and processes of Prestige Promotion Verkaufsförderung & Werbeservice GmbH (\"Prestige Promotion\") with respect to the responsible and sustainable selection, qualification, management and development of its suppliers and business partners.\n\nAs a specialist in pharmaceutical co-packaging, repackaging, contract packaging and storage of pharmaceuticals and medical devices, Prestige Promotion recognises that its supply chain has a material impact on environmental, social and ethical outcomes. This policy gives concrete expression to the company's Sustainability Code of Conduct for Suppliers & Customers and translates those commitments into a systematic procurement management framework covering two primary dimensions: Supplier Environmental Practices and Supplier Social Practices.\n\nThis policy complements and is read together with the company's QHSE Environmental Policy (POL-ENV-001), QHSE Ethics Policy (POL-ETH-001), and Labour and Human Rights Policy (POL-LHR-001).",
+      "declaration": "Integrating environmental and social sustainability criteria as mandatory evaluation factors in all supplier selection and qualification processes, alongside quality, price and delivery performance\n\nCommunicating the Sustainability Code of Conduct for Suppliers & Customers to all direct suppliers and requiring their written acknowledgement as a condition of business\n\nConducting systematic risk assessments of the supply chain with regard to environmental and human rights risks, in compliance with the LkSG and aligned with international due diligence frameworks\n\nAllocating the resources — personnel, tools, and training — necessary to implement and continuously improve the sustainable procurement programme\n\nProviding transparent communication of sustainability requirements to all suppliers and providing access to guidance, tools and support to facilitate compliance\n\nReviewing and updating this policy at least annually, incorporating changes in law (LkSG, EU Taxonomy), and operational experience\n\nApplying appropriate corrective measures — up to and including termination of the business relationship — in the event of material supplier non-compliance with sustainability requirements",
+      "scope": "All procurement and purchasing activities of Prestige Promotion, including raw materials, packaging components, indirect supplies, services and logistics\n\nAll employees involved in supplier selection, evaluation, contracting or management — in particular the Purchasing / Procurement function, Quality Assurance, and Management\n\nAll direct and indirect suppliers, subcontractors, service providers and business partners of Prestige Promotion, to the extent contractually agreed\n\nThe entire supply chain relevant to Prestige Promotion's operations, including sub-tier suppliers where material sustainability risks are identified"
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Supplier Social Practices"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "Prestige Promotion is committed to working exclusively with suppliers that demonstrate responsible management of their environmental impacts. We expect all suppliers to comply with applicable environmental laws as a minimum baseline and to work towards continuous improvement of their environmental performance in alignment with the requirements set out in our Sustainability Code of Conduct. Environmental performance is a material criterion in supplier selection, evaluation and continued business.",
+        "The environmental requirements below apply to all direct suppliers. These requirements are aligned with the company's own ISO 14001-certified environmental management system.",
+        "Identify and monitor their greenhouse gas emissions across Scope 1 (direct), Scope 2 (purchased energy) and, where material, Scope 3 (value chain) emission sources in accordance with the GHG Protocol or an equivalent recognised methodology",
+        "Set and work towards quantitative targets for the reduction of GHG emissions; key suppliers are expected to disclose their emission reduction targets and progress annually",
+        "Monitor, document and optimise the energy efficiency of their production, logistics and facility operations, and actively seek economically viable solutions for reducing energy consumption",
+        "Prefer renewable energy sources for their electricity and heat demand where technically and economically feasible, and disclose the renewable energy share in their energy mix",
+        "Apply a systematic approach to identify, quantify, reduce and responsibly dispose of or recycle all solid waste streams — prioritising prevention and reduction at source over disposal",
+        "Manage hazardous waste in compliance with applicable regulations, including the Basel Convention (prohibition on export of hazardous waste) and national waste legislation; hazardous waste must be properly characterised, segregated, labelled, stored and handed to licensed disposal contractors",
+        "Identify and manage all chemicals and hazardous substances safely during handling, transportation, storage, use, recycling and disposal; Mercury must comply with the Minamata Convention; persistent organic pollutants must comply with the Stockholm Convention",
+        "Provide data on total waste generated, recycling rate and hazardous waste volume upon request as part of the annual sustainability review",
+        "Actively pursue circular economy principles — including the use of recycled materials, design for recyclability, and reduction of single-use materials",
+        "Monitor and document water consumption from all sources (municipal supply, groundwater, surface water); track and report water withdrawal and discharge volumes",
+        "Implement measures to reduce water consumption and prevent wastewater generation at source",
+        "Characterise, monitor and treat all industrial and process wastewater before discharge or disposal in compliance with applicable regulatory standards; no untreated wastewater may be discharged into the environment",
+        "Protect water quality and availability for local communities — suppliers must not deprive persons of access to clean drinking water or sanitary facilities through their operations",
+        "Continuously reduce the use and consumption of raw materials, energy, water and other natural resources through process optimisation, material substitution, and waste minimisation",
+        "Monitor and document consumption of key raw materials and natural resources, and set reduction targets where material consumption is significant"
+      ],
+      "Supplier Social Practices": [
+        "Prestige Promotion is committed to working exclusively with suppliers that respect human rights, provide fair and safe working conditions, and uphold the dignity of all people in their operations and supply chains. These requirements reflect the company's obligations under the German Supply Chain Due Diligence Act (LkSG), the UN Guiding Principles on Business and Human Rights, and the ILO Core Conventions, and give concrete expression to the social responsibility requirements of the Prestige Promotion Sustainability Code of Conduct.",
+        "Non-compliance with the social requirements below is considered a material supplier non-conformity and may result in escalation, enhanced corrective action requirements, or termination of the business relationship.",
+        "No supplier may use child labour at any stage of production, processing, assembly or service delivery; this prohibition applies without exception, regardless of local custom or practice",
+        "The minimum employment age must be the age at which compulsory schooling ends under the law of the place of employment and in any case not below 18 years of age, in accordance with ILO Convention No. 138; in countries where the minimum age for hazardous work is higher, that higher age applies",
+        "Suppliers must verify the age of all workers — including temporary, seasonal and agency workers — before employment commences, and must document the verification process",
+        "All work must be voluntary — employees must be free to leave their employment with reasonable notice and must not be subject to debt bondage, indentured labour, or any form of coercion that restricts their freedom to terminate employment",
+        "Suppliers must not retain workers' identity documents or personal property; no recruitment fees or deposits may be charged to workers that create a binding financial dependency",
+        "No supplier may use psychological coercion, physical threats, sexual harassment or humiliation, or any other form of improper treatment that undermines the dignity or autonomy of workers",
+        "Suppliers must implement and maintain an occupational health and safety management system covering identification and prevention of workplace hazards, provision of appropriate PPE, emergency preparedness, and incident reporting",
+        "Appropriate precautionary measures must be taken against accidents and health hazards — including physical, chemical, biological, ergonomic and psychosocial hazards; excessive physical or mental fatigue must be prevented",
+        "All workers must have access to adequate drinking water and clean sanitary facilities at all times; workplace facilities must meet applicable health and hygiene standards",
+        "Employees must be regularly trained on health and safety standards, risks relevant to their work, and safe working procedures; training records must be maintained",
+        "Suppliers must report any work-related fatalities, serious injuries or significant occupational health incidents to Prestige Promotion without delay",
+        "Any form of discrimination in employment — including recruitment, remuneration, training, promotion, and termination — on the grounds of gender, nationality, ethnic origin, skin colour, disability, health status, pregnancy, age, religion, political conviction, sexual identity or any other protected characteristic is prohibited",
+        "The personal dignity, privacy and personal rights of every worker must be respected; psychological, physical or sexual harassment or humiliation of any kind is prohibited",
+        "Suppliers must implement a documented procedure for reporting and handling complaints of discrimination or harassment, ensuring workers can raise concerns without fear of retaliation"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "GHG data requested from all key suppliers; ≥ 50% responding",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 80% of key suppliers providing Scope 1+2 data",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Renewable energy requirement communicated in supplier questionnaire; ≥ 30% of key suppliers disclosing current renewable energy share",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 50% of key suppliers with a documented renewable / green energy target or plan; trend of increasing renewable share tracked annually",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Sustainable materials requirement included in supplier questionnaire; ≥ 25% of key suppliers reporting current use of recycled or bio-based materials",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 45% of key suppliers with documented commitment to sustainable material adoption; progress reviewed annually",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Waste data requested in supplier questionnaire; ≥ 40% of key suppliers disclosing waste volumes and recycling rates",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 60% of key suppliers with documented waste reduction target or achieving recycling rate ≥ 50%; zero hazardous waste non-conformities",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Water monitoring requirement communicated; ≥ 30% of key suppliers in water-relevant sectors disclosing water withdrawal data",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 50% of relevant key suppliers with documented water monitoring system and reduction target; zero incidents of unlawful wastewater discharge reported",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Chemical compliance requirement included in supplier questionnaire and contracts; ≥ 60% of key suppliers with confirmed compliance declaration",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 90% of key suppliers with signed chemical compliance declaration; zero confirmed violations involving restricted substances",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Carbon reduction target requirement communicated; ≥ 10% of key suppliers disclosing a quantitative GHG reduction target",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 15% of key suppliers with a validated quantitative GHG reduction target; progress towards target reviewed annually",
+            "baseline": "",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "100% of key suppliers screened; ≥ 70% of all direct suppliers",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of all direct suppliers screened annually",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "100% of key suppliers; ≥ 70% of all direct suppliers",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of all direct suppliers with completed self-assessment",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "Zero confirmed incidents; all concerns investigated and documented",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "Zero confirmed incidents; remediation plan within 30 days of any finding",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "100% of key suppliers confirmed to have operational grievance mechanism",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of all direct suppliers confirmed; evidence documented",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "All non-conformities with documented CAPA and agreed timeline",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 90% resolved within agreed timeframe; escalation for unresolved",
+            "baseline": "",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "General Targets — Supplier Sustainability Programme",
+        "targets": [
+          {
+            "target": "≥ 80% of active direct suppliers",
+            "baseline": "Base year: 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of active direct suppliers",
+            "baseline": "Base year: 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "≥ 60% of direct suppliers briefed (in-person, webinar, or written)",
+            "baseline": "Base year: 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 90% of direct suppliers with documented ESG briefing",
+            "baseline": "Base year: 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "≥ 70% of key suppliers with verified regulatory environmental compliance",
+            "baseline": "Base year: 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 90% of all direct suppliers with verified environmental regulatory compliance",
+            "baseline": "Base year: 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "≥ 70% of key suppliers with verified labour law compliance",
+            "baseline": "Base year: 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 90% of all direct suppliers with verified labour / human rights compliance",
+            "baseline": "Base year: 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "≥ 10% of direct suppliers audited (priority: key / high-risk)",
+            "baseline": "Base year: 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 25% of direct suppliers audited; all key suppliers on rotation",
+            "baseline": "Base year: 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "≥ 70% of key suppliers with completed self-assessment",
+            "baseline": "Base year: 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of key suppliers; ≥ 80% of all direct suppliers",
+            "baseline": "Base year: 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "≥ 50% of key suppliers providing GHG data",
+            "baseline": "Base year: 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 80% of key suppliers; Scope 3 data requested for highest-impact suppliers",
+            "baseline": "Base year: 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "≥ 20% of key suppliers with at least one recognised sustainability certification",
+            "baseline": "Base year: 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 40% of key suppliers certified; non-certified suppliers with documented improvement plan",
+            "baseline": "Base year: 2025.",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Approval and annual review of policy; integration into corporate strategy; escalation decisions; management review"
+      },
+      {
+        "role": "Purchasing / Procurement",
+        "duty": "Day-to-day implementation of sustainable procurement requirements; supplier qualification; questionnaire management; Code of Conduct distribution and collection; corrective action monitoring"
+      },
+      {
+        "role": "Quality Management Officer (QMO)",
+        "duty": "Integration with QMS; supplier audit coordination; document control; LkSG documentation and annual report"
+      },
+      {
+        "role": "HSE / Environmental Officer",
+        "duty": "Input to environmental supplier requirements; assessment of environmental audit findings; alignment with POL-ENV-001"
+      },
+      {
+        "role": "HR / Compliance",
+        "duty": "Input to social practice requirements; LkSG human rights risk assessment; alignment with POL-LHR-001 and POL-ETH-001"
+      },
+      {
+        "role": "All Employees (procurement-facing)",
+        "duty": "Compliance with this policy in all supplier interactions; reporting of sustainability concerns; participation in training"
+      }
+    ],
+    "monitoring": "The following overarching quantitative targets govern the sustainable procurement programme as a whole. They provide a consolidated, programme-level view of ambition across all supplier sustainability dimensions and are monitored annually by the Purchasing function and Quality Management Officer, reviewed in the management review.\n\nBase year: 2025.",
+    "reviewMechanism": "Review for currency and compliance with changes in law (LkSG, EU Taxonomy, CSRD\n\nAnnual update of programme-level targets against actual performance; new targets set for following year\n\nSemi-annual review of quantitative environmental and social targets by Purchasing / QMO\n\nIntegration of supplier sustainability performance data into annual QM management review (QMH Chapter 5.7)\n\nAnnual supply chain risk report documenting due diligence activities, findings and remediation measures\n\nIn the event of supplier incidents, new legislation, or significant supply chain changes"
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Prestige Promotion\\Sustainable_Procurement_Policy_v2.docx",
+  "sourceTextLength": 27550,
+  "parsedAt": "2026-08-12T06:31:45.213Z"
+}

@@ -1,0 +1,464 @@
+{
+  "id": "ethics-pispl",
+  "name": "PISPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from 4. Ethical Business Practices Policy_GRW 08-05.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "PISPL",
+      "industry": "",
+      "site": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "BOM 2",
+          "address": "BOM 2 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 10, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 3",
+          "address": "BOM 3 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 6, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 4",
+          "address": "BOM 4 LC, Parekh Integrated Services Pvt. Ltd., Warehouse 7B, BGR Logistics Park, Village:-Vahuli, Padgha, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "CCU 1",
+          "address": "CCU 1 LC, Parekh Integrated Services Pvt. Ltd., Co. Mayur Ply Pvt. Ltd., Serampore, NH-2, Old Delhi Road, Belumlki, Sheoraphuli, Hooghly- 712223, West Bengal. Land mark: Belumore, Opp Royal Hotel.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "DEL 1",
+          "address": "DEL 1 LC, Parekh Integrated Services Pvt. Ltd., Village Bhangrola, Sector M 12, Manesar, Dist: Gurugram, Haryana 122505",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 2",
+          "address": "MAA 2 LC, Parekh Integrated Services Pvt. Ltd., A-07 Block, M/s RAR Retail and Infra LLP, Chinnambedu Village, Ponneri Taluk, Thiruvallur District, Tamil Nadu 601206",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 3",
+          "address": "MAA 3 LC, Parekh E-Com and Warehousing Services Pvt. Ltd., 117/3C and 3D, Padmavathi Garden, Numbal, Thiruverkadu P.O., Chennai, Tiruvallur, Tamil Nadu 600071",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BLR 2",
+          "address": "BLR 2, Parekh Integrated Services Pvt. Ltd., C/o Siemens Healthineers, Survey No. - 121/1, 121/2, Dandupalya Village, Kasaba Hobli, Hoskote - Kadapa Highway, Hoskote Taluk, Bangalore-562114",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "TVM 1",
+          "address": "TVM 1 LC, Parekh Integrated Services Pvt. Ltd., Rajadhani Warehouse, Behind Popular Tata Motors, Pallichal P.O, Trivandrum, Kerala 695020",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "South Stock Points",
+          "address": "Bengaluru, Chennai, Cochin, Coimbatore, Hubli, Hyderabad, Madurai, Mangalore, Trichy, Trivandrum, Vellore, Vijayawada",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "West Stock Points",
+          "address": "Ahmedabad, Aurangabad, Baroda, Goa, Nagpur, Pune, Rajkot, Surat",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "East Stock Points",
+          "address": "Chandrasekharpur, Guwahati, Indore, Jabalpur, Kolkata, Patna, Raipur, Ranchi",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "North Stock Points",
+          "address": "Chandigarh, Dehradun, Dharuhera, Jaipur, Jalandhar, Jodhpur, Karnal, Lucknow, Ludhiana, Srinagar",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Parekh Integrated Services Pvt. Ltd. (PISPL) is committed to conducting its business with integrity, transparency, and the highest standards of ethical governance. The Company recognizes that strong ethical practices are fundamental to maintaining trust with stakeholders, including employees, customers, suppliers, and shareholders.\n\nPISPL strives to ensure that all business activities are carried out in compliance with applicable laws, regulations, and internal policies, while fostering a culture of accountability and responsible decision-making. This policy establishes the framework for ethical conduct across the organization and reinforces PISPL’s commitment to preventing unethical practices, including fraud, corruption, conflicts of interest, and financial misconduct.",
+      "declaration": "The purpose of this policy is to ensure that all business activities are conducted in accordance with applicable laws and the highest standards of ethical conduct.\n\nIt aims to promote transparency, prevent unauthorized or unfair practices, and strengthen internal controls across all operations. The policy also supports ethical handling of conflicts of interest, accurate record-keeping, and prevention of fraud and financial misconduct.",
+      "scope": "This policy applies to all PISPL operations, including warehouses, transportation, and office locations across all national and international locations. It covers all permanent, temporary, and contract employees across all functions, as well as all internal and external stakeholders associated with the PISPL Group, whether directly or indirectly."
+    },
+    "focusAreas": [
+      "Ethical Conduct & Compliance",
+      "Conflict of Interest",
+      "Transparency & Record Keeping",
+      "Prevention of Fraud & Unauthorized Transactions",
+      "Financial Controls & Payment Practices",
+      "Customer Due Diligence (CDD) & KYC",
+      "Anti-Money Laundering (AML)",
+      "Confidentiality",
+      "Anti-Corruption & Anti-Bribery",
+      "Fraud Prevention & Control",
+      "Conflict of Interest Management",
+      "Prevention of Money Laundering",
+      "Cybersecurity & Information Protection",
+      "Whistleblowing & Ethical Reporting"
+    ],
+    "qualitative": {
+      "Ethical Conduct & Compliance": [
+        "Employees shall conduct business with honesty, integrity, and in compliance with applicable laws and company policies."
+      ],
+      "Conflict of Interest": [
+        "Employees shall avoid and disclose any situations involving actual or potential conflicts of interest."
+      ],
+      "Transparency & Record Keeping": [
+        "All transactions shall be properly authorized, recorded, and documented to ensure accuracy and transparency."
+      ],
+      "Prevention of Fraud & Unauthorized Transactions": [
+        "No employee shall undertake unauthorized or personal transactions in the name of the Company. Any irregularities shall be reported."
+      ],
+      "Financial Controls & Payment Practices": [
+        "Payments shall be made through approved channels with proper documentation. Cash transactions shall be avoided where possible."
+      ],
+      "Customer Due Diligence (CDD) & KYC": [
+        "Appropriate procedures shall be followed to verify customer identity and ensure legitimacy of transactions."
+      ],
+      "Anti-Money Laundering (AML)": [
+        "Measures shall be implemented to prevent money laundering, including periodic risk assessments and monitoring."
+      ],
+      "Confidentiality": [
+        "Employees shall safeguard confidential information and shall not disclose company data without authorization."
+      ],
+      "Anti-Corruption & Anti-Bribery": [
+        "We commit to maintaining a strict zero-tolerance approach towards corruption, including bribery, embezzlement, fraud, extortion, and nepotism.",
+        "We commit to complying with all applicable anti-corruption laws including the Prevention of Corruption Act, 1988 and the Companies Act, 2013.",
+        "We will ensure that all employees, contractors, suppliers, and business partners adhere to the highest ethical standards and act with integrity.",
+        "We will ensure that employees do not use their authority for personal gain for themselves, their family, or associates.",
+        "We aim to strengthen ethical decision-making and accountability across all business interactions."
+      ],
+      "Fraud Prevention & Control": [
+        "We commit to preventing, detecting, and addressing all forms of fraud across operations.",
+        "We will ensure robust financial controls, proper documentation, and adherence to accounting standards to maintain accuracy and transparency of records.",
+        "We aim that all official transactions are recorded in writing and supported by appropriate documentation.",
+        "We will ensure that no employee undertakes personal transactions in the name of the company.",
+        "We aim to continuously strengthen internal control systems to mitigate fraud risks by improving controls, segregation of duties, and monitoring practices."
+      ],
+      "Conflict of Interest Management": [
+        "We commit to ensuring that employees act in the best interest of the organization at all times.",
+        "We will ensure implementation of processes to identify, disclose, and manage potential conflicts of interest.",
+        "We will ensure that employees avoid any situations that may interfere with their ability to act objectively and professionally.",
+        "We aim to strengthen conflict of interest management by implementing a formal conflict disclosure and declaration process for employees, management, and key decision-makers across all business operations.",
+        "We aim to promote ethical and unbiased decision-making by conducting regular awareness and training programs on conflict of interest identification, reporting, and mitigation practices."
+      ],
+      "Prevention of Money Laundering": [
+        "We commit to preventing money laundering and ensuring ethical financial practices.",
+        "We will ensure proper Customer Due Diligence (CDD) and KYC procedures are followed for all customers.",
+        "We will ensure that payments are conducted through traceable modes and supported with transaction proof.",
+        "We will ensure that employees report any suspicious or unclear transactions to their reporting supervisor.",
+        "We aim to strengthen monitoring systems to identify and mitigate financial risks by implementing regular reviews and risk assessment processes."
+      ],
+      "Cybersecurity & Information Protection": [
+        "We commit to protecting confidential and sensitive company information.",
+        "We aim to strengthen cybersecurity and information protection by implementing role-based access controls for systems, files, and confidential information based on employee responsibilities and authorization levels.",
+        "We aim to strengthen data protection by implementing regular data backup, secure storage, and recovery procedures to minimize risks of data loss during cyber incidents or system failures.",
+        "We will ensure that employees do not share confidential data, files, or company-related information without authorization.",
+        "We will ensure that employees communicate information in a way that is clear, fair, and not misleading.",
+        "We aim to strengthen awareness and accountability around data protection and confidentiality."
+      ],
+      "Whistleblowing & Ethical Reporting": [
+        "We commit to establishing a confidential reporting mechanism for employees to report unethical behavior without fear of retaliation.",
+        "We will ensure that all grievances and complaints are handled confidentially, fairly, and impartially.",
+        "We will ensure that employees can report concerns through the designated grievance mechanism.",
+        "We aim to promote a strong speak-up culture across the organization by encouraging transparent communication and providing secure reporting channels."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption & Anti-Bribery",
+        "targets": [
+          {
+            "target": "We commit to maintaining zero confirmed incidents of bribery or corruption from the baseline FY 2022–23 to be sustained through FY 2029–30, in line with the 100% compliance with Prevention of Corruption Act, 1988 and the Companies Act, 2013.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure at least 95% employee coverage of anti-corruption and ethics training annually from the baseline FY 2022–23 to be improved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% of high-risk employees (procurement, finance, leadership) undergo enhanced compliance training annually from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve at least 90% acknowledgement of anti-corruption policy by third-party vendors and partners from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention & Control",
+        "targets": [
+          {
+            "target": "We commit to maintaining zero material/unresolved fraud cases annually from the baseline FY 2022–23 to be sustained through FY 2029–30, in alignment with the Companies Act, 2013.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct at least 1 internal audit annually covering financial controls and fraud risk areas from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure at least 95% of financial transactions are documented, traceable, and compliant with accounting standards from the baseline FY 2022–23 to be improved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to ensure at least 90% closure of identified fraud cases within 30 days from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure at least 95% employee coverage of fraud prevention training annually from the baseline FY 2022–23 to be improved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Management",
+        "targets": [
+          {
+            "target": "We commit to maintaining zero material undisclosed conflict of interest cases from the baseline FY 2022–23 to be sustained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure at least 95% employees submit conflict of interest declarations annually and at onboarding from the baseline FY 2022–23 to be improved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% reported conflict of interest cases are reviewed and addressed through a formal mechanism from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve at least 90% employee awareness of conflict-of-interest policy from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Money Laundering",
+        "targets": [
+          {
+            "target": "We commit to maintaining zero cases of money laundering from the baseline FY 2022–23 to be sustained through FY 2029–30, in alignment with the Prevention of Money Laundering Act (PMLA), 2002.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% of customers undergo KYC and Customer Due Diligence (CDD) from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% of financial transactions are conducted through traceable modes with proper documentation from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure at least 95% employee coverage of AML training annually from the baseline FY 2022–23 to be improved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to ensure 100% reporting and investigation of suspicious transactions from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Cybersecurity & Information Protection",
+        "targets": [
+          {
+            "target": "We commit to maintaining zero major data breaches impacting business operations from the baseline FY 2022–23 to be sustained through FY 2029–30, in alignment with the Information Technology Act, 2000.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure at least 95% employees complete information security and data privacy training annually from the baseline FY 2022–23 to be improved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure at least 95% information security incidents are reported and resolved within defined timelines from the baseline FY 2022–23 to be improved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve at least 90% access control implementation across all critical systems from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblowing & Ethical Reporting",
+        "targets": [
+          {
+            "target": "We commit to maintaining zero retaliation cases against whistleblowers from the baseline FY 2022–23 to be sustained through FY 2029–30, in line with the Companies Act, 2013.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% reported complaints are investigated thoroughly and fairly from the baseline FY 2022–23 to be maintained through FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure at least 90% complaints are resolved within 30 days from the baseline FY 2022–23 to be improved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve at least 90% employee awareness of grievance and whistleblowing mechanisms from the baseline FY 2022–23 to be achieved by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Set the tone at the top by embedding integrity and ethical conduct into the organization’s values."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Review and endorse the Ethical Business Practices Policy and oversee its effective implementation."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Monitor significant ethical risks, breaches, and governance issues."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensure appropriate oversight mechanisms are in place for ethical compliance."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Drive ethical behavior across all business functions through leadership and example."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensure that business decisions are made in line with ethical principles and company values."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Encourage a transparent environment where concerns can be raised without hesitation."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Take timely action on ethical issues and ensure accountability."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Review Policy regularly."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Integrate ethical standards into employee lifecycle processes including hiring, training, and performance management."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Facilitate regular awareness sessions and ensure employees understand expected behaviors."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Maintain documentation related to ethics training, declarations, and disciplinary actions."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Support fair handling of ethical concerns in coordination with relevant stakeholders."
+      },
+      {
+        "role": "Ethics / Compliance Function",
+        "duty": "Act as the focal point for receiving, assessing, and managing ethical concerns."
+      },
+      {
+        "role": "Ethics / Compliance Function",
+        "duty": "Conduct or support investigations in a fair, unbiased, and timely manner."
+      },
+      {
+        "role": "Ethics / Compliance Function",
+        "duty": "Recommend actions to address gaps and prevent recurrence."
+      },
+      {
+        "role": "Ethics / Compliance Function",
+        "duty": "Ensure confidentiality and safeguard individuals reporting concerns."
+      },
+      {
+        "role": "Employees",
+        "duty": "Act with honesty and integrity in all professional dealings."
+      },
+      {
+        "role": "Employees",
+        "duty": "Avoid situations that may lead to conflicts of interest or unethical conduct."
+      },
+      {
+        "role": "Employees",
+        "duty": "Speak up and report concerns through appropriate channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow established guidelines and participate in ethics-related initiatives."
+      },
+      {
+        "role": "Business Partners",
+        "duty": "Operate in line with the Company’s ethical expectations and applicable regulations."
+      },
+      {
+        "role": "Business Partners",
+        "duty": "Refrain from engaging in corrupt, fraudulent, or unethical practices."
+      },
+      {
+        "role": "Business Partners",
+        "duty": "Notify the Company of any concerns or violations related to ethical conduct."
+      },
+      {
+        "role": "Business Partners",
+        "duty": "Cooperate with compliance checks and investigations when required."
+      }
+    ],
+    "monitoring": "PISPL aims to strengthen its ethical framework over time by regularly evaluating its practices and identifying areas for enhancement. The Company will build awareness, encourage open communication, and use insights from reported cases, audits, and feedback to refine its approach. Efforts will be made to foster a culture where ethical behavior is consistently recognized and reinforced.\n\nPISPL provides structured channels for raising ethical concerns, including issues related to misconduct, fraud, or conflicts of interest. All concerns are expected to be reported in good faith and will be handled with confidentiality. The Company will ensure timely review and appropriate action, while also maintaining protection against retaliation. Periodic summaries of reported issues and actions taken will be reviewed by management to strengthen oversight.",
+    "reviewMechanism": "Reviewed by the HR Head at annually or as needed, this policy will be assessed to ensure it remains relevant and effective. PISPL will consider changes in regulations, internal practices, and feedback while updating the policy. Any gaps identified during reviews or investigations will be addressed through corrective measures, with proper records maintained to support transparency and accountability."
+  },
+  "sourcePath": "KUSH\\PISPL\\4. Ethical Business Practices Policy_GRW 08-05.docx",
+  "sourceTextLength": 23395,
+  "parsedAt": "2026-08-12T06:21:10.748Z"
+}

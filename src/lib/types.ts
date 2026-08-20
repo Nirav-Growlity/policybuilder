@@ -1,4 +1,4 @@
-export type PolicyType = "environmental" | "labour-human-rights" | "living-wage";
+export type PolicyType = "environmental" | "labour-human-rights" | "living-wage" | "ethics" | "sustainable-procurement";
 
 export interface Site {
   id?: string;
@@ -89,10 +89,16 @@ export type PresentationTemplate =
 
 export type VisualStyle = "corporate" | "modern";
 
+export type DocumentThemeId =
+  | "evergreen-heritage"
+  | "executive-navy"
+  | "modern-teal"
+  | "earth-editorial";
+
 export type StandardSectionKind =
   | "preface" | "declaration" | "scope" | "definitions"
   | "focus" | "qualitative" | "quantitative" | "sdg" | "responsibilities"
-  | "monitoring" | "review";
+  | "monitoring" | "review" | "revision";
 
 export type RichTextBlock = {
   id: string;
@@ -114,19 +120,28 @@ export type SdgDisplayMode = "names" | "tiles";
 export type LogoPosition = "left" | "center" | "right";
 export type DocumentTypography = {
   fontFamily: string;
+  headingFontFamily?: string;
   headingSize: number;
   subheadingSize: number;
   paragraphSize: number;
   lineSpacing: number;
 };
 
+export interface RevisionEntry {
+  revisionNo: string;
+  date: string;
+  description: string;
+}
+
 export interface Policy {
   policyType: PolicyType;
   presentationTemplate?: PresentationTemplate;
+  documentTheme?: DocumentThemeId;
   visualStyle?: VisualStyle;
   sections?: PolicySection[];
   showTableOfContents?: boolean;
   showAcknowledgement?: boolean;
+  showRevisionHistory?: boolean;
   sdgDisplay?: SdgDisplayMode;
   logoPosition?: LogoPosition;
   typography?: DocumentTypography;
@@ -141,6 +156,7 @@ export interface Policy {
   responsibilities: Responsibility[];
   monitoring: string;
   reviewMechanism: string;
+  revisionHistory?: RevisionEntry[];
 }
 
 export interface StepDef {

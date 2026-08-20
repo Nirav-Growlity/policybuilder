@@ -1,0 +1,231 @@
+{
+  "id": "ethics-yash-speciality",
+  "name": "Yash Speciality",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from Ethics Policy YASH-PS-3.2, R02.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Yash Speciality Chemicals LLP",
+      "address": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India.",
+      "sites": [
+        {
+          "location": "Yash Speciality Chemicals LLP",
+          "address": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "site": "D3/135, GIDC Dahej, Phase III, Village Vav, Tal. Vagra, Dist. Bharuch – 392130, Gujarat, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Yash Speciality Chemicals LLP is committed to conducting all business activities in an ethical, lawful, and responsible manner. The Company upholds high standards of integrity, transparency, and accountability in compliance with applicable laws, regulations, and accepted business practices. A zero-tolerance approach is maintained toward bribery, corruption, fraud, and any form of unethical conduct.\n\nThe Company strives to provide safe, healthy, and environmentally responsible workplaces and to deliver products and services that meet quality and customer expectations. All employees and business partners are expected to avoid conflicts of interest, safeguard company assets and confidential information, and promptly report any ethical or legal concerns. This policy serves as a foundation for responsible decision-making and sustainable business conduct across the organization.",
+      "declaration": "Yash Speciality Chemicals LLP formally adopts this Ethics Policy as a binding framework governing conduct across all levels of the organization. Compliance with this policy is mandatory, and any violation will result in appropriate disciplinary or corrective action. The Company expects all stakeholders to adhere to ethical principles, report misconduct without fear of retaliation, and support a culture of responsibility, fairness, and lawful business practices.",
+      "scope": "This Ethical Conduct Policy applies to all employees, contractors, and partners of Yash Speciality Chemicals LLP. It covers all aspects of our operations, including production, quality assurance, supply chain management, and customer relations. The policy extends to our interactions with vendors, suppliers and external stakeholders, ensuring that our business practices reflect our commitment to integrity, transparency, and ethical excellence."
+    },
+    "focusAreas": [
+      "Anti-Corruption: Prohibit bribery, facilitation payments, kickbacks, and all forms of corrupt practices through clear standards, employee training, and strict enforcement.",
+      "Conflict of Interest: Require timely disclosure and appropriate management of any personal, financial, or professional interests that could influence business decisions.",
+      "Fraud Prevention: Prevent, detect, and address fraud through effective internal controls, periodic audits, and confidential reporting mechanisms.",
+      "Anti-Money Laundering: Comply with applicable AML laws by monitoring transactions, identifying suspicious activities, and providing regular employee training.",
+      "Information Security: Protect confidential and sensitive information through strong data security controls, restricted access, and ongoing awareness programs.",
+      "Use of Company Assets: Ensure company assets are used responsibly, efficiently, and only for legitimate business purposes, preventing misuse or wastage."
+    ],
+    "qualitative": {
+      "Anti-Corruption": [
+        "Carry out due diligence specific to anti-bribery and corruption when evaluating mergers and acquisitions and joint ventures.",
+        "Maintain a zero-tolerance policy for bribery and corruption and ensure strict compliance with anti-corruption laws and company policies.",
+        "Promote a culture of integrity where employees understand the importance of rejecting bribery and unethical practices."
+      ],
+      "Conflict of Interest": [
+        "Promote a culture of transparency, encouraging employees to avoid situations where personal interests could conflict with business interests.",
+        "Ensure implementation of clear procedures for handling potential conflicts of interest fairly and impartially.",
+        "Ensure that company decisions are fair, impartial, and free from personal or financial bias.",
+        "Maintain transparency in dealings with suppliers, clients, and partners by documenting and managing conflicts appropriately."
+      ],
+      "Fraud Prevention": [
+        "Maintain a zero-tolerance stance toward fraud and any form of dishonest conduct across all operations.",
+        "Promote employee accountability and vigilance in identifying, preventing, and reporting suspicious or irregular activities."
+      ],
+      "Anti-Money Laundering": [
+        "Ensure employee awareness of AML obligations, with emphasis on monitoring transactions and recognizing red flags.",
+        "Comply with all applicable AML laws and regulatory requirements to prevent misuse of company activities for unlawful purposes.",
+        "Encourage timely reporting and appropriate action on any suspected money-laundering activities."
+      ],
+      "Information Security": [
+        "Protect confidential business, employee, and customer information through robust information security controls and access management.",
+        "Continuously review and strengthen data protection and cybersecurity measures in line with evolving risks and regulatory expectations."
+      ],
+      "Use of Company Assets": [
+        "Ensure the protection of all company assets, including physical, financial, digital, and intellectual property.",
+        "Encourage responsible, ethical, and authorized use of company resources by all employees.",
+        "Prevent misuse, loss, damage, theft, or unauthorized access to company asset."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Ethical Governance",
+        "targets": [
+          {
+            "target": "FY 2022-23 serves as the baseline for all ethical governance targets at Yash Speciality Chemicals LLP, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering. Progress will be measured against this baseline to ensure continuous improvement through years with the targets set for FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Corruption",
+        "targets": [
+          {
+            "target": "Ensure anti-bribery and anti-corruption clauses are incorporated into 100% of supplier and business partner contracts by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide annual anti-corruption training to 100% of employees in procurement and finance functions.",
+            "baseline": "",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain zero confirmed incidents of corruption in internal or external audits.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Achieve 100% completion of Conflict-of-Interest declarations by all managers and key decision-makers by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of new employees complete conflict-of-interest awareness and disclosure during onboarding.",
+            "baseline": "",
+            "deadline": "During onboarding"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Maintain an effective fraud detection and reporting mechanism across operations to prevent undetected fraudulent transactions.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct annual fraud risk assessments across all key functions.",
+            "baseline": "",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain zero confirmed fraud incidents each financial year.",
+            "baseline": "",
+            "deadline": "Each financial year"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Ensure 100% of relevant employees complete AML awareness training by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain zero non-compliance cases related to applicable AML regulations.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Ensure 100% employee who has access to confidential information participate in information security and data-protection awareness training by FY 2029-30, covering data privacy, phishing, and cyber-risk prevention.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance with internal and external information security audits conducted annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero incidents of unauthorized data access or data breaches through strengthened access controls and monitoring.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Use of Company Assets",
+        "targets": [
+          {
+            "target": "Conduct quarterly reviews of company asset usage to ensure resources are used strictly for legitimate business purposes.",
+            "baseline": "",
+            "deadline": "Quarterly"
+          },
+          {
+            "target": "Maintain 100% compliance with company asset-use policies by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "All Employees",
+        "duty": "Follow the Ethics Policy and promptly report any suspected violations."
+      },
+      {
+        "role": "Ethics Committee",
+        "duty": "Investigate reported concerns fairly, confidentially, and decide on corrective actions."
+      },
+      {
+        "role": "Chief People Officer",
+        "duty": "Leads the ethics enquiry process and ensures procedural integrity."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Sets the ethical tone, reviews performance, and ensures adequate resources."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Drives training, awareness, and policy acknowledgment."
+      },
+      {
+        "role": "Internal Audit / Finance Team",
+        "duty": "Ensures financial integrity and fraud prevention controls."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Protects company data and digital assets."
+      }
+    ],
+    "monitoring": "At Yash Speciality Chemicals LLP, Ethical Conduct practices are continuously enhanced to stay aligned with evolving regulations, industry standards, and emerging risks. A strong culture of integrity is embedded across all levels of the organization, ensuring transparency, accountability, and regulatory compliance.\n\nOngoing Training & Awareness: All employees receive periodic training on anti-corruption, conflict of interest, fraud prevention, anti-money laundering (AML), information security, and responsible asset use to reinforce awareness and expected behaviors.\n\nRisk Assessments & Independent Audits: Regular internal risk assessments and independent audits are conducted to identify ethical, financial, operational, and data security risks, evaluate control effectiveness, and implement corrective and preventive actions.\n\nCollaborative Compliance Engagement: Active participation in industry forums to ensure alignment with legal requirements, governance standards, and best practices.\n\nAdvanced Monitoring & Reporting Systems: Secure digital systems support transaction monitoring, fraud detection, data protection, and confidential reporting of concerns, enabling timely investigation and resolution of issues.\n\nFeedback & Transparency Culture: Transparent and accessible reporting channels encourage employees and stakeholders to raise concerns, report unethical behavior, or suggest improvements without fear of retaliation, driving continuous ethical enhancement.",
+    "reviewMechanism": "The Ethical Conduct Policy is reviewed once in every three years, or earlier if required by the Compliance Officer to ensure its continued relevance, effectiveness, and alignment with legal and regulatory requirements. Updates may be made based on audit findings, changes in applicable laws, employee feedback, or evolving business practices. Any revisions are communicated to all employees, and necessary training is provided to ensure awareness and compliance."
+  },
+  "sourcePath": "Hetvi- Policies\\Yash Speciality\\Ethics Policy YASH-PS-3.2, R02.docx",
+  "sourceTextLength": 15996,
+  "parsedAt": "2026-08-12T06:27:17.442Z"
+}

@@ -1,0 +1,229 @@
+{
+  "id": "ethics-cherry-hill",
+  "name": "Cherry Hill",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from Ethical Business Practices Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Cherry Hill Interiors Pvt. Ltd.",
+      "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020.",
+      "sites": [
+        {
+          "location": "Delhi (Head Quarter)",
+          "address": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020.",
+          "primaryFunction": "Head Quarter"
+        },
+        {
+          "location": "Bengaluru (Branch Office)",
+          "address": "First floor, no 1, 14th a Main, Hall 2nd Stage, Bangalore, Karnataka, India - 560008",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Chennai (Branch Office)",
+          "address": "GN Chetty Road, Anmol Palani, 88, T Nagar, , Chennai, Tamil Nadu, India - 600017",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Pune (Branch Office)",
+          "address": "Liberty phase-2, Plot no. 323, Flat no.1, North Main Road, Koregaon Park, Pune, Maharashtra, India - 411001",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Hyderabad (Branch Office)",
+          "address": "Third floor, Sreshta Marvel, Sy no 136, Gachibowli Konadpur Main Road, Gachibowli, Hyderabad, Telangana, India - 500032",
+          "primaryFunction": "Branch Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Plot no. 81-a, sector-5, IMT Manesar, Gurugram, Haryana, India - 122050",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "site": "Y-33, Okhla Industrial Area, phase-II, New Delhi, India - 110020."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Cherry Hill Interiors Pvt. Ltd. is a prominent provider of occupancy solutions across India, specializing in corporate office interiors, healthcare facilities, and hospitality projects. Our operations are guided by strict compliance with legal and regulatory frameworks, ensuring fairness in business dealings and promoting responsible corporate behavior. Through proactive measures, continuous training, and ethical governance, we strengthen trust among employees, clients, and stakeholders. Our commitment to ethical business practices is rooted in integrity, transparency, and accountability. We strive to prevent corruption, fraud, conflicts of interest, and unethical conduct while ensuring compliance with all legal and regulatory requirements. By fostering a culture of honesty, fairness, and respect, we integrate responsible business conduct into our operations, promoting trust and ethical excellence across our stakeholder network.",
+      "declaration": "Ethical responsibility and inclusivity form the foundation of Cherry Hill Interiors Pvt. Ltd.’s workplace culture. With Year 2022 as the baseline year for all our targets, we ensure adherence to ethical business practices, compliance with legal and industry standards, and responsible stakeholder engagement. Through governance, training, and collaboration, we continuously strengthen our ethical business conduct.",
+      "scope": "This policy applies to all business operations, including office spaces, project sites, supply chains, and interactions with stakeholders. It extends to employees, contractors, suppliers, and partners engaged in our business activities."
+    },
+    "focusAreas": [
+      "Preventing Corruption and Unethical Practices",
+      "Managing Conflicts of Interest in Business Operations",
+      "Strengthening Fraud Prevention and Detection Mechanisms",
+      "Preventing Money Laundering and Financial Crimes",
+      "Strengthening Information Security and Data Protection"
+    ],
+    "qualitative": {
+      "Preventing Corruption and Unethical Practices": [
+        "Promote a culture of integrity by conducting ethics and anti-corruption training annually for all employees.",
+        "Review the confidentiality and accessibility of whistleblower mechanism for reporting corruption-related concerns."
+      ],
+      "Managing Conflicts of Interest in Business Operations": [
+        "Implement a mandatory disclosure system where employees and business partners must report potential conflicts of interest.",
+        "Maintain the strict enforcement of clear guidelines to prevent favoritism, nepotism, and undue influence in business dealings."
+      ],
+      "Strengthening Fraud Prevention and Detection Mechanisms": [
+        "Maintain strict implementation of zero-tolerance policy for fraudulent behavior with clear disciplinary measures and enforcement protocols.",
+        "Enhance internal controls and financial oversight mechanisms to prevent, detect, and mitigate fraudulent activities."
+      ],
+      "Preventing Money Laundering and Financial Crimes": [
+        "Strengthen financial monitoring systems to detect and report suspicious transactions in accordance with regulatory guidelines.",
+        "Ensure compliance with anti-money laundering (AML) regulations through continuous updates and mandatory training for relevant teams."
+      ],
+      "Strengthening Information Security and Data Protection": [
+        "Ensure strict implementation of advanced cybersecurity measures to safeguard sensitive business, employee, and client data from breaches.",
+        "Regularly update IT security protocols to address evolving cyber threats and ensure compliance with industry best practices.",
+        "Conduct annual employee training on data privacy, phishing prevention, and cybersecurity risk management."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Preventing Corruption and Unethical Practices",
+        "targets": [
+          {
+            "target": "Ensure that 100% of supplier and business partner contracts include anti-bribery and anti-corruption clauses by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Investigate and take corrective action if required on 100% of corruption-related reports within 30 days of receipt.",
+            "baseline": "Year 2022",
+            "deadline": "within 30 days of receipt"
+          },
+          {
+            "target": "Maintain zero confirmed incidents of corruption identified through internal or external audits on an annual basis till year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "on an annual basis till year 2028"
+          },
+          {
+            "target": "Ensure 100% of employees, suppliers, and contractors in high-risk roles receive annual anti-corruption training till year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "annually till year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Managing Conflicts of Interest in Business Operations",
+        "targets": [
+          {
+            "target": "Achieve 100% completion of conflict-of-interest declarations by all managers, key decision-makers, and Board members by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Address and resolve 100% of reported conflict of interest cases within 45 days, ensuring appropriate actions are taken by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "within 45 days; by year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Strengthening Fraud Prevention and Detection Mechanisms",
+        "targets": [
+          {
+            "target": "Maintain zero reported fraud incidents through improved controls and awareness programs by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Ensure 100% financial transactions above a defined threshold undergo independent verification before approval.",
+            "baseline": "Year 2022",
+            "deadline": "before approval"
+          },
+          {
+            "target": "Review and strengthen fraud detection mechanisms and internal controls to cover 100% of critical processes by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "by year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Preventing Money Laundering and Financial Crimes",
+        "targets": [
+          {
+            "target": "Train 100% of finance, procurement, and compliance teams on AML regulations and financial crime prevention annually.",
+            "baseline": "Year 2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct two internal AML audits covering 100% of relevant business units to identify and mitigate AML-related risks by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Implement automated transaction monitoring for all financial dealings by 2028, enabling real-time detection of suspicious activities and reducing the risk of money laundering.",
+            "baseline": "Year 2022",
+            "deadline": "by 2028; real-time detection"
+          }
+        ]
+      },
+      {
+        "area": "Strengthening Information Security and Data Protection",
+        "targets": [
+          {
+            "target": "Implement end-to-end encryption or equivalent secure encryption protocols for 100% of systems handling sensitive company and customer data by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Ensure 80% of employees complete data protection and cybersecurity awareness training by year 2028 and annually thereafter.",
+            "baseline": "Year 2022",
+            "deadline": "by year 2028 and annually thereafter"
+          },
+          {
+            "target": "Ensure 100% compliance with information security audits conducted annually across all departments by year 2028.",
+            "baseline": "Year 2022",
+            "deadline": "annually across all departments by year 2028"
+          },
+          {
+            "target": "Maintain zero incidents of unauthorized data access and breaches through improved controls by 2028.",
+            "baseline": "Year 2022",
+            "deadline": "by 2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Senior Management ensures ethical business practices and regulatory compliance across all operations."
+      },
+      {
+        "role": "The Compliance Officer",
+        "duty": "The Compliance Officer oversees policy implementation, training, and investigations."
+      },
+      {
+        "role": "Department Heads and Supervisors",
+        "duty": "Department Heads and Supervisors ensure ethical standards are integrated into daily operations."
+      },
+      {
+        "role": "Finance and Procurement Teams",
+        "duty": "Finance and Procurement Teams conduct due diligence to mitigate corruption, fraud, and money laundering risks."
+      },
+      {
+        "role": "All Employees",
+        "duty": "All Employees adhere to ethical standards, report violations, and complete mandatory training."
+      }
+    ],
+    "monitoring": "At Cherry Hill, Ethical Conduct practices are continuously enhanced to stay aligned with evolving regulations, industry standards, and emerging risks. A strong culture of integrity is embedded across all levels of the organization, ensuring transparency, accountability, and regulatory compliance.\n\nOngoing Training & Awareness: Cherry Hill conducts regular ethics, anti-corruption, AML, fraud prevention, and data protection training for employees and relevant external stakeholders. Training programs are updated periodically to reflect regulatory changes, emerging risks, and lessons learned from internal reviews and incidents.\n\nRisk Assessments & Independent Audits: Periodic ethics and compliance risk assessments are carried out to identify potential vulnerabilities related to corruption, fraud, conflicts of interest, money laundering, and information security. Independent internal and external audits are used to validate controls, verify compliance, and recommend improvements.\n\nCollaborative Compliance Engagement: Partnerships with internal and external stakeholders strengthen ethical standards and compliance through structured assessments, engagement, and continuous improvement actions.\n\nAdvanced Monitoring & Reporting Systems: The company maintains systems to monitor high-risk transactions, compliance indicators, incidents, and policy adherence. Key metrics are reviewed regularly by management to ensure early detection of risks, timely response, and continuous strengthening of controls.\n\nFeedback & Transparency Culture: Cherry Hill encourages open feedback, ethical dialogue, and reporting of concerns without fear of retaliation. Whistleblowing and grievance mechanisms are promoted actively, and aggregated findings and improvements are communicated transparently to reinforce trust and accountability.\n\nReporting Mechanism: Employees, suppliers, and stakeholders can report suspected violations through the confidential whistleblower system. Reports may be anonymous and are handled with strict confidentiality to prevent retaliation.\n\nInvestigation & Disciplinary Actions: The Compliance Officer investigates all reports, involving internal teams or external auditors as needed. Violators face disciplinary actions, including warnings, suspension, termination, or legal proceedings. Suppliers found in breach may face contract suspension or blacklisting.\n\nCorrective & Preventive Actions: Remedial measures, such as process improvements, additional training, or stronger controls, are implemented to prevent recurrence. Findings from major breaches inform future risk assessments to strengthen policy enforcement.\n\nProtection from Retaliation: Retaliation against any individual who reports concerns in good faith or participates in an investigation is strictly prohibited. Any act of retaliation will be treated as a serious policy violation and subject to disciplinary action.",
+    "reviewMechanism": "The Ethics Officer reviews this policy once after every two years or earlier in response to regulatory changes, emerging risks, or operational needs.\n\nFindings from risk assessments, internal audits, employee feedback, and reported ethical concerns are evaluated to enhance policy effectiveness.\n\nNecessary revisions are implemented, and updated policies are communicated to all employees, suppliers, and relevant stakeholders to ensure continued compliance and awareness."
+  },
+  "sourcePath": "Hetvi- Policies\\Cherry Hill\\Ethical Business Practices Policy.docx",
+  "sourceTextLength": 15212,
+  "parsedAt": "2026-08-12T06:25:54.854Z"
+}

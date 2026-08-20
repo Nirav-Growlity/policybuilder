@@ -1,0 +1,429 @@
+{
+  "id": "sustainable-procurement-anupam-rasayan",
+  "name": "Anupam Rasayan",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from Sustainable and Responsible Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Anupam Rasayan India Limited",
+      "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+      "sites": [
+        {
+          "location": "Sachin Unit 1",
+          "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 2",
+          "address": "Plot No. 701, 2419/1, 2419/2, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 3",
+          "address": "Plot No. 8104 and 8106, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 6",
+          "address": "Plot No. 2423 and 2425, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "R&D and Manufacturing"
+        },
+        {
+          "location": "Jhagadia Unit 4",
+          "address": "Plot No. 907/3, 907/4, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Jhagadia Unit 5",
+          "address": "Plot No. 905/1, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Tanfac Industries Limited",
+          "address": "Plot No. 14, SIPCOT Industrial Complex, Kudikadu, Cuddalore – 607005, Tamil Nadu",
+          "primaryFunction": "Fluorochemical Manufacturing"
+        }
+      ],
+      "site": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Anupam Rasayan India Limited (ARIL), established in 1984, is committed to promoting sustainability and responsibility across its supply chain. Through this Sustainable and Responsible Procurement Policy, we aim to ensure that all goods and services are sourced ethically, transparently, and with minimal environmental and social impact.\n\nWe work collaboratively with our suppliers and business partners to uphold principles of fair trade, human rights, safety, and environmental stewardship, in line with the UN Global Compact, ISO 20400 Sustainable Procurement Guidelines, and BRSR requirements.\n\nThis policy reflects ARIL’s belief that responsible procurement strengthens long-term partnerships, supports local communities, and contributes to a more sustainable future.",
+      "declaration": "Anupam Rasayan is committed to ensuring that its procurement practices support sustainability, ethical conduct, and social responsibility across the value chain. We aim to partner with suppliers who share our commitment to environmental protection, fair labor practices, and business integrity. Our procurement commitments are defined under the following key focus areas:",
+      "scope": "This Sustainable and Responsible Procurement Policy applies to all Anupam Rasayan India Limited (ARIL) facilities, employees, contractors, and suppliers involved in procurement, logistics, and supply chain operations.\n\nIt covers the sourcing of raw materials, packaging materials, equipment, and services across all manufacturing units, R&D facilities, and administrative offices.\n\nThe policy extends to vendors, business partners, and third-party service providers, ensuring that all procurement activities are aligned with ARIL’s principles of ethical conduct, environmental responsibility, human rights, and fair labor practices."
+    },
+    "focusAreas": [
+      "Ethical Sourcing",
+      "Environmental Responsibility",
+      "Labor and Human Rights Standards",
+      "Health and Safety",
+      "Local and Inclusive Procurement",
+      "Supply Chain Transparency"
+    ],
+    "qualitative": {
+      "Ethical Sourcing": [
+        "We ensure that all products and services are procured transparently and in compliance with applicable laws, ethical standards, and anti-corruption principles. Suppliers are expected to operate with integrity, avoiding bribery, fraud, and unfair trade practices in all transactions."
+      ],
+      "Environmental Responsibility": [
+        "Suppliers must minimize their environmental footprint by adopting sustainable production methods, waste reduction measures, and energy-efficient processes. Preference is given to suppliers that use eco-friendly materials, manage waste responsibly, and work toward carbon reduction."
+      ],
+      "Labor and Human Rights Standards": [
+        "All suppliers are required to uphold internationally recognized human rights and fair labor practices. Forced labor, child labor, unsafe working conditions, or any form of discrimination are strictly prohibited within our supply chain."
+      ],
+      "Health and Safety": [
+        "Suppliers must maintain a safe and healthy workplace by following relevant safety laws and implementing occupational health programs. ARIL encourages continuous improvement in safety standards across the supply chain."
+      ],
+      "Local and Inclusive Procurement": [
+        "We promote local sourcing and inclusion of small, medium, and diverse suppliers where feasible, contributing to regional economic development and community growth."
+      ],
+      "Supply Chain Transparency": [
+        "We expect suppliers to provide accurate, traceable information about materials, sourcing practices, and environmental or social impacts. Regular audits and performance evaluations are conducted to ensure compliance with ARIL’s sustainability standards."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General",
+        "targets": [
+          {
+            "target": "Sets 2022 as the baseline for tracking progress in sustainable procurement, supplier responsibility, and ethical sourcing across all operations and supply chain partners.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct ESG on-site audits at 100% of operational sites and critical supplier locations by 2027, ensuring comprehensive evaluation of environmental, social, and governance performance.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Deliver annual ESG and sustainability awareness training covering at least 20% of active suppliers by 2027, with progressive increase in coverage each year.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Integrate sustainability performance criteria (covering environmental, labor, ethics, and safety aspects) into 100% of new supplier selection and contract renewals by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 100% of procurement employees and decision-makers complete sustainability and responsible sourcing training by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Increase procurement from sustainable and eco-certified suppliers by at least 25% by 2027, prioritizing those demonstrating measurable ESG improvements.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Sourcing",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers and contractors comply with ARIL’s Code of Conduct and ethical business requirements by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct annual anti-corruption and compliance training for 100% of procurement and supply chain teams by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Perform ethical due diligence assessments for 100% of high-risk suppliers by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve zero tolerance for corruption, bribery, or unethical practices in all procurement transactions.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Environmental Responsibility",
+        "targets": [
+          {
+            "target": "Conduct sustainability and environmental risk assessments for 100% of critical suppliers by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure that at least 30% of suppliers adopt measurable environmental management programs (energy, waste, or water reduction) by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Prioritize suppliers using eco-friendly packaging and recyclable materials in 20% of procurement by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve zero non-compliance cases with environmental laws or supplier sustainability requirements.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Labor and Human Rights Standards",
+        "targets": [
+          {
+            "target": "Achieve 100% supplier compliance with labor and human rights criteria by 2027, including prohibition of child and forced labor.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct social and ethical audits for 100% of Tier-1 suppliers by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Train 100% of procurement officers and vendor managers on human rights and labor due diligence by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Report zero instances of supplier-related human rights violations each year.",
+            "baseline": "2022",
+            "deadline": "each year"
+          }
+        ]
+      },
+      {
+        "area": "Health and Safety",
+        "targets": [
+          {
+            "target": "Conduct annual health and safety compliance audits for 100% of critical suppliers by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve 100% supplier awareness of ARIL’s EHS (Environment, Health & Safety) requirements by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Integrate safety performance evaluation into all supplier selection and renewal processes by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain zero serious injury or fatality cases reported within the supplier network.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Local and Inclusive Procurement",
+        "targets": [
+          {
+            "target": "Increase local and regional sourcing by 90% by 2027 to strengthen community engagement and reduce logistics emissions.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Engage at least 90% of total suppliers from small, medium, or women-owned enterprises by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Host annual supplier development programs to build sustainability capacity among local vendors.",
+            "baseline": "2022",
+            "deadline": "annual"
+          },
+          {
+            "target": "Ensure 100% payment transparency and fair terms for all local suppliers.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Supply Chain Transparency",
+        "targets": [
+          {
+            "target": "Implement a Supplier Sustainability Evaluation System covering 100% of suppliers by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 100% traceability of critical raw materials to verified and responsible sources by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Publish annual supplier sustainability performance data in the Sustainability Report starting FY2025–26.",
+            "baseline": "2022",
+            "deadline": "starting FY2025–26"
+          },
+          {
+            "target": "Conduct supplier risk assessments for all new vendors before onboarding.",
+            "baseline": "2022",
+            "deadline": "before onboarding"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Approve and oversee the implementation of the Sustainable and Responsible Procurement Policy across all business units."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Review annual procurement performance reports, supplier audits, and compliance results."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Ensure that procurement decisions align with ARIL’s long-term sustainability and ESG strategy."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Allocate adequate resources for supplier evaluation, risk management, and sustainability initiatives."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Lead implementation of responsible procurement practices at all sites."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Ensure adherence to sustainability, ethical, and social standards in procurement operations."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Monitor supplier performance and escalate significant compliance issues to the Sustainability Committee."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Promote supplier engagement and collaboration for continuous improvement."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Integrate sustainability, ethics, and compliance criteria into all procurement processes."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Conduct supplier due diligence and ESG risk assessments before vendor onboarding."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Maintain supplier documentation and performance evaluation records."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Ensure transparent bidding, fair selection, and zero tolerance for corruption or favoritism."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Encourage suppliers to adopt sustainable practices and relevant certifications."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Oversee supplier ethics compliance, including anti-bribery, anti-corruption, and fair labor standards."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Conduct internal and third-party audits to verify supplier adherence to ARIL’s Code of Conduct."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Manage supplier grievances and corrective action plans."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Report significant ethical violations or non-compliance cases to senior management."
+      },
+      {
+        "role": "Sustainability & EHS Department",
+        "duty": "Evaluate environmental and social risks in supplier operations."
+      },
+      {
+        "role": "Sustainability & EHS Department",
+        "duty": "Conduct sustainability and safety audits for high-impact suppliers."
+      },
+      {
+        "role": "Sustainability & EHS Department",
+        "duty": "Support suppliers in improving their environmental management and health & safety performance."
+      },
+      {
+        "role": "Sustainability & EHS Department",
+        "duty": "Align supplier practices with ARIL’s broader sustainability goals, including carbon reduction and waste minimization."
+      },
+      {
+        "role": "Finance & Audit Department",
+        "duty": "Ensure transparency and accountability in procurement-related payments, contracts, and transactions."
+      },
+      {
+        "role": "Finance & Audit Department",
+        "duty": "Verify supplier financial stability and compliance with anti–money laundering standards."
+      },
+      {
+        "role": "Finance & Audit Department",
+        "duty": "Conduct periodic audits to identify and mitigate procurement-related risks."
+      },
+      {
+        "role": "Training & Development Team",
+        "duty": "Design and deliver capacity-building programs for procurement teams and suppliers."
+      },
+      {
+        "role": "Training & Development Team",
+        "duty": "Promote awareness on ethical sourcing, human rights, and sustainability standards."
+      },
+      {
+        "role": "Training & Development Team",
+        "duty": "Track and evaluate participation and effectiveness of training initiatives."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Comply with ARIL’s Sustainable Procurement Policy, Code of Conduct, and applicable laws."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Maintain transparency in operations, recordkeeping, and reporting."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Participate in audits, training sessions, and sustainability improvement programs."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Promptly report any non-compliance or ethical concerns through official channels."
+      },
+      {
+        "role": "Employees & Contractors",
+        "duty": "Adhere to responsible procurement procedures and supplier selection criteria."
+      },
+      {
+        "role": "Employees & Contractors",
+        "duty": "Report unethical practices, favoritism, or supplier non-compliance to the Ethics & Compliance Committee."
+      },
+      {
+        "role": "Employees & Contractors",
+        "duty": "Support continuous improvement in procurement efficiency and sustainability."
+      }
+    ],
+    "monitoring": "Track key supplier performance indicators (KPIs) such as sustainability compliance, ethical sourcing, audit results, and supplier diversity ratio.\n\nConduct annual supplier risk assessments and ESG audits across 100% of critical suppliers by 2027.\n\nReview supplier corrective action plans and ensure closure of identified non-compliances within defined timelines.\n\nMonitor procurement practices to ensure adherence to ARIL’s Code of Conduct, sustainability standards, and legal requirements.\n\nDisclose procurement-related sustainability performance annually through the Sustainability Report, aligned with GRI 204 (Procurement Practices), GRI 308 (Supplier Environmental Assessment), and GRI 414 (Supplier Social Assessment).\n\nPresent quarterly updates on supplier audit outcomes, compliance metrics, and improvement actions to the Sustainability Committee and Board of Directors.\n\nMaintain transparent communication with suppliers and stakeholders through progress updates, workshops, and capacity-building sessions.\n\nEnsure full compliance with ISO 20400 Sustainable Procurement Guidelines, BRSR Principle 5, and relevant environmental, labor, and ethical trade laws.\n\nEngage independent third-party auditors periodically to verify supplier performance and adherence to ARIL’s procurement standards.\n\nDocument all supplier assessments, audit findings, and improvement actions for review during annual policy evaluation and ESG reporting.",
+    "reviewMechanism": "The Sustainability Committee, in coordination with the Procurement Department, Ethics and Compliance Committee, and EHS Team, shall be responsible for conducting the annual review of this Sustainable and Responsible Procurement Policy.\n\nThe review will assess the policy’s effectiveness, supplier performance outcomes, progress on sustainability targets, and alignment with current laws, global standards, and organizational objectives.\n\nIt will also evaluate supplier risk assessment results, audit findings, and corrective actions implemented during the reporting period.\n\nAny updates or revisions arising from operational changes, new regulations, audit feedback, or stakeholder inputs will be submitted to the Board of Directors for approval. Once approved, the revised policy will be communicated to all relevant employees, suppliers, and business partners to ensure continued alignment with Anupam Rasayan’s sustainable procurement goals and ESG commitments."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Anupam Rasayan\\Sustainable and Responsible Procurement Policy.docx",
+  "sourceTextLength": 17435,
+  "parsedAt": "2026-08-12T06:30:49.160Z"
+}

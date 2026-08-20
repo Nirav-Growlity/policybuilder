@@ -14,7 +14,10 @@ export async function POST(req: NextRequest) {
     const arr = await file.arrayBuffer();
     const buf = Buffer.from(arr);
     const requestedType = fd.get("policyType");
-    const policyType: PolicyType = requestedType === "labour-human-rights" || requestedType === "living-wage" ? requestedType : "environmental";
+    const policyType: PolicyType =
+      requestedType === "labour-human-rights" || requestedType === "living-wage" || requestedType === "ethics" || requestedType === "sustainable-procurement"
+        ? requestedType
+        : "environmental";
     const { policy, text } = await parseDocxBuffer(buf, policyType);
     return NextResponse.json({ policy, textLength: text.length });
   } catch (e) {

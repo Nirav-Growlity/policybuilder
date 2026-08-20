@@ -1,0 +1,222 @@
+{
+  "id": "ethics-renewsys",
+  "name": "Renewsys",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from 18 REN IMS Corporate Governance and Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "RenewSys India Pvt. Ltd.",
+      "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "site": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "sites": [
+        {
+          "location": "RenewSys India Pvt. Ltd.",
+          "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot No. E-141, Additional Patalganga MIDC Industrial Area, Village - Karade Khurd, Taluka Panvel, District Raigad, Maharashtra - 410 206, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot No. 6, Survey # 114/P, Srinagar Village, Maheshwaram Mandal, Rangareddy Dist. - 501 359,Telangana, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot Nos. 21, 22, 23, Bommasandra - Jigani Link Road Industrial Area, Taluk Anekal, Bengaluru - 560 105, Karnataka, India.",
+          "primaryFunction": ""
+        }
+      ]
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "RenewSys India Pvt. Ltd. is committed to conducting its business with the highest standards of ethics, integrity, and compliance, in accordance with applicable laws, rules, and regulations. The Company recognizes that strong corporate governance is fundamental to sustainable growth and long-term stakeholder value.\n\nThis Corporate Governance and Ethics Policy sets out the guiding principles that govern its operations and reinforce a culture of accountability, transparency, and responsible business conduct. It reflects the Company’s commitment to preventing unethical practices, including corruption, fraud, money laundering, conflicts of interest, and anti-competitive behavior, while ensuring robust information security across all functions.",
+      "declaration": "Our commitment extends to promoting ethical conduct, enhancing transparency, and ensuring compliance with all applicable laws and regulations. We aim for continuous improvement in our governance practices through employee training, clear communication, and robust reporting mechanisms. By fostering a culture of integrity and accountability, we will strengthen stakeholder trust and drive sustainable business practices. Our baseline for evaluating and tracking progress in corporate governance and ethics initiatives is set for FY 2022-23.",
+      "scope": "This Policy is applicable to all sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Anti-Corruption",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Anti-Money Laundering (AML)",
+      "Anti-Competitive Behaviour",
+      "Information Security and Confidentiality",
+      "Whistleblower Mechanism"
+    ],
+    "qualitative": {
+      "Anti-Corruption": [
+        "To promote an organizational culture that prioritizes ethical behaviour by integrating anti- corruption values into onboarding processes, employee handbooks and strictly implementing them in all the company’s transactions.",
+        "The offer must be strictly declined and reported immediately through the designated compliance channel. Employees shall not accept any gifts or benefits that may influence or appear to influence business decisions."
+      ],
+      "Conflict of Interest": [
+        "Foster a culture of transparency by encouraging open communication about potential conflicts of interest without fear of retaliation.",
+        "The employee must disclose the conflict immediately and recuse themselves from the decision-making process. All actual or potential conflicts must be declared as per Company procedures."
+      ],
+      "Fraud Prevention": [
+        "Maintain enforcement of stringent internal controls like Segregation of duties, regular reconciliation and access controls to minimize opportunities for fraud.",
+        "The matter must be escalated immediately for investigation. Employees must ensure accuracy, validity, and proper authorization of all financial transactions."
+      ],
+      "Anti-Money Laundering (AML)": [
+        "Prevent the misuse of company operations for money laundering or financing of illicit activities through effective due diligence and monitoring.",
+        "Introduce mandatory anti-money laundering (AML) training for all employees handling financial transactions.",
+        "Such activity must be treated as a red flag and reported immediately. Employees must comply with AML regulations and internal monitoring procedures."
+      ],
+      "Anti-Competitive Behaviour": [
+        "Establish a legal review process for all significant mergers, acquisitions, and joint ventures to ensure compliance with competition laws."
+      ],
+      "Information Security and Confidentiality": [
+        "Protect the confidentiality, integrity, and availability of company and stakeholder information through strong security controls.",
+        "Prevent unauthorized access, misuse, or loss of information through continuous improvement of information security practices.",
+        "To regularly update incident response plans to ensure timely action and recovery in the event of a data breach or cyber security incident.",
+        "The incident must be reported immediately to IT and Compliance. Employees must ensure strict adherence to data protection, secure storage, and controlled access protocols."
+      ],
+      "Whistleblower Mechanism": [
+        "Employees are encouraged to report any suspected or actual violations of this policy either by sending an email to the Compliance Officer: compliance@renewsys.com or by informing their immediate supervisor. All reported concerns shall be treated with due seriousness and handled in a confidential manner, to the extent possible."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption",
+        "targets": [
+          {
+            "target": "Ensure 100% of reported corruption-related incidents are investigated and addressed within 7 days.",
+            "baseline": "",
+            "deadline": "Within 7 days"
+          },
+          {
+            "target": "Ensure 100% employee coverage in annual anti-corruption and ethics training.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Conduct annual third-party audits of anti-corruption practices and ensure 100% compliance with audit requirements by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "To regularly resolve 100% of declared conflicts of interest within 30 days of identification by FY 2029-30.",
+            "baseline": "",
+            "deadline": "Within 30 days of identification; FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% new employees complete conflict of interest disclosure at the time of onboarding.",
+            "baseline": "",
+            "deadline": "At the time of onboarding"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Ensure that 100% of employees complete annual training sessions on fraud detection and prevention.",
+            "baseline": "",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering (AML)",
+        "targets": [
+          {
+            "target": "Implement Know Your Customer (KYC) protocols for 100% of new clients and suppliers.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Implement monitoring systems to review 100% of all high-volume transactions by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Behaviour",
+        "targets": [
+          {
+            "target": "We will try to ensure that we maintain an anti-competitive behaviour-related violations to zero by FY 2029-30 through preventive training.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Information Security and Confidentiality",
+        "targets": [
+          {
+            "target": "Ensure that 100% employees are utilizing multi-factor authentication for all critical systems by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure that 100% of employees attend cybersecurity awareness training annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Perform information security audits on bi-annual basis, ensuring all findings are documented and addressed within 30 days.",
+            "baseline": "",
+            "deadline": "Bi-annual; within 30 days"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower Mechanism",
+        "targets": [
+          {
+            "target": "Ensure 100% employees have access to a formal whistleblower mechanism and are trained on how to report unethical conduct, including corruption, fraud, information security breaches, and money laundering, by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      16,
+      8,
+      9
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "The Compliance Officer will be responsible for compiling and preparing the annual corporate governance and ethics performance report."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "The Compliance Officer for anti-corruption and fraud metrics"
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "The Internal Audit Team for audit findings and compliance data"
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "The Human Resources Department for reporting on employee training and awareness initiatives"
+      },
+      {
+        "role": "Risk Management Committee",
+        "duty": "The Risk Management Committee for updates on risk mitigation efforts and internal controls"
+      }
+    ],
+    "monitoring": "To ensure transparency and accountability in our governance initiatives, an annual performance report will be provided detailing our progress and adherence to this policy. This report will include key performance indicators (KPIs) aligned with both the quantitative and qualitative targets established, offering a comprehensive evaluation of our successes, challenges, and opportunities for improvement.\n\nOur reporting will encompass various critical areas, including:\n\nProgress on anti-corruption and fraud prevention initiatives\n\nCompliance with conflict of interest and transparency standards\n\nEffectiveness of internal controls and risk management measures\n\nEmployee training and awareness programs related to ethics and governance\n\nEngagement with external stakeholders regarding governance practices\n\nAdditionally, the results of our annual employee surveys, internal audit findings, and compliance assessments will be published by the Compliance and Audit Department and made accessible to all stakeholders, including employees, shareholders, suppliers, and external partners. This ensures that all parties remain informed and engaged in our commitment to corporate governance and ethical standards.",
+    "reviewMechanism": "The Corporate Governance and Ethics Policy will undergo an annual review led by the Human Resources Manager to ensure its relevance and effectiveness. This review will evaluate the policy’s alignment with current legal frameworks, industry standards, and the company’s strategic goals. It will include an assessment of policy implementation, monitoring of ethical compliance, and feedback from internal audits and external stakeholders. Based on the findings, revisions or updates will be made to strengthen governance practices, address emerging risks, and ensure continued adherence to ethical principles across all business operations."
+  },
+  "sourcePath": "Hetvi- Policies\\Renewsys\\18 REN IMS Corporate Governance and Ethics Policy.docx",
+  "sourceTextLength": 14379,
+  "parsedAt": "2026-08-12T06:27:04.553Z"
+}

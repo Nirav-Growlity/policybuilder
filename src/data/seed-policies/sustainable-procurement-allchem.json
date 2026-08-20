@@ -1,0 +1,169 @@
+{
+  "id": "sustainable-procurement-allchem",
+  "name": "Allchem",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from 4) Ethical and Sustainable Supply Chain Policy.doc.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Allchem Lifescience Pvt. Ltd.",
+      "address": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+      "site": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+      "sites": [
+        {
+          "location": "Vill. Manjusar, Tal.-Savli, Dist.-Vadodara, Gujarat, India",
+          "address": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ]
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Responsible sourcing and ethical business conduct define supply chain operations at Allchem Lifescience Pvt. Ltd. Supplier partnerships are built on transparency, fair labor practices, environmental stewardship, and strict compliance with legal and ethical standards.\n\nThis policy outlines expectations for sustainable procurement, human rights protection, anti-corruption measures, and environmental impact management. Strengthening due diligence, risk assessments, and continuous monitoring ensures that supply chain practices align with global sustainability goals and regulatory frameworks.\n\nCollaboration with suppliers, regular evaluations, and proactive risk mitigation drive ethical and sustainable growth while reinforcing long-term business integrity.",
+      "declaration": "Allchem Lifescience Pvt. Ltd. upholds responsible sourcing by emphasizing ethical procurement, supplier accountability, and sustainable material selection. With Year 2022 as the baseline, sourcing decisions are based on transparency, fair labor standards, and environmental responsibility. Continuous improvements are achieved through supplier engagement, risk evaluations, and collaboration with industry partners to uphold integrity across the supply chain.",
+      "scope": "This policy governs all procurement and sourcing activities across Allchem Lifescience Pvt. Ltd.'s operations, manufacturing sites, and supply chains, ensuring adherence to ethical and sustainable practices. It applies to employees, suppliers, contractors, and business partners engaged in sourcing, procurement, and material handling processes."
+    },
+    "focusAreas": [
+      "Responsible Procurement of Raw Materials",
+      "Environmental Responsibility in Supplier Operations",
+      "Ethical Labor Practices and Human Rights in Supply Chain",
+      "Sustainable Sourcing of Palm Oil and Palm-Based Materials"
+    ],
+    "qualitative": {
+      "Responsible Procurement of Raw Materials": [
+        "Establish a supplier monitoring framework to assess compliance with material sustainability guidelines."
+      ],
+      "Environmental Responsibility in Supplier Operations": [
+        "Establish long-term partnerships with suppliers committed to ethical and sustainable practices.",
+        "Implement a supplier sustainability rating system to assess and improve supplier performance in responsible sourcing, incorporating incentives such as priority contracts or long-term partnerships for high-performing suppliers."
+      ],
+      "Ethical Labor Practices and Human Rights in Supply Chain": [
+        "Ensure all direct suppliers to provide wages that meet or exceed living wage standards."
+      ],
+      "Sustainable Sourcing of Palm Oil and Palm-Based Materials": [
+        "Enhance transparency in the Palm oil supply chain by requiring suppliers to disclose sourcing origins and sustainability certifications.",
+        "Engage with suppliers to promote best practices in palm oil procurement, including environmental conservation and Indigenous rights protection."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Responsible Procurement of Raw Materials",
+        "targets": [
+          {
+            "target": "Ensure all high-impact raw materials, including chemicals and solvents, meet recognized environmental and safety standards by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Source 75% of key raw materials from certified sustainable or recycled sources by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Responsibility in Supplier Operations",
+        "targets": [
+          {
+            "target": "Ensure 50% of key suppliers adopt ISO 14001 or equivalent environmental management systems by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Reduce supply chain-related carbon emissions by 20% by year 2028 through energy-efficient, low-emission, and locally sourced materials.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Organize annual training sessions for 100% of Allchem Lifescience's key suppliers on sustainable sourcing practices and environmental compliance.",
+            "baseline": "",
+            "deadline": "annual"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Practices and Human Rights in Supply Chain",
+        "targets": [
+          {
+            "target": "Ensure that 100% of direct suppliers comply with fair labor practices, workplace safety regulations, and human rights standards through comprehensive supplier audits by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Train 100% procurement staff and key suppliers on ethical sourcing, labor rights, and responsible supply chain management.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% of suppliers have policies and controls in place to maintain cases of forced labor, child labor, and workplace exploitation.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure all direct suppliers to provide wages that meet or exceed living wage standards.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Sourcing of Palm Oil and Palm-Based Materials",
+        "targets": [
+          {
+            "target": "Source 100% of palm oil and palm-based derivatives from RSPO-certified sustainable suppliers by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Identify and integrate sustainable alternatives to palm oil in key products, reducing palm-based material usage by 10% by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          },
+          {
+            "target": "Phase out procurement from suppliers linked to deforestation, habitat destruction, or labor rights violations by year 2028.",
+            "baseline": "",
+            "deadline": "year 2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      13,
+      15,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "The Procurement Team",
+        "duty": "ensures compliance with ethical and sustainable sourcing standards, evaluates supplier performance, and integrates sustainability criteria into procurement decisions."
+      },
+      {
+        "role": "The Sustainability Team",
+        "duty": "monitors environmental and social impacts within the supply chain, engages suppliers on best practices, and drives continuous improvement initiatives."
+      },
+      {
+        "role": "The Compliance Team",
+        "duty": "conducts audits, verifies supplier adherence to regulatory and company-specific requirements, and addresses non-compliance through corrective actions."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "oversees policy implementation, approves strategic sourcing decisions, and ensures alignment with corporate sustainability goals."
+      }
+    ],
+    "monitoring": "Suppliers must adhere to stringent environmental regulations, minimize emissions, reduce waste, and implement resource-efficient processes. Preference to be given to suppliers with certifications in sustainable production and environmental management.\n\nMandate adherence to responsible sourcing guidelines through supplier audits, certifications, and performance evaluations.\n\nEngage with stakeholders, industry groups, and regulatory bodies to enhance supply chain transparency and responsible procurement practices.\n\nEstablish a supplier monitoring framework to assess compliance with material sustainability guidelines.\n\nImplement a supplier sustainability rating system to assess and improve supplier performance in responsible sourcing, incorporating incentives such as priority contracts or long-term partnerships for high-performing suppliers.",
+    "reviewMechanism": "The Procurement Head reviews this policy biennially or earlier if required due to regulatory changes, emerging risks, or evolving business needs.\n\nThe review process includes an evaluation of supplier assessments, internal audits, stakeholder feedback, and industry developments to ensure the policy remains effective and aligned with best practices.\n\nNecessary revisions are incorporated to strengthen enforcement measures, enhance supplier accountability, and address identified gaps.\n\nUpdated policies are communicated to employees, suppliers, and relevant stakeholders through structured training, awareness programs, and official notifications to ensure continued compliance and alignment with sustainability objectives."
+  },
+  "sourcePath": "Hetvi- Policies\\Allchem\\4) Ethical and Sustainable Supply Chain Policy.doc",
+  "sourceTextLength": 8883,
+  "parsedAt": "2026-08-12T06:32:32.702Z"
+}

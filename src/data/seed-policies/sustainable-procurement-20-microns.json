@@ -1,0 +1,241 @@
+{
+  "id": "sustainable-procurement-20-microns",
+  "name": "20 Microns",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from 20ML-HO-SAS-POLICY-001 SUSTAINABLE PROCUREMENT POLICY.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "20 Microns Limited",
+      "address": "Waghodia – HO & RO, Delhi, Mumbai, Vadodara",
+      "sites": [
+        {
+          "location": "Waghodia – HO & RO, Delhi, Mumbai, Vadodara",
+          "address": "Waghodia – HO & RO, Delhi, Mumbai, Vadodara",
+          "primaryFunction": "Offices"
+        },
+        {
+          "location": "Alwar, Bhuj, Tirunelveli, Hosur, Udaipur, Haldwani, Nagor, Parbatsar",
+          "address": "Alwar, Bhuj, Tirunelveli, Hosur, Udaipur, Haldwani, Nagor, Parbatsar",
+          "primaryFunction": "Manufacturing Plants"
+        },
+        {
+          "location": "Uran Raigad, Thiruvallur, Chainnai, Alampur, Kolkata, Mundra, Anantpur, Kadapa, RAYALACHERUVU, KOLIWAD SANJAN, Sonipat, Alwar, Udaipur",
+          "address": "Uran Raigad, Thiruvallur, Chainnai, Alampur, Kolkata, Mundra, Anantpur, Kadapa, RAYALACHERUVU, KOLIWAD SANJAN, Sonipat, Alwar, Udaipur",
+          "primaryFunction": "Warehouses"
+        }
+      ]
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "The objective of this Sustainable Procurement Policy is to establish a framework for responsible sourcing practices that align with our commitment to sustainability, ethical business operations, and compliance with applicable laws and international standards. This policy guides our efforts to foster sustainable development, promote human rights, minimize environmental impacts, and create shared value across our supply chains.",
+      "declaration": "20 Microns Limited is committed to sustainable procurement practices, ensuring our supply chains uphold ethical, environmental, and social standards. Our policy is aligned with the following key elements:",
+      "scope": "This policy applies to all procurement activities undertaken by 20 Microns Limited:\n\nManagement, all employees, customers, suppliers, contractors, workers and other stakeholders working directly and indirectly in and for 20 Microns Limited.\n\nGoverning and Operating entities of 20 Microns Limited:\n\nOffices: Waghodia – HO & RO, Delhi, Mumbai, Vadodara\n\nManufacturing Plants: Alwar, Bhuj, Tirunelveli, Hosur, Udaipur, Haldwani, Nagor, Parbatsar\n\nWarehouses: Uran Raigad, Thiruvallur, Chainnai, Alampur, Kolkata, Mundra, Anantpur, Kadapa, RAYALACHERUVU, KOLIWAD SANJAN, Sonipat, Alwar, Udaipur\n\nIt covers all goods, services, and materials procured for the company's operations globally."
+    },
+    "focusAreas": [
+      "Governance",
+      "Supplier Due Diligence",
+      "Human Rights Risk Assessment",
+      "Complicity Avoidance",
+      "Grievance Redressal",
+      "Civil and Political Rights",
+      "Economic, Social, and Cultural Rights",
+      "Health and Safety at Work with Fair Operations",
+      "Social and Labour Practices",
+      "Consumer Issues Adherence",
+      "Environmental Impact Mitigation",
+      "Community Benefits",
+      "Social Compliance in the Supply Chain",
+      "Material Sourcing Risks"
+    ],
+    "qualitative": {
+      "Governance": [
+        "We embed sustainability principles into our procurement practices by:",
+        "Establishing clear procurement guidelines based on sustainability principles.",
+        "Ensuring compliance with relevant laws and standards, including the Indian Factory Act, ILO conventions, and Pollution Control Board guidelines.",
+        "Conducting regular audits and reviews to measure adherence to sustainability commitments."
+      ],
+      "Supplier Due Diligence": [
+        "We undertake rigorous due diligence to ensure suppliers meet sustainability requirements:",
+        "Screening suppliers based on environmental, social, and governance (ESG) criteria.",
+        "Evaluating suppliers’ adherence to local and international labour standards, anti-corruption policies, and environmental regulations.",
+        "Periodic risk assessments to identify potential sustainability-related risks in the supply chain."
+      ],
+      "Human Rights Risk Assessment": [
+        "Assess and address human rights risks across supply chains, focusing on vulnerable groups, such as migrant workers, women, and children.",
+        "Uphold the principles of the Universal Declaration of Human Rights and ensure compliance with Indian labour laws."
+      ],
+      "Complicity Avoidance": [
+        "Avoid direct or indirect involvement in human rights violations, environmental degradation, or unethical practices by suppliers or subcontractors."
+      ],
+      "Grievance Redressal": [
+        "Maintain accessible grievance mechanisms for stakeholders, including suppliers and subcontractors, to report violations of the Sustainable Procurement Policy.",
+        "Take corrective actions swiftly in response to reported grievances."
+      ],
+      "Civil and Political Rights": [
+        "Respect the freedom of association and collective bargaining rights of workers in our supply chains.",
+        "Ensure suppliers uphold civil and political rights within their operations."
+      ],
+      "Economic, Social, and Cultural Rights": [
+        "Promote fair wages and equitable labour practices among suppliers.",
+        "Encourage suppliers to provide skill development and economic opportunities to local communities."
+      ],
+      "Health and Safety at Work with Fair Operations": [
+        "Enforce compliance with health and safety regulations as per the Indian Factory Act and ILO standards.",
+        "Ensure suppliers maintain safe and hygienic working conditions and adhere to fair labour practices."
+      ],
+      "Social and Labour Practices": [
+        "Prohibit forced labour, child labour, and discriminatory practices in our supply chains.",
+        "Encourage diversity and inclusion among suppliers’ workforces."
+      ],
+      "Consumer Issues Adherence": [
+        "Ensure suppliers maintain product safety and quality standards to protect end-users.",
+        "Promote transparency and ethical practices in marketing and product delivery."
+      ],
+      "Environmental Impact Mitigation": [
+        "Collabourate with suppliers to align with local pollution control board regulations and promote the use of eco-friendly materials and processes.",
+        "Encourage suppliers to adopt practices that minimize carbon emissions, waste generation, and resource consumption.",
+        "Ensure that raw materials and products sourced from suppliers do not contribute to environmental degradation, such as deforestation, water pollution, or habitat destruction.",
+        "Assess potential risks related to the sourcing of materials, such as conflicts over land rights or environmental impacts, and ensure that suppliers have sustainable sourcing certifications.",
+        "Encourage suppliers to incorporate environmental sustainability practices, such as using recycled or renewable materials and minimizing waste."
+      ],
+      "Community Benefits": [
+        "Support suppliers in initiatives that deliver positive social impacts and contribute to community development through CSR and welfare activities."
+      ],
+      "Social Compliance in the Supply Chain": [
+        "Monitor and address social challenges such as worker exploitation, unfair wages, and lack of workers' rights within the supply chain.",
+        "Promote social programs that ensure the well-being of workers and their communities.",
+        "Support initiatives that enhance gender equality, respect for minority groups, and the elimination of discrimination."
+      ],
+      "Material Sourcing Risks": [
+        "Identify and evaluate potential risks in the procurement of materials that may have adverse social or environmental impacts.",
+        "Implement procedures for evaluating the sustainability and traceability of materials, ensuring they are sourced responsibly and ethically.",
+        "Work with suppliers to maintain transparency and traceability throughout the supply chain, ensuring that sourced materials do not contribute to environmental damage or social violations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Sustainable Procurement Targets",
+        "targets": [
+          {
+            "target": "Integrate environmental, social, governance (ESG), and ethical considerations into 100% of procurement decisions.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% of new suppliers undergo sustainability due diligence before onboarding.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% acceptance of the Supplier Code of Conduct by all strategic suppliers.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Key Performance Indicators",
+        "targets": [
+          {
+            "target": "To Increase / Cover % of supplier signing code of conduct — 100%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increasing Nos. of suppliers signing Sustainability terms and conditions — 100%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increasing Nos. of suppliers covered under Sustainability Assessment — 100%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increasing Nos. of suppliers covered under Sustainability Audits — 40%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increasing Nos. of suppliers covered under capacity building — 60%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increasing Nos. of suppliers covered under Sustainability Audits by Volume — 70%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increasing Nos. of person covered in Sustainability Procurement Training like Sustainable Sourcing, Energy Efficiency, Waste reduction & recycling — 100%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increasing Nos. of person covered in Sustainability Procurement Training like Labor Rights & Standards, Diversity & Inclusion, Community Engagement, Health & Safety — 100%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increase the Nos. of suppliers with environmental certifications, such as ISO 14001 — 30%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "Increase the Nos. of suppliers with Labor and human rights certification(s), such as ISO 45001, SA8000 — 30%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "To Increase % of our suppliers comply Environmental laws and regulations. — 100%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          },
+          {
+            "target": "To Increase % of our suppliers comply with Labor and human rights laws and regulations. — 100%",
+            "baseline": "FY-2021-2022",
+            "deadline": "March-27"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provides oversight and ensures alignment of the Sustainable Procurement Policy with the company’s overall sustainability strategy."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "Implements this policy, conducts supplier due diligence, and monitors compliance with sustainability standards."
+      },
+      {
+        "role": "Suppliers and Subcontractors",
+        "duty": "Expected to adhere to the principles outlined in this policy and integrate them into their operations and supply chains."
+      },
+      {
+        "role": "Employees and workers",
+        "duty": "Employees and workers adhere to this sustainable procurement policy."
+      }
+    ],
+    "monitoring": "Conducting regular audits and reviews to measure adherence to sustainability commitments.\n\nThe following Process Performance is to be monitored and measured.\n\nWe, 20 Microns Limited, conduct regular online and offline training sessions to educate suppliers and subcontractors on sustainable procurement principles and their role in achieving sustainability goals.\n\nWe, 20 Microns Limited, provide training for procurement and sustainability teams to ensure effective implementation of the policy.\n\nWe, 20 Microns Limited, maintain open communication channels with suppliers to share expectations, best practices, and updates on sustainability standards.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed at least once every two years to ensure its continued relevance and effectiveness. The review will be conducted by the Lead Auditor – SAS, Head of Supply Chain Management (SCM), Head of Purchase, and Head of Sourcing.\n\nIn the event of significant changes in our operations or business activities, the policy may be updated outside the scheduled review cycle to ensure alignment with our evolving sustainability objectives and compliance requirements."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\20 Microns\\20ML-HO-SAS-POLICY-001 SUSTAINABLE PROCUREMENT POLICY.docx",
+  "sourceTextLength": 14882,
+  "parsedAt": "2026-08-12T06:30:30.155Z"
+}

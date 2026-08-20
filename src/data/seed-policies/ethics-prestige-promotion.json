@@ -1,0 +1,441 @@
+{
+  "id": "ethics-prestige-promotion",
+  "name": "Prestige Promotion",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from QHSE_Ethics_Policy_Final (2).docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Prestige Promotion Verkaufsförderung & Werbeservice GmbH",
+      "address": "Borsigstraße 2, D-63755 Alzenau",
+      "sites": [
+        {
+          "location": "Prestige Promotion – Headquarters & Operations",
+          "address": "Borsigstraße 2, D-63755 Alzenau",
+          "primaryFunction": "Headquarters & Operations"
+        }
+      ],
+      "site": "Borsigstraße 2, D-63755 Alzenau"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "This Ethics Policy sets out the binding ethical principles and compliance obligations of Prestige Promotion Verkaufsförderung & Werbeservice GmbH (\"Prestige Promotion\"). It defines qualitative commitments, detailed measures, and quantitative objectives.\n\nThe policy is based on the principles of the honourable merchant, the UN Global Compact, the German Criminal Code (StGB), the German Money Laundering Act (GwG), the German Whistleblower Protection Act (HinSchG), the EU General Data Protection Regulation (GDPR), and applicable international anti-corruption standards including the UK Bribery Act 2010 and the US Foreign Corrupt Practices Act (FCPA).",
+      "declaration": "Prestige Promotion follows the principle of the honourable merchant and acknowledges its responsibility as a company operating in the highly regulated pharmaceutical co-packaging sector. All business activities are based on the following core values:\n\nPrestige Promotion supports the ten principles of the United Nations Global Compact (UNGC) covering human rights, labour, environment and anti-corruption, and commits to integrating these into its corporate governance. The company is actively reviewing formal accession to the UNGC.\n\nThe management of Prestige Promotion commits to:\n\nMaintaining a strict zero-tolerance policy towards all forms of corruption, bribery, fraud, money laundering and unethical conduct — without exception and regardless of the position of the person concerned or the economic interest of the company\n\nProviding the resources, governance structures and training necessary to implement and continuously improve the ethics and compliance programme\n\nExemplifying ethical conduct in all business activities and exercising the role-model function expected of management\n\nConducting an annual corruption risk assessment and integrating the results into the annual management review\n\nMaintaining effective whistleblower and reporting mechanisms in compliance with the German Whistleblower Protection Act (HinSchG)\n\nEnsuring regular communication of ethical obligations to all employees and relevant stakeholders\n\nReviewing and updating this policy at least annually, incorporating changes in law, and operational experience\n\nApplying appropriate sanctions — including employment law and criminal law consequences — to any violations of this policy",
+      "scope": "This policy applies without exception to:\n\nAll employees of Prestige Promotion: full-time, part-time, fixed-term, casual workers, interns and apprentices\n\nManagement and all members of the leadership team, regardless of position\n\nTemporary workers, external consultants and contractors acting on behalf of the company\n\nBusiness partners, suppliers and service providers, to the extent contractually agreed\n\nAll business activities and sites of Prestige Promotion, worldwide and regardless of whether local laws impose less stringent requirements"
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of Interest",
+      "Fraud",
+      "Money Laundering",
+      "Responsible Information Management"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Prestige Promotion maintains an unconditional zero-tolerance towards all forms of corruption and bribery. This applies to all business activities, both domestic and international, regardless of local customs or market conditions. No financial or commercial interest justifies deviation from this commitment. Management exercises a role-model function and bears personal responsibility for creating an environment in which corruption cannot arise.",
+        "The following conduct is prohibited without exception:",
+        "Offering, promising, granting or approving advantages to public officials or business partners in exchange for preferential treatment in decisions, contract awards or supply arrangements",
+        "Demanding, accepting a promise of, or receiving personal advantages in exchange for preferential treatment in a supply arrangement or contract award",
+        "Facilitation payments of any kind, including to public officials",
+        "Kickback payments, covert commissions or payments to intermediaries where it is known or reasonably assumed that these will be used for bribery",
+        "Participation in bid-rigging arrangements or anti-competitive agreements with competitors",
+        "Covert payments via third parties (consultants, asset managers, agents) intended to circumvent anti-corruption controls",
+        "Any conduct creating the appearance of attempting to influence business or governmental decisions through improper means",
+        "Prestige Promotion conducts a formal corruption risk assessment at least once per year. The assessment covers:",
+        "Identification of company areas exposed to corruption risk, including purchasing, sales, supplier qualification, public contracts and regulatory interactions",
+        "Assessment of the likelihood of occurrence and extent of damage for each identified risk area",
+        "Determination and documentation of appropriate anti-corruption control measures",
+        "Derivation and approval of a corrective and preventive action plan (CAPA plan)",
+        "Submission to and approval by management as part of the annual management review (QMH Chapter 5.7)",
+        "All gifts and entertainment above threshold limits are recorded in the Gifts & Entertainment Register and evaluated annually. Gifts or entertainment during ongoing contract negotiations or tendering processes are prohibited."
+      ],
+      "Conflict of Interest": [
+        "Prestige Promotion requires all employees to act in the best interest of the company at all times and to avoid situations in which personal interests conflict or could conflict with the objective fulfilment of their professional duties. All potential or actual conflicts of interest must be disclosed without delay. The company ensures that reported conflicts are assessed, managed and documented transparently and impartially.",
+        "A conflict of interest exists or may exist where personal interests could impair the objective fulfilment of professional duties. Examples include:",
+        "Business relationships with family members or close friends where the employee has influence over a relevant decision (purchasing, contracting, hiring)",
+        "Secondary employment or consultancy activities for competitors, customers, or suppliers of Prestige Promotion without prior disclosure and approval",
+        "Direct or indirect shareholdings in companies that are current or prospective business partners of Prestige Promotion",
+        "Receipt of personal benefits (gifts, invitations, financial advantages) in connection with supplier selection, contract award or procurement decisions",
+        "Participation in a hiring or performance evaluation decision where the employee has a personal relationship with the candidate",
+        "Use of confidential information obtained in the course of employment for personal financial gain or for the benefit of third parties",
+        "All employees are required to report potential or actual conflicts of interest to their line manager and/or the compliance function without delay, and before acting in any matter where a conflict may exist.",
+        "Employees in key positions — including purchasing, management, project management and senior quality roles — sign a formal annual conflict of interest declaration confirming disclosure of all known or potential conflicts.",
+        "The compliance function and management assess each reported conflict, determine appropriate management measures (recusal, oversight, transfer of responsibility), and document the outcome.",
+        "Employees are not disadvantaged for making good-faith disclosures; retaliation against employees who disclose conflicts is prohibited and will be treated as a disciplinary matter.",
+        "Line managers are trained to recognise indicators of undisclosed conflicts of interest and to manage disclosures with confidentiality and impartiality."
+      ],
+      "Fraud": [
+        "Prestige Promotion maintains zero tolerance towards all forms of fraud, embezzlement, falsification of documents, manipulation of accounts, theft or deception — whether committed by employees, contractors or business partners. The company implements a robust system of preventive controls, detection mechanisms and response procedures to ensure that fraud risks are systematically identified and addressed.",
+        "The following conduct is prohibited without exception:",
+        "Falsification of documents, reports, invoices, contracts, test records, quality documentation, or any other business record",
+        "Manipulation of accounts, financial reports, inventory records or any system-generated data",
+        "Embezzlement, misappropriation or unauthorised use of company assets, funds or property",
+        "Submission of false expense claims, inflated travel cost reimbursements, or claims for work not performed",
+        "Deception of customers, suppliers, authorities or other stakeholders through false information, misleading statements or omissions",
+        "Theft or misappropriation of physical assets, intellectual property or confidential information belonging to the company, customers or business partners",
+        "Circumvention of internal controls, approval processes or segregation of duty requirements",
+        "Collusion with external parties to defraud the company or any third party",
+        "Four-eyes principle applied to all payment approvals, contract awards, purchase orders above defined thresholds, and significant financial transactions — two independent approvals required before execution",
+        "Defined and documented authorisation matrix specifying approval authority limits by role and transaction type; regularly reviewed and updated as part of the management review process",
+        "Segregation of incompatible functions: the person who initiates a transaction may not be the same person who approves and processes payment — enforced across procurement, accounting and logistics",
+        "Regular internal audits and self-inspections conducted in accordance with SOP-16.01, including unannounced spot checks of financial records, expense claims, inventory and document integrity",
+        "Data integrity controls in accordance with SOP-10.03 and SOP-10.04, ensuring that all quality-relevant and financial records are complete, accurate, traceable, contemporaneous, original and attributable (ALCOA+)",
+        "GMP-compliant batch record and documentation controls preventing unauthorised modification of pharmaceutical packaging records, serialisation data and quality system entries",
+        "Fraud awareness and prevention training for functions at elevated risk, including accounting, purchasing, logistics and warehouse management"
+      ],
+      "Money Laundering": [
+        "Prestige Promotion is committed to preventing any involvement — direct or indirect — in money laundering, the concealment of unlawfully obtained funds, or the financing of criminal or terrorist activities. The company will not enter into, maintain or facilitate business relationships that serve to disguise the origin, ownership or disposition of illicit funds. All business transactions are conducted transparently, lawfully and with full accountability.",
+        "Accepting, processing or transferring funds where there are reasonable grounds to suspect that they originate from unlawful activities",
+        "Structuring transactions in a manner designed to avoid reporting obligations or regulatory scrutiny",
+        "Establishing or maintaining fictitious accounts, black funds or covert financial arrangements",
+        "Accepting unusual cash payments of disproportionate size or structure without adequate justification and documentation",
+        "Entering into contracts or business relationships with parties known to be associated with criminal activities or subject to financial sanctions",
+        "Issuing or accepting fictitious invoices, false invoice descriptions or payments without a legitimate commercial basis",
+        "Know Your Customer (KYC) — prior to entering into significant new business relationships, Prestige Promotion verifies the identity, business purpose and beneficial ownership of counterparties, with particular attention to politically exposed persons (PEPs), sanctioned parties and high-risk jurisdictions",
+        "Sanctions screening — all new and existing significant business partners are screened against applicable EU, UN, OFAC and national sanctions lists; screening is documented and repeated on a risk-based basis",
+        "Unusual transaction monitoring — employees are trained to identify and report red flags including: payments to or from unknown third parties; requests for unusual payment routes; unusually large or split cash transactions; payments without apparent commercial justification",
+        "Transparent payment procedures — all payments are made only to verified counterparties on the basis of proper documentation; payments to third parties on behalf of a business partner require additional approval and justification",
+        "Proper accounting — all business transactions are completely, truthfully and promptly recorded; no fictitious entries or transactions without economic substance are permitted; the four-eyes principle applies to all payment-relevant transactions",
+        "Reporting obligation — employees who detect or reasonably suspect money laundering activity are required to report immediately to management and/or the compliance function; statutory reporting obligations to competent authorities are fulfilled where required by law"
+      ],
+      "Responsible Information Management": [
+        "Prestige Promotion is committed to the responsible, lawful and ethical management of all information in its care — including personal data of employees, customers, business partners and patients; confidential business information; intellectual property; and GMP-relevant quality records. The company respects the privacy rights of all individuals, protects confidential information entrusted to it, maintains data integrity across all systems, and responds promptly and transparently to data protection incidents.",
+        "All personal data — including employee records, customer contact data, patient-related information, and supplier data — is processed strictly in accordance with the GDPR, the BDSG and internal data protection policies",
+        "Personal data is collected only for specified, explicit and legitimate purposes; data minimisation is applied — only data necessary for the defined purpose is collected and retained",
+        "All employees with access to personal data receive mandatory GDPR awareness training upon induction and annually thereafter; training is documented in the training management system",
+        "Data subjects' rights — including access, rectification, erasure, portability and objection — are respected and can be exercised through documented procedures; requests are processed within statutory deadlines",
+        "Personal data is shared with third parties only where a lawful basis exists; data processing agreements are in place with all relevant third-party processors",
+        "Internal company data — including commercial strategy, customer lists, pricing, process documentation and quality system content — is classified and protected in accordance with SOP-03.03, with access granted strictly on a need-to-know basis",
+        "Confidential information belonging to customers, business partners and suppliers is treated with the same level of protection as internal confidential data; non-disclosure obligations are contractually documented",
+        "Intellectual property of Prestige Promotion and of business partners and customers is respected; unauthorised reproduction, disclosure or use is prohibited",
+        "Employees leaving the company are required to return all company devices, data and confidential materials; access rights are revoked promptly upon termination",
+        "All GMP-relevant records — including batch records, test results, serialisation data, quality system entries, deviation reports and change control documentation — comply with ALCOA+ principles: Attributable, Legible, Contemporaneous, Original, Accurate, plus Complete, Consistent, Enduring and Available",
+        "Data integrity controls defined in SOP-10.03 and SOP-10.04 are applied across all systems — electronic and paper-based — used in the production, storage and release of pharmaceutical and medical device products",
+        "Unauthorised modification, deletion or falsification of GMP records is treated as a critical compliance violation subject to immediate escalation, root cause investigation and CAPA",
+        "Audit trails in electronic systems used for quality-critical processes are activated, protected and reviewed as required by EU GMP Annex 11",
+        "Internal IT systems and data repositories are protected through role-based access controls, password policies, and appropriate technical and organisational security measures proportionate to the risk of the data held",
+        "In the event of a personal data breach, the internal escalation procedure is immediately initiated; reportable breaches are notified to the competent supervisory authority within 72 hours in accordance with GDPR Article 33, and to affected individuals where required",
+        "A mandatory reporting obligation applies to all employees who become aware of an actual or suspected data breach, data loss, or unauthorised access to company systems or confidential information"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "First formal assessment completed; CAPA plan approved by management",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of the operation sites cover under corruption risk assessment",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Register template created; system operational",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Annual review completed; zero (0) unexplained entries",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "100% of purchasing, sales & management trained",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Annual refresher; 100% workforce cover under corruption training",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Zero confirmed incidents; reporting channel active",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Zero (0) confirmed incidents; all concerns investigated",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Reporting mechanism operational; first cases documented",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of reports documented with outcome and management measures",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "100% of purchasing, management & project leads trained",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Annual refresher; 100% workforce cover under Conflict-of-interest training",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Zero (0) confirmed undisclosed conflicts after system launch",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Zero (0) confirmed undisclosed conflicts",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Screening process defined for procurement decisions",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of significant procurement decisions screened",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "100% compliance documented; monitoring system established",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Zero (0) exceptions; all deviations investigated",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Audit plan includes at least 2 fraud-risk process reviews",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 3 fraud-risk process reviews per year",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "100% of accounting, purchasing & logistics trained",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Annual refresher; 100% workforce cover under Fraud training",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Zero (0) confirmed incidents; reporting channel active",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Zero (0) confirmed incidents; all concerns investigated",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "≥ 10% random sample reviewed quarterly",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 10% reviewed; zero unexplained irregularities",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "KYC procedure defined; screening process operational",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of new significant partners with documented KYC",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Screening process established; first checks completed",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of significant partners screened annually",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Reporting mechanism operational; employees aware of obligation",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of suspicious transactions reported and documented",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Policy on cash payment limits documented and communicated",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Annual review; zero (0) undocumented cash transactions above threshold",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "100% of relevant staff trained; documented in training system",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Annual refresher; 100% 100% workforce cover under AML training",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Management",
+        "targets": [
+          {
+            "target": "100% of employees trained & documented",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Annual refresher; 100% workforce cover under Information Security training",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Process documented; responses tracked",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of requests processed within 30 days (GDPR)",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Breach response procedure documented & communicated",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of reportable breaches reported on time",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Register of processors created; agreements reviewed",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of relevant processors with signed DPA",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Audit plan includes ≥ 2 data integrity reviews annually",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "≥ 2 audits/year; all findings actioned with CAPA",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          },
+          {
+            "target": "Process for prompt access revocation defined",
+            "baseline": "The base year is 2025.",
+            "deadline": "2026"
+          },
+          {
+            "target": "100% of leavers with access revoked within 1 business day",
+            "baseline": "The base year is 2025.",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Overall responsibility; approval and annual review of policy; approval of sensitive transactions; management review; role-model function; provision of compliance resources"
+      },
+      {
+        "role": "Compliance / Ethics Officer",
+        "duty": "Maintenance and updating of policy; corruption risk assessment; gifts & entertainment register; conflict of interest declaration management; reporting to management"
+      },
+      {
+        "role": "HinSchG Officer",
+        "duty": "Receipt and independent processing of reports; confidentiality; follow-up measures; feedback to whistleblowers; 3-year retention"
+      },
+      {
+        "role": "Quality Management Officer (QMO)",
+        "duty": "Integration into QMS documentation; data integrity controls; internal audits; document control"
+      },
+      {
+        "role": "HR Management",
+        "duty": "Training organisation; induction of new employees; conflict of interest declarations; GDPR employee record management; access revocation on departure"
+      },
+      {
+        "role": "Purchasing / Sales",
+        "duty": "Compliance with anti-corruption rules; KYC and supplier screening; anti-corruption clauses; gifts & entertainment reporting"
+      },
+      {
+        "role": "IT / Systems",
+        "duty": "Role-based access controls; audit trail maintenance; prompt access revocation; technical and organisational data security measures"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Compliance with this policy; reporting of violations without fear of retaliation; participation in training; disclosure of conflicts of interest"
+      }
+    ],
+    "monitoring": "Prestige Promotion has established an internal reporting office in compliance with the German Whistleblower Protection Act (HinSchG) and the underlying EU Whistleblower Protection Directive. All employees, external partners and other parties may report indications of possible violations of this policy, applicable law or ethical standards — regardless of employment status, nationality or position.\n\nNon-retaliation: whistleblowers who make reports in good faith will not be disadvantaged, dismissed, transferred, demoted or otherwise adversely treated; any retaliation constitutes a violation of this policy and the HinSchG\n\nConfidentiality: the identity of the whistleblower is protected in strict confidence; anonymous reports are accepted and processed equally\n\nImpartiality: the reporting office acts independently; it does not report to the person or function against whom a complaint is made\n\nFeedback: acknowledgement of receipt provided within 7 days; feedback on follow-up measures within 3 months from acknowledgement\n\nDocumentation: all reports are documented and retained for a minimum of 3 years, or longer if required by applicable law or ongoing proceedings\n\nThe reporting procedure, contact information and protection guarantees are provided in at least German and English to ensure accessible reporting for all employees regardless of language background.\n\nCompliance with this policy is mandatory for all employees. Prestige Promotion ensures that all persons covered by this policy have the knowledge and awareness necessary to fulfil their obligations.",
+    "reviewMechanism": "Review for currency and compliance with changes in law (StGB, GwG, HinSchG, GDPR)\n\nFormal annual assessment covering all risk areas; CAPA plan approved by management\n\nIntegration of ethics and compliance KPIs into annual QM management review\n\nSemi-annual review of quantitative targets by QMO / Compliance\n\nAnnual review of all entries; verification of compliance with thresholds and approvals\n\nIn the event of incidents, complaints, new legislation, or supply chain findings"
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Prestige Promotion\\QHSE_Ethics_Policy_Final (2).docx",
+  "sourceTextLength": 40311,
+  "parsedAt": "2026-08-12T06:24:43.059Z"
+}

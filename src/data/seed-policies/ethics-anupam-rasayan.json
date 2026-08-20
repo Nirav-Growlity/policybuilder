@@ -1,0 +1,467 @@
+{
+  "id": "ethics-anupam-rasayan",
+  "name": "Anupam Rasayan",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from Policy on Ethical Business Practices.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Anupam Rasayan India Limited",
+      "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+      "sites": [
+        {
+          "location": "Sachin Unit 1",
+          "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 2",
+          "address": "Plot No. 701, 2419/1, 2419/2, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 3",
+          "address": "Plot No. 8104 and 8106, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 6",
+          "address": "Plot No. 2423 and 2425, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "R&D and Manufacturing"
+        },
+        {
+          "location": "Jhagadia Unit 4",
+          "address": "Plot No. 907/3, 907/4, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Jhagadia Unit 5",
+          "address": "Plot No. 905/1, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Tanfac Industries Limited",
+          "address": "Plot No. 14, SIPCOT Industrial Complex, Kudikadu, Cuddalore – 607005, Tamil Nadu",
+          "primaryFunction": "Fluorochemical Manufacturing"
+        }
+      ],
+      "site": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Anupam Rasayan India Limited (ARIL), established in 1984, is a leading manufacturer of life science–related specialty chemicals with a global reputation for innovation, reliability, and integrity. We firmly believe that long-term success and stakeholder trust are built on a foundation of ethical conduct, transparency, and accountability.\n\nThis Policy on Ethical Business Practices defines our unwavering commitment to conduct business responsibly and in compliance with all applicable laws, regulations, and international standards. It reinforces our core values of honesty, fairness, and respect in every decision and interaction — with employees, customers, suppliers, shareholders, and the community.\n\nThe policy aligns with the UN Global Compact Principles, OECD Guidelines for Multinational Enterprises, ISO 37001 Anti-Bribery Management System, and the UN Sustainable Development Goals (SDGs). It serves as a guiding framework to uphold ethical governance, prevent misconduct, and promote a culture of integrity across all Anupam Rasayan operations.",
+      "declaration": "Anupam Rasayan is committed to conducting all its business operations with integrity, fairness, and transparency. We uphold the highest ethical standards across our value chain and strive to ensure that all decisions, transactions, and relationships are guided by honesty, accountability, and compliance with applicable laws. Our ethical business commitments are defined under the following key focus areas:",
+      "scope": "This Policy on Ethical Business Practices applies to all directors, employees, contract workers, suppliers, distributors, agents, consultants, and third-party partners associated with Anupam Rasayan India Limited and its subsidiaries.\n\nIt covers all aspects of business conduct, including — but not limited to — corporate governance, procurement, sales, marketing, finance, human resources, research and development, and community engagement.\n\nThe policy ensures that every business transaction and stakeholder relationship is guided by the principles of transparency, fairness, accountability, and compliance with the highest standards of professional ethics. It applies equally across all operational units, including."
+    },
+    "focusAreas": [
+      "Corruption",
+      "Fraud",
+      "Conflict of Interest",
+      "Responsible Information Management",
+      "Anti-Competitive Practices",
+      "Money Laundering",
+      "Whistleblower Protection"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Corruption: We maintain a zero-tolerance policy toward bribery, corruption, and any unethical means of obtaining business advantage. Employees and business partners are strictly prohibited from offering, giving, soliciting, or accepting bribes, gifts, or facilitation payments that could improperly influence business decisions. All transactions must comply with the Prevention of Corruption Act, 1988, Companies Act, 2013, and the ISO 37001: Anti-Bribery Management System standards. Training and awareness programs are conducted regularly to reinforce ethical conduct across all levels of the organization."
+      ],
+      "Fraud": [
+        "Fraud: Anupam Rasayan enforces strict measures to detect, prevent, and respond to fraud or misrepresentation in any form. All employees are required to perform their duties with integrity and ensure the accuracy of company records, reports, and financial statements. Any act of deception, forgery, or manipulation of information is subject to immediate disciplinary action and potential legal consequences. Internal control systems and regular audits are maintained to safeguard against fraudulent behavior."
+      ],
+      "Conflict of Interest": [
+        "Conflict of Interest: We expect all employees and directors to act in the best interest of the company and avoid situations where personal interests may conflict with professional duties. Any potential or perceived conflict, including financial interests in competitors, suppliers, or customers, must be promptly disclosed to the Ethics and Compliance Committee. Decisions must always be objective, transparent, and aligned with the company’s ethical values and reputation."
+      ],
+      "Responsible Information Management": [
+        "Responsible Information Management: We are committed to protecting the confidentiality, accuracy, and integrity of all information entrusted to us. Employees and business partners must handle proprietary, customer, and employee data responsibly and in compliance with the Information Technology Act, 2000, and relevant data protection laws. Sharing of confidential information is permitted only for legitimate business purposes and with proper authorization. Misuse, unauthorized disclosure, or mishandling of company or stakeholder information is strictly prohibited."
+      ],
+      "Anti-Competitive Practices": [
+        "Anti-Competitive Practices: Anupam Rasayan promotes fair competition and responsible market behavior. The company strictly prohibits anti-competitive practices such as price-fixing, bid-rigging, collusion, or market manipulation. All business dealings must comply with the Competition Act, 2002, and international fair-trade principles. We believe in winning business through quality, innovation, and service excellence — never through unfair or unethical advantage."
+      ],
+      "Money Laundering": [
+        "Money Laundering: We do not tolerate money laundering, terrorist financing, or any illegal financial activity. The company ensures that all financial transactions are transparent, legitimate, and fully traceable. Due diligence is conducted on customers, vendors, and business partners to prevent association with illegal or unethical activities. Employees are required to immediately report any suspicious transactions to the Compliance Department, in accordance with the Prevention of Money Laundering Act, 2002."
+      ],
+      "Whistleblower Protection": [
+        "Whistleblower Protection: Anupam Rasayan encourages all employees, suppliers, and stakeholders to report any unethical conduct, violation of laws, or breach of this policy without fear of retaliation. The company’s Whistleblower Policy ensures that all reports are handled confidentially and investigated promptly by the Ethics and Compliance Committee. Whistleblowers are protected against discrimination, dismissal, or any adverse consequence for reporting in good faith."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General",
+        "targets": [
+          {
+            "target": "Sets 2022 as the baseline for tracking progress in ethical governance, anti-corruption measures, transparency, and responsible business conduct across all operations.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Maintain zero(0) tolerance for bribery, facilitation payments, or corrupt practices across all business operations and partnerships through 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct 100% annual anti-bribery and ethics training for all employees, directors, and contract workers by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 100% vendor and third-party due diligence screening under ISO 37001 standards by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct anti-bribery and corruption risk assessments across 100% of operational sites and business units by 2027, ensuring identification and mitigation of corruption vulnerabilities.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve zero incidents of non-compliance with anti-corruption laws and internal policies annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Conduct annual internal and external financial audits covering 100% of business units by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain zero(0) incidents of fraud or financial misrepresentation each year through strict internal controls.",
+            "baseline": "2022",
+            "deadline": "each year"
+          },
+          {
+            "target": "Provide mandatory fraud awareness and ethical conduct training to 100% of finance, procurement, and operations staff by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees and directors complete annual conflict of interest declarations by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct semi-annual reviews of conflict disclosures by the Ethics and Compliance Committee.",
+            "baseline": "2022",
+            "deadline": "semi-annual"
+          },
+          {
+            "target": "Integrate conflict-of-interest compliance checks into 100% of procurement and contracting processes by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain zero(0) tolerance for undisclosed conflicts or misuse of authority.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Management",
+        "targets": [
+          {
+            "target": "Achieve 100% employee awareness and training on data confidentiality, cybersecurity, and information protection by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct annual data protection audits at all business sites to ensure compliance with IT and privacy regulations.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct annual information security risk assessments at 100% of operational and digital sites by 2027 to identify vulnerabilities and strengthen data controls",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Implement 100% secure information handling protocols across digital and physical data systems.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero(0) incidents of data breach or unauthorized information disclosure annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure full compliance with the Information Technology Act, 2000, and applicable data privacy regulations across all business functions.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with the Competition Act, 2002, through employee training and periodic audits by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct annual competition law and fair-trade compliance training for all marketing, procurement, and leadership personnel.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Implement a fair competition review process for all strategic partnerships and market activities by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain zero(0) reported incidents of collusion, bid-rigging, or price-fixing.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Engage in at least one industry-led initiative annually promoting fair trade and ethical business behavior.",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Conduct KYC and due diligence checks for 100% of customers, vendors, and intermediaries by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain zero(0) tolerance for money laundering, terrorism financing, or illegal transactions.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Provide annual AML (Anti-Money Laundering) training for 100% of relevant operational site staff, including all Finance, Commercial, and Compliance personnel, by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Implement a transaction monitoring and red-flag reporting system across all financial operations by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct annual AML risk assessments aligned with the Prevention of Money Laundering Act, 2002.",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower Protection",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees are aware of the company’s Whistleblower Policy and reporting channels by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Achieve zero(0) retaliation cases reported against whistleblowers annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Resolve 100% of valid whistleblower complaints within 30 working days of reporting.",
+            "baseline": "2022",
+            "deadline": "within 30 working days of reporting"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Approve and oversee the implementation of the Policy on Ethical Business Practices across all operations."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Review annual ethics performance, risk assessments, audit outcomes, and compliance reports."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Allocate adequate resources for implementing anti-corruption, anti-fraud, and information security systems."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Ensure the integration of ethical governance within the company’s long-term business and sustainability strategy."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Lead the enforcement of ethical standards across all business functions and units."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Promote a culture of integrity, fairness, and zero tolerance for corruption or unethical conduct."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Ensure timely resolution of ethical violations, whistleblower cases, and audit findings."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Report key ethics-related developments and performance metrics to the Board and Sustainability Committee."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Oversee the implementation of ethics policies, codes of conduct, and governance procedures."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Conduct periodic compliance reviews and risk assessments on corruption, fraud, and information security."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Manage the Whistleblower Mechanism and ensure confidentiality and non-retaliation."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Investigate and recommend disciplinary or corrective actions for policy violations."
+      },
+      {
+        "role": "Ethics & Compliance Committee",
+        "duty": "Report compliance updates to senior management and the Board."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Ensure that ethical conduct and anti-corruption principles are integrated into recruitment, onboarding, and employee performance systems.• Conduct periodic ethics and anti-bribery awareness programs for all employees and contractors."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Maintain and update employee declarations related to conflicts of interest and ethical compliance."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Support grievance and whistleblower processes with confidentiality and fairness."
+      },
+      {
+        "role": "Finance & Internal Audit Department",
+        "duty": "Conduct regular audits and internal reviews to ensure compliance with anti-fraud, anti-money laundering, and financial transparency requirements."
+      },
+      {
+        "role": "Finance & Internal Audit Department",
+        "duty": "Verify that all financial transactions are lawful, documented, and aligned with the Prevention of Money Laundering Act (PMLA) and internal controls."
+      },
+      {
+        "role": "Finance & Internal Audit Department",
+        "duty": "Monitor implementation of corrective actions arising from audit findings."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Integrate ethical business standards into supplier selection, contracting, and evaluation processes."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Conduct third-party due diligence and supplier risk assessments to prevent unethical or illegal practices."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Promote supplier awareness on anti-corruption, data protection, and responsible sourcing standards."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Ensure that no business partner or intermediary engages in bribery, fraud, or unfair competition."
+      },
+      {
+        "role": "Information Technology (IT) Department",
+        "duty": "Implement and maintain information security systems aligned with ISO 27001 standards."
+      },
+      {
+        "role": "Information Technology (IT) Department",
+        "duty": "Conduct periodic cybersecurity and data protection risk assessments across 100% of digital infrastructure."
+      },
+      {
+        "role": "Information Technology (IT) Department",
+        "duty": "Monitor and control access to confidential company data, ensuring compliance with privacy and IT laws."
+      },
+      {
+        "role": "Information Technology (IT) Department",
+        "duty": "Support incident response and reporting mechanisms for any data breaches or misuse of information."
+      },
+      {
+        "role": "Legal Department",
+        "duty": "Ensure alignment of business practices with national and international anti-corruption, competition, and money-laundering laws."
+      },
+      {
+        "role": "Legal Department",
+        "duty": "Review contracts, third-party agreements, and transactions to ensure compliance with ethical and legal requirements."
+      },
+      {
+        "role": "Legal Department",
+        "duty": "Provide legal guidance on disciplinary proceedings and whistleblower investigations."
+      },
+      {
+        "role": "Legal Department",
+        "duty": "Coordinate with external legal bodies during compliance audits or investigations."
+      },
+      {
+        "role": "Training & Development Team",
+        "duty": "Develop and implement ethics, anti-corruption, and compliance training programs."
+      },
+      {
+        "role": "Training & Development Team",
+        "duty": "Track participation and effectiveness of all training sessions related to integrity and ethical decision-making."
+      },
+      {
+        "role": "Training & Development Team",
+        "duty": "Ensure continuous communication and employee engagement on ethical values and organizational expectations."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Comply with the Policy on Ethical Business Practices and the Employee Code of Conduct at all times."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Report any suspected or confirmed unethical behavior, corruption, fraud, or data breaches through designated channels."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Maintain transparency in all business interactions and avoid conflicts of interest."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Participate actively in ethics, compliance, and data protection trainings."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Uphold Anupam Rasayan’s values of honesty, fairness, and integrity in daily operations."
+      }
+    ],
+    "monitoring": "Track key ethical performance indicators (KPIs), including the number of corruption risk assessments conducted, whistleblower cases received, employee ethics trainings completed, and supplier due diligence reviews.\n\nConduct annual internal audits and third-party compliance reviews to ensure adherence to anti-corruption, anti-fraud, data protection, and fair competition standards.\n\nPerform annual risk assessments across all of operational and digital sites to evaluate vulnerabilities related to bribery, fraud, information security, and money laundering.\n\nMonitor the implementation of corrective and preventive actions from audit findings, ensuring continuous improvement in ethical governance systems.\n\nDisclose the company’s ethical governance performance and progress annually in the Sustainability Report, aligned with GRI 205 (Anti-Corruption), GRI 406 (Non-Discrimination), and GRI 418 (Data Protection).\n\nSubmit periodic updates to the Sustainability Committee and Board of Directors summarizing audit outcomes, policy implementation status, and significant ethics-related cases.\n\nMaintain open, transparent communication channels with employees, business partners, and other stakeholders on ethical conduct, risk mitigation, and compliance programs.\n\nEnsure adherence to ISO 37001: Anti-Bribery Management System, ISO 27001: Information Security Management System, and applicable Indian laws such as the Companies Act, 2013, Competition Act, 2002, and Prevention of Money Laundering Act, 2002.\n\nEngage independent third-party auditors periodically to verify compliance, investigate red flags, and validate the effectiveness of the company’s ethics and compliance programs.\n\nDocument and report all corrective actions, risk mitigations, and training outcomes annually to the Ethics & Compliance Committee, ensuring transparency, accountability, and continuous improvement.",
+    "reviewMechanism": "The Sustainability Committee, in coordination with the Ethics and Compliance Committee, Internal Audit, and Legal Departments, shall be responsible for conducting the annual review of this Policy on Ethical Business Practices. The review will evaluate the policy’s effectiveness, compliance performance, and progress toward established ethical and governance targets.\n\nThe review will also assess outcomes of risk assessments, audit results, whistleblower cases, and any significant changes in applicable laws, regulations, or industry standards. Based on these evaluations, recommendations for updates or corrective measures will be submitted to the Board of Directors for approval.\n\nAny revisions, amendments, or enhancements to this policy arising from new regulatory requirements, audit findings, or stakeholder feedback will be formally approved by the Board of Directors and communicated across all operational sites and value chain partners. This ensures continued alignment with Anupam Rasayan’s values of transparency, integrity, and responsible business conduct."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Anupam Rasayan\\Policy on Ethical Business Practices.docx",
+  "sourceTextLength": 27611,
+  "parsedAt": "2026-08-12T06:23:33.325Z"
+}

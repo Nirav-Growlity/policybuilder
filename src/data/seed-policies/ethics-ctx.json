@@ -1,0 +1,227 @@
+{
+  "id": "ethics-ctx",
+  "name": "CTX",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from 3. Ethical Conduct Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "CTX Lifesciences Pvt. Ltd.",
+      "address": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Sachin, Surat – 394230, Gujarat, India",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Surat – 394230, Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Factory",
+          "address": "Block Nos. 251/B, 252/B, 253, 254, 255, 256, 258/B, 276, 277, 278/P, 279, 280, 281, 282, 283/P, 284/P, Sachin GIDC, Near Gabheni Chokdi, Sachin, Surat – 394230, Gujarat, India",
+          "primaryFunction": ""
+        }
+      ],
+      "site": "Block No. 251–252, Sachin–Magdalla Road, Sachin GIDC, Sachin, Surat – 394230, Gujarat, India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "CTX Lifesciences Pvt. Ltd. is firmly committed to conducting all its activities with the highest standards of ethical conduct, integrity, and professionalism. The Company believes that ethical behavior is fundamental to building trust with employees, customers, business partners, regulators, and the communities in which it operates. CTX conducts its business in full compliance with applicable laws and regulations and in accordance with recognized principles of honesty, fairness, transparency, and accountability.\n\nCTX maintains a strict zero-tolerance approach toward bribery, corruption, fraud, conflicts of interest, and any form of unethical or improper conduct. All employees, directors, and business partners are expected to act responsibly, exercise sound judgment, protect company assets and confidential information, and promptly report any actual or suspected ethical or legal violations. This Ethics Policy serves as the cornerstone of ethical decision-making at CTX Lifesciences and reinforces the Company’s commitment to responsible, compliant, and sustainable business practices across all operations.",
+      "declaration": "CTX Lifesciences Pvt. Ltd. affirms its commitment to fostering a culture rooted in ethical values and responsible conduct. The Company expects all individuals associated with its operations to act with integrity, fairness, and respect in every business interaction. Ethical behavior and compliance with laws and internal standards are integral to how CTX conducts its business. Any form of unethical or improper conduct is strictly prohibited. This declaration serves as a guiding statement for ethical behavior across the organization.",
+      "scope": "This Ethical Conduct Policy applies to all employees, contractual staff, consultants, and business partners of CTX Lifesciences Pvt. Ltd. and governs conduct across all functions and operations, including manufacturing, quality assurance, supply chain activities, sales, and customer engagement. It also extends to interactions with vendors, suppliers, service providers, and other external stakeholders, ensuring that all business relationships are conducted in line with the Company’s values of integrity, transparency, and ethical responsibility."
+    },
+    "focusAreas": [
+      "Anti-Corruption: Prohibit bribery, kickbacks, and all forms of corrupt practices through clear standards, training, and enforcement.",
+      "Conflict of Interest: Disclose and manage any personal or financial interests that could affect business decisions.",
+      "Fraud Prevention: Detect and prevent fraud using internal controls, audits, and confidential reporting channels.",
+      "Anti-Money Laundering (AML): Comply with AML laws by monitoring transactions, identifying suspicious activities, and providing training.",
+      "Information Security: Safeguard confidential data through access controls, security measures, and awareness programs.",
+      "Use of Company Assets: Ensure assets are used responsibly, efficiently, and solely for legitimate business purposes."
+    ],
+    "qualitative": {
+      "Anti-Corruption": [
+        "Maintain a zero-tolerance approach to bribery, kickbacks, or any form of corrupt practices in line with applicable laws and company policies.",
+        "Foster a culture of integrity where employees and partners understand the importance of rejecting bribery and unethical behavior.",
+        "Provide regular anti-corruption training and guidance to employees and contractors.",
+        "Encourage reporting of potential corruption incidents through confidential channels without fear of retaliation."
+      ],
+      "Conflict of Interest": [
+        "Implement clear procedures for identifying, disclosing, and managing potential conflicts of interest fairly and impartially.",
+        "Ensure all business decisions are objective, unbiased, and free from personal or financial influence.",
+        "Maintain transparency in dealings with suppliers, clients, and partners by documenting conflicts and mitigation actions."
+      ],
+      "Fraud Prevention": [
+        "Maintain a zero-tolerance stance toward fraud, misrepresentation, or any form of dishonest conduct.",
+        "Implement internal controls, audits, and monitoring mechanisms to detect and prevent fraud.",
+        "Encourage timely reporting of fraud or irregularities through confidential reporting systems.",
+        "Investigate all reported incidents promptly and take corrective or disciplinary action as needed."
+      ],
+      "Anti-Money Laundering (AML)": [
+        "Comply with all relevant AML laws, regulations, and internal procedures to prevent misuse of company operations.",
+        "Ensure employees are aware of AML obligations, including monitoring transactions and recognizing warning signs.",
+        "Maintain accurate records of transactions to support transparency and regulatory adherence."
+      ],
+      "Information Security": [
+        "Protect confidential business, employee, and customer information through robust access controls and cyber security measures.",
+        "Continuously assess and strengthen data protection practices to address evolving risks and regulatory requirements and thereby ensure secure handling, storage, and disposal of physical and digital information.",
+        "Restrict access to sensitive information based on role and need-to-know principles.",
+        "Promote employee awareness of information security responsibilities through regular training."
+      ],
+      "Use of Company Assets": [
+        "Encourage employees to report any suspected misuse or damage promptly.",
+        "Encourage responsible, ethical, and authorized use of company resources by all employees by monitoring asset usage to optimize efficiency and reduce risk.",
+        "Encourage employees to report any suspected misuse or damage promptly."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption",
+        "targets": [
+          {
+            "target": "Ensure 100% of supplier and business partner contracts include anti-bribery and anti-corruption clauses by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain zero confirmed incidents of corruption in internal or external audits each year.",
+            "baseline": "FY 2022–23",
+            "deadline": "each year"
+          },
+          {
+            "target": "Provide annual anti-corruption training to 100% of employees in procurement, finance, and senior management till FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Achieve 100% completion of Conflict-of-Interest declarations by all managers, key decision-makers, and board members by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of new employees complete conflict-of-interest awareness and disclosure as part of onboarding procedures.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Maintain zero confirmed fraud incidents across all operations each financial year.",
+            "baseline": "FY 2022–23",
+            "deadline": "each financial year"
+          },
+          {
+            "target": "Conduct annual fraud risk assessments covering 100% of high-risk functions by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Review and enhance fraud detection mechanism and internal controls to cover 100% of critical processes by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering (AML)",
+        "targets": [
+          {
+            "target": "Conduct 2 AML audits covering 100% of relevant business units to identify and mitigate risks by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Implement transaction monitoring and suspicious activity detection mechanisms covering 100% of high-risk operations by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain confidential reporting channels for AML concerns accessible to 100% of employees.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Mainitain zero incidents of unauthorized data access or breaches through strengthened access controls and monitoring by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Implement continuous monitoring systems to detect security vulnerabilities and cyber threats across 100% of critical IT systems by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of employees complete data protection and cybersecurity awareness training by FY 2029-30 and annually thereafter.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30 and annually thereafter"
+          }
+        ]
+      },
+      {
+        "area": "Use of Company Assets",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees handling sensitive assets receive annual training on proper use and safeguarding by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Implement asset monitoring mechanisms covering 100% of high-value and critical assets to detect misuse, loss, or theft by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Ensures implementation of ethical policies and compliance with anti-corruption, conflict of interest, fraud, and information security standards."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Oversees employee training on ethical conduct, including anti-corruption and conflict-of-interest policies."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Safeguards company and customer data through secure information systems."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts audits to assess policy compliance and identify risks."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Reviews ethical performance, allocates resources, and promotes a culture of integrity."
+      }
+    ],
+    "monitoring": "Routine internal risk assessments and independent audits are performed to detect ethical, operational, financial, and cybersecurity risks, assess control effectiveness, and implement corrective actions where needed.\n\nSecure technology solutions support transaction oversight, fraud detection, data protection, and confidential reporting, enabling swift investigation and resolution of issues.\n\nAll reported concerns are promptly reviewed and investigated by designated internal authorities or, where appropriate, independent third-party experts. Investigations are conducted impartially and confidentially, and information is shared strictly on a need-to-know basis. The identity of whistleblowers is protected unless disclosure is required by law.",
+    "reviewMechanism": "The Ethical Conduct Policy is reviewed annually by the Compliance Officer to ensure its continued relevance, effectiveness, and alignment with legal and regulatory requirements. Updates may be made based on audit findings, changes in applicable laws, employee feedback, or evolving business practices. Any revisions are communicated to all employees, and necessary training is provided to ensure awareness and compliance."
+  },
+  "sourcePath": "Hetvi- Policies\\CTX\\3. Ethical Conduct Policy.docx",
+  "sourceTextLength": 16578,
+  "parsedAt": "2026-08-12T06:26:11.361Z"
+}

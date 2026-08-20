@@ -1,0 +1,411 @@
+{
+  "id": "ethics-vasuda-pharma",
+  "name": "Vasuda Pharma",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from 4. Value Chain Integrity Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Vasuda Pharma",
+      "industry": "",
+      "site": "78/A, Vengal Rao Nagar Road, Hyderabad, Telangana.",
+      "sites": [
+        {
+          "location": "Unit I",
+          "address": "M/s. Vasudha Pharma Chem Limited, Plot No. 39 A & B, Phase I, IDA, Jeedimetla, Quthubullapur (M), Medchal-Malkajgiri District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit II",
+          "address": "M/s. Vasudha Pharma Chem Ltd., Unit II, Plot No. 79, JN Pharmacity, Parawada, Anakapalli District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit III",
+          "address": "M/s. Vasudha Pharma Chem Ltd., Unit III, Plot No. 23 & 24, Visakha Pharmacity Limited, Parawada, Anakapalli District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit IV",
+          "address": "M/s. Vasudha Pharma Chem Ltd., Unit IV, Plot No. 01, JN Pharmacity, Thadi (V), Parawada (M), Anakapalli District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "Unit V",
+          "address": "M/s. Vasudha Pharma Chem Ltd., Plot No. 24, 24A & 24B, APSEZ, Lalamkoduru (V), Rambilli (M), Visakhapatnam District.",
+          "primaryFunction": "Manufacturing facility"
+        },
+        {
+          "location": "R&D Centre",
+          "address": "Ramky Commercial Hub, JN Pharmacity, Parawada, Anakapalli District.",
+          "primaryFunction": "Research and development"
+        },
+        {
+          "location": "Corporate Office",
+          "address": "4th Floor, Vamsiram Jyothi Galaxy, Kavuri Hills, Jubilee Hills, Hyderabad, Telangana.",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "Registered Office",
+          "address": "78/A, Vengal Rao Nagar Road, Hyderabad, Telangana.",
+          "primaryFunction": "Registered office"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "78/A, Vengal Rao Nagar Road, Hyderabad, Telangana."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Vasudha Pharma Chem Ltd. is committed to integrating sustainability into its procurement and supply chain management practices by promoting responsible sourcing, ethical business conduct, environmental stewardship, and social responsibility throughout its value chain. As a leading manufacturer of Active Pharmaceutical Ingredients (APIs), pharmaceutical intermediates, API pellets, and specialty chemical products, the Company recognizes that its suppliers and business partners play a critical role in supporting operational excellence, product quality, regulatory compliance, and long-term sustainable growth.\n\nThe Company believes that procurement decisions should extend beyond considerations of quality, cost, and delivery to include environmental, social, ethical, and governance (ESG) performance. By working collaboratively with suppliers, contractors, service providers, distributors, and other business partners, Vasudha Pharma Chem Ltd. seeks to minimize environmental impacts, uphold human rights, promote fair labor practices, strengthen responsible governance, and build a resilient and sustainable supply chain.",
+      "declaration": "Vasudha Pharma Chem Ltd. is committed to conducting procurement activities in a responsible, transparent, ethical, and sustainable manner. The Company recognizes that procurement decisions significantly influence environmental performance, social responsibility, operational resilience, regulatory compliance, and long-term business sustainability. Accordingly, sustainability considerations shall be integrated into procurement strategies, supplier selection processes, commercial decision-making, contract management, and supplier performance evaluation.",
+      "scope": "This Value Chain Integrity Policy applies to all procurement activities, sourcing decisions, supplier relationships, contracting processes, and supply chain operations conducted by Vasudha Pharma Chem Ltd. across all manufacturing facilities, research and development centres, warehouses, laboratories, utilities, and corporate offices under its operational control.\n\nThis Policy is applicable to:\n\nAll procurement, sourcing, purchasing, contract management, logistics, inventory management, finance, quality assurance, manufacturing, engineering, EHS, and other business functions involved in procurement decisions.\n\nAll permanent, temporary, contractual, probationary, trainee, apprentice, and part-time employees participating in procurement and supplier management activities.\n\nAll suppliers, vendors, contractors, consultants, distributors, transport providers, service providers, third-party manufacturers, and business partners supplying goods or services to the Company.\n\nAll procurement categories, including raw materials, chemicals, packaging materials, engineering items, utilities, capital equipment, maintenance services, logistics, information technology, facility management, and professional services.\n\nAll supplier qualification, selection, onboarding, contracting, performance evaluation, supplier development, supplier audits, and procurement governance activities undertaken by the Company."
+    },
+    "focusAreas": [
+      "Guiding Principles",
+      "Supplier Environmental Practices",
+      "Supplier Social and Labor Practices",
+      "Sustainable Procurement Goals",
+      "Governance Goals"
+    ],
+    "qualitative": {
+      "Guiding Principles": [
+        "Responsible Sourcing: Integrate environmental, social, ethical, quality, safety, and governance considerations into procurement decisions while balancing cost, quality, reliability, and sustainability.",
+        "Legal and Regulatory Compliance: Ensure procurement activities comply with applicable laws, regulations, contractual obligations, environmental requirements, labor standards, and ethical business practices.",
+        "Supplier Partnership and Collaboration: Foster long-term relationships with suppliers based on transparency, mutual trust, shared responsibility, continuous engagement, and collaborative improvement.",
+        "Environmental Stewardship: Encourage suppliers to reduce greenhouse gas emissions, improve resource efficiency, conserve water, minimize waste generation, prevent pollution, and protect biodiversity throughout their operations.",
+        "Respect for Human Rights and Fair Labor Practices: Promote responsible labor practices by encouraging suppliers to prohibit child labor, forced labor, discrimination, harassment, and unsafe working conditions while respecting internationally recognized human rights.",
+        "Ethical Procurement and Business Integrity: Conduct procurement activities fairly, transparently, and objectively while preventing fraud, bribery, corruption, conflicts of interest, and other unethical business practices.",
+        "Supplier ESG Risk Management: Identify, assess, prioritize, and manage environmental, social, ethical, operational, and governance risks associated with suppliers and procurement activities through appropriate due diligence processes.",
+        "Transparency and Accountability: Promote accurate documentation, responsible reporting, objective supplier evaluations, and accountability across procurement processes while maintaining fairness and consistency in decision-making."
+      ],
+      "Supplier Environmental Practices": [
+        "We are committed to partnering with suppliers who demonstrate responsible environmental management by complying with applicable environmental laws, regulations, permits, and recognized industry standards while continually improving their environmental performance.",
+        "We encourage suppliers to implement effective environmental management systems that promote efficient use of energy, water, raw materials, natural resources, and other critical inputs while reducing greenhouse gas emissions and environmental impacts across their operations.",
+        "We expect suppliers to manage waste responsibly by minimizing waste generation, promoting reuse and recycling, ensuring environmentally sound disposal of hazardous and non-hazardous waste, and adopting circular economy principles wherever practicable.",
+        "We will periodically assess supplier environmental performance through sustainability questionnaires, supplier evaluations, audits, performance reviews, and collaborative engagement programs to encourage continual environmental improvement across the supply chain."
+      ],
+      "Supplier Social and Labor Practices": [
+        "We are committed to sourcing goods and services from suppliers who respect internationally recognized human rights, provide safe and healthy working conditions, and maintain responsible labor practices throughout their operations.",
+        "We expect suppliers to prohibit child labour, forced labour, bonded labour, human trafficking, discrimination, harassment, and any form of workplace exploitation while ensuring compliance with applicable labour laws and international labour standards.",
+        "We encourage suppliers to provide fair wages, lawful working hours, statutory benefits, freedom of association, equal employment opportunities, and respectful working conditions that promote employee dignity and well-being.",
+        "We encourage suppliers to promote diversity, equity, inclusion, employee development, and continuous learning while fostering an inclusive and respectful workplace culture.",
+        "We will monitor supplier social and labor performance through supplier assessments, audits, corrective action plans, and ongoing engagement to strengthen responsible employment practices throughout the value chain."
+      ],
+      "Sustainable Procurement Goals": [
+        "We are committed to integrating environmental, social, ethical, quality, safety, and governance considerations into supplier selection, qualification, contracting, and procurement decision-making processes to promote responsible sourcing across all procurement categories.",
+        "We will establish sustainability-based supplier evaluation criteria that consider environmental compliance, labor practices, ethical conduct, regulatory performance, operational capability, product quality, and business continuity while selecting and retaining suppliers.",
+        "We encourage procurement of products, materials, equipment, and services that are resource-efficient, environmentally preferable, recyclable, reusable, responsibly sourced, and aligned with applicable sustainability objectives wherever feasible.",
+        "We will strengthen supplier capability through awareness programs, sustainability communication, technical engagement, capacity-building initiatives, and collaborative improvement projects that enhance supplier ESG performance.",
+        "We encourage responsible local procurement and supplier diversity, where appropriate, to strengthen regional economic development, improve supply chain resilience, and reduce transportation-related environmental impacts.",
+        "We will periodically review procurement strategies, supplier sustainability performance, and sourcing practices to identify opportunities for innovation, operational efficiency, risk reduction, and continual improvement."
+      ],
+      "Governance Goals": [
+        "We are committed to conducting procurement activities with integrity, fairness, transparency, and accountability while ensuring compliance with applicable laws, Company policies, and responsible business conduct principles.",
+        "We expect suppliers, contractors, consultants, and business partners to comply with the Company's Supplier Code of Conduct, sustainability requirements, contractual obligations, and applicable environmental, labor, ethical, and governance standards.",
+        "We will implement risk-based supplier due diligence processes to identify, assess, and manage environmental, social, ethical, operational, financial, and regulatory risks associated with procurement activities and supplier relationships.",
+        "We will establish structured supplier performance monitoring mechanisms through periodic assessments, audits, scorecards, management reviews, and corrective action plans to encourage continual supplier improvement.",
+        "We encourage suppliers to promptly address identified non-conformities and implement appropriate corrective and preventive actions within agreed timelines while maintaining open communication with the Company.",
+        "We will periodically review procurement governance frameworks, supplier risk management processes, performance indicators, and sustainability objectives to strengthen responsible procurement practices and support continual improvement across the supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Achieve 100% environmental compliance among critical suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct ESG environmental assessments for 100% critical suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the number of critical suppliers maintaining recognized Environmental Management Systems (e.g., ISO 14001 or equivalent) by 30%",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase procurement from suppliers demonstrating resource efficiency and pollution prevention initiatives by 25%",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide annual environmental sustainability training to 100% procurement personnel",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Close 100% supplier environmental corrective actions within agreed timelines",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social and Labor Practices",
+        "targets": [
+          {
+            "target": "Assess 100% critical suppliers against labor and human rights requirements",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Obtain signed Supplier Code of Conduct acceptance from 100% critical suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct social compliance audits for all identified high-risk suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Provide annual human rights and responsible sourcing training to 100% procurement personnel",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Close 95% supplier social compliance corrective actions within agreed timelines",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Increase suppliers maintaining certified OHS management systems (ISO 45001 or equivalent) by 30%",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Procurement Goals",
+        "targets": [
+          {
+            "target": "Obtain signed acceptance of the Company's Supplier Code of Conduct from 100% of active critical suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Integrate ESG and responsible sourcing clauses into 100% of new supplier contracts and contract renewals",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Complete ESG self-assessments for 100% of critical suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct ESG audits for 100% of identified high-risk suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Develop and monitor ESG improvement plans for 100% of suppliers identified with major ESG gaps",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Increase procurement from qualified local suppliers by 20%, where feasible",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct annual supplier sustainability engagement and capacity-building programs",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Review sustainability performance of 100% critical suppliers annually",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Governance Goals",
+        "targets": [
+          {
+            "target": "Complete ESG due diligence for 100% high-risk suppliers before onboarding or contract renewal",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance with the Company's Value Chain Integrity Policy and Supplier Code of Conduct",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Provide annual sustainable procurement and ethics training to 100% procurement personnel",
+            "baseline": "FY 2023–24",
+            "deadline": "Annual"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      13,
+      15,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide strategic oversight and approve the Sustainable Procurement Policy."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Review the Company's sustainable procurement performance and long-term ESG objectives."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensure sustainability risks are integrated into procurement strategy and corporate governance."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Promote responsible sourcing and ethical supply chain management across the organization."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Ensure effective implementation of the Sustainable Procurement Policy across all business functions."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Allocate adequate financial, technological, and human resources to support sustainable procurement initiatives."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Review procurement sustainability performance and drive continual improvement programs."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Promote responsible sourcing and ethical procurement practices throughout the organization."
+      },
+      {
+        "role": "Procurement & Supply Chain Department",
+        "duty": "Integrate ESG criteria into supplier selection, qualification, evaluation, and contract management processes."
+      },
+      {
+        "role": "Procurement & Supply Chain Department",
+        "duty": "Conduct supplier due diligence, sustainability assessments, and supplier performance evaluations."
+      },
+      {
+        "role": "Procurement & Supply Chain Department",
+        "duty": "Implement supplier engagement and capacity-building programs to improve sustainability performance."
+      },
+      {
+        "role": "Procurement & Supply Chain Department",
+        "duty": "Monitor supplier compliance with the Supplier Code of Conduct and contractual sustainability requirements."
+      },
+      {
+        "role": "Procurement & Supply Chain Department",
+        "duty": "Maintain procurement records, supplier sustainability data, and performance documentation."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Evaluate suppliers' environmental performance and compliance with environmental requirements."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Participate in supplier sustainability assessments and environmental audits."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Provide technical guidance on pollution prevention, waste management, climate initiatives, and resource efficiency."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Department",
+        "duty": "Support environmental risk assessments associated with procurement activities."
+      },
+      {
+        "role": "Quality Assurance & Regulatory Affairs",
+        "duty": "Verify supplier compliance with applicable GMP, quality, and regulatory requirements."
+      },
+      {
+        "role": "Quality Assurance & Regulatory Affairs",
+        "duty": "Participate in supplier qualification, audits, and supplier performance monitoring."
+      },
+      {
+        "role": "Quality Assurance & Regulatory Affairs",
+        "duty": "Ensure purchased materials and services meet established quality and regulatory standards."
+      },
+      {
+        "role": "Quality Assurance & Regulatory Affairs",
+        "duty": "Support corrective action and supplier improvement initiatives."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Promote awareness of sustainable procurement principles across the organization."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Support supplier social responsibility initiatives where applicable."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Coordinate employee training on responsible procurement and ethical business conduct."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Promote collaboration between internal stakeholders on sustainability initiatives."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Support implementation of sustainable procurement practices within their respective departments."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Identify sustainability requirements for purchased materials and services."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Collaborate with Procurement in supplier evaluations and improvement initiatives."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Monitor compliance with procurement-related sustainability requirements."
+      },
+      {
+        "role": "Employees",
+        "duty": "Conduct procurement-related activities ethically, fairly, and transparently."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with this Policy and applicable procurement procedures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Avoid conflicts of interest during procurement and supplier interactions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report supplier non-compliance, unethical conduct, or sustainability concerns through designated reporting mechanisms."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in sustainable procurement awareness and training programs."
+      }
+    ],
+    "monitoring": "Vasudha Pharma Chem Ltd. shall regularly monitor the implementation and effectiveness of this Value Chain Integrity Policy through defined Key Performance Indicators (KPIs), supplier ESG assessments, supplier audits, procurement reviews, supplier scorecards, due diligence processes, risk assessments, and management reviews. Performance against the Company's sustainable procurement objectives and quantitative targets shall be periodically evaluated to identify opportunities for improvement, strengthen supplier engagement, and enhance supply chain sustainability.",
+    "reviewMechanism": "This Value Chain Integrity Policy shall be reviewed at least once every two years, or earlier if required due to changes in applicable legal or regulatory requirements, business operations, procurement strategies, stakeholder expectations, supplier risks, or internationally recognized sustainability standards. Any revisions shall be approved by the appropriate management authority before implementation.\n\nThe Procurement & Supply Chain Head, in coordination with the Environment, Health & Safety (EHS), Quality Assurance, Human Resources, Compliance, and Management, shall be responsible for initiating the review process, evaluating the effectiveness of this Policy, and recommending necessary updates to ensure its continued relevance, effectiveness, and alignment with the Company's sustainability objectives, procurement strategy, and responsible sourcing commitments."
+  },
+  "sourcePath": "KUSH\\Vasuda Pharma\\4. Value Chain Integrity Policy.docx",
+  "sourceTextLength": 29006,
+  "parsedAt": "2026-08-12T06:23:10.375Z"
+}

@@ -1,0 +1,402 @@
+{
+  "id": "ethics-anthea-group",
+  "name": "Anthea Group",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from Responsible Business Conduct Framework.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Anthea Group",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Unit I, Roha, Raigad, Maharashtra",
+          "address": "Plot Nos. 49, 50 & 51 A, MIDC Dhatav, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+          "primaryFunction": "manufacturing facility"
+        },
+        {
+          "location": "Unit II, Roha, Raigad, Maharashtra",
+          "address": "Plot No. 51 A/1, Roha Industrial Area, Village Roth Budruk, Roha, Dist. Raigad – 402116, Maharashtra, India.",
+          "primaryFunction": "manufacturing facility"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "To support and align with the ethical values, governance principles, and responsible business commitments of the Anthea Group, DRT-Anthea Aroma Chemicals Pvt. Ltd. has established this Responsible Business Conduct Framework as a comprehensive approach for managing ethical, transparent, and accountable business practices across all business operations. The Framework promotes integrity, compliance, fairness, transparency, responsible decision-making, and adherence to applicable laws, regulations, and internationally recognized standards.\n\nTo facilitate the effective implementation of this Framework, the Company has also developed an internal Responsible Business Conduct Roadmap, which translates the Group's governance and ethics priorities into site-specific objectives, targets, action plans, and performance monitoring mechanisms. This Roadmap supports the continuous strengthening of ethical conduct, regulatory compliance, anti-corruption measures, responsible information management, stakeholder trust, and organizational governance, while reinforcing the Company's commitment to responsible and sustainable business operations.\n\nDRT–Anthea Aroma Chemicals Pvt. Ltd. is committed to conducting its business with the highest standards of integrity, honesty, transparency, and ethical conduct. As a manufacturer of specialty aroma chemicals, the Company recognizes that ethical business practices are fundamental to building trust with employees, customers, suppliers, business partners, regulatory authorities, and other stakeholders. Upholding strong ethical principles enables the Company to safeguard its reputation, ensure regulatory compliance, manage business risks, and create sustainable long-term value.\n\nThis Responsible Business Conduct Framework establishes the Company's commitment to embedding ethical principles into all aspects of its business activities across its manufacturing facilities located at Unit I and Unit II in Roha, Raigad, Maharashtra. The policy provides a comprehensive framework for preventing corruption, managing conflicts of interest, combating money laundering and fraud, protecting confidential information and business records, promoting fair competition, and encouraging responsible reporting of unethical conduct through secure and transparent reporting mechanisms. Through this policy, DRT–Anthea Aroma Chemicals Pvt. Ltd. aims to foster a culture of accountability, responsibility, and ethical decision-making while ensuring that its operations are conducted in compliance with applicable laws, regulations, and recognized standards of corporate governance.",
+      "declaration": "The objective of this Responsible Business Conduct Framework is to establish a comprehensive framework for promoting ethical business conduct, integrity, transparency, and accountability across the operations of DRT–Anthea Aroma Chemicals Pvt. Ltd. and to ensure that all business activities are conducted in accordance with applicable laws, regulations, and the Company's core values.\n\nThis policy aims to:\n\nEnsure compliance with all applicable laws, regulations, industry standards, and ethical business requirements.\n\nPrevent all forms of bribery, corruption, facilitation payments, fraud, money laundering, and other unethical or illegal business practices.\n\nPromote honesty, integrity, fairness, and accountability in all business decisions, transactions, and relationships with employees, customers, suppliers, contractors, business partners, government authorities, and other stakeholders.\n\nIdentify, disclose, and appropriately manage actual, potential, or perceived conflicts of interest to ensure objective and impartial business decision-making.\n\nProtect confidential information, intellectual property, business records, personal data, and other sensitive information through responsible information management and appropriate security controls.\n\nPromote fair competition and ensure compliance with applicable competition and antitrust laws while conducting business ethically and responsibly.\n\nEstablish accessible, confidential, and transparent mechanisms for reporting unethical conduct, suspected violations, or misconduct, while protecting individuals from retaliation for reporting concerns in good faith.\n\nEncourage employees, contractors, suppliers, and business partners to uphold the Company's ethical principles and conduct business in a responsible, lawful, and transparent manner.\n\nStrengthen ethical awareness and employee competency through regular communication, training, and continuous engagement on ethical standards and expected behaviors.",
+      "scope": "This Responsible Business Conduct Framework applies to all business activities and operations of DRT–Anthea Aroma Chemicals Pvt. Ltd. The policy is applicable to all directors, employees, contract workers, trainees, apprentices, interns, consultants, and other personnel working on behalf of the Company. The Company also expects its suppliers, contractors, service providers, agents, distributors, business partners, and other third parties to conduct business in a manner that is consistent with the ethical principles and requirements set forth in this policy.\n\nThe scope of this policy covers all operational locations of the Company, including:\n\nThis policy encompasses all business activities and decision-making processes, including interactions with customers, suppliers, contractors, business partners, government authorities, and other stakeholders. It covers matters relating to anti-corruption and anti-bribery, conflicts of interest, anti-money laundering, fraud prevention, responsible information management, fair competition, ethical business conduct, whistleblower protection, and compliance with applicable legal, regulatory, and corporate governance requirements across the Company's operations and, where applicable, its value chain."
+    },
+    "focusAreas": [
+      "Anti-Corruption and Anti-Bribery",
+      "Conflict of Interest",
+      "Anti-Money Laundering",
+      "Fraud Prevention",
+      "Responsible Information Management",
+      "Fair Competition and Anti-Competitive Practices",
+      "Whistleblower Protection and Ethical Reporting"
+    ],
+    "qualitative": {
+      "Anti-Corruption and Anti-Bribery": [
+        "Promote integrity and transparency by prohibiting all forms of bribery, corruption, facilitation payments, kickbacks, and other unethical practices. Ensure ethical business conduct through effective internal controls, employee awareness, and compliance with applicable anti-corruption laws and regulations."
+      ],
+      "Conflict of Interest": [
+        "Promote objective, impartial, and transparent decision-making by identifying, disclosing, and appropriately managing actual, potential, or perceived conflicts of interest that may influence business decisions or compromise the Company's integrity."
+      ],
+      "Anti-Money Laundering": [
+        "Prevent the misuse of the Company's operations for money laundering, terrorist financing, or other illicit financial activities by implementing appropriate due diligence, financial controls, risk-based monitoring, and compliance with applicable anti-money laundering laws and regulations."
+      ],
+      "Fraud Prevention": [
+        "Prevent, detect, and respond to fraudulent activities by establishing robust internal controls, promoting ethical conduct, safeguarding Company assets, and ensuring accountability across all business operations."
+      ],
+      "Responsible Information Management": [
+        "Protect confidential information, intellectual property, business records, and personal data by ensuring information is collected, accessed, stored, retained, used, and disclosed responsibly, securely, and in accordance with applicable legal, contractual, and business requirements."
+      ],
+      "Fair Competition and Anti-Competitive Practices": [
+        "Conduct business fairly and responsibly by complying with applicable competition and antitrust laws, avoiding anti-competitive practices, and competing in the marketplace through innovation, product quality, ethical business practices, and fair commercial dealings."
+      ],
+      "Whistleblower Protection and Ethical Reporting": [
+        "Promote a culture of integrity and accountability by providing confidential, accessible, and transparent reporting mechanisms for employees and stakeholders to report unethical conduct, suspected violations, or misconduct without fear of retaliation, while ensuring impartial investigation and timely resolution of reported concerns."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption and Anti-Bribery",
+        "targets": [
+          {
+            "target": "Maintain Zero Tolerance for bribery and corruption annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain 100% compliance with applicable anti-corruption legal and regulatory requirements annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide annual anti-corruption training to 100% of employees and relevant contractors.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Communicate anti-corruption expectations to 100% of strategic suppliers by FY 2029-30.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Investigate 100% of reported corruption-related concerns within defined timelines.",
+            "baseline": "FY 2023-24",
+            "deadline": "within defined timelines"
+          },
+          {
+            "target": "Review anti-corruption controls and risks annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Obtain annual conflict of interest declarations from 100% of applicable employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain 100% compliance with the Company's conflict of interest requirements annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide annual conflict of interest awareness training to 100% of relevant employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Review 100% of reported conflict of interest cases within established timelines.",
+            "baseline": "FY 2023-24",
+            "deadline": "within established timelines"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable anti-money laundering requirements annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Perform risk-based due diligence for 100% of identified high-risk business partners.",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct annual reviews of financial control systems.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide annual AML awareness training to relevant employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Review 100% of identified suspicious financial activities within defined timelines.",
+            "baseline": "FY 2023-24",
+            "deadline": "within defined timelines"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Maintain Zero Tolerance for fraudulent activities annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct annual fraud risk assessments across critical business functions.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide annual fraud prevention training to 100% of relevant employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Investigate 100% of reported fraud incidents within defined timelines.",
+            "baseline": "FY 2023-24",
+            "deadline": "within defined timelines"
+          },
+          {
+            "target": "Review fraud prevention controls annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Management",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with Company information management requirements annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Achieve 100% compliance with applicable data protection and confidentiality requirements.",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          },
+          {
+            "target": "Provide annual information security training to 100% of relevant employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct annual reviews of document retention and record management practices.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Review user access permissions annually for critical information systems.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct annual information management assessments.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Fair Competition and Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable competition and antitrust laws annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain Zero Violations of competition laws annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide annual fair competition training to relevant employees.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower Protection and Ethical Reporting",
+        "targets": [
+          {
+            "target": "Ensure 100% availability of confidential reporting mechanisms across all operations.",
+            "baseline": "FY 2023-24",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain Zero Tolerance for retaliation against whistleblowers annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "annually"
+          },
+          {
+            "target": "Investigate 100% of reported ethical concerns within established timelines.",
+            "baseline": "FY 2023-24",
+            "deadline": "within established timelines"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Management",
+        "duty": "Provide strategic direction and leadership for ethics, integrity, and corporate governance."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Approve the Responsible Business Conduct Framework and related objectives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Allocate adequate financial, technological, and human resources for policy implementation."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Review ethics and compliance performance and promote continual improvement through Management Review meetings."
+      },
+      {
+        "role": "Legal & Compliance Department",
+        "duty": "Develop, implement, and maintain the Ethics Management Framework."
+      },
+      {
+        "role": "Legal & Compliance Department",
+        "duty": "Monitor compliance with applicable laws, regulations, and ethical standards."
+      },
+      {
+        "role": "Legal & Compliance Department",
+        "duty": "Conduct ethics risk assessments and recommend corrective and preventive actions."
+      },
+      {
+        "role": "Legal & Compliance Department",
+        "duty": "Manage whistleblower reports, ethics investigations, and compliance reporting."
+      },
+      {
+        "role": "Legal & Compliance Department",
+        "duty": "Organize ethics awareness and compliance training programs across the organization."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Integrate ethical principles into departmental operations and decision-making."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure employees comply with the Responsible Business Conduct Framework and applicable Company procedures."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Identify and report ethics-related risks and support implementation of corrective actions."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Encourage ethical leadership and open communication within their departments."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Integrate ethical conduct into recruitment, onboarding, performance management, and employee development processes."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Coordinate ethics awareness, Code of Conduct, and compliance training programs."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Support investigations involving employee misconduct, conflicts of interest, discrimination, or other ethical concerns."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Promote a respectful and ethical workplace culture."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Maintain effective financial controls to prevent fraud, bribery, corruption, and money laundering."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Ensure accurate financial reporting and record-keeping."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Monitor financial transactions for irregularities and support compliance with applicable financial regulations."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Cooperate in ethics-related audits and investigations."
+      },
+      {
+        "role": "Information Technology (IT) Department",
+        "duty": "Protect Company information systems and confidential data from unauthorized access or misuse."
+      },
+      {
+        "role": "Information Technology (IT) Department",
+        "duty": "Support responsible information management through appropriate cybersecurity and access controls."
+      },
+      {
+        "role": "Information Technology (IT) Department",
+        "duty": "Maintain data integrity, confidentiality, and availability in accordance with Company requirements."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Comply with this Ethics Policy, the Code of Conduct, and all applicable Company procedures."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Conduct business honestly, ethically, and in compliance with applicable laws and regulations."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Avoid conflicts of interest, protect confidential information, and safeguard Company assets."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Promptly report suspected unethical conduct, fraud, corruption, or policy violations through appropriate reporting channels."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Participate in mandatory ethics and compliance training programs and contribute to fostering a culture of integrity and accountability."
+      }
+    ],
+    "monitoring": "DRT–Anthea Aroma Chemicals Pvt. Ltd. shall establish and maintain a structured process for monitoring, recording, and reporting its ethics and compliance performance across Unit I and Unit II. Reporting shall include key performance indicators such as ethics training completion, anti-corruption compliance, conflict of interest disclosures, fraud prevention measures, anti-money laundering compliance, whistleblower reports, ethics investigations, responsible information management, and compliance with applicable legal and regulatory requirements.\n\nThe Legal & Compliance Department, in coordination with the Human Resources (HR), Finance, Information Technology (IT), Procurement, and other relevant functions, shall periodically review ethics and compliance performance and report progress against the Company's objectives, commitments, and targets to the Management. Appropriate records shall be maintained to demonstrate compliance, support internal and external audits, facilitate management reviews, address stakeholder requirements, and drive the continual improvement of the Company's ethics and compliance management system.",
+    "reviewMechanism": "This Responsible Business Conduct Framework shall be reviewed at least once every year, or earlier if required due to changes in applicable laws, regulations, industry standards, business operations, organizational structure, stakeholder expectations, or emerging ethics and compliance risks. The review shall ensure that the policy remains relevant, effective, and aligned with the Company's strategic objectives, corporate governance principles, and commitment to conducting business with integrity, transparency, and accountability.\n\nThe review shall be coordinated by the Legal & Compliance Department in consultation with the Human Resources (HR), Finance, Information Technology (IT), Procurement, and other relevant functions, and shall be approved by the Management. Any revisions arising from the review shall be communicated to all relevant employees and stakeholders, and appropriate actions shall be implemented to strengthen the Company's ethics and compliance management practices and support continual improvement."
+  },
+  "sourcePath": "KUSH\\Anthea Group\\Responsible Business Conduct Framework.docx",
+  "sourceTextLength": 34742,
+  "parsedAt": "2026-08-12T06:20:44.835Z"
+}

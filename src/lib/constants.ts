@@ -1,4 +1,4 @@
-import type { PolicyType, Responsibility, StepDef } from "./types";
+import type { PolicyType, Responsibility, RevisionEntry, StepDef } from "./types";
 
 export const STEPS: StepDef[] = [
   { id: "structure", label: "Document structure", desc: "Arrange the sections in your policy", icon: "FileText" },
@@ -76,6 +76,12 @@ export const RESPONSIBILITIES_DEFAULT: { role: string; duty: string }[] = [
   },
 ];
 
+export const REVISION_HISTORY_DEFAULT: RevisionEntry[] = [
+  { revisionNo: "0.0", date: "01/01/2024", description: "Initial release of policy" },
+  { revisionNo: "1.0", date: "01/01/2025", description: "Policy updated to strengthen compliance controls, risk management systems, and reporting structure" },
+  { revisionNo: "2.0", date: "01/01/2026", description: "Policy revised to enhance monitoring mechanisms, performance tracking, and continuous improvement approach" },
+];
+
 export const SDG_DATA: { n: number; label: string; c: string }[] = [
   { n: 1, label: "No Poverty", c: "#E5243B" },
   { n: 2, label: "Zero Hunger", c: "#DDA63A" },
@@ -109,7 +115,7 @@ export interface PolicyProfile {
   id: PolicyType;
   label: string;
   short: string;
-  icon: "Leaf" | "Users" | "BadgeIndianRupee";
+  icon: "Leaf" | "Users" | "BadgeIndianRupee" | "ShieldCheck";
   accent: string;
   accentSoft: string;
   documentPrefix: string;
@@ -139,6 +145,23 @@ const livingWageResponsibilities: Responsibility[] = [
   { role: "Employees & Workers", duty: "Use available channels to raise wage or benefit concerns without fear of retaliation." },
 ];
 
+const ethicsResponsibilities: Responsibility[] = [
+  { role: "Compliance Officer", duty: "Oversee ethics program implementation, manage whistleblowing channels, and investigate reported violations." },
+  { role: "HR Manager", duty: "Enforce code of conduct, coordinate ethics training, and address workforce compliance issues." },
+  { role: "IT Manager", duty: "Maintain data privacy controls, safeguard confidential information, and ensure cybersecurity compliance." },
+  { role: "Internal Audit Team", duty: "Conduct periodic compliance audits, assess anti-corruption controls, and report findings to management." },
+  { role: "Senior Management", duty: "Promote an ethical culture, approve ethics policies, and ensure organizational accountability." },
+  { role: "Employees", duty: "Uphold ethical standards, report misconduct or conflicts of interest, and complete mandatory training." },
+];
+
+const procurementResponsibilities: Responsibility[] = [
+  { role: "Procurement Team", duty: "Integrate ESG and sustainability criteria into supplier selection, contracting, and ongoing performance management." },
+  { role: "Sustainability Team", duty: "Develop sustainable procurement standards, assist with supplier ESG evaluations, and track supply-chain targets." },
+  { role: "Suppliers", duty: "Comply with the Supplier Code of Conduct, provide requested disclosures, and participate in sustainability audits." },
+  { role: "Senior Management", duty: "Approve sustainable procurement commitments, allocate resources, and review supply chain risk reports." },
+  { role: "All Employees", duty: "Adhere to responsible purchasing guidelines and support sustainable procurement practices." },
+];
+
 export const POLICY_PROFILES: Record<PolicyType, PolicyProfile> = {
   environmental: {
     ...POLICY_TYPE_META,
@@ -164,6 +187,20 @@ export const POLICY_PROFILES: Record<PolicyType, PolicyProfile> = {
     focusAreas: ["Living-Wage Benchmark & Methodology", "Legal Minimum-Wage Compliance", "Benefits, Allowances & Total Remuneration", "Pay Equity & Transparency", "Timely, Traceable Payment", "Employee & Contractor Coverage", "Periodic Review & Cost-of-Living Adjustment", "Wage Grievances & Corrective Action"],
     responsibilities: livingWageResponsibilities, sdgs: [1, 3, 5, 8, 10],
     definitionLabel: "Definition & Methodology", definitionDescription: "Define living wage, the benchmark used, what remuneration is covered, and when it is reviewed.", aiRole: "living-wage policy documents",
+  },
+  ethics: {
+    id: "ethics", label: "Ethics Policy", short: "Ethics", icon: "ShieldCheck",
+    accent: "#3b6d11", accentSoft: "#eef5e8", documentPrefix: "ETH", exportName: "Ethics-Policy",
+    standards: ["ISO 37001", "UNGC", "BRSR", "SDGs"],
+    focusAreas: ["Anti-Corruption & Anti-Bribery", "Conflicts of Interest", "Data Privacy & Confidentiality", "Gifts & Hospitality", "Whistleblowing & Speak-Up", "Regulatory Compliance", "Fair Competition & Antitrust", "Corporate Governance"],
+    responsibilities: ethicsResponsibilities, sdgs: [8, 10, 12, 16, 17], aiRole: "ethics policy documents",
+  },
+  "sustainable-procurement": {
+    id: "sustainable-procurement", label: "Sustainable Procurement Policy", short: "Sustainable Procurement", icon: "Leaf",
+    accent: "#854f0b", accentSoft: "#faf3e0", documentPrefix: "SP", exportName: "Sustainable-Procurement-Policy",
+    standards: ["ISO 20400", "EcoVadis", "UNGC", "BRSR", "SDGs"],
+    focusAreas: ["Supplier Code of Conduct & Onboarding", "Supplier Due Diligence & Risk Assessment", "Environmental Requirements for Suppliers", "Ethical Sourcing & Anti-Corruption", "Labour & Human Rights in Supply Chain", "Supply Chain Transparency & Traceability", "Supplier Capacity Building & Training", "Monitoring, Auditing & Continuous Improvement"],
+    responsibilities: procurementResponsibilities, sdgs: [8, 9, 12, 16, 17], aiRole: "sustainable procurement policy documents",
   },
 };
 

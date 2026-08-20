@@ -46,6 +46,24 @@ const FOCUS_AREA_KEYS: { name: string; patterns: RegExp[] }[] = [
   { name: "Customer Health & Safety", patterns: [/\bcustomer\s+health/i, /\bproduct\s+safety\b/i, /\bpatient\s+safety/i] },
   { name: "Chemicals & Hazardous Substances Management", patterns: [/\bhazardous\s+(substance|chemical)/i, /\bchemical\s+(handling|storage)/i, /\bsds\b/i, /\bsafety\s+data\s+sheet/i] },
   { name: "Environmental Compliance & Risk Management", patterns: [/\benvironmental\s+compliance\b/i, /\bcompliance\s+obligations?\b/i, /\benvironment(al)?\s+risk/i, /\bpermits?\b/i] },
+  // Ethics
+  { name: "Anti-Corruption & Anti-Bribery", patterns: [/anti.?corruption/i, /anti.?bribery/i, /bribe/i, /corrupt/i, /unlawful inducement/i] },
+  { name: "Conflicts of Interest", patterns: [/conflict.*interest/i, /personal.*gain/i, /undisclosed.*interest/i] },
+  { name: "Data Privacy & Confidentiality", patterns: [/data.*privacy/i, /confidential/i, /information.*security/i, /personal.*data/i, /gdpr/i] },
+  { name: "Gifts & Hospitality", patterns: [/gift/i, /hospitality/i, /entertainment.*policy/i, /brib/i] },
+  { name: "Whistleblowing & Speak-Up", patterns: [/whistleblow/i, /speak.?up/i, /reporting.*concern/i, /grievance.*ethic/i] },
+  { name: "Regulatory Compliance", patterns: [/regulatory.*compliance/i, /legal.*compliance/i, /laws.*regulation/i] },
+  { name: "Fair Competition & Antitrust", patterns: [/fair.*competition/i, /antitrust/i, /competition.*law/i, /cartel/i] },
+  { name: "Corporate Governance", patterns: [/corporate.*governance/i, /board.*oversight/i, /accountability/i] },
+  // Sustainable Procurement
+  { name: "Supplier Code of Conduct & Onboarding", patterns: [/supplier.*code.*conduct/i, /supplier.*onboard/i, /vendor.*code/i] },
+  { name: "Supplier Due Diligence & Risk Assessment", patterns: [/supplier.*due.*diligence/i, /supplier.*risk/i, /vendor.*assess/i, /supply.*chain.*risk/i] },
+  { name: "Environmental Requirements for Suppliers", patterns: [/supplier.*environment/i, /supplier.*green/i, /environmental.*criteria.*supplier/i] },
+  { name: "Ethical Sourcing & Anti-Corruption", patterns: [/ethical.*sourc/i, /responsible.*sourc/i, /conflict.*mineral/i] },
+  { name: "Labour & Human Rights in Supply Chain", patterns: [/supplier.*labour/i, /supplier.*human.*rights/i, /supply.*chain.*labour/i, /supplier.*worker/i] },
+  { name: "Supply Chain Transparency & Traceability", patterns: [/supply.*chain.*transparency/i, /supply.*chain.*traceab/i, /supplier.*disclosure/i] },
+  { name: "Supplier Capacity Building & Training", patterns: [/supplier.*training/i, /supplier.*capacity/i, /supplier.*develop/i, /supplier.*improvement/i] },
+  { name: "Monitoring, Auditing & Continuous Improvement", patterns: [/supplier.*audit/i, /supplier.*monitor/i, /supplier.*assess.*compliance/i, /supplier.*evaluat/i] },
 ];
 
 // Section name dictionary with all variations seen across pharma policy docs
@@ -409,7 +427,7 @@ function extractCover(blocks: Block[], rawText: string, policy: Partial<Policy>)
   for (const { rows } of candidates) {
     for (const row of rows) {
       if (row.length < 1) continue;
-      let label = row[0].replace(/^[:\s]+|[:\s]+$/g, "").toLowerCase();
+      const label = row[0].replace(/^[:\s]+|[:\s]+$/g, "").toLowerCase();
       let val = (row[1] !== undefined ? row[1] : "").trim();
       if (!val) continue;
       val = val.replace(/^[:\s]+/, "").trim();
@@ -530,7 +548,7 @@ function extractSites(blocks: Block[], rawText: string, policy: Partial<Policy>)
       const headerRow = b.rows[0].map((c) => c.toLowerCase().trim());
       let locIdx = headerRow.findIndex((h) => /location|unit|site|facility|plant|name/i.test(h));
       let addrIdx = headerRow.findIndex((h) => /address|location\s*address|premise/i.test(h));
-      let funcIdx = headerRow.findIndex((h) => /function|activity|operation|primary\s*function|purpose|scope/i.test(h));
+      const funcIdx = headerRow.findIndex((h) => /function|activity|operation|primary\s*function|purpose|scope/i.test(h));
 
       if (locIdx === -1) locIdx = 0;
       if (addrIdx === -1) addrIdx = locIdx === 0 && b.rows[0].length > 1 ? 1 : locIdx;

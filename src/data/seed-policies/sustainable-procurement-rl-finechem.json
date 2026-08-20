@@ -1,0 +1,336 @@
+{
+  "id": "sustainable-procurement-rl-finechem",
+  "name": "RL FINECHEM",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "R L Fine Chem Pvt. Ltd.",
+      "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092.",
+      "sites": [
+        {
+          "location": "R L Fine Chem Pvt. Ltd (REFEX) – Head Office",
+          "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092.",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "R&D Centre",
+          "address": "RLFC House, C-10, Ist Cross, KSSIDC, Industrial Estate Yelahanka New Town Bengaluru - 560 064 Karnataka, India",
+          "primaryFunction": "R&D Centre"
+        },
+        {
+          "location": "Hindupur Plant",
+          "address": "M/s RL FINE CHEM PRIVATE LIMITEDPlot No.165–182, APIIC Growth Centre, Thumakunta, Hindupur – 515 211, Sri Sathya Sai District, Andhra Pradesh, India",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gauribidanur Plant",
+          "address": "R L Fine Chem Pvt. Ltd.Plot No IP-27-29, KIADB Industrial Area Ist Phase, Kudumalakunte Village Gauribidanur, Chikkaballapur Distt Karnataka - 561208",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "site": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "The objective of this Sustainable Procurement Policy is to establish a structured framework for integrating environmental, social, and governance (ESG) considerations into all procurement activities of R L Fine Chem Pvt. Ltd. The Company is committed to sourcing goods, services, and raw materials in a manner that minimises environmental impact, upholds fair labour practices and human rights, promotes supplier diversity, and ensures compliance with all applicable laws and regulations.",
+      "declaration": "DeclarationI hereby acknowledge my commitment to adhere to the Sustainable Procurement Policy and contribute towards RLFC’s environmental, social, and governance goals.",
+      "scope": "This Policy applies to all operations of R L Fine Chem Pvt. Ltd., including its Registered Office, Corporate Office, Manufacturing Plants, laboratories and all associated business activities. It covers all permanent, temporary, and contract employees across all functions, as well as suppliers, contractors, service providers, and other stakeholders directly or indirectly associated with the Company."
+    },
+    "focusAreas": [
+      "Sustainable Procurement",
+      "Environmental Responsibility in Supply Chain",
+      "Social Responsibility in Supply Chain",
+      "Regional Supplier Engagement"
+    ],
+    "qualitative": {
+      "Sustainable Procurement": [
+        "Prioritize eco-friendly sourcing practices that reduce environmental impact, focusing on materials with low carbon footprints, renewable energy, and recyclable content.",
+        "Ensure that all suppliers adhere to fair labour practices, including equal opportunity hiring, fair wages, and providing a safe, healthy workplace for all employees.",
+        "Foster strong relationships with suppliers who respect and promote human rights, ensuring all workers within the supply chain are treated with dignity and respect.",
+        "Establish clear criteria for supplier selection, ensuring that all partners comply with our sustainability, environmental, and ethical standards.",
+        "Promote supplier diversity by actively sourcing from minority-owned, women-owned, and local businesses to encourage inclusive economic growth.",
+        "Set measurable sustainability targets and collaborate with suppliers to achieve continuous improvements in their environmental, social, and governance practices.",
+        "Ensure transparent and open communication within the organization for reporting sustainability issues or policy violations.",
+        "We aim to integrate sustainability criteria (environmental, social, and governance factors) into all key procurement decisions and supplier evaluations.",
+        "We aim to promote transparency and accountability across the supply chain through supplier disclosure and ESG reporting requirements.",
+        "We will strengthen supplier engagement programs to encourage continuous improvement in environmental performance, human rights protection, and ethical conduct.",
+        "We will encourage procurement of environmentally preferable materials, including low-carbon, recyclable, and resource-efficient products.",
+        "We aim to integrate digital procurement systems to enhance traceability, transparency, and compliance monitoring.",
+        "We aim to strengthen supplier auditing, including on‑site inspections and third‑party verification where needed."
+      ],
+      "Environmental Responsibility in Supply Chain": [
+        "We will encourage suppliers to implement environmental management systems aligned with recognized standards such as ISO 14001 or equivalent frameworks.",
+        "We will encourage suppliers to adopt renewable energy, eco‑friendly packaging, and circular economy practices.",
+        "We will promote the procurement of materials that are energy-efficient, low-emission, and supported by recognized environmental certifications.",
+        "We strive to reduce supply chain environmental impact by minimizing transportation distances and associated emissions through local procurement.",
+        "We will encourage suppliers to adopt green certifications, eco-labels, and robust environmental management systems aligned with internationally accepted standards.",
+        "We will promote transparency by requiring suppliers to disclose environmental performance data when requested.",
+        "We will expect suppliers to actively reduce greenhouse gas emissions through energy efficiency, process optimization, and adoption of cleaner technologies"
+      ],
+      "Social Responsibility in Supply Chain": [
+        "We will ensure that suppliers respect and uphold internationally recognized human rights principles across their operations and supply chains.",
+        "We will engage with suppliers who uphold ethical labor practices, respect human rights, and ensure fair working conditions.",
+        "We will expect suppliers to provide safe and healthy working conditions in compliance with applicable occupational health and safety regulations.",
+        "We will expect suppliers to implement grievance mechanisms to address employee concerns in a timely, fair, and transparent manner.",
+        "We will promote supplier adherence to internationally recognized standards such as ISO 45001 (Occupational Health & Safety) and SA 8000 (Social Accountability) to ensure safe and ethical workplace conditions.",
+        "We will encourage suppliers to adopt responsible workplace practices aligned with our Supplier Code of Conduct and organizational values."
+      ],
+      "Regional Supplier Engagement": [
+        "We will promote procurement from local suppliers to support regional economic development and strengthen community value creation.",
+        "We aim to encourage the inclusion of Micro, Small, and Medium Enterprises (MSMEs) in our supply chain wherever feasible.",
+        "We aim to foster long-term partnerships with local suppliers based on fairness, transparency, and mutual growth.",
+        "We will support local innovation and value addition by engaging capable regional suppliers in appropriate categories of procurement."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Sustainable Procurement",
+        "targets": [
+          {
+            "target": "We will ensure that 80–90% of suppliers (by spend or critical category) undergo ESG screening and evaluation on an annual basis.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve that at least 70% of strategic suppliers sign the Supplier Code of Conduct within defined timelines.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure 100% compliance screening of all new suppliers prior to onboarding, covering legal, ethical, environmental, and social requirements.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will direct at least 50–60% of total procurement spend toward suppliers with recognized sustainability certifications or equivalent ESG credentials (e.g., ISO 14001, ISO 45001).",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure 90–100% of procurement personnel receive annual training on sustainable procurement practices and compliance requirements.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Responsibility in Supply Chain",
+        "targets": [
+          {
+            "target": "We will ensure that at least 70–80% of key suppliers have environmental management systems (such as ISO 14001 certification or equivalent).",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve 100% compliance of suppliers with applicable environmental laws and permits relevant to their operations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim for at least 60–70% of suppliers to implement structured waste reduction, recycling, or circular economy initiatives.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure 100% of high-risk suppliers are assessed for environmental risks annually or on a defined risk-based cycle.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to increase renewable energy adoption among strategic suppliers to at least 30–40% of total energy consumption where feasible.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve progressive reduction in packaging waste by 20–30% over time through supplier collaboration and material optimization.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Social Responsibility in Supply Chain",
+        "targets": [
+          {
+            "target": "We will ensure that 100% of new suppliers undergo social compliance screening prior to onboarding.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim for at least 80–90% of strategic suppliers to comply with the Supplier Code of Conduct covering social and human rights standards.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will target 0 tolerance for child labor, forced labor, or human trafficking cases across our supply chain.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to conduct social audits for 100% of high-risk suppliers at least once every 2–3 years.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure that at least 70% of key suppliers have formal grievance mechanisms accessible to workers.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to achieve annual training coverage for 90% or more of procurement and supplier facing personnel on social compliance requirements.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Regional Supplier Engagement",
+        "targets": [
+          {
+            "target": "We will aim to source at least 20–40% of total procurement spend from local suppliers, where technically and commercially feasible.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure that at least 30–40% of eligible procurement categories include qualified local supplier options in sourcing evaluations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to reduce logistics-related emissions by 10–25% through increased local sourcing and optimized supply routes.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to provide capacity-building or awareness engagement to at least 50% of active local suppliers annually, where applicable.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Provide strategic direction and oversight for sustainable procurement practices across the organization."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approve the Sustainable Procurement Policy and ensure alignment with the organization’s ESG commitments and applicable regulations, including relevant environmental and social compliance obligations."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Review periodic reports on supplier performance, sustainability risks, and procurement-related ESG indicators."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure adequate resources, governance structures, and accountability mechanisms are in place for effective implementation."
+      },
+      {
+        "role": "Sustainability & Procurement Head",
+        "duty": "Integrate environmental, social, and ethical criteria into procurement processes, supplier selection, and contract management."
+      },
+      {
+        "role": "Sustainability & Procurement Head",
+        "duty": "Conduct supplier due diligence, including risk assessments related to labor practices, environmental impact, and business ethics."
+      },
+      {
+        "role": "Sustainability & Procurement Head",
+        "duty": "Ensure suppliers comply with applicable laws and standards, including environmental regulations, labor laws, and anti-corruption requirements."
+      },
+      {
+        "role": "Sustainability & Procurement Head",
+        "duty": "Maintain supplier evaluation systems incorporating ESG performance indicators."
+      },
+      {
+        "role": "Sustainability & Procurement Head",
+        "duty": "Promote procurement from responsible and sustainable sources wherever feasible."
+      },
+      {
+        "role": "Sustainability & Procurement Head",
+        "duty": "Review this Policy regularly."
+      },
+      {
+        "role": "Sustainability / ESG Function",
+        "duty": "Develop ESG criteria, tools, and frameworks for sustainable procurement implementation."
+      },
+      {
+        "role": "Sustainability / ESG Function",
+        "duty": "Support supplier engagement programs to improve environmental and social performance."
+      },
+      {
+        "role": "Sustainability / ESG Function",
+        "duty": "Monitor sustainability metrics related to procurement activities (e.g., carbon footprint, responsible sourcing, waste reduction)."
+      },
+      {
+        "role": "Sustainability / ESG Function",
+        "duty": "Provide technical guidance and training to procurement teams on sustainability requirements and best practices."
+      },
+      {
+        "role": "Legal & Compliance Department",
+        "duty": "Ensure procurement practices comply with applicable laws and regulations, including environmental laws, labor regulations, and anti-bribery frameworks."
+      },
+      {
+        "role": "Legal & Compliance Department",
+        "duty": "Review supplier contracts to incorporate sustainability clauses and compliance obligations."
+      },
+      {
+        "role": "Legal & Compliance Department",
+        "duty": "Support investigation and resolution of any compliance breaches related to procurement activities."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "Comply with all applicable legal, regulatory, and contractual requirements related to environmental protection, labor standards, and ethical conduct."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "Avoid practices involving corruption, forced labor, child labor, or environmental degradation."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "Provide accurate information regarding their ESG performance and supply chain practices when requested."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "Work towards continuous improvement in sustainability performance and transparency."
+      },
+      {
+        "role": "Employees Involved in Procurement Activities",
+        "duty": "Follow established procurement procedures and sustainability criteria while sourcing goods and services."
+      },
+      {
+        "role": "Employees Involved in Procurement Activities",
+        "duty": "Act with integrity, transparency, and fairness in all supplier interactions."
+      },
+      {
+        "role": "Employees Involved in Procurement Activities",
+        "duty": "Report any suspected violations, unethical practices, or conflicts of interest."
+      },
+      {
+        "role": "Employees Involved in Procurement Activities",
+        "duty": "Participate in training and capacity-building programs related to sustainable procurement."
+      }
+    ],
+    "monitoring": "Procurement sustainability performance is monitored and reported quarterly to the Head of Procurement and Top Management. Key metrics include supplier ESG assessment completion rates, carbon emission reductions, labour compliance incidents, and diversity spend. Any material non‑compliance or unethical sourcing incident is documented, escalated, and addressed through a corrective action plan. An annual Sustainable Procurement Report is shared with internal stakeholders and made available on request.",
+    "reviewMechanism": "This Sustainable Procurement Policy is reviewed annually or as required by Sustainability and Procurement Head to ensure continued relevance, effectiveness, and alignment with regulatory changes and company goals. The review considers supplier audit results, ESG performance trends, legal updates, and feedback from internal stakeholders. Approved amendments are communicated to all employees and relevant suppliers."
+  },
+  "sourcePath": "KUSH\\RL FINECHEM\\Sustainable Procurement Policy.docx",
+  "sourceTextLength": 15764,
+  "parsedAt": "2026-08-12T06:29:47.952Z"
+}

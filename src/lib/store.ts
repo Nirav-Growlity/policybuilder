@@ -3,14 +3,16 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { Policy, PolicyType, StepId } from "./types";
-import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, getPolicyProfile } from "./constants";
+import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, REVISION_HISTORY_DEFAULT, getPolicyProfile } from "./constants";
 import { normalizePolicyQuantitative } from "./quantitative";
 import { getWorkflowSteps, normalizePolicyStructure } from "./sections";
+import { DEFAULT_DOCUMENT_THEME_ID } from "./document-themes";
 
 export const initialPolicy = (policyType: PolicyType = "environmental"): Policy => {
   const profile = getPolicyProfile(policyType);
   return normalizePolicyStructure({
   policyType,
+  documentTheme: DEFAULT_DOCUMENT_THEME_ID,
   visualStyle: "corporate",
   showTableOfContents: true,
   showAcknowledgement: true,
@@ -41,6 +43,8 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
   responsibilities: profile.responsibilities.map((r) => ({ ...r })),
   monitoring: "",
   reviewMechanism: "",
+  showRevisionHistory: true,
+  revisionHistory: [...REVISION_HISTORY_DEFAULT],
   definitions: policyType === "living-wage" ? { title: "Living Wage", content: "A living wage is remuneration sufficient to provide a decent standard of living for a worker and their family, considering local conditions and statutory requirements." } : undefined,
 });
 };
@@ -145,6 +149,7 @@ export function makeSamplePolicy(): Policy {
   return {
     policyType: "environmental",
     presentationTemplate: "comprehensive",
+    documentTheme: "modern-teal",
     visualStyle: "modern",
     company: {
       name: "Acme Specialty Chemicals Pvt. Ltd.",
@@ -264,6 +269,7 @@ export function makeTemplatePolicy(): Policy {
   return {
     policyType: "environmental",
     presentationTemplate: "comprehensive",
+    documentTheme: "modern-teal",
     visualStyle: "modern",
     company: {
       name: "[Company Name]",

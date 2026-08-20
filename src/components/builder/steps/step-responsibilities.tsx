@@ -8,14 +8,38 @@ import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { BarChart3, Plus, RefreshCw, Sparkles, Trash2, Users } from "lucide-react";
+import { BarChart3, History, Plus, RefreshCw, Sparkles, Trash2, Users } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
+import type { RevisionEntry } from "@/lib/types";
+import { REVISION_HISTORY_DEFAULT } from "@/lib/constants";
 
 export function StepResponsibilities() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
   const [busy, setBusy] = React.useState<Record<string, boolean>>({});
+
+  const revisionHistory = policy.revisionHistory || REVISION_HISTORY_DEFAULT;
+
+  const addRevisionEntry = () => {
+    const list = policy.revisionHistory ? [...policy.revisionHistory] : [...REVISION_HISTORY_DEFAULT];
+    const lastRev = list.length > 0 ? parseFloat(list[list.length - 1].revisionNo) : 0;
+    const nextRevNo = isNaN(lastRev) ? `${list.length}.0` : (lastRev + 1.0).toFixed(1);
+    const today = new Date().toLocaleDateString("en-GB");
+    updatePolicy(() => ({ revisionHistory: [...list, { revisionNo: nextRevNo, date: today, description: "" }] }));
+  };
+
+  const removeRevisionEntry = (i: number) => {
+    const list = policy.revisionHistory ? [...policy.revisionHistory] : [...REVISION_HISTORY_DEFAULT];
+    updatePolicy(() => ({ revisionHistory: list.filter((_, idx) => idx !== i) }));
+  };
+
+  const updateRevisionEntry = (i: number, field: keyof RevisionEntry, v: string) => {
+    const list = policy.revisionHistory ? [...policy.revisionHistory] : [...REVISION_HISTORY_DEFAULT];
+    updatePolicy(() => ({
+      revisionHistory: list.map((item, idx) => (idx === i ? { ...item, [field]: v } : item)),
+    }));
+  };
 
   const generateResp = async (customPrompt?: string) => {
     setBusy((b) => ({ ...b, resp: true }));
@@ -178,6 +202,61 @@ export function StepResponsibilities() {
           placeholder="Describe how and when this policy is reviewed, who owns the review, and how changes are communicated..."
         />
       </Panel>}
+
+      {getSection(policy, "revision")?.enabled && (
+        <Panel
+          title={getSection(policy, "revision")?.title || "Revision history"}
+          description="Track version history, revision dates, and change logs."
+          icon={<History size={17} strokeWidth={1.8} />}
+          actions={
+            <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={addRevisionEntry}>
+              Add revision
+            </Button>
+          }
+        >
+          <div className="space-y-2.5">
+            <div className="hidden md:grid grid-cols-[100px_130px_1fr_auto] gap-2 px-3 py-1 text-[11px] font-semibold text-[var(--color-muted)] uppercase tracking-wider">
+              <span>Rev No.</span>
+              <span>Date</span>
+              <span>Description of Change</span>
+              <span className="w-8"></span>
+            </div>
+            {revisionHistory.map((rev, i) => (
+              <div
+                key={i}
+                className="group grid grid-cols-1 md:grid-cols-[100px_130px_1fr_auto] gap-2 px-3 py-2.5 rounded-lg bg-[var(--color-cream-2)]/60 border border-[var(--color-line)]"
+              >
+                <Input
+                  value={rev.revisionNo}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRevisionEntry(i, "revisionNo", e.target.value)}
+                  placeholder="0.0"
+                  className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] font-semibold text-[13px]"
+                />
+                <Input
+                  value={rev.date}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRevisionEntry(i, "date", e.target.value)}
+                  placeholder="01/01/2026"
+                  className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px]"
+                />
+                <Textarea
+                  rows={Math.max(2, Math.ceil((rev.description || "").length / 60))}
+                  value={rev.description}
+                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateRevisionEntry(i, "description", e.target.value)}
+                  placeholder="Description of change..."
+                  className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] resize-y"
+                />
+                <button
+                  onClick={() => removeRevisionEntry(i)}
+                  className="text-[var(--color-muted)] hover:text-[#9b2929] hover:bg-[#fdecec] p-2 rounded-md transition-colors opacity-0 group-hover:opacity-100 self-center"
+                  aria-label="Remove revision"
+                >
+                  <Trash2 size={14} />
+                </button>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      )}
     </div>
   );
 }

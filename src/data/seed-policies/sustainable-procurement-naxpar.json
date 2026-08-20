@@ -1,0 +1,202 @@
+{
+  "id": "sustainable-procurement-naxpar",
+  "name": "Naxpar",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Naxpar Pharma Pvt. Ltd.",
+      "address": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India.",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India.",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "Plant",
+          "address": "182, Village Gurumajra, Kishanpura, Tehsil Baddi, Dist. Solan – 174101. (H.P), India.",
+          "primaryFunction": "Plant"
+        }
+      ],
+      "site": "104-107, Bldg. No.8, Jogani Industrial Estate, Chunabhatti, Sion, Mumbai- 400 022, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Naxpar Pharma Pvt. Ltd. recognizes that procurement plays a vital role in influencing environmental, social, and ethical outcomes across its supply chain. Through this Sustainable Procurement Policy, the Company establishes a structured and transparent approach to sourcing goods and services responsibly, with the objective of managing supply chain risks and minimizing adverse impacts. Sustainability considerations are integrated into procurement processes, supplier selection, and ongoing supplier engagement to promote responsible sourcing practices. Naxpar seeks to collaborate with suppliers who share its values and commitment to ethical conduct, legal compliance, human rights, health and safety, and environmental responsibility, while supporting long-term supply chain resilience, continuous improvement, and sustainable value creation.",
+      "declaration": "Naxpar Pharma Pvt. Ltd. is committed to conducting procurement activities in a responsible, ethical, and transparent manner. The Company expects suppliers and business partners to comply with applicable laws, uphold ethical practices, and meet environmental and social requirements, while supporting continuous improvement and accountability across the supply chain. Through the integration of sustainability principles into procurement decisions and supplier management, Naxpar aims to strengthen business integrity, reduce risks, and support long-term sustainable growth.",
+      "scope": "This policy applies to all procurement activities carried out by Naxpar, including the sourcing of raw materials, equipment, services, and other goods necessary for business operations. It covers all functions and personnel involved in procurement-related decisions and extends to all suppliers, contractors, and service providers engaged by the Company. The scope includes supplier selection, onboarding, contractual arrangements, performance evaluation, and ongoing supplier management, ensuring that sustainability requirements are consistently applied throughout the procurement lifecycle."
+    },
+    "focusAreas": [
+      "Environmentally Responsible Sourcing",
+      "Supplier Social Responsibility",
+      "Ethical Supplier Practices",
+      "Local and Inclusive Sourcing",
+      "Capacity Building & Training"
+    ],
+    "qualitative": {
+      "Environmentally Responsible Sourcing": [
+        "Partner with suppliers who implement recognized environmental management systems (e.g., ISO 14001) and demonstrate measurable improvements in resource efficiency, emissions, and waste reduction.",
+        "Encourage suppliers to report product life-cycle impacts and adopt circular economy practices.",
+        "Encourage suppliers to adopt low-carbon, recyclable, and eco-friendly practices."
+      ],
+      "Supplier Social Responsibility": [
+        "Encourage suppliers to adopt continuous improvement in employee welfare and workplace safety.",
+        "Engage suppliers who maintain fair labor practices, health and safety standards, and respect human rights.",
+        "Implement supplier self-assessments, audits, and remediation programs to monitor social responsibility performance and drive continuous improvement."
+      ],
+      "Ethical Supplier Practices": [
+        "Ensure suppliers and contractors comply with legal, ethical, and anti-corruption standards.",
+        "Require suppliers to implement internal policies for transparency, conflict-of-interest management, and fair dealings.",
+        "Encourage transparency, accountability & integrity in supplier business operations."
+      ],
+      "Local and Inclusive Sourcing": [
+        "Prioritize sourcing from local, regional, and diverse suppliers.",
+        "Support economic development and inclusivity in communities where Naxpar operates.",
+        "Reduce environmental footprint by optimizing logistics and shortening supply chains."
+      ],
+      "Capacity Building & Training": [
+        "Enhance ESG knowledge and skills among suppliers and procurement teams through structured training programs.",
+        "Encourage proactive risk management and responsible decision-making in procurement and supplier operations.",
+        "Support ongoing improvement in supplier ESG performance through guidance, collaboration, and follow-up."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible Sourcing",
+        "targets": [
+          {
+            "target": "Integrate ESG and environmental criteria into 100% of supplier onboarding, supplier code of conduct and sourcing decisions by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of new suppliers are evaluated for environmental performance by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve 80% of procured materials from eco-friendly, low-carbon, or recyclable sources by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility",
+        "targets": [
+          {
+            "target": "Assess 100% of suppliers for social compliance covering labor rights, health & safety, and human rights through on-site audit and supplier self-assessments by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Engage 100% of suppliers in awareness programs on responsible labor practices and human rights by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure that 10% of suppliers implement one worker welfare or social improvement initiative by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers formally acknowledge and comply with the Naxpar Supplier Code of Conduct by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Establish a supplier whistleblower mechanism and ensure 100% supplier awareness of the reporting process by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Local and Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Source 30% of procurement from local or regional suppliers by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve a 5% increase in engagement with women-owned or women-led suppliers by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Capacity Building &Training",
+        "targets": [
+          {
+            "target": "Provide ESG, sustainability, and regulatory training to 100% of procurement staff by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct 3 training or capacity-building session for all suppliers till FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Corporate Responsibility Committee",
+        "duty": "Provides strategic oversight, approves the Sustainable Procurement Policy and quantitative targets, and reviews overall supplier ESG performance and risks."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "Apply ESG criteria in supplier selection and contracts, ensuring compliance with environmental, social, and ethical standards."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Set ESG standards, monitor supplier performance, and report on responsible sourcing progress."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Follow the Supplier Code of Conduct, adopt responsible practices, and participate in audits and improvements."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Deliver ESG and sustainability training, and support capacity-building for staff and suppliers."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Oversee implementation, allocate resources, enforce compliance, and review performance regularly."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow the policy, consider ESG in daily decisions and report any risks or violations promptly."
+      }
+    ],
+    "monitoring": "Naxpar Pharma Pvt. Ltd. continuously monitors its sustainable procurement performance across ethical sourcing, supplier environmental and social compliance, health and safety, and regulatory adherence. Key Performance Indicators (KPIs) are tracked through internal procurement and supplier management systems to measure progress against sustainability goals. Performance is reviewed quarterly and consolidated for senior management to guide responsible sourcing and risk-based decisions. Annual evaluations assess achievements, identify gaps, and define improvement actions, with relevant outcomes communicated to stakeholders to ensure transparency and accountability. All monitoring and reporting processes comply with applicable laws, recognized sustainability frameworks, and industry best practices, ensuring reliability and credibility.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed once in three years or earlier if required by the Procurement Officer to ensure it remains relevant, effective, and aligned with evolving regulations, industry best practices, and business objectives. Reviews will be conducted in coordination with the Procurement and Sustainability Teams, as well as relevant department heads. Supplier compliance will be tracked through audits, sustainability scorecards, and feedback mechanisms. Any significant updates or enhancements to the policy will require senior management approval and will be communicated to all relevant stakeholders across the supply chain."
+  },
+  "sourcePath": "Hetvi- Policies\\Naxpar\\4. Sustainable Procurement Policy.docx",
+  "sourceTextLength": 10912,
+  "parsedAt": "2026-08-12T06:33:34.048Z"
+}

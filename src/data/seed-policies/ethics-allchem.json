@@ -1,0 +1,220 @@
+{
+  "id": "ethics-allchem",
+  "name": "Allchem",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from 3) Ethical Business Conduct Policy.doc.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Allchem Lifescience Pvt. Ltd.",
+      "address": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+      "site": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+      "sites": [
+        {
+          "location": "Allchem Lifescience Pvt. Ltd.",
+          "address": "Block No. 1088/A, B/P, Lamdapura Road, Vill. Manjusar, Tal.-Savli, Dist.-Vadodara -391 775, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ]
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Allchem Lifescience Pvt. Ltd., ethical conduct forms the cornerstone of our business. We are dedicated to upholding integrity, transparency, and accountability in every aspect of our operations. This policy provides clear guidance on ethical decision-making, legal compliance, and the values that define our organization.\n\nBy maintaining the highest ethical standards, we foster trust, enhance credibility, and build strong relationships with stakeholders. This policy underscores our commitment to anti-corruption, fair competition, information security, and responsible business practices, ensuring sustainable growth and long-term success.",
+      "declaration": "Integrity and inclusivity are fundamental to the workplace culture at Allchem Lifescience Pvt. Ltd. With 2022 as the baseline year for our commitments, we are dedicated to ethical business practices, regulatory compliance, and responsible stakeholder engagement. Through robust governance, ongoing training, and collaboration, we continuously strengthen our ethical standards.",
+      "scope": "This policy applies to all employees, management, contractors, suppliers, and business associates of Allchem Lifescience Pvt. Ltd. It sets clear expectations for ethical behavior, legal compliance, and responsible business conduct across all operations and stakeholder interactions."
+    },
+    "focusAreas": [
+      "Corruption and Unethical Practices",
+      "Managing Conflicts of Interest",
+      "Fraud Prevention and Detection Mechanisms",
+      "Strengthening Anti-Money Laundering Controls",
+      "Enhancing Information Security and Data Protection",
+      "Promoting Fair Business Practices",
+      "Strengthening Ethical Reporting and Whistleblower Protection"
+    ],
+    "qualitative": {
+      "Corruption and Unethical Practices": [
+        "Foster a culture of ethical conduct by providing mandatory annual training on integrity and anti-corruption & bribery for all employees.",
+        "Regularly assess and enhance the confidentiality and effectiveness of the whistleblower system to ensure seamless reporting of corruption-related concerns."
+      ],
+      "Managing Conflicts of Interest": [
+        "Implement a structured disclosure system with mandatory reporting forms, periodic audits, training programs, and a confidential reporting mechanism to prevent and address conflicts of interest.",
+        "Maintain the strict enforcement of clear guidelines to prevent favoritism, nepotism, and undue influence in business dealings."
+      ],
+      "Fraud Prevention and Detection Mechanisms": [
+        "Strengthen internal controls and financial monitoring systems to detect and prevent fraudulent activities.",
+        "Maintain strict implementation of zero-tolerance policy for fraudulent behavior with clear disciplinary measures and enforcement protocols."
+      ],
+      "Strengthening Anti-Money Laundering Controls": [
+        "Enhance financial monitoring systems to identify, track, and report suspicious transactions in compliance with regulatory requirements.",
+        "Strengthen adherence to anti-money laundering (AML) regulations through regular updates, policy enhancements, and mandatory training for key personnel."
+      ],
+      "Enhancing Information Security and Data Protection": [
+        "Enforce stringent information security protocols to protect sensitive business, employee, and client data from unauthorized access, breaches, and cyber threats."
+      ],
+      "Promoting Fair Business Practices": [
+        "Ensure 100% transparency in all contracts and pricing mechanisms, with annual external audits."
+      ],
+      "Strengthening Ethical Reporting and Whistleblower Protection": [
+        "Conduct awareness sessions annually to educate employees and stakeholders on ethical reporting procedures, whistleblower rights, and protection policies."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption and Unethical Practices",
+        "targets": [
+          {
+            "target": "Conduct thorough background checks and due diligence on all new suppliers and contractors, achieving 100% compliance by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Ensure that every corruption-related report is reviewed, investigated, and addressed with necessary corrective actions within 30 days.",
+            "baseline": "",
+            "deadline": "within 30 days"
+          },
+          {
+            "target": "Guarantee that 100% employees, suppliers, and contractors in high-risk positions complete specialized anti-corruption training annually.",
+            "baseline": "",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Managing Conflicts of Interest",
+        "targets": [
+          {
+            "target": "Maintain 100% annual compliance in conflict of interest disclosure submissions from senior management and procurement teams by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Address and resolve 100% of reported conflict of interest cases within 45 days, ensuring appropriate actions are taken by year 2028.",
+            "baseline": "",
+            "deadline": "within 45 days; by year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention and Detection Mechanisms",
+        "targets": [
+          {
+            "target": "Ensure 100% of high-value financial transactions undergo independent verification before approval to enhance financial transparency and accountability.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Strengthen internal controls and awareness programs to maintain zero reported fraud incidents till year 2028.",
+            "baseline": "",
+            "deadline": "till year 2028"
+          },
+          {
+            "target": "Conduct fraud risk assessments annually and implement corrective actions to reduce identified risks by 30% by year 2028.",
+            "baseline": "",
+            "deadline": "annually; by year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Strengthening Anti-Money Laundering Controls",
+        "targets": [
+          {
+            "target": "Provide annual AML training to 100% of employees in finance, procurement, and compliance departments to improve risk awareness and reporting accuracy.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "Implement an automated transaction monitoring system by 2028 to enable real-time detection and flagging of suspicious activities, reducing exposure to money laundering threats.",
+            "baseline": "",
+            "deadline": "by 2028"
+          },
+          {
+            "target": "Conduct thorough AML compliance screenings for 100% suppliers and financial transactions exceeding regulatory thresholds to mitigate financial crime risks.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Enhancing Information Security and Data Protection",
+        "targets": [
+          {
+            "target": "Conduct mandatory annual cybersecurity training for 100% employees, covering data privacy, phishing prevention, and risk mitigation strategies.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure 100% compliance with information security audits conducted across all departments by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          },
+          {
+            "target": "Maintain zero incidents of unauthorized data access and breaches through improved controls by year 2028.",
+            "baseline": "",
+            "deadline": "by year 2028"
+          }
+        ]
+      },
+      {
+        "area": "Promoting Fair Business Practices",
+        "targets": [
+          {
+            "target": "Implement supplier due diligence processes, ensuring 100% of high-risk suppliers undergo ethical compliance assessments regularly.",
+            "baseline": "",
+            "deadline": "regularly"
+          }
+        ]
+      },
+      {
+        "area": "Strengthening Ethical Reporting and Whistleblower Protection",
+        "targets": [
+          {
+            "target": "Implement secure, anonymous, and easily accessible reporting channels for 100% of employees and stakeholders to report ethical concerns without fear of retaliation.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      10,
+      12,
+      16
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "ensures ethical business practices and regulatory compliance across all operations."
+      },
+      {
+        "role": "The Compliance Officer",
+        "duty": "oversees policy implementation, training, and investigations."
+      },
+      {
+        "role": "Department Heads and Supervisors",
+        "duty": "ensure ethical standards are integrated into daily operations."
+      },
+      {
+        "role": "Finance and Procurement Teams",
+        "duty": "conduct due diligence to mitigate corruption, fraud, and money laundering risks."
+      },
+      {
+        "role": "All Employees",
+        "duty": "adhere to ethical standards, report violations, and complete mandatory training."
+      }
+    ],
+    "monitoring": "Ethical business practices at Allchem Lifescience Pvt. Ltd. are continuously strengthened to align with evolving regulations, industry benchmarks, and emerging risks. A culture of integrity is deeply embedded, ensuring transparency, compliance, and accountability at all levels.\n\nComprehensive Risk Assessments & Audits: Regular internal evaluations and independent external audits identify potential risks, assess policy effectiveness, and implement corrective measures.\n\nAdvanced Monitoring & Reporting: Secure digital platforms and automated risk detection tools enhance fraud prevention, compliance tracking, and incident reporting.\n\nAll reports are handled with strict confidentiality, and appropriate measures are taken to investigate and address concerns promptly.\n\nInsights from major breaches contribute to ongoing risk assessments and policy refinements to strengthen ethical governance.",
+    "reviewMechanism": "The Ethics Officer conducts a policy review biennially or earlier to address regulatory updates, emerging risks, or operational changes.\n\nInsights from risk assessments, internal audits, employee feedback, and reported ethical concerns are analyzed to strengthen policy enforcement.\n\nRevisions are implemented as needed, with updated policies communicated to employees, suppliers, and stakeholders to ensure continued compliance and awareness.\n\nPeriodic training sessions are conducted to familiarize employees with policy updates and reinforce ethical standards.\n\nA structured feedback mechanism is in place to gather suggestions and concerns, fostering continuous improvement in ethical governance."
+  },
+  "sourcePath": "Hetvi- Policies\\Allchem\\3) Ethical Business Conduct Policy.doc",
+  "sourceTextLength": 15288,
+  "parsedAt": "2026-08-12T06:25:28.746Z"
+}

@@ -1,0 +1,274 @@
+{
+  "id": "sustainable-procurement-excel",
+  "name": "Excel",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from 103. Sustainable Procurement Policy V00 (Std Format) 15.07.2024 (Modified 04.10.24).docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Excel Industries Limited",
+      "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+      "site": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+      "sites": [
+        {
+          "location": "Corporate Head Office",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Corporate Head Office"
+        },
+        {
+          "location": "Roha Manufacturing Site",
+          "address": "Plot No. 112, 20/1, OS-2, MIDC, Dhatav, Roha, Raigad, Maharashtra 402116, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Lote Manufacturing Site",
+          "address": "D-9, MIDC, Lote Parshuram, Ratnagiri, Maharashtra 415722, India.",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Visakhapatnam Manufacturing Site",
+          "address": "Plot No. 15 & 15A, APSEZ, Atchutapuram, Vishakhapatnam, Andhra Pradesh, 531011, India",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Excel Bioresources Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Subsidiary"
+        },
+        {
+          "location": "Kamaljyot Investments Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Subsidiary"
+        },
+        {
+          "location": "Excel Rajkot C&D waste recycling Private Limited, Subsidiary",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Subsidiary"
+        }
+      ]
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Excel Industries Ltd. is committed to integrating Sustainability principles across our supply chain to minimize environmental impacts, ensure responsible social practices, and contribute to ethical business operations. This policy outlines our expectations from suppliers like quality, quantity, cost, timely delivery, logistics and legal compliance with our core sustainability values, ensuring that our procurement practices align with our values and contribute to a sustainable future for the Organization.",
+      "declaration": "Excel Industries Limited, a responsible manufacturer of industrial chemicals, intermediates, specialty chemicals, agrochemical intermediates, and pharmaceutical products, is committed to promoting sustainable procurement practices that foster responsible sourcing, ethical business conduct, and social responsibility throughout our supply chain.\n\nIt is the Company’s endeavor to:\n\nIntegrate sustainability principles into all procurement and supply chain decisions.\n\nEnsure compliance with applicable laws, regulations, and international sustainability standards.\n\nSource responsibly by engaging with suppliers who uphold ethical, environmental, and social performance standards.\n\nPromote fair and transparent procurement processes that prevent corruption, bribery, and anti-competitive practices.\n\nEncourage suppliers to voluntarily, adopt cleaner technologies, renewable energy, waste reduction, and circular economy practices.\n\nAssess and monitor supplier performance through sustainability audits, feedback, and capacity-building initiatives.\n\nFoster long-term partnerships with suppliers who share our vision of sustainability, innovation, and continuous improvement.\n\nProvide training and guidance to procurement teams and suppliers to enhance awareness of sustainable procurement principles.\n\nContinually review objectives and set measurable targets to improve our sustainable procurement performance.\n\nEngage stakeholders and customers transparently on our supply chain sustainability performance and progress.\n\nThis Sustainable Procurement Policy serves as a guiding framework for responsible sourcing and supplier engagement at Excel Industries Limited, ensuring that sustainability is embedded across our entire value chain.\n\nThe policy will be reviewed in every six months in MRM for its adequacy and continuing relevance to the organization’s business. It will be made available to all employees, suppliers, customers, and other stakeholders wherever required.",
+      "scope": "This policy applies to all activities related to the manufacture, scale-up and supply of industrial chemicals, agrochemical intermediates, specialty chemicals, polymer intermediates, and pharmaceutical products. It also applies to all business units and functions within Excel Industries Limited, including procurement, manufacturing, research and development, logistics and corporate offices. It applies to all workmen working for the company including our own employees, contractors and their workmen working inside the premises, all stakeholders and external providers associated with the company. This policy is applicable across all operating sites of Excel Industries Limited as listed below:"
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Supplier Social Practices",
+      "Supplier Ethics & Governance",
+      "Commitment to Health, Safety, and Sustainability"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "Supplier Environmental Practices: We require suppliers to adopt environmentally responsible practices, including but not limited to,",
+        "Energy & GHGs: Suppliers should voluntarily adopt energy-efficient processes and reduce greenhouse gas emissions through renewable energy, energy conservation, and emission control strategies.",
+        "Materials & Waste: Efficient use of raw materials is essential. Suppliers must minimize waste generation, encourage recycling and reusing materials, and responsibly manage hazardous and non-hazardous waste.",
+        "Water Usage: Suppliers should actively monitor and reduce water consumption, ensuring that wastewater is treated and discharged according to environmental regulations.",
+        "Air Pollution: Processes must be designed to minimize emissions and ensure compliance with local air quality standards.",
+        "Chemicals Management: Suppliers are expected to safely handle, store, and dispose of chemicals in compliance with local and international safety and environmental guidelines.",
+        "Biodiversity: Suppliers should avoid sourcing from environmentally sensitive areas and protect ecosystems by promoting biodiversity conservation."
+      ],
+      "Supplier Social Practices": [
+        "Supplier Social Practices: Excel Industries Ltd. prioritizes fair labor practices and human rights across the supply chain. We expect suppliers to comply with,",
+        "Health & Safety: Maintain safe working conditions by following occupational health and safety regulations, ensuring the well-being of all employees involved in production and supply processes.",
+        "Working Conditions: Adhere to fair labor practices, ensuring workers' rights to fair wages, reasonable working hours, and non-discriminatory work environments.",
+        "Child Labor & Forced Labor: Suppliers must comply with laws prohibiting child labor, forced labor, and human trafficking.",
+        "Diversity, Equity & Inclusion: Excel Industries expects suppliers to foster inclusive work environments that promote diversity and equal opportunity.",
+        "Career Management & Training: Suppliers are encouraged to offer training and career development opportunities to improve employee skills and job satisfaction."
+      ],
+      "Supplier Ethics & Governance": [
+        "Supplier Ethics & Governance: Suppliers are required to maintain ethical business conduct by,",
+        "Corruption Prevention: Implementing anti-corruption measures to prevent bribery and unethical business dealings.",
+        "Responsible Information Management: Ensuring the protection of confidential data, intellectual property, and sensitive business information throughout the supply chain."
+      ],
+      "Commitment to Health, Safety, and Sustainability": [
+        "Commitment to Health, Safety, and Sustainability: Excel Industries Ltd. is committed to working with,",
+        "Suppliers who demonstrate leadership in health and safety, environmental responsibility, and social sustainability.",
+        "Comply with local, national, and international regulations related to health, safety, and environmental protection.",
+        "Implement continuous improvement strategies for Sustainability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "Ensure 100% of strategic suppliers sign and comply with Excel’s Supplier Code of Conduct by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct annual supplier ESG self-assessments covering 100% of Tier-1 suppliers by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct on-site ESG audits for 100% of our high-risk suppliers every year, effective by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% of procurement employees and key suppliers receive ESG training annually by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Achieve zero incidents of major supplier non-compliance with sustainability or ethical requirements by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Energy & GHGs: Reduce total supply chain Scope 3 GHG emissions by 15% by 2034-35 compared to 2021 baseline.",
+            "baseline": "2021",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Water: Achieve 10% reduction in supplier water consumption and ensure 100% wastewater treatment compliance by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Waste: Reduce waste generation by 10% and achieve 20% recycling/reuse rate across supplier operations by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Materials: Ensure 25% of raw material procurement comes from sustainable or recycled sources by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Air Emissions: Ensure 100% of key suppliers comply with local and national air quality regulations by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% supplier compliance with fair labor, human rights, and non-discrimination laws by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Maintain zero (0) incidents of child labor or forced labor in the supply chain by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% of supplier workplaces provide safe and healthy working conditions by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Increase female participation in supplier workforce by 10% across key supplier facilities by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Ethics & Governance",
+        "targets": [
+          {
+            "target": "Achieve zero (0) incidents of corruption, bribery, or anti-competitive practices across the supply chain by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Conduct due-diligence assessments for 100% of new suppliers before onboarding by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Maintain 100% data protection compliance among all suppliers handling confidential or sensitive information by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Integrate ethical performance metrics into supplier evaluation and renewal processes by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Commitment to Health, Safety, and Sustainability",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers comply with occupational health and safety regulations by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Achieve zero (0) fatalities or major work-related injuries across supplier operations by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          },
+          {
+            "target": "Ensure 100% supplier compliance with Excel’s sustainability and EHS improvement initiatives by 2034-35.",
+            "baseline": "FY 2021-22",
+            "deadline": "2034-35"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director and President & COO",
+        "duty": "Oversight of Sustainable Procurement Policy and Performance."
+      },
+      {
+        "role": "Vice President Operations",
+        "duty": "Development and implementation of Procurement strategies."
+      },
+      {
+        "role": "Management Review Meeting (MRM) committee",
+        "duty": "Responsible for monthly review of the Policy at all sites to assess progress and make necessary amendments as required. Evaluates Procurement performance metrics and KPIs. Ensures cross-functional coordination on Procurement initiatives."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Responsible for the day-to-day management of supplier relationships, ensuring adherence to the Sustainable Procurement Policy, and integrating sustainability criteria into procurement processes."
+      },
+      {
+        "role": "Functional Heads",
+        "duty": "Responsible for integrating SPP and practices within their units."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure that their respective departments comply with sustainable procurement policies and report progress and issues to the Procurement Department."
+      },
+      {
+        "role": "All Employees Involved in Procurement",
+        "duty": "Adhere to the Sustainable Procurement Policy, ensure compliance in supplier selection, and report any concerns or violations."
+      }
+    ],
+    "monitoring": "Excel Industries will regularly assess supplier performance through visits, audits, reviews, and other suitable feedback mechanisms.\n\nSuppliers will be evaluated on their ability to meet or exceed environmental, social, and ethical standards.\n\nNon-compliances will be reviewed accordingly; it may result in corrective actions or termination of business relationships.\n\nPerformance Monitoring: Set measurable Sustainable Procurement performance goals and regularly review progress towards achieving these goals.\n\nTransparency: Report our Sustainable Procurement performance and progress in a transparent manner to stakeholders.",
+    "reviewMechanism": "The policy will be reviewed in every six months in MRM for its adequacy and continuing relevance to the organization’s business.\n\nMonthly Review: The Policy will be reviewed monthly at all the sites during Management Review Meeting (MRM) committee to assess progress and make necessary amendments, if required.\n\nSCM department will be evaluated through assessment towards completion of qualitative objectives and quantitative targets and identifying areas for improvement in supplier environmental and social practices.\n\nPerformance Reporting: Regular reporting on environmental performance to the MRM Committee happens on a six monthly basis. The Board of Directors and stakeholders review environmental performance reporting through the Business Responsibility and Sustainability Report (BRSR) and Annual Sustainability Report (ASR) on a yearly basis.\n\nStakeholder Engagement: Continuous dialogue with stakeholders to incorporate feedback and improve our Sustainable Procurement practices.\n\nNon-compliance may result in corrective actions or termination of business relationships.\n\nThis policy will be reviewed Monthly to ensure its continued suitability to the organization’s business objectives and evolving sustainability standards."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Excel\\103. Sustainable Procurement Policy V00 (Std Format) 15.07.2024 (Modified 04.10.24).docx",
+  "sourceTextLength": 16332,
+  "parsedAt": "2026-08-12T06:31:05.125Z"
+}

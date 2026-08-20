@@ -1,0 +1,452 @@
+{
+  "id": "ethics-rl-finechem",
+  "name": "RL FINECHEM",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from Responsible Business Conduct Policy......docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "R L Fine Chem Pvt. Ltd.",
+      "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092.",
+      "sites": [
+        {
+          "location": "R L Fine Chem Pvt. Ltd (REFEX) – Head Office",
+          "address": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092.",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "R&D Centre",
+          "address": "RLFC House, C-10, Ist Cross, KSSIDC, Industrial Estate Yelahanka New Town Bengaluru - 560 064 Karnataka, India",
+          "primaryFunction": "R&D Centre"
+        },
+        {
+          "location": "Hindupur Plant",
+          "address": "M/s RL FINE CHEM PRIVATE LIMITEDPlot No.165–182, APIIC Growth Centre, Thumakunta, Hindupur – 515 211, Sri Sathya Sai District, Andhra Pradesh, India",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gauribidanur Plant",
+          "address": "R L Fine Chem Pvt. Ltd.Plot No IP-27-29, KIADB Industrial Area Ist Phase, Kudumalakunte Village Gauribidanur, Chikkaballapur Distt Karnataka - 561208",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "site": "Phoenix Mall of Asia – Tower 2, Level 6, Unit 602, Yelahanka Hobli, Byatarayanapura, Bangalore – 560092."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "The objective of this Responsible Business Conduct Policy is to establish a structured framework for promoting ethical, transparent, and responsible business conduct across all operations of R L Fine Chem Pvt. Ltd. The Company is committed to conducting its business with integrity, accountability, fairness, and compliance with all applicable laws, regulations, and industry standards while preventing unethical practices that may adversely impact the Company, its stakeholders, and its reputation.",
+      "declaration": "I hereby acknowledge my commitment to adhere to the Responsible Business Conduct Policy and contribute towards fostering a culture of integrity, transparency, accountability, fairness, and ethical business conduct throughout the organization.",
+      "scope": "This Policy applies to all operations of R L Fine Chem Pvt. Ltd., including its Registered Office, Corporate Office, Manufacturing Plants, laboratories and all associated business activities. It covers all permanent, temporary, and contract employees across all functions, as well as suppliers, contractors, service providers, and other stakeholders directly or indirectly associated with the Company."
+    },
+    "focusAreas": [
+      "Conflict of Interest",
+      "Information Protection and Security",
+      "Fraud and Misconduct",
+      "Protected Disclosure",
+      "Anti-Money Laundering",
+      "Anti-Bribery and Anti-Corruption",
+      "Ethical Conduct"
+    ],
+    "qualitative": {
+      "Conflict of Interest": [
+        "We will strengthen conflict of interest management by implementing a formal declaration and approval system for employees, management, and directors.",
+        "We will enhance transparency in decision-making by maintaining a centralized conflict of interest register to record, track, and monitor disclosed conflicts.",
+        "We strive to ensure procurement, supplier selection, and contracting decisions remain fair, objective, and free from personal influence.",
+        "We will enhance employee awareness of conflict-of-interest risks through regular communication and training initiatives.",
+        "We strive to ensure that personal relationships, financial interests, and external engagements do not compromise professional judgment.",
+        "We are committed to safeguarding the integrity of recruitment, promotion, and performance management processes through merit-based decision-making.",
+        "We will promote early identification of conflicts by incorporating conflict of interest checks into employee onboarding, annual compliance reviews, and vendor engagement processes."
+      ],
+      "Information Protection and Security": [
+        "We are committed to enhancing employee awareness of information security risks and cybersecurity best practices.",
+        "We strive to maintain secure storage, transmission, and disposal of sensitive information through encryption, secure backup systems, and data retention and destruction procedures.",
+        "We will strengthen information security by implementing advanced cybersecurity technologies such as multi-factor authentication (MFA), endpoint protection, and network monitoring systems to safeguard critical business and operational data.",
+        "We will strengthen cybersecurity resilience by deploying endpoint protection, firewall systems, antivirus solutions, and continuous network monitoring",
+        "We are committed to enhancing employee awareness of information security risks through regular cybersecurity training, phishing simulations, and awareness campaigns."
+      ],
+      "Fraud and Misconduct": [
+        "We will strengthen oversight of procurement and payment processes by implementing maker-checker controls, vendor due diligence procedures, and multi-level approval systems to prevent fraud and unauthorized transactions.",
+        "We will promote transparency and accountability by implementing secure whistleblower channels and structured investigation procedures for reporting and addressing suspected fraud or misconduct.",
+        "We strive to enhance employee awareness of fraud risks through regular ethics, compliance, and anti-fraud training programs.",
+        "We are committed to encouraging employees and stakeholders to report suspected fraud or misconduct through confidential and secure reporting mechanisms.",
+        "We will promote accurate recordkeeping and transparent documentation practices to reduce opportunities for manipulation, misrepresentation, or concealment of information."
+      ],
+      "Protected Disclosure": [
+        "We will strengthen confidentiality and data protection in whistleblowing processes by implementing secure reporting, recordkeeping, and access-control measures for complaint management.",
+        "We will protect whistleblowers from retaliation, discrimination, harassment, or adverse employment actions resulting from good-faith reporting.",
+        "We will ensure that all grievances and complaints are handled confidentially, fairly, and impartially.",
+        "We strive to ensure that all whistleblowing concerns are reviewed objectively, investigated impartially, and addressed in a timely manner.",
+        "We aim to strengthen employee awareness of whistleblowing mechanisms through regular communication, training, and awareness initiatives."
+      ],
+      "Anti-Money Laundering": [
+        "We will enhance the detection and prevention of suspicious transactions by implementing transaction review processes, red-flag identification mechanisms, and escalation procedures for potential money laundering risks.",
+        "We strive to strengthen Know Your Customer (KYC) and Know Your Business Partner (KYBP) practices by verifying the identity, ownership structure, and legitimacy of customers, suppliers, agents, and other business associates.",
+        "We strive to maintain accurate, complete, and transparent financial records to support accountability and regulatory compliance.",
+        "We aim to enhance employee awareness of money laundering risks, suspicious transactions, and reporting obligations through regular training and communication.",
+        "We aim to strengthen third-party risk management through screening and verification of high-risk counterparties where appropriate."
+      ],
+      "Anti-Bribery and Anti-Corruption": [
+        "We will promote ethical business conduct by implementing financial controls, approval hierarchies, segregation of duties, and transaction monitoring processes to prevent bribery and corrupt practices.",
+        "We aim to strengthen anti-bribery and anti-corruption awareness through regular training, communication, and ethical leadership initiatives.",
+        "We will implement risk-based due diligence processes for third parties to identify and mitigate potential bribery and corruption risks.",
+        "We aim to comply with all applicable anti-bribery and anti-corruption laws and regulations, including the Prevention of Corruption Act, 1988, the Companies Act, 2013, and other relevant statutory requirements.",
+        "We will monitor gifts, hospitality, donations, sponsorships, and other business courtesies to ensure they are legitimate, transparent, and compliant with Company requirements."
+      ],
+      "Ethical Conduct": [
+        "Do act honestly, fairly, and transparently in all business dealings and interactions.",
+        "Do comply with all applicable laws, regulations, Company policies, and ethical standards.",
+        "Do report suspected misconduct, fraud, bribery, corruption, conflicts of interest, or other unethical behavior through designated reporting channels.",
+        "Do maintain accurate, complete, and truthful records, documents, and financial information.",
+        "Do disclose any actual, potential, or perceived conflict of interest that may influence business decisions.",
+        "Do conduct business with suppliers, customers, contractors, and business partners based on merit, quality, and objective criteria.",
+        "Do treat colleagues, customers, suppliers, and stakeholders with dignity, respect, and professionalism.",
+        "Do protect confidential information, intellectual property, and Company assets from unauthorized use or disclosure.",
+        "Do seek guidance from management, Human Resources, or Compliance personnel when facing ethical dilemmas or uncertainties.",
+        "Do participate in ethics, compliance, anti-corruption, and related awareness programs as required.",
+        "Don't offer, promise, give, solicit, or accept bribes, kickbacks, facilitation payments, or any improper advantage.",
+        "Don't falsify, manipulate, conceal, or destroy business records, financial information, or documentation.",
+        "Don't engage in fraud, embezzlement, theft, or misuse of Company funds, assets, or resources.",
+        "Don't use your position for personal gain or provide preferential treatment to family members, friends, or associates.",
+        "Don't conceal conflicts of interest or participate in decisions where personal interests may compromise objectivity.",
+        "Don't discriminate against, harass, intimidate, or retaliate against any employee or stakeholder.",
+        "Don't share confidential information with unauthorized individuals or use it for personal benefit.",
+        "Don't ignore, suppress, or discourage the reporting of genuine ethical concerns or policy violations.",
+        "Don't circumvent established approval, procurement, financial, or compliance procedures."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "We will maintain 100% completion of Conflict-of-Interest declarations by all applicable employees, directors, and Key Managerial Personnel (KMPs).",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to provide Conflict of Interest awareness training to 100% of relevant employees on an annual basis.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to maintain 100% compliance with applicable Conflict of Interest disclosure requirements under the Companies Act, 2013, and other relevant regulations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure 100% implementation and closure of corrective and preventive actions arising from identified Conflict of Interest cases.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to provide conflict of interest awareness training to 100% of relevant employees.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We are committed to ensuring 100% assessment and documentation of reported conflict of interest cases.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will achieve 100% conflict of interest screening for applicable supplier onboarding and procurement activities.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Information Protection and Security",
+        "targets": [
+          {
+            "target": "We will maintain 100% compliance with applicable information security and data protection requirements established by the organization.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to provide information security and cybersecurity awareness training to 100% of relevant employees.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to ensure 100% implementation of access authorization controls for systems containing confidential or sensitive information.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to ensure 100% investigation and documentation of reported information security incidents and data breach events.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will achieve 90% implementation of role-based access controls and multi-factor authentication for all critical information systems handling sensitive business data.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to maintain 100% encryption of confidential electronic data and secure backup coverage for all critical business and operational information assets.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fraud and Misconduct",
+        "targets": [
+          {
+            "target": "We will maintain 100% coverage of applicable employees under anti-fraud, ethics, and misconduct awareness training programs.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to ensure 100% investigation and documentation of reported fraud, misconduct, and unethical behavior cases through established procedures.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will achieve 100% review of high-risk procurement, vendor onboarding, and payment transactions through defined control mechanisms.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We are committed to ensuring 100% implementation and closure of corrective actions arising from fraud investigations, audits, and compliance reviews.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure at least 95% of financial transactions are documented, traceable, and compliant with accounting standards.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will maintain 100% compliance with applicable provisions of the Companies Act, 2013, and other relevant laws related to fraud prevention, financial controls, and corporate governance.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Protected Disclosure",
+        "targets": [
+          {
+            "target": "We strive to acknowledge 100% of whistleblower complaints within the defined reporting timeline and initiate preliminary review procedures.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to maintain zero confirmed incidents of retaliation against whistleblowers who report concerns in good faith.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will provide annual whistleblower awareness and ethics communication programs covering 100% of employees.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to implement 100% of approved corrective and preventive actions arising from whistleblower investigations within the defined timeline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to maintain 100% compliance with the Companies Act, 2013 and applicable provisions relating to vigil mechanisms, ethical conduct, and stakeholder grievance reporting.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure at least 90% complaints are resolved within 30 days.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% compliance with applicable provisions of the Prevention of Money Laundering Act, 2002 (PMLA), and other relevant financial crime regulations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to conduct risk-based due diligence on 100% of identified high-risk customers, suppliers, agents, distributors, and business partners prior to engagement.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure 100% investigation and escalation of identified suspicious financial transactions in accordance with established procedures and legal requirements.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to provide annual AML awareness and compliance training to 100% of employees in finance, procurement, commercial, and other relevant functions.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will conduct periodic KYC reviews and updates for 100% of high-risk business relationships at predefined intervals.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to maintain zero confirmed incidents of money laundering activities involving the Company arising from inadequate internal controls or compliance failures.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will achieve 100% implementation of corrective actions arising from AML audits, compliance reviews, or investigations within the prescribed timeline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Bribery and Anti-Corruption",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% compliance with the Prevention of Corruption Act 1988, the Companies Act, 2013, and other applicable anti-bribery and anti-corruption laws and regulations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will provide annual anti-bribery and anti-corruption training to 100% of employees in high-risk functions, including procurement, finance, sales, logistics, and management positions.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to conduct risk-based anti-corruption due diligence on 100% of identified high-risk agents, consultants, intermediaries, contractors, and business partners prior to engagement.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will maintain 100% documentation and approval compliance for gifts, hospitality, sponsorships, charitable contributions, and donations that exceed defined thresholds.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to implement 100% of corrective and preventive actions arising from corruption-related investigations, audits, or compliance reviews within the prescribed timeline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to maintain 100% accuracy and transparency of financial books and records to prevent off-book accounts, undisclosed payments, or falsified transactions, in accordance with the Companies Act, 2013.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Demonstrates leadership commitment to ethical business conduct and integrates responsible business principles into the company’s strategy."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensures adequate resources (financial, human, technological) for effective implementation of this Policy."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Reviews responsible business performance periodically and drives continuous improvement."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approves material changes to the Policy and key ethical compliance targets."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Periodically review this policy."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Oversees the implementation of the Responsible Business Conduct Policy across all functions and locations."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Maintains confidential whistleblowing channels and ensures timely investigation of reported concerns."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Reports directly to the Managing Director on compliance status, incident trends, and corrective actions."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Conducts periodic training and awareness programs on conflict of interest, anti-bribery, AML, and information security."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Monitors declarations, disclosures, and approvals related to conflicts of interest, gifts, and hospitality."
+      },
+      {
+        "role": "Department Heads (Finance, HR, Procurement, IT, Operations)",
+        "duty": "Ensure that their teams understand and comply with relevant provisions of this Policy."
+      },
+      {
+        "role": "Department Heads (Finance, HR, Procurement, IT, Operations)",
+        "duty": "Facilitate timely disclosure of conflicts of interest by their team members."
+      },
+      {
+        "role": "Department Heads (Finance, HR, Procurement, IT, Operations)",
+        "duty": "Implement internal controls to prevent fraud, misconduct, and money laundering within their functional areas."
+      },
+      {
+        "role": "Department Heads (Finance, HR, Procurement, IT, Operations)",
+        "duty": "Cooperate with investigations and implement corrective actions arising from compliance reviews."
+      },
+      {
+        "role": "Employees (All)",
+        "duty": "Comply with this Policy and uphold the highest standards of integrity in all business dealings."
+      },
+      {
+        "role": "Employees (All)",
+        "duty": "Disclose actual, potential, or perceived conflicts of interest promptly through designated channels."
+      },
+      {
+        "role": "Employees (All)",
+        "duty": "Protect confidential information and report any suspected security breaches."
+      },
+      {
+        "role": "Employees (All)",
+        "duty": "Report any observed unethical conduct, fraud, bribery, or policy violations through the whistleblowing mechanism without fear of retaliation."
+      },
+      {
+        "role": "Employees (All)",
+        "duty": "Participate in mandatory ethics, AML, and information security training programs."
+      },
+      {
+        "role": "Suppliers, Contractors & Business Partners",
+        "duty": "Must comply with this Policy and all applicable anti-bribery, anti-corruption, and AML laws."
+      },
+      {
+        "role": "Suppliers, Contractors & Business Partners",
+        "duty": "Disclose any actual or potential conflict of interest involving RLFC employees."
+      },
+      {
+        "role": "Suppliers, Contractors & Business Partners",
+        "duty": "Refrain from offering improper benefits to RLFC employees or officials."
+      },
+      {
+        "role": "Suppliers, Contractors & Business Partners",
+        "duty": "Immediately report any incident that may affect RLFC’s legal or ethical compliance."
+      }
+    ],
+    "monitoring": "RL Fine Chem shall monitor and periodically report ethics and compliance-related performance, including adherence to ethical standards, anti-corruption measures, conflict of interest disclosures, whistleblower complaints, fraud prevention activities, ethics training participation, and compliance with applicable legal and regulatory requirements. Employees and stakeholders are encouraged to report concerns, suspected misconduct, or policy violations through designated reporting channels. All reported matters shall be reviewed and addressed confidentially, fairly, promptly, and without retaliation against individuals who raise concerns in good faith.",
+    "reviewMechanism": "This Policy shall be reviewed annually, or earlier if required, by the Top Management to ensure its continued relevance, effectiveness, and alignment with applicable legal, regulatory, ethical, and business requirements. Any necessary revisions shall be approved by the appropriate authority and communicated to all relevant employees and stakeholders."
+  },
+  "sourcePath": "KUSH\\RL FINECHEM\\Responsible Business Conduct Policy......docx",
+  "sourceTextLength": 24402,
+  "parsedAt": "2026-08-12T06:21:59.890Z"
+}

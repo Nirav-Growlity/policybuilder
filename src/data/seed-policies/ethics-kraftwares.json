@@ -1,0 +1,228 @@
+{
+  "id": "ethics-kraftwares",
+  "name": "Kraftwares",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from 3. Business Ethics and Integrity Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Kraftwares (India) Pvt. Ltd.",
+      "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India.",
+      "sites": [
+        {
+          "location": "Kraftwares (India) Pvt. Ltd.",
+          "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "site": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Kraftwares (India) Pvt. Ltd. is committed to conducting its business operations with the highest standards of ethics, integrity, and transparency. The Company recognizes that responsible and ethical conduct is essential for maintaining the trust of its employees, customers, suppliers, business partners, and other stakeholders.\n\nThis Business Ethics and Integrity Policy establishes the principles and standards that guide ethical decision-making and responsible business conduct across all operations. The policy aims to ensure that all employees and stakeholders act with honesty, fairness, and accountability while complying with applicable laws, regulations, and organizational values.",
+      "declaration": "Kraftwares (India) Pvt. Ltd. strictly prohibits corruption, bribery, fraud, theft, maladministration, or any dishonest activities. We are committed to investigating any alleged violations thoroughly and will apply legal remedies, along with preventive measures, to ensure compliance with all applicable laws. Our ethical standards are foundational to the company’s reputation and success, guiding every decision and action we take. We view integrity as crucial to maintaining the trust of our customers, employees, and stakeholders, and we are dedicated to upholding the highest standards in all our operations.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Anti-Bribery and Corruption",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Anti-Money Laundering",
+      "Information Security and Confidentiality",
+      "Whistleblower Protection",
+      "Fair Competition",
+      "Responsible Use of Company Resources"
+    ],
+    "qualitative": {
+      "Anti-Bribery and Corruption": [
+        "Prevent all forms of bribery and corruption by promoting ethical business conduct, transparency in decision-making, and strict compliance with applicable anti-corruption laws and regulations."
+      ],
+      "Conflict of Interest": [
+        "Ensure that all employees disclose and appropriately manage actual or potential conflicts of interest to maintain impartiality, fairness, and integrity in all business decisions."
+      ],
+      "Fraud Prevention": [
+        "Prevent, detect, and address any fraudulent activities through strong internal controls, accountability mechanisms, and a zero-tolerance approach to unethical financial or operational practices."
+      ],
+      "Anti-Money Laundering": [
+        "Ensure compliance with applicable anti-money laundering regulations by identifying, preventing, and reporting suspicious financial transactions and maintaining transparent business dealings."
+      ],
+      "Information Security and Confidentiality": [
+        "Protect the confidentiality, integrity, and availability of company and stakeholder information by implementing robust information security controls and promoting responsible data handling practices."
+      ],
+      "Policy Violations": [
+        "Any violation of this Business Ethics and Integrity Policy shall be treated seriously and may result in appropriate disciplinary action in accordance with the Company’s internal procedures and applicable laws. All reported incidents will be reviewed and investigated through established internal mechanisms to ensure fairness, confidentiality, and objectivity.",
+        "Depending on the nature, severity, and frequency of the violation, disciplinary measures may include verbal or written warnings, mandatory training, suspension of duties, termination of employment or contractual relationship, and where applicable, legal action in accordance with relevant regulations.",
+        "The Company maintains a zero-tolerance approach toward corruption, fraud, money laundering, information security breaches, and other unethical practices. Appropriate corrective actions will be implemented to prevent recurrence and to strengthen internal controls and compliance mechanisms."
+      ],
+      "Continuous Improvement": [
+        "At Kraftwares (India) Pvt. Ltd., we are committed to continuous improvement in our business ethics and integrity practices. We regularly review and update our systems, processes, and policies to ensure they are effective in preventing unethical conduct, fraud, and violations. This includes enhancing training programs, improving detection mechanisms, and incorporating stakeholder feedback. By fostering a proactive approach to improvement, we aim to maintain trust, minimize risks, and uphold the highest ethical standards in all our operations."
+      ],
+      "Anti-Corruption": [
+        "The employee must decline the offer and report the incident through the designated compliance channel. All business decisions must be made based on transparency and merit."
+      ],
+      "Conflict of Interest Guidance": [
+        "The employee must disclose the relationship immediately and withdraw from the evaluation or approval process."
+      ],
+      "Fraud Prevention Guidance": [
+        "The issue must be reported immediately to the finance or compliance department for investigation. Employees must ensure accuracy and authenticity of all records."
+      ],
+      "Anti-Money Laundering Guidance": [
+        "The request must be treated as suspicious and reported through the company’s compliance or monitoring system. Employees must follow all due diligence and verification procedures."
+      ],
+      "Information Security and Confidentiality Guidance": [
+        "Employees must ensure that all sensitive information is securely stored, transmitted only through authorized systems, and accessed only by authorized personnel. Any breach must be reported immediately."
+      ],
+      "Whistleblower Protection": [
+        "The concern should be reported through the confidential whistleblower mechanism. The company ensures protection against retaliation for individuals reporting concerns in good faith."
+      ],
+      "Fair Competition": [
+        "Such practices must be strictly avoided. Employees must comply with competition laws and ensure that no anti-competitive agreements or information sharing occurs."
+      ],
+      "Responsible Use of Company Resources": [
+        "Employees must use company resources responsibly and only for legitimate business purposes, in accordance with company policies."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption",
+        "targets": [
+          {
+            "target": "Ensure 100% of reported corruption-related incidents are investigated and addressed within 7 days.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "within 7 days"
+          },
+          {
+            "target": "Ensure 100% employee coverage in anti-corruption and ethics training annually till year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually till year 2030"
+          },
+          {
+            "target": "Maintain zero confirmed incidents of bribery and corruption annually till 2030 through strict enforcement of the anti-corruption policy.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually till 2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "To regularly resolve 100% of declared conflicts of interest within 30 days of identification.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "within 30 days of identification"
+          },
+          {
+            "target": "Ensure that 100% of new hires complete conflict-of-interest training and disclosure within their first month.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "within their first month"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Provide annual fraud awareness training to 100% relevant employees till year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annual ... till year 2030"
+          },
+          {
+            "target": "Maintain zero confirmed cases of internal fraud annually till year 2030 through strengthened internal controls and monitoring mechanisms.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "annually till year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Implement Know Your Customer (KYC) protocols for 100% of new clients and suppliers by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Implement monitoring systems to review 100% of high-value financial transactions for anti-money laundering compliance by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Implement a dual-authorization process for 100% of high-value payments and financial transfers to strengthen financial control mechanisms by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security and Confidentiality",
+        "targets": [
+          {
+            "target": "Ensure 100% confidential company and stakeholder data is protected through secure data management practices such as end-to-end encryption, and controlled access mechanisms by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Maintain zero data breaches and security incidents through continuous improvement of preventive measures and robust security protocols till year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "till year 2030"
+          },
+          {
+            "target": "Investigate and resolve 100% of reported information security incidents within 7 days through established incident response procedures.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "within 7 days"
+          },
+          {
+            "target": "Ensure 100% of critical company data is backed up through secure and regularly tested backup systems by year 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower Protection",
+        "targets": [
+          {
+            "target": "Ensure 100% employees and stakeholders have access to a formal whistleblower mechanism and are trained on how to report unethical conduct, including corruption, fraud, information security breaches, and money laundering, by 2030.",
+            "baseline": "The year 2022 has been established as the baseline year for measuring progress against all the below given targets outlined in this policy.",
+            "deadline": "by 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Ensures implementation and adherence to ethical conduct policies, focusing on anti-corruption, conflict of interest, fraud, money laundering, and information security."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Oversees employee training on ethical conduct, including anti-corruption, fraud prevention, and conflict-of-interest policies."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Protects company and customer data through secure information management and compliance with data protection regulations."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts regular audits to assess compliance with ethical policies and identifies potential risks."
+      }
+    ],
+    "monitoring": "At Kraftwares (India) Pvt. Ltd., we are committed to continuous improvement in our business ethics and integrity practices. We regularly review and update our systems, processes, and policies to ensure they are effective in preventing unethical conduct, fraud, and violations. This includes enhancing training programs, improving detection mechanisms, and incorporating stakeholder feedback. By fostering a proactive approach to improvement, we aim to maintain trust, minimize risks, and uphold the highest ethical standards in all our operations.",
+    "reviewMechanism": "This policy will be reviewed annually by the Compliance Officer to assess its continued relevance and effectiveness. The company will conduct regular audits and utilize key performance indicators (KPIs) to monitor compliance. Feedback will be gathered from employees and stakeholders through surveys and grievance systems, and management is responsible for addressing any identified issues and implementing improvements as needed."
+  },
+  "sourcePath": "Hetvi- Policies\\Kraftwares\\3. Business Ethics and Integrity Policy.docx",
+  "sourceTextLength": 12363,
+  "parsedAt": "2026-08-12T06:26:29.739Z"
+}

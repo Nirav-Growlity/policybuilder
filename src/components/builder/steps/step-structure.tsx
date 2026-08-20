@@ -8,6 +8,7 @@ import { Field, Input } from "@/components/ui/input";
 import { Panel } from "@/components/ui/panel";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, GripVertical, ChevronUp, ChevronDown, Plus, Trash2, ListTree, FileText } from "lucide-react";
+import { DocumentThemePicker } from "@/components/builder/document-theme-picker";
 
 const labelFor = (section: PolicySection) => section.kind === "custom" ? "Custom section" : section.kind.replaceAll("-", " ");
 
@@ -102,6 +103,8 @@ export function StepStructure() {
           </Field>
         </div>
       </Panel>
+
+      <DocumentThemePicker />
 
       {/* Document outline reordering & section customization */}
       <div className="grid xl:grid-cols-[minmax(0,1fr)_300px] gap-8 items-start">

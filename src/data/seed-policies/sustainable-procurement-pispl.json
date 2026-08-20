@@ -1,0 +1,386 @@
+{
+  "id": "sustainable-procurement-pispl",
+  "name": "PISPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy template from 2. Green Procurement and Supply Chain Policy_GRW 08-05.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "PISPL",
+      "industry": "",
+      "site": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "BOM 2",
+          "address": "BOM 2 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 10, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 3",
+          "address": "BOM 3 LC, Parekh Integrated Services Pvt. Ltd., BGR Realities Pvt. Ltd., Ware-House No:- 6, Village:-Vahuli, NH-3 Road, Bhiwandi - 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BOM 4",
+          "address": "BOM 4 LC, Parekh Integrated Services Pvt. Ltd., Warehouse 7B, BGR Logistics Park, Village:-Vahuli, Padgha, Bhiwandi - 421302.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "CCU 1",
+          "address": "CCU 1 LC, Parekh Integrated Services Pvt. Ltd., Co. Mayur Ply Pvt. Ltd., Serampore, NH-2, Old Delhi Road, Belumlki, Sheoraphuli, Hooghly- 712223, West Bengal. Land mark: Belumore, Opp Royal Hotel.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "DEL 1",
+          "address": "DEL 1 LC, Parekh Integrated Services Pvt. Ltd., Village Bhangrola, Sector M 12, Manesar, Dist: Gurugram, Haryana 122505",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 2",
+          "address": "MAA 2 LC, Parekh Integrated Services Pvt. Ltd., A-07 Block, M/s RAR Retail and Infra LLP, Chinnambedu Village, Ponneri Taluk, Thiruvallur District, Tamil Nadu 601206",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "MAA 3",
+          "address": "MAA 3 LC, Parekh E-Com and Warehousing Services Pvt. Ltd., 117/3C and 3D, Padmavathi Garden, Numbal, Thiruverkadu P.O., Chennai, Tiruvallur, Tamil Nadu 600071",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "BLR 2",
+          "address": "BLR 2, Parekh Integrated Services Pvt. Ltd., C/o Siemens Healthineers, Survey No. - 121/1, 121/2, Dandupalya Village, Kasaba Hobli, Hoskote - Kadapa Highway, Hoskote Taluk, Bangalore-562114",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "TVM 1",
+          "address": "TVM 1 LC, Parekh Integrated Services Pvt. Ltd., Rajadhani Warehouse, Behind Popular Tata Motors, Pallichal P.O, Trivandrum, Kerala 695020",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "South Stock Points",
+          "address": "Bengaluru, Chennai, Cochin, Coimbatore, Hubli, Hyderabad, Madurai, Mangalore, Trichy, Trivandrum, Vellore, Vijayawada",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "West Stock Points",
+          "address": "Ahmedabad, Aurangabad, Baroda, Goa, Nagpur, Pune, Rajkot, Surat",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "East Stock Points",
+          "address": "Chandrasekharpur, Guwahati, Indore, Jabalpur, Kolkata, Patna, Raipur, Ranchi",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "North Stock Points",
+          "address": "Chandigarh, Dehradun, Dharuhera, Jaipur, Jalandhar, Jodhpur, Karnal, Lucknow, Ludhiana, Srinagar",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Parekh Integrated Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Parekh Integrated Services Pvt. Ltd. (PISPL) is committed to conducting its procurement activities in a responsible, ethical, and sustainable manner. The Company recognizes that its suppliers and business partners play a critical role in its overall environmental, social, and governance (ESG) performance.\n\nPISPL strives to build long-term relationships with suppliers who share its commitment to ethical conduct, environmental responsibility, and respect for labour and human rights. Through this policy, the Company aims to promote responsible sourcing practices and ensure that sustainability principles are embedded across its supply chain.",
+      "declaration": "The purpose of this policy is to establish a framework for responsible purchasing by integrating environmental, social, and ethical considerations into procurement decisions. PISPL is committed to adopting green procurement practices by ensuring that major renovations of existing facilities incorporate sustainable measures to reduce environmental impact.\n\nThe Company prioritizes the procurement of eco-friendly materials and equipment, aligned with standards prescribed by the Indian Green Building Council (IGBC), for new developments and renovation activities across warehouse properties.",
+      "scope": "This policy applies to all PISPL operations, including warehouses, transportation, and office locations across all national and international locations. It covers all permanent, temporary, and contract employees across all functions, as well as all internal and external stakeholders associated with the PISPL Group, whether directly or indirectly."
+    },
+    "focusAreas": [
+      "Supplier Code of Conduct & Compliance",
+      "Environmental Responsibility",
+      "Labour & Human Rights",
+      "Health & Safety Standards",
+      "Ethics & Anti-Corruption",
+      "Sustainable Procurement Practices",
+      "Risk Management in Supply Chain",
+      "Local & Responsible Sourcing"
+    ],
+    "qualitative": {
+      "Supplier Code of Conduct & Compliance": [
+        "Ensuring that all suppliers adhere to a defined code of conduct covering legal compliance, ethical business practices, and responsible operations."
+      ],
+      "Environmental Responsibility": [
+        "Encouraging suppliers to minimize environmental impact through efficient use of resources, adoption of sustainable materials, and compliance with environmental regulations, including green building practices where applicable."
+      ],
+      "Labour & Human Rights": [
+        "Ensuring suppliers uphold fair labour practices, prohibit child and forced labour, provide safe working conditions, and prevent discrimination and harassment."
+      ],
+      "Health & Safety Standards": [
+        "Promoting safe working environments across the supply chain and ensuring compliance with occupational health and safety requirements."
+      ],
+      "Ethics & Anti-Corruption": [
+        "Requiring suppliers to conduct business with integrity, prohibiting bribery, corruption, fraud, and unethical practices."
+      ],
+      "Sustainable Procurement Practices": [
+        "Integrating ESG criteria into supplier selection and procurement decisions, with preference given to suppliers providing eco-friendly, energy-efficient, and low-impact products and services."
+      ],
+      "Risk Management in Supply Chain": [
+        "Identifying and mitigating environmental, social, and ethical risks associated with suppliers and procurement activities."
+      ],
+      "Local & Responsible Sourcing": [
+        "Promoting local sourcing and environmentally responsible logistics practices where feasible."
+      ],
+      "Strategic ESG Goals": [
+        "We commit to integrating sustainability considerations into all procurement decisions across operations and projects.",
+        "We will prioritize sourcing of materials and services that minimize environmental impact and support responsible business practices.",
+        "We strive to promote procurement of eco-friendly, energy-efficient, and resource-efficient products aligned with applicable standards.",
+        "We will encourage the use of certified, labelled, and environmentally preferable materials in all projects and renovations.",
+        "We aim to support local economies by prioritizing local sourcing wherever feasible.",
+        "We commit to continuous improvement in procurement practices through monitoring, evaluation, and supplier engagement."
+      ],
+      "Green Supply Chain Practices": [
+        "We commit to sourcing from suppliers who demonstrate strong environmental responsibility and compliance with applicable environmental regulations.",
+        "We will encourage and prioritize suppliers who have implemented certified environmental management systems such as ISO 14001 or equivalent standards.",
+        "We will promote procurement of materials that are energy-efficient, low-emission, and environmentally certified.",
+        "We strive to reduce environmental impact by prioritizing products with low toxicity, low emissions, and sustainable raw materials.",
+        "We will encourage suppliers to adopt green certifications, eco-labels, and environmental management systems.",
+        "We aim to collaborate with suppliers to improve environmental performance across the value chain.",
+        "We aim to strengthen sustainable procurement practices by training procurement staff on environmental issues and sustainability considerations associated with the procurement of goods and services."
+      ],
+      "Supplier Workforce & Social Responsibility": [
+        "We commit to engaging with suppliers who uphold ethical labor practices, human rights, and fair working conditions.",
+        "We will ensure that suppliers comply with applicable laws related to labor, health & safety, and human rights.",
+        "We strive to promote ethical sourcing by discouraging any form of child labor, forced labor, or discriminatory practices within the supply chain.",
+        "We will promote supplier adherence to internationally recognized standards such as ISO 45001 (Occupational Health & Safety) and SA 8000 (Social Accountability) to ensure safe and ethical working conditions.",
+        "We will encourage suppliers to adopt responsible workplace practices aligned with our Code of Conduct.",
+        "We aim to build long-term partnerships with suppliers who demonstrate transparency, integrity, and accountability.",
+        "We aim to strengthen ethical and responsible procurement practices by training procurement staff on human rights principles and social risks associated with the procurement of goods and services"
+      ],
+      "Supply Chain Governance & Risk Control": [
+        "We will establish a formal supplier risk categorization framework (low, medium, high risk) based on ESG parameters.",
+        "We will maintain a centralized supplier sustainability database/dashboard for tracking performance and compliance.",
+        "We will define clear escalation and remediation protocols for suppliers failing to meet sustainability expectations.",
+        "We will incorporate third-party audits and independent assessments for high-risk suppliers wherever required.",
+        "We will promote data transparency and traceability across the supply chain using digital tools."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Strategic ESG Goals",
+        "targets": [
+          {
+            "target": "We will embed 100% sustainability criteria into vendor selection, contract evaluation, and tendering processes by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve 100% compliance with defined sustainable procurement criteria across all major procurement categories by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure that 100% of procurement contracts include sustainability clauses by 2029-30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "2029-30"
+          },
+          {
+            "target": "We will ensure that 100% of key suppliers acknowledge and comply with PISPL’s Supplier Code of Conduct by FY 2029-30 from baseline FY 2022-23",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure that at least 75% of procurement spend is evaluated against sustainability criteria by 2026–27 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "2026–27"
+          }
+        ]
+      },
+      {
+        "area": "Green Supply Chain Practices",
+        "targets": [
+          {
+            "target": "We aim to ensure that at least 30% of key suppliers are ISO 14001 certified (or equivalent) by 2026–27 from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "2026–27"
+          },
+          {
+            "target": "We will ensure that at least 50% of wood used is sourced as salvaged wood, certified wood (FSC/PEFC), rapidly renewable, or urea-formaldehyde-free composite wood by 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "2029–30"
+          },
+          {
+            "target": "We commit to ensuring that at least 50% of materials are procured locally within a 400 km radius from the project site.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We commit to provide environmental sustainability and responsible procurement training to 100% of procurement staff by FY 2029-30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure that at least 15% of materials used in retrofits or major renovations are eco-labelled (Type I / ISO 14024 / GreenPro or equivalent).",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We commit to ensure that 100% of major energy-consuming equipment, including air conditioning units, transformers, DG sets, plumbing pumps, and motors, comply with ECBC 2017 (or latest applicable) energy efficiency standards, including the use of CFC/HCFC-free refrigerants where applicable, by FY 2029–30 from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Workforce & Social Responsibility",
+        "targets": [
+          {
+            "target": "We commit to provide human rights and ethical sourcing training to 100% of procurement staff by FY 2029-30 from the baseline of FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will aim to ensure that at least 25% of critical suppliers are certified under ISO 45001, SA 8000, or equivalent social compliance standards by 2026–27 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "2026–27"
+          },
+          {
+            "target": "We will ensure that 100% of critical suppliers are screened for compliance with social and ethical standards by 2029–30from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "2029–30"
+          },
+          {
+            "target": "We commit to ensuring equal opportunity and non-discriminatory practices during supplier onboarding, evaluation, and selection processes, without bias based on gender, race, religion, ethnicity, disability, or social background, by FY 2029–30 from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure that 100% of critical supplier contracts include human rights, labor rights, health & safety, and ethical business conduct clauses by FY 2029–30 from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Supply Chain Governance & Risk Control",
+        "targets": [
+          {
+            "target": "We will ensure that 100% of new suppliers undergo sustainability risk screening prior to onboarding by FY 2026–27 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2026–27"
+          },
+          {
+            "target": "We will classify 100% of suppliers into defined ESG risk categories by FY 2026–27 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2026–27"
+          },
+          {
+            "target": "We will ensure that 100% of high-risk supplier contracts include enhanced monitoring and compliance requirements by FY 2026–27 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2026–27"
+          },
+          {
+            "target": "We aim to maintain a digital tracking system covering at least 90% of procurement spend by FY 2026–27 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2026–27"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Project Manager / Facility Manager",
+        "duty": "Take overall responsibility for implementation of this policy in all new development, retrofitting, and renovation activities."
+      },
+      {
+        "role": "Project Manager / Facility Manager",
+        "duty": "Identify all products, materials, and practices involved in the project."
+      },
+      {
+        "role": "Project Manager / Facility Manager",
+        "duty": "Evaluate and ensure that policy requirements are incorporated into project planning and execution."
+      },
+      {
+        "role": "Project Manager / Facility Manager",
+        "duty": "Identify eco-friendly and compliant alternatives (materials, products, vendors, and suppliers) in line with policy objectives."
+      },
+      {
+        "role": "Project Manager / Facility Manager",
+        "duty": "Coordinate with procurement, construction, and other relevant teams for effective implementation."
+      },
+      {
+        "role": "Project Manager / Facility Manager",
+        "duty": "Ensure that required technical specifications, declarations, and supporting documents are obtained from suppliers."
+      },
+      {
+        "role": "Project Manager / Facility Manager",
+        "duty": "Initiate procurement only after verifying that selected materials and practices meet policy requirements."
+      },
+      {
+        "role": "Facility / Project Team",
+        "duty": "Be responsible for implementation of this policy in all development, retrofitting, and renovation activities."
+      },
+      {
+        "role": "Facility / Project Team",
+        "duty": "Ensure that policy requirements are integrated into project execution at all stages."
+      },
+      {
+        "role": "Facility / Project Team",
+        "duty": "Coordinate with procurement and other teams to ensure compliance with defined standards."
+      },
+      {
+        "role": "Facility / Project Team",
+        "duty": "Monitor activities to ensure adherence to approved materials, processes, and practices."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Review Policy regularly"
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Procure materials, products, and services in line with policy requirements."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Ensure that suppliers provide necessary documentation such as technical specifications and declarations."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Evaluate and select vendors that meet environmental and sustainability criteria."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Support sourcing of eco-friendly and compliant alternatives."
+      },
+      {
+        "role": "Construction / Operations",
+        "duty": "Follow defined specifications and approved materials during execution."
+      },
+      {
+        "role": "Construction / Operations",
+        "duty": "Ensure that implementation aligns with policy requirements."
+      },
+      {
+        "role": "Construction / Operations",
+        "duty": "Support the Project/Facility Manager in achieving sustainability objectives."
+      }
+    ],
+    "monitoring": "PISPL will monitor and report on procurement practices, including selection of sustainable materials, vendor compliance, and adherence to defined standards. The Company will maintain relevant records, track performance against policy requirements, and share updates with internal stakeholders to support informed decision-making.",
+    "reviewMechanism": "PISPL will periodically review the implementation of this policy to ensure effectiveness and alignment with project requirements and regulatory standards. The review will be conducted by the Procurement head. The Company will evaluate compliance during project execution, update procedures based on practical learnings, and ensure that corrective actions are implemented and tracked to closure. All relevant documentation and records will be maintained for audit and review purposes."
+  },
+  "sourcePath": "KUSH\\PISPL\\2. Green Procurement and Supply Chain Policy_GRW 08-05.docx",
+  "sourceTextLength": 17030,
+  "parsedAt": "2026-08-12T06:29:07.831Z"
+}

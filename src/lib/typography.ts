@@ -15,6 +15,7 @@ export const FONT_FAMILY_OPTIONS = [
 
 export const DEFAULT_TYPOGRAPHY: DocumentTypography = {
   fontFamily: "Arial",
+  headingFontFamily: "Georgia",
   headingSize: 16,
   subheadingSize: 14,
   paragraphSize: 12,

@@ -1,5 +1,6 @@
 import type { Policy, PolicySection, StandardSectionKind, StepId } from "./types";
 import { DEFAULT_TYPOGRAPHY } from "./typography";
+import { DEFAULT_DOCUMENT_THEME_ID, getDocumentTheme } from "./document-themes";
 
 export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] = [
   { kind: "preface", title: "Preface" },
@@ -13,6 +14,7 @@ export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] =
   { kind: "responsibilities", title: "Roles & Responsibilities" },
   { kind: "monitoring", title: "Monitoring, Reporting & Transparency" },
   { kind: "review", title: "Review Mechanism & Continuous Improvement" },
+  { kind: "revision", title: "Revision History" },
 ];
 
 export const sectionId = (kind: StandardSectionKind) => `standard-${kind}`;
@@ -28,8 +30,8 @@ function usesPreviousTypographyDefaults(policy: Policy) {
 
 export function defaultSections(policy?: Partial<Policy>): PolicySection[] {
   const templateKinds: Record<string, StandardSectionKind[]> = {
-    standard: ["preface", "declaration", "scope", "focus", "quantitative", "responsibilities", "monitoring", "review"],
-    executive: ["preface", "declaration", "scope", "quantitative", "sdg", "review"],
+    standard: ["preface", "declaration", "scope", "focus", "quantitative", "responsibilities", "monitoring", "review", "revision"],
+    executive: ["preface", "declaration", "scope", "quantitative", "sdg", "review", "revision"],
     comprehensive: STANDARD_SECTIONS.map((section) => section.kind),
   };
   const allowed = policy?.presentationTemplate ? new Set(templateKinds[policy.presentationTemplate] || templateKinds.comprehensive) : null;
@@ -43,17 +45,26 @@ export function normalizePolicyStructure<T extends Policy>(policy: T): T {
   const incoming = Array.isArray(policy.sections) ? policy.sections : defaultSections(policy);
   const requiredPreface = incoming.find((s) => s.kind === "preface") || { id: sectionId("preface"), kind: "preface" as const, title: "Preface", enabled: true };
   const remaining = incoming.filter((s) => s.kind !== "preface").map((s) => ({ ...s, blocks: s.kind === "custom" ? (s.blocks || []) : s.blocks }));
+  const documentTheme = policy.documentTheme ?? DEFAULT_DOCUMENT_THEME_ID;
+  const themeDefaults = getDocumentTheme(documentTheme).defaults;
+  const typography = !policy.typography
+    ? { ...themeDefaults.typography }
+    : usesPreviousTypographyDefaults(policy)
+      ? { ...DEFAULT_TYPOGRAPHY }
+      : {
+          ...policy.typography,
+          headingFontFamily: policy.typography.headingFontFamily || themeDefaults.typography.headingFontFamily,
+        };
   return {
     ...policy,
+    documentTheme,
     sections: [{ ...requiredPreface, enabled: true }, ...remaining],
     showTableOfContents: policy.showTableOfContents ?? true,
     showAcknowledgement: policy.showAcknowledgement ?? true,
-    sdgDisplay: policy.sdgDisplay ?? "tiles",
-    logoPosition: policy.logoPosition ?? "center",
-    typography: !policy.typography || usesPreviousTypographyDefaults(policy)
-      ? DEFAULT_TYPOGRAPHY
-      : policy.typography,
-    visualStyle: policy.visualStyle ?? "corporate",
+    sdgDisplay: policy.sdgDisplay ?? themeDefaults.sdgDisplay,
+    logoPosition: policy.logoPosition ?? themeDefaults.logoPosition,
+    typography,
+    visualStyle: policy.visualStyle ?? themeDefaults.visualStyle,
   };
 }
 
@@ -78,6 +89,7 @@ export function sectionHasContent(policy: Policy, section: PolicySection) {
     case "responsibilities": return policy.responsibilities.length > 0;
     case "monitoring": return Boolean(policy.monitoring);
     case "review": return Boolean(policy.reviewMechanism);
+    case "revision": return Boolean(policy.revisionHistory && policy.revisionHistory.length > 0);
     case "custom": return Boolean(section.blocks?.some((b) => b.text.trim()));
   }
 }
@@ -90,7 +102,7 @@ export function getWorkflowSteps(policy: Policy): StepId[] {
   if (enabled.has("qualitative")) result.push("qualitative");
   if (enabled.has("quantitative")) result.push("quantitative");
   if (enabled.has("sdg")) result.push("sdg");
-  if (["responsibilities", "monitoring", "review"].some((k) => enabled.has(k as StandardSectionKind))) result.push("responsibilities");
+  if (["responsibilities", "monitoring", "review", "revision"].some((k) => enabled.has(k as StandardSectionKind))) result.push("responsibilities");
   if (enabled.has("custom")) result.push("custom");
   result.push("export");
   return result;

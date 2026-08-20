@@ -1,0 +1,231 @@
+{
+  "id": "ethics-sri-all-india",
+  "name": "Sri All India",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy template from 3. Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Sri All India Exports",
+      "address": "#23, Velammal Layout, Sengunthapuram, Karur-639002, India.",
+      "sites": [
+        {
+          "location": "Sri All India Exports",
+          "address": "#23, Velammal Layout, Sengunthapuram, Karur-639002, India.",
+          "primaryFunction": "Textile industry"
+        }
+      ],
+      "site": "#23, Velammal Layout, Sengunthapuram, Karur-639002, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Sri All India Exports is steadfast in its commitment to maintaining the highest ethical standards across all aspects of our operations. As a prominent leader in the textile industry, we are dedicated to fostering an environment of integrity, transparency, and accountability. This Ethics Policy articulates our commitment to ethical behavior and outlines the framework for addressing key ethical issues, including corruption, conflict of interest, fraud, money laundering, anti-competitive practices, and information security.\n\nOur goal is to ensure that all employees, stakeholders, and partners conduct business with honesty and respect for legal and ethical standards. This policy serves as a guide for maintaining ethical conduct, safeguarding the company’s reputation, and complying with legal requirements.",
+      "declaration": "At Sri All India Exports, we uphold the highest standards of ethical behavior. We are committed to preventing and addressing unethical conduct and ensuring compliance with applicable laws and regulations. This policy reinforces our dedication to ethical practices and provides a clear framework for addressing potential ethical issues.",
+      "scope": "This policy is exclusively applicable to the operations of Sri All India Exports, covering all employees, workers, subcontractors, and other stakeholders directly affiliated with our site."
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of Interest",
+      "Fraud",
+      "Money Laundering",
+      "Anti-Competitive Practices",
+      "Information Security"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Develop and roll out a comprehensive anti-corruption training program for all new employees. For example, employees will participate in a workshop on recognizing and preventing bribery and other forms of corruption within their first month of employment.",
+        "Create a dedicated, confidential channel for reporting corruption, and ensure all employees are aware of and can use this system without fear of retaliation.",
+        "Establish a confidential reporting system where employees can anonymously report suspected corruption. For instance, set up an online portal and a hotline dedicated to reporting unethical behavior."
+      ],
+      "Conflict of Interest": [
+        "Create a formal process for employees to disclose potential conflicts of interest. For example, employees will be required to fill out a conflict-of-interest declaration form when they join the company and annually thereafter.",
+        "Develop a system for reviewing disclosed conflicts of interest. For instance, establish a committee that meets quarterly to assess and manage any disclosed conflicts.",
+        "Establish a transparent process for decision-making that includes checks to identify and mitigate conflicts of interest. For example, decisions on promotions or major contracts will involve a review by a committee to ensure impartiality."
+      ],
+      "Fraud": [
+        "Implement internal controls to prevent fraud. For example, introduce a new verification process for financial transactions to detect any anomalies.",
+        "Create secure channels for reporting suspected fraud. For instance, establish a confidential email and phone line where employees can report fraud anonymously.",
+        "Organize workshops to raise awareness about fraud and its prevention. Employees will participate in quarterly workshops that cover different aspects of fraud prevention."
+      ],
+      "Money Laundering": [
+        "Implement a monitoring system to detect potential money laundering activities. For instance, use software to flag unusual transactions for further investigation.",
+        "Offer training on anti-money laundering practices to all employees. Host bi-annual training sessions that include case studies and scenarios related to money laundering.",
+        "Maintain detailed records of all transactions and customer interactions to support auditing and regulatory compliance. For example, keep transaction records and customer identification information for a specified period."
+      ],
+      "Anti-Competitive Practices": [
+        "Develop and implement policies to prevent anti-competitive practices. For example, draft a policy that prohibits any form of price-fixing or market manipulation.",
+        "Conduct reviews of market conduct to ensure compliance with competition laws. For instance, perform semi-annual audits of pricing and market practices.",
+        "Offer training on competition laws and fair market practices. Employees will attend an annual training session focusing on the importance of fair competition."
+      ],
+      "Information Security": [
+        "Enhance information security by updating data protection measures. For example, introduce new encryption protocols and secure access controls.",
+        "Provide regular training on information security. Employees will participate in bi-annual training sessions covering topics such as data protection and response to security incidents.",
+        "Develop an incident response plan and test it regularly. For example, conduct simulations of data breaches to refine the response plan and improve preparedness.",
+        "Use encryption for protecting data. For instance, encrypt customer data both when stored and during transmission to prevent unauthorized access."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Ensure that 100% of new employees participate in anti-corruption training within their first month of employment by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 80% employee awareness and usage of this reporting system by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase participation in health screenings and wellness programs to 70% of employees by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure that 100% of employees complete conflict of interest declarations upon onboarding and annually by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% review and management of disclosed conflicts within 30 days by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 100% of major decisions undergo a committee review process by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Achieve 100% implementation of new fraud prevention controls across all departments by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 90% of employees use the confidential reporting channels by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% employee attendance in quarterly fraud prevention workshops by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Ensure that 100% of advanced transaction monitoring software is implemented by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Host bi-annual training sessions with 90% employee attendance by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 80% compliance in record-keeping and auditing practices by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Achieve 90% adherence to new anti-competitive policies by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Perform semi-annual audits with 80% compliance by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employee participation in annual training sessions by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Achieve 100% implementation of new encryption protocols and access controls by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employee attendance in bi-annual security training sessions by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct quarterly simulations of data breaches with 90% of plans tested by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 80% encryption of sensitive data both at rest and in transit by 2030 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "HR / Compliance Department",
+        "duty": "Oversees implementation of the Ethics Policy, ensures compliance with ethical standards and codes of conduct, and maintains reporting mechanisms."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Provides oversight to ensure the Ethics Policy aligns with the company’s values, integrity, and governance strategy."
+      },
+      {
+        "role": "Managers / Supervisors",
+        "duty": "Act as role models, promote ethical behavior in their teams, and serve as the first point of contact for ethical concerns."
+      },
+      {
+        "role": "Employees",
+        "duty": "Receive regular training on ethical responsibilities, follow the company’s Code of Conduct, and are encouraged to report unethical practices without fear of retaliation."
+      }
+    ],
+    "monitoring": "Conduct monthly evaluations of ethics performance indicators, including incidents of corruption, conflicts of interest, and information security breaches.\n\nUtilize data collection methods such as surveys and reporting systems to ensure accurate and real-time data.\n\nPublish a detailed annual ethics report outlining our practices, achievements, challenges, and future goals.\n\nInclude case studies and success stories, such as improvements in fraud prevention or information security.\n\nHave the report independently audited to ensure accuracy and credibility.\n\nDocument and report on feedback received through surveys and forums, including participant numbers, key themes, and actions taken in response.\n\nShare feedback trends and improvement actions with employees to maintain transparency and engagement.\n\nConduct and report on annual audits of supplier ethics practices, including compliance with our policies and any corrective actions taken.\n\nInclude information on supplier adherence to our ethical standards and areas identified for improvement.\n\nProvide reports on stakeholder engagement activities, including meetings, consultations, and feedback received.\n\nSummarize the outcomes of these engagements and how they have influenced our ethics practices and policies.\n\nEstablish a system for reporting and addressing any ethics-related incidents or concerns.\n\nProvide monthly summaries of incidents, including root cause analysis, corrective actions taken, and any improvements implemented.",
+    "reviewMechanism": "The Human Resources Office is responsible for the implementation, oversight, and review of this policy. This policy will be reviewed every year, and any updates will be communicated as necessary."
+  },
+  "sourcePath": "Kenal - EcoVadis Policies\\Sri All India\\3. Ethics Policy.docx",
+  "sourceTextLength": 20301,
+  "parsedAt": "2026-08-12T06:25:13.577Z"
+}
