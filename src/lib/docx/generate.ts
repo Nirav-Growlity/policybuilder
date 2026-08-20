@@ -5,6 +5,8 @@ import {
   Document,
   Footer,
   Header,
+  HorizontalPositionAlign,
+  HorizontalPositionRelativeFrom,
   ImageRun,
   InternalHyperlink,
   LevelFormat,
@@ -19,7 +21,10 @@ import {
   TableRow,
   TextDirection,
   TextRun,
+  TextWrappingType,
   VerticalAlign,
+  VerticalPositionAlign,
+  VerticalPositionRelativeFrom,
   WidthType,
   type ParagraphChild,
 } from "docx";
@@ -142,8 +147,10 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
         },
         titlePage: true,
       },
-      headers: { default: buildHeader(model, logoImage, logoAlignment) },
-      footers: { default: buildFooter(model) },
+      // The preview keeps the cover free of running furniture; Word needs an
+      // explicit first-page header/footer to achieve the same composition.
+      headers: { first: buildPageBackgroundHeader(model), default: buildHeader(model, logoImage, logoAlignment) },
+      footers: { first: new Footer({ children: [new Paragraph("")] }), default: buildFooter(model) },
       children,
     }],
   });
@@ -170,11 +177,12 @@ function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: 
           cantSplit: true,
           children: [
             tableCell([
-              new Paragraph({ children: [new TextRun({ text: "POLICY", bold: true, color: onPrimary, size: 22, characterSpacing: 80, font: typography.fontFamily })] }),
-              spacer(1500),
+              dossierMarkParagraph(onPrimary),
+              spacer(180),
+              spacer(1120),
               new Paragraph({
                 alignment: AlignmentType.CENTER,
-                children: [new TextRun({ text: "BOARDROOM DOSSIER", bold: true, color: onPrimary, size: 18, characterSpacing: 80, font: typography.fontFamily })],
+                children: [new TextRun({ text: "POLICY DOSSIER", bold: true, color: onPrimary, size: 18, characterSpacing: 80, font: typography.fontFamily })],
               }),
               spacer(900),
               new Paragraph({ children: [new TextRun({ text: "EXECUTIVE EDITION", color: onPrimary, size: 16, characterSpacing: 50, font: typography.fontFamily })] }),
@@ -200,6 +208,7 @@ function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: 
         new TableRow({
           cantSplit: true,
           children: [tableCell([
+            atlasOrbitParagraph(primary, accent),
             logoParagraph,
             new Paragraph({ spacing: { before: 180, after: 180 }, children: [new TextRun({ text: "IMPACT ATLAS - POLICY 01", bold: true, color: primary, size: 18, characterSpacing: 70, font: typography.fontFamily })] }),
             new Paragraph({ spacing: { after: 260 }, children: [new TextRun({ text: cover.policyLabel, bold: true, color: ink, size: 66, font: typography.headingFontFamily || typography.fontFamily })] }),
@@ -228,9 +237,18 @@ function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: 
     const titleWidth = 7200;
     const metaWidth = CONTENT_WIDTH - titleWidth;
     return [
-      new Paragraph({ border: { top: border(accent, 22) }, spacing: { after: 100 }, children: [new TextRun({ text: " ", size: 2 })] }),
-      logoParagraph,
-      spacer(1000),
+      fixedTable([new TableRow({
+        cantSplit: true,
+        children: [
+          tableCell([
+            new Paragraph({ border: { top: border(accent, 22) }, spacing: { after: 70 }, children: [new TextRun({ text: " ", size: 2 })] }),
+            logoParagraph,
+          ], Math.floor(CONTENT_WIDTH * 0.38), { margins: { top: 0, bottom: 0, left: 0, right: 0 } }),
+          tableCell([journalContourParagraph(accent)], Math.ceil(CONTENT_WIDTH * 0.62), { margins: { top: 0, bottom: 0, left: 0, right: 0 } }),
+        ],
+      })], [Math.floor(CONTENT_WIDTH * 0.38), Math.ceil(CONTENT_WIDTH * 0.62)]),
+      // The title sits low on the preview cover, leaving room for its field-journal motif.
+      spacer(1800),
       fixedTable([
         new TableRow({
           cantSplit: true,
@@ -256,6 +274,7 @@ function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: 
       new TableRow({
         cantSplit: true,
         children: [tableCell([
+          charterBotanicalParagraph(accent),
           logoParagraph,
           spacer(180),
           new Paragraph({
@@ -455,9 +474,9 @@ function renderSectionContent(section: DocumentRenderSection, model: DocumentRen
     ];
     case "focus": return renderFocus(content.areas, section, model, availableWidth);
     case "qualitative": return renderQualitative(content.groups, section, model, availableWidth);
-    case "quantitative": return renderQuantitative(content.areas, section, model, policy, availableWidth);
+    case "quantitative": return renderQuantitative(content.areas, section, model, availableWidth);
     case "sdg": return renderSdgs(content.goals, model, policy, sdgImages, availableWidth);
-    case "responsibilities": return renderResponsibilities(content.entries, section, model, policy, availableWidth);
+    case "responsibilities": return renderResponsibilities(content.entries, section, model, availableWidth);
     case "revision": return [dataTable(
       ["Revision No.", "Date", "Description of Change"],
       content.entries.map((entry) => [entry.revisionNo, entry.date, entry.description]),
@@ -490,14 +509,23 @@ function renderQualitative(groups: { area: string; items: string[] }[], section:
   return cards.flatMap((card) => [...card, spacer(70)]);
 }
 
-function renderQuantitative(areas: QuantitativeArea[], section: DocumentRenderSection, model: DocumentRenderModel, policy: Policy, availableWidth: number): DocBlock[] {
+function renderQuantitative(areas: QuantitativeArea[], section: DocumentRenderSection, model: DocumentRenderModel, availableWidth: number): DocBlock[] {
   const targets = areas.flatMap((area) => area.targets.filter((target) => target.target).map((target) => ({ ...target, area: area.area })));
   const intro = new Paragraph({ spacing: { after: 120 }, children: [new TextRun({ text: "Targets are tracked against a defined period or reported annually as ongoing commitments.", italics: true, color: documentHex(model.theme.colors.muted), size: 17, font: model.typography.fontFamily })] });
-  if (model.theme.layout.dataLayout === "target-bands" && policy.visualStyle !== "corporate" && section.density !== "dense") {
+  if (model.dataTreatment === "clean-bullets" && model.theme.layout.dataLayout === "target-bands" && section.density !== "dense") {
     return [intro, ...targets.map((target, index) => targetBand(target, index + 1, model, availableWidth))];
   }
-  if (model.theme.layout.dataLayout === "quiet-rules" && policy.visualStyle !== "corporate" && section.density !== "dense") {
+  if (model.dataTreatment === "clean-bullets" && model.theme.layout.dataLayout === "quiet-rules" && section.density !== "dense") {
     return [intro, ...targets.map((target) => journalTarget(target, model))];
+  }
+  if (model.dataTreatment === "clean-bullets") {
+    return [intro, ...targets.map((target, index) => entryRow(
+      String(index + 1).padStart(2, "0"),
+      `${target.area}\n${target.target}\n${target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Due ${target.deadline || "-"}`}`,
+      availableWidth,
+      model.theme,
+      model.theme.layout.pageFrame === "editorial-margin",
+    ))];
   }
   return [intro, dataTable(
     ["#", "Focus Area", "Target", "Baseline", "Deadline", "Reporting"],
@@ -506,8 +534,8 @@ function renderQuantitative(areas: QuantitativeArea[], section: DocumentRenderSe
   )];
 }
 
-function renderResponsibilities(entries: Policy["responsibilities"], section: DocumentRenderSection, model: DocumentRenderModel, policy: Policy, availableWidth: number): DocBlock[] {
-  if (model.theme.layout.dataLayout === "formal-grid" && policy.visualStyle === "corporate") {
+function renderResponsibilities(entries: Policy["responsibilities"], section: DocumentRenderSection, model: DocumentRenderModel, availableWidth: number): DocBlock[] {
+  if (model.dataTreatment === "formal-tables") {
     return [dataTable(["Role / Department", "Responsibility"], entries.map((entry) => [entry.role, entry.duty]), scaledWidths([3000, 6906], availableWidth), model.theme)];
   }
   const cards = entries.map((entry, index) => numberedCard(index + 1, `${entry.role}\n${entry.duty}`, model, model.theme.layout.pageFrame === "modular-grid", true));
@@ -715,13 +743,17 @@ function buildHeader(model: DocumentRenderModel, logo: LogoImage, alignment: typ
   const children: ParagraphChild[] = [];
   if (logo) children.push(new ImageRun({ data: logo.data, type: logo.type, transformation: { width: 72, height: 34 } }));
   children.push(new TextRun({ text: `${logo ? "   " : ""}${compact ? "POLICY / GOVERNANCE / CURRENT" : model.cover.companyName}`, bold: true, color: compact ? documentHex(theme.colors.onPrimary) : documentHex(theme.colors.muted), size: 14, characterSpacing: 28, font: typography.fontFamily }));
-  return new Header({ children: [new Paragraph({
+  return new Header({ children: [pageBackgroundParagraph(model), new Paragraph({
     alignment,
     shading: compact ? { type: ShadingType.SOLID, color: documentHex(theme.colors.primary), fill: documentHex(theme.colors.primary) } : undefined,
     border: compact ? undefined : { bottom: border(layout === "outer-folio" ? documentHex(theme.colors.accent) : documentHex(theme.colors.primary), layout === "edge-folio" ? 16 : 6) },
     spacing: { after: 60 },
     children,
   })] });
+}
+
+function buildPageBackgroundHeader(model: DocumentRenderModel) {
+  return new Header({ children: [pageBackgroundParagraph(model)] });
 }
 
 function buildFooter(model: DocumentRenderModel) {
@@ -774,6 +806,66 @@ function tableCell(children: DocBlock[], width: number, options: {
 
 function imageParagraph(logo: NonNullable<LogoImage>, alignment: typeof AlignmentType[keyof typeof AlignmentType], width: number, height: number, after = 80) {
   return new Paragraph({ alignment, spacing: { after }, children: [new ImageRun({ data: logo.data, type: logo.type, transformation: { width, height } })] });
+}
+
+function pageBackgroundParagraph(model: DocumentRenderModel) {
+  const paper = documentHex(model.theme.colors.paper);
+  const soft = documentHex(model.theme.colors.soft);
+  const accent = documentHex(model.theme.colors.accent);
+  const pageWidth = Math.round(PAGE_WIDTH / 15);
+  const pageHeight = Math.round(PAGE_HEIGHT / 15);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${pageWidth}" height="${pageHeight}" viewBox="0 0 ${pageWidth} ${pageHeight}"><defs><linearGradient id="pageWash" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#${paper}"/><stop offset="1" stop-color="#${soft}"/></linearGradient></defs><rect width="${pageWidth}" height="${pageHeight}" fill="url(#pageWash)"/><path d="M0 116H178" stroke="#${accent}" stroke-width="2" opacity=".16"/></svg>`;
+  return new Paragraph({
+    spacing: { before: 0, after: 0 },
+    children: [new ImageRun({
+      data: Buffer.from(svg),
+      type: "svg",
+      fallback: { data: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4z8DwHwAFgAI/ScL3zgAAAABJRU5ErkJggg==", "base64"), type: "png" },
+      transformation: { width: pageWidth, height: pageHeight },
+      floating: {
+        horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, align: HorizontalPositionAlign.CENTER },
+        verticalPosition: { relative: VerticalPositionRelativeFrom.PAGE, align: VerticalPositionAlign.CENTER },
+        behindDocument: true,
+        allowOverlap: true,
+        lockAnchor: true,
+        layoutInCell: false,
+        wrap: { type: TextWrappingType.NONE },
+        margins: { top: 0, bottom: 0, left: 0, right: 0 },
+      },
+      altText: { title: "Document page gradient", description: "Subtle theme-colored page background gradient", name: "Document page gradient" },
+    })],
+  });
+}
+
+function dossierMarkParagraph(onPrimary: string) {
+  return svgParagraph(`<svg xmlns="http://www.w3.org/2000/svg" width="88" height="18" viewBox="0 0 88 18"><g stroke="#${onPrimary}" stroke-width="2" stroke-linecap="round" opacity=".78"><path d="M2 3h24"/><path d="M2 9h16"/><path d="M2 15h30"/></g></svg>`, 88, 18, AlignmentType.LEFT, "Boardroom dossier mark");
+}
+
+function atlasOrbitParagraph(primary: string, accent: string) {
+  return svgParagraph(`<svg xmlns="http://www.w3.org/2000/svg" width="440" height="180" viewBox="0 0 440 180"><g fill="none" stroke="#${primary}" stroke-width="18" opacity=".9"><circle cx="360" cy="-12" r="118"/></g><circle cx="360" cy="-12" r="70" fill="none" stroke="#${accent}" stroke-width="3"/><rect x="42" y="118" width="56" height="56" fill="#${accent}"/></svg>`, 300, 125, AlignmentType.RIGHT, "Impact atlas orbit motif");
+}
+
+function charterBotanicalParagraph(accent: string) {
+  return svgParagraph(`<svg xmlns="http://www.w3.org/2000/svg" width="120" height="48" viewBox="0 0 120 48"><g fill="none" stroke="#${accent}" stroke-width="1.2"><path d="M60 44V8"/><path d="M60 18C48 18 39 12 36 3C48 3 57 8 60 18Z"/><path d="M60 27C72 27 81 21 84 12C72 12 63 17 60 27Z"/><path d="M60 36C49 36 42 31 39 24C49 24 57 28 60 36Z"/></g></svg>`, 90, 36, AlignmentType.CENTER, "Sustainability charter botanical motif");
+}
+
+function svgParagraph(svg: string, width: number, height: number, alignment: typeof AlignmentType[keyof typeof AlignmentType], description: string) {
+  return new Paragraph({
+    alignment,
+    spacing: { after: 0 },
+    children: [new ImageRun({
+      data: Buffer.from(svg),
+      type: "svg",
+      fallback: { data: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4z8DwHwAFgAI/ScL3zgAAAABJRU5ErkJggg==", "base64"), type: "png" },
+      transformation: { width, height },
+      altText: { title: description, description, name: description },
+    })],
+  });
+}
+
+function journalContourParagraph(accent: string) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="420" height="245" viewBox="0 0 420 245"><g fill="none" stroke="#${accent}" stroke-width="1.2"><ellipse cx="230" cy="122" rx="164" ry="104"/><ellipse cx="230" cy="122" rx="140" ry="83"/><ellipse cx="230" cy="122" rx="111" ry="61"/><ellipse cx="230" cy="122" rx="77" ry="36"/><ellipse cx="230" cy="122" rx="42" ry="18"/></g></svg>`;
+  return svgParagraph(svg, 300, 175, AlignmentType.RIGHT, "Field journal contour motif");
 }
 
 function spacer(before: number) {

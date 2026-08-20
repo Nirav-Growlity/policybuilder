@@ -113,3 +113,14 @@ test("theme switching preserves authored data across the shared render model", (
     assert.equal(buildDocumentRenderModel(switched).theme.id, theme.id);
   });
 });
+
+test("data treatment remains an explicit customization across every document design", () => {
+  DOCUMENT_THEMES.forEach((theme) => {
+    const base = normalizePolicyStructure({ ...initialPolicy(), ...getDocumentThemePatch(theme.id) });
+    const corporate = buildDocumentRenderModel({ ...base, visualStyle: "corporate" });
+    const modern = buildDocumentRenderModel({ ...base, visualStyle: "modern" });
+
+    assert.equal(corporate.dataTreatment, "formal-tables", `${theme.name} corporate`);
+    assert.equal(modern.dataTreatment, "clean-bullets", `${theme.name} modern`);
+  });
+});

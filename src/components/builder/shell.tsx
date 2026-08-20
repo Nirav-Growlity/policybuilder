@@ -29,6 +29,11 @@ export function BuilderShell({
   const progress = ((currentIndex + 1) / visibleSteps.length) * 100;
 
   const currentStep = visibleSteps[currentIndex];
+  const contentRef = React.useRef<HTMLDivElement>(null);
+
+  React.useLayoutEffect(() => {
+    contentRef.current?.scrollTo(0, 0);
+  }, [step]);
 
   return (
     <div className="flex h-screen overflow-hidden bg-[var(--color-cream)]">
@@ -182,7 +187,7 @@ export function BuilderShell({
           <div className="flex items-center gap-2 flex-shrink-0">{topActions}</div>
         </header>
 
-        <div className="flex-1 overflow-y-auto scrollbar-thin">{children}</div>
+        <div ref={contentRef} className="flex-1 overflow-y-auto scrollbar-thin">{children}</div>
       </main>
     </div>
   );

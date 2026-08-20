@@ -4,6 +4,7 @@ import { getEnabledSections, sectionHasContent } from "./sections";
 import { getCompanySites, type Policy, type PolicySection, type RichTextBlock } from "./types";
 
 export type ContentDensity = "short" | "regular" | "dense";
+export type DataTreatment = "formal-tables" | "clean-bullets";
 
 export type DocumentSectionContent =
   | { type: "narrative"; text: string; sites?: ReturnType<typeof getCompanySites> }
@@ -28,6 +29,7 @@ export type DocumentRenderSection = {
 export type DocumentRenderModel = {
   theme: ReturnType<typeof getPolicyDocumentTheme>;
   typography: ReturnType<typeof getResolvedTypography>;
+  dataTreatment: DataTreatment;
   cover: {
     policyLabel: string;
     companyName: string;
@@ -70,6 +72,9 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
   return {
     theme,
     typography,
+    // The design selects the document's structural language; this explicit
+    // customization selects how policy data is presented within that design.
+    dataTreatment: policy.visualStyle === "corporate" ? "formal-tables" : "clean-bullets",
     cover: {
       policyLabel: profile.label,
       companyName,

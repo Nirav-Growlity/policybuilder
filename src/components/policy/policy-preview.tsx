@@ -224,9 +224,9 @@ function SectionContent({ section, model, policy }: { section: DocumentRenderSec
     case "narrative": return <div className={recipeClass}><Paras text={content.text} />{content.sites?.length ? <SiteTable sites={content.sites} /> : null}</div>;
     case "focus": return <FocusAreas areas={content.areas} recipe={recipe} density={section.density} />;
     case "qualitative": return <QualitativeGroups groups={content.groups} recipe={recipe} density={section.density} />;
-    case "quantitative": return <QuantitativeTargets areas={content.areas} model={model} policy={policy} density={section.density} />;
+    case "quantitative": return <QuantitativeTargets areas={content.areas} model={model} density={section.density} />;
     case "sdg": return <SdgGoals goals={content.goals} model={model} policy={policy} />;
-    case "responsibilities": return <Responsibilities entries={content.entries} model={model} policy={policy} density={section.density} />;
+    case "responsibilities": return <Responsibilities entries={content.entries} model={model} density={section.density} />;
     case "revision": return <RevisionTable entries={content.entries} />;
     case "custom": return <Blocks blocks={content.blocks} recipe={recipe} />;
   }
@@ -244,15 +244,19 @@ function QualitativeGroups({ groups, recipe, density }: { groups: { area: string
   return <div className={`policy-objective-groups recipe-${recipe} density-${density}`}>{groups.map((group, index) => <section key={`${group.area}-${index}`}><header><b>{String(index + 1).padStart(2, "0")}</b><h3>{group.area}</h3></header><ul>{group.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}>{item}</li>)}</ul></section>)}</div>;
 }
 
-function QuantitativeTargets({ areas, model, policy, density }: { areas: Policy["quantitative"]; model: DocumentRenderModel; policy: Policy; density: string }) {
+function QuantitativeTargets({ areas, model, density }: { areas: Policy["quantitative"]; model: DocumentRenderModel; density: string }) {
   const targets = areas.flatMap((area) => area.targets.filter((target) => target.target).map((target) => ({ ...target, area: area.area })));
-  const useBands = model.theme.layout.dataLayout === "target-bands" && policy.visualStyle !== "corporate" && density !== "dense";
-  const useJournalEntries = model.theme.layout.dataLayout === "quiet-rules" && policy.visualStyle !== "corporate" && density !== "dense";
+  const useModernTreatment = model.dataTreatment === "clean-bullets";
+  const useBands = useModernTreatment && model.theme.layout.dataLayout === "target-bands" && density !== "dense";
+  const useJournalEntries = useModernTreatment && model.theme.layout.dataLayout === "quiet-rules" && density !== "dense";
   if (useBands) {
     return <div className="policy-target-bands">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{target.area}</h3><p>{target.target}</p></section><aside><span>{target.reportingFrequency === "Annually" ? "Reported annually" : target.deadline || "Target period"}</span><small>{target.reportingFrequency === "Annually" ? "Ongoing" : target.baseline || "No baseline"}</small></aside></div>)}</div>;
   }
   if (useJournalEntries) {
     return <div className="policy-journal-targets">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{target.area}</b><p>{target.target}</p><span>{target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Due ${target.deadline || "-"}`}</span></div>)}</div>;
+  }
+  if (useModernTreatment) {
+    return <div className="policy-modern-targets">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{target.area}</h3><p>{target.target}</p><small>{target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Due ${target.deadline || "-"}`}</small></section></div>)}</div>;
   }
   return <PolicyTable headers={["#", "Focus Area", "Target", "Baseline", "Deadline", "Reporting"]} rows={targets.map((target, index) => [String(index + 1), target.area, target.target, target.reportingFrequency === "Annually" ? "-" : target.baseline, target.reportingFrequency === "Annually" ? "-" : target.deadline, target.reportingFrequency || "Target period"])} />;
 }
@@ -264,8 +268,8 @@ function SdgGoals({ goals, model, policy }: { goals: { number: number; label: st
   return <div className="policy-sdg-names">{goals.map((goal) => <div key={goal.number} style={{ borderColor: goal.color }}><b style={{ background: goal.color }}>SDG {goal.number}</b><span>{goal.label}</span></div>)}</div>;
 }
 
-function Responsibilities({ entries, model, policy, density }: { entries: Policy["responsibilities"]; model: DocumentRenderModel; policy: Policy; density: string }) {
-  if (model.theme.layout.dataLayout === "formal-grid" && policy.visualStyle === "corporate") return <PolicyTable headers={["Role / Department", "Responsibility"]} rows={entries.map((entry) => [entry.role, entry.duty])} />;
+function Responsibilities({ entries, model, density }: { entries: Policy["responsibilities"]; model: DocumentRenderModel; density: string }) {
+  if (model.dataTreatment === "formal-tables") return <PolicyTable headers={["Role / Department", "Responsibility"]} rows={entries.map((entry) => [entry.role, entry.duty])} />;
   return <div className={`policy-responsibility-list responsibility-${model.theme.layout.pageFrame} density-${density}`}>{entries.map((entry, index) => <div key={`${entry.role}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{entry.role}</h3><p>{entry.duty}</p></section></div>)}</div>;
 }
 
@@ -497,6 +501,11 @@ const previewStyles = `
   .policy-journal-targets b { color: var(--doc-accent); font-family: var(--policy-heading-font); }
   .policy-journal-targets p { margin: 0; text-align: left; }
   .policy-journal-targets span { grid-column: 2; margin-top: 4px; color: var(--doc-muted); font-size: 9px; font-style: italic; }
+  .policy-modern-targets { display: grid; gap: 9px; }
+  .policy-modern-targets > div { display: grid; grid-template-columns: 42px 1fr; border-top: 1px solid var(--doc-line); padding-top: 10px; }
+  .policy-modern-targets > div > b { color: var(--doc-primary); }
+  .policy-modern-targets p { margin: 5px 0; text-align: left; }
+  .policy-modern-targets small { color: var(--doc-muted); font-size: 9px; }
 
   .policy-responsibility-list { display: grid; gap: 9px; }
   .policy-responsibility-list > div { display: grid; grid-template-columns: 42px 1fr; border-top: 1px solid var(--doc-line); padding-top: 10px; }
