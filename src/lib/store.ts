@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { Policy, PolicyType, StepId } from "./types";
+import type { ImportedPolicyContext, Policy, PolicyType, StepId } from "./types";
 import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, REVISION_HISTORY_DEFAULT, getPolicyProfile } from "./constants";
 import { normalizePolicyQuantitative } from "./quantitative";
 import { getWorkflowSteps, normalizePolicyStructure } from "./sections";
@@ -52,12 +52,15 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
 interface BuilderState {
   step: StepId;
   policy: Policy;
+  importedPolicy: ImportedPolicyContext | null;
   hydrated: boolean;
   setStep: (s: StepId) => void;
   next: () => void;
   prev: () => void;
   updatePolicy: (updater: (p: Policy) => Partial<Policy> | void) => void;
   setPolicy: (p: Policy) => void;
+  setImportedPolicy: (reference: ImportedPolicyContext) => void;
+  clearImportedPolicy: () => void;
   startPolicy: (type: PolicyType) => void;
   reset: () => void;
   loadSample: () => void;
@@ -72,6 +75,7 @@ export const useBuilder = create<BuilderState>()(
     (set, get) => ({
       step: "structure",
       policy: initialPolicy(),
+      importedPolicy: null,
       hydrated: false,
       setStep: (s) => set({ step: s }),
       next: () => {
@@ -90,6 +94,8 @@ export const useBuilder = create<BuilderState>()(
         set({ policy: normalizePolicyStructure(normalizePolicyQuantitative(patch ? { ...current, ...patch } : current)) });
       },
       setPolicy: (p) => set({ policy: normalizePolicyStructure(normalizePolicyQuantitative(p)) }),
+      setImportedPolicy: (reference) => set({ importedPolicy: reference }),
+      clearImportedPolicy: () => set({ importedPolicy: null }),
       startPolicy: (type) => {
         const currentCompany = get().policy.company;
         const newPolicy = initialPolicy(type);
@@ -101,10 +107,11 @@ export const useBuilder = create<BuilderState>()(
               ...currentCompany,
             },
           },
+          importedPolicy: null,
           step: "structure",
         });
       },
-      reset: () => set({ policy: initialPolicy(), step: "structure" }),
+      reset: () => set({ policy: initialPolicy(), importedPolicy: null, step: "structure" }),
       loadSample: () => {
         const sample = makeSamplePolicy();
         set({ policy: normalizePolicyQuantitative(sample), step: "structure" });
@@ -122,7 +129,7 @@ export const useBuilder = create<BuilderState>()(
         }
         return window.localStorage;
       }),
-      partialize: (s) => ({ step: s.step, policy: s.policy }),
+      partialize: (s) => ({ step: s.step, policy: s.policy, importedPolicy: s.importedPolicy }),
       onRehydrateStorage: () => (state) => {
         if (state) {
           state.policy = normalizePolicyStructure(normalizePolicyQuantitative(state.policy));

@@ -1,5 +1,3 @@
-"use client";
-
 import type { CSSProperties } from "react";
 import { documentThemeCssVariables } from "@/lib/document-themes";
 import {

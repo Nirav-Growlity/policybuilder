@@ -1,4 +1,4 @@
-import type { Policy } from "../types";
+import type { ImportedPolicyContext, Policy } from "../types";
 
 export type AIRequestType =
   | "preface"
@@ -18,10 +18,11 @@ export type AIRequestType =
 export interface AIContext {
   type: AIRequestType;
   policy: Policy;
+  referencePolicy?: ImportedPolicyContext | null;
   areaIndex?: number;
   areaName?: string;
   customPrompt?: string;
-  existingContent?: any;
+  existingContent?: unknown;
 }
 
 export interface AIResponse {

@@ -1,37 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { mockGenerate } from "@/lib/ai/mock";
 import { parseRequestedCount, type AIContext } from "@/lib/ai/prompts";
+import { buildTemplateContext } from "@/lib/ai/template-context";
+import { buildImportedPolicyContext } from "@/lib/ai/imported-policy-context";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, TARGET_PERIOD } from "@/lib/quantitative";
-import fs from "fs";
-import path from "path";
-import { getPolicyProfile } from "@/lib/constants";
+import { getPolicyProfile, POLICY_PROFILES } from "@/lib/constants";
 
 export const runtime = "nodejs";
-
-function getTemplatesContext(policyType: string): string {
-  try {
-    const dir = path.join(process.cwd(), "data", "seed-policies");
-    const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
-    const templates = files.map(f => {
-      const content = fs.readFileSync(path.join(dir, f), 'utf-8');
-      return JSON.parse(content);
-    }).filter(template => (template.policy?.policyType || "environmental") === policyType).map(template => {
-      const policy = template.policy || {};
-      return {
-        name: template.name, sourcePath: template.sourcePath, declaration: policy.declaration,
-        definitions: policy.definitions,
-        focusAreas: (policy.focusAreas || []).slice(0, 12),
-        qualitative: Object.fromEntries(Object.entries(policy.qualitative || {}).map(([area, items]) => [area, Array.isArray(items) ? items.slice(0, 6) : items])),
-        quantitative: (policy.quantitative || []).map((area: { area: string; targets?: unknown[] }) => ({ area: area.area, targets: (area.targets || []).slice(0, 6) })),
-        responsibilities: (policy.responsibilities || []).slice(0, 6), monitoring: String(policy.monitoring || "").slice(0, 1200), reviewMechanism: String(policy.reviewMechanism || "").slice(0, 900),
-      };
-    });
-    return `Reference templates for the active ${policyType} policy type. Use them only as drafting evidence: preserve the selected policy type, adapt language to the company, and never copy company-specific facts or targets without user confirmation. Match the relevant section's depth and structure.\n${JSON.stringify(templates)}`;
-  } catch (e) {
-    console.warn("Failed to load seed policies as AI context", e);
-    return "Ensure your generated content matches the selected policy type and follows a formal, practical policy structure.";
-  }
-}
 
 const SYSTEM_BASE = `You are a senior sustainability consultant who writes formal sustainability policy documents for companies. You adapt the topic, commitments, measures, and frameworks to the selected policy type.
 Use the provided reference policies as context for what to write and where to write what, adapting to the specific company's industry and focus areas.
@@ -52,7 +27,16 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
     templateContext = "The user has selected a 'Standard ISO 14001' template. Your generated content should have a traditional length, taking reference from standard-length policies.";
   }
 
-  const SYSTEM = `${SYSTEM_BASE}\n\nTEMPLATE CONTEXT: ${templateContext}\n\n${getTemplatesContext(p.policyType)}`;
+  const activeArea = ctx.areaName
+    || (ctx.type === "qualitative" ? p.focusAreas[ctx.areaIndex ?? 0] : undefined)
+    || (["quantitative", "quantitative-refine"].includes(ctx.type) ? p.quantitative[ctx.areaIndex ?? 0]?.area : undefined);
+  const templateReferences = buildTemplateContext({
+    policyType: p.policyType,
+    requestType: ctx.type,
+    areaName: activeArea,
+  });
+  const importedReference = buildImportedPolicyContext(ctx.referencePolicy, ctx.type);
+  const SYSTEM = `${SYSTEM_BASE}\n\n${importedReference ? `${importedReference}\n\n` : ""}SECONDARY TEMPLATE CONTEXT: ${templateContext}\n\n${templateReferences}`;
   const co = p.company;
   const stds = p.standards.join(", ") || profile.standards.join(", ");
   const industry = co.industry || "manufacturing";
@@ -160,6 +144,9 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
 
 export async function POST(req: NextRequest) {
   const ctx = (await req.json()) as AIContext;
+  if (!ctx?.policy || !Object.prototype.hasOwnProperty.call(POLICY_PROFILES, ctx.policy.policyType)) {
+    return NextResponse.json({ error: "Unsupported policy type" }, { status: 400 });
+  }
   const apiKey = process.env.OPENAI_API_KEY;
 
   if (!apiKey) {

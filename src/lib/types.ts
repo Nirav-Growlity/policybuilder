@@ -133,6 +133,29 @@ export interface RevisionEntry {
   description: string;
 }
 
+export type ImportedPolicyBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "list"; ordered: boolean; items: string[] }
+  | { type: "table"; rows: string[][] };
+
+export interface ImportedPolicySection {
+  id: string;
+  title: string;
+  level: 1 | 2 | 3;
+  kind: StandardSectionKind | "custom";
+  blocks: ImportedPolicyBlock[];
+}
+
+/** A DOCX reference used by AI generation. It is intentionally separate from Policy. */
+export interface ImportedPolicyContext {
+  fileName: string;
+  policyType: PolicyType;
+  title: string;
+  text: string;
+  sections: ImportedPolicySection[];
+  importedAt: string;
+}
+
 export interface Policy {
   policyType: PolicyType;
   presentationTemplate?: PresentationTemplate;

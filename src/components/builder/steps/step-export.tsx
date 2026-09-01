@@ -49,13 +49,15 @@ export function StepExport() {
       });
       if (!res.ok) throw new Error("Export failed");
       const blob = await res.blob();
+      if (blob.size === 0) throw new Error("Export returned an empty file");
       const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
+      const objectUrl = URL.createObjectURL(blob);
+      a.href = objectUrl;
       a.download = `Environmental-Policy_${fileBase}.${kind}`;
       document.body.appendChild(a);
       a.click();
       a.remove();
-      URL.revokeObjectURL(a.href);
+      window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
       push(`${kind.toUpperCase()} download started`, "success");
     } catch {
       push(`${kind.toUpperCase()} export failed`, "error");

@@ -14,7 +14,7 @@ import { StepQuantitative } from "@/components/builder/steps/step-quantitative";
 import { StepSDG } from "@/components/builder/steps/step-sdg";
 import { StepResponsibilities } from "@/components/builder/steps/step-responsibilities";
 import { StepExport } from "@/components/builder/steps/step-export";
-import { ArrowLeft, ArrowRight, FileUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, FileCheck2, FileUp, X } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { PolicySelector } from "@/components/builder/policy-selector";
@@ -34,7 +34,19 @@ const STEP_RENDERERS: Record<string, React.ComponentType> = {
 };
 
 export function BuilderClient() {
-  const { step, policy, setStep, next, prev, updatePolicy, setPolicy, startPolicy, hydrated } = useBuilder();
+  const {
+    step,
+    policy,
+    importedPolicy,
+    setStep,
+    next,
+    prev,
+    setPolicy,
+    setImportedPolicy,
+    clearImportedPolicy,
+    startPolicy,
+    hydrated,
+  } = useBuilder();
   const { push } = useToast();
   const searchParams = useSearchParams();
   const templateId = searchParams.get("template");
@@ -83,8 +95,8 @@ export function BuilderClient() {
   };
 
   const uploadFile = async (file: File) => {
-    if (!file.name.endsWith(".docx") && !file.name.endsWith(".doc")) {
-      push("Please drop a .docx or .doc file", "error");
+    if (!file.name.toLowerCase().endsWith(".docx")) {
+      push("Please select a .docx file", "error");
       return;
     }
     try {
@@ -93,17 +105,15 @@ export function BuilderClient() {
       fd.append("file", file);
       fd.append("policyType", policy.policyType);
       const res = await fetch("/api/parse/docx", { method: "POST", body: fd });
-      if (!res.ok) throw new Error("Parse failed");
+      if (!res.ok) {
+        const error = await res.json().catch(() => null);
+        throw new Error(error?.error || "Parse failed");
+      }
       const data = await res.json();
-      updatePolicy((cur) => ({
-        ...cur,
-        ...data.policy,
-        policyType: data.policy.policyType || cur.policyType,
-      }));
-      push("Document parsed. Review the fields below.", "success");
-      setStep("structure");
-    } catch (e) {
-      push("Could not parse file", "error");
+      setImportedPolicy(data.referencePolicy);
+      push("Policy attached as the primary AI context. Your current fields were not changed.", "success");
+    } catch (error) {
+      push(error instanceof Error ? error.message : "Could not parse file", "error");
     }
   };
 
@@ -130,7 +140,7 @@ export function BuilderClient() {
       <input
         ref={fileInputRef}
         type="file"
-        accept=".docx,.doc"
+        accept=".docx"
         className="hidden"
         onChange={(e) => {
           const f = e.target.files?.[0];
@@ -138,14 +148,37 @@ export function BuilderClient() {
           e.target.value = "";
         }}
       />
-      <Button
-        variant="secondary"
-        size="md"
-        icon={<FileUp size={14} />}
-        onClick={() => fileInputRef.current?.click()}
-      >
-        Import .docx
-      </Button>
+      {importedPolicy ? (
+        <div className="flex items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-white/70 px-2 py-1">
+          <FileCheck2 size={14} className="shrink-0 text-[var(--color-forest)]" />
+          <button
+            type="button"
+            className="max-w-44 truncate text-left text-[12px] font-medium text-[var(--color-ink)]"
+            title={`${importedPolicy.fileName} is the primary AI context. Click to replace it.`}
+            onClick={() => fileInputRef.current?.click()}
+          >
+            {importedPolicy.fileName}
+          </button>
+          <button
+            type="button"
+            aria-label="Remove imported policy context"
+            title="Remove imported policy context"
+            className="rounded p-1 text-[var(--color-muted)] transition-colors hover:bg-black/5 hover:text-[var(--color-ink)]"
+            onClick={clearImportedPolicy}
+          >
+            <X size={13} />
+          </button>
+        </div>
+      ) : (
+        <Button
+          variant="secondary"
+          size="md"
+          icon={<FileUp size={14} />}
+          onClick={() => fileInputRef.current?.click()}
+        >
+          Add policy context
+        </Button>
+      )}
       <div className="w-px h-6 bg-[var(--color-line-2)] mx-1" />
       <Button variant="secondary" size="md" icon={<ArrowLeft size={14} />} onClick={prev} disabled={isFirst}>
         Back
@@ -184,8 +217,8 @@ export function BuilderClient() {
         <div className="absolute inset-0 z-50 bg-[var(--color-forest-soft)]/95 border-2 border-dashed border-[var(--color-forest)] flex items-center justify-center pointer-events-none animate-fade-in">
           <div className="text-center">
             <FileUp size={48} className="mx-auto text-[var(--color-forest)]" />
-            <div className="mt-3 font-display text-[24px] font-semibold text-[var(--color-forest-deep)]">Drop your .docx to import</div>
-            <div className="text-[13px] text-[var(--color-forest-deep)]/70 mt-1">We'll extract the content into the builder</div>
+            <div className="mt-3 font-display text-[24px] font-semibold text-[var(--color-forest-deep)]">Drop a policy .docx</div>
+            <div className="text-[13px] text-[var(--color-forest-deep)]/70 mt-1">It becomes the primary AI context without changing your policy fields</div>
           </div>
         </div>
       )}
