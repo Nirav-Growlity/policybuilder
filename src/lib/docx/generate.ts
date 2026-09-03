@@ -50,18 +50,27 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   const policy = normalizePolicyQuantitative(inputPolicy);
   const model = buildDocumentRenderModel(policy);
   const { theme, typography } = model;
+  const spacingScale = densityScale(theme.density);
   const logoImage = logoFromDataUrl(policy.company.companyLogo);
+  const featureImage = logoFromDataUrl(model.featureImage?.dataUrl);
   const logoAlignment = policy.logoPosition === "right" ? AlignmentType.RIGHT : policy.logoPosition === "center" ? AlignmentType.CENTER : AlignmentType.LEFT;
   const sdgImages = policy.sdgDisplay === "tiles" ? await loadSdgImages(policy.sdgs) : new Map<number, Uint8Array>();
   const children: DocBlock[] = [];
 
   children.push(...buildCover(model, logoImage, logoAlignment));
+  if (model.featureImage?.placement === "cover" && featureImage) {
+    children.push(imageParagraph(featureImage, AlignmentType.CENTER, 520, 220, 120, model.featureImage.altText));
+  }
   if (policy.showTableOfContents) children.push(new Paragraph({ children: [new PageBreak()] }), ...buildToc(model));
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
+  if (model.featureImage?.placement === "section" && featureImage) {
+    children.push(imageParagraph(featureImage, AlignmentType.CENTER, 520, 230, 220, model.featureImage.altText));
+  }
+
   model.sections.forEach((section) => {
     const content = renderSectionContent(section, model, policy, sdgImages, sectionContentWidth(section, theme));
-    children.push(...wrapSection(section, content, theme, typography));
+    children.push(...wrapSection(section, content, theme, typography, spacingScale));
   });
 
   children.push(
@@ -96,7 +105,7 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
           next: "PolicyBody",
           quickFormat: true,
           run: { font: typography.headingFontFamily || typography.fontFamily, size: Math.round(typography.headingSize * 2), bold: true, color: primary },
-          paragraph: { keepNext: true, spacing: { before: 300, after: 180 } },
+          paragraph: { keepNext: true, spacing: { before: Math.round(300 * spacingScale), after: Math.round(180 * spacingScale) } },
         },
         {
           id: "PolicyBody",
@@ -105,7 +114,7 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
           next: "PolicyBody",
           quickFormat: true,
           run: { font: typography.fontFamily, size: Math.round(typography.paragraphSize * 2), color: ink },
-          paragraph: { spacing: { after: 150, line: Math.round(240 * typography.lineSpacing) } },
+          paragraph: { spacing: { after: Math.round(150 * spacingScale), line: Math.round(240 * typography.lineSpacing) } },
         },
       ],
     },
@@ -166,7 +175,8 @@ function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: 
   const accent = documentHex(theme.colors.accent);
   const ink = documentHex(theme.colors.ink);
   const onPrimary = documentHex(theme.colors.onPrimary);
-  const logoParagraph = logo ? imageParagraph(logo, logoAlignment, 165, 76, 100) : spacer(80);
+  const logoScale = theme.logoScale === "small" ? .72 : theme.logoScale === "large" ? 1.28 : 1;
+  const logoParagraph = logo ? imageParagraph(logo, logoAlignment, Math.round(165 * logoScale), Math.round(76 * logoScale), 100) : spacer(80);
 
   if (theme.layout.cover === "dossier-split") {
     const railWidth = 3467;
@@ -402,7 +412,7 @@ function tocParagraph(entry: { id: string; index: number; title: string }, model
   });
 }
 
-function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme: DocumentThemeDefinition, typography: Typography): DocBlock[] {
+function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme: DocumentThemeDefinition, typography: Typography, spacingScale = 1): DocBlock[] {
   const frame = theme.layout.pageFrame;
   const title = sectionTitle(section, typography, theme);
   if (frame === "numbered-rail" && section.density !== "dense") {
@@ -415,7 +425,7 @@ function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme:
         new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: section.kind.toUpperCase(), color: documentHex(theme.colors.onPrimary), size: 13, characterSpacing: 40, font: typography.fontFamily })] }),
       ], rail, { fill: documentHex(theme.colors.primary), textDirection: TextDirection.BOTTOM_TO_TOP_LEFT_TO_RIGHT }),
       tableCell([title, ...content, spacer(80)], body, { margins: { top: 180, bottom: 210, left: 260, right: 180 } }),
-    ] })], [rail, body]), spacer(70)];
+    ] })], [rail, body]), spacer(Math.round(70 * spacingScale))];
   }
   if (frame === "editorial-margin" && section.density !== "dense") {
     const margin = 1550;
@@ -426,9 +436,9 @@ function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme:
         new Paragraph({ spacing: { before: 100 }, children: [new TextRun({ text: section.kind.toUpperCase(), color: documentHex(theme.colors.muted), size: 13, characterSpacing: 45, font: typography.fontFamily })] }),
       ], margin),
       tableCell([title, ...content, spacer(90)], body, { margins: { top: 0, bottom: 120, left: 100, right: 0 } }),
-    ] })], [margin, body]), spacer(100)];
+    ] })], [margin, body]), spacer(Math.round(100 * spacingScale))];
   }
-  return [title, ...content, spacer(frame === "modular-grid" ? 80 : 120)];
+  return [title, ...content, spacer(Math.round((frame === "modular-grid" ? 80 : 120) * spacingScale))];
 }
 
 function sectionTitle(section: DocumentRenderSection, typography: Typography, theme: DocumentThemeDefinition) {
@@ -741,7 +751,10 @@ function buildHeader(model: DocumentRenderModel, logo: LogoImage, alignment: typ
   const layout = theme.layout.runningFurniture;
   const compact = layout === "breadcrumb-bar";
   const children: ParagraphChild[] = [];
-  if (logo) children.push(new ImageRun({ data: logo.data, type: logo.type, transformation: { width: 72, height: 34 } }));
+  if (logo) {
+    const logoScale = theme.logoScale === "small" ? .72 : theme.logoScale === "large" ? 1.28 : 1;
+    children.push(new ImageRun({ data: logo.data, type: logo.type, transformation: { width: Math.round(72 * logoScale), height: Math.round(34 * logoScale) } }));
+  }
   children.push(new TextRun({ text: `${logo ? "   " : ""}${compact ? "POLICY / GOVERNANCE / CURRENT" : model.cover.companyName}`, bold: true, color: compact ? documentHex(theme.colors.onPrimary) : documentHex(theme.colors.muted), size: 14, characterSpacing: 28, font: typography.fontFamily }));
   return new Header({ children: [pageBackgroundParagraph(model), new Paragraph({
     alignment,
@@ -804,17 +817,25 @@ function tableCell(children: DocBlock[], width: number, options: {
   });
 }
 
-function imageParagraph(logo: NonNullable<LogoImage>, alignment: typeof AlignmentType[keyof typeof AlignmentType], width: number, height: number, after = 80) {
-  return new Paragraph({ alignment, spacing: { after }, children: [new ImageRun({ data: logo.data, type: logo.type, transformation: { width, height } })] });
+function imageParagraph(logo: NonNullable<LogoImage>, alignment: typeof AlignmentType[keyof typeof AlignmentType], width: number, height: number, after = 80, description = "Policy image") {
+  return new Paragraph({ alignment, spacing: { after }, children: [new ImageRun({ data: logo.data, type: logo.type, transformation: { width, height }, altText: { title: description, description, name: description } })] });
 }
 
 function pageBackgroundParagraph(model: DocumentRenderModel) {
-  const paper = documentHex(model.theme.colors.paper);
-  const soft = documentHex(model.theme.colors.soft);
+  const background = model.theme.background;
   const accent = documentHex(model.theme.colors.accent);
   const pageWidth = Math.round(PAGE_WIDTH / 15);
   const pageHeight = Math.round(PAGE_HEIGHT / 15);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${pageWidth}" height="${pageHeight}" viewBox="0 0 ${pageWidth} ${pageHeight}"><defs><linearGradient id="pageWash" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#${paper}"/><stop offset="1" stop-color="#${soft}"/></linearGradient></defs><rect width="${pageWidth}" height="${pageHeight}" fill="url(#pageWash)"/><path d="M0 116H178" stroke="#${accent}" stroke-width="2" opacity=".16"/></svg>`;
+  const fill = background.kind === "solid" ? `#${documentHex(background.color)}` : "url(#pageWash)";
+  const coordinates = background.kind === "gradient" && background.direction === "horizontal"
+    ? 'x1="0" y1="0" x2="1" y2="0"'
+    : background.kind === "gradient" && background.direction === "vertical"
+      ? 'x1="0" y1="0" x2="0" y2="1"'
+      : 'x1="0" y1="0" x2="1" y2="1"';
+  const gradient = background.kind === "gradient"
+    ? `<defs><linearGradient id="pageWash" ${coordinates}><stop offset="0" stop-color="#${documentHex(background.from)}"/><stop offset="1" stop-color="#${documentHex(background.to)}"/></linearGradient></defs>`
+    : "";
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${pageWidth}" height="${pageHeight}" viewBox="0 0 ${pageWidth} ${pageHeight}">${gradient}<rect width="${pageWidth}" height="${pageHeight}" fill="${fill}"/><path d="M0 116H178" stroke="#${accent}" stroke-width="2" opacity=".16"/></svg>`;
   return new Paragraph({
     spacing: { before: 0, after: 0 },
     children: [new ImageRun({
@@ -832,9 +853,13 @@ function pageBackgroundParagraph(model: DocumentRenderModel) {
         wrap: { type: TextWrappingType.NONE },
         margins: { top: 0, bottom: 0, left: 0, right: 0 },
       },
-      altText: { title: "Document page gradient", description: "Subtle theme-colored page background gradient", name: "Document page gradient" },
+      altText: { title: "Document page background", description: "Theme-colored page background", name: "Document page background" },
     })],
   });
+}
+
+function densityScale(density: DocumentRenderModel["theme"]["density"]): number {
+  return density === "compact" ? .82 : density === "spacious" ? 1.18 : 1;
 }
 
 function dossierMarkParagraph(onPrimary: string) {

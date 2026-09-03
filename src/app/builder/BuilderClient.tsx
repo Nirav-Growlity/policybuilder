@@ -73,7 +73,12 @@ export function BuilderClient() {
         if (!res.ok) return;
         const data = await res.json();
         if (data.template?.policy) {
-          setPolicy(data.template.policy);
+          const incoming = data.template.policy;
+          const currentCompany = useBuilder.getState().policy.company;
+          setPolicy({
+            ...incoming,
+            company: { ...incoming.company, ...currentCompany },
+          });
           push(`Loaded template: ${data.template.name}`, "success");
           setStep("structure");
         }
@@ -83,7 +88,7 @@ export function BuilderClient() {
         setTemplateLoaded(true);
       }
     })();
-  }, [hydrated, templateId, templateLoaded]);
+  }, [hydrated, push, setPolicy, setStep, templateId, templateLoaded]);
 
   const handleDrop = async (e: React.DragEvent) => {
     if (!Array.from(e.dataTransfer.types).includes("Files")) return;

@@ -4,12 +4,10 @@ import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
 import { PolicyPreview } from "@/components/policy/policy-preview";
-import { Select } from "@/components/ui/input";
-import { Download, FileText, Sparkles, Check, AlertTriangle, FileType, BookOpen, RotateCcw, SlidersHorizontal } from "lucide-react";
+import { ThemeInspector } from "@/components/builder/theme-inspector";
+import { Download, FileText, Sparkles, Check, AlertTriangle, FileType, BookOpen } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
-import { FONT_FAMILY_OPTIONS } from "@/lib/typography";
 import { getSection } from "@/lib/sections";
-import { getDocumentThemePatch, getPolicyDocumentTheme, getResolvedTypography, isDocumentThemeCustomized } from "@/lib/document-themes";
 
 export function StepExport() {
   const { policy, updatePolicy } = useBuilder();
@@ -20,9 +18,6 @@ export function StepExport() {
   const areas = policy.focusAreas.filter(Boolean);
   const qualEntries = Object.entries(policy.qualitative).filter(([, v]) => v && v.length);
   const quantEntries = policy.quantitative.filter((q) => q.targets && q.targets.some((t) => t.target));
-  const documentTheme = getPolicyDocumentTheme(policy);
-  const typography = getResolvedTypography(policy);
-  const themeCustomized = isDocumentThemeCustomized(policy);
 
   const completeness = [
     !!co.name,
@@ -77,61 +72,18 @@ export function StepExport() {
 
       <div className="grid lg:grid-cols-[1fr_320px] gap-6 items-start">
         <div className="flex rounded-2xl border border-[var(--color-line)] bg-[#f3eee3]/30 p-6 lg:p-10">
-          <div key={policy.documentTheme || "evergreen-heritage"} className="min-h-0 flex-1 pr-1">
+          <div key={policy.documentTheme || "governance-manual"} className="min-h-0 flex-1 pr-1">
             <PolicyPreview policy={policy} />
           </div>
         </div>
 
         <div className="space-y-4 sticky top-6 self-start">
-          <Panel title="Document design" description="The selected design is applied to preview, Word, and PDF." icon={<Sparkles size={17} strokeWidth={1.8} />}>
-            <div className="rounded-xl border border-[var(--color-line)] p-3" style={{ background: documentTheme.colors.soft }}>
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <div className="text-[13px] font-semibold" style={{ color: documentTheme.colors.primaryDark }}>{documentTheme.name}{themeCustomized ? " · Customized" : ""}</div>
-                  <div className="mt-1 text-[10.5px]" style={{ color: documentTheme.colors.muted }}>{documentTheme.description}</div>
-                </div>
-                <button
-                  type="button"
-                  disabled={!themeCustomized}
-                  onClick={() => updatePolicy(() => getDocumentThemePatch(documentTheme.id))}
-                  className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-black/10 bg-white/80 px-2 py-1.5 text-[10px] font-semibold disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <RotateCcw size={11} /> Reset
-                </button>
-              </div>
-              <div className="mt-3 flex gap-1.5" aria-hidden="true">{[documentTheme.colors.primary, documentTheme.colors.soft, documentTheme.colors.paper, documentTheme.colors.accent].map((color) => <span key={color} className="h-2 flex-1 rounded-full border border-black/5" style={{ background: color }} />)}</div>
-            </div>
-            <p className="mt-3 text-[10.5px] text-[var(--color-muted)]">Change the design from Document Structure. Use the controls below for document-specific refinements.</p>
+          <ThemeInspector />
+          <Panel title="Document options" description="Choose which supporting pages appear." icon={<FileText size={17} strokeWidth={1.8} />}>
+            <label className="flex items-center justify-between text-[12px]"><span>Show table of contents</span><input type="checkbox" checked={policy.showTableOfContents !== false} onChange={(event) => updatePolicy(() => ({ showTableOfContents: event.target.checked }))} /></label>
+            <label className="mt-3 flex items-center justify-between text-[12px]"><span>Include acknowledgement</span><input type="checkbox" checked={policy.showAcknowledgement !== false} onChange={(event) => updatePolicy(() => ({ showAcknowledgement: event.target.checked }))} /></label>
+            <label className="mt-3 flex items-center justify-between text-[12px]"><span>Include revision history</span><input type="checkbox" checked={getSection(policy, "revision")?.enabled !== false} onChange={(event) => { const enabled = event.target.checked; updatePolicy((current) => ({ showRevisionHistory: enabled, sections: (current.sections || []).map((section) => section.kind === "revision" ? { ...section, enabled } : section) })); }} /></label>
           </Panel>
-
-          <details className="group overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-paper)] shadow-[var(--shadow-soft)]">
-            <summary className="flex cursor-pointer list-none items-center gap-2 px-5 py-4 text-[12px] font-semibold text-[var(--color-ink)] marker:content-none">
-              <SlidersHorizontal size={15} className="text-[var(--color-forest)]" />
-              Advanced customization
-              <span className="ml-auto text-[10px] font-normal text-[var(--color-muted)] group-open:hidden">Expand</span>
-              <span className="ml-auto hidden text-[10px] font-normal text-[var(--color-muted)] group-open:inline">Collapse</span>
-            </summary>
-            <div className="space-y-6 border-t border-[var(--color-line)] px-5 py-5">
-              <section>
-                <div className="text-[11px] font-semibold text-[var(--color-ink)]">Data treatment</div>
-                <div className="mt-2 grid grid-cols-2 gap-2"><button onClick={() => updatePolicy(() => ({ visualStyle: "corporate" }))} className={`p-3 rounded-lg border text-left text-[12px] ${policy.visualStyle === "corporate" ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}><b>Corporate</b><span className="block text-[10px] mt-1 opacity-75">Formal tables</span></button><button onClick={() => updatePolicy(() => ({ visualStyle: "modern" }))} className={`p-3 rounded-lg border text-left text-[12px] ${policy.visualStyle === "modern" ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}><b>Modern</b><span className="block text-[10px] mt-1 opacity-75">Clean bullet points</span></button></div>
-                <label className="mt-4 flex items-center justify-between text-[12px]"><span>Show table of contents</span><input type="checkbox" checked={policy.showTableOfContents !== false} onChange={(e) => updatePolicy(() => ({ showTableOfContents: e.target.checked }))}/></label><label className="mt-3 flex items-center justify-between text-[12px]"><span>Include acknowledgement</span><input type="checkbox" checked={policy.showAcknowledgement !== false} onChange={(e) => updatePolicy(() => ({ showAcknowledgement: e.target.checked }))}/></label><label className="mt-3 flex items-center justify-between text-[12px]"><span>Include revision history</span><input type="checkbox" checked={getSection(policy, "revision")?.enabled !== false} onChange={(e) => { const enabled = e.target.checked; updatePolicy((p) => ({ showRevisionHistory: enabled, sections: (p.sections || []).map((s) => s.kind === "revision" ? { ...s, enabled } : s) })); }}/></label>
-                <div className="mt-4 text-[11px] text-[var(--color-muted)]">SDG appearance</div><div className="mt-2 flex gap-2"><button onClick={() => updatePolicy(() => ({ sdgDisplay: "tiles" }))} className={`text-[11px] px-2.5 py-1.5 rounded border ${policy.sdgDisplay === "tiles" ? "border-[var(--color-forest)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}>Goal tiles</button><button onClick={() => updatePolicy(() => ({ sdgDisplay: "names" }))} className={`text-[11px] px-2.5 py-1.5 rounded border ${policy.sdgDisplay === "names" ? "border-[var(--color-forest)] text-[var(--color-forest)]" : "border-[var(--color-line)]"}`}>Names only</button></div>
-                <div className="mt-4 text-[11px] text-[var(--color-muted)]">Company logo position</div><div className="mt-2 grid grid-cols-3 gap-1.5">{(["left", "center", "right"] as const).map((position) => <button key={position} onClick={() => updatePolicy(() => ({ logoPosition: position }))} className={`rounded border px-2 py-1.5 text-[11px] capitalize ${policy.logoPosition === position ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)] text-[var(--color-ink-2)]"}`}>{position}</button>)}</div>
-              </section>
-              <section className="border-t border-[var(--color-line)] pt-5">
-                <div className="text-[11px] font-semibold text-[var(--color-ink)]">Typography</div>
-                <div className="mt-3 grid grid-cols-2 gap-3 text-[11px]">
-                  <label>Heading font<Select value={typography.headingFontFamily || typography.fontFamily} onChange={(e) => updatePolicy(() => ({ typography: { ...typography, headingFontFamily: e.target.value } }))} className="mt-1 h-8 text-[11px]">{FONT_FAMILY_OPTIONS.map((font) => <option key={font}>{font}</option>)}</Select></label>
-                  <label>Body font<Select value={typography.fontFamily} onChange={(e) => updatePolicy(() => ({ typography: { ...typography, fontFamily: e.target.value } }))} className="mt-1 h-8 text-[11px]">{FONT_FAMILY_OPTIONS.map((font) => <option key={font}>{font}</option>)}</Select></label>
-                  <label>Heading size<input type="number" min="10" max="24" step="1" value={typography.headingSize} onChange={(e) => updatePolicy(() => ({ typography: { ...typography, headingSize: Number(e.target.value) } }))} className="mt-1 h-8 w-full rounded border border-[var(--color-line-2)] px-2 text-[11px]"/></label>
-                  <label>Subheading size<input type="number" min="9" max="20" step="0.5" value={typography.subheadingSize} onChange={(e) => updatePolicy(() => ({ typography: { ...typography, subheadingSize: Number(e.target.value) } }))} className="mt-1 h-8 w-full rounded border border-[var(--color-line-2)] px-2 text-[11px]"/></label>
-                  <label>Paragraph size<input type="number" min="8" max="16" step="0.5" value={typography.paragraphSize} onChange={(e) => updatePolicy(() => ({ typography: { ...typography, paragraphSize: Number(e.target.value) } }))} className="mt-1 h-8 w-full rounded border border-[var(--color-line-2)] px-2 text-[11px]"/></label>
-                  <label>Line spacing<Select value={String(typography.lineSpacing)} onChange={(e) => updatePolicy(() => ({ typography: { ...typography, lineSpacing: Number(e.target.value) } }))} className="mt-1 h-8 text-[11px]"><option value="1.15">1.15</option><option value="1.25">1.25</option><option value="1.35">1.35</option><option value="1.4">1.4</option><option value="1.5">1.5</option><option value="1.75">1.75</option><option value="2">2.0</option></Select></label>
-                </div>
-              </section>
-            </div>
-          </details>
           <Panel
             title="Export"
             description="Generate a print-ready PDF or an editable Word document."

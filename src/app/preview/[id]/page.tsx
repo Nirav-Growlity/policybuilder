@@ -1,37 +1,18 @@
 import { notFound } from "next/navigation";
-import { promises as fs } from "node:fs";
-import path from "node:path";
 import Link from "next/link";
-import { Leaf, ArrowLeft, Download, FileText, BookOpen } from "lucide-react";
+import { ArrowLeft, FileText } from "lucide-react";
 import { PolicyPreview } from "@/components/policy/policy-preview";
-import type { Policy } from "@/lib/types";
+import { getStarterTemplate } from "@/lib/starter-templates";
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-async function getPolicyById(id: string): Promise<Policy | null> {
-  try {
-    const dir = path.join(process.cwd(), "data", "seed-policies");
-    const files = await fs.readdir(dir);
-    for (const f of files) {
-      if (!f.endsWith(".json")) continue;
-      const raw = await fs.readFile(path.join(dir, f), "utf-8");
-      const data = JSON.parse(raw);
-      if (data.id === id) {
-        return data.policy as Policy;
-      }
-    }
-  } catch (e) {
-    console.error("preview load failed", e);
-  }
-  return null;
-}
-
 export default async function PreviewPage({ params }: PageProps) {
   const { id } = await params;
-  const policy = await getPolicyById(id);
-  if (!policy) notFound();
+  const starter = getStarterTemplate(id);
+  if (!starter) notFound();
+  const policy = starter.policy;
 
   return (
     <main className="min-h-screen bg-[#f3eee3]">
@@ -41,11 +22,11 @@ export default async function PreviewPage({ params }: PageProps) {
             <ArrowLeft size={14} /> Templates
           </Link>
           <span className="text-[var(--color-line-2)]">/</span>
-          <span className="text-[12.5px] text-[var(--color-ink)] font-medium truncate">{policy.company.name}</span>
+          <span className="text-[12.5px] text-[var(--color-ink)] font-medium truncate">{starter.name}</span>
         </div>
         <div className="flex items-center gap-2">
           <Link
-            href={`/builder?template=${id}`}
+            href={`/builder?template=${id}&type=${starter.policyType}`}
             className="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] text-[var(--color-ink)] text-[12.5px] font-medium hover:bg-[var(--color-cream-2)] transition-colors"
           >
             <FileText size={13} /> Open in builder

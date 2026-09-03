@@ -1,43 +1,33 @@
 import type {
+  DocumentLayoutId,
+  DocumentThemeOverrides,
   DocumentThemeId,
+  DocumentThemePalette,
   DocumentTypography,
+  LegacyDocumentThemeId,
+  LogoScale,
   LogoPosition,
   Policy,
   SdgDisplayMode,
   StandardSectionKind,
+  ThemeBackground,
+  ThemeDensity,
   VisualStyle,
 } from "./types";
 
-export type DocumentThemeColors = {
-  primary: string;
-  primaryDark: string;
-  soft: string;
-  paper: string;
-  ink: string;
-  muted: string;
-  line: string;
-  accent: string;
-  onPrimary: string;
-};
-
+export type DocumentThemeColors = DocumentThemePalette;
 export type DocumentSectionKind = StandardSectionKind | "custom";
+export type DocumentThemeFamily = "Clean essentials" | "Executive" | "Governance" | "Institutional" | "Editorial" | "Impact" | "Data" | "Technical";
+export type DocumentThemeIntent = "minimal" | "corporate" | "regulatory" | "editorial" | "impact" | "data-heavy" | "research";
 
 export type DocumentSectionRecipe =
-  | "charter-narrative"
-  | "charter-ledger"
-  | "charter-mosaic"
-  | "dossier-narrative"
-  | "dossier-columns"
-  | "dossier-ledger"
-  | "atlas-statement"
-  | "atlas-modules"
-  | "atlas-bands"
-  | "atlas-mosaic"
-  | "journal-narrative"
-  | "journal-entries"
-  | "journal-ledger";
+  | "charter-narrative" | "charter-ledger" | "charter-mosaic"
+  | "dossier-narrative" | "dossier-columns" | "dossier-ledger"
+  | "atlas-statement" | "atlas-modules" | "atlas-bands" | "atlas-mosaic"
+  | "journal-narrative" | "journal-entries" | "journal-ledger";
 
 export type DocumentThemeLayout = {
+  layoutId: DocumentLayoutId;
   archetype: "heritage-charter" | "boardroom-dossier" | "impact-atlas" | "field-journal";
   bestFor: string;
   descriptors: readonly [string, string, string];
@@ -50,6 +40,7 @@ export type DocumentThemeLayout = {
   acknowledgement: "legal-form" | "approval-block" | "signature-panel" | "affidavit";
   runningFurniture: "centered-folio" | "breadcrumb-bar" | "edge-folio" | "outer-folio";
   motif: "botanical-rule" | "precision-grid" | "orbit-blocks" | "contour-lines";
+  imageTreatment: "none" | "restrained-cover" | "full-bleed-cover" | "section-led";
   sectionRecipes: Record<DocumentSectionKind, DocumentSectionRecipe>;
 };
 
@@ -57,6 +48,12 @@ export type DocumentThemeDefinition = {
   id: DocumentThemeId;
   name: string;
   description: string;
+  family: DocumentThemeFamily;
+  intent: DocumentThemeIntent;
+  tags: readonly string[];
+  imageSupport: readonly ("cover" | "section")[];
+  previewRecipe: string;
+  structuralSignature: string;
   colors: DocumentThemeColors;
   layout: DocumentThemeLayout;
   defaults: {
@@ -64,292 +61,104 @@ export type DocumentThemeDefinition = {
     visualStyle: VisualStyle;
     logoPosition: LogoPosition;
     sdgDisplay: SdgDisplayMode;
+    density: ThemeDensity;
   };
 };
 
-export const DEFAULT_DOCUMENT_THEME_ID: DocumentThemeId = "evergreen-heritage";
-
-const CHARTER_RECIPES: Record<DocumentSectionKind, DocumentSectionRecipe> = {
-  preface: "charter-narrative",
-  declaration: "charter-narrative",
-  scope: "charter-narrative",
-  definitions: "charter-narrative",
-  focus: "charter-ledger",
-  qualitative: "charter-ledger",
-  quantitative: "charter-ledger",
-  sdg: "charter-mosaic",
-  responsibilities: "charter-ledger",
-  monitoring: "charter-narrative",
-  review: "charter-narrative",
-  revision: "charter-ledger",
-  custom: "charter-narrative",
+export type ResolvedDocumentThemeDefinition = DocumentThemeDefinition & {
+  customThemeName?: string;
+  background: ThemeBackground;
+  density: ThemeDensity;
+  logoScale: LogoScale;
 };
 
-const DOSSIER_RECIPES: Record<DocumentSectionKind, DocumentSectionRecipe> = {
-  preface: "dossier-narrative",
-  declaration: "dossier-narrative",
-  scope: "dossier-narrative",
-  definitions: "dossier-narrative",
-  focus: "dossier-columns",
-  qualitative: "dossier-columns",
-  quantitative: "dossier-ledger",
-  sdg: "dossier-columns",
-  responsibilities: "dossier-columns",
-  monitoring: "dossier-narrative",
-  review: "dossier-narrative",
-  revision: "dossier-ledger",
-  custom: "dossier-narrative",
+export const LEGACY_DOCUMENT_THEME_UPGRADES: Record<LegacyDocumentThemeId, DocumentThemeId> = {
+  "evergreen-heritage": "governance-manual",
+  "executive-navy": "executive-brief",
+  "modern-teal": "sustainability-report",
+  "earth-editorial": "editorial-report",
 };
 
-const ATLAS_RECIPES: Record<DocumentSectionKind, DocumentSectionRecipe> = {
-  preface: "atlas-statement",
-  declaration: "atlas-statement",
-  scope: "atlas-statement",
-  definitions: "atlas-statement",
-  focus: "atlas-modules",
-  qualitative: "atlas-modules",
-  quantitative: "atlas-bands",
-  sdg: "atlas-mosaic",
-  responsibilities: "atlas-modules",
-  monitoring: "atlas-statement",
-  review: "atlas-statement",
-  revision: "atlas-bands",
-  custom: "atlas-modules",
+export const DEFAULT_DOCUMENT_THEME_ID: DocumentThemeId = "governance-manual";
+
+const recipes = (style: "charter" | "dossier" | "atlas" | "journal"): Record<DocumentSectionKind, DocumentSectionRecipe> => {
+  const narrative = `${style}-${style === "atlas" ? "statement" : "narrative"}` as DocumentSectionRecipe;
+  const entries = `${style}-${style === "charter" || style === "dossier" ? "ledger" : style === "atlas" ? "modules" : "entries"}` as DocumentSectionRecipe;
+  const ledger = `${style}-${style === "atlas" ? "bands" : "ledger"}` as DocumentSectionRecipe;
+  return {
+    preface: narrative, declaration: narrative, scope: narrative, definitions: narrative,
+    focus: entries, qualitative: entries, quantitative: ledger,
+    sdg: style === "atlas" ? "atlas-mosaic" : entries,
+    responsibilities: entries, monitoring: narrative, review: narrative,
+    revision: ledger, custom: entries,
+  };
 };
 
-const JOURNAL_RECIPES: Record<DocumentSectionKind, DocumentSectionRecipe> = {
-  preface: "journal-narrative",
-  declaration: "journal-narrative",
-  scope: "journal-narrative",
-  definitions: "journal-narrative",
-  focus: "journal-entries",
-  qualitative: "journal-entries",
-  quantitative: "journal-ledger",
-  sdg: "journal-entries",
-  responsibilities: "journal-entries",
-  monitoring: "journal-narrative",
-  review: "journal-narrative",
-  revision: "journal-ledger",
-  custom: "journal-narrative",
-};
+const STYLE_PARTS = {
+  charter: { archetype: "heritage-charter", cover: "charter-frame", toc: "dotted-leaders", pageFrame: "single-folio", sectionOpener: "formal-ordinal", bodyGrid: "narrow-single", dataLayout: "formal-grid", acknowledgement: "legal-form", runningFurniture: "centered-folio", motif: "botanical-rule" },
+  dossier: { archetype: "boardroom-dossier", cover: "dossier-split", toc: "rail-index", pageFrame: "numbered-rail", sectionOpener: "dossier-label", bodyGrid: "rail-content", dataLayout: "compact-ledger", acknowledgement: "approval-block", runningFurniture: "breadcrumb-bar", motif: "precision-grid" },
+  atlas: { archetype: "impact-atlas", cover: "atlas-modular", toc: "tile-index", pageFrame: "modular-grid", sectionOpener: "statement-band", bodyGrid: "adaptive-modules", dataLayout: "target-bands", acknowledgement: "signature-panel", runningFurniture: "edge-folio", motif: "orbit-blocks" },
+  journal: { archetype: "field-journal", cover: "journal-editorial", toc: "editorial-index", pageFrame: "editorial-margin", sectionOpener: "chapter-number", bodyGrid: "margin-led", dataLayout: "quiet-rules", acknowledgement: "affidavit", runningFurniture: "outer-folio", motif: "contour-lines" },
+} as const;
+
+type StyleName = keyof typeof STYLE_PARTS;
+type LayoutOverrides = Partial<Omit<DocumentThemeLayout, "layoutId" | "bestFor" | "descriptors" | "sectionRecipes">>;
+
+function makeLayout(layoutId: DocumentLayoutId, style: StyleName, bestFor: string, descriptors: readonly [string, string, string], imageTreatment: DocumentThemeLayout["imageTreatment"], overrides: LayoutOverrides = {}): DocumentThemeLayout {
+  return { layoutId, ...STYLE_PARTS[style], bestFor, descriptors, imageTreatment, sectionRecipes: recipes(style), ...overrides } as DocumentThemeLayout;
+}
+
+const fonts = {
+  standard: { fontFamily: "Arial", headingFontFamily: "Arial", headingSize: 16, subheadingSize: 13, paragraphSize: 11, lineSpacing: 1.4 },
+  executive: { fontFamily: "Calibri", headingFontFamily: "Cambria", headingSize: 16, subheadingSize: 13, paragraphSize: 10.5, lineSpacing: 1.25 },
+  editorial: { fontFamily: "Calibri", headingFontFamily: "Georgia", headingSize: 17, subheadingSize: 13, paragraphSize: 11, lineSpacing: 1.4 },
+  technical: { fontFamily: "Arial", headingFontFamily: "Georgia", headingSize: 15, subheadingSize: 12, paragraphSize: 10, lineSpacing: 1.3 },
+} satisfies Record<string, DocumentTypography>;
+
+const palette = (primary: string, primaryDark: string, soft: string, paper: string, ink: string, muted: string, line: string, accent: string): DocumentThemePalette => ({ primary, primaryDark, soft, paper, ink, muted, line, accent, onPrimary: "#FFFFFF" });
+type ThemeSpec = Omit<DocumentThemeDefinition, "structuralSignature">;
+const theme = (spec: ThemeSpec): DocumentThemeDefinition => ({ ...spec, structuralSignature: structuralSignature(spec.layout, spec.defaults.density) });
+function structuralSignature(layout: DocumentThemeLayout, density: ThemeDensity): string { return [layout.layoutId, layout.cover, layout.toc, layout.pageFrame, layout.sectionOpener, layout.bodyGrid, layout.dataLayout, layout.acknowledgement, layout.runningFurniture, layout.motif, layout.imageTreatment, density].join("|"); }
 
 export const DOCUMENT_THEMES: readonly DocumentThemeDefinition[] = [
-  {
-    id: "evergreen-heritage",
-    name: "Evergreen Heritage",
-    description: "Warm, established, and formal for enduring sustainability commitments.",
-    colors: {
-      primary: "#1A5C3A",
-      primaryDark: "#103822",
-      soft: "#E8F1EB",
-      paper: "#FFFDF8",
-      ink: "#0E1A14",
-      muted: "#6B7971",
-      line: "#D8E4DB",
-      accent: "#9A7000",
-      onPrimary: "#FFFFFF",
-    },
-    layout: {
-      archetype: "heritage-charter",
-      bestFor: "Formal commitments and audit-ready governance policies",
-      descriptors: ["Framed", "Formal", "Single column"],
-      cover: "charter-frame",
-      toc: "dotted-leaders",
-      pageFrame: "single-folio",
-      sectionOpener: "formal-ordinal",
-      bodyGrid: "narrow-single",
-      dataLayout: "formal-grid",
-      acknowledgement: "legal-form",
-      runningFurniture: "centered-folio",
-      motif: "botanical-rule",
-      sectionRecipes: CHARTER_RECIPES,
-    },
-    defaults: {
-      typography: { fontFamily: "Arial", headingFontFamily: "Georgia", headingSize: 16, subheadingSize: 14, paragraphSize: 12, lineSpacing: 1.5 },
-      visualStyle: "corporate",
-      logoPosition: "center",
-      sdgDisplay: "tiles",
-    },
-  },
-  {
-    id: "executive-navy",
-    name: "Executive Navy",
-    description: "Board-ready precision with compact hierarchy and disciplined data tables.",
-    colors: {
-      primary: "#18324B",
-      primaryDark: "#0E2233",
-      soft: "#EAF0F5",
-      paper: "#FFFFFF",
-      ink: "#14202B",
-      muted: "#5C6B78",
-      line: "#CED8E1",
-      accent: "#B3832F",
-      onPrimary: "#FFFFFF",
-    },
-    layout: {
-      archetype: "boardroom-dossier",
-      bestFor: "Board review, concise governance, and dense operational detail",
-      descriptors: ["Side rail", "Dense", "Executive"],
-      cover: "dossier-split",
-      toc: "rail-index",
-      pageFrame: "numbered-rail",
-      sectionOpener: "dossier-label",
-      bodyGrid: "rail-content",
-      dataLayout: "compact-ledger",
-      acknowledgement: "approval-block",
-      runningFurniture: "breadcrumb-bar",
-      motif: "precision-grid",
-      sectionRecipes: DOSSIER_RECIPES,
-    },
-    defaults: {
-      typography: { fontFamily: "Calibri", headingFontFamily: "Cambria", headingSize: 16, subheadingSize: 13, paragraphSize: 10.5, lineSpacing: 1.25 },
-      visualStyle: "corporate",
-      logoPosition: "left",
-      sdgDisplay: "names",
-    },
-  },
-  {
-    id: "modern-teal",
-    name: "Modern Teal",
-    description: "Clean, spacious, and contemporary with a confident asymmetric rhythm.",
-    colors: {
-      primary: "#0B7A75",
-      primaryDark: "#075652",
-      soft: "#E6F3F1",
-      paper: "#FFFFFF",
-      ink: "#102321",
-      muted: "#5D706E",
-      line: "#CDE0DD",
-      accent: "#E09A4A",
-      onPrimary: "#FFFFFF",
-    },
-    layout: {
-      archetype: "impact-atlas",
-      bestFor: "Impact storytelling, targets, SDGs, and modern stakeholder reports",
-      descriptors: ["Modular", "Visual", "Spacious"],
-      cover: "atlas-modular",
-      toc: "tile-index",
-      pageFrame: "modular-grid",
-      sectionOpener: "statement-band",
-      bodyGrid: "adaptive-modules",
-      dataLayout: "target-bands",
-      acknowledgement: "signature-panel",
-      runningFurniture: "edge-folio",
-      motif: "orbit-blocks",
-      sectionRecipes: ATLAS_RECIPES,
-    },
-    defaults: {
-      typography: { fontFamily: "Aptos", headingFontFamily: "Aptos", headingSize: 17, subheadingSize: 13, paragraphSize: 11, lineSpacing: 1.35 },
-      visualStyle: "modern",
-      logoPosition: "left",
-      sdgDisplay: "tiles",
-    },
-  },
-  {
-    id: "earth-editorial",
-    name: "Earth Editorial",
-    description: "Expressive but composed, pairing natural warmth with editorial clarity.",
-    colors: {
-      primary: "#9B4E2D",
-      primaryDark: "#5F2D1C",
-      soft: "#F4E9DF",
-      paper: "#FFFAF5",
-      ink: "#2B211C",
-      muted: "#74665D",
-      line: "#E5D5C8",
-      accent: "#C58B2A",
-      onPrimary: "#FFFFFF",
-    },
-    layout: {
-      archetype: "field-journal",
-      bestFor: "Long-form policies that need editorial warmth and readability",
-      descriptors: ["Editorial", "Wide margin", "Serif-led"],
-      cover: "journal-editorial",
-      toc: "editorial-index",
-      pageFrame: "editorial-margin",
-      sectionOpener: "chapter-number",
-      bodyGrid: "margin-led",
-      dataLayout: "quiet-rules",
-      acknowledgement: "affidavit",
-      runningFurniture: "outer-folio",
-      motif: "contour-lines",
-      sectionRecipes: JOURNAL_RECIPES,
-    },
-    defaults: {
-      typography: { fontFamily: "Calibri", headingFontFamily: "Georgia", headingSize: 17, subheadingSize: 13, paragraphSize: 11, lineSpacing: 1.4 },
-      visualStyle: "modern",
-      logoPosition: "center",
-      sdgDisplay: "names",
-    },
-  },
+  theme({ id: "plain-standard", name: "Plain Standard", description: "A quiet, familiar policy format with generous reading rhythm.", family: "Clean essentials", intent: "minimal", tags: ["simple", "internal", "print"], imageSupport: [], previewRecipe: "Centered cover, leader contents, single-column body", colors: palette("#33413B", "#1F2925", "#EFF2F0", "#FFFFFF", "#17201C", "#68736E", "#D9DFDC", "#8A6C3A"), layout: makeLayout("clean-essentials", "charter", "Everyday internal policies and dependable printing", ["Quiet", "Readable", "Single column"], "none"), defaults: { typography: fonts.standard, visualStyle: "corporate", logoPosition: "center", sdgDisplay: "names", density: "balanced" } }),
+  theme({ id: "modern-standard", name: "Modern Standard", description: "A crisp asymmetric standard for contemporary organizations.", family: "Clean essentials", intent: "minimal", tags: ["modern", "clean", "spacious"], imageSupport: [], previewRecipe: "Split cover, tiled contents, modular body", colors: palette("#315F64", "#203F43", "#E9F0F0", "#FFFFFF", "#182426", "#66777A", "#D5E0E1", "#A56A34"), layout: makeLayout("clean-essentials", "atlas", "Modern policies with clear scanning and restrained emphasis", ["Clean", "Modular", "Calm"], "none", { cover: "dossier-split", runningFurniture: "centered-folio", acknowledgement: "legal-form" }), defaults: { typography: fonts.standard, visualStyle: "modern", logoPosition: "left", sdgDisplay: "names", density: "spacious" } }),
+  theme({ id: "accessible-standard", name: "Accessible Standard", description: "High-contrast hierarchy and comfortable type for broad readership.", family: "Clean essentials", intent: "minimal", tags: ["accessible", "high contrast", "readable"], imageSupport: [], previewRecipe: "Editorial cover, rail contents, wide reading measure", colors: palette("#174D57", "#0D3037", "#E8F1F2", "#FFFFFF", "#11191B", "#52666A", "#C9D8DB", "#B15D2A"), layout: makeLayout("clean-essentials", "journal", "Policies intended for broad and accessible circulation", ["Accessible", "High contrast", "Open"], "none", { toc: "rail-index", pageFrame: "single-folio", bodyGrid: "narrow-single", runningFurniture: "edge-folio" }), defaults: { typography: { ...fonts.standard, paragraphSize: 12, lineSpacing: 1.5 }, visualStyle: "modern", logoPosition: "left", sdgDisplay: "names", density: "spacious" } }),
+  theme({ id: "executive-brief", name: "Executive Brief", description: "Board-ready precision with compact hierarchy and disciplined tables.", family: "Executive", intent: "corporate", tags: ["board", "brief", "leadership"], imageSupport: [], previewRecipe: "Navy rail cover, indexed contents, dossier sections", colors: palette("#18324B", "#0E2233", "#EAF0F5", "#FFFFFF", "#14202B", "#5C6B78", "#CED8E1", "#B3832F"), layout: makeLayout("executive", "dossier", "Board review, concise governance, and dense operational detail", ["Side rail", "Dense", "Executive"], "none"), defaults: { typography: fonts.executive, visualStyle: "corporate", logoPosition: "left", sdgDisplay: "names", density: "compact" } }),
+  theme({ id: "board-paper", name: "Board Paper", description: "Formal decision-paper structure with a restrained institutional cadence.", family: "Executive", intent: "corporate", tags: ["board", "decision", "governance"], imageSupport: [], previewRecipe: "Framed cover, editorial contents, numbered rail body", colors: palette("#263B56", "#17263A", "#EDF0F5", "#FFFEFC", "#151D29", "#626D7B", "#D4DAE2", "#916C2E"), layout: makeLayout("executive", "charter", "Board submissions, approvals, and decision records", ["Formal", "Decision-led", "Compact"], "none", { toc: "editorial-index", pageFrame: "numbered-rail", bodyGrid: "rail-content", dataLayout: "compact-ledger", runningFurniture: "breadcrumb-bar" }), defaults: { typography: fonts.executive, visualStyle: "corporate", logoPosition: "center", sdgDisplay: "names", density: "balanced" } }),
+  theme({ id: "leadership-memo", name: "Leadership Memo", description: "A direct, editorial memo for leadership commitments and priorities.", family: "Executive", intent: "corporate", tags: ["memo", "leadership", "concise"], imageSupport: [], previewRecipe: "Editorial title cover, simple contents, margin-led sections", colors: palette("#4A3544", "#2C2029", "#F1EAEE", "#FFFFFF", "#221A20", "#70616C", "#DFD4DB", "#A36D3D"), layout: makeLayout("executive", "journal", "Leadership statements, concise direction, and internal circulation", ["Direct", "Editorial", "Brief"], "none", { toc: "dotted-leaders", dataLayout: "formal-grid", acknowledgement: "approval-block", motif: "precision-grid" }), defaults: { typography: fonts.editorial, visualStyle: "modern", logoPosition: "right", sdgDisplay: "names", density: "compact" } }),
+  theme({ id: "governance-manual", name: "Governance Manual", description: "Established and formal for enduring policy commitments.", family: "Governance", intent: "regulatory", tags: ["manual", "audit", "formal"], imageSupport: [], previewRecipe: "Double-frame charter, leader contents, formal folios", colors: palette("#1A5C3A", "#103822", "#E8F1EB", "#FFFDF8", "#0E1A14", "#6B7971", "#D8E4DB", "#9A7000"), layout: makeLayout("governance", "charter", "Formal commitments and audit-ready governance policies", ["Framed", "Formal", "Single column"], "none"), defaults: { typography: { ...fonts.standard, headingFontFamily: "Georgia" }, visualStyle: "corporate", logoPosition: "center", sdgDisplay: "tiles", density: "balanced" } }),
+  theme({ id: "compliance-policy", name: "Compliance Policy", description: "Controlled, clause-led presentation for regulated requirements.", family: "Governance", intent: "regulatory", tags: ["compliance", "controls", "regulatory"], imageSupport: [], previewRecipe: "Dossier cover, leader contents, compact ledger body", colors: palette("#344C40", "#213229", "#ECF1EE", "#FFFFFF", "#17201B", "#637068", "#D2DDD6", "#8B6633"), layout: makeLayout("governance", "dossier", "Compliance controls, tenders, and regulatory review", ["Controlled", "Clause-led", "Audit-ready"], "none", { toc: "dotted-leaders", pageFrame: "single-folio", sectionOpener: "formal-ordinal", bodyGrid: "narrow-single", runningFurniture: "centered-folio" }), defaults: { typography: fonts.executive, visualStyle: "corporate", logoPosition: "left", sdgDisplay: "names", density: "compact" } }),
+  theme({ id: "audit-dossier", name: "Audit Dossier", description: "Evidence-forward indexing for controls, findings, and traceability.", family: "Governance", intent: "regulatory", tags: ["audit", "evidence", "traceability"], imageSupport: [], previewRecipe: "Modular cover, rail index, numbered evidence sections", colors: palette("#3F4E59", "#27333C", "#EBEFF2", "#FFFFFF", "#182026", "#64717A", "#D1D9DF", "#A46E2E"), layout: makeLayout("governance", "atlas", "Audit evidence, control ownership, and review trails", ["Indexed", "Evidence-led", "Dense"], "none", { toc: "rail-index", pageFrame: "numbered-rail", sectionOpener: "dossier-label", bodyGrid: "rail-content", dataLayout: "compact-ledger", runningFurniture: "breadcrumb-bar", motif: "precision-grid" }), defaults: { typography: fonts.technical, visualStyle: "corporate", logoPosition: "left", sdgDisplay: "names", density: "compact" } }),
+  theme({ id: "public-sector-standard", name: "Public Sector Standard", description: "Neutral, accessible structure for public and institutional policies.", family: "Institutional", intent: "regulatory", tags: ["public sector", "standard", "accessible"], imageSupport: [], previewRecipe: "Formal charter, rail contents, broad single-column body", colors: palette("#31577A", "#1E3A55", "#EAF0F5", "#FFFFFF", "#17212A", "#637180", "#D2DCE5", "#9B6B31"), layout: makeLayout("institutional", "charter", "Public-sector standards and institutional circulation", ["Neutral", "Accessible", "Official"], "none", { toc: "rail-index", runningFurniture: "edge-folio", acknowledgement: "approval-block" }), defaults: { typography: fonts.standard, visualStyle: "corporate", logoPosition: "center", sdgDisplay: "names", density: "spacious" } }),
+  theme({ id: "institutional-report", name: "Institutional Report", description: "Measured report structure balancing narrative and operational detail.", family: "Institutional", intent: "corporate", tags: ["institutional", "report", "operations"], imageSupport: [], previewRecipe: "Split cover, tiled index, modular report sections", colors: palette("#3C5068", "#27374B", "#EDF0F4", "#FFFEFC", "#1B232C", "#687581", "#D7DDE3", "#A1783F"), layout: makeLayout("institutional", "dossier", "Institutional reporting and cross-departmental policy documents", ["Measured", "Structured", "Professional"], "none", { toc: "tile-index", pageFrame: "modular-grid", sectionOpener: "statement-band", bodyGrid: "adaptive-modules", dataLayout: "formal-grid", runningFurniture: "centered-folio" }), defaults: { typography: fonts.standard, visualStyle: "corporate", logoPosition: "left", sdgDisplay: "tiles", density: "balanced" } }),
+  theme({ id: "legal-register", name: "Legal Register", description: "Compact legal-document rhythm with clear clause and revision handling.", family: "Institutional", intent: "regulatory", tags: ["legal", "register", "clauses"], imageSupport: [], previewRecipe: "Editorial cover, compact index, margin-led legal body", colors: palette("#4B4640", "#2F2B27", "#F1EFEC", "#FFFFFF", "#201E1B", "#716B64", "#DDD8D2", "#8B663A"), layout: makeLayout("institutional", "journal", "Legal registers, controlled copies, and revision-heavy policies", ["Legal", "Compact", "Traceable"], "none", { toc: "dotted-leaders", dataLayout: "compact-ledger", acknowledgement: "legal-form", runningFurniture: "breadcrumb-bar" }), defaults: { typography: fonts.technical, visualStyle: "corporate", logoPosition: "right", sdgDisplay: "names", density: "compact" } }),
+  theme({ id: "editorial-report", name: "Editorial Report", description: "Long-form warmth paired with composed editorial clarity.", family: "Editorial", intent: "editorial", tags: ["editorial", "long form", "narrative"], imageSupport: ["cover", "section"], previewRecipe: "Margin-led cover, editorial index, serif-led chapters", colors: palette("#9B4E2D", "#5F2D1C", "#F4E9DF", "#FFFAF5", "#2B211C", "#74665D", "#E5D5C8", "#C58B2A"), layout: makeLayout("editorial", "journal", "Long-form policies that need editorial warmth and readability", ["Editorial", "Wide margin", "Serif-led"], "section-led"), defaults: { typography: fonts.editorial, visualStyle: "modern", logoPosition: "center", sdgDisplay: "names", density: "balanced" } }),
+  theme({ id: "magazine-policy", name: "Magazine Policy", description: "Image-forward pacing for public-facing policy storytelling.", family: "Editorial", intent: "editorial", tags: ["magazine", "visual", "public"], imageSupport: ["cover", "section"], previewRecipe: "Image-capable modular cover, tile index, feature-led sections", colors: palette("#6C3C52", "#452535", "#F4EAF0", "#FFFFFF", "#271B21", "#75636C", "#E4D4DC", "#B67832"), layout: makeLayout("editorial", "atlas", "Public-facing narrative policies with a strong visual lead", ["Visual", "Expressive", "Public-facing"], "full-bleed-cover", { cover: "journal-editorial", toc: "tile-index", pageFrame: "editorial-margin", dataLayout: "quiet-rules", runningFurniture: "outer-folio", motif: "contour-lines" }), defaults: { typography: fonts.editorial, visualStyle: "modern", logoPosition: "left", sdgDisplay: "tiles", density: "spacious" } }),
+  theme({ id: "field-report", name: "Field Report", description: "Grounded observation-led structure for sites, programs, and implementation.", family: "Editorial", intent: "editorial", tags: ["field", "sites", "implementation"], imageSupport: ["section"], previewRecipe: "Framed field cover, rail index, modular observation sections", colors: palette("#5E6043", "#3B3C29", "#F0F0E7", "#FFFDF8", "#25251D", "#706F60", "#DCDBCC", "#A46135"), layout: makeLayout("editorial", "charter", "Site programs, implementation notes, and field-facing policies", ["Grounded", "Observational", "Practical"], "section-led", { toc: "rail-index", pageFrame: "modular-grid", sectionOpener: "chapter-number", bodyGrid: "adaptive-modules", dataLayout: "quiet-rules", acknowledgement: "affidavit", runningFurniture: "edge-folio", motif: "contour-lines" }), defaults: { typography: fonts.editorial, visualStyle: "modern", logoPosition: "center", sdgDisplay: "names", density: "balanced" } }),
+  theme({ id: "sustainability-report", name: "Sustainability Report", description: "Spacious impact reporting with confident asymmetric rhythm.", family: "Impact", intent: "impact", tags: ["sustainability", "ESG", "stakeholder"], imageSupport: ["cover", "section"], previewRecipe: "Impact cover, tile index, modular target bands", colors: palette("#0B7A75", "#075652", "#E6F3F1", "#FFFFFF", "#102321", "#5D706E", "#CDE0DD", "#E09A4A"), layout: makeLayout("impact", "atlas", "Impact storytelling, targets, SDGs, and stakeholder reports", ["Modular", "Visual", "Spacious"], "restrained-cover"), defaults: { typography: { ...fonts.standard, fontFamily: "Aptos", headingFontFamily: "Aptos", headingSize: 17 }, visualStyle: "modern", logoPosition: "left", sdgDisplay: "tiles", density: "spacious" } }),
+  theme({ id: "sdg-impact", name: "SDG Impact", description: "Goal-led visual structure for SDG alignment and measurable outcomes.", family: "Impact", intent: "impact", tags: ["SDG", "goals", "outcomes"], imageSupport: ["cover"], previewRecipe: "Split goal cover, editorial index, high-signal outcome sections", colors: palette("#176B58", "#0D4539", "#E7F2EE", "#FFFFFF", "#12231D", "#5E716A", "#CEE0D9", "#C87C2B"), layout: makeLayout("impact", "dossier", "SDG alignment, outcome frameworks, and impact commitments", ["Goal-led", "Visual", "Measured"], "full-bleed-cover", { toc: "editorial-index", pageFrame: "modular-grid", sectionOpener: "statement-band", bodyGrid: "adaptive-modules", dataLayout: "target-bands", acknowledgement: "signature-panel", runningFurniture: "edge-folio", motif: "orbit-blocks" }), defaults: { typography: fonts.standard, visualStyle: "modern", logoPosition: "right", sdgDisplay: "tiles", density: "balanced" } }),
+  theme({ id: "community-brief", name: "Community Brief", description: "Human, approachable reporting for community commitments and outcomes.", family: "Impact", intent: "impact", tags: ["community", "public", "brief"], imageSupport: ["cover", "section"], previewRecipe: "Editorial cover, leader contents, open community narrative", colors: palette("#7A5136", "#4C3222", "#F3ECE6", "#FFFCF8", "#2A211B", "#78695F", "#E3D8CE", "#2F746C"), layout: makeLayout("impact", "journal", "Community commitments, accessible updates, and public communication", ["Human", "Approachable", "Open"], "section-led", { toc: "dotted-leaders", pageFrame: "single-folio", bodyGrid: "narrow-single", dataLayout: "target-bands", acknowledgement: "signature-panel", runningFurniture: "centered-folio", motif: "orbit-blocks" }), defaults: { typography: fonts.editorial, visualStyle: "modern", logoPosition: "center", sdgDisplay: "tiles", density: "spacious" } }),
+  theme({ id: "kpi-report", name: "KPI Report", description: "Clear metric hierarchy for targets, owners, and status reporting.", family: "Data", intent: "data-heavy", tags: ["KPI", "targets", "dashboard"], imageSupport: [], previewRecipe: "Modular metric cover, tile index, target-band sections", colors: palette("#245B78", "#173B50", "#E8F0F4", "#FFFFFF", "#14222A", "#5F707A", "#CFDCE3", "#A8752E"), layout: makeLayout("data", "atlas", "KPI targets, performance commitments, and accountable ownership", ["Metric-led", "Scannable", "Structured"], "none", { runningFurniture: "breadcrumb-bar" }), defaults: { typography: fonts.executive, visualStyle: "corporate", logoPosition: "left", sdgDisplay: "names", density: "balanced" } }),
+  theme({ id: "metrics-ledger", name: "Metrics Ledger", description: "Dense tabular treatment for detailed measures and audit trails.", family: "Data", intent: "data-heavy", tags: ["metrics", "ledger", "audit"], imageSupport: [], previewRecipe: "Dossier cover, rail index, compact data ledger", colors: palette("#39525C", "#25373E", "#ECF0F1", "#FFFFFF", "#182226", "#637178", "#D4DCDF", "#9A6D32"), layout: makeLayout("data", "dossier", "Dense measures, baselines, deadlines, and evidence registers", ["Dense", "Tabular", "Traceable"], "none", { acknowledgement: "legal-form", motif: "botanical-rule" }), defaults: { typography: fonts.technical, visualStyle: "corporate", logoPosition: "left", sdgDisplay: "names", density: "compact" } }),
+  theme({ id: "performance-review", name: "Performance Review", description: "Balanced narrative and scorecard treatment for periodic review.", family: "Data", intent: "data-heavy", tags: ["performance", "review", "scorecard"], imageSupport: [], previewRecipe: "Framed review cover, editorial index, margin scorecards", colors: palette("#4F526F", "#303247", "#EEEFF4", "#FFFFFF", "#20212C", "#6D6F80", "#D9DAE2", "#A06D37"), layout: makeLayout("data", "charter", "Periodic performance reviews and management reporting", ["Balanced", "Comparative", "Review-led"], "none", { toc: "editorial-index", pageFrame: "editorial-margin", sectionOpener: "dossier-label", bodyGrid: "margin-led", dataLayout: "compact-ledger", acknowledgement: "approval-block", runningFurniture: "outer-folio", motif: "precision-grid" }), defaults: { typography: fonts.executive, visualStyle: "corporate", logoPosition: "right", sdgDisplay: "names", density: "balanced" } }),
+  theme({ id: "research-paper", name: "Research Paper", description: "Citation-ready academic rhythm for evidence and methodology.", family: "Technical", intent: "research", tags: ["research", "methodology", "evidence"], imageSupport: ["section"], previewRecipe: "Editorial title page, leader contents, margin-led research body", colors: palette("#3D4D63", "#263243", "#ECEFF3", "#FFFFFF", "#181E26", "#626C79", "#D5DBE1", "#876638"), layout: makeLayout("technical", "journal", "Research-led policies, methodologies, and evidence summaries", ["Academic", "Evidence-led", "Measured"], "section-led", { toc: "dotted-leaders", dataLayout: "formal-grid", acknowledgement: "legal-form", runningFurniture: "centered-folio", motif: "precision-grid" }), defaults: { typography: fonts.technical, visualStyle: "corporate", logoPosition: "center", sdgDisplay: "names", density: "compact" } }),
+  theme({ id: "technical-standard", name: "Technical Standard", description: "Specification-led structure for procedures, controls, and definitions.", family: "Technical", intent: "research", tags: ["technical", "standard", "specification"], imageSupport: [], previewRecipe: "Rail cover, indexed clauses, compact specification body", colors: palette("#33545B", "#20373C", "#EAF0F1", "#FFFFFF", "#162124", "#607176", "#D0DCDE", "#9A7138"), layout: makeLayout("technical", "dossier", "Technical requirements, procedures, and controlled standards", ["Precise", "Clause-led", "Compact"], "none", { toc: "tile-index", pageFrame: "single-folio", sectionOpener: "formal-ordinal", bodyGrid: "narrow-single", dataLayout: "formal-grid", acknowledgement: "legal-form", runningFurniture: "edge-folio" }), defaults: { typography: fonts.technical, visualStyle: "corporate", logoPosition: "left", sdgDisplay: "names", density: "compact" } }),
+  theme({ id: "evidence-review", name: "Evidence Review", description: "Structured synthesis for findings, references, and review conclusions.", family: "Technical", intent: "research", tags: ["evidence", "review", "findings"], imageSupport: ["section"], previewRecipe: "Modular review cover, rail index, evidence modules", colors: palette("#526045", "#333D2B", "#EFF1EB", "#FFFDF9", "#20241D", "#6E7568", "#DBDFD4", "#9B6535"), layout: makeLayout("technical", "atlas", "Evidence synthesis, findings, and reference-heavy policies", ["Analytical", "Structured", "Reference-led"], "section-led", { toc: "rail-index", pageFrame: "editorial-margin", sectionOpener: "chapter-number", bodyGrid: "margin-led", dataLayout: "quiet-rules", acknowledgement: "affidavit", runningFurniture: "outer-folio", motif: "contour-lines" }), defaults: { typography: fonts.technical, visualStyle: "modern", logoPosition: "right", sdgDisplay: "names", density: "balanced" } }),
 ] as const;
 
-const DOCUMENT_THEME_MAP = new Map(DOCUMENT_THEMES.map((theme) => [theme.id, theme]));
-
-export function getDocumentTheme(id?: DocumentThemeId): DocumentThemeDefinition {
-  return DOCUMENT_THEME_MAP.get(id || DEFAULT_DOCUMENT_THEME_ID) || DOCUMENT_THEMES[0];
-}
-
-export function getPolicyDocumentTheme(policy: Pick<Policy, "documentTheme">): DocumentThemeDefinition {
-  return getDocumentTheme(policy.documentTheme);
-}
-
-export function getResolvedTypography(policy: Pick<Policy, "documentTheme" | "typography">): DocumentTypography {
-  const themeTypography = getPolicyDocumentTheme(policy).defaults.typography;
-  return {
-    ...themeTypography,
-    ...policy.typography,
-    headingFontFamily: policy.typography?.headingFontFamily || themeTypography.headingFontFamily,
-  };
-}
-
-export function getDocumentThemePatch(id: DocumentThemeId): Pick<Policy, "documentTheme" | "typography" | "visualStyle" | "logoPosition" | "sdgDisplay"> {
-  const theme = getDocumentTheme(id);
-  return {
-    documentTheme: id,
-    typography: { ...theme.defaults.typography },
-    visualStyle: theme.defaults.visualStyle,
-    logoPosition: theme.defaults.logoPosition,
-    sdgDisplay: theme.defaults.sdgDisplay,
-  };
-}
-
-export function isDocumentThemeCustomized(policy: Policy): boolean {
-  const theme = getPolicyDocumentTheme(policy);
-  const typography = getResolvedTypography(policy);
-  const defaults = theme.defaults.typography;
-  return policy.visualStyle !== theme.defaults.visualStyle
-    || policy.logoPosition !== theme.defaults.logoPosition
-    || policy.sdgDisplay !== theme.defaults.sdgDisplay
-    || typography.fontFamily !== defaults.fontFamily
-    || typography.headingFontFamily !== defaults.headingFontFamily
-    || typography.headingSize !== defaults.headingSize
-    || typography.subheadingSize !== defaults.subheadingSize
-    || typography.paragraphSize !== defaults.paragraphSize
-    || typography.lineSpacing !== defaults.lineSpacing;
-}
-
-export function documentThemeCssVariables(theme: DocumentThemeDefinition): Record<string, string> {
-  return {
-    "--doc-primary": theme.colors.primary,
-    "--doc-primary-dark": theme.colors.primaryDark,
-    "--doc-soft": theme.colors.soft,
-    "--doc-paper": theme.colors.paper,
-    "--doc-ink": theme.colors.ink,
-    "--doc-muted": theme.colors.muted,
-    "--doc-line": theme.colors.line,
-    "--doc-accent": theme.colors.accent,
-    "--doc-on-primary": theme.colors.onPrimary,
-  };
-}
-
-export function documentHex(color: string): string {
-  return color.replace(/^#/, "").toUpperCase();
-}
-
-export function pdfFontFamily(fontFamily?: string): "Helvetica" | "Times-Roman" | "Courier" {
-  if (!fontFamily) return "Helvetica";
-  if (/courier|mono/i.test(fontFamily)) return "Courier";
-  if (/cambria|georgia|garamond|times/i.test(fontFamily)) return "Times-Roman";
-  return "Helvetica";
-}
+const DOCUMENT_THEME_MAP = new Map(DOCUMENT_THEMES.map((item) => [item.id, item]));
+export function upgradeDocumentThemeId(id?: string | null): DocumentThemeId { if (id && id in LEGACY_DOCUMENT_THEME_UPGRADES) return LEGACY_DOCUMENT_THEME_UPGRADES[id as LegacyDocumentThemeId]; return DOCUMENT_THEME_MAP.has(id as DocumentThemeId) ? id as DocumentThemeId : DEFAULT_DOCUMENT_THEME_ID; }
+export function getDocumentTheme(id?: string | null): DocumentThemeDefinition { return DOCUMENT_THEME_MAP.get(upgradeDocumentThemeId(id)) || DOCUMENT_THEMES[0]; }
+export function getPolicyDocumentTheme(policy: Pick<Policy, "documentTheme" | "documentThemeOverrides">): ResolvedDocumentThemeDefinition { const base = getDocumentTheme(policy.documentTheme); const overrides = normalizeDocumentThemeOverrides(policy.documentThemeOverrides); return { ...base, customThemeName: overrides.customThemeName, colors: { ...base.colors, ...overrides.colors }, background: overrides.background || defaultThemeBackground(base), density: overrides.density || base.defaults.density, logoScale: overrides.logoScale || "medium" }; }
+export function getResolvedTypography(policy: Pick<Policy, "documentTheme" | "documentThemeOverrides" | "typography">): DocumentTypography { const themeTypography = getPolicyDocumentTheme(policy).defaults.typography; return { ...themeTypography, ...policy.typography, headingFontFamily: policy.typography?.headingFontFamily || themeTypography.headingFontFamily }; }
+export function getDocumentThemePatch(id: DocumentThemeId): Pick<Policy, "documentTheme" | "documentThemeOverrides" | "typography" | "visualStyle" | "logoPosition" | "sdgDisplay"> { const selected = getDocumentTheme(id); return { documentTheme: selected.id, documentThemeOverrides: undefined, typography: { ...selected.defaults.typography }, visualStyle: selected.defaults.visualStyle, logoPosition: selected.defaults.logoPosition, sdgDisplay: selected.defaults.sdgDisplay }; }
+export function isDocumentThemeCustomized(policy: Policy): boolean { const selected = getPolicyDocumentTheme(policy); const typography = getResolvedTypography(policy); const defaults = selected.defaults.typography; return Boolean(policy.documentThemeOverrides) || policy.visualStyle !== selected.defaults.visualStyle || policy.logoPosition !== selected.defaults.logoPosition || policy.sdgDisplay !== selected.defaults.sdgDisplay || typography.fontFamily !== defaults.fontFamily || typography.headingFontFamily !== defaults.headingFontFamily || typography.headingSize !== defaults.headingSize || typography.subheadingSize !== defaults.subheadingSize || typography.paragraphSize !== defaults.paragraphSize || typography.lineSpacing !== defaults.lineSpacing; }
+export function documentThemeCssVariables(selected: DocumentThemeDefinition): Record<string, string> { const resolved = "background" in selected ? selected as ResolvedDocumentThemeDefinition : { ...selected, background: defaultThemeBackground(selected), density: selected.defaults.density, logoScale: "medium" as const }; return { "--doc-primary": selected.colors.primary, "--doc-primary-dark": selected.colors.primaryDark, "--doc-soft": selected.colors.soft, "--doc-paper": selected.colors.paper, "--doc-ink": selected.colors.ink, "--doc-muted": selected.colors.muted, "--doc-line": selected.colors.line, "--doc-accent": selected.colors.accent, "--doc-on-primary": selected.colors.onPrimary, "--doc-page-background": themeBackgroundCss(resolved.background), "--doc-density-factor": resolved.density === "compact" ? ".82" : resolved.density === "spacious" ? "1.18" : "1", "--doc-logo-height": resolved.logoScale === "small" ? "48px" : resolved.logoScale === "large" ? "96px" : "72px" }; }
+export function defaultThemeBackground(selected: DocumentThemeDefinition): ThemeBackground { return { kind: "gradient", from: selected.colors.paper, to: selected.colors.soft, direction: "diagonal" }; }
+export function themeBackgroundCss(background: ThemeBackground): string { if (background.kind === "solid") return background.color; const direction = background.direction === "horizontal" ? "90deg" : background.direction === "vertical" ? "180deg" : "135deg"; return `linear-gradient(${direction}, ${background.from}, ${background.to})`; }
+export function normalizeHexColor(value: unknown): string | null { if (typeof value !== "string") return null; const trimmed = value.trim(); return /^#[0-9a-f]{6}$/i.test(trimmed) ? trimmed.toUpperCase() : null; }
+export function normalizeDocumentThemeOverrides(value: unknown): DocumentThemeOverrides { const raw = value && typeof value === "object" ? value as Partial<DocumentThemeOverrides> : {}; const paletteKeys = new Set<keyof DocumentThemePalette>(["primary", "primaryDark", "soft", "paper", "ink", "muted", "line", "accent", "onPrimary"]); const colors = raw.colors && typeof raw.colors === "object" ? Object.fromEntries(Object.entries(raw.colors).filter(([key]) => paletteKeys.has(key as keyof DocumentThemePalette)).map(([key, color]) => [key, normalizeHexColor(color)]).filter((entry): entry is [string, string] => Boolean(entry[1]))) as Partial<DocumentThemePalette> : undefined; let background: ThemeBackground | undefined; if (raw.background?.kind === "solid") { const color = normalizeHexColor(raw.background.color); if (color) background = { kind: "solid", color }; } else if (raw.background?.kind === "gradient") { const from = normalizeHexColor(raw.background.from); const to = normalizeHexColor(raw.background.to); const direction = ["vertical", "horizontal", "diagonal"].includes(raw.background.direction) ? raw.background.direction : "diagonal"; if (from && to) background = { kind: "gradient", from, to, direction }; } return { schemaVersion: 1, ...(typeof raw.customThemeName === "string" && raw.customThemeName.trim() ? { customThemeName: raw.customThemeName.trim().slice(0, 60) } : {}), ...(colors && Object.keys(colors).length ? { colors } : {}), ...(background ? { background } : {}), ...(["compact", "balanced", "spacious"].includes(raw.density || "") ? { density: raw.density } : {}), ...(["small", "medium", "large"].includes(raw.logoScale || "") ? { logoScale: raw.logoScale } : {}) }; }
+export function getFullThemeOverrides(policy: Policy, customThemeName?: string): DocumentThemeOverrides { const selected = getPolicyDocumentTheme(policy); return { schemaVersion: 1, ...(customThemeName ? { customThemeName } : {}), colors: { ...selected.colors }, background: structuredClone(selected.background), density: selected.density, logoScale: selected.logoScale }; }
+export function documentHex(color: string): string { return color.replace(/^#/, "").toUpperCase(); }
+export function pdfFontFamily(fontFamily?: string): "Helvetica" | "Times-Roman" | "Courier" { if (!fontFamily) return "Helvetica"; if (/courier|mono/i.test(fontFamily)) return "Courier"; if (/cambria|georgia|garamond|times/i.test(fontFamily)) return "Times-Roman"; return "Helvetica"; }

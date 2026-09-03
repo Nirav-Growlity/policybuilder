@@ -1,12 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { Check, Palette } from "lucide-react";
+import { ArrowRight, Palette } from "lucide-react";
 import { Panel } from "@/components/ui/panel";
 import {
-  DOCUMENT_THEMES,
   documentThemeCssVariables,
-  getDocumentThemePatch,
   getPolicyDocumentTheme,
   isDocumentThemeCustomized,
   type DocumentThemeDefinition,
@@ -15,15 +13,15 @@ import { getPolicyProfile } from "@/lib/constants";
 import { useBuilder } from "@/lib/store";
 
 export function DocumentThemePicker() {
-  const { policy, updatePolicy } = useBuilder();
+  const { policy, setStep } = useBuilder();
   const selectedTheme = getPolicyDocumentTheme(policy);
   const customized = isDocumentThemeCustomized(policy);
   const profile = getPolicyProfile(policy.policyType);
 
   return (
     <Panel
-      title="Choose a document design"
-      description="Each option changes the cover, contents, page structure, section layouts, data treatment, and running furniture."
+      title="Document design"
+      description="Choose and customize the visual system beside the full document preview."
       icon={<Palette size={17} strokeWidth={1.8} />}
       actions={
         <span className="rounded-full bg-[var(--color-forest-soft)] px-3 py-1 text-[10.5px] font-semibold text-[var(--color-forest)]">
@@ -31,68 +29,33 @@ export function DocumentThemePicker() {
         </span>
       }
     >
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-2" role="radiogroup" aria-label="Document design">
-        {DOCUMENT_THEMES.map((theme) => {
-          const selected = selectedTheme.id === theme.id;
-          return (
-            <button
-              key={theme.id}
-              type="button"
-              role="radio"
-              aria-checked={selected}
-              onClick={() => updatePolicy(() => getDocumentThemePatch(theme.id))}
-              className={`group relative overflow-hidden rounded-[20px] border bg-white p-4 text-left outline-none transition-[transform,border-color,box-shadow] duration-200 focus-visible:ring-2 focus-visible:ring-[var(--color-forest)] focus-visible:ring-offset-2 motion-reduce:transition-none ${
-                selected
-                  ? "border-[var(--color-forest)] shadow-[0_16px_36px_rgba(26,92,58,.14)]"
-                  : "border-[var(--color-line)] hover:-translate-y-0.5 hover:border-[var(--color-line-2)] hover:shadow-[0_14px_34px_rgba(35,52,42,.10)] motion-reduce:hover:translate-y-0"
-              }`}
-            >
-              <ThemeContactSheet theme={theme} companyName={policy.company.name} policyLabel={profile.label} />
-              <div className="mt-4 flex items-start justify-between gap-4 px-0.5">
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <span className="text-[14px] font-semibold text-[var(--color-ink)]">{theme.name}</span>
-                    <span className="text-[9px] font-bold uppercase tracking-[.16em]" style={{ color: theme.colors.primary }}>
-                      {theme.layout.archetype.replaceAll("-", " ")}
-                    </span>
-                  </div>
-                  <p className="mt-1.5 text-[11px] leading-[1.5] text-[var(--color-muted)]">{theme.layout.bestFor}</p>
-                </div>
-                <span
-                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-200 motion-reduce:transition-none ${
-                    selected
-                      ? "scale-100 border-[var(--color-forest)] bg-[var(--color-forest)] text-white"
-                      : "scale-90 border-[var(--color-line-2)] bg-white text-transparent group-hover:scale-100"
-                  }`}
-                  aria-hidden="true"
-                >
-                  <Check size={13} strokeWidth={2.6} />
-                </span>
-              </div>
-              <div className="mt-3 flex flex-wrap items-center gap-1.5 px-0.5">
-                {theme.layout.descriptors.map((descriptor) => (
-                  <span key={descriptor} className="rounded-full border border-[var(--color-line)] bg-[var(--color-paper-2)] px-2 py-1 text-[9px] font-semibold text-[var(--color-ink-2)]">
-                    {descriptor}
-                  </span>
-                ))}
-                <span className="ml-auto flex gap-1.5" aria-hidden="true">
-                  {[theme.colors.primary, theme.colors.soft, theme.colors.paper, theme.colors.accent].map((color) => (
-                    <span key={color} className="h-3 w-3 rounded-full border border-black/5" style={{ background: color }} />
-                  ))}
-                </span>
-              </div>
-            </button>
-          );
-        })}
+      <div className="grid gap-5 md:grid-cols-[minmax(0,1fr)_220px] md:items-center">
+        <ThemeContactSheet theme={selectedTheme} companyName={policy.company.name} policyLabel={profile.label} />
+        <div>
+          <div className="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--color-muted)]">Selected theme</div>
+          <div className="mt-1 font-display text-[23px] font-semibold text-[var(--color-ink)]">
+            {selectedTheme.customThemeName || selectedTheme.name}
+          </div>
+          <p className="mt-2 text-[11.5px] leading-relaxed text-[var(--color-muted)]">{selectedTheme.layout.bestFor}</p>
+          <div className="mt-4 flex gap-1.5" aria-hidden="true">
+            {[selectedTheme.colors.primary, selectedTheme.colors.soft, selectedTheme.colors.paper, selectedTheme.colors.accent].map((color) => (
+              <span key={color} className="h-3 flex-1 rounded-full border border-black/5" style={{ background: color }} />
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={() => setStep("export")}
+            className="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold text-[var(--color-forest)] transition-[gap] hover:gap-3"
+          >
+            Edit design in Preview <ArrowRight size={14} />
+          </button>
+        </div>
       </div>
-      <p className="mt-4 text-[11.5px] text-[var(--color-muted)]">
-        Switching designs resets typography, logo position, data treatment, and SDG appearance to that design&apos;s defaults. Policy content and outline choices stay intact.
-      </p>
     </Panel>
   );
 }
 
-function ThemeContactSheet({ theme, companyName, policyLabel }: { theme: DocumentThemeDefinition; companyName: string; policyLabel: string }) {
+export function ThemeContactSheet({ theme, companyName, policyLabel }: { theme: DocumentThemeDefinition; companyName: string; policyLabel: string }) {
   const style = {
     ...documentThemeCssVariables(theme),
     fontFamily: theme.defaults.typography.fontFamily,

@@ -1,7 +1,7 @@
 import { REVISION_HISTORY_DEFAULT, SDG_DATA, getPolicyProfile } from "./constants";
 import { getPolicyDocumentTheme, getResolvedTypography, type DocumentSectionRecipe } from "./document-themes";
 import { getEnabledSections, sectionHasContent } from "./sections";
-import { getCompanySites, type Policy, type PolicySection, type RichTextBlock } from "./types";
+import { getCompanySites, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
 
 export type ContentDensity = "short" | "regular" | "dense";
 export type DataTreatment = "formal-tables" | "clean-bullets";
@@ -30,6 +30,7 @@ export type DocumentRenderModel = {
   theme: ReturnType<typeof getPolicyDocumentTheme>;
   typography: ReturnType<typeof getResolvedTypography>;
   dataTreatment: DataTreatment;
+  featureImage?: PolicyFeatureImage;
   cover: {
     policyLabel: string;
     companyName: string;
@@ -75,6 +76,9 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
     // The design selects the document's structural language; this explicit
     // customization selects how policy data is presented within that design.
     dataTreatment: policy.visualStyle === "corporate" ? "formal-tables" : "clean-bullets",
+    featureImage: policy.featureImage && theme.imageSupport.includes(policy.featureImage.placement)
+      ? structuredClone(policy.featureImage)
+      : undefined,
     cover: {
       policyLabel: profile.label,
       companyName,

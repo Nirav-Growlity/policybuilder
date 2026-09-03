@@ -1,6 +1,6 @@
 import type { Policy, PolicySection, StandardSectionKind, StepId } from "./types";
 import { DEFAULT_TYPOGRAPHY } from "./typography";
-import { DEFAULT_DOCUMENT_THEME_ID, getDocumentTheme } from "./document-themes";
+import { DEFAULT_DOCUMENT_THEME_ID, getDocumentTheme, upgradeDocumentThemeId } from "./document-themes";
 
 export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] = [
   { kind: "preface", title: "Preface" },
@@ -45,7 +45,7 @@ export function normalizePolicyStructure<T extends Policy>(policy: T): T {
   const incoming = Array.isArray(policy.sections) ? policy.sections : defaultSections(policy);
   const requiredPreface = incoming.find((s) => s.kind === "preface") || { id: sectionId("preface"), kind: "preface" as const, title: "Preface", enabled: true };
   const remaining = incoming.filter((s) => s.kind !== "preface").map((s) => ({ ...s, blocks: s.kind === "custom" ? (s.blocks || []) : s.blocks }));
-  const documentTheme = policy.documentTheme ?? DEFAULT_DOCUMENT_THEME_ID;
+  const documentTheme = upgradeDocumentThemeId(policy.documentTheme ?? DEFAULT_DOCUMENT_THEME_ID);
   const themeDefaults = getDocumentTheme(documentTheme).defaults;
   const typography = !policy.typography
     ? { ...themeDefaults.typography }

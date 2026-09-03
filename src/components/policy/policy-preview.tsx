@@ -12,6 +12,7 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
   const { theme, typography } = model;
   const style = {
     ...documentThemeCssVariables(theme),
+    background: "var(--doc-page-background)",
     "--policy-font": typography.fontFamily,
     "--policy-heading-font": typography.headingFontFamily || typography.fontFamily,
     "--policy-heading-size": `${typography.headingSize}px`,
@@ -24,10 +25,12 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
     <article
       style={style}
       data-document-theme={theme.id}
+      data-layout-family={theme.layout.layoutId}
       data-cover-layout={theme.layout.cover}
       data-toc-layout={theme.layout.toc}
       data-page-frame={theme.layout.pageFrame}
       data-data-layout={theme.layout.dataLayout}
+      data-theme-density={theme.density}
       className="policy-preview-document mx-auto max-w-4xl overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)] shadow-[0_18px_50px_rgba(42,50,42,.14)]"
     >
       <style>{previewStyles}</style>
@@ -35,6 +38,7 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
       {policy.showTableOfContents && <PolicyToc model={model} />}
       <RunningHeader model={model} policy={policy} />
       <main className="policy-main">
+        {model.featureImage?.placement === "section" && <FeatureImage image={model.featureImage} className="policy-section-feature" />}
         {model.sections.map((section) => (
           <PolicySection key={section.id} section={section} model={model} policy={policy} />
         ))}
@@ -49,10 +53,12 @@ function PolicyCover({ model, policy }: { model: DocumentRenderModel; policy: Po
   const { cover, theme } = model;
   const logoAlign = policy.logoPosition === "right" ? "flex-end" : policy.logoPosition === "center" ? "center" : "flex-start";
   const logo = cover.logo ? <img src={cover.logo} alt={`${cover.companyName} logo`} className="policy-cover-logo max-w-full object-contain" /> : null;
+  const feature = model.featureImage?.placement === "cover" ? <FeatureImage image={model.featureImage} className={`policy-cover-feature feature-${theme.layout.imageTreatment}`} /> : null;
 
   if (theme.layout.cover === "dossier-split") {
     return (
       <header className="policy-cover cover-dossier-split">
+        {feature}
         <div className="dossier-masthead">
           <div className="dossier-mark"><span /><span /><span /></div>
           <div className="dossier-vertical-label">Policy dossier</div>
@@ -72,6 +78,7 @@ function PolicyCover({ model, policy }: { model: DocumentRenderModel; policy: Po
   if (theme.layout.cover === "atlas-modular") {
     return (
       <header className="policy-cover cover-atlas-modular">
+        {feature}
         <div className="atlas-cover-title">
           <div className="atlas-orbit" aria-hidden="true"><span /><span /></div>
           <div className="policy-cover-kicker">Impact atlas · Policy 01</div>
@@ -92,6 +99,7 @@ function PolicyCover({ model, policy }: { model: DocumentRenderModel; policy: Po
   if (theme.layout.cover === "journal-editorial") {
     return (
       <header className="policy-cover cover-journal-editorial">
+        {feature}
         <div className="journal-rule" />
         <div className="journal-contours" aria-hidden="true">{[0, 1, 2, 3, 4].map((ring) => <span key={ring} />)}</div>
         {logo && <div className="journal-logo flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
@@ -109,6 +117,7 @@ function PolicyCover({ model, policy }: { model: DocumentRenderModel; policy: Po
 
   return (
     <header className="policy-cover cover-charter-frame">
+      {feature}
       <div className="charter-frame-outer" aria-hidden="true" />
       <div className="charter-frame-inner" aria-hidden="true" />
       <div className="charter-botanical" aria-hidden="true"><span /><span /><span /></div>
@@ -122,6 +131,15 @@ function PolicyCover({ model, policy }: { model: DocumentRenderModel; policy: Po
         {cover.metadata.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}
       </div>
     </header>
+  );
+}
+
+function FeatureImage({ image, className }: { image: NonNullable<DocumentRenderModel["featureImage"]>; className: string }) {
+  return (
+    <figure className={className}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={image.dataUrl} alt={image.altText} style={{ objectPosition: `${image.focalPosition.x}% ${image.focalPosition.y}%` }} />
+    </figure>
   );
 }
 
@@ -312,8 +330,17 @@ const previewStyles = `
   .policy-preview-document h3 { margin: 0; font-size: var(--policy-subheading-size); line-height: 1.2; }
   .policy-preview-document p { margin: 0 0 12px; text-align: justify; }
   .policy-cover { position: relative; min-height: 510px; overflow: hidden; }
-  .policy-cover-logo { width: auto; height: 72px; }
+  .policy-cover > :not(.policy-cover-feature) { z-index: 1; }
+  .policy-cover-feature { position: absolute; inset: 0; z-index: 0; margin: 0; pointer-events: none; }
+  .policy-cover-feature img { width: 100%; height: 100%; object-fit: cover; opacity: .22; filter: saturate(.72); }
+  .policy-cover-feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--doc-paper) 10%, color-mix(in srgb, var(--doc-paper) 58%, transparent) 54%, transparent); }
+  .policy-cover-feature.feature-full-bleed-cover img { opacity: .42; }
+  .policy-cover-feature.feature-section-led img { opacity: .17; }
+  .policy-section-feature { margin: 0; height: 250px; overflow: hidden; border-block: 1px solid var(--doc-line); }
+  .policy-section-feature img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .policy-cover-logo { width: auto; height: var(--doc-logo-height); transition: height 180ms ease; }
   .policy-cover-kicker { color: var(--doc-primary); font-size: 10px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
+  .policy-cover h1 { max-width: 100%; text-wrap: balance; overflow-wrap: anywhere; }
   .policy-cover-company { margin: 13px 0 0; color: var(--doc-muted); font-size: 14px; }
   .policy-meta-pair { min-width: 0; }
   .policy-meta-pair span { display: block; color: var(--doc-muted); font-size: 8px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
@@ -328,11 +355,11 @@ const previewStyles = `
   .charter-botanical span { width: 14px; height: 24px; border: 1px solid var(--doc-accent); border-radius: 100% 0 100% 0; transform: rotate(-28deg); }
   .charter-botanical span:nth-child(2) { height: 29px; transform: rotate(0); }
   .charter-botanical span:nth-child(3) { transform: rotate(28deg) scaleX(-1); }
-  .charter-cover-content { position: relative; width: min(100%, 610px); }
+  .charter-cover-content { position: relative; z-index: 2; width: min(100%, 610px); margin-block: 72px 118px; }
   .cover-charter-frame .policy-cover-kicker { display: flex; align-items: center; justify-content: center; gap: 14px; }
   .cover-charter-frame .policy-cover-kicker span { width: 48px; height: 1px; background: var(--doc-accent); }
   .cover-charter-frame h1 { margin-top: 34px; }
-  .charter-colophon { position: absolute; inset-inline: 82px; bottom: 64px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--doc-primary); padding-top: 16px; text-align: left; }
+  .charter-colophon { position: absolute; z-index: 2; inset-inline: 82px; bottom: 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; border-top: 1px solid var(--doc-primary); padding-top: 16px; text-align: left; }
 
   .cover-dossier-split { display: grid; grid-template-columns: 35% 65%; min-height: 545px; }
   .dossier-masthead { position: relative; display: flex; flex-direction: column; padding: 44px 36px; background: var(--doc-primary); color: var(--doc-on-primary); }
@@ -340,14 +367,14 @@ const previewStyles = `
   .dossier-mark span { width: 26px; height: 2px; background: var(--doc-on-primary); opacity: .75; }
   .dossier-vertical-label { position: absolute; left: 35px; top: 50%; transform: translateY(-50%); font-size: 11px; font-weight: 800; letter-spacing: .28em; text-transform: uppercase; writing-mode: vertical-rl; }
   .dossier-edition { margin-top: auto; color: color-mix(in srgb, var(--doc-on-primary) 74%, transparent); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-  .dossier-cover-body { display: flex; min-width: 0; flex-direction: column; padding: 44px 50px 38px; background: linear-gradient(135deg, var(--doc-paper), var(--doc-soft)); text-align: left; }
+  .dossier-cover-body { display: flex; min-width: 0; flex-direction: column; padding: 44px 50px 38px; background: var(--doc-paper); text-align: left; }
   .dossier-cover-body h1 { max-width: 520px; margin-top: 25px; }
-  .dossier-cover-meta { margin-top: 38px; border-top: 2px solid var(--doc-primary); }
+  .dossier-cover-meta { margin-top: auto; border-top: 2px solid var(--doc-primary); }
   .dossier-cover-meta .policy-meta-pair { padding: 12px 8px 0 0; }
 
   .cover-atlas-modular { display: grid; min-height: 550px; grid-template-columns: 31% 69%; grid-template-rows: 64% 36%; }
   .atlas-cover-title { position: relative; grid-column: 1 / 3; overflow: hidden; padding: 54px 58px; background: var(--doc-soft); }
-  .atlas-cover-title h1 { position: relative; z-index: 1; max-width: 70%; margin-top: 40px; }
+  .atlas-cover-title h1 { position: relative; z-index: 1; max-width: 68%; margin-top: 40px; }
   .atlas-orbit { position: absolute; right: -25px; top: -55px; width: 310px; height: 310px; border: 42px solid var(--doc-primary); border-radius: 50%; opacity: .9; }
   .atlas-orbit span:first-child { position: absolute; inset: 38px; border: 2px solid var(--doc-accent); border-radius: 50%; }
   .atlas-orbit span:last-child { position: absolute; left: -44px; bottom: 18px; width: 70px; height: 70px; background: var(--doc-accent); }
@@ -373,6 +400,58 @@ const previewStyles = `
   .journal-title-block h1 { margin-top: 24px; }
   .journal-cover-meta { position: absolute; right: 54px; top: 285px; width: 180px; border-top: 1px solid var(--doc-accent); padding-top: 11px; }
   .journal-cover-meta .policy-meta-pair { margin-bottom: 10px; }
+
+  /* Eight family art directions. Layout structure remains data-driven, while
+     these rules give each catalog family a recognizable print identity. */
+  [data-layout-family="clean-essentials"] .policy-cover { background: var(--doc-paper); }
+  [data-layout-family="clean-essentials"] .charter-frame-inner { display: none; }
+  [data-layout-family="clean-essentials"] .charter-frame-outer { inset: 36px; border-color: var(--doc-line); }
+  [data-layout-family="clean-essentials"] .charter-botanical { display: none; }
+  [data-layout-family="clean-essentials"] .cover-charter-frame .policy-cover-kicker { justify-content: flex-start; }
+  [data-layout-family="clean-essentials"] .charter-cover-content { text-align: left; }
+  [data-layout-family="clean-essentials"] .cover-charter-frame .policy-cover-kicker span:last-child { display: none; }
+  [data-layout-family="clean-essentials"] .cover-charter-frame h1 { max-width: 540px; font-family: var(--policy-font); font-weight: 650; letter-spacing: -.035em; }
+
+  [data-layout-family="executive"] .policy-cover { box-shadow: inset 0 7px 0 var(--doc-accent); }
+  [data-layout-family="executive"] .policy-cover h1 { font-weight: 600; letter-spacing: -.025em; }
+  [data-layout-family="executive"] .policy-cover-kicker { color: var(--doc-accent); }
+  [data-layout-family="executive"] .dossier-masthead { background: var(--doc-primary-dark); }
+  [data-layout-family="executive"] .dossier-cover-meta { border-top-width: 1px; }
+
+  [data-layout-family="governance"] .cover-charter-frame { background: color-mix(in srgb, var(--doc-paper) 94%, var(--doc-soft)); }
+  [data-layout-family="governance"] .charter-frame-outer { border-width: 2px; }
+  [data-layout-family="governance"] .charter-frame-inner { inset: 39px; }
+  [data-layout-family="governance"] .cover-charter-frame h1 { font-weight: 500; letter-spacing: -.02em; }
+  [data-layout-family="governance"] .charter-colophon { border-top-color: var(--doc-accent); }
+
+  [data-layout-family="institutional"] .policy-cover::before { content: ""; position: absolute; z-index: 1; inset: 0 0 auto; height: 13px; background: var(--doc-primary); }
+  [data-layout-family="institutional"] .policy-cover { background: linear-gradient(180deg, var(--doc-soft) 0 18%, var(--doc-paper) 18%); }
+  [data-layout-family="institutional"] .policy-cover h1 { font-family: var(--policy-font); font-weight: 700; letter-spacing: -.02em; }
+  [data-layout-family="institutional"] .policy-cover-kicker { letter-spacing: .16em; }
+  [data-layout-family="institutional"] .charter-botanical, [data-layout-family="institutional"] .journal-contours { opacity: .18; }
+
+  [data-layout-family="editorial"] .policy-cover { background: var(--doc-paper); }
+  [data-layout-family="editorial"] .policy-cover h1 { font-weight: 450; letter-spacing: -.035em; }
+  [data-layout-family="editorial"] .journal-rule { width: 96px; height: 2px; }
+  [data-layout-family="editorial"] .journal-title-block { border-bottom-color: var(--doc-accent); }
+  [data-layout-family="editorial"] .journal-contours { opacity: .28; }
+
+  [data-layout-family="impact"] .policy-cover { background: var(--doc-soft); }
+  [data-layout-family="impact"] .policy-cover h1 { font-family: var(--policy-font); font-weight: 750; letter-spacing: -.045em; }
+  [data-layout-family="impact"] .atlas-orbit { opacity: .82; transform: rotate(8deg); }
+  [data-layout-family="impact"] .atlas-cover-index { background: var(--doc-primary-dark); }
+  [data-layout-family="impact"] .policy-cover-kicker { letter-spacing: .18em; }
+
+  [data-layout-family="data"] .policy-cover { background-image: linear-gradient(var(--doc-line) 1px, transparent 1px), linear-gradient(90deg, var(--doc-line) 1px, transparent 1px); background-size: 42px 42px; }
+  [data-layout-family="data"] .policy-cover h1 { font-family: var(--policy-font); font-weight: 800; letter-spacing: -.04em; }
+  [data-layout-family="data"] .policy-cover-kicker { display: inline-flex; width: fit-content; padding: 6px 8px; background: var(--doc-primary); color: var(--doc-on-primary); letter-spacing: .12em; }
+  [data-layout-family="data"] .atlas-cover-title, [data-layout-family="data"] .dossier-cover-body { background: color-mix(in srgb, var(--doc-paper) 92%, transparent); }
+
+  [data-layout-family="technical"] .policy-cover { background: var(--doc-paper); }
+  [data-layout-family="technical"] .policy-cover::after { content: ""; position: absolute; z-index: 0; right: 34px; top: 34px; width: 120px; height: 120px; border-top: 1px solid var(--doc-line); border-right: 1px solid var(--doc-line); background: repeating-linear-gradient(0deg, transparent 0 19px, var(--doc-line) 20px); opacity: .65; }
+  [data-layout-family="technical"] .policy-cover h1 { font-weight: 600; letter-spacing: -.015em; }
+  [data-layout-family="technical"] .policy-cover-kicker { font-family: var(--policy-font); letter-spacing: .14em; }
+  [data-layout-family="technical"] .journal-contours, [data-layout-family="technical"] .atlas-orbit, [data-layout-family="technical"] .charter-botanical { display: none; }
 
   .policy-toc { border-block: 1px solid var(--doc-line); }
   .toc-dotted-leaders { padding: 58px 90px 64px; }
@@ -415,9 +494,9 @@ const previewStyles = `
   .running-edge-folio { border-bottom: 4px solid var(--doc-primary); }
   .running-outer-folio { margin-inline: 64px; border-color: var(--doc-accent); font-style: italic; text-transform: none; }
 
-  .policy-main { padding: 44px 50px 52px; }
+  .policy-main { padding: calc(44px * var(--doc-density-factor)) calc(50px * var(--doc-density-factor)) calc(52px * var(--doc-density-factor)); }
   .policy-section { scroll-margin-top: 24px; }
-  .policy-section + .policy-section { margin-top: 45px; }
+  .policy-section + .policy-section { margin-top: calc(45px * var(--doc-density-factor)); }
   .policy-section-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
   .policy-section-heading > span { color: var(--doc-primary); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
   .policy-section-heading > i { height: 1px; flex: 1; background: var(--doc-line); }
@@ -533,6 +612,7 @@ const previewStyles = `
   .policy-custom-blocks ul, .policy-custom-blocks ol { margin: 12px 0; padding-left: 20px; }
   .policy-custom-blocks li { margin: 5px 0; }
   .policy-footer { display: flex; align-items: center; gap: 18px; border-top: 1px solid var(--doc-primary); padding: 18px 50px; color: var(--doc-muted); font-size: 8px; }
+  .policy-running-header img { width: auto; max-height: calc(var(--doc-logo-height) * .5); }
   .policy-footer b { margin-left: auto; color: var(--doc-primary); }
   .footer-breadcrumb-bar { background: var(--doc-primary); color: var(--doc-on-primary); }
   .footer-breadcrumb-bar b { color: var(--doc-on-primary); }

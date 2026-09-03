@@ -156,7 +156,7 @@ export function makeSamplePolicy(): Policy {
   return {
     policyType: "environmental",
     presentationTemplate: "comprehensive",
-    documentTheme: "modern-teal",
+    documentTheme: "sustainability-report",
     visualStyle: "modern",
     company: {
       name: "Acme Specialty Chemicals Pvt. Ltd.",
@@ -276,7 +276,7 @@ export function makeTemplatePolicy(): Policy {
   return {
     policyType: "environmental",
     presentationTemplate: "comprehensive",
-    documentTheme: "modern-teal",
+    documentTheme: "sustainability-report",
     visualStyle: "modern",
     company: {
       name: "[Company Name]",
