@@ -1,6 +1,7 @@
 import { getPolicyProfile } from "./constants";
 import { normalizePolicyStructure, sectionId } from "./sections";
-import type { DocumentThemeId, Policy, PolicySection, PolicyType, StandardSectionKind } from "./types";
+import type { DocumentTemplateId, Policy, PolicySection, PolicyType, StandardSectionKind } from "./types";
+// Internal content presets (not public visual templates). The public catalog is the eight universal visual templates.
 
 export type StarterProfile = "essential" | "standard" | "compliance" | "stakeholder" | "evidence-led";
 
@@ -13,7 +14,8 @@ export type StarterTemplate = {
   profileLabel: string;
   intendedAudience: string;
   estimatedLength: string;
-  recommendedThemes: readonly DocumentThemeId[];
+  recommendedThemes: readonly DocumentTemplateId[];
+  recommendedTemplates?: readonly DocumentTemplateId[];
   policy: Policy;
 };
 
@@ -22,16 +24,16 @@ const PROFILE_CONFIG: Record<StarterProfile, {
   audience: string;
   length: string;
   description: string;
-  theme: DocumentThemeId;
-  recommendations: readonly DocumentThemeId[];
+  theme: DocumentTemplateId;
+  recommendations: readonly DocumentTemplateId[];
   focusLimit: number;
   visualStyle: "corporate" | "modern";
 }> = {
-  essential: { label: "Essential", audience: "Internal teams needing a concise policy baseline", length: "3–5 pages", description: "A concise internal policy with clear commitments, scope, ownership, and review.", theme: "plain-standard", recommendations: ["plain-standard", "accessible-standard", "leadership-memo"], focusLimit: 4, visualStyle: "corporate" },
-  standard: { label: "Standard", audience: "Organizations building a balanced professional policy", length: "6–9 pages", description: "A balanced professional starting point with practical objectives and governance.", theme: "modern-standard", recommendations: ["modern-standard", "governance-manual", "institutional-report"], focusLimit: 6, visualStyle: "corporate" },
-  compliance: { label: "Compliance", audience: "Audit, tender, customer, and governance reviewers", length: "8–12 pages", description: "An audit-oriented policy with controls, responsibilities, monitoring, and revision structure.", theme: "compliance-policy", recommendations: ["compliance-policy", "audit-dossier", "legal-register"], focusLimit: 8, visualStyle: "corporate" },
-  stakeholder: { label: "Stakeholder", audience: "Employees, customers, investors, and communities", length: "8–12 pages", description: "A public-facing ESG policy emphasizing accessibility, outcomes, and engagement.", theme: "sustainability-report", recommendations: ["sustainability-report", "community-brief", "editorial-report"], focusLimit: 8, visualStyle: "modern" },
-  "evidence-led": { label: "Evidence-led", audience: "Technical teams, assessors, and evidence owners", length: "12–18 pages", description: "A detailed framework with definitions, measurement methods, and annex placeholders.", theme: "evidence-review", recommendations: ["evidence-review", "research-paper", "technical-standard"], focusLimit: 10, visualStyle: "corporate" },
+  essential: { label: "Essential", audience: "Internal teams needing a concise policy baseline", length: "3–5 pages", description: "A concise internal policy with clear commitments, scope, ownership, and review.", theme: "standard-pack", recommendations: ["standard-pack", "people-charter", "executive-brief"], focusLimit: 4, visualStyle: "corporate" },
+  standard: { label: "Standard", audience: "Organizations building a balanced professional policy", length: "6–9 pages", description: "A balanced professional starting point with practical objectives and governance.", theme: "operations-guide", recommendations: ["operations-guide", "controlled-manual", "standard-pack"], focusLimit: 6, visualStyle: "corporate" },
+  compliance: { label: "Compliance", audience: "Audit, tender, customer, and governance reviewers", length: "8–12 pages", description: "An audit-oriented policy with controls, responsibilities, monitoring, and revision structure.", theme: "governance-register", recommendations: ["governance-register", "controlled-manual", "metrics-ledger"], focusLimit: 8, visualStyle: "corporate" },
+  stakeholder: { label: "Stakeholder", audience: "Employees, customers, investors, and communities", length: "8–12 pages", description: "A public-facing ESG policy emphasizing accessibility, outcomes, and engagement.", theme: "sustainability-charter", recommendations: ["sustainability-charter", "people-charter", "executive-brief"], focusLimit: 8, visualStyle: "modern" },
+  "evidence-led": { label: "Evidence-led", audience: "Technical teams, assessors, and evidence owners", length: "12–18 pages", description: "A detailed framework with definitions, measurement methods, and annex placeholders.", theme: "metrics-ledger", recommendations: ["metrics-ledger", "governance-register", "controlled-manual"], focusLimit: 10, visualStyle: "corporate" },
 };
 
 const POLICY_TYPES: readonly PolicyType[] = ["environmental", "labour-human-rights", "living-wage", "ethics", "sustainable-procurement"];
@@ -80,6 +82,7 @@ function createStarter(policyType: PolicyType, starterProfile: StarterProfile): 
   const policy = normalizePolicyStructure({
     policyType,
     presentationTemplate: starterProfile === "essential" ? "standard" : "comprehensive",
+    documentTemplate: config.theme,
     documentTheme: config.theme,
     visualStyle: config.visualStyle,
     showTableOfContents: starterProfile !== "essential",
@@ -135,6 +138,7 @@ function createStarter(policyType: PolicyType, starterProfile: StarterProfile): 
     intendedAudience: config.audience,
     estimatedLength: config.length,
     recommendedThemes: config.recommendations,
+    recommendedTemplates: config.recommendations,
     policy,
   };
 }

@@ -6,6 +6,17 @@ import { getCompanySites, type Policy, type PolicyFeatureImage, type PolicySecti
 export type ContentDensity = "short" | "regular" | "dense";
 export type DataTreatment = "formal-tables" | "clean-bullets";
 
+export type RunningHeaderBrand =
+  | { kind: "logo"; source: string }
+  | { kind: "name"; text: string };
+
+export function getRunningHeaderBrand(company: Pick<Policy["company"], "name" | "companyLogo">): RunningHeaderBrand {
+  const logo = company.companyLogo?.trim();
+  return logo
+    ? { kind: "logo", source: logo }
+    : { kind: "name", text: company.name || "[Company Name]" };
+}
+
 export type DocumentSectionContent =
   | { type: "narrative"; text: string; sites?: ReturnType<typeof getCompanySites> }
   | { type: "focus"; areas: string[] }
@@ -84,10 +95,10 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
       companyName,
       logo: policy.company.companyLogo,
       metadata: [
-        { label: "Document No.", value: policy.company.docNum || "-" },
-        { label: "Effective Date", value: policy.company.effectiveDate || "-" },
-        { label: "Revision", value: policy.company.revNum || "01" },
-        { label: "Next Review", value: policy.company.reviewDate || "-" },
+        { label: "Document No.", value: policy.company.docNum || "" },
+        { label: "Effective Date", value: policy.company.effectiveDate || "" },
+        { label: "Revision", value: policy.company.revNum || "" },
+        { label: "Next Review", value: policy.company.reviewDate || "" },
       ],
     },
     tocEntries: sections.map(({ id, index, title }) => ({ id, index, title })),
@@ -100,10 +111,10 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
         }
       : undefined,
     footer: {
-      effectiveDate: policy.company.effectiveDate || "-",
-      reviewDate: policy.company.reviewDate || "-",
-      approver: policy.company.approver || "_____________________",
-      revision: policy.company.revNum || "01",
+      effectiveDate: policy.company.effectiveDate || "",
+      reviewDate: policy.company.reviewDate || "",
+      approver: policy.company.approver || "",
+      revision: policy.company.revNum || "",
     },
   };
 }

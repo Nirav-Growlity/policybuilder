@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/pdf/generate.test.ts lib/ai/template-context.test.ts"
+    "test": "node --import tsx --test --test-force-exit lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/universal-templates.test.ts lib/professional-templates.test.ts lib/pdf/generate.test.ts lib/pdf/layout.test.ts lib/ai/template-context.test.ts",
+    "templates:previews": "tsx scripts/generate-professional-previews.ts"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.5.1",
@@ -18,6 +19,9 @@
     "mammoth": "^1.12.0",
     "next": "16.2.12",
     "openai": "^7.3.0",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^5.6.205",
+    "playwright-core": "^1.63.0",
     "react": "19.2.4",
     "react-colorful": "^5.8.1",
     "react-dom": "19.2.4",

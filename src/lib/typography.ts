@@ -11,6 +11,23 @@ export const FONT_FAMILY_OPTIONS = [
   "Times New Roman",
   "Trebuchet MS",
   "Verdana",
+  // Self-hosted OFL document fonts (see public/fonts + app/document-fonts.css).
+  "Inter",
+  "Fraunces",
+  "Space Grotesk",
+  "Archivo",
+  "Source Sans 3",
+  "Source Serif 4",
+  "IBM Plex Sans",
+  "IBM Plex Serif",
+  "IBM Plex Mono",
+  "Libre Caslon Text",
+  "Cormorant Garamond",
+  "Playfair Display",
+  "Atkinson Hyperlegible",
+  "Caveat",
+  "Public Sans",
+  "JetBrains Mono",
 ] as const;
 
 export const DEFAULT_TYPOGRAPHY: DocumentTypography = {

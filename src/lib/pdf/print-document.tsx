@@ -1,0 +1,178 @@
+import { access, readFile } from "node:fs/promises";
+import path from "node:path";
+import { renderToStaticMarkup } from "react-dom/server.browser";
+import { chromium, type Browser } from "playwright-core";
+import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
+import { PolicyPreview } from "@/components/policy/policy-preview";
+import { getPolicyDocumentTheme, logoScaleFactor } from "@/lib/document-themes";
+import { getRunningHeaderBrand } from "@/lib/document-render-model";
+import { A4, pageBorderContentInsetMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
+import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
+
+let pdfBrowser: Browser | null = null;
+let pdfBrowserPromise: Promise<Browser> | null = null;
+
+export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
+  const theme = getPolicyDocumentTheme(policy);
+  const brand = getRunningHeaderBrand(policy.company);
+  const logoScale = logoScaleFactor(theme.logoScale);
+  const hasLogo = brand.kind === "logo";
+  const logoHeight = hasLogo ? 8 * logoScale : 0;
+  const horizontalMargin = pageMarginMm(theme.pageBorder);
+  const topMargin = hasLogo ? pageHeaderMarginMm(theme.pageBorder, logoHeight) : horizontalMargin;
+  const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} />));
+  const browser = await getPdfBrowser();
+  const page = await browser.newPage();
+  const timer = setTimeout(() => { void page.close(); }, 45000);
+  try {
+    await page.route(/^https?:/, route => route.abort());
+    await page.setContent(createPrintDocument(markup, policy, topMargin, horizontalMargin), { waitUntil: "load", timeout: 20000 });
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+      await Promise.all(Array.from(document.images, image => image.decode()));
+    });
+    const escape = (s: string) => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+    const logoPosition = policy.logoPosition || theme.defaults.logoPosition;
+    const logo = brand.kind === "logo" && /^data:image\/(png|jpeg|jpg|webp|svg\+xml);base64,/i.test(brand.source)
+      ? `<img src="${brand.source}" style="display:block;height:${8 * logoScale}mm;max-width:${28 * logoScale}mm;object-fit:contain;" alt=""/>`
+      : brand.kind === "name" ? `<span>${escape(brand.text)}</span>` : "";
+    const brandPosition = logoPosition === "right"
+      ? "right:0;"
+      : logoPosition === "center"
+        ? "left:50%;"
+        : "left:0;";
+    const documentNumberPosition = logoPosition === "right" ? "left:0;" : "right:0;";
+    const headerInset = pageBorderContentInsetMm(theme.pageBorder);
+    const logoTop = pageHeaderLogoTopMm(theme.pageBorder);
+    const logoCenter = logoTop + (hasLogo ? logoHeight / 2 : 2);
+    const headerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${topMargin}mm;margin:0 ${headerInset}mm;position:relative;display:block;overflow:visible;`;
+    const footerHeight = theme.pageBorder.enabled ? Math.max(10, headerInset - 2) : 10;
+    const footerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;position:relative;display:block;`;
+    const brandMarkup = `<span style="position:absolute;top:${logoCenter}mm;transform:${logoPosition === "center" ? "translate(-50%,-50%)" : "translateY(-50%)"};${brandPosition}">${logo}</span>`;
+    const documentNumber = `<span style="position:absolute;top:${logoCenter}mm;transform:translateY(-50%);${documentNumberPosition}">${escape(policy.company.docNum || "")}</span>`;
+    const output = await page.pdf({ format: "A4", printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true,
+      headerTemplate: `<div style="${headerStyle}">${brandMarkup}${documentNumber}</div>`,
+      footerTemplate: `<div style="${footerStyle}"><span style="position:absolute;left:0;top:0;">${escape(policy.company.revNum ? `Revision ${policy.company.revNum}` : "")}</span><span style="position:absolute;right:0;top:0;">Page <span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
+      margin: { top: `${topMargin}mm`, right: `${horizontalMargin}mm`, bottom: `${horizontalMargin}mm`, left: `${horizontalMargin}mm` },
+    });
+    if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");
+    const withBackground = await applyPageBackground(output, theme.background, policy.company.companyLogo ? topMargin : 0);
+    return applyPageBorders(withBackground, theme.pageBorder, theme.colors.primary);
+  } finally { clearTimeout(timer); await page.close().catch(() => undefined); }
+}
+
+async function getPdfBrowser(): Promise<Browser> {
+  if (pdfBrowser?.isConnected()) return pdfBrowser;
+  pdfBrowser = null;
+  if (!pdfBrowserPromise) {
+    pdfBrowserPromise = (async () => {
+      const browser = await chromium.launch({ executablePath: await findChrome(), headless: true, timeout: 15000 });
+      pdfBrowser = browser;
+      browser.on("disconnected", () => { if (pdfBrowser === browser) pdfBrowser = null; });
+      return browser;
+    })().finally(() => { pdfBrowserPromise = null; });
+  }
+  return pdfBrowserPromise;
+}
+
+/** Paint behind the content streams: Chromium clips CSS backgrounds to @page
+ * margins. Native PDF shading reaches the page edges without rasterizing text. */
+export async function applyPageBackground(bytes: Uint8Array, background: ThemeBackground, coverHeaderMm = 0): Promise<Buffer> {
+  if (background.kind === "solid" && background.color.toUpperCase() === "#FFFFFF" && !coverHeaderMm) return Buffer.from(bytes);
+  const pdf = await PDFDocument.load(bytes);
+  const channels = (hex: string) => [1, 3, 5].map(start => parseInt(hex.slice(start, start + 2), 16) / 255);
+  for (const [index, page] of pdf.getPages().entries()) {
+    const width = page.getWidth(), height = page.getHeight();
+    const { Resources, Contents } = page.node.normalizedEntries();
+    let paint: string;
+    if (background.kind === "gradient") {
+      const coords = background.direction === "horizontal" ? [0, 0, width, 0]
+        : background.direction === "vertical" ? [0, height, 0, 0] : [0, height, width, 0];
+      const shading = pdf.context.obj({ ShadingType: 2, ColorSpace: "DeviceRGB", Coords: coords,
+        Function: { FunctionType: 2, Domain: [0, 1], C0: channels(background.from), C1: channels(background.to), N: 1 }, Extend: [true, true] });
+      const shadings = Resources.lookupMaybe(PDFName.of("Shading"), PDFDict) || pdf.context.obj({});
+      const name = shadings.uniqueKey("PolicyPageBackground");
+      shadings.set(name, pdf.context.register(shading));
+      Resources.set(PDFName.of("Shading"), shadings);
+      paint = `${name.toString()} sh`;
+    } else paint = `${channels(background.color).join(" ")} rg 0 0 ${width} ${height} re f`;
+    const backgroundStream = pdf.context.register(pdf.context.flateStream(`q\n${paint}\nQ`));
+    if (Contents) Contents.insert(0, backgroundStream);
+    else page.node.addContentStream(backgroundStream);
+    if (index === 0 && coverHeaderMm) {
+      const band = coverHeaderMm * A4.pointsPerMm;
+      // Remove the cover's running logo using the same continuous background.
+      page.node.addContentStream(pdf.context.register(pdf.context.flateStream(`q\n0 ${height - band} ${width} ${band} re W n\n${paint}\nQ`)));
+    }
+  }
+  return Buffer.from(await pdf.save());
+}
+
+export async function applyPageBorders(bytes: Uint8Array, border: PageBorder, primary: string): Promise<Buffer> {
+  if (!border.enabled) return Buffer.from(bytes);
+  const pdf = await PDFDocument.load(bytes);
+  const hex = (border.color || primary).slice(1);
+  const color = rgb(parseInt(hex.slice(0, 2), 16) / 255, parseInt(hex.slice(2, 4), 16) / 255, parseInt(hex.slice(4, 6), 16) / 255);
+  const inset = border.insetMm * A4.pointsPerMm;
+  for (const page of border.scope === "cover" ? pdf.getPages().slice(0, 1) : pdf.getPages()) page.drawRectangle({ x: inset, y: inset, width: page.getWidth() - 2 * inset, height: page.getHeight() - 2 * inset, borderWidth: border.widthPt, borderColor: color });
+  return Buffer.from(await pdf.save());
+}
+
+async function findChrome(): Promise<string> {
+  const candidates = process.env.POLICY_PDF_CHROME_PATH ? [process.env.POLICY_PDF_CHROME_PATH] : ["C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe", "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe", "/usr/bin/chromium", "/usr/bin/google-chrome"];
+  for (const candidate of candidates) { try { await access(candidate); return candidate; } catch { /* next browser */ } }
+  throw new Error("Set POLICY_PDF_CHROME_PATH to an installed Chromium browser.");
+}
+
+async function inlinePublicAssets(markup: string): Promise<string> {
+  const publicDir = path.resolve(process.cwd(), "public");
+  const embed = async (source: string) => {
+    const asset = path.resolve(publicDir, decodeURIComponent(source.slice(1)));
+    if (!asset.startsWith(publicDir + path.sep)) throw new Error("Invalid document asset path");
+    const bytes = await readFile(asset);
+    const mime: Record<string, string> = { ".png": "image/png", ".svg": "image/svg+xml", ".webp": "image/webp", ".woff2": "font/woff2", ".woff": "font/woff" };
+    return `data:${mime[path.extname(asset)] || "image/jpeg"};base64,${bytes.toString("base64")}`;
+  };
+  let output = markup;
+  for (const match of [...output.matchAll(/src="(\/[^\"]+)"/g)].reverse()) output = output.slice(0, match.index) + `src="${await embed(match[1])}"` + output.slice(match.index! + match[0].length);
+  for (const match of [...output.matchAll(/url\(["']?(\/fonts\/[^)"']+)["']?\)/g)].reverse()) output = output.slice(0, match.index) + `url(${await embed(match[1])})` + output.slice(match.index! + match[0].length);
+  return output;
+}
+
+function createPrintDocument(markup: string, policy: Policy, topMargin = pageMarginMm(getPolicyDocumentTheme(policy).pageBorder), horizontalMargin = pageMarginMm(getPolicyDocumentTheme(policy).pageBorder)): string {
+  return `<!doctype html><html><head><meta charset="utf-8"/></head><body>${markup}<style>
+    @page { size:A4; margin:${topMargin}mm ${horizontalMargin}mm ${horizontalMargin}mm; }
+    html,body { margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .policy-preview-document { background:transparent !important; }
+    .policy-preview-document { width:${210 - horizontalMargin * 2}mm; max-width:none; margin:0; box-shadow:none; animation:none!important; opacity:1!important; transform:none!important; overflow:visible; color:var(--doc-ink); }
+    .policy-cover { break-after:page; }
+    [data-collection="professional"] :is(.professional-cover, .editorial-policy-cover) { height:${297 - topMargin - horizontalMargin - 1}mm; min-height:0; break-inside:avoid; }
+    [data-collection="professional"] .professional-cover-frame { min-height:0; }
+    [data-collection="professional"] .professional-meta { break-inside:avoid; flex-shrink:0; }
+    .policy-toc { break-after:page; }
+    .policy-running-header,.policy-footer { display:none; }
+    .policy-main { padding:0; }
+    /* Professional preview rules add an on-screen reading inset. Print pages
+       already receive their A4 margins from @page, so do not reserve that
+       inset a second time in PDF output. */
+    [data-collection="professional"] .policy-main { padding:0 !important; }
+    .policy-acknowledgement { break-before:page; }
+    .policy-section,.policy-table-wrap,.policy-section-body { overflow:visible; break-inside:auto; }
+    h2,h3,.policy-section-heading { break-after:avoid; }
+    p { orphans:3; widows:3; overflow-wrap:anywhere; }
+    thead { display:table-header-group; } tr { break-inside:avoid; }
+    td,th { overflow-wrap:anywhere; } .policy-table { table-layout:fixed; }
+    img { max-width:100%; object-fit:contain; }
+    .policy-sdg-tiles { display:flex; flex-wrap:wrap; gap:10px; }
+    .policy-sdg-tiles .policy-sdg-tile { flex:0 0 100px; width:100px; break-inside:avoid; }
+    .policy-sdg-tiles .policy-sdg-tile img { width:100px; height:100px; object-fit:contain; }
+    .flex { display:flex; } .ml-auto { margin-left:auto; } .mx-auto { margin-inline:auto; }
+    [data-collection="professional"] .policy-section { display:block; }
+    [data-collection="professional"] .policy-section > aside { display:none; }
+    /* The PDF page margin is the sample's outer whitespace. Remove the
+       preview-only cover inset so titles and control rows use that same width. */
+    [data-collection="professional"] :is(.professional-cover, .editorial-policy-cover) { padding-inline:0 !important; }
+    [data-collection="professional"] .policy-section-heading { display:flex; gap:4mm; align-items:baseline; }
+    [data-collection="professional"] .policy-section-heading > span { display:block; font-size:10pt; color:var(--doc-muted); }
+  </style></body></html>`;
+}

@@ -1,0 +1,108 @@
+TAP version 13
+# Subtest: defines eight universal visual templates with unique IDs and structural fingerprints
+ok 1 - defines eight universal visual templates with unique IDs and structural fingerprints
+  ---
+  duration_ms: 2.0161
+  ...
+# Subtest: each design has a unique structural signature independent of color
+ok 2 - each design has a unique structural signature independent of color
+  ---
+  duration_ms: 0.1917
+  ...
+# Subtest: no two templates share the same cover, contents and body-page composition
+ok 3 - no two templates share the same cover, contents and body-page composition
+  ---
+  duration_ms: 0.2483
+  ...
+# Subtest: legacy policies upgrade to the renamed bases without changing content
+ok 4 - legacy policies upgrade to the renamed bases without changing content
+  ---
+  duration_ms: 0.2652
+  ...
+# Subtest: switching a design resets only visual defaults
+ok 5 - switching a design resets only visual defaults
+  ---
+  duration_ms: 2.3424
+  ...
+# Subtest: applying another template preserves branding unless reset explicitly
+ok 6 - applying another template preserves branding unless reset explicitly
+  ---
+  duration_ms: 0.5507
+  ...
+# Subtest: manual typography changes are detected and can be reset
+ok 7 - manual typography changes are detected and can be reset
+  ---
+  duration_ms: 0.4853
+  ...
+# Subtest: the shared render model preserves enabled order and classifies density deterministically
+ok 8 - the shared render model preserves enabled order and classifies density deterministically
+  ---
+  duration_ms: 2.6714
+  ...
+# Subtest: theme switching preserves authored data across the shared render model
+ok 9 - theme switching preserves authored data across the shared render model
+  ---
+  duration_ms: 2.1913
+  ...
+# Subtest: data treatment remains an explicit customization across every document design
+ok 10 - data treatment remains an explicit customization across every document design
+  ---
+  duration_ms: 1.5379
+  ...
+# Subtest: feature images render only in compatible placements and remain on the policy
+ok 11 - feature images render only in compatible placements and remain on the policy
+  ---
+  duration_ms: 0.6823
+  ...
+# Subtest: template previews receive distinct cover artwork for every built-in design
+ok 12 - template previews receive distinct cover artwork for every built-in design
+  ---
+  duration_ms: 0.6311
+  ...
+# Subtest: optional document-control metadata remains blank when it is not authored
+ok 13 - optional document-control metadata remains blank when it is not authored
+  ---
+  duration_ms: 0.3197
+  ...
+# Subtest: custom theme overrides resolve without mutating the built-in theme
+ok 14 - custom theme overrides resolve without mutating the built-in theme
+  ---
+  duration_ms: 0.7274
+  ...
+# Subtest: malformed custom theme values are discarded safely
+ok 15 - malformed custom theme values are discarded safely
+  ---
+  duration_ms: 0.2002
+  ...
+# Subtest: logo scale accepts precise slider values and keeps legacy labels
+ok 16 - logo scale accepts precise slider values and keeps legacy labels
+  ---
+  duration_ms: 0.1664
+  ...
+# Subtest: bordered running furniture is inset beyond the border stroke
+ok 17 - bordered running furniture is inset beyond the border stroke
+  ---
+  duration_ms: 0.2412
+  ...
+# Subtest: logo header reserves a safe top band after the border
+ok 18 - logo header reserves a safe top band after the border
+  ---
+  duration_ms: 0.192
+  ...
+# Subtest: logo colors are the default source and template colors remain selectable
+ok 19 - logo colors are the default source and template colors remain selectable
+  ---
+  duration_ms: 1.2292
+  ...
+# Subtest: logo colors reach headings, TOC rules, and running-logo scale
+ok 20 - logo colors reach headings, TOC rules, and running-logo scale
+  ---
+  duration_ms: 27.6662
+  ...
+# Subtest: logo palette extraction ignores transparent and near-white pixels
+ok 21 - logo palette extraction ignores transparent and near-white pixels
+  ---
+  duration_ms: 1.9414
+  ...
+# Subtest: logo palette prefers opaque brand pixels over anti-aliased edge pixels
+ok 22 - logo palette prefers opaque

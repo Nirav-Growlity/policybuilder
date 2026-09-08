@@ -1,3 +1,4 @@
+import { coverDesign } from "../cover-designs";
 import {
   AlignmentType,
   Bookmark,
@@ -28,13 +29,18 @@ import {
   WidthType,
   type ParagraphChild,
 } from "docx";
+import { AsyncLocalStorage } from "node:async_hooks";
+import { A4, pageMarginMm } from "../page-geometry";
+import { getPolicyDocumentTheme, logoScaleFactor } from "../document-themes";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { buildDocumentRenderModel, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
+import { buildDocumentRenderModel, getRunningHeaderBrand, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
 import { documentHex, type DocumentThemeDefinition } from "../document-themes";
+import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
 import { normalizePolicyQuantitative } from "../quantitative";
 import type { Policy, QuantitativeArea, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
+import { embeddedDocumentFonts } from "./document-fonts";
 
 type Typography = NonNullable<Policy["typography"]>;
 type DocBlock = Paragraph | Table;
@@ -42,11 +48,17 @@ type LogoImage = { data: Uint8Array; type: "png" | "jpg" } | null;
 
 const PAGE_WIDTH = 11906;
 const PAGE_HEIGHT = 16838;
-const PAGE_MARGIN = 1000;
-const CONTENT_WIDTH = PAGE_WIDTH - PAGE_MARGIN * 2;
+const geometry = new AsyncLocalStorage<number>();
+const pageMargin = () => geometry.getStore() ?? 1000;
+const contentWidth = () => PAGE_WIDTH - pageMargin() * 2;
 const CELL_MARGIN = 120;
 
 export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
+  const theme = getPolicyDocumentTheme(inputPolicy);
+  const margin = theme.collection === "professional" || theme.pageBorder.enabled ? Math.round(pageMarginMm(theme.pageBorder) * A4.pointsPerMm * 20) : 1000;
+  return geometry.run(margin, () => generateDocxDocument(inputPolicy));
+}
+async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
   const policy = normalizePolicyQuantitative(inputPolicy);
   const model = buildDocumentRenderModel(policy);
   const { theme, typography } = model;
@@ -57,7 +69,8 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   const sdgImages = policy.sdgDisplay === "tiles" ? await loadSdgImages(policy.sdgs) : new Map<number, Uint8Array>();
   const children: DocBlock[] = [];
 
-  children.push(...buildCover(model, logoImage, logoAlignment));
+  // Keep the cover clean. The logo is supplied by the default running header.
+  children.push(...buildCover(model, null, logoAlignment));
   if (model.featureImage?.placement === "cover" && featureImage) {
     children.push(imageParagraph(featureImage, AlignmentType.CENTER, 520, 220, 120, model.featureImage.altText));
   }
@@ -91,6 +104,7 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   const primary = documentHex(theme.colors.primary);
   const ink = documentHex(theme.colors.ink);
   const doc = new Document({
+    fonts: await embeddedDocumentFonts([typography.fontFamily, typography.headingFontFamily || typography.fontFamily]),
     creator: "PolicyCraft",
     title: `${model.cover.policyLabel} - ${model.cover.companyName}`,
     styles: {
@@ -104,7 +118,7 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
           basedOn: "Normal",
           next: "PolicyBody",
           quickFormat: true,
-          run: { font: typography.headingFontFamily || typography.fontFamily, size: Math.round(typography.headingSize * 2), bold: true, color: primary },
+          run: { font: typography.headingFontFamily || typography.fontFamily, size: Math.round(typography.headingSize * 2), bold: true, color: documentHex(theme.colors.primaryDark) },
           paragraph: { keepNext: true, spacing: { before: Math.round(300 * spacingScale), after: Math.round(180 * spacingScale) } },
         },
         {
@@ -152,7 +166,11 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
       properties: {
         page: {
           size: { width: PAGE_WIDTH, height: PAGE_HEIGHT },
-          margin: { top: PAGE_MARGIN, right: PAGE_MARGIN, bottom: PAGE_MARGIN, left: PAGE_MARGIN },
+          ...(theme.pageBorder.enabled ? { borders: {
+            pageBorders: { display: theme.pageBorder.scope === "cover" ? "firstPage" as const : "allPages" as const, offsetFrom: "text" as const },
+            ...Object.fromEntries(["pageBorderTop", "pageBorderRight", "pageBorderBottom", "pageBorderLeft"].map(side => [side, { style: BorderStyle.SINGLE, color: documentHex(theme.pageBorder.color || theme.colors.primary), size: theme.pageBorder.widthPt * 8, space: Math.round(pageMargin() / 20 - theme.pageBorder.insetMm * A4.pointsPerMm) }]))
+          } } : {}),
+          margin: { top: pageMargin(), right: pageMargin(), bottom: pageMargin(), left: pageMargin() },
         },
         titlePage: true,
       },
@@ -167,145 +185,528 @@ export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   return (await Packer.toBuffer(doc)) as Buffer;
 }
 
+const COVER_KICKERS: Record<string, string> = {
+  "sample-quiet-title": "POLICY · CONTROLLED COPY",
+  "sample-control-grid": "DOCUMENT CONTROL · APPROVAL",
+  "sample-table-ledger": "POLICY REGISTER · EVIDENCE",
+  "sample-editorial-image": "SUSTAINABILITY · COMMITMENT",
+  "sample-framework-map": "FRAMEWORK · RESPONSIBILITY",
+  "sample-compact-strip": "OPERATING STANDARD",
+  "sample-heritage-crest": "POLICY · ESTABLISHED PRACTICE",
+  "sample-operating-tabs": "IMS · CONTROLLED DOCUMENT",
+  "civic-plain": "SUSTAINABILITY CHARTER",
+  "signal-split": "MODERN STANDARD - ASYMMETRIC SIGNAL",
+  "open-broad": "ACCESSIBLE - BROAD MEASURE",
+  "swiss-poster": "SWISS POSTER - GRID 01",
+  "ledger-rail": "EXECUTIVE LEDGER - BOARD EDITION",
+  "decision-stamp": "DECISION RECORD - STAMPED",
+  "routing-slip": "MEMORANDUM - ROUTING SLIP",
+  "seal-medallion": "GOVERNANCE MANUAL - SEAL",
+  "clause-code": "COMPLIANCE CODE - CONTROLLED CLAUSES",
+  "exhibit-file": "AUDIT EXHIBITS - TRACEABILITY FILE",
+  "gazette-masthead": "OFFICIAL GAZETTE - PROCLAMATION",
+  "colonnade-rule": "INSTITUTIONAL REPORT - COLONNADE",
+  "indenture-margin": "LEGAL INDENTURE - CONTROLLED REGISTER",
+  "chapterhouse-drop": "EDITORIAL - CHAPTER",
+  "broadsheet-columns": "BROADSHEET - PUBLIC EDITION",
+  "fieldbook-grid": "FIELDBOOK - SURVEY GRID",
+  "canopy-band": "IMPACT CANOPY - SUSTAINABILITY",
+  "summit-target": "SUMMIT - OUTCOMES AND IMPACT",
+  "commons-card": "COMMONS BRIEF - OPEN CARD",
+  "scoreboard-tiles": "SCOREBOARD - KPI TILES",
+  "tape-ledger": "TAPE LEDGER - METRICS",
+  "dial-review": "DIAL REVIEW - PERFORMANCE",
+  "proceedings-abstract": "PROCEEDINGS - ABSTRACT",
+  "blueprint-spec": "BLUEPRINT - TECHNICAL STANDARD",
+  "docket-matrix": "DOCKET - FINDINGS MATRIX",
+};
+
+/** Native aspect ratio (width, height) of each motif viewBox for Word sizing. */
+const MOTIF_ASPECT: Record<CoverMotifScene, [number, number]> = {
+  "sample-quiet-title": [240, 70], "sample-control-grid": [220, 120], "sample-table-ledger": [240, 96],
+  "sample-editorial-image": [220, 120], "sample-framework-map": [240, 110], "sample-compact-strip": [240, 58],
+  "sample-heritage-crest": [130, 140], "sample-operating-tabs": [240, 100],
+  "civic-plain": [220, 28], "signal-split": [200, 120], "open-broad": [220, 72], "swiss-poster": [120, 120],
+  "ledger-rail": [120, 160], "decision-stamp": [180, 120], "routing-slip": [220, 96],
+  "seal-medallion": [140, 140], "clause-code": [160, 120], "exhibit-file": [200, 110],
+  "gazette-masthead": [120, 140], "colonnade-rule": [200, 90], "indenture-margin": [160, 140],
+  "chapterhouse-drop": [120, 120], "broadsheet-columns": [220, 110], "fieldbook-grid": [160, 120],
+  "canopy-band": [220, 84], "summit-target": [140, 140], "commons-card": [200, 110],
+  "scoreboard-tiles": [200, 120], "tape-ledger": [220, 100], "dial-review": [160, 100],
+  "proceedings-abstract": [200, 120], "blueprint-spec": [160, 120], "docket-matrix": [180, 120],
+};
+
+function motifColorsFor(theme: DocumentThemeDefinition): MotifColors {
+  return {
+    primary: `#${documentHex(theme.colors.primary)}`,
+    accent: `#${documentHex(theme.colors.accent)}`,
+    soft: `#${documentHex(theme.colors.soft)}`,
+    line: `#${documentHex(theme.colors.line)}`,
+    paper: `#${documentHex(theme.colors.paper)}`,
+    ink: `#${documentHex(theme.colors.ink)}`,
+  };
+}
+
+function motifCoverParagraph(scene: CoverMotifScene, theme: DocumentThemeDefinition, width: number, alignment: typeof AlignmentType[keyof typeof AlignmentType] = AlignmentType.LEFT): Paragraph {
+  const [viewWidth, viewHeight] = MOTIF_ASPECT[scene];
+  return svgParagraph(
+    motifSvg(scene, motifColorsFor(theme)),
+    width,
+    Math.max(24, Math.round((width * viewHeight) / viewWidth)),
+    alignment,
+    `${scene} cover motif`,
+  );
+}
+
+function coverKickerParagraph(text: string, theme: DocumentThemeDefinition, typography: Typography, color?: string, alignment: typeof AlignmentType[keyof typeof AlignmentType] = AlignmentType.LEFT): Paragraph {
+  return new Paragraph({
+    alignment,
+    spacing: { before: 160, after: 200 },
+    children: [new TextRun({ text, bold: true, color: color || documentHex(theme.colors.primary), size: 18, characterSpacing: 70, font: typography.fontFamily })],
+  });
+}
+
+function coverTitleParagraph(text: string, theme: DocumentThemeDefinition, typography: Typography, size = 64, color?: string, alignment: typeof AlignmentType[keyof typeof AlignmentType] = AlignmentType.LEFT): Paragraph {
+  return new Paragraph({
+    alignment,
+    spacing: { after: 140 },
+    children: [new TextRun({ text, bold: true, color: color || documentHex(theme.colors.primaryDark), size, font: typography.headingFontFamily || typography.fontFamily })],
+  });
+}
+
+function coverCompanyParagraph(text: string, theme: DocumentThemeDefinition, typography: Typography, color?: string, alignment: typeof AlignmentType[keyof typeof AlignmentType] = AlignmentType.LEFT): Paragraph {
+  return new Paragraph({
+    alignment,
+    spacing: { after: 280 },
+    children: [new TextRun({ text, color: color || documentHex(theme.colors.muted), size: 25, font: typography.fontFamily })],
+  });
+}
+
+function verticalLabelParagraph(text: string, color: string, font: string): Paragraph {
+  return new Paragraph({
+    alignment: AlignmentType.CENTER,
+    children: [new TextRun({ text, bold: true, color, size: 18, characterSpacing: 80, font })],
+  });
+}
+
 function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: typeof AlignmentType[keyof typeof AlignmentType]): DocBlock[] {
   const { theme, typography, cover } = model;
+  const scene = theme.layout.cover as CoverMotifScene;
   const primary = documentHex(theme.colors.primary);
   const paper = documentHex(theme.colors.paper);
   const soft = documentHex(theme.colors.soft);
   const accent = documentHex(theme.colors.accent);
   const ink = documentHex(theme.colors.ink);
+  const muted = documentHex(theme.colors.muted);
+  const line = documentHex(theme.colors.line);
   const onPrimary = documentHex(theme.colors.onPrimary);
+  const headingFont = typography.headingFontFamily || typography.fontFamily;
   const logoScale = theme.logoScale === "small" ? .72 : theme.logoScale === "large" ? 1.28 : 1;
   const logoParagraph = logo ? imageParagraph(logo, logoAlignment, Math.round(165 * logoScale), Math.round(76 * logoScale), 100) : spacer(80);
+  const kicker = COVER_KICKERS[scene] || "POLICY";
 
-  if (theme.layout.cover === "dossier-split") {
-    const railWidth = 3467;
-    const bodyWidth = CONTENT_WIDTH - railWidth;
+  if (theme.collection === "professional") {
+    const design = coverDesign(scene);
+    const alignment = design.align === "center" ? AlignmentType.CENTER : AlignmentType.LEFT;
+    const rule = new Paragraph({ border: { bottom: border(primary, 6) }, spacing: { after: 360 }, children: [] });
+    const columnWidth = Math.floor(contentWidth() / design.columns);
+    const metadata = fixedTable(chunk(cover.metadata, design.columns).map(items => new TableRow({ cantSplit: true, children: items.map(item => tableCell([
+      new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: item.label.toUpperCase(), color: muted, size: 15, font: typography.fontFamily })] }),
+      new Paragraph({ spacing: { after: 180 }, children: [new TextRun({ text: item.value, color: muted, size: 20, font: typography.fontFamily })] }),
+    ], columnWidth)) })), Array.from({ length: design.columns }, () => columnWidth));
     return [
-      fixedTable([
-        new TableRow({
-          cantSplit: true,
-          children: [
-            tableCell([
-              dossierMarkParagraph(onPrimary),
-              spacer(180),
-              spacer(1120),
-              new Paragraph({
-                alignment: AlignmentType.CENTER,
-                children: [new TextRun({ text: "POLICY DOSSIER", bold: true, color: onPrimary, size: 18, characterSpacing: 80, font: typography.fontFamily })],
-              }),
-              spacer(900),
-              new Paragraph({ children: [new TextRun({ text: "EXECUTIVE EDITION", color: onPrimary, size: 16, characterSpacing: 50, font: typography.fontFamily })] }),
-            ], railWidth, { fill: primary, textDirection: TextDirection.BOTTOM_TO_TOP_LEFT_TO_RIGHT }),
-            tableCell([
-              logoParagraph,
-              new Paragraph({ spacing: { before: 160, after: 240 }, children: [new TextRun({ text: "SUSTAINABILITY GOVERNANCE", bold: true, color: accent, size: 18, characterSpacing: 70, font: typography.fontFamily })] }),
-              new Paragraph({ spacing: { after: 140 }, children: [new TextRun({ text: cover.policyLabel, bold: true, color: ink, size: 62, font: typography.headingFontFamily || typography.fontFamily })] }),
-              new Paragraph({ spacing: { after: 360 }, children: [new TextRun({ text: cover.companyName, color: documentHex(theme.colors.muted), size: 26, font: typography.fontFamily })] }),
-              metadataTable(model, bodyWidth, "strip"),
-            ], bodyWidth, { fill: paper }),
-          ],
-        }),
-      ], [railWidth, bodyWidth]),
+      coverCompanyParagraph(cover.companyName, theme, typography, undefined, alignment),
+      spacer(Math.round(design.spaceMm * 56.7)),
+      ...(design.rule === "top" ? [rule] : []),
+      coverTitleParagraph(cover.policyLabel, theme, typography, design.titlePt * 2, undefined, alignment),
+      ...(design.rule === "bottom" ? [rule] : []),
+      spacer(900),
+      new Paragraph({ border: { top: border(line, 4) }, spacing: { after: 220 }, children: [] }),
+      metadata,
     ];
   }
+  const centeredHead = (titleSize = 64): Paragraph[] => [
+    logoParagraph,
+    coverKickerParagraph(kicker, theme, typography, undefined, AlignmentType.CENTER),
+    coverTitleParagraph(cover.policyLabel, theme, typography, titleSize, undefined, AlignmentType.CENTER),
+    coverCompanyParagraph(cover.companyName, theme, typography, undefined, AlignmentType.CENTER),
+  ];
+  const leftHead = (titleSize = 64): Paragraph[] => [
+    logoParagraph,
+    coverKickerParagraph(kicker, theme, typography),
+    coverTitleParagraph(cover.policyLabel, theme, typography, titleSize),
+    coverCompanyParagraph(cover.companyName, theme, typography),
+  ];
 
-  if (theme.layout.cover === "atlas-modular") {
-    const left = 3000;
-    const right = CONTENT_WIDTH - left;
-    return [
-      fixedTable([
-        new TableRow({
-          cantSplit: true,
-          children: [tableCell([
-            atlasOrbitParagraph(primary, accent),
-            logoParagraph,
-            new Paragraph({ spacing: { before: 180, after: 180 }, children: [new TextRun({ text: "IMPACT ATLAS - POLICY 01", bold: true, color: primary, size: 18, characterSpacing: 70, font: typography.fontFamily })] }),
-            new Paragraph({ spacing: { after: 260 }, children: [new TextRun({ text: cover.policyLabel, bold: true, color: ink, size: 66, font: typography.headingFontFamily || typography.fontFamily })] }),
-            new Paragraph({ border: { top: border(accent, 18) }, spacing: { before: 320, after: 120 }, children: [new TextRun({ text: "A living map of commitments, ownership, and measurable targets.", color: documentHex(theme.colors.muted), size: 20, font: typography.fontFamily })] }),
-          ], CONTENT_WIDTH, { fill: soft, columnSpan: 2 })],
-        }),
-        new TableRow({
-          cantSplit: true,
-          children: [
-            tableCell([
-              new Paragraph({ children: [new TextRun({ text: "POLICY", bold: true, color: onPrimary, size: 18, characterSpacing: 60, font: typography.fontFamily })] }),
-              new Paragraph({ spacing: { before: 280, after: 160 }, children: [new TextRun({ text: "01", color: onPrimary, size: 72, font: typography.headingFontFamily || typography.fontFamily })] }),
-              new Paragraph({ children: [new TextRun({ text: "LIVING COMMITMENTS", color: onPrimary, size: 15, characterSpacing: 45, font: typography.fontFamily })] }),
-            ], left, { fill: primary }),
-            tableCell([
-              new Paragraph({ spacing: { after: 140 }, children: [new TextRun({ text: cover.companyName, bold: true, color: ink, size: 24, font: typography.fontFamily })] }),
-              metadataTable(model, right, "compact"),
-            ], right, { fill: paper }),
-          ],
-        }),
-      ], [left, right]),
-    ];
-  }
-
-  if (theme.layout.cover === "journal-editorial") {
-    const titleWidth = 7200;
-    const metaWidth = CONTENT_WIDTH - titleWidth;
-    return [
-      fixedTable([new TableRow({
+  switch (scene) {
+    case "civic-plain": {
+      const inner = contentWidth() - 520;
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [tableCell([
+          new Paragraph({ border: { top: border(primary, 14) }, spacing: { after: 60 }, children: [new TextRun({ text: " ", size: 2 })] }),
+          ...centeredHead(),
+          motifCoverParagraph(scene, theme, 330, AlignmentType.CENTER),
+          spacer(320),
+          metadataTable(model, inner, "colophon"),
+        ], inner, { margins: { top: 260, bottom: 300, left: 360, right: 360 } })],
+      })], [inner], { width: inner, alignment: AlignmentType.CENTER })];
+    }
+    case "signal-split": {
+      const panelWidth = 3400;
+      const bodyWidth = contentWidth() - panelWidth;
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [
+          tableCell([...leftHead(), metadataTable(model, bodyWidth, "strip")], bodyWidth, {
+            fill: paper, borders: { top: undefined, bottom: undefined, left: undefined, right: border(accent, 18), insideHorizontal: undefined, insideVertical: undefined } as never,
+          }),
+          tableCell([spacer(700), motifCoverParagraph(scene, theme, 300, AlignmentType.CENTER)], panelWidth, { fill: soft }),
+        ],
+      })], [bodyWidth, panelWidth])];
+    }
+    case "open-broad": {
+      return [
+        new Paragraph({ shading: { type: ShadingType.SOLID, fill: primary }, spacing: { after: 320 }, children: [new TextRun({ text: " ", size: 2 })] }),
+        ...leftHead(72),
+        motifCoverParagraph(scene, theme, 420),
+        spacer(240),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "swiss-poster": {
+      const railWidth = 1500;
+      const bodyWidth = contentWidth() - railWidth;
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [
+          tableCell([spacer(1600), verticalLabelParagraph("GRID - 01", "FFFFFF", typography.fontFamily), spacer(500)], railWidth, { fill: ink, textDirection: TextDirection.BOTTOM_TO_TOP_LEFT_TO_RIGHT }),
+          tableCell([
+            ...leftHead(80),
+            motifCoverParagraph(scene, theme, 200),
+            spacer(200),
+            metadataTable(model, bodyWidth, "strip"),
+          ], bodyWidth, { fill: paper }),
+        ],
+      })], [railWidth, bodyWidth])];
+    }
+    case "ledger-rail": {
+      const railWidth = 2400;
+      const bodyWidth = contentWidth() - railWidth;
+      return [fixedTable([new TableRow({
         cantSplit: true,
         children: [
           tableCell([
-            new Paragraph({ border: { top: border(accent, 22) }, spacing: { after: 70 }, children: [new TextRun({ text: " ", size: 2 })] }),
-            logoParagraph,
-          ], Math.floor(CONTENT_WIDTH * 0.38), { margins: { top: 0, bottom: 0, left: 0, right: 0 } }),
-          tableCell([journalContourParagraph(accent)], Math.ceil(CONTENT_WIDTH * 0.62), { margins: { top: 0, bottom: 0, left: 0, right: 0 } }),
+            verticalLabelParagraph("EXECUTIVE LEDGER", onPrimary, typography.fontFamily),
+            spacer(500),
+            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "01", color: onPrimary, size: 72, font: headingFont })] }),
+            spacer(300),
+            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "BOARD EDITION", color: onPrimary, size: 15, characterSpacing: 45, font: typography.fontFamily })] }),
+          ], railWidth, { fill: primary, textDirection: TextDirection.BOTTOM_TO_TOP_LEFT_TO_RIGHT }),
+          tableCell([...leftHead(), motifCoverParagraph(scene, theme, 200), spacer(160), metadataTable(model, bodyWidth, "strip")], bodyWidth, { fill: paper }),
         ],
-      })], [Math.floor(CONTENT_WIDTH * 0.38), Math.ceil(CONTENT_WIDTH * 0.62)]),
-      // The title sits low on the preview cover, leaving room for its field-journal motif.
-      spacer(1800),
-      fixedTable([
-        new TableRow({
-          cantSplit: true,
-          children: [
-            tableCell([
-              new Paragraph({ spacing: { after: 180 }, children: [new TextRun({ text: "FIELD JOURNAL - SUSTAINABILITY POLICY", bold: true, color: accent, size: 18, characterSpacing: 65, font: typography.fontFamily })] }),
-              new Paragraph({ spacing: { after: 150 }, children: [new TextRun({ text: cover.policyLabel, bold: true, color: ink, size: 68, font: typography.headingFontFamily || typography.fontFamily })] }),
-              new Paragraph({ border: { bottom: border(documentHex(theme.colors.line), 7) }, spacing: { after: 160 }, children: [new TextRun({ text: cover.companyName, color: documentHex(theme.colors.muted), size: 25, font: typography.fontFamily })] }),
-            ], titleWidth),
-            tableCell(cover.metadata.flatMap((item) => [
-              new Paragraph({ border: { top: border(accent, 6) }, spacing: { before: 40, after: 35 }, children: [new TextRun({ text: item.label.toUpperCase(), bold: true, color: documentHex(theme.colors.muted), size: 14, characterSpacing: 35, font: typography.fontFamily })] }),
-              new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: item.value, bold: true, color: ink, size: 18, font: typography.fontFamily })] }),
-            ]), metaWidth),
-          ],
-        }),
-      ], [titleWidth, metaWidth]),
-    ];
-  }
-
-  const innerWidth = CONTENT_WIDTH - 520;
-  return [
-    fixedTable([
-      new TableRow({
+      })], [railWidth, bodyWidth])];
+    }
+    case "decision-stamp": {
+      const inner = contentWidth() - 520;
+      return [fixedTable([new TableRow({
         cantSplit: true,
         children: [tableCell([
-          charterBotanicalParagraph(accent),
-          logoParagraph,
-          spacer(180),
-          new Paragraph({
+          ...centeredHead(),
+          motifCoverParagraph(scene, theme, 300, AlignmentType.CENTER),
+          spacer(280),
+          metadataTable(model, inner, "strip"),
+        ], inner, { margins: { top: 300, bottom: 300, left: 360, right: 360 }, borders: allBorders(primary, BorderStyle.DOUBLE, 10) })],
+      })], [inner], { width: inner, alignment: AlignmentType.CENTER })];
+    }
+    case "routing-slip": {
+      const slipWidth = contentWidth();
+      const half = Math.floor(slipWidth / 2);
+      return [
+        new Paragraph({ spacing: { after: 60 }, children: [new TextRun({ text: "MEMORANDUM", bold: true, color: ink, size: 60, characterSpacing: 40, font: headingFont })] }),
+        fixedTable([new TableRow({
+          cantSplit: true,
+          children: [
+            tableCell([slipLine("TO", "Leadership", theme, typography), slipLine("FROM", cover.companyName, theme, typography)], half),
+            tableCell([slipLine("DATE", cover.metadata[1]?.value || "-", theme, typography), slipLine("SUBJECT", cover.policyLabel, theme, typography)], slipWidth - half),
+          ],
+        })], [half, slipWidth - half]),
+        spacer(240),
+        ...leftHead(),
+        motifCoverParagraph(scene, theme, 380),
+        spacer(200),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "seal-medallion": {
+      const inner = contentWidth() - 520;
+      return [
+        motifCoverParagraph(scene, theme, 260, AlignmentType.CENTER),
+        spacer(120),
+        ...centeredHead(68),
+        spacer(240),
+        fixedTable([new TableRow({
+          cantSplit: true,
+          children: chunk(cover.metadata, 2).flatMap((items) => items.map((item) => tableCell([
+            new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 25 }, children: [new TextRun({ text: item.label.toUpperCase(), bold: true, color: muted, size: 13, characterSpacing: 25, font: typography.fontFamily })] }),
+            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: item.value, bold: true, color: ink, size: 17, font: typography.fontFamily })] }),
+          ], Math.floor(inner / 2)))),
+        })], [Math.floor(inner / 2), Math.ceil(inner / 2)]),
+      ];
+    }
+    case "clause-code": {
+      const numWidth = 1300;
+      const bodyWidth = contentWidth() - numWidth;
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [
+          tableCell(["§1", "§2", "§3", "§4"].map((mark, index) => new Paragraph({
             alignment: AlignmentType.CENTER,
-            spacing: { after: 260 },
+            spacing: { before: index === 0 ? 200 : 420 },
+            children: [new TextRun({ text: mark, bold: true, color: index === 3 ? accent : primary, size: 30, font: headingFont })],
+          })), numWidth),
+          tableCell([...leftHead(), motifCoverParagraph(scene, theme, 280), spacer(160), metadataTable(model, bodyWidth, "strip")], bodyWidth, {
+            margins: { top: 240, bottom: 240, left: 300, right: 300 }, borders: allBorders(primary, BorderStyle.SINGLE, 12),
+          }),
+        ],
+      })], [numWidth, bodyWidth])];
+    }
+    case "exhibit-file": {
+      const tab = Math.floor(contentWidth() / 3);
+      return [
+        fixedTable([new TableRow({
+          cantSplit: true,
+          children: [
+            tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "EXHIBIT A", bold: true, color: onPrimary, size: 18, font: typography.fontFamily })] })], tab, { fill: primary }),
+            tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "EXHIBIT B", bold: true, color: "FFFFFF", size: 18, font: typography.fontFamily })] })], tab, { fill: accent }),
+            tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "EXHIBIT C", bold: true, color: muted, size: 18, font: typography.fontFamily })] })], contentWidth() - tab * 2, { fill: soft }),
+          ],
+        })], [tab, tab, contentWidth() - tab * 2]),
+        fixedTable([new TableRow({
+          cantSplit: true,
+          children: [tableCell([...leftHead(), motifCoverParagraph(scene, theme, 340), spacer(160), metadataTable(model, contentWidth(), "strip")], contentWidth(), {
+            margins: { top: 240, bottom: 240, left: 300, right: 300 }, borders: allBorders(line, BorderStyle.SINGLE, 6),
+          })],
+        })], [contentWidth()]),
+      ];
+    }
+    case "gazette-masthead": {
+      const inner = contentWidth() - 520;
+      return [
+        motifCoverParagraph(scene, theme, 190, AlignmentType.CENTER),
+        spacer(100),
+        ...centeredHead(68),
+        spacer(240),
+        metadataTable(model, inner, "colophon"),
+      ];
+    }
+    case "colonnade-rule": {
+      return [
+        new Paragraph({ shading: { type: ShadingType.SOLID, fill: primary }, spacing: { after: 300 }, children: [new TextRun({ text: " ", size: 2 })] }),
+        ...leftHead(),
+        motifCoverParagraph(scene, theme, 380),
+        spacer(200),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "indenture-margin": {
+      const bodyWidth = contentWidth() - 1900;
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [
+          tableCell([...leftHead(), motifCoverParagraph(scene, theme, 280), spacer(160), metadataTable(model, bodyWidth, "strip")], bodyWidth),
+          tableCell(["¶1", "¶2", "¶3"].map((mark, index) => new Paragraph({
+            spacing: { before: index === 0 ? 200 : 480 },
+            children: [new TextRun({ text: mark, bold: true, color: accent, size: 26, font: headingFont })],
+          })), 1900, { borders: { top: undefined, bottom: undefined, left: border(accent, 12), right: undefined, insideHorizontal: undefined, insideVertical: undefined } as never }),
+        ],
+      })], [bodyWidth, 1900])];
+    }
+    case "chapterhouse-drop": {
+      const artWidth = 2300;
+      const headWidth = contentWidth() - artWidth;
+      return [
+        fixedTable([new TableRow({
+          cantSplit: true,
+          children: [
+            tableCell([motifCoverParagraph(scene, theme, 210, AlignmentType.CENTER)], artWidth, { fill: primary }),
+            tableCell([...leftHead(68)], headWidth),
+          ],
+        })], [artWidth, headWidth]),
+        spacer(240),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "broadsheet-columns": {
+      return [
+        new Paragraph({
+          alignment: AlignmentType.CENTER,
+          shading: { type: ShadingType.SOLID, fill: ink },
+          spacing: { after: 280 },
+          children: [
+            new TextRun({ text: `${cover.companyName}   |   `, color: "FFFFFF", size: 17, font: typography.fontFamily }),
+            new TextRun({ text: "POLICY BROADSHEET", bold: true, color: "FFFFFF", size: 26, characterSpacing: 30, font: headingFont }),
+            new TextRun({ text: `   |   ${cover.metadata[1]?.value || ""}`, color: "FFFFFF", size: 17, font: typography.fontFamily }),
+          ],
+        }),
+        ...leftHead(70),
+        motifCoverParagraph(scene, theme, 400),
+        spacer(200),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "fieldbook-grid": {
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [tableCell([
+          ...leftHead(),
+          motifCoverParagraph(scene, theme, 340),
+          new Paragraph({ spacing: { before: 120, after: 160 }, children: [new TextRun({ text: "Survey · Plot 01 · Annotated in the field", italics: true, color: accent, size: 19, font: typography.fontFamily })] }),
+          metadataTable(model, contentWidth(), "strip"),
+        ], contentWidth(), { margins: { top: 260, bottom: 260, left: 320, right: 320 }, borders: allBorders(line, BorderStyle.SINGLE, 6) })],
+      })], [contentWidth()])];
+    }
+    case "canopy-band": {
+      return [
+        motifCoverParagraph(scene, theme, 640, AlignmentType.CENTER),
+        spacer(200),
+        ...leftHead(68),
+        spacer(120),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "summit-target": {
+      return [
+        motifCoverParagraph(scene, theme, 250, AlignmentType.CENTER),
+        spacer(100),
+        ...centeredHead(68),
+        spacer(200),
+        metadataTable(model, contentWidth() - 520, "strip"),
+      ];
+    }
+    case "commons-card": {
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [tableCell([
+          ...leftHead(),
+          motifCoverParagraph(scene, theme, 340),
+          spacer(160),
+          metadataTable(model, contentWidth(), "strip"),
+        ], contentWidth(), { fill: paper, margins: { top: 280, bottom: 280, left: 340, right: 340 } })],
+      })], [contentWidth()], { width: contentWidth() })];
+    }
+    case "scoreboard-tiles": {
+      const tile = Math.floor(contentWidth() / 4);
+      const tiles: Array<[string, string, string]> = [["01", "COVERAGE", primary], ["02", "TARGETS", soft], ["03", "OWNERS", soft], ["04", "REVIEW", accent]];
+      return [
+        fixedTable([new TableRow({
+          cantSplit: true,
+          children: tiles.map(([number, label, fill], index) => tableCell([
+            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: number, bold: true, color: index === 1 || index === 2 ? primary : "FFFFFF", size: 44, font: headingFont })] }),
+            new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: label, bold: true, color: index === 1 || index === 2 ? muted : "FFFFFF", size: 14, characterSpacing: 30, font: typography.fontFamily })] }),
+          ], index === 3 ? contentWidth() - tile * 3 : tile, { fill })),
+        })], [tile, tile, tile, contentWidth() - tile * 3]),
+        spacer(240),
+        ...leftHead(),
+        spacer(120),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "tape-ledger": {
+      return [
+        new Paragraph({ shading: { type: ShadingType.SOLID, fill: ink }, spacing: { after: 300 }, children: [new TextRun({ text: " ", size: 2 })] }),
+        ...leftHead(),
+        motifCoverParagraph(scene, theme, 400),
+        spacer(200),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "dial-review": {
+      const headWidth = contentWidth() - 3600;
+      return [
+        fixedTable([new TableRow({
+          cantSplit: true,
+          children: [
+            tableCell([...leftHead()], headWidth),
+            tableCell([spacer(300), motifCoverParagraph(scene, theme, 300, AlignmentType.CENTER)], 3600),
+          ],
+        })], [headWidth, 3600]),
+        spacer(200),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "proceedings-abstract": {
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [tableCell([
+          ...leftHead(),
+          new Paragraph({ spacing: { before: 160, after: 160 }, children: [new TextRun({ text: `Keywords · ${cover.companyName} · ${cover.metadata[0]?.value || ""}`, color: muted, size: 16, font: typography.fontFamily })] }),
+          motifCoverParagraph(scene, theme, 340),
+        ], contentWidth(), { margins: { top: 260, bottom: 260, left: 320, right: 320 }, borders: allBorders(primary, BorderStyle.SINGLE, 14) })],
+      })], [contentWidth()]),
+        spacer(220),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+    case "blueprint-spec": {
+      const white = "FFFFFF";
+      return [fixedTable([new TableRow({
+        cantSplit: true,
+        children: [tableCell([
+          new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: `SPEC · ${cover.metadata[0]?.value || "STD-01"}`, bold: true, color: white, size: 18, characterSpacing: 60, font: typography.fontFamily })] }),
+          logoParagraph,
+          coverKickerParagraph(kicker, theme, typography, `#${accent}`),
+          coverTitleParagraph(cover.policyLabel, theme, typography, 64, white),
+          coverCompanyParagraph(cover.companyName, theme, typography, white),
+          motifCoverParagraph(scene, theme, 330),
+          spacer(220),
+          ...cover.metadata.map((item) => new Paragraph({
+            spacing: { after: 60 },
             children: [
-              new TextRun({ text: "--------  ", color: accent, size: 14, font: typography.fontFamily }),
-              new TextRun({ text: "SUSTAINABILITY CHARTER", bold: true, color: primary, size: 18, characterSpacing: 70, font: typography.fontFamily }),
-              new TextRun({ text: "  --------", color: accent, size: 14, font: typography.fontFamily }),
+              new TextRun({ text: `${item.label.toUpperCase()}  `, bold: true, color: white, size: 15, font: typography.fontFamily }),
+              new TextRun({ text: item.value, color: white, size: 18, font: typography.fontFamily }),
+            ],
+          })),
+        ], contentWidth(), { fill: primary, margins: { top: 300, bottom: 300, left: 360, right: 360 } })],
+      })], [contentWidth()])];
+    }
+    case "docket-matrix":
+    default: {
+      const half = Math.floor(contentWidth() / 2);
+      return [
+        fixedTable([
+          new TableRow({
+            cantSplit: true,
+            children: [
+              tableCell([new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 200, after: 200 }, children: [new TextRun({ text: "F-01 · FINDING", bold: true, color: onPrimary, size: 20, font: typography.fontFamily })] })], half, { fill: primary }),
+              tableCell([new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 200, after: 200 }, children: [new TextRun({ text: "SRC · SOURCE", bold: true, color: muted, size: 20, font: typography.fontFamily })] })], contentWidth() - half, { fill: soft }),
             ],
           }),
-          new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 140 }, children: [new TextRun({ text: cover.policyLabel, bold: true, color: ink, size: 64, font: typography.headingFontFamily || typography.fontFamily })] }),
-          new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 760 }, children: [new TextRun({ text: cover.companyName, color: documentHex(theme.colors.muted), size: 26, font: typography.fontFamily })] }),
-          metadataTable(model, innerWidth, "colophon"),
-        ], innerWidth, {
-          margins: { top: 300, bottom: 300, left: 360, right: 360 },
-          borders: allBorders(primary, BorderStyle.DOUBLE, 8),
-        })],
-      }),
-    ], [innerWidth], { width: innerWidth, alignment: AlignmentType.CENTER }),
-  ];
+          new TableRow({
+            cantSplit: true,
+            children: [
+              tableCell([new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 200, after: 200 }, children: [new TextRun({ text: "F-02 · FINDING", bold: true, color: muted, size: 20, font: typography.fontFamily })] })], half, { fill: soft }),
+              tableCell([motifCoverParagraph(scene, theme, 300, AlignmentType.CENTER)], contentWidth() - half, { borders: allBorders(primary, BorderStyle.SINGLE, 12) }),
+            ],
+          }),
+        ], [half, contentWidth() - half]),
+        spacer(240),
+        ...leftHead(),
+        spacer(120),
+        metadataTable(model, contentWidth(), "strip"),
+      ];
+    }
+  }
+}
+
+function slipLine(label: string, value: string, theme: DocumentThemeDefinition, typography: Typography): Paragraph {
+  return new Paragraph({
+    spacing: { after: 60 },
+    children: [
+      new TextRun({ text: `${label} · `, bold: true, color: documentHex(theme.colors.muted), size: 16, font: typography.fontFamily }),
+      new TextRun({ text: value, color: documentHex(theme.colors.ink), size: 18, font: typography.fontFamily }),
+    ],
+  });
 }
 
 function metadataTable(model: DocumentRenderModel, width: number, mode: "strip" | "compact" | "colophon") {
@@ -326,6 +727,11 @@ function metadataTable(model: DocumentRenderModel, width: number, mode: "strip" 
 }
 
 function buildToc(model: DocumentRenderModel): DocBlock[] {
+  if (model.theme.collection === "professional") {
+    const variant = model.theme.layout.professionalVariant || "corporate";
+    const alignment = variant === "institutional" ? AlignmentType.CENTER : AlignmentType.LEFT;
+    return [new Paragraph({ text: "Contents", style: "PolicyHeading", alignment, spacing: { after: 360 } }), ...model.tocEntries.map(entry => tocParagraph(entry, model, "leaders"))];
+  }
   const entries = model.acknowledgement
     ? [...model.tocEntries, { id: "acknowledgement", index: model.tocEntries.length + 1, title: model.acknowledgement.title }]
     : model.tocEntries;
@@ -336,7 +742,7 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
 
   if (theme.layout.toc === "rail-index") {
     const rail = 2700;
-    const body = CONTENT_WIDTH - rail;
+    const body = contentWidth() - rail;
     return [fixedTable([new TableRow({ children: [
       tableCell([
         new Paragraph({ children: [new TextRun({ text: "DOCUMENT", color: onPrimary, size: 15, characterSpacing: 55, font: typography.fontFamily })] }),
@@ -346,21 +752,21 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
         new Paragraph({ children: [new TextRun({ text: `${String(entries.length).padStart(2, "0")} SECTIONS`, color: onPrimary, size: 15, characterSpacing: 45, font: typography.fontFamily })] }),
       ], rail, { fill: primary }),
       tableCell([
-        new Paragraph({ spacing: { after: 280 }, children: [new TextRun({ text: "Contents", bold: true, size: 38, color: documentHex(theme.colors.ink), font: typography.headingFontFamily || typography.fontFamily })] }),
+        new Paragraph({ spacing: { after: 280 }, children: [new TextRun({ text: "Contents", bold: true, size: 38, color: documentHex(theme.colors.primaryDark), font: typography.headingFontFamily || typography.fontFamily })] }),
         ...entries.map((entry) => tocParagraph(entry, model, "rail")),
       ], body),
     ] })], [rail, body])];
   }
 
   if (theme.layout.toc === "tile-index") {
-    const tileWidth = Math.floor((CONTENT_WIDTH - 180) / 2);
+    const tileWidth = Math.floor((contentWidth() - 180) / 2);
     const rows = chunk(entries, 2).map((pair) => new TableRow({
       cantSplit: true,
       children: [0, 1].map((slot) => {
         const entry = pair[slot];
         return entry ? tableCell([
           new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: String(entry.index).padStart(2, "0"), color: primary, size: 36, font: typography.headingFontFamily || typography.fontFamily })] }),
-          new Paragraph({ spacing: { after: 70 }, children: [new InternalHyperlink({ anchor: entry.id, children: [new TextRun({ text: entry.title, bold: true, color: documentHex(theme.colors.ink), size: 20, font: typography.fontFamily })] })] }),
+          new Paragraph({ spacing: { after: 70 }, children: [new InternalHyperlink({ anchor: entry.id, children: [new TextRun({ text: entry.title, bold: true, color: documentHex(theme.colors.primaryDark), size: 20, font: typography.fontFamily })] })] }),
           new Paragraph({ children: [new TextRun({ text: "SECTION", color: documentHex(theme.colors.muted), size: 13, characterSpacing: 35, font: typography.fontFamily })] }),
         ], tileWidth, { fill: documentHex(theme.colors.soft), margins: { top: 180, bottom: 180, left: 190, right: 190 } }) : tableCell([new Paragraph("")], tileWidth);
       }),
@@ -373,7 +779,7 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
   }
 
   if (theme.layout.toc === "editorial-index") {
-    const half = Math.floor((CONTENT_WIDTH - 240) / 2);
+    const half = Math.floor((contentWidth() - 240) / 2);
     const columns = [entries.filter((_, index) => index % 2 === 0), entries.filter((_, index) => index % 2 === 1)];
     return [
       new Paragraph({ border: { top: border(accent, 18) }, spacing: { after: 100 }, children: [new TextRun({ text: "INDEX", bold: true, color: accent, size: 15, characterSpacing: 60, font: typography.fontFamily })] }),
@@ -406,7 +812,7 @@ function tocParagraph(entry: { id: string; index: number; title: string }, model
       anchor: entry.id,
       children: [
         new TextRun({ text: `${String(entry.index).padStart(2, "0")}   `, bold: true, color: mode === "rail" ? documentHex(theme.colors.accent) : documentHex(theme.colors.primary), size: numberSize, font: typography.headingFontFamily || typography.fontFamily }),
-        new TextRun({ text: entry.title, color: documentHex(theme.colors.ink), size: 20, font: typography.fontFamily }),
+        new TextRun({ text: entry.title, color: documentHex(theme.colors.primaryDark), size: 20, font: typography.fontFamily }),
       ],
     })],
   });
@@ -415,9 +821,26 @@ function tocParagraph(entry: { id: string; index: number; title: string }, model
 function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme: DocumentThemeDefinition, typography: Typography, spacingScale = 1): DocBlock[] {
   const frame = theme.layout.pageFrame;
   const title = sectionTitle(section, typography, theme);
+  if (theme.collection === "professional") {
+    // Sample-based documents stay in one readable column; variants only tune
+    // typography and alignment.
+    return [title, ...content, spacer(Math.round(140 * spacingScale))];
+    const variant = theme.layout.professionalVariant || "corporate";
+    if (variant === "governance" && section.density !== "dense") {
+      const rail = 1100;
+      const body = contentWidth() - rail;
+      return [fixedTable([new TableRow({ children: [tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(section.index).padStart(2, "0"), color: documentHex(theme.colors.onPrimary), size: 46, font: typography.headingFontFamily || typography.fontFamily })] })], rail, { fill: documentHex(theme.colors.primary) }), tableCell([title, ...content], body, { margins: { top: 180, bottom: 210, left: 260, right: 180 } })] })], [rail, body]), spacer(Math.round(70 * spacingScale))];
+    }
+    if (variant === "editorial" && section.density !== "dense") {
+      const margin = 1450;
+      const body = contentWidth() - margin;
+      return [fixedTable([new TableRow({ children: [tableCell([new Paragraph({ children: [new TextRun({ text: String(section.index).padStart(2, "0"), color: documentHex(theme.colors.accent), size: 62, font: typography.headingFontFamily || typography.fontFamily })] })], margin), tableCell([title, ...content], body, { margins: { top: 0, bottom: 120, left: 120, right: 0 } })] })], [margin, body]), spacer(Math.round(100 * spacingScale))];
+    }
+    return [title, ...content, spacer(Math.round(180 * spacingScale))];
+  }
   if (frame === "numbered-rail" && section.density !== "dense") {
     const rail = 1100;
-    const body = CONTENT_WIDTH - rail;
+    const body = contentWidth() - rail;
     return [fixedTable([new TableRow({ children: [
       tableCell([
         new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(section.index).padStart(2, "0"), color: documentHex(theme.colors.onPrimary), size: 46, font: typography.headingFontFamily || typography.fontFamily })] }),
@@ -429,7 +852,7 @@ function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme:
   }
   if (frame === "editorial-margin" && section.density !== "dense") {
     const margin = 1550;
-    const body = CONTENT_WIDTH - margin;
+    const body = contentWidth() - margin;
     return [fixedTable([new TableRow({ children: [
       tableCell([
         new Paragraph({ children: [new TextRun({ text: String(section.index).padStart(2, "0"), color: documentHex(theme.colors.accent), size: 62, font: typography.headingFontFamily || typography.fontFamily })] }),
@@ -448,6 +871,10 @@ function sectionTitle(section: DocumentRenderSection, typography: Typography, th
   const onPrimary = documentHex(theme.colors.onPrimary);
   const children: ParagraphChild[] = [new Bookmark({ id: section.id, children: [] })];
   const number = String(section.index).padStart(2, "0");
+  if (theme.collection === "professional") {
+    children.push(new TextRun({ text: number + "   ", color: documentHex(theme.colors.muted), size: 20, font: typography.fontFamily }), new TextRun({ text: section.title, color: documentHex(theme.colors.primaryDark), bold: true, size: Math.round(typography.headingSize * 2), font: typography.headingFontFamily || typography.fontFamily }));
+    return new Paragraph({ style: "PolicyHeading", alignment: theme.layout.professionalVariant === "institutional" ? AlignmentType.CENTER : AlignmentType.LEFT, border: { bottom: border(documentHex(theme.colors.primary), 4) }, spacing: { before: 260, after: 180 }, children });
+  }
   if (layout === "formal-ordinal") {
     children.push(new TextRun({ text: `${section.title.toUpperCase()}  -  ${number}`, bold: true, color: primary, size: Math.round(typography.headingSize * 2), characterSpacing: 45, font: typography.headingFontFamily || typography.fontFamily }));
     return new Paragraph({ style: "PolicyHeading", alignment: AlignmentType.CENTER, border: { bottom: border(accent, 6) }, spacing: { before: 300, after: 180 }, children });
@@ -465,10 +892,11 @@ function sectionTitle(section: DocumentRenderSection, typography: Typography, th
 }
 
 function sectionContentWidth(section: DocumentRenderSection, theme: DocumentThemeDefinition) {
-  if (section.density === "dense") return CONTENT_WIDTH;
-  if (theme.layout.pageFrame === "numbered-rail") return CONTENT_WIDTH - 1100 - 440;
-  if (theme.layout.pageFrame === "editorial-margin") return CONTENT_WIDTH - 1550 - 100;
-  return CONTENT_WIDTH;
+  if (theme.collection === "professional") return contentWidth();
+  if (section.density === "dense") return contentWidth();
+  if (theme.layout.pageFrame === "numbered-rail") return contentWidth() - 1100 - 440;
+  if (theme.layout.pageFrame === "editorial-margin") return contentWidth() - 1550 - 100;
+  return contentWidth();
 }
 
 function renderSectionContent(section: DocumentRenderSection, model: DocumentRenderModel, policy: Policy, sdgImages: Map<number, Uint8Array>, availableWidth: number): DocBlock[] {
@@ -509,7 +937,7 @@ function renderQualitative(groups: { area: string; items: string[] }[], section:
   const cards = groups.map((group, index) => [
     new Paragraph({ spacing: { after: 90 }, children: [
       new TextRun({ text: `${String(index + 1).padStart(2, "0")}  `, bold: true, color: documentHex(model.theme.colors.primary), size: 18, font: model.typography.fontFamily }),
-      new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.ink), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
+      new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
     ] }),
     ...group.items.map((item) => listParagraph(item, "bullet", model.typography, model.theme)),
   ]);
@@ -596,7 +1024,7 @@ function targetBand(target: { area: string; target: string; baseline: string; de
   return fixedTable([new TableRow({ cantSplit: true, children: [
     tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.colors.primary), size: 30, font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft) }),
     tableCell([
-      new Paragraph({ spacing: { after: 55 }, children: [new TextRun({ text: target.area, bold: true, color: documentHex(model.theme.colors.primaryDark), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] }),
+      new Paragraph({ spacing: { after: 55 }, children: [new TextRun({ text: target.area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] }),
       new Paragraph({ children: [new TextRun({ text: target.target, size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] }),
     ], bodyWidth, { fill: documentHex(model.theme.colors.soft), borders: { left: border(documentHex(model.theme.colors.line), 5), right: border(documentHex(model.theme.colors.line), 5) } }),
     tableCell([
@@ -611,7 +1039,7 @@ function journalTarget(target: { area: string; target: string; baseline: string;
     border: { top: border(documentHex(model.theme.colors.line), 5) },
     spacing: { before: 90, after: 120 },
     children: [
-      new TextRun({ text: `${target.area}\n`, bold: true, color: documentHex(model.theme.colors.accent), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
+      new TextRun({ text: `${target.area}\n`, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
       new TextRun({ text: `${target.target}\n`, size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily }),
       new TextRun({ text: target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} - Due ${target.deadline || "-"}`, italics: true, color: documentHex(model.theme.colors.muted), size: 16, font: model.typography.fontFamily }),
     ],
@@ -623,7 +1051,7 @@ function numberedCard(index: number, text: string, model: DocumentRenderModel, f
   return [
     new Paragraph({ spacing: { after: 70 }, children: [
       new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.colors.primary), size: filled ? 30 : 20, font: model.typography.headingFontFamily || model.typography.fontFamily }),
-      new TextRun({ text: `  ${title}`, bold: true, color: documentHex(model.theme.colors.ink), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
+      new TextRun({ text: `  ${title}`, bold: true, color: documentHex(splitRole ? model.theme.colors.subheading : model.theme.colors.ink), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
     ] }),
     ...(splitRole && rest.length ? [new Paragraph({ children: [new TextRun({ text: rest.join(" "), size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] })] : []),
   ];
@@ -662,7 +1090,7 @@ function entryRow(number: string, text: string, width: number, theme: DocumentTh
 function dataTable(headers: string[], rows: string[][], widths: number[], theme: DocumentThemeDefinition) {
   const lightHeader = theme.layout.dataLayout === "compact-ledger" || theme.layout.dataLayout === "quiet-rules";
   const headerFill = lightHeader ? documentHex(theme.colors.soft) : documentHex(theme.colors.primary);
-  const headerColor = lightHeader ? documentHex(theme.colors.primaryDark) : documentHex(theme.colors.onPrimary);
+  const headerColor = lightHeader ? documentHex(theme.colors.subheading) : documentHex(theme.colors.onPrimary);
   const quiet = theme.layout.dataLayout === "quiet-rules";
   const borders = quiet ? {
     top: border(documentHex(theme.colors.accent), 7),
@@ -712,9 +1140,10 @@ function buildAcknowledgement(model: DocumentRenderModel): DocBlock[] {
   const statement = new Paragraph({ alignment: theme.layout.acknowledgement === "legal-form" ? AlignmentType.CENTER : AlignmentType.JUSTIFIED, spacing: { after: 260, line: Math.round(240 * typography.lineSpacing) }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
   const kicker = new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "ACKNOWLEDGEMENT - FINAL PAGE", bold: true, color: documentHex(theme.colors.primary), size: 15, characterSpacing: 50, font: typography.fontFamily })] });
 
+  if (theme.collection === "professional") return [title, statement, acknowledgementFields(model, contentWidth())];
   if (theme.layout.acknowledgement === "approval-block") {
     const rail = 1350;
-    const body = CONTENT_WIDTH - rail;
+    const body = contentWidth() - rail;
     const fields = acknowledgementFields(model, body - 520);
     return [fixedTable([new TableRow({ children: [
       tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "ACK", bold: true, color: documentHex(theme.colors.onPrimary), size: 36, characterSpacing: 40 })] })], rail, { fill: documentHex(theme.colors.primary), textDirection: TextDirection.BOTTOM_TO_TOP_LEFT_TO_RIGHT }),
@@ -722,11 +1151,11 @@ function buildAcknowledgement(model: DocumentRenderModel): DocBlock[] {
     ] })], [rail, body])];
   }
   if (theme.layout.acknowledgement === "legal-form") {
-    const innerWidth = CONTENT_WIDTH - 1240;
+    const innerWidth = contentWidth() - 1240;
     const fields = acknowledgementFields(model, innerWidth);
-    return [fixedTable([new TableRow({ children: [tableCell([kicker, title, statement, fields], CONTENT_WIDTH - 520, { borders: allBorders(documentHex(theme.colors.primary), BorderStyle.DOUBLE, 8), margins: { top: 320, bottom: 320, left: 360, right: 360 } })] })], [CONTENT_WIDTH - 520], { width: CONTENT_WIDTH - 520, alignment: AlignmentType.CENTER })];
+    return [fixedTable([new TableRow({ children: [tableCell([kicker, title, statement, fields], contentWidth() - 520, { borders: allBorders(documentHex(theme.colors.primary), BorderStyle.DOUBLE, 8), margins: { top: 320, bottom: 320, left: 360, right: 360 } })] })], [contentWidth() - 520], { width: contentWidth() - 520, alignment: AlignmentType.CENTER })];
   }
-  const fields = acknowledgementFields(model, CONTENT_WIDTH);
+  const fields = acknowledgementFields(model, contentWidth());
   if (theme.layout.acknowledgement === "signature-panel") {
     return [new Paragraph({ shading: { type: ShadingType.SOLID, color: documentHex(theme.colors.primary), fill: documentHex(theme.colors.primary) }, spacing: { after: 180 }, children: [new TextRun({ text: "FINAL COMMITMENT", bold: true, color: documentHex(theme.colors.onPrimary), size: 18, characterSpacing: 55 })] }), title, statement, fields];
   }
@@ -749,17 +1178,17 @@ function acknowledgementFields(model: DocumentRenderModel, availableWidth: numbe
 function buildHeader(model: DocumentRenderModel, logo: LogoImage, alignment: typeof AlignmentType[keyof typeof AlignmentType]) {
   const { theme, typography } = model;
   const layout = theme.layout.runningFurniture;
-  const compact = layout === "breadcrumb-bar";
   const children: ParagraphChild[] = [];
-  if (logo) {
-    const logoScale = theme.logoScale === "small" ? .72 : theme.logoScale === "large" ? 1.28 : 1;
+  const brand = getRunningHeaderBrand({ name: model.cover.companyName, companyLogo: model.cover.logo });
+  if (brand.kind === "logo" && logo) {
+    const logoScale = logoScaleFactor(theme.logoScale);
     children.push(new ImageRun({ data: logo.data, type: logo.type, transformation: { width: Math.round(72 * logoScale), height: Math.round(34 * logoScale) } }));
+  } else if (brand.kind === "name") {
+    children.push(new TextRun({ text: brand.text, bold: true, color: documentHex(theme.colors.muted), size: 14, characterSpacing: 20, font: typography.fontFamily }));
   }
-  children.push(new TextRun({ text: `${logo ? "   " : ""}${compact ? "POLICY / GOVERNANCE / CURRENT" : model.cover.companyName}`, bold: true, color: compact ? documentHex(theme.colors.onPrimary) : documentHex(theme.colors.muted), size: 14, characterSpacing: 28, font: typography.fontFamily }));
   return new Header({ children: [pageBackgroundParagraph(model), new Paragraph({
     alignment,
-    shading: compact ? { type: ShadingType.SOLID, color: documentHex(theme.colors.primary), fill: documentHex(theme.colors.primary) } : undefined,
-    border: compact ? undefined : { bottom: border(layout === "outer-folio" ? documentHex(theme.colors.accent) : documentHex(theme.colors.primary), layout === "edge-folio" ? 16 : 6) },
+    border: { bottom: border(layout === "outer-folio" ? documentHex(theme.colors.accent) : documentHex(theme.colors.line), 5) },
     spacing: { after: 60 },
     children,
   })] });
@@ -771,12 +1200,11 @@ function buildPageBackgroundHeader(model: DocumentRenderModel) {
 
 function buildFooter(model: DocumentRenderModel) {
   const { theme, typography } = model;
-  const compact = theme.layout.runningFurniture === "breadcrumb-bar";
-  const color = compact ? documentHex(theme.colors.onPrimary) : documentHex(theme.colors.muted);
+  const color = documentHex(theme.colors.muted);
+  const footerAlignment = theme.layout.professionalVariant === "institutional" ? AlignmentType.CENTER : AlignmentType.LEFT;
   return new Footer({ children: [new Paragraph({
-    alignment: theme.layout.runningFurniture === "centered-folio" ? AlignmentType.CENTER : AlignmentType.RIGHT,
-    shading: compact ? { type: ShadingType.SOLID, color: documentHex(theme.colors.primary), fill: documentHex(theme.colors.primary) } : undefined,
-    border: { top: border(theme.layout.runningFurniture === "outer-folio" ? documentHex(theme.colors.accent) : documentHex(theme.colors.line), compact ? 12 : 6) },
+    alignment: footerAlignment,
+    border: { top: border(documentHex(theme.colors.line), 5) },
     spacing: { before: 80 },
     children: [
       new TextRun({ text: `Effective ${model.footer.effectiveDate}   -   Revision ${model.footer.revision}   -   Page `, color, size: 14, italics: theme.layout.runningFurniture === "outer-folio", font: typography.fontFamily }),
@@ -862,18 +1290,6 @@ function densityScale(density: DocumentRenderModel["theme"]["density"]): number 
   return density === "compact" ? .82 : density === "spacious" ? 1.18 : 1;
 }
 
-function dossierMarkParagraph(onPrimary: string) {
-  return svgParagraph(`<svg xmlns="http://www.w3.org/2000/svg" width="88" height="18" viewBox="0 0 88 18"><g stroke="#${onPrimary}" stroke-width="2" stroke-linecap="round" opacity=".78"><path d="M2 3h24"/><path d="M2 9h16"/><path d="M2 15h30"/></g></svg>`, 88, 18, AlignmentType.LEFT, "Boardroom dossier mark");
-}
-
-function atlasOrbitParagraph(primary: string, accent: string) {
-  return svgParagraph(`<svg xmlns="http://www.w3.org/2000/svg" width="440" height="180" viewBox="0 0 440 180"><g fill="none" stroke="#${primary}" stroke-width="18" opacity=".9"><circle cx="360" cy="-12" r="118"/></g><circle cx="360" cy="-12" r="70" fill="none" stroke="#${accent}" stroke-width="3"/><rect x="42" y="118" width="56" height="56" fill="#${accent}"/></svg>`, 300, 125, AlignmentType.RIGHT, "Impact atlas orbit motif");
-}
-
-function charterBotanicalParagraph(accent: string) {
-  return svgParagraph(`<svg xmlns="http://www.w3.org/2000/svg" width="120" height="48" viewBox="0 0 120 48"><g fill="none" stroke="#${accent}" stroke-width="1.2"><path d="M60 44V8"/><path d="M60 18C48 18 39 12 36 3C48 3 57 8 60 18Z"/><path d="M60 27C72 27 81 21 84 12C72 12 63 17 60 27Z"/><path d="M60 36C49 36 42 31 39 24C49 24 57 28 60 36Z"/></g></svg>`, 90, 36, AlignmentType.CENTER, "Sustainability charter botanical motif");
-}
-
 function svgParagraph(svg: string, width: number, height: number, alignment: typeof AlignmentType[keyof typeof AlignmentType], description: string) {
   return new Paragraph({
     alignment,
@@ -886,11 +1302,6 @@ function svgParagraph(svg: string, width: number, height: number, alignment: typ
       altText: { title: description, description, name: description },
     })],
   });
-}
-
-function journalContourParagraph(accent: string) {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="420" height="245" viewBox="0 0 420 245"><g fill="none" stroke="#${accent}" stroke-width="1.2"><ellipse cx="230" cy="122" rx="164" ry="104"/><ellipse cx="230" cy="122" rx="140" ry="83"/><ellipse cx="230" cy="122" rx="111" ry="61"/><ellipse cx="230" cy="122" rx="77" ry="36"/><ellipse cx="230" cy="122" rx="42" ry="18"/></g></svg>`;
-  return svgParagraph(svg, 300, 175, AlignmentType.RIGHT, "Field journal contour motif");
 }
 
 function spacer(before: number) {

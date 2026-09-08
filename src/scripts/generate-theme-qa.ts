@@ -39,7 +39,7 @@ async function main() {
       label: "Custom gradient",
       policy: {
         ...makeSamplePolicy(),
-        documentTheme: "sustainability-report",
+        documentTheme: "sustainability-charter",
         documentThemeOverrides: {
           schemaVersion: 1,
           customThemeName: "Custom gradient",
@@ -55,7 +55,7 @@ async function main() {
       label: "Feature image cover",
       policy: {
         ...makeSamplePolicy(),
-        documentTheme: "editorial-report",
+        documentTheme: "people-charter",
         featureImage: {
           dataUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
           mimeType: "image/png",

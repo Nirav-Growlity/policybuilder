@@ -14,6 +14,7 @@ export interface Company {
   country?: string;
   websiteLink?: string;
   companyLogo?: string;
+  logoPalette?: LogoColorPalette;
   reportingPeriod?: "FY" | "CY";
   site?: string;
   sites?: Site[];
@@ -99,21 +100,40 @@ export type DocumentLayoutId =
   | "data"
   | "technical";
 
-export type DocumentThemeId =
-  | "plain-standard" | "modern-standard" | "accessible-standard"
-  | "executive-brief" | "board-paper" | "leadership-memo"
+export type CanonicalDocumentTemplateId =
+  | "standard-pack"
+  | "executive-brief"
+  | "controlled-manual"
+  | "governance-register"
+  | "operations-guide"
+  | "sustainability-charter"
+  | "people-charter"
+  | "metrics-ledger";
+
+/** Hidden aliases retained so saved policies can migrate without data loss. */
+export type DocumentTemplateAliasId =
+  | "corporate-standard-v1" | "executive-editorial-v1" | "governance-manual-v1"
+  | "modern-minimal-v1" | "sustainability-report-v1" | "institutional-classic-v1"
+  | "plain-standard" | "modern-standard" | "accessible-standard" | "monochrome-grid"
+  | "board-paper" | "leadership-memo"
   | "governance-manual" | "compliance-policy" | "audit-dossier"
   | "public-sector-standard" | "institutional-report" | "legal-register"
   | "editorial-report" | "magazine-policy" | "field-report"
-  | "sustainability-report" | "sdg-impact" | "community-brief"
-  | "kpi-report" | "metrics-ledger" | "performance-review"
-  | "research-paper" | "technical-standard" | "evidence-review";
+  | "sustainability-report" | "outcome-impact" | "community-brief"
+  | "kpi-report" | "performance-review"
+  | "research-paper" | "technical-standard" | "evidence-review"
+  | "evergreen-heritage" | "executive-navy" | "modern-teal" | "earth-editorial" | "sdg-impact";
 
-export type LegacyDocumentThemeId =
-  | "evergreen-heritage"
-  | "executive-navy"
-  | "modern-teal"
-  | "earth-editorial";
+/**
+ * Persisted template identifiers remain accepted at the type boundary while
+ * the visible catalog exposes only CanonicalDocumentTemplateId values.
+ */
+export type DocumentTemplateId = CanonicalDocumentTemplateId | DocumentTemplateAliasId;
+
+/** Deprecated alias: presentation was previously called DocumentTheme. */
+export type DocumentThemeId = DocumentTemplateId | DocumentTemplateAliasId;
+
+export type LegacyDocumentThemeId = DocumentTemplateAliasId;
 
 export type StandardSectionKind =
   | "preface" | "declaration" | "scope" | "definitions"
@@ -138,6 +158,7 @@ export interface PolicySection {
 
 export type SdgDisplayMode = "names" | "tiles";
 export type LogoPosition = "left" | "center" | "right";
+export type BrandColorSource = "logo" | "template";
 export type DocumentTypography = {
   fontFamily: string;
   headingFontFamily?: string;
@@ -150,6 +171,7 @@ export type DocumentTypography = {
 export type DocumentThemePalette = {
   primary: string;
   primaryDark: string;
+  subheading: string;
   soft: string;
   paper: string;
   ink: string;
@@ -158,6 +180,9 @@ export type DocumentThemePalette = {
   accent: string;
   onPrimary: string;
 };
+
+/** Persisted colors extracted from the uploaded company logo. */
+export type LogoColorPalette = Pick<DocumentThemePalette, "primary" | "primaryDark" | "soft" | "accent" | "onPrimary">;
 
 export type ThemeBackground =
   | { kind: "solid"; color: string }
@@ -169,9 +194,13 @@ export type ThemeBackground =
     };
 
 export type ThemeDensity = "compact" | "balanced" | "spacious";
-export type LogoScale = "small" | "medium" | "large";
+/** Logo size as a percentage of the existing medium size; legacy labels remain readable. */
+export type LogoScale = number | "small" | "medium" | "large";
+
+export type PageBorder = { enabled: boolean; widthPt: number; insetMm: number; color?: string; scope: "all" | "cover" };
 
 export type DocumentThemeOverrides = {
+  pageBorder?: PageBorder;
   schemaVersion: 1;
   customThemeName?: string;
   colors?: Partial<DocumentThemePalette>;
@@ -180,11 +209,33 @@ export type DocumentThemeOverrides = {
   logoScale?: LogoScale;
 };
 
+/** Branding overrides kept separately from visual-template composition. */
+export type TemplateBrandOverrides = DocumentThemeOverrides;
+
+export type TemplateComposition = {
+  coverScene: string;
+  contentsScene: string;
+  pageZones: string;
+  sectionHeading: string;
+  narrativeTreatment: string;
+  listTreatment: string;
+  targetTreatment: string;
+  tableTreatment: string;
+  runningFurniture: string;
+  approvalTreatment: string;
+  controlTreatment: string;
+  imageSlots: readonly ("cover" | "section")[];
+  fallbackArtwork: string;
+  densityRule: ThemeDensity;
+  overflowRule: string;
+};
+
 export type SavedDocumentTheme = {
   schemaVersion: 1;
   id: string;
   name: string;
   baseThemeId: DocumentThemeId;
+  baseTemplateId?: DocumentTemplateId;
   overrides: DocumentThemeOverrides;
   typography: DocumentTypography;
   visualStyle: VisualStyle;
@@ -238,8 +289,12 @@ export interface ImportedPolicyContext {
 export interface Policy {
   policyType: PolicyType;
   presentationTemplate?: PresentationTemplate;
+  documentTemplate?: DocumentTemplateId;
   documentTheme?: DocumentThemeId;
   documentThemeOverrides?: DocumentThemeOverrides;
+  templateBrandOverrides?: TemplateBrandOverrides;
+  /** Logo is the default brand source; template keeps the selected template palette. */
+  brandColorSource?: BrandColorSource;
   visualStyle?: VisualStyle;
   sections?: PolicySection[];
   showTableOfContents?: boolean;

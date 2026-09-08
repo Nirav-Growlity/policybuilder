@@ -2,12 +2,13 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useBuilder, getStepOrder } from "@/lib/store";
 import { getPolicyProfile, getPolicySteps } from "@/lib/constants";
 import { Icon } from "@/components/icons";
-import { Leaf, ArrowLeft, Sparkles, FileText, RotateCcw, Users, BadgeIndianRupee } from "lucide-react";
+import { Leaf, ArrowLeft, Sparkles, RotateCcw, Users, BadgeIndianRupee } from "lucide-react";
 import { clsx } from "clsx";
+import { DesignInspector } from "@/components/builder/design-inspector";
+import { usePolicyDownload } from "@/components/builder/dock-sections";
 
 export function BuilderShell({
   children,
@@ -19,7 +20,7 @@ export function BuilderShell({
   showSidebar?: boolean;
 }) {
   const { step, setStep, policy, reset, loadSample } = useBuilder();
-  const pathname = usePathname();
+
   const policyMeta = getPolicyProfile(policy.policyType);
   const PolicyIcon = policyMeta.icon === "Users" ? Users : policyMeta.icon === "BadgeIndianRupee" ? BadgeIndianRupee : Leaf;
 
@@ -30,15 +31,44 @@ export function BuilderShell({
 
   const currentStep = visibleSteps[currentIndex];
   const contentRef = React.useRef<HTMLDivElement>(null);
-
+  const [inspectorOpen, setInspectorOpen] = React.useState(true);
+  const [workflowOpen, setWorkflowOpen] = React.useState(false);
+  const workflowPanel = React.useRef<HTMLElement>(null);
+  const closeInspector = React.useCallback(() => setInspectorOpen(false), [setInspectorOpen]);
+  const { download, exporting, pdfReady } = usePolicyDownload();
+  React.useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "b") { event.preventDefault(); setInspectorOpen(value => !value); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+  React.useEffect(() => {
+    const mobile = window.matchMedia("(max-width:1199px)").matches;
+    const previous = document.activeElement as HTMLElement | null;
+    if (!mobile || !workflowOpen) return;
+    workflowPanel.current?.focus();
+    const key = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); setWorkflowOpen(false); return; }
+      if (event.key !== "Tab") return;
+      const elements = Array.from(workflowPanel.current?.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],[tabindex="0"]') || []).filter(el => el.getClientRects().length);
+      const first = elements[0];
+      const last = elements.at(-1);
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === workflowPanel.current)) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener("keydown", key);
+    return () => { document.removeEventListener("keydown", key); previous?.focus(); };
+  }, [workflowOpen]);
   React.useLayoutEffect(() => {
     contentRef.current?.scrollTo(0, 0);
   }, [step]);
 
   return (
     <div className="flex h-screen overflow-hidden bg-[var(--color-cream)]">
+      {showSidebar && workflowOpen && <button type="button" aria-label="Close workflow navigation" onClick={() => setWorkflowOpen(false)} className="fixed inset-0 z-30 bg-black/25 min-[1200px]:hidden" />}
       {showSidebar && (
-        <aside className="w-[272px] flex-shrink-0 flex flex-col border-r border-[var(--color-line)] bg-[var(--color-paper)]">
+        <aside ref={workflowPanel} tabIndex={-1} id="builder-workflow" className={`flex w-[272px] flex-shrink-0 flex-col border-r border-[var(--color-line)] bg-[var(--color-paper)] outline-none max-[1199px]:fixed max-[1199px]:inset-y-0 max-[1199px]:left-0 max-[1199px]:z-40 max-[1199px]:shadow-2xl ${workflowOpen ? "max-[1199px]:translate-x-0" : "max-[1199px]:-translate-x-full"} transition-transform duration-200 motion-reduce:transition-none`}>
           {/* Brand */}
           <div className="px-5 py-5 border-b border-[var(--color-line)]">
             <Link href="/" className="flex items-center gap-2.5 group">
@@ -168,7 +198,7 @@ export function BuilderShell({
 
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* Top bar */}
-        <header className="px-7 py-4 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-md flex items-center justify-between gap-4">
+        <header className="px-7 py-4 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-md flex flex-wrap items-center justify-between gap-4">
           <div className="min-w-0">
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)] font-semibold">
               <Link href="/" className="hover:text-[var(--color-ink)] inline-flex items-center gap-1">
@@ -184,11 +214,18 @@ export function BuilderShell({
               Step {currentIndex + 1} of {visibleSteps.length} — {currentStep?.desc}
             </p>
           </div>
-          <div className="flex items-center gap-2 flex-shrink-0">{topActions}</div>
+          <div className="flex flex-wrap items-center gap-2">
+            {topActions}
+            {step === "export" && <div className="flex gap-2"><button type="button" disabled={!pdfReady || !!exporting} onClick={() => download("pdf")} className="rounded-lg bg-[var(--color-forest)] px-4 py-2.5 text-[13px] font-semibold text-white disabled:opacity-40">{exporting === "pdf" ? "Downloading…" : "Download PDF"}</button><button type="button" disabled={!!exporting} onClick={() => download("docx")} className="rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px]">Word</button></div>}
+            {showSidebar && <div className="flex items-center gap-2"><button type="button" aria-expanded={workflowOpen} aria-controls="builder-workflow" onClick={() => setWorkflowOpen(value => !value)} className="rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px] min-[1200px]:hidden">{workflowOpen ? "Hide workflow" : "Workflow"}</button><button type="button" aria-expanded={inspectorOpen} aria-controls="design-inspector" onClick={() => setInspectorOpen(value => !value)} className="rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px]">{inspectorOpen ? "Hide controls" : "Design controls"}</button></div>}
+
+          </div>
         </header>
 
         <div ref={contentRef} className="flex-1 overflow-y-auto scrollbar-thin">{children}</div>
       </main>
+
+      {showSidebar && <DesignInspector open={inspectorOpen} onClose={closeInspector} />}
     </div>
   );
 }

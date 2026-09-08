@@ -51,7 +51,20 @@ test("malformed persisted themes are ignored", () => {
 
 test("legacy saved base IDs migrate while preserving the saved overrides", () => {
   const current = createSavedDocumentTheme(initialPolicy(), "Legacy green");
-  const migrated = normalizeSavedDocumentTheme({ ...current, baseThemeId: "evergreen-heritage" });
-  assert.equal(migrated?.baseThemeId, "governance-manual");
+  const migrated = normalizeSavedDocumentTheme({ ...current, baseTemplateId: undefined, baseThemeId: "evergreen-heritage" });
+  assert.equal(migrated?.baseThemeId, "controlled-manual");
+  assert.equal(migrated?.baseTemplateId, "controlled-manual");
   assert.deepEqual(migrated?.overrides, current.overrides);
+});
+
+test("saved custom themes migrate into My Templates without losing overrides", () => {
+  const policy = initialPolicy();
+  policy.documentThemeOverrides = { schemaVersion: 1, colors: { primary: "#112233" }, density: "spacious" };
+  const saved = createSavedDocumentTheme(policy, "My custom");
+  assert.equal(saved.baseTemplateId, saved.baseThemeId);
+  const patch = getSavedThemePatch(saved);
+  assert.equal(patch.documentTemplate, saved.baseTemplateId);
+  assert.equal(patch.templateBrandOverrides?.colors?.primary, "#112233");
+  const aliased = normalizeSavedDocumentTheme({ ...saved, baseThemeId: "sdg-impact", baseTemplateId: undefined });
+  assert.equal(aliased?.baseTemplateId, "sustainability-charter");
 });

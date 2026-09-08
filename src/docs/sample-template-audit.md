@@ -1,0 +1,16 @@
+# Sample based visual template audit
+
+The visual catalog is distilled from the policy documents already stored in this project. The source files are used only to identify layout patterns; their company names, logos, wording, dates, targets, and signatures are never copied into generated policies.
+
+| Catalog design | Representative project samples | Distinguishing layout language |
+| --- | --- | --- |
+| Quiet Aptos Policy | `Hetvi- Policies/CTX/1. Environmental Policy.docx`; `Hetvi- Policies/Naxpar/1. Environmental Policy.docx`; `Hetvi- Policies/Yash Speciality/Environmental Policy YASH-ENV-001, R01.docx` | White opening page, Aptos or Segoe UI body, restrained title block, plain numbered headings, small metadata/footer treatment |
+| Controlled Approval Sheet | `Hetvi- Policies/Yash Speciality/Ethics Policy YASH-PS-3.2, R02.docx`; `Hetvi- Policies/Yash Speciality/Supply Chain Policy YASH-PU-001, R02.docx` | Visible document-control fields, approval and revision information, compact rail index, strong top rule |
+| Table Register | `Kenal - EcoVadis Policies/Quality Rubbers/1. Environmental Policy.docx`; `Kenal - EcoVadis Policies/Prestige Promotion/Labour_Human_Rights_Policy (3).docx`; `Kenal - EcoVadis Policies/20 Microns/20ML-HO-SAS-POLICY-001 ESG - POLICY MANUAL.docx` | Arial-led body, repeated formal tables, dense evidence pages, column rules, audit-friendly headings |
+| Framework Map | `KUSH/Anthea Group/Responsible Business Conduct Framework.docx`; `KUSH/Anthea Group/Responsible Workforce Management Framework.docx`; `KUSH/Anthea Group/Sustainable Supply Chain Framework.docx` | Framework and responsibility structure, connected hierarchy, section numbering, formal review record |
+| Compact Operating Standard | `KUSH/MEWBURN/Environmental Policy 2026.docx`; `KUSH/Shilpa Medicare Ltd/1. Environmental_Responsibility_Policy.docx`; `Hetvi- Policies/Renewsys/21 REN IMS Green Policy.docx` | Compact title strip, small body measure, practical section rhythm, minimal running furniture |
+| Image Led Charter | `Kenal - EcoVadis Policies/Ganges/Environmental Policy.docx`; `Kenal - EcoVadis Policies/Ganges/Social Policy.docx`; `Kenal - EcoVadis Policies/KBL Cosmetic dba Arminak Solution/Environmental Policy 2026.docx` | Warm editorial typography, image or illustration opening, narrative commitments, spacious section treatment |
+| Heritage Crest Policy | `Kenal - EcoVadis Policies/Sri All India/1. Environmental Policy.docx`; `Kenal - EcoVadis Policies/Sri All India/2. Labor Policy.docx`; `Kenal - EcoVadis Policies/Sri All India/3. Ethics Policy.docx` | Centered serif hierarchy, crest-like identity area, generous margins, formal people-facing tone |
+| IMS Operating Tabs | `Hetvi- Policies/Renewsys/18 REN IMS Corporate Governance and Ethics Policy.docx`; `Hetvi- Policies/Renewsys/17 REN IMS Workplace Rights Policy.docx`; `Hetvi- Policies/Renewsys/REN IMS Green Supply Chain Policy.docx` | Small Times-style body, tabbed control cues, narrow margins, dense traceability and review tables |
+
+The implementation keeps the existing render model, page geometry, content density calculation, data treatment, editing controls, and preview/PDF/DOCX interfaces. Only the visual catalog metadata, visual recipes, palettes, typography defaults, and cover artwork are replaced.

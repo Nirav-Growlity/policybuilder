@@ -12,8 +12,10 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
   const profile = getPolicyProfile(policyType);
   return normalizePolicyStructure({
   policyType,
+  documentTemplate: DEFAULT_DOCUMENT_THEME_ID,
   documentTheme: DEFAULT_DOCUMENT_THEME_ID,
   visualStyle: "corporate",
+  brandColorSource: "logo",
   showTableOfContents: true,
   showAcknowledgement: true,
   sdgDisplay: "tiles",
@@ -24,6 +26,7 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
     country: "",
     websiteLink: "",
     companyLogo: "",
+    logoPalette: undefined,
     reportingPeriod: "FY",
     site: "",
     sites: [],
@@ -156,7 +159,8 @@ export function makeSamplePolicy(): Policy {
   return {
     policyType: "environmental",
     presentationTemplate: "comprehensive",
-    documentTheme: "sustainability-report",
+    documentTemplate: "sustainability-charter",
+    documentTheme: "sustainability-charter",
     visualStyle: "modern",
     company: {
       name: "Acme Specialty Chemicals Pvt. Ltd.",
@@ -276,7 +280,8 @@ export function makeTemplatePolicy(): Policy {
   return {
     policyType: "environmental",
     presentationTemplate: "comprehensive",
-    documentTheme: "sustainability-report",
+    documentTemplate: "sustainability-charter",
+    documentTheme: "sustainability-charter",
     visualStyle: "modern",
     company: {
       name: "[Company Name]",

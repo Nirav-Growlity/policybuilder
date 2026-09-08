@@ -30,11 +30,13 @@ export function createSavedDocumentTheme(
 ): SavedDocumentTheme {
   const normalizedName = name.trim().slice(0, 60);
   const now = new Date().toISOString();
+  const baseId = getPolicyDocumentTheme(policy).id;
   return {
     schemaVersion: THEME_LIBRARY_VERSION,
     id: existing?.id || crypto.randomUUID(),
     name: normalizedName,
-    baseThemeId: getPolicyDocumentTheme(policy).id,
+    baseThemeId: baseId,
+    baseTemplateId: baseId,
     overrides: getFullThemeOverrides(policy, normalizedName),
     typography: { ...getPolicyDocumentTheme(policy).defaults.typography, ...policy.typography },
     visualStyle: policy.visualStyle || getPolicyDocumentTheme(policy).defaults.visualStyle,
@@ -45,14 +47,22 @@ export function createSavedDocumentTheme(
   };
 }
 
+/** My Templates: saved custom themes migrated without losing overrides. */
+export const createSavedDocumentTemplate = createSavedDocumentTheme;
+export const getSavedTemplatePatch = (theme: SavedDocumentTheme): Partial<Policy> => getSavedThemePatch(theme);
+
 export function getSavedThemePatch(theme: SavedDocumentTheme): Partial<Policy> {
+  const baseId = upgradeDocumentThemeId(theme.baseTemplateId ?? theme.baseThemeId);
+  const overrides = {
+    ...structuredClone(theme.overrides),
+    schemaVersion: 1 as const,
+    customThemeName: theme.name,
+  };
   return {
-    documentTheme: theme.baseThemeId,
-    documentThemeOverrides: {
-      ...structuredClone(theme.overrides),
-      schemaVersion: 1,
-      customThemeName: theme.name,
-    },
+    documentTemplate: baseId,
+    documentTheme: baseId,
+    documentThemeOverrides: overrides,
+    templateBrandOverrides: overrides,
     typography: { ...theme.typography },
     visualStyle: theme.visualStyle,
     logoPosition: theme.logoPosition,
@@ -84,10 +94,11 @@ export function normalizeSavedDocumentTheme(value: unknown): SavedDocumentTheme 
   const raw = value as Partial<SavedDocumentTheme>;
   if (raw.schemaVersion !== 1 || typeof raw.id !== "string" || typeof raw.name !== "string") return null;
   if (!isSavedThemeNameAvailable([], raw.name)) return null;
-  const rawBaseThemeId = raw.baseThemeId as unknown as string | undefined;
+  const rawBaseThemeId = (raw.baseTemplateId ?? raw.baseThemeId) as unknown as string | undefined;
   const validBaseIds = new Set<string>([
     ...DOCUMENT_THEMES.map((theme) => theme.id),
     ...Object.keys(LEGACY_DOCUMENT_THEME_UPGRADES),
+    "sdg-impact",
   ]);
   if (!rawBaseThemeId || !validBaseIds.has(rawBaseThemeId)) return null;
   const baseThemeId = upgradeDocumentThemeId(rawBaseThemeId);
@@ -101,6 +112,7 @@ export function normalizeSavedDocumentTheme(value: unknown): SavedDocumentTheme 
     id: raw.id,
     name: raw.name.trim(),
     baseThemeId,
+    baseTemplateId: baseThemeId,
     overrides: normalizeDocumentThemeOverrides(raw.overrides),
     typography,
     visualStyle: raw.visualStyle,

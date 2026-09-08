@@ -6,11 +6,45 @@ import { INDUSTRY_SECTORS, INDUSTRY_SUBSECTORS } from "@/lib/constants";
 import { Panel, Badge } from "@/components/ui/panel";
 import { Combobox, Field, Input } from "@/components/ui/input";
 import { getCompanySites } from "@/lib/types";
+import { extractLogoPalette } from "@/lib/logo-palette";
 import { Building2, MapPin, Plus, Trash2, Upload } from "lucide-react";
 
 export function CompanyInfoForm() {
   const { policy, updatePolicy } = useBuilder();
   const co = policy.company;
+  const sampledLogoRef = React.useRef<string>("");
+  const [logoSampleAttempt, setLogoSampleAttempt] = React.useState(0);
+  const [logoSampling, setLogoSampling] = React.useState<"idle" | "sampling" | "ready" | "unsupported">("idle");
+
+  React.useEffect(() => {
+    const logo = co.companyLogo;
+    if (!logo) return;
+    if (co.logoPalette) {
+      sampledLogoRef.current = logo;
+      return;
+    }
+    if (sampledLogoRef.current === logo) return;
+
+    sampledLogoRef.current = logo;
+    let active = true;
+    void Promise.resolve().then(() => {
+      if (active) setLogoSampling("sampling");
+      return extractLogoPalette(logo);
+    }).then((logoPalette) => {
+      if (!active) return;
+      if (!logoPalette) {
+        setLogoSampling("unsupported");
+        return;
+      }
+      setLogoSampling("ready");
+      updatePolicy((p) => p.company.companyLogo === logo ? { company: { ...p.company, logoPalette } } : undefined);
+    }).catch(() => {
+      if (active) setLogoSampling("unsupported");
+    });
+    return () => {
+      active = false;
+    };
+  }, [co.companyLogo, co.logoPalette, logoSampleAttempt, updatePolicy]);
 
   return (
     <Panel
@@ -78,7 +112,8 @@ export function CompanyInfoForm() {
           </div>
         </Field>
         <Field label="Company logo">
-          <div className="flex items-center gap-3 h-10">
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-3 h-10">
             {co.companyLogo ? (
               <img src={co.companyLogo} alt="Company logo" className="h-9 w-14 object-contain rounded border border-[var(--color-line)] bg-white" />
             ) : null}
@@ -92,12 +127,29 @@ export function CompanyInfoForm() {
                   const file = e.target.files?.[0];
                   if (!file) return;
                   const reader = new FileReader();
-                  reader.onload = () => updatePolicy((p) => ({ company: { ...p.company, companyLogo: String(reader.result) } }));
+                  reader.onload = () => {
+                    const companyLogo = String(reader.result);
+                    // Store the logo immediately; color extraction is best-effort
+                    // and must never make the upload appear to fail.
+                    sampledLogoRef.current = "";
+                    updatePolicy((p) => ({ company: { ...p.company, companyLogo, logoPalette: undefined } }));
+                    setLogoSampling("sampling");
+                  };
+                  reader.onerror = () => setLogoSampling("unsupported");
                   reader.readAsDataURL(file);
+                  e.currentTarget.value = "";
                 }}
               />
             </label>
-            {co.companyLogo ? <button type="button" onClick={() => updatePolicy((p) => ({ company: { ...p.company, companyLogo: "" } }))} className="text-[11px] text-red-600 cursor-pointer">Remove</button> : null}
+            {co.companyLogo ? <button type="button" onClick={() => updatePolicy((p) => ({ company: { ...p.company, companyLogo: "", logoPalette: undefined } }))} className="text-[11px] text-red-600 cursor-pointer">Remove</button> : null}
+            </div>
+            {co.companyLogo && logoSampling === "sampling" ? <p className="text-[11px] text-[var(--color-muted)]">Reading logo colors…</p> : null}
+            {co.companyLogo && logoSampling === "ready" ? <p className="text-[11px] text-[var(--color-forest)]">Logo colors detected and ready for the document theme.</p> : null}
+            {co.companyLogo && logoSampling === "unsupported" ? (
+              <p className="text-[11px] leading-relaxed text-amber-800">
+                The logo is saved, but its colors could not be read. <button type="button" className="font-semibold underline cursor-pointer" onClick={() => { sampledLogoRef.current = ""; setLogoSampleAttempt((attempt) => attempt + 1); }}>Try again</button>
+              </p>
+            ) : null}
           </div>
         </Field>
       </div>

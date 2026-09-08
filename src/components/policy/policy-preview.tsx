@@ -1,7 +1,11 @@
-import type { CSSProperties } from "react";
+import { coverDesign } from "@/lib/cover-designs";
+import type { CSSProperties, ReactNode } from "react";
 import { documentThemeCssVariables } from "@/lib/document-themes";
+import { fontFaceCssFor } from "@/lib/document-fonts";
+import { CoverArt, type CoverMotifScene } from "@/components/policy/cover-art";
 import {
   buildDocumentRenderModel,
+  getRunningHeaderBrand,
   type DocumentRenderModel,
   type DocumentRenderSection,
 } from "@/lib/document-render-model";
@@ -13,31 +17,39 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
   const style = {
     ...documentThemeCssVariables(theme),
     background: "var(--doc-page-background)",
-    "--policy-font": typography.fontFamily,
-    "--policy-heading-font": typography.headingFontFamily || typography.fontFamily,
-    "--policy-heading-size": `${typography.headingSize}px`,
-    "--policy-subheading-size": `${typography.subheadingSize}px`,
-    "--policy-paragraph-size": `${typography.paragraphSize}px`,
+    "--policy-font": JSON.stringify(typography.fontFamily),
+    "--policy-heading-font": JSON.stringify(typography.headingFontFamily || typography.fontFamily),
+    "--policy-heading-size": `${typography.headingSize}pt`,
+    "--policy-subheading-size": `${typography.subheadingSize}pt`,
+    "--policy-paragraph-size": `${typography.paragraphSize}pt`,
     "--policy-line-height": String(typography.lineSpacing),
   } as CSSProperties;
 
   return (
     <article
       style={style}
+      data-collection={theme.collection}
       data-document-theme={theme.id}
+      data-document-template={theme.id}
       data-layout-family={theme.layout.layoutId}
       data-cover-layout={theme.layout.cover}
+      data-cover-scene={theme.layout.cover}
       data-toc-layout={theme.layout.toc}
+      data-contents-scene={theme.layout.toc}
       data-page-frame={theme.layout.pageFrame}
+      data-page-zones={theme.layout.pageFrame}
       data-data-layout={theme.layout.dataLayout}
+      data-control-treatment={theme.layout.controlTreatment}
+      data-professional-variant={theme.layout.professionalVariant || ""}
       data-theme-density={theme.density}
+      data-composition-fingerprint={theme.compositionFingerprint}
       className="policy-preview-document mx-auto max-w-4xl overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)] shadow-[0_18px_50px_rgba(42,50,42,.14)]"
     >
-      <style>{previewStyles}</style>
+      <style>{`${fontFaceCssFor([typography.fontFamily, typography.headingFontFamily || ""])}${previewStyles}`}</style>
       <PolicyCover model={model} policy={policy} />
       {policy.showTableOfContents && <PolicyToc model={model} />}
       <RunningHeader model={model} policy={policy} />
-      <main className="policy-main">
+      <main className={`policy-main ${theme.collection === "professional" ? `professional-main professional-main-${theme.layout.professionalVariant || "corporate"}` : ""}`}>
         {model.featureImage?.placement === "section" && <FeatureImage image={model.featureImage} className="policy-section-feature" />}
         {model.sections.map((section) => (
           <PolicySection key={section.id} section={section} model={model} policy={policy} />
@@ -50,88 +62,395 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
 }
 
 function PolicyCover({ model, policy }: { model: DocumentRenderModel; policy: Policy }) {
-  const { cover, theme } = model;
+  const { theme } = model;
+  const brand = getRunningHeaderBrand(policy.company);
+  const cover = { ...model.cover, companyName: brand.kind === "logo" ? "" : model.cover.companyName };
+  const scene = theme.layout.cover;
   const logoAlign = policy.logoPosition === "right" ? "flex-end" : policy.logoPosition === "center" ? "center" : "flex-start";
-  const logo = cover.logo ? <img src={cover.logo} alt={`${cover.companyName} logo`} className="policy-cover-logo max-w-full object-contain" /> : null;
+  const logo = brand.kind === "logo" ? <img src={brand.source} alt="Company logo" className="policy-cover-logo object-contain" /> : null;
   const feature = model.featureImage?.placement === "cover" ? <FeatureImage image={model.featureImage} className={`policy-cover-feature feature-${theme.layout.imageTreatment}`} /> : null;
+  const motifColors = {
+    primary: theme.colors.primary,
+    accent: theme.colors.accent,
+    soft: theme.colors.soft,
+    line: theme.colors.line,
+    paper: theme.colors.paper,
+    ink: theme.colors.ink,
+  };
+  const art = <CoverArt scene={scene as CoverMotifScene} colors={motifColors} className="cover-motif" />;
+  const kicker = "";
+  const meta = cover.metadata;
 
-  if (theme.layout.cover === "dossier-split") {
-    return (
-      <header className="policy-cover cover-dossier-split">
-        {feature}
-        <div className="dossier-masthead">
-          <div className="dossier-mark"><span /><span /><span /></div>
-          <div className="dossier-vertical-label">Policy dossier</div>
-          <div className="dossier-edition">Executive<br />Edition</div>
-        </div>
-        <div className="dossier-cover-body">
-          {logo && <div className="mb-auto flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">Sustainability governance</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <MetadataStrip metadata={cover.metadata} className="dossier-cover-meta" />
-        </div>
-      </header>
-    );
-  }
-
-  if (theme.layout.cover === "atlas-modular") {
-    return (
-      <header className="policy-cover cover-atlas-modular">
-        {feature}
-        <div className="atlas-cover-title">
-          <div className="atlas-orbit" aria-hidden="true"><span /><span /></div>
-          <div className="policy-cover-kicker">Impact atlas · Policy 01</div>
-          <h1>{cover.policyLabel}</h1>
-        </div>
-        <div className="atlas-cover-index">
-          <span>Policy</span><b>01</b><small>Living commitments</small>
-        </div>
-        <div className="atlas-cover-company">
+  if (theme.collection === "professional") return <ProfessionalCover model={model} feature={feature} />;
+  switch (scene) {
+    case "civic-plain":
+      return (
+        <header className="policy-cover cover-civic-plain">
+          {feature}
+          <div className="civic-rule" aria-hidden="true" />
           {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <MetadataStrip metadata={cover.metadata} className="atlas-cover-meta" />
-        </div>
-      </header>
-    );
-  }
-
-  if (theme.layout.cover === "journal-editorial") {
-    return (
-      <header className="policy-cover cover-journal-editorial">
-        {feature}
-        <div className="journal-rule" />
-        <div className="journal-contours" aria-hidden="true">{[0, 1, 2, 3, 4].map((ring) => <span key={ring} />)}</div>
-        {logo && <div className="journal-logo flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-        <div className="journal-title-block">
-          <div className="policy-cover-kicker">Field journal · Sustainability policy</div>
+          <div className="policy-cover-kicker"><span />{kicker}<span /></div>
           <h1>{cover.policyLabel}</h1>
           <p className="policy-cover-company">{cover.companyName}</p>
-        </div>
-        <aside className="journal-cover-meta">
-          {cover.metadata.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}
-        </aside>
-      </header>
-    );
+          {art}
+          <div className="civic-colophon">{meta.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}</div>
+        </header>
+      );
+    case "signal-split":
+      return (
+        <header className="policy-cover cover-signal-split">
+          {feature}
+          <div className="signal-body">
+            {logo && <div className="mb-auto flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="policy-cover-company">{cover.companyName}</p>
+            <MetadataStrip metadata={meta} className="signal-meta" />
+          </div>
+          <div className="signal-panel" aria-hidden="true">{art}</div>
+        </header>
+      );
+    case "open-broad":
+      return (
+        <header className="policy-cover cover-open-broad">
+          {feature}
+          <div className="open-band" aria-hidden="true" />
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          {art}
+          <MetadataStrip metadata={meta} className="open-meta" />
+        </header>
+      );
+    case "swiss-poster":
+      return (
+        <header className="policy-cover cover-swiss-poster">
+          {feature}
+          <div className="swiss-rail" aria-hidden="true"><span>Grid · 01</span></div>
+          <div className="swiss-body">
+            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            {art}
+            <p className="policy-cover-company">{cover.companyName}</p>
+            <MetadataStrip metadata={meta} className="swiss-meta" />
+          </div>
+        </header>
+      );
+    case "ledger-rail":
+      return (
+        <header className="policy-cover cover-ledger-rail">
+          {feature}
+          <aside className="ledger-rail-side"><span>Executive ledger</span><b>01</b><small>Board edition</small></aside>
+          <div className="ledger-rail-body">
+            {logo && <div className="mb-auto flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="policy-cover-company">{cover.companyName}</p>
+            {art}
+            <MetadataStrip metadata={meta} className="ledger-rail-meta" />
+          </div>
+        </header>
+      );
+    case "decision-stamp":
+      return (
+        <header className="policy-cover cover-decision-stamp">
+          {feature}
+          <div className="decision-frame">
+            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            {art}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="policy-cover-company">{cover.companyName}</p>
+            <MetadataStrip metadata={meta} className="decision-meta" />
+          </div>
+        </header>
+      );
+    case "routing-slip":
+      return (
+        <header className="policy-cover cover-routing-slip">
+          {feature}
+          <div className="routing-masthead">Memorandum</div>
+          <div className="routing-slip-grid">
+            <span>To · Leadership</span><span>From · {cover.companyName}</span>
+            <span>Date · {meta[1]?.value || "-"}</span><span>Subject · {cover.policyLabel}</span>
+          </div>
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          {art}
+          <MetadataStrip metadata={meta} className="routing-meta" />
+        </header>
+      );
+    case "seal-medallion":
+      return (
+        <header className="policy-cover cover-seal-medallion">
+          {feature}
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="seal-art" aria-hidden="true">{art}</div>
+          <div className="policy-cover-kicker"><span />{kicker}<span /></div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          <div className="seal-colophon">{meta.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}</div>
+        </header>
+      );
+    case "clause-code":
+      return (
+        <header className="policy-cover cover-clause-code">
+          {feature}
+          <div className="clause-numbers" aria-hidden="true"><span>§1</span><span>§2</span><span>§3</span><b>§4</b></div>
+          <div className="clause-body">
+            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="policy-cover-company">{cover.companyName}</p>
+            {art}
+            <MetadataStrip metadata={meta} className="clause-meta" />
+          </div>
+        </header>
+      );
+    case "exhibit-file":
+      return (
+        <header className="policy-cover cover-exhibit-file">
+          {feature}
+          <div className="exhibit-tabs" aria-hidden="true"><span>A</span><span>B</span><span>C</span></div>
+          <div className="exhibit-body">
+            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="policy-cover-company">{cover.companyName}</p>
+            {art}
+            <MetadataStrip metadata={meta} className="exhibit-meta" />
+          </div>
+        </header>
+      );
+    case "gazette-masthead":
+      return (
+        <header className="policy-cover cover-gazette-masthead">
+          {feature}
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="gazette-crest" aria-hidden="true">{art}</div>
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          <div className="gazette-colophon">{meta.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}</div>
+        </header>
+      );
+    case "colonnade-rule":
+      return (
+        <header className="policy-cover cover-colonnade-rule">
+          {feature}
+          <div className="colonnade-cornice" aria-hidden="true" />
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <div className="colonnade-columns">
+            <p>{cover.companyName} · {meta[0]?.label} {meta[0]?.value}</p>
+            <p>{meta[2]?.label} {meta[2]?.value} · {meta[1]?.label} {meta[1]?.value}</p>
+          </div>
+          {art}
+          <MetadataStrip metadata={meta} className="colonnade-meta" />
+        </header>
+      );
+    case "indenture-margin":
+      return (
+        <header className="policy-cover cover-indenture-margin">
+          {feature}
+          <div className="indenture-body">
+            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="policy-cover-company">{cover.companyName}</p>
+            {art}
+            <MetadataStrip metadata={meta} className="indenture-meta" />
+          </div>
+          <aside className="indenture-margin-col" aria-hidden="true"><span>¶1</span><span>¶2</span><span>¶3</span></aside>
+        </header>
+      );
+    case "chapterhouse-drop":
+      return (
+        <header className="policy-cover cover-chapterhouse-drop">
+          {feature}
+          <div className="chapter-top">
+            <div className="chapter-drop" aria-hidden="true">{art}</div>
+            <div className="chapter-head">
+              {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+              <div className="policy-cover-kicker">{kicker}</div>
+              <h1>{cover.policyLabel}</h1>
+              <p className="policy-cover-company">{cover.companyName}</p>
+            </div>
+          </div>
+          <MetadataStrip metadata={meta} className="chapter-meta" />
+        </header>
+      );
+    case "broadsheet-columns":
+      return (
+        <header className="policy-cover cover-broadsheet-columns">
+          {feature}
+          <div className="broadsheet-masthead"><span>{cover.companyName}</span><b>Policy Broadsheet</b><span>{meta[1]?.value || ""}</span></div>
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          {art}
+          <MetadataStrip metadata={meta} className="broadsheet-meta" />
+        </header>
+      );
+    case "fieldbook-grid":
+      return (
+        <header className="policy-cover cover-fieldbook-grid">
+          {feature}
+          <div className="fieldbook-card">
+            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="policy-cover-company">{cover.companyName}</p>
+            <div className="fieldbook-plot" aria-hidden="true">{art}<span className="fieldbook-pin">Survey · 01</span></div>
+            <MetadataStrip metadata={meta} className="fieldbook-meta" />
+          </div>
+        </header>
+      );
+    case "canopy-band":
+      return (
+        <header className="policy-cover cover-canopy-band">
+          {feature}
+          <div className="canopy-art" aria-hidden="true">{art}</div>
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          <MetadataStrip metadata={meta} className="canopy-meta" />
+        </header>
+      );
+    case "summit-target":
+      return (
+        <header className="policy-cover cover-summit-target">
+          {feature}
+          <div className="summit-art" aria-hidden="true">{art}</div>
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          <MetadataStrip metadata={meta} className="summit-meta" />
+        </header>
+      );
+    case "commons-card":
+      return (
+        <header className="policy-cover cover-commons-card">
+          {feature}
+          <div className="commons-card-body">
+            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="policy-cover-company">{cover.companyName}</p>
+            {art}
+            <MetadataStrip metadata={meta} className="commons-meta" />
+          </div>
+        </header>
+      );
+    case "scoreboard-tiles":
+      return (
+        <header className="policy-cover cover-scoreboard-tiles">
+          {feature}
+          <div className="scoreboard-grid" aria-hidden="true">
+            {[["01", "Coverage"], ["02", "Targets"], ["03", "Owners"], ["04", "Review"]].map(([n, label]) => (
+              <div key={n} className="scoreboard-tile"><b>{n}</b><span>{label}</span></div>
+            ))}
+          </div>
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          <MetadataStrip metadata={meta} className="scoreboard-meta" />
+        </header>
+      );
+    case "tape-ledger":
+      return (
+        <header className="policy-cover cover-tape-ledger">
+          {feature}
+          <div className="tape-strip" aria-hidden="true" />
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          {art}
+          <MetadataStrip metadata={meta} className="tape-meta" />
+        </header>
+      );
+    case "dial-review":
+      return (
+        <header className="policy-cover cover-dial-review">
+          {feature}
+          <div className="dial-top">
+            <div className="dial-head">
+              {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+              <div className="policy-cover-kicker">{kicker}</div>
+              <h1>{cover.policyLabel}</h1>
+              <p className="policy-cover-company">{cover.companyName}</p>
+            </div>
+            <div className="dial-art" aria-hidden="true">{art}</div>
+          </div>
+          <MetadataStrip metadata={meta} className="dial-meta" />
+        </header>
+      );
+    case "proceedings-abstract":
+      return (
+        <header className="policy-cover cover-proceedings-abstract">
+          {feature}
+          <div className="proceedings-box">
+            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+            <div className="policy-cover-kicker">{kicker}</div>
+            <h1>{cover.policyLabel}</h1>
+            <p className="proceedings-keywords">Keywords · {cover.companyName} · {meta[0]?.value || ""}</p>
+            {art}
+          </div>
+          <MetadataStrip metadata={meta} className="proceedings-meta" />
+        </header>
+      );
+    case "blueprint-spec":
+      return (
+        <header className="policy-cover cover-blueprint-spec">
+          {feature}
+          <div className="blueprint-tag">Spec · {meta[0]?.value || "STD-01"}</div>
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          <div className="blueprint-art" aria-hidden="true">{art}</div>
+          <MetadataStrip metadata={meta} className="blueprint-meta" />
+        </header>
+      );
+    case "docket-matrix":
+    default:
+      return (
+        <header className="policy-cover cover-docket-matrix">
+          {feature}
+          <div className="docket-grid" aria-hidden="true">
+            <div className="docket-cell"><b>F-01</b></div>
+            <div className="docket-cell"><b>SRC</b></div>
+            <div className="docket-cell"><b>F-02</b></div>
+            <div className="docket-cell docket-art">{art}</div>
+          </div>
+          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
+          <div className="policy-cover-kicker">{kicker}</div>
+          <h1>{cover.policyLabel}</h1>
+          <p className="policy-cover-company">{cover.companyName}</p>
+          <MetadataStrip metadata={meta} className="docket-meta" />
+        </header>
+      );
   }
+}
 
-  return (
-    <header className="policy-cover cover-charter-frame">
-      {feature}
-      <div className="charter-frame-outer" aria-hidden="true" />
-      <div className="charter-frame-inner" aria-hidden="true" />
-      <div className="charter-botanical" aria-hidden="true"><span /><span /><span /></div>
-      <div className="charter-cover-content">
-        {logo && <div className="mb-9 flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-        <div className="policy-cover-kicker"><span />Sustainability charter<span /></div>
-        <h1>{cover.policyLabel}</h1>
-        <p className="policy-cover-company">{cover.companyName}</p>
-      </div>
-      <div className="charter-colophon">
-        {cover.metadata.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}
-      </div>
-    </header>
-  );
+function ProfessionalCover({ model, feature }: { model: DocumentRenderModel; feature: ReactNode }) {
+  const { cover, theme } = model;
+  const design = coverDesign(theme.layout.cover);
+  const style = { "--cover-title-size": `${design.titlePt}pt`, "--cover-space": `${design.spaceMm}mm`, "--cover-columns": design.columns, textAlign: design.align } as CSSProperties;
+  return <header className="policy-cover editorial-policy-cover" data-cover-rule={design.rule} style={style}>
+    <div className="cover-publisher">{cover.companyName}</div>
+    <div className="cover-heading"><h1>{cover.policyLabel}</h1></div>
+    {feature}
+    <MetadataStrip metadata={cover.metadata} className="cover-register" />
+  </header>;
 }
 
 function FeatureImage({ image, className }: { image: NonNullable<DocumentRenderModel["featureImage"]>; className: string }) {
@@ -156,6 +475,7 @@ function PolicyToc({ model }: { model: DocumentRenderModel }) {
     ? [...model.tocEntries, { id: "acknowledgement", index: model.tocEntries.length + 1, title: model.acknowledgement.title }]
     : model.tocEntries;
   const layout = model.theme.layout.toc;
+  if (model.theme.collection === "professional") return <section className={`policy-toc professional-toc professional-toc-${model.theme.layout.professionalVariant || "corporate"}`}><h2>Contents</h2><ol>{entries.map(entry => <li key={entry.id}><a href={`#${entry.id}`}><span>{String(entry.index).padStart(2, "0")}</span>{entry.title}</a></li>)}</ol></section>;
 
   if (layout === "rail-index") {
     return (
@@ -202,35 +522,38 @@ function TocLink({ entry, mode }: { entry: { id: string; index: number; title: s
 
 function RunningHeader({ model, policy }: { model: DocumentRenderModel; policy: Policy }) {
   const layout = model.theme.layout.runningFurniture;
-  const logoAlign = policy.logoPosition === "right" ? "ml-auto" : policy.logoPosition === "center" ? "mx-auto" : "";
+  const logoPosition = policy.logoPosition || model.theme.defaults.logoPosition;
+  const brand = getRunningHeaderBrand(policy.company);
   return (
-    <div className={`policy-running-header running-${layout}`}>
-      {model.cover.logo && <img src={model.cover.logo} alt="Company logo" className={`max-h-9 max-w-[130px] object-contain ${logoAlign}`} />}
-      <span>{model.cover.companyName}</span>
-      <b>{layout === "breadcrumb-bar" ? "Policy / Governance / Current" : model.theme.name}</b>
+    <div data-logo-position={logoPosition} data-logo-scale={model.theme.logoScale} className={`policy-running-header running-${layout} ${model.theme.collection === "professional" ? `professional-running-${model.theme.layout.professionalVariant || "corporate"}` : ""}`}>
+      <div className={`policy-running-header-brand logo-position-${logoPosition}`}>
+        {brand.kind === "logo" ? <img src={brand.source} alt="Company logo" className="object-contain" /> : <span>{brand.text}</span>}
+      </div>
+      <b className={`running-header-label logo-position-${logoPosition}`}>{model.cover.policyLabel}</b>
     </div>
   );
 }
 
 function PolicySection({ section, model, policy }: { section: DocumentRenderSection; model: DocumentRenderModel; policy: Policy }) {
   const frame = model.theme.layout.pageFrame;
+  const opener = model.theme.layout.sectionOpener;
   const number = String(section.index).padStart(2, "0");
   const content = <SectionContent section={section} model={model} policy={policy} />;
 
   if (frame === "numbered-rail") {
-    return <section id={section.id} className={`policy-section frame-numbered-rail density-${section.density}`}><aside><b>{number}</b><span>{section.kind}</span></aside><div className="policy-section-body"><SectionHeading section={section} />{content}</div></section>;
+    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-numbered-rail density-${section.density}`}><aside><b>{number}</b><span>{section.kind}</span></aside><div className="policy-section-body"><SectionHeading section={section} opener={opener} />{content}</div></section>;
   }
   if (frame === "modular-grid") {
-    return <section id={section.id} className={`policy-section frame-modular-grid density-${section.density}`}><SectionHeading section={section} /><div className="policy-section-body">{content}</div></section>;
+    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-modular-grid density-${section.density}`}><SectionHeading section={section} opener={opener} /><div className="policy-section-body">{content}</div></section>;
   }
   if (frame === "editorial-margin") {
-    return <section id={section.id} className={`policy-section frame-editorial-margin density-${section.density}`}><aside><b>{number}</b><span>{section.kind}</span></aside><div className="policy-section-body"><SectionHeading section={section} />{content}</div></section>;
+    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-editorial-margin density-${section.density}`}><aside><b>{number}</b><span>{section.kind}</span></aside><div className="policy-section-body"><SectionHeading section={section} opener={opener} />{content}</div></section>;
   }
-  return <section id={section.id} className={`policy-section frame-single-folio density-${section.density}`}><SectionHeading section={section} /><div className="policy-section-body">{content}</div></section>;
+  return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-single-folio density-${section.density}`}><SectionHeading section={section} opener={opener} /><div className="policy-section-body">{content}</div></section>;
 }
 
-function SectionHeading({ section }: { section: DocumentRenderSection }) {
-  return <header className="policy-section-heading"><span>{String(section.index).padStart(2, "0")}</span><h2>{section.title}</h2><i /></header>;
+function SectionHeading({ section, opener }: { section: DocumentRenderSection; opener?: string }) {
+  return <header className={`policy-section-heading heading-${opener || "default"}`}><span>{String(section.index).padStart(2, "0")}</span><h2>{section.title}</h2><i /></header>;
 }
 
 function SectionContent({ section, model, policy }: { section: DocumentRenderSection; model: DocumentRenderModel; policy: Policy }) {
@@ -298,7 +621,7 @@ function RevisionTable({ entries }: { entries: NonNullable<Policy["revisionHisto
 }
 
 function PolicyTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
-  return <div className="policy-table-wrap"><table className="policy-table"><thead><tr>{headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{rows.map((row, rowIndex) => <tr key={rowIndex}>{headers.map((_, columnIndex) => <td key={columnIndex}>{row[columnIndex] || ""}</td>)}</tr>)}</tbody></table></div>;
+  return <div className="policy-table-wrap"><table className="policy-table" data-target-table={headers.includes("Target") || undefined}><thead><tr>{headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{rows.map((row, rowIndex) => <tr key={rowIndex}>{headers.map((_, columnIndex) => <td key={columnIndex}>{row[columnIndex] || ""}</td>)}</tr>)}</tbody></table></div>;
 }
 
 function Blocks({ blocks, recipe }: { blocks: RichTextBlock[]; recipe: string }) {
@@ -312,7 +635,7 @@ function Blocks({ blocks, recipe }: { blocks: RichTextBlock[]; recipe: string })
 
 function PolicyFooter({ model }: { model: DocumentRenderModel }) {
   const layout = model.theme.layout.runningFurniture;
-  return <footer className={`policy-footer footer-${layout}`}><span>Effective {model.footer.effectiveDate}</span><span>Approved by {model.footer.approver}</span><span>Revision {model.footer.revision}</span><b>PolicyCraft · 01</b></footer>;
+  return <footer className={`policy-footer footer-${layout} ${model.theme.collection === "professional" ? `professional-footer-${model.theme.layout.professionalVariant || "corporate"}` : ""}`}><span>Effective {model.footer.effectiveDate}</span><span>Approved by {model.footer.approver}</span><span>Revision {model.footer.revision}</span><b>{model.cover.companyName}</b></footer>;
 }
 
 function Acknowledgement({ model }: { model: DocumentRenderModel }) {
@@ -339,7 +662,7 @@ const previewStyles = `
   .policy-section-feature { margin: 0; height: 250px; overflow: hidden; border-block: 1px solid var(--doc-line); }
   .policy-section-feature img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .policy-cover-logo { width: auto; height: var(--doc-logo-height); transition: height 180ms ease; }
-  .policy-cover-kicker { color: var(--doc-primary); font-size: 10px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
+  .policy-cover-kicker { display: none !important; color: var(--doc-primary); font-size: 10px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
   .policy-cover h1 { max-width: 100%; text-wrap: balance; overflow-wrap: anywhere; }
   .policy-cover-company { margin: 13px 0 0; color: var(--doc-muted); font-size: 14px; }
   .policy-meta-pair { min-width: 0; }
@@ -347,111 +670,196 @@ const previewStyles = `
   .policy-meta-pair b { display: block; margin-top: 3px; color: var(--doc-ink); font-size: 10px; overflow-wrap: anywhere; }
   .policy-metadata-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-  .cover-charter-frame { display: flex; min-height: 580px; flex-direction: column; align-items: center; justify-content: center; padding: 82px 86px 74px; text-align: center; }
-  .charter-frame-outer, .charter-frame-inner { position: absolute; pointer-events: none; }
-  .charter-frame-outer { inset: 24px; border: 1px solid var(--doc-primary); }
-  .charter-frame-inner { inset: 33px; border: 1px solid var(--doc-line); }
-  .charter-botanical { position: absolute; left: 50%; top: 63px; display: flex; transform: translateX(-50%); gap: 2px; }
-  .charter-botanical span { width: 14px; height: 24px; border: 1px solid var(--doc-accent); border-radius: 100% 0 100% 0; transform: rotate(-28deg); }
-  .charter-botanical span:nth-child(2) { height: 29px; transform: rotate(0); }
-  .charter-botanical span:nth-child(3) { transform: rotate(28deg) scaleX(-1); }
-  .charter-cover-content { position: relative; z-index: 2; width: min(100%, 610px); margin-block: 72px 118px; }
-  .cover-charter-frame .policy-cover-kicker { display: flex; align-items: center; justify-content: center; gap: 14px; }
-  .cover-charter-frame .policy-cover-kicker span { width: 48px; height: 1px; background: var(--doc-accent); }
-  .cover-charter-frame h1 { margin-top: 34px; }
-  .charter-colophon { position: absolute; z-index: 2; inset-inline: 82px; bottom: 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; border-top: 1px solid var(--doc-primary); padding-top: 16px; text-align: left; }
+  /* Canonical cover scenes. Each scene owns its geometry; only atomic
+     primitives (kicker, title, meta pairs, motif) are shared. */
+  .cover-motif { display: block; }
+  .cover-motif svg { display: block; height: auto; max-width: 100%; }
 
-  .cover-dossier-split { display: grid; grid-template-columns: 35% 65%; min-height: 545px; }
-  .dossier-masthead { position: relative; display: flex; flex-direction: column; padding: 44px 36px; background: var(--doc-primary); color: var(--doc-on-primary); }
-  .dossier-mark { display: flex; gap: 5px; }
-  .dossier-mark span { width: 26px; height: 2px; background: var(--doc-on-primary); opacity: .75; }
-  .dossier-vertical-label { position: absolute; left: 35px; top: 50%; transform: translateY(-50%); font-size: 11px; font-weight: 800; letter-spacing: .28em; text-transform: uppercase; writing-mode: vertical-rl; }
-  .dossier-edition { margin-top: auto; color: color-mix(in srgb, var(--doc-on-primary) 74%, transparent); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
-  .dossier-cover-body { display: flex; min-width: 0; flex-direction: column; padding: 44px 50px 38px; background: var(--doc-paper); text-align: left; }
-  .dossier-cover-body h1 { max-width: 520px; margin-top: 25px; }
-  .dossier-cover-meta { margin-top: auto; border-top: 2px solid var(--doc-primary); }
-  .dossier-cover-meta .policy-meta-pair { padding: 12px 8px 0 0; }
+  .cover-civic-plain { display: flex; min-height: 580px; flex-direction: column; align-items: center; justify-content: center; padding: 70px 80px; text-align: center; background: var(--doc-paper); }
+  .civic-rule { width: 120px; height: 3px; background: var(--doc-primary); }
+  .cover-civic-plain .policy-cover-kicker { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+  .cover-civic-plain .policy-cover-kicker span { width: 48px; height: 1px; background: var(--doc-accent); }
+  .cover-civic-plain h1 { max-width: 600px; margin-top: 24px; }
+  .cover-civic-plain .cover-motif { width: 220px; margin-top: 30px; }
+  .civic-colophon { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px; border-top: 1px solid var(--doc-primary); padding-top: 16px; text-align: left; }
 
-  .cover-atlas-modular { display: grid; min-height: 550px; grid-template-columns: 31% 69%; grid-template-rows: 64% 36%; }
-  .atlas-cover-title { position: relative; grid-column: 1 / 3; overflow: hidden; padding: 54px 58px; background: var(--doc-soft); }
-  .atlas-cover-title h1 { position: relative; z-index: 1; max-width: 68%; margin-top: 40px; }
-  .atlas-orbit { position: absolute; right: -25px; top: -55px; width: 310px; height: 310px; border: 42px solid var(--doc-primary); border-radius: 50%; opacity: .9; }
-  .atlas-orbit span:first-child { position: absolute; inset: 38px; border: 2px solid var(--doc-accent); border-radius: 50%; }
-  .atlas-orbit span:last-child { position: absolute; left: -44px; bottom: 18px; width: 70px; height: 70px; background: var(--doc-accent); }
-  .atlas-cover-index { display: flex; flex-direction: column; justify-content: space-between; padding: 28px; background: var(--doc-primary); color: var(--doc-on-primary); text-transform: uppercase; }
-  .atlas-cover-index span { font-size: 10px; font-weight: 800; letter-spacing: .18em; }
-  .atlas-cover-index b { font-size: 47px; font-weight: 500; line-height: 1; }
-  .atlas-cover-index small { font-size: 8px; letter-spacing: .12em; }
-  .atlas-cover-company { display: flex; min-width: 0; flex-direction: column; justify-content: flex-end; padding: 25px 34px; }
-  .atlas-cover-company .policy-cover-company { color: var(--doc-ink); font-weight: 700; }
-  .atlas-cover-meta { margin-top: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 16px; }
+  .cover-signal-split { display: grid; grid-template-columns: 58% 42%; min-height: 560px; padding: 0; }
+  .signal-body { display: flex; min-width: 0; flex-direction: column; border-right: 3px solid var(--doc-accent); padding: 56px 44px 44px 60px; background: var(--doc-paper); }
+  .signal-body h1 { margin-top: 22px; font-weight: 650; letter-spacing: -.03em; }
+  .signal-meta { margin-top: auto; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
+  .signal-panel { position: relative; overflow: hidden; background: var(--doc-soft); }
+  .signal-panel .cover-motif { position: absolute; left: 12%; top: 24%; width: 76%; }
 
-  .cover-journal-editorial { min-height: 580px; padding: 48px 54px; }
-  .journal-rule { width: 170px; height: 4px; background: var(--doc-accent); }
-  .journal-contours { position: absolute; right: 42px; top: 34px; width: 320px; height: 230px; opacity: .45; }
-  .journal-contours span { position: absolute; border: 1px solid var(--doc-accent); border-radius: 48% 52% 45% 55%; }
-  .journal-contours span:nth-child(1) { inset: 0; transform: rotate(7deg); }
-  .journal-contours span:nth-child(2) { inset: 20px 12px; transform: rotate(-5deg); }
-  .journal-contours span:nth-child(3) { inset: 43px 31px; transform: rotate(9deg); }
-  .journal-contours span:nth-child(4) { inset: 69px 57px; transform: rotate(-8deg); }
-  .journal-contours span:nth-child(5) { inset: 94px 86px; }
-  .journal-logo { position: absolute; right: 54px; bottom: 49px; width: 180px; }
-  .journal-title-block { position: absolute; left: 54px; bottom: 56px; width: 57%; border-bottom: 1px solid var(--doc-line); padding-bottom: 22px; text-align: left; }
-  .journal-title-block h1 { margin-top: 24px; }
-  .journal-cover-meta { position: absolute; right: 54px; top: 285px; width: 180px; border-top: 1px solid var(--doc-accent); padding-top: 11px; }
-  .journal-cover-meta .policy-meta-pair { margin-bottom: 10px; }
+  .cover-open-broad { justify-content: flex-start; padding: 0 60px 52px; background: var(--doc-paper); }
+  .open-band { height: 10px; margin: 0 -60px 40px; background: var(--doc-primary); }
+  .cover-open-broad h1 { max-width: 760px; margin-top: 20px; font-size: calc(var(--policy-heading-size) * 3); line-height: 1.08; }
+  .cover-open-broad .cover-motif { width: 220px; margin-top: 26px; }
+  .open-meta { max-width: 760px; margin-top: 30px; border-top: 4px solid var(--doc-primary); padding-top: 16px; }
 
-  /* Eight family art directions. Layout structure remains data-driven, while
-     these rules give each catalog family a recognizable print identity. */
-  [data-layout-family="clean-essentials"] .policy-cover { background: var(--doc-paper); }
-  [data-layout-family="clean-essentials"] .charter-frame-inner { display: none; }
-  [data-layout-family="clean-essentials"] .charter-frame-outer { inset: 36px; border-color: var(--doc-line); }
-  [data-layout-family="clean-essentials"] .charter-botanical { display: none; }
-  [data-layout-family="clean-essentials"] .cover-charter-frame .policy-cover-kicker { justify-content: flex-start; }
-  [data-layout-family="clean-essentials"] .charter-cover-content { text-align: left; }
-  [data-layout-family="clean-essentials"] .cover-charter-frame .policy-cover-kicker span:last-child { display: none; }
-  [data-layout-family="clean-essentials"] .cover-charter-frame h1 { max-width: 540px; font-family: var(--policy-font); font-weight: 650; letter-spacing: -.035em; }
+  .cover-swiss-poster { display: grid; grid-template-columns: 96px 1fr; min-height: 580px; padding: 0; background: var(--doc-paper); }
+  .swiss-rail { display: flex; align-items: flex-end; justify-content: center; background: var(--doc-ink); padding-bottom: 48px; }
+  .swiss-rail span { color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .3em; text-transform: uppercase; writing-mode: vertical-rl; }
+  .swiss-body { display: flex; min-width: 0; flex-direction: column; justify-content: flex-end; padding: 56px 60px 48px 48px; }
+  .cover-swiss-poster h1 { margin-top: 18px; font-size: calc(var(--policy-heading-size) * 3.2); font-weight: 900; text-transform: uppercase; letter-spacing: -.04em; }
+  .cover-swiss-poster .cover-motif { width: 120px; margin-top: 26px; }
+  .swiss-meta { margin-top: 24px; border-top: 3px solid var(--doc-accent); padding-top: 14px; }
 
-  [data-layout-family="executive"] .policy-cover { box-shadow: inset 0 7px 0 var(--doc-accent); }
-  [data-layout-family="executive"] .policy-cover h1 { font-weight: 600; letter-spacing: -.025em; }
-  [data-layout-family="executive"] .policy-cover-kicker { color: var(--doc-accent); }
-  [data-layout-family="executive"] .dossier-masthead { background: var(--doc-primary-dark); }
-  [data-layout-family="executive"] .dossier-cover-meta { border-top-width: 1px; }
+  .cover-ledger-rail { display: grid; grid-template-columns: 150px 1fr; min-height: 560px; padding: 0; }
+  .ledger-rail-side { display: flex; flex-direction: column; padding: 44px 30px; background: var(--doc-primary); color: var(--doc-on-primary); }
+  .ledger-rail-side span { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; writing-mode: vertical-rl; }
+  .ledger-rail-side b { margin: auto 0; font-size: 44px; font-weight: 500; line-height: 1; }
+  .ledger-rail-side small { font-size: 8px; letter-spacing: .14em; text-transform: uppercase; }
+  .ledger-rail-body { display: flex; min-width: 0; flex-direction: column; padding: 48px 52px 40px; background: var(--doc-paper); }
+  .ledger-rail-body h1 { margin-top: 22px; }
+  .ledger-rail-body .cover-motif { width: 120px; margin-top: 22px; }
+  .ledger-rail-meta { margin-top: auto; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
 
-  [data-layout-family="governance"] .cover-charter-frame { background: color-mix(in srgb, var(--doc-paper) 94%, var(--doc-soft)); }
-  [data-layout-family="governance"] .charter-frame-outer { border-width: 2px; }
-  [data-layout-family="governance"] .charter-frame-inner { inset: 39px; }
-  [data-layout-family="governance"] .cover-charter-frame h1 { font-weight: 500; letter-spacing: -.02em; }
-  [data-layout-family="governance"] .charter-colophon { border-top-color: var(--doc-accent); }
+  .cover-decision-stamp { align-items: center; justify-content: center; padding: 64px; background: var(--doc-paper); }
+  .decision-frame { width: min(100%, 620px); border: 3px double var(--doc-primary); outline: 1px solid var(--doc-accent); outline-offset: 7px; padding: 44px 52px; text-align: center; }
+  .decision-frame .cover-motif { width: 150px; margin: 0 auto 22px; }
+  .decision-frame h1 { margin-top: 18px; }
+  .decision-meta { margin-top: 26px; border-top: 1px solid var(--doc-line); padding-top: 14px; text-align: left; }
 
-  [data-layout-family="institutional"] .policy-cover::before { content: ""; position: absolute; z-index: 1; inset: 0 0 auto; height: 13px; background: var(--doc-primary); }
-  [data-layout-family="institutional"] .policy-cover { background: linear-gradient(180deg, var(--doc-soft) 0 18%, var(--doc-paper) 18%); }
-  [data-layout-family="institutional"] .policy-cover h1 { font-family: var(--policy-font); font-weight: 700; letter-spacing: -.02em; }
-  [data-layout-family="institutional"] .policy-cover-kicker { letter-spacing: .16em; }
-  [data-layout-family="institutional"] .charter-botanical, [data-layout-family="institutional"] .journal-contours { opacity: .18; }
+  .cover-routing-slip { padding: 0 60px 52px; background: var(--doc-paper); }
+  .routing-masthead { margin: 48px 0 0; border-bottom: 3px solid var(--doc-ink); padding-bottom: 10px; font-size: 30px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+  .routing-slip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; margin-top: 18px; border: 1px solid var(--doc-line); padding: 14px 18px; font-family: "IBM Plex Mono", monospace; font-size: 9px; }
+  .cover-routing-slip h1 { margin-top: 30px; }
+  .cover-routing-slip .cover-motif { width: 220px; margin-top: 24px; }
+  .routing-meta { margin-top: 26px; border-top: 2px solid var(--doc-ink); padding-top: 14px; }
 
-  [data-layout-family="editorial"] .policy-cover { background: var(--doc-paper); }
-  [data-layout-family="editorial"] .policy-cover h1 { font-weight: 450; letter-spacing: -.035em; }
-  [data-layout-family="editorial"] .journal-rule { width: 96px; height: 2px; }
-  [data-layout-family="editorial"] .journal-title-block { border-bottom-color: var(--doc-accent); }
-  [data-layout-family="editorial"] .journal-contours { opacity: .28; }
+  .cover-seal-medallion { align-items: center; justify-content: center; padding: 64px 70px; text-align: center; background: var(--doc-paper); }
+  .seal-art .cover-motif { width: 148px; margin: 0 auto 26px; }
+  .cover-seal-medallion .policy-cover-kicker { display: flex; align-items: center; gap: 14px; }
+  .cover-seal-medallion .policy-cover-kicker span { width: 48px; height: 1px; background: var(--doc-accent); }
+  .cover-seal-medallion h1 { margin-top: 22px; font-weight: 500; }
+  .seal-colophon { display: grid; grid-template-columns: repeat(2, minmax(0, 220px)); justify-content: center; gap: 12px 32px; margin-top: 36px; border-top: 1px solid var(--doc-accent); padding-top: 18px; text-align: left; }
 
-  [data-layout-family="impact"] .policy-cover { background: var(--doc-soft); }
-  [data-layout-family="impact"] .policy-cover h1 { font-family: var(--policy-font); font-weight: 750; letter-spacing: -.045em; }
-  [data-layout-family="impact"] .atlas-orbit { opacity: .82; transform: rotate(8deg); }
-  [data-layout-family="impact"] .atlas-cover-index { background: var(--doc-primary-dark); }
-  [data-layout-family="impact"] .policy-cover-kicker { letter-spacing: .18em; }
+  .cover-clause-code { display: grid; grid-template-columns: 110px 1fr; min-height: 560px; padding: 56px 60px; background: var(--doc-paper); }
+  .clause-numbers { display: flex; flex-direction: column; gap: 26px; color: var(--doc-primary); font-size: 15px; font-weight: 800; }
+  .clause-numbers b { color: var(--doc-accent); }
+  .clause-body { min-width: 0; border: 2px solid var(--doc-primary); padding: 34px 38px; }
+  .clause-body h1 { margin-top: 18px; }
+  .clause-body .cover-motif { width: 160px; margin-top: 22px; }
+  .clause-meta { margin-top: 24px; border-top: 1px solid var(--doc-line); padding-top: 14px; }
 
-  [data-layout-family="data"] .policy-cover { background-image: linear-gradient(var(--doc-line) 1px, transparent 1px), linear-gradient(90deg, var(--doc-line) 1px, transparent 1px); background-size: 42px 42px; }
-  [data-layout-family="data"] .policy-cover h1 { font-family: var(--policy-font); font-weight: 800; letter-spacing: -.04em; }
-  [data-layout-family="data"] .policy-cover-kicker { display: inline-flex; width: fit-content; padding: 6px 8px; background: var(--doc-primary); color: var(--doc-on-primary); letter-spacing: .12em; }
-  [data-layout-family="data"] .atlas-cover-title, [data-layout-family="data"] .dossier-cover-body { background: color-mix(in srgb, var(--doc-paper) 92%, transparent); }
+  .cover-exhibit-file { padding: 56px 60px; background: var(--doc-soft); }
+  .exhibit-tabs { display: flex; gap: 6px; }
+  .exhibit-tabs span { min-width: 64px; padding: 8px 0; text-align: center; font-size: 11px; font-weight: 800; }
+  .exhibit-tabs span:nth-child(1) { background: var(--doc-primary); color: var(--doc-on-primary); }
+  .exhibit-tabs span:nth-child(2) { background: var(--doc-accent); color: #fff; }
+  .exhibit-tabs span:nth-child(3) { background: var(--doc-paper); border: 1px solid var(--doc-line); color: var(--doc-muted); }
+  .exhibit-body { border: 1px solid var(--doc-line); border-top: 0; background: var(--doc-paper); padding: 34px 40px 30px; }
+  .exhibit-body h1 { margin-top: 18px; }
+  .exhibit-body .cover-motif { width: 200px; margin-top: 22px; }
+  .exhibit-meta { margin-top: 22px; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
 
-  [data-layout-family="technical"] .policy-cover { background: var(--doc-paper); }
-  [data-layout-family="technical"] .policy-cover::after { content: ""; position: absolute; z-index: 0; right: 34px; top: 34px; width: 120px; height: 120px; border-top: 1px solid var(--doc-line); border-right: 1px solid var(--doc-line); background: repeating-linear-gradient(0deg, transparent 0 19px, var(--doc-line) 20px); opacity: .65; }
-  [data-layout-family="technical"] .policy-cover h1 { font-weight: 600; letter-spacing: -.015em; }
-  [data-layout-family="technical"] .policy-cover-kicker { font-family: var(--policy-font); letter-spacing: .14em; }
-  [data-layout-family="technical"] .journal-contours, [data-layout-family="technical"] .atlas-orbit, [data-layout-family="technical"] .charter-botanical { display: none; }
+  .cover-gazette-masthead { align-items: center; justify-content: center; padding: 60px 70px; text-align: center; background: var(--doc-paper); }
+  .gazette-crest .cover-motif { width: 104px; margin: 0 auto 24px; }
+  .cover-gazette-masthead h1 { margin-top: 20px; }
+  .gazette-colophon { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 38px; border-top: 3px double var(--doc-primary); border-bottom: 1px solid var(--doc-primary); padding-block: 16px; text-align: left; }
+
+  .cover-colonnade-rule { padding: 0 60px 52px; background: var(--doc-paper); }
+  .colonnade-cornice { height: 12px; margin: 0 -60px 44px; background: var(--doc-primary); }
+  .cover-colonnade-rule h1 { margin-top: 20px; }
+  .colonnade-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 26px; }
+  .colonnade-columns p { border-left: 1px solid var(--doc-line); padding-left: 18px; text-align: left; font-size: 11px; }
+  .cover-colonnade-rule .cover-motif { width: 200px; margin-top: 28px; }
+  .colonnade-meta { margin-top: 26px; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
+
+  .cover-indenture-margin { display: grid; grid-template-columns: 1fr 130px; min-height: 560px; padding: 56px 0 48px 60px; background: var(--doc-paper); }
+  .indenture-body { min-width: 0; padding-right: 48px; }
+  .indenture-body h1 { margin-top: 20px; }
+  .indenture-body .cover-motif { width: 160px; margin-top: 24px; }
+  .indenture-meta { margin-top: 26px; border-top: 1px solid var(--doc-line); padding-top: 14px; }
+  .indenture-margin-col { display: flex; flex-direction: column; gap: 34px; border-left: 2px solid var(--doc-accent); padding: 12px 0 0 20px; color: var(--doc-accent); font-size: 13px; font-weight: 800; }
+
+  .cover-chapterhouse-drop { justify-content: flex-end; padding: 56px 64px; background: var(--doc-paper); }
+  .chapter-top { display: grid; grid-template-columns: 130px 1fr; gap: 34px; align-items: start; }
+  .chapter-drop .cover-motif { width: 120px; }
+  .cover-chapterhouse-drop h1 { margin-top: 18px; font-weight: 500; }
+  .chapter-meta { margin-top: 34px; border-top: 2px solid var(--doc-accent); padding-top: 16px; }
+
+  .cover-broadsheet-columns { padding: 48px 56px; background: var(--doc-paper); }
+  .broadsheet-masthead { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; background: var(--doc-ink); color: #fff; padding: 12px 22px; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+  .broadsheet-masthead b { font-size: 15px; letter-spacing: .04em; }
+  .cover-broadsheet-columns h1 { margin-top: 26px; }
+  .cover-broadsheet-columns .cover-motif { width: 220px; margin-top: 24px; }
+  .broadsheet-meta { margin-top: 26px; border-top: 3px solid var(--doc-ink); padding-top: 14px; }
+
+  .cover-fieldbook-grid { padding: 52px 56px; background-color: var(--doc-paper); background-image: linear-gradient(var(--doc-line) 1px, transparent 1px), linear-gradient(90deg, var(--doc-line) 1px, transparent 1px); background-size: 22px 22px; }
+  .fieldbook-card { border: 1px solid var(--doc-line); background: var(--doc-paper); box-shadow: 0 14px 30px rgba(30,40,30,.10); padding: 36px 42px; }
+  .fieldbook-card h1 { margin-top: 18px; }
+  .fieldbook-plot { position: relative; margin-top: 22px; }
+  .fieldbook-plot .cover-motif { width: 200px; }
+  .fieldbook-pin { position: absolute; left: 216px; top: 6px; color: var(--doc-accent); font-family: "Caveat", cursive; font-size: 21px; font-weight: 600; transform: rotate(-4deg); }
+  .fieldbook-meta { margin-top: 24px; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
+
+  .cover-canopy-band { padding: 56px 64px; background: var(--doc-paper); }
+  .canopy-art .cover-motif { width: 100%; max-width: 560px; }
+  .cover-canopy-band h1 { margin-top: 28px; }
+  .canopy-meta { margin-top: 26px; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
+
+  .cover-summit-target { align-items: center; padding: 60px 70px; text-align: center; background: var(--doc-paper); }
+  .summit-art .cover-motif { width: 140px; margin: 0 auto 26px; }
+  .cover-summit-target h1 { margin-top: 18px; }
+  .summit-meta { width: min(100%, 560px); margin-top: 30px; border-top: 2px solid var(--doc-accent); padding-top: 16px; text-align: left; }
+
+  .cover-commons-card { padding: 52px 56px; background: var(--doc-soft); }
+  .commons-card-body { border-radius: 20px; background: var(--doc-paper); box-shadow: 0 16px 36px rgba(30,45,40,.10); padding: 40px 46px; }
+  .commons-card-body h1 { margin-top: 18px; }
+  .commons-card-body .cover-motif { width: 200px; margin-top: 22px; }
+  .commons-meta { margin-top: 24px; border-top: 1px solid var(--doc-line); padding-top: 14px; }
+
+  .cover-scoreboard-tiles { padding: 52px 56px; background: var(--doc-paper); font-variant-numeric: tabular-nums; }
+  .scoreboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 30px; }
+  .scoreboard-tile { padding: 14px 16px; }
+  .scoreboard-tile:nth-child(1) { background: var(--doc-primary); color: var(--doc-on-primary); }
+  .scoreboard-tile:nth-child(2), .scoreboard-tile:nth-child(3) { background: var(--doc-soft); }
+  .scoreboard-tile:nth-child(4) { background: var(--doc-accent); color: #fff; }
+  .scoreboard-tile b { display: block; font-size: 24px; font-weight: 700; }
+  .scoreboard-tile span { font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
+  .cover-scoreboard-tiles h1 { margin-top: 18px; }
+  .scoreboard-meta { margin-top: 24px; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
+
+  .cover-tape-ledger { padding: 0 60px 50px; background: var(--doc-paper); font-variant-numeric: tabular-nums; }
+  .tape-strip { height: 16px; margin: 0 -60px 44px; background: var(--doc-ink); }
+  .cover-tape-ledger h1 { margin-top: 18px; font-family: var(--policy-font); }
+  .cover-tape-ledger .cover-motif { width: 220px; margin-top: 24px; }
+  .tape-meta { margin-top: 26px; }
+  .tape-meta .policy-meta-pair { border-top: 1px solid var(--doc-line); padding-top: 8px; }
+  .tape-meta .policy-meta-pair:nth-child(even) { background: var(--doc-soft); }
+
+  .cover-dial-review { justify-content: flex-end; padding: 56px 60px; background: var(--doc-paper); }
+  .dial-top { display: grid; grid-template-columns: 1fr 210px; gap: 30px; align-items: center; }
+  .dial-art .cover-motif { width: 200px; }
+  .cover-dial-review h1 { margin-top: 18px; }
+  .dial-meta { margin-top: 32px; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
+
+  .cover-proceedings-abstract { padding: 56px 64px; background: var(--doc-paper); }
+  .proceedings-box { border: 2px solid var(--doc-primary); padding: 34px 40px; }
+  .proceedings-box h1 { margin-top: 18px; }
+  .proceedings-keywords { margin-top: 20px; font-family: "IBM Plex Mono", monospace; font-size: 9px; color: var(--doc-muted); text-align: left; }
+  .proceedings-box .cover-motif { width: 200px; margin-top: 20px; }
+  .proceedings-meta { margin-top: 28px; border-top: 1px solid var(--doc-line); padding-top: 14px; }
+
+  .cover-blueprint-spec { padding: 52px 56px; background: var(--doc-primary); color: var(--doc-on-primary); }
+  .blueprint-tag { align-self: flex-start; border: 1px solid var(--doc-on-primary); padding: 6px 12px; font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .14em; }
+  .cover-blueprint-spec .policy-cover-kicker { color: var(--doc-accent); }
+  .cover-blueprint-spec h1 { margin-top: 22px; color: var(--doc-on-primary); font-family: var(--policy-heading-font); }
+  .cover-blueprint-spec .policy-cover-company { color: var(--doc-on-primary); opacity: .82; }
+  .blueprint-art .cover-motif { width: 190px; margin-top: 28px; }
+  .blueprint-meta { margin-top: 30px; border-top: 1px solid var(--doc-on-primary); padding-top: 14px; }
+  .blueprint-meta .policy-meta-pair span { color: var(--doc-on-primary); opacity: .72; }
+  .blueprint-meta .policy-meta-pair b { color: var(--doc-on-primary); }
+
+  .cover-docket-matrix { padding: 52px 56px; background: var(--doc-paper); }
+  .docket-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 30px; }
+  .docket-cell { display: grid; min-height: 92px; place-items: center; background: var(--doc-soft); font-size: 12px; font-weight: 800; letter-spacing: .1em; }
+  .docket-cell:first-child { background: var(--doc-primary); color: var(--doc-on-primary); }
+  .docket-cell.docket-art { background: var(--doc-paper); border: 2px solid var(--doc-primary); padding: 10px; }
+  .docket-cell.docket-art .cover-motif { width: 150px; }
+  .cover-docket-matrix h1 { margin-top: 18px; }
+  .docket-meta { margin-top: 24px; border-top: 2px solid var(--doc-primary); padding-top: 14px; }
 
   .policy-toc { border-block: 1px solid var(--doc-line); }
   .toc-dotted-leaders { padding: 58px 90px 64px; }
@@ -487,8 +895,13 @@ const previewStyles = `
   .toc-editorial-item b { color: var(--doc-accent); font-family: var(--policy-heading-font); font-size: 22px; font-weight: 400; }
   .toc-editorial-item span { font-size: 10px; }
 
-  .policy-running-header { display: flex; min-height: 58px; align-items: center; gap: 14px; margin: 0 50px; border-bottom: 1px solid var(--doc-line); color: var(--doc-muted); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
-  .policy-running-header b { margin-left: auto; color: var(--doc-primary); font-size: 8px; }
+  .policy-running-header { display: grid; grid-template-columns: 1fr auto 1fr; min-height: 58px; align-items: center; margin: 0 50px; border-bottom: 1px solid var(--doc-line); color: var(--doc-muted); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+  .policy-running-header-brand { display: flex; min-width: 0; align-items: center; }
+  .policy-running-header-brand.logo-position-left { grid-column: 1; justify-content: flex-start; }
+  .policy-running-header-brand.logo-position-center { grid-column: 2; justify-content: center; }
+  .policy-running-header-brand.logo-position-right { grid-column: 3; justify-content: flex-end; }
+  .policy-running-header b { grid-column: 3; justify-self: end; color: var(--doc-primary); font-size: 8px; }
+  .policy-running-header b.logo-position-right { grid-column: 1; justify-self: start; }
   .running-breadcrumb-bar { margin: 0; padding: 0 48px; border: 0; background: var(--doc-primary); color: var(--doc-on-primary); }
   .running-breadcrumb-bar b { color: var(--doc-on-primary); }
   .running-edge-folio { border-bottom: 4px solid var(--doc-primary); }
@@ -500,6 +913,12 @@ const previewStyles = `
   .policy-section-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 20px; }
   .policy-section-heading > span { color: var(--doc-primary); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
   .policy-section-heading > i { height: 1px; flex: 1; background: var(--doc-line); }
+  .heading-agenda-label > span { background: var(--doc-primary); color: var(--doc-on-primary); padding: 3px 8px; }
+  .heading-memo-rule { border-top: 2px solid var(--doc-ink); padding-top: 10px; }
+  .heading-clause-number > span { border: 1px solid var(--doc-primary); padding: 2px 7px; }
+  .heading-spec-ordinal > span { font-family: var(--policy-font); background: var(--doc-soft); padding: 3px 8px; }
+  .heading-finding-band { background: var(--doc-soft); padding: 10px 12px; }
+  .heading-statement-band > h2 { background: var(--doc-primary); color: var(--doc-on-primary); padding: 6px 12px; }
   .frame-single-folio { max-width: 680px; margin-inline: auto; }
   .frame-single-folio .policy-section-heading { justify-content: center; text-align: center; }
   .frame-single-folio .policy-section-heading > i { max-width: 100px; background: var(--doc-accent); }
@@ -612,7 +1031,7 @@ const previewStyles = `
   .policy-custom-blocks ul, .policy-custom-blocks ol { margin: 12px 0; padding-left: 20px; }
   .policy-custom-blocks li { margin: 5px 0; }
   .policy-footer { display: flex; align-items: center; gap: 18px; border-top: 1px solid var(--doc-primary); padding: 18px 50px; color: var(--doc-muted); font-size: 8px; }
-  .policy-running-header img { width: auto; max-height: calc(var(--doc-logo-height) * .5); }
+  .policy-running-header img { width: auto; max-width: var(--doc-running-logo-width); max-height: var(--doc-running-logo-height); }
   .policy-footer b { margin-left: auto; color: var(--doc-primary); }
   .footer-breadcrumb-bar { background: var(--doc-primary); color: var(--doc-on-primary); }
   .footer-breadcrumb-bar b { color: var(--doc-on-primary); }
@@ -635,16 +1054,19 @@ const previewStyles = `
   .acknowledgement-affidavit { margin-inline: 64px; padding-inline: 0; border-top: 3px solid var(--doc-accent); background: var(--doc-paper); }
   .acknowledgement-affidavit h2 { font-size: calc(var(--policy-heading-size) * 1.4); font-style: italic; }
 
-  @media (max-width: 720px) {
+  @media screen and (max-width: 720px) {
     .policy-cover { min-height: 430px; }
-    .cover-charter-frame { padding: 62px 44px; }
-    .charter-colophon { inset-inline: 48px; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .cover-dossier-split { grid-template-columns: 28% 72%; }
-    .dossier-cover-body { padding: 32px 28px; }
-    .atlas-cover-title { padding: 38px 32px; }
-    .atlas-cover-title h1 { max-width: 82%; }
-    .journal-title-block { width: 68%; }
-    .journal-cover-meta { display: none; }
+    .cover-civic-plain, .cover-seal-medallion, .cover-gazette-masthead, .cover-summit-target { padding: 48px 34px; }
+    .civic-colophon, .gazette-colophon, .seal-colophon { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .cover-signal-split, .cover-ledger-rail, .cover-swiss-poster, .cover-clause-code, .cover-indenture-margin { grid-template-columns: 30% 70%; }
+    .signal-body, .ledger-rail-body { padding: 32px 26px; }
+    .swiss-body { padding: 36px 28px; }
+    .cover-routing-slip, .cover-tape-ledger { padding-inline: 30px; }
+    .routing-slip-grid { grid-template-columns: 1fr; }
+    .cover-fieldbook-grid, .cover-commons-card, .cover-scoreboard-tiles, .cover-docket-matrix, .cover-blueprint-spec, .cover-broadsheet-columns, .cover-canopy-band, .cover-chapterhouse-drop, .cover-dial-review, .cover-proceedings-abstract, .cover-exhibit-file, .cover-decision-stamp, .cover-colonnade-rule { padding: 40px 30px; }
+    .scoreboard-grid { grid-template-columns: repeat(2, 1fr); }
+    .chapter-top, .dial-top { grid-template-columns: 1fr; }
+    .fieldbook-pin { display: none; }
     .policy-main { padding: 34px 28px; }
     .frame-numbered-rail { grid-template-columns: 78px minmax(0, 1fr); margin-inline: -28px; }
     .frame-numbered-rail > .policy-section-body { padding: 28px; }
@@ -659,4 +1081,221 @@ const previewStyles = `
     .policy-footer { flex-wrap: wrap; padding-inline: 28px; }
   }
   @media (prefers-reduced-motion: reduce) { .policy-preview-document { animation: none; } }
+
+  [data-collection="professional"] .professional-cover { min-height: 230mm; display: flex; flex-direction: column; padding: 0; background: transparent; overflow: visible; }
+  [data-collection="professional"] .sample-cover-art { display: block; width: 42mm; max-height: 24mm; margin: 4mm 0 6mm; }
+  [data-collection="professional"] .professional-cover-editorial .sample-cover-art, [data-collection="professional"] .professional-cover-institutional .sample-cover-art { margin-inline: auto; }
+  [data-collection="professional"] .professional-cover-governance .sample-cover-art { width: 46mm; margin-left: auto; }
+  [data-collection="professional"] .professional-brand { font-size: 12pt; font-weight: 600; color: var(--doc-primary); min-height: 22mm; }
+  [data-collection="professional"] .professional-title { margin-top: 38mm; margin-bottom: 16mm; }
+  [data-collection="professional"] .professional-rule { width: 22mm; height: 2px; background: var(--doc-primary); margin-bottom: 10mm; }
+  [data-collection="professional"] .professional-title h1 { font-size: 34pt; line-height: 1.15; font-weight: 600; letter-spacing: -.025em; max-width: 145mm; overflow-wrap: anywhere; color: var(--doc-primary); }
+  [data-collection="professional"] .professional-title p { margin-top: 8mm; color: var(--doc-muted); font-size: 13pt; text-align: inherit; }
+  [data-collection="professional"] .professional-meta { margin-top: auto; display: grid; grid-template-columns: repeat(2,1fr); gap: 7mm; border-top: 1px solid var(--doc-line); padding-top: 7mm; }
+  [data-collection="professional"] .professional-meta span { font-size: 8pt; color: var(--doc-muted); text-transform: uppercase; letter-spacing: .07em; display: block; }
+  [data-collection="professional"] .professional-meta strong { font-size: 10pt; font-weight: 500; }
+  [data-collection="professional"] .professional-institutional-classic-v1 { text-align: center; }
+  [data-collection="professional"] .professional-institutional-classic-v1 .professional-rule { margin-inline: auto; }
+  [data-collection="professional"] .professional-institutional-classic-v1 h1 { margin-inline: auto; }
+  [data-collection="professional"] .professional-executive-editorial-v1 .professional-title { margin-top: 48mm; border-left: 1px solid var(--doc-line); padding-left: 9mm; }
+  [data-collection="professional"] .professional-governance-manual-v1 .professional-title { border-top: 3px solid var(--doc-primary); padding-top: 12mm; }
+  [data-collection="professional"] .professional-governance-manual-v1 .professional-rule { display: none; }
+  [data-collection="professional"] .professional-modern-minimal-v1 .professional-title { margin-top: 18mm; }
+  [data-collection="professional"] .professional-modern-minimal-v1 h1 { font-size: 28pt; }
+  [data-collection="professional"] .professional-sustainability-report-v1 .professional-title { margin-top: 26mm; }
+  [data-collection="professional"] .policy-cover-feature { position: static; width: 100%; height: 52mm; object-fit: cover; margin-bottom: 10mm; opacity: 1; }
+  [data-collection="professional"] .policy-main { padding: 0; }
+  [data-collection="professional"] .policy-toc { padding: 0; background: transparent; border: none; }
+  .professional-toc h2 { margin-bottom: 12mm; }
+  .professional-toc ol { list-style: none; padding: 0; }
+  .professional-toc li { border-bottom: 1px solid var(--doc-line); padding: 4mm 0; }
+  .professional-toc a { text-decoration: none; color: var(--doc-ink); display: flex; gap: 6mm; }
+  .professional-toc a span { color: var(--doc-muted); font-variant-numeric: tabular-nums; }
+  [data-collection="professional"] .policy-section { padding: 0; margin-bottom: calc(9mm * var(--doc-density-factor)); border: 0; background: transparent; }
+  [data-collection="professional"] .policy-section-heading { margin-bottom: 5mm; padding-bottom: 3mm; border-bottom: 1px solid var(--doc-line); }
+  [data-collection="professional"] p { text-align: left; }
+  [data-collection="professional"] .policy-table { font-size: 10.5pt; }
+  [data-collection="professional"] .policy-table th { font-weight: 600; }
+  [data-collection="professional"] .policy-table td { padding: 3mm; }
+  [data-collection="professional"] .policy-table[data-target-table] th,
+  [data-collection="professional"] .policy-table[data-target-table] td { padding: 2mm 1.5mm; vertical-align: top; }
+  [data-collection="professional"] .policy-table[data-target-table] th:nth-child(1) { width: 5%; }
+  [data-collection="professional"] .policy-table[data-target-table] th:nth-child(2) { width: 17%; }
+  [data-collection="professional"] .policy-table[data-target-table] th:nth-child(3) { width: 39%; }
+  [data-collection="professional"] .policy-table[data-target-table] th:nth-child(4),
+  [data-collection="professional"] .policy-table[data-target-table] th:nth-child(5) { width: 12%; }
+  [data-collection="professional"] .policy-table[data-target-table] th:nth-child(6) { width: 15%; }
+  [data-collection="professional"] .policy-focus-list, [data-collection="professional"] .policy-objective-groups { display: block; }
+  [data-collection="professional"] .policy-focus-item { border: none; border-bottom: 1px solid var(--doc-line); }
+  [data-collection="professional"] .policy-focus-item b { background: transparent; color: var(--doc-primary); }
+  [data-collection="professional"] .policy-acknowledgement { padding: 0; border: 0; background: transparent; }
+  [data-collection="professional"] .policy-section aside span { display: none; }
+  [data-collection="professional"] .policy-section aside b { font-size: 18pt; }
+
+  [data-collection="professional"] .policy-section-heading { justify-content: flex-start; text-align: left; border-top: none; padding: 0 0 3mm; }
+  [data-collection="professional"] .policy-section-heading h2 { text-transform: none; letter-spacing: -.01em; font-weight: 600; order: 1; }
+  [data-collection="professional"] .policy-section-heading > span { order: 0; }
+  [data-collection="professional"] .policy-section-heading > i { display: none; }
+  [data-collection="professional"] .policy-section-body > div > p:first-child::first-letter { float: none; margin: 0; font-size: inherit; line-height: inherit; font-family: inherit; color: inherit; }
+
+  [data-professional-variant="corporate"] .professional-cover-corporate { padding: 20mm 22mm 15mm; }
+  [data-professional-variant="corporate"] .professional-main { padding-inline: 22mm; }
+  [data-professional-variant="corporate"] .professional-toc { padding: 16mm 22mm 12mm; }
+  [data-professional-variant="corporate"] .professional-section-heading { border-bottom-color: var(--doc-primary); }
+
+  [data-professional-variant="editorial"] .professional-cover-editorial { padding: 16mm 18mm 14mm; }
+  [data-professional-variant="editorial"] .professional-editorial-masthead { display: flex; justify-content: space-between; padding-bottom: 5mm; border-bottom: 1px solid var(--doc-line); color: var(--doc-muted); font-size: 8pt; text-transform: uppercase; letter-spacing: .1em; }
+  [data-professional-variant="editorial"] .professional-editorial-grid { display: grid; grid-template-columns: 18mm 1fr; gap: 8mm; margin-top: 42mm; }
+  [data-professional-variant="editorial"] .professional-editorial-index { color: var(--doc-accent); font-family: var(--policy-heading-font); font-size: 24pt; }
+  [data-professional-variant="editorial"] .professional-title { margin: 0; }
+  [data-professional-variant="editorial"] .professional-main { padding-inline: 18mm; }
+  [data-professional-variant="editorial"] .professional-toc { padding: 18mm; }
+  [data-professional-variant="editorial"] .professional-toc li { padding-block: 6mm; }
+  [data-professional-variant="editorial"] .professional-section-heading { border-bottom: 0; padding-bottom: 4mm; }
+  [data-professional-variant="editorial"] .professional-section-heading h2 { font-style: italic; font-weight: 500; }
+  [data-professional-variant="editorial"] .policy-table { border: 0; font-size: 10pt; }
+  [data-professional-variant="editorial"] .policy-table th { background: transparent; color: var(--doc-primary); border-top: 1px solid var(--doc-primary); border-bottom: 1px solid var(--doc-line); font-family: var(--policy-heading-font); font-weight: 500; }
+  [data-professional-variant="editorial"] .professional-running-editorial { border-bottom-color: var(--doc-accent); }
+
+  [data-professional-variant="governance"] .professional-cover-governance { padding: 18mm 18mm 14mm; }
+  [data-professional-variant="governance"] .professional-governance-head { display: grid; grid-template-columns: minmax(0, 1fr) 48mm; gap: 12mm; margin-top: 36mm; padding-top: 10mm; border-top: 3px solid var(--doc-primary); }
+  [data-professional-variant="governance"] .professional-governance-head h1 { margin-top: 5mm; }
+  [data-professional-variant="governance"] .professional-control-box { align-self: start; border: 1px solid var(--doc-line); padding: 5mm; }
+  [data-professional-variant="governance"] .professional-control-box > span { display: block; margin-bottom: 4mm; color: var(--doc-primary); font-size: 8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  [data-professional-variant="governance"] .professional-control-box .policy-meta-pair + .policy-meta-pair { margin-top: 3mm; }
+  [data-professional-variant="governance"] .professional-main { padding-inline: 18mm; }
+  [data-professional-variant="governance"] .professional-toc { padding: 16mm 18mm 12mm; border-left: 3px solid var(--doc-primary); }
+  [data-professional-variant="governance"] .professional-section-heading { border-top: 2px solid var(--doc-primary); padding-top: 3mm; }
+  [data-professional-variant="governance"] .policy-table th { background: var(--doc-primary); color: var(--doc-on-primary); }
+
+  [data-professional-variant="minimal"] .professional-cover-minimal { padding: 14mm 20mm 12mm; }
+  [data-professional-variant="minimal"] .professional-minimal-label { display: flex; justify-content: space-between; border-bottom: 1px solid var(--doc-line); padding-bottom: 4mm; color: var(--doc-muted); font-size: 8pt; letter-spacing: .1em; text-transform: uppercase; }
+  [data-professional-variant="minimal"] .professional-cover-minimal .professional-title { margin-top: 28mm; }
+  [data-professional-variant="minimal"] .professional-cover-minimal .professional-title h1 { font-size: 29pt; font-weight: 500; }
+  [data-professional-variant="minimal"] .professional-main { max-width: 165mm; margin-inline: auto; }
+  [data-professional-variant="minimal"] .professional-toc { max-width: 165mm; margin-inline: auto; padding: 12mm 0; }
+  [data-professional-variant="minimal"] .professional-section-heading { padding-bottom: 2mm; }
+  [data-professional-variant="minimal"] .professional-section-heading h2 { font-weight: 500; }
+  [data-professional-variant="minimal"] .policy-table { border: 0; font-size: 9.5pt; }
+  [data-professional-variant="minimal"] .policy-table th { background: transparent; color: var(--doc-ink); border-bottom: 2px solid var(--doc-ink); font-weight: 600; }
+  [data-professional-variant="minimal"] .policy-table td { padding-block: 2mm; }
+  [data-professional-variant="minimal"] .professional-running-minimal { border-bottom-color: var(--doc-ink); }
+
+  [data-professional-variant="sustainability"] .professional-cover-sustainability { padding: 0 20mm 14mm; }
+  [data-professional-variant="sustainability"] .professional-sustainability-band { height: 12mm; margin-inline: -20mm; background: var(--doc-primary); }
+  [data-professional-variant="sustainability"] .professional-sustainability-content { min-height: 172mm; padding-top: 14mm; }
+  [data-professional-variant="sustainability"] .professional-sustainability-content .professional-title { margin-top: 34mm; }
+  [data-professional-variant="sustainability"] .professional-main { padding-inline: 20mm; }
+  [data-professional-variant="sustainability"] .professional-toc { padding: 14mm 20mm; border-top: 4px solid var(--doc-primary); }
+  [data-professional-variant="sustainability"] .professional-section-heading { padding: 4mm 5mm; border: 0; border-left: 3mm solid var(--doc-primary); background: var(--doc-soft); }
+  [data-professional-variant="sustainability"] .professional-focus-item { background: var(--doc-soft); }
+  [data-professional-variant="sustainability"] .policy-table th { background: var(--doc-primary); color: var(--doc-on-primary); }
+  [data-professional-variant="sustainability"] .professional-running-sustainability { border-bottom: 2px solid var(--doc-primary); }
+
+  [data-professional-variant="institutional"] .professional-cover-institutional { padding: 16mm 20mm 14mm; text-align: center; }
+  [data-professional-variant="institutional"] .professional-institutional-frame { min-height: 202mm; display: flex; flex-direction: column; border: 1px solid var(--doc-primary); outline: 1px solid var(--doc-line); outline-offset: -5mm; padding: 12mm; }
+  [data-professional-variant="institutional"] .professional-institutional-frame .professional-brand { justify-content: center !important; }
+  [data-professional-variant="institutional"] .professional-institutional-frame .professional-title { margin-top: 46mm; }
+  [data-professional-variant="institutional"] .professional-institutional-frame .professional-rule { margin-inline: auto; }
+  [data-professional-variant="institutional"] .professional-institutional-frame .professional-title h1 { margin-inline: auto; font-family: var(--policy-heading-font); font-weight: 500; }
+  [data-professional-variant="institutional"] .professional-main { padding-inline: 24mm; }
+  [data-professional-variant="institutional"] .professional-toc { padding: 16mm 24mm 12mm; text-align: center; }
+  [data-professional-variant="institutional"] .professional-toc h2 { font-family: var(--policy-heading-font); font-weight: 500; }
+  [data-professional-variant="institutional"] .professional-section-heading { justify-content: center; border-block: 1px solid var(--doc-primary); padding-block: 3mm; }
+  [data-professional-variant="institutional"] .professional-section-heading h2 { font-family: var(--policy-heading-font); font-weight: 500; }
+  [data-professional-variant="institutional"] .professional-footer-institutional { justify-content: center; }
+  [data-professional-variant="institutional"] .policy-table { border: 0; }
+  [data-professional-variant="institutional"] .policy-table th { background: transparent; color: var(--doc-primary); border-block: 2px double var(--doc-primary); font-family: var(--policy-heading-font); font-weight: 500; text-align: center; }
+  [data-professional-variant="institutional"] .policy-table td { text-align: center; }
+  [data-professional-variant="institutional"] .professional-running-institutional { justify-content: normal; border-bottom-style: double; }
+
+  /* The project samples are office documents: keep the universal catalog quiet,
+     paper-led, and easy to print. Variant classes only tune alignment and rules. */
+  [data-collection="professional"] .professional-cover {
+    min-height: 230mm; padding: 18mm 20mm 14mm !important; background: var(--doc-paper);
+    border-top: 2px solid var(--doc-primary); overflow: visible;
+  }
+  [data-collection="professional"] .professional-cover-feature { display: none; }
+  [data-collection="professional"] .professional-brand { min-height: auto; margin-bottom: 32mm; color: var(--doc-ink); font-size: 10.5pt; font-weight: 600; }
+  [data-collection="professional"] .professional-title { margin: 0 0 20mm !important; padding: 0 !important; border: 0 !important; max-width: 165mm; }
+  [data-collection="professional"] .professional-kicker { display: block; margin-bottom: 5mm; color: var(--doc-muted); font-size: 8pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  [data-collection="professional"] .professional-title h1 { max-width: 165mm; color: var(--doc-ink); font-size: 24pt; font-weight: 600; line-height: 1.15; letter-spacing: 0; }
+  [data-collection="professional"] .professional-title p { margin-top: 5mm; color: var(--doc-muted); font-size: 11pt; }
+  [data-collection="professional"] .professional-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 10mm; margin-top: auto; padding-top: 5mm; border-top: 1px solid var(--doc-line); }
+  [data-collection="professional"] .professional-meta .policy-meta-pair { padding: 2mm 0; }
+  [data-collection="professional"] .professional-meta span { display: block; color: var(--doc-muted); font-size: 7.5pt; letter-spacing: .06em; text-transform: uppercase; }
+  [data-collection="professional"] .professional-meta strong { color: var(--doc-ink); font-size: 9.5pt; font-weight: 500; }
+  [data-collection="professional"] .professional-cover-institutional { text-align: center; }
+  [data-collection="professional"] .professional-cover-institutional .professional-title { max-width: 165mm; margin-inline: auto !important; }
+  [data-collection="professional"] .professional-cover-institutional .professional-meta { text-align: left; }
+  [data-collection="professional"] .professional-cover-governance .professional-title { max-width: 165mm; }
+  [data-collection="professional"] .professional-cover-sustainability { border-top-width: 4px; }
+  [data-collection="professional"] .professional-cover-sustainability .professional-brand { margin-bottom: 32mm; }
+  [data-collection="professional"] .professional-cover-editorial .professional-brand { padding-bottom: 3mm; border-bottom: 1px solid var(--doc-line); }
+  [data-collection="professional"] .professional-cover-minimal .professional-brand { margin-bottom: 32mm; }
+  [data-collection="professional"] .professional-toc { max-width: none; margin: 0; padding: 12mm 0 !important; border: 0 !important; background: transparent; }
+  [data-collection="professional"] .professional-toc h2 { margin-bottom: 7mm; color: var(--doc-ink); font-size: 17pt; font-weight: 600; }
+  [data-collection="professional"] .professional-toc li { padding: 3mm 0; border-bottom: 1px solid var(--doc-line); }
+  [data-collection="professional"] .professional-toc a { gap: 5mm; color: var(--doc-ink); font-size: 10.5pt; }
+  [data-collection="professional"] .professional-toc a span { color: var(--doc-muted); font-variant-numeric: tabular-nums; }
+  [data-collection="professional"] .policy-main { max-width: none; padding-inline: 20mm !important; }
+  [data-collection="professional"] .policy-section,
+  [data-collection="professional"] .policy-section.frame-numbered-rail,
+  [data-collection="professional"] .policy-section.frame-modular-grid,
+  [data-collection="professional"] .policy-section.frame-editorial-margin,
+  [data-collection="professional"] .policy-section.frame-single-folio { display: block !important; grid-template-columns: none !important; padding: 0 !important; margin-bottom: 9mm; border: 0; background: transparent; }
+  [data-collection="professional"] .policy-section > aside { display: none; }
+  /* The source pages use a full text column inside normal page margins. The
+     legacy frame classes carried narrow editorial max-widths, which created
+     an extra white gutter on both sides of every professional section. */
+  [data-collection="professional"] .policy-section,
+  [data-collection="professional"] .professional-section,
+  [data-collection="professional"] .frame-single-folio,
+  [data-collection="professional"] .frame-editorial-margin { max-width: none !important; margin-inline: 0 !important; }
+  [data-collection="professional"] .policy-section-heading { display: flex; align-items: baseline; gap: 4mm; margin-bottom: 5mm; padding: 0 0 2.5mm !important; border: 0 !important; border-bottom: 1px solid var(--doc-primary) !important; background: transparent !important; }
+  [data-collection="professional"] .policy-section-heading > span { color: var(--doc-muted); font-size: 9pt; }
+  [data-collection="professional"] .policy-section-heading > span { background: transparent !important; border: 0 !important; padding: 0 !important; }
+  [data-collection="professional"] .policy-section-heading h2 { background: transparent !important; color: var(--doc-primary); padding: 0 !important; font-size: 15pt; font-weight: 600; }
+  [data-collection="professional"] .policy-section-body { min-width: 0; }
+  [data-collection="professional"] .policy-focus-item { display: flex; gap: 4mm; padding: 2.5mm 0; border-bottom: 1px solid var(--doc-line); background: transparent !important; }
+  [data-collection="professional"] .policy-focus-item b { min-width: 8mm; color: var(--doc-muted); background: transparent; }
+  [data-collection="professional"] .policy-objective-groups > section { margin-bottom: 6mm; padding: 3mm 0 !important; border: 0; border-top: 1px solid var(--doc-line); background: transparent !important; }
+  [data-collection="professional"] .policy-objective-groups header { display: flex; gap: 4mm; margin-bottom: 2mm; }
+  [data-collection="professional"] .policy-table { border-collapse: collapse; border: 1px solid var(--doc-line); font-size: 9.5pt; }
+  [data-collection="professional"] .policy-table th { padding: 2.5mm 2mm; background: var(--doc-soft) !important; color: var(--doc-ink) !important; border: 1px solid var(--doc-line); font-weight: 600; }
+  [data-collection="professional"] .policy-table td { padding: 2.5mm 2mm; border: 1px solid var(--doc-line); vertical-align: top; }
+  [data-collection="professional"] .policy-acknowledgement { padding: 0; border: 0; background: transparent; }
+  [data-collection="professional"] .policy-footer { display: flex; gap: 8mm; padding: 4mm 20mm; border-top: 1px solid var(--doc-line); background: var(--doc-paper); color: var(--doc-muted); font-size: 8pt; }
+
+  /* Covers use real document content, typographic hierarchy and quiet rules. */
+  [data-collection="professional"] .editorial-policy-cover { min-height: 230mm; box-sizing: border-box; display: flex; flex-direction: column; padding: 10mm 8mm 8mm; border: 0; background: transparent; }
+  .editorial-policy-cover .cover-publisher { font-family: var(--policy-font); font-size: 12pt; line-height: 1.5; font-weight: 600; color: var(--doc-ink); overflow-wrap: anywhere; }
+  .editorial-policy-cover .cover-heading { margin-top: var(--cover-space); margin-bottom: 16mm; }
+  .editorial-policy-cover .cover-heading h1 { margin: 0; padding: 0; max-width: 100%; font-family: var(--policy-heading-font); font-size: var(--cover-title-size); line-height: 1.16; letter-spacing: -.025em; font-weight: 500; color: var(--doc-primary); overflow-wrap: anywhere; }
+  .editorial-policy-cover[data-cover-rule="top"] .cover-heading { border-top: 1px solid var(--doc-primary); padding-top: 9mm; }
+  .editorial-policy-cover[data-cover-rule="bottom"] .cover-heading { border-bottom: 1px solid var(--doc-primary); padding-bottom: 10mm; }
+  .editorial-policy-cover .cover-register { margin-top: auto; display: grid; grid-template-columns: repeat(var(--cover-columns), minmax(0, 1fr)); gap: 0 12mm; padding: 5mm 0 0; border: 0; border-top: 1px solid var(--doc-line); background: transparent; text-align: left; }
+  .editorial-policy-cover .cover-register .policy-meta-pair { display: grid; grid-template-columns: 1fr; gap: 1.5mm; padding: 3mm 0; border: 0; background: transparent; min-width: 0; }
+  .editorial-policy-cover .cover-register span { font-size: 7.5pt; text-transform: uppercase; letter-spacing: .08em; color: var(--doc-muted); }
+  .editorial-policy-cover .cover-register b { font-size: 10pt; font-weight: 500; color: var(--doc-ink); overflow-wrap: anywhere; }
+  .editorial-policy-cover .policy-cover-feature { margin: 0 0 10mm; max-height: 45mm; }
+
+  [data-collection="professional"][data-toc-layout="rail-index"] .professional-toc { border-left: 3px solid var(--doc-primary) !important; padding-left: 10mm !important; }
+  [data-collection="professional"][data-toc-layout="tile-index"] .professional-toc ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm; }
+  [data-collection="professional"][data-toc-layout="tile-index"] .professional-toc li { border: 1px solid var(--doc-line); padding: 5mm; background: var(--doc-soft); }
+  [data-collection="professional"][data-page-frame="numbered-rail"] .policy-section { display: grid !important; grid-template-columns: 18mm minmax(0, 1fr) !important; gap: 7mm; }
+  [data-collection="professional"][data-page-frame="numbered-rail"] .policy-section > aside { display: block; }
+  [data-collection="professional"][data-page-frame="numbered-rail"] .policy-section > aside b { color: var(--doc-primary); }
+  [data-collection="professional"][data-page-frame="editorial-margin"] .policy-section { display: grid !important; grid-template-columns: 18mm minmax(0, 1fr) !important; gap: 7mm; }
+  [data-collection="professional"][data-page-frame="editorial-margin"] .policy-section > aside { display: block; }
+  [data-collection="professional"][data-page-frame="editorial-margin"] .policy-section > aside b { color: var(--doc-accent); font-family: var(--policy-heading-font); }
+  [data-collection="professional"][data-page-frame="modular-grid"] .policy-section { padding: 5mm !important; border: 1px solid var(--doc-line); background: var(--doc-soft); }
+
+  /* Text roles stay independent of decorative brand colors. */
+  .policy-preview-document { color: var(--doc-ink); }
+  [data-collection="professional"] .policy-table th { color: var(--doc-subheading) !important; }
+  .policy-preview-document h1, .policy-preview-document h2 { color: var(--doc-primary-dark) !important; }
+  .policy-preview-document h3, .policy-preview-document h4 { color: var(--doc-subheading) !important; }
+  .editorial-policy-cover .cover-publisher, .editorial-policy-cover .cover-register b { color: var(--doc-muted); }
+  .policy-preview-document .professional-toc a { color: var(--doc-primary-dark); }
 `;

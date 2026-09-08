@@ -1,0 +1,165 @@
+TAP version 13
+# Subtest: defines eight universal visual templates with unique IDs and structural fingerprints
+ok 1 - defines eight universal visual templates with unique IDs and structural fingerprints
+  ---
+  duration_ms: 2.2338
+  ...
+# Subtest: each design has a unique structural signature independent of color
+ok 2 - each design has a unique structural signature independent of color
+  ---
+  duration_ms: 0.3081
+  ...
+# Subtest: no two templates share the same cover, contents and body-page composition
+ok 3 - no two templates share the same cover, contents and body-page composition
+  ---
+  duration_ms: 0.214
+  ...
+# Subtest: legacy policies upgrade to the renamed bases without changing content
+ok 4 - legacy policies upgrade to the renamed bases without changing content
+  ---
+  duration_ms: 0.3836
+  ...
+# Subtest: switching a design resets only visual defaults
+ok 5 - switching a design resets only visual defaults
+  ---
+  duration_ms: 2.2218
+  ...
+# Subtest: applying another template preserves branding unless reset explicitly
+ok 6 - applying another template preserves branding unless reset explicitly
+  ---
+  duration_ms: 0.5457
+  ...
+# Subtest: manual typography changes are detected and can be reset
+ok 7 - manual typography changes are detected and can be reset
+  ---
+  duration_ms: 0.5209
+  ...
+# Subtest: the shared render model preserves enabled order and classifies density deterministically
+ok 8 - the shared render model preserves enabled order and classifies density deterministically
+  ---
+  duration_ms: 1.9142
+  ...
+# Subtest: theme switching preserves authored data across the shared render model
+ok 9 - theme switching preserves authored data across the shared render model
+  ---
+  duration_ms: 2.1062
+  ...
+# Subtest: data treatment remains an explicit customization across every document design
+ok 10 - data treatment remains an explicit customization across every document design
+  ---
+  duration_ms: 1.2936
+  ...
+# Subtest: feature images render only in compatible placements and remain on the policy
+ok 11 - feature images render only in compatible placements and remain on the policy
+  ---
+  duration_ms: 0.5429
+  ...
+# Subtest: template previews receive distinct cover artwork for every built-in design
+ok 12 - template previews receive distinct cover artwork for every built-in design
+  ---
+  duration_ms: 0.5322
+  ...
+# Subtest: optional document-control metadata remains blank when it is not authored
+ok 13 - optional document-control metadata remains blank when it is not authored
+  ---
+  duration_ms: 0.3275
+  ...
+# Subtest: custom theme overrides resolve without mutating the built-in theme
+ok 14 - custom theme overrides resolve without mutating the built-in theme
+  ---
+  duration_ms: 0.6084
+  ...
+# Subtest: malformed custom theme values are discarded safely
+ok 15 - malformed custom theme values are discarded safely
+  ---
+  duration_ms: 0.2718
+  ...
+# Subtest: logo scale accepts precise slider values and keeps legacy labels
+ok 16 - logo scale accepts precise slider values and keeps legacy labels
+  ---
+  duration_ms: 0.2142
+  ...
+# Subtest: bordered running furniture is inset beyond the border stroke
+ok 17 - bordered running furniture is inset beyond the border stroke
+  ---
+  duration_ms: 0.2221
+  ...
+# Subtest: logo header reserves a safe top band after the border
+ok 18 - logo header reserves a safe top band after the border
+  ---
+  duration_ms: 0.2042
+  ...
+# Subtest: logo colors are the default source and template colors remain selectable
+ok 19 - logo colors are the default source and template colors remain selectable
+  ---
+  duration_ms: 0.6087
+  ...
+# Subtest: logo colors reach headings, TOC rules, and running-logo scale
+ok 20 - logo colors reach headings, TOC rules, and running-logo scale
+  ---
+  duration_ms: 21.8303
+  ...
+# Subtest: logo palette extraction ignores transparent and near-white pixels
+ok 21 - logo palette extraction ignores transparent and near-white pixels
+  ---
+  duration_ms: 1.4573
+  ...
+# Subtest: logo palette prefers opaque brand pixels over anti-aliased edge pixels
+ok 22 - logo palette prefers opaque brand pixels over anti-aliased edge pixels
+  ---
+  duration_ms: 1.4532
+  ...
+# Subtest: logo palette keeps monochrome logos usable
+ok 23 - logo palette keeps monochrome logos usable
+  ---
+  duration_ms: 0.4527
+  ...
+# Subtest: logo extraction falls back to onload when decode rejects
+ok 24 - logo extraction falls back to onload when decode rejects
+  ---
+  duration_ms: 1.1069
+  ...
+# Subtest: running headers align the logo independently and use company name only as a fallback
+ok 25 - running headers align the logo independently and use company name only as a fallback
+  ---
+  duration_ms: 12.3433
+  ...
+# Subtest: manual logo colors survive reload and reset restores source without changing layout
+ok 26 - manual logo colors survive reload and reset restores source without changing layout
+  ---
+  duration_ms: 1.5518
+  ...
+# Subtest: saved theme names are unique regardless of case
+ok 27 - saved theme names are unique regardless of case
+  ---
+  duration_ms: 4.0518
+  ...
+# Subtest: applying a saved theme copies an independent policy snapshot
+ok 28 - applying a saved theme copies an independent policy snapshot
+  ---
+  duration_ms: 1.0941
+  ...
+# Subtest: malformed persisted themes are ignored
+ok 29 - malformed persisted themes are ignored
+  ---
+  duration_ms: 0.4904
+  ...
+# Subtest: legacy saved base IDs migrate while preserving the saved overrides
+ok 30 - legacy saved base IDs migrate while preserving the saved overrides
+  ---
+  duration_ms: 1.8298
+  ...
+# Subtest: saved custom themes migrate into My Templates without losing overrides
+ok 31 - saved custom themes migrate into My Templates without losing overrides
+  ---
+  duration_ms: 0.8444
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 594.8201

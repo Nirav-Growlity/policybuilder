@@ -1,0 +1,369 @@
+
+> poc@0.1.0 test
+> node --import tsx --test --test-force-exit lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/universal-templates.test.ts lib/professional-templates.test.ts lib/pdf/generate.test.ts lib/pdf/layout.test.ts lib/ai/template-context.test.ts
+
+TAP version 13
+# Subtest: every policy type receives only templates tagged for that policy
+ok 1 - every policy type receives only templates tagged for that policy
+  ---
+  duration_ms: 68.7579
+  ...
+# Subtest: context contains only the requested section
+ok 2 - context contains only the requested section
+  ---
+  duration_ms: 58.4629
+  ...
+# Subtest: area-based requests select the most relevant example and stay within the context budget
+ok 3 - area-based requests select the most relevant example and stay within the context budget
+  ---
+  duration_ms: 28.0448
+  ...
+# Subtest: defines eight universal visual templates with unique IDs and structural fingerprints
+ok 4 - defines eight universal visual templates with unique IDs and structural fingerprints
+  ---
+  duration_ms: 4.2606
+  ...
+# Subtest: each design has a unique structural signature independent of color
+ok 5 - each design has a unique structural signature independent of color
+  ---
+  duration_ms: 0.4543
+  ...
+# Subtest: no two templates share the same cover, contents and body-page composition
+ok 6 - no two templates share the same cover, contents and body-page composition
+  ---
+  duration_ms: 0.8759
+  ...
+# Subtest: legacy policies upgrade to the renamed bases without changing content
+ok 7 - legacy policies upgrade to the renamed bases without changing content
+  ---
+  duration_ms: 0.7638
+  ...
+# Subtest: switching a design resets only visual defaults
+ok 8 - switching a design resets only visual defaults
+  ---
+  duration_ms: 5.3261
+  ...
+# Subtest: applying another template preserves branding unless reset explicitly
+ok 9 - applying another template preserves branding unless reset explicitly
+  ---
+  duration_ms: 1.2165
+  ...
+# Subtest: manual typography changes are detected and can be reset
+ok 10 - manual typography changes are detected and can be reset
+  ---
+  duration_ms: 0.9476
+  ...
+# Subtest: the shared render model preserves enabled order and classifies density deterministically
+ok 11 - the shared render model preserves enabled order and classifies density deterministically
+  ---
+  duration_ms: 6.4731
+  ...
+# Subtest: theme switching preserves authored data across the shared render model
+ok 12 - theme switching preserves authored data across the shared render model
+  ---
+  duration_ms: 5.7503
+  ...
+# Subtest: data treatment remains an explicit customization across every document design
+ok 13 - data treatment remains an explicit customization across every document design
+  ---
+  duration_ms: 3.6282
+  ...
+# Subtest: feature images render only in compatible placements and remain on the policy
+ok 14 - feature images render only in compatible placements and remain on the policy
+  ---
+  duration_ms: 1.3704
+  ...
+# Subtest: template previews receive distinct cover artwork for every built-in design
+ok 15 - template previews receive distinct cover artwork for every built-in design
+  ---
+  duration_ms: 1.3385
+  ...
+# Subtest: optional document-control metadata remains blank when it is not authored
+ok 16 - optional document-control metadata remains blank when it is not authored
+  ---
+  duration_ms: 0.6511
+  ...
+# Subtest: custom theme overrides resolve without mutating the built-in theme
+ok 17 - custom theme overrides resolve without mutating the built-in theme
+  ---
+  duration_ms: 1.3901
+  ...
+# Subtest: malformed custom theme values are discarded safely
+ok 18 - malformed custom theme values are discarded safely
+  ---
+  duration_ms: 0.7515
+  ...
+# Subtest: logo scale accepts precise slider values and keeps legacy labels
+ok 19 - logo scale accepts precise slider values and keeps legacy labels
+  ---
+  duration_ms: 0.6819
+  ...
+# Subtest: bordered running furniture is inset beyond the border stroke
+ok 20 - bordered running furniture is inset beyond the border stroke
+  ---
+  duration_ms: 0.732
+  ...
+# Subtest: logo header reserves a safe top band after the border
+ok 21 - logo header reserves a safe top band after the border
+  ---
+  duration_ms: 0.6888
+  ...
+# Subtest: logo colors are the default source and template colors remain selectable
+ok 22 - logo colors are the default source and template colors remain selectable
+  ---
+  duration_ms: 1.2783
+  ...
+# Subtest: logo colors reach headings, TOC rules, and running-logo scale
+ok 23 - logo colors reach headings, TOC rules, and running-logo scale
+  ---
+  duration_ms: 68.9528
+  ...
+# Subtest: logo palette extraction ignores transparent and near-white pixels
+ok 24 - logo palette extraction ignores transparent and near-white pixels
+  ---
+  duration_ms: 3.5765
+  ...
+# Subtest: logo palette prefers opaque brand pixels over anti-aliased edge pixels
+ok 25 - logo palette prefers opaque brand pixels over anti-aliased edge pixels
+  ---
+  duration_ms: 1.0463
+  ...
+# Subtest: logo palette keeps monochrome logos usable
+ok 26 - logo palette keeps monochrome logos usable
+  ---
+  duration_ms: 1.3307
+  ...
+# Subtest: logo extraction falls back to onload when decode rejects
+ok 27 - logo extraction falls back to onload when decode rejects
+  ---
+  duration_ms: 3.7413
+  ...
+# Subtest: running headers align the logo independently and use company name only as a fallback
+ok 28 - running headers align the logo independently and use company name only as a fallback
+  ---
+  duration_ms: 34.3517
+  ...
+# Subtest: manual logo colors survive reload and reset restores source without changing layout
+ok 29 - manual logo colors survive reload and reset restores source without changing layout
+  ---
+  duration_ms: 2.8525
+  ...
+# Subtest: generatePdf returns a non-empty PDF buffer
+ok 30 - generatePdf returns a non-empty PDF buffer
+  ---
+  duration_ms: 3639.082
+  ...
+# Subtest: generatePdf renders a custom gradient theme as A4
+ok 31 - generatePdf renders a custom gradient theme as A4
+  ---
+  duration_ms: 2772.1177
+  ...
+# Subtest: vertical gradient covers the complete page and repeats on every page
+ok 32 - vertical gradient covers the complete page and repeats on every page
+  ---
+  duration_ms: 125.474
+  ...
+# Subtest: horizontal gradient covers the complete page and repeats on every page
+ok 33 - horizontal gradient covers the complete page and repeats on every page
+  ---
+  duration_ms: 48.988
+  ...
+# Subtest: diagonal gradient covers the complete page and repeats on every page
+ok 34 - diagonal gradient covers the complete page and repeats on every page
+  ---
+  duration_ms: 23.8748
+  ...
+# Subtest: standard-pack: cover stays on page one and revision is separate from page numbers
+ok 35 - standard-pack: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 9300.273
+  ...
+# Subtest: standard-pack with large logo: cover stays on page one and revision is separate from page numbers
+ok 36 - standard-pack with large logo: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 5751.0299
+  ...
+# Subtest: executive-brief: cover stays on page one and revision is separate from page numbers
+ok 37 - executive-brief: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 4468.8045
+  ...
+# Subtest: executive-brief with large logo: cover stays on page one and revision is separate from page numbers
+ok 38 - executive-brief with large logo: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3431.8646
+  ...
+# Subtest: controlled-manual: cover stays on page one and revision is separate from page numbers
+ok 39 - controlled-manual: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3995.3195
+  ...
+# Subtest: controlled-manual with large logo: cover stays on page one and revision is separate from page numbers
+ok 40 - controlled-manual with large logo: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3789.3118
+  ...
+# Subtest: governance-register: cover stays on page one and revision is separate from page numbers
+ok 41 - governance-register: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3747.4379
+  ...
+# Subtest: governance-register with large logo: cover stays on page one and revision is separate from page numbers
+ok 42 - governance-register with large logo: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3867.9555
+  ...
+# Subtest: operations-guide: cover stays on page one and revision is separate from page numbers
+ok 43 - operations-guide: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 4548.0174
+  ...
+# Subtest: operations-guide with large logo: cover stays on page one and revision is separate from page numbers
+ok 44 - operations-guide with large logo: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 4669.8824
+  ...
+# Subtest: sustainability-charter: cover stays on page one and revision is separate from page numbers
+ok 45 - sustainability-charter: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3820.1482
+  ...
+# Subtest: sustainability-charter with large logo: cover stays on page one and revision is separate from page numbers
+ok 46 - sustainability-charter with large logo: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3900.2881
+  ...
+# Subtest: people-charter: cover stays on page one and revision is separate from page numbers
+ok 47 - people-charter: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 2796.8911
+  ...
+# Subtest: people-charter with large logo: cover stays on page one and revision is separate from page numbers
+ok 48 - people-charter with large logo: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 2436.5295
+  ...
+# Subtest: metrics-ledger: cover stays on page one and revision is separate from page numbers
+ok 49 - metrics-ledger: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3562.7846
+  ...
+# Subtest: metrics-ledger with large logo: cover stays on page one and revision is separate from page numbers
+ok 50 - metrics-ledger with large logo: cover stays on page one and revision is separate from page numbers
+  ---
+  duration_ms: 3274.024
+  ...
+# Subtest: canonical templates and legacy IDs coexist; new policies start with Standard Policy Pack
+ok 51 - canonical templates and legacy IDs coexist; new policies start with Standard Policy Pack
+  ---
+  duration_ms: 2.8344
+  ...
+# Subtest: canonical variants drive distinct document composition
+ok 52 - canonical variants drive distinct document composition
+  ---
+  duration_ms: 5.0985
+  ...
+# Subtest: border input is normalized and enough room is reserved for its thickest setting
+ok 53 - border input is normalized and enough room is reserved for its thickest setting
+  ---
+  duration_ms: 2.2374
+  ...
+# Subtest: border survives save, reload, duplication and applying a different template
+ok 54 - border survives save, reload, duplication and applying a different template
+  ---
+  duration_ms: 6.3373
+  ...
+# Subtest: cover-only PDF border touches only page one; disabling preserves bytes
+ok 55 - cover-only PDF border touches only page one; disabling preserves bytes
+  ---
+  duration_ms: 74.3988
+  ...
+# Subtest: Word exports contain native page borders and editable text with isolated geometry
+ok 56 - Word exports contain native page borders and editable text with isolated geometry
+  ---
+  duration_ms: 671.5752
+  ...
+# Subtest: heading, subheading and body colors survive save/reload and remain independent in Word
+ok 57 - heading, subheading and body colors survive save/reload and remain independent in Word
+  ---
+  duration_ms: 311.1447
+  ...
+# Subtest: publishes exactly five generic starters for each policy type and profile
+ok 58 - publishes exactly five generic starters for each policy type and profile
+  ---
+  duration_ms: 29.1387
+  ...
+# Subtest: starter search and filters return public catalog data only
+ok 59 - starter search and filters return public catalog data only
+  ---
+  duration_ms: 2.35
+  ...
+# Subtest: saved theme names are unique regardless of case
+ok 60 - saved theme names are unique regardless of case
+  ---
+  duration_ms: 14.2691
+  ...
+# Subtest: applying a saved theme copies an independent policy snapshot
+ok 61 - applying a saved theme copies an independent policy snapshot
+  ---
+  duration_ms: 1.7591
+  ...
+# Subtest: malformed persisted themes are ignored
+ok 62 - malformed persisted themes are ignored
+  ---
+  duration_ms: 0.7369
+  ...
+# Subtest: legacy saved base IDs migrate while preserving the saved overrides
+ok 63 - legacy saved base IDs migrate while preserving the saved overrides
+  ---
+  duration_ms: 4.7586
+  ...
+# Subtest: saved custom themes migrate into My Templates without losing overrides
+ok 64 - saved custom themes migrate into My Templates without losing overrides
+  ---
+  duration_ms: 1.4138
+  ...
+# Subtest: exactly eight universal templates with unique IDs and structural fingerprints
+ok 65 - exactly eight universal templates with unique IDs and structural fingerprints
+  ---
+  duration_ms: 3.984
+  ...
+# Subtest: every template renders every policy type (8 x 5 compatibility)
+ok 66 - every template renders every policy type (8 x 5 compatibility)
+  ---
+  duration_ms: 16.8845
+  ...
+# Subtest: switching templates preserves all authored policy and company data
+ok 67 - switching templates preserves all authored policy and company data
+  ---
+  duration_ms: 3.0739
+  ...
+# Subtest: legacy themes and aliases migrate without losing overrides
+ok 68 - legacy themes and aliases migrate without losing overrides
+  ---
+  duration_ms: 0.6061
+  ...
+# Subtest: template API supports q, family, intent and imageSupport (not policy content)
+ok 69 - template API supports q, family, intent and imageSupport (not policy content)
+  ---
+  duration_ms: 1.8665
+  ...
+# Subtest: long titles, missing metadata, empty tables, dense targets and custom sections render
+ok 70 - long titles, missing metadata, empty tables, dense targets and custom sections render
+  ---
+  duration_ms: 5.1687
+  ...
+# Subtest: dense DOCX artifacts are valid packages across all eight templates
+ok 71 - dense DOCX artifacts are valid packages across all eight templates
+  ---
+  duration_ms: 6929.9574
+  ...
+1..71
+# tests 71
+# suites 0
+# pass 71
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 74166.8366

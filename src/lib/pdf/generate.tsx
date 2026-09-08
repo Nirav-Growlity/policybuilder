@@ -1,4 +1,4 @@
-import { generatePreviewPdf } from "./preview-pdf";
+import { generatePreviewPdf } from "./print-document";
 import { normalizePolicyQuantitative } from "../quantitative";
 import type { Policy } from "../types";
 

@@ -1,6 +1,6 @@
 import type { Policy, PolicySection, StandardSectionKind, StepId } from "./types";
 import { DEFAULT_TYPOGRAPHY } from "./typography";
-import { DEFAULT_DOCUMENT_THEME_ID, getDocumentTheme, upgradeDocumentThemeId } from "./document-themes";
+import { DEFAULT_DOCUMENT_THEME_ID, getDocumentTheme, resolveDocumentTemplateId, upgradeDocumentThemeId } from "./document-themes";
 
 export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] = [
   { kind: "preface", title: "Preface" },
@@ -45,7 +45,8 @@ export function normalizePolicyStructure<T extends Policy>(policy: T): T {
   const incoming = Array.isArray(policy.sections) ? policy.sections : defaultSections(policy);
   const requiredPreface = incoming.find((s) => s.kind === "preface") || { id: sectionId("preface"), kind: "preface" as const, title: "Preface", enabled: true };
   const remaining = incoming.filter((s) => s.kind !== "preface").map((s) => ({ ...s, blocks: s.kind === "custom" ? (s.blocks || []) : s.blocks }));
-  const documentTheme = upgradeDocumentThemeId(policy.documentTheme ?? DEFAULT_DOCUMENT_THEME_ID);
+  const documentTemplate = resolveDocumentTemplateId({ documentTemplate: policy.documentTemplate, documentTheme: policy.documentTheme ?? DEFAULT_DOCUMENT_THEME_ID });
+  const documentTheme = upgradeDocumentThemeId(documentTemplate);
   const themeDefaults = getDocumentTheme(documentTheme).defaults;
   const typography = !policy.typography
     ? { ...themeDefaults.typography }
@@ -55,9 +56,12 @@ export function normalizePolicyStructure<T extends Policy>(policy: T): T {
           ...policy.typography,
           headingFontFamily: policy.typography.headingFontFamily || themeDefaults.typography.headingFontFamily,
         };
+  const brandOverrides = policy.templateBrandOverrides ?? policy.documentThemeOverrides;
   return {
     ...policy,
+    documentTemplate: documentTemplate,
     documentTheme,
+    ...(brandOverrides !== undefined ? { documentThemeOverrides: brandOverrides, templateBrandOverrides: brandOverrides } : {}),
     sections: [{ ...requiredPreface, enabled: true }, ...remaining],
     showTableOfContents: policy.showTableOfContents ?? true,
     showAcknowledgement: policy.showAcknowledgement ?? true,

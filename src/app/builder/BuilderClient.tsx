@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation";
 import { PolicySelector } from "@/components/builder/policy-selector";
 import { CompanySetupScreen } from "@/components/builder/company-setup-screen";
 import type { PolicyType } from "@/lib/types";
+import { extractLogoPalette } from "@/lib/logo-palette";
 
 const STEP_RENDERERS: Record<string, React.ComponentType> = {
   structure: StepStructure,
@@ -45,11 +46,13 @@ export function BuilderClient() {
     setImportedPolicy,
     clearImportedPolicy,
     startPolicy,
+    updatePolicy,
     hydrated,
   } = useBuilder();
   const { push } = useToast();
   const searchParams = useSearchParams();
   const templateId = searchParams.get("template");
+  const visualTemplateId = searchParams.get("visualTemplate");
   const selectedType = searchParams.get("type") as PolicyType | null;
   const router = useRouter();
   const [dragOver, setDragOver] = React.useState(false);
@@ -79,7 +82,15 @@ export function BuilderClient() {
             ...incoming,
             company: { ...incoming.company, ...currentCompany },
           });
-          push(`Loaded template: ${data.template.name}`, "success");
+          push(`Loaded preset: ${data.template.name}`, "success");
+          setStep("structure");
+        } else if (data.template?.id) {
+          // Universal visual template: composition only, never replace content.
+          const { updatePolicy } = useBuilder.getState();
+          const current = useBuilder.getState().policy;
+          const { getDocumentTemplatePatch } = await import("@/lib/document-themes");
+          updatePolicy(() => getDocumentTemplatePatch(data.template.id, current));
+          push(`Applied visual template: ${data.template.name}`, "success");
           setStep("structure");
         }
       } catch {
@@ -89,6 +100,40 @@ export function BuilderClient() {
       }
     })();
   }, [hydrated, push, setPolicy, setStep, templateId, templateLoaded]);
+
+  // Universal visual templates travel through company + policy setup without bypassing either step.
+  React.useEffect(() => {
+    if (!hydrated || !visualTemplateId) return;
+    (async () => {
+      try {
+        const { upgradeDocumentThemeId, getDocumentTemplatePatch } = await import("@/lib/document-themes");
+        const id = upgradeDocumentThemeId(visualTemplateId);
+        const current = useBuilder.getState().policy;
+        const resolved = current.documentTemplate ?? current.documentTheme;
+        if (resolved !== id) {
+          useBuilder.getState().updatePolicy(() => getDocumentTemplatePatch(id, current));
+        }
+      } catch {
+        // ignore invalid template ids
+      }
+    })();
+  }, [hydrated, visualTemplateId, policy.policyType]);
+
+  // Legacy saved policies may contain a logo but no cached palette. Keep this
+  // migration alive at the builder level so it also runs on Preview/Export,
+  // where the company form is not mounted.
+  React.useEffect(() => {
+    const logo = policy.company.companyLogo;
+    if (!hydrated || !logo || policy.company.logoPalette) return;
+    let active = true;
+    void extractLogoPalette(logo).then((logoPalette) => {
+      if (!active || !logoPalette) return;
+      updatePolicy((current) => current.company.companyLogo === logo ? { company: { ...current.company, logoPalette } } : undefined);
+    }).catch(() => undefined);
+    return () => {
+      active = false;
+    };
+  }, [hydrated, policy.company.companyLogo, policy.company.logoPalette, updatePolicy]);
 
   const handleDrop = async (e: React.DragEvent) => {
     if (!Array.from(e.dataTransfer.types).includes("Files")) return;
@@ -133,7 +178,24 @@ export function BuilderClient() {
       <PolicySelector
         onSelect={(type) => {
           startPolicy(type);
-          router.push(`/builder?type=${type}`);
+          // Carry the visual template through setup without bypassing either step.
+          router.push(visualTemplateId ? `/builder?visualTemplate=${visualTemplateId}&type=${type}` : `/builder?type=${type}`);
+        }}
+        onBack={() => setSetupPhase("company")}
+      />
+    );
+  }
+
+  // Visual-template flow must not bypass setup: show company step first when type is missing.
+  if (visualTemplateId && !selectedType && !templateId) {
+    if (setupPhase === "company") {
+      return <CompanySetupScreen onContinue={() => setSetupPhase("policy")} />;
+    }
+    return (
+      <PolicySelector
+        onSelect={(type) => {
+          startPolicy(type);
+          router.push(`/builder?visualTemplate=${visualTemplateId}&type=${type}`);
         }}
         onBack={() => setSetupPhase("company")}
       />
@@ -188,7 +250,7 @@ export function BuilderClient() {
       <Button variant="secondary" size="md" icon={<ArrowLeft size={14} />} onClick={prev} disabled={isFirst}>
         Back
       </Button>
-      <Button
+      {!isLast && (<Button
         variant="primary"
         size="md"
         trailingIcon={<ArrowRight size={14} />}
@@ -196,7 +258,7 @@ export function BuilderClient() {
         disabled={isLast}
       >
         Continue
-      </Button>
+      </Button>)}
     </>
   );
 
