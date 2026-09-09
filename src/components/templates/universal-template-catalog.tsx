@@ -113,7 +113,7 @@ function UniversalCard({ template, onPreview }: { template: UniversalMeta; onPre
   return (
     <article className="overflow-hidden rounded-2xl border border-[var(--color-line)] bg-white/60">
       <div className="p-3">
-        <ThemeContactSheet theme={template} companyName="Acme Specialty Chemicals" policyLabel={profile.label} />
+        <ThemeContactSheet theme={template} companyName="Acme Specialty Chemicals" policyLabel={profile.label} policyType="environmental" />
       </div>
       <div className="px-4 pb-4">
         <div className="mb-1 flex flex-wrap items-center gap-2 text-[10px] font-semibold uppercase tracking-[.12em] text-[var(--color-forest)]"><span>{template.universalFamily}</span><span className="text-[var(--color-line-2)]">/</span><span>{template.intent}</span><span className="text-[var(--color-line-2)]">/</span><span>{template.defaults.density}</span></div>

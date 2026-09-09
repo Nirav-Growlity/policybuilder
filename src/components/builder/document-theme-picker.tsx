@@ -10,7 +10,8 @@ import {
   type DocumentThemeDefinition,
 } from "@/lib/document-themes";
 import { getPolicyProfile } from "@/lib/constants";
-import { motifSvg } from "@/lib/cover-motifs";
+import { coverDesign } from "@/lib/cover-designs";
+import { PREVIEW_POLICY_TYPES } from "@/lib/sample-policies";
 import { useBuilder } from "@/lib/store";
 
 export function DocumentThemePicker() {
@@ -31,7 +32,7 @@ export function DocumentThemePicker() {
       }
     >
       <div className="grid gap-5 md:grid-cols-[minmax(0,1fr)_220px] md:items-center">
-        <ThemeContactSheet theme={selectedTheme} companyName={policy.company.name} policyLabel={profile.label} />
+        <ThemeContactSheet theme={selectedTheme} companyName={policy.company.name} policyLabel={profile.label} policyType={policy.policyType} />
         <div>
           <div className="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--color-muted)]">Selected template</div>
           <div className="mt-1 font-display text-[23px] font-semibold text-[var(--color-ink)]">
@@ -56,7 +57,29 @@ export function DocumentThemePicker() {
   );
 }
 
-export function ThemeContactSheet({ theme, companyName, policyLabel, compact = false }: { theme: DocumentThemeDefinition; companyName: string; policyLabel: string; compact?: boolean }) {
+export function ThemeContactSheet({
+  theme,
+  companyName,
+  policyLabel,
+  compact = false,
+  policyType = "environmental",
+}: {
+  theme: DocumentThemeDefinition;
+  companyName: string;
+  policyLabel: string;
+  compact?: boolean;
+  policyType?: string;
+}) {
+  const [coverError, setCoverError] = React.useState(false);
+  const [bodyError, setBodyError] = React.useState(false);
+
+  const resolvedType = (policyType && (PREVIEW_POLICY_TYPES as readonly string[]).includes(policyType))
+    ? policyType
+    : "environmental";
+
+  const coverSrc = `/template-previews/${theme.id}/${resolvedType}-cover.png`;
+  const bodySrc = `/template-previews/${theme.id}/${resolvedType}-body.png`;
+
   const style = {
     ...documentThemeCssVariables(theme),
     fontFamily: theme.defaults.typography.fontFamily,
@@ -69,47 +92,163 @@ export function ThemeContactSheet({ theme, companyName, policyLabel, compact = f
       data-template-cover={theme.layout.cover}
       data-template-toc={theme.layout.toc}
       data-template-frame={theme.layout.pageFrame}
-      className={`relative grid grid-cols-[1.28fr_.72fr] overflow-hidden border border-black/5 bg-[#e9e7e1] shadow-[inset_0_1px_0_rgba(255,255,255,.75)] ${compact ? "aspect-[16/8.7] gap-1.5 rounded-lg p-2" : "aspect-[16/8.7] gap-2 rounded-2xl p-2.5"}`}
+      className={`relative flex items-center justify-center overflow-hidden border border-black/5 bg-[#eceae4] shadow-[inset_0_1px_0_rgba(255,255,255,.75)] ${
+        compact ? "aspect-[16/8.7] gap-2 rounded-xl p-2" : "aspect-[16/8.7] gap-3 rounded-2xl p-2.5"
+      }`}
       aria-hidden="true"
     >
-      <MiniCover theme={theme} companyName={companyName || "Company name"} policyLabel={policyLabel} compact={compact} />
-      <div className="grid min-w-0 grid-rows-2 gap-2">
-        <MiniToc theme={theme} compact={compact} />
-        <MiniContent theme={theme} compact={compact} />
+      {/* Cover page preview */}
+      <div className="relative h-full aspect-[210/297] shrink-0 overflow-hidden rounded-[3px] bg-white shadow-[0_3px_10px_rgba(25,32,28,.12),0_1px_2px_rgba(25,32,28,.08)] ring-1 ring-black/5">
+        {coverError ? (
+          <MiniCover theme={theme} companyName={companyName || "Company name"} policyLabel={policyLabel} compact={compact} />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={coverSrc}
+            alt={`${theme.name} cover`}
+            className="h-full w-full object-cover object-top select-none pointer-events-none"
+            loading="lazy"
+            onError={() => setCoverError(true)}
+          />
+        )}
+      </div>
+
+      {/* Body / Inside page preview */}
+      <div className="relative h-full aspect-[210/297] shrink-0 overflow-hidden rounded-[3px] bg-white shadow-[0_3px_10px_rgba(25,32,28,.12),0_1px_2px_rgba(25,32,28,.08)] ring-1 ring-black/5">
+        {bodyError ? (
+          <MiniContent theme={theme} compact={compact} />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={bodySrc}
+            alt={`${theme.name} body`}
+            className="h-full w-full object-cover object-top select-none pointer-events-none"
+            loading="lazy"
+            onError={() => setBodyError(true)}
+          />
+        )}
       </div>
     </div>
   );
 }
 
 function MiniPage({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return <div className={`relative overflow-hidden rounded-[5px] bg-[var(--doc-paper)] shadow-[0_5px_14px_rgba(25,32,28,.13)] ${className}`}>{children}</div>;
+  return <div className={`relative h-full w-full overflow-hidden rounded-[3px] bg-[var(--doc-paper)] ${className}`}>{children}</div>;
 }
 
 function MiniCover({ theme, companyName, policyLabel, compact }: { theme: DocumentThemeDefinition; companyName: string; policyLabel: string; compact: boolean }) {
-  const title = compact ? "text-[10px]" : "text-[12px]";
-  return <MiniPage className="flex flex-col p-[7%]">
-    <div className="h-[38%] w-full shrink-0 overflow-hidden [&>svg]:h-full [&>svg]:w-full" dangerouslySetInnerHTML={{ __html: motifSvg(theme.layout.motif, theme.colors) }} />
-    <div className="mt-auto line-clamp-2 font-bold leading-[1.02] text-[var(--doc-ink)]" style={{ fontFamily: theme.defaults.typography.headingFontFamily }}>
-      <span className={title}>{policyLabel}</span>
-    </div>
-    <div className="mt-[5%] max-w-full truncate text-[4.5px] text-[var(--doc-muted)]">{companyName}</div>
-    <div className="mt-[6%] border-t border-[var(--doc-primary)] pt-1.5 text-[3.5px] uppercase tracking-[.18em] text-[var(--doc-primary)]">Revision 01</div>
-  </MiniPage>;
-}
-
-function MiniToc({ theme, compact }: { theme: DocumentThemeDefinition; compact: boolean }) {
-  const rows = ["Declaration", "Scope", "Targets", "Responsibilities"];
-  const toc = theme.layout.toc;
-  if (toc === "rail-index") return <MiniPage className="grid grid-cols-[24%_76%]"><div className="bg-[var(--doc-primary)] p-2 text-[5px] font-bold text-[var(--doc-on-primary)]">INDEX</div><div className="space-y-1.5 p-2">{rows.map((row, index) => <div key={row} className="flex gap-1 text-[3.5px]"><b className="text-[var(--doc-accent)]">0{index + 1}</b><span className="truncate">{row}</span></div>)}</div></MiniPage>;
-  if (toc === "tile-index") return <MiniPage className="grid grid-cols-2 gap-1 p-2">{rows.map((row, index) => <div key={row} className="flex flex-col justify-between bg-[var(--doc-soft)] p-1.5 text-[3.5px]"><b className="text-[6px] text-[var(--doc-primary)]">0{index + 1}</b><span className="truncate">{row}</span></div>)}</MiniPage>;
-  if (toc === "editorial-index") return <MiniPage className="grid grid-cols-2 gap-x-2 p-2.5">{rows.map((row, index) => <div key={row} className="border-t border-[var(--doc-line)] py-1 text-[3.5px]"><b className="mr-1 text-[7px] text-[var(--doc-accent)]">{index + 1}</b>{row}</div>)}</MiniPage>;
-  return <MiniPage className={`p-2.5 ${compact ? "text-[.9em]" : ""}`}><div className="mb-2 text-[5px] font-bold uppercase tracking-[.14em] text-[var(--doc-primary)]">Contents</div>{rows.map((row, index) => <div key={row} className="mb-1 flex items-end text-[3.5px]"><b className="mr-1 text-[var(--doc-primary)]">0{index + 1}</b><span>{row}</span><span className="mx-1 mb-[2px] flex-1 border-b border-dotted border-[var(--doc-muted)]" /><span>{index + 2}</span></div>)}</MiniPage>;
+  const design = coverDesign(theme.layout.cover);
+  return (
+    <MiniPage className="flex flex-col p-[7%] justify-between">
+      <div className="text-[4px] font-semibold truncate text-[var(--doc-ink)]">
+        {companyName || "Company name"}
+      </div>
+      <div
+        className={`my-auto ${
+          design.rule === "top"
+            ? "border-t border-[var(--doc-primary)] pt-1"
+            : design.rule === "bottom"
+            ? "border-b border-[var(--doc-primary)] pb-1"
+            : ""
+        }`}
+        style={{ textAlign: design.align }}
+      >
+        <div
+          className={`font-bold line-clamp-2 leading-[1.1] text-[var(--doc-primary)] ${compact ? "text-[8px]" : "text-[10px]"}`}
+          style={{ fontFamily: theme.defaults.typography.headingFontFamily }}
+        >
+          {policyLabel}
+        </div>
+      </div>
+      <div className="border-t border-[var(--doc-line)] pt-1 grid grid-cols-2 gap-x-1 gap-y-0.5 text-[3px] text-[var(--doc-muted)]">
+        <div>DOC: <span className="font-semibold text-[var(--doc-ink)]">ASC-001</span></div>
+        <div>REV: <span className="font-semibold text-[var(--doc-ink)]">01</span></div>
+      </div>
+    </MiniPage>
+  );
 }
 
 function MiniContent({ theme, compact }: { theme: DocumentThemeDefinition; compact: boolean }) {
   const frame = theme.layout.pageFrame;
-  if (frame === "numbered-rail") return <MiniPage className="grid grid-cols-[24%_76%]"><div className="bg-[var(--doc-primary)] p-2 text-[var(--doc-on-primary)]"><b className="text-[9px]">04</b><div className="mt-1 text-[3px] uppercase tracking-[.14em]">Targets</div></div><div className="p-2"><div className="mb-1.5 text-[4px] font-bold">Quantitative targets</div>{[72, 90, 58, 84].map((width, index) => <div key={index} className="mb-1 h-1 bg-[var(--doc-soft)]" style={{ width: `${width}%` }} />)}</div></MiniPage>;
-  if (frame === "modular-grid") return <MiniPage className="p-2"><div className="mb-1.5 flex items-center justify-between bg-[var(--doc-primary)] p-1.5 text-[3.5px] font-bold uppercase tracking-[.12em] text-[var(--doc-on-primary)]"><span>Targets</span><span>05</span></div><div className="space-y-1">{["Energy", "Water", "Waste"].map((item, index) => <div key={item} className="grid grid-cols-[22%_1fr] gap-1 bg-[var(--doc-soft)] p-1"><b className="text-[4px] text-[var(--doc-primary)]">0{index + 1}</b><span className="text-[3.5px]">{item}<span className="mt-1 block h-1 w-[75%] bg-[var(--doc-line)]" /></span></div>)}</div></MiniPage>;
-  if (frame === "editorial-margin") return <MiniPage className="grid grid-cols-[23%_77%] p-2.5"><div className="text-[13px] font-bold text-[var(--doc-accent)]" style={{ fontFamily: theme.defaults.typography.headingFontFamily }}>07</div><div><div className="border-t border-[var(--doc-accent)] pt-1 text-[4.5px] font-bold">Responsibilities</div><div className="mt-2 h-1 w-full bg-[var(--doc-line)]" /><div className="mt-1 h-1 w-[82%] bg-[var(--doc-line)]" /><div className="mt-2 border-t border-[var(--doc-line)] pt-1 text-[3px] italic text-[var(--doc-muted)]">Editorial role entries</div></div></MiniPage>;
-  return <MiniPage className={`p-2.5 ${compact ? "text-[.9em]" : ""}`}><div className="text-center text-[4.5px] font-bold uppercase tracking-[.14em] text-[var(--doc-primary)]">Policy declaration</div><div className="mx-auto mt-1 h-px w-[42%] bg-[var(--doc-accent)]" /><div className="mt-2 space-y-1">{[100, 92, 78].map((width) => <div key={width} className="h-1 bg-[var(--doc-line)]" style={{ width: `${width}%` }} />)}</div><div className="mt-2 grid grid-cols-[18%_82%] border border-[var(--doc-primary)] text-[3px]"><b className="bg-[var(--doc-primary)] p-1 text-[var(--doc-on-primary)]">01</b><span className="p-1">Commitment statement</span></div></MiniPage>;
+  if (frame === "numbered-rail") {
+    return (
+      <MiniPage className="grid grid-cols-[22%_78%] h-full">
+        <div className="bg-[var(--doc-primary)] p-1.5 text-[var(--doc-on-primary)] flex flex-col justify-between">
+          <b className="text-[7px]">01</b>
+          <div className="text-[2.5px] uppercase tracking-wider opacity-80">Section</div>
+        </div>
+        <div className="p-2 space-y-1">
+          <div className="text-[4px] font-bold text-[var(--doc-primary)]">01 Preface</div>
+          <div className="space-y-0.5">
+            {[90, 85, 95, 70].map((w, i) => (
+              <div key={i} className="h-0.5 bg-[var(--doc-line)] rounded-full" style={{ width: `${w}%` }} />
+            ))}
+          </div>
+          <div className="mt-1.5 text-[4px] font-bold text-[var(--doc-primary)]">02 Declaration</div>
+          <div className="space-y-0.5">
+            {[92, 80, 88].map((w, i) => (
+              <div key={i} className="h-0.5 bg-[var(--doc-line)] rounded-full" style={{ width: `${w}%` }} />
+            ))}
+          </div>
+        </div>
+      </MiniPage>
+    );
+  }
+  if (frame === "modular-grid") {
+    return (
+      <MiniPage className="p-1.5 space-y-1 h-full">
+        <div className="bg-[var(--doc-soft)] border border-[var(--doc-line)] rounded p-1">
+          <div className="text-[3.5px] font-bold text-[var(--doc-primary)] mb-0.5">01 Preface</div>
+          <div className="space-y-0.5">
+            <div className="h-0.5 bg-[var(--doc-line)] w-[90%]" />
+            <div className="h-0.5 bg-[var(--doc-line)] w-[75%]" />
+          </div>
+        </div>
+        <div className="bg-[var(--doc-soft)] border border-[var(--doc-line)] rounded p-1">
+          <div className="text-[3.5px] font-bold text-[var(--doc-primary)] mb-0.5">02 Policy Declaration</div>
+          <div className="space-y-0.5">
+            <div className="h-0.5 bg-[var(--doc-line)] w-[85%]" />
+            <div className="h-0.5 bg-[var(--doc-line)] w-[60%]" />
+          </div>
+        </div>
+      </MiniPage>
+    );
+  }
+  if (frame === "editorial-margin") {
+    return (
+      <MiniPage className="grid grid-cols-[20%_80%] p-2 h-full">
+        <div className="text-[10px] font-bold text-[var(--doc-accent)]" style={{ fontFamily: theme.defaults.typography.headingFontFamily }}>
+          01
+        </div>
+        <div>
+          <div className="text-[4px] font-bold text-[var(--doc-primary)] mb-1">01 Preface</div>
+          <div className="space-y-0.5">
+            {[90, 85, 95, 70].map((w, i) => (
+              <div key={i} className="h-0.5 bg-[var(--doc-line)] rounded-full" style={{ width: `${w}%` }} />
+            ))}
+          </div>
+        </div>
+      </MiniPage>
+    );
+  }
+  return (
+    <MiniPage className="p-2 space-y-1.5 h-full">
+      <div className="border-b border-[var(--doc-line)] pb-1">
+        <div className="text-[4px] font-bold text-[var(--doc-primary)]">01 Preface</div>
+        <div className="mt-1 space-y-0.5">
+          {[95, 88, 92].map((w, i) => (
+            <div key={i} className="h-0.5 bg-[var(--doc-line)] rounded-full" style={{ width: `${w}%` }} />
+          ))}
+        </div>
+      </div>
+      <div>
+        <div className="text-[4px] font-bold text-[var(--doc-primary)]">02 Declaration</div>
+        <div className="mt-1 space-y-0.5">
+          {[90, 82, 85].map((w, i) => (
+            <div key={i} className="h-0.5 bg-[var(--doc-line)] rounded-full" style={{ width: `${w}%` }} />
+          ))}
+        </div>
+      </div>
+    </MiniPage>
+  );
 }
