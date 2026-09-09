@@ -34,6 +34,7 @@ import { A4, pageMarginMm } from "../page-geometry";
 import { getPolicyDocumentTheme, logoScaleFactor } from "../document-themes";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import sharp from "sharp";
 import { buildDocumentRenderModel, getRunningHeaderBrand, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
 import { documentHex, type DocumentThemeDefinition } from "../document-themes";
 import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
@@ -63,8 +64,8 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
   const model = buildDocumentRenderModel(policy);
   const { theme, typography } = model;
   const spacingScale = densityScale(theme.density);
-  const logoImage = logoFromDataUrl(policy.company.companyLogo);
-  const featureImage = logoFromDataUrl(model.featureImage?.dataUrl);
+  const logoImage = await logoFromDataUrl(policy.company.companyLogo);
+  const featureImage = await logoFromDataUrl(model.featureImage?.dataUrl);
   const logoAlignment = policy.logoPosition === "right" ? AlignmentType.RIGHT : policy.logoPosition === "center" ? AlignmentType.CENTER : AlignmentType.LEFT;
   const sdgImages = policy.sdgDisplay === "tiles" ? await loadSdgImages(policy.sdgs) : new Map<number, Uint8Array>();
   const children: DocBlock[] = [];
@@ -167,8 +168,10 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
         page: {
           size: { width: PAGE_WIDTH, height: PAGE_HEIGHT },
           ...(theme.pageBorder.enabled ? { borders: {
-            pageBorders: { display: theme.pageBorder.scope === "cover" ? "firstPage" as const : "allPages" as const, offsetFrom: "text" as const },
-            ...Object.fromEntries(["pageBorderTop", "pageBorderRight", "pageBorderBottom", "pageBorderLeft"].map(side => [side, { style: BorderStyle.SINGLE, color: documentHex(theme.pageBorder.color || theme.colors.primary), size: theme.pageBorder.widthPt * 8, space: Math.round(pageMargin() / 20 - theme.pageBorder.insetMm * A4.pointsPerMm) }]))
+            pageBorders: { display: theme.pageBorder.scope === "cover" ? "firstPage" as const : "allPages" as const, offsetFrom: "page" as const },
+            // Native Word page-edge borders support at most 31 points of spacing.
+            // Text-relative offsets can exceed that limit and hug the content.
+            ...Object.fromEntries(["pageBorderTop", "pageBorderRight", "pageBorderBottom", "pageBorderLeft"].map(side => [side, { style: BorderStyle.SINGLE, color: documentHex(theme.pageBorder.color || theme.colors.primary), size: theme.pageBorder.widthPt * 8, space: Math.min(31, Math.round(theme.pageBorder.insetMm * A4.pointsPerMm)) }]))
           } } : {}),
           margin: { top: pageMargin(), right: pageMargin(), bottom: pageMargin(), left: pageMargin() },
         },
@@ -1088,10 +1091,10 @@ function entryRow(number: string, text: string, width: number, theme: DocumentTh
 }
 
 function dataTable(headers: string[], rows: string[][], widths: number[], theme: DocumentThemeDefinition) {
-  const lightHeader = theme.layout.dataLayout === "compact-ledger" || theme.layout.dataLayout === "quiet-rules";
+  const lightHeader = theme.collection === "professional" || theme.layout.dataLayout === "compact-ledger" || theme.layout.dataLayout === "quiet-rules";
   const headerFill = lightHeader ? documentHex(theme.colors.soft) : documentHex(theme.colors.primary);
   const headerColor = lightHeader ? documentHex(theme.colors.subheading) : documentHex(theme.colors.onPrimary);
-  const quiet = theme.layout.dataLayout === "quiet-rules";
+  const quiet = theme.collection !== "professional" && theme.layout.dataLayout === "quiet-rules";
   const borders = quiet ? {
     top: border(documentHex(theme.colors.accent), 7),
     bottom: border(documentHex(theme.colors.line), 5),
@@ -1351,8 +1354,13 @@ async function loadSdgImages(numbers: number[]) {
   return images;
 }
 
-function logoFromDataUrl(source?: string): LogoImage {
-  const match = source?.match(/^data:image\/(png|jpeg|jpg);base64,([\s\S]+)$/i);
+async function logoFromDataUrl(source?: string): Promise<LogoImage> {
+  const match = source?.match(/^data:image\/(png|jpeg|jpg|webp|svg\+xml);base64,([\s\S]+)$/i);
   if (!match) return null;
-  return { data: Buffer.from(match[2], "base64"), type: match[1].toLowerCase() === "png" ? "png" : "jpg" };
+  const format = match[1].toLowerCase();
+  const data = Buffer.from(match[2], "base64");
+  if (format === "webp" || format === "svg+xml") {
+    return { data: await sharp(data).png().toBuffer(), type: "png" };
+  }
+  return { data, type: format === "png" ? "png" : "jpg" };
 }
