@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --import tsx --test --test-force-exit lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/universal-templates.test.ts lib/professional-templates.test.ts lib/pdf/generate.test.ts lib/pdf/layout.test.ts lib/ai/template-context.test.ts lib/docx/generate.test.ts",
+    "test": "node --import tsx --test --test-force-exit lib/calendar.test.ts lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/universal-templates.test.ts lib/professional-templates.test.ts lib/pdf/generate.test.ts lib/pdf/layout.test.ts lib/ai/template-context.test.ts lib/docx/generate.test.ts",
     "templates:previews": "tsx scripts/generate-professional-previews.ts"
   },
   "dependencies": {

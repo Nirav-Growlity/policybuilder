@@ -180,7 +180,7 @@ export function makeSamplePolicy(): Policy {
       docNum: "ASC-ENV-001",
       revNum: "01",
       effectiveDate: "2025-01-15",
-      lastReviewDate: "2025-01-14",
+      lastReviewDate: "2025-01-15",
       reviewDate: "2027-01-14",
       approver: "Managing Director",
     },

@@ -7,12 +7,13 @@ import { useToast } from "./toast";
 interface FieldProps {
   label?: React.ReactNode;
   hint?: React.ReactNode;
+  error?: React.ReactNode;
   required?: boolean;
   children: React.ReactNode;
   className?: string;
 }
 
-export function Field({ label, hint, required, children, className }: FieldProps) {
+export function Field({ label, hint, error, required, children, className }: FieldProps) {
   return (
     <div className={clsx("flex flex-col gap-1.5", className)}>
       {label && (
@@ -22,7 +23,11 @@ export function Field({ label, hint, required, children, className }: FieldProps
         </label>
       )}
       {children}
-      {hint && <p className="text-[11.5px] text-[var(--color-muted)] leading-snug">{hint}</p>}
+      {error ? (
+        <p className="text-[11.5px] text-[#c43a3a] font-medium leading-snug">{error}</p>
+      ) : hint ? (
+        <p className="text-[11.5px] text-[var(--color-muted)] leading-snug">{hint}</p>
+      ) : null}
     </div>
   );
 }
@@ -216,3 +221,5 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function 
     </div>
   );
 });
+
+export { DatePicker, Calendar } from "./calendar";

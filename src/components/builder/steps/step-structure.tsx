@@ -5,6 +5,7 @@ import { useBuilder } from "@/lib/store";
 import { getEnabledSections, sectionHasContent } from "@/lib/sections";
 import type { PolicySection } from "@/lib/types";
 import { Field, Input } from "@/components/ui/input";
+import { DatePicker } from "@/components/ui/calendar";
 import { Panel } from "@/components/ui/panel";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, GripVertical, ChevronUp, ChevronDown, Plus, Trash2, ListTree, FileText } from "lucide-react";
@@ -14,9 +15,33 @@ const labelFor = (section: PolicySection) => section.kind === "custom" ? "Custom
 export function StepStructure() {
   const { policy, updatePolicy } = useBuilder();
   const co = policy.company;
+  const lastReviewError =
+    co.effectiveDate && co.lastReviewDate && co.lastReviewDate < co.effectiveDate
+      ? "Cannot precede effective date"
+      : undefined;
+  const nextReviewError =
+    co.effectiveDate && co.reviewDate && co.reviewDate < co.effectiveDate
+      ? "Cannot precede effective date"
+      : undefined;
+
   const [selected, setSelected] = React.useState<string | null>(null);
   const [dragged, setDragged] = React.useState<string | null>(null);
   const sections = policy.sections || [];
+
+  const handleEffectiveDateChange = (date: string) => {
+    updatePolicy((p) => {
+      const updatedCompany = { ...p.company, effectiveDate: date };
+      // Effective date is the baseline for both last review and next review:
+      // Clear or adjust any previously selected dates that precede the new baseline
+      if (date && updatedCompany.lastReviewDate && updatedCompany.lastReviewDate < date) {
+        updatedCompany.lastReviewDate = "";
+      }
+      if (date && updatedCompany.reviewDate && updatedCompany.reviewDate < date) {
+        updatedCompany.reviewDate = "";
+      }
+      return { company: updatedCompany };
+    });
+  };
 
   const move = (index: number, direction: -1 | 1) => updatePolicy((p) => {
     const next = [...(p.sections || [])];
@@ -79,25 +104,34 @@ export function StepStructure() {
           </Field>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-          <Field label="Last review date">
-            <Input
-              type="date"
-              value={co.lastReviewDate || ""}
-              onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, lastReviewDate: e.target.value } }))}
-            />
-          </Field>
           <Field label="Effective date">
-            <Input
-              type="date"
+            <DatePicker
               value={co.effectiveDate || ""}
-              onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, effectiveDate: e.target.value } }))}
+              onChange={handleEffectiveDateChange}
+              placeholder="DD-MM-YYYY"
+              ariaLabel="Effective date"
             />
           </Field>
-          <Field label="Next review date">
-            <Input
-              type="date"
+          <Field label="Last review date" error={lastReviewError}>
+            <DatePicker
+              value={co.lastReviewDate || ""}
+              minDate={co.effectiveDate || undefined}
+              disabled={!co.effectiveDate}
+              hasError={!!lastReviewError}
+              onChange={(date) => updatePolicy((p) => ({ company: { ...p.company, lastReviewDate: date } }))}
+              placeholder="DD-MM-YYYY"
+              ariaLabel="Last review date"
+            />
+          </Field>
+          <Field label="Next review date" error={nextReviewError}>
+            <DatePicker
               value={co.reviewDate || ""}
-              onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, reviewDate: e.target.value } }))}
+              minDate={co.effectiveDate || undefined}
+              disabled={!co.effectiveDate}
+              hasError={!!nextReviewError}
+              onChange={(date) => updatePolicy((p) => ({ company: { ...p.company, reviewDate: date } }))}
+              placeholder="DD-MM-YYYY"
+              ariaLabel="Next review date"
             />
           </Field>
         </div>
