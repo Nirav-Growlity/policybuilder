@@ -31,9 +31,9 @@ export function DesignInspector({ open, onClose }: { open: boolean; onClose: () 
       <div className="flex h-[72px] items-center justify-between px-5"><h2 className="text-[16px] font-semibold">Document design</h2><button type="button" aria-label="Close controls" onClick={onClose} className="rounded-md p-2 hover:bg-slate-100"><X size={18}/></button></div>
       <div className="grid grid-cols-3 border-b border-slate-200 px-3" role="tablist" aria-label="Document controls">{["templates", "design", "document"].map(value => <button type="button" key={value} role="tab" id={`inspector-tab-${value}`} aria-controls={`inspector-${value}`} aria-selected={tab === value} onClick={() => setTab(value)} className={`border-b-2 py-3 text-[13px] font-medium capitalize transition-colors ${tab === value ? "border-[var(--color-forest)] text-[var(--color-forest)]" : "border-transparent text-slate-500 hover:text-slate-900"}`}>{value}</button>)}</div>
       <div className="min-h-0 flex-1 overflow-hidden p-3">
-        <div id="inspector-templates" role="tabpanel" aria-labelledby="inspector-tab-templates" hidden={tab !== "templates"} className="h-full min-h-0 overflow-y-auto"><ThemeInspector /></div>
+        <div id="inspector-templates" role="tabpanel" aria-labelledby="inspector-tab-templates" hidden={tab !== "templates"} className="h-full min-h-0 overflow-y-auto scrollbar-thin"><ThemeInspector /></div>
         <div id="inspector-design" role="tabpanel" aria-labelledby="inspector-tab-design" hidden={tab !== "design"} className="h-full min-h-0"><ThemeInspector designOnly /></div>
-        <div id="inspector-document" role="tabpanel" aria-labelledby="inspector-tab-document" hidden={tab !== "document"} className="h-full min-h-0 space-y-5 overflow-y-auto"><DockOptionsPanel/><DockSummaryPanel/></div>
+        <div id="inspector-document" role="tabpanel" aria-labelledby="inspector-tab-document" hidden={tab !== "document"} className="h-full min-h-0 space-y-5 overflow-y-auto scrollbar-thin"><DockOptionsPanel/><DockSummaryPanel/></div>
       </div>
     </aside>
   </>;

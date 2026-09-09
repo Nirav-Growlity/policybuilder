@@ -103,7 +103,7 @@ export function Combobox({ value, options, onValueChange, placeholder, emptyMess
         <svg className={`mx-auto transition-transform ${open ? "rotate-180" : ""}`} width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>}
       {open && (
-        <div role="listbox" className="absolute z-30 mt-1.5 w-full max-h-56 overflow-y-auto rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] p-1.5 shadow-[0_12px_28px_rgba(38,50,42,0.16)]">
+        <div role="listbox" className="absolute z-30 mt-1.5 w-full max-h-56 overflow-y-auto scrollbar-thin rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] p-1.5 shadow-[0_12px_28px_rgba(38,50,42,0.16)]">
           {filtered.length ? filtered.map((option) => (
             <button
               type="button"
