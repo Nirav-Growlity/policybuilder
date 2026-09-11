@@ -10,6 +10,7 @@ dotenv.config({ path: path.join(__dirname, "../.env") });
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const root = path.join(__dirname, "../..");
 const seedDir = path.join(__dirname, "../data/seed-policies");
+const seedPath = (type: Type, company: string) => path.join(seedDir, type, `${type}-${slug(company)}.json`);
 const roots = ["KUSH", "Kenal - EcoVadis Policies", "Hetvi- Policies"];
 const relevant = /(labou?r|human rights|workforce|employee rights|workplace rights|living wage|fair wage|social policy|responsible workforce)/i;
 const wage = /(living wage|fair wage)/i;
@@ -26,7 +27,7 @@ function prompt(type: Type) {
 async function parse(file: string) {
   const type: Type = wage.test(path.basename(file)) ? "living-wage" : "labour-human-rights";
   const company = path.basename(path.dirname(file));
-  const seed = path.join(seedDir, `${type}-${slug(company)}.json`);
+  const seed = seedPath(type, company);
   const source = await text(file);
   const response = await client.chat.completions.create({ model: "gpt-5.6-luna", response_format: { type: "json_object" }, messages: [{ role: "system", content: prompt(type) }, { role: "user", content: `Company: ${company}\nFile: ${path.basename(file)}\n\nPolicy text:\n${source}` }] });
   const data = JSON.parse(response.choices[0].message.content || "{}") as Record<string, any>;
@@ -42,6 +43,7 @@ async function parse(file: string) {
   };
   existing.summary = `Parsed ${type === "living-wage" ? "Living Wage" : "Labour & Human Rights"} template from ${path.basename(file)}.`;
   existing.sourcePath = path.relative(root, file); existing.sourceTextLength = source.length; existing.parsedAt = new Date().toISOString();
+  fs.mkdirSync(path.dirname(seed), { recursive: true });
   fs.writeFileSync(seed, JSON.stringify(existing, null, 2)); console.log(`Parsed ${path.basename(seed)}`);
 }
 async function main() {
@@ -49,7 +51,7 @@ async function main() {
   const batchSize = Number(process.env.PARSE_BATCH || 4);
   const files = candidates.filter((file) => {
     const type: Type = wage.test(path.basename(file)) ? "living-wage" : "labour-human-rights";
-    const seed = path.join(seedDir, `${type}-${slug(path.basename(path.dirname(file)))}.json`);
+    const seed = seedPath(type, path.basename(path.dirname(file)));
     return !JSON.parse(fs.readFileSync(seed, "utf8")).parsedAt;
   }).slice(0, batchSize);
   await Promise.all(files.map(parse));

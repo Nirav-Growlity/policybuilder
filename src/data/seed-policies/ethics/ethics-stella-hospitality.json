@@ -1,0 +1,280 @@
+{
+  "id": "ethics-stella-hospitality",
+  "name": "Stella Hospitality",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Stella Hospitality",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Saudi",
+          "address": "Ad Dahiah, Jeddah, Saudi Arabia.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "UAE",
+          "address": "Umm Dera - Emirate of Umm Al Quwain - United Arab Emirates.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Jordan",
+          "address": "Marka: Nicola Yousef Al Turk St 7, Amman, Jordan.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Jordan",
+          "address": "Aqaba: Al-Herafya Area - New Business District-Bilal Nihad Al-Athira Co, Aqaba, Jordan.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Bahrain",
+          "address": "Building 2639, Road/Street 1537, HIDD, Block 115, Bahrain.",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Stella Hospitality, we are committed to conducting our business with integrity, transparency, and accountability. Our Ethics Policy serves as a guiding framework for all employees, business partners, and stakeholders to uphold the highest ethical standards in every aspect of our operations. This policy reinforces our commitment to honesty, fairness, respect, and compliance with all applicable laws and regulations. It provides clear expectations for ethical decision-making, responsible business conduct, and fostering a workplace culture based on trust and mutual respect. By adhering to this policy, we ensure that our interactions reflect our core values and contribute to a responsible and sustainable business environment. Stella Hospitality expects all individuals associated with the company to act with professionalism and integrity, maintaining our reputation as an ethical and socially responsible organization.",
+      "declaration": "At Stella Hospitality, we are dedicated to maintaining the highest standards of ethics, integrity, and responsible business conduct across all our operations and partnerships. We recognize our responsibility to ensure transparency, fairness, and compliance with legal and regulatory frameworks while fostering a culture of trust and accountability.",
+      "scope": "This Ethics Policy applies to all employees, contractors, suppliers, business partners, and stakeholders associated with Stella Hospitality. It covers all locations:"
+    },
+    "focusAreas": [
+      "Zero Tolerance for Corruption & Fraud",
+      "Confidentiality & Data Protection",
+      "Whistleblower Protection & Ethical Reporting",
+      "Compliance with Legal & Regulatory Standards",
+      "Ethics & Compliance Training",
+      "Whistleblower Protection Program",
+      "Ethical Marketing & Transparency",
+      "Cybersecurity & Data Protection Measures",
+      "Anti-Corruption and Fraud Prevention",
+      "Conflict of Interest Management",
+      "Money Laundering Prevention",
+      "Anti-Competitive Practice Avoidance",
+      "Information Security & Data Protection",
+      "Monitoring and Reporting"
+    ],
+    "qualitative": {
+      "Zero Tolerance for Corruption & Fraud": [
+        "We strictly prohibit bribery, fraud, money laundering, and conflicts of interest in all business dealings. Employees and business partners must operate with honesty and integrity, ensuring all financial transactions are transparent and lawful."
+      ],
+      "Confidentiality & Data Protection": [
+        "We safeguard sensitive company, customer, and employee information by adhering to strict data privacy laws and security protocols. Unauthorized access, misuse, or disclosure of confidential data is strictly prohibited."
+      ],
+      "Whistleblower Protection & Ethical Reporting": [
+        "We encourage employees, suppliers, and stakeholders to report unethical behaviour through confidential whistleblower channels, ensuring protection from retaliation and ensuring fair investigation of reported concerns."
+      ],
+      "Compliance with Legal & Regulatory Standards": [
+        "We fully comply with all national and international regulations, industry best practices, and corporate governance principles."
+      ],
+      "Ethics & Compliance Training": [
+        "We conduct mandatory annual ethics training for all employees, covering anti-corruption, data privacy, fair competition, and workplace integrity to ensure adherence to ethical standards."
+      ],
+      "Whistleblower Protection Program": [
+        "We maintain a confidential and anonymous reporting system for ethical violations, ensuring all reports are investigated within 30 days and corrective actions are taken."
+      ],
+      "Ethical Marketing & Transparency": [
+        "We ensure that all product claims and marketing materials are truthful, verifiable, and aligned with industry best practices, preventing misleading advertisements and greenwashing."
+      ],
+      "Cybersecurity & Data Protection Measures": [
+        "We implement robust cybersecurity protocols, conduct regular audits, and provide employee training to safeguard customer and business data from breaches and unauthorized access."
+      ],
+      "Anti-Corruption and Fraud Prevention": [
+        "Report any suspicious activities or bribery attempts to the Compliance Officer.",
+        "Maintain clear and transparent records of all financial transactions.",
+        "Refuse gifts or incentives from suppliers that may influence business decisions.",
+        "Do not offer or accept bribes in any form.",
+        "Do not falsify or manipulate financial records.",
+        "Do not ignore or withhold information regarding corruption risks."
+      ],
+      "Conflict of Interest Management": [
+        "Disclose any personal or financial relationships that could create a conflict of interest.",
+        "Seek approval before engaging in any external business relationships.",
+        "Follow company procedures for reporting conflicts of interest.",
+        "Do not make decisions that personally benefit you at the expense of the company.",
+        "Do not engage in business with direct competitors without approval.",
+        "Do not misuse company resources for personal gain."
+      ],
+      "Money Laundering Prevention": [
+        "Report any suspicious transactions to the compliance department.",
+        "Conduct due diligence before engaging with new business partners.",
+        "Maintain accurate financial records and transaction logs.",
+        "Do not process or approve transactions that lack clear business justification.",
+        "Do not ignore red flags related to suspicious financial activities.",
+        "Do not engage in structuring transactions to evade reporting requirements."
+      ],
+      "Anti-Competitive Practice Avoidance": [
+        "Compete fairly and ethically in the marketplace.",
+        "Follow all applicable competition laws and regulations.",
+        "Ensure transparency in negotiations and pricing strategies.",
+        "Do not engage in price-fixing, bid-rigging, or market allocation schemes.",
+        "Do not discuss competitive pricing strategies with competitors.",
+        "Do not misuse market influence to eliminate competition unfairly."
+      ],
+      "Information Security & Data Protection": [
+        "Follow company cybersecurity policies to protect sensitive data.",
+        "Use strong passwords and enable multi-factor authentication where required.",
+        "Report any suspicious emails, phishing attempts, or data breaches immediately.",
+        "Do not share confidential company data with unauthorized individuals.",
+        "Do not use personal devices to store or transmit company-sensitive information.",
+        "Do not click on unknown or suspicious links in emails or messages."
+      ],
+      "Consequences of Violating the Policy": [
+        "Verbal or Written Warning: For minor violations, the supplier will receive a formal warning, outlining the misconduct and require corrective actions.",
+        "Corrective Training & Monitoring: The violator may be required to undergo ethics and compliance training, with increased monitoring to ensure future adherence.",
+        "Financial Penalties & Compensation: If the violation results in financial loss, penalties may be imposed, and compensation may be required for damages caused.",
+        "Suspension or Temporary Restriction: Employees may face temporary suspension, while suppliers may be temporarily restricted from conducting business with the company until compliance is restored.",
+        "Contract Termination & Business Blacklisting: Repeated violations may result in termination of contracts and blacklisting from future business opportunities.",
+        "Legal Action & Regulatory Reporting: In cases involving fraud, corruption, or serious ethical breaches, legal proceedings may be initiated and regulatory authorities may be informed."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption & Compliance",
+        "targets": [
+          {
+            "target": "Achieve 100% employee participation in annual anti-corruption and ethical compliance training",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct ethics and compliance audits across all operations, ensuring 100% compliance with anti-bribery laws",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Implement a whistleblower protection mechanism, ensuring that 100% of reported ethical violations are investigated within 30 days",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Conduct annual cybersecurity training for 100% of employees",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Achieve 100% compliance with GDPR and regional data protection laws across all markets",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Implement multi-layered cybersecurity defences, reducing data breach risks by 50%",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Establish and uphold ethical business practices across the organization."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensure policies, procedures, and frameworks align with ethical standards."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Allocate resources for training, audits, and compliance monitoring."
+      },
+      {
+        "role": "Compliance & Legal Team",
+        "duty": "Develop and enforce the ethics policy and related compliance programs."
+      },
+      {
+        "role": "Compliance & Legal Team",
+        "duty": "Conduct corruption & Information security risk assessments, fraud investigations, and AML checks."
+      },
+      {
+        "role": "Compliance & Legal Team",
+        "duty": "Implement whistleblower protection mechanisms and handle reports confidentially."
+      },
+      {
+        "role": "HR & Training Team",
+        "duty": "Organize mandatory training programs on ethics, fraud prevention & Cybersecurity."
+      },
+      {
+        "role": "HR & Training Team",
+        "duty": "Monitor and enforce conflict of interest disclosure requirements"
+      },
+      {
+        "role": "Finance & Risk Management Team",
+        "duty": "Conduct due diligence on financial transactions and business partnerships."
+      },
+      {
+        "role": "Finance & Risk Management Team",
+        "duty": "Monitor for suspicious activities and report potential financial misconduct."
+      },
+      {
+        "role": "Finance & Risk Management Team",
+        "duty": "Enforce strict procurement and vendor screening processes."
+      },
+      {
+        "role": "IT & Security Team",
+        "duty": "Conduct regular IT security risk assessments for all sites."
+      },
+      {
+        "role": "IT & Security Team",
+        "duty": "Strengthen cybersecurity protocols and ensure data protection compliance."
+      },
+      {
+        "role": "IT & Security Team",
+        "duty": "Implement employee awareness programs on data security and information handling."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to ethical business conduct and report any misconduct."
+      },
+      {
+        "role": "Employees",
+        "duty": "Complete mandatory ethics training and comply with anti-corruption, fraud prevention, and information security laws."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participate in whistleblower programs without fear of retaliation."
+      },
+      {
+        "role": "Employees",
+        "duty": "Protect company information and avoid engaging in unethical practices."
+      }
+    ],
+    "monitoring": "To uphold the effectiveness of Stella Hospitality’s Ethics Policy, a structured monitoring and reporting framework is crucial. This guarantees transparency, accountability, and ongoing enhancements in ethical conduct, fraud prevention, anti-corruption efforts, and information security.\n\nRegular Assessments and Audits: Evaluate compliance with ethical standards, labor laws, workplace safety, DEI initiatives, and employee welfare.\n\nEthics & Compliance: Measure adherence to ethical principles through key performance indicators.\n\nInformation Security and Data Protection: Safeguard sensitive business and employee information against breaches and unethical use.\n\nSupplier & Partner Ethical Compliance: Ensure ethical business practices across the supply chain, including labor rights, ethical sourcing, and fair employment standards.",
+    "reviewMechanism": "The Compliance Officer is responsible for overseeing the implementation and review of this Ethics Policy. This policy will be reviewed annually to ensure its effectiveness and alignment with evolving regulatory requirements, industry best practices, and organizational commitments.\n\nAny updates or modifications will be communicated to all stakeholders to ensure continued compliance."
+  },
+  "sourcePath": "Policies - Kenal/Stella Hospitality/Ethics Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Stella Hospitality/Ethics Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 13110,
+  "parsedAt": "2026-09-11T07:29:49.561Z"
+}

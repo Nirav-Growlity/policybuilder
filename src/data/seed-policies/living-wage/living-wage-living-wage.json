@@ -1,0 +1,198 @@
+{
+  "id": "living-wage-living-wage",
+  "name": "Living wage",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Plastipak Packaging Inc. (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Toledo, Spain",
+          "address": "",
+          "primaryFunction": "manufacturing site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Plastipak Packaging Inc. (Group), we strongly believe that offering a living wage is not just a legal requirement but a moral obligation. This policy reflects our commitment to creating a work environment rooted in fairness, equality, and social responsibility. By implementing clear and equitable wage standards, we aim to enhance the financial security of our employees, support our community, and play a significant role in fostering a more just and sustainable society.",
+      "declaration": "Commitment: We are committed to ensuring that all employees receive fair compensation that meets or exceeds living wage standards. We recognize the importance of equitable pay in fostering employee well-being, promoting transparency, and contributing to community growth. We will continually assess and improve our practices to align with these values.\n\nEnsure Fair Compensation: Establish and maintain wage structures that meet or exceed living wage standards, ensuring all employees receive fair compensation for their work.\n\nPromote Transparency: Develop clear and accessible wage guidelines that communicate the criteria and process for determining employee compensation to all staff members.\n\nEnhance Employee Well-Being: Focus on improving the financial stability and overall well-being of employees by regularly reviewing and adjusting wages in line with living wage benchmarks.\n\nFoster a Culture of Equity: Create an inclusive workplace culture that prioritizes equality, ensuring that all employees are treated fairly and have equal opportunities for advancement.\n\nRegular Monitoring and Assessment: Implement a system for regularly reviewing and assessing our living wage policies to ensure they remain relevant and effective in meeting the needs of our employees and communities.",
+      "scope": "This policy applies to all Plastipak employees, contractors and internal and external stakeholders, including customers directly or indirectly associated with Plastipak. It extends across all offices, headquarters, facilities, and operating sites where Plastipak operates."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Baseline Minimum Wage: We aim to establish a baseline minimum wage for all employees that ensures a standard of living reflecting principles of decency and well-being, with regular reviews to maintain fairness in response to economic conditions.\n\nEnhance Employee Well-Being: Focus on improving the financial stability and overall well-being of employees by regularly reviewing and adjusting wages in line with living wage benchmarks.\n\nMonitoring Wage Competitiveness: We aim to conduct bi-annual reviews of our wage structures against industry benchmarks to ensure our compensation remains competitive and fair.\n\nAchieve at least a 10% increase above the median wage within our sector by 2026, compared to the baseline year of 2022 through external wage benchmarking.\n\nWe will compile annual reports to assess our progress toward achieving living wage benchmarks, focusing on employee remuneration, benefits, and overall workplace conditions.\n\nThe HR will conduct an annual review of this policy to evaluate its effectiveness and relevance to our employees. This review will include feedback from employees regarding their experiences with wage practices and recommendations for improvements."
+    },
+    "focusAreas": [
+      "Baseline Minimum Wage",
+      "Progressive Increment",
+      "Skill-Based Remuneration",
+      "Gender Equality",
+      "Wage Gap Analysis"
+    ],
+    "qualitative": {
+      "Baseline Minimum Wage": [
+        "We aim to establish a baseline minimum wage for all employees that ensures a standard of living reflecting principles of decency and well-being, with regular reviews to maintain fairness in response to economic conditions."
+      ],
+      "Progressive Increment": [
+        "We strive to implement gradual wage increases over time, regularly assessing compensation to align with the rising cost of living and fostering parity across industries."
+      ],
+      "Skill-Based Remuneration": [
+        "We seek to promote skill development through training programs and reward employees with enhanced qualifications with higher remuneration, fostering a culture of continuous learning."
+      ],
+      "Gender Equality": [
+        "We commit to upholding fair and equal wages for all employees, regardless of gender, emphasizing our dedication to equal pay for equal work."
+      ],
+      "Wage Gap Analysis": [
+        "We prioritize conducting regular wage gap analyses to identify and address disparities in compensation, ensuring transparency and accountability in our wage practices."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Engagement",
+        "targets": [
+          {
+            "target": "We aim to foster open dialogue with employees regarding wage practices, encouraging feedback to ensure our compensation policies meet their needs and expectations.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Gender Pay Gap Elimination",
+        "targets": [
+          {
+            "target": "We aim to implement the \"Equal Pay for Equal Work\" strategy to identify and eliminate gender-based wage disparities, ensuring that all employees receive fair compensation for their contributions.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Living Wage Awareness",
+        "targets": [
+          {
+            "target": "We aim to enhance awareness of living wage principles among our workforce through educational initiatives, ensuring all employees understand their rights and our commitments.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Regular Training Programs",
+        "targets": [
+          {
+            "target": "We aim to develop and implement ongoing training programs focused on skill enhancement and career development, aligning employee growth with our compensation structure.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Monitoring Wage Competitiveness",
+        "targets": [
+          {
+            "target": "We aim to conduct bi-annual reviews of our wage structures against industry benchmarks to ensure our compensation remains competitive and fair.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Goals",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive at least the local living wage by 2026, increasing from the baseline year of 2022.",
+            "baseline": "Baseline year of 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Commit to a 20% cumulative increase in minimum wage for all employees by 2026, reflecting a 5% annual increase from the baseline year of 2022.",
+            "baseline": "Baseline year of 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Achieve a 100% increase in annual wage assessments by 2026 to ensure compliance with living wage standards compared to the baseline year of 2022.",
+            "baseline": "Baseline year of 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Provide wage awareness training for at least 90% of employees each year by 2026, increasing from the baseline year of 2022.",
+            "baseline": "Baseline year of 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure 75% of employees earn a living wage by 2025 and 100% by 2026, increasing from the baseline year of 2022.",
+            "baseline": "Baseline year of 2022",
+            "deadline": "2025 and 2026"
+          },
+          {
+            "target": "Achieve at least a 10% increase above the median wage within our sector by 2026, compared to the baseline year of 2022 through external wage benchmarking.",
+            "baseline": "Baseline year of 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Reduce the gender pay gap by at least 15% by 2026, compared to the baseline year of 2022, to promote pay equity.",
+            "baseline": "Baseline year of 2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors / Senior Leadership",
+        "duty": "The Board will approve and supervise the implementation of the Living Wage Policy, establishing long-term wage goals that align with the company’s strategic vision. They will monitor compensation practices through regular reports and ensure adequate resources are allocated to support living wage initiatives."
+      },
+      {
+        "role": "Compliance officer",
+        "duty": "This officer will lead the implementation and evaluation of living wage programs, ensuring compliance with all relevant laws and internal policies. They will serve as a point of contact for employees seeking information or support regarding living wage practices."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Department leaders will integrate living wage principles into team operations, ensuring all employees receive fair compensation and benefits. They will communicate any updates related to wage practices to their teams and address any concerns that arise."
+      },
+      {
+        "role": "HR",
+        "duty": "The HR department will spearhead efforts to promote awareness of living wage principles and provide training to employees. They will work to ensure that compensation practices reflect our commitment to fair wages and support employee needs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Every employee is expected to understand and engage with the living wage policy, contributing to a culture of fairness within the organization. Employees are encouraged to actively participate in initiatives and communicate any concerns or suggestions related to wage practices."
+      }
+    ],
+    "monitoring": "We will compile annual reports to assess our progress toward achieving living wage benchmarks, focusing on employee remuneration, benefits, and overall workplace conditions.\n\nThese reports will be disseminated to all stakeholders, including staff, clients, suppliers, and investors, to promote transparency and uphold accountability.\n\nScheduled internal audits will be conducted to verify adherence to living wage standards, company policies, and operational objectives.\n\nAudit outcomes will be scrutinized by senior management, and necessary corrective measures will be promptly executed to address any identified discrepancies.\n\nWe will actively engage stakeholders through surveys, feedback sessions, and consultations to gather insights on our living wage initiatives and pinpoint areas for enhancement.\n\nCollaboration with industry partners will ensure ongoing alignment with emerging trends and best practices related to fair wages.\n\nA dedicated system will enable employees, clients, and external parties to confidentially report concerns related to wage practices without fear of retaliation.\n\nAll submissions will be promptly investigated, and appropriate actions will be taken to resolve any issues raised.\n\nWe will share key metrics, achievements, and challenges related to our living wage initiatives annually through sustainability reports or designated sections on our website.\n\nThis commitment to transparency will reinforce our dedication to fair labor practices and accountability to all stakeholders.",
+    "reviewMechanism": "We are committed to fostering a culture of continuous improvement concerning our living wage practices.\n\nRegular assessments and performance tracking will enable us to identify areas for enhancement, ensuring that our policies remain effective and aligned with employee needs.\n\nThe Living Wage Policy will be reviewed annually to incorporate employee feedback and adapt to any changes in regulations or best practices.\n\nTraining sessions and awareness initiatives will be implemented to empower employees and promote a shared commitment to fair compensation throughout the organization.\n\nThe HR will conduct an annual review of this policy to evaluate its effectiveness and relevance to our employees. This review will include feedback from employees regarding their experiences with wage practices and recommendations for improvements."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Living wage/5. Living wage Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Living wage/5. Living wage Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 11292,
+  "parsedAt": "2026-09-11T07:10:27.340Z"
+}

@@ -1,0 +1,584 @@
+{
+  "id": "padma",
+  "name": "Padma",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental_Responsibility_Policy (1).docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Padma Satel Arab Fashions Ltd.",
+      "industry": "",
+      "site": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230.",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230.",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Luna Complex, Joy Bangka Road, Khailkur, Borobari, Gazipur-1704, Bangladesh.",
+          "primaryFunction": "Manufacturing Site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Padma Satel Arab Fashions Ltd. (PSA) acknowledges that the garment manufacturing industry operates at the intersection of industrial activity and environmental responsibility. The Company recognizes that its operations spanning fabric sourcing, pattern making, cutting, stitching, washing, finishing, packaging, and global distribution have the potential to impact natural resources, environmental quality, and surrounding communities if not managed responsibly.\n\nAs a responsible apparel manufacturer serving international markets, PSA is committed to embedding environmental sustainability into its core business strategy. The Company adopts a forward-looking approach that prioritizes resource efficiency, pollution prevention, climate responsibility, and lifecycle thinking, ensuring that environmental considerations are integrated into every stage of production and decision-making.\n\nPSA understands that key environmental challenges within its operations include energy consumption for machinery and utilities, water usage in washing and finishing processes, chemical management for dyes and auxiliaries, generation of textile waste and packaging materials, air emissions from boilers and generators, and the environmental footprint associated with product use and disposal. In response, the Company is committed to systematically identifying, managing, and reducing these impacts through structured environmental management practices.",
+      "declaration": "Establish and maintain a robust environmental management framework that ensures systematic identification, monitoring, and control of environmental impacts across all manufacturing, processing, and support activities of the Company.\n\nAchieve and sustain full compliance with all applicable environmental laws, regulations, permits, and statutory requirements in Bangladesh, as well as adhere to the environmental expectations and compliance standards set by international buyers, certification bodies, and industry platforms.\n\nContinuously reduce the environmental footprint associated with garment manufacturing operations, including cutting, stitching, washing, finishing, packaging, and logistics, through adoption of cleaner production techniques and operational efficiency improvements.\n\nPromote responsible and efficient utilization of natural resources such as energy, water, raw materials, and chemicals by implementing conservation practices, process optimization, and resource-efficient technologies.\n\nStrengthen climate action initiatives by monitoring, managing, and progressively reducing greenhouse gas (GHG) emissions across Scope 1 (direct emissions), Scope 2 (indirect energy emissions), and relevant Scope 3 (value chain emissions).\n\nEnsure environmentally sound management of chemicals, hazardous substances, and waste streams by adopting internationally recognized standards, minimizing risks to human health and the environment, and promoting safe handling, storage, and disposal practices.\n\nPrevent environmental pollution by controlling air emissions, wastewater discharge, and solid waste generation, and by maintaining effective pollution control systems across all operational areas.",
+      "scope": "This Policy applies to all operations of Padma Satel Arab Fashions Ltd. including the woven garments manufacturing factory, corporate offices, and all associated operational locations in Gazipur, Bangladesh. It also extends to all supply chain partners operating on behalf of the Company. It is applicable to all employees (permanent and contract), management, directors, business associates, vendors, chemical and fabric suppliers, contractors, and all internal and external stakeholders working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Energy Efficiency and Carbon Emission Mitigation",
+      "Biodiversity Conservation & Land Use",
+      "Water Management and Conservation Practices",
+      "Chemicals and Waste Management Practices",
+      "Product Stewardship & End-of-Life Handling",
+      "Air Quality Protection and Emission Reduction",
+      "Climate Risk & Analysis",
+      "Customer Wellbeing and Product Safety Management",
+      "Environment Programs and Stakeholder Engagement"
+    ],
+    "qualitative": {
+      "Energy Efficiency and Carbon Emission Mitigation": [
+        "We are committed to continuously optimizing energy consumption across all manufacturing operations including cutting, sewing, finishing, washing units, utilities, warehouses, and administrative offices through adoption of energy-efficient technologies, process improvements, and preventive maintenance practices.",
+        "We will implement advanced energy management practices such as installation of high-efficiency motors, Variable Frequency Drives (VFDs), LED lighting systems, automated controls, and energy-efficient compressors and HVAC systems to reduce overall energy intensity.",
+        "We commit to reducing Scope 1 and Scope 2 greenhouse gas (GHG) emissions through improved fuel efficiency in boilers and diesel generators, reduction of fuel consumption, and transition toward cleaner and low-carbon energy sources.",
+        "We will actively explore renewable energy opportunities, including rooftop solar photovoltaic systems and other viable clean energy solutions, to reduce dependence on fossil fuels and contribute to global climate change mitigation efforts.",
+        "We aim to identify, measure, and progressively reduce Scope 3 emissions associated with purchased goods and services, transportation, employee commuting, and waste disposal through supply chain engagement and responsible sourcing practices.",
+        "We will promote employee awareness on energy conservation and climate responsibility through training programs, internal campaigns, and involvement of departmental energy coordinators."
+      ],
+      "Biodiversity Conservation & Land Use": [
+        "We are committed to protecting biodiversity and minimizing ecological impacts associated with our operations by preventing environmental contamination and maintaining sustainable land use practices within and around our facilities.",
+        "We will ensure proper handling, storage, and containment of chemicals and hazardous materials to prevent soil and groundwater contamination that could negatively impact local ecosystems.",
+        "We will promote development and maintenance of green belts, landscaping, and tree plantation initiatives within factory premises to enhance biodiversity and improve environmental quality.",
+        "We will participate in local environmental initiatives such as afforestation programs, community green projects, and ecological restoration activities to support biodiversity conservation.",
+        "We will conduct awareness programs to educate employees on biodiversity protection and encourage responsible environmental behavior."
+      ],
+      "Water Management and Conservation Practices": [
+        "We will conduct periodic inspection and preventive maintenance of plumbing systems, cooling water circuits, washing machines, boiler feed water systems, and water storage infrastructure to detect and rectify leakages, thereby reducing unnecessary water wastage.",
+        "We will implement and maintain a robust Effluent Treatment Plant (ETP) at the Gazipur factory to treat all process wastewater from washing and finishing operations prior to discharge, ensuring full compliance with Department of Environment (DoE) effluent standards under the Environment Conservation Rules 1997.",
+        "We strive to optimize water consumption in manufacturing processes, utilities, washing sections, and administrative facilities through regular monitoring, water audits, conservation measures, and installation of water-efficient fixtures.",
+        "We will explore opportunities for water recycling including treated effluent reuse in cooling towers, toilet flushing, and landscaping irrigation to minimize freshwater withdrawal from municipal and groundwater sources.",
+        "We aim to maintain compliance with effluent quality standards and prevent discharge of untreated or partially treated effluents to any water body, drain, or land.",
+        "We will conduct employee awareness and training programs on water conservation, efficient water use, and responsible effluent management to promote a culture of water stewardship across all factory and office areas."
+      ],
+      "Chemicals and Waste Management Practices": [
+        "We are committed to responsible chemical management by ensuring all chemicals used in operations comply with applicable regulations, buyer requirements, and international standards such as ZDHC MRSL and Restricted Substances Lists (RSL).",
+        "We will minimize waste generation through efficient production planning, material optimization, lean manufacturing practices, and continuous process improvement.",
+        "We strive to maximize fabric offcut reuse and recycling by segregating offcuts at source and directing them to authorized recyclers or charitable organizations, including local tailoring cooperatives, handcraft enterprises, and textile recycling companies.",
+        "We strive to follow the principles of Reduce, Reuse, and Recycle (3R) across all waste streams including fabric offcuts, thread waste, chemical containers, cardboard cartons, and plastic packaging.",
+        "We seek to ensure safe handling, storage, labelling, secondary containment, and use of hazardous chemicals and process materials in strict compliance with applicable Safety Data Sheets (SDS), DoE regulations, and buyer requirements.",
+        "We aim to comply with all applicable waste management regulations including the Hazardous Waste Management Rules, E-Waste Management Rules, and Plastic Waste Management Rules of Bangladesh."
+      ],
+      "Product Stewardship & End-of-Life Handling": [
+        "We are committed to responsible product end-of-life management, including providing clear, accurate, and regulation-compliant guidance to buyers, distributors, and end consumers on the safe use, care, and environmentally sound disposal of all PSA Fashions garments including pants, jackets, skirts, and shirts.",
+        "We will develop and promote product-specific care and disposal guidance on all garment labels, including guidance on washing at lower temperatures, avoiding tumble drying, responsible donation, and disposal or recycling at end-of-life, in compliance with buyer labelling requirements and international care label standards.",
+        "We will integrate eco-design principles into product and packaging development including the use of recyclable, biodegradable, or reduced-material packaging including cartons, polybags, and hangers to minimize the environmental impact of our product packaging at end-of-life.",
+        "We will engage with buyers and major customers on product stewardship, sharing guidance on responsible garment care, longevity, and end-of-life disposal options as part of our sustainability communication.",
+        "We will assess and progressively improve the environmental profile of our raw material selection including exploring organic cotton, recycled content fabrics, and safer chemical alternatives to minimize lifecycle environmental impacts from raw material sourcing through to consumer use and product disposal."
+      ],
+      "Air Quality Protection and Emission Reduction": [
+        "We are committed to preventing and controlling air emissions including boiler stack emissions, diesel generator exhaust, dust from fabric cutting and finishing operations, and steam and chemical vapors through engineering controls, ventilation systems, dust extraction, and regular stack monitoring.",
+        "We will ensure compliance with ambient air quality standards and stack emission norms as prescribed by the Department of Environment (DoE) under the Air Pollution Control Rules, Bangladesh, and maintain all pollution control equipment in optimal operating condition at all times.",
+        "We will explore and adopt containment technologies and improved operational controls to minimize fugitive emissions and chemical vapors during finishing, washing, and drying operations.",
+        "We will leverage innovative clean manufacturing technologies and energy-efficient equipment wherever available to ensure garment manufacturing processes are sustainable with minimal air pollution impacts.",
+        "We will conduct periodic air quality monitoring at stack emission points and within the factory floor boundary and share monitoring results transparently with regulatory authorities and relevant stakeholders.",
+        "We will train all relevant production and EHS personnel on air pollution control equipment operation, maintenance, regulatory compliance, and emergency response for accidental air releases."
+      ],
+      "Climate Risk & Analysis": [
+        "We conduct climate risk and vulnerability assessments for our Gazipur manufacturing facility to identify site-specific physical climate risks including extreme heat, flooding (Bangladesh faces significant flood risk), water stress, cyclones, and riverbank erosion, as well as transition risks arising from evolving international environmental regulations, carbon pricing by buyers, and changes in market and stakeholder expectations.",
+        "We recognize that as a garment manufacturer in Bangladesh a country highly exposed to climate change impacts our operations and workers are particularly vulnerable to climate risks including rising temperatures, increased flooding, and disruption to raw material supply chains. We commit to integrating climate resilience into our operational planning.",
+        "We will regularly update climate risk assessments to reflect the latest climate science, evolving regulatory landscapes, Bangladesh national climate action policies (such as the Bangladesh Climate Change Strategy and Action Plan BCCSAP), and changes in our operational footprint, ensuring our adaptation strategies remain relevant and effective.",
+        "We will integrate climate risk identification and assessment outcomes into our overall Risk Management framework, ensuring climate risks and opportunities are systematically reported to the Managing Director and Senior Management for informed decision-making."
+      ],
+      "Customer Wellbeing and Product Safety Management": [
+        "We ensure that all woven garments manufactured and supplied by PSA Fashions comply with applicable buyer RSLs, OEKO-TEX Standard 100, GOTS requirements, and all other relevant regulatory requirements, maintaining the highest standards of product chemical safety, quality, and compliance.",
+        "We implement rigorous batch-level chemical testing, fabric inspection, and QA controls to ensure that no non-compliant, chemically unsafe, or environmentally compromised garments reach buyers, distributors, or end consumers.",
+        "We seek to minimize environmental and health risks associated with chemical use in manufacturing, finishing, and washing operations through strict adherence to the ZDHC MRSL, buyer-specific RSLs, and robust chemical management systems including approved vendor lists, SDS management, and periodic third-party laboratory testing.",
+        "We will source raw materials, chemicals, and accessories only from authorized, qualified, and environmentally responsible suppliers, conducting supplier qualification audits and due diligence to prevent use of materials with unacceptable environmental or chemical safety profiles.",
+        "We aim to provide buyers, distributors, and relevant stakeholders with comprehensive, accurate, and up-to-date product safety information including fabric test reports, Certificate of Compliance, and RSL conformity declarations through documented and digital channels.",
+        "We will utilize digital platforms, QR codes on shipment documentation, and online buyer portals to provide real-time access to product specifications, test certificates, chemical safety certifications, and any quality alert information, ensuring informed and safe product usage by buyers and consumers.",
+        "We maintain a robust customer complaint and product quality feedback system, ensuring that any product safety or quality concern affecting customer health or environmental safety is escalated, investigated, and resolved within defined timelines, with full transparency to buyers and certification bodies."
+      ],
+      "Environment Programs and Stakeholder Engagement": [
+        "We will actively contribute to environmental protection through participation in community development initiatives focused on waste management, pollution prevention, and ecological restoration.",
+        "We will ensure that all third-party environmental services, including waste disposal, recycling, effluent treatment, and emissions monitoring, are carried out by licensed and environmentally compliant providers in accordance with regulatory and buyer requirements.",
+        "We will promote the integration of environmental criteria into procurement decisions, encouraging the use of green logistics, low-emission transportation, and sustainable service providers.",
+        "We will invest in continuous environmental education and awareness programs aimed at influencing behavioral change among employees, contractors, and supply chain partners.",
+        "We will collaborate with industry platforms, buyers, and certification bodies to share knowledge, adopt best practices, and contribute to the advancement of sustainable manufacturing in the textile sector.",
+        "We will advocate for environmentally responsible consumption patterns by providing guidance on product care, durability, reuse, and sustainable disposal to customers and end users.",
+        "We will support the transition towards a circular economy by promoting recycling partnerships, material recovery initiatives, and innovative service solutions that reduce environmental impact."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency and Carbon Emission Mitigation",
+        "targets": [
+          {
+            "target": "Reduce Scope 1 & 2 GHG emissions: ↓ 15%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Reduce Scope 3 emissions (key categories): ↓ 8%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Reduce Scope 1 & 2 GHG emissions intensity: ↓ 15%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Source electricity from renewables (rooftop solar): ≥ 10% of total electricity from RE",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Monitor & report all Scope 1, 2, and 3 emissions annually: 100% of scopes reported annually",
+            "baseline": "FY 2023-24",
+            "deadline": "Ongoing from FY2023–24"
+          },
+          {
+            "target": "Implement LED lighting across all factory areas: 100% facilities with full LED",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Annual energy & climate awareness training: 100% employees trained",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          }
+        ]
+      },
+      {
+        "area": "Water Management and Conservation Practices",
+        "targets": [
+          {
+            "target": "Implement water usage monitoring across factory areas: 100% factory with metered monitoring",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Reduce freshwater consumption in washing and production processes: ↓ 20%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve 100% ETP compliance for all process effluent discharge: 100% applicable facilities ETP compliant",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Identified leakages fixed within defined timelines (48 hours): 100% leakages rectified on time",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Install water-efficient fixtures across all facility areas: ≥ 80% facilities with efficient fixtures",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Annual water conservation awareness programs: 2 awareness sessions conducted",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain full compliance with DoE discharge norms: 100% compliance with applicable norms",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Annual water management awareness training: 100% employees trained",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Conservation & Land Use",
+        "targets": [
+          {
+            "target": "Complete Biodiversity Impact Assessments (BIAs) for owned facilities: 100% facilities with completed BIAs",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Plant & maintain native trees/plants on factory campus annually: ≥ 500 native trees / plants planted",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Achieve green belt coverage of total plant area at facility: ≥ 20% of total plant area under green belt",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Zero soil or groundwater contamination attributable to operations: Zero contamination incidents / year",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Participate in community biodiversity / environmental restoration programs: ≥ 2 community initiatives / year",
+            "baseline": "FY 2023-24",
+            "deadline": "FY2025–26 onwards"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality Protection and Emission Reduction",
+        "targets": [
+          {
+            "target": "Compliance with stack emission norms (DoE, Bangladesh): Zero exceedances in regulatory inspections",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Reduce dust and particulate emissions from cutting floors via extraction systems: 100% cutting/finishing areas with dust extraction",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Install and operate stack monitoring at all major emission points: 100% emission points with monitoring",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Annual performance audit of all pollution control equipment: 100% PCE audited; 100% uptime during production",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Zero non-compliances in any regulatory air quality inspection: Zero non-compliances / year",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "On-time renewal of all environmental consents; zero permit lapse: 100% permits renewed on time annually",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Conduct regular stack and ambient air monitoring: Once in 2 months",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          }
+        ]
+      },
+      {
+        "area": "Chemicals and Waste Management Practices",
+        "targets": [
+          {
+            "target": "Reduce total solid waste generation per dozen units produced: ↓ 10%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Disposal via DoE-authorized facilities with manifest documentation: 100% hazardous waste via authorized vendors",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Increase fabric offcut diversion from landfill through recycling / donation: ≥ 85% offcuts diverted from landfill",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Annual chemical & waste management training: 100% relevant employees trained",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Reduce paper, cardboard, and plastic packaging waste: ↓ 15% reduction vs. baseline",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Dispose of all e-waste through authorized recyclers: 100% e-waste via authorized recyclers",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Zero waste-related regulatory violations annually: Zero non-compliances",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Zero incidents from improper waste or chemical handling: Zero environmental incidents",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          }
+        ]
+      },
+      {
+        "area": "Climate Risk Assessment & Scenario Analysis",
+        "targets": [
+          {
+            "target": "Complete climate risk and vulnerability assessments for owned manufacturing facilities: 100% facilities assessed",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Complete climate scenario analysis (1.5°C and 4°C scenarios) for Gazipur factory: 100% facilities with scenario analysis",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Customer Wellbeing and Product Safety Management",
+        "targets": [
+          {
+            "target": "Zero recalls from GMP failures, quality defects, or chemical contamination: Zero product recalls",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Compliance with buyer RSLs, OEKO-TEX, and GOTS chemical safety standards: 100% products fully compliant",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "All garments supplied with compliant care, storage & disposal instructions: 100% products with full labelling",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Documented compliance checks for all incoming chemicals and outgoing products: 100% batches with documented checks",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Close all customer safety / quality complaints within defined timelines (14 days): 100% complaints closed on time",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Compliance across all regulated markets (buyer RSLs, OEKO-TEX, GOTS): 100% products compliant",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Zero supply of non-compliant, restricted-substance-containing, or defective garments: Zero non-compliant units dispatched",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Annual third-party laboratory testing for restricted chemical residues on fabric batches: 100% major fabric categories tested",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Annual product safety & chemical compliance training: 100% relevant employees trained",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          }
+        ]
+      },
+      {
+        "area": "Environment Programs and Stakeholder Engagement",
+        "targets": [
+          {
+            "target": "Conduct or support environmental outreach programs: ≥ 4 programs/year",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Organize awareness campaigns (internal & external): ≥ 3 campaigns/year",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Employees trained on environmental advocacy & sustainability: 100% employees",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Key suppliers meeting environmental service expectations: ≥ 75% key suppliers compliant",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Engagement of licensed environmental service providers: 100% services compliant",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2025–26 onwards"
+          },
+          {
+            "target": "Public or buyer ESG/environmental disclosure issued: ≥ 1 disclosure/year",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Product Stewardship & End-of-Life Handling",
+        "targets": [
+          {
+            "target": "Garments supplied with compliant care labels including disposal guidance: 100% products with compliant labels",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2026–27"
+          },
+          {
+            "target": "Develop product-specific garment stewardship and disposal guidance for key buyers: 100% major categories with disposal guidelines",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2026–27"
+          },
+          {
+            "target": "Transition of secondary packaging to recyclable or reduced materials: ≥ 50% secondary packaging recyclable / reduced",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "Reduce specific packaging material weight per dozen units: ↓ 20%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "Engage major buyers on responsible garment end-of-life guidance: ≥ 70% major buyers engaged on EOL guidance",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2028–29"
+          },
+          {
+            "target": "Increase share of sustainable/recycled content fabrics in production mix: ≥ 10% of fabric sourced from sustainable/recycled content",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2028–29"
+          },
+          {
+            "target": "Zero product recalls due to chemical contamination or packaging failures: Zero product recalls / year",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      6,
+      7,
+      12,
+      13,
+      15,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Approve and endorse the Environmental Responsibility Policy and overall sustainability strategy."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Provide leadership commitment and ensure integration of environmental responsibility into business strategy and investment decisions."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure availability of adequate resources — financial, human, and technological — for implementation of environmental objectives and targets."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Represent the Company's environmental commitment to buyers, regulators, certification bodies, and stakeholders."
+      },
+      {
+        "role": "Environmental Officer / EHS Head",
+        "duty": "Review the entire Policy regularly and coordinate annual policy revision."
+      },
+      {
+        "role": "Environmental Officer / EHS Head",
+        "duty": "Monitor compliance with all applicable environmental laws, permits, DoE consent conditions, and internal standards."
+      },
+      {
+        "role": "Environmental Officer / EHS Head",
+        "duty": "Track, analyses, and report environmental performance indicators — including energy, water, waste, emissions, air quality, and product safety metrics — to Senior Management."
+      },
+      {
+        "role": "Environmental Officer / EHS Head",
+        "duty": "Lead environmental audits, RSL compliance reviews, and corrective action programs."
+      },
+      {
+        "role": "Production / Floor Managers & Operations",
+        "duty": "Ensure environmentally responsible practices in daily garment manufacturing, utility operations, and facility maintenance."
+      },
+      {
+        "role": "Production / Floor Managers & Operations",
+        "duty": "Maintain all pollution control equipment (ETP, dust extraction, effluent systems) in optimal operating condition."
+      },
+      {
+        "role": "Production / Floor Managers & Operations",
+        "duty": "Ensure proper storage, handling, secondary containment, and disposal of hazardous chemicals and waste in compliance with applicable regulations and SDS requirements."
+      },
+      {
+        "role": "Production / Floor Managers & Operations",
+        "duty": "Support implementation of energy conservation, water reduction, and waste minimization projects."
+      },
+      {
+        "role": "HR & Training Manager",
+        "duty": "Organize annual environmental awareness and EHS training for all employees."
+      },
+      {
+        "role": "HR & Training Manager",
+        "duty": "Maintain training records and ensure 100% coverage of relevant staff per year."
+      },
+      {
+        "role": "HR & Training Manager",
+        "duty": "Integrate environmental responsibility into new employee induction programs."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Integrate environmental criteria — including RSL compliance, ZDHC MRSL alignment, and sustainability disclosures — into supplier qualification and evaluation processes."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Ensure engagement with authorized waste disposal contractors and environmentally compliant service providers."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Promote environmental expectations among fabric/trim suppliers, chemical vendors, and logistics partners."
+      },
+      {
+        "role": "QA / Compliance Team",
+        "duty": "Ensure manufacturing and product compliance with chemical safety and quality regulatory requirements (OEKO-TEX, GOTS, buyer RSLs)."
+      },
+      {
+        "role": "QA / Compliance Team",
+        "duty": "Manage customer complaints, deviations, and CAPAs with product safety or environmental implications promptly and effectively."
+      },
+      {
+        "role": "QA / Compliance Team",
+        "duty": "Ensure all products are supplied with complete and compliant care labelling, chemical test reports, and disposal guidance."
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Individual responsibility to follow environmental procedures, report incidents or near-misses, and participate in improvement initiatives."
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Attend all mandatory environmental awareness training sessions."
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Refrain from any action that could cause environmental harm and raise concerns without fear of retaliation."
+      }
+    ],
+    "monitoring": "Padma Satel Arab Fashions Ltd. is committed to the continuous improvement of its environmental performance across all manufacturing and office areas. Environmental considerations are embedded into day-to-day operations with the aim of systematically reducing resource consumption, minimizing waste and air emissions, improving chemical management, and preventing pollution at source. Key environmental parameters including energy consumption, water usage, fabric waste generation, air quality and stack emissions, GHG emissions (Scope 1, 2, and identified Scope 3 categories), ETP effluent quality, and regulatory compliance status are monitored at facility level on a regular basis and tracked against the quantitative targets set out in this Policy.\n\nKey environmental indicators such as energy consumption, water usage, waste generation, chemical usage, air emissions, and GHG emissions are regularly tracked and analyzed at facility level to identify trends, inefficiencies, and improvement opportunities.\n\nStandardized systems are implemented for accurate measurement and recording of environmental data, ensuring consistency, traceability, and reliability of performance information across departments.\n\nPeriodic internal environmental audits and inspections are conducted to verify compliance with internal policies, regulatory requirements, and buyer standards, and to identify gaps for corrective action.\n\nIndependent audits and assessments by external agencies, certification bodies, and buyers are utilized to validate environmental performance and benchmark practices against industry standards.\n\nEnvironmental data, audit findings, and improvement actions are properly documented and maintained to support transparency, internal review, and external reporting requirements.\n\nPadma Satel Arab Fashions Ltd. has established a structured and transparent process to monitor and report environmental performance across all operations. Key data on energy and water consumption, fabric waste generation (by stream), chemical compliance, air and effluent quality, GHG emissions (Scope 1, 2, and 3), product quality and safety metrics, and regulatory compliance status are systematically collected, validated, and reviewed on a monthly basis at factory level and quarterly at management level to track performance against internal targets and regulatory requirements.\n\nAn annual ESG and Environmental Performance Summary is prepared and shared with key buyers upon request, and submitted to relevant certification bodies (BSCI, SEDEX, RSC, SLCP) as part of audit processes. The Company is committed to progressive improvement in the depth and transparency of its environmental reporting over time, including alignment with internationally recognized frameworks such as GRI and CDP.",
+    "reviewMechanism": "This Environmental Responsibility Policy is reviewed at least once every year, or whenever triggered by significant changes in business operations, new or amended applicable environmental legislation, changes in regulatory requirements, material changes in manufacturing scale or technology, stakeholder expectations, buyer requirements, or the occurrence of a significant environmental incident. The review is conducted by the Environmental Officer / EHS Head in consultation with the Managing Director and relevant department heads."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Padma/1. Environmental_Responsibility_Policy (1).docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Padma/1. Environmental_Responsibility_Policy (1).docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 37620,
+  "parsedAt": "2026-09-11T07:11:33.028Z"
+}

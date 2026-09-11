@@ -1,0 +1,299 @@
+{
+  "id": "sustainable-procurement-skypass",
+  "name": "Skypass",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Skypass Travel Inc. (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Skypass Travel recognizes that procurement decisions have a direct impact on the environment, society, and economy. As a travel services provider, we aim to integrate sustainability into our procurement practices by selecting suppliers and products that align with ethical, social, and environmental standards. This policy outlines our commitment to responsible procurement, promoting supplier collaboration, reducing environmental impact, and supporting ethical and fair business practices across our supply chain.",
+      "declaration": "The purpose of this policy is to:\n\nEstablish clear guidelines for sustainable procurement across the company.\n\nPromote responsible sourcing of goods and services while minimizing environmental and social impacts.\n\nEnsure compliance with ethical and sustainability standards among suppliers and partners.\n\nSupport Skypass Travel’s overall ESG commitments and long-term sustainability goals.\n\nSkypass Travel is committed to sustainable procurement practices that balance environmental, social, and economic considerations. We prioritize suppliers who demonstrate environmental stewardship, uphold ethical labor practices, promote diversity and inclusion, and provide products or services that reduce resource use, waste, and emissions.",
+      "scope": "This Sustainable Procurement Policy applies to all operations, business functions, and services of Skypass Travel Inc. (Group) across all locations worldwide, including corporate offices, registered offices, branch offices, subsidiaries, joint ventures, and all associated supply chain activities. It is applicable to all employees, workers, contractors, and stakeholders engaged with Skypass Travel Inc. (Group), directly or indirectly, and requires strict compliance and accountability at every organizational level."
+    },
+    "focusAreas": [
+      "Our Procurement Prioritize",
+      "General Targets",
+      "Sustainable Sourcing & Environmental Stewardship",
+      "Ethical and Inclusive Procurement",
+      "Economic and Strategic Value"
+    ],
+    "qualitative": {
+      "Our Procurement Prioritize": [
+        "Prioritize ethical and responsible sourcing in all procurement activities.",
+        "Ensure that suppliers comply with environmental, labor, and human rights standards.",
+        "Foster partnerships with suppliers who implement sustainable practices and minimize environmental impact.",
+        "Support local and small businesses to strengthen community engagement and drive economic growth.",
+        "Promote waste reduction and circular economy principles throughout the procurement process.",
+        "Champion sustainable procurement practices and encourage suppliers to adopt eco-friendly initiatives."
+      ],
+      "General Targets": [
+        "We aim to integrate sustainability principles into every procurement decision, considering environmental, social, and ethical impacts.",
+        "All suppliers must formally acknowledge and sign the Supplier Code of Conduct, committing to uphold ethical, environmental, labor, and human rights standards.",
+        "We will encourage suppliers to adopt sustainable practices, including energy efficiency, resource conservation, and ethical labor standards.",
+        "We are going to promote digital procurement processes to reduce paper and operational impact.",
+        "We will foster collaboration with suppliers to co-create sustainable solutions and share best practices.",
+        "We will conduct annual self-assessment and on-site audits of key suppliers to assess adherence to environmental, social, and governance (ESG) standards and identify improvement opportunities.",
+        "We will monitor and report procurement sustainability KPIs annually, including energy use, emissions, waste reduction, ethical compliance, and supplier performance."
+      ],
+      "Sustainable Sourcing & Environmental Stewardship": [
+        "We are willing to prioritize suppliers that implement water and energy efficiency practices in their operations.",
+        "Aim to prioritize and collaborate with suppliers holding recognized ISO certifications (such as ISO 14001 for environmental management or ISO 50001 for energy management) to encourage best practices in sustainability.",
+        "We aim to promote suppliers who monitor and reduce greenhouse gas emissions in their operations.",
+        "We will support procurement choices that optimize resource efficiency, including reusable, durable, or modular products.",
+        "Equip all procurement staff with knowledge and skills to consider environmental impacts, resource efficiency, and sustainable practices in procurement decisions."
+      ],
+      "Ethical and Inclusive Procurement": [
+        "We aim to work only with suppliers who ensure safe working conditions and fair wages.",
+        "Aim to prioritize suppliers holding ISO certifications related to social responsibility (e.g., ISO 45001 for occupational health & safety or SA8000 for social accountability) to ensure compliance with labor and human rights standards.",
+        "We will promote gender equality and diversity in supplier organizations.",
+        "We are going to engage suppliers who support community development initiatives, education, or social welfare programs.",
+        "We will encourage suppliers to report and manage social risks across their operations.",
+        "We aim to train all procurement personnel on labor rights, ethical sourcing, and human rights risks associated with procurement decisions."
+      ],
+      "Economic and Strategic Value": [
+        "We are willing to develop long-term partnerships with suppliers committed to sustainability, ensuring shared value creation.",
+        "Prioritize suppliers holding ISO certifications relevant to ethical practices and social responsibility (e.g., ISO 37001 for anti-bribery, ISO 26000 guidance on social responsibility) to strengthen ethical compliance across the supply chain.",
+        "Aim to train all procurement personnel to identify, assess, and mitigate ethical risks, including labor rights, anti-corruption, and responsible sourcing practices.",
+        "We are going to prioritize procurement decisions that reduce total cost of ownership rather than short-term price savings.",
+        "We will support local suppliers in emerging markets to strengthen regional economic development."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "By 2030, at least 7% of all key suppliers will undergo formal ESG assessments, including on-site audits and self-assessment questionnaires",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will reduce paper consumption in procurement activities by 10% by 2030 through digitalization",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "By 2030, at least 35% of key suppliers must have signed the Supplier Code of Conduct",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Sourcing & Environmental Stewardship",
+        "targets": [
+          {
+            "target": "By 2030, at least 10% of total procurement spend will be directed toward ISO-certified suppliers",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are going to source at least 12% of office consumables from suppliers using recycled or sustainable materials by 2030",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will reduce carbon footprint associated with supplier logistics by 10% by 2030 through strategic sourcing and consolidation",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 50% of procurement personnel complete training on environmental sustainability and responsible sourcing by 2030, with refresher programs conducted annually.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are going to achieve 12% digital invoicing and ordering with suppliers by 2030 to minimize paper and administrative impact",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Ethical and Inclusive Procurement",
+        "targets": [
+          {
+            "target": "By 2030, at least 12% of total procurement spend will be with suppliers holding relevant labor and human rights certifications",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are going to increase procurement from women-owned or minority-owned suppliers to at least 10% of total spend by 2030",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Aim to ensure 50% of procurement staff complete training on labor and human rights issues by 2030, with annual refresher sessions to maintain awareness and compliance.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Economic and Strategic Value",
+        "targets": [
+          {
+            "target": "By 2030, at least 10% of total procurement spend will be allocated to ISO-certified suppliers with verified ethical and social responsibility standards",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will review supplier performance against sustainability criteria annually for at least 75% of top-tier suppliers.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Ensure 50% of procurement staff complete ethics and responsible procurement training by 2030, with annual refresher courses to maintain awareness and compliance.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Sustainability Manager",
+        "duty": "The governance of Skypass Travel Inc.’s Sustainable Procurement Policy will be overseen by the Sustainability Manager. This role is responsible for ensuring that all procurement and sourcing activities adhere to sustainable and ethical practices. The manager will collaborate with internal teams, suppliers, and partners to encourage responsible purchasing, implement best practices, and align procurement operations with the company’s sustainability goals. Regular training, policy reviews, and performance assessments will be conducted to drive continuous improvement. This role ensures that sustainability is fully integrated into Skypass Travel Inc.’s procurement strategies and long-term sourcing decisions."
+      },
+      {
+        "role": "Managing Director / Senior Management",
+        "duty": "Approve the sustainable procurement strategy and allocate resources."
+      },
+      {
+        "role": "Managing Director / Senior Management",
+        "duty": "Provide oversight to ensure sustainability objectives align with corporate strategy and ESG commitments."
+      },
+      {
+        "role": "Managing Director / Senior Management",
+        "duty": "Review major supplier contracts and high-risk procurement decisions from a sustainability perspective."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Monitor supplier compliance with sustainability standards."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Track procurement KPIs and prepare progress reports."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Conduct employee training on sustainable procurement practices."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Coordinate internal audits and implement corrective actions."
+      },
+      {
+        "role": "Sustainability Officer",
+        "duty": "Review and update the Sustainable Procurement Policy annually to ensure alignment with evolving corporate goals, regulatory requirements, and best practices."
+      },
+      {
+        "role": "Sustainability Officer",
+        "duty": "Provide guidance on improvements to procurement strategies and supplier engagement to enhance sustainability outcomes."
+      },
+      {
+        "role": "Procurement Managers / Department Heads",
+        "duty": "Integrate sustainability criteria into sourcing and supplier selection."
+      },
+      {
+        "role": "Procurement Managers / Department Heads",
+        "duty": "Evaluate suppliers against environmental, social, and ethical standards."
+      },
+      {
+        "role": "Procurement Managers / Department Heads",
+        "duty": "Maintain records of sustainability performance and progress toward targets."
+      },
+      {
+        "role": "Procurement Managers / Department Heads",
+        "duty": "Collaborate with suppliers to achieve environmental and social objectives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow sustainable procurement guidelines in day-to-day activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support eco-friendly purchasing decisions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any non-compliance, risks, or improvement suggestions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in awareness and training programs related to sustainable sourcing."
+      },
+      {
+        "role": "Suppliers / Vendors",
+        "duty": "Comply with environmental, social, and ethical standards."
+      },
+      {
+        "role": "Suppliers / Vendors",
+        "duty": "Provide required sustainability documentation and certifications."
+      },
+      {
+        "role": "Suppliers / Vendors",
+        "duty": "Actively work on improvements in environmental and social performance."
+      },
+      {
+        "role": "Suppliers / Vendors",
+        "duty": "Participate in training, audits, or capacity-building programs as requested."
+      },
+      {
+        "role": "Finance Team",
+        "duty": "Track procurement spend with sustainable suppliers."
+      },
+      {
+        "role": "Finance Team",
+        "duty": "Evaluate the cost-benefit of sustainable sourcing initiatives."
+      },
+      {
+        "role": "Finance Team",
+        "duty": "Integrate sustainability KPIs into financial reporting and analysis."
+      },
+      {
+        "role": "IT / Digital Procurement Team",
+        "duty": "Implement and maintain e-procurement systems, digital invoicing, and paperless processes."
+      },
+      {
+        "role": "IT / Digital Procurement Team",
+        "duty": "Support transparency and reduce environmental impact of procurement operations."
+      }
+    ],
+    "monitoring": "Skypass Travel is committed to transparent reporting of sustainable procurement performance. The Sustainability & Compliance Team will collect and analyze data on supplier compliance, sustainable spend, eco-certified products, and progress toward quantitative targets. Annual reports will be shared with senior management, departmental heads, and employees to ensure accountability. Key performance metrics, including supplier ESG scores, digital procurement adoption, and sustainable sourcing percentages, will be tracked and communicated to stakeholders. Reporting insights will support decision-making, continuous improvement, and strategic procurement planning.\n\nSkypass Travel will periodically review its procurement practices to ensure alignment with emerging sustainability trends and regulatory requirements. Feedback from employees, suppliers, and other stakeholders will be actively considered to enhance procurement processes. The company will also encourage innovation and collaboration with suppliers to improve both environmental and social performance. Lessons learned from audits, reporting, and supplier evaluations will be applied to continuously refine procurement strategies and drive progress toward sustainability targets.",
+    "reviewMechanism": "This policy will be reviewed annually, or sooner if significant operational, regulatory, or industry changes arise by Sustainability Officer. Progress toward the 2030 sustainability targets will be systematically monitored and reported to ensure accountability and transparency. Any updates or revisions will be communicated to all employees, suppliers, and stakeholders to maintain awareness and alignment with the company’s sustainability objectives."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Skypass/Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Skypass/Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 13558,
+  "parsedAt": "2026-09-11T07:16:21.866Z"
+}

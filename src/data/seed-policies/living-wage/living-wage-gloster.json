@@ -1,0 +1,227 @@
+{
+  "id": "living-wage-gloster",
+  "name": "Gloster",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage Policy_GRW_v1_0301.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Gloster Limited",
+      "industry": "",
+      "site": "Head Office, 21, Strand Road, Kolkata 700001",
+      "sites": [
+        {
+          "location": "GLOSTER LIMITED – Ananya Unit",
+          "address": "P.O: Fort Gloster, Bauria, Howrah – 711310, West Bengal",
+          "primaryFunction": ""
+        },
+        {
+          "location": "GLOSTER LIMITED – Head Office",
+          "address": "Head Office, 21, Strand Road, Kolkata 700001",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Head Office, 21, Strand Road, Kolkata 700001"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Gloster Limited, we believe that a living wage is fundamental to the well-being of our employees and the sustainability of our jute manufacturing operations. This Living Wage Policy demonstrates our commitment to ensuring all workers associated with Gloster, directly or indirectly, receive compensation that allows them and their families to live with dignity. Our approach aligns with Indian labor laws, international standards, and Gloster's core values of integrity and social responsibility.",
+      "declaration": "Implementing this framework, Gloster Limited commits to providing a living wage that ensures employees can maintain a decent standard of living. Through this initiative, the company aims to achieve the following outcomes:\n\nImplement a living wage framework that supports a decent standard of living for all Gloster employees.\n\nEnsure Gloster's wages reflect the true cost of living in our operational areas.\n\nFoster economic stability and well-being among our workforce and local communities.\n\nSet a standard for fair wage practices in the jute industry and our supply chain.",
+      "scope": "This Policy applies to all employees (at all levels), stakeholders (internal and external), partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Gloster Limited. It also applies to the following sites"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Living Wage: Gloster Limited defines a living wage as the remuneration received for a standard work week by a worker in a particular place sufficient to afford a decent standard of living for the worker and their family. Elements of a decent standard of living include:\n\nNutritious food and clean water\n\nSafe and adequate housing\n\nEducation for children\n\nHealthcare\n\nTransportation\n\nClothing and other essential needs\n\nProvision for unexpected event\n\nGloster Limited determines the living wage through a comprehensive assessment process. This process includes conducting regular audits to evaluate the cost of living in the regions where we operate. We consider various factors such as the price of nutritious food, safe and adequate housing, education, healthcare, transportation, clothing, and other essential needs. We also factor in provisions for unexpected events to ensure a comprehensive approach. Our audits are aligned with Indian labor laws and international standards, ensuring our wage standards reflect the true cost of living. By maintaining these audits and regularly checking the standards, we ensure that our compensation framework remains fair and relevant to the economic realities of our workforce and communities.\n\nThis Policy applies to all employees (at all levels), stakeholders (internal and external), partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Gloster Limited.\n\nThis policy shall be reviewed annually and on an ad hoc basis by the Chief Human Resources Officer (CHRO) to ensure its effectiveness and relevance."
+    },
+    "focusAreas": [
+      "Living Wage Measures",
+      "Gender Pay Equity",
+      "Wage Disparity",
+      "Inflation Adjustment",
+      "Training and Education",
+      "Monitoring and Reporting"
+    ],
+    "qualitative": {
+      "Living Wage Measures": [
+        "We are committed to ensuring all employees receive compensation that meets or exceeds the minimum wage by FY 2029-30, improving from the baseline set in FY 2022-23."
+      ],
+      "Gender Pay Equity": [
+        "To address the gender, pay gap, we have implemented the \"Gender Pay Equity Review\" strategy and aim to reduce the pay disparity between male and female employees by 10% by FY 2029-30 from the baseline FY 2022-23."
+      ],
+      "Wage Disparity": [
+        "We aim to narrow the wage disparity between our highest and lowest earners by 15% by FY 2029-30, with FY 2022-23 as the baseline for measuring improvements."
+      ],
+      "Inflation Adjustment": [
+        "To address the impact of inflation on employee wages, we have implemented the \"Inflation Adjustment Strategy\" and aim to increase wages by 5% to offset the inflation rate and maintain real purchasing power by FY 2029-30, based on FY 2022-23 data."
+      ],
+      "Training and Education": [
+        "We will provide comprehensive and ongoing training to all employees, including:",
+        "New hire living wage orientation within the first month of employment",
+        "Interactive online webinars on living wage adjustments and cost-of-living assessments",
+        "Monthly updates on living wage standards and case study discussions",
+        "Quarterly leadership workshops on living wage strategies for managers and executives",
+        "Biannual living wage impact reviews and feedback sessions with employees",
+        "Role-specific living wage training for employees in key operational areas",
+        "Annual living wage refresher courses for all employees",
+        "Online living wage resource center with guidelines, FAQs, and assessment tools"
+      ],
+      "Monitoring and Reporting": [
+        "We compare our wage levels with industry standards and benchmarks to ensure that Gloster remains competitive and fair in its compensation practices. This also helps us set realistic and attainable goals for wage improvements.",
+        "Employee representatives collect and relay feedback from the workforce on the effectiveness of the Living Wage Policy. This feedback is reviewed and considered in our policy updates and adjustments."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Measures",
+        "targets": [
+          {
+            "target": "Ensure all employees receive compensation that meets or exceeds the minimum wage",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Gender Pay Equity",
+        "targets": [
+          {
+            "target": "Reduce the pay disparity between male and female employees by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Wage Disparity",
+        "targets": [
+          {
+            "target": "Narrow the wage disparity between the highest and lowest earners by 15%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Inflation Adjustment",
+        "targets": [
+          {
+            "target": "Increase wages by 5% to offset the inflation rate and maintain real purchasing power",
+            "baseline": "FY 2022-23 data",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "The CHRO is responsible for the overall implementation, oversight and review of the Living Wage Policy."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Ensures that the policy is up-to-date and reflects the current economic conditions and standards."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Guarantees that all regulatory and legal requirements are met and that regular reports are generated on the policy's impact."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Conducts periodic audits to assess the cost of living in operational regions and ensures alignment with Indian labor laws and international standards."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Gathers and analyzes data related to wages, cost of living, and other essential needs to ensure accurate living wage calculations."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Provides training to employees and management on the Living Wage Policy and its importance."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Ensures that sufficient budget is allocated to meet living wage requirements."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Monitors economic conditions and adjusts wages to offset inflation and maintain real purchasing power."
+      },
+      {
+        "role": "Gender Pay Equity Committee",
+        "duty": "Implements and monitors strategies to reduce the gender pay gap, ensuring equitable pay for all employees."
+      },
+      {
+        "role": "Gender Pay Equity Committee",
+        "duty": "Provides regular updates to the CHRO on progress towards gender pay equity targets."
+      },
+      {
+        "role": "Operations Managers",
+        "duty": "Ensures that the Living Wage Policy is effectively implemented at all operational sites, including Gloster Limited, P.O: Fort Gloster, Bauria, Howrah – 711310, West Bengal."
+      },
+      {
+        "role": "Operations Managers",
+        "duty": "Works with local HR teams to ensure that living wages are reflective of regional cost of living standards."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Collects feedback from employees regarding the Living Wage Policy and communicates any concerns or suggestions to the HR Department."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Advocates for employee needs and ensures that the policy supports a decent standard of living for all workers."
+      },
+      {
+        "role": "External Auditors",
+        "duty": "Conducts independent audits to verify that the Living Wage Policy is being implemented effectively and that all standards are met."
+      },
+      {
+        "role": "External Auditors",
+        "duty": "Ensures that the policy aligns with both national and international labor standards."
+      },
+      {
+        "role": "Legal Department",
+        "duty": "Ensures that the Living Wage Policy complies with all applicable Indian labor laws and international standards."
+      },
+      {
+        "role": "Legal Department",
+        "duty": "Provides guidance on the enforcement of the policy and handles any legal issues that may arise."
+      },
+      {
+        "role": "Chief Executive Officer (CEO)",
+        "duty": "Provides strategic oversight and ensures that the Living Wage Policy aligns with Gloster Limited's core values of integrity and social responsibility."
+      },
+      {
+        "role": "Chief Executive Officer (CEO)",
+        "duty": "Communicates the importance and benefits of the Living Wage Policy to stakeholders, partners, and the broader community."
+      }
+    ],
+    "monitoring": "Gloster Limited is committed to ensuring that our Living Wage Policy achieves its intended outcomes and continually improves over time. To track progress, we have established a structured approach involving regular reviews and updates.\n\nRegular Monitoring: We conduct bi-annual audits to evaluate wage levels against the current cost of living, ensuring that compensation remains aligned with regional economic conditions. These audits help us identify any discrepancies and address them promptly.\n\nAnnual Reporting: The Human Resources Department prepares comprehensive annual reports detailing progress towards achieving living wage targets. These reports include data on wage adjustments, gender pay equity, and the impact of inflation on compensation.\n\nBenchmark Comparisons: We compare our wage levels with industry standards and benchmarks to ensure that Gloster remains competitive and fair in its compensation practices. This also helps us set realistic and attainable goals for wage improvements.\n\nStakeholder Feedback: Employee representatives collect and relay feedback from the workforce on the effectiveness of the Living Wage Policy. This feedback is reviewed and considered in our policy updates and adjustments.\n\nExternal Audits: Independent external auditors conduct annual reviews to verify compliance with our Living Wage Policy and national and international standards. Their findings are used to make necessary adjustments and improvements.\n\nThese measures ensure that Gloster Limited consistently meets its commitments and strives to enhance the well-being of our employees.\n\nGloster Limited is dedicated to the continuous enhancement of our Living Wage Policy through ongoing assessment and refinement. We will implement a cycle of regular evaluations to adapt our wage framework to evolving economic conditions and employee needs. By integrating feedback from stakeholders and conducting bi-annual audits, we ensure our compensation remains competitive and reflective of the true cost of living. Our approach includes benchmarking against industry standards and revising our strategy based on comprehensive annual reports. Additionally, external auditors will provide independent verification to uphold compliance and best practices. We commit to proactively addressing any discrepancies and making informed adjustments to continuously improve the effectiveness and fairness of our wage policies. This iterative process reinforces our dedication to social responsibility and the well-being of our workforce.",
+    "reviewMechanism": "This policy shall be reviewed annually and on an ad hoc basis by the Chief Human Resources Officer (CHRO) to ensure its effectiveness and relevance. Any significant changes will be approved by the Board of Directors."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Gloster/5. Living Wage Policy_GRW_v1_0301.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Gloster/5. Living Wage Policy_GRW_v1_0301.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 12982,
+  "parsedAt": "2026-09-11T07:07:54.424Z"
+}

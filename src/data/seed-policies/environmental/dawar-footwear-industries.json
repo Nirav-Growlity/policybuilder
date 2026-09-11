@@ -1,0 +1,153 @@
+{
+  "id": "dawar-footwear-industries",
+  "name": "DAWAR FOOTWEAR INDUSTRIES",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Sustainable Procrument Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Dawar Group",
+      "industry": "",
+      "site": "Near Bapu Asaram Asaram, 12.5 Km, Agra-Delhi Road, Sikandra, Agra-282007 (India)",
+      "sites": [
+        {
+          "location": "Dawar Group",
+          "address": "Near Bapu Asaram Asaram, 12.5 Km, Agra-Delhi Road, Sikandra, Agra-282007 (India)",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Near Bapu Asaram Asaram, 12.5 Km, Agra-Delhi Road, Sikandra, Agra-282007 (India)"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Dawar Group, we understand that adopting sustainable procurement practices is not only a responsibility but also a key driver of long-term success and resilience. Sustainable procurement is fundamental to minimizing our environmental footprint, ensuring ethical labor practices, and building robust supply chains that promote both social and environmental value. By embedding sustainability into our procurement processes, we align our operations with global sustainability standards, contributing positively to society while enhancing our business reputation.",
+      "declaration": "Dawar Group is committed to embedding sustainable procurement principles across our entire supply chain. From sourcing to final product delivery, we strive to ensure that our practices reflect our commitment to environmental protection, ethical labor practices, and responsible sourcing. Our approach integrates sustainability into every procurement decision, focusing on transparency, ethical conduct, and long-term value creation.\n\nWe set annual sustainable procurement goals and ensure our teams have the necessary skills, resources, and support to achieve these targets. Innovation, continuous improvement, and collaboration with our supply chain partners are key to our sustainable procurement journey.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:"
+    },
+    "focusAreas": [
+      "Sustainable Procurement Compliance",
+      "Environmental Impact Reduction",
+      "Ethical Sourcing and Supplier Development",
+      "Sustainable Materials and Innovation",
+      "Fair Labor Practices and Human Rights"
+    ],
+    "qualitative": {
+      "Sustainable Procurement Compliance": [
+        "Dawar Group is committed to implementing sustainable procurement practices across our operations. We integrate environmental issues, such as reducing carbon emissions, minimizing waste, and promoting biodiversity, into our supply chain management alongside conventional procurement considerations like price, quality, and reliability. Additionally, we prioritize labor and human rights issues in supply chain management, ensuring fair wages, reasonable working hours, and safe working conditions for all workers involved in our supply chain. By going beyond legal compliance and actively embedding these sustainability considerations into all aspects of our procurement processes, we foster a culture of environmental responsibility and social equity.",
+        "We ensure continuous improvement in areas such as Responsible Sourcing and Supplier Engagement, Circular Economy and Waste Reduction, and Labor and Human Rights in the Supply Chain through:",
+        "Evaluating suppliers not only on price, quality, and reliability but also on their environmental impact and adherence to fair labor standards.",
+        "Establishing clear procedures for reporting sustainability concerns in the supply chain.",
+        "Maintaining accurate records of our procurement practices and their environmental and social impacts.",
+        "Implementing systems to track and reduce the carbon footprint of our procurement activities.",
+        "Promoting the use of recycled and recyclable materials in our supply chain.",
+        "Ensuring that all suppliers meet our standards for fair wages, working hours, and respect for human rights."
+      ],
+      "Environmental Impact Reduction": [
+        "Dawar Group is committed to minimizing the environmental footprint of its procurement activities by focusing on energy efficiency, waste reduction, and pollution control.",
+        "Dawar Group encourages the use of renewable energy and resource-efficient technologies throughout its supply chain."
+      ],
+      "Ethical Sourcing and Supplier Development": [
+        "Dawar Group works closely with suppliers to ensure they adhere to ethical sourcing practices, including responsible sourcing of raw materials and adherence to social and environmental standards.",
+        "We are committed to conducting annual sustainability audits and performance reviews for all key suppliers."
+      ],
+      "Sustainable Materials and Innovation": [
+        "Dawar Group will invest in research and development to create innovative, eco-friendly products that reduce waste and resource consumption.",
+        "By partnering with suppliers who specialize in sustainable materials, we will reduce the environmental impact of our products across their life cycle."
+      ],
+      "Fair Labor Practices and Human Rights": [
+        "Dawar Group is dedicated to upholding the highest standards of labor practices across its supply chain, ensuring fair wages, reasonable working hours, and safe working conditions.",
+        "Our commitment includes ensuring that all workers involved in our supply chain are treated with dignity and respect, with access to grievance mechanisms."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Impact Reduction",
+        "targets": [
+          {
+            "target": "We aim to reduce carbon emissions from our supply chain by 30%",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Sourcing and Supplier Development",
+        "targets": [
+          {
+            "target": "By 2026, we aim to implement a 100% comprehensive supplier training program that focuses on sustainability, human rights, and responsible sourcing practices.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials and Innovation",
+        "targets": [
+          {
+            "target": "We plan to increase the use of sustainable, recycled, and biodegradable materials in our products and packaging by 50%",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Fair Labor Practices and Human Rights",
+        "targets": [
+          {
+            "target": "We aim to 100% eliminate forced labor, child labor, and exploitative working conditions throughout our supply chain",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Oversees the overall sustainable procurement strategy and approves long-term goals related to ethical sourcing and environmental impact reduction. Ensures alignment of procurement practices with business objectives, environmental sustainability goals, and stakeholder expectations."
+      },
+      {
+        "role": "Chief Procurement Officer (CPO)",
+        "duty": "Implements and manages the Sustainable Procurement and Ethical Sourcing Policy. Reports on supply chain sustainability performance, including labor rights, human rights, and environmental metrics."
+      },
+      {
+        "role": "Sustainability Committee",
+        "duty": "Oversees day-to-day operations concerning sustainable procurement and compliance. Coordinates with procurement, legal, and sustainability departments to integrate ethical and sustainable practices into procurement activities."
+      },
+      {
+        "role": "All Suppliers",
+        "duty": "Adhere to Dawar Group’s sustainable procurement guidelines. Participate in regular audits and assessments to ensure compliance with labor, human rights, and environmental standards."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Comply with the Sustainable Procurement and Ethical Sourcing Policy and attend related training. Report any violations related to environmental issues, labor rights, or human rights to the Sustainability Team."
+      }
+    ],
+    "monitoring": "At Dawar Group, transparent and structured reporting is key to ensuring that our sustainable procurement practices are effectively communicated to stakeholders, including employees, suppliers, customers, and regulatory bodies.\n\nConduct annual evaluations of key performance indicators (KPIs) such as supplier compliance with labor standards, environmental impact reductions, and sustainable material usage.\n\nUtilize supplier scorecards and tracking systems to monitor compliance and ensure real-time data collection.\n\nPrepare and review quarterly reports comparing supplier performance against established sustainability goals and procurement standards.\n\nPublish a detailed annual report summarizing procurement activities, supplier audits, environmental achievements, and challenges.\n\nHighlight initiatives such as the transition to sustainable materials and improvements in supplier working conditions.\n\nEngage independent third-party auditors to verify compliance and accuracy of sustainability reports, ensuring credibility and transparency.\n\nImplement a robust system for reporting and addressing violations of environmental, labor, or human rights standards within the supply chain.\n\nProvide monthly summaries of incidents, including root cause analysis and corrective actions to prevent future violations.\n\nDocument our efforts in promoting sustainability across the supply chain, including stakeholder consultations and supplier engagement initiatives.\n\nGather feedback from stakeholders regarding the effectiveness of our sustainable procurement practices and use this feedback for continuous improvement.",
+    "reviewMechanism": "The Sustainability Committee is responsible for overseeing the implementation and regular review of this Sustainable Procurement and Ethical Sourcing Policy. This policy will be reviewed annually to ensure its continued effectiveness and alignment with emerging sustainability standards and business needs. Updates and amendments will be communicated to all stakeholders, including suppliers and employees, as necessary to ensure transparency and compliance."
+  },
+  "sourcePath": "Policies - Kenal/DAWAR FOOTWEAR INDUSTRIES/Sustainable Procrument Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/DAWAR FOOTWEAR INDUSTRIES/Sustainable Procrument Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 10868,
+  "parsedAt": "2026-09-11T07:21:29.066Z"
+}

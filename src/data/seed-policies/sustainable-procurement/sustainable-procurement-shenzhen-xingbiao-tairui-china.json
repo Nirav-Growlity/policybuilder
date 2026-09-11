@@ -1,0 +1,245 @@
+{
+  "id": "sustainable-procurement-shenzhen-xingbiao-tairui-china",
+  "name": "Shenzhen Xingbiao - Tairui China",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement Policy done.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Shenzhen Xingbiao Electronic Technology Co Ltd",
+      "industry": "",
+      "site": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China",
+      "sites": [
+        {
+          "location": "Shenzhen Xingbiao Electronic Technology Co Ltd",
+          "address": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China",
+          "primaryFunction": "Procurement and global operations"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "We are committed to responsible procurement that supports sustainability and ethical standards by prioritizing eco-friendly materials and ethical labor, collaborating with suppliers to reduce our environmental impact.\n\nShenzhen Xingbiao Electronic Technology Co Ltd committed to sustainable procurement through a clear and evolving policy. Despite being a new, we actively monitor and enhance our procurement practices to ensure they align with sustainability standards. We embrace our responsibility to foster responsible sourcing, driving efforts to support ethical supply chains while ensuring compliance and long-term positive impact.",
+      "declaration": "We are committed to integrating sustainability into our procurement process, fostering positive environmental, social, and economic impacts. We prioritize sourcing materials and services that are environmentally responsible and ethically produced. By partnering with suppliers who share our values and promoting transparency, we aim to reduce waste and uphold fair labor standards, ensuring responsible growth and environmental leadership in the electronics industry.",
+      "scope": "This policy is applicable to the below-mentioned locations and encompasses all our global operations, including employees, vendors, contractors, and partners engaged in procurement activities."
+    },
+    "focusAreas": [
+      "Supplier Social Practices",
+      "Supplier Environmental Practices",
+      "Sustainable Sourcing of Raw Materials",
+      "Supplier Governance Practices"
+    ],
+    "qualitative": {
+      "Supplier Social Practices": [
+        "Enforce fair labor standards, non-discrimination, safe working conditions, and respect for human rights through regular supplier audits and ongoing engagement.",
+        "Promote local employment, community welfare, and workforce development initiatives with our suppliers.",
+        "Support supplier social performance improvements via targeted training and capacity-building programs."
+      ],
+      "Supplier Environmental Practices": [
+        "Require suppliers to implement waste reduction, energy efficiency, and responsible chemical management practices.",
+        "Collaborate with suppliers to set sustainability goals and foster eco-innovation throughout the supply chain."
+      ],
+      "Sustainable Sourcing of Raw Materials": [
+        "Prioritize procurement of materials from sustainable certified and traceable sources.",
+        "Encourage the use of recycled or reclaimed materials to minimize reliance on virgin resources.",
+        "Ensure full transparency in supply chain documentation and sourcing origins to support responsible sourcing."
+      ],
+      "Supplier Governance Practices": [
+        "Require suppliers to adopt ethical governance frameworks, maintain internal controls, and adhere to transparency standards.",
+        "Conduct periodic governance risk assessments to identify and mitigate potential risks.",
+        "Facilitate supplier training and review mechanisms to strengthen ethical practices and compliance."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "Achieve 100% supplier compliance with fair labor and human rights standards verified through annual audits",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the percentage of suppliers providing documented workforce development or community welfare programs from 30% in 2022 to 70%",
+            "baseline": "30% in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Deliver supplier training on social performance to at least 80% of strategic suppliers annually",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Reduce supplier-related waste generation by 20% compared to 2022 levels",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure at least 75% of suppliers have recognized environmental certifications",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 15% improvement in average supplier energy efficiency metrics relative to 2022 baseline",
+            "baseline": "2022 baseline",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Sourcing of Raw Materials",
+        "targets": [
+          {
+            "target": "Source at least 90% of raw materials from certified and traceable",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the use of recycled or reclaimed materials in purchased products to 40%",
+            "baseline": "15% in 2030",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% supply chain transparency documentation for all strategic suppliers",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Governance Practices",
+        "targets": [
+          {
+            "target": "Conduct governance risk assessments for 100% of strategic suppliers annually starting",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of suppliers implement documented ethical governance frameworks",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide governance ethics training to 95% of suppliers and track improvements through follow-up assessments",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "General Target",
+        "targets": [
+          {
+            "target": "Ensure 100% of Tier 1 suppliers formally acknowledge and comply with the existing Supplier Code of Conduct",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of procurement-related employees receive regular training on sustainable procurement, ethics, and compliance requirements",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct CSR self-assessments or ESG performance reviews for 100% of identified key and high-risk suppliers on a periodic basis (at least once every two years)",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure environmental, social, ethical, and product compliance requirements are systematically integrated into supplier onboarding, evaluation, and procurement contracts",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Apply corrective action plans (CAPs) for all identified supplier non-compliances and aim to close at least 90% of corrective actions within agreed timelines",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Procurement Officer",
+        "duty": "Select responsible suppliers and ensure compliance with sustainability standards."
+      },
+      {
+        "role": "Chief Procurement Officer",
+        "duty": "Develop procurement strategies that prioritize eco-friendly materials and environmental considerations."
+      },
+      {
+        "role": "Chief Procurement Officer",
+        "duty": "Ensure supplier evaluation for labor and human rights compliance."
+      },
+      {
+        "role": "Chief Procurement Officer",
+        "duty": "Establish and oversee policies for sourcing conflict-free materials from low-risk regions."
+      },
+      {
+        "role": "Procurement Manager",
+        "duty": "Support the CPO in selecting responsible suppliers and enforcing sustainable procurement practices."
+      },
+      {
+        "role": "Procurement Manager",
+        "duty": "Collaborate with supply chain and operations teams to maintain adherence to environmental and social standards."
+      },
+      {
+        "role": "Procurement Manager",
+        "duty": "Implement eco-friendly material selection as per organizational strategy."
+      },
+      {
+        "role": "Procurement Manager",
+        "duty": "Assist in supplier evaluation and provide training on labor standards."
+      },
+      {
+        "role": "Procurement Manager",
+        "duty": "Verify material compliance with health and safety standards and respond to customer feedback on safety issues."
+      },
+      {
+        "role": "Chief Operations Officer",
+        "duty": "Oversee and support the development of sustainable supply chain practices in line with environmental and social standards."
+      },
+      {
+        "role": "Environmental Officer",
+        "duty": "Partner with the CPO to prioritize eco-friendly materials and environmental considerations within procurement processes."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Promote labor and human rights standards within procurement and provide necessary training for compliance."
+      }
+    ],
+    "monitoring": "Our commitment to sustainable procurement encompasses a rigorous monitoring and reporting framework designed to ensure accountability and continuous improvement across our supply chain. This framework focuses on Environmental Responsibility in Procurement, Labor Practices and Human Rights, Conflict Minerals, and Innovation in Sustainable Product Development.\n\nWe will implement a continuous monitoring system that leverages both automated tools and manual assessments to track supplier performance against established sustainability criteria.\n\nWe will generate regular performance reports assessing suppliers’ compliance with environmental, labor, and ethical standards. These reports will be instrumental in informing procurement decisions, fostering transparency, and driving continuous improvement in our supply chain practices.\n\nKey metrics will include: Compliance with sustainability criteria, Labor rights adherence, Environmental impact assessments.\n\nThe Sustainability and Compliance Team will conduct regular audits of our suppliers to evaluate their adherence to our sustainability policies. Audit results will be meticulously reviewed to identify any non-compliance issues.\n\nIn cases of non-compliance, immediate corrective action plans will be developed and implemented, ensuring timely resolutions and promoting supplier accountability.\n\nThe Compliance Officer and Finance Manager will prepare and publish annual sustainability reports for stakeholders, ensuring compliance with reporting standards and highlighting achievements.\n\nWe will implement a feedback mechanism for stakeholders, including suppliers, employees, and customers, to improve our procurement practices and enhance the effectiveness of our sustainability initiatives.\n\nAn annual review of our monitoring and reporting mechanisms will be conducted to assess their effectiveness in achieving our sustainability goals. This review will culminate in a comprehensive report that outlines our progress, highlights successes, and identifies areas for improvement.\n\nThe report will be shared with relevant stakeholders to maintain transparency and demonstrate our commitment to sustainable procurement.\n\nBy implementing this robust monitoring and reporting framework, Shenzhen Xingbiao Electronic Technology Co Ltd aims to enhance the sustainability of our procurement practices, uphold labor rights, and promote environmental stewardship across our supply chain.\n\nWe are committed to continuously enhancing its procurement practices to promote sustainability and uphold ethical standards across our supply chain. To achieve this, we will, regularly refine our procurement policies to align with emerging sustainability challenges, engage suppliers to promote sustainability and labor rights adherence, leverage innovative technologies to enhance environmental stewardship, and implement monitoring systems to evaluate our sustainability initiatives for continuous improvement.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed annually by the Chief Procurement Manager. The review will track progress, update the policy as needed, and communicate changes to employees and suppliers, ensuring it stays aligned with our sustainability goals and global standards."
+  },
+  "sourcePath": "Policies - Kenal/Shenzhen Xingbiao - Tairui China/Sustainable Procurement Policy done.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Shenzhen Xingbiao - Tairui China/Sustainable Procurement Policy done.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 11587,
+  "parsedAt": "2026-09-11T07:28:40.016Z"
+}

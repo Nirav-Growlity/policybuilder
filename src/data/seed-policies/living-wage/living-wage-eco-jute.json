@@ -1,0 +1,233 @@
+{
+  "id": "living-wage-eco-jute",
+  "name": "Eco Jute",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from Living wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Eco Jute Pvt. Ltd.",
+      "industry": "",
+      "site": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071; Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293",
+      "sites": [
+        {
+          "location": "Kolkata, West Bengal",
+          "address": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Gokna Basudevpur, District - 24 Parganas (North)",
+          "address": "Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071; Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Eco Jute Pvt. Ltd. is committed to providing fair and adequate wages that support employees’ essential needs and contribute to their overall well-being. The Company seeks to promote transparent wage practices, timely payment, fair compensation, and compliance with applicable wage requirements.\n\nThe Company aims to assess wage levels against relevant living wage benchmarks and identify opportunities to progressively improve employee compensation where gaps are identified. Through responsible wage management, regular review, and continual improvement, Eco Jute Pvt. Ltd. strives to support decent livelihoods and economic well-being for its employees.",
+      "declaration": "Eco Jute Pvt. Ltd. integrates living wage considerations into its compensation and employee management practices, alongside applicable legal wage requirements.\n\nThe Company periodically reviews wage levels against relevant living wage benchmarks, monitors identified gaps, and takes appropriate measures to support fair and adequate compensation.\n\nThrough transparent wage practices, regular reviews, employee engagement, and continual improvement, Eco Jute Pvt. Ltd. aims to promote decent livelihoods and employee well-being.",
+      "scope": "This Policy applies to all employees, contractual workers, trainees, contractors, and other personnel working on behalf of Eco Jute Pvt. Ltd. It also applies to relevant suppliers, service providers, and business partners.\n\nThe Policy covers wage practices across the Company’s operations, including wage determination, timely payment, wage reviews, living wage assessment, employee benefits, and actions to address identified wage gaps."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "The living wage shall be determined through:\n\nPeriodic assessment of cost-of-living requirements in the Company’s operating locations.\n\nReview of relevant living wage benchmarks and industry wage data.\n\nConsideration of applicable local economic and household cost indicators.\n\nConsultation with employees and their representatives, where appropriate.\n\nPeriodic review to identify and address any significant gaps between actual wages and living wage levels.\n\nThe Policy covers wage practices across the Company’s operations, including wage determination, timely payment, wage reviews, living wage assessment, employee benefits, and actions to address identified wage gaps.\n\nLiving wage objectives, targets, and key performance indicators relating to wage levels, wage compliance, employee benefits, identified wage gaps, and compensation practices shall be reviewed annually.\n\nThe Human Resources (HR) Manager shall review this Policy at least once every two years, or earlier where significant changes occur in wage laws, business operations, living wage benchmarks, workforce requirements, or stakeholder expectations."
+    },
+    "focusAreas": [
+      "Living wage Assessment",
+      "Benefits Equity",
+      "Living Wage Coverage",
+      "Pay Equity",
+      "Minimum Wage Compliance"
+    ],
+    "qualitative": {
+      "Living wage Assessment": [
+        "The Company aims to assess wage levels against relevant living wage benchmarks and identify opportunities to progressively improve employee compensation where gaps are identified.",
+        "Conduct or coordinate periodic living wage assessments and benchmark employee wages against relevant living wage standards.",
+        "Support living wage assessments, risk reviews, and compliance evaluations where applicable."
+      ],
+      "Benefits Equity": [
+        "The Policy covers wage practices across the Company’s operations, including wage determination, timely payment, wage reviews, living wage assessment, employee benefits, and actions to address identified wage gaps."
+      ],
+      "Living Wage Coverage": [
+        "Eco Jute Pvt. Ltd. integrates living wage considerations into its compensation and employee management practices, alongside applicable legal wage requirements.",
+        "Ensure 100% of employees receive wages at or above the established living wage level by Year 2030, based on relevant local benchmarks and using Year 2023 as the baseline Year."
+      ],
+      "Pay Equity": [
+        "The Company seeks to promote transparent wage practices, timely payment, fair compensation, and compliance with applicable wage requirements.",
+        "Through transparent wage practices, regular reviews, employee engagement, and continual improvement, Eco Jute Pvt. Ltd. aims to promote decent livelihoods and employee well-being."
+      ],
+      "Minimum Wage Compliance": [
+        "The Company periodically reviews wage levels against relevant living wage benchmarks, monitors identified gaps, and takes appropriate measures to support fair and adequate compensation.",
+        "Ensure compliance with applicable minimum wage, wage payment, and employment requirements."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living wage Assessment",
+        "targets": [
+          {
+            "target": "Complete a living wage benchmark assessment covering 100% of employees",
+            "baseline": "Year 2023",
+            "deadline": "Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Benefits Equity",
+        "targets": [
+          {
+            "target": "Improve the consistency and fairness of employee benefits by 12%",
+            "baseline": "Year 2023",
+            "deadline": "Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Living Wage Coverage",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive wages at or above the established living wage level",
+            "baseline": "Year 2023",
+            "deadline": "Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Pay Equity",
+        "targets": [
+          {
+            "target": "Reduce disparities in bonus distribution between higher-paid and average employees by 20%",
+            "baseline": "Year 2023",
+            "deadline": "Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Minimum Wage Compliance",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable minimum wage requirements across all locations",
+            "baseline": "Year 2023",
+            "deadline": "Year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Provide overall direction and oversight for the implementation and effectiveness of the Living Wage Policy in alignment with the Company’s values and applicable requirements."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provide adequate resources to support fair compensation, employee welfare, wage assessments, and improvement initiatives."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Review living wage performance, objectives, targets, identified wage gaps, and significant risks through periodic management reviews."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensure appropriate corrective actions are implemented where wage gaps or compliance concerns are identified."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Coordinate the implementation and periodic review of the Living Wage Policy and related procedures."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Ensure compliance with applicable minimum wage, wage payment, and employment requirements."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Conduct or coordinate periodic living wage assessments and benchmark employee wages against relevant living wage standards."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Maintain accurate records relating to wages, benefits, working hours, and other relevant compensation information."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Identify wage gaps and recommend appropriate actions to progressively improve compensation."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Support living wage assessments, risk reviews, and compliance evaluations where applicable."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Monitor progress against living wage objectives and targets and report significant findings to management."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Review relevant living wage benchmarks, industry practices, and applicable requirements."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Support the monitoring and closure of corrective actions related to identified wage gaps or compliance concerns."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Ensure employee wages are accurately calculated and paid within the established payment timelines."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Maintain appropriate payroll records and supporting documentation."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Support HR in providing wage data required for living wage assessments and reviews."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Promptly report identified payroll discrepancies or wage-related concerns to HR for resolution."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Comply with applicable employment and wage-related procedures."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Review and report any concerns regarding wages, benefits, deductions, or payment through established channels."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Participate in relevant employee engagement, wage surveys, and living wage assessments where required."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Support the Company’s commitment to fair, transparent, and responsible compensation practices."
+      }
+    ],
+    "monitoring": "Eco Jute Pvt. Ltd. shall conduct periodic reviews of wage practices to assess compliance with applicable wage requirements and progress against Living Wage Policy objectives.\n\nWage Compliance: Verification of wage payments against applicable legal requirements and established living wage benchmarks.\n\nWage Adequacy: Assessment of identified gaps between employee wages and relevant living wage levels.\n\nEmployee Feedback: Review of employee feedback relating to wage fairness, adequacy, and compensation practices.\n\nInternal reviews or audits shall be conducted periodically to evaluate implementation of the Living Wage Policy and effectiveness of wage management processes.\n\nReviews shall assess wage calculations, payment practices, records, and compliance with established requirements.\n\nIdentified gaps shall be documented and followed by appropriate corrective actions and improvement measures.\n\nEco Jute Pvt. Ltd. shall engage with employees, employee representatives, payroll personnel, and other relevant stakeholders on living wage matters.\n\nFeedback and concerns relating to wages, benefits, and compensation practices shall be recorded, reviewed, and addressed appropriately.\n\nRelevant findings, improvements, and changes to living wage practices shall be communicated to applicable stakeholders.",
+    "reviewMechanism": "Living wage objectives, targets, and key performance indicators relating to wage levels, wage compliance, employee benefits, identified wage gaps, and compensation practices shall be reviewed annually.\n\nProgress against established targets, wage performance, compliance status, employee feedback, and improvement initiatives shall be evaluated through periodic Management Review Meetings.\n\nKey achievements, challenges, wage gaps, risks, and opportunities for improvement shall be identified and documented.\n\nFindings from wage assessments, payroll reviews, internal audits, employee feedback, and stakeholder engagement shall be used to identify opportunities for improvement.\n\nCorrective actions shall be implemented where wage gaps, payment issues, non-compliances, or other compensation-related concerns are identified.\n\nLiving wage objectives, targets, assessment methods, and compensation practices shall be reviewed periodically to support fair and adequate wages.\n\nThe Human Resources (HR) Manager shall review this Policy at least once every two years, or earlier where significant changes occur in wage laws, business operations, living wage benchmarks, workforce requirements, or stakeholder expectations.\n\nProposed revisions shall be reviewed and approved by Senior Management before implementation.\n\nApproved changes shall be communicated to relevant employees, contractors, and other applicable stakeholders, with appropriate awareness or training provided where required."
+  },
+  "sourcePath": "Policies - Kenal/Eco Jute/Living wage Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Eco Jute/Living wage Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 10650,
+  "parsedAt": "2026-09-11T07:22:05.190Z"
+}

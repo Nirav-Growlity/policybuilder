@@ -1,0 +1,294 @@
+{
+  "id": "fariha-knit",
+  "name": "Fariha Knit",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental  policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Fariha Knit Tex Ltd.",
+      "industry": "",
+      "site": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh.",
+      "sites": [
+        {
+          "location": "Fariha Knit Tex Ltd.",
+          "address": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh.",
+          "primaryFunction": "Knitting; yarn dyeing; fabric dyeing; washing; screen printing; all-over printing; garment manufacturing; trims and accessories manufacturing; poly recycling plant; wastewater and sewage management; chemical management and waste disposal."
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Fariha Knit Tex Ltd., we are committed to environmental sustainability and minimizing the impact of our operations. This policy outlines our efforts to reduce our carbon footprint, improve resource efficiency, and ensure compliance with environmental regulations. Through continuous innovation and responsible practices, we aim to protect natural resources and contribute to a sustainable future for both our business and the communities we serve.",
+      "declaration": "Fariha Knit Tex Ltd. is fully committed to sustainability, environmental stewardship, and corporate responsibility. We recognize the urgent need to minimize our environmental impact, protect natural resources, and contribute positively to the communities we serve. As part of our commitment, we ensure compliance with both Bangladesh's environmental laws and international environmental standards, while incorporating the active involvement of our top management and employees at every level to achieve these goals.\n\nThis policy outlines our dedication to aligning with local and international environmental regulations, adhering to globally recognized certifications, and implementing sustainable practices across all stages of our operations. We actively promote the engagement of both leadership and workforce in fulfilling our environmental commitments to ensure the successful achievement of our sustainability objectives.\n\nOur environmental strategy integrates key global frameworks, such as the ISO 14001, ISO 50001, ISO 14064, ISO 45001, GOTS, OCS, RCS, GRS, OEKO-TEX Standard 100, Step by OEKO-TEX, ZDHC, Higg FEM and other certifications, while also ensuring alignment with the United Nations Sustainable Development Goals (SDGs). The baseline for our environmental initiatives is set at 2022, and we will continually assess and improve our efforts in line with this foundation.",
+      "scope": "This policy applies to all operational areas of Fariha Knit Tex Ltd., including:\n\nKnitting\n\nYarn dyeing\n\nFabric dyeing\n\nWashing\n\nScreen printing\n\nAll-over printing\n\nGarment manufacturing\n\nTrims and accessories manufacturing\n\nPoly recycling plant\n\nWastewater and sewage management\n\nChemical management and waste disposal\n\nAnd is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Compliance with Local and International Environmental Regulations",
+      "Energy Consumption and Greenhouse Gases (GHG)",
+      "Water Management",
+      "Materials, Chemicals, and Waste Management",
+      "Biodiversity Conservation",
+      "Air Pollution and Emission Control",
+      "Product Use and End-of-Life Management",
+      "Customer Health and Safety",
+      "Environmental Services and Advocacy"
+    ],
+    "qualitative": {
+      "Compliance with Local and International Environmental Regulations": [
+        "Fariha Knit Tex Ltd. is committed to ensuring that all aspects of our operations meet or exceed the requirements set forth by both Bangladesh local regulations and international environmental laws.",
+        "Fariha Knit Tex Ltd. will comply with all national environmental regulations, including: Bangladesh Environment Conservation Act (1995); Environmental Conservation Rules (1997); Air Pollution Control Rules (2005); Water Act (2013); Hazardous Waste Management Rules (2015); Biodiversity Act (2017); and Ozone Depleting Substances (Control) Rules (2004).",
+        "We will also adhere to the Bangladesh Labor Law and the National Environmental Quality Standards (NEQS) for air, water, and noise pollution.",
+        "Fariha Knit Tex Ltd. ensures adherence to internationally recognized frameworks such as ISO 14001: Environmental Management System; ISO 50001: Energy Management System; ISO 9001: Quality Management System; ISO 14064: Greenhouse Gas (GHG) Emissions; ZDHC: Zero Discharge of Hazardous Chemicals; Higg Index: Facility Environmental Module (FEM); GOTS (Global Organic Textile Standard): Certification for organic textiles; Organic Content Standard (OCS): Certification for organic content in product; Recycled Claim Standard (RCS): Certification for recycled material in product; Global Recycled Standard (GRS): Certification for recycled content in product along with environmental, social and chemical standards throughout the supply chain; OEKO-TEX® Standard 100 – Non-Toxic Textile Certification; OEKO-TEX® STeP for sustainable textile production practices; Zero Discharge of Hazardous Chemicals (ZDHC) for sustainable chemical practices; LEED: Leadership in Energy and Environmental Design certification for sustainable buildings; Paris Agreement (2015) for climate mitigation; Stockholm Convention on Persistent Organic Pollutants; and UN Sustainable Development Goals (SDGs), specifically SDGs 6, 7, 12, and 13.",
+        "Fariha Knit Tex Ltd. will also continually assess compliance with Bangladesh's National Adaptation Programme of Action (NAPA) and the Paris Agreement on Climate Change to reduce greenhouse gas emissions and contribute to the global climate action."
+      ],
+      "Energy Consumption and Greenhouse Gases (GHG)": [
+        "To implement energy-saving technologies such as LED lighting, high-efficiency motors, and energy-efficient machinery. Continuous energy monitoring and assessment to be carried out to optimize energy usage across all units.",
+        "To involve all employees in energy-saving initiatives, such as turning off lights and machinery when not in use, promoting the use of energy-efficient equipment, and supporting renewable energy adoption.",
+        "To ensure the establishment of clear GHG reduction targets in line with the Paris Agreement and to regularly monitor performance to ensure continuous progress toward carbon neutrality.",
+        "To adopt practices that help reduce carbon emissions, focusing on minimizing the environmental impact of production.",
+        "To reduce dependency on non-renewable energy sources, Fariha Knit Tex Ltd. is committed to increasing its use of renewable energy, such as solar energy, by installing solar panels and investing in other renewable energy sources."
+      ],
+      "Water Management": [
+        "To adopt water-efficient systems and technologies such as closed-loop systems, water recycling, and low-water dyeing processes.",
+        "To provide training to employees annually on water conservation methods, including monitoring water use and reporting inefficiencies in water usage.",
+        "To ensure compliance with Bangladesh’s Water Pollution Control Act and monitor water consumption and wastewater management as per ISO 14046 (Water Footprint)."
+      ],
+      "Materials, Chemicals, and Waste Management": [
+        "Sourcing materials responsibly by preferring organic, recycled, and low-impact raw materials.",
+        "To prioritize the use of sustainable materials such as organic cotton, recycled fibers, and eco-friendly dyes, certified under GOTS, GRS, and OCS.",
+        "To continually assess our supply chain to ensure that materials meet high environmental and social standards.",
+        "To follow ZDHC guidelines for chemical management to ensure that hazardous chemicals are avoided in production.",
+        "All chemicals used in our operations will meet OEKO-TEX® Standard 100 or equivalent standards to ensure they are safe for both the environment and workers.",
+        "To work to minimize waste at every stage of production and develop strategies for the reuse of scrap materials.",
+        "To implement the 3R strategy (Reduce, Reuse, and Recycle) to reduce industrial waste, including packaging, textiles, and other byproducts, ensuring compliance with GOTS and GRS requirements for waste management. By recycling waste materials and reusing production by-products, we aim to reduce landfill waste.",
+        "To divert total operational waste from landfill through reuse, recycling, recovery, or repurposing."
+      ],
+      "Biodiversity Conservation": [
+        "To assess and reduce the impact of our operations on local ecosystems, particularly in the context of land use and water consumption by planting trees and preserving green spaces within our facilities.",
+        "To explore the possibility of using natural fibers and renewable materials that have less environmental impact, contributing to the conservation of biodiversity.",
+        "To train employees on the importance of biodiversity conservation and how their actions, such as responsible sourcing and reducing chemical usage, can have a positive impact."
+      ],
+      "Air Pollution and Emission Control": [
+        "To install and maintain appropriate air filtration systems to control emissions from machinery and production processes.",
+        "Regular air quality monitoring will be conducted to ensure compliance with air pollution standards.",
+        "We are committed to reducing overall emissions by investing in cleaner technologies and regularly reviewing and improving our processes."
+      ],
+      "Product Use and End-of-Life Management": [
+        "To focus on creating durable, recyclable, and biodegradable products that can be responsibly disposed of at the end of their life cycle.",
+        "By using sustainable materials and reducing waste through smart design, we aim to eliminate or reduce harmful chemicals in products to ensure their safety.",
+        "To encourage stakeholders to recycle or repurpose products after use.",
+        "To actively participate in take-back schemes and promote circular economy principles to ensure the responsible disposal or reuse of our products.",
+        "To work with customers and suppliers to facilitate the collection, recycling, and repurposing of used garments, thus promoting a circular economy."
+      ],
+      "Customer Health and Safety": [
+        "To ensure that textile products comply with OEKO-TEX Standard 100 and other health and safety standards to eliminate harmful chemicals.",
+        "To maintain robust product testing and quality controls in line with applicable safety standards and customer requirements.",
+        "To achieve and maintain zero major product recalls attributable to chemical, physical, or manufacturing safety non-compliance, supported by strengthened quality controls, testing, traceability, and corrective action processes."
+      ],
+      "Environmental Services and Advocacy": [
+        "To promote environmentally responsible products, materials, and manufacturing solutions among customers and stakeholders.",
+        "To engage key customers on sustainable products, materials, or circular solutions.",
+        "To participate in environmental awareness, collaboration, or community initiatives annually."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption and Greenhouse Gases (GHG)",
+        "targets": [
+          {
+            "target": "Reduce GHG emissions by at least 40%",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Meet 5% of our energy needs from renewable sources",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Reduce water consumption across our operations by 7%",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Provide training to 100% employees annually on water conservation methods",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals, and Waste Management",
+        "targets": [
+          {
+            "target": "Ensure that 100% materials used are compliant with GOTS, OCS, and RCS standards",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Ensure 100% compliance with ZDHC MRSL, OEKO-TEX, and ISO 14001 standards for the safe handling, storage, and disposal of chemicals used in textile production",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Actively involve 100% of employees in the waste sorting and recycling process",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Reduce landfill waste by 30%",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Divert 45% of total operational waste from landfill through reuse, recycling, recovery, or repurposing",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Conservation",
+        "targets": [
+          {
+            "target": "Reduce the impact of our operations on local ecosystems by 20%",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution and Emission Control",
+        "targets": [
+          {
+            "target": "Reduce particulate matter and volatile organic compound (VOC) emissions by 10% in accordance with ISO 14001 and local environmental regulations",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Reduce overall emissions by 25%",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Use and End-of-Life Management",
+        "targets": [
+          {
+            "target": "Eliminate or reduce 100% harmful chemicals in products",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Ensure that 80% of applicable products are designed for improved durability and extended product life",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Facilitate the collection, recycling, and repurposing of 20% of used garments",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Ensure that 60% of applicable products support recycling, reuse, repurposing, or material recovery at the end of their useful life",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Ensure that 100% textile products comply with OEKO-TEX Standard 100 and other health and safety standards",
+            "baseline": "2022",
+            "deadline": "by year 2030"
+          },
+          {
+            "target": "Achieve and maintain zero major product recalls attributable to chemical, physical, or manufacturing safety non-compliance",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services and Advocacy",
+        "targets": [
+          {
+            "target": "Engage 80% of key customers on sustainable products, materials, or circular solutions",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Participate in 4 environmental awareness, collaboration, or community initiatives annually",
+            "baseline": "2022",
+            "deadline": "annually by 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13
+    ],
+    "responsibilities": [
+      {
+        "role": "Top management",
+        "duty": "Top management is responsible for setting the environmental vision and ensuring the integration of sustainability into every facet of the business. They will ensure the adequate allocation of resources to meet our environmental objectives."
+      },
+      {
+        "role": "Top management",
+        "duty": "Top management will oversee the implementation of environmental policies and programs, ensuring that we meet or exceed regulatory and certification requirements. Regular reviews and audits will be conducted to assess progress and identify areas for improvement."
+      },
+      {
+        "role": "Management",
+        "duty": "Management will establish measurable environmental goals, communicate these goals throughout the organization, and hold individuals and teams accountable for their performance in achieving them."
+      },
+      {
+        "role": "All employees",
+        "duty": "All employees will receive regular training to understand the company’s environmental goals, sustainability practices, and their roles in achieving them. This will include topics such as energy conservation, waste management, water efficiency, and chemicals handling."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees will be encouraged to contribute ideas for improving environmental performance. Innovation teams will be set up to explore new, sustainable production techniques, resource-saving methods, and waste-reduction strategies."
+      },
+      {
+        "role": "Environmental champions",
+        "duty": "Every department will have designated environmental champions who will lead initiatives such as recycling programs, energy-saving campaigns, and water conservation efforts, creating a culture of sustainability across the organization."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees will be given the opportunity to provide feedback on environmental practices, allowing the company to adjust strategies based on the workforce's insights and experiences."
+      }
+    ],
+    "monitoring": "Continuous energy monitoring and assessment to be carried out to optimize energy usage across all units.\n\nTo ensure the establishment of clear GHG reduction targets in line with the Paris Agreement and to regularly monitor performance to ensure continuous progress toward carbon neutrality.\n\nTo ensure compliance with Bangladesh’s Water Pollution Control Act and monitor water consumption and wastewater management as per ISO 14046 (Water Footprint).\n\nRegular air quality monitoring will be conducted to ensure compliance with air pollution standards.\n\nTop management will oversee the implementation of environmental policies and programs, ensuring that we meet or exceed regulatory and certification requirements. Regular reviews and audits will be conducted to assess progress and identify areas for improvement.",
+    "reviewMechanism": "The review mechanism for the Environmental Policy involves regular monitoring of sustainability initiatives, with progress assessed against predefined objectives. The Environmental Manager will conduct annual review of this policy to, identify areas for improvement, and adjust strategies as needed. Employee feedback will also be gathered to refine practices, and continuous improvement will be driven through ongoing training and awareness initiatives."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Fariha Knit/1. Environmental  policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Fariha Knit/1. Environmental  policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 16347,
+  "parsedAt": "2026-09-11T07:39:00.121Z"
+}

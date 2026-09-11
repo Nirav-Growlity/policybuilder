@@ -1,0 +1,183 @@
+{
+  "id": "ethics-arsh-fashions",
+  "name": "Arsh Fashions",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethical Conduct Policy- AFPL.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "ARSH FASHIONS PVT. LTD.",
+      "industry": "",
+      "site": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India.",
+      "sites": [
+        {
+          "location": "ARSH FASHOINS Pvt. Ltd.",
+          "address": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Arsh Fashions, we are committed to uphold the highest standards of ethical conduct in all aspects of our operations. Our Ethical Conduct Policy reflects our dedication to integrity, transparency, and accountability, ensuring that our business practices align with our core values and industry best practices. This policy provides a framework for making ethical decisions and reinforces our commitment to fair and responsible behavior, both within our organization and in our interactions with external partners. By adhering to this policy, we aim to foster a respectful and principled work environment that supports our mission and sustains our reputation as a leading garment producer.",
+      "declaration": "At Arsh Fashions, we are devoted to ethical excellence in every facet of our operations. This policy mandates that all individuals associated with our company uphold principles of honesty, integrity, and transparency. Our commitment to ethical conduct ensures compliance with legal standards and fosters a culture of accountability and respect throughout our organization. The goal is to embed ethical practices across all operations, building on the baseline set in year 2023.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Anti-corruption",
+      "Conflicts of interest",
+      "Fraud prevention",
+      "Whistleblower reporting and protection",
+      "Anti-money laundering",
+      "Anti-competitive behavior",
+      "Ethical marketing",
+      "Information security"
+    ],
+    "qualitative": {
+      "Anti-corruption": [
+        "Implement a comprehensive anti-corruption training program for all employees, aimed at increasing awareness and understanding of anti-corruption policies and practices."
+      ],
+      "Conflicts of interest": [
+        "Establish and enforce clear guidelines for identifying and managing conflicts of interest, including regular reviews of employee disclosures."
+      ],
+      "Fraud prevention": [
+        "Develop and maintain robust internal controls and auditing procedures to detect and prevent fraudulent activities."
+      ],
+      "Whistleblower reporting and protection": [
+        "Create a confidential and accessible whistleblower reporting system with clear procedures for handling reports and protecting whistleblowers from retaliation."
+      ],
+      "Anti-money laundering": [
+        "Implement a comprehensive anti-money laundering (AML) policy with regular training for employees on recognizing and reporting suspicious activities."
+      ],
+      "Anti-competitive behavior": [
+        "Develop and enforce policies to prevent and address anti-competitive behavior, including regular training on fair competition practices."
+      ],
+      "Ethical marketing": [
+        "Establish guidelines for ethical marketing that ensure all advertising and promotional materials are truthful, transparent, and not misleading."
+      ],
+      "Information security": [
+        "Implement a comprehensive information security management system (ISMS) that includes regular risk assessments and updates to safeguard sensitive data."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-corruption",
+        "targets": [
+          {
+            "target": "Achieve 100% completion of anti-corruption training for all employees",
+            "baseline": "The baseline set in year 2023.",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflicts of interest",
+        "targets": [
+          {
+            "target": "Ensure that 100% of employees complete a conflict of interest disclosure form",
+            "baseline": "The baseline set in year 2023.",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud prevention",
+        "targets": [
+          {
+            "target": "Reduce instances of detected fraud by 15% through enhanced monitoring and control measures",
+            "baseline": "The baseline set in year 2023.",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower reporting and protection",
+        "targets": [
+          {
+            "target": "Resolve 90% of whistleblower complaints within 60 days and maintain zero retaliation incidents",
+            "baseline": "The baseline set in year 2023.",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-money laundering",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with AML reporting requirements and conduct at least two audits per year to ensure policy adherence",
+            "baseline": "The baseline set in year 2023.",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-competitive behavior",
+        "targets": [
+          {
+            "target": "Conduct annual reviews of competitive practices and achieve zero violations of anti-competitive regulations",
+            "baseline": "The baseline set in year 2023.",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Ethical marketing",
+        "targets": [
+          {
+            "target": "Regularly Review and approve 100% of marketing materials before publication to ensure compliance with ethical standards",
+            "baseline": "The baseline set in year 2023.",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Information security",
+        "targets": [
+          {
+            "target": "Achieve and maintain 100% compliance with information security policies and perform security audits to identify and address vulnerabilities",
+            "baseline": "The baseline set in year 2023.",
+            "deadline": "year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "All individuals associated with our company",
+        "duty": "Uphold principles of honesty, integrity, and transparency."
+      },
+      {
+        "role": "Chief Ethics Officer",
+        "duty": "Review the Ethical Conduct Policy annually to ensure ongoing relevance and effectiveness."
+      }
+    ],
+    "monitoring": "The performance reporting will be conducted annually, providing a detailed assessment of compliance with ethical standards and regulations. The report will evaluate the effectiveness of anti-corruption measures, conflict of interest management, and fraud prevention strategies. It will also review the implementation of whistleblower protections, anti-money laundering controls, and adherence to ethical marketing practices. Additionally, the report will analyze data on anti-competitive practices and information security, ensuring that all ethical conduct policies are effectively enforced and aligned with organizational goals.",
+    "reviewMechanism": "The Ethical Conduct Policy will be reviewed annually by the Chief Ethics Officer to ensure ongoing relevance and effectiveness. This review process will involve evaluating adherence to ethical standards, analyzing data on compliance issues, and incorporating feedback from internal audits and stakeholder input. Adjustments to the policy will be made as needed to address emerging challenges and align with best practices."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Arsh Fashions/3. Ethical Conduct Policy- AFPL.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Arsh Fashions/3. Ethical Conduct Policy- AFPL.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 5391,
+  "parsedAt": "2026-09-11T07:32:36.026Z"
+}

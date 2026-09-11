@@ -1,0 +1,341 @@
+{
+  "id": "amlrs",
+  "name": "AMLRS",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Stewardship Policy_v1507.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "THE AML RIGHTSOURCE GROUP of companies",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "United States",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Canada",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Germany",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Poland",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Austria",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Switzerland",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "United Kingdom",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Denmark",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Bulgaria",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "India",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Singapore",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Hong Kong",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Brazil",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        },
+        {
+          "location": "Malaysia",
+          "address": "",
+          "primaryFunction": "operations, offices, partner offices, registered business addresses, remote work locations, and other workplaces"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At THE AML RIGHTSOURCE GROUP of companies, we recognize the urgent need to address global environmental challenges and are committed to minimizing our environmental footprint. As a leader in financial crime compliance and risk management, we understand the interconnectedness of environmental sustainability and ethical business practices. Our environmental policy reflects our dedication to conserving natural resources, reducing waste, and promoting energy efficiency. By integrating sustainable practices into our operations, engaging our employees, and collaborating with environmentally conscious partners, we aim to contribute to a healthier planet. Through continuous improvement, compliance with regulations, and proactive measures, We seeks to uphold our commitment to environmental stewardship and inspire positive change in the communities and industries we serve.",
+      "declaration": "The purpose of this Environmental Policy is to establish a clear framework for AMLRS to manage and reduce its environmental impact. This policy aligns with the company's commitment to sustainability, innovation, and responsible corporate behaviour. It aims to enhance resource efficiency, promote environmentally friendly practices, ensure compliance with regulations, and engage employees and partners in environmental initiatives. By doing so, AMLRS seeks to contribute positively to environmental conservation and lead by example within the financial crime compliance industry.",
+      "scope": "This Environmental Stewardship Policy applies to all operations, legal entities, offices, partner offices, registered business addresses, remote work locations, and other workplaces of the AML RightSource Group of Companies (\"AMLRS\"), including all subsidiaries, affiliates, and controlled entities operating in the United States, Canada, Germany, Poland, Austria, Switzerland, the United Kingdom, Denmark, Bulgaria, India, Singapore, Hong Kong, Brazil, and Malaysia, as well as any future locations where AMLRS conducts business.\n\nThe policy applies irrespective of whether business activities are carried out from AMLRS-owned or leased premises, partner offices, co-working spaces, client locations, registered legal addresses, or remote work environments. It covers all employees, including full-time, part-time, temporary, fixed-term, and contract employees, interns, consultants, agency workers, and management. The policy also extends to suppliers, vendors, contractors, service providers, business partners, and any other third parties engaged in providing products or services on behalf of AMLRS.\n\nAll individuals and entities covered by this policy are expected to comply with its requirements and uphold AMLRS's commitment to environmental stewardship, responsible resource use, pollution prevention, environmental protection, and continuous improvement in environmental performance throughout its global operations."
+    },
+    "focusAreas": [
+      "Energy Management",
+      "Green House Gas Management",
+      "Waste Management",
+      "Water Efficiency",
+      "Environmental service and Advocacy"
+    ],
+    "qualitative": {
+      "Energy Management": [
+        "We will improve energy efficiency in our office by optimizing lighting, HVAC systems, and other energy-consuming equipment, to the extent permitted by AMLRS commercial landlords.",
+        "We plan to integrate renewable energy solutions, such as solar panels or green energy procurement, into our operations, to the extent permitted by AMLRS commercial landlords.",
+        "We strive to establish energy-saving guidelines for all employees, encouraging responsible energy consumption during working hours.",
+        "We will strengthen internal processes to monitor and assess energy consumption monthly to identify opportunities for further reduction."
+      ],
+      "Green House Gas Management": [
+        "We will research and implement a carbon offset program to mitigate the impact of unavoidable emissions from our operations.",
+        "We ensure that all business travel bookings prioritize options with minimal GHG emissions and avoid unnecessary business travel by utilizing remote/virtual connection where possible.",
+        "We will create awareness within the employee population about the importance of reducing greenhouse gas emissions and adopting climate-conscious practices.",
+        "We will promote sustainable or active travel to offices by implementing a cycle-to-work scheme, encouraging employees to adopt eco-friendly commuting options.",
+        "Provide opportunities for employees with electric or plug-in hybrid models to use such vehicles at AMLRS offices (e.g., partnering with AMLRS commercial landlords to provide electric vehicle charging stations) through an electric car scheme, supporting the transition to low-emission vehicles.",
+        "Encourage remote work options to reduce commuting, contributing to a decrease in overall greenhouse gas emissions associated with travel."
+      ],
+      "Waste Management": [
+        "Our approach includes responsibly managing e-waste through certified recycling partners for the disposal of old office equipment.",
+        "We are dedicated to reducing paper waste by promoting digital document management systems and paperless workflows.",
+        "We will raise awareness among employees about waste segregation and encourage the use of compostable office supplies.",
+        "We will strengthen our waste segregation practices in all office locations, ensuring proper disposal and recycling of materials to minimize landfill contributions."
+      ],
+      "Water Efficiency": [
+        "We prioritize water conservation in the office by installing water-efficient fixtures and encouraging responsible usage, to the extent permitted by AMLRS commercial landlords.",
+        "Monitoring water consumption regularly is essential, and we aim to identify opportunities to reduce unnecessary usage.",
+        "We educate employees on water-saving techniques, such as turning off taps when not in use.",
+        "Our objective is to implement rainwater harvesting or greywater recycling systems where feasible to reduce overall water consumption, to the extent permitted by AMLRS commercial landlords."
+      ],
+      "Environmental service and Advocacy": [
+        "We will organize and host workshops or seminars for clients to help them understand the importance of sustainable business practices.",
+        "We will establish a network of partners who share our commitment to environmental stewardship and support each other in sustainability efforts."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Management",
+        "targets": [
+          {
+            "target": "Target goal of achieving a 20% reduction in overall office energy consumption by 2030 from the baseline of 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Partner with AMLRS commercial landlords to implement renewable energy sources (solar panels or green energy procurement) to cover target goal of at least 20% of total energy usage by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide energy efficiency training to 100% of employees by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Green House Gas Management",
+        "targets": [
+          {
+            "target": "Target goal of achieving a 15% reduction in total greenhouse gas (GHG) emissions by 2030 from the baseline of 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Target goal of achieving a 7% reduction in Scope 1 emissions by 2030 from the baseline of 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Target goal of achieving an 8% reduction in Scope 2 emissions by 2030 from the baseline of 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Target goal of achieving a 5% reduction in Scope 3 emissions by 2030 from the baseline of 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide GHG management and carbon footprint reduction training to 100% of employees by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Target goal of reducing total non-recycled waste generation by 30% by 2030 from the baseline of 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of non-recyclable and hazardous waste, if any, is disposed of through certified waste disposal partners by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the use of reusable office materials (e.g., cups, containers) by 50% by 2030 by replacing disposables with reusable office materials.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Develop and implement an electronic waste (e-waste) management plan, with 90% of old electronic devices disposed of through certified e-waste recycling partners by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Efficiency",
+        "targets": [
+          {
+            "target": "Target goal of reducing water consumption by 20% per employee by 2030 from the baseline of 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Install water-saving fixtures (low-flow faucets, water-efficient toilets), to the extent permitted by AMLRS commercial landlords, in 100% of office facilities by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement a rainwater harvesting system, to the extent permitted by AMLRS commercial landlords, with a target goal of reducing dependence on municipal water supply by 30% by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide water efficiency and conservation training to 100% of employees by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental service and Advocacy",
+        "targets": [
+          {
+            "target": "Establish a formal partnership with at least two environmental NGOs to promote sustainability initiatives by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct at least 1 workshops/seminars per year on sustainability and environmental best practices by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide environmental advocacy and policy influence training to 100% of employees by 2030, empowering them to act as sustainability ambassadors.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Lead Environmental Officer",
+        "duty": "The Lead Environmental Officer, as designated by AMLRS, is responsible for implementing this policy and ensuring all Partners and employees are aware of and adhere to this Policy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Provide leadership and strategic direction for environmental initiatives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Allocate available resources and budget to meet environmental goals."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Ensure alignment of the environmental targets with overall company objectives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Review and monitor progress towards the environmental objectives on a quarterly basis."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Make decisions on policy adjustments as needed based on progress and challenges."
+      },
+      {
+        "role": "Lead Environmental Officer",
+        "duty": "Lead the implementation and review of the environmental policy and sustainability initiatives across the organization."
+      },
+      {
+        "role": "Lead Environmental Officer",
+        "duty": "Monitor and report progress towards sustainability targets, including energy efficiency, GHG reduction, waste management, and water conservation."
+      },
+      {
+        "role": "Lead Environmental Officer",
+        "duty": "Encourage compliance with environmental regulations and industry best practices."
+      },
+      {
+        "role": "Lead Environmental Officer",
+        "duty": "Coordinate with management and other departments to execute environmental programs and track performance."
+      },
+      {
+        "role": "Lead Environmental Officer",
+        "duty": "Provide training and guidance on environmental matters to employees and ensure all targets are met by 2030."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participate in the sustainability initiatives and adhere to energy-saving, water-conservation, waste reduction, and GHG management practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Complete any AMLRS required environmental training to increase knowledge and engagement in sustainability efforts."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any potential environmental concerns and provide suggestions for improvement in environmental practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow guidelines for reducing energy consumption, using reusable materials, and recycling effectively."
+      }
+    ],
+    "monitoring": "Regular and transparent reporting practices are crucial for monitoring progress, identifying potential risks, and ensuring accountability in AMLRS compliance. AMLRS follows these reporting procedures:\n\nAnnual Environmental Performance Reviews: We perform yearly evaluations of our environmental impact, collecting data on key metrics defined in our sustainability framework.\n\nInternal Assessments: Internal assessments are carried out to ensure compliance with environmental laws, evaluate the effectiveness of our management systems, and identify opportunities for improvement.\n\nStakeholder Communication: We actively engage with stakeholders, including employees, customers, regulators, and local communities, to gather insights, address concerns, and transparently share our environmental progress and initiatives.\n\nTHE AML RIGHTSOURCE GROUP is committed to continuously improving our environmental performance. We regularly update our Environmental Policy, incorporating best practices, technology, and stakeholder feedback. Our efforts focus on enhancing energy efficiency, waste reduction, and reducing greenhouse gas emissions.\n\nWe actively seek new eco-friendly technologies, improve waste management, and engage employees through targeted training. By fostering innovation and sustainability, we aim to exceed regulatory standards.",
+    "reviewMechanism": "The Lead Environmental Officer will review the Environmental Policy annually, and any updates will be communicated as necessary.\n\nNext review date: April 01, 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/AMLRS/1. Environmental Stewardship Policy_v1507.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/AMLRS/1. Environmental Stewardship Policy_v1507.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 15502,
+  "parsedAt": "2026-09-11T07:06:15.324Z"
+}

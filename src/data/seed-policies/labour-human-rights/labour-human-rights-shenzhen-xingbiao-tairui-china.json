@@ -1,0 +1,374 @@
+{
+  "id": "labour-human-rights-shenzhen-xingbiao-tairui-china",
+  "name": "Shenzhen Xingbiao - Tairui China",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Labor & Human Rights Policy done.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Shenzhen Xingbiao Electronic Technology Co Ltd",
+      "industry": "",
+      "site": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China",
+      "sites": [
+        {
+          "location": "Shenzhen Xingbiao Electronic Technology Co Ltd",
+          "address": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Shenzhen Xingbiao Electronic Technology Co Ltd, we are firmly committed to upholding the highest standards of human and labour rights across all our operations. We believe that protecting the dignity, health, safety, and well-being of every employee is essential to our success and sustainability.\n\nOur Human and Labour Rights Policy is built on principles of fairness, respect, and equality. It covers key areas such as safe working conditions, fair compensation, freedom of association, and open communication. We continuously evaluate and improve our practices to ensure a respectful, inclusive, and compliant workplace that supports the rights of all employees.",
+      "declaration": "Driven by our core values, Shenzhen Xingbiao Electronic Technology Co Ltd is dedicated to embedding human and labour rights into the heart of our organizational practices. We foster a workplace culture that promotes safety, mutual respect, fair compensation, and open communication.\n\nThis policy is designed to protect employee rights at every stage of employment, while actively advancing diversity, equity, and inclusion. Through continual improvement, we aim to uphold human rights standards and make a meaningful contribution to the communities we serve.",
+      "scope": "This policy applies to all employees, workers, subcontractors, and other stakeholders directly affiliated with us. The applicable sites include:"
+    },
+    "focusAreas": [
+      "Worker & Employee Health and Safety",
+      "Employee Career Growth",
+      "Workplace Conditions",
+      "Fair Compensation and Benefits",
+      "Social Dialogue and Freedom of Association",
+      "Respect for External Stakeholders and Human Rights",
+      "Discrimination and Harassment"
+    ],
+    "qualitative": {
+      "Worker & Employee Health and Safety": [
+        "Offer health insurance coverage to address medical needs and enhance employee welfare.",
+        "Maintain a hazard-free workplace through routine risk assessments and preventive measures.",
+        "Enforce Standard Operating Procedures (SOPs) to promote workplace safety and comply with health regulations.",
+        "Provide ongoing training on health and safety topics, including hazard awareness, emergency protocols, and proper use of personal protective equipment (PPE).",
+        "Support psychological health and well-being by promoting a respectful workplace and preventing work-related stress."
+      ],
+      "Employee Career Growth": [
+        "Conduct regular training programs to build employee skills and align them with evolving business needs.",
+        "Provide access to career counselling services to support personal and professional growth.",
+        "Ensure performance evaluations are fair, transparent, and geared toward identifying development opportunities.",
+        "Implement a structured Career Management Plan to guide long-term career progression."
+      ],
+      "Workplace Conditions": [
+        "Guarantee fair wages and reasonable working hours in line with local labour laws and industry benchmarks.",
+        "Support work-life balance by offering flexible work arrangements where operationally feasible.",
+        "Provide comprehensive social benefits, including healthcare, paid leave, and wellness initiatives.",
+        "Maintain a respectful, inclusive, and non-discriminatory workplace that values diversity and equal opportunity."
+      ],
+      "Fair Compensation and Benefits": [
+        "Provide wages that are fair, competitive, and compliant with applicable labour laws and industry standards.",
+        "Uphold the principle of equal pay for equal work, free from any form of discrimination.",
+        "Offer a well-rounded benefits package, including healthcare, paid time off, and retirement provisions to support employee well-being."
+      ],
+      "Social Dialogue and Freedom of Association": [
+        "Respect the right of employees to form or join trade unions and worker committees.",
+        "Engage in constructive dialogue with employee representatives.",
+        "Resolve conflicts through fair negotiation and mediation."
+      ],
+      "Respect for External Stakeholders and Human Rights": [
+        "Assess human rights impacts on communities where we operate.",
+        "Engage with stakeholders and address concerns transparently.",
+        "Integrate human rights criteria into contractor evaluations."
+      ],
+      "Discrimination and Harassment": [
+        "Maintain a zero-tolerance policy against discrimination, harassment, and any form of unfair treatment.",
+        "Foster an inclusive workplace that upholds dignity, mutual respect, and equal opportunities for all employees, regardless of gender, age, race, religion, disability, or background.",
+        "Conduct regular training sessions to educate employees and managers on workplace conduct, unconscious bias, and anti-discrimination laws."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Worker & Employee Health Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% of relevant employees receive training on chemical safety, PPE use, and safe equipment handling by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase employee participation in health and wellness programs by 35% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual safety risk assessments at all company facilities starting in 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase employee participation in health and wellness programs by 30% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain periodic health check-ups or occupational health monitoring for relevant employees.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct emergency response drills (fire, evacuation, chemical spill where applicable) at least annually through 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Employee Career Growth",
+        "targets": [
+          {
+            "target": "Increase the average training hours per employee by 45% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees receive annual career development training by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement career counselling programs covering at least 85% of employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain records of skill development and training attendance for all employees.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct career discussion or performance review meetings for at least 85% of employees annually by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Compensation and Benefits",
+        "targets": [
+          {
+            "target": "Maintain 100% pay equity across all job levels by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase employee participation in retirement savings programs by 25% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employee satisfaction with benefits packages by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% on-time payment of wages and statutory benefits in compliance with applicable labor laws each year.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct annual compensation benchmarking against industry standards to ensure competitive and fair pay, starting 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Condition",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with fair wage and working hour policies by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the number of employees covered by healthcare benefits to 60% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Expand flexible work options to cover 45% of employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide annual well-being and stress management programs for 95% of employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue and Freedom of Association",
+        "targets": [
+          {
+            "target": "Ensure that all employees are informed about their right to freedom of association and collective bargaining through training sessions by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Organize formal meetings annually between management and employee representatives to discuss collective bargaining agreements, starting from 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Develop and implement training programs for both employees and management to ensure understanding and compliance with collective bargaining rights and processes by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Monitor and review the policy on freedom of association regularly to ensure compliance with labor laws and international standards, incorporating employee feedback and audit findings.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Create a transparent grievance mechanism that allows employees to report violations of their rights to collective bargaining, with fair and prompt resolutions ensured for all cases by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Respect for External Stakeholders and Human Rights",
+        "targets": [
+          {
+            "target": "Conduct human rights impact assessments for 100% of new site developments by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Resolve 100% of stakeholder human rights complaints within 30 days.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Integrate human rights and sustainability considerations into 100% of key stakeholder engagement activities (including suppliers, contractors, and local communities) by 2030, to promote responsible business practices and long-term sustainable development.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Maintain annual anti-discrimination and harassment training coverage for 100% of employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 100% of reported discrimination or harassment cases are investigated and resolved within 15 working days by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 95% employee awareness (measured through surveys) of grievance reporting procedures by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% availability of confidential grievance reporting channels (email / committee / hotline) across all departments by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of new hires receive induction training on discrimination, harassment, and workplace conduct within 30 days of joining by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide strategic oversight and ensure alignment with legal and ethical standards."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Review and approve updates to labour and human rights policies."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Hold executive management accountable for implementation and performance."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Ensure equitable recruitment, compensation, and benefit practices."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Develop and maintain policies related to fair labour practices and employee well-being."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Deliver regular training on employee rights, workplace ethics, and compliance."
+      },
+      {
+        "role": "Health & Safety Committee",
+        "duty": "Implement health and safety procedures in line with legal requirements."
+      },
+      {
+        "role": "Health & Safety Committee",
+        "duty": "Conduct regular risk assessments and coordinate safety training."
+      },
+      {
+        "role": "Health & Safety Committee",
+        "duty": "Address incidents and recommend preventive measures."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Monitor adherence to labour laws, human rights standards, and internal policies."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Conduct internal audits and identify areas for improvement."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Manage grievance mechanisms and ensure prompt, confidential resolution."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with company policies and contribute to a respectful, inclusive work environment."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in relevant training and awareness programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report concerns through established channels without fear of retaliation."
+      }
+    ],
+    "monitoring": "Shenzhen Xingbiao Electronic Technology Co Ltd maintains a structured reporting system to ensure transparency, accountability, and continuous improvement in labour and human rights practices.\n\nConducts regular evaluations of policy implementation, employee training participation, and internal audit results.\n\nMonitors compliance with applicable labour laws, workplace safety standards, and ethical policies.\n\nBenchmarks performance against industry norms to drive improvement in governance and employee well-being.\n\nMaintains confidential and easily accessible channels for employees and stakeholders to report labour or human rights concerns.\n\nEnsures prompt, structured investigations with defined resolution timelines.\n\nAnalysis incident data to identify recurring trends and enhance risk mitigation measures.\n\nEngages regularly with employees, suppliers, and external stakeholders to review and enhance human rights practices.\n\nDelivers periodic training and awareness programs to reinforce policy compliance.\n\nUpdates internal policies based on stakeholder feedback, audit findings, and evolving industry standards.\n\nThis reporting framework strengthens Shenzhen Xingbiao Electronic Technology Co Ltd’s commitment to ethical conduct, legal compliance, and continuous development of responsible labour practices.",
+    "reviewMechanism": "The Compliance Manager will review this policy annually to ensure its effectiveness and continued relevance. Any updates or changes will be communicated to all employees and stakeholders in a timely manner. If required, the company may revise the policy at any time to address emerging issues or regulatory changes."
+  },
+  "sourcePath": "Policies - Kenal/Shenzhen Xingbiao - Tairui China/Labor & Human Rights Policy done.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Shenzhen Xingbiao - Tairui China/Labor & Human Rights Policy done.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 13252,
+  "parsedAt": "2026-09-11T07:28:40.856Z"
+}

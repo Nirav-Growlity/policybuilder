@@ -1,0 +1,167 @@
+{
+  "id": "living-wage-solxe-energy",
+  "name": "Solxe Energy",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from Solex Fair Compensation & Living Wage Commitment Policy  .docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Solex Energy Limited",
+      "industry": "",
+      "site": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India",
+      "sites": [
+        {
+          "location": "Solex Energy Limited",
+          "address": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Solex Energy Limited is committed to providing fair, equitable, and responsible compensation to all employees. The Company ensures compliance with applicable wage, salary, benefits, and labour laws while promoting equal pay for equal work and non-discriminatory remuneration practices.\n\nThe Company recognizes the importance of living wages in supporting employee well-being and is committed to periodically assessing compensation against relevant living wage benchmarks. Solex Energy Limited strives to maintain transparent compensation practices, address wage gaps where feasible, and provide employees with fair remuneration and applicable benefits.\n\nThrough regular monitoring, management oversight, and continuous improvement, the Company seeks to foster a productive, inclusive, and sustainable workplace where employees are compensated fairly for their contributions.",
+      "declaration": "Solex Energy Limited is committed to maintaining fair, equitable, and transparent compensation practices in accordance with applicable national and international labour laws and recognized employment standards.\n\nThe Company strives to ensure that employee wages and benefits meet or exceed legal requirements and progressively align with living wage standards applicable to its operating locations, thereby supporting the financial well-being, dignity, and long-term security of its workforce.",
+      "scope": "This Policy applies to all Solex Energy Limited operations and covers all employees, including permanent, temporary, contractual, trainee, apprentice, and part-time personnel, irrespective of their position or level within the Company.\n\nThe Policy covers matters related to fair compensation and remuneration practices across the Company's operations, including statutory wage compliance, living wage assessments, equal pay for equal work, employee benefits, payroll management, overtime compensation, non-discriminatory remuneration practices, wage transparency, and periodic review of compensation structures to support employee well-being and financial security."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Solex Energy Limited follows a systematic approach to determine and assess living wage levels across its operations.\n\nThe Company identifies relevant living wage benchmarks for each operating location using recognized methodologies, including the IDH Living Wage Methodology and other credible national or international sources, where applicable.\n\nThe Company evaluates key cost-of-living factors, including food, housing, healthcare, education, transportation, utilities, and other essential household expenses relevant to the local area.\n\nLiving wage assessments consider local economic conditions, inflation trends, labour market developments, and industry compensation benchmarks to ensure wage evaluations remain current and relevant.\n\nEmployee compensation is periodically compared against applicable living wage benchmarks and statutory wage requirements to identify potential gaps and opportunities for improvement.\n\nAssessment outcomes are reviewed by management and considered during compensation planning and periodic wage reviews. Where feasible, the Company seeks to progressively address identified wage gaps and strengthen fair compensation practices over time.\n\nThe Company periodically reviews its compensation structure against statutory requirements, industry benchmarks, economic conditions, and recognized living wage methodologies, including the IDH Living Wage Methodology.\n\nThe Policy covers matters related to fair compensation and remuneration practices across the Company's operations, including statutory wage compliance, living wage assessments, equal pay for equal work, employee benefits, payroll management, overtime compensation, non-discriminatory remuneration practices, wage transparency, and periodic review of compensation structures to support employee well-being and financial security."
+    },
+    "focusAreas": [
+      "Periodic living wage assessments",
+      "Compensation governance",
+      "Compensation transparency and employee awareness",
+      "Equitable compensation and equal pay for equal work",
+      "Employee well-being and wage and benefit programs"
+    ],
+    "qualitative": {
+      "Periodic living wage assessments": [
+        "Conduct periodic living wage assessments to evaluate employee compensation against recognized living wage benchmarks and identify areas for improvement."
+      ],
+      "Compensation governance": [
+        "Strengthen compensation governance by integrating living wage considerations into remuneration reviews and workforce planning processes."
+      ],
+      "Compensation transparency and employee awareness": [
+        "Enhance transparency and employee awareness regarding compensation structures, benefits, and living wage commitments through regular communication and engagement initiatives."
+      ],
+      "Equitable compensation and equal pay for equal work": [
+        "Promote equitable compensation practices by regularly reviewing remuneration structures to support fairness, consistency, and equal pay for equal work."
+      ],
+      "Employee well-being and wage and benefit programs": [
+        "Continuously improve employee well-being by assessing and enhancing wage and benefit programs in response to changing economic conditions and workforce needs."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living wage assessment coverage",
+        "targets": [
+          {
+            "target": "Assess 100% of employees against applicable living wage benchmarks",
+            "baseline": "2023",
+            "deadline": "Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Minimum wage and statutory compensation compliance",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable minimum wage and statutory compensation requirements",
+            "baseline": "2023",
+            "deadline": "Through Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Statutory benefits and compensation entitlements",
+        "targets": [
+          {
+            "target": "Ensure that 100% of eligible employees receive all applicable statutory benefits and compensation entitlements",
+            "baseline": "2023",
+            "deadline": "By Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Living wage gap analysis",
+        "targets": [
+          {
+            "target": "Conduct living wage gap analyses covering 100% employees at least annually",
+            "baseline": "2023",
+            "deadline": "By Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Alignment with living wage benchmarks",
+        "targets": [
+          {
+            "target": "Reduce identified living wage gaps, where applicable, and achieve alignment of at least 95% of assessed employees with relevant living wage benchmarks",
+            "baseline": "2023",
+            "deadline": "By Year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provides overall oversight of the Company's fair compensation and living wage practices and reviews relevant performance, risks, and progress against established objectives and targets."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provides leadership, resources, and accountability for implementing this Policy and ensures that fair compensation and living wage considerations are incorporated into workforce planning, remuneration decisions, and business practices."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Acts as the primary custodian of this Policy and coordinates compensation reviews, living wage assessments, wage-gap analysis, statutory compliance, employee benefits, and related awareness and communication activities."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "The Human Resources Manager shall also review and update this Policy annually & whenever there are changes in applicable laws, regulations, Company procedures, compensation practices, or other relevant requirements."
+      },
+      {
+        "role": "Chief Finance Officer",
+        "duty": "Supports accurate and timely payment of wages, salaries, overtime, and applicable benefits and maintains appropriate payroll records and controls to support compliance with approved compensation structures and statutory requirements."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Support the implementation of fair compensation practices within their areas of responsibility, provide relevant workforce information, and ensure that employees receive applicable wages, benefits, and entitlements in accordance with Company requirements."
+      },
+      {
+        "role": "Employees and Workers",
+        "duty": "Comply with applicable Company policies and procedures, provide accurate information required for compensation processes, and raise concerns regarding wages, benefits, or other compensation-related matters through established channels."
+      }
+    ],
+    "monitoring": "The effectiveness of compensation and living wage practices shall be periodically evaluated through wage reviews, living wage assessments, gap analysis, employee feedback, compliance reviews, and relevant performance indicators. Identified gaps and improvement opportunities shall be addressed through appropriate management actions.\n\nSolex Energy Limited shall conduct periodic reviews of its wage and compensation practices against applicable legal requirements, living wage benchmarks, and the objectives established under this Policy.\n\nReporting shall cover, as applicable: Compliance with statutory minimum wage and compensation requirements; Coverage and outcomes of living wage assessments; Identified wage gaps and progress towards addressing them; Employee feedback and concerns relating to compensation and wage fairness; Progress against established fair compensation and living wage targets.\n\nPeriodic internal reviews or audits shall be conducted to assess the effectiveness of wage management processes and adherence to this Policy. Reviews may include verification of wage calculations, timely payment of wages and benefits, statutory compliance, and implementation of corrective actions.\n\nThe Company shall engage, where appropriate, with employees, employee representatives, payroll personnel, and relevant external experts to obtain feedback on compensation practices and living wage assessments. Feedback and concerns shall be considered in periodic policy reviews and improvement initiatives.\n\nPerformance results shall be reviewed by management and used to identify corrective actions and opportunities for improvement. Relevant performance information may be communicated through internal reports and, where appropriate, the Company's sustainability or ESG disclosures.",
+    "reviewMechanism": "The Human Resources Manager shall review this Fair Compensation & Living Wage Commitment Policy annually to ensure its continued relevance and effectiveness. The review shall consider living wage assessment results, wage compliance, identified gaps, employee feedback, audit findings, changes in economic conditions, and progress against established targets.\n\nThe Policy shall be updated as required to reflect changes in applicable national and international labour laws, regulations, recognized living wage methodologies, Company procedures, compensation practices, or identified risks and improvement opportunities. Significant revisions shall be communicated to relevant employees and stakeholders."
+  },
+  "sourcePath": "Policies - Kenal/Solxe Energy/Solex Fair Compensation & Living Wage Commitment Policy  .docx",
+  "sourceFiles": [
+    "Policies - Kenal/Solxe Energy/Solex Fair Compensation & Living Wage Commitment Policy  .docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 12177,
+  "parsedAt": "2026-09-11T07:29:02.695Z"
+}

@@ -1,0 +1,278 @@
+{
+  "id": "sustainable-procurement-ognibene",
+  "name": "Ognibene",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement Policy OGNIBENE.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "OGNIBENE INDIA PVT LTD",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Ognibene India Private Limited – Pune Plant (I)",
+          "address": "Plot A-13 Talegaon MIDC Village Ambi Navlakh Umbhre Talegaon, Pune Maharashtra – India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Ognibene India Pvt. Ltd.",
+          "address": "Unit No.A, B-600, Plot No.8, Ishanvi Industrial & Logistics 140402 Park, Vividha Ind.Park, Chamaru, Rajpura Patiala – Punjab – India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "OGNIBENE INDIA PVT LTD, incorporated on February 10, 2006, is dedicated to designing and manufacturing hydraulic cylinders and hydraulic steering systems for off-highway vehicles, automotive, and marine applications. We are committed to ensuring that our procurement practices contribute to sustainable development. This policy outlines our commitment to integrating environmental and social considerations into our procurement decisions.",
+      "declaration": "Ognibene India Pvt. Ltd. is committed to sustainable procurement by ensuring suppliers uphold strong environmental and social standards. We aim to reduce environmental impact and ensure fair labor practices while balancing sustainability with price, quality, and reliability in our supply chain.",
+      "scope": "This policy applies to all workers, employees, directors, officers, agents, contractors, and any third parties acting on behalf of OGNIBENE INDIA PVT LTD (OIL). It covers all business activities, including procurement, sales, marketing, and any interactions with government officials, customers, suppliers, and other stakeholders. The policy is applicable globally, regardless of local business practices or cultural norms. This policy applies to below mentioned locations:"
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Supplier Social Practices",
+      "Resource Efficiency",
+      "Waste and Circularity",
+      "Supplier Compliance and Transparency",
+      "Supplier Capacity Building",
+      "Community Engagement"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "Ognibene India Pvt. Ltd. aims to work with suppliers to reduce waste, improve energy efficiency, and lower carbon emissions."
+      ],
+      "Supplier Social Practices": [
+        "We are committed to ensuring that all suppliers adhere to fair labor standards, including providing fair wages, safe working conditions, and reasonable working hours."
+      ],
+      "Resource Efficiency": [
+        "Ognibene will collaborate with suppliers to enhance resource efficiency, particularly in the use of energy, water, and materials."
+      ],
+      "Waste and Circularity": [
+        "We aim to promote waste reduction and circular economy principles in our supply chain, focusing on recycling, reuse, and reducing packaging waste."
+      ],
+      "Supplier Compliance and Transparency": [
+        "Ognibene India Pvt. Ltd. is committed to ensuring supplier compliance with environmental and social regulations, promoting transparency in their operations."
+      ],
+      "Supplier Capacity Building": [
+        "To support suppliers in adopting sustainable practices, Ognibene will provide training, guidance, and resources.",
+        "Biannual supplier workshops on sustainable sourcing continue through 2030."
+      ],
+      "Community Engagement": [
+        "We commit to engaging with local communities impacted by our supply chain operations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "25% of our suppliers have implemented waste reduction initiatives",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "at least 20% will have adopted energy efficiency measures",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "achieving a 10% reduction in carbon emissions",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "40% of key suppliers transition to renewable energy usage",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "100% of suppliers in high-risk regions comply with international labor standards",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of total suppliers meet fair wage and working hour requirements",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of direct employees and 100% of indirect supplier employees receive training on human rights and ethical conduct",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Resource Efficiency",
+        "targets": [
+          {
+            "target": "30% of our key suppliers will reduce their water and material consumption by 15%",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "20% of suppliers adopt resource monitoring systems",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "a 30% reduction in non-recyclable materials used in supplier packaging is achieved",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste and Circularity",
+        "targets": [
+          {
+            "target": "70% of suppliers implement recycling programs",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "achieve a 20% reduction in packaging waste",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "50% of suppliers integrate product life cycle or take-back initiatives",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Compliance and Transparency",
+        "targets": [
+          {
+            "target": "90% of our suppliers will provide annual environmental, social and governance performance reports",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% will undergo third-party sustainability audits",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Capacity Building",
+        "targets": [
+          {
+            "target": "100% of our strategic suppliers will receive sustainability training",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "50% will report measurable improvements in their sustainability performance",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Biannual supplier workshops on sustainable sourcing continue",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Community Engagement",
+        "targets": [
+          {
+            "target": "100% of production sites have community engagement initiatives in place",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "community satisfaction scores increase by 15%",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Supplier participation in local CSR and environmental programs increases by 10% annually",
+            "baseline": "",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "100% of our suppliers are required to sign and comply with our Supplier Code of Conduct to ensure alignment with our ESG principles and ethical standards.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "100% of our suppliers will actively participate in ESG training programs annually, fostering a culture of continuous improvement and awareness.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "We will conduct on-site supplier audits and worker feedback assessments for 100% of our critical and high-risk suppliers to ensure compliance with environmental, social, and governance standards.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "100% of our suppliers will be required to complete an annual ESG self-assessment, allowing us to monitor progress, identify gaps, and collaborate on improvement plans.",
+            "baseline": "",
+            "deadline": "annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Procurement Officer (CPO)",
+        "duty": "overseeing the implementation of this policy, ensuring that procurement activities align with sustainability objectives."
+      },
+      {
+        "role": "Supply Chain Manager",
+        "duty": "conduct supplier assessments and audits to ensure compliance with the outlined environmental and social standards."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "collaborate with suppliers to promote sustainable practices, provide necessary guidance, and track progress toward achieving the quantitative targets outlined in the policy."
+      },
+      {
+        "role": "All team members involved in procurement",
+        "duty": "integrating these standards into daily operations and supplier interactions."
+      }
+    ],
+    "monitoring": "",
+    "reviewMechanism": "This policy will be reviewed bi-annually by the Chief Procurement Officer (CPO) and Sustainability Manager to ensure it remains current with evolving sustainability goals and industry best practices. Necessary updates will be communicated to all stakeholders, and any required changes will be implemented promptly."
+  },
+  "sourcePath": "Policies - Kenal/Ognibene/Sustainable Procurement Policy OGNIBENE.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Ognibene/Sustainable Procurement Policy OGNIBENE.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 8408,
+  "parsedAt": "2026-09-11T07:25:29.053Z"
+}

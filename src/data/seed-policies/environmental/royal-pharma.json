@@ -1,0 +1,456 @@
+{
+  "id": "royal-pharma",
+  "name": "Royal Pharma",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Sustainability Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Royal Pharmaceuticals Industries Pvt. Ltd.",
+      "industry": "",
+      "site": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India",
+      "sites": [
+        {
+          "location": "Manufacturing facility",
+          "address": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India",
+          "primaryFunction": "Manufacturing pharmaceutical products"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Royal Pharmaceuticals Industries Pvt. Ltd. recognizes environmental stewardship as a core business responsibility and an essential element of sustainable growth. The Company is committed to integrating environmental sustainability into all aspects of its operations through responsible resource management, pollution prevention, climate action, regulatory compliance, and continual improvement, while minimizing its environmental footprint and supporting the manufacture of safe, high-quality pharmaceutical products.\n\nThe purpose of this Environmental Sustainability Policy is to establish a structured framework for integrating environmental sustainability into all business operations of Royal Pharmaceuticals Industries Pvt. Ltd. The policy aims to:\n\nPromote responsible environmental management throughout the Company's operations.\n\nMinimize adverse environmental impacts associated with manufacturing, utilities, storage, transportation, and support activities.\n\nImprove energy efficiency and reduce greenhouse gas (GHG) emissions.\n\nPrevent pollution through responsible management of emissions, effluents, hazardous substances, and waste.\n\nProtect biodiversity and surrounding ecosystems affected by business operations.\n\nStrengthen environmental risk management and climate resilience.",
+      "declaration": "Royal Pharmaceuticals Industries Pvt. Ltd. is committed to conducting its business in an environmentally responsible manner by integrating sustainable environmental practices into every stage of its operations. The Company believes that environmental protection, responsible manufacturing, operational excellence, and business growth are mutually reinforcing objectives.",
+      "scope": "This Environmental Sustainability Policy applies to the manufacturing facility of Royal Pharmaceuticals Industries Pvt. Ltd. located at E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India. It applies to all employees, directors, contractors, suppliers, consultants, service providers, and other personnel working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Climate Change Mitigation and Energy Management",
+      "Water Stewardship",
+      "Biodiversity Conservation",
+      "Air Quality Management",
+      "Sustainable Materials and Resource Management",
+      "Sustainable Product Design and End-of-Life Management",
+      "Customer Well-Being & Safety",
+      "Climate Change Adaptation & Resilience",
+      "Sustainable Resource Use & Circular Economy"
+    ],
+    "qualitative": {
+      "Climate Change Mitigation and Energy Management": [
+        "We strive to improve energy efficiency across manufacturing operations, utility systems, laboratories, warehouses, and administrative facilities through process optimization and energy-efficient technologies.",
+        "We will work towards reducing Scope 1 and Scope 2 greenhouse gas emissions by improving fuel efficiency, optimizing utility operations, and implementing energy conservation initiatives throughout the manufacturing facility.",
+        "We will explore and progressively increase the adoption of renewable energy sources, such as rooftop solar power and green electricity procurement, wherever technically and commercially feasible.",
+        "We strive to improve the efficiency of boilers, chillers, air compressors, HVAC systems, pumps, motors, and other utility equipment through preventive maintenance and operational optimization.",
+        "We seek to minimize direct greenhouse gas emissions associated with stationary combustion equipment, process operations, and Company-owned vehicles by adopting cleaner operational practices.",
+        "We will identify and assess relevant Scope 3 emission categories, including purchased raw materials, transportation, business travel, waste management, and upstream supply chain activities to better understand and manage the Company's overall carbon footprint."
+      ],
+      "Water Stewardship": [
+        "We strive to optimize water consumption across manufacturing processes, utility operations, laboratories, sanitation facilities, and other operational areas through efficient water management practices.",
+        "We will work towards minimizing freshwater consumption by implementing water conservation initiatives, process improvements, and preventive maintenance activities.",
+        "We seek to maximize opportunities for water recycling and reuse through appropriate treatment systems and operational improvements wherever technically feasible.",
+        "We strive to prevent water pollution by ensuring proper operation of wastewater treatment facilities and maintaining compliance with applicable discharge standards.",
+        "We will conduct periodic inspections of pipelines, storage tanks, valves, cooling systems, and other water distribution infrastructure to identify and eliminate water leakages.",
+        "We will evaluate water-efficient technologies and process improvements during equipment replacement, facility expansion, and new capital projects.",
+        "We encourage suppliers and contractors to support responsible water management practices while conducting activities within the Company's premises."
+      ],
+      "Biodiversity Conservation": [
+        "We will protect and maintain greenbelt areas within the manufacturing premises to enhance local biodiversity and improve environmental quality.",
+        "We will encourage plantation of native and climate-resilient plant species within the Company's premises wherever practicable.",
+        "We strive to prevent soil, water, and air contamination that could adversely affect biodiversity through effective environmental management practices.",
+        "We will promote biodiversity awareness among employees through environmental campaigns, plantation drives, and sustainability initiatives."
+      ],
+      "Air Quality Management": [
+        "We strive to minimize air pollutant emissions from manufacturing processes, boilers, DG sets, utilities, and other operational activities through effective emission control measures and process optimization.",
+        "We will continuously improve air quality management by adopting cleaner technologies, preventive maintenance programs, and efficient operational practices wherever technically and economically feasible.",
+        "We seek to reduce emissions of particulate matter (PM), Sulphur Oxides (SOx), nitrogen oxides (NOx), volatile organic compounds (VOCs), and other regulated air pollutants through appropriate engineering and operational controls.",
+        "We will maintain air pollution control equipment in effective working condition through periodic inspection, calibration, preventive maintenance, and timely replacement where required.",
+        "We strive to monitor ambient air quality and stack emissions at prescribed intervals to evaluate environmental performance and ensure compliance with statutory requirements.",
+        "We seek to prevent fugitive emissions from chemical storage, material handling, solvent transfer, and manufacturing operations through appropriate containment and operational controls."
+      ],
+      "Sustainable Materials and Resource Management": [
+        "We strive to optimize the consumption of raw materials, chemicals, solvents, and packaging materials through process optimization and efficient resource management.",
+        "We will promote the responsible procurement, storage, handling, transportation, and use of chemicals to minimize environmental risks and ensure operational safety.",
+        "We seek to reduce waste generation at source by adopting cleaner production techniques, process improvements, and material recovery initiatives.",
+        "We will maximize opportunities for waste segregation, reuse, recycling, recovery, and responsible disposal in accordance with applicable legal and regulatory requirements.",
+        "We strive to strengthen hazardous waste management by ensuring proper identification, storage, labelling, handling, transportation, and disposal through authorized recyclers and disposal facilities.",
+        "We will promote solvent recovery, chemical recovery, and resource conservation initiatives wherever technically and economically feasible to reduce environmental impacts.",
+        "We seek to prevent accidental spills, leaks, and chemical releases through effective operational controls, preventive maintenance, emergency preparedness, and employee awareness."
+      ],
+      "Sustainable Product Design and End-of-Life Management": [
+        "We strive to integrate environmental considerations throughout the product lifecycle by promoting responsible product stewardship from manufacturing to end-of-life management.",
+        "We will provide customers with appropriate information on the safe handling, storage, transportation, use, and disposal of products and packaging materials, where applicable.",
+        "We seek to optimize product packaging by encouraging the use of recyclable, reusable, or environmentally preferable packaging materials without compromising product quality, safety, or regulatory compliance.",
+        "We will continuously evaluate opportunities to reduce packaging waste and improve material efficiency through sustainable packaging initiatives.",
+        "We strive to ensure that product labels, Safety Data Sheets (SDS), technical documents, and regulatory information support the environmentally responsible use and disposal of our products.",
+        "We will encourage customers, distributors, and supply chain partners to adopt environmentally responsible practices for managing product packaging and applicable end-of-life materials."
+      ],
+      "Customer Well-Being & Safety": [
+        "We strive to manufacture and supply pharmaceutical products that meet applicable quality, safety, environmental, and regulatory requirements while protecting customer health and well-being.",
+        "We will maintain robust quality management systems and Good Manufacturing Practices (GMP) to ensure product integrity, consistency, traceability, and regulatory compliance.",
+        "We seek to provide customers with accurate product information, including product labels, Safety Data Sheets (SDS), Certificates of Analysis (CoA), storage conditions, handling instructions, and other applicable technical documentation.",
+        "We will continuously strengthen product quality assurance, contamination prevention, and product traceability systems to minimize risks throughout the manufacturing and supply chain processes.",
+        "We strive to promptly investigate customer complaints, product quality concerns, and safety-related issues, implementing appropriate corrective and preventive actions to prevent recurrence.",
+        "We will encourage continuous improvement in manufacturing processes, quality control systems, and product stewardship practices to enhance customer confidence and product safety."
+      ],
+      "Climate Change Adaptation & Resilience": [
+        "We strive to identify and assess climate-related physical and transition risks that may affect our manufacturing operations, infrastructure, utilities, supply chain, and business continuity.",
+        "We will integrate climate change considerations into strategic planning, capital investments, operational decision-making, and environmental risk management processes.",
+        "We seek to strengthen the resilience of manufacturing facilities and critical infrastructure against climate-related events such as extreme heat, flooding, heavy rainfall, storms, water scarcity, and power disruptions.",
+        "We strive to improve the resilience of our supply chain by engaging suppliers and service providers on climate-related risks and sustainable business practices.",
+        "We will promote climate awareness among employees through training, communication, and participation in climate resilience initiatives."
+      ],
+      "Sustainable Resource Use & Circular Economy": [
+        "We strive to optimize the use of raw materials, packaging materials, utilities, and other natural resources through efficient manufacturing processes and responsible resource management.",
+        "We will promote circular economy principles by encouraging the reduction, reuse, recovery, and recycling of materials wherever technically and economically feasible.",
+        "We seek to improve resource productivity by implementing process optimization, lean manufacturing practices, and continuous improvement initiatives across our operations.",
+        "We will evaluate opportunities to utilize recycled, recovered, renewable, or environmentally preferable materials in manufacturing and packaging without compromising product quality, safety, or regulatory compliance.",
+        "We strive to reduce the consumption of virgin raw materials by promoting material efficiency, inventory optimization, and responsible procurement practices.",
+        "We will encourage suppliers, contractors, and business partners to adopt sustainable resource management practices and support the Company's environmental sustainability objectives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Climate Change Mitigation and Energy Management",
+        "targets": [
+          {
+            "target": "We aim to reduce absolute Scope 1 and Scope 2 and 3 greenhouse gas emissions and GHG Emission intensity by 7%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Our goal is to improve energy consumption intensity by 8%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We plan to progressively increase renewable energy utilization and source at least 10% of total electricity consumption from renewable energy",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to implement energy-efficient LED lighting across 100% of applicable operational areas",
+            "baseline": "FY 2025-26 infrastructure status",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure 100% annual monitoring and reporting of Scope 1 and Scope 2 greenhouse gas emissions and progressively expand Scope 3 emissions assessment for relevant categories.",
+            "baseline": "",
+            "deadline": "Annual"
+          },
+          {
+            "target": "We aim to conduct annual energy performance assessments covering 100% of significant energy-consuming equipment to identify and implement improvement opportunities.",
+            "baseline": "",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Water Stewardship",
+        "targets": [
+          {
+            "target": "We aim to reduce freshwater consumption intensity by 20%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Our goal is to increase water recycling and reuse to at least 30% of total operational water consumption",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We will ensure 100% monitoring of water consumption across significant operational areas on an annual basis.",
+            "baseline": "",
+            "deadline": "Annual"
+          },
+          {
+            "target": "We aim to maintain 100% compliance with applicable wastewater discharge standards and environmental permit requirements each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We strive to detect and rectify 100% of identified water leakages within defined corrective action timelines.",
+            "baseline": "",
+            "deadline": "Within defined corrective action timelines"
+          },
+          {
+            "target": "We plan to install water-efficient fixtures and conservation devices in 100% of applicable operational areas",
+            "baseline": "FY 2025-26 infrastructure status",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Conservation",
+        "targets": [
+          {
+            "target": "We aim to maintain and enhance greenbelt coverage within the manufacturing premises by undertaking annual plantation programs",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "Through FY 2029–30"
+          },
+          {
+            "target": "Our goal is to achieve 100% compliance with applicable environmental, forest, wildlife, and land-use regulations each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We plan to conduct at least one biodiversity conservation or tree plantation initiative annually",
+            "baseline": "",
+            "deadline": "Through FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality Management",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% compliance with applicable statutory limits for stack emissions and ambient air quality throughout FY 2029–30",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "Throughout FY 2029–30"
+          },
+          {
+            "target": "We strive to reduce particulate matter (PM) emissions from applicable emission sources by 15%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We plan to reduce emissions of NOx and SOx from combustion sources by 10%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct 100% scheduled stack emission and ambient air quality monitoring in accordance with applicable legal and permit requirements each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We strive to maintain zero significant regulatory non-compliances related to air emissions throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials and Resource Management",
+        "targets": [
+          {
+            "target": "We strive to reduce hazardous waste generation by 10%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% disposal of hazardous waste through CPBC/MPCB authorized recyclers, co-processors, or Treatment, Storage and Disposal Facilities (TSDFs) each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to increase the recycling and recovery of non-hazardous waste to at least 75%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to maintain 100% compliance with applicable regulations governing chemical management, hazardous waste, and non-hazardous waste management each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to maintain zero major environmental incidents resulting from chemical spills, hazardous waste handling, or improper waste disposal throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Product Design and End-of-Life Management",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% of applicable products are supplied with accurate labels, Safety Data Sheets (SDS), and product handling, storage, and disposal information",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to reduce packaging material consumption intensity by 15%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We plan to increase the use of recyclable or environmentally preferable packaging materials to 50% of applicable packaging",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct annual reviews of 100% of applicable product labels and environmental information to ensure compliance with applicable regulatory and customer requirements.",
+            "baseline": "",
+            "deadline": "Annual"
+          },
+          {
+            "target": "We strive to maintain 100% compliance with applicable environmental and product stewardship regulations related to product packaging, labelling, transportation, and customer information each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          }
+        ]
+      },
+      {
+        "area": "Customer Well-Being & Safety",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% compliance with applicable product quality, customer safety, GMP, and regulatory requirements throughout FY 2029–30",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "Throughout FY 2029–30"
+          },
+          {
+            "target": "We strive to achieve 100% batch traceability for all manufactured products through documented batch manufacturing, testing, and distribution records.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We will ensure 100% of applicable products are supplied with compliant labels, Certificates of Analysis (CoA), Safety Data Sheets (SDS), and product handling and storage information",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to investigate and close 100% of customer complaints and product quality incidents within the Company's defined timelines each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We strive to maintain zero critical product recalls resulting from manufacturing defects, contamination, or environmental non-compliance throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We will conduct documented quality, safety, and compliance verification for 100% of production batches prior to product release.",
+            "baseline": "",
+            "deadline": "Prior to product release"
+          },
+          {
+            "target": "We aim to provide annual GMP, product quality, customer health, and product safety training to 100% of relevant employees",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Climate Change Adaptation & Resilience",
+        "targets": [
+          {
+            "target": "We aim to conduct climate change risk and vulnerability assessments covering 100% of manufacturing operations",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will establish and maintain a documented Business Continuity Plan (BCP) and Climate Risk Management Plan covering 100% of critical business operations",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to conduct at least one climate emergency preparedness and business continuity drill annually",
+            "baseline": "",
+            "deadline": "Through FY 2029–30"
+          },
+          {
+            "target": "We will integrate climate-related risk assessments into 100% of significant infrastructure expansion and capital investment projects",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to provide annual climate change awareness and emergency preparedness training to 100% of relevant employees",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Resource Use & Circular Economy",
+        "targets": [
+          {
+            "target": "We aim to improve overall resource utilization efficiency by 20%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to reduce virgin raw material consumption intensity by 10%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We plan to increase the utilization of recycled, recovered, or environmentally preferable materials to 20% of applicable material consumption",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to reduce paper consumption by 60%",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% segregation of recyclable and recoverable materials at designated collection points throughout the manufacturing facility each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We strive to divert at least 80% of recyclable non-hazardous waste from landfill through recycling and recovery initiatives",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual resource conservation and circular economy awareness training to 100% of relevant employees",
+            "baseline": "FY 2025-26 baseline",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "The Managing Director is responsible for approving the Environmental Sustainability Policy and providing strategic direction for environmental sustainability across the Company. The Managing Director shall demonstrate leadership and commitment towards environmental protection and sustainable manufacturing, ensure the availability of adequate financial, technical, and human resources for policy implementation, and periodically review environmental performance, objectives, and strategic targets."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Department Heads are responsible for implementing the Environmental Sustainability Policy within their respective departments. They shall integrate environmental objectives into departmental operational plans, identify environmental risks, opportunities, and improvement initiatives, and ensure compliance with applicable environmental legislation and internal procedures."
+      },
+      {
+        "role": "EHS Coordinator",
+        "duty": "The EHS Coordinator shall coordinate the implementation and periodic review of the Environmental Sustainability Policy. Responsibilities include developing environmental objectives, programs, and Key Performance Indicators (KPIs), maintaining environmental records, statutory documentation, and performance reports, and conducting environmental awareness programs while providing technical guidance to all relevant departments."
+      },
+      {
+        "role": "Quality Assurance & Quality Control",
+        "duty": "The Quality Assurance and Quality Control functions shall ensure that environmental considerations are integrated into manufacturing and quality management systems wherever applicable. They are also responsible for verifying compliance with applicable environmental, quality, and regulatory requirements."
+      },
+      {
+        "role": "Procurement & Supply Chain",
+        "duty": "The Procurement and Supply Chain function shall promote environmentally responsible procurement practices during supplier selection and evaluation. It shall encourage suppliers and contractors to comply with the Company's environmental expectations and procure environmentally preferable products and services wherever technically and commercially feasible."
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are responsible for complying with this Environmental Sustainability Policy and applicable environmental procedures. They shall use energy, water, chemicals, and other resources responsibly, follow safe work practices to prevent pollution and minimize waste generation, and actively participate in environmental training, awareness programs, audits, and continual improvement initiatives."
+      }
+    ],
+    "monitoring": "Royal Pharmaceuticals Industries Pvt. Ltd. shall regularly monitor, measure, and evaluate its environmental performance to ensure compliance with this Policy, achieve established environmental objectives, and drive continual improvement.\n\nEnvironmental performance shall be monitored through the following activities:\n\nMonitoring of Key Performance Indicators (KPIs) against established objectives and targets.\n\nPeriodic measurement of energy consumption, greenhouse gas emissions, water consumption, air emissions, wastewater quality, and waste generation.\n\nCompliance monitoring against applicable legal, regulatory, and permit requirements.\n\nMaintenance of environmental records, monitoring reports, and statutory documentation to demonstrate performance and compliance.",
+    "reviewMechanism": "The Environmental Sustainability Policy shall be reviewed at least annually, or earlier if required due to changes in legal requirements, business operations, or organizational needs. The review done by the EHS Head and any revisions shall be approved by the Managing Director or the designated management representative before implementation.\n\nNext Review Date: 01st April 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Royal Pharma/1. Environmental Sustainability Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Royal Pharma/1. Environmental Sustainability Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 26276,
+  "parsedAt": "2026-09-11T07:15:08.155Z"
+}

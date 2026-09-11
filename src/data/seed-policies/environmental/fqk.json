@@ -1,0 +1,360 @@
+{
+  "id": "fqk",
+  "name": "FQK",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1) Environmental Policy.pdf.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "First Quality Knits (Nectar Crafts)",
+      "industry": "",
+      "site": "SF. No.87, Konakkadu Thottam, Arivoli Nagar, Naranapuram Post, Palladam Taluk- 641664, Tiruppur, Tamil nadu, India",
+      "sites": [
+        {
+          "location": "First Quality Knits",
+          "address": "SF. No.87, Konakkadu Thottam, Arivoli Nagar, Naranapuram Post, Palladam Taluk- 641664, Tiruppur, Tamil nadu, India",
+          "primaryFunction": "fabric processing, garment manufacturing, packing, dispatch, utility operations, waste management, and chemical handling"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "SF. No.87, Konakkadu Thottam, Arivoli Nagar, Naranapuram Post, Palladam Taluk- 641664, Tiruppur, Tamil nadu, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "First Quality Knitss, a division of Nectar Crafts, is deeply committed to integrating environmental sustainability into all aspects of its textile manufacturing operations. As part of a globally recognized company known for ethical practices and certified under standards like ISO 14001, GOTS, GRS, and OEKO-TEX, First Quality Knits adopts a proactive approach to environmental responsibility. We prioritize the efficient use of natural resources, reduction of greenhouse gas emissions, proper treatment and disposal of effluents, and minimization of waste generation throughout our production processes.\n\nOur commitment extends to sourcing sustainable raw materials, using eco-friendly packaging, and promoting cleaner production technologies. This Environmental Policy outlines our dedication to continual improvement, regulatory compliance, and stakeholder engagement. By fostering environmental awareness among employees and aligning with international sustainability frameworks, First Quality Knits aims to deliver high-quality knitted garments while protecting the environment and contributing to a greener future.",
+      "declaration": "First Quality Knits, a division of Nectar Crafts, is committed to conducting its operations in an environmentally responsible manner. We pledge to minimize our environmental impact by complying with all applicable legal and regulatory requirements, conserving natural resources, reducing emissions and waste, and promoting sustainable practices across our value chain. Through continuous improvement, stakeholder engagement, and adherence to recognized environmental standards, we aim to protect the environment, support climate resilience, and contribute to a more sustainable textile industry. This policy reflects our dedication to responsible growth and is integral to our business strategy and day-to-day operations.",
+      "scope": "This Environmental Policy applies to below given operational areas of First Quality Knitts, a division of Nectar Crafts, including fabric processing, garment manufacturing, packing, dispatch, utility operations, waste management, and chemical handling. It extends to all employees, contract workers, sub-contractors, and relevant stakeholders involved in our operations."
+    },
+    "focusAreas": [
+      "Energy Efficiency & Emission Reduction",
+      "Water Conservation & Management",
+      "Sustainable Materials & Chemical Management",
+      "Air Emission Control",
+      "Waste Reduction & Circular Practices",
+      "Product Use Sustainability",
+      "Product End-of-Life Stewardship",
+      "Customer Health & Safety",
+      "Ecosystem & Biodiversity Consideration",
+      "Innovation for Sustainability",
+      "Environmental Engagement & Advocacy"
+    ],
+    "qualitative": {
+      "Energy Efficiency & Emission Reduction": [
+        "Adopting energy-efficient machinery and optimizing production processes to reduce greenhouse gas emissions and lower our overall carbon footprint.",
+        "To implement energy-saving technologies such as LED lighting, energy-efficient sewing and pressing machines, and high-efficiency motor. Conduct regular energy monitoring to optimize usage across all garment production units.",
+        "To involve all employees in energy conservation by promoting behavioral change, shutting down idle equipment, and encouraging use of energy-efficient practices."
+      ],
+      "Water Conservation & Management": [
+        "Implementing water-saving measures across production, promoting reuse and recycling of water, and ensuring responsible treatment of wastewater.",
+        "Optimize water recycling and reuse to reduce freshwater intake and implement advanced water treatment technologies to enhance sustainability."
+      ],
+      "Sustainable Materials & Chemical Management": [
+        "Prioritizing the use of certified sustainable fabrics and ensuring the safe handling, storage, and disposal of chemicals to minimize environmental and human health risks.",
+        "To prioritize the use of organic, recycled, and low-impact materials in garment manufacturing.",
+        "To strengthen responsible sourcing from suppliers certified under GOTS, GRS, and OCS.",
+        "To regularly assess supplier practices for environmental and ethical compliance.",
+        "To avoid hazardous substances and adhere to OEKO-TEX® Standard 100 or equivalent product safety standards."
+      ],
+      "Air Emission Control": [
+        "Maintaining air quality by controlling emissions from ironing, finishing, and other production processes through appropriate ventilation and filtration systems.",
+        "Reduce air emissions by upgrading filtration, emission control systems and hence promote cleaner production methods to minimize atmospheric pollution."
+      ],
+      "Waste Reduction & Circular Practices": [
+        "Reducing production waste, encouraging reuse of fabric offcuts, and promoting recycling practices throughout the value chain.",
+        "Minimize waste generation through process efficiency improvements and strength the recycling and material recovery process to support circular economy goals.",
+        "To engage 100% of employees in sorting and recycling programs to support a circular economy."
+      ],
+      "Product Use Sustainability": [
+        "Designing garments that are durable, resource-efficient, and have a lower environmental impact throughout their lifecycle.",
+        "Enhance durability and recyclability of products to minimize waste and hence reduce the environmental impact of product.",
+        "To develop long-lasting, recyclable garments using low-impact materials, to maintain the goal of elimination of 100% of harmful chemicals in products."
+      ],
+      "Product End-of-Life Stewardship": [
+        "Supporting initiatives that encourage garment recycling, reuse, and responsible disposal practices post-consumer use.",
+        "Establish product take-back and recycling initiatives for responsible disposal.",
+        "Collaborate with customers to ensure sustainable product end-of-life management."
+      ],
+      "Customer Health & Safety": [
+        "Ensuring all products are free from harmful substances, meet applicable safety standards, and support safer use by end consumers.",
+        "Ensure 100% compliance with all product safety and environmental regulations through regular product testing.",
+        "Maintain zero customer complaints related to product safety.",
+        "Maintain zero product-related environmental incidents annually."
+      ],
+      "Ecosystem & Biodiversity Consideration": [
+        "Operating in a manner that minimizes disruption to local ecosystems and promotes biodiversity through responsible resource use and waste disposal.",
+        "Minimize land-use impact by implementing eco-friendly site management and supporting afforestation and biodiversity conservation projects."
+      ],
+      "Innovation for Sustainability": [
+        "Investing in innovative, eco-friendly technologies and process improvements to continually enhance our environmental performance and product sustainability.",
+        "Invest in R&D for developing eco-friendly products, processes and hence develop sustainable alternatives."
+      ],
+      "Environmental Engagement & Advocacy": [
+        "Promoting environmental awareness and best practices within the industry and local communities, supporting partnerships, education initiatives, and advocacy efforts that contribute to a more sustainable textile sector.",
+        "Train all employees on sustainability and environmental regulations annually."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency & Emission Reduction",
+        "targets": [
+          {
+            "target": "To reduce GHG emissions by 30%",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "To reduce dependency on non-renewable energy by increasing the share of green electricity, aiming to meet 50% of our total energy needs from renewable sources",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation & Management",
+        "targets": [
+          {
+            "target": "To reduce water usage by 20% across operations",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "Maintain water recycling rate to 75% of total water consumption",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "Maintain 100% compliance with wastewater discharge regulations annually",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials & Chemical Management",
+        "targets": [
+          {
+            "target": "To ensure 100% of sourced materials comply with GOTS, OCS, or RCS standards",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "To ensure 100% compliance regulatory standards for safe chemical handling and disposal",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "To avoid hazardous substances and adhere to OEKO-TEX® Standard 100 or equivalent product safety standards",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Air Emission Control",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in particulate emissions",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "Ensure 95% efficiency in air pollution control devices across all facilities by regular device inspections",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Waste Reduction & Circular Practices",
+        "targets": [
+          {
+            "target": "Reduce industrial waste generation by 5% by minimizing production waste and reusing cutting scraps and packaging materials",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "Achieve a 40% waste recycling rate across operations",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "To engage 100% of employees in sorting and recycling programs to support a circular economy",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "To reduce landfill waste by 30% by adopting the 3R (Reduce, Reuse, Recycle) strategy, in compliance with GOTS and GRS",
+            "baseline": "2022",
+            "deadline": "by 2027"
+          }
+        ]
+      },
+      {
+        "area": "Product Use Sustainability",
+        "targets": [
+          {
+            "target": "To develop long-lasting, recyclable garments using low-impact materials, to maintain the goal of elimination of 100% of harmful chemicals in products",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Reduce the carbon footprint per garment produced by 3%",
+            "baseline": "2022",
+            "deadline": "by the year 2027"
+          },
+          {
+            "target": "Increase the share of sustainably sourced materials in products to 50%",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life Stewardship",
+        "targets": [
+          {
+            "target": "Launch a product take-back pilot project to evaluate garment end-of-life behavior and facilitate recycling and reuse pathways",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "Aim to recover 20% of garments post-use, enabling circular use of materials",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with all product safety and environmental regulations through regular product testing",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "To ensure that 100% of products meet OEKO-TEX Standard 100 or equivalent safety certifications",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "Maintain zero customer complaints related to product safety",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero product-related environmental incidents annually",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Ecosystem & Biodiversity Consideration",
+        "targets": [
+          {
+            "target": "Increase green cover to 15% through CSR activities",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          },
+          {
+            "target": "Invest in 2 biodiversity conservation projects",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Innovation for Sustainability",
+        "targets": [
+          {
+            "target": "Allocate 5% of annual R&D budget to green technology development",
+            "baseline": "2022",
+            "deadline": "till year 2027"
+          },
+          {
+            "target": "Reduce energy-intensive production steps by 30%",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Engagement & Advocacy",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with global and local environmental regulations through environmental audits",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Train all employees on sustainability and environmental regulations annually",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Participate in 2 industry sustainability initiatives",
+            "baseline": "2022",
+            "deadline": "by year 2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      14,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Integrate sustainability into corporate strategy, allocate resources, and review environmental performance."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Develop action plans, conduct audits, and implement training programs to meet environmental goals."
+      },
+      {
+        "role": "Operations & Production Teams",
+        "duty": "Optimize energy use, minimize waste, and ensure compliance with air and water quality standards."
+      },
+      {
+        "role": "Supply Chain & Procurement Teams",
+        "duty": "Source sustainable materials, phase out hazardous chemicals, and promote recycling initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental best practices, participate in sustainability efforts, and report concerns or improvement ideas."
+      },
+      {
+        "role": "R&D & Innovation Teams",
+        "duty": "Develop eco-friendly products, enhance recyclability, and invest in green technologies."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Ensure regulatory compliance, conduct risk assessments, and engage in industry sustainability initiatives."
+      }
+    ],
+    "monitoring": "First Quality Knits is committed to maintaining transparency and accountability in its environmental performance through a structured monitoring and reporting framework. Key environmental data, including energy usage, greenhouse gas emissions, water consumption, chemical use, and waste generation, will be systematically tracked, recorded, and evaluated. Regular internal assessments and audits will be conducted to ensure compliance with applicable environmental regulations and company sustainability objectives. Performance will be reviewed against established Key Performance Indicators (KPIs), and outcomes will be reported to senior management and relevant stakeholders.",
+    "reviewMechanism": "This Environmental Policy will be reviewed annually by the Environmental Manager to ensure its relevance, effectiveness, and alignment with evolving sustainability goals, legal requirements, and industry best practices. Feedback from internal audits, employee input, and stakeholder engagement will be considered in each review cycle. Necessary revisions will be implemented to strengthen our environmental commitments and improve overall performance. All updates or significant changes will be clearly communicated across all levels of the organization to ensure continued awareness, ownership, and compliance."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/FQK/1) Environmental Policy.pdf",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/FQK/1) Environmental Policy.pdf"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 18,
+  "parsedAt": "2026-09-11T08:18:55.948Z"
+}

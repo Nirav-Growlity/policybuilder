@@ -1,0 +1,255 @@
+{
+  "id": "sustainable-procurement-tagoor",
+  "name": "Tagoor",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 5. Responsible and Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Tagoor Laboratories Pvt. Ltd.",
+      "industry": "",
+      "site": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India.",
+      "sites": [
+        {
+          "location": "Tagoor Laboratories Pvt Ltd",
+          "address": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India.",
+          "primaryFunction": "Pharmaceutical and chemical manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "This Responsible and Sustainable Procurement Policy (“Policy”) is developed and implemented by Tagoor Laboratories Pvt. Ltd. (“the Company”) to ensure responsible sourcing practices and to manage environmental, social, and ethical risks arising from its procurement activities.\n\nThe Company integrates responsible and sustainable procurement principles into its daily operations, purchasing decisions, and stakeholder interactions. This Policy defines the Company’s procurement objectives, key focus areas, performance targets, and mechanisms for monitoring, evaluation, and continuous improvement.\n\nThe Company adopts appropriate processes, controls, and best practices to promote ethical sourcing, supplier accountability, and sustainability across its supply chain, and fosters a culture of responsibility and continuous improvement at all levels of the organization.",
+      "declaration": "The Company adopts a structured approach to responsible and sustainable procurement based on the following principles:\n\nPrevent: Environmental, social, and ethical risks within the supply chain are identified, assessed, and addressed at the sourcing and supplier selection stages through appropriate due diligence and evaluation processes.\n\nComply: The Company complies with all applicable procurement laws, regulations, and statutory requirements, and ensures that suppliers adhere to relevant standards and expectations.\n\nImprove: The Company promotes continuous improvement in procurement practices by monitoring supplier performance, encouraging responsible sourcing, and implementing corrective actions where required.\n\nTo integrate environmental, social, and governance (ESG) considerations into all procurement decisions and supplier selection processes.\n\nTo ensure that suppliers operate in compliance with applicable environmental, labour, and regulatory requirements while maintaining responsible business practices.\n\nTo minimize environmental impacts across the supply chain through responsible sourcing, efficient resource use, and pollution prevention.\n\nTo promote fair, safe, and ethical working conditions by encouraging suppliers to respect human rights and labour standards.\n\nTo strengthen transparency, accountability, and integrity in all procurement and supplier-related activities.\n\nTo prevent unethical practices such as bribery, corruption, fraud, and conflicts of interest in the supply chain.\n\nTo encourage continuous improvement in supplier sustainability performance through engagement, monitoring, and corrective actions where required.\n\nTo support long-term sustainable procurement practices that contribute to business resilience and stakeholder trust.",
+      "scope": "This Responsible and Sustainable Procurement Policy (“Policy”) applies to all procurement-related operations, activities, and functions of Tagoor Laboratories Pvt. Ltd. (“the Company”). It is applicable to all employees at all levels, as well as contractors, suppliers, service providers, business partners, and any other individuals or entities working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Supplier Environmental Management Practices",
+      "Supplier Social Responsibility & Human Rights",
+      "Supplier Governance Practices",
+      "General Procurement Targets"
+    ],
+    "qualitative": {
+      "Supplier Environmental Management Practices": [
+        "Promote full compliance with applicable environmental laws and regulations among all suppliers through regular communication and monitoring.",
+        "Encourage suppliers to adopt renewable and green energy practices as part of their operations.",
+        "Strengthen supplier capabilities in sustainable waste management, including segregation, safe handling, and regulatory compliance.",
+        "Support suppliers in improving energy efficiency through awareness, best practices, and performance monitoring.",
+        "Promote responsible water management practices, including conservation and efficient usage across supplier operations.",
+        "Engage suppliers in initiatives aimed at reducing Scope 3 greenhouse gas emissions through sustainable sourcing and operational improvements."
+      ],
+      "Supplier Social Responsibility & Human Rights": [
+        "Uphold a zero-tolerance approach toward child labour, forced labour, and involuntary labour across the supplier base.",
+        "Encourage suppliers to adopt and implement policies on non-discrimination and prevention of harassment.",
+        "Strengthen supplier awareness on labour rights, human rights standards, and ethical workplace practices through training and engagement.",
+        "Promote the establishment of effective grievance redressal mechanisms for workers across supplier facilities.",
+        "Conduct periodic social compliance assessments to ensure adherence to labour and human rights standards.",
+        "Ensure continuous alignment of suppliers with applicable labour laws and internationally recognized human rights principles."
+      ],
+      "Supplier Governance Practices": [
+        "Ensure suppliers adhere to business ethics, integrity standards, and anti-bribery requirements in all business dealings.",
+        "Maintain a culture of zero tolerance toward bribery, corruption, fraud, and unethical practices within the supply chain.",
+        "Encourage suppliers to build awareness on governance topics, including anti-corruption, anti-bribery, and information security.",
+        "Strengthen monitoring and evaluation mechanisms to assess supplier compliance with governance and ethical standards."
+      ],
+      "General Procurement Targets": []
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Management Practices",
+        "targets": [
+          {
+            "target": "Ensure that 100% of suppliers comply with all applicable environmental laws and regulations established by relevant government authorities.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 10% increase in the proportion of suppliers utilizing renewable or green energy sources.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that at least 25% of suppliers implement proper waste management practices, including segregation, safe disposal, and regulatory compliance.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 10% improvement in energy efficiency among key suppliers, measured through reduced energy consumption per unit of production or output.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 10% improvement in water use efficiency among key suppliers, including reduction in water consumption and adoption of water conservation practices.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve an 8% reduction in Scope 3 greenhouse gas emissions associated with supplier activities, through supplier engagement, efficiency improvements, and sustainable sourcing practices.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility & Human Rights",
+        "targets": [
+          {
+            "target": "Maintain zero (0) confirmed cases of child labour, forced labour, or involuntary labour across suppliers",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 15% increase in the number of suppliers adopting and implementing policies on non-discrimination and prevention of harassment.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 20% increase in the number of suppliers trained on labour rights, human rights standards, and ethical workplace practices.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that at least 80% of key suppliers establish and maintain an effective worker grievance redressal mechanism.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct periodic social compliance assessments covering at least 90% of critical suppliers to monitor adherence to labour and human rights requirements.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% compliance of suppliers with applicable labour laws and human rights standards",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Governance Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% suppliers commit to and comply with Business Ethics Policy and anti-bribery requirements",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero (0) confirmed incidents of bribery, corruption, fraud, or unethical practices across suppliers",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that suppliers conduct at least two (2) awareness or training programs annually on governance topics such as anti-corruption, anti-bribery, and information security to educate their employees.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that periodic compliance assessments are conducted for at least 90% of key suppliers to evaluate adherence to business ethics, anti-bribery, and governance requirements",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "General Procurement Targets",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers comply with the Supplier Code of Conduct.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% of suppliers complete an ESG self-assessment.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure that at least 80% of key suppliers undergo ESG on-site audits conducted by Tagoor Laboratories Pvt. Ltd.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure that 100% of suppliers participate in the Supplier Worker Satisfaction Survey conducted by the Company.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Integrate ESG criteria into 100% of supplier selection and onboarding processes.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of identified supplier non-compliances are addressed through documented corrective action plans within defined timelines.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase engagement with small and medium-sized suppliers by at least 20% through capacity-building, communication, or support initiatives.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide ESG-related training to at least 70% of Tier-1 suppliers.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management (Managing Director)",
+        "duty": "Provide strategic oversight of responsible and sustainable procurement; ensure alignment with business objectives; allocate financial, technical, and human resources; promote ethical sourcing culture; oversee ESG risk management across the supply chain; engage with stakeholders and regulatory bodies"
+      },
+      {
+        "role": "Procurement & Compliance Manager (Procurement Manager)",
+        "duty": "Implement and monitor Sustainable Procurement Policy; ensure supplier compliance with ESG and ethical standards; conduct supplier screening and due diligence; monitor supplier performance and risk indicators; promote supplier awareness on sustainability expectations"
+      },
+      {
+        "role": "Sustainability & Compliance Manager (Compliance Manager)",
+        "duty": "Conduct ESG assessments and supplier audits; identify and evaluate supply chain risks; monitor corrective and preventive actions; maintain sustainability data and reporting systems; drive continuous improvement in procurement practices"
+      },
+      {
+        "role": "Operations & Facilities Management (Plant Head)",
+        "duty": "Ensure procurement activities align with sustainability principles; implement procurement procedures and supplier evaluation processes; maintain documentation of supplier approvals and transactions; identify and escalate risks; support audits and sustainability initiatives"
+      },
+      {
+        "role": "Employee Representatives (Worker Representative)",
+        "duty": "Promote awareness of sustainable procurement practices; facilitate communication between employees and management; support training participation; encourage reporting of supplier-related concerns; promote responsible practices"
+      },
+      {
+        "role": "Employees (All Staff)",
+        "duty": "Comply with procurement policies and regulations; support ethical and sustainable sourcing decisions; disclose conflicts of interest; report supplier risks or non-compliance; participate in training and awareness programs"
+      }
+    ],
+    "monitoring": "At Tagoor Laboratories Pvt. Ltd., structured monitoring and reporting systems are established to track sustainable procurement performance and ensure continuous improvement across the supply chain.\n\nMonitoring: Key procurement-related parameters such as supplier ESG compliance, assessments, audit findings, and training coverage are monitored against defined KPIs on a periodic basis. Performance data is compiled into structured reports for management review.\n\nInternal Audits: Supplier audits and sustainable procurement assessments are conducted periodically to evaluate compliance with ESG requirements and internal standards. Audit findings are reported to management and corrective actions are tracked to closure.\n\nManagement Review: Senior management reviews sustainable procurement performance, audit outcomes, supplier risk assessments, and progress against targets at defined intervals. Outputs from the review are used for improving procurement practices and policy updates.\n\nNon-Compliance Management: Supplier non-compliances related to environmental, social, and governance aspects are recorded, tracked, and addressed through defined corrective action mechanisms.\n\nDocumentation & Data Management: Accurate and confidential records of supplier assessments, audits, and compliance documentation are maintained to ensure transparency, traceability, and accountability.\n\nReporting & Disclosure: Sustainable procurement performance is communicated through internal reporting systems and external disclosures, where applicable.",
+    "reviewMechanism": "This Responsible and Sustainable Procurement Policy is subject to periodic review by the Procurement Manager at least once every two years, or earlier if required due to regulatory changes, operational requirements, or stakeholder feedback to ensure its continued relevance, effectiveness, and alignment with evolving legal requirements, industry standards, and organizational sustainability objectives.\n\nThe review encompasses an assessment of supplier performance, compliance status, audit findings, and inputs from relevant stakeholders. Based on this evaluation, necessary updates are incorporated to strengthen the procurement framework and ensure alignment with current regulations, responsible sourcing practices, and the Company’s commitment to sustainable supply chain management."
+  },
+  "sourcePath": "Policies - Kenal/Tagoor/5. Responsible and Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Tagoor/5. Responsible and Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 15863,
+  "parsedAt": "2026-09-11T07:30:19.156Z"
+}

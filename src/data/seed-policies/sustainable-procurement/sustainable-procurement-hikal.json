@@ -1,0 +1,304 @@
+{
+  "id": "sustainable-procurement-hikal",
+  "name": "Hikal",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Responsible Sourcing Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Hikal Ltd.",
+      "industry": "",
+      "site": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India.",
+      "sites": [
+        {
+          "location": "Headquarter",
+          "address": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India.",
+          "primaryFunction": "Headquarter"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "T-21, MIDC. Ind. Area, Taloja - 410 208, Dist Raigad, Maharashtra, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "A-18, MIDC Ind. Area, Mahad - 402 309, Dist. Raigad, Maharashtra, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "629 / 630-B, GIDC Estate, Panoli -394 116, Dist. Bharuch, Gujarat, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "JIGANI UNIT I",
+          "address": "82/A, KIADB lnd. Area, Jigani, Anekal Taluk, Bangalore – 560 105, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "JIGANI UNIT II",
+          "address": "28, KIADB lndl. Area, Jigani, Anekal Taluk, Bangalore – 560 105, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Research and Technology (R&T) Centres",
+          "address": "Plot No. 3A & 3B, 2nd Phase, International Biotech Park, Hinjewadi,Pune - 411 057, India.",
+          "primaryFunction": "Research and Technology (R&T) Centre"
+        },
+        {
+          "location": "Research and Technology (R&T) Centres",
+          "address": "3rd floor, Grey Rock, No.10, 24th Main, J.P. Nagar, 2nd Phase, Bangalore - 560 078, India.",
+          "primaryFunction": "Research and Technology (R&T) Centre"
+        },
+        {
+          "location": "Office",
+          "address": "Kyodo Bldg. 503, 1-18 Kanda Sudacho,Chiyoda-ku, Tokyo 101-0041, Japan.",
+          "primaryFunction": "Office"
+        },
+        {
+          "location": "Office",
+          "address": "Please mention office address of USA",
+          "primaryFunction": "Office"
+        },
+        {
+          "location": "Office",
+          "address": "Please mention office address of EUROPE",
+          "primaryFunction": "Office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "The purpose of this Policy is to reaffirm and provide clear direction to Hikal Ltd.’s commitment to establishing and maintaining sustainable, ethical, and responsible business practices across its value chain. Through active collaboration with suppliers, vendors, contractors, and business partners, the Company seeks to integrate sustainability, integrity, and compliance into all purchasing and sourcing activities.",
+      "declaration": "Hikal Ltd. is committed to reducing the environmental impact of its supply chain by integrating sustainable practices in procurement, manufacturing, transportation, and disposal processes, in collaboration with both domestic and international suppliers.",
+      "scope": "Hikal Ltd. is committed to reducing the environmental impact of its supply chain by integrating sustainable practices in procurement, manufacturing, transportation, and disposal processes, in collaboration with both domestic and international suppliers. This Responsible Purchasing Policy applies to all employees, stakeholders, contractors, partners, customers, contract workers, and individuals representing the Hikal Limited Group, across all manufacturing units, operational facilities, offices, warehouses, and other premises owned, leased, or managed by the Group."
+    },
+    "focusAreas": [
+      "Ethical business conduct, including zero tolerance for bribery, corruption, fraud, and conflicts of interest.",
+      "Respect for human rights and fair labor practices, including occupational health and safety, non-discrimination, and freedom of association.",
+      "Environmental protection, including responsible resource use, waste management, emissions control, and pollution prevention.",
+      "Management of social and environmental risks within the supply chain through supplier due diligence and transparency.",
+      "Product quality, patient safety, and supply continuity to meet regulatory and customer requirements.",
+      "Continuous improvement through supplier engagement, performance monitoring, and corrective action implementation."
+    ],
+    "qualitative": {
+      "Goals for Procurement": [
+        "We aim to collaborate with a recognized external sustainability rating agency to assess supplier sustainability performance and benchmark our supply chain against best-in-class practices, with assessment outcomes integrated into supplier performance reviews and improvement actions.",
+        "We aim to integrate sustainability considerations into all sourcing and procurement decisions by systematically evaluating environmental, social, and ethical risks across the supplier lifecycle.",
+        "We commit to ensuring that all suppliers formally acknowledge and comply with the Supplier Code of Conduct, covering ethical conduct, environmental responsibility, labor practices, and human rights.",
+        "We strive to encourage and influence suppliers to adopt responsible and sustainable practices, including improved energy efficiency, responsible resource use, and fair and ethical labor standards.",
+        "We will promote and implement digital and paperless procurement processes to minimize paper consumption and reduce the environmental impact of procurement operations.",
+        "We aim to build long-term, collaborative partnerships with suppliers to jointly develop sustainable solutions and facilitate the sharing of ESG best practices.",
+        "We commit to conducting periodic supplier self-assessments and risk-based audits of key suppliers to monitor ESG compliance, address identified gaps, and drive continuous improvement."
+      ],
+      "Environmental issues associated with procurement": [
+        "We aim to prioritize suppliers holding recognized environmental certifications, such as ISO 14001, EMAS, or equivalent standards, as a key criterion within our supplier pre-qualification and onboarding processes.",
+        "We aim to promote local and regional sourcing wherever feasible as a climate-mitigation measure to reduce transportation-related greenhouse gas (GHG) emissions across the supply chain.",
+        "We commit to integrating circular economy principles across our supplier base, encouraging practices related to waste reduction, recycling, and responsible material reuse.",
+        "We strive to encourage and support suppliers in transitioning toward renewable and clean energy sources for their operations and logistics activities.",
+        "We aim to source from suppliers that adopt environmentally responsible packaging solutions, including eco-friendly, recyclable, and biodegradable materials, wherever practicable.",
+        "We aim to strengthen internal procurement capabilities by providing periodic training and awareness programs to procurement personnel on environmental risks, impacts, and sustainability considerations associated with procurement and sourcing activities."
+      ],
+      "Social Issues associated with procurement": [
+        "We aim to integrate labor, human rights, and occupational health & safety certifications (e.g., ISO 45001, SA 8000, or equivalent social compliance standards) into supplier pre-qualification and risk screening processes to ensure responsible labor practices across our supply chain.",
+        "We aim to prioritize local and regional suppliers wherever feasible to support community development, enhance livelihoods, and reduce supply chain-related environmental impacts.",
+        "We commit to promoting supplier diversity through structured inclusion initiatives that encourage engagement with underrepresented, minority-owned, and small businesses.",
+        "We aim to prevent child labor, forced labor, and human trafficking across all tiers of the supply chain through supplier declarations, contractual commitments, and periodic monitoring.",
+        "We aim to strengthen internal procurement capabilities by providing periodic training and awareness programs to procurement personnel on labor, human rights, and social sustainability risks associated with sourcing activities."
+      ],
+      "Governance issues associated with Procurement": [
+        "We aim to ensure that all suppliers adhere to high standards of business ethics, anti-corruption, anti-bribery, and regulatory compliance through contractual commitments and supplier onboarding requirements.",
+        "We commit to conducting risk-based due diligence and periodic audits to monitor supplier adherence to governance standards, including ethical conduct, transparency, and anti-fraud measures.",
+        "We commit to promoting awareness and capacity building for procurement personnel on governance risks, ethical sourcing practices, and anti-corruption measures through periodic training programs."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Goals for Procurement",
+        "targets": [
+          {
+            "target": "We aim to ensure that 100% of suppliers read, acknowledge, and formally agree to the Supplier Code of Conduct",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "We aim to assess at least 70% of suppliers annually on their environmental, social, and governance (ESG) performance",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "We aim to ensure that at least 60% of assessed suppliers are compliant with our ESG requirements",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We commit to integrating sustainability criteria into 100% of procurement decisions",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "We strive to ensure annual sustainability performance reporting for at least 50% of key suppliers",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Environmental issues associated with procurement",
+        "targets": [
+          {
+            "target": "We aim to train at least 80% of procurement personnel on environmental risks and impacts associated with procurement activities",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to achieve a 5% reduction in total supply chain greenhouse gas (GHG) emissions",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We plan to ensure that at least 15% of total procurement spend is sourced from suppliers holding ISO 14001, EMAS, or equivalent environmental certifications",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to collect and monitor energy consumption and greenhouse gas (GHG) emissions data from at least 70% of suppliers",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Social Issues associated with procurement",
+        "targets": [
+          {
+            "target": "We strive to increase procurement spend from suppliers holding recognized social and labor certifications by 10%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to increase local and regional sourcing by at least 10% to support regional economic development and improve community livelihoods",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We plan to train at least 80% of procurement personnel on labor standards, human rights risks, and responsible sourcing practices",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We commit to resolving 100% of substantiated supply chain–related grievances within defined timelines",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Governance issues associated with Procurement",
+        "targets": [
+          {
+            "target": "We aim to ensure that 100% of active suppliers are screened for ethical risks, including corruption, bribery, fraud, and conflicts of interest, and that business relationships are maintained only with suppliers not associated with substantiated ethical violations",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to conduct business only with suppliers and business partners that demonstrate compliance with applicable laws and ethical standards and are not associated with substantiated cases of corruption, fraud, bribery, or other serious ethical misconduct",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Management",
+        "duty": "Provides strategic direction and approves the Responsible Sourcing Policy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Allocates resources for implementation, supplier assessments, and improvement initiatives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Reviews overall performance and ensures alignment with ESG and business strategy."
+      },
+      {
+        "role": "Head of Supply Chain",
+        "duty": "Review Responsible Procurement Policy Periodically"
+      },
+      {
+        "role": "Head of Supply Chain",
+        "duty": "Holds overall accountability for policy execution across procurement activities."
+      },
+      {
+        "role": "Head of Supply Chain",
+        "duty": "Ensures sustainability criteria are embedded into supplier selection, contracts, and evaluations."
+      },
+      {
+        "role": "Head of Supply Chain",
+        "duty": "Oversees risk-based supplier segmentation and prioritization of high-risk suppliers."
+      },
+      {
+        "role": "Procurement Managers & Buyers",
+        "duty": "Apply sustainability requirements during tendering, negotiations, and purchasing decisions."
+      },
+      {
+        "role": "Procurement Managers & Buyers",
+        "duty": "Conduct supplier screening, collect documentation, and track corrective actions."
+      },
+      {
+        "role": "Procurement Managers & Buyers",
+        "duty": "Engage suppliers on improvement plans and monitor progress through regular reviews."
+      },
+      {
+        "role": "Quality Assurance (QA)",
+        "duty": "Ensures supplier practices align with GMP, quality standards, and regulatory obligations."
+      },
+      {
+        "role": "Quality Assurance (QA)",
+        "duty": "Participates in audits of critical suppliers and validates remediation activities."
+      },
+      {
+        "role": "Quality Assurance (QA)",
+        "duty": "Reviews supplier qualifications for materials impacting product quality or patient safety."
+      },
+      {
+        "role": "All Employees Involved in Procurement Activities",
+        "duty": "Understand and follow this policy in daily decisions."
+      },
+      {
+        "role": "All Employees Involved in Procurement Activities",
+        "duty": "Report suspected violations"
+      }
+    ],
+    "monitoring": "Implementation of this Responsible Purchasing Policy is monitored through periodic supplier assessments, audits, and performance reviews. Key ESG indicators, compliance status, and progress against targets are reported internally to management on a regular basis and reviewed to identify gaps, corrective actions, and continuous improvement opportunities across the supply chain.",
+    "reviewMechanism": "This Responsible Purchasing Policy is reviewed at annually by Supply chain Head to assess its continued relevance, effectiveness, and alignment with applicable laws, regulatory requirements, and evolving ESG expectations. In addition, ad hoc reviews are conducted whenever there are significant regulatory changes, material supply chain risks, business expansions, or identified non-compliances, ensuring the policy remains current and responsive to emerging risks and stakeholder expectations."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Hikal/4. Responsible Sourcing Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Hikal/4. Responsible Sourcing Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 13048,
+  "parsedAt": "2026-09-11T07:08:36.057Z"
+}

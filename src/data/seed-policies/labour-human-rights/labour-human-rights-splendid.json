@@ -1,0 +1,299 @@
+{
+  "id": "labour-human-rights-splendid",
+  "name": "Splendid",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2) Employee Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Splendid Industries Pvt. Ltd.",
+      "industry": "",
+      "site": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India.",
+      "sites": [
+        {
+          "location": "SPLENDID INDUSTRIES PVT.LTD.",
+          "address": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Splendid Industries Pvt. Ltd., we recognize that the foundation of a thriving and sustainable organization lies in the fair and dignified treatment of its workforce. This Employee Rights Policy outlines our firm commitment to protecting and promoting the fundamental rights of every employee, ensuring they are treated with respect, equity, and justice throughout their association with the company.\n\nWe are dedicated to upholding the highest standards of labor ethics and human rights across all levels of operation. This policy affirms our pledge to provide fair wages, maintain safe and healthy working conditions, and strictly prohibit all forms of forced or child labor. Every employee shall have the right to freedom of association and collective bargaining, and we are committed to creating an environment where open dialogue is encouraged and respected.\n\nSplendid Industries Pvt. Ltd. also ensures that all employees have access to transparent and effective grievance mechanisms without any fear of retaliation or discrimination. We aim to establish a workplace culture rooted in mutual trust, inclusivity, and continuous improvement, where employee rights are not only protected but actively promoted.",
+      "declaration": "At Splendid Industries Pvt. Ltd., employees are recognized as the foundation of our success, and we are committed to ensuring their fair and respectful treatment at all times. This policy ensures that all employees are aware of their rights and are protected against any form of discrimination, exploitation, or unfair treatment in the workplace. We align all labor practices with applicable laws and ethical standards, and promote fair wages, safe working conditions, equal opportunities, and the prohibition of forced or child labor. The company respects the right to collective bargaining and guarantees access to grievance mechanisms without fear of retaliation. These principles apply to all employees, and it is the responsibility of every manager to uphold and implement them consistently.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders."
+    },
+    "focusAreas": [
+      "Occupational Health and Safety",
+      "Mental Health and Well-being",
+      "Fair and Safe Working Conditions",
+      "Employee Engagement and Social Dialogue",
+      "Training, Development, and Career Growth",
+      "Elimination of Child and Forced Labor",
+      "Non-Discrimination and Anti-Harassment",
+      "Respect for Stakeholder Human Rights",
+      "Workforce Diversity and Inclusion"
+    ],
+    "qualitative": {
+      "Occupational Health and Safety": [
+        "Maintain safe workplaces by managing physical risks and preventing work-related injuries or illnesses.",
+        "Regularly enhance health and safety protocols to proactively address workplace risks and promote employee well-being."
+      ],
+      "Mental Health and Well-being": [
+        "Support emotional well-being through awareness, stress management, and access to confidential support.",
+        "Promote psychological safety by raising awareness, offering stress management tools, and ensuring confidential mental health support is accessible to all."
+      ],
+      "Fair and Safe Working Conditions": [
+        "Ensure lawful wages, working hours, and respectful treatment in a clean and secure environment.",
+        "Promote a workplace culture that prioritizes ethical practices, psychological safety, and employee satisfaction."
+      ],
+      "Employee Engagement and Social Dialogue": [
+        "Promote open communication, uphold collective bargaining rights, and involve employees in workplace decisions.",
+        "Foster open dialogue through structured communication channels and inclusive participation in workplace decision-making."
+      ],
+      "Training, Development, and Career Growth": [
+        "Provide learning opportunities and performance feedback to foster skill development and advancement.",
+        "Promote continuous learning through structured training, career planning, and periodic performance reviews."
+      ],
+      "Elimination of Child and Forced Labor": [
+        "Prohibit child labor, forced labor, and trafficking across operations and supply chains, with strict enforcement.",
+        "Enforce and maintain zero tolerance for child, bonded, or forced labor across all operations and suppliers."
+      ],
+      "Non-Discrimination and Anti-Harassment": [
+        "Ensure equal opportunity and a workplace free from bias, discrimination, or harassment of any kind.",
+        "Ensure an inclusive, respectful workplace free of bias, discrimination, and harassment."
+      ],
+      "Respect for Stakeholder Human Rights": [
+        "Protect the rights of communities, partners, and suppliers by conducting due diligence and ethical business practices.",
+        "Integrate human rights due diligence into business operations and key relationships to mitigate rights-related risks."
+      ],
+      "Workforce Diversity and Inclusion": [
+        "Foster a diverse, inclusive workplace that values different backgrounds, experiences, and perspectives.",
+        "Build an inclusive culture that encourages diverse perspectives and equal opportunity."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Occupational Health and Safety",
+        "targets": [
+          {
+            "target": "Maintain zero absenteeism due to work-related injuries.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% accessibility to health and safety information and emergency protocols for all employees.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "To increase safety inspections by 5% till FY 2029-30 to proactively identify risks.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Mental Health and Well-being",
+        "targets": [
+          {
+            "target": "Organize 2 mental health awareness campaigns per year.",
+            "baseline": "FY 2022–23",
+            "deadline": "per year"
+          }
+        ]
+      },
+      {
+        "area": "Fair and Safe Working Conditions",
+        "targets": [
+          {
+            "target": "Conduct employee satisfaction surveys annually on working conditions, aiming for 95% positive responses by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure implementation of a formal channel for 100% employees to discuss working conditions with management by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Engagement and Social Dialogue",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees have access to formal platforms to express concerns and feedback.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "To conduct annual labor-management meetings with documented minutes and action points.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Achieve 70% response rate in employee engagement activities by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Training, Development, and Career Growth",
+        "targets": [
+          {
+            "target": "Conduct annual performance reviews and ensure career development plans are in place for 100% of eligible employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Allocate 20% of the financial budget to employee development programs by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase internal promotions by 10% by FY 2029-30 by implementing structured career pathways and targeted upskilling programs.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Elimination of Child and Forced Labor",
+        "targets": [
+          {
+            "target": "Conduct background checks for 100% of new suppliers before onboarding regularly.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Train 100% procurement and recruitment staff on labor compliance policies annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain zero confirmed cases of child or forced labor.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Non-Discrimination and Anti-Harassment",
+        "targets": [
+          {
+            "target": "Maintain zero cases of harassment or discrimination.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Provide 100% of employees with annual anti-harassment and non-discrimination training.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Conduct workplace climate surveys on discrimination and harassment till FY 2029-30 through survey forms filled by 100% employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Respect for Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Conduct human rights risk assessments annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure that 100% of supplier contracts include and comply with human rights clauses by the FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train 100% of procurement teams on human rights policies annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain zero reported human rights violations across operations.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Workforce Diversity and Inclusion",
+        "targets": [
+          {
+            "target": "Increase female workforce participation by 10% by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Apply inclusive hiring guidelines in 100% of recruitment processes.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct annual diversity and inclusion training for all employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Promote a respectful workplace and provide necessary support."
+      },
+      {
+        "role": "HR Department",
+        "duty": "Communicate the policy, manage employee records, and address grievances."
+      },
+      {
+        "role": "Supervisors",
+        "duty": "Ensure fair practices and support employee well-being."
+      },
+      {
+        "role": "Employees",
+        "duty": "Respect others' rights, follow the policy, and report violations."
+      }
+    ],
+    "monitoring": "The company is committed to upholding employee rights through regular monitoring, transparent reporting, and responsive action. Confidential channels are provided for employees to report issues such as discrimination, harassment, or unsafe conditions without fear of retaliation. All valid complaints are addressed fairly and within defined timeframes. Key Performance Indicators (KPIs) are maintained to track complaint resolution rates, training coverage, and policy effectiveness. Annual summaries and performance data are shared to promote transparency, with findings used to strengthen policies, training, and workplace practices.",
+    "reviewMechanism": "The Employee Rights Policy of Splendid Industries Pvt. Ltd. will be reviewed annually by the HR Manager to ensure it remains effective, legally compliant, and aligned with best practices and stakeholder expectations. The review will evaluate the adequacy of current commitments, address implementation gaps, and consider feedback from employees, compliance teams, and external stakeholders. Significant changes in labor laws, human rights norms, or internal assessments may prompt an earlier review. All updates will be approved by senior management and clearly communicated across the organization to uphold transparency and accountability."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Splendid/2) Employee Rights Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Splendid/2) Employee Rights Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 10974,
+  "parsedAt": "2026-09-11T07:41:42.534Z"
+}

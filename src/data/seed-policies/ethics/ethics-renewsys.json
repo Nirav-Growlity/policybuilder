@@ -1,0 +1,206 @@
+{
+  "id": "ethics-renewsys",
+  "name": "Renewsys",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Corporate Governance and Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "RenewSys India Pvt. Ltd.",
+      "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "site": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "sites": [
+        {
+          "location": "RenewSys India Pvt. Ltd.",
+          "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Additional Patalganga MIDC Industrial Area",
+          "address": "Plot No. E-141, Additional Patalganga MIDC Industrial Area, Village - Karade Khurd, Taluka Panvel, District Raigad, Maharashtra - 410 206, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Srinagar Village",
+          "address": "Plot No. 6, Survey # 114/P, Srinagar Village, Maheshwaram Mandal, Rangareddy Dist. - 501 359,Telangana, India.",
+          "primaryFunction": ""
+        }
+      ]
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "We at RenewSys India Pvt. Ltd. are committed to conduct business in accordance with applicable laws, rules, and regulations, while upholding the highest standards of ethics and integrity. This Corporate Governance and Ethics Policy establishes the principles that guide our operations and foster a culture of accountability and transparency. Our commitment to ethical practices extends to preventing corruption, fraud, money laundering, conflicts of interest, and anti-competitive practices, while safeguarding information security across all our operations.\n\nEvery employee is expected to adhere to this policy and integrate ethical principles into their daily activities and decision-making processes. At RenewSys, we believe that strong governance is essential for long-term success and that our business practices should reflect integrity, fairness, and respect for all stakeholders.",
+      "declaration": "Our commitment extends to promoting ethical conduct, enhancing transparency, and ensuring compliance with all applicable laws and regulations. We aim for continuous improvement in our governance practices through employee training, clear communication, and robust reporting mechanisms. By fostering a culture of integrity and accountability, we will strengthen stakeholder trust and drive sustainable business practices. Our baseline for evaluating and tracking progress in corporate governance and ethics initiatives is set for 2022-23.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Anti-corruption",
+      "Fraud prevention",
+      "Conflicts of interest",
+      "Money laundering prevention",
+      "Competition law and anti-competitive practices",
+      "Information security and cybersecurity",
+      "Transparency and accountability",
+      "Employee training and awareness",
+      "Internal controls and risk management",
+      "Stakeholder engagement"
+    ],
+    "qualitative": {
+      "Anti-corruption": [
+        "To promote an organizational culture that prioritizes ethical behavior by integrating anti-corruption values into onboarding processes, employee handbooks and strictly implementing them in all the company’s transactions.",
+        "Conduct third-party audits of business practices related to anti-corruption measures annually, maintaining a compliance rate of 100% by 2029-30."
+      ],
+      "Conflicts of interest": [
+        "Foster a culture of transparency by encouraging open communication about potential conflicts of interest without fear of retaliation."
+      ],
+      "Fraud prevention": [
+        "Maintain enforcement of stringent internal controls like Segregation of duties, regular reconciliation and access controls  to minimize opportunities for fraud."
+      ],
+      "Money laundering prevention": [
+        "Introduce mandatory anti-money laundering (AML) training for all employees handling financial transactions."
+      ],
+      "Competition law and anti-competitive practices": [
+        "Establish a legal review process for all significant mergers, acquisitions, and joint ventures to ensure compliance with competition laws."
+      ],
+      "Information security and cybersecurity": [
+        "To regularly update incident response plans to ensure timely action and recovery in the event of a data breach or cyber security incident.",
+        "Perform security audits on bi-annual basis, ensuring all findings are documented and addressed within 30 days."
+      ],
+      "Continuous improvement": [
+        "RenewSys India Pvt. Ltd. is committed to maintaining the highest standards of corporate governance and ethical conduct in all its operations. Our Corporate Governance and Ethics Policy is designed to align with evolving business practices, regulatory requirements, and societal expectations. The Compliance Officer will conduct an annual review of the policy, incorporating insights from employees, stakeholders, and industry experts, alongside periodic audits and benchmarking against best industry practices. This ensures the policy remains dynamic and responsive to emerging challenges. By fostering a culture of integrity, transparency, and accountability, we empower our employees and leadership to uphold ethical principles in every aspect of their work, ensuring trust and excellence across our organization."
+      ],
+      "Policy violations": [
+        "RenewSys India Pvt. Ltd. is committed to addressing policy violations with utmost seriousness to uphold the highest standards of ethical conduct. Corrective actions may include verbal or written warnings for minor infractions, probation or suspension for repeated offenses, and immediate termination for serious violations such as fraud, bribery, or harassment. Furthermore, legal proceedings may be initiated in cases of unlawful activities. These measures reinforce accountability and act as a strong deterrent against unethical practices, ensuring trust and integrity throughout the organization and among stakeholders."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-corruption",
+        "targets": [
+          {
+            "target": "Maitain zero substantiated corruption complaints, validated through external audits.",
+            "baseline": "2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct third-party audits of business practices related to anti-corruption measures annually, maintaining a compliance rate of 100% by 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Conflicts of interest",
+        "targets": [
+          {
+            "target": "To maintain 100% employee awareness rate of the conflict of interest reporting process as measured through surveys by year 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          },
+          {
+            "target": "To regularly resolve 100% of declared conflicts of interest within 30 days of identification by year 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fraud prevention",
+        "targets": [
+          {
+            "target": "Ensure that 100% of employees complete annual training sessions on fraud detection and prevention by 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Money laundering prevention",
+        "targets": [
+          {
+            "target": "Implement Know Your Customer (KYC) protocols for 100% of new clients and suppliers.",
+            "baseline": "2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Implement monitoring systems to review 100% of all high-volume transactions by 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Competition law and anti-competitive practices",
+        "targets": [
+          {
+            "target": "Maintain anti-competitive behavior-related violations to zero by 2029-30 through preventive training.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Information security and cybersecurity",
+        "targets": [
+          {
+            "target": "Ensure that 100% employees are utilizing multi-factor authentication for all critical systems by 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          },
+          {
+            "target": "Ensure that 100% of employees attend cybersecurity awareness training annually.",
+            "baseline": "2022-23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Perform security audits on bi-annual basis, ensuring all findings are documented and addressed within 30 days.",
+            "baseline": "2022-23",
+            "deadline": "Bi-annual; findings addressed within 30 days"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      16,
+      8,
+      9
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "The Compliance Officer will be responsible for compiling and preparing the annual corporate governance and ethics performance report."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "The Compliance Officer for anti-corruption and fraud metrics"
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "The Internal Audit Team for audit findings and compliance data"
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "The Human Resources Department for reporting on employee training and awareness initiatives"
+      },
+      {
+        "role": "Risk Management Committee",
+        "duty": "The Risk Management Committee for updates on risk mitigation efforts and internal controls"
+      }
+    ],
+    "monitoring": "To ensure transparency and accountability in our governance initiatives, an annual performance report will be provided detailing our progress and adherence to this policy. This report will include key performance indicators (KPIs) aligned with both the quantitative and qualitative targets established, offering a comprehensive evaluation of our successes, challenges, and opportunities for improvement.\n\nOur reporting will encompass various critical areas, including:\n\nProgress on anti-corruption and fraud prevention initiatives\n\nCompliance with conflict of interest and transparency standards\n\nEffectiveness of internal controls and risk management measures\n\nEmployee training and awareness programs related to ethics and governance\n\nEngagement with external stakeholders regarding governance practices\n\nAdditionally, the results of our annual employee surveys, internal audit findings, and compliance assessments will be published by the Compliance and Audit Department and made accessible to all stakeholders, including employees, shareholders, suppliers, and external partners. This ensures that all parties remain informed and engaged in our commitment to corporate governance and ethical standards.",
+    "reviewMechanism": "The Corporate Governance and Ethics Policy will undergo an annual review led by the Chief Compliance Officer to ensure its relevance and effectiveness. This review will evaluate the policy’s alignment with current legal frameworks, industry standards, and the company’s strategic goals. It will include an assessment of policy implementation, monitoring of ethical compliance, and feedback from internal audits and external stakeholders. Based on the findings, revisions or updates will be made to strengthen governance practices, address emerging risks, and ensure continued adherence to ethical principles across all business operations."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Renewsys/3. Corporate Governance and Ethics Policy.docx",
+  "sourceTextLength": 9582,
+  "parsedAt": "2026-09-11T07:40:23.785Z",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Renewsys/3. Corporate Governance and Ethics Policy.docx"
+  ],
+  "sourceGroup": "Hetvi"
+}

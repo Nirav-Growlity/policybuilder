@@ -1,0 +1,365 @@
+{
+  "id": "labour-human-rights-transpek",
+  "name": "Transpek",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from LABOUR - HUMAN RIGHTS.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Transpek Industry Limited",
+      "industry": "",
+      "site": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+      "sites": [
+        {
+          "location": "4th Floor, Lilleria",
+          "address": "1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Ekalbara",
+          "address": "At & Post: Ekalbara, Taluka: Padra, Dist.: Vadodara, 391440 Gujarat India",
+          "primaryFunction": "manufacturing and distribution of our chemical products"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Transpek Industry Limited, we understand the significance of fostering a workplace rooted in fairness, respect, and dignity for all employees. As a leading player in the chemical industry, our operations span multiple sectors including pharmaceuticals, agrochemicals, and polymers, and we are committed to adhering to the highest standards of Labour and human rights.\n\nOur responsibility extends beyond just meeting legal and regulatory obligations. We aim to create an inclusive work environment, promote the well-being of our employees, and ensure that labour rights are respected throughout our supply chain. This policy provides a framework that guides our practices and decisions, aligning with international labour standards and human rights principles.",
+      "declaration": "At Transpek Industry Limited, we commit to:\n\nUpholding Labour Standards: We ensure that our employees are provided with fair wages, safe working conditions, and opportunities for professional growth.\n\nRespecting Human Rights: We reject child and forced Labour in any form and ensure ethical treatment across all our business operations, promoting the welfare of workers and communities.\n\nEnsuring Inclusivity: We value diversity and are committed to fostering an environment where employees are treated equally regardless of race, gender, age, religion, or any other characteristic.",
+      "scope": "This Labour & Human Rights Policy applies to all employees and management of Transpek Industry Limited. Our policy is relevant across all geographic locations and is applicable to every department involved in the manufacturing and distribution of our chemical products."
+    },
+    "focusAreas": [
+      "Employee Health & Safety",
+      "Working Conditions",
+      "Labour Relations",
+      "Career Management",
+      "Child & Forced Labour",
+      "Diversity, Equity & Inclusion (DEI)",
+      "External Stakeholder Human Rights"
+    ],
+    "qualitative": {
+      "Employee Health & Safety": [
+        "Establish a culture of safety awareness with regular safety meetings and discussions across all levels of the organization.",
+        "Introduce mental health awareness initiatives to support employees facing psychological challenges.",
+        "Develop an employee health monitoring system to track workplace incidents and identify trends, enabling the company to take proactive measures to prevent accidents and health issues."
+      ],
+      "Working Conditions": [
+        "Ensure transparent communication channels for discussing work conditions, focusing on timely responses to employee concerns.",
+        "Promote flexible work arrangements to support work-life balance."
+      ],
+      "Labour Relations": [
+        "Foster labour relations by ensuring regular dialogue between management and employees on working conditions and rights.",
+        "Provide training programs on labour rights and relations, ensuring employees are informed and empowered.",
+        "Implemented a structured grievance redressal mechanism to ensure that any workplace disputes or concerns are addressed promptly and fairly."
+      ],
+      "Career Management": [
+        "Develop and implement individualized career progression plans for employees, focusing on enhancing their skills and aligning their growth with the company's strategic objectives in the chemical manufacturing sector.",
+        "Introduce comprehensive training modules, workshops, and certifications tailored to industry-specific needs, such as chemical safety management, innovation in chemical processes, and operational excellence.",
+        "Establish a transparent system for internal job postings and promotions, ensuring fair access to career advancement opportunities across all levels of the organization."
+      ],
+      "Child & Forced Labour": [
+        "Conduct regular supplier audits and provide training to prevent child and forced Labour throughout our supply chain.",
+        "Collaborate with industry groups and NGOs to strengthen efforts in identifying and eliminating child and forced labour practices in high-risk areas."
+      ],
+      "Diversity, Equity & Inclusion (DEI)": [
+        "Implement DEI programs that promote a diverse and inclusive culture where all employees feel valued and respected.",
+        "Increase representation of women in leadership roles through targeted mentorship and development programs.",
+        "Establish DEI performance metrics to regularly assess progress on diversity goals, ensuring that leadership accountability is in place."
+      ],
+      "External Stakeholder Human Rights": [
+        "Respect for Local Communities: Engage with local communities to understand their concerns, ensuring that our operations respect local customs, land, and property rights.",
+        "Supplier Code of Conduct Compliance: Conduct regular audits and ensure that all suppliers and partners comply with Transpek’s Supplier Code of Conduct, emphasizing human rights protection throughout the supply chain.",
+        "Grievance Mechanisms for External Stakeholders: Develop and maintain accessible grievance mechanisms for external stakeholders, ensuring they can report human rights concerns confidentially and securely."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health & Safety",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in workplace accidents related to hazardous substances and chemical handling by FY 2029-30, compared to the baseline year of FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "100% employees will be covered under mental health, work related stress and psychological support program and counselling services by FY 2029-30, compared to the baseline year of FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Improve PPE compliance by 30% across all departments by FY 2029-30, ensuring all employees are equipped and trained on the correct use of protective gear.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase employee participation in health and safety training programs by 25% by the end of FY 2029-30, compared to participation levels in FY 2022-23, with a focus on safe chemical handling, emergency procedures, and risk management.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Enhance employee benefits by 10% by FY 2029-30, compared to the FY 2022-23 baseline, ensuring competitive healthcare, retirement plans, and wellness programs that support employee security and well-being.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% coverage of regular two-way communication channels on working conditions every year.",
+            "baseline": "",
+            "deadline": "every year"
+          },
+          {
+            "target": "Achieve 90% employee participation in training programs focused on labour rights and workplace policies by FY 2029-30, promoting understanding of worker rights and fostering a supportive work environment.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Labour Relations",
+        "targets": [
+          {
+            "target": "Achieve a 20% increase in union engagement and structured labour relations by FY 2029-30, promoting better dialogue between management and labour representatives compared to FY 2022-23 levels.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% employee involvement in decision-making processes related to workplace policies by FY 2029-30, fostering greater inclusivity and Collaboration.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the frequency of social dialogue by 20% by FY 2029-30, ensuring regular discussions between employees and management to resolve any workplace concerns.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Career Management",
+        "targets": [
+          {
+            "target": "Increase the representation of underrepresented groups in recruitment by 10% by FY 2029-30, compared to FY 2022-23 levels, ensuring greater diversity in hiring practices across all departments.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase participation in career development programs by 15% by FY 2029-30, compared to FY 2022-23, aligning employees’ skills with evolving industry needs and personal growth opportunities.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Enhance performance appraisal accuracy by 15% through improved methodologies and transparent criteria by FY 2029-30, ensuring a fair and consistent evaluation process compared to FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Child & Forced Labour",
+        "targets": [
+          {
+            "target": "Maintain 100% compliances to child and forced labour regulations.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure a 100% recruitment of a person with age above 18 years",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Impart training to 100% employees on policy on Child and Forced labour by FY 2029-30",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity & Inclusion (DEI)",
+        "targets": [
+          {
+            "target": "Ensure Zero incidents of discrimination and abuse by through enhanced awareness, training, and strict anti-discrimination policies.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% employee participation in DEI training programs by FY 2029-30, fostering a more inclusive and equitable work environment, compared to FY 2022-23 participation levels.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Ensure Zero grievances related to land and property disputes through transparent resolution mechanisms and stakeholder engagement.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Reduce workplace incidents by 20% by FY 2029-30 through comprehensive safety measures and training for employees and external stakeholders, compared to the incident rates in FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase employee satisfaction with working conditions by 10% by FY 2029-30, based on internal surveys, compared to satisfaction levels in FY 2022-23, focusing on improving communication, safety, and inclusivity.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Lead the overall strategy and review for labour and human rights policies."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure company policies align with international labour standards and human rights principles."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Approve major initiatives related to employee welfare, diversity, and compliance with labour laws."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Regularly review and monitor the effectiveness of policies related to labour relations, health, safety, and human rights compliance."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Oversee the development and implementation of the Labour & Human Rights Policy."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Ensure recruitment and management practices align with diversity, equity, and inclusion (DEI) goals."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Develop training programs on labour rights, safety protocols, and DEI for all employees and management."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Manage grievance redressal mechanisms and ensure timely resolution of issues related to working conditions and discrimination. Monitors progress towards achieving set environmental targets and ensures accountability."
+      },
+      {
+        "role": "Supply Chain Manager",
+        "duty": "Ensure suppliers adhere to the Labour & Human Rights Policy, including prohibitions on child and forced labour."
+      },
+      {
+        "role": "Supply Chain Manager",
+        "duty": "Conduct regular audits of suppliers to verify compliance with labour standards."
+      },
+      {
+        "role": "Supply Chain Manager",
+        "duty": "Collaborate with industry groups and NGOs to identify and eliminate unethical labour practices."
+      },
+      {
+        "role": "Supply Chain Manager",
+        "duty": "Implement and monitor performance metrics related to supplier labour practices."
+      },
+      {
+        "role": "Diversity, Equity & Inclusion (DEI) Manager",
+        "duty": "Lead the design and execution of DEI programs to promote a diverse and inclusive work environment."
+      },
+      {
+        "role": "Diversity, Equity & Inclusion (DEI) Manager",
+        "duty": "Set measurable diversity goals, such as increasing representation in leadership roles by FY 2029-30."
+      },
+      {
+        "role": "Diversity, Equity & Inclusion (DEI) Manager",
+        "duty": "Develop and deliver training programs on DEI topics for all employees."
+      },
+      {
+        "role": "Diversity, Equity & Inclusion (DEI) Manager",
+        "duty": "Regularly assess and report on the company's progress toward DEI goals."
+      },
+      {
+        "role": "Labour Relations Manager",
+        "duty": "Foster communication between employees and management on labour relations issues."
+      },
+      {
+        "role": "Labour Relations Manager",
+        "duty": "Manage the collective bargaining process and act as a liaison during negotiations."
+      },
+      {
+        "role": "Labour Relations Manager",
+        "duty": "Implement grievance redressal mechanisms for labour disputes and ensure fair resolutions."
+      },
+      {
+        "role": "Labour Relations Manager",
+        "duty": "Increase union engagement by promoting regular meetings and dialogue sessions."
+      },
+      {
+        "role": "Training & Development Manager",
+        "duty": "Develop and implement career development and training programs focused on Labour rights and safety."
+      },
+      {
+        "role": "Training & Development Manager",
+        "duty": "Ensure employee training participation increases by 10% by FY 2029-30."
+      },
+      {
+        "role": "Training & Development Manager",
+        "duty": "Facilitate equal opportunity training to ensure diversity in promotions and recruitment."
+      },
+      {
+        "role": "Training & Development Manager",
+        "duty": "Monitor the effectiveness of training programs and update content based on feedback."
+      },
+      {
+        "role": "Employee Responsibilities",
+        "duty": "Comply with all labour and human rights policies, reporting any violations or concerns."
+      },
+      {
+        "role": "Employee Responsibilities",
+        "duty": "Actively participate in training programs related to workplace safety and rights."
+      },
+      {
+        "role": "Employee Responsibilities",
+        "duty": "Engage in open communication with management regarding working conditions and any grievances."
+      },
+      {
+        "role": "Employee Responsibilities",
+        "duty": "Contribute to a positive workplace culture by promoting inclusivity, respect, and Collaboration among colleagues."
+      }
+    ],
+    "monitoring": "Ensure the timely submission of compliance reports to regulatory authorities, outlining adherence to environmental regulations and detailing any incidents that may have occurred.\n\nKeep thorough records of environmental audits, inspections, and assessments to demonstrate compliance with all applicable laws and regulations.\n\nProvide clear and transparent updates to stakeholders—including employees, customers, and local communities—on environmental initiatives and progress.\n\nUse a variety of communication channels, such as newsletters, social media, and the company website, to share achievements and address any environmental concerns raised by stakeholders.\n\nCreate dedicated internal channels for employees to report environmental concerns, incidents, or suggestions for improvement.\n\nFoster a culture of accountability by ensuring that all reports are reviewed promptly and addressed effectively.\n\nDevelop training programs to enhance employees' understanding of environmental regulations and compliance obligations.\n\nPromote awareness of environmental issues and best practices through workshops, seminars, and informational materials.\n\nImplement regular risk assessments to identify potential environmental impacts and compliance risks associated with business operations.\n\nDevelop and maintain a risk management plan that outlines strategies for mitigating identified risks and ensuring compliance with environmental regulations.\n\nEstablish and promote sustainability initiatives aimed at reducing the organization's environmental footprint.\n\nMonitor and report on the progress of sustainability goals, including energy conservation, waste reduction, and resource management.\n\nTo ensure effective governance of the Labour and Human Rights Policy, a dedicated Labour Rights Oversight Committee (LROC) will be established. The LROC will oversee compliance with labour laws, monitor workplace practices, and address any human rights concerns. Regular meetings will be held to evaluate progress, review incident reports, and recommend improvements.\n\nThe committee will comprise representatives from key departments, including human resources, legal, and operations, and will report directly to senior management to ensure alignment with organizational objectives.\n\nAdditionally, a comprehensive documentation and reporting framework will be maintained to track compliance activities, employee feedback, and stakeholder communications. This governance structure will ensure accountability and promote a proactive approach to labour and human rights management within the organization.",
+    "reviewMechanism": "The Managing Director will conduct an annual review of the Labour & Human Rights Policy, focusing on key performance indicators, employee feedback, and supplier audits. This process will involve data analysis, stakeholder consultation, and identification of challenges. The findings will be compiled into a report, with actionable recommendations presented to the Board of Directors. An action plan will be developed for implementation, with follow-ups scheduled to monitor progress throughout the year."
+  },
+  "sourcePath": "Policies - Kenal/Transpek/LABOUR - HUMAN RIGHTS.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Transpek/LABOUR - HUMAN RIGHTS.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 22348,
+  "parsedAt": "2026-09-11T07:30:43.202Z"
+}

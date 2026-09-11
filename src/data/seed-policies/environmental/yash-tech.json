@@ -1,0 +1,505 @@
+{
+  "id": "yash-tech",
+  "name": "Yash Tech",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Stewardship Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Yash Technologies",
+      "industry": "",
+      "site": "841 Avenue of the CitiesEast Moline IL, 61244",
+      "sites": [
+        {
+          "location": "India",
+          "address": "201-205 Bansi Trade Center,, 581/5 M. G. Road, Indore, Madhya Pradesh 452001",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "India",
+          "address": "STP-1, Ground Floor, IT/ITES- SEZ, Near Bhawar Kuwan Square, Indore, Madhya Pradesh 452001",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Plot No. 1, Scheme Number 166, Super Corridor Road, Indore, Madhya Pradesh 452005",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "702, 7th Floor, Campus C, RMZ Centennial, Survey No. 74 & 77, Doddanakudi Village, Krishnarajapuram, HobliBengaluru, Karnataka 560048",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Awfis, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Guindy Chennai, Tamil Nadu 600032 (Office Space)",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "C/o Sundew Properties Limited (SEZ Developer), Office 1,2,3 & 4 (2nd Office Floor), 6th Floor Building #20, Raheja Mind space, CyberabadMadhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "C/o Sundew Properties Limited (SEZ Developer), 10th Floor Building #20, Raheja Mind space, Cyberabad, Madhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "UrbanWrk, 10th Floor, Building No 10, Raheja Mindspace, Hitech City, Madhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Wing A & B, Level 2, Tower No.1, Cyber City, Magarpatta City, Hadapsur, Pune, Maharashtra 411013",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Plot No. 23/1, IT & ITES SEZ (MIDC), Rajiv Gandhi InfoTech Park, Hinjewadi, Phase – III, Pune, Maharashtra 411057",
+          "primaryFunction": ""
+        },
+        {
+          "location": "China",
+          "address": "Suite 2006 20/F, Hua Qin International Building, 340 Queen’s Road Central, Hong Kong 999077",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Malaysia",
+          "address": "C-05-02 , C-05-3A, C-05-10,C-05-12, iTech Tower, Jalan Impact, Cyber 6, Cyberjaya, Selangor Darul Ehsan 63000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Singapore",
+          "address": "17 Phillip Street, #05-01 Grand Building, Singapore 048695",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Thailand",
+          "address": "87/1 Capital Tower, All Seasons Place, 16th Floor, Unit 1603 -6, Wireless Road, Lumpini Sub-districtPathumwan District, Bangkok, Thailand 10330",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "C/o Crown Corporate Services, Level 35, Tower One, Barangaroo, Sydney, New South Wales 2000",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Australia",
+          "address": "Level 5/121 King William St, Adelaide, South Australia 5000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "22nd Floor, Northbank Plaza, 69 Ann Street, Brisbane, Queensland 4000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "Rialto, Level 27, South Tower, 525, Collins Street, Melbourne, Victoria 3000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "Level 27, St Martins Tower, 44 St Georges Terrace, Perth, Western Australia 6000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Finland",
+          "address": "Bertel Jungin aukio 5, Espoo, Southern Finland province 02600",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Germany",
+          "address": "Konrad-Zuse-Ring 28, Mannheim, Baden-Württemberg, 68163",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Netherland",
+          "address": "Prinsengracht 697-2, Amsterdam, North Holland 1017 JV",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Netherland",
+          "address": "Hullenberweg 278-308, Amsterdam, North Holland 1101 BV",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Poland",
+          "address": "ul. Domaniewska 37, Warszawa, Poland 02-672",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Romania",
+          "address": "Soseaua Mihai Bravu n Subsol, Modul S083, Sector 3, Bucharest, Southeastern Romania",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Swedan",
+          "address": "Sveavägen 33, 3rd Floor, 111 34 Stockholm",
+          "primaryFunction": ""
+        },
+        {
+          "location": "United Kingdom",
+          "address": "Level 8, One Canada Square, Canary Wharf, London E14 5AA, United Kingdom",
+          "primaryFunction": ""
+        },
+        {
+          "location": "UAE",
+          "address": "Office 3602, 36th Floor, Al Shatha Towers, Dubai Internet CityDubai, P.O.Box 501714",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "UAE",
+          "address": "Office 848, Al Ansari Building, Khalifa Street, Abu Dhabi, P.O.Box 28346",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Egypt",
+          "address": "34A Al-Multaqa Al-Arabi District, 2nd Floor Office 201 Helioplis Division, Sheraton ,Cairo, P.O.Box 11799",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Lebanon",
+          "address": "Office Unit No. 1291, Section 4 Sarba, Lebanon",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Oman",
+          "address": "5th Floor Office A5, Bank Sohar Building Dohat Al Adab Street, Al Khuwair P.O. Box 395, PC 118, Muscat",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Saudi Arabia",
+          "address": "5th Floor, Balhamer Business GateAsh Shati Ash Sharqi 8196, Dammam, P.O.Box 32414",
+          "primaryFunction": ""
+        },
+        {
+          "location": "State of Qatar",
+          "address": "Office 1111, 11th Floor, Marina Twin Towers, Tower B, Regus Doha Twin Towers. Lusail, State of Qatar P.O. Box 301477",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "841 Avenue of the CitiesEast Moline IL, 61244",
+          "primaryFunction": "Global Headquarters (Corporate Office)"
+        },
+        {
+          "location": "USA",
+          "address": "4801 E Independence Blvd, Suite #900, Charlotte, North Carolina 28212",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "333 N. Michigan AvenueSuite #800, Chicago, Illinois 60601",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "455 Avenue of the Cities, East Moline, Illinois 61244",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "7760 France Ave S, Suite #1100, Minneapolis, Minnesota 55435",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "2000 W Pioneer Pkwy, Suite #16, Peoria, Illinois 61615",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "211 College Road East, Suite #102, Princeton, New Jersey 08540",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "Y & L Consulting, Inc.,A YASH Technologies Company, 5750 Epsilon, San Antonio, Texas 78249",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "3 City Place Drive, Suite #520, St. Louis, Missouri 63141",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "17406 Royalton Rd., Suite #104, Strongsville, Ohio 44136",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "Aurora Business Park, Building 15, 4408 114th Street, Urbandale, Iowa 50322",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "400 Tradecenter Drive, Suite #4880, Woburn, Massachusetts 01801",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Canada",
+          "address": "350 Burnhamthorpe Rd. West, Suite #200, Office 28, Mississauga, Ontario L5B 3J1",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "841 Avenue of the CitiesEast Moline IL, 61244"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Yash Technologies, we recognize the critical importance of safeguarding our environment and are committed to integrating sustainable practices into all aspects of our operations. As a leading IT company, we understand that our activities have both direct and indirect impacts on the environment. Therefore, we strive to minimize our carbon footprint, promote resource efficiency, and adopt eco-friendly technologies. Our Environmental Policy is designed to guide our efforts in reducing waste, conserving energy, and promoting sustainable practices across our offices and data centers. By adhering to this policy, we aim to contribute positively to global environmental goals while fostering a culture of environmental responsibility within our organization and beyond.",
+      "declaration": "Minimize Environmental Impact: Reduce the carbon footprint by optimizing energy consumption, promoting renewable energy, and implementing efficient resource management across all operations.\n\nPromote Sustainable Practices: Encourage the adoption of eco-friendly technologies and processes, ensuring that sustainability is a core consideration in decision-making and project execution.\n\nWaste Reduction and Recycling: Implement comprehensive waste management strategies, including reduction, reuse, and recycling programs, to minimize waste generation and enhance resource recovery.\n\nCompliance with Environmental Regulations: Ensure full compliance with all applicable environmental laws, regulations, and industry standards, continuously monitoring and updating practices to meet evolving requirements.\n\nEnhance Environmental Awareness: Foster a culture of environmental responsibility among employees, suppliers, contractors, and other stakeholders through regular training, awareness programs, and active engagement in sustainability initiatives.\n\nContinuous Improvement: Regularly review and update environmental practices and policies to reflect new technologies, emerging trends, and evolving best practices, ensuring ongoing commitment to sustainability.",
+      "scope": "This Policy applies to all entities, offices, facilities, joint ventures, subsidiaries, and stakeholders of Yash Technologies Group across Asia, Australia, the Middle East & Africa, North America, the United States, and Europe.\n\nThe Policy extends to all stakeholders, including employees, workers, contractors, subcontractors, suppliers, and business partners."
+    },
+    "focusAreas": [
+      "Energy Consumptions and GHG Emission",
+      "Waste management",
+      "Environmental Service and Advocacy"
+    ],
+    "qualitative": {
+      "Energy Consumptions and GHG Emission": [
+        "We are focusing on optimizing energy efficiency across all our facilities to reduce our overall carbon footprint.",
+        "Transitioning to renewable energy sources and implementing energy-saving technologies will significantly lower our GHG emissions.",
+        "Our data centers will be a primary focus for energy optimization, ensuring they operate at maximum efficiency.",
+        "We will conduct regular energy audits to identify areas for improvement and implement best practices across the company.",
+        "Measurable targets for GHG emission reductions will be set, with annual progress tracking to ensure continuous improvement.",
+        "Energy-Efficient Technologies: We are upgrading our data centers to use energy-efficient cooling systems and servers, focusing on reducing overall energy consumption in our facilities.",
+        "Cloud-Based Solutions: We are transitioning more of our services to cloud- based platforms to reduce the energy demands of on-premises infrastructure and lower our GHG emissions.",
+        "Renewable Energy Use: We are installing solar panels at our office locations and exploring partnerships with green energy providers to increase our reliance on renewable energy sources.",
+        "Energy Monitoring Systems: We are implementing advanced energy monitoring systems to track and analyze consumption patterns, allowing us to address inefficiencies promptly.",
+        "Carbon Offset Projects: We are investing in local and international carbon offset projects to neutralize the GHG emissions associated with our operations.",
+        "Employee Awareness: We aim to provide regular employee training on energy management practices to build awareness, encourage responsible energy use, and support our overall efficiency goals.",
+        "Lighting: We aim to replace all conventional lighting fixtures in our offices with energy-efficient LED lights to significantly reduce electricity consumption and associated emissions."
+      ],
+      "Waste management": [
+        "We are focusing on implementing a robust waste management system to minimize waste generation and maximize resource recovery.",
+        "Our approach includes reducing waste at the source, promoting recyclable and reusable materials, and ensuring proper disposal of all waste types.",
+        "Employees will be engaged in waste reduction initiatives, with clear guidelines and training on best practices.",
+        "We will collaborate with certified waste management partners to ensure responsible handling and recycling of electronic waste (e-waste).",
+        "Waste reduction targets will be set, with regular reviews of our waste management practices to achieve significant environmental impact reduction.",
+        "E-Waste Recycling: We are setting up dedicated e-waste recycling stations in our offices to handle the disposal of old IT equipment in an environmentally responsible manner.",
+        "Digital Documentation: We are promoting the use of digital documents and electronic signatures to reduce the need for paper and minimize our paper waste.",
+        "Recycling Stations: We are placing clearly labeled recycling bins throughout our offices to ensure proper sorting and recycling of paper, plastic, and metal waste.",
+        "Waste Reduction Plans: We are developing waste reduction plans that include reducing excess packaging and reusing materials where possible.",
+        "Supplier Engagement: We are working with our suppliers to reduce packaging waste and use sustainable materials for their products and services.",
+        "Employee Training: We aim to provide regular employee training on waste segregation, recycling practices, and responsible disposal methods to build awareness and ensure effective implementation of our waste reduction initiatives."
+      ],
+      "Environmental Service and Advocacy": [
+        "We are focusing on educating and engaging our customers on sustainable practices and the importance of environmental stewardship.",
+        "We will actively seek to incorporate customer feedback into our environmental strategies, ensuring that our initiatives align with their sustainability needs.",
+        "Our customer support will include guidance on adopting green practices and solutions, helping them reduce their environmental impact.",
+        "We will promote and offer eco-friendly product options, empowering customers to make choices that contribute to a sustainable future.",
+        "By sharing success stories and best practices, we aim to inspire our customers to actively participate in environmental conservation efforts.",
+        "Sustainable IT Solutions: We are offering our customers energy-efficient hardware and sustainable software solutions designed to help them reduce their own environmental impact.",
+        "Customer Education: We are providing resources and training to our customers on how to implement sustainable practices within their IT operations and improve their environmental performance.",
+        "Certification Guidance: We are assisting our customers in achieving environmental certifications by integrating green practices into our solutions and supporting their certification processes.",
+        "Partnerships for Sustainability: We are collaborating with environmental organizations and industry groups to promote sustainable IT practices and advocate for broader environmental initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumptions and GHG Emission",
+        "targets": [
+          {
+            "target": "Achieve a 3% reduction in total energy consumption by 2030",
+            "baseline": "2022 baseline levels which will be extrapolated to normal efficiency levels considering COVID outbreak scenario applicable for relevant period",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 25% reduction in total GHG emissions across Scope 1, Scope 2, and Scope 3 categories",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Cut greenhouse gas (GHG) emissions by 3% due employee commute",
+            "baseline": "2022 levels which will be extrapolated to normal efficiency levels considering COVID outbreak scenario applicable for relevant period",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 5% of total energy consumption comes from renewable sources",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Improve energy efficiency in data centers by 5%, measured by energy usage effectiveness (EUE)",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Invest in carbon offset projects equivalent to 3% of total GHG emissions",
+            "baseline": "zero investment in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% employee coverage in annual training programs on energy conservation and GHG emission reduction practices",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste management",
+        "targets": [
+          {
+            "target": "Achieve a 6% reduction in total waste generated",
+            "baseline": "2022 baseline levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Enhance recycling rate to 30% of total waste",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce the use of single-use plastics by 25%",
+            "baseline": "2022 consumption levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Continue to maintain the amount of waste sent to landfills at 0% in coming years",
+            "baseline": "2022 levels",
+            "deadline": "coming years"
+          },
+          {
+            "target": "Continue to maintain 100% of electronic waste is recycled responsibly for on-going years",
+            "baseline": "baseline year 2022",
+            "deadline": "on-going years"
+          },
+          {
+            "target": "Train 100% of employees on waste segregation, recycling, and responsible disposal practices annually",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Service and Advocacy",
+        "targets": [
+          {
+            "target": "Boost the number of clients participating in environmental initiatives by 5%",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Grow the range of environmental advisory services offered by 30%",
+            "baseline": "2022 service portfolio",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement sustainability programs for 5% of our client base",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Establish 5 new partnerships focused on sustainability and environmental advocacy",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Management Team",
+        "duty": "Provide strategic direction and ensure the integration of environmental considerations into overall business strategy."
+      },
+      {
+        "role": "Executive Management Team",
+        "duty": "Allocate necessary resources to support the implementation and enforcement of environmental initiatives."
+      },
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Oversee the day-to-day implementation of the Environmental Policy across all operations."
+      },
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Approve the Environmental Policy and oversee its annual review and updates."
+      },
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Monitor environmental performance metrics, prepare the annual Environmental Report, and coordinate with internal and external auditors."
+      },
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Ensure compliance with environmental regulations and standards, and address any issues of non-compliance."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Integrate environmental objectives into departmental plans and operations."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Track and report on departmental environmental performance, and implement necessary corrective actions."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure that employees within their departments receive relevant environmental training and understand their roles in achieving policy objectives."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Provide support and guidance to departments on environmental practices and initiatives."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Collect and analyze data related to energy consumption, GHG emissions, waste management, and other key metrics."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Assist in conducting internal audits and performance reviews to assess policy effectiveness."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to the Environmental Policy and related procedures in their daily work activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any environmental issues or non-compliance incidents to their immediate supervisor or the Environmental Compliance Officer."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in training programs and contribute to achieving departmental and organizational environmental targets."
+      },
+      {
+        "role": "Suppliers and Contractors",
+        "duty": "Comply with the environmental requirements outlined in contracts and agreements."
+      },
+      {
+        "role": "Suppliers and Contractors",
+        "duty": "Work collaboratively with Yash Technologies to meet environmental targets and address any related issues."
+      },
+      {
+        "role": "Suppliers and Contractors",
+        "duty": "Provide necessary data and information required for monitoring and reporting purposes."
+      }
+    ],
+    "monitoring": "Regular Monitoring and Reporting: Yash Technologies will conduct regular monitoring of environmental performance metrics to ensure compliance with the objectives set forth in this policy. Environmental performance data will be collected and analyzed quarterly to assess progress against the established targets.\n\nAnnual Environmental Report: An annual Environmental Report will be prepared and published, detailing achievements, challenges, and progress towards meeting the quantitative targets. This report will include data on energy consumption, GHG emissions, waste management, and customer engagement in environmental initiatives.\n\nPerformance Review Meetings: Biannual performance review meetings will be held with key stakeholders, including department heads and environmental managers, to evaluate progress, discuss issues, and identify areas for improvement. Recommendations from these meetings will be integrated into policy updates and action plans.\n\nCompliance Audits: Periodic compliance audits will be conducted to ensure adherence to environmental regulations and internal standards. These audits will be performed by both internal and external auditors to provide an objective assessment of compliance and identify any potential areas of non-compliance.\n\nStakeholder Communication: Transparent communication with stakeholders, including employees, suppliers, and customers, will be maintained through regular updates and briefings. The outcomes of environmental performance and any significant changes to the policy will be communicated to all relevant parties to ensure continued alignment and engagement.\n\nThe governance of our Environmental Policy is overseen by the Executive Management Team, who provide strategic direction and resource allocation. The Environmental Compliance Officer is responsible for daily implementation, monitoring, and reporting, ensuring adherence to regulations and policy updates. Department Heads integrate environmental objectives into their operations, while the Environmental Management Team offers support and conducts audits. Regular performance reviews and stakeholder communications maintain alignment and drive continuous improvement.\n\nYash Technologies is committed to continuous improvement in environmental practices. We will regularly review and update our Environmental Policy to incorporate new technologies, best practices, and regulatory changes. Performance metrics will be analyzed quarterly to identify areas for enhancement. Feedback from employees, customers, and stakeholders will be used to refine our strategies and set more ambitious targets. This iterative approach ensures that our environmental impact is continually reduced, aligning with evolving sustainability goals.",
+    "reviewMechanism": "The Environmental Compliance Officer will oversee the annual review of the Environmental Policy. This review will assess compliance with objectives, evaluate performance against targets, and incorporate feedback from stakeholders. The Officer will analyze performance metrics, update the policy based on new regulations and best practices, and document any changes. All updates and modifications will be communicated to employees, suppliers, and contractors through internal briefings and official communications to ensure continued alignment and engagement.\n\nNext Review date: 01 / 01 / 2026"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Yash Tech/1. Environmental Stewardship Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Yash Tech/1. Environmental Stewardship Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 23301,
+  "parsedAt": "2026-09-11T07:17:32.056Z"
+}

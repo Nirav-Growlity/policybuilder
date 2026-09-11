@@ -1,0 +1,141 @@
+{
+  "id": "living-wage-graham",
+  "name": "Graham",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. LIVING WAGE POLICY.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Graham Packaging Company",
+      "industry": "",
+      "site": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601",
+      "sites": [
+        {
+          "location": "Graham Packaging Company",
+          "address": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Graham Packaging, we pride ourselves on our unwavering commitment to ethical business practices and social responsibility. Our Living Wage Policy serves as a testament to our dedication to fostering a workplace culture defined by fairness, equality, and sustainability.",
+      "declaration": "At Graham Packaging, we are resolutely committed to a Living Wage Policy that not only meets legal requirements but also exemplifies our core values. We pledge to ensure that all employees receive compensation that exceeds minimum standards, fostering transparency, regular review, and collaboration with stakeholders. This commitment underscores our dedication to creating a workplace where economic dignity, fairness, and social responsibility flourish, driving ongoing growth while prioritizing the well-being of our workforce and nurturing a sustainable future for generations to come.",
+      "scope": "This Policy applies exclusively to the operations of Graham Packaging Company, encompassing all employees, contractors, suppliers, and stakeholders directly associated with our facilities."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Establish a baseline minimum wage for all employees to guarantee a standard of living in line with principles of decency and well-being.\n\nAt Graham Packaging, we are resolutely committed to a Living Wage Policy that not only meets legal requirements but also exemplifies our core values. We pledge to ensure that all employees receive compensation that exceeds minimum standards.\n\nCommit to maintaining the lowest organization-wide wage at least 10% above the local living wage by 2025 from the baseline year 2023 promoting fair compensation across all job categories.\n\nRegular Wage Review: Implement biennial comprehensive wage reviews for all employees, aiming to complete 100% of reviews by the end of 2025 from the baseline 2023 to ensure fair and equitable compensation.\n\nConduct regular reviews of the baseline minimum wage to uphold fairness and responsiveness in compensation, adapting to changes in economic conditions.\n\nPromote skill development through training programs and reward workers with enhanced qualifications through higher remuneration, fostering continuous learning."
+    },
+    "focusAreas": [
+      "Baseline Minimum Wage",
+      "Progressive Increment",
+      "Skill-Based Remuneration",
+      "Gender Equality",
+      "Social Security Measures",
+      "Promotion of Work-Life Balance",
+      "Employee Engagement",
+      "Training and Skill Development"
+    ],
+    "qualitative": {
+      "Baseline Minimum Wage": [
+        "Establish a baseline minimum wage for all employees to guarantee a standard of living in line with principles of decency and well-being.",
+        "Conduct regular reviews of the baseline minimum wage to uphold fairness and responsiveness in compensation, adapting to changes in economic conditions."
+      ],
+      "Progressive Increment": [
+        "Commit to gradual wage increases over time, including regular reviews to align with the rising cost of living, fostering parity across industries."
+      ],
+      "Skill-Based Remuneration": [
+        "Promote skill development through training programs and reward workers with enhanced qualifications through higher remuneration, fostering continuous learning."
+      ],
+      "Gender Equality": [
+        "Uphold fair and equal wages for all employees, regardless of gender, emphasizing equal pay for equal work."
+      ],
+      "Social Security Measures": [
+        "Implement retirement savings strategies such as provident funds or pension schemes to safeguard employees' financial well-being post-retirement.",
+        "Provide extensive health insurance coverage, including medical expenses, hospitalization, and preventive care."
+      ],
+      "Promotion of Work-Life Balance": [
+        "Provide ample paid time off, including vacation days, holidays, and personal leave, to support employees in maintaining a balanced work-life equilibrium."
+      ],
+      "Employee Engagement": [
+        "Provide tangible rewards like bonuses, gifts, or public recognition to enhance employee motivation and engagement."
+      ],
+      "Training and Skill Development": [
+        "Align skill development with performance evaluations to foster career progression within the organization."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Minimum Living Wage Guarantee",
+        "targets": [
+          {
+            "target": "Commit to maintaining the lowest organization-wide wage at least 10% above the local living wage",
+            "baseline": "2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Regular Wage Review",
+        "targets": [
+          {
+            "target": "Implement biennial comprehensive wage reviews for all employees, aiming to complete 100% of reviews",
+            "baseline": "2023",
+            "deadline": "end of 2025"
+          }
+        ]
+      },
+      {
+        "area": "Gender Pay Equality",
+        "targets": [
+          {
+            "target": "Aim for a gender pay gap under 5%",
+            "baseline": "2023",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Compensation and Benefits Oversight Team",
+        "duty": "Leads this assessment, recommending adjustments or enhancements to align with emerging regulations and best practices."
+      },
+      {
+        "role": "Representatives from essential departments",
+        "duty": "Conduct the evaluation, ensuring a comprehensive assessment of our commitment to fair wages, with recommendations for adjustments or improvements based on the outcomes of this review."
+      }
+    ],
+    "monitoring": "At Graham Packaging, we are dedicated to transparency, accountability, and continuous improvement in integrating Living Wage principles within our operations. To achieve this, we have established an extensive reporting mechanism, including:\n\nMonitoring and Audit Reports: Periodic reports from internal monitoring, audits, and external assessments will evaluate our performance regarding our living wage policy and identify areas for improvement.\n\nFeedback Mechanisms: Surveys and feedback mechanisms will gather perspectives from our workforce on the impact and effectiveness of our living wage policy, enabling us to assess satisfaction levels and tailor strategies for continuous improvement.\n\nAdvocacy via Feedback: Advocacy through feedback empowers individuals to voice concerns and offer suggestions, actively engaging in the pursuit of an equitable living wage policy and contributing to positive transformations in organizational practices.",
+    "reviewMechanism": "To uphold the effectiveness of our Living Wage Policy, we conduct an annual review considering changes in labour laws, economic factors, and workforce needs.\n\nThe Compensation and Benefits Oversight Team leads this assessment, recommending adjustments or enhancements to align with emerging regulations and best practices.\n\nThis Policy undergoes an annual review to track progress on each aspect and its designated targets.\n\nRepresentatives from essential departments conduct the evaluation, ensuring a comprehensive assessment of our commitment to fair wages, with recommendations for adjustments or improvements based on the outcomes of this review."
+  },
+  "sourcePath": "Policies - Kenal/Graham/5. LIVING WAGE POLICY.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Graham/5. LIVING WAGE POLICY.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 5306,
+  "parsedAt": "2026-09-11T07:24:00.574Z"
+}

@@ -1,0 +1,340 @@
+{
+  "id": "sustainable-procurement-royal-pharma",
+  "name": "Royal Pharma",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Management Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Royal Pharmaceuticals Industries Pvt. Ltd.",
+      "industry": "",
+      "site": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India",
+      "sites": [
+        {
+          "location": "Manufacturing facility",
+          "address": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India",
+          "primaryFunction": "Manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Royal Pharmaceuticals Industries Pvt. Ltd. recognizes sustainable procurement as a strategic driver of responsible business growth and resilient supply chains. The Company is committed to integrating environmental, social, ethical, quality, and governance (ESG) principles into supplier selection, procurement, and supply chain management through responsible sourcing, supplier engagement, and continual improvement. By partnering with suppliers who share its commitment to sustainability and compliance, the Company strives to build a transparent, resilient, and responsible supply chain that supports operational excellence, regulatory compliance, and long-term value creation.",
+      "declaration": "Royal Pharmaceuticals Industries Pvt. Ltd. is committed to conducting procurement activities in a responsible, ethical, transparent, and sustainable manner. The Company integrates environmental, social, governance (ESG), quality, and regulatory considerations into supplier selection, procurement, and supply chain management through responsible sourcing, supplier engagement, and continual improvement. By partnering with suppliers who uphold ethical, environmental, and social standards, the Company strives to build a resilient and sustainable supply chain that supports operational excellence, product quality, regulatory compliance, and long-term value creation.",
+      "scope": "This Sustainable Supplier Management Policy applies to the manufacturing facility of Royal Pharmaceuticals Industries Pvt. Ltd. located at E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India. It applies to all employees, directors, contractors, suppliers, consultants, service providers, and other personnel working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Supplier Social Practices",
+      "Sustainable Procurement Goals",
+      "Governance Goals"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "We strive to prioritize procurement from suppliers that maintain certified Environmental Management Systems (e.g., ISO 14001) or demonstrate equivalent environmental management practices to promote responsible sourcing across our supply chain.",
+        "We will integrate environmental criteria into supplier selection, qualification, and performance evaluation processes, including compliance with environmental legislation, resource efficiency initiatives, and environmental certifications where applicable.",
+        "We seek to strengthen the environmental competency of the Procurement and Supply Chain teams through periodic sustainable procurement training and awareness programs to support environmentally responsible purchasing decisions.",
+        "We will encourage local and regional sourcing, where technically and commercially feasible, to reduce transportation-related greenhouse gas emissions, strengthen supply chain resilience, and support local economic development.",
+        "We strive to promote the procurement of environmentally preferable materials, including recyclable, reusable, certified, low-impact, and sustainably sourced raw materials and packaging materials, wherever feasible.",
+        "We will engage with key suppliers through Supplier ESG Assessments, environmental questionnaires, and periodic supplier audits to monitor environmental performance and encourage continual improvement.",
+        "We seek to collaborate with suppliers to reduce packaging waste, improve resource efficiency, adopt cleaner technologies, and support initiatives such as carbon footprint reduction, water conservation, and responsible waste management throughout the supply chain.",
+        "We will strengthen the environmental competency of Procurement and Supply Chain personnel through periodic sustainable procurement training, enabling them to integrate environmental criteria, lifecycle considerations, and supplier sustainability performance into purchasing decisions."
+      ],
+      "Supplier Social Practices": [
+        "We strive to procure goods and services from suppliers that respect internationally recognized human rights and maintain fair, safe, and inclusive workplaces throughout their operations.",
+        "We will encourage suppliers to comply with applicable labour laws and uphold ethical employment practices, including the prohibition of child labour, forced labour, bonded labour, human trafficking, discrimination, harassment, and any form of abuse.",
+        "We strive to integrate labour and human rights criteria into supplier selection, qualification, and performance evaluation to promote responsible sourcing throughout our supply chain.",
+        "We will encourage suppliers to implement internationally recognized labour and human rights standards, including the prohibition of child labour, forced labour, discrimination, harassment, and any form of modern slavery.",
+        "We seek to prioritize suppliers that demonstrate effective labour management systems through certifications, third-party social audits (e.g., SMETA, SA8000, BSCI), or equivalent assessments, where applicable.",
+        "We will strengthen the competency of Procurement and Supply Chain personnel through periodic training on responsible sourcing, supplier labour and human rights risks, and ethical procurement practices.",
+        "We strive to ensure that all critical suppliers acknowledge and comply with the Company's Supplier Code of Conduct, including labour, human rights, health and safety, and ethical business requirements.",
+        "We will engage with suppliers through supplier self-assessment questionnaires, social compliance audits, and periodic performance reviews to identify labour and human rights risks and encourage continual improvement.",
+        "We seek to collaborate with suppliers to promote fair wages, safe working conditions, freedom of association, grievance mechanisms, diversity and inclusion, and responsible employment practices throughout the supply chain."
+      ],
+      "Sustainable Procurement Goals": [
+        "We strive to integrate sustainability principles into procurement planning, supplier selection, sourcing decisions, contract management, and supplier performance evaluations to create long-term value for the Company and its stakeholders.",
+        "We will incorporate environmental, social, ethical, quality, regulatory, and commercial considerations into procurement decisions while maintaining the highest standards of product quality, patient safety, business continuity, and operational excellence.",
+        "We strive to integrate sustainability, ethical, quality, and regulatory requirements into supplier selection, qualification, evaluation, and re-evaluation processes to promote responsible procurement decisions.",
+        "We will require critical suppliers to acknowledge and comply with the Company's Supplier Code of Conduct, contractual sustainability requirements, and applicable legal and regulatory obligations.",
+        "We seek to strengthen supplier capability through periodic supplier engagement programmes, awareness sessions, and communication on the Company's sustainability expectations and responsible business practices.",
+        "We will implement a risk-based supplier management framework, including supplier due diligence, supplier risk assessments, supplier assessments, supplier audits, and periodic performance evaluations to identify, monitor, and manage supply chain risks.",
+        "We strive to establish long-term partnerships with suppliers that demonstrate strong performance in sustainability, quality, regulatory compliance, innovation, and responsible business practices."
+      ],
+      "Governance Goals": [
+        "We strive to conduct all procurement and supplier management activities with the highest standards of integrity, transparency, accountability, and ethical business conduct while ensuring compliance with applicable legal and regulatory requirements.",
+        "We strive to integrate governance and ethical business criteria into supplier selection, qualification, and performance evaluation to promote responsible and transparent procurement practices.",
+        "We will encourage suppliers to establish and maintain robust business ethics programmes, including Anti-Bribery and Anti-Corruption policies, Whistleblower Mechanisms, and Conflict of Interest management systems.",
+        "We seek to prioritize suppliers demonstrating effective governance practices through certifications (e.g., ISO 37001), Supplier Code of Conduct compliance, or equivalent ethical management systems, where applicable.",
+        "We will strengthen the competency of Procurement and Supply Chain personnel through periodic training on ethical sourcing, anti-corruption, supplier due diligence, conflict of interest, and responsible procurement practices.",
+        "We strive to conduct risk-based supplier due diligence, including sanctions screening, beneficial ownership verification, conflict of interest declarations, and compliance checks before establishing or renewing business relationships.",
+        "We will engage with suppliers through Supplier ESG Assessments, ethics questionnaires, compliance audits, and periodic supplier performance reviews to monitor governance performance and encourage continual improvement."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "We aim to evaluate 100% of critical suppliers against environmental sustainability criteria by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase the engagement by 42% of suppliers with ISO 14001-certified or equivalent Environmental Management Systems by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual Sustainable Procurement training to 100% of Procurement and Supply Chain personnel by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct environmental sustainability assessments or audits for 100% of identified high-risk suppliers by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase procurement from local suppliers, where technically and commercially feasible, by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to incorporate environmental sustainability criteria into 100% of supplier evaluation and selection processes by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase the procurement of environmentally preferable, recyclable, reusable, or sustainably sourced materials and packaging, where technically and commercially feasible, by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to ensure 100% closure of environmental corrective actions identified during supplier assessments within agreed timelines throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We aim to include environmental sustainability clauses in 100% of new supplier contracts by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to recognize and encourage high-performing suppliers through a Supplier Sustainability Recognition program by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to implement a risk-based environmental supplier evaluation framework for all critical suppliers by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to periodically review supplier environmental performance through ESG scorecards and management reviews by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "We aim to assess 100% of identified high-risk suppliers against labour and human rights criteria by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to evaluate 100% of critical suppliers against labour and human rights criteria by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase the engagement of suppliers by 42% with recognized social compliance certifications or assessments (e.g., SA8000, SMETA, BSCI, Sedex) by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual Responsible Procurement and Human Rights training to 100% of Procurement and Supply Chain personnel by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct labour and human rights assessments or audits for 100% of identified high-risk suppliers by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase the inclusion of labour and human rights criteria in supplier evaluation and selection processes by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase the number of critical suppliers acknowledging the Company's Supplier Code of Conduct by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to ensure 100% closure of labour and human rights corrective actions identified during supplier assessments within agreed timelines throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We aim to include labour and human rights requirements in 100% of new supplier contracts by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to implement a risk-based labour and human rights supplier evaluation framework for all critical suppliers by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to periodically review supplier labour and human rights performance through supplier scorecards and management reviews by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Procurement Goals",
+        "targets": [
+          {
+            "target": "We aim to evaluate 100% of critical suppliers against the Company's Sustainable Supplier Management requirements by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase the number of critical suppliers acknowledging the Company's Supplier Code of Conduct by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to include sustainability clauses in 100% of new supplier contracts and purchase agreements by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct periodic supplier performance evaluations for 100% of critical suppliers by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase supplier participation in sustainability awareness programs and supplier engagement initiatives by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to implement a risk-based supplier due diligence and evaluation framework for all critical suppliers by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to ensure 100% closure of supplier corrective and preventive actions (CAPAs) within agreed timelines throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We aim to periodically review supplier performance through supplier scorecards and management reviews by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Governance Goals",
+        "targets": [
+          {
+            "target": "We aim to evaluate 100% of critical suppliers against governance and ethical sourcing criteria by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual Ethical Procurement and Business Conduct training to 100% of Procurement and Supply Chain personnel by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct governance and ethical compliance assessments or audits for 100% of identified high-risk suppliers by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase the inclusion of governance and ethical sourcing criteria in supplier evaluation and selection processes by FY 2029–30, compared to the FY 2025-26 baseline.",
+            "baseline": "FY 2025-26",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to ensure 100% closure of governance and ethics-related corrective actions identified during supplier assessments within agreed timelines throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We aim to include governance, anti-corruption, and ethical business conduct clauses in 100% of new supplier contracts by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "The Managing Director is responsible for approving the Sustainable Supplier Management Policy and providing strategic direction for responsible procurement and supply chain sustainability. The Managing Director shall demonstrate leadership and commitment towards integrating sustainability into procurement and supplier management practices, ensure the availability of adequate financial, technical, and human resources for effective implementation of the Policy, and periodically review sustainable procurement objectives, supplier performance, and strategic targets."
+      },
+      {
+        "role": "Procurement and Supply Chain Department",
+        "duty": "The Procurement and Supply Chain Department is responsible for implementing the Sustainable Supplier Management Policy throughout procurement and supplier management activities. The department shall integrate environmental, social, ethical, governance, quality, and regulatory considerations into supplier selection, evaluation, and purchasing decisions, conduct supplier qualification, performance evaluations, sustainability assessments, and supplier development activities, maintain procurement records and supplier performance data, and promote responsible sourcing while collaborating with suppliers to improve sustainability performance."
+      },
+      {
+        "role": "Quality Assurance and Quality Control",
+        "duty": "The Quality Assurance and Quality Control function shall ensure that suppliers comply with applicable pharmaceutical quality standards, Good Manufacturing Practices (GMP), and regulatory requirements. QA/QC shall participate in supplier qualification, audits, and periodic performance evaluations where applicable and verify that procured materials and services meet established quality specifications and regulatory expectations."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Department Heads are responsible for ensuring that procurement activities within their respective departments comply with this Policy. They shall support sustainable procurement planning and supplier performance improvement initiatives, identify procurement-related sustainability risks and opportunities within their operational areas, and promote responsible purchasing practices in accordance with Company procedures."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "The Finance Department shall support transparent and accountable procurement processes by ensuring compliance with approved financial controls, purchasing procedures, and contractual requirements. The department is also responsible for monitoring procurement expenditures and maintaining appropriate financial records related to procurement activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are responsible for complying with this Sustainable Supplier Management Policy and applicable procurement procedures. Employees shall conduct procurement-related activities with integrity, transparency, fairness, and accountability, avoid conflicts of interest, promptly report any suspected unethical or non-compliant procurement practices, and actively participate in sustainable procurement training, awareness programs, and continual improvement initiatives."
+      },
+      {
+        "role": "Suppliers, Contractors, and Service Providers",
+        "duty": "Suppliers, contractors, and service providers are expected to comply with applicable legal, regulatory, contractual, environmental, labour, health and safety, and ethical requirements. They shall support the Company's sustainable procurement objectives by implementing responsible business practices, cooperate during supplier assessments, audits, performance evaluations, and corrective action processes, and demonstrate continual improvement in environmental, social, governance, quality, and regulatory performance throughout the business relationship."
+      }
+    ],
+    "monitoring": "Royal Pharmaceuticals Industries Pvt. Ltd. shall regularly monitor, measure, and evaluate its sustainable procurement performance to ensure compliance with this Policy.\n\nSustainable procurement performance shall be monitored through the following activities:\n\nMonitoring of Key Performance Indicators (KPIs) against established sustainable procurement objectives and targets.\n\nPeriodic evaluation of supplier environmental, social, ethical, governance, quality, and regulatory performance based on the Company's supplier assessment criteria.\n\nMonitoring supplier compliance with applicable legal, regulatory, contractual, and sustainability requirements through supplier evaluations, documentation reviews, and, where appropriate, supplier audits.\n\nPeriodic assessment of sustainability-related risks associated with suppliers, procurement activities, and the supply chain to support responsible sourcing and supply chain resilience.\n\nRoyal Pharmaceuticals Industries Pvt. Ltd. shall provide periodic training and awareness programs on sustainable procurement, responsible sourcing, supplier due diligence, supplier evaluation, ESG principles, and applicable legal requirements. Specialized training shall be provided to Procurement and Supply Chain personnel to strengthen sustainable procurement practices and support the effective implementation of this Policy.",
+    "reviewMechanism": "The Sustainable Supplier Management Policy shall be reviewed at least annually, or earlier if required due to changes in legal requirements, business operations, procurement practices, or organizational needs by Procurement Head. The review and any revisions shall be approved by the Managing Director or the designated management representative before implementation.\n\nNext Review Date: 01st April 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Royal Pharma/4. Sustainable Procurement Management Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Royal Pharma/4. Sustainable Procurement Management Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 23047,
+  "parsedAt": "2026-09-11T07:15:29.472Z"
+}

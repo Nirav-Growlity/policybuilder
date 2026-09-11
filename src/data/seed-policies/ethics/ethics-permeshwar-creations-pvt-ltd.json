@@ -1,0 +1,165 @@
+{
+  "id": "ethics-permeshwar-creations-pvt-ltd",
+  "name": "PERMESHWAR CREATIONS PVT. LTD",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Policy on Ethics.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Permeshwar Creations",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "PK Enterprises",
+          "address": "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301.India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Rishita Fashion",
+          "address": "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujrat- 396195.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Permeshwar Creations is a renowned apparel manufacturing company in India, known for its commitment to quality, innovation, and sustainability. At Permeshwar Creations, we pride ourselves on being a leader in the apparel manufacturing industry. Since our inception, we have been dedicated to producing high-quality garments that meet the needs of our diverse clientele. Our research and development team continuously innovate, creating lightweight, fine-textured garments in a variety of beautiful colors and designs.",
+      "declaration": "Permeshwar Creations is committed to conducting business ethically and with integrity. We strive to prevent any form of corruption and ensure responsible management of information.",
+      "scope": "This policy covers all aspects of Permeshwar Creation’s operations, including manufacturing, transportation, and product lifecycle management. It applies to all workers, employees, suppliers, and stakeholders involved in our operations. This policy applies to below mentioned locations:"
+    },
+    "focusAreas": [
+      "Anti-Corruption Measures",
+      "Information Security and Privacy",
+      "Fraud",
+      "Money Laundering",
+      "Anti-Competitive Practices",
+      "Conflict of Interest"
+    ],
+    "qualitative": {
+      "Anti-Corruption Measures": [
+        "Permeshwar Creations prohibits the offering, promising, giving, accepting, or soliciting of any advantage that could influence an illegal, unethical, or breach of trust action.",
+        "Cultivate a culture of transparency and integrity through comprehensive training and regular communication on anti-corruption policies."
+      ],
+      "Information Security and Privacy": [
+        "Permeshwar Creations ensures the secure collection, processing, and storage of third-party information for business purposes.",
+        "Implement robust data protection policies and conduct regular audits to ensure compliance with global information security standards."
+      ],
+      "Fraud": [
+        "Permeshwar Creations is committed to preventing, detecting, and responding to fraudulent activities, including false representation, embezzlement, and financial misconduct.",
+        "Establish a whistleblower hotline and anonymous reporting mechanism to encourage employees to report suspected fraud without fear of retaliation."
+      ],
+      "Money Laundering": [
+        "Permeshwar Creations is dedicated to preventing the use of its operations for money laundering, including concealing, transferring, or converting illegal proceeds into legitimate assets.",
+        "Deploy advanced analytics and monitoring tools to detect unusual financial transactions and patterns that may indicate money laundering activities."
+      ],
+      "Anti-Competitive Practices": [
+        "Permeshwar Creations is committed to maintaining a level playing field in the market by avoiding practices such as bid-rigging, exclusive agreements, or predatory pricing.",
+        "Conduct periodic internal audits to assess compliance with competition laws and identify potential anti-competitive practices."
+      ],
+      "Conflict of Interest": [
+        "Permeshwar Creations is dedicated to preventing any situation where personal interests may conflict with the best interests of the company, including external business relationships, family ties, or personal investments.",
+        "Require annual disclosures of potential conflicts of interest from all employees and board members, with a focus on transparency and accountability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption Measures",
+        "targets": [
+          {
+            "target": "Achieve zero incidents of corruption by 2025, with 100% of employees trained in anti-corruption practices by the end of 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Information Security and Privacy",
+        "targets": [
+          {
+            "target": "Attain 100% compliance with data protection policies by 2025, with bi-annual audits commencing from 2024.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Target a 40% increase in the number of fraud cases detected through the whistleblower system by 2025, with all reported cases investigated within 30 days.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Achieve a 20% increase in the detection of suspicious transactions by 2025, with all flagged transactions reviewed and escalated within 48 hours.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Aim to complete 100% of internal competition law audits by 2025, with corrective actions implemented within 60 days for any identified issues.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure 100% of potential conflicts are reviewed and resolved within 30 days of disclosure, with outcomes documented and stored for future reference.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Every employee, director, officer, contractor, and agent of Permeshwar Creations",
+        "duty": "The responsibility for implementing and upholding this ethics policy lies with every employee, director, officer, contractor, and agent of Permeshwar Creations."
+      },
+      {
+        "role": "Senior management, led by the Chief Ethics Officer (CEO)",
+        "duty": "Senior management, led by the Chief Ethics Officer (CEO), will oversee policy execution and provide necessary resources for successful implementation."
+      }
+    ],
+    "monitoring": "Regular audits and reporting will ensure ongoing compliance with the policy's objectives and principles.",
+    "reviewMechanism": "This policy will undergo annual reviews overseen by the Ethics and Compliance Officer (ECO), with the next review scheduled for 1st January 2025. Updates or amendments will be communicated to all stakeholders accordingly."
+  },
+  "sourcePath": "Policies - Kenal/PERMESHWAR CREATIONS PVT. LTD/Policy on Ethics.docx",
+  "sourceFiles": [
+    "Policies - Kenal/PERMESHWAR CREATIONS PVT. LTD/Policy on Ethics.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 6179,
+  "parsedAt": "2026-09-11T07:26:04.176Z"
+}

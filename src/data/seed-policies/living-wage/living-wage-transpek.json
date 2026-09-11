@@ -1,0 +1,174 @@
+{
+  "id": "living-wage-transpek",
+  "name": "Transpek",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from LIVING WAGE.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Transpek Industry Limited",
+      "industry": "",
+      "site": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+      "sites": [
+        {
+          "location": "Vadodara",
+          "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Ekalbara",
+          "address": "At & Post: Ekalbara, Taluka: Padra, Dist.: Vadodara, 391440 Gujarat India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Transpek Industry Limited, we believe that fair compensation is not only a business necessity but also a moral responsibility. We are committed to ensuring that all our employees earn a wage that supports a decent standard of living. This commitment aligns with our broader objective of fostering a sustainable and inclusive workplace that upholds ethical practices. As a company operating in the chemical manufacturing sector, we recognize that our success is directly linked to the well-being of our employees and their ability to lead fulfilling lives. This policy sets out our approach to determining and maintaining living wage standards for all our employees across various locations.",
+      "declaration": "Transpek Industry Limited is committed to ensuring fair and equitable compensation for all employees, aligned with the principles of a living wage. We prioritize ethical practices by providing wages that meet or exceed the basic cost of living, enabling our employees to maintain a decent standard of living for themselves and their families. This commitment extends to respecting labour rights, promoting transparency in wage practices, and ensuring compliance with all legal and regulatory frameworks.",
+      "scope": "This Policy applies to all employees, workers, trainees, apprentices, contract workers, temporary personnel, and other individuals engaged by Transpek Industry Limited across all operational locations and levels of the organization. The Policy also extends to contractors, service providers, and other business partners operating on behalf of the Company, who are expected to align with and support the Company's living wage principles and applicable labour standards."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "We are committed to ensuring all employees receive a living wage that meets their basic needs and upholds their dignity.\n\nThe living wage at Transpek Industry Limited is determined through a structured approach that includes:\n\nCost-of-Living Surveys: Biannual surveys conducted across our operational areas to evaluate the current cost of living, taking into account essential factors like housing, food, healthcare, education, and transportation.\n\nIndustry Benchmarking: Regular comparisons with wage standards within the chemical manufacturing sector to ensure that we remain competitive while maintaining ethical practices.\n\nLegal and Regulatory Compliance: Ensuring that all wages comply with or exceed local labour laws and minimum wage requirements, while aiming for wages that are higher than legal minimums.\n\nThis Policy applies to all employees, workers, trainees, apprentices, contract workers, temporary personnel, and other individuals engaged by Transpek Industry Limited across all operational locations and levels of the organization. The Policy also extends to contractors, service providers, and other business partners operating on behalf of the Company, who are expected to align with and support the Company's living wage principles and applicable labour standards.\n\nTranspek Industry Limited is committed to ensuring fair and equitable compensation for all employees, aligned with the principles of a living wage. We prioritize ethical practices by providing wages that meet or exceed the basic cost of living, enabling our employees to maintain a decent standard of living for themselves and their families.\n\nThe Living Wage Policy will be reviewed annually by the HR Department to ensure its ongoing relevance and effectiveness. This review will include an assessment of compliance with wage standards, the effectiveness of the policy in supporting employee well-being, and alignment with the company’s strategic objectives."
+    },
+    "focusAreas": [
+      "We are committed to ensuring all employees receive a living wage that meets their basic needs and upholds their dignity.",
+      "Our policy is based on regular benchmarking against industry standards, local cost of living, and inflation to maintain fair compensation.",
+      "We ensure transparency in wage-setting processes and hold ourselves accountable to employees and stakeholders.",
+      "We regularly review and adjust wages to reflect changes in the economy and maintain fairness.",
+      "We prioritize educating employees about their rights to fair compensation and encourage open communication regarding wage concerns."
+    ],
+    "qualitative": {
+      "Focus Area": [
+        "Fair Wage Structure: Ensure that all employees receive a wage that allows them to meet their basic needs and support their families.",
+        "Cost of Living Alignment: Regularly assess and adjust wages to reflect the cost of living in the regions where we operate.",
+        "Financial Stability for Employees: Support the financial health of our employees, contributing to their long-term well-being and reducing financial stress.",
+        "Industry Leadership: Set an example within the chemical manufacturing sector by demonstrating a commitment to fair and ethical pay practices.",
+        "We are committed to ensuring all employees receive a living wage that meets their basic needs and upholds their dignity.",
+        "Our policy is based on regular benchmarking against industry standards, local cost of living, and inflation to maintain fair compensation.",
+        "We ensure transparency in wage-setting processes and hold ourselves accountable to employees and stakeholders.",
+        "We regularly review and adjust wages to reflect changes in the economy and maintain fairness.",
+        "We prioritize educating employees about their rights to fair compensation and encourage open communication regarding wage concerns.",
+        "At Transpek Industry Limited, we are committed to the continuous improvement of our Living Wage Policy. We will:",
+        "Regularly benchmark our policy against industry standards and global best practices.",
+        "Use feedback from employees and other stakeholders to refine our wage practices.",
+        "Adjust our compensation strategies in response to changes in the economic and regulatory environment."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Initiative",
+        "targets": [
+          {
+            "target": "Transpek Industry Limited aims to implement a comprehensive Living Wage Initiative by FY 2029-30, ensuring that 100% of our employees are paid a living wage that exceeds the local cost of living by maximum of 4 %.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Equitable Benefits",
+        "targets": [
+          {
+            "target": "We aim to enhance employee benefits and ensure comparability across roles and departments, targeting up to 4% more than government notified minimum wage FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Wage Gap Reduction",
+        "targets": [
+          {
+            "target": "As part of our broader compensation strategy, we aim to reduce disparities between the highest and lowest earners within the company by 20% by FY 2029-30.",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Minimum Wage Compliance",
+        "targets": [
+          {
+            "target": "We are complying with all regional and national minimum wage laws, ensuring that all employees earn at least the minimum wage, with plans to consistently exceed those standards.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources Department",
+        "duty": "Communication: Ensuring all employees are aware of the Living Wage Policy and how it affects their compensation."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Wage Adjustments: Conducting regular reviews and making necessary adjustments based on cost-of-living assessments and employee feedback."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Benefits Review: Ensuring benefits are aligned with the company's living wage objectives and reflect equity across all levels."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Employee Surveys: Overseeing biannual surveys to gather feedback on wage adequacy and employee satisfaction."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Budget Allocation: Ensuring that the financial resources necessary for living wage adjustments and benefit enhancements are allocated."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Financial Viability: Conducting analysis to ensure that wage and benefit adjustments remain financially viable for the company."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Bonus Distribution Review: Ensuring that bonus distributions align with the principles of equity and fairness outlined in this policy."
+      },
+      {
+        "role": "Personnel Manager",
+        "duty": "Local Survey Coordination: Coordinating with teams across regions to ensure accurate and timely data collection for cost-of-living assessments."
+      },
+      {
+        "role": "Personnel Manager",
+        "duty": "Benchmarking: Supporting the analysis of regional economic indicators and industry standards to inform wage decisions."
+      },
+      {
+        "role": "Personnel Manager",
+        "duty": "Employee Feedback: Gathering feedback from employees regarding satisfaction with wages and benefits, ensuring continuous improvement in our compensation practices."
+      }
+    ],
+    "monitoring": "We conduct annual evaluations of our wage practices, focusing on key metrics such as compliance with living wage standards and employee satisfaction. These reports will include:\n\nWage Compliance Review: Assessing whether wages meet or exceed living wage targets and legal standards.\n\nEmployee Feedback: Evaluating employee satisfaction with wages and benefits to ensure continuous improvement.\n\nInternal Audits: Regular internal audits to assess compliance with wage policies and identify areas for improvement.",
+    "reviewMechanism": "The Living Wage Policy will be reviewed annually by the HR Department to ensure its ongoing relevance and effectiveness. This review will include an assessment of compliance with wage standards, the effectiveness of the policy in supporting employee well-being, and alignment with the company’s strategic objectives. Based on these reviews, any necessary updates or improvements will be made and communicated to all employees and stakeholders."
+  },
+  "sourcePath": "Policies - Kenal/Transpek/LIVING WAGE.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Transpek/LIVING WAGE.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 9848,
+  "parsedAt": "2026-09-11T07:30:41.637Z"
+}

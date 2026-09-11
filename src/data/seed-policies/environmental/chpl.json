@@ -1,0 +1,325 @@
+{
+  "id": "chpl",
+  "name": "CHPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1) Environmental Sustainability Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Choksi Heraeus Pvt. Ltd.",
+      "industry": "",
+      "site": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India",
+      "sites": [
+        {
+          "location": "CHOKSI HERAEUS PVT. LTD",
+          "address": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India",
+          "primaryFunction": "precious metal refining, recovery, and manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "We at Choksi Heraeus are dedicated to minimizing environmental impact through sustainable and responsible business practices. As a leader in precious metal refining, recovery, and manufacturing, we recognize our role in promoting circular economy principles and reducing resource consumption. Our commitment is reflected in our efforts to optimize material efficiency, lower emissions, and implement cutting-edge technologies that enhance environmental performance.\n\nWe prioritize energy conservation, responsible waste management, water efficiency, and stringent pollution control measures. Through advanced refining processes and state-of-the-art recycling techniques, we maximize the reuse of precious metals while minimizing hazardous waste. We adhere to global environmental standards and continuously innovate to reduce our carbon footprint and enhance operational sustainability.\n\nThis policy serves as a framework for our commitment to regulatory compliance, environmental protection, and collaboration with stakeholders, ensuring that we contribute to a cleaner, greener, and more sustainable future.",
+      "declaration": "Choksi Heraeus integrates environmental sustainability into its core operations by optimizing resource efficiency, emission control, and waste management. By advancing precious metal recovery and circular economy initiatives, we minimize environmental impact while enhancing operational sustainability. Our processes align with global environmental standards, leveraging innovation in cleaner technologies. Through responsible sourcing and sustainable manufacturing, we strive to reduce our carbon footprint and drive long-term ecological stewardship.",
+      "scope": "This policy applies to all operations, facilities, and stakeholders of Choksi Heraeus, covering precious metal refining, recovery, and manufacturing. It focuses on energy efficiency, resource optimization, waste reduction, and emissions control. Employees, contractors, and suppliers must adhere to environmental best practices and regulatory standards. The policy also drives innovation and sustainability through a circular economy approach."
+    },
+    "focusAreas": [
+      "Energy Efficiency & Emission Reduction",
+      "Water Resource Management",
+      "Responsible Material & Chemical Use",
+      "Air Quality & Pollution Control",
+      "Waste Reduction & Circular Economy",
+      "Product Use Sustainability",
+      "End-of-Life Product Management",
+      "Customer Health & Safety",
+      "Biodiversity & Ecosystem Protection",
+      "Compliance & Environmental Advocacy",
+      "Innovation in Green Technologies"
+    ],
+    "qualitative": {
+      "Energy Efficiency & Emission Reduction": [
+        "Implementing energy-efficient technologies and optimizing processes to minimize carbon footprint and greenhouse gas emissions.",
+        "Enhance energy efficiency by integrating advanced technologies in production and reduce reliance on fossil fuels by improving process optimization."
+      ],
+      "Water Resource Management": [
+        "Reducing water consumption through recycling, reuse initiatives, and responsible wastewater treatment.",
+        "Optimize water recycling and reuse to reduce freshwater intake and implement advanced water treatment technologies to enhance sustainability."
+      ],
+      "Responsible Material & Chemical Use": [
+        "Ensuring safe handling of chemicals, minimizing hazardous substances, and promoting sustainable raw materials.",
+        "Phase out hazardous chemicals by sourcing certified eco-friendly alternatives and optimizing processes to minimize their use."
+      ],
+      "Air Quality & Pollution Control": [
+        "Implementing advanced filtration and emission control systems to maintain compliance with air quality standards.",
+        "Reduce air emissions by upgrading filtration, emission control systems and hence promote cleaner production methods to minimize atmospheric pollution."
+      ],
+      "Waste Reduction & Circular Economy": [
+        "Maximizing material recovery, minimizing waste generation, and promoting recycling and reuse strategies.",
+        "Minimize waste generation through process efficiency improvements and strength the recycling and material recovery process to support circular economy goals."
+      ],
+      "Product Use Sustainability": [
+        "Designing products with enhanced environmental performance, durability, and lower ecological impact.",
+        "Enhance durability and recyclability of products to minimize waste and hence reduce the environmental impact of product."
+      ],
+      "End-of-Life Product Management": [
+        "Encouraging take-back programs, responsible disposal, and recycling initiatives for product sustainability.",
+        "Establish product take-back and recycling initiatives for responsible disposal.",
+        "Collaborate with customers to ensure sustainable product end-of-life management."
+      ],
+      "Customer Health & Safety": [
+        "Ensuring product safety, reducing environmental risks, and promoting sustainable practices in customer use."
+      ],
+      "Biodiversity & Ecosystem Protection": [
+        "Minimizing environmental impact on local ecosystems through responsible land use and conservation efforts.",
+        "Minimize land-use impact by implementing eco-friendly site management and support afforestation and biodiversity conservation projects."
+      ],
+      "Compliance & Environmental Advocacy": [
+        "Engaging in sustainability initiatives, complying with environmental regulations, and promoting eco-conscious industry practices.",
+        "Ensure 100% compliance with global and local environmental regulations through environmental audits."
+      ],
+      "Innovation in Green Technologies": [
+        "Investing in R&D for eco-friendly solutions, process improvements, and sustainable product innovation.",
+        "Invest in R&D for developing eco-friendly products and processes and hence develop sustainable alternatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency & Emission Reduction",
+        "targets": [
+          {
+            "target": "Achieve a 5% reduction in energy consumption per unit of production by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Achieve 7% reduction in Scope 1, 2, 3 GHG emissions by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Water Resource Management",
+        "targets": [
+          {
+            "target": "Reduce overall water consumption by 20% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Maintain water recycling rate to 75% of total water consumption by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Maintain 100% compliance with wastewater discharge regulations annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Material & Chemical Use",
+        "targets": [
+          {
+            "target": "Phase out 5% of hazardous chemicals from operations and increase the use of sustainable raw materials by 10% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality & Pollution Control",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in particulate emissions by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Ensure 95% efficiency in air pollution control devices across all facilities by regular device inspections.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Reduce NOx and SOx emissions by 15% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Waste Reduction & Circular Economy",
+        "targets": [
+          {
+            "target": "Reduce industrial waste generation by 5% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Achieve a 40% waste recycling rate across operations by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Product Use Sustainability",
+        "targets": [
+          {
+            "target": "Reduce product-related carbon footprint by 3% per unit by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Increase the share of sustainably sourced materials in products to 50% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "End-of-Life Product Management",
+        "targets": [
+          {
+            "target": "Start a pilot project by to track how products are used by customers, helping plan for future recycling or reuse.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Implement closed-loop recycling program for industrial customers covering 5% of product volume by FY 2028-29 , enabling circular use of high-value materials.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with all product safety and environmental regulations through regular product testing",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct 100% product safety assessments annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain zero customer complaints related to product safety or handling till FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Maintain zero product-related environmental incidents annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity & Ecosystem Protection",
+        "targets": [
+          {
+            "target": "Increase green cover 15% by FY 2028-29 through CSR activities.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Invest in 2 biodiversity conservation projects by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Compliance & Environmental Advocacy",
+        "targets": [
+          {
+            "target": "Train all employees on sustainability and environmental regulations annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Participate in 2 industry sustainability initiatives by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Innovation in Green Technologies",
+        "targets": [
+          {
+            "target": "Allocate 5% of annual R&D budget to green technology development by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Reduce energy-intensive production steps by 30% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Integrate sustainability into corporate strategy, allocate resources, and review environmental performance."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Develop action plans, conduct audits, and implement training programs to meet environmental goals."
+      },
+      {
+        "role": "Operations & Production Teams",
+        "duty": "Optimize energy use, minimize waste, and ensure compliance with air and water quality standards."
+      },
+      {
+        "role": "Supply Chain & Procurement Teams",
+        "duty": "Source sustainable materials, phase out hazardous chemicals, and promote recycling initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental best practices, participate in sustainability efforts, and report concerns or improvement ideas."
+      },
+      {
+        "role": "R&D & Innovation Teams",
+        "duty": "Develop eco-friendly products, enhance recyclability, and invest in green technologies."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Ensure regulatory compliance, conduct risk assessments, and engage in industry sustainability initiatives."
+      }
+    ],
+    "monitoring": "Choksi Heraeus is committed to maintaining transparency in its environmental performance by establishing a structured monitoring and reporting framework. Environmental data, including energy consumption, emissions, water usage, and waste management metrics, will be regularly tracked and documented. Periodic internal audits and assessments will be conducted to ensure compliance with sustainability objectives and regulatory standards. Key performance indicators (KPIs) will be reviewed, and findings will be reported to senior management and relevant stakeholders. Additionally, an annual environmental sustainability report will be published, outlining progress, challenges, and future action plans to enhance accountability and continuous improvement.",
+    "reviewMechanism": "This policy will be reviewed annually by the Environmental Manager to assess its effectiveness and alignment with evolving sustainability goals, regulatory requirements, and industry best practices. Feedback from audits, employee suggestions, and stakeholder engagements will be incorporated into policy updates. Necessary revisions will be made to strengthen environmental commitments and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation.\n\nEffective Date: 01.01.2025\n\nNext Review Date: 01.01.2026"
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/CHPL/1) Environmental Sustainability Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/CHPL/1) Environmental Sustainability Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12041,
+  "parsedAt": "2026-09-11T07:36:46.514Z"
+}

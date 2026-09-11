@@ -1,0 +1,178 @@
+{
+  "id": "trinity",
+  "name": "Trinity",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Integrated Environmental Stewardship Policy - Updated - GRW 29-07.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Trinity Logistics, Inc.",
+      "industry": "",
+      "site": "50 Fallon Avenue, Seaford, DE 19973",
+      "sites": [
+        {
+          "location": "Trinity Logistics, Inc. Corporate Office, Seaford, Delaware",
+          "address": "50 Fallon Avenue, Seaford, DE 19973",
+          "primaryFunction": "Corporate Office"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "50 Fallon Avenue, Seaford, DE 19973"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Trinity Logistics, Inc. is committed to pioneering environmentally sound practices within the context of freight arrangement services. Our people-centric approach prioritizes not only the efficient movement of goods but also the preservation of our planet for future generations. Through this Integrated Environmental Stewardship Policy, we aim to minimize our carbon footprint, offer eco-friendly transportation methods to shipper customers, and foster a culture of environmental responsibility among our team members, customers, and stakeholders.",
+      "declaration": "The objective of Trinity Logistics, Inc.'s environmental policy is to reduce our ecological impact while maintaining exceptional service standards. We aim to achieve this by:\n\nImplementing green initiatives to minimize carbon emissions and waste generation.\n\nInvesting in eco-friendly technologies and offering a variety of transportation modes to shipper customers with the ability to offset carbon emissions.\n\nEducating and engaging team members regarding environmental practices.\n\nDetermine baseline of our environmental performance and take steps to offset carbon impacts.\n\nContributing positively to the communities and ecosystems in which we operate.",
+      "scope": "This environmental policy applies to all team members of Trinity Logistics, Inc. across all operational locations. The following is the address of our corporate office:"
+    },
+    "focusAreas": [
+      "Energy",
+      "Waste Management",
+      "Responsible Procurement",
+      "Environmental Service and Advocacy"
+    ],
+    "qualitative": {
+      "Energy": [
+        "Carrier Emission Awareness: Since 2008, Trinity has been a SmartWay Transport Partner in collaboration with the Environmental Protection Agency (EPA), and we aim to continue this partnership. Trinity annually updates its commitment to SmartWay by acknowledging emissions data supplied by SmartWay Transport Carriers in its network.",
+        "Starting from 2020, we implemented energy-efficient technologies and practices across our logistics operations such as LED lighting and promotion of paperless payment methods.",
+        "Since 2020, we have invested in Shred-It Paper Shredding services and participate in additional recycling methods including recycling cardboard which comes into our office. We intend to maintain and build upon these initiatives.",
+        "Since 2022, we have contributed to environmentally friendly projects in order to offset carbon emissions from owned office locations. Our goal is to sustain and expand these contributions.",
+        "Carbon Capture and Storage (CCS): Beginning in 2022, we invested in environmentally friendly projects with CarbonFund and ClimeCo, offsetting carbon emissions stemming from electric usage in owned office locations. Moving forward, Trinity is using ESGtech.ai to provide robust reporting on its carbon impacts and commits to continuing offsetting CO2 emissions annually, thereby significantly reducing our net greenhouse gas emissions.",
+        "Beginning in 2025, Trinity’s partner Banyan includes visibility of GHG impact on less-than-truckload shipments allowing Trinity to provide its shipper customers with GHG data on those shipments, in addition, within a year Trinity will provide a mechanism that shipper customer may actually offset carbon emissions by purchases carbon offset credits through Patch IO.",
+        "In addition, within the next 3 years, Trinity through Patch IO Trinity’s Transportation Management System will include visibility of GHG impact on truckload shipments allowing Trinity to provide its shipper customers with GHG data on those shipments, in addition, within a year after that Trinity will provide a mechanism that shipper customer may actually offset carbon emissions by purchases carbon offset credits through Patch IO."
+      ],
+      "Waste Management": [
+        "Recycling Infrastructure Development: Since 2020, we've invested in enhancing recycling via ShredIt, cardboard and battery recycling. In 2025, Trinity will recycle toner cartridges from our various printers throughout the office.",
+        "Starting in 2020, we implemented paperless payment methods across our logistics operations as an energy-efficient practice. We are committed to continuing this initiative going forward.",
+        "We aim to continue the process of any used or leftover paint is responsibly recycled through approved programs, preventing hazardous waste from entering landfills and supporting our commitment to circular material use.",
+        "By the end of 2027, we will ensure that all employees are trained on waste reduction practices and efficient multi-stream recycling and sorting techniques to support a cleaner, more sustainable office environment."
+      ],
+      "Responsible Procurement": [
+        "Strategy to reduce our energy uses include the procurement of LED lighting, energy efficient hardware, including computers, servers, etc.",
+        "Strategy to source our marketing materials (swag) and all office supplies from environmentally-friendly suppliers who utilize recycled materials in their production as often as possible."
+      ],
+      "Environmental Service and Advocacy": [
+        "Our goal is to foster a culture of environmental stewardship within our organization by actively participating in and supporting environmental advocacy initiatives. We aim to increase our involvement in community and global sustainability efforts, contributing to the preservation of natural ecosystems and promoting environmental awareness. Additionally, we seek to empower our employees to engage in environmental causes by providing opportunities for volunteerism and fostering a sense of responsibility toward the environment. Through these efforts, we aspire to make a meaningful and lasting impact on the environment and the communities in which we operate."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy and GHG Emissions",
+        "targets": [
+          {
+            "target": "KPI 1: Reduce GHG emissions per office employee by 5% by 2030 as compared baseline year 2022",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "KPI 2: Reduce total Scope 3 emissions related to logistics services per mile by 5% by 2030 with the use of technology by motor carriers as compared baseline year 2022",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "KPI 3: Continue Offset 100% of scope 1 and 2 office GHG emissions at least until year 2030",
+            "baseline": "",
+            "deadline": "at least until year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management and Recycling",
+        "targets": [
+          {
+            "target": "KPI 1: Maintain 100% of office recycling paper every year. The company has been doing this since 2014.",
+            "baseline": "The company has been doing this since 2014",
+            "deadline": "every year"
+          },
+          {
+            "target": "KPI 2: Reduce plastic waste generated in offices by 1% by 2030 as compared to baseline year 2022",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "KPI 3: Aim to train at-least 75% of workforce on waste reduction and multi-stream recycling by 2027 as compared to baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "KPI 4: We aim to maintain 100% of our waste being sent to certified disposal vendors and target 100% waste diversion from landfill through recycling and recovery methods by 2030, using FY 2022 as the baseline year.",
+            "baseline": "FY 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "KPI 5: We aim to achieve 95% paperless operations across administrative and logistics functions by FY 2030, building on digital invoicing practices initiated in 2020.",
+            "baseline": "digital invoicing practices initiated in 2020",
+            "deadline": "FY 2030"
+          },
+          {
+            "target": "KPI 6: We aim to increase procurement of office supplies and marketing materials from environmentally friendly, certified vendors by at least 10% by 2030 from the FY 2022 baseline.",
+            "baseline": "FY 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environment Service and Advocacy",
+        "targets": [
+          {
+            "target": "KPI 1: Participate in at least 3 environmental advocacy programs annually by 2030 as compared to baseline year 2024 at 0 environmental advocacy programs participation",
+            "baseline": "2024 at 0 environmental advocacy programs participation",
+            "deadline": "2030"
+          },
+          {
+            "target": "KPI 2: Increase employee volunteer hours for environmental causes by 10% by 2030 as compared to baseline year to be established in 2027",
+            "baseline": "to be established in 2027",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "The Executive Leadership Team, led by the President",
+        "duty": "Holds ultimate responsibility for the implementation and success of the environmental policy."
+      },
+      {
+        "role": "The Chief Financial Officer through other departments including facilities and technology",
+        "duty": "Is tasked with overseeing day-to-day environmental initiatives, coordinating with departments, and reporting progress to senior management."
+      },
+      {
+        "role": "All team members, regardless of role or level",
+        "duty": "Have a responsibility to integrate environmental principles into their work practices."
+      },
+      {
+        "role": "Department managers",
+        "duty": "Are accountable for ensuring that their teams understand and comply with relevant environmental policies and procedures."
+      },
+      {
+        "role": "Trinity Logistics team members",
+        "duty": "Trinity Logistics expects its team members to share its commitment to environmental stewardship."
+      }
+    ],
+    "monitoring": "Transparent reporting ensures accountability and fosters trust among stakeholders. Trinity Logistics, Inc. employs a comprehensive reporting framework to communicate its environmental performance effectively:\n\nThe Operational Risk Departement compiles and analyzes data from various sources to produce annual internal reports on environmental metrics utilizing ESGai.\n\nTeam Services and Facilities Departments are responsible for providing accurate and timely information on various departmental environmental activities and performance.\n\nBy 2026, Trinity Logistics will publishes an annual environmental report, detailing progress made towards goals, initiatives implemented, and future plans.\n\nExternal stakeholders, including clients, regulatory agencies, and the public, can access this report through the company's website or other communication channels of the various ESG components.\n\nTrinity Logistics actively seeks feedback from stakeholders on its environmental performance and policies through Quarterly Business Reviews with our customers.",
+    "reviewMechanism": "Regular Performance Evaluation: The Operational Risk Manager conducts yearly environmental performance assessments and based that carryout annual review of this policy.\n\nData Analysis and Reporting: Energy, waste, and emissions data are analyzed by the Operational Risk department, generating reports on successes and challenges, ensuring comprehensive understanding.\n\nReview Meetings: Annual meetings with the Executive Leadership Team facilitate discussions on metrics, challenges, and necessary adjustments to strategies, ensuring alignment and effective decision-making.\n\nContinuous Improvement: Findings from evaluations and stakeholder feedback inform adjustments to policies and action plans, fostering adaptability and responsiveness to evolving needs.\n\nDocumentation and Transparency: All activities and decisions are meticulously documented for transparency and accountability in alignment with the Responsible Care Management System, ensuring clear communication internally and externally, fostering trust and credibility."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Trinity/Integrated Environmental Stewardship Policy - Updated - GRW 29-07.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Trinity/Integrated Environmental Stewardship Policy - Updated - GRW 29-07.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 11440,
+  "parsedAt": "2026-09-11T07:16:58.760Z"
+}

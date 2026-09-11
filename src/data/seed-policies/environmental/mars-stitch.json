@@ -1,0 +1,341 @@
+{
+  "id": "mars-stitch",
+  "name": "Mars Stitch",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Mars Stitch Ltd.",
+      "industry": "",
+      "site": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+      "sites": [
+        {
+          "location": "Mars Stitch Ltd.",
+          "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+          "primaryFunction": "Manufacturing of garments and textiles"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Mars Stitch Ltd. is committed to pioneering sustainable practices in the manufacturing of garments and textiles. With a strong presence in the textile industry, we acknowledge our responsibility to minimize our environmental impact while delivering high-quality products to our customers. Our dedication to innovation and efficiency enables us to lead by example, fostering a sustainable future for generations to come.\n\nAt Mars Stitch Ltd., we believe that preserving the environment is paramount. Through strategic initiatives, we aim to reduce our carbon footprint, optimize resource utilization, and promote eco-friendly manufacturing processes. By integrating sustainability into all aspects of our operations, we strive not only to meet regulatory standards but to set a benchmark for environmentally conscious manufacturing in the textile industry. Our commitment to sustainability is not merely a policy; it is a core value driving our vision for a greener tomorrow.",
+      "declaration": "Mars Stitch Ltd. is dedicated to reducing its environmental footprint through sustainable practices across all stages of garment manufacturing. By prioritizing resource efficiency, waste reduction, and eco-friendly production methods, we aim to positively impact the environment and the communities in which we operate.",
+      "scope": "This policy applies exclusively to the operations of Mars Stitch Ltd., covering all employees, workers, contractors, contractual worker, subcontractors, internal and external stakeholders directly associated with our facilities."
+    },
+    "focusAreas": [
+      "Energy Efficiency",
+      "Water Management",
+      "Waste Management",
+      "Carbon Emissions",
+      "Resource Optimization",
+      "Biodiversity Protection",
+      "Customer Health and Safety",
+      "Environmental Impacts from Use of Products",
+      "Environmental Impacts from Products End-of-Life"
+    ],
+    "qualitative": {
+      "Energy consumption and Greenhouse Gases": [
+        "Implement energy-efficient dyeing and finishing processes to reduce overall energy consumption in textile manufacturing.",
+        "Conduct regular energy audits to identify inefficiencies and opportunities for improvement in production systems.",
+        "Minimize greenhouse gas emissions by optimizing logistics and adopting cleaner transportation methods & Transitioning to electric or hybrid vehicles for internal transportation and switching to low-carbon fuels for machinery & Increasing the share of renewable energy in our power mix, such as installing solar panels on factory rooftops and purchasing green power certificates."
+      ],
+      "Water": [
+        "Optimize water usage in all manufacturing processes, particularly dyeing and washing, by adopting water-saving technologies.",
+        "Install wastewater treatment plants to ensure discharged water meets environmental standards."
+      ],
+      "Biodiversity": [
+        "Undertake initiatives to preserve and restore local biodiversity in areas surrounding production units.",
+        "Minimize land-use impacts by adhering to sustainable site management practices.",
+        "Collaborate with environmental organizations to support biodiversity conservation projects."
+      ],
+      "Air Pollution": [
+        "Implement advanced air filtration systems in production facilities to minimize emissions of particulate matter and harmful gases.",
+        "Regularly monitor and report air quality metrics within and around the manufacturing units.",
+        "Transition to cleaner fuel alternatives in all combustion-based operations."
+      ],
+      "Material Chemical and Waste": [
+        "Eliminate the use of hazardous chemicals by adopting eco-friendly alternatives.",
+        "Ensure responsible handling, storage, and disposal of all chemical substances used in production.",
+        "Promote the development and use of biodegradable or recyclable materials in our product lines."
+      ],
+      "Environmental impacts from use of products": [
+        "Design products that require less water and energy during consumer use.",
+        "Educate customers on sustainable usage and care practices for our products.",
+        "Incorporate environmental impact assessments into product design and development."
+      ],
+      "Environment Impact from Product End-of-Life": [
+        "Implement take-back schemes to facilitate the recycling of used products.",
+        "Partner with recycling facilities to ensure efficient processing of end-of-life products.",
+        "Educate customers on responsible disposal practices for our products."
+      ],
+      "Customer Health and Safety": [
+        "Maintain rigorous testing standards to ensure all products are free from harmful substances.",
+        "Provide clear information on product safety and eco-labelling.",
+        "Regularly update safety protocols in line with international standards."
+      ],
+      "Environmental Services and Advocacy": [
+        "Engage in community programs that promote environmental education and awareness.",
+        "Advocate for sustainable practices within the textile industry through partnerships and memberships.",
+        "Support environmental policies and regulations that align with our sustainability goals."
+      ],
+      "Employee and Stakeholder Engagement": [
+        "Improve employee awareness and engagement in environmental conservation through training programs and workshops.",
+        "Foster partnerships with suppliers and customers to align on shared sustainability goals.",
+        "Encourage innovation within teams to generate new ideas for sustainable practices and products."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy consumption and Greenhouse Gases",
+        "targets": [
+          {
+            "target": "Reduce energy consumption by 15% in all facilities by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Transition 20% of the energy mix to renewable sources (e.g., solar, wind) by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Reduce Scope 1 , Scope 2 & Scope 3 emissions by 15% by 2026 through process optimization and renewable energy adoption.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Water",
+        "targets": [
+          {
+            "target": "Decrease freshwater consumption in production by 15% by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Recycle 20% of wastewater back into the production processes by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Install rainwater harvesting systems in at least 20% of manufacturing units by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Plant 5,000 trees annually around production facilities and nearby communities.",
+            "baseline": "2023",
+            "deadline": ""
+          },
+          {
+            "target": "Partner with at least 2 biodiversity organizations by 2026 to support conservation projects.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Reduce particulate matter emissions by 15% in production facilities by 2026 through the installation of advanced filtration systems.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Achieve compliance with international air quality standards in 100% of production sites by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Material Chemical and Waste",
+        "targets": [
+          {
+            "target": "Achieve zero hazardous waste to landfills by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Increase the recycling rate of textile waste to 25% by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Reduce the use of hazardous chemicals in production by 15% by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Environmental impacts from use of products",
+        "targets": [
+          {
+            "target": "Design 30% of product lines with lower environmental impact materials by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure 20% of new product designs have a life-cycle environmental assessment by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Environment Impact from Product End-of-Life",
+        "targets": [
+          {
+            "target": "Establish product take-back programs in 50% of markets by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Recycle or reuse 20% of returned products by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Eliminate 100% of restricted hazardous substances in production by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct annual safety testing for 100% of product lines to meet international standards.",
+            "baseline": "2023",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Promotion of Sustainable Consumption",
+        "targets": [
+          {
+            "target": "Increase the share of eco-friendly products to 50% of our total product range by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Achieve 100% supply chain transparency for our premium product lines by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services and Advocacy",
+        "targets": [
+          {
+            "target": "Conduct 3 awareness programs annually for local communities.",
+            "baseline": "2023",
+            "deadline": ""
+          },
+          {
+            "target": "Support at least 2 textile industry advocacy initiatives by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Council",
+        "duty": "A good working environment is a prerequisite for good performance. Considering this, a committee has been formed to ensure a safe working environment within the factory and for its overall implementation in compliance with all the rules and regulations of the labor law."
+      },
+      {
+        "role": "S.M Azmal Huda, General Manager(Operation), President",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Mahmodul Hasan, Manager – HR, Admin & Com., Vice President",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Eva Akter, Executive-Welfare, Member Secretary",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Nonda Gopal, Sr. Executive -Compliance, Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Md.Shanta, Maintenance In-charge, Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Md. Masud, Asst. Manager-Admin, Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Mr. Antar, Asst. Manager-Store, Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Md. Samim, Cutting Asst., Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Md. Nayeem Hosan, Quality Inspector, Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Mst. Ruma Akter, Operator(Sewing), Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Mst. Jushna Begam, Operator(Sewing), Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Mst. Mira, Finishing Asst., Member",
+        "duty": "Committee member of the Executive Council."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees agree to actively support and implement the environmental initiatives outlined in this policy. This includes adhering to sustainable practices in daily operations, participating in environmental training sessions, and promptly reporting any activity that may negatively impact the environment. Employees also acknowledge their responsibility to foster a culture of environmental stewardship within Mars Stitch Ltd. and contribute to the achievement of our sustainability goals."
+      }
+    ],
+    "monitoring": "Mars Stitch Ltd. is committed to continuous improvement in environmental performance through:\n\nRegular monitoring of key environmental performance indicators (KPIs).\n\nAdoption of new technologies and best practices for sustainability.\n\nProviding ongoing training and awareness programs for employees.\n\nConducting regular environmental impact assessments to identify areas for improvement.\n\nTo ensure transparency and accountability:\n\nAnnually Internal Reviews: Conduct annually reviews of environmental KPIs and compliance with the Environmental Policy.\n\nAnnual Sustainability Report: Publish a comprehensive report detailing progress against quantitative and qualitative targets, compliance with regulations, and areas for improvement.\n\nStakeholder Communication: Regularly share updates on environmental initiatives and achievements with stakeholders through newsletters, website updates, and corporate meetings",
+    "reviewMechanism": "The Manager – HR, Admin & Com. is responsible for the implementation, oversight, and review of this policy. This Policy will be reviewed every year, and any updates will be communicated as necessary."
+  },
+  "sourcePath": "Policies - Kenal/Mars Stitch/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Mars Stitch/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 12177,
+  "parsedAt": "2026-09-11T07:24:33.483Z"
+}

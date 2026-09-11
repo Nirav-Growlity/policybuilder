@@ -1,0 +1,469 @@
+{
+  "id": "ethics-royal-pharma",
+  "name": "Royal Pharma",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethical Sourcing and Business Conduct Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Royal Pharmaceuticals Industries Pvt. Ltd.",
+      "industry": "",
+      "site": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India",
+      "sites": [
+        {
+          "location": "Manufacturing facility",
+          "address": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India",
+          "primaryFunction": "Manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Royal Pharmaceuticals Industries Pvt. Ltd. is committed to conducting business with the highest standards of integrity, honesty, transparency, and accountability. The Company integrates ethical business practices into all operations, business decisions, and stakeholder relationships through strong governance, legal compliance, and continual improvement, reinforcing its commitment to responsible and sustainable business conduct.\n\nThe purpose of this Ethical Sourcing and Business Conduct Policy is to establish the principles, commitments, and expectations that guide ethical decision-making and responsible business conduct across all operations of Royal Pharmaceuticals Industries Pvt. Ltd.\n\nThis Policy aims to:\n\nPromote a culture of integrity, honesty, transparency, and accountability in all business activities.\n\nEnsure compliance with all applicable laws, regulations, industry standards, and contractual obligations.\n\nPrevent and address unethical practices, including corruption, bribery, fraud, conflicts of interest, money laundering, and other forms of misconduct.\n\nProtect confidential information, intellectual property, and company assets through responsible information management.\n\nFoster fair, ethical, and transparent relationships with employees, customers, suppliers, contractors, business partners, regulators, and other stakeholders.\n\nEncourage the timely reporting of suspected unethical conduct and ensure protection against retaliation for individuals who report concerns in good faith.",
+      "declaration": "Royal Pharmaceuticals Industries Pvt. Ltd. is committed to conducting business with integrity, honesty, fairness, and transparency. The Company integrates ethical principles into all business activities through strong governance, compliance with applicable laws, and a zero-tolerance approach to corruption, bribery, fraud, money laundering, and conflicts of interest, supporting responsible and sustainable business growth.",
+      "scope": "This Ethical Employment and Human Rights Policy applies to the manufacturing facility of Royal Pharmaceuticals Industries Pvt. Ltd. located at E-128, MIDC Industrial Area, Tarapur, Boisar – 401506, Palghar, Maharashtra, India. It applies to all employees, directors, contractors, suppliers, consultants, service providers, and other personnel working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Anti-Corruption & Anti-Bribery",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Anti-Money Laundering & Financial Integrity",
+      "Responsible Information Management & Data Protection",
+      "Fair Competition & Ethical Business Practices",
+      "Responsible Third-Party Relationships",
+      "Legal & Regulatory Compliance",
+      "Reporting Ethical Concerns"
+    ],
+    "qualitative": {
+      "Anti-Corruption & Anti-Bribery": [
+        "We strive to foster a culture of integrity, transparency, and accountability by maintaining zero tolerance for bribery, corruption, facilitation payments, kickbacks, extortion, or any other form of unethical business conduct across all business operations.",
+        "We will ensure that all business decisions, procurement activities, sales transactions, regulatory interactions, and commercial negotiations are conducted fairly, ethically, and solely on merit without any improper influence.",
+        "We aim to maintain fully compliance with the local and international regulations and standards.",
+        "We seek to conduct the regular risk assessment and establish effective governance, internal controls, and due diligence processes to identify, prevent, detect, and mitigate corruption-related risks associated with employees, suppliers, contractors, distributors, consultants, and other business partners.",
+        "We seek to prevent and mitigate corruption risks through the implementation of a Gift & Hospitality Register, Third-Party Due Diligence, an Approval Matrix, and a confidential Whistleblower Mechanism across all business operations.",
+        "We seek to promptly investigate all reported or suspected incidents of corruption or bribery and implement appropriate corrective, preventive, disciplinary, and legal actions where violations are confirmed.",
+        "We aim to train our employees on the Anti-Corruption and Anti bribery issues.",
+        "Conduct all business honestly and never offer, promise, request, authorize, or accept anything of value that could improperly influence a business decision or create an unfair advantage.",
+        "Conduct business with honesty, fairness, and transparency.",
+        "Follow Company procedures for gifts, hospitality, and donations.",
+        "Record all business transactions accurately.",
+        "Report suspected corruption immediately.",
+        "Do not offer or accept bribes, kickbacks, or facilitation payments.",
+        "Do not use gifts or entertainment to influence business decisions.",
+        "Do not conceal payments or create false records.",
+        "Do not ignore unethical behaviour or suspicious payments."
+      ],
+      "Conflict of Interest": [
+        "We strive to promote transparency, impartiality, and accountability by ensuring that all business decisions are made in the best interests of Royal Pharmaceuticals Industries Pvt. Ltd., free from actual, potential, or perceived conflicts of interest.",
+        "We aim to maintain fully compliance with the local and international regulations and standards.",
+        "We will require employees, directors, and individuals acting on behalf of the Company to promptly disclose any personal, financial, family, or external interests that may influence, or appear to influence, their professional judgement or decision-making.",
+        "We seek to establish a structured process for identifying, assessing, disclosing, managing, and monitoring conflicts of interest to safeguard the integrity of business operations and maintain stakeholder trust.",
+        "We strive to ensure that procurement decisions, supplier selection, recruitment, promotions, contracting, investments, and commercial transactions are conducted fairly, objectively, transparently, and solely on merit.",
+        "We seek to identify, disclose, and manage conflicts of interest through Annual Conflict of Interest Declaration Forms, a Conflict of Interest Register, and an independent management review process.",
+        "We aim to train our employees on the Conflict of interest issues.",
+        "Always act in the best interests of the Company and avoid situations where personal interests may interfere with professional responsibilities.",
+        "Disclose actual, potential, or perceived conflicts of interest.",
+        "Make objective business decisions.",
+        "Seek guidance whenever uncertain.",
+        "Update conflict declarations whenever circumstances change.",
+        "Do not hide personal or financial interests.",
+        "Do not favour friends, relatives, or personal businesses.",
+        "Do not participate in decisions where you have a conflict.",
+        "Do not misuse your position for personal gain."
+      ],
+      "Fraud Prevention": [
+        "We strive to maintain a culture of honesty, integrity, and accountability by adopting a zero-tolerance approach towards fraud, theft, embezzlement, forgery, financial misconduct, asset misappropriation, falsification of records, and any other fraudulent or deceptive practices.",
+        "We seek to prevent and detect fraud through Maker–Checker Controls, Segregation of Duties (SoD), Surprise Cash Verification, Inventory Reconciliation, and a confidential fraud reporting mechanism.",
+        "We seek to safeguard the Company's financial resources, physical assets, intellectual property, confidential information, and information systems against unauthorized use, manipulation, theft, or misappropriation.",
+        "We aim to maintain fully compliance with the local and international regulations and standards.",
+        "We will ensure that all financial transactions, accounting records, production records, inventory records, procurement activities, expense claims, regulatory submissions, and operational documentation are accurate, complete, truthful, and supported by appropriate evidence.",
+        "We strive to strengthen fraud risk management by conducting periodic fraud risk assessments, internal audits, management reviews, and data verification activities to identify vulnerabilities and implement appropriate preventive and corrective measures.",
+        "We aim to train our employees on the Fraud prevention.",
+        "Protect Company assets and ensure all records, transactions, and business information are truthful, complete, and accurate.",
+        "Maintain accurate financial and operational records.",
+        "Protect Company assets.",
+        "Verify transactions before approval.",
+        "Do not falsify documents or records.",
+        "Do not steal, misuse, or damage Company property.",
+        "Do not submit false expense claims or invoices."
+      ],
+      "Anti-Money Laundering & Financial Integrity": [
+        "We strive to conduct business with integrity by preventing money laundering, terrorist financing, financial crime, and other illicit activities through responsible business practices and robust financial governance.",
+        "We seek to prevent money laundering and financial crime through Know Your Customer (KYC) verification, Sanctions Screening, Bank Account Verification, and a Payment Authorization Matrix for all applicable business transactions.",
+        "We aim to maintain fully compliance with the local and international regulations and standards.",
+        "We will establish and maintain appropriate due diligence processes to verify the legitimacy, integrity, and compliance of customers, suppliers, distributors, contractors, consultants, and other business partners before entering into or continuing business relationships.",
+        "We seek to ensure that all financial transactions are conducted through authorized, transparent, and traceable channels and are supported by complete, accurate, and verifiable documentation.",
+        "We will maintain accurate, complete, and timely financial books, records, invoices, contracts, payment records, and accounting documentation in accordance with applicable legal, regulatory, taxation, and accounting requirements.",
+        "We aim to train our employees on the AML.",
+        "Conduct business only with legitimate parties and ensure all financial transactions are transparent, lawful, and properly documented.",
+        "Maintain complete financial documentation.",
+        "Follow approved payment procedures.",
+        "Report suspicious financial transactions.",
+        "Do not process unexplained or unusual payments.",
+        "Do not accept anonymous or unauthorized payments.",
+        "Do not attempt to conceal financial activities."
+      ],
+      "Responsible Information Management & Data Protection": [
+        "We strive to protect the confidentiality, integrity, availability, and responsible use of Company information, intellectual property, personal data, and other sensitive business information throughout its lifecycle.",
+        "We seek to safeguard Company information through Multi-Factor Authentication (MFA), Role-Based Access Controls (RBAC), Data Backup, Firewall Protection, and Data Loss Prevention (DLP) measures.",
+        "We aim to maintain fully compliance with the local and international regulations and standards.",
+        "We will establish and maintain appropriate information management practices, including information classification, secure storage, controlled access, secure transmission, retention, and disposal of information in accordance with applicable legal, regulatory, and business requirements.",
+        "We seek to ensure that confidential business information, trade secrets, research and development data, manufacturing processes, quality records, customer information, supplier information, and employee records are accessed and used only by authorized personnel for legitimate business purposes.",
+        "We will implement appropriate technical, physical, and administrative safeguards to protect information assets against unauthorized access, disclosure, alteration, loss, theft, cyber threats, and other security risks.",
+        "We strive to promote responsible use of Company information systems, digital resources, communication platforms, and electronic devices by ensuring they are used ethically, securely, and solely for authorized business purposes.",
+        "We aim to train our employees on the IT Security.",
+        "Protect confidential information, personal data, intellectual property, and Company records from unauthorized access, disclosure, or misuse.",
+        "Use Company information only for authorized purposes.",
+        "Protect passwords and electronic devices.",
+        "Secure Company records appropriately.",
+        "Report information security incidents promptly.",
+        "Do not share confidential information without approval.",
+        "Do not disclose passwords or system access.",
+        "Do not remove confidential information without authorization.",
+        "Do not ignore data breaches or cyber threats."
+      ],
+      "Fair Competition & Ethical Business Practices": [
+        "We strive to promote a culture of fair competition, integrity, and ethical business conduct by competing lawfully and responsibly while respecting applicable competition, antitrust, and fair trade laws in every market where the Company operates.",
+        "We aim to maintain fully compliance with the local and international regulations and standards.",
+        "We will ensure that all commercial decisions, including pricing, marketing, procurement, sales, tender participation, customer engagement, and supplier selection, are based on legitimate business considerations and are free from anti-competitive or unethical practices.",
+        "We seek to prohibit anti-competitive agreements, price fixing, bid rigging, market allocation, abuse of dominant market position, collusive practices, exchange of commercially sensitive information, and any conduct that may restrict or distort fair market competition.",
+        "We will ensure that all marketing, promotional activities, product claims, customer communications, and commercial representations are accurate, truthful, evidence-based, and compliant with applicable legal, regulatory, and industry requirements.",
+        "Compete fairly and ethically while complying with all applicable competition and fair-trade laws.",
+        "Compete based on quality, service, and innovation.",
+        "Provide truthful information to customers.",
+        "Respect competitors and their intellectual property.",
+        "Follow fair procurement practices.",
+        "Do not engage in price fixing or bid rigging.",
+        "Do not make misleading product claims.",
+        "Do not obtain confidential competitor information improperly.",
+        "Do not manipulate tender or bidding processes."
+      ],
+      "Responsible Third-Party Relationships": [
+        "We strive to establish and maintain ethical, transparent, and mutually beneficial relationships with suppliers, contractors, consultants, distributors, service providers, agents, and other business partners by promoting integrity, accountability, and responsible business conduct throughout our value chain.",
+        "We will ensure that third-party selection, qualification, evaluation, and engagement processes are conducted objectively, transparently, and based on fair competition, competence, quality, regulatory compliance, ethical conduct, and business performance.",
+        "We seek to conduct appropriate due diligence on significant third parties to identify and mitigate ethical, legal, financial, operational, reputational, environmental, labour, human rights, and compliance risks before and during business relationships.",
+        "Work only with business partners who demonstrate integrity, legal compliance, and responsible business practices.",
+        "Select suppliers through fair and transparent processes.",
+        "Communicate Company ethical expectations.",
+        "Conduct due diligence where required.",
+        "Report unethical conduct by third parties.",
+        "Do not favour suppliers based on personal relationships.",
+        "Do not overlook unethical supplier behaviour.",
+        "Do not bypass supplier evaluation procedures.",
+        "Do not continue business with partners involved in illegal activities without appropriate review."
+      ],
+      "Legal & Regulatory Compliance": [
+        "Understand and comply with all applicable laws, regulations, Company policies, and contractual obligations relevant to your responsibilities.",
+        "Follow applicable laws and Company procedures.",
+        "Cooperate during audits and inspections.",
+        "Seek guidance if unsure about legal obligations.",
+        "Do not knowingly violate legal or regulatory requirements.",
+        "Do not provide false or misleading information.",
+        "Do not ignore compliance concerns."
+      ],
+      "Reporting Ethical Concerns": [
+        "Every employee has a responsibility to report suspected unethical conduct, policy violations, fraud, corruption, or other misconduct in good faith.",
+        "Report concerns promptly through approved reporting channels.",
+        "Cooperate with investigations honestly.",
+        "Maintain confidentiality throughout the investigation process.",
+        "Do not remain silent if you witness unethical conduct.",
+        "Do not provide false or misleading information during investigations.",
+        "Do not retaliate against anyone who raises a concern in good faith."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption & Anti-Bribery",
+        "targets": [
+          {
+            "target": "We aim to maintain Zero Confirmed Incidents of bribery, corruption, facilitation payments, or kickbacks across all Company operations throughout FY 2029–30.",
+            "baseline": "FY 2025–26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual Anti-Corruption and Anti-Bribery awareness training to 100% of employees and other relevant personnel.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to communicate the Company's Anti-Corruption and Anti-Bribery requirements to 100% of significant suppliers, contractors, consultants, distributors, and other high-risk business partners through contractual obligations, Supplier Code of Conduct, or formal communication.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to investigate and close 100% of reported bribery or corruption concerns within the Company's defined investigation and corrective action timelines.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We strive to achieve 100% compliance with applicable anti-corruption laws, regulatory requirements, and Company procedures throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We will conduct periodic internal compliance reviews or audits covering 100% of identified high-risk transactions and business activities to evaluate compliance with this Policy.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to ensure 100% declaration and approval of reportable gifts, hospitality, sponsorships, and donations in accordance with the Company's approval procedures throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "We aim to achieve 100% submission of Conflict of Interest Declarations by all Directors, Senior Management, Key Managerial Personnel (KMP), and designated employees annually.",
+            "baseline": "FY 2025–26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will ensure 100% disclosure, assessment, and documentation of all identified actual, potential, or perceived conflicts of interest in accordance with the Company's procedures throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We strive to investigate and resolve 100% of reported conflict of interest cases within the Company's defined investigation and corrective action timelines.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to provide annual Conflict of Interest awareness training to 100% of employees and relevant third parties.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct annual conflict of interest compliance reviews covering 100% of high-risk functions, including Procurement, Finance, Human Resources, Sales & Marketing, Regulatory Affairs, and Senior Management.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to maintain Zero Confirmed Incidents of undisclosed conflicts of interest resulting in regulatory violations, financial loss, or reputational damage throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We aim to maintain 100% compliance with applicable legal requirements, internal governance procedures, and this Policy regarding conflict of interest management throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "We aim to maintain Zero Confirmed Incidents of fraud, embezzlement, theft, financial manipulation, asset misappropriation, or falsification of records across all Company operations throughout FY 2029–30.",
+            "baseline": "FY 2025–26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual Fraud Prevention and Ethical Conduct awareness training to 100% of employees and other relevant personnel.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to investigate and resolve 100% of reported or suspected fraud cases within the Company's defined investigation and corrective action timelines.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to conduct annual fraud risk assessments covering 100% of high-risk business functions, including Finance, Procurement, Stores, Production, Quality, Sales & Marketing, and Information Technology.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will conduct periodic internal audits and compliance reviews covering 100% of identified high-risk financial and operational processes to assess fraud prevention controls and identify improvement opportunities.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to ensure 100% implementation of corrective and preventive actions (CAPAs) arising from confirmed fraud investigations within the agreed timelines throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering & Financial Integrity",
+        "targets": [
+          {
+            "target": "We aim to maintain Zero Confirmed Incidents of money laundering, terrorist financing, financial crime, or other illicit financial activities across all Company operations throughout FY 2029–30.",
+            "baseline": "FY 2025–26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual Anti-Money Laundering (AML) and Financial Integrity awareness training to 100% of employees working in Finance, Procurement, Sales, Commercial, Supply Chain, and other identified high-risk functions.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to conduct documented due diligence for 100% of newly on boarded high-risk customers, suppliers, distributors, consultants, and other significant business partners before establishing business relationships.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to investigate and resolve 100% of reported suspicious financial transactions or money laundering concerns within the Company's defined investigation and corrective action timelines.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We will conduct annual money laundering and financial crime risk assessments covering 100% of identified high-risk business functions and financial processes.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Management & Data Protection",
+        "targets": [
+          {
+            "target": "We aim to maintain Zero Confirmed Incidents of unauthorized disclosure, theft, loss, or misuse of confidential Company information, intellectual property, or personal data across all Company operations throughout FY 2029–30.",
+            "baseline": "FY 2025–26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual Information Security, Data Protection, and Confidentiality awareness training to 100% of employees and relevant contractors.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to investigate and close 100% of reported information security incidents, data breaches, or confidentiality violations within the Company's defined incident management and corrective action timelines.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to conduct annual information security and data protection risk assessments covering 100% of critical business processes and information assets.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to maintain 100% compliance with applicable data protection laws, intellectual property requirements, information security procedures, and Company record management practices throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          },
+          {
+            "target": "We aim to ensure 100% implementation of appropriate access controls for employees handling confidential, financial, quality, manufacturing, research, and personal information based on business needs and authorized responsibilities.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will periodically review the effectiveness of information management, cybersecurity, and data protection controls at least once every year and implement continual improvement measures to address emerging risks and technological developments.",
+            "baseline": "",
+            "deadline": "At least once every year"
+          }
+        ]
+      },
+      {
+        "area": "Fair Competition & Ethical Business Practices",
+        "targets": [
+          {
+            "target": "We aim to maintain Zero Confirmed Incidents of anti-competitive practices, price fixing, bid rigging, market allocation, unfair trade practices, or violations of applicable competition laws across all Company operations throughout FY 2029–30.",
+            "baseline": "FY 2025–26 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We will provide annual Fair Competition and Ethical Business Conduct awareness training to 100% of employees working in Sales, Marketing, Procurement, Commercial, Business Development, Finance, and other relevant functions.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to investigate and resolve 100% of reported concerns related to anti-competitive conduct or unethical business practices within the Company's defined investigation and corrective action timelines.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Responsible Third-Party Relationships",
+        "targets": [
+          {
+            "target": "We will conduct documented due diligence for 100% of newly on boarded high-risk third parties before establishing business relationships.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to conduct annual ethical compliance evaluations or performance assessments covering 100% of identified high-risk suppliers and business partners.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to investigate and address 100% of reported ethical, legal, or compliance concerns involving third parties within the Company's defined investigation and corrective action timelines.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We will maintain 100% inclusion of applicable ethics, anti-corruption, confidentiality, and compliance clauses in contracts or agreements with significant third parties throughout the policy period.",
+            "baseline": "",
+            "deadline": "Throughout the policy period"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "The Managing Director is responsible for approving the Ethical Sourcing and Business Conduct Policy and providing strategic direction for ethical business conduct across the Company. The Managing Director shall demonstrate leadership and commitment towards integrity, transparency, and ethical decision-making while ensuring adequate financial, human, and technological resources are available for effective implementation of this Policy."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Department Heads are responsible for implementing the Ethical Sourcing and Business Conduct Policy within their respective departments. They shall promote ethical behaviour, accountability, and compliance with applicable laws and Company policies, identify ethical and compliance risks within departmental operations, implement appropriate preventive and corrective actions, and ensure employees understand and comply with this Policy while encouraging the prompt reporting of ethical concerns."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "The Human Resources (HR) Department shall coordinate the communication, implementation, and periodic review of the Ethical Sourcing and Business Conduct Policy. HR is responsible for integrating ethical conduct requirements into recruitment, onboarding, performance management, employee development, and disciplinary processes, organizing ethics awareness programs, maintaining training records, and supporting the administration of conflict of interest declarations, employee acknowledgements, and ethics-related investigations where applicable."
+      },
+      {
+        "role": "Management Representative",
+        "duty": "The Management Representative shall monitor compliance with applicable legal, regulatory, and ethical requirements relevant to the Company's operations. Responsibilities include conducting periodic ethics risk assessments and compliance reviews, supporting investigations into reported violations of this Policy, and monitoring the implementation of corrective and preventive actions arising from ethics-related incidents, audits, or investigations."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "The Finance Department is responsible for maintaining accurate, complete, and transparent financial records and effective internal financial controls. It shall monitor compliance with financial governance, fraud prevention, and anti-money laundering requirements, report suspicious financial transactions or irregularities through appropriate reporting channels, and support financial audits, investigations, and compliance reviews."
+      },
+      {
+        "role": "Information Technology (IT)",
+        "duty": "The Information Technology (IT) function shall implement and maintain appropriate information security and cybersecurity controls to protect Company information and digital assets. It is responsible for supporting responsible information management, data protection, access control, and incident response activities, as well as monitoring and investigating information security incidents and recommending appropriate corrective actions."
+      },
+      {
+        "role": "Supervisors and Managers",
+        "duty": "Supervisors and Managers are responsible for leading by example and promoting ethical behaviour within their teams. They shall ensure employees understand and comply with this Policy and related procedures, and promptly address or escalate suspected ethical concerns, misconduct, or policy violations."
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are responsible for reading, understanding, and complying with the requirements of this Ethical Sourcing and Business Conduct Policy. Employees shall conduct all business activities honestly, ethically, and in compliance with applicable laws and Company procedures, avoid conflicts of interest, promptly disclose any actual, potential, or perceived conflicts, and report suspected unethical or illegal activities through the Company's established reporting channels."
+      }
+    ],
+    "monitoring": "Royal Pharmaceuticals Industries Pvt. Ltd. shall periodically monitor and evaluate the implementation and effectiveness of this Policy through ethics risk assessments, internal audits, compliance reviews, whistleblower reports, incident investigations, corrective actions, and management reviews to ensure legal compliance, effective governance, and continual improvement in ethical business practices.\n\nRoyal Pharmaceuticals Industries Pvt. Ltd. shall provide periodic training and awareness programs on business ethics, anti-corruption, anti-bribery, conflict of interest, fraud prevention, anti-money laundering, fair competition, information security, and applicable legal requirements. Specialized training shall be provided to relevant personnel based on their roles and responsibilities to support effective implementation of this Policy.\n\nInvestigate all reported or suspected violations objectively, confidentially, and without unnecessary delay.\n\nProvide individuals involved with an opportunity to present relevant facts and information during the investigation process.\n\nProtect individuals who report concerns in good faith from retaliation, discrimination, harassment, or victimization.",
+    "reviewMechanism": "The Ethical Sourcing and Business Conduct Policy shall be reviewed at least annually, or earlier if required due to changes in legal requirements, business operations, or organizational needs by Compliance Head. The review and any revisions shall be approved by the Managing Director or the designated management representative before implementation.\n\nNext Review Date: 01st April 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Royal Pharma/3. Ethical Sourcing and Business Conduct Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Royal Pharma/3. Ethical Sourcing and Business Conduct Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 33890,
+  "parsedAt": "2026-09-11T07:15:30.266Z"
+}

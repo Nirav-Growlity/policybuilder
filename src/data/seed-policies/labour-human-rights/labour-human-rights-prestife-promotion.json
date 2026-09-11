@@ -1,0 +1,299 @@
+{
+  "id": "labour-human-rights-prestife-promotion",
+  "name": "Prestife Promotion",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Labour_Human_Rights_Policy_PP_1.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Prestige Promotion Verkaufsförderung & Werbeservice GmbH",
+      "industry": "",
+      "site": "Borsigstraße 2, D-63755 Alzenau",
+      "sites": [
+        {
+          "location": "Prestige Promotion – Headquarters & Operations",
+          "address": "Borsigstraße 2, D-63755 Alzenau",
+          "primaryFunction": "Secondary packaging, repackaging, contract packaging and storage of pharmaceuticals and medical devices"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Borsigstraße 2, D-63755 Alzenau"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "This Labour and Human Rights Policy sets out the binding commitments of Prestige Promotion Verkaufsförderung & Werbeservice GmbH (hereinafter referred to as \"Prestige Promotion\") with respect to the fair treatment of all people working within and for our organisation. It defines qualitative and quantitative objectives for the relevant labour and human rights topics, forms the basis for a systematic approach to social responsibility, and demonstrates our commitment to the principles of human dignity, fairness and opportunity for all.",
+      "declaration": "Compliance with all applicable labour laws, social regulations, and human rights obligations including the German Supply Chain Due Diligence Act (LkSG), the German Minimum Wage Act (MiLoG), the German Working Hours Act (ArbZG), and the EU General Data Protection Regulation (GDPR)\n\nEnsuring a safe, healthy, and dignified working environment for all persons working within or for the company\n\nProhibiting all forms of child labour, forced labour, and human trafficking within our operations and supply chain\n\nProviding equal opportunity and prohibiting all forms of discrimination and harassment\n\nInvesting in the professional development and training of our workforce\n\nProviding the necessary resources for the implementation and monitoring of this policy\n\nRegular review and updating of this policy (at least annually)\n\nTransparent communication of labour and human rights objectives to employees and relevant stakeholders\n\nIntegration of human rights and social responsibility into all business and procurement decisions",
+      "scope": "This policy applies to all sites, business processes, personnel and stakeholders of Prestige Promotion.\n\nAll business processes: secondary packaging, repackaging, contract packaging and storage of pharmaceuticals and medical devices\n\nAll employees (full-time, part-time, temporary workers)\n\nContracted service providers and suppliers on company premises\n\nInternal and external stakeholders (customers, authorities, inspection bodies)"
+    },
+    "focusAreas": [
+      "Employee Health & Safety",
+      "Working Conditions",
+      "Career Management & Training",
+      "Child Labor, Forced Labor & Human Trafficking",
+      "Discrimination and Harassment"
+    ],
+    "qualitative": {
+      "Employee Health & Safety": [
+        "Prestige Promotion is committed to providing a safe and healthy working environment for all employees, temporary workers, and visitors at its Alzenau facility. Our operations involve GMP-regulated pharmaceutical packaging lines, chemical handling, manual handling tasks, and warehouse logistics – all of which carry inherent physical risks that must be actively managed. We embed a culture of safety-first in our daily operations, ensuring that every person returns home safe and healthy at the end of each working day.",
+        "Maintenance and continuous updating of a comprehensive occupational health and safety management system in compliance with the German Occupational Safety and Health Act (ArbSchG), the German Accident Prevention Regulations (DGUV Vorschriften), and GMP occupational safety standards",
+        "Systematic workplace hazard assessments (Gefährdungsbeurteilung) for all workplaces and tasks, reviewed at least annually and whenever significant process, equipment, or personnel changes occur, covering physical, chemical, biological, ergonomic, and psychosocial hazards",
+        "Provision and mandatory use of appropriate personal protective equipment (PPE) for all tasks requiring it, including gloves, respiratory protection, safety footwear, and eye protection where applicable, with documented training on correct use and replacement procedures",
+        "Implementation of a near-miss and incident reporting system enabling all employees to report unsafe conditions, near-misses, and accidents without fear of reprisal; all reported events are investigated, root causes identified, and corrective actions implemented and verified",
+        "Regular mandatory safety training for all employees, including induction training for new starters, annual safety refreshers, and task-specific training covering machine safety, manual handling, chemical hazards, and emergency procedures – documented in the training management system",
+        "Emergency preparedness measures including documented emergency response plans, trained first-aiders at all times during working hours, clearly marked evacuation routes and assembly points, and regular fire drills conducted in compliance with statutory requirements",
+        "Ergonomics assessments for production and packaging workstations, with identified improvements implemented on a prioritised basis to reduce the risk of musculoskeletal disorders arising from repetitive tasks, lifting, or prolonged static postures",
+        "Measures 2026: Launch near-miss reporting system | Formalise LTIFR calculation | Ergonomics review programme | Annual safety day for all employees"
+      ],
+      "Working Conditions": [
+        "Prestige Promotion is committed to providing fair, transparent, and lawful working conditions for all its employees. We respect and uphold the rights of all workers to fair remuneration, reasonable working hours, lawful employment contracts, freedom of association, and the right to collective representation. Our employment practices comply with all applicable German and European labour legislation and reflect our broader commitment to treating all people with dignity and respect.",
+        "Compliance with the German Minimum Wage Act (MiLoG) and all applicable collective bargaining agreements (Tarifverträge); regular review of pay levels against market benchmarks and statutory requirements to ensure fair compensation for all employee groups, including temporary workers engaged through third-party agencies",
+        "Strict adherence to the German Working Hours Act (ArbZG): maximum daily working hours of 8 hours (extendable to 10 hours with compensatory rest), mandatory rest breaks, and a minimum of 11 consecutive hours of daily rest ensured for all employees including those on shift and flexible working arrangements",
+        "Provision of written employment contracts to all employees prior to or on the first day of employment, clearly setting out role, remuneration, working hours, leave entitlement, notice periods, and applicable works agreements (Betriebsvereinbarungen)",
+        "Annual statutory paid leave entitlement of at least 20 working days (based on a 5-day week) provided to all employees in compliance with the Federal Leave Act (BUrlG); promotion of leave uptake to support employee well-being and work-life balance",
+        "Transparent and accessible grievance mechanism allowing all employees to raise concerns about working conditions, unfair treatment, or legal non-compliance without risk of retaliation, with all concerns documented, investigated, and resolved in a timely manner",
+        "Responsible management of temporary and agency workers: Prestige Promotion ensures that all staffing agencies used comply with the German Temporary Employment Act (AÜG), and that temporary workers receive equal treatment with regard to essential working conditions as required by law",
+        "Annual review of working conditions, including pay, hours, leave, and employee satisfaction, conducted as part of the management review process",
+        "Measures 2026: Formalise grievance channel | Launch annual employee satisfaction survey | Working hours monitoring dashboard"
+      ],
+      "Career Management & Training": [
+        "Prestige Promotion recognises that its people are its most important asset. We are committed to investing in the development, growth, and professional fulfilment of every employee. Our operations in the highly regulated pharmaceutical co-packaging sector require a continuously trained, competent, and adaptable workforce. We provide structured training, fair access to development opportunities, and clear career pathways that enable employees to grow with the company and contribute to our long-term success.",
+        "Mandatory induction training for all new employees covering company values and culture, GMP and GDP requirements, quality management systems, occupational health and safety, data protection (GDPR), and role-specific competency requirements – documented in the training management system prior to unsupervised work commencement",
+        "Annual individual training needs assessment for all employees conducted by line managers, identifying skills gaps, regulatory training requirements, and personal development goals; results fed into a consolidated annual training plan covering production, quality, safety, and professional skills",
+        "Maintenance of a comprehensive GMP-compliant training management system documenting all training activities, attendance records, competency assessments, and retraining triggers for each employee, ensuring traceability for internal and regulatory audits",
+        "Support for professional qualification and continuing education for all employees, including financial and scheduling support for relevant external courses, language training where appropriate, and sponsorship of vocational qualifications (Ausbildung/Fortbildung) for eligible employees",
+        "Transparent internal job posting process ensuring that all open positions are communicated to existing employees before or concurrent with external recruitment, providing genuine opportunities for internal promotion and lateral development",
+        "Annual performance and development reviews (Mitarbeitergespräche) for all employees, providing structured two-way feedback on performance, identifying development goals, and agreeing on concrete actions and timelines to support career progression",
+        "Measures 2026: Launch annual development review cycle | Training hours dashboard | Consolidated annual training plan"
+      ],
+      "Child Labor, Forced Labor & Human Trafficking": [
+        "Prestige Promotion maintains a zero-tolerance towards all forms of child labour, forced labour, bonded labour, and human trafficking – in our own operations and throughout our supply chain. These practices represent fundamental violations of human rights and human dignity. We are committed to the complete elimination of such practices and to actively identifying and remedying any risks in our business relationships, in compliance with the German Supply Chain Due Diligence Act (Lieferkettensorgfaltspflichtengesetz, LkSG) and applicable international standards including ILO Conventions and the UN Guiding Principles on Business and Human Rights.",
+        "Absolute prohibition on the employment of persons under the age of 18 in any operational role at Prestige Promotion; verification of age and legal right to work through mandatory identity and work permit checks for all new employees prior to commencement of employment, including all temporary workers engaged through staffing agencies",
+        "Prohibition of all forms of forced, compulsory, bonded, or involuntarily prison labour in Prestige Promotion's own operations; all employees and temporary workers are employed on a fully voluntary basis with the legal right to terminate their employment in accordance with their contract and applicable law",
+        "No deduction of recruitment fees, deposits, or security payments from employee wages; no retention of personal identity documents (passports, residence permits) by the company or its contracted staffing agencies; Prestige Promotion ensures that all staffing agencies used comply with these requirements",
+        "Implementation of supply chain due diligence measures in accordance with the German LkSG: risk analysis of direct suppliers with respect to child labour, forced labour, and human rights violations; supplier self-declaration requirements; and integration of social compliance requirements into procurement contracts and supplier codes of conduct",
+        "Establishment and communication of a confidential whistleblower and reporting channel enabling employees, temporary workers, and external parties to report concerns about child labour, forced labour, human trafficking, or other human rights violations without fear of retaliation, in compliance with the EU Whistleblower Protection Directive and its German transposition (HinSchG)",
+        "Annual training for management, HR, and procurement personnel on the identification of indicators of child labour, forced labour, and human trafficking, including practical guidance on reporting obligations and remediation steps",
+        "Measures 2026: Establish whistleblower channel (HinSchG) | LkSG risk assessment"
+      ],
+      "Discrimination and Harassment": [
+        "Prestige Promotion is committed to maintaining a working environment characterised by dignity, mutual respect, and equal opportunity for all. We prohibit all forms of discrimination, harassment, and victimisation on any ground protected by law, including race, ethnic origin, gender, age, disability, religion or belief, sexual orientation, gender identity, and part-time or fixed-term employment status. Our commitment to equal treatment is enshrined in the German General Equal Treatment Act (AGG) and reinforced by our internal policies, training, and management standards.",
+        "Absolute prohibition on direct and indirect discrimination in all employment-related decisions including recruitment and selection, pay and benefits, training and development, promotion, and termination, with particular attention to ensuring that criteria used in these decisions are objective, job-related, and free from unlawful bias",
+        "Implementation of the German General Equal Treatment Act (Allgemeines Gleichbehandlungsgesetz, AGG): designation of a named AGG contact point (Beschwerdestelle) within the company to receive and investigate complaints of discrimination or harassment; this role, its responsibilities, and how to contact it are communicated to all employees",
+        "Zero tolerance for all forms of harassment, including sexual harassment as defined by the AGG: any behaviour of a sexual nature that is unwanted, including verbal, non-verbal, or physical conduct, or any other conduct that creates an intimidating, hostile, degrading, humiliating, or offensive environment for the recipient",
+        "Mandatory awareness training on discrimination, harassment, and the AGG for all employees, including management and supervisors, upon induction and at least every two years thereafter; training covers definitions, examples, reporting routes, and consequences of non-compliance",
+        "Confidential and accessible complaint procedure enabling all employees to raise concerns about discrimination or harassment without fear of retaliation or adverse consequences; all complaints are taken seriously, investigated promptly and impartially, and resolved with appropriate remedial action including, where warranted, disciplinary measures",
+        "Equal pay review processes to identify and address any unjustified gender pay gaps across comparable roles, in alignment with the German Entgelttransparenzgesetz (EntgTranspG) and the principle of equal pay for work of equal value",
+        "Measures 2026: Name AGG contact person | Launch AGG awareness training | Establish workforce diversity dashboard"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health & Safety",
+        "targets": [
+          {
+            "target": "Total reportable accidents at work (number/year): Interim Target 2026: Incident reporting system formalised; all incidents recorded. Target 2027: ≤ 2 reportable accidents/year; trend reduction vs. baseline",
+            "baseline": "Base year is 2025. Status: Collecting",
+            "deadline": "2027"
+          },
+          {
+            "target": "Lost-time injury frequency rate (LTIFR): Interim Target 2026: Initial LTIFR calculated & reported. Target 2027: ≤ 3.0 LTIFR (per million hours worked)",
+            "baseline": "Base year is 2025. Status: Collecting",
+            "deadline": "2027"
+          },
+          {
+            "target": "Near-miss and unsafe-condition reports (number/year): Interim Target 2026: Reporting system introduced; first reports collected. Target 2027: ≥ 20 near-miss reports documented",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          },
+          {
+            "target": "Workplace hazard assessments completed & current (%): Interim Target 2026: 100% of workplaces assessed & documented. Target 2027: Annual review completed; findings addressed",
+            "baseline": "Base year is 2025. Status: Ongoing",
+            "deadline": "2027"
+          },
+          {
+            "target": "Safety training completion rate (% employees trained): Interim Target 2026: 100% trained & documented. Target 2027: Annual refresher for 100% of employees",
+            "baseline": "Base year is 2025. Status: Ongoing",
+            "deadline": "2027"
+          },
+          {
+            "target": "Fire drills conducted (number/year): Interim Target 2026: ≥ 1 drill conducted & documented. Target 2027: ≥ 2 drills/year; all employees participating",
+            "baseline": "Base year is 2025. Status: Collecting",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Employees paid at or above statutory minimum wage (%): Interim Target 2026: 100% verified & documented. Target 2027: Annual verification completed",
+            "baseline": "Base year is 2025. Status: Ongoing",
+            "deadline": "2027"
+          },
+          {
+            "target": "Employees with written employment contracts (%): Interim Target 2026: 100% on record. Target 2027: 100% maintained; new starters on day 1",
+            "baseline": "Base year is 2025. Status: Ongoing",
+            "deadline": "2027"
+          },
+          {
+            "target": "Average working hours per week (all employees): Interim Target 2026: Monitoring system established; data collected. Target 2027: 100% compliance with ArbZG; no systematic overtime violations",
+            "baseline": "Base year is 2025. Status: Collecting",
+            "deadline": "2027"
+          },
+          {
+            "target": "Leave uptake rate (% of statutory entitlement taken): Interim Target 2026: Recording system established. Target 2027: ≥ 90% of entitlement taken per employee",
+            "baseline": "Base year is 2025. Status: Collecting",
+            "deadline": "2027"
+          },
+          {
+            "target": "Grievances formally raised and resolved (number/year): Interim Target 2026: Grievance procedure documented & communicated. Target 2027: 100% of grievances acknowledged within 5 days & resolved",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          },
+          {
+            "target": "Employee satisfaction (annual survey): Interim Target 2026: First structured survey designed & conducted. Target 2027: ≥ 75% overall satisfaction score",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Career Management & Training",
+        "targets": [
+          {
+            "target": "Induction training completion rate – new starters (%): Interim Target 2026: 100% documented before independent work. Target 2027: 100% maintained annually",
+            "baseline": "Base year is 2025. Status: Ongoing",
+            "deadline": "2027"
+          },
+          {
+            "target": "Annual GMP/GDP training completion rate (% employees): Interim Target 2026: 100% trained & documented. Target 2027: 100% annual refresher; all new regulations covered",
+            "baseline": "Base year is 2025. Status: Ongoing",
+            "deadline": "2027"
+          },
+          {
+            "target": "Annual training needs assessments completed (% employees): Interim Target 2026: Training needs process designed & piloted. Target 2027: 100% of employees with documented annual assessment",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          },
+          {
+            "target": "Average training hours per employee (hours/year): Interim Target 2026: Initial measurement baseline established. Target 2027: ≥ 16 hours/employee/year",
+            "baseline": "Base year is 2025. Status: Collecting",
+            "deadline": "2027"
+          },
+          {
+            "target": "Performance and development reviews conducted (%): Interim Target 2026: Process designed; first review cycle completed. Target 2027: ≥ 90% of employees reviewed annually",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor & Human Trafficking",
+        "targets": [
+          {
+            "target": "Incidents of child labour or forced labour detected (number/year): Interim Target 2026: Zero confirmed incidents; reporting channel active. Target 2027: Zero confirmed incidents; annual verification completed",
+            "baseline": "Base year is 2025. Status: No incidents known",
+            "deadline": "2027"
+          },
+          {
+            "target": "Age and right-to-work verification – new employees (%): Interim Target 2026: 100% verified before commencement. Target 2027: 100% maintained; documented for all employee types",
+            "baseline": "Base year is 2025. Status: Ongoing",
+            "deadline": "2027"
+          },
+          {
+            "target": "Whistleblower reports received and resolved (number/year): Interim Target 2026: Channel established & communicated to all staff. Target 2027: 100% of reports acknowledged & investigated",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          },
+          {
+            "target": "LkSG due diligence training for relevant staff (%): Interim Target 2026: 100% of HR, procurement & management trained. Target 2027: Annual refresher; updated for legislative changes",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Confirmed discrimination or harassment incidents (number/year): Interim Target 2026: Complaint procedure communicated to all staff; AGG contact named. Target 2027: Zero confirmed incidents; all complaints resolved within 30 days",
+            "baseline": "Base year is 2025. Status: No confirmed incidents",
+            "deadline": "2027"
+          },
+          {
+            "target": "AGG awareness training completion rate (% employees): Interim Target 2026: 100% of employees trained & documented. Target 2027: Repeat training every 2 years; 100% completion",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          },
+          {
+            "target": "AGG complaints formally submitted & resolved (%): Interim Target 2026: Complaint procedure operational. Target 2027: 100% acknowledged within 5 working days; resolved within 30 days",
+            "baseline": "Base year is 2025. Status: Not started",
+            "deadline": "2027"
+          },
+          {
+            "target": "Workforce diversity data collected & reported (gender, age group): Interim Target 2026: First diversity report prepared for management review. Target 2027: Annual diversity reporting established; integrated into management review",
+            "baseline": "Base year is 2025. Status: Collecting",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Approval and annual review of the policy; provision of resources; definition of labour and human rights objectives; ultimate accountability for LkSG compliance"
+      },
+      {
+        "role": "Quality Management Officer (QMO / QA)",
+        "duty": "Coordination of policy objectives; document control; preparation of management review; integration with QHSE management systems; data maintenance"
+      },
+      {
+        "role": "HR / Personnel Management",
+        "duty": "Operational implementation of employment, training, equal treatment, and grievance measures; AGG contact function; payroll compliance; workforce data management"
+      },
+      {
+        "role": "HSE / Environmental Officer",
+        "duty": "Operational implementation of occupational health and safety measures; hazard assessments; incident reporting; safety training delivery"
+      },
+      {
+        "role": "Production Management",
+        "duty": "Ensuring compliant working conditions on the production floor; reporting of violations or concerns; supporting safety and training implementation"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Compliance with this policy and all associated procedures; reporting of violations or concerns through available channels without fear of retaliation"
+      }
+    ],
+    "monitoring": "The base year is 2025.\n\nThis Labour and Human Rights Policy is communicated to all employees upon hiring and annually during training sessions\n\nPosted in appropriate locations within the company (production, break room, office)\n\nIncluded in the QM Manual and the document management system\n\nThe AGG contact point and the whistleblower / grievance channel are communicated via induction, notice boards, and internal information materials\n\nThis policy is available upon request to customers, suppliers, and inspection bodies\n\nShared with direct suppliers as part of LkSG supply chain due diligence communication\n\nPublication on the company website (www.prestige-promotion-web.de)\n\nKPI Monitoring: Regular review of quantitative social targets by HR / QMO / HSE\n\nDocumentation of Review: Recording of review results and approval by management",
+    "reviewMechanism": "This Labour and Human Rights Policy is subject to an annual review process to ensure that it is always current, complete and effective.\n\nAnnual Policy Review: Review for currency, new legal requirements (AGG, LkSG, ArbZG, MiLoG updates), EcoVadis social criteria, achievement of objectives. Annually (Q1 of the following year)\n\nManagement Review: Integration of labour and human rights objectives into the annual QM management review. Annually (Q4)\n\nKPI Monitoring: Regular review of quantitative social targets by HR / QMO / HSE. Semi-annually\n\nEvent-driven Revision: In the event of material changes (new legislation, incidents, complaints, supply chain findings, EcoVadis feedback). As required (ad hoc)\n\nDocumentation of Review: Recording of review results and approval by management. After each review\n\nAnnual Objective Review: Enter actual values, assess target achievement, set new objectives for following year. Annually (Q1)"
+  },
+  "sourcePath": "Policies - Kenal/Prestife Promotion/Labour_Human_Rights_Policy_PP_1.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Prestife Promotion/Labour_Human_Rights_Policy_PP_1.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 27907,
+  "parsedAt": "2026-09-11T07:27:07.526Z"
+}

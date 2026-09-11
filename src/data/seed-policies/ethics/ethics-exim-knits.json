@@ -1,0 +1,225 @@
+{
+  "id": "ethics-exim-knits",
+  "name": "Exim Knits",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 4. Ethical Governance Policy - Exim Knits.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Exim Knits Pvt Ltd.",
+      "industry": "",
+      "site": "S F 334 Palankarai Village, Nambiyur Road, Avinashi, Tamil Nadu.- 641654",
+      "sites": [
+        {
+          "location": "Exim Knits Pvt Ltd.",
+          "address": "S F 334 Palankarai Village, Nambiyur Road, Avinashi, Tamil Nadu.- 641654",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "S F 334 Palankarai Village, Nambiyur Road, Avinashi, Tamil Nadu.- 641654"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Embodying a steadfast commitment to principles of transparency, integrity, and responsible business practices, we at Exim Knits Pvt Ltd. believe that Ethical Governance Policy, is a cornerstone in our mission to redefine the standards of excellence. Ethical conduct is not just an obligation but a guiding philosophy\n\nOur Ethical Governance Policy stands as a declaration to our responsibility towards a spectrum of stakeholders, including employees, customers, investors, and the communities we touch. It goes beyond regulatory compliance, serving as a blueprint for a corporate culture built on trust, accountability, and ethical decision-making. At Exim Knits Pvt Ltd, we view ethical governance as not only a foundation for sustainable growth but as an intrinsic value that permeates every facet of our operations.\n\nThis dynamic policy is not static; but it evolves with the changing landscape of ethical standards and company’s best practices. We believe that ethical governance is not just an expectation but a shared commitment and we weave the fabric characterized by ethical excellence, ensuring that our business practices reflect our dedication to a sustainable, responsible, and prosperous future for all.",
+      "declaration": "Exim Knits Pvt Ltd. is committed for upholding the highest standards of corporate responsibility, and we pledge to foster an environment of trust, accountability, and ethical conduct. Our aim is to set a benchmark for ethical governance within the textile industry, ensuring sustainable practices that benefit our stakeholders and contribute to a responsible and prosperous future.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of Interest",
+      "Fraud",
+      "Money Laundering",
+      "Anti-competitive practice",
+      "Information Security"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Procurement and Contracts: Implement transparent procurement processes, conduct regular audits, and enforce a strict anti-bribery policy.",
+        "Supply Chain Management: Ensure supply chain transparency, conduct thorough supplier audits, and establish ethical sourcing guidelines..",
+        "Fraudulent Practices: Strengthen internal controls, and encourage whistleblowing. Adopt technologies such as blockchain to enhance transparency in financial transactions and supply chains."
+      ],
+      "Conflict of Interest": [
+        "Supplier and Vendor Relationships: Implement guidelines for selecting and engaging with suppliers, emphasizing fairness and impartiality.",
+        "Regular Training and Communication: Conduct regular training sessions and communication campaigns to keep employees aware of ethical governance principles and their importance.",
+        "Decision-Making Processes: Implement robust decision-making protocols, emphasizing fair and impartial evaluation criteria."
+      ],
+      "Fraud": [
+        "Raw Material Misrepresentation: Implement strict supplier vetting processes, conduct random material testing, and establish transparent supply chain tracking.",
+        "Counterfeit Products: Employ advanced anti-counterfeiting technologies like RFID tags, holograms, or blockchain for product traceability. Regular market surveillance and legal actions against counterfeiters are also crucial.",
+        "Invoice Fraud: Implement robust financial controls, conduct regular audits, and utilize technology such as blockchain or secure payment systems to ensure the integrity of financial transactions and invoices."
+      ],
+      "Money Laundering": [
+        "Trade-Based Money Laundering: Implement advanced trade finance technologies, conduct thorough due diligence on trading partners, and utilize blockchain for transparent and traceable transactions.",
+        "Supply Chain Manipulation: Establish a transparent and auditable supply chain, conduct regular due diligence on suppliers, and collaborate with industry peers to share information on potential risks and suspicious activities."
+      ],
+      "Anti-competitive practice": [
+        "Promotion of Fair Competition: Avoid engaging in anticompetitive practices such as price fixing, bid rigging, or exclusive dealing. Encourage ethical business conduct, establish transparent procurement processes, and support initiatives that foster a competitive marketplace.",
+        "Customer-Centric Innovation: Invest in research and development, prioritize customer needs, and avoid practices that stifle innovation or create entry barriers. Engage with customers to understand their preferences and continually adapt to market dynamics."
+      ],
+      "Information Security": [
+        "Protecting Sensitive Data: The textile industry handles sensitive information such as designs, supply chain details, and customer data. Ensuring information security is crucial to prevent unauthorized access, data breaches, and intellectual property theft.",
+        "Maintaining Customer Trust: Information security measures help build and maintain trust with customers. Ensuring the confidentiality, integrity, and availability of customer data demonstrates a commitment to protecting their sensitive information."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Attain a 10% decrease in procurement fraud by implementing transparency measures, conducting quarterly audits by year 2025-26 as compared to 2022-23.",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Ensure 95% supply chain transparency by year 2025-26 via traceability, quarterly audits, and 100% compliance with ethical sourcing guidelines.",
+            "baseline": "",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Enhance internal controls by 15%, Boost whistleblowing with a target of 20% more reported incidents. Integrate blockchain into 80% of financial and supply chain processes by 2025-26 as compared to 2022-23",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Achieve a 90% adherence to supplier guidelines emphasizing fairness and impartiality by 2025-26 as compared to 2022-23.",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Conduct monthly training sessions and communication campaigns, ensuring 100% employee participation in ethical governance awareness programs by 2025-26",
+            "baseline": "",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Implement decision-making protocols with a goal of achieving a 15% improvement in fair and impartial evaluation criteria adherence by 2025-26",
+            "baseline": "",
+            "deadline": "2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Achieve 100% supplier vetting adherence, conduct random material testing on 15% of received batches, and establish transparent supply chain tracking by year 2025-26 as compared to 2022-23",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Implement anti-counterfeiting technologies, aiming for 95% product traceability using RFID, holograms, or blockchain by 2025-26",
+            "baseline": "",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Improve financial controls for a 15% reduction in invoice fraud by conducting bi-annual audits and implement blockchain or secure payment systems in 70% of transactions by year 2025-26",
+            "baseline": "",
+            "deadline": "2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Implement advanced trade tech for 90% blockchain traceability in the year 2025-26 as compared to year 2022-23",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Establish a fully auditable supply chain, conduct due diligence on all suppliers, targeting 95% adherence, and engage in quarterly information sharing on risks with industry peers by year 2025-26.",
+            "baseline": "",
+            "deadline": "2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Anti-competitive practice",
+        "targets": [
+          {
+            "target": "Ensure 100% transparency in procurement to eliminate anticompetitive practices by year 2025-26",
+            "baseline": "",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Allocate 10% of the budget to R&D. Increase customer interactions by 20%. Introduce two customer-centric innovations by year 2025-26 as compared to year 2022-23",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Achieve 100% information security compliance by preventing unauthorized access and intellectual property theft by year 2025-26 as compared to year 2022-23",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Ensure 95% customer satisfaction in data security. Maintain 100% confidentiality, integrity, and availability of customer data by year 2025-26",
+            "baseline": "",
+            "deadline": "2025-26"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Oversee ethics program implementation, manage whistleblowing channels, and investigate reported violations."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Enforce code of conduct, coordinate ethics training, and address workforce compliance issues."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Maintain data privacy controls, safeguard confidential information, and ensure cybersecurity compliance."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conduct periodic compliance audits, assess anti-corruption controls, and report findings to management."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Promote an ethical culture, approve ethics policies, and ensure organizational accountability."
+      },
+      {
+        "role": "Employees",
+        "duty": "Uphold ethical standards, report misconduct or conflicts of interest, and complete mandatory training."
+      }
+    ],
+    "monitoring": "In our dedication to transparency, accountability, and continuous improvement, Exim Knits Pvt Ltd. has established a dynamic framework for timely policy updates. The records of following elements are maintained within each deal and contract with our material supplier related to the financing of product shipments. These include:\n\nPayments in a currency different from the contract specification.\n\nPayments to countries not related to the contractual agreement.\n\nCash payments.\n\nPayments to individuals or entities not explicitly included in the agreement.\n\nAny other unusual or unconventional payment requests.\n\nA detailed report outlining the frequency of such activities is meticulously prepared, submitted, and subsequently shared with stakeholders and company executives.\n\nContinuous improvement in ethical governance is not only a commitment but a journey towards excellence. By embracing a culture of constant refinement and responsiveness, we aim to set new benchmarks in ethical conduct within our company, fostering trust, sustainability, and long-term success for all stakeholders.\n\nAudits for Enhancement: Conduct regular internal audits for policy effectiveness and implement targeted improvements aligning with evolving standards.\n\nStakeholder Engagement: Establish an open channel for stakeholder feedback and actively seek input for refinement and addressing ethical concerns.\n\nBenchmarking Excellence: Regularly benchmark policies against industry standards. and collaborate with peers, engage in initiatives, and adopt emerging frameworks.",
+    "reviewMechanism": "This policy will be reviewed every year to track the progress on every issue and its targets."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Exim Knits/4. Ethical Governance Policy - Exim Knits.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Exim Knits/4. Ethical Governance Policy - Exim Knits.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12065,
+  "parsedAt": "2026-09-11T07:38:35.860Z"
+}

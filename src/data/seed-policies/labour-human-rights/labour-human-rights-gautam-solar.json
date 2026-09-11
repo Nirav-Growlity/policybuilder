@@ -1,0 +1,350 @@
+{
+  "id": "labour-human-rights-gautam-solar",
+  "name": "Gautam Solar",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Responsible Workplace & Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Gautam Solar Private Limited",
+      "industry": "",
+      "site": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+      "sites": [
+        {
+          "location": "Registered Office",
+          "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Factory Unit 1",
+          "address": "Plot 67-70, Sec-8A, SIDCUL, Haridwar, Uttarakhand- 249403, India",
+          "primaryFunction": "Factory"
+        },
+        {
+          "location": "Factory Unit 2",
+          "address": "7 KM Milestone, Tosham Road, Bhiwani, Haryana-127032, India",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Gautam Solar Private Limited recognizes that its greatest asset is its people and that a safe, respectful, and empowering work environment is fundamental to sustainable business success.",
+      "declaration": "The Company is committed to protecting the physical and psychological health of all employees, promoting fair working conditions, enabling career growth, and respecting human rights throughout its operations and value chain.\n\nThis policy aligns with the Universal Declaration of Human Rights, ILO Core Conventions, UN Guiding Principles on Business and Human Rights, and the UN Sustainable Development Goals (SDGs), particularly SDG 3 (Good Health & Well-being), SDG 5 (Gender Equality), SDG 8 (Decent Work & Economic Growth), and SDG 10 (Reduced Inequalities).",
+      "scope": "This policy applies to all employees, workers, contractors, sub-contractors, suppliers, and other stakeholders engaged by Gautam Solar Private Limited, across all sites (including headquarters and manufacturing locations) and business relationships. It also addresses the Company’s direct and indirect human rights impacts on external stakeholders such as local communities, customers, and supply chain partners."
+    },
+    "focusAreas": [
+      "Occupational Health & Safety (Physical & Psychological)",
+      "Working Conditions",
+      "Social Dialogue",
+      "Career Management (Recruitment to Development)",
+      "Prohibition of Child & Forced Labour",
+      "Prevention of Discrimination, Harassment & Abuse",
+      "Human Rights Impacts on External Stakeholders"
+    ],
+    "qualitative": {
+      "Occupational Health & Safety (Physical & Psychological)": [
+        "Provide a safe and healthy work environment, preventing injuries and occupational diseases",
+        "Conduct regular risk assessments (including psychosocial risks)",
+        "Provide adequate personal protective equipment (PPE) and stress management resources",
+        "Promote mental well-being through Employee Assistance Programs (EAP) and stress prevention training"
+      ],
+      "Working Conditions": [
+        "Ensure fair remuneration, including equal pay for equal work",
+        "Provide social benefits (insurance, leave, retirement benefits) as per legal and industry standards",
+        "Promote work-life balance through flexible work arrangements where feasible",
+        "Respect the “right to disconnect” outside working hours",
+        "Conduct annual employee satisfaction surveys and act on findings"
+      ],
+      "Social Dialogue": [
+        "Recognize the right of employees to form or join trade unions and engage in collective bargaining",
+        "Establish structured dialogue through employee representatives or works councils",
+        "Hold regular management-employee meetings to discuss working conditions and grievances"
+      ],
+      "Career Management (Recruitment to Development)": [
+        "Ensure fair, transparent, and merit-based recruitment without discrimination",
+        "Conduct regular performance evaluations linked to development plans",
+        "Provide equal access to training and upskilling programs",
+        "Enable internal career mobility and succession planning",
+        "Support professional development at all career stages"
+      ],
+      "Prohibition of Child & Forced Labour": [
+        "Strictly prohibit child labour (below legal working age) and forced/compulsory labour in all company-owned operations",
+        "Verify age and identity documents during recruitment",
+        "Ensure no worker is required to lodge deposits or identity papers",
+        "Allow all employees the right to freely resign"
+      ],
+      "Prevention of Discrimination, Harassment & Abuse": [
+        "Maintain a workplace free from discrimination (race, gender, religion, age, disability, sexual orientation, etc.)",
+        "Prohibit all forms of harassment (physical, psychological, verbal, sexual)",
+        "Establish a confidential complaint mechanism with zero tolerance for retaliation",
+        "Provide awareness training on respectful behaviour and bystander intervention"
+      ],
+      "Human Rights Impacts on External Stakeholders": [
+        "Identify and address direct and indirect human rights impacts on local communities, neighbours, and supply chain workers",
+        "Engage in meaningful consultation with affected stakeholders",
+        "Implement due diligence for human rights risks in procurement and project siting",
+        "Provide remedy mechanisms where the Company causes or contributes to adverse impacts"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Health & Safety",
+        "targets": [
+          {
+            "target": "20% reduction in work-related accident frequency rate (lost-time injuries per 1,000 employees)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "0% occupational illness cases annually",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% of departments assessed for psychosocial risks every 2 years",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% employee participation in stress prevention training annually",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Employee satisfaction index ≥ 85% positive response (annual survey)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Gender pay gap (median) ≤ 5%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% of employees covered by core social benefits (health insurance, leave, retirement)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Management-employee meetings held at least once per quarter at 100% of sites",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% of eligible employees covered by collective bargaining mechanisms (where applicable)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Grievance resolution within 30 days for 100% of raised issues",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Career Management",
+        "targets": [
+          {
+            "target": "Internal promotion rate ≥ 40% of vacancies filled internally",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "40 training hours per employee per year",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% annual performance review completion rate",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% of new hires complete structured onboarding within 3 months",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Child & Forced Labour",
+        "targets": [
+          {
+            "target": "Zero incidents of child labour or forced labour (annual target)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% age verification compliance for all new hires",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% of employment contracts include free resignation clause and prohibition of deposit retention",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination & Harassment",
+        "targets": [
+          {
+            "target": "100% of employees complete respectful workplace training",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Confidential complaint mechanism available to 100% of employees with response within 10 days",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Zero substantiated cases of discrimination/harassment (or 100% corrective action within 30 days if any case occurs)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "External Human Rights",
+        "targets": [
+          {
+            "target": "100% of operational sites have a functioning community grievance mechanism",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% screening of new high-risk projects/suppliers for human rights impacts",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% of identified human rights remediation actions completed within agreed timelines",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      5,
+      8,
+      10,
+      16,
+      4,
+      12
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Overall ownership of this policy, including working conditions, career management, and discrimination prevention"
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Conduct employee satisfaction surveys and oversee grievance mechanisms"
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Ensure fair recruitment, evaluation, and training processes"
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Head",
+        "duty": "Implement occupational health & safety programs (physical and psychological)"
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Head",
+        "duty": "Conduct risk assessments, incident reporting, and safety training"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Provide resources and strategic direction for all commitments"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approve targets and review progress annually"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure integration of human rights due diligence into business decisions"
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Implement policy requirements within their teams"
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Report incidents or non-compliance to HR/EHS"
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Promote work-life balance and respectful behaviour"
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Comply with safety rules, use PPE, and report hazards"
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Treat colleagues with dignity and respect"
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Participate in training and surveys"
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Refrain from discrimination, harassment, or abuse"
+      },
+      {
+        "role": "Contractors & Suppliers",
+        "duty": "Adhere to this policy and relevant contractual clauses"
+      },
+      {
+        "role": "Contractors & Suppliers",
+        "duty": "Prohibit child/forced labour in their own operations"
+      },
+      {
+        "role": "Contractors & Suppliers",
+        "duty": "Provide safe and respectful working conditions for their personnel"
+      }
+    ],
+    "monitoring": "The Company shall track progress against the above targets through:\n\nQuarterly internal reviews by HR and EHS\n\nAnnual employee satisfaction and safety climate surveys\n\nPeriodic audits (internal and external) on human rights, safety, and labour standards\n\nGrievance log analysis to identify recurring issues",
+    "reviewMechanism": "This policy and its targets shall be reviewed annually by the HR Head and Top Management. The next review date is 01/02/2027.\n\nCorrective action plans shall be developed for any missed targets or identified non-compliances."
+  },
+  "sourcePath": "Policies - Kenal/Gautam Solar/Responsible Workplace & Human Rights Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Gautam Solar/Responsible Workplace & Human Rights Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 9147,
+  "parsedAt": "2026-09-11T07:23:44.210Z"
+}

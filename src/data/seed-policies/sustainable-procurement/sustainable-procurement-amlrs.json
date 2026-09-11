@@ -1,0 +1,219 @@
+{
+  "id": "sustainable-procurement-amlrs",
+  "name": "AMLRS",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 2. Responsible Sourcing  Policy_v1507.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "THE AML RIGHTSOURCE GROUP of companies",
+      "industry": "",
+      "site": "",
+      "sites": [],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At THE AML RIGHTSOURCE GROUP of companies, we recognize the critical role that sustainable procurement plays in promoting environmental stewardship and fostering ethical business practices. As a leader in financial crime compliance and risk management, we are committed to sourcing products and services that align with our values of sustainability, integrity, and social responsibility. Our sustainable procurement approach focuses on minimizing environmental impact, supporting fair labor practices, and ensuring that our suppliers adhere to the highest ethical standards. By prioritizing sustainability in our procurement decisions, we aim to reduce our carbon footprint, conserve resources, and drive positive change across our supply chain. Through collaboration with responsible partners and continuous improvement, we are dedicated to creating lasting value for our business, communities, and the planet.",
+      "declaration": "The purpose of this Responsible Purchasing Policy is to establish clear guidelines for making procurement decisions that prioritize environmental sustainability, social responsibility, and ethical practices. This policy ensures that THE AML RIGHTSOURCE GROUP engages in purchasing activities that promote the well-being of society, respect human rights, and minimize environmental impact. It aims to integrate sustainable practices into every aspect of the supply chain, fostering long-term value creation while minimizing risks related to unethical or unsustainable sourcing. By adhering to this policy, AMLRS commits to fostering a responsible and sustainable business environment.",
+      "scope": "This Responsible Sourcing Policy applies to all operations, legal entities, offices, partner offices, registered business addresses, remote work locations, and other workplaces of the AML RightSource Group of Companies (\"AMLRS\"), including all subsidiaries, affiliates, and controlled entities operating in the United States, Canada, Germany, Poland, Austria, Switzerland, the United Kingdom, Denmark, Bulgaria, India, Singapore, Hong Kong, Brazil, and Malaysia, as well as any future locations where AMLRS conducts business.\n\nThe policy applies irrespective of whether business activities are carried out from AMLRS-owned or leased premises, partner offices, co-working spaces, client locations, registered legal addresses, or remote work environments. It covers all employees, including full-time, part-time, temporary, fixed-term, and contract employees, interns, consultants, agency workers, and management. The policy also extends to suppliers, vendors, contractors, service providers, business partners, and any other third parties engaged in providing products or services on behalf of AMLRS.\n\nAll individuals and entities covered by this policy are expected to comply with its requirements and uphold AMLRS's commitment to responsible, ethical, sustainable, and transparent sourcing practices throughout its global operations and supply chain. This includes promoting compliance with applicable laws and internationally recognized standards relating to labor and human rights, business ethics and integrity, environmental responsibility, health and safety, and responsible business conduct. AMLRS expects its suppliers and business partners to apply equivalent standards within their own operations and, where appropriate, throughout their supply chains."
+    },
+    "focusAreas": [
+      "Environmental Issues",
+      "Social Issues"
+    ],
+    "qualitative": {
+      "General": [
+        "We will integrate sustainability into all procurement decisions, ensuring that every purchase supports our environmental, social, and ethical goals.",
+        "We will foster long-term partnerships with suppliers who share our commitment to sustainability and responsible business practices.",
+        "Our plan is to continuously monitor and improve our procurement processes, ensuring they reflect evolving industry standards and best practices in sustainability and ethical sourcing."
+      ],
+      "Environmental Issues": [
+        "We will conduct regular audits of suppliers to ensure their environmental practices align with our sustainability standards and continuous improvements.",
+        "We plan to provide training to staff involved in company procurement on environmental sustainability, equipping them with the knowledge to align their procurement decisions better with our environmental objectives.",
+        "We will prioritize suppliers who actively reduce GHG emissions, energy consumption, and waste production through their operations.",
+        "We will include Environmental clauses in the AMLRS Supplier Code of Conduct and ensure all suppliers sign or agree to adhere to it."
+      ],
+      "Social Issues": [
+        "We will implement a supplier diversity program, increasing procurement from minority- and women-owned businesses to the extent practicable in order to foster inclusive economic growth and opportunities.",
+        "We will evaluate suppliers based on their labor practices, working conditions, and commitment to creating a fair and positive work environment for their employees.",
+        "We strive to equip staff involved in company procurement with training on social responsibility to help them make ethical sourcing decisions in all procurement activities.",
+        "We will include Labor and Human right clauses in the AMLRS Supplier Code of Conduct and ensure all suppliers sign or agree to adhere to it."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General",
+        "targets": [
+          {
+            "target": "Our goal is to ensure 100% of suppliers participate in CSR self-assessments and undergo on-site audits",
+            "baseline": "2022",
+            "deadline": "by the end of 2030"
+          },
+          {
+            "target": "We are dedicated to having all AMLRS suppliers sign or agree to adhere to the AMLRS \"Supplier Code of Conduct\"",
+            "baseline": "",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "We plan to integrate additional ESG criteria into supplier contracts",
+            "baseline": "",
+            "deadline": "every 2 to 3 years, or sooner as required by changes in government regulations"
+          },
+          {
+            "target": "We aim to conduct annual ESG performance reviews for all suppliers",
+            "baseline": "",
+            "deadline": "beginning in 2030"
+          },
+          {
+            "target": "We will implement corrective action plans for non-compliant suppliers and target a 90% resolution rate within 12 to 15 months of any identification of non-compliance",
+            "baseline": "",
+            "deadline": "starting in 2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Issues",
+        "targets": [
+          {
+            "target": "We aim to ensure 90% of procurement is based with suppliers who hold recognized environmental certifications (e.g., ISO 14001)",
+            "baseline": "",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Increase local sourcing by 20%",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "We aim to cover 100% of our suppliers under an ESG on site or virtual audit",
+            "baseline": "",
+            "deadline": "by 2030"
+          }
+        ]
+      },
+      {
+        "area": "Social Issues",
+        "targets": [
+          {
+            "target": "We have a target goal of ensuring that 90% of procurement is sourced from suppliers holding ethical certifications (e.g., Fair Trade, SA8000)",
+            "baseline": "",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "We have a target goal of increasing procurement from suppliers local to the relevant AMLRS office by 15%",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "We have a target goal of increasing procurement from minority- and women-owned businesses by 35%",
+            "baseline": "2022",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "We aim for 100% of staff involved in AMLRS procurement to be trained on social responsibility, human rights, and ethical sourcing",
+            "baseline": "",
+            "deadline": "by 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "The Lead Compliance Officer is responsible for implementing this policy and ensuring all Partners and employees are aware of and adhere to this Policy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Ensure procurement aligns with sustainability and ethical guidelines."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Manage and evaluate suppliers’ compliance with the Supplier Code of Conduct."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Track and report on sustainability and ethical sourcing goals."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Resource Allocation: Allocate available resources to achieve sustainability and ethical objectives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Integrate sustainability and ethical sourcing goals into long-term procurement strategies."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Ensure all procurement decisions align with the company's sustainability and social responsibility objectives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Foster a culture of ongoing improvement in procurement practices to meet evolving standards."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Ensure implementation and review of this Responsible Purchasing Policy."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Oversee training programs on sustainability and ethical sourcing."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Encourage regular supplier audits and corrective actions for non-compliance."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Report to Executive management on policy effectiveness."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Lead efforts to enhance sourcing practices based on evolving standards."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow the Responsible Purchasing Policy guidelines during procurement activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Engage in sustainability and ethical sourcing training."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any policy violations through proper channels (e.g., the AMLRS Ethics Portal)."
+      },
+      {
+        "role": "Employees",
+        "duty": "Collaborate with suppliers to ensure compliance with the Supplier Code of Conduct."
+      }
+    ],
+    "monitoring": "Consistent and open reporting is vital for tracking progress, recognizing potential risks, and ensuring accountability in sustainable procurement practices. AMLRS follows these procedures:\n\nAnnual Sustainability Reviews: We will conduct annual assessments of our sustainability impact, gathering data on key performance indicators established in our sustainability framework.\n\nInternal Evaluations: Regular internal evaluations will be performed to ensure compliance with sustainability regulations, assess the efficiency of our management systems, and identify areas for further enhancement.\n\nStakeholder Engagement: We engage actively with stakeholders, including employees, suppliers, regulators, and local communities, to obtain valuable insights, address concerns, and transparently report on our sustainability progress and initiatives.\n\nTHE AML RIGHTSOURCE GROUP of companies is dedicated to the ongoing enhancement of our sustainable procurement practices. We will continuously revise our sustainability framework by incorporating industry-leading practices, innovative technologies, and feedback from stakeholders. Our initiatives focus on improving energy efficiency, waste management, and reducing our carbon footprint.\n\nWe proactively explore and adopt eco-friendly technologies, optimize waste handling processes, and involve employees through specialized training programs. By encouraging innovation and prioritizing sustainability, we strive to surpass regulatory requirements and establish ourselves as leaders in responsible corporate procurement.",
+    "reviewMechanism": "The Lead Compliance Officer will review the Responsible Procurement Policy annually, and any updates will be communicated as necessary."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/AMLRS/2. Responsible Sourcing  Policy_v1507.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/AMLRS/2. Responsible Sourcing  Policy_v1507.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 12960,
+  "parsedAt": "2026-09-11T07:06:29.102Z"
+}

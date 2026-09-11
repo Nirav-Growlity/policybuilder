@@ -1,0 +1,258 @@
+{
+  "id": "labour-human-rights-agistek",
+  "name": "Agistek",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labor and Human Right Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Aegistek Corporation Ltd.",
+      "industry": "",
+      "site": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand",
+      "sites": [
+        {
+          "location": "Aegistek Corporation Ltd.",
+          "address": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Aegistek Corporation Ltd., we are committed to uphold principles of labor & human rights and foster a culture of respect and transparency. We recognize the dignity and worth of every individual, and we are dedicated to providing a safe and fair working environment for all employees. Our policy prioritizes the protection of workers' rights, including the right to fair wages, equal opportunities and freedom from discrimination or harassment.",
+      "declaration": "Ethical Responsibility: Ensure ethical business practices and recognizing importance of respecting the rights and dignity of all individuals associated with our company.\n\nEmployee Welfare: Prioritizing the well-being and safety of employees by establishing standards for fair wages, safe working conditions, and equal opportunities, fostering a positive workplace culture.\n\nCompliance: This includes adherence to labor laws, safety regulations and human rights standards set by the International Labor Organization (ILO) and the Universal Declaration of Human Rights (UDHR).\n\nRisk Mitigation: Committed to mitigate the risks associated with labor-related issues such as employee turnover, absenteeism, and labor unrest, thereby safeguarding business continuity and stability.",
+      "scope": "This Labor & Human Rights Policy applies to the operation of Aegistek Corporation Ltd., covering all Employees, Stakeholders, Contractors and individual affiliated with Aegistek."
+    },
+    "focusAreas": [
+      "Workforce Health and Safety",
+      "Working Condition",
+      "Labor Relations",
+      "Professional Growth",
+      "Child and Forced Labor",
+      "Diversity, Equality and Integration",
+      "Third-party human rights"
+    ],
+    "qualitative": {
+      "Workforce Health and Safety": [
+        "Ensuring full regulatory compliance to limit exposure to occupational hazards and providing comprehensive safety training to all employees."
+      ],
+      "Working Condition": [
+        "Our key targets include limiting the maximum weekly working hours to 48 hours and ensuring that employees receive a minimum of two days off per week.",
+        "We aim to limit overtime hours to a maximum of 36 hours per week to prevent employee burnout and ensure overtime wages at 1.5 times the regular pay rate by 2025 from the baseline year 2023."
+      ],
+      "Labor Relations": [
+        "By 2025, achieve a 15% increase in the establishment of regular forums for open communication and collaboration between management and employees, fostering a culture of mutual respect and understanding to facilitate structured social dialogue."
+      ],
+      "Professional Growth": [
+        "To ensure fair compensation practices, the policy sets a target of achieving a salary equity index of 95% or above and targeting a 90% increase in average training hours by 2025 from the baseline year of 2023 for their personal and professional growth.",
+        "Targeting 65% increase in average participation in career development programs by 2025 from the baseline year of 2023 for their career advancement and skill development."
+      ],
+      "Child and Forced Labor": [
+        "By 2025, our goal is to achieve zero tolerance for instances of child and forced labor throughout our supply chain.",
+        "We are committed to ensure that 60% of suppliers adhere to international labor standards and increasing awareness among 100% employees of basic labor rights and enhance transparency in reporting any unfair labor practices."
+      ],
+      "Diversity, Equality and Integration": [
+        "We are committed to achieve 100% pay equity among employees performing similar roles, irrespective of gender and rectify any existing disparities within six months of implementing the policy."
+      ],
+      "Third-party human rights": [
+        "By 2025, we pledge to conduct regular audits and assessments of our external stakeholders, including suppliers and partners, to ensure alignment with internationally recognized human rights standards, such as the UN Guiding Principles on Business and Human Rights.",
+        "By 2025, we will ensure that 100% of employees and associated stakeholders receive training on labor risks and prevention."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Workforce Health and Safety",
+        "targets": [
+          {
+            "target": "we aim to reduce workplace safety incidents by 20%",
+            "baseline": "baseline year of 2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "we strive to decrease the number of ergonomic risk factors by 15%",
+            "baseline": "levels observed in 2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Working Condition",
+        "targets": [
+          {
+            "target": "limiting the maximum weekly working hours to 48 hours",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "ensuring that employees receive a minimum of two days off per week",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "limit overtime hours to a maximum of 36 hours per week",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "ensure overtime wages at 1.5 times the regular pay rate",
+            "baseline": "baseline year 2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Labor Relations",
+        "targets": [
+          {
+            "target": "achieve a 15% increase in the establishment of regular forums for open communication and collaboration between management and employees",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "target a 10% increase in the inclusion of all laborers and employees within our collective bargaining agreements",
+            "baseline": "baseline in 2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Professional Growth",
+        "targets": [
+          {
+            "target": "achieving a salary equity index of 95% or above",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "targeting a 90% increase in average training hours",
+            "baseline": "baseline year of 2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "Targeting 65% increase in average participation in career development programs",
+            "baseline": "baseline year of 2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Child and Forced Labor",
+        "targets": [
+          {
+            "target": "achieve zero tolerance for instances of child and forced labor throughout our supply chain",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "ensure that 60% of suppliers adhere to international labor standards",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "increasing awareness among 100% employees of basic labor rights",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equality and Integration",
+        "targets": [
+          {
+            "target": "increase the representation of women in technical roles by 15%",
+            "baseline": "baseline year 2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "achieve 100% pay equity among employees performing similar roles, irrespective of gender",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "rectify any existing disparities within six months of implementing the policy",
+            "baseline": "",
+            "deadline": "within six months of implementing the policy"
+          }
+        ]
+      },
+      {
+        "area": "Third-party human rights",
+        "targets": [
+          {
+            "target": "achieve a 60% compliance rate among our external stakeholders with relevant human rights protocols, such as the UN Guiding Principles on Business and Human Rights",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "ensure that 100% of employees and associated stakeholders receive training on labor risks and prevention",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Leadership Commitment",
+        "duty": "The executive team sets the tone and allocates necessary resources for implementing initiatives aligned with this policy."
+      },
+      {
+        "role": "Policy Implementation",
+        "duty": "HR manager is responsible for policy implementation and oversight, developing guidelines, procedures, and comprehensive training programs."
+      },
+      {
+        "role": "Employee Engagement",
+        "duty": "All employees actively uphold policy principles, promptly report violations, and contribute to a respectful workplace culture."
+      },
+      {
+        "role": "Monitoring and Reporting",
+        "duty": "The Compliance team diligently monitors effectiveness, compiles relevant data, and transparently communicates outcomes."
+      },
+      {
+        "role": "Partnerships and Collaboration",
+        "duty": "The CSR team actively fosters partnerships to promote best practices and facilitate collective action."
+      },
+      {
+        "role": "Continuous Improvement",
+        "duty": "Departments regularly review practices to ensure alignment with evolving standards and identify areas for enhancement."
+      },
+      {
+        "role": "Compliance with Laws",
+        "duty": "Legal and Compliance diligently ensures adherence to relevant laws, regulations, and international standards."
+      }
+    ],
+    "monitoring": "Reporting mechanisms are essential for monitoring and evaluating the effectiveness of the Labor & Human Rights Policy at Aegistek Corporation Ltd. The company is committed to fostering a culture of transparency, accountability, and continuous improvement through regular reporting on key performance indicators (KPIs) related to labor and human rights.\n\nInternal Reporting: Aegistek encourages all employees to report any violations or concerns related to labor and human rights to HR department. Reports will be treated confidentially, and non-retaliation policies are in place to protect whistleblowers.\n\nCompliance Audits: The company conducts regular audits and assessments to ensure compliance with the Labor & Human Rights Policy, as well as relevant laws and regulations. These audits may include on-site inspections, document reviews, and interviews with employees and stakeholders. Findings are documented, and corrective actions are implemented as needed.\n\nKey Performance Indicators (KPIs): Aegistek monitors and reports on various KPIs to track progress toward achieving the objectives outlined in the policy. KPIs may include metrics related to workplace safety incidents, employee turnover rates, diversity and inclusion initiatives, labor relations, and supplier compliance with ethical standards.\n\nStakeholder Engagement: Aegistek actively engages with stakeholders, including employees, suppliers, customers, and local communities, to gather feedback and input on labor and human rights issues. Stakeholder consultations, surveys, and feedback mechanisms are utilized to assess the effectiveness of the policy and identify areas for improvement.\n\nExternal Reporting: Aegistek is committed to transparency and accountability in its labor and human rights practices and regularly communicates its progress and challenges through external reporting mechanisms. This may include publishing annual sustainability reports, participating in industry benchmarking initiatives, and disclosing relevant information to investors, customers, and other stakeholders.",
+    "reviewMechanism": "This policy undergoes annual review by the HR Manager and subsequent approval by the General Manager. Any modifications are promptly communicated to all employees for awareness and compliance."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Agistek/2. Labor and Human Right Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Agistek/2. Labor and Human Right Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 9920,
+  "parsedAt": "2026-09-11T07:06:10.279Z"
+}

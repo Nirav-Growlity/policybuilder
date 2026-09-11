@@ -1,0 +1,254 @@
+{
+  "id": "sustainable-procurement-novopor",
+  "name": "Novopor",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Novopor",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Andhra Pradesh",
+          "address": "Plot No: 2A,2B & 2C, APSEZ, Moturupalem Village, Rambilli Mandal, Achyutapuram, Visakhapatnam District - 531011, Andhra Pradesh, India",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Andhra Pradesh",
+          "address": "Plot no: 64, JNPC, Pharma City, Thanam Village, Visakhapatnam District, Parwada Mandal - 531019, Andhra Pradesh, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Telangana",
+          "address": "K.K.R.Square, Flat No.402 & 403, Plot No.5,6,15 & 16, Kavuri Hills, Road No.36, Jubliee Hills, Hyderabad - 500033, Telangana, India.",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Telangana",
+          "address": "Lab No.9, 1st Floor, Phase-1, IKP Knowledge Park, Sy. No. 234/2, 235/3 and 235/2, Turkapally Village, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500101, Telangana, India",
+          "primaryFunction": "Innovation Centre"
+        },
+        {
+          "location": "Mumbai",
+          "address": "Unit No.SO-4, 2nd Floor, Building No.14, Solitaire Corporate Park, Guru Hargovindji Road, Chakala, Andheri (East), MUMBAI-400093, India",
+          "primaryFunction": "Corporate Office"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Novopor is committed to embedding sustainability into every aspect of its procurement practices to minimize environmental impact, uphold ethical standards, and promote social responsibility. Our procurement strategy is designed to ensure that all sourced materials, products, and services align with globally recognized best practices in sustainability. This includes prioritizing suppliers who adhere to ethical labor practices, environmental stewardship, and responsible sourcing methods.\n\nBy implementing this policy, we aim to foster a transparent and accountable supply chain that supports our broader sustainability objectives. We actively engage with suppliers to encourage continuous improvement, reduce waste, lower carbon footprints, and enhance the overall sustainability of our operations. Through responsible procurement, we strive to create long-term value for our business, stakeholders, and the communities in which we operate.",
+      "declaration": "At Novopor, we are We are dedicated to embedding sustainability into our procurement practices by maintaining the highest standards of ethics, integrity, and social responsibility. We understand the vital role our supply chain plays in creating positive environmental and social impact. Through fair, transparent, and responsible sourcing, we strive to build long-term partnerships founded on trust, accountability, and a shared commitment to sustainability. Our Commitment is reflected in the following key areas:",
+      "scope": "This Sustainable Procurement Policy applies to all employees, contractors, suppliers, business partners, and stakeholders associated with Novopor Operations. It is applicable to all site locations:"
+    },
+    "focusAreas": [
+      "Reducing Environmental Impact",
+      "Enhancing Circular Economy Practices",
+      "Sustainable Innovation",
+      "Social Practices"
+    ],
+    "qualitative": {
+      "Reducing Environmental Impact": [
+        "We prioritize resource efficiency, waste reduction, and the adoption of eco-friendly materials and technologies. Our goal is to minimize carbon emissions, conserve natural resources, and promote circular economy principles. Employees, suppliers, and stakeholders are expected to comply with environmental regulations and contribute to sustainability initiatives.",
+        "Supplier Evaluation & ESG Assessment: Implement a sustainability scorecard to assess suppliers based on environmental and social performance. Conduct regular on-site ESG audits and require suppliers to complete self-assessments to ensure compliance with sustainability standards."
+      ],
+      "Enhancing Circular Economy Practices": [
+        "We prioritize the use of recyclable, biodegradable, and sustainable materials while encouraging reuse and responsible disposal. Our commitment extends to working with suppliers and partners who align with circular economy principles, reducing environmental impact, and fostering innovation in sustainable production."
+      ],
+      "Sustainable Innovation": [
+        "Novopor prioritizes sustainable innovation by developing and promoting eco-friendly products and processes. We invest in research and development to reduce environmental impact, enhance product efficiency, and support green technologies. Suppliers and partners are encouraged to align with our sustainability-driven approach to innovation.",
+        "Collaboration for Sustainable Innovation: Partner with suppliers to co-develop innovative and eco-friendly solutions for product design, manufacturing, and packaging, driving sustainability across the supply chain."
+      ],
+      "Social Practices": [
+        "Novopor is committed to ensuring that all suppliers uphold fair labor practices, human rights, and ethical working conditions. We require compliance with international labor standards, including fair wages, safe working environments, non-discrimination, and the elimination of child and forced labor. Regular audits, training programs, and grievance mechanisms are in place to ensure suppliers maintain these social responsibilities.",
+        "Training & Capacity Building: Offer targeted sustainability training programs and workshops to suppliers, equipping them with best practices to enhance their environmental and social responsibility.",
+        "Sustainability Incentives & Compliance Oversight: Introduce incentive programs to reward suppliers with strong sustainability practices while enforcing strict compliance monitoring to ensure adherence to ethical and environmental standards.",
+        "Stakeholder Communication & Engagement: Foster transparent dialogue with internal and external stakeholders, ensuring continuous improvement and alignment with global sustainability objectives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "We strive to achieve 100% coverage of our suppliers in CSR self-assessments and on-site audits",
+            "baseline": "",
+            "deadline": "before FY 2028-29"
+          },
+          {
+            "target": "We are committed to ensuring that 100% of our suppliers sign the \"Supplier Code of Conduct\"",
+            "baseline": "",
+            "deadline": "before FY 2028-29"
+          },
+          {
+            "target": "We aim to incorporate additional ESG criteria into supplier contracts every 2–3 years",
+            "baseline": "",
+            "deadline": "or as mandated by evolving government regulations"
+          },
+          {
+            "target": "We strive to conduct ESG performance reviews for 100% of suppliers annually",
+            "baseline": "",
+            "deadline": "before FY 2028-29"
+          },
+          {
+            "target": "We will implement corrective action plans for all non-compliant suppliers, achieving a 90% resolution rate",
+            "baseline": "",
+            "deadline": "within year FY 2028-29"
+          },
+          {
+            "target": "Integrate environmental and social sustainability criteria into 100% of supplier selection and evaluation processes",
+            "baseline": "",
+            "deadline": "by FY 2028–29"
+          },
+          {
+            "target": "Engage with key suppliers through sustainability awareness, capacity-building, or improvement initiatives to promote continuous enhancement of environmental and social performance",
+            "baseline": "",
+            "deadline": "by FY 2028–29"
+          },
+          {
+            "target": "Ensure that 100% of procurement personnel receive training on sustainable procurement principles and responsible sourcing practices",
+            "baseline": "",
+            "deadline": "by FY 2028–29"
+          }
+        ]
+      },
+      {
+        "area": "Reducing Environmental Impact",
+        "targets": [
+          {
+            "target": "Reduce carbon emissions by 15% through energy efficiency and renewable energy adoption.",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          },
+          {
+            "target": "Assess 100% of key suppliers against environmental sustainability criteria as part of the supplier evaluation process",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028–29"
+          },
+          {
+            "target": "Ensure that 80% of key suppliers acknowledge and comply with Novopor's environmental requirements",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028–29"
+          },
+          {
+            "target": "Achieve 100% waste diversion from landfills by implementing recycling and waste management programs",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Circular Economy",
+        "targets": [
+          {
+            "target": "Ensure that at least 50% of packaging materials used are recyclable, biodegradable, or reusable",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          },
+          {
+            "target": "Partner with 100% of key suppliers to implement take-back or recycling programs",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          },
+          {
+            "target": "Increase the use of recycled materials in production by 30%",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Innovation",
+        "targets": [
+          {
+            "target": "Allocate at least 15% of annual R&D budget towards developing sustainable and eco-friendly products",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          },
+          {
+            "target": "Reduce the carbon footprint of manufacturing processes by 20% through cleaner production methods.",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "By FY 2028-29, we aim to implement a 100% comprehensive supplier training program that focuses on sustainability, human rights, and responsible sourcing practices.",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          },
+          {
+            "target": "Provide sustainability, human rights, and responsible sourcing awareness or training to 100% of key suppliers",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028–29"
+          },
+          {
+            "target": "We aim to achieve 100% compliance among tier-1 suppliers with fair wages and ethical labor conditions in line with ILO standards",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          },
+          {
+            "target": "We aim to promote gender equality in our supply chain by ensuring that at least 20% of leadership positions within our key supplier organizations are held by women",
+            "baseline": "FY 2022–23",
+            "deadline": "by FY 2028-29"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Ensures that sustainability criteria are integrated into supplier selection and evaluation."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Adhere to Novopor’s sustainability requirements and continuously improve their practices."
+      },
+      {
+        "role": "Sustainability Team / Sustainability Manager",
+        "duty": "Monitor policy implementation, track performance against sustainability targets, coordinate supplier engagement activities, conduct the annual review of this policy, and recommend updates based on regulatory requirements, industry best practices, and organizational objectives."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provides strategic direction and ensures alignment with business sustainability goals."
+      },
+      {
+        "role": "Third Party Auditors",
+        "duty": "Conduct independent assessments of supplier compliance with sustainability commitments."
+      }
+    ],
+    "monitoring": "To uphold the effectiveness of Novopor’s Sustainable Procurement Policy, a structured monitoring and reporting framework is crucial.\n\nConduct annual sustainability audits on key suppliers.\n\nRequire suppliers to submit sustainability performance reports annually.\n\nPublish a yearly sustainability report highlighting progress towards procurement targets.\n\nUse key performance indicators (KPIs) to assess compliance and impact.\n\nThe Policy is publicly available on Novopor’s website and shared through various stakeholder communication channels.\n\nEmployees are kept informed of updates and expected to integrate these practices into their work.",
+    "reviewMechanism": "The Sustainability Manager is responsible for managing the implementation and periodic review of this policy. This policy will be reviewed annually to ensure its effectiveness and alignment with evolving regulatory requirements, industry best practices, and organizational commitments. Any necessary updates or modifications will be communicated to all stakeholders, incorporating operational or regulatory changes and addressing emerging challenges."
+  },
+  "sourcePath": "Policies - Kenal/Novopor/Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Novopor/Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 12026,
+  "parsedAt": "2026-09-11T07:25:05.221Z"
+}

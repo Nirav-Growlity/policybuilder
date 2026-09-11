@@ -1,0 +1,504 @@
+{
+  "id": "labour-human-rights-isrpl",
+  "name": "ISRPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labor & Human RIghts Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Indian Synthetic Rubber Private Limited (ISRPL)",
+      "industry": "",
+      "site": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304",
+      "sites": [
+        {
+          "location": "Corporate Office",
+          "address": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Registered Office",
+          "address": "10th Floor, Core-2, North Tower, Scope Minar, District Centre, Laxmi Nagar, Delhi -110092",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "Opposite: Naptha Cracker Polymer Terminal Gate, Panipat Refinery, Panipat, Haryana -132140",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Indian Synthetic Rubber Private Limited (ISRPL) is committed to upholding the highest standards of ethical conduct and social responsibility. As a joint venture between global leaders in the petrochemical industry, we recognize that our greatest asset is our people. We believe that respecting human rights and ensuring fair labor practices are fundamental to our long-term success and our identity as a responsible corporate citizen. This policy outlines our commitment to creating a safe, inclusive, and dignified work environment that reflects our core values of integrity and excellence.",
+      "declaration": "Define the fundamental principles that govern our interactions with employees and external stakeholders.\n\nEnsure compliance with the Constitution of India, national labor laws (such as the Factories Act and Minimum Wages Act), and international human rights standards.\n\nProvide a clear framework for preventing and addressing any form of labor exploitation, discrimination, or harassment.\n\nGuide our management and workforce in building a culture of mutual respect, transparency, and social equity.",
+      "scope": "This policy applies to all activities, products, and services of ISRPL, including its Corporate Office in Noida and its manufacturing facility in Panipat, Haryana. It extends to all employees, contractors, vendors, and stakeholders operating within or on behalf of ISRPL premises."
+    },
+    "focusAreas": [
+      "Freedom of Association",
+      "Prohibition of Forced & Child Labor",
+      "Non-Discrimination & Equal Opportunity",
+      "Workplace Health & Safety",
+      "Fair Wages & Working Hours",
+      "Prevention of Harassment",
+      "Career Development",
+      "Community & Stakeholder Impact",
+      "Occupational Health, Safety & Wellbeing",
+      "Workplace Standards & Conditions",
+      "Employee Engagement & Workplace Communication",
+      "Diversity, Equity, and Inclusion",
+      "Discrimination & Harassment",
+      "Career Management & Training",
+      "Child Labor, Forced Labor & Human Trafficking"
+    ],
+    "qualitative": {
+      "Freedom of Association": [
+        "Respecting the right of workers to form or join associations and engage in collective bargaining."
+      ],
+      "Prohibition of Forced & Child Labor": [
+        "Ensuring a zero-tolerance approach to any form of involuntary labor or the employment of minors in hazardous processes."
+      ],
+      "Non-Discrimination & Equal Opportunity": [
+        "Promoting a merit-based environment free from bias related to gender, caste, religion, or disability."
+      ],
+      "Workplace Health & Safety": [
+        "Maintaining a \"Zero Harm\" facility through rigorous safety protocols and continuous emergency preparedness."
+      ],
+      "Fair Wages & Working Hours": [
+        "Adhering to statutory requirements for compensation, benefits, and reasonable working hours to support work-life balance."
+      ],
+      "Prevention of Harassment": [
+        "Protecting all individuals from physical, verbal, or psychological abuse, with a specific focus on POSH (Prevention of Sexual Harassment) compliance."
+      ],
+      "Career Development": [
+        "Providing transparent pathways for upskilling and professional growth for every member of the ISRPL family."
+      ],
+      "Community & Stakeholder Impact": [
+        "Minimizing negative footprints on local communities and ensuring their rights to health and a clean environment are protected."
+      ],
+      "Occupational Health, Safety & Wellbeing": [
+        "We will foster a workplace culture where unsafe behaviors are immediately addressed, and all employees consistently follow established safety procedures.",
+        "We will conduct regular training sessions and awareness programs to ensure every employee understands health and safety hazards relevant to their roles.",
+        "We will encourage employees to report potential hazards and near-misses, enabling preventive actions before incidents occur.",
+        "We will ensure that all facilities, equipment, and processes minimize occupational risks and comply with applicable health and safety regulations.",
+        "We will ensure all employees are trained and ready to respond effectively to emergencies such as fires, chemical spills, or medical incidents.",
+        "We will regularly review safety procedures, audit workplace conditions, and implement improvements based on lessons learned, incident reports, and industry best practices.",
+        "Employee mental well-being will be supported by promoting a healthy work environment, encouraging open communication, and implementing initiatives that help reduce work-related stress.",
+        "Workplace ergonomics will be improved to enhance employee comfort and reduce the risk of musculoskeletal issues by assessing workstations and implementing appropriate ergonomic practices and adjustments wherever feasible.",
+        "Workplace accidents and injuries will be minimized by ensuring the availability and proper use of personal protective equipment (PPE)."
+      ],
+      "Workplace Standards & Conditions": [
+        "Fair and lawful working conditions will be ensured for all employees by complying with applicable labor regulations, including the Factories Act, 1948 and the Occupational Safety, Health and Working Conditions Code, 2020.",
+        "Employee satisfaction regarding working conditions will be regularly assessed by conducting periodic employee satisfaction surveys and reviewing feedback to identify improvement opportunities and enhance the overall workplace environment.",
+        "We commit to providing a healthy organizational culture and an optimal work-life balance as a core mantra for our people management.",
+        "Employee well-being and financial security will be supported by facilitating access to health insurance coverage and relevant employee welfare benefits in accordance with company policies and applicable regulations.",
+        "Safe, clean, properly ventilated, and well-maintained workplace facilities will be provided to employees by conducting periodic workplace inspections and implementing necessary improvements.",
+        "We will provide fair wages, access to leave entitlements, medical support, and programs that promote overall well-being.",
+        "Appropriate working hours and rest periods will be ensured to support employee health and work–life balance by aligning workplace practices with applicable legal and regulatory requirements."
+      ],
+      "Employee Engagement & Workplace Communication": [
+        "We aim strengthen the collective bargaining process to ensure that all agreements are reached through fair negotiation and focus on the long-term welfare of the workforce.",
+        "We aim to promote open and constructive communication between management and employees to build mutual trust and transparency.",
+        "We strive to ensure freedom of association and collective dialogue, respecting employees’ rights to form or join worker committees or representative bodies in accordance with applicable laws.",
+        "We will maintain effective grievance and consultation mechanisms, ensuring employees can raise concerns, suggestions, or feedback without fear of retaliation.",
+        "We aim to foster regular engagement platforms, such as meetings, town halls, and worker-management committees, to discuss workplace matters and continuous improvements.",
+        "We strive to ensure timely and transparent communication regarding organizational changes, workplace policies, and matters affecting employees.",
+        "We will encourage collaborative problem-solving, promoting joint efforts between management and employee representatives to address workplace challenges."
+      ],
+      "Diversity, Equity, and Inclusion": [
+        "We aim to foster an inclusive workplace culture where every employee feels respected, valued, and empowered to contribute regardless of gender, age, background, or personal identity.",
+        "We strive to ensure equal opportunities in recruitment, promotion, training, and career advancement based solely on merit, competence, and performance.",
+        "We will promote fairness and transparency in all HR processes to eliminate bias and ensure equitable treatment across all levels of the organization.",
+        "We aim to cultivate leadership commitment to diversity and inclusion, ensuring that managers actively champion inclusive behaviors and decision-making practices.",
+        "We strive to create a safe environment free from discrimination and harassment, where employees can raise concerns without fear of retaliation.",
+        "We will encourage diverse perspectives and participation in decision-making processes to strengthen innovation, collaboration, and organizational growth."
+      ],
+      "Discrimination & Harassment": [
+        "We aim to maintain a zero-tolerance approach toward all forms of discrimination, harassment, bullying, and victimization in the workplace.",
+        "A workplace free from discrimination will be maintained by ensuring fair and equal treatment of all employees regardless of gender, age, religion, caste, disability, or other protected characteristics.",
+        "All forms of workplace harassment, including sexual harassment, will be strictly prohibited and addressed in accordance with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013.",
+        "Employee awareness on non-discrimination, diversity, and respectful workplace conduct will be strengthened by conducting periodic training and awareness programs.",
+        "Potential risks related to discrimination and workplace harassment will be identified and managed by conducting regular assessments and reviewing workplace practices to ensure a respectful and inclusive work environment.",
+        "We will ensure fair, impartial, and confidential handling of all complaints, protecting the rights of both complainants and respondents.",
+        "We aim to promote a culture of accountability, where inappropriate behavior is addressed promptly and corrective actions are taken consistently.",
+        "We will continuously strengthen preventive measures, including awareness initiatives and leadership responsibility to prevent workplace misconduct."
+      ],
+      "Career Management & Training": [
+        "We aim to foster a culture of continuous learning and professional growth, enabling employees to enhance their skills and capabilities in alignment with organizational goals.",
+        "We strive to provide equal access to career development opportunities, ensuring fair and transparent promotion and advancement processes.",
+        "We will support employees in identifying and achieving their career aspirations through structured development discussions and mentoring initiatives.",
+        "We aim to strengthen leadership capability across all levels, preparing future leaders through systematic succession planning and competency development.",
+        "We strive to align training programs with business needs and technological advancements, ensuring workforce readiness for future challenges."
+      ],
+      "Child Labor, Forced Labor & Human Trafficking": [
+        "We commit to ensuring that no person under the age of 18 is employed in any processes, in full compliance with the Factories Act and CLPR Act.",
+        "We strive to ensure strict age verification processes during recruitment to prevent the employment of underage workers.",
+        "We will maintain ethical recruitment practices, ensuring that employment is freely chosen and that no employee is subjected to coercion, threats, or withholding of personal documents.",
+        "We aim to strengthen oversight of contractors and suppliers, ensuring alignment with our standards on child labor and forced labor prevention.",
+        "We strive to promote awareness among employees and business partners regarding the risks and indicators of forced labor and human trafficking.",
+        "We will establish effective reporting and remediation mechanisms, ensuring immediate corrective action if any violation is identified."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Occupational Health, Safety & Wellbeing",
+        "targets": [
+          {
+            "target": "We aim to maintain zero workplace injuries and  zero fatal accidents and a recordable injury frequency rate of 3 or less",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will ensure that 100% of employees complete mandatory health and safety training",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to conduct quarterly workplace safety audits and ensure that all identified high-risk areas are addressed promptly, achieving full mitigation",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will conduct at least one emergency drills annually and ensure over 90% employee participation",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will achieve full compliance with PPE requirements across all operations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to provide annual health check-ups to all employees and ensure follow-up actions for any identified health risks",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will implement ergonomic assessments and improvements for all office and critical shop-floor workstations to support employee well-being",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Standards & Conditions",
+        "targets": [
+          {
+            "target": "We aim to achieve more than 90% employee satisfaction score in internal surveys",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will ensure 100% compliance with statutory working hours regulations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to resolve 90% of employee grievances within 30 days",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will ensure 100% of employees receive statutory wages and benefits",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to achieve 85% employee participation in engagement surveys, committees, and feedback mechanisms",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will provide at least 20 hours of training per employee per year",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to provide health insurance to 100% of our employees",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Employee Engagement & Workplace Communication",
+        "targets": [
+          {
+            "target": "We aim  to cover 100% of employees in collective bargaining agreement and in selection of employee representative",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will establish a formally constituted Worker–Management Committee at 100% of operational sites",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to conduct structured bi-annual collective consultation sessions on workplace policies and operational changes",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will ensure documented minutes and action tracking for 100% of social dialogue meetings",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to implement 70% of mutually agreed action items arising from worker-management dialogue sessions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to maintain 100% compliance with applicable laws related to freedom of association and collective bargaining",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity, and Inclusion",
+        "targets": [
+          {
+            "target": "We aim to increase gender diversity by achieving at least 15% representation of women in the total workforce",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to enhance diversity in leadership roles by ensuring at least 10% representation of women and underrepresented groups in managerial positions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will ensure 100% equal pay for equal work, eliminating any gender-based pay gaps",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to provide 100% DEI awareness training coverage to all employees annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will ensure that 100% of discrimination and harassment complaints are investigated, with at least 95% resolved within 30 days",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to achieve at least 90% employee perception score on inclusion and fairness in internal engagement surveys",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "We aim to maintain zero confirmed harassment cases annually.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "We will ensure 100% of discrimination and harassment complaints are formally investigated through an independent and documented process",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will provide mandatory anti-discrimination and anti-harassment training to 100% of employees every year",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to ensure 100% of managers and supervisors receive specialized training on prevention, early identification, and handling of harassment cases",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will ensure 100% protection against retaliation for individuals reporting discrimination or harassment concerns",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to conduct one internal assessment and one risk assessment on discrimination and harassment  annually.",
+            "baseline": "",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Career Management & Training",
+        "targets": [
+          {
+            "target": "We will provide a minimum of 10 hours of structured training per employee per year",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to ensure 100% of employees receive an annual performance and career development review",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will develop Individual Development Plans (IDPs) for 100% of employees",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to fill at least 60% of supervisory and managerial vacancies through internal promotions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to ensure 100% succession planning coverage for critical roles",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will achieve at least 80% participation in skill enhancement or technical upskilling programs annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor & Human Trafficking",
+        "targets": [
+          {
+            "target": "We will ensure 100% age verification compliance for all new hires and contract workers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to conduct annual compliance audits covering 100% of operational sites to verify absence of child labor and forced labor",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will provide mandatory awareness training on child labor and forced labor prevention to 100% of HR personnel and recruitment staff annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to include child labor and forced labor compliance clauses in 100% of supplier and contractor agreements",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide strategic direction and oversight for implementation of the Labour and Human Rights Policy."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensure adequate resources for effective implementation."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Promote a culture of fairness, dignity, inclusion and ethical conduct."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Periodically review performance and compliance."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Integrate labour and human rights requirements into recruitment, onboarding and training."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Review Policy regularly"
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Ensure compliance with labour laws and employment standards."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Manage grievance handling and maintain related records."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Conduct awareness and capacity-building programs."
+      },
+      {
+        "role": "Health, Safety and Environment (HSE) Team",
+        "duty": "Promote safe and healthy workplaces."
+      },
+      {
+        "role": "Health, Safety and Environment (HSE) Team",
+        "duty": "Conduct risk assessments and safety awareness programs."
+      },
+      {
+        "role": "Health, Safety and Environment (HSE) Team",
+        "duty": "Monitor workplace risks and support preventive actions."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Follow the Labour and Human Rights Policy and workplace standards."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Participate in training and awareness initiatives."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Respect colleagues and maintain a professional work environment."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Report concerns through grievance or whistle-blower mechanisms."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure fair treatment and non-discrimination within teams."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Maintain safe and respectful working conditions."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Address concerns and escalate issues when required."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Monitor day-to-day compliance with company policies."
+      }
+    ],
+    "monitoring": "Implementation of this Labor & Human Rights Policy is monitored through periodic internal audits, compliance reviews, employee feedback mechanisms, and grievance redressal processes. Key indicators are reported internally to management on a regular basis. Performance is reviewed to identify gaps, implement corrective actions, and strengthen continuous improvement in labor and human rights practices. Where applicable, relevant disclosures are made through sustainability reports and regulatory submissions to ensure transparency and accountability.\n\nThe company is committed to continuously strengthening labour and human rights performance through periodic risk assessments, employee engagement, awareness programs, training initiatives and collaboration with suppliers and stakeholders. Lessons learned from audits, incidents, grievances and stakeholder feedback will be used to improve policies, procedures and workplace practices. The company will strive to align its practices with international standards and evolving regulatory requirements.",
+    "reviewMechanism": "This policy will be reviewed annually by HR Head, at least once every two years or earlier if required due to changes in legal, regulatory or business requirements.\n\nLast Review Date: 01 Jan 2026\n\nNext Review Date: 01 Jan 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/ISRPL/2. Labor & Human RIghts Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/ISRPL/2. Labor & Human RIghts Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 21797,
+  "parsedAt": "2026-09-11T07:09:12.642Z"
+}

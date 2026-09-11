@@ -1,0 +1,223 @@
+{
+  "id": "br-agrotech",
+  "name": "BR Agrotech",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "BR Agrotech Limited",
+      "industry": "",
+      "site": "Plot No. 620/3, GIDC, Panoli, Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115",
+      "sites": [
+        {
+          "location": "BR Agrotech Limited",
+          "address": "Plot No. 620/3, GIDC, Panoli, Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115",
+          "primaryFunction": "Pesticide manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 620/3, GIDC, Panoli, Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "We at BR Agrotech Limited, acknowledge the environmental impact of pesticide manufacturing and are committed to integrate sustainable practices in our all operations that minimize harm to the environment while enhancing efficiency and innovation. This includes ensuring compliance with environmental regulations and addressing key challenges like resource consumption, emissions, and chemical safety.\n\nThe Environmental policy provides a framework to embed environmental responsibility across our manufacturing processes, supply chain, and product lifecycle. Through clear commitments, measurable targets, and collaboration with stakeholders, we strive to reduce our carbon footprint, optimize resource use, and uphold ecological conservation while ensuring long-term business resilience.",
+      "declaration": "BR Agrotech is dedicated to promote environmental responsibility in all aspects of its business. This policy outlines our approach to sustainable practices, setting measurable targets for energy efficiency, emissions reduction, water conservation, biodiversity protection, waste management, and customer health and safety. Compliance with local and international environmental laws, along with voluntary sustainability commitments, is fundamental to our operations.",
+      "scope": "This policy applies to BR Agrotech Limited’s operations, and it covers following sites and all its employees, workers, subcontractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Optimize energy efficiency and increase the transition to sustainable energy sources.",
+      "Ensure responsible water use and conservation",
+      "Protect and restore biodiversity through sustainable practices.",
+      "Reduce emissions and maintain air quality compliance.",
+      "Minimize Hazardous waste generation and promote circular economy practices.",
+      "Ensure safe application and disposal of products.",
+      "Prioritize product safety and responsible usage.",
+      "Focus on improving supplier engagement for sustainable sourcing of Raw Material.",
+      "Promote Employee Engagement in Sustainability"
+    ],
+    "qualitative": {
+      "Energy efficiency and sustainable energy": [
+        "To foster a culture of energy conservation by conducting annual energy audits, optimizing operational workflows, and engaging employees in sustainability initiatives to enhance overall efficiency."
+      ],
+      "Water use and conservation": [
+        "To regularly conduct annual water audits to identify conservation opportunities, optimize usage efficiency, and ensure sustainable water management across all facilities."
+      ],
+      "Biodiversity": [
+        "Regularly conduct annual biodiversity risk assessments, to mitigate habitat disruption, and enhance ecosystem conservation efforts.",
+        "Enhance carbon sequestration efforts by planting trees in deforested or degraded areas."
+      ],
+      "Emissions and air quality": [
+        "To conduct regular maintenance and periodic performance assessments of air pollution control equipment and identify areas for improvement and optimization."
+      ],
+      "Hazardous waste and circular economy": [
+        "Improvements in chemical handling and storage safety by enforcing strict protocols, upgrading storage infrastructure, and conducting regular employee training to prevent spills and contamination.",
+        "To maintain partnerships with waste management firms and also develop new ones to improve recycling initiatives."
+      ],
+      "Product application and disposal": [
+        "To promote responsible pesticide application through training programs and awareness initiatives.",
+        "Enhancement of product formulations to improve efficiency and minimize environmental impact."
+      ],
+      "Product safety and responsible usage": [
+        "Ensure strong labeling and hazard communication on each product to ensure proper product handling and safety."
+      ],
+      "Supplier engagement and sustainable sourcing": [
+        "Support local environmental initiatives and awareness programs to promote sustainability."
+      ],
+      "Employee engagement in sustainability": [
+        "To foster a culture of energy conservation by conducting annual energy audits, optimizing operational workflows, and engaging employees in sustainability initiatives to enhance overall efficiency."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy efficiency",
+        "targets": [
+          {
+            "target": "To reduce the overall energy consumption by 15% by FY 2029-30 through the implementation of energy-efficient manufacturing processes.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Greenhouse gas emissions",
+        "targets": [
+          {
+            "target": "Achieve a total reduction of 15% in Scope 1 and Scope 2 GHG emissions by FY 2029-30 by increasing reliance on solar power where feasible and optimizing fuel consumption in transportation and logistics.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Water conservation",
+        "targets": [
+          {
+            "target": "To Reduce freshwater intake by 20% by FY 2029-30 through adoption of advanced water purification technologies in the production facilities.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "To develop 10% green cover around our operational sites at Panoli by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Air quality",
+        "targets": [
+          {
+            "target": "Achieve 25% reduction in the particulate matter emissions by FY 2029-30 by adopting cleaner production techniques.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Install advanced air filtration systems across all production lines by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Hazardous waste and packaging",
+        "targets": [
+          {
+            "target": "Achieve 20% reduction in hazardous waste generation by FY 2029-30 by enhancing chemical management protocols and integrating circular economy principles into our supply chain.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 60% of materials used in packaging of products are biodegradable or recyclable by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 70% recovery and recycling of pesticide packaging waste by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Product safety and formulation",
+        "targets": [
+          {
+            "target": "Ensure 100% of products meet eco-friendly formulation standards by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of products undergo safety testing for human health impact before market release by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainability partnerships",
+        "targets": [
+          {
+            "target": "Partner with 3 sustainability-focused organizations till FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      9,
+      12,
+      13,
+      15,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Site Head",
+        "duty": "Drive strategic initiatives and allocate resources. Implement energy-efficient and pollution control measures."
+      },
+      {
+        "role": "EHS Team",
+        "duty": "Ensure regulatory adherence and track performance."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Promote responsible sourcing and supplier collaboration."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow sustainability practices and participate in training."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Support sustainability through partnerships and compliance."
+      }
+    ],
+    "monitoring": "The EHS Team will monitor key performance indicators (KPIs) and report progress annually.\n\nIndependent audits and assessments will validate sustainability performance.",
+    "reviewMechanism": "This policy will be reviewed every two years or as needed by the Site Head, with updates incorporated based on technological advancements and regulatory changes."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/BR Agrotech/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/BR Agrotech/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 8197,
+  "parsedAt": "2026-09-11T07:34:02.225Z"
+}

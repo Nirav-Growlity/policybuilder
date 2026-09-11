@@ -1,0 +1,188 @@
+{
+  "id": "living-wage-pk-and-rishita",
+  "name": "PK and RIshita",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Policy on Living Wage.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Permeshwar Creations Pvt. Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Unit 1: Rishita Fashion",
+          "address": "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat 396195",
+          "primaryFunction": "Manufacturing unit"
+        },
+        {
+          "location": "Unit 2: PK Enterprises",
+          "address": "C-19, Hoisery Complex, Phase II, Noida, U.P 201301. India",
+          "primaryFunction": "Manufacturing unit"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Permeshwar Creations is a leading apparel manufacturing company in India, dedicated to ensuring the well-being and fair compensation of all our employees. We believe that every employee deserves a wage that meets their basic needs and supports a dignified standard of living. This policy reflects our commitment to paying a living wage to all employees, ensuring they can afford essentials such as food, housing, healthcare, education, and transportation.",
+      "declaration": "Permeshwar Creations is committed to paying a living wage that supports the well-being and dignity of our employees. We recognize the importance of fair compensation in enhancing the quality of life for our workforce and contributing to sustainable development. This policy outlines our commitments, targets, and objectives related to paying a living wage across all operations.\n\nPermeshwar Creations is committed to the principle that fair compensation is a fundamental right of all employees.",
+      "scope": "This policy comprehensively covers all aspects of Permeshwar Creation Pvt. Ltd.’s manufacturing and operation sites. It applies to all workers, employees, suppliers, and stakeholders, both internal and external, associated directly or indirectly with Permeshwar Creation Pvt. Ltd."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "We believe that every employee deserves a wage that meets their basic needs and supports a dignified standard of living.\n\nThis policy reflects our commitment to paying a living wage to all employees, ensuring they can afford essentials such as food, housing, healthcare, education, and transportation.\n\nEnsure that all employees receive a living wage that is at least 20% higher than the current statutory minimum wage by the end of 2025.\n\nWe will engage in regular wage assessments, considering inflation, cost of living, and economic conditions to maintain fair compensation for our employees.\n\nWe aim to review and adjust wages at least annually, with a minimum increase of 5% above inflation each year, starting from 2022.\n\nThis policy comprehensively covers all aspects of Permeshwar Creation Pvt. Ltd.’s manufacturing and operation sites. It applies to all workers, employees, suppliers, and stakeholders, both internal and external, associated directly or indirectly with Permeshwar Creation Pvt. Ltd.\n\nThis policy will be reviewed annually to assess progress towards our living wage objectives and to update targets as necessary. Feedback from employees and stakeholders will be incorporated to enhance the policy's effectiveness and relevance."
+    },
+    "focusAreas": [
+      "Living Wage Target",
+      "Continuous Commitment to a Living Wage",
+      "Principles and Engagements"
+    ],
+    "qualitative": {
+      "Living Wage Target": [
+        "We will report progress annually through our sustainability disclosures to ensure full transparency and accountability by 2028.",
+        "By 2028 we will conduct independent third-party assessments where possible to validate our living wage implementation and strengthen stakeholder trust.",
+        "We will foster a culture of fair compensation where employees feel valued, fairly treated, and financially secure."
+      ],
+      "Continuous Commitment to a Living Wage": [
+        "Even after achieving the living wage target, Permeshwar Creations is dedicated to continuously reviewing and adjusting wages to ensure they remain above the living wage threshold.",
+        "We will engage in regular wage assessments, considering inflation, cost of living, and economic conditions to maintain fair compensation for our employees.",
+        "We will create an inclusive dialogue with employees to understand compensation needs and ensure pay structures are equitable and transparent."
+      ],
+      "Principles and Engagements": [
+        "We will actively engage with suppliers and partners to promote living wage practices throughout our supply chain, ensuring that fair compensation extends beyond our direct operations.",
+        "We will promote fair compensation practices across our supply chain, fostering long-term partnerships based on shared values of fairness and ethical responsibility."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Target",
+        "targets": [
+          {
+            "target": "Achieving 100% compliance with paying a living wage to all employees",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "All employees receive a living wage that is at least 20% higher than the current statutory minimum wage",
+            "baseline": "2022",
+            "deadline": "End of 2025"
+          },
+          {
+            "target": "Report progress annually through sustainability disclosures",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct independent third-party assessments where possible to validate living wage implementation",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Continuous Commitment to a Living Wage",
+        "targets": [
+          {
+            "target": "Review and adjust wages at least annually, with a minimum increase of 5% above inflation each year",
+            "baseline": "Starting from 2022",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Achieve a minimum annual real wage increase of 5% above inflation for all employees",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Principles and Engagements",
+        "targets": [
+          {
+            "target": "At least 80% of tier-1 suppliers comply with living wage standards",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources Manager (HR)",
+        "duty": "Review Living Wage policy annually"
+      },
+      {
+        "role": "Human Resources Manager (HR)",
+        "duty": "Ensure compliance with living wage standards across all operations."
+      },
+      {
+        "role": "Human Resources Manager (HR)",
+        "duty": "Conduct regular wage assessments and reviews to identify gaps or improvements."
+      },
+      {
+        "role": "Human Resources Manager (HR)",
+        "duty": "Provide guidance and training to managers and employees on living wage requirements."
+      },
+      {
+        "role": "Human Resources Manager (HR)",
+        "duty": "Maintain records and reporting to demonstrate adherence to the policy."
+      },
+      {
+        "role": "Finance Manager",
+        "duty": "Allocate necessary financial resources to support the implementation of the Living Wage Policy."
+      },
+      {
+        "role": "Finance Manager",
+        "duty": "Collaborate with HR to ensure wage adjustments and budgetary planning are in line with living wage commitments."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Uphold this policy within their teams and ensure fair remuneration practices."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Identify opportunities for aligning team wages with living wage targets."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Support HR in monitoring compliance and reporting any challenges or concerns."
+      },
+      {
+        "role": "Employees",
+        "duty": "Understand their rights under the Living Wage Policy."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any concerns related to wage discrepancies or non-compliance through designated channels."
+      }
+    ],
+    "monitoring": "We will report progress annually through our sustainability disclosures to ensure full transparency and accountability by 2028.\n\nBy 2028 we will conduct independent third-party assessments where possible to validate our living wage implementation and strengthen stakeholder trust.\n\nConduct regular wage assessments and reviews to identify gaps or improvements.\n\nMaintain records and reporting to demonstrate adherence to the policy.\n\nSupport HR in monitoring compliance and reporting any challenges or concerns.",
+    "reviewMechanism": "This policy will be reviewed annually to assess progress towards our living wage objectives and to update targets as necessary. The Human Resources Manager, in consultation with the Finance Manager, will lead the annual review process. Feedback from employees and stakeholders will be incorporated to enhance the policy's effectiveness and relevance."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/PK and RIshita/5. Policy on Living Wage.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/PK and RIshita/5. Policy on Living Wage.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 7221,
+  "parsedAt": "2026-09-11T07:13:10.048Z"
+}

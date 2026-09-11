@@ -1,0 +1,344 @@
+{
+  "id": "sustainable-procurement-birla",
+  "name": "Birla",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Green Supply Chain Policy_grw_v1_3012.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Birla Jute Mills",
+      "industry": "",
+      "site": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India",
+      "sites": [
+        {
+          "location": "Birla Jute Mills",
+          "address": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India",
+          "primaryFunction": "Leading manufacturer of jute products"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Birla Jute Mills, we recognize that our commitment to sustainability extends beyond our immediate operations to encompass our entire supply chain. As a leading manufacturer of jute products, we understand our responsibility to promote environmentally friendly practices and socially responsible conduct throughout our network of suppliers, partners, and stakeholders. This Green Supply Chain Policy reflects our dedication to creating a sustainable, ethical, and efficient supply chain that aligns with our core values and contributes positively to the environment and communities we serve.",
+      "declaration": "Minimize environmental impact: Implement comprehensive measures to reduce carbon footprint, waste, and resource consumption throughout the supply chain.\n\nPromote ethical sourcing: Ensure that all materials and services are sourced responsibly, with respect for human rights and fair labor practices.\n\nEnhance supply chain transparency: Establish clear traceability mechanisms and engage in open dialogue with stakeholders to ensure accountability in our supply chain operations.\n\nFoster innovation for sustainability: Encourage and support the development and adoption of sustainable technologies and practices among our suppliers.\n\nEnsure compliance and beyond: Meet and exceed regulatory requirements while setting industry-leading standards for sustainable supply chain management.\n\nBuild resilience: Develop a robust and adaptable supply chain that can withstand environmental and social challenges.",
+      "scope": "This policy applies to all suppliers, all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:\n\nThis policy covers the following Sustainable Supply Chain issues at Birla Jute Mills premises: Carbon Footprint Reduction, Circular Economy Practices, Ethical Labor Standards, Sustainable Resource Management, Green Transportation and Logistics, Supplier Diversity and Inclusion, Local Sourcing Initiatives, and Supply Chain Transparency."
+    },
+    "focusAreas": [
+      "Carbon Footprint Reduction",
+      "Circular Economy Practices",
+      "Ethical Labor Standards",
+      "Sustainable Resource Management",
+      "Green Transportation and Logistics",
+      "Supplier Diversity and Inclusion",
+      "Local Sourcing Initiatives",
+      "Supply Chain Transparency"
+    ],
+    "qualitative": {
+      "Carbon Footprint Reduction": [
+        "We aim to reduce the overall carbon footprint of our supply chain by implementing comprehensive carbon accounting and reduction strategies.",
+        "Our commitment includes setting science-based targets for emissions reduction and collaborating with suppliers to achieve these goals.",
+        "We focus on transitioning to renewable energy sources and improving energy efficiency across our supply chain operations.",
+        "We have implemented a comprehensive carbon accounting system across our supply chain, utilizing advanced software to track emissions from raw material sourcing to final product delivery.",
+        "We collaborate closely with our top 100 suppliers, providing them with tools and training to develop and implement their own carbon reduction strategies."
+      ],
+      "Circular Economy Practices": [
+        "We are committed to implementing circular economy principles in our product design and manufacturing processes.",
+        "Our focus includes developing take-back programs for end-of-life products and promoting the use of recycled materials in our supply chain.",
+        "We aim to minimize waste generation and maximize resource efficiency throughout our supply chain.",
+        "A comprehensive take-back program for end-of-life jute products has been established, with collection points set up across major markets.",
+        "We conduct annual workshops for suppliers on circular economy principles, focusing on waste reduction, recycling, and upcycling techniques specific to the jute industry."
+      ],
+      "Ethical Labor Standards": [
+        "We are dedicated to ensuring fair wages, safe working conditions, and respect for human rights throughout our supply chain.",
+        "Our commitment includes implementing rigorous auditing processes to verify compliance with ethical labor standards.",
+        "We focus on providing training and support to our suppliers to help them meet and exceed ethical labor requirements.",
+        "We have implemented a rigorous supplier code of conduct, mandating fair wages, safe working conditions, and respect for human rights throughout our supply chain.",
+        "Regular third-party audits of all tier 1 and key tier 2 suppliers are conducted to verify compliance with our ethical labor standards.",
+        "A dedicated team provides ongoing training and support to suppliers on ethical labor practices, with a focus on continuous improvement."
+      ],
+      "Sustainable Resource Management": [
+        "We aim to promote the use of sustainable and renewable resources throughout our supply chain.",
+        "Our commitment includes implementing water conservation practices and encouraging sustainable agriculture for jute cultivation.",
+        "We focus on reducing the overall environmental impact of resource use in our supply chain.",
+        "We are partnering with agricultural experts to promote sustainable jute cultivation practices among our farmers, including organic farming methods and efficient irrigation techniques."
+      ],
+      "Supplier Diversity and Inclusion": [
+        "We are dedicated to promoting diversity and inclusion in our supplier base.",
+        "Our commitment includes setting targets for sourcing from diverse and underrepresented suppliers.",
+        "We focus on providing mentorship and capacity-building programs to support diverse suppliers.",
+        "A supplier mentorship program has been launched, pairing diverse suppliers with experienced industry professionals to build capacity and foster growth.",
+        "Our procurement processes have been redesigned to remove barriers and provide equal opportunities to all qualified suppliers, regardless of size or ownership structure."
+      ],
+      "Local Sourcing Initiatives": [
+        "We aim to increase our sourcing from local communities to support economic development.",
+        "Our commitment includes developing local supplier capabilities and infrastructure.",
+        "We focus on measuring and reporting the economic impact of our local sourcing initiatives.",
+        "We are investing in local supplier development programs, providing technical assistance and financial support to build local manufacturing capabilities.",
+        "Annual economic impact assessments of our local sourcing initiatives are conducted and reported to stakeholders."
+      ],
+      "Supply Chain Transparency": [
+        "We are committed to enhancing transparency throughout our supply chain.",
+        "Our focus includes implementing advanced traceability technologies and regular reporting on supply chain performance.",
+        "We aim to engage stakeholders in open dialogue about our supply chain challenges and improvements.",
+        "We are implementing a blockchain-based traceability system to provide end-to-end visibility of our supply chain, from raw material sourcing to final product delivery.",
+        "Quarterly supply chain performance reports, including sustainability metrics, are published and made available to all stakeholders.",
+        "We have established a multi-stakeholder advisory board to provide input on supply chain challenges and improvement strategies."
+      ],
+      "Core / General Initiatives": [
+        "Sustainability considerations are embedded into all procurement decisions, with due evaluation of environmental, social, and ethical impacts.",
+        "All suppliers are required to formally acknowledge and sign the Supplier Code of Conduct, confirming compliance with ethical conduct, environmental responsibility, labor practices, and human rights standards.",
+        "Suppliers are actively encouraged to implement sustainable practices, including improved energy efficiency, responsible resource use, and fair and ethical labor practices.",
+        "Digital procurement systems are systematically promoted and utilized to minimize paper usage and reduce overall operational environmental impact.",
+        "Collaborative partnerships with suppliers are established to jointly develop sustainable solutions and facilitate the exchange of best practices.",
+        "Annual supplier self-assessments and risk-based on-site audits of key suppliers are conducted to evaluate compliance with environmental, social, and governance (ESG) requirements and to identify corrective and continuous improvement actions."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Core / General Targets",
+        "targets": [
+          {
+            "target": "A minimum of 5% of identified key suppliers are formally evaluated through ESG assessments, including structured self-assessment questionnaires and on-site audits",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "At least 35% of key suppliers formally acknowledge and sign the Supplier Code of Conduct",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "At least 20% of key suppliers are required to submit completed ESG self-assessment questionnaires",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Sustainability and ESG criteria are formally incorporated into at least 75% of new and renewed supplier contracts, including requirements related to environmental responsibility, labor standards, ethics, and compliance",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Carbon Footprint Reduction",
+        "targets": [
+          {
+            "target": "Increase awareness of carbon footprint reduction through training sessions, targeting 70% of our suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Standards",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with our supplier code of conduct among tier 1 suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct ethical labor audits for 80% of tier 2 suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide ethical labor training to 100% of our procurement team and key suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Resource Management",
+        "targets": [
+          {
+            "target": "Source 50% of raw materials from certified sustainable sources",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the adoption of sustainable farming practices among 70% of our jute farmers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Diversity and Inclusion",
+        "targets": [
+          {
+            "target": "Increase procurement spend with diverse suppliers to 15%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Enroll 50 diverse suppliers in our mentorship program",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% implementation of inclusive procurement processes across all business units",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Local Sourcing Initiatives",
+        "targets": [
+          {
+            "target": "Increase local sourcing to 50% of total procurement",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement supplier development programs for 100 local businesses",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Demonstrate a 20% increase in local economic impact from our sourcing initiatives",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supply Chain Transparency",
+        "targets": [
+          {
+            "target": "Achieve 80% traceability of our supply chain using blockchain technology",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Publish comprehensive supply chain performance reports quarterly",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Engage with 100% of key stakeholders through our advisory board",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Sustainable Supply Chain Officer",
+        "duty": "Implement and oversee the Green Supply Chain Policy across all operations."
+      },
+      {
+        "role": "Sustainable Supply Chain Officer",
+        "duty": "Conduct annual reviews of the policy and approve any significant updates or changes."
+      },
+      {
+        "role": "Sustainable Supply Chain Officer",
+        "duty": "Ensure adequate resources (financial, human, and technical) are allocated to support sustainable supply chain initiatives and compliance."
+      },
+      {
+        "role": "Sustainable Supply Chain Officer",
+        "duty": "Regularly review sustainable supply chain performance reports to ensure that objectives and targets are met."
+      },
+      {
+        "role": "Sustainable Supply Chain Management Team",
+        "duty": "Ensure compliance with environmental regulations, sustainability standards, and best practices throughout the supply chain."
+      },
+      {
+        "role": "Sustainable Supply Chain Management Team",
+        "duty": "Conduct regular risk assessments and develop mitigation strategies for environmental and social risks in the supply chain."
+      },
+      {
+        "role": "Sustainable Supply Chain Management Team",
+        "duty": "Coordinate and conduct training programs on sustainable supply chain practices for employees, suppliers, and stakeholders."
+      },
+      {
+        "role": "Sustainable Supply Chain Management Team",
+        "duty": "Prepare and submit sustainable supply chain performance reports to senior management and relevant stakeholders."
+      },
+      {
+        "role": "Procurement Managers",
+        "duty": "Integrate sustainability criteria into supplier selection and evaluation processes."
+      },
+      {
+        "role": "Procurement Managers",
+        "duty": "Implement and manage sustainable sourcing practices for materials and services."
+      },
+      {
+        "role": "Procurement Managers",
+        "duty": "Collaborate with suppliers to improve their sustainability performance and adherence to our Green Supply Chain Policy."
+      },
+      {
+        "role": "Procurement Managers",
+        "duty": "Track and report on suppliers' sustainability performance against set KPIs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow green supply chain policies, procedures, and best practices in their daily activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any sustainability issues, incidents, or suggestions for improvement in the supply chain to their supervisor or the Sustainable Supply Chain Management Team."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participate in training programs on sustainable supply chain practices and contribute to achieving related objectives and targets."
+      },
+      {
+        "role": "Suppliers and Partners",
+        "duty": "Adhere to the company's Green Supply Chain Policy and sustainability standards."
+      },
+      {
+        "role": "Suppliers and Partners",
+        "duty": "Provide accurate and timely information on their sustainability performance and practices."
+      },
+      {
+        "role": "Suppliers and Partners",
+        "duty": "Actively work on improving their sustainability performance and implementing best practices."
+      },
+      {
+        "role": "Suppliers and Partners",
+        "duty": "Participate in sustainability initiatives and share innovations that can benefit the entire supply chain."
+      },
+      {
+        "role": "Customers",
+        "duty": "Provide feedback on the sustainability aspects of products and services to help the company improve its supply chain performance."
+      },
+      {
+        "role": "Customers",
+        "duty": "Make informed decisions by considering the sustainability of products and supporting green supply chain initiatives."
+      }
+    ],
+    "monitoring": "We are committed to promoting sustainable practices throughout our supply chain through effective reporting mechanisms. Our approach includes the following key components:\n\nImplement advanced systems for efficient collection, storage, and analysis of supply chain sustainability data.\n\nUtilize blockchain technology to ensure data integrity and traceability across the supply chain.\n\nEstablish clear protocols for data handling to maintain confidentiality and security.\n\nDeploy real-time monitoring systems to track key performance indicators related to supply chain sustainability.\n\nConduct regular audits and assessments of suppliers to evaluate their adherence to our sustainability standards.\n\nUtilize data analytics and AI to identify trends and areas for improvement in supply chain performance.\n\nDefine comprehensive KPIs covering environmental impact, social responsibility, and economic performance of our supply chain.\n\nRegularly review and update KPIs to reflect evolving sustainability priorities and operational changes.\n\nBenchmark our performance against industry standards and best practices.\n\nAlign our reporting with internationally recognized frameworks such as the Global Reporting Initiative (GRI) and the Sustainability Accounting Standards Board (SASB).\n\nEstablish a standardized reporting format that ensures consistency and comparability across different reporting periods.\n\nClearly document methodologies, assumptions, and data sources used in our sustainability reporting.\n\nStay informed about and comply with relevant environmental and social regulations affecting our supply chain.\n\nEngage proactively with regulatory bodies to address compliance issues and advocate for sustainable practices.\n\nConduct regular compliance audits across our supply chain to ensure adherence to all applicable laws and regulations.\n\nFoster a culture of innovation in sustainable supply chain practices through dedicated R&D initiatives.\n\nImplement a suggestion system for employees and suppliers to contribute ideas for improving supply chain sustainability.\n\nRegularly review and update our reporting practices to incorporate new technologies and methodologies.\n\nCollaborate with suppliers, customers, and industry partners to align on sustainability goals and reporting standards.\n\nParticipate in industry forums and working groups focused on sustainable supply chain management.\n\nConduct regular stakeholder surveys to gather feedback on our sustainability performance and reporting practices.",
+    "reviewMechanism": "The Sustainable Supply chain Officer will conduct an annual and Ad hoc review of this policy."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Birla/4. Green Supply Chain Policy_grw_v1_3012.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Birla/4. Green Supply Chain Policy_grw_v1_3012.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 18935,
+  "parsedAt": "2026-09-11T07:07:29.359Z"
+}

@@ -1,0 +1,518 @@
+{
+  "id": "eco-jute",
+  "name": "Eco Jute",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Policy (3).docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Eco Jute Pvt. Ltd.",
+      "industry": "",
+      "site": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071; Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293",
+      "sites": [
+        {
+          "location": "Kolkata",
+          "address": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Gokna Basudevpur",
+          "address": "Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071; Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Eco Jute Pvt. Ltd. is committed to protecting the environment, promoting the sustainable use of natural resources, and manufacturing environmentally responsible jute-based products that contribute to reducing plastic pollution. As a producer of eco-friendly packaging and lifestyle products, we recognize our responsibility to minimize environmental impacts across our operations and supply chain. This commitment supports long-term business sustainability, meets customer and stakeholder expectations, enhances operational efficiency, and contributes to a cleaner and more sustainable future for our employees, communities, and the environment.\n\nEnvironmental considerations are integrated into our business decisions, manufacturing processes, and supply chain activities. We establish annual objectives and targets to improve resource efficiency, reduce waste, manage environmental risks, and strengthen operational performance.\n\nWe provide the necessary resources, responsibilities, and employee awareness to achieve these objectives and encourage continuous improvement through practical initiatives, innovation, and collaboration with suppliers and business partners.",
+      "declaration": "",
+      "scope": "This policy applies to all employees, contractual workers, contractors, partners, customers, stakeholders, and other persons acting on behalf of Eco Jute Pvt. Ltd. across its applicable sites and operations.\n\nIt covers environmental aspects throughout the product lifecycle, including raw material sourcing, manufacturing, storage, distribution, use, and end-of-life management."
+    },
+    "focusAreas": [
+      "Energy and Climate",
+      "Water Stewardship",
+      "Air Quality",
+      "Responsible Materials and Waste",
+      "Sustainable Product Design",
+      "End-of-Life Responsibility",
+      "Customer Health & Product Safety",
+      "Environmental Compliance",
+      "Natural Environment & Green Cover"
+    ],
+    "qualitative": {
+      "Energy and Climate": [
+        "Promote energy-conscious operating practices and improve the efficiency of machinery, lighting, utilities, and other significant energy-consuming activities.",
+        "Assess opportunities to adopt renewable energy and lower-carbon technologies as part of future facility and equipment planning.",
+        "Maintain a structured approach to identifying significant emission sources and selecting practical measures to reduce their climate impact.",
+        "Regularly review energy performance, identify areas of inefficient consumption, and implement appropriate improvement measures.",
+        "Build employee awareness of energy conservation and climate-related responsibilities through communication, training, and participation in energy-saving initiatives.",
+        "Promote the replacement or upgrading of inefficient lighting systems with energy-efficient alternatives wherever technically and operationally feasible."
+      ],
+      "Water Stewardship": [
+        "Improve domestic water-use efficiency through responsible consumption practices, employee awareness, and measures that reduce unnecessary water use.",
+        "Strengthen water conservation across operations by optimizing processes, improving housekeeping practices, and reducing avoidable freshwater consumption.",
+        "Promote the recovery, reuse, and recycling of suitable wastewater where technically and operationally feasible.",
+        "Promote rainwater harvesting and its beneficial use for suitable non-potable applications at applicable facilities.",
+        "Maintain water pipelines, tanks, valves, and other high-use systems through preventive inspections, timely maintenance, and prompt correction of identified leaks.",
+        "Maintain appropriate wastewater treatment, testing, monitoring, and discharge controls to prevent water pollution and meet applicable requirements.",
+        "Regularly assess water-related risks across operations and implement appropriate measures to manage risks associated with water availability, consumption, and potential impacts on water resources."
+      ],
+      "Air Quality": [
+        "Integrate practical measures into operations to prevent and minimize air emissions at their source.",
+        "Maintain appropriate controls for activities that may generate dust, fumes, particulate matter, or other air emissions.",
+        "Promote proper operation and regular maintenance of machinery and emission-control systems.",
+        "Encourage cleaner technologies, efficient operating methods, and lower-impact alternatives where technically and commercially feasible.",
+        "Periodically review air-emission performance and identify opportunities to strengthen emission-control practices."
+      ],
+      "Responsible Materials and Waste": [
+        "Promote practices that reduce the generation of hazardous and non-hazardous waste at source through efficient processes and responsible material use.",
+        "Encourage the substitution, reformulation, or reduction of hazardous chemicals with safer alternatives where technically feasible.",
+        "Maintain responsible chemical management practices and regularly review applicable regulatory requirements and customer RSL requirements.",
+        "Promote segregation, reuse, recycling, and recovery of waste materials wherever technically and operationally feasible.",
+        "Ensure hazardous and non-recyclable waste is handled, stored, transported, and disposed of responsibly through authorized or approved channels."
+      ],
+      "Sustainable Product Design": [
+        "Consider durability, resource efficiency, recyclability, and environmental attributes when selecting materials for new products.",
+        "Encourage practical design changes that reduce material use without compromising product quality, functionality, or durability.",
+        "Avoid unnecessary packaging and favor simpler, recyclable, reusable, or lower-impact packaging solutions where appropriate.",
+        "Consider the environmental impacts of materials and products from development through use and end-of-life, and use these considerations to guide product improvements."
+      ],
+      "End-of-Life Responsibility": [
+        "Encourage customers and business partners to manage used products and packaging through appropriate reuse, recycling, composting, or disposal channels.",
+        "Provide practical information to relevant customers on available options for responsible product and packaging disposal.",
+        "Explore collaboration with customers, recyclers, and other relevant stakeholders to improve product recovery and end-of-life management.",
+        "Promote approaches that help keep suitable products and materials out of landfill and support their return to productive use where feasible.",
+        "Foster better cross-functional collaboration between design, manufacturing, and marketing teams and Encourage innovation through improved access to past designs and knowledge sharing.",
+        "Conduct an annual review of end-of-life practices for major product categories and document identified improvement opportunities."
+      ],
+      "Customer Health & Product Safety": [
+        "Maintain appropriate controls to ensure products are safe and suitable for their intended use.",
+        "Integrate quality and safety checks into relevant stages of product development, production, inspection, and dispatch.",
+        "Provide relevant product-use, care, handling, and safety information where necessary to support safe use.",
+        "Review product quality and safety issues and use customer feedback, complaints, and internal findings to strengthen product controls."
+      ],
+      "Environmental Compliance": [
+        "Maintain a structured system for identifying, recording, and monitoring applicable environmental licenses, permits, consents, and renewal dates.",
+        "Establish clear responsibilities and advance planning to ensure environmental approvals are renewed before their expiry.",
+        "Regularly evaluate applicable environmental obligations and integrate relevant requirements into operational practices.",
+        "Review compliance processes periodically and strengthen controls where gaps, delays, or changes in regulatory requirements are identified."
+      ],
+      "Natural Environment & Green Cover": [
+        "Maintain or enhance green areas within and around applicable facilities, with progress reviewed annually through 2030.",
+        "Monitor newly planted trees and vegetation annually and take reasonable measures to maintain healthy growth and replacement where required.",
+        "Maintain existing green areas and landscaping in a manner appropriate to the site and local environmental conditions.",
+        "Prefer locally suitable and low-maintenance plant species when developing or improving green areas.",
+        "Promote landscaping practices that minimize unnecessary water use, chemical use, and environmental disturbance.",
+        "Support practical initiatives that enhance the surrounding environment and contribute to ecological awareness among employees and the local community."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy and Climate",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in energy consumption per unit of production",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 12% reduction in Scope 1, Scope 2, and relevant Scope 3 GHG emissions",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the share of electricity sourced from renewable energy to 10%",
+            "baseline": "",
+            "deadline": "2030, where technically and commercially feasible"
+          },
+          {
+            "target": "Implement at least two energy-efficiency improvement initiatives annually",
+            "baseline": "",
+            "deadline": "Annually through 2030"
+          },
+          {
+            "target": "Replace or upgrade 100% of identified inefficient lighting systems",
+            "baseline": "",
+            "deadline": "2030, where technically feasible"
+          }
+        ]
+      },
+      {
+        "area": "Water Stewardship",
+        "targets": [
+          {
+            "target": "Achieve a 10% reduction in domestic water consumption per employee",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 30% reduction in total water consumption by 30%",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Recycle or reuse at least 20% of suitable wastewater",
+            "baseline": "",
+            "deadline": "2030, where technically feasible"
+          },
+          {
+            "target": "Implement rainwater harvesting systems at 100% of applicable factory locations",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Complete 100% annual inspections of major water pipelines, tanks, valves, and high-use areas and address identified leaks within defined timelines",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% compliance with applicable wastewater discharge standards through required testing and monitoring",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Conduct water-related risk assessment annually for 100% operational sites and document appropriate mitigation measures where significant risks are identified",
+            "baseline": "",
+            "deadline": "By 2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable air-emission and air-quality requirements",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Complete 100% of required air-emission monitoring and testing within the applicable frequency each year",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Ensure 100% of relevant air-pollution control equipment is covered under an annual inspection and preventive maintenance programme",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Implement at least two initiatives annually to reduce or improve the control of significant air emissions",
+            "baseline": "",
+            "deadline": "By 2030"
+          },
+          {
+            "target": "Review 100% of identified significant air-emission sources annually and document appropriate actions where improvement opportunities are identified",
+            "baseline": "",
+            "deadline": "Through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Materials and Waste",
+        "targets": [
+          {
+            "target": "Achieve a 10% reduction in hazardous & non-hazardous waste generation per unit of production",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce hazardous chemical inventory by 3% annually through substitution, reformulation, and process optimization",
+            "baseline": "",
+            "deadline": "Through 2030, where technically feasible"
+          },
+          {
+            "target": "Conduct quarterly reviews to verify compliance with applicable chemical requirements, including relevant REACH requirements and customer Restricted Substances Lists (RSLs)",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Achieve a minimum 30% recovery, reuse, or recycling rate for total generated waste",
+            "baseline": "",
+            "deadline": "2030, where technically feasible and appropriate"
+          },
+          {
+            "target": "Ensure 100% of hazardous and non-recyclable waste is transferred to authorized or approved waste-management channels, with appropriate records maintained",
+            "baseline": "",
+            "deadline": "Through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Product Design",
+        "targets": [
+          {
+            "target": "Conduct an environmental review for 100% of new products and major product modifications",
+            "baseline": "",
+            "deadline": "By 2030"
+          },
+          {
+            "target": "Achieve a 5% reduction in material consumption per unit for selected products",
+            "baseline": "Established product baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce unnecessary packaging material by 10% for applicable products",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure at least 25% of applicable new product designs incorporate a recyclable, reusable, biodegradable, or responsibly sourced material",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "End-of-Life Responsibility",
+        "targets": [
+          {
+            "target": "Provide appropriate disposal, recycling, or reuse guidance for 100% of applicable products",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Collect and review end-of-life feedback from relevant customers or business partners at least annually",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Establish relationships with at least two relevant recycling, recovery, or waste-management partners",
+            "baseline": "",
+            "deadline": "2030, where applicable"
+          },
+          {
+            "target": "Launch new products 20% faster compared to last year, reuse 40% of components in new product designs and Achieve 99% accuracy in BOM data across systems",
+            "baseline": "Last year for product launch speed",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Product Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% of finished products undergo applicable quality and safety checks before dispatch",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Investigate 100% of product-related health, safety, or quality complaints within defined timelines",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain 100% compliance with applicable product safety, quality, and regulatory requirements",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Close 100% of confirmed product safety-related corrective actions within defined timelines",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Environmental Compliance",
+        "targets": [
+          {
+            "target": "Maintain 100% validity of applicable environmental licenses, permits, consents, and approvals",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Achieve zero (0) delayed renewals of applicable environmental licenses and permits",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Conduct 100% of scheduled license and permit compliance reviews annually",
+            "baseline": "",
+            "deadline": "Through 2030"
+          },
+          {
+            "target": "Review 100% of applicable changes in environmental legal and regulatory requirements annually and assess their impact on operations",
+            "baseline": "",
+            "deadline": "Through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Natural Environment & Green Cover",
+        "targets": [
+          {
+            "target": "Undertake at least one tree plantation or green-area enhancement initiative annually",
+            "baseline": "",
+            "deadline": "Through 2030, where site conditions permit"
+          },
+          {
+            "target": "Undertake at least one tree plantation or green-area enhancement initiative annually",
+            "baseline": "",
+            "deadline": "Through 2030, where site conditions permit"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Provide overall direction and oversight for the implementation and effectiveness of the Environmental Policy to ensure alignment with the Company's business objectives and sustainability commitments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provide appropriate financial, technical, and human resources to support environmental initiatives, compliance obligations, and environmental performance improvement."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Review environmental objectives, targets, compliance status, and overall environmental performance through periodic management reviews."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensure environmental considerations are integrated into operational planning, investment decisions, and supply chain activities."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Oversee environmental risks and ensure appropriate mitigation measures are implemented to minimize environmental impacts."
+      },
+      {
+        "role": "Environmental Management Representative (EMR) / Environmental Officer",
+        "duty": "Coordinate the implementation, monitoring, and periodic review of the Environmental Policy and Environmental Management System."
+      },
+      {
+        "role": "Environmental Management Representative (EMR) / Environmental Officer",
+        "duty": "Monitor compliance with applicable environmental laws, permits, licenses, customer requirements, and internal procedures."
+      },
+      {
+        "role": "Environmental Management Representative (EMR) / Environmental Officer",
+        "duty": "Track environmental objectives and targets relating to energy, greenhouse gas emissions, water, waste, air emissions, product stewardship, and environmental compliance."
+      },
+      {
+        "role": "Environmental Management Representative (EMR) / Environmental Officer",
+        "duty": "Maintain environmental records, monitoring data, compliance documentation, and performance reports for management review."
+      },
+      {
+        "role": "Environmental Management Representative (EMR) / Environmental Officer",
+        "duty": "Coordinate environmental training and awareness programs to promote responsible environmental practices throughout the organization."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Conduct environmental audits, inspections, risk assessments, and compliance evaluations to verify implementation of environmental requirements."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Investigate environmental incidents, non-conformities, complaints, or compliance issues and recommend corrective actions."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Track changes in environmental regulations, customer requirements, and industry best practices and recommend necessary updates."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Support the development and implementation of environmental improvement initiatives and corrective action programs."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Liaise with regulatory authorities, certification bodies, auditors, consultants, and other relevant stakeholders on environmental matters."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Implement operational controls to reduce environmental impacts associated with energy use, water consumption, emissions, waste generation, and material usage."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Promote efficient use of energy, water, raw materials, chemicals, and other resources within operations."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Maintain appropriate controls for air emissions, wastewater, waste management, chemical handling, and pollution prevention activities."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Ensure environmental equipment, utilities, pollution-control systems, and related infrastructure are properly maintained and operated."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Report environmental incidents, abnormal conditions, resource inefficiencies, or compliance concerns to the Environmental Officer."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Consider environmental factors in supplier selection and procurement activities where applicable."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Promote environmental awareness and responsible practices throughout the supply chain."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Support the sourcing of environmentally responsible materials, products, and services where feasible."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Work with suppliers to address environmental compliance, chemical management, and sustainability-related requirements."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Encourage employee awareness of environmental responsibilities and sustainability initiatives."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Communicate employee suggestions, concerns, and improvement opportunities relating to environmental performance."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Support employee involvement in environmental programs, awareness campaigns, and sustainability initiatives."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Serve as a communication link between employees and management on environmental matters."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Follow applicable environmental policies, procedures, work instructions, and legal requirements."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Use water, energy, materials, chemicals, and other resources responsibly and support waste reduction efforts."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Participate in environmental training, awareness programs, and relevant environmental initiatives."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Promptly report environmental incidents, spills, leaks, hazards, or non-compliance concerns through established reporting channels."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Support environmentally responsible practices in day-to-day activities and contribute to the achievement of the Company's environmental objectives and targets."
+      }
+    ],
+    "monitoring": "Environmental performance data relating to energy consumption, greenhouse gas emissions, water usage, air emissions, waste management, product stewardship, environmental compliance, and other relevant indicators shall be compiled and reviewed periodically.\n\nThe Environmental Management Representative (EMR) or designated Environmental Officer shall prepare environmental performance reports for Senior Management, highlighting progress against objectives and targets, key environmental risks, compliance status, incidents, and improvement opportunities.\n\nEnvironmental incidents, spills, leaks, non-compliance issues, complaints, and near-miss events shall be reported through established reporting channels, investigated appropriately, and supported by corrective and preventive actions where required.\n\nFindings from environmental monitoring, audits, inspections, and risk assessments shall be communicated to relevant functions to support continual improvement.\n\nEco Jute Pvt. Ltd. may communicate relevant environmental performance information to customers, regulatory authorities, certification bodies, investors, business partners, and other interested stakeholders, as appropriate.\n\nEnvironmental disclosures, reports, certifications, and regulatory submissions shall be prepared in accordance with applicable legal requirements, customer obligations, and recognized reporting practices where relevant.\n\nEnvironmental performance information shall be reviewed prior to external communication to ensure accuracy, consistency, and transparency.\n\nEco Jute Pvt. Ltd. shall engage with customers, suppliers, employees, regulatory authorities, local communities, industry associations, and other relevant stakeholders on environmental matters where appropriate.\n\nStakeholder feedback, concerns, expectations, and improvement suggestions shall be considered during the review of environmental objectives, targets, programs, and management practices.\n\nThe Company shall promote open communication and cooperation with relevant stakeholders to support responsible environmental management and continual improvement.",
+    "reviewMechanism": "Environmental objectives, targets, and key performance indicators relating to energy consumption, greenhouse gas emissions, water stewardship, air quality, waste management, product stewardship, environmental compliance, and green cover initiatives shall be reviewed annually.\n\nProgress against established targets, environmental performance trends, compliance status, and improvement initiatives shall be evaluated through Management Review Meetings.\n\nKey achievements, challenges, risks, and opportunities for improvement shall be identified and documented to support informed decision-making.\n\nFindings from environmental monitoring, audits, inspections, risk assessments, incident investigations, and stakeholder feedback shall be used to identify opportunities for continual improvement.\n\nCorrective and preventive actions shall be implemented where necessary to address non-conformities, environmental incidents, compliance gaps, or performance concerns.\n\nEnvironmental objectives, targets, programs, and operational controls shall be updated periodically to improve environmental performance and address emerging environmental issues.\n\nThe Environmental Management Representative (EMR) shall review this Policy at least once every two years, or earlier if significant changes occur in legal requirements, business operations, environmental risks, stakeholder expectations, or industry best practices.\n\nAny revisions to the Policy shall be approved by Senior Management and communicated to relevant employees, contractors, and other interested parties as appropriate.\n\nRelevant training, awareness programs, and communication activities shall be conducted to ensure continued understanding and implementation of the updated Policy."
+  },
+  "sourcePath": "Policies - Kenal/Eco Jute/Environmental Policy (3).docx",
+  "sourceFiles": [
+    "Policies - Kenal/Eco Jute/Environmental Policy (3).docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 26009,
+  "parsedAt": "2026-09-11T07:22:09.228Z"
+}

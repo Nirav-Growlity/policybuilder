@@ -11,6 +11,7 @@ dotenv.config({ path: path.join(__dirname, "../.env") });
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const root = path.join(__dirname, "../..");
 const seedDir = path.join(__dirname, "../data/seed-policies");
+const seedPath = (company: string) => path.join(seedDir, "sustainable-procurement", `sustainable-procurement-${slug(company)}.json`);
 const roots = ["KUSH", "Kenal - EcoVadis Policies", "Hetvi- Policies"];
 const relevant = /(sustain.*procure|green.*procure|responsible.*sourc|supply chain|supplier|procurement)/i;
 
@@ -36,7 +37,7 @@ Schema: {"company":{"address":"string","sites":[{"location":"string","address":"
 }
 async function parse(file: string) {
   const company = path.basename(path.dirname(file));
-  const seed = path.join(seedDir, `sustainable-procurement-${slug(company)}.json`);
+  const seed = seedPath(company);
   const source = await text(file);
   const model = process.env.OPENAI_MODEL || "gpt-5.6-luna";
   const response = await client.chat.completions.create({
@@ -55,9 +56,9 @@ async function parse(file: string) {
     existing = JSON.parse(fs.readFileSync(seed, "utf8"));
   } else {
     // try finding base company seed to copy company meta
-    const baseFiles = fs.readdirSync(seedDir);
-    const baseMatch = baseFiles.find(f => f.includes(slug(company)) && !f.startsWith("labour-") && !f.startsWith("living-") && !f.startsWith("ethics-") && !f.startsWith("sustainable-"));
-    const baseObj = baseMatch ? JSON.parse(fs.readFileSync(path.join(seedDir, baseMatch), "utf8")) : null;
+    const baseFiles = walk(seedDir).filter(f => f.endsWith(".json"));
+    const baseMatch = baseFiles.find(f => path.basename(f).includes(slug(company)) && !f.includes(`${path.sep}sustainable-procurement${path.sep}`) && !f.includes(`${path.sep}labour-human-rights${path.sep}`) && !f.includes(`${path.sep}living-wage${path.sep}`) && !f.includes(`${path.sep}ethics${path.sep}`));
+    const baseObj = baseMatch ? JSON.parse(fs.readFileSync(baseMatch, "utf8")) : null;
 
     existing = {
       id: `sustainable-procurement-${slug(company)}`,
@@ -108,6 +109,7 @@ async function parse(file: string) {
   existing.sourceTextLength = source.length;
   existing.parsedAt = new Date().toISOString();
 
+  fs.mkdirSync(path.dirname(seed), { recursive: true });
   fs.writeFileSync(seed, JSON.stringify(existing, null, 2));
   console.log(`Parsed ${path.basename(seed)}`);
 }

@@ -1,0 +1,293 @@
+{
+  "id": "waaree-2025",
+  "name": "Waaree (2025)",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Waaree Energies Ltd. (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Gujarat – Surat",
+          "address": "Plot No. 231 – 236, Surat Special Economic Zone, Diamond Park Sachin, Surat 394230, Gujarat",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat – Tumb",
+          "address": "Survey No. 38/1, Tumb Village, Tumb, Umbergaon, Valsad, Gujarat – 396150",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat – Chikhli",
+          "address": "WAAREE SHREE GODIJI FACTORY, New Survey no. 1928 Village Degam, Taluka, Chikhli, Gujarat 396530",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat –Nandigram",
+          "address": "CBIPL NANDIGRAM Unnamed Road, Nandigam, Gujarat 396105",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Waaree Energies Ltd.(Group) is fully committed to leading India's solar transition while upholding the highest standards of environmental stewardship. Through our established environmental practices, we strive to continuously reduce our environmental footprint, safeguard natural resources, and promote sustainability. This Environmental Policy reflects our ongoing initiatives aimed at mitigating climate change, protecting biodiversity, and addressing key environmental challenges such as air pollution and product lifecycle impacts. We are already taking significant steps to improve our environmental impact and aim to build on these efforts to drive further progress.",
+      "declaration": "Waaree Energies Ltd. is proud of its current initiatives and actions that continuously drive sustainability forward.\n\nSustainable Energy Solutions: As India’s largest solar PV module manufacturer, we are already contributing to the global reduction of carbon emissions by providing world-class solar energy solutions. Our commitment to continuously enhance production efficiency ensures that we minimize environmental impacts while delivering energy solutions that reduce reliance on fossil fuels.\n\nEnergy Efficiency and GHG Emissions Reduction: We have successfully integrated renewable energy sources and energy-saving technologies across our manufacturing plants. Waaree continues to pursue energy efficiency and the reduction of GHG emissions across our operations, aligning with our long-standing environmental objectives.\n\nAir Pollution Control: Waaree has implemented industry-leading air quality management practices and advanced technologies to reduce air pollutants such as particulate matter, NOx, and SOx. These measures align with our efforts to comply with both national and international air quality standards.\n\nMaterials, Chemicals, and Waste Management: We are committed to using environmentally friendly materials and minimizing hazardous chemicals in our products and processes. Waaree continues to employ safer alternatives to harmful chemicals, optimize material use, and ensure compliance with stringent chemical handling and waste disposal standards.\n\nWater Conservation: Waaree has already adopted water-efficient technologies to reduce water consumption in our manufacturing processes. We continuously monitor and improve our water conservation efforts to prevent water pollution and ensure sustainable water use.\n\nBiodiversity Protection: Protecting local biodiversity around our facilities and projects is a priority. We have policies in place to minimize land disturbance and prevent pollution, ensuring that local ecosystems remain unharmed by our operations.\n\nEnvironmental Impact from Use of Products: Waaree recognizes that our products have an environmental impact throughout their lifecycle. As part of our ongoing innovation efforts, we produce solar modules designed for maximum energy output with minimal environmental degradation, reducing the overall environmental impact of their use.\n\nEnvironmental Impact from Product End-of-Life: Waaree has implemented systems to ensure the proper recycling and disposal of our solar modules. We are actively collaborating with certified recycling programs to minimize electronic waste and reduce the environmental impact at the end of our products' lifecycle.\n\nCustomer Health and Safety: Waaree remains committed to producing safe products that meet the highest safety standards. We continuously improve product design and safety features to ensure the well-being of customers, installers, and technicians.\n\nEnvironmental Services and Advocacy: Waaree actively participates in environmental advocacy and supports initiatives related to clean energy and sustainability. We continue to engage in environmental education, awareness campaigns, and policy advocacy in the communities where we operate, promoting a cleaner and more sustainable future.\n\nCompliance with Environmental Legislation: Waaree Energies Ltd. maintains full compliance with all applicable environmental laws and regulations across our operational regions. We proactively seek voluntary certifications, implement best practices, and continually strive to exceed environmental compliance standards.",
+      "scope": "This policy is applicable across all Waaree Energies Ltd. (Group) facilities, employees, contractors, suppliers, and other stakeholders globally, including the communities in which we operate. All sites are mentioned below. We extend our environmental commitment to all relevant supply chain partners as well."
+    },
+    "focusAreas": [
+      "Sustainable Energy Solutions",
+      "Energy Efficiency and GHG Emissions Reduction",
+      "Air Pollution Control",
+      "Materials, Chemicals, and Waste Management",
+      "Water Conservation",
+      "Biodiversity Protection",
+      "Environmental Impact from Use of Products",
+      "Environmental Impact from Product End-of-Life",
+      "Customer Health and Safety",
+      "Environmental Services and Advocacy",
+      "Compliance with Environmental Legislation"
+    ],
+    "qualitative": {
+      "Sustainable Energy Solutions": [
+        "As India’s largest solar PV module manufacturer, we are already contributing to the global reduction of carbon emissions by providing world-class solar energy solutions. Our commitment to continuously enhance production efficiency ensures that we minimize environmental impacts while delivering energy solutions that reduce reliance on fossil fuels."
+      ],
+      "Energy Efficiency and GHG Emissions Reduction": [
+        "We have successfully integrated renewable energy sources and energy-saving technologies across our manufacturing plants. Waaree continues to pursue energy efficiency and the reduction of GHG emissions across our operations, aligning with our long-standing environmental objectives."
+      ],
+      "Air Pollution Control": [
+        "Waaree has implemented industry-leading air quality management practices and advanced technologies to reduce air pollutants such as particulate matter, NOx, and SOx. These measures align with our efforts to comply with both national and international air quality standards."
+      ],
+      "Materials, Chemicals, and Waste Management": [
+        "We are committed to using environmentally friendly materials and minimizing hazardous chemicals in our products and processes. Waaree continues to employ safer alternatives to harmful chemicals, optimize material use, and ensure compliance with stringent chemical handling and waste disposal standards."
+      ],
+      "Water Conservation": [
+        "Waaree has already adopted water-efficient technologies to reduce water consumption in our manufacturing processes. We continuously monitor and improve our water conservation efforts to prevent water pollution and ensure sustainable water use."
+      ],
+      "Biodiversity Protection": [
+        "Protecting local biodiversity around our facilities and projects is a priority. We have policies in place to minimize land disturbance and prevent pollution, ensuring that local ecosystems remain unharmed by our operations."
+      ],
+      "Environmental Impact from Use of Products": [
+        "Waaree recognizes that our products have an environmental impact throughout their lifecycle. As part of our ongoing innovation efforts, we produce solar modules designed for maximum energy output with minimal environmental degradation, reducing the overall environmental impact of their use."
+      ],
+      "Environmental Impact from Product End-of-Life": [
+        "Waaree has implemented systems to ensure the proper recycling and disposal of our solar modules. We are actively collaborating with certified recycling programs to minimize electronic waste and reduce the environmental impact at the end of our products' lifecycle."
+      ],
+      "Customer Health and Safety": [
+        "Waaree remains committed to producing safe products that meet the highest safety standards. We continuously improve product design and safety features to ensure the well-being of customers, installers, and technicians."
+      ],
+      "Environmental Services and Advocacy": [
+        "Waaree actively participates in environmental advocacy and supports initiatives related to clean energy and sustainability. We continue to engage in environmental education, awareness campaigns, and policy advocacy in the communities where we operate, promoting a cleaner and more sustainable future."
+      ],
+      "Compliance with Environmental Legislation": [
+        "Waaree Energies Ltd. maintains full compliance with all applicable environmental laws and regulations across our operational regions. We proactively seek voluntary certifications, implement best practices, and continually strive to exceed environmental compliance standards."
+      ],
+      "Action Framework": [
+        "Energy Audits: We conduct regular energy audits to identify inefficiencies in processes and equipment, implementing corrective actions to enhance energy performance.",
+        "Waste Reduction Campaigns: Employee-driven waste reduction initiatives have been introduced, alongside training for proper waste segregation and recycling stations at all locations.",
+        "Water Recycling Systems: Water recycling and reuse systems have been introduced across all manufacturing plants, ensuring treated wastewater is safely discharged to protect the environment.",
+        "Biodiversity Preservation: Waaree works with environmental experts to assess and mitigate biodiversity impacts, actively restoring any affected habitats."
+      ],
+      "Communication and Transparency": [
+        "The Environmental Policy is publicly available on Waaree Energies' website and shared through various stakeholder communication channels.",
+        "Employees are kept informed of updates and expected to integrate these practices into their work."
+      ],
+      "Continuous Improvement": [
+        "Waaree Energies Ltd. remains committed to leading the renewable energy sector with sustainability at the core. We continually review and enhance our environmental practices, setting new benchmarks and innovating to drive positive change."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency",
+        "targets": [
+          {
+            "target": "Reduce energy consumption by 7% by 2025 across all facilities through energy-efficient equipment and renewable energy sourcing.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase on-site solar energy use by 20% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution Reduction",
+        "targets": [
+          {
+            "target": "Achieve a 10% reduction in air pollutants (including NOx, SOx, and particulate matter) by 2025. Waaree will implement air pollution control technologies in its facilities and monitor emissions in line with national and global standards.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in total waste by 2025 through waste minimization, recycling, and responsible disposal practices.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase recycling rates by 25% by 2025, ensuring proper waste segregation and reuse of materials.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Carbon Emissions Reduction",
+        "targets": [
+          {
+            "target": "Reduce Scope 1, Scope 2 & Scope 3 GHG emissions by 20% by 2025 as part of our long-term commitment to achieving net-zero emissions.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Materials and Chemicals Management",
+        "targets": [
+          {
+            "target": "Reduce the use of hazardous chemicals by 20% by 2025 through the adoption of safer alternatives.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 100% compliance with hazardous material handling and disposal regulations across all facilities by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Water Use Reduction",
+        "targets": [
+          {
+            "target": "Decrease water consumption by 10% by 2025 through water recycling systems and efficient water use practices at all manufacturing sites.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "End-of-Life Product Management",
+        "targets": [
+          {
+            "target": "Ensure 50% of end-of-life solar modules are recycled by 2025. Waaree will collaborate with certified recycling partners and establish product return programs to minimize e-waste.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Establish a take-back program for used solar panels by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Achieve a 100% compliance rate for safety testing across all products by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase customer safety satisfaction scores by 10% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Advocacy",
+        "targets": [
+          {
+            "target": "Participate in at least 5 national or international environmental policy advocacy forums annually.",
+            "baseline": "2022",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Launch 3 community environmental awareness programs focused on renewable energy and sustainability by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from Use of Products",
+        "targets": [
+          {
+            "target": "Reduce the environmental impact from the use of Waaree products by enhancing product efficiency by 15% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase product energy yield by 10% while lowering the ecological footprint of product installation and operation by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Develop and implement customer guidelines for the sustainable use of solar products by 2025, ensuring that customers maximize energy generation while minimizing environmental degradation.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Corporate Environmental Manager",
+        "duty": "Oversees the implementation of this policy, ensures compliance with environmental regulations, and reports on progress."
+      },
+      {
+        "role": "Environmental Task Force",
+        "duty": "A cross-functional team monitors day-to-day implementation of environmental initiatives."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Oversees implementation of this policy, ensuring alignment with the company's overall strategy."
+      },
+      {
+        "role": "Employees",
+        "duty": "Receive annual training on environmental responsibilities and are encouraged to contribute ideas for improving performance."
+      },
+      {
+        "role": "Environmental Safety Office",
+        "duty": "The Environmental Safety Office is responsible for overseeing the implementation and review of this policy."
+      }
+    ],
+    "monitoring": "Reporting: Progress is reported regularly through the annual Sustainability Report and shared with all stakeholders.\n\nInternal Audits: Waaree conducts internal environmental audits twice yearly to ensure compliance and identify areas for improvement.\n\nExternal Verification: An independent third party will verify our environmental performance data annually.",
+    "reviewMechanism": "The Environmental Safety Office is responsible for overseeing the implementation and review of this policy. This policy will be reviewed annually to ensure its effectiveness and relevance. Updates and changes will be communicated to all stakeholders as necessary, reflecting any operational or regulatory changes, and adapting to evolving environmental challenges."
+  },
+  "sourcePath": "Policies - Kenal/Waaree (2025)/Environmental Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Waaree (2025)/Environmental Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 11974,
+  "parsedAt": "2026-09-11T07:31:21.463Z"
+}

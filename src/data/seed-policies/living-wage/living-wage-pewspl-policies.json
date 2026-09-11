@@ -1,0 +1,375 @@
+{
+  "id": "living-wage-pewspl-policies",
+  "name": "PEWSPL Policies",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Parekh e-Com and Warehousing Services Private Limited",
+      "industry": "",
+      "site": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "Shakambari",
+          "address": "Shakambari Logistic Park-Unit #A-1Premises # 1 to 7Next to All Saint High School,Pise Pipeline Road, Village LonadTal-Bhiwandi - Thane, Maharashtra – 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Lonikand",
+          "address": "Parekh E-com & warehousing services Pvt. Ltd.Chondhe Warehouse, Vadhu Khurd, Gate no-128/142/144,Lonikand, Tal-Haveli, Dist-Pune Pin code- 412216, Maharashtra, India.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Chakan",
+          "address": "Gut No. 318/02, (P), Village-Kuruli, Tal. Khed, Dist.-Pune, 410501",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "PEWSPL is committed to promoting fair compensation practices, responsible employment conditions, and employee well-being across all its operations. The Company recognizes that fair wages, ethical employment practices, and respectful workplace conditions are essential for employee dignity, workforce stability, operational efficiency, and sustainable business growth.\n\nPEWSPL strives to ensure that employees and workers are compensated fairly and in compliance with applicable labour laws, wage regulations, and statutory requirements. The Company is committed to maintaining transparent wage practices, timely payment processes, responsible working conditions, and employee welfare initiatives while fostering a respectful, inclusive, and ethical workplace culture.",
+      "declaration": "The purpose of this Policy is to promote fair, transparent, and responsible compensation practices across PEWSPL’s operations while supporting employee welfare, workplace dignity, and ethical employment standards.\n\nPromote fair wage and compensation practices across all workforce categories.\n\nEnsure compliance with applicable labour laws, wage regulations, and statutory obligations.\n\nSupport employee welfare, financial well-being, and responsible workplace practices.\n\nEncourage transparent and equitable payroll and compensation processes.\n\nPromote responsible working hours and lawful overtime compensation practices.\n\nFoster employee trust, workplace stability, and ethical employment standards.\n\nStrengthen awareness regarding employee rights, benefits, and workplace responsibilities.\n\nPromote continual improvement in compensation management and employee welfare practices.",
+      "scope": "This policy applies to all operations of PEWSPL, including transportation activities, operational facilities, warehouses, and office locations across all locations where PEWSPL operates. It covers all permanent, temporary, and contractual employees across all functions, as well as all internal and external stakeholders associated with PEWSPL, whether directly or indirectly engaged with the organization’s operations and services."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "PEWSPL strives to ensure that employees and workers are compensated fairly and in compliance with applicable labour laws, wage regulations, and statutory requirements.\n\nWe aim to ensure that employees and workers receive wages and benefits in compliance with applicable labour laws and statutory requirements.\n\nWe are committed to ensuring timely payment of wages, salaries, overtime compensation, reimbursements, and statutory benefits.\n\nThis policy applies to all operations of PEWSPL, including transportation activities, operational facilities, warehouses, and office locations across all locations where PEWSPL operates. It covers all permanent, temporary, and contractual employees across all functions, as well as all internal and external stakeholders associated with PEWSPL, whether directly or indirectly engaged with the organization’s operations and services.\n\nThe Company is committed to continually improving employee compensation and welfare practices through periodic review of wage structures, employee benefits, payroll processes, and compliance mechanisms. The Company will continue strengthening fair compensation practices and employee well-being initiatives in line with legal requirements, operational needs, and responsible business commitments.\n\nThis Living Wage Policy shall be reviewed annually by the Finance and Payroll Department, or whenever significant changes occur in labour laws, wage regulations, business operations, workforce requirements, or organizational practices, to ensure its continued relevance, effectiveness, and alignment with the Company’s fair compensation commitments."
+    },
+    "focusAreas": [
+      "Fair Compensation Practices",
+      "Timely Wage and Salary Payment",
+      "Working Hours and Overtime Management",
+      "Employee Welfare and Well-Being",
+      "Payroll Compliance and Transparency",
+      "Equal Opportunity and Non-Discriminatory Compensation",
+      "Employee Awareness and Communication"
+    ],
+    "qualitative": {
+      "Fair Compensation Practices": [
+        "We are committed to maintaining fair, transparent, and responsible compensation practices across all operational locations.",
+        "We aim to ensure that employees and workers receive wages and benefits in compliance with applicable labour laws and statutory requirements.",
+        "We strive to periodically review wage structures and compensation practices to support employee welfare and responsible employment standards.",
+        "We are committed to promoting equitable and non-discriminatory compensation practices across the organization.",
+        "We seek to maintain responsible payroll administration and compensation management systems.",
+        "We strive to ensure transparency and consistency in compensation-related processes and practices."
+      ],
+      "Timely Wage and Salary Payment": [
+        "We are committed to ensuring timely payment of wages, salaries, overtime compensation, reimbursements, and statutory benefits.",
+        "We aim to maintain accurate payroll processing and responsible wage administration practices.",
+        "We strive to strengthen payroll transparency and employee awareness regarding wage-related processes.",
+        "We are committed to complying with applicable statutory deduction, payment, and payroll-related legal requirements.",
+        "We seek to minimize payroll discrepancies and strengthen corrective action mechanisms wherever required."
+      ],
+      "Working Hours and Overtime Management": [
+        "We are committed to complying with applicable labour laws relating to working hours, attendance, leave, and overtime practices.",
+        "We aim to maintain responsible workforce scheduling and attendance management practices across operations.",
+        "We strive to ensure lawful overtime compensation and prevent excessive working hours wherever operationally feasible.",
+        "We are committed to promoting responsible workplace practices that support employee well-being and operational efficiency.",
+        "We seek to maintain fair and transparent overtime management procedures across applicable operational functions."
+      ],
+      "Employee Welfare and Well-Being": [
+        "We are committed to supporting employee welfare, dignity, and respectful workplace practices across all operations.",
+        "We aim to foster a positive and professional work environment that promotes employee well-being and workplace stability.",
+        "We strive to support employee welfare initiatives and responsible workplace practices wherever feasible.",
+        "We are committed to promoting ethical employment practices and fair treatment of employees and workers.",
+        "We seek to encourage work-life balance and responsible workplace interactions wherever operationally feasible."
+      ],
+      "Payroll Compliance and Transparency": [
+        "We are committed to maintaining payroll processes that comply with applicable labour laws, wage regulations, and statutory obligations.",
+        "We aim to maintain accurate wage records, payroll documentation, and statutory compliance practices.",
+        "We strive to strengthen payroll confidentiality, transparency, and responsible compensation management systems.",
+        "We are committed to ensuring compliance with statutory benefits, deductions, and wage-related reporting requirements.",
+        "We seek to periodically review payroll and compensation management processes for continual improvement."
+      ],
+      "Equal Opportunity and Non-Discriminatory Compensation": [
+        "We are committed to promoting equal opportunity and fair compensation practices across all workforce categories.",
+        "We aim to prevent compensation-related discrimination based on gender, background, religion, ethnicity, age, or other protected characteristics.",
+        "We strive to promote fair and responsible compensation decisions based on qualifications, responsibilities, skills, and performance.",
+        "We are committed to maintaining respectful, inclusive, and equitable workplace practices.",
+        "We seek to strengthen awareness regarding fair treatment and responsible workplace behaviour across the organization."
+      ],
+      "Employee Awareness and Communication": [
+        "Promote employee awareness regarding compensation practices, benefits, payroll processes, and workplace support mechanisms."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Fair Compensation Practices",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% compliance with applicable wage and labour regulations, including the Code on Wages, 2019, through FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to strengthen periodic wage and compensation review practices across applicable workforce categories by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to improve employee awareness regarding compensation and payroll practices to at least 90% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to maintain 100% compliance with applicable minimum wage and wage-related legal requirements annually through FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Timely Wage and Salary Payment",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% timely payment of wages and salaries annually through FY 2029–30 from the baseline from FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to reduce payroll discrepancies by 90% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to strengthen payroll communication and employee support mechanisms across 100% of operational locations by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee awareness regarding payroll processes and salary-related communication to at least 85% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Working Hours and Overtime Management",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% compliance with applicable overtime payment and working hour requirements through FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve attendance and workforce scheduling compliance practices by 85% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to strengthen monitoring of overtime and attendance-related compliance practices across 100% of major operational locations by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee awareness regarding working hour and overtime policies to at least 85% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Welfare and Well-Being",
+        "targets": [
+          {
+            "target": "We aim to improve employee participation in workplace welfare and well-being initiatives to at least 80% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to strengthen communication regarding employee welfare initiatives across 100% of major operational locations by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct a minimum of 2 employee welfare and engagement initiatives annually through FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee awareness regarding welfare facilities, workplace support mechanisms, and employee well-being initiatives to at least 90% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Payroll Compliance and Transparency",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% statutory payroll compliance across all applicable operational locations through FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve payroll documentation and record management practices across 100% of applicable departments by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to improve payroll-related grievance resolution practices by 90% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee awareness regarding payroll transparency and statutory deductions to at least 85% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Equal Opportunity and Non-Discriminatory Compensation",
+        "targets": [
+          {
+            "target": "We aim to improve employee awareness regarding equal opportunity and fair compensation practices to at least 90% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to maintain zero confirmed cases of compensation-related discrimination annually through FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to strengthen communication regarding workplace equality and fair employment practices across 100% of departments by FY 2029–30.",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee participation in workplace equality and fair compensation awareness initiatives to at least 85% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Provide strategic direction and support for fair compensation and employee welfare practices across the organization."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approve compensation frameworks, wage-related initiatives, and employee welfare programs."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure adequate resources are available for implementation of the Living Wage Policy."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Promote ethical employment practices and fair treatment of all employees and workers."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Implement and maintain fair wage and compensation practices in line with applicable labour laws and Company commitments."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Periodically review wage structures, benefits, and compensation practices to support fair and equitable remuneration."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Ensure timely payment of wages, statutory benefits, and applicable allowances."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Monitor compliance with minimum wage requirements and applicable labour regulations."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Promote employee awareness regarding wage structures, benefits, and related policies."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Maintain records related to wages, benefits, and employee compensation practices."
+      },
+      {
+        "role": "Finance and Payroll Department",
+        "duty": "Review this policy regularly."
+      },
+      {
+        "role": "Finance and Payroll Department",
+        "duty": "Ensure accurate and timely processing of wages, salaries, overtime payments, reimbursements, and statutory contributions."
+      },
+      {
+        "role": "Finance and Payroll Department",
+        "duty": "Maintain confidentiality and transparency in payroll administration processes."
+      },
+      {
+        "role": "Finance and Payroll Department",
+        "duty": "Support compliance with applicable wage, taxation, and statutory payment requirements."
+      },
+      {
+        "role": "Finance and Payroll Department",
+        "duty": "Assist in monitoring compensation-related records and reporting requirements."
+      },
+      {
+        "role": "Department Heads and Supervisors",
+        "duty": "Support fair employment and compensation practices within their respective departments."
+      },
+      {
+        "role": "Department Heads and Supervisors",
+        "duty": "Ensure employees and workers are treated fairly and respectfully."
+      },
+      {
+        "role": "Department Heads and Supervisors",
+        "duty": "Monitor working hours, overtime practices, and workforce welfare within operational areas."
+      },
+      {
+        "role": "Department Heads and Supervisors",
+        "duty": "Promptly report compensation-related concerns or non-compliance issues to HR or management."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with Company policies, procedures, and attendance requirements related to compensation and benefits."
+      },
+      {
+        "role": "Employees",
+        "duty": "Raise concerns related to wages, benefits, or payroll discrepancies through designated channels where necessary."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support a fair, respectful, and ethical workplace environment."
+      }
+    ],
+    "monitoring": "Implementation of this Living Wage Policy shall be monitored through periodic payroll reviews, compliance assessments, employee feedback mechanisms, and monitoring of wage-related practices, statutory payments, and employee welfare indicators. Wage-related concerns, grievances, and corrective actions shall be reviewed regularly.\n\nPEWSPL is committed to continually improving employee compensation and welfare practices through periodic review of wage structures, employee benefits, payroll processes, and compliance mechanisms. The Company will continue strengthening fair compensation practices and employee well-being initiatives in line with legal requirements, operational needs, and responsible business commitments.",
+    "reviewMechanism": "This Living Wage Policy shall be reviewed annually by the Finance and Payroll Department, or whenever significant changes occur in labour laws, wage regulations, business operations, workforce requirements, or organizational practices, to ensure its continued relevance, effectiveness, and alignment with the Company’s fair compensation commitments."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/PEWSPL Policies/5. Living Wage Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/PEWSPL Policies/5. Living Wage Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 16752,
+  "parsedAt": "2026-09-11T07:12:17.906Z"
+}

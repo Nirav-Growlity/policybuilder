@@ -1,0 +1,335 @@
+{
+  "id": "gautam-solar",
+  "name": "Gautam Solar",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental & Sustainability Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Gautam Solar Private Limited",
+      "industry": "",
+      "site": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+      "sites": [
+        {
+          "location": "Registered Office",
+          "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Factory Unit 1",
+          "address": "Plot 67-70, Sec-8A, SIDCUL, Haridwar, Uttarakhand- 249403, India",
+          "primaryFunction": "Factory"
+        },
+        {
+          "location": "Factory Unit 2",
+          "address": "7 KM Milestone, Tosham Road, Bhiwani, Haryana-127032, India",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Gautam Solar Private Limited is committed to conducting its operations in an environmentally responsible and sustainable manner. As a leading organization in the solar energy sector, the Company recognizes its responsibility to minimize environmental impacts while contributing to the global transition towards clean energy.\n\nThe Company aligns its environmental strategy with internationally recognized frameworks such as the Global Reporting Initiative (GRI) Standards and the United Nations Sustainable Development Goals (SDGs), ensuring transparency, accountability, and continuous improvement in sustainability performance.",
+      "declaration": "Gautam Solar Private Limited is committed to the following:",
+      "scope": "This Environmental & Sustainability Policy is applicable across all Gautam Solar Private Limited employees, workers, contractors, sub-contractors, suppliers, and other stakeholders globally, including the communities in which Gautam Solar Private Limited operates. It ensures that environmental standards are consistently maintained throughout all its sites, operations, and business relationships."
+    },
+    "focusAreas": [
+      "Energy & GHG Emissions",
+      "Water Management",
+      "Materials, Chemicals & Waste",
+      "Product Use",
+      "Product End-of-Life",
+      "Customer Health & Safety",
+      "Compliance",
+      "Continuous Improvement"
+    ],
+    "qualitative": {
+      "Energy & GHG Emissions": [
+        "Improve energy efficiency and increase renewable energy adoption",
+        "Increase the share of renewable energy in total energy consumption",
+        "Monitor and manage greenhouse gas emissions across Scope 1 and Scope 2, Scope 3"
+      ],
+      "Water Management": [
+        "Promote responsible water usage, conservation, and reuse",
+        "Monitor water consumption and discharge to ensure compliance",
+        "Reduce dependency on freshwater sources through alternative solutions"
+      ],
+      "Materials, Chemicals & Waste": [
+        "Minimize waste and ensure safe handling of materials and chemicals",
+        "Promote recycling and reuse of materials wherever feasible",
+        "Reduce the use of hazardous substances in operations and products"
+      ],
+      "Product Use": [
+        "Enhance product efficiency and reduce lifecycle impacts",
+        "Provide guidance to customers on efficient and safe product usage",
+        "Continuously innovate to enhance product sustainability performance"
+      ],
+      "Product End-of-Life": [
+        "Promote recyclability and circular economy practices",
+        "Integrate circular economy principles into product design",
+        "Reduce environmental impact associated with product disposal"
+      ],
+      "Customer Health & Safety": [
+        "Ensure product safety and compliance",
+        "Monitor and address product-related safety incidents",
+        "Continuously improve product safety and quality standards"
+      ],
+      "Compliance": [
+        "Adhere to environmental laws and regulations",
+        "Establish internal controls to manage environmental risks",
+        "Promote ethical and transparent environmental practices"
+      ],
+      "Continuous Improvement": [
+        "Monitor and enhance environmental performance",
+        "Encourage employee participation in sustainability initiatives",
+        "Continuously enhance environmental management systems and practices"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy & GHG Emissions",
+        "targets": [
+          {
+            "target": "Scope 1 & 2,3 GHG Emission: 20% reduction",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Renewable Energy Share: 50% of total energy consumption",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Energy Efficiency: 15% improvement per unit production",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Water Consumption Intensity: 25% reduction",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Water Recycling & Reuse: Minimum 30% reuse across operations",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Rainwater Harvesting Coverage: 100% manufacturing sites",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals & Waste",
+        "targets": [
+          {
+            "target": "Waste Diversion from Landfill: 90% of total waste",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Hazardous Waste Reduction: 20% reduction",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Sustainable Packaging: 75% recycled/eco-friendly materials",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Chemical Compliance: 100% compliance with applicable standards",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Solar Module Efficiency: 10% improvement",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Product Lifecycle Carbon Footprint: 15% reduction",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Product Safety Compliance: 100% compliance",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life",
+        "targets": [
+          {
+            "target": "Product Recyclability: 85% of solar modules",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Responsible Disposal: 100% via authorized recyclers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Take-Back Program: Fully implemented",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Critical Safety Incidents: Zero incidents annually",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Product Risk Assessments: 100% annual coverage",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Safety Communication: 100% labeled products",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      6,
+      7,
+      9,
+      12,
+      13,
+      16
+    ],
+    "responsibilities": [
+      {
+        "role": "All levels of Gautam Solar Private Limited",
+        "duty": "The implementation, monitoring, and continual improvement of this policy shall be a shared responsibility across all levels of Gautam Solar Private Limited."
+      },
+      {
+        "role": "(Environment, Health & Safety EHS) Head",
+        "duty": "Ensure alignment of operations with policy commitments and environmental objectives"
+      },
+      {
+        "role": "(Environment, Health & Safety EHS) Head",
+        "duty": "Monitor and track performance against defined targets and GRI indicators"
+      },
+      {
+        "role": "(Environment, Health & Safety EHS) Head",
+        "duty": "Conduct periodic environmental reviews, audits, and assessments"
+      },
+      {
+        "role": "(Environment, Health & Safety EHS) Head",
+        "duty": "Coordinate with cross-functional teams for effective implementation"
+      },
+      {
+        "role": "(Environment, Health & Safety EHS) Head",
+        "duty": "Report environmental performance to top management"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Provide strategic direction and resources for effective implementation of this policy"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approve environmental objectives, targets, and improvement plans"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure integration of sustainability into business strategy and decision-making"
+      },
+      {
+        "role": "Department Heads / Functional Managers",
+        "duty": "Integrate environmental requirements into departmental operations"
+      },
+      {
+        "role": "Department Heads / Functional Managers",
+        "duty": "Ensure compliance with applicable environmental regulations and internal procedures"
+      },
+      {
+        "role": "Department Heads / Functional Managers",
+        "duty": "Support data collection and reporting for environmental performance"
+      },
+      {
+        "role": "Department Heads / Functional Managers",
+        "duty": "Promote resource efficiency and waste reduction within their respective functions"
+      },
+      {
+        "role": "Employees and Workers",
+        "duty": "Comply with the requirements of this Environmental & Sustainability Policy"
+      },
+      {
+        "role": "Employees and Workers",
+        "duty": "Follow all applicable environmental procedures, controls, and safety practices"
+      },
+      {
+        "role": "Employees and Workers",
+        "duty": "Use resources such as energy, water, and materials responsibly"
+      },
+      {
+        "role": "Employees and Workers",
+        "duty": "Report any environmental incidents, risks, or non-compliances to the concerned authority"
+      },
+      {
+        "role": "Employees and Workers",
+        "duty": "Participate in environmental awareness and training programs"
+      },
+      {
+        "role": "Contractors and Suppliers",
+        "duty": "Adhere to the environmental requirements outlined in this policy and applicable contractual obligations"
+      },
+      {
+        "role": "Contractors and Suppliers",
+        "duty": "Comply with relevant environmental laws and standards"
+      },
+      {
+        "role": "Contractors and Suppliers",
+        "duty": "Minimize environmental impacts associated with their activities, products, and services"
+      },
+      {
+        "role": "Contractors and Suppliers",
+        "duty": "Support Gautam Solar in achieving its sustainability objectives"
+      }
+    ],
+    "monitoring": "The Company shall monitor progress against defined targets through internal assessments, performance tracking, and audits.",
+    "reviewMechanism": "This policy and its associated targets shall be reviewed annually by the EHS Head and top management to ensure:\n\nContinued relevance\n\nAlignment with regulatory requirements\n\nAchievement of environmental objectives\n\nIdentification of improvement opportunities\n\nCorrective and preventive actions shall be implemented wherever required."
+  },
+  "sourcePath": "Policies - Kenal/Gautam Solar/Environmental & Sustainability Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Gautam Solar/Environmental & Sustainability Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 8568,
+  "parsedAt": "2026-09-11T07:23:33.580Z"
+}

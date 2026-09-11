@@ -1,0 +1,324 @@
+{
+  "id": "labour-human-rights-novopor",
+  "name": "Novopor",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Labor rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Novopor",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Andhra Pradesh",
+          "address": "Plot No: 2A,2B & 2C, APSEZ, Moturupalem Village, Rambilli Mandal, Achyutapuram, Visakhapatnam District - 531011, Andhra Pradesh, India",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Andhra Pradesh",
+          "address": "Plot no: 64, JNPC, Pharma City, Thanam Village, Visakhapatnam District, Parwada Mandal - 531019, Andhra Pradesh, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Telangana",
+          "address": "K.K.R.Square, Flat No.402 & 403, Plot No.5,6,15 & 16, Kavuri Hills, Road No.36, Jubliee Hills, Hyderabad - 500033, Telangana, India.",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Telangana",
+          "address": "Lab No.9, 1st Floor, Phase-1, IKP Knowledge Park, Sy. No. 234/2, 235/3 and 235/2, Turkapally Village, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500101, Telangana, India",
+          "primaryFunction": "Innovation Centre"
+        },
+        {
+          "location": "Mumbai",
+          "address": "Unit No.SO-4, 2nd Floor, Building No.14, Solitaire Corporate Park, Guru Hargovindji Road, Chakala, Andheri (East), MUMBAI-400093, India",
+          "primaryFunction": "Corporate Office"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Novopor, we believe that a strong commitment to labor and human rights is fundamental to our mission of enabling sustainable innovation and creating a positive impact on society. We recognize our responsibility to uphold the highest ethical standards in our workplaces and throughout our supply chain. We are dedicated to fostering a work environment that promotes fairness, safety, inclusivity, and dignity for all employees, contractors, and stakeholders.\n\nOur labor and human rights policy serves as a cornerstone of our corporate social responsibility efforts, ensuring that our operations align with international labor laws and human rights frameworks. By prioritizing ethical working conditions, employee well-being, diversity, equity, inclusion, and career development, we strive to empower our workforce and create a culture of mutual respect and integrity.",
+      "declaration": "Novopor is committed to foster an inclusive, ethical, and fair work environment by upholding the highest standards of labor and human rights across all our operation. Our commitment is reflected in the following key areas:",
+      "scope": "This Labor and Human Rights Policy applies to all employees, contractors, suppliers, business partners, and stakeholders associated with Novopor Operations. It is applicable to all site locations:"
+    },
+    "focusAreas": [
+      "Fair and Ethical Working Conditions",
+      "Health, Safety & Well-being",
+      "Prevention of Discrimination, Harassment & Abuse",
+      "Prevention of Child Labor, Forced Labor & Human Trafficking",
+      "Career Growth & Employee Development",
+      "Freedom of Association and Whistleblower Protection",
+      "External Stakeholders Rights",
+      "Compliance with Labor Laws and Standards"
+    ],
+    "qualitative": {
+      "Fair and Ethical Working Conditions": [
+        "We are committed to ensuring that all employees receive fair wages, work in just conditions, and are treated with dignity and respect. We uphold fair labor practices by complying with wage laws, conducting regular wage reviews, and fostering an environment free from discrimination and exploitation.",
+        "All employees, suppliers, and leadership teams undergo mandatory training on fair working conditions, DEI and child and forced labor and human trafficking prevention."
+      ],
+      "Health, Safety & Well-being": [
+        "Employee health and safety are paramount at Novopor. We invest in comprehensive safety programs, conduct regular workplace hazard assessments, and provide ongoing training to mitigate risks. Our facilities comply with international occupational health and safety standards, and we offer health benefits, wellness initiatives, and mental health support to create a safe and supportive work environment.",
+        "Regular health and safety audits are conducted across all facilities to identify and mitigate risks, ensuring a safe working environment for all employees."
+      ],
+      "Prevention of Discrimination, Harassment & Abuse": [
+        "Novopor is committed to maintaining a respectful and inclusive workplace free from all forms of discrimination, harassment, and abuse—whether physical, psychological, or verbal. We uphold a strict zero-tolerance approach toward any conduct that undermines the dignity, safety, or well-being of our employees. All individuals—whether full-time, part-time, temporary, or contractual—are entitled to equal treatment, fairness, and respect regardless of race, color, religion, sex, national origin, age, disability, marital status, gender identity or expression, or any other protected characteristic. To support this commitment, Novopor implements robust internal policies, provides regular training programs, ensures accessible and confidential grievance mechanisms, and guarantees timely and impartial resolution of any reported incidents."
+      ],
+      "Prevention of Child Labor, Forced Labor & Human Trafficking": [
+        "We are committed to upholding human rights by ensuring that our operations and supply chain are free from child labor, forced labor, and human trafficking. We strictly prohibit the employment of individuals below the legal working age and reject any form of bonded, involuntary, or coerced labor. Through rigorous due diligence, supplier audits, and ethical recruitment practices, we ensure compliance with international labor laws and human rights standards."
+      ],
+      "Career Growth & Employee Development": [
+        "We believe in empowering employees through career development and continuous learning. We provide structured training programs, mentorship opportunities, and internal promotion pathways to support professional growth. Our initiatives aim to equip employees with the skills needed to advance in their careers, ensuring long-term success and engagement within the company.",
+        "Skill development programs are implemented to provide continuous learning opportunities, ensuring all employees have access to career advancement initiatives."
+      ],
+      "Freedom of Association and Whistleblower Protection": [
+        "Novopor respects employees’ rights to freedom of association and collective bargaining. We provide a transparent and confidential whistleblower mechanism that allows employees to report concerns without fear of retaliation. We actively encourage open communication and ensure that all employees are aware of their rights to raise grievances and participate in labor unions or employee organizations.",
+        "Novopor respects employees' rights to form unions and negotiate collectively. Open dialogues between management and workers ensure transparency, and collective bargaining agreements receive full recognition.",
+        "Employees and stakeholders access secure, anonymous grievance channels. An independent committee investigates concerns, ensuring fair resolutions and retaliation against whistleblowers is strictly prohibited."
+      ],
+      "External Stakeholders Rights": [
+        "Novopor is committed to respecting and upholding the rights of external stakeholders, including suppliers, customers, communities, and business partners. We ensure fair, transparent, and ethical business practices, promoting open communication, non-discriminatory engagement, and responsible sourcing."
+      ],
+      "Compliance with Labor Laws and Standards": [
+        "We fully comply with all national and international labor laws and local labor regulations. We continuously seek third-party certifications and independent audits to ensure alignment with global labor rights standards."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Working Condition",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive fair wages aligned with legal and industry standards by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Implement and maintain a 24/7 grievance system covering 100% of employees by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Implement ergonomic workplace improvements in all office facilities by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Health Safety and Well-being",
+        "targets": [
+          {
+            "target": "Provide annual workplace safety training to 100% of employees by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Expand health and wellness program coverage to 100% of employees by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Achieve zero workplace fatalities by FY 2028-29 through enhanced safety training.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Discrimination, Harassment & Abuse",
+        "targets": [
+          {
+            "target": "Provide annual awareness and prevention training on discrimination and harassment to 100% of employees by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Conduct annual risk assessments across all operations to identify and mitigate risks related to discrimination, harassment, and abuse, aiming for zero reported cases by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Conduct annual workplace inclusion surveys with a target of achieving at least 90% positive feedback regarding respect, fairness, and safety by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Career Growth & Employee Development",
+        "targets": [
+          {
+            "target": "Increase annual training participation to 100% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Raise internal promotion rates to 50% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Establish mentorship programs across 100% of company departments by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Freedom of Association & Whistleblower Protection",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees have access to a structured collective bargaining agreement by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Train 100% of employees on whistleblower policies and protections by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Implement a confidential whistleblower reporting system covering all employees by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Child Labor, Forced Labor & Human Trafficking",
+        "targets": [
+          {
+            "target": "Ensure that 100% of suppliers comply with child labor, forced labor, and human trafficking regulations through mandatory audits and contractual commitments by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Conduct annual risk assessments across all operations and supply chains to identify and eliminate risks related to forced labor and human trafficking, with a goal of maintaining zero reported cases by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Train 100% of employees and key suppliers on reporting mechanisms to prevent child labor, forced labor, and human trafficking by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Rights",
+        "targets": [
+          {
+            "target": "By FY 2028-29, ensure that 100% of suppliers adhere to Novopor’s ethical sourcing and human rights policies through audits and compliance assessments.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Conduct annual engagement sessions with external stakeholders and resolve 100% of reported grievances by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Publish annual sustainability reports covering stakeholder rights, responsible sourcing, and ethical business practices, ensuring 100% transparency in operations by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Leadership",
+        "duty": "Ensure labor and human rights policies align with business strategy and global standards."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Allocate resources for policy implementation, monitoring, and improvement."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Set accountability measures, including key performance indicators (KPIs) for compliance"
+      },
+      {
+        "role": "HR Team",
+        "duty": "Integrate fair labor practices into recruitment, compensation, and employee development."
+      },
+      {
+        "role": "HR Team",
+        "duty": "Conduct training on ethical working conditions, DEI, and whistleblower protection."
+      },
+      {
+        "role": "HR Team",
+        "duty": "Oversee grievance mechanisms and ensure timely resolution of labor-related concerns."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Monitor labor rights adherence through internal audits and third-party assessments."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Ensure compliance with legal regulations and international labor standards."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Develop reports on labor performance, highlighting risks and corrective actions."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Implement supplier due diligence processes to prevent labor rights violations."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Conduct regular supplier audits and enforce corrective action plans."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Engage with suppliers to build capacity for ethical labor practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to company policies on fair working conditions, DEI, and ethical conduct."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in training programs and report any labor rights concerns through grievance mechanisms."
+      },
+      {
+        "role": "Employees",
+        "duty": "Foster a respectful and inclusive workplace culture."
+      }
+    ],
+    "monitoring": "Regular internal audits are conducted to assess compliance with labor laws, workplace safety, DEI initiatives, and employee welfare.\n\nKey performance indicators (KPIs) such as workplace safety incidents, training hours, employee satisfaction, and diversity metrics are tracked.\n\nEmployees have access to anonymous reporting channels for workplace concerns related to discrimination, unfair labor practices, or unsafe working conditions.\n\nRegular supplier audits ensure compliance with labor rights, ethical sourcing, and fair employment practices across the supply chain.\n\nSecure whistleblower channels safeguard employees and stakeholders who report unethical labor practices, with strict non-retaliation policies and independent oversight committees handling cases.\n\nThe Policy is publicly available on Novopor’s website and shared through various stakeholder communication channels.\n\nEmployees are kept informed of updates and expected to integrate these practices into their work.",
+    "reviewMechanism": "The Human Resource Manager is responsible for managing the implementation and periodic review of this policy. To ensure its effectiveness and continued relevance, the policy will be reviewed annually. Any necessary updates or revisions will be communicated to all stakeholders, incorporating operational or regulatory changes and addressing emerging challenges."
+  },
+  "sourcePath": "Policies - Kenal/Novopor/Labor rights Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Novopor/Labor rights Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 15007,
+  "parsedAt": "2026-09-11T07:25:04.415Z"
+}

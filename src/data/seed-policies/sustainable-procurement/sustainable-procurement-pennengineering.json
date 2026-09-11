@@ -1,0 +1,373 @@
+{
+  "id": "sustainable-procurement-pennengineering",
+  "name": "PennEngineering",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Responsible Sourcing Roadmap.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "PennEngineering & Manufacturing Corp. (“PennEngineering”)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Global manufacturing facilities",
+          "address": "",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Global engineering centers",
+          "address": "",
+          "primaryFunction": "Engineering"
+        },
+        {
+          "location": "Global offices",
+          "address": "",
+          "primaryFunction": "Office operations"
+        },
+        {
+          "location": "Global distribution activities",
+          "address": "",
+          "primaryFunction": "Distribution"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "PennEngineering & Manufacturing Corp. (“PennEngineering”) (Group) is a global leader in engineered fastening solutions and installation technologies, serving industries including automotive, electronics, industrial machinery, and telecommunications. Through innovation, precision engineering, and high-quality manufacturing, PennEngineering delivers reliable products that enhance performance and support efficient assembly for customers worldwide.",
+      "declaration": "PennEngineering is committed to responsible sourcing across its global supply chain, ensuring that procurement decisions promote ethical labor practices, respect human rights, maintain safe working conditions, and encourage environmentally responsible materials and processes. This Roadmap sets clear expectations for suppliers, contractors, and business partners to adopt sustainable, transparent, and ethical practices that align with the Company’s values and long-term commitment to supply chain sustainability.",
+      "scope": "This Responsible Sourcing Roadmap to all PennEngineering operations, including manufacturing facilities, engineering centers, offices, and distribution activities globally. The roadmap applies to all employees, Workers, contractors, suppliers, and other stakeholders involved in the Company’s operations and value chain."
+    },
+    "focusAreas": [
+      "Supplier Ethics Practices",
+      "Supplier Social Practices",
+      "Supplier Environmental Practices",
+      "Conflict Minerals and Responsible Raw Material Sourcing",
+      "Supplier Ethics Performance Targets",
+      "Supplier Social Performance Targets",
+      "Supplier Environmental Targets",
+      "Conflict Minerals and Responsible Sourcing Performance Targets",
+      "General Responsible Sourcing Targets"
+    ],
+    "qualitative": {
+      "Supplier Ethics Practices": [
+        "Integrity and Ethical Conduct: PennEngineering promotes integrity, transparency, and ethical conduct across its supply chain. Suppliers are expected to conduct business in an ethical manner, avoid conflicts of interest, and comply with all applicable anti-corruption and anti-bribery laws and regulations.",
+        "Anti-Corruption and Anti-Bribery: Suppliers must prohibit all forms of bribery, corruption, fraud, and unethical business practices and must implement policies to ensure ethical conduct in all business transactions.",
+        "Conflict of Interest Management: Suppliers must disclose any actual or potential conflicts of interest and ensure that business decisions are made objectively and without improper influence.",
+        "Intellectual Property and Confidential Information Protection: Suppliers must protect confidential information, intellectual property, and sensitive business information shared by PennEngineering and its customers."
+      ],
+      "Supplier Social Practices": [
+        "Workplace Health and Safety: PennEngineering expects suppliers to provide safe and healthy working conditions for all employees, implement appropriate occupational health and safety management practices, and take proactive measures to prevent workplace injuries and illnesses.",
+        "Human Rights and Labor Standards: PennEngineering is committed to protecting human rights across its supply chain. Suppliers are expected to prohibit child labor, forced labor, discrimination, and harassment, and to promote fair wages, reasonable working hours, and equal employment opportunities.",
+        "Fair Wages and Working Hours: Suppliers must comply with applicable wage laws, working hour regulations, overtime requirements, and legally mandated benefits.",
+        "Diversity, Equity, and Inclusion: Suppliers are encouraged to promote diversity, equity, and inclusion and provide equal opportunities for all employees.",
+        "Working Conditions and Employee Welfare: Suppliers should provide fair working conditions, including fair compensation, reasonable working hours, access to basic facilities, and a respectful workplace environment"
+      ],
+      "Supplier Environmental Practices": [
+        "Greenhouse Gas Emissions and Energy Management: Suppliers are encouraged to monitor and report greenhouse gas emissions, improve energy efficiency, and transition toward cleaner energy sources where feasible.",
+        "Water Management: Suppliers are expected to reduce water consumption, prevent water pollution, and comply with wastewater discharge regulations.",
+        "Pollution Prevention and Waste Management: Suppliers must reduce waste generation, control air and water emissions, and promote recycling and reuse of materials.",
+        "Materials, Chemicals, and Product Compliance: Suppliers must ensure compliance with environmental regulations and product requirements, including REACH, RoHS, and conflict minerals reporting requirements.",
+        "Product End-of-Life and Circular Economy: Suppliers are encouraged to consider product lifecycle impacts, including recyclability, reuse, and responsible disposal at the end of product life.",
+        "Environmental Management Systems: Suppliers are encouraged to implement environmental management systems such as ISO 14001 to improve environmental performance."
+      ],
+      "Conflict Minerals and Responsible Raw Material Sourcing": [
+        "PennEngineering is committed to responsible sourcing of raw materials and supports efforts to eliminate the use of conflict minerals that directly or indirectly finance or benefit armed groups or contribute to human rights abuses. The Company conducts due diligence on the source and chain of custody of conflict minerals in accordance with internationally recognized due diligence frameworks and customer requirements.",
+        "PennEngineering requires relevant suppliers to provide conflict minerals information and declarations using recognized industry reporting tools such as the Conflict Minerals Reporting Template (CMRT) and Extended Minerals Reporting Template (EMRT). Suppliers are expected to provide information regarding the origin of tantalum, tin, tungsten, and gold (3TG), including smelter and refinery information, and to ensure responsible sourcing practices within their supply chains.",
+        "If conflict minerals sourced from high-risk regions are identified, suppliers are expected to implement corrective actions and transition to responsible or conflict-free sources. PennEngineering reserves the right to evaluate supplier compliance and may reconsider sourcing decisions if suppliers fail to meet responsible sourcing requirements.",
+        "PennEngineering is committed to complying with customer requirements and regulatory expectations related to conflict minerals and to supporting responsible mineral sourcing through supply chain transparency and due diligence practices"
+      ],
+      "General Responsible Sourcing": [
+        "PennEngineering establishes measurable targets to advance responsible and sustainable sourcing across its supply chain. These targets support continuous improvement in ethical business practices, workforce well-being, environmental stewardship, and supplier accountability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Ethics Performance Targets",
+        "targets": [
+          {
+            "target": "Ensure 100% of new suppliers complete ethics due diligence screening before onboarding each year.",
+            "baseline": "2023",
+            "deadline": "each year"
+          },
+          {
+            "target": "Provide annual anti-corruption and ethical business conduct training to 100% of procurement employees by 2027.",
+            "baseline": "2023",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 100% of suppliers sign confidentiality and intellectual property protection agreements by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of suppliers implement whistleblower protection policies by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 90% of Tier 1 suppliers implement formal anti-corruption and ethics policies by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Performance Targets",
+        "targets": [
+          {
+            "target": "Maintain zero (0) cases of child labor, forced labor, or human trafficking across suppliers by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of Tier 1 suppliers comply with working hours, wages, and labor law requirements by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 90% of Tier 1 suppliers implement formal human rights policies by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase supplier diversity participation (SMEs, minority-owned, or local suppliers) by 20% by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of suppliers implement emergency preparedness and response procedures by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of Tier 1 suppliers implement anti-discrimination and fair labor policies by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Environmental Targets",
+        "targets": [
+          {
+            "target": "Ensure 100% of Tier 1 suppliers report Scope 1 and Scope 2 greenhouse gas emissions annually by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 80% of Tier 1 suppliers report Scope 3 emissions related to PennEngineering products by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce supplier energy consumption by 20% by 2030 (from 2023 baseline).",
+            "baseline": "2023 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase clean or renewable energy use to 30% at Tier 1 supplier facilities by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce water consumption at supplier facilities by 15% by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce supplier waste generation by 25% by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 70% of Tier 1 suppliers implement pollution prevention programs by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 50% of Tier 1 suppliers obtain ISO 14001 certification by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of supplied materials comply with REACH and RoHS requirements each year.",
+            "baseline": "2023",
+            "deadline": "each year"
+          }
+        ]
+      },
+      {
+        "area": "Conflict Minerals and Responsible Sourcing Performance Targets",
+        "targets": [
+          {
+            "target": "Ensure 100% of relevant suppliers provide completed Conflict Minerals Reporting Template (CMRT) or Extended Minerals Reporting Template (EMRT) declarations by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of suppliers providing products containing tin, tungsten, tantalum, or gold (3TG) provide smelter and refinery information by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual conflict minerals due diligence for 100% of relevant suppliers by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide conflict minerals compliance training to 100% of relevant procurement and supply chain employees by 2027.",
+            "baseline": "2023",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain 100% compliance with applicable conflict minerals regulatory and customer requirements each year.",
+            "baseline": "2023",
+            "deadline": "each year"
+          }
+        ]
+      },
+      {
+        "area": "General Responsible Sourcing Targets",
+        "targets": [
+          {
+            "target": "Ensure 100% of Tier 1 suppliers sign and comply with the PennEngineering Supplier Code of Conduct by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct ESG risk assessments for 100% of Tier 1 suppliers and 80% of Tier 2 suppliers by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct sustainability or ESG audits at 100% of high-risk suppliers by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 90% of Tier 1 suppliers complete ESG self-assessment questionnaires by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide sustainability awareness or ESG training to at least 80% of Tier 1 suppliers by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Integrate ESG criteria into 100% of new supplier selection and evaluation processes by 2027.",
+            "baseline": "2023",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Approve policies, strategies, and standards for sustainable procurement and responsible supply chain management."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Provide oversight of supplier performance on ethical, social, and environmental standards."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Ensure sufficient resources are allocated to support sustainable sourcing initiatives and supplier engagement programs."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Coordinate sustainable sourcing and supply chain responsibility initiatives across global operations."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Define measurable targets for supplier ESG performance, ethical sourcing, and human rights compliance."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Support implementation of programs that enhance supplier sustainability, risk management, and continuous improvement."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Integrate responsible sourcing principles into supplier selection, contracting, and evaluation processes."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Ensure suppliers meet ethical, social, and environmental standards throughout the supply chain."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Conduct supplier ESG risk assessments and integrate ESG criteria into supplier selection and evaluation"
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Monitor supplier performance, provide guidance on improvements, and maintain records of compliance."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Support suppliers in implementing sustainable operations, health, safety, and environmental practices."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Conduct training and awareness programs for suppliers on ESG requirements, risk management, and regulatory compliance."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Monitor supplier adherence to environmental and safety standards, including audits and performance reporting."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "Comply with PennEngineering’s Responsible Sourcing Roadmap and associated ESG requirements."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "Implement practices to ensure ethical labor, human rights, and environmental stewardship within their operations."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "Maintain transparency, report performance, and participate in audits, training, and continuous improvement initiatives."
+      },
+      {
+        "role": "Employees and Contracted Staff",
+        "duty": "Support responsible sourcing goals by adhering to company policies and procedures."
+      },
+      {
+        "role": "Employees and Contracted Staff",
+        "duty": "Participate in training programs on sustainable procurement, supplier ethics, and ESG standards."
+      },
+      {
+        "role": "Employees and Contracted Staff",
+        "duty": "Report concerns regarding supplier practices, ethical breaches, or sustainability risks through established channels."
+      }
+    ],
+    "monitoring": "PennEngineering monitors the implementation of responsible sourcing practices through supplier ESG risk assessments, self-assessment questionnaires, supplier audits, performance evaluations, and sustainability data collection. Key performance indicators related to supplier environmental, social, and ethics performance are tracked and reviewed on a periodic basis.\n\nThe Procurement Department, in coordination with the Site Environmental, Health & Safety (EHS) Team, is responsible for monitoring supplier compliance with the Supplier Code of Conduct, tracking supplier ESG performance indicators, reviewing assessment and audit results, and monitoring corrective action implementation. High-risk suppliers are subject to enhanced monitoring, including detailed assessments, audits, and corrective action follow-up.\n\nPennEngineering maintains records of supplier assessments, audit findings, corrective action plans, supplier training, and supplier sustainability performance metrics. Responsible sourcing performance may be reported through internal management reviews, sustainability reports, customer sustainability assessments.",
+    "reviewMechanism": "The Procurement Manager shall be responsible for conducting the annual review of this Responsible Sourcing Roadmap. The review will evaluate Roadmap effectiveness, supplier compliance with the Supplier Code of Conduct, progress toward responsible sourcing targets, supplier risk assessment results, and corrective action implementation status.\n\nAny updates or revisions resulting from changes in regulatory requirements, customer requirements, supplier risk evaluations, audit findings, or operational changes will be incorporated into the roadmap and communicated to relevant internal stakeholders and suppliers."
+  },
+  "sourcePath": "Policies - Kenal/PennEngineering/Responsible Sourcing Roadmap.docx",
+  "sourceFiles": [
+    "Policies - Kenal/PennEngineering/Responsible Sourcing Roadmap.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 15583,
+  "parsedAt": "2026-09-11T07:26:00.713Z"
+}

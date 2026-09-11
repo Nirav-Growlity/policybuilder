@@ -1,0 +1,350 @@
+{
+  "id": "ethics-pennengineering",
+  "name": "PennEngineering",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Business Ethics Roadmap.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "PennEngineering & Manufacturing Corp. (“PennEngineering”) (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Global manufacturing facilities",
+          "address": "",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Global engineering centers",
+          "address": "",
+          "primaryFunction": "Engineering"
+        },
+        {
+          "location": "Global offices",
+          "address": "",
+          "primaryFunction": "Office operations"
+        },
+        {
+          "location": "Global distribution activities",
+          "address": "",
+          "primaryFunction": "Distribution"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "PennEngineering & Manufacturing Corp. (“PennEngineering”) (Group) is a global manufacturer of engineered fastening solutions and installation systems used in industries such as automotive, electronics, industrial equipment, and telecommunications. Through advanced engineering capabilities and precision manufacturing, the Company develops fastening technologies that support product reliability, efficiency, and performance across diverse industrial applications.\n\nPennEngineering is committed to conducting business with the highest standards of integrity, transparency, and ethical responsibility. The Company recognizes that ethical conduct is fundamental to maintaining the trust of employees, customers, suppliers, shareholders, and the communities in which it operates.",
+      "declaration": "This Business Ethics Roadmap establishes the core principles that guide ethical behavior and responsible decision-making across PennEngineering’s global operations. It reflects the expectations placed on employees, contractors, and business partners in the way business is conducted and decisions are made.\n\nThe Roadmap serves as a framework to support compliance with applicable laws, regulations, and internal governance requirements, while promoting fairness, accountability, and transparency in all business activities. As business environments evolve, this Roadmap remains an important reference point to ensure that PennEngineering continues to uphold the highest ethical standards in its operations and relationships.",
+      "scope": "This Business Ethics Roadmap applies to all PennEngineering operations, including manufacturing facilities, engineering centers, offices, and distribution activities globally. The Roadmap applies to all employees, Workers, contractors, suppliers, and other stakeholders involved in the Company’s operations and value chain.\n\nPennEngineering operates in multiple countries with different business operations and regulatory requirements related to ethics. While this roadmap’s vision and objectives apply across all locations, each facility will implement these principles in accordance with local regulations, operational requirements, and internal best practices."
+    },
+    "focusAreas": [
+      "Anti-Bribery, Anti-Corruption and Ethical Business Practices",
+      "Conflict of Interest Prevention and Management",
+      "Anti-Money Laundering and Responsible Financial Practices",
+      "Data Accuracy and Ethical Reporting",
+      "Fair Competition and Market Integrity",
+      "Fraud Prevention and Financial Integrity",
+      "Information Security and Data Privacy"
+    ],
+    "qualitative": {
+      "Anti-Bribery, Anti-Corruption and Ethical Business Practices": [
+        "PennEngineering strictly prohibits bribery, corruption, facilitation payments, or any form of improper advantage in business dealings. The Company is committed to conducting business fairly and transparently and expects employees and business partners to uphold the highest standards of integrity in all interactions with customers, suppliers, government authorities, and other stakeholders.",
+        "Conduct all business with integrity and transparency. Promptly report any suspected bribery or unethical conduct to your manager, General Counsel, or speakup@pemnet.com.",
+        "Decline gifts, favours, or benefits that could influence business decisions.",
+        "Do not offer, accept, or solicit bribes, kickbacks, facilitation payments, or improper advantages. Do not tolerate corruption or unethical behaviour, even if local custom allows it.",
+        "Do not conceal or ignore suspected bribery or corruption."
+      ],
+      "Conflict of Interest Prevention and Management": [
+        "PennEngineering expects employees to act in the best interests of the Company and avoid situations where personal, financial, or external interests may conflict with business responsibilities. Employees are encouraged to disclose any potential or actual conflicts of interest so that appropriate measures can be taken to manage and resolve them transparently.",
+        "Disclose any actual or potential conflicts of interest immediately.",
+        "Obtain approval before engaging in external employment or business activities that may conflict with company interests.",
+        "Follow internal reporting and resolution processes for conflicts.",
+        "Do not make business decisions for personal gain or to benefit family/friends.",
+        "Do not engage in unauthorized dealings with competitors, suppliers, or customers.",
+        "Do not misuse company resources or confidential information for personal advantage."
+      ],
+      "Anti-Money Laundering and Responsible Financial Practices": [
+        "PennEngineering is committed to preventing money laundering and ensuring that all financial transactions are legitimate, transparent, and properly documented. The Company complies with applicable financial regulations and maintains strong internal controls to safeguard financial integrity and prevent the misuse of company resources.",
+        "Report suspicious or unusual financial activities to the Compliance or Finance team.",
+        "Conduct due diligence on customers, suppliers, and partners.",
+        "Maintain verifiable records of all financial transactions.",
+        "Do not approve transactions without legitimate business purpose.",
+        "Do not ignore warning signs such as unexplained payments or high-risk transactions.",
+        "Do not participate in activities intended to disguise the origin of funds."
+      ],
+      "Data Accuracy and Ethical Reporting": [
+        "PennEngineering promotes accuracy, honesty, and transparency in all business records and reporting activities. Employees are expected to maintain complete and accurate documentation of financial transactions, operational data, and business communications in accordance with applicable accounting standards and internal governance procedures.",
+        "Ensure all financial and operational reports are accurate, complete, and timely.",
+        "Cooperate fully with audits and data verification processes.",
+        "Maintain proper documentation to support reporting.",
+        "Do not provide false, incomplete, or misleading data.",
+        "Do not manipulate reports to meet targets.",
+        "Do not destroy records relevant to audits or investigations."
+      ],
+      "Fair Competition and Market Integrity": [
+        "PennEngineering supports fair and open competition in all markets where it operates. The Company complies with applicable competition and antitrust laws and avoids any agreements or practices that could restrict fair competition, such as price fixing, market allocation, or collusive bidding.",
+        "Compete fairly and ethically in pricing, bidding, and market activities.",
+        "Comply with all applicable competition and antitrust laws.",
+        "Seek guidance when engaging in competitor interactions.",
+        "Do not engage in price-fixing, bid-rigging, collusion, or market allocation.",
+        "Do not share sensitive commercial information with competitors.",
+        "Do not abuse market position to restrict fair competition."
+      ],
+      "Fraud Prevention and Financial Integrity": [
+        "PennEngineering works to prevent, detect, and address fraudulent activities through appropriate internal controls, monitoring systems, and reporting mechanisms. Employees are encouraged to report suspected fraud or unethical conduct through established reporting channels so that appropriate investigations and corrective actions can be taken.",
+        "Report suspected fraud or financial misconduct immediately.",
+        "Follow internal controls and company procedures diligently.",
+        "Ensure transparency and accuracy in all financial records.",
+        "Do not falsify accounts, invoices, or expense reports.",
+        "Do not manipulate financial statements for personal or departmental gain.",
+        "Do not conceal fraudulent activity."
+      ],
+      "Information Security and Data Privacy": [
+        "PennEngineering recognizes the importance of protecting confidential information and personal data belonging to employees, customers, and business partners. The Company implements appropriate information security practices and complies with applicable data protection and privacy laws to safeguard sensitive information from unauthorized access, disclosure, or misuse.",
+        "Follow all IT, cybersecurity, and data protection policies.",
+        "Use strong passwords, approved devices, and security controls.",
+        "Immediately report data breaches, phishing attempts, or unauthorized access.",
+        "Do not disclose confidential or personal data without authorization.",
+        "Do not use unapproved devices or platforms for sensitive data.",
+        "Do not bypass security controls or share access credentials."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Bribery, Anti-Corruption and Ethical Business Practices",
+        "targets": [
+          {
+            "target": "Integrate anti-bribery and anti-corruption clauses into 100% of new supplier and partner contracts, where applicable, by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide annual anti-corruption training to at least 95% of employees in procurement, finance, and other high-risk functions by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero(0) tolerance for bribery and corruption.",
+            "baseline": "2023",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure that 100% of reported incidents are investigated and addressed in line with company Code of conduct by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct periodic anti-corruption risk assessments across 100% operational facilities through 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Prevention and Management",
+        "targets": [
+          {
+            "target": "Achieve at least 95% completion rate of conflict-of-interest disclosures among applicable employees (including managers) by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide conflict of interest awareness training to 95% relevant employees, including managers and supervisors, by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of identified conflicts of interest are reviewed and appropriately addressed through internal governance processes by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering and Responsible Financial Practices",
+        "targets": [
+          {
+            "target": "Ensure at least 95% of relevant employees complete AML training, where applicable, by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero (0) tolerance for non-compliance with AML regulations, and ensure that any identified issues are addressed promptly in line with regulatory requirements.",
+            "baseline": "2023",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct periodic internal financial audits across 100% operational units through 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Data Accuracy and Ethical Reporting",
+        "targets": [
+          {
+            "target": "Provide data accuracy, record-keeping, and ethical reporting training to at least 90% of relevant employees (e.g., finance, operations, reporting teams) by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% compliance with document retention and record management requirements, in line with applicable laws and internal policies, through 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Competition and Market Integrity",
+        "targets": [
+          {
+            "target": "Maintain zero(0) tolerance for violations of competition and antitrust laws, and ensure that all reported concerns are investigated and addressed.",
+            "baseline": "2023",
+            "deadline": ""
+          },
+          {
+            "target": "Train 100% of sales, marketing, and senior management teams on fair competition policies by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention and Financial Integrity",
+        "targets": [
+          {
+            "target": "Maintain zero(0) tolerance for fraud and financial misstatements, and ensure that all identified cases are investigated and addressed.",
+            "baseline": "2023",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure at least 95% of employees in finance, procurement, and operations complete fraud prevention and internal controls training by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct periodic internal audits and fraud risk assessments across 100% operational functions through 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security and Data Privacy",
+        "targets": [
+          {
+            "target": "Ensure compliance with applicable data protection and privacy regulations across 100% operational locations through 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees handling sensitive data complete annual information security and data privacy training by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct information security risk assessments across 100% of critical systems, applications, and IT infrastructure on at least an annual basis.",
+            "baseline": "2023",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct annual audits of 100% of critical IT systems to ensure compliance with data protection requirements and Code of Conduct.",
+            "baseline": "2023",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Approve the Business Ethics Roadmap, ethical strategies, and organizational standards."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Provide oversight of ethical conduct, compliance performance, and integrity across the company."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Ensure adequate resources are allocated to support ethics programs, employee training, and compliance initiatives."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Coordinate business ethics initiatives across global operations."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Establish ethics performance targets, including training completion and compliance KPIs."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Support implementation of ethics programs, employee engagement, and integrity initiatives."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Implement ethics programs, policies, and training."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Monitor compliance with anti-bribery, anti-corruption, anti-money laundering, and other regulatory requirements."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Conduct audits and investigations of potential ethical violations."
+      },
+      {
+        "role": "Operations and Departmental Leadership",
+        "duty": "Promote ethical decision-making and integrity within operational teams."
+      },
+      {
+        "role": "Operations and Departmental Leadership",
+        "duty": "Ensure adherence to internal policies and regulatory requirements in day-to-day operations."
+      },
+      {
+        "role": "Operations and Departmental Leadership",
+        "duty": "Encourage open communication and provide guidance on ethical dilemmas."
+      },
+      {
+        "role": "Employees, Workers, and Contractors",
+        "duty": "Comply with the Business Ethics Roadmap and all related laws, regulations, and company standards."
+      },
+      {
+        "role": "Employees, Workers, and Contractors",
+        "duty": "Participate in ethics training and development programs."
+      },
+      {
+        "role": "Employees, Workers, and Contractors",
+        "duty": "Report unethical behaviour, compliance concerns, or potential violations through established reporting channels."
+      }
+    ],
+    "monitoring": "PennEngineering is committed to actively monitoring adherence to its Business Ethics Roadmap and tracking progress toward its ethical objectives and compliance targets. Key performance indicators (KPIs) — including employee ethics training completion, compliance audit results, incident and whistleblower reports, ethical decision-making metrics, and adherence to legal and company standards — are regularly tracked across all operational sites.\n\nThe Compliance Officer is responsible for collecting, analysing, and reviewing ethics-related performance data. This data is used to assess progress, identify improvement opportunities, and ensure ongoing compliance with applicable laws, regulations, and company policies.\n\nPennEngineering conducts periodic reviews of business ethics performance through internal audits, management assessments, employee feedback mechanisms, and compliance evaluations. Where appropriate, ethics-related information may also be shared externally through sustainability reports, customer assessments, or other reporting frameworks.\n\nThrough systematic monitoring, transparent communication, and continuous improvement, PennEngineering aims to strengthen accountability, promote ethical business conduct, and uphold integrity across all operations.",
+    "reviewMechanism": "The Compliance Officer is responsible for conducting an annual review of the Business Ethics Roadmap. This review assesses the Roadmap’s effectiveness, progress toward ethics-related objectives and targets, and compliance with applicable laws, regulations, and internationally recognized standards for ethical business conduct.\n\nAny updates or revisions resulting from organizational changes, regulatory developments, or stakeholder feedback will be incorporated into the Roadmap and communicated across relevant operational sites. This process ensures that the Roadmap remains current, effective, and aligned with PennEngineering’s commitment to ethical business practices, integrity, and responsible corporate governance throughout its operations."
+  },
+  "sourcePath": "Policies - Kenal/PennEngineering/Business Ethics Roadmap.docx",
+  "sourceFiles": [
+    "Policies - Kenal/PennEngineering/Business Ethics Roadmap.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 16906,
+  "parsedAt": "2026-09-11T07:25:53.063Z"
+}

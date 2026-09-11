@@ -1,0 +1,284 @@
+{
+  "id": "stella-hospitality",
+  "name": "Stella Hospitality",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental policy Stella Hospitality.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Stella Hospitality",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Saudi",
+          "address": "Ad Dahiah, Jeddah, Saudi Arabia.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "UAE",
+          "address": "Umm Dera - Emirate of Umm Al Quwain - United Arab Emirates.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Jordan - Marka",
+          "address": "Nicola Yousef Al Turk St 7, Amman, Jordan.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Jordan - Aqaba",
+          "address": "Al-Herafya Area - New Business District-Bilal Nihad Al-Athira Co, Aqaba, Jordan.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Bahrain",
+          "address": "Building 2639, Road/Street 1537, HIDD, Block 115, Bahrain.",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Stella Hospitality is fully committed to sustainability and responsible environmental stewardship in the hospitality industry. Through our established environmental practices, we continuously strive to reduce our ecological footprint, conserve natural resources, and promote sustainable solutions. Our commitment to environmental responsibility is reflected in our efforts to minimize waste, enhance product lifecycle sustainability, and integrate eco-friendly materials into our amenity solutions. We actively seek innovative approaches to reduce environmental impact while maintaining the highest quality standards in our products and services.\n\nThis Environmental Policy reflects our ongoing initiatives aimed at mitigating climate change, protecting biodiversity, and addressing key environmental challenges such as air pollution and product lifecycle impacts. We are already taking significant steps to improve our environmental impact and aim to build on these efforts to drive further progress.",
+      "declaration": "Stella Hospitality is dedicated to fostering sustainable solutions by reducing environmental impact and integrating eco-friendly practices into every aspect of our operations. We acknowledge our responsibility to minimize resource consumption, reduce waste, and promote circular economy principles in procurement, packaging, and distribution. Our environmental commitment is reflected in the following key areas:",
+      "scope": "This policy applies to all Stella Hospitality offices, distribution centres, supply chain partners, and service providers. It includes all site locations:"
+    },
+    "focusAreas": [
+      "Energy Efficiency and Carbon Footprint Reduction",
+      "Materials, Chemicals, and Waste Management",
+      "Water Conservation",
+      "Customer Health and Safety",
+      "Environmental Advocacy & Industry Leadership",
+      "Compliance with Environmental Regulations"
+    ],
+    "qualitative": {
+      "Energy Efficiency and Carbon Footprint Reduction": [
+        "We continuously seek to optimize our supply chain and distribution processes to minimize energy consumption and greenhouse gas emissions. Our logistics network is designed to enhance efficiency, reducing fuel use and emissions while ensuring seamless delivery."
+      ],
+      "Materials, Chemicals, and Waste Management": [
+        "We emphasize the responsible selection of suppliers who provide environmentally friendly raw materials and products. We also train our employees on Materials, Chemicals, and Waste Management."
+      ],
+      "Water Conservation": [
+        "Understanding the importance of water conservation, we encourage responsible water usage in the hospitality sector. We support hotels in adopting refillable and water-conscious amenity solutions to minimize unnecessary water waste."
+      ],
+      "Customer Health and Safety": [
+        "We prioritize the safety and well-being of our customers by ensuring our products meet the highest standards of hygiene, safety, and sustainability. Our sourced products are designed to be free from harmful chemicals, aligning with industry best practices for health-conscious hospitality."
+      ],
+      "Environmental Advocacy & Industry Leadership": [
+        "As a responsible corporate entity, Stella Hospitality actively supports sustainability initiatives and industry collaborations aimed at reducing the hospitality sector’s environmental footprint. We engage in awareness campaigns, sustainable hospitality programs, and continuous improvement efforts to drive meaningful change."
+      ],
+      "Compliance with Environmental Regulations": [
+        "We fully adhere to all environmental laws and regulations in the regions where we operate. Additionally, we proactively seek certifications and industry benchmarks to ensure that our practices align with global sustainability goals."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency",
+        "targets": [
+          {
+            "target": "Reduce energy consumption by 15% across distribution facilities through energy-efficient technologies and operational optimizations by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Increase the use of renewable energy in logistics operations to 50% by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Implement smart energy management systems in office and warehouse facilities, reducing unnecessary energy usage by 25% by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Carbon Emission Reduction",
+        "targets": [
+          {
+            "target": "Reduce scope 1 and scope 2 emissions by 15% by enhancing operational efficiency in offices and warehouses and reduce scope 3 emissions by 30% through optimized distribution strategies by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Partner with hotels to provide low-carbon amenities, contributing to their net-zero goals by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Implement a carbon offset program by 2028, investing in reforestation and renewable energy projects to balance emissions.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals and Waste Management",
+        "targets": [
+          {
+            "target": "Provide training to all employees on materials, chemicals and waste management by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We commit to maintaining 100% compliance of all our products with global chemical standards by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation",
+        "targets": [
+          {
+            "target": "Encourage responsible water usage across all office and distribution facilities to reduce water consumption in operations by 25% by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Promote refillable and concentrated product solutions, helping reduce water usage by 30% by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Support sustainable water management practices in hospitality operations to minimize unnecessary wastewater by 40% by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with product safety and regulatory requirements for hotel amenities by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Increase customer satisfaction and sustainability ratings for our products by 25% by 2028, ensuring alignment with global hospitality sustainability certifications.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Encourage suppliers to develop fully biodegradable amenities that meet dermatological safety standards by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services and Advocacy",
+        "targets": [
+          {
+            "target": "Participate in at least 10 international sustainability and hospitality industry forums annually by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Launch 10 community-based sustainability awareness initiatives focused on waste reduction, circular economy practices, and eco-conscious hospitality by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Form strategic partnerships with 5 global sustainability organizations to enhance industry-wide environmental impact by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Leadership & Executive Team",
+        "duty": "Strategic decision-making, goal-setting, and resource allocation."
+      },
+      {
+        "role": "Leadership & Executive Team",
+        "duty": "Approve sustainability initiatives and ensure business alignment."
+      },
+      {
+        "role": "Leadership & Executive Team",
+        "duty": "Engage with regulators, investors, and clients on ESG policies."
+      },
+      {
+        "role": "Leadership & Executive Team",
+        "duty": "Oversee annual sustainability performance reviews."
+      },
+      {
+        "role": "Sustainability Task Force",
+        "duty": "Oversee implementation of sustainability goals."
+      },
+      {
+        "role": "Sustainability Task Force",
+        "duty": "Coordinate energy efficiency, waste reduction, and carbon footprint tracking."
+      },
+      {
+        "role": "Sustainability Task Force",
+        "duty": "Monitor progress and adjust strategies accordingly."
+      },
+      {
+        "role": "Sustainability Task Force",
+        "duty": "Ensure compliance with regulations and reporting standards."
+      },
+      {
+        "role": "Procurement and Logistics Team",
+        "duty": "Manage sustainable sourcing, packaging, and distribution."
+      },
+      {
+        "role": "Procurement and Logistics Team",
+        "duty": "Optimize sourcing strategies for eco-friendly products"
+      },
+      {
+        "role": "Procurement and Logistics Team",
+        "duty": "Implement low-carbon logistics and distribution practices"
+      },
+      {
+        "role": "Procurement and Logistics Team",
+        "duty": "Reduce packaging waste through supplier collaboration."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support company-wide sustainability initiatives and foster a green workplace culture."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow company policies on energy conservation and waste management."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in sustainability training & awareness programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively contribute ideas for improving eco-friendly practices."
+      }
+    ],
+    "monitoring": "To ensure transparency, accountability, and continuous progress toward sustainability goals, Stella Hospitality will implement a structured monitoring, reporting, and verification system.\n\nMonitoring Mechanisms:\n\nSmart energy meters for real-time tracking.\n\nMonthly waste audits and supplier sustainability checks.\n\nEmployee and customer feedback systems for sustainability improvements.\n\nReporting Framework:\n\nAnnually ESG Reports for internal review on emissions, waste, and energy efficiency.\n\nAnnual Sustainability Report detailing overall progress, challenges, and third-party audit results.\n\nDigital Dashboard & Web Portal for real-time KPI tracking and customer access to carbon footprint data.\n\nAudits & External Verification:\n\nEngaging external auditors for independent verification of emissions, waste management, and ESG compliance.\n\nAligning with ISO 14001 (Environmental Management), GRI, LEED, and carbon footprint assessment standards.\n\nAnnual assessments of vendors to ensure ethical sourcing, low-carbon logistics, and compliance with sustainability policies.\n\nRegular verification of adherence to environmental laws and international sustainability frameworks.\n\nThe Environmental Policy is publicly available on Stella Hospitality’s website and shared through various stakeholder communication channels.\n\nEmployees are kept informed of updates and expected to integrate these practices into their work.",
+    "reviewMechanism": "The Environmental Safety Office is responsible for overseeing the implementation and review of this policy. This policy will be reviewed annually to ensure its effectiveness and relevance. Updates and changes will be communicated to all stakeholders as necessary, reflecting any operational or regulatory changes, and adapting to evolving environmental challenges."
+  },
+  "sourcePath": "Policies - Kenal/Stella Hospitality/Environmental policy Stella Hospitality.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Stella Hospitality/Environmental policy Stella Hospitality.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 11930,
+  "parsedAt": "2026-09-11T07:29:43.820Z"
+}

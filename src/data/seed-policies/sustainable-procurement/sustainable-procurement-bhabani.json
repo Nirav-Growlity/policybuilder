@@ -1,0 +1,208 @@
+{
+  "id": "sustainable-procurement-bhabani",
+  "name": "Bhabani",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Sourcing Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Bhabani Colors Pvt. Ltd.",
+      "industry": "",
+      "site": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044",
+      "sites": [
+        {
+          "location": "Bhabani Colors Pvt. Ltd.",
+          "address": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Bhabani Colors Pvt. Ltd.",
+          "address": "SP7, MIA, Alwar - 301030, Rajasthan",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Bhabani Colors Pvt. Ltd. is firmly committed to sourcing materials and services in a manner that reflects its dedication to sustainability, environmental responsibility, and respect for human rights. The company recognizes that sustainable sourcing plays a vital role in reducing environmental impacts, promoting ethical labor practices, and supporting the long-term success of both the business and its supply chain. Through responsible procurement, Bhabani Colors strives to minimize its ecological footprint while contributing positively to the communities in which it operates.\n\nThis policy establishes a structured approach to integrating sustainability into the company’s procurement practices, with clear and measurable targets that guide environmental stewardship and fair labor standards. Bhabani Colors is committed to working closely with suppliers who share these values, strengthening partnerships that advance responsible sourcing. By aligning its operations with strong ethical and sustainability principles, the company ensures its supply chain reflects its commitment to social and environmental responsibility.",
+      "declaration": "Bhabani Colors Pvt. Ltd. is committed to embedding sustainability into all procurement activities by integrating environmental, social, and ethical considerations into sourcing decisions. The Company works collaboratively with suppliers to promote responsible practices, legal compliance, and respect for labor and human rights standards. Through continuous improvement and alignment with recognized sustainability frameworks, Bhabani Colors aims to build a responsible, resilient, and transparent supply chain that supports long-term business value and sustainable development.",
+      "scope": "This policy applies to all procurement activities of Bhabani Colors Pvt. Ltd. and covers every stage of the sourcing and supplier management process. It is applicable to all departments involved in purchasing raw materials, goods, and services supporting operations. The scope includes all direct and indirect suppliers, contractors, and service providers, and extends to supplier selection, evaluation, onboarding, performance monitoring, and long-term supplier relationship management."
+    },
+    "focusAreas": [
+      "Environmentally Responsible Sourcing: Prefer eco-friendly, recycled, and low-carbon materials and suppliers.",
+      "Supplier Social Responsibility: Work with suppliers who uphold fair labor practices, safe working conditions, and respect human rights.",
+      "Ethical Supplier Practices: Engage only with suppliers who follow legal, ethical, and anti-corruption standards.",
+      "Local and Inclusive Sourcing: Prioritize local, regional, and diverse suppliers to strengthen community development.",
+      "Capacity Building & Training: Support suppliers in improving sustainability performance through training and collaboration."
+    ],
+    "qualitative": {
+      "Environmentally Responsible sourcing": [
+        "Encourage suppliers to adopt environmentally responsible practices.",
+        "Partner with suppliers who implement recognized environmental management systems (e.g., ISO 14001) and demonstrate measurable improvements in resource efficiency, emissions, and waste reduction.",
+        "Promote use of eco-friendly materials and sustainable production methods."
+      ],
+      "Supplier Social Responsibility": [
+        "Ensure suppliers adhere to anti-child labor, anti-forced labor, and human rights principles.",
+        "Collaborate with suppliers that promote workforce development, inclusion, diversity, and employee well-being.",
+        "Implement supplier self-assessments, audits, and remediation programs to monitor social responsibility performance and drive continuous improvement."
+      ],
+      "Ethical Supplier Practices": [
+        "Promote transparency in sourcing and procurement practices.",
+        "Promote a culture of ethical behavior and responsible decision-making among all supply chain partners."
+      ],
+      "Local and Inclusive Sourcing": [
+        "Ensure procurement decisions maintain high standards of ethics, transparency, and regulatory compliance.",
+        "Support supplier diversity by including local and diverse vendors in the supply base.",
+        "Develop long-term partnerships with suppliers demonstrating social and environmental responsibility."
+      ],
+      "Capacity Building and Training": [
+        "Enhance ESG knowledge and skills among suppliers and procurement teams through structured training programs.",
+        "Encourage proactive risk management and responsible decision-making in procurement and supplier operations.",
+        "Support ongoing improvement in supplier ESG performance through guidance, collaboration, and follow-up."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible Sourcing",
+        "targets": [
+          {
+            "target": "To ensure 75% suppliers comply with the company’s environmental standards, including reducing carbon emissions, water usage, and waste generation by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce the environmental impact of procurement by 20% by year 2030 through the use of eco-friendly materials and sustainable processes.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct environmental performance on-site audits for 100% of suppliers by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility",
+        "targets": [
+          {
+            "target": "Assess 100% of suppliers for social compliance covering labor rights, health & safety, and human rights by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 10% of suppliers implement one worker welfare or social improvement initiative by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Engage 100% of suppliers in awareness programs on responsible labor practices and human rights by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers sign and comply with the Bhabani Supplier Code of Conduct by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% participation of procurement and supplier management employees in annual ethics and compliance training.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement a supplier whistleblower mechanism with 100% of suppliers informed of the process by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Local and Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Achieve 40% of procurement spend with local, regional, or diverse suppliers by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Target 5% growth in engagement with women-owned suppliers by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Capacity Building &Training",
+        "targets": [
+          {
+            "target": "Achieve 75% supplier participation in sustainability training sessions by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct two supplier capacity-building or collaboration initiatives on ESG improvement areas till year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Sustainability Manager",
+        "duty": "The Sustainability Manager will be responsible for collecting, compiling, and preparing the annual Sustainable sourcing performance report."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Responsible for overseeing the implementation of the sustainable sourcing policy, conducting supplier assessments, and ensuring alignment with sustainability targets."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "Responsible for sourcing suppliers that meet the company’s environmental and labor standards, engaging suppliers in training, and ensuring compliance with sustainability guidelines."
+      },
+      {
+        "role": "HR and Compliance Team",
+        "duty": "Responsible for monitoring and ensuring that suppliers comply with labor and human rights standards, and reporting any issues related to non-compliance."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Oversee implementation, allocate resources, enforce compliance, and review performance regularly."
+      }
+    ],
+    "monitoring": "Bhabani Colors Pvt. Ltd. continuously monitors its sustainable procurement performance across ethical sourcing, supplier environmental and social compliance, health and safety, and regulatory adherence. Key Performance Indicators (KPIs) are tracked through internal procurement and supplier management systems to measure progress against sustainability goals. Performance is reviewed quarterly and consolidated for senior management to guide responsible sourcing and risk-based decisions. Annual evaluations assess achievements, identify gaps, and define improvement actions, with relevant outcomes communicated to stakeholders to ensure transparency and accountability. All monitoring and reporting processes comply with applicable laws, recognized sustainability frameworks, and industry best practices, ensuring reliability and credibility.",
+    "reviewMechanism": "The Sustainability Manager, will conduct annual review of this policy to assess the effectiveness of this sustainable sourcing policy. This includes evaluating supplier performance against sustainability criteria, monitoring the implementation of responsible sourcing practices, and addressing any instances of non-compliance. The review process will involve analyzing supplier audits, feedback from procurement teams, and monitoring the results of training and capacity-building programs. Any updates to sourcing policies or procedures will be made based on these reviews to ensure alignment with environmental, social, and governance (ESG) standards and to maintain a robust commitment to sustainable procurement practices across the organization."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Bhabani/4. Sustainable Sourcing Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Bhabani/4. Sustainable Sourcing Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 11121,
+  "parsedAt": "2026-09-11T07:34:01.032Z"
+}

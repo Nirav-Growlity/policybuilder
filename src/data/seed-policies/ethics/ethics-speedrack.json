@@ -1,0 +1,424 @@
+{
+  "id": "ethics-speedrack",
+  "name": "Speedrack",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 4. Business Ethics Policy_grw_v1.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Speedrack Products Group Ltd",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Manufacturing Site",
+          "address": "42 Cole St, Quincy, MI 49082",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Corporate Office",
+          "address": "3060 S Industrial Dr NW Walker, MI 49544",
+          "primaryFunction": "Corporate office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Speedrack Products Group Ltd is committed to conducting all its operations with the highest standards of ethical conduct, integrity, and transparency. As a leading U.S. manufacturer of advanced storage and racking systems, we recognize that our business decisions from procurement and manufacturing to sales and distribution have an impact on our employees, customers, suppliers, and communities. Through this policy, we aim to embed ethical behavior, anti-corruption practices, and professional integrity into every stage of our business operations. Our goal is to ensure honest dealings, prevent misconduct, comply with laws and regulations, and maintain trust with all stakeholders. By fostering a culture of ethics and accountability, Speedrack seeks to protect its reputation, mitigate risks, and create long-term sustainable value.",
+      "declaration": "To define Speedrack’s overarching commitment to ethical business conduct and anti-corruption principles.\n\nTo ensure all operations, products, and services comply with applicable laws, regulations, and industry standards.\n\nTo prevent bribery, fraud, conflicts of interest, and unethical financial or operational practices.\n\nTo promote transparency, accountability, and honesty in decision-making.\n\nTo provide clear guidance to employees, contractors, and partners on ethical conduct and reporting mechanisms.\n\nTo establish procedures for addressing violations and implementing corrective actions.\n\nTo engage employees, suppliers, and partners in promoting a culture of integrity and responsible business practices.\n\nTo provide a framework for monitoring, reviewing, and continuously improving business ethics performance.",
+      "scope": "This policy applies to all employees, contractors, partners, suppliers, customers, and individuals representing the Company. It covers all operations, corporate offices, manufacturing facilities, distribution sites, and any other premises under the Company’s management."
+    },
+    "focusAreas": [
+      "Integrity & Transparency",
+      "Anti-Corruption & Bribery Prevention",
+      "Conflict of Interest Management",
+      "Financial & Operational Accuracy",
+      "Compliance with Laws & Standards",
+      "Ethical Supplier & Partner Engagement",
+      "Whistleblower Protection & Reporting",
+      "Training & Awareness",
+      "Fraud Prevention",
+      "Anti-Money Laundering",
+      "Responsible Information Management",
+      "Anti-Competitive Practices"
+    ],
+    "qualitative": {
+      "Integrity & Transparency": [
+        "Conduct business honestly and communicate openly with stakeholders.",
+        "This Business Ethics Policy defines the principles that guide our conduct, safeguard our reputation, and support a culture built on trust, respect, and accountability.",
+        "Speedrack maintains a zero-tolerance stance toward unethical behavior and is committed to upholding the highest standards of integrity across all operations.",
+        "Always behave honestly, respectfully, and professionally in all business interactions.",
+        "Communicate clearly, accurately, and truthfully with clients, colleagues, suppliers, and stakeholders.",
+        "Treat everyone with dignity and respect, even in difficult or stressful circumstances.",
+        "Make decisions guided by honesty, fairness, and responsibility.",
+        "Consider how actions may impact employees, customers, suppliers, and the broader community."
+      ],
+      "Anti-Corruption & Bribery Prevention": [
+        "Prohibit offering, receiving, or soliciting bribes, kickbacks, or improper incentives.",
+        "Maintaining zero tolerance for any form of bribery, kickbacks, or undue influence in business transactions is a top priority.",
+        "Mandatory anti-corruption training will be delivered to all employees, contractors, and relevant partners.",
+        "We plan to implement robust internal controls and due diligence procedures for all high-risk transactions, third-party engagements, and procurement activities",
+        "We will integrate anti-corruption clauses in all supplier and partner agreements.",
+        "Do not offer, give, request, or accept bribes, kickbacks, or improper payments.",
+        "Conduct business transparently and avoid fraudulent activities.",
+        "Politely refuse gifts of high value and report the offer to Compliance."
+      ],
+      "Conflict of Interest Management": [
+        "Disclose and avoid situations where personal interests could influence professional decisions.",
+        "We are planning to ensure employees disclose any personal, financial, or family interests that could influence professional decisions.",
+        "We aim to provide clear guidance to managers on evaluating and mitigating potential conflicts of interest.",
+        "We aim to raise awareness through regular training sessions on conflict-of-interest scenarios, ethical decision-making, and reporting obligations across all departments.",
+        "We are committed to ensuring that all conflicts of interest are fully reported and resolved, maintaining our track record of a transparent and clean compliance record.",
+        "Avoid situations where personal interests could conflict with professional responsibilities.",
+        "Do not accept gifts, payments, or favors that may influence work decisions.",
+        "Disclose any relationships or circumstances that may affect objective decision-making."
+      ],
+      "Financial & Operational Accuracy": [
+        "Ensure all financial records, reporting, and business data are accurate, complete, and verifiable.",
+        "Maintain accurate records and financial documentation.",
+        "Maintain complete, truthful, and accurate records in all reporting, documentation, and communication.",
+        "Do not alter, manipulate, or falsify information for personal benefit or to influence results.",
+        "Ensure transparency and accountability in financial, operational, and safety-related records."
+      ],
+      "Compliance with Laws & Standards": [
+        "Follow all relevant anti-corruption, fraud, labor, and corporate governance regulations.",
+        "Follow all applicable laws, regulations, and internal policies without exception.",
+        "Participate in required training programs and follow established procedures.",
+        "Report any suspected illegal or unethical activities immediately.",
+        "Strict adherence to anti-money laundering (AML) regulations will be maintained, with due diligence applied to all financial transactions."
+      ],
+      "Ethical Supplier & Partner Engagement": [
+        "Partner only with entities that adhere to similar ethical and anti-corruption principles.",
+        "Suppliers, contractors, and business partners are expected to uphold equivalent ethical and compliance standards. Contracts may be suspended or terminated if unethical or illegal practices are identified.",
+        "We will screen 100% of suppliers and partners for compliance with anti-corruption standards by 2030."
+      ],
+      "Whistleblower Protection & Reporting": [
+        "Encourage reporting of suspected unethical behavior without fear of retaliation.",
+        "Confidential and accessible channels will be available for employees, contractors, and stakeholders to report unethical or illegal practices.",
+        "Protection against retaliation or discrimination will be enforced for all whistleblowers.",
+        "All reported concerns will be investigated promptly, fairly, and transparently.",
+        "We aim to encourage a culture of reporting suspicious activities without fear of retaliation."
+      ],
+      "Training & Awareness": [
+        "Educate all employees and relevant stakeholders on ethical standards, anti-corruption practices, and company policies.",
+        "We will implement structured employee training programs to enhance awareness, skills, and compliance with organizational policies, ethical standards, and regulatory requirements.",
+        "The company is committed to delivering continuous cybersecurity awareness and data privacy training to all employees, fostering a culture of digital responsibility.",
+        "Annual awareness campaigns to ensure all employees understand reporting mechanisms."
+      ],
+      "Fraud Prevention": [
+        "Robust internal controls and approval procedures will be established to detect and prevent fraudulent activities.",
+        "We aim to enhance our internal controls to effectively identify, report, and prevent fraud across all operations and financial processes.",
+        "Aim to cover 70% of employees through mandatory fraud prevention training by 2030.",
+        "We strive to conduct annual internal audits covering 100% of high-risk business processes by 2030.",
+        "We aim to achieve zero confirmed fraud incidents per year."
+      ],
+      "Anti-Money Laundering": [
+        "We aim to screen and verify customers, partners, and financial transactions to prevent illicit activity.",
+        "We are committed to providing regular training to employees in relevant departments on anti-money laundering (AML) regulations, risk indicators, and due diligence procedures to promote informed and vigilant decision-making.",
+        "We ensure thorough Know Your Customer (KYC) and Know Your Business (KYB) checks are completed prior to establishing partnerships, signing contracts, or executing significant financial transactions.",
+        "We maintain secure and organized records of all financial transactions and third-party engagements in compliance with AML regulations, supporting audit readiness and regulatory obligations."
+      ],
+      "Responsible Information Management": [
+        "We are planning to maintain confidentiality, integrity, and security of sensitive company, employee, and customer information.",
+        "We aim to ensure all critical systems and software are regularly updated and patched to reduce exposure to cybersecurity threats and vulnerabilities.",
+        "We implement data encryption, multi-factor authentication, and secure access controls across all systems handling confidential or sensitive information.",
+        "Regular internal audits and security assessments are conducted to identify risks, detect anomalies, and ensure compliance with data protection regulations, including the IT Act, 2000.",
+        "Protect all confidential business information, including employee, customer, and supplier data.",
+        "Do not share internal documents, pricing, or trade information without authorization.",
+        "Use company data and digital systems responsibly and securely."
+      ],
+      "Anti-Competitive Practices": [
+        "Fair competition will be promoted, and practices that undermine competition, such as price-fixing, market allocation, or collusion, are strictly prohibited.",
+        "Policies and procedures will be strengthened to ensure compliance with all antitrust and competition laws.",
+        "Employees and partners will receive training to recognize and avoid anti-competitive behavior.",
+        "Regular internal audits conducted to identify and mitigate potential anti-competitive risks."
+      ],
+      "Disciplinary Measures for Violations": [
+        "Any breach of this Business Ethics Policy will be handled with seriousness and addressed through fair, responsible, and transparent procedures.",
+        "All reported or suspected violations will undergo a thorough, impartial investigation conducted by the Human Resources and Compliance Teams.",
+        "Employees found to have violated the policy may receive a verbal or written warning, depending on the circumstances and impact of the violation.",
+        "For serious or complex cases, the employee may be temporarily suspended from duty pending the outcome of the investigation.",
+        "Repeated misconduct or severe breaches of ethical, safety, or legal requirements may result in the termination of employment in line with company policies and employment laws.",
+        "Violations involving fraud, corruption, bribery, theft, falsification of records, harassment, discrimination, or regulatory non-compliance may be escalated to appropriate legal or government authorities.",
+        "Employees may be required to participate in corrective measures such as ethics training, counseling, or performance improvement programs to prevent recurrence.",
+        "Managers or supervisors who knowingly ignore violations or fail to enforce this Policy may face disciplinary consequences.",
+        "Misconduct including bribery, corruption, harassment, discrimination, retaliation, intentional safety rule violations, or deliberate misuse/falsification of information will result in immediate dismissal and potential legal action."
+      ],
+      "Employee Conduct": [
+        "Support a workplace free from harassment, discrimination, retaliation, and bullying.",
+        "Value diversity and promote equal opportunity.",
+        "Follow all safety guidelines and immediately report hazards or unsafe behavior.",
+        "Do not engage in activities that put yourself or others at risk.",
+        "Use company equipment, tools, technology, and financial resources responsibly and only for legitimate business purposes.",
+        "Protect company property from theft, damage, misuse, or unauthorized use.",
+        "Do not use company time or resources for personal gain or external work without approval.",
+        "Communicate responsibly in both internal and external platforms, including social media.",
+        "Only authorized personnel may speak on behalf of the company to media or public forums.",
+        "Work cooperatively with team members and share responsibility for team results.",
+        "Accept responsibility for mistakes and focus on corrective solutions.",
+        "Seek guidance from leadership or Compliance if unsure about the ethical implications of a decision."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption & Bribery Prevention",
+        "targets": [
+          {
+            "target": "100% compliance with local anti-corruption laws, including the Prevention of Corruption Act, 1988.",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": ""
+          },
+          {
+            "target": "70% of employees and contractors complete annual anti-corruption training",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "zero incidents of proven bribery or corruption annually",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "Annually"
+          },
+          {
+            "target": "100% of suppliers and partners screened for compliance with anti-corruption standards",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Management",
+        "targets": [
+          {
+            "target": "100% of employees trained on annual conflict of interest training",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% annual disclosure compliance from all employees in sensitive roles",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Resolve all conflict-of-interest cases identified through internal audits, targeting zero unresolved issues.",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Cover 70% of employees through mandatory fraud prevention training",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual internal audits covering 100% of high-risk business processes",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "zero confirmed fraud incidents per year",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "Per year"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "100% compliance with the Prevention of Money Laundering Act (PMLA), 2002 and global AML standards.",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": ""
+          },
+          {
+            "target": "Review 100% of financial transactions above regulatory thresholds for AML compliance",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Annual training for 100% finance and procurement personnel on AML regulations",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "zero instances of non-compliance with AML reporting requirements.",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Management",
+        "targets": [
+          {
+            "target": "Implement multi-factor authentication on all digital platforms",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% annual training of employees on data protection, phishing, and cybersecurity risks",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct two cybersecurity audits per year to proactively identify and mitigate risks.",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "Per year"
+          },
+          {
+            "target": "100% encryption of all confidential employee and customer data",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "FY 2030"
+          },
+          {
+            "target": "zero data breaches or cybersecurity incidents",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Zero incidents of anti-competitive conduct across all business operations annually.",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "Annually"
+          },
+          {
+            "target": "100% of relevant employees trained on competition law compliance",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower Protection & Reporting",
+        "targets": [
+          {
+            "target": "100% of reported cases reviewed and resolved within a defined timeline annually.",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Zero cases of retaliation against whistleblowers.",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Leadership & Executive Management",
+        "duty": "Provide clear direction, resources, and support necessary for effective implementation of this policy."
+      },
+      {
+        "role": "Senior Leadership & Executive Management",
+        "duty": "Demonstrate ethical leadership through actions, decisions, and communication."
+      },
+      {
+        "role": "Senior Leadership & Executive Management",
+        "duty": "Ensure compliance with all applicable laws, regulations, and internal standards."
+      },
+      {
+        "role": "Senior Leadership & Executive Management",
+        "duty": "Promote a safe, respectful, transparent, and ethical workplace environment."
+      },
+      {
+        "role": "Senior Leadership & Executive Management",
+        "duty": "Review and act on reports of violations or concerns, ensuring fair and confidential handling."
+      },
+      {
+        "role": "Supervisors and Managers",
+        "duty": "Serve as role models for ethical conduct and reinforce policy expectations within their teams."
+      },
+      {
+        "role": "Supervisors and Managers",
+        "duty": "Ensure employees understand their responsibilities and receive appropriate guidance and training."
+      },
+      {
+        "role": "Supervisors and Managers",
+        "duty": "Encourage open dialogue and support employees in raising concerns without fear of retaliation."
+      },
+      {
+        "role": "Supervisors and Managers",
+        "duty": "Monitor daily adherence to ethical practices and report potential violations promptly."
+      },
+      {
+        "role": "Supervisors and Managers",
+        "duty": "Take corrective actions when necessary to prevent recurrence of ethical issues."
+      },
+      {
+        "role": "Employees",
+        "duty": "Read, understand, and comply with the Business Ethics Policy and all related Company policies."
+      },
+      {
+        "role": "Employees",
+        "duty": "Perform duties with honesty, professionalism, integrity, and respect for others."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report known or suspected violations, misconduct, conflicts of interest, or unethical behavior immediately."
+      },
+      {
+        "role": "Employees",
+        "duty": "Seek clarification or support when faced with ethical dilemmas or uncertain situations."
+      },
+      {
+        "role": "Employees",
+        "duty": "Protect confidential information, Company assets, and maintain a safe and respectful workplace."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Review policy annually or as needed."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Provide training, resources, and continuous education related to ethical conduct and policy requirements."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Facilitate reporting channels and ensure concerns are investigated promptly and impartially."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Maintain confidentiality and ensure protection from retaliation for individuals reporting in good faith."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Track policy compliance, monitor trends, and recommend improvements to enhance ethical practices."
+      }
+    ],
+    "monitoring": "Speedrack maintains systematic monitoring of ethical conduct through periodic reviews, compliance dashboards, incident reporting systems, and behavior risk assessments.\n\nThe People & Compliance Teams prepare an annual Ethics & Integrity Performance Report, summarizing elements such as misconduct case resolution timelines, training participation, conflict-of-interest disclosures, whistleblowing statistics, and cultural engagement outcomes.\n\nProgress, challenges, and improvement measures are presented to Executive Management and the Board to support transparent decision-making and reinforce accountability.\n\nSpeedrack provides accessible, confidential, and anonymous reporting mechanisms that enable employees and partners to raise ethical concerns safely and without fear of retaliation.\n\nSpeedrack Products Group Ltd is committed to continuously advancing ethical behavior and integrity across the organization. Performance is regularly evaluated through internal audits, stakeholder feedback, culture assessments, and external reviews. The company invests in training, digital compliance tools, awareness programs, and leadership development to strengthen ethical decision-making. We collaborates with employees, representatives, and supply chain partners to identify improvement opportunities, prevent misconduct, and uphold integrity. Corrective and preventive actions are taken promptly to address violations, close compliance gaps, and maintain trust and transparency.",
+    "reviewMechanism": "Chief Compliance Officer conducts an annual review or as needed of this Ethics Policy to assess compliance performance, identify improvement needs, and ensure alignment with evolving legal, ethical, and industry expectations. Updates or enhancements may be implemented based on review findings, governance priorities, or global regulatory changes. Any modifications or significant updates are communicated to employees, business partners, and relevant stakeholders to maintain clarity, transparency, and organizational alignment."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Speedrack/4. Business Ethics Policy_grw_v1.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Speedrack/4. Business Ethics Policy_grw_v1.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 23765,
+  "parsedAt": "2026-09-11T07:16:53.215Z"
+}

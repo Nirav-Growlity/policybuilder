@@ -1,0 +1,203 @@
+{
+  "id": "sustainable-procurement-graham",
+  "name": "Graham",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. SUSTAINABLE PROCUREMENT POLICY.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Graham Packaging Company",
+      "industry": "",
+      "site": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601",
+      "sites": [
+        {
+          "location": "Graham Packaging Company",
+          "address": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601",
+          "primaryFunction": "Plastic bottle manufacturing operations"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Graham Packaging, our sustainable procurement policy reflects our deep commitment to environmental responsibility, social equity, and economic prosperity. We understand that our actions today impact the world tomorrow, and thus, we operate with a triple bottom line approach, valuing people, planet, and profit equally. Our plastic bottle manufacturing operations are guided by this ethos, as we strive to build a sustainable future for generations to come. By integrating sustainable practices into our procurement processes, we not only minimize our environmental footprint but also contribute to the well-being of communities and foster innovation within our industry.",
+      "declaration": "Graham Packaging is committed to sustainable procurement practices. We prioritize ethical sourcing, environmental responsibility, and community engagement in our supply chain. Through continuous improvement and stakeholder collaboration, we aim to build a sustainable future while delivering value to our customers.",
+      "scope": "This Policy applies exclusively to the operations of Graham Packaging Company, encompassing all employees, contractors, suppliers, and stakeholders directly associated with our facilities."
+    },
+    "focusAreas": [
+      "Supplier Environmental Issues",
+      "Supplier Social Issues"
+    ],
+    "qualitative": {
+      "Supplier Environmental Issues": [
+        "Material Sourcing: Prioritize suppliers who source materials sustainably, such as recycled plastics or bio-based materials. For example, collaborating with suppliers who offer certified recycled plastics derived from post-consumer waste.",
+        "Waste Management: Partner with suppliers to minimize waste generation through recycling and reuse initiatives. For instance, establishing a closed-loop system with suppliers for the collection and recycling of plastic waste generated during production.",
+        "Water Conservation: Encourage water-saving technologies to reduce water usage in production processes. This could involve implementing water recycling systems or investing in water-efficient equipment.",
+        "Emissions Reduction: Implement measures to monitor and reduce greenhouse gas emissions across operations. For example, transitioning to cleaner energy sources or optimizing transportation routes to minimize carbon emissions."
+      ],
+      "Supplier Social Issues": [
+        "Labor Standards: Ensure suppliers provide safe working conditions and fair wages for employees. Conduct regular audits to verify compliance with labor regulations and address any identified issues promptly.",
+        "Diversity and Inclusion: Promote diversity by including minority-owned and women-owned businesses in the supply chain. Actively seek out diverse suppliers and provide them with opportunities to participate in procurement processes.",
+        "Community Engagement: Encourage suppliers to support local community projects and initiatives. Partner with suppliers to sponsor community events or volunteer programs aimed at improving the well-being of local communities.",
+        "Ethical Business Practices: Require suppliers to uphold ethical standards and comply with relevant regulations. Incorporate ethical conduct clauses into supplier contracts and conduct regular assessments of supplier compliance."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Material Sourcing",
+        "targets": [
+          {
+            "target": "Increase the percentage of materials sourced from sustainable and eco-friendly sources to 50% by 2025, compared to 2018 levels.",
+            "baseline": "2018 levels",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Reduce waste generation by 30% compared to 2018 levels through improved recycling and reuse initiatives by 2025.",
+            "baseline": "2018 levels",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure that 90% of suppliers have implemented effective waste management strategies by 2025 compared to 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation",
+        "targets": [
+          {
+            "target": "Decrease water usage by 20% per unit of production by 2025 compared to 2018 levels.",
+            "baseline": "2018 levels",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement water-saving technologies in 100% of manufacturing facilities by 2025 compared to 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Emissions Reduction",
+        "targets": [
+          {
+            "target": "Reduce greenhouse gas emissions by 40% across manufacturing processes and transportation by 2025 compared to 2018 levels.",
+            "baseline": "2018 levels",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Labor Standards",
+        "targets": [
+          {
+            "target": "Ensure that 100% of suppliers adhere to fair labour standards and provide safe working conditions by 2025 compared to 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Conduct regular audits with 95% compliance with labour standards across the supply chain by 2025 compared to 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Diversity and Inclusion",
+        "targets": [
+          {
+            "target": "Increase the representation of minority-owned and women-owned businesses in the supply chain by 25% by 2025, compared to 2018 levels.",
+            "baseline": "2018 levels",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Community Engagement",
+        "targets": [
+          {
+            "target": "Engage in at least three community development projects annually through partnerships with suppliers by 2025 compared to 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Allocate 1% of annual procurement budget towards community engagement initiatives by 2025 compared to 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Business Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers uphold ethical business practices, including transparency and integrity, by 2025 compared to 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement a whistleblower mechanism to report unethical practices, achieving a 95% resolution rate by 2025 compared to 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Integrate ESG and sustainability criteria into supplier selection, contracting, and ongoing performance management."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Develop sustainable procurement standards, assist with supplier ESG evaluations, and track supply-chain targets."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Comply with the Supplier Code of Conduct, provide requested disclosures, and participate in sustainability audits."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Approve sustainable procurement commitments, allocate resources, and review supply chain risk reports."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Adhere to responsible purchasing guidelines and support sustainable procurement practices."
+      }
+    ],
+    "monitoring": "Continuous improvement is integral to our sustainable procurement strategy at Graham Packaging.\n\nWe focus on optimizing processes, monitoring performance, and soliciting feedback from stakeholders to drive positive change.\n\nThrough ongoing training, innovation, and collaboration, we strive to enhance sustainability across our supply chain.\n\nBy benchmarking against industry standards, managing risks, and fostering a culture of innovation, we ensure that our sustainability efforts evolve and improve over time, leading to a more sustainable future for all.\n\nWe have established a robust reporting mechanism to monitor our progress and identify areas for improvement.\n\nRegularly collect data on supplier performance related to environmental and social practices\n\nMaintain transparency in reporting and engage stakeholders in the process.",
+    "reviewMechanism": "Annually assess policy effectiveness, reviewing achievements, challenges, and opportunities to ensure alignment with sustainability goals and industry best practices. Adjust strategies as needed to drive continuous improvement.\n\nBased on the findings of this yearly review, we propose necessary adjustments or enhancements to uphold our commitment to Sustainable Procurement."
+  },
+  "sourcePath": "Policies - Kenal/Graham/4. SUSTAINABLE PROCUREMENT POLICY.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Graham/4. SUSTAINABLE PROCUREMENT POLICY.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 8269,
+  "parsedAt": "2026-09-11T07:23:57.793Z"
+}

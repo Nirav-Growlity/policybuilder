@@ -1,0 +1,219 @@
+{
+  "id": "labour-human-rights-amwl",
+  "name": "AMWL",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labour and Human Rights Policy - AMWL.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Agrawal Metal Works Pvt. Ltd.",
+      "industry": "",
+      "site": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India",
+      "sites": [
+        {
+          "location": "Agrawal Metal Works Pvt. Ltd.",
+          "address": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Jhajjar Road, Rewari",
+          "address": "Jhajjar Road, Rewari-123401, Haryana, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "205, “Arunachal Building”",
+          "address": "205, “Arunachal Building” 19, Barakhamba Road –110001, New Delhi, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Agrawal Metal Works Pvt. Ltd., we are deeply committed to uphold the highest standards of labor and human rights. Recognizing the integral role that our workforce plays in our success, we strive to create a safe, fair, and respectful working environment. Our Policy on labor and human rights underscores our dedication to ethical practices, fair treatment, and the well-being of all employees. We adhere to national and international regulations, ensuring that our operations not only comply with but exceed the expectations for labor rights and human dignity.\n\nThis policy encompasses principles of non-discrimination, fair wages, safe working conditions, freedom of association, and the prohibition of forced and child labor. We are committed to continuous improvement and regularly review our practices to align with the evolving standards of labor and human rights. Additionally, we engage with our employees and other stakeholders to foster a culture of respect, inclusivity, and shared responsibility. Through these efforts, Agrawal Metal Works aims to be a model of ethical conduct and social responsibility in the industry.",
+      "declaration": "At Agrawal Metal Works Pvt. Ltd., our goal is to ensure a workplace environment that respects and upholds the rights of all individuals. Building upon our baseline in the FY 2019-20, we strive to implement fair labor practices, uphold non-discrimination policies, ensure fair wages, promote safe working conditions, and prohibit forced and child labor. We embrace freedom of association and collective bargaining rights, engaging with our employees and stakeholders to foster a culture of equality, respect, and continuous improvement in labor standards.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Employee Health and Safety",
+      "Working Conditions",
+      "Social Dialogue",
+      "Career Management and Training",
+      "Child Labor, Forced Labor, and Human Trafficking",
+      "Discrimination and Harassment",
+      "External Stakeholder Human Rights"
+    ],
+    "qualitative": {
+      "Employee Health and Safety": [
+        "Ensure a safe and healthy work environment through regular risk assessments, safety training, and access to health and wellness resources.",
+        "To Implement regular safety training programs to enhance awareness and reduce workplace accidents.",
+        "Improve ventilation and lighting in all workspaces to enhance comfort and productivity.",
+        "Implement ergonomic assessments and improvements across all departments to prevent workplace injuries."
+      ],
+      "Working Conditions": [
+        "Maintain ethical and supportive working conditions that promote employee well-being, dignity, and work-life balance.",
+        "Foster a collaborative work environment through regular communication and feedback mechanisms between management and employees."
+      ],
+      "Social Dialogue": [
+        "Encourage open communication through structured engagement channels, grievance redressal mechanisms, and regular dialogue between employees and management."
+      ],
+      "Career Management and Training": [
+        "Support professional growth through skill development programs, job-specific training, and opportunities for internal advancement.",
+        "Implement mentorship programs to support career development and advancement opportunities."
+      ],
+      "Child Labor, Forced Labor, and Human Trafficking": [
+        "Enforce a strict zero-tolerance policy across all operations and supply chains, ensuring compliance with labor laws and ethical standards.",
+        "Conduct regular annual audits to ensure compliance with policies prohibiting child and forced labor throughout all our departments."
+      ],
+      "Discrimination and Harassment": [
+        "Foster a diverse and inclusive workplace where all individuals are treated fairly and respectfully, with clear policies against any form of discrimination or harassment.",
+        "Ensure an inclusive, respectful workplace free of bias, discrimination, and harassment and hence maintain zero cases of harassment or discrimination."
+      ],
+      "External Stakeholder Human Rights": [
+        "Work closely with suppliers, contractors, and partners to uphold human rights principles and promote ethical labor practices throughout the value chain.",
+        "Engage with suppliers and contractors to ensure they uphold human rights standards aligned with company policies."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Maintain zero lost-time incidents due to work-related injuries",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Conduct surveys to maintain a 90% satisfaction rate among employees regarding working conditions",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Maintain a 100% employee participation rate in company-sponsored social events and forums",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Increase employee satisfaction with career development opportunities to 85% in annual surveys",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide role-specific training to 100% of relevant employees to enhance skills and job readiness",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Ensure that 100% of suppliers sign agreements committing to eliminate child and forced labor in their operations",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Maintain zero cases of harassment or discrimination",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Provide 100% of employees with annual anti-harassment and non-discrimination training",
+            "baseline": "",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct workplace climate surveys on discrimination and harassment till FY 2029-30 through survey forms filled by 100% employees",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Conduct regular assessments to verify compliance with human rights standards among external stakeholders, achieving 100% compliance rate",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Foster a respectful and inclusive workplace while ensuring leadership support for employee rights and well-being."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Communicate the policy clearly, maintain accurate employee records, and handle grievances in a timely and fair manner."
+      },
+      {
+        "role": "Supervisors & Line Managers",
+        "duty": "Ensure fair treatment, prevent workplace misconduct, and actively support a positive working environment."
+      },
+      {
+        "role": "Employees",
+        "duty": "Respect the rights of colleagues, adhere to company policies, and report any violations or concerns."
+      },
+      {
+        "role": "ESG & Compliance Team",
+        "duty": "Monitor adherence to the policy, conduct internal reviews, and update practices in line with legal and ethical standards."
+      }
+    ],
+    "monitoring": "Annual Compliance Reports: Publish detailed reports assessing our adherence to labor laws and human rights standards across all operational areas.\n\nInternal Audits and Assessments: Conduct regular audits to monitor compliance with policies and identify areas for improvement in labor and human rights practices.\n\nStakeholder Engagement: Engage with employees, unions, suppliers, and community stakeholders to gather feedback and address concerns related to labor and human rights.\n\nContinuous Improvement Initiatives: Implement corrective actions based on audit findings and stakeholder feedback to enhance our policies and practices.\n\nThis reporting mechanism ensures transparency, fosters trust among stakeholders, and reinforces our commitment to upholding ethical standards in labor and human rights at Agrawal Metal Works Pvt. Ltd.",
+    "reviewMechanism": "At Agrawal Metal Works Pvt. Ltd., we conduct annual assessments to ensure compliance with labour laws and human rights standards across operations. Our cross-functional review involves key departments to align policies with industry best practices. We actively gather stakeholder feedback for continuous improvement, fostering a workplace culture of equality and respect. This policy will be reviewed by the Human Resources Manager annually at Agrawal Metal Works Pvt. Ltd."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/AMWL/2. Labour and Human Rights Policy - AMWL.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/AMWL/2. Labour and Human Rights Policy - AMWL.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 9778,
+  "parsedAt": "2026-09-11T07:32:20.047Z"
+}

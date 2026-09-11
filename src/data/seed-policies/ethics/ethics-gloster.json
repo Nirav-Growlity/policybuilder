@@ -1,0 +1,337 @@
+{
+  "id": "ethics-gloster",
+  "name": "Gloster",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 4. Ethics Compliance Policy_GRW_v1_0301.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Gloster Limited",
+      "industry": "",
+      "site": "Head Office, 21, Strand Road, Kolkata 700001",
+      "sites": [
+        {
+          "location": "GLOSTER LIMITED-Ananya Unit",
+          "address": "P.O: Fort Gloster, Bauria, Howrah – 711310, West Bengal",
+          "primaryFunction": "Jute manufacturing operations"
+        },
+        {
+          "location": "GLOSTER LIMITED-Head Office",
+          "address": "Head Office, 21, Strand Road, Kolkata 700001",
+          "primaryFunction": "Head office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Head Office, 21, Strand Road, Kolkata 700001"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Gloster Limited, we are dedicated to upholding the highest levels of ethics and compliance within our jute manufacturing operations. Our Ethics & Compliance Policy is crafted to ensure integrity, transparency, and accountability throughout every aspect of our business. We aim to cultivate a work environment that promotes ethical conduct and adherence to all applicable laws and regulations. This policy highlights our commitment to ethical practices and the strategies we have put in place to meet these standards.\n\nWe continually assess and refine our policies to address emerging challenges and ensure that our practices remain aligned with the latest industry standards and best practices. Our goal is to build trust with our stakeholders and reinforce our reputation as a responsible and ethical organization.",
+      "declaration": "By implementing this policy, Gloster Limited aims to achieve the following outcomes:\n\nTo promote a culture of ethical behavior and integrity within our organization, ensuring that all employees and stakeholders adhere to our high standards of conduct.\n\nTo comply with all applicable laws and regulations governing our industry and operations, including anti-bribery, anti-money laundering, and data protection.\n\nTo prevent and address any instances of misconduct, fraud, or unethical behavior, ensuring a safe and transparent workplace for all employees.\n\nTo continuously review and improve our ethical practices and compliance mechanisms, adapting to changes in laws, regulations, and industry standards.",
+      "scope": "This Policy applies to all employees (at all levels), stakeholders (internal and external), partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Gloster Limited. It also applies to the following sites."
+    },
+    "focusAreas": [
+      "Anti-bribery and Corruption Prevention Measures",
+      "Ethical Conflict Resolution and Mediation",
+      "Financial Integrity and Anti-fraud Control Systems",
+      "Comprehensive Economic Crime Prevention Strategies",
+      "Promoting Fair Competition and Antitrust Compliance",
+      "Prevention of Data Manipulation and Integrity Maintenance",
+      "Intellectual Property Theft Prevention and Protection",
+      "Comprehensive Data Protection and Cybersecurity Measures"
+    ],
+    "qualitative": {
+      "Anti-bribery and Corruption Prevention Measures": [
+        "We aim to implement a comprehensive anti-corruption program with regular training and audits.",
+        "Our to transparency includes aiming for full disclosure of transactions above a certain commitment threshold."
+      ],
+      "Ethical Conflict Resolution and Mediation": [
+        "We aim to establish an independent ethics committee to address conflicts.",
+        "We aim to enhance our confidential whistle blowing system to reported ethical concerns.",
+        "We are in progress to train all employees to raise awareness about conflicts of interest."
+      ],
+      "Financial Integrity and Anti-fraud Control Systems": [
+        "We aim to implement automated fraud detection software to monitor transactions.",
+        "We aim to conduct regular financial audits and fraud prevention training.",
+        "We are in progress to implement robust internal control system."
+      ],
+      "Comprehensive Economic Crime Prevention Strategies": [
+        "We aim to implement advanced monitoring systems for all financial transactions.",
+        "We aim to conduct regular risk assessments across all business units aim to identify and mitigate economic crime and money laundering risks.",
+        "We aim to implement a comprehensive anti-money laundering program with regular training and audits."
+      ],
+      "Promoting Fair Competition and Antitrust Compliance": [
+        "We aim to comprehensive antitrust compliance program.",
+        "We strive to conduct regular antitrust risk assessments.",
+        "We aim to implement a comprehensive anti-trust program with regular training and audits.",
+        "Collaborative efforts with industry peers aim to establish common antitrust guidelines, promoting fair competition across the industry."
+      ],
+      "Prevention of Data Manipulation and Integrity Maintenance": [
+        "We are in process to implement advanced data validation systems.",
+        "A multi-level approval process for data changes is aimed at achieving adherence.",
+        "We are in process to implement blockchain technology for critical data storage.",
+        "We aim to maintain zero information security breach cases, continuing our record of secure data management."
+      ],
+      "Intellectual Property Theft Prevention and Protection": [
+        "We are in process to stringent access controls and monitoring systems.",
+        "We aim to conduct regular IP audits and training for employees."
+      ],
+      "Comprehensive Data Protection and Cybersecurity Measures": [
+        "We are in process to implement advanced encryption and security protocols.",
+        "We aim to implement a comprehensive information security program with regular training and audits.",
+        "Regular cybersecurity drills and training aim to cut successful phishing attempts.",
+        "We aim to implement a zero-trust security model to enhance cybersecurity.",
+        "We aim to train our employees on all ethical issues, including but not limited to corruption, anti-competitive practices, fraud, money laundering, antitrust, and information security."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-bribery and Corruption Prevention Measures",
+        "targets": [
+          {
+            "target": "ensuring the continuation of our 20-year record of zero bribery incidents",
+            "baseline": "20-year record of zero bribery incidents",
+            "deadline": "through at least 2029-30"
+          },
+          {
+            "target": "full disclosure of transactions above a certain commitment threshold",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "50% completion rate for risk assessments",
+            "baseline": "FY 2023-24 data",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Conflict Resolution and Mediation",
+        "targets": [
+          {
+            "target": "resolve 95% of reported issues within 20 days",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "continuation of our 20-year record of zero cases of conflict-of-interest incidents",
+            "baseline": "20-year record of zero cases of conflict-of-interest incidents",
+            "deadline": "through at least 2029-30"
+          },
+          {
+            "target": "reduce incidents of ethical misconduct by 75%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Financial Integrity and Anti-fraud Control Systems",
+        "targets": [
+          {
+            "target": "continuation of our 20-year record of zero Fraud incidents",
+            "baseline": "20-year record of zero Fraud incidents",
+            "deadline": "through at least 2029-30"
+          },
+          {
+            "target": "continuation of our 20-year record of zero fraud incidents",
+            "baseline": "20-year record of zero fraud incidents",
+            "deadline": "through at least 2029-30"
+          },
+          {
+            "target": "100% compliance with financial frameworks",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Comprehensive Economic Crime Prevention Strategies",
+        "targets": [
+          {
+            "target": "100% real-time screening for high-risk transactions and money laundering",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "95% risk mitigation rate",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "continuation of our 20-year record of zero cases of money laundering incidents",
+            "baseline": "20-year record of zero cases of money laundering incidents",
+            "deadline": "through at least 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Promoting Fair Competition and Antitrust Compliance",
+        "targets": [
+          {
+            "target": "train 50% all relevant employees, aiming for full training coverage",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "reduce potential violations by 50%",
+            "baseline": "FY 2023-24 levels",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "continuation of our 20-year record of zero cases of fair-competition incidents",
+            "baseline": "20-year record of zero cases of fair-competition incidents",
+            "deadline": "through at least 2029-30"
+          },
+          {
+            "target": "establish common antitrust guidelines",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Data Manipulation and Integrity Maintenance",
+        "targets": [
+          {
+            "target": "reduce incidents of data manipulation by 95%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "achieving 100% adherence",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "ensure 100% immutability and traceability of sensitive data",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "maintain zero information security breach cases",
+            "baseline": "record of secure data management",
+            "deadline": "through at least FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Intellectual Property Theft Prevention and Protection",
+        "targets": [
+          {
+            "target": "reduce the risk of intellectual property theft by 90%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "target 100% awareness of IP protection",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Comprehensive Data Protection and Cybersecurity Measures",
+        "targets": [
+          {
+            "target": "prevent 99% of unauthorized data access attempts",
+            "baseline": "FY 2023-24 levels",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "continuation of our 20-year record of zero cases of information security breach",
+            "baseline": "20-year record of zero cases of information security breach",
+            "deadline": "through at least 2029-30"
+          },
+          {
+            "target": "cut successful phishing attempts by 75%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "100% implementation across all systems",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "train 100% of our employees on all ethical issues",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "The Board will also evaluate the effectiveness of the ethics program annually and provide strategic guidance on emerging ethical challenges."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "They will ensure that resources allocated to the ethics program are sufficient to meet the company's ethical and compliance goals."
+      },
+      {
+        "role": "Ethics and Compliance Committee",
+        "duty": "The Committee will oversee the integration of ethical considerations into business practices and ensure adherence to industry regulations."
+      },
+      {
+        "role": "Ethics and Compliance Committee",
+        "duty": "They will also assess the effectiveness of the ethics training programs and recommend improvements as necessary."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Oversee the implementation the Ethics and Compliance Policy."
+      },
+      {
+        "role": "Chief Ethics and Compliance Officer",
+        "duty": "The Chief Ethics and Compliance Officer will regularly review compliance metrics and report trends to the Ethics and Compliance Committee."
+      },
+      {
+        "role": "Chief Ethics and Compliance Officer",
+        "duty": "They will work closely with other departments to ensure alignment with ethical standards and to address any compliance gaps."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Department Heads will ensure that ethical behavior is a key component of performance evaluations and reward systems."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "They will actively participate in the development and communication of ethics-related goals and initiatives within their teams."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees are encouraged to seek guidance on ethical dilemmas and to use the resources provided to make informed decisions."
+      },
+      {
+        "role": "Employees",
+        "duty": "They are expected to actively participate in ethics training and to contribute to a supportive environment for reporting concerns."
+      }
+    ],
+    "monitoring": "We will conduct regular and comprehensive ethics and compliance assessments to evaluate the effectiveness of our policies and procedures. These assessments will include:\n\nAnnual ethics audits conducted by an independent third party\n\nQuarterly compliance risk assessments across all business units\n\nAnnual employee surveys on ethical culture and awareness\n\nMonthly review of reported incidents and their resolutions\n\nBenchmarking against industry best practices and international standards\n\nWe maintain a robust system for reporting and investigating ethical concerns:\n\nMultiple reporting channels including an anonymous hotline, web portal, and in-person reporting\n\nClear and well-communicated procedures for submitting reports\n\nTrained investigators to handle all reports promptly and thoroughly\n\nRegular updates to reporters on the status of investigations\n\nA non-retaliation policy to protect those who report concerns in good faith\n\nMonthly Reports: Each department will submit a monthly ethics and compliance performance report to the Chief Ethics and Compliance Officer. These reports will include data on training completion rates, reported incidents, resolved cases, and progress toward specific ethical targets.\n\nQuarterly Reviews: The Ethics and Compliance Committee will compile and analyze monthly reports to produce a quarterly ethics and compliance performance review. This review will be presented to the Board of Directors and made available to all employees.\n\nAnnual Ethics Report: An annual comprehensive ethics and compliance report will be prepared, summarizing the yearly performance, progress toward goals, significant incidents and their resolutions, and outlining plans for the following year. This report will be shared with all stakeholders and made publicly available on the company's website.\n\nRegular Meetings: The Chief Ethics and Compliance Officer will hold monthly meetings with department heads to discuss ethics performance, challenges, and opportunities for improvement. These meetings will ensure that ethical initiatives are aligned with operational goals and that any issues are promptly addressed.\n\nEmployee Engagement: Bi-weekly updates on ethics and compliance matters will be provided to all employees through internal newsletters, emails, and the company intranet. An anonymous feedback mechanism will be maintained to encourage employees to share their thoughts on the company's ethical culture and suggest improvements.\n\nTransparency: We will maintain transparent communication with our stakeholders, including customers, suppliers, and local communities. Quarterly updates on our ethics and compliance performance and initiatives will be shared through various channels, such as newsletters, social media, and our website.\n\nStakeholder Meetings: Semi-annual stakeholder meetings will be held to discuss our ethics and compliance policy, share progress, and gather feedback. These meetings will provide a platform for open dialogue and collaborative problem-solving on ethical issues.",
+    "reviewMechanism": "At Gloster Limited, our commitment to continuous improvement is integral to maintaining high ethical standards and operational excellence. We will regularly assess and refine our ethics and compliance strategies to address emerging challenges and align with best practices. This includes incorporating feedback from stakeholders, reviewing performance metrics, and staying abreast of industry developments. Our process involves rigorous internal audits, annual ethics reviews, and regular updates to our policies based on assessment outcomes. We will also foster a culture of proactive learning through ongoing employee training and development programs. By leveraging insights from these evaluations and engaging with industry experts, we aim to enhance our ethical practices continually. Our goal is to ensure that our operations not only meet but exceed the expectations of our stakeholders and regulatory requirements.\n\nThis policy shall be reviewed annually and on an ad hoc basis by the Chief Compliance Officer and the Ethics Committee to ensure its continued effectiveness and relevance. Any material changes shall be approved by the Board of Directors."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Gloster/4. Ethics Compliance Policy_GRW_v1_0301.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Gloster/4. Ethics Compliance Policy_GRW_v1_0301.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 23848,
+  "parsedAt": "2026-09-11T07:07:57.250Z"
+}

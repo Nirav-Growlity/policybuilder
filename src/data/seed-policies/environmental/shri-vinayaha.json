@@ -1,0 +1,195 @@
+{
+  "id": "shri-vinayaha",
+  "name": "Shri Vinayaha",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Green Practices Policy - SVT.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Sri Vinayaha Tex",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "SHRI VINAYAHA TEX",
+          "address": "",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Sri Vinayaha Tex, a global supplier and exporter of Indian Home Textile Products, is dedicated to maintaining the highest standards of environmental stewardship. We recognize our responsibility to minimize our environmental impact and commit to sustainable practices across our operations. Our products, crafted from 100% Cotton, 100% Polyester, and Cotton/Polyester blends, are manufactured using environmentally responsible methods. We are devoted to integrating sustainability into every aspect of our business, ensuring that our practices promote the well-being of the environment, our consumers, and the communities we serve. Through continuous improvement and adherence to global environmental standards, we strive to lead the textile industry towards a more sustainable future.",
+      "declaration": "Sri Vinayaha Tex is committed to integrate environmental considerations into all aspects of our business operations. We aim to reduce our environmental footprint through continuous improvement and adherence to best practices in sustainability. Our policy sets forth specific qualitative and quantitative targets to guide our efforts and ensure accountability. Our baseline year for evaluating and tracking progress in the environmental areas is 2023.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Water management",
+      "Waste minimization and resource efficiency",
+      "Air quality and carbon emissions",
+      "Sustainable procurement and supply chain",
+      "Energy efficiency and renewable energy",
+      "Chemicals management",
+      "Biodiversity and green cover",
+      "Product safety and environmental information",
+      "Employee awareness and compliance",
+      "Community environmental initiatives"
+    ],
+    "qualitative": {
+      "Water management": [
+        "Implement water-efficient technologies in dyeing and weaving processes."
+      ],
+      "Waste minimization and resource efficiency": [
+        "Foster a culture of waste minimization and resource efficiency within the company."
+      ],
+      "Air quality and carbon emissions": [
+        "Regularly monitor and report air quality metrics to ensure compliance and transparency."
+      ],
+      "Sustainable procurement and supply chain": [
+        "Engage with suppliers to improve their sustainability practices and standards and develop a robust supplier code of conduct focused on sustainability."
+      ],
+      "Energy efficiency and renewable energy": [
+        "Promote the adoption of energy-efficient technologies and practices in all facilities and also educate the employees for it’s implementation."
+      ],
+      "Chemicals management": [
+        "Promote the use of eco-friendly and non-toxic chemicals in all manufacturing processes."
+      ],
+      "Biodiversity and green cover": [
+        "Support conservation projects and initiatives that protect local ecosystems."
+      ],
+      "Product safety and environmental information": [
+        "Ensure all products are free from harmful substances and provide transparent information to consumers about product safety and environmental impact."
+      ],
+      "Employee awareness and compliance": [
+        "Conduct regular training programs to ensure all employees are aware of compliance requirements."
+      ],
+      "Community environmental initiatives": [
+        "Collaborate with local organizations to support environmental initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Water management",
+        "targets": [
+          {
+            "target": "Reduce water consumption in dyeing and weaving processes by 25% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Achieve 50% water recycling rate in all facilities by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste minimization and resource efficiency",
+        "targets": [
+          {
+            "target": "Achieve a 70% recycling rate for all production and packaging materials by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Decrease material waste by 30% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Air quality and carbon emissions",
+        "targets": [
+          {
+            "target": "Reduce carbon emissions from manufacturing processes by 30% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable procurement and supply chain",
+        "targets": [
+          {
+            "target": "Increase procurement of organic and recycled materials by 30% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Energy efficiency and renewable energy",
+        "targets": [
+          {
+            "target": "Increase the use of renewable energy sources to account for 40% of total energy consumption by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity and green cover",
+        "targets": [
+          {
+            "target": "Increase green cover around manufacturing facilities by 25% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product safety and environmental information",
+        "targets": [
+          {
+            "target": "Achieve a 98% customer satisfaction rate related to product safety by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Community environmental initiatives",
+        "targets": [
+          {
+            "target": "Organize 15 community environmental events by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Manager",
+        "duty": "The Green Practices Policy will be reviewed annually by the Environmental Manager which will involve data collection on key performance indicators, stakeholder feedback, and performance evaluation against targets."
+      }
+    ],
+    "monitoring": "The performance reporting will give details of progress in resource efficiency, highlighting reductions in material waste and supply chain improvements. It will include updates on key environmental metrics such as energy usage, carbon emissions, and water conservation, alongside advancements in waste and chemical management, focusing on reduction, recycling, and safety.",
+    "reviewMechanism": "The Green Practices Policy will be reviewed annually by the Environmental Manager which will involve data collection on key performance indicators, stakeholder feedback, and performance evaluation against targets. The findings will be documented in a detailed report, leading to necessary updates and adjustments in the policy. Revised policies and targets will be communicated to all stakeholders to ensure integration into operations, fostering continuous improvement in sustainability practices"
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Shri Vinayaha/1. Green Practices Policy - SVT.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Shri Vinayaha/1. Green Practices Policy - SVT.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 4808,
+  "parsedAt": "2026-09-11T07:41:04.163Z"
+}

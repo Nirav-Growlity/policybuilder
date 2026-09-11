@@ -1,0 +1,291 @@
+{
+  "id": "sustainable-procurement-padma",
+  "name": "Padma",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Green_Procurement_Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Padma Satel Arab Fashions Ltd.",
+      "industry": "",
+      "site": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230.",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230.",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Luna Complex, Joy Bangka Road, Khailkur, Borobari, Gazipur-1704, Bangladesh.",
+          "primaryFunction": "Manufacturing Site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Padma Satel Arab Fashions Ltd., a leading export-oriented woven garments manufacturer, recognizes that responsible sourcing is a critical component of sustainable business operations. The materials, services, and partners involved in its supply chain including fabrics, trims, chemicals, packaging, and logistics carry significant environmental, social, and ethical impacts that extend beyond the Company’s direct operations.\n\nThis Green Procurement Policy establishes a structured framework to ensure that all sourcing decisions are aligned with principles of environmental stewardship, ethical labor practices, and transparent governance. The Company aims to build a resilient and responsible supply chain that not only meets quality, cost, and delivery expectations but also contributes positively to sustainability objectives.\n\nPSA is committed to integrating sustainability considerations into procurement processes across the entire lifecycle from supplier selection and onboarding to performance monitoring and long-term partnership development. The policy defines clear expectations for internal procurement teams as well as for suppliers, contractors, and service providers engaged with the Company.",
+      "declaration": "Integrate sustainability considerations into all procurement decisions by incorporating environmental, social, and governance (ESG) criteria into supplier selection, evaluation, and contract management processes across all sourcing categories.\n\nEnsure that all suppliers, contractors, and service providers operate in compliance with applicable laws and regulations, including labor laws, environmental regulations, and international standards related to ethical sourcing and responsible business conduct.\n\nPromote environmentally responsible sourcing by encouraging suppliers to adopt practices related to energy efficiency, water conservation, responsible chemical management, waste reduction, and lower greenhouse gas emissions.\n\nSupport the sourcing of sustainable materials and inputs, including eco-friendly fabrics, low-impact chemicals, recyclable packaging materials, and resource-efficient logistics solutions.\n\nEnsure that suppliers uphold fundamental labor and human rights principles, including fair wages, safe working conditions, non-discrimination, and the elimination of child labor, forced labor, and any form of exploitation.\n\nAlign procurement practices with global sustainability frameworks, buyer requirements, and industry standards to strengthen competitiveness and compliance in international markets.\n\nDeliver procurement excellence quality, cost, reliability, and innovation without compromising sustainability, ethics, or compliance, building a resilient and responsible supply chain for global fashion buyers.",
+      "scope": "This Policy applies to all operations of Padma Satel Arab Fashions Ltd. and is applicable to all employees (permanent and contract), management, directors, business associates, fabric suppliers, chemical vendors, trim suppliers, contractors, logistics partners, and all internal and external stakeholders working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Supplier Social & Labour Practices",
+      "Sustainable Procurement Goals",
+      "Governance Goals"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "We systematically evaluate the environmental performance of both new and existing key suppliers across major procurement categories such as woven fabrics, trims and accessories, chemicals, packaging, and logistics through structured assessments, documentation reviews, and where necessary, independent audit reports.",
+        "We ensure that all personnel involved in procurement and sourcing functions receive periodic training on environmental risks, sustainable sourcing practices, and responsible material selection relevant to the garment industry.",
+        "We actively prioritize suppliers that demonstrate strong environmental governance, including implementation of certified environmental management systems (such as ISO 14001 or equivalent), effective monitoring of greenhouse gas emissions, water stewardship initiatives, and responsible chemical management aligned with global frameworks such as RSL and ZDHC.",
+        "We work closely with packaging suppliers to transition towards environmentally responsible solutions, including reduced material usage, recyclable inputs, and alternative packaging designs that minimize environmental impact across the product lifecycle.",
+        "We will give sourcing preference — all quality and compliance factors being equal — to suppliers offering sustainable fabric options (organic cotton, recycled fibres, GOTS-certified materials), reduced-chemical processes, recyclable packaging, and low-carbon logistics solutions.",
+        "We will work with packaging material suppliers to transition PSA Fashions' secondary and tertiary packaging to recyclable, reduced-material, or biodegradable alternatives, in line with PSA Fashions' environmental responsibility commitments."
+      ],
+      "Supplier Social & Labour Practices": [
+        "We require all suppliers and service providers to comply with defined labor and human rights standards as a prerequisite for engagement, covering areas such as occupational health and safety, fair wages, working conditions, and ethical conduct.",
+        "We ensure that procurement teams are regularly sensitized and trained on social compliance risks, labor rights issues, and ethical sourcing expectations within the apparel supply chain.",
+        "We conduct social and labour compliance due diligence on all new strategic suppliers before approval, using self-assessment questionnaires, social audit reports (BSCI, SEDEX/SMETA, SLCP, or equivalent), and third-party verification appropriate to supplier risk profile.",
+        "We enforce a strict prohibition on child labor, forced labor, bonded labor, and any form of human exploitation across all tiers of the supply chain, requiring suppliers to maintain proper documentation, verification systems, and compliance with applicable labor laws and international standards.",
+        "We give preference to suppliers that have established occupational health and safety management systems (such as ISO 45001 or equivalent), ensuring a structured approach to workplace safety and risk management.",
+        "We expect all suppliers to maintain safe and healthy working environments, including provision of appropriate personal protective equipment (PPE), implementation of safety procedures, emergency preparedness measures, and compliance with applicable safety regulations."
+      ],
+      "Sustainable Procurement Goals": [
+        "We incorporate sustainability performance as a key evaluation parameter in procurement decisions, alongside traditional criteria such as quality, cost, delivery timelines, and technical capability, particularly for strategic sourcing activities.",
+        "We aim to establish a structured supplier recognition framework that identifies and promotes suppliers demonstrating excellence in sustainability performance, innovation, and continuous improvement.",
+        "We develop category-specific sourcing strategies for high-impact procurement areas—including fabrics, chemicals, trims, packaging, and logistics—integrating sustainability priorities and measurable performance indicators.",
+        "We support inclusive sourcing by encouraging participation from diverse supplier groups, including small and medium enterprises (SMEs), local suppliers, and socially responsible businesses, provided they meet required standards.",
+        "We actively engage with industry initiatives, buyer programs, and sustainability platforms to align procurement practices with global expectations and contribute to broader industry advancement in responsible sourcing."
+      ],
+      "Governance Goals": [
+        "We maintain a comprehensive Supplier Code of Conduct that defines expectations related to environmental responsibility, labor standards, ethical practices, and compliance, which all suppliers are required to formally acknowledge and adhere to.",
+        "We implement structured due diligence processes to assess governance-related risks associated with suppliers, including ethical conduct, legal compliance, ownership transparency, and business integrity.",
+        "We enforce strict conflict-of-interest controls within procurement processes, requiring relevant personnel to disclose potential conflicts and ensure impartial decision-making in supplier selection and contracting.",
+        "We will embed sustainability and ethics requirements into all supplier contracts including anti-corruption, anti-slavery, environmental compliance, labour standards, audit access, and data protection clauses, ensuring obligations are legally binding and enforceable under Bangladesh law.",
+        "We conduct periodic supplier evaluations and audits covering ESG parameters to verify compliance, identify improvement areas, and strengthen overall supply chain governance and accountability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Conduct environmental sustainability assessments for all strategic direct material suppliers. Target value: ≥50%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase strategic suppliers with ISO 14001 or equivalent certified Environmental Management Systems. Target value: ≥40%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Engage strategic fabric mills and chemical suppliers to disclose Scope 1 & 2 GHG emissions as part of PSA Fashions' Scope 3 quantification program. Target value: ≥55%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase strategic chemical and dyestuff suppliers achieving ZDHC Gateway conformance (Wastewater/MRSL). Target value: ≥50%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain zero verified environmental incidents attributable to PSA Fashions' direct suppliers. Target value: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Train our Procurement team on environmental issues associated with garment procurement. Target value: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social & Labour Practices",
+        "targets": [
+          {
+            "target": "Ensure all new strategic direct material suppliers formally acknowledge and commit to BSCI/SEDEX Code of Conduct as a condition of approval. Target value: 100% new strategic suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct social and labour compliance audits at all high-risk supplier facilities. Target value: ≥65% high-risk suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain zero confirmed instances of child labour, forced labour, or trafficking in any tier-1 direct supplier. Target value: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Increase the share of strategic suppliers holding ISO 45001 or equivalent OHS management system certificate. Target value: ≥10%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase procurement spend directed to SMEs, women-owned, or local Bangladeshi suppliers meeting PSA Fashions' standards. Target value: ≥20% spend",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train our Procurement team on social and labour issues associated with garment procurement. Target value: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Procurement Goals",
+        "targets": [
+          {
+            "target": "Increase strategic procurement spend covered by sustainability-evaluated suppliers. Target value: ≥50% strategic spend",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Integrate sustainability as a formal, weighted criterion in all strategic RFPs and tender evaluations. Target value: 100% strategic tenders",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Establish and maintain a Preferred Supplier Program recognizing sustainability leadership. Target value: Yes",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Governance Goals",
+        "targets": [
+          {
+            "target": "Ensure 100% of new suppliers formally sign PSA Fashions' Supplier Code of Conduct before commercial engagement commences. Target value: 100% new suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Ensure 100% of new supplier contracts include ESG and labour compliance clauses. Target value: 100% new contracts",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide mandatory ethics training to procurement staff annually. Target value: 100% staff trained",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain zero confirmed instances of procurement fraud, corruption, or ethics violations. Target value: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      13,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Approve and endorse the Green Procurement Policy and ensure it is integrated into PSA Fashions' sustainability strategy, business objectives, and corporate governance framework."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Provide visible leadership commitment to responsible sourcing, supply chain sustainability, and ethical procurement."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure adequate financial, human, and technological resources are allocated for effective Policy implementation, supplier engagement, and performance monitoring."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Translate the Policy into actionable programs, annual targets, and category-level initiatives across all PSA Fashions procurement functions."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Review supply chain sustainability performance, progress against quantitative targets, and emerging supply chain risks on a quarterly basis."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensure sustainability and ethics considerations are integrated into new supplier approvals, strategic partnerships, and key procurement decisions."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Own Policy implementation across all PSA Fashions procurement categories, ensuring sustainability and ethics criteria are embedded in all sourcing processes, category strategies, and contract frameworks."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Lead the Preferred Supplier Program, Supplier Code of Conduct enforcement, COI management, and sustainable procurement performance reporting."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Monitor and report procurement sustainability KPIs — supplier assessment coverage, spend under sustainability evaluation, audit outcomes — to Senior Management quarterly."
+      },
+      {
+        "role": "Compliance / Sustainability Team",
+        "duty": "Provide technical guidance on supplier environmental assessment criteria, GHG reporting methodology, chemical compliance (ZDHC/RSL), and packaging sustainability."
+      },
+      {
+        "role": "Compliance / Sustainability Team",
+        "duty": "Collaborate with Procurement on supplier environmental and social audits and supply chain sustainability data collection."
+      },
+      {
+        "role": "Compliance / Sustainability Team",
+        "duty": "Track and report supply chain sustainability performance metrics in periodic buyer reports and internal ESG disclosures."
+      },
+      {
+        "role": "Procurement & Supply Chain Teams",
+        "duty": "Execute sustainable procurement at operational level: supplier qualification, sustainability questionnaires, due diligence, RFP sustainability scoring, and contract compliance monitoring."
+      },
+      {
+        "role": "Procurement & Supply Chain Teams",
+        "duty": "Maintain the Approved Vendor List and Preferred Supplier List, ensuring currency, accuracy, and compliance with qualification and renewal criteria."
+      },
+      {
+        "role": "Procurement & Supply Chain Teams",
+        "duty": "Report supplier non-compliances, audit findings, and procurement ethics concerns to the Procurement Head and Compliance team without delay."
+      },
+      {
+        "role": "All Employees in Procurement Roles",
+        "duty": "Comply with this Policy and all related procurement procedures, codes of conduct, and training requirements at all times."
+      },
+      {
+        "role": "All Employees in Procurement Roles",
+        "duty": "Apply sustainability, ethics, and governance criteria in all supplier interactions, sourcing decisions, and commercial negotiations."
+      },
+      {
+        "role": "All Employees in Procurement Roles",
+        "duty": "Report suspected non-compliances, supplier ethics concerns, or Policy violations through designated reporting channels."
+      }
+    ],
+    "monitoring": "Padma Satel Arab Fashions Ltd. is committed to the continuous improvement of its sustainable procurement performance across all sourcing categories and supplier relationships. Sustainability considerations are embedded into the full procurement lifecycle — from supplier identification and qualification through contract award, onboarding, monitoring, and renewal.\n\nConduct pre-qualification assessments covering environmental, labor, and ethical criteria; require acceptance of Supplier Code of Conduct.\n\nTrack supplier performance through audits, self-assessments, and performance scorecards; monitor compliance with contractual ESG requirements.\n\nMap high-risk suppliers and categories; implement corrective action plans (CAPs) and mitigation strategies.\n\nPerform on-site audits, document reviews, and verification of compliance with sustainability standards.\n\nDefine corrective actions with clear timelines; track implementation and effectiveness of improvements.\n\nProvide training, awareness sessions, and technical guidance on ESG topics such as chemical management, labor standards, and resource efficiency.\n\nInclude ESG criteria in supplier evaluation, tendering, and contract renewal processes.\n\nCollect data on energy use, emissions, water consumption, and labor practices from suppliers; maintain records for reporting.\n\nEngage with customers and industry initiatives to align procurement practices with evolving expectations.\n\nUpdate policy and procedures based on regulatory changes, audit findings, and industry trends.\n\nPadma Satel Arab Fashions Ltd. maintains a structured and transparent process to monitor and report sustainable procurement performance across all operations. Key data on supplier sustainability scores, social audit outcomes, CAPA status, spend under sustainability-evaluated suppliers, packaging sustainability metrics, chemical compliance, procurement ethics compliance, and COI declaration completion are systematically collected, validated, and reviewed quarterly at management level.\n\nAnnual sustainable procurement performance data is disclosed in PSA Fashions' periodic sustainability and compliance reports shared with buyers, brand partners, and certification bodies. PSA Fashions reports against the RSC, BSCI, SEDEX, and SLCP frameworks as part of its ongoing certification commitments, and discloses supply chain sustainability performance to key buyers including any applicable mandatory sustainability due diligence requirements.",
+    "reviewMechanism": "This Green Procurement Policy is reviewed at least once every year, or whenever triggered by significant changes in business operations, applicable laws or regulations, material supply chain incidents, buyer sustainability requirements, or significant stakeholder concerns. The review is conducted by the Procurement Head in consultation with the Compliance/Sustainability team, and Senior Management."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Padma/4. Green_Procurement_Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Padma/4. Green_Procurement_Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 22966,
+  "parsedAt": "2026-09-11T07:11:35.448Z"
+}

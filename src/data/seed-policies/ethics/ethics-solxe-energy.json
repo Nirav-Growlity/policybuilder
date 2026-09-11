@@ -1,0 +1,317 @@
+{
+  "id": "ethics-solxe-energy",
+  "name": "Solxe Energy",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Solex Business Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Solex Energy Limited",
+      "industry": "",
+      "site": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India",
+      "sites": [
+        {
+          "location": "Solex Energy Limited",
+          "address": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Solex Energy Limited is committed to conducting business with integrity, transparency, and accountability while complying with all applicable laws and regulations. The Company promotes high standards of corporate governance and ethical business conduct across its operations and business relationships.\n\nThe Company maintains zero tolerance for corruption, bribery, fraud, money laundering, conflicts of interest, and anti-competitive practices. Employees, contractors, suppliers, and business partners are expected to act honestly, fairly, and in accordance with applicable legal and ethical requirements.\n\nSolex Energy Limited is also committed to the responsible management and protection of information. The Company shall safeguard confidential, personal, and business information and ensure its appropriate use, storage, sharing, and protection from unauthorized access or disclosure.\n\nThrough effective governance, internal controls, employee awareness, and reporting mechanisms, the Company aims to promote ethical behaviour, fair competition, information security, and a culture of accountability throughout its operations.",
+      "declaration": "Solex Energy Limited has established key goals and commitments to strengthen corporate governance, promote ethical business conduct, ensure regulatory compliance, safeguard information assets, prevent corruption and misconduct, and support transparency, accountability, and continuous improvement across its operations and business relationships.",
+      "scope": "This Policy applies to all employees, directors, contractual workers, trainees, consultants, contractors, and other persons working on behalf of Solex Energy Limited. Where relevant, the principles of this Policy also extend to suppliers, service providers, business partners, and other third parties engaged with the Company.\n\nThe Policy covers governance-related matters across the Company's operations, including business ethics, anti-corruption, anti-bribery, fraud prevention, conflict of interest management, anti-money laundering, fair competition and antitrust compliance, responsible information management, data privacy, cybersecurity, regulatory compliance, whistleblower protection, and ethical conduct in business relationships."
+    },
+    "focusAreas": [
+      "Anti-Bribery & Anti-Corruption",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Anti-Money Laundering (AML)",
+      "Fair Competition",
+      "Information Security & Data Privacy"
+    ],
+    "qualitative": {
+      "Anti-Bribery & Anti-Corruption": [
+        "Strengthening measures to prevent, detect, and address bribery, corruption, facilitation payments, and other unethical practices across all business operations, projects, and stakeholder interactions.",
+        "Strengthen a culture of integrity, transparency and ethical conduct across all business activities and locations.",
+        "Embed anti-bribery and anti-corruption principles into employee, contractor and business-partner engagement processes.",
+        "Strengthen awareness and understanding of bribery and corruption risks, particularly within functions exposed to higher compliance risks.",
+        "Periodically review business activities and processes to identify, prevent and address potential bribery and corruption risks.",
+        "Maintain effective mechanisms for reporting, investigating and addressing suspected bribery, corruption or unethical conduct without retaliation.",
+        "Conduct business honestly, fairly, and transparently.",
+        "Report any suspected bribery, corruption, or unethical conduct.",
+        "Follow approved authorization and approval processes for payments and transactions.",
+        "Maintain accurate records of gifts, hospitality, donations, and business expenditures.",
+        "Offer, promise, give, request, or accept bribes or kickbacks.",
+        "Make facilitation payments to obtain improper business advantages.",
+        "Conceal suspicious transactions or unethical conduct.",
+        "Use third parties to engage in corrupt practices on behalf of the Company."
+      ],
+      "Conflict of Interest": [
+        "Promoting transparent and unbiased decision-making by ensuring actual, potential, and perceived conflicts of interest are identified, disclosed, reviewed, and appropriately managed.",
+        "Promote transparency and impartiality in business decisions by strengthening the management of actual, potential and perceived conflicts of interest.",
+        "Integrate conflict-of-interest requirements into employee onboarding, periodic declarations and relevant business processes.",
+        "Strengthen awareness among employees and management regarding identification, disclosure and appropriate management of conflicts of interest.",
+        "Ensure disclosed conflicts are reviewed objectively and managed through appropriate mitigation and approval mechanisms.",
+        "Periodically review conflict-of-interest controls to identify emerging risks and improve governance practices.",
+        "Disclose actual, potential, or perceived conflicts of interest promptly.",
+        "Act in the best interests of the Company when making business decisions.",
+        "Seek guidance when uncertain about a potential conflict.",
+        "Update conflict-of-interest declarations when circumstances change.",
+        "Allow personal interests to influence business decisions.",
+        "Participate in decisions where a conflict exists without disclosure and approval.",
+        "Use Company resources or information for personal benefit.",
+        "Conceal relationships that may create a conflict of interest."
+      ],
+      "Fraud Prevention": [
+        "Enhancing systems and controls to prevent, detect, investigate, and mitigate fraud, financial misconduct, falsification of records, misappropriation of assets, and other dishonest activities.",
+        "Strengthen a culture of accountability and zero tolerance towards fraud, financial misconduct and deliberate misrepresentation.",
+        "Integrate fraud-risk considerations into relevant financial, operational, procurement and business processes.",
+        "Strengthen preventive and detective controls to identify unusual transactions, activities and potential fraudulent behaviour.",
+        "Promote awareness among employees regarding fraud indicators, ethical responsibilities and available reporting channels.",
+        "Periodically review fraud-prevention controls and implement corrective measures where control weaknesses or emerging risks are identified.",
+        "Maintain accurate and complete business records.",
+        "Report suspected fraud, misconduct, or irregular activities.",
+        "Follow established financial and operational controls.",
+        "Cooperate with investigations and audits.",
+        "Falsify documents, records, or reports.",
+        "Misappropriate Company assets, funds, or resources.",
+        "Manipulate financial information or performance data.",
+        "Engage in deceptive, dishonest, or fraudulent activities."
+      ],
+      "Anti-Money Laundering (AML)": [
+        "Maintaining strong financial integrity through appropriate due diligence, transaction monitoring, record-keeping, and controls designed to prevent money laundering, terrorist financing, and other financial crimes.",
+        "Strengthen controls to prevent Solex Energy Limited from being exposed to money laundering, terrorist financing and other illicit financial activities.",
+        "Integrate appropriate customer, supplier and transaction due-diligence practices into relevant financial and commercial processes.",
+        "Strengthen employee awareness of AML risks, red flags and escalation requirements applicable to their roles.",
+        "Maintain transparent and traceable financial and commercial transactions supported by appropriate records and approvals.",
+        "Periodically review AML-related controls and due-diligence practices to address emerging financial crime risks.",
+        "Conduct appropriate due diligence on customers, suppliers, and business partners.",
+        "Verify and maintain accurate transaction records.",
+        "Report suspicious financial transactions through designated channels.",
+        "Follow applicable AML compliance procedures.",
+        "Participate in transactions intended to conceal the source of funds.",
+        "Process transactions without appropriate documentation or approvals.",
+        "Ignore suspicious financial activities or red flags.",
+        "Engage with individuals or entities involved in illegal financial activities."
+      ],
+      "Fair Competition": [
+        "Conducting business in a fair, ethical, and lawful manner by promoting healthy competition, responsible market practices, and compliance with applicable competition and antitrust regulations.",
+        "Promote fair, transparent and responsible competition in all sales, tendering, procurement and commercial activities.",
+        "Strengthen employee understanding of competition-law principles and responsible market conduct.",
+        "Ensure commercial decisions are based on legitimate business considerations and are free from improper coordination or anti-competitive practices.",
+        "Integrate fair-competition principles into interactions with customers, competitors, suppliers and other business partners.",
+        "Periodically review commercial practices to identify potential competition risks and strengthen controls where required.",
+        "Compete fairly and ethically in the marketplace.",
+        "Make independent business and pricing decisions.",
+        "Follow applicable competition and antitrust laws.",
+        "Maintain professional interactions with competitors and industry participants.",
+        "Engage in price-fixing, bid-rigging, or market-sharing arrangements.",
+        "Exchange sensitive commercial information with competitors.",
+        "Abuse market position or engage in unfair trade practices.",
+        "Participate in anti-competitive agreements or discussions."
+      ],
+      "Information Security & Data Privacy": [
+        "Protecting confidential, personal and business-critical information through effective cybersecurity measures, secure information management practices and compliance with applicable data privacy requirements.",
+        "Strengthen the protection of confidential, personal and business-critical information throughout its lifecycle.",
+        "Promote a culture of responsible information handling and cybersecurity awareness among employees and relevant third parties.",
+        "Strengthen cybersecurity controls across corporate IT systems, manufacturing systems and other technology-enabled operations.",
+        "Maintain effective processes for identifying, reporting, investigating and responding to information-security and data-privacy incidents.",
+        "Periodically assess information-security and privacy risks and strengthen controls in response to identified vulnerabilities, emerging threats and changing business requirements.",
+        "Protect confidential, personal, and business-critical information.",
+        "Use Company information systems responsibly and securely.",
+        "Follow cybersecurity and data privacy requirements.",
+        "Report information-security incidents or suspected breaches promptly.",
+        "Share confidential information without authorization.",
+        "Access information that is not required for your role.",
+        "Use unauthorized software, devices, or storage systems for Company data.",
+        "Ignore cybersecurity alerts, vulnerabilities, or security incidents."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Bribery & Anti-Corruption",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees and relevant contractors’ complete annual anti-bribery and anti-corruption training by Year 2030.",
+            "baseline": "2023",
+            "deadline": "Year 2030"
+          },
+          {
+            "target": "Maintain zero (0) confirmed incidents of bribery or corruption tracked every financial year through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          },
+          {
+            "target": "Conduct an annual corruption risk assessment across all business functions and achieve 100% closure of resulting corrective actions by Year 2030.",
+            "baseline": "2023",
+            "deadline": "Year 2030"
+          },
+          {
+            "target": "Ensure 100% of employees in high-risk functions (procurement, sales, EPC contracting, government liaison) complete enhanced anti-corruption training every year through Year 2030.",
+            "baseline": "2023",
+            "deadline": "every year through Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees and contractors submit a Conflict-of-Interest declaration at onboarding and annually thereafter, through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          },
+          {
+            "target": "Review and close 100% of Conflict-of-Interest disclosures within 30 days of reporting, on an on-going basis through Year 2030.",
+            "baseline": "2023",
+            "deadline": "on an on-going basis through Year 2030"
+          },
+          {
+            "target": "Conduct annual Conflict-of-Interest awareness training for senior management and other high-risk functions through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Conduct a fraud risk assessment at least once every two years through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          },
+          {
+            "target": "Achieve 100% completion of quarterly internal fraud-monitoring checks by Year 2030.",
+            "baseline": "2023",
+            "deadline": "Year 2030"
+          },
+          {
+            "target": "Commission an independent or statutory fraud audit annually through Year 2030.",
+            "baseline": "2023",
+            "deadline": "annually through Year 2030"
+          },
+          {
+            "target": "Ensure 100% of employees are trained on fraud identification and reporting channels by Year 2030.",
+            "baseline": "2023",
+            "deadline": "Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering (AML)",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees in finance, procurement, and export/sales functions complete AML compliance training annually through Year 2030.",
+            "baseline": "2023",
+            "deadline": "annually through Year 2030"
+          },
+          {
+            "target": "Conduct an annual AML audit of financial transactions and customer/supplier due-diligence records through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Competition",
+        "targets": [
+          {
+            "target": "Ensure 100% of senior management, sales, and procurement teams are trained on competition-law compliance by Year 2030.",
+            "baseline": "2023",
+            "deadline": "Year 2030"
+          },
+          {
+            "target": "Conduct an annual self-audit of tender, pricing, and vendor-selection practices, targeting zero (0) confirmed anti-competitive incidents through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security & Data Privacy",
+        "targets": [
+          {
+            "target": "Maintain reported information-security incidents zero (0) through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          },
+          {
+            "target": "Conduct an annual cybersecurity risk assessment with 100% closure of identified gaps through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          },
+          {
+            "target": "Ensure 100% of employees complete annual information-security and data-privacy training through Year 2030.",
+            "baseline": "2023",
+            "deadline": "through Year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provides overall oversight of business ethics, corporate governance, compliance, integrity, and ethical-risk management, and reviews the Company's performance through the established governance, compliance, and risk-management framework."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provides leadership, resources, and accountability for the implementation of this Policy and ensures that business ethics, compliance, integrity, risk management, and responsible business conduct considerations are integrated into business planning, operational activities, and decision-making processes."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Acts as the custodian of the Company's Business Ethics Policy and supports compliance with applicable laws, regulations, governance requirements, and internal policies. Compliance Officer coordinates ethics and compliance activities, conflict-of-interest management, regulatory monitoring, awareness programmes, reporting mechanisms, and periodic policy reviews."
+      },
+      {
+        "role": "Chief Finance Officer",
+        "duty": "Supports the implementation of financial controls designed to prevent fraud, corruption, money laundering, financial misconduct, and unauthorized transactions. Maintains appropriate records and supports"
+      },
+      {
+        "role": "Information Technology Manager",
+        "duty": "Supports the implementation of information security, cybersecurity, and data privacy controls to protect confidential, personal, and business-critical information. Monitors information-security risks and supports incident response and corrective actions."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Promote ethical conduct within their areas of responsibility, support awareness and compliance activities, encourage reporting of concerns, and ensure adherence to applicable business ethics requirements."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Comply with applicable Company policies, procedures, and legal requirements; participate in required training; disclose conflicts of interest; protect Company information; and promptly report suspected misconduct, fraud, corruption, information-security incidents, or other compliance concerns."
+      },
+      {
+        "role": "Suppliers and Business Partners",
+        "duty": "Are expected to comply with applicable contractual obligations and relevant business ethics, integrity, compliance, information-security, and responsible business conduct requirements established by Solex Energy Limited."
+      }
+    ],
+    "monitoring": "The effectiveness of awareness and compliance programmes shall be periodically evaluated through assessments, audits, compliance reviews, reporting trends, investigations, performance indicators, and other appropriate monitoring mechanisms.\n\nTransparent and regular reporting is essential for monitoring the effectiveness of Solex Energy Limited’s business ethics policy, ensuring accountability, and supporting continuous improvement. Solex Energy Limited shall implement the following reporting practices:\n\nSolex Energy Limited shall periodically review and report its performance against established business ethics and integrity objectives, targets, and key performance indicators. The reporting shall cover relevant areas including ethics and compliance training, anti-bribery and anti-corruption measures, reported concerns, investigations, confirmed violations, corrective actions, conflicts of interest, information security breaches and compliance with applicable laws and internal requirements.\n\nSolex shall conduct periodic internal reviews and audits, as applicable, to assess compliance with this Policy and related procedures. Audit and review findings shall be documented, communicated to the relevant management personnel, and followed by appropriate corrective and preventive actions.\n\nSolex Energy Limited shall maintain appropriate records of ethics-related concerns, complaints, suspected misconduct, investigations, and confirmed violations received through designated reporting channels. Significant or material matters shall be escalated to the appropriate level of management for review and necessary action.\n\nBusiness ethics performance, significant incidents, compliance risks, investigation outcomes, and the status of corrective actions shall be periodically reported to senior management and relevant governance bodies, as applicable. Management shall review such information to assess the effectiveness of existing controls and determine areas requiring further action.\n\nSolex Energy Limited shall consider relevant feedback and concerns received from employees, contractors, suppliers, customers, and other stakeholders regarding ethical business conduct. Where appropriate, such feedback shall be considered in strengthening controls, addressing identified risks, and improving the Company’s ethics and compliance practices.\n\nSolex Energy Limited may disclose relevant information regarding its business ethics and integrity performance through its annual report, sustainability or ESG disclosures, website, or other approved communication channels. Such disclosures shall be made in accordance with applicable disclosure requirements while protecting confidential, personal, and commercially sensitive information.",
+    "reviewMechanism": "Compliance Officer shall review this Business Ethics Policy annually to ensure its continued relevance and effectiveness. The review shall consider ethics performance, compliance requirements, audit findings, reported concerns, and stakeholder feedback.\n\nThe Policy shall be updated as required to reflect changes in applicable laws, regulations, Company procedures, business operations, or identified ethics and compliance risks. Significant updates shall be communicated to relevant employees and stakeholders.\n\nThe Policy shall be reviewed and updated annually & whenever there are changes in applicable laws, regulations, Company procedures, business operations, or identified ethics and compliance risks."
+  },
+  "sourcePath": "Policies - Kenal/Solxe Energy/Solex Business Ethics Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Solxe Energy/Solex Business Ethics Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 25088,
+  "parsedAt": "2026-09-11T07:29:09.420Z"
+}

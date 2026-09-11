@@ -1,0 +1,317 @@
+{
+  "id": "labour-human-rights-indutch",
+  "name": "Indutch",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labor and Human Right Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Indutch Composites Technology Pvt Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Indutch Composites Technology Pvt Ltd..",
+          "address": "Plot No. 187/P/1B-1, Waghodia Industrial Estate, Pipalia - Waghodia Road, Vadodara - 391760, Gujarat, India.",
+          "primaryFunction": "composite manufacturing"
+        },
+        {
+          "location": "Indutch Composites Technology Pvt Ltd",
+          "address": "9-2E, 9-1A, 12-2, 11-6, 11-4B, 11-3A, 11-3, 10-2, Zuvve Chelika Village, 30/P2, P4, P5, 30/3, Padmavati Kandriga Village, Sullurpeta (M), S.P.S.R. Nellore – 524121, Andhra Pradesh - 524121",
+          "primaryFunction": "composite manufacturing"
+        },
+        {
+          "location": "Indutch Composites Technology Pvt Ltd",
+          "address": "Plot/Survey No. 16P1 Shed-2, Village: Chandrapura, Taluka: Halol, Dist: Panchmahal - 389350",
+          "primaryFunction": "composite manufacturing"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Indutch Composites Technology Pvt Ltd. recognizes that the backbone of any successful enterprise lies in the well-being and empowerment of its workforce. As a leading composite manufacturing industry, we understand the paramount importance of upholding labour and human rights within our operations. Our commitment to fostering a workplace culture built on dignity, respect, and fairness is unwavering.\n\nIn line with our core values of integrity and social responsibility, this labour and human rights policy serves as a comprehensive framework outlining our principles and practices. It articulates our dedication to complying with all applicable laws and regulations while going above and beyond to ensure the rights, safety, and welfare of every individual within our organization. At Indutch Composites Technology Pvt Ltd., we believe that by championing the rights of our employees, we not only create a conducive work environment but also contribute positively to the broader community and industry landscape.",
+      "declaration": "At Indutch Composites Technology Pvt Ltd., we are committed to upholding labor and human rights standards across all aspects of our operations. We prioritize fair treatment, non-discrimination, safe working conditions and more for all employees, in alignment with international norms and local regulations.",
+      "scope": "This policy is exclusively applicable to the operations of Indutch Composites Technology Pvt Ltd., covering all employees, workers, subcontractors, and other stakeholders directly affiliated with our site."
+    },
+    "focusAreas": [
+      "Employee Health and Safety",
+      "Working Condition",
+      "Labor Relation",
+      "Career Management",
+      "Child and Forced Labor",
+      "Diversity, Equity & Inclusion",
+      "External Stakeholder Human Rights",
+      "Discrimination and Harassment"
+    ],
+    "qualitative": {
+      "Employee Health and Safety": [
+        "Regular equipment inspection and maintenance: Establish protocols for routine equipment inspection, emphasizing hazard identification and resolution to prevent accidents in composite manufacturing.",
+        "Hazardous substance handling protocols: Develop clear guidelines for safe handling and disposal of hazardous substances like resins and solvents, minimizing exposure risks.",
+        "PPE standards: Establish PPE requirements specific to each composite manufacturing process, including but not limited to gloves, eye protection, and protective clothing, to safeguard employees from potential occupational hazards.",
+        "Training and Awareness: Tailor training for each process, equipping employees with skills for safe equipment handling in resin mixing, moulding, curing etc."
+      ],
+      "Working Condition": [
+        "Fair Remuneration: Commit to providing fair wages and compensation packages that reflect the value of employees' contributions to the manufacturing process of composites.",
+        "Right to Disconnect: Implement policies that respect employees' right to disconnect from work-related communications and activities outside of their designated work hours to prevent burnout and promote mental well-being.",
+        "Work-Life Balance: Ensure that employees have access to flexible working hours options to accommodate personal responsibilities and promote a healthy work-life balance.",
+        "Health and Wellness Programs: Implement health and wellness programs aimed at promoting physical and mental health among employees, including access to wellness resources, fitness facilities, and counselling services."
+      ],
+      "Labor Relation": [
+        "Open Communication and Collaboration: Foster an environment conducive to open communication and collaboration between management and recognized employee representatives, promoting a culture of transparency and trust in decision-making processes.",
+        "Fair Treatment and Non-discrimination: Uphold principles of fairness and non-discrimination in all aspects of labor relations, fostering an inclusive and diverse workplace where every employee is treated with dignity and respect.",
+        "Conflict Resolution & Collective Bargaining: Facilitate regular dialogue between management and employee representatives to address concerns, resolve conflicts, and ensure fair collective bargaining for all employees."
+      ],
+      "Career Management": [
+        "Ensure recruitment processes prioritize diversity and inclusion, fostering a workforce reflective of varied backgrounds and perspectives.",
+        "Implement mechanisms to attract talent with a passion for innovation and a commitment to sustainability in composite manufacturing.",
+        "Implement 360-degree feedback mechanisms to provide comprehensive insights into employee performance and areas for growth.",
+        "Explore alternatives to layoffs, such as reassignment, reduced hours, or temporary furloughs, wherever feasible, to mitigate the impact on employees and maintain workforce stability."
+      ],
+      "Child and Forced Labor": [
+        "Implement robust screening and verification processes to ensure that all employees hired are above the legal working age and not subject to child labor.",
+        "Foster awareness among employees regarding the detrimental effects of child labor on individuals and communities, emphasizing our zero-tolerance stance.",
+        "Conduct regular audits and inspections across supply chains to detect any potential instances of child labor, taking immediate corrective actions if found.",
+        "Encourage employees to report any suspicions or concerns regarding child labor through confidential channels, offering protection to whistleblowers."
+      ],
+      "Diversity, Equity & Inclusion": [
+        "Foster a culture of respect and acceptance where all employees feel valued regardless of their background, ensuring that diversity is celebrated throughout the organization.",
+        "Establish clear communication channels for reporting any instances of discrimination or abuse, ensuring confidentiality and swift resolution of issues to maintain a safe and inclusive work environment.",
+        "Actively recruit and retain a diverse workforce by removing biases from hiring processes and providing equal opportunities for career advancement regardless of gender, race, ethnicity, or other characteristics."
+      ],
+      "External Stakeholder Human Rights": [
+        "Land and Property Rights: Ensure transparent and inclusive communication with communities affected by our operations, respecting their rights to consultation and participation in decision-making processes regarding land use.",
+        "Self-Determination: Foster partnerships with local communities, empowering them to actively participate in shaping the development and implementation of projects that affect their livelihoods, culture, and way of life.",
+        "Safety and Security: Prioritize the safety and security of communities residing near our operations by implementing comprehensive risk assessments, emergency preparedness plans, and regular safety drills in collaboration with relevant stakeholders."
+      ],
+      "Discrimination and Harassment": [
+        "Conduct annual anti-discrimination and anti-harassment training for all industrial workers, contractual labor, and supervisory staff.",
+        "Establish a safe, anonymous channel for employees and workers to report discrimination or harassment without fear of retaliation.",
+        "Incorporate anti-discrimination clauses in contracts with vendors, labor contractors, and third-party agencies.",
+        "Review disciplinary action records annually to detect patterns of bias or repeated complaints and take corrective actions",
+        "Launch periodic awareness campaigns at the plant level (e.g., tool-box talks, banners, posters) to communicate expectations of respectful behavior."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Reduce workplace accidents by 30% by 2025 through enhanced training and safety protocols.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Decrease instances of ergonomic-related injuries by 15% by 2025 with ergonomic workstation assessments.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 25% reduction in exposure to hazardous substances by 2025 through improved ventilation systems.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve 100% participation in regular health and safety training sessions by all employees by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Working Condition",
+        "targets": [
+          {
+            "target": "Achieve a 10% improvement in work-life balance satisfaction among employees by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure that 90% of employees have the right to disconnect outside of working hours by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Enhance social benefits coverage to reach 95% of eligible employees by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "By 2022, aim to have up to 90% of employees on flexible working hours.",
+            "baseline": "",
+            "deadline": "2022"
+          }
+        ]
+      },
+      {
+        "area": "Labor Relation",
+        "targets": [
+          {
+            "target": "Increase the number of recognized employee representatives by 15% by the end of 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 20% rise in collective bargaining agreements signed by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 100% participation of recognized employee representatives in social dialogue by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Improve the frequency of collective bargaining sessions by 25% by the close of 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Career Management",
+        "targets": [
+          {
+            "target": "Increase recruitment diversity by 15% across all departments by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 15% reduction in recruitment bias through structured interview processes by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement training programs covering 100% of employees for diversity awareness by the end of 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Child and Forced Labor",
+        "targets": [
+          {
+            "target": "Achieve zero instances of child and forced labor by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 100% compliance with child labor laws by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase awareness of child labor issues by 40% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity & Inclusion",
+        "targets": [
+          {
+            "target": "Attain a 20% increase in the promotion rate of employees from underrepresented groups by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase representation of underrepresented minority groups in leadership positions by 25% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 30% reduction in gender pay gap across all levels of the organization by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Increase supplier compliance with human rights standards by 30% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 100% of external stakeholders receive training on human rights policies and procedures by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Improve transparency in reporting human rights violations by 40% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Train 100% of plant-level employees (permanent and contractual) on discrimination and harassment awareness by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Conduct annual risk assessments on discrimination and harassment, covering 100% of our sites by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "CEO",
+        "duty": "Uphold a zero-tolerance stance on human rights violations, champion the company’s commitment to fair labor practices at all levels, approve and support periodic reviews and improvements of the policy."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Oversees the implementation of the Labor & Human Rights Policy, ensures compliance, and addresses concerns related to employee relations and workplace conditions."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Monitor adherence to labor rights standards across operations, investigate complaints related to labor rights violations promptly and confidentially, ensure mechanisms are in place for reporting and redressal."
+      },
+      {
+        "role": "Management and Employees",
+        "duty": "All levels of management and employees are responsible for adhering to labor and human rights standards and promoting safe, ethical working conditions."
+      }
+    ],
+    "monitoring": "Continuous improvement is integral to our labor and human rights policy. We are committed to regularly reviewing and enhancing our practices to ensure alignment with evolving standards and best practices. Through ongoing monitoring, feedback mechanisms, and regular assessments, we strive for continual advancement in promoting and safeguarding the rights and well-being of all individuals within our organization and throughout our supply chain. This dedication to continuous improvement underscores our commitment to upholding the highest standards of ethical conduct and social responsibility.\n\nClearly articulate the organization's values and principles regarding labor and human rights, aligning them with international standards and legal requirements.\n\nProvide examples or case studies illustrating how the policy translates into action in various aspects of the organization's operations.\n\nEnsure that reporting channels are prominently communicated through multiple mediums, including employee handbooks, posters in common areas, and intranet portals.\n\nOffer training sessions or informational materials to familiarize stakeholders with the reporting process and encourage proactive reporting.\n\nOutline the procedures for handling confidential information, including who within the organization has access to reported data and how it will be protected.\n\nRegularly review and update confidentiality measures to adapt to evolving security threats and technological advancements.\n\nEstablish service level agreements (SLAs) outlining specific response times for acknowledging receipt of reports, initiating investigations, and communicating outcomes to stakeholders.\n\nImplement automated tracking systems to monitor the progress of reported incidents and ensure that they are addressed within the stipulated timelines.\n\nTrain designated investigators on best practices for conducting fair, thorough, and impartial investigations, including techniques for interviewing witnesses and gathering evidence.\n\nDevelop standardized investigation templates or checklists to ensure consistency and completeness across all reported incidents.\n\nImplement a robust document management system to capture and organize all relevant information related to reported incidents, investigations, and corrective actions.\n\nRegularly back up and secure electronic records to prevent data loss or unauthorized access, in compliance with data protection regulations.\n\nCommunicate the organization's commitment to protecting whistleblowers from retaliation through both formal policies and informal cultural norms.\n\nProvide avenues for whistleblowers to seek legal recourse or external support if they experience retaliation despite organizational safeguards.\n\nTailor training programs to the specific needs of different stakeholder groups, such as managers, HR personnel, frontline workers, and suppliers.\n\nOffer refresher courses or ongoing learning opportunities to reinforce key concepts and ensure that stakeholders remain vigilant about identifying and reporting violations.\n\nEstablish clear criteria for determining when and how to escalate reported incidents to higher levels of management or external authorities.\n\nDesignate a dedicated escalation team responsible for managing high-profile or sensitive cases and ensuring appropriate follow-up actions are taken.\n\nDevelop key performance indicators (KPIs) to track the effectiveness of the reporting mechanism, such as the number of reports received, investigation closure rates, and stakeholder satisfaction scores.\n\nConduct periodic reviews or audits of the reporting process to identify bottlenecks, gaps, or areas for improvement and implement corrective actions accordingly.",
+    "reviewMechanism": "The Human Resources Manager will evaluate progress on each concern and its corresponding objectives. Representatives from key departments within the organization will conduct the evaluation to ensure a comprehensive assessment of our efforts in upholding labour and human rights standards. Any necessary adjustments or improvements will be proposed based on the findings of this yearly review."
+  },
+  "sourcePath": "Policies - Kenal/Indutch/2. Labor and Human Right Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Indutch/2. Labor and Human Right Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 23807,
+  "parsedAt": "2026-09-11T07:24:12.586Z"
+}

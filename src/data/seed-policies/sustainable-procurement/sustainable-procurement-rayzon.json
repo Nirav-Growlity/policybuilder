@@ -1,0 +1,272 @@
+{
+  "id": "sustainable-procurement-rayzon",
+  "name": "Rayzon",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Rayzon Solar Ltd.",
+      "industry": "",
+      "site": "Block No. 105, B/H Aron Pipes, B/H Hariya Talav, Kim Mandvi Road, Karanj, Surat, Gujarat -394110, India.",
+      "sites": [
+        {
+          "location": "Factory – 1 (Kim site)",
+          "address": "Block No. 105, B/H Aron Pipes, B/H Hariya Talav, Kim Mandvi Road, Karanj, Surat, Gujarat -394110, India.",
+          "primaryFunction": "Manufacturing operations"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Block No. 105, B/H Aron Pipes, B/H Hariya Talav, Kim Mandvi Road, Karanj, Surat, Gujarat -394110, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Rayzon Solar Ltd., sustainability is embedded in the core of our business model and manufacturing operations. As a global solar photovoltaic (PV) module manufacturer committed to environmental stewardship, ethical business conduct, and social inclusion, our procurement strategy is a critical lever to drive positive change across our value chain.\n\nThis Sustainable Procurement Policy articulates our intention to go beyond compliance and embed environmental, social, and governance (ESG) criteria into procurement decision-making. We recognize that responsible sourcing contributes not only to operational efficiency and risk mitigation but also to societal progress, climate resilience, and inclusive economic growth.",
+      "declaration": "Integrate ESG in all sourcing decisions to align with sustainability goals.\n\nEnsure ethical sourcing and respect for human rights across the supply chain.\n\nReduce environmental impact by preferring low-carbon and recyclable materials.\n\nSupport local and inclusive suppliers that meet sustainability standards.\n\nStrengthen supplier transparency through reporting and ESG assessments.\n\nEncourage circular practices like reuse, durability, and end-of-life recovery..",
+      "scope": "This policy applies to to Factory – 1 (Kim site), departments, employees, contractors, sub-contractual workers. directors, including both direct (raw materials, equipment, consumables) and indirect procurement (consulting, logistics, IT, facility management, and other services) and governance bodies of Rayzon Solar Ltd., including joint ventures, wholly owned subsidiaries, and affiliated units, both within India and internationally."
+    },
+    "focusAreas": [
+      "Procurement goals",
+      "Environmental issues associated with procurement",
+      "Labor and Human Rights issues associated with procurement",
+      "Ethics issues associated with procurement"
+    ],
+    "qualitative": {
+      "Procurement goals": [
+        "We are committed to embedding sustainability into all procurement activities, ensuring that every purchasing decision aligns with our environmental, social, and ethical objectives.",
+        "We aim to build long-term, value-driven relationships with suppliers who demonstrate a shared dedication to sustainable practices and responsible conduct.",
+        "We will continuously refine our procurement strategies to align with emerging sustainability standards, industry best practices, and evolving expectations around ethical sourcing.",
+        "We will expand the reach of ESG self-assessments and on-site evaluations to deepen supplier engagement and ensure alignment with our sustainability objectives.",
+        "We will uphold ethical business practices by mandating full compliance with our Supplier Code of Conduct across the entire supply chain.",
+        "We will embed revised ESG standards into supplier agreements, reflecting the latest legal requirements and best practices in the industry.",
+        "We will institutionalize regular ESG performance reviews to promote continuous improvement, accountability, and transparency among all suppliers.",
+        "We will strengthen supplier compliance mechanisms by enforcing corrective action plans with clear timelines to address any identified non-compliance or sustainability gaps."
+      ],
+      "Environmental issues associated with procurement": [
+        "We aim to prioritize suppliers who demonstrate measurable progress in reducing their carbon footprint, water usage, and waste generation through the adoption of circular economy practices and low-carbon materials.",
+        "We strive to engage with suppliers who are aligned with globally recognized frameworks such as the Science Based Targets initiative (SBTi) and CDP, encouraging them to disclose environmental performance and commit to science-based climate targets.",
+        "We ensure that all existing suppliers comply with applicable local and international environmental regulations.",
+        "We prefer suppliers who use eco-friendly, sustainable, and recycled materials in their operations.",
+        "We aim to conduct business with suppliers who hold certifications such as ISO 50001, ISO 14001, and ISO 9001.",
+        "We will include Environmental provisions within our Supplier Code of Conduct and require all suppliers to formally acknowledge and comply with these expectations as a condition of doing business.",
+        "We aim to provide training to our procurement staff on environmental issues associated with procurement activities."
+      ],
+      "Labor and Human Rights issues associated with procurement": [
+        "We aim to engage only with suppliers who have robust policies and controls in place to strictly prohibit child labour, forced labour, and modern slavery across all operations and subcontracting chains.",
+        "We strive to prioritize suppliers that demonstrate a commitment to fair labor practices by ensuring safe, inclusive, and harassment-free workplaces, while respecting freedom of association and maintaining accessible grievance redressal systems for workers.",
+        "We are committed to implementing a supplier diversity initiative that actively promotes procurement from women-owned, minority-owned, and underrepresented businesses, wherever feasible, to support inclusive economic participation.",
+        "We will assess suppliers on their adherence to fair labor practices, including safe working conditions, equitable treatment, and respect for worker rights, as part of our standard procurement evaluation criteria.",
+        "We aim to conduct business with suppliers who hold certifications such as ISO 45001, Fair Wage network, SA800 etc.",
+        "We will include Labor and Human Rights provisions within our Supplier Code of Conduct and require all suppliers to formally acknowledge and comply with these expectations as a condition of doing business.",
+        "We aim to provide training to our procurement staff on Labor and Human right issues associated with procurement activities."
+      ],
+      "Ethics issues associated with procurement": [
+        "We aim to prioritize suppliers who demonstrate strong ethical performance, including transparent governance structures, fair business practices, and zero tolerance for corruption or fraud.",
+        "We will integrate ethical compliance checks into our supplier onboarding process, ensuring partners uphold principles of integrity, data protection, responsible marketing, and anti-bribery policies.",
+        "We strive to strengthen ethical decision-making in procurement by equipping our staff with regular training on topics such as conflict of interest, responsible sourcing, and ethical risk identification."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Procurement goals",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% of our suppliers complete ESG self-assessments and undergo on-site audits by the end of FY2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "end of FY2027–28"
+          },
+          {
+            "target": "We are committed to having all suppliers formally acknowledge and comply with our Supplier Code of Conduct by FY2027–28, reinforcing ethical and responsible sourcing across our supply chain.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY2027–28"
+          },
+          {
+            "target": "We plan to incorporate enhanced ESG provisions into all supplier contracts every 5 years, or earlier if required by evolving regulations, with full alignment targeted by FY2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY2027–28"
+          },
+          {
+            "target": "We will initiate comprehensive annual ESG performance evaluations for all suppliers starting FY2027–28, to track and strengthen sustainability compliance.",
+            "baseline": "FY 2022–23",
+            "deadline": "starting FY2027–28"
+          },
+          {
+            "target": "We will implement corrective action plans for non-compliant suppliers and aim for a 90% resolution rate within 12–15 months of issue identification, beginning in FY2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "beginning in FY2027–28"
+          },
+          {
+            "target": "We will require all strategic suppliers to submit annual ESG disclosures or sustainability reports by FY2027–28, to promote transparency and shared accountability.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Environmental issues associated with procurement",
+        "targets": [
+          {
+            "target": "We aim to ensure that 90% of our procurement spend is directed toward suppliers holding credible environmental certifications (such as ISO 14001) by the end of FY2027–28, to strengthen environmental responsibility across our value chain.",
+            "baseline": "FY 2022–23",
+            "deadline": "end of FY2027–28"
+          },
+          {
+            "target": "We plan to increase local sourcing by 20% by FY2027–28, relative to our FY2022–23 baseline, in order to reduce transportation-related emissions and support regional economies.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY2027–28"
+          },
+          {
+            "target": "We aim to our 100% suppliers were complied with local and internation environmental regulations by FY 2026–27.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2026–27"
+          },
+          {
+            "target": "We aim to our 100% procurement staff received training on the environmental issues associated with the procurement by FY 2026–27.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2026–27"
+          }
+        ]
+      },
+      {
+        "area": "Labor and Human Rights issues associated with procurement",
+        "targets": [
+          {
+            "target": "We aim to ensure that 90% of our procurement is conducted with suppliers certified under recognized ethical standards (e.g., Fair Trade, SA8000) by the end of FY2027–28, reinforcing our commitment to responsible sourcing.",
+            "baseline": "FY 2022–23",
+            "deadline": "end of FY2027–28"
+          },
+          {
+            "target": "We are committed to maintaining zero instances of child labour across our supply chain, with continuous monitoring and supplier compliance reviews.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "We plan to increase procurement from suppliers local to each operational site by 15% by FY2027–28, promoting regional economic development and reducing logistics-related emissions.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY2027–28"
+          },
+          {
+            "target": "We are committed to increasing procurement from minority- and women-owned businesses by 15% by FY2027–28, fostering diversity and inclusion in our supplier base.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY2027–28"
+          },
+          {
+            "target": "We aim to provide comprehensive training on social responsibility, human rights, and ethical sourcing to 100% of procurement staff by FY2027–28, ensuring informed and ethical decision-making throughout the procurement process.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Ethics issues associated with procurement",
+        "targets": [
+          {
+            "target": "We aim to maintain a 0% incidence rate of corruption-related cases across our supply chain, reinforcing our commitment to ethical business conduct.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to our 100% procurement staff received training on the ethics issues associated with the procurement by FY 2026–27.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2026–27"
+          },
+          {
+            "target": "We plan to conduct ethics-focused audits for at 100% of high-risk suppliers each year, to proactively identify and address potential ethical breaches.",
+            "baseline": "FY 2022–23",
+            "deadline": "each year"
+          },
+          {
+            "target": "We aim to resolve 90% of whistle-blower cases within month of reporting, ensuring swift and fair handling of all ethics-related concerns.",
+            "baseline": "FY 2022–23",
+            "deadline": "within month of reporting"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Approves the Sustainable Procurement Policy"
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Ensures alignment with company strategy and ESG objectives"
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Reviews procurement sustainability outcomes based on reporting"
+      },
+      {
+        "role": "Procurement Lead",
+        "duty": "Oversees implementation of sustainable procurement practices"
+      },
+      {
+        "role": "Procurement Lead",
+        "duty": "Ensures suppliers meet ESG, human rights, and ethical sourcing criteria"
+      },
+      {
+        "role": "Procurement Lead",
+        "duty": "Integrates sustainability in all tendering and selection processes"
+      },
+      {
+        "role": "Compliance & ESG Officer",
+        "duty": "Monitors supplier compliance with sustainability standards and codes of conduct"
+      },
+      {
+        "role": "Compliance & ESG Officer",
+        "duty": "Conducts due diligence and risk-based audits"
+      },
+      {
+        "role": "Compliance & ESG Officer",
+        "duty": "Supports training and continuous improvement"
+      },
+      {
+        "role": "Operational manager",
+        "duty": "Coordinates with procurement teams to ensure sustainable sourcing practices are reflected in operational decisions"
+      },
+      {
+        "role": "Operational manager",
+        "duty": "Identifies local sourcing opportunities and supports data tracking"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Understand and support the policy in relevant procurement tasks"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Report any non-compliance or supplier risk"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Practice ethical and sustainable sourcing in daily responsibilities"
+      }
+    ],
+    "monitoring": "Our governance framework mandates supplier risk assessments, lifecycle impact evaluations for key procurement categories, and periodic supplier audits focusing on environmental, social, and governance (ESG) criteria. Sustainability requirements are integrated into supplier selection, contract terms, and performance evaluations. Performance is reviewed quarterly and reported to senior leadership to drive continuous improvement and ensure compliance with applicable laws and corporate values.\n\nInternal Reporting: The Procurement Lead, in collaboration with the ESG team, consolidates procurement-related sustainability data monthly and submits a quarterly report to senior management, highlighting supplier performance, risks, and required interventions.\n\nExternal Reporting: An annual Sustainable Procurement Performance Report is published, aligned with relevant standards (e.g., GRI, EcoVadis, UNGC), and includes supplier audit outcomes, local sourcing progress, and ESG impact metrics.\n\nEscalation & Review: Any significant breach of procurement ethics, human rights, or environmental expectations is escalated to the CEO and reviewed by the Sustainable Procurement Task Force for appropriate action and policy updates.",
+    "reviewMechanism": "We are committed to enhancing our sustainable procurement practices by adopting emerging standards, learning from supplier audits, integrating new technologies, and updating this policy based on stakeholder feedback, supply chain risks, and regulatory changes. We strive to build a value chain that is ethical, inclusive, environmentally responsible, and resilient.\n\nThis Sustainable Procurement Policy becomes effective upon approval by the General Manager and will remain valid until formally revised. It shall be reviewed at least once annually, or as required to reflect evolving regulations, market conditions, and company strategy."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Rayzon/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Rayzon/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 14932,
+  "parsedAt": "2026-09-11T07:14:08.410Z"
+}

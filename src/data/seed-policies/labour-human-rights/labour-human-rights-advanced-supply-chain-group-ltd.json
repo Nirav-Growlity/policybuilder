@@ -1,0 +1,282 @@
+{
+  "id": "labour-human-rights-advanced-supply-chain-group-ltd",
+  "name": "Advanced Supply Chain Group Ltd",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Labour  Human rights roadmap (updated).docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Advanced Supply Chain Group Limited (ASCG)",
+      "industry": "",
+      "site": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ",
+      "sites": [
+        {
+          "location": "Head Office – Bradford (J26), United Kingdom",
+          "address": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "ASCG Corby (Site 1), United Kingdom",
+          "address": "Units 1–3, Eismann Way, Corby, Northamptonshire, NN17 5ZB",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Corby (Site 2), United Kingdom",
+          "address": "Hunters Point, Brakey Road, Corby, Northamptonshire, NN17 5JE",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Sheffield, United Kingdom",
+          "address": "PLP Smithywood, 6 Cowley Way, Sheffield, S35 1QP",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG International, UAE",
+          "address": "Al Fattan Plaza, Airport Road, Office 712, Al Garhoud, Dubai, UAE",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Germany – Nettetal, Germany",
+          "address": "Herrenpfad-Süd 40, 41334 Nettetal, Deutschland",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Advanced Supply Chain Group Limited (ASCG), a Reconomy Group company, is committed to protecting and promoting the fundamental rights of all employees, workers, and partners. ASCG has developed this Labour & Human Rights Roadmap to outline structured actions, measurable goals, and governance mechanisms that ensure the organisation fosters ethical labour practices across all global operations. This document should be read in conjunction with Reconomy Group RGPOL_005_modern_slavery.",
+      "declaration": "ASCG is committed to achieving the following general human rights objectives:\n\nPromote a safe, healthy, and inclusive workplace.\n\nEnsure fair wages, working hours, and conditions.\n\nProhibit child labour, forced labour, and modern slavery.\n\nPrevent all forms of discrimination and harassment.\n\nSupport freedom of association and collective dialogue.\n\nProvide opportunities for employee development.\n\nRespect the rights of external stakeholders affected by our operations.",
+      "scope": "This roadmap applies to all activities undertaken by ASCG, suppliers and partners and aligns with the overarching policies and standards of Reconomy Group.\n\nThe roadmap covers all ASCG operational, administrative, and strategic activities across the following sites and regions:"
+    },
+    "focusAreas": [
+      "Health and Safety of Employees",
+      "Working Conditions and Fair Pay",
+      "Diversity, Equity and Inclusion (DEI)",
+      "Social Dialogue and Employee Engagement",
+      "Training and Career Development",
+      "Child Labour, Forced Labour, and Trafficking Prevention",
+      "Discrimination and Harassment",
+      "External Stakeholder Human Rights"
+    ],
+    "qualitative": {
+      "Health and Safety of Employees": [
+        "Maintain a 0% recordable workplace injury rate by Year 2028 through the implementation of proactive safety training and risk mitigation strategies."
+      ],
+      "Working Conditions and Fair Pay": [
+        "Conduct annual pay equity reviews within banded areas of the business.",
+        "Conduct employee satisfaction surveys on working conditions every year."
+      ],
+      "Diversity, Equity and Inclusion (DEI)": [
+        "Publish an annual Gender Pay Gap Report starting 2024, with transparent reporting and improvement actions."
+      ],
+      "Social Dialogue and Employee Engagement": [
+        "Maintain the “Employee Voice Forum” across all sites by 2028, providing a safe and inclusive platform for employees to raise concerns and contribute to workplace improvements."
+      ],
+      "Training and Career Development": [
+        "Ensure 100% of new hires complete induction training within their first 30 days."
+      ],
+      "Child Labour, Forced Labour, and Trafficking Prevention": [],
+      "Discrimination and Harassment": [
+        "Maintain a zero-tolerance policy with all reported cases investigated within 5 working days."
+      ],
+      "External Stakeholder Human Rights": []
+    },
+    "quantitative": [
+      {
+        "area": "Health and Safety of Employees",
+        "targets": [
+          {
+            "target": "Maintain a 0% recordable workplace injury rate by Year 2028 through the implementation of proactive safety training and risk mitigation strategies.",
+            "baseline": "2021",
+            "deadline": "Year 2028"
+          },
+          {
+            "target": "Conduct 100% risk assessment of all operational sites annually.",
+            "baseline": "2021",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions and Fair Pay",
+        "targets": [
+          {
+            "target": "Maintain 100% of employees are paid at or above the Living Wage by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Maintain 100% of employees are paid at or above the Minimum Wage by 2028",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity and Inclusion (DEI)",
+        "targets": [
+          {
+            "target": "Achieve 50% gender representation in management and leadership roles by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Publish an annual Gender Pay Gap Report starting 2024, with transparent reporting and improvement actions.",
+            "baseline": "2021",
+            "deadline": "starting 2024 and annually"
+          },
+          {
+            "target": "Provide mandatory DEI awareness training to 100% of employees by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue and Employee Engagement",
+        "targets": [
+          {
+            "target": "Establish active employee feedback and consultation forums at 100% of operational sites by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Guarantee that 100% of employees are free to join or form trade unions or employee representation groups without fear of retaliation by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Maintain the “Employee Voice Forum” across all sites by 2028, providing a safe and inclusive platform for employees to raise concerns and contribute to workplace improvements.",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Training and Career Development",
+        "targets": [
+          {
+            "target": "Provide a minimum of 5 of training per employee per year by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 100% of new hires complete induction training within their first 30 days.",
+            "baseline": "2021",
+            "deadline": "within their first 30 days"
+          },
+          {
+            "target": "Achieve a 20% increase in the average training hours per employee by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Child Labour, Forced Labour, and Trafficking Prevention",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive training on child labour, forced labour, trafficking prevention, and modern slavery by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct risk assessment of all operational sites annually.",
+            "baseline": "2021",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain Zero incidents regarding child labour, forced labour, trafficking prevention, and modern slavery by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Provide anti-discrimination and harassment training to 100% of employees annually.",
+            "baseline": "2021",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain a zero-tolerance policy with all reported cases investigated within 5 working days.",
+            "baseline": "2021",
+            "deadline": "within 5 working days"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Conduct human rights impact assessments on 100% of new international expansions by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Collaborate with at least 1 local community organisation per region on human rights initiatives by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board & Senior Management",
+        "duty": "Approve the policy, allocate resources, and review labour and human-rights performance."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Implement fair employment practices, maintain grievance channels, and track workforce commitments."
+      },
+      {
+        "role": "EHS & Operations",
+        "duty": "Maintain safe working conditions, address hazards, and ensure worker training and participation."
+      },
+      {
+        "role": "Procurement & Supply Chain",
+        "duty": "Apply human-rights due diligence to suppliers, contractors, and service providers."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Treat colleagues with dignity, report concerns without retaliation, and uphold this policy."
+      }
+    ],
+    "monitoring": "Should modern slavery, forced labour or human rights breaches be detected within the business and supply chain, there should be an appropriate escalation process. We would refer to the police and seek advice (in the UK) from the NCO Unseen helpline 0800 0121 700 and report via the Unseen modern slavery website.\n\nThe roadmap is available on ASCG’s intranet and external communications portal.\n\nAll employees and contractors will receive onboarding and refresher briefings.\n\nAwareness campaigns and training modules will be promoted quarterly.",
+    "reviewMechanism": "The roadmap will be reviewed annually by the Managing Director or sooner if triggered by:\n\nLegislative or regulatory changes\n\nGrievances, incidents, or internal audits\n\nReconomy Group strategy updates\n\nThe review process ensures that ASCG continues to uphold high standards in labour and human rights."
+  },
+  "sourcePath": "Policies - Kenal/Advanced Supply Chain Group Ltd/Labour  Human rights roadmap (updated).docx",
+  "sourceFiles": [
+    "Policies - Kenal/Advanced Supply Chain Group Ltd/Labour  Human rights roadmap (updated).docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 6472,
+  "parsedAt": "2026-09-11T07:18:22.227Z"
+}

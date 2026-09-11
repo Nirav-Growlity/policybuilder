@@ -1,0 +1,390 @@
+{
+  "id": "labour-human-rights-mars-stitch",
+  "name": "Mars Stitch",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labour and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Mars Stitch Ltd.",
+      "industry": "",
+      "site": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+      "sites": [
+        {
+          "location": "Mars Stitch Ltd.",
+          "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Mars Stitch Ltd. is dedicated to fostering a workplace that upholds the highest standards of labor and human rights. We believe that respect for the dignity, rights, and well-being of all individuals is fundamental to our operations. As a leader in the textile and garment industry, we recognize our responsibility to ensure ethical practices throughout our value chain. Our Labour and Human Rights Policy underscores our commitment to fair labor practices, non-discrimination, and a safe and supportive work environment.\n\nAt Mars Stitch Ltd., we understand that a fair and inclusive workplace not only drives employee satisfaction but also enhances organizational success. We are committed to embedding respect for human rights into all levels of our business operations, from hiring practices to day-to-day management. This holistic approach ensures that every employee and stakeholder experience dignity, fairness, and opportunity as part of the Mars Stitch Ltd. community.",
+      "declaration": "Mars Stitch Ltd. is dedicated to fostering a fair and equitable workplace by adhering to the highest labor and human rights standards. By prioritizing ethical labor practices, ensuring diversity, and promoting a safe working environment, we aim to positively impact the lives of our employees and the communities in which we operate. Through rigorous adherence to international standards and local regulations, we are committed to making our operations a benchmark for labor and human rights excellence.",
+      "scope": "This policy applies exclusively to the operations of Mars Stitch Ltd., covering all employees, workers, contractors, contractual worker, subcontractors, internal and external stakeholders directly associated with our facilities."
+    },
+    "focusAreas": [
+      "Freedom of Association and Collective Bargaining",
+      "Prohibition of Forced and Child Labor",
+      "Fair Wages and Working Hours",
+      "Non-Discrimination and Diversity",
+      "Safe and Healthy Workplace",
+      "Ethical Recruitment Practices",
+      "External Stakeholder Human Rights",
+      "Career Management and Training"
+    ],
+    "qualitative": {
+      "Freedom of Association and Collective Bargaining": [
+        "Ensure all employees are aware of their rights to organize and bargain collectively through regular informational sessions.",
+        "Conduct annual reviews of collective bargaining agreement to eliminate any barriers to freedom of association.",
+        "Facilitate annual meeting between employees and management to discuss and address collective concerns.",
+        "Support the establishment of workplace committees to enhance communication and representation."
+      ],
+      "Child Labor, Forced Labor, and Human Trafficking": [
+        "Implement supplier audits to confirm zero tolerance for forced or child labor & Human Trafficking.",
+        "Establish training programs to educate stakeholders on recognizing and reporting unethical labor practices.",
+        "Collaborate with local organizations to create awareness campaigns against Child labor, forced labor & Human Trafficking.",
+        "Introduce whistleblower mechanisms to report any violations anonymously and securely."
+      ],
+      "Fair Wages and Working Hours": [
+        "Regularly assess and adjust wages to ensure compliance with living wage standards.",
+        "Introduce digital timekeeping systems to accurately monitor and prevent excessive working hours.",
+        "Develop guidelines for overtime pay to ensure compliance with labor laws.",
+        "Publish transparent wage structures to eliminate any ambiguities in employee remuneration."
+      ],
+      "Diversity, Equity, and Inclusion": [
+        "Conduct bias-awareness training for all managers and team leaders to foster an inclusive workplace culture.",
+        "Launch mentorship programs targeting underrepresented groups to enhance their career progression opportunities.",
+        "Ensure representation from diverse groups in recruitment panels.",
+        "Establish a grievance mechanism to address instances of discrimination promptly."
+      ],
+      "Safe and Healthy Workplace": [
+        "Provide annual safety drills and health awareness programs for all employees.",
+        "Install safety equipment upgrades across all facilities.",
+        "Regularly inspect machinery and infrastructure to identify potential hazards.",
+        "Create health monitoring programs for workers in physically demanding roles."
+      ],
+      "Ethical Recruitment Practices": [
+        "Partner with third-party organizations to ensure ethical recruitment for all subcontracted workers.",
+        "Maintain a transparent hiring process with multilingual documentation to prevent misunderstandings.",
+        "Establish pre-employment counselling to clarify terms and conditions for new hires."
+      ],
+      "External Stakeholder Human Rights": [
+        "Develop a code of conduct for suppliers emphasizing human rights obligations.",
+        "Engage with local communities through workshops to promote labor rights awareness.",
+        "Establish grievance redressal mechanisms for external stakeholders affected by company operations.",
+        "Conduct annual assessments of suppliers' adherence to human rights standards."
+      ],
+      "Career Management and Training": [
+        "Launch quarterly skills development programs to upskill employees for future roles.",
+        "Provide career planning services, including mentorship and tailored growth pathways.",
+        "Introduce leadership training modules to prepare employees for managerial roles.",
+        "Create an internal job board to promote career mobility within the company."
+      ],
+      "Employees’ Health and Safety": [
+        "Install advanced safety monitoring systems across all facilities to identify and mitigate hazards proactively.",
+        "Conduct quarterly health and safety drills to prepare employees for emergencies.",
+        "Provide employees with comprehensive health benefits, including periodic medical check-ups and mental health support."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Freedom of Association and Collective Bargaining",
+        "targets": [
+          {
+            "target": "Conduct 100% employee informational sessions on collective bargaining rights annually by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Review collective bargaining agreements annually to identify and remove barriers to association.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Facilitate at least 3 employee-management meetings annually to address concerns.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Establish workplace committees in 100% of departments by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Perform supplier audits for 100% of Tier 1 and Tier 2 suppliers annually to ensure compliance with child labor and anti-trafficking standards.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Train 100% of stakeholders on recognizing and reporting unethical labor practices by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Partner with at least 5 local organizations annually to conduct awareness campaigns on child labor and trafficking.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Resolve 100% of whistleblower reports within 90 days.",
+            "baseline": "2023",
+            "deadline": "within 90 days"
+          }
+        ]
+      },
+      {
+        "area": "Fair Wages and Working Hours",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with Minimun wage standards across all operations by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct quarterly reviews of overtime pay practices to ensure legal compliance.",
+            "baseline": "2023",
+            "deadline": "quarterly"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity, and Inclusion",
+        "targets": [
+          {
+            "target": "Train 100% of managers and team leaders on bias-awareness annually by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Increase workforce participation of underrepresented groups by 15% by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure diverse representation on 100% of recruitment panels by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Resolve 100% of discrimination grievances within 30 days of filing.",
+            "baseline": "2023",
+            "deadline": "within 30 days of filing"
+          }
+        ]
+      },
+      {
+        "area": "Safe and Healthy Workplace",
+        "targets": [
+          {
+            "target": "Conduct annual safety drills for 100% of employees and facilities by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Upgrade safety equipment in all facilities by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Perform monthly inspections of all machinery and infrastructure to identify hazards.",
+            "baseline": "2023",
+            "deadline": "monthly"
+          },
+          {
+            "target": "Establish health monitoring programs for 100% of employees in high-risk roles by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Recruitment Practices",
+        "targets": [
+          {
+            "target": "Partner with at least 5 third-party organizations annually to ensure ethical recruitment practices.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide multilingual hiring documentation for 100% of new recruits by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct pre-employment counseling for 100% of recruits by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Develop a supplier code of conduct for 100% of suppliers by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Engage with 10 local communities annually through labor rights workshops.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Assess suppliers' adherence to human rights standards through annual audits of 100% Tier 1 suppliers.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Establish grievance redress mechanisms accessible to 100% of stakeholders by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Launch quarterly skills development programs reaching 100% of employees annually.",
+            "baseline": "2023",
+            "deadline": "quarterly and annually"
+          },
+          {
+            "target": "Provide tailored career planning for 100% of employees seeking mentorship by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Introduce leadership training for 30% of employees annually to prepare for managerial roles.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure internal job board transparency for 100% of employees by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Employees’ Health and Safety",
+        "targets": [
+          {
+            "target": "Install advanced safety monitoring systems in 100% of facilities by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct quarterly health and safety drills across all units.",
+            "baseline": "2023",
+            "deadline": "quarterly"
+          },
+          {
+            "target": "Offer comprehensive health check-ups for 100% of employees annually starting in 2026.",
+            "baseline": "2023",
+            "deadline": "annually starting in 2026"
+          },
+          {
+            "target": "Provide mental health support programs to 100% of employees by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Dedicated committee",
+        "duty": "This committee is responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "S.M Azmal Huda, General Manager(Operation), President",
+        "duty": "Ensure the successful implementation of this policy as President of the dedicated committee."
+      },
+      {
+        "role": "Mahmodul Hasan, Manager – HR, Admin & Com., Vice President",
+        "duty": "Ensure the successful implementation of this policy as Vice President of the dedicated committee."
+      },
+      {
+        "role": "Eva Akter, Executive-Welfare, Member Secretary",
+        "duty": "Support the successful implementation of this policy as Member Secretary of the dedicated committee."
+      },
+      {
+        "role": "Nonda Gopal, Sr. Executive -Compliance, Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      },
+      {
+        "role": "Md.Shanta, Maintenance In-charge, Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      },
+      {
+        "role": "Md. Masud, Asst. Manager-Admin, Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      },
+      {
+        "role": "Mr. Antar, Asst. Manager-Store, Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      },
+      {
+        "role": "Md. Samim, Cutting Asst., Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      },
+      {
+        "role": "Md. Nayeem Hosan, Quality Inspector, Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      },
+      {
+        "role": "Mst. Ruma Akter, Operator(Sewing), Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      },
+      {
+        "role": "Mst. Jushna Begam, Operator(Sewing), Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      },
+      {
+        "role": "Mst. Mira, Finishing Asst., Member",
+        "duty": "Support the successful implementation of this policy as a member of the dedicated committee."
+      }
+    ],
+    "monitoring": "Mars Stitch Ltd. is committed to continuous improvement in labor and human rights practices through:\n\nRegular monitoring of key performance indicators (KPIs) related to worker welfare and safety.\n\nIntroducing technology solutions to enhance transparency in wage payments and working hours.\n\nStrengthening grievance mechanisms to address and resolve worker concerns efficiently.\n\nCollaborating with industry peers and non-governmental organizations to share best practices.\n\nTo ensure transparency and accountability:\n\nAnnual Review: Publish an annual Labor and Human Rights Report detailing compliance, progress, and future goals.\n\nStakeholder Communication: Share updates on key initiatives with employees, suppliers, and stakeholders through newsletters and meetings.\n\nIncident Reporting: Maintain a transparent system for reporting and addressing workplace grievances.",
+    "reviewMechanism": "This policy will be reviewed annually by the Manager – HR, Admin & Com. to ensure its effectiveness and alignment with evolving regulations and industry standards. Stakeholder feedback will be integrated into updates, and revised policies will be communicated to all employees and partners."
+  },
+  "sourcePath": "Policies - Kenal/Mars Stitch/2. Labour and Human Rights Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Mars Stitch/2. Labour and Human Rights Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 13340,
+  "parsedAt": "2026-09-11T07:24:39.268Z"
+}

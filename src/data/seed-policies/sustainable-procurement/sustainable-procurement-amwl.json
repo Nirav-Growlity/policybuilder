@@ -1,0 +1,172 @@
+{
+  "id": "sustainable-procurement-amwl",
+  "name": "AMWL",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Suatainable Procurement Policy - AMWL.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Agrawal Metal Works Pvt. Ltd.",
+      "industry": "",
+      "site": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India",
+      "sites": [
+        {
+          "location": "Agrawal Metal Works Pvt. Ltd.",
+          "address": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Jhajjar Road, Rewari-123401, Haryana, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "205, “Arunachal Building” 19, Barakhamba Road –110001, New Delhi, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Our Sustainability Procurement Policy underscores Agrawal metal works commitment to integrate environmental, social, and ethical considerations into every facet of procurement practices. By prioritizing transparent and responsible sourcing, we strive not only to minimize our environmental footprint but also to foster a supply chain that promotes social equity and ethical integrity. This policy serves as our commitment to drive sustainable value creation, ensuring that every procurement decision reflects our dedication to a more sustainable future for all stakeholders. This policy aims to promote innovation and collaboration with suppliers to achieve continuous improvement in sustainability performance. Also, to educate and engage our workforce, suppliers, and partners to uphold the highest standards of environmental stewardship and social responsibility.",
+      "declaration": "At Agrawal Metal Works Pvt. Ltd. , we are committed to embedding sustainability into our procurement processes to foster environmental stewardship and social responsibility. Building on the baseline set in FY 2019-20, we strive to collaborate with our suppliers to achieve continuous improvement in sustainability performance, promoting innovation and transparency at every step. By engaging our workforce, suppliers, and partners, we uphold the highest standards of environmental and social responsibility, driving sustainable value creation for all stakeholders.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Sustainable Procurement – Environmental Issues",
+      "Supplier Social Practices",
+      "Collaborative Sustainability",
+      "Circular Economy",
+      "Local, Inclusive & Diverse Sourcing"
+    ],
+    "qualitative": {
+      "Sustainable Procurement – Environmental Issues": [
+        "Prioritize suppliers who keeps the inventory on environmental performance and minimize the environmental impact through energy efficiency, pollution control, and responsible resource use and agreed to provide documents of legal compliance.",
+        "To regularly implement a supplier assessment program that evaluates and encourages the adoption of eco-friendly methods, aiming for all suppliers to reduce their carbon footprint."
+      ],
+      "Supplier Social Practices": [
+        "Ensure suppliers uphold fair labor practices, safe working conditions, respect for human rights across all operations, promote the women empowerment and social responsibility in different sectors such as education, health, clean environment etc",
+        "To, ensure that all suppliers adhere to fair labor practices by conducting regular audits and providing training on human rights standards",
+        "To develop and implement a supplier diversity program to increase engagement with minority-owned and women-owned businesses."
+      ],
+      "Collaborative Sustainability": [
+        "Partner with suppliers to co-develop innovative solutions that enhance environmental performance and social value.",
+        "Foster partnerships with suppliers who prioritize sustainable practices"
+      ],
+      "Circular Economy": [
+        "Prioritize that supplier who believes in the circular economy and focus on the life cycle of the product."
+      ],
+      "Local, Inclusive & Diverse Sourcing": [
+        "Promote procurement from local suppliers, including small-sized, women-owned, and minority-owned businesses, to build community trust and support inclusive economic growth."
+      ],
+      "General": [
+        "To regularly implement a supplier assessment program that evaluates and encourages the adoption of eco-friendly methods, aiming for all suppliers to reduce their carbon footprint.",
+        "To, ensure that all suppliers adhere to fair labor practices by conducting regular audits and providing training on human rights standards"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier environmental certification",
+        "targets": [
+          {
+            "target": "80% of our key suppliers are certified by recognized environmental standards (e.g., ISO 14001)",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supply chain greenhouse gas emissions",
+        "targets": [
+          {
+            "target": "Reduce overall greenhouse gas emissions from our supply chain by 25%",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier environmental performance evaluation",
+        "targets": [
+          {
+            "target": "90% of suppliers are evaluated and documented for their environmental performance, including energy efficiency, pollution control, and responsible resource use",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Labor rights violations",
+        "targets": [
+          {
+            "target": "Maintain incidents of labor rights violations in our supply chain to zero",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier social responsibility initiatives",
+        "targets": [
+          {
+            "target": "90% of suppliers implement social responsibility initiatives, such as programs for women empowerment, education, health, and clean environment",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Procurement Team is responsible for embedding responsible sourcing principles into supplier selection, contract terms, and performance evaluations."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Sustainability Team oversees supplier performance on environmental, social, and ethical criteria, and facilitates corrective actions and continuous improvement."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Suppliers are required to comply with Agrawal Metal Works’ sourcing standards, submit necessary disclosures, and fully cooperate during audits and assessments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Senior Management provides oversight, ensures adequate resources, and drives enforcement of this policy through periodic reviews and strategic direction."
+      },
+      {
+        "role": "All Employees involved in supplier interactions",
+        "duty": "All Employees involved in supplier interactions must adhere to this policy and promptly report any violations or concerns through designated reporting channels."
+      }
+    ],
+    "monitoring": "Supplier Sustainability Compliance: Annual updates on the percentage of key suppliers meeting sustainability criteria, such as certifications and adherence to environmental standards.\n\nEnvironmental Impact Metrics: Report on energy efficiency improvements, greenhouse gas emissions reductions, and water conservation efforts achieved through procurement activities.\n\nSocial Responsibility and Labor Practices: Updates on supplier compliance with labor standards, including audits, training programs, and initiatives promoting fair labor practices.\n\nInnovation and Sustainability Initiatives: Highlights of new sustainability initiatives implemented within procurement, along with their impacts on environmental and social sustainability.\n\nThese reporting topics will track and communicate the progress and outcomes of our Sustainable Procurement Policy, ensuring transparency and accountability in our sustainability efforts.",
+    "reviewMechanism": "Agrawal Metal Works Pvt. Ltd. implements a robust framework for monitoring and enhancing sustainability in procurement practices. This includes conducting annual performance reviews to evaluate compliance with sustainability targets and progress, alongside regular audits and assessments of suppliers to uphold sustainability criteria. Engaging stakeholders for feedback ensures ongoing refinement of the policy's effectiveness, facilitating continuous improvement initiatives. This review mechanism for our Sustainable Procurement Policy will be reviewed annually by the Procurement Manager, ensuring accountability, transparency, and proactive management of sustainability responsibilities at Agrawal Metal Works."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/AMWL/4. Suatainable Procurement Policy - AMWL.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/AMWL/4. Suatainable Procurement Policy - AMWL.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 9293,
+  "parsedAt": "2026-09-11T07:32:35.830Z"
+}

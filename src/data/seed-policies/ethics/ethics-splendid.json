@@ -1,0 +1,215 @@
+{
+  "id": "ethics-splendid",
+  "name": "Splendid",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3) Ethical Conduct Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Splendid Industries Pvt. Ltd.",
+      "industry": "",
+      "site": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India.",
+      "sites": [
+        {
+          "location": "Splendid Industries Pvt.Ltd.",
+          "address": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Splendid Industries Pvt. Ltd., we are committed to conducting our business with the highest standards of integrity, transparency, and professionalism. As a leading provider of architectural and industrial metal solutions, our reputation is built on engineering excellence, customer trust, and ethical responsibility. This Ethical Conduct Policy outlines the foundational principles that guide our actions and decisions across all levels of the organization, from design and fabrication to execution and client interaction.\n\nThrough this policy, we aim to promote a culture of ethical awareness, responsible conduct, and accountability. We are dedicated to ensuring that all employees and stakeholders act with fairness, honesty, and respect while complying with legal requirements and industry best practices. Our goal is to foster an environment where ethical growth, mutual respect, and responsible business practices are embedded in our day-to-day operations.",
+      "declaration": "Splendid Industries Pvt. Ltd. is dedicated to conducting business with integrity, transparency, and compliance with all applicable laws. All employees and partners are expected to avoid conflicts of interest, refrain from bribery, corruption, and fraud, and maintain honesty in all dealings. We also provide a safe, retaliation-free channel for reporting any unethical behavior or violations of this policy. Violations will be taken seriously and may result in disciplinary action. Through this commitment, we aim to maintain trust, protect our reputation, and support sustainable growth.",
+      "scope": "This Ethical Conduct Policy applies to all employees, officers, directors, and representatives of Splendid Industries Pvt. Ltd., as well as third-party partners such as contractors, consultants, suppliers, and vendors. It covers all business activities and interactions across departments and functions, including manufacturing, project execution, procurement, sales, and customer service, and governs relationships with clients, authorities, and industry partners."
+    },
+    "focusAreas": [
+      "Preventing Corruption",
+      "Conflict of Interest",
+      "Fraud",
+      "Anti-Money Laundering",
+      "Information Security",
+      "Responsible Use of Company Assets"
+    ],
+    "qualitative": {
+      "Preventing Corruption": [
+        "Strictly prohibit bribery, kickbacks, and any form of corrupt practices through clear policies, training, and enforcement.",
+        "Maintain a zero-tolerance policy for bribery and corruption and ensure strict compliance with anti-corruption laws and company policies."
+      ],
+      "Conflict of Interest": [
+        "Require disclosure and proper handling of personal or professional interests that may influence company decisions.",
+        "Promote a culture of transparency, encouraging employees to avoid situations where personal interests could conflict with business interests.",
+        "Ensure implementation of clear procedures for handling potential conflicts of interest fairly and impartially."
+      ],
+      "Fraud": [
+        "Prevent and detect fraud through internal controls, regular audits, and secure reporting mechanisms.",
+        "Provide annual training on identifying, preventing, and reporting fraud to all employees and encourage a culture of accountability, where fraudulent activities are promptly reported and addressed."
+      ],
+      "Anti-Money Laundering": [
+        "Comply with AML laws by verifying transactions, monitoring for suspicious activity, and training employees on red flags.",
+        "Regularly monitor and audit financial transactions to detect any suspicious activity"
+      ],
+      "Information Security": [
+        "Safeguard sensitive data through robust cybersecurity measures, access controls, and regular employee awareness programs.",
+        "Enforce stringent information security protocols to protect sensitive business, employee, and client data from unauthorized access, breaches, and cyber threats."
+      ],
+      "Responsible Use of Company Assets": [
+        "Use company resources efficiently and solely for legitimate business purposes, avoiding waste or misuse.",
+        "Promote efficient and ethical use of company resources through awareness campaigns.",
+        "Implement clear guidelines for personal use of company assets to avoid conflicts."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Preventing Corruption",
+        "targets": [
+          {
+            "target": "Maintain inclusion and compliance of anti-bribery clauses into 100% of supplier and partner contracts by FY 2029-30.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train 100% of procurement and finance teams on anti-corruption policies annually.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero instances of corruption reported in annual audits.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Achieve 100% completion rate of annual conflict of interest disclosures by all managers by FY 2029-30.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Conduct fraud risk assessments across all functions annually.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero fraud - related incidents annually.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          },
+          {
+            "target": "To maintain the implementation of a fraud detection mechanism to monitor and flag suspicious activities, and hence achieve 0% of undetected fraudulent transactions by FY 2029-30.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Maintain zero number of false positive alerts in AML monitoring systems.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": ""
+          },
+          {
+            "target": "Screen 100% of high-risk third parties annually using AML compliance checks.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Train 100% of finance and legal staff on AML procedures annually.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Conduct mandatory annual cybersecurity training for 100% employees, covering data privacy, phishing prevention, and risk mitigation strategies.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Ensure 100% compliance with information security audits conducted across all departments anually",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero incidents of unauthorized data access and breaches through improved controls by FY 2029-30.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Use of Company Assets",
+        "targets": [
+          {
+            "target": "Conduct annual audits to reduce misuse or waste of assets by 90%.",
+            "baseline": "The FY 2022-23 serves as the baseline for all ethical governance targets at Splendid Industries, including those related to business integrity, anti-corruption, conflict of interest, fraud prevention, and anti-money laundering.",
+            "deadline": "Annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Ensures implementation of ethical policies and compliance with anti-corruption, conflict of interest, fraud, and information security standards."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Oversees employee training on ethical conduct, including anti-corruption and conflict-of-interest policies."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Safeguards company and customer data through secure information systems."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts audits to assess policy compliance and identify risks."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Reviews ethical performance, allocates resources, and promotes a culture of integrity."
+      }
+    ],
+    "monitoring": "At Splendid Industries Pvt. Ltd., Ethical Conduct practices are continuously enhanced to stay aligned with evolving regulations, industry standards, and emerging risks. A strong culture of integrity is embedded across all levels of the organization, ensuring transparency, accountability, and regulatory compliance.\n\nOngoing Training & Awareness: Employees undergo annual training on key ethical topics, including anti-corruption, conflict of interest, fraud prevention, anti-money laundering (AML), and information security.\n\nRisk Assessments & Independent Audits: Regular internal reviews and third-party audits help identify potential ethical risks, evaluate policy effectiveness, and drive corrective actions.\n\nCollaborative Compliance Engagement: Active participation in industry forums and regulatory dialogues supports alignment with best practices and ethical norms.\n\nAdvanced Monitoring & Reporting Systems: Secure digital tools and automated monitoring mechanisms strengthen fraud detection, compliance management, and incident reporting.\n\nFeedback & Transparency Culture: Open channels for feedback empower employees and stakeholders to share concerns or suggestions, driving continual ethical improvements.\n\nSplendid Industries Pvt. Ltd. maintains a zero-tolerance approach toward violations of its Ethical Conduct Policy. All suspected or confirmed breaches will be handled seriously, fairly, and in a timely manner to uphold the company’s values of integrity, transparency, and accountability.\n\nReporting Violations: Employees are strongly encouraged to report any unethical or suspicious behaviour through appropriate channels, including direct supervisors, the internal compliance team, or the company’s confidential whistleblower system, which allows anonymous submissions without fear of retaliation.\n\nInvestigation Process: All reported concerns will be promptly investigated by designated personnel or third-party experts, ensuring impartiality and strict confidentiality throughout the process. The identity of whistleblowers will be protected unless disclosure is legally required.\n\nCorrective Actions: When a violation is confirmed, the company will take appropriate disciplinary action based on the severity of the offense. This may include formal warnings, mandatory retraining, suspension, reassignment, or termination of employment. For example, an employee found accepting unauthorized payments from vendors may face immediate dismissal and legal prosecution.\n\nProtection from Retaliation: Retaliation in any form against whistleblowers or those cooperating with an investigation is strictly prohibited. Any individual found engaging in retaliatory behaviour will be subject to disciplinary consequences.",
+    "reviewMechanism": "The Ethical Conduct Policy is reviewed annually by the Compliance Officer to ensure its continued relevance, effectiveness, and alignment with legal and regulatory requirements. Updates may be made based on audit findings, changes in applicable laws, employee feedback, or evolving business practices. Any revisions are communicated to all employees, and necessary training is provided to ensure awareness and compliance."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Splendid/3) Ethical Conduct Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Splendid/3) Ethical Conduct Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 13261,
+  "parsedAt": "2026-09-11T07:41:45.609Z"
+}

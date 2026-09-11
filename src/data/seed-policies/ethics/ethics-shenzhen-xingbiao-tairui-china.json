@@ -1,0 +1,380 @@
+{
+  "id": "ethics-shenzhen-xingbiao-tairui-china",
+  "name": "Shenzhen Xingbiao - Tairui China",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Ethics  Policy done.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Shenzhen Xingbiao Electronic Technology Co Ltd",
+      "industry": "",
+      "site": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China",
+      "sites": [
+        {
+          "location": "Shenzhen Xingbiao Electronic Technology Co Ltd",
+          "address": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China",
+          "primaryFunction": "PCB/PCBA manufacturing, sourcing, and operational activities"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Shenzhen Xingbiao Electronic Technology Co Ltd places ethical conduct at the heart of our corporate identity. This policy outlines our commitment to upholding honesty, fairness, and legal compliance in every aspect of our operations. It serves as a practical framework for making responsible choices and conducting business with integrity.\n\nWe understand that consistent ethical behaviour builds lasting credibility with our employees, customers, suppliers, and broader stakeholders. By integrating ethical values into our daily decision-making and business processes, we cultivate a workplace culture based on professionalism, accountability, and mutual respect. Every individual at Shenzhen Xingbiao Electronic Technology Co Ltd is expected to embody these principles at all times.",
+      "declaration": "Shenzhen Xingbiao Electronic Technology Co Ltd is firmly committed to conducting its business with honesty, integrity, and a strong sense of responsibility. We believe that ethical behaviour is not just a requirement but a core element of who we are as an organization. Every team member, including employees, contractors, and business partners, is expected to uphold these values in all professional activities.\n\nOur commitment to ethical excellence is reflected in our efforts to educate our workforce, encourage responsible practices, and ensure that ethical considerations are integrated into both daily operations and long-term planning. We strive to maintain a work culture where doing the right thing is second nature.",
+      "scope": "This policy applies to all employees, workers, subcontractors, and other stakeholders directly affiliated with us. The applicable sites include:"
+    },
+    "focusAreas": [
+      "Secure and Responsible Information Management",
+      "Anti-Bribery and Corruption",
+      "Ethical Leadership and Accountability",
+      "Fair Play: Managing Conflicts of Interest",
+      "Clean Transactions: Combating Money Laundering",
+      "Transparency Matters: Preventing Fraud",
+      "Anti-Corruption",
+      "Conflict of Interest",
+      "Confidentiality & Data Protection",
+      "Fair Competition",
+      "Responsible Sourcing",
+      "Intellectual Property Protection",
+      "Compliance with Laws & Regulations",
+      "Product Integrity & Quality Ethics",
+      "Health, Safety & Environment (HSE) Integrity",
+      "Disciplinary Measures for Policy Violations"
+    ],
+    "qualitative": {
+      "Secure and Responsible Information Management": [
+        "Safeguard the confidentiality of client and partner information through robust data protection controls.",
+        "Adopt secure and compliant methods for data handling, including collection, usage, and storage, in line with relevant privacy legislation.",
+        "Continuously enhance cybersecurity systems to defend against unauthorized access and potential data leaks.",
+        "Educate staff regularly on privacy obligations and secure handling of information to prevent security incidents."
+      ],
+      "Anti-Bribery and Corruption": [
+        "Forbid offering or accepting bribes, kickbacks, or improper gifts that could compromise objective business decisions.",
+        "Maintain secure and anonymous reporting channels for employees to raise concerns about unethical conduct without fear of reprisal.",
+        "Enforce a strict no-tolerance approach to bribery, corruption, money laundering, and conflicts of interest across all company functions.",
+        "Provide ongoing training to ensure all personnel understand anti-corruption obligations and adhere to regulatory and ethical expectations."
+      ],
+      "Ethical Leadership and Accountability": [
+        "Promote integrity-driven leadership that sets a strong example of ethical behaviour throughout the organization.",
+        "Equip employees with resources and guidance to navigate ethical challenges confidently and responsibly.",
+        "Establish clear expectations and accountability measures to ensure all team members act in accordance with company values."
+      ],
+      "Fair Play: Managing Conflicts of Interest": [
+        "The Company is committed to fair play, transparency, and integrity in all business decisions.",
+        "All employees are required to avoid situations where personal interests may conflict, or appear to conflict, with company interests.",
+        "The Company promotes open communication and ethical decision-making to prevent conflicts of interest.",
+        "Regular internal communication is used to enhance awareness and understanding of conflict of interest risks and expectations.",
+        "Leadership is expected to set an example by adhering to higher standards of disclosure and ethical conduct."
+      ],
+      "Clean Transactions: Combating Money Laundering": [
+        "The Company is committed to preventing any direct or indirect involvement in money laundering or related financial crimes.",
+        "All business transactions are conducted with transparency, integrity, and compliance with applicable anti-money laundering (AML) laws and regulations.",
+        "Employees are expected to understand money laundering risks relevant to their roles and to act responsibly when handling financial transactions.",
+        "Cooperation with regulatory authorities and law enforcement agencies is supported to strengthen AML awareness and compliance.",
+        "AML policies and controls are periodically reviewed and strengthened to reflect regulatory and business changes."
+      ],
+      "Transparency Matters: Preventing Fraud": [
+        "The Company is committed to full transparency, integrity, and ethical conduct in all business activities.",
+        "Fraud in any form is strictly prohibited, and preventive controls are embedded in business operations.",
+        "Confidential and secure fraud reporting mechanisms are maintained, with zero tolerance for retaliation.",
+        "Ethical behaviour and integrity are regularly reinforced through leadership communication and training."
+      ],
+      "Anti-Corruption": [
+        "No employee shall offer, give, request, or accept bribes, kickbacks, facilitation payments, or inappropriate gifts that could influence business decisions.",
+        "Refusing cash, gift cards, or expensive entertainment offered by PCB material suppliers, SMT equipment vendors, or inspection service providers in exchange for preferred supplier selection or order allocation."
+      ],
+      "Conflict of Interest": [
+        "Employees must disclose any personal, financial, or family interests that could influence or appear to influence company decisions.",
+        "Not awarding PCB fabrication, component sourcing, or surface-treatment contracts to a supplier owned by a relative without formal disclosure and management approval."
+      ],
+      "Confidentiality & Data Protection": [
+        "Confidential customer, design, and business information must be protected and used only for authorized purposes.",
+        "Not sharing customer PCB layouts, Gerber files, BOMs, test programs, pricing, or production volumes with unauthorized parties or competitors."
+      ],
+      "Fair Competition": [
+        "The company competes fairly and does not engage in collusion, price-fixing, bid-rigging, or unfair market practices.",
+        "Avoiding agreements with other PCB or PCBA manufacturers to fix prices, divide customers, or coordinate bids for electronics clients."
+      ],
+      "Responsible Sourcing": [
+        "Suppliers must be selected based on quality, cost, compliance, and ethical practices, not personal benefits.",
+        "Selecting laminate, copper foil, solder paste, and electronic component suppliers through approved evaluation processes rather than personal relationships."
+      ],
+      "Intellectual Property Protection": [
+        "Customer and company intellectual property must be respected and protected at all times.",
+        "Not copying customer PCB designs or using them for other clients without written authorization."
+      ],
+      "Compliance with Laws & Regulations": [
+        "All operations must comply with applicable laws, including environmental, labor, product safety, and trade regulations.",
+        "Ensuring RoHS, REACH, and applicable export control requirements are met for PCBA, LED products, and consumer electronics."
+      ],
+      "Product Integrity & Quality Ethics": [
+        "Products must meet agreed specifications and quality standards without falsification or misrepresentation.",
+        "Not bypassing electrical testing, AOI, or functional testing to meet shipment deadlines."
+      ],
+      "Health, Safety & Environment (HSE) Integrity": [
+        "Employees must follow HSE rules and report unsafe or non-compliant practices.",
+        "Reporting improper chemical handling, solder fume control issues, or waste disposal violations in PCB manufacturing processes."
+      ],
+      "Disciplinary Measures for Policy Violations": [
+        "The Company shall take prompt, fair, and appropriate action against any violations of this Governance and Ethics Policy. All disciplinary actions will be carried out in accordance with applicable China labour laws, including the Employment Act 1955 (and its amendments), as well as the Company’s internal policies and procedures.",
+        "Verbal Warning – For minor, first-time breaches of policy.",
+        "Written Warning – For repeated or moderate violations, recorded in the employee’s personnel file.",
+        "Suspension Without Pay – For serious misconduct while an investigation is conducted.",
+        "Demotion or Removal from Duties – Where trust or competency is compromised.",
+        "Termination of Employment – For severe breaches, such as theft, bribery, falsification of records, harassment, or wilful policy violations.",
+        "Legal Action – Where a violation involves criminal activity (e.g., fraud, corruption, theft of trade secrets), the matter will be reported to law enforcement.",
+        "Employees are encouraged to report violations in good faith through the company’s confidential reporting channels. Any retaliation against whistle-blowers is strictly prohibited and will itself be treated as a serious policy breach."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Secure and Responsible Data Management",
+        "targets": [
+          {
+            "target": "Implement encryption and multi-factor authentication for all sensitive data by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual cybersecurity audits to assess and strengthen data protection systems.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Train at least 50% of employees on data privacy and protection protocols by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% compliance with applicable data protection laws by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain secure data backup and recovery procedures covering 100% of critical data systems by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Bribery and Corruption",
+        "targets": [
+          {
+            "target": "Conduct compliance audits with at least 75% of high-risk third-party suppliers by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure all external agents complete anti-bribery risk evaluations prior to contract renewal by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% annual completion rate of anti-corruption training for all employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of new hires receive anti-corruption awareness training within 30 days of joining by 2030",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual corruption risk assessments covering 100% of business operations starting 2026.",
+            "baseline": "2022",
+            "deadline": "starting 2026"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Leadership and Accountability",
+        "targets": [
+          {
+            "target": "Double employee participation in ethics awareness workshops by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Deliver ethics-focused leadership training to all managerial staff (100%) by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that at least 80% of the workforce completes annual ethics self-evaluations by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Play: Managing Conflicts of Interest",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive training on conflict of interest policies by 2030, increasing from 20% participation in 2022.",
+            "baseline": "20% participation in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve at least 90% compliance with conflict of interest disclosure requirements from employees by 2030, improving from 50% compliance in 2022.",
+            "baseline": "50% compliance in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual audits of conflict of interest disclosures each year through 2030, with a target of 100% resolution of identified issues by 2030.",
+            "baseline": "2022",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Maintain 100% of leadership and management staff participation in advanced conflict of interest training by 2030, increasing from 50% participation in 2022.",
+            "baseline": "50% participation in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct at least three company-wide awareness or communication campaigns per year on conflict of interest topics from 2023 through 2030, increasing from zero campaigns in 2022.",
+            "baseline": "zero campaigns in 2022",
+            "deadline": "from 2023 through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Clean Transactions: Combating Money Laundering",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive anti-money laundering awareness and prevention training by 2030, increasing from 15% coverage in 2022.",
+            "baseline": "15% coverage in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct comprehensive internal reviews or audits of financial transactions for AML compliance by 2030, improving from no formal audits in 2022.",
+            "baseline": "no formal audits in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of identified suspicious transactions or activities are reported through established internal channels and to relevant authorities within 24 hours, where legally required, by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Promote regular AML awareness communication for relevant employees annually through 2030.",
+            "baseline": "2022",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Transparency Matters: Preventing Fraud",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive fraud prevention and detection training by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct fraud risk assessments covering all major departments by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure fraud reporting mechanisms are communicated and accessible to 100% of employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Review and update fraud-related policies, procedures, and training materials at least once every two years, with reviews maintained through 2030.",
+            "baseline": "2022",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Ensure 100% of reported fraud cases are investigated and addressed within defined timelines by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero tolerance for retaliation, ensuring all retaliation complaints are investigated annually through 2030.",
+            "baseline": "2022",
+            "deadline": "through 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Leadership",
+        "duty": "Allocates the resources needed to deliver effective ethics training and promote awareness company-wide."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Leads by example, championing ethical behaviour and ensuring business practices align with corporate values and legal standards."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Oversees the execution of ethics-related policies and fosters a culture rooted in integrity."
+      },
+      {
+        "role": "Ethics and Compliance Team",
+        "duty": "Serves as a neutral point of contact for reporting violations, ensuring investigations are fair, confidential, and timely."
+      },
+      {
+        "role": "Ethics and Compliance Team",
+        "duty": "Designs and maintains the company’s ethics framework, ensuring relevance and effectiveness."
+      },
+      {
+        "role": "Ethics and Compliance Team",
+        "duty": "Conducts regular audits and ethical risk reviews to identify areas for improvement."
+      },
+      {
+        "role": "Department Heads & Facility Managers",
+        "duty": "Reinforce ethical expectations through ongoing training and open communication."
+      },
+      {
+        "role": "Department Heads & Facility Managers",
+        "duty": "Respond promptly to ethical issues and implement appropriate resolutions."
+      },
+      {
+        "role": "Department Heads & Facility Managers",
+        "duty": "Integrate ethical standards into everyday departmental functions and decision-making processes."
+      },
+      {
+        "role": "Employees",
+        "duty": "Are expected to promptly report any known or suspected ethical misconduct through designated, confidential reporting systems."
+      },
+      {
+        "role": "Employees",
+        "duty": "Take an active role in fostering an ethical workplace by participating in ongoing ethics training and awareness programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Demonstrate integrity in all professional interactions and support a culture of transparency and accountability."
+      }
+    ],
+    "monitoring": "Shenzhen Xingbiao Electronic Technology Co Ltd maintains a robust ethics reporting framework designed to promote openness, accountability, and continuous ethical development across all operations.\n\nActively monitors potential ethical risks, such as conflicts of interest, fraud, and data protection issues.\n\nConducts regular reviews to assess employee participation in ethics training, policy compliance, and audit results.\n\nBenchmarks ethical performance against leading industry standards to drive best practices.\n\nPresents a comprehensive overview of ethics-related programs, including key initiatives, employee training outcomes, and the effectiveness of implemented policies.\n\nSummarizes internal audit findings, records of ethical breaches, and the corrective actions taken.\n\nIncorporates independent third-party evaluations to ensure transparency, accountability, and credibility of the company’s ethics practices.\n\nPromote awareness of reporting mechanisms through regular communication and training initiatives.\n\nEnsure timely investigations and implement corrective actions to resolve issues effectively.\n\nMaintain secure and accessible channels for employees and stakeholders to report ethical concerns confidentially.\n\nOrganize regular awareness sessions and communication campaigns to promote understanding of ethical practices.\n\nReview and update ethics policies continuously, incorporating input from stakeholders and aligning with evolving industry expectations.\n\nMaintain open dialogue with employees, suppliers, and customers to strengthen ethical standards.\n\nThese efforts reinforce our commitment to responsible conduct, transparent governance, and ethical excellence.",
+    "reviewMechanism": "The Compliance Manager will review this policy annually to ensure its effectiveness and continued relevance. Any updates or changes will be communicated to all employees and stakeholders in a timely manner. If required, the company may revise the policy at any time to address emerging issues or regulatory changes."
+  },
+  "sourcePath": "Policies - Kenal/Shenzhen Xingbiao - Tairui China/Ethics  Policy done.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Shenzhen Xingbiao - Tairui China/Ethics  Policy done.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 18594,
+  "parsedAt": "2026-09-11T07:28:43.616Z"
+}

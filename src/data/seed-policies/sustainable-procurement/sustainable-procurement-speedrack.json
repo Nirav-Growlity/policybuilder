@@ -1,0 +1,242 @@
+{
+  "id": "sustainable-procurement-speedrack",
+  "name": "Speedrack",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 5. Sustainable Procurement Policy_grw_v1.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Speedrack Products Group Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Manufacturing Site",
+          "address": "42 Cole St, Quincy, MI 49082",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "",
+          "address": "3060 S Industrial Dr NW Walker, MI 49544",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Corporate Office",
+          "address": "",
+          "primaryFunction": "Corporate office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Speedrack Products Group Ltd. is committed to responsible purchasing that prioritizes sustainability, ethical conduct, product quality, health & safety, and long-term business resilience. This Sustainable Procurement Policy defines clear ESG-based expectations for all suppliers, contractors, and business partners to ensure that all procured materials, services, and equipment support Speedrack’s environmental, social, and governance objectives.",
+      "declaration": "The purpose of this policy is to:\n\nFormalize Speedrack’s commitment to environmental stewardship, ethical business conduct, responsible sourcing, and fair labor conditions throughout the supply chain.\n\nSet criteria and performance requirements for supplier selection, evaluation, auditing, and ongoing collaboration.\n\nEnsure that procurement decisions consider full lifecycle impacts, safety, durability, resource efficiency, recyclability, and environmental legislation.\n\nMitigate operational, legal, environmental, and reputational risks associated with supplier activities.\n\nPromote long-term partnerships focused on innovation, quality, and continuous improvement.",
+      "scope": "This policy applies to all Speedrack locations, business units, suppliers, and employees involved in procurement activities. It covers all purchases of materials, products, and services, and applies to all suppliers, contractors, and partners engaged in Speedrack’s supply chain."
+    },
+    "focusAreas": [
+      "Environmental Responsibility",
+      "Ethical Supply Chain & Human Rights",
+      "Product Quality, Durability & Safety",
+      "Waste & Emissions Reduction",
+      "Supplier Diversity & Local Economic Support",
+      "Transparency & Traceability"
+    ],
+    "qualitative": {
+      "Environmental Responsibility": [
+        "Speedrack prioritizes environmentally certified like EMAS, ISO 14001 and other suppliers as a core criterion within its supplier pre-qualification and onboarding framework.",
+        "We aim to promote local sourcing as a key climate-mitigation strategy to minimize transportation-related greenhouse gas (GHG) emissions across its supply chain.",
+        "Circular economy principles are embedded across supplier operations, covering recycling, waste minimization, and material reuse.",
+        "Suppliers are consistently encouraged and supported to transition toward renewable and clean energy sources for both operations and logistics.",
+        "Speedrack aims to source from suppliers that use eco-friendly, recyclable, and biodegradable packaging wherever feasible."
+      ],
+      "Ethical Supply Chain & Human Rights": [
+        "We aim to embed labor and human rights certifications as a key requirement in its supplier pre-qualification and risk screening process.",
+        "Certifications such as ISO 45001, SA 8000, and equivalent social compliance standards are recognized as preferred indicators of responsible labor practices.",
+        "Company aims to prioritize local suppliers to promote regional development, support community livelihoods, and reduce supply chain emissions.",
+        "Supplier diversity is actively promoted through a formal supplier inclusion program for underrepresented and minority-owned businesses."
+      ],
+      "Product Quality, Durability & Safety": [],
+      "Waste & Emissions Reduction": [],
+      "Supplier Diversity & Local Economic Support": [
+        "Company aims to prioritize local suppliers to promote regional development, support community livelihoods, and reduce supply chain emissions.",
+        "Supplier diversity is actively promoted through a formal supplier inclusion program for underrepresented and minority-owned businesses."
+      ],
+      "Transparency & Traceability": [
+        "Speedrack maintains continuous, structured engagement with suppliers to strengthen collaboration on sustainability performance and ethical sourcing.",
+        "A comprehensive supplier sustainability assessment framework, covering environmental, social, and governance parameters, is fully integrated into procurement operations.",
+        "Sustainability is systematically embedded into all procurement categories through clearly defined product-specific sustainability criteria.",
+        "We aim to provide Code of Conduct including the ESG clauses to all suppliers."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Sustainability Principles",
+        "targets": [
+          {
+            "target": "We aim to ensure that 100% of suppliers read, acknowledge, and formally agree to the Supplier Code of Conduct",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to assess at least 10% of its suppliers annually on sustainability performance.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Speedrack commits to integrating sustainability criteria into 100% of procurement decisions",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "The company strives to ensure quarterly sustainability performance reporting for 50% of key suppliers",
+            "baseline": "",
+            "deadline": "20300"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Responsibility and Stewardship",
+        "targets": [
+          {
+            "target": "Speedrack aims to train at least 80% of procurement staff on environmental procurement risks and impacts",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company targets a 5% reduction in total supply chain carbon emissions",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to ensure that at least 15% of total procurement value is sourced from suppliers holding ISO 14001, EMAS, or equivalent certifications",
+            "baseline": "",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Labor Practices and Human Rights Compliance",
+        "targets": [
+          {
+            "target": "We strive to increase procurement from socially and labor-certified suppliers by 10%",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to increase local sourcing by at least 10% to support regional economic development and improve livelihoods in surrounding communities.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We plan to train at least 80% of procurement staff on labor and human rights risks",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "The company commits to resolving 100% of substantiated supply chain grievances within defined timelines",
+            "baseline": "",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Compliance Office",
+        "duty": "Review Policy annually & oversee adherence to the Sustainable Procurement Policy."
+      },
+      {
+        "role": "Chief Compliance Office",
+        "duty": "Approve sustainability targets and allocate necessary resources."
+      },
+      {
+        "role": "Chief Compliance Office",
+        "duty": "Review supplier performance metrics and ensure alignment with corporate ESG objectives."
+      },
+      {
+        "role": "Chief Compliance Office",
+        "duty": "Ensure compliance with all regulatory and industry requirements."
+      },
+      {
+        "role": "Procurement & Supply Chain Teams",
+        "duty": "Manage supplier selection, onboarding, and ongoing evaluation."
+      },
+      {
+        "role": "Procurement & Supply Chain Teams",
+        "duty": "Integrate environmental, social, and quality standards into contracts and procurement processes."
+      },
+      {
+        "role": "Procurement & Supply Chain Teams",
+        "duty": "Monitor supplier compliance with sustainability and ethical requirements."
+      },
+      {
+        "role": "EHS & Quality Assurance Teams",
+        "duty": "Conduct periodic audits, inspections, and assessments of suppliers."
+      },
+      {
+        "role": "EHS & Quality Assurance Teams",
+        "duty": "Verify adherence to safety, environmental, and quality standards."
+      },
+      {
+        "role": "EHS & Quality Assurance Teams",
+        "duty": "Provide technical guidance on environmental and safety requirements."
+      },
+      {
+        "role": "Suppliers, Contractors, and Partners",
+        "duty": "Comply with the Sustainable Procurement Policy and Supplier Code of Conduct."
+      },
+      {
+        "role": "Suppliers, Contractors, and Partners",
+        "duty": "Provide accurate documentation, certifications, and sustainability data."
+      },
+      {
+        "role": "Suppliers, Contractors, and Partners",
+        "duty": "Cooperate fully during audits, inspections, and performance reviews."
+      },
+      {
+        "role": "Suppliers, Contractors, and Partners",
+        "duty": "Implement improvements where gaps or non-compliance are identified."
+      },
+      {
+        "role": "All Employees Involved in Procurement",
+        "duty": "Identify and report potential sustainability, safety, or ethical risks."
+      },
+      {
+        "role": "All Employees Involved in Procurement",
+        "duty": "Participate in training programs on responsible sourcing and compliance."
+      },
+      {
+        "role": "All Employees Involved in Procurement",
+        "duty": "Follow procurement procedures that promote environmental, social, and ethical standards."
+      }
+    ],
+    "monitoring": "Speedrack will maintain transparent internal reporting mechanisms to track:\n\nSupplier sustainability performance and compliance history\n\nAudit results and corrective actions\n\nSupplier risk ratings and improvement plans\n\nSupplier and internal procurement performance will be regularly reviewed through audits, feedback, and external evaluations to ensure compliance with sustainability and ethical standards. Training, awareness initiatives, and digital tools will support responsible sourcing and supplier engagement. Collaboration with employees and partners will identify improvement opportunities and mitigate risks, while corrective actions will promptly address non-compliance and reinforce responsible practices across the supply chain.",
+    "reviewMechanism": "The Chief Compliance Officer will annually or as needed review the Sustainable Procurement Policy to assess compliance, identify improvements, and ensure alignment with regulations, industry standards, and ESG objectives. Updates will reflect review outcomes, stakeholder feedback, and best practices, with any significant changes communicated to employees, suppliers, and stakeholders to maintain transparency and clarity."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Speedrack/5. Sustainable Procurement Policy_grw_v1.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Speedrack/5. Sustainable Procurement Policy_grw_v1.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 10226,
+  "parsedAt": "2026-09-11T07:16:40.061Z"
+}

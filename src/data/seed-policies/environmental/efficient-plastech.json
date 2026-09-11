@@ -1,0 +1,372 @@
+{
+  "id": "efficient-plastech",
+  "name": "Efficient Plastech",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Efficient Plastech Private Limited",
+      "industry": "",
+      "site": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+      "sites": [
+        {
+          "location": "Site 1",
+          "address": "A-211, everest grande, mahakali caves road, opp. Ahura centre, andheri (e), mumbai – 400093",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 2",
+          "address": "Plot number 49, HDIL Industrial Park, Virar Ahmedabad Highway Road, Chandansar, Virar East, Ðaluka - Vasai, District - Palghar, State - Maharashtra - 401305",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 3",
+          "address": "Plot number 64, Sector 8A, Sidcul, District - Haridwar, State - Uttarakhand",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 4",
+          "address": "City Survey no. NA. 1615/A, Costal Highway, Village - Daheri Umbergaon, Taluka - Umbergaon, District - Valsad, State - Gujrat",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Efficient Plastech Private Limited, environmental stewardship is central to our Mission, Vision, and Values. As a leading manufacturer of rigid Primary packaging for cosmetics Application and pharmaceutical products, we are committed to advancing sustainability through responsible resource use, energy efficiency, safe chemical handling, and circular economy principles. Our goal is to minimize environmental impact across the entire product lifecycle from design and production to use and end-of-life while generating positive outcomes for our employees, customers, communities, and ecosystems.\n\nWe align our operations with international best practices and regulatory requirements, striving to go beyond compliance by embedding innovation, transparency, and continuous improvement into every aspect of our environmental and sustainability management.",
+      "declaration": "Efficient Plastech Private Limited remains steadfast in its dedication to Environment stewardship, integrating sustainability into the core of its operations. We continuously evaluate and enhance our Environment practices, setting progressive benchmarks and fostering innovation to drive positive change within the chemical manufacturing industry.",
+      "scope": "This policy is applicable across all Efficient Plastech Private Limited, employees, Workers, contractors, Sub-Contractors, suppliers, and other stakeholders globally, including the communities in which we operate. All sites are mentioned below. We extend our Environment commitment to all relevant supply chain partners as well."
+    },
+    "focusAreas": [
+      "Energy Efficiency & GHG Emissions",
+      "Water Conservation",
+      "Material, Chemical & Waste Management",
+      "Accident Prevention & Air Pollution",
+      "Product Use, Life Cycle & End-of-Life",
+      "Customer/Consumer & Environmental Safety",
+      "Environmental Compliance & Management Systems"
+    ],
+    "qualitative": {
+      "Energy Efficiency & GHG Emissions": [
+        "Foster a culture of energy efficiency at all levels of the organization.",
+        "Promote employee engagement, awareness, and training on energy conservation.",
+        "Implement innovative technologies to reduce energy consumption and carbon footprint.",
+        "Support the transition to renewable energy sources."
+      ],
+      "Water Conservation": [
+        "Promote sustainable water usage and conservation awareness.",
+        "Ensure leak detection, baseline monitoring, and minimal water use in production and cleaning.",
+        "Maximize recycling and reuse of water across operations."
+      ],
+      "Material, Chemical & Waste Management": [
+        "Promote proper segregation, recycling, and safe disposal of plastic, non-hazardous, hazardous, and e-waste.",
+        "Train employees on safe chemical handling, material use, and waste reduction.",
+        "Encourage circular economy practices and process optimization."
+      ],
+      "Accident Prevention & Air Pollution": [
+        "Minimize workplace accidents and environmental risks, including air pollution, noise, dust, and odors.",
+        "Implement preventive operational and engineering controls.",
+        "Monitor air quality, emissions, and noise levels continuously."
+      ],
+      "Product Use, Life Cycle & End-of-Life": [
+        "Integrate environmental and sustainability considerations into product design, procurement, and end-of-life management.",
+        "Conduct product life cycle risk assessments and provide environmental impact information to customers.",
+        "Ensure compliance with Extended Producer Responsibility (EPR) and regulatory obligations."
+      ],
+      "Customer/Consumer & Environmental Safety": [
+        "Ensure product safety and environmental responsibility throughout the product life cycle.",
+        "Adhere to Good Manufacturing Practices (GMP) and ISO 15378:2017 standards.",
+        "Select non-toxic, recyclable, or biodegradable materials and reduce environmental impacts."
+      ],
+      "Environmental Compliance & Management Systems": [
+        "Maintain compliance with applicable environmental laws and permits.",
+        "Implement and continuously improve Environmental Management Systems (EMS) such as ISO 14001.",
+        "Conduct internal audits, corrective actions, and management reviews."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency & GHG Emissions",
+        "targets": [
+          {
+            "target": "Reduce energy intensity by 5% across all manufacturing and operational units by improving energy efficiency, optimizing production processes, and increasing the use of renewable fuels such as groundnut husk.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve zero (0) non-conformance in regulatory inspections for energy management.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Transition 5% of energy consumption to renewable sources.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce 15% Scope 1, Scope 2, and Scope 3 GHG emissions, supporting long-term carbon neutrality.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide Training regarding GHG and Energy efficiency to 100% of employee.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation",
+        "targets": [
+          {
+            "target": "Decrease water consumption by 10% via closed-loop recycling systems, efficient water-use technologies, and enhanced stewardship practices.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Recycle at least 30% of water used in production for non-potable applications.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Detect and resolve 100% of leaks within 30 days.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide Training regarding Water conservation to 100% of employee.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Material, Chemical & Waste Management",
+        "targets": [
+          {
+            "target": "Reusing and reutilization plastic waste by up to 25% every year.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% compliance with hazardous material handling, disposal regulations, and proper disposal of oil-soaked rags, empty ink/spray containers, and e-waste.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% employee participation in waste management training sessions, with at least two sessions annually.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution & Accident Prevention",
+        "targets": [
+          {
+            "target": "0% major air pollution incidents or accidental releases annually",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% maintenance of pollution control and ventilation systems.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Monitor workplace noise standards (<85 dB) with biannual checks.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% monitoring coverage of stack emissions, ambient air quality, and workplace air parameters.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct six annual safety and environmental awareness sessions with 100% employee participation.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Ensure 100% of product specifications include recyclability or reusability information.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 30% light weighting across key packaging SKUs (caps, bottles, jars).",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Incorporate at least 25% post-consumer recycled (PCR) plastic content in standard product lines.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Offer eco-design options for 75% of new product developments (single-material design, refill packs, modular packaging).",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 100% of packaging is tested for food/contact safety and durability before commercialization.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "End-of-Life Management",
+        "targets": [
+          {
+            "target": "Ensure that at least 50% of plastic product and packaging waste is collected and recycled through Extended Producer Responsibility (EPR) programs and collaborations with authorized third-party recyclers.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "0% illegal disposal incidents related to product or packaging waste.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "10% year-on-year increase in recycled or recovered materials used in products or packaging.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer/Consumer & Environmental Safety",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with product safety testing protocols across all offerings.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100 % Regularly update Material Safety Data Sheets (MSDS) and product labels to reflect current risk and handling information.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% Train R&D and production teams on toxicological risk assessments, regulatory compliance, and emerging safety trends in chemical manufacturing.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Compliance & Management Systems",
+        "targets": [
+          {
+            "target": "Launch 3 community-based Environment awareness initiatives focusing on renewable energy, responsible consumption.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 20% reduction in single-use plastic consumption in partnered communities, monitored through waste audits.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "0 environmental fines, penalties, or regulatory notices annually.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% closure of audit non-conformities within defined timelines.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Approve budgets and allocate resources for environmental initiatives, product safety, and sustainability programs."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure alignment with SDGs, regulatory requirements, and corporate sustainability objectives."
+      },
+      {
+        "role": "EOHS Officer",
+        "duty": "Monitor compliance with environmental, product safety, and waste regulations."
+      },
+      {
+        "role": "EOHS Officer",
+        "duty": "Conduct audits, track KPIs, and coordinate reporting to statutory authorities."
+      },
+      {
+        "role": "EOHS Officer",
+        "duty": "Review the policy and compliance performance annually to ensure continuous improvement and alignment with regulations."
+      },
+      {
+        "role": "Environmental Conservation Committees",
+        "duty": "Implement energy efficiency, renewable energy, and water conservation measures."
+      },
+      {
+        "role": "Environmental Conservation Committees",
+        "duty": "Track progress and recommend improvements for all qualitative and quantitative targets."
+      },
+      {
+        "role": "Waste Management Committee",
+        "duty": "Oversee proper segregation, recycling, and disposal of plastic, chemical, hazardous, and e-waste."
+      },
+      {
+        "role": "Waste Management Committee",
+        "duty": "Promote employee awareness and engagement in waste management initiatives."
+      },
+      {
+        "role": "Department Heads / Production & Operations",
+        "duty": "Ensure adherence to SOPs, energy and water efficiency practices, accident prevention measures, and product safety protocols."
+      },
+      {
+        "role": "Department Heads / Production & Operations",
+        "duty": "Implement engineering controls, waste reduction initiatives, and environmental risk mitigation measures."
+      },
+      {
+        "role": "HR & Training Teams",
+        "duty": "Facilitate employee training on environmental practices, safety, drug & alcohol awareness, and sustainability initiatives."
+      },
+      {
+        "role": "Employees & Contractors",
+        "duty": "Follow company policies, report hazards, participate in training, and actively contribute to environmental and safety objectives."
+      }
+    ],
+    "monitoring": "Reporting: Progress is reported regularly through the annual Sustainability Report and shared with all stakeholders.\n\nInternal Audits: conducts internal Environment audits yearly to ensure compliance and identify areas for improvement.\n\nExternal Verification: An independent third party will verify our Environment performance data annually.",
+    "reviewMechanism": "This Environment Policy will be reviewed annually by Compliance Officer / HSE Officer and relevant committees. The review will assess progress against all qualitative and quantitative targets, incorporate updates based on regulatory changes, technological advancements, and best practices, and integrate feedback from employees, audits, and stakeholders. Any necessary adjustments will be made to ensure continuous improvement, compliance, and alignment with the company’s sustainability objectives and SDG commitments."
+  },
+  "sourcePath": "Policies - Kenal/Efficient Plastech/Environmental Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Efficient Plastech/Environmental Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 12518,
+  "parsedAt": "2026-09-11T07:35:55.053Z"
+}

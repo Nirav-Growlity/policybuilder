@@ -1,0 +1,163 @@
+{
+  "id": "living-wage-renewsys",
+  "name": "Renewsys",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Fair Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "RenewSys India Pvt. Ltd.",
+      "industry": "",
+      "site": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "sites": [
+        {
+          "location": "RenewSys India Pvt. Ltd.",
+          "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot No. E-141, Additional Patalganga MIDC Industrial Area, Village - Karade Khurd, Taluka Panvel, District Raigad, Maharashtra - 410 206, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Plot No. 6, Survey # 114/P, Srinagar Village, Maheshwaram Mandal, Rangareddy Dist. - 501 359,Telangana, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At RenewSys India Pvt. Ltd., we are committed to ensuring that our employees are compensated fairly for their contributions. Our Fair Wage Policy underscores our dedication to providing equitable, transparent, and competitive wages that align with industry standards and the specific needs of our workforce. We regularly benchmark our compensation against industry pay scales, taking into account factors such as job role, experience, and performance to ensure fairness.\n\nWe believe that fair compensation is essential for fostering employee satisfaction and loyalty. By providing wages that support our employee’ financial stability, we enable them to meet their essential needs and maintain a reasonable standard of living. This commitment not only enhances their overall well-being but also motivates them to contribute positively to our organizational goals, fostering a positive work environment where every employee feels valued and respected.",
+      "declaration": "At RenewSys India Pvt. Ltd., we are committed to ensuring that all employees receive fair, competitive wages aligned with their skills and contributions. With a baseline set for the year 2022-23, we will regularly assess market rates and maintain internal pay equity. Transparent communication regarding compensation matters will be prioritized, fostering an inclusive workplace for equal opportunities in career advancement.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "By providing wages that support our employee’ financial stability, we enable them to meet their essential needs and maintain a reasonable standard of living.\n\nWe regularly benchmark our compensation against industry pay scales, taking into account factors such as job role, experience, and performance to ensure fairness.\n\nAt RenewSys India Pvt. Ltd., we are committed to ensuring that all employees receive fair, competitive wages aligned with their skills and contributions. With a baseline set for the year 2022-23, we will regularly assess market rates and maintain internal pay equity.\n\nThis Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:\n\nThe review will consider current economic trends, inflation rates, industry standards, and employee feedback."
+    },
+    "focusAreas": [
+      "Annual review of wages and equitable compensation",
+      "Communication and transparency regarding wage changes",
+      "Employee feedback on wage fairness and job satisfaction",
+      "Career advancement, skills development, and fair wage increases",
+      "Employee retention and satisfaction"
+    ],
+    "qualitative": {
+      "Annual review of wages and equitable compensation": [
+        "Regularly conduct an annual review of wages to ensure equitable compensation across all departments, regardless of gender, age, or background."
+      ],
+      "Communication and transparency regarding wage changes": [
+        "Ensure that employees receive clear and timely communication on any changes to their wages, explaining the rationale behind adjustments, to foster trust and transparency."
+      ],
+      "Employee feedback on wage fairness and job satisfaction": [
+        "Maintain a feedback mechanism for employees to voice concerns and suggestions related to wage fairness and job satisfaction."
+      ],
+      "Career advancement, skills development, and fair wage increases": [
+        "Develop comprehensive career advancement programs that equip employees with the necessary skills for professional growth, thereby facilitating opportunities for fair wage increases."
+      ],
+      "Employee retention and satisfaction": []
+    },
+    "quantitative": [
+      {
+        "area": "Employee satisfaction with fair wages",
+        "targets": [
+          {
+            "target": "Maintain an employee satisfaction score of at least 90% regarding fair wages in annual surveys",
+            "baseline": "",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Implementation of wage adjustments",
+        "targets": [
+          {
+            "target": "Ensure that 100% of identified wage adjustments are implemented within six months of the annual review.",
+            "baseline": "",
+            "deadline": "Within six months of the annual review"
+          }
+        ]
+      },
+      {
+        "area": "Performance- and skill-based wage increases",
+        "targets": [
+          {
+            "target": "Ensure that at least 75% of employees receive a wage increase based on performance and skill development every year.",
+            "baseline": "",
+            "deadline": "Every year"
+          }
+        ]
+      },
+      {
+        "area": "Employee retention",
+        "targets": [
+          {
+            "target": "Aim for an employee retention rate of 90% or higher annually, indicating satisfaction with compensation and overall job satisfaction.",
+            "baseline": "",
+            "deadline": "Annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      5,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "The Human Resources (HR) Manager will be responsible for preparing and compiling the Fair Wage Performance Report."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Wage-related financial data and budgeting."
+      },
+      {
+        "role": "Performance Management Team",
+        "duty": "Data on skill-based and performance-linked wage increases."
+      },
+      {
+        "role": "Senior management",
+        "duty": "The report will be presented to the senior management annually."
+      },
+      {
+        "role": "Employee representatives",
+        "duty": "The report will be shared with employee representatives to maintain transparency."
+      },
+      {
+        "role": "HR",
+        "duty": "The Fair Wage Policy will be reviewed annually by the HR, in collaboration with the Compliance Officer."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "The Fair Wage Policy will be reviewed annually by the HR, in collaboration with the Compliance Officer."
+      }
+    ],
+    "monitoring": "The tracking and reporting on the effectiveness of the Fair Wage Policy will presented through the annual Fair Wage Performance Report. This report will provide transparency on key metrics such as wage growth, compliance with industry standards, and feedback from employees on wage fairness. These metrics will help identify areas for improvement and ensure that wages remain competitive.\n\nThe report will be presented to the senior management annually and shared with employee representatives to maintain transparency.",
+    "reviewMechanism": "The Fair Wage Policy will be reviewed annually by the HR, in collaboration with the Compliance Officer. The review will consider current economic trends, inflation rates, industry standards, and employee feedback. Any necessary updates to the wage structure will be made to ensure continuous alignment with best practices and the company's commitment to wage fairness."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Renewsys/5. Fair Wage Policy.docx",
+  "sourceTextLength": 4993,
+  "parsedAt": "2026-09-11T07:40:29.635Z",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Renewsys/5. Fair Wage Policy.docx"
+  ],
+  "sourceGroup": "Hetvi"
+}

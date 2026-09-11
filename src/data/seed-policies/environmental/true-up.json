@@ -1,0 +1,333 @@
+{
+  "id": "true-up",
+  "name": "True Up",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from True Up Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "TRUE UP COMPANIES LLC",
+      "industry": "",
+      "site": "20713 E. Ocotillo Rd. Suite 101 Queen Creek, AZ 85142",
+      "sites": [],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "20713 E. Ocotillo Rd. Suite 101 Queen Creek, AZ 85142"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At True Up Companies, we recognize that our role as a Commercial General Contracting and 3PL Company carries a profound responsibility to the environment. Our dedication to environmental stewardship is deeply embedded in our core values, which include passion, integrity, dedication, and a commitment to excellence. We are committed to integrating sustainable practices across all facets of our operations, from fulfillment center buildouts and material handling installations to product logistics. By prioritizing eco-friendly solutions and minimizing our environmental footprint, we aim to contribute positively to the communities we serve and ensure a healthier planet for future generations.",
+      "declaration": "We at True Up Companies actively promote environmental responsibility by fostering a culture of sustainability across all levels of our organization. We engage in eco-conscious planning, invest in green technologies, and collaborate with partners who share our commitment to environmental stewardship. By integrating sustainability into our decision-making and daily operations, we aim to drive long-term positive environmental impact while supporting business growth and resilience.",
+      "scope": "This policy applies to all operations, employees, contractors, and stakeholders of True Up Companies, covering general contracting, 3PL services, and logistics. It addresses energy efficiency, waste management, emissions reduction, and regulatory compliance across offices, project sites, and supply chains. Our commitment ensures sustainability is integrated into decision-making and operational processes."
+    },
+    "focusAreas": [
+      "Sustainable Sourcing",
+      "Eco-Friendly Packaging",
+      "Energy Efficiency & Carbon Reduction",
+      "Waste Management & Circular Economy",
+      "Green Logistics & Transportation",
+      "Digital Sustainability",
+      "Stakeholder & Customer Engagement",
+      "Eco-Friendly Infrastructure & Green Building Practices",
+      "Emission Control & Climate Action",
+      "Biodiversity Protection & Land Use Management",
+      "Green Initiatives",
+      "Optimizing Energy Use & Reducing Carbon Emissions",
+      "Efficient Water Management & Conservation",
+      "Minimizing Air Pollution & Improving Air Quality",
+      "Sustainable Resource Use & Waste Reduction",
+      "Preserving Biodiversity & Ecosystem Health",
+      "Ensuring Customer Well-being & Safety",
+      "Environmental Stewardship & Advocacy",
+      "Sustainable Land Use & Site Development",
+      "Employee Engagement & Green Workplace Practices"
+    ],
+    "qualitative": {
+      "Sustainable Sourcing": [
+        "Prioritizing ethically sourced, durable, and recyclable materials in procurement for construction, logistics, and fulfillment center projects."
+      ],
+      "Eco-Friendly Packaging": [
+        "Reducing waste in our 3PL operations by utilizing biodegradable, recyclable, or reusable packaging solutions."
+      ],
+      "Energy Efficiency & Carbon Reduction": [
+        "Implementing energy-saving measures in warehousing, material handling installations, and logistics while exploring carbon offset initiatives."
+      ],
+      "Waste Management & Circular Economy": [
+        "Minimizing waste across our general contracting and 3PL services by promoting reuse, recycling, and responsible disposal."
+      ],
+      "Green Logistics & Transportation": [
+        "Optimizing delivery routes, working with eco-conscious carriers, and integrating sustainable transport solutions to lower emissions."
+      ],
+      "Digital Sustainability": [
+        "Enhancing energy efficiency in data management, leveraging smart logistics technology, and optimizing digital infrastructure to reduce environmental impact."
+      ],
+      "Stakeholder & Customer Engagement": [
+        "Educating employees, suppliers, and clients on sustainable practices while collaborating on initiatives that drive environmental responsibility."
+      ],
+      "Eco-Friendly Infrastructure & Green Building Practices": [
+        "Developing environmentally responsible warehouses and installation sites to minimize environmental impact."
+      ],
+      "Emission Control & Climate Action": [
+        "Reducing greenhouse gas emissions through sustainable construction, logistics, and operational improvements."
+      ],
+      "Biodiversity Protection & Land Use Management": [
+        "Preserving natural habitats and reducing ecological impact from construction activities."
+      ],
+      "Green Initiatives": [
+        "Encouraging participation in sustainability initiatives such as tree planting and waste reduction programs"
+      ],
+      "Optimizing Energy Use & Reducing Carbon Emissions": [
+        "Transition to renewable energy sources for warehouses and operations.",
+        "Optimize logistics and delivery routes to reduce fuel consumption and emissions.",
+        "Implement energy-efficient technologies in digital infrastructure and data centres.",
+        "Set measurable targets for GHG emission reductions in line with international agreements."
+      ],
+      "Efficient Water Management & Conservation": [
+        "Implementing water-saving technologies across construction, logistics, and fulfillment processes to minimize wastage.",
+        "Partnering with suppliers who adhere to responsible water management practices.",
+        "Promoting water-efficient packaging and logistics solutions to reduce environmental impact.",
+        "Educating staff on water conservation practices and fostering a culture of responsible water usage."
+      ],
+      "Minimizing Air Pollution & Improving Air Quality": [
+        "Use carbon-conscious shipping providers to minimize transportation emissions.",
+        "Optimize warehouse ventilation and air filtration systems for cleaner air.",
+        "Encourage low-emission last-mile delivery options, such as electric vehicles."
+      ],
+      "Sustainable Resource Use & Waste Reduction": [
+        "Reducing packaging waste by using biodegradable, recyclable, and reusable materials in logistics and fulfillment operations.",
+        "Implementing waste segregation and recycling programs across all facilities to promote responsible disposal.",
+        "Encouraging employees and stakeholders to adopt waste reduction practices through awareness and training initiatives."
+      ],
+      "Preserving Biodiversity & Ecosystem Health": [
+        "Preserving natural habitats by minimizing environmental disruption in construction and logistics operations.",
+        "Partnering with suppliers who follow sustainable land use and biodiversity-friendly practices.",
+        "Supporting reforestation, habitat restoration, and conservation initiatives in operational areas."
+      ],
+      "Ensuring Customer Well-being & Safety": [
+        "Ensuring all materials and products used in construction and logistics meet safety and regulatory standards.",
+        "Reducing harmful emissions and pollutants in operations to create a safer environment for customers and communities.",
+        "Educating customers on health, safety, and sustainability best practices through transparent communication and awareness initiatives."
+      ],
+      "Environmental Stewardship & Advocacy": [
+        "Offering sustainable solutions in construction, logistics, and packaging to reduce environmental impact.",
+        "Partnering with organizations and industry groups to promote environmental best practices and innovation.",
+        "Supporting community initiatives focused on conservation, waste reduction, and climate resilience.",
+        "Educating stakeholders on environmental responsibility through outreach, training, and awareness programs."
+      ],
+      "Sustainable Land Use & Site Development": [
+        "Implement eco-friendly construction practices that minimize soil degradation and land disturbance.",
+        "Design facilities with permeable surfaces and green roofs to enhance water absorption and reduce heat islands.",
+        "Preserve and restore native vegetation to maintain ecological balance around operational sites."
+      ],
+      "Employee Engagement & Green Workplace Practices": [
+        "Implement sustainability training programs to educate employees on environmental responsibility.",
+        "Encourage energy-saving habits, such as switching off unused electronics and reducing water consumption.",
+        "Foster a culture of sustainability by incorporating eco-friendly office policies, such as waste reduction initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Optimizing Energy Use & Reducing Carbon Emissions",
+        "targets": [
+          {
+            "target": "Reduce greenhouse gas emissions by 35% by year 2028, aligning with global climate commitments.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Increase the use of renewable energy sources to 20% by year 2028 across warehouses, offices, and logistics operations.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Achieve a 20% reduction in overall energy consumption by year 2028 through efficiency measures in fulfillment centers and transportation",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Efficient Water Management & Conservation",
+        "targets": [
+          {
+            "target": "Implement water-efficient processes in logistics and warehousing to maintain a 20% reduction in water usage by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Introduce water recycling systems in 20% of operational sites by year 2028, aiming for 5% water reuse in daily operations.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Minimizing Air Pollution & Improving Air Quality",
+        "targets": [
+          {
+            "target": "Transition 40% of last-mile deliveries to electric or hybrid vehicles by year 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Partner with shipping providers committed to low-emission solutions, targeting 10% carbon-neutral shipments by year 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Resource Use & Waste Reduction",
+        "targets": [
+          {
+            "target": "Eliminate single-use plastics in packaging by year 2028, shifting to biodegradable and recyclable alternatives.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Reduce waste sent to landfills by 40% by year 2028 through optimized material usage and circular economy practices.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Preserving Biodiversity & Ecosystem Health",
+        "targets": [
+          {
+            "target": "Ensure zero net loss of biodiversity in operational and logistics sites by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Expand sustainable product offerings, with 20% of materials used in operations being eco-friendly by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Collaborate with local authorities and environmental organizations to develop 5 urban biodiversity projects by year 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Ensuring Customer Well-being & Safety",
+        "targets": [
+          {
+            "target": "Maintain 100% product safety compliance with all regulatory requirements by year 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 50% of packaging and fulfillment processes meet eco-compliance standards by year 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Certify 20% of customer-facing products under recognized eco-certification programs by year 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Stewardship & Advocacy",
+        "targets": [
+          {
+            "target": "Partner with two industry leaders to advance sustainability initiatives by year 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Engage 60% of key suppliers in sustainability-focused initiatives by 2028 to align with True Up’s environmental commitments.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Land Use & Site Development",
+        "targets": [
+          {
+            "target": "Reduce land disturbance by 30% through eco-friendly construction techniques by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Increase green infrastructure (permeable surfaces and green roofs) by 10% across all new developments by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Restore 20% of native vegetation in and around operational sites by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Employee Engagement & Green Workplace Practices",
+        "targets": [
+          {
+            "target": "Reduce workplace energy consumption by 25% through employee engagement programs by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Achieve a 50% reduction in paper waste through digitalization efforts by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 40% of employees participate in at least one sustainability initiative annually by 2028.",
+            "baseline": "Year 2022 has been considered as the baseline year for measuring and tracking progress toward all our environmental targets.",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Leadership team",
+        "duty": "Ensures environmental sustainability is integrated into business strategies and regulatory compliance."
+      },
+      {
+        "role": "Department heads",
+        "duty": "Implement resource efficiency, waste management, and emissions reduction initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental guidelines and actively contribute to sustainability efforts."
+      },
+      {
+        "role": "Suppliers and partners",
+        "duty": "Align with responsible sourcing and operational sustainability commitments."
+      }
+    ],
+    "monitoring": "Regular monitoring, reporting, and continuous improvement maintain accountability across all levels.",
+    "reviewMechanism": "The Environmental Compliance Manager at TRUE UP COMPANIES will oversee the annual review of this Environmental Policy to ensure its effectiveness and alignment with the company’s manufacturing operations and sustainability goals. The review will evaluate progress on targets, incorporate stakeholder feedback, ensure compliance with environmental regulations, and reflect advancements in sustainable practices. Any updates or changes will be promptly be communicated to all stakeholders to maintain transparency and accountability."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/True Up/Policies/True Up Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/True Up/Policies/True Up Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12189,
+  "parsedAt": "2026-09-11T07:41:55.488Z"
+}

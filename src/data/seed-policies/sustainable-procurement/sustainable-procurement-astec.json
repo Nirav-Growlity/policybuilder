@@ -1,0 +1,183 @@
+{
+  "id": "sustainable-procurement-astec",
+  "name": "Astec",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Astec LifeSciences Ltd.",
+      "industry": "",
+      "site": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+      "sites": [
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot Nos. B-16, B-17, B-18 & B-21, MIDC Mahad, Birwadi Industrial Area, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/1/1, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/1/2, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/2, K-2/3/1, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Research & Development Centre",
+          "address": "Plot No. B-23, T.T.C., Pipeline Road, T.T.C. Industrial Area, Airoli, Navi Mumbai – 400 708, Maharashtra",
+          "primaryFunction": "Research & Development"
+        },
+        {
+          "location": "Astec LifeSciences Limited (Corporate Office)",
+          "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+          "primaryFunction": "Corporate Office"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Astec LifeSciences Ltd. is committed to responsible and sustainable sourcing practices that align with our environmental, social, and ethical values. Our Sustainable Procurement Policy guides the selection, evaluation, and engagement of suppliers and partners to ensure that goods and services are sourced in a manner that promotes environmental stewardship, ethical labor practices, compliance with laws, and positive social impact. This policy reflects our dedication to minimizing environmental footprint, supporting fair labor standards, fostering innovation, and building long-term, transparent, and responsible relationships with suppliers. By integrating sustainability into procurement decisions, we aim to contribute to the company’s overall ESG objectives and the broader Sustainable Development Goals (SDGs).",
+      "declaration": "Astec LifeSciences Ltd. is committed to responsible, ethical, and sustainable procurement. All employees, suppliers, and partners are expected to comply with laws, environmental standards, and human rights principles, integrating sustainability into procurement decisions. The company enforces this policy through training, monitoring, and reporting, and non-compliance may lead to corrective or disciplinary action.",
+      "scope": "This policy applies to all employees, officers, and representatives of Astec LifeSciences Ltd., as well as suppliers, contractors, and vendors. It covers all procurement activities across following sites, including sourcing of materials, equipment, and services, ensuring compliance with ethical, social, and environmental standards."
+    },
+    "focusAreas": [
+      "Environmentally Responsible sourcing",
+      "Supplier Social Responsibility Framework",
+      "Ethical Supplier Conduct",
+      "Local & Inclusive Sourcing"
+    ],
+    "qualitative": {
+      "Environmentally Responsible sourcing": [
+        "Promote environmentally sustainable procurement by partnering with suppliers who demonstrate measurable environmental responsibility.",
+        "Encourage continuous improvement in supplier environmental performance through training and collaboration.",
+        "Emphasize sourcing from suppliers with recognized environmental compliance certifications."
+      ],
+      "Supplier Social Responsibility Framework": [
+        "Promote awareness and compliance with anti-child labor and anti-forced labor practices across the supply chain.",
+        "Guarantee that all suppliers adhere to fair labor practices, including the prohibition of child and forced labor, provision of fair wages, and assurance of safe working environments.",
+        "Support supplier initiatives that improve workforce welfare and social accountability."
+      ],
+      "Ethical Supplier Conduct": [
+        "Ensure suppliers comply with all applicable laws, regulations, and anti-corruption standards.",
+        "Encourage transparency and accountability in supplier business operations.",
+        "Promote a culture of ethical behavior and responsible decision-making among all supply chain partners."
+      ],
+      "Local & Inclusive Sourcing": [
+        "Increase engagement with community-based and small-scale suppliers.",
+        "Support diversity and inclusion by integrating underrepresented suppliers into the supply base.",
+        "Foster long-term partnerships with suppliers who demonstrate social and environmental responsibility."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible sourcing",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers compliance with Astec LifeSciences code of conduct policy for suppliers by FY’30.",
+            "baseline": "FY’23",
+            "deadline": "FY’30"
+          },
+          {
+            "target": "Increase procurement from suppliers with recognized ISO certification / public disclosure & commitment on ESG by 50% by FY’30.",
+            "baseline": "FY’23",
+            "deadline": "FY’30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility Framework",
+        "targets": [
+          {
+            "target": "Conduct annual audits covering labor standards across 100% of Tier 1 suppliers by FY’30.",
+            "baseline": "FY’23",
+            "deadline": "FY’30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Conduct",
+        "targets": [
+          {
+            "target": "Integrate anti-corruption clauses in 100% of supplier contracts by FY’30.",
+            "baseline": "FY’23",
+            "deadline": "FY’30"
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase national sourcing by 20% by FY’30.",
+            "baseline": "FY’23",
+            "deadline": "FY’30"
+          },
+          {
+            "target": "Ensure 10% of supplier base includes small or diverse businesses by FY’30.",
+            "baseline": "FY’23",
+            "deadline": "FY’30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Procurement Team is responsible for integrating responsible sourcing principles into supplier selection, contract terms, and ongoing evaluations."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Sustainability Team monitors supplier performance on environmental, social, and ethical parameters and supports improvement initiatives."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Suppliers are expected to comply with Astec LifeSciences sourcing standards, provide required disclosures, and cooperate during audits and assessments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Senior Management ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees involved in sourcing or supplier engagement",
+        "duty": "All Employees involved in sourcing or supplier engagement are expected to uphold this policy and report any violations or concerns through established channels."
+      }
+    ],
+    "monitoring": "Supplier compliance will be assessed through regular audits, sustainability scorecards, and feedback mechanisms. Findings from these reviews will inform corrective actions, supplier engagement plans, and policy updates. Any significant updates or improvements to the policy will be approved by senior management and communicated across the supply chain.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed annually by Procurement officer to ensure its continued relevance, effectiveness, and alignment with evolving regulatory requirements, international best practices, and business priorities. The review process will be overseen by the Procurement and Sustainability Teams, in coordination with relevant department heads."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Astec/Policies For Review/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Astec/Policies For Review/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 8976,
+  "parsedAt": "2026-09-11T07:36:15.231Z"
+}

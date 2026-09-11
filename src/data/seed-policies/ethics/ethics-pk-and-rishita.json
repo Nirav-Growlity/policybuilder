@@ -1,0 +1,359 @@
+{
+  "id": "ethics-pk-and-rishita",
+  "name": "PK and RIshita",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Policy on Ethics.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Permeshwar Creations Pvt. Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Unit 1: Rishita Fashion",
+          "address": "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat 396195",
+          "primaryFunction": "Manufacturing unit"
+        },
+        {
+          "location": "Unit 2: PK Enterprises",
+          "address": "C-19, Hoisery Complex, Phase II, Noida, U.P 201301. India",
+          "primaryFunction": "Manufacturing unit"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Permeshwar Creations is a renowned apparel manufacturing company in India, known for its commitment to quality, innovation, and sustainability. At Permeshwar Creations, we pride ourselves on being a leader in the apparel manufacturing industry. Since our inception, we have been dedicated to producing high-quality garments that meet the needs of our diverse clientele. Our research and development team continuously innovate, creating lightweight, fine-textured garments in a variety of beautiful colors and designs.",
+      "declaration": "Permeshwar Creations is committed to conducting business ethically and with integrity. We strive to prevent any form of corruption and ensure responsible management of information.",
+      "scope": "This policy comprehensively covers all aspects of Permeshwar Creation Pvt. Ltd.’s manufacturing and operation sites. It applies to all workers, employees, suppliers, and stakeholders, both internal and external, associated directly or indirectly with Permeshwar Creation Pvt. Ltd. Below are the locations of our two manufacturing units:"
+    },
+    "focusAreas": [
+      "Anti-Corruption Measures",
+      "Information Security and Privacy",
+      "Fraud",
+      "Money Laundering",
+      "Anti-Competitive Practices",
+      "Conflict of Interest",
+      "Disciplinary Measures for Violations",
+      "Professional Conduct and Integrity",
+      "Confidentiality and Data Protection",
+      "Use of Company Resources",
+      "Respect for Workplace Diversity",
+      "Health and Safety Responsibility",
+      "Social Media and Public Representation",
+      "Fair Labor and Ethical Practices",
+      "Environmental and Sustainability Responsibility",
+      "Conflict of Interest in Operations",
+      "Reporting and Accountability"
+    ],
+    "qualitative": {
+      "Anti-Corruption Measures": [
+        "Permeshwar Creations prohibits the offering, promising, giving, accepting, or soliciting of any advantage that could influence an illegal, unethical, or breach of trust action.",
+        "Cultivate a culture of transparency and integrity through comprehensive training and regular communication on anti-corruption policies.",
+        "We will embed anti-corruption principles into supplier agreements and partnerships to ensure integrity across our value chain."
+      ],
+      "Information Security and Privacy": [
+        "Permeshwar Creations ensures the secure collection, processing, and storage of third-party information for business purposes.",
+        "Implement robust data protection policies and conduct regular audits to ensure compliance with global information security standards.",
+        "We will foster a data privacy culture by promoting accountability and awareness across all levels of the organization."
+      ],
+      "Fraud": [
+        "Permeshwar Creations is committed to preventing, detecting, and responding to fraudulent activities, including false representation, embezzlement, and financial misconduct.",
+        "Establish a whistleblower hotline and anonymous reporting mechanism to encourage employees to report suspected fraud without fear of retaliation.",
+        "We will promote an open culture where transparency, accountability, and ethical conduct are actively encouraged."
+      ],
+      "Money Laundering": [
+        "Permeshwar Creations is dedicated to preventing the use of its operations for money laundering, including concealing, transferring, or converting illegal proceeds into legitimate assets.",
+        "Deploy advanced analytics and monitoring tools to detect unusual financial transactions and patterns that may indicate money laundering activities.",
+        "We will strengthen collaboration with regulatory authorities and financial institutions to continuously improve AML compliance."
+      ],
+      "Anti-Competitive Practices": [
+        "Permeshwar Creations is committed to maintaining a level playing field in the market by avoiding practices such as bid-rigging, exclusive agreements, or predatory pricing.",
+        "Conduct periodic internal audits to assess compliance with competition laws and identify potential anti-competitive practices.",
+        "We will promote a culture of fair business conduct and encourage employees to compete ethically in every market."
+      ],
+      "Conflict of Interest": [
+        "Permeshwar Creations is dedicated to preventing any situation where personal interests may conflict with the best interests of the company, including external business relationships, family ties, or personal investments.",
+        "Require annual disclosures of potential conflicts of interest from all employees and board members, with a focus on transparency and accountability.",
+        "We will cultivate a transparent workplace culture where ethical decision-making is prioritized over personal interests."
+      ],
+      "Disciplinary Measures for Violations": [
+        "At Permeshwar Creation, we are committed to maintaining the highest standards of ethical conduct. Any violation of this Ethics Policy will be treated with seriousness and addressed through fair and transparent procedures.",
+        "Any violation of the Ethics Policy will be thoroughly investigated by the HR and Compliance teams.",
+        "Employees found violating the policy may receive a verbal or written warning depending on the severity of the violation.",
+        "Serious violations may result in suspension from duties while the investigation is ongoing.",
+        "Repeated or severe breaches may lead to termination of employment in accordance with company regulations.",
+        "Violations involving legal or regulatory non-compliance may be reported to relevant authorities.",
+        "Employees found responsible for violations may be required to undergo remedial training on ethics, compliance, and related policies.",
+        "Managers and supervisors failing to enforce the Ethics Policy may face disciplinary action.",
+        "All disciplinary actions will be conducted fairly, transparently, and documented to maintain accountability and consistency.",
+        "Zero Tolerance Areas: Misconduct such as bribery, corruption, harassment, child labor, forced labor, falsification of records, or intentional breaches of health and safety rules will result in immediate termination and, if necessary, legal action.",
+        "Corrective Measures: In cases of minor violations, employees may be required to undergo retraining, counseling, or corrective programs to prevent recurrence.",
+        "Suppliers and Partners: We expect our suppliers, contractors, and business partners to adhere to the same ethical standards. Relationships may be suspended or terminated if unethical or unlawful practices are identified."
+      ],
+      "Professional Conduct and Integrity": [
+        "Always be honest, respectful, and professional in all business dealings.",
+        "Communicate clearly and truthfully with clients, colleagues, and partners.",
+        "Treat everyone with courtesy and professionalism, even in challenging situations.",
+        "Avoid gossip, disrespectful remarks, or unprofessional language in the workplace.",
+        "Address complaints or concerns promptly and fairly."
+      ],
+      "Confidentiality and Data Protection": [
+        "Safeguard sensitive business, client, and employee information at all times.",
+        "Do not share confidential data outside the workplace without prior authorization.",
+        "Use company technology responsibly and comply with data protection standards.",
+        "Report any suspected breach of confidentiality immediately."
+      ],
+      "Use of Company Resources": [
+        "Use resources such as equipment, raw materials, funds, and time responsibly.",
+        "Avoid personal or unauthorized use of organizational property.",
+        "Accurately record financial and operational data."
+      ],
+      "Respect for Workplace Diversity": [
+        "Promote inclusivity and equal opportunity for all employees.",
+        "Refrain from discriminatory remarks, actions, or behaviors.",
+        "Encourage teamwork, respect different perspectives, and value cultural diversity."
+      ],
+      "Health and Safety Responsibility": [
+        "Follow workplace health and safety rules diligently.",
+        "Wear appropriate protective gear where required.",
+        "Immediately report unsafe practices or hazards.",
+        "Maintain cleanliness and orderliness in work areas."
+      ],
+      "Social Media and Public Representation": [
+        "Reflect professionalism and integrity in all online activities.",
+        "Do not share confidential or negative content about work, clients, or colleagues.",
+        "Obtain authorization before making public statements on behalf of the organization."
+      ],
+      "Fair Labor and Ethical Practices": [
+        "Respect labor laws and ethical employment standards.",
+        "Avoid involvement in child labor, forced labor, or exploitative practices.",
+        "Support fair treatment, wages, and working conditions for all employees."
+      ],
+      "Environmental and Sustainability Responsibility": [
+        "Support sustainable practices in manufacturing and day-to-day work.",
+        "Use energy, water, and raw materials efficiently to minimize waste.",
+        "Follow recycling and safe disposal guidelines for chemicals, packaging, and fabric waste."
+      ],
+      "Conflict of Interest in Operations": [
+        "Disclose any personal or financial interests that may conflict with organizational decisions.",
+        "Avoid situations where personal gain compromises professional duties.",
+        "Ensure transparency in vendor, supplier, and client interactions."
+      ],
+      "Reporting and Accountability": [
+        "Immediately report any unethical or unlawful practices observed in the workplace.",
+        "Utilize whistleblower mechanisms or grievance channels without fear of retaliation.",
+        "Take personal accountability for actions and decisions."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption Measures",
+        "targets": [
+          {
+            "target": "Achieve zero incidents of corruption by 2025, with 100% of employees trained in anti-corruption practices by the end of 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We aim to maintain zero cases related to corruption for the next several years.",
+            "baseline": "2022",
+            "deadline": "The next several years"
+          },
+          {
+            "target": "By 2028, conduct quarterly risk assessments across all business units to identify and mitigate corruption risks.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Information Security and Privacy",
+        "targets": [
+          {
+            "target": "We aim to maintain zero cases related to information security breaches for the next several years.",
+            "baseline": "2022",
+            "deadline": "The next several years"
+          },
+          {
+            "target": "Attain 100% compliance with data protection policies by 2025, with bi-annual audits commencing from 2024.",
+            "baseline": "2022",
+            "deadline": "2025; audits commencing from 2024"
+          },
+          {
+            "target": "Ensure 100% of employees handling sensitive information complete annual cybersecurity training by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "We aim to maintain zero cases related to fraud for the next several years.",
+            "baseline": "2022",
+            "deadline": "The next several years"
+          },
+          {
+            "target": "Target a 40% increase in the number of fraud cases detected through the whistleblower system by 2025, with all reported cases investigated within 30 days.",
+            "baseline": "2022",
+            "deadline": "2025; within 30 days of reporting"
+          },
+          {
+            "target": "We aim to provide training on fraud to ensure that 100% of employees are trained by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "By 2028, conduct detailed audits of at least 25% of high-risk transactions annually.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "We aim to maintain zero cases related to money laundering for the next several years.",
+            "baseline": "2022",
+            "deadline": "The next several years"
+          },
+          {
+            "target": "Achieve a 20% increase in the detection of suspicious transactions by 2025, with all flagged transactions reviewed and escalated within 48 hours.",
+            "baseline": "2022",
+            "deadline": "2025; within 48 hours of flagging"
+          },
+          {
+            "target": "Ensure 100% of employees in finance, procurement, and compliance functions undergo annual AML training by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Aim to complete 100% of internal competition law audits by 2025, with corrective actions implemented within 60 days for any identified issues.",
+            "baseline": "2022",
+            "deadline": "2025; within 60 days of identifying issues"
+          },
+          {
+            "target": "By 2028, conduct annual competition law training sessions for 100% of senior management and sales teams.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure 100% of potential conflicts are reviewed and resolved within 30 days of disclosure, with outcomes documented and stored for future reference.",
+            "baseline": "2022",
+            "deadline": "Within 30 days of disclosure"
+          },
+          {
+            "target": "We aim to maintain zero cases related to conflict of interest for the next several years.",
+            "baseline": "2022",
+            "deadline": "The next several years"
+          },
+          {
+            "target": "We aim to provide training on conflict of interest to ensure that 100% of employees are trained by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Achieve 100% compliance in annual conflict of interest declarations across employees and directors by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Every employee, director, officer, contractor, and agent of Parmeshwar Creations",
+        "duty": "The responsibility for implementing and upholding this Ethics Policy lies with every employee, director, officer, contractor, and agent of Parmeshwar Creations. Each individual is expected to act with honesty, integrity, and accountability in all professional dealings."
+      },
+      {
+        "role": "Senior Management & Chief Ethics Officer (CEO)",
+        "duty": "Provide overall leadership, oversight, and resources for policy implementation."
+      },
+      {
+        "role": "Senior Management & Chief Ethics Officer (CEO)",
+        "duty": "Foster a culture of ethical conduct, transparency, and compliance throughout the organization."
+      },
+      {
+        "role": "Senior Management & Chief Ethics Officer (CEO)",
+        "duty": "Ensure clear communication of ethical standards across all levels."
+      },
+      {
+        "role": "Senior Management & Chief Ethics Officer (CEO)",
+        "duty": "Review and monitor adherence to this policy through regular evaluations and reporting mechanisms."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Lead by example and integrate ethical practices into daily operations."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Ensure employees are aware of the policy and understand their responsibilities."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Address ethical concerns raised by team members and escalate them when necessary."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Monitor for potential ethical risks in their departments and take corrective action."
+      },
+      {
+        "role": "Employees, Contractors, and Agents",
+        "duty": "Uphold the values of honesty, fairness, and integrity in all activities."
+      },
+      {
+        "role": "Employees, Contractors, and Agents",
+        "duty": "Comply with all applicable laws, company policies, and ethical guidelines."
+      },
+      {
+        "role": "Employees, Contractors, and Agents",
+        "duty": "Promptly report any unethical conduct, conflicts of interest, or policy violations through the established reporting channels."
+      },
+      {
+        "role": "Employees, Contractors, and Agents",
+        "duty": "Cooperate fully in investigations related to ethical concerns."
+      }
+    ],
+    "monitoring": "Any violation of the Ethics Policy will be thoroughly investigated by the HR and Compliance teams.\n\nAll disciplinary actions will be conducted fairly, transparently, and documented to maintain accountability and consistency.\n\nReview and monitor adherence to this policy through regular evaluations and reporting mechanisms.\n\nMonitor for potential ethical risks in their departments and take corrective action.\n\nConduct periodic internal audits to assess compliance with competition laws and identify potential anti-competitive practices.\n\nImplement robust data protection policies and conduct regular audits to ensure compliance with global information security standards.",
+    "reviewMechanism": "This policy will undergo annual reviews overseen by the Ethics and Compliance Officer (ECO), with the next review scheduled for 1st January 2026. Updates or amendments will be communicated to all stakeholders accordingly. Regular audits and reporting will ensure ongoing compliance with the policy's objectives and principles."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/PK and RIshita/3. Policy on Ethics.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/PK and RIshita/3. Policy on Ethics.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 16321,
+  "parsedAt": "2026-09-11T07:13:17.529Z"
+}

@@ -1,0 +1,280 @@
+{
+  "id": "astec",
+  "name": "Astec",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Astec LifeSciences Limited",
+      "industry": "",
+      "site": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+      "sites": [
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot Nos. B-16, B-17, B-18 & B-21, MIDC Mahad, Birwadi Industrial Area, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": "Manufacturing unit"
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/1/1, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": "Manufacturing unit"
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/1/2, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": "Manufacturing unit"
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/2, K-2/3/1, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": "Manufacturing unit"
+        },
+        {
+          "location": "Research & Development Centre",
+          "address": "Plot No. B-23, T.T.C., Pipeline Road, T.T.C. Industrial Area, Airoli, Navi Mumbai – 400 708, Maharashtra",
+          "primaryFunction": "Research and development"
+        },
+        {
+          "location": "Astec LifeSciences Limited (Corporate Office)",
+          "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+          "primaryFunction": "Corporate office"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Astec LifeSciences Limited, a part of the Godrej Group, we recognize that our role as a leading manufacturer of agrochemicals and specialty chemicals comes with significant environmental responsibilities. Guided by our commitment to Responsible Care® and the Group’s Good & Green vision, we strive to integrate sustainability into every aspect of our business. We are conscious of the potential environmental impacts of chemical manufacturing and are committed to operating in a manner that safeguards natural resources, prevents pollution, and promotes ecological balance.\n\nOur Environmental Policy serves as a framework to embed environmental responsibility across our operations, supply chain, and product lifecycle. Through measurable targets, continuous innovation, and stakeholder collaboration, we work to reduce our carbon footprint, optimize resource consumption, ensure safe chemical management, and comply with all applicable environmental regulations. By aligning sustainability with business resilience, we aim to deliver long-term value while contributing positively to the communities and ecosystems we impact.",
+      "declaration": "Astec LifeSciences Limited commits to integrating sustainability into decision-making at every level of the organization. We uphold the highest standards of environmental stewardship through innovation, transparency, and accountability. Our operations are guided by continuous improvement in safety, efficiency, and resource management. We pledge to work collaboratively with stakeholders to create a positive and lasting impact on people and the planet.",
+      "scope": "This policy applies to all the following Astec LifeSciences manufacturing units, research and development centers, supply chain operations, and product life cycles. It covers activities related to resource consumption, emissions, waste management, and chemical safety. The policy extends to employees, contractors, suppliers, and other stakeholders associated with our operations."
+    },
+    "focusAreas": [
+      "Energy consumption and GHGs",
+      "Air pollution",
+      "Materials, chemicals, and waste",
+      "Water",
+      "Biodiversity",
+      "Product use",
+      "Product end-of-life",
+      "Customer health and safety",
+      "Environmental services and advocacy"
+    ],
+    "qualitative": {
+      "Energy consumption and GHGs": [
+        "Conduct annual energy audits to identify and eliminate inefficiencies in processes.",
+        "Transition to renewable energy sources i.e. rooftop solar, captive solar / hybrid projects and biomass boilers for thermal energy requirement.",
+        "Engage with external agency for energy audits at regular intervals to identify opportunities for energy consumption reduction & process optimization."
+      ],
+      "Water": [
+        "Maximize the use of condensate recovery & gray water usage (wherever feasible) in the plant operations.",
+        "Improve the reusability & recyclability of the water & thus reduce the dependency on freshwater intake",
+        "Installation of zero liquid discharge plant to ensure 100% of the recovery of the water",
+        "Implement rainwater harvesting structures at all major sites to recharge groundwater and support non-potable use."
+      ],
+      "Biodiversity": [
+        "Develop green belts around manufacturing sites with native tree plantations.",
+        "Partner with NGOs for conservation of local ecosystems."
+      ],
+      "Air Pollution": [
+        "To conduct regular maintenance and periodic performance assessments of air pollution control equipment and identify areas for improvement and optimization.",
+        "Quarterly monitor ambient air quality around facilities and publish results."
+      ],
+      "Materials, Chemicals, and Waste": [
+        "Reduce hazardous chemical usage by replacing them with safer alternatives in line with REACH/OSHA standards.",
+        "Adopt circular economy practices through segregation and recycling."
+      ],
+      "Product Use": [
+        "Design products with improved energy efficiency and eco-friendly performance features.",
+        "Emphasize sustainable product usage in the product guidelines provided to the users."
+      ],
+      "Product End-of-life": [
+        "Launch customer awareness campaigns on responsible disposal practices and recycling options."
+      ],
+      "Customer Health and Safety": [
+        "Maintain compliance of all products with applicable regulatory safety standards through continuous monitoring and testing.",
+        "Ensure strong and transparent labeling and hazard communication on each product to ensure proper product handling and customer safety.",
+        "Regularly update safety protocols in line with evolving regulations."
+      ],
+      "Environmental Services & Advocacy": [
+        "Participate in industry associations to promote sustainable practices.",
+        "Support local environmental initiatives and awareness programs to promote sustainability.",
+        "Publish annual sustainability reports aligned with GRI/SDG frameworks to ensure transparency and accountability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy consumption and GHGs",
+        "targets": [
+          {
+            "target": "Reduce specific energy consumption by 10% from baseline year of FY’22 to target year of FY’30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          },
+          {
+            "target": "Achieve reduction of absolute Scope 1 and Scope 2 GHG emissions by 37.5% aligning to our SBTi commitment.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Water",
+        "targets": [
+          {
+            "target": "Reduce specific water consumption by 10% from baseline year of FY’22 to target year of FY’30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          },
+          {
+            "target": "Recycle and Reuse at least 50% of total wastewater generated by FY’30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          },
+          {
+            "target": "Installation of zero liquid discharge plant at all the ASTEC LifeSciences facilities by FY’30",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Plant and maintain 200 native trees by FY’30 near operational areas.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          },
+          {
+            "target": "Allocate 5% of facility’s total land area to biodiversity zones and green cover by FY’30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with respect to statutory regulations specified by Government / State / Regional authority",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals, and Waste",
+        "targets": [
+          {
+            "target": "Reduce hazardous chemical usage by 30% by FY’30 by substituting with safer alternatives.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          },
+          {
+            "target": "Achieve 30% solid waste diversion from landfill by FY’30 through reuse, recycling, and composting.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Achieve 20% reduction in lifecycle environmental footprint of products by FY’30 through design optimization.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-life",
+        "targets": [
+          {
+            "target": "Conduct 1 customer awareness campaigns annually on responsible disposal and recycling practices, reaching a minimum of 70% of our customer base by FY’30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Conduct annual customer safety audits and maintain zero product safety incidents till FY’30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          },
+          {
+            "target": "Maintain zero product recalls due to safety concerns annually.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Allocate 2% of annual profits towards community-based environmental projects such as afforestation, clean water access, or renewable energy adoption by FY’30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY’30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Drive strategic initiatives and allocate resources."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Ensure regulatory adherence and track performance."
+      },
+      {
+        "role": "Operations & Manufacturing",
+        "duty": "Implement energy-efficient and pollution control measures."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Promote responsible sourcing and supplier collaboration."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow sustainability practices and participate in training."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Support sustainability through partnerships and compliance."
+      }
+    ],
+    "monitoring": "Astec LifeSciences is committed to regularly monitoring its environmental performance across key focus areas such as energy consumption, greenhouse gas emissions, water management, waste reduction, and product safety. Key Performance Indicators (KPIs) are established for each area and tracked through internal monitoring systems to evaluate progress against defined sustainability targets. These KPIs are reviewed on a quarterly basis, and findings are consolidated into performance reports for senior management to guide strategic decision-making. Annual assessments capture achievements, identify gaps, and recommend corrective measures, while relevant outcomes are shared with stakeholders to promote transparency and accountability. All monitoring and reporting practices adhere to applicable regulatory requirements and industry best practices, ensuring reliability, accuracy, and credibility in disclosures.",
+    "reviewMechanism": "This policy will be reviewed annually by the Environmental Manager to assess its effectiveness and alignment with evolving sustainability goals, regulatory requirements, and industry best practices. Feedback from audits, employee suggestions, and stakeholder engagements will be incorporated into policy updates. Necessary revisions will be made to strengthen environmental commitments and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Astec/Policies For Review/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Astec/Policies For Review/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12628,
+  "parsedAt": "2026-09-11T07:36:19.254Z"
+}

@@ -1,0 +1,350 @@
+{
+  "id": "ritham-apparels",
+  "name": "Ritham Apparels",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1) Environmental policy.pdf.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Clifton Export Private Limited",
+      "industry": "",
+      "site": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India",
+      "sites": [
+        {
+          "location": "Clifton Export Private Limited",
+          "address": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India",
+          "primaryFunction": "fabric processing, garment manufacturing, packing, dispatch, utility operations, waste management, and chemical handling"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Clifton Export Private Limited, unit of Clifton Group, we are committed to embedding environmental sustainability into every stage of our textile and garment manufacturing processes. Being, a globally recognized organization known for responsible business practices and certified under ISO 14001, GOTS, GRS, and OEKO-TEX standards, we take a proactive and strategic approach to minimizing our environmental impact.\n\nOur operations focus on the efficient use of natural resources, reducing greenhouse gas (GHG) emissions, ensuring the safe treatment of effluents, and minimizing waste generation. We further commit to sourcing sustainable materials, adopting eco-friendly packaging solutions, and investing in cleaner production technologies.\n\nThis Environmental Policy affirms our commitment to continuous improvement, full regulatory compliance, and active engagement with stakeholders. By promoting environmental awareness across all levels of our workforce and aligning with global sustainability frameworks, Clifton strives to produce high-quality garments in a way that protects the environment and fosters a sustainable future for generations to come.",
+      "declaration": "Clifton Export Pvt. Ltd., is committed to operating in an environmentally responsible and sustainable manner. We aim to minimize our environmental footprint by complying with all applicable legal and regulatory requirements, conserving natural resources, reducing greenhouse gas emissions and waste, and implementing eco-efficient practices across our value chain.\n\nWe strive for continuous improvement through innovation, regular performance monitoring, and stakeholder engagement. By aligning with recognized environmental standards and sustainability frameworks, we support climate resilience and contribute to a greener, more responsible textile industry. This policy is central to our business strategy and everyday operations.",
+      "scope": "This Environmental Policy applies to the below given operational site of Clifton Export Pvt. Ltd., including fabric processing, garment manufacturing, packing, dispatch, utility operations, waste management, and chemical handling. It extends to all employees, contract workers, sub-contractors, and relevant stakeholders involved in our operations."
+    },
+    "focusAreas": [
+      "Energy Efficiency & Emission Reduction",
+      "Water Conservation & Management",
+      "Sustainable Materials & Chemical Management",
+      "Air Emission Control",
+      "Waste Reduction & Circular Practices",
+      "Product Use Sustainability",
+      "Product End-of-Life Stewardship",
+      "Customer Health & Safety",
+      "Ecosystem & Biodiversity Consideration",
+      "Innovation for Sustainability",
+      "Environmental Engagement & Advocacy"
+    ],
+    "qualitative": {
+      "Energy Efficiency & Emission Reduction": [
+        "Adopting energy-efficient machinery and optimizing production processes to reduce greenhouse gas emissions and lower our overall carbon footprint.",
+        "To implement energy-saving technologies such as LED lighting, energy-efficient sewing and pressing machines, and high-efficiency motor.",
+        "Conduct regular energy monitoring to optimize usage across all garment production units.",
+        "To involve all employees in energy conservation by promoting behavioral change, shutting down idle equipment, and encouraging use of energy-efficient practices.",
+        "To reduce dependency on non-renewable energy by increasing the share of green electricity."
+      ],
+      "Water Conservation & Management": [
+        "Implementing water-saving measures across production, promoting reuse and recycling of water, and ensuring responsible treatment of wastewater.",
+        "Optimize water recycling and reuse to reduce freshwater intake and implement advanced water treatment technologies for enhanced sustainability."
+      ],
+      "Sustainable Materials & Chemical Management": [
+        "Prioritizing the use of certified sustainable fabrics and ensuring the safe handling, storage, and disposal of chemicals to minimize environmental and human health risks.",
+        "To prioritize the use of organic, recycled, and low-impact materials in garment manufacturing.",
+        "To strengthen responsible sourcing from suppliers certified under GOTS, GRS, and OCS.",
+        "To regularly assess supplier practices for environmental and ethical compliance.",
+        "To avoid hazardous substances and adhere to OEKO-TEX® Standard 100 or equivalent product safety standards."
+      ],
+      "Air Emission Control": [
+        "Maintaining air quality by controlling emissions from ironing, finishing, and other production processes through appropriate ventilation and filtration systems.",
+        "Reduce air emissions by upgrading filtration, emission control systems and hence promote cleaner production methods to minimize atmospheric pollution."
+      ],
+      "Waste Reduction & Circular Practices": [
+        "Reducing production waste, encouraging reuse of fabric offcuts, and promoting recycling practices throughout the value chain.",
+        "Minimize waste generation through process efficiency improvements and strengthen the recycling and material recovery process to support circular economy goals."
+      ],
+      "Product Use Sustainability": [
+        "Designing garments that are durable, resource-efficient, and have a lower environmental impact throughout their lifecycle.",
+        "Enhance durability and recyclability of products to minimize waste and hence reduce the environmental impact of product.",
+        "To develop long-lasting, recyclable garments using low-impact materials, to maintain the goal of elimination of 100% of harmful chemicals in products."
+      ],
+      "Product End-of-Life Stewardship": [
+        "Supporting initiatives that encourage garment recycling, reuse, and responsible disposal practices post-consumer use.",
+        "Establish product take-back and recycling initiatives for responsible disposal.",
+        "Collaborate with customers to ensure sustainable product end-of-life management."
+      ],
+      "Customer Health & Safety": [
+        "Ensuring all products are free from harmful substances, meet applicable safety standards, and support safer use by end consumers.",
+        "Ensure 100% compliance with all product safety and environmental regulations through regular product testing."
+      ],
+      "Ecosystem & Biodiversity Consideration": [
+        "Operating in a manner that minimizes disruption to local ecosystems and promotes biodiversity through responsible resource use and waste disposal.",
+        "Minimize land use impact by implementing eco-friendly site management and supporting afforestation and biodiversity conservation projects."
+      ],
+      "Innovation for Sustainability": [
+        "Investing in innovative, eco-friendly technologies and process improvements to continually enhance our environmental performance and product sustainability.",
+        "Invest in R&D for developing eco-friendly products, processes and hence develop sustainable alternatives."
+      ],
+      "Environmental Engagement & Advocacy": [
+        "Promoting environmental awareness and best practices within the industry and local communities, supporting partnerships, education initiatives, and advocacy efforts that contribute to a more sustainable textile sector.",
+        "Ensure 100% compliance with global and local environmental regulations through environmental audits.",
+        "Train all employees on sustainability and environmental regulations annually."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency & Emission Reduction",
+        "targets": [
+          {
+            "target": "To reduce GHG emissions by 20% by year 2027, through operational improvements and cleaner energy adoption.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Aiming to meet 50% of our total energy needs from renewable sources by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation & Management",
+        "targets": [
+          {
+            "target": "To reduce water usage by 20% across operations by year 2027, through the use of water-efficient machines, low-water dyeing methods and internal reuse systems.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain water recycling rate to 75% of total water consumption by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain 100% compliance with wastewater discharge regulations annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials & Chemical Management",
+        "targets": [
+          {
+            "target": "To ensure 100% of sourced materials comply with GOTS, OCS, or RCS standards by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "To ensure 100% compliance regulatory standards for safe chemical handling and disposal by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Air Emission Control",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in particulate emissions by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 95% efficiency in air pollution control devices across all facilities by regular device inspections.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Waste Reduction & Circular Practices",
+        "targets": [
+          {
+            "target": "Reduce industrial waste generation by 5% by year 2027 by minimizing production waste and reusing cutting scraps and packaging materials.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve a 40% waste recycling rate across operations by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "To engage 100% of employees in sorting and recycling programs to support a circular economy.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "To reduce landfill waste by 30% by 2027, by adopting the 3R (Reduce, Reuse, Recycle) strategy, in compliance with GOTS and GRS.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Product Use Sustainability",
+        "targets": [
+          {
+            "target": "Reduce the carbon footprint per garment produced by 3% by the year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Increase the share of sustainably sourced materials in products to 50% by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life Stewardship",
+        "targets": [
+          {
+            "target": "Launch a product take-back pilot project by year 2027 to evaluate garment end-of-life behavior and facilitate recycling and reuse pathways.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Aim to recover 20% of garments post-use by year 2027, enabling circular use of materials.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with all product safety and environmental regulations through regular product testing.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "To ensure that 100% of products meet OEKO-TEX Standard 100 or equivalent safety certifications by year 2027, eliminating toxic or hazardous substances.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain zero customer complaints related to product safety.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero product-related environmental incidents annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Ecosystem & Biodiversity Consideration",
+        "targets": [
+          {
+            "target": "Increase green cover to 15% by year 2027 through CSR activities.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Invest in 2 biodiversity conservation projects by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Innovation for Sustainability",
+        "targets": [
+          {
+            "target": "Allocate 5% of annual R&D budget to green technology development till year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Reduce energy-intensive production steps by 30% by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Engagement & Advocacy",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with global and local environmental regulations through environmental audits.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Train all employees on sustainability and environmental regulations annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Participate in 2 industry sustainability initiatives by year 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      14,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Integrate sustainability into corporate strategy, allocate resources, and review environmental performance."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Develop action plans, conduct audits, and implement training programs to meet environmental goals."
+      },
+      {
+        "role": "Operations & Production Teams",
+        "duty": "Optimize energy use, minimize waste, and ensure compliance with air and water quality standards."
+      },
+      {
+        "role": "Supply Chain & Procurement Teams",
+        "duty": "Source sustainable materials, phase out hazardous chemicals, and promote recycling initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental best practices, participate in sustainability efforts, and report concerns or improvement ideas."
+      },
+      {
+        "role": "R&D & Innovation Teams",
+        "duty": "Develop eco-friendly products, enhance recyclability, and invest in green technologies."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Ensure regulatory compliance, conduct risk assessments, and engage in industry sustainability initiatives."
+      }
+    ],
+    "monitoring": "Clifton Export Private Limited is committed to maintaining transparency and accountability in its environmental performance through a structured monitoring and reporting framework. Key environmental data, including energy usage, greenhouse gas emissions, water consumption, chemical use, and waste generation, will be systematically tracked, recorded, and evaluated. Regular internal assessments and audits will be conducted to ensure compliance with applicable environmental regulations and company sustainability objectives. Performance will be reviewed against established Key Performance Indicators (KPIs), and outcomes will be reported to senior management and relevant stakeholders.",
+    "reviewMechanism": "This Environmental Policy will be reviewed annually by the Environmental Manager to ensure its relevance, effectiveness, and alignment with evolving sustainability goals, legal requirements, and industry best practices. Feedback from internal audits, employee input, and stakeholder engagement will be considered in each review cycle. Necessary revisions will be implemented to strengthen our environmental commitments and improve overall performance. All updates or significant changes will be clearly communicated across all levels of the organization to ensure continued awareness, ownership, and compliance."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Ritham Apparels/1) Environmental policy.pdf",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Ritham Apparels/1) Environmental policy.pdf"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 18,
+  "parsedAt": "2026-09-11T08:20:38.384Z"
+}

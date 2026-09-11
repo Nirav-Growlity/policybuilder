@@ -1,0 +1,218 @@
+{
+  "id": "ethics-amwl",
+  "name": "AMWL",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Business Ethics Policy - AMWL.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Agrawal Metal Works Pvt. Ltd.",
+      "industry": "",
+      "site": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India",
+      "sites": [
+        {
+          "location": "Agrawal Metal Works Pvt. Ltd.",
+          "address": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Jhajjar Road, Rewari-123401, Haryana, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "205, “Arunachal Building” 19, Barakhamba Road –110001, New Delhi, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Agrawal Metal Works Pvt. Ltd., ethical conduct is the foundation of our business operations and success. As a prominent manufacturer of Copper & Copper Alloy Foils, Strips & Sheets, Copper and Brass Round and Flatted Wires, and Fine Grain Brass Ingots, we are committed to uphold the highest standards of integrity, accountability, and ethical behavior in all aspects of our work.\n\nOur Business Ethics Policy is designed to guide our actions and decisions, ensuring that we operate with honesty, transparency, and respect for all stakeholders, including employees, customers, suppliers, and the communities in which we operate. This policy reflects our dedication to foster an ethical culture where every individual is encouraged to act with integrity and responsibility. By adhering to these principles, we aim to build trust, maintain our reputation, and contribute positively to society. At Agrawal Metal Works, we believe that a strong ethical foundation is key to achieve sustainable growth and excellence in everything we do.",
+      "declaration": "At Agrawal Metal Works Pvt. Ltd., we are committed to ethical conduct and integrity in all our business practices. We are committed to maintain the highest standards of honesty and fairness, creating a workplace culture of responsibility and integrity. Using FY 2019-20 as our baseline year, we are determined to measure our progress and ensure continuous improvement. By following these ethical principles, we strive for sustainable growth, strong relationships, and meaningful contributions to society.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Anti-Corruption",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Anti-Money Laundering",
+      "Information Security",
+      "Fair Business Conduct",
+      "Transparent Recordkeeping",
+      "Respect for Stakeholder Trust"
+    ],
+    "qualitative": {
+      "Anti-Corruption": [
+        "Maintain zero tolerance for bribery, facilitation payments, and any corrupt practices. Conduct all business with transparency and in line with legal and ethical standards.",
+        "Maintain a zero-tolerance policy for bribery and corruption and ensure strict compliance with anti-corruption laws and company policies"
+      ],
+      "Conflict of Interest": [
+        "Require disclosure of any personal or financial interest that may interfere with professional responsibilities. Decisions must remain impartial and in the company’s best interest.",
+        "To ensure all employees understand the importance of disclosing potential conflicts.",
+        "To ensure that 100% of employees annually complete and submit conflict of interest disclosure form."
+      ],
+      "Fraud Prevention": [
+        "Strengthen internal controls and accountability to prevent fraud. Encourage a speak-up culture through secure and confidential reporting mechanisms.",
+        "To implement a robust internal audit system to detect and prevent fraudulent activities within the organization."
+      ],
+      "Anti-Money Laundering": [
+        "Implement due diligence on financial transactions and third-party engagements to identify and prevent suspicious or unlawful activity.",
+        "Develop and maintain a comprehensive anti-money laundering (AML) policy, including regular training for employees on AML practices."
+      ],
+      "Information Security": [
+        "Safeguard confidential company, employee, and client data. Ensure responsible access, storage, and communication of sensitive information.",
+        "To implement advanced information security measures and regular training to protect sensitive company and customer data."
+      ],
+      "Fair Business Conduct": [
+        "Comply with antitrust and competition laws. Avoid unfair trade practices and promote ethical, transparent dealings with all stakeholders.",
+        "To review and update anti-competitive practices policy annually to reflect the latest regulations and industry standards."
+      ],
+      "Transparent Recordkeeping": [
+        "Maintain accurate and honest records across all operations to support accountability, traceability, and compliance."
+      ],
+      "Respect for Stakeholder Trust": [
+        "Build long-term relationships through ethical conduct with customers, suppliers, partners, and communities."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption",
+        "targets": [
+          {
+            "target": "Maintain inclusion and compliance of anti-bribery clauses into 100% of supplier and partner contracts",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% employee participation in annual anti-corruption training programs",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Maintain 100% employee compliance rate in reporting potential conflicts of interest",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure that 100% of employees annually complete and submit conflict of interest disclosure form",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Conduct two comprehensive fraud risk assessments annually, aiming for zero incidences of detected fraud",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Maintain a 100% compliance rate with AML regulations through regular audits and training sessions",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain zero number of false positive alerts in AML monitoring systems",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fair Business Conduct",
+        "targets": [
+          {
+            "target": "Provide annual training regularly on anti-competitive practices to achieve 100% of employees are in relevant departments",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Conduct annual Information Security audits, aiming to maintain zero data breaches",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train 100% of relevant employees on document retention and compliance annually",
+            "baseline": "FY 2019-20",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Respect for Stakeholder Trust",
+        "targets": [
+          {
+            "target": "Achieve and maintain at least 90% stakeholder satisfaction (across customers, suppliers, and partners) through annual feedback surveys",
+            "baseline": "FY 2019-20",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Ethics Committee",
+        "duty": "A cross-functional body responsible for policy formulation, compliance oversight, and ethical risk management."
+      },
+      {
+        "role": "Ethics Officer",
+        "duty": "Appointed to manage daily ethical issues, conduct training, receive grievances, and report serious matters to the Committee and Management."
+      },
+      {
+        "role": "Departmental Heads",
+        "duty": "Responsible for enforcing ethics policies within their teams."
+      },
+      {
+        "role": "All Employees and Suppliers",
+        "duty": "Must adhere to the ethics code and report violations."
+      }
+    ],
+    "monitoring": "At Agrawal Metal Works, Ethical Conduct practices are continuously enhanced to stay aligned with evolving regulations, industry standards, and emerging risks. A strong culture of integrity is embedded across all levels of the organization, ensuring transparency, accountability, and regulatory compliance.\n\nOngoing Training & Awareness: Employees undergo annual training on key ethical topics, including anti-corruption, conflict of interest, fraud prevention, anti-money laundering (AML), and information security.\n\nRisk Assessments & Independent Audits: Regular internal reviews and third-party audits help identify potential ethical risks, evaluate policy effectiveness, and drive corrective actions.\n\nCollaborative Compliance Engagement: Active participation in industry forums and regulatory dialogues supports alignment with best practices and ethical norms.\n\nAdvanced Monitoring & Reporting Systems: Secure digital tools and automated monitoring mechanisms strengthen fraud detection, compliance management, and incident reporting.\n\nFeedback & Transparency Culture: Open channels for feedback empower employees and stakeholders to share concerns or suggestions, driving continual ethical improvements.\n\nAgrawal Metal Works maintains a zero-tolerance stance on all forms of ethical misconduct, including corruption, conflicts of interest, fraud, money laundering, and data breaches. Any confirmed violations are met with strict and proportionate disciplinary measures to uphold ethical standards.\n\nEmployees, suppliers, and external stakeholders are encouraged to report suspected violations through a secure and confidential whistleblower system that guarantees anonymity and protection against retaliation.\n\nAll reported concerns are treated with the utmost confidentiality and addressed through prompt and thorough investigation.\n\nInvestigations are led by the Compliance Officer, with support from internal teams or external experts as needed.\n\nFollowing any ethical breach, corrective actions such as policy updates, enhanced controls, or targeted training are implemented to prevent recurrence.\n\nInsights gained from incidents are integrated into risk assessments and policy reviews, contributing to stronger ethical governance and resilience.",
+    "reviewMechanism": "Annual Review: The annual review of this policy is conducted by the Compliance Officer to assess policy relevance, effectiveness, and compliance with updated laws.\n\nInternal Audits: Ethics compliance is part of quarterly internal audits, with reports submitted to senior management.\n\nStakeholder Feedback: Ethics performance is reviewed using feedback from employees, suppliers, and external partners.\n\nDocumentation: All review outcomes, improvement actions, and policy changes are recorded and archived for accountability."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/AMWL/3. Business Ethics Policy - AMWL.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/AMWL/3. Business Ethics Policy - AMWL.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 14183,
+  "parsedAt": "2026-09-11T07:32:35.678Z"
+}

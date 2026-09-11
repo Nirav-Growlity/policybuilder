@@ -1,0 +1,545 @@
+{
+  "id": "labour-human-rights-birla",
+  "name": "Birla",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Human Right and Welfare Policy_grw_v1_3012.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Birla Jute Mills",
+      "industry": "",
+      "site": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India",
+      "sites": [
+        {
+          "location": "Birla Jute Mills",
+          "address": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India",
+          "primaryFunction": "Manufacturer of jute products"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Birla Jute Mills, we recognize that our success is intrinsically linked to the well-being of our workforce and the communities in which we operate. As a manufacturer of jute products, we understand our responsibility to uphold the highest standards of human rights and workers' welfare. This policy reflects our commitment to creating a safe, inclusive, and empowering work environment while positively impacting our broader community. By integrating these principles into our operations, we aim to maintain our legacy of quality while fostering a culture of respect, dignity, and sustainable development.",
+      "declaration": "Ensure a safe and healthy work environment: Implement comprehensive occupational health and safety measures to prevent accidents, injuries, and work-related illnesses.\n\nPromote fair labor practices and respect for human rights: Uphold international labor standards and human rights principles throughout our operations, ensuring fair wages, reasonable working hours, and the elimination of discrimination, harassment, and forced labor.\n\nFoster diversity, equity, and inclusion: Create an inclusive workplace that values diversity, promotes equal opportunities, and ensures fair treatment for all employees regardless of their background, gender, age, ethnicity, or abilities.\n\nSupport employee development and well-being: Invest in our workforce through comprehensive training programs, career development opportunities, and initiatives that promote work-life balance and overall employee well-being.\n\nMaintain transparency and accountability: Establish clear reporting mechanisms and engage in open dialogue with stakeholders to ensure transparency in our social performance and accountability for our actions.\n\nContinuously improve our social performance: Regularly assess our policies, practices, and performance to identify areas for improvement and implement best practices in social responsibility.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:"
+    },
+    "focusAreas": [
+      "Occupational Health and Safety",
+      "Employee Well-being and Work-Life Balance",
+      "Community Engagement and Social Impact",
+      "Corporate Social Responsibility (CSR)",
+      "Prevention of Child and Forced Labor",
+      "Human Rights and Ethical Labor Practices",
+      "Professional Development and Career Growth",
+      "Freedom of Association and Collective Bargaining",
+      "Inclusive Workplace Culture",
+      "Fair Compensation and Benefits",
+      "Discrimination and Harassment Prevention",
+      "Grievance Mechanisms and Conflict Resolution",
+      "Supply Chain Social Responsibility"
+    ],
+    "qualitative": {
+      "Occupational Health and Safety": [
+        "We aim to create a safe and healthy work environment by implementing comprehensive safety management systems and regular risk assessments.",
+        "Our commitment includes providing ongoing safety training and personal protective equipment to all workers.",
+        "We strive to establish and maintain emergency response protocols and conduct regular drills to ensure preparedness.",
+        "We focus on maintaining transparent reporting of incidents and near-misses to continually improve our safety practices.",
+        "We have implemented a comprehensive Occupational Health and Safety Management System (OHSMS) aligned with ISO 45001, ensuring all our operations adhere to the highest international safety standards.",
+        "Regular risk assessments and safety audits are conducted using advanced tools and methodologies, allowing us to identify and mitigate potential hazards effectively.",
+        "Ongoing safety training programs tailored to specific job roles and risks are provided, ensuring all employees and contractors are well-equipped to maintain a safe work environment."
+      ],
+      "Employee Well-being and Work-Life Balance": [
+        "We are committed to offering flexible work arrangements where possible to support work-life balance.",
+        "We aim to provide access to mental health resources and counseling services for all employees.",
+        "Our focus includes implementing wellness programs and initiatives to promote overall employee health.",
+        "We strive to ensure adequate rest periods and paid time off to support employee well-being.",
+        "Flexible work arrangements, including remote work options, flexible hours, and compressed workweeks, are offered to support work-life balance.",
+        "We provide access to comprehensive mental health resources, including confidential counseling services and stress management programs.",
+        "A holistic wellness program is in place, encompassing physical fitness facilities, nutrition counseling, and health screenings."
+      ],
+      "Community Engagement and Social Impact": [
+        "We are dedicated to establishing partnerships with local NGOs and community organizations to amplify our social impact.",
+        "Our commitment extends to implementing skill development programs for local youth to enhance employability.",
+        "We aim to support local education initiatives and provide scholarships to promote access to quality education.",
+        "We focus on organizing regular community outreach events and volunteer programs to foster strong community relationships.",
+        "We have established long-term partnerships with local NGOs and community organizations to address key social issues in our operational areas.",
+        "Skill development programs for local youth are implemented, focusing on employability skills relevant to the jute industry and beyond.",
+        "Local education initiatives are supported through scholarships, infrastructure improvement in schools, and educational material provision."
+      ],
+      "Corporate Social Responsibility (CSR)": [
+        "We are committed to allocating a dedicated budget for CSR activities to ensure sustained social impact.",
+        "Our focus areas include education, healthcare, and environmental sustainability.",
+        "We aim to measure and report on the impact of our CSR initiatives to ensure transparency and accountability.",
+        "We strive to engage employees in CSR activities to foster a culture of giving back to society.",
+        "A dedicated budget for CSR activities is allocated, exceeding statutory requirements where possible.",
+        "We focus on key areas such as education, healthcare, environmental sustainability, and rural development, aligning with local needs and global sustainable development goals.",
+        "A robust monitoring and evaluation system is in place to measure and report on the impact of our CSR initiatives."
+      ],
+      "Prevention of Child and Forced Labor": [
+        "We are committed to implementing strict age verification processes during recruitment to prevent child labor.",
+        "Our focus includes conducting regular audits to ensure compliance with child labor laws across our operations.",
+        "We aim to establish robust reporting mechanisms for suspected cases of forced labor.",
+        "We strive to provide comprehensive training on identifying and preventing child and forced labor to all employees and key stakeholders.",
+        "Strict age verification processes are implemented during recruitment, including document checks and interviews with potential young workers and their families.",
+        "Regular unannounced audits of our facilities and those of our suppliers are conducted to ensure compliance with child labor laws and forced labor prohibitions.",
+        "Multiple reporting mechanisms, including anonymous hotlines, are established for employees and community members to report suspected cases of child or forced labor."
+      ],
+      "Human Rights and Ethical Labor Practices": [
+        "We are dedicated to conducting human rights impact assessments across our operations to identify and address potential issues.",
+        "Our commitment includes establishing a human rights due diligence process to prevent violations.",
+        "We aim to provide training on human rights and ethical labor practices to all employees to ensure awareness and compliance.",
+        "We focus on collaborating with stakeholders to address human rights challenges in the jute industry.",
+        "Regular human rights impact assessments are conducted across our operations and supply chain, identifying potential risks and implementing mitigation strategies.",
+        "A human rights due diligence process is established, integrating human rights considerations into all business decisions and processes.",
+        "Comprehensive training on human rights and ethical labor practices is provided to all employees, with specialized modules for management and procurement teams."
+      ],
+      "Professional Development and Career Growth": [
+        "We are committed to implementing comprehensive training and development programs for all employees.",
+        "Our focus includes establishing clear career progression paths to support employee growth and retention.",
+        "We aim to offer mentorship and leadership development opportunities to nurture talent within the organization.",
+        "We strive to support continuous learning through tuition reimbursement and skill-building workshops.",
+        "A comprehensive Learning Management System (LMS) is implemented, offering a wide range of training modules for technical and soft skills development.",
+        "Clear career progression paths for all job roles are established, with transparent criteria for advancement and promotions.",
+        "Mentorship and leadership development programs are offered, pairing high-potential employees with experienced leaders for guidance and support."
+      ],
+      "Freedom of Association and Collective Bargaining": [
+        "We respect workers' right to form and join trade unions and engage in collective bargaining.",
+        "Our commitment includes engaging in good faith negotiations with worker representatives.",
+        "We aim to provide facilities for union activities where appropriate to support freedom of association.",
+        "We focus on ensuring non-discrimination against union members to protect workers' rights.",
+        "Workers' right to form and join trade unions of their choice without fear of retaliation or discrimination is respected and upheld.",
+        "We engage in good faith negotiations with worker representatives, maintaining open and transparent communication channels.",
+        "Appropriate facilities for union activities, including meeting spaces and notice boards for communication, are provided."
+      ],
+      "Inclusive Workplace Culture": [
+        "We are dedicated to implementing diversity and inclusion training for all employees to foster an inclusive work environment.",
+        "Our commitment includes establishing employee resource groups to support underrepresented groups within our workforce.",
+        "We aim to set and achieve diversity targets for recruitment and promotion to ensure equal opportunities.",
+        "We focus on regularly assessing and addressing pay equity to ensure fair compensation for all employees.",
+        "Comprehensive diversity and inclusion training for all employees is implemented, with specialized modules for managers on inclusive leadership.",
+        "Employee resource groups are established to support underrepresented groups, providing them with networking, mentoring, and development opportunities.",
+        "Diversity targets for recruitment, promotion, and leadership positions are set, with regular monitoring of progress towards these goals."
+      ],
+      "Fair Compensation and Benefits": [
+        "We are committed to conducting regular market surveys to ensure competitive wages for all positions.",
+        "Our focus includes implementing a transparent and fair performance-based compensation system.",
+        "We aim to provide comprehensive benefits packages including health insurance and retirement plans.",
+        "We strive to ensure equal pay for equal work regardless of gender or other protected characteristics.",
+        "Regular market surveys and benchmarking exercises are conducted to ensure our compensation packages remain competitive within the industry.",
+        "A transparent and fair performance-based compensation system is implemented, clearly communicating the link between performance and rewards.",
+        "Comprehensive benefits packages, including health insurance, retirement plans, and wellness programs, are provided, with regular reviews and enhancements based on employee feedback and market trends."
+      ],
+      "Discrimination and Harassment Prevention": [
+        "We aim to create a workplace free from all forms of discrimination and harassment, ensuring equal opportunity and fair treatment for all employees.",
+        "Our commitment includes fostering a respectful, inclusive, and safe working environment regardless of gender, caste, religion, ethnicity, age, disability, or any other protected characteristic.",
+        "We strive to prevent all forms of harassment, including sexual harassment, verbal abuse, physical misconduct, and psychological intimidation.",
+        "We focus on encouraging open communication and early reporting to address concerns promptly and effectively.",
+        "We maintain and continuously enforce a formal Anti-Discrimination and Anti-Harassment Policy applicable to all employees, workers, contractors, and third parties across the organization.",
+        "Clearly defined procedures are consistently followed for reporting, investigating, and resolving complaints in a fair, confidential, and time-bound manner.",
+        "Regular and ongoing awareness and training programs are conducted to reinforce acceptable workplace behavior, employee rights and responsibilities, and grievance redressal mechanisms.",
+        "Robust safeguards are actively implemented and monitored to ensure protection against retaliation for individuals reporting concerns in good faith.",
+        "In compliance with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 (POSH), an Internal Committee (IC) is constituted, POSH training is conducted periodically, and complaints are handled strictly in line with statutory requirements."
+      ],
+      "Grievance Mechanisms and Conflict Resolution": [
+        "We are dedicated to establishing multiple channels for reporting grievances, including anonymous options, to ensure all voices are heard.",
+        "Our commitment includes implementing a fair and timely process for addressing complaints and resolving conflicts.",
+        "We aim to provide training on conflict resolution and mediation to managers and key personnel.",
+        "We focus on regularly reviewing and improving the effectiveness of our grievance mechanisms.",
+        "Multiple channels for reporting grievances are established, including an online portal, a dedicated phone line, and in-person options, ensuring accessibility for all employees.",
+        "A fair and timely process for addressing complaints is implemented, with clear timelines for investigation and resolution.",
+        "Training on conflict resolution and mediation techniques is provided to HR personnel and managers, equipping them to handle disputes effectively."
+      ],
+      "Supply Chain Social Responsibility": [
+        "We are committed to developing and implementing a supplier code of conduct to ensure ethical practices throughout our supply chain.",
+        "Our focus includes conducting regular social audits of key suppliers to ensure compliance with our standards.",
+        "We aim to provide training and support to suppliers on improving social performance and addressing challenges.",
+        "We strive to collaborate with industry peers to address common supply chain challenges and promote industry-wide improvements.",
+        "A comprehensive supplier code of conduct addressing all key social responsibility areas, including labor rights, health and safety, and environmental sustainability, is developed and implemented.",
+        "Regular social audits of key suppliers are conducted using both internal resources and third-party auditors to ensure compliance with our standards.",
+        "Training and capacity-building support to suppliers on improving social performance is provided, including workshops on best practices and one-on-one consultations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Occupational Health and Safety",
+        "targets": [
+          {
+            "target": "Reduce workplace accidents by 20%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% compliance with safety training requirements",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement a near-miss reporting system with a 95% reporting rate",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Well-being and Work-Life Balance",
+        "targets": [
+          {
+            "target": "Achieve an employee satisfaction score of 85% or higher",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce employee turnover rate by 15%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement flexible work arrangements for 50% of eligible positions",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Community Engagement and Social Impact",
+        "targets": [
+          {
+            "target": "Increase community outreach program participation by 25%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide skill development training to 1000 local youth",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 80% positive feedback from community stakeholders",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Corporate Social Responsibility",
+        "targets": [
+          {
+            "target": "Increase CSR budget allocation by 10%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement 5 new long-term CSR projects",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 50% employee participation in CSR activities",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Child and Forced Labor",
+        "targets": [
+          {
+            "target": "Maintain zero incidents of child or forced labor",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct audits of 100% of high-risk suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide training on child and forced labor prevention to all employees and key suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Human Rights and Ethical Labor Practices",
+        "targets": [
+          {
+            "target": "Conduct human rights impact assessments for 100% of operations",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Resolve 90% of identified human rights issues within agreed timeframes",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% employee completion rate for human rights training",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Professional Development and Career Growth",
+        "targets": [
+          {
+            "target": "Provide an average of 40 hours of training per employee annually",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve an internal promotion rate of 70% for management positions",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement individual development plans for 100% of employees",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Freedom of Association and Collective Bargaining",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with laws regarding freedom of association",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 90% satisfaction rate among union representatives regarding engagement",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Resolve 85% of collective bargaining issues through mutual agreement",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Inclusive Workplace Culture",
+        "targets": [
+          {
+            "target": "Increase representation of women in management positions by 20%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 90% employee satisfaction rate with diversity and inclusion initiatives",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement 3 new programs to support underrepresented groups",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fair Compensation and Benefits",
+        "targets": [
+          {
+            "target": "Ensure all employees are paid at least 10% above the industry average for their role",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% completion of annual pay equity assessments",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement a comprehensive benefits package covering 95% of employees",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment Prevention",
+        "targets": [
+          {
+            "target": "Maintain zero substantiated cases of discrimination and harassment, continuing the record of zero cases reported over the previous several years",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% employee coverage under anti-discrimination and anti-harassment awareness training",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of reported discrimination and harassment complaints are formally reviewed and addressed through the established grievance mechanism",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain zero tolerance with zero substantiated cases remaining unresolved related to discrimination or harassment",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Grievance Mechanisms and Conflict Resolution",
+        "targets": [
+          {
+            "target": "Resolve 90% of reported grievances within 30 days",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve an 85% satisfaction rate with the grievance resolution process",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide conflict resolution training to 100% of managers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supply Chain Social Responsibility",
+        "targets": [
+          {
+            "target": "Assess 100% of key suppliers for social responsibility compliance",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 80% compliance rate among suppliers with our social responsibility standards",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement collaborative improvement projects with 50% of non-compliant suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Rights Compliance Officer",
+        "duty": "Implement and oversee the Human Rights and Workers Welfare Policy."
+      },
+      {
+        "role": "Human Rights Compliance Officer",
+        "duty": "Review the policy and any significant updates or changes."
+      },
+      {
+        "role": "Human Rights Compliance Officer",
+        "duty": "Ensure adequate resources (financial, human, and technical) are allocated to support human rights and workers' welfare initiatives and compliance."
+      },
+      {
+        "role": "Human Rights Compliance Officer",
+        "duty": "Regularly review human rights and workers' welfare performance reports to ensure that objectives and targets are met."
+      },
+      {
+        "role": "Human Rights Management Team",
+        "duty": "Ensure compliance with human rights regulations, standards, and best practices."
+      },
+      {
+        "role": "Human Rights Management Team",
+        "duty": "Conduct regular risk assessments and develop mitigation strategies for human rights and workers' welfare risks."
+      },
+      {
+        "role": "Human Rights Management Team",
+        "duty": "Coordinate and conduct training programs on human rights and workers' welfare for employees and stakeholders."
+      },
+      {
+        "role": "Human Rights Management Team",
+        "duty": "Prepare and submit human rights and workers' welfare performance reports to senior management and relevant stakeholders."
+      },
+      {
+        "role": "Facility Managers",
+        "duty": "Implement and manage human rights and workers' welfare practices and controls specific to their respective facilities."
+      },
+      {
+        "role": "Facility Managers",
+        "duty": "Monitor facility operations for adherence to human rights and workers' welfare policies and procedures."
+      },
+      {
+        "role": "Facility Managers",
+        "duty": "Respond to human rights and workers' welfare incidents and ensure proper documentation and reporting."
+      },
+      {
+        "role": "Facility Managers",
+        "duty": "Promote and enforce human rights and workers' welfare practices among facility staff and encourage participation in training programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow human rights and workers' welfare policies, procedures, and best practices in their daily activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any human rights issues, incidents, or suggestions for improvement to their supervisor or the Human Rights Management Team."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in training programs on human rights and workers' welfare and contribute to achieving related objectives and targets."
+      },
+      {
+        "role": "Contractors and Partners",
+        "duty": "Adhere to the company’s human rights and workers' welfare policies and practices while working on-site."
+      },
+      {
+        "role": "Contractors and Partners",
+        "duty": "Coordinate with facility managers and the Human Rights Management Team to ensure alignment with human rights and workers' welfare requirements."
+      },
+      {
+        "role": "Contractors and Partners",
+        "duty": "Report any human rights concerns or incidents to the company’s designated contact person."
+      },
+      {
+        "role": "Customers",
+        "duty": "Follow guidelines for respectful interaction with workers and uphold human rights."
+      },
+      {
+        "role": "Customers",
+        "duty": "Provide feedback on human rights and workers' welfare aspects of products and services to help the company improve its performance."
+      }
+    ],
+    "monitoring": "We are committed to promoting human rights and workers' welfare through effective reporting practices. Our approach includes the following key components:\n\nUse real-time systems to track key performance indicators related to human rights and workers' welfare.\n\nConduct regular reviews to assess progress and identify areas for improvement.\n\nDefine KPIs to measure aspects such as workers' safety, health, and overall welfare.\n\nRegularly update KPIs to reflect operational changes and welfare priorities.\n\nEstablish a standardized framework for reporting frequency, format, and content.\n\nDocument methodologies, assumptions, and data sources clearly.\n\nStay informed about and comply with relevant human rights and labor regulations.\n\nEngage with regulatory agencies to address compliance issues and advocate for best practices.\n\nFoster a culture of continuous improvement through innovation and feedback.\n\nGather suggestions from employees and stakeholders to enhance performance.\n\nCollaborate with stakeholders to align on human rights and workers' welfare goals and initiatives.\n\nParticipate in industry forums to share knowledge and best practices.\n\nSet clear, achievable human rights and workers' welfare goals and track progress with defined metrics and milestones.\n\nCommunicate performance through annual reports, website updates, and meetings.\n\nProvide channels for feedback and inquiries about social practices.\n\nOffer training on human rights and workers' welfare issues and best practices.\n\nEncourage employee involvement in human rights and workers' welfare initiatives and recognize their contributions.",
+    "reviewMechanism": "The Human Rights Compliance Officer will conduct an annual and Ad hoc review of this policy."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Birla/2. Human Right and Welfare Policy_grw_v1_3012.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Birla/2. Human Right and Welfare Policy_grw_v1_3012.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 28483,
+  "parsedAt": "2026-09-11T07:07:29.965Z"
+}

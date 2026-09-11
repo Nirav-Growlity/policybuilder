@@ -1,0 +1,189 @@
+{
+  "id": "sustainable-procurement-bedmutha",
+  "name": "Bedmutha",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Supply Chain Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Bedmutha Industries Ltd",
+      "industry": "",
+      "site": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra.",
+      "sites": [
+        {
+          "location": "Bedmutha Industries Ltd",
+          "address": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Bedmutha Industries Ltd is committed to embedding sustainability across its supply chain operations, ensuring responsible procurement practices that uphold environmental stewardship, labor rights, and ethical standards. By fostering collaboration with suppliers, stakeholders, and communities, the company aims to drive sustainable development and create long-term value for society and the planet.\n\nAt Bedmutha Industries Ltd, we prioritize sustainability by incorporating environmentally responsible practices, promoting fair labor standards, and ensuring ethical conduct throughout our supply chain. Our approach is guided by collaboration with suppliers, adherence to global standards, and continuous improvement.",
+      "declaration": "",
+      "scope": "This policy applies to all procurement activities, supply chain partners, contractors, and operations associated with Bedmutha Industries Ltd. It is applicable to all regions where the company operates and covers environmental, labor, and ethical dimensions of supply chain management:"
+    },
+    "focusAreas": [
+      "General Targets",
+      "Environmental Issues",
+      "Labor Practices and Human Rights",
+      "Ethical Sourcing and Transparency"
+    ],
+    "qualitative": {
+      "General Targets": [
+        "Conducting regular training sessions for employees, suppliers, and contractors on sustainability practices, labor rights, and ethical sourcing standards.",
+        "Ensuring compliance with global and local regulations concerning environmental conservation, labor laws, and ethical business practices.",
+        "Establishing and maintaining transparent reporting mechanisms for addressing concerns related to supply chain practices, ensuring anonymity and protection for whistleblowers.",
+        "Engaging with suppliers to promote the use of renewable materials, reduce carbon emissions, and improve resource efficiency across the supply chain.",
+        "Monitoring compliance with this policy through periodic audits and assessments, implementing corrective measures for non-compliance.",
+        "Reviewing supplier operations to prevent violations of labor rights, such as child labor, forced labor, or unsafe working conditions, while promoting fair wages and diversity.",
+        "Maintaining partnerships with suppliers that align with Bedmutha’s environmental, social, and ethical standards, and disengaging with those who fail to meet these benchmarks.",
+        "Encouraging suppliers to adopt advanced technologies for sustainable production and logistics, including renewable energy solutions and digital monitoring systems."
+      ],
+      "Environmental Issues": [],
+      "Labor Practices and Human Rights": [],
+      "Ethical Sourcing and Transparency": []
+    },
+    "quantitative": [
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "We strive to achieve 100% coverage of our suppliers in ESG self-assessments and on-site audits before by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to ensuring that 100% of our suppliers sign the \"Supplier Code of Conduct\" before by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We will implement corrective action plans for all non-compliant suppliers, achieving a 90% resolution rate within 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Issues",
+        "targets": [
+          {
+            "target": "Bedmutha aims to ensure that 90% of key suppliers adopt environmentally sustainable practices, such as the use of renewable materials and waste reduction, by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company plans to implement a carbon footprint tracking system across its supply chain, targeting a 25% reduction in Scope 3 emissions by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, Bedmutha focuses on transitioning 70% of its suppliers to sustainable packaging solutions.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Labor Practices and Human Rights",
+        "targets": [
+          {
+            "target": "Bedmutha aims to conduct labor compliance audits for 100% of high-risk suppliers annually, beginning in 2022.",
+            "baseline": "2022",
+            "deadline": "annually, beginning in 2022"
+          },
+          {
+            "target": "The company plans to provide training on labor rights and human rights to 100% of its direct suppliers by 2026, fostering awareness and accountability.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, Bedmutha seeks to establish grievance mechanisms accessible to 95% of workers across its supply chain to address human rights concerns.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Sourcing and Transparency",
+        "targets": [
+          {
+            "target": "Bedmutha aims to onboard 80% of its suppliers onto a digital platform for supply chain transparency by 2026, enhancing traceability of raw materials and compliance.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company plans to integrate ethical sourcing standards into 100% of supplier contracts by 2026, ensuring alignment with its sustainability goals.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, Bedmutha focuses on achieving 95% supplier compliance with its ethical sourcing guidelines through routine assessments and feedback mechanisms.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "The Board of Directors",
+        "duty": "Ensures the overall implementation and monitoring of the Sustainable Supply Chain Policy, holding senior management accountable for sustainable procurement and supply chain practices. They review and approve updates to the policy and address significant compliance concerns."
+      },
+      {
+        "role": "The Sustainability Manager",
+        "duty": "Oversees the implementation of the policy, ensuring alignment with environmental, labor, and ethical standards. They collaborate with suppliers and internal teams to achieve sustainability targets."
+      },
+      {
+        "role": "Procurement Managers",
+        "duty": "Are responsible for engaging with suppliers to ensure compliance with sustainable practices and integrating sustainability criteria into procurement processes."
+      },
+      {
+        "role": "Supply Chain Partners",
+        "duty": "Are expected to adhere to Bedmutha’s sustainability guidelines, comply with audits, and proactively address any non-compliance issues."
+      },
+      {
+        "role": "Employees",
+        "duty": "Are required to familiarize themselves with the policy, participate in relevant training, and report any observed breaches in the supply chain processes."
+      },
+      {
+        "role": "The Compliance and Audit Team",
+        "duty": "Monitors adherence to the policy, conducts supplier audits, and reports findings to senior management."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Are responsible for aligning their practices with Bedmutha’s sustainability requirements, including environmental stewardship, ethical labor practices, and transparency in operations."
+      }
+    ],
+    "monitoring": "Internal Reporting mechanisms include a dedicated communication portal where employees and suppliers can report non-compliance or concerns related to the policy. Confidentiality is maintained for whistleblowers, and reported issues are escalated to the Sustainability Manager for review and action.\n\nExternal Reporting ensures transparency by publishing an annual sustainability report outlining progress toward supply chain goals, audit findings, and key metrics. Bedmutha also participates in third-party sustainability assessments to validate its commitment to ethical and sustainable supply chain practices.",
+    "reviewMechanism": "Bedmutha conducts an annual review of the Sustainable Supply Chain Policy to evaluate its effectiveness and address emerging challenges in sustainable procurement and supply chain management. The review incorporates feedback from internal stakeholders, suppliers, and independent audits.\n\nThe Sustainability Manager annually review the policy, ensuring updates reflect changes in environmental standards, labor laws, and market conditions. Revisions are approved by the Board of Directors before implementation."
+  },
+  "sourcePath": "Policies - Kenal/Bedmutha/Sustainable Supply Chain Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Bedmutha/Sustainable Supply Chain Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 9572,
+  "parsedAt": "2026-09-11T07:21:31.108Z"
+}

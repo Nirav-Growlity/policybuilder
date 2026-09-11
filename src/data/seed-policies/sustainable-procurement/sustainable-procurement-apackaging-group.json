@@ -1,0 +1,166 @@
+{
+  "id": "sustainable-procurement-apackaging-group",
+  "name": "APackaging Group",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 2. Sustainable Procurement policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Apackaging Group LLC",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "California, USA",
+          "address": "1350 Mountain View Circle 91702 Azusa, CA United States of America",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Defiance,Ohio",
+          "address": "25925 Commerce Drive, Defiance, OH 43512",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "As a global leader in the cosmetic and beauty packaging industry, A Packaging Group recognizes the critical role it plays in driving sustainable practices throughout its operations. Our commitment to sustainability extends beyond mere compliance; it reflects our deep-seated belief in environmental stewardship, social responsibility, and economic viability.\n\nThrough this Sustainable Procurement Policy, we aim to embed sustainability principles into every facet of our procurement processes, from sourcing raw materials to selecting suppliers and managing our supply chain. By prioritizing environmentally friendly materials, ethical sourcing practices, and fostering partnerships with like-minded suppliers, we strive to minimize our ecological footprint while maximizing positive social impacts. This policy underscores our dedication to fostering a more sustainable future for generations to come.",
+      "declaration": "At A Packaging Group, we are committed to sustainable procurement practices in the cosmetic and beauty packaging industry. Our policy ensures that we prioritize suppliers who uphold environmental, social, and ethical standards, fostering a greener future for generations to come.",
+      "scope": "This comprehensive policy applies to all Packaging Group sites globally, encompassing all employees, contractors, subcontractors, and all stakeholders aligned with us."
+    },
+    "focusAreas": [
+      "Environmental Issues",
+      "Labor practices and Human Rights"
+    ],
+    "qualitative": {
+      "Environmental Issues": [
+        "Material Sourcing: Prioritize eco-friendly materials for packaging, reducing reliance on non-recyclable plastics and harmful substances.",
+        "Carbon Footprint Reduction: Seek suppliers with low-carbon production processes, minimizing emissions throughout the packaging lifecycle.",
+        "Renewable Energy Usage: Emphasize suppliers utilizing renewable energy sources to power manufacturing operations, promoting sustainability.",
+        "Eco-Friendly Packaging Integration: Implement sourcing practices favouring biodegradable materials like plant-based plastics for product packaging in cosmetics manufacturing.",
+        "Reduced Carbon Footprint: Strive to minimize emissions by selecting suppliers with sustainable transportation methods for raw materials used in packaging.",
+        "Avoidance of Single-Use Plastics: Commit to eliminating single-use plastic components from packaging designs, opting for reusable or recyclable alternatives.",
+        "Supplier Sustainability Audits: We conduct regular audits of our suppliers to ensure adherence to environmental, social, and ethical standards, identifying gaps and implementing corrective action plans where necessary.",
+        "Supplier Training & Engagement: We provide training programs and workshops for suppliers to enhance their understanding of sustainable practices, encouraging innovation and collaboration in creating eco-friendly packaging solutions.",
+        "Responsible Supplier Selection: We evaluate suppliers based on sustainability criteria, including carbon footprint, energy use, water management, and compliance with ESG regulations, before onboarding them."
+      ],
+      "Labor practices and Human Rights": [
+        "Comprehensive Labor Practices: Ensure supplier compliance with living wages, regulate overtime, implement equal pay policies, and advocate wage transparency for fair compensation.",
+        "Fair Working Hours: Ensure suppliers adhere to reasonable working hours, preventing exploitation and promoting work-life balance in production.",
+        "Supplier Accountability: Mandate all suppliers uphold human rights standards.",
+        "Ensure Ethical Labor Practices: Collaborate with suppliers to enforce fair wages and safe working conditions, prioritizing transparency in the sourcing of materials like biodegradable packaging.",
+        "Promote Diversity and Inclusion: Encourage suppliers to embrace diversity in their workforce, supporting initiatives that empower marginalized communities in the production of sustainable packaging materials.",
+        "Protect Worker Rights: Advocate for the protection of workers' rights, fostering partnerships with suppliers committed to upholding human rights principles in the manufacturing of cosmetic packaging."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General sustainable procurement",
+        "targets": [
+          {
+            "target": "100% of APG’s suppliers will undergo annual sustainability assessments and audits to verify compliance with environmental, social, and governance (ESG) performance standards.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of all purchased goods and services will be sourced exclusively from suppliers holding recognized sustainability certifications (e.g., ISO 14001, Fair Trade, FSC, or equivalent).",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of APG’s suppliers will participate in annual sustainability training programs and receive resources to help them meet APG’s environmental and social standards.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Issues",
+        "targets": [
+          {
+            "target": "Increase the procurement of recyclable packaging materials by 20%",
+            "baseline": "Levels recorded in 2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce packaging waste in our supply chain by 15%, integrating eco-friendly materials where feasible.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 90% of packaging materials are sourced from certified sustainable suppliers.",
+            "baseline": "2023's base",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Labor practice and Human Rights",
+        "targets": [
+          {
+            "target": "Ensure a 20% reduction in labor rights violations across our packaging supply chain.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 15% increase in supplier compliance with fair wage standards.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Decrease instances of child labor by 25% within our packaging supply chain.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Enhance working conditions, aiming for a 30% improvement.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Compliance Office",
+        "duty": "Oversees the implementation of the sustainable procurement policy, ensures all sourcing activities comply with environmental, social, and ethical standards, and reports progress to senior management."
+      },
+      {
+        "role": "Sustainable Procurement Task Force",
+        "duty": "A cross-functional team comprising procurement, ESG, and quality control experts monitors daily purchasing activities to ensure suppliers align with sustainability requirements."
+      },
+      {
+        "role": "Employees & Procurement Teams",
+        "duty": "All employees involved in purchasing decisions receive annual training on sustainable sourcing practices and are encouraged to propose innovative ideas for improving supplier sustainability performance."
+      }
+    ],
+    "monitoring": "As part of our commitment to sustainability and responsible business practices, \"A Packaging Group\" maintains a robust reporting system to monitor and evaluate our sustainable procurement efforts. Our reporting framework encompasses various metrics and indicators to assess the effectiveness of our sustainable procurement policy and identify areas for improvement. Below is an overview of the key components of our reporting structure.\n\nWe conduct regular assessments to quantify the environmental impact of our procurement activities.\n\nMetrics include carbon footprint, water usage, energy consumption, and waste generation associated with our procurement processes.\n\nData is collected from suppliers and internal operations to provide a comprehensive understanding of our environmental footprint.\n\nWe evaluate the sustainability performance of our suppliers using predefined criteria aligned with our sustainable procurement objectives.\n\nKey performance indicators (KPIs) include adherence to environmental standards, social responsibility practices, and compliance with relevant regulations.\n\nSupplier assessments are conducted periodically to track progress and encourage continuous improvement.\n\nWe monitor compliance with ethical sourcing guidelines to ensure that our procurement practices uphold labor rights, human rights, and fair labor practices.\n\nRegular audits and assessments are conducted to verify compliance with international standards and industry best practices.\n\nNon-compliance issues are addressed promptly through corrective actions and supplier engagement initiatives.\n\nWe track resource efficiency metrics to optimize resource utilization throughout the procurement process.\n\nMetrics include material efficiency, water and energy efficiency, and reduction of packaging waste.\n\nContinuous monitoring helps identify opportunities for resource conservation and waste reduction initiatives.\n\nWe engage with stakeholders, including customers, employees, suppliers, and communities, to foster transparency and accountability in our procurement practices.\n\nRegular communication channels, such as sustainability reports, stakeholder meetings, and feedback mechanisms, facilitate dialogue and collaboration.\n\nTransparent reporting ensures that stakeholders are informed about our sustainable procurement efforts and their impact on society and the environment.\n\nWe set performance targets and goals to drive continuous improvement in sustainable procurement practices.\n\nTargets are aligned with industry benchmarks, regulatory requirements, and stakeholder expectations.\n\nProgress towards achieving targets is monitored regularly, and actions are taken to address any deviations or challenges.\n\nWe communicate our sustainable procurement performance through comprehensive reports that adhere to internationally recognized reporting frameworks, such as the Global Reporting Initiative (GRI) and the Sustainable Development Goals (SDGs).\n\nReports are published annually and made available to stakeholders through our website, corporate communications, and relevant platforms.\n\nTransparent reporting demonstrates our commitment to accountability and facilitates informed decision-making by stakeholders.",
+    "reviewMechanism": "The Procurement Compliance Office is responsible for overseeing the implementation and periodic review of this Sustainable Procurement Policy. The policy will be reviewed annually to ensure its effectiveness, relevance, and alignment with current sustainability standards and regulatory requirements. Any updates or modifications will be communicated to all stakeholders, including suppliers and procurement teams, to reflect operational improvements, market trends, or evolving sustainability challenges."
+  },
+  "sourcePath": "Policies - Kenal/APackaging Group/2. Sustainable Procurement policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/APackaging Group/2. Sustainable Procurement policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 14809,
+  "parsedAt": "2026-09-11T07:20:13.660Z"
+}

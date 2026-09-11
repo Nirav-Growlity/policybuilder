@@ -1,0 +1,372 @@
+{
+  "id": "speedrack",
+  "name": "Speedrack",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Holistic Environmetnal Policy_grw_v1.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Speedrack Products Group, Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Manufacturing Site",
+          "address": "42 Cole St, Quincy, MI 49082",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "",
+          "address": "3060 S Industrial Dr NW Walker, MI 49544",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Corporate Office",
+          "address": "",
+          "primaryFunction": "Corporate office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Speedrack Products Group, Ltd. is committed to conducting all its operations with the highest regard for environmental responsibility and sustainability. As a leading U.S. manufacturer of advanced storage and racking systems, we recognize that our activities—from steel sourcing and fabrication to finishing and distribution—have an impact on the environment. Through this policy, we aim to integrate environmental considerations into every stage of our business decisions. Our goal is to minimize waste, conserve resources, reduce emissions, and continually improve our environmental performance. By promoting responsible manufacturing practices and fostering a culture of sustainability, Speedrack seeks to protect natural ecosystems while supporting long-term value creation for our employees, customers, and communities.",
+      "declaration": "To define Speedrack’s overarching commitment to environmental protection and sustainable manufacturing.\n\nTo ensure that all operations, products, and services are conducted in compliance with applicable environmental laws and regulations.\n\nTo promote responsible use of natural resources, including energy, water, and raw materials.\n\nTo prevent pollution and minimize waste generation through efficient production and recycling practices.\n\nTo reduce greenhouse gas emissions and support the transition to low-carbon manufacturing processes.\n\nTo integrate environmental considerations into product design, procurement, and life-cycle management.\n\nTo engage employees, suppliers, and customers in achieving shared sustainability goals.\n\nTo establish a framework for setting, reviewing, and continually improving environmental objectives and performance.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contract workers, and individuals representing the company at the following sites. It is also applicable to all operational facilities, corporate offices, and any other premises under the company's management."
+    },
+    "focusAreas": [
+      "Energy Efficiency",
+      "Resource Conservation",
+      "Waste Management",
+      "Emissions Control",
+      "Sustainable Sourcing",
+      "Product Lifecycle Stewardship",
+      "Pollution Prevention",
+      "Awareness & Training"
+    ],
+    "qualitative": {
+      "Energy Efficiency": [
+        "Sustain and expand the use of airflow equipment around heat-generating areas to manage ambient temperatures effectively — dispersing heat in summer and recapturing it in winter to lower overall energy demand.",
+        "Continue operating powder-coat ovens at reduced temperatures to minimize energy consumption while maintaining superior coating quality and production efficiency."
+      ],
+      "Resource Conservation": [],
+      "Waste Management": [
+        "Company-wide recycling initiatives have already reduced landfill waste by over 75%, with a goal to achieve zero waste-to-landfill certification by 2030 through enhanced segregation, reuse, and recovery systems.",
+        "All non-recyclable and hazardous waste will be sent to certified disposal vendors, aiming for 100% compliance by 2030 through regular vendor audits."
+      ],
+      "Emissions Control": [
+        "It endeavors to maintain all stack and process emissions within permissible regulatory limits, supported by continuous monitoring, preventive maintenance, and periodic third-party testing.",
+        "The organization endeavors to improve indoor air quality standards through upgraded ventilation systems and the regular monitoring of workplace air parameters, ensuring compliance with OSHA and EPA standards."
+      ],
+      "Sustainable Sourcing": [
+        "All products are proudly 100% American-made, using high-quality steel sourced from domestic suppliers, supporting local industry and reducing transportation-related environmental impacts."
+      ],
+      "Product Lifecycle Stewardship": [
+        "Aim to conduct Product Life-Cycle Assessments (PLCA) for at least four major product lines by 2030 to evaluate and reduce environmental impacts throughout manufacturing, use, and end-of-life stages.",
+        "Commit to design all new racking systems for 30% recyclability by 2030, emphasizing modular structures, ease of disassembly, and the use of recyclable steel and coatings.",
+        "Plan to refurbish or reuse at least 5% of returned or decommissioned racks and components by 2030, extending product lifespan and reducing raw material demand.",
+        "Aim to eliminate hazardous coatings and materials that contribute to microplastic or toxic waste generation by 2030, ensuring all products remain safe for recycling and disposal.",
+        "Endeavor to publish recyclability and safe disposal guidelines on all of our finished products by 2030 and provide these resources to customers during installation, promoting responsible handling at the end-of-life stage.",
+        "Aim to educate customer representatives at the time of installation on product safety, handling, and disposal practices to ensure proper lifecycle management and workplace safety.",
+        "Commit to achieving at least 85% recycled material content in new racks by 2030 and to conducting regular safety inspections, re-labelling, and replacement of damaged components in line with RMI and rack safety organization guidelines."
+      ],
+      "Pollution Prevention": [
+        "All coating and cleaning materials are being transitioned to non-toxic and environmentally safe alternatives, targeting the complete elimination of phosphate-based and hazardous chemicals by 2030 to ensure safer operations and minimal environmental risk."
+      ],
+      "Awareness & Training": [
+        "Annual employee training on waste handling and chemical safety will cover all staff by 2030, aim to cover 100% of employees in it.",
+        "The organization endeavors to enhance employee engagement through annual water conservation training, targeting 100% staff participation by 2030."
+      ],
+      "Logistics": [
+        "Aim to optimize transport routes and delivery schedules to reduce fuel consumption and associated greenhouse gas emissions across inbound and outbound logistics."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy and GHG emission",
+        "targets": [
+          {
+            "target": "achieve a 15% reduction in total energy consumption by 2030",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "lower overall electricity intensity by 20%",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "sourcing at least 20% of total electricity from renewable sources",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "cutting Scope 2 emissions by 10%",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "convert 20% of its internal logistics and forklift fleet to electric models",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "resulting in a 6% reduction in Scope 1 emissions",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2030"
+          },
+          {
+            "target": "reduce Scope 3 emissions by 10%",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2035"
+          },
+          {
+            "target": "achieve carbon neutrality across all operations (Scopes 1, 2, and 3)",
+            "baseline": "Speedrack’s 2022 baseline performance data",
+            "deadline": "2050"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "reduced landfill waste by over 75%",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "achieve zero waste-to-landfill certification",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "increase finished product content from recycled materials from over 70% to 85%",
+            "baseline": "over 70% of finished product content comes from recycled materials",
+            "deadline": "2030"
+          },
+          {
+            "target": "complete elimination of phosphate-based and hazardous chemicals",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "15% reduction in total material wastage",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "reduce use of single-use plastic packaging by 20%",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% compliance",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "cover 100% of employees in annual training on waste handling and chemical safety",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "reduce overall water consumption intensity by 20%",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "reuse at least 15% of total process water for non-potable applications",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "All wastewater generated from production and sanitation processes will be fully treated and reused or safely discharged",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% staff participation in annual water conservation training",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution Management",
+        "targets": [
+          {
+            "target": "reduce overall air emissions intensity by 25%",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "ensuring a 40% reduction in particulate emissions from production areas",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "complete phase-out of high-VOC materials",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "achieving a 10% reduction in transport-related emissions from internal and supplier fleet operations",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life & Circularity",
+        "targets": [
+          {
+            "target": "conduct Product Life-Cycle Assessments (PLCA) for at least four major product lines",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "design all new racking systems for 30% recyclability",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "refurbish or reuse at least 5% of returned or decommissioned racks and components",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "eliminate hazardous coatings and materials that contribute to microplastic or toxic waste generation",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "publish recyclability and safe disposal guidelines on all of our finished products",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "achieving at least 85% recycled material content in new racks",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Logistics",
+        "targets": [
+          {
+            "target": "transition at least 20% of the internal and supplier fleet to electric or hybrid vehicles",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "digitize 20% of logistics and warehouse operations",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "President",
+        "duty": "Provide overall leadership and commitment to the Holistic Environmental Policy."
+      },
+      {
+        "role": "President",
+        "duty": "Approve policy updates, sustainability targets, and resource allocation."
+      },
+      {
+        "role": "Vice President – Operations / Manufacturing",
+        "duty": "Implement energy, water, and waste reduction initiatives across all plants."
+      },
+      {
+        "role": "Vice President – Operations / Manufacturing",
+        "duty": "Monitor performance metrics and report progress to senior management."
+      },
+      {
+        "role": "Vice President – Operations / Manufacturing",
+        "duty": "Oversee compliance with environmental regulations and operational standards."
+      },
+      {
+        "role": "Chief Environmental Officer",
+        "duty": "Review the policy annually."
+      },
+      {
+        "role": "Chief Environmental Officer",
+        "duty": "Lead the development and continuous improvement of environmental programs."
+      },
+      {
+        "role": "Chief Environmental Officer",
+        "duty": "Conduct audits, assessments, and reporting in line with regulatory requirements."
+      },
+      {
+        "role": "Chief Environmental Officer",
+        "duty": "Track progress toward targets and recommend corrective actions."
+      },
+      {
+        "role": "Chief Environmental Officer",
+        "duty": "Provide guidance and support to all departments on environmental best practices."
+      },
+      {
+        "role": "Director of Supply Chain & Logistics",
+        "duty": "Implement sustainable logistics practices, including route optimization, fleet electrification, and packaging reduction."
+      },
+      {
+        "role": "Director of Supply Chain & Logistics",
+        "duty": "Track and report logistics-related emissions and improvements."
+      },
+      {
+        "role": "Plant Managers",
+        "duty": "Execute environmental programs at the facility level."
+      },
+      {
+        "role": "Plant Managers",
+        "duty": "Ensure compliance with operational procedures, emissions standards, and waste management practices."
+      },
+      {
+        "role": "Plant Managers",
+        "duty": "Report environmental performance, incidents, and improvement opportunities to corporate management."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental procedures and policies in daily operations."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in training programs and contribute ideas for sustainability improvements."
+      }
+    ],
+    "monitoring": "Environmental performance will be tracked and reviewed annually through internal sustainability scorecards and site-level performance reports.\n\nThe EHS Department will compile an annual summary of key indicators such as energy use, emissions, waste, and water performance for management review.\n\nFindings, progress, and improvement actions will be reported to senior leadership during management review meetings and included in the company’s sustainability disclosures.\n\nSignificant updates, achievements, and targets will be communicated to employees, customers, and stakeholders through internal newsletters and the annual sustainability report.",
+    "reviewMechanism": "The organization is committed to continuous improvement in its environmental performance by integrating sustainability principles into all operations. Regular reviews, employee engagement, and adoption of cleaner technologies will drive efficiency, reduce emissions, and minimize waste. Feedback from audits and performance assessments will guide ongoing enhancements to environmental initiatives.\n\nThe Chief Environmental Officer (CEO) will conduct an annual review or as needed of this policy to evaluate progress toward environmental objectives, ensure regulatory compliance, and assess emerging sustainability risks. Based on performance results, the policy may be updated to reflect new goals, technologies, or best practices, ensuring its continued relevance and effectiveness."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Speedrack/1. Holistic Environmetnal Policy_grw_v1.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Speedrack/1. Holistic Environmetnal Policy_grw_v1.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 15291,
+  "parsedAt": "2026-09-11T07:16:28.945Z"
+}

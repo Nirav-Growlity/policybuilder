@@ -1,0 +1,287 @@
+{
+  "id": "ballyfabs",
+  "name": "Ballyfabs",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Management Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Ballyfabs International Ltd.",
+      "industry": "",
+      "site": "3, Haren Mukherjee Road, Belur, Howrah-711202, West Bengal, India.",
+      "sites": [
+        {
+          "location": "Bally Fabs International Limited",
+          "address": "3, Haren Mukherjee Road, Belur, Howrah-711202, West Bengal, India.",
+          "primaryFunction": "Manufacturing and wholesaling of Canvas Cotton Bags, Jute Bags, and related products."
+        },
+        {
+          "location": "Vill-gangarampur",
+          "address": "PO-Dakshin Alipore, ps-Bishnupur, Dist-South 24 Parganas, Pin-743503, West Bengal, India",
+          "primaryFunction": "Manufacturing site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "3, Haren Mukherjee Road, Belur, Howrah-711202, West Bengal, India."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Ballyfabs International Ltd. is the leading manufacturer and wholesaler of Canvas Cotton Bags, Jute Bags, and related products. We are committed to sustainable practices that minimize our environmental impact and promote the well-being of our customers and the community. This policy outlines our approach to environmental management of operations and products, focusing on key sustainability issues such as energy consumption, greenhouse gas emissions, water usage, air pollution, materials, chemicals, waste, product end-of-life, and customer health and safety.",
+      "declaration": "Ballyfabs International Ltd. is dedicated to conducting business in an environmentally responsible manner. We strive to minimize our environmental footprint and promote sustainable practices throughout our operations and product offerings.",
+      "scope": "This policy applies to all workers, employees, directors, officers, agents, contractors, and any third parties acting on behalf of Ballyfabs Int. Ltd. (BFIL). It covers all business activities, including procurement, sales, marketing, and any interactions with government officials, customers, suppliers, and other stakeholders. The policy is applicable globally, regardless of local business practices or cultural norms. This policy applies to the below-mentioned locations.:"
+    },
+    "focusAreas": [
+      "Energy consumption and GHGs – Improve energy efficiency and lower greenhouse gas emissions through energy-efficient equipment, process.",
+      "Water Conservation– Conserve water resources across operations and product life cycle while ensuring safe water, sanitation, and hygiene (WASH) for employees.",
+      "Air Quality Management – Monitor and reduce emissions of particulates, VOCs, and other air pollutants from operations.",
+      "Sustainable Materials Usage – Promote sustainable sourcing and use of materials throughout the supply chain.",
+      "Waste Reduction & Management - Minimize waste generation and promote recycling and reuse of materials",
+      "Product end-of-life – Encourage recycling, recovery, and safe disposal of packaging and finished products.",
+      "Customer health and safety – Safeguard customer health and safety through transparent communication, training, and compliance with regulations.",
+      "Biodiversity Conservation– Promote tree plantation, green surroundings, and biodiversity protection at manufacturing sites in harmony with nature.",
+      "Environmental services and advocacy – Partner with stakeholders to promote responsible sourcing, environmental awareness, and continuous improvement across the value chain.",
+      "Product use – Design and deliver products with life cycle thinking to minimize resource use, carbon emissions, and waste during application."
+    ],
+    "qualitative": {
+      "Energy consumption and GHGs": [
+        "Conduct annual internal energy audits to systematically assess energy consumption across operations, identify inefficiencies in equipment and processes, and develop action plans for improvement.",
+        "Transition to renewable energy sources, including rooftop solar power systems and lower greenhouse gas emissions.",
+        "Engage accredited third-party auditors annually to perform independent energy audits, verify energy performance, and provide recommendations. Identified inefficiencies shall be addressed through corrective actions within six months to ensure continuous improvement in energy efficiency."
+      ],
+      "Water Conservation": [
+        "Implement rainwater harvesting structures at all major sites to recharge groundwater and support non-potable use.",
+        "Engage employees in water stewardship programs to promote awareness, conservation practices, and community engagement in local water sustainability initiatives."
+      ],
+      "Air Quality Management": [
+        "To conduct regular maintenance and periodic performance assessments of air pollution control equipment and identify areas for improvement and optimization.",
+        "Quarterly monitor ambient air quality around facilities and publish results."
+      ],
+      "Sustainable Materials Usage": [
+        "Reduce hazardous chemical usage by replacing them with safer alternatives in line with REACH/OSHA standards.",
+        "Adopt circular economy practices through segregation and recycling."
+      ],
+      "Waste Reduction & Management": [
+        "Ensure safe handling and disposal of hazardous waste in full compliance with environmental regulations and best practices."
+      ],
+      "Product End-of-life": [
+        "Develop a take-back program in partnership with recyclers to ensure safe product disposal.",
+        "Launch customer awareness campaigns on responsible disposal practices and recycling options."
+      ],
+      "Customer Health and Safety": [
+        "Ensure all products consistently comply with applicable regulatory safety standards through ongoing monitoring, testing, and verification.",
+        "Provide clear, accurate, and transparent labeling with hazard communication to promote safe handling, storage, and customer use of products.",
+        "Continuously review and update safety protocols in alignment with evolving laws, standards, and industry best practices."
+      ],
+      "Biodiversity Conservation": [
+        "Develop green belts around manufacturing sites with native tree plantations.",
+        "Partner with NGOs for conservation of local ecosystems."
+      ],
+      "Environmental Services & Advocacy": [
+        "Participate in industry associations to promote sustainable practices.",
+        "Support local environmental initiatives and awareness programs to promote sustainability."
+      ],
+      "Product Use": [
+        "Design products with improved energy efficiency and eco-friendly performance features.",
+        "Emphasize only on sustainable product usage in the product guidelines provided to the users."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy consumption and GHGs",
+        "targets": [
+          {
+            "target": "Reduce total energy consumption per unit of production by 25% by year 2030 through use of energy-efficient boilers, variable frequency drives (VFDs), and LED lighting.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 15% reduction in overall greenhouse gas emissions through renewable energy integration and energy-efficient operations by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation",
+        "targets": [
+          {
+            "target": "Reduce water consumption intensity by 25% per unit of production by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct quarterly water audits to monitor usage patterns and prevent leakages, targeting a 80% reduction in water wastage by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality Management",
+        "targets": [
+          {
+            "target": "Lower SOx, NOx, VOCs, and PM emissions by 90% and eliminate routine air quality exceedances by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Install advanced air pollution control devices (bag filters, scrubbers, electrostatic precipitators) across 100% emission sources by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials Usage",
+        "targets": [
+          {
+            "target": "Ensure 70% of all raw materials are sustainably certified by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce hazardous chemical usage by 50% by year 2030 by substituting with safer alternatives.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste Reduction & Management",
+        "targets": [
+          {
+            "target": "Attain a 50% recycling and reuse rate and move towards zero waste-to-landfill by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-life",
+        "targets": [
+          {
+            "target": "Conduct 2 customer awareness campaigns annually on responsible product disposal and recycling practices, reaching a minimum of 70% of our customer base by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Conduct annual customer safety audits and maintain zero product safety incidents till year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero product recalls due to safety concerns annually.",
+            "baseline": "2023",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Conservation",
+        "targets": [
+          {
+            "target": "Enhance biodiversity index scores by 20% compared to 2023 levels by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Plant and maintain 200 native trees by year 2030 near operational areas.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Allocate 5% of facility’s total land area to biodiversity zones and green cover by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Conduct 5 community awareness programs till year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Allocate 2% of annual profits towards community-based environmental projects such as afforestation, clean water access, or renewable energy adoption by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Ensure 80% of new products launched by year 2030 have at least one eco-design feature such as reduced energy demand.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 20% reduction in lifecycle environmental footprint of products by year 2030 through design optimization.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Drive strategic initiatives and allocate resources."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Ensure regulatory adherence and track performance."
+      },
+      {
+        "role": "Operations & Manufacturing",
+        "duty": "Implement energy-efficient and pollution control measures."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Promote responsible sourcing and supplier collaboration."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow sustainability practices and participate in training."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Support sustainability through partnerships and compliance."
+      }
+    ],
+    "monitoring": "Bally fabs is committed to regularly monitoring its environmental performance across key focus areas such as energy consumption, greenhouse gas emissions, water management, waste reduction, and product safety. Key Performance Indicators (KPIs) are established for each area and tracked through internal monitoring systems to evaluate progress against defined sustainability targets. These KPIs are reviewed on a quarterly basis, and findings are consolidated into performance reports for senior management to guide strategic decision-making. Annual assessments capture achievements, identify gaps, and recommend corrective measures, while relevant outcomes are shared with stakeholders to promote transparency and accountability. All monitoring and reporting practices adhere to applicable regulatory requirements and industry best practices, ensuring reliability, accuracy, and credibility in disclosures.",
+    "reviewMechanism": "This policy will be reviewed annually by the Environmental Manager to assess its effectiveness and alignment with evolving sustainability goals, regulatory requirements, and industry best practices. Feedback from audits, employee suggestions, and stakeholder engagements will be incorporated into policy updates. Necessary revisions will be made to strengthen environmental commitments and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Ballyfabs/1. Environmental Management Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Ballyfabs/1. Environmental Management Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12660,
+  "parsedAt": "2026-09-11T07:33:33.469Z"
+}

@@ -1,0 +1,332 @@
+{
+  "id": "transpek",
+  "name": "Transpek",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from ENVIRONMENT POLICY (1).docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Transpek Industry Limited",
+      "industry": "",
+      "site": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+      "sites": [
+        {
+          "location": "Vadodara, Gujarat, India",
+          "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+          "primaryFunction": "Not specified in source"
+        },
+        {
+          "location": "Ekalbara, Taluka: Padra, Dist.: Vadodara, Gujarat, India",
+          "address": "At & Post: Ekalbara, Taluka: Padra, Dist.: Vadodara, 391440 Gujarat India",
+          "primaryFunction": "Not specified in source"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Transpek Industry Limited, a key player in the chemical manufacturing industry, acknowledges its environmental responsibility. We are committed to implementing sustainable practices, ensuring compliance with environmental regulations, and reducing our ecological footprint. Our customer base span across various sectors such as pharmaceuticals, agrochemicals, and polymers, strive to integrate sustainability in every aspect, from production to distribution.",
+      "declaration": "Transpek Industry Limited is dedicated to prioritizing environmental protection through pollution prevention, energy efficiency, and sustainable chemical manufacturing practices. Our commitment focuses on minimizing environmental impact and contributing positively to global ecological health.",
+      "scope": "This Environmental Policy applies to all Transpek sites, including all employees, contractors, and other stakeholders involved in the company's operations."
+    },
+    "focusAreas": [
+      "Energy Consumption & Greenhouse Gases",
+      "Water Conservation & Pollution Prevention",
+      "Air Pollution & Emissions Control",
+      "Materials & Waste Management",
+      "Biodiversity & Ecosystem Protection",
+      "Customer Health & Safety",
+      "Sustainable Consumption & Resource Optimization",
+      "Environmental Impacts from Use of Products",
+      "Environmental Impacts from Products End-of-Life",
+      "Environmental Services and Advocacy"
+    ],
+    "qualitative": {
+      "Energy Consumption & Greenhouse Gases": [
+        "Energy Efficiency: Implement energy-efficient systems to reduce consumption across production facilities, aiming to decrease greenhouse gas (GHG) emissions.",
+        "Renewable Energy: Invest in renewable energy sources, such as solar installations, to replace fossil-fuel dependency and lower carbon emissions.",
+        "Greenhouse Gas Emissions: Establish tracking, reduction, and reporting mechanisms for Scope 1, 2, and 3 emissions to minimize total GHG footprint across all operations.",
+        "Energy Reduction: Transpek is committed to reducing energy consumption across its facilities by implementing high-efficiency lighting systems, such as LED lighting, and investing in renewable technologies, including solar panels. These efforts support a transition to a low-carbon energy footprint, aligning our operations with sustainable practices.",
+        "Greenhouse Gas Emissions: Track and reduce Scope 1 (direct), Scope 2 (indirect), and Scope 3 (value chain) emissions to reduce Transpek overall carbon footprint."
+      ],
+      "Water Conservation & Pollution Prevention": [
+        "Water Conservation: We implement water-saving techniques to reduce consumption throughout our chemical production and distribution processes. The thrust is on waste water recycling.",
+        "Pollution Control: Rigorous pollution prevention measures ensure that chemical spills and leakages are minimized, protecting surrounding water bodies and ecosystems.",
+        "Water Conservation: We aim to reduce overall water consumption from ground water resource by using sewage water of surrounding village after treatment though biofilter & ultra filtration in cooling towers.",
+        "Effluent Treatment: Our wastewater treatment protocols include implementation of Biofilter technology, which is patented and indigenously developed to ensure the highest standards of water quality.",
+        "Greywater Recycling: Implement greywater recycling systems to reuse water from non-potable sources through our wastewater treatment protocols include implementation of Biofilter technology, which is patented and indigenously developed to ensure the highest standards of water quality."
+      ],
+      "Air Pollution & Emissions Control": [
+        "Emission Reduction: Our aim is to minimize air pollutants through optimized routes, transportation methods, and energy-efficient processes that lower SOx and NOx emissions.",
+        "Pollution Control Technology: We invest in air pollution control technologies to mitigate hazardous air emissions from our manufacturing processes.",
+        "Emissions Reduction: We already have electrostatic precipitators (ESPs) in Boilers & have closed loop chemistry to reduce air pollutants.",
+        "Odor and Noise Control: We have measures in place such as activated carbon filters for Odor control and acoustic enclosures to minimize noise pollution from our operations."
+      ],
+      "Materials & Waste Management": [
+        "Waste Minimization: We are committed to reducing waste generation at source and promoting recycling initiatives in our chemical handling and storage processes.",
+        "Hazardous Waste Compliance: Ensuring compliance with regulations for the safe handling and disposal of hazardous chemicals is a top priority.",
+        "Waste Minimization: Our goal is to reduce waste through recycling programs, composting systems, and the use of sustainable, biodegradable packaging materials.",
+        "Hazardous Materials: We strictly adhere to regulatory compliance regarding the handling and disposal of hazardous chemicals, employing secondary containment systems and automated monitoring for chemical storage."
+      ],
+      "Biodiversity & Ecosystem Protection": [
+        "Wildlife & Ecosystem Protection: We have protocols in place to prevent chemical spills and safeguard biodiversity around our facilities.",
+        "Protected Areas: Our operations ensure no encroachment upon ecologically sensitive areas, aligning our practices with biodiversity conservation goals.",
+        "Sustainable Sourcing: We prioritize sourcing chemicals from suppliers that adopt green chemistry principles and sustainable land management practices to support biodiversity."
+      ],
+      "Customer Health & Safety": [
+        "Safe Chemical Handling: We implement stringent protocols to ensure the safe handling of chemicals, protecting both our customers and the environment.",
+        "Sustainable Product Stewardship: We promote responsible chemical use, providing clear product labelling and guidance on handling, storage, and disposal.",
+        "Product Safety Assurance: We ensure that all chemicals supplied meet rigorous safety standards using efficient quality control systems and real-time product tracking technologies.",
+        "Emergency Response Protocols: We have established protocols for swift incident response using chemical spill containment kits and remote monitoring systems to detect and manage spills or accidents."
+      ],
+      "Sustainable Consumption & Resource Optimization": [
+        "Resource Efficiency: We are committed to optimizing resource use across our operations, ensuring minimal environmental impact through efficient use of energy, water, and raw materials.",
+        "Sustainable Supply Chain: Our focus is on working with suppliers that follow sustainable practices, ensuring responsible sourcing and reducing the environmental footprint across our supply chain.",
+        "Circular Economy Approach: We are actively adopting a circular economy model, focusing on reducing resource consumption, reusing materials, and recycling to promote sustainability throughout the product lifecycle.",
+        "Resource Efficiency: We aim to optimize resource use by employing lean manufacturing practices, reducing material waste, and implementing resource efficiency management systems."
+      ],
+      "Environmental Impacts from Use of Products": [
+        "Product Longevity and Durability: Focus on increase supplying products in reusable and high durability containers like ISO tanks instead of single use packaging drums to reduce environmental impact",
+        "Durable Packaging: Strive to increase chemical products supply with enhanced durability, reducing the need for frequent replacements and minimizing resource consumption over time. Ensure that containers and equipment, are made from corrosion-resistant materials, improving their longevity."
+      ],
+      "Environmental Impacts from Products End-of-Life": [
+        "End-of-Life Recycling: Develop programs for safe disposal and recycling to limit product disposal impacts.",
+        "Safe Disposal Programs: Establish customer support for unused products, enabling customers to safely return them for proper disposal or re-distil.",
+        "End-of-Life Recycling: Facilitate recycling and safe disposal methods to minimize waste and pollution associated with product disposal.",
+        "Safe Disposal Programs: We have established a system to collect and safely dispose of unused customer products, ensuring environmentally responsible practices."
+      ],
+      "Environmental Services and Advocacy": [
+        "Collaboration with Stakeholders: Partner with customers and suppliers to co-develop environmentally friendly solutions for mutual benefit.",
+        "Eco-Labels: Introduce a certification program to recognize and promote customers adopting sustainable practices, enhancing their brand value.",
+        "Environmental Diagnostics: Provide services that help customers assess and mitigate their environmental impact.",
+        "Sustainability Alternatives: Offer customers eco-friendly product alternatives, promoting practices that support global environmental health."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption & Greenhouse Gases",
+        "targets": [
+          {
+            "target": "To optimize processes / utilities & adopting energy-efficient systems in our chemical production to decrease energy consumption by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 15% reduction in combined Scope 1 & 3 emissions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 50% reduction in combined Scope 2 emissions by the solar panel Agreement",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Water Stewardship",
+        "targets": [
+          {
+            "target": "Reduce overall water consumption by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure and maintain wastewater treatment meets the highest standards, achieving 100% water quality compliance every year.",
+            "baseline": "",
+            "deadline": "Every year"
+          },
+          {
+            "target": "Implement greywater recycling systems to reuse at least 15% of water from non-potable sources",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality Improvement",
+        "targets": [
+          {
+            "target": "Reduce air pollutants by implementing low-emission technologies to achieve a 15% reduction in emissions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Minimize unpleasant Odors and noise pollution, targeting a 10% reduction in reported incidents",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Materials & Waste Management",
+        "targets": [
+          {
+            "target": "Achieve a 5% reduction in total waste generated through enhanced recycling programs.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Environment friendly method for disposal of hazardous waste, to achieve 25% of the total waste to be disposed for co-processing instead of incineration",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance with regulatory standards for hazardous materials management and handling",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain closed-loop recycling systems to ensure at least 80% of SO2 generated as byproduct is recycled.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity & Ecosystem Conservation",
+        "targets": [
+          {
+            "target": "Commit to maintain 25000 trees across the site.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with safety standards for all chemicals supplied.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Consumption & Resource Optimization",
+        "targets": [
+          {
+            "target": "Improve overall Raw Material efficiency by 3%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from Use of Products",
+        "targets": [
+          {
+            "target": "Aim to increase product supply in durable packaging by 10% through the use of higher-quality, durable ISO tanks.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from Products End-of-Life",
+        "targets": [
+          {
+            "target": "Maintain the system of receiving and responsibly disposal of 100% of unused returned products from customers.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services and Advocacy",
+        "targets": [
+          {
+            "target": "Increase the adoption of sustainability alternatives by 30% across all plants, aiming for a measurable reduction in environmental footprint.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Oversees the overall environmental strategy and approves long-term sustainability goals."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensures alignment of environmental initiatives with business objectives and stakeholder expectations."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Committed to integrating environmental considerations into business strategies and allocating necessary resources for implementation."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Monitors progress towards achieving set environmental targets and ensures accountability."
+      },
+      {
+        "role": "Environmental Managers",
+        "duty": "Oversee the implementation and maintenance of environmental practices across all facilities."
+      },
+      {
+        "role": "Environmental Managers",
+        "duty": "Ensure compliance with relevant environmental regulations and standards through regular monitoring and assessments."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Adhere to environmental procedures and practices outlined in the policy."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Participate in training programs and contribute to the company’s sustainability initiatives."
+      },
+      {
+        "role": "Site Supervisors",
+        "duty": "Ensure that environmental protocols are followed during day-to-day operations."
+      },
+      {
+        "role": "Site Supervisors",
+        "duty": "Report any non-compliance or environmental incidents to management promptly."
+      },
+      {
+        "role": "Health & Safety Teams",
+        "duty": "Monitor and enforce safety protocols regarding the handling of chemicals and waste management."
+      },
+      {
+        "role": "Health & Safety Teams",
+        "duty": "Ensure compliance with safety regulations and protect employee health."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Implement ongoing training programs related to environmental awareness, sustainability practices, and safety protocols for all employees."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Foster a culture of sustainability within the organization."
+      }
+    ],
+    "monitoring": "Regularly compile and distribute environmental performance reports that summarize progress against established sustainability targets and goals.\n\nReports will include key performance indicators (KPIs) related to energy consumption, water usage, waste generation, and emissions reductions.\n\nEnsure timely submission of compliance reports to regulatory authorities, detailing adherence to environmental regulations and any incidents that may have occurred.\n\nMaintain records of environmental audits, inspections, and assessments to demonstrate compliance with applicable laws and regulations.\n\nProvide transparent updates to stakeholders, including employees, customers, and local communities, regarding environmental initiatives and progress.\n\nUtilize various communication channels, such as newsletters, social media, and the company website, to share achievements and address any environmental concerns raised by stakeholders.\n\nEstablish internal reporting channels for employees to report environmental concerns, incidents, or suggestions for improvement.\n\nEncourage a culture of accountability by ensuring that all reports are reviewed and addressed promptly.",
+    "reviewMechanism": "The Environmental Manager oversees the implementation and review of this Environmental Policy. This policy will be reviewed every year to ensure its effectiveness and relevance to our sustainability objectives. Regular performance evaluations will be conducted biannually to assess progress against established targets, with findings documented and shared with the Board of Directors. Updates and changes will be communicated to all stakeholders as necessary, reflecting any operational, regulatory, or environmental challenges that may arise, ensuring continuous improvement in our sustainability practices."
+  },
+  "sourcePath": "Policies - Kenal/Transpek/ENVIRONMENT POLICY (1).docx",
+  "sourceFiles": [
+    "Policies - Kenal/Transpek/ENVIRONMENT POLICY (1).docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 17032,
+  "parsedAt": "2026-09-11T07:30:19.440Z"
+}

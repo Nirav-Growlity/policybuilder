@@ -1,0 +1,264 @@
+{
+  "id": "labour-human-rights-somakannan",
+  "name": "Somakannan",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2) Labour And Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Somakannan Textiles",
+      "industry": "",
+      "site": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu India.",
+      "sites": [
+        {
+          "location": "Somakannan Textiles",
+          "address": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu India.",
+          "primaryFunction": "Manufacturer and exporter of quality cotton home textiles"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Somakannan Textiles is committed to fostering a workplace and supply chain environment that upholds the dignity, rights, and well-being of all individuals involved in its operations. As a leading manufacturer and exporter of high-quality cotton textiles products, we recognize our responsibility to adhere to fair labour practices, ethical conduct, and international human rights standards throughout our business activities. This policy reflects our dedication to creating a safe, inclusive, and equitable environment that prioritizes the health, safety, and development of our employees and partners, while strictly prohibiting child labour, forced labour, discrimination, and human trafficking in any form.",
+      "declaration": "",
+      "scope": "This Labour and Human Rights Policy applies to all employees, contractors, suppliers, partners, and stakeholders associated with Somakannan Textiles. It extends to every operational facility, supply chain partner, and service provider in all regions and jurisdictions where the company operates."
+    },
+    "focusAreas": [
+      "Employees’ Health and Safety",
+      "Working Conditions",
+      "Career Management and Training",
+      "Discrimination and Harassment",
+      "Diversity, Equity, and Inclusion"
+    ],
+    "qualitative": {
+      "Employees’ Health & Safety": [
+        "Provide a safe and healthy working environment by identifying and minimizing workplace risks.",
+        "Implement appropriate safety measures, emergency preparedness, and health protection practices.",
+        "Conduct regular health and safety training to promote awareness and prevent accidents."
+      ],
+      "Working Conditions": [
+        "Provide safe, hygienic, and well-maintained workplaces by ensuring adequate lighting, ventilation, sanitation, drinking water, and welfare facilities across all operational areas.",
+        "Promote a respectful and dignified work environment that supports employee well-being, psychological safety, and job satisfaction.",
+        "Continuously improve workplace facilities and practices through regular reviews, employee feedback, and corrective actions."
+      ],
+      "Career Management and Training": [
+        "Promote employee development through skill enhancement, training, and learning opportunities.",
+        "Encourage career growth based on merit, performance, and capability.",
+        "Support continuous improvement by providing role-relevant training and development programs."
+      ],
+      "Discrimination and Harassment": [
+        "Ensure an inclusive, respectful workplace free of bias, discrimination, and harassment and hence maintain zero cases of harassment or discrimination.",
+        "Strengthen grievance redressal mechanisms for fair resolution."
+      ],
+      "Diversity, Equity, and Inclusion (DEI)": [
+        "Promote equal opportunities in recruitment, employment, and career advancement.",
+        "Foster an inclusive workplace culture that values diversity and mutual respect.",
+        "Encourage participation and fair treatment of all employees across the organization."
+      ],
+      "Action Framework": [
+        "Policy Integration & Governance: Embed labour and human rights commitments into internal policies, codes of conduct, and operational procedures, with oversight from senior management.",
+        "Regular Audits & Compliance Checks: Conduct periodic internal reviews and third-party audits to monitor compliance with labour laws, health and safety standards, and human rights requirements, and address gaps promptly.",
+        "Training & Capacity Building: Deliver regular training programs on health and safety, labour laws, ethical conduct, anti-discrimination, and harassment prevention for all employees.",
+        "Health & Safety Management: Implement structured risk assessments, preventive controls, emergency preparedness plans, and annual safety drills across all operational areas to ensure a safe workplace.",
+        "Career Development Systems: Establish structured performance evaluation, skill development, and internal promotion frameworks to support employee growth and long-term engagement.",
+        "Grievance & Feedback Mechanisms: Maintain confidential and accessible grievance redressal systems to report, investigate, and resolve workplace concerns fairly and within defined timelines."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Overall Labour Practices and Human Rights",
+        "targets": [
+          {
+            "target": "Year 2023 is set as the baseline year for tracking progress in labour practices and human rights, with 2030 established as the target year for achieving defined improvements and commitments.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Employees’ Health and Safety",
+        "targets": [
+          {
+            "target": "Maintain zero fatal workplace accidents annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "To increase safety inspections by 5% till year 2030 to proactively identify risks.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct health and safety risk assessments covering 100% of operational areas annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Conduct employee satisfaction surveys annually on working conditions, aiming for 95% positive responses by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure implementation of a formal channel for 100% employees to discuss working conditions with management by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Facilitate a 45% increase in internal promotions by 2030 through robust career development initiatives.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Allocate 20% of the annual budget to employee development programs by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Maintain zero tolerance with zero unresolved cases of discrimination or harassment annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Ensure 100% of employees are trained annually on workplace conduct, anti-harassment, and ethics.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Conduct 2 workplace climate surveys on discrimination and harassment till year 2030 through survey forms filled by 100% employees.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity, and Inclusion (DEI)",
+        "targets": [
+          {
+            "target": "Ensure 100% equal opportunity hiring and promotion practices across roles.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase participation of underrepresented groups in the workforce by 20% by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "The Board of Directors",
+        "duty": "Provide strategic direction and oversight for labour and human rights commitments."
+      },
+      {
+        "role": "The Board of Directors",
+        "duty": "Monitor progress on diversity, employee welfare, and workplace safety initiatives."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Implement fair wages, working conditions, DEI, and anti-discrimination policies."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Manage recruitment, training, performance evaluations, and career development programs."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Oversee grievance redressal mechanisms and ensure timely and confidential resolution."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Ensure day-to-day compliance with labour, safety, and human rights requirements within their teams."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Promote a respectful, inclusive, and safe working environment."
+      },
+      {
+        "role": "Health, Safety, and Environment (HSE) Team",
+        "duty": "Conduct risk assessments, safety drills, and training sessions on workplace safety."
+      },
+      {
+        "role": "Health, Safety, and Environment (HSE) Team",
+        "duty": "Conduct regular safety audits, risk assessments, and incident investigations."
+      },
+      {
+        "role": "Health, Safety, and Environment (HSE) Team",
+        "duty": "Deliver health and safety training and ensure compliance with legal and internal standards."
+      },
+      {
+        "role": "Compliance and Audit Team",
+        "duty": "Conduct regular audits and report on compliance with labour and human rights policy."
+      },
+      {
+        "role": "Diversity and Inclusion Committee",
+        "duty": "Drive initiatives to create an inclusive work environment."
+      },
+      {
+        "role": "Diversity and Inclusion Committee",
+        "duty": "Promote diversity in recruitment and leadership roles."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow company policies, safety procedures, and codes of conduct."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Participate in mandatory training programs and use resources responsibly."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Report any violations of labour and human rights policy."
+      }
+    ],
+    "monitoring": "Somakannan Textiles is committed to regularly monitoring and improving its labour and human rights performance across key focus areas, including employee health and safety, working conditions, Career management and training, discrimination and harassment. Key Performance Indicators (KPIs) are defined for each focus area and monitored through internal systems to assess progress against established commitments. Performance is reviewed periodically by management to identify gaps, implement corrective actions, and drive continuous improvement. Relevant outcomes are communicated internally and, where appropriate, to stakeholders to promote transparency and accountability. All monitoring and reporting practices are aligned with applicable labour laws, international labour standards, and industry best practices to ensure accuracy, credibility, and compliance.\n\nSomakannan Textiles committed to continuously improving the labour and human rights practices to uphold the highest standards of fairness and safety. Regular internal and external audits are conducted to identify areas for enhancement and ensure compliance with established standards. Employee feedback is actively sought through surveys and direct engagement to refine our policies and address evolving needs. Furthermore, the company implement continuous training and development programs to raise awareness and empower employees with the knowledge and tools to uphold labour rights effectively. These efforts reflect the dedication to creating a sustainable, ethical, and supportive workplace.",
+    "reviewMechanism": "The Labor and Human Rights Policy undergoes an annual review to stay aligned with evolving regulations and industry standards. This process is led by the Chief Human Resources Officer (CHRO) in collaboration with the Compliance and Audit Team. The review includes assessing regulatory updates, industry best practices, and stakeholder feedback to ensure the policy's continued relevance and effectiveness. Any revisions made to the policy are promptly communicated to employees and partners, reinforcing our commitment to transparency and adherence to labour and human rights principles."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Somakannan/2) Labour And Human Rights Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Somakannan/2) Labour And Human Rights Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 11579,
+  "parsedAt": "2026-09-11T07:41:28.599Z"
+}

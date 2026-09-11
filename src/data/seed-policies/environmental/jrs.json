@@ -1,0 +1,487 @@
+{
+  "id": "jrs",
+  "name": "JRS",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Management Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "JRS & Gujarat Microwax Pvt. Ltd.",
+      "industry": "",
+      "site": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "Unit-1",
+          "address": "Survey No. 291/1 & 2, Kalol Mehsana Highway, Nandasan – 382705 Dist : Mehsana, North Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-2",
+          "address": "Survey No. 292/293, Kalol Mehsana Highway, Nandasan – 382705 Dist : Mehsana, North Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-3",
+          "address": "Survey No. 99/100, Kalol Mehsana Highway, Vill.: Chandarda, Ta. Kadi, Dist.: Mehsana, Gujarat, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-4",
+          "address": "Survey No. 69/3, Kalol-Mehsana Highway, Vill.: Chandarda Ta. Kadi, Dist.: Mehsana, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "JRS & Gujarat Microwax Pvt. Ltd. is committed to managing its environmental responsibilities arising from wax manufacturing, processing, and related industrial operations. The Company acknowledges the environmental impacts associated with energy use, emissions, raw material handling, waste generation, and occupational and environmental safety, and is dedicated to minimizing these impacts through responsible operational practices.\n\nThis Environmental Policy outlines GMW’s commitment to environmental compliance, pollution prevention, efficient use of resources, and continual improvement. The policy focuses on energy efficiency, air emissions control, water and waste management, safe handling of materials and chemicals, and protection of employee and community health. Through systematic monitoring, training, and adherence to regulatory requirements, GMW aims to strengthen environmental performance and contribute to sustainable industrial development.",
+      "declaration": "The purpose of this Environmental Policy is to:\n\nEstablish clear environmental commitments aligned with the Company’s values and sustainability objectives.\n\nEnsure compliance with applicable environmental laws, regulations, and statutory requirements.\n\nPromote responsible use of natural resources including energy, water, and raw materials.\n\nPrevent pollution, reduce emissions, and minimize waste generation\n\nEncourage continual improvement in environmental management systems and performance.\n\nFoster environmental awareness and responsibility among employees, contractors, and business partners.",
+      "scope": "This policy applies to all operations, manufacturing units, warehouses, offices, laboratories, utilities, and support functions of JRS Pharma & Gujarat Microwax Pvt. Ltd. It covers all employees, workers, contract personnel, suppliers, service providers, and all stakeholders (internal and external) operating on behalf of the JRS Pharma & Gujarat Microwax Pvt. Ltd."
+    },
+    "focusAreas": [
+      "Energy & Emissions Management",
+      "Air Emissions Control",
+      "Water & Effluent Management",
+      "Waste Management",
+      "Chemical Safety",
+      "Compliance & Improvement"
+    ],
+    "qualitative": {
+      "Energy & Emissions Management": [
+        "Efficient energy use and control of greenhouse gas emissions from operations and utilities.",
+        "We will progressively adopt energy-efficient solutions, including high-efficiency motors, LED lighting systems, and optimized process equipment, to enhance overall energy performance across our facilities.",
+        "We will assess and, where technically and economically feasible, integrate renewable energy sources such as solar and wind power, along with other low-emission alternatives, as part of our long-term strategy to reduce Scope 2 emissions.",
+        "We aim to optimize production processes and utility operations to enhance overall energy efficiency across the organization.",
+        "We aim to identify and monitor key Scope 3 emission sources, including logistics, transportation, supplier operations, and waste management activities.",
+        "Our new projects and expansions incorporate sustainable and energy-efficient design of equipment, machinery, and infrastructure to minimize energy intensity.",
+        "We aim to continuously improve operational energy efficiency across manufacturing units, warehouses, and support functions.",
+        "We seek to build employee awareness on energy efficiency and climate responsibility through periodic training and communication."
+      ],
+      "Air Emissions Control": [
+        "Management of air emissions to prevent pollution and ensure regulatory compliance.",
+        "We aim to follow a technology-driven approach to controlling air emissions by adopting appropriate pollution control systems like Cyclone Separator, Scrubbers etc. and continuous or periodic monitoring mechanisms to ensure compliance with applicable environmental standards.",
+        "We commit to conducting monthly ambient air quality monitoring using appropriate monitoring equipment to ensure compliance with environmental standards and maintain a safe and healthy workplace environment.",
+        "We aim to minimize air emissions arising from boilers, solvent handling, material transfer, and process equipment by adopting cleaner technologies and good engineering practices.",
+        "We avoid uncontrolled environmental discharges from manufacturing, utility, laboratory, and support activities by implementing robust operational controls.",
+        "We ensure adherence to air emission standards prescribed by the State Pollution Control Board and other regulatory authorities.",
+        "We promote preventive maintenance and periodic inspection of pollution control equipment to sustain optimal performance.",
+        "We aim to engage with SPCB-recognized laboratories for air quality and stack emission monitoring Implement continuous or periodic stack emission monitoring at identified sources to ensure compliance at source"
+      ],
+      "Water & Effluent Management": [
+        "Responsible water use and compliant treatment and disposal of wastewater.",
+        "We commit to implementing water-efficient technologies and practices such as steam condensate recovery systems and Multi Effect Evaporators (MEE) to improve water efficiency.",
+        "We optimize process water usage and promote reuse of treated water in operations, cleaning, and utility applications wherever feasible.",
+        "We aim to continuously optimize manufacturing processes to minimize water consumption per batch across all operations.",
+        "We commit to implementing and maintaining Zero Liquid Discharge (ZLD) or equivalent advanced wastewater treatment systems, where applicable.",
+        "We ensure proper operation and maintenance of Effluent Treatment Plants (ETP) and Sewage Treatment Plants (STP) to prevent environmental contamination.",
+        "We promote water stewardship initiatives such as leak detection, rainwater harvesting, and employee awareness programs.",
+        "We aim to promote responsible water use across offices and warehouses through conservation practices and operational controls.",
+        "We seek to ensure compliance with applicable water use and discharge regulations.",
+        "We strive to monitor water consumption and conduct periodic analysis to identify reduction opportunities.",
+        "We intend to raise employee awareness through training and communication on water conservation practices."
+      ],
+      "Waste Management": [
+        "Reduction, segregation, recycling, and safe disposal of waste, by-products, and hazardous materials.",
+        "We aim to minimize waste generation by applying process optimization and continuous improvement practices, including source reduction, material efficiency, lean process concepts, efficient inventory control, and good housekeeping.",
+        "We follow the principles of Reduce, Reuse, and Recycle (3R) in waste management across operations.",
+        "We encourage segregation of waste at source to enable effective recycling and recovery.",
+        "We strive to comply with the Environment (Protection) Act, 1986, Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016, E-Waste Management Rules, 2016, and other applicable waste-related regulations.",
+        "We seek to train all employees on waste segregation, chemical handling, and spill prevention.",
+        "We strive to monitor waste data and review compliance through internal audits and periodic analysis.",
+        "We ensure waste disposal only through authorized recyclers and treatment facilities in compliance with regulatory requirements.",
+        "We promote reuse and recovery of solvents, packaging materials, and process residues wherever feasible."
+      ],
+      "Chemical Safety": [
+        "Safe storage, handling, and transport of chemicals and materials to minimize risks.",
+        "We aim to ensure safe and responsible selection, storage, handling, labeling and use of chemicals and raw materials.",
+        "We encourage substitution of hazardous substances with safer alternatives wherever technically and economically feasible.",
+        "We aim to ensure the appropriate use of personal protective equipment (PPE) for employees and contract workers involved in material handling, chemical storage, and waste management activities to minimize health, safety, and environmental risks.",
+        "We implement chemical inventory management and spill prevention practices to minimize environmental risks.",
+        "We ensure environmentally sound disposal of chemical residues and expired materials."
+      ],
+      "Compliance & Improvement": [
+        "Adherence to environmental laws, performance monitoring, training, and continuous improvement.",
+        "We aim to prevent soil, land, and groundwater contamination arising from operational activities.",
+        "We implement spill prevention, emergency preparedness, and response mechanisms to mitigate environmental risks.",
+        "We promote green belt development, tree plantation, and site-level biodiversity enhancement initiatives.",
+        "We aim to proactively reduce the environmental footprint of our products through active research and continuous improvement.",
+        "We integrate environmental considerations into product development, manufacturing, packaging, and distribution processes.",
+        "We seek to incorporate life-cycle thinking, including LCA and PCF considerations, into decision-making processes to support environmentally responsible product sourcing and distribution.",
+        "We ensure clear, accurate, and compliant environmental labeling on products and packaging, including relevant information on environmental attributes, safe use, and end-of-life considerations, to support transparency and responsible customer decision-making.",
+        "We strive to engage customers and stakeholders to build awareness of lifecycle environmental responsibility, including carbon footprint considerations, to support informed and sustainable purchasing decisions.",
+        "We aim to minimize environmental impacts during storage, transportation, and customer use of products.",
+        "We seek to support product lifecycle environmental responsibility by providing guidance on safe handling, storage, and disposal through product documentation, regulatory labeling, and customer awareness initiatives, where applicable.",
+        "We collaborate with customers, suppliers, and service providers to support responsible end-of-life management of products."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Pollution Prevention & Emission Control",
+        "targets": [
+          {
+            "target": "We aim to reduce emissions from diesel generator operations by 10–15% by 2028 compared to the 2022 baseline through improved efficiency and reduced runtime.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We ensure that 100% of stack emission monitoring results remain within applicable regulatory limits every year.",
+            "baseline": "",
+            "deadline": "Every year"
+          },
+          {
+            "target": "We upgrade or enhance pollution control systems for at least 50% of identified critical emission sources by 2028 compared to the 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to reduce Volatile Organic Compound (VOC) emissions by 10% by 2028 against the 2022 baseline year through solvent recovery, process optimization, and improved containment.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to conduct ambient air quality monitoring on a monthly basis through NABL / SPCB-recognized laboratories to ensure regular tracking and regulatory compliance.",
+            "baseline": "",
+            "deadline": "Monthly"
+          }
+        ]
+      },
+      {
+        "area": "Energy Efficiency & Climate Responsibility",
+        "targets": [
+          {
+            "target": "We are committed to renewable energy, having investing in a 7.4 MW solar plant to meet nearly 50% of our electricity needs through solar power.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We implement to aligned with the objective to reduce combined Scope 1 and Scope 2 greenhouse gas emissions by 10% by 2028 against the 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to reduce GHG Scope 3 emissions by 7% by 2028 from the baseline of  2022.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We conduct formal energy audits at all manufacturing locations at least once every two years to identify efficiency improvement opportunities.",
+            "baseline": "",
+            "deadline": "At least once every two years"
+          },
+          {
+            "target": "We commit to ensuring that 100% of relevant employees receive periodic training on energy efficiency, climate change awareness, and greenhouse gas management by 2028, against the 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to identify and assess key Scope 3 emission categories (including third-party logistics and transportation) and establish a baseline Scope 3 emissions inventory by 2028, against 2022 reference year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We seek to engage priority logistics partners and suppliers, covering at least 60–70% of logistics-related spend, to support data collection and emission reduction initiatives by 2028 against the 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to achieve an overall reduction of 10% in total energy consumption by 2028, against the 2022 baseline, through energy-efficient practices and operational optimization.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to increase the share of renewable electricity consumption to at least 80% by 2028 compared to the 2022 baseline year through on-site and off-site renewable energy sourcing.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We monitor and report energy consumption and emission intensity on an annual basis.",
+            "baseline": "",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation & Wastewater Management",
+        "targets": [
+          {
+            "target": "We’re implementing enhanced filtration processes to further reduce water consumption by 10% by FY 2026 against the 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "FY 2026"
+          },
+          {
+            "target": "We have invested in water treatment plant that allow to reuse up to 450 cubic meter of water per day, equating to 30% of total water needs by end of the 2026, our goal is to raise this to 50%.",
+            "baseline": "",
+            "deadline": "End of 2026"
+          },
+          {
+            "target": "We aim to reduce freshwater consumption by approximately 10% by 2028 against the 2022 baseline year through process optimization and reuse initiatives.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We ensure that each manufacturing site implements at least three significant water-saving projects (such as valve optimization, reuse systems, and CIP optimization) by FY 2028 against 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "FY 2028"
+          },
+          {
+            "target": "We aim to reuse treated wastewater at source for operations and utilities wherever technically and legally feasible.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We commit to ensuring 100% compliance with applicable water-related regulations, including the Water (Prevention and Control of Pollution) Act, 1974, across all operational locations.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to provide water conservation and wastewater management training to at least 100% of relevant employees and contract workers annually, focusing on efficient water use and pollution prevention practices.",
+            "baseline": "",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Waste Minimization & Circular Economy Practices",
+        "targets": [
+          {
+            "target": "Our Primary fuel, previously coal, is gradually being replaced with eco-friendly alternative, by incorporating castor pellets, we have already reduced our coal use by 15%,  We aim to replace 50% of our coal consumption with green fuels, by the end of 2026 from the baseline of 2022.",
+            "baseline": "2022",
+            "deadline": "End of 2026"
+          },
+          {
+            "target": "We aim to increase reuse and recycling of non-hazardous operational waste to a minimum of 10% by 2028 against the 2022 baseline year",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to reduce overall waste generation by 10% by 2028 from the baseline 2022.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We ensure that 100% of hazardous and non-hazardous waste is disposed of through authorized recyclers or treatment facilities each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to ensure that 100% of employees involved in material handling, storage, and waste management receive periodic training on waste segregation, minimization, and circular economy practices.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We commit to maintaining 100% compliance with applicable waste-related environmental laws and regulations, including statutory documentation, authorized vendor engagement, and timely regulatory reporting.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Chemicals & Material Management",
+        "targets": [
+          {
+            "target": "We aim to reduce total hazardous waste generation by at least 12% per unit of production by 2028 against the 2022 baseline year through process optimization and material substitution.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to achieve 100% PPE availability and compliance for personnel exposed to chemical, material, or waste-related risks across all operational locations.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We commit to achieving zero waste sent to landfill by ensuring that 100% of hazardous and non-hazardous waste generated is reused, recycled, co-processed, or disposed of through authorized waste management vendors, subject to regulatory feasibility.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Environmental Responsibility Across Product Life Cycle",
+        "targets": [
+          {
+            "target": "We aim to conduct comprehensive Product Life Cycle Assessments (LCAs) for 10% of our key products 2028 to evaluate end-of-life environmental impacts.",
+            "baseline": "",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to increase the proportion of recyclable packaging materials to at least 40% by 2028 against the 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We continue to reduce average packaging weight per product by 8% by 2028 compared to the 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We commit that 100% of products include clear instructions on safe use, handling, and disposal by 2028 against 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We conduct environmental risk assessments for 100% of new products and major process changes during the development stage each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to conduct a minimum of one awareness or training programs annually for customers, distributors, or relevant stakeholders on responsible product use and disposal.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We ensure that at least 40% of products undergo in the environmental impact assessment during the use phase by 2028 against the 2022 baseline year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Safe Use of Products & Customer Protection",
+        "targets": [
+          {
+            "target": "We provide annual safety and environmental training to 100% of production and quality-related employees each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We maintain zero product recalls related to quality, safety, or environmental non-compliance on an annual basis.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We maintain zero substantiated product-related safety complaints each year through robust quality and customer feedback systems.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to maintain 100% coverage of product safety and environmental guidance through labeling, documentation, or customer communication for all applicable products distributed by the Company.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We commit to ensuring that 100% of products handled and distributed are verified against applicable regulatory, quality, and safety standards prior to dispatch to customers.",
+            "baseline": "",
+            "deadline": "Prior to dispatch"
+          },
+          {
+            "target": "We target zero critical non-conformities related to product safety, labeling, or customer protection identified through internal checks or regulatory inspections on an annual basis.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We ensure clear, accurate, and compliant product labeling, including health, safety, and environmental information, for 100% of applicable products to support safe handling, use, and customer protection.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We commit to ensuring that 100% of products undergo documented quality checks and inspections prior to dispatch, in line with internal quality standards and applicable regulatory requirements.",
+            "baseline": "",
+            "deadline": "Prior to dispatch"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Chairman & Managing Director",
+        "duty": "Approve the Environmental Policy and provide strategic direction for environmental management and sustainability."
+      },
+      {
+        "role": "Chairman & Managing Director",
+        "duty": "Ensure integration of environmental considerations into business strategy and investment decisions."
+      },
+      {
+        "role": "Chairman & Managing Director",
+        "duty": "Review overall environmental performance, significant risks, regulatory compliance status, and major incidents."
+      },
+      {
+        "role": "Plant Head",
+        "duty": "Translate the Environmental Policy into site-level objectives, action plans, and operational controls."
+      },
+      {
+        "role": "Plant Head",
+        "duty": "Ensure compliance with applicable environmental laws, consent conditions, and internal requirements."
+      },
+      {
+        "role": "Plant Head",
+        "duty": "Review environmental performance indicators, audit findings, and corrective actions on a periodic basis."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Head",
+        "duty": "Review the entire policy regularly"
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Head",
+        "duty": "Develop, implement, and maintain environmental procedures, SOPs, and monitoring systems."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Head",
+        "duty": "Monitor air emissions, effluents, waste generation, water consumption, and energy usage."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Head",
+        "duty": "Maintain statutory permits, records, returns, and regulatory reporting."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Head",
+        "duty": "Conduct environmental risk assessments, internal audits, training programs, and emergency preparedness activities."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Ensure that environmental requirements are integrated into departmental operations and work instructions."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Implement pollution prevention, waste minimization, and resource efficiency measures within their areas of responsibility."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Ensure employees and contractors are trained and competent to perform their tasks in an environmentally responsible manner."
+      },
+      {
+        "role": "Employees & Contractors",
+        "duty": "Comply with the Environmental Policy, applicable procedures, legal requirements, and site rules."
+      },
+      {
+        "role": "Employees & Contractors",
+        "duty": "Follow approved procedures for waste segregation, chemical handling, and pollution control."
+      },
+      {
+        "role": "Employees & Contractors",
+        "duty": "Promptly report spills, leaks, unsafe conditions, or environmental concerns to supervisors or EHS personnel."
+      }
+    ],
+    "monitoring": "To ensure effective environmental management, JRS Pharma & Gujarat Microwax Pvt. Ltd. has established a structured reporting and escalation framework. Environmental data on air emissions, wastewater, waste, water and energy use, and greenhouse gas emissions is collected and reviewed periodically across all sites. Site EHS teams compile and validate data and report any deviations, incidents, non-compliance, or near-misses to the Plant Head and Corporate EHS within defined timelines.\n\nSignificant environmental incidents, regulatory notices, or consent breaches are promptly escalated to Senior Management and the Chairman & Managing Director. Statutory reports and regulatory submissions are reviewed before submission to SPCB, CPCB, and other authorities, and environmental performance is periodically reviewed by management to track compliance, targets, trends, and improvement actions.\n\nJRS Pharma & Gujarat Microwax Pvt. Ltd. continuously strives to enhance environmental performance through ongoing monitoring, process optimization, and adoption of cleaner, resource-efficient technologies. Regular audits, KPI tracking, and management reviews support informed decision-making, while employee training and engagement ensure that sustainable practices are maintained and improved over time, reinforcing compliance with environmental regulations and ESG commitments.",
+    "reviewMechanism": "This Environmental Policy is reviewed at least once every year or as per requirement by the EHS Head to ensure its continuing suitability, adequacy, and effectiveness. Reviews consider changes in operations, regulatory requirements, environmental risks, and stakeholder expectations, ensuring that the policy remains current and aligned with the Company’s sustainability objectives.\n\nEffective Date: 01 January 2025\n\nLast review date: 01 January 2026\n\nNext review date: 01 January 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/JRS/Policies/1. Environmental Management Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/JRS/Policies/1. Environmental Management Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 24060,
+  "parsedAt": "2026-09-11T07:10:04.710Z"
+}

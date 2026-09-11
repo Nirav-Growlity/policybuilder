@@ -1,0 +1,286 @@
+{
+  "id": "labour-human-rights-pennengineering",
+  "name": "PennEngineering",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Responsible Labor and Human Rights Roadmap.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "PennEngineering & Manufacturing Corp. (“PennEngineering”) (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Global operations",
+          "address": "",
+          "primaryFunction": "Manufacturing facilities, engineering centers, offices, and distribution activities"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "PennEngineering & Manufacturing Corp. (“PennEngineering”) (Group) is an international manufacturer specializing in advanced fastening solutions and installation technologies used across sectors including automotive, electronics, industrial machinery, and telecommunications. Through continuous innovation, engineering excellence, and high-precision manufacturing processes, the Company provides reliable fastening systems that enhance product performance and support efficient assembly for customers across global markets.\n\nPennEngineering believes that respect for human rights and responsible labor practices are fundamental to ethical business conduct and long-term sustainability. The Company is committed to maintaining a workplace where all individuals are treated with dignity, fairness, and respect. This commitment includes promoting equal opportunities, ensuring safe and healthy working conditions, prohibiting any form of forced or child labor, preventing discrimination and harassment, and supporting fair wages and working hours in line with applicable laws and recognized labor standards. Through these commitments, PennEngineering aims to foster a responsible and inclusive work environment across its operations and business relationships.",
+      "declaration": "PennEngineering is committed to respecting human rights and promoting responsible labor practices across its global operations. The Company strives to provide a safe, fair, and inclusive workplace where employees are treated with dignity and respect. PennEngineering integrates labor and human rights considerations into its business practices and works to ensure that its operations comply with applicable labor laws and internationally recognized human rights standards.",
+      "scope": "This Responsible Labor and Human Rights Roadmap applies to all PennEngineering operations, including manufacturing facilities, engineering centers, offices, and distribution activities globally. The Roadmap applies to all employees, Workers, contractors, suppliers, and other stakeholders involved in the Company’s operations and value chain.\n\nPennEngineering operates in multiple countries with different business operations and regulatory requirements related to labor and human rights. While this roadmap’s vision and objectives apply across all locations, each facility will implement these principles in accordance with local regulations, operational requirements, and internal best practices"
+    },
+    "focusAreas": [
+      "Employee Health and Safety",
+      "Career Management and Training",
+      "Working Conditions",
+      "Social Dialogue and Employee Engagement",
+      "Prevention of Child Labor, Forced Labor, and Human Trafficking",
+      "Prevention of Discrimination and Harassment"
+    ],
+    "qualitative": {
+      "Employee Health and Safety": [
+        "PennEngineering prioritizes the health and safety of its employees by maintaining safe working conditions and implementing effective occupational health and safety management practices. The Company works to identify workplace hazards, reduce risks, and prevent work-related injuries and illnesses. Safety training, monitoring systems, and preventive programs are implemented to ensure a safe and healthy working environment across all facilities."
+      ],
+      "Career Management and Training": [
+        "PennEngineering supports employee development by providing opportunities for continuous learning, skill enhancement, and professional growth. Training programs are designed to improve employee competencies, enhance workplace performance, and support long-term career development."
+      ],
+      "Working Conditions": [
+        "PennEngineering is committed to maintaining fair working conditions in accordance with applicable labor laws and regulations. The Company promotes fair wages, reasonable working hours, and workplace practices that support employee well-being and work-life balance."
+      ],
+      "Social Dialogue and Employee Engagement": [
+        "PennEngineering values open communication and constructive dialogue between employees and management. The Company encourages employees to share feedback, raise concerns, and participate in workplace discussions through established communication channels. Where applicable, the Company respects employees’ rights to freedom of association and collective representation."
+      ],
+      "Prevention of Child Labor, Forced Labor, and Human Trafficking": [
+        "PennEngineering strictly prohibits the use of child labor, forced labor, bonded labor, or any form of human trafficking within its operations and supply chain. The Company ensures compliance with minimum employment age requirements and promotes ethical labor practices across its business relationships."
+      ],
+      "Prevention of Discrimination and Harassment": [
+        "PennEngineering promotes a workplace free from discrimination, harassment, and intimidation. The Company supports equal employment opportunities and fair treatment regardless of gender, race, nationality, religion, disability, or other personal characteristics."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Maintain zero (0) workplace fatalities across all facilities",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% occupational health and safety training coverage for employees, including contract workers",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct health and safety risk assessments across 100% of operational facilities",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Increase average training and development hours per employee by 20%",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees receive performance and development reviews each year",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve participation of at least 10% of employees in professional development or skill enhancement programs",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Maintain zero (0) instances of excessive working hours in violation of applicable labor laws",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Ensure 100% compliance with applicable labor laws and regulations related to wages, benefits, and working hours across all operational locations",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Ensure 100% of employees receive compensation equal to or above legal minimum wage requirements",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide employee health and well-being programs, including periodic health check-ups, to at least 90% of employees across operational locations, where feasible and aligned with local regulations",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 90% employee participation in employee engagement or satisfaction surveys",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue and Employee Engagement",
+        "targets": [
+          {
+            "target": "Conduct at least two employee engagement or consultation sessions annually at each operational facility",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Respect employees’ rights to freedom of association and collective bargaining, and ensure alternative employee engagement mechanisms are in place at 100% of operational sites where formal agreements are not applicable",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of reported employee grievances or concerns are investigated and appropriately addressed",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Maintain zero (0) confirmed cases of child labor or forced labor across all operations",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Conduct annual child labor and forced labor risk assessments across 100% of operational facilities",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Provide training or awareness programs on prevention of forced labor and human trafficking to 100% employees",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Provide workplace ethics and anti-harassment training to 100% of employees",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% coverage of workplace human rights risk assessments across operational facilities",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Maintain zero (0) confirmed cases of Discrimination and Harassment across all operations",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Ensure 100% of reported cases are investigated and addressed in line with company Code of Conduct",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Approve labor and human rights strategies, policies, and workplace standards."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Provide oversight of workplace practices, employee welfare, and human rights performance."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Ensure adequate resources are allocated to support responsible labor practices and employee well-being initiatives."
+      },
+      {
+        "role": "Corporate Sustainability Leadership",
+        "duty": "Coordinate labor and human rights initiatives across global operations."
+      },
+      {
+        "role": "Corporate Sustainability Leadership",
+        "duty": "Establish workforce development, diversity, and human rights performance targets."
+      },
+      {
+        "role": "Corporate Sustainability Leadership",
+        "duty": "Support implementation of responsible labor practices and employee engagement programs."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Implement workplace safety programs and employee well-being initiatives."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Monitor compliance with labor laws, workplace policies, and health and safety standards."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Conduct training programs related to workplace safety, ethics, diversity, and human rights."
+      },
+      {
+        "role": "Operations and Manufacturing Teams",
+        "duty": "Implement fair labor practices and maintain safe working conditions across operational sites."
+      },
+      {
+        "role": "Operations and Manufacturing Teams",
+        "duty": "Ensure compliance with working hours, wage regulations, and workplace standards."
+      },
+      {
+        "role": "Operations and Manufacturing Teams",
+        "duty": "Promote employee engagement and communication within operational teams."
+      },
+      {
+        "role": "Employees, Workers and Contractors",
+        "duty": "Comply with company policies related to workplace conduct, labor practices, and human rights."
+      },
+      {
+        "role": "Employees, Workers and Contractors",
+        "duty": "Participate in training programs and employee development initiatives."
+      },
+      {
+        "role": "Employees, Workers and Contractors",
+        "duty": "Report workplace concerns, unsafe conditions, or human rights issues through established reporting channels."
+      }
+    ],
+    "monitoring": "PennEngineering is committed to regularly monitoring labor practices and human rights performance across its operations and reporting progress toward its labor and human rights objectives and targets. Key performance indicators such as workplace safety performance, employee training participation, employee engagement levels, grievance reporting, diversity metrics, and compliance with labor standards are monitored across operational facilities.\n\nThe Human Resources (HR) and Site Environmental, Health & Safety (EHS) teams, in coordination with operational management, are responsible for collecting and reviewing workforce-related performance data. This information is used to evaluate progress toward labor and human rights goals, identify improvement opportunities, and ensure compliance with applicable labor laws and company policies.\n\nPennEngineering periodically reviews workforce and human rights performance through internal management reviews, employee engagement feedback mechanisms, and compliance assessments. Relevant workforce and human rights information may also be shared through sustainability reports, customer sustainability assessments, or other external reporting frameworks where appropriate.\n\nThrough consistent monitoring, transparent communication, and continuous improvement initiatives, PennEngineering aims to strengthen accountability and uphold responsible labor practices and respect for human rights across its global operations.",
+    "reviewMechanism": "The Human Resources (HR) leadership, shall be responsible for conducting the annual review of this Responsible Labor and Human Rights Roadmap. The review will assess the Roadmap effectiveness, progress toward labor and human rights targets, and compliance with applicable labor laws, regulations, and internationally recognized human rights standards.\n\nAny updates or revisions resulting from organizational changes, regulatory developments, or stakeholder feedback will be incorporated into the Roadmap and communicated across relevant operational sites. This process ensures that the Roadmap remains aligned with PennEngineering’s commitment to responsible labor practices, employee well-being, and respect for human rights across its operations."
+  },
+  "sourcePath": "Policies - Kenal/PennEngineering/Responsible Labor and Human Rights Roadmap.docx",
+  "sourceFiles": [
+    "Policies - Kenal/PennEngineering/Responsible Labor and Human Rights Roadmap.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 12590,
+  "parsedAt": "2026-09-11T07:25:50.734Z"
+}

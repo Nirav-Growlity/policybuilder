@@ -1,0 +1,377 @@
+{
+  "id": "waaree-2026",
+  "name": "Waaree (2026)",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environment Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Waaree Energies Limited and its subsidiaries",
+      "industry": "",
+      "site": "Waaree Energies Ltd., 602, Western Edge I, Off. Western Express Highway, Borivali East, Mumbai - 400066",
+      "sites": [
+        {
+          "location": "Corporate Headquarters – Mumbai",
+          "address": "Waaree Energies Ltd., 602, Western Edge I, Off. Western Express Highway, Borivali East, Mumbai - 400066",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Goregaon Corporate Office – Mumbai",
+          "address": "Commerz 2, 11th Floor, Oberoi Garden City, International Business Park, Yashodham, Goregaon, Mumbai, Maharashtra 400063",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Indosolar Pvt. Ltd. -New Delhi",
+          "address": "Unit No. 301, 3rd Floor, Building 02, Southern Park, Saket, New Delhi - 110017.",
+          "primaryFunction": "Manufacturing Unit"
+        },
+        {
+          "location": "UAE Corporate Office",
+          "address": "Waaree Energies Middle East FZE Jebel Ali Free Trade Zone, Dubai, UAE",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "USA Corporate Office",
+          "address": "Waaree Solar Americas Inc, 2439 Discovery Hills Parkway Brookshire, TX",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Surat SEZ Manufacturing Facility",
+          "address": "Plot No. 231–236, Surat Special Economic Zone, Diamond Park Sachin, Surat – 394230, Gujarat",
+          "primaryFunction": "Solar Module Manufacturing Unit"
+        },
+        {
+          "location": "Chikhli – Manufacturing Unit (Waaree Shree Godiji Factory)",
+          "address": "Waaree Shree Godiji Factory, New Survey no. 1928 Village Degam, Taluka, Chikhli - 396530, Gujarat",
+          "primaryFunction": "Solar Module & Cell Manufacturing; R&D Hub"
+        },
+        {
+          "location": "Nandigram Manufacturing Facility",
+          "address": "CBIPL Nandigram, Unnamed Road, Nandigram - 396105, Gujarat.",
+          "primaryFunction": "Solar Module Manufacturing Unit"
+        },
+        {
+          "location": "Tumb Manufacturing Facility",
+          "address": "Survey No. 38/1, Tumb Village,Tumb, Umbergaon, Valsad, – 396150, Gujarat",
+          "primaryFunction": "Solar Module Manufacturing Unit"
+        },
+        {
+          "location": "Waaree Solar Americas – USA Manufacturing Unit",
+          "address": "2439 Discovery Hills Parkway Brookshire, TX 77423",
+          "primaryFunction": "Solar Module Manufacturing"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Waaree Energies Ltd., 602, Western Edge I, Off. Western Express Highway, Borivali East, Mumbai - 400066"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Waaree Energies Limited and its subsidiaries (referred to as \"WEL\" or \"The Company\") are fully committed to leading India's energy transition while upholding the highest standards of environmental stewardship. Through established environmental practices, we strive to continuously reduce our environmental footprint, safeguard natural resources, and promote sustainability. This Environmental Policy reﬂects our ongoing initiatives aimed at mitigating climate change, protecting biodiversity, and addressing key environmental challenges such as GHG emission reduction and product lifecycle impacts. We take signiﬁcant steps to minimize our environmental impact and aim to build on these efforts to drive further progress.",
+      "declaration": "WEL is proud of its current initiatives and actions that continuously drive sustainability forward.",
+      "scope": "This policy is applicable across all WEL facilities, employees, workers, contractors, contractual workers, suppliers, and other Internal and External stakeholders globally, including the communities in which we operate. WEL extends this environmental commitment to all relevant supply chain partners.\n\nNote: The Sites mentioned above are the only operational sites."
+    },
+    "focusAreas": [
+      "Sustainable Energy Solutions",
+      "Energy Efﬁciency and GHG Emissions Reduction",
+      "Resource Efﬁciency",
+      "Air Pollution Control",
+      "Materials, Chemicals, and Waste Management",
+      "Water Conservation",
+      "Biodiversity Protection",
+      "Environmental Impact from Use of Products",
+      "Life Cycle Assessment (LCA)",
+      "Customer Health and Safety",
+      "Environmental Services and Advocacy",
+      "Compliance with Environmental Legislation",
+      "Energy Efficiency",
+      "Air Pollution Reduction",
+      "Waste Management",
+      "Carbon Emissions Reduction",
+      "Materials and Chemicals Management",
+      "Water Use Reduction",
+      "Product End-of-Life (EoL) & Lifecycle Stewardship",
+      "Environmental Advocacy",
+      "Environmental Impacts from Use of Products",
+      "Biodiversity & Land Use"
+    ],
+    "qualitative": {
+      "Sustainable Energy Solutions": [
+        "As India's leading solar PV module manufacturer, we are already contributing to the global reduction of carbon emissions by providing world-class solar energy solutions. Our commitment to continuously enhance production efﬁciency ensures that we minimize environmental impacts while delivering energy solutions that reduce reliance on fossil fuels."
+      ],
+      "Energy Efﬁciency and GHG Emissions Reduction": [
+        "We have successfully integrated renewable energy sources and energy-saving technologies across our manufacturing plants. WEL continues to pursue energy efﬁciency and the reduction of GHG emissions across our operations, aligning with our long-standing environmental objectives."
+      ],
+      "Resource Efﬁciency": [
+        "At WEL, we are dedicated to protecting the environment by using resources wisely. We embrace the idea of a Circular Economy based on the 5Rs: Refuse, Reduce, Reuse, Repurpose, and Recycle. By making the most of our resources, cutting down waste with advanced technology, and lowering our carbon footprint through renewable energy and eco-friendly actions, we strive to lead in responsible resource management for the good of our planet and future generations."
+      ],
+      "Air Pollution Control": [
+        "WEL has implemented industry-leading air quality management practices and advanced technologies to reduce air pollutants such as particulate matter, NOx, and SOx. These measures align with our efforts to comply with both national and international air quality standards."
+      ],
+      "Materials, Chemicals, and Waste Management": [
+        "We are committed to using environmentally friendly materials and minimizing hazardous chemicals in our products and processes. WEL continues to employ safer alternatives to harmful chemicals, optimize material use, and ensure compliance with stringent chemical handling and waste disposal standards."
+      ],
+      "Water Conservation": [
+        "WEL has already adopted water-efﬁcient technologies to reduce water consumption in our manufacturing processes. We continuously monitor and improve our water conservation efforts to prevent water pollution and ensure sustainable water use."
+      ],
+      "Biodiversity Protection": [
+        "Protecting local biodiversity around our facilities and projects is a priority. We have policies in place to minimize land disturbance and prevent pollution, ensuring that local ecosystems remain unharmed by our operations."
+      ],
+      "Environmental Impact from Use of Products": [
+        "WEL recognizes that our products have an environmental impact throughout their lifecycle. As part of our ongoing innovation efforts, we produce solar modules designed for maximum energy output with minimal environmental degradation, reducing the overall environmental impact of their use."
+      ],
+      "Life Cycle Assessment (LCA)": [
+        "WEL shall conduct regularly Life Cycle Assessments (LCA) of all our products as part of our dedication to environmental stewardship. By understanding the environmental impacts throughout their entire lifecycle, we design our products for maximum efficiency with minimal environmental degradation during use. Additionally, we implement systems to ensure proper recycling and disposal at the end of our products’ lifecycle, collaborating with certified recycling programs to minimize waste and reduce the environmental impact from product end-of-life."
+      ],
+      "Customer Health and Safety": [
+        "WEL remains committed to producing safe products that meet the highest safety standards. We continuously improve product design and safety features to ensure the well-being of customers, installers, and technicians."
+      ],
+      "Environmental Services and Advocacy": [
+        "WEL actively participates in environmental advocacy and supports initiatives related to clean energy and sustainability. We continue to engage in environmental education, awareness campaigns, and policy advocacy in the communities where we operate, promoting a cleaner and more sustainable future."
+      ],
+      "Compliance with Environmental Legislation": [
+        "WEL maintains full compliance with all applicable environmental laws and regulations across our operational regions. We proactively seek voluntary certiﬁcations, implement best practices, and continually strive to exceed environmental compliance standards."
+      ],
+      "Action Framework": [
+        "Energy Audits: We conduct annual energy audits to identify inefﬁciencies in processes and equipment, implementing corrective actions to enhance energy performance.",
+        "Waste Reduction Campaigns: Employee-driven waste reduction initiatives have been introduced, alongside training for proper waste segregation and recycling stations at all locations.",
+        "Water Recycling Systems: Water recycling and reuse systems have been implemented across major manufacturing facilities, supporting reduced freshwater use and progress toward Zero Liquid Discharge.",
+        "Biodiversity Preservation: WEL works with environmental experts to assess and mitigate biodiversity impacts, actively restoring any affected habitats."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency",
+        "targets": [
+          {
+            "target": "Reduce energy Intensity by 10% by 2027 across all facilities through energy-efﬁcient equipment.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Increase renewable energy share in operations by 20% by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct annual energy audits across 100% of manufacturing sites by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve a minimum 5% year-on-year reduction in diesel consumption, supported by transition to EV-based internal logistics",
+            "baseline": "2022",
+            "deadline": "Year-on-year"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution Reduction",
+        "targets": [
+          {
+            "target": "Achieve a 10% reduction in air pollutants (including NOx, SOx, and particulate matter) by 2027. WEL will implement air pollution control technologies in its facilities and monitor emissions in line with national and global standards.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Achieve a 30% reduction in total waste by 2027 through waste minimization, repurposing, and responsible disposal. By 2027, achieve zero waste to landﬁll for 70% of our operational sites.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Increase repurposing rates by 25% by 2027, ensuring proper waste segregation and reuse of materials.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain 100% hazardous waste disposal through authorized recyclers by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Carbon Emissions Reduction",
+        "targets": [
+          {
+            "target": "Reduce Scope 1, Scope 2 & Scope 3 GHG emissions by 20% by 2027 as part of our long-term commitment to achieving net-zero emissions by 2030 for Scope 1 and Scope 2, and by 2040 for Scope 3.",
+            "baseline": "2022",
+            "deadline": "2027; net-zero by 2030 for Scope 1 and Scope 2, and by 2040 for Scope 3"
+          }
+        ]
+      },
+      {
+        "area": "Materials and Chemicals Management",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with hazardous material handling and disposal regulations across all facilities by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 100% tracking of MSDS and hazardous materials across all sites by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Water Use Reduction",
+        "targets": [
+          {
+            "target": "Reduce freshwater consumption by 10% by 2027 through water recycling systems and efﬁcient water use practices at all manufacturing sites and achieve Zero liquid discharge by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve 30% water recycling and reuse across operations by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain 100% reuse of treated wastewater for gardening, internal cleaning, and utilities, as currently practiced by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life (EoL) & Lifecycle Stewardship",
+        "targets": [
+          {
+            "target": "Ensure 100% of end-of-life solar modules are recycled by as per govt of India guidelines. WEL will collaborate with certiﬁed recycling partners and establish product return programs to minimize e-waste by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure minimum 50% of EoL modules (sold in India) routed to authorized recyclers by 2028, aligned with E-Waste Rules 2022.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct Life Cycle Assessments (LCA) for at least 30% of product categories by 2027, leveraging Waaree’s EPD-certified modules",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance rate for safety testing across all products.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero product-safety related incidents by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Expand testing, validation, and reliability through Waaree’s NABL-accredited R&D lab.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Environmental Advocacy",
+        "targets": [
+          {
+            "target": "Participate in at least 5 national or international environmental policy advocacy forums annually.",
+            "baseline": "2022",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Launch 3 community environmental awareness programs focused on renewable energy and sustainability by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from Use of Products",
+        "targets": [
+          {
+            "target": "Reduce the environmental impact from the use of WEL products by enhancing product efﬁciency by 2% by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Increase product energy yield by 10% while lowering the ecological footprint of product installation and operation by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct LCA for 20% products by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity & Land Use",
+        "targets": [
+          {
+            "target": "Conduct biodiversity impact assessments for all new land-based projects by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Implement ecosystem preservation measures at all manufacturing sites (tree plantation, soil conservation, pollution prevention).",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Sustainability Ofﬁcer",
+        "duty": "Oversees the implementation of this policy, ensures compliance with environmental regulations, and reports on progress."
+      },
+      {
+        "role": "Environmental Task Force",
+        "duty": "A cross-functional team monitors day-to-day implementation of environmental initiatives."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Oversees implementation of this policy, ensuring alignment with the company's overall strategy."
+      },
+      {
+        "role": "Employees",
+        "duty": "Receive annual training on environmental responsibilities and are encouraged to contribute ideas for improving performance."
+      }
+    ],
+    "monitoring": "Reporting: Progress is reported regularly through the annual Sustainability Report and shared with all stakeholders.\n\nInternal Audits: WEL conducts internal environmental audits twice yearly to ensure compliance and identify areas for improvement.\n\nExternal Veriﬁcation: An independent third party will verify our environmental performance data annually.\n\nThe Environmental Policy is publicly available on WEL website and shared through various stakeholder communication channels.\n\nEmployees are kept informed of updates and expected to integrate these practices into their work.",
+    "reviewMechanism": "WEL remains committed to leading the renewable energy sector with sustainability at the core. We continually review and enhance our environmental practices, setting new benchmarks and innovating to drive positive change.\n\nThe Corporate Sustainability team is responsible for overseeing the implementation and review of this policy. This policy will be reviewed annually to ensure its effectiveness and relevance. Updates and changes will be communicated to all stakeholders as necessary, reﬂecting any operational or regulatory changes, and adapting to evolving environmental challenges."
+  },
+  "sourcePath": "Policies - Kenal/Waaree (2026)/Environment Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Waaree (2026)/Environment Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 14765,
+  "parsedAt": "2026-09-11T07:32:02.593Z"
+}

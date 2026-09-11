@@ -1,0 +1,369 @@
+{
+  "id": "saptgir-policies",
+  "name": "Saptgir - Policies",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Policy 1.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Saptagir Camphor Private Limited",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "1",
+          "address": "Vaishnavi's Cynosure, 5th Floor, Telecom Nagar, Gachibowli, Hyderabad - 500032",
+          "primaryFunction": ""
+        },
+        {
+          "location": "2",
+          "address": "13.5 Kms, Gooty Road, B. Kothapalli - 515731, Anantapur (Dist) A.P. INDIA",
+          "primaryFunction": ""
+        },
+        {
+          "location": "3",
+          "address": "3C/2, Mariamma Street, Near Teppakulam, New Ramnad Road, Madurai - 625009, Tamil Nadu, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "4",
+          "address": "No. 106/43B, Jeeva Nagar, (Velan Nagar 1st Street) E.N. Road, Korukkupet, Chennai - 600021, Tamil Nadu, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "5",
+          "address": "No. 51, 5th Cross, 2nd Main Road, Chamarajpet, Bangalore - 560018",
+          "primaryFunction": ""
+        },
+        {
+          "location": "6",
+          "address": "54-3/1-5A, 9th Block, Plot No.44, 2nd Cross Rd, J. Auto Nagar, Auto Nagar, Vijayawada, Andhra Pradesh - 520007",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Saptagir Camphor Private Limited, we are dedicated to sustainable growth and high standards of environmental stewardship. As a key player in camphor manufacturing, we strive to reduce our environmental impact through resource efficiency, pollution prevention, and continuous improvement. We engage stakeholders to promote responsible practices across our value chain and support biodiversity through green belt development and eco-conscious infrastructure. As a UN Global Compact signatory, we align with global environmental principles and contribute to the broader sustainability agenda.",
+      "declaration": "Saptagir Camphor Private Limited is proud of its current initiatives and actions that continuously drive sustainability forward.\n\nSaptagir Camphor Private Limited remains steadfast in its dedication to Environment stewardship, integrating sustainability into the core of its operations. We continuously evaluate and enhance our Environment practices, setting progressive benchmarks and fostering innovation to drive positive change within the chemical manufacturing industry.",
+      "scope": "This policy is applicable across all Saptagir Camphor Private Limited facilities, employees, Workers, contractors, Sub-Contractors, suppliers, and other stakeholders globally, including the communities in which we operate. All sites are mentioned below. We extend our Environment commitment to all relevant supply chain partners as well."
+    },
+    "focusAreas": [
+      "Energy Efficiency and GHG Emissions Reduction",
+      "Air Pollution Control",
+      "Materials, Chemicals, and Waste Management",
+      "Water Conservation",
+      "Biodiversity Protection",
+      "Environment Impact from Use of Products",
+      "Environment Impact from Product End-of-Life",
+      "Customer Health and Safety",
+      "Environment Services and Advocacy",
+      "Compliance with Environment Legislation",
+      "Energy Efficiency",
+      "Air Pollution Reduction",
+      "Waste Management",
+      "Carbon Emissions Reduction",
+      "Materials and Chemicals Management",
+      "Water Use Reduction",
+      "End-of-Life Product Management",
+      "Environment Advocacy",
+      "Environment Impacts from Use of Products",
+      "Sustainable Packaging",
+      "Green Infrastructure and Design"
+    ],
+    "qualitative": {
+      "Energy Efficiency and GHG Emissions Reduction": [
+        "In alignment with national and global climate action goals, Saptagir Camphor has adopted a structured energy management strategy focused on minimizing GHG emissions. We implement advanced energy-saving technologies and real-time energy monitoring systems to track and reduce energy intensity across all facilities. Our initiatives not only contribute to a reduced carbon footprint but also support our broader ambition of climate resilience and low-carbon growth."
+      ],
+      "Air Pollution Control": [
+        "Saptagir Camphor has adopted industry-leading air quality management practices and advanced control technologies to reduce air pollutants such as particulate matter, NOx, and SOx. These measures ensure that our operations consistently achieve air quality levels well below national and international standards."
+      ],
+      "Materials, Chemicals, and Waste Management": [
+        "We are dedicated to using Environmently friendly materials while minimizing hazardous chemicals in our products and processes. Saptagir Camphor employs safer alternatives, optimizes raw material use, and manages hazardous and non-hazardous waste responsibly."
+      ],
+      "Water Conservation": [
+        "Through the adoption of water-efficient technologies and comprehensive water management practices, we have significantly reduced water consumption in our processes. Saptagir Camphor ensures sustainable water use by treating and reusing water for secondary applications, thus preventing water pollution and supporting overall resource conservation."
+      ],
+      "Biodiversity Protection": [
+        "Protecting local biodiversity around our facilities is a priority. We have established policies to minimize land disturbance and prevent pollution, ensuring that our operations do not adversely affect local ecosystems while upholding our broader Environment stewardship goals."
+      ],
+      "Environment Impact from Use of Products": [
+        "Recognizing that our products contribute to Environment impact from production through end-of-life, we continuously innovate our manufacturing and disposal practices. We design our products to deliver high performance with minimal Environment degradation and have systems in place for responsible recycling and disposal of product by-products."
+      ],
+      "Environment Impact from Product End-of-Life": [
+        "Saptagir Camphor Private Limited is committed to minimizing the environmental impact associated with the end-of-life stage of its products. We have established structured mechanisms for the safe collection, handling, and disposal of residual materials and packaging waste. In collaboration with authorized recycling partners and waste management agencies, we ensure environmentally responsible disposal practices that align with national hazardous waste regulations. Our aim is to support circular economy principles by maximizing material recovery and reducing long-term environmental liabilities."
+      ],
+      "Customer Health and Safety": [
+        "Saptagir Camphor is committed to producing safe products that meet the highest health and safety standards. Through rigorous design, testing, and quality controls, we ensure that our products not only protect customer well-being but also contribute to a safer operational environment for installers, technicians, and all associated stakeholders."
+      ],
+      "Environment Services and Advocacy": [
+        "We actively engage in Environment education and advocacy initiatives. Saptagir Camphor supports clean production practices and sustainability efforts within the community through continuous outreach, awareness campaigns, and policy engagement aimed at promoting eco-friendly practices and a cleaner future."
+      ],
+      "Compliance with Environment Legislation": [
+        "Saptagir Camphor Private Limited is fully committed to complying with all applicable Environment laws and regulations. We not only meet but also strive to exceed these standards by pursuing voluntary certifications, implementing best practices, and ensuring that our operations adhere to the highest levels of Environment stewardship as outlined in our internal framework."
+      ],
+      "Action Framework": [
+        "Energy Audits: We conduct regular energy audits to identify inefficiencies in processes and equipment, implementing corrective actions to enhance energy performance.",
+        "Waste Reduction Campaigns: Employee-driven waste reduction initiatives have been introduced, alongside training for proper waste segregation and recycling stations at all locations.",
+        "Water Recycling Systems: Water recycling and reuse systems have been introduced across all manufacturing plants, ensuring treated wastewater is safely discharged to protect the environment.",
+        "Biodiversity Preservation: Saptagir Camphor works with Environment experts to assess and mitigate biodiversity impacts, actively restoring any affected habitats."
+      ],
+      "Communication and Transparency": [
+        "The Environment Policy is publicly available on Saptagir Camphor’s website and shared through various stakeholder communication channels.",
+        "Employees are kept informed of updates and expected to integrate these practices into their work."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Overall sustainability progress",
+        "targets": [
+          {
+            "target": "Sets FY 2022-23 as the Baseline for tracking our sustainability progress.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Energy Efficiency",
+        "targets": [
+          {
+            "target": "Reduce overall energy consumption by 7% by FY 2027-28 across all manufacturing and operational units through the implementation of energy-efficient technologies, optimization of production systems, and increased utilization of renewable fuel sources such as groundnut husk.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Achieve a 20% increase in the use of renewable energy at key facilities by FY 2027-28, reducing dependency on non-renewable energy sources.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution Reduction",
+        "targets": [
+          {
+            "target": "Achieve a minimum 12% reduction in total emissions of key air pollutants (Particulate Matter (PM), NOx, and SOx) by FY 2027-28, by deploying advanced air pollution control equipment, continuous stack monitoring systems.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Maintain emissions at least 10% below applicable CPCB/SPCB regulatory thresholds across all stacks by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Maintain 100% quarterly stack emissions monitoring at all production units by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Attain a 15% reduction in total waste generation by FY 2027-28 through process improvements, waste minimization strategies, and material recovery initiatives.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Improve material reuse and recycling efficiency by 25% through enhanced segregation, recycling infrastructure, and awareness campaigns at the shopfloor level.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Our goal is to maintain constant waste levels over a 10-year period while adhering to stringent chemical handling and disposal guidelines.",
+            "baseline": "FY 2022-23",
+            "deadline": "10-year period"
+          }
+        ]
+      },
+      {
+        "area": "Carbon Emissions Reduction",
+        "targets": [
+          {
+            "target": "Reduce Scope 1, Scope 2, and Scope 3 greenhouse gas (GHG) emissions by 20% by FY 2027-28, reinforcing our long-term commitment to achieving carbon neutrality.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Materials and Chemicals Management",
+        "targets": [
+          {
+            "target": "Lower the usage of hazardous chemicals by 20% by FY 2027-28 through the transition to safer alternatives and improved process management.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Maintain 100% compliance with hazardous material handling and disposal regulations across all manufacturing locations by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Water Use Reduction",
+        "targets": [
+          {
+            "target": "Decrease water consumption by 10% by FY 2027-28 via the integration of closed-loop recycling systems, efficient water uses technologies, and enhanced water stewardship practices.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Maintain 100% quarterly wastewater quality testing and reporting across all effluent treatment facilities.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Provide 100% of employees with annual training on water conservation, reuse protocols, and spill prevention measures by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "End-of-Life Product Management",
+        "targets": [
+          {
+            "target": "Ensure that 50% of product packaging waste is collected and recycled through Extended Producer Responsibility (EPR) and third-party collaborations by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Develop and implement a take-back and safe-disposal system for industrial containers and other post-consumer material by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Ensure 100% of post-consumer hazardous packaging waste is safely disposed of by FY 2027-28, in full compliance with national waste regulations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Achieve 20% material recovery from end-of-life packaging and container waste by FY 2027-28 through recycling and reuse",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with product safety testing protocols across all product categories by FY 2027-28, including physical, chemical, and toxicological tests.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Ensure 100% of products have up-to-date Material Safety Data Sheets (MSDS) and accurate labeling reflecting current risk, hazard symbols, and handling guidelines by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Train 100% of R&D and production staff on toxicological risk, GHS classification, and chemical safety regulations by FY 2027-28, with refresher sessions every 12 months.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Maintain Zero (0) product-related health and safety complaints annually by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Environment Advocacy",
+        "targets": [
+          {
+            "target": "Launch three community-based Environment awareness initiatives focusing on renewable energy, responsible consumption, and sustainability by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Environment Impacts from Use of Products",
+        "targets": [
+          {
+            "target": "Increase average product energy efficiency (burn rate, efficacy, etc.) by 10% by FY 2027-28, reducing downstream energy usage by end-users.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Achieve a 15% reduction in eco-toxic substances released during product use or disposal by FY 2027-28 through green chemistry and product reformulation",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Introduce at least 1 new low-impact product variants by FY 2027-28, specifically designed to minimize environmental load.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Packaging",
+        "targets": [
+          {
+            "target": "Reduce packaging material usage by 15% by FY 2027-28 without compromising product safety and quality.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Green Infrastructure and Design",
+        "targets": [
+          {
+            "target": "Implement natural lighting, passive cooling, and sustainable landscaping across 35% of office and plant premises by FY 2027-28.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environment Safety Office",
+        "duty": "Oversees the implementation of this policy, ensures compliance with Environment regulations, and reports on progress."
+      },
+      {
+        "role": "Environment Task Force",
+        "duty": "A cross-functional team monitors day-to-day implementation of Environment initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Receive annual training on Environment responsibilities and are encouraged to contribute ideas for improving performance."
+      }
+    ],
+    "monitoring": "Reporting: Progress is reported regularly through the annual Sustainability Report and shared with all stakeholders.\n\nInternal Audits: Saptagir Camphor conducts internal Environment audits yearly to ensure compliance and identify areas for improvement.\n\nExternal Verification: An independent third party will verify our Environment performance data annually.",
+    "reviewMechanism": "The Environment Safety Officer is responsible for overseeing the implementation and review of this policy. This policy will be reviewed annually to ensure its effectiveness and relevance. Updates and changes will be communicated to all stakeholders as necessary, reflecting any operational or regulatory changes, and adapting to evolving Environment challenges."
+  },
+  "sourcePath": "Policies - Kenal/Saptgir - Policies/Environmental Policy 1.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Saptgir - Policies/Environmental Policy 1.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 14715,
+  "parsedAt": "2026-09-11T07:28:08.573Z"
+}

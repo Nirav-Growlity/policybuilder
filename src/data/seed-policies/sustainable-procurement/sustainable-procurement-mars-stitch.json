@@ -1,0 +1,234 @@
+{
+  "id": "sustainable-procurement-mars-stitch",
+  "name": "Mars Stitch",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Mars Stitch Ltd.",
+      "industry": "",
+      "site": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+      "sites": [
+        {
+          "location": "Mars Stitch Ltd.",
+          "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Mars Stitch Ltd. is committed to fostering sustainable practices throughout its procurement processes. As a leader in the textile and garment industry, we recognize the importance of sourcing materials and services responsibly to minimize our environmental footprint and promote ethical standards. Our Sustainable Procurement Policy outlines our commitment to integrating environmental, social, and economic considerations into all procurement decisions.\n\nAt Mars Stitch Ltd., we believe that sustainability is integral to our success. This policy serves as a framework for ensuring that our supply chain aligns with our values of environmental stewardship, human rights, and business ethics. By working collaboratively with our suppliers and stakeholders, we aim to drive positive change and create long-term value for our communities and customers.",
+      "declaration": "Mars Stitch Ltd. is dedicated to embedding sustainability into every aspect of our procurement processes. By prioritizing environmentally friendly practices, ethical labor standards, and economic fairness, we aim to build a resilient and responsible supply chain. Through rigorous supplier evaluations and continuous collaboration, we are committed to setting a benchmark for sustainable procurement excellence.",
+      "scope": "This policy applies to all procurement activities conducted by Mars Stitch Ltd., including the sourcing of raw materials, goods, and services. It covers all employees, worker, suppliers, contractors, contractual worker and business partners involved in our supply chain."
+    },
+    "focusAreas": [
+      "Environmental Responsibility",
+      "Ethical Labor Practices",
+      "Fair Trade",
+      "Supplier Diversity",
+      "Compliance and Transparency"
+    ],
+    "qualitative": {
+      "Environmental Responsibility": [
+        "Source materials and services that align with environmental sustainability goals, prioritizing renewable and recycled resources.",
+        "Engage with suppliers to adopt eco-friendly manufacturing practices and reduce carbon emissions.",
+        "Promote the use of sustainable packaging to minimize waste and environmental impact."
+      ],
+      "Ethical Labor Practices": [
+        "Conduct regular assessments to ensure suppliers uphold labor rights and prohibit child and forced labor.",
+        "Provide training programs to suppliers on implementing ethical labor standards.",
+        "Build long-term partnerships with suppliers committed to improving workplace safety and human rights."
+      ],
+      "Fair Trade": [
+        "Partner with suppliers certified under fair trade standards to promote equitable economic growth.",
+        "Support local businesses to strengthen regional economies and reduce transportation emissions.",
+        "Collaborate with suppliers to establish equitable payment practices and improve working conditions."
+      ],
+      "Supplier Diversity": [
+        "Develop programs to support small and minority-owned businesses in participating in the procurement process.",
+        "Create opportunities for diverse suppliers to contribute to supply chain innovation.",
+        "Foster mentoring relationships to help small businesses build capacity and sustainability."
+      ],
+      "Compliance and Transparency": [
+        "Enforce strict adherence to Mars Stitch Ltd.'s Supplier Code of Conduct across all suppliers."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Responsibility",
+        "targets": [
+          {
+            "target": "Source 15% of raw materials from renewable resources",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Reduce packaging waste by 20%, ensuring 100% of packaging materials are reusable or biodegradable",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Partner with 5 suppliers annually to implement environmentally sustainable practices",
+            "baseline": "2023",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Practices",
+        "targets": [
+          {
+            "target": "Audit 100% of Tier 1 and Tier 2 suppliers annually for labor compliance",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Train 100% of suppliers on ethical labor practices, ensuring participation in annual workshops",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Develop long-term contracts with 20% of high-performing ethical suppliers",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Fair Trade",
+        "targets": [
+          {
+            "target": "Increase procurement from fair trade-certified suppliers to 50%",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Reduce supply chain-related emissions by 15% through enhanced logistics and local sourcing initiatives",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Collaborate with 5 suppliers annually to promote equitable payment practices",
+            "baseline": "2023",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Diversity",
+        "targets": [
+          {
+            "target": "Achieve 15% growth in contracts with small and minority-owned businesses",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct biannual diversity reviews for suppliers to evaluate inclusion metrics",
+            "baseline": "2023",
+            "deadline": "Biannual"
+          },
+          {
+            "target": "Partner with 5 new diverse suppliers annually, providing mentorship to help improve their capacity",
+            "baseline": "2023",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Compliance and Transparency",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers sign the Supplier Code of Conduct",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Dedicated committee",
+        "duty": "This committee is responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "S.M Azmal Huda — General Manager(Operation), President",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Mahmodul Hasan — Manager – HR, Admin & Com., Vice President",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Eva Akter — Executive-Welfare, Member Secretary",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Nonda Gopal — Sr. Executive -Compliance, Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Md.Shanta — Maintenance In-charge, Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Md. Masud — Asst. Manager-Admin, Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Mr. Antar — Asst. Manager-Store, Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Md. Samim — Cutting Asst., Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Md. Nayeem Hosan — Quality Inspector, Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Mst. Ruma Akter — Operator(Sewing), Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Mst. Jushna Begam — Operator(Sewing), Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "Mst. Mira — Finishing Asst., Member",
+        "duty": "Participate in the dedicated committee responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      }
+    ],
+    "monitoring": "Mars Stitch Ltd. is committed to continuous improvement in sustainable procurement through:\n\nRegular updates to the Sustainable Procurement Policy to reflect evolving industry standards and best practices.\n\nEstablishing collaborative forums with suppliers to share innovations and address sustainability challenges.\n\nMonitoring and evaluating procurement performance through key performance indicators (KPIs).\n\nEncouraging feedback from suppliers, employees, and stakeholders to identify improvement opportunities.\n\nTo ensure transparency and accountability:\n\nAnnual Procurement Report: Publish a detailed report on sustainable procurement performance, including metrics and case studies.\n\nStakeholder Engagement: Conduct annual supplier summits to discuss sustainability goals and progress.\n\nIncident Reporting: Maintain a transparent mechanism for reporting and addressing procurement-related violations.\n\nMars Stitch Ltd. enforces strict measures for violations of the Sustainable Procurement Policy. Suppliers found in breach of the policy may face:\n\nContract termination for severe or repeated violations.\n\nTemporary suspension pending investigation of compliance issues.\n\nReporting of violations to relevant authorities for legal action.\n\nMars Stitch Ltd. ensures that all actions are conducted fairly and transparently, prioritizing remediation wherever possible.",
+    "reviewMechanism": "This policy will be reviewed annually by the Sr. Executive -Compliance, ensuring alignment with Mars Stitch Ltd.'s sustainability goals and global standards. The Sustainability Office will assess the policy's effectiveness, incorporating stakeholder feedback and addressing emerging challenges to maintain relevance and impact."
+  },
+  "sourcePath": "Policies - Kenal/Mars Stitch/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Mars Stitch/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 9693,
+  "parsedAt": "2026-09-11T07:24:36.579Z"
+}

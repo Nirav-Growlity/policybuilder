@@ -1,0 +1,546 @@
+{
+  "id": "birla",
+  "name": "Birla",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Stewardship Policy_grw_v1_3012.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Birla Jute Mills",
+      "industry": "",
+      "site": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India",
+      "sites": [
+        {
+          "location": "Birla Jute Mills",
+          "address": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India",
+          "primaryFunction": "Manufacturing of jute products"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Birla Jute Mills, we recognize our responsibility to operate sustainably and minimize our environmental impact. As a manufacturer of jute products, we understand the importance of preserving natural resources and reducing our carbon footprint. Our commitment extends beyond compliance with regulations to actively seeking opportunities for continuous improvement in environmental performance. By integrating sustainable practices into our operations, we aim to uphold our legacy of quality while safeguarding the environment for future generations.",
+      "declaration": "Environmental Conservation: To conserve natural resources and biodiversity by minimizing resource consumption and promoting efficient use of energy and water.\n\nPollution Prevention: To prevent pollution through the adoption of clean technologies and processes that reduce emissions, waste generation, and environmental contamination.\n\nCompliance: To comply with applicable environmental laws, regulations, and other requirements relevant to our operations.\n\nContinuous Improvement: To continually improve our environmental performance by setting and reviewing environmental objectives and targets.\n\nEffluent discharge quality control and wastewater management",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:"
+    },
+    "focusAreas": [
+      "Water Conservation and Management",
+      "Energy Efficiency",
+      "Greenhouse Gas Emission Reduction",
+      "Management of Waste",
+      "Preservation of Biodiversity",
+      "Prevention and Mitigation of Local and Accidental Contamination",
+      "Control of Air and Noise Pollution",
+      "Responsible Use of Raw Materials and Chemicals",
+      "Prevention of Soil Degradation",
+      "Environment Effects of product Utilization",
+      "Environment Effects of product End-of-use",
+      "Customer Health and Safety",
+      "Sustainable Consumption"
+    ],
+    "qualitative": {
+      "Water Conservation and Management": [
+        "We aim to minimize water consumption by implementing efficient water management practices in soaking processes.",
+        "Our commitment includes exploring water recycling technologies to reduce freshwater usage and ensure sustainable water stewardship in jute manufacturing.",
+        "We strive to reduce our water footprint and uphold responsible water management practices within the jute industry.",
+        "We continuously monitor our water consumption using advanced metering systems to identify and address inefficiencies in our jute manufacturing processes.",
+        "Our company treats wastewater with state-of-the-art filtration and chemical treatment systems to ensure that discharge meets stringent environmental standards and prevents local water contamination.",
+        "We have implemented rainwater harvesting systems and advanced water recycling technologies, such as reverse osmosis, to significantly reduce our reliance on freshwater sources for jute production.",
+        "Our firm promotes water-saving practices among employees through comprehensive training and awareness programs to foster a culture of conservation within our manufacturing operations."
+      ],
+      "Energy Efficiency": [
+        "We are accelerating our transition to renewable energy sources such as solar and biomass to reduce our reliance on fossil fuels.",
+        "We are committed to enhancing energy efficiency across all facets of jute processing operations by investing in state-of-the-art equipment and adopting best practices in energy management.",
+        "Our commitment includes investing in on-site renewable energy generation and exploring partnerships for off-site renewable energy procurement.",
+        "The company is increasing its use of renewable energy sources, such as solar panels and wind turbines, to power our jute mills and reduce our overall carbon footprint.",
+        "Our firm conducts energy audits with tools like thermal imaging and retrofits equipment with energy-efficient technologies to enhance our operational efficiency and lower energy consumption.",
+        "We engage employees in energy-saving initiatives through targeted training programs and incentive schemes to promote active participation in reducing our energy usage."
+      ],
+      "Greenhouse Gas Emission Reduction": [
+        "Through innovation and continuous research, we aim to develop and implement sustainable solutions that contribute to a low-carbon economy and resilient future for Birla Jute Mills.",
+        "We aim to reduce GHG emissions through transportation by prioritizing low-emission vehicles and optimizing routes to minimize our carbon footprint.",
+        "We aim to reduce GHG emissions across our entire scope by implementing comprehensive strategies that cover all aspects of our operations, from raw material sourcing to product distribution and end-of-life management.",
+        "Through employee training programs, we educate our workforce on best practices for energy conservation and GHG reduction.",
+        "The firm invests in renewable energy projects, such as solar farms, and participates in carbon offset initiatives like reforestation to mitigate our environmental impact.",
+        "Our company sets ambitious greenhouse gas reduction targets in alignment with global standards, using carbon tracking software and conducting regular environmental audits to monitor progress.",
+        "We educate our employees on the benefits of adopting electric vehicles and low-emission technologies, promoting their use to further reduce our overall greenhouse gas emissions and support our environmental goals."
+      ],
+      "Management of Waste": [
+        "We are committed to minimizing waste generation in manufacturing process through efficient material utilization and recycling initiatives.",
+        "We aim to minimize Hazardous & non-hazardous waste generated from jute spinning operations.",
+        "We aim at maximizing the reuse of jute fibre waste and other by-products across our operations.",
+        "We aim to educate and engage employees in waste reduction and recycling efforts, fostering a culture of environmental responsibility.",
+        "We categorize waste into hazardous, non-hazardous, and recyclable materials using automated sorting systems to ensure proper handling and disposal in jute production.",
+        "The company promotes recycling and material reuse by implementing waste-to-energy technologies and material recovery facilities, minimizing landfill waste from jute manufacturing.",
+        "Our firm follows best practices for waste segregation with color-coded bins and training, ensuring effective management of waste generated during jute production.",
+        "We work to minimize waste generation at the source through efficient production techniques, reducing scrap and excess in jute manufacturing processes."
+      ],
+      "Preservation of Biodiversity": [
+        "We prioritize biodiversity conservation by implementing land management practices that protect natural habitats and promote biodiversity in jute cultivation areas.",
+        "Our commitment includes integrating biodiversity considerations into land use planning and operational practices to sustain ecosystem health.",
+        "By supporting wildlife corridors and adopting responsible land stewardship practices, we aim to preserve biodiversity hotspots and enhance ecosystem resilience.",
+        "We conduct environmental impact assessments before initiating jute manufacturing projects to minimize disruption to local ecosystems and protect biodiversity.",
+        "We monitor our biodiversity initiatives with ecological surveys to ensure their effectiveness and positive impact on local ecosystems affected by our jute operations.",
+        "Our firm maintains green spaces and supports reforestation projects with native species around jute mills to enhance local biodiversity and ecological balance."
+      ],
+      "Prevention and Mitigation of Local and Accidental Contamination": [
+        "We focus on preventing contamination incidents through rigorous risk assessment, robust operational controls, and emergency response preparedness.",
+        "By training employees on safe handling practices and maintaining strict adherence to environmental regulations, we ensure the protection of local ecosystems and communities.",
+        "Our approach includes conducting risk assessments and implementing emergency response plans to minimize the environmental impact of potential spills.",
+        "We collaborate with local authorities and stakeholders through joint response initiatives to enhance contamination prevention efforts and protect community safety.",
+        "The company conducts regular equipment inspections and maintenance to prevent accidental spills and leaks that could lead to contamination during jute processing."
+      ],
+      "Control of Air and Noise Pollution": [
+        "We are committed to implementing comprehensive emission reduction strategies to minimize both hazardous and non-hazardous (PM10, PM2.5, SO2, Nox, VOCs, etc.) emissions from our manufacturing processes, ensuring a safer and healthier environment for all.",
+        "Our commitment is to use eco-friendly raw materials and production methods that contribute to lower air pollution levels.",
+        "We aim to regularly maintaining and upgrading our machinery to minimize the release of harmful gases and ensure compliance with air quality standards.",
+        "We focus on investing in innovative technology and equipment designed to reduce noise emissions during our manufacturing processes.",
+        "We aim to conduct regular noise level assessments to ensure our facilities comply with local noise regulations and standards.",
+        "We focus on educating our employees about the importance of air & noise reduction and encouraging their active participation in air & noise control initiatives.",
+        "We minimize emissions of hazardous air pollutants, such as sulfur oxides (Sox) and nitrogen oxides (NOx), from our jute manufacturing operations by installing high-efficiency electrostatic precipitators and selective catalytic reduction systems to capture and reduce these pollutants.",
+        "The company implements noise control measures, including acoustic barriers and soundproofing technologies, to reduce noise impacts from machinery and equipment used in our jute mills.",
+        "Our firm regularly monitors air quality and noise levels using real-time monitoring systems to ensure compliance with regulatory standards and effectively manage our environmental impact."
+      ],
+      "Responsible Use of Raw Materials and Chemicals": [
+        "We are committed to using raw materials and chemicals responsibly in jute processing, prioritizing eco-friendly alternatives and minimizing hazardous substances.",
+        "we ensure safe handling and disposal of materials while minimizing environmental risks in jute manufacturing.",
+        "We promoting sustainable sourcing practices and adopting green chemistry principles, we aim to reduce our ecological footprint and promote resource efficiency.",
+        "We source raw materials for jute production responsibly by prioritizing suppliers with sustainable practices and certifications to minimize the environmental impact.",
+        "The company ensures safe handling, storage, and disposal of chemicals used in jute dyeing and finishing by implementing advanced safety systems and adhering to strict management practices in our mills.",
+        "Our firm optimizes material usage and reduces waste through precision manufacturing techniques, such as just-in-time production, and material optimization software to enhance resource efficiency in jute production.",
+        "We educate employees on sustainable practices for using raw materials and chemicals through comprehensive training programs to foster a culture of responsibility and efficiency in our jute mills."
+      ],
+      "Prevention of Soil Degradation": [
+        "Our commitment extends to maintaining soil fertility and promoting sustainable agricultural practices that support healthy ecosystems.",
+        "By integrating soil health considerations into our land management strategies, we aim to protect soil quality and preserve productive landscapes for jute cultivation.",
+        "We implement soil conservation practices, such as cover cropping and contour plowing, in areas related to jute cultivation to protect soil structure and fertility.",
+        "The company prevents soil contamination through effective waste management and chemical usage policies, using containment systems and regular soil testing to maintain soil health in jute farming areas."
+      ],
+      "Environment Effects of product Utilization": [
+        "We aim to prioritize the use of biodegradable and eco-friendly raw materials in manufacturing processes to minimize environmental impact.",
+        "We strive to integrate circular economy principles into our product design and development process, aiming for closed-loop systems wherever feasible.",
+        "We aim to promote the sustainable use of jute products through education and awareness programs aimed at customers and clients.",
+        "We assess the environmental impacts of our jute products throughout their lifecycle using life cycle assessment (LCA) tools to identify and mitigate potential impacts during use by customers.",
+        "The company provides guidelines for the sustainable use and disposal of jute products through detailed product information and support services to encourage responsible customer practices and minimize environmental impact.",
+        "Our firm identifies opportunities for improvement and innovation through regular assessments and research collaborations, aiming to enhance the sustainability of our jute products during their use phase."
+      ],
+      "Environment Effects of product End-of-use": [
+        "We strive to manage non-hazardous waste responsibly, promoting recycling and reuse wherever feasible.",
+        "We aim to implement environmentally sound disposal methods for jute products, prioritizing methods that minimize environmental impact.",
+        "We aim to educate consumers and stakeholders on responsible disposal practices for jute products to reduce environmental impact.",
+        "We evaluate the environmental impacts associated with the disposal of our jute products using advanced waste management analytics, implementing measures to mitigate negative effects and support sustainable end-of-life management.",
+        "The company establishes recycling programs and take-back schemes with certified partners to manage end-of-life jute products responsibly and promote sustainable disposal practices.",
+        "Our firm develops innovative solutions for product reuse and recycling through joint ventures and research initiatives, supporting a circular economy for jute products and minimizing waste.",
+        "We educate customers on responsible disposal practices through awareness campaigns and provide convenient recycling options to reduce environmental pollution and waste from end-of-life jute products."
+      ],
+      "Customer Health and Safety": [
+        "We aim to ensure the safety of our jute products through rigorous quality control measures.",
+        "We prioritize the use of non-toxic and environmentally friendly materials in our manufacturing processes.",
+        "We commit to complying with all relevant health and safety regulations and standards.",
+        "We adhere to stringent safety standards in the design and manufacturing of our jute products by conducting rigorous testing and quality control measures to ensure the safety and reliability of our products.",
+        "The company eliminates harmful substances from our jute products through dedicated research and development efforts, ensuring compliance with international safety regulations and enhancing consumer safety.",
+        "Our firm provides clear instructions and safety information to customers through comprehensive user guides and support services, ensuring that our jute products are used safely and responsibly."
+      ],
+      "Sustainable Consumption": [
+        "We aim to enhance awareness among our customers about the environmental benefits of using jute products over synthetic alternatives.",
+        "We strive to innovate and develop eco-friendly jute products that meet high standards of durability and functionality.",
+        "Our goal is to provide clear and accurate information to consumers about the sustainable attributes of our jute products.",
+        "We promote sustainable consumption practices among our customers through educational campaigns and detailed product information, encouraging responsible behavior and environmental awareness related to our jute products.",
+        "The company encourages the use of our jute products in ways that minimize environmental impact by incorporating sustainable product design and offering support services to promote eco-friendly practices."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Water management",
+        "targets": [
+          {
+            "target": "We aim to reduce water consumption by 5% by FY 2029-30",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "50% increase in process water recycling",
+            "baseline": "FY 2023-24 levels",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Improve wastewater treatment efficiency by 4%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Energy Efficiency",
+        "targets": [
+          {
+            "target": "6% reduction in overall energy consumption",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Lowering energy use per production unit by 5%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increasing renewable energy usage by 10%",
+            "baseline": "FY 2023-24 figures",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Reduction of Greenhouse Gas Emissions",
+        "targets": [
+          {
+            "target": "Lower scope 1 greenhouse gas emissions by 8%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Lower scope 2 greenhouse gas emissions by 8%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Lower scope 3 greenhouse gas emissions by 8%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Cut CO2 emissions per ton of jute by 6%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "4% reduction in overall greenhouse gas intensity",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Waste",
+        "targets": [
+          {
+            "target": "Total waste generation reduction of 5%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Boost production waste recycling rates by 7%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce landfill waste by 4%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Decrease hazardous waste generation by 6%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Preservation of Biodiversity",
+        "targets": [
+          {
+            "target": "Reduce land disturbance impact by 5%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Expand green space around facilities by 7%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase funding for biodiversity projects by 2.5%",
+            "baseline": "FY 2023-24 allocations",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Prevention and Mitigation of Local and Accidental Contamination",
+        "targets": [
+          {
+            "target": "Achieving 100% compliance with spill response training",
+            "baseline": "FY 2023-24 levels",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Lower contamination risks by 8% through enhanced preventive measures",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Control of Air and Noise Pollution",
+        "targets": [
+          {
+            "target": "Achieve 100% air quality regulation compliance",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Cut hazardous and non-hazardous air pollution by 20%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Lower average noise levels by 4-6 dB",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Use of Raw Materials and Chemicals",
+        "targets": [
+          {
+            "target": "Increase the use of sustainable raw materials by 10%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Improve chemical handling practices by 7%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure full compliance with chemical safety standards",
+            "baseline": "FY 2023-24 performance",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Soil Degradation",
+        "targets": [
+          {
+            "target": "Increase soil quality assessments by 10%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Assessment of Environmental Impacts During Product Utilization",
+        "targets": [
+          {
+            "target": "Improve the evaluation of product environmental impacts by 10%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "7% reduction in negative environmental impacts from product use",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Boost customer awareness of product impacts by 8%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Assessment of Environmental Impacts During Product End-of-Use Phases",
+        "targets": [
+          {
+            "target": "Cut waste from end-of-use products by 6%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase recycling rates of end-of-life products by 8%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Cut emissions from product disposal by 5%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Ensuring Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Increase product safety testing frequency by 10%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase product safety testing frequency by 10%",
+            "baseline": "FY 2023-24 practices",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "5% enhancement in customer safety communication",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Promotion of Sustainable Consumption Practices",
+        "targets": [
+          {
+            "target": "Increase customer awareness of sustainable product use by 10%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 7% increase in demand for sustainable products",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Promote sustainable consumption with a 5% growth in related product sales",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Training",
+        "targets": [
+          {
+            "target": "Our goal is to ensure that 75% of employees participate in training sessions related to Environmetal issues mentioned above.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Implementation and overall oversight for environmental stewardship policy."
+      },
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Review the Environmental Stewardship Policy and any significant updates or changes."
+      },
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Ensure adequate resources (financial, human, and technical) are allocated to support environmental initiatives and compliance."
+      },
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Regularly review environmental performance reports and ensure that objectives and targets are met."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Ensure compliance with environmental regulations, standards, and best practices."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Conduct regular risk assessments and develop mitigation strategies for environmental risks."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Coordinate and conduct environmental training programs for employees and stakeholders."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Prepare and submit environmental performance reports to senior management and relevant stakeholders."
+      },
+      {
+        "role": "Facility Managers",
+        "duty": "Implement and manage environmental practices and controls specific to their respective facilities."
+      },
+      {
+        "role": "Facility Managers",
+        "duty": "Monitor facility operations for adherence to environmental policies and procedures."
+      },
+      {
+        "role": "Facility Managers",
+        "duty": "Respond to environmental incidents and ensure proper documentation and reporting."
+      },
+      {
+        "role": "Facility Managers",
+        "duty": "Promote and enforce environmental practices among facility staff and encourage participation in training programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental policies, procedures, and best practices in their daily activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any environmental issues, incidents, or suggestions for improvement to their supervisor or the Environmental Management Team."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in environmental training programs and contribute to achieving environmental objectives and targets."
+      },
+      {
+        "role": "Contractors and Partners",
+        "duty": "Adhere to the company’s environmental policies and practices while working on-site."
+      },
+      {
+        "role": "Contractors and Partners",
+        "duty": "Coordinate with facility managers and the Environmental Management Team to ensure alignment with environmental requirements."
+      },
+      {
+        "role": "Contractors and Partners",
+        "duty": "Report any environmental concerns or incidents to the company’s designated contact person."
+      },
+      {
+        "role": "Customers",
+        "duty": "Follow the guidelines provided for the responsible use and disposal of jute products to minimize environmental impact."
+      },
+      {
+        "role": "Customers",
+        "duty": "Provide feedback on the environmental aspects of products and services to help the company improve its environmental performance."
+      },
+      {
+        "role": "Risk Management Team",
+        "duty": "Regularly identify and assess potential environmental risks."
+      },
+      {
+        "role": "Risk Management Team",
+        "duty": "Develop and implement strategies to mitigate identified risks and manage potential incidents."
+      },
+      {
+        "role": "Risk Management Team",
+        "duty": "Maintain and update contingency plans for environmental emergencies and incidents."
+      }
+    ],
+    "monitoring": "Regular Assessments: We will conduct regular risk assessments to identify potential environmental risks associated with our operations, including but not limited to those related to water usage, energy consumption, waste management, and emissions.\n\nRisk Register: We will maintain a risk register to document identified risks, their potential impacts, and the likelihood of their occurrence.\n\nPerformance Monitoring: We will continuously monitor the effectiveness of our risk management strategies through performance metrics and regular audits. This will help ensure that risks are managed effectively and that our environmental goals are being met.\n\nUtilize advanced systems for efficient collection, storage, and analysis of environmental data.\n\nImplement procedures to ensure data accuracy and integrity.\n\nUse real-time systems to track key environmental performance indicators.\n\nConduct regular reviews to assess progress and identify areas for improvement.\n\nDefine KPIs to measure aspects such as water usage, waste production, and carbon emissions.\n\nRegularly update KPIs to reflect operational changes and sustainability priorities.\n\nSet clear, achievable environmental goals and track progress with defined metrics and milestones.",
+    "reviewMechanism": "The Environmental Compliance Officer will conduct annual and ad hoc reviews of this policy.\n\nReview Date\n\nRevision No.\n\nReviewed by\n\nChange Summary\n\nNew Policy\n\nUpdated Reporting section\n\nScope-wise GHG emission reduction targets specified."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Birla/1. Environmental Stewardship Policy_grw_v1_3012.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Birla/1. Environmental Stewardship Policy_grw_v1_3012.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 31179,
+  "parsedAt": "2026-09-11T07:07:20.098Z"
+}

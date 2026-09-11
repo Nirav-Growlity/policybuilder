@@ -1,0 +1,398 @@
+{
+  "id": "pewspl-policies",
+  "name": "PEWSPL Policies",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Stewardship Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Parekh e-Com and Warehousing Services Private Limited",
+      "industry": "",
+      "site": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "Shakambari",
+          "address": "Shakambari Logistic Park-Unit #A-1Premises # 1 to 7Next to All Saint High School,Pise Pipeline Road, Village LonadTal-Bhiwandi - Thane, Maharashtra – 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Lonikand",
+          "address": "Parekh E-com & warehousing services Pvt. Ltd.Chondhe Warehouse, Vadhu Khurd, Gate no-128/142/144,Lonikand, Tal-Haveli, Dist-Pune Pin code- 412216, Maharashtra, India.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Chakan",
+          "address": "Gut No. 318/02, (P), Village-Kuruli, Tal. Khed, Dist.-Pune, 410501",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "PEWSPL is committed to conducting its business operations in an environmentally responsible and sustainable manner. The Company recognizes its responsibility to minimize environmental impact, conserve natural resources, prevent pollution, and comply with all applicable environmental laws and regulations. Through continuous improvement and employee engagement, PEWSPL aims to integrate environmental sustainability into all aspects of its operations and business activities.",
+      "declaration": "PEWSPL is committed to understanding and reducing its greenhouse gas (GHG) emissions in a practical and cost-effective way. This policy sets out how we will measure, manage, and communicate our main emission sources. The policy aims to:\n\nPromote environmental protection and pollution prevention.\n\nEnsure compliance with applicable environmental legislation and other requirements.\n\nEncourage efficient use of energy, water, raw materials, and natural resources.\n\nReduce waste generation and improve waste management practices.\n\nSupport climate change mitigation through responsible operational practices.\n\nFoster environmental awareness and accountability among employees and stakeholders.",
+      "scope": "This policy applies to all operations of PEWSPL, including transportation activities, operational facilities, warehouses, and office locations across all locations where PEWSPL operates. It covers all permanent, temporary, and contractual employees across all functions, as well as all internal and external stakeholders associated with PEWSPL, whether directly or indirectly engaged with the organization’s operations and services."
+    },
+    "focusAreas": [
+      "Regulatory Compliance",
+      "Energy Conservation",
+      "Water Management",
+      "Waste Management",
+      "Pollution Prevention",
+      "Resource Efficiency",
+      "Greenhouse Gas Emissions and Energy Management",
+      "Customer Health and Safety",
+      "Sustainable Materials & Waste Handling",
+      "Responsible Water Stewardship",
+      "Air Emissions Management"
+    ],
+    "qualitative": {
+      "Greenhouse Gas Emissions and Energy Management": [
+        "We are committed to promoting energy-efficient practices across warehouses, offices, transportation activities, and operational facilities through LED lighting, preventive maintenance, energy monitoring, and efficient equipment usage initiatives.",
+        "We aim to improve fuel efficiency through preventive vehicle maintenance, route optimization, and efficient logistics planning.",
+        "We are committed to improving energy efficiency across our premises through responsible energy management practices, including the use of energy-efficient technologies and operational optimization.",
+        "We seek to monitor and manage greenhouse gas emissions associated with transportation and facility operations through route optimization, digital monitoring practices, vehicle maintenance, and adoption of lower-emission mobility solutions wherever feasible.",
+        "We are committed to promoting employee awareness regarding energy conservation and Climate action.",
+        "We strive to reduce unnecessary travel and associated emissions by encouraging virtual meetings and promoting lower-emission transportation options wherever practical.",
+        "We aim to evaluate opportunities for adoption of cleaner technologies and renewable energy solutions wherever operationally feasible."
+      ],
+      "Customer Health and Safety": [
+        "We are committed to maintaining safe, hygienic, and controlled operational conditions across warehouses and logistics activities through defined housekeeping, sanitation, inspection, and monitoring procedures.",
+        "We aim to ensure compliance with customer handling, storage, transportation, and operational safety requirements through standardized SOPs, operational controls, and periodic review mechanisms.",
+        "We seek to strengthen customer awareness regarding safe handling practices, emergency preparedness, and operational safety procedures through regular training, toolbox talks, mock drills, and awareness initiatives.",
+        "We are committed to maintaining responsible operational standards to support customer confidence and service reliability through quality controls, operational monitoring, and continuous improvement practices."
+      ],
+      "Sustainable Materials & Waste Handling": [
+        "We are committed to minimizing waste generation through responsible operational practices, material optimization, inventory control, and efficient resource utilization measures.",
+        "We aim to strengthen waste segregation and recycling practices across warehouses and operational facilities through color-coded bins, defined disposal procedures, and authorized recycling channels.",
+        "We strive to reduce paper consumption through digital documentation, electronic approvals, cloud-based record management, and process automation wherever feasible.",
+        "We seek to ensure safe handling, storage, and disposal of operational materials, batteries, lubricants, cleaning agents, and other applicable substances through defined SOPs, designated storage areas, spill prevention measures, and authorized disposal practices.",
+        "We are committed to providing regular training and awareness programs to employees on waste management.",
+        "We are committed to promoting the use of environmentally friendly, reusable, and recyclable materials in our operations, packaging, and procurement activities wherever feasible, to reduce environmental impact and support sustainable resource management."
+      ],
+      "Responsible Water Stewardship": [
+        "We are committed to promoting responsible water consumption across warehouses, offices, and operational facilities through monitoring, controlled usage practices, and routine maintenance activities.",
+        "We are committed to promoting responsible water usage and leakage prevention practices across operational facilities through periodic inspections, preventive maintenance, and timely repair mechanisms.",
+        "We aim to improve water efficiency through responsible operational practices, housekeeping controls, and optimized cleaning and utility management activities.",
+        "We seek to promote employee awareness regarding responsible water utilization and conservation practices through awareness programs, communication initiatives, and workplace guidance measures.",
+        "We aim to encourage water conservation initiatives and responsible maintenance practices wherever operationally feasible through efficient fixtures, monitoring practices, and resource conservation measures."
+      ],
+      "Air Emissions Management": [
+        "We are committed to minimizing transportation-related air emissions, including carbon dioxide (CO₂), nitrogen oxides (NOₓ), sulfur oxides (SOₓ), particulate matter (PM), and other vehicle-generated pollutants, through responsible fleet management practices, route optimization, and efficient vehicle utilization measures.",
+        "We aim to ensure regular preventive maintenance of operational vehicles and equipment through scheduled servicing, emission checks, and performance monitoring practices to improve operational efficiency and reduce emissions.",
+        "We seek to strengthen operational planning and routing efficiency through digital tracking systems, optimized scheduling, and load management practices to reduce environmental impact.",
+        "We are committed to minimizing air emissions from warehouse operations by promoting the efficient use of material handling equipment, forklifts, generators, and other operational machinery through regular maintenance and responsible operating practices.",
+        "We strive to improve indoor and outdoor air quality within our warehouse facilities by controlling dust generation, maintaining adequate ventilation systems, and implementing good housekeeping practices to reduce airborne pollutants.",
+        "We are committed to promoting environmental awareness and responsible operational practices among drivers and operational personnel through periodic communication, training, and awareness initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Greenhouse Gas Emissions and Energy Management",
+        "targets": [
+          {
+            "target": "We aim to reduce electricity consumption intensity by 5% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to reduce transportation fuel consumption intensity by 5% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to reduce Scope 1, 2 and Scope 3 GHG emission by 5% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to reduce GHG emission intensity per revenue by 5% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to achieving minimum 90% LED lighting coverage across major warehouses and office facilities by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct annual preventive maintenance for 100% of operational vehicles and major equipment to improve operational efficiency and reduce emissions by FY 2029-30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We strive to provide annual energy conservation and climate awareness training at least 80% of employees by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve transportation route planning and load optimization practices to reduce unnecessary fuel consumption and associated emissions by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "We are committed to maintaining zero major customer safety incidents related to operational environmental conditions annually through FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to provide annual customer product handling and operational safety training to at least 85% of relevant employees by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct 100% annual emergency preparedness and incident response awareness training for relevant employees and operational staff by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to maintain safe housekeeping, storage, and material stacking practices across applicable warehouses to minimize operational safety risks by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to ensure proper identification, labelling, and handling procedures for customer materials stored and transported through operational facilities by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials & Waste Handling",
+        "targets": [
+          {
+            "target": "We aim to achieve minimum 90% waste segregation at applicable operational facilities by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to reduce paper consumption by 15% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve minimum 60% recycling of recyclable waste by FY 2029–30 wherever feasible from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to providing annual waste management, spill prevention, and responsible material handling training to at least 80% of relevant employees by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to ensure safe collection, storage, and disposal of operational waste, including damaged packaging and spill-related waste, through authorized disposal practices by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to train 100% of employees on waste management, material optimization and chemical management.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Responsible Water Stewardship",
+        "targets": [
+          {
+            "target": "We aim to reduce water consumption intensity by 3% by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to monitor water consumption at 100% of major operational facilities on a periodic basis by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to conducting water leakage and plumbing inspections at least once annually across applicable facilities through FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to provide annual water conservation awareness training to 80% of relevant employees by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to install water-saving fixtures at minimum 50% of applicable office and warehouse facilities by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to display water conservation awareness signage at 100% of major operational facilities by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to promote responsible housekeeping and cleaning practices to avoid unnecessary water usage across warehouses and office facilities by FY 2029–30 from the FY 2022–23 baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Air Emissions Management",
+        "targets": [
+          {
+            "target": "We are committed to maintaining 100% valid Pollution Under Control (PUC) certification for Company-controlled operational vehicles annually through FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct preventive maintenance for 100% of operational vehicles and diesel-operated equipment annually through FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct annual responsible driving and air pollution awareness training for all 90% of drivers and relevant operational personnel by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to minimize unnecessary vehicle idling during loading, unloading, and waiting operations to reduce air emissions by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to maintain proper ventilation and dust control measures at applicable warehouse facilities to support better indoor air quality and operational conditions by FY 2029–30 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Director",
+        "duty": "Provide overall direction and leadership for environmental sustainability initiatives."
+      },
+      {
+        "role": "Director",
+        "duty": "Approve environmental objectives, targets, and improvement plans."
+      },
+      {
+        "role": "Director",
+        "duty": "Ensure adequate resources are available for implementation of this Policy."
+      },
+      {
+        "role": "Director",
+        "duty": "Periodically review environmental performance, compliance status, and progress against targets."
+      },
+      {
+        "role": "Sustainability Lead",
+        "duty": "Coordinate implementation of environmental and sustainability initiatives across the Company."
+      },
+      {
+        "role": "Sustainability Lead",
+        "duty": "Support data collection, monitoring of environmental performance indicators, and basic emissions tracking."
+      },
+      {
+        "role": "Sustainability Lead",
+        "duty": "Maintain environmental compliance records, reporting, and awareness activities."
+      },
+      {
+        "role": "Sustainability Lead",
+        "duty": "Conduct environmental inspections, audit and recommend corrective actions where required."
+      },
+      {
+        "role": "Sustainability Lead",
+        "duty": "Support communication and coordination with operational teams on sustainability matters."
+      },
+      {
+        "role": "Sustainability Lead",
+        "duty": "Review this policy regularly."
+      },
+      {
+        "role": "Operations, Facility Heads, and Department Supervisors",
+        "duty": "Ensure environmental requirements are implemented across warehouses, logistics operations, transportation activities, and office functions."
+      },
+      {
+        "role": "Operations, Facility Heads, and Department Supervisors",
+        "duty": "Promote responsible use of energy, water, fuel, paper, and other resources."
+      },
+      {
+        "role": "Operations, Facility Heads, and Department Supervisors",
+        "duty": "Support waste reduction, recycling, pollution prevention, and operational improvement initiatives."
+      },
+      {
+        "role": "Operations, Facility Heads, and Department Supervisors",
+        "duty": "Ensure contractors, transporters, and vendors follow applicable environmental requirements."
+      },
+      {
+        "role": "Operations, Facility Heads, and Department Supervisors",
+        "duty": "Report environmental concerns, incidents, and improvement opportunities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow applicable environmental procedures and operational controls."
+      },
+      {
+        "role": "Employees",
+        "duty": "Use resources responsibly and avoid unnecessary energy consumption and emissions in daily work activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Promptly report spills, leaks, unsafe practices, or environmental incidents."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in environmental awareness, training, and sustainability initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support waste segregation, recycling, and pollution prevention practices."
+      },
+      {
+        "role": "Contractors, Suppliers, and Transport Partners",
+        "duty": "Comply with applicable environmental laws and company environmental requirements."
+      },
+      {
+        "role": "Contractors, Suppliers, and Transport Partners",
+        "duty": "Follow environmentally responsible operational practices while working with PEWSPL."
+      },
+      {
+        "role": "Contractors, Suppliers, and Transport Partners",
+        "duty": "Support the Company’s environmental and sustainability objectives where practical."
+      }
+    ],
+    "monitoring": "Implementation of this Environmental Policy shall be monitored through periodic inspections, internal audits, compliance reviews, and monitoring of key environmental performance indicators such as energy, fuel, waste, and emissions data. Environmental incidents and corrective actions shall also be tracked and reviewed regularly.\n\nPEWSPL is committed to continual improvement in environmental performance through regular review of objectives and targets, monitoring of environmental performance, adoption of improved practices, employee awareness initiatives, and implementation of corrective actions. The Company will continue strengthening sustainable practices across its operations in line with business growth, regulatory requirements, and sustainability commitments.",
+    "reviewMechanism": "This Environmental Stewardship Policy shall be reviewed annually by the Sustainability Lead, or whenever significant changes occur in operational activities, applicable regulations, customer requirements, or sustainability priorities, to ensure its continued relevance, effectiveness, and alignment with the Company’s environmental commitments."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/PEWSPL Policies/1. Environmental Stewardship Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/PEWSPL Policies/1. Environmental Stewardship Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 19456,
+  "parsedAt": "2026-09-11T07:11:45.084Z"
+}

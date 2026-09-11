@@ -1,0 +1,416 @@
+{
+  "id": "labour-human-rights-padma",
+  "name": "Padma",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Ethical_Labor_Human_Rights_Policy (1).docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Padma Satel Arab Fashions Ltd.",
+      "industry": "",
+      "site": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230.",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230.",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Luna Complex, Joy Bangka Road, Khailkur, Borobari, Gazipur-1704, Bangladesh.",
+          "primaryFunction": "Manufacturing Site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Padma Satel Arab Fashions Ltd. recognizes that the ready-made garment (RMG) industry carries significant responsibility in ensuring ethical labor practices and protection of human rights across all operations. As a woven garments manufacturer operating in Gazipur, Bangladesh, the Company is committed to maintaining a workplace that upholds dignity, fairness, safety, and respect for all individuals.\n\nOur workforce represents the foundation of our business success. Therefore, we ensure that all employees—whether permanent, contractual, or third-party—are treated in accordance with national labor laws, international human rights standards, and globally recognized compliance frameworks.\n\nWe acknowledge that labor and human rights risks may arise across manufacturing operations including cutting, sewing, finishing, washing, logistics, and supply chain activities. PSA Fashions is committed to proactively identifying, preventing, mitigating, and addressing such risks through structured systems, policies, and governance mechanisms.\n\nOur commitment extends beyond our direct workforce to include suppliers, contractors, and business partners. We aim to promote responsible labor practices throughout our value chain, ensuring alignment with international standards such as ILO Conventions, UN Guiding Principles on Business and Human Rights (UNGPs), and buyer codes of conduct including BSCI, SEDEX, and SLCP frameworks.",
+      "declaration": "The objectives of this Ethical Ethical Labor & Human Rights Policy of Padma Satel Arab Fashions Ltd. are to:\n\nEnsure full compliance with all applicable labor laws, regulations, and statutory requirements in Bangladesh, including the Bangladesh Labour Act 2006 (as amended), Bangladesh Labour Rules 2015, and all relevant occupational health and safety regulations, as well as international buyer codes of conduct.\n\nEncourage open and transparent communication between management and workers through structured engagement platforms, including worker participation committees, grievance mechanisms, and regular communication channels.\n\nSupport continuous employee development through structured training programs, skill enhancement initiatives, and fair opportunities for career growth and internal advancement.\n\nCreate and sustain a respectful workplace culture free from harassment, abuse, intimidation, or exploitation, with strong systems in place for prevention, reporting, and resolution of workplace grievances and misconduct.\n\nPromote equality, diversity, and inclusion by ensuring that all employment decisions are based on merit, capability, and performance, without discrimination based on gender, religion, age, ethnicity, disability, or any other personal characteristic.\n\nMaintain absolute zero tolerance for child labour, forced labour, bonded labour, debt bondage, and human trafficking across all PSA Fashions operations and its extended supply chain and contractor network — in full alignment with ILO Conventions and buyer requirements.\n\nAchieve and sustain a workplace free from discrimination, harassment, bullying, intimidation, and any conduct that undermines human dignity with rigorous enforcement of Bangladesh's applicable anti-harassment regulations and buyer codes of conduct, including protections for female workers.\n\nEstablish and maintain fair, transparent, and lawful employment practices, including issuance of formal employment contracts, timely and accurate wage payments, provision of statutory benefits, and compliance with legally permissible working hours and overtime requirements.",
+      "scope": "This Policy applies to all operations of Padma Satel Arab Fashions Ltd. including the woven garments manufacturing factory, corporate offices, and all associated operational locations in Gazipur, Bangladesh. It also extends to all supply chain partners operating on behalf of the Company.\n\nIt is applicable to all employees (permanent and contract), management, directors, business associates, vendors, fabric and chemical suppliers, contractors, and all internal and external stakeholders working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Occupational Health, Safety & Wellbeing",
+      "Working Conditions",
+      "Social Dialogue",
+      "Career Management & Training",
+      "Child Labor, Forced Labor & Human Trafficking",
+      "Discrimination and Harassment"
+    ],
+    "qualitative": {
+      "Occupational Health, Safety & Wellbeing": [
+        "We are committed to establishing and maintaining a structured Occupational Health & Safety Management System (OHSMS) across all operational areas including cutting, stitching, finishing, washing units, warehouses, and administrative facilities, covering hazard control, machine safety, ergonomics, fire protection, and emergency response systems.",
+        "We will implement a comprehensive Hazard Identification, Risk Assessment, and Control (HIRAC) process for all job roles and operational activities, ensuring risks associated with machinery, chemical exposure, manual handling, and fire hazards are systematically identified and mitigated.",
+        "All employees and contract workers engaged in production, finishing, washing, maintenance, and logistics operations will be provided with function-specific, properly fitted, and regularly inspected Personal Protective Equipment (PPE) at no cost to the worker.",
+        "We will conduct periodic occupational health assessments and medical check-ups, particularly for workers exposed to high-risk areas such as washing, chemical handling, and maintenance operations.",
+        "Safety awareness will be strengthened through structured induction programs, job-specific safety training, and regular refresher sessions, ensuring that all workers understand workplace risks and safe working practices.",
+        "We will promote a healthy work-life balance by ensuring compliance with working hour regulations and providing appropriate leave entitlements to all employees.",
+        "Employee well-being will be supported through initiatives addressing physical and mental health, including awareness programs, counseling support, and stress management activities.",
+        "A positive and supportive workplace environment will be fostered through proper facilities, ergonomic considerations, and a culture of respect and collaboration.",
+        "We will encourage employee participation in well-being initiatives by organizing health camps, fire safety drills, wellness programs, and engagement activities for all worker categories across the factory."
+      ],
+      "Working Conditions": [
+        "We will ensure that all workplaces are safe, hygienic, and conducive to productivity by maintaining proper ventilation, lighting, sanitation facilities, and access to clean drinking water.",
+        "Employee welfare facilities such as rest areas, canteen services, and other necessary amenities will be provided to support worker comfort and well-being.",
+        "We will monitor and improve working conditions through regular internal inspections and third-party social audits, engaging workers for feedback and implementing corrective actions to address identified gaps.",
+        "We will ensure full compliance with the Bangladesh Labour Act regarding working hours (maximum 8 hours/day, 48 hours/week regular; maximum 60 hours/week including overtime) through digital attendance tracking, periodic compliance audits, and ensuring all overtime is voluntary and compensated at the prescribed rate.",
+        "All wages will be paid accurately, on time (by the 7th working day of the following month), and through verifiable payment channels, with detailed pay slips provided to every worker reflecting all earnings, deductions, and statutory contributions.",
+        "All eligible employees will be enrolled from Day 1 in mandatory statutory benefit schemes including Provident Fund, Gratuity, Group Insurance, Earned Leave, Maternity Benefit, and all other legally mandated entitlements under the Bangladesh Labour Act 2006.",
+        "We will operate a confidential, accessible, and multi-channel grievance redressal mechanism ensuring every concern is acknowledged within five working days and resolved with full documentation."
+      ],
+      "Social Dialogue": [
+        "We respect and uphold every worker's right to freedom of association and collective bargaining in accordance with Bangladesh Labour Act 2006. PSA Fashions will not interfere with, penalize, discourage, or obstruct lawful trade union formation, membership, or representative activity in any form.",
+        "We will maintain a functional Participation Committee (PC) in compliance with Chapter XIII of the Bangladesh Labour Act, meeting formally at least quarterly, with documented minutes and action points shared with all worker representatives.",
+        "We will ensure effective two-way communication between management and workers through regular floor-level meetings, team briefings, notice board updates, and structured communication sessions — with materials provided in Bangla to ensure full comprehension.",
+        "An accessible and confidential complaint box system, supplemented by direct reporting channels to HR and Compliance, will be available to all workers including separate female-friendly channels for reporting harassment and gender-based issues.",
+        "We will enforce a strict, documented non-retaliation policy protecting all workers who raise concerns in good faith through any reporting channel, from any adverse employment action or workplace pressure."
+      ],
+      "Career Management & Training": [
+        "We will ensure continuous skill development of employees across all functions — cutting, sewing, finishing, quality, compliance, HR, and administration — by conducting structured training need assessments and delivering role-based technical, behavioral, and compliance training programs annually.",
+        "We will promote internal talent growth by identifying high-potential workers and operators, providing supervisory and management development opportunities, and ensuring that floor workers have structured pathways for career advancement.",
+        "We will enhance employee learning through multiple development platforms including on-the-job coaching, cross-functional exposure, external technical certifications, and e-learning tools where available.",
+        "An annual Training Needs Assessment (TNA) process will be maintained for each employee category, identifying competency gaps and translating these into development plans aligned with business needs.",
+        "Supervisory, line management, and administrative vacancies will be assessed for internal candidacy before external recruitment, with merit-based selection processes and transparent communication of outcomes.",
+        "We will ensure a structured and fair performance appraisal system for all employees based on defined criteria, conducted periodically, and linked to career development and appropriate recognition mechanisms."
+      ],
+      "Child Labor, Forced Labor & Human Trafficking": [
+        "We maintain unconditional zero tolerance for the employment of children — defined as any person under 18 years of age — in any capacity, at any location, under any arrangement, whether direct employment, contractual engagement, or through labor contractors or suppliers.",
+        "We will enforce ethical labor practices across our supply chain and contractor workforce by integrating labor compliance clauses in all contracts, conducting due diligence during supplier qualification, and monitoring contractors and subcontractors for adherence to human rights standards.",
+        "We will conduct periodic audits and inspections to identify and mitigate risks related to child and forced labor by performing internal and third-party assessments, with immediate corrective actions for any identified gaps.",
+        "Age verification through original, government-issued National Identity Card (NID) or Birth Certificate will be mandatory for every worker before commencement of employment. No worker shall commence work without documented age verification.",
+        "We prohibit all forms of forced, compulsory, bonded, or debt-bondage labor. Workers will not be required to surrender identity documents, pay recruitment fees, or make any deposit that restricts their freedom to resign with lawful notice.",
+        "We will provide mandatory awareness and training to all employees, contractors, and suppliers on human rights, anti-trafficking, and ethical labor standards, ensuring expectations are clearly communicated at all levels.",
+        "Any verified instance of child labor, forced labor, or human trafficking in PSA Fashions' direct operations or contractor workforce will result in immediate cessation of the employment or commercial arrangement, remediation of affected individuals, and engagement of appropriate authorities."
+      ],
+      "Discrimination and Harassment": [
+        "We will promote a diverse and inclusive workforce across all levels of the organization by implementing equitable hiring practices, encouraging diversity in recruitment including gender representation, and ensuring inclusion across all dimensions.",
+        "We will ensure equal opportunity in all employment practices by maintaining fairness in hiring, promotion, training, and compensation decisions based purely on merit and competency.",
+        "We will foster an inclusive workplace culture that respects diversity by conducting awareness programs, sensitization training, and promoting respectful behavior across all employee groups — particularly towards female workers and migrant workers.",
+        "We will prevent and address bias and discrimination in the workplace by implementing structured policies, conducting periodic reviews, and taking corrective actions where gaps are identified.",
+        "We will support the inclusion of female workers and other underrepresented groups through accessible workplace facilities, gender-sensitive welfare provisions, and targeted development initiatives.",
+        "We will monitor and improve DEI performance across the organization by tracking diversity metrics, reviewing progress at management level, and integrating DEI goals into our organizational strategy and buyer reporting.",
+        "We uphold the principle of equal opportunity and ensure that all employment actions—including hiring, promotion, compensation, and disciplinary measures—are based strictly on merit and business requirements.",
+        "Any form of discrimination based on gender, religion, age, ethnicity, disability, marital status, or other personal characteristics is strictly prohibited within the organization, in full compliance with Bangladesh Labour Act 2006.",
+        "We maintain a zero-tolerance approach toward workplace harassment, abuse, or violence, and enforce strict measures to prevent and address such behaviors by enforcing the Sexual Harassment in the Workplace (Prevention and Remediation) Policy in alignment with the High Court Directive of 2009 and buyer codes of conduct.",
+        "Regular awareness sessions and training programs will be conducted to educate employees on respectful workplace behavior and their rights and responsibilities.",
+        "A secure and confidential grievance mechanism will be maintained to enable employees to report concerns without fear of retaliation, ensuring fair and timely resolution.",
+        "We will periodically review compensation practices to ensure fairness and address any disparities through appropriate corrective actions."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Occupational Health, Safety & Wellbeing",
+        "targets": [
+          {
+            "target": "Achieve and maintain zero Lost Time Injuries (LTIs) across all production floors, finishing, washing, cutting, and support areas.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Maintain zero work-related accidents resulting in serious injury or permanent disability across all factory operations.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Maintain zero occupational fatalities across all PSA Fashions operations.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Increase near-miss reporting to build a proactive safety culture, targeting at least 2 reported near-misses per month across the factory.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure appropriate, role-specific PPE is provided, inspected, and correctly used by 100% of workers in hazardous work areas (cutting, washing, chemicals, maintenance).",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Provide mandatory EHS, machine safety, fire safety, and chemical handling training to all production and support workers annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Ensure 100% of fire safety equipment, emergency exits, first aid kits, and evacuation systems are functional and regularly tested at the factory.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct at least two fire safety evacuation drills per year across all factory floors with documented records.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Ensure all employees — permanent and contractual — receive a written employment contract in Bangla before commencement of work.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance with the applicable Bangladesh RMG sector minimum wage gazette notification at all grades across the factory.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Ensure 100% of eligible employees are enrolled in Provident Fund, Group Insurance, Gratuity, and Maternity Benefit schemes from Day 1 of eligibility.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Ensure 100% compliance with Bangladesh Labour Act maximum working hours — 60 hours/week including overtime — with no coerced overtime.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Achieve 100% accurate, on-time salary payment (by the 7th working day of each month) with pay slips for all employees and contract workers.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Ensure all factory welfare facilities — toilets (separate for male/female), clean drinking water, canteen, rest areas, and prayer room — meet legal and buyer standards.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Establish and maintain a functional PC meeting at least quarterly per year with documented minutes and worker representative participation.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Acknowledge 100% of formal grievances within 5 working days of receipt through any reporting channel.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Resolve and communicate written closure of 95% of formal grievances within 30 working days of receipt.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Ensure 100% of workers receive at least one formal management communication briefing per quarter regarding factory performance, policies, or worker rights.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain at least one accessible, locked complaint box on each production floor and in welfare areas, reviewed weekly by Compliance.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          }
+        ]
+      },
+      {
+        "area": "Career Management & Training",
+        "targets": [
+          {
+            "target": "Provide a minimum of 16 technical and compliance training hours per employee per year across all functions and levels.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of new workers complete the full induction program — covering machine safety, EHS, code of conduct, labor rights, and fire safety — within 15 days of joining.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Ensure at least 60% of supervisory and line management vacancies are filled through internal promotion or cross-functional mobility.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Evaluate 100% of training programs through assessments or observations to measure knowledge retention and on-the-job application.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Conduct at least 3 structured skill development or upskilling programs per year for production workers targeting multi-skill development and operator grade advancement.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor & Human Trafficking",
+        "targets": [
+          {
+            "target": "Maintain zero confirmed instances of child labor (under 18 years) in any direct, contractual, or agency-supplied workforce at PSA Fashions.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Ensure 100% age verification via NID or Birth Certificate for all new workers before Day 1 of commencement, with records retained in personnel files.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Maintain zero confirmed instances of forced, bonded, compulsory, or debt-bondage labor across all PSA Fashions operations.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Provide mandatory training on human rights, anti-trafficking, and ethical recruitment to all employees and key suppliers annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Conduct labor and human rights compliance assessments of at least 80% of key fabric and material suppliers annually.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure zero workers are charged recruitment or placement fees by PSA Fashions, labor contractors, or any third-party recruitment agent acting on behalf of the company.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Maintain zero confirmed cases of unlawful discrimination in any employment decision across PSA Fashions operations.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Ensure 100% of harassment and misconduct complaints are formally investigated and closed with documented outcomes within 60 working days.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Increase women's representation in the total PSA Fashions workforce to at least 30% by FY 2027.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase women's representation in supervisory and line management roles to at least 20% by FY 2028.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct anti-harassment and respectful workplace training for 100% of employees annually — including separate sensitization sessions for male supervisors and managers.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Achieve and maintain full equal pay compliance — ensuring no unjustified pay differential between male and female workers in equivalent roles and grades.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct at least one internal audit per year of recruitment processes to identify and eliminate gender or other bias from hiring decisions.",
+            "baseline": "FY 2023-24",
+            "deadline": "Yearly"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Approve and endorse the Ethical Ethical Labor & Human Rights Policy and overall people sustainability strategy, ensuring it is integrated into PSA Fashions' business strategy and buyer relationships."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Provide visible leadership commitment to fair labor practices, human rights due diligence, and zero tolerance for exploitation, child labor, or harassment across the organization."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure availability of adequate resources — financial, human, and technological — for implementation of labor and human rights objectives and targets."
+      },
+      {
+        "role": "Board of Directors & Senior Management",
+        "duty": "Translate the Policy into actionable programs, annual targets, and operational initiatives across PSA Fashions factory and offices."
+      },
+      {
+        "role": "Board of Directors & Senior Management",
+        "duty": "Review labor and human rights performance covering all six issue areas against quantitative targets and compliance status on a quarterly basis."
+      },
+      {
+        "role": "Board of Directors & Senior Management",
+        "duty": "Identify and address emerging labor rights risks associated with manufacturing operations, workforce changes, new buyer requirements, and supply chain developments."
+      },
+      {
+        "role": "Head of HR & Compliance",
+        "duty": "Own Policy implementation and compliance monitoring across all factory functions, ensuring all HR and compliance processes embed Policy requirements from recruitment through separation."
+      },
+      {
+        "role": "Head of HR & Compliance",
+        "duty": "Oversee the anti-harassment complaint mechanism, equal pay assessment, gender diversity programs, grievance redressal system, and Participation Committee (PC) infrastructure."
+      },
+      {
+        "role": "Head of HR & Compliance",
+        "duty": "Review and update the Policy at least annually, or when triggered by legislative changes, material incidents, buyer audit findings, or significant changes in operations."
+      },
+      {
+        "role": "EHS & Safety Officer",
+        "duty": "Own the OHSMS, hazard identification system, PPE management programs, emergency preparedness systems, and annual fire safety drill schedule across all factory floors."
+      },
+      {
+        "role": "EHS & Safety Officer",
+        "duty": "Track, analyze, and report safety performance indicators — accident rate, near-miss reports, PPE compliance, fire drill outcomes, and CAPA closure — to the Head of HR & Compliance and Managing Director quarterly."
+      },
+      {
+        "role": "Floor Supervisors & Line Managers",
+        "duty": "Execute Policy at the operational level: ensuring safe working conditions, reporting near-misses and accidents promptly, monitoring PPE use, and enforcing respectful workplace behavior."
+      },
+      {
+        "role": "Floor Supervisors & Line Managers",
+        "duty": "Facilitate worker communication and engagement on the floor, respond to worker concerns, and escalate unresolved issues to HR & Compliance in a timely manner."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Comply with this Policy and all related HR, EHS, and code of conduct procedures at all times across all PSA Fashions locations and functions."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Participate actively in training programs, fire safety drills, wellness initiatives, and Participation Committee proceedings as applicable."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Report any observed or suspected violations of this Policy — including child labor, forced labor, harassment, or safety violations — through available channels without fear of retaliation."
+      }
+    ],
+    "monitoring": "Padma Satel Arab Fashions Ltd. is committed to the continuous improvement of its labor and human rights performance across its manufacturing facility and all offices.\n\nPeriodic review of compliance with Bangladesh labor laws, regulations, and buyer requirements through internal audits and documentation checks.\n\nStructured audits covering working conditions, wages, working hours, health & safety, and worker welfare practices.\n\nCollection and evaluation of employee feedback through grievance mechanisms, suggestion boxes, and worker committees.\n\nRegular inspections of production floors, facilities, sanitation, and welfare provisions to ensure safe and humane working conditions.\n\nPeriodic review of labor and human rights performance by senior management.\n\nRegular revision of the policy to align with legal updates, industry standards, and organizational changes.\n\nPadma Satel Arab Fashions Ltd. has established a structured and transparent process to monitor and report labor and human rights performance across all factory operations. Key data on safety performance (accident rate, near-misses, PPE compliance), wage and benefit compliance, working hours and overtime records, grievance resolution rates, harassment complaint status, training hours and coverage, gender diversity indicators, child and forced labor verification status, contractor audit findings, and statutory compliance status are systematically collected, validated, and reviewed on a monthly basis at factory level and quarterly at management level.\n\nLabor and human rights performance data covering all six issue areas is reported to the Managing Director and Board through quarterly management review meetings. Summary performance data and progress against all quantitative targets set out in Section 7 is compiled and reported in PSA Fashions' Annual Sustainability Report and shared with buyers, certification bodies, and other relevant stakeholders as required through BSCI, SEDEX, SLCP, and buyer-specific platforms.\n\nAny material labor or human rights incident including any instance of child labor, forced labor, serious occupational injury, fatality, or substantiated harassment complaint will be escalated to the Managing Director within 24 hours, investigated for root cause within 5 working days, and reported to affected buyers within the timeframes stipulated in applicable buyer codes of conduct.",
+    "reviewMechanism": "This Ethical Ethical Labor & Human Rights Policy is reviewed at least once every year by the Head of HR & Compliance and approved by the Managing Director or whenever triggered by significant changes in business operations, new or amended Bangladesh labor legislation, changes in buyer code of conduct requirements, material changes in workforce composition, significant buyer audit findings, or the occurrence of a material labor or human rights incident."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Padma/2. Ethical_Labor_Human_Rights_Policy (1).docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Padma/2. Ethical_Labor_Human_Rights_Policy (1).docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 34872,
+  "parsedAt": "2026-09-11T07:11:44.961Z"
+}

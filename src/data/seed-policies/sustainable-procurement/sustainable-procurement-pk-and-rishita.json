@@ -1,0 +1,262 @@
+{
+  "id": "sustainable-procurement-pk-and-rishita",
+  "name": "PK and RIshita",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Policy on Responsible Sourcing.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Permeshwar Creations Pvt. Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Unit 1: Rishita Fashion",
+          "address": "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujarat 396195",
+          "primaryFunction": "Manufacturing unit"
+        },
+        {
+          "location": "Unit 2: PK Enterprises",
+          "address": "C-19, Hoisery Complex, Phase II, Noida, U.P 201301. India",
+          "primaryFunction": "Manufacturing unit"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Permeshwar Creations is a renowned apparel manufacturing company in India, known for its commitment to quality, innovation, and sustainability. At Permeshwar Creations, we pride ourselves on being a leader in the apparel manufacturing industry. Since our inception, we have been dedicated to producing high-quality garments that meet the needs of our diverse clientele. Our research and development team continuously innovate, creating lightweight, fine-textured garments in a variety of beautiful colors and designs.",
+      "declaration": "Permeshwar Creations recognizes the importance of sustainable procurement practices in mitigating environmental impact and promoting social responsibility. We aim to integrate environmental and labor/human rights issues into our supply chain management, alongside traditional procurement considerations of price, quality, and reliability.\n\nBelow are our commitments and targets towards ethical sustainability as compared to baseline year 2022.",
+      "scope": "This policy comprehensively covers all aspects of Permeshwar Creation Pvt. Ltd.’s manufacturing and operation sites. It applies to all workers, employees, suppliers, and stakeholders, both internal and external, associated directly or indirectly with Permeshwar Creation Pvt. Ltd. Below are the locations of our two manufacturing units:"
+    },
+    "focusAreas": [
+      "General Goals",
+      "Supplier Environmental Practices",
+      "Supplier Social Practices",
+      "Product Sustainability",
+      "Local Sourcing and Community Impact",
+      "Supplier Diversity and Inclusion"
+    ],
+    "qualitative": {
+      "General Goals": [
+        "We will engage suppliers collaboratively to build sustainability capacity and promote continuous improvement in environmental and social practices.",
+        "We will foster a culture of long-term partnerships with suppliers that share our vision for ethical, responsible, and sustainable business practices."
+      ],
+      "Supplier Environmental Practices": [
+        "Commitment to sourcing materials and products from suppliers with strong environmental management systems.",
+        "Aim to train our procurement staff on the environmental issues associated with procurement.",
+        "We will support suppliers in adopting innovative, resource-efficient practices to minimize environmental impacts across the supply chain."
+      ],
+      "Supplier Social Practices": [
+        "Commitment to working with suppliers that uphold fair labor practices, including safe working conditions and equitable wages.",
+        "Aim to train our procurement staff on labor and human rights issues associated with procurement and operations.",
+        "We will collaborate with suppliers to promote a culture of respect, fairness, and worker well-being across the supply chain."
+      ],
+      "Product Sustainability": [
+        "Encourage suppliers to provide products that are designed for durability, recyclability, and reduced environmental impact throughout their lifecycle.",
+        "We will work with suppliers to integrate circular economy principles into product design and lifecycle management."
+      ],
+      "Local Sourcing and Community Impact": [
+        "Promote local sourcing to support regional economies and reduce transportation-related emissions.",
+        "We will engage with local suppliers to strengthen community development, create employment, and encourage sustainable regional practices."
+      ],
+      "Supplier Diversity and Inclusion": [
+        "Foster partnerships with diverse suppliers, including minority-owned, women-owned, and small businesses.",
+        "We will actively mentor and support diverse suppliers to build capacity, promote equity, and strengthen their participation in our supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Goals",
+        "targets": [
+          {
+            "target": "At least 30 to 40% of our direct suppliers will transition to renewable energy sources within their operations.",
+            "baseline": "",
+            "deadline": "2028"
+          },
+          {
+            "target": "100% of our procurement contracts will include sustainability clauses covering environmental, social, and governance practices.",
+            "baseline": "",
+            "deadline": "2028"
+          },
+          {
+            "target": "We will ensure that all Tier-1 suppliers conduct annual sustainability audits.",
+            "baseline": "",
+            "deadline": "2028"
+          },
+          {
+            "target": "Reduce the overall carbon footprint of logistics and transportation by 30%, through the use of optimized routes and low-emission vehicles.",
+            "baseline": "",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in the environmental footprint of sourced materials and products compared to 2022 baseline levels.",
+            "baseline": "2022 baseline levels",
+            "deadline": "2025"
+          },
+          {
+            "target": "75% of our suppliers we do business with will have ISO 14001 or equivalent environmental management certifications.",
+            "baseline": "",
+            "deadline": "2028"
+          },
+          {
+            "target": "100% of procurement staff are trained on the environmental issues associated with procurement.",
+            "baseline": "",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers comply with international labor standards.",
+            "baseline": "80% in 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "100% of procurement staff are trained on labor and human rights issues associated with procurement and operations.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "80% of suppliers will have formal worker grievance mechanisms in place.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "75% of our suppliers we do business with will have ISO 14001 or equivalent environmental management certifications.",
+            "baseline": "",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Product Sustainability",
+        "targets": [
+          {
+            "target": "Increase the percentage of products meeting sustainable design criteria to 50%.",
+            "baseline": "30% in 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve at least 50% of packaging and product materials sourced from recyclable or certified sustainable sources.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Local Sourcing and Community Impact",
+        "targets": [
+          {
+            "target": "Increase local sourcing from 30% to 50% of total procurement by 2022.",
+            "baseline": "30% of total procurement",
+            "deadline": "2022"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Diversity and Inclusion",
+        "targets": [
+          {
+            "target": "Increase procurement spend with diverse suppliers to 25%.",
+            "baseline": "15% in 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "At least 50% of new supplier contracts include diversity and inclusion criteria.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Every employee, director, officer, contractor, and agent of Parmeshwar Creations",
+        "duty": "Ensure that our supply chain aligns with ethical, social, and environmental standards."
+      },
+      {
+        "role": "Senior Management & Human Resources Manager (HR)",
+        "duty": "Provide leadership and oversight for the implementation of responsible sourcing practices."
+      },
+      {
+        "role": "Senior Management & Human Resources Manager (HR)",
+        "duty": "Allocate necessary resources to support supplier engagement, monitoring, and compliance programs."
+      },
+      {
+        "role": "Senior Management & Human Resources Manager (HR)",
+        "duty": "Ensure that sourcing strategies align with the company’s sustainability and ethical commitments."
+      },
+      {
+        "role": "Health and Safety Manager",
+        "duty": "Review and update the Responsible Sourcing Policy annually to ensure alignment with legal requirements, best practices, and operational realities."
+      },
+      {
+        "role": "Health and Safety Manager",
+        "duty": "Monitor implementation effectiveness and recommend improvements where needed."
+      },
+      {
+        "role": "Procurement & Sourcing Teams",
+        "duty": "Identify and select suppliers who comply with legal, ethical, and environmental requirements."
+      },
+      {
+        "role": "Procurement & Sourcing Teams",
+        "duty": "Conduct supplier audits, assessments, and risk evaluations to ensure responsible practices."
+      },
+      {
+        "role": "Procurement & Sourcing Teams",
+        "duty": "Maintain transparent documentation and reporting of sourcing decisions and supplier performance."
+      },
+      {
+        "role": "Suppliers & Contractors",
+        "duty": "Adhere to Parmeshwar Creations’ Responsible Sourcing standards, including human rights, labor practices, and environmental requirements."
+      },
+      {
+        "role": "Suppliers & Contractors",
+        "duty": "Cooperate with audits, provide necessary documentation, and implement corrective actions when required."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support responsible sourcing practices in their daily tasks and decision-making."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any concerns regarding supplier compliance or unethical sourcing practices through established channels."
+      }
+    ],
+    "monitoring": "Monitor implementation effectiveness and recommend improvements where needed.\n\nConduct supplier audits, assessments, and risk evaluations to ensure responsible practices.\n\nMaintain transparent documentation and reporting of sourcing decisions and supplier performance.\n\nCooperate with audits, provide necessary documentation, and implement corrective actions when required.",
+    "reviewMechanism": "This policy will undergo annual reviews overseen by the Health and Safety Manager, with the next review scheduled for 1st January 2026. Updates or amendments will be communicated to all stakeholders accordingly. Regular audits and reporting will ensure ongoing compliance with the policy's objectives and principles."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/PK and RIshita/4. Policy on Responsible Sourcing.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/PK and RIshita/4. Policy on Responsible Sourcing.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 9366,
+  "parsedAt": "2026-09-11T07:13:14.323Z"
+}

@@ -1,0 +1,378 @@
+{
+  "id": "labour-human-rights-dawar-footwear-industries",
+  "name": "DAWAR FOOTWEAR INDUSTRIES",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Social Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Dawar Group",
+      "industry": "",
+      "site": "Near Bapu Asaram Asaram, 12.5 Km, Agra-Delhi Road, Sikandra, Agra-282007 (India)",
+      "sites": [
+        {
+          "location": "Dawar Group",
+          "address": "Near Bapu Asaram Asaram, 12.5 Km, Agra-Delhi Road, Sikandra, Agra-282007 (India)",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Near Bapu Asaram Asaram, 12.5 Km, Agra-Delhi Road, Sikandra, Agra-282007 (India)"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Dawar Group is committed to fostering a socially responsible business environment, promoting ethical practices, and prioritizing the well-being of our employees, partners, and communities. This commitment not only fulfills our social responsibilities but also enhances the value we deliver to our customers, stakeholders, and society. By engaging in initiatives that benefit society, we aim to create a long-lasting positive impact.",
+      "declaration": "It is the policy of Dawar Group to operate our business in a way that respects human rights, supports worker welfare, and contributes positively to society. This inclsudes maintaining safe working conditions, fair labor practices, community development, and ethical business conduct, while extending our social responsibility mindset across the value chain.\n\nWe establish annual goals, develop the necessary capabilities, and allocate appropriate resources to achieve this policy through innovation, operational excellence, and aligning Dawar Group's supply chain with these commitments.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:"
+    },
+    "focusAreas": [
+      "Social Compliance",
+      "Health, Safety, and Wellbeing Management",
+      "Workplace Safety and Employee Well-being",
+      "Community Engagement and Development",
+      "Fair Wages and Working Conditions",
+      "Structured Employee Relations",
+      "Talent Development and Career Growth",
+      "Eliminating Child and Forced Labor",
+      "Diversity, Equity, and Inclusion (DEI)",
+      "Human Rights in Supply Chain",
+      "Employee Engagement and Satisfaction"
+    ],
+    "qualitative": {
+      "Social Compliance": [
+        "Dawar Group is committed to upholding the highest social standards across our operations. We comply with all relevant social laws and regulations while fostering a culture of employee engagement and community support. We ensure adherence to these expectations through our Social Management System, focusing on continuous improvement in the following areas:",
+        "Providing safe, healthy, and respectful working conditions, in compliance with all relevant labor laws and standards;",
+        "Promoting employee health and safety through comprehensive policies, training, and regular risk assessments;",
+        "Engaging in community projects, providing employment opportunities, and supporting local development initiatives;",
+        "Focusing CSR efforts on education, healthcare, and community empowerment to maximize societal impact;",
+        "Prohibiting the use of child and forced labor and ensuring compliance with all laws and regulations;",
+        "Supporting human rights by ensuring non-discrimination, fair treatment, and open social dialogue across our operations;",
+        "Offering training programs to develop employees and encouraging career growth opportunities;",
+        "Respecting employees’ right to associate freely and engage in collective bargaining without reprisal;",
+        "Promoting diversity and inclusion through anti-discrimination policies and equal opportunity initiatives;",
+        "Ensuring fair, competitive wages that meet or exceed local living wage standards;",
+        "Prioritizing employee mental and physical well-being through wellness programs and work-life balance initiatives."
+      ],
+      "Health, Safety, and Wellbeing Management": [
+        "We aim to reduce workplace accidents by 30% by 2026, through implementing a comprehensive health and safety management system.",
+        "We plan to provide free annual health check-ups for all employees by 2026, ensuring proactive healthcare.",
+        "We will introduce employee mental health support programs, targeting a 40% increase in employee participation by 2026."
+      ],
+      "Workplace Safety and Employee Well-being": [
+        "We aim to achieve a 50% reduction in workplace accidents by 2026 through enhanced safety monitoring systems and comprehensive wellness programs for our employees.",
+        "We are committed to promoting work-life balance, with a goal to offer flexible working hours to 25% of our workforce by 2026, along with robust mental health support programs."
+      ],
+      "Community Engagement and Development": [
+        "We aim to positively impact 50,000 lives in local communities by 2026 through education, healthcare, and livelihood programs, investing 1.5% of our annual profits into these initiatives.",
+        "We plan to support 500 women entrepreneurs by 2026, providing training, resources, and market access to promote economic empowerment in communities where we operate."
+      ],
+      "Fair Wages and Working Conditions": [
+        "We aim to ensure that 100% of our workforce is paid a living wage by 2026, aligning wages with the cost of living in respective regions.",
+        "We plan to reduce excessive overtime by 20% through optimized shift schedules and a work-life balance program by 2026.",
+        "We will establish a two-way communication system to address working conditions, enabling employees to provide feedback in real-time by 2026."
+      ],
+      "Structured Employee Relations": [
+        "We aim to establish structured labor relations with 100% of employee unions by 2026, fostering transparent communication between management and employees.",
+        "We plan to conduct annual surveys to monitor employee sentiment and relations by 2026.",
+        "We will hold quarterly meetings with union representatives to address any concerns, ensuring an open dialogue and resolution by 2026."
+      ],
+      "Talent Development and Career Growth": [
+        "We aim to have 70% of our workforce undergo skills training and development programs by 2026.",
+        "We plan to establish a mentorship program for junior employees, targeting a 25% increase in internal promotions by 2026.",
+        "We will provide annual leadership training for management to enhance team development and career advancement opportunities for employees."
+      ],
+      "Eliminating Child and Forced Labor": [
+        "We aim to ensure zero tolerance for child and forced labor across our operations and supply chain by 2026, through rigorous auditing and monitoring systems.",
+        "We plan to establish partnerships with NGOs to raise awareness about child labor issues in vulnerable communities by 2026.",
+        "We will introduce mandatory supplier compliance checks, ensuring 100% of our suppliers meet labor rights standards by 2026."
+      ],
+      "Diversity, Equity, and Inclusion (DEI)": [
+        "We aim to achieve a 50% increase in the representation of women and underrepresented groups in leadership roles by 2026.",
+        "We plan to launch an annual diversity and inclusion training program for all employees, focusing on unconscious bias and cultural awareness by 2026.",
+        "We will implement an inclusive hiring strategy, ensuring that 30% of new hires come from diverse backgrounds by 2026."
+      ],
+      "Human Rights in Supply Chain": [
+        "We plan to establish a grievance mechanism for external stakeholders to report any human rights violations by 2026.",
+        "We will partner with third-party auditors to ensure compliance with human rights standards across our supply chain, with annual reviews starting in 2026."
+      ],
+      "Employee Engagement and Satisfaction": [
+        "We aim to increase employee satisfaction by 20% by 2026 through enhanced engagement programs and feedback channels.",
+        "We plan to implement an employee recognition program, rewarding outstanding performance and contributions quarterly starting in 2026.",
+        "We will introduce an annual employee survey to measure satisfaction and make data-driven improvements to workplace culture by 2026."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Health, Safety, and Wellbeing Management",
+        "targets": [
+          {
+            "target": "Reduce workplace accidents by 30%",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Provide free annual health check-ups for all employees",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Increase employee participation in mental health support programs by 40%",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Safety and Employee Well-being",
+        "targets": [
+          {
+            "target": "Achieve a 50% reduction in workplace accidents",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Offer flexible working hours to 25% of the workforce",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Community Engagement and Development",
+        "targets": [
+          {
+            "target": "Positively impact 50,000 lives in local communities",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Invest 1.5% of annual profits into education, healthcare, and livelihood programs",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Support 500 women entrepreneurs",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Fair Wages and Working Conditions",
+        "targets": [
+          {
+            "target": "Ensure that 100% of the workforce is paid a living wage",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Reduce excessive overtime by 20%",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Establish a two-way communication system to address working conditions",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Structured Employee Relations",
+        "targets": [
+          {
+            "target": "Establish structured labor relations with 100% of employee unions",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct annual surveys to monitor employee sentiment and relations",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Hold quarterly meetings with union representatives",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Talent Development and Career Growth",
+        "targets": [
+          {
+            "target": "Have 70% of the workforce undergo skills training and development programs",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Establish a mentorship program for junior employees and increase internal promotions by 25%",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Provide annual leadership training for management",
+            "baseline": "2022",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Eliminating Child and Forced Labor",
+        "targets": [
+          {
+            "target": "Ensure zero tolerance for child and forced labor across operations and the supply chain",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Establish partnerships with NGOs to raise awareness about child labor issues",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure 100% of suppliers meet labor rights standards",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity, and Inclusion (DEI)",
+        "targets": [
+          {
+            "target": "Increase the representation of women and underrepresented groups in leadership roles by 50%",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Launch an annual diversity and inclusion training program for all employees",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure that 30% of new hires come from diverse backgrounds",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Human Rights in Supply Chain",
+        "targets": [
+          {
+            "target": "Establish a grievance mechanism for external stakeholders to report human rights violations",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct annual reviews of human rights standards across the supply chain through third-party auditors",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Employee Engagement and Satisfaction",
+        "targets": [
+          {
+            "target": "Increase employee satisfaction by 20%",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Implement an employee recognition program rewarding outstanding performance and contributions quarterly",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Introduce an annual employee survey to measure satisfaction",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Oversees the overall social commitment strategy and approves long-term social goals."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensures alignment of social initiatives with business objectives and stakeholder expectations."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Reviews annual performance reports and adjusts strategies as needed."
+      },
+      {
+        "role": "Social Compliance Manager",
+        "duty": "Implements and manages the Social Commitments Policy."
+      },
+      {
+        "role": "Social Compliance Manager",
+        "duty": "Monitors compliance with social standards and reports on performance against set goals."
+      },
+      {
+        "role": "Social Compliance Manager",
+        "duty": "Coordinates with various departments to ensure integration of social practices."
+      },
+      {
+        "role": "Social Responsibility Committee (SRC)",
+        "duty": "Oversees day-to-day social operations and ensures compliance with the policy."
+      },
+      {
+        "role": "Social Responsibility Committee (SRC)",
+        "duty": "Evaluates the effectiveness of social initiatives and recommends improvements."
+      },
+      {
+        "role": "Social Responsibility Committee (SRC)",
+        "duty": "Facilitates communication between management and employees regarding social issues."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Adhere to the Social Commitments Policy and participate in relevant training programs."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Report any concerns or violations related to social practices to the Social Compliance Manager."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Engage in initiatives aimed at improving workplace conditions and promoting fair practices."
+      }
+    ],
+    "monitoring": "At Dawar Group, we emphasize transparent and effective reporting to ensure that our social performance is communicated clearly to all stakeholders, including employees, customers, investors, and regulatory bodies. Our reporting mechanism is structured to deliver accurate, timely, and relevant information.\n\nConduct annual evaluations of critical social indicators, including employee satisfaction, health and safety statistics, and compliance with labor standards.\n\nUtilize employee feedback surveys and incident reporting systems to gather data and monitor progress.\n\nPrepare and review quarterly reports that compare performance against established baselines and targets outlined in our social commitments policy.\n\nPublish a detailed annual report that provides a comprehensive overview of our social initiatives, achievements, challenges, and future objectives.\n\nHighlight successful projects, such as improvements in workplace safety and employee development programs.\n\nEngage an independent third-party auditor to verify the accuracy and reliability of the report, enhancing credibility and transparency.\n\nImplement a robust system for reporting and managing any social incidents or violations, such as labor disputes or health and safety issues.\n\nProvide monthly summaries of incidents, including detailed root cause analyses and corrective actions taken to prevent recurrence.\n\nDocument our community outreach programs and stakeholder engagement efforts, detailing participation numbers and the impact of these initiatives.\n\nCollect and compile feedback from stakeholders on our social performance and initiatives, using it to inform continuous improvement.",
+    "reviewMechanism": "The Human Resources is responsible for overseeing the implementation and review of this policy. This policy will be reviewed annually to ensure its effectiveness and relevance. Updates and changes will be communicated to all stakeholders as necessary."
+  },
+  "sourcePath": "Policies - Kenal/DAWAR FOOTWEAR INDUSTRIES/Social Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/DAWAR FOOTWEAR INDUSTRIES/Social Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 11999,
+  "parsedAt": "2026-09-11T07:21:54.356Z"
+}

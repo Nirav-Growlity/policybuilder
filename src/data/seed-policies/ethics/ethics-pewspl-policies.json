@@ -1,0 +1,535 @@
+{
+  "id": "ethics-pewspl-policies",
+  "name": "PEWSPL Policies",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Buisness Conduct Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Parekh E-Com and Warehousing Services Private Limited (PEWSPL)",
+      "industry": "",
+      "site": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "Shakambari",
+          "address": "Shakambari Logistic Park-Unit #A-1Premises # 1 to 7Next to All Saint High School,Pise Pipeline Road, Village LonadTal-Bhiwandi - Thane, Maharashtra – 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Lonikand",
+          "address": "Parekh E-com & warehousing services Pvt. Ltd.Chondhe Warehouse, Vadhu Khurd, Gate no-128/142/144,Lonikand, Tal-Haveli, Dist-Pune Pin code- 412216, Maharashtra, India.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Chakan",
+          "address": "Gut No. 318/02, (P), Village-Kuruli, Tal. Khed, Dist.-Pune, 410501",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Parekh E-Com and Warehousing Services Private Limited (PEWSPL) is committed to conducting business with integrity, transparency, and professionalism. The Company believes that ethical business practices are essential for maintaining stakeholder trust, ensuring legal compliance, and supporting sustainable growth. This Business Conduct & Ethics Policy outlines the principles and standards that guide responsible business conduct across all operations, while maintaining zero tolerance towards bribery, corruption, fraud, discrimination, harassment, and other unethical practices.",
+      "declaration": "The purpose of this policy is to identify, assess, and manage all the practices that impacts our business activities in the operational context, our leverage and business relationships. It aims to enhance the knowledge and understanding of fair practices, actions and foster attitudes of honesty, integrity, tolerance, respect, solidarity, and responsibility amongst PEWSPL employees. It is our policy to comply with all applicable anti-bribery laws where PEWSPL operates, and to reflect all transactions on PEWSPL’s books and records accurately.\n\nThe policy aims to:\n\nEstablish clear ethical standards and expectations for all employees and stakeholders.\n\nPromote integrity, fairness, honesty, and accountability in all business operations.\n\nEnsure compliance with applicable laws, regulations, and contractual obligations.\n\nPrevent bribery, corruption, fraud, conflicts of interest, and unethical business conduct.\n\nEncourage transparent communication and responsible decision-making.\n\nProtect the rights, dignity, health, and safety of employees and stakeholders.\n\nStrengthen stakeholder confidence and maintain PEWSPL’s reputation as a responsible logistics and supply chain service provider.",
+      "scope": "This policy applies to all operations of PEWSPL, including transportation activities, operational facilities, warehouses, and office locations across all locations where PEWSPL operates. It covers all permanent, temporary, and contractual employees across all functions, as well as all internal and external stakeholders associated with PEWSPL, whether directly or indirectly engaged with the organization’s operations and services."
+    },
+    "focusAreas": [
+      "Ethical Business Conduct",
+      "Anti-Bribery & Anti-Corruption",
+      "Compliance with Laws & Regulations",
+      "Fair Employment Practices",
+      "Data Privacy & Confidentiality",
+      "Conflict of Interest",
+      "Responsible Supply Chain Practices",
+      "Reporting & Whistleblower Protection",
+      "AML & Financial Integrity",
+      "Information Security & Confidentiality",
+      "Conflict Management & Disclosure",
+      "Regulatory Compliance",
+      "Anti-Fraud Measures",
+      "Whistleblower & Grievance Mechanism"
+    ],
+    "qualitative": {
+      "Ethical Business Conduct": [
+        "PEWSPL is committed to conducting business honestly, fairly, and responsibly while maintaining the highest standards of professional ethics and integrity."
+      ],
+      "Anti-Bribery & Anti-Corruption": [
+        "The Company strictly prohibits bribery, facilitation payments, kickbacks, corruption, and improper business advantages in any form.",
+        "We are committed to maintaining zero tolerance towards bribery, corruption, facilitation payments, kickbacks, and unethical business conduct by strengthening internal controls, approval systems, and ethical compliance practices.",
+        "We strive to strengthen ethical governance, transparency, and accountability across all business operations and stakeholder interactions through regular monitoring and leadership oversight.",
+        "We will continue promoting fair and responsible business practices through awareness initiatives, compliance measures, and ethical leadership programs.",
+        "We aim to encourage employees and stakeholders to report unethical conduct or suspected corruption through confidential and accessible reporting mechanisms.",
+        "We are committed to ensuring that business decisions are made fairly, ethically, and without improper influence by implementing transparent procurement and approval procedures.",
+        "We will continue strengthening awareness regarding anti-bribery and anti-corruption requirements across the organization through periodic communication and training initiatives.",
+        "We strive to strengthen ethical governance and anti-bribery practices through internal controls, risk-based compliance monitoring, and governance frameworks aligned with applicable ISO 37001 Anti-Bribery Management System principles wherever feasible."
+      ],
+      "Compliance with Laws & Regulations": [
+        "PEWSPL complies with all applicable legal, regulatory, environmental, labor, transportation, safety, and industry-specific requirements relevant to its operations."
+      ],
+      "Fair Employment Practices": [
+        "The Company promotes equal opportunity, non-discrimination, respect, dignity, and fair treatment for all employees."
+      ],
+      "Data Privacy & Confidentiality": [
+        "Confidential business, operational, customer, employee, and supplier information shall be protected from unauthorized disclosure, misuse, or access."
+      ],
+      "Conflict of Interest": [
+        "Employees and stakeholders shall avoid situations where personal interests may conflict with Company interests or influence business decisions."
+      ],
+      "Responsible Supply Chain Practices": [
+        "PEWSPL encourages ethical sourcing, responsible procurement, transparent supplier relationships, and sustainable business practices across its supply chain ecosystem."
+      ],
+      "Reporting & Whistleblower Protection": [
+        "The Company encourages employees and stakeholders to report unethical behavior, fraud, policy violations, or misconduct without fear of retaliation."
+      ],
+      "AML & Financial Integrity": [
+        "We are committed to conducting business only with legitimate customers, suppliers, contractors, and business partners through appropriate verification and documentation practices.",
+        "We strive to strengthen transparency, accountability, and proper documentation in financial and operational transactions by improving monitoring and approval systems.",
+        "We will continue supporting compliance with applicable anti-money laundering, legal, and regulatory requirements relevant to our operations through regular compliance reviews and awareness initiatives.",
+        "We aim to strengthen awareness regarding responsible financial practices and anti-money laundering obligations across relevant business functions through periodic training and communication programs.",
+        "We are committed to maintaining accurate financial records and transparent transaction processes by promoting responsible documentation and reporting practices.",
+        "We will continue promoting ethical financial practices and responsible business conduct throughout the organization through internal controls and governance measures.",
+        "We are committed to maintaining KYC (Know Your Customer) and vendor verification practices for customers, suppliers, contractors, and business partners through appropriate documentation and review procedures."
+      ],
+      "Information Security & Confidentiality": [
+        "We are committed to protecting confidential business, customer, supplier, operational, and employee information from unauthorized access, misuse, or disclosure through secure information handling practices and controlled access systems.",
+        "We aim to strengthen responsible information management, data privacy, cybersecurity, and record management practices across operations by improving digital controls and monitoring mechanisms.",
+        "We will continue enhancing employee awareness regarding confidentiality, responsible digital practices, and information security through periodic awareness sessions and communication programs.",
+        "We strive to promote secure handling, storage, sharing, and retention of business information and records through standardized documentation and retention procedures.",
+        "We are committed to improving responsible usage of digital systems, communication channels, and operational data by encouraging compliance with IT and cybersecurity guidelines.",
+        "We strive to strengthen information security, confidentiality, and cybersecurity practices through controls aligned with applicable ISO 27001 Information Security Management System requirements."
+      ],
+      "Conflict Management & Disclosure": [
+        "We are committed to promoting fair, transparent, and objective decision-making across procurement, recruitment, vendor management, and operational activities through defined governance procedures.",
+        "We aim to strengthen processes for identifying, disclosing, and responsibly managing actual, potential, or perceived conflicts of interest through formal declaration and review mechanisms.",
+        "We will continue enhancing employee awareness regarding professional ethics, impartiality, and responsible business conduct through awareness programs and internal communication.",
+        "We strive to ensure that personal interests do not improperly influence business decisions or professional responsibilities by encouraging transparent disclosures and ethical conduct.",
+        "We are committed to encouraging timely disclosure of any conflict of interest situations that may arise during business operations through accessible reporting channels.",
+        "We will continue promoting ethical and unbiased business relationships with customers, suppliers, contractors, and other stakeholders through fair evaluation and approval practices."
+      ],
+      "Regulatory Compliance": [
+        "We are committed to complying with all applicable legal, regulatory, contractual, and industry-specific requirements relevant to our operations through continuous monitoring and compliance management practices.",
+        "We strive to strengthen compliance awareness and responsible business practices across all operational functions and locations through regular communication and employee engagement initiatives.",
+        "We will continue monitoring changes in applicable laws and regulations to support timely compliance and implementation through periodic reviews and updates.",
+        "We aim to promote accountability and responsible conduct in all business activities and stakeholder interactions through defined compliance procedures and governance practices.",
+        "We are committed to maintaining accurate records and documentation to support legal and regulatory compliance obligations through standardized record management systems.",
+        "We will continue enhancing employee awareness regarding compliance responsibilities and organizational expectations through periodic awareness and training programs."
+      ],
+      "Anti-Fraud Measures": [
+        "We are committed to strengthening internal controls and monitoring mechanisms to prevent fraud, misconduct, and unethical activities through periodic reviews and approval systems.",
+        "We strive to maintain transparent, accurate, and accountable financial and operational practices across all business functions by promoting proper documentation and verification processes.",
+        "We will continue encouraging timely reporting of suspected fraud, unethical conduct, or policy violations through secure and accessible reporting mechanisms.",
+        "We aim to strengthen awareness regarding fraud prevention responsibilities among employees and relevant stakeholders through regular communication and awareness initiatives.",
+        "We are committed to supporting fair investigations and timely corrective actions in cases of identified misconduct or fraudulent activities through defined escalation and review procedures.",
+        "We will continue promoting a culture of honesty, accountability, and responsible business conduct throughout the organization through ethical leadership and employee engagement."
+      ],
+      "Whistleblower & Grievance Mechanism": [
+        "We are committed to encouraging employees and stakeholders to report unethical conduct, fraud, harassment, corruption, or policy violations without fear of retaliation through secure and confidential reporting channels.",
+        "We strive to maintain fair, transparent, and accessible reporting and grievance handling mechanisms across the organization through defined review and escalation procedures.",
+        "We are committed to protecting confidentiality and supporting non-retaliation principles for individuals reporting concerns in good faith through ethical governance and management oversight.",
+        "We will continue strengthening trust, transparency, and accountability through responsible grievance management practices and employee engagement initiatives.",
+        "We will continue promoting awareness regarding ethical reporting channels and whistleblower protection practices through regular communication and awareness initiatives.",
+        "We aim to ensure timely review, investigation, and appropriate resolution of reported concerns and grievances through structured investigation and corrective action processes."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Bribery & Anti-Corruption",
+        "targets": [
+          {
+            "target": "Increase anti-bribery and ethics awareness training coverage by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain zero confirmed incidents of bribery or corruption annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 2 ethics and anti-corruption awareness sessions annually across operational locations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve 100% employee acknowledgment of the Ethics Policy and anti-bribery requirements",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct periodic reviews of anti-bribery and ethical compliance practices at least once annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% review and closure of identified ethics-related concerns or violations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Integrate anti-bribery and ethical compliance clauses into 100% of key supplier and vendor agreements",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "AML & Financial Integrity",
+        "targets": [
+          {
+            "target": "Improve awareness regarding anti-money laundering requirements among relevant employees by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 1 anti-money laundering awareness session annually for relevant employees",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain zero confirmed incidents related to money laundering activities annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct periodic reviews of financial documentation and compliance practices at least once annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve financial transaction monitoring and documentation practices by 15%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve compliance with applicable ISO 27001 Information Security Management System requirements across relevant business functions by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Information Security & Confidentiality",
+        "targets": [
+          {
+            "target": "Improve employee awareness regarding responsible information management and cybersecurity practices by 25%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 2 information security and confidentiality awareness sessions annually",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve 100% employee acknowledgment of confidentiality and responsible information management requirements",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain zero major incidents related to unauthorized disclosure or misuse of confidential business information annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Strengthen secure 100% record management and responsible information handling practices across all operational functions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve secure digital documentation and data handling compliance by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Conflict Management & Disclosure",
+        "targets": [
+          {
+            "target": "Improve employee awareness regarding conflict of interest requirements by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 1 awareness and communication initiative related to conflict of interest annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve 100% employee acknowledgment of conflict of interest and ethical business conduct requirements",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Integrate conflict of interest considerations into 100% of key procurement and vendor management processes",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct periodic reviews of conflict of interest declarations at least once annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain 100% transparent and objective decision-making processes across operational and procurement activities",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve disclosure compliance for actual or potential conflicts of interest by 25%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Regulatory Compliance",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable legal and regulatory requirements across operations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 1 compliance review or assessment annually",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide compliance awareness training to at least 95% of relevant employees",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% reporting and closure of identified compliance-related observations or corrective actions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Continue 100% maintaining proper compliance-related records and documentation across operational functions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve employee awareness regarding regulatory compliance responsibilities by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve compliance monitoring and tracking practices by 15%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Fraud Measures",
+        "targets": [
+          {
+            "target": "Maintain zero confirmed incidents of fraudulent financial misconduct annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 1 internal review or compliance assessment related to fraud prevention annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide fraud awareness and ethical conduct training to at least 90% of relevant employees",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% reporting, review, and closure of identified fraud-related concerns or complaints",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve employee awareness regarding fraud risks and reporting responsibilities by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve fraud risk monitoring coverage across key operational functions by 15%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower & Grievance Mechanism",
+        "targets": [
+          {
+            "target": "Improve employee awareness regarding whistleblower and grievance reporting mechanisms by 25%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 2 awareness communications regarding reporting channels annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% review and closure of identified grievances or ethics-related complaints",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain 100% accessible and confidential grievance reporting mechanisms across all operational locations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Improve employee participation in grievance and ethical reporting awareness initiatives by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Provide leadership and direction for ethical business conduct across the organization."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Promote a culture of integrity, transparency, accountability, and compliance."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure adequate resources and support for implementation of the Ethics Policy."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Review ethical compliance performance and support continual improvement initiatives."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Support monitoring and evaluation of compliance with ethical business practices and internal controls."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Identify and report potential risks related to fraud, bribery, corruption, financial misconduct, or misuse of Company assets."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Assist in conducting investigations and corrective action reviews related to ethical violations where applicable."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Promote transparency, accountability, and compliance with financial and operational procedures across the organization."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Implement and communicate the Ethics Policy across the organization."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Monitor compliance with ethical business practices, Company policies, and applicable laws."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Conduct ethics awareness and training programs for employees and relevant stakeholders."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Maintain confidential reporting and grievance mechanisms for ethical concerns and misconduct."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Investigate reported ethical violations and recommend corrective actions where required."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Review this policy regularly."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Promote ethical behaviour and responsible decision-making within their teams."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Ensure employees follow Company policies, procedures, and compliance requirements."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Prevent unethical practices including bribery, corruption, conflicts of interest, discrimination, fraud, or misuse of Company resources."
+      },
+      {
+        "role": "Department Heads and Managers",
+        "duty": "Encourage employees to report ethical concerns without fear of retaliation."
+      },
+      {
+        "role": "Employees",
+        "duty": "Conduct business activities with honesty, integrity, fairness, and professionalism."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with applicable laws, regulations, Company policies, and ethical standards."
+      },
+      {
+        "role": "Employees",
+        "duty": "Avoid conflicts of interest, bribery, fraud, harassment, and unethical behaviour."
+      },
+      {
+        "role": "Employees",
+        "duty": "Promptly report suspected misconduct, unethical practices, or policy violations through designated channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Protect Company assets, confidential information, and stakeholder trust."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Comply with applicable laws, regulations, and Company ethical requirements while conducting business with PEWSPL."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Maintain fair, transparent, and ethical business practices."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Avoid bribery, corruption, fraud, forced labour, discrimination, and unethical conduct."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Cooperate with PEWSPL in ethical compliance assessments or investigations where applicable."
+      }
+    ],
+    "monitoring": "Implementation of this Ethics Policy shall be monitored through periodic compliance reviews, internal assessments, employee feedback, grievance mechanisms, and monitoring of ethical concerns, incidents, and corrective actions. Reported violations and misconduct cases shall be reviewed and addressed appropriately.\n\nPEWSPL is committed to continually improving ethical business practices through regular policy reviews, employee awareness programs, compliance monitoring, grievance management mechanisms, and implementation of corrective actions. The Company will continue strengthening its culture of integrity, transparency, accountability, and responsible business conduct.",
+    "reviewMechanism": "This Ethics Policy shall be reviewed annually by the Human Resources, or whenever significant changes occur in applicable laws, regulatory requirements, operational activities, or business practices, to ensure its continued relevance, effectiveness, and alignment with the Company’s ethical commitments."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/PEWSPL Policies/3. Buisness Conduct Ethics Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/PEWSPL Policies/3. Buisness Conduct Ethics Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 31219,
+  "parsedAt": "2026-09-11T07:12:12.931Z"
+}

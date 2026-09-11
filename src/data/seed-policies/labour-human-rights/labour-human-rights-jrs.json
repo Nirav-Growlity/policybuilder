@@ -1,0 +1,491 @@
+{
+  "id": "labour-human-rights-jrs",
+  "name": "JRS",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labour and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "JRS Pharma & Gujarat Microwax Pvt. Ltd.",
+      "industry": "",
+      "site": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "Unit-1",
+          "address": "Survey No. 291/1 & 2, Kalol Mehsana Highway, Nandasan – 382705 Dist : Mehsana, North Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-2",
+          "address": "Survey No. 292/293, Kalol Mehsana Highway, Nandasan – 382705 Dist : Mehsana, North Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-3",
+          "address": "Survey No. 99/100, Kalol Mehsana Highway, Vill.: Chandarda, Ta. Kadi, Dist.: Mehsana, Gujarat, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-4",
+          "address": "Survey No. 69/3, Kalol-Mehsana Highway, Vill.: Chandarda Ta. Kadi, Dist.: Mehsana, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "JRS Pharma & Gujarat Microwax Pvt Ltd is committed to upholding the highest standards of labor practices and human rights across all operations, in line with applicable Indian labor laws and internationally recognized frameworks such as the International Labor Organization (ILO) Core Conventions and the UN Guiding Principles on Business and Human Rights.\n\nWe recognize that protecting people including employees, contract workers, suppliers, and communities is fundamental to ethical business conduct, operational excellence, and sustainable growth. This Labor & Human Rights Policy establishes our commitment to fair treatment, safe and healthy working conditions, equal opportunity, and respect for human dignity across the employment lifecycle and value chain.",
+      "declaration": "The purpose of this Labor & Human Rights Policy is to clearly define JRS Pharma & Gujarat Microwax Pvt. Ltd.’s commitment to responsible labor practices and respect for human rights across all operations and business relationships.\n\nProtect the rights, dignity, health, and well-being of all employees, workers, and contract labor.\n\nEnsure fair, ethical, and lawful employment practices throughout the employment lifecycle.\n\nPrevent child labor, forced labor, discrimination, harassment, and any form of exploitation.\n\nPromote a safe, inclusive, respectful, and engaging workplace culture.\n\nAlign the Company’s labor and human rights practices with applicable Indian laws, international standards, and customer ESG expectations.",
+      "scope": "This policy applies to all operations, manufacturing units, warehouses, offices, laboratories, utilities, and support functions of JRS Pharma & Gujarat Microwax Pvt. Ltd. It covers all employees, workers, contract personnel, suppliers, service providers, and all stakeholders (internal and external) operating on behalf of the JRS Pharma & Gujarat Microwax Pvt. Ltd."
+    },
+    "focusAreas": [
+      "Employee Safety & Welfare",
+      "Workplace Standards",
+      "Employee Engagement & Communication",
+      "Skill and Career Development",
+      "Protection of Minors",
+      "Ethical Labor Practices",
+      "Equal Opportunity & Fair Treatment"
+    ],
+    "qualitative": {
+      "Employee Safety & Welfare": [
+        "We aim to maintain a safe, healthy, and hygienic working environment across all locations through robust occupational health and safety systems.",
+        "We maintain strict compliance with applicable occupational health and safety laws, statutory requirements, and internal safety procedures, and continuously monitor adherence through audits, inspections, and supervisory checks.",
+        "We continuously strengthen hazard identification, risk assessment, and incident prevention practices to reduce workplace injuries and illnesses.",
+        "We conduct regular safety drills, mock emergency exercises, and evacuation drills to ensure employees are prepared to respond effectively to fire, chemical spills, medical emergencies, and other workplace incidents.",
+        "We prioritize employee well-being through regular health check-ups, safety training, emergency preparedness, and wellness awareness programs.",
+        "We strengthen employee awareness through periodic safety training, toolbox talks, and communication programs focused on hazard prevention, safe work practices, and emergency preparedness.",
+        "We encourage proactive reporting of unsafe conditions, near-misses, and safety concerns without fear of retaliation.",
+        "We emphasize the mandatory use of appropriate Personal Protective Equipment (PPE) across all operations and ensure availability, proper selection, and regular inspection of PPE to protect employees and contract workers from occupational hazards."
+      ],
+      "Workplace Standards": [
+        "We continuously monitor compliance with applicable labor laws Like the Factories Act 1948, the Industrial Disputes Act 1947, Code on Wages 2019, Etc. statutory requirements, and internal procedures.",
+        "We ensure full compliance with all applicable Indian labor laws, statutory requirements, and regulatory obligations governing employment, wages, working hours, social security, health and safety, and employee welfare, and we continuously monitor compliance through internal reviews and audits.",
+        "We are committed to ensuring fair, safe, and dignified working conditions, including adequate ventilation, lighting, sanitation, workspace ergonomics, and overall workplace hygiene.",
+        "We are committed to paying fair, timely, and transparent wages to all employees and contract workers, ensuring that employment contracts, remuneration, overtime payments, rest periods, and statutory benefits meet or exceed applicable legal requirements.",
+        "We strive to continuously improve workplace conditions through employee feedback, internal reviews, and policy enhancements.",
+        "We aim to provide appropriate health insurance coverage and statutory social security benefits to eligible employees, supporting their physical, mental, and financial well-being."
+      ],
+      "Employee Engagement & Communication": [
+        "We promote open communication, consultation, and constructive engagement between employees and management.",
+        "We aim to strengthen employee engagement through structured collective bargaining arrangements (CBA), where applicable, and constructive dialogue with employee representatives to address workplace matters in a fair and transparent manner.",
+        "We aim to foster a culture where employees can raise concerns, suggestions, or grievances without fear of retaliation.",
+        "We continue to conduct regular town hall meetings and employee interaction forums to communicate business updates, organizational priorities, policy changes, and to encourage two-way communication between employees and management.",
+        "We commit to addressing employee concerns fairly, objectively, and within defined timelines.",
+        "We aim to enhance employee awareness and participation through regular training and communication programs on labor rights, workplace conduct, grievance mechanisms, and organizational values.",
+        "We continue to ensure compliance with applicable labor laws, internal policies, and communication protocols related to employee engagement, consultation, and information sharing."
+      ],
+      "Skill and Career Development": [
+        "We provide continuous learning and development opportunities to enhance employee skills, competence, and career growth.",
+        "We aim to implement structured performance evaluation processes to assess employee performance objectively, provide constructive feedback, and support continuous improvement.",
+        "We aim to establish and maintain career development plans that support employee growth, skill enhancement, and internal career progression aligned with organizational needs.",
+        "We provide continuous training and development programs covering technical skills, health & safety, compliance, behavioral competencies, and leadership development.",
+        "We ensure compliance with learning and training requirements by aligning training programs with applicable labor laws, regulatory obligations, internal policies, and customer expectations, and by monitoring training completion and effectiveness on a regular basis.",
+        "We support internal mobility, succession planning, and performance-based career progression.",
+        "We continuously align training initiatives with evolving regulatory requirements, technologies, and business needs through mandatory Zero Tolerance training on harassment, discrimination, forced labor, and child labor, along with compliance training on labor laws, health & safety, POSH, Code of Conduct, and ethical workplace practices."
+      ],
+      "Protection of Minors": [
+        "We maintain strict controls to prevent any form of child labor across operations.",
+        "We ensure strict compliance with all applicable child labor and young worker protection laws, regulations, and statutory requirements, including provisions under Indian labor legislation and international standards.",
+        "We ensure effective age-verification processes during recruitment and onboarding.",
+        "We provide periodic training and awareness programs to Human Resources, recruitment teams, supervisors, and relevant employees to strengthen understanding of child labor prevention, age-verification requirements, and protection of young workers.",
+        "We engage with suppliers and contractors to mitigate child labor risks within the supply chain and take prompt corrective action where required.",
+        "We conduct internal audits and compliance reviews at regular intervals to verify adherence to minimum age requirements, recruitment controls, and record-keeping related to protection of minors.",
+        "We carry out periodic risk assessments to identify, assess, and mitigate risks related to child labor and young worker protection within our operations and across the supply chain, and we implement corrective actions where risks are identified."
+      ],
+      "Ethical Labor Practices": [
+        "We aim to eliminate all risks related to forced, bonded, trafficked, or involuntary labor across operations and business relationships.",
+        "We commit that all employment relationships are voluntary and free from coercion, intimidation, or unfair practices.",
+        "We continuously improve oversight of labor contractors, recruitment agencies, and service providers.",
+        "We strengthen internal monitoring mechanisms to identify and address modern slavery risks at an early stage."
+      ],
+      "Equal Opportunity & Fair Treatment": [
+        "We strive to build an inclusive workplace culture that values diversity, equality, and mutual respect.",
+        "We ensure that employment decisions related to recruitment, promotion, training, and compensation are based on merit and performance.",
+        "We continuously enhance awareness, training, and reporting mechanisms to promote respectful and ethical workplace conduct.",
+        "We maintain zero tolerance for discrimination, harassment, bullying, retaliation, or any form of unfair or abusive treatment at the workplace.",
+        "We conduct periodic risk assessments to identify, assess, and mitigate risks related to discrimination, harassment, unequal treatment, and workplace misconduct across operations.",
+        "We strengthen compliance through regular internal audits, reviews, and monitoring mechanisms to ensure adherence to equal opportunity principles, POSH requirements, and applicable labor laws.",
+        "We are committed to providing equal opportunity in recruitment, training, career development, promotion, and compensation decisions, based solely on merit, qualifications, performance, and business needs.",
+        "We ensure that complaints related to discrimination or unfair treatment are handled through confidential, impartial, and effective grievance mechanisms, with protection against retaliation."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Safety & Welfare",
+        "targets": [
+          {
+            "target": "We aim to maintain zero workplace accidents across all operations each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to achieve a minimum 50% reduction in Lost Time Injury Frequency Rate (LTIFR).",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that 100% of employees and contract workers are provided with appropriate Personal Protective Equipment (PPE) relevant to their job roles and risk exposure each year, and that PPE usage compliance is monitored through regular inspections.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to ensure that 100% of employees and eligible contract workers undergo periodic medical and occupational health check-ups in line with statutory requirements and occupational risk profiles, each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to ensure that 100% of employees and contract workers receive annual health, safety, and emergency-response training each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We continue to ensure that 100% of workplace incidents, near-misses, and unsafe conditions are reported within 24–48 hours.",
+            "baseline": "",
+            "deadline": "Within 24–48 hours"
+          },
+          {
+            "target": "We aim to close at least 90% of corrective and preventive actions within defined timelines.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Standards",
+        "targets": [
+          {
+            "target": "We aim to ensure that 100% of employees and eligible contract workers have written and legally compliant employment contracts.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure 100% compliance with applicable labor laws, statutory requirements, and regulatory obligations across all locations each year, with compliance status monitored through internal audits and reviews.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We continue to conduct labor law and statutory compliance audits covering wages, working hours, social security, and employment conditions at 100% of operational sites annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to ensure that 100% of eligible employees and contract workers are covered under statutory and company-provided insurance schemes, including health insurance, employee state insurance, and other legally mandated coverage, each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to achieve and maintain at least a 90% employee satisfaction rate related to workplace conditions, fairness, and compliance as measured through periodic employee surveys.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We continue to maintain zero confirmed cases of wages, benefits, or overtime exceeding statutory limits annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We continue to conduct annual payroll, wage, and working-hours compliance audits at 100% of sites.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to achieve at least 90% positive responses related to fair treatment and working conditions in employee surveys.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Employee Engagement & Communication",
+        "targets": [
+          {
+            "target": "We aim to ensure that 100% of manufacturing sites have formal employee–management communication forums.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that 100% of employee representatives are selected through a transparent, documented, and fair employee representative selection procedure in accordance with applicable laws and internal guidelines.",
+            "baseline": "",
+            "deadline": "Each two years"
+          },
+          {
+            "target": "We aim to ensure that 100% of Collective Bargaining Agreements (CBA), where applicable, are supported by formally appointed and duly recognized employee representatives each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We continue to conduct at least one structured employee–management engagement or consultation meeting per quarter at each site through town hall meetings or other formal communication forums.",
+            "baseline": "",
+            "deadline": "Each quarter"
+          },
+          {
+            "target": "We aim to achieve a minimum 70% participation rate in employee engagement surveys.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to address or action-plan at least 80% of issues raised through formal grievance or consultation mechanisms.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Skill and Career Development",
+        "targets": [
+          {
+            "target": "We aim to provide an average of 12–24 hours of training per employee per year, covering safety, compliance, technical, and behavioral topics.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We continue to ensure that 100% of new employees receive induction, code-of-conduct, and labor rights training within their joining period each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to provide at least one or two Career Management and Skill Development training per employee each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to ensure that at least 70% of employees have documented annual performance and development reviews.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to fill a minimum of 40% of identified critical roles through internal talent and succession planning.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We continue to ensure that at least 30% of employees participate annually in skill development or leadership programs.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Protection of Minors",
+        "targets": [
+          {
+            "target": "We aim to maintain zero incidents of child labor across all operations and sites each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We continue to verify 100% of recruitment and onboarding records for age compliance annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to implement corrective action plans in 100% of cases where child labor risks are identified within operations or supply chains.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We continue to ensure that 100% of HR and recruitment personnel receive child labor prevention training.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Practices",
+        "targets": [
+          {
+            "target": "We aim to maintain zero confirmed cases of forced, bonded, trafficked, or involuntary labor across operations each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to ensure 100% compliance with applicable labor laws, ethical labor standards, and internal codes of conduct related to forced labor, bonded labor, human trafficking, and modern slavery across all operations each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We continue to conduct internal audits covering ethical labor practices at 100% of manufacturing sites and high-risk functions at least once every year.",
+            "baseline": "",
+            "deadline": "At least once every year"
+          },
+          {
+            "target": "We continue to ensure 100% verification that no recruitment or placement fees are charged to workers during audits.",
+            "baseline": "2022",
+            "deadline": "FY 2028"
+          },
+          {
+            "target": "We aim to screen and approve 100% of labor contractors and recruitment agencies prior to engagement.",
+            "baseline": "",
+            "deadline": "Prior to engagement"
+          },
+          {
+            "target": "We continue to provide forced labor and modern slavery awareness training to 100% of employees and relevant contract workers.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Equal Opportunity & Fair Treatment",
+        "targets": [
+          {
+            "target": "We aim to maintain zero tolerance for discrimination and harassment, ensuring that 100% of substantiated cases are investigated and closed within defined timelines.",
+            "baseline": "",
+            "deadline": "Within defined timelines"
+          },
+          {
+            "target": "We continue to provide annual anti-harassment, POSH, and equal-opportunity training to 100% of employees.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that 100% of grievances and complaints are recorded, investigated, and resolved in accordance with internal procedures.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to conduct regular internal assessments and human rights risk assessments covering discrimination, equal opportunity, and workplace fairness at 100% of operational sites at least once every year.",
+            "baseline": "2022",
+            "deadline": "At least once every year"
+          },
+          {
+            "target": "We aim to ensure that findings from internal assessments and risk assessments are documented and that 100% of identified gaps or risks are addressed through corrective and preventive actions within defined timelines.",
+            "baseline": "",
+            "deadline": "Within defined timelines"
+          },
+          {
+            "target": "We aim to progressively increase women representation in the workforce, with a target to improve the overall percentage 10% of women employees’ year-on-year.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure equal opportunity in recruitment, training, promotion, and compensation, with employment decisions for 100% of roles based on merit, qualifications, and performance, without discrimination.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chairman & Managing Director",
+        "duty": "Provide overall leadership, strategic direction, and oversight for labor and human rights governance."
+      },
+      {
+        "role": "Chairman & Managing Director",
+        "duty": "Approve the Labor & Human Rights Policy and any subsequent revisions."
+      },
+      {
+        "role": "Chairman & Managing Director",
+        "duty": "Review significant labor and human rights risks, major incidents, compliance status, and corrective action outcomes."
+      },
+      {
+        "role": "Senior Management / Plant Head",
+        "duty": "Ensure effective implementation of the policy across all sites and functions."
+      },
+      {
+        "role": "Senior Management / Plant Head",
+        "duty": "Allocate adequate resources to support compliance, training, and monitoring activities."
+      },
+      {
+        "role": "Senior Management / Plant Head",
+        "duty": "Review labor and human rights performance indicators, audit findings, grievances, and corrective actions on a periodic basis."
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Act as the primary owner of this policy and lead its implementation."
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Review Policy regularly"
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Ensure lawful recruitment, fair employment practices, wage administration, working hours’ compliance, and employee welfare measures."
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Establish and operate grievance redressal mechanisms and ensure non-retaliation."
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Coordinate training, awareness programs, internal assessments, and reporting related to labor and human rights."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS)",
+        "duty": "Oversee occupational health and safety systems aligned with labor welfare requirements."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS)",
+        "duty": "Conduct risk assessments, site inspections, and audits related to workplace health and safety."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS)",
+        "duty": "Track incidents, near-misses, corrective actions, and compliance with statutory safety requirements."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Implement policy requirements within their respective departments."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Ensure fair treatment, appropriate working conditions, and compliance with procedures at the operational level."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Monitor employee conduct, working hours, and workplace behavior, and escalate concerns when required."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Comply with the Labor & Human Rights Policy, applicable laws, and internal procedures."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Participate in required training and awareness programs."
+      },
+      {
+        "role": "Employees & Contract Workers",
+        "duty": "Report concerns, violations, or unethical practices through established reporting and grievance channels."
+      }
+    ],
+    "monitoring": "Labor and human rights performance is monitored through internal reviews, audits, grievance records, and management reporting. Significant incidents or violations are escalated to senior management and addressed through corrective and preventive actions.\n\nJRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to the continuous improvement of its labor and human rights performance through systematic monitoring, periodic evaluation, and proactive corrective action. We continuously track key performance indicators related to employee health and safety, working hours, wages, training, grievances, incident reporting, and compliance with labor laws and internal standards, using defined metrics and management reviews.\n\nWe continue to conduct regular internal audits, site inspections, employee surveys, and management reviews to identify gaps, emerging risks, and opportunities for improvement across operations and the supply chain. Findings from audits, grievances, incidents, and stakeholder feedback are analyzed to determine root causes, and corrective and preventive actions are implemented with clear responsibilities and timelines.",
+    "reviewMechanism": "This Labor & Human Rights Policy shall be reviewed at least once every year or as per requirement by HR head to ensure its continued suitability, adequacy, and effectiveness. The review process considers changes in applicable labor laws and regulations, international human rights standards, operational activities, workforce composition, customer requirements, and evolving ESG expectations."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/JRS/Policies/2. Labour and Human Rights Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/JRS/Policies/2. Labour and Human Rights Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 25305,
+  "parsedAt": "2026-09-11T07:10:05.566Z"
+}

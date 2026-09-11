@@ -1,0 +1,231 @@
+{
+  "id": "labour-human-rights-waaree-2025",
+  "name": "Waaree (2025)",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Fair Labor Practices Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Waaree Energies Ltd. (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Gujarat – Surat",
+          "address": "Plot No. 231 – 236, Surat Special Economic Zone, Diamond Park Sachin, Surat 394230, Gujarat",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat – Tumb",
+          "address": "Survey No. 38/1, Tumb Village, Tumb, Umbergaon, Valsad, Gujarat – 396150",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat – Chikhli",
+          "address": "WAAREE SHREE GODIJI FACTORY, New Survey no. 1928 Village Degam, Taluka, Chikhli, Gujarat 396530",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat –Nandigram",
+          "address": "CBIPL NANDIGRAM Unnamed Road, Nandigam, Gujarat 396105",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Waaree Energies Ltd. (Group) is deeply committed to upholding the highest standards of labor and human rights in all aspects of its operations. We recognize that the well-being, health, and safety of our employees and stakeholders are essential to the sustainability of our business. This Fair Labor Practices Policy outlines our initiatives and commitments to ensure that every individual associated with Waaree is treated with dignity, fairness, and respect. Our goal is to foster a supportive, safe, and inclusive work environment that promotes human rights, equity, and continuous career development.",
+      "declaration": "Waaree Energies Ltd. is proud to uphold and promote labor and human rights through its practices and policies.",
+      "scope": "This policy applies to all Waaree Energies Ltd. (Group) employees, contractors, suppliers, and partners globally. It extends to external stakeholders, including the communities in which we operate. All sites, which are mentioned below, are ensured to maintain labor and human rights standards throughout our operations and relationships."
+    },
+    "focusAreas": [
+      "Employees Health and Safety",
+      "Working Conditions",
+      "Labor Relations",
+      "Career Management",
+      "Child and Forced Labor",
+      "Diversity, Equity & Inclusion",
+      "External Stakeholder Human Rights"
+    ],
+    "qualitative": {
+      "Employees Health and Safety": [
+        "Waaree prioritizes the health and safety of its employees. We have established comprehensive health and safety management systems that include regular risk assessments, safety training, and the provision of personal protective equipment (PPE). All facilities comply with local and international health and safety standards, and we actively monitor workplace hazards to ensure the well-being of all employees."
+      ],
+      "Working Conditions": [
+        "Waaree ensures fair wages, benefits, and reasonable working hours for all employees, aligned with local laws and global best practices. Two-way communication mechanisms are in place, enabling employees to voice their concerns about working conditions. We are committed to maintaining transparent and open dialogue on employment terms, fostering trust and mutual respect."
+      ],
+      "Labor Relations": [
+        "We maintain structured relations with employee representatives and trade unions, supporting the rights of employees to freely associate and engage in collective bargaining. Waaree values the input of its employees and their representatives and actively encourages dialogue to ensure that their rights are protected and that they have a platform for meaningful participation."
+      ],
+      "Career Management": [
+        "Waaree invests in the professional growth of its workforce by providing equal opportunities for recruitment, training, and career development. We have implemented career management programs that include training, mentorship, and leadership development, ensuring that our employees have clear pathways for advancement and personal growth within the company."
+      ],
+      "Child and Forced Labor": [
+        "Waaree strictly prohibits the use of child or forced labor in any of its operations and throughout its supply chain. We have implemented stringent measures to prevent child labor, forced labor, or any form of human trafficking, and we conduct regular audits of our suppliers to ensure compliance with these principles."
+      ],
+      "Diversity, Equity & Inclusion": [
+        "Waaree celebrates diversity and promotes inclusion across all levels of the organization. We are committed to providing a workplace free from discrimination based on race, gender, sexual orientation, religion, age, or disability. We believe that equity and inclusion are essential to fostering innovation and growth, and we actively work to create an environment where all individuals can thrive."
+      ],
+      "External Stakeholder Human Rights": [
+        "Waaree recognizes the importance of respecting the human rights of all external stakeholders, including local communities, customers, and partners. We engage with local communities to ensure that our operations do not infringe on their rights and work closely with suppliers and contractors to ensure that human rights standards are maintained throughout our supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employees Health and Safety",
+        "targets": [
+          {
+            "target": "Reduce workplace incidents by 20% by 2025 through enhanced safety training and continuous risk assessments.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve 100% compliance with all health and safety regulations by 2025 across all facilities.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees have access to clear, two-way communication channels regarding working conditions by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Conduct annual wage and benefits reviews to ensure fair and competitive compensation packages.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Labor Relations",
+        "targets": [
+          {
+            "target": "Increase employee engagement in collective bargaining activities by 15% by 2025, ensuring greater representation and communication between employees and management.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Hold quarterly meetings with employee representatives to address concerns and improve working conditions.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Career Management",
+        "targets": [
+          {
+            "target": "Offer training and development opportunities to 100% of employees by 2025, ensuring every team member has access to career growth programs.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 90% employee satisfaction rate with career development opportunities by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Child and Forced Labor",
+        "targets": [
+          {
+            "target": "Conduct annual audits of 100% of our suppliers to ensure they are free from child or forced labor practices by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure that all suppliers comply with Waaree’s zero-tolerance policy for child and forced labor by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity & Inclusion",
+        "targets": [
+          {
+            "target": "Achieve gender parity in leadership positions by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase the representation of underrepresented groups in the workforce by 10% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Engage with at least 3 external stakeholder human rights initiatives annually by 2025, ensuring that our operations respect and promote the rights of local communities.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure all supply chain partners are audited for human rights compliance by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources Director",
+        "duty": "Oversees the implementation of the Fair Labor Practices Policy, ensures compliance, and addresses concerns related to employee relations and workplace conditions."
+      },
+      {
+        "role": "Health and Safety Officer",
+        "duty": "Monitors health and safety standards across all facilities, ensuring the safety and well-being of employees."
+      },
+      {
+        "role": "Diversity & Inclusion Committee",
+        "duty": "Ensures the company is meeting its diversity, equity, and inclusion goals, while fostering an inclusive workplace culture."
+      },
+      {
+        "role": "Management and Employees",
+        "duty": "All levels of management and employees are responsible for adhering to labor and human rights standards, promoting safe and ethical working conditions."
+      }
+    ],
+    "monitoring": "Employee Feedback Surveys: We conduct regular surveys to assess employee satisfaction with working conditions, safety, and career development.\n\nSupplier Audits: All supply chain partners will be audited regularly to ensure they meet our human rights and labor standards.",
+    "reviewMechanism": "The Fair Labor Practices Policy will be reviewed annually by the Human Resources Director and the Diversity & Inclusion Committee to assess progress, effectiveness, and relevance. This review will ensure that the policy adapts to changing regulations, stakeholder feedback, and evolving company goals. Updates and changes will be communicated to all employees and stakeholders as necessary."
+  },
+  "sourcePath": "Policies - Kenal/Waaree (2025)/Fair Labor Practices Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Waaree (2025)/Fair Labor Practices Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 10773,
+  "parsedAt": "2026-09-11T07:31:31.536Z"
+}

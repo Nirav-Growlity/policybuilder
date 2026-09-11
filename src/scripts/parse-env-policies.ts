@@ -110,7 +110,7 @@ Schema format (Output ONLY valid JSON, no markdown blocks):
 
 async function main() {
   for (const { json: jsonFile, dir: dirName, baseDir } of MAPPING) {
-    const jsonPath = path.join(DATA_DIR, jsonFile);
+    const jsonPath = path.join(DATA_DIR, "environmental", jsonFile);
     if (!fs.existsSync(jsonPath)) continue;
 
     const companyDir = path.join(ROOT_DOCS_DIR, baseDir, dirName);

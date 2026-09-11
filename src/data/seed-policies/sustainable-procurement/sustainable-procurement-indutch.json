@@ -1,0 +1,182 @@
+{
+  "id": "sustainable-procurement-indutch",
+  "name": "Indutch",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4.Sustainable_Procurement_Policy[1].docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Indutch Composites Technology Pvt Ltd",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Indutch Composites Technology Pvt Ltd..",
+          "address": "Plot No. 187/P/1B-1, Waghodia Industrial Estate, Pipalia - Waghodia Road, Vadodara - 391760, Gujarat, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Indutch Composites Technology Pvt Ltd",
+          "address": "9-2E, 9-1A, 12-2, 11-6, 11-4B, 11-3A, 11-3, 10-2, Zuvve Chelika Village, 30/P2, P4, P5, 30/3, Padmavati Kandriga Village, Sullurpeta (M), S.P.S.R. Nellore – 524121, Andhra Pradesh - 524121",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Indutch Composites Technology Pvt Ltd",
+          "address": "Plot/Survey No. 16P1 Shed-2, Village : Chandrapura, Taluka : Halol, Dist : Panchmahal - 389350",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Indutch Composites Technology Pvt Ltd recognizes the pressing need for sustainable procurement practices in the composite manufacturing industry. As a company committed to environmental stewardship and social responsibility, we understand the pivotal role procurement plays in achieving sustainability goals. Our procurement policy aims to align with standards and best practices, fostering a supply chain that prioritizes environmental conservation, ethical sourcing, and community well-being.\n\nAt Indutch Composites Technology Pvt Ltd, we believe that sustainable procurement is not just a choice, but a responsibility. By integrating sustainability principles into our procurement processes, we strive to minimize the environmental impact of our operations, promote fair labor practices across our supply chain, and contribute positively to the communities in which we operate. This policy reflects our dedication to creating a more sustainable future while maintaining the high standards of quality and performance that our customers expect from us.",
+      "declaration": "At Indutch Composites Technology Pvt Ltd, we are committed to integrating sustainability into every aspect of our procurement process. We prioritize sourcing materials and services from environmentally responsible suppliers, promoting ethical labour practices, and fostering innovation to minimize our ecological footprint while maximizing long-term value for all stakeholders.",
+      "scope": "This policy is exclusively applicable to the operations of Indutch Composites Technology Pvt Ltd, covering all employees, workers, subcontractors, and other stakeholders directly affiliated with our site."
+    },
+    "focusAreas": [
+      "Environmental Issues",
+      "Labor Practice and Human Rights"
+    ],
+    "qualitative": {
+      "Environmental Issues": [
+        "Raw material sourcing: Prioritize suppliers with sustainable practices, minimizing environmental impact from extraction, transportation, and processing of composite materials.",
+        "Innovation and Research: Invest in research and development of sustainable materials and processes to continuously improve environmental performance and competitiveness.",
+        "Emphasize the selection of supplier’s compliance with environmental regulations and promoting responsible production methods.",
+        "Bio-based Innovation: Promote the use of bio-based resins and recycled materials in composite fabrication, fostering innovation for more sustainable product offerings.",
+        "Supply Chain Eco-Footprint: Mandate suppliers to adhere to eco-friendly practices in raw material extraction, such as ensuring minimal environmental impact throughout the supply chain.",
+        "Certification Criteria: Implement stringent criteria for supplier selection, prioritizing those with certifications like ISO 14001."
+      ],
+      "Labor Practice and Human Rights": [
+        "Supplier vetting: Ensure all partners comply with labour laws and uphold human rights.",
+        "Safe working conditions: Demand adherence to safety standards to protect employees' well-being.",
+        "Fair wages: Mandate fair compensation for all workers across the composite manufacturing supply chain.",
+        "Fair Labor Standards: Implement fair labor practices across the supply chain, ensuring adequate wages, reasonable working hours, and respect for human rights principles.",
+        "Supplier Collaboration: Collaborate with suppliers to enforce ethical labor standards, promoting fair wages, safe working conditions, and safeguarding workers' rights.",
+        "Monitoring and Enforcement: Monitor and address labor rights violations within the supply chain, prioritizing fair treatment, non-discrimination, and adherence to international labor standards.",
+        "Education and Training: Educate suppliers and employees on labor rights and responsibilities, fostering a culture of respect, equity, and dignity in the workplace."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "Provide 100% by 2025 form baseline 2022 of relevant employees with structured training on sustainable procurement principles, ESG risk assessment, ethical sourcing, and supplier engagement to promote responsible procurement throughout the organization.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Conduct ESG On-Site Supplier Audits and Supplier Self-Assessments covering 100% of our suppliers by 2025 from a 2022 baseline.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Verify that 100% of suppliers comply with all environmental, social, and ethical rules and regulations by 2025 from a 2022 baseline.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Organize regular ESG-focused training sessions and workshops for suppliers Which cover our 100% Of supplier By 2025 from baseline year 2022 to build their awareness and capabilities in sustainability, labor rights, ethical conduct, and environmental responsibility, enabling continuous improvement across the value chain.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Issues",
+        "targets": [
+          {
+            "target": "Attain a 20% improvement in product durability to extend lifecycle by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 90% of suppliers meet stringent sustainability criteria by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Attain 100% traceability of raw materials back to sustainable sources.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Labour Practice and Human Rights",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers comply with fair labor practices by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase minimum wage compliance to 95% across supply chain by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Reduce working hours violations by 80% through stringent audits by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve 90% supplier adherence to ILO core labor standards by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Executive Officer (CEO)",
+        "duty": "Approves the Sustainable Procurement Policy and demonstrates top-level commitment, champions sustainability as a core value in procurement decisions."
+      },
+      {
+        "role": "Procurement Officers",
+        "duty": "Apply sustainable procurement criteria when selecting and evaluating suppliers, maintain documentation and evidence of sustainable sourcing practices, engage suppliers on improvement plans and corrective actions when needed."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Oversees the implementation of the Sustainable Procurement Policy, ensures compliance, procurement strategies are aligned with the company’s sustainability vision and ethical sourcing commitments."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "are expected to uphold standards on environmental stewardship, ethical labour practices, and responsible sourcing."
+      },
+      {
+        "role": "Management and Employees",
+        "duty": "All levels of management and employees are responsible for adhering to Sustainable Procurement standards and promoting safe, ethical working conditions."
+      }
+    ],
+    "monitoring": "At Indutch Composites Technology Pvt Ltd, we are committed to promoting sustainability throughout our procurement practices. To enhance our understanding of our current position and identify areas for improvement, we have established a comprehensive reporting framework. This framework encompasses the following key elements:\n\nConduct thorough supplier assessments: Evaluate suppliers based on their sustainability policies, practices, and certifications.\n\nPrioritize partnerships with certified sustainable suppliers: Give preference to suppliers with recognized sustainability certifications, such as ISO 14001 or Fair Trade.\n\nEnsure fair labour practices: Require suppliers to comply with international labor standards and provide fair wages and working conditions for their employees.\n\nConduct regular audits: Perform periodic audits of suppliers to verify compliance with ethical sourcing standards and identify areas for improvement.\n\nAssess lifecycle environmental impact: Evaluate the environmental footprint of products and materials throughout their lifecycle, considering factors such as raw material extraction, manufacturing processes, transportation, and end-of-life disposal.\n\nImplement eco-friendly packaging: opt for packaging materials that are recyclable, biodegradable, or made from renewable resources to reduce packaging waste.\n\nSource eco-friendly materials: Prioritize the procurement of materials that are sustainably sourced, renewable, or recycled.\n\nConsider product durability and recyclability: Select products that are durable, repairable, and designed for easy disassembly and recycling at the end of their lifecycle.\n\nRequire supplier transparency: Request detailed information from suppliers regarding the origin of raw materials, manufacturing processes, and environmental performance.\n\nImplement traceability systems: Utilize blockchain or other traceability technologies to track and trace the journey of products throughout the supply chain, ensuring transparency and accountability.\n\nSet sustainability targets: Establish clear targets for key sustainability metrics, such as carbon emissions reduction, waste diversion, and energy efficiency improvements.\n\nConduct regular performance reviews: Monitor progress towards sustainability goals and identify areas where additional efforts are needed to drive continuous improvement.\n\nCollaborate with suppliers: Engage with suppliers to share best practices, collaborate on sustainability initiatives, and address common challenges.\n\nEducate and involve employees: Provide training and awareness programs to educate employees about sustainable procurement practices and involve them in decision-making processes related to sustainability.",
+    "reviewMechanism": "The Chief Compliance Officer at Indutch Pvt Ltd is responsible for the implementation, oversight, and review of this policy. The Sustainable Procurement Policy will be reviewed annually, and any updates will be communicated as necessary."
+  },
+  "sourcePath": "Policies - Kenal/Indutch/4.Sustainable_Procurement_Policy[1].docx",
+  "sourceFiles": [
+    "Policies - Kenal/Indutch/4.Sustainable_Procurement_Policy[1].docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 13091,
+  "parsedAt": "2026-09-11T07:24:17.145Z"
+}

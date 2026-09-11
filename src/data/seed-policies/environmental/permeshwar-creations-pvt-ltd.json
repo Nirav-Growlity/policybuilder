@@ -1,0 +1,234 @@
+{
+  "id": "permeshwar-creations-pvt-ltd",
+  "name": "PERMESHWAR CREATIONS PVT. LTD",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Policy on Environment.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "PERMESHWAR CREATIONS PVT. LTD",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "PK Enterprises",
+          "address": "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301.India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Rishita Fashion",
+          "address": "Plot no. 1102, Phase III, GIDC, Vapi, Valsad, Gujrat- 396195",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Permeshwar Creations is a renowned apparel manufacturing company in India, known for its commitment to quality, innovation, and sustainability. At Permeshwar Creations, we pride ourselves on being a leader in the apparel manufacturing industry. Since our inception, we have been dedicated to producing high-quality garments that meet the needs of our diverse clientele. Our research and development team continuously innovate, creating lightweight, fine-textured garments in a variety of beautiful colors and designs.",
+      "declaration": "Permeshwar Creations is committed to conducting business in an environmentally responsible manner. We recognize the importance of sustainable practices in ensuring the wellbeing of our planet and future generations. This policy outlines our commitments and objectives to minimize our environmental impact and enhance our contributions to environmental sustainability.",
+      "scope": "This policy covers all aspects of Permeshwar Creation’s operations, including manufacturing, transportation, and product lifecycle management. It applies to all workers, employees, suppliers, and stakeholders involved in our operations. This policy applies to below mentioned locations:"
+    },
+    "focusAreas": [
+      "Energy and Emissions Management",
+      "Water Stewardship",
+      "Air Quality Control",
+      "Resource Efficiency and Waste Reduction",
+      "Environmental Impacts from Use of Products",
+      "Product Lifecycle Responsibility",
+      "Customer Wellbeing and Safety",
+      "Environmental Advocacy and Services",
+      "Biodiversity and Wildlife Protection",
+      "Sustainable Procurement",
+      "Climate Resilience and Adaptation"
+    ],
+    "qualitative": {
+      "Energy and Emissions Management": [
+        "Permeshwar Creations is committed to reducing energy consumption and minimizing GHG emissions from our operations.",
+        "Implement energy efficient technologies and processes in all operations. Reduce Scope 1 and Scope 2 GHG emissions, including CO2, CH4, N2O, HFCs, PFCs, and SF6."
+      ],
+      "Water Stewardship": [
+        "Permeshwar Creations is dedicated to responsible water management, ensuring sustainable use and minimizing pollution.",
+        "Implement wastewater treatment systems to minimize pollution. Enhance water recycling and reuse in our operations."
+      ],
+      "Air Quality Control": [
+        "Permeshwar Creations aims to reduce non GHG air and atmospheric pollutants to protect local environments.",
+        "Implement measures to control odor, noise, light pollution, road congestion, and traffic from operations."
+      ],
+      "Resource Efficiency and Waste Reduction": [
+        "Permeshwar Creations strives to minimize environmental impact from the use of raw materials, chemicals, and waste.",
+        "Enhance the use of sustainable and biodegradable materials.",
+        "Implement a comprehensive waste management program, including recycling and safe disposal of hazardous materials."
+      ],
+      "Environmental Impacts from Use of Products": [
+        "Minimize the direct environmental impacts associated with the use of our products by implementing and promoting eco-friendly usage practices.",
+        "Encourage customers to follow guidelines for the sustainable use and disposal of our products."
+      ],
+      "Product Lifecycle Responsibility": [
+        "Permeshwar Creations is committed to minimizing environmental impacts from the end of life of our products.",
+        "Implement product takeback and recycling programs."
+      ],
+      "Customer Wellbeing and Safety": [
+        "Permeshwar Creations ensures the health and safety of our customers by managing the environmental impacts of our products.",
+        "Conduct regular assessments to identify and mitigate health and safety risks associated with our products.",
+        "Enhance product safety standards and provide clear usage guidelines to customers."
+      ],
+      "Environmental Advocacy and Services": [
+        "Permeshwar Creations is committed to providing environmental services and advocating for sustainable practices.",
+        "Offer solutions to help customers diagnose and mitigate their environmental impacts. Promote environmental awareness and sustainable practices among stakeholders."
+      ],
+      "Biodiversity and Wildlife Protection": [
+        "Permeshwar Creations is dedicated to protecting biodiversity and ensuring animal welfare in our operations.",
+        "Implement measures to protect local ecosystems and biodiversity. Ensure the humane treatment of animals used in our operations."
+      ],
+      "Sustainable Procurement": [
+        "Permeshwar Creations is committed to integrating sustainability into our procurement practices.",
+        "Source raw materials from sustainable and certified suppliers. Implement supplier assessment programs focusing on environmental and social criteria."
+      ],
+      "Climate Resilience and Adaptation": [
+        "Permeshwar Creations aims to enhance climate resilience in our operations and supply chain.",
+        "Assess climate risks and develop adaptation strategies. Implement measures to reduce vulnerability to climate impacts."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy and Emissions Management",
+        "targets": [
+          {
+            "target": "Set a target to reduce energy consumption by 15% and GHG emissions by 2025",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Water Stewardship",
+        "targets": [
+          {
+            "target": "Reduce water consumption by 10% by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality Control",
+        "targets": [
+          {
+            "target": "Reduce emissions of SOx, NOx, VOCs, PM, and dust by 15% by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Resource Efficiency and Waste Reduction",
+        "targets": [
+          {
+            "target": "Reduce hazardous and nonhazardous waste by 15% by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from Use of Products",
+        "targets": [
+          {
+            "target": "Set a target to reduce the environmental footprint of product use by 10% by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Set a target to reduce the environmental footprint of product use by 10% by 2025, using 2022 as the baseline year.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Product Lifecycle Responsibility",
+        "targets": [
+          {
+            "target": "Reduce hazardous and nonhazardous waste generated from products' end of life by 15% by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity and Wildlife Protection",
+        "targets": [
+          {
+            "target": "Set targets to enhance biodiversity in our operational areas by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Procurement",
+        "targets": [
+          {
+            "target": "Increase the percentage of sustainably sourced materials by 15% by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Climate Resilience and Adaptation",
+        "targets": [
+          {
+            "target": "Increase investment in climate resilience projects by 15% by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Ensures adherence to environmental regulations and oversees the execution of our sustainability initiatives."
+      },
+      {
+        "role": "Environmental Manager",
+        "duty": "Develops and monitors environmental programs, tracks performance, and reports progress."
+      },
+      {
+        "role": "Every employee",
+        "duty": "Is expected to follow the policy and help achieve our sustainability targets."
+      },
+      {
+        "role": "Management",
+        "duty": "Will support these efforts by providing the necessary resources."
+      }
+    ],
+    "monitoring": "The Environmental Manager develops and monitors environmental programs, tracks performance, and reports progress.",
+    "reviewMechanism": "This policy will be reviewed annually to assess progress towards our objectives and update targets as necessary. The Health and Safety Manager will review this policy annually to assess its effectiveness and relevance. Feedback from stakeholders, including employees, customers, and regulatory bodies, will be considered in the review process to continuously improve our environmental performance."
+  },
+  "sourcePath": "Policies - Kenal/PERMESHWAR CREATIONS PVT. LTD/Policy on Environment.docx",
+  "sourceFiles": [
+    "Policies - Kenal/PERMESHWAR CREATIONS PVT. LTD/Policy on Environment.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 8244,
+  "parsedAt": "2026-09-11T07:25:49.305Z"
+}

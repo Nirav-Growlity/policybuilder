@@ -1,0 +1,444 @@
+{
+  "id": "labour-human-rights-eco-jute",
+  "name": "Eco Jute",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Labour & Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Eco Jute Pvt. Ltd.",
+      "industry": "",
+      "site": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071; Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293",
+      "sites": [
+        {
+          "location": "Kolkata",
+          "address": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Gokna Basudevpur",
+          "address": "Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071; Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Eco Jute Pvt. Ltd. is committed to respecting and protecting labour rights and human rights across its operations and business relationships. We strive to provide a workplace that promotes fair working conditions, equal opportunity, employee development, open communication, and safe and healthy working environments.\n\nThe Company supports career growth and training, encourages social dialogue and employee engagement, and is committed to maintaining a workplace free from child labour, forced labour, human trafficking, discrimination, harassment, and any form of abuse or exploitation.\n\nEco Jute Pvt. Ltd. expects all employees, contractors, suppliers, and business partners to uphold these principles and comply with applicable labour laws and human rights requirements. Through responsible employment practices and continual improvement, we aim to foster a respectful, inclusive, and productive workplace for all.",
+      "declaration": "Labour and human rights considerations are integrated into our business operations, employment practices, and workplace management systems. We establish objectives and initiatives to promote employee well-being, fair working conditions, workplace safety, equal opportunity, employee development, and respect for human rights.\n\nEco Jute Pvt. Ltd. provides appropriate resources, responsibilities, training, and awareness programmes to support these commitments. Through employee engagement, open communication, grievance mechanisms, monitoring, and continual improvement, we strive to maintain a safe, inclusive, and respectful workplace for all.",
+      "scope": "This Policy applies to all employees, contractual workers, trainees, contractors, and other persons working on behalf of Eco Jute Pvt. Ltd. It also extends to suppliers, service providers, and business partners where relevant.\n\nThe Policy covers labour and human rights matters across the Company's operations, including health and safety, working conditions, social dialogue, career management and training, prevention of child labour, forced labour and human trafficking, and prevention of discrimination and harassment."
+    },
+    "focusAreas": [
+      "Responsible Recruitment & Employment",
+      "Workplace Health, Safety & Well-Being",
+      "Fair Employment Practices",
+      "Employee Engagement & Social Dialogue",
+      "Learning, Development & Career Growth",
+      "Protection from Child and Forced Labour",
+      "Equality, Inclusion & Respectful Workplace",
+      "Employee Privacy & Personal Data Protection"
+    ],
+    "qualitative": {
+      "Responsible Recruitment & Employment": [
+        "Promote transparent, fair, and non-discriminatory recruitment practices.",
+        "Ensure employees receive clear employment terms and understand their rights and responsibilities.",
+        "Prevent recruitment-related exploitation and unfair practices."
+      ],
+      "Workplace Health, Safety & Well-Being": [
+        "Maintain a safe, healthy, and secure workplace.",
+        "Prevent workplace injuries, unsafe conditions, and occupational health risks.",
+        "Promote employee awareness of workplace health and safety responsibilities."
+      ],
+      "Fair Employment Practices": [
+        "Promote fair wages, reasonable working hours, lawful overtime, and transparent employment conditions.",
+        "Prevent unjustified wage deductions and excessive working hours."
+      ],
+      "Employee Engagement & Social Dialogue": [
+        "Respect employees’ rights to freedom of association and collective representation.",
+        "Promote open communication between employees and management.",
+        "Provide accessible grievance and feedback mechanisms."
+      ],
+      "Learning, Development & Career Growth": [
+        "Promote continuous learning, employee development, and opportunities for career progression.",
+        "Build employee skills relevant to their roles and responsibilities."
+      ],
+      "Protection from Child and Forced Labour": [
+        "Maintain zero tolerance for child labour, forced labour, bonded labour, compulsory labour, and human trafficking.",
+        "Ensure employment is voluntary and free from coercion.",
+        "Support appropriate remediation if a child labour case is identified."
+      ],
+      "Equality, Inclusion & Respectful Workplace": [
+        "Maintain a workplace free from discrimination, harassment, bullying, and retaliation.",
+        "Promote equal opportunity and respectful treatment of all employees.",
+        "Encourage employees to report concerns without fear."
+      ],
+      "Employee Privacy & Personal Data Protection": [
+        "Protect employee personal and confidential information from unauthorized access, use, disclosure, or loss.",
+        "Ensure employee information is handled responsibly and only for legitimate purposes.",
+        "Restrict access to employee records to authorized personnel only."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Responsible Recruitment & Employment",
+        "targets": [
+          {
+            "target": "Verify age and required documentation for 100% of candidates before hiring",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Ensure 100% of job descriptions are documented and approved",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Include voluntary employment and applicable employment conditions in 100% of recruitment contracts",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Train 100% of HR/recruitment personnel annually on fair recruitment practices",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Maintain zero (0) cases of recruitment involving child labour or forced labour",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Health, Safety & Well-Being",
+        "targets": [
+          {
+            "target": "Provide relevant health and safety training to 100% of employees annually",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Conduct workplace safety inspections and risk assessments covering 100% operational sites annually",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Ensure 100% of identified workplace safety risks are documented, assigned corrective actions, and tracked to closure within defined timelines",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Employment Practices",
+        "targets": [
+          {
+            "target": "Pay 100% of salaries on or before the 7th of each month, or the next working day where applicable",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Maintain zero (0) unjustified wage deductions",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Provide payslips to 100% of employees",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Verify working hours through 100% monthly attendance records",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Maintain average overtime below 12 hours per employee per week",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Employee Engagement & Social Dialogue",
+        "targets": [
+          {
+            "target": "Conduct at least 1 management-worker committee meeting per quarter",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Conduct at least 2 employee awareness sessions annually on workplace rights",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Acknowledge 100% of grievances within 2 working days",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Resolve 100% of grievances within 30 working days, where practicable",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Learning, Development & Career Growth",
+        "targets": [
+          {
+            "target": "Complete induction training for 100% of new employees within 1 week of joining",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Provide each employee with at least 8 hours of training annually",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Conduct a Training Needs Assessment annually across all departments",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Provide relevant labour and human rights awareness to 100% of employees annually",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Protection from Child and Forced Labour",
+        "targets": [
+          {
+            "target": "Verify the legal age of 100% of new hires before employment",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Maintain zero (0) cases of underage employment",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Conduct at least 2 awareness sessions annually on child and forced labour",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Review 100% of personnel files annually to ensure original identity documents are not withheld",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Equality, Inclusion & Respectful Workplace",
+        "targets": [
+          {
+            "target": "Provide anti-discrimination and harassment awareness training to 100% of employees annually",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Include equal opportunity requirements in 100% of applicable employment documentation",
+            "baseline": "2023",
+            "deadline": "by 2030"
+          },
+          {
+            "target": "Resolve 100% of discrimination complaints within 15 working days, where practicable",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Maintain zero (0) confirmed retaliation incidents against employees raising genuine concerns",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Conduct 1 diversity and inclusion review annually",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Employee Privacy & Personal Data Protection",
+        "targets": [
+          {
+            "target": "Provide information privacy awareness to 100% of employees annually",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Review access to sensitive employee records at least annually",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Review 100% of reported employee data/privacy incidents and implement corrective action where required",
+            "baseline": "2023",
+            "deadline": "through 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Provide overall direction and oversight for the implementation and effectiveness of the Labour & Human Rights Policy in alignment with the Company’s values and applicable requirements."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provide adequate resources to support employee welfare, human rights, workplace safety, training, and improvement initiatives."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Review labour and human rights performance, objectives, targets, and significant risks through periodic management reviews."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensure appropriate corrective and preventive actions are implemented for significant labour and human rights concerns."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Coordinate the implementation and periodic review of the Labour & Human Rights Policy and related procedures."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Ensure compliance with applicable labour laws and Company requirements relating to employment, wages, working hours, employee welfare, and workplace conduct."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Manage recruitment, employee records, training, grievance handling, and other relevant employee processes fairly and transparently."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Monitor employee concerns, workplace practices, and labour and human rights performance and recommend improvements."
+      },
+      {
+        "role": "Human Resources (HR) Manager",
+        "duty": "Coordinate awareness and training programmes on employee rights, health and safety, discrimination, harassment, child labour, and forced labour."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Conduct labour and human rights assessments, risk reviews, inspections, and compliance evaluations where applicable."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Monitor significant risks relating to child labour, forced labour, discrimination, harassment, working conditions, and other human rights matters."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Support investigation of significant concerns and track corrective actions until closure."
+      },
+      {
+        "role": "Sustainability & Compliance Officer",
+        "duty": "Monitor progress against labour and human rights objectives and targets and report significant findings to management."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Maintain safe, healthy, and respectful working conditions within their areas of responsibility."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Ensure applicable requirements relating to working hours, occupational health and safety, employee welfare, and workplace conduct are followed."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Support employee participation in training, awareness, and workplace improvement initiatives."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Promptly report workplace incidents, unsafe conditions, grievances, harassment, discrimination, or other labour and human rights concerns."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Consider relevant labour and human rights criteria when selecting and evaluating suppliers."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Communicate the Company’s labour and human rights expectations to relevant suppliers and business partners."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Support responsible sourcing and supplier compliance with applicable labour and human rights requirements."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Work with suppliers to address identified labour, human rights, or responsible sourcing concerns."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Encourage employees to communicate workplace concerns, suggestions, and feedback through established channels."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Support constructive dialogue between employees and management."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Communicate employee concerns and improvement opportunities to the appropriate function."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Support employee participation in labour and human rights awareness and workplace improvement initiatives."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Follow the Company’s Labour & Human Rights Policy, procedures, workplace rules, and applicable legal requirements."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Treat colleagues and other stakeholders with dignity, fairness, and respect."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Participate in required training and awareness programmes."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Support a safe, inclusive, and respectful workplace."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Report concerns relating to discrimination, harassment, child labour, forced labour, unsafe conditions, or other labour and human rights violations through established reporting channels."
+      }
+    ],
+    "monitoring": "Labour and human rights information relating to employee welfare, working conditions, health and safety, working hours, wages, training, grievances, and other relevant indicators shall be compiled and reviewed periodically.\n\nHuman Resources (HR) Manager in coordination with the Sustainability & Compliance Officer, shall provide periodic reports to Senior Management on labour and human rights performance, key risks, incidents, grievances, compliance status, and progress against established objectives and targets.\n\nLabour and human rights incidents, complaints, discrimination, harassment, child labour, forced labour, unsafe working conditions, and other concerns shall be reported through established channels, investigated appropriately, and followed by corrective actions where required.\n\nFindings from employee feedback, workplace assessments, audits, inspections, grievance reviews, and risk assessments shall be communicated to relevant functions to support continual improvement.\n\nEco Jute Pvt. Ltd. may communicate relevant labour and human rights information to customers, regulatory authorities, certification bodies, business partners, and other interested stakeholders, as appropriate.\n\nLabour and human rights disclosures, customer submissions, certifications, and regulatory information shall be prepared in accordance with applicable legal, contractual, and stakeholder requirements.\n\nInformation intended for external communication shall be reviewed by the responsible function to ensure accuracy, consistency, confidentiality, and appropriate supporting records.\n\nEco Jute Pvt. Ltd. shall engage with employees, employee representatives, suppliers, contractors, customers, regulatory authorities, and other relevant stakeholders on labour and human rights matters where appropriate.\n\nEmployee and stakeholder feedback, concerns, expectations, and improvement suggestions shall be considered when reviewing labour and human rights objectives, targets, programmes, and workplace practices.\n\nThe Company shall promote open communication and constructive dialogue to support fair employment practices, employee well-being, respect for human rights, and continual improvement.",
+    "reviewMechanism": "Labour and human rights objectives, targets, and key performance indicators relating to employee welfare, health and safety, working conditions, training, wages, grievances, and human rights shall be reviewed annually.\n\nProgress against established targets, workplace performance, compliance status, significant concerns, and improvement initiatives shall be evaluated through periodic Management Review Meetings.\n\nKey achievements, challenges, risks, and opportunities for improvement shall be identified and documented to support informed decision-making.\n\nFindings from workplace assessments, audits, inspections, grievance reviews, risk assessments, incident investigations, employee feedback, and stakeholder engagement shall be used to identify opportunities for improvement.\n\nCorrective and preventive actions shall be implemented where labour or human rights concerns, non-compliances, workplace incidents, or performance gaps are identified.\n\nLabour and human rights objectives, targets, programmes, and workplace practices shall be reviewed and updated periodically to strengthen employee well-being and address emerging risks.\n\nHuman Resources (HR) Manager shall review this Policy at least once every two years, or earlier where significant changes occur in labour laws, business operations, workforce requirements, identified risks, or stakeholder expectations.\n\nAny revisions to the Policy shall be reviewed and approved by Senior Management before implementation.\n\nApproved changes shall be communicated to relevant employees, contractors, and other applicable stakeholders, with appropriate training and awareness provided where required."
+  },
+  "sourcePath": "Policies - Kenal/Eco Jute/Labour & Human Rights Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Eco Jute/Labour & Human Rights Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 19130,
+  "parsedAt": "2026-09-11T07:22:03.599Z"
+}

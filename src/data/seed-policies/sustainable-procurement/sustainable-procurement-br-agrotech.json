@@ -1,0 +1,191 @@
+{
+  "id": "sustainable-procurement-br-agrotech",
+  "name": "BR Agrotech",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "BR Agrotech Limited",
+      "industry": "",
+      "site": "Plot No. 620/3, GIDC, Panoli Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115",
+      "sites": [
+        {
+          "location": "BR Agrotech Limited",
+          "address": "Plot No. 620/3, GIDC, Panoli Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 620/3, GIDC, Panoli Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "BR Agrotech Limited is committed to integrating sustainability into its procurement practices to promote responsible sourcing, environmental stewardship, and ethical labor standards. We recognize that sustainable procurement is vital for minimizing environmental impact, ensuring fair labor conditions, and maintaining business resilience. By collaborating with responsible suppliers and adhering to international best practices, we aim to build a supply chain that upholds sustainability, transparency, and accountability.\n\nThis policy outlines our commitments to responsible sourcing, supplier engagement, ethical labor practices, and resource efficiency. Through proactive supplier assessments, regular monitoring, and continuous improvements, we seek to enhance supply chain sustainability and drive positive environmental and social outcomes.",
+      "declaration": "BR Agrotech Limited is dedicated to responsible procurement practices that align with environmental, social, and governance (ESG) principles. We adhere to global sustainability standards to ensure that our suppliers and business partners comply with ethical labor practices, minimize environmental impact, and support sustainable growth. This policy reinforces our commitment to sustainable sourcing, fair trade, and supply chain transparency.",
+      "scope": "This policy applies to BR Agrotech Limited’s operations, , and it covers following sites and all its employees, workers, subcontractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Responsible sourcing",
+      "Fair labor practices",
+      "Supplier transparency and compliance",
+      "Supplier assessment and auditing",
+      "Environmental footprint reduction",
+      "Local supplier and small business support",
+      "Energy efficiency and waste reduction",
+      "Circular economy and resource efficiency"
+    ],
+    "qualitative": {
+      "Responsible sourcing": [
+        "Source raw materials and products responsibly, prioritizing environmentally friendly and ethically produced goods.",
+        "Promote responsible sourcing by prioritizing suppliers with strong environmental management systems.",
+        "Source 50% of raw materials from certified sustainable suppliers by FY 2029-30."
+      ],
+      "Fair labor practices": [
+        "Ensure fair labor practices across the supply chain, including fair wages, safe working conditions, and non-discrimination policies.",
+        "Promote ethical sourcing by conducting supplier training programs on human rights and workplace safety."
+      ],
+      "Supplier transparency and compliance": [
+        "Foster transparency in supplier relationships and require compliance with sustainability standards.",
+        "Implement a supplier sustainability rating system to assess and improve supplier ESG performance."
+      ],
+      "Supplier assessment and auditing": [
+        "Engage in continuous supplier assessments and audits to monitor compliance with sustainable procurement practices.",
+        "Conduct human rights and labor compliance audits for 100% of key suppliers by FY 2029-30."
+      ],
+      "Environmental footprint reduction": [
+        "Reduce the environmental footprint of procurement activities by optimizing transportation and logistics.",
+        "Achieve 25% reduction in Procurement-related carbon emissions per ton of production by FY 2029-30 through optimized logistics and supplier engagement."
+      ],
+      "Local supplier and small business support": [
+        "Support local suppliers and small businesses to promote economic sustainability within the community.",
+        "Partner with three sustainability-focused organizations to enhance responsible procurement initiatives by FY 2029-30."
+      ],
+      "Energy efficiency and waste reduction": [
+        "Encourage suppliers to adopt energy-efficient and waste reduction practices.",
+        "Increase the procurement of biodegradable and recyclable packaging materials to 65% by FY 2029-30."
+      ],
+      "Circular economy and resource efficiency": [
+        "Ensure that procurement decisions align with circular economy principles, focusing on resource efficiency and waste minimization.",
+        "Support circular economy initiatives by collaborating with suppliers that focus on material reuse and waste reduction.",
+        "Promote supplier capacity-building programs, ensuring 100% of suppliers receive sustainability training by FY 2029-30."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Procurement-related carbon emissions",
+        "targets": [
+          {
+            "target": "Achieve 25% reduction in Procurement-related carbon emissions per ton of production",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Biodegradable and recyclable packaging materials",
+        "targets": [
+          {
+            "target": "Increase the procurement of biodegradable and recyclable packaging materials to 65%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Human rights and labor compliance audits",
+        "targets": [
+          {
+            "target": "Conduct human rights and labor compliance audits for 100% of key suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Certified sustainable suppliers",
+        "targets": [
+          {
+            "target": "Source 50% of raw materials from certified sustainable suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainability-focused organizations",
+        "targets": [
+          {
+            "target": "Partner with three sustainability-focused organizations to enhance responsible procurement initiatives",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier sustainability training",
+        "targets": [
+          {
+            "target": "Promote supplier capacity-building programs, ensuring 100% of suppliers receive sustainability training",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      10,
+      12,
+      13,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Head",
+        "duty": "Drive sustainable procurement strategies and allocate resources."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Implement sustainable material use and waste reduction initiatives."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Ensure responsible sourcing, supplier compliance, and ESG performance monitoring."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Align operations with sustainability principles and ethical procurement policies."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support responsible procurement initiatives and report non-compliance."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Collaborate with BR Agrotech to promote sustainable supply chain practices."
+      }
+    ],
+    "monitoring": "The Procurement & Supply Chain Team will monitor supplier ESG performance and report progress annually.\n\nIndependent supplier audits and assessments validates compliance with sustainability and ethical procurement standards.",
+    "reviewMechanism": "This policy will be reviewed once in two years or as needed by the Procurement Head, with updates based on market trends, regulatory changes, and technological advancements."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/BR Agrotech/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/BR Agrotech/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 7389,
+  "parsedAt": "2026-09-11T07:34:18.409Z"
+}

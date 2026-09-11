@@ -1,0 +1,441 @@
+{
+  "id": "sustainable-procurement-val-organic",
+  "name": "Val Organic",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable procurement policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Val Organics Private Limited",
+      "industry": "",
+      "site": "Plot No. 2201, Road No. 21, GIDC Estate, Sarigam, Valsad, Gujarat - 396155",
+      "sites": [
+        {
+          "location": "Val Organics Private Limited",
+          "address": "Plot No. 2201, Road No. 21, GIDC Estate, Sarigam, Valsad, Gujarat - 396155",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Ground Floor, Chadha Building",
+          "address": "Plot No-95, Wadala, Wadala, Mumbai, Maharashtra 400031",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 2201, Road No. 21, GIDC Estate, Sarigam, Valsad, Gujarat - 396155"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Val Organics Private Limited is committed to operating in an environmentally and socially responsible manner. As part of our dedication to sustainability, we have developed a comprehensive Sustainable Procurement Policy. This policy outlines our principles, engagements, and objectives to integrate environmental, social, and ethical considerations into our procurement processes. By prioritizing suppliers with sustainable practices, promoting fair labor conditions, and minimizing environmental impact throughout our supply chain, we aim to contribute positively to our communities and the planet. Our Sustainable Procurement Policy reflects our commitment to responsible business practices and aligns with our core values of integrity, transparency, and accountability.",
+      "declaration": "At Val Organics Private Limited, we are committed to conducting procurement activities in a sustainable and responsible manner. We prioritize suppliers who uphold ethical labor practices, minimize environmental impact, and promote social responsibility. Through our Sustainable Procurement Policy, we aim to foster a supply chain that aligns with our commitment to environmental stewardship, social equity, and ethical conduct.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, contractors, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Enforce Ecological Standards for Vendors",
+      "Promote Ethical Practices in Supply Chain",
+      "Audit Supplier Compliance with Sustainability Goals",
+      "Encourage Supplier Diversity and Fair-Trade Practices",
+      "Implement Vendor Risk Management",
+      "Foster Long-term Partnerships for Sustainable Growth",
+      "Enhance Supply Chain Resilience",
+      "Promote Local Sourcing and Community Support",
+      "Pursue Collaboration for Environmental Innovations",
+      "Sustainable Supplier Certification",
+      "Supplier Sustainability Training & Capacity Building",
+      "Supplier ESG Assessment Coverage",
+      "Supplier ESG Compliance"
+    ],
+    "qualitative": {
+      "Enforce Ecological Standards for Vendors": [
+        "We partner with vendors who share our commitment to environmental responsibility.",
+        "We develop clear criteria for environmentally responsible practices, including energy efficiency, waste reduction, and pollution control."
+      ],
+      "Promote Ethical Practices in Supply Chain": [
+        "We uphold ethical labor practices throughout our supply chain, including fair wages, safe working conditions, and adherence to human rights principles.",
+        "We integrate labor and human rights considerations into vendor contracts and conduct regular audits to verify compliance."
+      ],
+      "Audit Supplier Compliance with Sustainability Goals": [
+        "We establish a comprehensive supplier audit program to assess compliance with our sustainability criteria.",
+        "We work collaboratively with suppliers to identify areas for improvement and provide support for achieving sustainability goals."
+      ],
+      "Encourage Supplier Diversity and Fair-Trade Practices": [
+        "We are committed to fostering a diverse and inclusive supplier base, promoting fair trade practices and supporting small and medium-sized enterprises.",
+        "We actively seek partnerships with diverse suppliers and explore opportunities to partner with fair trade organizations."
+      ],
+      "Implement Vendor Risk Management": [
+        "We proactively identify and mitigate potential environmental, social, and economic risks within our supply chain.",
+        "We develop a comprehensive vendor risk management program that considers environmental, social, and governance (ESG) factors."
+      ],
+      "Foster Long-term Partnerships for Sustainable Growth": [
+        "We believe in building long-term, collaborative partnerships with our suppliers to promote mutual sustainability goals.",
+        "We establish open communication channels with suppliers, fostering knowledge sharing and joint sustainability initiatives."
+      ],
+      "Enhance Supply Chain Resilience": [
+        "We work to ensure the resilience of our supply chain against disruptions caused by environmental, social, or economic factors.",
+        "We diversify our supplier base and explore opportunities for near-shoring or local sourcing where feasible."
+      ],
+      "Promote Local Sourcing and Community Support": [
+        "We are committed to supporting local communities by sourcing materials and services locally when possible.",
+        "We develop clear criteria for local sourcing and prioritize partnerships with local vendors."
+      ],
+      "Pursue Collaboration for Environmental Innovations": [
+        "We believe in working collaboratively with suppliers and industry partners to develop innovative solutions for environmental challenges.",
+        "We explore opportunities for joint research and development projects focused on sustainable materials, processes, and technologies."
+      ],
+      "Sustainable Supplier Certification": [
+        "Increase sourcing from suppliers holding recognized sustainability certifications (e.g., ISO 14001, FSC, Fair Tra de, SA8000, or equivalent)."
+      ],
+      "Supplier Sustainability Training & Capacity Building": [
+        "Provide sustainability awareness, ESG training, and capacity-building programs to suppliers to improve environmental, social, and governance performance."
+      ],
+      "Supplier ESG Assessment Coverage": [
+        "Assess supplier sustainability performance through ESG questionnaires, audits, and performance reviews."
+      ],
+      "Supplier ESG Compliance": [
+        "Strengthen supplier adherence to the Company's Supplier Code of Conduct and ESG requirements."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Enforce Ecological Standards for Vendors",
+        "targets": [
+          {
+            "target": "Conduct environmental audits of all major suppliers",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 25% of procurement spend is sourced from suppliers offering environmentally sustainable products, materials, or services",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of key suppliers comply with applicable environmental laws and regulations",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Encourage key suppliers to increase renewable energy usage, with 10% of key suppliers reporting renewable energy adoption initiatives",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 25% reduction in greenhouse gas emissions from our supply chain",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Promote Ethical Practices in Supply Chain",
+        "targets": [
+          {
+            "target": "Achieve 100% supplier compliance with our Code of Conduct",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct labor and human rights risk assessments for 100% of key suppliers",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of key suppliers are screened for risks related to child labor, forced labor, and human trafficking",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of key suppliers maintain an accessible worker grievance mechanism",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Audit Supplier Compliance with Sustainability Goals",
+        "targets": [
+          {
+            "target": "Conduct annual sustainability audits for all major suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Integrate sustainability performance criteria into 100% of supplier contract renewals and procurement decisions",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 20% improvement in average supplier sustainability audit scores",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Encourage Supplier Diversity and Fair-Trade Practices",
+        "targets": [
+          {
+            "target": "Increase the percentage of purchases from diverse suppliers by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct supplier diversity outreach or engagement programs for 100% of procurement personnel annually",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Implement Vendor Risk Management",
+        "targets": [
+          {
+            "target": "Implement a vendor risk assessment process for all new suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% completion of supplier due diligence reviews before engagement",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce the number of high-risk suppliers by 25%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Monitor and review ESG risk profiles for 100% of critical suppliers annually",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Foster Long-term Partnerships for Sustainable Growth",
+        "targets": [
+          {
+            "target": "Increase the percentage of repeat business with key suppliers to 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 90% supplier satisfaction among key suppliers",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Develop long-term partnership agreements incorporating sustainability commitments with 100% of key suppliers",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Enhance Supply Chain Resilience",
+        "targets": [
+          {
+            "target": "Reduce dependence on single-source suppliers for critical materials by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct supply chain risk and business continuity assessments for 100% of critical suppliers annually",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the proportion of critical materials sourced from multiple qualified suppliers by 25%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Promote Local Sourcing and Community Support",
+        "targets": [
+          {
+            "target": "Increase the percentage of local procurement by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct annual supplier outreach and capacity-building programs for local vendors",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase procurement spend with SMEs by 15%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Pursue Collaboration for Environmental Innovations",
+        "targets": [
+          {
+            "target": "Partner with at least two suppliers on environmental innovation projects",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Introduce at least two sustainable materials, products, or technologies through supplier collaborations",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Allocate resources to support at least one environmental research or pilot project annually with suppliers",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Supplier Certification",
+        "targets": [
+          {
+            "target": "Achieve 25% procurement from sustainability-certified suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Sustainability Training & Capacity Building",
+        "targets": [
+          {
+            "target": "Ensure 100% of key suppliers participate in sustainability training programs annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier ESG Assessment Coverage",
+        "targets": [
+          {
+            "target": "Conduct annual sustainability assessments for 100% of key suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier ESG Compliance",
+        "targets": [
+          {
+            "target": "Achieve 100% supplier acknowledgment and compliance with the Supplier Code of Conduct",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Department",
+        "duty": "Lead Policy Development and Implementation: Draft, implement, and maintain the sustainable procurement policy."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Develop Sustainable Sourcing Criteria: Establish clear criteria for environmentally and socially responsible practices for suppliers."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Supplier Selection and Onboarding: Integrate sustainability factors into the supplier selection process and onboard new suppliers with the policy."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Supplier Management and Engagement: Monitor supplier performance against sustainability goals, conduct audits, and provide resources for improvement."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Data Collection and Reporting: Track progress on sustainable procurement goals and report findings to relevant stakeholders."
+      },
+      {
+        "role": "Sustainability Department",
+        "duty": "Develop Sustainability Guidelines: Provide guidance and expertise on integrating sustainability principles into procurement practices."
+      },
+      {
+        "role": "Sustainability Department",
+        "duty": "Collaborate with Procurement: Support the procurement team in developing and implementing sustainable sourcing criteria."
+      },
+      {
+        "role": "Sustainability Department",
+        "duty": "Life Cycle Assessment (LCA): Assist with integrating LCA considerations into product development and procurement decisions."
+      },
+      {
+        "role": "Sustainability Department",
+        "duty": "Review Sustainable Procurement Policy: Review the Sustainable Procurement Policy at least annually, or more frequently as needed, to reflect changes in regulatory requirements, sustainability standards, supply chain risks, stakeholder expectations, and industry best practices."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Provide Leadership and Resources: Allocate resources and champion the importance of sustainable procurement within the organization."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Set Sustainability Goals: Establish overall sustainability goals and align them with procurement objectives."
+      },
+      {
+        "role": "Product Design and Development",
+        "duty": "Integrate sustainability considerations into product design and specifications."
+      },
+      {
+        "role": "Finance",
+        "duty": "Analyze the cost-benefit of sustainable procurement practices and consider lifecycle costs alongside upfront costs."
+      },
+      {
+        "role": "Legal",
+        "duty": "Ensure compliance with relevant environmental and labor regulations."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow Policy Requirements: Adhere to the Sustainable Procurement Policy and related procedures in all applicable activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support Sustainable Decision-Making: Consider environmental, social, and ethical factors when making procurement-related decisions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in Training: Attend sustainability and procurement-related training programs as required."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report Concerns: Raise concerns regarding supplier conduct, environmental performance, labor practices, or policy non-compliance through established reporting channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Contribute to Sustainability Objectives: Support the Company's efforts to achieve its sustainable procurement goals and targets."
+      }
+    ],
+    "monitoring": "Sustainable procurement performance shall be evaluated against established objectives, targets, supplier performance indicators, and applicable legal and regulatory requirements.\n\nThe implementation of the Policy and progress toward achieving sustainable procurement commitments shall be assessed to identify opportunities for improvement.\n\nSupplier assessment results, audit findings, risk evaluations, and procurement data shall be reviewed to monitor the effectiveness of responsible sourcing practices.",
+    "reviewMechanism": "To ensure the effectiveness and continuous improvement of Val Organics Pvt. Ltd.'s Sustainable Procurement Policy, the following review mechanism shall be implemented:\n\nThe Sustainability Officer shall review the Policy at least annually, or more frequently if significant changes occur in regulatory requirements, sustainability standards, supply chain risks, business operations, or stakeholder expectations.\n\nFeedback from relevant stakeholders, including employees, suppliers, customers, investors, and regulatory bodies, shall be considered during the review process.\n\nBased on the review findings, necessary updates, corrective actions, and enhancements shall be recommended to strengthen sustainable procurement practices and align with evolving industry standards and best practices.\n\nAny revisions to the Policy shall be subject to approval by the CEO of Val Organics Pvt. Ltd.\n\nThe outcomes of the review process and significant policy updates shall be communicated to relevant stakeholders, as appropriate.\n\nThis review mechanism will help ensure that the Sustainable Procurement Policy remains effective, relevant, and aligned with Val Organics' commitment to responsible sourcing, ethical business conduct, environmental stewardship, and continuous improvement."
+  },
+  "sourcePath": "Policies - Kenal/Val Organic/4. Sustainable procurement policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Val Organic/4. Sustainable procurement policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 15006,
+  "parsedAt": "2026-09-11T07:31:12.636Z"
+}

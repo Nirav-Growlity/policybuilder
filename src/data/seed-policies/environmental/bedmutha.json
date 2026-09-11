@@ -1,0 +1,361 @@
+{
+  "id": "bedmutha",
+  "name": "Bedmutha",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Policy..docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Bedmutha Industries Ltd",
+      "industry": "",
+      "site": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra.",
+      "sites": [
+        {
+          "location": "Bedmutha Industries Ltd",
+          "address": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra.",
+          "primaryFunction": "Design, manufacture, and deliver wire products"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Bedmutha Industries Ltd is committed to protecting the environment, promoting sustainable manufacturing processes, and extending our eco-friendly mindset across our entire supply chain. This commitment is not only an important social responsibility but also creates value for our business, customers, stakeholders, and employees.",
+      "declaration": "It is the policy of Bedmutha Industries Ltd to design, manufacture, and deliver our wire products and to operate our business in a way that protects the environment and promotes the sustainable use of natural resources. This includes responsible sourcing of raw materials, efficient use of energy, waste reduction, water conservation, and clean production processes, while extending our eco-friendly mindset across the value chain.\n\nWe set annual goals, develop necessary capabilities, and commit appropriate resources to achieve this policy through innovation, operational efficiency, and aligning Bedmutha Industries' supply chain with this policy.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of the following sites:"
+    },
+    "focusAreas": [
+      "Environmental Compliance",
+      "Water usage reduction and recycling",
+      "Renewable Energy Adoption and Energy Efficiency",
+      "Greenhouse Gas (GHG) Emission Reduction",
+      "Waste Minimization and Recycling",
+      "Biodiversity Support and Sustainable Sourcing",
+      "Air Pollution Reduction",
+      "Noise Pollution Minimization",
+      "Responsible Raw Material and Chemical Management",
+      "Environmentally Friendly Product Development",
+      "Environmental Impacts from the Use of Products",
+      "Environmental Impacts from Products’ End-of-Life",
+      "Customer Health and Safety",
+      "Environmental Services and Advocacy"
+    ],
+    "qualitative": {
+      "Environmental Compliance": [
+        "Bedmutha Industries Ltd complies with all applicable environmental laws and regulations. We foster employee engagement, set performance standards, and utilize an Environmental Management System to drive compliance and continuous improvement.",
+        "Implementing energy efficiency measures to reduce our carbon footprint.",
+        "Adopting renewable energy sources to enhance our environmental sustainability.",
+        "Minimizing waste generation and promoting recycling throughout our operations and supply chain.",
+        "Supporting biodiversity by sourcing materials responsibly and engaging in local conservation efforts.",
+        "Implementing robust procedures to manage contamination effectively.",
+        "Reducing air pollution by adopting advanced processing technologies and emissions control measures.",
+        "Minimizing noise pollution through soundproofing technologies and maintaining operational standards.",
+        "Managing raw materials and chemicals responsibly, including the use of eco-friendly materials and processes.",
+        "Developing products that have minimal environmental impact during their use phase.",
+        "Promoting sustainable consumption by advocating for wire products as environmentally friendly alternatives to less sustainable options;"
+      ],
+      "Water usage reduction and recycling": [
+        "Bedmutha aims to reduce water consumption through improved technologies, water-saving practices, and automated monitoring systems across production units.",
+        "The company plans to recycle water used by implementing a closed-loop recycling system for non-critical processes like cooling and cleaning."
+      ],
+      "Renewable Energy Adoption and Energy Efficiency": [
+        "Bedmutha is focused on increasing renewable energy usage through solar energy installations and sourcing green energy from certified suppliers.",
+        "The company seeks to improve energy efficiency by upgrading machinery, conducting audits, and adopting energy-saving technologies."
+      ],
+      "Greenhouse Gas (GHG) Emission Reduction": [
+        "Bedmutha is working to reduce Scope 1 and 2 GHG emissions by transitioning to electric vehicles and offsetting emissions with renewable energy projects.",
+        "The company aims to optimize logistics, reduce packaging waste, and support suppliers in adopting low-carbon practices."
+      ],
+      "Waste Minimization and Recycling": [
+        "Bedmutha is committed to reducing waste generation using lean manufacturing techniques and minimizing packaging materials.",
+        "Recycling initiatives will focus on scrap wire, metal shavings, and by-products, with systems to segregate and recycle materials."
+      ],
+      "Biodiversity Support and Sustainable Sourcing": [
+        "The company is ensuring 30% of raw materials are responsibly sourced, partnering with certified suppliers for sustainable resource management.",
+        "Bedmutha is investing in biodiversity conservation projects to restore ecosystems and promote sustainable land use."
+      ],
+      "Air Pollution Reduction": [
+        "The company targets a reduction in airborne pollutants by upgrading ventilation, using high-efficiency filters, and installing air purification systems.",
+        "Advanced emission control systems will be implemented to capture and neutralize harmful emissions before release."
+      ],
+      "Noise Pollution Minimization": [
+        "Bedmutha aims to reduce noise pollution by installing soundproofing materials, vibration dampers, and noise barriers.",
+        "Regular noise assessments and collaborations with regulatory bodies will address community concerns."
+      ],
+      "Responsible Raw Material and Chemical Management": [
+        "The company commits to reducing hazardous chemical use by adopting safer alternatives and ensuring proper handling and disposal practices.",
+        "Raw materials and chemicals will be responsibly sourced, with lifecycle impacts continuously monitored and reported."
+      ],
+      "Environmentally Friendly Product Development": [
+        "Bedmutha plans to develop wire products with lower environmental impact, focusing on energy efficiency and waste reduction.",
+        "Products will be designed for recyclability and sustainable energy systems, benefiting long-term environmental goals."
+      ],
+      "Environmental Impacts from the Use of Products": [
+        "Bedmutha evaluates the environmental impacts of its products during their use, ensuring they meet energy efficiency and durability standards.",
+        "The company offers customer guidance on using products with minimal environmental impact, promoting responsible practices."
+      ],
+      "Environmental Impacts from Products’ End-of-Life": [
+        "Bedmutha is creating initiatives to enhance the recyclability of its products at the end of their lifecycle, including collection and disposal programs.",
+        "Partnerships with recycling firms will expand to ensure products are reused or recycled responsibly."
+      ],
+      "Customer Health and Safety": [
+        "The company emphasizes safe product use through training sessions, educational materials, and robust product safety designs.",
+        "A dedicated customer support system addresses product safety concerns and ensures prompt resolution."
+      ],
+      "Environmental Services and Advocacy": [
+        "Bedmutha is actively advocating for sustainable practices within its industry, partnering with stakeholders for policy improvements.",
+        "The company will provide environmental services, including waste recycling consultations and green energy solutions, to clients."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Water usage reduction and recycling",
+        "targets": [
+          {
+            "target": "By 2026, this initiative targets a 15% reduction.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, 40% of water usage will be recycled.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Renewable Energy Adoption and Energy Efficiency",
+        "targets": [
+          {
+            "target": "By 2026, 30% of energy consumption will come from renewable sources.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, energy efficiency will improve by 20%.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Greenhouse Gas (GHG) Emission Reduction",
+        "targets": [
+          {
+            "target": "By 2026, emissions will reduce by 15%.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, Scope 3 emissions will also reduce by 15%.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Waste Minimization and Recycling",
+        "targets": [
+          {
+            "target": "By 2026, the company aims for a 20% reduction in waste.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, 25% of waste materials will be recycled.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Support and Sustainable Sourcing",
+        "targets": [
+          {
+            "target": "The company is ensuring 30% of raw materials are responsibly sourced.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, sourcing practices will reflect this commitment.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, this will include collaborations with NGOs to enhance its supply chain.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution Reduction",
+        "targets": [
+          {
+            "target": "By 2026, pollutants will reduce by 25%.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, this ensures compliance with environmental regulations.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Noise Pollution Minimization",
+        "targets": [
+          {
+            "target": "By 2026, operational noise levels will reduce by 10 decibels.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, noise standards compliance will improve significantly.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Raw Material and Chemical Management",
+        "targets": [
+          {
+            "target": "By 2026, chemical safety standards will be enhanced.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, transparency and compliance will be at the forefront of management.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Environmentally Friendly Product Development",
+        "targets": [
+          {
+            "target": "By 2026, the environmental footprint of products will decrease by 20%.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, the company will deliver innovative, eco-friendly solutions.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from the Use of Products",
+        "targets": [
+          {
+            "target": "By 2026, all products will comply with sustainable usage benchmarks.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, outreach will cover 70% of its customer base.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from Products’ End-of-Life",
+        "targets": [
+          {
+            "target": "By 2026, 60% of retired products will be recycled.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, circular economy practices will be integrated into all product lines.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "By 2026, customer training programs will cover 95% of the product portfolio.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, incident response times will improve by 40%.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services and Advocacy",
+        "targets": [
+          {
+            "target": "By 2026, advocacy will include contributions to 10 major environmental forums.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "By 2026, services will support over 100 clients in their sustainability goals.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Oversees the overall environmental strategy, approving long-term sustainability goals while ensuring alignment of environmental initiatives with business objectives and stakeholder expectations. Additionally, they evaluate contributions to biodiversity restoration, customer health and safety initiatives, and environmental impact mitigation through focused programs such as environmental services and advocacy."
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Leads the development and implementation of the Environmental Policy across the organization, reporting directly to the CEO and regularly updating the Board. The CSO ensures the integration of renewable energy, circular economy practices, and sustainability in product lifecycle management to align with the organization’s broader environmental goals."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Plays a vital role in implementing the Environmental Policy within their respective divisions by allocating necessary resources and integrating sustainability metrics into performance evaluations. They incorporate eco-friendly product design and end-of-life recycling processes into divisional strategies, driving tangible environmental outcomes."
+      },
+      {
+        "role": "Environmental Compliance Manager",
+        "duty": "Ensures adherence to all applicable environmental laws, regulations, and standards. Regular audits are conducted to maintain regulatory compliance, with an expanded monitoring scope to include product usage impacts and recyclability outcomes, fostering transparency and accountability."
+      },
+      {
+        "role": "All employees",
+        "duty": "Are encouraged to participate actively in sustainability initiatives. They are expected to adhere to sustainable practices, report environmental concerns, and contribute innovative ideas for continuous improvement. Employees are also trained on safe product usage and empowered to advocate for sustainability within their communities"
+      }
+    ],
+    "monitoring": "Internal Reporting mechanisms include an Annual Sustainability Dashboard presented by the CSO to senior management and the Board, showcasing progress toward sustainability goals. An environmental incident reporting system allows employees to report incidents for investigation by the Environmental Compliance Manager. These reports now also highlight advancements in renewable energy adoption, water recycling, biodiversity support, and noise pollution mitigation.\n\nFor External Reporting, the company follows internationally recognized standards, such as the Global Reporting Initiative (GRI) guidelines, ensuring transparency. Reports include updates on product end-of-life recycling, customer health and safety initiatives, and greenhouse gas (GHG) emissions reductions, demonstrating the company’s commitment to sustainability.",
+    "reviewMechanism": "The company conducts an annual performance review to assess progress toward achieving sustainability goals. Feedback from these reviews, combined with internal audits and stakeholder engagement, is utilized to identify opportunities for continuous improvement.\n\nThe Chief Sustainability Officer (CSO) reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations. Updates to the policy are communicated internally, and relevant training is provided to employees to ensure awareness and compliance."
+  },
+  "sourcePath": "Policies - Kenal/Bedmutha/Environmental Policy..docx",
+  "sourceFiles": [
+    "Policies - Kenal/Bedmutha/Environmental Policy..docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 14155,
+  "parsedAt": "2026-09-11T07:21:12.267Z"
+}

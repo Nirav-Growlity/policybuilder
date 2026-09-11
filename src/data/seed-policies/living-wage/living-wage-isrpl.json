@@ -1,0 +1,206 @@
+{
+  "id": "living-wage-isrpl",
+  "name": "ISRPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Indian Synthetic Rubber Private Limited (ISRPL)",
+      "industry": "",
+      "site": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304",
+      "sites": [
+        {
+          "location": "Corporate Office",
+          "address": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Registered Office",
+          "address": "10th Floor, Core-2, North Tower, Scope Minar, District Centre, Laxmi Nagar, Delhi -110092",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "Opposite: Naptha Cracker Polymer Terminal Gate, Panipat Refinery, Panipat, Haryana -132140",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Indian Synthetic Rubber Private Limited (ISRPL) is committed to ensuring fair and responsible compensation for all employees in line with applicable laws and ethical business practices. The company recognizes that paying a living wage supports employee well-being, financial security, and dignity at work. Through this policy, ISRPL aims to promote equitable wages that help employees meet their basic needs and improve their overall quality of life.",
+      "declaration": "The purpose of this policy is to establish ISRPL’s commitment to providing fair and adequate wages that meet employees’ basic needs, ensure financial security, and promote a responsible, ethical, and sustainable compensation framework across the organization.",
+      "scope": "This policy applies to all activities, products, and services of ISRPL, including its Corporate Office in Noida and its manufacturing facility in Panipat, Haryana. It extends to all employees, contractors, vendors, and stakeholders operating within or on behalf of ISRPL premises."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "ISRPL ensures that all employees receive fair and adequate compensation by strictly adhering to the Code on Wages, 2019 and other applicable local minimum wage laws and regulations. The company benchmarks wages against recognized living wage standards and industry best practices, regularly reviewing them to account for inflation and cost-of-living changes. This commitment extends to all employees, including contract and temporary workers, and ISRPL also encourages suppliers to adopt similar living wage principles. Transparent records of wage decisions are maintained and communicated to promote accountability and fairness across the organization.\n\nLiving Wage Components (for a family of 4): Food & Nutrition — Sufficient for 4 members to meet daily dietary needs; Housing — Safe and adequate accommodation for family; Healthcare — Access to medical care and medicines; Education — Schooling and educational materials for children; Transportation — Daily commuting and essential travel costs; Other Essentials — Clothing, personal care, utilities, and contingency expenses.\n\nCalculation Basis: Benchmarked against national living wage standards; Reviewed annually to account for inflation and cost-of-living changes; Ensures all employees and their families can maintain a decent standard of living.\n\nThe company benchmarks wages against recognized living wage standards and industry best practices, regularly reviewing them to account for inflation and cost-of-living changes.\n\nThe policy covers permanent, contract, temporary, and casual workers, and the living wage principles are extended to all employees, including contract and temporary workers.\n\nISRPL aims to calculate living wages using approved and recognized methods by applying standard benchmarks and cost-of-living assessments to ensure accuracy and fairness in compensation."
+    },
+    "focusAreas": [
+      "Ensure all wages comply with the applicable local labor laws.",
+      "Regularly benchmark wages against recognized living wage standards and industry best practices, reviewing them annually to account for inflation and cost-of-living changes.",
+      "Extend living wage principles to all employees, including contract, temporary, and casual workers.",
+      "Encourage suppliers and contractors to adopt similar living wage practices within their operations.",
+      "Maintain clear records of wage decisions and communicate policies and updates to employees to ensure accountability and understanding.",
+      "Promote overall employee well-being, financial security, and dignity through fair and responsible compensation."
+    ],
+    "qualitative": {
+      "Fair compensation": [
+        "We aim to provide fair compensation to all employees by benchmarking wages against recognized living wage standards to ensure financial security and dignity for employees and their families."
+      ],
+      "Regular wage reviews": [
+        "We aim to implement regular wage reviews by monitoring cost-of-living changes and industry best practices to maintain equitable and up-to-date compensation."
+      ],
+      "Living wage calculation": [
+        "We aim to calculate living wages using approved and recognized methods by applying standard benchmarks and cost-of-living assessments to ensure accuracy and fairness in compensation."
+      ],
+      "Employee coverage": [
+        "We aim to cover all employees in living wage benchmark analysis by including permanent, contract, and temporary staff to ensure equitable compensation across the organization."
+      ],
+      "Transparency and accountability": [
+        "We aim to maintain transparency and accountability by keeping clear records of wage payments and policy adherence to demonstrate responsibility and build trust with employees and stakeholders."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living wage coverage",
+        "targets": [
+          {
+            "target": "Aim to ensure 100% permanent, contract, and temporary employees receive wages at or above the recognized living wage standard",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Wage benchmarking",
+        "targets": [
+          {
+            "target": "Aim to conduct annual wage benchmarking for 100% of employee categories to align with cost-of-living adjustments and recognized living wage standards",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Cost-of-living adjustments",
+        "targets": [
+          {
+            "target": "Aim to ensure at least 60% of employees receive annual wage adjustments based on cost-of-living changes and inflation.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Transparency of records and implementation",
+        "targets": [
+          {
+            "target": "Ensure that living wage payment records and policy implementation status are documented and made transparent for at least 100% of employees and business units",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Labor law compliance",
+        "targets": [
+          {
+            "target": "Aim to maintain 100% compliance with the applicable labor laws across all operations",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "HR Head",
+        "duty": "Review Policy regularly."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Implement the living wage policy across all employee categories."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Conduct wage benchmarking and annual reviews."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Organize employee awareness sessions and trainings."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Maintain records of employee acknowledgements related to the policy."
+      },
+      {
+        "role": "Finance Manager",
+        "duty": "Ensure timely and accurate disbursement of wages in line with living wage standards."
+      },
+      {
+        "role": "Finance Manager",
+        "duty": "Maintain transparent wage payment records."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Engage suppliers and contractors on living wage compliance."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Incorporate living wage considerations into supplier contracts."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Monitor supplier adherence and report gaps to senior management."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Conduct periodic supplier assessments to promote ethical wage practices."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Monitor compliance with the Code on Wages, 2019 and other labor laws."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Conduct internal audits to verify policy implementation."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Report progress, gaps, and corrective actions to senior management."
+      }
+    ],
+    "monitoring": "ISRPL will ensure systematic reporting on living wage implementation across all employee categories and supply chain partners. Wage benchmarking outcomes, employee coverage, and policy adherence will be documented and reviewed regularly. Reports will be submitted to senior management, and key findings communicated internally to enhance transparency, accountability, and continuous improvement in compensation practices.\n\nISRPL is committed to continuously improving living wage practices across the organization. The company will regularly review wage structures, benchmark against industry standards, and incorporate employee and supplier feedback to enhance compensation fairness. Lessons learned from audits, monitoring, and reporting will guide corrective actions. This iterative process ensures wages remain equitable, aligned with cost-of-living changes, and support employee well-being and organizational sustainability over time.",
+    "reviewMechanism": "ISRPL will review the Living Wage Policy annually or as required by changes in regulations, business operations, or stakeholder expectations. The review will be conducted by the HR Head and will assess wage structures, policy implementation, supplier compliance, and employee coverage. Recommendations from the review will guide updates to practices, ensuring alignment with cost-of-living changes, industry benchmarks, and organizational objectives.\n\nLast Review Date: 01 Jan 2026\n\nNext Review Date: 01 Jan 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/ISRPL/5. Living Wage Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/ISRPL/5. Living Wage Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 9303,
+  "parsedAt": "2026-09-11T07:08:59.872Z"
+}

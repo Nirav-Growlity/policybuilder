@@ -1,0 +1,231 @@
+{
+  "id": "sustainable-procurement-efficient-plastech",
+  "name": "Efficient Plastech",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainability Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Efficient Plastech Private Limited",
+      "industry": "",
+      "site": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+      "sites": [
+        {
+          "location": "Site 1",
+          "address": "A-211, everest grande, mahakali caves road, opp. Ahura centre, andheri (e), mumbai – 400093",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 2",
+          "address": "Plot number 49, HDIL Industrial Park, Virar Ahmedabad Highway Road, Chandansar, Virar East, Ðaluka - Vasai, District - Palghar, State - Maharashtra - 401305",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 3",
+          "address": "Plot number 64, Sector 8A, Sidcul, District - Haridwar, State - Uttarakhand",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 4",
+          "address": "City Survey no. NA. 1615/A, Costal Highway, Village - Daheri Umbergaon, Taluka - Umbergaon, District - Valsad, State - Gujrat",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Efficient Plastech Private Limited is committed to integrating sustainability into all procurement activities. This Sustainable Procurement Policy outlines how we source materials and services responsibly—prioritizing environmental stewardship, ethical labor practices, and long-term value creation for our stakeholders. By collaborating with suppliers and partners who share our commitment to sustainability, Efficient Plastech seeks to minimize its ecological footprint while upholding the highest standards of integrity and social responsibility.",
+      "declaration": "Efficient Plastech Private Limited is committed to ensuring that every procurement decision we make generates positive impacts for the environment, society, and the local economies in which we operate. Our commitment is structured around four interlinked pillars:",
+      "scope": ".This policy applies to all Efficient Plastech employees, workers, contractors, sub-contractors, suppliers, and business partners involved in procurement activities across all operational sites and manufacturing units. It governs the full procurement lifecycle, including supplier selection, contracting, sourcing, performance monitoring, and end-of-life management of goods and services."
+    },
+    "focusAreas": [
+      "Environmental Responsibility in Procurement",
+      "Labor Practices and Human Rights",
+      "Ethical Sourcing and Fair Trade",
+      "Supplier Engagement and Development"
+    ],
+    "qualitative": {
+      "Environmental Responsibility in Procurement": [
+        "Efficient Plastech is committed to minimizing the environmental impact of its procurement activities by sourcing goods and services from environmentally responsible suppliers.",
+        "Incorporate renewable, recycled, or low-impact materials into their products.",
+        "Utilize energy-efficient technologies and operational practices to reduce carbon emissions.",
+        "Implement effective waste reduction and responsible waste management systems.",
+        "Demonstrate responsible water usage and active water conservation strategies."
+      ],
+      "Labor Practices and Human Rights": [
+        "Efficient Plastech maintains a zero-tolerance policy toward human rights violations within its supply chain.",
+        "Comply fully with applicable national and international labor laws, including regulations on wages, working hours, and employee benefits.",
+        "Provide a safe and healthy working environment, proactively addressing occupational health and safety risks.",
+        "Strictly prohibit child labor, forced labor, and all forms of human trafficking.",
+        "Promote diversity, equity, and inclusion by ensuring fair treatment and equal opportunity for all, regardless of gender, race, religion, or background."
+      ],
+      "Ethical Sourcing and Fair Trade": [
+        "Efficient Plastech encourages ethical sourcing and the adoption of fair-trade principles across its procurement channels.",
+        "Provide fair wages and operate free of exploitative practices.",
+        "Support small producers, cooperatives, and vendors aligned with fair-trade standards.",
+        "Promote social equity, accountability, and transparency throughout the supply chain."
+      ],
+      "Supplier Engagement and Development": [
+        "We believe in growing together with our partners. Efficient Plastech supports suppliers in enhancing their sustainability performance through:",
+        "Capacity-building workshops, technical training, and ESG awareness programs.",
+        "Ongoing communication, feedback mechanisms, and joint problem-solving initiatives.",
+        "Collaborative initiatives to meet evolving ESG standards, regulatory requirements, and stakeholder expectations.",
+        "Supplier performance is regularly reviewed to ensure alignment with Efficient Plastech’s sustainability goals and to drive continuous improvement."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Sustainability in Procurement",
+        "targets": [
+          {
+            "target": "Ensure that 75% of suppliers meet Efficient Plastech’s environmental sustainability criteria.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of suppliers evaluated against environmental criteria during onboarding.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "80% of procurement spend sourced from environmentally compliant or preferred suppliers.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "0 critical environmental violations within the supply chain.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 20% reduction in carbon emissions across the supply chain through procurement of energy-efficient materials and services.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Labor Practices and Human Rights in Procurement",
+        "targets": [
+          {
+            "target": "Conduct audits of 100% of high-risk suppliers to ensure compliance with labor practices and human rights standards.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of suppliers comply with Efficient Plastech’s standards on fair wages, safe working conditions, and labor rights.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% onboarding due diligence completed on labor practices and human rights risks.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "0 critical violations related to child labour, forced labour, discrimination, or harassment in the supply chain.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% grievance mechanisms accessible to workers in the supply chain, where applicable.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Trade and Ethical Sourcing",
+        "targets": [
+          {
+            "target": "Ensure that 50% of goods sourced from developing regions meet recognized fair-trade standards.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of suppliers evaluated against fair trade and ethical sourcing criteria.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% contractual inclusion of ethical sourcing and fair trade principles in supplier agreements.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "20% of key suppliers engaged in ethical sourcing improvement or capacity-building programs.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "General sustainable procurement targets",
+        "targets": [
+          {
+            "target": "Annual Supplier Assessments & Audits: 100 % of our suppliers will undergo a sustainability assessment or audit every year to verify environmental, social and governance performance.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Supplier Capacity Building & Training: Ensure 100 % of our targeted suppliers to receive basic annual sustainability training and resources to help them meet our environmental and social standards.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Local & Community Sourcing: Commit to sourcing 25 % of our goods and services from local or community-based suppliers both to boost regional economies and to reduce our carbon footprint.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Head- Purchase",
+        "duty": "The CPO is responsible for the annual review and ongoing maintenance of the Sustainable Procurement Policy. This role ensures that the policy remains effective, up-to-date with evolving ESG expectations and regulatory requirements, and is fully implemented across all procurement activities. The CPO also oversees compliance with the policy, monitors supplier performance, and ensures corrective actions are taken where necessary to uphold sustainability and ethical standards throughout the supply chain."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Expected to uphold Efficient Plastech’s standards on environmental stewardship, ethical labor practices, and responsible sourcing. Suppliers must provide transparent reporting on their sustainability performance and cooperate in audits, assessments, and capacity-building initiatives as part of ongoing engagement with the company."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Provides oversight and strategic guidance, ensures adequate resources are allocated for policy implementation, and reviews overall supplier performance and sustainability outcomes."
+      },
+      {
+        "role": "Employees and Procurement Staff",
+        "duty": "Required to follow sustainable procurement guidelines, report non-compliance, and contribute to continuous improvement initiatives."
+      }
+    ],
+    "monitoring": "Audit Reports: Findings from supplier audits will be reviewed by the Sustainability and Compliance Team. Any instances of non-compliance will trigger immediate corrective actions, including follow-ups and, where necessary, adjustments to supplier engagement or contracts.\n\nContinuous Improvement: Insights from performance and audit reports will be used to refine procurement strategies, strengthen supplier capacity, and enhance overall adherence to sustainability and ethical sourcing standards.\n\nTransparency: Key monitoring outcomes will be communicated internally to relevant stakeholders and externally, where appropriate, to demonstrate Efficient Plastech’s commitment to responsible procurement practices.\n\nPublic Disclosure: Efficient Plastech’s Sustainable Procurement Policy will be made publicly available on the company website and communicated to all suppliers, contractors, and business partners.\n\nEmployee Training: All employees involved in procurement will receive training on the principles of sustainable procurement, enabling them to make informed decisions, incorporate ESG considerations, and engage in meaningful dialogue with suppliers.\n\nSupplier Engagement: Efficient Plastech will actively collaborate with suppliers to ensure they understand the policy requirements and are supported in meeting environmental, labor, and ethical standards through guidance, workshops, and capacity-building initiatives.\n\nOngoing Dialogue: Regular communication channels, such as workshops, newsletters, and meetings, will be maintained to reinforce expectations, provide feedback, and promote continuous improvement in sustainable procurement practices.\n\nEfficient Plastech Pvt. Ltd. is committed to continuously enhancing its procurement practices to advance sustainability and ethical standards across the entire supply chain. As global sustainability challenges evolve, Efficient Plastech will regularly update its policies, actively engage with suppliers, and leverage innovation to ensure the company remains at the forefront of responsible and responsible sourcing practices.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed annually by the Chief Procurement Officer (CPO). The review will evaluate progress toward the Quantitative targets and assess the policy’s effectiveness in adapting to evolving sustainability challenges. Any necessary updates or adjustments will be made, and changes will be communicated to all employees and suppliers."
+  },
+  "sourcePath": "Policies - Kenal/Efficient Plastech/Sustainability Procurement Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Efficient Plastech/Sustainability Procurement Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 11635,
+  "parsedAt": "2026-09-11T07:35:40.998Z"
+}

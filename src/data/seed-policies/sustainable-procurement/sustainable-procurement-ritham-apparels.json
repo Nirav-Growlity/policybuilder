@@ -1,0 +1,191 @@
+{
+  "id": "sustainable-procurement-ritham-apparels",
+  "name": "Ritham Apparels",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 5) Sustainable Procurement Policy.pdf.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Clifton Export Private Limited",
+      "industry": "",
+      "site": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India",
+      "sites": [
+        {
+          "location": "Clifton Export Private Limited",
+          "address": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India",
+          "primaryFunction": "Vertically integrated manufacturing, from knitting to finishing and packaging"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Clifton Export Pvt. Ltd., a unit of Clifton Group is dedicated to building a responsible and resilient supply chain that aligns with our broader commitment to ethical business practices, environmental stewardship, and global compliance. As a vertically integrated manufacturer, we oversee every stage of production, from knitting to finishing and packaging, enabling us to embed sustainability and quality controls throughout our sourcing and operational processes.\n\nOur sourcing strategy emphasizes partnerships with suppliers who share our values and meet internationally recognized standards such as GOTS, OEKO-TEX®, REACH, and ZDHC. We are committed to procuring raw materials and services that minimize environmental impact, ensure safe and fair working conditions, and support continuous improvement across the value chain.\n\nThrough this policy, Clifton Export Private Limited aims to ensure traceability, promote sustainable material use, reduce social and environmental risks, and foster long-term, transparent relationships with suppliers. In doing so, we seek to meet the expectations of our global clients and contribute positively to the broader goals of sustainable development.",
+      "declaration": "Clifton Export Private Limited, is committed to sourcing materials and services responsibly, with respect for the environment, human rights, and ethical business practices. We expect all suppliers and partners to comply with applicable laws and international standards such as GOTS, OEKO-TEX®, REACH, and ZDHC.\n\nThis policy guides our efforts to reduce environmental impact, ensure fair labor practices, and promote transparency and traceability across our supply chain. Through sustainable sourcing, we aim to drive continuous improvement and contribute to a more responsible textile industry.",
+      "scope": "This policy applies to all sourcing and procurement activities at the below given operational site of Clifton Export Private Limited., including raw materials, components, and services. It extends to the entire supply chain, covering suppliers, contractors, and business partners and ensures responsible practices related to labor, environment, compliance, and human rights across all regions of operation."
+    },
+    "focusAreas": [
+      "Environmentally Responsible Procurement",
+      "Upholding Fair Labor Standards",
+      "Ethical Business Conduct",
+      "Partnership for Sustainable Impact",
+      "Inclusive & Local Sourcing"
+    ],
+    "qualitative": {
+      "Environmentally Responsible Procurement": [
+        "We prioritize suppliers who actively reduce their environmental footprint through efficient resource use, emissions reduction, and responsible waste management.",
+        "Collaborate with suppliers demonstrating measurable environmental performance."
+      ],
+      "Upholding Fair Labor Standards": [
+        "We require all suppliers to ensure safe working conditions, fair wages, and strict prohibition of child, forced, or exploitative labor across all tiers of the supply chain.",
+        "Require all suppliers to follow fair labor practices, including the elimination of child and forced labor, fair wages, and safe working conditions.",
+        "Maintain full compliance with child and forced labor policies across the supply chain."
+      ],
+      "Ethical Business Conduct": [
+        "Suppliers are expected to maintain compliance with all legal requirements, uphold anti-corruption practices, and operate with transparency and integrity.",
+        "Promote integrity and accountability by engaging suppliers who follow ethical business practices and legal compliance."
+      ],
+      "Partnership for Sustainable Impact": [
+        "We collaborate with suppliers to foster innovation, reduce environmental impact, and create shared social value throughout the supply chain.",
+        "Partner with suppliers to co-create sustainable innovations and improve the collective environmental and social impact of the supply chain."
+      ],
+      "Inclusive & Local Sourcing": [
+        "We support local communities and promote supplier diversity by engaging with small, inclusive, and responsible enterprises wherever possible.",
+        "Strengthen the local economy and foster diversity by sourcing from community-based and underrepresented suppliers."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible Procurement",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers comply with Clifton Export Private Limited’ environmental standards",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Increase procurement from ISO 14001-certified suppliers by 50%",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve a 10% reduction in supplier-related carbon emissions",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Upholding Fair Labor Standards",
+        "targets": [
+          {
+            "target": "Conduct annual labor compliance audits for 100% of suppliers.",
+            "baseline": "2022",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Achieve 100% verified alignment with international labor and human rights standards among suppliers",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Business Conduct",
+        "targets": [
+          {
+            "target": "Integrate anti-corruption clauses in 100% of supplier contracts",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Deliver ethics and compliance training to 90% of key suppliers annually.",
+            "baseline": "2022",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Partnership for Sustainable Impact",
+        "targets": [
+          {
+            "target": "Launch a joint supplier sustainability initiative",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Increase supplier participation in sustainability reporting by 40%",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Inclusive & Local Sourcing",
+        "targets": [
+          {
+            "target": "Increase national sourcing by 50%",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 15% of supplier base includes small or diverse businesses",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      5,
+      8,
+      12,
+      13,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Responsible for embedding sustainable sourcing principles into supplier selection, contract terms, and performance evaluations."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Oversees supplier performance on environmental, social, and ethical criteria and supports capacity-building and continuous improvement efforts."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Expected to comply with Clifton Export Private Limited’ sustainable sourcing standards, provide relevant disclosures, and fully cooperate during audits and assessments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provides strategic oversight, allocates necessary resources, and ensures enforcement of the policy through regular reviews and performance monitoring."
+      },
+      {
+        "role": "All Employees Involved in Sourcing",
+        "duty": "Expected to uphold this policy, support responsible procurement practices, and report any non-compliance or concerns through designated reporting channels."
+      }
+    ],
+    "monitoring": "Clifton Export Private Limited ensures accountability in sustainable procurement through regular monitoring of supplier practices. Key indicators, such as labor standards, environmental compliance, and ethical conduct, are tracked via audits, assessments, and supplier scorecards.\n\nFindings are reviewed periodically and reported to senior management to support continuous improvement and risk management. Any significant issues are addressed through corrective actions, ensuring transparency and alignment with our sustainability goals.",
+    "reviewMechanism": "The Sustainable Sourcing Policy will be reviewed annually by the Procurement Officer to ensure its continued relevance, effectiveness, and alignment with evolving regulations, global best practices, and business objectives. The review process will be jointly overseen by the Procurement and Sustainability Teams, in consultation with relevant department heads.\n\nSupplier compliance will be evaluated through routine audits, sustainability scorecards, and feedback mechanisms. The results of these evaluations will guide corrective actions, supplier engagement strategies, and future policy updates. Significant changes will be approved by senior management and clearly communicated to all relevant stakeholders across the supply chain."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Ritham Apparels/5) Sustainable Procurement Policy.pdf",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Ritham Apparels/5) Sustainable Procurement Policy.pdf"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12,
+  "parsedAt": "2026-09-11T08:22:12.723Z"
+}

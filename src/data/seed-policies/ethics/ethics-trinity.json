@@ -1,0 +1,213 @@
+{
+  "id": "ethics-trinity",
+  "name": "Trinity",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Ethical Governance Policy - Updated - GRW 29-07.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Trinity Logistics, Inc.",
+      "industry": "",
+      "site": "50 Fallon Avenue, Seaford, DE 19973",
+      "sites": [
+        {
+          "location": "Trinity Logistics Corporate Office",
+          "address": "50 Fallon Avenue, Seaford, DE 19973",
+          "primaryFunction": "Corporate office"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "50 Fallon Avenue, Seaford, DE 19973"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Trinity Logistics, Inc., we understand that ethical conduct is the cornerstone of our operations. Our Ethics Policy serves as a compass, guiding every decision and action we undertake. With a commitment to integrity, transparency, and accountability, we strive to uphold the highest standards of ethical behaviour in all facets of our business. This policy outlines our unwavering dedication to ethical practices, ensuring trust, respect, and excellence in everything we do.",
+      "declaration": "Promote Ethical Conduct: Foster a culture of integrity, honesty, and fairness among all team members.\n\nEnsure Compliance: Uphold legal and regulatory requirements while adhering to industry standards and best practices.\n\nSafeguard Stakeholder Interests: Protect the interests of customers, shareholders, team members, and the community through ethical decision-making.\n\nPrevent Conflict of Interest: Identify and mitigate situations where personal interests may conflict with the company's interests.\n\nEncourage Reporting: Provide channels for team members to report unethical behavior confidentially and without fear of retaliation.\n\nContinuous Improvement: Regularly review and update the Ethics Policy to address emerging ethical challenges and opportunities.",
+      "scope": "This Ethical Governance Policy applies to all team members of Trinity Logistics, Inc. across all operational locations. The following is the address of our corporate office:"
+    },
+    "focusAreas": [
+      "Standard of Conduct",
+      "Industry Compliance",
+      "Fraud",
+      "Money Laundering",
+      "Anti-Competitive Practices",
+      "Information Security"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "At Trinity Logistics, we aim to foster an ethical culture by prioritizing transparent decision-making processes and minimizing any opportunities for corrupt practices. We will strengthen oversight through frequent audits and enhanced employee training, striving for zero instances of corruption.",
+        "We will establish clear reporting channels for employees to confidentially raise concerns about any suspected corrupt activities, ensuring prompt investigation and resolution."
+      ],
+      "Conflict of Interest": [
+        "We strive to eliminate potential conflicts of interest by ensuring that all employees disclose any personal or financial interests that may interfere with company objectives. We will implement a transparent declaration process across all teams to minimize undisclosed conflicts.",
+        "We will conduct regular training sessions to educate employees about identifying and managing conflicts of interest, promoting a culture of ethical decision-making."
+      ],
+      "Fraud": [
+        "Trinity Logistics is committed to identifying and mitigating fraud risks. Our focus is on enhancing internal controls and fraud detection technologies through continuous oversight, data analytics, and training programs to reduce fraud incidents.",
+        "We will establish a dedicated fraud prevention task force to review high-risk transactions and improve fraud detection methods, ensuring a proactive approach to combating fraud."
+      ],
+      "Money Laundering": [
+        "We aim to prevent money laundering by maintaining strict compliance with KYC (Know Your Customer) policies and improving customer risk assessments. Our goal is to ensure full adherence to anti-money laundering regulations in customer onboarding.",
+        "We will regularly review and update our anti-money laundering procedures to keep pace with evolving risks and regulatory changes, ensuring a secure financial environment."
+      ],
+      "Anti-Competitive Practices": [
+        "Trinity Logistics is dedicated to maintaining fair competition in the logistics industry. We will regularly review information-sharing guidelines and employee training to ensure adherence to anti-competitive laws and avoid any violations.",
+        "We will actively participate in industry forums and associations, ensuring that all collaborative activities comply with competition laws and promote fair market practices."
+      ],
+      "Information Security": [
+        "Our commitment is to ensure the highest level of information security by implementing advanced encryption, access control, and regular security audits. We aim to fully comply with global cybersecurity standards, ensuring zero data breaches.",
+        "We will introduce mandatory cybersecurity awareness programs for all employees to enhance their understanding of data protection and reduce the risk of human error leading to security breaches."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Train 100% of sales employees on anti-corruption policies by 2030 as compared to the baseline year 2022. By 2024, 29.7% completion.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero corruption-related incidents annually by 2030 as compared to the baseline year 2022, with zero corruption-related incidents in 2024.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees disclose conflicts of interest annually by 2030 as compared to the baseline year 2022. In 2024, 100% of employees already required to disclose.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Train 100% of sales employees on the conflict-of-interest policy by 2030 as compared to the baseline year 2022. By 2024, 100% of employees have received the handbook, which includes conflict of interest requirements.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Zero confirmed conflict of interest incidents by 2030 as compared to the baseline year 2022, with zero incidents in 2024.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Reduce fraud-related incidents by 10% by 2030 as compared to the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our target is to reduce the average number of cargo claims tied to fraud incidents by 50% by 2025 compared to our baseline year of 2023.",
+            "baseline": "2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "Train 100% of employees on fraud prevention annually by 2030 as compared to the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Report 100% of suspicious transactions within 48 hours by 2030 as compared to the baseline year 2022, with 100% compliance in 2024.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve zero money laundering incidents annually by 2030 as compared to the baseline year 2024, with zero instances.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of sales employees are trained on competition law by 2030 as compared to the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Achieve zero data breaches by 2030 as compared to the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees complete cybersecurity training annually by 2030 as compared to the baseline year 2022. In 2024, 78.3% have completed the training.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase data encryption coverage to 100% of critical systems by 2030 as compared to the baseline year 2022, with 100% data encryption compliance in 2024.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Policy Oversight and Implementation",
+        "duty": "The responsibility for overseeing / reviewing the Ethical Governance Policy and ensuring its effective implementation lies with the Executive Leadership Team and the Team Services Department. This committee comprises senior executives from various departments, including legal, human resources, finance, and operations."
+      },
+      {
+        "role": "Senior Leadership",
+        "duty": "Senior leadership, including the President and Executive Leadership Team, holds ultimate responsibility for setting the ethical tone and direction of Trinity Logistics. They are accountable for establishing clear expectations regarding ethical behavior, allocating resources for ethics training and compliance initiatives, and integrating ethical considerations into strategic decision-making processes."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Frontline managers and supervisors play a crucial role in promoting and upholding ethical behavior within their respective teams. They are responsible for leading by example, reinforcing ethical standards through consistent communication and actions, and providing guidance and support to address ethical dilemmas effectively."
+      },
+      {
+        "role": "Employees",
+        "duty": "Every individual associated with Trinity Logistics, including team members holds personal accountability for adhering to the organization's ethical standards. They are expected to prioritize integrity, honesty, and fairness in all their professional interactions and decision-making processes, and must strictly follow the guidelines and behavioral expectations outlined in this policy."
+      },
+      {
+        "role": "Legal Department",
+        "duty": "The legal department may play a supportive role in interpreting legal and regulatory requirements related to ethics, providing guidance on compliance matters, and assisting with investigations into alleged ethical violations."
+      }
+    ],
+    "monitoring": "Encouragement to Speak Up: Trinity Logistics actively encourages all stakeholders to report suspected instances of unethical behavior without hesitation. Employees are empowered to raise concerns if they witness or suspect unethical conduct, irrespective of their position within the organization.\n\nConfidential Reporting Channels: To facilitate reporting, Trinity Logistics provides multiple confidential channels, such as direct supervisors, human resources, the legal department, or an anonymous reporting hotline. These channels ensure that individuals can report concerns securely and without fear of retaliation.\n\nInvestigation and Resolution: Upon receiving a report, Trinity Logistics conducts a thorough and impartial investigation to assess the validity of the allegations. Investigations are conducted with confidentiality and sensitivity, and appropriate disciplinary actions are taken to address any confirmed misconduct.",
+    "reviewMechanism": "Ethics and Compliance Oversight: Trinity Logistics has established an Executive Leadership Team comprising of senior executives from various departments, including legal, human resources, finance, and operations. This committee is lead by the ethics compliance officer and  is tasked with overseeing the annual review and updating of the Ethics Policy.\n\nPeriodic Evaluation: The Executive Leadership Team and Legal Counsel conducts periodic evaluations of the Ethics Policy to ensure its relevance and effectiveness. This involves gathering feedback from stakeholders, monitoring changes in laws and regulations, and identifying emerging ethical risks and opportunities.\n\nRevision and Approval Process: Any proposed revisions to the Ethics Policy are thoroughly reviewed by the People Operations Team, approved by Executive Leadership Team, and communicated to all employees through appropriate channels. This ensures that the Ethics Policy remains aligned with Trinity Logistics' values, objectives, and legal requirements.\n\nEmployee Engagement: Trinity Logistics actively seeks input from employees to enhance the Ethics Policy. Employees are encouraged to provide feedback and suggestions for improvement, ensuring that the Ethics Policy reflects the collective wisdom and insights of the organization."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Trinity/Ethical Governance Policy - Updated - GRW 29-07.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Trinity/Ethical Governance Policy - Updated - GRW 29-07.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 23184,
+  "parsedAt": "2026-09-11T07:16:47.843Z"
+}

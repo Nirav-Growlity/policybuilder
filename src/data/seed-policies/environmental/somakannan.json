@@ -1,0 +1,203 @@
+{
+  "id": "somakannan",
+  "name": "Somakannan",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1) Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Somakannan Textiles",
+      "industry": "",
+      "site": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu. India.",
+      "sites": [
+        {
+          "location": "Somakannan Textiles",
+          "address": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu. India.",
+          "primaryFunction": "Manufacturing high-quality cotton textiles products"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu. India."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "",
+      "declaration": "Somakannan Textiles is dedicated to manufacturing high-quality cotton textiles products while maintaining a strong focus on environmental sustainability. We recognize our responsibility to protect the environment and are committed to minimizing the ecological impact of our manufacturing processes by conserving natural resources, preventing pollution, and promoting waste reduction. This policy outlines our goals, commitments, and actions toward integrating environmental considerations into our operations and supply chain, ensuring regulatory compliance, and supporting the well-being of the communities we serve.",
+      "scope": "This Environment Policy applies to all facilities, employees, contractors, and supply chain partners of Somakannan Textiles. It covers our operational activities, including manufacturing, supply chain processes, and interactions with stakeholders and local communities."
+    },
+    "focusAreas": [
+      "Energy Consumption and GHGs: Improve energy efficiency and transition to renewable energy to reduce carbon emissions.",
+      "Waste Management and Reduction: Minimize waste generation and maximize recycling and reuse across operations.",
+      "Water Conservation: Optimize water usage and promote reuse and responsible wastewater management.",
+      "Sustainable Materials and Chemical Usage: Use safer, low-impact materials and reduce hazardous chemical use.",
+      "Product Lifecycle Responsibility: Design products for recyclability and provide guidance for sustainable use and disposal."
+    ],
+    "qualitative": {
+      "Energy Efficiency and GHG Emissions Reduction": [
+        "Utilize renewable energy sources such as solar and wind wherever feasible to power operations.",
+        "Conduct regular energy audits to identify inefficiencies and implement corrective measures.",
+        "Reduce overall energy consumption by improving operational efficiency in spinning, weaving, and processing activities."
+      ],
+      "Waste Management and Reduction": [
+        "Minimize waste generation at source by improving process efficiency across production and material handling activities.",
+        "Implement a comprehensive waste management strategy focused on reducing, reusing, and recycling waste materials.",
+        "Ensure safe handling, storage, and disposal of hazardous waste, adhering to local and international standards.",
+        "Build employee accountability and awareness to ensure consistent waste segregation and responsible disposal practices."
+      ],
+      "Water Conservation": [
+        "Ensure implementation of water-efficient technologies and practices in the manufacturing processes to minimize water usage.",
+        "Treat wastewater generated from operations to meet or exceed discharge standards before release.",
+        "Reduce dependency on freshwater sources by maximizing the use of recycled and treated water within operations."
+      ],
+      "Sustainable Materials and Chemical Usage": [
+        "Prioritize sourcing eco-friendly and sustainable raw materials, such as organic cotton and recycled fibres.",
+        "Reduce the use of hazardous chemicals in textile processing by adopting safer and compliant alternatives where feasible.",
+        "Train employees on safe handling and disposal of chemicals to prevent environmental contamination."
+      ],
+      "Product Lifecycle Responsibility": [
+        "Design products with sustainability in mind, focusing on durability, high quality and recyclability.",
+        "Offer guidance to customers on the proper use, care, and disposal of textile products to minimize their environmental impact.",
+        "Promote responsible end-of-life practices by supporting take-back programs and recycling initiatives to reduce environmental impact and enhance circularity."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency and GHG Emissions Reduction",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in Scope 1, Scope 2 & Scope 3 greenhouse gas emissions by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce energy consumption intensity by 10% by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% transition to energy-efficient lighting (LED) and high-efficiency motors in production and utility areas by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management and Reduction",
+        "targets": [
+          {
+            "target": "Divert 80% of non-hazardous waste from landfill by 2030 through recycling and authorized recovery methods.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce total waste generation by 35% by 2030 through waste minimization strategies.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation",
+        "targets": [
+          {
+            "target": "Reduce freshwater consumption intensity by 15% by year 2030 through water-efficient technologies and practices.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reuse 30% of treated wastewater within operations by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% compliance with wastewater discharge standards with zero regulatory exceedances annually.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials and Chemical Usage",
+        "targets": [
+          {
+            "target": "Increase the use of organic and recycled raw materials by 20% by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Eliminate or substitute hazardous chemicals with safer alternatives in key processes, achieving a 40% reduction by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement documented chemical inventory and traceability systems for 100% of chemicals used in operations by 2030 to improve control and transparency.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Lifecycle Responsibility",
+        "targets": [
+          {
+            "target": "Ensure 100% of product lines have documented sustainable product usage, end‑of‑life guidance or take-back/recycling options by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 50% of products are designed for recyclability and reduced environmental impact by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Provide strategic direction and oversight for environmental sustainability initiatives, including approval of targets, and resource allocation."
+      },
+      {
+        "role": "Environmental Manager",
+        "duty": "Oversee policy implementation and review progress against environmental commitments."
+      },
+      {
+        "role": "Production Team",
+        "duty": "Implement energy-, water-, and waste-efficient practices, ensure safe waste and chemical management, and support renewable energy and process optimization initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental procedures, participate in training programs, use resources responsibly, and report any environmental risks or non-compliance."
+      },
+      {
+        "role": "Suppliers and Contractors",
+        "duty": "Ensure alignment with Somakannan Textiles’ environmental standards."
+      }
+    ],
+    "monitoring": "Somakannan Textiles is committed to regularly monitoring its environmental performance across key focus areas such as energy consumption, greenhouse gas emissions, water management, and waste reduction. Key Performance Indicators (KPIs) are defined for each area and tracked through internal systems to assess progress against established sustainability targets. These KPIs are reviewed quarterly, and findings are consolidated into performance reports for senior management to support informed decision-making. Annual assessments evaluate achievements, identify gaps, and recommend corrective actions, while relevant outcomes are communicated to stakeholders to ensure transparency and accountability. All monitoring and reporting practices comply with applicable regulations and industry best practices, ensuring accuracy, reliability, and credibility.",
+    "reviewMechanism": "The Environment Policy will undergo an annual review conducted by the Environmental Manager to ensure it remains relevant and effective in addressing environmental challenges and aligning with regulatory changes. Any updates will be promptly shared with all stakeholders to ensure transparency and alignment with organizational goals."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Somakannan/1) Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Somakannan/1) Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 10346,
+  "parsedAt": "2026-09-11T07:41:21.048Z"
+}

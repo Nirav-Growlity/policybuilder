@@ -1,0 +1,125 @@
+{
+  "id": "sustainable-procurement-arsh-fashions",
+  "name": "Arsh Fashions",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Sourcing Policy -AFPL.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "ARSH FASHIONS PVT. LTD.",
+      "industry": "",
+      "site": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India.",
+      "sites": [
+        {
+          "location": "ARSH FASHOINS Pvt. Ltd.",
+          "address": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Arsh Fashions, sustainability is integral to our commitment to responsible business practices. Our Sustainable Sourcing Policy outlines our dedication to procuring materials and services that uphold environmental stewardship, ethical standards, and social responsibility. This policy establishes clear guidelines for sourcing decisions, ensuring that our supply chain aligns with our sustainability goals and industry standards. By implementing this policy, we aim to reduce our environmental footprint, promote fair labor practices, and support sustainable development, thereby reinforcing our position as a leader in ethical and eco-conscious garment production.",
+      "declaration": "Arsh Fashions is committed to a Sustainable Sourcing Policy that prioritizes environmental stewardship, ethical labor practices, and social responsibility. This policy ensures that all materials and services are sourced sustainably, minimizing environmental impact and promoting fair treatment throughout our supply chain. We aim to support sustainable development and uphold our core values, aligning our sourcing practices with our long-term organizational goals. Our baseline year for measuring progress in sustainable sourcing practices is 2023",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Environmental stewardship",
+      "Ethical labor practices",
+      "Social responsibility",
+      "Supply chain transparency and traceability",
+      "Recycled and biodegradable materials"
+    ],
+    "qualitative": {
+      "Environmental stewardship": [
+        "Establish partnerships with suppliers who have strong environmental policies and practices in place."
+      ],
+      "Supply chain transparency and traceability": [
+        "Implement a system for full traceability of all key materials from origin to final product."
+      ],
+      "Ethical labor practices and human rights": [
+        "Develop and enforce a supplier code of conduct that ensures fair labor practices and respect for human rights."
+      ],
+      "Recycled and biodegradable materials": [
+        "Promote the use of recycled and biodegradable materials within the supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental stewardship",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in carbon emissions from sourced materials",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supply chain transparency and traceability",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers are mapped and audited for compliance with transparency standards",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Ethical labor practices and human rights",
+        "targets": [
+          {
+            "target": "Conduct regular annual audits of 90% of suppliers to verify compliance with labor and human rights standards",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Recycled and biodegradable materials",
+        "targets": [
+          {
+            "target": "Increase the percentage of recycled materials used in production by 25%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Sustainability Manager",
+        "duty": "Review the Sustainable Sourcing Policy annually to ensure its effectiveness and alignment with our goals."
+      }
+    ],
+    "monitoring": "Performance reporting for the Sustainable Sourcing Policy will be conducted annually, reviewing our progress on the sustainability initiatives. The report will assess our efforts to partner with environmentally responsible suppliers, reduce carbon emissions, and improve supply chain traceability. It will evaluate compliance with our supplier code of conduct on labor and human rights and detail our advancements in using recycled and biodegradable materials in production.",
+    "reviewMechanism": "The Sustainable Sourcing Policy will be reviewed annually by the Sustainability Manager to ensure its effectiveness and alignment with our goals. This process will include evaluating environmental impact metrics, verifying supply chain transparency, and ensuring adherence to ethical labor practices. The review will incorporate audit results, stakeholder feedback, and industry developments to identify and address any gaps."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Arsh Fashions/4. Sustainable Sourcing Policy -AFPL.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Arsh Fashions/4. Sustainable Sourcing Policy -AFPL.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 3971,
+  "parsedAt": "2026-09-11T07:32:43.934Z"
+}

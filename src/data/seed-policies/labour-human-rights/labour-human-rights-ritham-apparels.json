@@ -1,0 +1,246 @@
+{
+  "id": "labour-human-rights-ritham-apparels",
+  "name": "Ritham Apparels",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2) Labour and Human Rights policy.pdf.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Clifton Export Private Limited",
+      "industry": "",
+      "site": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India",
+      "sites": [
+        {
+          "location": "Clifton Export Private Limited",
+          "address": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Clifton Export Pvt. Ltd, is committed to upholding and safeguarding the fundamental rights of all employees, ensuring a fair, respectful, and inclusive work environment. This policy establishes the framework for promoting ethical labor practices, fostering diversity, and providing a safe and dignified workplace.\n\nClifton Export recognizes the importance of equitable treatment, non-discrimination, and fair wages while strictly prohibiting any form of forced or child labor. Employees are empowered with freedom of association, the right to collective bargaining, and access to grievance mechanisms without fear of retaliation.\n\nAligned with international labor standards and legal requirements, we continuously strive to enhance workplace conditions, employee well-being, and professional growth opportunities. Through this commitment, the company reinforces its dedication to ethical employment practices, ensuring that every individual is treated with respect, fairness, and integrity.",
+      "declaration": "Clifton Export recognizes that its employees are the cornerstone of its success and is committed to fostering a workplace built on dignity, equality, and fairness. This policy ensures that all employees have access to growth opportunities, a safe and inclusive work environment, and protection from any form of discrimination or exploitation. Clifton Export promotes transparent communication, encourages employee participation in workplace matters, and regularly reviews its labor practices to stay aligned with evolving legal and ethical standards.",
+      "scope": "This policy applies to the below given operational area of Clifton Export Pvt. Ltd., and to all of it’s employees of including full-time, part-time, temporary, and contractual workers, as well as contractors and business partners. It covers fair wages, non-discrimination, safe working conditions, freedom of association, and the prohibition of child and forced labor. Clifton Export is committed to upholding labor laws and human rights, ensuring a respectful and ethical workplace for all."
+    },
+    "focusAreas": [
+      "Safe & Healthy Work Environment",
+      "Working Conditions",
+      "Social Dialogue",
+      "Growth & Development",
+      "Ethical Labor Practices",
+      "Inclusive Work Culture",
+      "External Stakeholder Human Rights",
+      "Fair Compensation",
+      "Zero Tolerance for Harassment & Discrimination"
+    ],
+    "qualitative": {
+      "Safe & Healthy Work Environment": [
+        "Provide a safe, hygienic workplace with regular risk assessments and access to health resources.",
+        "Regularly enhance health and safety protocols to proactively address workplace risks and promote employee well-being and hence maintain zero absenteeism due to work-related injuries."
+      ],
+      "Working Conditions": [
+        "Ensure ethical working conditions that support employee well-being and work-life balance.",
+        "Promote a workplace culture that prioritizes ethical practices, psychological safety, and employee satisfaction."
+      ],
+      "Social Dialogue": [
+        "Maintain transparent communication, grievance mechanisms, and employee engagement.",
+        "Foster open dialogue through structured communication channels and inclusive participation in workplace decision-making.",
+        "To actively promote channels for feedback, collective bargaining, and resolution of workplace concerns."
+      ],
+      "Growth & Development": [
+        "Offer training, skill-building, and career advancement opportunities.",
+        "To conduct annual performance reviews to support career advancement and encourage internal mobility by promoting from within when possible."
+      ],
+      "Ethical Labor Practices": [
+        "Prohibit child labor, forced labor, and ensure full legal compliance.",
+        "To maintain a zero-tolerance policy toward child labor, forced labor, and human trafficking and integrating ethical practices into all operations and extending it to our supply chain also.",
+        "Introduce a supplier recognition program to reward compliance and excellence in ethical labor practices.",
+        "Conduct audits of 100% of tier-one suppliers for compliance by year 2027, and provide anti-exploitation training to all suppliers."
+      ],
+      "Inclusive Work Culture": [
+        "Promote diversity, equity, and equal opportunity for all employees.",
+        "Promote an inclusive environment that respects individual differences and ensures equitable access to opportunities."
+      ],
+      "External Stakeholder Human Rights": [
+        "Work with suppliers and partners who follow ethical labor standards.",
+        "Extend employee rights and labor standards through the supply chain by aligning with responsible suppliers and vendors."
+      ],
+      "Fair Compensation": [
+        "Provide fair wages and transparent, performance-based pay structures.",
+        "Ensure employees receive industry-competitive wages and benefits with transparent pay structures.",
+        "Benchmark compensation packages every year to align with industry standards.",
+        "Conduct compensation transparency workshops annually."
+      ],
+      "Zero Tolerance for Harassment & Discrimination": [
+        "Enforce strict policies against harassment and discrimination, with training and clear reporting systems.",
+        "Uphold a respectful, harassment-free workplace through strict policies and accessible grievance mechanisms."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Safe & Healthy Work Environment",
+        "targets": [
+          {
+            "target": "Ensure 100% accessibility to health and safety information and emergency protocols for all employees.",
+            "baseline": "Year 2022",
+            "deadline": ""
+          },
+          {
+            "target": "To increase safety inspections by 5% till year 2027 to proactively identify risks.",
+            "baseline": "Year 2022",
+            "deadline": "Year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Conduct employee satisfaction surveys annually on working conditions, aiming for 95% positive responses by year 2027.",
+            "baseline": "Year 2022",
+            "deadline": "Year 2027"
+          },
+          {
+            "target": "Ensure implementation of a formal channel for 100% employees to discuss working conditions with management by year 2027.",
+            "baseline": "Year 2022",
+            "deadline": "Year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees have access to formal platforms to express concerns and feedback.",
+            "baseline": "Year 2022",
+            "deadline": ""
+          },
+          {
+            "target": "Organize quarterly meetings to enhance collaboration between management and employee representatives, aiming to achieve 85% participation by year 2027.",
+            "baseline": "Year 2022",
+            "deadline": "Year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Growth & Development",
+        "targets": [
+          {
+            "target": "Allocate 10% of the annual budget to employee development programs by year 2027.",
+            "baseline": "Year 2022",
+            "deadline": "Year 2027"
+          },
+          {
+            "target": "Increase internal promotions by 10% by year 2027 by implementing structured career pathways and targeted upskilling programs.",
+            "baseline": "Year 2022",
+            "deadline": "Year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Practices",
+        "targets": [
+          {
+            "target": "Conduct audits of 100% of tier-one suppliers for compliance by year 2027, and provide anti-exploitation training to all suppliers.",
+            "baseline": "Year 2022",
+            "deadline": "Year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Inclusive Work Culture",
+        "targets": [
+          {
+            "target": "Deliver annual DEI training to 100% of employees.",
+            "baseline": "Year 2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Ensure that 100% of supplier contracts include and comply with human rights clauses by the year 2027.",
+            "baseline": "Year 2022",
+            "deadline": "Year 2027"
+          },
+          {
+            "target": "Conduct supplier training on ethical labor standards for 100% suppliers annually.",
+            "baseline": "Year 2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Zero Tolerance for Harassment & Discrimination",
+        "targets": [
+          {
+            "target": "Conduct mandatory workplace behavior and anti-discrimination training for 100% of employees annually.",
+            "baseline": "Year 2022",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      4,
+      5,
+      8,
+      10,
+      11,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Promote a respectful workplace and provide necessary support."
+      },
+      {
+        "role": "HR Department",
+        "duty": "Communicate the policy, manage employee records, and address grievances."
+      },
+      {
+        "role": "Supervisors",
+        "duty": "Ensure fair practices and support employee well-being."
+      },
+      {
+        "role": "Employees",
+        "duty": "Respect others rights, follow the policy, and report violations."
+      },
+      {
+        "role": "ESG Team",
+        "duty": "Monitor compliance, conduct audits, and update the policy as needed."
+      }
+    ],
+    "monitoring": "Clifton Export is committed to ensuring transparency in the implementation of its Labour and Human Rights Policy through a structured monitoring and reporting framework. Key areas such as fair labor practices, safe working conditions, equal opportunity, and grievance handling will be regularly tracked and documented.\n\nPeriodic internal audits and reviews will be conducted to assess compliance with applicable labor laws, company policies, and social responsibility standards. Key indicators of employee rights and well-being will be evaluated, and findings will be shared with senior management and relevant stakeholders. An annual internal review will be conducted to assess progress, identify gaps, and guide future improvements, ensuring accountability, inclusivity, and the continuous enhancement of our workplace practices.",
+    "reviewMechanism": "The HR Manager at Clifton Export will conduct annual reviews to assess the effectiveness of the Labour and Human Rights Policy, ensure compliance with relevant standards, and update targets as needed. The review process includes analysis of quarterly reports, employee feedback, and benchmarking against industry best practices. Key findings will be shared with senior management, and appropriate actions will be taken to drive continuous improvement in labor and human rights practices across all operations."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Ritham Apparels/2) Labour and Human Rights policy.pdf",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Ritham Apparels/2) Labour and Human Rights policy.pdf"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 16,
+  "parsedAt": "2026-09-11T08:20:54.087Z"
+}

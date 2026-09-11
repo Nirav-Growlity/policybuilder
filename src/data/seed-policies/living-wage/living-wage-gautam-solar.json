@@ -1,0 +1,176 @@
+{
+  "id": "living-wage-gautam-solar",
+  "name": "Gautam Solar",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Gautam Solar Private Limited",
+      "industry": "",
+      "site": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+      "sites": [
+        {
+          "location": "Registered Office",
+          "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+          "primaryFunction": "Registered office"
+        },
+        {
+          "location": "Factory Unit 1",
+          "address": "Plot 67-70, Sec-8A, SIDCUL, Haridwar, Uttarakhand- 249403, India",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "Factory Unit 2",
+          "address": "7 KM Milestone, Tosham Road, Bhiwani, Haryana-127032, India",
+          "primaryFunction": "Manufacturing"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Gautam Solar Private Limited believes that fair compensation is a fundamental human right and a cornerstone of decent work. The Company is committed to paying all its employees a living wage – defined as a wage sufficient to afford a decent standard of living for the worker and their family, including food, water, housing, education, healthcare, transport, clothing, and essential needs, plus a provision for unexpected events.\n\nThis policy aligns with the UN Guiding Principles on Business and Human Rights, ILO Convention No. 131 (Minimum Wage Fixing Convention), the Global Living Wage Coalition framework, and SDG 8 (Decent Work and Economic Growth), specifically target 8.5 on equal pay for work of equal value and decent wages.",
+      "declaration": "Annually review the local living wage using credible external benchmarks (e.g., Anker methodology, Global Living Wage Coalition, or government-recognised estimates). Compare current entry-level wages to the benchmark and identify gaps.\n\nPublish internal wage bands and progression criteria. Ensure no discrimination in wage setting (equal pay for work of equal value regardless of gender, caste, religion, or other status).\n\nEngage with employee representatives or unions in defining and updating the living wage definition. Conduct anonymous wage satisfaction surveys annually.\n\nCommit to at least an annual cost-of-living adjustment (COLA) for all employees, even if the living wage benchmark has not changed significantly. Give priority to closing the gap for the lowest-paid employees.\n\nUse the Company’s procurement processes to encourage tier-1 suppliers to commit to their own living wage roadmaps. Prefer suppliers that pay living wages or have time-bound targets.\n\nPublish an annual Living Wage Progress Report on the Company website, including coverage percentage, wage ratios, and benchmark comparisons.",
+      "scope": "This policy applies to all employees directly employed by Gautam Solar Private Limited across all sites (headquarters, manufacturing plants, warehouses, and any other operational locations). It includes full-time, part-time, and fixed-term employees. Contractors, temporary workers, and third-party personnel are not covered by this direct policy, but the Company will encourage and work with suppliers to adopt living wage practices through its Living Wage Policy (by promoting the same principles in procurement contracts and supplier engagement)."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Living wage – defined as a wage sufficient to afford a decent standard of living for the worker and their family, including food, water, housing, education, healthcare, transport, clothing, and essential needs, plus a provision for unexpected events.\n\nAnnually review the local living wage using credible external benchmarks (e.g., Anker methodology, Global Living Wage Coalition, or government-recognised estimates). Compare current entry-level wages to the benchmark and identify gaps.\n\nLiving wage gap reduction (difference between actual entry wage and verified living wage benchmark, as % of benchmark).\n\nThe Company is committed to paying all its employees a living wage.\n\nThis policy applies to all employees directly employed by Gautam Solar Private Limited across all sites (headquarters, manufacturing plants, warehouses, and any other operational locations). It includes full-time, part-time, and fixed-term employees. Contractors, temporary workers, and third-party personnel are not covered by this direct policy.\n\nThis policy and its target shall be reviewed annually by the HR Head and Top Management.\n\nIf external benchmarks increase faster than planned adjustments, the Company commits to a remediation plan to bring wages back to at least the living wage level within 12 months."
+    },
+    "focusAreas": [
+      "Regular Benchmarking",
+      "Transparent Wage Structure",
+      "Employee Consultation",
+      "Annual Wage Adjustment",
+      "Supply Chain Influence",
+      "Public Reporting"
+    ],
+    "qualitative": {
+      "Regular Benchmarking": [
+        "Annually review the local living wage using credible external benchmarks (e.g., Anker methodology, Global Living Wage Coalition, or government-recognised estimates). Compare current entry-level wages to the benchmark and identify gaps."
+      ],
+      "Transparent Wage Structure": [
+        "Publish internal wage bands and progression criteria. Ensure no discrimination in wage setting (equal pay for work of equal value regardless of gender, caste, religion, or other status)."
+      ],
+      "Employee Consultation": [
+        "Engage with employee representatives or unions in defining and updating the living wage definition. Conduct anonymous wage satisfaction surveys annually."
+      ],
+      "Annual Wage Adjustment": [
+        "Commit to at least an annual cost-of-living adjustment (COLA) for all employees, even if the living wage benchmark has not changed significantly. Give priority to closing the gap for the lowest-paid employees."
+      ],
+      "Supply Chain Influence": [
+        "Use the Company’s procurement processes to encourage tier-1 suppliers to commit to their own living wage roadmaps. Prefer suppliers that pay living wages or have time-bound targets."
+      ],
+      "Public Reporting": [
+        "Publish an annual Living Wage Progress Report on the Company website, including coverage percentage, wage ratios, and benchmark comparisons."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Percentage of direct employees paid a living wage",
+        "targets": [
+          {
+            "target": "100%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Living wage gap reduction (difference between actual entry wage and verified living wage benchmark, as % of benchmark)",
+        "targets": [
+          {
+            "target": "0% gap (i.e., entry wage ≥ living wage)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Frequency of living wage benchmark review",
+        "targets": [
+          {
+            "target": "Annually (100% of years)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Employee wage satisfaction Survey",
+        "targets": [
+          {
+            "target": "Annually (100%)",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      3
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Overall ownership of this policy."
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Conduct annual wage assessments against living wage benchmarks."
+      },
+      {
+        "role": "Human Resources (HR) Head",
+        "duty": "Propose wage adjustments to Top Management and track implementation."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Budget for living wage adjustments and ensure payroll accuracy."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approve annual living wage budgets and adjustments."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Review progress against all quantitative targets annually."
+      },
+      {
+        "role": "All Managers & Supervisors",
+        "duty": "Ensure that wage-setting practices within their teams are non-discriminatory and transparent."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Provide honest feedback through wage satisfaction surveys."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Report any concerns about wage fairness or discrimination to HR or the grievance mechanism."
+      }
+    ],
+    "monitoring": "The Company shall monitor progress through:\n\nAnnual living wage gap analysis conducted every Q1 of the fiscal year.\n\nQuarterly payroll audits to verify that all employees receive at least the applicable living wage.\n\nAnnual employee wage satisfaction survey with results reported to Top Management.",
+    "reviewMechanism": "This policy and its target shall be reviewed annually by the HR Head and Top Management.\n\nNext review date: 01/02/2027\n\nIf external benchmarks increase faster than planned adjustments, the Company commits to a remediation plan to bring wages back to at least the living wage level within 12 months."
+  },
+  "sourcePath": "Policies - Kenal/Gautam Solar/Living Wage Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Gautam Solar/Living Wage Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 5784,
+  "parsedAt": "2026-09-11T07:23:33.089Z"
+}

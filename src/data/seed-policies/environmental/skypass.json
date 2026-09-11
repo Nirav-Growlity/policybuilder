@@ -1,0 +1,292 @@
+{
+  "id": "skypass",
+  "name": "Skypass",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Sustainability Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Skypass Travel Inc. (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Skypass Travel recognizes that the travel and tourism industry has a profound connection with the environment. As a global travel management company, we acknowledge our responsibility to minimize environmental impacts across our operations and services. This policy outlines our commitment to responsible environmental management, climate action, and sustainable travel solutions.",
+      "declaration": "The purpose of this Environmental Policy is to:\n\nAdopt energy-saving measures in office operations and actively support carbon offset initiatives within travel services.\n\nEstablish a framework for reducing the environmental footprint of our business activities.\n\nPromote sustainable operations and responsible travel services.\n\nSupport our clients and partners in making environmentally conscious travel decisions.\n\nEnsure compliance with all applicable environmental laws, standards, and industry best practices.\n\nSkypass Travel is committed to integrating environmental sustainability into our business strategy and operations. We aim to reduce our carbon footprint, conserve resources, and promote environmentally responsible travel options for our clients. Our approach combines operational efficiency, stakeholder engagement, and transparent performance measurement.",
+      "scope": "This Environmental Sustainability Policy applies to all operations, business functions, and services of Skypass Travel Inc. (Group) across all locations worldwide, including corporate offices, registered offices, branch offices, subsidiaries, joint ventures, and all associated supply chain activities. It is applicable to all employees, workers, contractors, and stakeholders engaged with Skypass Travel Inc. (Group), directly or indirectly, and requires strict compliance and accountability at every organizational level."
+    },
+    "focusAreas": [
+      "Energy Consumption & Greenhouse Gas (GHG) Emissions",
+      "Resource and Waste Management",
+      "Environmental Services & Advocacy",
+      "Customer Health & Safety",
+      "Water Conservation and Efficiency Commitments"
+    ],
+    "qualitative": {
+      "Energy Consumption & Greenhouse Gas (GHG) Emissions": [
+        "We are willing to integrate energy efficiency and carbon reduction principles into all business operations by improving office infrastructure and adopting green technologies.",
+        "We will encourage a culture of energy conservation among employees through awareness, training, and recognition programs.",
+        "We are going to embed climate-conscious decision-making into travel planning and corporate operations.",
+        "We will partner with vendors and service providers that demonstrate commitment to low-carbon operations and renewable energy use."
+      ],
+      "Resource and Waste Management": [
+        "We aim to adopt responsible material use practices by minimizing non-essential consumption and prioritizing reusable resources.",
+        "We will encourage a zero-waste mindset among employees by promoting waste segregation and recycling at all offices.",
+        "We are going to transition towards a circular economy approach, where materials are reused, recycled, or repurposed.",
+        "We will procure environmentally friendly and sustainable office supplies to reduce our ecological footprint.",
+        "We are willing to ensure all operational processes contribute to resource efficiency without compromising service quality.",
+        "We will continue to maintain zero generation of hazardous waste within the organization, ensuring a safe and environmentally responsible workplace."
+      ],
+      "Environmental Services & Advocacy": [
+        "We will act as an advocate for sustainable and responsible tourism by integrating sustainability into the travel experience we provide to our customers.",
+        "We aim to help our customers reduce their carbon footprint by providing innovative and environmentally friendly solutions.",
+        "We will promote responsible consumption by expanding services with lower emissions, including repairs, refurbishment, and second-life options.",
+        "We are going to educate our clients on environmentally responsible travel choices, such as eco-friendly accommodations and carbon offset options.",
+        "We are willing to collaborate with partners, suppliers, and industry bodies to promote sustainable travel standards.",
+        "We will actively participate in and support environmental awareness campaigns, clean-up drives, and biodiversity conservation efforts.",
+        "We are going to empower travellers with insights on sustainable destinations and practices to encourage responsible consumption."
+      ],
+      "Customer Health & Safety": [
+        "We will maintain the highest standards of customer safety, hygiene, and environmental responsibility across all Skypass Travel offerings.",
+        "We are going to ensure all partners and service providers follow global health and safety norms, minimizing risks during travel.",
+        "We are willing to continuously evaluate and improve our customer safety protocols in line with evolving environmental and health standards.",
+        "We will integrate sustainability considerations into customer care, ensuring safe and responsible travel experiences.",
+        "We are going to provide customers with accurate information on safety, environmental impacts, and sustainable travel options."
+      ],
+      "Water Conservation and Efficiency Commitments": [
+        "We are willing to foster a culture of water conservation across all office locations through training, awareness, and engagement programs.",
+        "We will integrate water efficiency principles into office design, renovation, and procurement decisions.",
+        "We are determined to raise awareness on global water scarcity issues by incorporating sustainability messages in employee communications and customer campaigns."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption & Greenhouse Gas (GHG) Emissions",
+        "targets": [
+          {
+            "target": "We are going to reduce total office energy consumption by 10% by 2030 through the use of efficient equipment, smart lighting, and energy management systems.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will reduce our direct greenhouse gas (GHG) emissions Scope 1 from company-owned vehicles, generators, and facilities by 5% by 2030.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will reduce indirect GHG emissions Scope 2 from purchased electricity by 7% by 2030 through energy efficiency measures and increased renewable energy usage.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will reduce employee commuting, business travel, and supply chain-related GHG emissions Scope 3 by 10% by 2030 by promoting sustainable travel practices and supplier engagement.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will improve energy efficiency across all operations to reduce energy consumption per employee by 8% by 2030 through smart systems, efficient equipment, and operational improvements.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will source at least 6% of our total office electricity from renewable energy by 2030, including solar and certified green power.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are going to reduce employee commuting-related emissions by 4% by 2030 by promoting flexible work arrangements and remote collaboration tools.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will ensure that at least 50% of our employees receive training on energy-saving practices and climate action initiatives by 2030",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Resource and Waste Management",
+        "targets": [
+          {
+            "target": "We are going to reduce total office waste generation by 7% by 2030, through better segregation, recycling, and reuse practices.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will achieve 30% paperless operations by 2030, promoting digital ticketing, e-invoices, and online documentation across all departments.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will ensure that at least 50% of employees receive training on waste reduction, segregation, and recycling practices by 2030 to promote awareness and responsible behavior.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will continue to maintain zero generation of hazardous waste within the organization, ensuring a safe and environmentally responsible workplace.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We will ensure that at least 30% of office waste is recycled or reused by 2030, by implementing office-wide recycling programs and sustainable procurement policies.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are going to replace 25% cleaning and maintenance materials with eco-certified, non-toxic alternatives by 2030 to ensure a safe and sustainable workplace.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "We will offer sustainable or eco-certified travel options in 10% of all client itineraries by 2030, prioritizing hotels, airlines, and transport providers with verified environmental credentials.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are going to ensure that 30% of our partner hotels and transport providers hold recognized environmental certifications by 2030, such as ISO 14001, LEED, or Green Key.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will engage at least 7% of our customers annually through sustainability awareness campaigns, green travel communications, or carbon offset programs by 2030.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are going to support a minimum of two environmental or community conservation initiatives every year until 2030, in collaboration with NGOs and local partners.",
+            "baseline": "Baseline year 2022",
+            "deadline": "Every year until 2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "We will maintain 100% compliance with international hygiene and travel safety standards (IATA, WHO, and equivalent frameworks) for all Skypass Travel services.",
+            "baseline": "Baseline year 2022",
+            "deadline": ""
+          },
+          {
+            "target": "We are going to conduct biannual safety and quality audits for all major travel partners and suppliers to ensure adherence to environmental and health standards.",
+            "baseline": "",
+            "deadline": "Biannual"
+          },
+          {
+            "target": "We will maintain zero major customer safety incidents related to environmental or hygiene issues through proactive monitoring and partner engagement.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation and Efficiency Commitments",
+        "targets": [
+          {
+            "target": "We are going to reduce total office water consumption by 5% by 2030 through efficient fixtures, staff awareness, and leak management.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are planning to install water-saving devices such as aerators and dual-flush systems in all offices by 2030.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are committed to using 100% low-flow fixtures in all newly opened or renovated branches by 2030.",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Provide strategic direction and overall oversight for the implementation of this Environmental Sustainability Policy."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Approve environmental objectives, resource allocation, and improvement initiatives."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Lead the development and monitoring of environmental programs, action plans, and targets."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Track and report progress on energy, water, waste, and carbon reduction goals."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Conduct employee awareness and training sessions on sustainable practices."
+      },
+      {
+        "role": "Department Heads / Office Managers",
+        "duty": "Integrate environmental practices into daily operations at office and branch levels."
+      },
+      {
+        "role": "Department Heads / Office Managers",
+        "duty": "Monitor local environmental performance and encourage employee participation."
+      },
+      {
+        "role": "Department Heads / Office Managers",
+        "duty": "Identify opportunities for efficiency, waste reduction, and sustainable resource use."
+      },
+      {
+        "role": "Sustainability Officer",
+        "duty": "Review and update the Environmental Sustainability Policy annually to ensure it remains effective, relevant, and aligned with evolving regulations and best practices."
+      },
+      {
+        "role": "Sustainability Officer",
+        "duty": "Provide guidance and support to management in integrating sustainability into corporate decision-making and strategic planning."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow all environmental procedures and guidelines."
+      },
+      {
+        "role": "Employees",
+        "duty": "Act responsibly in conserving resources such as energy, water, and materials."
+      },
+      {
+        "role": "Procurement & Partnerships Team",
+        "duty": "Ensure vendors, travel partners, and suppliers adhere to the company’s environmental standards."
+      }
+    ],
+    "monitoring": "The oversight of this Environmental Sustainability Policy rests with a designated Sustainability Officer, who will ensure adherence to sustainability goals, track environmental performance, and report key indicators. The officer will collaborate with departments, stakeholders, and external partners to advance eco-friendly initiatives, implement best practices, and align operations with global environmental standards. Ongoing audits, training sessions, and policy updates will support continuous improvement. The Sustainability Officer will also be responsible for integrating sustainability considerations into corporate decision-making and fostering long-term environmental accountability throughout the organization.\n\nSkypass Travel is committed to transparent and accountable reporting of its environmental performance. Progress on all targets including energy use, greenhouse gas emissions, water consumption, resource and waste management, sustainable travel services, and customer health and safety will be monitored continuously and reported annually to senior management.\n\nThe Sustainability & Compliance Team is responsible for compiling data, preparing reports, and sharing insights with the Executive Leadership Team, departmental heads, and employees. Key findings and progress updates will also be communicated to external stakeholders, including clients, partners, and regulatory authorities, where appropriate.\n\nSkypass Travel is dedicated to ongoing improvement in environmental performance.We will:\n\nMonitor key performance indicators (energy, waste, emissions, and sustainable travel uptake).\n\nBenchmark against industry best practices.\n\nEncourage innovation and employee involvement to identify eco-friendly solutions.",
+    "reviewMechanism": "This policy will be reviewed every year or sooner if significant operational or regulatory changes occur by Sustainability Officer. Progress toward the 2030 targets will be monitored and reported annually, and any updates will be communicated to employees, partners, and stakeholders. Periodic audits and stakeholder feedback will also be used to continuously improve Skypass Travel’s environmental performance.\n\nNext Review Date: 01-04-2026"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Skypass/Environmental Sustainability Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Skypass/Environmental Sustainability Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 14957,
+  "parsedAt": "2026-09-11T07:15:54.898Z"
+}

@@ -1,0 +1,326 @@
+{
+  "id": "sustainable-procurement-jrs",
+  "name": "JRS",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "JRS Pharma & Gujarat Microwax Pvt. Ltd.",
+      "industry": "",
+      "site": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "Unit-1",
+          "address": "Survey No. 291/1 & 2, Kalol Mehsana Highway, Nandasan – 382705 Dist : Mehsana, North Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-2",
+          "address": "Survey No. 292/293, Kalol Mehsana Highway, Nandasan – 382705 Dist : Mehsana, North Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-3",
+          "address": "Survey No. 99/100, Kalol Mehsana Highway, Vill.: Chandarda, Ta. Kadi, Dist.: Mehsana, Gujarat, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-4",
+          "address": "Survey No. 69/3, Kalol-Mehsana Highway, Vill.: Chandarda Ta. Kadi, Dist.: Mehsana, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Sustainable procurement is a key pillar of JRS Pharma & Gujarat Microwax Pvt. Ltd.’s commitment to responsible business conduct, product quality, regulatory compliance, and long-term value creation. As organizations operating within the pharmaceutical and specialty materials sector, the integrity, reliability, and sustainability of our supply chain directly influence patient safety, customer trust, environmental performance, and social impact.\n\nThis Sustainable Procurement Policy establishes the principles, expectations, and governance framework that guide procurement decisions across JRS Pharma & Gujarat Microwax Pvt. Ltd. The policy integrates environmental stewardship, ethical business practices, human rights, labor standards, and transparency into supplier selection, evaluation, and engagement. Through collaboration with suppliers, contractors, and business partners, we aim to promote responsible sourcing, mitigate supply-chain risks, and drive continuous improvement.",
+      "declaration": "The objective of this Sustainable Procurement Policy is to:\n\nFormalize JRS Pharma & Gujarat Microwax Pvt. Ltd.’s commitment to responsible, ethical, and sustainable procurement practices across its supply chain.\n\nMinimize environmental impacts associated with procured goods and services by promoting resource efficiency, emissions reduction, waste minimization, and responsible chemical management.\n\nRespect and protect human rights while promoting fair labor practices, safe working conditions, and ethical treatment of workers across the supply chain.\n\nEstablish a structured framework to identify, assess, and manage sustainability-related risks and opportunities within procurement activities.",
+      "scope": "This policy applies to all operations, manufacturing units, warehouses, offices, laboratories, utilities, and support functions of JRS Pharma & Gujarat Microwax Pvt. Ltd. It covers all employees, workers, contract personnel, suppliers, service providers, and all stakeholders (internal and external) operating on behalf of the JRS Pharma & Gujarat Microwax Pvt. Ltd."
+    },
+    "focusAreas": [
+      "Ethical & Responsible Sourcing",
+      "Environmental Responsibility",
+      "Labor & Human Rights in the Supply Chain",
+      "Supplier Due Diligence & Monitoring",
+      "Fair Competition & Transparency"
+    ],
+    "qualitative": {
+      "Ethical & Responsible Sourcing": [
+        "Source goods and services in line with ethical business practices.",
+        "Prohibit bribery, corruption, fraud, and conflicts of interest in procurement activities.",
+        "Ensure suppliers comply with applicable laws, regulations, and contractual obligations.",
+        "We will mandate adherence to our Supplier Code of Conduct across the entire supply chain to ensure ethical, responsible, and transparent business practices.",
+        "We will integrate updated ESG requirements into supplier contracts and agreements, reflecting applicable legal obligations, evolving regulations, and industry best practices.",
+        "We are committed to embedding sustainability principles into all procurement activities, ensuring purchasing decisions are aligned with our environmental, social, and ethical priorities.",
+        "We will continuously enhance our procurement strategies to remain aligned with emerging sustainability standards, responsible sourcing expectations, and industry-leading practices.",
+        "We aim to foster long-term, value-based partnerships with suppliers that demonstrate a shared commitment to sustainability and responsible business conduct.",
+        "We aim to prioritize local and regional suppliers wherever feasible to support community development, enhance livelihoods, and reduce supply chain-related environmental impacts.",
+        "We aim to prevent child labor, forced labor, and human trafficking across all tiers of the supply chain through supplier declarations, contractual commitments, and periodic monitoring.",
+        "We aim to ensure that all suppliers uphold robust standards of business ethics, anti-corruption, anti-bribery, and regulatory compliance by embedding these requirements into supplier onboarding processes and contractual agreements.",
+        "We commit to implementing risk-based due diligence, assessments, and periodic audits to monitor and evaluate supplier compliance with governance expectations, including ethical conduct, transparency, and anti-fraud controls.",
+        "We commit to strengthening governance awareness and accountability by providing regular training and capacity-building programs for procurement personnel on ethical sourcing, governance risks, and anti-corruption practices."
+      ],
+      "Environmental Responsibility": [
+        "Prefer suppliers that demonstrate strong environmental management practices.",
+        "Encourage reduction of greenhouse gas emissions, waste, water use, and energy consumption across the supply chain.",
+        "Promote the use of environmentally friendly, recyclable, and resource-efficient materials.",
+        "We require all existing suppliers to comply with applicable local, national, and international environmental laws and regulations.",
+        "We will integrate environmental requirements into our Supplier Code of Conduct and require all suppliers to formally acknowledge and comply with these expectations as a condition of doing business.",
+        "We aim to conduct business with suppliers that hold recognized management system certifications such as ISO 14001, ISO 50001, and ISO 9001.",
+        "We give preference to suppliers that use environmentally responsible, sustainable, and recycled materials in their operations and products.",
+        "We prioritize suppliers that demonstrate measurable progress in reducing carbon emissions, water consumption, and waste generation through circular economy practices and low-carbon materials.",
+        "We seek to engage with suppliers aligned with globally recognized frameworks such as the Science Based Targets initiative (SBTi) and CDP, encouraging transparent environmental performance disclosure and science-based climate commitments.",
+        "We aim to provide environmental and sustainability training to procurement staff to support responsible sourcing decisions."
+      ],
+      "Labor & Human Rights in the Supply Chain": [
+        "Require suppliers to uphold fundamental labor and human rights standards.",
+        "Prohibit child labor, forced labor, and any form of exploitation within the supply chain.",
+        "Expect suppliers to provide safe and healthy working conditions for their employees.",
+        "We aim to ensure that suppliers operate in accordance with ethical labor practices and human rights standards.",
+        "We seek to eliminate risks related to child labor, forced labor, unsafe working conditions, and discrimination in the supply chain.",
+        "We will embed labor and human rights requirements within our Supplier Code of Conduct and require all suppliers to formally acknowledge and comply with these standards as a prerequisite for doing business.",
+        "We require suppliers to maintain robust policies and effective controls to prevent child labour, forced labour, modern slavery, and any form of exploitation across their operations and subcontracting chains.",
+        "We assess suppliers as part of our procurement due-diligence process on their adherence to fair labor practices, including safe and healthy working conditions, equal treatment, and respect for fundamental worker rights.",
+        "We prioritize suppliers that foster safe, inclusive, and harassment-free workplaces, respect freedom of association, and provide accessible and effective grievance redressal mechanisms for workers.",
+        "We aim to engage with suppliers that maintain recognized social and occupational standards and certifications, such as ISO 45001, SA8000, Fair Wage Network, or equivalent frameworks.",
+        "We are committed to promoting supplier diversity by encouraging procurement from women-owned, minority-owned, and other underrepresented businesses, wherever feasible, to support inclusive economic participation.",
+        "We will strengthen responsible sourcing practices by providing training and awareness programs to procurement personnel on labor and human rights risks associated with procurement activities."
+      ],
+      "Supplier Due Diligence & Monitoring": [
+        "Conduct due diligence during supplier onboarding and periodic reviews.",
+        "Assess suppliers on ESG, compliance, quality, and risk-related parameters.",
+        "Take corrective actions or disengage from suppliers in cases of serious non-compliance.",
+        "We will expand the use of ESG self-assessments, audits, and on-site evaluations to strengthen supplier engagement and verify alignment with our sustainability objectives."
+      ],
+      "Fair Competition & Transparency": [
+        "Ensure fair, transparent, and competitive procurement processes.",
+        "Base supplier selection on objective criteria such as quality, cost, reliability, and sustainability performance.",
+        "Maintain clear documentation and audit trails for procurement decisions."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "We aim to ensure that 40% of strategic suppliers have a certified or equivalent Environmental Management System (e.g., ISO 14001)",
+            "baseline": "Baseline year 2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to close 90% of environmental corrective actions identified through supplier audits within 12 months of identification",
+            "baseline": "Baseline year 2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to increase local sourcing by 10%",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that 100% of suppliers comply with applicable local and international environmental regulations",
+            "baseline": "Baseline of 2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that 100% of procurement staff receive training on environmental issues related to procurement activities",
+            "baseline": "Baseline of 2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that environmental requirements are fully integrated into the Supplier Code of Conduct and all supplier contracts, covering 100% of suppliers",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social and Labor Practices",
+        "targets": [
+          {
+            "target": "We are committed to maintaining zero instances of child labour across our supply chain, supported by ongoing monitoring, supplier due diligence every year.",
+            "baseline": "",
+            "deadline": "Ongoing; supplier due diligence every year"
+          },
+          {
+            "target": "We aim to ensure that 90% of total procurement is sourced from suppliers certified under recognized ethical standards such as Fair Trade, SA8000, or equivalent frameworks",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to increase procurement from suppliers located near each operational site by 15%",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          },
+          {
+            "target": "We are committed to increasing procurement from women-owned and minority-owned businesses by 10%",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that 100% of procurement staff receive training on social responsibility, human rights, and ethical sourcing",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that social and human rights requirements are fully integrated into the Supplier Code of Conduct and all supplier contracts, covering 100% of suppliers",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Goals for Procurement",
+        "targets": [
+          {
+            "target": "We aim that at least 60% of high-spend suppliers have undergone on supplier self-assessment and supplier on-site audit on their sustainability performance",
+            "baseline": "Baseline year 2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that 70% of suppliers formally acknowledge and comply with our Supplier Code of Conduct",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          },
+          {
+            "target": "We plan to embed enhanced ESG requirements into 100% of supplier contracts, with reviews conducted at least every two years or earlier if required by regulatory changes",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          },
+          {
+            "target": "We will implement annual ESG performance evaluations for all suppliers",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          },
+          {
+            "target": "We will require corrective action plans for all non-compliant suppliers and aim to achieve a minimum 90% issue resolution rate within 12–15 months of identification",
+            "baseline": "2022 baseline period",
+            "deadline": "Within 12–15 months of identification"
+          },
+          {
+            "target": "We aim to require all strategic suppliers to submit annual ESG disclosures or sustainability reports",
+            "baseline": "2022 baseline",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Governance Goals",
+        "targets": [
+          {
+            "target": "We aim to provide ethics training to at least 90% of procurement staff",
+            "baseline": "Baseline year 2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to achieve 100% annual conflict-of-interest declarations from employees involved in procurement activities",
+            "baseline": "Baseline year 2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to include ethics, compliance, and anti-corruption clauses in 100% of new supplier contracts",
+            "baseline": "Baseline year 2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Provides strategic direction and approves the Sustainable Procurement Policy."
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Allocates resources for implementation and supplier engagement."
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Reviews overall performance and alignment with ESG objectives."
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Review the policy regularly."
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Holds accountability for policy implementation across procurement activities."
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Integrates sustainability criteria into supplier selection, contracts, and evaluations."
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Oversees risk-based supplier segmentation and monitoring."
+      },
+      {
+        "role": "Procurement Managers & Staff",
+        "duty": "Apply sustainability requirements during sourcing, tendering, and purchasing."
+      },
+      {
+        "role": "Procurement Managers & Staff",
+        "duty": "Conduct supplier assessments and track corrective actions."
+      },
+      {
+        "role": "Procurement Managers & Staff",
+        "duty": "Engage suppliers on improvement initiatives."
+      },
+      {
+        "role": "Quality Assurance / EHS Officers",
+        "duty": "Ensure alignment with GMP, regulatory, environmental, and safety requirements."
+      },
+      {
+        "role": "Quality Assurance / EHS Officers",
+        "duty": "Participate in supplier audits and review remediation actions."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Comply with applicable laws, regulations, and the Supplier Code of Conduct."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Provide accurate information, certifications, and audit support."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Implement corrective actions and demonstrate continuous improvement."
+      }
+    ],
+    "monitoring": "The Company maintains a structured reporting process to monitor the effectiveness of sustainable procurement practices. Supplier sustainability data, including assessments, audits, certifications, risk ratings, and corrective actions, is periodically reviewed by management. Any incidents or suspected violations related to environmental, social, or ethical issues are reported through established channels, investigated, and escalated where required.\n\nJRS Pharma & Gujarat Microwax Pvt. Ltd. is committed to the continuous improvement of sustainable procurement through regular monitoring, evaluation, and supplier engagement. Supplier performance is reviewed using risk-based assessments, audits, and scorecards. High-risk suppliers are monitored more frequently and may be required to implement corrective and preventive action plans. Learnings and trends are reviewed annually to strengthen procurement practices and supplier expectations.",
+    "reviewMechanism": "This Sustainable Procurement Policy undergoes a formal review at least once every year, or sooner by head of procurement if there are significant changes in regulations, business operations, or the supply chain. The review ensures that the policy remains relevant, practical, and aligned with the strategic goals of JRS Pharma & Gujarat Microwax Pvt. Ltd."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/JRS/Policies/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/JRS/Policies/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 17052,
+  "parsedAt": "2026-09-11T07:09:58.226Z"
+}

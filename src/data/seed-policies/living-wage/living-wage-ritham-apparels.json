@@ -1,0 +1,136 @@
+{
+  "id": "living-wage-ritham-apparels",
+  "name": "Ritham Apparels",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 4) Living Wage Policy.pdf.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Clifton Export Private Limited",
+      "industry": "",
+      "site": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India",
+      "sites": [
+        {
+          "location": "Clifton Export Private Limited",
+          "address": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D. No.: 8/329-A, Uppilapalayam, Arulpuram Post, Karaipudur Village, Palladam Road 641605 Tirupur, Tamil Nadu, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Clifton Export Pvt. Ltd., a unit of Clifton Group we believe that fair compensation is fundamental to human dignity, workforce stability, and sustainable business performance. This Living Wage Policy reflects our commitment to ensuring that all employees receive wages that meet or exceed not only legal minimum requirements but also the basic cost of living in their respective regions.\n\nWe recognize that a living wage enables workers and their families to afford essential needs such as food, housing, healthcare, education, and transportation, while allowing for discretionary income and savings. Through this policy, Clifton Export Private Limited seeks to promote decent working conditions, reduce income inequality, and support the well-being of our workforce.",
+      "declaration": "Clifton Export Private Limited, is committed to paying all employees a fair and equitable wage that reflects the regional cost of living and ensures access to essential needs such as food, housing, healthcare, education, and transportation. Our wage structure is designed to be periodically reviewed and adjusted based on local economic conditions, living cost benchmarks, and inflation trend. This commitment exceeds statutory wage requirements and aligns with international labor standards, reinforcing our dedication to social responsibility, worker well-being, and sustainable business practices.",
+      "scope": "This policy applies to all direct employees and extends our expectations to contractors, suppliers, and business partners, promoting responsible wage practices throughout our value chain.\n\nThis policy applies to all employees of Clifton Export Private Limited, including full-time, part-time, contractual, and third-party workers across below given operational site. It also encourages the adoption of fair and living wage practices among our suppliers and service providers, promoting wage equity and decent work standards throughout our supply chain:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "We recognize that a living wage enables workers and their families to afford essential needs such as food, housing, healthcare, education, and transportation, while allowing for discretionary income and savings.\n\nThis Living Wage Policy reflects our commitment to ensuring that all employees receive wages that meet or exceed not only legal minimum requirements but also the basic cost of living in their respective regions.\n\nContinuously ensure 100% of employees receive wages equal to or above the local living wage benchmark.\n\nWage data is reviewed annually across all roles and locations to ensure alignment with local living cost benchmarks and internal equity.\n\nOur wage structure is designed to be periodically reviewed and adjusted based on local economic conditions, living cost benchmarks, and inflation trend.\n\nThe living Wage Policy will be reviewed annually by the HR Manager, in collaboration with the Management. The review will evaluate the relevance of the policy in light of:\n\nLocal inflation and living costs\n\nIndustry wage benchmarks\n\nInternal wage equity and employee feedback\n\nUpdates will be made as necessary to ensure continued alignment with Clifton Export Private Limited values and international best practices."
+    },
+    "focusAreas": [
+      "Annual Wage Review and Equity",
+      "Employee Satisfaction on Fair Wages",
+      "Performance-Based Wage Increases"
+    ],
+    "qualitative": {
+      "Annual Wage Review and Equity": [
+        "Maintain equitable wage distribution across departments, taking into account performance, gender, role, and background.",
+        "Regularly conduct annual wage assessments to reflect changes in local living costs and support employee well-being.",
+        "Maintain 100% compliance in wage equity audits across all departments.",
+        "Publish an annual Wage Monitoring Report, detailing wage levels, living wage alignment, and equity performance."
+      ],
+      "Employee Satisfaction on Fair Wages": [
+        "Foster a culture where employees believe their compensation is fair and commensurate with their contribution.",
+        "Regularly evaluate employee satisfaction on fair wage perception in annual employee surveys by year 2027."
+      ],
+      "Performance-Based Wage Increases": [
+        "Apply a clear, performance-linked wage increment policy tied to employee output and skill growth.",
+        "Ensure 50% of employees receive performance-based wage increases annually, recognizing individual contribution and growth."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Annual Wage Review and Equity",
+        "targets": [
+          {
+            "target": "100% of employees receive wages equal to or above the local living wage benchmark",
+            "baseline": "2022",
+            "deadline": "Continuously; targets to be achieved by year 2027"
+          },
+          {
+            "target": "100% compliance in wage equity audits across all departments",
+            "baseline": "2022",
+            "deadline": "Continuously; targets to be achieved by year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Employee Satisfaction on Fair Wages",
+        "targets": [
+          {
+            "target": "Complete annual wage reviews for 100% of employees by March each year",
+            "baseline": "2022",
+            "deadline": "By March each year; targets to be achieved by year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Performance-Based Wage Increases",
+        "targets": [
+          {
+            "target": "50% of employees receive performance-based wage increases annually",
+            "baseline": "2022",
+            "deadline": "Annually; targets to be achieved by year 2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources Manager",
+        "duty": "The Human Resources Manager shall be responsible for compiling and maintaining the Living Wage Performance Report in consultation with the Finance Department and Performance Management Team."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "To provide accurate financial and wage-related data."
+      },
+      {
+        "role": "Performance Management Team",
+        "duty": "For identifying wage increases linked to skill development and performance."
+      },
+      {
+        "role": "Human Resources Manager and Management",
+        "duty": "The final report will be submitted annually to senior management and shared with employee representatives to promote transparency."
+      }
+    ],
+    "monitoring": "Clifton Export Private Limited is committed to upholding living wage standards through structured monitoring and transparent reporting. Wage data is reviewed annually across all roles and locations to ensure alignment with local living cost benchmarks and internal equity.\n\nRegular wage audits, employee feedback surveys, and wage gap analyses are conducted to assess compliance and identify areas for improvement. Key findings are shared with senior management and used to update wage structures, ensuring accountability and continuous progress.",
+    "reviewMechanism": "The living Wage Policy will be reviewed annually by the HR Manager, in collaboration with the Management. The review will evaluate the relevance of the policy in light of:\n\nLocal inflation and living costs\n\nIndustry wage benchmarks\n\nInternal wage equity and employee feedback\n\nUpdates will be made as necessary to ensure continued alignment with Clifton Export Private Limited values and international best practices.\n\nEffective Date: 01.01.2025\n\nNext Review Date: 01.01.2026"
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Ritham Apparels/4) Living Wage Policy.pdf",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Ritham Apparels/4) Living Wage Policy.pdf"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12,
+  "parsedAt": "2026-09-11T08:21:32.063Z"
+}

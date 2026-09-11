@@ -1,0 +1,265 @@
+{
+  "id": "rpk",
+  "name": "RPK",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "RPK India Pvt. Ltd.",
+      "industry": "",
+      "site": "Plot No. 1A, IndoGlobal Industrial Park Gat No. 1122(P), 1129(P), 1140, 1295, 1296 Shirwal, Maharashtra 412801, India",
+      "sites": [
+        {
+          "location": "RPK India Pvt. Ltd.",
+          "address": "Plot No. 1A, IndoGlobal Industrial Park Gat No. 1122(P), 1129(P), 1140, 1295, 1296 Shirwal, Maharashtra 412801, India",
+          "primaryFunction": "Precision spring manufacturing, metal forming, stamping, assembly, surface treatment, packaging, dispatch, utility operations, waste management, and chemical handling"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 1A, IndoGlobal Industrial Park Gat No. 1122(P), 1129(P), 1140, 1295, 1296 Shirwal, Maharashtra 412801, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "RPK India Pvt. Ltd., is a technology-driven company specializing in springs, metal forming, stamping, and precision engineering, serving industries such as automotive, medical, e-mobility, and consumer goods, is committed to integrating environmental stewardship into every aspect of its operations. RPK India Pvt. Ltd. recognizes the environmental challenges associated with metal manufacturing — from energy consumption and material waste to emissions and resource use.\n\nAt RPK, we believe environmental stewardship is integral to sustainable business success. Our Environmental Policy is founded on minimizing environmental impacts across our operations, from raw material sourcing and manufacturing to product delivery and end-of-life management. We commit to responsible resource management, emissions control, waste reduction, and continuous improvement in environmental performance. As part of a global organization, we align with international standards and local regulatory frameworks to ensure RPK India operates with transparency, accountability, and a long-term commitment to protecting the environment for future generations.",
+      "declaration": "RPK India Pvt. Ltd. commits to integrating sustainability into decision-making at every level of the organization. In pursuit of this, we commit to minimizing our environmental footprint through responsible practices in our engineering, manufacturing, and operational processes. We pledge to comply fully with all applicable environmental laws, regulations, and standards, and proactively adopt international best practices, invest in preventive maintenance, continuous monitoring, and stable supply chain practices to ensure our in-house workshops, stamping, bending, coiling, and surface treatment facilities operate with maximum environmental performance and Engage employees, suppliers & stakeholders in environmental responsibility through awareness, training, and shared accountability.",
+      "scope": "This Environmental Policy applies to the below given operational areas of RPK, including precision spring manufacturing, metal forming, stamping, assembly, surface treatment, packaging, dispatch, utility operations, waste management, and chemical handling. It extends to all employees, contract workers, sub-contractors, suppliers, and relevant stakeholders involved in RPK’s operations."
+    },
+    "focusAreas": [
+      "Energy consumption and GHGs",
+      "Air pollution",
+      "Materials and waste",
+      "Water",
+      "Biodiversity",
+      "Product use",
+      "Product end-of-life",
+      "Customer health and safety",
+      "Environmental services and advocacy"
+    ],
+    "qualitative": {
+      "Energy consumption and GHGs": [
+        "To implement energy-saving technologies such as LED lighting, high-efficiency motors, variable frequency drives (VFDs), and energy-efficient compressors and furnaces.",
+        "Conduct regular energy monitoring and audits to optimize power consumption across all manufacturing, forming, and assembly operations.",
+        "Transition to renewable energy sources i.e. rooftop solar, captive solar / hybrid projects and biomass boilers for thermal energy requirement."
+      ],
+      "Water": [
+        "Maximize the use of condensate recovery & gray water usage (wherever feasible) in the plant operations.",
+        "Improve the reusability & recyclability of the water & thus reduce the dependency on freshwater intake.",
+        "Installation of zero liquid discharge plant to ensure 100% of the recovery of the water",
+        "Implement rainwater harvesting structures at all major sites to recharge groundwater and support non-potable use."
+      ],
+      "Biodiversity": [
+        "Develop green belts around manufacturing sites with native tree plantations.",
+        "Partner with NGOs for conservation of local ecosystems."
+      ],
+      "Air Pollution": [
+        "To conduct regular maintenance and periodic performance assessments of air pollution control equipment and identify areas for improvement and optimization.",
+        "Quarterly monitor ambient air quality around facilities and publish results."
+      ],
+      "Materials, Chemicals, and Waste": [
+        "Reduce hazardous chemical usage by replacing them with safer alternatives in line with OSHA standards.",
+        "Minimize waste generation through process efficiency improvements and strength the recycling and material recovery process to support circular economy goals."
+      ],
+      "Product Use": [
+        "Design products with improved energy efficiency and eco-friendly performance features.",
+        "Emphasize sustainable product usage in the product guidelines provided to the users."
+      ],
+      "Product End-of-life": [
+        "Launch customer awareness campaigns on responsible disposal practices and recycling options."
+      ],
+      "Customer Health and Safety": [
+        "Maintain compliance of all products with applicable regulatory safety standards through continuous monitoring and testing.",
+        "Ensure strong and transparent labeling and hazard communication on each product to ensure proper product handling and customer safety.",
+        "Regularly update safety protocols in line with evolving regulations."
+      ],
+      "Environmental Services & Advocacy": [
+        "Participate in industry associations to promote sustainable practices.",
+        "Support local environmental initiatives and awareness programs to promote sustainability.",
+        "Publish annual sustainability reports aligned with GRI/SDG frameworks to ensure transparency and accountability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy consumption and GHGs",
+        "targets": [
+          {
+            "target": "To reduce dependency on non-renewable energy by increasing the share of green energy, aiming to meet 50% of our total energy needs from renewable sources by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Achieve total reduction of Scope 1 and Scope 2 GHG emissions by 30% till year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Water",
+        "targets": [
+          {
+            "target": "Reduce total water consumption by 20% till year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Recycle and Reuse 25% of total wastewater generated by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Plant and maintain 500 native trees by year 2030 near operational areas.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Increase green cover to 15% by year 2030 through CSR activities.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Reduce particulate matter (PM) and NOₓ emissions from operations by 25% till year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Ensure 95% efficiency in air pollution control devices across all facilities by year 2030 through regular device inspections.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals, and Waste",
+        "targets": [
+          {
+            "target": "Reduce industrial waste generation by 5% by year 2030 by minimizing production waste and reusing cutting scraps and packaging materials.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Achieve a 40% waste recycling rate across operations by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Achieve 10% reduction in lifecycle environmental footprint of products by year 2030 through design optimization.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-life",
+        "targets": [
+          {
+            "target": "Design for 50% recyclability of product materials by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Launch a component take-back pilot project by the year 2030 to evaluate the end-of-life performance of metal and mechanical components and to facilitate recycling and material recovery pathways.",
+            "baseline": "2022",
+            "deadline": "the year 2030"
+          },
+          {
+            "target": "Aim to recover and recycle 20% of end-of-life components by year 2030, promoting circular material use within RPK’s manufacturing operations.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Conduct annual customer safety audits and hence maintain zero customer complaints related to product safety.",
+            "baseline": "2022",
+            "deadline": "annual"
+          },
+          {
+            "target": "Maintain zero product-related environmental incidents annual.",
+            "baseline": "2022",
+            "deadline": "annual"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Allocate 2% of annual profits towards community-based environmental projects such as afforestation, clean water access, or renewable energy adoption by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Drive strategic initiatives and allocate resources."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Ensure regulatory adherence and track performance."
+      },
+      {
+        "role": "Operations & Manufacturing",
+        "duty": "Implement energy-efficient and pollution control measures."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Promote responsible sourcing and supplier collaboration."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow sustainability practices and participate in training."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Support sustainability through partnerships and compliance."
+      }
+    ],
+    "monitoring": "RPK India Pvt. Ltd. is committed to regularly monitoring its environmental performance across key focus areas such as energy consumption, greenhouse gas emissions, water management, waste reduction, and product safety. Key Performance Indicators (KPIs) are established for each area and tracked through internal monitoring systems to evaluate progress against defined sustainability targets. These KPIs are reviewed on a quarterly basis, and findings are consolidated into performance reports for senior management to guide strategic decision-making. Annual assessments capture achievements, identify gaps, and recommend corrective measures, while relevant outcomes are shared with stakeholders to promote transparency and accountability. All monitoring and reporting practices adhere to applicable regulatory requirements and industry best practices, ensuring reliability, accuracy, and credibility in disclosures.",
+    "reviewMechanism": "This policy will be reviewed annually by the Environmental Manager to assess its effectiveness and alignment with evolving sustainability goals, regulatory requirements, and industry best practices. Feedback from audits, employee suggestions, and stakeholder engagements will be incorporated into policy updates. Necessary revisions will be made to strengthen environmental commitments and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/RPK/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/RPK/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12694,
+  "parsedAt": "2026-09-11T07:40:51.569Z"
+}

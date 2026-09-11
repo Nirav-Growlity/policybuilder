@@ -1,0 +1,306 @@
+{
+  "id": "ethics-gautam-solar",
+  "name": "Gautam Solar",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Business Integrity & Confidential Information Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Gautam Solar Private Limited",
+      "industry": "",
+      "site": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+      "sites": [
+        {
+          "location": "Registered Office",
+          "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Factory Unit 1",
+          "address": "Plot 67-70, Sec-8A, SIDCUL, Haridwar, Uttarakhand- 249403, India",
+          "primaryFunction": "Factory"
+        },
+        {
+          "location": "Factory Unit 2",
+          "address": "7 KM Milestone, Tosham Road, Bhiwani, Haryana-127032, India",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Gautam Solar Private Limited is committed to conducting all business activities with the highest standards of integrity, transparency, and accountability. The Company has zero tolerance for bribery, corruption, fraud, money laundering, and unethical conduct. Furthermore, the Company respects the confidentiality and security of third‑party information entrusted to it.\n\nThis policy aligns with applicable laws including the Prevention of Corruption Act (India), Companies Act 2013, Information Technology Act 2000 (with SPDI Rules), GDPR (where applicable), and international frameworks such as the UN Convention against Corruption (UNCAC) and the OECD Anti‑Bribery Convention.",
+      "declaration": "",
+      "scope": "This policy applies to all employees, directors, officers, contractors, sub‑contractors, agents, consultants, suppliers, and any third parties acting on behalf of Gautam Solar Private Limited. It covers all business dealings, regardless of location or jurisdiction."
+    },
+    "focusAreas": [
+      "Anti‑Bribery & Corruption",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Anti‑Money Laundering",
+      "Confidential Information Protection",
+      "Policy-wide"
+    ],
+    "qualitative": {
+      "Anti‑Bribery & Corruption": [
+        "Prohibit offering, promising, giving, accepting, or soliciting any undue advantage (cash, gifts, entertainment, travel, favours, etc.) to improperly influence business decisions",
+        "Maintain accurate books and records with no off‑book accounts or hidden transactions",
+        "Require due diligence on third‑party intermediaries (agents, consultants, distributors)",
+        "Do report any offer of a bribe or improper gift to your manager or the Compliance Officer",
+        "Do keep accurate and transparent records of all business expenses and transactions",
+        "Do conduct due diligence on third‑party agents, consultants, and distributors before engagement",
+        "Do refuse any payment or favour that could be perceived as influencing a business decision",
+        "Don’t offer, promise, give, or accept any cash, gift, travel, entertainment, or favour to influence a business decision",
+        "Don’t use intermediaries or agents to make improper payments on the company’s behalf",
+        "Don’t create off‑book accounts or unrecorded funds",
+        "Don’t ignore red flags (e.g., a supplier demanding unusual commissions)",
+        "Accepting or offering a bribe, any amount, may result in immediate termination of employment or contract, forfeiture of bonuses, incentives, or severance, blacklisting from future engagement with Gautam Solar, and referral to law enforcement (criminal or civil proceedings)."
+      ],
+      "Conflict of Interest": [
+        "Require employees to disclose any personal, financial, or family interests that may influence their decision‑making",
+        "Prohibit participation in decisions where a conflict exists",
+        "Ensure that outside employment, investments, or relationships do not interfere with company duties",
+        "Do disclose any personal, financial, or family interests that may conflict with company duties immediately",
+        "Do recuse yourself from any decision‑making process where a conflict exists",
+        "Do seek prior written approval from HR/Compliance before accepting outside employment or directorships",
+        "Don’t participate in hiring, contracting, or evaluation decisions involving a relative or close friend",
+        "Don’t hold a significant financial interest in a competitor, supplier, or customer without disclosure",
+        "Don’t use company time, assets, or information for personal business"
+      ],
+      "Fraud Prevention": [
+        "Prohibit any act of intentional deception, misrepresentation, forgery, or concealment intended to gain an unfair or illegal advantage",
+        "Implement internal controls to detect and prevent fraudulent financial reporting, asset misappropriation, procurement fraud, or expense reimbursement fraud",
+        "Do verify all invoices, expense claims, and purchase orders for accuracy before approval",
+        "Do report any suspected fraud (e.g., forged signatures, false claims, asset theft) through the whistleblower channel",
+        "Do follow the company’s delegated authority matrix for approvals",
+        "Don’t forge signatures, alter documents, or misrepresent information",
+        "Don’t claim reimbursement for personal or fictitious expenses",
+        "Don’t circumvent approval limits or split purchases to avoid thresholds",
+        "Don’t destroy, hide, or falsify financial records",
+        "Fraud involving falsifying records, asset theft, or forged approvals may result in immediate termination of employment or contract, forfeiture of bonuses, incentives, or severance, blacklisting from future engagement with Gautam Solar, and referral to law enforcement (criminal or civil proceedings)."
+      ],
+      "Anti‑Money Laundering": [
+        "Prohibit using company operations to conceal the origin, ownership, or destination of illegally obtained money",
+        "Ensure all significant transactions are legitimate, properly recorded, and reported as required by law",
+        "Conduct customer/supplier due diligence to avoid association with money laundering or terrorist financing",
+        "Do verify the identity and background of new customers, suppliers, and partners",
+        "Do report any suspicious transaction (e.g., unusual cash payments, round‑tripping, unexplained large transfers)",
+        "Do maintain records of all significant transactions as per legal retention periods",
+        "Don’t process transactions that you suspect involve illegally obtained money",
+        "Don’t accept cash payments above the legal limit without proper documentation",
+        "Don’t structure transactions to avoid reporting requirements",
+        "Don’t ignore unusual payment patterns from customers or partners",
+        "Money laundering or suspicious transaction concealment may result in immediate termination of employment or contract, forfeiture of bonuses, incentives, or severance, blacklisting from future engagement with Gautam Solar, and referral to law enforcement (criminal or civil proceedings)."
+      ],
+      "Confidential Information Protection": [
+        "Ensure secure collection, processing, and storage of third‑party confidential information (customer data, supplier data, partner data, trade secrets) for business purposes",
+        "Comply with applicable data protection laws (e.g., IT Act, DPDP Act 2023, GDPR)",
+        "Limit access to authorised personnel only and implement technical safeguards (encryption, access controls, breach notification)",
+        "Do store confidential data on company‑approved, encrypted systems",
+        "Do use strong passwords and enable multi‑factor authentication",
+        "Do report any data breach or unauthorised access immediately to IT / DPO",
+        "Do shred or securely delete physical documents containing confidential information",
+        "Don’t share passwords or leave confidential documents unattended",
+        "Don’t email confidential information to personal accounts or unauthorised recipients",
+        "Don’t discuss confidential matters in public places (elevators, cafeterias, taxis)",
+        "Don’t use unapproved cloud storage or USB drives for company data",
+        "Deliberate, unauthorised sale or leak of confidential information for personal gain may result in immediate termination of employment or contract, forfeiture of bonuses, incentives, or severance, blacklisting from future engagement with Gautam Solar, and referral to law enforcement (criminal or civil proceedings)."
+      ],
+      "Policy-wide": [
+        "Violation of this Business Integrity & Confidential Information Policy is a serious matter. Depending on the nature, severity, and frequency of the violation, the Company may take one or more of the following disciplinary actions, up to and including termination of employment or contract, and potential legal proceedings.",
+        "All disciplinary actions shall follow the Company’s progressive discipline policy and principles of natural justice (notice, opportunity to be heard).",
+        "Retaliation against any employee who reports a violation in good faith is itself a serious violation and will result in disciplinary action, up to and including termination.",
+        "Contractors, consultants, and third parties found in violation may have their contracts terminated immediately and be placed on a debarment list.",
+        "The Compliance Officer (in consultation with HR and Legal) shall determine the appropriate action based on investigation findings."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti‑Bribery & Corruption",
+        "targets": [
+          {
+            "target": "100% of employees and relevant third party’s complete annual anti‑bribery training",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Zero substantiated incidents of bribery or corruption annually",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of high‑risk third parties (agents, consultants) undergo due diligence before engagement",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "100% of employees in managerial or procurement roles submit annual conflict of interest disclosure",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of disclosed conflicts reviewed and resolved within 30 days",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Zero instances of undisclosed conflicts resulting in disciplinary action",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Zero material fraud incidents (loss > ₹1 lakh) annually",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of fraud allegations investigated within 15 working days",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of identified fraud control gaps remediated within 60 days",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Anti‑Money Laundering",
+        "targets": [
+          {
+            "target": "100% of high‑value transactions (> ₹10 lakh) reviewed for AML compliance",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Zero regulatory penalties related to money laundering",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of new business partners screened against government watchlists",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Confidential Information Protection",
+        "targets": [
+          {
+            "target": "100% of systems processing confidential third‑party information have encryption and access logs",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Zero reportable data breaches involving confidential information",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of employees handling confidential data complete privacy training annually",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer / Ethics Committee",
+        "duty": "Overall ownership of this policy, including anti‑bribery, conflict of interest, fraud, and AML"
+      },
+      {
+        "role": "Compliance Officer / Ethics Committee",
+        "duty": "Conduct training, investigations, and due diligence reviews"
+      },
+      {
+        "role": "Compliance Officer / Ethics Committee",
+        "duty": "Maintain whistleblower mechanisms and report to Top Management"
+      },
+      {
+        "role": "Finance & Accounts Department",
+        "duty": "Implement internal controls to prevent fraud and money laundering"
+      },
+      {
+        "role": "Finance & Accounts Department",
+        "duty": "Review high‑value transactions and maintain transparent records"
+      },
+      {
+        "role": "Information Technology (IT) / Data Protection Officer (DPO)",
+        "duty": "Ensure secure collection, processing, and storage of confidential information"
+      },
+      {
+        "role": "Information Technology (IT) / Data Protection Officer (DPO)",
+        "duty": "Implement encryption, access controls, and breach response procedures"
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Integrate conflict of interest disclosures into annual declarations"
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Enforce disciplinary actions for policy violations"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Provide resources and strategic oversight"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approve policy updates and review incident reports quarterly"
+      },
+      {
+        "role": "All Employees & Contractors",
+        "duty": "Comply with all policy requirements"
+      },
+      {
+        "role": "All Employees & Contractors",
+        "duty": "Report any suspected bribery, conflict, fraud, money laundering, or data breach through the whistleblower channel"
+      },
+      {
+        "role": "All Employees & Contractors",
+        "duty": "Never use company assets or position for personal gain"
+      }
+    ],
+    "monitoring": "The Company shall monitor compliance through:\n\nAnnual mandatory training with completion tracking\n\nQuarterly compliance audits (internal or external)\n\nWhistleblower hotline (anonymous, accessible 24/7)\n\nReview of high‑value transactions and third‑party due diligence logs\n\nCorrective action plans shall be developed for any missed targets or violations.",
+    "reviewMechanism": "This policy and its targets shall be reviewed annually by the Compliance Officer and Top Management.\n\nNext review date: 01/02/2027"
+  },
+  "sourcePath": "Policies - Kenal/Gautam Solar/Business Integrity & Confidential Information Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Gautam Solar/Business Integrity & Confidential Information Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 12969,
+  "parsedAt": "2026-09-11T07:23:22.119Z"
+}

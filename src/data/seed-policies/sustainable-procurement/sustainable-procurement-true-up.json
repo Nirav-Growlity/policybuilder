@@ -1,0 +1,227 @@
+{
+  "id": "sustainable-procurement-true-up",
+  "name": "True Up",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from True up Sustainable Supply Chain Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "TRUE UP COMPANIES LLC",
+      "industry": "",
+      "site": "20713 E. Ocotillo Rd. Suite 101 Queen Creek, AZ 85142",
+      "sites": [],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "20713 E. Ocotillo Rd. Suite 101 Queen Creek, AZ 85142"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At True Up Companies, we are committed to integrating sustainability into every aspect of our procurement practices. Our Sustainable Supply Chain Policy ensures that environmental, social, and ethical considerations are embedded in our sourcing and supply chain decisions. We strive to work with suppliers who share our dedication to responsible business practices, resource efficiency, and long-term sustainability.\n\nThis policy aims to minimize environmental impact, uphold human rights, promote fair labour practices, and foster economic growth through ethical sourcing. By aligning with global sustainability standards, we ensure that our procurement decisions contribute to a more sustainable future while maintaining high-quality products and services for our customers.",
+      "declaration": "True Up Companies is committed to a sustainable supply chain through eco-friendly sourcing, ethical labor practices, and economic transparency. We prioritize fair wages, energy efficiency, waste reduction, and supplier diversity. Compliance is ensured through audits, assessments, and continuous improvement. Our approach strengthens ethical sourcing, sustainability, and a resilient supply chain.",
+      "scope": "The Sustainable Supply Chain Policy at True Up Companies applies to all sourcing, suppliers, and operations, ensuring ethical, environmental, and transparent practices. It mandates eco-friendly materials, fair wages, anti-corruption compliance, and supplier diversity while promoting efficiency and waste reduction. Adherence is enforced through audits, assessments, and continuous improvement."
+    },
+    "focusAreas": [
+      "Environmental Stewardship",
+      "Ethical and Fair Labor Practices",
+      "Responsible Sourcing & Supply Chain Transparency",
+      "Circular Economy & Waste Reduction",
+      "Supplier Diversity & Local Economic Support",
+      "Compliance & Continuous Improvement"
+    ],
+    "qualitative": {
+      "Environmental Stewardship": [
+        "Sourcing eco-friendly materials, reducing carbon footprint, and minimizing waste.",
+        "Compliance with Environmental Regulations: Suppliers must comply with all applicable environmental laws and regulations, including obtaining necessary permits and adhering to standards for emissions, waste management, and resource usage.",
+        "Implementation of Environmental Management Systems (EMS): Suppliers are encouraged to implement and maintain robust Environmental Management Systems, such as ISO 14001 certification, to systematically manage environmental responsibilities.",
+        "Resource Efficiency and Waste Reduction: Suppliers should actively seek to minimize resource consumption (e.g., energy, water) and reduce waste generation through efficient processes, recycling, and reuse initiatives.",
+        "Sustainable Product and Packaging Design: Suppliers are expected to design products and packaging that prioritize sustainability by reducing material usage, enhancing recyclability, and eliminating hazardous substances.",
+        "Reduction of Greenhouse Gas Emissions: Suppliers should measure and actively work to reduce their greenhouse gas emissions, aligning with global efforts to combat climate change."
+      ],
+      "Ethical and Fair Labor Practices": [
+        "Ensuring fair wages, safe working conditions, and prohibiting child and forced labour.",
+        "Labor Rights and Fair Working Conditions: Suppliers must uphold fundamental labour rights, including fair wages, reasonable working hours, and safe working environments. This includes strict prohibition of child labour, forced labour, and any form of workplace discrimination. Adherence to these principles aligns with international labour standards and promotes the well-being of all workers",
+        "Diversity, Equity, and Inclusion (DEI): Suppliers are encouraged to cultivate diverse and inclusive workplaces that respect and value individual differences. Implementing equitable hiring practices and providing equal opportunities for advancement are essential components of this commitment. A focus on DEI not only enhances organizational culture but also drives innovation and reflects our shared values.",
+        "Human Rights Protection: Suppliers must respect and protect human rights within their operations and supply chains. This involves conducting due diligence to identify, prevent, and address any adverse human rights impacts. Commitment to human rights is fundamental to social sustainability and reflects our dedication to ethical practices."
+      ],
+      "Responsible Sourcing & Supply Chain Transparency": [
+        "Partnering with ethical suppliers and conducting regular audits.",
+        "Ethical Business Conduct: Suppliers are expected to conduct business with integrity, adhering to ethical standards that include transparency, anti-corruption measures, and responsible marketing practices. Establishing robust governance frameworks ensures accountability and fosters trust among stakeholders.",
+        "Ensure Legal and Ethical Sourcing: Procure wood and wood-based products only from suppliers who comply with legal and ethical forestry practices. Require documentation and certification (e.g., FSC, PEFC) to verify the legality of sourced wood. Avoid wood from illegal logging, deforestation, or sources contributing to environmental degradation.",
+        "Enhance Supply Chain Transparency: Require traceability of wood sources through supplier audits and certifications. Establish clear procurement guidelines for sustainable wood sourcing. Engage with stakeholders to improve monitoring and reporting of supply chain sustainability.",
+        "Ensure Ethical Sourcing – Partner with suppliers who adhere to environmental and ethical sourcing standards, ensuring fair labor practices and minimal ecological impact.",
+        "Certify Material Origins – Require suppliers to provide certifications (e.g., FSC, Fair Trade) to verify responsible sourcing of raw materials."
+      ],
+      "Circular Economy & Waste Reduction": [
+        "Promoting recycling, upcycling, and sustainable product lifecycle management.",
+        "Reduce Environmental Impact: Minimize the carbon footprint of wood procurement by sourcing locally when possible. Prioritize suppliers using energy-efficient and low-waste production methods. Promote the use of recycled, reclaimed, or upcycled wood materials.",
+        "Encourage Sustainable Packaging – Work with suppliers to implement biodegradable, recyclable, or reusable packaging solutions.",
+        "Implement Circular Economy Practices – Foster collaboration with suppliers to increase product life cycles through reuse, repair, and recycling initiatives.",
+        "Support Sustainable Alternatives – Prioritize renewable, recycled, and eco-friendly materials to reduce reliance on virgin resources."
+      ],
+      "Supplier Diversity & Local Economic Support": [
+        "Supporting small businesses, minority-owned enterprises, and local suppliers.",
+        "Reduce Environmental Impact: Minimize the carbon footprint of wood procurement by sourcing locally when possible."
+      ],
+      "Compliance & Continuous Improvement": [
+        "Aligning with global sustainability standards and enhancing procurement policies.",
+        "Eco-Friendly Supply Chain Management",
+        "Reduce Transportation Emissions – Optimize logistics and promote low-carbon transportation methods such as electric or hybrid vehicles.",
+        "Enhance Energy Efficiency – Partner with suppliers who utilize energy-efficient processes to reduce overall environmental impact."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Sustainability Standards",
+        "targets": [
+          {
+            "target": "Ensure 100% supplier compliance with environmental regulations by 2028, including obtaining necessary permits and meeting emissions and waste management standards.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Require 80% of key suppliers to implement Environmental Management Systems (EMS), such as ISO 14001, by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Achieve a 25% reduction in energy and water consumption across supplier operations by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Ethical Practices",
+        "targets": [
+          {
+            "target": "Ensure that 100% of suppliers adhere to fundamental labor rights, including fair wages, safe working conditions, and no child or forced labor, by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Require 75% of suppliers to implement Diversity, Equity, and Inclusion (DEI) policies and training programs by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct annual third-party audits of at least 50% of key suppliers to assess compliance with labor rights and ethical business practices by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Wood Sourcing",
+        "targets": [
+          {
+            "target": "Ensure that 100% of wood and wood-based products are sourced from certified sustainable sources (e.g., FSC, PEFC) by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Reduce the environmental impact of wood procurement by sourcing 50% of wood locally by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Eco-Friendly Supply Chain Management",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in carbon emissions from logistics by transitioning to low-emission vehicles and optimizing transportation routes by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure that 80% of packaging materials used in the supply chain are recyclable, biodegradable, or reusable.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Support suppliers in adopting energy-efficient production methods, targeting a 25% reduction in energy consumption by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Raw Material Procurement",
+        "targets": [
+          {
+            "target": "Ensure that 70% of raw materials used in production are certified sustainable.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Phase out the use of 10% non-recyclable or hazardous raw materials by 2028, replacing them with eco-friendly alternatives.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Partner with at least 10 responsible suppliers that promote fair labor and environmental stewardship.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Implement processes that cut raw material waste by 30% through efficient cutting, reuse, and recycling.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "They integrates sustainability into procurement and supply chain strategies."
+      },
+      {
+        "role": "Procurement Teams",
+        "duty": "They select suppliers based on ethical, environmental, and labor standards."
+      },
+      {
+        "role": "Suppliers and Partners",
+        "duty": "They must comply with True Up Companies’ sustainability requirements."
+      },
+      {
+        "role": "Compliance Teams",
+        "duty": "They should monitor supplier performance and address risks."
+      },
+      {
+        "role": "Employees",
+        "duty": "They follow sustainable procurement guidelines and report non-compliance."
+      },
+      {
+        "role": "Stakeholders and Customers",
+        "duty": "They are encouraged to support sustainable initiatives."
+      }
+    ],
+    "monitoring": "Adherence is enforced through audits, assessments, and continuous improvement.\n\nThe review will assess governance performance, compliance, and incident management using data from audits, feedback, and reports.",
+    "reviewMechanism": "The Sustainability Supply Chain Policy will be reviewed annually by Procurement Manager. The review will assess governance performance, compliance, and incident management using data from audits, feedback, and reports. Policy updates will be proposed and approved by the Board. Changes will be communicated internally and to stakeholders through reports and meetings, ensuring alignment with company goals and industry standards."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/True Up/Policies/True up Sustainable Supply Chain Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/True Up/Policies/True up Sustainable Supply Chain Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 11285,
+  "parsedAt": "2026-09-11T07:42:05.876Z"
+}

@@ -1,0 +1,433 @@
+{
+  "id": "labour-human-rights-gloster",
+  "name": "Gloster",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 3. Social Justice and Workplace Standards Policy_GRW_v1_0301.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Gloster Limited",
+      "industry": "",
+      "site": "Head Office, 21, Strand Road, Kolkata 700001",
+      "sites": [
+        {
+          "location": "GLOSTER LIMITED-Ananya Unit",
+          "address": "P.O: Fort Gloster, Bauria, Howrah – 711310, West Bengal",
+          "primaryFunction": ""
+        },
+        {
+          "location": "GLOSTER LIMITED-Head Office",
+          "address": "Head Office, 21, Strand Road, Kolkata 700001",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Head Office, 21, Strand Road, Kolkata 700001"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Gloster Limited, we recognize our responsibility to uphold the highest standards of social justice and workplace ethics. Our commitment extends beyond mere compliance with laws and regulations; we strive to be a catalyst for positive change in our industry and the communities we serve. This policy articulates our dedication to creating a work environment that respects human rights, fosters diversity and inclusion, ensures safety and well-being, and contributes meaningfully to societal progress.\n\nWe understand that our success is intrinsically linked to the welfare of our employees, the health of our communities, and the integrity of our relationships with all stakeholders. Through this policy, we aim to set a new benchmark for social responsibility, demonstrating that business excellence and social consciousness can and must go hand in hand.",
+      "declaration": "By implementing this policy, Gloster Limited aims to achieve the following outcomes:\n\nCreate a safe, healthy, and inclusive work environment that nurtures employee well-being and productivity\n\nUphold and promote human rights throughout our operations and supply chain, setting an industry standard for ethical practices\n\nContribute significantly to the sustainable development and well-being of our local communities\n\nEstablish and maintain ethical labor practices that foster a culture of mutual respect, dignity, and fairness\n\nProvide continuous learning and development opportunities, enabling our workforce to grow personally and professionally\n\nAchieve full transparency and accountability in our social impact efforts\n\nBecome an employer of choice in the jute manufacturing industry\n\nEnhance our reputation as a socially responsible corporate citizen.",
+      "scope": "This Policy applies to all employees (at all levels), stakeholders (internal and external), partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Gloster Limited. It also applies to the following sites."
+    },
+    "focusAreas": [
+      "Occupational Well-being and Safety",
+      "Fair Compensation and Benefits",
+      "Work Life Integration",
+      "Workplace Environment Enhancement",
+      "CSR (Corporate Social Responsibility)",
+      "Ethical Labor Practices",
+      "Human Rights Protection",
+      "Discrimination and Harassment",
+      "Professional Growth and Development",
+      "Collective Representation and Dialogue",
+      "Inclusive Workplace Culture",
+      "External Human Rights"
+    ],
+    "qualitative": {
+      "Occupational Well-being and Safety": [
+        "We are in the process of implementing a comprehensive Occupational Health and Safety Management System aligned with ISO 45001 standards, prioritizing employee safety.",
+        "We are in progress to conduct monthly safety audits and risk assessments across all facilities to promote a culture of safety.",
+        "Mandatory safety training is provided for all employees to enhance safety knowledge."
+      ],
+      "Fair Compensation and Benefits": [
+        "We are in progress to implement living wage framework across all our operations.",
+        "To combat wage disparities, we aim to implement transparent pay scale system.",
+        "Performance is recognized through bonuses and profit-sharing schemes."
+      ],
+      "Work Life Integration": [
+        "Flexible working is supported through flexible hours, flexible shifts and remote work options where feasible.",
+        "We are in progress to support families through parental leave beyond statutory requirements.",
+        "Employee well-being is promoted through wellness programs including stress management and mental health support."
+      ],
+      "Workplace Environment Enhancement": [
+        "We are in progress to implement comprehensive workplace wellness program, including on-site fitness facilities and health screenings.",
+        "Boosting morale and acknowledging employee contributions are priorities, addressed through our new \"employee satisfaction survey system\"."
+      ],
+      "CSR (Corporate Social Responsibility)": [
+        "To promote education, we provide scholarships for underprivileged students.",
+        "To support local communities, we allocate 2.5% of annual profits to community development projects by FY 2029-30 from the baseline FY 2022-23."
+      ],
+      "Ethical Labor Practices": [
+        "To combat exploitative labor practices, we have implemented a strict regulation against child labor, forced labor, and human trafficking.",
+        "To address violations promptly, we are in progress to establish a rapid response system.",
+        "To ensure compliance throughout our supply chain, we aim to conduct regular audits of our facilities and suppliers."
+      ],
+      "Human Rights Protection": [
+        "Our comprehensive human rights approach aligns with UN Guiding Principles.",
+        "Human rights awareness is promoted through employee training."
+      ],
+      "Discrimination and Harassment": [
+        "We maintain a zero-tolerance approach toward discrimination and harassment across all our operations.",
+        "To promote equal opportunity and respectful conduct, we have established clear reporting and investigation procedures.",
+        "Employee awareness is strengthened through regular training and communication.",
+        "To proactively prevent discrimination and harassment risks, we aim to conduct formal discrimination and harassment risk assessments on an annual basis across all operations."
+      ],
+      "Professional Growth and Development": [
+        "We are in progress to foster employee development through our comprehensive Learning Management System, ensuring access to essential training and growth opportunities for all team members.",
+        "internal career growth is promoted through mentorship and leadership development programs.",
+        "Continuous learning is supported through tuition reimbursement for relevant external courses."
+      ],
+      "Collective Representation and Dialogue": [
+        "We were bound with is bound by Tripartite Agreement amongst mill management, trade unions and the Indian Jute Mills Association (UMA), We are in progress to follow the guidelines and maintain compliance with the relevant standards.",
+        "Worker representation is supported through our respect for freedom of association and collective bargaining.",
+        "Open dialogue is promoted through regular employee-management communication forums."
+      ],
+      "Inclusive Workplace Culture": [
+        "Our comprehensive DEI approach promotes diversity and inclusion.",
+        "Unconscious bias (Diversity, discrimination and Harassment) is combated through training for all employees.",
+        "Underrepresented groups are supported through Employee Resource Groups (ERGs)."
+      ],
+      "External Human Rights": [
+        "We are in progress to maintain accessible grievance mechanisms for external stakeholders to report human rights violations.",
+        "We are in progress to collaborate with human rights organizations and industry groups to promote best practices."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Occupational Well-being and Safety",
+        "targets": [
+          {
+            "target": "we aim to sustain zero reportable workplace accidents",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to achieve 100% compliance with safety protocols and use of protective equipment",
+            "baseline": "Year FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "our goal is to conduct at least 24 hours of safety training per employee annually",
+            "baseline": "Year FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fair Compensation and Benefits",
+        "targets": [
+          {
+            "target": "ensure all employees earn at least 5% above the regional living wage",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "maintain a 0% gender pay gap",
+            "baseline": "FY 2022-23 starting point",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "aim for an 85% employee satisfaction rate with compensation and benefits",
+            "baseline": "FY 2022-23 satisfaction levels",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Work Life Integration",
+        "targets": [
+          {
+            "target": "100% access to flexible arrangements for eligible employees",
+            "baseline": "FY 2022-23 flexibility options",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We're aiming for a 85% return-to-work rate after parental leave",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025 26"
+          },
+          {
+            "target": "Our goal is to reduce increase session on stress relief by 25%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Environment Enhancement",
+        "targets": [
+          {
+            "target": "80% employee participation in wellness initiatives",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 25% increase in employee satisfaction scores",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "CSR (Corporate Social Responsibility)",
+        "targets": [
+          {
+            "target": "increase the number of scholarship recipients by 10% year-on-year",
+            "baseline": "Year FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "allocate 2.5% of annual profits to community development projects",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Practices",
+        "targets": [
+          {
+            "target": "achieve 100% compliance with ethical labor standards",
+            "baseline": "Year FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "resolve 100% of reported labor violations within 30 days",
+            "baseline": "Year FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "audit 50% of tier-1 suppliers annually and 25% of tier-2 suppliers",
+            "baseline": "Year FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Human Rights Protection",
+        "targets": [
+          {
+            "target": "conduct human rights impact assessments for 100% of our operations",
+            "baseline": "FY 2022-23 assessment coverage",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "train 100% of employees on human rights issues",
+            "baseline": "FY 2022-23 training program",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "ensure 100% compliance with our anti-discrimination and anti-harassment standards",
+            "baseline": "FY 2023–24 baseline",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "ensure all reported cases are addressed in a timely and fair manner",
+            "baseline": "FY 2023–24 practices",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "achieve 100% employee coverage on discrimination and harassment awareness training",
+            "baseline": "FY 2023–24 baseline",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Professional Growth and Development",
+        "targets": [
+          {
+            "target": "provide at least 15 hours of annual training per employee",
+            "baseline": "FY 2022-23 training hours",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We're aiming for 70% internal promotions for management positions",
+            "baseline": "FY 2022-23 internal promotion rate",
+            "deadline": "FY 2025 26"
+          },
+          {
+            "target": "increase employee participation in external learning programs by 25%",
+            "baseline": "FY 2022-23 participation levels",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Collective Representation and Dialogue",
+        "targets": [
+          {
+            "target": "achieve 100% coverage of eligible employees by collective agreements and resolve 85% of collective bargaining issues through mutual agreement",
+            "baseline": "FY 2022-23 coverage and resolution rate",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "hold quarterly dialogue-sessions in all major facilities",
+            "baseline": "FY 2022-23 meeting frequency",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Inclusive Workplace Culture",
+        "targets": [
+          {
+            "target": "We're working towards gender parity in management positions by 7%",
+            "baseline": "cur FY 2022-23 gender representation",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "annual DEI training for 100% of employees",
+            "baseline": "FY 2022-23 training coverage",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "increase minority group representation in our workforce by 30%",
+            "baseline": "FY 2022-23 diversity levels",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "External Human Rights",
+        "targets": [
+          {
+            "target": "resolve 100% of reported grievances in a timely manner",
+            "baseline": "FY 2022-23 response rate",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "participate in at least three collaborative initiatives or partnerships",
+            "baseline": "FY 2022-23 involvement",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide strategic oversight and approval of major social responsibility initiatives"
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Review and approve annual social performance reports"
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensure alignment of social responsibility efforts with overall business strategy"
+      },
+      {
+        "role": "Social Responsibility Committee",
+        "duty": "Set performance targets and monitor progress"
+      },
+      {
+        "role": "Social Responsibility Committee",
+        "duty": "Review and approve social impact assessments and action plans"
+      },
+      {
+        "role": "Social Responsibility Committee",
+        "duty": "Report to the Board of Directors on social performance quarterly"
+      },
+      {
+        "role": "HR Head",
+        "duty": "Oversee the implementation and Review of the Social Justice and Workplace Standards Policy"
+      },
+      {
+        "role": "HR Head",
+        "duty": "Lead the day-to-day management of social responsibility initiatives"
+      },
+      {
+        "role": "HR Head",
+        "duty": "Coordinate with department heads to ensure policy implementation"
+      },
+      {
+        "role": "HR Head",
+        "duty": "Prepare regular performance reports for the Social Responsibility Committee"
+      },
+      {
+        "role": "HR Head",
+        "duty": "Represent Gloster Limited in social responsibility forums and partnerships"
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Integrate social responsibility considerations into departmental operations"
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure departmental compliance with the policy"
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Provide training and resources to employees on social responsibility practices"
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Report departmental progress to the CSRO"
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to the principles outlined in this policy"
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in social responsibility training and initiatives"
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any violations or concerns through appropriate channels"
+      },
+      {
+        "role": "Employees",
+        "duty": "Contribute ideas for improving social performance"
+      }
+    ],
+    "monitoring": "Gloster Limited will conduct comprehensive Social Impact Assessments (SIA) to evaluate the effects of our operations on employees, local communities, and other stakeholders.\n\nThe SIA process will involve:\n\nIdentifying potential social impacts across all areas of our operations\n\nEngaging with a diverse range of stakeholders through surveys, interviews, and focus groups\n\nAnalysing both quantitative and qualitative data to understand the depth and breadth of our social impact\n\nDeveloping mitigation strategies for negative impacts and enhancement plans for positive impacts\n\nCreating action plans with clear timelines and responsibilities\n\nMonitoring and reporting on the outcomes of our social initiatives\n\nConducting follow-up assessments to evaluate the effectiveness of our interventions\n\nWe will conduct a full SIA every three years, with annual updates to track progress and address emerging issues.\n\nTo ensure transparency and continuous improvement, we will implement the following reporting mechanisms:\n\nEach department will submit a monthly social performance report to the CSRO\n\nReports will include data on key performance indicators, progress on initiatives, and any issues or concerns\n\nThe Social Responsibility Committee will conduct quarterly reviews of overall social performance\n\nThese reviews will be shared with all employees and key stakeholders\n\nWe will publish an annual sustainability report detailing our social performance\n\nThis report will be publicly available and shared with all stakeholders\n\nIt will include progress on targets, case studies, and plans for the coming year\n\nWe will actively seek feedback from stakeholders on our social performance\n\nThis feedback will be incorporated into our planning and decision-making processes.",
+    "reviewMechanism": "At Gloster Limited, we are dedicated to ongoing enhancement of our social responsibility practices. We will continuously evaluate and refine our strategies through regular feedback from stakeholders, data-driven insights, and best practice benchmarks.\n\nOur commitment involves iterative updates to our policies and procedures, ensuring they remain effective and relevant.\n\nWe will actively engage with industry leaders, academic researchers, and NGOs to incorporate innovative solutions and emerging trends.\n\nBy fostering a culture of continuous learning and adaptation, we aim to not only meet but exceed our social responsibility targets, driving sustained progress and excellence in all our operations.\n\nThe HR Head will conduct reviews on an annual and ad hoc basis to assess the effectiveness of our Social Responsibility and Workplace Standards Policy."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Gloster/3. Social Justice and Workplace Standards Policy_GRW_v1_0301.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Gloster/3. Social Justice and Workplace Standards Policy_GRW_v1_0301.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 18704,
+  "parsedAt": "2026-09-11T07:07:58.237Z"
+}

@@ -1,0 +1,283 @@
+{
+  "id": "ethics-apackaging-group",
+  "name": "APackaging Group",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 4. Governance Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Apackaging Group LLC",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "California, USA",
+          "address": "1350 Mountain View Circle 91702 Azusa, CA United States of America",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Defiance,Ohio",
+          "address": "25925 Commerce Drive, Defiance, OH 43512",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "The governance policy of A Packaging Group, a leading global player in the cosmetic and beauty packaging industry, is a testament to our unwavering commitment to excellence. Beyond our reputation for pioneering packaging solutions, we prioritize the highest standards of corporate governance.\n\nThis policy serves as a foundational framework, delineating our core principles, protocols, and operational guidelines. At A Packaging Group, we recognize the critical significance of transparent, ethical, and accountable governance in fostering long-term value creation and building trust with stakeholders. Emphasizing integrity, responsibility, and sustainability, this governance policy reaffirms our steadfast dedication to maintaining the utmost levels of corporate conduct as we continue to drive innovation within the beauty packaging sector.",
+      "declaration": "A Packaging Group is committed to upholding the highest standards of governance across all its operations worldwide. We prioritize transparency, accountability, and ethical conduct to ensure the trust of our stakeholders and maintain our position as a global leader in the cosmetic and beauty packaging industry.",
+      "scope": "This comprehensive policy applies to all Packaging Group sites globally, encompassing all employees, contractors, subcontractors, and all stakeholders aligned with us."
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of interest",
+      "Fraud",
+      "Money laundering",
+      "Anti-competitive practices",
+      "Information security"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Vendor Due Diligence: Conduct thorough background checks on suppliers to mitigate the possibility of corruption in procurement processes.",
+        "Anti-Bribery Measures: Implement strict policies prohibiting offering or accepting bribes in any business dealings within the cosmetic packaging supply chain.",
+        "Compliance Training: Provide comprehensive training to employees on anti-corruption laws and regulations relevant to the beauty packaging industry.",
+        "Transparency Focus: Ensure transparent transactions, discouraging corruption by publicly disclosing financial dealings and boosting accountability.",
+        "Accountability Strengthening: Define clear roles, holding all parties accountable through strict audit trails, closing corruption loopholes.",
+        "Establish a grievance committee comprising impartial members to address concerns effectively and ensure fair resolution within the organization.",
+        "Report any suspected bribery, fraud, or unethical conduct to the Compliance Officer or through APG’s Whistleblower Procedure.",
+        "Maintain transparent, accurate, and auditable records of all financial transactions.",
+        "Politely decline gifts, incentives, or entertainment from suppliers or customers that could influence business decisions.",
+        "Do not offer, solicit, or accept bribes in any form.",
+        "Do not falsify, conceal, or manipulate financial or operational records.",
+        "Do not ignore or fail to escalate red flags related to potential corruption risks."
+      ],
+      "Conflict of interest": [
+        "Supplier Relationships: Ensure transparency and fairness in supplier selection to prevent conflicts arising from personal connections or incentives affecting decision-making processes.",
+        "Intellectual Property Protection: Implement measures to safeguard against conflicts arising from the misuse or misappropriation of proprietary information or trade secrets.",
+        "Conflict Resolution Procedures: Establish clear procedures for addressing conflicts of interest promptly and impartially to maintain trust and accountability within the organization.",
+        "Disclosure: Employees must transparently report any personal interests that may conflict with the company's objectives or decisions.",
+        "Competitive Practices: Prohibit employees from engaging in actions that unfairly disadvantage competitors in the food distribution market.",
+        "Product Quality: Uphold standards to avoid situations where personal gain might outweigh the delivery of safe, quality products.",
+        "Disclose any personal, family, or financial interests that could create an actual or perceived conflict.",
+        "Seek prior approval before engaging in any external business activity that may overlap with APG’s interests.",
+        "Follow APG’s procedures for reporting and resolving conflicts of interest.",
+        "Do not use your position to secure personal benefits at the expense of APG.",
+        "Do not engage in direct business dealings with competitors, suppliers, or partners without approval.",
+        "Do not misuse company time, resources, or assets for personal gain."
+      ],
+      "Fraud": [
+        "Supplier Vetting: Stringent checks on ingredient suppliers to ensure transparency and authenticity, mitigating the risk of fraudulent claims in our cosmetic formulations.",
+        "Quality Assurance Protocols: Implementing robust quality control measures to detect any counterfeit packaging materials, safeguarding against fraudulent product representations.",
+        "Traceability Systems: Implementing traceability systems to monitor the journey of raw materials to finished products, enhancing transparency and thwarting potentially fraudulent activities.",
+        "Enhance Transparency: Ensure all financial transactions are accurately documented and accessible to relevant stakeholders, reducing opportunities for fraudulent activities like embezzlement or bribery.",
+        "Strengthen Internal Controls: Implement robust internal control mechanisms to detect and deter fraudulent activities, such as regular audits and segregation of duties.",
+        "Embrace Technology Safeguards: Invest in advanced technological solutions such as fraud detection software and encryption protocols to safeguard sensitive information from unauthorized access or manipulation."
+      ],
+      "Money laundering": [
+        "Transparent Transactions: Implement transparent financial processes to track funds, mitigating the risk of concealing illegal money through complex transactions.",
+        "Employee Training: Educate staff on recognizing suspicious financial activities within the cosmetic packaging supply chain to prevent unwitting involvement in money laundering.",
+        "Regulatory Compliance: Ensure adherence to relevant laws and regulations governing financial transactions to avoid inadvertently facilitating money laundering activities.",
+        "Enhance detection capabilities: Develop advanced algorithms and protocols to swiftly identify suspicious financial transactions, such as sudden large deposits unrelated to business operations.",
+        "Strengthen compliance procedures: Implement rigorous due diligence checks on new clients and ongoing monitoring to ensure adherence to anti-money laundering regulations, mitigating the risk of illicit fund infiltration.",
+        "Foster collaboration: Forge strategic partnerships with law enforcement agencies and financial institutions to share intelligence and coordinate efforts in combating money laundering schemes across borders.",
+        "Report any suspicious or unusual financial activity to the compliance department.",
+        "Perform due diligence checks on new customers, suppliers, and partners.",
+        "Ensure that all financial transactions are legitimate, documented, and traceable.",
+        "Do not process or approve transactions lacking clear business justification.",
+        "Do not ignore warning signs of suspicious or high-risk financial activities.",
+        "Do not participate in structuring transactions to evade reporting or compliance requirements."
+      ],
+      "Anti-competitive practices": [
+        "Fair Pricing: Ensure transparent pricing strategies, avoiding collusion with competitors to fix prices unfairly, maintaining affordability for consumers in the cosmetic packaging sector.",
+        "Innovation Encouragement: Foster an environment that encourages innovative solutions and prevents monopolization of cutting-edge technologies in cosmetic packaging manufacturing.",
+        "Supplier Diversity: Cultivate relationships with a diverse range of suppliers, preventing dependency on a single source and promoting healthy competition in the cosmetic packaging industry.",
+        "Foster Supplier Diversity: Cultivate relationships with a diverse pool of suppliers, prioritizing inclusion and equal opportunities for all vendors regardless of size or background.",
+        "Embrace Regulatory Compliance: Stay updated with relevant laws and regulations, ensuring full compliance with antitrust laws and regulatory frameworks to prevent monopolistic practices.",
+        "Encourage Fair Trade Practices: Support fair trade initiatives and ethical sourcing practices, promoting equitable partnerships with suppliers and stakeholders across global supply chains.",
+        "Compete fairly and responsibly in all markets.",
+        "Adhere strictly to applicable competition and antitrust laws.",
+        "Maintain transparency in negotiations, pricing, and customer communications.",
+        "Do not engage in price-fixing, bid-rigging, or market-sharing agreements.",
+        "Do not exchange confidential pricing or strategy information with competitors.",
+        "Do not misuse APG’s market position to eliminate or disadvantage competitors unfairly."
+      ],
+      "Information security": [
+        "Encryption Protocols: Implement robust encryption protocols for data transmission and storage, safeguarding proprietary formulations and customer information within the cosmetic packaging manufacturing ecosystem.",
+        "Access Control Measures: Employ stringent access controls to restrict unauthorized entry to sensitive areas of cosmetic packaging manufacturing facilities, ensuring confidentiality and integrity of proprietary information.",
+        "Secure Disposal Procedures: Establish secure disposal procedures for obsolete packaging designs and prototypes, minimizing the risk of data breaches and protecting confidential information from unauthorized access.",
+        "Implement robust encryption protocols such as AES-256 to safeguard sensitive customer data, preventing unauthorized access and ensuring confidentiality during transmission and storage.",
+        "Regularly conduct comprehensive security audits and penetration tests, such as quarterly penetration testing, to identify vulnerabilities in systems and applications, promptly addressing any discovered weaknesses.",
+        "Foster a culture of security awareness and compliance among employees through regular training sessions and awareness campaigns, emphasizing the importance of data protection. For example, provide bi-annual security awareness workshops for all staff members.",
+        "Follow APG’s cybersecurity and information management policies at all times.",
+        "Use strong passwords and enable multi-factor authentication for business systems.",
+        "Immediately report any suspicious emails, phishing attempts, or suspected data breaches.",
+        "Do not disclose or share confidential APG or customer data with unauthorized individuals.",
+        "Do not use unsecured personal devices to store, access, or transmit sensitive company information."
+      ],
+      "Disciplinary Measures": [
+        "APG enforces strict disciplinary actions for violations of its Ethics and Compliance Policy to ensure accountability and preserve trust with customers, employees, and partners.",
+        "Verbal or Written Warning: For minor or first-time violations, employees may receive a formal warning that outlines the nature of the breach and corrective actions required.",
+        "Suspension: Temporary suspension from duties may be applied for repeated violations, serious misconduct, or failure to report unethical activity.",
+        "Termination of Employment or Contracts: Severe breaches—such as fraud, bribery, corruption, or conflicts of interest that compromise APG’s integrity—may result in immediate termination of employment or contractual relationships.",
+        "Legal Action: Where unethical behavior constitutes a violation of law (e.g., fraud, corruption, money laundering), APG may notify relevant authorities and pursue criminal or civil proceedings.",
+        "Restitution and Financial Penalties: In cases of financial misconduct, APG may require restitution to recover losses. External partners or suppliers violating ethical obligations may face contractual penalties.",
+        "Training and Rehabilitation: For correctable misconduct, employees may be required to undergo ethics or compliance training to reinforce standards and prevent recurrence.",
+        "APG’s disciplinary framework is not only corrective but also preventive. Its purpose is to uphold integrity, safeguard stakeholder trust, and foster a culture of responsibility and ethical business conduct across all operations."
+      ],
+      "Action Framework": [
+        "Corporate Governance Structure ReviewAPG annually assesses and refines its board governance framework, including executive leadership roles, board diversity, nomination and compensation practices, and the effectiveness of standing committees such as Audit, Risk, and Governance & Nominations.",
+        "Board Diversity & Independence InitiativesAPG works to maintain diverse, independent leadership via metrics-driven targets (e.g. independence percentage, diversity of experience, gender and nationality representation), ensuring balanced oversight and innovative decision-making.",
+        "Ethics & Compliance MonitoringThrough regular reviews of its Code of Conduct, anti-corruption mechanisms, and executive stock ownership policies, APG ensures compliance with SEC and NYSE governance standards, including clawback provisions, non-classified board structure, and annual board self-evaluations.",
+        "Stakeholder Reporting & Governance TransparencyAPG communicates governance updates and ESG-related performance via investor disclosures, sustainability reports, and public platforms—highlighting recognitions such as EcoVadis Platinum and APR design certifications.",
+        "Continuous Improvement & Governance InnovationAPG drives governance advancement by updating guidance regularly (e.g. revising governance guidelines, formalizing director retirement ages, enhancing board succession planning), aligned with global best practices and stakeholder expectations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Expand anti-corruption training to include 100% employees",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Improve monitoring methods by 30%",
+            "baseline": "Levels recorded in 2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of interest",
+        "targets": [
+          {
+            "target": "Achieve a 20% decline in conflict-of-interest cases",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Train 100% of employees on conflict of interest",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Implement fraud prevention training for 100% employees, reducing incidents by 15%",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Introduce stricter verification measures, aiming for a 20% decrease in fraudulent activities",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Enhance surveillance systems to detect and deter fraudulent activities, reducing incidents by 25%",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Attain a 100% employee training completion rate in money laundering prevention",
+            "baseline": "Monitored since 2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero complaints regarding ethical breaches",
+            "baseline": "Baseline year not otherwise specified",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-competitive practices",
+        "targets": [
+          {
+            "target": "Strengthen internal audit procedures by 15%",
+            "baseline": "2023's performance",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% compliance with anti-competitive regulations",
+            "baseline": "2023's baseline",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Increase data encryption by 25% in packaging manufacturing",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 30% reduction in data breaches",
+            "baseline": "Baseline year 2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Enhance firewall protection for 40% of systems",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Corporate Governance Office",
+        "duty": "Oversees the implementation of this Governance Policy, ensures compliance with all relevant governance regulations and best practices, and regularly reports governance performance and updates to senior leadership and the Board of Directors."
+      },
+      {
+        "role": "Governance Task Force",
+        "duty": "A cross-functional team composed of legal, ESG, finance, and compliance experts who monitor day-to-day adherence to governance standards, such as board structure, code of conduct, and audit and risk procedures."
+      },
+      {
+        "role": "Board & Committee Oversight",
+        "duty": "The Board of Directors and key committees (e.g. Audit, Risk, Nominations & Governance) provide strategic oversight of the governance framework. They ensure effective policy implementation, ethical leadership, and alignment with stakeholder and regulatory expectations."
+      },
+      {
+        "role": "Employees & Senior Executives",
+        "duty": "All staff—especially executives and those in decision‑making roles—receive annual training on governance matters such as conflict of interest, anti-corruption, whistleblower mechanisms, and ethical business conduct. Employees are encouraged to raise concerns and suggest improvements to governance practices."
+      }
+    ],
+    "monitoring": "Our packaging company's governance framework is designed to ensure transparency, accountability, and ethical integrity in all aspects of our operations. Through regular audits and diligent oversight, we uphold compliance with industry regulations and standards. Stakeholder engagement is prioritized, and decision-making processes are guided by integrity to build trust and promote sustainability. In the reporting section below, we provide detailed insights.\n\nA Packaging Group has established a clear reporting structure for ethical concerns to ensure accountability and transparency.\n\nThe Ethics Compliance Officer oversees the reporting mechanism and ensures its effective implementation throughout the organization.\n\nReporting channels are available at all levels of the company, allowing employees to report ethical concerns directly to their supervisors, designated compliance officers, or through an anonymous reporting system.\n\nEmployees are encouraged to report any suspected violations of ethical standards or codes of conduct through internal reporting channels.\n\nReporting can be done through various channels, including direct communication with supervisors, designated compliance officers, HR departments, or an anonymous reporting system.\n\nUpon receiving a report, the relevant department or compliance officer investigates the issue promptly and thoroughly, ensuring confidentiality and protection for the reporting individual.\n\nA Packaging Group requires its suppliers and contractors to adhere to ethical standards and provides channels for reporting violations within their operations.\n\nReporting mechanisms are established in supplier contracts and agreements, outlining procedures for reporting ethical concerns and initiating corrective actions.\n\nA Packaging Group conducts regular audits and assessments of suppliers and contractors to ensure compliance with ethical standards and addresses any identified issues through corrective actions.\n\nA Packaging Group is committed to protecting whistleblowers who report ethical violations in good faith.\n\nThe company prohibits retaliation against individuals who report concerns, and any acts of retaliation will be subject to disciplinary action.\n\nWhistleblower protection policies are communicated clearly to all employees and stakeholders to ensure a supportive environment for reporting.\n\nAll reports of ethical violations, investigations, and remedial actions taken are documented and maintained in a secure and confidential manner.\n\nDetailed records include the nature of the report, investigative findings, actions taken, and outcomes.\n\nDocumentation serves as a valuable resource for monitoring compliance, tracking trends, and demonstrating accountability to stakeholders.\n\nA Packaging Group provides regular reports on its ethical performance to stakeholders, including investors, customers, employees, and the public.\n\nReports include information on the number and nature of reported incidents, actions taken to address violations, outcomes of investigations, and progress on implementing corrective measures.\n\nReports are communicated through various channels, such as annual sustainability reports, company websites, stakeholder meetings, and industry forums.\n\nThe Governance Policy is publicly accessible on APG’s official website, and is communicated through governance-related disclosures such as annual reports, investor presentations, and ESG documentation shared with stakeholders including regulators, investors, and suppliers.\n\nAPG ensures continuous transparency by providing timely updates on governance structures, board composition changes, committee charters, and compliance practices through official press releases, governance handbooks, and stakeholder webinars.\n\nEmployees and senior management receive routine briefings, newsletters, and training sessions regarding governance expectations—covering topics like anti-corruption, conflict of interest protocols, whistleblower mechanisms, and ethical conduct—ensuring these principles are integrated into daily operations.\n\nContinuous improvement is the cornerstone of our Ethical Governance Policy at A Packaging Group in the cosmetic and beauty packaging industry. We recognize that ethical standards evolve, consumer expectations shift, and new challenges emerge. Therefore, we are committed to an ongoing process of assessment, adaptation, and enhancement.\n\nThrough regular reviews of our policies, procedures, and practices, we ensure alignment with the latest industry standards, regulatory requirements, and ethical guidelines. We actively seek feedback from stakeholders, including employees, customers, suppliers, and the communities in which we operate, to identify areas for improvement and innovation. Our dedication to continuous improvement extends beyond compliance; it encompasses a proactive approach to addressing emerging ethical issues, mitigating risks, and fostering a culture of transparency and integrity.",
+    "reviewMechanism": "The Corporate Governance Office is responsible for overseeing the implementation and regular review of this Governance Policy. The policy will be reviewed annually to ensure its effectiveness, alignment with evolving governance standards, and compliance with all applicable regulations. Any updates or revisions will be communicated to all stakeholders—including employees, board members, and partners—to reflect operational changes, regulatory updates, and emerging best practices in corporate governance."
+  },
+  "sourcePath": "Policies - Kenal/APackaging Group/4. Governance Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/APackaging Group/4. Governance Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 25009,
+  "parsedAt": "2026-09-11T07:20:38.377Z"
+}

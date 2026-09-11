@@ -1,0 +1,186 @@
+{
+  "id": "arsh-fashions",
+  "name": "Arsh Fashions",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Green Operations Policy -AFPL.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "ARSH FASHIONS PVT. LTD.",
+      "industry": "",
+      "site": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India.",
+      "sites": [
+        {
+          "location": "ARSH FASHOINS Pvt. Ltd.",
+          "address": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India.",
+          "primaryFunction": "Garment manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Arsh Fashions, our unwavering commitment to environmental sustainability is deeply embedded in our operations and philosophy. As a premier manufacturer of apparel for diverse demographics, we acknowledge the substantial impact of our industry on the environment and are resolute in our efforts to reduce our ecological footprint. Our environmental policy embodies our dedication to sustainable practices, including the use of eco-conscious materials, implementation of energy-efficient production techniques, and rigorous waste management protocols. Through relentless innovation and strict adherence to environmental standards, we aim to produce superior-quality garments that not only cater to the sartorial demands of our varied clients but also foster the health and sustainability of our planet for future generations.",
+      "declaration": "Arsh Fashions is committed to environmental sustainability across our garment manufacturing operations. We prioritize eco-friendly materials, energy efficiency, and responsible waste management. Our goal is to produce high-quality apparel while minimizing our environmental footprint. Our baseline year for evaluating and tracking progress in the environmental areas is 2023.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Water conservation",
+      "Waste management",
+      "Inventory accuracy",
+      "Air emissions",
+      "Sustainable sourcing",
+      "Energy efficiency",
+      "Chemical management",
+      "Biodiversity",
+      "Product safety and health",
+      "Environmental compliance",
+      "Community participation"
+    ],
+    "qualitative": {
+      "Water conservation": [
+        "Educate employees on water conservation techniques and the importance of reducing water usage in manufacturing."
+      ],
+      "Waste management": [
+        "Optimize storage solutions to reduce fabric damage and waste.",
+        "Develop a comprehensive waste management plan that prioritizes reduction, reuse, and recycling of textile waste."
+      ],
+      "Air emissions": [
+        "Implement best practices for reducing air emissions in garment production, such as cleaner energy sources and efficient machinery"
+      ],
+      "Sustainable sourcing": [
+        "Prioritize partnerships with suppliers who adhere to sustainable and ethical practices."
+      ],
+      "Energy efficiency": [
+        "Educate employees on energy-saving practices in various processes of the company."
+      ],
+      "Chemical management": [
+        "Implement safer chemical management practices to minimize environmental impact, focusing on dyes and treatments used in garment production."
+      ],
+      "Biodiversity": [
+        "Incorporate biodiversity considerations into site management practices at production facilities."
+      ],
+      "Product safety and health": [
+        "Ensure all garments meet high safety and health standards, with a focus on non-toxic materials and safe manufacturing processes."
+      ],
+      "Environmental compliance": [
+        "Regularly conduct annual environmental compliance audits for all production facilities."
+      ],
+      "Community participation": []
+    },
+    "quantitative": [
+      {
+        "area": "Water conservation",
+        "targets": [
+          {
+            "target": "Reduce water usage in washing and dyeing processes by 30%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Inventory accuracy",
+        "targets": [
+          {
+            "target": "Achieve 95% inventory accuracy in warehouse operations",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air emissions",
+        "targets": [
+          {
+            "target": "Lower VOC emissions from various process by 25%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable sourcing",
+        "targets": [
+          {
+            "target": "Source 85% of raw materials from certified sustainable suppliers",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Energy efficiency",
+        "targets": [
+          {
+            "target": "Reduce overall energy consumption per unit of production by 30%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Chemical management",
+        "targets": [
+          {
+            "target": "Substitute the usage of hazardous chemicals with less hazardous chemicals in production processes by 40%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Increase green spaces around production facilities by 20%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Community participation",
+        "targets": [
+          {
+            "target": "Increase community participation in sustainability initiatives by 30%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Manager",
+        "duty": "Review the Green Operations Policy annually to ensure accountability and transparency. This review will assess compliance, evaluate effectiveness, and incorporate feedback from audits and stakeholders. Updates will be made as necessary for maintaining alignment with best practices and organizational goals."
+      }
+    ],
+    "monitoring": "The report will be conducted annually, covering advancements in resource efficiency such as reductions in material waste and supply chain improvements. It will include updates on environmental performance metrics, including energy use, carbon emissions, and water efficiency, as well as progress in waste and chemical management, focusing on waste reduction, recycling, and chemical safety. Additionally, the report will highlight community engagement efforts, including outreach, environmental education, and stakeholder partnerships, alongside yearly updates on new sustainability initiatives and their impacts.",
+    "reviewMechanism": "Our Green Operations Policy will be reviewed annually by the Environmental Manager to ensure accountability and transparency. This review will assess compliance, evaluate effectiveness, and incorporate feedback from audits and stakeholders. Updates will be made as necessary for maintaining alignment with best practices and organizational goals."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Arsh Fashions/1. Green Operations Policy -AFPL.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Arsh Fashions/1. Green Operations Policy -AFPL.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 4912,
+  "parsedAt": "2026-09-11T07:32:30.998Z"
+}

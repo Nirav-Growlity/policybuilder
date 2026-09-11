@@ -1,0 +1,343 @@
+{
+  "id": "novopor",
+  "name": "Novopor",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environment Policy Novopor.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Novopor",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Andhra Pradesh",
+          "address": "Plot No: 2A,2B & 2C, APSEZ, Moturupalem Village, Rambilli Mandal, Achyutapuram, Visakhapatnam District - 531011, Andhra Pradesh, India",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Andhra Pradesh",
+          "address": "Plot no: 64, JNPC, Pharma City, Thanam Village, Visakhapatnam District, Parwada Mandal - 531019, Andhra Pradesh, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Telangana",
+          "address": "K.K.R.Square, Flat No.402 & 403, Plot No.5,6,15 & 16, Kavuri Hills, Road No.36, Jubliee Hills, Hyderabad - 500033, Telangana, India.",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Telangana",
+          "address": "Lab No.9, 1st Floor, Phase-1, IKP Knowledge Park, Sy. No. 234/2, 235/3 and 235/2, Turkapally Village, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500101, Telangana, India",
+          "primaryFunction": "Innovation Centre"
+        },
+        {
+          "location": "Mumbai",
+          "address": "Unit No.SO-4, 2nd Floor, Building No.14, Solitaire Corporate Park, Guru Hargovindji Road, Chakala, Andheri (East), MUMBAI-400093, India",
+          "primaryFunction": "Corporate Office"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Novopor is dedicated to sustainable innovation and responsible environmental stewardship. We integrate environmental considerations into our business strategy to minimize our ecological footprint while delivering high-quality chemical and agrochemical solutions.\n\nBeyond regulatory compliance, our environmental objective policy aligns with global sustainability frameworks and best practices, ensuring our operations contribute to a healthier planet.\n\nThrough responsible manufacturing, innovation, and strategic partnerships, we are committed to solutions that meet present needs while safeguarding future resources. This policy defines our approach, commitments, and targets for a sustainable and environmentally responsible future.",
+      "declaration": "Novopor is committed to reducing environmental impact through sustainable innovation, responsible manufacturing, and efficient resource utilization. Our environmental commitment is reflected in the following key areas:",
+      "scope": "This Environmental objective policy applies to all relevant aspects of Novopor’s operations. This policy applies to all Novopor facilities, employees, contractors, suppliers, products, services, regulatory compliance, and stakeholder engagements to ensure environmental sustainability across the value chain. It includes all site locations:"
+    },
+    "focusAreas": [
+      "Energy Consumption and GHGs",
+      "Water Management",
+      "Air Pollution Control",
+      "Materials, Chemicals, and Waste Management",
+      "Biodiversity Conservation",
+      "Customer Health and Safety",
+      "Product Use",
+      "Product End of Life",
+      "Environmental Services and Advocacy",
+      "Action Framework"
+    ],
+    "qualitative": {
+      "Energy Consumption and GHGs": [
+        "We aim to reduce our carbon footprint by improving energy efficiency, optimizing manufacturing processes, and increasing our reliance on renewable energy. Our production facilities are designed to incorporate energy-efficient technologies."
+      ],
+      "Water Management": [
+        "Water is a crucial resource in our operations, and we strive to use it responsibly. We implement closed-loop water systems, wastewater recycling, and reuse. Additionally, we continuously monitor and optimize water usage across all manufacturing processes to enhance conservation efforts."
+      ],
+      "Air Pollution Control": [
+        "We take active steps to reduce air pollution by installing advanced emission control systems and Strictly monitoring Air pollutions. Our facilities comply with stringent air quality regulations."
+      ],
+      "Materials, Chemicals, and Waste Management": [
+        "Our commitment to responsible material use includes selecting safer, more sustainable raw materials and adopting waste reduction strategies. We focus on recycling, chemical substitution, and hazardous waste minimization while ensuring compliance with environmental safety standards."
+      ],
+      "Biodiversity Conservation": [
+        "Novopor recognizes the importance of preserving biodiversity and mitigating environmental degradation."
+      ],
+      "Customer Health and Safety": [
+        "We prioritize product safety by ensuring our formulations comply with the highest health, safety, and environmental standards. Our agrochemicals, performance chemicals, and material science products are developed with a focus on minimizing harmful environmental and human health impacts while maintaining high performance."
+      ],
+      "Product Use": [
+        "Novopor is committed to minimizing the environmental impacts associated with the use of its products throughout their lifecycle. We strive to develop and improve products that are safe, efficient, and environmentally responsible while helping customers reduce resource consumption, emissions, waste generation, and other environmental impacts during product use. Environmental considerations are integrated into product development, innovation, and customer support to promote the responsible use of our products"
+      ],
+      "Product End of Life": [
+        "Novopor is committed to minimizing the environmental impacts associated with the end-of-life of its products and packaging. We strive to promote the safe collection, reuse, recycling, recovery, and disposal of products and packaging while supporting circular economy principles. Through sustainable product design, customer guidance, and continuous improvement, we aim to reduce waste generation and enhance resource recovery002E"
+      ],
+      "Environmental Services and Advocacy": [
+        "Novopor actively engages in sustainability advocacy and industry leadership. We collaborate with regulatory bodies, industry associations, and consultants to drive sustainable innovations, promote best practices."
+      ],
+      "Action Framework": [
+        "Integrate energy-efficient technologies such as heat recovery systems and automated controls to optimize resource use and adopt lean manufacturing principles to minimize raw material wastage and improve operational sustainability.",
+        "Design products with recyclability and reusability in mind to extend their life cycle and reduce environmental impact.",
+        "Implement systematic monitoring and reporting of key environmental performance indicators (KPIs) to maintain certification and drive long-term sustainability improvements.",
+        "Implement zero-waste-to-landfill strategies by maximizing material recovery and recycling efforts.",
+        "Conduct company-wide sustainability training programs to educate employees on environmental best practices and engagement with local communities through environmental initiatives such as tree-planting drives, clean-up campaigns, and conservation projects."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption",
+        "targets": [
+          {
+            "target": "Reduce overall energy consumption per unit of production by 15% by FY 2028-29 through energy-efficient technologies and process optimizations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Transition at least 10% of total energy consumption to renewable sources, including solar and wind energy, by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Improve manufacturing energy efficiency by 20% through automation, smart monitoring systems, and advanced energy management practices.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "GHG Emissions",
+        "targets": [
+          {
+            "target": "Reduce Scope 1 emissions by 10% by FY 2028-29through fuel efficiency improvements, adoption of cleaner energy sources, and process optimization.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Reduce Scope 2 emissions by 10% by FY 2028-29 by procuring green energy and implementing on-site renewable energy projects.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Reduce Scope 3 emissions by 10% by FY 2028-29 by optimizing logistics and promoting local sourcing.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Decrease overall freshwater consumption by 10% through the implementation of water-efficient technologies and conservation programs by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Achieve 10% wastewater treatment and recycling by FY 2028-29 in all manufacturing units to ensure no untreated effluent discharge.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Continue to maintain 100% compliance with national and International air Quality standards by monitoring as per consent and emission Control",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals, and Waste",
+        "targets": [
+          {
+            "target": "By FY 2028-29. reduce hazardous waste generation by 10% by improving waste segregation, chemical substitution, and process efficiency.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Maintain 95% landfill diversion of non-hazardous waste through recycling, composting, and waste-to-energy initiatives by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "3000 Trees plantation for Environmental week celebrations and environmental service programs implemented by the company (e.g., clean-ups, tree plantations) by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety (CDMO BUSINESS)",
+        "targets": [
+          {
+            "target": "100% Transparency in Product in waste labelling",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure 100% of CDMO-manufactured products comply with applicable restricted/banned substance lists (e.g., REACH, RoHS, customer-specific SVHC lists), verified annually, through FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Maintain 100% of applicable CDMO manufacturing sites certified to relevant quality standards (e.g., ISO 9001, GMP) with zero major non-conformances, ongoing through FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Reduce the environmental footprint of product applications by 10% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Provide annual product stewardship and responsible product use training to 100% of relevant employees involved in product development, technical services, and customer support by FY 2028–29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028–29"
+          },
+          {
+            "target": "Complete LCAs for 10% of the core product portfolio to identify use-phase environmental hotspots, by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Ensure 100% of products ship with updated, Safety Data Sheets (SDS) and usage guidelines by FY 2026-27.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2026-27"
+          }
+        ]
+      },
+      {
+        "area": "Product End of Life",
+        "targets": [
+          {
+            "target": "Implement recycling programs for 20% of agrochemical packaging to promote responsible disposal by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Reduce waste generated from product packaging by 10% through packaging optimization and material efficiency initiatives by FY 2028–29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028–29"
+          },
+          {
+            "target": "Increase the use of recyclable, reusable, or recoverable packaging materials for applicable products by 10% by FY 2028–29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028–29"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services and Advocacy",
+        "targets": [
+          {
+            "target": "Provide sustainability training to 100% of employees by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Participate in 2 global environmental initiatives for sustainability by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Safety Officer",
+        "duty": "Oversee the implementation of environmental policies and programs."
+      },
+      {
+        "role": "Environmental Safety Officer",
+        "duty": "Develop and drive initiatives related to energy efficiency, waste reduction, and circular economy."
+      },
+      {
+        "role": "Environmental Safety Officer",
+        "duty": "Collaborate with industry partners, regulatory bodies, and stakeholders for environmental advocacy."
+      },
+      {
+        "role": "Operations and Manufacturing Team",
+        "duty": "Implement eco-efficient production processes and ensure compliance with environmental regulations."
+      },
+      {
+        "role": "Operations and Manufacturing Team",
+        "duty": "Optimize resource use and integrate sustainable technologies in manufacturing."
+      },
+      {
+        "role": "R&D and Product Development Team",
+        "duty": "Innovate sustainable products using green chemistry and circular economy principles."
+      },
+      {
+        "role": "R&D and Product Development Team",
+        "duty": "Conduct lifecycle assessments to improve product sustainability."
+      },
+      {
+        "role": "R&D and Product Development Team",
+        "duty": "Ensure compliance with environmental standards in product design and material selection."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Ensure adherence to ISO 14001 and other environmental certifications."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Conduct internal audits and environmental impact assessments."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Develop and manage environmental outreach programs."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Lead corporate volunteering efforts for environmental projects"
+      }
+    ],
+    "monitoring": "Regularly track key environmental performance indicators (KPIs) related to energy consumption, greenhouse gas (GHG) emissions, water usage and waste generation.\n\nImplement real-time monitoring systems and smart technologies to collect and analyze data efficiently.\n\nConduct site-level audits and assessments to identify areas of improvement and ensure regulatory compliance.\n\nDevelop standardized reporting mechanisms for internal stakeholders, including leadership, sustainability teams, and operational departments.\n\nPublish an Annual Sustainability Report detailing progress toward quantitative targets, achievements, and areas requiring further action.\n\nEnsure adherence to ISO 14001 Environmental Management System standards through periodic audits and reviews.\n\nMaintain compliance with national and international environmental laws, regulations, and industry best practices.\n\nEngage third-party auditors and certification bodies for independent validation of environmental performance.",
+    "reviewMechanism": "The Environmental Safety Officer is responsible for managing the implementation and annual review of this policy. To ensure its effectiveness and continued relevance, the policy will be reviewed annually. Any necessary updates or revisions will be communicated to all stakeholders, incorporating operational or regulatory changes and addressing emerging environmental challenges."
+  },
+  "sourcePath": "Policies - Kenal/Novopor/Environment Policy Novopor.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Novopor/Environment Policy Novopor.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 14450,
+  "parsedAt": "2026-09-11T07:25:07.824Z"
+}

@@ -1,0 +1,355 @@
+{
+  "id": "raichem",
+  "name": "Raichem",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Raichem Medicare Pvt. Ltd.",
+      "industry": "",
+      "site": "Plot No. 24,25,26 & 26P Raichur Industrial Growth Centre, Wadloor cross, Chicksugur Village 584134 Raichur, Karnataka, India",
+      "sites": [
+        {
+          "location": "Raichem Medicare Pvt. Ltd.",
+          "address": "Plot No. 24,25,26 & 26P Raichur Industrial Growth Centre, Wadloor cross, Chicksugur Village 584134 Raichur, Karnataka, India",
+          "primaryFunction": "Manufacturing of ursodeoxycholic acid (UDCA) and related pharmaceutical intermediates"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 24,25,26 & 26P Raichur Industrial Growth Centre, Wadloor cross, Chicksugur Village 584134 Raichur, Karnataka, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Raichem, an ICE Pharma company, is committed to minimizing its environmental impact and supporting sustainable development through responsible environmental management and continual improvement. As a manufacturer of ursodeoxycholic acid (UDCA) and related pharmaceutical intermediates, the Company recognizes the environmental aspects associated with its research, production, and support operations, and is dedicated to preventing pollution, conserving natural resources, and complying with applicable environmental laws, regulations, and standards.\n\nThis Environmental Policy establishes the principles and commitments that guide Raichem’s efforts to strengthen environmental performance across its operations. It defines the framework for setting environmental objectives and targets, outlines governance and accountability mechanisms, and fosters a culture of environmental stewardship among employees, contractors, and relevant stakeholders. Through this Policy, Raichem strives to integrate sustainability considerations into operational decision-making and contribute to the long-term resilience and responsible growth of the business.",
+      "declaration": "Raichem declares its commitment to environmental protection by preventing pollution, complying with all applicable environmental laws and regulatory requirements, and continually improving environmental performance. The Company shall responsibly manage resources, control emissions, effluents, and waste, integrate environmental considerations into operational decision-making, and promote environmental awareness and accountability among employees and relevant stakeholders.",
+      "scope": "This policy applicable to Raichem Medicare Pvt. Ltd. and encompasses our comprehensive approach to environmental sustainability and operational responsibility. It addresses key environmental areas including Air quality management, Energy efficiency and energy consumption reduction, Water conservation, wastewater treatment, and recycling practices, Carbon footprint reduction efforts and circularity principles."
+    },
+    "focusAreas": [
+      "Energy and Emissions Management",
+      "Air Emissions Management",
+      "Raw Material Efficiency",
+      "Waste Management",
+      "Water Stewardship",
+      "Biodiversity Protection",
+      "Responsible Product Use",
+      "Product End-of-Life Management",
+      "Customer Health and Safety",
+      "Employee Awareness and Engagement",
+      "Partnerships and Advocacy"
+    ],
+    "qualitative": {
+      "Energy and Emissions Management": [
+        "Improve energy efficiency through the installation of energy-efficient motors, pumps, variable frequency drives (VFDs), and LED lighting across operations.",
+        "Optimise boilers, chillers, utilities, and HVAC systems through preventive maintenance and enhanced operational controls.",
+        "Explore the use of cleaner fuel alternatives to reduce greenhouse gas emissions."
+      ],
+      "Air Emissions Management": [
+        "Operate and maintain scrubbers, filters, and local exhaust ventilation systems to effectively control process-related air emissions",
+        "Conduct periodic stack and ambient air quality monitoring to ensure compliance with applicable regulatory standards.",
+        "Reduce fugitive emissions through appropriate chemical storage, closed handling systems, and routine equipment maintenance."
+      ],
+      "Raw Material Efficiency": [
+        "Optimise raw material usage through batch optimisation, yield improvement initiatives, and process standardisation.",
+        "Minimise material losses by strengthening inventory controls, storage conditions, and material handling procedures.",
+        "Promote efficient chemical dosing and evaluate substitution of high-loss materials where feasible."
+      ],
+      "Waste Management": [
+        "Maintain segregation of hazardous, non-hazardous, recyclable, and packaging waste at the source.",
+        "Recycle solvents, residues, and packaging waste through in-house recovery systems and authorized recyclers.",
+        "Ensure safe storage, documentation, and disposal of hazardous waste through approved waste management vendors."
+      ],
+      "Water Stewardship": [
+        "Reduce freshwater consumption through process optimisation, leak prevention, and water-efficient operating practices.",
+        "Operate and optimise effluent treatment and water recycling systems to maximise reuse.",
+        "Monitor effluent quality on a regular basis to ensure compliance with discharge standards."
+      ],
+      "Biodiversity Protection": [
+        "Develop and maintain green belts around manufacturing facilities using native plant and tree species.",
+        "Collaborate with local environmental organisations to support biodiversity conservation initiatives."
+      ],
+      "Responsible Product Use": [
+        "Provide customers with clear guidance on safe handling, storage, and efficient use of products.",
+        "Support customers with technical assistance to minimise waste generation, emissions, and resource consumption during product application.",
+        "Review customer feedback to enhance product performance and environmental compatibility."
+      ],
+      "Product End-of-Life Management": [
+        "Facilitate safe disposal and recovery of expired or off-specification products through authorised facilities.",
+        "Encourage reuse or recycling of drums, containers, and packaging materials where feasible.",
+        "Maintain records of product disposal and recovery activities to support circular economy objectives."
+      ],
+      "Customer Health and Safety": [
+        "Ensure all products comply with applicable chemical safety and regulatory requirements prior to market release.",
+        "Maintain accurate labelling, hazard communication, and Safety Data Sheets (SDS) in line with regulatory standards.",
+        "Monitor product safety performance and review handling and usage practices to identify improvement opportunities.",
+        "Conduct targeted customer training on safe handling practices and emergency response where appropriate."
+      ],
+      "Employee Awareness and Engagement": [
+        "Deliver role-based environmental training covering waste management, emissions control, spill prevention, and compliance requirements.",
+        "Integrate environmental responsibilities into standard operating procedures and daily work practices.",
+        "Encourage employee participation in environmental improvement initiatives and compliance programs."
+      ],
+      "Partnerships and Advocacy": [
+        "Provide ongoing training to employees on environmental responsibility and sustainable practices.",
+        "Engage suppliers and contractors on environmental compliance and responsible material sourcing.",
+        "Support local environmental initiatives, including plantation drives and community awareness programs.",
+        "Track environmental performance and promote continual improvement through internal reviews and reporting mechanisms."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy and emission Management",
+        "targets": [
+          {
+            "target": "Achieve 100% LED lighting coverage across production, utilities, and administrative areas by FY 2029–30 and maintain thereafter.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30 and maintain thereafter"
+          },
+          {
+            "target": "Increase the share of renewable energy to 20% of total energy consumption by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Reduce total energy consumption by 25% compared to the FY 2022–23 baseline by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve a total 30% reduction in Scope 1 and Scope 2 GHG emissions by FY 2029–30 through energy efficiency and cleaner energy adoption.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Air Emissions Management",
+        "targets": [
+          {
+            "target": "Upgrade or retrofit 50% of existing air pollution control systems with improved filtration media, automated monitoring, or efficiency-enhancing components by FY 2029–30 to further reduce particulate and gaseous emissions.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve a 30% reduction in air pollutant emissions compared to the FY 2022–23 baseline by FY 2029–30 through effective operation and maintenance of scrubbers, filters, and ventilation systems.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Reduce diesel vehicle usage by 15% by FY 2029–30 through route optimisation, improved logistics planning, and scheduling efficiency.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Raw material Efficiency",
+        "targets": [
+          {
+            "target": "Reduce process-related raw material losses by 5% by FY 2029–30 through improved material handling, storage practices, and enhanced process controls.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase the use of recycled or alternative raw materials by 10% by FY 2029–30, where technically and commercially feasible, to support resource efficiency and circularity.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Divert 90% of total waste from landfill by FY 2029–30 through effective segregation, reuse, recycling, and recovery practices.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Implement waste tracking and reporting systems covering 100% of hazardous and non-hazardous waste streams by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Reduce total waste generation by 10% by FY 2029–30 through process optimisation and waste minimization initiatives.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Water Use",
+        "targets": [
+          {
+            "target": "Reduce total freshwater consumption by 30% by FY 2029–30 through water-efficient operational practices and rainwater harvesting, where applicable.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Reuse 40% of treated wastewater within operations by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain 100% compliance with applicable effluent discharge standards on an ongoing basis.",
+            "baseline": "FY 2022–23",
+            "deadline": "on an ongoing basis"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Proctection",
+        "targets": [
+          {
+            "target": "Plant and maintain 500 native trees around Raichem facilities by FY 2029–30 to enhance green cover and ecological resilience.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Implement two habitat restoration or conservation projects by FY 2029–30 in collaboration with community and environmental partners to prevent contamination and ecological degradation.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Product Use",
+        "targets": [
+          {
+            "target": "Conduct environmental performance reviews for 30% of products by FY 2029–30 to identify opportunities for environmental impact reduction.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve a 10% reduction in the life-cycle environmental footprint of key specialty chemical products by FY 2029–30 through formulation optimisation, improved application efficiency, and enhanced performance characteristics.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of products are supplied with clear usage instructions and environmental handling guidance.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-life Management",
+        "targets": [
+          {
+            "target": "Increase the use of recycled and repurposed materials to 30% in product packaging, intermediate packaging, and bulk containers by FY 2029–30 to promote circular resource use.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure provision for safe disposal of 100% of expired or off-specification products through authorised waste management facilities by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide end-of-life handling and disposal guidance for 100% of applicable products by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Conduct two customer safety awareness or communication initiatives by FY 2029–30 to promote safe product handling and use.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% of products are supported by accurate labelling, hazard communication, and up-to-date Safety Data Sheets (SDS).",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero product recalls or regulatory enforcement actions related to customer health and safety.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Employee Awareness and Engagement",
+        "targets": [
+          {
+            "target": "Conduct three employee engagement initiatives related to sustainability or environmental performance by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% role-specific environmental training for employees in production, utilities, and EHS functions.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain 90% employee participation in environmental or sustainability initiatives by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Partnerships and Advocacy",
+        "targets": [
+          {
+            "target": "Train 80% of key suppliers on sustainability practices and environmental management expectations by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Participate in three environmental or community-based initiatives in collaboration with external stakeholders by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "EHS Manager",
+        "duty": "Oversees implementation and monitoring of the Environmental Policy, ensures regulatory compliance, leads training, and coordinates environmental reporting."
+      },
+      {
+        "role": "Department Heads & Operations Teams",
+        "duty": "Integrate environmental goals into departmental functions, collaborate with the EHS Manager, and implement initiatives such as waste reduction, water conservation, and energy efficiency."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental guidelines, participate in sustainability initiatives, and adopt best practices to support Raichem sustainability objectives."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Support sustainability efforts through partnerships and compliance with environmental standards."
+      }
+    ],
+    "monitoring": "Raichem Medicare Pvt. Ltd. is committed to regularly monitoring its environmental performance across key focus areas, including energy consumption, GHG emissions, water usage, waste management, air quality, and product safety. To track progress, Key Performance Indicators (KPIs) are established for each area, reflecting both quantitative and qualitative sustainability targets. These KPIs are continuously monitored and reviewed on a quarterly basis to ensure ongoing performance improvements and compliance with regulatory requirements. Quarterly findings are consolidated into comprehensive reports for senior management to support strategic decision-making, while annual assessments evaluate overall achievements, identify gaps, and recommend corrective actions. Relevant outcomes and progress reports are shared with stakeholders to promote transparency, accountability, and trust, with all monitoring and reporting practices adhering to ISO 14001, and other applicable industry standards to ensure accuracy, reliability, and credibility.",
+    "reviewMechanism": "This policy will be reviewed annually by the EHS Manager and updated as necessary to reflect changes in regulatory requirements, industry best practices, and internal environmental goals. Updates will be communicated to all stakeholders to ensure consistent application and engagement. Necessary revisions will be made to strengthen environmental commitments and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Raichem/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Raichem/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 16634,
+  "parsedAt": "2026-09-11T07:40:01.029Z"
+}

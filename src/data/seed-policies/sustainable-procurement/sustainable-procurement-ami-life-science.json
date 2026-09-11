@@ -1,0 +1,312 @@
+{
+  "id": "sustainable-procurement-ami-life-science",
+  "name": "Ami Life-Science",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Final Version -Sustainable Procurement Policy- 01.05.2023.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Ami Lifesciences Pvt Ltd",
+      "industry": "",
+      "site": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021",
+      "sites": [
+        {
+          "location": "Ami Lifesciences Pvt Ltd [Corporate Office]",
+          "address": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Ami Lifesciences Pvt Ltd [Manufacturing Unit]",
+          "address": "Block No.82/B, ECP Road, At & Post. Karakhadi-391450 Taluka: Padra Dist.: Vadodara Gujarat, INDIA.",
+          "primaryFunction": "Manufacturing Unit"
+        },
+        {
+          "location": "Ami Lifesciences Pvt Ltd [Marketing Office]",
+          "address": "305, 3rd Floor, Nitco Biz Park, Rd Number 16U, Nehru Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604",
+          "primaryFunction": "Marketing Office"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Ami Lifesciences Pvt Ltd, we are committed to sustainable and responsible business practices that not only benefit our organization but also contribute positively to the environment and society. Our Sustainable Procurement Policy reflects our dedication to promoting Supplier Environmental Practices and Supplier Social Practices throughout our supply chain.",
+      "declaration": "We pledge to maintain an unwavering commitment to ethical practices, ensuring fairness, honesty, and accountability in our dealings with all stakeholders, including employees, customers, suppliers, and the communities in which we operate. This commitment is reflected in our robust policies and procedures that govern corporate conduct, anti- corruption measures, fair competition, responsible information management, and stakeholder engagement.",
+      "scope": "This Policy is applicable to below mentioned locations and its applicable to all its employees, Customers, Suppliers, Partners, Contractors, Sub Contractors and other Stakeholders who are directly and indirectly associated with the company:"
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Sustainable Materials",
+      "Energy Efficiency",
+      "REACH Measures, Palm oil & Conflict Minerals",
+      "Supplier Social Practices",
+      "Labor Standards",
+      "Supplier & Community Engagement",
+      "Supplier Diversity",
+      "Environmental Excellence",
+      "Sustainable Innovation",
+      "Resource Conservation",
+      "Eco-conscious Collaboration",
+      "Ethical Leadership",
+      "Inclusive Workforce",
+      "Community Impact",
+      "Responsible Sourcing",
+      "Safe Work Environments",
+      "Supplier Empowerment"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "We prioritize suppliers who provide sustainable materials and products that are responsibly sourced and have a lower environmental impact throughout their lifecycle.",
+        "We encourage our suppliers to adopt energy-efficient practices and technologies to reduce energy consumption and minimize greenhouse gas emissions in their operations.",
+        "We committed to not use REACH listed materials, Palm oil and its derivatives and conflict minerals in any manufacturing processes and also promote supplier to not use REACH listed materials, Palm oil and its derivatives and conflict minerals."
+      ],
+      "Supplier Social Practices": [
+        "Our suppliers must adhere to internationally recognized labor standards, ensuring fair wages, safe working conditions, and respect for workers' rights.",
+        "We value suppliers who actively engage with and positively impact the communities where they operate, reflecting our commitment to social responsibility.",
+        "Our priority is to promote minority or vulnerable groups as well as diversity, equity and inclusion in the supplier group through the advance diversity in the supply chain."
+      ],
+      "Environmental Excellence": [
+        "Strive to become a leader in sustainable procurement by consistently selecting suppliers with outstanding environmental practices.",
+        "Encourage suppliers to adopt cutting-edge environmental technologies and practices."
+      ],
+      "Sustainable Innovation": [
+        "Foster a culture of innovation among suppliers to develop and provide sustainable materials, products, and solutions.",
+        "Promote the adoption of eco-friendly alternatives in the supply chain."
+      ],
+      "Resource Conservation": [
+        "Collaborate with suppliers to reduce resource consumption and promote responsible resource management.",
+        "Seek opportunities to minimize the use of non-renewable resources in our products."
+      ],
+      "Eco-conscious Collaboration": [
+        "Establish strong partnerships with suppliers who share our environmental values and commitment to sustainability.",
+        "Actively engage in sustainability projects and initiatives with like-minded suppliers."
+      ],
+      "Ethical Leadership": [
+        "Set a benchmark for ethical business conduct within our industry by ensuring all suppliers adhere to the highest ethical standards.",
+        "Be recognized as a company that promotes ethical practices among its supply chain partners."
+      ],
+      "Inclusive Workforce": [
+        "Create a diverse and inclusive supply chain network that reflects the diversity of our global customer base.",
+        "Champion supplier diversity and inclusion programs to promote equal opportunities."
+      ],
+      "Community Impact": [
+        "Strive to make a positive impact on the communities where our suppliers operate.",
+        "Collaborate on community development projects that enhance the well-being of local populations."
+      ],
+      "Responsible Sourcing": [
+        "Lead efforts to eliminate unethical practices such as child labor, forced labor, and discrimination from our supply chain.",
+        "Encourage suppliers to implement robust ethical sourcing strategies."
+      ],
+      "Safe Work Environments": [
+        "Ensure that all employees across the supply chain enjoy safe and healthy working conditions.",
+        "Promote a safety culture among suppliers that emphasizes the well-being of workers."
+      ],
+      "Supplier Empowerment": [
+        "Empower suppliers to extend social responsibility practices to their own supply chains.",
+        "Provide guidance and resources to help suppliers become leaders in ethical sourcing.",
+        "Supplier assessment system shall be developed and followed to address the minority or vulnerable groups as well as diversity, equity and inclusion in the supplier group."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "We strive to achieve 100% coverage of our suppliers in CSR self-assessments and on-site audits",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "We are committed to ensuring that 100% of our suppliers sign the \"Supplier Code of Conduct\"",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "We aim to incorporate additional ESG criteria into supplier contracts every 2–3 years, or as mandated by evolving government regulations.",
+            "baseline": "FY 2022-23",
+            "deadline": "Every 2–3 years, or as mandated by evolving government regulations"
+          },
+          {
+            "target": "We strive to conduct ESG performance reviews for 100% of suppliers annually",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "We will implement corrective action plans for all non-compliant suppliers, achieving a 90% resolution rate",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "25% of MSME suppliers shall contract with clauses of environment",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "100% MSME Suppliers shall be evaluated for environment before issuing the work order.",
+            "baseline": "FY 2022-23",
+            "deadline": "Before issuing the work order"
+          },
+          {
+            "target": "25% MSME suppliers shall be trained for environmental practices",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "Ensure 100% Comply with all relevant environmental laws, regulations and standards of our 25% MSME suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "25% of MSME suppliers shall contract with clauses of Labor Rights & Standards, Diversity & Inclusion, Community Engagement, Ethical Business Conduct, Health & Safety and Supply Chain Responsibility requirements",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "100% MSME Suppliers shall be evaluated for Labor Rights & Standards, Diversity & Inclusion, Community Engagement, Ethical Business Conduct, Health & Safety and Supply Chain Responsibility before issuing the work order.",
+            "baseline": "FY 2022-23",
+            "deadline": "Before issuing the work order"
+          },
+          {
+            "target": "25% MSME suppliers shall be trained for Labor Rights & Standards, Diversity & Inclusion, Community Engagement, Ethical Business Conduct, Health & Safety and Supply Chain Responsibility",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "5% Key Raw material suppliers audit shall be conducted to evaluate Supplier Social Practices include Labor Rights & Standards, Diversity & Inclusion, Community Engagement, Ethical Business Conduct, Health & Safety and Supply Chain Responsibility",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "Ensure 100% Comply with all relevant laws of supplier social practices of our 25% MSME suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Manager",
+        "duty": "The Procurement Manager is responsible for implementing the Sustainable Procurement Policy."
+      },
+      {
+        "role": "Procurement Manager",
+        "duty": "They will assess and evaluate potential suppliers based on the policy's environmental and social criteria."
+      },
+      {
+        "role": "Procurement Manager",
+        "duty": "Collaborate with suppliers to ensure they meet the policy's standards."
+      },
+      {
+        "role": "ESG Committee",
+        "duty": "The ESG Committee will oversee the overall effectiveness of the Sustainable Procurement Policy."
+      },
+      {
+        "role": "ESG Committee",
+        "duty": "They will review the policy periodically to ensure alignment with evolving sustainability standards and business objectives."
+      },
+      {
+        "role": "ESG Committee",
+        "duty": "Engage with internal and external stakeholders to gather feedback and enhance policy implementation."
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are responsible for adhering to the Sustainable Procurement Policy in their procurement-related activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees should promptly report any concerns or violations related to supplier environmental or social practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in mandatory training on sustainable Procurement topics to enhance awareness and understanding."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Suppliers are responsible for complying with the environmental and social standards outlined in the policy."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Provide transparent and accurate data related to environmental and social performance."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Collaborate with Ami Lifesciences Pvt Ltd to continuously improve environmental and social practices."
+      },
+      {
+        "role": "Management and Department Heads",
+        "duty": "Set an example of ethical and sustainable procurement practices within their departments."
+      },
+      {
+        "role": "Management and Department Heads",
+        "duty": "Ensure that employees under their supervision understand and follow the policy."
+      },
+      {
+        "role": "Management and Department Heads",
+        "duty": "Address any conflicts or concerns related to supplier practices within their teams."
+      },
+      {
+        "role": "Compliance Department",
+        "duty": "Investigate suspected violations or non-compliance with the policy."
+      },
+      {
+        "role": "Compliance Department",
+        "duty": "Take disciplinary actions, when necessary, in accordance with the policy's disciplinary provisions."
+      },
+      {
+        "role": "Compliance Department",
+        "duty": "Initiate legal action against suppliers found guilty of significant violations."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Oversee the sustainability aspects of procurement activities, ensuring alignment with the policy."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Analyze supplier data and performance to identify areas for improvement."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Work closely with suppliers to drive sustainability initiatives and improvements."
+      }
+    ],
+    "monitoring": "The Environmental Social Governance (ESG) Committee is tasked with ensuring the proper execution, oversight, and continuous development of this policy. The committee will monitor adherence to sustainable procurement objectives, ensuring that targets are achieved in alignment with the company’s long-term sustainability vision.\n\nThe committee will work collaboratively with the Procurement Manager, who will be responsible for embedding sustainability practices into procurement operations, ensuring compliance, and driving improvements. Regular reviews, performance assessments, and transparent reporting will be conducted to maintain accountability and effectiveness.\n\nOngoing monitoring and assessment of policy implementation will continue to track progress and address emerging issues.",
+    "reviewMechanism": "The Policy will undergo regular reviews to assess its relevance and effectiveness. The review frequency is as follows:\n\nEvery 03 Years Review: A comprehensive review of the policy will be conducted during a period of 03 Years by procurement manager.\n\nAd hoc reviews may be initiated in response to significant changes in regulations, emerging sustainability risks, or feedback from stakeholders.\n\nRelevant data on supplier environmental and social practices, policy compliance, and sustainability performance will be collected from internal sources, supplier reports, and stakeholder feedback.\n\nThe collected data will be assessed to evaluate the policy's effectiveness in achieving its objectives. Key performance indicators (KPIs) will be analyzed to gauge progress.\n\nFeedback from employees, suppliers, customers, and other stakeholders will be considered during the review process. Input will be gathered through surveys, interviews, and engagement forums.\n\nThe policy will be assessed for alignment with evolving environmental and social regulations and standards.\n\nAny gaps in policy implementation or emerging opportunities for improvement will be identified.\n\nBased on the assessment, identified gaps, stakeholder feedback, and regulatory changes, updates and revisions to the Sustainable Procurement Policy will be proposed.\n\nProposed updates will undergo an internal approval process involving key stakeholders, including the Sustainability Committee and senior management.\n\nOnce approved, the updated policy will be communicated to all relevant stakeholders, including employees, suppliers, and partners.\n\nThe revised policy will be implemented, and stakeholders will be educated on any changes to ensure smooth compliance."
+  },
+  "sourcePath": "Policies - Kenal/Ami Life-Science/Final Version -Sustainable Procurement Policy- 01.05.2023.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Ami Life-Science/Final Version -Sustainable Procurement Policy- 01.05.2023.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 17988,
+  "parsedAt": "2026-09-11T07:19:38.950Z"
+}

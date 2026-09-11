@@ -1,0 +1,261 @@
+{
+  "id": "sustainable-procurement-praveen-labs",
+  "name": "Praveen labs",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy_GRW_v1.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Praveen Laboratories Pvt. Ltd.",
+      "industry": "",
+      "site": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India",
+      "sites": [
+        {
+          "location": "Office",
+          "address": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India",
+          "primaryFunction": "Office"
+        },
+        {
+          "location": "Factory",
+          "address": "BlockNo.206, Village: Jolwa, Taluka: Palsana, Dist: Surat‐394305, Gujarat, India",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "To achieve our goals and uphold ethical conduct, it is essential that our suppliers align with our values and vision while enhancing sustainability standards within our supply chain. We recognize that the long-term sustainable development of our suppliers is vital to our mutual success, and we appreciate our partnerships with those who share our commitment to responsible business practices. In support of this commitment, we have established a Sustainable Procurement Policy, which reflects our core values and applies to all our suppliers. We expect our suppliers to operate in accordance with the principles outlined in this Policy and to comply with all relevant laws and regulations.\n\nAt Praveen Laboratories Pvt. Ltd., we integrate sustainability into our procurement practices by fostering strong partnerships with suppliers who share our commitment to ethical and environmental standards. We work closely with suppliers to ensure alignment with sustainability goals and provide support for continuous improvement. Additionally, we actively seek sustainable raw materials, packaging solutions, and manufacturing processes to reduce our environmental footprint.\n\nWe set annual goals, develop necessary capabilities, and commit appropriate resources to achieve this policy and align Praveen Laboratories Pvt. Ltd. supply chain with this policy.",
+      "declaration": "All relevant national and international laws and regulations are closely adhered to by PRAVEEN LABORATORIES PVT. LTD. to foster sustainable procurement. We have established key commitment to sustainable procurement practices:",
+      "scope": "This policy applies to all procurement activities, including raw materials, packaging, and services, and covers all suppliers, contractors, and business partners."
+    },
+    "focusAreas": [
+      "Environmental Issue",
+      "Labor Practices and Human Rights",
+      "Quality Management & Controls",
+      "General Sustainable Procurement Targets"
+    ],
+    "qualitative": {
+      "Environmental Issue": [
+        "Prioritize suppliers that adhere to environmentally responsible practices, including energy efficiency, waste reduction, and pollution control.",
+        "Require suppliers to comply with environmental regulations and industry best practices.",
+        "Collaborate with suppliers to improve sustainability performance through joint initiatives and capacity-building programs.",
+        "Promote the procurement of raw materials and products with lower environmental footprints, such as recycled, biodegradable, or sustainably sourced materials.",
+        "Minimize packaging waste by encouraging suppliers to use eco-friendly packaging solutions.",
+        "Encourage suppliers to measure, report, and reduce their CO2, other Greenhouse Gases, SOx, NOx, and Particulate Matter emissions.",
+        "We expect our suppliers to assess their use of hazardous and toxic material and take necessary steps to reduce it, as much as possible."
+      ],
+      "Labor Practices and Human Rights": [
+        "Require all suppliers to comply with labor standards, including those set by the National labor laws.",
+        "Ensure that employment conditions within the supply chain are free from discrimination, forced labor, child labor, and any form of exploitation.",
+        "Work with suppliers to maintain safe, hygienic, and working conditions for all employees.",
+        "Support and prioritize business relationships with suppliers that demonstrate commitments to diversity, equity, and inclusion.",
+        "Implement a supplier code of conduct that outlines labor rights expectations and ethical procurement guidelines."
+      ],
+      "Quality Management & Controls": [
+        "Conduct comprehensive annual quality audits on all major suppliers to systematically evaluate their adherence to our quality standards and identify areas for improvement."
+      ],
+      "General Sustainable Procurement Targets": [
+        "Every two to three years, or sooner if necessary due to modifications in governmental legislation, we want to incorporate extra ESG criteria into supplier contracts."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Issue",
+        "targets": [
+          {
+            "target": "We strive to significantly reduce procurement-related carbon emissions by 10%",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We seek to ensure that at least 15% of our suppliers adopt energy-efficient production processes",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Set a goal to achieve a minimum of 15% procurement of biodegradable and recyclable materials",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our objective is to significantly reduce Scope 1, 2 & 3 emissions associated with procurement activities by 10%",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to implementing effective strategies that will lead to a reduction in water usage throughout our supply chain, aiming for a substantial decrease of 15%",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Aim for 100% of procurement staff are trained on environment friendly sourcing",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Labor Practices and Human Rights",
+        "targets": [
+          {
+            "target": "Our objective is to conduct comprehensive supplier audits focusing on labor conditions, aiming for a complete 100% compliance rate",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to ensuring that at least 80% of our key suppliers adopt and implement fair wage policies",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We have set an ambitious goal to increase our procurement from diverse suppliers by 20%",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are dedicated to achieve 100% compliance in all supplier contracts",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Aim for 100% of procurement staff are trained on social responsibility, human rights, and ethical sourcing",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Quality Management & Controls",
+        "targets": [
+          {
+            "target": "Ensure that 100% of our critical suppliers are in full compliance with ISO 9001 quality management standards",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct comprehensive annual quality audits on all major suppliers",
+            "baseline": "Calendar year 2022",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We strive to reduce the incidence of defective or non-compliant procurement materials by an ambitious 25%",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "General Sustainable Procurement Targets",
+        "targets": [
+          {
+            "target": "We aim to guarantee that all suppliers take part in CSR self-assessments and on-site audits",
+            "baseline": "Calendar year 2022",
+            "deadline": "End of 2026"
+          },
+          {
+            "target": "Our goal is to have the \"Supplier Code of Conduct\" signed by all of our suppliers",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to complete yearly ESG performance evaluations for all suppliers",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We will put corrective action plans into place for suppliers who are not in compliance, with the goal of achieving a 90% resolution rate in 12–15 months",
+            "baseline": "Calendar year 2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Ensure that sustainability risks in the supply chain are identified and mitigated at the highest level."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Promote a corporate culture that prioritizes responsible sourcing and ethical procurement."
+      },
+      {
+        "role": "Chief Sustainability Officer",
+        "duty": "Developing and implementing sustainable procurement strategies in line with corporate sustainability objectives."
+      },
+      {
+        "role": "Chief Sustainability Officer",
+        "duty": "Monitoring supplier compliance with environmental, social, and ethical standards and reporting on procurement sustainability performance to the Board and stakeholders."
+      },
+      {
+        "role": "Sustainability Committee",
+        "duty": "Evaluating the environmental and social impact of procurement practices."
+      },
+      {
+        "role": "Sustainability Committee",
+        "duty": "Engaging with external stakeholders to promote sustainable sourcing."
+      },
+      {
+        "role": "Sustainability Committee",
+        "duty": "Setting and monitoring sustainability-related procurement goals and targets."
+      },
+      {
+        "role": "Procurement & Supply Chain Department",
+        "duty": "Communicate sustainability expectations and requirements to suppliers."
+      },
+      {
+        "role": "Procurement & Supply Chain Department",
+        "duty": "Identify procurement-related sustainability risks and mitigate them proactively."
+      },
+      {
+        "role": "Procurement & Supply Chain Department",
+        "duty": "Encourage suppliers to improve their sustainability performance through training and collaboration."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Conducting audits and assessments of supplier’s sustainability practices."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Investigating and addressing non-compliance with the Sustainable Procurement Policy and keeping up to date with emerging sustainability laws and standards and ensuring compliance."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to the Sustainable Procurement Policy in their roles and contribute to a culture of sustainable procurement by collaborating with suppliers and stakeholders responsibly."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any sustainability or ethical concerns in procurement practices."
+      }
+    ],
+    "monitoring": "Praveen Laboratories Pvt. Ltd. ensures strong governance in sustainable procurement through leadership oversight and accountability. The Managing Director mitigates sustainability risks, while the Chief Sustainability Officer develops strategies and monitors compliance. The Sustainability Committee evaluates impacts and engages stakeholders. The Procurement & Supply Chain Department ensures supplier adherence, and the Compliance Manager conducts audits. Employees uphold policy standards. Regular audits, stakeholder engagement, and policy updates drive continuous improvement, reinforcing the company’s commitment to ethical sourcing and environmental responsibility.\n\nExternal reporting is conducted annually to communicate our sustainable procurement performance to stakeholders, including employees, customers, investors, and regulatory bodies.\n\nReports are prepared in accordance with internationally recognized standards such as the United Nations Global Compact (UNGC), Global Reporting Initiative (GRI).\n\nWe require suppliers to submit annual reports detailing their compliance with environmental, social, and ethical procurement requirements, including any corrective actions taken.\n\nAudits and third-party sustainability assessments are conducted to verify compliance with our Supplier Code of Conduct and Sustainable Procurement Policy.\n\nWe actively engage with employees, suppliers, and other stakeholders to gather feedback, address concerns, and ensure transparency in our sustainable procurement practices.\n\nRegular supplier assessments, training sessions, and stakeholder surveys help measure the effectiveness of our sustainable procurement initiatives and drive continuous improvement.\n\nA formal grievance mechanism is in place to allow employees, suppliers, and external stakeholders to report sustainability violations or unethical procurement practices confidentially and without fear of retaliation.\n\nAll reports are reviewed by the Compliance Manager and Procurement & Sustainability teams and addressed according to established procedures.",
+    "reviewMechanism": "The Chief Sustainability Officer reviews this policy annually to ensure alignment with evolving regulations, industry best practices, and stakeholder expectations.\n\nCompany can also change or review policy if any necessary changes is required.\n\nUpdates to the policy are communicated internally and externally, and relevant training is provided to procurement teams and suppliers to ensure awareness and compliance with sustainable procurement standards."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Praveen labs/4. Sustainable Procurement Policy_GRW_v1.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Praveen labs/4. Sustainable Procurement Policy_GRW_v1.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 13062,
+  "parsedAt": "2026-09-11T07:13:36.133Z"
+}

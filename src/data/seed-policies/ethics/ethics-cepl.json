@@ -1,0 +1,235 @@
+{
+  "id": "ethics-cepl",
+  "name": "CEPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3.Ethical Governance.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Clifton Export (P) Ltd.",
+      "industry": "",
+      "site": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk, Tirupur - 641605, Tamilnadu, India",
+      "sites": [
+        {
+          "location": "Clifton Export (P) Ltd",
+          "address": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk, Tirupur - 641605, Tamilnadu, India",
+          "primaryFunction": "Knitted garment manufacturing and export"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk, Tirupur - 641605, Tamilnadu, India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Acknowledging the pivotal role that ethical conduct plays in influencing both business and society, Clifton Export (P) Ltd. remains steadfast in its commitment to Ethical Governance as a fundamental aspect of our corporate identity. We understand that ethical governance goes beyond mere compliance requirements; instead, it stands as a foundational principle of responsible corporate behavior, essential for fostering sustainable growth and nurturing enduring trust among stakeholders.\n\nIn the dynamic landscape of knitted garment manufacturing, our approach to Ethical Governance is intricately embedded in our comprehensive Integrated Governance Policy. We promise to systematically address crucial governance issues specific to our manufacturing processes, including but not limited to corruption, anti-competitive practices, and responsible information management.\n\nOur strategic initiatives are carefully designed not only to meet but to exceed current regulatory requirements, thereby setting a pioneering benchmark for ethical conduct within the knitted garment manufacturing industry.\n\nAt Clifton Export (P) Ltd., we not only recognize the paramount importance of ethical governance but also actively integrate it into our corporate ethos. Our commitment to surpassing regulatory standards and tackling key governance issues positions us as a trailblazer in advocating ethical conduct and responsible business practices.",
+      "declaration": "We are committed to upholding strong ethical standards and promoting fairness, honesty, and accountability in all stakeholder interactions. This commitment is evident in our comprehensive policies that oversee corporate behavior, anti-corruption initiatives, fair competition, responsible information handling, and engagement with stakeholders.",
+      "scope": "This Policy applies to the following sites and all of its employees, workers, sub-contractors, and other stakeholders:"
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of Interest",
+      "Fraud",
+      "Money Laundering",
+      "Fiduciary Duties Practices",
+      "Information Security",
+      "Bribery"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Foster a culture of integrity, where employees actively engage in discussions and apply anti-corruption principles in daily work.",
+        "Create a safe environment where whistleblowers trust in the confidentiality of the reporting system, ensuring they feel protected from any form of retaliation."
+      ],
+      "Conflict of Interest": [
+        "Cultivate a sense of accountability, encouraging employees to voluntarily disclose conflicts of interest without fear, promoting transparency and ethical behavior.",
+        "Develop a culture of continuous learning, where employees see conflict of interest training as an opportunity for professional growth and a commitment to ethical conduct."
+      ],
+      "Fraud": [
+        "Implement advanced fraud detection systems to foster a proactive and vigilant workforce, reducing the tolerance for fraudulent activities.",
+        "Establish trust in the investigative process, ensuring fairness and thoroughness, maintaining transparency to instill confidence in employees and stakeholders.",
+        "Instill confidence in the whistleblower protection system, emphasizing the importance of reporting suspected fraud for the overall well-being of the organization."
+      ],
+      "Money Laundering": [
+        "Create awareness about the significance of KYC regulations, emphasizing the role each employee plays in maintaining the integrity of financial processes.",
+        "Foster a sense of responsibility, ensuring employees are well-versed in reporting procedures, contributing to a collective effort to combat money laundering."
+      ],
+      "Fiduciary Duties Practices": [
+        "Cultivate a sense of pride among fiduciaries in upholding ethical standards, reinforcing the importance of their roles in maintaining trust and accountability.",
+        "Nurture a strong commitment to confidentiality, ensuring fiduciaries understand the impact of unauthorized disclosures on the organization's reputation and stakeholder trust."
+      ],
+      "Information Security": [
+        "Promote a culture of cyber awareness, empowering employees to be proactive in identifying and mitigating cybersecurity risks.",
+        "Develop a sense of personal responsibility for information security, fostering a workforce that actively engages in best practices and remains vigilant against potential threats."
+      ],
+      "Bribery": [
+        "The company is committed to enforcing a zero-tolerance bribery policy across all business functions. This includes regular monitoring, internal audits, employee training, and strict disciplinary actions to ensure compliance and uphold ethical standards at every level of the organization.",
+        "The company strictly prohibits offering, soliciting, or accepting bribes in any form. All employees and stakeholders are expected to uphold this principle without exception, reinforcing a culture of integrity and ethical conduct throughout the organization.",
+        "The company is committed to implementing robust internal monitoring systems and third-party due diligence programs. These measures help detect, prevent, and address potential risks of corruption, ensuring transparency and accountability in all business dealings."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Achieve 100% employee participation in anti-corruption training programs by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 95% of reported corruption cases are investigated within 30 days, with confidentiality maintained.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Aim for 100% disclosure of conflicts of interest through periodic training, with a 90% compliance rate.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve 90% employee attendance in conflict of interest training sessions by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Implement advanced fraud detection systems, targeting a 95% reduction in fraudulent activities through technology-driven measures.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 100% of suspected fraud cases undergo a fair and thorough investigation by internal and, if necessary, external resources.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Strive for a 90% employee confidence rate in the effectiveness of the confidential reporting system.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with updated KYC regulations across financial institutions.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Aim for a 98% accuracy rate in reporting suspicious transactions to authorities in compliance with regulations.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Fiduciary Duties Practices",
+        "targets": [
+          {
+            "target": "Reach 100% coverage in regular training programs for individuals in fiduciary roles, ensuring understanding of ethical standards.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Target zero unauthorized disclosures, achieving 100% compliance with data protection laws and company policies.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Conduct vulnerability assessments and penetration testing, achieving a 95% alignment with global standards.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Aim for 100% employee participation in regular training on security best practices.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Bribery",
+        "targets": [
+          {
+            "target": "Clifton Export (P) Ltd aims to ensure that 100% of new vendors and agents undergo bribery risk screening by the year 2027, improving from a baseline compliance rate of 45% in 2022.",
+            "baseline": "45% compliance rate in 2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "By 2027, the company targets 100% completion of annual anti-bribery training among procurement and sales teams, up from 50% compliance recorded in the baseline year 2022.",
+            "baseline": "50% compliance in 2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "By 2027, the company aims to implement comprehensive third-party due diligence for 100% of new vendors and agents.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer (C.O)",
+        "duty": "The officer meticulously documents the following elements within each deal and contract with our material supplier concerning the financing of product shipments: Payment in a currency different from the one specified in the contract; Payments to countries unrelated to the contractual agreement; Cash payments; Payments to individuals or entities not explicitly included in the agreement; Any other peculiar or unconventional payment requests."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO) and Ethics & Integrity Manager",
+        "duty": "Oversee the implementation, enforcement, and continuous improvement of this policy, ensuring alignment with regulatory requirements and internal standards."
+      },
+      {
+        "role": "All employees",
+        "duty": "Adhere strictly to the company’s ethical standards and promptly report any suspected or actual violations through the designated internal reporting channels, including the whistleblower system."
+      },
+      {
+        "role": "Business partners, suppliers, and contractors",
+        "duty": "Contractually comply with this policy. Their continued engagement with Clifton Export (P) Ltd is subject to adherence to ethical business conduct and cooperation during audits and due diligence procedures."
+      },
+      {
+        "role": "Ethics Committee",
+        "duty": "Oversee ethical governance, monitor compliance with the company’s policies, and address ethical concerns and violations, ensuring that the organization operates with integrity."
+      }
+    ],
+    "monitoring": "In our commitment to transparency, accountability, and ongoing improvement, Clifton Export(P) Ltd. has appointed a Compliance Officer for a comprehensive reporting mechanism to communicate our performance and advancements in implementing Governance principles:\n\nA report detailing the frequency of such activities is meticulously prepared, submitted, and subsequently shared with stakeholders and company executives.\n\nEngage Stakeholders Actively: Encourage the active participation of stakeholders, including employees, management, and external partners within the knitted garment export industry, in contributing insights to the inclusive governance policy.\n\nConduct Regular Risk Assessments: Perform frequent risk assessments within the knitted garment export processes to identify potential gaps or emerging risks within the comprehensive governance framework.\n\nExplore Technology Integration for Governance: Investigate opportunities within the knitted garment export industry to integrate advanced technologies for policy management, compliance tracking, and risk monitoring. The adoption of digital solutions can streamline governance processes, enhance transparency, and facilitate immediate reporting.\n\nProactively Mitigate Risks and Enhance Adaptability: Take proactive measures within the knitted garment export sector to mitigate risks and fortify the policy's adaptability to evolving business landscapes.\n\nA comprehensive governance framework is implemented, incorporating regular policy reviews, compliance audits, and structured reporting systems to ensure the consistent application of ethical business practices throughout the company.\n\nSupplier compliance oversight is executed through routine audits, due diligence evaluations, and enforcement protocols. This ensures that all suppliers and third parties meet the same high ethical standards expected within the company, fostering integrity throughout the supply chain.\n\nManagement accountability is reinforced by setting clear roles and responsibilities, with regular reporting mechanisms to track progress on ethics goals and ensure transparency in decision-making.",
+    "reviewMechanism": "This policy will be reviewed every year to track the progress on every issue and its targets."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/CEPL/3.Ethical Governance.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/CEPL/3.Ethical Governance.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 21100,
+  "parsedAt": "2026-09-11T07:36:36.248Z"
+}

@@ -80,7 +80,9 @@ function distil(text, type, company) {
     const id = `${type}-${slug(company)}`;
     const text = await readText(file);
     const policy = distil(text, type, company);
-    fs.writeFileSync(path.join(output, `${id}.json`), JSON.stringify({ id, name: company, industry: "Source policy template", summary: `Parsed ${profiles[type].label} template from the retained source document.`, tagline: profiles[type].label, policy, sourcePath: path.relative(root, file), sourceTextLength: text.length }, null, 2));
+    const outputPath = path.join(output, type, `${id}.json`);
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, JSON.stringify({ id, name: company, industry: "Source policy template", summary: `Parsed ${profiles[type].label} template from the retained source document.`, tagline: profiles[type].label, policy, sourcePath: path.relative(root, file), sourceTextLength: text.length }, null, 2));
     count++;
   }
   console.log(`Parsed ${count} social-policy templates.`);

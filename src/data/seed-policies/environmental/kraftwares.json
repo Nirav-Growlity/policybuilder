@@ -1,0 +1,263 @@
+{
+  "id": "kraftwares",
+  "name": "Kraftwares (India) Pvt. Ltd.",
+  "industry": "Manufacturing and Supply Chain Procurement",
+  "summary": "Parsed Environmental Policy from 1. Environmental protection and conservation policy.docx.",
+  "tagline": "Sourcing responsibly for a sustainable future.",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Kraftwares (India) Pvt. Ltd.",
+      "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India.",
+      "sites": [
+        {
+          "location": "Kraftwares (India) Pvt. Ltd.",
+          "address": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "site": "Plot No 10, S.No. 39(1), Udyog Nagar, Village - Aliyali, Tal & Dist - Palghar - 401404 Maharashtra, India."
+    },
+    "standards": [
+      "ISO 14001 Environmental Management System",
+      "International Labour Organization principles"
+    ],
+    "declaration": {
+      "preface": "Kraftwares (India) Pvt Ltd. is committed to deliver quality services while ensuring a safe and healthy workplace for employees and reducing environmental impacts. We adhere to all applicable environmental laws and regulations, integrating sustainability into our business practices. Our approach focuses on pollution prevention, resource efficiency, and the adoption of eco-friendly practices. By fostering awareness among employees and engaging stakeholders, we aim to continuously enhance our environmental performance. This commitment reflects our dedication to responsible operations and long-term environmental stewardship.",
+      "declaration": "Kraftwares (India) Pvt. Ltd. is committed to reducing its environmental footprint by incorporating sustainable practices throughout our operations, with 2022 serving as the baseline year for measuring progress. We adhere to all relevant environmental laws and regulations, prioritize efficient use of resources, and actively work towards minimizing pollution. By continuously improving our processes, enhancing energy efficiency, and fostering a culture of environmental awareness, we aim to strengthen our environmental performance and contribute to a sustainable future.\n\nKraftwares (India) Pvt. Ltd. conducts its operations in compliance with all applicable environmental laws, regulations, and statutory requirements. The Company ensures adherence to key environmental legislations including the:\n\nEnvironment (Protection) Act, 1986\n\nWater (Prevention and Control of Pollution) Act, 1974\n\nAir (Prevention and Control of Pollution) Act, 1981\n\nHazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016\n\nSolid Waste Management Rules, 2016, as applicable.\n\nThe Company maintains all necessary environmental permits and approvals and regularly monitors compliance with regulatory obligations to ensure responsible and lawful environmental management.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Energy efficiency and renewable energy",
+      "Water conservation and wastewater management",
+      "Air emissions and noise control",
+      "Materials and waste management",
+      "Product use, durability, and end-of-life management",
+      "Product safety and customer safety",
+      "Environmental awareness and stakeholder engagement"
+    ],
+    "qualitative": {
+      "Energy efficiency and renewable energy": [
+        "Improve energy efficiency across operations through process optimization, equipment upgrades, and adoption of energy-efficient technologies.",
+        "Increase adoption of low-carbon and renewable energy sources to support emission reduction goals."
+      ],
+      "Water conservation and wastewater management": [
+        "Reduce freshwater consumption through efficient usage, leak prevention, and process optimization.",
+        "Prevent water pollution by ensuring effective wastewater treatment, regular monitoring of discharge quality, proper effluent handling, and compliance with applicable environmental regulations."
+      ],
+      "Air emissions and noise control": [],
+      "Materials and waste management": [
+        "Reduce material consumption through efficient resource use, reuse of scrap materials, and process optimization.",
+        "Ensure safe handling and disposal of chemicals and waste through segregation systems, compliant storage, and authorized treatment and disposal methods."
+      ],
+      "Product use, durability, and end-of-life management": [
+        "Reduce environmental impact during product use through improved product efficiency, durability, and customer guidance on safe and efficient usage.",
+        "Promote responsible end-of-life management through recycling, material recovery, and collaboration with authorized recyclers."
+      ],
+      "Product safety and customer safety": [
+        "Ensure product safety by complying with applicable safety standards, quality controls, and risk prevention measures during design and manufacturing.",
+        "Minimize customer safety risks through clear safety instructions, product labeling, and user guidance materials."
+      ],
+      "Environmental awareness and stakeholder engagement": [
+        "Promote environmental awareness through employee, supplier, and customer engagement programs, training, and communication initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy efficiency and greenhouse gas emissions",
+        "targets": [
+          {
+            "target": "Reduce energy consumption intensity by 3% per unit of production by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce Scope 1 & Scope 2 GHG emissions by 40% & 5% respectively by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% replacement of conventional lighting systems with energy-efficient LED lighting across all facilities by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase renewable energy usage to 90% of total energy consumption by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water conservation and wastewater management",
+        "targets": [
+          {
+            "target": "To reduce overall water consumption by 6% by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 20% reuse of treated wastewater in cooling systems and other suitable operational processes by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual training for 100% relevant employees on water conservation.",
+            "baseline": "2022",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct 100% water audits for operational facility annually and implement corrective actions based on audit findings by year 2030.",
+            "baseline": "2022",
+            "deadline": "Annually through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Air emissions and noise control",
+        "targets": [
+          {
+            "target": "To mitigate 5% of overall air pollutant emissions by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "To achieve a 10% reduction in fugitive dust emissions by 2030 through improved handling practices and enhanced containment methods.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% quarterly stack and ambient air emission monitoring till year 2030.",
+            "baseline": "2022",
+            "deadline": "Quarterly through 2030"
+          },
+          {
+            "target": "Implement noise control measures (acoustic enclosures, insulation, barriers) for 100% of identified high-noise equipment by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Materials and waste management",
+        "targets": [
+          {
+            "target": "To reduce raw material usage (kg per ton of production) by 10% by FY 2030 through process optimization and material efficiency improvements.",
+            "baseline": "2022",
+            "deadline": "FY 2030"
+          },
+          {
+            "target": "Achieve 10% of reduction in total waste generation by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 15% recovery of total waste generated, including metal scrap, packaging waste, and other reusable industrial materials, by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product use, durability, and end-of-life management",
+        "targets": [
+          {
+            "target": "Achieve a 10% reduction in resource consumption associated with product use and maintenance by 2030 through improved product design, durability, and efficient material utilization.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Improve product durability and efficiency to extend product lifespan by 15% by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Recover 30% of stainless steel products at end-of-life by 2030 through take-back, recycling initiatives and partnerships with authorized recycling facilities to minimize environmental impact.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Partner with at 3 authorized recyclers agencies for product end-of-life management by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Promote environmentally responsible product design to increase the use of recyclable materials in products by 30% by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product safety and customer safety",
+        "targets": [
+          {
+            "target": "Ensure 100% of product-related safety complaints or incidents are recorded, investigated, and resolved within 7 days.",
+            "baseline": "2022",
+            "deadline": "Within 7 days"
+          },
+          {
+            "target": "Achieve 95% customer satisfaction score on product safety and quality through customer feedback surveys forms by year 2030",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero product recalls and safety incidents annually till year 2030.",
+            "baseline": "2022",
+            "deadline": "Annually through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental awareness and stakeholder engagement",
+        "targets": [
+          {
+            "target": "Increase community participation in environmental awareness campaign by 30% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Organize two environmental awareness campaigns till year 2030 to promote responsible resource use and environmental protection among employees and local communities.",
+            "baseline": "2022",
+            "deadline": "Through 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      6,
+      7,
+      12,
+      13,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Manager",
+        "duty": "Define environmental objectives, allocate necessary resources, and provide strategic oversight to ensure successful sustainability initiatives and continuous progress."
+      },
+      {
+        "role": "Environmental Team",
+        "duty": "Monitor compliance, track sustainability progress, lead programs, and provide training to employees on eco-friendly practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to environmental guidelines, minimize waste, conserve resources, and actively contribute to sustainability efforts through daily practices."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Conducts staff training on sustainability practices and promotes a culture of environmental responsibility."
+      }
+    ],
+    "monitoring": "Kraftwares (India) Pvt. Ltd. is committed to regularly monitoring its environmental performance across key areas, including energy consumption, GHG emissions, water usage, waste management, air quality, and product safety. To measure progress, Key Performance Indicators (KPIs) are established for each focus area and tracked through internal monitoring mechanisms. Performance is reviewed on a quarterly basis, and the findings are consolidated into reports for senior management to support informed decision-making. Annual assessments are conducted to evaluate progress, identify improvement areas, and implement corrective actions where necessary. Relevant updates are communicated to stakeholders to enhance transparency and accountability, with all monitoring and reporting practices aligned with ISO 14001 and other applicable environmental standards.\n\nKraftwares (India) Pvt. Ltd. is committed to continuously improving its environmental performance through systematic monitoring, evaluation, and enhancement of its environmental management practices. Environmental objectives, targets, and management programs are periodically reviewed to identify opportunities for improvement and strengthen environmental performance.\n\nThe company promotes innovation, adoption of cleaner technologies, efficient resource utilization, and employee engagement to minimize environmental impacts and enhance sustainability across its operations. Continuous improvement initiatives are supported through regular audits, performance reviews, and management evaluations.",
+    "reviewMechanism": "The review mechanism for the Environmental protection and conservation policy involves regular monitoring of sustainability initiatives, with progress assessed against predefined objectives. The Environmental Manager will conduct annual review of this policy to, identify areas for improvement, and adjust strategies as needed. Employee feedback will also be gathered to refine practices, and continuous improvement will be driven through ongoing training and awareness initiatives."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Kraftwares/1. Environmental protection and conservation policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Kraftwares/1. Environmental protection and conservation policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12218,
+  "parsedAt": "2026-09-11T07:39:09.503Z"
+}

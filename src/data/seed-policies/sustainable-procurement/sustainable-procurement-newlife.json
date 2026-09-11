@@ -1,0 +1,332 @@
+{
+  "id": "sustainable-procurement-newlife",
+  "name": "Newlife",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy_grw_v1_1202.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "NewLife Medicals",
+      "industry": "",
+      "site": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059",
+      "sites": [
+        {
+          "location": "NewLife Medicals Pvt Ltd",
+          "address": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059",
+          "primaryFunction": "Offices"
+        },
+        {
+          "location": "NewLife Medicals (USA), Inc",
+          "address": "146 Donmoor CT, Garner, North Carolina 27529, USA",
+          "primaryFunction": ""
+        },
+        {
+          "location": "NewLife Biopharma Limited",
+          "address": "SKY Business Centre, Office 12, Unit 9a, Plato Business Park, Damastown, Dublin 15, Ireland D15 PA4C",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "NewLife Medicals. is committed to incorporating environmental considerations into its procurement practices. As a pharmaceutical sourcing and distribution company, we recognize that our purchasing decisions have a direct impact on environmental sustainability across our value chain. Through this Green Procurement Policy, we aim to source products and services that minimize environmental impact, reduce waste, conserve resources, and comply with applicable environmental regulations. We encourage collaboration with suppliers who demonstrate responsible environmental practices and relevant certifications. By promoting sustainable sourcing, we strive to reduce our carbon footprint while maintaining quality, safety, and regulatory compliance standards.",
+      "declaration": "Formalize NewLife Medicals’s commitment to ethical, responsible, and sustainable procurement practices across its supply chain.\n\nMinimize environmental impacts associated with procured goods and services by promoting resource efficiency, waste reduction, emissions control, and responsible material management.\n\nRespect and protect human rights while promoting fair labor practices, safe working conditions, and ethical treatment of workers across the supply chain.\n\nEstablish a structured framework to identify, assess, and manage sustainability-related risks and opportunities within procurement activities.",
+      "scope": "This Policy applies to all operations of NewLife Medicals, including its offices, warehouses, distribution activities, and global sourcing and supply chain operations. It is applicable to all employees, management, contract workers, business associates, and stakeholders, whether internal or external, working on behalf of the Company"
+    },
+    "focusAreas": [
+      "Promoting reduced emissions, responsible resource use, waste management, and sustainable packaging across supplier operations.",
+      "Integrating environmental, social, and governance (ESG) criteria into supplier onboarding, evaluation, and renewal processes.",
+      "Ensuring suppliers adhere to fair labor practices, safe working conditions, and prohibition of child or forced labor.",
+      "Ensuring procurement activities align with pharmaceutical regulations, export-import laws, trade compliance, and international standards.",
+      "Strengthening documentation, auditability, and traceability in API sourcing, comparator drugs, and international logistics.",
+      "Promoting recyclable, reusable, and environmentally responsible packaging and optimized shipment planning.",
+      "Conducting environmental and social risk assessments, particularly in high-risk geographies and high-impact categories.",
+      "Collaborating with suppliers to drive continuous sustainability improvements and long-term responsible partnerships.",
+      "Establishing oversight mechanisms, sustainability KPIs, and periodic reviews to ensure accountability and continuous enhancement."
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "We are committed to integrating environmental sustainability considerations into supplier selection and evaluation processes, ensuring that procurement decisions align with responsible environmental stewardship principles.",
+        "We aim to collaborate with suppliers who demonstrate compliance with applicable environmental laws and regulations, particularly in manufacturing, storage, packaging, and transportation of pharmaceutical products and APIs.",
+        "We encourage suppliers to implement structured environmental management systems, such as ISO 14001 or equivalent frameworks, to promote systematic control of environmental impacts.",
+        "We incorporate environmental protection clauses within our Supplier Code of Conduct and supplier contracts, requiring business partners to adhere to defined environmental standards, comply with applicable regulations, and support sustainable practices as a condition of engagement and continued business relationship.",
+        "We strive to work with suppliers who actively reduce greenhouse gas emissions, air pollutants, and operational waste, especially in high-volume production and international logistics activities.",
+        "We support the use of sustainable and recyclable packaging materials, minimizing environmental impact during export, storage, and distribution operations.",
+        "We maintain periodic review and engagement mechanisms to assess supplier environmental performance, and we encourage continuous improvement through collaboration and knowledge sharing.",
+        "We are committed to enhancing the awareness and capabilities of our procurement teams through regular training on environmental, sustainability, and responsible sourcing principles."
+      ],
+      "Supplier Social and Labor Practices": [
+        "We strive to engage suppliers who adhere to ethical labor practices and respect internationally recognized human rights standards.",
+        "We are committed to engaging with suppliers who uphold fundamental human rights and fair labor standards, ensuring ethical treatment of workers across all stages of the pharmaceutical supply chain.",
+        "We collaborate with suppliers who prohibit child and forced labor, ensure safe and healthy working conditions, and promote equal opportunity and non-discrimination, in compliance with applicable labor laws and international standards.",
+        "We support the provision of fair wages, lawful working hours, and legally mandated benefits, ensuring alignment with local labor laws and recognized labor standards.",
+        "We integrate labor and human rights requirements into our Supplier Code of Conduct and require all suppliers to formally accept and comply with these standards as a condition of business engagement.",
+        "We encourage collaboration with suppliers that maintain recognized social and occupational health and safety certifications, such as ISO 45001, SA8000, Fair Wage Network, or equivalent frameworks.",
+        "We support inclusive procurement practices by promoting engagement with women-owned, minority-owned, and other underrepresented businesses, where feasible.",
+        "We strengthen responsible sourcing by providing ongoing training and awareness programs to procurement personnel on labor and human rights risks within the supply chain."
+      ],
+      "Sustainable Procurement Goals": [
+        "We will embed sustainability principles into all procurement activities, ensuring purchasing decisions align with our environmental, social, and ethical commitments.",
+        "Adherence to our Supplier Code of Conduct will be mandatory across the supply chain to promote responsible, ethical, and transparent business practices.",
+        "ESG requirements will be formally incorporated into supplier contracts and agreements, reflecting applicable legal obligations, regulatory developments, and recognized industry standards.",
+        "We will implement risk-based supplier due diligence, including ESG self-assessments, audits, and periodic evaluations, to verify compliance and strengthen responsible sourcing practices.",
+        "We are committed to eliminating child labor, forced labor, and human trafficking throughout the supply chain through contractual commitments, supplier declarations, and monitoring mechanisms.",
+        "We aim to build long-term partnerships with suppliers who share our commitment to sustainability and continuous improvement.",
+        "Wherever feasible, we will prioritize local and regional suppliers to support community development and reduce supply chain-related environmental impacts.",
+        "We will continuously refine our procurement strategies to remain aligned with evolving sustainability standards and responsible sourcing expectations."
+      ],
+      "Governance Goals": [
+        "We require suppliers to uphold high standards of business ethics, anti-corruption, anti-bribery, and regulatory compliance, integrated into supplier onboarding and contractual frameworks.",
+        "We will conduct structured, risk-based due diligence and periodic assessments to monitor supplier compliance with governance and ethical expectations.",
+        "We are committed to strengthening governance accountability by providing regular training and awareness programs for procurement personnel on ethical sourcing, governance risks, and anti-corruption practices."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Assess the environmental compliance and sustainability practices of 90% of new suppliers and at least 50% of strategic and high-spend suppliers",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Ensure that at least 30% of key suppliers implement a formal Environmental Management System (EMS), such as ISO 14001 or equivalent",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Increase the proportion of suppliers adopting sustainable or recyclable packaging solutions to 65% of total procurement volume",
+            "baseline": "2023",
+            "deadline": "FY 2029"
+          },
+          {
+            "target": "Conduct environmental risk-based evaluations for 100% of suppliers operating in high-risk geographies or high-impact manufacturing categories annually",
+            "baseline": "",
+            "deadline": "Annually starting 2025"
+          },
+          {
+            "target": "Achieve a 20% reduction in logistics-related carbon intensity (per shipment or per procurement value) through supplier collaboration and route optimization",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Engage at least 75% of strategic suppliers in environmental improvement initiatives or sustainability awareness programs",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Ensure that all procurement personnel (100%) complete training on environmental aspects relevant to procurement activities",
+            "baseline": "2023",
+            "deadline": "2029"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social and Labor Practices",
+        "targets": [
+          {
+            "target": "Assess compliance with social and labor standards for 90% of new suppliers and at least 80% of strategic and high-spend suppliers",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Ensure that 100% of identified high-risk suppliers formally acknowledge and commit to our Supplier Code of Conduct, including human rights and labor standards",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Achieve and maintain zero cases of child labor within our supply chain through annual supplier due diligence, continuous monitoring, and compliance verification mechanisms",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Source at least 90% of our total procurement spend from suppliers holding recognized ethical certifications such as Fair Trade, SA8000, or equivalent standards",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Ensure that 100% of procurement personnel complete training on social responsibility, human rights, and ethical sourcing",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Integrate social and human rights requirements into our Supplier Code of Conduct and all supplier contracts, achieving full coverage across 100% of suppliers",
+            "baseline": "2023",
+            "deadline": "2029"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Goals for Procurement",
+        "targets": [
+          {
+            "target": "Conduct sustainability self-assessments and on-site ESG audits for at least 60% of high-spend suppliers",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Secure formal acknowledgment and compliance with our Supplier Code of Conduct from at least 70% of suppliers",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Incorporate enhanced ESG provisions into 100% of supplier contracts, with reviews conducted at least biennially or earlier in response to regulatory changes, achieving full alignment",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Implement annual ESG performance evaluations for all suppliers to systematically monitor compliance and sustainability progress",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Require corrective action plans from all non-compliant suppliers and resolve at least 90% of identified issues within 12–15 months of detection",
+            "baseline": "",
+            "deadline": "Within 12–15 months of detection"
+          },
+          {
+            "target": "Require all strategic suppliers to provide annual ESG disclosures or sustainability reports",
+            "baseline": "2023",
+            "deadline": "2029"
+          }
+        ]
+      },
+      {
+        "area": "Governance Goals",
+        "targets": [
+          {
+            "target": "Provide ethics and compliance training to at least 90% of procurement personnel",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Achieve 100% annual conflict-of-interest declarations from employees engaged in procurement activities",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Integrate ethics, compliance, and anti-corruption clauses into 100% of new supplier contracts",
+            "baseline": "2023",
+            "deadline": "2029"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Management",
+        "duty": "Provides strategic direction and approves the Green Procurement Policy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Allocates necessary resources for policy implementation, supplier engagement, and continuous improvement."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Reviews overall procurement performance and ensures alignment with ESG and sustainability objectives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Supports cross-functional collaboration to achieve organizational sustainability goals."
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Holds accountability for implementation of the policy across all procurement activities."
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Review policy regularly"
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Integrates sustainability and ESG criteria into supplier selection, contract terms, and performance evaluations."
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Oversees risk-based supplier segmentation, monitoring, and reporting."
+      },
+      {
+        "role": "Head of Procurement",
+        "duty": "Drives capacity building and training for procurement teams on sustainable sourcing practices."
+      },
+      {
+        "role": "Procurement Managers & Buyers",
+        "duty": "Apply sustainability requirements during sourcing, tendering, and purchasing decisions."
+      },
+      {
+        "role": "Procurement Managers & Buyers",
+        "duty": "Conduct supplier assessments, track corrective actions, and monitor progress."
+      },
+      {
+        "role": "Procurement Managers & Buyers",
+        "duty": "Engage suppliers on improvement initiatives, including environmental, social, and governance practices."
+      },
+      {
+        "role": "Procurement Managers & Buyers",
+        "duty": "Attend trainings regularly"
+      },
+      {
+        "role": "EHS Head",
+        "duty": "Ensure alignment with GMP, regulatory, environmental, health, and safety requirements."
+      },
+      {
+        "role": "EHS Head",
+        "duty": "Participate in supplier audits, review remediation actions, and validate corrective measures."
+      },
+      {
+        "role": "EHS Head",
+        "duty": "Support reporting and monitoring of supplier ESG performance."
+      },
+      {
+        "role": "EHS Head",
+        "duty": "Advise procurement teams on risk mitigation and compliance gaps."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Comply with all applicable laws, regulations, and the Supplier Code of Conduct."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Provide accurate information, certifications, and support for audits and assessments."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Implement corrective actions identified during audits and demonstrate continuous improvement."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Adopt responsible practices in environmental management, labor standards, and ethical conduct."
+      }
+    ],
+    "monitoring": "NewLife Medicals is committed to transparent and timely reporting on sustainable procurement. Supplier performance is monitored against ESG criteria, corrective actions are tracked, and sustainability initiatives evaluated. Procurement teams collect data, which senior management reviews to ensure alignment with ESG objectives. Key indicators, including supplier assessments and audit results, are reported internally and externally to drive accountability, continuous improvement, and informed decision-making.\n\nNewLife Medicals is committed to continuously improving sustainable procurement by monitoring supplier performance, internal processes, and policy effectiveness. ESG targets are tracked, gaps addressed, and corrective actions taken promptly. Regular audits, assessments, and stakeholder feedback inform procurement strategies, ensuring compliance, risk mitigation, and ongoing advancement of sustainability objectives.",
+    "reviewMechanism": "This Green Procurement Policy undergoes a formal review at least once every year, or as per requirement by the Head of Procurement if there are significant changes in regulations, business operations, or the supply chain. The review ensures that the policy remains relevant, practical, and aligned with the strategic goals of NewLife Medicals."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Newlife/4. Sustainable Procurement Policy_grw_v1_1202.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Newlife/4. Sustainable Procurement Policy_grw_v1_1202.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 17216,
+  "parsedAt": "2026-09-11T07:11:01.145Z"
+}

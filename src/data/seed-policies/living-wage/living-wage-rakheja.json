@@ -1,0 +1,220 @@
+{
+  "id": "living-wage-rakheja",
+  "name": "Rakheja",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage POlicy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Rakheja Enterprises LLP",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "all our manufacturing facilities",
+          "address": "",
+          "primaryFunction": "manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Rakheja Enterprises LLP is committed to ensuring the financial well-being of our workforce. We recognize that fair compensation is essential for our employees' quality of life and our company's long-term success. This Living Wage Policy reflects our dedication to ethical business practices and employee welfare, in line with Indian labor regulations and global best practices.",
+      "declaration": "Establish a fair wage structure that enables a decent living standard for all employees\n\nAlign our compensation practices with the economic realities of our operational locations\n\nPromote financial stability within our workforce and surrounding communities\n\nLead by example in our industry regarding equitable pay practices.",
+      "scope": "This Policy applies to all employees (at all levels), all stakeholders, partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Rakheja Enterprises LLP. It also applies to all our manufacturing facilities."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Our living wage is calculated through:\n\nBiannual cost-of-living surveys in our operational areas\n\nConsultation with local economic experts\n\nAnalysis of regional economic indicators\n\nConsideration of industry benchmarks\n\nRegular dialogue with employee representatives\n\nWe will implement a \"Living Wage Initiative\" to guarantee that all employees earn a living wage that is 8% higher than the local cost of living by FY 2025-26, improving from the FY 2022-23 baseline.\n\nThis Policy applies to all employees (at all levels), all stakeholders, partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Rakheja Enterprises LLP. It also applies to all our manufacturing facilities.\n\nEvery two years, the HR Manager will conduct a comprehensive review of our Living Wage Policy to ensure its continued relevance and effectiveness. This review will involve a thorough assessment of compliance with wage standards, an evaluation of policy implementation, and an analysis of any emerging issues or trends affecting wage practices. The HR Manager will review performance data from Wage Compliance Reports, insights from Internal Audits, and feedback from stakeholder engagements. This process will also include benchmarking our policy against industry standards and legal requirements."
+    },
+    "focusAreas": [
+      "Equitable Benefits",
+      "Living Wage Initiative",
+      "Bonus Distribution Equity",
+      "Minimum Wage Compliance"
+    ],
+    "qualitative": {
+      "Equitable Benefits": [
+        "We are committed to enhancing employee benefits to ensure they are comparable across all roles and departments."
+      ],
+      "Living Wage Initiative": [
+        "We will implement a \"Living Wage Initiative\" to guarantee that all employees earn a living wage that is 8% higher than the local cost of living by FY 2025-26, improving from the FY 2022-23 baseline."
+      ],
+      "Bonus Distribution Equity": [
+        "Our goal is to ensure that bonus distributions are more equitable by reducing disparities between top earners and average employees."
+      ],
+      "Minimum Wage Compliance": [
+        "We are focused on achieving full compliance with minimum wage standards across all locations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Equitable Benefits",
+        "targets": [
+          {
+            "target": "12% increase in benefits equity",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Living Wage Initiative",
+        "targets": [
+          {
+            "target": "All employees earn a living wage that is 8% higher than the local cost of living",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Bonus Distribution Equity",
+        "targets": [
+          {
+            "target": "Reduce disparities between top earners and average employees by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Minimum Wage Compliance",
+        "targets": [
+          {
+            "target": "100% compliance rate with minimum wage standards across all locations",
+            "baseline": "Current baseline as of FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources Manager",
+        "duty": "Ensure all employees are informed about the Living Wage Policy and its implications through regular updates and training sessions."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Regularly review and adjust employee benefits to align with the equity targets set in the policy."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Monitor the implementation of the Living Wage Initiative and ensure employees' wages meet the specified targets."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Coordinate the biannual cost-of-living surveys and analysis to provide accurate information for wage adjustments."
+      },
+      {
+        "role": "Human Resources Manager",
+        "duty": "Track compliance with minimum wage standards and report any deviations to senior management."
+      },
+      {
+        "role": "Financial Controller",
+        "duty": "Allocate necessary resources and budget for implementing wage adjustments and employee benefits enhancements."
+      },
+      {
+        "role": "Financial Controller",
+        "duty": "Conduct financial analyses to ensure that the Living Wage Initiative and benefits equity targets are financially viable."
+      },
+      {
+        "role": "Financial Controller",
+        "duty": "Oversee the distribution of bonuses to ensure alignment with equity targets and reduce disparities."
+      },
+      {
+        "role": "Financial Controller",
+        "duty": "Assess the impact of living wage adjustments on overall company finances and provide recommendations for cost management."
+      },
+      {
+        "role": "Financial Controller",
+        "duty": "Prepare and present financial reports on compliance with wage standards and policy targets to senior management."
+      },
+      {
+        "role": "Operations Manager",
+        "duty": "Coordinate with local teams to facilitate biannual cost-of-living surveys and ensure accurate data collection."
+      },
+      {
+        "role": "Operations Manager",
+        "duty": "Analyze regional economic indicators and industry benchmarks to support wage determination processes."
+      },
+      {
+        "role": "Operations Manager",
+        "duty": "Ensure that all manufacturing facilities comply with the minimum wage standards and other policy requirements."
+      },
+      {
+        "role": "Operations Manager",
+        "duty": "Gather feedback from employees on wage and benefits satisfaction and report findings to the HR department."
+      },
+      {
+        "role": "Operations Manager",
+        "duty": "Support the implementation of the Living Wage Initiative and benefits adjustments across operational areas."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Provide strategic direction and ensure alignment of the Living Wage Policy with overall company goals and values."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Monitor the performance against the Living Wage targets and provide guidance for necessary adjustments."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Engage with external stakeholders and industry peers to demonstrate commitment to fair wage practices and gather insights."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Conduct a biennial review of the policy's effectiveness and make strategic decisions based on performance and feedback."
+      },
+      {
+        "role": "Employees",
+        "duty": "Stay informed about the Living Wage Policy and understand how it affects your compensation and benefits."
+      },
+      {
+        "role": "Employees",
+        "duty": "Provide feedback on wage and benefits through surveys and discussions to help improve the policy."
+      },
+      {
+        "role": "Employees",
+        "duty": "Ensure your personal understanding and compliance with any wage adjustments and benefits changes communicated by the company."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participate in biannual cost-of-living surveys and other data collection processes as requested."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any discrepancies or concerns regarding wages and benefits to your manager or HR for prompt resolution."
+      }
+    ],
+    "monitoring": "We conduct annual evaluations of our wage practices, focusing on key metrics outlined in our Living Wage Policy. These reports provide a thorough assessment of compliance with wage standards, employee satisfaction, and progress towards fair wage objectives.\n\nCompliance Evaluation: Review of adherence to living wage standards, including verification of wage payments against policy requirements and applicable legal standards.\n\nEmployee Satisfaction: Measurement of employee feedback regarding wage fairness, adequacy, and overall satisfaction with compensation.\n\nInternal audits are carried out to evaluate compliance with the Living Wage Policy and the effectiveness of our wage management systems.\n\nAssess Policy Adherence: Evaluate the extent to which wage practices align with established policies and standards, including accuracy of wage calculations and timely payments.\n\nIdentify Improvement Areas: Highlight areas needing corrective actions and opportunities to enhance wage practices, ensuring all employees receive a living wage.\n\nWe actively engage with stakeholders, including employees, payroll administrators, and industry experts, to:\n\nSolicit Feedback: Gather input on wage practices, policy effectiveness, and areas for improvement from those directly affected by or knowledgeable about wage issues.\n\nAddress Concerns: Respond to inquiries and concerns raised by stakeholders, ensuring their perspectives influence wage policy adjustments and implementations.\n\nCommunicate Performance: Share updates on wage compliance, policy changes, and achievements related to ensuring living wages for all employees.\n\nTo ensure our Living Wage Policy remains effective and responsive to evolving needs, we are committed to ongoing improvements. We regularly review and analyze performance data from our Wage Compliance Reports and Internal Audits to identify trends, challenges, and areas for enhancement. Insights gained from stakeholder feedback are instrumental in refining our practices and addressing any gaps. We also benchmark our policy against industry best practices and emerging standards to stay ahead of regulatory changes and expectations. Our approach includes setting measurable goals for wage equity and periodically updating our policy to incorporate innovative solutions and address any identified issues. By fostering a culture of continuous learning and adaptation, we aim to enhance our wage practices, ensure compliance with living wage standards, and uphold our commitment to fair and equitable compensation for all employees.",
+    "reviewMechanism": "Every two years, the HR Manager will conduct a comprehensive review of our Living Wage Policy to ensure its continued relevance and effectiveness. This review will involve a thorough assessment of compliance with wage standards, an evaluation of policy implementation, and an analysis of any emerging issues or trends affecting wage practices.\n\nThe HR Manager will review performance data from Wage Compliance Reports, insights from Internal Audits, and feedback from stakeholder engagements. This process will also include benchmarking our policy against industry standards and legal requirements.\n\nBased on these findings, the HR Manager will recommend necessary updates or improvements to the policy. Any changes will be communicated to all stakeholders, ensuring transparency and alignment with our commitment to fair and equitable compensation."
+  },
+  "sourcePath": "Policies - Kenal/Rakheja/5. Living Wage POlicy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Rakheja/5. Living Wage POlicy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 10533,
+  "parsedAt": "2026-09-11T07:27:27.300Z"
+}

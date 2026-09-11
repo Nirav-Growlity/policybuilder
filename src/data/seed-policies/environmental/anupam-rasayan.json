@@ -1,0 +1,493 @@
+{
+  "id": "anupam-rasayan",
+  "name": "Anupam Rasayan India Limited",
+  "industry": "Specialty Chemicals Manufacturing",
+  "summary": "Parsed Environmental Policy from Environmental Management Policy.docx.",
+  "tagline": "Responsible sourcing for a sustainable chemical value chain.",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Anupam Rasayan India Limited (ARIL)",
+      "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+      "sites": [
+        {
+          "location": "Sachin Unit 1",
+          "address": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 2",
+          "address": "Plot No. 701, 2419/1, 2419/2, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 3",
+          "address": "Plot No. 8104 and 8106, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Sachin Unit 6",
+          "address": "Plot No. 2423 and 2425, GIDC Sachin, Surat, Gujarat – 394230",
+          "primaryFunction": "R&D and Manufacturing"
+        },
+        {
+          "location": "Jhagadia Unit 4",
+          "address": "Plot No. 907/3, 907/4, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Jhagadia Unit 5",
+          "address": "Plot No. 905/1, GIDC Jhagadia, Bharuch, Gujarat – 393110",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Tanfac Industries Limited",
+          "address": "Plot No. 14, SIPCOT Industrial Complex, Kudikadu, Cuddalore – 607005, Tamil Nadu",
+          "primaryFunction": "Fluorochemical Manufacturing"
+        }
+      ],
+      "site": "Plot No. 8109, 8110, 8111, 268/1, GIDC Sachin, Surat, Gujarat – 394230"
+    },
+    "standards": [
+      "UN Global Compact",
+      "ISO 20400 Sustainable Procurement Guidelines",
+      "BRSR",
+      "ISO 14001",
+      "ISO 45001",
+      "ISO 37001",
+      "GRI 204",
+      "GRI 308",
+      "GRI 414"
+    ],
+    "declaration": {
+      "preface": "Anupam Rasayan India Limited (ARIL), established in 1984, is a leading manufacturer of life science–related specialty chemicals. We are committed to embedding environmental responsibility in all facets of our business operations — from research and development to manufacturing, supply chain, and product stewardship.\n\nThrough innovation, energy efficiency, and green chemistry principles, we aim to achieve our vision of Sustainable Manufacturing and Consistent Growth, aligned with ISO 14001:2015, UN Global Compact, and UN Sustainable Development Goals (SDGs).",
+      "declaration": "Anupam Rasayan is committed to reducing environmental impact through sustainable innovation, efficient resource utilization, and compliance with global best practices. Our environmental commitments are defined under the following key focus areas:",
+      "scope": "This Environmental Management Policy applies to all Anupam Rasayan facilities, employees, contractors, suppliers, products, services, and stakeholder engagements. It ensures environmental sustainability, compliance with applicable legal requirements, and continuous improvement across our operations and value chain."
+    },
+    "focusAreas": [
+      "Energy Consumption and GHGs",
+      "Water Management",
+      "Air Pollution Control",
+      "Materials, Chemicals, and Waste Management",
+      "Biodiversity Conservation",
+      "Customer Health and Safety",
+      "Product Use",
+      "Product End of Life",
+      "Environmental Services and Advocacy"
+    ],
+    "qualitative": {
+      "Energy Consumption and GHGs": [
+        "We aim to achieve Net Zero emissions by 2030 through the adoption of renewable energy sources and implementation of energy-efficient systems. Our manufacturing facilities are continuously optimized to reduce energy intensity per unit of output through process automation, real-time monitoring, and technological innovation. We prioritize the use of solar and wind energy, recovery of process heat, and installation of advanced energy management systems to minimize our carbon footprint."
+      ],
+      "Water Management": [
+        "We recognize water as a precious natural resource and are committed to responsible water management across all manufacturing sites. Our goal is to achieve Zero Liquid Discharge (ZLD) and progress toward water-positive operations by maximizing wastewater recycling and reuse. Continuous improvements in water-efficient processes, rainwater harvesting, and wastewater treatment systems are implemented to reduce dependency on freshwater sources and safeguard local ecosystems."
+      ],
+      "Air Pollution Control": [
+        "We are dedicated to maintaining clean air standards through the installation of advanced air pollution control systems such as scrubbers, filters, and real-time monitoring equipment. Emission sources are regularly inspected and maintained to minimize the release of particulate matter, volatile organic compounds (VOCs), and other pollutants. Compliance with national and international emission standards is strictly ensured across all facilities."
+      ],
+      "Materials, Chemicals, and Waste Management": [
+        "Our material management approach focuses on sustainable sourcing, safe handling, and efficient utilization of all raw materials and chemicals. We promote green chemistry principles by substituting hazardous substances with safer alternatives wherever feasible. Waste is segregated at source, treated responsibly, and recycled to minimize landfill disposal. Hazardous waste is managed in full compliance with the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016."
+      ],
+      "Biodiversity Conservation": [
+        "Anupam Rasayan acknowledges the importance of preserving biodiversity in and around its operational areas. We ensure that all business activities avoid impacts on ecologically sensitive regions. Extensive greenbelt development, native species plantation, and habitat restoration programs are implemented to enhance the natural environment. Through these initiatives, we contribute to local biodiversity conservation and environmental balance."
+      ],
+      "Customer Health and Safety": [
+        "We prioritize customer and end-user safety by providing comprehensive Material Safety Data Sheets (MSDS) and clear handling guidelines for all our products. All chemicals are designed and tested in accordance with REACH, GHS, and CLP standards. Our technical support teams provide training and awareness programs to ensure that customers and distributors manage and store products safely throughout their use cycle."
+      ],
+      "Product Use": [
+        "We are committed to developing high-quality specialty chemicals that promote sustainable industrial, agricultural, and pharmaceutical applications. Product formulations are designed to be safer, efficient, and compliant with environmental regulations. Our R&D teams continuously work on creating environmentally friendly molecules that reduce downstream emissions and enhance process safety for customers."
+      ],
+      "Product End of Life": [
+        "Anupam Rasayan actively promotes a circular economy approach by encouraging customers and partners to manage chemical waste responsibly at the end of the product’s life cycle. We engage in product stewardship initiatives, including take-back programs, solvent recovery, and resource regeneration projects. These efforts aim to reduce waste generation, improve material reuse, and extend the lifecycle of valuable resources."
+      ],
+      "Environmental Services and Advocacy": [
+        "Beyond our internal operations, Anupam Rasayan actively collaborates with industry associations, academic institutions, and government agencies to promote environmental awareness and sustainable development. We participate in forums, workshops, and community initiatives that encourage resource conservation, waste reduction, and renewable energy adoption. Through these advocacy efforts, we aim to foster a culture of environmental responsibility within and beyond the organization."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption",
+        "targets": [
+          {
+            "target": "Reduce overall energy consumption per unit of production by 25% by 2027 through process optimization, heat recovery systems, and energy-efficient technologies.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Transition to 25% renewable energy sources by 2027, primarily through solar and wind power integration across Sachin, Jhagadia, and Tanfac facilities.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve a 10% reduction in Scope 1, Scope 2 and GHG emissions by 2027 as part of the company’s Net Zero commitment.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Improve manufacturing energy efficiency by 20% by 2027 through process innovation and waste heat recovery systems.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Water",
+        "targets": [
+          {
+            "target": "Reduce freshwater withdrawal by 5% by 2027 through efficient water-use technologies and conservation initiatives.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Achieve 20% recycling and reuse of treated wastewater by 2027 across all sites.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Implement Zero Liquid Discharge (ZLD) systems at 100% of manufacturing locations to ensure zero untreated discharge by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Develop and maintain greenbelt coverage of at least 33% across all sites by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Plant at least 10,000 native trees annually across all units and nearby communities until 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Partner with at least three local environmental organizations by 2027 to support habitat restoration and conservation projects.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Reduce total particulate matter and VOC emissions by 10% by 2027 through continuous improvement in air-pollution control systems.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain 100% adherence to GPCB and CPCB standards each year by 2027 and beyond.",
+            "baseline": "2022",
+            "deadline": "2027 and beyond"
+          },
+          {
+            "target": "Replace 100% of outdated air filters and scrubbers with advanced units by 2027 for improved emission control",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals and Waste",
+        "targets": [
+          {
+            "target": "Divert 100% of total waste from landfill by 2027 through recycling, co-processing, and recovery programs.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain 100% compliance in hazardous waste management by 2027 in line with statutory requirements.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Adopt green chemistry substitutions for at least 10% of hazardous materials by 2027 to improve process safety.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Recycle or recover at least 20% of process solvents by 2027 to minimize chemical waste",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Develop and commercialize five new green chemistry molecules annually from 2023 to 2027 supporting sustainable agriculture and healthcare.",
+            "baseline": "2022",
+            "deadline": "2023 to 2027"
+          },
+          {
+            "target": "Ensure 100% compliance with REACH and GHS product safety standards by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Increase product resource efficiency by 10% by 2027 through innovation and formulation improvements.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct annual product life cycle assessments (LCA) for 2-3 molecules by 2027 to ensure environmental sustainability.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life",
+        "targets": [
+          {
+            "target": "Establish circular economy initiatives covering 100% of major product lines by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct end-of-life impact assessments for all major product categories by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Recover and reuse at least 25% of product packaging materials by 2027 through return programs.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Launch take-back and recycling initiatives by 2027 for select product streams.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Provide Material Safety Data Sheets (MSDS) for 100% of products by 2027 to ensure transparency and safe handling.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Conduct annual customer and distributor safety training covering 100% of product handlers by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure 100% compliance with labeling and hazard communication standards by 2027",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Maintain a Zero(0) incident record related to product safety by 2027 through continuous system enhancements.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services and Advocacy",
+        "targets": [
+          {
+            "target": "Conduct at least three external sustainability collaborations or events annually through 2027 with NGOs, academia, or industry associations.",
+            "baseline": "2022",
+            "deadline": "through 2027"
+          },
+          {
+            "target": "Implement annual environmental awareness campaigns in all local communities near operational sites by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Allocate at least 2% of CSR budget annually through 2027 to environmental restoration and conservation projects.",
+            "baseline": "2022",
+            "deadline": "through 2027"
+          },
+          {
+            "target": "Publish an annual sustainability report aligned with GRI and CDP frameworks each year through 2027.",
+            "baseline": "2022",
+            "deadline": "through 2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      5,
+      6,
+      8,
+      9,
+      12,
+      13,
+      16
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Approve the Environmental Management Policy and oversee its implementation across all sites."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Review annual environmental performance, targets, and compliance outcomes."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Allocate adequate resources for sustainability initiatives and Net Zero commitments."
+      },
+      {
+        "role": "Board of Directors & Sustainability Committee",
+        "duty": "Ensure alignment of environmental objectives with long-term business strategy."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Lead the execution of environmental programs and ensure accountability across units."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Promote a culture of environmental excellence and sustainable decision-making."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Integrate energy, water, and waste reduction goals into site-level KPIs."
+      },
+      {
+        "role": "Managing Director & Unit Heads",
+        "duty": "Report environmental performance and compliance status to the Board."
+      },
+      {
+        "role": "Environmental, Health & Safety (EHS) Department",
+        "duty": "Oversee implementation of the Environmental Management System (EMS) in line with ISO 14001 standards."
+      },
+      {
+        "role": "Environmental, Health & Safety (EHS) Department",
+        "duty": "Conduct internal audits, risk assessments, and environmental impact studies."
+      },
+      {
+        "role": "Environmental, Health & Safety (EHS) Department",
+        "duty": "Monitor GHG emissions, water, waste, and air quality parameters and maintain performance records."
+      },
+      {
+        "role": "Environmental, Health & Safety (EHS) Department",
+        "duty": "Ensure compliance with CPCB, GPCB, and MoEFCC regulatory requirements."
+      },
+      {
+        "role": "Environmental, Health & Safety (EHS) Department",
+        "duty": "Develop emergency preparedness and response plans for environmental incidents."
+      },
+      {
+        "role": "Environmental Safety Officer (Site-Level)",
+        "duty": "Supervise on-site compliance with environmental norms and permits."
+      },
+      {
+        "role": "Environmental Safety Officer (Site-Level)",
+        "duty": "Drive initiatives for energy conservation, pollution control, and waste minimization."
+      },
+      {
+        "role": "Environmental Safety Officer (Site-Level)",
+        "duty": "Coordinate with external agencies and regulators during inspections or audits."
+      },
+      {
+        "role": "Environmental Safety Officer (Site-Level)",
+        "duty": "Train employees and contractors on environmental responsibilities and safe practices."
+      },
+      {
+        "role": "Operations and Manufacturing Team",
+        "duty": "Implement sustainable manufacturing processes with minimal environmental footprint."
+      },
+      {
+        "role": "Operations and Manufacturing Team",
+        "duty": "Ensure optimal utilization of energy, water, and raw materials."
+      },
+      {
+        "role": "Operations and Manufacturing Team",
+        "duty": "Maintain equipment for emission and effluent control as per prescribed standards."
+      },
+      {
+        "role": "Operations and Manufacturing Team",
+        "duty": "Track operational performance metrics and promptly report deviations to EHS."
+      },
+      {
+        "role": "R&D and Product Development Team",
+        "duty": "Design and develop products using green chemistry and eco-friendly raw materials."
+      },
+      {
+        "role": "R&D and Product Development Team",
+        "duty": "Conduct life cycle assessments (LCA) for new products to minimize end-of-life impact."
+      },
+      {
+        "role": "R&D and Product Development Team",
+        "duty": "Innovate sustainable technologies that reduce emissions and waste generation."
+      },
+      {
+        "role": "R&D and Product Development Team",
+        "duty": "Collaborate with customers to develop environmentally safer product alternatives."
+      },
+      {
+        "role": "Environmental Compliance & Audit Team",
+        "duty": "Ensure adherence to ISO 14001, Responsible Care, and other environmental certifications."
+      },
+      {
+        "role": "Environmental Compliance & Audit Team",
+        "duty": "Conduct environmental audits and assessments across all operational sites."
+      },
+      {
+        "role": "Environmental Compliance & Audit Team",
+        "duty": "Prepare and submit compliance reports to statutory bodies on time."
+      },
+      {
+        "role": "Environmental Compliance & Audit Team",
+        "duty": "Manage data for GRI, CDP, and EcoVadis disclosures."
+      },
+      {
+        "role": "Environmental Compliance & Audit Team",
+        "duty": "Lead corporate environmental awareness and volunteering initiatives."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Source materials and services from environmentally responsible suppliers."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Implement green procurement criteria and supplier sustainability audits."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Encourage vendors to minimize packaging, waste, and emissions in the supply chain."
+      },
+      {
+        "role": "Procurement and Supply Chain Team",
+        "duty": "Track and report supply chain sustainability KPIs annually."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Comply with all environmental policies, procedures, and training requirements."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Participate actively in environmental improvement programs and initiatives."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Report environmental hazards, unsafe practices, or non-conformities promptly."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Support company goals for resource conservation, safety, and zero pollution."
+      }
+    ],
+    "monitoring": "Track key environmental KPIs, including energy use, GHG emissions, water consumption, and waste generation at all sites.\n\nConduct regular internal audits and site inspections to ensure environmental compliance and identify improvement areas.\n\nPublish an Annual Sustainability Report aligned with GRI Standards and disclose progress on environmental targets.\n\nShare periodic performance reports with the management and sustainability committee for review and action.\n\nMaintain ISO 14001:2015 certification across all facilities through regular audits and compliance checks.\n\nEngage third-party auditors for independent verification of environmental performance and legal adherence.",
+    "reviewMechanism": "The Sustainability Committee, in coordination with the Environmental, Health & Safety (EHS) Department, shall be responsible for conducting the annual review of this Environmental Management Policy. The review will evaluate the policy’s effectiveness, progress toward environmental targets, and compliance with legal and organizational requirements.\n\nNecessary updates or revisions arising from operational changes, new regulations, or stakeholder feedback will be approved by the Board of Directors and communicated across all sites to ensure ongoing alignment with Anupam Rasayan’s sustainability commitments."
+  },
+  "sourcePath": "Policies - Kenal/Anupam Rasayan/Environmental Management Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Anupam Rasayan/Environmental Management Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 17588,
+  "parsedAt": "2026-09-11T07:19:56.084Z"
+}

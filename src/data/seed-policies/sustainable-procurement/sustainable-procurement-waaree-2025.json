@@ -1,0 +1,190 @@
+{
+  "id": "sustainable-procurement-waaree-2025",
+  "name": "Waaree (2025)",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Green Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Waaree Energies Ltd. (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Gujarat – Surat",
+          "address": "Plot No. 231 – 236, Surat Special Economic Zone, Diamond Park Sachin, Surat 394230, Gujarat",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat – Tumb",
+          "address": "Survey No. 38/1, Tumb Village, Tumb, Umbergaon, Valsad, Gujarat – 396150",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat – Chikhli",
+          "address": "WAAREE SHREE GODIJI FACTORY, New Survey no. 1928 Village Degam, Taluka, Chikhli, Gujarat 396530",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Gujarat –Nandigram",
+          "address": "CBIPL NANDIGRAM Unnamed Road, Nandigam, Gujarat 396105",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Waaree Energies Ltd. (Group) is committed to integrating sustainability into every aspect of its operations, including the procurement of goods and services. This Green Procurement Policy outlines our commitment to sourcing responsibly, prioritizing environmental protection, ethical labor practices, and long-term value creation for our stakeholders. By working closely with our suppliers, partners, and stakeholders, Waaree ensures that our procurement practices align with our core values of sustainability, transparency, and integrity.",
+      "declaration": "Waaree Energies Ltd. is committed to ensuring that its procurement activities positively impact the environment, society, and local economies. Our commitment is centered on the following key areas.",
+      "scope": "This policy applies to all Waaree Energies Ltd. (Group) employees, contractors, suppliers, business partners involved in procurement activities globally, and is enforced across all operational sites. It covers all stages of procurement, from supplier selection to product lifecycle management, ensuring that sustainability considerations are integrated into every decision-making process at every location mentioned below."
+    },
+    "focusAreas": [
+      "Environmental Sustainability in Procurement",
+      "Labor Practices and Human Rights in Procurement",
+      "Fair Trade and Ethical Sourcing",
+      "Supplier Engagement and Development",
+      "Supplier Assessment",
+      "Supplier Code of Conduct",
+      "Capacity Building and Collaboration",
+      "Regular Audits",
+      "Communication and Transparency",
+      "Continuous Improvement"
+    ],
+    "qualitative": {
+      "Environmental Sustainability in Procurement": [
+        "Waaree is dedicated to reducing the environmental impact of its supply chain by sourcing materials and services from suppliers that comply with environmental regulations and promote sustainable practices.",
+        "Use renewable materials or recycled content in their products.",
+        "Employ energy-efficient production processes to minimize carbon emissions.",
+        "Implement waste reduction strategies and proper waste management systems.",
+        "Have a demonstrated commitment to water conservation and responsible water usage in their operations.",
+        "Waaree ensures that environmental performance is a key factor in supplier selection, fostering collaboration with suppliers to reduce the ecological footprint across our supply chain."
+      ],
+      "Labor Practices and Human Rights in Procurement": [
+        "Waaree ensures that all suppliers and contractors comply with ethical labor practices and human rights standards.",
+        "Abide by national and international labor laws, including those related to wages, working hours, and benefits.",
+        "Guarantee safe and healthy working conditions for all employees, minimizing risks to health and safety.",
+        "Uphold strict policies against child labor, forced labor, and human trafficking, ensuring compliance across the entire supply chain.",
+        "Foster fair treatment and equal opportunities regardless of gender, race, religion, or background, promoting diversity, equity, and inclusion within their workforce.",
+        "Waaree’s suppliers must demonstrate their adherence to these labor and human rights standards, and the company will conduct regular audits to ensure compliance."
+      ],
+      "Fair Trade and Ethical Sourcing": [
+        "Waaree actively seeks suppliers that embrace fair trade principles, ensuring that products are sourced ethically, with fair wages paid to workers and no exploitation of vulnerable populations. This includes sourcing from small producers and cooperatives that follow fair trade guidelines, promoting equity in the supply chain."
+      ],
+      "Supplier Engagement and Development": [
+        "Waaree is committed to working with suppliers to improve their sustainability performance. We provide support through training, capacity-building programs, and continuous dialogue to help suppliers meet the evolving sustainability requirements of Waaree and the global market. Supplier performance is regularly evaluated to ensure alignment with Waaree’s sustainability goals."
+      ],
+      "Supplier Assessment": [
+        "Waaree will conduct a thorough assessment of all suppliers to evaluate their environmental impact, labor practices, human rights compliance, and adherence to fair trade principles. This will include site visits, documentation reviews, and third-party certifications where applicable."
+      ],
+      "Supplier Code of Conduct": [
+        "Waaree has developed a Supplier Code of Conduct that outlines the company’s expectations regarding environmental performance, ethical labor practices, human rights, and fair trade. All suppliers are required to sign and comply with this code, which is reviewed periodically to align with evolving sustainability standards."
+      ],
+      "Capacity Building and Collaboration": [
+        "Waaree will work with suppliers to enhance their sustainability practices through training programs and collaboration. This includes workshops on reducing carbon emissions, improving energy efficiency, and upholding labor rights standards."
+      ],
+      "Regular Audits": [
+        "Waaree will conduct regular audits of suppliers, particularly in high-risk regions, to ensure compliance with its sustainability and ethical sourcing policies. Any supplier found in violation of these standards will be required to take corrective action, with continuous non-compliance resulting in the termination of the partnership."
+      ],
+      "Communication and Transparency": [
+        "Waaree’s Green Procurement Policy will be made publicly available on the company website and communicated to all suppliers and business partners.",
+        "Waaree will ensure that all employees involved in procurement are trained on the principles of sustainable procurement, enabling them to make informed decisions and engage in meaningful dialogue with suppliers."
+      ],
+      "Continuous Improvement": [
+        "Waaree Energies Ltd. is committed to continuously improving its procurement practices to drive sustainability and ethical standards throughout the supply chain. As global sustainability challenges evolve, Waaree will regularly update its policies, engage with suppliers, and leverage innovation to ensure the company remains at the forefront of responsible sourcing."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Sustainability in Procurement",
+        "targets": [
+          {
+            "target": "Ensure that 75% of suppliers meet Waaree’s environmental sustainability criteria by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Reduce carbon emissions across the supply chain by 10% by 2025 through the procurement of energy-efficient materials and services.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase the procurement of renewable or recycled materials by 20% by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Labor Practices and Human Rights in Procurement",
+        "targets": [
+          {
+            "target": "Conduct audits of 100% of high-risk suppliers for labor practices and human rights compliance by 2024.",
+            "baseline": "2022",
+            "deadline": "2024"
+          },
+          {
+            "target": "Ensure that 100% of suppliers comply with Waaree’s standards on fair wages, working conditions, and labor rights by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Fair Trade and Ethical Sourcing",
+        "targets": [
+          {
+            "target": "Ensure that 50% of goods sourced from developing regions meet fair trade standards by 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Procurement Officer (CPO)",
+        "duty": "The CPO is responsible for overseeing the implementation of the Green Procurement Policy, ensuring that procurement strategies align with Waaree’s sustainability and ethical goals."
+      },
+      {
+        "role": "Sustainability and Compliance Team",
+        "duty": "This team works closely with the procurement department to evaluate suppliers, monitor compliance, and conduct audits. They are also responsible for developing and updating the Supplier Code of Conduct."
+      },
+      {
+        "role": "Procurement Managers",
+        "duty": "Responsible for integrating sustainability criteria into procurement decisions and engaging with suppliers to ensure alignment with Waaree’s environmental and labor standards."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Suppliers are responsible for adhering to Waaree’s sustainability and labor policies, reporting on their environmental and labor practices, and participating in audits and improvement programs as needed."
+      }
+    ],
+    "monitoring": "Supplier Performance Reports: Waaree will prepare regular performance reports on suppliers’ compliance with environmental, labor, and ethical standards. These reports will be used to inform procurement decisions and foster continuous improvement.\n\nAudit Reports: Results from supplier audits will be reviewed by the Sustainability and Compliance Team, and any non-compliance issues will be addressed immediately through corrective action plans.",
+    "reviewMechanism": "The Green Procurement Policy will be reviewed annually by the Chief Procurement Officer (CPO) and the Sustainability and Compliance Team. The review will evaluate progress toward the Quantitative targets and assess the policy’s effectiveness in adapting to evolving sustainability challenges. Any necessary updates or adjustments will be made, and changes will be communicated to all employees and suppliers. The review will ensure continuous alignment with Waaree’s sustainability goals and evolving global best practices."
+  },
+  "sourcePath": "Policies - Kenal/Waaree (2025)/Green Procurement Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Waaree (2025)/Green Procurement Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 10367,
+  "parsedAt": "2026-09-11T07:31:34.230Z"
+}

@@ -1,0 +1,298 @@
+{
+  "id": "sustainable-procurement-gautam-solar",
+  "name": "Gautam Solar",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Gautam Solar Private Limited",
+      "industry": "",
+      "site": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+      "sites": [
+        {
+          "location": "Registered Office",
+          "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Factory Unit 1",
+          "address": "Plot 67-70, Sec-8A, SIDCUL, Haridwar, Uttarakhand- 249403, India",
+          "primaryFunction": "Factory Unit 1"
+        },
+        {
+          "location": "Factory Unit 2",
+          "address": "7 KM Milestone, Tosham Road, Bhiwani, Haryana-127032, India",
+          "primaryFunction": "Factory Unit 2"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "D-120, Okhla Industrial Area, Phase-1, New Delhi-110020, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Gautam Solar Private Limited recognizes that sustainable procurement is essential to achieving our environmental, social, and governance (ESG) goals. Beyond conventional procurement criteria (price, quality, reliability, delivery), the Company is committed to managing the environmental and social risks embedded in its supply chain.",
+      "declaration": "This policy applies to all procurement decisions and aims to integrate sustainability into supplier selection, evaluation, and development. It aligns with the UN Sustainable Development Goals (SDGs), particularly SDG 12 (Responsible Consumption & Production), SDG 8 (Decent Work), and SDG 13 (Climate Action).",
+      "scope": "This policy applies to all employees, contractors, and agents involved in procurement, sourcing, supply chain management, and vendor management at Gautam Solar Private Limited. It covers all categories of goods and services procured by the Company, including raw materials, components, packaging, logistics, maintenance, and indirect services."
+    },
+    "focusAreas": [
+      "Environmental Sustainability in Supply Chain",
+      "Social Sustainability in Supply Chain",
+      "Supplier Assessment",
+      "Supply Chain Emissions (Scope 3)",
+      "Waste & Materials",
+      "Working Conditions & Wages",
+      "Health & Safety / Grievance",
+      "Sustainable Procurement Coverage",
+      "Supplier Improvement & Remediation",
+      "Procurement Team Competency",
+      "Policy Compliance & Reporting"
+    ],
+    "qualitative": {
+      "Environmental Sustainability in Supply Chain": [
+        "Manage environmental risks (carbon emissions, waste, water use, chemical management) alongside price, quality, and reliability",
+        "Prioritize suppliers that demonstrate best environmental practices (e.g., ISO 14001, renewable energy use, circular economy)",
+        "Reduce supply chain Scope 3 greenhouse gas emissions",
+        "Promote sustainable packaging and logistics"
+      ],
+      "Social Sustainability in Supply Chain": [
+        "Manage social risks (working hours, wages, health & safety, child/forced labour, discrimination, freedom of association) in procurement decisions",
+        "Prefer suppliers that provide decent working conditions, fair wages, and respect for human rights",
+        "Require suppliers to comply with applicable labour laws and international standards (ILO conventions)",
+        "Conduct social audits for high‑risk suppliers"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Assessment",
+        "targets": [
+          {
+            "target": "100% of new tier‑1 suppliers (by spend) assessed on environmental criteria before onboarding",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of existing tier‑1 suppliers re‑assessed on environmental performance every 2 years",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "90% of procurement team employees trained on environmental issues in supply chain annually",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of new tier‑1 suppliers assessed on social criteria (wages, working hours, health & safety, child/forced labour)",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of existing tier‑1 suppliers re‑assessed on social performance every 2 years",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "90% of procurement team employees trained on social issues in supply chain annually",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Supply Chain Emissions (Scope 3)",
+        "targets": [
+          {
+            "target": "20% reduction in supply chain GHG emissions (Scope 3 purchased goods & services) per unit of production",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "50% of tier‑1 suppliers by spend report their own GHG emissions annually",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "30% of tier‑1 suppliers by spend adopt renewable energy for ≥ 20% of their operations",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Waste & Materials",
+        "targets": [
+          {
+            "target": "100% of suppliers of packaging materials use ≥ 50% recycled or sustainably sourced content",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Zero hazardous waste non‑compliance incidents among key suppliers",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of logistics providers have a green fleet improvement plan (e.g., fuel efficiency, EV adoption)",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions & Wages",
+        "targets": [
+          {
+            "target": "100% of tier‑1 suppliers comply with legal working hour limits (overtime ≤ 48 hours/month or local law)",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of tier‑1 suppliers pay at least minimum wage; 50% pay a living wage by FY 2030‑31",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Zero substantiated cases of child labour or forced labour in tier‑1 supply chain",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Health & Safety / Grievance",
+        "targets": [
+          {
+            "target": "100% of tier‑1 suppliers have a formal health & safety management system (e.g., ISO 45001 or equivalent)",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of tier‑1 suppliers provide grievance mechanisms for workers",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "100% of reported supplier social incidents investigated and remediated within 60 days",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Procurement Coverage",
+        "targets": [
+          {
+            "target": "100% of tier‑1 suppliers (by spend) covered by sustainability assessment (environmental + social)",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Improvement & Remediation",
+        "targets": [
+          {
+            "target": "100% of non‑compliant suppliers (critical findings) have a corrective action plan; 90% of plans closed within 12 months",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Procurement Team Competency",
+        "targets": [
+          {
+            "target": "100% of procurement team members complete annual sustainable procurement training (minimum 8 hours/year)",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Policy Compliance & Reporting",
+        "targets": [
+          {
+            "target": "Zero instances of procurement decisions knowingly overriding sustainability criteria without documented justifications and top management approval",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      12,
+      8,
+      13
+    ],
+    "responsibilities": [
+      {
+        "role": "Head of Procurement / Supply Chain",
+        "duty": "Overall ownership of this policy"
+      },
+      {
+        "role": "Head of Procurement / Supply Chain",
+        "duty": "Integrate environmental and social criteria into sourcing processes, RFPs, and supplier scorecards"
+      },
+      {
+        "role": "Head of Procurement / Supply Chain",
+        "duty": "Ensure procurement team receives annual sustainability training"
+      },
+      {
+        "role": "Sustainability / EHS Team",
+        "duty": "Provide technical guidance on environmental and social risk assessment"
+      },
+      {
+        "role": "Sustainability / EHS Team",
+        "duty": "Conduct or coordinate supplier audits (environmental and social)"
+      },
+      {
+        "role": "Sustainability / EHS Team",
+        "duty": "Track and report performance against targets"
+      },
+      {
+        "role": "Procurement Officers & Buyers",
+        "duty": "Apply sustainability criteria in all supplier selection and evaluation decisions"
+      },
+      {
+        "role": "Procurement Officers & Buyers",
+        "duty": "Document supplier sustainability performance"
+      },
+      {
+        "role": "Procurement Officers & Buyers",
+        "duty": "Escalate non‑compliant suppliers to management"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Provide resources and strategic direction for sustainable procurement"
+      },
+      {
+        "role": "Top Management",
+        "duty": "Review progress annually and approve corrective actions for underperforming suppliers"
+      },
+      {
+        "role": "All Employees (Non‑Procurement)",
+        "duty": "Raise awareness of any supplier sustainability concerns through designated channels"
+      }
+    ],
+    "monitoring": "The Company shall monitor progress through:\n\nQuarterly procurement dashboards tracking supplier sustainability scores\n\nAnnual supplier sustainability surveys and audits\n\nTraining completion records for procurement team\n\nIncident reports related to supplier environmental or social non‑compliance",
+    "reviewMechanism": "This policy and its targets shall be reviewed annually by the Head of Procurement and Top Management.\n\nNext review date: 01/02/2027\n\nCorrective action plans shall be developed for missed targets. Suppliers that fail to improve may be subject to probation or removal."
+  },
+  "sourcePath": "Policies - Kenal/Gautam Solar/Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Gautam Solar/Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 7603,
+  "parsedAt": "2026-09-11T07:23:44.040Z"
+}

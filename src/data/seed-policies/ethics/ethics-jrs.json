@@ -1,0 +1,504 @@
+{
+  "id": "ethics-jrs",
+  "name": "JRS",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Business Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "JRS Pharma & Gujarat Microwax Pvt Ltd",
+      "industry": "",
+      "site": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "Unit-1",
+          "address": "Survey No. 291/1 & 2, Kalol Mehsana Highway, Nandasan – 382705 Dist : Mehsana, North Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-2",
+          "address": "Survey No. 292/293, Kalol Mehsana Highway, Nandasan – 382705 Dist : Mehsana, North Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-3",
+          "address": "Survey No. 99/100, Kalol Mehsana Highway, Vill.: Chandarda, Ta. Kadi, Dist.: Mehsana, Gujarat, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Unit-4",
+          "address": "Survey No. 69/3, Kalol-Mehsana Highway, Vill.: Chandarda Ta. Kadi, Dist.: Mehsana, Gujarat, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "401, Sarthik Square, S.G. Highway, Ahmedabad – 380015"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "The Business Ethics Policy of JRS Pharma & Gujarat Microwax Pvt Ltd. outlines the Company’s commitment to conducting all business activities with integrity, transparency, and accountability. The policy establishes a common framework of ethical principles and behavioral expectations that guide decision-making across all functions, operations, and business relationships.\n\nEthical conduct is fundamental to maintaining trust with customers, regulators, employees, suppliers, and other stakeholders. This Business Ethics Policy defines the ethical principles, expectations, and standards that guide decision-making and business conduct across all operations, business relationships, and geographies in which the Company operates.",
+      "declaration": "The purpose of this Business Ethics Policy is to establish a clear framework for ethical conduct and responsible business practices at JRS Pharma & Gujarat Microwax Pvt. Ltd. This policy aims to:\n\nPromote integrity, honesty, and transparency in all business activities.\n\nPrevent corruption, bribery, fraud, and unethical conduct.\n\nEnsure compliance with applicable laws, regulations, and industry standards.\n\nProtect confidential information, company assets, and stakeholder trust.\n\nStrengthen ethical culture and accountability across the organization.",
+      "scope": "This policy applies to all operations, manufacturing units, warehouses, offices, laboratories, utilities, and support functions of JRS Pharma & Gujarat Microwax Pvt. Ltd. It covers all employees, workers, contract personnel, suppliers, service providers, and all stakeholders (internal and external) operating on behalf of the JRS Pharma & Gujarat Microwax Pvt. Ltd."
+    },
+    "focusAreas": [
+      "Anti-Bribery & Anti-Corruption",
+      "Fraud Prevention & Financial Integrity",
+      "Conflict of Interest",
+      "Fair Competition & Ethical Marketing",
+      "Information Security & Confidentiality",
+      "Anti-Money Laundering (AML)",
+      "Third-Party Ethics & Responsible Business Conduct",
+      "Legal & Regulatory Compliance",
+      "Speaking Up & Accountability"
+    ],
+    "qualitative": {
+      "Anti-Bribery & Anti-Corruption": [
+        "JRS Pharma & Gujarat Microwax Pvt Ltd conduct all business activities with integrity, honesty, and transparency.",
+        "Zero tolerance is maintained toward bribery, corruption, fraud, and any form of unethical or illegal conduct.",
+        "We aim to maintain a zero-tolerance culture toward bribery, corruption, facilitation payments, and improper influence across all business activities.",
+        "We aim to ensure that all employees clearly understand anti-bribery and anti-corruption requirements through regular training, awareness programs, and ethical communication initiatives.",
+        "We commit to implementing a strengthened internal control mechanism for anti-bribery and anti-corruption, including defined roles and approvals, periodic internal audits, transaction-level checks, and documented monitoring controls to detect, prevent, and address potential ethical risks.",
+        "We commit to strengthening compliance culture by integrating anti-bribery principles into daily business processes, approvals, and decision-making.",
+        "We continue to enhance transparency in gifts, hospitality, sponsorships, donations, and interactions with government officials and customers.",
+        "We will implement new internal controls such as structured approval procedures, role separation, and written conflict-of-interest disclosures to strengthen transparency and reduce ethical and compliance risks.",
+        "Refuse and report any bribe or improper benefit.",
+        "Declare gifts and hospitality as per Company procedures.",
+        "Conduct third-party engagements transparently.",
+        "Do not offer, accept, or authorize bribes or kickbacks.",
+        "Do not use agents or intermediaries to influence decisions improperly.",
+        "Do not disguise improper payments as business expenses."
+      ],
+      "Fraud Prevention & Financial Integrity": [
+        "Strong financial controls are implemented to ensure accuracy, transparency, and integrity of financial and operational records.",
+        "We aim to ensure that all financial, quality, laboratory, and operational records are accurate, complete, and traceable.",
+        "We aim to build a strong ethical culture by providing regular and role-based training to employees on business ethics, anti-corruption, fraud prevention, and compliance requirements, ensuring awareness, understanding, and ethical decision-making across the organization.",
+        "We aim to continuously strengthen internal audit and review mechanisms to assess the effectiveness of ethical controls, identify potential risks, and ensure compliance with the Business Ethics Policy, applicable laws, and internal procedures.",
+        "We continuously strengthen internal controls, such as dual authorization for payments and periodic independent internal audits, to detect and prevent fraud.",
+        "We maintain a zero-tolerance approach toward fraud and committed to upholding the highest standards of accuracy, transparency, and integrity in all financial and operational activities.",
+        "We will introduce a centralized compliance and approval tracking system to document high-risk transactions, approvals, and exceptions, enabling improved oversight, traceability, and fraud prevention.",
+        "We promote a culture of honesty and accountability where fraudulent behavior is neither tolerated nor ignored.",
+        "Maintain accurate financial and operational records.",
+        "Follow approval hierarchies and internal controls.",
+        "Report suspected fraud or misuse of assets immediately.",
+        "Do not manipulate financial records or expense claims.",
+        "Do not approve transactions without proper authorization.",
+        "Do not misuse company funds, assets, or information."
+      ],
+      "Conflict of Interest": [
+        "Employees and contract workers are required to disclose and avoid conflicts of interest.",
+        "We aim to ensure that all employees proactively disclose actual, potential, or perceived conflicts of interest.",
+        "We aim to integrate conflict of interest checks into key business processes such as procurement, hiring, promotions, and third-party engagement decisions.",
+        "We aim to strengthen accountability by defining clear responsibilities for reviewing, approving, and managing declared conflicts of interest and related mitigation actions.",
+        "We plan to implement a formal conflict of interest identification and disclosure procedure, including periodic declarations, defined review responsibilities, and documented mitigation actions.",
+        "We foster a transparent environment where conflicts are reviewed objectively and managed in the best interest of the Company.",
+        "We promote ethical decision-making that is free from personal, financial, or external influence.",
+        "We aim to build employee awareness and understanding of conflict-of-interest risks through regular communication, guidance, and inclusion in ethics training programs.",
+        "Disclose actual or potential conflicts promptly.",
+        "Avoid participating in decisions where conflicts exist.",
+        "Seek guidance when in doubt.",
+        "Do not award business to relatives or friends without disclosure.",
+        "Do not use confidential information for personal gain.",
+        "Do not influence decisions for personal benefit."
+      ],
+      "Information Security & Confidentiality": [
+        "Confidential, proprietary, and personal information is protected and handled responsibly.",
+        "We aim to protect all confidential, proprietary, technical, customer, and employee information through controlled access, defined authorization levels, and secure data-handling practices to prevent unauthorized access, disclosure, or misuse.",
+        "We continuously enhance cybersecurity resilience by strengthening technical safeguards, access controls, periodic reviews, and employee awareness on secure information-handling practices.",
+        "We promote a culture where data privacy and information security are treated as shared responsibilities.",
+        "We aim to ensure full compliance with applicable data protection, information security, and privacy laws by implementing robust controls, procedures, and governance mechanisms to protect confidential, proprietary, and personal information.",
+        "We commit to timely response, investigation, and mitigation of any data breaches or security incidents.",
+        "We aim to strengthen information security and data-privacy awareness through regular, role-based training, reinforcing secure data handling, confidentiality obligations, and compliance across all functions.",
+        "We aim to strengthen information security and data-privacy awareness by providing regular and role-based training to employees, ensuring responsible handling of data and adherence to confidentiality requirements across all functions.",
+        "Protect confidential and proprietary information.",
+        "Use approved IT systems and secure communication channels.",
+        "Report data breaches or cyber incidents promptly.",
+        "Do not share passwords or sensitive information.",
+        "Do not store company data on unauthorized devices.",
+        "Do not disclose confidential information publicly or on social media."
+      ],
+      "Anti-Money Laundering (AML)": [
+        "We aim to prevent the misuse of our operations for money laundering, financial crime, or other illegal activities by applying risk-based controls and oversight across business operations.",
+        "We commit to establishing a standardized AML control framework covering due diligence, transaction monitoring, escalation, and record-keeping.",
+        "We promote transparency, traceability, and legitimacy in all financial transactions through proper documentation, authorization controls, and record-keeping practices.",
+        "We continuously strengthen customer, supplier, and business-partner due diligence through structured screening, risk assessment, and periodic monitoring processes.",
+        "We commit to complying with all applicable anti-money laundering (AML) laws and regulatory requirements through documented policies, defined responsibilities, and internal controls.",
+        "We aim to ensure full compliance with applicable anti-money laundering laws and regulations by implementing robust due-diligence, monitoring, and reporting processes to prevent misuse of the Company’s operations for illegal financial activities.",
+        "We aim to strengthen AML awareness by providing regular and role-based training to employees and relevant third parties, ensuring they can identify, prevent, and report suspicious transactions or financial behaviors."
+      ],
+      "Third-Party Ethics & Responsible Business Conduct": [
+        "Suppliers, contractors, and business partners are expected to follow ethical standards aligned with this policy.",
+        "We aim to ensure that suppliers, distributors, agents, and contractors adhere to ethical standards aligned with this policy.",
+        "We integrate ethics expectations into supplier onboarding, contracting, and performance monitoring processes.",
+        "We promote responsible sourcing and ethical conduct throughout the value chain.",
+        "We take corrective and preventive actions where ethical risks or violations are identified among third parties.",
+        "Engage with ethically compliant business partners.",
+        "Include ethics and compliance clauses in contracts.",
+        "Monitor third-party behavior regularly.",
+        "Do not engage third parties to perform unethical acts.",
+        "Do not ignore red flags or suspicious behavior.",
+        "Do not continue relationships with non-compliant partners."
+      ],
+      "Integrity & Honest Conduct": [
+        "Record and report data accurately and completely.",
+        "Escalate errors, deviations, or concerns without delay.",
+        "Take accountability for assigned responsibilities.",
+        "Do not manipulate or falsify records, test results, or reports.",
+        "Do not hide mistakes or pressure others to do so.",
+        "Do not misrepresent facts to customers, auditors, or regulators."
+      ],
+      "Legal & Regulatory Compliance": [
+        "The Company ensures compliance with all applicable laws, regulations, and statutory requirements.",
+        "Comply with all applicable laws, regulations, and internal policies.",
+        "Cooperate fully during audits and inspections.",
+        "Seek guidance when unsure about compliance requirements.",
+        "Do not bypass legal or regulatory requirements.",
+        "Do not submit false, misleading, or incomplete information.",
+        "Do not obstruct inspections or audits."
+      ],
+      "Fair Competition & Ethical Marketing": [
+        "The Company promotes fair competition and ethical marketing practices.",
+        "Compete fairly and ethically in the marketplace.",
+        "Use accurate, approved, and substantiated claims.",
+        "Respect competition and antitrust laws.",
+        "Do not make false or misleading claims.",
+        "Do not engage in price-fixing or unfair trade practices.",
+        "Do not offer improper incentives to customers."
+      ],
+      "Speaking Up & Accountability": [
+        "Ethical concerns can be reported in good faith without fear of retaliation.",
+        "Report concerns in good faith through designated channels.",
+        "Cooperate with investigations.",
+        "Support a culture of ethical accountability.",
+        "Do not retaliate against whistleblowers.",
+        "Do not ignore unethical behavior.",
+        "Do not obstruct investigations or hide information."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Bribery & Anti-Corruption",
+        "targets": [
+          {
+            "target": "We aim to achieve 100% completion of annual business ethics and anti-corruption training for all employees by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim that 100% of contracts with agents, distributors, consultants, and key suppliers include anti-bribery and ethics clauses by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We continue to maintain zero confirmed cases of bribery, facilitation payments, or improper influence each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to record and review 100% of gifts, hospitality, and sponsorships through approved registers annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to achieve 100% compliance with applicable anti-bribery and anti-corruption laws, internal policies, and procedures across all operations and business activities each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention & Financial Integrity",
+        "targets": [
+          {
+            "target": "We aim to maintain zero cases of financial fraud annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We target 100% compliance with anti-fraud regulations.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to provide fraud awareness training annually to 100% of employees by 2028",
+            "baseline": "Baseline year 2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure 100% of financial, quality, and operational records are subject to internal audits as per audit plans by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We commit to investigate 100% of reported fraud or misconduct allegations within 30 days by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to close at least 90% of fraud-related corrective and preventive actions within defined timelines by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to conduct fraud-risk assessments at 100% of operational sites at least once every two years.",
+            "baseline": "",
+            "deadline": "At least once every two years"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "We aim to maintain zero unresolved conflicts of interest annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to achieve 100% annual conflict-of-interest declarations from all employees by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure 100% of declared conflicts are documented, assessed, and managed through mitigation plans.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to review at least 80% of conflict declarations from high-risk roles within 10 working days.",
+            "baseline": "",
+            "deadline": "Within 10 working days"
+          },
+          {
+            "target": "We aim to provide conflict-of-interest awareness training to 100% of employees by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Fair Competition & Ethical Marketing",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% of marketing, promotional, and product communication materials undergo internal compliance review prior to release.",
+            "baseline": "",
+            "deadline": "Prior to release"
+          },
+          {
+            "target": "We aim to maintain zero confirmed cases of misleading advertising, off-label promotion, or anti-competitive behavior annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to conduct annual compliance reviews of sales and marketing practices across 100% of relevant functions.",
+            "baseline": "",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Information Security & Confidentiality",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% of employees receive annual information security and data privacy training by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to implement access controls, encryption, and cybersecurity safeguards on at least 95% of critical IT systems by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to respond to at least 80% of reported data security incidents within 72 hours.",
+            "baseline": "",
+            "deadline": "Within 72 hours"
+          },
+          {
+            "target": "We aim to maintain zero critical data breaches incidents annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We target 100% compliance with GDPR or equivalent standards.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to implement multi-factor authentication across 100% of digital platforms by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering (AML)",
+        "targets": [
+          {
+            "target": "We aim to maintain zero cases filed against the AML Compliance annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to ensure 100% of employee received the AML training annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to screen 100% of customers, distributors, and third-party partners prior to onboarding by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to re-screen at least 70% of high-risk partners annually to identify emerging risks by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We continue to process 100% of payments through traceable and approved banking channels by 2028",
+            "baseline": "2022 as a baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure 100% of suspicious transactions are escalated and reviewed in line with regulatory requirements.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Third-Party Ethics & Responsible Business Conduct",
+        "targets": [
+          {
+            "target": "We aim to conduct ethics and compliance due diligence for 100% of high-risk suppliers, distributors, and agents by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to include ethics and compliance clauses in 100% of new and renewed supplier contracts.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to close at least 90% of identified third-party ethics gaps within defined timelines by 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to provide ethics awareness communication or training to at least 70% of key suppliers by FY 2028",
+            "baseline": "2022 baseline year",
+            "deadline": "FY 2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Approves the Business Ethics Policy and provides strategic direction for ethical conduct across the Company."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Reviews significant ethics risks, incidents, investigation outcomes, and overall ethics performance on a periodic basis."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Approves major revisions to the Business Ethics Policy and related governance frameworks."
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Supports the effective implementation of the Business Ethics Policy across all functions and locations."
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Integrates ethical considerations into business strategy, decision-making, and operational planning."
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Reviews ethics-related key performance indicators, audit findings, and corrective action status."
+      },
+      {
+        "role": "Compliance / Ethics Officer",
+        "duty": "Leads the implementation, administration, and continuous improvement of the Business Ethics Policy."
+      },
+      {
+        "role": "Compliance / Ethics Officer",
+        "duty": "Receives, documents, and investigates reported ethics concerns in a fair, confidential, and impartial manner."
+      },
+      {
+        "role": "Compliance / Ethics Officer",
+        "duty": "Coordinates with HR, Legal, Internal Audit, and other functions to implement corrective and preventive actions."
+      },
+      {
+        "role": "Department Heads / Functional Managers",
+        "duty": "Ensure that employees within their departments understand and comply with the Business Ethics Policy."
+      },
+      {
+        "role": "Department Heads / Functional Managers",
+        "duty": "Embed ethical principles into daily operations, approvals, and business decisions."
+      },
+      {
+        "role": "Department Heads / Functional Managers",
+        "duty": "Implement corrective actions arising from audits, investigations, or management reviews."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Integrates ethics and compliance expectations into recruitment, onboarding, performance management, and disciplinary processes."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Ensures consistent and fair handling of ethics-related misconduct in line with Company policies and labor laws."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Maintains records related to policy acknowledgements, training completion, and disciplinary actions."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "All employees and contract workers are required to understand, comply with, and consistently follow the ethical principles and behavioral standards outlined in this Business Ethics Policy."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Understand and comply with the Business Ethics Policy and related procedures."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Act with honesty, integrity, and professionalism in all business activities."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Report suspected misconduct or policy violations through designated reporting channels, without fear of retaliation."
+      }
+    ],
+    "monitoring": "The Company is committed to continuously improving its ethical performance through regular monitoring, evaluation, and corrective actions. The effectiveness of the Business Ethics Policy is reviewed through audits, compliance checks, training records, incident tracking, and management reporting. Key ethics indicators and emerging risks are periodically assessed, and findings are used to implement corrective and preventive measures, update policies and training, and strengthen ethical culture and compliance across the organization.\n\nJRS Pharma encourages employees, contract workers, and business partners to report any suspected unethical behavior, misconduct, or violations of this Business Ethics Policy in good faith. Reports may be raised through designated internal channels such as line management, Human Resources, or the Compliance function, and will be handled in a confidential, fair, and timely manner. The Company strictly prohibits retaliation against individuals who report concerns honestly and cooperates fully with investigations and corrective actions.\n\nAny violation of the Business Ethics Policy is treated as a serious breach of trust and responsibility.\n\nAll reported or identified violations are reviewed through a fair, confidential, and impartial process, led by the Compliance function in coordination with Human Resources, Legal, Internal Audit, or other relevant departments, depending on the nature and severity of the issue.\n\nViolations involving bribery, corruption, fraud, falsification of records, data privacy breaches, anti-competitive practices, or deliberate non-compliance with laws may result in immediate escalation to senior management.\n\nFor violations involving third parties, the Company may implement corrective action plans, enhanced monitoring, suspension, or termination of the business relationship.\n\nThe Company will immediately initiate a confidential and impartial investigation led by the Compliance function, in coordination with Human Resources, Legal, and Internal Audit, as applicable.\n\nIf any employee, contract worker, or business partner violates this Business Ethics Policy, the Company may initiate a confidential, fair, and impartial investigation led by the Compliance function in coordination with Human Resources, Legal, or Internal Audit, as appropriate.",
+    "reviewMechanism": "This Business Ethics Policy is reviewed at least once every year or as per needed by Compliance Officer to ensure its continued suitability, adequacy, and effectiveness. The review process considers changes in applicable laws and regulations, industry best practices, organizational structure, business activities, and evolving ESG and stakeholder expectations.\n\nEffective Date: 01 January 2025\n\nLast review date:  01 January 2026\n\nNext review date: 01 January 2027\n\nRevision number: 1.0"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/JRS/Policies/3. Business Ethics Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/JRS/Policies/3. Business Ethics Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 27984,
+  "parsedAt": "2026-09-11T07:10:07.239Z"
+}

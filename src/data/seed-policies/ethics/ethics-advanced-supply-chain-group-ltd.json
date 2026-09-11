@@ -1,0 +1,301 @@
+{
+  "id": "ethics-advanced-supply-chain-group-ltd",
+  "name": "Advanced Supply Chain Group Ltd",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Ethics Roadmap.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Advanced Supply Chain Group Limited (ASCG)",
+      "industry": "",
+      "site": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ",
+      "sites": [
+        {
+          "location": "Head Office – Bradford (J26), United Kingdom",
+          "address": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "ASCG Corby (Site 1), United Kingdom",
+          "address": "Units 1–3, Eismann Way, Corby, Northamptonshire, NN17 5ZB",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Corby (Site 2), United Kingdom",
+          "address": "Hunters Point, Brakey Road, Corby, Northamptonshire, NN17 5JE",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Sheffield, United Kingdom",
+          "address": "PLP Smithywood, 6 Cowley Way, Sheffield, S35 1QP",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Hong Kong, Hong Kong",
+          "address": "21st Floor, Edinburgh Tower, The Landmark, 15 Queen’s Road Central, Hong Kong",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG International, UAE",
+          "address": "Al Fattan Plaza, Airport Road, Office 712, Al Garhoud, Dubai, UAE",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Germany – Nettetal, Germany",
+          "address": "Herrenpfad-Süd 40, 41334 Nettetal, Deutschland",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Advanced Supply Chain Group Limited (ASCG), a Reconomy Group company, recognises that ethical conduct and integrity are essential to sustainable business. In alignment with Reconomy’s group-wide strategy, we have developed this Business Ethics & Integrity Roadmap to articulate our strategic priorities and measurable commitments across anti-corruption, fraud prevention, money laundering, conflicts of interest, and information security.\n\nThis roadmap outlines how ASCG intends to advance its ethical performance, ensure legal compliance, and foster a culture of transparency, accountability, and trust.",
+      "declaration": "ASCG is committed to achieving the following general Ethics objectives:\n\nPrevent and detect bribery, fraud, money laundering, and unethical behaviour.\n\nPromote a culture of transparency, accountability, and lawful conduct.\n\nProtect company and customer information from unauthorised access or misuse.\n\nEnsure employees avoid actual or perceived conflicts of interest.\n\nComply with all relevant laws including the UK Bribery Act 2010 and GDPR.",
+      "scope": "This roadmap applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and any individuals acting on behalf of Advanced Supply Chain Group Limited (ASCG).\n\nIt covers all ASCG operational, administrative, and strategic activities across the following sites and regions:"
+    },
+    "focusAreas": [
+      "Money Laundering Prevention",
+      "Fraud Prevention",
+      "Anti-Bribery and Corruption",
+      "Conflict of Interest",
+      "Information and Cyber Security"
+    ],
+    "qualitative": {
+      "Money Laundering Prevention": [
+        "ASCG prohibits all forms of money laundering and expects employees to be alert to suspicious financial activities.",
+        "Employees must report any unusual transactions to their line manager or the Finance Director without delay.",
+        "Processing transactions known to be from illegal sources",
+        "Structuring transactions to avoid reporting requirements",
+        "Accepting cash payments above £10,000 without proper documentation",
+        "Bypassing customer due diligence procedures",
+        "Accepting payments from high-risk jurisdictions without enhanced verification",
+        "Ignoring red flags in transaction patterns",
+        "Conducting appropriate customer due diligence",
+        "Reporting suspicious transactions to relevant authorities",
+        "Maintaining detailed records of all financial transactions",
+        "Regular monitoring of account activities",
+        "Requesting additional documentation for unusual transactions",
+        "Training staff on money laundering indicators"
+      ],
+      "Fraud Prevention": [
+        "ASCG has zero tolerance for fraud. Employees must act honestly and report any suspected fraudulent activity.",
+        "All financial records must be accurate, complete, and transparent to prevent manipulation or misrepresentation.",
+        "Falsifying company documents or financial records",
+        "Misappropriating company assets or funds",
+        "Deliberately concealing errors in financial statements",
+        "Submitting false expense claims",
+        "Manipulating financial results to meet targets",
+        "Circumventing internal controls or approval processes",
+        "Investigating minor discrepancies in financial records",
+        "Implementing robust verification procedures",
+        "Regular internal audits and compliance checks",
+        "Maintaining separation of duties for financial processes",
+        "Documentation of process exceptions with appropriate approvals",
+        "Proactive reporting of errors or mistakes"
+      ],
+      "Anti-Bribery and Corruption": [
+        "Offering, soliciting, or accepting bribes is strictly forbidden.",
+        "All gifts, entertainment, or hospitality exceeding £50 must be declared and approved.",
+        "Facilitation payments are prohibited.",
+        "All third-party relationships must be evaluated for corruption risk.",
+        "Offering, soliciting, or accepting bribes in any form",
+        "Facilitation payments to expedite routine government actions",
+        "Gifts, hospitality or entertainment exceeding £50 without approval",
+        "Providing anything of value to public officials without authorization",
+        "Using third parties to disguise corrupt payments",
+        "Donations intended to improperly influence business decisions",
+        "Modest meals with business partners (within policy limits)",
+        "Gifts of nominal value (pens, branded items, etc.)",
+        "Occasional attendance at cultural or sporting events with clear business purpose",
+        "Transparent recording of all gifts and hospitality",
+        "Legitimate charitable donations with proper approval",
+        "Proportionate hospitality that is openly documented"
+      ],
+      "Conflict of Interest": [
+        "Employees must disclose any personal, financial, or business interest that might conflict with ASCG’s interests.",
+        "If an employee begins a relationship with a client, supplier, or colleague in a way that may create a conflict, ASCG reserves the right to reassign roles or implement controls.",
+        "Failing to disclose personal relationships with clients or suppliers",
+        "Using company position for personal gain",
+        "Participating in decisions affecting personal financial interests",
+        "Accepting significant gifts or benefits from business partners",
+        "Using confidential information for personal advantage.",
+        "Competing with the company's business interests",
+        "Prompt disclosure of potential conflicts",
+        "Recusal from decisions involving personal connections",
+        "Transparent management of unavoidable conflicts",
+        "Obtaining approval for outside business activities",
+        "Annual declaration of interests for staff in sensitive positions",
+        "Seeking guidance from management when uncertain"
+      ],
+      "Information and Cyber Security": [
+        "Employees must protect sensitive information from unauthorised disclosure.",
+        "Company systems must only be accessed by authorised individuals.",
+        "Cyber security practices must be followed at all times in accordance with the Company’s Cyber Security Policy.",
+        "Sharing login credentials with others",
+        "Sending sensitive information via unsecured channels",
+        "Downloading unauthorized software onto company devices",
+        "Discussing confidential matters in public places",
+        "Failing to report security incidents or breaches",
+        "Bypassing established security protocols or controls",
+        "Using strong, unique passwords",
+        "Securing devices when not in use",
+        "Regular software updates and security patches",
+        "Appropriate classification and handling of sensitive data",
+        "Legitimate information sharing on a need-to-know basis",
+        "Following approved data retention and disposal procedures"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Money Laundering Prevention",
+        "targets": [
+          {
+            "target": "Ensure 100% of finance and procurement employees are trained annually on anti-money laundering practices by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Maintain zero substantiated internal cases of money laundering each year.",
+            "baseline": "2021",
+            "deadline": "Each year"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Conduct annual internal audits on expense claims and finance records at all operational sites starting 2024.",
+            "baseline": "2021",
+            "deadline": "Starting 2024"
+          },
+          {
+            "target": "Maintain internal fraud incident rate to zero through targeted training and internal controls by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Deliver fraud awareness sessions to 100% of departments annually.",
+            "baseline": "2021",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Bribery and Corruption",
+        "targets": [
+          {
+            "target": "All gifts, entertainment, or hospitality exceeding £50 must be declared and approved.",
+            "baseline": "2021",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% completion rate for anti-bribery and corruption training annually by 2028.",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure all gifts/hospitality above £50 are logged and reviewed within 5 working days.",
+            "baseline": "2021",
+            "deadline": "Within 5 working days"
+          },
+          {
+            "target": "Conduct corruption risk assessments on 100% of all operational sites annually.",
+            "baseline": "2021",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "100% of employees in management or procurement roles to submit conflict of interest declarations annually.",
+            "baseline": "2021",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Respond to reported potential conflicts within 10 business days with appropriate mitigation actions.",
+            "baseline": "2021",
+            "deadline": "Within 10 business days"
+          },
+          {
+            "target": "Train 100% of its employees on conflict-of-interest topic by 2030.",
+            "baseline": "2021",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct biannual awareness campaigns on recognising and disclosing conflicts of interest by 2028.",
+            "baseline": "2021",
+            "deadline": "2028; biannual"
+          }
+        ]
+      },
+      {
+        "area": "Information and Cyber Security",
+        "targets": [
+          {
+            "target": "Provide cyber security awareness training to 100% of system users annually by 2028.",
+            "baseline": "2021",
+            "deadline": "2028; annually"
+          },
+          {
+            "target": "Conduct 100% Information Security risk assessment of all operational sites annually.",
+            "baseline": "2021",
+            "deadline": "Annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Strategic oversight of business ethics and integrity initiatives"
+      },
+      {
+        "role": "Executive Leadership Team (ELT)",
+        "duty": "Enforces ethical standards and ensures implementation of compliance measures"
+      },
+      {
+        "role": "Compliance Officer & IT Director",
+        "duty": "Employee training, cyber risk monitoring, ethics reporting"
+      },
+      {
+        "role": "Finance Director",
+        "duty": "Oversees anti-fraud and money laundering controls"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Compliance with this roadmap and timely reporting of any breach or suspicion"
+      }
+    ],
+    "monitoring": "Violations of the Business Ethics & Integrity Roadmap will not be tolerated. ASCG is committed to upholding the highest ethical standards, and all breaches will be investigated in line with our internal disciplinary procedures.\n\nAll reported violations will be treated confidentially and investigated impartially. Employees are encouraged to report unethical conduct in good faith and without fear of retaliation. Retaliation against whistleblowers will itself be treated as a serious disciplinary offence.\n\nThis roadmap is accessible on the ASCG intranet and provided at onboarding.\n\nRefresher training and awareness sessions are delivered annually.",
+    "reviewMechanism": "This Roadmap shall be reviewed annually by the Compliance Officer, or sooner if:\n\nLegal or regulatory changes occur\n\nEthical incidents or whistleblower reports arise\n\nUpdates to Reconomy Group's ethics framework"
+  },
+  "sourcePath": "Policies - Kenal/Advanced Supply Chain Group Ltd/Ethics Roadmap.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Advanced Supply Chain Group Ltd/Ethics Roadmap.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 11833,
+  "parsedAt": "2026-09-11T07:18:10.998Z"
+}

@@ -1,0 +1,182 @@
+{
+  "id": "ethics-br-agrotech",
+  "name": "BR Agrotech",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethical Conduct Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "BR Agrotech Limited",
+      "industry": "",
+      "site": "Plot No. 620/3, GIDC, Panoli, Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115",
+      "sites": [
+        {
+          "location": "BR Agrotech Limited",
+          "address": "Plot No. 620/3, GIDC, Panoli Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 620/3, GIDC, Panoli, Ankleshwar, Dist. Bharuch. (Gujarat)- 394 115"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "We at BR Agrotech Limited prioritize ethical business practices, ensuring integrity, transparency, and accountability in all aspects of our operations. We believe that ethical conduct is fundamental for building long-term trust with employees, stakeholders, and business partners. Maintaining ethical business practices helps reinforce corporate credibility, prevent financial and reputational risks, and foster a culture of accountability.\n\nThis policy outlines the principles and expectations for ethical behavior across the organization, covering areas such as corruption, conflict of interest, fraud, money laundering, information security, workplace harassment, ethical procurement, responsible marketing, and transparency in financial reporting. It provides a framework for ensuring compliance with all applicable laws, preventing unethical conduct, and encouraging employees to act with honesty and fairness. Through rigorous compliance mechanisms, regular training, and continuous monitoring, we aim to create a work environment that promotes ethical decision-making, responsible business practices, and corporate integrity.",
+      "declaration": "BR Agrotech Limited is dedicated to conducting business with integrity, fairness, and transparency. We strictly prohibit corruption, fraudulent activities, and unethical behavior. All employees, suppliers, and business partners are expected to uphold these ethical standards in every transaction and business decision. This policy establishes guidelines to prevent misconduct and reinforces our commitment to responsible corporate governance.",
+      "scope": "This policy applies to BR Agrotech Limited’s operations, and it covers following sites and all its employees, workers, subcontractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Corruption and bribery",
+      "Conflict of interest",
+      "Fraud",
+      "Money laundering",
+      "Information security",
+      "Workplace harassment",
+      "Ethical procurement",
+      "Responsible marketing",
+      "Transparency in financial reporting",
+      "Whistleblower protection",
+      "Policy violations"
+    ],
+    "qualitative": {
+      "Corruption and bribery": [
+        "Prohibit all forms of bribery, kickbacks, and undue influence in business transactions to ensure fair and ethical practices.",
+        "Strengthen anti-corruption measures through employee training and risk assessments."
+      ],
+      "Conflict of interest": [
+        "Ensure employees disclose any personal interests that may interfere with professional responsibilities.",
+        "Conduct annual reviews to identify and resolve conflicts of interest proactively."
+      ],
+      "Fraud and financial controls": [
+        "Strengthen financial oversight by implementing rigorous internal controls, conducting regular audits, and enhancing fraud detection mechanisms.",
+        "Enhance internal controls and conduct regular financial audits to detect and mitigate fraudulent activities."
+      ],
+      "Money laundering": [
+        "Enforce strict anti-money laundering measures, including due diligence, transaction monitoring, and adherence to financial regulations.",
+        "Establish strict due diligence protocols for all financial transactions and business dealings to reduce money laundering related risks."
+      ],
+      "Information security": [
+        "Safeguard sensitive business and customer data through advanced cybersecurity protocols, periodic security audits, and strict access controls.",
+        "Continuously enhance information security frameworks by integrating advanced threat detection systems and regularly revising security protocols to counter emerging cyber risks."
+      ],
+      "Reporting and protection against retaliation": [
+        "Encourage employees to report unethical conduct without fear of retaliation."
+      ],
+      "Ethical procurement and business partners": [
+        "Engage with suppliers and partners who adhere to ethical business practices and compliance."
+      ],
+      "Continuous improvement": [
+        "BR Agrotech Limited is committed to enhancing ethical business practices through periodic assessments, stakeholder feedback, and alignment with evolving regulatory standards. The company will conduct regular policy reviews to integrate industry best practices, technological advancements, and compliance updates. Employees and stakeholders are encouraged to provide recommendations for policy enhancements, ensuring ethical standards remain robust. Ongoing training and awareness programs will reinforce ethical responsibilities and promote a culture of integrity."
+      ],
+      "Policy violations": [
+        "Any violation of this policy will be addressed through a structured process, including investigations, corrective actions, and disciplinary measures when necessary. Reports of unethical behavior will be thoroughly reviewed, with appropriate consequences ranging from training and warnings to termination of employment or legal action in severe cases. Employees are required to report suspected violations through designated confidential reporting channels, with strict protection against retaliation. BR Agrotech Limited ensures all reported cases are handled with fairness, confidentiality, and due diligence."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-corruption",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive anti-corruption training and maintain the record of zero reported incidents of corruption or unethical financial transactions by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of interest",
+        "targets": [
+          {
+            "target": "Maintain a practice that 100% of employees in managerial roles complete annual conflict of interest disclosure forms.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% compliance with disclosure requirements for senior management by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Maintain zero fraud-related incidents through enhanced internal controls and implement mandatory fraud detection training for 100% of finance and procurement employees by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Information security and money laundering",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees undergo cybersecurity awareness training annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "annually"
+          },
+          {
+            "target": "Ensure 100% of high-value transactions undergo enhanced due diligence checks to mitigate money laundering risks by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement multi-factor authentication across all company systems by FY 2029-30 in order to ensure information security.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain zero phishing and cyberattack incidents through employee training and security enhancements",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Site Head",
+        "duty": "Ensure policy implementation and allocate resources for ethical compliance programs. Implement internal controls and ethical business practices."
+      },
+      {
+        "role": "Human Resource Team",
+        "duty": "Monitor policy adherence, conduct investigations, and oversee training programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to ethical guidelines, report misconduct, and participate in compliance training."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Align business operations with BR Agrotech’s ethical conduct policies and compliance standards."
+      }
+    ],
+    "monitoring": "The Human Resource Team actively monitors ethical performance by tracking key indicators, conducting internal reviews, and reporting progress annually to senior management. This includes assessing adherence to anti-bribery measures, fraud prevention protocols, conflict of interest disclosures, and information security practices.\n\nIndependent third-party audits and internal assessments are conducted periodically to evaluate compliance with ethical policies, identify gaps, and implement corrective actions. These audits validate adherence to legal regulations, industry best practices, and corporate governance standards.",
+    "reviewMechanism": "This policy will undergo review once in two years or as needed by the Ethics Officer to incorporate emerging best practices, adapt to regulatory changes, and strengthen ethical business practices. Updates will be approved by senior management and communicated across all levels of the organization to ensure continuous improvement and accountability."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/BR Agrotech/3. Ethical Conduct Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/BR Agrotech/3. Ethical Conduct Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 9668,
+  "parsedAt": "2026-09-11T07:34:18.248Z"
+}

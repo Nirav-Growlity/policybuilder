@@ -1,0 +1,243 @@
+{
+  "id": "sustainable-procurement-arrival-fashions",
+  "name": "Arrival Fashions",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement Policy AFL.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Arrival Fashion Ltd",
+      "industry": "",
+      "site": "Apt #5, House # 3, Road # 23/B, Gulshan 1, Dhaka 1212.",
+      "sites": [
+        {
+          "location": "Gulshan 1, Dhaka",
+          "address": "Apt No.5, House No. 3, Road No.23/B, Gulshan 1, Dhaka 1212.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Colomesshor, Board Bazar, Gazipur",
+          "address": "Arrival Fashion Ltd, Colomesshor, Board Bazar, Gazipur.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Mirpur, Dhaka",
+          "address": "Arrival Fashion Ltd, Plot 10, Block # Kha, Section 6, Road 1, Mirpur, Dhaka - 1216.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Mamarishpur, Mymensingh, Bangladesh",
+          "address": "Holding: 17, Vill: Mamarishpur, Post: Mallik Bari, P.s: Bhaluka, Dist: Mymensingh, Bangladesh.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Apt #5, House # 3, Road # 23/B, Gulshan 1, Dhaka 1212."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Arrival Fashion Ltd is a leading garment manufacturer and wholesaler, committed to ensuring that our procurement practices contribute to sustainable development. As part of our core business values, we are dedicated to integrating environmental and social considerations into every step of our supply chain. This policy outlines our commitment to sustainability and ethical practices in procurement, supporting our mission to foster positive social and environmental impacts through our operations.",
+      "declaration": "Arrival Fashion Ltd is dedicated to sustainable procurement practices that support our environmental and social responsibility goals. We aim to work with suppliers who share our commitment to sustainability and ethical practices.",
+      "scope": "This policy applies to all workers, employees, directors, officers, agents, contractors, and any third parties acting on behalf of Arrival Fashion Ltd. (AFL). It covers all business activities, including procurement, sales, marketing, and any interactions with government officials, customers, suppliers, and other stakeholders. The policy is applicable globally, regardless of local business practices or cultural norms. This policy applies to below mentioned locations:"
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Supplier Social Practices",
+      "Sustainable Product Lifecycle",
+      "Supply Chain Transparency",
+      "Community Engagement",
+      "General Targets"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "Ensure that environmental sustainability is fully integrated into all procurement decisions, making environmental impact a key criterion alongside price, quality, reliability, and innovation when selecting suppliers."
+      ],
+      "Supplier Social Practices": [
+        "Ensure full compliance with internationally recognized labor and human rights standards throughout the supply chain, with monitoring, audits, and corrective actions for non-compliance."
+      ],
+      "Sustainable Product Lifecycle": [
+        "Ensure sustainability is integrated throughout the product lifecycle, including design, sourcing, manufacturing, use, and end-of-life management, with a focus on minimizing environmental impact and promoting circular practices."
+      ],
+      "Supply Chain Transparency": [
+        "Ensure full transparency, traceability, and accountability across the supply chain, with regular monitoring, audits, and reporting to uphold responsible sourcing practices."
+      ],
+      "Community Engagement": [
+        "Promote sustainable and inclusive community development by actively engaging with and supporting local communities affected by supply chain operations."
+      ],
+      "General Targets": []
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Reduce the environmental footprint of procured materials by 15 % compared to 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 80% of strategic suppliers meet environmental standards.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual sustainability assessments for 20 % of high-impact suppliers.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase procurement from certified sustainable suppliers to 20 % of total sourcing.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers comply with labor and human rights standards.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve at least 20% reduction in non-compliance related to working hours and wages compared to 2022 baseline.",
+            "baseline": "2022 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of suppliers implement corrective action plans for identified gaps.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Product Lifecycle",
+        "targets": [
+          {
+            "target": "Ensure 100% of products are designed for recyclability.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement take-back programs for 15% of product lines.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase use of recycled or sustainable materials in products to 20%.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual lifecycle assessments for 15 % of major product categories.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supply Chain Transparency",
+        "targets": [
+          {
+            "target": "Ensure 20 % of key suppliers hold recognized sustainable sourcing certifications.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% traceability of high-impact materials across the supply chain.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Community Engagement",
+        "targets": [
+          {
+            "target": "Implement structured community engagement programs at 100% of production and major supplier sites.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Engage at least 80% of local stakeholders annually in dialogue or social initiatives.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "Provide structured training on sustainable procurement, ESG risk identification, responsible sourcing, and supplier due diligence to 100% of procurement and supply chain employees by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct ESG-based supplier audits and structured self-assessments covering 20% of strategic and high-risk suppliers by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 80 % of active suppliers formally commit to compliance with applicable environmental, social, labor, and ethical standards by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Deliver ESG capacity-building programs, awareness sessions, or sustainability engagement initiatives to at least 90% of key suppliers to strengthen performance in areas such as environmental management, labor rights, ethical conduct, and regulatory compliance by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Integrate ESG performance evaluation into 70 % of supplier selection and renewal decisions embedding sustainability criteria into procurement governance processes by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "entire management team at AFL",
+        "duty": "The overall responsibility for enforcing the sustainable procurement policy rests with the entire management team at AFL."
+      },
+      {
+        "role": "Environment, Health, and Safety (EHS) Manager",
+        "duty": "The primary duty of implementing the policy lies with the Environment, Health, and Safety (EHS) Manager."
+      },
+      {
+        "role": "Head of Department (HOD)",
+        "duty": "Each Head of Department (HOD) is accountable for ensuring the policy is effectively enforced within their respective teams."
+      }
+    ],
+    "monitoring": "",
+    "reviewMechanism": "The Sustainable Procurement Policy undergoes an annual review by the Environment, Health, and Safety (EHS) Manager to evaluate its effectiveness. This review process involves analyzing our procurement practices, considering shifts in market demands, and aligning with updated environmental and social regulations. These regular evaluations ensure ongoing improvements, monitor progress toward sustainability targets, maintain compliance with relevant standards, and reinforce our commitment to responsible procurement practices."
+  },
+  "sourcePath": "Policies - Kenal/Arrival Fashions/Sustainable Procurement Policy AFL.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Arrival Fashions/Sustainable Procurement Policy AFL.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 7943,
+  "parsedAt": "2026-09-11T07:21:05.468Z"
+}

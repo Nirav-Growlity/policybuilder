@@ -1,0 +1,198 @@
+{
+  "id": "sustainable-procurement-exim-knits",
+  "name": "Exim Knits",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 3. Sustainable Procurement Policy - Exim Knits.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Exim Knits Pvt Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Exim Knits Pvt Ltd.",
+          "address": "S F 334 Palankarai Village, Nambiyur Road, Avinashi, Tamil Nadu.- 641654",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "In response to the pressing environmental challenges faced by our planet, Exim Knits Pvt Ltd. is proud to unveil a comprehensive sustainable policy. Committed to minimizing our ecological footprint, we're implementing a holistic approach that spans from sourcing raw materials to end-of-life disposal. Our pledge embraces eco-friendly materials, renewable energy adoption, and stringent waste management practices, underscoring our dedication to environmentally conscious manufacturing.\n\nBeyond eco-centric measures, we prioritize ethical labor practices, fostering a workplace culture that champions diversity and the well-being of our employees. Through transparency and accountability, we invite stakeholders to join us in cultivating a sustainable ecosystem that benefits both the industry and the communities it touches\n\nAs we embark on this journey, our sustainable policy is a testament to our commitment to positive change. It’s not just about the fabrics we produce but also about the legacy we create—a legacy woven with the threads of sustainability, innovation, and responsibility.",
+      "declaration": "Exim Knits Pvt Ltd. is determined to weave a sustainable legacy—one that leaves a positive imprint on the environment, society, and the textile company as a whole. Our aim  is to seamlessly integrate environmental responsibility, ethical practices and economic  viability  in our company. Our company remains steadfast in our mission to be a responsible steward of the planet, continuously striving for a future where our textiles stand as a symbol of sustainable manufacturing.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Environmental Issues",
+      "Labor Practices and Human Rights",
+      "Palm Oil and Palm based Products"
+    ],
+    "qualitative": {
+      "Environmental Issues": [
+        "Chemical Usage in Dyeing and Finishing: Implementing eco-friendly dyeing techniques, recycling water, and adopting closed-loop systems to minimize chemical discharge",
+        "Energy Consumption in Manufacturing: Adopting energy-efficient technologies, utilizing renewable energy sources, and optimizing production processes to reduce overall energy consumption.",
+        "Waste Generation and Textile Disposal: Promoting circular economy practices, improving waste management systems, and developing recyclable or biodegradable materials to minimize the environmental impact of textile waste."
+      ],
+      "Labor Practices and Human Rights": [
+        "Child and Forced Labor Prevention: Implement stringent supply chain monitoring, conduct regular audits, and collaborate with suppliers committed to eliminating child and forced labor.",
+        "Unsafe Working Conditions: Conduct regular safety assessments, invest in proper infrastructure, and provide comprehensive training programs for employees.",
+        "Unfair Compensation Practices: Regularly review and adjust compensation structures to meet or exceed company standards, ensure adherence to legal working hour limits, and provide transparent remuneration policies.",
+        "Chemical management: Implement a robust chemical management system during dyeing processes, ensuring careful handling, storage, and disposal to safeguard the well-being of workers and the environment."
+      ],
+      "Palm Oil and Palm based Products": [
+        "Deforestation and Biodiversity Loss: Prioritize RSPO-compliant suppliers, advocate for zero-deforestation commitments, engage in reforestation, and support conservation initiatives for enhanced biodiversity protection.",
+        "Climate Change and Carbon Emissions: Source palm oil from suppliers with sustainable agricultural practices, promote responsible land-use planning, avoid high carbon stock areas, and invest in carbon offset projects for effective climate impact mitigation.",
+        "Water Pollution: Encourage waste management, adopt sustainable milling practices, and support constructed wetlands to address water pollution issues in collaboration with suppliers."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Issues",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in chemical discharge, recycle 50% of dyeing process water, and transition to a closed-loop chemical management system",
+            "baseline": "2022-23 levels",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Reduce overall energy consumption by 15%, with 30% of total energy derived from renewable sources",
+            "baseline": "2022-23 levels",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Attain a 25% decrease in textile waste, recycle 60% of generated waste, and introduce at least two new recyclable or biodegradable materials into production",
+            "baseline": "",
+            "deadline": "2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Labor Practices and Human Rights",
+        "targets": [
+          {
+            "target": "Review and adjust compensation structures, targeting a 5% increase in average wages. Ensure 100% compliance with legal working hour limits and maintain transparent remuneration accessible to all employees",
+            "baseline": "",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Conduct annual safety assessments, invest in safety improvements, and aim for a 20% reduction in safety incidents. Provide safety training for 100% of employees annually.",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Achieve a 30% reduction in chemical incidents during dyeing processes, ensure 100% compliance with handling procedures, and conduct quarterly audits to monitor and enhance chemical management practices.",
+            "baseline": "",
+            "deadline": "2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Palm Oil and Palm based Products",
+        "targets": [
+          {
+            "target": "Ensure 90% of suppliers meet RSPO standards, secure zero-deforestation commitments from 80% of suppliers and contribute to reforestation projects, planting 1000 trees annually.",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          },
+          {
+            "target": "Source palm oil from suppliers reducing carbon emissions by 20%, engage 70% of suppliers in responsible land-use planning,",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve a 30% reduction in water pollution incidents by implementing waste management systems, sustainable milling practices, and constructed wetlands",
+            "baseline": "2022-23",
+            "deadline": "2025-26"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Employees",
+        "duty": "Monthly Sustainability Updates: Keep the team informed about sustainability efforts through monthly newsletters or intranet. Boost awareness, engage employees, and foster a shared commitment to sustainability."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employee Sustainability Training: Organize regular training on sustainable practices and the importance of environmental, social, and ethical considerations. Empower staff with knowledge and tools to actively contribute to sustainability goals."
+      },
+      {
+        "role": "Employees",
+        "duty": "Open Feedback Channels: Create accessible channels for employees to express ideas, concerns, and suggestions on sustainability. Establish a feedback loop for continuous improvement with valuable input from the team."
+      },
+      {
+        "role": "Management and Department Heads",
+        "duty": "Quarterly Sustainability Reports: Deliver detailed quarterly reports on sustainability performance, key metrics, progress, and challenges. Empower management for informed decision-making and efficient resource allocation."
+      },
+      {
+        "role": "Management and Department Heads",
+        "duty": "Department-Specific Sustainability Metrics: Customize reports for each department, highlighting unique contributions to sustainability goals. Showcase achievements in energy reduction, waste management, and ethical sourcing practices."
+      },
+      {
+        "role": "Management and Department Heads",
+        "duty": "Strategic Alignment Updates: Clearly communicate how sustainability initiatives align with overarching strategic objectives. Provide insights into contributions to long-term profitability, brand reputation, and risk mitigation."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Supplier Sustainability Evaluation: Introduce a scorecard system to assess and communicate supplier sustainability performance. Include criteria such as environmental impact, labor practices, and adherence to ethical standards."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Collaborative Sustainability Forums: Facilitate regular collaboration forums to discuss expectations, exchange best practices, and develop improvement plans. Embrace a partnership approach with suppliers to elevate the sustainability of the entire supply chain."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Transparent Audit Procedures: Establish clear communication channels for sustainability compliance audits. Share results with suppliers, offering constructive feedback and guidance for enhancement."
+      },
+      {
+        "role": "Compliance Department",
+        "duty": "Regulatory Compliance Notifications: Provide regular updates on changes in environmental, social, and ethical regulations. Ensure reporting mechanisms align with legal requirements and industry benchmarks."
+      },
+      {
+        "role": "Compliance Department",
+        "duty": "Routine Internal Audits: Execute regular internal audits to assess adherence to sustainability policies. Share findings with the Compliance Department for swift issue resolution."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Sustainability Key Performance Indicators (KPIs): Regularly update on KPIs tied to sustainability objectives. Encompass areas like carbon footprint reduction, resource efficiency, and social impact."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Stakeholder Engagement Insights: Disseminate feedback from employees, suppliers, and stakeholders on sustainability initiatives. Assist the Sustainability Manager in evaluating program effectiveness and making adjustments."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Trends and Innovations in Sustainability: Keep the Sustainability Manager informed on emerging trends, technologies, and innovations. Support staying ahead of the curve, identifying opportunities, and refining sustainability practices continually."
+      }
+    ],
+    "monitoring": "At Exim Knits Private Ltd. we uphold a steadfast commitment to transparency, accountability, and the continual enhancement of our Environmental, Social, and Governance (ESG) principles. To meticulously assess our present standing and pinpoint areas for advancement, we have instituted a robust reporting mechanism that comprehensively addresses pivotal aspects within our operational framework.:",
+    "reviewMechanism": "This policy will undergo an annual assessment for the purpose of reviewing and tracking progress on each issue and its associated targets."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Exim Knits/3. Sustainable Procurement Policy - Exim Knits.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Exim Knits/3. Sustainable Procurement Policy - Exim Knits.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12296,
+  "parsedAt": "2026-09-11T07:38:27.584Z"
+}

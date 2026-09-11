@@ -1,0 +1,196 @@
+{
+  "id": "living-wage-speedrack",
+  "name": "Speedrack",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 3. Living Wage Policy_grw_v1.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Speedrack Products Group Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Manufacturing Site",
+          "address": "42 Cole St, Quincy, MI 49082",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "",
+          "address": "3060 S Industrial Dr NW, Walker, MI 49544",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Corporate Office",
+          "address": "",
+          "primaryFunction": "Corporate office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Speedrack Products Group Ltd. is committed to a fair, safe, and inclusive workplace and to paying a living wage that enables employees to meet basic needs and maintain a decent standard of living. This policy reflects Speedrack’s commitment to ethical labor practices, human rights, sustainability, and employee well-being.",
+      "declaration": "Speedrack Products Group Ltd. is committed to ensuring that all employees receive wages that meet or exceed the applicable living standards across their respective regions in the United States, covering essential needs such as housing, healthcare, food, transportation, and education. In full compliance with the U.S. Fair Labor Standards Act (FLSA), applicable federal, state, and local minimum wage laws, and overtime regulations, the Company ensures lawful, fair, and timely compensation. Wages are regularly reviewed and adjusted in line with changes in cost of living, regulatory requirements, and Speedrack’s ethical labor standards to support employee well-being and financial security.",
+      "scope": "This policy covers all full-time, part-time, temporary, and contract employees, including those at subsidiaries, operational sites, and third-party contractors, who are required to comply with living wage principles. Executive-level employees may have separate pay structures, but the living wage applies to the broader workforce. Where local laws mandate higher wages, compensation will follow those requirements."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Speedrack Products Group Ltd. is committed to a fair, safe, and inclusive workplace and to paying a living wage that enables employees to meet basic needs and maintain a decent standard of living.\n\nSpeedrack Products Group Ltd. is committed to ensuring that all employees receive wages that meet or exceed the applicable living standards across their respective regions in the United States, covering essential needs such as housing, healthcare, food, transportation, and education.\n\nFair and Responsible Wage Practices: Ensuring fair, transparent, and equitable wage structures that align with credible living wage benchmarks and reflect local cost-of-living realities.\n\nWages are regularly reviewed and adjusted in line with changes in cost of living, regulatory requirements, and Speedrack’s ethical labor standards to support employee well-being and financial security.\n\nAim to achieve minimum 100% of employees paid at or above verified living wage benchmarks by 2030.\n\nThis policy covers all full-time, part-time, temporary, and contract employees, including those at subsidiaries, operational sites, and third-party contractors, who are required to comply with living wage principles. Executive-level employees may have separate pay structures, but the living wage applies to the broader workforce. Where local laws mandate higher wages, compensation will follow those requirements.\n\nThe Chief Human Resources Officer (CHRO), with support from Senior Leadership, conducts an annual evaluation or as needed of this policy to monitor progress, identify areas for improvement, and ensure alignment with evolving legal, ethical, and industry standards. Based on review outcomes, wage compliance assessments, emerging global benchmarks, and organizational needs, the policy may be updated or strengthened."
+    },
+    "focusAreas": [
+      "Fair and Responsible Wage Practices",
+      "Living Wage for Contract and Indirect Workers",
+      "Employee Well-Being and Financial Resilience",
+      "Transparent Wage Monitoring and Reporting"
+    ],
+    "qualitative": {
+      "Fair and Responsible Wage Practices": [
+        "Ensuring fair, transparent, and equitable wage structures that align with credible living wage benchmarks and reflect local cost-of-living realities.",
+        "Speedrack ensures equal pay for equal work through structured, documented, and management-reviewed annual pay equity assessments.",
+        "The company maintains a transparent wage governance framework, clearly defining wage structures, overtime, incentives, and benefits.",
+        "Living wage principles are embedded into all internal HR and procurement decision-making processes."
+      ],
+      "Living Wage for Contract and Indirect Workers": [
+        "Extending living wage commitments across the value chain, including service partners, third-party labor, and contract workers.",
+        "A zero-tolerance approach to wage-related non-compliance is enforced across internal operations and suppliers."
+      ],
+      "Employee Well-Being and Financial Resilience": [
+        "Promoting financial security through supportive benefits, financial literacy initiatives, and programs that help employees meet essential living needs.",
+        "Speedrack is committed to ensuring that every employee earns a wage that supports a decent standard of living.",
+        "Speedrack collaborates with employees, unions, and supply chain partners to identify opportunities for improvement and proactively address challenges."
+      ],
+      "Transparent Wage Monitoring and Reporting": [
+        "Establishing structured monitoring and assessment mechanisms to evaluate wage levels, track improvements, and report progress transparently.",
+        "Speedrack systematically monitors and evaluates wage and labor practices through periodic internal reviews, compensation dashboards, payroll audits, and workforce well-being indicators.",
+        "Policy developments, achievements, and critical updates are communicated to employees, suppliers, and relevant stakeholders via formal communications, ESG reporting, internal bulletins, and workforce meetings."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Fair Compensation",
+        "targets": [
+          {
+            "target": "100% annual pay equity reviews conducted across all departments and locations by 2030.",
+            "baseline": "The following targets have been set in alignment with Speedrack’s 2022 baseline performance data.",
+            "deadline": "2030"
+          },
+          {
+            "target": "Aim to achieve minimum 100% of employees paid at or above verified living wage benchmarks by 2030.",
+            "baseline": "The following targets have been set in alignment with Speedrack’s 2022 baseline performance data.",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Legal Compliance",
+        "targets": [
+          {
+            "target": "Aim to conduct 100% statutory wage and labor law audits annually across all operational locations by 2030.",
+            "baseline": "The following targets have been set in alignment with Speedrack’s 2022 baseline performance data.",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% closure of identified wage compliance gaps within 60 days of audit completion by 2030.",
+            "baseline": "The following targets have been set in alignment with Speedrack’s 2022 baseline performance data.",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors / Senior Leadership Team",
+        "duty": "Provides strategic direction and integrates living wage commitments into Speedrack’s organizational priorities."
+      },
+      {
+        "role": "Board of Directors / Senior Leadership Team",
+        "duty": "Allocates resources necessary to enable fair wage practices across all operations."
+      },
+      {
+        "role": "Board of Directors / Senior Leadership Team",
+        "duty": "Promotes a workplace culture rooted in fairness, transparency, and ethical labor standards."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Review living wage policy annually."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Leads wage benchmarking and analysis using national and international living wage indicators."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Conducts structured wage reviews and maintains accurate compensation documentation."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Ensures alignment with local labor laws, global standards, and internal compensation frameworks."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Review entire policy and communicates policy expectations and updates to employees and internal stakeholders."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Supports financial planning and budget allocation for wage-related initiatives."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Analyzes compensation data and assesses cost impacts associated with wage adjustments."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Ensures financial sustainability while advancing equitable compensation practices."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Understand and uphold the principles and expectations of this policy."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Report wage fairness concerns or related issues through designated grievance channels."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Provide constructive feedback during wage surveys or employee satisfaction assessments."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Cooperate with HR and management during wage review processes."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Participate in training or awareness programs regarding compensation, benefits, and living wage principles."
+      }
+    ],
+    "monitoring": "Speedrack systematically monitors and evaluates wage and labor practices through periodic internal reviews, compensation dashboards, payroll audits, and workforce well-being indicators.\n\nThe People & Compliance Teams prepare an annual summary highlighting key elements such as grievance resolution timelines, participation in wage-related training, pay equity assessments, working conditions evaluations, and employee engagement outcomes.\n\nProgress, challenges, and improvement initiatives are reported to Executive Management and the Board to enable informed decision-making and ensure accountability.\n\nPolicy developments, achievements, and critical updates are communicated to employees, suppliers, and relevant stakeholders via formal communications, ESG reporting, internal bulletins, and workforce meetings.\n\nSpeedrack is committed to continuously strengthening its living wage practices in line with global ethical and labor standards. The Company regularly assesses performance through audits, employee feedback, and external evaluations, and invests in training, technology, and systems to enhance wage administration and workforce well-being. Speedrack collaborates with employees, unions, and supply chain partners to identify opportunities for improvement and proactively address challenges. Corrective and preventive actions are implemented promptly to resolve wage-related non-compliance, close gaps, and protect worker financial security.",
+    "reviewMechanism": "The Chief Human Resources Officer (CHRO), with support from Senior Leadership, conducts an annual evaluation or as needed of this policy to monitor progress, identify areas for improvement, and ensure alignment with evolving legal, ethical, and industry standards. Based on review outcomes, wage compliance assessments, emerging global benchmarks, and organizational needs, the policy may be updated or strengthened. Any significant revisions or updates are communicated to employees, contractors, suppliers, and other relevant stakeholders to maintain transparency, clarity, and alignment across the organization."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Speedrack/3. Living Wage Policy_grw_v1.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Speedrack/3. Living Wage Policy_grw_v1.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 9075,
+  "parsedAt": "2026-09-11T07:16:36.627Z"
+}

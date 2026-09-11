@@ -1,0 +1,265 @@
+{
+  "id": "graham",
+  "name": "Graham",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Graham Packaging Company",
+      "industry": "",
+      "site": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601",
+      "sites": [
+        {
+          "location": "Graham Packaging Company",
+          "address": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601",
+          "primaryFunction": "plastic bottle manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "700 Indian Springs Drive\nSuite 100\nLancaster, PA 17601"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Graham Packaging Company, we are dedicated to revolutionizing the plastic packaging industry through sustainable practices and innovative solutions. As a leading manufacturer of plastic bottles, we understand the critical role we play in shaping a more environmentally responsible future. Committed to minimizing our ecological footprint, we integrate sustainability into every facet of our operations, striving to deliver high-quality packaging solutions while safeguarding the planet for future generations.",
+      "declaration": "At Graham Packaging Company, we pledge to minimize our environmental impact through sustainable practices across all stages of plastic bottle manufacturing. By prioritizing resource efficiency, waste reduction, and renewable energy adoption, we aim to lead the industry in environmental stewardship while meeting the evolving needs of our customers.",
+      "scope": "This policy applies exclusively to the operations of Graham Packaging Company, encompassing all employees, contractors, suppliers, and stakeholders directly associated with our facilities."
+    },
+    "focusAreas": [
+      "Energy Consumption and Greenhouse Gases",
+      "Water Management",
+      "Biodiversity Preservation",
+      "Air Quality Management",
+      "Material Usage and Waste Management",
+      "Environmental Impacts from Product Use",
+      "Environment Impact from Product End-of-Life",
+      "Customer Health and Safety",
+      "Promotion of Sustainable Consumption"
+    ],
+    "qualitative": {
+      "Energy Consumption and Greenhouse Gases": [
+        "Use energy-saving methods and renewable energy like solar and wind power.",
+        "Upgrade to energy-efficient equipment.",
+        "Use energy-efficient processes and tech to cut down energy use in making plastic bottles, like installing LED lighting and automated shut-off systems.",
+        "Switch to solar or wind power to lessen reliance on non-renewable energy, such as installing solar panels on factory roofs."
+      ],
+      "Water Management": [
+        "Use water-saving tech and recycle water.",
+        "Harvest rainwater for production.",
+        "Use water-saving tech to lower water use in making plastic bottles, like installing low-flow water nozzles and recycling cooling water.",
+        "Collect rainwater to help make plastic bottles, reducing reliance on city water, like installing rain barrels or tanks to capture rainwater for production."
+      ],
+      "Biodiversity Preservation": [
+        "Protect local habitats.",
+        "Engage in community biodiversity projects.",
+        "Check and fix any harm to local wildlife and nature from our operations, such as creating wildlife corridors or planting native vegetation.",
+        "Protect and restore natural habitats near our factories, for instance, by participating in reforestation projects or wetland restoration."
+      ],
+      "Air Quality Management": [
+        "Install better filters to reduce emissions.",
+        "Use cleaner production methods.",
+        "Reduce noise pollution.",
+        "Use better filters and tech to cut emissions and air pollution, such as installing electrostatic precipitators or scrubbers.",
+        "Reduce noisy machines to make the air cleaner and workers happier, like installing sound barriers or using noise-cancelling technology."
+      ],
+      "Material Usage and Waste Management": [
+        "Use recyclable and eco-friendly materials.",
+        "Handle chemicals safely to prevent pollution.",
+        "Minimize waste and encourage recycling.",
+        "Use recyclable and eco-friendly materials to make plastic bottles, such as using biodegradable plastics or recycled PET, PET, HDPE and Polypropylene (PP).",
+        "Handle chemicals safely to protect workers and the environment, for example, using closed-loop systems for chemical storage and handling."
+      ],
+      "Environmental Impacts from Product Use": [
+        "Address environmental impacts of product use.",
+        "Encourage responsible consumption.",
+        "Design eco-friendly packaging.",
+        "Check and fix any harm from using our plastic bottles, such as conducting life cycle assessments to identify environmental hotspots.",
+        "Make eco-friendly packaging to cut waste and pollution, like using compostable packaging materials or reducing packaging size to minimize material usage."
+      ],
+      "Environment Impact from Product End-of-Life": [
+        "Properly dispose, recycle, or repurpose bottles.",
+        "Design bottles for easy recycling or composting.",
+        "Partner with recycling facilities.",
+        "Make sure our bottles get recycled or reused properly, such as partnering with bottle deposit programs or offering take-back initiatives.",
+        "Design bottles to be easy to recycle or compost, for example, using mono-material packaging or designing bottles with easily separable components."
+      ],
+      "Customer Health and Safety": [
+        "Use safe materials and follow safety rules.",
+        "Test products for safety.",
+        "Provide clear labels and instructions.",
+        "Use safe materials and follow rules to keep our bottles safe, such as using food-grade plastics and adhering to regulatory standards.",
+        "Give clear labels and instructions to keep customers safe, like including safety warnings and disposal instructions on product packaging."
+      ],
+      "Promotion of Sustainable Consumption": [
+        "Offer eco-friendly packaging.",
+        "Educate consumers about sustainability.",
+        "Work with retailers to promote sustainable choices.",
+        "Offer eco-friendly packaging and reward customers who choose it, such as offering discounts for returning empty bottles for recycling.",
+        "Teach people why sustainable packaging is important, for example, through educational campaigns or informational materials on product websites."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption and Greenhouse Gases",
+        "targets": [
+          {
+            "target": "Achieve a 25% reduction in energy consumption per unit of plastic bottle produced by 2028 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Reduce water consumption per unit of plastic bottle produced by 14% by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Preservation",
+        "targets": [
+          {
+            "target": "Reduce the impact on local biodiversity and ecosystems by 25% through habitat preservation and restoration efforts by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase the coverage of conservation areas by 10% through land acquisition or partnerships by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality Management",
+        "targets": [
+          {
+            "target": "Implement noise reduction strategies to achieve a 20% decrease in industrial noise pollution by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Install advanced filtration systems to achieve a 40% reduction in air pollutants emitted from manufacturing facilities by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Material Usage and Waste Management",
+        "targets": [
+          {
+            "target": "In the year 2025, our company's waste increased to 80% recycling, with only 20% going to landfills or incineration, compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from Product Use",
+        "targets": [
+          {
+            "target": "Develop educational materials and campaigns to promote responsible consumption practices, aiming for a 20% reduction in environmental footprint per product used by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Environment Impact from Product End-of-Life",
+        "targets": [
+          {
+            "target": "Increase the recycling rate of plastic bottles to 50% by 2025 through improved collection and recycling initiatives compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Design plastic bottles for circularity, aiming for 100% recyclability or composability by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with safety regulations in plastic bottle manufacturing processes by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Conduct regular product testing to maintain high standards of safety and quality, with zero incidents of non-compliance by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Promotion of Sustainable Consumption",
+        "targets": [
+          {
+            "target": "Increase the sales of eco-friendly packaging options to account for 30% of total packaging sales by 2025 compared to the baseline year 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board & Senior Management",
+        "duty": "Provide strategic direction, approve the policy, allocate resources, and review environmental performance at the highest level."
+      },
+      {
+        "role": "EHS / Sustainability Team",
+        "duty": "Maintain the environmental management system, ensure regulatory compliance, track KPIs, coordinate audits, and report progress to leadership."
+      },
+      {
+        "role": "Production & Operations",
+        "duty": "Implement energy, water and waste management initiatives on the shop floor, maintain pollution control equipment, and minimize process losses."
+      },
+      {
+        "role": "Procurement & Supply Chain",
+        "duty": "Engage suppliers on sustainability criteria, source environmentally responsible materials, and integrate ESG clauses into contracts."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow environmental procedures, identify improvement opportunities, participate in training, and report incidents or concerns."
+      },
+      {
+        "role": "Contractors & Visitors",
+        "duty": "Comply with site environmental rules, follow safe handling and waste segregation practices, and report any observed non-conformities."
+      }
+    ],
+    "monitoring": "Fostering a culture of innovation and continuous improvement in environmental practices.\n\nRegularly reviewing and updating environmental policies and practices to align with emerging trends and best practices.\n\nInvesting in research and development of sustainable materials and technologies for plastic bottle manufacturing.\n\nConducting regular assessments to gauge environmental impact and progress towards sustainability goals.\n\nCalculating and tracking carbon footprint to understand and reduce greenhouse gas emissions.\n\nEstablishing protocols for waste management, water conservation, and biodiversity preservation.\n\nEnsuring transparency and engagement with stakeholders through open communication and reporting mechanisms.",
+    "reviewMechanism": "Undertaking an annual review to assess progress on environmental objectives and targets.\n\nInvolving representatives from key departments to conduct thorough evaluations and propose necessary adjustments or improvements"
+  },
+  "sourcePath": "Policies - Kenal/Graham/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Graham/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 8969,
+  "parsedAt": "2026-09-11T07:23:43.595Z"
+}

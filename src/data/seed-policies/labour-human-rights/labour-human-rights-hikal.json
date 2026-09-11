@@ -1,0 +1,466 @@
+{
+  "id": "labour-human-rights-hikal",
+  "name": "Hikal",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Employee Rights & Fair Labour Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Hikal Limited (Group)",
+      "industry": "",
+      "site": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India.",
+      "sites": [
+        {
+          "location": "Hikal Limited",
+          "address": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India.",
+          "primaryFunction": "Headquarter"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "T-21, MIDC. Ind. Area, Taloja - 410 208, Dist Raigad, Maharashtra, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "A-18, MIDC Ind. Area, Mahad - 402 309, Dist. Raigad, Maharashtra, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "629 / 630-B, GIDC Estate, Panoli -394 116, Dist. Bharuch, Gujarat, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "JIGANI UNIT I",
+          "address": "82/A, KIADB lnd. Area, Jigani, Anekal Taluk, Bangalore – 560 105, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "JIGANI UNIT II",
+          "address": "28, KIADB lndl. Area, Jigani, Anekal Taluk, Bangalore – 560 105, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Research and Technology (R&T) Centres",
+          "address": "Plot No. 3A & 3B, 2nd Phase, International Biotech Park, Hinjewadi, Pune - 411 057, India.",
+          "primaryFunction": "Research and Technology (R&T) Centres"
+        },
+        {
+          "location": "Research and Technology (R&T) Centres",
+          "address": "3rd floor, Grey Rock, No.10, 24th Main, J.P. Nagar, 2nd Phase, Bangalore - 560 078, India.",
+          "primaryFunction": "Research and Technology (R&T) Centres"
+        },
+        {
+          "location": "Office",
+          "address": "Kyodo Bldg. 503, 1-18 Kanda Sudacho,Chiyoda-ku, Tokyo 101-0041, Japan.",
+          "primaryFunction": "Office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Hikal Limited (Group) is committed to upholding the highest standards of employee rights, fair labour practices, and ethical workplace conduct across all operations. This policy ensures that every employee is treated with dignity, respect, and fairness, regardless of role, gender, or background. We promote a safe, inclusive, and non-discriminatory work environment, with equal opportunities, fair compensation, and protection against harassment and exploitation. We also support freedom of association, grievance mechanisms, and continuous development of our workforce.",
+      "declaration": "",
+      "scope": "This Employee Rights & Fair Labour Policy applies to all employees, stakeholders, contractors, partners, customers, contract workers, and any individuals representing the Hikal Limited Group. It is applicable across all manufacturing units, operational facilities, branch offices, registered locations, warehouses, and any other premises owned, leased, or managed by the Hikal Limited Group, as listed below.:"
+    },
+    "focusAreas": [
+      "Ensuring transparent recruitment, fair wages, reasonable working hours, and lawful employment conditions in line with applicable labour laws.",
+      "Promoting a workplace free from discrimination based on gender, age, caste, religion, disability, or any other protected characteristic.",
+      "Strictly prohibiting child labour, forced labour, bonded labour, or any form of human trafficking across operations and the supply chain.",
+      "Respecting employees’ rights to freedom of association, collective bargaining, and participation in worker representation bodies.",
+      "Providing a safe, secure, and hygienic working environment with appropriate health and safety measures.",
+      "Maintaining zero tolerance towards harassment, abuse, or retaliation, supported by effective grievance redressal mechanisms.",
+      "Encouraging skill development, training, and open communication to foster employee well-being and growth."
+    ],
+    "qualitative": {
+      "Occupational Health & Safety (OHS)": [
+        "We commit to complying with all applicable occupational health and safety laws, regulations, and industry standards across all Hikal Limited (Group) locations.",
+        "We aim to continue and strengthen our behaviour-based safety programme, ‘Surakshapath,’ to proactively identify and reduce unsafe behaviours and operational risks across all locations.",
+        "We aim to conduct regular and systematic risk assessments to identify occupational health and safety hazards and implement appropriate preventive and corrective measures.",
+        "We strive to continue monthly fire and emergency response drills to enhance preparedness, response capability, and employee awareness during emergency situations.",
+        "We commit to promoting employee well-being by addressing occupational health risks, ergonomics, and mental well-being as part of our holistic safety approach.",
+        "We aim to provide ongoing health and safety training to employees and contract workers to reinforce safe work practices and regulatory compliance."
+      ],
+      "Modern Slavery & Human Trafficking": [
+        "We aim to maintain zero tolerance towards all forms of modern slavery, forced labour, bonded labour, and human trafficking across our operations and business relationships.",
+        "We commit to complying with all applicable labour laws and international standards related to human rights (ILO & UN), ethical employment, and prevention of forced or involuntary labour.",
+        "We strive to strengthen due diligence processes to identify, assess, and mitigate risks related to modern slavery within our workforce and value chain.",
+        "The company aims to implement strict age and identity verification processes during recruitment to prevent underage employment.",
+        "We commit to raising employee awareness through training and communication on recognising, preventing, and reporting indicators of modern slavery and human trafficking.",
+        "We plans to conduct regular internal assessments and audits to identify and eliminate risks of forced or involuntary labor.",
+        "We aim to provide periodic training to HR, recruitment, and management teams on preventing child labor, forced labor, and trafficking risks."
+      ],
+      "Career Development & Growth": [
+        "We aim to create a structured and transparent framework for career development, enabling employees to grow professionally through skill enhancement and role-based learning opportunities.",
+        "We commit to providing equal access to training and development opportunities for all employees, based on merit, performance, and potential.",
+        "We aim to encourage internal talent mobility and succession planning to support long-term career progression and leadership continuity.",
+        "We strive to support employee performance management and regular feedback, enabling employees to understand expectations, identify development areas, and achieve career goals.",
+        "We aim to foster a learning-oriented culture that motivates employees to take ownership of their professional growth and development.",
+        "We aim to conduct regular and structured performance evaluations for employees to assess progress, provide constructive feedback, and identify individual development and career advancement opportunities.",
+        "We commit to maintaining and strengthening career development and training initiatives, including tracking the number of training programmes, & learning hours."
+      ],
+      "Social Dialogue": [
+        "We are committed to fostering a structured and transparent social dialogue by formally recognizing employee representatives and encouraging mutual understanding and cooperation between management and employees.",
+        "We uphold the freedom of association and the right to collective bargaining for all employees, in line with applicable Indian labour laws and ensure that these rights are exercised without fear of retaliation, discrimination, or intimidation.",
+        "We aim to maintain regular engagement between management and employees through scheduled dialogue sessions and committee meetings.",
+        "We plan to institutionalize quarterly town hall meetings to address employee concerns, share key organizational updates, and enhance transparency across all levels of the organization.",
+        "We are committed to developing and maintaining a formal grievance redressal mechanism in consultation with employee representatives, ensuring a fair & transparent process for addressing workplace concerns."
+      ],
+      "Fair Working Conditions": [
+        "We aim to ensure fair and transparent employment terms that comply with applicable labour laws such as the Minimum Wages Act, 1948, and Factories Act, 1948, while supporting employee well-being across all locations.",
+        "We strive to provide a safe, healthy, and supportive workplace through ongoing risk assessments, safety systems, and welfare measures, in line with the Factories Act, 1948.",
+        "We aim to promote work–life balance and employee welfare, supported by clear policies, benefits, and communication that encourage well-being, flexibility, and a positive workplace culture.",
+        "We commit to supporting employee health and welfare through periodic health check-ups, access to medical services, and wellness initiatives, focusing on both physical and mental well-being.",
+        "We aim to strengthen incident reporting, investigation, and corrective actions, fostering a culture of safety, accountability, and continuous improvement in working conditions.",
+        "We aim to promote ergonomic workplace design by conducting regular ergonomic assessment and improving workstation setup to enhance employee comfort, productivity, and well-being."
+      ],
+      "Anti-Discrimination & Anti-Harassment": [
+        "We implement a strict Anti-Sexual Harassment (POSH) Policy, aligned with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013, ensuring a safe and respectful workplace for all employees.",
+        "We will implement transparent and merit-based recruitment, appraisal, and promotion systems to uphold equal opportunity across all levels of the organization.",
+        "We aim to foster a zero-tolerance environment toward discrimination or harassment, ensuring prompt, confidential, and impartial resolution of all reported incidents.",
+        "We plan to conduct regular training on anti-discrimination and respectful workplace behaviour for all employees, including managers and supervisors.",
+        "We aim to review and update HR policies annually to align with national and international standards on equality, non-discrimination, and inclusive workplace practices.",
+        "We aim to maintain a transparent and accessible grievance mechanism, ensuring timely resolution of complaints with complete confidentiality and fairness."
+      ],
+      "DEI (Diversity, Equality and Inclusion)": [
+        "We aim to foster a diverse, equitable, and inclusive workplace by promoting representation, equal opportunity, and a culture of respect for all employees, regardless of gender, background, or identity.",
+        "We commit to strengthening recruitment, retention, and development practices that support diversity in leadership roles and enable equitable career growth across all levels of the organisation.",
+        "We strive to advance gender diversity in our workforce and leadership, with ongoing initiatives to increase the representation and participation of women in key business functions.",
+        "We aim to create platforms for under-represented groups, such as employee networks and forums, to enhance mentorship, collaboration, and support career progression.",
+        "We commit to ensuring workplace accessibility and inclusiveness for differently-abled individuals, including physical accessibility measures and inclusion practices that support diverse needs.",
+        "We aim to promote awareness and training on diversity, equity, and respectful workplace behaviours across all levels of the organisation.",
+        "We strive to maintain zero tolerance for discrimination or bias, reinforcing this through transparent policies, grievance mechanisms, and fair grievance redressal."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Occupational Health & Safety (OHS)",
+        "targets": [
+          {
+            "target": "We aim to maintain zero Lost Time Injury Frequency Rate (LTIFR) across all operations through FY 2027–28, sustaining the performance achieved in previous years.",
+            "baseline": "performance achieved in previous years",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to maintain zero workplace incidents, including fatalities and major accidents, through FY 2027–28, continuing the safety performance demonstrated in previous years",
+            "baseline": "safety performance demonstrated in previous years",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target to provide 100% health and safety training coverage to all employees and contract workers by FY 2027–28, with FY 2022–23 as the baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to conduct periodic occupational health risk assessments covering 100% of operational sites by FY 2027–28, compared to partial coverage in FY 2022–23.",
+            "baseline": "partial coverage in FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target to conduct regular emergency preparedness drills, achieving 100% compliance with planned fire and emergency drills annually by FY 2027–28, compared to FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to ensure 100% availability and usage compliance of Personal Protective Equipment (PPE) at operational sites by FY 2027–28, taking FY 2022–23 as the baseline year.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Modern Slavery & Human Trafficking",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% compliance with legal age verification and ethical recruitment procedures for all new hires by FY 2027–28, with FY 2022–23 as the baseline year.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to conduct at least one internal assessment and one comprehensive risk assessment annually to identify, monitor, and mitigate risks related to child labour, forced labour, and human trafficking.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "We target to maintain zero confirmed incidents of child labour, forced labour, or human trafficking across operations through FY 2027–28, sustaining the performance achieved prior to FY 2022–23.",
+            "baseline": "performance achieved prior to FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to ensure 100% compliance with anti-child labour and anti-forced labour requirements among suppliers and contractors by FY 2027–28, measured against FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to achieve at least 90% employee awareness on labour rights, ethical employment, and protection against forced labour and human trafficking risks by FY 2027–28, compared to the baseline year FY 2022-23",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Career Development & Growth",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% of employees undergo at least one formal performance appraisal annually by FY 2027–28, using FY 2022–23 as the baseline year.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target to provide an average of at least 24 training hours per employee per year by FY 2027–28, compared to the baseline performance in FY 2022–23.",
+            "baseline": "baseline performance in FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to cover 100% of employees under structured career development and skill-building programmes by FY 2027–28, with FY 2022–23 as the baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target to ensure 90% employee participation in learning and development programmes by FY 2027–28, compared to participation levels in FY 2022–23.",
+            "baseline": "participation levels in FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to conduct annual training-needs assessments across all departments by FY 2027–28, using FY 2022–23 as the baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "We aim to establish appropriate employee representation mechanisms at all operational locations by FY 2027–28, ensuring structured and lawful employee representation.",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target to conduct at least one structured social dialogue meeting annually with employee representatives at each site by FY 2027–28.",
+            "baseline": "",
+            "deadline": "annually by FY 2027–28"
+          },
+          {
+            "target": "We aim to ensure that 100% of employees are informed of their right to freedom of association and collective bargaining by FY 2027–28.",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to ensure inclusive participation in employee representation processes, covering 100% of employees in nomination, election, or selection mechanisms by FY 2027–28.",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target to ensure that all eligible employees are covered under applicable collective bargaining arrangements, including clear communication and grievance response mechanisms, by FY 2027–28.",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Fair Working Conditions",
+        "targets": [
+          {
+            "target": "We aim to maintain 100% compliance with applicable labour and workplace laws across all operational sites by FY 2027–28, taking FY 2022–23 as the baseline year.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to maintain & ensure 100% of employees and contract workers are provided with legally compliant working hours, rest breaks, and leave benefits by FY 2027–28, compared to FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to provide safe, hygienic, and well-maintained workplace facilities at 100% of operational locations by FY 2027–28, using FY 2022–23 as the baseline.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target to conduct periodic workplace condition assessments covering 100% of sites annually by FY 2027–28, compared to partial coverage in FY 2022–23.",
+            "baseline": "partial coverage in FY 2022–23",
+            "deadline": "annually by FY 2027–28"
+          },
+          {
+            "target": "We target to achieve at least 90% employee satisfaction related to working conditions, measured through periodic employee surveys by FY 2027–28, compared to FY 2022–23 levels.",
+            "baseline": "FY 2022–23 levels",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to ensure 100% of employees are covered under comprehensive healthcare coverage, including medical insurance and statutory health benefits, across all operations by FY 2027–28, taking FY 2022–23 as the baseline year.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Discrimination & Anti-Harassment",
+        "targets": [
+          {
+            "target": "We aim to maintain zero incidents of discrimination and harassment across all operations through FY 2027–28.",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We commit to enforcing a zero-tolerance approach toward any form of discrimination or harassment across all operations.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We target the timely and fair resolution of 100% of discrimination and harassment complaints, with all cases addressed and closed within defined internal timelines.",
+            "baseline": "",
+            "deadline": "within defined internal timelines"
+          },
+          {
+            "target": "We plan to deliver mandatory annual training on anti-discrimination, unconscious bias, and respectful workplace behaviour to 100% of employees, including permanent, contractual, and supervisory staff by FY 2027-28 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "We commit to reviewing and updating the Equal Opportunity Policy and POSH framework annually, ensuring alignment with evolving legal, regulatory, and best-practice standards.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "We plan to conduct biannual internal audits of discrimination and harassment prevention and grievance-handling processes across departments and locations to assess effectiveness.",
+            "baseline": "",
+            "deadline": "biannual"
+          },
+          {
+            "target": "We aim to maintain zero sexual harassment complaints across all locations through FY 2027–28.",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "DEI (Diversity, Equality and Inclusion)",
+        "targets": [
+          {
+            "target": "We aim to increase gender diversity across the workforce by achieving at least 30% representation of women in total employee strength by FY 2027–28, compared to the FY 2022-23 baseline.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to enhance diversity in leadership by ensuring a minimum 10% representation of women and diverse talent in managerial and senior roles by FY 2027–28.",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We commit to providing equal employment opportunities by ensuring 100% merit-based recruitment, appraisal, and promotion decisions, with zero bias, continued from the FY 2024–25 baseline.",
+            "baseline": "FY 2024–25",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to train 100% of employees annually on DEI, unconscious bias, and inclusive workplace practices by FY 2026–27, using FY 2024–25 as the baseline year.",
+            "baseline": "FY 2024–25",
+            "deadline": "FY 2026–27"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Approve the Employee Rights & Fair Labour Policy."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensure strategic oversight and accountability for human rights performance."
+      },
+      {
+        "role": "Managing Director / Chief Executive Officer",
+        "duty": "Drive commitment to fair labour practices and ethical conduct across the Group."
+      },
+      {
+        "role": "Managing Director / Chief Executive Officer",
+        "duty": "Ensure adequate resources and leadership support for policy implementation."
+      },
+      {
+        "role": "Managing Director / Chief Executive Officer",
+        "duty": "Promote a culture of respect, dignity, and zero tolerance for labour rights violations."
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Oversee implementation of the policy and monitor progress against targets."
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Review the entire policy regularly"
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Review compliance findings and corrective actions, and report to the Board."
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Coordinate internal audits and third-party assessments when required."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Ensure fair recruitment, wages, working hours, and non-discriminatory practices."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Manage grievance handling, disciplinary actions, and employee wellbeing programs."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Conduct regular training and awareness on labour rights and policies."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Collect, validate, and maintain labour and human rights data and records."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Prepare reports, dashboards, and updates for management review."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Support compliance documentation and evidence for audits and disclosures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow the Policy and uphold ethical workplace behavior."
+      },
+      {
+        "role": "Employees",
+        "duty": "Respect colleagues’ rights and report any violations through the grievance mechanism."
+      }
+    ],
+    "monitoring": "The Sustainability Team will monitor and compile labour and human rights data periodically, including key metrics such as fair wages, working hours, grievances, and training. The Chief Sustainability Officer will review progress quarterly and report findings to the Managing Director and Board. Any non-compliance or significant incidents will be escalated immediately, with corrective actions documented and tracked until closure.\n\nWe are committed to continuously strengthening our labour and human rights performance through regular reviews, audits, and stakeholder feedback. We will analyze gaps, implement corrective actions, and update systems and processes accordingly. Training programs will be enhanced based on evolving legal requirements and industry best practices. Lessons learned will be shared across sites to drive ongoing improvement and ensure sustainable compliance.",
+    "reviewMechanism": "The Labour & Human Rights Policy will be reviewed annually by the Chief Sustainability Officer to ensure its relevance and effectiveness. Reviews will also be conducted as needed in response to regulatory changes, stakeholder feedback, audit findings, or significant incidents. The review process will include performance analysis, gap identification, and implementation of corrective actions. Any updates will be approved by senior management and communicated across the organization."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Hikal/2. Employee Rights & Fair Labour Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Hikal/2. Employee Rights & Fair Labour Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 20891,
+  "parsedAt": "2026-09-11T07:08:34.792Z"
+}

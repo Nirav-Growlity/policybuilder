@@ -1,0 +1,179 @@
+{
+  "id": "sustainable-procurement-rhpl",
+  "name": "RHPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 5. Conflict Minerals Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Ravindra Heraeus Private Limited (RHPL)",
+      "industry": "",
+      "site": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India.",
+      "sites": [
+        {
+          "location": "Ravindra Heraeus Pvt. Ltd.",
+          "address": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Ravindra Heraeus Private Limited (RHPL) is committed to conducting its business responsibly and sustainably. As part of this commitment, RHPL ensures that all precious metals, including Silver, Platinum, Palladium, Rhodium, Iridium, Ruthenium, Osmium, and 3TG minerals (Tin, Tungsten, Tantalum, and Gold), are sourced from legitimate and ethical suppliers. RHPL does not tolerate involvement with suppliers or materials linked to human rights violations, armed conflict, corruption, or other illegal activities.\n\nRHPL aligns its practices with internationally recognized standards, including:\n\nOECD Due Diligence Guidance for Responsible Supply Chains of Minerals\n\nRHPL Code of Conduct\n\nInternational standards for environmental, occupational health, and safety management systems\n\nWe prioritize transparency, collaboration with suppliers, regulatory compliance, and continuous improvement in ethical sourcing. Through structured due diligence processes, training programs, and accessible grievance mechanisms, RHPL works to prevent the use of materials associated with human rights violations or conflict financing, ensuring a responsible and sustainable supply chain.",
+      "declaration": "Ravindra Heraeus Private Limited (RHPL) is committed to sourcing all precious metals and 3TG minerals responsibly and ethically. We conduct rigorous due diligence, risk assessments, and supplier monitoring to ensure our supply chain is free from human rights violations, armed conflict, corruption, or other illegal activities. RHPL promotes transparency, compliance, and continuous improvement to maintain a sustainable and conflict-free supply chain.",
+      "scope": "This policy applies to all operations, departments, and stakeholders of RHPL, including Procurement, Compliance, Supply Chain, Product Management, and all suppliers and subcontractors involved in sourcing materials that may contain 3TG minerals. The policy outlines our commitment to:\n\nResponsible sourcing and due diligence for conflict minerals.\n\nSupplier engagement and traceability mapping.\n\nNon-compliance management, grievance handling, and corrective actions.\n\nDocumentation, reporting, and transparency in all sourcing activities."
+    },
+    "focusAreas": [
+      "Supplier Identification & Risk Classification",
+      "Traceability & Due Diligence",
+      "Non-Compliance Management",
+      "Grievance Mechanism & Transparency"
+    ],
+    "qualitative": {
+      "Supplier Identification & Risk Classification": [
+        "Identify suppliers providing 3TG minerals and categorize them by risk level to prioritize due diligence.",
+        "Proactively identify and assess suppliers that may introduce conflict minerals (3TG) into the supply chain to minimize exposure to high-risk sourcing."
+      ],
+      "Traceability & Due Diligence": [
+        "Map mineral sourcing to smelters, refiners, and countries of origin, and verify compliance with recognized standards.",
+        "Promote responsible sourcing by verifying the origin of 3TG minerals and ensuring compliance with internationally recognized responsible minerals standards."
+      ],
+      "Non-Compliance Management": [
+        "Implement escalation procedures for suppliers failing requirements and take corrective actions, including potential disengagement."
+      ],
+      "Grievance Mechanism & Transparency": [
+        "Enable confidential reporting and investigation of concerns, while maintaining comprehensive records for audits and regulatory reporting.",
+        "Ensure that 100% of reported grievances are formally acknowledged, investigated, and addressed to promote a transparent and trusted reporting culture."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Identification & Risk Classification",
+        "targets": [
+          {
+            "target": "Reduce the share of high-risk suppliers within the supply chain by 90% by FY 2029–30 through targeted risk mitigation and supplier engagement.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct comprehensive conflict minerals risk assessments for 100% of suppliers identified as potential 3TG sources on an annual basis.",
+            "baseline": "FY 2022-23",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Ensure documented risk mitigation and corrective action plans are in place for 100% of high-risk suppliers by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Traceability & Due Diligence",
+        "targets": [
+          {
+            "target": "Achieve full traceability by mapping 100% of high-risk 3TG materials to their respective smelters, refiners, and countries of origin by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct annual supplier audits or validations to confirm the accuracy and completeness of CMRT submissions for 100% of suppliers by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30; annual"
+          },
+          {
+            "target": "Maintain comprehensive and auditable records of all traceability and verification activities for 100% of suppliers on an annual basis.",
+            "baseline": "FY 2022-23",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Non-Compliance Management",
+        "targets": [
+          {
+            "target": "Ensure 100% of non-compliance cases are identified, investigated, and addressed within defined timelines through effective corrective action measures by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Implement appropriate corrective actions or supplier disengagement for 100% of suppliers found to be in violation of this policy.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain complete, accurate, and auditable records of all non-compliance cases, investigations, corrective actions, and final outcomes for internal and external audits.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Grievance Mechanism & Transparency",
+        "targets": [
+          {
+            "target": "Ensure that 100% of reported grievances are formally acknowledged, investigated, and addressed to promote a transparent and trusted reporting culture.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Document, communicate, and monitor corrective actions for 100% of validated grievance cases, ensuring timely resolution by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct periodic reviews of the grievance mechanism to ensure 100% effectiveness, enhancing responsiveness, transparency, and stakeholder confidence.",
+            "baseline": "FY 2022-23",
+            "deadline": "Periodic"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Oversee policy implementation, enforce ethical sourcing, manage high-risk suppliers, review compliance, and promote transparency."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Ensure regulatory adherence, conduct supplier due diligence, address non-compliance, maintain records, and manage grievances."
+      },
+      {
+        "role": "Procurement & Supply Chain Teams",
+        "duty": "Evaluate and monitor suppliers, maintain risk profiles, implement KYC, and ensure compliant transactions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow the policy, complete training, report grievances, and support transparency and ethical practices."
+      }
+    ],
+    "monitoring": "RHPL is committed to transparency in conflict minerals compliance through a structured monitoring and reporting framework. Supplier CMRT submissions, traceability data, non-compliance cases, and grievances will be tracked and documented regularly. Internal audits and assessments will ensure adherence to conflict minerals policies and recognized international standards. Key performance indicators (KPIs) will be reviewed quarterly, and findings reported to senior management and relevant stakeholders. An annual Conflict Minerals Report will be published, highlighting progress, challenges, and corrective actions to promote accountability and continuous improvement.",
+    "reviewMechanism": "This policy will be reviewed annually by the Compliance Manager to assess effectiveness and alignment with evolving regulatory requirements, OECD guidance, and customer expectations. Feedback from audits, employee suggestions, supplier engagement, and stakeholder interactions will be incorporated into updates. Necessary revisions will be made to strengthen conflict minerals compliance and enhance due diligence efforts. Significant changes will be communicated to all employees, suppliers, and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/RHPL/5. Conflict Minerals Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/RHPL/5. Conflict Minerals Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 9081,
+  "parsedAt": "2026-09-11T07:40:45.350Z"
+}

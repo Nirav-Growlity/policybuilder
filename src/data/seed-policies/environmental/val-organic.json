@@ -1,0 +1,408 @@
+{
+  "id": "val-organic",
+  "name": "Val Organic",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Val Organics Private Limited",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Val Organics Private Limited",
+          "address": "Plot No. 2201, Road No. 21, GIDC Estate, Sarigam, Valsad, Gujarat - 396155",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Ground Floor, Chadha Building, Plot No-95, Wadala, Wadala, Mumbai, Maharashtra 400031",
+          "address": "",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Acknowledging the ongoing degradation of our environment and the depletion of essential resources, Val Organics Private Limited recognized the critical necessity for responsible corporate initiatives. We are resolutely committed to embedding Environment, Social, and Governance (ESG) principles seamlessly into the core of our daily operations.\n\nWithin the framework of Val Organics Private Limited, our unwavering dedication to addressing sustainability challenges finds expression in our Holistic Environmental Policy. This underscores our proactive commitment to tackling a spectrum of environmental issues, encompassing energy consumption, water conservation, reduction of greenhouse gas emissions, preservation of biodiversity, adoption of renewable energy, control of air pollution, and the responsible management of hazardous waste. To confront these challenges head-on, we've implemented inventive measures aligned with the core sustainability tenets of Reduce, Reuse, and Recycle.\n\nWe pledge to not only comply with relevant environmental regulations but also strive for excellence in environmental performance. Through a culture of innovation, adoption of responsible practices, and continual engagement with stakeholders, our objective is to surpass industry standards in environmental sustainability.",
+      "declaration": "Val Organics Limited is dedicated to conducting its business in a manner that is environmentally responsible and sustainable. We recognize the importance of protecting the environment and are committed to minimizing our environmental impact throughout all aspects of our operations.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Enhance Energy Conservation",
+      "Minimize Greenhouse Gas Output",
+      "Safeguard Water Resources",
+      "Minimize Atmospheric Emissions & Optimize Resource Utilization",
+      "Advance Byproduct and Waste Management Practices",
+      "Ensure Consumer Safety & Wellbeing",
+      "Promote Biodiversity and Ecosystem Services Protection",
+      "Minimize Environmental Impacts During Product Use",
+      "Minimize Environmental Impacts at Product End-of-Life"
+    ],
+    "qualitative": {
+      "Enhance Energy Conservation": [
+        "We continuously strive to improve energy efficiency by adopting best practices in process design, equipment selection, and operation.",
+        "We engage employees in energy conservation efforts through training and awareness programs.",
+        "Conduct annual energy audits to identify and implement energy-saving opportunities through FY 2029-30."
+      ],
+      "Minimize Greenhouse Gas Output": [
+        "We actively seek ways to reduce our greenhouse gas (GHG) emissions through process optimization, energy efficiency measures, and the use of cleaner fuels.",
+        "We collaborate with suppliers and partners to reduce the carbon footprint throughout our supply chain.",
+        "Establish a baseline for GHG emissions and develop a long-term reduction strategy."
+      ],
+      "Safeguard Water Resources": [
+        "We adopt responsible water management practices to minimize water consumption and ensure responsible wastewater treatment and discharge.",
+        "We explore water reuse opportunities and collaborate with local communities for sustainable water management practices.",
+        "Implement water conservation measures in all operations and achieve zero discharge of untreated wastewater."
+      ],
+      "Minimize Atmospheric Emissions & Optimize Resource Utilization": [
+        "We strive to minimize air emissions, noise pollution, and odor from our operations. We will also optimize resource utilization to reduce waste generation.",
+        "We implement best practices for dust control, noise reduction, and odor management. We work with suppliers to minimize packaging waste."
+      ],
+      "Advance Byproduct and Waste Management Practices": [
+        "We prioritize the safe and responsible management of raw materials, chemicals, and waste generated from our operations.",
+        "We explore opportunities for waste reduction, reuse, and recycling. We comply with all applicable regulations regarding hazardous waste disposal."
+      ],
+      "Ensure Consumer Safety & Wellbeing": [
+        "Val Organics is committed to producing and distributing organic products that are safe for consumers and the environment.",
+        "Val Organics actively engage with consumers to build trust and educate them about the safety and responsible use of their products.",
+        "To be recognized as a leader in organic product safety and consumer well-being.",
+        "Establish a system for handling consumer inquiries and complaints, and partner with industry organizations to continuously improve safety practices and address concerns.",
+        "Implement quality control, regular safety testing, comprehensive safety data sheets, and clear ingredient labelling to ensure product safety from creation to consumer."
+      ],
+      "Promote Biodiversity and Ecosystem Services Protection": [
+        "Val Organics recognizes the importance of healthy ecosystems for a sustainable future and commits to protecting biodiversity.",
+        "Educate employees on biodiversity and its significance & partner with local conservation organizations or NGOs.",
+        "Enhance biodiversity within Val Organics' operational areas and surrounding ecosystems.",
+        "Partner with a local conservation organization to protect hectares of natural habitat."
+      ],
+      "Minimize Environmental Impacts During Product Use": [
+        "We are committed to developing and supplying products that minimize environmental impacts during their intended use.",
+        "We provide customers with guidance on the safe, efficient, and environmentally responsible use of our products.",
+        "We continuously evaluate product formulations and processes to improve environmental performance throughout the product use phase.",
+        "Review and improve product sustainability performance at least annually."
+      ],
+      "Minimize Environmental Impacts at Product End-of-Life": [
+        "We are committed to reducing environmental impacts associated with the disposal, recycling, and end-of-life management of our products and packaging.",
+        "We promote responsible disposal, recovery, reuse, and recycling practices among customers and other stakeholders.",
+        "We continuously evaluate opportunities to improve product and packaging recyclability and reduce waste generation.",
+        "We encourage the use of environmentally responsible materials that support circular economy principles.",
+        "Conduct annual reviews to identify opportunities for improving product end-of-life management and resource recovery."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Enhance Energy Conservation",
+        "targets": [
+          {
+            "target": "Reduce energy consumption by 25%",
+            "baseline": "FY 2022 - 23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the use of renewable energy sources to 25 % of total energy consumption",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce energy intensity by 15%, measured as energy consumption per unit of production",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% employee participation in energy conservation awareness and training programs annually",
+            "baseline": "FY 2022-23",
+            "deadline": "Annually through FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Minimize Greenhouse Gas Output",
+        "targets": [
+          {
+            "target": "Reduce GHG emissions by 25%",
+            "baseline": "Established baseline FY 2022 - 23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce GHG emissions intensity by 40%, measured per unit of production",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide annual climate change and GHG reduction awareness training to 100% of relevant employees",
+            "baseline": "FY 2022-23",
+            "deadline": "Through FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Safeguard Water Resources",
+        "targets": [
+          {
+            "target": "Reduce water consumption by 9%",
+            "baseline": "FY 2022 - 23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide annual water conservation awareness training to 100% of employees and relevant contractors",
+            "baseline": "",
+            "deadline": "Through FY 2029-30"
+          },
+          {
+            "target": "Increase water reuse and recycling to 40% of total water consumption",
+            "baseline": "Baseline FY 2022-2023",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Monitor and test 100% of wastewater discharges to ensure compliance with applicable regulatory requirements",
+            "baseline": "",
+            "deadline": "Through FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Minimize Atmospheric Emissions & Optimize Resource Utilization",
+        "targets": [
+          {
+            "target": "Develop and implement a plan to reduce dust emissions, noise levels, and odor by 7%",
+            "baseline": "FY 2022 - 23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase resource utilization by 5% through process optimization and waste minimization techniques",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce particulate matter (dust) emissions by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce operational noise levels at identified high-noise areas by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce fuel consumption intensity by 10% through process optimization and equipment efficiency improvements",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Advance Byproduct and Waste Management Practices",
+        "targets": [
+          {
+            "target": "Reduce hazardous waste generation by 9%",
+            "baseline": "FY 2022 - 23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the recycling rate of non-hazardous waste to 7%",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the quantity of waste co-processed and converted into useful products by 25%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce non-hazardous waste intensity by 20%, measured per unit of production",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Ensure Consumer Safety & Wellbeing",
+        "targets": [
+          {
+            "target": "Maintain 90% customer satisfaction rating on product safety",
+            "baseline": "",
+            "deadline": "Through FY 2029-30"
+          },
+          {
+            "target": "Maintain the number of consumer complaints related to product safety by 0 (zero)",
+            "baseline": "FY 2022-23",
+            "deadline": "Through FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance with applicable product safety, quality, and labeling regulations for all products annually",
+            "baseline": "",
+            "deadline": "Through FY 2029-30"
+          },
+          {
+            "target": "Conduct at least 2 consumer product safety and awareness training programs annually",
+            "baseline": "FY 2022-23",
+            "deadline": "By FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Promote Biodiversity and Ecosystem Services Protection",
+        "targets": [
+          {
+            "target": "Increase the variety of native plant species by 8% within the company premises",
+            "baseline": "FY 2022 - 23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Minimize Environmental Impacts During Product Use",
+        "targets": [
+          {
+            "target": "Provide environmental and safe-use information for 100% of products",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct environmental impact assessments or lifecycle evaluations for 100% of major product lines",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce the environmental footprint of key product formulations by 15%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Minimize Environmental Impacts at Product End-of-Life",
+        "targets": [
+          {
+            "target": "Ensure that 40% of product packaging is recyclable, reusable, or recoverable",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce packaging waste generation by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the use of recyclable or sustainable packaging materials to 15%",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Oversee the development and implementation of ESG strategies and policies."
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Ensure alignment of business practices with environmental, social, and governance goals."
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Monitor ESG performance and report to senior management and stakeholders."
+      },
+      {
+        "role": "Environmental Manager",
+        "duty": "Develop and manage environmental initiatives to minimize the company's ecological footprint."
+      },
+      {
+        "role": "Environmental Manager",
+        "duty": "Conduct environmental impact assessments and recommend mitigation measures."
+      },
+      {
+        "role": "Environmental Manager",
+        "duty": "Coordinate with departments to ensure compliance with environmental regulations."
+      },
+      {
+        "role": "Environmental Manager",
+        "duty": "Review the Environmental Policy at least annually, or more frequently as needed, to reflect changes in regulatory requirements, technological advancements, operational activities, and environmental best practices."
+      },
+      {
+        "role": "Social Responsibility Officer",
+        "duty": "Develop and execute community engagement programs and initiatives."
+      },
+      {
+        "role": "Social Responsibility Officer",
+        "duty": "Monitor social impact and support community development projects."
+      },
+      {
+        "role": "Social Responsibility Officer",
+        "duty": "Facilitate dialogue with stakeholders to address social concerns."
+      },
+      {
+        "role": "Governance Advisor",
+        "duty": "Oversee corporate governance practices and compliance with relevant regulations."
+      },
+      {
+        "role": "Governance Advisor",
+        "duty": "Review and enhance corporate policies and procedures to uphold ethical standards."
+      },
+      {
+        "role": "Governance Advisor",
+        "duty": "Provide guidance on risk management and ethical decision-making processes."
+      },
+      {
+        "role": "Chief Financial Officer (CFO)",
+        "duty": "Ensure financial resources are allocated effectively to support ESG initiatives."
+      },
+      {
+        "role": "Chief Financial Officer (CFO)",
+        "duty": "Review financial performance metrics related to sustainability efforts."
+      },
+      {
+        "role": "Chief Financial Officer (CFO)",
+        "duty": "Integrate ESG considerations into financial planning and reporting processes."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow company policies, procedures, and sustainability commitments in daily operations."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in ESG awareness, training, and improvement initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support energy conservation, waste reduction, workplace safety, and responsible resource management practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report sustainability-related concerns, opportunities, and improvement suggestions through established channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Contribute to building a responsible, ethical, and sustainable workplace culture."
+      }
+    ],
+    "monitoring": "Building on Val Organics Limited's commitment to environmental responsibility, transparency, and continuous improvement, this reporting mechanism outlines key components for effectively communicating performance and progress on the established environmental policy.\n\nVal Organics will publish a comprehensive environmental sustainability report on an annual basis.\n\nThe report will be available in a user-friendly format, both online and in print upon request.\n\nThe report will focus on specific KPIs established for each area of the environmental policy, such as:\n\nEnergy consumption and GHG emissions (kWh, tonnes)\n\nWater consumption and wastewater discharge (m3)\n\nWaste generation and recycling rates (tonnes, %)\n\nAir emissions (dust, noise levels)\n\nProgress on renewable energy adoption (%)\n\nClear definitions and data collection methodologies will be outlined for each KPI.\n\nThe report will present a clear analysis of performance against established targets for each KPI.\n\nAreas where targets are not met will be identified, and corrective actions or revised targets will be outlined.\n\nThe report will highlight ongoing improvement initiatives and future goals for environmental sustainability.\n\nThe report will acknowledge the importance of stakeholder engagement in achieving environmental goals.\n\nIt will outline communication strategies for keeping stakeholders informed about Val Organics' environmental performance.\n\nOpportunities for stakeholder feedback and suggestions will be addressed.\n\nVal Organics will consider seeking independent verification of its environmental sustainability report to ensure data accuracy and transparency.\n\nRegular reporting fosters transparency and accountability for Val Organics' environmental performance.\n\nOpen communication builds trust and collaboration with stakeholders.\n\nData-driven reporting allows for continuous improvement by identifying areas for progress.\n\nReporting facilitates benchmarking against industry best practices and regulatory requirements.\n\nBy implementing this robust reporting mechanism, Val Organics Limited demonstrates its commitment to environmental stewardship and empowers stakeholders to track progress towards a more sustainable future.",
+    "reviewMechanism": "To ensure the effectiveness and continuous improvement of Val Organics Pvt. Ltd.'s Holistic Environmental Policy, the following review mechanism shall be implemented:\n\nThe Environmental Manager shall review the Policy at least annually, or more frequently if significant changes occur in regulations, technologies, business operations, or environmental risks.\n\nFeedback from relevant stakeholders, including employees, customers, regulators, suppliers, and community representatives, shall be considered during the review process.\n\nEnvironmental performance data shall be evaluated against established objectives, targets, legal requirements, and industry benchmarks.\n\nThe implementation of the Policy and progress toward achieving environmental goals and commitments shall be assessed to identify opportunities for improvement.\n\nBased on the review findings, necessary updates, corrective actions, and enhancements shall be recommended to align with evolving environmental standards, stakeholder expectations, and best practices.\n\nAny revisions to the Policy shall be subject to approval by the CEO of Val Organics Pvt. Ltd.\n\nThe outcomes of the review process and significant policy updates shall be communicated to relevant stakeholders, as appropriate.\n\nThis review mechanism will help ensure that the Environmental Policy remains effective, relevant, and aligned with Val Organics' commitment to environmental stewardship and continuous improvement."
+  },
+  "sourcePath": "Policies - Kenal/Val Organic/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Val Organic/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 17280,
+  "parsedAt": "2026-09-11T07:30:55.140Z"
+}

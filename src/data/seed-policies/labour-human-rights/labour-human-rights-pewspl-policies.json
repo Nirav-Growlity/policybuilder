@@ -1,0 +1,548 @@
+{
+  "id": "labour-human-rights-pewspl-policies",
+  "name": "PEWSPL Policies",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Social Responsibility Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Parekh Ecom & Warehousing Services Pvt. Ltd. (PEWSPL)",
+      "industry": "",
+      "site": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "Shakambari",
+          "address": "Shakambari Logistic Park-Unit #A-1Premises # 1 to 7Next to All Saint High School,Pise Pipeline Road, Village LonadTal-Bhiwandi - Thane, Maharashtra – 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Lonikand",
+          "address": "Parekh E-com & warehousing services Pvt. Ltd.Chondhe Warehouse, Vadhu Khurd, Gate no-128/142/144,Lonikand, Tal-Haveli, Dist-Pune Pin code- 412216, Maharashtra, India.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Chakan",
+          "address": "Gut No. 318/02, (P), Village-Kuruli, Tal. Khed, Dist.-Pune, 410501",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "PEWSPL is committed to maintaining a workplace that respects human rights, promotes fair labour practices, and provides equal opportunity, dignity, and respect to all employees and stakeholders. The Company believes that ethical employment practices, safe working conditions, diversity, inclusion, and employee well-being are essential for sustainable business growth and responsible business conduct.\n\nPEWSPL is committed to complying with applicable labour laws, human rights principles, and employment regulations across all its operations. The Company strives to prevent discrimination, harassment, child labour, forced labour, and any form of unfair treatment while promoting a safe, inclusive, and respectful work environment.",
+      "declaration": "The purpose of this policy is to identify, assess, and manage human rights that impacts our business activities in the operational context, our leverage and business relationships. It aims to enhance the knowledge and understanding of human rights, foster attitudes of tolerance, respect, solidarity, and responsibility amongst PEWSPL employees. The policy aims to:\n\nPromote fair labour practices and responsible employment conditions.\n\nEnsure compliance with applicable labour laws and human rights requirements.\n\nPrevent child labour, forced labour, discrimination, harassment, and unfair treatment.\n\nPromote equal opportunity, diversity, inclusion, and workplace dignity.\n\nMaintain safe, healthy, and respectful working conditions.\n\nEncourage employee well-being, engagement, and ethical workplace behaviour.\n\nFoster awareness and accountability regarding labour rights and workplace conduct.",
+      "scope": "This policy applies to all operations of PEWSPL, including transportation activities, operational facilities, warehouses, and office locations across all locations where PEWSPL operates. It covers all permanent, temporary, and contractual employees across all functions, as well as all internal and external stakeholders associated with PEWSPL, whether directly or indirectly engaged with the organization’s operations and services."
+    },
+    "focusAreas": [
+      "Workplace Health, Safety & Operational Well-Being",
+      "Human Rights Protection & Ethical Employment",
+      "Employee Communication & Grievance Management",
+      "Training, Skill Development & Career Growth",
+      "Fair Employment Practices & Responsible Working Conditions",
+      "Inclusive Workplace & Anti-Harassment Practices",
+      "Employee Welfare, Inclusion & Well-Being"
+    ],
+    "qualitative": {
+      "Workplace Health, Safety & Operational Well-Being": [
+        "We are committed to maintaining safe, hygienic, and healthy working conditions across warehouses, transportation activities, and office facilities.",
+        "We aim to minimize workplace risks and unsafe practices through responsible operational controls and safety procedures.",
+        "We strive to strengthen employee awareness regarding workplace safety, emergency preparedness, and responsible operational behaviour.",
+        "We are committed to promoting safe material handling, warehouse operations, and transportation practices across all applicable functions.",
+        "We seek to support employee well-being through safe working environments and responsible workplace practices.",
+        "We strive to strengthen workplace health and safety management practices in alignment with applicable ISO 45001 Occupational Health & Safety Management System requirements.",
+        "We aim to conduct timely safety awareness initiatives and emergency response preparedness programs to support employees in identifying and managing workplace risks.",
+        "We are committed to maintaining a workplace free from unsafe behaviour, violence, substance abuse, and practices that may negatively impact the workplace environment."
+      ],
+      "Human Rights Protection & Ethical Employment": [
+        "We are committed to strictly prohibiting child labour, forced labour, bonded labour, and all forms of human trafficking across our operations.",
+        "We aim to ensure compliance with applicable labour laws, minimum age requirements, and ethical employment practices.",
+        "We strive to maintain responsible recruitment, employment verification, and workforce management procedures.",
+        "We are committed to promoting awareness regarding ethical labour practices and responsible employment standards.",
+        "We will encourage responsible labour practices across contractors, manpower providers, and business partners associated with the Company.",
+        "We are committed to maintaining a zero-tolerance approach towards modern slavery and human trafficking across our operations and supply chain relationships.",
+        "We strive to ensure that employees work voluntarily and are free to terminate employment in accordance with applicable employment conditions and legal requirements."
+      ],
+      "Employee Communication & Grievance Management": [
+        "We are committed to promoting transparent communication and respectful workplace interactions across the organization.",
+        "We aim to encourage employees to report workplace concerns, grievances, or operational issues through appropriate reporting channels.",
+        "We strive to maintain fair, transparent, and confidential grievance handling mechanisms.",
+        "We are committed to promoting employee participation and engagement in workplace improvement initiatives wherever feasible.",
+        "We aim to foster a workplace culture based on mutual respect, collaboration, and responsible communication.",
+        "We are committed to fostering positive employee relations through open communication, employee engagement, and constructive interaction with workforce representatives.",
+        "We strive to create workplaces in which open and honest communication among employees is encouraged and respected.",
+        "We are committed to ensuring that employees can raise workplace concerns without fear of retaliation or unfair treatment."
+      ],
+      "Training, Skill Development & Career Growth": [
+        "We are committed to supporting employee learning, skill development, and professional growth opportunities.",
+        "We aim to strengthen employee capabilities through operational, safety, behavioural, and policy awareness training programs.",
+        "We strive to promote continuous learning and responsible workplace behaviour across all operational functions.",
+        "We are committed to encouraging employee participation in training and awareness initiatives relevant to their roles and responsibilities.",
+        "We seek to support workforce competency and operational efficiency through regular capability-building initiatives.",
+        "We strive to continuously develop and integrate relevant workplace awareness and human rights topics into employee training programs.",
+        "We are committed to promoting awareness regarding ethical conduct, labour rights, and responsible workplace practices across the organization."
+      ],
+      "Fair Employment Practices & Responsible Working Conditions": [
+        "We are committed to maintaining fair and responsible working conditions across all business operations.",
+        "We aim to ensure compliance with applicable labour laws relating to wages, working hours, leave, and employee benefits.",
+        "We strive to promote ethical employment practices and respectful workplace behaviour across all levels of the organization.",
+        "We are committed to maintaining transparent employment practices and responsible workforce management procedures.",
+        "We will support a positive and professional work environment that promotes employee dignity and respect.",
+        "We are committed to promoting work-life balance and responsible workplace practices wherever operationally feasible.",
+        "We strive to maintain open and direct communication with employees regarding workplace concerns, employment conditions, and employee rights."
+      ],
+      "Inclusive Workplace & Anti-Harassment Practices": [
+        "We are committed to maintaining a workplace free from discrimination, harassment, bullying, abuse, intimidation, or unfair treatment.",
+        "We aim to promote equal opportunity, dignity, inclusion, and mutual respect across all levels of the organization.",
+        "We strive to encourage respectful workplace behaviour and responsible professional conduct.",
+        "We are committed to maintaining fair and transparent processes for reporting and addressing workplace concerns.",
+        "We aim to strengthen employee awareness regarding workplace behaviour, inclusion, and anti-harassment practices.",
+        "We strive to maintain an inclusive work culture in which employees feel respected, valued, and supported in their professional growth.",
+        "We are committed to promoting equal opportunity in recruitment, training, development, compensation, and career advancement based on qualifications, skills, and performance."
+      ],
+      "Employee Welfare, Inclusion & Well-Being": [
+        "We are committed to promoting employee well-being and responsible workplace welfare practices across all operations.",
+        "We aim to support a positive, inclusive, and respectful work environment for employees.",
+        "We strive to encourage employee engagement, work-life balance, and responsible workplace interactions wherever feasible.",
+        "We are committed to supporting employee welfare initiatives and awareness programs across operational facilities.",
+        "We seek to promote employee morale, dignity, and overall workplace well-being through responsible management practices.",
+        "We strive to support employee well-being through responsible workplace practices, access to basic welfare facilities, and healthy workplace environments.",
+        "We are committed to encouraging workplace practices that support employee health, hygiene, and general well-being across operations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Workplace Health, Safety & Operational Well-Being",
+        "targets": [
+          {
+            "target": "We aim to provide annual health and safety awareness training to at least 85% of employees",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to maintain achieve 100% periodic safety inspections across major operational locations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to improving closure of identified workplace safety observations by 80%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase availability of workplace safety communication and signage across 100% of operational sites",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to improve compliance with applicable ISO 45001 occupational health and safety management requirements across major operational locations by 80%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to increase employee healthcare coverage and access to medical welfare benefits to at least 70% of employees",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We aim to improve availability of first-aid and emergency response facilities across 100% of major operational locations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase periodic health and wellness awareness communication to employees by 80%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Human Rights Protection & Ethical Employment",
+        "targets": [
+          {
+            "target": "We strive to improve supplier and contractor participation in ethical labor awareness initiatives to at least 75%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to communicate responsible labor and human rights requirements to 100% of major suppliers and contractors",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee and contractor awareness regarding ethical labor practices to at least 90%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to include responsible labor practice clauses in at least 90% of applicable supplier and contractor agreements",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to improve monitoring of labor-related compliance documentation by 85%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Communication & Grievance Management",
+        "targets": [
+          {
+            "target": "We strive to maintain 100 % documented employee feedback review practices across all departments",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to improve employee participation in internal communication initiatives to at least 80%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to conduct at least four employee engagement and communication sessions annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to maintain 100% coverage of all the employees under applicable employee representation, consultation and collective engagement frameworks",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030"
+          },
+          {
+            "target": "We strive to improve employee awareness regarding grievance and feedback mechanisms to at least 90%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Training, Skill Development & Career Growth",
+        "targets": [
+          {
+            "target": "We aim to improve employee participation in internal communication initiatives to at least 80%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to provide annual training and skill development programs to at least 85% of employees",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to conduct a minimum of 3 internal learning and awareness sessions annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to improving employee participation in performance and development review processes to at least 90%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to increase role-based and technical training coverage by 75%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to maintain training communication and documentation practices across 100% of departments",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Fair Employment Practices & Responsible Working Conditions",
+        "targets": [
+          {
+            "target": "We strive to increase employee awareness regarding workplace welfare facilities to at least 85%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to strengthening workplace cleanliness and operational housekeeping practices across 100% of major locations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to maintain 100% compliance with applicable statutory inspection, employee welfare, and operational requirements under the Factories Act, 1948 wherever applicable to Company operations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to improve workplace facility assessment coverage across all major operational locations to 100%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to increase employee awareness regarding workplace policies and code of conduct to at least 90%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to implementing workplace improvement initiatives across at least 80% of identified areas",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Inclusive Workplace & Anti-Harassment Practices",
+        "targets": [
+          {
+            "target": "We aim to improve communication of equal opportunity and workplace respect practices across 100% of employees",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to strengthening employee awareness regarding ethical workplace practices to at least 90%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to provide workplace ethics, anti-discrimination, and anti-harassment awareness training to at least 90% of employees",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee awareness regarding grievance reporting and redressal mechanisms to at least 95%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee participation in workplace inclusion and ethics initiatives by 80%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to strengthen policy communication coverage related to workplace conduct and inclusion across 100% of employees",
+            "baseline": "Fy 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Welfare, Inclusion & Well-Being",
+        "targets": [
+          {
+            "target": "We aim to improve employee participation in workplace wellness communication initiatives to at least 80%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We are committed to enhancing awareness regarding employee support and welfare initiatives across 100% of operational facilities",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to increase employee participation in wellness and well-being initiatives to at least 80%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We aim to strengthen communication related to employee wellness and inclusion initiatives across 100% of major operational locations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "We strive to improve employee participation in feedback and satisfaction initiatives by 75%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We are committed to improving employee awareness regarding welfare and support programs to at least 90%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Provide strategic direction and leadership on labour rights, human rights, ethical employment practices, and employee well-being across all operations."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approve the Human Rights and Fair Labour Practices Policy, objectives, and improvement initiatives."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure availability of adequate resources for implementation of fair labour and human rights commitments."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Promote a culture of dignity, equality, inclusion, respect, and non-discrimination across the organization."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Periodically review labour practices, employee welfare initiatives, and compliance performance."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Review this policy regularly."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Implement and maintain fair labour and human rights practices across all business operations."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Ensure compliance with applicable labour laws, wage regulations, working hour requirements, and statutory obligations."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Monitor recruitment, onboarding, compensation, benefits, leave, and disciplinary processes to ensure fairness and transparency."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Ensure prevention of child labour, forced labour, harassment, abuse, discrimination, and retaliation in the workplace."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Promote equal opportunity, diversity, inclusion, and respectful workplace practices."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Conduct employee awareness, induction, and training programs on labour rights, workplace behaviour, ethics, and grievance mechanisms."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Maintain confidential grievance reporting and employee communication channels."
+      },
+      {
+        "role": "Human Resources (HR) Department",
+        "duty": "Support periodic assessments, audits, and corrective actions related to labour and human rights practices."
+      },
+      {
+        "role": "Operations and Department Heads",
+        "duty": "Ensure implementation of fair labour practices and respectful workplace behaviour within their respective functions and operational locations."
+      },
+      {
+        "role": "Operations and Department Heads",
+        "duty": "Monitor working conditions, workload distribution, employee conduct, and workplace safety practices."
+      },
+      {
+        "role": "Operations and Department Heads",
+        "duty": "Ensure employees, contract workers, and third-party personnel are treated fairly and respectfully."
+      },
+      {
+        "role": "Operations and Department Heads",
+        "duty": "Prevent discrimination, harassment, abusive behaviour, and unfair employment practices within operational areas."
+      },
+      {
+        "role": "Operations and Department Heads",
+        "duty": "Support employee welfare, engagement, and grievance resolution initiatives."
+      },
+      {
+        "role": "Operations and Department Heads",
+        "duty": "Immediately report any labour rights concerns, non-compliance issues, or unethical practices to HR or management."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Maintain a safe, respectful, and inclusive work environment."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Ensure fair treatment of employees and workers under their supervision."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Promote equal opportunity and non-discriminatory workplace practices."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Address employee concerns professionally, confidentially, and without retaliation."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Encourage employee participation, communication, and workplace collaboration."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Support implementation of employee welfare and engagement initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Treat colleagues, customers, contractors, and stakeholders with dignity, fairness, and respect."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow Company policies related to workplace behaviour, ethics, human rights, diversity, and labour practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Refrain from discrimination, harassment, intimidation, abusive conduct, or unethical behaviour."
+      },
+      {
+        "role": "Employees",
+        "duty": "Promptly report workplace concerns, misconduct, harassment, unsafe conditions, or labour rights violations through designated channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in awareness programs, training sessions, and workplace improvement initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support a positive, respectful, and inclusive workplace culture."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Comply with applicable labour laws, human rights standards, and Company requirements while working with PEWSPL."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Prohibit child labour, forced labour, bonded labour, discrimination, harassment, and abusive workplace practices."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Ensure fair wages, lawful working hours, safe working conditions, and respectful treatment of workers."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Support ethical employment practices and responsible business conduct across the supply chain."
+      },
+      {
+        "role": "Contractors, Suppliers, and Business Partners",
+        "duty": "Cooperate with PEWSPL in assessments, audits, investigations, or corrective action initiatives related to labour and human rights compliance."
+      }
+    ],
+    "monitoring": "Implementation of this Social Responsibility Policy shall be monitored through periodic reviews, employee feedback, workplace inspections, compliance assessments, and grievance management mechanisms. Labour-related concerns, incidents, and corrective actions shall be tracked and reviewed regularly.\n\nPEWSPL is committed to continually improving labour and human rights practices through regular review of workplace standards, employee awareness initiatives, grievance mechanisms, and compliance processes. The Company will continue strengthening fair employment practices, employee well-being, and workplace culture in line with legal requirements and responsible business commitments.",
+    "reviewMechanism": "This Social Responsibility Policy shall be reviewed annually by the Human Resources Department or whenever significant changes occur in labour laws, operational activities, workforce structure, stakeholder expectations, or organizational requirements, to ensure its continued relevance, effectiveness, and alignment with the Company’s human rights and fair labour commitments."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/PEWSPL Policies/2. Social Responsibility Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/PEWSPL Policies/2. Social Responsibility Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 24479,
+  "parsedAt": "2026-09-11T07:12:14.967Z"
+}

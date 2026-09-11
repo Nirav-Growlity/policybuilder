@@ -1,0 +1,415 @@
+{
+  "id": "labour-human-rights-rakheja",
+  "name": "Rakheja",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Fair Labor and Human Right Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Rakheja Enterprises LLP",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "",
+          "address": "",
+          "primaryFunction": "Manufacturing facilities"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Rakheja Enterprises LLP, we are dedicated to upholding the highest standards of labor and human rights. We respect the dignity and worth of every individual and are committed to providing a safe, equitable, and respectful work environment. Our policy emphasizes the protection of workers' rights, including fair wages, equal opportunities, and freedom from discrimination and harassment. We prioritize transparency and fairness in all our practices, ensuring that every employee is treated with dignity and respect. Additionally, we provide channels for addressing grievances and encourage open communication to continuously improve our work environment, reinforcing our commitment to ethical labor practices and human rights.",
+      "declaration": "Ethical Practices: Uphold ethical standards and prioritize the respect and dignity of every individual connected with our organization.\n\nEmployee Well-being: Focus on the health and safety of our workforce by implementing standards for fair compensation, secure work environments, and equitable opportunities, thereby nurturing a positive work culture.\n\nRegulatory Adherence: Ensure compliance with labor laws, safety regulations, and human rights principles as outlined by the International Labor Organization (ILO) and the Universal Declaration of Human Rights (UDHR).\n\nRisk Management: Dedicate efforts to address labor-related risks such as turnover, absenteeism, and workplace disputes to ensure business stability and continuity.\n\nTraining and Development: Invest in continuous training and professional development to enhance employees' skills and knowledge, promoting career growth and adaptability within the organization.\n\nDiversity and Inclusion: Foster a diverse and inclusive work environment by implementing practices that ensure equal treatment and opportunities for all employees, regardless of background or identity.",
+      "scope": "This Policy applies to all employees (at all levels), all stakeholders, partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Rakheja Enterprises LLP. It also applies to all our manufacturing facilities."
+    },
+    "focusAreas": [
+      "Workplace Wellness and Protection",
+      "Equitable Compensation and Perks",
+      "Life-Work Harmony",
+      "CSR (Corporate Social Responsibility)",
+      "Ethical Labor Practices",
+      "Professional Growth and Skill Development",
+      "Prevention on Child & Forced Labor",
+      "Inclusive Workplace Culture",
+      "External Human Rights"
+    ],
+    "qualitative": {
+      "Workplace Wellness and Protection": [
+        "To enhance emergency readiness, we conduct bi-annual drills and simulations across all departments.",
+        "Our company is introducing a new ergonomic assessment program to prevent musculoskeletal injuries, with corrective actions implemented swiftly.",
+        "We're rolling out a mental health support initiative that includes counseling services and stress management workshops.",
+        "To reduce workplace accidents related to machinery, we’re implementing advanced safety controls and maintenance routines."
+      ],
+      "Equitable Compensation and Perks": [
+        "We’ve introduced flexible working arrangements to enhance work-life balance.",
+        "We've introduced a fair wage structure across our operations.",
+        "Our benefits package has been expanded to include wellness and health programs."
+      ],
+      "Life-Work Harmony": [
+        "We will conduct biannual surveys to gauge employee satisfaction with work-life balance.",
+        "We will introduce additional family-friendly policies such as flexible parental leave and childcare support.",
+        "We aim to offer flexible work hours to employees, allowing them to adjust their schedules based on personal needs."
+      ],
+      "CSR (Corporate Social Responsibility)": [
+        "To support local communities, we aim to allocate annual profits to community development projects.",
+        "Our goal is to strengthen community partnerships by supporting more local events."
+      ],
+      "Ethical Labor Practices": [
+        "To ensure fair labor practices, we are conducting semi-annual third-party audits.",
+        "We are developing a comprehensive labor ethics training program for all employees."
+      ],
+      "Professional Growth and Skill Development": [
+        "Our Learning Management System supports employee growth.",
+        "We encourage internal career advancement through our mentorship and leadership development initiatives.",
+        "We are enhancing our internal job rotation programs to broaden employee skills."
+      ],
+      "Prevention on Child & Forced Labor": [
+        "We are implementing rigorous internal policies to prevent child and forced labor.",
+        "To enhance employee awareness, we are introducing mandatory training on child and forced labor prevention.",
+        "To strengthen internal oversight, we are enhancing our internal audit procedures."
+      ],
+      "Inclusive Workplace Culture": [
+        "We are enhancing our recruitment strategies to attract a more diverse talent pool.",
+        "Our goal is to strengthen mentorship programs for underrepresented employees.",
+        "To promote an inclusive culture, we are implementing regular DEI audits."
+      ],
+      "External Human Rights": [
+        "We are increasing our engagement with international human rights standards to enhance our practices.",
+        "To improve transparency, we are enhancing our reporting mechanisms for human rights issues.",
+        "We aim to strengthen partnerships with local NGOs to support human rights initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Workplace Wellness and Protection",
+        "targets": [
+          {
+            "target": "Achieve a 100% participation rate in bi-annual drills and simulations across all departments and improve response times by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Complete ergonomic evaluations for 90% of workstations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Have 80% of employees participate in at least one mental health resource",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Decrease machinery-related incidents by 25% and ensure all equipment meets safety standards",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Equitable Compensation and Perks",
+        "targets": [
+          {
+            "target": "Achieve a 70% employee satisfaction rate with flexibility options",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Ensure our 80% employees earn well above the regional living wage",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Have 85% of employees satisfied with their benefits",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Life-Work Harmony",
+        "targets": [
+          {
+            "target": "Achieve a 25% improvement in positive feedback on work-life balance",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Implement family-friendly policies for 100% of eligible staff",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Offer flexible work hours to 90% of employees",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "CSR (Corporate Social Responsibility)",
+        "targets": [
+          {
+            "target": "Allocate 0.7% of annual profits to community development projects",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Achieve a 20% increase in community event sponsorships",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Practices",
+        "targets": [
+          {
+            "target": "Audit 100% of our facilities and suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Achieve 100% employee completion of labor ethics training",
+            "baseline": "FY 2022-23 levels",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Professional Growth and Skill Development",
+        "targets": [
+          {
+            "target": "Deliver a minimum of 40 hours of training per employee annually",
+            "baseline": "The hours provided in FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Achieve 70% of management positions filled by internal promotions",
+            "baseline": "Our FY 2022-23 rate",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Achieve a 50% increase in job rotations",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Prevention on Child & Forced Labor",
+        "targets": [
+          {
+            "target": "Ensure 100% of our internal operations adhere to policies preventing child and forced labor",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Have 100% of employees complete mandatory training on child and forced labor prevention",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Conduct annual audits for child and forced labor compliance in all departments",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Inclusive Workplace Culture",
+        "targets": [
+          {
+            "target": "Achieve a 40% increase in applications from underrepresented groups",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Achieve a 30% increase in participation in mentorship programs for underrepresented employees",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Complete DEI audits annually and address findings within 60 days",
+            "baseline": "",
+            "deadline": "FY 2022-23"
+          }
+        ]
+      },
+      {
+        "area": "External Human Rights",
+        "targets": [
+          {
+            "target": "Align 100% of our operations with international human rights standards",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Achieve a 50% increase in public disclosures of human rights practices",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Form collaborations with at least five new NGOs",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2025-26"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Ensure the implementation and effectiveness of labor and human rights strategies are aligned with the company’s mission and values."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Allocate necessary resources to support the effective execution of the policy and its objectives."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Engage with external stakeholders, including regulatory bodies and human rights organizations, to stay informed on best practices and compliance."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Oversee risk management related to labor and human rights issues and ensure that adequate measures are in place to mitigate risks."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Review and approve updates to the policy based on performance metrics and evolving regulations."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Develop and deliver training programs related to labor and human rights to all employees."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Regularly monitor and ensure compliance with labor laws, safety regulations, and internal policies."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Provide support and resources for employees to address grievances and ensure a safe and respectful work environment."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Conduct regular reviews and updates of the labor and human rights policy to ensure it remains relevant and effective, based on performance metrics and feedback."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Implement and oversee recruitment strategies to promote diversity and inclusivity within the workforce."
+      },
+      {
+        "role": "Compliance and Ethics Team",
+        "duty": "Conduct regular audits to ensure compliance with labor and human rights policies and procedures."
+      },
+      {
+        "role": "Compliance and Ethics Team",
+        "duty": "Investigate any reported violations or concerns related to labor and human rights practices."
+      },
+      {
+        "role": "Compliance and Ethics Team",
+        "duty": "Develop and maintain reporting mechanisms for human rights issues and ensure transparency in disclosures."
+      },
+      {
+        "role": "Compliance and Ethics Team",
+        "duty": "Provide recommendations for policy updates based on audit findings and industry best practices."
+      },
+      {
+        "role": "Compliance and Ethics Team",
+        "duty": "Collaborate with external auditors and human rights organizations to enhance compliance and ethical standards."
+      },
+      {
+        "role": "Facilities Management",
+        "duty": "Implement and maintain safety measures and ergonomic assessments to protect employees' health and prevent injuries."
+      },
+      {
+        "role": "Facilities Management",
+        "duty": "Conduct regular emergency drills and simulations to ensure readiness and safety across all departments."
+      },
+      {
+        "role": "Facilities Management",
+        "duty": "Oversee the maintenance of a secure and conducive work environment, addressing any hazards promptly."
+      },
+      {
+        "role": "Facilities Management",
+        "duty": "Ensure that facilities are equipped with necessary resources to support employee well-being and safety."
+      },
+      {
+        "role": "Facilities Management",
+        "duty": "Report and document any workplace accidents or safety incidents, ensuring prompt corrective actions."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Gather and communicate employee feedback regarding labor practices, workplace conditions, and policy effectiveness."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Assist colleagues in addressing and resolving grievances related to labor and human rights issues."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Promote awareness of the policy and its objectives among employees, encouraging adherence and engagement."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Participate in and complete required training on labor and human rights topics, and advocate for continuous learning."
+      },
+      {
+        "role": "Employee Representatives",
+        "duty": "Act as a liaison between employees and management, advocating for employee needs and concerns related to labor and human rights."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow the company's labor and human rights policies and practices, including fair treatment, non-discrimination, and respect for colleagues."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any observed violations of labor and human rights policies through established channels, ensuring prompt attention and resolution."
+      },
+      {
+        "role": "Employees",
+        "duty": "Engage in and complete mandatory training programs related to labor rights, safety, and ethical practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Use the provided channels to address any grievances or concerns regarding workplace conditions or practices, seeking resolution through appropriate processes."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively contribute to a positive and inclusive work environment by supporting colleagues, respecting diversity, and upholding the company’s ethical standards."
+      }
+    ],
+    "monitoring": "Transparent and regular reporting is essential for tracking progress, identifying areas for improvement, and ensuring accountability in our human rights efforts. Rakheja Enterprises LLP implements the following reporting procedures:\n\nRegular Human Rights Performance Reports: We conduct annual evaluations of our human rights performance, gathering data on key metrics outlined in our Human Rights Strategy. These reports include an assessment of compliance with human rights standards and progress towards our policy objectives.\n\nInternal Audits: We perform internal audits to evaluate adherence to human rights policies and procedures, assess the effectiveness of our human rights management systems, and identify areas requiring corrective action. These audits help ensure ongoing compliance and facilitate continuous improvement.\n\nStakeholder Engagement: We actively engage with stakeholders, including employees, suppliers, customers, and local communities, to solicit feedback, address concerns, and communicate our human rights practices and performance. This engagement ensures transparency and fosters a collaborative approach to human rights issues.\n\nGrievance Reporting Mechanisms: We provide accessible channels for employees and stakeholders to report human rights violations or concerns. Reports are reviewed promptly, and actions are taken to resolve issues and prevent recurrence. This mechanism supports our commitment to accountability and continuous improvement.\n\nPublic Disclosures: We enhance transparency by publicly disclosing our human rights performance, including progress towards policy objectives and responses to stakeholder concerns. These disclosures are made through our website, annual reports, and other communication channels, ensuring that our commitments are visible and accessible.\n\nPolicy Review and Updates: We regularly review and update our human rights policy based on performance reports, audit findings, and stakeholder feedback. This ensures that the policy remains relevant, effective, and aligned with best practices and evolving human rights standards.\n\nAt Rakheja Enterprises LLP, we are committed to continuous improvement in our labor and human rights practices. We regularly assess our policies and procedures through performance reports, internal audits, and stakeholder feedback to identify areas for enhancement. By engaging with employees, suppliers, and external experts, we adapt our strategies to address emerging challenges and opportunities. Our focus is on refining our practices to better support workforce well-being, ensure regulatory compliance, and foster a diverse and inclusive workplace. We set measurable targets, track progress, and adjust our initiatives to achieve our human rights goals effectively. This proactive approach ensures that we continually advance our commitment to ethical labor standards and human rights excellence.",
+    "reviewMechanism": "The HR Head will conduct a comprehensive review of this human rights policy every two years to ensure its continued effectiveness and relevance. This review will include an assessment of regulatory compliance, progress toward policy objectives, and feedback from stakeholders. Necessary updates will be made to address emerging challenges and opportunities, ensuring ongoing improvement and alignment with best practices in human rights."
+  },
+  "sourcePath": "Policies - Kenal/Rakheja/2. Fair Labor and Human Right Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Rakheja/2. Fair Labor and Human Right Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 17047,
+  "parsedAt": "2026-09-11T07:27:29.989Z"
+}

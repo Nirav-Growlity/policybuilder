@@ -1,0 +1,308 @@
+{
+  "id": "labour-human-rights-rhpl",
+  "name": "RHPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labour and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "RAVINDRA HERAEUS PVT. LTD. (RHPL)",
+      "industry": "",
+      "site": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India.",
+      "sites": [
+        {
+          "location": "Ravindra Heraeus Pvt. Ltd.",
+          "address": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At RAVINDRA HERAEUS PVT. LTD. (RHPL), we believe that the foundation of responsible business lies in protecting the dignity, safety, and rights of every individual engaged in our operations and supply chain. Our commitment extends beyond operational excellence and innovation to ensuring fair treatment, ethical conduct, and a safe work environment for employees, contractors, partners, and stakeholders.\n\nRHPL strictly prohibits all forms of child labour, forced labour, human trafficking, hazardous work for young workers, and any practices that compromise basic human rights. We uphold equal opportunity, fair recruitment, non-discrimination, and adherence to national and international labour standards, including ILO conventions, the Indian Factories Act, Child Labour (Prohibition & Regulation) Act, and applicable regulations.\n\nThis policy reinforces our responsibility to ensure safe working conditions, transparent communication, equal growth opportunities, fair compensation, and complete compliance with legal and ethical requirements across our value chain.",
+      "declaration": "RHPL is committed to upholding fundamental human rights and fair labour practices across all operations. We will provide a safe, inclusive, and respectful workplace, prevent discrimination and exploitation, and comply with all applicable labour laws.\n\nWe will work with employees, suppliers, and stakeholders to ensure these principles are maintained throughout our value chain, and continuously monitor and improve our practices to protect human rights and labour standards.",
+      "scope": "This policy applies to all employees, contractors, and partners of below given site of RHPL. It covers employment practices, health and safety, training, and grievance mechanisms, and extends to our supply chain, ensuring partners uphold similar labor rights and ethical standards across all departments and functions."
+    },
+    "focusAreas": [
+      "Employees’ Health and Safety – Ensure a safe and healthy workplace through training and risk management.",
+      "Working Conditions – Provide working hours in accordance with regulations and ensure respectful and fair treatment for all employees.",
+      "Social Dialogue – Promote open communication and employee engagement.",
+      "Career Management and Training – Support skill development and equal opportunities for career growth.",
+      "Child Labor, Forced Labor, and Human Trafficking – Prohibit all forms of child labor, forced work, and trafficking in our operations and supply chain.",
+      "Discrimination and Harassment – Enforce zero-tolerance for unfair treatment, foster inclusion.",
+      "External Stakeholder Human Rights – Respect and protect the rights of communities, suppliers, customers, and other stakeholders.",
+      "Diversity, Equity, and Inclusion – Promote equal opportunities and a diverse workforce.",
+      "Work-Life Balance – Support flexible work arrangements and employee well-being."
+    ],
+    "qualitative": {
+      "Employees’ Health and Safety": [
+        "Strengthen a safety-first culture through continuous monitoring, risk assessments, machine safety protocols, and compliance with the Factories Act and internal safety SOPs.",
+        "Empower employees to proactively identify unsafe acts and report near misses without fear.",
+        "Regularly enhance health and safety protocols to proactively address workplace risks and promote employee well-being and hence maintain zero absenteeism due to work-related injuries."
+      ],
+      "Working Conditions": [
+        "Ensure fairness, respect, ethical conduct, and adherence to minimum wages, working-hour limits, weekly off requirements, and overtime regulations.",
+        "Maintain provision of PF, insurance, health benefits, and other statutory entitlements to all eligible employees.",
+        "Ensure working conditions compliance with global labor standards and local regulations."
+      ],
+      "Social Dialogue": [
+        "Facilitate open communication through structured grievance mechanisms, suggestion platforms, and management–employee meetings.",
+        "Encourage employee participation in workplace improvements and decision-making."
+      ],
+      "Career Management and Training": [
+        "Support continuous capability building via skills development, digital training, apprenticeships, and job-specific learning modules.",
+        "Conduct transparent annual performance evaluations that define growth pathways and development needs."
+      ],
+      "Child Labor, Forced Labor, and Human Trafficking": [
+        "Maintain strict age-verification systems as per RHPL hiring procedures and supplier requirement.",
+        "Strengthen supplier and partner due diligence on labor practices.",
+        "Ensure strict monitoring and remediation mechanisms are in place."
+      ],
+      "Discrimination and Harassment": [
+        "Ensure an inclusive, respectful workplace free of bias, discrimination, and harassment and hence maintain zero cases of harassment or discrimination.",
+        "Strengthen grievance redressal mechanisms for fair resolution."
+      ],
+      "External Stakeholder Human Rights": [
+        "Integrate human rights due diligence into business operations and key relationships to mitigate rights-related risks.",
+        "Engage stakeholders to address potential or actual human rights impacts.",
+        "Respect and safeguard the rights of local communities near operations."
+      ],
+      "Diversity, Equity, and Inclusion": [
+        "Create opportunities for underrepresented groups in the workforce.",
+        "Promote equal access to leadership and career advancement.",
+        "Embed diversity and inclusivity into recruitment and retention practices."
+      ],
+      "Work-Life Balance": [
+        "Encourage flexible and supportive work arrangements.",
+        "Promote employee wellness through stress management and support programs.",
+        "Ensure workloads are managed fairly to maintain productivity and well-being."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employees’ Health and Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% accessibility to health and safety information and emergency protocols for all employees.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce LTIR & LTI by 40% year-on-year, targeting zero LTIR/LTI by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "To increase safety inspections by 5% till FY 2029-30 to proactively identify risks.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain zero fatalities across all operational sites.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with minimum wage norms, working hours, overtime provisions, and paid leave rules.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% coverage of employees under PF (EPFO), LIC term life, and public liability insurance by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees have access to grievance channels and communication platforms.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 70% response rate in employee engagement activities by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Resolve 99% of reported concerns within 30 days.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Conduct annual performance reviews and establish career development plans for 100% of eligible employees.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Allocate 20% of the training and development budget to employee skill enhancement and career growth initiatives by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase internal mobility by 10% by FY 2029-30 through structured career pathways and targeted upskilling programs.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Conduct background verification for 100% of suppliers by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train 100% procurement and hiring staff annually on labour compliance.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain zero confirmed cases of child labour, forced labour, or unsafe young worker employment.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Conduct 3 workplace climate surveys on discrimination and harassment till FY 2029-30 through survey forms filled by 100% employees.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide annual anti-harassment training to 100% of employees.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Ensure 100% of supplier contracts include human rights compliance clauses by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Train 100% procurement staff annually on human rights and responsible sourcing.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain zero reported human rights violations across operations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct annual human rights impact assessments.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity, and Inclusion",
+        "targets": [
+          {
+            "target": "Increase female workforce representation by 10% by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Launch 2 DEI awareness programs till FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Work-Life Balance",
+        "targets": [
+          {
+            "target": "Offer flexible work arrangements to 100% eligible employees by FY 2029–30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Ensure implementation of fair labor policies and allocate resources for employee well-being."
+      },
+      {
+        "role": "Human Resources Team",
+        "duty": "Monitor labor conditions, oversee training programs, and address grievances."
+      },
+      {
+        "role": "Operations & Manufacturing",
+        "duty": "Implement workplace safety and ethical labor standards."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Ensure responsible sourcing and compliance with supplier labor policies."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to workplace policies, report concerns, and participate in training initiatives."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Support labor and human rights initiatives through responsible business practices."
+      }
+    ],
+    "monitoring": "RHPL is committed to regularly monitoring its labor and human rights performance across key focus areas such as employee health and safety, working conditions, social dialogue, career management and training, prevention of child and forced labor, non-discrimination and harassment, and respect for external stakeholder human rights. Key Performance Indicators (KPIs) are established for each area and tracked through internal monitoring systems to evaluate progress against defined commitments. These KPIs are reviewed on a quarterly basis, and findings are consolidated into performance reports for senior management to guide strategic decision-making. Annual assessments capture achievements, identify gaps, and recommend corrective measures, while relevant outcomes are shared with stakeholders to promote transparency and accountability. All monitoring and reporting practices adhere to applicable labor laws, international conventions, and industry best practices, ensuring reliability, accuracy, and credibility in disclosures.",
+    "reviewMechanism": "This policy will be reviewed annually by the Human Resources Manager to ensure continued alignment with legal requirements, labor standards, and human rights commitments. Insights from audits, risk assessments, employee feedback, and supplier evaluations will be used to update and strengthen the policy. Necessary improvements will be incorporated promptly, and any significant revisions will be communicated to employees, suppliers, and relevant stakeholders to ensure consistent implementation across all operations."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/RHPL/2. Labour and Human Rights Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/RHPL/2. Labour and Human Rights Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12208,
+  "parsedAt": "2026-09-11T07:40:47.380Z"
+}

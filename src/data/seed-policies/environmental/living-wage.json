@@ -1,0 +1,583 @@
+{
+  "id": "living-wage",
+  "name": "Living wage",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Green Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Plastipak packaging Inc (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Toledo, Spain",
+          "address": "",
+          "primaryFunction": "manufacturing site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Plastipak packaging Inc (Group), we are committed to fostering a sustainable future by integrating environmentally responsible practices across all aspects of our operations. Our green environmental policy focuses on minimizing waste, reducing carbon emissions, and promoting circular economy initiatives through advanced recycling technologies like bottle-to-bottle recycling. With a dedication to energy-efficient production and the use of recycled materials, we aim to reduce environmental impact while supporting our customers' sustainability goals. This policy underscores our commitment to innovation, continuous improvement, and collaboration with stakeholders to safeguard the environment and contribute to a more sustainable future.",
+      "declaration": "Promote Circular Economy: Encourage bottle-to-bottle recycling and increase the use of post-consumer recycled resin (rPET) to reduce waste and dependence on virgin materials.\n\nMinimize Carbon Footprint: Implement energy-efficient processes and reduce greenhouse gas emissions across manufacturing and distribution activities.\n\nSustainable Packaging Solutions: Design innovative packaging that is recyclable, reduces environmental impact, and enhances product sustainability for customers.\n\nConserve Natural Resources: Optimize water and energy consumption throughout operations to promote environmental stewardship.\n\nWaste Reduction and Management: Reduce operational waste and enhance recycling initiatives to minimize landfill contributions.\n\nCompliance with Environmental Regulations: Adhere to global environmental standards and continuously improve processes to meet evolving regulatory requirements.\n\nFoster a Green Supply Chain: Collaborate with suppliers and stakeholders to integrate sustainability practices throughout the value chain.\n\nEmployee Engagement and Awareness: Promote sustainability awareness among employees through education, training, and involvement in environmental initiatives.\n\nContinuous Improvement: Set measurable environmental targets and monitor progress to ensure ongoing improvement in sustainability performance.",
+      "scope": "This policy applies to all Plastipak employees, contractors, third-party partners, and internal - external stakeholders, including customers directly or indirectly associated with Plastipak. It extends across all offices, headquarters, facilities, and operating sites where Plastipak provides packaging solutions, recycled materials, and transportation services, ensuring sustainable practices are embedded throughout the organization’s global operations."
+    },
+    "focusAreas": [
+      "Energy Usage and Emission Control",
+      "Water Conservation and Resource Management",
+      "Ecosystem Preservation and Biodiversity Protection",
+      "Air Quality Management and Pollution Reduction",
+      "Resource Efficiency and Waste Management",
+      "Minimizing Environmental Impact from Product Use",
+      "Product End-of-Life and Recycling Initiatives",
+      "Customer Safety and Well-Being",
+      "Encouraging Sustainable Consumption",
+      "Environmental Advocacy and Service Initiatives"
+    ],
+    "qualitative": {
+      "Energy Usage and Emission Control": [
+        "Having implemented 1,800 solar panels at our manufacturing site in Toledo, Spain, we aim to enhance operational efficiency by integrating renewable energy solutions across our other manufacturing facilities and processes as well.",
+        "Our focus is on strategically transitioning to low-carbon technologies to effectively cut emissions and mitigate adverse climate impact across our operations.",
+        "We have completed LED lighting retrofits at a majority of sites and aim to finalize installations across all locations to further reduce energy consumption and GHG emissions.",
+        "Our focus is on updating equipment with newer, energy-efficient options to optimize energy consumption and minimize environmental impact across all operational activities.",
+        "We strive to consistently monitor energy consumption levels through a real-time energy management system, setting measurable annual benchmarks to drive continuous improvement initiatives and achieve optimized outcomes.",
+        "We aim to significantly modernize our vehicle fleet and forklifts to enhance operational efficiency and reduce fuel consumption across our diverse transportation and logistics operations wherever feasible.",
+        "We regularly assess all our facilities using a real-time energy management system to identify additional opportunities for reducing our energy footprint."
+      ],
+      "Water Conservation and Resource Management": [
+        "We strive to significantly improve resource management by systematically upgrading our equipment to optimize water usage across all manufacturing facilities and processes whenever feasible.",
+        "We aim to maintain and improve our closed-loop systems across all manufacturing sites to reduce reliance on municipal and freshwater, ensuring prompt repairs of any leaks while continuously monitoring pollutant levels to enhance water conservation.",
+        "We are committed to improving water management by conducting thorough water risk analyses at all our sites, which identify critical issues related to water stress, depletion, flood, and drought risks. Consequently, each site is actively formulating targeted water-reduction and mitigation strategies to address these challenges.",
+        "We prioritize sustainable water stewardship through efficient usage and extensive recycling within our essential production processes and operations.",
+        "We seek to proactively implement rainwater harvesting and ground water collection system  across all our operational facilities and locations.",
+        "Collaboration with key stakeholders ensures responsible water use throughout our entire value chain processes and sustainability efforts."
+      ],
+      "Ecosystem Preservation and Biodiversity Protection": [
+        "We are deeply committed to protecting local ecosystems by integrating biodiversity-friendly practices in all our comprehensive operations and initiatives.",
+        "Our efforts include actively supporting reforestation programs and creating green spaces near our various operational sites and facilities.",
+        "We endeavor to prevent habitat disruption and rigorously engage in biodiversity impact assessments to thoroughly measure outcomes and impacts.",
+        "Partnerships with conservation organizations drive our initiatives for preserving local flora and fauna in every operational area and region."
+      ],
+      "Air Quality Management and Pollution Reduction": [
+        "We aim to significantly modernize our vehicle fleet and forklifts to enhance operational efficiency and reduce air pollution emissions and greenhouse gas impacts across our diverse transportation and logistics operations wherever feasible.",
+        "We focus on significantly minimizing airborne pollutants (VOC, PM, etc)  by adopting advanced filtration and effective air quality control systems and technologies.",
+        "Emission reduction targets include systematically phasing out outdated equipment contributing to poor air quality levels and standards.",
+        "Engaging local communities, we actively advocate for cleaner air practices and public awareness initiatives for everyone in our network."
+      ],
+      "Resource Efficiency and Waste Management": [
+        "We commit to significantly reducing material use by promoting lightweight packaging designs and optimizing sustainable designs across all products.",
+        "We aim to establish comprehensive waste management practices across all Plastipak manufacturing sites, ensuring effective waste segregation, reduction, and recycling to minimize our environmental footprint and promote sustainability in our operations.",
+        "We aim to ensure that all product designs created by our Creative Package Studio adhere to independently developed design-for-recyclability criteria to enhance the recyclability of our packaging.",
+        "We aim to actively collaborate with our customers to identify and eliminate product designs or features that hinder effective recycling, reinforcing our commitment to circular economy principles.",
+        "We strive to improve our sustainability efforts by actively incorporating bio-based and  recycled materials into our manufacturing processes and product designs wherever feasible, reducing waste and conserving natural resources."
+      ],
+      "Minimizing Environmental Impact from Product Use": [
+        "We strive to design and manufacture our products with a sustainability mindset, prioritizing the reduction of environmental impacts while maximizing resource efficiency throughout our entire value chain.",
+        "We seek to minimize environmental harm by developing innovative and eco-friendly product formulations for our customers and clients.",
+        "We aim to conduct a life cycle assessment of all our products using a peer-reviewed, ISO 14040-44-compliant, and EU Product Environmental Footprint (PEF)-approved platform.",
+        "We are dedicated to enhancing sustainability through right-weighting, which optimizes a package’s weight to minimize environmental impact while ensuring safe and effective management throughout the supply chain.",
+        "We are committed to advancing sustainability by implementing lightweighting techniques that reduce overall material consumption and minimize container carbon footprints and costs. We continuously invests in this technology, providing our customers with cutting-edge lightweight solutions for products, significantly aiding in the reduction of Scope 3 emissions.",
+        "We aim to actively collaborate with our customers to identify and eliminate product designs or features that hinder effective recycling, reinforcing our commitment to circular economy principles."
+      ],
+      "Product End-of-Life and Recycling Initiatives": [
+        "We strive to engage actively with our customers to assess and redesign product features that impede effective recycling at the end of life, reinforcing our commitment to circular economy principles.",
+        "We are currently working toward RecyClass Post consumer resin (PCR) traceability certification for all our European recycling and packaging production sites.",
+        "We aim to actively support a circular economy through robust recycling and material recovery systems for all our products and packaging.",
+        "Our efforts include consistently increasing the recyclability of packaging solutions by improving product design features and materials.",
+        "Research into biodegradable and compostable materials forms a core part of our ongoing innovation strategy initiatives for future products."
+      ],
+      "Customer Safety and Well-Being": [
+        "Our products are designed with a strong focus on safety, meeting the highest health standards and industry regulations across markets.",
+        "We aim to ensure that all raw materials used are free from harmful chemicals that could pose significant risks to health.",
+        "Regular audits and testing help maintain the highest quality and safety benchmarks for our products and services across all operations.",
+        "Customer education initiatives support the safe use and responsible disposal of our products across various applications and industries."
+      ],
+      "Encouraging Sustainable Consumption": [
+        "We aim to support our customers in reducing their carbon footprint by offering alternative or innovative solutions, such as rPET containers, where the use of recycled materials lowers the overall carbon emissions of the package.",
+        "We promote awareness of sustainable packaging choices among consumers and partners for environmentally friendly practices and solutions.",
+        "Our marketing strategies focus on encouraging the adoption of eco-friendly products and sustainable solutions in the competitive market.",
+        "Transparency in product information allows customers to make informed choices that align with their sustainability goals and values."
+      ],
+      "Environmental Advocacy and Service Initiatives": [
+        "We actively participate in important environmental policy dialogues and global sustainability forums like The Association of Plastic Recyclers (APR), European PET Bottle Platform (EPBP) , International Bottled Water Association (IBWA) etc. to drive meaningful change in communities.",
+        "Partnerships it with PETCORE's RecycleTheOne campaign enhance our advocacy efforts and community engagement initiatives for broader impact.",
+        "We aim to engage employees and stakeholders in meaningful environmental volunteering programs that promote positive change and awareness initiatives.",
+        "Our continuous environmental reporting ensures accountability and fosters public trust within our various communities and stakeholder networks."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Usage and Emission Control",
+        "targets": [
+          {
+            "target": "Our aim is to reduce GHG scope 1 and scope 2 emission by 55% by 2032",
+            "baseline": "the baseline 2019",
+            "deadline": "2032"
+          },
+          {
+            "target": "We strive to reduce GHG scope 3 emission by 32% by 2032",
+            "baseline": "the baseline of 2019",
+            "deadline": "2032"
+          },
+          {
+            "target": "We aim to reach 75% renewable or emission-free energy use by 2032",
+            "baseline": "the baseline year 2019",
+            "deadline": "2032"
+          },
+          {
+            "target": "We aim to Improve conversion energy consumption (KWh/tonne of material processed) by 10% by 2032",
+            "baseline": "the baseline of 2019",
+            "deadline": "2032"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation and Resource Management",
+        "targets": [
+          {
+            "target": "We target to reduce our overall water consumption by 10% by 2032",
+            "baseline": "a 2022 baseline",
+            "deadline": "2032"
+          },
+          {
+            "target": "We aim to conduct water risk analyses for 100% of our operating sites by 2026",
+            "baseline": "the baseline year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We aim to treat 100% of the water used in our manufacturing processes to meet permissible limits in all of the sites where we operates by 2026",
+            "baseline": "the baseline year 2019",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our aim is to educate employees on water conservation practices, targeting a 15% reduction in personal water usage by 2025",
+            "baseline": "from 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Ecosystem Preservation and Biodiversity Protection",
+        "targets": [
+          {
+            "target": "Our commitment is to increase habitat conservation efforts by 25% by 2025",
+            "baseline": "using 2022 as the baseline year",
+            "deadline": "2025"
+          },
+          {
+            "target": "We will conduct biodiversity assessments in 100% of our operational areas by 2025",
+            "baseline": "enhancing from our 2022 metrics",
+            "deadline": "2025"
+          },
+          {
+            "target": "We aim to implement a biodiversity monitoring program at all facilities by 2025",
+            "baseline": "building on our 2022 initiatives",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our target is to reduce land use change impacts by incorporating sustainable land management practices by 2025",
+            "baseline": "compared to 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We strive to promote the use of native plants in landscaping around our facilities, increasing native vegetation by 30% by 2025",
+            "baseline": "from 2022 levels",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality Management and Pollution Reduction",
+        "targets": [
+          {
+            "target": "Our objective is to install air quality monitoring systems at all production facilities by 2025",
+            "baseline": "enhancing efforts since 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We plan to reduce VOC (volatile organic compounds) emissions by 40% by 2025",
+            "baseline": "using 2022 as our baseline year",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our goal is to implement a comprehensive employee training program on air quality management by 2025",
+            "baseline": "improving on our 2022 training initiatives",
+            "deadline": "2025"
+          },
+          {
+            "target": "We seek to decrease particulate matter emissions by 30% through improved filtration technologies by 2025",
+            "baseline": "compared to 2022 levels",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our target is to engage in community outreach to promote air quality awareness and initiatives by 2025",
+            "baseline": "building on efforts from 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Resource Efficiency and Waste Management",
+        "targets": [
+          {
+            "target": "We aim to implement Operation Clean Sweep in all manufacturing sites by 2028",
+            "baseline": "from the baseline 2019",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to reach zero waste at all sites where relevant infrastructure is in place by 2030",
+            "baseline": "from the baseline 2019",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are working to achieve zero waste to landfill (WTL)",
+            "baseline": "",
+            "deadline": "by the end of 2030"
+          },
+          {
+            "target": "25% recycled content in PET beverage bottles by 2025",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "30% in all plastic bottles by 2030",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim our 100% of packaging portfolio is recyclable by 2030",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to reduce waste generation by 30% by 2025",
+            "baseline": "from the levels recorded in 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our average PCR resin content of 32.5% is well above the 25% rPET baseline beverage bottles are mandated to meet by 2025 by the EU Single-Use Plastics Directive, We aim to make it at 35%.",
+            "baseline": "25% rPET baseline",
+            "deadline": "2025"
+          },
+          {
+            "target": "We set targets for the collection of plastic beverage bottles, requiring EU member states to collect 90% of plastic bottles by 2029.",
+            "baseline": "",
+            "deadline": "2029"
+          }
+        ]
+      },
+      {
+        "area": "Minimizing Environmental Impact from Product Use",
+        "targets": [
+          {
+            "target": "We aim to conduct product life cycle assessment for 100% of our products by 2026",
+            "baseline": "from the baseline 2019",
+            "deadline": "2026"
+          },
+          {
+            "target": "We aim our 100% of packaging portfolio is recyclable by 2030",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our goal is to improve product efficiency, targeting a 15% reduction in energy use during the product's lifecycle by 2025",
+            "baseline": "from 2022 levels",
+            "deadline": "2025"
+          },
+          {
+            "target": "We will reduce the environmental impacts associated with our products by incorporating at least 25% recycled content by 2025",
+            "baseline": "using 2022 as the baseline",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our aim is to develop and promote eco-friendly product options, increasing their availability by 30% by 2025",
+            "baseline": "compared to 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We commit to conducting lifecycle assessments for all products to identify improvement opportunities by 2025",
+            "baseline": "starting from 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our objective is to provide customers with information on reducing the environmental impacts of using our products, targeting a 25% increase in engagement by 2025",
+            "baseline": "compared to 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life and Recycling Initiatives",
+        "targets": [
+          {
+            "target": "We aim to develop take-back programs for our products, targeting a 35% participation rate by 2025",
+            "baseline": "referencing 2022 as our baseline",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our commitment is to increase public awareness campaigns on product recycling by 30% by 2025",
+            "baseline": "compared to 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We aim our 100% of packaging portfolio is recyclable by 2030",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We strive to collaborate with recycling partners to increase the recycling rate of our products to 50% by 2025",
+            "baseline": "based on 2022 data",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our objective is to zero landfill contributions from our products through end-of-life programs by 2025",
+            "baseline": "using 2022 levels for comparison",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Customer Safety and Well-Being",
+        "targets": [
+          {
+            "target": "Our goal is to conduct regular product safety reviews, targeting a 100% compliance rate by 2025",
+            "baseline": "based on 2022 data",
+            "deadline": "2025"
+          },
+          {
+            "target": "We aim to implement a customer feedback program focused on health and safety concerns, increasing responses by 25% by 2025",
+            "baseline": "compared to 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our commitment is to provide training to all customers on safe product usage, aiming for a 20% increase in training completion rates by 2025",
+            "baseline": "based on 2022 participation",
+            "deadline": "2025"
+          },
+          {
+            "target": "We strive to maintain zero product recalls due to safety issues by 2025 continue from 2022.",
+            "baseline": "from 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our objective is to enhance packaging safety by eliminating toxic materials in 100% of our products by 2025",
+            "baseline": "compared to our 2022 baseline",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Encouraging Sustainable Consumption",
+        "targets": [
+          {
+            "target": "Our target is to partner with at least 10 sustainability organizations to promote eco-friendly consumption by 2025",
+            "baseline": "using 2022 as the starting point",
+            "deadline": "2025"
+          },
+          {
+            "target": "We aim to provide educational materials and resources, disclosing data on energy consumption, greenhouse gas emissions, and waste, while increasing their distribution by 40% by 2025",
+            "baseline": "compared to 2022 levels",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our commitment is to conduct workshops and webinars on sustainable consumption, targeting a 30% increase in participation by 2025",
+            "baseline": "compared to 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We strive to enhance our marketing efforts focused on sustainable practices, increasing customer engagement by 25% by 2025",
+            "baseline": "from 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Advocacy and Service Initiatives",
+        "targets": [
+          {
+            "target": "Our goal is to increase our participation in environmental advocacy initiatives by 50% by 2025",
+            "baseline": "compared to our 2022 engagement",
+            "deadline": "2025"
+          },
+          {
+            "target": "We aim to collaborate with at least five NGOs focused on environmental issues by 2025",
+            "baseline": "improving from our 2022 partnerships",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our commitment is to implement employee volunteer programs focused on environmental service, targeting a 30% participation rate by 2025",
+            "baseline": "compared to 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We strive to organize annual sustainability events, increasing community engagement by 40% by 2025",
+            "baseline": "referencing 2022 levels",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our objective is to enhance our transparency in environmental reporting, ensuring 100% compliance with global sustainability standards by 2025",
+            "baseline": "building on our 2022 practices",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors / Senior Leadership",
+        "duty": "Approve and oversee the implementation of the Green Environmental Policy."
+      },
+      {
+        "role": "Board of Directors / Senior Leadership",
+        "duty": "Set long-term sustainability goals and ensure alignment with the company’s strategic objectives."
+      },
+      {
+        "role": "Board of Directors / Senior Leadership",
+        "duty": "Monitor environmental performance through regular reports and ensure adequate resources are allocated for sustainability initiatives."
+      },
+      {
+        "role": "Environmental Compliance Officer / Sustainability Head",
+        "duty": "Lead the development, execution, and monitoring of the environmental programs and initiatives."
+      },
+      {
+        "role": "Environmental Compliance Officer / Sustainability Head",
+        "duty": "Ensure compliance with environmental laws, regulations, and company policies."
+      },
+      {
+        "role": "Environmental Compliance Officer / Sustainability Head",
+        "duty": "Prepare performance reports, coordinate audits, and provide updates to senior management."
+      },
+      {
+        "role": "Environmental Compliance Officer / Sustainability Head",
+        "duty": "Collaborate with external partners, such as regulators and sustainability organizations, to promote environmental initiatives."
+      },
+      {
+        "role": "Facility Managers / Operations Managers",
+        "duty": "Implement sustainable practices in day-to-day operations, such as waste reduction, energy efficiency, and water conservation."
+      },
+      {
+        "role": "Facility Managers / Operations Managers",
+        "duty": "Ensure compliance with local environmental standards and monitor site-level environmental performance."
+      },
+      {
+        "role": "Facility Managers / Operations Managers",
+        "duty": "Report any environmental incidents or non-compliance issues to the Environmental Compliance Officer."
+      },
+      {
+        "role": "Facility Managers / Operations Managers",
+        "duty": "Support product lifecycle initiatives, including recycling and material recovery."
+      },
+      {
+        "role": "Procurement / Supply Chain Managers",
+        "duty": "Ensure that suppliers adhere to environmental standards and promote sustainable practices across the supply chain."
+      },
+      {
+        "role": "Procurement / Supply Chain Managers",
+        "duty": "Source eco-friendly materials, recycled content, and low-impact products."
+      },
+      {
+        "role": "Procurement / Supply Chain Managers",
+        "duty": "Engage with suppliers and partners to align with sustainability goals, including circular economy principles."
+      },
+      {
+        "role": "R&D / Product Design Teams",
+        "duty": "Integrate eco-design principles into new product development and packaging solutions."
+      },
+      {
+        "role": "R&D / Product Design Teams",
+        "duty": "Ensure product designs support recyclability, resource efficiency, and minimal environmental impact."
+      },
+      {
+        "role": "R&D / Product Design Teams",
+        "duty": "Collaborate with the Sustainability Head to align product offerings with environmental goals."
+      },
+      {
+        "role": "Quality Control Teams",
+        "duty": "Monitor environmental performance metrics related to product quality, safety, and lifecycle impact."
+      },
+      {
+        "role": "Quality Control Teams",
+        "duty": "Conduct regular audits to ensure compliance with environmental and safety standards."
+      },
+      {
+        "role": "Quality Control Teams",
+        "duty": "Identify opportunities for improving environmental performance through product innovations and process improvements."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Lead employee awareness campaigns and training on environmental practices and sustainability initiatives."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Integrate environmental responsibilities into employee performance metrics and appraisal systems."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Promote employee participation in environmental programs, such as recycling drives and energy conservation initiatives."
+      },
+      {
+        "role": "Marketing and Communications Team",
+        "duty": "Promote the company’s environmental efforts through internal and external communication channels."
+      },
+      {
+        "role": "Marketing and Communications Team",
+        "duty": "Develop campaigns to encourage customers and stakeholders to adopt sustainable consumption practices."
+      },
+      {
+        "role": "Marketing and Communications Team",
+        "duty": "Ensure transparency by publishing sustainability reports and performance updates."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental practices and guidelines outlined in the Green Environmental Policy."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in environmental initiatives, including recycling and energy conservation efforts."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report environmental concerns, incidents, or non-compliance through the established grievance mechanism."
+      },
+      {
+        "role": "Contractors and Third-Party Partners",
+        "duty": "Comply with the environmental standards and practices outlined by Plastipak."
+      },
+      {
+        "role": "Contractors and Third-Party Partners",
+        "duty": "Support the company’s sustainability goals through responsible practices in their operations."
+      },
+      {
+        "role": "Contractors and Third-Party Partners",
+        "duty": "Collaborate with relevant teams to ensure proper waste management and sustainable supply chain practices."
+      }
+    ],
+    "monitoring": "We will prepare annual environmental performance reports to monitor progress against key targets, including energy use, emissions, water conservation, and waste reduction.\n\nThese reports will be shared with stakeholders, including employees, customers, suppliers, and investors, to maintain transparency and accountability.\n\nRegular internal audits will ensure compliance with environmental regulations, company policies, and operational goals.\n\nAudit findings will be reviewed by senior management, with corrective actions implemented promptly to address any gaps.\n\nWe will engage stakeholders through surveys, consultations, and meetings to gather feedback on our environmental initiatives and identify areas for improvement.\n\nCollaboration with partners will ensure continuous alignment with evolving sustainability trends and industry standards.\n\nA dedicated platform will allow employees, customers, and third parties to report environmental concerns confidentially and without fear of retaliation.\n\nAll reports will be investigated promptly, with appropriate actions taken to address the concerns raised.\n\nWe will publish key environmental metrics, achievements, and challenges annually through sustainability reports or dedicated sections on our website.\n\nThis transparency will demonstrate our commitment to environmental stewardship and accountability to all stakeholders.\n\nThe governance of this policy ensures accountability across all levels, with the Board of Directors providing strategic oversight and setting environmental goals. Senior leadership integrates sustainability across operations and monitors performance, while the Environmental Compliance Officer ensures regulatory compliance and reports progress. Department heads implement practices within their functions, driving resource efficiency and waste reduction. Employees and contractors actively participate in environmental programs and report improvements. Suppliers and partners collaborate to meet sustainability targets, supporting circular economy initiatives. Regular audits, stakeholder engagement, and transparent reporting ensure continuous improvement and alignment with evolving standards.\n\nWe are committed to continuously enhancing our environmental performance by setting measurable targets, monitoring progress, and identifying opportunities for improvement. Regular internal audits, performance assessments, and stakeholder feedback help ensure our practices remain effective and aligned with emerging environmental standards. We also benchmark against industry best practices to drive innovation and strengthen our sustainability initiatives.\n\nThis policy is reviewed annually to adapt to evolving regulations, technological advancements, and environmental trends. Training programs and awareness campaigns foster a culture of sustainability among employees, empowering them to contribute to our environmental goals. Through collaboration with partners and suppliers, we aim to develop new solutions that enhance resource efficiency, reduce emissions, and promote a circular economy across our value chain.",
+    "reviewMechanism": "The Environmental Compliance Officer will conduct an annual review of this policy to assess its effectiveness and relevance. This process will include evaluating compliance with environmental regulations, analyzing performance metrics, and identifying areas for improvement. Recommendations will be documented and presented to management for consideration and implementation."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Living wage/1. Green Environmental Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Living wage/1. Green Environmental Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 32159,
+  "parsedAt": "2026-09-11T07:10:14.682Z"
+}

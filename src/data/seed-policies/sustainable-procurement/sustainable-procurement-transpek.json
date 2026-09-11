@@ -1,0 +1,201 @@
+{
+  "id": "sustainable-procurement-transpek",
+  "name": "Transpek",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from SUSTAINABLE PROCUREMENT 01-12-2023.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Transpek Industry Limited",
+      "industry": "",
+      "site": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India; At & Post: Ekalbara, Taluka: Padra, Dist.: Vadodara, 391440 Gujarat India; https://transpek.com/",
+      "sites": [
+        {
+          "location": "Vadodara, Gujarat India",
+          "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+          "primaryFunction": "Not specified in source"
+        },
+        {
+          "location": "Ekalbara, Taluka: Padra, Dist.: Vadodara, Gujarat India",
+          "address": "At & Post: Ekalbara, Taluka: Padra, Dist.: Vadodara, 391440 Gujarat India",
+          "primaryFunction": "Not specified in source"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India; At & Post: Ekalbara, Taluka: Padra, Dist.: Vadodara, 391440 Gujarat India; https://transpek.com/"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Transpek Industry Limited, we are committed to integrating sustainability into every aspect of our procurement process. As a leader in the chemical manufacturing industry, we recognize that our purchasing decisions can have far-reaching environmental, social, and economic impacts. Our Sustainable Procurement Policy is designed to ensure that we source goods and services in a way that supports environmental protection, ethical labor practices, and long-term economic viability.\n\nThis policy aims to drive positive change across our supply chain, contributing to the well-being of both our stakeholders and the planet. Through collaboration with our suppliers, we aim to set industry standards for sustainable procurement practices and demonstrate our commitment to responsible business operations.",
+      "declaration": "Sustainability is at the core of Transpek Industry Limited procurement practices. We are committed to:\n\nSourcing materials and services in a manner that minimizes negative environmental impacts.\n\nSupporting suppliers who adhere to high standards of labour rights, fair wages, and safe working conditions.\n\nEncouraging transparency and traceability throughout the supply chain to promote ethical and sustainable sourcing.\n\nEnsuring that our procurement activities align with our broader goals of environmental protection, social responsibility, and ethical business practices.",
+      "scope": "This policy applies to all procurement activities of Transpek Industry Limited, including materials, products, and services sourced from our suppliers, contractors, and other third parties. It covers all employees, subcontractors, and other stakeholders involved in our supply chain, regardless of location."
+    },
+    "focusAreas": [
+      "Supplier Environmental Issues",
+      "Supplier Social Issues",
+      "Supplier Code of Conduct and ESG Compliance",
+      "Training, Capacity Building and Supplier Engagement"
+    ],
+    "qualitative": {
+      "Supplier Environmental Issues": [
+        "Promote supplier compliance with applicable environmental regulations, permits, and sustainability requirements.",
+        "Encourage suppliers to maintain environmental management systems and relevant environmental certifications where applicable.",
+        "Strengthen communication of environmental expectations and sustainable procurement practices throughout the supply chain."
+      ],
+      "Supplier Social Issues": [
+        "Promote awareness of labour rights, human rights, occupational health and safety, and ethical employment practices among suppliers.",
+        "Encourage suppliers to prevent child labour, forced labour, bonded labour, discrimination, and human trafficking within their operations.",
+        "Support suppliers in maintaining labour, health & safety, and human rights compliance documentation."
+      ],
+      "Supplier Code of Conduct and ESG Compliance": [
+        "Communicate and promote Transpek's Supplier Code of Conduct to suppliers and business partners.",
+        "Conduct ESG assessments, supplier reviews, and sustainability audits to evaluate supplier performance.",
+        "Encourage suppliers to address identified gaps through corrective action and continuous improvement initiatives."
+      ],
+      "Training, Capacity Building and Supplier Engagement": [
+        "Provide sustainability-related awareness and training programs for suppliers and procurement personnel.",
+        "Encourage suppliers to participate in ESG self-assessments and supplier engagement programs.",
+        "Strengthen supplier understanding of environmental, social, governance, ethical business conduct, and responsible sourcing expectations"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Issues",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable environmental requirements among approved suppliers by FY 2029-30.",
+            "baseline": "Not specified in source",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase collection of environmental compliance documents (e.g., environmental permits, ISO 14001 certificates, or equivalent documents) from key suppliers by 25% by FY 2029-30 compared to FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Communicate environmental expectations and sustainability requirements to 100% of new suppliers by FY 2029-30.",
+            "baseline": "Not specified in source",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Issues",
+        "targets": [
+          {
+            "target": "Increase supplier participation in human rights, labour rights, and ethical business awareness programs by 20% by FY 2029-30 from the baseline year FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Obtain acknowledgement of the Supplier Code of Conduct from at least 90% of key suppliers by FY 2029-30.",
+            "baseline": "Not specified in source",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance with supplier requirements relating to child labour, forced labour, bonded labour, and human trafficking by FY 2029-30.",
+            "baseline": "Not specified in source",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase collection of supplier labour, health & safety, and human rights compliance documentation by 25% by FY 2029-30 compared to FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 100% compliance among approved suppliers with applicable labour laws, human rights requirements, and employment regulations established by local, national, and other relevant regulatory authorities by FY 2029-30, using FY 2022-23 as the baseline year",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "Conduct a minimum of one or two training sessions per year for suppliers on environmental, social and governance topics.",
+            "baseline": "Not specified in source",
+            "deadline": "Not specified in source"
+          },
+          {
+            "target": "Ensure 100% of procurement staff undergo annual training on environmental sustainability, social responsibility & governance Compliance by FY 2029-30.",
+            "baseline": "Not specified in source",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct ESG audits for at least 20% of key suppliers by FY 2029-30.",
+            "baseline": "Not specified in source",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 30% of key suppliers complete ESG self-assessment questionnaires annually by FY 2025-26.",
+            "baseline": "Not specified in source",
+            "deadline": "FY 2025-26"
+          },
+          {
+            "target": "Ensure 100% of key suppliers acknowledge, sign, and comply with Transpek Industry Limited's Supplier Code of Conduct by FY 2029-30, from the baseline year FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Procurement Officer (CPO)",
+        "duty": "Leadership in Policy Enforcement: Provide overall guidance and ensure that the Sustainable Procurement Policy aligns with Transpek’s strategic goals. Approval of Suppliers: Authorize collaborations with suppliers based on compliance with sustainability standards. Annual Review Oversight: Supervise the annual policy review and updates, ensuring continued alignment with regulatory and industry changes."
+      },
+      {
+        "role": "Sustainability and Procurement Team",
+        "duty": "Policy Implementation: Execute day-to-day operations related to sustainable procurement practices and ensure compliance with policy standards. Supplier Assessments: Conduct regular assessments and audits of suppliers to confirm compliance with environmental, social, and governance (ESG) criteria. KPI Tracking and Reporting: Develop and monitor key performance indicators (KPIs) for sustainability in procurement, preparing reports for review by leadership."
+      },
+      {
+        "role": "Procurement Managers",
+        "duty": "Supplier Selection and Evaluation: Ensure all suppliers meet the company's standards for environmental compliance, ethical sourcing, and fair labour practices. Waste and Emission Reduction Initiatives: Actively work with suppliers to implement waste reduction, eco-friendly packaging, and energy efficiency initiatives. Documentation and Transparency: Maintain thorough records of all supplier engagements, including sustainability certifications, reports, and compliance documents."
+      },
+      {
+        "role": "HR and Training Team",
+        "duty": "Employee Training Programs: Facilitate training programs on sustainable procurement, ethical sourcing, and compliance with human rights standards. Policy Awareness Campaigns: Create awareness initiatives around the Sustainable Procurement Policy to ensure all employees understand and support its objectives. Feedback Collection: Gather feedback from employees on policy execution and suggest improvements based on on-ground insights."
+      },
+      {
+        "role": "Compliance Officers",
+        "duty": "Regulatory Compliance Assurance: Ensure that all procurement activities comply with relevant environmental, labour, and human rights laws. Due Diligence in Human Rights: Conduct human rights due diligence across the supply chain, identifying and mitigating risks related to labour practices. Policy Violation Investigation: Investigate any potential breaches of the Sustainable Procurement Policy and ensure corrective actions are taken."
+      },
+      {
+        "role": "Environmental and Social Auditors",
+        "duty": "Supplier Audit Execution: Conduct regular supplier audits to verify compliance with environmental and social standards, including waste management and fair labour practices. Report Preparation: Generate reports on supplier compliance status and provide recommendations for any needed improvements. Continuous Monitoring of Sustainability Standards: Stay updated on industry standards and regulations, ensuring Transpek’s policy remains at the forefront of sustainability practices."
+      },
+      {
+        "role": "Procurement Staff",
+        "duty": "Policy Adherence: Follow the Sustainable Procurement Policy guidelines when making purchasing decisions. Responsible Sourcing Practices: Prioritize eco-friendly and ethical sourcing options in procurement operations. Awareness of Sustainability Goals: Actively participate in sustainability training sessions and support company initiatives to achieve sustainability targets"
+      }
+    ],
+    "monitoring": "To ensure accountability and transparency in our sustainable procurement practices, Transpek Industry Limited will:\n\nConduct regular assessments to monitor supplier compliance with our sustainability standards.\n\nDevelop key performance indicators (KPIs) to measure the environmental and social performance of suppliers.\n\nImplement a traceability system to track the origin and movement of materials throughout the supply chain, ensuring that they comply with our ethical sourcing requirements.\n\nPublish an annual sustainability report detailing our procurement activities, progress toward sustainability targets, and any updates to our policy.\n\nTranspek Industry Limited is committed to continuously improving its procurement practices to meet evolving industry standards and stakeholder expectations. We regularly review and update this policy to align with best practices in the chemical manufacturing sector, focusing on environmental responsibility and social accountability. Collaboration with suppliers and industry partners helps us identify innovative solutions to reduce our environmental impact and promote ethical practices. We also benchmark our activities against the latest sustainability trends and establish feedback mechanisms to gather input from employees and stakeholders. This approach ensures that our procurement practices remain adaptive and responsive to emerging challenges in sustainability.",
+    "reviewMechanism": "This policy will be reviewed annually by the Procurement and Sustainability Team to ensure that it remains relevant and effective. The review will consider feedback from stakeholders, supplier performance data, and changes in regulations or industry standards. Any updates to the policy will be communicated to all relevant parties, ensuring alignment with Transpek Industry Limited overall sustainability goals."
+  },
+  "sourcePath": "Policies - Kenal/Transpek/SUSTAINABLE PROCUREMENT 01-12-2023.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Transpek/SUSTAINABLE PROCUREMENT 01-12-2023.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 15203,
+  "parsedAt": "2026-09-11T07:30:41.492Z"
+}

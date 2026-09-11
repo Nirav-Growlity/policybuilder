@@ -1,0 +1,170 @@
+{
+  "id": "sustainable-procurement-ballyfabs",
+  "name": "Ballyfabs",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Ballyfabs International Limited",
+      "industry": "",
+      "site": "3, Haren Mukherjee Road, Belur, Howrah-711202, West Bengal, India.",
+      "sites": [
+        {
+          "location": "Bally Fabs International Limited",
+          "address": "3, Haren Mukherjee Road, Belur, Howrah-711202, West Bengal, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Vill-gangarampur, PO-Dakshin Alipore, ps-Bishnupur, Dist-South 24 Parganas, Pin-743503, West Bengal, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "3, Haren Mukherjee Road, Belur, Howrah-711202, West Bengal, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Ballyfabs International Limited is the leading manufacturer and wholesaler of Canvas Cotton Bags, Jute Bags, and more. We are committed to ensuring that our procurement practices contribute to sustainable development. This policy outlines our commitment to integrating environmental and social considerations into our procurement decisions.",
+      "declaration": "Ballyfabs International Limited is dedicated to sustainable procurement practices that support our environmental and social responsibility goals. We aim to work with suppliers who share our commitment to sustainability and ethical practices.",
+      "scope": "This policy applies to all workers, employees, directors, officers, agents, contractors, and any third parties acting on behalf of Ballyfabs Int. Ltd. (BFIL). It covers all business activities, including procurement, sales, marketing, and any interactions with government officials, customers, suppliers, and other stakeholders. The policy is applicable globally, regardless of local business practices or cultural norms. This policy applies to the below-mentioned locations :"
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Supplier Social Practices",
+      "Supply Chain Transparency",
+      "Community Engagement"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "Promote environmentally sustainable procurement by partnering with suppliers who demonstrate measurable environmental responsibility.",
+        "Encourage continuous improvement in supplier environmental performance through training and collaboration.",
+        "Emphasize sourcing from suppliers with recognized environmental compliance certifications."
+      ],
+      "Supplier Social Practices": [
+        "Ensure that all suppliers adhere to fair labor practices, including the prohibition of child and forced labor, provision of fair wages, and assurance of safe working environments.",
+        "Support supplier initiatives that improve workforce welfare and social accountability."
+      ],
+      "Supply Chain Transparency": [
+        "To build a transparent, ethical, and accountable supply chain by ensuring suppliers comply with environmental, labor, and human rights standards, while fostering trust with stakeholders through open reporting."
+      ],
+      "Community Engagement": [
+        "Increase engagement with community-based and small-scale suppliers.",
+        "Support diversity and inclusion by integrating underrepresented suppliers into the supply base.",
+        "Foster long-term partnerships with suppliers who demonstrate social and environmental responsibility."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "By 2030, reduce the environmental impact of procured materials by 30% compared to 2023 levels and ensure 50% of suppliers meet environmental standards.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase procurement from ISO 14001 certified suppliers by 50% by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "By 2030, achieve 100% supplier compliance with labor and human rights standards and maintain zero violations related to working hours and wages.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reach 50% verified compliance with labor and human rights benchmarks among suppliers by year 2030, with ongoing monitoring and engagement.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supply Chain Transparency",
+        "targets": [
+          {
+            "target": "By 2030, extend sustainability compliance audits to 80% of critical suppliers.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Community Engagement",
+        "targets": [
+          {
+            "target": "Maintain implementation of community engagement programs in 100% of production sites by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase national sourcing by 50% by year 2030",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 15% of supplier base includes small or diverse businesses by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Procurement Team is responsible for integrating responsible sourcing principles into supplier selection, contract terms, and ongoing evaluations."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Sustainability Team monitors supplier performance on environmental, social, and ethical parameters and supports improvement initiatives."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Suppliers are expected to comply with Bally Fabs International Ltd sourcing standards, provide required disclosures, and cooperate during audits and assessments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Senior Management ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees involved in sourcing or supplier engagement",
+        "duty": "All Employees involved in sourcing or supplier engagement are expected to uphold this policy and report any violations or concerns through established channels."
+      }
+    ],
+    "monitoring": "",
+    "reviewMechanism": "The EHS Officer reviews this policy annually to assess its effectiveness. This includes evaluating procurement practices, adapting to changing market demands, and ensuring compliance with evolving environmental and social regulations. These reviews guide continuous improvements, track progress towards sustainability goals, and uphold BFIL’s commitment to sustainable stewardship in procurement."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Ballyfabs/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Ballyfabs/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 7693,
+  "parsedAt": "2026-09-11T07:33:37.456Z"
+}

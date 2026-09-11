@@ -1,0 +1,184 @@
+{
+  "id": "sustainable-procurement-fariha-knit",
+  "name": "Fariha Knit",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Sourcing Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Fariha Knit Tex Ltd.",
+      "industry": "",
+      "site": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh.",
+      "sites": [
+        {
+          "location": "Fariha Knit Tex Ltd.",
+          "address": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Fariha Knit Tex Ltd., sustainability lies at the core of our procurement practices, reflecting our commitment to environmental stewardship, ethical labor standards, and social responsibility. This policy serves as a guiding framework to ensure that all procurement activities align with our sustainability goals while fostering long-term, transparent, and equitable partnerships with suppliers.\n\nBy integrating sustainable procurement principles, we aim to minimize environmental impact, uphold human rights, and promote ethical practices across the supply chain. This policy is a testament to our dedication to building a resilient and responsible procurement ecosystem that supports both business objectives and global sustainability goals.",
+      "declaration": "Fariha Knit Tex Ltd. affirms its commitment to sustainable procurement as a cornerstone of our operations, using 2022 as the baseline year to measure progress and set actionable targets. Sustainability considerations are incorporated into supplier selection, evaluation, and performance monitoring to encourage continual improvement across our supply chain. We are dedicated to sourcing responsibly, reducing environmental impact, and upholding fair labor practices throughout our supply chain.\n\nThis policy outlines our principles for integrating sustainability into procurement activities, focusing on minimizing ecological footprints, protecting human rights, and fostering equitable partnerships with suppliers. By embedding these values into our processes, we aim to meet regulatory requirements, drive measurable progress, and contribute to a more sustainable and ethical future.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Supplier Environmental Practices",
+      "Supplier Social Practices",
+      "Supplier Engagement and Capacity Building",
+      "Inclusive Sourcing",
+      "Ethical Sourcing"
+    ],
+    "qualitative": {
+      "Supplier Environmental Practices": [
+        "To Promote supplier participation in environmental certification programs (e.g., ISO 14001, Fair Trade, etc.).",
+        "Adhere strictly to established criteria for selecting suppliers who demonstrate a commitment to responsible environmental practices, including waste reduction, energy efficiency, and sustainable resource management and build long-term partnerships with suppliers committed to sustainability."
+      ],
+      "Supplier Social Practices": [
+        "To offer training sessions for suppliers on human rights and fair labor practices."
+      ],
+      "Supplier Engagement and Capacity Building": [
+        "Build strong relationships with suppliers through transparent communication and shared sustainability goals.",
+        "Enhance suppliers' understanding of sustainability standards through tailored training sessions."
+      ],
+      "Inclusive Sourcing": [
+        "To promote equal and fair opportunities for local, diverse, and small suppliers within the procurement process."
+      ],
+      "Ethical Sourcing": [
+        "To source goods and services from suppliers that demonstrate integrity, transparency, and ethical business conduct.",
+        "Ensure traceability of raw materials to verify ethical sourcing standards."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "Achieve 80% of suppliers obtaining recognized environmental certifications",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 30% of procured materials are from sustainable sources (e.g., recycled, organic, etc.)",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "To implement corrective action plans for 100% of strategic suppliers identified with significant environmental risks",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "Achieve 100% engagement of suppliers in human rights and ethical labor practices workshops",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 100% of suppliers have human rights policies in place",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "To ensure 100% of strategic suppliers are evaluated against social and labor criteria",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Engagement and Capacity Building",
+        "targets": [
+          {
+            "target": "Launch a Supplier Development Program by 2030, engaging 80% of suppliers within the first three years.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Recognize top 5% of suppliers annually through a Supplier Recognition Program till year 2030 and thereafter.",
+            "baseline": "2022",
+            "deadline": "2030 and thereafter"
+          }
+        ]
+      },
+      {
+        "area": "Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Establish partnerships with 5% of total suppliers from diverse backgrounds, including women-owned, minority-owned, and local businesses, by year 2030, fostering collaboration and long-term growth.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "To source 20% of applicable procurement spend from local, diverse, small, or underrepresented suppliers",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Sourcing",
+        "targets": [
+          {
+            "target": "To ensure 100% of strategic suppliers acknowledge and comply with the Company's Supplier Code of Conduct",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the number of partnerships with certified ethical sourcing organizations by 5%",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Sustainability Manager",
+        "duty": "Oversees policy implementation, supplier evaluations, and alignment with sustainability goals."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "Selects suppliers meeting environmental and labor standards, facilitates training, and ensures ongoing compliance."
+      },
+      {
+        "role": "HR and Compliance Team",
+        "duty": "Monitors supplier adherence to labor standards, addresses non-compliance, and ensures corrective actions."
+      }
+    ],
+    "monitoring": "The Sustainability Manager will lead the creation of Fariha's annual Sustainable Sourcing Performance Report, collaborating with key stakeholders for comprehensive assessment and reporting.",
+    "reviewMechanism": "The Sustainability Manager will conduct an annual review of this policy to assess its effectiveness. The review will involve evaluating supplier performance, responsible sourcing practices, and addressing non-compliance. Based on findings, updates will be made to align with ESG standards and reinforce Fariha’s commitment to sustainable sourcing."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Fariha Knit/4. Sustainable Sourcing Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Fariha Knit/4. Sustainable Sourcing Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 6782,
+  "parsedAt": "2026-09-11T07:38:50.243Z"
+}

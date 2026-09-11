@@ -1,0 +1,407 @@
+{
+  "id": "ethics-tagoor",
+  "name": "Tagoor",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethical Business Conduct Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Tagoor Laboratories Pvt. Ltd.",
+      "industry": "",
+      "site": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India.",
+      "sites": [
+        {
+          "location": "Tagoor Laboratories Pvt Ltd",
+          "address": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India.",
+          "primaryFunction": "Pharmaceutical and chemical manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "This Ethical Business Conduct Policy (“Policy”) is established by Tagoor Laboratories Pvt. Ltd. (“the Company”) to promote ethical behaviour, integrity, and transparency across all its operations and business relationships.\n\nThe Company is committed to integrating ethical principles into its daily operations, decision-making processes, and stakeholder interactions. This Policy outlines the Company’s ethical standards, key focus areas, behavioural expectations, performance indicators, and the mechanisms for monitoring, evaluation, and continuous improvement.\n\nThe Company has adopted appropriate systems, controls, and best practices to prevent unethical conduct, including bribery, corruption, fraud, and conflicts of interest, and to promote a culture of accountability, fairness, and responsible conduct across all levels of the organization.",
+      "declaration": "All employees, vendors, and business associates of Tagoor Laboratories Pvt Ltd are strongly encouraged to report any concerns, suspicions, or observations of misconduct, malpractice, or unethical behavior at the earliest possible stage.\n\nIf there is any uncertainty regarding whether a particular action may constitute bribery, corruption, or any other form of unethical conduct, or if there are any related questions or clarifications required, such concerns should be promptly escalated to Ethics Officer for appropriate guidance and resolution. Employees may raise concerns related to business ethics, misconduct, or policy violations by sending an email to tagoorlaboratoriespvtltd@gmail.com, with assurance of confidentiality and protection against retaliation.\n\nAt Tagoor Laboratories Pvt Ltd, adherence to this governance and ethics policy is mandatory, and any violation is treated with utmost seriousness. Non-compliance may result in appropriate disciplinary action, ranging from counselling and warnings to suspension or termination of employment, depending on the severity and intent of the violation. In cases involving managerial or leadership roles, stricter accountability standards apply, which may include removal from position or termination of services. Where misconduct involves illegal activities such as fraud, bribery, or corruption, the matter may be escalated to relevant regulatory or legal authorities for further action, including prosecution under applicable laws. For vendors, suppliers, or contractors, breaches may lead to suspension or termination of contracts, financial recovery, and disqualification from future engagement. The organization may also implement corrective measures such as training or process improvements to prevent recurrence. All actions will be taken to protect organizational integrity, reputation, and stakeholder trust, while ensuring that concerned parties are given a fair opportunity to present their case through the established review mechanism.\n\nI, the undersigned employee of Tagoor Laboratories Pvt. Ltd., hereby acknowledge my participation in the Company’s Ethical Business Conduct framework and confirm the following commitments:\n\nI confirm that I have received the Ethical Business Conduct Policy\n\nI have read and understood its purpose, scope, and requirements\n\nI understand how it applies to my role and workplace responsibilities\n\nI agree to comply with all applicable ethical standards, procedures, and internal controls\n\nI will follow ethical business practices in all professional dealings and decisions\n\nI will support the Company’s commitment to integrity, transparency, and compliance\n\nI will participate in ethics and compliance training programs as required\n\nI will support initiatives that promote integrity, anti-bribery, and responsible conduct\n\nI will contribute to strengthening ethical culture within my workplace\n\nI will report any ethical concerns, suspected violations, or risks without delay\n\nI will communicate issues to my supervisor or the designated Ethics Officer\n\nI understand my responsibility in preventing unethical conduct through timely reporting\n\nI acknowledge that ethical conduct is an ongoing responsibility\n\nI commit to supporting continuous improvement in governance, compliance, and ethical practices",
+      "scope": "This Ethical Business Conduct Policy (“Policy”) applies to all operations, activities, and facilities of Tagoor Laboratories Pvt. Ltd. (“the Company”). It is applicable to all employees at all levels, as well as contractors, suppliers, service providers, business partners, and any other individuals or entities working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Anti-Bribery and Ethical Business Conduct",
+      "Conflict of Interest Management",
+      "Fraud Prevention and Control",
+      "Financial Integrity and Anti-Money Laundering",
+      "Information Security and Data Protection",
+      "Fair Competition and Market Conduct",
+      "Regulatory and Legal Compliance"
+    ],
+    "qualitative": {
+      "Anti-Bribery and Ethical Business Conduct": [
+        "To prevent corruption, bribery, and unethical practices through responsible business conduct and control measures.",
+        "Ensure transparent and well-controlled procurement and payment processes with proper authorization and documentation practices",
+        "Promote awareness and understanding of anti-bribery requirements through regular communication and training programs for all employees",
+        "Maintain a strong ethical culture with zero tolerance for bribery, corruption, or unethical business conduct",
+        "Strengthen internal governance systems to support continuous improvement in compliance and ethical performance",
+        "Identify, assess, and manage corruption and bribery-related risks across all business operations on a regular basis",
+        "Encourage ethical decision-making and accountability at all levels of the organization through ongoing awareness and leadership commitment",
+        "Do conduct all business activities with honesty and integrity.",
+        "Do comply with anti-bribery and anti-corruption laws and company policies.",
+        "Do report any suspected bribery or unethical conduct immediately.",
+        "Do ensure transparency in all business transactions.",
+        "Do refuse any undue advantage that may influence decisions.",
+        "Don’t offer, promise, or accept bribes or improper benefits.",
+        "Don’t engage in facilitation payments or kickbacks.",
+        "Don’t hide or ignore unethical business practices.",
+        "Don’t influence business decisions through personal gain.",
+        "Don’t misrepresent transactions or approvals."
+      ],
+      "Conflict of Interest Management": [
+        "To manage conflicts of interest through appropriate identification, disclosure, and decision-making processes.",
+        "Ensure all employees are required to disclose any actual, potential, or perceived conflicts of interest on a regular basis in accordance with organizational policy",
+        "Establish a structured system for reviewing, evaluating, and documenting all declared conflicts of interest in a transparent and consistent manner",
+        "Promote employee awareness and understanding of conflict-of-interest requirements through regular communication, training, and guidance",
+        "Foster a culture of integrity and transparency by encouraging proactive disclosure and ethical decision-making across all levels of the organization",
+        "Do disclose any actual or potential conflict of interest immediately.",
+        "Do act in the best interest of the company at all times.",
+        "Do seek guidance when unsure about a conflict situation.",
+        "Do maintain transparency in personal and professional relationships.",
+        "Do follow company procedures for conflict resolution.",
+        "Don’t allow personal interests to influence business decisions.",
+        "Don’t hide relationships that may create a conflict.",
+        "Don’t participate in decisions where a conflict exists.",
+        "Don’t misuse position for personal or family benefit.",
+        "Don’t ignore or delay disclosure of conflicts."
+      ],
+      "Fraud Prevention and Control": [
+        "To prevent and address fraud and financial misconduct across all operations.",
+        "Ensure all financial transactions are subject to appropriate internal controls, verification procedures, and approval mechanisms to prevent and detect fraud",
+        "Establish a structured process for timely investigation, escalation, and resolution of all fraud-related incidents in accordance with defined internal procedures",
+        "Promote employee awareness of fraud risks, prevention measures, and reporting channels through regular communication and training programs",
+        "Maintain a strong control environment with zero tolerance for unresolved fraud cases and ensure prompt corrective actions for any identified issues",
+        "Strengthen monitoring and oversight mechanisms to continuously identify, assess, and mitigate fraud risks across all business operations",
+        "Do ensure accuracy in all records and financial reporting.",
+        "Do follow approved procedures for financial transactions.",
+        "Do report any suspected fraud immediately.",
+        "Do maintain proper documentation for all activities.",
+        "Do participate in internal control and audit processes.",
+        "Don’t falsify records, documents, or reports.",
+        "Don’t misuse company assets or funds.",
+        "Don’t bypass internal approval procedures.",
+        "Don’t conceal fraudulent activities or errors.",
+        "Don’t manipulate financial data or records."
+      ],
+      "Financial Integrity and Anti-Money Laundering": [
+        "To ensure measures are in place to prevent money laundering and support lawful financial practices.",
+        "Ensure thorough due diligence and verification of all business partners prior to onboarding to maintain financial integrity and compliance standards",
+        "Establish continuous monitoring of financial transactions through appropriate control systems to identify and prevent irregular or suspicious activities",
+        "Implement enhanced review and approval processes for high-risk financial transactions to ensure proper oversight and risk mitigation",
+        "Maintain a strong compliance framework aligned with anti-money laundering requirements, ensuring zero tolerance for confirmed AML violations",
+        "Strengthen governance mechanisms to promote transparency, accountability, and ethical financial practices across all operations",
+        "Do ensure transparency and accuracy in all financial dealings.",
+        "Do comply with applicable anti-money laundering regulations.",
+        "Do maintain proper records of financial transactions.",
+        "Do report suspicious financial activities immediately.",
+        "Do verify legitimacy of financial transactions where required.",
+        "Don’t engage in or support money laundering activities.",
+        "Don’t process suspicious or undocumented transactions.",
+        "Don’t conceal the origin or destination of funds.",
+        "Don’t ignore unusual financial behavior or transactions.",
+        "Don’t bypass financial approval or verification processes."
+      ],
+      "Information Security and Data Protection": [
+        "To ensure responsible management, protection, and confidentiality of business and sensitive information.",
+        "Ensure all employees are adequately trained and aware of data protection and information security requirements to support responsible handling of information",
+        "Maintain robust access control systems for critical IT infrastructure to ensure data confidentiality, integrity, and restricted access based on roles and responsibilities",
+        "Establish a structured incident reporting and response mechanism to ensure timely identification, escalation, and resolution of data security incidents",
+        "Conduct regular risk assessments across all systems and operations to identify, evaluate, and mitigate information security risks",
+        "Ensure full compliance with applicable data protection laws, regulations, and industry standards across all business operations",
+        "Promote a strong data security culture within the organization through continuous awareness, monitoring, and improvement initiatives",
+        "Do protect confidential and sensitive company information.",
+        "Do follow approved data protection and cybersecurity protocols.",
+        "Do use company systems responsibly and securely.",
+        "Do report any data breaches or security incidents immediately.",
+        "Do ensure data is accessed only on a need-to-know basis.",
+        "Don’t share confidential information without authorization.",
+        "Don’t misuse or improperly access company data.",
+        "Don’t store sensitive data on unsecured platforms.",
+        "Don’t ignore cybersecurity risks or violations.",
+        "Don’t install unauthorized software on company systems."
+      ],
+      "Fair Competition and Market Conduct": [
+        "Ensure all commercial contracts are reviewed, evaluated, and approved through a structured and transparent governance process",
+        "Maintain complete documentation and traceability of all pricing decisions and contracting processes to ensure transparency and accountability",
+        "Uphold ethical business practices by ensuring zero tolerance for unfair trade practices across all business operations",
+        "Promote fair competition, integrity, and compliance with applicable laws and regulations in all commercial dealings",
+        "Do compete fairly and ethically in the marketplace.",
+        "Do comply with all applicable competition laws.",
+        "Do base business decisions on merit and quality.",
+        "Do maintain transparency in pricing and business practices.",
+        "Do respect competitors and market regulations.",
+        "Don’t engage in price fixing or market manipulation.",
+        "Don’t share confidential information with competitors.",
+        "Don’t participate in anti-competitive agreements.",
+        "Don’t mislead customers or stakeholders.",
+        "Don’t restrict fair market competition."
+      ],
+      "Regulatory and Legal Compliance": [
+        "To maintain compliance with applicable laws, regulations, and ethical standards.",
+        "Ensure continuous identification, tracking, and updating of all applicable regulatory and legal requirements relevant to operations",
+        "Maintain comprehensive compliance monitoring across all operational areas to ensure adherence to applicable laws and standards",
+        "Conduct periodic internal reviews and audits of ethical practices to strengthen governance and compliance culture",
+        "Ensure complete and accurate documentation of all regulatory and compliance-related records to support traceability and transparency",
+        "Promote effective coordination between departments to ensure consistent compliance implementation and strong organizational alignment",
+        "Do comply with all applicable laws and regulations.",
+        "Do ensure valid licenses, permits, and approvals are maintained.",
+        "Do follow all statutory reporting requirements.",
+        "Do promptly report compliance issues or violations.",
+        "Do stay updated with regulatory changes.",
+        "Don’t operate without required approvals or licenses.",
+        "Don’t ignore legal or regulatory obligations.",
+        "Don’t submit false compliance information.",
+        "Don’t bypass statutory procedures.",
+        "Don’t conceal regulatory violations."
+      ],
+      "General Ethical Business Conduct": [
+        "The Company has adopted a structured approach to ethical business conduct based on the following principles:",
+        "Prevent: Risks related to unethical conduct, including bribery, corruption, fraud, and conflicts of interest, are identified, assessed, and controlled through appropriate systems, controls, and procedures at all stages of operations.",
+        "Comply: The Company complies with all applicable laws, regulations, and ethical standards, and ensures adherence to internal policies and industry best practices.",
+        "Improve: The Company strives for continuous improvement in ethical performance through monitoring, evaluation, training, and implementation of corrective and preventive actions.",
+        "To promote fair, transparent, and accountable business practices in all dealings.",
+        "To support continuous improvement in ethical conduct through regular monitoring and review."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Bribery and Ethical Business Conduct",
+        "targets": [
+          {
+            "target": "Maintain 100% documentation of procurement and payment approvals",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% employee training coverage on anti-bribery requirements",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero (0) confirmed incidents of bribery or unethical conduct annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Improve internal audit compliance performance by 8% compared to 2023 baseline",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% annual corruption and bribery risk assessments across all business operations",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Management",
+        "targets": [
+          {
+            "target": "Achieve 100% annual submission of conflict-of-interest declarations by all employees",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% review and documentation of all declared conflicts of interest",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 95% employee awareness of conflict-of-interest requirements",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention and Control",
+        "targets": [
+          {
+            "target": "Maintain 100% of financial transactions subjected to internal control verification",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% investigation and closure of fraud-related incidents within defined timelines",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 95% employee awareness of Fraud Prevention and Control",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero (0) unresolved fraud cases annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Financial Integrity and Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Maintain 100% verification of all business partners prior to onboarding",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% monitoring of all financial transactions through control systems",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% review of high-risk financial transactions prior to approval",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero (0) confirmed AML violations annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security and Data Protection",
+        "targets": [
+          {
+            "target": "Achieve 100% employee training coverage on data protection and information security",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% of critical systems under access control mechanisms",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% reporting and timely closure of all data security incidents",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% annual data security risk assessments across all systems and operations",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% compliance with applicable local laws and regulatory requirements related to data protection and information security",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Fair Competition and Market Conduct",
+        "targets": [
+          {
+            "target": "Maintain 100% review and approval of all commercial contracts",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% documentation of pricing and contracting decisions",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve zero (0) confirmed cases of unfair trade practices annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Regulatory and Legal Compliance",
+        "targets": [
+          {
+            "target": "Maintain 100% tracking and updating of all applicable regulatory requirements",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% compliance monitoring coverage across operational areas",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct at least 2 internal audits on ethics practices annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% documentation and record-keeping for regulatory traceability",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve minimum 95% inter-departmental compliance coordination score",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management — Managing Director",
+        "duty": "Provide strategic oversight for the Ethical Business Conduct framework; ensure alignment with business objectives; allocate financial, technical, and human resources; promote a culture of integrity, transparency, and accountability; oversee enterprise-wide ethics risks including bribery, fraud, and conflicts of interest; engage with regulatory authorities and external stakeholders to ensure compliance with ethical and legal requirements."
+      },
+      {
+        "role": "Compliance and Ethics Manager — Ethics Officer",
+        "duty": "Implement and continuously improve the Ethical Business Conduct Policy; ensure compliance with anti-bribery, anti-corruption, and ethical standards; develop and conduct ethics training and awareness programs; monitor ethics KPIs and compliance performance; manage confidential reporting and whistleblowing mechanisms; report compliance status to senior management."
+      },
+      {
+        "role": "Sustainability and Compliance Manager — Compliance Manager",
+        "duty": "Conduct internal audits and assessments related to business ethics and governance; identify and evaluate risks of fraud, corruption, and misconduct; investigate reported incidents and complaints objectively; recommend corrective and preventive actions; strengthen governance systems and ensure continuous improvement of compliance frameworks."
+      },
+      {
+        "role": "Operations & Facilities Management — Plant Head",
+        "duty": "Ensure ethical conduct in daily operations and business processes; enforce compliance with procurement, contracting, and financial procedures; maintain transparency and proper documentation; identify and escalate ethical risks or conflicts of interest; support implementation of ethics training and compliance systems within departments."
+      },
+      {
+        "role": "Employee Representatives — Worker Representative",
+        "duty": "Promote awareness of ethical conduct among employees; act as a communication link between employees and management; support ethics training and awareness programs; encourage reporting of unethical behavior; strengthen workplace integrity, trust, and transparent communication."
+      },
+      {
+        "role": "Employees — All Staff",
+        "duty": "Comply with Ethical Business Conduct Policy and applicable laws; maintain integrity in all business dealings; avoid bribery, corruption, fraud, and unethical practices; disclose conflicts of interest; report suspected violations or concerns; actively participate in ethics and compliance training programs."
+      }
+    ],
+    "monitoring": "At Tagoor Laboratories Pvt. Ltd., structured monitoring and reporting systems are established to ensure ethical business conduct, transparency, and continuous compliance improvement.\n\nMonitoring: Key ethics and compliance parameters such as policy adherence, training completion, incident reporting, and internal control effectiveness are monitored against defined KPIs on a periodic basis. Results are consolidated into compliance dashboards for management review.\n\nInternal Audits: Regular internal audits are conducted to assess compliance with the Ethical Business Conduct Policy, Code of Conduct, and related internal control systems. Audit findings are documented and corrective actions are tracked to closure.\n\nManagement Review: Senior management reviews ethics and compliance performance, audit outcomes, and incident trends at defined intervals. Outcomes of the review are used to strengthen governance systems and update policies and procedures.\n\nIncident Reporting & Investigation: All reported ethical concerns, including bribery, fraud, corruption, and conflicts of interest, are formally recorded, investigated, and resolved in a timely and objective manner through established procedures.\n\nDocumentation & Data Integrity: Accurate, complete, and confidential records of ethics reports, investigations, training, and compliance activities are maintained to ensure traceability, accountability, and transparency.\n\nPerformance Disclosure: Ethics and compliance performance is communicated through internal reporting systems and disclosed externally where required or applicable.",
+    "reviewMechanism": "This Ethical Business Conduct Policy is subject to periodic evaluation by the Ethics Officer at least once every two years, or earlier if required due to regulatory changes, operational developments, or stakeholder feedback, to ensure its continued relevance, effectiveness, and alignment with evolving regulatory requirements and organizational priorities.\n\nThe review encompasses an assessment of compliance status, effectiveness of ethics and governance systems, incident trends, audit findings, and inputs from relevant stakeholders. Based on this evaluation, necessary updates are incorporated to strengthen the policy framework and ensure alignment with applicable laws, industry best practices, and the Company’s commitment to ethical conduct and continuous improvement."
+  },
+  "sourcePath": "Policies - Kenal/Tagoor/3. Ethical Business Conduct Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Tagoor/3. Ethical Business Conduct Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 25145,
+  "parsedAt": "2026-09-11T07:30:25.386Z"
+}

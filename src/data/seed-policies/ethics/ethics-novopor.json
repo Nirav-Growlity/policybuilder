@@ -1,0 +1,341 @@
+{
+  "id": "ethics-novopor",
+  "name": "Novopor",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Novopor",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Andhra Pradesh",
+          "address": "Plot No: 2A,2B & 2C, APSEZ, Moturupalem Village, Rambilli Mandal, Achyutapuram, Visakhapatnam District - 531011, Andhra Pradesh, India",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "",
+          "address": "Plot no: 64, JNPC, Pharma City, Thanam Village, Visakhapatnam District, Parwada Mandal - 531019, Andhra Pradesh, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Telangana",
+          "address": "K.K.R.Square, Flat No.402 & 403, Plot No.5,6,15 & 16, Kavuri Hills, Road No.36, Jubliee Hills, Hyderabad - 500033, Telangana, India.",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "",
+          "address": "Lab No.9, 1st Floor, Phase-1, IKP Knowledge Park, Sy. No. 234/2, 235/3 and 235/2, Turkapally Village, Shamirpet Mandal, Medchal-Malkajgiri District, Hyderabad - 500101, Telangana, India",
+          "primaryFunction": "Innovation Centre"
+        },
+        {
+          "location": "Mumbai",
+          "address": "Unit No.SO-4, 2nd Floor, Building No.14, Solitaire Corporate Park, Guru Hargovindji Road, Chakala, Andheri (East), MUMBAI-400093, India",
+          "primaryFunction": "Corporate Office"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Novopor, we uphold the highest ethical standards as a foundation for our business operations and relationships. We believe that integrity, fairness, and accountability are essential to fostering a culture of trust and excellence. Our ethics policy serves as a guiding framework to ensure ethical decision-making, responsible business conduct, and compliance with all applicable laws and regulations.\n\nWe expect all employees, business partners, and stakeholders to align with these principles, ensuring that our operations contribute positively to society while maintaining transparency and integrity in all our engagements.",
+      "declaration": "At Novopor, we are committed to upholding the highest standards of ethics, integrity, and responsible business conduct across all our operations and partnerships. We prioritize transparency, fairness, and compliance with legal and regulatory frameworks while fostering a culture of trust and accountability. Through ethical decision-making and responsible practices, we strive to create a positive impact on our stakeholders and the communities we serve. Our Commitment is reflected in the following key areas:",
+      "scope": "This Ethics Policy applies to all employees, contractors, suppliers, business partners, and stakeholders associated with Novopor Operations. It is applicable to all site locations:"
+    },
+    "focusAreas": [
+      "Anti-Corruption & Fraud",
+      "Confidentiality & Data Protection",
+      "Whistleblower Protection",
+      "Conflict of Interest",
+      "Money Laundering",
+      "Anti-Competitive Practices"
+    ],
+    "qualitative": {
+      "Anti-Corruption & Fraud": [
+        "Zero Tolerance for Corruption & Fraud: Novopor strictly prohibits all forms of corruption, bribery, and fraudulent activities. We uphold transparency, integrity, and accountability in all business dealings. Employees, partners, and stakeholders must adhere to ethical practices and comply with anti-corruption laws. Any violations will result in strict disciplinary action, including legal consequences.",
+        "Ethical Awareness & Compliance Training: We provide mandatory annual training for all employees on ethics, covering anti-bribery, data protection, fair competition, and workplace integrity to ensure a culture of ethical responsibility.",
+        "Report any unethical financial activities or bribery attempts to the Compliance team.",
+        "Ensure all financial transactions are accurately recorded and verifiable.",
+        "Refuse gifts or incentives from suppliers that may influence business decisions.",
+        "Do not offer or accept bribes in any form.",
+        "Do not manipulate financial records.",
+        "Do not withhold information regarding corruption risks."
+      ],
+      "Confidentiality & Data Protection": [
+        "Confidentiality & Data Protection: Novopor is committed to safeguarding sensitive information, including company data, employee records, and customer details. We ensure compliance with data protection laws and implement strict security measures to prevent unauthorized access, disclosure, or misuse. Employees and partners must handle confidential information responsibly and maintain the highest level of data integrity and privacy.",
+        "Data Security & Privacy Protection: We enforce stringent cybersecurity measures, conduct periodic risk assessments, and educate employees on data security best practices to protect sensitive business and customer information.",
+        "Adhere to the company’s cybersecurity policies and best practices.",
+        "Use strong passwords and enable multi-factor authentication where required.",
+        "Report any suspected cyber threats, phishing attempts, or data breaches immediately.",
+        "Do not share confidential company data with unauthorized individuals.",
+        "Do not store or share company data on personal devices without authorization.",
+        "Do not click on unknown or suspicious links in emails or messages."
+      ],
+      "Whistleblower Protection": [
+        "Whistleblower Protection: Novopor encourages employees, partners, and stakeholders to report unethical behaviour, misconduct, or policy violations without fear of retaliation. We provide a secure and anonymous reporting system to ensure transparency and accountability. All reports are treated confidentially and investigated thoroughly, with strict measures in place to protect whistleblowers from any form of discrimination, harassment, or adverse consequences.",
+        "Anonymous Reporting Mechanism: We uphold a strict whistleblower protection policy, offering a secure and confidential reporting system where ethical concerns are investigated within 30 days, ensuring corrective actions are taken promptly."
+      ],
+      "Conflict of Interest": [
+        "Conflict of Interest: We are committed to conducting business with integrity, transparency, and fairness. Our employees and stakeholders must avoid any situation where personal interests conflict with the company's best interests. All potential conflicts must be disclosed and managed appropriately to maintain trust and uphold ethical decision-making. We prioritize accountability, ensuring that business relationships and decisions are free from undue influence or favouritism.",
+        "Disclose any personal, financial, or professional interests that may influence business decisions.",
+        "Obtain prior approval before entering external business relationships that may impact impartiality.",
+        "Follow company procedures for reporting conflicts of interest.",
+        "Do not make decisions that personally benefit you at the expense of the company.",
+        "Do not engage in business with direct competitors without approval.",
+        "Do not misuse company resources for personal gain."
+      ],
+      "Money Laundering": [
+        "Money Laundering: We strictly comply with all applicable anti-money laundering (AML) laws and regulations. Our company is dedicated to preventing any activities related to money laundering and financial crime. We conduct due diligence on our business partners, maintain accurate records, and report any suspicious transactions to the relevant authorities.",
+        "Immediately report unusual or suspicious financial activities to the compliance department.",
+        "Verify the legitimacy of new business partners before engaging in transactions.",
+        "Maintain accurate financial records and transaction logs.",
+        "Do not process or approve transactions that lack clear business justification.",
+        "Do not ignore red flags related to financial irregularities.",
+        "Do not attempt to structure transactions to bypass financial reporting obligations."
+      ],
+      "Anti-Competitive Practices": [
+        "Anti-Competitive Practices: We uphold fair competition and reject any form of anti-competitive behaviour, including price-fixing, bid-rigging, and market manipulation. Novopor complies with all antitrust and competition laws to promote a level playing field that benefits customers, partners, and the industry.",
+        "Responsible Advertising & Honest Communication: We commit to transparent and truthful marketing, ensuring all product claims are evidence-based, comply with industry regulations, and prevent misleading information or greenwashing.",
+        "Compete fairly and ethically in the marketplace.",
+        "Follow all applicable competition laws and regulations.",
+        "Ensure transparency in negotiations and pricing strategies.",
+        "Do not engage in price-fixing, bid-rigging, or market allocation schemes.",
+        "Do not discuss competitive pricing strategies with competitors.",
+        "Do not misuse market influence to eliminate competition unfairly."
+      ],
+      "General Ethical Conduct": [
+        "Compliance & Legal Accountability: We strictly adhere to all applicable laws, industry regulations, and international best practices. Employees and partners are expected to follow legal requirements, with non-compliance leading to disciplinary actions.",
+        "Employees are kept informed of updates and expected to integrate these practices into their work.",
+        "Disciplinary Action – Employees or business partners found violating the ethics policy may face disciplinary measures, including formal warnings, suspension, or demotion, depending on the severity of the breach.",
+        "Termination of Employment or Contracts – Serious or repeated violations, such as fraud, corruption, or data breaches, may result in immediate termination of employment or termination of business agreements with suppliers and partners.",
+        "Legal Consequences – Any unethical actions that violate laws and regulations, such as bribery or data privacy breaches, may lead to legal action, including fines, lawsuits, or criminal prosecution.",
+        "Reputational Damage – Violations can harm Novopor’s brand image and stakeholder trust, potentially leading to loss of business, customer confidence, and investor support.",
+        "Financial Penalties & Restitution – Employees or partners responsible for financial misconduct, fraud, or ethical breaches may be required to repay losses, face financial penalties, or be held liable for damages caused to the company."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption & Fraud",
+        "targets": [
+          {
+            "target": "Conduct 100% employee training on anti-corruption policies by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Perform audits to ensure compliance with anti-bribery and fraud prevention policies by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Maintain a 100% investigation rate for reported corruption and fraud cases within 30 days by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Confidentiality & Data Protection",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with data protection regulations by FY 2028-29 through annual audits.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Conduct cybersecurity training for 100% of employees handling sensitive data by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Achieve zero incidents of unauthorized data breaches through strict security measures by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower Protection",
+        "targets": [
+          {
+            "target": "Maintain a 100% anonymous and secure reporting system for whistleblowers by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Ensure 100% resolution of reported ethical concerns by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Conduct annual awareness campaigns to educate 100% employees about whistleblower rights and protections by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure that all employees and key stakeholders submit an annual conflict of interest disclosure form by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Achieve and maintain zero cases of undisclosed or unreported conflicts of interest in internal audits and compliance reviews by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "By FY 2028-29, all reported conflict of interest cases must be addressed and resolved within 30 days of identification.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Ensure that 100% of employees in finance, sales, and compliance roles complete annual anti-money laundering (AML) training by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Conduct full AML due diligence on 100% of new suppliers, customers, and third-party partners by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "By FY 2028-29, the company must achieve and maintain zero violations or fines related to money laundering regulations in all jurisdictions of operation.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "By FY 2028-29, achieve 100% compliance with antitrust laws by ensuring all relevant employees complete annual compliance training on anti-competitive regulations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "By FY 2028-29, conduct internal audits to monitor business practices and proactively identify any potential anti-competitive behaviours.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Maintain a record of zero penalties, fines, or legal actions related to anti-competitive behaviour by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Establish and uphold ethical business practices across the organization."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Foster a culture of transparency, accountability, and compliance across all operations."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Allocate resources for training, audits, and compliance monitoring."
+      },
+      {
+        "role": "Compliance & Legal Team",
+        "duty": "Ensure company-wide adherence to ethical, legal, and regulatory standards."
+      },
+      {
+        "role": "Compliance & Legal Team",
+        "duty": "Investigate and address ethical violations, ensuring confidentiality and fair resolutions."
+      },
+      {
+        "role": "Compliance & Legal Team",
+        "duty": "Implement whistleblower protection mechanisms and handle reports confidentially."
+      },
+      {
+        "role": "HR & Training Team",
+        "duty": "Organize mandatory training programs on ethics, fraud prevention & Cybersecurity."
+      },
+      {
+        "role": "HR & Training Team",
+        "duty": "Embed ethical principles into hiring, onboarding, and performance evaluations."
+      },
+      {
+        "role": "HR & Training Team",
+        "duty": "Encourage an inclusive and respectful work environment that aligns with corporate values."
+      },
+      {
+        "role": "Finance & Risk Management Team",
+        "duty": "Establish financial controls to prevent fraud, bribery, and financial misconduct."
+      },
+      {
+        "role": "Finance & Risk Management Team",
+        "duty": "Evaluate financial risks associated with suppliers, vendors, and business transactions."
+      },
+      {
+        "role": "Finance & Risk Management Team",
+        "duty": "Maintain transparency in budgeting, auditing, and financial reporting"
+      },
+      {
+        "role": "IT & Security Team",
+        "duty": "Develop and implement cutting-edge cybersecurity policies and best practices"
+      },
+      {
+        "role": "IT & Security Team",
+        "duty": "Ensure compliance with global data protection regulations and mitigate cyber threats."
+      },
+      {
+        "role": "IT & Security Team",
+        "duty": "Continuously monitor and update security infrastructure to prevent breaches."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to ethical business conduct and report any misconduct."
+      },
+      {
+        "role": "Employees",
+        "duty": "Complete mandatory ethics training and comply with anti-corruption, fraud prevention, and information security laws."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participate in whistleblower programs without fear of retaliation."
+      }
+    ],
+    "monitoring": "To uphold the effectiveness of Novopor’s Ethics Policy, a structured monitoring and reporting framework is crucial. This guarantees transparency, accountability, and ongoing enhancements in ethical conduct, fraud prevention, anti-corruption efforts, and information security.\n\nRegular Assessments and Audits: Evaluate compliance with ethical standards, labor laws, workplace safety, DEI initiatives, and employee welfare.\n\nEthics & Compliance: Measure adherence to ethical principles through key performance indicators.\n\nInformation Security and Data Protection: Safeguard sensitive business and employee information against breaches and unethical use.\n\nSupplier & Partner Ethical Compliance: Ensure ethical business practices across the supply chain, including labor rights, ethical sourcing, and fair employment standards.\n\nThe Policy is publicly available on Novopor’s website and shared through various stakeholder communication channels.\n\nEmployees are kept informed of updates and expected to integrate these practices into their work.",
+    "reviewMechanism": "The Compliance officer is responsible for managing the implementation and periodic review of this policy. This policy will be reviewed annually to ensure its effectiveness and alignment with evolving regulatory requirements, industry best practices, and organizational commitments. Any necessary updates or modifications will be communicated to all stakeholders, incorporating operational or regulatory changes and addressing emerging challenges."
+  },
+  "sourcePath": "Policies - Kenal/Novopor/Ethics Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Novopor/Ethics Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 17049,
+  "parsedAt": "2026-09-11T07:25:03.792Z"
+}

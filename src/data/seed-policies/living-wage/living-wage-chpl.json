@@ -1,0 +1,139 @@
+{
+  "id": "living-wage-chpl",
+  "name": "CHPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 4 Fair wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Choksi Heraeus Pvt. Ltd.",
+      "industry": "",
+      "site": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India",
+      "sites": [
+        {
+          "location": "CHOKSI HERAEUS PVT. LTD",
+          "address": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Choksi Heraeus is committed to upholding fair and equitable wage practices that support the dignity, well-being, and economic security of all employees. This Fair Wage Policy ensures that all workers receive compensation that meets or exceeds legal requirements, industry standards, and, where applicable, living wage benchmarks. Our approach goes beyond compliance by promoting transparency, internal equity, and consistent wage reviews to address cost of living, inflation, and evolving workforce needs. By fostering a fair wage culture, we aim to create a motivated, productive, and socially responsible workplace.",
+      "declaration": "Choksi Heraeus Pvt. Ltd. is committed to paying all employees a Fair wage that reflects the regional cost of living and ensures coverage of essential needs such as food, housing, healthcare, and education. Our wage structure is designed to be regularly reviewed and adjusted based on local economic factors and inflation trends. This commitment goes beyond statutory requirements and aligns with international labor standards and our long-term sustainability goals.",
+      "scope": "This policy applies to all employees of Choksi Heraeus, including full-time, part-time, contractual, and third-party workers across all locations. It also encourages fair wage practices among our suppliers and service providers:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "This Fair Wage Policy ensures that all workers receive compensation that meets or exceeds legal requirements, industry standards, and, where applicable, living wage benchmarks.\n\nChoksi Heraeus Pvt. Ltd. is committed to paying all employees a Fair wage that reflects the regional cost of living and ensures coverage of essential needs such as food, housing, healthcare, and education.\n\nOur wage structure is designed to be regularly reviewed and adjusted based on local economic factors and inflation trends.\n\nConduct annual assessments to ensure wages reflect local living costs and employee well-being.\n\nThe FY 2022-23 serves as the baseline for all fair wage-related targets at Choksi Heraeus. This includes commitments to wage equity, living wage alignment, and wage transparency across all employee categories. Progress will be measured against this baseline to ensure continuous improvement and alignment with evolving standards and targets set to achieved by FY 2028-29.\n\nThe review will evaluate the relevance of the policy in light of: Local inflation and living costs; Industry wage benchmarks; Internal wage equity and employee feedback"
+    },
+    "focusAreas": [
+      "Annual Wage Review and Equity",
+      "Employee Satisfaction on Fair Wages",
+      "Performance-Based Wage Increases"
+    ],
+    "qualitative": {
+      "Annual Wage Review and Equity": [
+        "Ensure equitable wage distribution across departments, considering factors such as performance, gender, and background.",
+        "Conduct annual assessments to ensure wages reflect local living costs and employee well-being."
+      ],
+      "Employee Satisfaction on Fair Wages": [
+        "Cultivate a workplace where employees feel their compensation is fair and reflective of their contribution.",
+        "Ensure that 100% of wage revision communications are transparently shared with employees."
+      ],
+      "Performance-Based Wage Increases": [
+        "Implement a transparent, merit-driven wage increase system linked to individual performance and skill enhancement."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Annual Wage Review and Equity",
+        "targets": [
+          {
+            "target": "Complete annual wage reviews for 100% of employees by March each year.",
+            "baseline": "The FY 2022-23 serves as the baseline for all fair wage-related targets at Choksi Heraeus.",
+            "deadline": "March each year"
+          },
+          {
+            "target": "Maintain 100% compliance in wage equity audits across all functions.",
+            "baseline": "The FY 2022-23 serves as the baseline for all fair wage-related targets at Choksi Heraeus.",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Employee Satisfaction on Fair Wages",
+        "targets": [
+          {
+            "target": "Achieve an employee satisfaction score of 90% on fair wages in surveys by FY 2028-29.",
+            "baseline": "The FY 2022-23 serves as the baseline for all fair wage-related targets at Choksi Heraeus.",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Ensure that 100% of wage revision communications are transparently shared with employees.",
+            "baseline": "The FY 2022-23 serves as the baseline for all fair wage-related targets at Choksi Heraeus.",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Performance-Based Wage Increases",
+        "targets": [
+          {
+            "target": "Ensure 50% of employees benefit from performance-based wage increments annually.",
+            "baseline": "The FY 2022-23 serves as the baseline for all fair wage-related targets at Choksi Heraeus.",
+            "deadline": "Annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources Manager",
+        "duty": "Shall be responsible for compiling and maintaining the Fair Wage Performance Report in consultation with the Finance Department and Performance Management Team."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "To provide accurate financial and wage-related data."
+      },
+      {
+        "role": "Performance Management Team",
+        "duty": "For identifying wage increases linked to skill development and performance."
+      },
+      {
+        "role": "Human Resources Manager and Management",
+        "duty": "The Fair Wage Policy will be reviewed annually by the HR Manager, in collaboration with the Management."
+      }
+    ],
+    "monitoring": "Progress will be measured against this baseline to ensure continuous improvement and alignment with evolving standards and targets set to achieved by FY 2028-29.\n\nThe final report will be submitted annually to senior management and shared with employee representatives to promote transparency.",
+    "reviewMechanism": "The Fair Wage Policy will be reviewed annually by the HR Manager, in collaboration with the Management. The review will evaluate the relevance of the policy in light of:\n\nLocal inflation and living costs\n\nIndustry wage benchmarks\n\nInternal wage equity and employee feedback\n\nUpdates will be made as necessary to ensure continued alignment with Choksi Heraeus’ values and international best practices.\n\nEffective Date: 01.01.2025\n\nNext Review Date: 01.01.2026"
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/CHPL/4 Fair wage Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/CHPL/4 Fair wage Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 4944,
+  "parsedAt": "2026-09-11T07:37:54.916Z"
+}

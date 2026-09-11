@@ -1,0 +1,405 @@
+{
+  "id": "jay-fine-chem",
+  "name": "Jay fine chem",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "JAY FINECHEM PRIVATE LIMITED",
+      "industry": "",
+      "site": "C-303, Neelkanth Business Park, Nathani Road, Vidhyavihar (W), Mumbai – 400086, India.",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "C-303, Neelkanth Business Park, Nathani Road, Vidhyavihar (W), Mumbai – 400086, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Operational Facility",
+          "address": "Plot No. 137-138, Off Silvassa Road, Phase-II, GIDC, Vaрі396 195, Gujarat, India.",
+          "primaryFunction": "Operational Facility"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "C-303, Neelkanth Business Park, Nathani Road, Vidhyavihar (W), Mumbai – 400086, India."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "This policy supersedes all the policies issued previously and all the subsequent amendments stand cancelled & substituted by this policy.\n\nAt Jay Finechem Private Limited, a manufacturer of various chemicals and APIs, environmental sustainability is a fundamental requirement for responsible business. As a forward thinking organization, we integrate sustainable development principles into our operations. Our actions today shape tomorrow, driven by integrity, accountability, and leadership within our industry.",
+      "declaration": "Adopt energy-efficient technologies and renewable sources to reduce energy consumption and greenhouse gas emissions.\n\nImplement advanced water management systems to enhance efficiency, prioritize recycling, and ensure proper wastewater treatment.\n\nComply with air quality standards using advanced pollution control and regular emissions monitoring, focusing on reducing VOCs and hazardous emissions.\n\nPromote sustainable raw materials and minimize hazardous waste through efficient design, ensuring safe chemical disposal. Create safe, non-toxic products that support sustainability during use.\n\nDesign for recyclability and encourage responsible disposal to reduce environmental impact.\n\nAdhere to strict health and safety standards, ensuring transparency about product composition and risks.",
+      "scope": "This Environmental Policy applies to all individuals associated with Jay Finechem Private Limited, including employees, contractors, workers, suppliers, and customers, as we share the responsibility to promote sustainability and reduce our environmental footprint. The Policy is applicable to all locations of Jay Finechem Private Limited."
+    },
+    "focusAreas": [
+      "Energy Consumption & GHG Emissions",
+      "Water Resource Stewardship",
+      "Air Quality & Emission Control",
+      "Sustainable Material and Waste Management",
+      "Product Lifecycle Environment Impact",
+      "Product End –of –Life and Circularity",
+      "Customer Health, Safety and Compliance"
+    ],
+    "qualitative": {
+      "Energy Consumption & GHG Emissions": [
+        "We will invest in energy-efficient technologies and renewable energy sources to enhance our energy efficiency continuously.",
+        "Our plan includes implementing comprehensive energy management systems to monitor consumption and identify areas for improvement.",
+        "We aim to collaborate with industry experts to develop innovative solutions for reducing greenhouse gas emissions and achieving carbon neutrality.",
+        "We will conduct regular energy audits to track progress and ensure optimal use of energy resources.",
+        "We aim to offset greenhouse gas emissions through verified carbon offset programs.",
+        "We will encourage employee participation in energy conservation initiatives through awareness programs and internal campaigns."
+      ],
+      "Water Resource Stewardship": [
+        "We will introduce advanced water-saving technologies across all facilities to reduce consumption and improve water efficiency.",
+        "Our plan includes implementing a comprehensive water recycling program like ETP and STP throughout our operations to minimize waste and maximize water reuse.",
+        "We will provide training to all employees on water conservation practices and implement behavior change programs to encourage sustainable water use.",
+        "We will establish a real-time water monitoring system across all facilities to track consumption patterns, detect leakages, and improve overall water management efficiency.",
+        "We will conduct periodic water audits to identify high-consumption areas and implement corrective measures for continuous improvement.",
+        "We will explore and adopt rainwater harvesting systems at all feasible locations to enhance groundwater recharge and reduce dependency on external water sources"
+      ],
+      "Air Quality & Emission Control": [
+        "We will continue investing in cutting-edge technologies like scrubbers to reduce air pollutants like dust, Vocs, PM10, PM2.5, and other and enhance emissions control across all operations.",
+        "Our plan includes implementing a comprehensive air quality monitoring system to track emissions and ensure compliance with environmental regulations.",
+        "We aim to adopt low-emission technologies and alternative fuels to minimize air quality impacts throughout our supply chain.",
+        "We strengthen preventive maintenance and periodic inspection by third party of all emission control equipment to ensure optimal performance and avoid any unplanned emissions."
+      ],
+      "Sustainable Material and Waste Management": [
+        "We will prioritize the use of recyclable, biodegradable, and sustainable materials in our product design and packaging.",
+        "Our plan includes expanding waste diversion programs to increase recycling rates and reduce the amount of waste sent to landfills.",
+        "We aim to develop closed-loop systems to recover valuable materials and decrease reliance on virgin resources.",
+        "We will collaborate with suppliers and partners to enhance the sustainability of materials used in our production processes.",
+        "We implement structured waste segregation systems at source to improve recycling efficiency and ensure proper handling of hazardous and non-hazardous waste streams.",
+        "We enhance resource efficiency by optimizing material usage in production processes to minimize waste generation at every stage.",
+        "We strengthen monitoring and reporting mechanisms for waste generation, treatment, and disposal to ensure transparency and continuous improvement.",
+        "We conduct regular awareness and training programs for employees to encourage responsible material usage and effective waste management practices."
+      ],
+      "Product Lifecycle Environment Impact": [
+        "We will work closely with product designers to create eco-friendly products that have minimal environmental impact throughout their lifecycle.",
+        "Our plan includes implementing lifecycle assessments (LCAs) at all stages of product development to evaluate and reduce environmental impact.",
+        "We aim to enhance product circularity by designing for easy disassembly and promoting material reuse.",
+        "We will invest in innovations that improve the sustainability of product production, such as using recycled materials and adopting green manufacturing techniques"
+      ],
+      "Product End –of –Life and Circularity": [
+        "We aim to address environmental impact through the product lifecycle from design disposal.",
+        "We aim to conduct Product Life cycle assessment (PLCA) for our products.",
+        "We will implement take-back programs to encourage the return of products at the end their life for recycling or repurposing.",
+        "We are committed to promoting sustainable practices to enable the manufacture of chemicals with lower toxicity and decreased waste generation, thereby minimizing environmental impact.",
+        "We will continue sourcing packaging materials, including drums and other sustainable packaging, from certified eco-friendly suppliers to support responsible product end-of-life management",
+        "We enhance collaboration with authorized recyclers and waste management partners to ensure environmentally sound handling of returned products.",
+        "We promote the use of standardized and reusable packaging solutions to support circularity and reduce packaging waste."
+      ],
+      "Customer Health, Safety and Compliance": [
+        "We will continuously enhance product safety standards and ensure compliance with all relevant health and safety regulations.",
+        "We aim to improve our product labeling and communication efforts to provide customers with clear safety instructions and usage guidelines.",
+        "We aim to ensure that all products are checked and verified against defined quality, safety, and customer requirements before being supplied to customers.",
+        "We conduct regular training programs for employees to ensure adherence to product safety, regulatory, and compliance requirements."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption & GHG Emissions",
+        "targets": [
+          {
+            "target": "We aim for a 10% reduction in total energy consumption by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce greenhouse gas emissions scope 1 by 15% by 2030, compared to 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce greenhouse gas emissions scope 2 by 10% by 2030, compared to 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce greenhouse gas emissions scope 3 by 10% by 2030, compared to 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "We commit to increasing renewable energy use by 15% by 2030, relative to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to reduce 10% GHG Emission intensity by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of manufacturing plan are covered under annual energy audits by 2030 to identify and implement efficiency improvements.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Resource Stewardship",
+        "targets": [
+          {
+            "target": "We aim for a 12% reduction in water consumption by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our goal is to recycle and reuse 5% more wastewater by 2030, compared to 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "We commit to improving water efficiency in all facilities by 10% by 2030, relative to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% compliance with applicable wastewater discharge standards across all facilities by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the installation of water monitoring and metering systems to cover all major water-consuming operations by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality and Emission Control",
+        "targets": [
+          {
+            "target": "We aim for a 7% reduction in PM emission by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim for a 10% reduction in dust emission by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our goal is to reduce emissions from transportation and logistics by 15% by 2030, compared to 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "We achieve 100% compliance with applicable air emission standards across all operations by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We reduce VOC emissions by 8% by 2030, compared to 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "We install continuous emission monitoring systems (CEMS) at key emission points by 2027.",
+            "baseline": "",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials and Waste Management",
+        "targets": [
+          {
+            "target": "Aim for overall waste generation by 15% by 2030, from baseline 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to reduce overall waste sent to landfills by 10% by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We commit to increasing the recycling rate of waste materials by 12% by 2030, relative to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to replace 30% of hazardous materials with less hazardous alternatives by 2030, using 2022 as the baseline year.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to achieve 100% segregation of hazardous and non-hazardous waste at source across all facilities by 2027.",
+            "baseline": "",
+            "deadline": "2027"
+          },
+          {
+            "target": "We commit to ensuring 100% compliance in safe handling, storage, and disposal of hazardous waste by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Lifecycle Environment Impact",
+        "targets": [
+          {
+            "target": "We aim to reduce the environmental impact of our product lifecycle by 12% by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our goal is to design 10% of new products with a minimal environmental footprint by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We commit to conducting lifecycle assessments (LCAs) for 50% of new products by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Aim to 30% of raw material are locally sourced to reduce transportation emissions by 2030 from baseline year 2022",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product End –Of –Life",
+        "targets": [
+          {
+            "target": "We aim for 35% of our products components free from substances of concern (e.g., hazardous chemicals, endocrine disruptors) by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our goal is to increase product take-back and recycling rates by 10% by 2030, compared to 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "We commit to reducing product end-of-life waste by 12% by 2030, relative to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Source 100% of packaging materials from certified sustainable suppliers by 2030, with 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to conduct at least one awareness campaigns with stakeholders on sustainable disposal annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health, Safety and Compliance",
+        "targets": [
+          {
+            "target": "We aim to maintain zero complains related to product safety by starting year 2022.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "We aim for 100% compliance with health, safety, and regulatory standards by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to conduct customer training session annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We commit to increase safety training sessions for customers by 10% by 2030, relative to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to achieve 100% accuracy and completeness in product labeling and safety documentation by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We commit to maintaining zero incidents of non-compliance related to customer health and safety regulations by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "EHS Manager",
+        "duty": "Oversee the execution of the Environmental Policy and compliance with regulations."
+      },
+      {
+        "role": "EHS Manager",
+        "duty": "Coordinate sustainability integration across departments."
+      },
+      {
+        "role": "EHS Manager",
+        "duty": "Prepare quarterly environmental performance reports."
+      },
+      {
+        "role": "EHS Manager",
+        "duty": "Conduct audits to monitor environmental performance and implement improvements."
+      },
+      {
+        "role": "EHS Manager",
+        "duty": "Lead training and awareness programs on sustainability."
+      },
+      {
+        "role": "EHS Manager",
+        "duty": "Manage water conservation and recycling systems."
+      },
+      {
+        "role": "EHS Manager",
+        "duty": "Oversee rainwater harvesting and groundwater recharge initiatives."
+      },
+      {
+        "role": "R&D Manager",
+        "duty": "Develop eco-friendly products and sustainable formulations."
+      },
+      {
+        "role": "R&D Manager",
+        "duty": "Conduct life cycle assessments for all product lines."
+      },
+      {
+        "role": "R&D Manager",
+        "duty": "Innovate processes aligned with green chemistry principles."
+      },
+      {
+        "role": "Quality Assurance Manager",
+        "duty": "Ensure compliance with product health and safety standards."
+      },
+      {
+        "role": "Quality Assurance Manager",
+        "duty": "Conduct safety assessments and provide transparent labeling. Address customer safety concerns proactively."
+      }
+    ],
+    "monitoring": "Regular Reporting: We will share quarterly reports on our environmental performance, highlighting our progress toward our targets. These reports will be accessible to all employees and stakeholders.\n\nAnnual Review: Each year, we will conduct a comprehensive review to assess how well our environmental strategies are working. This review will inform our future initiatives and improvements.\n\nPerformance Metrics: We will track and publish key metrics related to energy use, water consumption, waste management, and emissions reductions. This data will help us evaluate our progress and identify areas for improvement.\n\nThe EHS Manager will conduct audits to monitor environmental performance and implement improvements.\n\nRegular audits and assessments will be conducted to guarantee adherence to environmental objectives, with prompt corrective actions implemented to address any non-compliance or areas for improvement.",
+    "reviewMechanism": "The EHS Manager will conduct an annual review of the Environmental Policy to ensure its effectiveness and compliance with regulatory standards. This review will encompass performance metrics, audit results, and feedback from the Environmental Steering Committee.\n\nEach year, we will conduct a comprehensive review to assess how well our environmental strategies are working. This review will inform our future initiatives and improvements."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Jay fine chem/Updated Policies/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Jay fine chem/Updated Policies/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 16579,
+  "parsedAt": "2026-09-11T07:09:28.267Z"
+}

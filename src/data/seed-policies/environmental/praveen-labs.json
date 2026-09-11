@@ -1,0 +1,381 @@
+{
+  "id": "praveen-labs",
+  "name": "Praveen labs",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Stewardship Policy_GRW_v1.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Praveen Laboratories Pvt. Ltd.",
+      "industry": "",
+      "site": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India",
+      "sites": [
+        {
+          "location": "Office",
+          "address": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Factory",
+          "address": "BlockNo.206, Village: Jolwa, Taluka: Palsana, Dist: Surat‐394305, Gujarat, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Praveen Laboratories Pvt. Ltd. is deeply dedicated to conducting its operations in a manner that prioritizes environmental responsibility. We fully acknowledge the significant impact that our activities can have on the environment, and as such, we are committed to actively minimizing our ecological footprint. Our efforts are not only focused on reducing negative effects but also on fostering sustainable practices that align with our corporate values. We strive to ensure full compliance with all environmental regulations, recognizing that adherence to these standards is essential for the protection of our planet. Through continuous improvement and innovation, we aim to enhance our environmental stewardship and contribute positively to the communities in which we operate.",
+      "declaration": "To ensure the effective implementation of this policy, Praveen Laboratories Pvt. Ltd. is committed to integrating environmental considerations into decision-making processes at all levels. The organization will allocate the necessary resources and infrastructure to support sustainable initiatives. Additionally, a collaborative approach will be fostered by involving employees, stakeholders, and industry experts in environmental initiatives. Regular assessments and improvements of our environmental strategies will be conducted to ensure alignment with global sustainability standards.\n\nWe set annually goals, develop necessary capabilities, and commit appropriate resources to achieve this policy and aligning Praveen Laboratories Pvt. Ltd. supply chain with this policy.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:"
+    },
+    "focusAreas": [
+      "Environmental Compliance",
+      "Energy Consumption",
+      "Greenhouse Gas (GHG) Emissions",
+      "Water Management",
+      "Biodiversity Protection",
+      "Air Pollution Reduction",
+      "Material, Chemical, and Waste Management",
+      "Product End-of-Life Management",
+      "Customer Health and Safety",
+      "Environmental Services and Advocacy",
+      "Energy Consumption and Greenhouse Gas (GHG) Reduction",
+      "Renewable Energy and Energy Efficiency",
+      "Water Usage Reduction and Recycling",
+      "Waste Minimization and Recycling",
+      "Biodiversity Support",
+      "Responsible Raw Material and Waste Management",
+      "Consumer Well-being and Protection",
+      "Sustainability Programs and Advocacy"
+    ],
+    "qualitative": {
+      "Environmental Compliance": [
+        "At Praveen Laboratories Pvt. Ltd., we are committed to adhering to all applicable environmental laws and regulations. We engage our employees, establish performance standards, and implement an Environmental Management System to ensure compliance and foster continuous improvement. Our initiatives include:"
+      ],
+      "Energy Consumption": [
+        "Continuously improve energy performance by adopting energy-efficient technologies and optimizing operational processes.",
+        "Increase reliance on renewable energy sources where feasible to reduce dependency on non-renewable energy."
+      ],
+      "Greenhouse Gas (GHG) Emissions": [
+        "Implementing cleaner and more energy-efficient machinery and production processes can significantly lower fuel combustion emissions, resulting in a reduction of scope 1 direct emissions.",
+        "Transitioning to renewable energy sources is essential for decreasing our dependence on fossil fuel-based electricity. This shift will significantly lower scope 2 indirect emissions."
+      ],
+      "Water Management": [
+        "Improve water conservation efforts by reducing water usage, recycling wastewater, and promoting responsible consumption.",
+        "Optimize processes to minimize water usage in production, cleaning, and cooling systems."
+      ],
+      "Biodiversity Protection": [
+        "Adopt sustainable land management and operational strategies to mitigate deforestation, combat soil degradation, and preserve natural habitats.",
+        "To mitigate the adverse effects on the flora and fauna, it is essential to plant as many trees as possible.",
+        "Implement strict controls to minimize emissions, waste, and chemical runoff that could impact local ecosystems."
+      ],
+      "Air Pollution Reduction": [
+        "Adopt advanced and efficient production technologies to reduce emissions of Sulphur Oxides (SOx), Nitrogen Oxides (NOx), Volatile Organic Compounds (VOCs), and Particulate Matter (PM) from manufacturing processes.",
+        "Enhance chemical storage and handling procedures to mitigate the emission of strong odours resulting from production activities.",
+        "To reduce the noise impact on local communities, it is essential to implement effective soundproofing measures, establish noise barriers, and maintain equipment regularly."
+      ],
+      "Material, Chemical, and Waste Management": [
+        "Establish rigorous protocols for the safe storage, handling, and transportation of chemicals to mitigate the risk of leaks and contamination.",
+        "It is essential to implement secure methods for the collection, treatment, and disposal of hazardous waste to avert environmental contamination.",
+        "Promote the recycling and reuse of materials to minimize waste production."
+      ],
+      "Product End-of-Life Management": [
+        "To minimize end-of-life waste, we were going to reduce plastic consumption and shift towards biodegradable or recyclable packaging options.",
+        "Aim for conduct a Life Cycle Assessment (LCA) to evaluate the environmental impact of products during their end-of-life phase and to pinpoint areas for enhancement."
+      ],
+      "Customer Health and Safety": [
+        "Emphasize the importance of utilizing raw materials that are non-toxic, safe, and compliant in every product formulation.",
+        "Enhance the stability and quality of the product to prevent contamination and ensure long-term safety."
+      ],
+      "Environmental Services and Advocacy": [
+        "Engage proactively in environmental initiatives, advocate for community sustainability programs, and encourage eco-friendly decision-making."
+      ],
+      "Energy Consumption and Greenhouse Gas (GHG) Reduction": [],
+      "Renewable Energy and Energy Efficiency": [
+        "We seek to adopt and maintain an ISO 50001-certified Energy Management System to monitor and optimize energy performance.",
+        "Our goal is to upgrade to energy-efficient equipment to significantly enhance energy efficiency in the manufacturing process."
+      ],
+      "Water Usage Reduction and Recycling": [],
+      "Waste Minimization and Recycling": [
+        "Our primary objective is to concentrate our efforts on implementing a comprehensive Zero Waste strategy, which is designed to significantly minimize the amount of waste we generate by the year 2026.",
+        "We will establish partnerships with waste management organizations to enhance recycling infrastructure and capabilities by 2026."
+      ],
+      "Biodiversity Support": [
+        "We plan to support reforestation projects by committing to the planting of as many as trees possible annually, thereby enhancing local habitats and promoting biodiversity in the areas affected by deforestation."
+      ],
+      "Responsible Raw Material and Waste Management": [],
+      "Consumer Well-being and Protection": [],
+      "Sustainability Programs and Advocacy": [
+        "We aim to enhance our commitment in 2026 by developing and offering environmentally friendly product alternatives, targeting a 30% reduction in ecological impact.",
+        "We will actively promote the adoption of biodegradable, recyclable, and non-toxic materials in our product formulations in 2026, aiming for at least 50% sustainable material usage.",
+        "We plan to expand our efforts in 2026 by organizing 5 additional workshops, training programs, and webinars focused on sustainable consumption and environmental responsibility."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption and Greenhouse Gas (GHG) Reduction",
+        "targets": [
+          {
+            "target": "We seek to reduce overall energy consumption per unit of production by 10% by 2026 through process optimizations and equipment upgrades.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We strive to achieve a 10% reduction in our direct (Scope 1) and indirect (Scope 2) emissions by 2026. This will be accomplished through enhanced energy management practices and the adoption of cleaner technologies.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are planning for 8% decrease in energy consumption for each unit produced, along with the implementation of low-carbon alternatives in manufacturing by the year 2026.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We intend to establish stringent control measures aimed at effectively reducing fugitive emissions of CO2, CH4, etc. by 10% by the year 2026.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Renewable Energy and Energy Efficiency",
+        "targets": [
+          {
+            "target": "We strive to increase the use of renewable energy sources to account for 15% of total energy consumption by the year 2026, ensuring a significant shift towards sustainability.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Water Usage Reduction and Recycling",
+        "targets": [
+          {
+            "target": "Our goal is to achieve a 10% decrease in water usage by the year 2026, which will be accomplished through a combination of innovative conservation initiatives and the effective recycling of wastewater.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to ensuring that by 2026, all wastewater generated will undergo comprehensive treatment and be reused, thereby closing the loop on water usage and minimizing environmental impact.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We strive to elevate our efforts in our operational efficiency by reducing water intensity per unit of production by 12% by 2026, which will not only conserve water but also improve our overall sustainability metrics.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Waste Minimization and Recycling",
+        "targets": [
+          {
+            "target": "We strive to reduce total waste generation by 10% by 2026 through enhanced process optimization and material efficiency.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our goal is to increase recycling rates to 15% by 2026 by implementing advanced waste segregation and processing systems.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Support",
+        "targets": [
+          {
+            "target": "We strive to implement a habitat restoration program for areas affected by our activities, with a goal to restore at least 15% of impacted land by 2026.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We seek to conduct a biodiversity impact assessment across operational sites by 2026 to identify potential risks to local ecosystems.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution Reduction",
+        "targets": [
+          {
+            "target": "We strive to implement air filtration and emission control systems in production facilities to reduce SOx, NOx and other non-GHG emissions by 10% by 2026.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We seek to introduce low-VOC materials and alternative solvents in manufacturing processes to achieve an 8% reduction in VOC emissions by 2026.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We intend to reduce particulate matter (PM) and dust emissions by 12% by 2026 through improved dust suppression systems and better handling of raw materials.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to install noise-reducing equipment and sound barriers in high-noise production areas to ensure compliance with local noise regulations by 2026.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Raw Material and Waste Management",
+        "targets": [
+          {
+            "target": "We strive to achieve a significant reduction in hazardous chemical use by 10% by the year 2026, promoting safer alternatives and practices in various industries.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We intend to reduce total waste generation by 10% by 2026 through process optimization and material efficiency improvements.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We seek for the complete and safe disposal of all hazardous waste by 2026, implementing stringent regulations and best practices to protect public health and the environment.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to work towards a remarkable reduction of single-use plastics by 30% by 2026, fostering sustainable practices and encouraging the use of eco-friendly materials.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life Management",
+        "targets": [
+          {
+            "target": "We intend to conduct a Life Cycle Assessment (LCA) of 70% product lines by 2026 to identify key environmental impacts and areas for improvement.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We seek to introduce design-for-recycling principles in product development ensuring at least 20% of packaging materials are recyclable or reusable by 2026.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to reduce hazardous waste from product disposal by 15% by 2026 through improved formulation, packaging, and disposal guidance.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Consumer Well-being and Protection",
+        "targets": [
+          {
+            "target": "We strive to achieve 100% compliance with all environmental and safety regulations that apply to our products and services, ensuring that we uphold the highest standards in our operations and contribute positively to the environment.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We intend to conduct a comprehensive risk assessment for all products by 2026 to identify potential health and safety concerns.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our goal is to reduce the harmful chemical content in our products by 15% by 2026, which will not only enhance the safety of our offerings but also promote a healthier environment for future generations.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Sustainability Programs and Advocacy",
+        "targets": [
+          {
+            "target": "We aim to enhance our commitment in 2026 by developing and offering environmentally friendly product alternatives, targeting a 30% reduction in ecological impact.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We will actively promote the adoption of biodegradable, recyclable, and non-toxic materials in our product formulations in 2026, aiming for at least 50% sustainable material usage.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to expand our efforts in 2026 by organizing 5 additional workshops, training programs, and webinars focused on sustainable consumption and environmental responsibility.",
+            "baseline": "Considering calendar year 2022 as the Baseline year for measuring progress and achievements in our sustainability initiatives.",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Oversees the overall environmental strategy and approves long-term sustainability goals."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensures alignment of environmental initiatives with business objectives and stakeholder expectations."
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Leads the development and implementation of the Environmental Stewardship policy across the organization."
+      },
+      {
+        "role": "Chief Sustainability Officer (CSO)",
+        "duty": "Reports directly to the Managing Director and provides regular updates to the Board of Directors."
+      },
+      {
+        "role": "Sustainability Department Head",
+        "duty": "Department head is responsible for integrating sustainability practices into their respective areas of operation."
+      },
+      {
+        "role": "Sustainability Department Head",
+        "duty": "They ensure compliance with environmental regulations, promote resource efficiency, and support employee engagement in sustainability efforts."
+      },
+      {
+        "role": "Environmental Compliance Manager",
+        "duty": "Ensures adherence to all applicable environmental laws, regulations, and standards."
+      },
+      {
+        "role": "Environmental Compliance Manager",
+        "duty": "Conducts regular audits and maintains documentation for regulatory compliance"
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are encouraged to actively participate in sustainability initiatives."
+      },
+      {
+        "role": "Employees",
+        "duty": "They are expected to adhere to sustainable practices, report any environmental concerns, and contribute ideas for continuous improvement."
+      }
+    ],
+    "monitoring": "Praveen Laboratories Pvt. Ltd. ensures robust governance for its Environmental Stewardship Policy by embedding sustainability into corporate decision-making. The Managing Director provides strategic oversight, while the Chief Sustainability Officer (CSO) leads policy execution and reports progress to the Board. The Sustainability Department Head ensures integration across operations, and the Environmental Compliance Manager monitors regulatory adherence. Regular audits, employee training, and transparent stakeholder communication reinforce accountability. Progress is tracked through internal reports and external disclosures aligned with global standards. Clear roles, structured reviews, and a dedicated sustainability team drive continuous improvement and ensure effective policy implementation.\n\nThe CSO presents a comprehensive sustainability dashboard to senior management and the Board.\n\nThe dashboard highlights progress towards annual targets, emerging trends, and areas needing attention.\n\nA dedicated system for employees to report environmental incidents or near-misses.\n\nThe Environmental Compliance Manager investigates all reports and implements corrective actions.\n\nExternal reporting is conducted annually to communicate our sustainability performance to stakeholders, including customers, investors, and regulatory bodies.\n\nReports are prepared in accordance with internationally recognized standards such as the Global Reporting Initiative (GRI) guidelines, Good Manufacturing Practices (GMP) or Sustainability Accounting Standards Board (SASB) framework.\n\nWe actively engage with stakeholders to gather feedback, address concerns, and foster transparency in our sustainability practices.\n\nStakeholder input is considered in decision-making processes and incorporated into sustainability initiatives where applicable.",
+    "reviewMechanism": "The Chief Sustainability Officer reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations.\n\nCompany can also change or review policy if any necessary changes is required.\n\nUpdates to the policy are communicated internally, and relevant training is provided to ensure awareness and compliance."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Praveen labs/1. Environmental Stewardship Policy_GRW_v1.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Praveen labs/1. Environmental Stewardship Policy_GRW_v1.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 16847,
+  "parsedAt": "2026-09-11T07:13:26.824Z"
+}

@@ -1,0 +1,275 @@
+{
+  "id": "pennengineering",
+  "name": "PennEngineering",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Sustainability Roadmap (1).docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "PennEngineering & Manufacturing Corp. (“PennEngineering”)",
+      "industry": "",
+      "site": "",
+      "sites": [],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "PennEngineering & Manufacturing Corp. (“PennEngineering”) (Group) is a global manufacturer of engineered fastening solutions and installation systems used in industries such as automotive, electronics, industrial equipment, and telecommunications. Through advanced engineering capabilities and precision manufacturing, the Company develops fastening technologies that support efficient and reliable product assembly for customers worldwide.\n\nPennEngineering recognizes that responsible environmental management is essential to sustainable business growth. The Company is committed to minimizing the environmental impact of its operations by improving energy efficiency, reducing greenhouse gas emissions, managing resources responsibly, and ensuring compliance with applicable environmental regulations.",
+      "declaration": "PennEngineering is committed to reducing the environmental impact of its operations and products through responsible manufacturing, efficient resource utilization, and continuous environmental improvement. The Company integrates environmental considerations into operational decision-making and promotes sustainable practices across its global facilities and supply chain.\n\nPennEngineering’s environmental commitments focus on the following key areas:",
+      "scope": "This Environmental Sustainability Roadmap applies to all PennEngineering operations, including manufacturing facilities, engineering centers, offices, and distribution activities globally. The roadmap applies to all employees, Workers, contractors, suppliers, and other stakeholders involved in the Company’s operations and value chain.\n\nPennEngineering operates in multiple countries with different business operations and regulatory environments. While this roadmap’s vision and objectives apply across all locations, each facility will implement these principles in accordance with local regulations, operational requirements, and internal best practices"
+    },
+    "focusAreas": [
+      "Energy Consumption and Greenhouse Gas (GHG) Emissions",
+      "Water Management",
+      "Air Pollution Control",
+      "Materials, Chemicals, and Waste Management",
+      "Product End of Life"
+    ],
+    "qualitative": {
+      "Energy Consumption and Greenhouse Gas (GHG) Emissions": [
+        "PennEngineering is committed to improving energy efficiency and reducing greenhouse gas emissions associated with its manufacturing operations. The Company monitors energy consumption across its facilities and implements initiatives to optimize equipment performance, improve process efficiency, and reduce energy intensity. PennEngineering also evaluates opportunities to increase the use of renewable energy sources and supports initiatives aimed at reducing the overall carbon footprint of its operations."
+      ],
+      "Water Management": [
+        "PennEngineering recognizes the importance of responsible water use in industrial manufacturing. The Company is committed to minimizing water consumption through efficient operational practices, water conservation initiatives, and improved monitoring systems. Manufacturing facilities implement water management programs that support responsible use of water resources and ensure compliance with applicable environmental regulations."
+      ],
+      "Air Pollution Control": [
+        "PennEngineering is dedicated to minimizing emissions from manufacturing activities and maintaining compliance with applicable air quality regulations. The Company implements pollution control technologies, equipment maintenance programs, and monitoring systems to manage emissions from industrial processes. Continuous improvement initiatives are implemented to reduce air pollutants and improve environmental performance across operational sites."
+      ],
+      "Materials, Chemicals, and Waste Management": [
+        "PennEngineering promotes responsible material use and effective waste management practices across its manufacturing operations. The Company works to optimize the use of raw materials, recycle metal scrap, and reduce waste generation wherever possible. Hazardous materials and chemicals are managed in accordance with regulatory requirements to ensure safe handling, storage, and disposal."
+      ],
+      "Product End of Life": [
+        "PennEngineering supports responsible product lifecycle management by designing durable fastening products that can be recycled at the end of their useful life. The Company encourages responsible disposal and recycling practices for its products and packaging materials. Through improved product design and material efficiency, PennEngineering aims to support circular economy principles and reduce environmental impacts associated with product end-of-life."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Environmental Performance",
+        "targets": [
+          {
+            "target": "PennEngineering sets 2023 as the baseline year for tracking environmental performance improvements across energy use, emissions, resource efficiency, and waste management.",
+            "baseline": "2023",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Energy Consumption and Greenhouse Gas (GHG) Emissions",
+        "targets": [
+          {
+            "target": "Reduce combined Scope 1, Scope 2 and Scope 3 greenhouse gas emissions by 50% by 2030 compared with the 2021 baseline through energy efficiency improvements and operational optimization.",
+            "baseline": "2021",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce combined Scope 1, Scope 2 and Scope 3 greenhouse gas Intensity emissions by 50% by 2030 compared with the 2021 baseline through energy efficiency improvements and operational optimization",
+            "baseline": "2021",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce energy consumption by 10% by 2030 through equipment upgrades, process optimization, and energy management initiatives across manufacturing facilities.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the use of renewable electricity across operational facilities to at least 30% by 2030, through renewable energy procurement and on-site renewable installations where feasible.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that at least 20% of the workforce receives training on energy management and GHG emissions by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water",
+        "targets": [
+          {
+            "target": "Reduce water consumption by 15% by 2030 through improved water management practices and process optimization.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that at least 20% of the workforce receives training on Water management by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 20% recycling and reuse of water in manufacturing operations by 2030 where technically feasible.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% compliance with wastewater discharge regulations each year across all facilities.",
+            "baseline": "2023",
+            "deadline": "Each year"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with air emission regulations each year across all operational sites.",
+            "baseline": "2023",
+            "deadline": "Each year"
+          },
+          {
+            "target": "Reduce air pollutant emissions from manufacturing operations by 10% by 2030 through improved pollution control technologies.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain that 100% of operational sites are subject to third-party monitoring of air emissions by 2030",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals and Waste",
+        "targets": [
+          {
+            "target": "Increase recycling of metal scrap and manufacturing by-products to at least 70% by 2030 through improved recycling programs.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce landfill waste generated from manufacturing operations by 25% by 2030 through waste reduction and recycling initiatives.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% compliance with regulations related to the handling, storage, and disposal of hazardous materials and chemicals each year.",
+            "baseline": "2023",
+            "deadline": "Each year"
+          },
+          {
+            "target": "Reduce use of hazardous substances in manufacturing processes by 10% by 2030 where feasible.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% diversion of waste from landfill to recycling, recovery, or co-processing facilities by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life",
+        "targets": [
+          {
+            "target": "Ensure at least 90% of metal-based fastening products are designed to be recyclable by 2030 through material optimization and recyclable product design.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Develop product end-of-life guidance or recycling information for 100% of major product families by 2030 to support responsible disposal and recycling practices.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the use of recyclable or reusable packaging materials to at least 30% by 2030 across product shipments.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct Life Cycle Assessments (LCA) for at least 3 key product families by 2028 to evaluate environmental impacts across the product lifecycle.",
+            "baseline": "2023",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Approve environmental strategies, policies, and sustainability objectives."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Provide oversight of environmental performance and sustainability initiatives."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Ensure adequate resources are allocated to support environmental program."
+      },
+      {
+        "role": "Corporate Sustainability Leadership",
+        "duty": "Coordinate environmental and sustainability initiatives across global operations."
+      },
+      {
+        "role": "Corporate Sustainability Leadership",
+        "duty": "Establish environmental performance targets and monitor progress toward sustainability goals."
+      },
+      {
+        "role": "Corporate Sustainability Leadership",
+        "duty": "Provide guidance and support to operational teams implementing sustainability initiatives."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Implement environmental management systems and ensure compliance with environmental regulations."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Monitor environmental performance indicators including energy consumption, emissions, water use, and waste generation."
+      },
+      {
+        "role": "Site Environmental, Health & Safety (EHS) Team",
+        "duty": "Conduct environmental assessments and support continuous improvement initiatives."
+      },
+      {
+        "role": "Operations and Manufacturing Teams",
+        "duty": "Implement sustainable manufacturing practices to reduce environmental impacts."
+      },
+      {
+        "role": "Operations and Manufacturing Teams",
+        "duty": "Optimize energy, water, and material usage in production processes."
+      },
+      {
+        "role": "Operations and Manufacturing Teams",
+        "duty": "Maintain equipment and environmental control systems in accordance with regulatory requirements."
+      },
+      {
+        "role": "Employees, Workers and Contractors",
+        "duty": "Comply with environmental policies, procedures, and training requirements."
+      },
+      {
+        "role": "Employees, Workers and Contractors",
+        "duty": "Participate in environmental improvement initiatives and sustainability programs."
+      },
+      {
+        "role": "Employees, Workers and Contractors",
+        "duty": "Report environmental concerns, incidents, or improvement opportunities to management."
+      }
+    ],
+    "monitoring": "PennEngineering is committed to regularly monitoring environmental performance and reporting progress toward its environmental objectives and targets. Environmental performance indicators such as energy consumption, greenhouse gas emissions, water usage, waste generation, and recycling rates are tracked across operational facilities.\n\nThe Site Environmental, Health & Safety (EHS) team, in coordination with operational management, is responsible for collecting and analyzing environmental performance data. This information is used to evaluate progress toward sustainability goals, identify improvement opportunities, and ensure compliance with applicable environmental regulations.\n\nPennEngineering periodically reviews environmental performance metrics through internal reporting mechanisms and sustainability reviews. Environmental data may also be disclosed through sustainability reports, customer sustainability assessments, and other external reporting frameworks where applicable.\n\nThrough consistent monitoring and transparent reporting, PennEngineering aims to strengthen environmental accountability and support continuous improvement in environmental performance across its operations.",
+    "reviewMechanism": "The Environmental, Health & Safety (EHS) Manager shall be responsible for conducting the annual review of this Environmental Sustainability Roadmap. The review will assess the roadmap’s effectiveness, progress toward environmental targets, and compliance with applicable environmental laws, regulations, and organizational sustainability commitments.\n\nAny updates or revisions resulting from operational changes, regulatory developments, or stakeholder feedback will be incorporated into the roadmap and communicated across relevant operational sites to ensure continued alignment with PennEngineering’s environmental and sustainability objectives."
+  },
+  "sourcePath": "Policies - Kenal/PennEngineering/Environmental Sustainability Roadmap (1).docx",
+  "sourceFiles": [
+    "Policies - Kenal/PennEngineering/Environmental Sustainability Roadmap (1).docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 11832,
+  "parsedAt": "2026-09-11T07:25:47.946Z"
+}

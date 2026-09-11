@@ -1,0 +1,408 @@
+{
+  "id": "excel-industries-limited",
+  "name": "Excel Industries Limited",
+  "industry": "Specialty Chemicals and Pharmaceutical Manufacturing",
+  "summary": "Parsed Environmental Policy from 100. EHS Policy V05 (Std Format) 01.08.2025 (For Approval 21.10.25).docx.",
+  "tagline": "Sustainable sourcing for a cleaner, fairer value chain.",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Excel Industries Limited",
+      "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+      "site": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+      "sites": [
+        {
+          "location": "Mumbai",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Corporate Head Office"
+        },
+        {
+          "location": "Roha",
+          "address": "Plot No. 112, 20/1, OS-2, MIDC, Dhatav, Roha, Raigad, Maharashtra 402116, India.",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Lote Parshuram",
+          "address": "D-9, MIDC, Lote Parshuram, Ratnagiri, Maharashtra 415722, India.",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Visakhapatnam",
+          "address": "Plot No. 15 & 15A, APSEZ, Atchutapuram, Vishakhapatnam, Andhra Pradesh, 531011, India",
+          "primaryFunction": "Manufacturing Site"
+        },
+        {
+          "location": "Mumbai",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India.",
+          "primaryFunction": "Excel Bioresources Limited, Subsidiary"
+        },
+        {
+          "location": "Mumbai",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Kamaljyot Investments Limited, Subsidiary"
+        },
+        {
+          "location": "Mumbai",
+          "address": "184/87, S.V. Road, Jogeshwari (W), Mumbai, Maharashtra 400102, India",
+          "primaryFunction": "Excel Rajkot C&D waste recycling Private Limited, Subsidiary"
+        }
+      ]
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "OBJECTIVES:\n\nExcel Industries Limited, through this Environmental, Health and Safety (EHS) policy aims to commit safe operations, protect environment and business sustainability. This policy help the company to align its thought process in operations with global standards, improve Health, Safety, and promote sustainability, thereby enhancing its long-term competitiveness and responsibility towards its stakeholders.",
+      "declaration": "Excel Industries Limited, a responsible manufacturer of Industrial chemicals, Intermediates, specialty chemicals, agrochemical intermediates and pharmaceutical products is committed to take adequate precautions related to Environment, Health and Safety (EHS) in developing, manufacturing, storing, handling and distribution of both existing and new chemical products and in its business, across all its sites.\n\nIt is the Company’s endeavor to:\n\nComply with applicable EHS legislation and statutory, regulatory and other requirements.\n\nAchieve Sustainability in business by adhering to current codes of “Responsible Care”.\n\nIntegrate EHS consideration into business planning and decision making.\n\nEquip ourselves to address EHS emergencies.\n\nChampion EHS responsibility among all the employees, contractors and impart the requisite training.\n\nEngage participation of workmen and contractors to further improve the EHS culture within the company.\n\nShare information on Health, Safety and Environmental risks related to our products with customers, suppliers, external providers, interested parties and with the community.\n\nContinually review objectives and set targets to improve our EHS performance.\n\nProvide organizational support and directive to achieve these objectives.\n\nProvide a workplace free from accidents, injuries and exposure to Hazardous chemicals.\n\nBe responsible to Environmental Stewardship to protect environment by minimizing the environmental impact of our operations.\n\nPromote Sustainability throughout our supply chain and Product lifecycle.\n\nDiligently address key areas like water and energy consumption, greenhouse gases, air-water-land pollution, conservation of natural resources, principles of green chemistry, non-use of ozone depleting substances, circular economy and reduction of wastes, customer health and safety, impacts on protected areas, endangered species, and promotion of sustainable consumption through sustainable manufacturing practices.\n\nContinually improve the EHS performance, management systems and voluntary practices, internally and with stakeholders.\n\nThis EHS policy is a comprehensive framework for Excel Industries Limited to manage and mitigate its environmental impact, ensuring responsible and sustainable operations.",
+      "scope": "This policy applies to all functions within Excel Industries Limited, including manufacturing, design and development, logistics, and corporate offices. It applies to all workmen working for the company including our own employees, contractors and their workmen working inside the premises, all stakeholders and external providers associated with the company. This policy is applicable across all operating sites of Excel Industries Limited as listed below."
+    },
+    "focusAreas": [
+      "Water Management",
+      "Energy Consumption and Greenhouse Gases",
+      "Air-Water-Land Pollution",
+      "Materials, Chemicals, and Waste",
+      "Customer Health and Safety",
+      "Impacts on Protected Areas and Endangered Species",
+      "Product Use",
+      "Product End-of-Life",
+      "Promotion of Sustainable Consumption",
+      "Implementation and Accountability",
+      "Governance and Responsibilities"
+    ],
+    "qualitative": {
+      "Water Management": [
+        "Water Conservation: Implement water-saving technologies and practices in our manufacturing processes to reduce water consumption.",
+        "Effluent Treatment: Ensure all wastewater is treated to meet or better regulatory standards before discharge.",
+        "Water Recycling: Promote rain water harvesting, water recycling and reuse in operations to minimize freshwater usage."
+      ],
+      "Energy Consumption and Greenhouse Gases": [
+        "Energy Efficiency: Invest in energy-efficient instruments, technologies and practices to reduce energy consumption.",
+        "Renewable Energy: Increase the use of renewable energy sources in our operations.",
+        "Greenhouse Gas Reduction: Implement measures to reduce greenhouse gas emissions, including process optimization and carbon offset programs."
+      ],
+      "Air-Water-Land Pollution": [
+        "Provide proactive measures in operations and supply chain to protect the environment.",
+        "Emission Controls: Use advanced emission control technologies to minimize air-water-land pollutants from our manufacturing processes.",
+        "Monitoring: Regularly monitor air-water-land pollutant quality and their controls to ensure compliance with environmental regulations and standards.",
+        "Continual Improvement: Pursue continual improvement initiatives to further reduce air-water-land pollution by setting objectives and targets."
+      ],
+      "Materials, Chemicals, and Waste": [
+        "Sustainable Materials: Prioritize the use of sustainable and eco-friendly materials in our products and processes.",
+        "Hazardous Chemicals: Minimize the use of hazardous chemicals and ensure safe handling, storage, and disposal practices.",
+        "Waste Management: Implement waste reduction, recycling, reuse programs, minimize waste generation and promote circular economy principles."
+      ],
+      "Customer Health and Safety": [
+        "Product Safety: Ensure all products meet stringent health and safety standards, and provide clear labeling and safety information.",
+        "Risk Assessment: Conduct thorough risk assessments for all new products and processes to identify and mitigate potential health and safety impacts.",
+        "Customer Communication: Maintain open communication channels with customers regarding product safety, storage, disposal and their environmental impacts."
+      ],
+      "Impacts on Protected Areas and Endangered Species": [
+        "Biodiversity Protection: Assess and mitigate the impacts of our operations on biodiversity, particularly in protected areas and habitats of endangered species.",
+        "Environmental Impact Assessments: Conduct environmental impact assessments for new projects and expansions to identify and address potential impacts on protected areas and wildlife."
+      ],
+      "Product Use": [
+        "Ensure all products are designed to be safe during intended use, minimizing risks to health, safety, and the environment.",
+        "Provide customers with clear information on proper handling, storage, and usage of products.",
+        "Continuously assess product applications to identify and mitigate potential safety or environmental concerns during their lifecycle."
+      ],
+      "Product End-of-Life": [
+        "Promote circular economy practices by encouraging safe reuse, recycling, and responsible disposal of products.",
+        "Develop clear end-of-life guidelines for customers to minimize environmental impacts.",
+        "Collaborate with suppliers, customers, and waste handlers to improve collection and recycling systems."
+      ],
+      "Promotion of Sustainable Consumption": [
+        "Sustainable Products: Develop and promote products that have lower environmental impacts throughout their lifecycle.",
+        "Consumer Awareness: Educate customers about the environmental benefits of our products and encourage sustainable consumption practices.",
+        "Collaboration: Collaborate with stakeholders, including suppliers, customers, and industry partners, to promote sustainability and environmental responsibility."
+      ],
+      "Implementation and Accountability": [
+        "Compliance: Ensure compliance with all relevant environmental laws, regulations, standards and their codes of practices.",
+        "Training: Provide regular training for employees on environmental policies, practices, and responsibilities.",
+        "Performance Monitoring: Set measurable environmental performance goals and regularly review progress towards achieving these goals.",
+        "Transparency: Report our environmental performance and progress in a transparent manner to stakeholders."
+      ],
+      "Governance and Responsibilities": [
+        "Board of Directors: Oversight of the environmental policy and performance.",
+        "Environmental Sustainability Committee: Development and implementation of environmental strategies and policies.",
+        "Functional Heads: Responsible for integrating environmental practices within their units.",
+        "Environmental Managers: Day-to-day management of environmental programs and initiatives.",
+        "All Employees: Expected to adhere to the Environment Health and Safety (EHS) Policy and report any violations or concerns."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Reduce freshwater withdrawal by 15% by FY 2034-35 compared to FY 2021-22 baseline.",
+            "baseline": "FY 2021-22",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Achieve 30% recycling/reuse of treated wastewater across all sites by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Implement rainwater harvesting systems at 100% of sites by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Reduce specific water consumption per ton of production by 10% by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Energy Consumption and Greenhouse Gases",
+        "targets": [
+          {
+            "target": "Reduce Scope 1 GHG emissions 15% by FY 2034-35 compared to FY 2021-22 baseline.",
+            "baseline": "FY 2021-22",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Reduce Scope 2 & 3 GHG emissions 10% by FY 2034-35 compared to FY 2021-22 baseline",
+            "baseline": "FY 2021-22",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Achieve 50% renewable energy share in total electricity consumption by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Improve energy efficiency by 10% by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Electrify at least 10% of company forklifts, logistics fleet (EV/hybrid) by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Air-Water-Land Pollution",
+        "targets": [
+          {
+            "target": "Maintained full 100% compliance with emission norms at all sites annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Reduce VOC emissions by 10% by FY 2034-35 compared to baseline.",
+            "baseline": "Baseline not specified",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Install real-time emission monitoring at one major site by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals, and Waste",
+        "targets": [
+          {
+            "target": "Phase out all ozone-depleting substances from operations by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Reduce hazardous waste sent to landfill by 10% by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Achieve 100% segregation of hazardous and non-hazardous waste at all sites.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure at least 100% completion of mandatory Waste management training for employees and contractors annually by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35, annually"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Conduct risk assessments for customer health and safety at all our sites by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Maintain and provide safety data sheets (SDS) for 100% of products by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Achieve 100% compliance with product labeling standards.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Impacts on Protected Areas and Endangered Species",
+        "targets": [
+          {
+            "target": "Conduct biodiversity impact assessments for all new projects by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Implement at least one biodiversity or tree plantation activity per site annually on World Environment Day.",
+            "baseline": "",
+            "deadline": "Annually on World Environment Day"
+          },
+          {
+            "target": "Increase green belt/afforestation cover at sites by 10% by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Promotion of Sustainable Consumption",
+        "targets": [
+          {
+            "target": "Conduct customer awareness and training programs on sustainable product usage covering at least 70% of key customers by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Provide annual sustainability training to 100% of suppliers by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Launch at least one eco-friendly product by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Ensure 40% of tier-1 suppliers are sustainability-audited by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Achieve Sustainability clauses in 50% of supplier contracts by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Ensure 100% of new products undergo environmental impact assessment by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Provide safe handling and usage guidelines for 90% of products by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Provide training to 80% of sales and technical staff on safe product application by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Ensure zero regulatory non-compliance cases related to product use annually by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35, annually"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life",
+        "targets": [
+          {
+            "target": "Develop end-of-life disposal guidelines for 80% of products by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Pilot at least one product take-back or recycling program by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Achieve 20% of packaging material from recyclable or biodegradable sources by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          },
+          {
+            "target": "Conduct one awareness campaign per year for customers on safe disposal of products by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35, annually"
+          },
+          {
+            "target": "Ensure 50% of hazardous waste generated by end-of-life product handling is treated/recycled responsibly by FY 2034-35.",
+            "baseline": "",
+            "deadline": "FY 2034-35"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      5,
+      6,
+      8,
+      9,
+      12,
+      13,
+      15,
+      16
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Oversight of the environmental policy and performance."
+      },
+      {
+        "role": "Environmental Sustainability Committee",
+        "duty": "Development and implementation of environmental strategies and policies."
+      },
+      {
+        "role": "Functional Heads",
+        "duty": "Responsible for integrating environmental practices within their units."
+      },
+      {
+        "role": "Environmental Managers",
+        "duty": "Day-to-day management of environmental programs and initiatives."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Expected to adhere to the Environment Health and Safety (EHS) Policy and report any violations or concerns."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees who find that there is any Unsafe Condition or Unsafe Activity or any violation of the EHS system and any process, activity which is causing direct or indirect harm to the environment and property should address the same to the HOD and further escalate to EHS Head at site."
+      }
+    ],
+    "monitoring": "Performance Monitoring: Set measurable environmental performance goals and regularly review progress towards achieving these goals.\n\nRegular reporting on environmental performance to the MRM Committee happens on six monthly basis. The Board of Directors and stakeholders review environmental performance reporting through the Business Responsibility and Sustainability Report (BRSR) and Annual Sustainability Report (ASR) on a yearly basis.",
+    "reviewMechanism": "This policy will be reviewed monthly for its continuing adequacy and suitability to the organization’s current business. We will make this policy available to our stakeholders, customers and other stake holders, wherever required.\n\nReview: The Policy will be reviewed monthly at all the sites during Management Review Meeting (MRM) committee to assess progress and make necessary amendments, if required.\n\nStakeholder Engagement: Continuous dialogue with stakeholders to incorporate feedback and improve our environmental practices.\n\nThis policy will be reviewed monthly for its continuing suitability to the organization’s current business. We will make this policy available to our employees, customers and other stake holders, wherever required."
+  },
+  "sourcePath": "Policies - Kenal/Excel/100. EHS Policy V05 (Std Format) 01.08.2025 (For Approval 21.10.25).docx",
+  "sourceFiles": [
+    "Policies - Kenal/Excel/100. EHS Policy V05 (Std Format) 01.08.2025 (For Approval 21.10.25).docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 17290,
+  "parsedAt": "2026-09-11T07:22:56.643Z"
+}

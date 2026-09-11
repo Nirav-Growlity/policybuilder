@@ -1,0 +1,174 @@
+{
+  "id": "sustainable-procurement-splendid",
+  "name": "Splendid",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4) Responsible Sourcing Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Splendid Industries Pvt Ltd",
+      "industry": "",
+      "site": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India.",
+      "sites": [
+        {
+          "location": "Splendid Industries Pvt.Ltd.",
+          "address": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Splendid Industries Pvt Ltd, we understand that sustainable procurement is essential to maintaining our commitment to ethical business practices, environmental care, and social responsibility. We recognize that how we source materials, products, and services directly affects not only our operations but also the communities and environments connected to our supply chain. Our sustainable procurement Policy sets out clear principles and standards to ensure that everything we procure respects human rights, promotes sustainability, and complies with all relevant laws and regulations.\n\nWe believe sustainable procurement is more than just following rules—it means actively identifying and managing risks related to labor practices, environmental impact, and ethical concerns in our supply chain. By working closely with our suppliers and partners, we aim to promote transparency, accountability, and continuous improvement. This approach helps us protect our reputation and supports the long-term well-being of both the communities where we operate and the natural resources we depend on.",
+      "declaration": "Splendid Industries Pvt. Ltd. is committed to sourcing materials and services in a responsible, ethical, and sustainable manner. We require all suppliers and business partners to adhere to our standards on environmental protection, human rights, fair labor, and anti-corruption. This policy reflects our dedication to building transparent, resilient, and socially responsible supply chains that contribute to long-term value creation and stakeholder trust.",
+      "scope": "This policy applies to all sourcing and procurement activities at Splendid Industries Pvt. Ltd., including raw materials, components, and services. It extends to the entire supply chain, covering suppliers, contractors, and business partners and ensures responsible practices related to labor, environment, compliance, and human rights across all regions of operation."
+    },
+    "focusAreas": [
+      "Environmentally Responsible sourcing",
+      "Supplier Social Responsibility Framework",
+      "Ethical Supplier Conduct",
+      "Local & Inclusive Sourcing"
+    ],
+    "qualitative": {
+      "Environmentally Responsible sourcing": [
+        "Preference for suppliers who actively minimize environmental impacts through resource efficiency, emission control, and responsible waste management.",
+        "Promote environmentally sustainable procurement by partnering with suppliers who demonstrate measurable environmental responsibility."
+      ],
+      "Supplier Social Responsibility Framework": [
+        "Commitment to safe workplaces, fair wages, and the elimination of child, forced, or exploitative labor across all tiers of the supply chain.",
+        "Guarantee that all suppliers adhere to fair labor practices, including the prohibition of child and forced labor, provision of fair wages, and assurance of safe working environments."
+      ],
+      "Ethical Supplier Conduct": [
+        "Expectation of legal compliance, anti-corruption, and full transparency in business practices from all partners.",
+        "Promote integrity and accountability by engaging suppliers who follow ethical business practices and legal compliance."
+      ],
+      "Local & Inclusive Sourcing": [
+        "Support for community-based suppliers and inclusion of diverse, small, and responsible enterprises in the supply base.",
+        "Strengthen the local economy and foster diversity by sourcing from community-based and underrepresented suppliers."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible sourcing",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers comply with Splendid Industries environmental standards",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase procurement from ISO 14001 certified suppliers by 50%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 10% reduction in supplier-related carbon emissions per unit of product procured",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility Framework",
+        "targets": [
+          {
+            "target": "Conduct annual audits covering labor standards across 100% of Tier 1 suppliers.",
+            "baseline": "FY 2022-23",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain 100% supplier compliance with the company’s child and forced labor policies.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Reach 50% verified compliance with labor and human rights benchmarks among suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30, with ongoing monitoring and engagement"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Conduct",
+        "targets": [
+          {
+            "target": "Integrate anti-corruption clauses in 100% of supplier contracts",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Deliver ethics and compliance training to 90% of key suppliers",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase national sourcing by 50%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 15% of supplier base includes small or diverse businesses",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "is responsible for integrating responsible sourcing principles into supplier selection, contract terms, and ongoing evaluations."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "monitors supplier performance on environmental, social, and ethical parameters and supports improvement initiatives."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "are expected to comply with Splendid Industries sourcing standards, provide required disclosures, and cooperate during audits and assessments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees involved in sourcing or supplier engagement",
+        "duty": "are expected to uphold this policy and report any violations or concerns through established channels."
+      }
+    ],
+    "monitoring": "Supplier compliance will be assessed through regular audits, sustainability scorecards, and feedback mechanisms. Findings from these reviews will inform corrective actions, supplier engagement plans, and policy updates.",
+    "reviewMechanism": "The Responsible Sourcing Policy will be reviewed annually Procurement officer to ensure its continued relevance, effectiveness, and alignment with evolving regulatory requirements, international best practices, and business priorities. The review process will be overseen by the Procurement and Sustainability Teams, in coordination with relevant department heads.\n\nAny significant updates or improvements to the policy will be approved by senior management and communicated across the supply chain.\n\nEffective Date: 01.10.2024\n\nNext Review Date: 01.10.2025"
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Splendid/4) Responsible Sourcing Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Splendid/4) Responsible Sourcing Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 7948,
+  "parsedAt": "2026-09-11T07:41:42.875Z"
+}

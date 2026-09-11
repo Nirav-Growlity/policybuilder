@@ -1,0 +1,373 @@
+{
+  "id": "bhabani",
+  "name": "Bhabani",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Sustainability Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Bhabani Colors Pvt. Ltd.",
+      "industry": "",
+      "site": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044; SP7, MIA, Alwar - 301030, Rajasthan",
+      "sites": [
+        {
+          "location": "Bhabani Colors Pvt. Ltd.",
+          "address": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044",
+          "primaryFunction": "Manufacture of paints, coatings, inks, and related products, along with associated storage, laboratory, utility, and support functions"
+        },
+        {
+          "location": "SP7, MIA, Alwar",
+          "address": "SP7, MIA, Alwar - 301030, Rajasthan",
+          "primaryFunction": "Manufacture of paints, coatings, inks, and related products, along with associated storage, laboratory, utility, and support functions"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044; SP7, MIA, Alwar - 301030, Rajasthan"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Bhabani Colors Pvt. Ltd., a leading manufacturer of paints, varnishes, coatings, printing inks, and mastics, acknowledges its responsibility to operate in an environmentally responsible manner and to systematically reduce its environmental footprint. The Company’s commitment to environmental stewardship is anchored in the pursuit of high-quality products that meet customer expectations while contributing to a cleaner, safer, and more sustainable environment. Aligned with the United Nations Sustainable Development Goals (SDGs), this Environmental Sustainability Policy establishes a structured framework to address key sustainability challenges and drive continual improvement in environmental performance across all operations.",
+      "declaration": "Bhabani Colors Pvt. Ltd. affirms its commitment to responsible environmental management by embedding sustainability principles into operational and decision-making processes. The Company prioritizes regulatory compliance, resource efficiency, pollution prevention, and continual performance improvement, supported by employee accountability and organizational systems that ensure consistent implementation of environmental responsibilities across all functions.",
+      "scope": "This Environmental Sustainability Policy applies to all operations of Bhabani Colors Pvt. Ltd., including the manufacture of paints, coatings, inks, and related products, along with associated storage, laboratory, utility, and support functions at its facilities. It covers key environmental aspects such as energy and water use, emissions, effluents, waste management, and material handling, and is applicable to all employees, contractors, and service providers, ensuring environmental responsibility is integrated across all operations:"
+    },
+    "focusAreas": [
+      "Energy Consumption & GHG Emissions – Optimize energy use across all operations and reduce greenhouse gas emissions.",
+      "Air Emissions Control – Ensure clean air in production areas and reduce emissions of dust, VOCs, and pollutants.",
+      "Raw Materials Management – Adopt and optimize the use of recycled, biodegradable, and eco-friendly materials to minimize environmental impact.",
+      "Waste Management – Minimize waste generation, promote recycling & reuse.",
+      "Water Stewardship – Minimize water consumption and promote sustainable water use practices.",
+      "Biodiversity Protection – Prevent contamination and limit impacts on ecosystems.",
+      "Noise Management – Minimize noise impacts on employees and the surrounding environment.",
+      "Responsible Product Use – Ensure products are used safely and efficiently.",
+      "Product End-of-Life Management – Promote safe disposal, recovery, and recycling of products to minimize environmental impact.",
+      "Customer Health & Safety – Guide customers to use and dispose of products responsibly and safely.",
+      "Employee Awareness & Engagement – Build awareness through training and participation.",
+      "Environmental Services, Partnerships & Advocacy – Collaborate with stakeholders to promote sustainability and transparency across the supply chain."
+    ],
+    "qualitative": {
+      "Energy consumption & GHG Emissions": [
+        "Continuously explore and implement energy-efficient technologies such as automated production systems, energy-efficient motors, and smart sensors.",
+        "Promote an energy-conscious culture among employees.",
+        "Promote low-carbon and efficient transportation practices to minimize greenhouse gas emissions from logistics and distribution."
+      ],
+      "Air Emissions Control": [
+        "Evaluate and maintain air pollution control systems regularly to ensure they meet the highest environmental standards.",
+        "Conduct regular stack and ambient air monitoring to ensure compliance with applicable air quality norms."
+      ],
+      "Raw Materials Management": [
+        "Optimize raw material consumption through batch optimization, yield improvement, and process standardization.",
+        "Minimize material losses by strengthening inventory management, storage conditions, and handling procedures."
+      ],
+      "Waste Management": [
+        "Ensure effective segregation, treatment, and disposal of hazardous and non-hazardous waste.",
+        "Enhance use of recycled or biodegradable packaging materials.",
+        "Ensure safe storage, documentation, and disposal of hazardous waste through approved waste management vendors."
+      ],
+      "Water Stewardship": [
+        "Educate employees on responsible water management and encourage personal accountability.",
+        "Reduce freshwater usage through process optimization, leak prevention, and water-efficient practices.",
+        "Monitor effluent quality regularly to ensure compliance with discharge standards."
+      ],
+      "Biodiversity Protection": [
+        "Minimize impacts on local ecosystems through environmentally responsible manufacturing and waste management.",
+        "Promote greenbelt development around production sites with native tree plantations.",
+        "Collaborate with communities and environmental groups to raise biodiversity awareness."
+      ],
+      "Noise Management": [
+        "Install noise-dampening equipment and schedule high-noise operations strategically.",
+        "Ensure regular maintenance of machinery to reduce sound levels."
+      ],
+      "Responsible Product Use": [
+        "Provide customers with clear guidance on safe handling, storage, and efficient product usage.",
+        "Offer support to help customers minimize waste, emissions, and responsible resource use.",
+        "Collect and review customer feedback on product performance to drive continuous improvement in product design and support services."
+      ],
+      "Product End-of-life Management": [
+        "Facilitate safe disposal or recovery of expired products through authorized partners.",
+        "Promote reuse or recycling of packaging materials.",
+        "Guide customers and distributors on proper end-of-life practices.",
+        "Periodically review processes to enhance sustainability and compliance."
+      ],
+      "Customer Health and Safety": [
+        "Ensure all products comply with chemical safety regulations before market release.",
+        "Maintain and update labeling, hazard communication, and SDS for regulatory compliance.",
+        "Monitor and review product safety performance to identify improvements in handling and usage.",
+        "Conduct targeted training for customers on safe handling practices and emergency response."
+      ],
+      "Employee Awareness & Engagement": [
+        "Conduct role-based environmental training for employees covering waste management, emissions control, and spill prevention.",
+        "Integrate environmental responsibilities into SOPs and daily work practices to reinforce sustainable behavior.",
+        "Encourage employee participation in environmental improvement and compliance initiatives."
+      ],
+      "Environmental Services & Advocacy": [
+        "Conduct employee training on environmental responsibility and sustainable practices.",
+        "Engage suppliers and contractors on environmental compliance and responsible material sourcing.",
+        "Support local environmental programs such as plantation drives and awareness initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy consumption & GHG Emissions",
+        "targets": [
+          {
+            "target": "Achieve 10% reduction in energy consumption by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a total of 20% reduction in greenhouse gas emissions (Scope 1, 2 & 3) across all operations by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% LED lighting coverage across production, utilities, and administrative areas by year 2030 and maintain thereafter.",
+            "baseline": "2024",
+            "deadline": "2030 and thereafter"
+          }
+        ]
+      },
+      {
+        "area": "Air Emissions Control",
+        "targets": [
+          {
+            "target": "Improve air quality in production areas by 15% by 2030 through effective operation and maintenance of scrubbers, filters, and ventilation systems",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce diesel vehicle use by 15% by year 2030 through route optimization and improved scheduling.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Raw materials Management",
+        "targets": [
+          {
+            "target": "Achieve 20% substitution of high-impact chemicals with safer alternatives by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce overall raw material consumption per unit of production by 10% by 2030 through process optimization.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% tracking of raw material consumption data to identify trends and improvement opportunities.",
+            "baseline": "2024",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Ensure 100% compliant treatment and disposal of waste through authorized facilities by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce hazardous waste per unit of production by 15% by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce total waste generation by 10% till year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Stewardship",
+        "targets": [
+          {
+            "target": "To reduce water usage per ton of production by 15% by 2030 through water-efficient practices and rainwater harvesting where applicable.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employees are trained on responsible water management practices by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reuse 40% of treated wastewater within operations by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Protection",
+        "targets": [
+          {
+            "target": "Plant and maintain 500 native trees around the company facilities by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain ≥90% survival rate for all plantation and green-belt development activities annually.",
+            "baseline": "2024",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Noise Management",
+        "targets": [
+          {
+            "target": "Reduce average noise levels in identified high-noise areas by 10% by year 2030 through engineering controls, equipment upgrades, and acoustic enclosures.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Product Use",
+        "targets": [
+          {
+            "target": "Ensure 100% of products are supplied with clear usage instructions, safety guidance, and environmental handling information by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement customer guidance and awareness communication training for responsible product use for 100% customers by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce customer-use phase environmental risks by 15% by year 2030 through formulation improvements, safer alternatives, and responsible application guidance.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-life Management",
+        "targets": [
+          {
+            "target": "Ensure 100% of off-spec products are disposed of or recovered through authorized channels by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 30% recycling or reuse of packaging materials by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide end-of-life handling guidance to 100% of distributors and customers by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Conduct 2 customer safety awareness or communication initiative till year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of products have accurate labeling, hazard communication, and up-to-date Safety Data Sheets (SDS).",
+            "baseline": "2024",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero product recalls or regulatory actions related to customer health and safety.",
+            "baseline": "2024",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Employee Awareness & Engagement",
+        "targets": [
+          {
+            "target": "Conduct three employee engagement initiatives related to sustainability or environmental performance by year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% role-specific environmental training for employees in production, utilities, and EHS functions.",
+            "baseline": "2024",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain 90% employee participation in environmental or sustainability initiatives till year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Integrate environmental criteria into 100% of supplier evaluations by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Participate in 3 environmental or community initiative in collaboration with external stakeholders till year 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Manager",
+        "duty": "Oversees implementation of environmental policies and ensures compliance with all relevant regulations."
+      },
+      {
+        "role": "Operations Team",
+        "duty": "Manages daily practices aligned with energy, water, and waste reduction goals in production."
+      },
+      {
+        "role": "R&D Department",
+        "duty": "Focuses on innovation for eco-friendly product formulations and sustainable material sourcing."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Conducts staff training on sustainability practices and promotes a culture of environmental responsibility."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Provides strategic direction, allocates resources, and monitors overall progress toward sustainability targets."
+      }
+    ],
+    "monitoring": "Bhabani Colors Pvt. Ltd. regularly monitors its environmental performance across key areas such as energy use, greenhouse gas emissions, water management, waste reduction, and product safety. Key Performance Indicators (KPIs) are defined and tracked through internal systems to measure progress against sustainability targets. Performance is reviewed periodically by management to support data-driven decisions and timely corrective actions. Annual evaluations help identify gaps and improvement opportunities, with relevant information shared with stakeholders to maintain transparency and accountability. All monitoring and reporting follow applicable regulations and recognized industry practices to ensure accuracy and reliability.",
+    "reviewMechanism": "The Environmental Manager will annually review this policy to assess progress on sustainability targets, identify areas for improvement, and adjust strategies as needed. This review will include analyzing quarterly KPI reports, gathering feedback from key departments, and benchmarking against industry standards. The Environmental Manager will report findings to the Sustainability Executive and recommend policy updates to ensure continuous improvement and alignment with evolving environmental goals."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Bhabani/1. Environmental Sustainability Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Bhabani/1. Environmental Sustainability Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 15041,
+  "parsedAt": "2026-09-11T07:33:59.843Z"
+}

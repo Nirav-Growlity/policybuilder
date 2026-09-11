@@ -1,0 +1,470 @@
+{
+  "id": "labour-human-rights-amlrs",
+  "name": "AMLRS",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 4. Fair Labor and Human Right Policy_v1507.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "THE AML RIGHTSOURCE GROUP of companies",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "United States",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Canada",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Germany",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Poland",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Austria",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Switzerland",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "United Kingdom",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Denmark",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Bulgaria",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Singapore",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Hong Kong",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Brazil",
+          "address": "",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Malaysia",
+          "address": "",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At THE AML RIGHTSOURCE GROUP of companies, we are committed to upholding fair labor practices and safeguarding human rights across all aspects of our operations. As a leader in financial crime compliance, we recognize the importance of fostering a workplace built on respect, dignity, and equality. Our Fair Labor and Human Rights Policy reflects our unwavering dedication to ethical business conduct, ensuring compliance with international labor standards and human rights frameworks, including the Universal Declaration of Human Rights and the International Labour Organization (ILO) conventions.\n\nThis policy aims to promote fair treatment, prevent discrimination, and protect the rights of all individuals within our workforce, including employees, contractors, and suppliers. By embedding these principles into our daily practices, we strive to create a safe, inclusive, and empowering environment where everyone can thrive professionally and personally.",
+      "declaration": "The purpose of this Fair Labor and Human Rights Policy is to affirm AMLRS commitment to ethical labor practices and the protection of human rights across all operations. This policy ensures compliance with international labor standards, promotes fairness, and safeguards the dignity of every individual associated with AMLRS, including employees, contractors, and partners. It aims to prevent discrimination, eliminate exploitation, and foster an inclusive environment built on respect and equality. By embedding these principles into our operations, AMLRS reinforces its dedication to social responsibility, integrity, and creating a workplace where everyone can thrive.",
+      "scope": "This Fair Labor and Human Rights Policy applies to all operations, legal entities, offices, partner offices, registered business addresses, remote work locations, and other workplaces of the AML RightSource Group of Companies (\"AMLRS\"), including all subsidiaries, affiliates, and controlled entities operating in the United States, Canada, Germany, Poland, Austria, Switzerland, the United Kingdom, Denmark, Bulgaria, India, Singapore, Hong Kong, Brazil, and Malaysia, as well as any future locations where AMLRS conducts business.\n\nThe policy applies irrespective of whether business activities are carried out from AMLRS-owned or leased premises, partner offices, co-working spaces, client locations, registered legal addresses, or remote work environments. It covers all employees, including full-time, part-time, temporary, fixed-term, and contract employees, interns, consultants, agency workers, and management. The policy also extends to suppliers, vendors, contractors, service providers, business partners, and any other third parties engaged in providing products or services on behalf of AMLRS.\n\nAll individuals and entities covered by this policy are expected to comply with its requirements and uphold AMLRS's commitment to respecting internationally recognized labor and human rights standards throughout its global operations."
+    },
+    "focusAreas": [
+      "Workplace Health and Safety",
+      "Diversity, Equality, and Inclusion (DEI)",
+      "Working Condition",
+      "Social Dialogue",
+      "Professional Growth and Development",
+      "Human Rights",
+      "External Stakeholder Human Rights"
+    ],
+    "qualitative": {
+      "Workplace Health and Safety": [
+        "Identifying and mitigating potential workplace hazards to ensure a safe environment for all employees.",
+        "Ensuring the overall health and well-being of employees by addressing physical and mental health concerns.",
+        "Promoting a culture of safety awareness throughout the organization to engage employees in maintaining a safe workspace.",
+        "Maintaining compliance with all relevant health and safety regulations to meet legal and organizational standards.",
+        "We will create a proactive safety culture by providing ongoing training that equips employees to identify and address potential risks effectively.",
+        "We strive to maintain a zero-accident workplace by implementing rigorous safety protocols and conducting regular safety audits across all offices.",
+        "Our goal is to ensure that all workspaces are ergonomically designed, promoting physical health and reducing strain-related injuries.",
+        "We will enhance mental health support services by providing comprehensive resources and fostering resilience among employees.",
+        "We will implement regular health assessments to monitor employee well-being and address any risks proactively.",
+        "We strive to ensure that all office spaces are ergonomically designed to enhance employee comfort, promoting physical well-being and reducing strain.",
+        "Our will regularly assess the workplace environment, identifying and eliminating potential hazards to ensure a safe and healthy workspace.",
+        "We aim to promote mental wellness by offering accessible support services that help employees manage stress and maintain emotional well-being."
+      ],
+      "Diversity, Equality, and Inclusion (DEI)": [
+        "Promoting a diverse and inclusive workforce that reflects a variety of backgrounds, perspectives, and experiences.",
+        "Fostering an environment of mutual respect where all employees feel valued, heard, and supported.",
+        "Ensuring equal opportunities for growth and advancement for all employees, regardless of their identity.",
+        "Educating employees on the importance of diversity, equity, and inclusion to create a more inclusive workplace culture.",
+        "Continuously assessing and improving DEI practices to address any gaps and enhance organizational effectiveness.",
+        "We will conduct a regular DEI training, empowering employees to recognize and combat unconscious bias.",
+        "We strive to create a diverse workforce by actively recruiting from underrepresented groups and ensuring equal opportunities for all.",
+        "Our goal is to integrate inclusive leadership practices by encouraging leaders to actively promote diversity and provide mentorship to all employees.",
+        "We aim to build a culture of accountability by setting clear DEI goals and regularly assessing progress toward fostering a more inclusive workplace.",
+        "We will create a safe space for all employees to voice concerns related to discrimination, ensuring that every issue is addressed with urgency and transparency."
+      ],
+      "Working Condition": [
+        "Ensuring fair and competitive compensation for all employees, reflecting their roles, experience, and performance.",
+        "Promoting a healthy work-life balance by offering flexible working arrangements where permissible based on the role and job duties, and adequate time off in accordance with applicable law\t.",
+        "Providing a safe and comfortable work environment that prioritizes employees’ physical and mental well-being.",
+        "Offering opportunities for personal and professional growth through training, development, and career advancement programs.",
+        "We strive to ensure that all office spaces are ergonomically designed to enhance employee comfort, promoting physical well-being and reducing strain.",
+        "We will provide flexible work arrangements, including remote options, to support employees in achieving a better work-life balance.",
+        "We will offer a comprehensive healthcare plan that supports the well-being of all employees.",
+        "Our will regularly assess the workplace environment, identifying and eliminating potential hazards to ensure a safe and healthy workspace.",
+        "We aim to promote mental wellness by offering accessible support services that help employees manage stress and maintain emotional well-being."
+      ],
+      "Social Dialogue": [
+        "Encouraging open communication between employees and management to foster mutual understanding and collaboration.",
+        "Creating platforms for employees to voice their concerns, ideas, and feedback in a constructive manner.",
+        "Promoting inclusive discussions that respect diverse opinions and encourage a variety of viewpoints.",
+        "Ensuring that all social dialogue activities are transparent and contribute to informed decision-making.",
+        "We will strengthen employee engagement by hosting regular meetings where employees can share ideas, concerns, and feedback with leadership.",
+        "We will create transparent communication channels where employees can discuss business decisions that impact their roles and responsibilities.",
+        "We aim to implement a collaborative platform where employees can contribute to discussions on key company initiatives and future direction.",
+        "We will ensure that all employees have access to employee representation and consultation mechanisms by maintaining structured communication channels and regular engagement forums across the organization."
+      ],
+      "Professional Growth and Development": [
+        "Encouraging continuous learning and skill development to empower employees in their career progression.",
+        "Providing opportunities for professional growth through training, mentorship, and career advancement programs.",
+        "Supporting employees in setting and achieving personal career goals aligned with organizational objectives.",
+        "Promoting a culture of feedback and self-improvement to enhance individual performance and growth.",
+        "Regularly evaluating and updating professional development initiatives to ensure they meet the evolving needs of employees.",
+        "We will conduct regular performance reviews to provide employees with constructive feedback, guiding them to set and achieve their career goals.",
+        "We aim to create personalized career development plans for each employee, outlining clear growth opportunities and pathways for advancing within the organization.",
+        "We will promote internal mobility by offering employees the chance to apply for new roles within the organization, fostering career growth.",
+        "Our goal is to invest in continuous learning by providing training programs that help employees enhance their skills and advance in their careers."
+      ],
+      "Human Rights": [
+        "Upholding the fundamental rights and dignity of all individuals within the workplace.",
+        "Ensuring non-discrimination and equal treatment for all employees, fostering an inclusive environment.",
+        "Protecting employees' freedom of association and the right to voice concerns without fear of retaliation.",
+        "Promoting a safe environment free from harassment, exploitation, and any form of abuse.",
+        "Regularly reviewing and enhancing human rights practices to ensure compliance with international standards.",
+        "Maintaining strict policies against child and forced labor, ensuring these practices are eradicated from all business operations.",
+        "We aim to ensure full compliance with international human rights standards, creating a workplace that values dignity, respect, and fairness.",
+        "We strive to provide employees with ongoing training on human rights, ensuring they understand their rights and responsibilities within the company.",
+        "Our goal is to establish a safe reporting system that allows employees to confidentially voice concerns about human rights violations or unethical behavior.",
+        "We will implement a zero-tolerance approach to any form of discrimination, harassment, or exploitation in the workplace."
+      ],
+      "Discrimination and Harassment": [
+        "Our goal is to ensure that all employment-related decisions, including recruitment, promotion, compensation, training, and career development, are based on merit, qualifications, performance, and business requirements.",
+        "We will promote a respectful work environment by encouraging open communication, collaboration, and professional conduct across all levels of the organization.",
+        "We will ensure that all complaints are addressed confidentially, impartially, fairly, and in accordance with applicable laws and internal procedures.",
+        "We aim to encourage employees to raise concerns or report inappropriate behaviour through established reporting channels without fear of retaliation."
+      ],
+      "External Stakeholder Human Rights": [
+        "Respecting the human rights of all external stakeholders impacted by the organization’s operations and decisions.",
+        "Identifying and addressing potential human rights risks within the organization’s supply chain and partnerships.",
+        "Promoting fair treatment and equality for all external stakeholders, including suppliers and contractors.",
+        "Encouraging transparency and accountability in business practices to uphold stakeholder rights.",
+        "We will conduct thorough due diligence on external stakeholders to ensure they adhere to our human rights standards and ethical guidelines.",
+        "We will maintain transparency by requiring all external partners to commit to our human rights code of conduct as a condition of partnership.",
+        "We will collaborate with external stakeholders to address human rights issues, ensuring responsible practices are upheld throughout the supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Workplace Health and Safety",
+        "targets": [
+          {
+            "target": "We are committed to maintain zero workplace accidents in every year.",
+            "baseline": "",
+            "deadline": "every year"
+          },
+          {
+            "target": "We plan to enhance workplace mental health support services and cover 100% of the employee population by 2030, based on 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to compliance 100% with annual safety audit.",
+            "baseline": "",
+            "deadline": "annual"
+          },
+          {
+            "target": "We aim to cover 100% of employees in health and safety related training by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equality, and Inclusion (DEI)",
+        "targets": [
+          {
+            "target": "We aim to increase workforce diversity by 15% by 2030, relative to 2022 baseline.",
+            "baseline": "2022 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our goal is to improve DEI training participation by 20% by 2030, compared to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We commit to a 20% increase in the representation of underrepresented groups in management roles by 2030, based on 2022 levels.",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to maintain zero cases on discrimination and harassment every year.",
+            "baseline": "",
+            "deadline": "every year"
+          }
+        ]
+      },
+      {
+        "area": "Working Condition",
+        "targets": [
+          {
+            "target": "We seek to improve overall workplace cleanliness and maintenance ratings by 30% by 2030, using 2022 as the reference year.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our target is to raise employee satisfaction with the work environment by 20% by 2030, relative to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "We aim to improve employee engagement scores by 20% by 2030, using 2022 as the baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to conduct at least two town hall meetings per year.",
+            "baseline": "",
+            "deadline": "per year"
+          },
+          {
+            "target": "We commit to increasing management-employee interaction opportunities by 15% by 2030, compared to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will work towards ensuring that 100% of eligible employees are covered under formal employee representation and consultation mechanisms.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Professional Growth and Development",
+        "targets": [
+          {
+            "target": "Aim to 100% of employees receive performance evaluations annually by 2030, up from the 2022 baseline.",
+            "baseline": "2022 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our goal is to cover 100% employee access to professional development opportunities by 2030, compared to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to cover 100% employee in career management training programmes by 2030 from baseline 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Human Rights",
+        "targets": [
+          {
+            "target": "Increase employee participation in human rights training programs by 30% by 2030, relative to 2022 baseline.",
+            "baseline": "2022 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 30% improvement in employee awareness of organizational human rights commitments by 2030, using 2022 as the reference year.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% compliance with human rights standards every year.",
+            "baseline": "",
+            "deadline": "every year"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "We aim to improve employee awareness of reporting mechanisms and anti-retaliation protections by 15% by 2027, compared to the 2030 baseline.",
+            "baseline": "2030 baseline",
+            "deadline": "2027"
+          },
+          {
+            "target": "We commit to acknowledging 100% of discrimination and harassment complaints within 3 working days and completing investigations within 30 calendar days every year.",
+            "baseline": "",
+            "deadline": "every year"
+          },
+          {
+            "target": "We aim to ensure 100% implementation of corrective actions for all substantiated discrimination and harassment cases every year.",
+            "baseline": "",
+            "deadline": "every year"
+          },
+          {
+            "target": "We aim to achieve 100% annual completion of enhanced anti-discrimination and harassment prevention training for all managers and supervisors by 2027, relative to the 2030 baseline.",
+            "baseline": "2030 baseline",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "We are committed to achieving 100% compliance with human rights standards in all external partnerships by 2030, based on 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Our goal is to increase stakeholder engagement on human rights issues by 25% by 2030, relative to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Lead Compliance officer",
+        "duty": "The Lead Compliance officer, as designated by AMLRS, is responsible for implementing this policy and ensuring all Partners and employees are aware of and adhere to this Policy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Provide leadership and strategic direction for implementing labor and human rights initiatives."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Allocate adequate resources and budget to achieve labor and human rights objectives effectively."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Ensure alignment of labor and human rights initiatives with overall business goals."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Review and monitor compliance with labor and human rights commitments quarterly."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Make strategic decisions to address gaps and improve processes based on policy review outcomes."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Oversee the monitoring and enforcement of labor and human rights standards within the company."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Ensure compliance with local and international labor laws and human rights regulations."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Conduct regular audits and assessments to evaluate compliance and identify potential risks."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Provide guidance and recommendations for corrective actions in case of violations."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Coordinate training programs to raise awareness and understanding of labor and human rights issues."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Act as the main point of contact for employees to report concerns or violations related to labor and human rights."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to company standards and guidelines for labor and human rights in their daily activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any suspected violations or unethical practices using established channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Engage in training programs to increase awareness of labor and human rights responsibilities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Respect and uphold the rights of all colleagues, ensuring an inclusive and respectful work environment."
+      },
+      {
+        "role": "Employees",
+        "duty": "Cooperate with audits, assessments, and investigations related to labor and human rights compliance."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participate in the identification and resolution of potential labor and human rights concerns."
+      },
+      {
+        "role": "Employees",
+        "duty": "Ensure personal behavior aligns with ethical standards set by the company in all interactions."
+      }
+    ],
+    "monitoring": "Regular and transparent reporting practices are essential for monitoring progress, identifying potential risks, and ensuring accountability in our commitment to labor and human rights. We adhere to the following reporting procedures:\n\nAnnual Labor and Human Rights Performance Reviews: We conduct yearly evaluations to assess our adherence to labor and human rights standards, collecting data on key metrics outlined in our framework.\n\nInternal Assessments: Internal assessments are carried out regularly to ensure compliance with labor laws, evaluate the effectiveness of our management systems, and identify areas for improvement.\n\nStakeholder Communication: We actively engage with stakeholders, including employees, partners, regulatory bodies, and communities, to address concerns, gather insights, and transparently report on our progress and initiatives related to labor and human rights.\n\nWe are committed to continuously improving our labor and human rights performance. Our goal is to foster a fair, respectful, and ethical workplace for all. We regularly update our Labor and Human Rights guidelines, incorporating best practices, employee feedback, and legal developments. Our ongoing efforts include:\n\nEnhancing workplace safety, health, and well-being.\n\nPromoting diversity, equity, and inclusion.\n\nStrengthening employee rights and ensuring fair working conditions.\n\nImplementing new programs and technology to support employees' rights and welfare.\n\nBy continuously refining our approach, we aim to exceed regulatory requirements and create a workplace where all individuals are treated with dignity and respect.",
+    "reviewMechanism": "The Lead Compliance Officer will review the Fair labor and Human Right Policy annually, and any updates will be communicated as necessary.\n\nNext review date: April 01, 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/AMLRS/4. Fair Labor and Human Right Policy_v1507.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/AMLRS/4. Fair Labor and Human Right Policy_v1507.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 20719,
+  "parsedAt": "2026-09-11T07:06:42.184Z"
+}

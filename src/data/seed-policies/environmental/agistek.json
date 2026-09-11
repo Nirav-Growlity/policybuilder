@@ -1,0 +1,256 @@
+{
+  "id": "agistek",
+  "name": "Agistek",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environment Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Aegistek Corporation Ltd.",
+      "industry": "",
+      "site": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand",
+      "sites": [
+        {
+          "location": "Aegistek Corporation Ltd.",
+          "address": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand",
+          "primaryFunction": "Operating site"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Aegistek Corporation Ltd., we recognize the critical importance of environmental stewardship in today's industrial landscape. We are steadfast in our commitment to minimizing our environmental footprint while maximizing sustainability efforts. Our Environmental Policy outlines our dedication to responsible resource management, pollution prevention, and continuous improvement, ensuring a greener future for generations to come and fostering environmental innovation.",
+      "declaration": "Comply with Regulations: Ensure compliance with all relevant environmental laws, regulations, and standards at local, national, and international levels, striving to exceed minimum requirements wherever possible.\n\nReduce Environmental Footprint: Continuously assess and minimize the environmental footprint of our manufacturing processes, products, and services through innovation, efficiency improvements, and the adoption of cleaner technologies.\n\nConserve Resources: Optimize resource utilization by promoting energy efficiency, water conservation, waste reduction, and recycling initiatives throughout our operations.\n\nPrevent Pollution: Prevent pollution by implementing effective pollution prevention measures, managing hazardous substances responsibly, and striving for zero environmental incidents.",
+      "scope": "This Environmental Policy applies to the operation of Aegistek Corporation Ltd., covering all Employees, Stakeholders, Contractors and individual affiliated with Aegistek."
+    },
+    "focusAreas": [
+      "Reduction of Greenhouse Gases Emission",
+      "Increase in Utilization of Renewable Energy Source",
+      "Water Consumption and Reduction",
+      "Ecosystem Restoration",
+      "Air Quality Management",
+      "Waste Handling and Resource Recovery",
+      "Sustainable Product Utilization",
+      "Product Decommissioning",
+      "Customer Safety and Wellness",
+      "Responsible Consumption"
+    ],
+    "qualitative": {
+      "Reduction of Greenhouse Gases Emission": [
+        "Aegistek aims to reduce GHG intensity by 30% by 2025 from the baseline year 2021 by incorporating energy-efficient technologies, optimizing operational processes, and increasing the use of renewable energy sources."
+      ],
+      "Increase in Utilization of Renewable Energy Source": [
+        "Expanding the integration of solar roofs to diminish reliance on fossil fuels, our aim is to achieve a 20% increase in renewable energy utilization across all operations by the year 2025 compared to the baseline year of 2021."
+      ],
+      "Water Consumption and Reduction": [
+        "To achieve water conservation by 2025, we're implementing strategies to reduce water usage in manufacturing, including optimizing equipment, fixing leaks and implementing recycling systems, aiming to cut fresh consumption usage by 15% from 2023 levels.",
+        "For effective effluent treatment by 2025, we're investing in treatment systems to meet regulatory standards for water discharge. The goal is 100% compliance with all regulatory standards."
+      ],
+      "Ecosystem Restoration": [
+        "Investing in projects aimed at restoring degraded ecosystems and promoting biodiversity recovery in areas affected by the company's activities, aiming for 30% green space coverage within our premises by 2030, based on the 2023 baseline. Progress will be monitored using satellite imagery and land surveys."
+      ],
+      "Air Quality Management": [
+        "To reduce PM and VOC emissions and comply with all regulations, we will optimize the performance of the ESPs to maximize particulate matter capture efficiency. Additionally, we will install Activated Carbon Adsorption Systems downstream of the ESPs to capture volatile organic compounds emitted during manufacturing processes.",
+        "By implementing optimized combustion efficiency, improved thermal efficiency, and operational changes, achieve a 10% reduction in LPG consumption in the boiler section from the baseline year of 2021 to the target year of 2025."
+      ],
+      "Waste Handling and Resource Recovery": [
+        "By 2025, we aim to reduce metal waste by 20% compared to the baseline year of 2023.",
+        "Aegistek Corporation is committed to promoting green consumption by prioritizing the procurement of eco-friendly raw materials, aiming to increase our green procurement by 30% by 2025 from the baseline year 2023."
+      ],
+      "Sustainable Product Utilization": [
+        "Our objective is to enhance the utilization of recycled metal in our production processes by 15% by the year 2030, relative to baseline levels in 2023. Concurrently, we conducting Life Cycle Assessments (LCAs) for our entire product range to pinpoint environmental hotspots across critical impact categories such as reducing carbon footprint and minimizing resource depletion."
+      ],
+      "Product Decommissioning": [
+        "Our aim is to achieve a recycling rate of 25% for products at end-of-life by 2030 compared to a baseline of 2023, accompanied by an emphasis on designing and producing durable goods having a longer lifespan.",
+        "We are committed to decrease scrap waste by 15% through process optimization and material recovery techniques by 2030 from baseline year of 2023."
+      ],
+      "Customer Safety and Wellness": [
+        "To achieve a 20% reduction in products recalled due to safety concerns by 2025, we are establishing a maximum allowable defect rate of less than 1% in our manufactured products. This encompasses eliminating sharp edges or metal burrs. Additionally, we aim to decrease safety-related incidents by 10% by 2025 compared to our baseline year of 2023."
+      ],
+      "Responsible Consumption": [
+        "By 2030, the objective is to minimize raw material consumption by 15% compared to the 2023 baseline, through processes optimization. Ensuring that 90% of raw materials utilized in production are sourced from certified sustainable sources by 2030, relative to the 2023 baseline, is another pivotal goal."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Reduction of Greenhouse Gases Emission",
+        "targets": [
+          {
+            "target": "Reduce GHG intensity by 30%",
+            "baseline": "2021",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Increase in Utilization of Renewable Energy Source",
+        "targets": [
+          {
+            "target": "Achieve a 20% increase in renewable energy utilization across all operations",
+            "baseline": "2021",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Water Consumption and Reduction",
+        "targets": [
+          {
+            "target": "Cut fresh consumption usage by 15%",
+            "baseline": "2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve 100% compliance with all regulatory standards for water discharge",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Ecosystem Restoration",
+        "targets": [
+          {
+            "target": "Achieve 30% green space coverage within our premises",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality Management",
+        "targets": [
+          {
+            "target": "Achieve a 10% reduction in LPG consumption in the boiler section",
+            "baseline": "2021",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Waste Handling and Resource Recovery",
+        "targets": [
+          {
+            "target": "Reduce metal waste by 20%",
+            "baseline": "2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase green procurement by 30%",
+            "baseline": "2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Product Utilization",
+        "targets": [
+          {
+            "target": "Enhance the utilization of recycled metal in our production processes by 15%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Decommissioning",
+        "targets": [
+          {
+            "target": "Achieve a recycling rate of 25% for products at end-of-life",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Decrease scrap waste by 15%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Safety and Wellness",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in products recalled due to safety concerns",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Establish a maximum allowable defect rate of less than 1% in our manufactured products",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Decrease safety-related incidents by 10%",
+            "baseline": "2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Consumption",
+        "targets": [
+          {
+            "target": "Minimize raw material consumption by 15%",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 90% of raw materials utilized in production are sourced from certified sustainable sources",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Environmental Compliance Officer holds the ultimate responsibility for overseeing the implementation of the Environmental Policy and providing necessary resources and support."
+      },
+      {
+        "role": "Environmental Management Committee",
+        "duty": "A dedicated Environmental Management Committee is established to oversee the day-to-day execution of environmental initiatives, ensuring alignment with policy objectives."
+      },
+      {
+        "role": "Environmental Compliance Officer",
+        "duty": "Environmental Compliance Officer is responsible for implementation and oversight for this policy."
+      },
+      {
+        "role": "Employees",
+        "duty": "Every employee at Aegistek Corporation Ltd. is responsible for adhering to environmental best practices, actively participating in sustainability efforts, and reporting any environmental concerns or improvement opportunities."
+      },
+      {
+        "role": "Contractors and Suppliers",
+        "duty": "We expect our contractors and suppliers to comply with our Environmental Policy and actively contribute to our sustainability objectives by adopting environmentally friendly practices within their scope of work."
+      }
+    ],
+    "monitoring": "Transparent and regular reporting mechanisms are essential for tracking progress, identifying areas for improvement, and maintaining accountability. Aegistek Corporation Ltd. implements the following reporting procedures:\n\nRegular Environmental Performance Reports: We conduct annual assessments of our environmental performance, compiling data on key indicators outlined in our Environmental Policy.\n\nInternal Audits: Internal audits are conducted to evaluate compliance with environmental regulations, assess the effectiveness of environmental management systems, and identify areas for corrective action.\n\nStakeholder Engagement: We engage with stakeholders, including employees, customers, regulators, and communities, to gather feedback, address concerns, and communicate our environmental performance and initiatives transparently.",
+    "reviewMechanism": "The Environmental Compliance officer will conduct an annual review of this policy for updates, subject to approval by the General Manager prior to implementation. Any modifications will be promptly communicated to all employees."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Agistek/1. Environment Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Agistek/1. Environment Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 10229,
+  "parsedAt": "2026-09-11T07:06:10.927Z"
+}

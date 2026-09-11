@@ -1,0 +1,117 @@
+{
+  "id": "sustainable-procurement-agistek",
+  "name": "Agistek",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Aegistek Corporation Ltd.",
+      "industry": "",
+      "site": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand",
+      "sites": [
+        {
+          "location": "Aegistek Corporation Ltd.",
+          "address": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand",
+          "primaryFunction": "Operating Site"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Aegistek Corporation Ltd., we are committed to complying with regulatory requirements, enhancing resource efficiency, and minimizing environmental impact. This policy will guide us in fostering long-term operational stability and competitiveness by prioritizing eco-friendly materials, energy-efficient processes, and waste reduction. It aims to mitigate environmental risks, meet rising consumer and market demands for sustainability, and drive innovation. Supporting our corporate social responsibility goals, this policy secures our long-term viability and profitability by reducing costs and building a resilient supply chain.",
+      "declaration": "Regulatory Compliance: Ensuring compliance with environmental laws and regulations is fundamental to avoiding legal penalties and operational disruptions. This includes adhering to local, national, and international environmental standards related to emissions, waste management and resource usage.\n\nResource Efficiency: Enhanced resource efficiency not only lowers production costs but also minimizes the environmental impact associated with resource extraction and consumption. Judicious use of resources involves sourcing more efficient materials, implementing energy-saving technologies and adopting water recycling practices.\n\nRisk Mitigation: Mitigating risks associated with resource scarcity, climate change and environmental degradation by being less dependent on scarce resources and more adaptable to environmental changes.\n\nPrevent Pollution: Developing new technologies to drive innovation in product design and manufacturing process, and respond to market changes.",
+      "scope": "This sustainable procurement policy applies to the operation of Aegistek Corporation Ltd., covering all Employees, Stakeholders, Contractors and individual affiliated with Aegistek."
+    },
+    "focusAreas": [
+      "Environmental Issues",
+      "Social Compliance to Labor and Human Rights"
+    ],
+    "qualitative": {
+      "Environmental Issues": [
+        "We aim to sourcing 80% of materials and services from suppliers committed to sustainability, exceeding legal requirements, and reducing emissions by 25% from the 2025 baseline by 2023."
+      ],
+      "Social Compliance to Labor and Human Rights": [
+        "By 2025, we will ensure that 90% of our suppliers comply with social and ethical standards through auditing, with zero tolerance for child and forced labor in our supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Issues",
+        "targets": [
+          {
+            "target": "Sourcing 80% of materials and services from suppliers committed to sustainability, exceeding legal requirements",
+            "baseline": "",
+            "deadline": "by 2023"
+          },
+          {
+            "target": "Reducing emissions by 25%",
+            "baseline": "2025 baseline",
+            "deadline": "by 2023"
+          }
+        ]
+      },
+      {
+        "area": "Social Compliance to Labor and Human Rights",
+        "targets": [
+          {
+            "target": "Ensure that 90% of our suppliers comply with social and ethical standards through auditing, with zero tolerance for child and forced labor in our supply chain",
+            "baseline": "",
+            "deadline": "By 2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Sustainability Officer",
+        "duty": "The Chief Sustainability officer is responsible for implementing and overseeing this, Policy. CSO provides leadership, direction, and resources to integrate sustainable practices throughout the organization."
+      },
+      {
+        "role": "Employees",
+        "duty": "Every employee has a vital role in advancing our sustainability agenda. It is their responsibility to understand and adhere to this policy, actively participating in initiatives to reduce environmental impact, enhance resource efficiency, and promote social compliance."
+      },
+      {
+        "role": "Stakeholders",
+        "duty": "Aegistek recognizes the importance of engaging with stakeholders, including customers, suppliers, investors, and communities. Stakeholders are encouraged to support and align with the objectives of this policy, fostering collaboration for sustainable practices."
+      },
+      {
+        "role": "Contractors",
+        "duty": "Contractors and external partners engaged by must adhere to the principles outlined in this policy. Contractual agreements may include specific provisions related to environmental and social performance, ensuring alignment with our sustainability goals."
+      },
+      {
+        "role": "Compliance and Monitoring",
+        "duty": "A dedicated team oversees compliance with environmental laws, regulations, and internal policies. They conduct regular audits, assessments, and evaluations to monitor the effectiveness of sustainability initiatives and identify areas for improvement."
+      }
+    ],
+    "monitoring": "Monitoring and Evaluation: We'll regularly monitor environmental performance, tracking emissions reduction, resource efficiency, waste management, and social compliance.\n\nInternal Reporting: We'll provide regular reports to senior management, department heads, and employees to keep them informed about sustainability progress.\n\nExternal Reporting: We'll publish annual sustainability reports following recognized standards, providing comprehensive information on environmental policies, performance, and initiatives.",
+    "reviewMechanism": "Annually, the Chief Sustainability Officer will diligently review this policy and approved by the General Manager ensuring thorough scrutiny. Any amendments or updates will be communicated to all stakeholders following the final approval of the General Manager."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Agistek/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Agistek/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 6665,
+  "parsedAt": "2026-09-11T07:06:05.414Z"
+}

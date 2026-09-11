@@ -1,0 +1,209 @@
+{
+  "id": "living-wage-mars-stitch",
+  "name": "Mars Stitch",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Mars Stitch Ltd.",
+      "industry": "",
+      "site": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+      "sites": [
+        {
+          "location": "Mars Stitch Ltd.",
+          "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Mars Stitch Ltd. is dedicated to fostering a fair and equitable workplace by ensuring that all employees earn a living wage. A living wage represents the income necessary to meet basic needs such as food, housing, healthcare, education, and other essentials, while also allowing for some discretionary income. This commitment reflects our core values of dignity, respect, and fairness.\n\nAt Mars Stitch Ltd., we recognize the transformative impact of living wages on the lives of workers and their families. By embedding living wage principles into our operations, we aim to promote social equity, improve well-being, and contribute to sustainable economic growth.",
+      "declaration": "Mars Stitch Ltd. is committed to ensuring that all employees receive a living wage that supports a decent standard of living. By going beyond minimum wage compliance, we aim to establish a benchmark for fair compensation in the textile and garment industry. Through transparency, regular monitoring, and continuous improvement, we will uphold this commitment across all levels of the organization.",
+      "scope": "This policy applies exclusively to all employees, workers, contractors, contractual worker, subcontractors, internal and external stakeholders of Mars Stitch Ltd. across all operational sites."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "A living wage represents the income necessary to meet basic needs such as food, housing, healthcare, education, and other essentials, while also allowing for some discretionary income.\n\nMars Stitch Ltd. focuses on the following principles to achieve living wage commitments:\n\nWage Fairness: Ensure that wages paid to employees meet or exceed living wage benchmarks established by organization.\n\nContinuous Improvement: Regularly review and update wage benchmarks to reflect changes in the cost of living and evolving global standards.\n\nMars Stitch Ltd. is committed to ensuring that all employees receive a living wage that supports a decent standard of living.\n\nThis policy applies exclusively to all employees, workers, contractors, contractual worker, subcontractors, internal and external stakeholders of Mars Stitch Ltd. across all operational sites.\n\nThis policy will be reviewed annually by the Manager - HR, Admin & Compliance, ensuring alignment with Mars Stitch Ltd.'s living wage commitments and global standards. The Wage Compliance Office will assess the policy's effectiveness, incorporating employee feedback and addressing emerging challenges."
+    },
+    "focusAreas": [
+      "Wage Fairness",
+      "Transparency and Monitoring",
+      "Worker Empowerment",
+      "Continuous Improvement",
+      "Public Commitment",
+      "Sustained Living Wage Commitment"
+    ],
+    "qualitative": {
+      "Wage Fairness": [
+        "Establish and implement living wage benchmarks across all operational sites.",
+        "Ensure all employees receive fair wages that enable them to meet basic needs.",
+        "Provide additional benefits such as healthcare, education support, and housing assistance to enhance employees' quality of life."
+      ],
+      "Transparency and Monitoring": [
+        "Conduct annual wage Calculation to ensure compliance with living wage standards.",
+        "Publish annual reports detailing wage practices and progress toward achieving living wage goals.",
+        "Establish grievance mechanisms to address employee concerns related to wage payments."
+      ],
+      "Worker Empowerment": [
+        "Engage with employees through surveys and forums to gather insights on wage adequacy.",
+        "Provide channels for employees to report wage-related grievances anonymously and securely.",
+        "Offer financial literacy programs to help employees manage their income effectively."
+      ],
+      "Continuous Improvement": [
+        "Regularly review and update wage benchmarks to reflect changes in the cost of living and evolving global standards."
+      ],
+      "Public Commitment": [
+        "Announce living wage targets publicly, reinforcing transparency and demonstrating leadership in ethical wage practices."
+      ],
+      "Sustained Living Wage Commitment": [
+        "Maintain a long-term commitment to continuously paying living wages, ensuring that wage standards evolve alongside economic and social changes."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Wage Fairness",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees receive wages meeting living wage benchmarks",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Provide additional non-monetary benefits, covering 80% of employees",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Transparency and Monitoring",
+        "targets": [
+          {
+            "target": "Publish annual wage compliance reports",
+            "baseline": "2023",
+            "deadline": "Starting in 2024"
+          },
+          {
+            "target": "Conduct annualy reviews of wage compliance metrics, aiming to achieve a 20% improvement in compliance scores year-on-year",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Resolve 90% of wage-related grievances within 30 days of reporting",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Worker Empowerment",
+        "targets": [
+          {
+            "target": "Conduct annual financial literacy workshops for 100% of employees",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Establish anonymous grievance mechanisms accessible to all employees",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Dedicated committee",
+        "duty": "This committee is responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "S.M Azmal Huda, General Manager(Operation), President",
+        "duty": "Committee member designated as President."
+      },
+      {
+        "role": "Mahmodul Hasan, Manager – HR, Admin & Com., Vice President",
+        "duty": "Committee member designated as Vice President."
+      },
+      {
+        "role": "Eva Akter, Executive-Welfare, Member Secretary",
+        "duty": "Committee member designated as Member Secretary."
+      },
+      {
+        "role": "Nonda Gopal, Sr. Executive -Compliance, Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Md.Shanta, Maintenance In-charge, Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Md. Masud, Asst. Manager-Admin, Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Mr. Antar, Asst. Manager-Store, Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Md. Samim, Cutting Asst., Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Md. Nayeem Hosan, Quality Inspector, Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Mst. Ruma Akter, Operator(Sewing), Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Mst. Jushna Begam, Operator(Sewing), Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Mst. Mira, Finishing Asst., Member",
+        "duty": "Committee member designated as Member."
+      },
+      {
+        "role": "Manager - HR, Admin & Compliance",
+        "duty": "This policy will be reviewed annually by the Manager - HR, Admin & Compliance, ensuring alignment with Mars Stitch Ltd.'s living wage commitments and global standards."
+      },
+      {
+        "role": "Wage Compliance Office",
+        "duty": "The Wage Compliance Office will assess the policy's effectiveness, incorporating employee feedback and addressing emerging challenges."
+      }
+    ],
+    "monitoring": "Regular updates to the Living Wage Policy to reflect evolving standards and cost-of-living adjustments.\n\nMonitoring and evaluating wage practices through independent audits and stakeholder engagement.\n\nEncouraging feedback from employees to identify areas for enhancement.\n\nParticipating in industry initiatives to advance living wage practices globally.\n\nTo ensure transparency and accountability:\n\nAnnual Wage Report: Publish a comprehensive report detailing wage compliance, progress, and areas for improvement.\n\nEmployee Engagement: Conduct annual meetings to discuss wage standards and collective progress.\n\nIncident Reporting: Maintain a transparent and accessible system for reporting wage-related concerns.",
+    "reviewMechanism": "This policy will be reviewed annually by the Manager - HR, Admin & Compliance, ensuring alignment with Mars Stitch Ltd.'s living wage commitments and global standards. The Wage Compliance Office will assess the policy's effectiveness, incorporating employee feedback and addressing emerging challenges."
+  },
+  "sourcePath": "Policies - Kenal/Mars Stitch/5. Living Wage Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Mars Stitch/5. Living Wage Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 7627,
+  "parsedAt": "2026-09-11T07:24:37.921Z"
+}

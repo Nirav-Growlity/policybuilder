@@ -1,0 +1,434 @@
+{
+  "id": "ami-life-science",
+  "name": "Ami Life-Science",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Final Version- Integrated Env Management Policy 01.05.2023.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Ami Lifesciences Pvt Ltd",
+      "industry": "",
+      "site": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021",
+      "sites": [
+        {
+          "location": "Ami Lifesciences [Corporate Office] Pvt Ltd",
+          "address": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Ami Lifesciences [Manufacturing Unit] Pvt Ltd",
+          "address": "Block No.82/B, ECP Road, At & Post. Karakhadi-391450 Taluka: Padra Dist.: Vadodara Gujarat, INDIA.",
+          "primaryFunction": "Manufacturing Unit"
+        },
+        {
+          "location": "Ami Lifesciences [Marketing Office] Pvt Ltd",
+          "address": "305, 3rd Floor, Nitco Biz Park, Rd Number 16U, Nehru Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604",
+          "primaryFunction": "Marketing Office"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Recognizing the ongoing environmental degradation and depletion of essential resources, Ami Lifesciences Pvt Ltd acknowledges the pressing need for responsible corporate action. Our unwavering commitment to Environment, Social, and Governance (ESG) principles is seamlessly integrated into the fabric of our daily operations.\n\nAt Ami Lifesciences, our dedication to addressing sustainability challenges is encapsulated in our comprehensive Integrated Environment Policy, underscoring our commitment to proactively tackle various environmental issues like energy consumption, conserving water, minimizing greenhouse gas emissions, protecting biodiversity, adapting to renewable energy, controlling air pollution, and responsibly managing hazardous waste. To combat these challenges, we have implemented innovative measures aligned with the fundamental sustainability principles of Reduce, Reuse, and Recycle.\n\nWe pledge to comply with all relevant environmental regulations and strive for excellence in environmental performance. Through innovation, responsible practices, and ongoing stakeholder engagement, we aim to exceed industry standards for environmental sustainability. To guide our journey, we have established specific Key Performance Indicators (KPIs) aimed at achieving these goals in the years to come.",
+      "declaration": "Empowering sustained growth through financial prosperity and environmental stewardship, Ami Lifesciences Pvt Ltd is dedicated to implementing innovative measures that enhance operational efficiency and contribute to a healthier, more sustainable future for generations to come.",
+      "scope": "This Policy is applicable to following sites and all the members working in there:"
+    },
+    "focusAreas": [
+      "General",
+      "Energy Consumption",
+      "GHG Emissions",
+      "Transport Emissions",
+      "Air Pollution",
+      "Water Management",
+      "Raw Materials and Chemicals",
+      "Waste Management",
+      "Biodiversity",
+      "Product Life-cycle and Environmental impacts from use of products",
+      "Customer Health & Safety",
+      "Infrastructure",
+      "Promotion of Sustainable Consumption"
+    ],
+    "qualitative": {
+      "General": [
+        "Ensure compliance with all relevant local/national legal laws and standards for the management and protection of all resources utilized by Ami for ensuring and enhancing environmental quality.",
+        "Assure periodical monitoring of all environment parameter like energy, water, air pollution, waste, GHG emissions, etc., and its adherence to standard limits."
+      ],
+      "Energy Consumption": [
+        "Promoting the adoption of energy-efficient measures to minimize resource consumption, with a focus on conserving natural resources like fossil fuels, water, and minerals wherever possible.",
+        "Adapting to renewable energy sources in the overall energy consumption along with sourcing energy services from suppliers that practices sustainability in energy generation.",
+        "Implement energy-efficient measures for energy conservation.",
+        "Embrace renewable sources to reduce the overall carbon footprint."
+      ],
+      "GHG Emissions": [
+        "Inducing carbon emission reduction measures wherever feasible by inducing state of art technologies in the company operations.",
+        "Minimizing GHG emissions via collaborating with various stakeholders of the company for minimizing its hazardous impact on the local environment.",
+        "Implement technologies to reduce carbon emissions.",
+        "Collaborate with stakeholders to minimize GHG emissions and their impact."
+      ],
+      "Transport Emissions": [
+        "The company is committed to reducing its carbon footprint by actively managing and minimizing transport-related emissions.",
+        "Prioritize the use of fuel-efficient and low-emission vehicles within the company's fleet.",
+        "Collaborate with transportation and logistics partners to encourage sustainable practices, such as energy- efficient vehicles and route optimization.",
+        "Collaborate with transportation and logistics partners to encourage sustainable practices, emphasizing the adoption of energy-efficient vehicles and route optimization for a collective reduction in carbon emissions."
+      ],
+      "Air Pollution": [
+        "Controlling air emissions through advanced technologies and operational changes to minimize their impact and mitigate negative effects.",
+        "Use technologies to minimize air pollution impact."
+      ],
+      "Water Management": [
+        "Effectively manage water consumption from the initial stage of the product manufacturing process so that the amount of water to be treated will decrease.",
+        "Conduct recycling of water in the company which is not much contaminated and set a target year to achieve zero liquid discharge from the company for conserving local water resources.",
+        "Manage water consumption for all company sites.",
+        "Aim for zero liquid discharge to conserve water resources."
+      ],
+      "Raw Materials and Chemicals": [
+        "Procuring ways to environmentally friendly and recyclable raw materials and chemicals, considering the design and product performance is not degraded and efficiently minimizing hazardous waste generation.",
+        "Assure the safe and secure management, arrangement, and transportation of our raw materials, packaging components, and finished goods.",
+        "Effectively approach techniques to reduce, recycle and recover raw materials and chemicals for conserving the precious resources wherever possible.",
+        "Source eco-friendly materials, minimizing hazardous waste.",
+        "Ensure safe handling and transportation of materials.",
+        "Explore techniques for efficient resource utilization."
+      ],
+      "Waste Management": [
+        "Dedicate to proper handling, management and disposal of the companyʼs hazardous and non-hazardous waste with specified procedure as mentioned by legal laws and standards.",
+        "Obligate to the waste management hierarchy – Reduce, Reuse, Recycle, Recover, and Treatment & Disposal.",
+        "Dedicate efforts to proper waste management.",
+        "Follow waste reduction, reuse, and recycling practices."
+      ],
+      "Biodiversity": [
+        "Conduct incentives to protect the ecologically sensitive biodiversity around the companyʼs premises and sustain ecosystem that are affected by any of companyʼs practices.",
+        "Follow various programs and initiatives to increase green surroundings, protect floras and faunas on verge of extinction and local community.",
+        "Provide incentives for biodiversity protection.",
+        "Implement programs for a greener environment."
+      ],
+      "Product Life-cycle and Environmental impacts from use of products": [
+        "Promote responsible production and sourcing practices through collaboration with environmentally responsible partners across our value chain. Performing evaluations to address Environmental impact from use of products.",
+        "Promote responsible practices throughout the value chain."
+      ],
+      "Customer Health & Safety": [
+        "Performing evaluations to address health and safety concerns related to the use of the company's products and advocating for measures to enhance customer support for all customers of the company.",
+        "Conduct evaluations to achieve zero customer complaints monthly."
+      ],
+      "Infrastructure": [
+        "Commit to developing and maintaining infrastructure in a manner that minimizes environmental impact.",
+        "Design and construct energy-efficient buildings and facilities, incorporating sustainable materials and technologies. Implement water conservation practices in the design and operation of facilities.",
+        "Commit to developing and maintaining infrastructure in a manner that minimizes environmental impact, integrating sustainability considerations into all stages of planning, construction, and maintenance.",
+        "Design and construct energy-efficient buildings and facilities, incorporating sustainable materials and technologies to minimize energy consumption and promote environmental responsibility."
+      ],
+      "Promotion of Sustainable Consumption": [
+        "Promote the sustainable consumption to limit negative environment impact.",
+        "Promoting sustainable consumption by educate and inform consumers about the environmental"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption",
+        "targets": [
+          {
+            "target": "Aim for a 5% improvement in energy efficiency per ton of production",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "A complete energy audit to be performed every three years to identify & 60 % implementation of the energy efficient measures for site before next audit or three years from the date of report.",
+            "baseline": "FY 2022-23",
+            "deadline": "Every three years or before the next audit"
+          },
+          {
+            "target": "Increase renewable energy adoption to 2.5 % per ton of production of the overall energy mix",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "Planning and strategies to be developed for implementation of renewable energy adoption",
+            "baseline": "FY 2022-23",
+            "deadline": "Before 31st September 2028"
+          }
+        ]
+      },
+      {
+        "area": "GHG Emissions",
+        "targets": [
+          {
+            "target": "Implement an innovative approach for a 2.5 % reduction per ton of production in carbon emissions",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "Collaborate with stakeholders to achieve a 0.5 % reduction per ton of production in GHG emissions",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "Training shall be imparted to identify 2.5 % of stakeholders to encourage them for reduction in GHG emission",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Online continuous Emission Monitoring (OCEMS) shall be installed",
+            "baseline": "FY 2022-23",
+            "deadline": "Before 31st March 2025"
+          },
+          {
+            "target": "100 % monitoring of Air pollutants as prescribed by Gujarat pollution control board.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Target 100 % compliance of discharge parameter of Air pollution as per the prescribed limit in the Consent of Gujarat Pollution Control Board.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Target to consume the water not more than 75 KL per ton of production.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Target to limit the discharge treated wastewater quantity not more than 40 KL per ton of production.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Target 100 % compliance of discharge parameter of treated waste water as per the prescribed limit in the Consent of Gujarat Pollution Control Board.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Target 100% Compliance of API Discharge limit for final outlet of Effluent Treatment Plant (Not more than the 0.05 mg/l as per The Gazette of India No.: CG-DL-E-27012020-215690, MOEF 23rd Jan-2020).",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Materials and Chemicals",
+        "targets": [
+          {
+            "target": "Source 1 % of materials from eco-friendly suppliers, minimizing hazardous waste",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "Achieve a cost savings of at least 10% through efficient material management",
+            "baseline": "FY 2022-23",
+            "deadline": "By the year 2025"
+          },
+          {
+            "target": "100% Packaging designed for easy dismantling & recyclability to reduce environmental impacts from product end of life.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "100% usage of Briquettes made from the composition of waste of material as fuel for Boiler to reduce the usage of fossil fuel consumption helps in reduction of landfill waste.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "100% Reuse/Recycle of Spent Carbon and Distillation Residue/ Process waste residue by sale to co-processing units.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          },
+          {
+            "target": "Aim for a 1 % reduction in hazardous and 1 % in non-hazardous waste per ton of production by enhancing waste management",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "Target to limit the Empty barrels/containers contaminated with hazardous chemicals/wastes not more than 0.299 MT per ton of production every year.",
+            "baseline": "FY 2022-23",
+            "deadline": "Every year"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Increase the green space within and around company premises by planting 2500 trees",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "Training shall be imparted to 2.5 % of supplier to encourage them for protection and conservation of Biodiversity",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          }
+        ]
+      },
+      {
+        "area": "Product Life-cycle and Environmental impacts from use of products",
+        "targets": [
+          {
+            "target": "Training shall be imparted to 2.5 % of customers for Product Life Cycle & Environmental impact from use of product",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          },
+          {
+            "target": "100% take back of Expired finished goods each year as per the Product Recall procedure.",
+            "baseline": "FY 2022-23",
+            "deadline": "Each year"
+          },
+          {
+            "target": "To Carryout Life Cycle Assessment (LCA) for at least 01 product and improve as compared to baseline year.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Customer Support",
+        "targets": [
+          {
+            "target": "Zero customer/consumer complaints and/or incidents every year.",
+            "baseline": "FY 2022-23",
+            "deadline": "Every year"
+          },
+          {
+            "target": "Training shall be imparted to 2.5 % of customers for Health and safety",
+            "baseline": "FY 2022-23",
+            "deadline": "31st March 2028"
+          }
+        ]
+      },
+      {
+        "area": "Promotion of Sustainable Consumption",
+        "targets": [
+          {
+            "target": "Training shall be imparted to 2.5 % of customers for Promoting sustainable consumption by educate and inform consumers about the environmental impact of the products.",
+            "baseline": "FY 2022-23",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Sustainability Officer",
+        "duty": "Responsible for the effective implementation of the integrated environmental policy."
+      },
+      {
+        "role": "Chief Sustainability Officer",
+        "duty": "Evaluates and identifies areas for improvement within the policy and associated sustainability practices."
+      },
+      {
+        "role": "Chief Sustainability Officer",
+        "duty": "Leads the development as mentioned in the below review mechanism and alignment of the policy with Environment, Social, and Governance (ESG) principles."
+      },
+      {
+        "role": "Chief Sustainability Officer",
+        "duty": "Ensures that the policy aligns with and meets all relevant environmental laws, regulations, and standards."
+      },
+      {
+        "role": "Chief Sustainability Officer",
+        "duty": "Leads the generation of regular reports on environmental progress, setbacks, and achievements."
+      },
+      {
+        "role": "Environment Health & Safety Head",
+        "duty": "Responsible for overseeing the implementation of the integrated environmental policy within the EHS domain."
+      },
+      {
+        "role": "Environment Health & Safety Head",
+        "duty": "Takes charge of implementing measures to safeguard employee health and safety in accordance with policyʼs implementation."
+      },
+      {
+        "role": "Environment Health & Safety Head",
+        "duty": "Leads the development and implementation of safety programs regarding this policy to enhance workplace safety and reduce occupational hazards."
+      },
+      {
+        "role": "Production head",
+        "duty": "Execute the elements of the integrated environmental policy within the production department."
+      },
+      {
+        "role": "Production head",
+        "duty": "Ensure strict adherence to the environmental policy's guidelines and principles during production activities."
+      },
+      {
+        "role": "Production head",
+        "duty": "Align production processes with the policy's objectives to minimize environmental impact."
+      },
+      {
+        "role": "Production head",
+        "duty": "Implement measures to enhance resource efficiency in production, including energy, water, and raw materials."
+      },
+      {
+        "role": "Procurement head",
+        "duty": "Ensure that suppliers comply with environmental laws, regulations, and standards in their operations."
+      },
+      {
+        "role": "Procurement head",
+        "duty": "Source raw materials and goods with a focus on eco-friendly and sustainable options, minimizing the environmental impact."
+      },
+      {
+        "role": "Procurement head",
+        "duty": "Collaborate with suppliers to conduct environmental impact assessments for procured materials, ensuring transparency in the supply chain."
+      },
+      {
+        "role": "Utility Head",
+        "duty": "Oversees the efficient use of resources within the utility operations to align with the environmental policy's goals."
+      },
+      {
+        "role": "Utility Head",
+        "duty": "Develops and implements measures to conserve energy in utility operations, contributing to overall energy efficiency goals."
+      },
+      {
+        "role": "Utility Head",
+        "duty": "Explores opportunities and oversees the integration of renewable energy sources into utility operations."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Responsible for organizing and facilitating education and training programs for employees to raise awareness about the integrated environmental policy."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Ensures effective communication of the environmental policy to all employees, emphasizing its importance and individual contributions."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Endorses the integrated environmental policy, demonstrating commitment from the top leadership."
+      }
+    ],
+    "monitoring": "Reporting is crucial for transparency, accountability, and continuous improvement. Ami is committed for communicating its performance and progresses in implementing various ESG principles in its operations. The below reporting mechanism is developed for better understanding of current scenario and future improvement requirement.\n\nEnvironmental Performance Indicators: Annual/Monthly reports for the monitoring of all aspects of environment like as energy consumption, water usage, waste generation, emissions, and more. The following records are to be maintained monthly for performance evaluation:\n\nEnergy Audit Report\n\nWater Consumption and Quality Report\n\nGHG emissions report/carbon emissions report\n\nWaste Generation Record\n\nWaste Treatment and Disposal Record\n\nPerformance Analysis: A generalized document on the overall performance of the company for the environment practices implemented under this policy.\n\nESG report: The ESG report encapsules all details of the measures taken annually and the improvements of the company’s sustainability practices.",
+    "reviewMechanism": "To ensure its relevance and effectiveness, a comprehensive review will be conducted of this policy every 03 years or as and when required, taking into account changes in environmental laws, technological advancements, and the evolving needs of our stakeholders.\n\nThe responsibility for this review lies with the Environment, Social and Governance (ESG) Team, comprising representatives from key departments within the organization. Their task is to evaluate the policy's implementation, assess the achievement of set targets, and recommend adjustments or enhancements to align with emerging environmental standards and best practices.\n\nThe final approval of any policy adjustments shall be given by the Top management of Ami Lifesciences Pvt Ltd, ensuring the highest level of leadership endorsement for our environmental initiatives.\n\nThe Policy will undergo regular reviews to assess its relevance and effectiveness. The review frequency is as follows:\n\nEvery 03 Years Review: A comprehensive review of the policy will be conducted during a period of 03 Years by Chief Sustainability Officer.\n\nAd Hoc Reviews: Ad hoc reviews may be initiated in response to significant changes in regulations, emerging sustainability risks, or feedback from stakeholders.\n\nThe review process involves the following steps to ensure a thorough evaluation and enhancement of the policy:\n\nData Collection: Relevant data on environmental practices, policy compliance, and sustainability performance will be collected from internal sources, external/internal Audit reports, and feedback.\n\nAssessment: The collected data will be assessed to evaluate the policy's effectiveness in achieving its objectives. Key performance indicators (KPIs) will be analyzed to gauge progress.\n\nFeedback: Feedback from employees, suppliers, customers, and other stakeholders will be considered during the review process. Input will be gathered through surveys, Audits, and engagement forums.\n\nLegal and Regulatory Compliance: The policy will be assessed for alignment with evolving environmental regulations and standards.\n\nIdentification of Gaps and Opportunities: Any gaps in policy implementation or emerging opportunities for improvement will be identified.\n\nPolicy Updates: Based on the assessment, identified gaps, feedback, and regulatory changes, updates and revisions to the Integrated Environment Management Policy will be proposed.\n\nApproval: Proposed updates will undergo an internal approval process involving key stakeholders, including the Sustainability Committee and senior management.\n\nCommunication: Once approved, the updated policy will be communicated to all relevant stakeholders, including employees, suppliers, and partners.\n\nImplementation: The revised policy will be implemented, and stakeholders will be educated on any changes to ensure smooth compliance.\n\nMonitoring: Ongoing monitoring and assessment of policy implementation will continue to track progress and address emerging issues."
+  },
+  "sourcePath": "Policies - Kenal/Ami Life-Science/Final Version- Integrated Env Management Policy 01.05.2023.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Ami Life-Science/Final Version- Integrated Env Management Policy 01.05.2023.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 23227,
+  "parsedAt": "2026-09-11T07:19:26.139Z"
+}

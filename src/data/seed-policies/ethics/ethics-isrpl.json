@@ -1,0 +1,437 @@
+{
+  "id": "ethics-isrpl",
+  "name": "ISRPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3.Ethics Integrity Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Indian Synthetic Rubber Private Limited (ISRPL)",
+      "industry": "",
+      "site": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304",
+      "sites": [
+        {
+          "location": "Corporate Office",
+          "address": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Registered Office",
+          "address": "10th Floor, Core-2, North Tower, Scope Minar, District Centre, Laxmi Nagar, Delhi -110092",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "Opposite: Naptha Cracker Polymer Terminal Gate, Panipat Refinery, Panipat, Haryana -132140",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Indian Synthetic Rubber Private Limited (ISRPL) is committed to conducting business with the highest standards of ethics, integrity, and transparency. Our operations are guided by honesty, fairness, and accountability to ensure trust with employees, customers, suppliers, regulators, and the broader community. This Ethics & Integrity Policy establishes the principles that all employees, management, and stakeholders are expected to follow in daily business conduct.",
+      "declaration": "The purpose of this policy is to:\n\nDefine the ethical standards and behaviors expected of everyone associated with ISRPL.\n\nPromote a culture of integrity, transparency, and accountability across all business functions.\n\nProvide guidance to prevent unethical practices such as corruption, fraud, bribery, conflicts of interest, and other forms of misconduct.\n\nSupport compliance with all applicable laws, regulations, and industry standards.\n\nProtect ISRPL’s reputation and ensure sustainable long-term value creation.",
+      "scope": "This policy applies to all activities, products, and services of ISRPL, including its Corporate Office in Noida and its manufacturing facility in Panipat, Haryana. It extends to all employees, contractors, vendors, and stakeholders operating within or on behalf of ISRPL premises."
+    },
+    "focusAreas": [
+      "Integrity in Business Practices",
+      "Compliance with Laws & Regulations",
+      "Conflict of Interest",
+      "Fair Competition",
+      "Protection of Assets & Information",
+      "Reporting & Accountability",
+      "Respect & Professionalism",
+      "Sustainable & Responsible Conduct"
+    ],
+    "qualitative": {
+      "Anti-Corruption & Business Integrity": [
+        "We aim to strengthen ethical leadership ensuring that management consistently models integrity, transparency, and accountability in all business dealings.",
+        "We strive to embed anti-corruption principles into all core business processes, including procurement, contracting, vendor selection, sales negotiations, and government interactions.",
+        "We aim to implement a third-party due diligence and integrity screening system for suppliers, contractors, and business partners to identify potential corruption risks before engagement.",
+        "We will continuously enhance internal controls, approval mechanisms, and documentation processes to prevent, detect, and address potential corruption risks.",
+        "We commit to promoting proactive disclosure and effective management of conflicts of interest to safeguard impartial and fair decision-making.",
+        "We aim to build awareness and ethical competence among employees and relevant third parties through regular training, communication, and accessible reporting channels.",
+        "We strive to ensure safe, confidential, and non-retaliatory reporting mechanisms that encourage early identification and resolution of unethical practices."
+      ],
+      "Fair Trade & Competition Compliance": [
+        "We commit to promoting fair and open competition in all markets where ISRPL operates.",
+        "We aim to prevent any form of anti-competitive behavior, including price-fixing, market allocation, bid-rigging, or abuse of dominant position.",
+        "We strive to ensure all employees and management understand competition laws and regulations relevant to their roles.",
+        "We aim to monitor emerging anti-competitive risks and update policies and controls accordingly.",
+        "We strive to cultivate a culture where ethical competition is valued and violations are promptly reported."
+      ],
+      "Managing Conflicts of Interest": [
+        "We commit to promoting a transparent culture where all employees, directors, and contractors proactively disclose any potential conflicts of interest.",
+        "We aim to implement a digital conflict of interest declaration register where employees and management periodically disclose potential personal or financial interests.",
+        "We aim to ensure that all business decisions are free from personal, financial, or familial influence that could compromise integrity.",
+        "We strive to maintain clear policies and procedures for identifying, reporting, and managing conflicts of interest across all business units.",
+        "We will provide regular training and awareness sessions to employees and third parties on recognizing and disclosing conflicts of interest.",
+        "We commit to reviewing and updating conflict of interest policies regularly to align with evolving regulatory requirements and industry best practices.",
+        "We aim to integrate conflict of interest considerations into supplier, contractor, and third-party onboarding processes.",
+        "We will encourage a safe, confidential reporting mechanism for any undisclosed or suspected conflicts of interest."
+      ],
+      "Fraud Prevention & Detection": [
+        "We commit to fostering a proactive fraud-aware culture where employees and management recognize and report suspicious activities promptly.",
+        "We aim to strengthen our internal control environment to prevent, detect, and mitigate all forms of financial and operational fraud.",
+        "We strive to integrate fraud risk considerations into all key business processes, including finance, procurement, payroll, and contracts.",
+        "We aim to implement segregation of duties (SoD) controls in financial and procurement processes to reduce the risk of fraud and unauthorized transactions.",
+        "We commit to maintaining a robust and confidential whistleblower mechanism, encouraging timely reporting of potential fraud without fear of retaliation.",
+        "We aim to continuously assess emerging fraud risks and update detection methods and controls accordingly.",
+        "We strive to engage employees and third parties in ongoing awareness initiatives, workshops, and communications to enhance vigilance and ethical decision-making.",
+        "We will ensure that all lessons learned from detected fraud incidents are incorporated into process improvements and preventive measures across ISRPL."
+      ],
+      "Money Laundering Prevention": [
+        "We aim to strengthen our due diligence processes to ensure all financial transactions, customers, and business partners comply with applicable anti-money laundering (AML) regulations.",
+        "We aim to implement Know Your Customer (KYC) and Know Your Supplier (KYS) verification procedures before initiating financial transactions or long-term business relationships.",
+        "We strive to integrate AML controls into corporate governance, risk management, and operational procedures to proactively identify suspicious activity.",
+        "We will foster a culture of financial transparency and integrity among employees, contractors, and business partners.",
+        "We commit to implementing a robust reporting mechanism for unusual or suspicious transactions, ensuring timely escalation to compliance authorities.",
+        "We aim to conduct regular risk assessments and update AML policies, procedures, and training in response to emerging risks and regulatory changes.",
+        "We strive to raise awareness and provide training to employees and relevant third parties on money laundering risks, red flags, and reporting responsibilities."
+      ],
+      "Information Security": [
+        "We will ensure that all digital and physical records older than defined retention periods are securely archived or disposed of in compliance with internal.",
+        "We commit to safeguarding all company information, ensuring confidentiality, integrity, and availability across digital and physical systems.",
+        "We aim to promote a culture of responsible information handling among all employees, contractors, and business partners.",
+        "We strive to implement clear policies, procedures, and standards for the collection, storage, usage, sharing, and disposal of information.",
+        "We will ensure compliance with applicable data protection, privacy, and records management regulations, both domestic and international.",
+        "We aim to integrate information management practices into business processes, projects, and supplier interactions to maintain transparency and accountability.",
+        "We aim to implement Role-Based Access Control (RBAC) to ensure that access to sensitive data and systems is granted only to authorized personnel based on their roles and responsibilities.",
+        "We will provide ongoing awareness and training programs for employees and relevant third parties to reinforce best practices in information management."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption & Business Integrity",
+        "targets": [
+          {
+            "target": "We aim to maintain zero confirmed corruption cases annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "100% of permanent employees receive anti-corruption and business ethics training annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "100% signing of the Code of Conduct by employees, directors, and relevant contractual staff each year",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Conducting corruption risk assessments across all high-risk functions annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Screen 100% of new critical suppliers and business partners against integrity and compliance criteria",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Conduct at least one internal audit or compliance review focused specifically on anti-corruption controls every year",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Fair Trade & Competition Compliance",
+        "targets": [
+          {
+            "target": "100% of commercial agreements are reviewed for competition compliance before execution",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Train 95% of employees in sales, procurement, and management roles on anti-competitive practices annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Review 100% of joint ventures, partnerships, and alliances for anti-competitive risks before finalizing agreements",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Implement a whistleblower mechanism for 100% of commercial teams to report suspected anti-competitive conduct safely",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Managing Conflicts of Interest",
+        "targets": [
+          {
+            "target": "We aim to maintain zero confirmed Conflict of interest cases annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "100% of employees, directors, and key contractors submit a conflict of interest declaration annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Review and resolve 100% of declared conflicts of interest within 30 days of disclosure, targeting complete process adherence",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Integrate conflict of interest checks into 100% of new supplier and business partner onboarding processes",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "All suspected undisclosed conflicts are investigated within 60 days, aiming for full resolution of cases",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Deliver conflict of interest awareness and training sessions to 100% of employees and relevant third parties at least once a year, achieving full participation",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention & Detection",
+        "targets": [
+          {
+            "target": "We aim to maintain zero confirmed fraud cases annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "100% of employees, managers, and key contractors complete annual fraud awareness and prevention training",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Investigate 100% of reported or detected fraud incidents within 60 days, targeting full resolution of all cases",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Corrective and disciplinary actions are taken for 100% of substantiated fraud cases within 30 days of investigation closure",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Conduct at least one internal audit and annually on fraud risk areas",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Integrate fraud risk assessments into 100% of new supplier, contractor, and partner onboarding processes",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "All financial and operational discrepancies flagged by internal controls are reviewed within 15 days",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering Prevention",
+        "targets": [
+          {
+            "target": "We aim to maintain zero confirmed Money Laundering cases annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Screen 100% of all incoming payments over a defined threshold for unusual patterns or high-risk jurisdictions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Implement customer risk scoring for at least 90% of all active clients to identify potential money laundering risks",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Track and reconcile all cross-border transactions above INR 50 lakhs to detect anomalies",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Maintain an updated internal list of sanctioned parties and ensure 100% of transactions are screened against it before processing",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "All high-value cash deposits (above INR 5 lakhs) are flagged and reviewed, targeting 100% compliance",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "We aim to maintain zero confirmed IT breach cases annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "100% of critical company data is classified and inventoried in the company’s information management system",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Implement access controls so that 95% of sensitive information is accessible only to authorized personnel",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Encrypt 90% of sensitive or confidential data both in transit and at rest",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Perform periodic reviews and updates of 100% of critical information management policies and procedures at least once every two years",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Conduct annual data protection awareness sessions for 95% of employees handling sensitive information",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Promote a culture of ethics and integrity across the organization."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Approve and periodically review the Ethics & Integrity Policy."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensure resources are available to support ethical compliance programs."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Monitor adherence to ethical standards and address major violations."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Lead by example in ethical decision-making and transparency."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Review policy regularly"
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Implement and oversee the Ethics & Integrity Policy across all operations."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Develop and maintain procedures for reporting and investigating misconduct."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Ensure compliance with applicable laws, regulations, and standards."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Provide guidance, training, and awareness programs on ethics and anti-corruption."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Monitor and report trends in ethical compliance and risk areas."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Facilitate employee training and communication on ethics and integrity."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Manage grievance and whistle-blower mechanisms to report unethical behavior."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Support investigations and corrective actions related to policy violations."
+      },
+      {
+        "role": "Human Resources Head",
+        "duty": "Promote a fair, safe, and inclusive work environment aligned with ethical standards."
+      },
+      {
+        "role": "Supervisors",
+        "duty": "Ensure team members understand and comply with the Ethics & Integrity Policy."
+      },
+      {
+        "role": "Supervisors",
+        "duty": "Encourage open communication and timely reporting of ethical concerns."
+      },
+      {
+        "role": "Supervisors",
+        "duty": "Monitor conduct within their teams and address issues promptly."
+      },
+      {
+        "role": "Supervisors",
+        "duty": "Support continuous improvement in ethical awareness and compliance practices."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Act with honesty, integrity, and fairness in all business activities."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow the principles and requirements outlined in the Ethics & Integrity Policy."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Promptly report any suspected unethical behavior, misconduct, or conflicts of interest."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Cooperate fully with investigations and corrective actions."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Contribute to fostering a culture of accountability and ethical decision-making."
+      }
+    ],
+    "monitoring": "Implementation of the Ethics & Integrity Policy is monitored through internal audits, compliance reviews, employee feedback, and grievance or whistle-blower mechanisms. Key findings, incidents, and ethical risk indicators are periodically reported to senior management. Any suspected violations, conflicts of interest, or unethical conduct are promptly documented, investigated, and addressed through corrective actions. Where applicable, relevant disclosures are included in internal governance reports and external sustainability or regulatory reporting to maintain transparency and accountability.\n\nISRPL is committed to continuously enhancing ethical practices and integrity across the organization. Lessons learned from audits, investigations, grievance trends, and stakeholder feedback are used to strengthen policies, processes, and employee awareness. Training programs, awareness campaigns, and management engagement initiatives are conducted regularly to reinforce ethical behavior. The company also encourages innovation and adoption of best practices to proactively mitigate risks and enhance ethical standards in all business operations.",
+    "reviewMechanism": "The Ethics Integrity Policy will be reviewed annually by the Compliance officer, with oversight from Senior Management and the Board of Directors. Reviews will be conducted at least once every two years or earlier if required due to regulatory, business, or operational changes. The review process will consider audit findings, reported incidents, employee feedback, and emerging best practices to ensure the policy remains relevant, effective, and aligned with ISRPL’s commitment to ethical business conduct."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/ISRPL/3.Ethics Integrity Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/ISRPL/3.Ethics Integrity Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 25587,
+  "parsedAt": "2026-09-11T07:09:05.430Z"
+}

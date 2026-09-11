@@ -1,0 +1,349 @@
+{
+  "id": "ethics-jay-fine-chem",
+  "name": "Jay fine chem",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "JAY FINECHEM PRIVATE LIMITED",
+      "industry": "",
+      "site": "C-303, Neelkanth Business Park, Nathani Road, Vidhyavihar (W), Mumbai – 400086, India.",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "C-303, Neelkanth Business Park, Nathani Road, Vidhyavihar (W), Mumbai – 400086, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Operational Facility",
+          "address": "Plot No. 137-138, Off Silvassa Road, Phase-II, GIDC, Vapi396 195, Gujarat, India.",
+          "primaryFunction": "Operational Facility"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "C-303, Neelkanth Business Park, Nathani Road, Vidhyavihar (W), Mumbai – 400086, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Background: This policy supersedes all the policies issued previously and all the subsequent amendments stand cancelled & substituted by this policy.\n\nIntroduction: At Jay Finechem Private Limited, we are committed to conducting our business with the highest standards of integrity and ethical conduct. Our Ethics Policy serves as a guiding framework for all employees, management, and stakeholders to ensure that our operations are aligned with our core values of transparency, accountability, and sustainability. This policy addresses critical ethical issues, including corruption, money laundering, information security, fraud, and conflicts of interest, promoting a culture of compliance and ethical behavior throughout the organization.",
+      "declaration": "Foster a culture of integrity by promoting transparency, honesty, and accountability in all organizational practices.\n\nEnsure fairness by treating all stakeholders equitably, with a strong focus on diversity, equity, and inclusion.\n\nEncourage reporting of unethical behavior by providing safe, confidential channels and thorough investigations.\n\nStrengthen compliance with relevant laws and regulations, supporting ethical decisionmaking across all business operations.\n\nEffective Date: 1st January 2024",
+      "scope": "This Ethics Policy applies to all employees, officers, directors, contractors, workers and third-party partners associated with Jay Fimechem Private Limited. It encompasses all levels of the organization and extends to all business activities, all individuals covered by this policy are expected to understand its provisions and adhere to its principles in their daily operations and decision-making processes."
+    },
+    "focusAreas": [
+      "Anti – Corruption & Integrity",
+      "Anti – Money Laundering (AML) Compliance",
+      "Information Security & Database Protections",
+      "Fraud Prevention & Risk Management",
+      "Conflict of Interest Management"
+    ],
+    "qualitative": {
+      "Anti – Corruption & Integrity": [
+        "We are committed to fostering a culture of integrity and transparency by adhering to ethical standards in all business dealings.",
+        "We will enhance our partnership with external auditing firms to conduct periodic independent reviews and ensure adherence to anti-corruption standards.",
+        "We are setting up a platform for anonymous reporting of corruption, which will be further promoted through internal communications and external stakeholder networks.",
+        "Our Efforts focus on ensuring compliance with Anti- Corruption laws and promoting fair practices across the organization and partnerships.",
+        "A zero-tolerance approach is maintained toward bribery, facilitation payments, and any form of corrupt practices across all operations.",
+        "Regular training and awareness initiatives are conducted to reinforce ethical behavior and anti-corruption compliance among employees.",
+        "Refuse any form of bribe, kickback, or improper payment.",
+        "Follow company gift policies regarding what can be given or received.",
+        "Make business decisions based on merit, not personal benefits.",
+        "Report any corruption attempts or unethical proposals immediately."
+      ],
+      "Anti – Money Laundering (AML) Compliance": [
+        "We are dedicated to upholding robust systems and controls to detect, prevent, and report any instances of money laundering.",
+        "Our efforts focus on ensuring that all financial transactions align with legal and ethical guidelines.",
+        "We aim to invest in advanced AML software that uses machine learning algorithms to identify suspicious transactions in real-time, ensuring faster detection and prevention of money laundering activities.",
+        "Internal controls and monitoring systems are regularly reviewed and updated to address evolving AML risks and regulatory requirements.",
+        "We aim to provide Anti money laundering prevention training to all of the employees.",
+        "To strengthen our monitoring framework, we plan to expand our international reach by collaborating with financial institutions across global markets to ensure consistent AML practices.",
+        "Ensure all financial records are accurate, complete, and properly documented.",
+        "Submit only legitimate and accurate expense claims with proper documentation.",
+        "Follow all accounting procedures and internal controls consistently.",
+        "Report any suspicious financial activity or irregularities promptly."
+      ],
+      "Information Security & Database Protections": [
+        "We will implement a company-wide data privacy framework that aligns with the latest global data protection regulations, including GDPR, to enhance our commitment to data security and privacy.",
+        "We are committed to protecting sensitive and proprietary information by implementing advanced security measures and promoting a culture of confidentiality.",
+        "Our efforts focus on ensuring compliance with regulatory requirements for safeguarding personal data and intellectual property.",
+        "We strive to regularly audit and update cybersecurity protocols to address emerging threats and vulnerabilities.",
+        "We plan to conduct regular penetration testing and vulnerability assessments identify and address potential weaknesses in our data security infrastructure.",
+        "Aiming for continuous improvement, we will introduce quarterly employee training programs on cybersecurity best practices, including phishing and social engineering awareness.",
+        "Safeguard company and client information from unauthorized access or disclosure.",
+        "Use confidential information only for its intended business purpose.",
+        "Respect intellectual property rights and proprietary information.",
+        "Exercise caution when discussing company matters in public or online."
+      ],
+      "Fraud Prevention & Risk Management": [
+        "We are committed to establishing stringent internal controls and monitoring systems to prevent, detect, and address fraudulent activities.",
+        "We plan to integrate fraud prevention mechanisms into all our digital platforms, ensuring that every transaction is secured and monitored in real-time for irregular activities.",
+        "We aim to increase cross-departmental collaboration by setting up a fraud risk management committee that will regularly assess and update anti-fraud strategies across all business units.",
+        "We will leverage advanced data analytics and machine learning to develop predictive models for fraud detection, enabling proactive identification of fraud risks before they materialize.",
+        "Clear roles and responsibilities are defined to ensure accountability in fraud risk management and internal control processes.",
+        "Regular internal audits and control reviews are conducted to detect gaps and enhance fraud prevention systems."
+      ],
+      "Conflict of Interest Management": [
+        "We are committed to promoting transparency and fairness by requiring all employees to disclose potential or actual conflicts of interest.",
+        "Our efforts focus on implementing clear procedures to manage and mitigate conflicts to uphold organizational integrity.",
+        "Confidentiality is ensured throughout the disclosure and evaluation process to protect employee information and encourage transparency.",
+        "We strive to provide guidance to employees on recognizing and appropriately addressing situations that could lead to conflicts of interest.",
+        "A structured declaration process is maintained to periodically capture and review potential conflicts of interest across all levels of the organization.",
+        "We will expand our conflict-of-interest training programs to include scenario-based simulations, helping employees recognize and resolve conflicts in complex, real-world situations.",
+        "Disclose any personal relationships or interests that might influence business decisions.",
+        "Avoid situations where personal gain could take priority over company interests.",
+        "Do not use company resources, contacts, or information for personal advantage.",
+        "Recuse yourself from decisions involving entities where you have personal connections."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti – Corruption & Integrity",
+        "targets": [
+          {
+            "target": "Conduct 100% of annual audits on business operations and partnerships starting 2022 to ensure adherence to anti-corruption standards.",
+            "baseline": "",
+            "deadline": "2022"
+          },
+          {
+            "target": "Maintain zero incidents of corruption every year, ensuring complete transparency and accountability.",
+            "baseline": "",
+            "deadline": "Every year"
+          },
+          {
+            "target": "We commit to ensuring that 100% of reported corruption-related incidents are investigated and resolved within defined timelines by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Train 70% of employees on anti-corruption and integrity practices by 2030 from the 2022 baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti – Money Laundering (AML) Compliance",
+        "targets": [
+          {
+            "target": "Implement advanced AML software and conduct 100% of annual compliance checks starting 2022.",
+            "baseline": "",
+            "deadline": "2022"
+          },
+          {
+            "target": "We commit to ensuring that 100% of suspicious transactions are identified, reviewed, and reported within defined timelines by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero cases of money laundering each year through strict due diligence and compliance with regulatory standards.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "Train 70% of employees on AML policies and procedures by 2026 from baseline 2022.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Information Security & Data Protection",
+        "targets": [
+          {
+            "target": "Conduct 70% employee training on information security and data protection practices by 2030 from the baseline 2022, with annual updates.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero data breaches annually from 2022 onward through enhanced data protection protocols.",
+            "baseline": "2022",
+            "deadline": "Annually from 2022 onward"
+          },
+          {
+            "target": "We aim to achieve 100% compliance with internal information security policies and applicable data protection regulations by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement advanced data protection technologies across all platforms by 2030, ensuring full GDPR and CCPA compliance.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Perform penetration testing and vulnerability assessments twice a year starting 2022 to address security risks proactively.",
+            "baseline": "",
+            "deadline": "Twice a year starting 2022"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention & Risk Management",
+        "targets": [
+          {
+            "target": "Conduct annual fraud risk assessments to identify vulnerabilities and address them started form 2022.",
+            "baseline": "",
+            "deadline": "Annually from 2022"
+          },
+          {
+            "target": "Maintain zero incidents of fraud annually, supported by strong internal controls and ethical financial practices.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to ensure that 100% of identified fraud incidents are investigated and resolved within defined timelines by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Train 70% of employees on fraud detection and prevention by 2030 from the baseline 2022, with annual refreshers.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement an advanced fraud detection system across all digital platforms by 2030, covering 100% of transactions.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We commit to implementing fraud risk monitoring systems across all business units to enable continuous oversight by 2028.",
+            "baseline": "",
+            "deadline": "2028"
+          },
+          {
+            "target": "We commit to strengthening third-party risk management by ensuring 100% due diligence for high-risk vendors and partners by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Management",
+        "targets": [
+          {
+            "target": "Conduct 70% employee training on conflict-of-interest policies by 2030 from the baseline 2022, with annual updates.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% disclosure of potential conflicts of interest by 2030, with zero conflicts unresolved for more than 30 days.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero incidents of conflict of interest annually through enforced disclosure practices and ethical decision-making protocols.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to establish a centralized system for tracking and monitoring conflict of interest disclosures across all departments by 2028.",
+            "baseline": "",
+            "deadline": "2028"
+          },
+          {
+            "target": "Publish an annual conflict of interest report starting 2030, ensuring full transparency and accountability in resolving conflicts.",
+            "baseline": "",
+            "deadline": "Starting 2030"
+          },
+          {
+            "target": "Provide clear guidelines on conflict of interest and aim for 100% employee awareness through regular training and communication.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We commit to strengthening third-party conflict of interest checks to ensure 100% evaluation of high-risk vendors and partners by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Director",
+        "duty": "Provide strategic direction and leadership for ethical compliance and corporate integrity."
+      },
+      {
+        "role": "Executive Director",
+        "duty": "Ensure ethics and compliance policies are integrated into business operations."
+      },
+      {
+        "role": "Executive Director",
+        "duty": "Approve major ethics-related initiatives and oversee high-level policy enforcement."
+      },
+      {
+        "role": "Manager HR & Administration",
+        "duty": "Facilitate ethics training and awareness programs for all employees."
+      },
+      {
+        "role": "Manager HR & Administration",
+        "duty": "Investigate potential violations of the Ethics Policy and take appropriate disciplinary action."
+      },
+      {
+        "role": "Manager HR & Administration",
+        "duty": "Maintain a confidential reporting system for employees to report ethical concerns or violations."
+      },
+      {
+        "role": "Manager HR & Administration",
+        "duty": "Monitor the implementation of the Ethics Policy and evaluate impact. its"
+      },
+      {
+        "role": "Manager HR & Administration",
+        "duty": "Review reports on ethics-related incidents and recommend corrective actions."
+      },
+      {
+        "role": "Manager HR & Administration",
+        "duty": "Organize and oversee ethics training and awareness programs across all levels."
+      },
+      {
+        "role": "Head Accounts & Finance",
+        "duty": "Ensure financial compliance with anti-money laundering (AML) and fraud prevention guidelines."
+      },
+      {
+        "role": "Head Accounts & Finance",
+        "duty": "Oversee internal audits related to financial transactions and ethical conduct."
+      },
+      {
+        "role": "Head Accounts & Finance",
+        "duty": "Collaborate with external auditors for compliance reviews and reporting."
+      },
+      {
+        "role": "Employees",
+        "duty": "Understand and comply with the Ethics Policy, including reporting any violations or unethical behavior."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in training programs and actively engage in promoting a culture of integrity and accountability."
+      },
+      {
+        "role": "Employees",
+        "duty": "Cooperate with investigations into ethics-related incidents and respect confidentiality."
+      }
+    ],
+    "monitoring": "Monthly and quarterly reports will be generated to track key metrics such corruption, fraud, and money laundering.\n\nDepartment heads and ethics officers will compile and submit reports based incidents and compliance data.\n\nThe Manager HR & Administration will conduct an annual review of the policy's effectiveness, evaluating performance against set targets.\n\nThe review will focus on incidents, compliance rates, and audit findings to guide future improvements.\n\nAnnual external audits will assess compliance with anti-corruption, fraud, and antimoney laundering regulations.\n\nExternal auditors will provide feedback on the company's adherence to international ethical standards.\n\nQuarterly reviews of whistleblower reports will identify ethical concerns and measure trust in reporting mechanisms.\n\nEmployees will be encouraged to report issues confidentially through secure channels, with prompt follow-up actions.\n\nBi-annual meetings of the Ethics Committee will review the policy's impact and make recommendations for updates.\n\nThe committee will assess trends, incidents, and feedback to ensure continuous policy improvement.\n\nQuarterly compliance reports will be prepared to ensure the company meets legal and regulatory requirements.\n\nLegal and Compliance teams will work together to monitor adherence to ethical regulations and implement necessary corrections.\n\nRegular audits ensure compliance, with corrective actions taken as needed.",
+    "reviewMechanism": "The Manager HR & Administration will conduct an annual review of the Ethics Policy to ensure its effectiveness, relevance, and compliance with regulatory standard and global best practices. This review will include performance metrics, audit findings and feedback from the HOD’s of the department."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Jay fine chem/Updated Policies/3. Ethics Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Jay fine chem/Updated Policies/3. Ethics Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 22261,
+  "parsedAt": "2026-09-11T07:09:31.636Z"
+}

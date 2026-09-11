@@ -1,0 +1,212 @@
+{
+  "id": "sustainable-procurement-lps-bossard",
+  "name": "LPS Bossard",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "LPS Bossard Pvt. Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Rohak -Corporate office",
+          "address": "N.H.10 Delhi Road Kehrawar Bye Pass, Kila No 103//6/2/2,15/2,16/1/2 Khewat276, Khatauni 302, The Sampla, Rohtak 124021, Haryana",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "New Delhi- Registered Office",
+          "address": "A-1/134, Safdarjung Enclave, New Delhi - 110029",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Pune- Sales & Marketing & Warehouse",
+          "address": "LPS Bossard Pvt. Ltd.  - Pune​ 303, Gulmohar Center Point, 34/A/5, Wadgaonsheri, Pune - 411014, Maharashtra.",
+          "primaryFunction": "Sales & Marketing & Warehouse"
+        },
+        {
+          "location": "Vadodara- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd.  - Vadodara​ 433/2/2 Dashrath, Opp. GSFC Township Gate, Vadodara - 391750, Gujarat.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Bengaluru- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd.  - Bangalore​ 2nd floor, Novel MSR Building Subbiah Reddy colony, Marathahalli village, Bengaluru - 560037, Karnataka.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Hyderabad- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd. - Hyderabad Aditya Trade center, 7-1-618, No: 211, 2nd Floor, Ameerpet, Hyderabad - 500038, Telangana.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Chennai- Sales & Marketing & Warehouse",
+          "address": "Survey No. 331/6, 331/5, 331/1B, Village No. 71, Mettukuppam Road, Vanagaram, Maduravoyal Taluk, Near Porur, Tambaram Toll gate, Chennai - 600095, Tamil Nadu.",
+          "primaryFunction": "Sales & Marketing & Warehouse"
+        },
+        {
+          "location": "Haridwar- Sales & Marketing",
+          "address": "PS Bossard Pvt. Ltd. – Haridwar​ D43, 1st Floor, Shibalik Nagar, Haridwar - 249403, Uttarakhand.",
+          "primaryFunction": "Sales & Marketing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At LPS Bossard Pvt. Ltd., we believe that sustainable procurement is integral to our mission of delivering “Proven Productivity” in every assembly solution. Guided by our values of integrity, social responsibility and innovation, we are committed to sourcing goods and services in a manner that respects the environment, supports fair labor practices, and fosters long-term value for our customers, suppliers and communities. Our Sustainable Procurement Policy lays the foundation for how we engage with our supply chain, make purchasing decisions and contribute to a resilient, responsible value chain.",
+      "declaration": "LPS Bossard Pvt. Ltd. pledges to integrate sustainability criteria into all procurement decisions. We will work with suppliers who share our commitment to high environmental standards, ethical labor practices, and transparency. We commit to minimizing ecological impact, optimizing resource and material use, and promoting circular-economy approaches in procurement. Through this policy, we will encourage collaboration with our supply chain partners to achieve better environmental and social outcomes while maintaining high quality, reliability and cost-efficiency for our customers.",
+      "scope": "This policy applies to all procurement activities conducted by LPS Bossard Pvt. Ltd. It extends to all departments involved in the procurement process, including sourcing of components, products, logistics services, packaging, and associated supply-chain services - for all our locations in India. It covers all direct and indirect suppliers, contractors and service providers associated with our operations, and extends to evaluation, onboarding, performance monitoring and partnership development."
+    },
+    "focusAreas": [
+      "Environmentally Responsible sourcing",
+      "Supplier Social Responsibility Framework",
+      "Ethical Supplier Conduct",
+      "Local & Inclusive Sourcing",
+      "Sustainable Sourcing of Wood-Based Products"
+    ],
+    "qualitative": {
+      "Environmentally Responsible sourcing": [
+        "Seek suppliers who operate with robust environmental management systems (e.g., ISO 14001) and demonstrate continuous improvement in resource use, emissions, and waste reduction.",
+        "Encourage and support suppliers to provide transparency on life-cycle impacts of their products and to adopt innovations that enable closed-loop circular economy practices.",
+        "Prioritize procurement of materials with lower carbon footprints, higher recycled content, or certified sustainability credentials, thereby reducing the upstream environmental impact."
+      ],
+      "Supplier Social Responsibility Framework": [
+        "Promote awareness and compliance with anti-child labor and anti-forced labor practices across the supply chain.",
+        "Foster partnerships with suppliers that promote workforce development, inclusion, diversity and the well-being of employees in the supply chain.",
+        "Integrate supplier self‐assessment, audit and remediation systems to monitor social responsibility performance and drive continuous improvement across the supplier base."
+      ],
+      "Ethical Supplier Conduct": [
+        "Ensure suppliers uphold high ethical standards, including anti-corruption, fair competition, and integrity, in line with Bossard’s Supplier Code of Conduct.",
+        "Foster transparent, long-term supplier relationships based on trust, accountability, and shared sustainability values.",
+        "Encourage suppliers to share sustainability data and collaborate with LPS Bossard to address ethical, environmental, and social risks"
+      ],
+      "Local & Inclusive Sourcing": [
+        "Promote sourcing from local and diverse SMEs to boost local economies, cut transport impacts, and strengthen supply-chain resilience.",
+        "Encourage inclusive sourcing that values supplier diversity and supports new, sustainability-aligned entrants.",
+        "Collaborate with local suppliers to enhance their environmental and social performance through training and support."
+      ],
+      "Sustainable Sourcing of Wood-Based Products": [
+        "Encourage reuse and recycling of wooden packaging materials to minimize virgin wood consumption and promote a circular materials system.",
+        "Engage suppliers and logistics partners to adopt and demonstrate traceability of wood materials used in packaging, storage, or operations to prevent deforestation and illegal logging."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible sourcing",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers compliance with LPS Bossard Pvt. Ltd. code of conduct policy for suppliers by the year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase procurement from suppliers with recognized ISO certification / public disclosure & commitment on ESG by 50% by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility Framework",
+        "targets": [
+          {
+            "target": "Ensure 100% of key suppliers undergo annual social responsibility audits by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Conduct",
+        "targets": [
+          {
+            "target": "Reduce supplier-related compliance issues by 50% through enhanced training and engagement.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase local sourcing by 30% by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 10% of supplier base includes small or diverse businesses by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Sourcing of Wood-Based Products",
+        "targets": [
+          {
+            "target": "Ensure that 100% of all wood-based products are procured from FSC/PEFC-certified or equivalent sustainable sources by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Include sustainability certification as a mandatory criterion in 100% of supplier contracts for wood-based products by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "is responsible for integrating responsible sourcing principles into supplier selection, contract terms, and ongoing evaluations."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "monitors supplier performance on environmental, social, and ethical parameters and supports improvement initiatives."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "are expected to comply with LPS Bossard Pvt. Ltd. sourcing standards, provide required disclosures, and cooperate during audits and assessments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees involved in sourcing or supplier engagement",
+        "duty": "are expected to uphold this policy and report any violations or concerns through established channels."
+      }
+    ],
+    "monitoring": "Supplier compliance will be assessed through regular audits, sustainability scorecards, and feedback mechanisms. Findings from these reviews will inform corrective actions, supplier engagement plans, and policy updates.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed annually by Procurement officer to ensure its continued relevance, effectiveness, and alignment with evolving regulatory requirements, international best practices, and business priorities. The review process will be overseen by the Procurement and Sustainability Teams, in coordination with relevant department heads.\n\nAny significant updates or improvements to the policy will be approved by senior management and communicated across the supply chain."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/LPS Bossard/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/LPS Bossard/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 10809,
+  "parsedAt": "2026-09-11T07:39:29.453Z"
+}

@@ -1,0 +1,344 @@
+{
+  "id": "labour-human-rights-astec",
+  "name": "Astec",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labour and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Astec LifeSciences",
+      "industry": "",
+      "site": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+      "sites": [
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot Nos. B-16, B-17, B-18 & B-21, MIDC Mahad, Birwadi Industrial Area, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/1/1, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/1/2, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Astec LifeSciences Limited",
+          "address": "Plot No. K-2/2, K-2/3/1, Additional MIDC Mahad, Village Kalinj, Taluka Mahad, District Raigad – 402 302, Maharashtra",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Research & Development Centre",
+          "address": "Plot No. B-23, T.T.C., Pipeline Road, T.T.C. Industrial Area, Airoli, Navi Mumbai – 400 708, Maharashtra",
+          "primaryFunction": "Research & Development"
+        },
+        {
+          "location": "Astec LifeSciences Limited (Corporate Office)",
+          "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+          "primaryFunction": "Corporate Office"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Astec LifeSciences, respect for and commitment to human rights is central to our values and operations. We recognize that our primary human rights responsibilities extend to our employees, contract workers, suppliers, business partners, customers, consumers, and the communities in which we operate. Our Labor and Human Rights Policy is aligned with internationally recognized frameworks, including the International Bill of Human Rights, the International Labor Organization’s Declaration on Fundamental Principles and Rights at Work, the UN Guiding Principles on Business and Human Rights, the UN Global Compact’s Human Rights Principles, and the OECD Guidelines for Multinational Enterprises. We adhere to all applicable human rights laws wherever we operate, and where local laws and international standards differ, we follow the higher standard while ensuring compliance with the law of the land.",
+      "declaration": "Astec LifeSciences is committed to respecting and protecting labor and human rights in all operations and business relationships. We prohibit child labor, forced labor, human trafficking, and discrimination, and ensure fair wages, safe working conditions, reasonable working hours, and freedom of association. We expect our suppliers and partners to uphold these standards and work with us in fostering transparency, accountability, and continuous improvement.",
+      "scope": "This policy applies to all employees of Astec LifeSciences, including contract and temporary workers, across all the following locations. It extends to our suppliers, service providers, business partners, and any third parties acting on behalf of the company. The policy covers all aspects of employment and business operations, including recruitment, working conditions, compensation, health and safety, freedom of association, and equal opportunity, and applies throughout the supply chain to ensure respect for labor and human rights at every stage."
+    },
+    "focusAreas": [
+      "Employees’ Health and Safety",
+      "Working Conditions",
+      "Social Dialogue",
+      "Career Management and Training",
+      "Child Labor, Forced Labor, and Human Trafficking",
+      "Discrimination and Harassment",
+      "External Stakeholder Human Rights",
+      "Diversity, Equity, and Inclusion",
+      "Work-Life Balance"
+    ],
+    "qualitative": {
+      "Employees’ Health and Safety": [
+        "Foster a culture of safety-first mindset across all operations.",
+        "Regularly enhance health and safety protocols to proactively address workplace risks and promote employee well-being and hence maintain zero absenteeism due to work-related injuries.",
+        "Promote employee well-being through health programs and support systems."
+      ],
+      "Working Conditions": [
+        "Promote a workplace culture that prioritizes ethical practices, psychological safety, and employee satisfaction.",
+        "Ensure continuous improvement in workplace facilities and practices.",
+        "Ensure working conditions compliance with global labor standards and local regulations."
+      ],
+      "Social Dialogue": [
+        "Foster open dialogue through structured communication channels and inclusive participation in workplace decision-making.",
+        "Conduct annual labor-management meetings with documented minutes and action points.",
+        "Strengthen employee representation and participation in workplace decisions."
+      ],
+      "Career Management and Training": [
+        "Promote continuous learning through structured training, career planning, and periodic performance reviews.",
+        "Foster a culture of lifelong learning and innovation."
+      ],
+      "Child Labor, Forced Labor, and Human Trafficking": [
+        "Enforce and maintain zero tolerance for child, bonded, or forced labor across all operations and suppliers.",
+        "Strengthen supplier and partner due diligence on labor practices.",
+        "Ensure strict monitoring and remediation mechanisms are in place."
+      ],
+      "Discrimination and Harassment": [
+        "Ensure an inclusive, respectful workplace free of bias, discrimination, and harassment and hence maintain zero cases of harassment or discrimination.",
+        "Strengthen grievance redressal mechanisms for fair resolution."
+      ],
+      "External Stakeholder Human Rights": [
+        "Integrate human rights due diligence into business operations and key relationships to mitigate rights-related risks.",
+        "Engage stakeholders to address potential or actual human rights impacts.",
+        "Respect and safeguard the rights of local communities near operations."
+      ],
+      "Diversity, Equity, and Inclusion": [
+        "Create opportunities for underrepresented groups in the workforce.",
+        "Promote equal access to leadership and career advancement.",
+        "Embed diversity and inclusivity into recruitment and retention practices."
+      ],
+      "Work-Life Balance": [
+        "Encourage flexible and supportive work arrangements.",
+        "Promote employee wellness through stress management and support programs.",
+        "Ensure workloads are managed fairly to maintain productivity and well-being."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employees’ Health and Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% accessibility to health and safety information and emergency protocols for all employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "To increase safety inspections by 5% till FY 2029-30 to proactively identify risks.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct 100% mandatory safety training for all employees yearly.",
+            "baseline": "FY 2022–23",
+            "deadline": "Yearly"
+          },
+          {
+            "target": "Maintain zero fatalities across all operational sites.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Conduct employee satisfaction surveys annually on working conditions, aiming for 95% positive responses by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure implementation of a formal channel for 100% employees to discuss working conditions with management by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide healthcare benefits to 100% employees by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees have access to formal platforms to express concerns and feedback.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve 70% response rate in employee engagement activities by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Resolve 95% of reported concerns within 30 days.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Career Management and Training",
+        "targets": [
+          {
+            "target": "Conduct annual performance reviews and ensure career development plans are in place for 100% of eligible employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Allocate 20% of the manpower budget to employee development programs by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase internal promotions by 10% by FY 2029-30 by implementing structured career pathways and targeted upskilling programs.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "Conduct background checks for 100% of suppliers by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train 100% procurement and recruitment staff on labor compliance policies annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero confirmed cases of child or forced labor till FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "Conduct 2 workplace climate surveys on discrimination and harassment till FY 2029-30 through survey forms filled by 100% employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Provide mandatory anti-harassment and DEI training to 100% employees yearly.",
+            "baseline": "FY 2022–23",
+            "deadline": "Yearly"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Ensure that 100% of supplier contracts include and comply with human rights clauses by the FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Train 100% of procurement teams on human rights policies annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero reported human rights violations across operations.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct human rights impact assessments across operations annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity, and Inclusion",
+        "targets": [
+          {
+            "target": "Increase female workforce representation by 10% by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Launch 2 DEI awareness programs till FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Work-Life Balance",
+        "targets": [
+          {
+            "target": "Offer flexible work arrangements for 100% eligible employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain absenteeism rate below 3% annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Ensure implementation of fair labor policies and allocate resources for employee well-being."
+      },
+      {
+        "role": "Human Resources Team",
+        "duty": "Monitor labor conditions, oversee training programs, and address grievances."
+      },
+      {
+        "role": "Operations & Manufacturing",
+        "duty": "Implement workplace safety and ethical labor standards."
+      },
+      {
+        "role": "Supply Chain & Procurement",
+        "duty": "Ensure responsible sourcing and compliance with supplier labor policies."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to workplace policies, report concerns, and participate in training initiatives."
+      },
+      {
+        "role": "External Stakeholders",
+        "duty": "Support labor and human rights initiatives through responsible business practices."
+      }
+    ],
+    "monitoring": "Astec LifeSciences is committed to regularly monitoring its labor and human rights performance across key focus areas such as employee health and safety, working conditions, social dialogue, career management and training, prevention of child and forced labor, non-discrimination and harassment, and respect for external stakeholder human rights. Key Performance Indicators (KPIs) are established for each area and tracked through internal monitoring systems to evaluate progress against defined commitments. These KPIs are reviewed on a quarterly basis, and findings are consolidated into performance reports for senior management to guide strategic decision-making. Annual assessments capture achievements, identify gaps, and recommend corrective measures, while relevant outcomes are shared with stakeholders to promote transparency and accountability. All monitoring and reporting practices adhere to applicable labor laws, international conventions, and industry best practices, ensuring reliability, accuracy, and credibility in disclosures.",
+    "reviewMechanism": "This policy will be reviewed annually by the Human Resources Manager to assess its effectiveness and alignment with evolving labor standards, human rights commitments, and applicable legal requirements. Feedback from audits, employee input, and stakeholder consultations will be incorporated into updates. Necessary revisions will be made to strengthen labor and human rights practices and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Astec/Policies For Review/2. Labour and Human Rights Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Astec/Policies For Review/2. Labour and Human Rights Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 13335,
+  "parsedAt": "2026-09-11T07:36:21.769Z"
+}

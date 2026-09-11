@@ -1,0 +1,341 @@
+{
+  "id": "sustainable-procurement-eco-jute",
+  "name": "Eco Jute",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Eco Jute Pvt. Ltd.",
+      "industry": "",
+      "site": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071; Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293",
+      "sites": [
+        {
+          "location": "Kolkata",
+          "address": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Gokna Basudevpur",
+          "address": "Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "6th Floor, Kankaria Estate, 6, Little Russel St, Kankaria Estates, Park Street area, Kolkata, West Bengal 700071; Gokna Basudevpur, P.O Jadurhati, P.S- Baduria, District - 24 Parganas (North), Pin Code – 743293"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Eco Jute Pvt. Ltd. is committed to integrating environmental, social, and ethical considerations into its procurement decisions alongside cost, quality, reliability, and delivery. Through responsible sourcing and supplier engagement, the Company seeks to promote efficient use of resources, responsible materials and chemicals management, fair labour practices, safe working conditions, and respect for human rights across its supply chain.\n\nThe Company will work with suppliers and business partners to identify and manage sustainability risks, encourage continual improvement in supplier performance, and strengthen responsible sourcing practices. Through these efforts, Eco Jute Pvt. Ltd. aims to build a resilient, transparent, and responsible supply chain that supports long-term business value and positive environmental and social outcomes.",
+      "declaration": "Eco Jute Pvt. Ltd. integrates sustainability considerations into procurement planning, supplier selection, evaluation, and purchasing decisions alongside cost, quality, reliability, and delivery requirements.\n\nThe Company establishes clear procurement objectives and targets to promote responsible sourcing, manage environmental and social risks in the supply chain, and strengthen supplier performance. Procurement teams are provided with appropriate responsibilities, resources, and awareness to support these objectives.\n\nThrough supplier engagement, performance reviews, responsible sourcing practices, and continual improvement, Eco Jute Pvt. Ltd. seeks to develop a transparent, resilient, and responsible supply chain that supports its environmental, social, and ethical commitments.",
+      "scope": "This policy applies to all employees, contractual workers, contractors, and other personnel involved in purchasing and supplier-related activities on behalf of Eco Jute Pvt. Ltd. It also applies to relevant suppliers, service providers, business partners, and other external parties engaged through the Company's procurement processes.\n\nThe policy covers procurement activities across the supply chain, including supplier selection and onboarding, sourcing of raw materials and packaging, supplier evaluation and monitoring, purchasing decisions, contract management, and ongoing supplier engagement."
+    },
+    "focusAreas": [
+      "Supplier Environmental Issues",
+      "Supplier Social Issues",
+      "Supplier Ethical Issues",
+      "General Targets",
+      "Other Targets"
+    ],
+    "qualitative": {
+      "Supplier Environmental Issues": [
+        "Promote responsible sourcing of raw materials, packaging, and other goods with consideration for environmental impacts.",
+        "Encourage suppliers to improve resource efficiency, reduce waste, manage chemicals responsibly, control emissions, and comply with applicable environmental requirements.",
+        "Give preference, where practical, to suppliers demonstrating sound environmental management and responsible production practices.",
+        "Integrate environmental considerations into supplier selection, evaluation, and purchasing decisions alongside quality, cost, delivery, and service requirements.",
+        "Encourage suppliers to improve resource efficiency, reduce waste generation, minimize emissions, and promote responsible environmental practices.",
+        "Promote the sourcing of environmentally responsible raw materials, packaging materials, and services where feasible.",
+        "Engage suppliers in continuous improvement initiatives relating to climate action, resource conservation, pollution prevention, and environmental compliance.",
+        "Encourage suppliers to establish environmental management systems and monitor their environmental performance."
+      ],
+      "Supplier Social Issues": [
+        "Promote respect for labour rights, human rights, health and safety, fair working conditions, and equal opportunity throughout the supply chain.",
+        "Encourage suppliers to prevent child labour, forced labour, discrimination, harassment, and other unacceptable workplace practices.",
+        "Support suppliers in strengthening worker welfare, occupational health and safety, training, and responsible employment practices.",
+        "Promote fair labour practices, safe working conditions, respect for human rights, and ethical business conduct throughout the supply chain.",
+        "Encourage suppliers to prohibit child labour, forced labour, discrimination, harassment, and other unacceptable employment practices.",
+        "Support suppliers in improving occupational health and safety management, employee welfare, training, and workforce development.",
+        "Encourage suppliers to provide equal employment opportunities, fair wages, and respectful working environments.",
+        "Consider social performance alongside quality, cost, delivery, and operational requirements when evaluating suppliers and sourcing decisions."
+      ],
+      "Supplier Ethical Issues": [
+        "Promote integrity, transparency, and responsible business conduct in all supplier relationships.",
+        "Expect suppliers to maintain appropriate controls against bribery, corruption, conflicts of interest, fraud, and other unethical business practices.",
+        "Encourage suppliers to maintain accurate records, respect confidentiality, and provide truthful information during assessments and business interactions.",
+        "Address identified environmental, social, or ethical concerns through supplier engagement, corrective actions, and appropriate follow-up.",
+        "Promote honesty, transparency, and fair dealing in all supplier relationships.",
+        "Maintain zero tolerance for bribery, corruption, fraud, kickbacks, and improper payments in procurement activities.",
+        "Require procurement personnel and relevant suppliers to disclose and appropriately manage actual or potential conflicts of interest.",
+        "Encourage suppliers to maintain ethical business practices, accurate records, confidentiality, and compliance with applicable laws.",
+        "Use supplier dialogue, assessments, and corrective actions to address ethical concerns and promote continual improvement."
+      ],
+      "Certified Sustainable Suppliers": [
+        "Suppliers that meet the Company's defined sustainability and responsible sourcing criteria may be recognized as Certified Sustainable Suppliers, reflecting their commitment to responsible business practices and continuous improvement."
+      ],
+      "Other Targets": [
+        "Eco Jute Pvt. Ltd. will promote fair and responsible sourcing practices by prioritizing suppliers that demonstrate fair labour practices and responsible working conditions.",
+        "Eco Jute Pvt. Ltd. will support the participation and development of small and medium-sized enterprises (SMEs) within its supply chain through supplier engagement, capacity building, and development initiatives.",
+        "Eco Jute Pvt. Ltd. will establish a supplier assessment and recognition mechanism to identify suppliers demonstrating strong performance against defined ESG and responsible procurement criteria."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Issues",
+        "targets": [
+          {
+            "target": "Conduct environmental assessments of 100% of critical suppliers by 2030 and maintain assessment records.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of new critical suppliers are evaluated against environmental criteria as part of the supplier onboarding process by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Include environmental requirements or sustainability clauses in 100% of new supplier contracts and purchase agreements by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide sustainable procurement and supplier environmental management training to 100% of procurement personnel by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Engage with suppliers representing 80% of annual procurement spend on environmental performance improvement initiatives by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Issues",
+        "targets": [
+          {
+            "target": "Assess 100% of critical suppliers against labour, human rights, and occupational health & safety criteria by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of new critical suppliers are screened for social compliance risks before approval by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide sustainable procurement and supplier social responsibility training to 100% of procurement personnel by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Include labour, human rights, health & safety, and business ethics requirements in 100% of new supplier agreements by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct social performance reviews or self-assessments for suppliers representing 80% of annual procurement spend by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Ethical Issues",
+        "targets": [
+          {
+            "target": "Complete ethical due diligence for 100% of new critical suppliers before approval by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of active critical suppliers acknowledge the Company's Supplier Code of Conduct or equivalent ethical requirements by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide sustainable and ethical procurement training to 100% of procurement personnel annually through 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct an ethical performance assessment of suppliers representing at least 80% of annual procurement spend by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Review 100% of identified ethical non-conformities and establish corrective actions within defined timelines.",
+            "baseline": "2023",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "Allocate at least 50% of annual procurement spend to sustainable, environmentally preferable, or appropriately certified products and materials by 2030, where relevant and feasible.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 25% reduction in carbon emissions associated with procured goods and services by 2030, using an established baseline and supplier data where available.",
+            "baseline": "Established baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure at least 80% of active suppliers meet defined environmental and social compliance requirements by 2030, with improvement actions established for suppliers that do not initially meet the requirements.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide ESG-focused awareness, training, or capacity-building activities to at least 80% of active suppliers by 2030, covering environmental responsibility, labour practices, human rights, health and safety, and ethical business conduct.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct ESG on-site supplier audits and supplier self-assessments covering 100% of suppliers by 2030, compared to the 2023 baseline, to ensure comprehensive evaluation of sustainability performance across the supply chain.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Other Targets",
+        "targets": [
+          {
+            "target": "We aim to increase procurement from fair trade-certified and responsibly sourced jute suppliers by 25% by 2030, compared with the 2023 baseline.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to increase SME supplier participation by 30% by 2030, compared with the 2023 baseline.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to award certification to all suppliers who meet Eco Jute’s ESG criteria, ensuring 100% compliance by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Provide overall direction for sustainable procurement and ensure responsible sourcing practices are aligned with Eco Jute Pvt. Ltd.’s sustainability commitments and business objectives."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provide adequate resources, including personnel, training, and systems, to implement sustainable procurement practices."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Engage with key suppliers and relevant external stakeholders to strengthen responsible sourcing practices and respond to applicable sustainability requirements."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Review significant environmental, social, ethical, and supply chain risks and ensure appropriate corrective and preventive actions are implemented."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Implement the Sustainable Procurement Policy throughout supplier selection, purchasing, contracting, and supplier management activities and periodic review of the Sustainable Procurement Policy and make necessary changes where significant changes occur in applicable laws, business operations, supply chain risks, stakeholder expectations, customer requirements, or sustainability priorities."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Incorporate relevant environmental, social, ethical, labour, and responsible sourcing criteria into supplier selection and evaluation."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Communicate Eco Jute Pvt. Ltd.’s sustainability expectations to suppliers and promote compliance with the Supplier Code of Conduct and applicable requirements."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Maintain supplier assessment records, monitor performance against defined sustainability criteria, and report significant findings and progress to management."
+      },
+      {
+        "role": "Procurement & Supply Chain Officer",
+        "duty": "Identify opportunities to improve supplier sustainability performance and increase the use of responsible and sustainable sourcing practices."
+      },
+      {
+        "role": "Sustainability and Compliance Officer",
+        "duty": "Monitor implementation of sustainable procurement requirements and assess supplier compliance with applicable company policies, standards, and legal requirements."
+      },
+      {
+        "role": "Sustainability and Compliance Officer",
+        "duty": "Coordinate or conduct supplier assessments, reviews, and audits, where applicable, to evaluate environmental, social, ethical, and labour practices."
+      },
+      {
+        "role": "Sustainability and Compliance Officer",
+        "duty": "Identify and assess significant supply chain risks, including risks related to labour practices, human rights, environmental impacts, and business ethics."
+      },
+      {
+        "role": "Sustainability and Compliance Officer",
+        "duty": "Track identified non-conformities and support procurement teams in following up on corrective and preventive actions."
+      },
+      {
+        "role": "Sustainability and Compliance Officer",
+        "duty": "Recommend improvements to sustainable procurement practices based on supplier assessments, risk reviews, performance results, and changes in applicable requirements."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Ensure purchasing activities within their respective departments consider applicable sustainability, quality, ethical sourcing, and environmental requirements."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Coordinate with the Procurement Team when engaging suppliers and support the selection of suppliers that meet Eco Jute Pvt. Ltd.’s requirements."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Support the Procurement and Sustainability teams in monitoring supplier performance and addressing identified concerns."
+      },
+      {
+        "role": "Facilities, Production & Operations Management",
+        "duty": "Ensure employees involved in purchasing activities follow the applicable sustainable procurement procedures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow Eco Jute Pvt. Ltd.’s sustainable procurement requirements when participating in purchasing or supplier-related activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in relevant training and awareness programmes on responsible sourcing, ethical procurement, and supply chain sustainability."
+      },
+      {
+        "role": "Employees",
+        "duty": "Consider applicable environmental, social, ethical, and sustainability requirements when making or recommending purchasing decisions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Promptly report suspected supplier non-compliance, unethical practices, environmental concerns, or other sustainability-related risks through established reporting channels."
+      }
+    ],
+    "monitoring": "Procurement and Sustainability functions shall periodically compile and review relevant supplier sustainability information, including supplier assessments, ESG performance, responsible sourcing practices, compliance status, corrective actions, and progress against sustainable procurement targets.\n\nThe Procurement Team, in coordination with the Sustainability and Compliance Officer, shall provide periodic sustainable procurement updates to Senior Management covering supplier performance, identified ESG risks, assessment results, policy implementation, progress against targets, and opportunities for improvement.\n\nSignificant supplier non-compliances, ethical concerns, labour or human rights issues, environmental concerns, and breaches of the Supplier Code of Conduct shall be reported through established internal channels and appropriately investigated. Corrective actions shall be agreed and monitored where required.\n\nFindings from supplier evaluations, audits, risk assessments, procurement reviews, and stakeholder feedback shall be communicated to relevant functions and used to strengthen supplier management and sustainable procurement practices.\n\nEco Jute Pvt. Ltd. may communicate relevant sustainable procurement and supplier sustainability information to customers, business partners, certification bodies, regulatory authorities, investors, and other interested stakeholders, as appropriate.\n\nSustainability-related procurement disclosures, customer submissions, certifications, and regulatory information shall be prepared in accordance with applicable legal requirements, customer requirements, contractual obligations, and recognized reporting practices, where relevant.\n\nSustainable procurement information intended for external communication shall be reviewed by the responsible function to ensure that the information is accurate, consistent, complete, and appropriately supported by available records.\n\nEco Jute Pvt. Ltd. shall engage with suppliers to communicate responsible sourcing expectations, understand sustainability risks, promote compliance with the Supplier Code of Conduct, and identify opportunities for improving supplier performance.\n\nThe Company shall consider relevant sustainability requirements and feedback received from customers and business partners when reviewing procurement practices and supplier expectations.\n\nEmployees involved in procurement and supplier management shall be encouraged to provide feedback and identify opportunities to improve responsible purchasing and supplier sustainability practices.\n\nRelevant stakeholder concerns, complaints, expectations, and suggestions relating to sustainable procurement shall be recorded, reviewed, and addressed through appropriate channels.\n\nStakeholder feedback and engagement outcomes shall be considered during periodic reviews of sustainable procurement objectives, targets, supplier evaluation criteria, and procurement practices.",
+    "reviewMechanism": "Eco Jute Pvt. Ltd. shall review its sustainable procurement objectives, targets, and key performance indicators at least annually, including supplier ESG assessments, environmental and social compliance, responsible sourcing, supplier training, sustainable procurement spend and progress against defined targets.\n\nProgress against sustainable procurement targets, supplier performance trends, significant supply chain risks, assessment findings, corrective actions, and improvement initiatives shall be reviewed through periodic Management Review Meetings.\n\nThe Company shall evaluate key achievements, challenges, non-conformities, supplier performance gaps, risks, and opportunities for improvement and document relevant outcomes.\n\nFindings from supplier assessments, audits, self-assessments, procurement reviews, risk assessments, supplier feedback, stakeholder engagement, and performance monitoring shall be used to identify opportunities to strengthen sustainable procurement practices.\n\nCorrective and preventive actions shall be established and monitored where supplier non-compliances, ESG risks, ethical concerns, environmental or social performance gaps, or other procurement-related issues are identified.\n\nWhere appropriate, Eco Jute Pvt. Ltd. shall engage with suppliers through awareness, training, capacity building, corrective action plans, and performance improvement initiatives to support continual improvement.\n\nSustainable procurement objectives, targets, supplier evaluation criteria, and procurement practices shall be reviewed periodically and updated where necessary to reflect business priorities, supplier performance, emerging risks, and applicable sustainability requirements.\n\nThe Procurement and Supply Chain Function shall review this Sustainable Procurement Policy at least once every two years, or earlier where significant changes occur in applicable laws, business operations, supply chain risks, stakeholder expectations, customer requirements, or sustainability priorities.\n\nAny amendments to the Policy shall be reviewed and approved by Senior Management before implementation.\n\nApproved revisions shall be communicated to relevant employees, procurement personnel, suppliers, contractors, and other applicable stakeholders, as appropriate.\n\nWhere significant changes are introduced, relevant training, awareness, and communication activities shall be conducted to ensure continued understanding and effective implementation of the Policy."
+  },
+  "sourcePath": "Policies - Kenal/Eco Jute/Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Eco Jute/Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 21993,
+  "parsedAt": "2026-09-11T07:22:28.116Z"
+}

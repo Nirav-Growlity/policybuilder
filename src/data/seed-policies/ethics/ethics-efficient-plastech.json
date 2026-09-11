@@ -1,0 +1,308 @@
+{
+  "id": "ethics-efficient-plastech",
+  "name": "Efficient Plastech",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Ethics Policy Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Efficient Plastech Private Limited",
+      "industry": "",
+      "site": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra",
+      "sites": [
+        {
+          "location": "Site 1",
+          "address": "A-211, everest grande, mahakali caves road, opp. Ahura centre, andheri (e), mumbai – 400093",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 2",
+          "address": "Plot number 49, HDIL Industrial Park, Virar Ahmedabad Highway Road, Chandansar, Virar East, Ðaluka - Vasai, District - Palghar, State - Maharashtra - 401305",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 3",
+          "address": "Plot number 64, Sector 8A, Sidcul, District - Haridwar, State - Uttarakhand",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Site 4",
+          "address": "City Survey no. NA. 1615/A, Costal Highway, Village - Daheri Umbergaon, Taluka - Umbergaon, District - Valsad, State - Gujrat",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Godrej One, 3rd Floor, Pirojshanagar, Eastern Express Highway, Vikhroli (East), Mumbai – 400079, Maharashtra"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Efficient Plastech Private Limited, we are committed to conducting our business with the highest standards of ethics, transparency, and integrity. As a leading manufacturer of plastic moulded products, rigid packaging, and decorative finishes, we recognize that ethical conduct is fundamental to building trust with our stakeholders and maintaining our reputation. This Ethics Policy serves as a guiding framework for our employees, contractors, suppliers, and business partners, encouraging responsible decision-making, preventing unethical behavior, and fostering a culture of accountability and respect.",
+      "declaration": "We expect all individuals associated with Efficient Plastech to uphold the principles outlined in this policy and ensure compliance with all applicable laws, industry regulations, and internal standards, thereby supporting the long-term sustainability of our operations and our commitment to ethical excellence.",
+      "scope": "This policy applies to all Efficient Plastech Private Limited employees, workers, contractors, sub-contractors, suppliers, partners, and stakeholders across all operational locations. It encompasses our manufacturing facilities, corporate offices, and any other business operations, and extends to our interactions with clients, vendors, regulators, and the wider community."
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Money Laundering",
+      "Anti-Competitive Practices",
+      "Information Security",
+      "Disciplinary Measures",
+      "Communication and Transparency",
+      "Continuous Improvement"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "The company has a zero-tolerance policy toward corruption in all forms, including bribery, extortion, and illicit payments. Employees and partners must act with integrity and avoid activities that could be perceived as corrupt. Robust internal controls are implemented to detect and prevent corrupt practices.",
+        "Report any bribery, fraud, or unethical conduct. Maintain transparent records. Decline gifts or incentives that influence decisions.",
+        "Do not offer/accept bribes. Do not falsify financial records. Do not ignore potential corruption risks."
+      ],
+      "Conflict of Interest": [
+        "Employees must avoid situations where personal interests could conflict with company interests. Any potential conflict must be disclosed immediately, and management will take appropriate, transparent steps to resolve such matters ethically.",
+        "Disclose personal/financial relationships that may create conflicts. Seek approval before external business relationships. Follow reporting procedures.",
+        "Do not make decisions for personal gain. Do not engage with competitors without approval. Do not misuse company resources."
+      ],
+      "Fraud Prevention": [
+        "Efficient Plastech works to prevent, detect, and address fraud through internal audits, reporting mechanisms, and strict disciplinary measures. Employees are obligated to report any suspicious activity.",
+        "Report any bribery, fraud, or unethical conduct. Maintain transparent records. Decline gifts or incentives that influence decisions.",
+        "Do not offer/accept bribes. Do not falsify financial records. Do not ignore potential corruption risks."
+      ],
+      "Money Laundering": [
+        "The company adheres to all applicable anti-money laundering (AML) regulations and implements due diligence procedures for financial transactions, customer verification, and ongoing monitoring. Employees and partners must report suspicious financial activities.",
+        "Report suspicious transactions. Conduct due diligence. Maintain accurate records.",
+        "Do not approve unjustified transactions. Do not ignore red flags. Do not structure transactions to evade reporting."
+      ],
+      "Anti-Competitive Practices": [
+        "Efficient Plastech operates in a fair and competitive manner, complying with all antitrust and competition laws. Price-fixing, collusion, or bid-rigging are strictly prohibited.",
+        "Compete fairly. Follow competition laws. Ensure transparency in negotiations.",
+        "Do not engage in price-fixing, bid-rigging, or market allocation. Do not misuse market influence."
+      ],
+      "Information Security": [
+        "The company maintains comprehensive policies to secure confidential and sensitive information. Risk assessments, employee training, and secure data handling protocols are in place to protect employees, customers, and the company.",
+        "Follow cybersecurity policies. Use strong passwords. Report phishing attempts or breaches.",
+        "Do not share confidential data with unauthorized persons. Do not use personal devices for company-sensitive information."
+      ],
+      "Disciplinary Measures": [
+        "Efficient Plastech enforces strict actions for violations:",
+        "Verbal/Written Warning: For minor or first-time offenses.",
+        "Suspension: For repeated or serious violations, or negligence in reporting unethical conduct.",
+        "Termination of Employment/Contracts: For severe misconduct (fraud, bribery, corruption, conflicts of interest).",
+        "Legal Action: For violations constituting a breach of law.",
+        "Restitution & Financial Penalties: Recover financial losses caused by misconduct."
+      ],
+      "Communication and Transparency": [
+        "The Ethics Policy is available internally and communicated regularly.",
+        "Employees are encouraged to raise concerns and use anonymous reporting tools."
+      ],
+      "Continuous Improvement": [
+        "Efficient Plastech reviews and revises this Ethics Policy regularly in response to regulatory changes, emerging risks, and stakeholder feedback to ensure sustainable growth and long-term trust."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "0 incidents of bribery, corruption, or facilitation payments annually.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% compliance with applicable anti-corruption laws and regulations.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% employee coverage under the Anti-Bribery & Anti-Corruption (ABAC) policy.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% annual training coverage for employees in high-risk roles.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% due diligence conducted on high-risk suppliers, agents, and intermediaries.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% declaration and monitoring of conflicts of interest by relevant employees annually.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Implement a conflict-of-interest declaration system for 100% of employees.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees receive annual training on the Conflict-of-Interest Policy.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Resolve 100% of disclosed conflicts within 30 days of reporting.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "0 substantiated fraud incidents across operations annually.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% compliance with applicable anti-fraud laws and internal policies.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% fraud risk assessment conducted annually across key business functions.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of employees covered under the Code of Conduct and anti-fraud policy.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% annual training coverage for employees in fraud awareness and ethical conduct.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with anti-money laundering regulations through regular training and monitoring.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% compliance with applicable AML and financial crime regulations.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% due diligence conducted on customers, suppliers, agents, and business partners, as applicable.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% screening of high-risk counterparties against sanctions and watchlists.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of employees in finance, procurement, and sales receive annual AML training.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of suspicious transactions reported and investigated within defined timelines.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "0 tolerance for anonymous or unverified transactions.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Maintain 100% of employees trained annually on Information Security Policy.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of information assets are classified correctly as Restricted, Confidential, Unrestricted, or Public.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% compliance with applicable data protection and information security regulations.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% coverage of Information Security Management System (ISMS) across critical IT systems.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% annual risk assessment conducted for information security and data privacy risks.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of employees and contractors receive annual information security awareness training.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Oversees implementation of the Ethics Policy, monitors compliance, and addresses risks related to corruption, fraud, AML, and conflicts of interest."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts audits covering fraud, anti-competitive behavior, and financial transparency."
+      },
+      {
+        "role": "Information Security Manager",
+        "duty": "Manages information protection strategies and prevents data breaches."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to ethical standards, participate in training, and report violations."
+      }
+    ],
+    "monitoring": "Ethics Hotline: confidential hotline for employees to report violations or concerns without fear of retaliation.\n\nInternal and External Audits: Scheduled audits ensure continued adherence to anti-corruption, AML, antitrust, and fraud prevention regulations.\n\nIncident Reporting: All violations are investigated, and corrective action is taken promptly.",
+    "reviewMechanism": "The Compliance Officer will review this Ethics Policy annually. Updates will be informed by feedback, regulatory changes, and internal evaluations. Annual progress against targets will also be assessed."
+  },
+  "sourcePath": "Policies - Kenal/Efficient Plastech/Ethics Policy Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Efficient Plastech/Ethics Policy Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 10635,
+  "parsedAt": "2026-09-11T07:35:41.937Z"
+}

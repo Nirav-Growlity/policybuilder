@@ -1,0 +1,369 @@
+{
+  "id": "solxe-energy",
+  "name": "Solxe Energy",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Solex Environmental Stewardship & Resource Management Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Solex Energy Limited",
+      "industry": "",
+      "site": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India",
+      "sites": [
+        {
+          "location": "Manufacturing facility",
+          "address": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India",
+          "primaryFunction": "Manufacturing"
+        }
+      ],
+      "docNum": "LW-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Block No. 938, Plot No. 1A, Tadkeshwar, Taluka Mandvi, Kim–Mandvi Road, District Surat, Gujarat – 394170, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Solex Energy Limited is committed to responsible environmental stewardship, efficient resource use, and continual improvement of its environmental performance across its operations and business activities.",
+      "declaration": "Solex Energy Limited seeks to minimize the environmental footprint of its activities by improving operational efficiency, reducing resource intensity, strengthening environmental controls, and promoting responsible practices across the lifecycle of its products and operations, in line with applicable environmental requirements.\n\nThrough effective environmental management, employee awareness, monitoring, and continuous improvement, Solex Energy Limited aims to minimize environmental risks and promote responsible use of natural resources.",
+      "scope": "This Policy applies to all employees, directors, contractual workers, trainees, consultants, contractors, and other persons working on behalf of Solex Energy Limited. Where relevant, its principles also extend to suppliers, service providers, business partners, and other third parties associated with the Company.\n\nThe Policy covers environmental aspects arising from the Company’s operations, facilities, products, and business activities, including resource use, environmental impacts, product lifecycle considerations, environmental risk management, and compliance with applicable environmental requirements."
+    },
+    "focusAreas": [
+      "Energy Efficiency & Climate Performance",
+      "Water Stewardship & Conservation",
+      "Responsible Materials & Waste Management",
+      "Sustainable Product Performance",
+      "Product Circularity & Resource Recovery",
+      "Product Safety & Customer Well-being",
+      "Environmental Risk & Impact Management"
+    ],
+    "qualitative": {
+      "Energy Efficiency & Climate Performance": [
+        "Improving energy efficiency across operations, optimizing energy consumption, increasing the use of renewable energy where feasible, and managing greenhouse gas emissions through measurable improvement initiatives.",
+        "Strengthen energy efficiency across the manufacturing facility through improved monitoring, resource optimization, and energy-efficiency initiatives.",
+        "Increase the integration of renewable energy into the Company’s overall energy portfolio.",
+        "Improve monitoring and management of energy consumption across significant operations.",
+        "Implement energy-saving initiatives based on identified consumption patterns and improvement opportunities.",
+        "Integrate energy and climate considerations into relevant operational and investment decisions."
+      ],
+      "Water Stewardship & Conservation": [
+        "Promoting responsible water use through consumption monitoring, efficiency measures, reuse and recycling opportunities, and appropriate management of wastewater and water-related risks.",
+        "Strengthen responsible water management across facilities and operational activities.",
+        "Improve monitoring of water consumption and identify significant areas of water use.",
+        "Promote water-efficient practices and technologies across relevant operations.",
+        "Increase opportunities for water reuse and recycling where technically feasible.",
+        "Strengthen controls for wastewater management and compliance with applicable requirements."
+      ],
+      "Responsible Materials & Waste Management": [
+        "Promoting efficient use of materials, reducing resource losses, ensuring appropriate handling of chemicals and hazardous materials, and strengthening waste segregation, recycling, recovery, and responsible disposal practices.",
+        "Improve material efficiency and reduce avoidable consumption and losses across operations.",
+        "Strengthen responsible handling, storage, and use of chemicals and hazardous materials.",
+        "Promote segregation of waste at source across applicable operational areas.",
+        "Increase recycling and recovery of materials wherever technically and economically feasible.",
+        "Ensure environmentally responsible treatment and disposal of non-recyclable and hazardous waste."
+      ],
+      "Sustainable Product Performance": [
+        "Integrating environmental considerations into product development, manufacturing, quality management, packaging, and other relevant stages to improve resource efficiency and reduce environmental impacts.",
+        "Integrate relevant environmental considerations into product development and improvement processes.",
+        "Promote efficient use of materials and resources during product manufacturing.",
+        "Identify opportunities to improve product durability, reliability, and resource efficiency.",
+        "Consider environmental performance in relevant product and packaging decisions.",
+        "Encourage continuous improvement of the environmental performance of products."
+      ],
+      "Product Circularity & Resource Recovery": [
+        "Supporting practices that improve product durability, recyclability, material recovery, and responsible management of products and components at the end of their useful life, where applicable.",
+        "Promote product and component designs that support durability, repairability, recyclability, and resource recovery where applicable.",
+        "Strengthen awareness of responsible product use and end-of-life management.",
+        "Identify opportunities to recover valuable materials and components from products at end of life.",
+        "Collaborate with relevant stakeholders to improve responsible collection and recovery practices.",
+        "Gradually integrate circular economy considerations into relevant product lifecycle decisions.",
+        "Ensure environmentally sound management of E-Waste generated from operations and end-of-life products, in compliance with the E-Waste (Management) Rules and, where applicable, the Company's Extended Producer Responsibility (EPR) obligations, by engaging only CPCB/GPCB authorized recyclers, dismantlers, or Producer Responsibility Organizations (PROs) for E-Waste collection, handling, and recycling, and by educating employees, dealers, and other relevant stakeholders on proper E-Waste management practices and the hazards of improper disposal."
+      ],
+      "Product Safety & Customer Well-being": [
+        "Ensuring that products are designed, manufactured, stored, and supplied in a manner that supports environmental responsibility and protects the health, safety, and well-being of customers and end users.",
+        "Maintain product quality and safety as key considerations throughout relevant product lifecycle stages.",
+        "Strengthen identification and management of potential product-related health and safety risks.",
+        "Provide appropriate product safety information, instructions, and warnings to customers and end users.",
+        "Monitor product-related complaints and safety concerns and implement corrective actions where required.",
+        "Maintain processes for timely escalation and resolution of significant product safety concerns."
+      ],
+      "Environmental Risk & Impact Management": [
+        "Identifying, assessing, and managing significant environmental risks and impacts associated with operations, facilities, products, and business activities, while maintaining compliance with applicable environmental laws and requirements.",
+        "Strengthen identification and assessment of significant environmental risks across Company operations.",
+        "Integrate environmental risk considerations into operational planning and decision-making.",
+        "Maintain appropriate controls for significant environmental aspects and impacts.",
+        "Strengthen preparedness for environmental incidents and emergency situations.",
+        "Promote continual improvement through environmental monitoring, audits, corrective actions, and management review."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency & Climate Performance",
+        "targets": [
+          {
+            "target": "Reduce energy consumption by 20% by 2030 from the 2023 baseline.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the share of renewable energy in total electricity consumption to 10 % by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% annual monitoring and reporting of energy consumption at the Company’s manufacturing facility through 2030.",
+            "baseline": "",
+            "deadline": "through 2030"
+          },
+          {
+            "target": "Implement energy-efficiency improvement initiatives covering at least 26 % of identified significant energy-use areas by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce Scope 1, Scope 2 & Scope 3 GHG emission by 10 % by 2030 from the 2023 baseline.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Materials & Waste Management",
+        "targets": [
+          {
+            "target": "Reduce material consumption intensity by 15% by 2030 from the 2023 baseline.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% source-level waste segregation at the Company’s manufacturing facility by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a minimum 25 % recycling/recovery rate for recyclable waste by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of hazardous waste is handled and disposed of through authorized channels annually through 2030.",
+            "baseline": "",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Reduce waste generation by 20% by 2030 from the 2023 baseline.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Stewardship & Conservation",
+        "targets": [
+          {
+            "target": "Reduce water consumption by 20% by 2030 from the 2023 baseline.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% monitoring of significant water-consuming operations by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement water-efficiency measures at 100% of identified high-consumption areas by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the proportion of wastewater reused or recycled to 30% by 2030, where technically feasible.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% compliance with applicable wastewater quality and discharge requirements annually through 2030.",
+            "baseline": "",
+            "deadline": "annually through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Product Performance",
+        "targets": [
+          {
+            "target": "Conduct environmental performance assessments for 25% of new major product developments by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Assess 25% of major product categories for material/resource efficiency by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement environmental improvement measures for at least 80% of products identified with significant improvement opportunities by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the proportion of applicable products incorporating improved resource-efficiency features to 50% by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Review environmental performance of 100% of major product categories at least once every three years through 2030.",
+            "baseline": "",
+            "deadline": "at least once every three years through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Circularity & Resource Recovery",
+        "targets": [
+          {
+            "target": "Assess 25% of applicable major product categories for circularity opportunities by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Develop end-of-life or responsible disposal guidance for 100% of applicable product categories by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a minimum 25% recyclability/recoverability assessment coverage for applicable product categories by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement at least 3 product or process circularity initiatives by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Establish documented end-of-life management arrangements for 100% of applicable products by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Channel 100% of E-Waste generated from operations and end-of-life products through CPCB/GPCB authorized recyclers, dismantlers, or Producer Responsibility Organizations (PROs) annually, and maintain applicable EPR authorization with CPCB in good standing through 2030.",
+            "baseline": "",
+            "deadline": "annually and through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Safety & Customer Well-being",
+        "targets": [
+          {
+            "target": "Conduct product safety and risk assessments for 100% of applicable new products before commercial release by 2030.",
+            "baseline": "",
+            "deadline": "before commercial release by 2030"
+          },
+          {
+            "target": "Ensure 100% of applicable products are supported by required safety and usage information by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Investigate 100% of reported significant product safety complaints within defined internal timelines.",
+            "baseline": "",
+            "deadline": "within defined internal timelines"
+          },
+          {
+            "target": "Close at least 95% of validated product safety corrective actions within the established timeframe annually through 2030.",
+            "baseline": "",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Conduct an annual product safety review covering 100% of major product categories through 2030.",
+            "baseline": "",
+            "deadline": "annually through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Risk & Impact Management",
+        "targets": [
+          {
+            "target": "Conduct environmental risk assessments covering 100% of operational facilities by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement mitigation measures for 100% of identified significant environmental risks by 2030.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct environmental compliance assessments for 100% of applicable facilities annually through 2030.",
+            "baseline": "",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Close at least 95% of identified environmental corrective actions within defined timelines annually through 2030.",
+            "baseline": "",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Conduct at least one formal environmental performance review every year through 2030.",
+            "baseline": "",
+            "deadline": "every year through 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provides overall oversight of the Company’s environmental performance, resource management, climate-related risks, environmental compliance, and implementation of the Environmental Stewardship & Resource Management Policy through the established governance and risk-management framework."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provides leadership, resources, and accountability for implementation of this Policy and ensures that environmental considerations, resource efficiency, environmental risks, and compliance requirements are integrated into business planning, operational activities, and decision-making processes."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Officer",
+        "duty": "Acts as the custodian of this Policy and supports compliance with applicable environmental laws, regulations, permits, and internal requirements, including monitoring regulatory developments under the E-Waste (Management) Rules and, where applicable, obtaining and maintaining Extended Producer Responsibility (EPR) authorization from the CPCB. The EHS Officer coordinates environmental risk assessments, monitoring, environmental initiatives, compliance activities, awareness programmes, performance reporting, and annually review and update of policy."
+      },
+      {
+        "role": "Chief Finance Officer",
+        "duty": "Supports the allocation and monitoring of resources required for environmental improvement initiatives and ensures that relevant environmental expenditures, investments, and financial controls are appropriately managed and recorded."
+      },
+      {
+        "role": "Operations / Plant Management",
+        "duty": "Implements environmental controls and resource-efficiency measures at the manufacturing site, monitors operational environmental performance, manages identified environmental risks, and ensures compliance with applicable environmental requirements."
+      },
+      {
+        "role": "Department Heads & Supervisors",
+        "duty": "Promote responsible environmental practices within their areas of responsibility, support resource-efficiency and waste-management initiatives, monitor relevant environmental controls, and ensure adherence to applicable requirements."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Comply with applicable environmental policies, procedures, and legal requirements; follow established resource-efficiency, waste-management, chemical-handling, and environmental-control practices; participate in required awareness programmes; and promptly report environmental incidents, risks, or concerns."
+      }
+    ],
+    "monitoring": "Transparent and regular reporting is essential for monitoring the effectiveness of Solex Energy Limited’s environmental management framework, strengthening accountability, and supporting continual improvement. Solex Energy Limited shall implement the following reporting practices:\n\nEnvironmental Performance Reporting: Solex Energy Limited shall periodically review and report its performance against established environmental objectives, targets, and key performance indicators. Reporting shall cover relevant areas including energy and water consumption, greenhouse gas emissions, waste generation and recovery, resource efficiency, environmental compliance, environmental incidents, and progress against improvement initiatives.\n\nEnvironmental Reviews and Audits: Solex shall conduct periodic environmental reviews, inspections, and audits, as applicable, to assess compliance with this Policy and related procedures. Findings shall be documented, communicated to relevant management personnel, and followed by appropriate corrective and preventive actions.\n\nEnvironmental Incident Reporting: Solex Energy Limited shall maintain appropriate records of environmental incidents, non-compliances, spills, releases, complaints, and other identified environmental concerns. Significant or material matters shall be promptly escalated to the appropriate level of management for review and necessary action.\n\nManagement Reporting: Environmental performance, significant environmental risks, compliance matters, incidents, and the status of corrective actions shall be periodically reported to senior management and relevant governance bodies, as applicable. Management shall review such information to evaluate performance and determine areas requiring further action.\n\nStakeholder Feedback: Solex Energy Limited shall consider relevant environmental feedback and concerns received from employees, contractors, suppliers, customers, regulators, and other stakeholders. Where appropriate, such feedback shall be considered in strengthening environmental controls and improvement initiatives.\n\nPublic Disclosure: Solex Energy Limited may disclose relevant environmental performance information through its annual report, sustainability or ESG disclosures, website, or other approved communication channels. Such disclosures shall be made in accordance with applicable requirements while protecting confidential, personal, and commercially sensitive information.",
+    "reviewMechanism": "EHS Officer shall review this Environmental Stewardship & Resource Management Policy annually to ensure its continued relevance and effectiveness. The review shall consider environmental performance, compliance requirements, environmental risk assessments, audit findings, environmental incidents, performance against established targets, and relevant stakeholder feedback.\n\nThe Policy shall be updated as required to reflect changes in applicable environmental laws, regulations, Company procedures, business operations, environmental risks, or identified improvement opportunities. Significant updates shall be communicated to relevant employees and stakeholders."
+  },
+  "sourcePath": "Policies - Kenal/Solxe Energy/Solex Environmental Stewardship & Resource Management Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Solxe Energy/Solex Environmental Stewardship & Resource Management Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 20482,
+  "parsedAt": "2026-09-11T07:29:11.789Z"
+}

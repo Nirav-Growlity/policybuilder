@@ -1,0 +1,279 @@
+{
+  "id": "ethics-fqk",
+  "name": "FQK",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3) Ethical Conduct Policy.pdf.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "First Quality Knits (Nectar Crafts)",
+      "industry": "",
+      "site": "SF. No.87, Konakkadu Thottam, Arivoli Nagar, Naranapuram Post, Palladam Taluk- 641664, Tiruppur, Tamil nadu, India",
+      "sites": [
+        {
+          "location": "First Quality Knitts",
+          "address": "SF. No.87, Konakkadu Thottam, Arivoli Nagar, Naranapuram Post, Palladam Taluk- 641664, Tiruppur, Tamil Nadu, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "SF. No.87, Konakkadu Thottam, Arivoli Nagar, Naranapuram Post, Palladam Taluk- 641664, Tiruppur, Tamil nadu, India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "First Quality Knits is committed to conducting its business with the highest standards of integrity, transparency, and accountability. Ethical conduct is fundamental to our operations and guides every decision, action, and interaction across all levels of the organization.\n\nThis Ethical Conduct Policy reflects our commitment to upholding strong ethical values in all aspects of our business, whether in our relationships with employees, customers, suppliers, or the broader community. We strive to foster a culture of honesty, fairness, and mutual respect, while ensuring full compliance with applicable laws, regulations, and internal codes of conduct.\n\nThe policy outlines clear expectations for all stakeholders to act responsibly, avoid conflicts of interest, protect company assets, and contribute to maintaining the reputation of First Quality Knits as a reliable, ethical, and socially responsible organization.",
+      "declaration": "At First Quality Knits, we are committed to upholding the highest standards of ethical behavior, integrity, and compliance in all our business operations. All employees, management, and business partners are expected to avoid conflicts of interest, and must not engage in bribery, corruption, or fraudulent practices. Company resources must be used responsibly, and confidentiality must be maintained at all times. All actions should comply with applicable laws and internal policies. A safe, confidential, and retaliation-free channel is available for reporting unethical behavior, reinforcing our commitment to transparency, accountability, and an ethical workplace culture.",
+      "scope": "This policy applies to all employees, management, contractors, and third-party partners of First Quality Knitts across below given operational locations. It governs ethical behavior in all business activities and interactions, ensuring consistent standards of integrity and accountability throughout the organization and among any individuals or entities acting on its behalf."
+    },
+    "focusAreas": [
+      "Integrity in Business Practices",
+      "Prevention of Corruption",
+      "Conflict of Interest Management",
+      "Fraud Prevention and Detection",
+      "Anti-Money Laundering Measures",
+      "Upholding Fair Competition",
+      "Responsible Information Handling",
+      "Transparency in Recordkeeping"
+    ],
+    "qualitative": {
+      "Integrity in Business Practices": [
+        "Promote transparency, accountability, and adherence to ethical standards in all internal and external business activities.",
+        "Maintain a culture of ethical decision-making at all organizational levels and ensure consistency in applying ethical standards in all internal and external operations.",
+        "An employee discovers that a colleague is exaggerating product specifications to secure a client order. The employee must report the issue to the designated compliance officer. All business actions at First Quality Knits must be guided by honesty and integrity. Misrepresentation of any kind is strictly prohibited."
+      ],
+      "Prevention of Corruption": [
+        "Maintain a zero-tolerance policy toward bribery, kickbacks, and undue influence, ensuring full compliance with anti-corruption laws.",
+        "Maintain a zero-tolerance policy for bribery and corruption and ensure strict compliance with anti-corruption laws and company policies.",
+        "A vendor offers a procurement team member expensive gifts in exchange for a favourable contract decision. The team member must decline the offer and immediately report it. Accepting such gifts violates First Quality Knits’ anti-corruption policy. Employees must maintain fairness and transparency in all business interactions."
+      ],
+      "Conflict of Interest Management": [
+        "Require prompt disclosure of any personal or professional interests that could compromise objective decision-making.",
+        "Maintain a transparent work culture where employees are encouraged to avoid personal interests that may conflict with business decisions.",
+        "Implement clear procedures for identifying and addressing conflicts of interest in an impartial manner.",
+        "A department head is asked to approve a service provider owned by a close relative. The relationship must be disclosed, and the individual must recuse themselves from the decision-making process. Employees must avoid any actions that may lead to personal benefit at the company’s expense."
+      ],
+      "Fraud Prevention and Detection": [
+        "Strengthen internal controls, conduct regular audits, and encourage whistleblower reporting to prevent and detect fraudulent activities.",
+        "Provide regular training to all employees on fraud awareness, prevention, and reporting mechanisms.",
+        "Strengthen internal controls and awareness through routine monitoring and risk assessments.",
+        "A finance staff member identifies a vendor billing the same invoice twice for payment. The discrepancy must be reported immediately for investigation. All employees at First Quality Knitts are responsible for identifying and reporting suspicious or irregular financial activities."
+      ],
+      "Anti-Money Laundering Measures": [
+        "Conduct due diligence on financial transactions and third-party engagements to prevent money laundering and ensure financial integrity.",
+        "A customer proposes breaking up a large transaction into smaller parts to bypass reporting rules. This behavior must be treated as a red flag and reported as per First Quality Knitts’ AML procedures. Employees should remain alert to unusual financial activity and follow reporting protocols."
+      ],
+      "Upholding Fair Competition": [
+        "Comply with applicable antitrust and competition laws, avoid unfair trade practices, and support a fair, ethical marketplace.",
+        "Ensure compliance with fair competition and antitrust laws and hence promote transparency and fairness in all market dealings.",
+        "A marketing executive receives confidential pricing information about a competitor's bid. The information must not be used or shared. First Quality Knitts strictly prohibits anti-competitive behavior and complies fully with fair trade and competition laws."
+      ],
+      "Responsible Information Handling": [
+        "Protect sensitive company, employee, and client data through secure and ethical data management and communication practices.",
+        "Protect sensitive business, employee, and client data and hence promote responsible information security, storage, and access control.",
+        "Implement mandatory password and access reviews every six months for all critical systems.",
+        "Continuously monitor and improve data protection practices to safeguard sensitive information.",
+        "A team member forgets sensitive customer documents in a shared meeting space. The incident must be reported to IT and the compliance team immediately. Confidential information must always be handled securely and disposed of properly as per company policy."
+      ],
+      "Transparency in Recordkeeping": [
+        "Maintain accurate, honest, and timely financial and operational records to uphold legal compliance and ethical accountability.",
+        "Enable full legal and operational traceability through systematic documentation.",
+        "A supervisor intentionally delays recording a major expense to improve quarterly financial results. All financial records must be accurate and timely. Deliberate misreporting violates First Quality Knitts’ recordkeeping policy and can have legal consequences."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Integrity in Business Practices",
+        "targets": [
+          {
+            "target": "Conduct annual ethics training for 100% of employees in key functions.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct an internal ethics audit across 100% departments by year 2027.",
+            "baseline": "2022",
+            "deadline": "year 2027"
+          },
+          {
+            "target": "Integrate ethical conduct metrics in 100% of employee performance reviews by year 2027.",
+            "baseline": "2022",
+            "deadline": "year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Corruption",
+        "targets": [
+          {
+            "target": "Maintain inclusion and compliance of anti-bribery clauses into 100% of supplier and partner contracts by year 2027.",
+            "baseline": "2022",
+            "deadline": "year 2027"
+          },
+          {
+            "target": "Train 100% of procurement and finance teams on anti-corruption policies annually.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero instances of corruption reported in annual audits.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Management",
+        "targets": [
+          {
+            "target": "Ensure 100% of new hires complete conflict-of-interest training within their first week of onboarding.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% annual completion of conflict-of-interest disclosures by all managerial staff by year 2027.",
+            "baseline": "2022",
+            "deadline": "year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention and Detection",
+        "targets": [
+          {
+            "target": "Conduct annual fraud risk assessments across all departments.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero cases of fraud reported each year.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Implement fraud detection systems across key operations to ensure zero undetected fraudulent activities till year 2027.",
+            "baseline": "2022",
+            "deadline": "till year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering Measures",
+        "targets": [
+          {
+            "target": "Maintain zero number of false positive alerts in AML monitoring systems by year 2027.",
+            "baseline": "2022",
+            "deadline": "year 2027"
+          },
+          {
+            "target": "Screen 100% of high-risk third parties annually using AML compliance checks.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Train 100% of finance and legal staff on AML procedures annually.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Upholding Fair Competition",
+        "targets": [
+          {
+            "target": "Conduct annual fair competition training for 100% of sales and marketing teams.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero incidents of regulatory fines or violations related to anti-competitive practices annually.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Handling",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with internal information security protocols in annual IT audits.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Train 100% of staff with access to sensitive information on data security annually.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain the implementation of encryption and other protective measures for 100% of sensitive information by year 2027.",
+            "baseline": "2022",
+            "deadline": "year 2027"
+          }
+        ]
+      },
+      {
+        "area": "Transparency in Recordkeeping",
+        "targets": [
+          {
+            "target": "Maintain the Digitalization for 100% of financial records.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Train 100% of relevant employees on document retention and compliance annually.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Ensures implementation of ethical policies and compliance with anti-corruption, conflict of interest, fraud, and information security standards."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Oversees employee training on ethical conduct, including anti-corruption and conflict-of-interest policies."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Safeguards company and customer data through secure information systems."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts audits to assess policy compliance and identify risks."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Reviews ethical performance, allocates resources, and promotes a culture of integrity."
+      }
+    ],
+    "monitoring": "At First Quality Knits, ethical conduct is a living commitment, continually refined to reflect evolving regulations, industry expectations, and emerging risks. A culture of integrity is deeply rooted at every level of the organization, ensuring consistent transparency, accountability, and legal compliance.\n\nRegular Training & Awareness: All employees participate in annual training sessions covering core ethical areas such as anti-corruption, conflicts of interest, fraud prevention, AML, and data security.\n\nRisk Assessments & Audits: Routine internal assessments and independent audits are conducted to identify ethical risks, assess policy effectiveness, and implement corrective measures.\n\nIndustry Collaboration: Engagement in industry forums and regulatory initiatives helps align company practices with evolving ethical standards and global best practices.\n\nTechnology-Driven Monitoring: Digital systems are used for automated compliance monitoring, fraud detection, and secure reporting to strengthen governance and response mechanisms.\n\nOpen Feedback Culture: Employees and stakeholders are encouraged to share concerns and suggestions through accessible feedback channels, supporting a transparent and ethically sound workplace.\n\nFirst Quality Knitts maintains a zero-tolerance stance on all forms of ethical misconduct, including corruption, conflicts of interest, fraud, money laundering, and data breaches. Any confirmed violations are met with strict and proportionate disciplinary measures to uphold ethical standards.\n\nEmployees, suppliers, and external stakeholders are encouraged to report suspected violations through a secure and confidential whistleblower system that guarantees anonymity and protection against retaliation.\n\nAll reported concerns are treated with the utmost confidentiality and addressed through prompt and thorough investigation.\n\nInvestigations are led by the Compliance Officer, with support from internal teams or external experts as needed.\n\nFollowing any ethical breach, corrective actions such as policy updates, enhanced controls, or targeted training are implemented to prevent recurrence. Insights gained from incidents are integrated into risk assessments and policy reviews, contributing to stronger ethical governance and resilience.",
+    "reviewMechanism": "The Ethical Conduct Policy is reviewed annually to ensure it remains relevant, effective, and aligned with applicable legal and regulatory standards. The review process is led by the Compliance Officer, in coordination with the Internal Audit Team and Human Resources.\n\nRevisions may be made in response to audit outcomes, regulatory updates, employee feedback, or changes in business operations. All updates are communicated clearly across the organization, and necessary training is provided to ensure understanding and continued compliance by all employees."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/FQK/3) Ethical Conduct Policy.pdf",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/FQK/3) Ethical Conduct Policy.pdf"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 20,
+  "parsedAt": "2026-09-11T08:19:41.936Z"
+}

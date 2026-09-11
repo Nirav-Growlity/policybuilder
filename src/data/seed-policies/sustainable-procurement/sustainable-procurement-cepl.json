@@ -1,0 +1,200 @@
+{
+  "id": "sustainable-procurement-cepl",
+  "name": "CEPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Clifton Export (P) Ltd",
+      "industry": "",
+      "site": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk, Tirupur - 641605, Tamilnadu, India",
+      "sites": [
+        {
+          "location": "Clifton Export (P) Ltd",
+          "address": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk, Tirupur - 641605, Tamilnadu, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk, Tirupur - 641605, Tamilnadu, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Clifton Export (P) Ltd, we unwaveringly uphold sustainable and responsible business principles, with a dual commitment to advancing the prosperity of our organization and making a positive impact on the environment and society. Our steadfast dedication is expressed through our Sustainable Procurement Policy, serving as evidence of our commitment to promoting environmentally and socially responsible practices among our suppliers throughout our entire supply chain.",
+      "declaration": "We are dedicated to upholding sustainable standards and advancing fairness, honesty, and accountability in all our interactions with stakeholders, including employees, customers, suppliers, and the communities in which we operate. This dedication is evident in our comprehensive policies and procedures governing sustainable procurement practices, anti-corruption measures, fair competition, responsible information management, and engagement with stakeholders. We are committed to integrating sustainability into our procurement processes, ensuring that our sourcing activities align with ethical and environmental considerations while fostering positive impacts on the communities and environments where we operate.",
+      "scope": "This policy applies to the specified location mentioned below and is relevant to all employees, customers, suppliers, partners, and other stakeholders directly and indirectly associated with the company."
+    },
+    "focusAreas": [
+      "Environmental Issues",
+      "Labor Practices and Human Rights",
+      "Supplier Social Practice"
+    ],
+    "qualitative": {
+      "Environmental Issues": [
+        "Sustainable Fiber Production: Explore and promote the use of sustainable and eco-friendly fibers such as organic cotton, hemp, and bamboo.",
+        "Energy Efficiency: Focus on renewable energy sources like solar and wind to power textile manufacturing processes.",
+        "Carbon Emission Reduction Targets: Prioritize suppliers with initiatives like transitioning to renewable energy sources and adopting low-carbon technologies.",
+        "Reducing Water Footprint: Implement water recycling and reuse systems in dyeing and finishing processes.",
+        "Carbon Footprint Reduction: Develop and adopt renewable energy sources and energy-efficient technologies to substantially decrease the carbon footprint of the manufacturing process.",
+        "Adopting Eco-friendly Dyes and Chemicals: Introduce and replace conventional dyes and chemicals with eco-friendly alternatives.",
+        "Waste Reduction: Implement waste reduction measures, such as closed-loop systems and the recovery of dyeing auxiliary materials."
+      ],
+      "Labor Practices and Human Rights": [
+        "Chemical management: Implementing a robust chemical management system is crucial in the dyeing process, ensuring the proper handling, storage, and disposal of chemicals to protect both workers and the environment.",
+        "Child Labor Prevention: To prevent the use of child labor in the weaving process, companies should implement and enforce strict policies, conducting regular audits and inspections to ensure compliance.",
+        "Supply Chain Transparency: Achieving supply chain transparency is a priority in the textile industry, allowing companies to trace the origin of raw materials and ensuring that all suppliers adhere to ethical labor practices.",
+        "Safe Working Conditions: Establish and enforce stringent safety standards across all stages of production to ensure safe working conditions for all employees.",
+        "Fair Wages and Working Conditions: Apply fair wage policies and improve working conditions in every stage of textile production, including spinning mills, weaving or knitting units, and dyeing and finishing facilities.",
+        "Worker Empowerment and Representation: Promote worker empowerment by encouraging the formation of labor unions or other representative bodies, fostering open communication channels between workers and management."
+      ],
+      "Supplier Social Practice": [
+        "Gender Equality and Diversity: Emphasize the importance of gender equality and diversity within supplier organizations. Encourage suppliers to implement policies promoting equal opportunities, fair wages, and a diverse workforce.",
+        "Supplier Social Compliance Audits: Regularly conduct audits to assess suppliers' adherence to social compliance standards. This includes evaluating working conditions, labor practices, and adherence to local and international labor laws.",
+        "Sustainable Raw Material Sourcing: Invest in sustainable and eco-friendly raw material sources, such as organic cotton or recycled fibers, and establish guidelines for suppliers to adhere to environmentally responsible practices.",
+        "Increase transparency in the supply chain by conducting annual audits on suppliers to ensure compliance with social responsibility criteria.",
+        "Foster community development in supplier regions by initiating local education and healthcare projects, contributing to the overall well-being of the communities involved in the supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Issues",
+        "targets": [
+          {
+            "target": "Minimize waste generation in the weaving process, targeting a 30% reduction by 2027, promoting efficient material utilization and waste reduction in textile manufacturing.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Enhance energy efficiency in yarn production, aiming for a 15% reduction in energy consumption per unit by 2027, contributing to a more sustainable and resource-efficient spinning process.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Implement water-saving technologies to achieve a 20% reduction in water usage in the dyeing process by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Integrate sustainability criteria into 100% of supplier evaluations to ensure alignment with environmental, labor, and ethical standards.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve full transparency across our Tier 1 supplier base by 2030 through mandatory disclosures, self-assessments, and due diligence.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Build internal capacity by ensuring 100% of procurement staff receive annual training on sustainable sourcing practices.",
+            "baseline": "",
+            "deadline": "annual"
+          }
+        ]
+      },
+      {
+        "area": "Labor Practices and Human Rights",
+        "targets": [
+          {
+            "target": "The industry is dedicated to achieving a milestone of ensuring that 90% of its workforce receives a fair living wage by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Launching mentorship programs aimed at fostering the professional growth of women in leadership roles. The objective is to augment female representation in leadership positions by an additional 15% by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Ensure that 100% of textile manufacturing facilities meet or exceed international safety standards within the next three years.",
+            "baseline": "2022",
+            "deadline": "within the next three years"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practice",
+        "targets": [
+          {
+            "target": "By 2027, achieve 90% compliance with recognized social standards (e.g., SA8000) among all textile suppliers across the spinning, weaving, knitting, dyeing, and finishing processes.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Enhance energy efficiency by 15% across spinning, weaving, and knitting processes through the adoption of renewable energy sources and technology upgrades by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Collaborate with suppliers to establish programs that empower workers, such as education and skill-building initiatives, with a target of impacting 50% of the workforce by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Strengthen environmental stewardship by promoting emission reduction, sustainable material use, and waste minimization across the supplier base.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Foster ethical and inclusive supply chains by expanding engagement with local, minority-owned, and women-led businesses and supporting their growth through supplier development initiatives.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Procurement Officer (CPO)",
+        "duty": "Oversees the implementation of sustainable procurement policies and ensures alignment with corporate sustainability goals."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Monitors environmental and ethical compliance, working closely with suppliers to improve sustainability performance."
+      },
+      {
+        "role": "Supply Chain Director",
+        "duty": "Ensures procurement strategies integrate environmental and social criteria while maintaining efficiency and cost-effectiveness."
+      },
+      {
+        "role": "Compliance and Audit Manager",
+        "duty": "Conducts supplier audits, ensures adherence to labor and environmental standards, and enforces corrective actions when needed."
+      },
+      {
+        "role": "Sustainable Procurement Committee (SPC)",
+        "duty": "Review and evaluate procurement practices quarterly. The committee will monitor progress against targets and address risks or non-compliance issues."
+      },
+      {
+        "role": "Employees, suppliers, and third-party partners",
+        "duty": "Uphold the standards outlined in this Sustainable Procurement Policy."
+      }
+    ],
+    "monitoring": "Clifton Export (P) Ltd is committed to transparency, accountability, and the ongoing improvement of our Environmental, Social, and Governance (ESG) principles. To thoroughly evaluate our current status and identify areas for improvement, we've implemented a robust reporting mechanism covering key components in our operational framework.\n\nMonthly Sustainability Updates: Keep our team informed about our sustainability efforts, achievements, and ongoing projects through a monthly newsletter or intranet. This will boost awareness, engage employees, and nurture a shared commitment to sustainability.\n\nEmployee Sustainability Training: Organize regular training sessions on sustainable practices and the significance of environmental, social, and ethical considerations. Empower our staff with the knowledge and tools needed to actively contribute to our sustainability goals.\n\nOpen Feedback Channels: Create accessible channels for employees to express their ideas, concerns, and suggestions regarding sustainability. Foster a feedback loop that enables continuous improvement in our sustainability initiatives, with the valuable input of our team.\n\nQuarterly Sustainability Reports: Deliver detailed reports on our sustainability performance every quarter, outlining key metrics, progress towards goals, and challenges faced. These reports will empower management to make informed decisions and allocate resources efficiently.\n\nDepartment-Specific Sustainability Metrics: Customize reports for each department, showcasing their unique contributions to our sustainability goals. This might include achievements in reducing energy consumption, improving waste management, and maintaining ethical sourcing practices.\n\nStrategic Alignment Updates: Clearly communicate how our sustainability initiatives align with the company's overarching strategic objectives. Provide insights into how these practices contribute to long-term profitability, enhance brand reputation, and mitigate potential risks.\n\nSupplier Sustainability Evaluation: Introduce a scorecard system to assess and communicate the sustainability performance of our suppliers. This scorecard will encompass criteria such as environmental impact, labor practices, and adherence to ethical standards.\n\nCollaborative Sustainability Forums: Facilitate regular forums for collaboration, offering a space to discuss sustainability expectations, exchange best practices, and jointly develop improvement plans. Embrace a partnership approach with suppliers to collectively elevate the sustainability of our entire supply chain.\n\nTransparent Audit Procedures: Establish clear communication channels regarding our auditing processes for sustainability compliance, emphasizing transparency and fairness. Share audit results with suppliers, providing constructive feedback and guidance on areas that can be enhanced.\n\nRegulatory Compliance Notifications: Provide regular updates to the Compliance Department regarding alterations in environmental, social, and ethical regulations. Guarantee that reporting mechanisms are in harmony with legal requirements and industry benchmarks.\n\nRoutine Internal Audits: Execute regular internal audits to evaluate adherence to sustainability policies and procedures. Share the audit findings with the Compliance Department for swift resolution of identified issues.\n\nSustainability Key Performance Indicators (KPIs): Regularly update on KPIs tied to sustainability objectives, encompassing areas like reducing carbon footprint, enhancing resource efficiency, and social impact. This enables the Sustainability Manager to monitor progress and adapt strategies as necessary.\n\nStakeholder Engagement Insights: Disseminate feedback from employees, suppliers, and other stakeholders on sustainability initiatives. This valuable input assists the Sustainability Manager in evaluating program effectiveness and making adjustments to better align with stakeholder expectations.\n\nTrends and Innovations in Sustainability: Keep the Sustainability Manager abreast of emerging trends, technologies, and innovations in sustainability. This information supports staying ahead of the curve, identifying new opportunities, and continually refining sustainability practices.\n\nAll suspected violations of this policy should be reported to the Procurement Head or the Sustainability Committee through the internal reporting mechanism. Anonymous reporting options and whistleblower protections are in place to safeguard against retaliation.\n\nA Supplier Sustainability Scorecard will be used to assess supplier performance across key environmental, social, and ethical benchmarks. This scorecard will inform sourcing decisions and guide capacity-building efforts.\n\nAnnual Supplier Audits will be conducted to verify compliance with sustainability standards. High-risk suppliers will be subject to additional spot-check audits and follow-up evaluations to ensure corrective actions are implemented.\n\nA Whistle-blower Mechanism will be implemented to allow employees, suppliers, and third parties to anonymously report any instances of non-compliance, unethical behaviour, or human rights violations. All reports will be handled with confidentiality and appropriate investigation.\n\nAll policy violations will be subject to review by the Sustainable Procurement Committee. Repeated or severe non-compliance may lead to suspension, contract termination, or legal recourse.",
+    "reviewMechanism": "This policy will undergo an annual assessment for the purpose of reviewing and tracking progress on each issue and its associated targets.\n\nTraining programs on sustainable procurement will be updated and delivered periodically to procurement teams and suppliers.\n\nThe company will regularly evaluate suppliers and adjust procurement criteria to reflect the latest sustainability expectations.\n\nCollaboration with industry platforms and NGOs will help improve supply chain transparency and foster innovation in sustainable sourcing."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/CEPL/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/CEPL/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 18828,
+  "parsedAt": "2026-09-11T07:36:43.276Z"
+}

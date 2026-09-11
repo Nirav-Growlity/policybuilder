@@ -1,0 +1,187 @@
+{
+  "id": "advanced-supply-chain-group-ltd",
+  "name": "Advanced Supply Chain Group Ltd",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Management Roadmap.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Advanced Supply Chain Group Limited",
+      "industry": "",
+      "site": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ",
+      "sites": [
+        {
+          "location": "Head Office – Bradford (J26)",
+          "address": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ",
+          "primaryFunction": "Head Office"
+        },
+        {
+          "location": "ASCG Corby (Site 1)",
+          "address": "Units 1–3, Eismann Way, Corby, Northamptonshire, NN17 5ZB",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Corby (Site 2)",
+          "address": "Hunters Point, Brakey Road, Corby, Northamptonshire, NN17 5JE",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Sheffield",
+          "address": "PLP Smithywood, 6 Cowley Way, Sheffield, S35 1QP",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Hong Kong",
+          "address": "21st Floor, Edinburgh Tower, The Landmark, 15 Queen’s Road Central, Hong Kong",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG International",
+          "address": "Al Fattan Plaza, Airport Road, Office 712, Al Garhoud, Dubai, UAE",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Germany – Nettetal",
+          "address": "Herrenpfad-Süd 40, 41334 Nettetal, Deutschland",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Advanced Supply Chain Group Limited (ASCG), a Reconomy Group company, is committed to environmental stewardship and responsible operations aligned with Reconomy’s sustainability ambitions. As part of our shared vision for a circular, low-carbon economy, we have developed this Environmental Management Roadmap outlines our strategic targets, key initiatives, and continuous improvement efforts..\n\nThis roadmap consolidates ASCG’s environmental commitments under key themes such as energy efficiency, GHG reduction, circularity, and employee advocacy — all designed to support compliance with ISO 14001:2015 and Reconomy’s ESG performance expectations.",
+      "declaration": "ASCG is committed to achieving the following general environmental objectives:\n\nCompliance with all applicable legal, regulatory, and other obligations related to environmental performance.\n\nPrevention of pollution and minimisation of adverse environmental impacts through effective risk management.\n\nContinuous improvement of the Environmental Management System (EMS) in line with ISO 14001:2015 standards.\n\nIntegration of environmental considerations into decision-making processes, operational controls, and procurement.\n\nSustainability awareness and culture throughout all levels of the organisation and its supply chain.\n\nThis Environmental Roadmap is endorsed by ASCG senior leadership and reaffirms our responsibility to operate sustainably, reduce our carbon footprint, and help shape a circular economy — in alignment with Reconomy Group’s corporate vision.",
+      "scope": "This Environmental Management Roadmap applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and any individuals acting on behalf of Advanced Supply Chain Group Limited (ASCG).\n\nIt covers all ASCG operational, administrative, and strategic activities across the following sites and regions:"
+    },
+    "focusAreas": [
+      "Energy Efficiency and Resource Use",
+      "Greenhouse Gas Emissions (GHG)",
+      "Waste Management and Circularity",
+      "Environmental Services & Advocacy"
+    ],
+    "qualitative": {
+      "General environmental objectives": [
+        "Compliance with all applicable legal, regulatory, and other obligations related to environmental performance.",
+        "Prevention of pollution and minimisation of adverse environmental impacts through effective risk management.",
+        "Continuous improvement of the Environmental Management System (EMS) in line with ISO 14001:2015 standards.",
+        "Integration of environmental considerations into decision-making processes, operational controls, and procurement.",
+        "Sustainability awareness and culture throughout all levels of the organisation and its supply chain."
+      ],
+      "Energy Efficiency and Resource Use": [
+        "We aim to transition to renewable energy sources, reducing dependency on non-renewable sources."
+      ],
+      "Greenhouse Gas Emissions (GHG)": [
+        "Supported by the evaluation of low-emission fleet technologies and the integration of carbon-reduction strategies into logistics, procurement, and operational planning."
+      ],
+      "Waste Management and Circularity": [
+        "Through staff engagement on the waste hierarchy and replacing plastic packaging materials with sustainable alternatives.",
+        "Replacing it with recyclable or certified compostable alternatives across all fulfilment centres."
+      ],
+      "Environmental Services & Advocacy": [
+        "To promote hands-on sustainability and environmental responsibility across all sites.",
+        "ASCG will launch a “Green Logistics Innovation Program” to collect employee ideas on sustainability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency and Resource Use",
+        "targets": [
+          {
+            "target": "Sourcing 100% of electricity from solar or wind power at our UK and international sites",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Greenhouse Gas Emissions (GHG)",
+        "targets": [
+          {
+            "target": "Cut Scope 1, 2, and 3 greenhouse gas (GHG) emissions per unit shipped by 33.6%",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management and Circularity",
+        "targets": [
+          {
+            "target": "Achieve 100% waste diversion from landfill across all sites",
+            "baseline": "2021",
+            "deadline": "2028"
+          },
+          {
+            "target": "Eliminate 100 % of single‑use plastic packaging in outbound logistics",
+            "baseline": "2021",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Organise at least three employee-led environmental activities annually — such as tree plantation drives, local clean-up events, or recycling awareness campaigns",
+            "baseline": "2021",
+            "deadline": "Annually"
+          },
+          {
+            "target": "ASCG will launch a “Green Logistics Innovation Program” by 2028 to collect employee ideas on sustainability and implement at least one initiative per year that drives measurable impact.",
+            "baseline": "2021",
+            "deadline": "2028 and at least one initiative per year thereafter"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Strategic oversight and resource commitment"
+      },
+      {
+        "role": "Executive Leadership Team (ELT)",
+        "duty": "Approval of targets, and annual environmental plans"
+      },
+      {
+        "role": "Compliance Advisor / HSE Team",
+        "duty": "Implementation, monitoring, legal compliance, EMS audits, and incident investigation"
+      },
+      {
+        "role": "Site Environmental Champions",
+        "duty": "Local engagement, training delivery, and issue identification"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Adherence to EMS procedures and proactive participation in sustainability practices"
+      }
+    ],
+    "monitoring": "Implementation, monitoring, legal compliance, EMS audits, and incident investigation\n\nTraining and refresher sessions are delivered to ensure alignment and participation.\n\nStaff at all levels are encouraged to contribute ideas through the Green Logistics Innovation Program.",
+    "reviewMechanism": "The roadmap will be reviewed annually by the Environmental Compliance Officer or sooner in response to:\n\nChanges in operations or environmental legislation\n\nEnvironmental incidents or audit findings\n\nStakeholder or management feedback\n\nChanges to Reconomy Group sustainability strategies\n\nThe Management Review will evaluate effectiveness, alignment with group strategy, and opportunities for improvement."
+  },
+  "sourcePath": "Policies - Kenal/Advanced Supply Chain Group Ltd/Environmental Management Roadmap.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Advanced Supply Chain Group Ltd/Environmental Management Roadmap.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 6976,
+  "parsedAt": "2026-09-11T07:17:49.425Z"
+}

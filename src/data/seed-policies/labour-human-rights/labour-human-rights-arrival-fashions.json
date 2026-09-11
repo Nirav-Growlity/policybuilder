@@ -1,0 +1,350 @@
+{
+  "id": "labour-human-rights-arrival-fashions",
+  "name": "Arrival Fashions",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Labor_and Human Rights Policy AFL.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Arrival Fashion Ltd",
+      "industry": "",
+      "site": "Apt No.5, House No. 3, Road No.23/B, Gulshan 1, Dhaka 1212.",
+      "sites": [
+        {
+          "location": "Arrival Fashion Ltd, Colomesshor, Board Bazar, Gazipur.",
+          "address": "Arrival Fashion Ltd, Colomesshor, Board Bazar, Gazipur.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Arrival Fashion Ltd, Plot 10, Block # Kha, Section 6, Road 1, Mirpur, Dhaka - 1216.",
+          "address": "Arrival Fashion Ltd, Plot 10, Block # Kha, Section 6, Road 1, Mirpur, Dhaka - 1216.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Holding: 17, Vill: Mamarishpur, Post: Mallik Bari, P.s: Bhaluka, Dist: Mymensingh, Bangladesh.",
+          "address": "Holding: 17, Vill: Mamarishpur, Post: Mallik Bari, P.s: Bhaluka, Dist: Mymensingh, Bangladesh.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Apt No.5, House No. 3, Road No.23/B, Gulshan 1, Dhaka 1212."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Arrival Fashion Ltd is dedicated to maintaining exemplary standards of labor and human rights throughout our operations. Our policy underscores our commitment to guaranteeing equitable, safe, and dignified working conditions for all employees, partners, and stakeholders. We strive to foster a workplace where every individual is respected, their fundamental rights safeguarded, and their dignity upheld.",
+      "declaration": "At Arrival Fashion, we are steadfast in our commitment to upholding the highest standards of labor and human rights across all facets of our operations. Our Labor and Human Rights Policy is designed to foster an environment where every individual is treated with dignity, respect, and fairness. This policy encompasses our dedication to equitable employment practices, the wellbeing and safety of our employees, open social dialogue, the elimination of child labor and forced labor, inclusion and equal opportunities, work life balance, and continuous professional development.",
+      "scope": "This policy applies to all workers, employees, directors, officers, agents, contractors, and any third parties acting on behalf of Arrival Fashion Ltd. (AFL). It covers all business activities, including procurement, sales, marketing, and any interactions with government officials, customers, suppliers, and other stakeholders. The policy is applicable globally, regardless of local business practices or cultural norms. This policy applies to below mentioned locations:\n\nAddress:\n\nApt No.5, House No. 3, Road No.23/B, Gulshan 1, Dhaka 1212.\n\nArrival Fashion Ltd, Colomesshor, Board Bazar, Gazipur.\n\nArrival Fashion Ltd, Plot 10, Block # Kha, Section 6, Road 1, Mirpur, Dhaka - 1216.\n\nHolding: 17, Vill: Mamarishpur, Post: Mallik Bari, P.s: Bhaluka, Dist: Mymensingh, Bangladesh."
+    },
+    "focusAreas": [
+      "Fair Employment Standards",
+      "Employee Health and Safety Standards",
+      "Interactive Social Engagement",
+      "Labor Relations",
+      "Child Labor Prevention",
+      "Forced Labor Prevention",
+      "Inclusive Equity Practices",
+      "Balanced Work Life Integration",
+      "Working Conditions",
+      "Comprehensive Career Development Integrated Work-Life Management",
+      "Ongoing Enhancement",
+      "External Stakeholder Human Rights",
+      "Fair Compensation"
+    ],
+    "qualitative": {
+      "Fair Employment Standards": [
+        "Ensure fair, transparent, and merit-based hiring, promotion, and compensation practices free from discrimination or bias."
+      ],
+      "Employee Health and Safety Standards": [
+        "Provide a safe and healthy working environment with preventive measures, safety training, and monitoring."
+      ],
+      "Interactive Social Engagement": [
+        "Respect employees’ rights to freely associate, bargain collectively, and engage in social dialogue."
+      ],
+      "Labor Relations": [
+        "Foster positive labor relations through open communication, collaboration, and access to grievance mechanisms."
+      ],
+      "Child Labor Prevention": [
+        "Strictly prohibit employment of children under the legal minimum age across operations and supply chain."
+      ],
+      "Forced Labor Prevention": [
+        "Strictly prohibit all forms of forced or compulsory labor within operations and supply chain."
+      ],
+      "Inclusive Equity Practices": [
+        "Provide equal opportunities for all employees, eliminate discrimination, and promote diversity, equity, and inclusion."
+      ],
+      "Balanced Work Life Integration": [
+        "Promote healthy work-life balance through flexible working hours, remote work options, and wellness programs."
+      ],
+      "Working Conditions": [
+        "Ensure safe, healthy, and compliant working conditions for all employees."
+      ],
+      "Comprehensive Career Development Integrated Work-Life Management": [
+        "Invest in employees’ professional development, career growth, and continuous learning."
+      ],
+      "Ongoing Enhancement": [
+        "Foster a culture of continuous improvement in all operational and organizational aspects."
+      ],
+      "External Stakeholder Human Rights": [
+        "Uphold human rights throughout the supply chain and with external stakeholders."
+      ],
+      "Fair Compensation": [
+        "Ensure all employees receive a living wage meeting basic needs and a decent standard of living."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Fair Employment Standards",
+        "targets": [
+          {
+            "target": "Achieve a 20% increase in workforce diversity across all levels compared to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual audits of recruitment, promotion, and pay equity to ensure 100% compliance with non-discrimination policies.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Employee Health and Safety Standards",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees complete annual health and safety training.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Interactive Social Engagement",
+        "targets": [
+          {
+            "target": "Ensure 25 % of employees covered by formally elected employee representatives or collective agreements.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 90% employee participation in engagement programs.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Labor Relations",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees have access to grievance mechanisms.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual satisfaction surveys covering 100% of employees.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Child Labor Prevention",
+        "targets": [
+          {
+            "target": "Conduct 100% supplier audits for child labor compliance.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% compliance with legal minimum age requirements.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Forced Labor Prevention",
+        "targets": [
+          {
+            "target": "Conduct 100% supplier audits for forced labor compliance.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% compliance with forced labor policies.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Inclusive Equity Practices",
+        "targets": [
+          {
+            "target": "Increase representation of underrepresented groups in management by 2 % compared to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees complete diversity, equity, and inclusion (DEI) training.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Balanced Work Life Integration",
+        "targets": [
+          {
+            "target": "Provide flexible work options to 15 % of the workforce.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement wellness programs covering 100% of employees.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual employee surveys to achieve at least 80% satisfaction with work-life balance.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with health and safety standards.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual improvements in ergonomic and environmental conditions at 100% operational sites.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Comprehensive Career Development Integrated Work-Life Management",
+        "targets": [
+          {
+            "target": "Increase participation in career development and skill training programs by 30% compared to 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees have an annual personal development plan.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Ongoing Enhancement",
+        "targets": [
+          {
+            "target": "Achieve at least 5% annual improvement in all key operational and HR KPIs.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual audits covering 100% of operational and HR processes.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Conduct human rights due diligence for 100% of key suppliers annually.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure zero (0) human rights violations across operations and supply chain.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide training on human rights for 100% of procurement and supplier management staff.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Compensation",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees earn a living wage.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual compensation reviews for 100% of employees.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources (HR) Manager, Mr. Mainuddin Sarker",
+        "duty": "The implementation and oversight of this policy are the responsibilities of our Human Resources (HR) Manager, Mr. Mainuddin Sarker working closely with the Sustainability and Compliance teams."
+      },
+      {
+        "role": "HR department",
+        "duty": "The HR department is charged with ensuring that all employees and stakeholders are informed about and comply with this policy."
+      },
+      {
+        "role": "HR department",
+        "duty": "Regular assessments and updates will be carried out to evaluate progress and enact necessary enhancements."
+      },
+      {
+        "role": "Health and Safety Manager",
+        "duty": "The Health and Safety Manager oversees compliance with legal and ethical standards, conducts health and safety training, supports diversity and inclusion efforts, and facilitates social dialogue and collective bargaining."
+      },
+      {
+        "role": "Arrival Fashion Ltd",
+        "duty": "We conduct regular reviews and external audits to uphold transparency and accountability."
+      }
+    ],
+    "monitoring": "The implementation and oversight of this policy are the responsibilities of our Human Resources (HR) Manager, Mr. Mainuddin Sarker working closely with the Sustainability and Compliance teams.\n\nRegular assessments and updates will be carried out to evaluate progress and enact necessary enhancements.\n\nWe conduct regular reviews and external audits to uphold transparency and accountability.",
+    "reviewMechanism": "To ensure the effectiveness of Arrival Fashion Ltd.’s Labor and Human Rights Policy, we have implemented a robust review mechanism that includes regular assessments, updates based on feedback, and stakeholder engagement, while staying aligned with industry standards and regulatory requirements:\n\nThe HR Manager conducts annual reviews of the policy to incorporate feedback and implement improvements.\n\nThe Health and Safety Manager provides regular progress reports on quantitative targets to be shared with stakeholders.\n\nExternal audits conducted by the Safety Officer ensure transparency and accountability.\n\nThis structured approach ensures that our policies remain relevant, effective, and responsive to evolving needs and standards in labor and human rights practices."
+  },
+  "sourcePath": "Policies - Kenal/Arrival Fashions/Labor_and Human Rights Policy AFL.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Arrival Fashions/Labor_and Human Rights Policy AFL.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 9636,
+  "parsedAt": "2026-09-11T07:21:07.268Z"
+}

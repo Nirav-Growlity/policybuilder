@@ -1,0 +1,314 @@
+{
+  "id": "sustainable-procurement-living-wage",
+  "name": "Living wage",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Responsible Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Plastipak packaging Inc (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Toledo, Spain",
+          "address": "",
+          "primaryFunction": "manufacturing site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "A Sustainable Procurement Policy establishes a framework for responsible sourcing that aligns with environmental and social governance principles. It aims to integrate sustainability into the procurement process by prioritizing suppliers that demonstrate ethical practices, use sustainable materials, and minimize environmental impact. By emphasizing lifecycle assessments and supplier engagement, the policy seeks to foster long-term partnerships that contribute to economic, social, and environmental well-being. Ultimately, this commitment enhances the organization's reputation, supports sustainable development goals, and mitigates risks associated with unsustainable practices. Through sustainable procurement, organizations can significantly impact their supply chains and promote a more sustainable future​.",
+      "declaration": "Promote Environmental Responsibility: Ensure that procurement decisions prioritize environmentally friendly products and services, aiming to reduce the overall carbon footprint of the organization and minimize waste.\n\nSupport Ethical Sourcing: Engage suppliers who adhere to fair labor practices, respect human rights, and promote social equity, fostering a responsible supply chain that benefits communities.\n\nEncourage Innovation: Drive the development and adoption of sustainable products and technologies by collaborating with suppliers to find innovative solutions that enhance sustainability.\n\nEnhance Supplier Engagement: Build long-term relationships with suppliers committed to sustainability, providing them with guidance and resources to improve their environmental and social practices.\n\nMeasure and Report Performance: Establish key performance indicators (KPIs) to evaluate the effectiveness of sustainable procurement practices, enabling transparent reporting to stakeholders and continuous improvement.\n\nEducate and Train Staff: Provide training and resources to procurement staff to enhance their understanding of sustainable procurement practices and their importance to the organization’s mission and values.",
+      "scope": "This policy applies to all Plastipak employees, contractors, third-party partners, and internal and external stakeholders, including customers directly or indirectly associated with Plastipak. It extends across all offices, headquarters, facilities, and operating sites where Plastipak engages in procurement activities. The policy ensures that sustainable practices are integrated into all aspects of the procurement process, promoting responsible sourcing of materials and services across the organization’s global operations."
+    },
+    "focusAreas": [
+      "Environmental Considerations in Procurement",
+      "Social Considerations in Procurement",
+      "Governance Considerations in Procurement"
+    ],
+    "qualitative": {
+      "Environmental Considerations in Procurement": [
+        "We aim to lower our carbon footprint by choosing suppliers dedicated to reducing greenhouse gas emissions in their operations and logistics.",
+        "We strive to source sustainable materials by selecting products that are renewable, recycled, or have a minimal environmental impact to promote resource conservation.",
+        "We seek to minimize waste generation by collaborating with suppliers to develop strategies that reduce packaging and encourage recycling practices.",
+        "We are committed to conserving natural resources by partnering with suppliers that demonstrate responsible use of water, energy, and raw materials in their production processes.",
+        "We prioritize suppliers with recognized environmental certifications, such as ISO 14001, to ensure they adhere to sustainability best practices.",
+        "We aim to conduct routine sustainability assessments to evaluate suppliers’ environmental practices, ensuring alignment with our green procurement standards.",
+        "We seek to embed environmental awareness within procurement teams by third party online training, staff to recognize xand prioritize sustainable sourcing opportunities.",
+        "Our focus is to integrate energy, waste, and GHG considerations into procurement decisions, favoring suppliers committed to emission reductions.",
+        "We strive to prioritize suppliers using eco-friendly materials and adopting circular economy practices across their operations.",
+        "We will ensure compliance with environmental regulations by engaging only with suppliers adhering to applicable standards and sustainability benchmarks."
+      ],
+      "Social Considerations in Procurement": [
+        "We are dedicated to ensuring fair labor practices by collaborating with suppliers who provide fair wages, maintain safe working conditions, and promote non-discrimination in their workplaces.",
+        "We aim to contribute to community development by sourcing from suppliers that invest in local communities and positively impact their social and economic growth.",
+        "We focus on promoting diversity and inclusion by engaging a wide range of suppliers, including minority-owned and women-owned businesses, to foster inclusivity in our supply chain.",
+        "We advocate for human rights by ensuring that all suppliers adhere to international human rights standards and protect their workforce's rights.",
+        "We seek to enhance training and development opportunities by partnering with suppliers to offer skill-building initiatives that improve career prospects for their employees.",
+        "We aim to establish a supplier diversity program that increases engagement with underrepresented businesses, including minority- and women-owned enterprises.",
+        "We focus on evaluating suppliers based on fair labor practices and fostering a safe, equitable work environment within their operations.",
+        "We strive to embed social responsibility principles into procurement training to empower our staff to make ethical and impactful sourcing decisions.",
+        "We are committed to engaging suppliers with community outreach programs that align with our values of social inclusion and development.",
+        "Our objective is to ensure compliance with labor and human rights standards by prioritizing partnerships with socially responsible suppliers."
+      ],
+      "Governance Considerations in Procurement": [
+        "We strive to guarantee compliance with regulations by implementing robust processes that ensure all procurement activities align with relevant laws, regulations, and industry standards.",
+        "We endeavor to adopt effective risk management practices to identify and assess risks associated with suppliers, including their financial stability, reputational risks, and ethical considerations.",
+        "We are committed to establishing accountability measures by creating frameworks for monitoring supplier performance and ensuring responsibility for ethical and sustainable practices.",
+        "We focus on engaging stakeholders in the procurement process to gather insights and feedback, thereby enhancing governance and decision-making.",
+        "We aim to introduce a supplier performance scorecard to monitor compliance, ethical practices, and sustainability commitments within the supply chain.",
+        "We seek to integrate governance frameworks into procurement decisions by assessing suppliers' adherence to anti-corruption laws and ethical guidelines.",
+        "Our focus is to train employees involved in procurement on governance and compliance requirements to promote responsible sourcing.",
+        "We strive to ensure transparency across procurement operations by engaging only with suppliers demonstrating integrity and accountability.",
+        "We aim to enforce compliance with legal and governance standards by regularly auditing procurement activities for adherence to ethical practices."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Issues Associated with Procurement",
+        "targets": [
+          {
+            "target": "We aim to reduce the carbon footprint of suppliers, including local ones, by 20% by 2026, by prioritizing vendors actively pursuing greenhouse gas reduction initiatives.",
+            "baseline": "2022 baseline",
+            "deadline": "2026"
+          },
+          {
+            "target": "Increase the number of suppliers with recognized environmental certifications (e.g., ISO 14001) by 30% to align with our environmental objectives.",
+            "baseline": "baseline year 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure 100% of procurement staff are trained on sustainable procurement practices to identify suppliers committed to reducing their environmental impact.",
+            "baseline": "baseline year 2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Social Issues Associated with Procurement",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with fair labor practices, such as fair wages and safe working conditions, among suppliers.",
+            "baseline": "2022 baseline",
+            "deadline": "2026"
+          },
+          {
+            "target": "Increase procurement from minority-owned and women-owned businesses by 40% through the implementation of a supplier diversity program.",
+            "baseline": "2022 baseline",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure 100% of suppliers hold social responsibility certifications (e.g., SA8000, Fair Trade) to promote ethical labor practices.",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "Train 100% of procurement staff on social responsibility, labor standards, and diversity practices to promote equitable and inclusive sourcing.",
+            "baseline": "2022 baseline",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Governance Issues Associated with Procurement",
+        "targets": [
+          {
+            "target": "Achieve 100% supplier compliance with our governance policies through regular audits and adherence to ethical and legal standards.",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure all procurement staff receive governance training, with a 100% increase in staff trained compared to the 2022 baseline.",
+            "baseline": "2022 baseline",
+            "deadline": "2026"
+          },
+          {
+            "target": "Enhance procurement oversight by auditing 100% of critical suppliers annually to ensure compliance with governance and risk management frameworks.",
+            "baseline": "",
+            "deadline": "annually by 2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors / Executive Leadership",
+        "duty": "The Board will endorse and oversee the execution of the Sustainable Procurement Policy."
+      },
+      {
+        "role": "Board of Directors / Executive Leadership",
+        "duty": "They will establish long-term sustainability objectives related to procurement and ensure alignment with the company’s strategic priorities."
+      },
+      {
+        "role": "Board of Directors / Executive Leadership",
+        "duty": "The Board will regularly monitor procurement performance and provide updates on progress toward sustainability goals."
+      },
+      {
+        "role": "Board of Directors / Executive Leadership",
+        "duty": "They will ensure resources are allocated appropriately to support sustainable procurement initiatives."
+      },
+      {
+        "role": "Sustainability Director",
+        "duty": "The Sustainability Director will spearhead the creation, implementation, and monitoring of sustainable procurement initiatives."
+      },
+      {
+        "role": "Sustainability Director",
+        "duty": "They will ensure compliance with sustainability regulations, standards, and company policies."
+      },
+      {
+        "role": "Sustainability Director",
+        "duty": "The Director will compile performance reports, coordinate audits, and provide updates to senior leadership."
+      },
+      {
+        "role": "Sustainability Director",
+        "duty": "Engaging with external partners, such as sustainability organizations and certification bodies, will be a priority to enhance our sustainable procurement practices."
+      },
+      {
+        "role": "Sustainability Director",
+        "duty": "They will organize training sessions to educate internal teams on sustainability trends and practices."
+      },
+      {
+        "role": "Procurement and Supply Chain Leaders",
+        "duty": "Procurement and supply chain leaders will ensure supplier compliance with sustainability standards while promoting ethical procurement practices across the supply chain."
+      },
+      {
+        "role": "Procurement and Supply Chain Leaders",
+        "duty": "They will prioritize sourcing from suppliers committed to sustainable and ethical practices."
+      },
+      {
+        "role": "Procurement and Supply Chain Leaders",
+        "duty": "Collaboration with suppliers will be crucial to align sustainability objectives and foster a culture of environmental and social responsibility."
+      },
+      {
+        "role": "Procurement and Supply Chain Leaders",
+        "duty": "They will assess suppliers' sustainability performance regularly and provide feedback for continuous improvement."
+      },
+      {
+        "role": "Research and Development / Product Design Teams",
+        "duty": "R&D and product design teams will incorporate sustainability principles into the development of new products and packaging solutions."
+      },
+      {
+        "role": "Research and Development / Product Design Teams",
+        "duty": "They will evaluate environmental impacts and advocate for the use of sustainable materials in product design."
+      },
+      {
+        "role": "Research and Development / Product Design Teams",
+        "duty": "Working closely with the Sustainability Director will ensure alignment between product offerings and sustainability goals."
+      },
+      {
+        "role": "Research and Development / Product Design Teams",
+        "duty": "They will conduct lifecycle assessments to identify opportunities for reducing the environmental footprint of products."
+      },
+      {
+        "role": "Quality Assurance Teams",
+        "duty": "Quality assurance teams will monitor sustainability-related performance metrics concerning product quality and supplier practices."
+      },
+      {
+        "role": "Quality Assurance Teams",
+        "duty": "Regular audits will be conducted to ensure adherence to sustainability standards."
+      },
+      {
+        "role": "Quality Assurance Teams",
+        "duty": "Identifying opportunities for enhancing sustainability performance through innovative practices and process improvements will be a key focus."
+      },
+      {
+        "role": "Quality Assurance Teams",
+        "duty": "They will provide training for employees on quality control measures related to sustainability."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "The Human Resources department will lead initiatives to raise awareness and provide training on sustainable procurement practices and initiatives."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Integrating sustainability responsibilities into employee performance evaluations will be emphasized."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "HR will promote employee participation in sustainability initiatives and offer training on ethical sourcing practices."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "They will establish recognition programs for employees who actively contribute to sustainable procurement efforts."
+      },
+      {
+        "role": "Marketing and Communications Department",
+        "duty": "The marketing department will advocate for the company’s sustainable procurement efforts through various internal and external communication channels."
+      },
+      {
+        "role": "Marketing and Communications Department",
+        "duty": "Campaigns will be developed to motivate customers and stakeholders to embrace sustainable procurement practices."
+      },
+      {
+        "role": "Marketing and Communications Department",
+        "duty": "Regular updates on sustainability initiatives and performance will be shared to ensure transparency."
+      },
+      {
+        "role": "Marketing and Communications Department",
+        "duty": "Collaborating with external partners to promote sustainable products and practices will be prioritized."
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are expected to comply with the sustainable procurement practices and guidelines established in this policy."
+      },
+      {
+        "role": "Employees",
+        "duty": "Involvement in sustainability initiatives, such as ethical sourcing and supplier engagement, is encouraged."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees should report any sustainability-related concerns or compliance issues through the established reporting mechanism."
+      },
+      {
+        "role": "Employees",
+        "duty": "Opportunities for personal development in sustainability practices will be provided to empower employees."
+      },
+      {
+        "role": "Contractors and External Partners",
+        "duty": "Contractors and external partners must adhere to the sustainability standards and practices set forth by the company."
+      },
+      {
+        "role": "Contractors and External Partners",
+        "duty": "Supporting the company's sustainability goals through responsible operational practices is essential."
+      },
+      {
+        "role": "Contractors and External Partners",
+        "duty": "Collaboration with relevant teams will be necessary to ensure effective management of sustainable procurement practices."
+      },
+      {
+        "role": "Contractors and External Partners",
+        "duty": "Regular evaluations will be conducted to assess their compliance with our sustainability expectations."
+      }
+    ],
+    "monitoring": "We will produce annual reports that outline our sustainable procurement performance, measuring progress against defined metrics such as environmental outcomes, supplier engagement in sustainability practices, and community impact.\n\nThese reports will be made available to stakeholders—including employees, clients, suppliers, and investors—to promote transparency and responsibility.\n\nContinuous monitoring will be established to ensure alignment with our sustainability goals and to identify areas needing enhancement.\n\nRoutine compliance audits will be conducted to ensure that our sustainability standards, corporate policies, and operational objectives are consistently met.\n\nThe outcomes of these audits will be evaluated by senior management, who will implement necessary corrective actions for any deficiencies identified.\n\nA third-party evaluation may be utilized to provide an objective assessment of our compliance with sustainability practices.\n\nWe will actively engage stakeholders through surveys, consultations, and focus groups to gather feedback on our sustainable procurement practices and discover potential improvements.\n\nCollaborating with stakeholders will allow us to remain aligned with prevailing sustainability trends and industry best practices.\n\nWe will create dedicated forums or workshops for stakeholders to discuss sustainability challenges and opportunities in procurement.\n\nA dedicated system will be established for employees, clients, and external stakeholders to report sustainability-related issues confidentially, without fear of repercussions.\n\nAll concerns will be thoroughly investigated, and appropriate measures will be implemented to address the issues raised.\n\nRegular communication will be provided to stakeholders regarding the outcomes of reported concerns to reinforce trust in the mechanism.\n\nWe will publicly disclose essential sustainability metrics, accomplishments, and challenges on an annual basis through sustainability reports or dedicated sections of our website.\n\nThis commitment to openness underscores our resolve to maintain accountability regarding sustainable procurement practices.\n\nWe will also engage in public forums or events to share our sustainability journey and gather feedback from the community.\n\nGovernance of this policy ensures accountability at all levels, with the Board of Directors providing strategic oversight and establishing sustainability goals. Executive leadership integrates sustainability into procurement processes and monitors performance, while the Sustainability Director ensures regulatory compliance and reports progress. Department heads are responsible for implementing sustainable practices within their areas, promoting responsible sourcing and supplier engagement. Employees and contractors contribute to sustainability initiatives and provide feedback on improvements. Suppliers and partners collaborate to meet sustainability targets and uphold ethical practices. Regular audits, stakeholder engagement, and transparent reporting facilitate continuous improvement and alignment with evolving sustainability standards. Periodic reviews of governance structures will ensure their effectiveness in supporting sustainable procurement objectives.",
+    "reviewMechanism": "We are resolutely committed to the continuous enhancement of our sustainable procurement practices by establishing measurable objectives, monitoring progress, and identifying areas for improvement. Regular compliance audits, performance evaluations, and stakeholder feedback will ensure that our practices remain effective and responsive to evolving sustainability trends. Additionally, benchmarking against industry best practices will inspire innovation and bolster our sustainable procurement initiatives.\n\nCollaborative projects with suppliers will be pursued to develop innovative solutions that address sustainability challenges.\n\nThis policy will undergo an annual review to adapt to evolving regulations, technological advancements, and sustainability trends. Training programs and awareness initiatives will cultivate a culture of respect for sustainability among employees, empowering them to contribute actively to our sustainable procurement goals. Through collaboration with partners and suppliers, we aim to develop innovative solutions that bolster environmental stewardship and responsible sourcing throughout our supply chain.\n\nWe will leverage technology and data analytics to optimize procurement processes and enhance sustainability performance.\n\nThe Sustainability Director will conduct an annual review of this policy to assess its effectiveness and relevance. This process will encompass compliance assessments, performance metric analysis, and the identification of enhancement opportunities. Findings and recommendations will be documented and presented to management for consideration and implementation."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Living wage/4. Responsible Procurement Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Living wage/4. Responsible Procurement Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 20680,
+  "parsedAt": "2026-09-11T07:10:35.047Z"
+}

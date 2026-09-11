@@ -1,0 +1,163 @@
+{
+  "id": "sustainable-procurement-rpk",
+  "name": "RPK",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "RPK India Pvt. Ltd.",
+      "industry": "",
+      "site": "Plot No. 1A, IndoGlobal Industrial Park Gat No. 1122(P), 1129(P), 1140, 1295, 1296 Shriwal, Maharashtra 412801, India",
+      "sites": [
+        {
+          "location": "RPK India Pvt. Ltd.",
+          "address": "Plot No. 1A, IndoGlobal Industrial Park Gat No. 1122(P), 1129(P), 1140, 1295, 1296 Shriwal, Maharashtra 412801, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 1A, IndoGlobal Industrial Park Gat No. 1122(P), 1129(P), 1140, 1295, 1296 Shriwal, Maharashtra 412801, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At RPK India Pvt. Ltd., we recognize that sustainable procurement is fundamental to our commitment to environmental stewardship, social responsibility, and ethical business practices. Our Sustainable Procurement Policy guides our sourcing decisions, emphasizing the selection of suppliers who share our dedication to sustainability, ethical labor practices, and environmental conservation. This policy reflects our dedication to minimizing environmental footprint, supporting fair labor standards, fostering innovation, and building long-term, transparent, and responsible relationships with suppliers. Through this policy, we strive to enhance long-term value for our stakeholders while fostering a sustainable supply chain that aligns with our corporate values and global sustainability goals.",
+      "declaration": "RPK India Pvt. Ltd. is committed to responsible, ethical, and sustainable procurement. We pledge to source materials and services from suppliers who uphold ethical labor practices, environmental stewardship, and social responsibility. Our procurement decisions are guided by principles that prioritize the reduction of environmental impact, the promotion of resource efficiency, and the support of fair-trade practices. All employees, suppliers, and partners are expected to comply with laws, environmental standards, and human rights principles, integrating sustainability into procurement decisions.",
+      "scope": "This policy applies to all sourcing and procurement activities at RPK, including raw materials, components, and services. It extends to the entire supply chain, covering suppliers, contractors, and business partners and ensures responsible practices related to labor, environment, compliance, and human rights across all regions of operation."
+    },
+    "focusAreas": [
+      "Environmentally Responsible sourcing: Prioritize procurement of materials and services that minimize environmental impact, focusing on resource efficiency, waste reduction, and adherence to environmental regulations.",
+      "Supplier Social Responsibility Framework: Engage with suppliers who uphold ethical labor practices, ensure fair wages, and provide safe working conditions, aligning with international labor standards.",
+      "Ethical Supplier Conduct: Establish clear expectations for suppliers regarding business integrity, anti-corruption measures, and compliance with legal and ethical standards.",
+      "Local & Inclusive Sourcing: Support local economies by sourcing materials and services locally where possible, promoting inclusivity and contributing to community development."
+    ],
+    "qualitative": {
+      "Environmentally Responsible sourcing": [
+        "Promote environmentally sustainable procurement by partnering with suppliers who demonstrate measurable environmental responsibility.",
+        "Encourage continuous improvement in supplier environmental performance through training and collaboration.",
+        "Emphasize sourcing from suppliers with recognized environmental compliance certifications."
+      ],
+      "Supplier Social Responsibility Framework": [
+        "Promote awareness and compliance with anti-child labor and anti-forced labor practices across the supply chain.",
+        "Guarantee that all suppliers adhere to fair labor practices, including the prohibition of child and forced labor, provision of fair wages, and assurance of safe working environments.",
+        "Support supplier initiatives that improve workforce welfare and social accountability."
+      ],
+      "Ethical Supplier Conduct": [
+        "Ensure suppliers comply with all applicable laws, regulations, and anti-corruption standards.",
+        "Encourage transparency and accountability in supplier business operations.",
+        "Promote a culture of ethical behavior and responsible decision-making among all supply chain partners."
+      ],
+      "Local & Inclusive Sourcing": [
+        "Increase engagement with community-based and small-scale suppliers.",
+        "Support diversity and inclusion by integrating underrepresented suppliers into the supply base.",
+        "Foster long-term partnerships with suppliers who demonstrate social and environmental responsibility."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible sourcing",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers compliance with RPK India Pvt. Ltd. code of conduct policy for suppliers",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase procurement from suppliers with recognized ISO certification / public disclosure & commitment on ESG by 50%",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility Framework",
+        "targets": [
+          {
+            "target": "Ensure 100% of key suppliers undergo annual social responsibility audits",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% verified alignment with international labor and human rights standards among suppliers",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Conduct",
+        "targets": [
+          {
+            "target": "Reduce supplier-related compliance issues by 50% through enhanced training and engagement",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase local sourcing by 30%",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 10% of supplier base includes small or diverse businesses",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Procurement Team is responsible for integrating responsible sourcing principles into supplier selection, contract terms, and ongoing evaluations."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Sustainability Team monitors supplier performance on environmental, social, and ethical parameters and supports improvement initiatives."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Suppliers are expected to comply with RPK India Pvt. Ltd. sourcing standards, provide required disclosures, and cooperate during audits and assessments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Senior Management ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees involved in sourcing or supplier engagement",
+        "duty": "All Employees involved in sourcing or supplier engagement are expected to uphold this policy and report any violations or concerns through established channels."
+      }
+    ],
+    "monitoring": "Supplier compliance will be assessed through regular audits, sustainability scorecards, and feedback mechanisms. Findings from these reviews will inform corrective actions, supplier engagement plans, and policy updates.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed annually by Procurement officer to ensure its continued relevance, effectiveness, and alignment with evolving regulatory requirements, international best practices, and business priorities. The review process will be overseen by the Procurement and Sustainability Teams, in coordination with relevant department heads.\n\nAny significant updates or improvements to the policy will be approved by senior management and communicated across the supply chain."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/RPK/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/RPK/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 8646,
+  "parsedAt": "2026-09-11T07:41:03.249Z"
+}

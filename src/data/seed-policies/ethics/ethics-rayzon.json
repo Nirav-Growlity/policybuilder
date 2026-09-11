@@ -1,0 +1,460 @@
+{
+  "id": "ethics-rayzon",
+  "name": "Rayzon",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Intregrity and Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Rayzon Solar Ltd.",
+      "industry": "",
+      "site": "Block No. 105, B/H Aron Pipes, B/H Hariya Talav, Kim Mandvi Road, Karanj, Surat, Gujarat -394110, India.",
+      "sites": [
+        {
+          "location": "Factory – 1 (Kim site)",
+          "address": "Block No. 105, B/H Aron Pipes, B/H Hariya Talav, Kim Mandvi Road, Karanj, Surat, Gujarat -394110, India.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Block No. 105, B/H Aron Pipes, B/H Hariya Talav, Kim Mandvi Road, Karanj, Surat, Gujarat -394110, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At the core of Rayzon Soalr success lies a steadfast commitment to integrity, transparency, and ethical conduct. This Integrity and Ethics Policy establishes the foundational principles that guide our actions, decisions, and interactions with employees, customers, suppliers, and other stakeholders. We believe that upholding the highest ethical standards is essential not only for legal compliance but also for fostering trust, respect, and long-term sustainability in all aspects of our business.\n\nThis policy sets clear expectations for ethical behavior and accountability across all levels of the organization. It serves as a roadmap for employees to navigate complex situations, resolve conflicts of interest, and ensure fairness and honesty. By embedding integrity into our culture, we strive to create a positive work environment that supports responsible business practices and strengthens our reputation in the marketplace.",
+      "declaration": "To promote a culture of honesty, fairness, and transparency in all company operations.\n\nTo ensure compliance with all applicable laws, regulations, and industry standards.\n\nTo prevent corruption, bribery, and unethical practices within the organization.\n\nTo provide clear guidance on ethical decision-making and conflict of interest management.\n\nTo encourage open communication and reporting of unethical behavior without fear of retaliation.\n\nTo protect the company’s reputation and maintain stakeholder trust.\n\nTo establish responsibilities and accountability for ethical conduct at all organizational levels.\n\nTo support continuous training and awareness on integrity and ethics for all employees.\n\nTo guide relationships with customers, suppliers, partners, and the community based on ethical principles.\n\nTo foster a workplace environment where respect, inclusivity, and ethical behavior are prioritized.\n\nOur company is firmly committed to conducting its business with integrity, honesty, and transparency. We uphold the highest ethical standards across all operations, ensuring that our decisions and actions reflect fairness, accountability, and compliance with applicable laws and industry norms. We believe that ethical conduct is the foundation of sustainable success and trust with all our stakeholders — including employees, clients, partners, and regulatory bodies.\n\nThis Integrity and Ethics Policy serves as a guide for expected behavior across the organization. It reinforces our zero-tolerance approach to bribery, corruption, fraud, data misuse, and conflicts of interest. Every employee, contractor, and business partner is expected to act with integrity, report misconduct, and contribute to a culture of ethical responsibility and compliance.",
+      "scope": "This policy applies to Factory – 1 (Kim site) of Rayzon Solar Ltd., including all employees, departments, contractors, subcontracted workers, directors, and governance bodies operating within this site. It also extends to any affiliated units or functions directly linked to Factory – 1, as applicable."
+    },
+    "focusAreas": [
+      "Bribery and Corrupt Practices Control",
+      "Data Protection and Cybersecurity",
+      "Anti-Money Laundering (AML) Compliance",
+      "Conflict of Interest",
+      "Financial Misconduct and Fraud Control",
+      "Insider Trading",
+      "Employee Conduct Expectations"
+    ],
+    "qualitative": {
+      "Bribery and Corrupt Practices Control": [
+        "Rayzon Solar committed to maintaining a zero-tolerance approach toward bribery, corruption, facilitation payments, and unethical inducements across all business operations.",
+        "We aim to ensure that all employees, contractors, and key stakeholders receive clear guidance through a well-disseminated Anti-Bribery and Corruption (ABC) policy, regularly reviewed and updated.",
+        "We strive to deliver periodic training and awareness sessions on anti-bribery laws, ethical conduct, and conflict-of-interest protocols to all employees.",
+        "We plan to implement robust internal controls and due diligence procedures for all high-risk transactions, third-party engagements, and procurement activities.",
+        "We pledge to maintain a confidential and accessible reporting channel that empowers employees and partners to report suspected cases of corruption without fear of retaliation.",
+        "To support transparency, we commit to regular monitoring of financial records, gift registers, and hospitality logs to detect and deter unethical practices.",
+        "Rayzon Solar determined to align its anti-bribery measures with the UK Bribery Act, FCPA, and relevant Indian anti-corruption laws, reinforcing our global compliance efforts.",
+        "Rayzon Solar committed to conducting periodic audits and assessments of key suppliers and third-party partners to ensure adherence to our anti-bribery standards, ethical conduct expectations, and relevant legal obligations."
+      ],
+      "Data Protection and Cybersecurity": [
+        "Rayzon Solar commits to implementing robust data security frameworks to safeguard third-party and employee data against unauthorized access, loss, or misuse.",
+        "We aim to regularly update and patch all critical systems and software to minimize exposure to cybersecurity vulnerabilities and threats.",
+        "The company strives to provide ongoing cybersecurity awareness and data privacy training to all employees to promote a strong culture of digital responsibility.",
+        "We plan to conduct regular internal audits and security assessments to identify risks, detect anomalies, and ensure compliance with data protection regulations such as the IT Act, 2000.",
+        "Rayzon Solar committed to maintaining secure data storage, backup, and recovery systems to protect the integrity, availability, and confidentiality of sensitive information.",
+        "We ensure that all personal and third-party data is collected, processed, and retained strictly for legitimate business purposes, in accordance with applicable legal and contractual obligations.",
+        "We aim to adopt data encryption, multi-factor authentication, and secure access protocols across all systems that handle confidential or sensitive information."
+      ],
+      "Anti-Money Laundering (AML) Compliance": [
+        "We are committed to maintaining strict internal controls and financial transparency to detect and prevent any attempts to disguise the origin of illicit funds.",
+        "Rayzon Solar Ltd. aims to regularly train employees in relevant departments on anti-money laundering (AML) laws, red flags, and due diligence procedures to ensure informed and vigilant decision-making.",
+        "We strive to conduct comprehensive Know Your Customer (KYC) and Know Your Business (KYB) checks before entering into partnerships, contracts, or major financial transactions.",
+        "The company plans to regularly update its AML policy and risk-based approach in line with changes in national regulations and FATF (Financial Action Task Force) recommendations.",
+        "We ensure that all high-risk financial transactions are subject to enhanced due diligence and are escalated for approval and documentation by senior compliance officers.",
+        "We aim to maintain secure records of all financial transactions and third-party engagements for audit and regulatory purposes, as per applicable AML laws.",
+        "Rayzon Solar Ltd. seeks to engage only with financial institutions and intermediaries that are compliant with global AML standards to ensure end-to-end financial integrity.",
+        "We strive to promptly report any suspicious activity to relevant regulatory authorities in accordance with the Prevention of Money Laundering Act (PMLA), 2002."
+      ],
+      "Conflict of Interest": [
+        "Rayzon Solar Ltd. commits to fostering a transparent working environment by mandating all employees to disclose any personal, financial, or professional interests that could conflict with their official responsibilities.",
+        "We aim to implement a formal annual declaration process for employees in sensitive roles to proactively identify and mitigate potential conflicts of interest.",
+        "The company strives to raise awareness through regular training sessions on conflict of interest scenarios, ethical decision-making, and reporting obligations across all departments.",
+        "To promote integrity in business operations, we ensure that all procurement, recruitment, and partnership decisions undergo independent reviews to avoid biased or self-serving actions.",
+        "Rayzon Solar Ltd. is committed to embedding clear conflict of interest clauses in employee contracts, vendor agreements, and board governance documentation.",
+        "We plan to establish a confidential reporting channel for employees to raise concerns about perceived or actual conflicts without fear of retaliation.",
+        "To uphold fairness, any individual found to be in a conflict of interest situation will be recused from decision-making processes related to the matter.",
+        "We continuously monitor high-risk functions and periodically audit conflict disclosures to ensure policy effectiveness and ethical compliance.",
+        "We aim to integrate conflict of interest assessments as a core part of our due diligence process for hiring, promotions, and third-party engagements."
+      ],
+      "Financial Misconduct and Fraud Control": [
+        "We are committed to fostering a culture of integrity and ethical conduct by implementing zero-tolerance policies against all forms of fraud and intentional deception.",
+        "Rayzon Solar Ltd. aims to continuously educate all employees, contractors, and stakeholders on anti-fraud practices through regular awareness programs and compliance training.",
+        "We plan to strengthen our internal control mechanisms to detect, report, and prevent fraudulent activities across all operational areas and financial transactions.",
+        "To safeguard company assets and stakeholder trust, we strive to conduct periodic audits and risk assessments that identify fraud-prone processes and ensure accountability.",
+        "We are working to establish confidential and secure whistleblower channels that allow employees to report suspected fraud without fear of retaliation.",
+        "Rayzon Solar Ltd. ensures that disciplinary actions for confirmed fraud cases are enforced promptly, consistently, and in accordance with company policy and applicable laws.",
+        "We plan to regularly review and update our anti-fraud procedures and internal policies to stay aligned with evolving legal requirements and industry standards.",
+        "We aim to promote transparency and fairness in all business dealings by integrating ethical screening during procurement, partnerships, and financial decision-making."
+      ],
+      "Insider Trading": [
+        "Rayzon Solar Ltd. is committed to upholding market integrity by implementing a robust Insider Trading Policy that prohibits the use of unpublished price-sensitive information (UPSI) for personal or financial gain.",
+        "We aim to conduct periodic training sessions for all designated employees and directors to ensure a thorough understanding of insider trading regulations and ethical boundaries.",
+        "The company ensures that access to UPSI is strictly restricted and controlled through secure systems and role-based access protocols to prevent data misuse.",
+        "We strive to foster a culture of compliance and ethical responsibility by mandating pre-clearance for all trades by insiders and maintaining accurate trading records.",
+        "Rayzon Solar Ltd. continuously monitors trading activities through internal audits and surveillance mechanisms to detect and prevent potential violations.",
+        "We plan to regularly update our Insider Trading Code in line with SEBI (Prohibition of Insider Trading) Regulations, 2015, and other applicable legal amendments."
+      ],
+      "Employee Conduct Expectations": [
+        "All team members are required to demonstrate unwavering integrity, transparency, and professionalism, aligning with the company’s ethical principles.",
+        "Conduct yourself with honesty, fairness, and mutual respect in every professional setting.",
+        "Communicate openly and sincerely with colleagues, clients, and stakeholders.",
+        "Own up to your decisions and take accountability for your actions.",
+        "Approach disagreements and workplace challenges with maturity and respect.",
+        "Reveal any personal or external relationships that could influence your work decisions.",
+        "Refrain from engaging in activities where your personal interests may override company objectives.",
+        "Do not misuse company data, systems, or networks for private gain.",
+        "Step back from any business dealings where impartiality could be compromised.",
+        "Protect confidential and proprietary information from unauthorized access or disclosure.",
+        "Use sensitive information only for legitimate business needs.",
+        "Be discreet when handling internal discussions in public or digital spaces.",
+        "Do not accept or offer bribes, facilitation payments, or any undue advantage.",
+        "Adhere to internal gift and hospitality guidelines.",
+        "Ensure that business decisions are made solely on merit and fairness.",
+        "Report any unethical offers or corrupt behavior through the designated channels.",
+        "Represent our services truthfully and avoid misleading statements.",
+        "Maintain transparency in pricing, terms, and service commitments.",
+        "Fulfill promises and honor contractual obligations to clients and partners.",
+        "Compete ethically—never misrepresent or defame other businesses.",
+        "Speak up about suspected violations using approved reporting systems.",
+        "Participate openly in ethics inquiries and investigations.",
+        "Safeguard the identity and dignity of those who report in good faith.",
+        "Retaliation or threats against whistleblowers are strictly prohibited.",
+        "Ensure financial documents are truthful, timely, and appropriately maintained.",
+        "Submit only valid and well-documented reimbursement claims.",
+        "Follow financial protocols and internal control measures at all times.",
+        "Alert relevant teams of any suspicious or irregular financial activity.",
+        "Treat everyone in the workplace with dignity, fairness, and inclusion.",
+        "Avoid any behavior that may be discriminatory, harassing, or exclusionary.",
+        "Celebrate workplace diversity and different perspectives.",
+        "Contribute to a respectful and supportive work environment.",
+        "Issuance of a verbal or written warning.",
+        "Mandatory participation in ethics or compliance refresher courses.",
+        "Closer supervision for a set period.",
+        "Formal written reprimand added to personnel file.",
+        "Possible temporary suspension or job reassignment.",
+        "Compulsory advanced ethics training.",
+        "Immediate suspension pending full investigation.",
+        "Termination of employment.",
+        "Referral to law enforcement or regulatory bodies where required.",
+        "Repayment of any losses caused to the company.",
+        "Strict disciplinary action, including possible termination.",
+        "Legal action in response to retaliation against whistleblowers or those cooperating with investigations.",
+        "Disciplinary consequences such as warnings or suspension.",
+        "Required participation in ethics training to reinforce the obligation to report misconduct."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Bribery and Corrupt Practices Control",
+        "targets": [
+          {
+            "target": "We aim to maintain zero cases of bribery and corrupt practices, consistent with our record over the past five years, through FY 2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We plan to provide annual anti-bribery training to 100% of employees in finance, procurement, and leadership roles.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Our target is to complete third-party corruption risk assessments for 100% of new vendors and partners by FY 2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We strive to review and update our anti-bribery policy annually, aligned with global standards.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to implement a gifts and hospitality register across 100% of departments by FY 2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target 100% compliance with local and international anti-corruption laws, including the Prevention of Corruption Act, 1988 and the UK Bribery Act.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Data Protection and Cybersecurity",
+        "targets": [
+          {
+            "target": "We aim to implement multi-factor authentication across 100% of digital platforms by FY 2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "Our goal is to train 100% of employees annually on data protection and phishing risks.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We plan to conduct bi-annual cybersecurity audits each year.",
+            "baseline": "FY 2022–23",
+            "deadline": "Each year"
+          },
+          {
+            "target": "Our target is to achieve 100% encryption of confidential employee and customer data by FY 2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We strive to maintain zero data breaches or cybersecurity incidents, as achieved in the past years.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to install intrusion detection systems on 100% of critical servers by FY 2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We target 100% compliance with the Information Technology Act, 2000 and GDPR-equivalent standards where applicable.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering (AML) Compliance",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% of finance and compliance staff complete AML training annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Our target is to conduct KYC verification for 100% of clients and high-value partners by FY 2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We commit to filing 100% of applicable Suspicious Transaction Reports (STRs) within statutory timelines.",
+            "baseline": "FY 2022–23",
+            "deadline": "Within statutory timelines"
+          },
+          {
+            "target": "Our goal is to screen 100% of vendors and clients against sanctioned lists quarterly.",
+            "baseline": "FY 2022–23",
+            "deadline": "Quarterly"
+          },
+          {
+            "target": "We strive to conduct internal AML audits bi-annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "Bi-annually"
+          },
+          {
+            "target": "We target 100% compliance with the Prevention of Money Laundering Act (PMLA), 2002 and global AML standards.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "We aim to achieve 100% annual disclosure compliance from all employees in sensitive roles.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Our goal is to deliver conflict-of-interest training to 100% of employees every two years.",
+            "baseline": "FY 2022–23",
+            "deadline": "Every two years"
+          },
+          {
+            "target": "We strive to maintain zero unresolved or unreported conflicts of interest, in line with our clean record in recent years.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "We plan to maintain a centralized conflict disclosure register, updated quarterly.",
+            "baseline": "FY 2022–23",
+            "deadline": "Quarterly"
+          },
+          {
+            "target": "We target 100% compliance with ethical standards under the Companies Act, 2013 and ILO recommendations on transparency.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Financial Misconduct and Fraud Control",
+        "targets": [
+          {
+            "target": "We aim to provide fraud awareness training annually to 100% of employees.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Our target is to implement fraud detection controls across 100% of financial systems by FY 2027–28.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We plan to conduct quarterly internal audits with fraud detection as a core component, beginning FY 2025–26.",
+            "baseline": "FY 2022–23",
+            "deadline": "Beginning FY 2025–26; quarterly"
+          },
+          {
+            "target": "We strive to maintain zero substantiated cases of financial fraud, consistent with past performance.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          },
+          {
+            "target": "Our goal is to resolve 100% of fraud complaints within 30 working days.",
+            "baseline": "FY 2022–23",
+            "deadline": "Within 30 working days"
+          },
+          {
+            "target": "We target 100% compliance with the Indian Penal Code, 1860, and SEBI anti-fraud regulations..",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Insider Trading",
+        "targets": [
+          {
+            "target": "We aim to achieve 100% training coverage on insider trading policies for employees in key roles annually.",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Our goal is to review and update our Insider Trading Policy every financial year.",
+            "baseline": "FY 2022–23",
+            "deadline": "Every financial year"
+          },
+          {
+            "target": "We plan to conduct quarterly monitoring of sensitive transactions and trading activities.",
+            "baseline": "FY 2022–23",
+            "deadline": "Quarterly"
+          },
+          {
+            "target": "We strive to maintain zero reported or confirmed incidents of insider trading, as achieved in past five years.",
+            "baseline": "FY 2022–23",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Provides executive oversight of ethical performance and policy alignment"
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensures resources are allocated for ethical risk mitigation"
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Reviews compliance outcomes and approves corrective actions"
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Leads the implementation of ethics protocols and reporting mechanisms"
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Oversees internal investigations and policy violations"
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Coordinates audits and regulatory compliance tracking"
+      },
+      {
+        "role": "Head of Legal",
+        "duty": "Ensures policy alignment with local and international legal frameworks"
+      },
+      {
+        "role": "Head of Legal",
+        "duty": "Provides legal counsel on ethical dilemmas and misconduct cases"
+      },
+      {
+        "role": "Head of Legal",
+        "duty": "Leads legal proceedings on regulatory violations"
+      },
+      {
+        "role": "Head of Internal Audit",
+        "duty": "Conducts regular audits of financial integrity and fraud risks"
+      },
+      {
+        "role": "Head of Internal Audit",
+        "duty": "Monitors adherence to internal controls and reporting standards"
+      },
+      {
+        "role": "Head of Internal Audit",
+        "duty": "Provides audit reports and recommendations to the board"
+      },
+      {
+        "role": "IT Security Manager",
+        "duty": "Implements data protection and cybersecurity controls"
+      },
+      {
+        "role": "IT Security Manager",
+        "duty": "Monitors system access, breaches, and insider threats"
+      },
+      {
+        "role": "IT Security Manager",
+        "duty": "Reports non-compliance with digital integrity practices"
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Conducts supplier due diligence and ethical risk assessments"
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Ensures vendors comply with anti-corruption and fair business practices"
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Terminates engagement with non-compliant suppliers"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Abide by the code of ethics in daily work"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Promptly report any misconduct, conflicts of interest, or suspicious activity"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Participate in regular ethics and compliance training"
+      }
+    ],
+    "monitoring": "The Managing Director holds overarching responsibility for ensuring the proper implementation of this Integrity and Ethics Policy. Day-to-day oversight is delegated to the Ethics and Compliance Steering Committee, which consists of leaders from the Legal, Compliance, Internal Audit, and IT departments. This committee is responsible for embedding ethical standards and integrity principles across all business units and ensuring strict adherence to internal codes as well as applicable national and international laws.\n\nOur governance model mandates periodic internal reviews, audits of financial and data practices, and assessments of employee conduct covering areas such as anti-corruption, cybersecurity, data privacy, and conflict of interest. Ethical risk assessments are integrated into hiring, procurement, data access, and finance operations to ensure a zero-tolerance stance on misconduct. These assessments are conducted quarterly and findings are reported to senior leadership for transparency and continuous improvement.\n\nInternal Monitoring: The Compliance Office compiles monthly reports detailing ethics training, whistleblower cases, and policy breaches. A quarterly compliance dashboard is presented to executive leadership for review.\n\nPublic Disclosure: An annual Ethics and Compliance Summary Report is published, highlighting performance in anti-corruption, data protection, financial ethics, and legal compliance areas.\n\nIssue Escalation: Any critical violation or suspected unlawful conduct is escalated immediately to the Managing Director and the Ethics & Compliance Steering Committee for investigation and remedial action.\n\nThe organization is committed to the continuous strengthening of its integrity framework by incorporating regulatory updates, audit findings, and feedback from employees and external stakeholders. The goal is to foster a culture of transparency, fairness, and accountability that reinforces trust and ethical excellence. We strive to benchmark against industry-leading practices, implement corrective actions promptly, promote ethical awareness through regular training, and build robust systems that deter misconduct and encourage responsible behaviour at all organizational levels.",
+    "reviewMechanism": "This Integrity and Ethics Policy is effective from the date approved by the General Manager and will remain valid until superseded or revised. A comprehensive policy review will take place at least annually or sooner as necessary due to regulatory or operational changes.\n\nOur organization remains steadfast in its commitment to uphold the highest ethical labor standards and promote human rights across all operations, ensuring fair, responsible, and respectful treatment of every employee, contractor, and business partner."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Rayzon/3. Intregrity and Ethics Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Rayzon/3. Intregrity and Ethics Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 25991,
+  "parsedAt": "2026-09-11T07:14:13.968Z"
+}

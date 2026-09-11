@@ -1,0 +1,218 @@
+{
+  "id": "sustainable-procurement-advanced-supply-chain-group-ltd",
+  "name": "Advanced Supply Chain Group Ltd",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement roadmap (updated).docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Advanced Supply Chain Group Limited (ASCG)",
+      "industry": "",
+      "site": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ",
+      "sites": [
+        {
+          "location": "Head Office – Bradford (J26), United Kingdom",
+          "address": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Corby (Site 1), United Kingdom",
+          "address": "Units 1–3, Eismann Way, Corby, Northamptonshire, NN17 5ZB",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Corby (Site 2), United Kingdom",
+          "address": "Hunters Point, Brakey Road, Corby, Northamptonshire, NN17 5JE",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Sheffield, United Kingdom",
+          "address": "PLP Smithywood, 6 Cowley Way, Sheffield, S35 1QP",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG International, UAE",
+          "address": "Al Fattan Plaza, Airport Road, Office 712, Al Garhoud, Dubai, UAE",
+          "primaryFunction": ""
+        },
+        {
+          "location": "ASCG Germany – Nettetal, Germany",
+          "address": "Herrenpfad-Süd 40, 41334 Nettetal, Deutschland",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Unit 4, Interchange Way, Oakenshaw, Bradford, BD12 7AZ"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Advanced Supply Chain Group Limited (ASCG), a Reconomy Group company, recognises its procurement practices as a key lever for achieving circular, ethical, and sustainable impact. As part of our group-wide commitment to responsible business, this roadmap has been developed in alignment with Reconomy’s Sustainability strategy, Sustainable Procurement Policy, Supplier Charter and ISO 20400 guidelines.",
+      "declaration": "This roadmap outlines our sustainable procurement focus areas, measurable targets, and stakeholder responsibilities to ensure that our supply chain contributes positively to environmental protection, social progress, and ethical governance.",
+      "scope": "This roadmap applies to all ASCG employees, suppliers, contractors, and subcontractors involved in sourcing, purchasing, and supply chain management.\n\nThe Sustainable Procurement Roadmap covers all ASCG operational, administrative, and strategic activities across the following sites and regions:"
+    },
+    "focusAreas": [
+      "Environmental Responsibility in Procurement",
+      "Supplier Social Practices",
+      "Local & Inclusive Sourcing",
+      "General Procurement team targets"
+    ],
+    "qualitative": {
+      "Environmental Responsibility in Procurement": [],
+      "Supplier Social Practices": [],
+      "Local & Inclusive Sourcing": [
+        "Prioritise suppliers that demonstrate support for inclusive hiring or apprenticeship programs."
+      ],
+      "General Procurement team targets": [
+        "Ensure all supplier contracts remain updated with new legislative and regulatory requirements"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Responsibility in Procurement",
+        "targets": [
+          {
+            "target": "Achieve 100% integration of environmental criteria in all high-impact tenders by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Achieve 100% integration of defined environmental criteria in all high-impact tenders by 2028, including requirements on carbon footprint reporting, carbon reduction targets, use of renewable energy, sustainable packaging, waste management practices, and adherence to relevant environmental certifications (e.g., ISO 14001, FSC, BREEAM).",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 50% of tier 1 suppliers have a certified environmental management system (e.g., ISO 14001) by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct Environmental, Social and Governance audits on 100% of high-risk suppliers annually by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Reduce the volume of virgin materials used by 10% within all operations related purchases by 2028",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of tier-one supplier’s sign ASCG’s Supplier Sustainability Charter by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct Environmental, Social and Governance audits on 100% of high-risk suppliers annually by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Assess supply chain credentials and certifications of all high-risk suppliers by 2028",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Achieve 100% compliance with the UK Modern Slavery Act 2015 by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 100% of key suppliers commit to adhering to international standards such as the UN Guiding Principles on Business and Human Rights, ILO Core Conventions by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase SME and VCSE supplier spend by 2% by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Source 30% of site-based goods and services from within a 50-mile radius by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Source 30% of site-based goods and services, such as packaging materials, pallets, warehouse consumables, cleaning services, and maintenance contractors, from within a 50-mile radius by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "General Procurement team targets",
+        "targets": [
+          {
+            "target": "Ensure 100% of tier 1 ASCG suppliers complete ESG supplier self-assessments and undergo desk-based audits by 2028 to promote ethical and sustainable supply chain practices.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Require 100% of suppliers to sign the ASCG Supplier Code of Conduct by 2028 as a condition of continued engagement.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 100% of tier-one suppliers agree the Supplier Sustainability Charter by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 100% of procurement team are trained (minimum 9 hours per annum) in Sustainable Procurement by 2028",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Head of Sustainability and Procurement",
+        "duty": "Lead the Sustainable Procurement roadmap review process, including all relevant stakeholders."
+      },
+      {
+        "role": "Board of directors",
+        "duty": "Approve all findings and recommendations from the Sustainable Procurement roadmap review process."
+      },
+      {
+        "role": "ASCG’s Executive leadership team",
+        "duty": "Formally endorse this roadmap."
+      }
+    ],
+    "monitoring": "Sustainable procurement expectations are communicated through tender documentation, scorecards, and partnership agreements.\n\nThis roadmap is communicated to employees via publication on the ASCG’s intranet\n\nStakeholder engagement sessions, discussions and feedback based on decisions to contract with suppliers",
+    "reviewMechanism": "This roadmap will be reviewed on an annual basis to reflect the dynamic nature of sustainability, acknowledging its evolution in both regulatory requirements and academic understanding. The roadmap will be reviewed sooner if:\n\nNew legislative or ethical supply chain risks\n\nAudit outcomes or stakeholder feedback\n\nUpdates to Reconomy’s sustainability framework\n\nThe Sustainable Procurement roadmap review process will be led by the Head of Sustainability and Procurement, including all relevant stakeholders, and all findings and recommendations will be submitted to the board of directors to be approved."
+  },
+  "sourcePath": "Policies - Kenal/Advanced Supply Chain Group Ltd/Sustainable Procurement roadmap (updated).docx",
+  "sourceFiles": [
+    "Policies - Kenal/Advanced Supply Chain Group Ltd/Sustainable Procurement roadmap (updated).docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 6731,
+  "parsedAt": "2026-09-11T07:18:25.549Z"
+}

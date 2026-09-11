@@ -1,0 +1,161 @@
+{
+  "id": "living-wage-indutch",
+  "name": "Indutch",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Indutch Composites Technology Pvt Ltd",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Indutch Composites Technology Pvt Ltd..",
+          "address": "Plot No. 187/P/1B-1, Waghodia Industrial Estate, Pipalia - Waghodia Road, Vadodara - 391760, Gujarat, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Indutch Composites Technology Pvt Ltd",
+          "address": "9-2E, 9-1A, 12-2, 11-6, 11-4B, 11-3A, 11-3, 10-2, Zuvve Chelika Village, 30/P2, P4, P5, 30/3, Padmavati Kandriga Village, Sullurpeta (M), S.P.S.R. Nellore – 524121, Andhra Pradesh - 524121",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Indutch Composites Technology Pvt Ltd",
+          "address": "Plot/Survey No. 16P1 Shed-2, Village: Chandrapura, Taluka: Halol, Dist. Panchmahal - 389350",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Indutch Composites Technology Pvt Ltd, we are dedicated to upholding the highest standards of ethical business practices and social responsibility. Our commitment to fostering a workplace environment characterized by fairness, equality, and sustainability is reflected in our Living Wage Policy.",
+      "declaration": "At Indutch Composites Technology Pvt Ltd, we are firmly committed to ensuring that all individuals engaged in our operations receive compensation that not only meets legal requirements but also reflects our core values. Our Living Wage Policy is designed to guarantee a standard of living that aligns with principles of decency and well-being, promoting transparency, equality, and collaboration with stakeholders.",
+      "scope": "This policy is exclusively applicable to the operations of Indutch Composites Technology Pvt Ltd, covering all employees, workers, subcontractors, and other stakeholders directly affiliated with our site."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Our Living Wage Policy is designed to guarantee a standard of living that aligns with principles of decency and well-being.\n\nWe utilize a comprehensive methodology to calculate the living wage for our employees based on location and family size.\n\nIncorporate real-life examples of essential expenses, such as housing, food, transportation, healthcare, and childcare, into our living wage calculation methodology to illustrate how it impacts employees' livelihoods.\n\nThe living wage calculation methodology will incorporate a wider range of essential expenses and factors affecting employees' standard of living.\n\nWe offer a minimum base salary that meets or exceeds of the calculated living wage.\n\nOur commitment is to ensuring that all employees and contract workers receive a living wage that supports a decent standard of living for themselves and their families.\n\nWe conduct an annual review considering changes in labour laws, economic factors, and workforce needs."
+    },
+    "focusAreas": [
+      "Living Wage Calculation & Regular Review",
+      "Transparent Communication",
+      "Competitive Base Salary & Benefits",
+      "Workforce Development"
+    ],
+    "qualitative": {
+      "Living Wage Calculation & Regular Review": [
+        "Incorporate real-life examples of essential expenses, such as housing, food, transportation, healthcare, and childcare, into our living wage calculation methodology to illustrate how it impacts employees' livelihoods.",
+        "Utilize case studies or employee testimonials during regular reviews to highlight the importance of adjusting our living wage policy to reflect changes in the economic landscape."
+      ],
+      "Transparent Communication": [],
+      "Competitive Base Salary & Benefits": [
+        "Provide specific examples of how our base salary and benefits package compare to industry standards and how they contribute to employees' overall compensation and well-being.",
+        "Highlight success stories of employees who have benefited from our competitive base salary and benefits package, including career advancement opportunities and financial security for themselves and their families."
+      ],
+      "Workforce Development": [
+        "Showcase success stories of employees who have participated in our training and development programs and have experienced career growth and increased earning potential as a result.",
+        "Use examples of employees who have successfully transitioned into higher-paying roles within the company after participating in our workforce development initiatives."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Calculation & Regular Review",
+        "targets": [
+          {
+            "target": "Increase the comprehensiveness of our living wage calculation methodology by 20% by 2025 compared to the baseline year 2022, incorporating a wider range of essential expenses and factors affecting employees' standard of living.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 30% improvement in the accuracy of our living wage calculation methodology by 2025 compared to the baseline year 2022, ensuring that it reflects changes in the economic landscape more effectively.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Transparent Communication",
+        "targets": [
+          {
+            "target": "Achieve a 20% increase in employee satisfaction with the transparency and clarity of communication regarding the living wage policy by 2025 compared to the baseline year 2022, as indicated by employee engagement surveys.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Competitive Base Salary & Benefits",
+        "targets": [
+          {
+            "target": "Increase the percentage of employees receiving a base salary that meets or exceeds the calculated living wage by 30% by 2025 compared to the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 15% improvement in the competitiveness of our benefits package compared to industry standards by 2025 compared to the baseline year 2022, as assessed through benchmarking studies.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Workforce Development",
+        "targets": [
+          {
+            "target": "Increase employee participation in training and development programs by 40% by 2025 compared to the baseline year 2022, measured through attendance records and completion rates.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Financial Officer (CFO)",
+        "duty": "Allocate sufficient budget to support living wage payments across all roles, approve wage structures that comply with living wage standards."
+      },
+      {
+        "role": "Head of Human resource",
+        "duty": "Oversees the implementation of this policy, ensures compliance with Environment regulations, and reports on progress, The report will include the outcomes of wage reviews, pay equity audits, and supplier compliance assessments."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "implementation of this policy, ensuring alignment with the company's overall strategy."
+      },
+      {
+        "role": "Employee",
+        "duty": "Receive annual training on Living Wage responsibilities and are encouraged to contribute ideas for improving performance and Corporate with companies Policy."
+      }
+    ],
+    "monitoring": "At Indutch Composites Technology Pvt Ltd, we are dedicated to transparency, accountability, and continuous improvement in integrating Living Wage principles within our operations. To achieve this, we have established an extensive reporting mechanism, including:\n\nMonitoring and Audit Reports: Regular reports from internal monitoring, audits, and external assessments will evaluate our performance regarding our living wage policy and identify areas for improvement.\n\nFeedback Mechanisms: Surveys and feedback mechanisms will gather perspectives from our workforce on the impact and effectiveness of our living wage policy, enabling us to assess satisfaction levels and tailor strategies for continuous improvement.\n\nAdvocacy via Feedback: Empowering individuals to voice concerns and offer suggestions through feedback mechanisms actively engages our workforce in the pursuit of an equitable living wage policy, contributing to positive transformations in organizational practices.",
+    "reviewMechanism": "To uphold the effectiveness of our Living Wage Policy, we conduct an annual review considering changes in labour laws, economic factors, and workforce needs. The Compensation and Benefits Oversight Team leads this assessment, recommending adjustments or enhancements to align with emerging regulations and best practices.\n\nThe Head of HR Manager at Indutch Pvt Ltd is responsible for the implementation, oversight, and review of this policy. The Living Wage Policy will be reviewed annually, and any updates will be communicated as necessary."
+  },
+  "sourcePath": "Policies - Kenal/Indutch/5. Living Wage Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Indutch/5. Living Wage Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 8952,
+  "parsedAt": "2026-09-11T07:24:18.742Z"
+}

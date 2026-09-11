@@ -1,0 +1,257 @@
+{
+  "id": "ethics-lps-bossard",
+  "name": "LPS Bossard",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethical Conduct Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "LPS Bossard Pvt. Ltd.",
+      "industry": "",
+      "site": "N.H.10 Delhi Road Kehrawar Bye Pass, Kila No 103//6/2/2,15/2,16/1/2 Khewat276, Khatauni 302, The Sampla, Rohtak 124021, Haryana",
+      "sites": [
+        {
+          "location": "Rohak -Corporate office",
+          "address": "N.H.10 Delhi Road Kehrawar Bye Pass, Kila No 103//6/2/2,15/2,16/1/2 Khewat276, Khatauni 302, The Sampla, Rohtak 124021, Haryana",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "New Delhi- Registered Office",
+          "address": "A-1/134, Safdarjung Enclave, New Delhi - 110029",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Pune- Sales & Marketing & Warehouse",
+          "address": "LPS Bossard Pvt. Ltd.  - Pune​ 303, Gulmohar Center Point, 34/A/5, Wadgaonsheri, Pune - 411014, Maharashtra.",
+          "primaryFunction": "Sales & Marketing & Warehouse"
+        },
+        {
+          "location": "Vadodara- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd.  - Vadodara​ 433/2/2 Dashrath, Opp. GSFC Township Gate, Vadodara - 391750, Gujarat.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Bengaluru- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd.  - Bangalore​ 2nd floor, Novel MSR Building Subbiah Reddy colony, Marathahalli village, Bengaluru - 560037, Karnataka.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Hyderabad- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd. - Hyderabad Aditya Trade center, 7-1-618, No: 211, 2nd Floor, Ameerpet, Hyderabad - 500038, Telangana.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Chennai- Sales & Marketing & Warehouse",
+          "address": "Survey No. 331/6, 331/5, 331/1B, Village No. 71, Mettukuppam Road, Vanagaram, Maduravoyal Taluk, Near Porur, Tambaram Toll gate, Chennai - 600095, Tamil Nadu.",
+          "primaryFunction": "Sales & Marketing & Warehouse"
+        },
+        {
+          "location": "Haridwar- Sales & Marketing",
+          "address": "PS Bossard Pvt. Ltd. – Haridwar​ D43, 1st Floor, Shibalik Nagar, Haridwar - 249403, Uttarakhand.",
+          "primaryFunction": "Sales & Marketing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "N.H.10 Delhi Road Kehrawar Bye Pass, Kila No 103//6/2/2,15/2,16/1/2 Khewat276, Khatauni 302, The Sampla, Rohtak 124021, Haryana"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At LPS Bossard Pvt. Ltd., we are committed to conducting our business with the highest standards of integrity, transparency, and ethical behavior. Our reputation is built on scientific excellence, customer trust, and ethical responsibility. Our Ethical Conduct Policy serves as the cornerstone of our corporate culture, guiding our interactions with employees, customers, suppliers, and the communities we serve. We uphold principles of fairness, accountability, and respect, ensuring that our business practices reflect our dedication to ethical excellence and social responsibility. We are dedicated to ensuring that all employees and stakeholders act with fairness, honesty, and respect while complying with applicable laws, regulations, and industry best practices. Our goal is to create an environment where ethical behavior, mutual respect, and responsible business practices are an integral part of everyday operations.",
+      "declaration": "LPS Bossard Pvt. Ltd. is committed to maintaining the highest standards of ethical conduct in all aspects of our operations. We pledge to act with integrity, transparency, and accountability in our interactions with employees, customers, suppliers, and the communities we serve. Our ethical principles guide our decision-making processes, ensuring compliance with applicable laws and regulations, and fostering a culture of trust and respect. We are dedicated to continuous improvement, promoting ethical awareness among our stakeholders, and addressing any concerns promptly and effectively. Through this policy, we aim to reinforce our commitment to ethical excellence and corporate responsibility.",
+      "scope": "This Ethical Conduct Policy applies to all employees, contractors, and partners of LPS Bossard Pvt. Ltd. It covers all aspects of our operations, including engineering, production, quality assurance, supply chain management, and customer relations. The policy extends to our interactions with external stakeholders, ensuring that our business practices reflect our commitment to integrity, transparency, and ethical excellence.\n\nThis policy is applicable to:"
+    },
+    "focusAreas": [
+      "Preventing Corruption: Strictly prohibit bribery, kickbacks, and any form of corrupt practices through clear policies, training, and enforcement.",
+      "Conflict of Interest: Require disclosure and proper handling of personal or professional interests that may influence company decisions.",
+      "Fraud: Prevent and detect fraud through internal controls, regular audits, and secure reporting mechanisms.",
+      "Anti-Money Laundering: Comply with AML laws by verifying transactions, monitoring for suspicious activity, and training employees on red flags.",
+      "Information Security: Safeguard sensitive data through robust cybersecurity measures, access controls, and regular employee awareness programs.",
+      "Responsible Use of Company Assets: Use company resources efficiently and solely for legitimate business purposes, avoiding waste or misuse."
+    ],
+    "qualitative": {
+      "Preventing Corruption": [
+        "Carry out due diligence specific to anti-bribery and corruption when evaluating mergers and acquisitions and joint ventures.",
+        "Maintain a zero-tolerance policy for bribery and corruption and ensure strict compliance with anti-corruption laws and company policies.",
+        "Promote a culture of integrity where employees understand the importance of rejecting bribery and unethical practices."
+      ],
+      "Conflict of Interest": [
+        "Promote a culture of transparency, encouraging employees to avoid situations where personal interests could conflict with business interests.",
+        "Ensure implementation of clear procedures for handling potential conflicts of interest fairly and impartially.",
+        "Ensure that company decisions are fair, impartial, and free from personal or financial bias.",
+        "Maintain transparency in dealings with suppliers, clients, and partners by documenting and managing conflicts appropriately."
+      ],
+      "Fraud": [
+        "Strengthen organizational trust by establishing a zero-tolerance approach to fraudulent behavior.",
+        "Encourage vigilance and accountability among employees in detecting unusual or suspicious activities."
+      ],
+      "Anti-Money Laundering": [
+        "Promote awareness of AML responsibilities among employees, emphasizing vigilance in transactions.",
+        "Ensure adherence to legal and regulatory requirements to prevent misuse of company operations for illegal purposes.",
+        "Build a culture of ethical compliance where all suspicious activity is reported and addressed promptly."
+      ],
+      "Information Security": [
+        "Enforce and maintain stringent information security protocols to protect sensitive business, employee, and client data from unauthorized access, breaches, and cyber threats.",
+        "Ensure continuous improvement of security measures in line with emerging threats and regulatory requirements."
+      ],
+      "Responsible Use of Company Assets": [
+        "Promote efficient and ethical use of company resources through awareness campaigns.",
+        "Implement clear guidelines for personal use of company assets to avoid conflicts."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Preventing Corruption",
+        "targets": [
+          {
+            "target": "Ensure inclusion and compliance of anti-bribery clauses into 100% of supplier and partner contracts by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Train 100% of procurement and finance teams on anti-corruption policies annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain zero instances of corruption reported in annual audits.",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Achieve 100% completion rate of Conflict-of-Interest disclosures by all managers by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of new hires complete conflict of interest orientation within the first month of joining.",
+            "baseline": "2022",
+            "deadline": "within the first month of joining"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "To maintain the implementation of a fraud detection mechanism to monitor and flag suspicious activities, and hence achieve 0% of undetected fraudulent transactions by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct fraud risk assessments across all functions annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain zero fraud - related incidents annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering (AML)",
+        "targets": [
+          {
+            "target": "100% of relevant employees complete AML training by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Zero non-compliance incidents with AML regulations till year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "100% of employees complete information security awareness training by year 2025, covering data privacy, phishing prevention, and risk mitigation strategies.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 100% compliance with information security audits conducted across all departments annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain zero incidents of unauthorized data access and breaches through improved controls by year 2025.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Use of Company Assets",
+        "targets": [
+          {
+            "target": "Conduct quarterly asset usage reviews to ensure 100% resources are used only for business purposes.",
+            "baseline": "2022",
+            "deadline": "quarterly"
+          },
+          {
+            "target": "Maintain 100% compliance with asset usage policies by year 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Ensures implementation of ethical policies and compliance with anti-corruption, conflict of interest, fraud, and information security standards."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Oversees employee training on ethical conduct, including anti-corruption and conflict-of-interest policies."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Safeguards company and customer data through secure information systems."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts audits to assess policy compliance and identify risks."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Reviews ethical performance, allocates resources, and promotes a culture of integrity."
+      }
+    ],
+    "monitoring": "At LPS Bossard Pvt. Ltd., Ethical Conduct practices are continuously enhanced to stay aligned with evolving regulations, industry standards, and emerging risks. A strong culture of integrity is embedded across all levels of the organization, ensuring transparency, accountability, and regulatory compliance.\n\nOngoing Training & Awareness: Employees undergo annual training on key ethical topics, including anti-corruption, conflict of interest, fraud prevention, anti-money laundering (AML), and information security.\n\nRisk Assessments & Independent Audits: Regular internal reviews and third-party audits help identify potential ethical risks, evaluate policy effectiveness, and drive corrective actions.\n\nCollaborative Compliance Engagement: Active participation in industry forums and regulatory dialogues supports alignment with best practices and ethical norms.\n\nAdvanced Monitoring & Reporting Systems: Secure digital tools and automated monitoring mechanisms strengthen fraud detection, compliance management, and incident reporting.\n\nFeedback & Transparency Culture: Open channels for feedback empower employees and stakeholders to share concerns or suggestions, driving continual ethical improvements.\n\nLPS Bossard Pvt. Ltd. maintains a zero-tolerance approach toward violations of its Ethical Conduct Policy. All suspected or confirmed breaches will be handled seriously, fairly, and in a timely manner to uphold the company’s values of integrity, transparency, and accountability.\n\nReporting Violations: Employees are strongly encouraged to report any unethical or suspicious behaviour through appropriate channels, including direct supervisors, the internal compliance team, or the company’s confidential whistleblower system, which allows anonymous submissions without fear of retaliation.\n\nInvestigation Process: All reported concerns will be promptly investigated by designated personnel or third-party experts, ensuring impartiality and strict confidentiality throughout the process. The identity of whistleblowers will be protected unless disclosure is legally required.\n\nCorrective Actions: When a violation is confirmed, the company will take appropriate disciplinary action based on the severity of the offense. This may include formal warnings, mandatory retraining, suspension, reassignment, or termination of employment. For example, an employee found accepting unauthorized payments from vendors may face immediate dismissal and legal prosecution.\n\nProtection from Retaliation: Retaliation in any form against whistleblowers or those cooperating with an investigation is strictly prohibited. Any individual found engaging in retaliatory behaviour will be subject to disciplinary consequences.",
+    "reviewMechanism": "The Ethical Conduct Policy is reviewed annually by the Compliance Officer to ensure its continued relevance, effectiveness, and alignment with legal and regulatory requirements. Updates may be made based on audit findings, changes in applicable laws, employee feedback, or evolving business practices. Any revisions are communicated to all employees, and necessary training is provided to ensure awareness and compliance."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/LPS Bossard/3. Ethical Conduct Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/LPS Bossard/3. Ethical Conduct Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 15788,
+  "parsedAt": "2026-09-11T07:39:33.293Z"
+}

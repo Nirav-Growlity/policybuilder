@@ -1,0 +1,206 @@
+{
+  "id": "renewsys",
+  "name": "RenewSys India Pvt. Ltd.",
+  "industry": "Solar Energy Manufacturing and Supply Chain",
+  "summary": "Parsed Environmental Policy from 1. Green Policy (1).docx.",
+  "tagline": "Sustainable sourcing for a low-carbon future.",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "RenewSys India Pvt Ltd.",
+      "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "site": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "sites": [
+        {
+          "location": "RenewSys India Pvt. Ltd.",
+          "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Plot No. E-141, Additional Patalganga MIDC Industrial Area, Village - Karade Khurd, Taluka Panvel, District Raigad, Maharashtra - 410 206, India.",
+          "address": "Plot No. E-141, Additional Patalganga MIDC Industrial Area, Village - Karade Khurd, Taluka Panvel, District Raigad, Maharashtra - 410 206, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Plot No. 6, Survey # 114/P, Srinagar Village, Maheshwaram Mandal, Rangareddy Dist. - 501 359,Telangana, India.",
+          "address": "Plot No. 6, Survey # 114/P, Srinagar Village, Maheshwaram Mandal, Rangareddy Dist. - 501 359,Telangana, India.",
+          "primaryFunction": ""
+        }
+      ]
+    },
+    "standards": [
+      "Supplier Code of Conduct"
+    ],
+    "declaration": {
+      "preface": "RenewSys India Pvt Ltd. is committed to delivering excellence in its products and services while reducing the environmental footprint of its operations. This is achieved by minimizing energy consumption, promoting the sustainable use of resources, and maintaining a clean and safe workplace. We ensure compliance with local and national laws on pollution, waste disposal, and resource conservation while offering products that contribute to environmental preservation.",
+      "declaration": "Our commitment extends to measuring our carbon footprint, reducing energy use, preventing biodiversity harm, and ensuring the responsible management of End-of-Life (EOL) materials. We aim for continuous improvement in environmental performance through teamwork and training while complying with all statutory and regulatory requirements. Our baseline year for evaluating and tracking progress in the environmental areas is 2022-23.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Greenhouse gas emissions and energy consumption",
+      "Water conservation",
+      "Biodiversity preservation",
+      "Air pollution and emission reduction",
+      "Waste management and recycling",
+      "Product lifecycle and PV module durability",
+      "Packaging efficiency",
+      "Product safety, disposal and recycling information",
+      "Environmental advocacy and community engagement"
+    ],
+    "qualitative": {
+      "Greenhouse gas emissions and energy consumption": [
+        "Implement a energy management strategy to continuously reduce energy consumption and greenhouse gas emissions across the production process.",
+        "Enhance the energy efficiency of PV modules, ensuring that they provide optimal performance and energy output over their entire lifecycle."
+      ],
+      "Water conservation": [
+        "To reduce overall water consumption in equipment cleaning, by implementing cleaning systems combined with low-flow nozzles.",
+        "Implement effective closed-loop water systems in our processes and hence reduce water consumption by 20% till  Year 2029-30."
+      ],
+      "Biodiversity preservation": [
+        "To implement buffer zones around the manufacturing area facilities.",
+        "Organize annual reforestation programs to plant trees around our premises by 2029-30, focusing on 10% areas with degraded land."
+      ],
+      "Air pollution and emission reduction": [
+        "Continuously monitor the efficiency of emission-reduction systems to minimize air pollution from the manufacturing process."
+      ],
+      "Waste management and recycling": [
+        "To minimize waste generation by 20% by 2029-30, through implementation of lean manufacturing principles to eliminate inefficiencies.",
+        "Adopt software solutions for tracking raw material usage, ensuring compliance and minimizing waste."
+      ],
+      "Product lifecycle and PV module durability": [
+        "Extend the average lifespan of PV modules by 15% by 2029-30 through the integration of advanced materials and improved durability testing."
+      ],
+      "Packaging efficiency": [
+        "To collaborate with suppliers to enhance packaging efficiency, by minimizing material use and promoting recyclable or reusable packaging solutions."
+      ],
+      "Product safety, disposal and recycling information": [
+        "Implement and maintain a labeling system to guide customers on proper disposal or recycling of products.",
+        "Regularly update product manuals with clear safety guidelines and visual aids for end-users.",
+        "Provide access to an online portal containing comprehensive information on the safe use and installation of PV modules, ensuring 100% customer reach by year 2029-30."
+      ],
+      "Environmental advocacy and community engagement": [
+        "Actively engage in environmental advocacy efforts, partnering with local and global organizations to promote sustainability in the solar energy industry."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Greenhouse gas emissions and energy consumption",
+        "targets": [
+          {
+            "target": "Reduce greenhouse gas emissions from production by 10% by 2029-30, through renewable energy adoption and efficiency improvements.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Water conservation",
+        "targets": [
+          {
+            "target": "Implement effective closed-loop water systems in our processes and hence reduce water consumption by 20% till  Year 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity preservation",
+        "targets": [
+          {
+            "target": "Organize annual reforestation programs to plant trees around our premises by 2029-30, focusing on 10% areas with degraded land.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Air pollution and emission reduction",
+        "targets": [
+          {
+            "target": "Reduce emissions from production by 25% per unit of output by 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Waste management and recycling",
+        "targets": [
+          {
+            "target": "To minimize waste generation by 20% by 2029-30, through implementation of lean manufacturing principles to eliminate inefficiencies.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          },
+          {
+            "target": "Achieve 15% recycling rate of PV modules at the end of their life by 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Product lifecycle and PV module durability",
+        "targets": [
+          {
+            "target": "Extend the average lifespan of PV modules by 15% by 2029-30 through the integration of advanced materials and improved durability testing.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Product safety, disposal and recycling information",
+        "targets": [
+          {
+            "target": "Provide access to an online portal containing comprehensive information on the safe use and installation of PV modules, ensuring 100% customer reach by year 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental advocacy and community engagement",
+        "targets": [
+          {
+            "target": "Support 3 local community projects aimed at increasing solar adoption and environmental education by 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      13
+    ],
+    "responsibilities": [
+      {
+        "role": "Environmental Manager",
+        "duty": "The Environmental Manager will be responsible for compiling and preparing the annual environmental performance report."
+      },
+      {
+        "role": "Health and Safety Officer",
+        "duty": "The Health and Safety Officer for environmental health metrics."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "The Sustainability Team for data on resource use and waste management."
+      },
+      {
+        "role": "Community Engagement Officer",
+        "duty": "The Community Engagement Officer for reporting on biodiversity and community initiatives."
+      }
+    ],
+    "monitoring": "At RenewSys India Pvt. Ltd., we are committed to transparency and accountability in the implementation of our Green Policy. The progress of our environmental initiatives will be reported annually through a comprehensive performance report and will include key performance indicators (KPIs) aligned with the quantitative and qualitative targets set forth in this policy, providing a clear evaluation of our achievements, challenges, and areas for improvement.\n\nOur reporting will cover a wide range of topics, including:\n\nReduction of carbon emissions and energy consumption\n\nWaste management and recycling efforts\n\nWater conservation measures\n\nBiodiversity preservation initiatives\n\nCompliance with environmental regulations and standards\n\nAdditionally, the results of our annual environmental audits, employee engagement initiatives, and sustainability assessments will be published by the Environmental Department and made available to all stakeholders, including employees, local communities, suppliers, and external partners, ensuring that they are informed and engaged in our commitment to environmental sustainability.",
+    "reviewMechanism": "Our Green Policy will be reviewed annually by the Environmental Compliance Manager to ensure accountability and transparency. This review will assess compliance with the policy, evaluate its effectiveness, and incorporate feedback from audits and stakeholders. Necessary updates will be made to maintain alignment with best practices, legal requirements, and the organization’s sustainability objectives."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Renewsys/1. Green Policy (1).docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Renewsys/1. Green Policy (1).docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 6474,
+  "parsedAt": "2026-09-11T07:40:15.893Z"
+}

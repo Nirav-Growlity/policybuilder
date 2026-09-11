@@ -15,7 +15,7 @@ const FOLDERS = [
     'd:\\Policy PoC\\Kenal - EcoVadis Policies',
     'd:\\Policy PoC\\KUSH'
 ];
-const OUTPUT_DIR = 'd:\\Policy PoC\\src\\data\\seed-policies';
+const OUTPUT_DIR = 'd:\\Policy PoC\\src\\data\\seed-policies\\environmental';
 
 async function extractTextFromDoc(filePath) {
     const ext = path.extname(filePath).toLowerCase();

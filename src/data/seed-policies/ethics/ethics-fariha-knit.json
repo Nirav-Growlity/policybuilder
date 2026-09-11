@@ -1,0 +1,209 @@
+{
+  "id": "ethics-fariha-knit",
+  "name": "Fariha Knit",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethical Conduct Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Fariha Knit Tex Ltd.",
+      "industry": "",
+      "site": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh.",
+      "sites": [
+        {
+          "location": "Fariha Knit Tex Ltd.",
+          "address": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh.",
+          "primaryFunction": "Textile manufacturing"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Baroibogh, Enayet Nagar, Fatullah, 1400 Narayanganj, Dhaka, Bangladesh."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Fariha Knit Tex Ltd. is committed to conducting its business with the highest standards of integrity, ethics, transparency, and accountability. As a responsible textile manufacturer, we believe that ethical business practices are fundamental to sustainable growth, stakeholder trust, and long-term business success. This Ethical Conduct Policy establishes the principles and standards that guide the conduct of our directors, employees, contractors, suppliers, and other business partners in all business activities.\n\nThe Company maintains a zero-tolerance approach towards bribery, corruption, fraud, money laundering, conflicts of interest, anti-competitive behaviour, and any other form of unethical or unlawful conduct. We are committed to complying with all applicable legal requirements, internationally recognized ethical standards, and customer expectations while fostering a culture of honesty, fairness, respect, and responsible decision-making",
+      "declaration": "Fariha Knit Tex Ltd. is committed to conduct all business operations in an ethical, honest, and transparent manner. This policy establishes our standards for preventing unethical practices such as corruption, bribery, fraud, conflict of interest, and money laundering, both within our company and across our supply chain.\n\nAll employees, suppliers, and stakeholders are expected to adhere to these ethical principles and act with integrity in all their interactions. Compliance with applicable laws and regulations is a fundamental requirement, and any violations of this policy should be promptly reported through the designated channels. By enforcing this policy, Fariha ensures that ethical conduct is embedded into the fabric of our operations, fostering an environment of trust, accountability, and responsible business practices. Year 2022 serves as the baseline year to assess the effectiveness and progress of our ethical conduct measures.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of Interest",
+      "Fraud",
+      "Money Laundering",
+      "Anti-Competitive Practices",
+      "Responsible Information Management",
+      "Whistleblowing & Non-Retaliation"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "To maintain zero-tolerance approach to corruption in all business dealings, ensuring compliance with national and international anti-corruption laws and foster a corporate culture of integrity where employees and suppliers actively reject corrupt practices.",
+        "Ensure continuous training for employees on identifying and preventing corruption-related activities."
+      ],
+      "Conflict of Interest": [
+        "Promote transparency in all procurement and business relationships to prevent conflicts of interest and implement a clear, accessible process for reporting and addressing potential conflicts of interest."
+      ],
+      "Fraud": [
+        "To maintain an independent internal audit team to review fraud investigations and ensure accountability and transparency in resolving cases.",
+        "Regularly review and update fraud prevention training materials to ensure they address emerging risks and trends in the industry."
+      ],
+      "Money Laundering": [
+        "To continuously implement measures to identify, prevent, and report suspicious transactions related to money laundering activities.",
+        "Ensure all employees and suppliers comply with applicable anti-money laundering (AML) regulations and practices by conducting regular AML audits and assessments"
+      ],
+      "Anti-Competitive Practices": [
+        "To promote fair competition and ensure that all business practices are in line with anti-trust laws.",
+        "Encourage transparency in pricing, procurement, and market strategies to avoid unfair competitive practices."
+      ],
+      "Responsible Information Management": [
+        "Promote a company-wide culture of data security awareness and responsibility.",
+        "Continuously monitor and improve data protection practices to safeguard sensitive information.",
+        "Maintain zero data breaches and security incidents by implementing robust security protocols and preventive measures, ensuring continuous improvement."
+      ],
+      "Whistleblowing & Non-Retaliation": [
+        "Maintain a confidential, accessible whistleblowing channel through which employees, workers, and suppliers can report suspected violations without fear of retaliation.",
+        "Strictly prohibit retaliation of any kind against anyone who reports a genuine concern in good faith, with disciplinary action for any employee found retaliating."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Maintain a 100% compliance rate in anti-corruption audits across all departments by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "To implement anti-corruption due diligence procedures for 100% of high-risk business partners by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure 100% of key employees and suppliers sign conflict of interest declarations by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 100% of new hires complete conflict-of-interest training within their first month of employment.",
+            "baseline": "2022",
+            "deadline": "Within their first month of employment"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Achieve a target of 90% employee participation in fraud prevention training by 2030, ensuring employees are equipped with the knowledge to detect and prevent fraudulent activities.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "To implement fraud prevention and detection controls across 100% of high-risk business processes by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Ensure that 100% of employees complete AML training by 2030 to maintain awareness and compliance.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers adhere to anti-competitive practices clauses in their contracts by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Management",
+        "targets": [
+          {
+            "target": "Ensure 100% encryption and implementation of protective measures for sensitive data by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero data breaches and security incidents by implementing robust security protocols and preventive measures, ensuring continuous improvement.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% employee training on data privacy and responsible information management by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblowing & Non-Retaliation",
+        "targets": [
+          {
+            "target": "Achieve 100% awareness of the whistleblowing channel among employees and key suppliers by 2030, verified through periodic surveys.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Ensures the implementation and adherence to ethical conduct policies, including anti-corruption, fraud prevention, conflict of interest, anti-money laundering, and information security."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Oversees employee training on ethical conduct, ensuring compliance with relevant policies."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Protects sensitive company and customer data, ensuring compliance with data protection regulations."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts regular audits to assess compliance, identify risks, and recommend corrective actions."
+      }
+    ],
+    "monitoring": "At Fariha Knit Tex Ltd., we are committed to continuously improving our ethical practices and maintaining the highest standards of integrity across all operations. We regularly assess and update our policies, procedures, and systems to ensure they are effective in preventing unethical conduct, fraud, and violations. This includes enhancing employee training programs, improving detection systems, and incorporating feedback from stakeholders. By fostering a culture of continuous improvement, we aim to uphold trust, minimize risks, and ensure ethical conduct in all our business dealings.",
+    "reviewMechanism": "This policy will undergo an annual review by the Compliance Officer to ensure its continued relevance and effectiveness. Regular audits will be carried out, and key performance indicators (KPIs) will be used to monitor compliance. Employee and stakeholder feedback will be gathered through surveys and grievance mechanisms, and management will address any concerns identified, implementing improvements as necessary.\n\nThis framework ensures that Fariha Knit Tex Ltd. remains committed to high ethical standards in alignment with Bangladeshi laws, regulations, and global best practices."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Fariha Knit/3. Ethical Conduct Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Fariha Knit/3. Ethical Conduct Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12719,
+  "parsedAt": "2026-09-11T07:38:50.503Z"
+}

@@ -1,0 +1,327 @@
+{
+  "id": "sustainable-procurement-isrpl",
+  "name": "ISRPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Responsible Sourcing Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Indian Synthetic Rubber Private Limited (ISRPL)",
+      "industry": "",
+      "site": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304",
+      "sites": [
+        {
+          "location": "Corporate Office",
+          "address": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Registered Office",
+          "address": "10th Floor, Core-2, North Tower, Scope Minar, District Centre, Laxmi Nagar, Delhi -110092",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "Opposite: Naptha Cracker Polymer Terminal Gate, Panipat Refinery, Panipat, Haryana -132140",
+          "primaryFunction": "Manufacturing Plant"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1st Floor, Tower 3, IGL Complex,Plot No-2B, Sector-126, Noida, Uttar Pradesh -201304"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Indian Synthetic Rubber Private Limited (ISRPL) recognizes that responsible sourcing is essential to sustainable business operations. The company acknowledges that its environmental and social impact extends across its supply chain and is committed to working with suppliers who uphold integrity, sustainability, transparency, and respect for human rights. Through responsible procurement practices, ISRPL aims to reduce ESG risks, enhance supply chain resilience, and support environmental and social well-being.",
+      "declaration": "The purpose of this Responsible Sourcing Policy is to ensure that ISRPL’s procurement activities are conducted in an ethical, environmentally responsible, and socially accountable manner. It aims to integrate ESG considerations into supplier selection and monitoring, minimize supply chain risks, ensure compliance with applicable laws and standards, and promote sustainable and transparent business practices across the value chain.",
+      "scope": "This policy applies to all activities, products, and services of ISRPL, including its Corporate Office in Noida and its manufacturing facility in Panipat, Haryana. It extends to all employees, contractors, vendors, and stakeholders operating within or on behalf of ISRPL premises."
+    },
+    "focusAreas": [
+      "Integrating environmental, social, and governance (ESG) criteria into supplier evaluation and selection processes to ensure alignment with ISRPL’s sustainability commitments.",
+      "Prioritizing suppliers who actively reduce emissions, manage waste responsibly, conserve natural resources, and prevent pollution.",
+      "Promoting traceability of critical raw materials and ensuring they are sourced without environmental harm or human rights violations.",
+      "Identifying, assessing, and mitigating sustainability risks within the supply chain through periodic evaluations and audits.",
+      "Encouraging procurement from local, small, and diverse suppliers to support community development and inclusive economic growth.",
+      "Working collaboratively with suppliers to enhance ESG performance, implement corrective actions, and drive sustainable innovation."
+    ],
+    "qualitative": {
+      "General Commitments": [
+        "We aim to integrate sustainability principles into all procurement decisions, balancing environmental, social, ethical, and economic considerations.",
+        "We aim to ensure that key suppliers sign the Supplier Code of Conduct, including environmental, social, and governance (ESG) expectations.",
+        "We aim to integrate ESG clauses and responsible business conduct requirements into supplier contracts and agreements wherever feasible.",
+        "We aim to conduct supplier self-assessments and periodic audits for high-risk suppliers to evaluate compliance with ESG and responsible sourcing requirements.",
+        "We aim to maintain a supplier database including basic ESG-related information to support responsible supplier evaluation and monitoring.",
+        "We aim to periodically communicate sustainability expectations and responsible sourcing principles to suppliers.",
+        "We aim to encourage suppliers to adopt responsible environmental, labor, and ethical practices within their operations.",
+        "We aim to review supplier performance periodically to ensure alignment with procurement requirements and responsible sourcing expectations."
+      ],
+      "Governance Approach": [
+        "Risks related to sustainability, ethics, and compliance will be identified and reviewed periodically to ensure appropriate mitigation measures are in place.",
+        "Governance and ethical business expectations will be integrated into supplier relationships by including relevant governance criteria and compliance requirements within supplier contracts and agreements.",
+        "Awareness of governance and ethical procurement practices will be strengthened by providing periodic training to procurement staff on responsible sourcing, compliance, and supplier governance expectations.",
+        "Preference will be given to suppliers that demonstrate compliance with applicable laws, regulations, and recognized governance standards to promote responsible and transparent supply chain practices."
+      ],
+      "Environmental Approach": [
+        "We aim to integrate environmental responsibility into our supplier selection and evaluation processes, prioritizing suppliers that demonstrate strong environmental management practices.",
+        "Preference will be given to suppliers who demonstrate compliance with applicable environmental regulations and maintain environmental management practices.",
+        "We aim to promote responsible sourcing of raw materials, ensuring environmentally sound extraction, processing, and transportation practices.",
+        "Waste generation associated with purchased materials and packaging will be minimized by encouraging suppliers to adopt sustainable packaging and resource-efficient practices.",
+        "We aim to increase procurement from suppliers holding the ISO 14001 or other relevant certificate to promote environmentally responsible practices within the supply chain.",
+        "Environmental awareness within procurement activities will be strengthened by providing periodic training to the purchasing and procurement team on environmental issues associated with procurement and responsible sourcing practices."
+      ],
+      "Labor and Human Rights Approach": [
+        "We strive to encourage suppliers to invest in worker welfare initiatives, such as health benefits, skill development, and safe accommodation where applicable.",
+        "We aim to partner with suppliers that demonstrate fair employment practices, including transparent wage structures and lawful employment relationships.",
+        "We aim to provide periodic training to the purchasing team on identifying and managing social risks in the supply chain, including labor rights, working conditions, and ethical sourcing practices.",
+        "Social responsibility in procurement will be strengthened by integrating clear social and labor criteria into the supplier selection and evaluation process to encourage responsible supply chain practices.",
+        "We aim to support local economic development by giving preference to qualified local suppliers wherever feasible while maintaining required quality, cost, and compliance standards.",
+        "Supplier recruitment and onboarding will be conducted on a fair and non-biased basis by evaluating potential suppliers using transparent, objective, and merit-based criteria.",
+        "We aim to increase procurement from suppliers that maintain recognized occupational health and safety management systems, such as ISO 45001 or other relevant certifications to promote safe and responsible working conditions within the supply chain."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Commitments",
+        "targets": [
+          {
+            "target": "We will integrate sustainability evaluation criteria into 100% of strategic procurement decisions by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to ensure that at least 70% of procurement spend is directed toward suppliers meeting defined sustainability performance benchmarks by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will conduct annual sustainability performance reviews for 100% of key suppliers by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Ensure that 100% of new key suppliers sign the Supplier Code of Conduct with ESG clauses by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Aim to Integrate ESG-related clauses in at least 80% of supplier contracts by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Aim to conduct supplier self-assessments for at least 70% of identified high-risk suppliers by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Aim to carry out ESG or compliance audits for at least 30% of high-risk suppliers annually starting from FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Governance Approach",
+        "targets": [
+          {
+            "target": "Ensure that 100% of procurement staff receive training on governance, ethical procurement, and compliance practices by FY 2030–31",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Increase the share of procurement spend with suppliers that demonstrate compliance with applicable laws and governance standards to at least 70% by FY 2030–31",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Approach",
+        "targets": [
+          {
+            "target": "We will evaluate 100% of new suppliers against defined environmental criteria prior to onboarding by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to assess at least 90% of active suppliers for environmental compliance and performance by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to include environmental compliance clauses in 100% of supplier contracts and purchase agreements by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We aim to source at least 50% of procurement spend from suppliers with  ISO 14001 or demonstrating formal environmental management systems by FY 2030-31",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Ensure that 100% of procurement staff receive training on environmental issues associated with procurement by FY 2030–31",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Labor and Human Rights Approach",
+        "targets": [
+          {
+            "target": "We aim to ensure that 100% of procurement staff trained on labor and human rights risks in the supply chain by FY 2030–31",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We aim to increase procurement from suppliers that demonstrate compliance with recognized social responsibility standards, such as ISO 45001 to at least 40% by FY 2030–31",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We aim to include social responsibility clauses in 80% of supplier contracts by FY 2030–31",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We aim to increase procurement from local suppliers to 40% by FY 2030–31",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Approve the Responsible Sourcing Policy."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provide strategic direction for integrating ESG into procurement decisions."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensure adequate resources are allocated for supplier sustainability programs."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Monitor supply chain risks and overall ESG performance."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Promote a culture of ethical and responsible business conduct."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Periodically review the entire policy"
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Integrate ESG criteria into supplier selection, evaluation, and contract processes."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Conduct supplier due diligence and risk-based assessments."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Ensure suppliers formally acknowledge and comply with ISRPL’s policy requirements."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Maintain documentation of supplier evaluations and performance records."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Initiate corrective action or disengagement in cases of serious non-compliance."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Develop supplier sustainability frameworks and evaluation tools."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Conduct ESG risk assessments and periodic supplier reviews."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Monitor environmental and social performance indicators."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Support suppliers in implementing improvement plans."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Report supply chain ESG performance to management."
+      },
+      {
+        "role": "Compliance / Legal Department",
+        "duty": "Ensure sourcing activities comply with applicable laws and regulatory requirements."
+      },
+      {
+        "role": "Compliance / Legal Department",
+        "duty": "Oversee anti-corruption, anti-bribery, and ethical compliance in procurement."
+      },
+      {
+        "role": "Compliance / Legal Department",
+        "duty": "Investigate reported violations within the supply chain."
+      },
+      {
+        "role": "Compliance / Legal Department",
+        "duty": "Advise on contractual clauses related to sustainability and compliance."
+      },
+      {
+        "role": "Compliance / Legal Department",
+        "duty": "Manage legal risks associated with supplier non-compliance."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Comply with ISRPL’s Responsible Sourcing Policy and applicable laws."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Uphold environmental, labor, and ethical standards in operations."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Provide accurate and transparent ESG-related information when requested."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Implement corrective actions for identified gaps or risks."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Cascade responsible sourcing expectations to their own supply chains."
+      }
+    ],
+    "monitoring": "Implementation of this Responsible Sourcing Policy is monitored through supplier evaluations, ESG risk assessments, and compliance reviews. Key findings and performance indicators are periodically reported to management. Any significant non-compliance or supply chain risks are documented, escalated, and addressed through corrective action processes. Relevant information may also be included in sustainability or regulatory disclosures, where applicable.\n\nISRPL is committed to strengthening responsible sourcing practices through regular supplier assessments, performance monitoring, and engagement initiatives. Feedback from audits, risk reviews, and industry developments will be used to enhance procurement standards and drive measurable ESG improvements across the supply chain.",
+    "reviewMechanism": "This Responsible Sourcing Policy will be reviewed periodically by the Procurement Head. The review will assess supplier performance trends, emerging supply chain risks, regulatory developments, and evolving sustainability expectations. Any revisions shall be formally approved and communicated to relevant stakeholders to ensure continued effectiveness and alignment with ISRPL’s responsible business commitments.\n\nLast Review Date: 01 Jan 2026\n\nNext Review Date: 01 Jan 2027"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/ISRPL/4. Responsible Sourcing Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/ISRPL/4. Responsible Sourcing Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 14618,
+  "parsedAt": "2026-09-11T07:09:07.022Z"
+}

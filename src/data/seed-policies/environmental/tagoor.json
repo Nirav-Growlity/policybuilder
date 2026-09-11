@@ -1,0 +1,118 @@
+{
+  "id": "tagoor",
+  "name": "Tagoor",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 6. Responsible Management of Pharmaceutical Discharges Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Tagoor Laboratories Pvt. Ltd.",
+      "industry": "",
+      "site": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India.",
+      "sites": [
+        {
+          "location": "Tagoor Laboratories Pvt Ltd",
+          "address": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India.",
+          "primaryFunction": "Pharmaceutical and chemical manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "This Responsible Management of Pharmaceutical Discharges Policy (“Policy”) is established by Tagoor Laboratories Pvt. Ltd. (“the Company”) to effectively manage and control the discharge of pharmaceutical substances, including active pharmaceutical ingredients (APIs), arising from its operations in the pharmaceutical and chemical manufacturing sector.\n\nThe Company is committed to integrating responsible discharge management into its operations, business planning, and stakeholder engagement processes. This Policy outlines the Company’s objectives, key focus areas, performance expectations, and mechanisms for monitoring, evaluation, and continuous improvement in managing pharmaceutical discharges.\n\nThe Company has adopted appropriate technologies, treatment systems, and operational controls to minimize the release of pharmaceutical residues into the environment and to ensure responsible and sustainable operational practices across all levels of the organization.",
+      "declaration": "The Company has adopted a structured approach to pharmaceutical discharge management based on the following principles:\n\nPrevent: Potential sources of pharmaceutical discharges shall be identified, assessed, and controlled at the planning and operational stages through appropriate process design, containment measures, and handling practices.\n\nComply: The Company shall comply with all applicable environmental laws, regulations, and statutory requirements related to effluent discharge and pharmaceutical residue management, and shall align its practices with relevant industry standards.\n\nImprove: The Company shall strive for continuous improvement in managing pharmaceutical discharges through monitoring, evaluation, and implementation of effective treatment technologies and operational controls.\n\nTo manage and control pharmaceutical discharges, including active pharmaceutical ingredients (APIs), through appropriate operational practices and treatment measures.\n\nTo minimize the release of pharmaceutical residues into the environment through effective process controls and effluent treatment systems.\n\nTo ensure compliance with applicable environmental laws, regulations, and standards related to pharmaceutical discharge and wastewater management.\n\nTo promote awareness and responsibility among employees and relevant stakeholders regarding safe handling and discharge of pharmaceutical substances.\n\nTo adopt appropriate technologies, treatment systems, and best practices to manage pharmaceutical discharges effectively.\n\nTo support continuous improvement in discharge management through regular monitoring, evaluation, and performance review.",
+      "scope": "This Policy applies to all operations, activities, and facilities of Tagoor Laboratories Pvt. Ltd. (“the Company”). It is applicable to all employees at all levels, as well as contractors, suppliers, service providers, business partners, and any other individuals or entities working on behalf of the Company."
+    },
+    "focusAreas": [
+      "API Discharge Management"
+    ],
+    "qualitative": {
+      "API Discharge Management": [
+        "Ensure Zero Liquid Discharge (ZLD) is maintained across all operations with no process water discharge to the environment.",
+        "Ensure treated and recycled water consistently meets environmental safety standards for key APIs.",
+        "Prevent any significant spills of API intermediates or finished products outside containment systems.",
+        "Ensure safe disposal of API-contaminated MEE salts through authorized incineration or cement kiln co-processing."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "API Discharge Management",
+        "targets": [
+          {
+            "target": "Maintain 100% Zero Liquid Discharge (ZLD) (0 m³ of process water discharged to environment).",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of treated recycled water tests below the PNEC (Predicted No-Effect Concentration) for top 5 APIs",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain Zero (0) significant spills of API intermediates or finished products outside of secondary containment.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Divert 100% of API-contaminated MEE salts to specialized incineration or authorized co-processing in cement kilns.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management — Managing Director",
+        "duty": "Provide strategic oversight of the Responsible Management of Pharmaceutical Discharges Policy; ensure alignment with business objectives; allocate financial, technical, and human resources; engage with regulators and industry bodies; oversee risks related to API discharge and environmental impact"
+      },
+      {
+        "role": "Environmental Manager — Environment Officer",
+        "duty": "Implement and review the Responsible Management of Pharmaceutical Discharges Policy; coordinate programs related to effluent treatment, API control, and discharge monitoring; ensure regulatory compliance; organize training programs; monitor KPIs and report to management"
+      },
+      {
+        "role": "Sustainability & Compliance Manager — Compliance Manager",
+        "duty": "Conduct audits and inspections related to pharmaceutical discharges; investigate incidents and ensure corrective actions; maintain monitoring and reporting systems; recommend improvements; liaise with auditors and regulatory authorities"
+      },
+      {
+        "role": "Operations & Facilities Management — Plant Head",
+        "duty": "Implement operational controls to minimize API discharge; ensure effective functioning of effluent treatment systems; manage handling, storage, and disposal of materials; ensure preparedness for spills and incidents; report risks and deviations"
+      },
+      {
+        "role": "Employee Representatives — Worker Representative",
+        "duty": "Collect employee feedback; promote awareness on responsible discharge practices; support compliance initiatives; act as a communication link between workforce and management; encourage participation in improvement initiatives"
+      },
+      {
+        "role": "Employees — All Staff",
+        "duty": "Comply with the Responsible Management of Pharmaceutical Discharges Policy; follow safe handling and discharge practices; participate in training programs; report incidents, risks, or deviations; support responsible management of pharmaceutical discharges in daily operations"
+      }
+    ],
+    "monitoring": "At Tagoor Laboratories Pvt Ltd, structured monitoring and reporting systems are established to track environmental performance and ensure continuous improvement.\n\nMonitoring: Key environmental parameters (energy, water, waste, emissions) are monitored against defined KPIs on a monthly basis. Results are compiled into quarterly performance dashboards for management review.\n\nInternal Audits: Environmental compliance audits are conducted at least once a year for all applicable facilities. Audit findings are reported to senior management and corrective actions tracked to closure.\n\nManagement Review: Senior management reviews environmental performance, audit outcomes, and target progress at least annually. Outputs from the management review feed into target-setting and policy updates.\n\nExternal Reporting: Environmental performance is disclosed through applicable external frameworks and regulatory filings.",
+    "reviewMechanism": "This Responsible Management of Pharmaceutical Discharges Policy is subject to periodic evaluation by Environmental Officer at least once every two years or earlier if required due to regulatory changes, operational developments, or stakeholder feedback to ensure its continued relevance, effectiveness, and alignment with evolving regulatory requirements and organizational priorities.\n\nThe review encompasses an assessment of compliance status, progress against established environmental targets, and inputs from relevant stakeholders. Based on this evaluation, necessary updates are incorporated to strengthen the policy framework and ensure alignment with current regulations, industry best practices, and the Company’s commitment to continuous environmental improvement."
+  },
+  "sourcePath": "Policies - Kenal/Tagoor/6. Responsible Management of Pharmaceutical Discharges Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Tagoor/6. Responsible Management of Pharmaceutical Discharges Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 12930,
+  "parsedAt": "2026-09-11T07:29:52.862Z"
+}

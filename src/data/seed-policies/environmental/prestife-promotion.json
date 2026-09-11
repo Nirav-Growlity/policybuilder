@@ -1,0 +1,527 @@
+{
+  "id": "prestife-promotion",
+  "name": "Prestife Promotion",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental_Policy_PP_2_clean.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Prestige Promotion Verkaufsförderung & Werbeservice GmbH",
+      "industry": "",
+      "site": "Borsigstraße 2, D-63755 Alzenau",
+      "sites": [
+        {
+          "location": "Prestige Promotion – Headquarters & Operations",
+          "address": "Borsigstraße 2, D-63755 Alzenau",
+          "primaryFunction": "Secondary packaging, repackaging, contract packaging and storage of pharmaceuticals and medical devices"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Borsigstraße 2, D-63755 Alzenau"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "The base year is 2025.",
+      "declaration": "This Environmental Policy sets out the binding environmental commitments of Prestige Promotion Verkaufsförderung & Werbeservice GmbH (hereinafter referred to as \"Prestige Promotion\"). It defines qualitative and quantitative objectives for the relevant environmental risk topics and forms the basis for systematic environmental management.\n\nThe management of Prestige Promotion commits to:\n\nCompliance with all applicable environmental laws, regulations and regulatory requirements\n\nContinuous improvement of environmental performance and prevention of pollution\n\nProviding the necessary resources for the implementation of this policy\n\nRegular review and updating of this policy (at least annually)\n\nTransparent communication of environmental objectives to employees and relevant stakeholders\n\nIntegration of environmental aspects into all business decisions",
+      "scope": "This policy applies to all business processes, personnel and stakeholders of Prestige Promotion. The only Prestige Promotion site is fully covered under this Environmental Policy and is located at:\n\nIn addition, this policy applies to the following groups and processes:\n\nAll business processes: secondary packaging, repackaging, contract packaging and storage of pharmaceuticals and medical devices\n\nAll employees (full-time, part-time, temporary workers)\n\nContracted service providers and suppliers on company premises\n\nInternal and external stakeholders (customers, authorities, inspection bodies)"
+    },
+    "focusAreas": [
+      "Energy Consumption & Energy Efficiency",
+      "Greenhouse Gas Emissions (GHG / CO₂)",
+      "Waste Management",
+      "Chemical Management",
+      "Material Efficiency & Sustainable Resources",
+      "Customer Health & Safety",
+      "Environmental Services & Advocacy"
+    ],
+    "qualitative": {
+      "Energy Consumption & Energy Efficiency": [
+        "Prestige Promotion is committed to systematically recording, monitoring and continuously reducing energy consumption at all sites.",
+        "Our operations involve production machinery, climate-controlled storage areas, and administrative facilities. We recognise that improving energy efficiency is both an environmental responsibility and a business priority, and we are actively transitioning towards a lower-energy operational model through concrete infrastructure upgrades and renewable sourcing.",
+        "Annual survey of total electricity consumption (kWh) by consumption category (production, office, warehouse)",
+        "Review and phased transition to LED lighting and energy-efficient equipment",
+        "Transition to a certified green electricity tariff sourced from renewable energy, including wind and solar, by switching the site’s electricity supply contract. In parallel, feasibility assessment for photovoltaic (PV) installation at the Borsigstraße site to generate on-site renewable electricity and progressively reduce dependence on grid energy.",
+        "Replacement of ageing packaging machinery and conveyor systems with energy-efficient models carrying the EU Energy Label A or equivalent, focusing on the highest-consumption equipment on the secondary packaging lines.",
+        "Installation of motion-sensor lighting controls and automated HVAC scheduling in storage and administrative zones to eliminate standby energy waste outside working hours.",
+        "Annual energy awareness training for all employees, covering practical energy-saving behaviour on the production floor (e.g. switching off equipment during breaks, reporting compressed-air leaks), integrated into the existing GMP and QHSE training calendar."
+      ],
+      "Greenhouse Gas Emissions (GHG / CO₂)": [
+        "Prestige Promotion records and reduces its greenhouse gas emissions. As a secondary packager in the pharmaceutical sector, the company actively contributes to the avoidance of medication destruction through repackaging processes, thereby contributing to CO₂ reduction.",
+        "Annual recording and calculation of Scope 1 emissions (natural gas heating, company vehicle fuel) and Scope 2 emissions (purchased electricity) using the GHG Protocol Corporate Standard methodology, supported by recognised national emission factors to ensure consistency and comparability year over year.",
+        "Progressive identification and assessment of relevant Scope 3 emission categories (e.g. purchased goods and services, transport, waste) in accordance with the GHG Protocol Scope 3 Standard, with a phased approach to data collection and reporting.",
+        "Reduction of Scope 2 emissions through the progressive transition to a certified green electricity tariff with renewable energy guarantees of origin, directly lowering the carbon intensity of all electricity-powered operations including packaging lines, climate-controlled pharmaceutical storage, and office areas at the Borsigstraße facility.",
+        "Documentation and annual reporting of the CO₂-positive contribution generated by Prestige Promotion’s repackaging services: by extending the usable life of pharmaceutical products and preventing their premature destruction, we avoid the significant emissions associated with incineration and replacement production – a unique and quantifiable climate benefit of our core business.",
+        "Continuous optimisation of the company vehicle fleet with preference for low-emission, hybrid or electric vehicles when renewing fleet cars and delivery vehicles; promotion of public transport and carpooling for employee commuting; and introduction of driver efficiency guidance to reduce fuel consumption across all vehicle movements.",
+        "Systematic reduction of business travel by expanding the use of video-conferencing and digital collaboration tools for client meetings, regulatory consultations and supplier communications, thereby reducing aviation and long-distance road travel and their associated emissions.",
+        "Identification and analysis of any remaining unavoidable emissions and, where justified as a transitional measure, compensation through certified carbon offset schemes (e.g. Gold Standard) until further direct abatement measures are fully implemented."
+      ],
+      "Waste Management": [
+        "Prestige Promotion aims for systematic waste prevention and proper disposal of all types of waste generated. The company follows the principle of the waste hierarchy (Avoid – Reduce – Reuse – Recycle – Dispose).",
+        "Annual recording and categorisation of all waste streams generated at the Alzenau facility, including secondary packaging waste (folding cartons, blister films, labels, cardboard shippers), pharmaceutical and medical device waste, general residual waste, and recyclable fractions – based on documented waste disposal certificates issued by the licensed waste contractor.",
+        "Implementation and continuous improvement of waste separation systems across all operational areas: dedicated collection stations on the production floor for paper and cardboard, plastic films, metal, and residual waste, with clear labelling and regular checks to ensure correct sorting by all personnel.",
+        "Optimisation of production planning and job scheduling on secondary packaging lines to minimise material waste caused by overproduction, short print runs, and set-up losses – ensuring that packaging materials ordered on behalf of clients are used as efficiently as possible and surplus stocks are responsibly managed.",
+        "Supplier qualification process updated to include recyclability criteria for incoming packaging materials: preference for suppliers offering mono-material or recyclable substrates (e.g. uncoated cardboard, paper-compatible blister materials) that facilitate downstream recycling after use.",
+        "Fully documented disposal management for pharmaceutical and medical device waste, including controlled destruction records, in strict compliance with the German Kreislaufwirtschaftsgesetz (KrWG), applicable product-specific disposal regulations, and client requirements – with annual waste disposal certificates retained as evidence.",
+        "Annual waste awareness and correct separation training for all employees (full-time, part-time and temporary), delivered as part of the mandatory GMP induction and refresher training programme, reinforced by visual aids and practical demonstrations at workstations."
+      ],
+      "Chemical Management": [
+        "Prestige Promotion ensures the safe and legally compliant handling of all hazardous substances in its operations, in accordance with REACH, GHS/CLP and internal operating instructions. The use of hazardous substances is continuously reviewed with the goal of substitution and minimisation, protecting employees, pharmaceutical products and the environment.",
+        "Maintenance and annual review of a complete Hazardous Substances Register covering all chemicals including hot-melt adhesives (e.g. TECHNOMELT SUPRA used on secondary packaging lines), industrial and pharmaceutical-grade cleaning agents, sanitisers, solvents, and maintenance chemicals – with quantities, storage locations, and responsible persons documented.",
+        "Provision and regular updating of current Safety Data Sheets for every hazardous substance on site, stored both digitally in the document management system and in physical binders accessible at each point of use, ensuring employees can access safety information at all times.",
+        "Structured substitution review process for all hazardous substances: where a substance is classified as hazardous under GHS/CLP (e.g. CMR categories, aquatic toxicity), the HSE Officer evaluates technically feasible and commercially available alternatives with a lower hazard profile, and documents the review outcome regardless of whether substitution proceeds.",
+        "Mandatory employee training on all relevant operating instructions, including BA-37, BA-38 and BA-40, covering safe handling procedures, required personal protective equipment (PPE), emergency response actions, and proper disposal routes for each hazardous substance category used on site.",
+        "Safe and segregated storage of all hazardous chemicals in designated, ventilated storage areas with appropriate containment (drip trays, spill kits), applicable fire protection requirements, ensuring incompatible substances are physically separated at all times.",
+        "Strict prevention of hazardous substances entering the wastewater system: all liquid chemical residues, wash waters and contaminated materials are collected separately and disposed of through licensed hazardous waste channels, with disposal records maintained as part of the waste documentation system.",
+        "Minimisation of chemical quantities on site through demand-based procurement and controlled stock management, reducing both the risk of spills and the volume of chemical waste requiring disposal at end of shelf life."
+      ],
+      "Material Efficiency & Sustainable Resources": [
+        "Prestige Promotion is committed to the efficient use of packaging materials and other resources. Sustainable materials are preferred.",
+        "Annual recording and analysis of material consumption across all key categories used in co-packaging and repackaging operations: folding cartons, leaflets and patient information materials, labels, blister films and lidding foils, cardboard shippers and transport packaging, and ancillary consumables such as adhesive tapes and stretch film – tracked by job to identify highest-usage areas for efficiency improvement.",
+        "Active preference for suppliers who hold recognised sustainability certifications for their materials: FSC (Forest Stewardship Council) or PEFC certification for paper, board and cardboard products confirms responsible forest management and chain of custody, directly supporting sustainable sourcing in our pharmaceutical packaging supply chain.",
+        "Continuous optimisation of packaging line set-up procedures and machine parameters to minimise material rejects, start-up waste and trial runs: all identified root causes of recurring material losses are documented and addressed through the CAPA system, with reject rates monitored and reviewed regularly by production management.",
+        "Systematic evaluation of recycled-content materials as replacements for virgin-material equivalents, particularly for non-product-contact packaging components such as transport shippers, void fill and pallet wrap, where regulatory constraints are lower and recycled content is technically feasible and commercially available.",
+        "Right-sizing review for client packaging formats: where feasible and agreed with clients, Prestige Promotion proposes packaging design adjustments that reduce material weight or volume without compromising product protection, GMP compliance or regulatory requirements – contributing to both environmental and logistics efficiency."
+      ],
+      "Customer Health & Safety": [
+        "Prestige Promotion recognises that its core activities – secondary packaging, repackaging and contract packaging of pharmaceuticals and medical devices – are directly linked to the health and safety of end patients and healthcare users. Ensuring the integrity, traceability and correct presentation of every packaged product is therefore not only a regulatory obligation but a fundamental ethical commitment. We operate under GMP (Good Manufacturing Practice) principles, and we continuously improve our quality systems to safeguard the end consumer at every stage of the packaging process.",
+        "Strict adherence to client-specified packaging instructions, artwork, and labelling requirements to ensure correct patient information, dosage guidance, and safety warnings are present on every finished pack.",
+        "Implementation and maintenance of GMP-compliant quality control checks at all critical process steps, including line clearance procedures, in-process checks (IPC), and final release inspection, to prevent mix-ups, contamination or defective products from reaching the market.",
+        "Serialisation and track-and-trace compliance for all prescription pharmaceutical products in accordance with the EU Falsified Medicines Directive (FMD / Delegated Regulation 2016/161), ensuring product authenticity and preventing counterfeit medicines from entering the supply chain.",
+        "Temperature and humidity monitoring in all pharmaceutical storage areas, with documented excursion management procedures to protect product stability and patient safety throughout the storage and repackaging process.",
+        "Annual customer satisfaction evaluation to verify that Prestige Promotion’s quality and safety standards consistently meet or exceed customer and regulatory expectations."
+      ],
+      "Environmental Services & Advocacy": [
+        "Prestige Promotion is committed to going beyond internal environmental compliance by actively participating in environmental advocacy and by offering services and process innovations that deliver measurable environmental benefits to clients and the broader pharmaceutical supply chain.",
+        "Promotion of repackaging solutions that reduce pharmaceutical waste and avoid environmental impacts associated with product destruction.",
+        "Collaboration with clients to optimise packaging design, reduce material consumption, and improve recyclability of packaging components.",
+        "Annual publication of key environmental performance indicators (energy, GHG, waste, materials) in an Environmental Performance Summary shared with clients, suppliers and EcoVadis, demonstrating transparency and accountability.",
+        "Provision of targeted environmental awareness and sustainability training or guidance to customers and key suppliers, focusing on sustainable packaging practices, waste reduction, and compliance with environmental requirements within the pharmaceutical packaging value chain.",
+        "Review of the company website ( www.prestige-promotion-web.de ) to include a dedicated Environmental Policy and Sustainability section, making our commitments publicly visible and reinforcing our brand as a responsible and forward-thinking packaging service partner."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption & Energy Efficiency",
+        "targets": [
+          {
+            "target": "Total electricity consumption at site (kWh/year): ≤5% below baseline",
+            "baseline": "Baseline data will be collected from energy invoices",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Total electricity consumption at site (kWh/year): ≤8% below baseline",
+            "baseline": "Baseline data will be collected from energy invoices",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Share of green/renewable electricity (%) 100%: ≥20%",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Share of green/renewable electricity (%) 100%: ≥30%",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "PV self-generation (kWh/year): Metering concept established",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "PV self-generation (kWh/year): Annual report submitted",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Energy audit / consumption recording conducted: Audit planned & commissioned",
+            "baseline": "Not specified",
+            "deadline": "Once in 2026"
+          },
+          {
+            "target": "Energy audit / consumption recording conducted: Audit completed & documented",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          }
+        ]
+      },
+      {
+        "area": "Greenhouse Gas Emissions (GHG / CO₂)",
+        "targets": [
+          {
+            "target": "Scope 1 emissions (tCO₂e/year) – company vehicles, heating: Initial report prepared",
+            "baseline": "Base year is 2025",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Scope 1 emissions (tCO₂e/year) – company vehicles, heating: ≤5% below baseline",
+            "baseline": "Base year is 2025",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Scope 2 emissions (tCO₂e/year) – electricity (market-based): Initial report prepared",
+            "baseline": "Base year is 2025",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Scope 2 emissions (tCO₂e/year) – electricity (market-based): ≤8% below baseline",
+            "baseline": "Base year is 2025",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Scope 3 emissions (tCO₂e/year): Initial report prepared",
+            "baseline": "Base year is 2025",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Scope 3 emissions (tCO₂e/year): ≤5% below baseline",
+            "baseline": "Base year is 2025",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "GHG calculation methodology documented (GHG Protocol): Methodology defined & documented",
+            "baseline": "Not started",
+            "deadline": "Q2 2026"
+          },
+          {
+            "target": "GHG calculation methodology documented (GHG Protocol): Annual application demonstrated",
+            "baseline": "Not started",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "CO₂ savings through repackaging processes (tCO₂e/year): Calculation approach developed",
+            "baseline": "This Scope 3 benefit is to be calculated and communicated for the first time in 2026",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "CO₂ savings through repackaging processes (tCO₂e/year): Initial report submitted",
+            "baseline": "This Scope 3 benefit is to be calculated and communicated for the first time in 2026",
+            "deadline": "Target 2027"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Total waste volume (kg/year): Recording complete",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Total waste volume (kg/year): ≤3% below baseline",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Overall recycling rate (% of total waste): ≥55%",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Overall recycling rate (% of total waste): ≥65%",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Share of cardboard recycling (%): ≥80%",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Share of cardboard recycling (%): ≥90%",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Share of plastic film recycling (%): ≥60%",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Share of plastic film recycling (%): ≥70%",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Pharmaceutical waste properly disposed & documented (%): 100% with disposal certificates",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Pharmaceutical waste properly disposed & documented (%): 100% archived & auditable",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Residual waste per order (kg / 1,000 orders): ≤5% below baseline",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Residual waste per order (kg / 1,000 orders): ≤10% below baseline",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Waste separation training for employees conducted: 100% trained & documented",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Waste separation training for employees conducted: Annual refresher training",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          }
+        ]
+      },
+      {
+        "area": "Chemical Management",
+        "targets": [
+          {
+            "target": "Hazardous substances register complete & up to date: 100% complete & validated",
+            "baseline": "Hazardous substances register already available",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Hazardous substances register complete & up to date: Updated annually",
+            "baseline": "Hazardous substances register already available",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Safety Data Sheets (SDS) available for all substances: 100% complete",
+            "baseline": "SDS already available",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Safety Data Sheets (SDS) available for all substances: 100% current (max. 3 years)",
+            "baseline": "SDS already available",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Substitution reviews conducted & documented: 50% of substances reviewed",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Substitution reviews conducted & documented: 100% reviewed & documented",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Employee training on hazardous substances (% trained): 100% documented",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Employee training on hazardous substances (% trained): Annual repetition; as required",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Chemical incidents / near-misses (number/year): Reporting system introduced",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Chemical incidents / near-misses (number/year): Trend: 0 incidents",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          }
+        ]
+      },
+      {
+        "area": "Material Efficiency & Sustainable Resources",
+        "targets": [
+          {
+            "target": "Total packaging material consumption (kg or EUR/year): Recording complete",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Total packaging material consumption (kg or EUR/year): Improved data quality",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Share of sustainable materials (FSC/PEFC/recycle) (%): ≥15%",
+            "baseline": "Not started",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Share of sustainable materials (FSC/PEFC/recycle) (%): ≥25%",
+            "baseline": "Not started",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Material rejection rate (%): ≤5% below baseline",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Material rejection rate (%): ≤10% below baseline",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Suppliers with sustainability certification (%): ≥10% of key suppliers",
+            "baseline": "Not started",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Suppliers with sustainability certification (%): ≥25% of key suppliers",
+            "baseline": "Not started",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Paper consumption – administration (sheets or kg/year): ≥10% below baseline",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Paper consumption – administration (sheets or kg/year): ≤20% below baseline",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Product quality complaints per year (customer-facing): Complaints log reviewed; root cause analysis for all cases",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Product quality complaints per year (customer-facing): reduce error rate (error per 1 million units) customer complaints by5%;",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "GMP/GDP compliance rate – internal audits (%): 100% compliance; audit programme formalised",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "GMP/GDP compliance rate – internal audits (%): 100% compliance; zero critical findings unresolved >30 days",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "FMD serialisation compliance rate (%): 100% maintained; no regulatory notifications",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "FMD serialisation compliance rate (%): 100% maintained; no decommissioning failures",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Customer satisfaction score (annual survey): First structured survey conducted & documented",
+            "baseline": "Not started",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Customer satisfaction score (annual survey): ≥85% customer satisfaction score; survey repeated annually",
+            "baseline": "Not started",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Product recall / market withdrawal events (number/year): Recall procedure reviewed & tested",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Product recall / market withdrawal events (number/year): Zero recalls attributable to Prestige Promotion packaging errors",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Annual Environmental Performance Summary published: First report drafted & shared internally",
+            "baseline": "Not started",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Annual Environmental Performance Summary published: First report published Q2 2027; annual cadence established",
+            "baseline": "Not started",
+            "deadline": "Target 2027"
+          },
+          {
+            "target": "Website sustainability / environmental policy page published: Draft page content approved internally",
+            "baseline": "Not started",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Website sustainability / environmental policy page published: Page published by Q3 2026; kept up to date",
+            "baseline": "Not started",
+            "deadline": "Q3 2026"
+          },
+          {
+            "target": "Packaging sustainability improvement proposals submitted to clients (number/year): ≥2 proposals submitted to clients",
+            "baseline": "Not specified",
+            "deadline": "Interim Target 2026"
+          },
+          {
+            "target": "Packaging sustainability improvement proposals submitted to clients (number/year): ≥5 proposals submitted; at least 1 implemented",
+            "baseline": "Not specified",
+            "deadline": "Target 2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Approval and annual review of the policy; provision of resources; definition of environmental objectives"
+      },
+      {
+        "role": "Quality Management",
+        "duty": "Coordination of environmental objectives; document control; preparation of management review; data maintenance"
+      },
+      {
+        "role": "HSE / Environmental Officer",
+        "duty": "Operational implementation of measures; hazardous substance management; waste recording; training"
+      },
+      {
+        "role": "Production Management",
+        "duty": "Ensuring environmentally sound workflows in production; waste separation; reporting of deviations"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Compliance with operating instructions; environmentally conscious conduct; reporting of environmental incidents"
+      }
+    ],
+    "monitoring": "Annual survey of total electricity consumption (kWh) by consumption category (production, office, warehouse)\n\nAnnual recording and calculation of Scope 1 emissions (natural gas heating, company vehicle fuel) and Scope 2 emissions (purchased electricity) using the GHG Protocol Corporate Standard methodology, supported by recognised national emission factors to ensure consistency and comparability year over year.\n\nProgressive identification and assessment of relevant Scope 3 emission categories (e.g. purchased goods and services, transport, waste) in accordance with the GHG Protocol Scope 3 Standard, with a phased approach to data collection and reporting.\n\nAnnual recording and categorisation of all waste streams generated at the Alzenau facility, including secondary packaging waste (folding cartons, blister films, labels, cardboard shippers), pharmaceutical and medical device waste, general residual waste, and recyclable fractions – based on documented waste disposal certificates issued by the licensed waste contractor.\n\nAnnual recording and analysis of material consumption across all key categories used in co-packaging and repackaging operations: folding cartons, leaflets and patient information materials, labels, blister films and lidding foils, cardboard shippers and transport packaging, and ancillary consumables such as adhesive tapes and stretch film – tracked by job to identify highest-usage areas for efficiency improvement.\n\nAnnual publication of key environmental performance indicators (energy, GHG, waste, materials) in an Environmental Performance Summary shared with clients, suppliers and EcoVadis, demonstrating transparency and accountability.",
+    "reviewMechanism": "This Environmental Policy is subject to an annual review process to ensure that it is always current, complete and effective.\n\nReview for currency, new legal requirements, EcoVadis updates, achievement of objectives\n\nAnnually (Q1 of the following year)\n\nIntegration of environmental objectives into the annual QM management review (Chapter 5.7)\n\nAnnually (Q4)\n\nRegular review of quantitative environmental targets by QMO/HSE\n\nSemi-annually\n\nIn the event of material changes (new legislation, incidents, site changes, EcoVadis feedback)\n\nAs required (ad hoc)\n\nRecording of review results and approval by management\n\nAfter each review\n\nEnter actual values, assess target achievement, set new objectives for following year\n\nAnnually (Q1)"
+  },
+  "sourcePath": "Policies - Kenal/Prestife Promotion/Environmental_Policy_PP_2_clean.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Prestife Promotion/Environmental_Policy_PP_2_clean.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 29497,
+  "parsedAt": "2026-09-11T07:27:09.821Z"
+}

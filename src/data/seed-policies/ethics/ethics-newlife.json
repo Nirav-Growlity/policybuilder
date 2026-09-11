@@ -1,0 +1,418 @@
+{
+  "id": "ethics-newlife",
+  "name": "Newlife",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Business Ethics Policy_grw_v2_1903.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "NewLife Medicals",
+      "industry": "",
+      "site": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059",
+      "sites": [
+        {
+          "location": "NewLife Medicals",
+          "address": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059",
+          "primaryFunction": "Offices"
+        },
+        {
+          "location": "NewLife Medicals (USA), Inc",
+          "address": "146 Donmoor CT, Garner, North Carolina 27529, USA",
+          "primaryFunction": ""
+        },
+        {
+          "location": "NewLife Biopharma Limited",
+          "address": "SKY Business Centre, Office 12, Unit 9a, Plato Business Park, Damastown, Dublin 15, Ireland D15 PA4C",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "The Ethical Standard Policy of NewLife Medicals defines the principles, standards, and expectations that guide ethical behavior and responsible decision-making across the organization. It serves as a foundational framework to ensure that all business activities are conducted with integrity, transparency, and accountability, in compliance with applicable laws and industry standards.\n\nThe policy addresses key ethical risk areas including anti-bribery and corruption, fraud prevention, conflicts of interest, fair competition, information security and confidentiality, anti-money laundering, ethical marketing, and responsible third-party management. It establishes mandatory controls, outlines clear responsibilities, reporting mechanisms, disciplinary consequences, and oversight responsibilities to ensure effective implementation and independent monitoring.",
+      "declaration": "The objectives of the Ethical Standard Policy at NewLife Medicals are to:\n\nEstablish clear ethical principles and standards to guide decision-making and behavior across all business activities.\n\nPromote a culture of integrity, transparency, accountability, and fairness at every level of the organization.\n\nEnsure compliance with applicable laws, regulations, and industry standards governing pharmaceutical and healthcare operations.\n\nPrevent, detect, and respond to bribery, corruption, fraud, conflicts of interest, financial crime, and other misconduct through structured internal controls and enforcement mechanisms.\n\nProtect confidential information, intellectual property, and personal data of employees, customers, and business partners.",
+      "scope": "This Policy applies to all operations of NewLife Medicals, including its offices, subsidiaries, warehouses, distribution activities, and global sourcing and supply chain operations.\n\nIt applies to all directors, employees, management, contract workers, consultants, agents, distributors, suppliers, and other business partners acting on behalf of or representing the Company.\n\nThis Policy applies across all jurisdictions in which the Company operates and extends to cross-border transactions and third-party engagements."
+    },
+    "focusAreas": [
+      "Corruption and Bribery",
+      "Fraud Prevention",
+      "Conflict of Interest",
+      "Information Security and Confidentiality",
+      "Anti-Money Laundering",
+      "Ethical Marketing and Third-Party Conduct"
+    ],
+    "qualitative": {
+      "Corruption and Bribery": [
+        "We are committed to rejecting gifts, hospitality, or incentives that may influence decision-making.",
+        "We are committed to maintaining a zero-tolerance approach toward bribery and corruption across all sourcing, clinical trial supply, export, and regulatory activities to protect patient safety, regulatory integrity, and global business credibility.",
+        "We aim to conduct all transactions with transparency, fairness, and accountability, ensuring that no employee, agent, distributor, or third-party representative offers, gives, or receives any improper advantage to secure business benefits.",
+        "We commit to implementing strong internal controls, approval mechanisms, and documentation procedures to prevent unethical payments, facilitation payments, or kickbacks, particularly in high-risk areas such as international procurement and regulatory submissions.",
+        "We strive to provide regular ethics and anti-corruption awareness training to employees to help them identify and prevent bribery risks.",
+        "We maintain strict due diligence processes for suppliers, logistics partners, and intermediaries to ensure alignment with anti-corruption laws such as the Prevention of Corruption Act (India) and applicable international regulations.",
+        "We continue to enhance transparency in gifts, hospitality, sponsorships, donations, and interactions with government officials and customers",
+        "We encourage employees to report suspected unethical conduct through confidential reporting channels, ensuring protection against retaliation.",
+        "To strengthen governance and minimize ethical and compliance risks, we will implement robust internal controls such as structured authorization workflows, defined role segregation, and formal conflict-of-interest declarations."
+      ],
+      "Fraud Prevention": [
+        "We are committed to upholding the highest standards of integrity and accuracy in all financial activities, ensuring that no form of fraud, falsification of documents, or manipulation of records is tolerated within the organization.",
+        "We aim to establish and maintain robust internal control systems, segregation of duties, and multi-level approval mechanisms to prevent fraudulent activities in procurement, clinical supply distribution, export documentation, invoicing, and financial reporting.",
+        "We commit to ensuring complete transparency and traceability in product sourcing and documentation, particularly in RLD sourcing, API exports, and named patient supply services, to eliminate risks of duplicate invoicing, or false certifications.",
+        "We strive to conduct periodic internal audits and risk-based assessments to proactively identify vulnerabilities in supply chain transactions, customs documentation, regulatory filings, and vendor payments before they escalate into material fraud risks.",
+        "We maintain strict verification and due diligence procedures for suppliers, distributors, and third-party intermediaries to prevent fraudulent misrepresentation of licenses, product authenticity, or compliance certifications.",
+        "We will conduct regular training programs for employees on fraud prevention to enhance awareness across the organization."
+      ],
+      "Conflict of Interest": [
+        "We are committed to ensuring that all business decisions are made objectively and in the best interest of NewLife Medicals, without undue personal, financial, or relational influence. The company shall maintain zero undisclosed conflicts of interest annually.",
+        "We aim to prevent situations where personal relationships with suppliers, customers, regulators, or competitors may compromise impartial judgment, particularly in procurement, contract negotiations, and regulatory dealings.",
+        "A structured conflict of interest framework will be implemented, including regular disclosure requirements, defined oversight roles, and formal documentation of corrective and mitigative actions.",
+        "We are committed to maintaining an open and transparent environment where conflicts are assessed objectively and managed to safeguard the Company’s integrity and interests.",
+        "We prohibit the use of company position, confidential information, or business opportunities for personal gain, including engaging in competing activities or influencing vendor selection for personal benefit.",
+        "We promote awareness and periodic guidance on identifying conflict-of-interest risks, especially in high-risk functions such as sourcing of RLDs, API procurement, distributor appointments, and international partnerships.",
+        "We aim to ensure that all employees proactively disclose actual, potential, or perceived conflicts of interest that may affect business decisions."
+      ],
+      "Information Security and Confidentiality": [
+        "We are committed to safeguarding all confidential, and sensitive information, , against unauthorized access, disclosure, or misuse.",
+        "We aim to implement robust information security controls, including restricted access, password protection, secure data storage, and controlled document sharing, to maintain the integrity and confidentiality of business-critical information.",
+        "We require all employees, and third-party partners to maintain strict confidentiality obligations, particularly when handling comparator drug sourcing data, named patient supply records, export documentation, and regulatory submissions.",
+        "We prohibit the unauthorized sharing, copying, or transmission of company or client information, whether verbally, electronically, or in printed form, including through personal devices or unsecured communication channels.",
+        "We aim to implement robust information security controls, including role-based access mechanisms, firewall protection, restricted system access, strong password protocols, secure data storage, and controlled document sharing, to ensure the integrity and confidentiality of business-critical information.",
+        "We commit to ensuring compliance with applicable data protection and privacy regulations, especially in relation to international clients, cross-border transactions, and sensitive healthcare-related information.",
+        "We promote regular awareness and training programs on cybersecurity risks and data protection practices, enabling employees to identify threats such as phishing, data breaches, or unauthorized system access and take preventive action."
+      ],
+      "Anti-Money Laundering": [
+        "We are committed to conducting business only with legitimate clients, suppliers, and partners, ensuring that all funds received or paid are derived from lawful and transparent sources.",
+        "A formal AML framework will be established to ensure effective due diligence, ongoing transaction oversight, clear escalation mechanisms, and thorough documentation.",
+        "We uphold financial integrity by maintaining transparent processes, ensuring transaction traceability, and enforcing strict authorization and record-keeping controls across all financial activities.",
+        "We aim to implement risk-based customer and supplier due diligence procedures, including verification of legal status, beneficial ownership, regulatory licenses, and banking credentials prior to onboarding.",
+        "Sanctions screening and beneficial ownership verification shall be mandatory prior to onboarding customers or third parties.",
+        "We commit to maintaining accurate, complete, and transparent financial records, ensuring that all invoices, contracts, and payment trails are properly documented and auditable.",
+        "We maintain strict compliance with applicable anti-money laundering laws and financial regulations, including all applicable laws to the Group and relevant international trade compliance standards.",
+        "Cash transactions exceeding statutory limits are strictly prohibited.",
+        "We aim to provide periodic training and awareness programs to employees involved in finance, procurement, export, and regulatory coordination, enabling them to identify and report potential money laundering risks."
+      ],
+      "Ethical Marketing and Third-Party Conduct": [
+        "We are committed to ensuring that all marketing, promotional, and business development activities are accurate, evidence-based, and compliant with applicable pharmaceutical and trade regulations, avoiding misleading claims, exaggerated representations, or unsubstantiated product comparisons.",
+        "We aim to promote our services such as comparator sourcing, API and FDF supply, and clinical trial supply support through transparent and responsible communication, ensuring that all information shared with clients reflects verified data and approved documentation.",
+        "We commit to conducting integrity-based screening and risk assessments prior to engaging third parties, particularly in high-risk international markets and regulatory interactions."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption and Bribery",
+        "targets": [
+          {
+            "target": "We continue to maintain zero confirmed cases of bribery, facilitation payments, or improper influence across all operations each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to achieve 100% completion of annual business ethics and anti-bribery & anti-corruption training for all employees by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure that 100% of contracts with agents, distributors, consultants, intermediaries, and key suppliers include anti-bribery, anti-corruption, and ethical conduct clauses by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to record, review, and approve 100% of gifts, hospitality, sponsorships, donations, and charitable contributions through approved internal registers on an annual basis by 2028.",
+            "baseline": "",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to maintain 100% compliance with applicable anti-bribery and anti-corruption laws, internal policies, and procedures across all business activities by 2028.",
+            "baseline": "",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "We continue to maintain zero tolerance for falsified records, data manipulation, or misuse of company assets annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to ensure 100% of financial, quality, regulatory, manufacturing, and operational records are subject to internal audits or reviews as per approved audit plans by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We commit to investigating 100% of reported fraud, misconduct, or financial irregularity allegations within 30 calendar days by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to conduct fraud-risk assessments at 100% of operational sites at least once every two calendar years.",
+            "baseline": "",
+            "deadline": "At least once every two calendar years"
+          },
+          {
+            "target": "We commit to delivering mandatory training on fraud prevention, internal controls, and ethical business practices to all employees, targeting 100% coverage by 2028 compared to the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "We aim to maintain zero conflicts of interest annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to achieve 100% annual conflict-of-interest declarations from all employees by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to ensure 100% of declared conflicts are formally documented, assessed, and managed through appropriate mitigation or control plans.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to provide conflict-of-interest awareness and guidance training to 100% of employees by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Information Security and Confidentiality",
+        "targets": [
+          {
+            "target": "We continue to maintain zero critical data breaches caused by policy non-compliance annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to ensure and maintain 100% of employees receive annual information-security and data-privacy training by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to implement access controls, encryption, and cybersecurity safeguards on at least 80% of critical IT systems and devices by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to respond to all of reported data-security incidents within 72 hours of identification.",
+            "baseline": "",
+            "deadline": "Within 72 hours of identification"
+          },
+          {
+            "target": "We aim to maintain multi-factor authentication across 100% of digital platforms by 2028, using 2022 as the baseline year.",
+            "baseline": "2022 baseline year",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering (AML)",
+        "targets": [
+          {
+            "target": "We aim to maintain zero cases filed against the AML Compliance annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to screen 100% of customers, distributors, suppliers, and third-party business partners prior to onboarding by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to re-screen at least 70% of high-risk partners annually to identify emerging AML or financial-crime risks by 2029, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2029"
+          },
+          {
+            "target": "We continue to ensure 100% of financial transactions are processed through traceable and approved banking channels.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to ensure 100% of suspicious transactions are escalated, reviewed, and reported in accordance with applicable regulatory requirements.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to ensure 100% of employee received the AML training by 2028 from baseline 2023.",
+            "baseline": "2023",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Marketing and Third-Party Management",
+        "targets": [
+          {
+            "target": "We aim to include ethics and compliance clauses in 100% of new and renewed third-party contracts by 2028 from 2023 as a baseline.",
+            "baseline": "2023",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to close at least 90% of identified third-party ethics gaps within defined timelines by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to provide ethics awareness communication or training to at least 70% of key suppliers and distributors by 2028, against the 2023 baseline year.",
+            "baseline": "2023 baseline year",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide independent oversight of the Company’s ethical conduct, compliance framework, and internal control environment."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Review the effectiveness of the Ethical Standard Policy, whistleblower mechanism, and investigation processes on a periodic basis."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Monitor significant ethics violations, fraud cases, regulatory breaches, and remediation actions, ensuring appropriate corrective measures are implemented."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Oversee the adequacy of internal controls, risk management systems, and compliance monitoring mechanisms related to bribery, fraud, conflicts of interest, AML, and data security."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Review findings from internal audits, external audits, and compliance assessments concerning ethical risks and ensure timely management response."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Escalate material ethical or compliance matters to the Board, where necessary, and ensure transparent reporting in governance disclosures."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Approve significant revisions to the Ethical Standard Policy where required under applicable governance norms."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Provide overall leadership and set the “tone at the top” for ethical conduct and compliance."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure the Ethical Standard Policy is effectively implemented and integrated into business strategy and operations."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Review key ethics risks, incident trends, and policy effectiveness at least annually."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Approve significant updates to the Ethical Standard Policy and related governance frameworks."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Lead the implementation and day-to-day management of the Ethical Standard Policy."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Develop procedures, controls, and guidance to support ethical conduct across functions."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Conduct ethics risk assessments, coordinate training programs, and monitor compliance performance."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Receive, assess, and investigate reported ethics concerns in a fair, confidential, and impartial manner."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Escalate significant violations and investigation outcomes to senior management."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Review policy regularly"
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure employees within their functions understand and comply with the Ethical Standard Policy."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Integrate ethical considerations into operational decisions, procurement, and third-party engagements."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Review and approve sensitive activities such as vendor selection, sponsorships, gifts, and interactions with healthcare professionals."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Support employees who raise concerns and ensure corrective and preventive actions are implemented."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Support policy implementation through onboarding, training, and awareness programs."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Ensure ethical conduct is embedded in performance management and disciplinary processes."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Maintain records related to policy acknowledgment, training completion, and disciplinary actions."
+      },
+      {
+        "role": "All Employees and Third Parties",
+        "duty": "Understand and comply with the Ethical Standard Policy and applicable procedures."
+      },
+      {
+        "role": "All Employees and Third Parties",
+        "duty": "Follow the guidelines and acknowledge the violation outcomes"
+      },
+      {
+        "role": "All Employees and Third Parties",
+        "duty": "Act with integrity, honesty, and accountability in all business activities."
+      },
+      {
+        "role": "All Employees and Third Parties",
+        "duty": "Disclose conflicts of interest and avoid participation in unethical practices."
+      },
+      {
+        "role": "All Employees and Third Parties",
+        "duty": "Promptly report suspected misconduct, violations, or unethical behavior without fear of retaliation."
+      }
+    ],
+    "monitoring": "NewLife Medicals is committed to continuously strengthening its ethical framework through regular monitoring and improvement of its Ethical Standards Policy and related practices. The Company reviews ethics controls, procedures, and awareness programs to ensure compliance with applicable laws and industry best practices. Through internal audits, compliance assessments, and management reviews, the Company monitors adherence across operations and third-party engagements. Findings, reported incidents, and employee feedback are analyzed to identify risks and improvement areas, leading to enhanced policies, stronger controls, updated training, and improved communication to promote integrity and accountability.",
+    "reviewMechanism": "This Ethical Policy is reviewed on a regular basis to ensure it remains current, effective, and aligned with applicable laws, regulatory requirements, and organizational objectives. The review is conducted by the Compliance Head in coordination with the Compliance function and relevant department heads. A formal review is carried out at least once every year or earlier in the event of significant changes in legal requirements, business operations, organizational structure, or risk profile."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Newlife/3. Business Ethics Policy_grw_v2_1903.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Newlife/3. Business Ethics Policy_grw_v2_1903.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 29531,
+  "parsedAt": "2026-09-11T07:11:06.195Z"
+}

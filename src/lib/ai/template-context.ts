@@ -190,12 +190,20 @@ function readTemplates(seedDirectory: string): SeedTemplate[] {
   const cached = templateCache.get(seedDirectory);
   if (cached) return cached;
 
-  const templates = fs.readdirSync(seedDirectory)
-    .filter((file) => file.endsWith(".json"))
-    .sort()
-    .flatMap((file) => {
+  const files: string[] = [];
+  const walk = (directory: string): void => {
+    if (!fs.existsSync(directory)) return;
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const file = path.join(directory, entry.name);
+      if (entry.isDirectory()) walk(file);
+      else if (entry.name.endsWith(".json")) files.push(file);
+    }
+  };
+  walk(seedDirectory);
+
+  const templates = files.sort().flatMap((file) => {
       try {
-        return [JSON.parse(fs.readFileSync(path.join(seedDirectory, file), "utf8")) as SeedTemplate];
+        return [JSON.parse(fs.readFileSync(file, "utf8")) as SeedTemplate];
       } catch (error) {
         console.warn(`Skipping invalid policy template ${file}`, error);
         return [];

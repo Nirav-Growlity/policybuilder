@@ -1,0 +1,495 @@
+{
+  "id": "gloster",
+  "name": "Gloster",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Holistic Environmetnal Policy_GRW_v1_0301.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Gloster Limited",
+      "industry": "",
+      "site": "Head Office, 21, Strand Road, Kolkata 700001",
+      "sites": [
+        {
+          "location": "GLOSTER LIMITED-Ananya Unit",
+          "address": "P.O: Fort Gloster, Bauria, Howrah – 711310, West Bengal",
+          "primaryFunction": "Manufacturing plant"
+        },
+        {
+          "location": "GLOSTER LIMITED-Head Office",
+          "address": "Head Office, 21, Strand Road, Kolkata 700001",
+          "primaryFunction": "Head office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Head Office, 21, Strand Road, Kolkata 700001"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Gloster Limited, we are deeply committed to environmental stewardship and sustainable development. Our operations recognize the significant impact manufacturing activities can have on the environment, and we are dedicated to mitigating these impacts through proactive measures and continuous improvement. We believe that sustainable practices are not only essential for the well-being of our planet but also for the longevity and success of our business. Our environmental policy outlines our commitment to reducing our carbon footprint, conserving natural resources, and promoting sustainable products. By integrating environmental considerations into every aspect of our operations, including but not limited to processing, weaving, and finishing, we aim to lead by example in the jute manufacturing industry and contribute to a more sustainable future.",
+      "declaration": "To minimize the environmental impact of our operations through efficient resource management and waste reduction.\n\nTo promote sustainable practices and products within the jute manufacturing industry.\n\nTo ensure compliance with all relevant environmental regulations and standards.\n\nTo engage and educate employees, stakeholders, and customers on the importance of environmental responsibility.",
+      "scope": "This Policy applies to all employees (at all levels), stakeholders (internal and external), partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Gloster Limited. It also applies to the following sites."
+    },
+    "focusAreas": [
+      "Energy Efficiency",
+      "Water Management & Wastewater Reduction",
+      "Waste Reduction",
+      "Effective Management of Chemicals and Raw Materials",
+      "Greenhouse Gas Reduction",
+      "Prevention of Biodiversity Loss",
+      "Environmental Issues by Product Use and End-of-Use",
+      "Prevention of Air Pollution",
+      "Reduction in Noise Pollution",
+      "Customer Health and Safety",
+      "Local Pollution",
+      "Accidental Contamination",
+      "Promoting Sustainable Products Among Customers",
+      "Environmental Service and Advocacy"
+    ],
+    "qualitative": {
+      "Energy Efficiency": [
+        "To reduce energy consumption, we have implemented the use of energy-efficient motors in our spinning and weaving processes and we are in progress to adopt this practice across all relevant operations.",
+        "We are in progress to conduct energy audits using the ISO 50001 framework to identify areas for improvement and implement corrective actions.",
+        "By investing in solar power systems for our manufacturing plants, we aim to increase our use of clean energy."
+      ],
+      "Water Management & Wastewater Reduction": [
+        "To manage water usage, we are in progress to implement rainwater harvesting systems and water-efficient dyeing techniques.",
+        "We have implemented wastewater treatment plants to ensure that discharged water meets environmental standards. Furthermore, we remain committed to continuously improving wastewater management practices, ensuring compliance with environmental regulations, and reducing our impact on natural water resources.",
+        "To conserve water resources, we are recycling and reusing process water in gardening wholly, and we are in progress to implement new membrane filtration technology to support this.",
+        "By educating our employees on water conservation practices specific to jute processing, we aim to install a culture of responsible water use."
+      ],
+      "Waste Reduction": [
+        "To reduce solid waste, we have implemented a comprehensive waste management program, including the reuse of jute waste in the production of biodegradable packaging materials.",
+        "By optimizing our production processes, such as implementing lean manufacturing principles, we are in progress to implement new automation technology to reduced material waste.",
+        "To ensure responsible waste management, we have engaged approved vendors to collect and recycle ETP sludge, oily clothes, and other hazardous materials. We aim to enhance our participation by collaborating with additional vendors in this initiative."
+      ],
+      "Effective Management of Chemicals and Raw Materials": [
+        "To ensure the safe use of chemicals, we aim to implement the GHS (Globally Harmonized System) for labelling and handling.",
+        "We are using OEKO-TEX certified non-hazardous chemicals and natural biodegradable sizing agents to eliminate hazardous chemicals, and we are in progress to increase the use of other biodegradable, eco-friendly chemicals by conducting thorough analyses of our processes and materials.",
+        "By optimizing our raw material usage through precise cutting and sizing techniques, we have reduced waste and costs.",
+        "To enhance safety, we regularly train our employees on chemical handling and management.",
+        "We are using OEKO-TEX certified chemicals and jute is already a sustainable raw material. We are in progress to increase use of organic jute, which is more eco friendly by 5% through extensive marketing."
+      ],
+      "Greenhouse Gas Reduction": [
+        "We aim for an 15% reduction in GHG Scope 1 & Scope 2 by FY 2029-30 from the baseline year 2022-23 by adopting innovative energy-efficient technologies and sustainable practices across our operations.",
+        "We aim for a 10% reduction in GHG Scope 3 emissions by FY 2029–30 from the baseline year 2022–23 by reducing business travel through increased use of virtual meetings and by optimizing logistics planning to minimize fuel consumption.",
+        "By increasing our use of renewable energy sources, such as biomass for our boilers, we have installed a new boiler and are using LPG instead of HFO at our plant.",
+        "To monitor and manage our emissions, we conduct regular greenhouse gas inventories using the GHG Protocol, we aim to adopt best practices in energy efficiency.",
+        "We are in progress to adopt electric vehicles (EVs) for our transportation needs."
+      ],
+      "Prevention of Biodiversity Loss": [
+        "To protect biodiversity, we are in progress to implement habitat conservation initiatives around our facilities, such as creating green belts and buffer zones.",
+        "We are in progress to support reforestation projects and wildlife protection programs.",
+        "By minimizing land disturbance through controlled site development practices, we are in progress to reduce our impact on local ecosystems.",
+        "To raise awareness, we educate our employees and stakeholders on the importance of biodiversity, promoting a culture of environmental stewardship."
+      ],
+      "Environmental Issues by Product Use and End-of-Use": [
+        "To address environmental issues related to our products, we are in progress to implement eco-design principles in our product development.",
+        "We are in progress to increase the recyclability of our products by adopting sustainable sourcing practices.",
+        "By promoting sustainable product use, we are in progress to reduce the environmental footprint of our products throughout their lifecycle by adopting sustainable sourcing practices and increasing the usage of OEKO-TEX certified non-hazardous chemicals.",
+        "To ensure responsible disposal, we are in progress to implement take-back programs.",
+        "We are adopting eco-friendly and sustainable raw materials in our products, such as organic jute fibres normal and organic and oekotex certified sustainable dyes, to further minimize their environmental during and after product use."
+      ],
+      "Prevention of Air Pollution": [
+        "To mitigate air pollution from hazardous emissions, such as sulfur dioxide (SO₂) and nitrogen oxides (NOX) from our combustion processes, we plan to install advanced filtration systems in our emission stacks. Although the levels of hazardous emissions, such as sulfur dioxide (SO₂) and nitrogen oxides (NOX), are currently negligible we aim to maintain these low emission-levels.",
+        "To enhance air quality, we conduct regular air quality assessments annually, aiming for monthly monitoring of air emissions through a qualified third-party organization."
+      ],
+      "Reduction in Noise Pollution": [
+        "By conducting regular noise assessments and implementing soundproofing measures, we aim to mitigate the impact of noise pollution on local communities.",
+        "To ensure compliance with noise regulations, we continuously monitor noise levels to adhere to permissible limits for both daytime and night time, aiming to maintain noise levels within regulatory limits at all times."
+      ],
+      "Customer Health and Safety": [
+        "To ensure customer health and safety, we aim to implement stringent quality control measures, including ISO 9001 certification.",
+        "We are committed to using only OEKO-TEX certified chemicals in our products.",
+        "By providing clear product usage instructions, we aim to reduce misuse and associated health risks.",
+        "To enhance safety, we continuously monitor and assess our products, aiming to meet and exceed all relevant safety standards by FY 2029-30."
+      ],
+      "Local Pollution": [
+        "To reduce local pollution, we aim to implement water pollution control measures, including effluent treatment plants.",
+        "We are committed to reducing noise pollution from our operations by installing noise barriers and using low-noise equipment.",
+        "By improving waste management practices, such as using covered storage areas for raw materials, we aim to minimize soil contamination.",
+        "To ensure compliance, we regularly monitor and report on our pollution levels, which are within limits, and we remain committed to maintaining this status in accordance with all local environmental regulations by FY 2029-30."
+      ],
+      "Accidental Contamination": [
+        "To prevent accidental contamination, we have implemented rigorous safety protocols and emergency response plans, including regular drills and safety audits.",
+        "We regularly train our employees on contamination prevention and response.",
+        "To enhance safety, we conduct regular risk assessments and drills."
+      ],
+      "Promoting Sustainable Products Among Customers": [
+        "To promote sustainable products, we have launched awareness campaigns highlighting the environmental benefits of jute products.",
+        "We are committed to developing and offering eco-friendly product lines, including biodegradable and recyclable jute products.",
+        "By providing transparent information on our products' sustainability, we aim to build customer trust and loyalty.",
+        "To encourage sustainable consumption, we offer incentives and support for customers who choose our eco-friendly products, such as discounts and loyalty programs."
+      ],
+      "Environmental Service and Advocacy": [
+        "We aim to boost our environmental advocacy initiatives by 30% by FY 2029-30, using FY 2022-23 as our baseline, by implementing community workshops, partnerships with local organizations, and enhancing our digital outreach efforts to foster greater engagement and awareness.",
+        "Our goal is to expand our range of environmental services by 20% by FY 2029-30, compared to FY 2022-23, by developing new sustainable solutions, enhancing training programs, and collaborating with industry experts to better support our clients' sustainable practices.",
+        "We are dedicated to improving the impact of our environmental awareness campaigns by 25% by FY 2029-30, with FY 2022-23 as the baseline, by leveraging social media, increasing public events, and creating informative content to promote greater public understanding and action on sustainability issues"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency",
+        "targets": [
+          {
+            "target": "reduce energy usage by 15%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "achieve a 10% reduction in energy wastage",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "increase our use of clean energy to 25%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Water Management & Wastewater Reduction",
+        "targets": [
+          {
+            "target": "reduce fresh water consumption by 2%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "reduce wastewater by 1%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 5% increase in water recycling",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "reducing our overall water footprint by 1%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Waste Reduction",
+        "targets": [
+          {
+            "target": "reduce yarn and fibre waste generation by 2%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "achieving a 2% reduction in production waste",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 30% increase in the volume of waste collected and recycled",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Effective Management of Chemicals and Raw Materials",
+        "targets": [
+          {
+            "target": "maintain a record of 0% chemical-related incidents",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 30% increase the use of sustainable material",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 2% improvement in material efficiency",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "100% of our employees trained on hazardous material handling and management",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "increase use of organic jute ... by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Greenhouse Gas Reduction",
+        "targets": [
+          {
+            "target": "15% reduction in GHG Scope 1 & Scope 2",
+            "baseline": "2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "10% reduction in GHG Scope 3 emissions",
+            "baseline": "2022-23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "reduced Scope-1 GHG emissions by more than 5%",
+            "baseline": "2022-23",
+            "deadline": "2023-24"
+          },
+          {
+            "target": "cut our carbon emissions by 30%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 10% reduction in our carbon footprint",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "reduce emissions intensity by 2%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "reduce our carbon emissions from logistics by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Biodiversity Loss",
+        "targets": [
+          {
+            "target": "enhance local biodiversity by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 25% increase in our conservation efforts",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "achieving a 15% reduction in biodiversity loss",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "cover 100% employees in training session",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Issues by Product Use and End-of-Use",
+        "targets": [
+          {
+            "target": "reduce product-related impacts by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 30% improvement in product recyclability",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "achieving a 15% reduction in the environmental footprint of our products throughout their lifecycle",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "reduce waste from discarded products by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 20% increase in such materials",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Prevention of Air Pollution",
+        "targets": [
+          {
+            "target": "capture 90% of particulate matter and reduce hazardous emissions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Reduction in Noise Pollution",
+        "targets": [
+          {
+            "target": "reduce noise levels by 3 dB",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "maintaining our record of 0 product-related health incidents",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 30% increase in their usage",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "maintaining our record of 0 such incidents",
+            "baseline": "previous 20 years",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Local Pollution",
+        "targets": [
+          {
+            "target": "decrease discharge by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 5% reduction in noise levels",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "achieving a 15% reduction in land pollution",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Accidental Contamination",
+        "targets": [
+          {
+            "target": "maintaining 0 incidents",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "a 25% increase in training participation",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "improve our preparedness and response times by 15%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Promoting Sustainable Products Among Customers",
+        "targets": [
+          {
+            "target": "increase customer engagement by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "100% in procurement of sustainable raw material",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "achieving a 25% increase in customer satisfaction",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "boost sustainable product sales by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Service and Advocacy",
+        "targets": [
+          {
+            "target": "boost our environmental advocacy initiatives by 30%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "expand our range of environmental services by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "improving the impact of our environmental awareness campaigns by 25%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide strategic direction for the environmental policy. Ensure that the policy aligns with the company’s overall business strategy and sustainability goals, approve major environmental initiatives, and review performance reports."
+      },
+      {
+        "role": "Environmental Management Committee",
+        "duty": "Oversee the execution of the environmental policy and strategies. Develop and implement environmental programs, set performance targets, monitor progress, and report to the Board of Directors."
+      },
+      {
+        "role": "Environmental Officer",
+        "duty": "Implementation, oversight and review of this policy Lead the day-to-day management of environmental initiatives. Coordinate the implementation of environmental programs, conduct audits and assessments, ensure compliance with regulations, and prepare regular performance reports for the Environmental Management Committee."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure departmental adherence to the environmental policy. Integrate environmental considerations into departmental operations, train employees on environmental practices, and report departmental progress to the Environmental Officer."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in and support the company’s environmental initiatives. Follow environmental guidelines, participate in training sessions, and contribute to the achievement of the company’s environmental targets."
+      }
+    ],
+    "monitoring": "Monthly Reports: Each department will submit a monthly environmental performance report to the Environmental Management Team (EMT). These reports will include data on energy usage, water consumption, waste generation, chemical management, and progress toward specific targets.\n\nQuarterly Reviews: The EMT will compile and analyse monthly reports to produce a quarterly environmental performance review. This review will be presented to senior management and made available to all employees and stakeholders.\n\nAnnual Sustainability Report: An annual report will be prepared, summarizing the yearly environmental performance, progress toward goals, and outlining plans for the following year. This report will be publicly available on the company's website and shared with all stakeholders.\n\nRegular Meetings: The EMT will hold regular meetings with department heads to discuss progress, challenges, and opportunities for improvement. These meetings will ensure that environmental initiatives are aligned with operational goals and that any issues are promptly addressed.\n\nEmployee Engagement: Regular updates will be provided to all employees through internal newsletters, emails, and notice boards. Feedback from employees will be encouraged and integrated into ongoing environmental initiatives.\n\nTransparency: We will maintain transparent communication with our stakeholders, including customers, suppliers, and local communities. Regular updates on our environmental performance and initiatives will be shared through various channels, such as newsletters, social media, and our website.\n\nStakeholder Meetings: Annual stakeholder meetings will be held to discuss our environmental policy, share progress, and gather feedback. These meetings will provide a platform for open dialogue and collaborative problem-solving.\n\nThird-Party Audits: We will engage third-party auditors to conduct annual environmental audits. These audits will assess compliance with our environmental policy, regulatory requirements, and industry best practices.\n\nCertification Programs: We will pursue relevant environmental certifications, such as ISO 14001, to validate our commitment to environmental stewardship and continuous improvement.\n\nEnvironmental Impact Assessment (EIA) at Gloster Limited will be used to systematically evaluate the potential environmental impacts of our core environmental strategies, including energy efficiency, water management, waste reduction, chemical management, greenhouse gas reduction, biodiversity protection, product lifecycle impacts, air and noise pollution prevention, customer health and safety, local pollution control, accidental contamination prevention, and the promotion of sustainable products. The EIA process involves screening projects and scoping to identify specific environmental aspects. It also includes conducting baseline studies to document current conditions and assessing potential impacts of proposed activities.\n\nFurthermore, the EIA process involves proposing mitigation measures to address identified impacts, reporting findings and recommendations, reviewing and making decisions based on the EIA results, and monitoring and managing the implemented measures.",
+    "reviewMechanism": "This policy shall be reviewed annually and on an ad hoc basis to ensure its effectiveness and relevance. This review will assess regulatory compliance, progress towards targets, and stakeholder feedback. Updates will be made as needed to address new challenges and opportunities, ensuring that our policy consistently drives improvements in environmental performance."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Gloster/1. Holistic Environmetnal Policy_GRW_v1_0301.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Gloster/1. Holistic Environmetnal Policy_GRW_v1_0301.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 25389,
+  "parsedAt": "2026-09-11T07:07:40.097Z"
+}

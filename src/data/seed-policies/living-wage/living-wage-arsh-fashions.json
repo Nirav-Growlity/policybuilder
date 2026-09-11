@@ -1,0 +1,136 @@
+{
+  "id": "living-wage-arsh-fashions",
+  "name": "Arsh Fashions",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage Policy -AFPL.pdf.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "ARSH FASHIONS PVT. LTD.",
+      "industry": "",
+      "site": "Plot No.194, IInd Phase,G.I.D.C., Vapi - 396195,Gujarat, India",
+      "sites": [
+        {
+          "location": "ARSH FASHOINS Pvt. Ltd.",
+          "address": "Plot No.194, IInd Phase, G.I.D.C., Vapi - 396195, Gujarat, India.",
+          "primaryFunction": "garment manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No.194, IInd Phase,G.I.D.C., Vapi - 396195,Gujarat, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Arsh Fashion Pvt. Ltd. is committed to ensuring that all employees are compensated fairly, in a manner that allows them to meet the basic needs of themselves and their families. As a responsible garment manufacturing company, we acknowledge the importance of a living wage in promoting the well-being and dignity of our workforce. This policy outlines our approach to implementing and maintaining living wage standards across all levels of employment.",
+      "declaration": "Arsh Fashion Pvt. Ltd. is dedicated to providing a wage that not only meets legal requirements but also ensures that employees can afford essentials such as food, housing, healthcare, education, and transportation. We are committed to assess wages regularly and make necessary adjustments in line with inflation, cost of living, and industry benchmarks. This policy applies to all employees, regardless of their position, and includes a commitment to working closely with suppliers to ensure fair wage practices throughout our supply chain. Our baseline year for measuring progress in living wage practices is 2022.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Arsh Fashion Pvt. Ltd. is dedicated to providing a wage that not only meets legal requirements but also ensures that employees can afford essentials such as food, housing, healthcare, education, and transportation.\n\nWe are committed to assess wages regularly and make necessary adjustments in line with inflation, cost of living, and industry benchmarks.\n\nThis policy applies to all employees, regardless of their position, and includes a commitment to working closely with suppliers to ensure fair wage practices throughout our supply chain.\n\nOur baseline year for measuring progress in living wage practices is 2022."
+    },
+    "focusAreas": [
+      "Living wage levels",
+      "Supplier living wage practices",
+      "Employee communication, feedback and grievances",
+      "Employee wage satisfaction",
+      "Financial literacy",
+      "Gender-equitable and non-discriminatory wage structures",
+      "Pay equity"
+    ],
+    "qualitative": {
+      "Supplier living wage practices": [
+        "Collaborate with suppliers to adopt living wage practices and ensure compliance throughout the supply chain."
+      ],
+      "Employee communication, feedback and grievances": [
+        "Ensure open communication with employees regarding wage policies and provide channels for feedback and grievances related to wage concerns."
+      ],
+      "Financial literacy": [
+        "Introduce financial literacy programs to help employees better manage their wages and plan for the future."
+      ],
+      "Gender-equitable and non-discriminatory wage structures": [
+        "Ensure that wage structures are gender equitable and non-discriminatory, providing equal pay for equal work."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living wage levels",
+        "targets": [
+          {
+            "target": "Ensure that 100% of employees earn a wage that is at least 10% higher than the local minimum wage",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Living wage reviews",
+        "targets": [
+          {
+            "target": "Annual reviews to adjust for inflation and cost of living changes",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Employee wage satisfaction",
+        "targets": [
+          {
+            "target": "Conduct annual surveys to monitor employee satisfaction with wage levels, aiming for at least an 85% satisfaction rate",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Pay equity",
+        "targets": [
+          {
+            "target": "Achieve and maintain a 0% gender wage gap by conducting annual pay equity audits and addressing any discrepancies",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "HR",
+        "duty": "This Living wage policy will be reviewed annually by HR in response to economic changes, inflation, and employee feedback."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Collaborate with suppliers to adopt living wage practices and ensure compliance throughout the supply chain."
+      }
+    ],
+    "monitoring": "Performance towards living wage targets will be tracked and reported annually. The report will include data on wage levels, employee satisfaction, and supplier compliance. Any gaps in achieving targets will be identified, and corrective measures will be implemented. This report will be shared with relevant stakeholders to ensure transparency and accountability.",
+    "reviewMechanism": "This Living wage policy will be reviewed annually by HR in response to economic changes, inflation, and employee feedback. Adjustments to wage levels will be made as needed to ensure ongoing compliance with the living wage commitment. The review will involve consultation with employee representatives, industry experts, and external auditors to ensure best practices are followed."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Arsh Fashions/5. Living Wage Policy -AFPL.pdf",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Arsh Fashions/5. Living Wage Policy -AFPL.pdf"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 4751,
+  "parsedAt": "2026-09-11T07:32:51.378Z"
+}

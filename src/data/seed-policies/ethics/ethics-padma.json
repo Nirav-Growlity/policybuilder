@@ -1,0 +1,353 @@
+{
+  "id": "ethics-padma",
+  "name": "Padma",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Business_Ethics_Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Padma Satel Arab Fashions Ltd. (PSA Fashions Ltd.)",
+      "industry": "",
+      "site": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230.",
+      "sites": [
+        {
+          "location": "Head Office",
+          "address": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230.",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Factory",
+          "address": "Luna Complex, Joy Bangka Road, Khailkur, Borobari, Gazipur-1704, Bangladesh.",
+          "primaryFunction": "Manufacturing Site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "House#40, Road#6/C, Section #12, Uttara Dhaka-1230."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Padma Satel Arab Fashion Ltd. (PSA Fashion Ltd.) is committed to conducting its business operations with the highest standards of integrity, transparency, and ethical responsibility. As a participant in the global apparel and textile value chain, the Company recognizes that its responsibilities extend beyond manufacturing excellence to include ethical governance, responsible sourcing, and compliance with international business standards.\n\nOperating in a highly regulated and buyer-driven industry, PSA Fashion Ltd. understands that trust and credibility are critical to sustaining long-term relationships with international buyers, suppliers, regulators, and other stakeholders. Ethical conduct is therefore embedded as a core principle guiding all operational, financial, and strategic decisions across the organization.\n\nThis Business Ethics Policy establishes a structured and comprehensive framework that defines the Company’s expectations regarding ethical behavior, regulatory compliance, and responsible business practices. It is designed to ensure that all employees, management personnel, and associated stakeholders consistently act in a manner that reflects the Company’s commitment to lawful and ethical operations.",
+      "declaration": "The objectives of this Business Ethics Policy of Padma Satel Arab Fashions Ltd. are to:\n\nTo establish a comprehensive and uniform framework of ethical standards that governs the conduct of all employees, management, and associated stakeholders across the organization.\n\nTo ensure that all business activities are conducted with integrity, transparency, and accountability, thereby strengthening trust with buyers, suppliers, regulators, and other stakeholders.\n\nTo prevent, detect, and address unethical practices, including corruption, bribery, fraud, financial misconduct, and conflicts of interest, through structured controls and monitoring mechanisms.\n\nTo ensure full compliance with applicable local and international laws, regulations, and buyer requirements, particularly those related to anti-corruption, financial integrity, data protection, and labor practices.\n\nTo promote a culture of honest and responsible decision-making, where employees are guided to act in the best interest of the Company without being influenced by personal gain or external pressures.\n\nTo safeguard the confidentiality, integrity, and availability of business information, including buyer data, financial records, operational data, and employee information.",
+      "scope": "This Policy applies to all operations of Padma Satel Arab Fashions Ltd. and is applicable to all employees (permanent and contract), management, directors, buying agents, vendors, subcontractors, and all internal and external stakeholders working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Corruption & Bribery Prevention",
+      "Fraud Prevention",
+      "Conflict of Interest",
+      "Responsible Information Management",
+      "Anti-Money Laundering",
+      "Ethical Sourcing & Supplier Conduct",
+      "Third-Party Management"
+    ],
+    "qualitative": {
+      "Corruption & Bribery Prevention": [
+        "We maintain absolute zero tolerance for bribery and corruption in any form whether direct or indirect, cash or in-kind, domestic or international across all business activities, buyer relationships, government interactions, and supply chain engagements, in full compliance with the Money Laundering Prevention Act 2012, the Prevention of Corruption Act (Bangladesh), and applicable international anti-bribery standards.",
+        "All gifts, hospitality, and business courtesies must be transparent, reasonable, and properly documented, with mandatory recording in the Gift & Hospitality Register and adherence to defined approval protocols.",
+        "A strong ethical culture is promoted by encouraging employees and workers to report any suspected unethical practices through secure and confidential reporting mechanisms without fear of retaliation.",
+        "We maintain an effective Anti-Bribery and Corruption (ABC) management system by conducting periodic risk assessments, internal audits, and management reviews aligned with best practices for the garment and textile industry.",
+        "Facilitation payments regardless of amount, local practice, or perceived necessity are strictly prohibited across all PSA Fashions Ltd. operations and geographies without exception.",
+        "We will maintain an Anti-Bribery and Corruption (ABC) program comprising annual training, risk assessments, periodic control testing, and management reporting to ensure zero tolerance is maintained across all functions."
+      ],
+      "Fraud Prevention": [
+        "We commit to proactively preventing, detecting, and addressing all forms of fraud, including financial misrepresentation, procurement fraud, payroll manipulation, inventory misappropriation, and falsification of records.",
+        "We strive to enhance awareness of fraud risks among employees and workers through structured training programs and regular communication tailored to operational realities.",
+        "We ensure accuracy, completeness, and transparency of all business records, including financial data, production documentation, and compliance reports.",
+        "We aim to prevent and detect fraudulent activities across all operations by maintaining robust internal controls, including segregation of duties, dual authorization for significant payments, independent reconciliations, and periodic internal audits across all business processes.",
+        "We ensure that all employees are required to promptly report suspected fraudulent activities through established reporting mechanisms, with full protection for good-faith reporting.",
+        "We strive to conduct periodic fraud risk assessments across high-risk functions such as procurement, finance, payroll, and production, and implement targeted controls to mitigate identified risks."
+      ],
+      "Conflict of Interest": [
+        "We commit to promoting independent, objective, and unbiased decision-making across all levels of the organization, minimizing risks arising from personal or external interests.",
+        "We ensure that employees in sensitive roles complete annual Conflict of Interest (COI) declarations, covering financial interests, external engagements, family relationships, and affiliations.",
+        "We strive to maintain a structured framework for identification, disclosure, and evaluation of conflicts of interest, supported by periodic reviews and documented processes.",
+        "We enhance employee awareness and understanding of conflict of interest risks and expectations through regular communication, targeted training programs, and accessible guidance materials.",
+        "We promote early identification of conflicts in sensitive functions by requiring proactive reporting from employees involved in procurement, supplier selection, compliance, and financial activities.",
+        "Where a conflict of interest is confirmed, the affected employee will be recused from the relevant decision or process. Recusal decisions and management actions will be documented and retained."
+      ],
+      "Responsible Information Management": [
+        "We commit to protecting the confidentiality, integrity, and availability of all business-critical and sensitive information, including buyer data, financial records, production information, and employee data.",
+        "All employees handling confidential or sensitive information must adhere to PSA Fashions Ltd.'s information security guidelines, data classification procedures, and applicable data protection laws including the Digital Security Act 2018 (Bangladesh) and buyer-specific data protection requirements applicable to GDPR-covered export markets.",
+        "Access to confidential systems and data will be granted on a need-to-know basis, with role-based access controls and regular access reviews enforced across all PSA Fashions Ltd. IT environments and physical document storage areas.",
+        "We strengthen endpoint and physical security across all operations by deploying appropriate IT security measures, secure document handling procedures, and controlled access to sensitive areas.",
+        "We ensure continuous employee awareness on cybersecurity and data protection risks, including phishing, unauthorized access, and secure communication practices.",
+        "We manage third-party information security risks effectively by conducting due diligence, enforcing data protection clauses in supplier and agent contracts, and monitoring vendor compliance with confidentiality obligations.",
+        "All employees, contractors, and third parties with access to PSA Fashions Ltd.'s confidential information or buyer data must sign Non-Disclosure Agreements (NDAs) before being granted access."
+      ],
+      "Anti-Money Laundering": [
+        "We are committed to full compliance with the Money Laundering Prevention Act 2012 (Bangladesh), the Anti-Terrorism Act 2009 (Bangladesh), the Foreign Exchange Regulation Act 1947, and applicable international AML standards, ensuring that PSA Fashions Ltd.'s financial transactions, export dealings, and business relationships are not used to facilitate money laundering, terrorist financing, or other financial crimes.",
+        "We ensure that Know Your Customer (KYC) and due diligence procedures are conducted for all new business partners, buyers, and agents prior to engagement.",
+        "We strictly prohibit cash transactions and any structured payments intended to bypass regulatory thresholds or reporting requirements.",
+        "We strive to maintain continuous monitoring of financial transactions, identifying and investigating unusual or suspicious activities in a timely manner.",
+        "We ensure that employees in relevant roles receive regular AML training, enabling them to identify red flags and fulfill reporting obligations effectively."
+      ],
+      "Ethical Sourcing & Supplier Conduct": [
+        "All fabric, accessory, thread, packaging, and raw material procurement activities of PSA Fashions Ltd. must be conducted fairly, transparently, and in compliance with applicable laws, buyer codes of conduct, and PSA Fashions Ltd.'s supplier conduct standards.",
+        "We ensure that all product specifications, quality claims, and compliance representations are accurate, verifiable, and free from misrepresentation.",
+        "All sourcing decisions and supplier evaluation outcomes will undergo appropriate review by procurement and management, ensuring factual accuracy and compliance with buyer requirements and PSA Fashions Ltd.'s internal standards."
+      ],
+      "Third-Party Management": [
+        "We commit to ensuring that all third parties associated with the Company adhere to equivalent ethical, legal, and compliance standards as defined in this Policy.",
+        "We ensure that pre-engagement due diligence is conducted for all third parties, covering ethics, legal compliance, financial integrity, and reputational risks.",
+        "We strive to include mandatory ethics, anti-corruption, and data protection clauses in all third-party contracts, along with audit rights.",
+        "We commit to ongoing monitoring and evaluation of third-party performance, taking corrective actions where necessary.",
+        "We ensure that any third party found to be in violation of ethical standards may be subject to suspension, corrective action, or termination of the business relationship."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption & Bribery Prevention",
+        "targets": [
+          {
+            "target": "Provide mandatory ABC training to all employees in management, procurement, and compliance functions annually. % relevant employees trained: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Ensure full compliance with applicable anti-bribery and anti-corruption laws and internal policies. % compliance: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain full compliance with gift and hospitality recording requirements. % gifts/hospitality recorded: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct periodic anti-bribery compliance reviews across business operations. % operations reviewed: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain zero confirmed instances of bribery or corrupt practices. No. of confirmed bribery cases: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Provide fraud awareness training to all finance, procurement, production, and payroll employees. % relevant employees trained: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain zero confirmed incidents of financial fraud, record falsification, or asset misappropriation. No. of confirmed fraud incidents: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct compliance and fraud risk reviews across all key business functions every year. % functions reviewed annually: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain accurate financial and production records compliant with internal and buyer requirements. % records compliant: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Ensure all employees in roles with financial or decision-making authority complete the annual COI Declaration. % eligible employees completing annual COI declaration: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Provide awareness training on conflict of interest to all management-level employees. % employees trained: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Ensure conflicted employees are removed from relevant decisions or processes. % cases managed with recusal: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct an annual Conflict of Interest survey across the Company. Number of surveys conducted: 1",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain zero confirmed instances of undisclosed or unmanaged conflicts of interest. No. of confirmed unmanaged COI cases: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Information Management",
+        "targets": [
+          {
+            "target": "Provide mandatory information security and data handling training to all employees with access to PSA systems and buyer data. % employees trained annually: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Achieve and maintain zero material data breaches or unauthorized disclosures involving confidential PSA Fashions or buyer information. No. of material data breaches: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Ensure compliance with applicable data protection and IT security laws and buyer data requirements. % compliance: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Ensure all employees and third parties with access to confidential or buyer data have signed NDAs. % relevant personnel with signed NDAs: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Ensure all new buying agents and high-risk business partners undergo KYC and AML screening before engagement. % new high-risk partners KYC-screened: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Maintain zero confirmed instances of money laundering involvement. No. of confirmed AML violations: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Provide AML awareness training to relevant finance and management employees. % employees trained: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct AML risk assessments for business relationships and payment flows. % completed: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Sourcing & Supplier Conduct",
+        "targets": [
+          {
+            "target": "Provide ethical sourcing training to all procurement and sourcing employees. % relevant employees trained: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Ensure all active material suppliers acknowledge PSA Fashions Ltd.'s supplier conduct standards. % suppliers with signed acknowledgment: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2026-27"
+          },
+          {
+            "target": "Maintain zero confirmed regulatory violations related to sourcing misrepresentation or non-compliant procurement. No. of confirmed sourcing non-compliance cases: Zero",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Third-Party Management",
+        "targets": [
+          {
+            "target": "Conduct ethics and integrity due diligence on 100% of new high-risk third parties before engagement. % new high-risk third parties with completed due diligence: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Ensure all new third-party contracts include mandatory ethics, ABC, and data protection compliance clauses. % new contracts with ethics clauses: 100%",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Approve and endorse the Business Ethics Policy and overall ethics and compliance strategy, ensuring integration with PSA Fashions Ltd.'s business strategy."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Provide visible and sustained leadership commitment to a culture of integrity, transparency, and zero tolerance for corruption, fraud, and misconduct. Ensure adequate financial, human, and organizational resources are available for effective implementation and monitoring of business ethics programs."
+      },
+      {
+        "role": "Senior Management & Compliance Officer",
+        "duty": "Provide oversight of PSA Fashions Ltd.'s business ethics, anti-corruption, and compliance programs, reviewing material violations, systemic risks, and annual performance against Policy targets."
+      },
+      {
+        "role": "Senior Management & Compliance Officer",
+        "duty": "Review and approve material updates to the Business Ethics Policy and related frameworks, procedures, and enforcement standards."
+      },
+      {
+        "role": "Compliance & HR Function",
+        "duty": "Own Policy implementation, compliance monitoring, investigation management, and performance reporting across all PSA Fashions Ltd. functions."
+      },
+      {
+        "role": "Compliance & HR Function",
+        "duty": "Lead the Ethics & Compliance program including anti-bribery risk assessments, conflict-of-interest management, AML screening, and third-party due diligence."
+      },
+      {
+        "role": "Compliance & HR Function",
+        "duty": "Review and update the Policy at least annually, or when triggered by legislative changes, buyer requirements, social audit findings, or material incidents."
+      },
+      {
+        "role": "Finance & Accounts",
+        "duty": "Maintain and enforce the financial controls — including segregation of duties, dual authorization, and independent reconciliation — that prevent and detect fraud and financial misconduct. Ensure all export receipts, payments, and financial transactions are screened in accordance with AML requirements."
+      },
+      {
+        "role": "Procurement & Sourcing",
+        "duty": "Conduct ethics due diligence on all new suppliers and third parties before engagement."
+      },
+      {
+        "role": "Procurement & Sourcing",
+        "duty": "Ensure all procurement decisions are made fairly, transparently, and without conflicts of interest."
+      },
+      {
+        "role": "Procurement & Sourcing",
+        "duty": "Maintain accurate sourcing records and compliance documentation."
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Comply with this Policy and all related compliance procedures, codes of conduct, and training requirements at all times."
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Exercise ethical judgment in all business decisions, and seek guidance from management when facing ethical uncertainties."
+      },
+      {
+        "role": "All Employees & Workers",
+        "duty": "Report suspected ethics violations, policy breaches, or compliance concerns through designated channels."
+      }
+    ],
+    "monitoring": "Padma Satel Arab Fashions Ltd. is committed to the continuous strengthening of its business ethics and compliance performance across all operations, buyer relationships, and supply chain engagements.\n\nAnti-corruption training completion, third-party compliance scores, conflict-of-interest register updates, gifts & hospitality log reviews, data security incidents, BSCI/SEDEX audit findings, and AML screening outcomes are tracked regularly across all business functions.\n\nPeriodic internal compliance audits and independent ethics assessments (including BSCI, SEDEX, RSC, and SLCP audits) evaluate adherence to Policy requirements, identify control gaps, and verify progress against targets across all issue areas.\n\nAll reported ethics violations, suspected fraud, conflicts of interest, data security incidents, and policy non-compliances are investigated, root-cause analyzed, and closed through the Corrective Action and Preventive Action (CAPA) system within defined timelines.\n\nBusiness ethics and compliance performance covering all seven issue areas is reviewed by the Managing Director and Senior Management at least quarterly.\n\nBusiness ethics performance data is compiled and disclosed to buyers and relevant stakeholders in annual sustainability reports, compliance declarations, and social audit submissions.\n\nPadma Satel Arab Fashions Ltd. is committed to fostering a speak-up culture where every employee, worker, contractor, director, and business partner can raise concerns about suspected ethics violations freely, safely, and without fear of adverse consequences.\n\nConcerns may be raised directly with a line manager, the HR team, or the Managing Director through any documented channel.\n\nPSA Fashions Ltd. maintains a confidential reporting mechanism — accessible by phone, email, or physical suggestion box — through which concerns can be reported, including anonymously, at any time.\n\nAny employee, worker, or associate who reports a concern in good faith will be fully protected from demotion, dismissal, exclusion, intimidation, or any other adverse action.\n\nThe identity of reporting individuals will be protected to the fullest extent possible, subject to legal and investigation requirements.",
+    "reviewMechanism": "This Business Ethics Policy is reviewed at least once every year, or whenever triggered by significant changes in business operations, new or amended applicable legislation, changes in buyer or social compliance requirements, significant ethics incidents, or material stakeholder concerns. The review is conducted by the Managing Director in consultation with Senior Management and the HR & Compliance function."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Padma/3. Business_Ethics_Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Padma/3. Business_Ethics_Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 38764,
+  "parsedAt": "2026-09-11T07:11:35.753Z"
+}

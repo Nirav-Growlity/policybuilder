@@ -1,0 +1,159 @@
+{
+  "id": "living-wage-cepl",
+  "name": "CEPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5.Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Clifton Export (P) Limited",
+      "industry": "",
+      "site": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk Tirupur - 641605, Tamilnadu, India",
+      "sites": [
+        {
+          "location": "Clifton Export (P) Ltd",
+          "address": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk Tirupur - 641605, Tamilnadu, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk Tirupur - 641605, Tamilnadu, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "In acknowledgment of the evolving landscape of labor standards and the imperative to address socio-economic inequalities, Clifton Export (P) Limited is dedicated to formulating and implementing a robust Living Wage Policy. Recognizing the intrinsic value of fair compensation and its profound impact on the well-being of our workforce, this policy aims to establish a framework that ensures all employees receive remuneration that adequately covers their basic needs, allowing for a dignified standard of living.\n\nAt Clifton Export (P) Limited we firmly believe that a living wage is not just a legal requirement but a moral imperative. This policy reflects our commitment to fostering a workplace environment characterized by fairness, equality, and social responsibility. By setting forth transparent and equitable guidelines for wage structures, we aim to uplift the financial well-being of our employees, contribute to the broader community, and play a pivotal role in shaping a more just and sustainable society.\n\nThrough the implementation of this Living Wage Policy, Clifton Export (P) Limited seeks to exemplify ethical leadership in the corporate realm, fostering a culture that values and prioritizes the economic dignity of each individual within our workforce.",
+      "declaration": "Clifton Export (P) Ltd is unwaveringly committed to a Living Wage Policy, seamlessly aligning financial prosperity with social responsibility. We pledge to ensure that all employees receive compensation exceeding legal minimums, fostering transparency, periodic review, and collaboration with stakeholders. This commitment reflects our dedication to promoting a workplace where economic dignity, fairness, and social responsibility prevail, contributing to ongoing growth while championing the well-being of our workforce and fostering a sustainable future for generations to come.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "This policy aims to establish a framework that ensures all employees receive remuneration that adequately covers their basic needs, allowing for a dignified standard of living.\n\nThe baseline minimum wage for all workers in the organization shall be established to guarantee a standard of living that aligns with principles of decency and well-being.\n\nClifton Export (P) Ltd is unwaveringly committed to a Living Wage Policy. We pledge to ensure that all employees receive compensation exceeding legal minimums.\n\nCommit to maintaining the lowest organization-wide wage at least 10% above the local living wage by 2027, promoting fair compensation across all job categories.\n\nThe commitments and targets are benchmarked against the baseline year 2022, with a target year of 2027.\n\nRegular reviews of the baseline minimum wage will be conducted to maintain fairness and responsiveness in compensation, aligning with changes in economic conditions.\n\nImplementing biennial comprehensive wage reviews for all employees, targeting the completion of 100% of the reviews by the end of the year 2027, to ensure fair and equitable compensation.\n\nTo maintain the effectiveness of our Living Wage Policy, an annual review will consider changes in labor laws, economic factors, and workforce needs."
+    },
+    "focusAreas": [
+      "Baseline Minimum Wage",
+      "Progressive Increment",
+      "Skill-Based Remuneration",
+      "Gender Equality",
+      "Health and Safety",
+      "Social Security Measures",
+      "Promotion of Work-Life Balance",
+      "Employee Engagement",
+      "Training and Skill Development"
+    ],
+    "qualitative": {
+      "Baseline Minimum Wage": [
+        "The baseline minimum wage for all workers in the organization shall be established to guarantee a standard of living that aligns with principles of decency and well-being.",
+        "Regular reviews of the baseline minimum wage will be conducted to maintain fairness and responsiveness in compensation, aligning with changes in economic conditions."
+      ],
+      "Progressive Increment": [
+        "Our commitment to gradual wage increases over time includes regular reviews, aligning with the rising cost of living, fostering parity across textile industries."
+      ],
+      "Skill-Based Remuneration": [
+        "Encourage skill development in organization through training programs. Recognize and reward workers with enhanced qualifications by offering higher remuneration, fostering continuous learning."
+      ],
+      "Gender Equality": [
+        "Promote gender equality in organization by upholding the fundamental principle of ensuring fair and equal wages for all employees, regardless of gender, and emphasizing equal pay for equal work."
+      ],
+      "Health and Safety": [
+        "Ensure the safety and well-being of our workers by implementing a comprehensive compensation plan in the event of workplace accidents."
+      ],
+      "Social Security Measures": [
+        "Implement a comprehensive retirement savings strategy, such as the establishment of a provident fund or pension scheme, to ensure employees can safeguard their financial well-being post-retirement.",
+        "Provide all employees with access to extensive health insurance coverage, encompassing medical expenses, hospitalization, and preventive care."
+      ],
+      "Promotion of Work-Life Balance": [
+        "Provide ample paid time off, encompassing vacation days, holidays, and personal leave, to support employees in rejuvenating and fostering a balanced work-life equilibrium."
+      ],
+      "Employee Engagement": [
+        "Adopt a practice of providing tangible rewards like bonuses, gifts, or public recognition to enhance employee motivation and engagement."
+      ],
+      "Training and Skill Development": [
+        "Aligning skill development with performance evaluations is integral to fostering career progression within our organization."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Minimum Living wage Guarantee",
+        "targets": [
+          {
+            "target": "Commit to maintaining the lowest organization-wide wage at least 10% above the local living wage by 2027, promoting fair compensation across all job categories.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Regular Wage Review",
+        "targets": [
+          {
+            "target": "Implementing biennial comprehensive wage reviews for all employees, targeting the completion of 100% of the reviews by the end of the year 2027, to ensure fair and equitable compensation.",
+            "baseline": "2022",
+            "deadline": "End of 2027"
+          }
+        ]
+      },
+      {
+        "area": "Annual Increment",
+        "targets": [
+          {
+            "target": "Commit to an annual across-the-board wage increment of at least 5%, effective from 2023, to guarantee employees experience real wage growth and improved living standards.",
+            "baseline": "2023",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Gender Pay Equality",
+        "targets": [
+          {
+            "target": "Aim for a gender pay gap under 5%, conducting regular audits and adjustments, with the goal of achieving 100% gender pay parity by 2027, referencing the baseline year 2023.",
+            "baseline": "2023",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Compensation and Benefits Oversight Team",
+        "duty": "Conduct this yearly assessment, meticulously evaluate the implementation of the policy, measure the attainment of established wage standards, and recommend adjustments or enhancements to align with emerging labor regulations and industry best practices."
+      },
+      {
+        "role": "Representatives from key departments",
+        "duty": "Participate in the annual assessment of the Living Wage Policy."
+      },
+      {
+        "role": "Representatives from essential departments within the organization",
+        "duty": "Conduct the annual evaluation to track progress on each aspect and its designated targets, and make recommendations for any necessary adjustments or improvements based on the outcomes."
+      }
+    ],
+    "monitoring": "Clifton Export (P) Ltd is committed to promoting transparency, accountability, and ongoing enhancement in the integration of Living Wage principles within its operations. In order to gain a deeper insight into the present situation and pinpoint areas for potential improvement, we have established an extensive reporting mechanism.\n\nMonitoring and Audit Reports: Periodic reporting derived from internal monitoring, audits, and external assessments designed to assess and document our performance in relation to our living wage policy. These reports will offer a comprehensive overview of our commitment to ensuring fair wages and will identify opportunities for improvement, showcasing our adherence to established standards in promoting equitable compensation.\n\nFeedback Mechanisms: Introducing surveys and feedback mechanisms designed to elicit perspectives from our workforce on the impact and effectiveness of our living wage policy. This valuable feedback will enable us to evaluate employee satisfaction, identify areas of concern, and tailor our strategies for continuous improvement in the domain of fair compensation.\n\nAdvocacy via feedback: Advocacy through feedback emerges as a potent tool for individuals to voice their concerns and offer constructive suggestions, actively engaging in the pursuit of an equitable living wage policy. This involvement contributes to positive transformations in organizational practices and policies.",
+    "reviewMechanism": "To maintain the effectiveness of our Living Wage Policy, an annual review will consider changes in labor laws, economic factors, and workforce needs. The Compensation and Benefits Oversight Team, with representatives from key departments, will conduct this yearly assessment.\n\nThe team's mandate is to meticulously evaluate the implementation of the policy, measure the attainment of established wage standards, and recommend adjustments or enhancements to align with emerging labor regulations and industry best practices. Their collective expertise ensures a comprehensive perspective in addressing evolving challenges and opportunities related to fair compensation.\n\nThe Living Wage Policy adjustments will receive final approval, emphasizing our commitment to fair wages and responsible employment practices. This systematic review process reflects our dedication to staying informed about labor standards and continuously improving policies for the highest ethical standards in employee compensation.\n\nThis Policy will be subject to an annual review to track progress on each aspect and its designated targets. Representatives from essential departments within the organization will conduct the evaluation, ensuring a comprehensive assessment of our commitment to fair wages. Recommendations for any necessary adjustments or improvements will be made based on the outcomes of this annual review."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/CEPL/5.Living Wage Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/CEPL/5.Living Wage Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 9723,
+  "parsedAt": "2026-09-11T07:36:40.230Z"
+}

@@ -1,0 +1,243 @@
+{
+  "id": "sustainable-procurement-gloster",
+  "name": "Gloster",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 2. Responsible Purchasing Policy_GRW_v1_0301.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Gloster Limited",
+      "industry": "",
+      "site": "Head Office, 21, Strand Road, Kolkata 700001",
+      "sites": [
+        {
+          "location": "GLOSTER LIMITED-Ananya Unit",
+          "address": "P.O: Fort Gloster, Bauria, Howrah – 711310, West Bengal",
+          "primaryFunction": ""
+        },
+        {
+          "location": "GLOSTER LIMITED-Head Office",
+          "address": "Head Office, 21, Strand Road, Kolkata 700001",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Head Office, 21, Strand Road, Kolkata 700001"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Gloster Limited is deeply committed to sustainable business practices that ensure the long-term viability of our operations and the well-being of our stakeholders. Our Sustainable Procurement Policy is designed to integrate environmental, social, and economic considerations into our procurement processes specific to the jute industry. By sourcing jute and other materials responsibly, we aim to minimize our environmental footprint, promote fair labor practices, and support the local economy. This policy reflects our dedication to ethical business practices and aligns with our broader sustainability goals, ensuring that our supply chain is resilient, responsible, and resource-efficient.",
+      "declaration": "To integrate sustainability criteria into all procurement decisions in the jute manufacturing industry.\n\nTo reduce the environmental impact of our jute supply chain.\n\nTo promote social responsibility and fair labor practices among our jute suppliers.\n\nTo support local economies and communities through responsible jute sourcing.\n\nTo continuously improve our procurement processes to enhance sustainability in jute manufacturing.",
+      "scope": "This Policy applies to all employees (at all levels), stakeholders (internal and external), partners, contractors, customers, suppliers, and any other individual or entity working on behalf of Gloster Limited. It also applies to the following sites."
+    },
+    "focusAreas": [
+      "General Targets",
+      "Environmental Issues in Supply Chain Management",
+      "Social Issues in Supply Chain Management",
+      "Technological Issues in Supply Chain Management",
+      "Specific Requirements",
+      "Risk Management",
+      "Transparency and Communication",
+      "Ongoing Development"
+    ],
+    "qualitative": {
+      "General Targets": [
+        "To strengthen ethical sourcing, we have implemented a supplier due diligence framework.",
+        "To improve supplier transparency, we have introduced mandatory sustainability disclosures.",
+        "To ensure responsible business conduct, we have integrated ESG clauses into procurement contracts.",
+        "To address supply chain non-compliances, we have implemented corrective action plans.",
+        "To enhance supply chain governance, we have established annual supplier reviews.",
+        "To strengthen ESG compliance across the supply chain, we aim to reinforce implementation of the Supplier Code of Conduct."
+      ],
+      "Environmental Issues in Supply Chain Management": [
+        "Additionally, we aim to source our raw materials locally whenever possible, which will further reduce transportation emissions.",
+        "To minimize our environmental footprint, we're actively seeking partnerships with certified suppliers who adhere to environmental standards like ISO 14001 and prioritize responsible sourcing and processing.",
+        "We also aim to spread awareness among our procurement staff through various training and awareness sessions on environmental issues."
+      ],
+      "Social Issues in Supply Chain Management": [
+        "To ensure fair labor practices, we are in progress to implement audit on our jute suppliers regularly.",
+        "To support local communities, we have adopted a policy to source jute from local farmers.",
+        "We also aim to strengthen awareness among our procurement staff on social responsibility through targeted training and awareness sessions on social and labor issues."
+      ],
+      "Technological Issues in Supply Chain Management": [
+        "We aim to increase the adoption of sustainable technologies in jute processing by collaborating with innovative suppliers."
+      ],
+      "Specific Requirements": [
+        "Environmental Criteria: Suppliers must demonstrate efforts to reduce their carbon footprint, manage waste, and use sustainable materials. They are required to provide evidence of their environmental management practices and compliance with relevant regulations.",
+        "Social Criteria: Suppliers are required to adhere to fair labor practices, support local communities, and promote diversity. This includes compliance with international labor standards, such as the ILO conventions, and support for local economic development initiatives.",
+        "Economic Criteria: Suppliers must engage in fair trade practices, support SME participation, and ensure equitable compensation for workers. We will prioritize suppliers who can demonstrate a commitment to economic fairness and sustainability.",
+        "Technological Criteria: Suppliers should invest in and adopt technologies that reduce environmental impact and enhance sustainability. This includes the use of renewable energy, efficient manufacturing processes, and innovative materials."
+      ],
+      "Risk Management": [
+        "Conduct regular risk assessments to identify and mitigate potential sustainability-related risks in our supply chain. These assessments will cover environmental, social, and economic risks, and will involve input from stakeholders and experts.",
+        "Develop and implement contingency plans to address identified risks, ensuring business continuity and resilience. Contingency plans will include alternative sourcing strategies, crisis management protocols, and communication plans.",
+        "Continuously monitor and evaluate the effectiveness of our risk management strategies, making adjustments as needed to address emerging risks. We will use key performance indicators (KPIs) and regular audits to track progress and identify areas for improvement.",
+        "Work closely with suppliers to identify and manage risks in their operations. This will include joint risk assessments, capacity building, and support for suppliers in developing their own risk management plans."
+      ],
+      "Transparency and Communication": [
+        "We are committed to maintaining transparency and open communication regarding our sustainable procurement efforts.",
+        "Regularly publishing our sustainability reports and progress updates on our website. We will also participate in industry forums and conferences to share our experiences and learn from others.",
+        "Hosting forums and meetings with stakeholders to discuss our sustainable procurement initiatives and gather input. These events will provide opportunities for dialogue and collaboration with key stakeholders, including suppliers, customers, and community representatives.",
+        "Ensuring that our sustainability expectations and requirements are clearly communicated to all suppliers and partners. We will provide detailed guidelines and support to help suppliers understand and meet our standards.",
+        "Establishing feedback mechanisms to allow stakeholders to share their views and suggestions on our sustainability practices. This will include online feedback forms, suggestion boxes, and regular stakeholder meetings."
+      ],
+      "Ongoing Development": [
+        "At Gloster Limited, ongoing development is central to our Sustainable Procurement Policy. We continuously seek new ways to enhance our procurement practices by integrating the latest sustainability standards and best practices.",
+        "Our commitment includes regular training for employees, innovative partnerships with eco-conscious suppliers, and investing in technologies that reduce environmental impact.",
+        "We also engage stakeholders through surveys and forums to ensure our initiatives remain effective and aligned with their expectations.",
+        "By fostering a culture of continuous improvement, we aim to set industry benchmarks in sustainable procurement."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Targets",
+        "targets": [
+          {
+            "target": "Complete ESG risk assessments for 50% of high-risk suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Obtain ESG-related information from 50% of active suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Cover 100% of supplier agreements with responsible sourcing requirements",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Close 100% of identified supplier non-compliances within defined timelines",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct sustainability performance evaluations for at least 50% of key suppliers",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Obtain formal acknowledgement of ESG requirements from 90% of active suppliers",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Issues in Supply Chain Management",
+        "targets": [
+          {
+            "target": "Reduce transportation emissions by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce new material use by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "15% supplier adoption of our code of conduct to ensure responsible environmental practices throughout our supply chain",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Cover 100% of procurement staff in Sustainable Procurement Training sessions",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Social Issues in Supply Chain Management",
+        "targets": [
+          {
+            "target": "Increase compliance with labor standards to 100%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase local procurement by 10%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Have 10% of our suppliers be women-owned businesses",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase small vendors participation by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Cover 100% of procurement staff in social sustainability and responsible sourcing training",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Technological Issues in Supply Chain Management",
+        "targets": [
+          {
+            "target": "Increase technology adoption by 5%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Responsible for integration into strategic business plans. They ensure resources are allocated to support sustainability initiatives and that sustainability goals are embedded in corporate objectives."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "Tasked with implementing sustainable procurement practices, including evaluating suppliers based on environmental, social, and economic criteria. They are also responsible for supplier relationship management, ensuring that sustainability requirements are communicated and adhered to."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Responsible for Implementation and Review for this policy, Monitors adherence to the policy and conducts regular audits to ensure compliance with sustainability standards. The Compliance Officer is also responsible for reporting compliance issues and developing corrective action plans in collaboration with the procurement team."
+      },
+      {
+        "role": "Sustainability Committee",
+        "duty": "Comprising representatives from various departments, the committee meets quarterly to review progress, address challenges, and propose new initiatives to enhance sustainability."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Expected to adhere to sustainable procurement practices and report any deviations or concerns to the Compliance Officer. Employees are encouraged to participate in sustainability training sessions and contribute to a culture of continuous improvement."
+      }
+    ],
+    "monitoring": "We are dedicated to regularly updating our stakeholders on the progress of our Sustainable Procurement Policy. Progress updates will be provided through:\n\nQuarterly Reports: Detailed reports on key performance indicators (KPIs) and progress towards our sustainability goals. These reports will include data on carbon footprint reduction, fair labor compliance, and local sourcing percentages.\n\nAnnual Sustainability Report: Comprehensive overview of our achievements, challenges, and future plans related to sustainable procurement. This report will be shared with all stakeholders, including investors, customers, and suppliers.\n\nInternal Meetings: Regular team meetings to discuss progress, share best practices, and address any issues. These meetings will include presentations from the procurement team, compliance officer, and sustainability committee.\n\nStakeholder Surveys: Periodic surveys to gather feedback from stakeholders on our sustainable procurement practices and areas for improvement.\n\nEffective risk management is essential to the success of our Sustainable Procurement Policy.\n\nContinuously monitor and evaluate the effectiveness of our risk management strategies, making adjustments as needed to address emerging risks. We will use key performance indicators (KPIs) and regular audits to track progress and identify areas for improvement.",
+    "reviewMechanism": "The Compliance Officer at Gloster Limited conducts annual and on an ad hoc basis review of the Sustainable Procurement Policy. This review includes evaluating supplier compliance, assessing progress against sustainability targets, and identifying areas for improvement. The findings are documented in an annual report, ensuring transparency and accountability."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Gloster/2. Responsible Purchasing Policy_GRW_v1_0301.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Gloster/2. Responsible Purchasing Policy_GRW_v1_0301.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 14705,
+  "parsedAt": "2026-09-11T07:07:41.040Z"
+}

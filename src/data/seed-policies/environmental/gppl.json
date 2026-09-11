@@ -1,0 +1,301 @@
+{
+  "id": "gppl",
+  "name": "GPPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Responsible Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Gujarat Paraffins Pvt Ltd",
+      "industry": "",
+      "site": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054",
+      "sites": [
+        {
+          "location": "Corporate Office",
+          "address": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "Factory",
+          "address": "Plot No:128, G.I.D.C. Industrial Estate,, Kalol N.G. Kalol 382721 Gandhinagar, Gujarat India.",
+          "primaryFunction": "Manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Gujarat Paraffins Pvt Ltd is a well-established manufacturing company in India, engaged in the production of paraffin waxes and specialty wax products. The Company is known for its commitment to quality, operational excellence, and responsible manufacturing practices. Since its inception, Gujarat Paraffins Pvt Ltd has focused on delivering high-quality products while maintaining compliance with regulatory and customer requirements.\n\nThe Company recognizes that environmental sustainability is an essential component of long-term business success and is committed to minimizing environmental impacts arising from its operations.",
+      "declaration": "The purpose of this Responsible Environmental Policy is to demonstrate Gujarat Paraffins Pvt. Ltd.’s commitment to environmental protection, pollution prevention, and compliance with applicable environmental regulations. The Policy aims to promote efficient use of resources, reduce environmental impacts from operations, and support continuous improvement in environmental performance.",
+      "scope": "This policy applies to all operational locations of Gujarat Paraffins Pvt. Ltd., including manufacturing units and the corporate office. It covers all employees, contractors, suppliers, and all stakeholders (both internal and external). The policy applies to the following locations:"
+    },
+    "focusAreas": [
+      "Compliance with all applicable environmental laws, consents, and regulations",
+      "Efficient use of energy and continuous reduction of emissions",
+      "Responsible water use, conservation, and wastewater management",
+      "Minimization of waste generation and promotion of reuse and recycling",
+      "Prevention and control of air pollution from operations",
+      "Safe handling and storage of raw materials and chemicals",
+      "Employee awareness and training on environmental responsibilities"
+    ],
+    "qualitative": {
+      "Energy and Emissions Management": [
+        "We will gradually implement energy-efficient technologies, such as high-efficiency motors, LED lighting, and process optimization equipment, to improve energy performance throughout our facilities.",
+        "We will explore the use of renewable energy sources, such as solar and wind power, and other low-emission alternatives to reduce Scope 2 emissions, as part of long-term planning, wherever technically and economically feasible.",
+        "We aim to reduce Scope 1 emissions from company-owned vehicles and generators by improving fuel efficiency, optimizing route planning, and gradually adopting electric vehicles where feasible.",
+        "Preventive maintenance programs and continuous energy monitoring systems will be enhanced to optimize electricity and fuel consumption and minimize unnecessary losses in operations.",
+        "We aim to conduct periodic energy audits to identify energy efficiency opportunities and areas for improvement across operations.",
+        "Energy performance data will be periodically reviewed to identify opportunities for continuous improvement and informed decision-making at the management level.",
+        "We aim to strengthen internal capability by training relevant employees on energy management practices and GHG emissions awareness."
+      ],
+      "Water Stewardship": [
+        "We seek to optimize water consumption across operations through improved process efficiency, preventive maintenance, and good housekeeping practices.",
+        "We plan to strengthen real-time monitoring systems for water withdrawal and usage to support improved visibility of consumption trends and continuous improvement.",
+        "We will promote responsible water use through employee awareness programs, trainings, operational procedures, and leadership oversight.",
+        "We shall ensure strict compliance with wastewater discharge limits and consent conditions prescribed by the State Pollution Control Board (SPCB).",
+        "We will conduct monthly wastewater analysis through NABL-accredited recognized third-party laboratories to verify compliance, monitor effluent quality, and address deviations in a timely manner.",
+        "We will explore opportunities to implement rainwater harvesting systems to support groundwater recharge and strengthen long-term water sustainability."
+      ],
+      "Resource Efficiency and Waste Reduction": [
+        "We aim to ensure full compliance with all applicable environmental laws, standards, and regulations governing the generation, handling, and disposal of waste across all operations",
+        "We will improve resource efficiency by implementing process controls, material balance reviews, and improved storage and handling practices to minimize raw material losses and wastage.",
+        "We shall ensure source-level segregation of hazardous and non-hazardous waste at all facilities and manage waste disposal exclusively through authorized and licensed waste management vendors, supported by proper documentation and manifests.",
+        "We will periodically review waste generation, recycling, and disposal data at site level to identify reduction opportunities and support continuous improvement initiatives.",
+        "We will conduct regular employee training and awareness programs on waste segregation, safe handling, and reduction practices, with training records maintained.",
+        "We will follow the waste management 5R hierarchy (reduce, reuse, recycle, recover, dispose) and encourage the use of recyclable, reusable, and environmentally preferable materials in procurement and operations, wherever feasible.."
+      ],
+      "Chemical Management and Safe Handling": [
+        "We shall ensure that all chemicals are procured, stored, handled, and disposed of in compliance with applicable legal requirements and standards, including the Factories Act, 1948, Manufacture, Storage and Import of Hazardous Chemicals (MSIHC) Rules, along with internal procedures.",
+        "We will maintain up-to-date Safety Data Sheets (SDS), clear and standardized labelling, and documented handling and storage instructions for all hazardous chemicals at the point of use, ensuring easy accessibility to employees.",
+        "We will ensure the use of appropriate Personal Protective Equipment (PPE)—such as gloves, goggles, face shields, masks, and protective clothing—by employees handling chemicals, supported by training, supervision, and availability of PPE at workstations.",
+        "We will provide regular training to employees involved in chemical handling on safe handling practices, hazard communication, emergency response, and spill management, with training records and attendance maintained.",
+        "We shall implement appropriate engineering and administrative controls, including secondary containment systems, spill kits, ventilation controls, and restricted access, to prevent chemical spills, leaks, and unintended releases.",
+        "We will ensure responsible disposal of chemical waste through authorized and licensed hazardous waste management vendors, supported by proper documentation, manifests, and regulatory reporting, as applicable.."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy and Emissions Management",
+        "targets": [
+          {
+            "target": "We aim to achieve a 10% reduction in Scope 1 and Scope 2 GHG emissions, by FY 2030–31 compared to FY 2022–23, through the adoption of energy-efficient equipment, optimization of processes, and enhanced energy management practices.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Toal energy consumption in both manufacturing and utility operations will be lowered by 5% by FY 2030–31, facilitated through regular energy audits and gradual replacement of inefficient equipment from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We aim to achieve a 10% reduction in Scope 3 GHG emissions by FY 2030–31 compared to FY 2022–23 through supplier engagement and logistics optimization.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "The proportion of electricity sourced from renewable energy will be raised to at least 5% by FY 2030–31, through on-site renewable installations and procurement of green energy wherever feasible, starting from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We aim to achieve a 5% reduction in GHG emissions intensity by FY 2030–31, compared to the FY 2022–23 baseline, through improved energy efficiency and optimized operational practices.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We will train 100% of employees on energy management and GHG emissions awareness by FY 2026–27, supporting responsible and energy-efficient behavior across operations.",
+            "baseline": "",
+            "deadline": "FY 2026–27"
+          }
+        ]
+      },
+      {
+        "area": "Water Stewardship",
+        "targets": [
+          {
+            "target": "A 10% reduction in total freshwater consumption will be targeted by FY 2030–31 compared to the FY 2022–23 baseline, through water-efficient practices and monitoring.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Water recycling and reuse will be increased by 20% by FY 2030–31 from the FY 2022–23 baseline through enhanced reuse initiatives.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We commit to installing water-efficient fixtures in 100% of our administrative and industrial premises by FY 2030-31.",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We strive to train 100% of our employees and maintenance staff in water conservation by FY 2030-31.",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We commit to maintaining 100% compliance with all applicable water discharge norms and regulations by FY 2030-31.",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Resource Efficiency and Waste Reduction",
+        "targets": [
+          {
+            "target": "We aim to achieve a 10% overall waste reduction by FY 2030-31 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Paper consumption in offices will be cut by 30% by FY 2027–28, supported by digital documentation, electronic approvals, and employee awareness campaigns from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "The use of environmentally preferable or reusable packaging will rise by 20% by FY 2030–31, achieved through supplier engagement and packaging optimization strategies from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We aim for a 15% reduction in non-hazardous waste generation by FY 2030–31 from the baseline FY 2022–23.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "We will ensure that 100% of applicable waste streams, including e-waste, battery waste, and packaging waste, are managed through government-authorized and certified recyclers by FY 2030-31.",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "We will ensure that 100% of employees are trained on waste handling, management, and segregation practices by FY 2030-31.",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Chemical Management and Safe Handling",
+        "targets": [
+          {
+            "target": "Ensure 100% of hazardous chemicals have up-to-date Safety Data Sheets (SDS) and GHS-compliant labelling at storage and point-of-use locations by FY 2030-31 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Provide chemical safety and safe-handling training to 100% of employees involved in chemical handling annually, with training records maintained by FY 2030-31.",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Achieve 100% compliance in the use of appropriate Personal Protective Equipment (PPE) for chemical handling activities, verified through periodic site inspections by FY 2030-31.",
+            "baseline": "",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Conduct at least one internal chemical safety audit per year at each facility to identify gaps and track corrective actions.",
+            "baseline": "",
+            "deadline": "Per year"
+          },
+          {
+            "target": "Ensure 100% of hazardous chemical waste is disposed of through authorized and licensed waste management vendors, supported by manifests and regulatory records, by FY 2030-31 from the baseline FY 2022-23.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Provide leadership, vision, and resources to implement environmental management initiatives."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure integration of environmental objectives into business planning and decision-making."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Review environmental performance periodically and support continuous improvement."
+      },
+      {
+        "role": "Environmental Management Officer",
+        "duty": "Review the entire Policy regularly"
+      },
+      {
+        "role": "Environmental Management Officer",
+        "duty": "Ensure compliance with environmental laws, regulations, and company standards."
+      },
+      {
+        "role": "Environmental Management Officer",
+        "duty": "Develop, implement, and monitor environmental programs, including emissions, waste, and resource management."
+      },
+      {
+        "role": "Environmental Management Officer",
+        "duty": "Coordinate the collection, validation, consolidation, and reporting of environmental data related to energy, emissions, water, waste, and chemicals."
+      },
+      {
+        "role": "Environmental Management Officer",
+        "duty": "Maintain accurate records of environmental performance and statutory reporting."
+      },
+      {
+        "role": "Environmental Management Officer",
+        "duty": "Conduct regular audits, inspections, and assessments to identify risks and ensure corrective actions are taken."
+      },
+      {
+        "role": "Department Heads / Managers",
+        "duty": "Implement environmental practices within their respective departments."
+      },
+      {
+        "role": "Department Heads / Managers",
+        "duty": "Ensure timely and accurate submission of department-level environmental data to the EHS/Environmental Management function."
+      },
+      {
+        "role": "Department Heads / Managers",
+        "duty": "Monitor department-level compliance with procedures, policies, and environmental objectives."
+      },
+      {
+        "role": "Department Heads / Managers",
+        "duty": "Facilitate training, awareness, and resource allocation for employees under their supervision."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Follow all environmental procedures, instructions, and guidelines."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Report any environmental incidents, spills, non-compliances, or hazards promptly."
+      },
+      {
+        "role": "Employees and Contractors",
+        "duty": "Actively participate in environmental awareness programs and initiatives."
+      }
+    ],
+    "monitoring": "We will collect, monitor, and report performance data under this policy through defined internal roles and processes. Site Heads, EHS Managers, and Functional Heads shall be responsible for accurate data collection, validation, and compliance with applicable requirements. Performance will be periodically reviewed by senior management to ensure transparency, accountability, and continuous improvement.\n\nEnvironmental performance will be improved through regular monitoring, internal audits, and review of environmental objectives. Audit findings, incidents, and employee feedback will be used to implement corrective actions, adopt best practices, and update targets to ensure ongoing compliance and enhanced environmental performance.",
+    "reviewMechanism": "The Environmental Management Officer will review this Policy annually or as required, recommend updates to management, and communicate approved changes to relevant stakeholders to ensure ongoing compliance and continuous improvement."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/GPPL/1. Responsible Environmental Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/GPPL/1. Responsible Environmental Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 15244,
+  "parsedAt": "2026-09-11T07:08:06.200Z"
+}

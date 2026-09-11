@@ -1,0 +1,457 @@
+{
+  "id": "shenzhen-xingbiao-tairui-china",
+  "name": "Shenzhen Xingbiao - Tairui China",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environment Policy done.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Shenzhen Xingbiao Electronic Technology Co Ltd",
+      "industry": "",
+      "site": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China",
+      "sites": [
+        {
+          "location": "Shenzhen Xingbiao Electronic Technology Co Ltd",
+          "address": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Floor 1-4, Building No.13, Antuoshan High-tech industrial Park, Shajing Sub-district, Bao'an District Shenzhen 518000 Shenzhen, Guangdong China"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Guided by a strong sense of environmental responsibility, Shenzhen Xingbiao Electronic Technology Co Ltd is committed to sustainable operations and reducing our environmental footprint. This Environmental Policy reflects our dedication to improving energy efficiency, minimizing waste, preventing pollution, and complying fully with all applicable environmental regulations.\n\nSustainability is embedded in our business strategy, driving continuous improvement across all areas of operation. Through responsible practices and meaningful engagement with stakeholders, we aim to contribute to a cleaner, greener, and more sustainable future.",
+      "declaration": "Driven by our commitment to environmental sustainability Shenzhen Xingbiao Electronic Technology Co Ltd prioritizes responsible business operations that reduce our ecological impact. We focus on enhancing energy efficiency, minimizing waste, preventing pollution, and conserving natural resources. Our practices are aligned with all relevant environmental laws and regulations, and we are dedicated to ongoing improvement.\n\nWe foster sustainability through innovative approaches, active employee participation, and close collaboration with stakeholders. By developing environmentally responsible electronic solutions and encouraging sustainable practices across our supply chain, we aim to lead by example and contribute to a greener future.",
+      "scope": "This policy applies to all employees, workers, subcontractors, and other stakeholders directly affiliated with us. The applicable sites include:"
+    },
+    "focusAreas": [
+      "Energy Use",
+      "Greenhouse Gases",
+      "Water Resource Management",
+      "Waste Management",
+      "Material and Chemical Management",
+      "Biodiversity Protection",
+      "Air Pollution Control",
+      "Product Use (Environmental Impact During Use Phase)",
+      "Product End-of-Life and Circular Economy",
+      "Environmental Services and Sustainability Advocacy",
+      "Customer Health & Safety"
+    ],
+    "qualitative": {
+      "Energy Use": [
+        "Enhance energy efficiency by optimizing energy-intensive processes and operational practices.",
+        "Gradually increase the use of renewable energy sources to reduce reliance on fossil fuels.",
+        "Raise employee awareness of energy conservation through targeted training and engagement programs.",
+        "Establish and maintain internal energy management systems aligned with ISO 50001 to drive continuous improvement in energy performance."
+      ],
+      "Greenhouse Gases": [
+        "Reducing direct (Scope 1) and indirect (Scope 2) emissions by improving energy efficiency and expanding the use of renewable energy sources.",
+        "Addressing Scope 3 emissions by assessing and minimizing the environmental impact of activities across our value chain, including procurement, logistics, and end-of-life product management.",
+        "Optimizing transportation and logistics to lower fuel usage and reduce CO₂ emissions.",
+        "Establishing structured processes for calculating, monitoring, and regularly evaluating our carbon footprint using reliable assessment tools."
+      ],
+      "Water Resource Management": [
+        "Reduce overall water consumption by improving operational efficiency and minimizing unnecessary use.",
+        "Implement water conservation measures across all facilities to lower our water footprint.",
+        "Conduct regular training and awareness programs to promote water-saving practices among employees."
+      ],
+      "Waste Management": [
+        "Reduce hazardous and non-hazardous waste generation through responsible material use and waste minimization strategies.",
+        "Implement Standard Operating Procedures (SOPs) for waste management to ensure proper handling, segregation, and disposal.",
+        "Apply the 3Rs (Reduce, Reuse, and Recycle) to minimize environmental impact and optimize resource efficiency.",
+        "Substitute hazardous substances with safer, eco-friendly alternatives to reduce environmental risks.",
+        "Train employees on waste management best practices and chemical safety."
+      ],
+      "Material and Chemical Management": [
+        "Optimize material use by improving design efficiency, reducing scrap, and selecting durable, recyclable, or renewable materials where feasible.",
+        "Maintain an up-to-date inventory of all chemicals used in operations and ensure proper labeling, storage, and handling in accordance with safety regulations.",
+        "Substitute hazardous chemicals with safer, eco-friendly alternatives whenever possible to minimize risk to people and the environment.",
+        "Conduct regular training and audits to ensure employees are aware of chemical safety protocols and proper material usage practices."
+      ],
+      "Biodiversity Protection": [
+        "Minimize impacts on local ecosystems and biodiversity arising from operations, logistics, and infrastructure activities.",
+        "Promote responsible land use, habitat protection, and avoidance of activities that may harm biodiversity.",
+        "Encourage biodiversity awareness among employees and integrate biodiversity considerations into environmental risk assessments."
+      ],
+      "Air Pollution Control": [
+        "Prevent and minimize air emissions from manufacturing, energy use, and transportation activities.",
+        "Implement pollution prevention measures to reduce particulate matter, NOx, SOx, and VOC emissions.",
+        "Ensure compliance with all applicable air quality regulations and continuously improve emission performance."
+      ],
+      "Product Use (Environmental Impact During Use Phase)": [
+        "Design and promote products that are energy-efficient, durable, and safe during customer use.",
+        "Provide clear information and guidance to customers on responsible and environmentally safe product usage.",
+        "Continuously assess product performance to reduce environmental and health impacts during use."
+      ],
+      "Product End-of-Life and Circular Economy": [
+        "Promote responsible disposal, reuse, and recycling of products at end of life.",
+        "Support circular economy principles by improving product recyclability and material recovery.",
+        "Collaborate with customers and partners to reduce electronic waste and environmental harm."
+      ],
+      "Environmental Services and Sustainability Advocacy": [
+        "Support environmental initiatives, awareness programs, and sustainability advocacy within local communities and industry networks.",
+        "Encourage employee participation in environmental campaigns and conservation activities.",
+        "Engage with stakeholders to promote responsible environmental practices beyond company operations."
+      ],
+      "Customer Health & Safety": [
+        "Ensure products are safe, reliable, and compliant with applicable health, safety, and environmental regulations.",
+        "Minimize risks related to hazardous substances, emissions, and product misuse.",
+        "Maintain transparent communication with customers regarding product safety and environmental impacts."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Use",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in facility energy consumption by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the share of renewable energy in total energy consumption to 30% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees receive training on energy efficiency best practices by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Upgrade 60% of lighting and machinery systems to energy-efficient models by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Greenhouse Gases",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in Scope 1, Scope 2 and Scope 3 GHG emissions by 2030, using 2022 as the baseline year.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce fuel consumption in company transport by 15% by 2030 through optimized logistics and fuel-efficient practices.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees receive training on GHG emissions awareness and reduction strategies by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Engage suppliers to start reporting on Scope 3 GHG data by 2030, to improve full-chain carbon accountability.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Resource Management",
+        "targets": [
+          {
+            "target": "Reduce total water consumption by 15% by 2030, using 2022 as the baseline year.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees receive training on water conservation practices by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Improve wastewater treatment efficiency to meet or exceed regulatory standards by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maximize reuse of treated wastewater for non-process applications (such as cleaning or landscaping), where feasible, by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement and maintain rainwater harvesting and/or groundwater recharge measures at applicable facilities by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste Management",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in total hazardous and non-hazardous waste generation by 2030, compared to the 2022 baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase overall waste diversion from landfill (through Reduce, Reuse, Recycle) to 30% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Replace at least 15% of hazardous substances with safer, eco-friendly alternatives by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide annual waste management and chemical safety training to 100% of employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Material and Chemical Management",
+        "targets": [
+          {
+            "target": "Reduce overall material consumption per unit of production by 5% by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of chemicals used in operations are properly labeled, stored, and documented by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide chemical handling and safety training to 100% of relevant employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Ensure basic environmental and land-use risk screening is completed and maintained for 100% of facilities by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero incidents related to biodiversity or land-use non-compliance annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Include biodiversity considerations in environmental risk assessments for any site modifications by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "By 2030, the Company ensures that 100% of employees receive awareness training on biodiversity protection and environmental responsibility.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with applicable air emission and environmental quality regulations annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Ensure annual DG set maintenance and emission checks are conducted each year through 2030, where applicable.",
+            "baseline": "2022",
+            "deadline": "each year through 2030"
+          },
+          {
+            "target": "Ensure 100% of DG sets meet applicable emission and noise standards annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Provide air emission and pollution awareness training to 100% of relevant employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero regulatory penalties related to air emissions annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Ensure safe-use, handling, and environmental guidance is available for 100% of products by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of applicable products comply with RoHS, REACH, and customer product safety requirements annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Review and document customer complaints related to product safety or environmental impact at least annually through 2030.",
+            "baseline": "2022",
+            "deadline": "at least annually through 2030"
+          },
+          {
+            "target": "Maintain zero confirmed product safety incidents caused by inadequate usage instructions annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life",
+        "targets": [
+          {
+            "target": "Ensure end-of-life disposal, recycling, or handling guidance is provided for 100% of products by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure cooperation with authorized recyclers or disposal partners, where applicable, is maintained by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% compliance with applicable e-waste and product disposal regulations annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Periodically review product recyclability and material recovery opportunities by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Conduct at least one internal environmental awareness or training activity per year from 2026 through 2030.",
+            "baseline": "2022",
+            "deadline": "per year from 2026 through 2030"
+          },
+          {
+            "target": "Encourage voluntary employee participation in environmental initiatives annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Share environmental good practices with employees and relevant business partners annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Support small-scale environmental initiatives aligned with company capabilities by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Maintain zero major product safety, health, or environmental non-compliance incidents annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Ensure 100% compliance with applicable product safety, chemical, and environmental regulations annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          },
+          {
+            "target": "Provide product safety and compliance training to 100% of relevant employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of customer safety or quality complaints are reviewed, documented, and addressed within defined timelines annually through 2030.",
+            "baseline": "2022",
+            "deadline": "annually through 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Leadership",
+        "duty": "Sets the strategic vision and approves environmental policies and key initiatives."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Ensures alignment with legal requirements and international sustainability standards."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Allocates necessary resources to support environmental goals and continuous improvement."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Designs and implements sustainability strategies in line with company objectives."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Monitors environmental performance and ensures regulatory compliance."
+      },
+      {
+        "role": "Environmental Management Team",
+        "duty": "Conducts regular audits and assessments to identify areas for enhancement."
+      },
+      {
+        "role": "Department Heads & Facility Managers",
+        "duty": "Integrate environmental practices into daily operations and departmental plans."
+      },
+      {
+        "role": "Department Heads & Facility Managers",
+        "duty": "Promote energy efficiency, waste reduction, and pollution prevention efforts."
+      },
+      {
+        "role": "Department Heads & Facility Managers",
+        "duty": "Lead employee training and foster a culture of environmental responsibility."
+      },
+      {
+        "role": "Employees & Operational Staff",
+        "duty": "Adhere to environmental procedures and contribute to sustainability efforts."
+      },
+      {
+        "role": "Employees & Operational Staff",
+        "duty": "Report environmental risks or improvement opportunities."
+      }
+    ],
+    "monitoring": "Shenzhen Xingbiao Electronic Technology Co Ltd is committed to transparency, accountability, and continuous improvement in environmental performance. Our reporting framework ensures regular monitoring of sustainability initiatives and compliance with all applicable regulations.\n\nEnvironmental data will be collected and reviewed quarterly to track progress against defined sustainability targets.\n\nAn annual sustainability report will be compiled and shared with both internal and external stakeholders.\n\nQuarterly updates will be submitted to the Executive Leadership Team to inform strategic decision-making.\n\nAnnual internal reviews will be conducted by the Compliance Manager to evaluate performance and identify areas for improvement.\n\nRegulatory compliance reports will be submitted as per legal and environmental requirements.\n\nStakeholder updates will be communicated to customers, suppliers, and investors to showcase environmental progress and accountability.",
+    "reviewMechanism": "The Compliance Officer is responsible for overseeing the implementation and review of this policy. This policy will be reviewed annually to ensure its effectiveness and relevance. Updates and changes will be communicated to all stakeholders as necessary. If required, the company may revise the policy at any time to address emerging issues or regulatory changes."
+  },
+  "sourcePath": "Policies - Kenal/Shenzhen Xingbiao - Tairui China/Environment Policy done.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Shenzhen Xingbiao - Tairui China/Environment Policy done.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 15661,
+  "parsedAt": "2026-09-11T07:28:37.911Z"
+}

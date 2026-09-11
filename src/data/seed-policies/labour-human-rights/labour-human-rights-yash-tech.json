@@ -1,0 +1,774 @@
+{
+  "id": "labour-human-rights-yash-tech",
+  "name": "Yash Tech",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labor and Human rights Assurance Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Yash Technologies Pvt. Ltd.",
+      "industry": "",
+      "site": "841 Avenue of the Cities East Moline IL, 61244",
+      "sites": [
+        {
+          "location": "India",
+          "address": "201-205 Bansi Trade Center,, 581/5 M. G. Road, Indore, Madhya Pradesh 452001",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "India",
+          "address": "STP-1, Ground Floor, IT/ITES- SEZ, Near Bhawar Kuwan Square, Indore, Madhya Pradesh 452001",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Plot No. 1, Scheme Number 166, Super Corridor Road, Indore, Madhya Pradesh 452005",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "702, 7th Floor, Campus C, RMZ Centennial, Survey No. 74 & 77, Doddanakudi Village, Krishnarajapuram, HobliBengaluru, Karnataka 560048",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Awfis, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Guindy Chennai, Tamil Nadu 600032 (Office Space)",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "C/o Sundew Properties Limited (SEZ Developer), Office 1,2,3 & 4 (2nd Office Floor), 6th Floor Building #20, Raheja Mind space, CyberabadMadhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "C/o Sundew Properties Limited (SEZ Developer), 10th Floor Building #20, Raheja Mind space, Cyberabad, Madhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "UrbanWrk, 10th Floor, Building No 10, Raheja Mindspace, Hitech City, Madhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Wing A & B, Level 2, Tower No.1, Cyber City, Magarpatta City, Hadapsur, Pune, Maharashtra 411013",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Plot No. 23/1, IT & ITES SEZ (MIDC), Rajiv Gandhi InfoTech Park, Hinjewadi, Phase – III, Pune, Maharashtra 411057",
+          "primaryFunction": ""
+        },
+        {
+          "location": "China",
+          "address": "Suite 2006 20/F, Hua Qin International Building, 340 Queen’s Road Central, Hong Kong 999077",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Malaysia",
+          "address": "C-05-02 , C-05-3A, C-05-10,C-05-12, iTech Tower, Jalan Impact, Cyber 6, Cyberjaya, Selangor Darul Ehsan 63000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Singapore",
+          "address": "17 Phillip Street, #05-01 Grand Building, Singapore 048695",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Thailand",
+          "address": "87/1 Capital Tower, All Seasons Place, 16th Floor, Unit 1603 -6, Wireless Road, Lumpini Sub-districtPathumwan District, Bangkok, Thailand 10330",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "C/o Crown Corporate Services, Level 35, Tower One, Barangaroo, Sydney, New South Wales 2000",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Australia",
+          "address": "Level 5/121 King William St, Adelaide, South Australia 5000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "22nd Floor, Northbank Plaza, 69 Ann Street, Brisbane, Queensland 4000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "Rialto, Level 27, South Tower, 525, Collins Street, Melbourne, Victoria 3000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "Level 27, St Martins Tower, 44 St Georges Terrace, Perth, Western Australia 6000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Finland",
+          "address": "Bertel Jungin aukio 5, Espoo, Southern Finland province 02600",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Germany",
+          "address": "Konrad-Zuse-Ring 28, Mannheim, Baden-Württemberg, 68163",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Netherland",
+          "address": "Prinsengracht 697-2, Amsterdam, North Holland 1017 JV",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Netherland",
+          "address": "Hullenberweg 278-308, Amsterdam, North Holland 1101 BV",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Poland",
+          "address": "ul. Domaniewska 37, Warszawa, Poland 02-672",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Romania",
+          "address": "Soseaua Mihai Bravu n Subsol, Modul S083, Sector 3, Bucharest, Southeastern Romania",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Swedan",
+          "address": "Sveavägen 33, 3rd Floor, 111 34 Stockholm",
+          "primaryFunction": ""
+        },
+        {
+          "location": "United Kingdom",
+          "address": "Level 8, One Canada Square, Canary Wharf, London E14 5AA, United Kingdom",
+          "primaryFunction": ""
+        },
+        {
+          "location": "UAE",
+          "address": "Office 3602, 36th Floor, Al Shatha Towers, Dubai Internet CityDubai, P.O.Box 501714",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "UAE",
+          "address": "Office 848, Al Ansari Building, Khalifa Street, Abu Dhabi, P.O.Box 28346",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Egypt",
+          "address": "34A Al-Multaqa Al-Arabi District, 2nd Floor Office 201 Helioplis Division, Sheraton ,Cairo, P.O.Box 11799",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Lebanon",
+          "address": "Office Unit No. 1291, Section 4 Sarba, Lebanon",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Oman",
+          "address": "5th Floor Office A5, Bank Sohar Building Dohat Al Adab Street, Al Khuwair P.O. Box 395, PC 118, Muscat",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Saudi Arabia",
+          "address": "5th Floor, Balhamer Business GateAsh Shati Ash Sharqi 8196, Dammam, P.O.Box 32414",
+          "primaryFunction": ""
+        },
+        {
+          "location": "State of Qatar",
+          "address": "Office 1111, 11th Floor, Marina Twin Towers, Tower B, Regus Doha Twin Towers. Lusail, State of Qatar P.O. Box 301477",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "841 Avenue of the CitiesEast Moline IL, 61244",
+          "primaryFunction": "Global Headquarters (Corporate Office)"
+        },
+        {
+          "location": "USA",
+          "address": "4801 E Independence Blvd, Suite #900, Charlotte, North Carolina 28212",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "333 N. Michigan AvenueSuite #800, Chicago, Illinois 60601",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "455 Avenue of the Cities, East Moline, Illinois 61244",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "7760 France Ave S, Suite #1100, Minneapolis, Minnesota 55435",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "2000 W Pioneer Pkwy, Suite #16, Peoria, Illinois 61615",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "211 College Road East, Suite #102, Princeton, New Jersey 08540",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "Y & L Consulting, Inc.,A YASH Technologies Company, 5750 Epsilon, San Antonio, Texas 78249",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "3 City Place Drive, Suite #520, St. Louis, Missouri 63141",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "17406 Royalton Rd., Suite #104, Strongsville, Ohio 44136",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "Aurora Business Park, Building 15, 4408 114th Street, Urbandale, Iowa 50322",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "400 Tradecenter Drive, Suite #4880, Woburn, Massachusetts 01801",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Canada",
+          "address": "350 Burnhamthorpe Rd. West, Suite #200, Office 28, Mississauga, Ontario L5B 3J1",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "841 Avenue of the Cities East Moline IL, 61244"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Yash Technologies, we recognize the critical importance of safeguarding the rights and well- being of our employees and are committed to integrating ethical labor practices into all aspects of our operations. As a leading IT company, we understand that our activities have both direct and indirect impacts on our workforce. Therefore, we strive to ensure safe working conditions, promote fair labor practices, and foster an inclusive and supportive work environment. Our Labor and Human Rights Assurance Policy is designed to guide our efforts in protecting employee health and safety, promoting equitable working conditions, and ensuring compliance with labor laws and human rights standards. By adhering to this policy, we aim to contribute positively to the well-being of our employees and external stakeholders while fostering a culture of responsibility and respect within our organization and beyond.",
+      "declaration": "",
+      "scope": "This Policy applies to all entities, offices, facilities, joint ventures, subsidiaries, and stakeholders of Yash Technologies Group across Asia, Australia, the Middle East & Africa, North America, the United States, and Europe.\n\nThe Policy extends to all stakeholders, including employees, workers, contractors, subcontractors, suppliers, and business partners."
+    },
+    "focusAreas": [
+      "Employees' Health and Safety",
+      "Workplace Environment",
+      "Labor Relations",
+      "Career development",
+      "Ethical Labor Practices",
+      "Diversity, Equity & Inclusion",
+      "Discrimination & Harassment",
+      "External Stakeholder Human Rights"
+    ],
+    "qualitative": {
+      "Employees' Health and Safety": [
+        "At our company, we focus on maintaining a safe and healthy work environment by assessing potential workplace hazards and implementing preventive safety measures effectively.",
+        "Our priority is to ensure that employees have access to necessary health resources, including mental health support and wellness programs for overall well-being within the firm.",
+        "We focus on providing comprehensive training on safety protocols to prevent workplace accidents and injuries, ensuring every team member understands the procedures.",
+        "We focus on implementing ergonomic workplace designs to minimize the risk of physical strain and injuries, enhancing employee comfort and health across the company.",
+        "We emphasize continuous improvement of health and safety standards within our organization, ensuring compliance with relevant regulations and best practices for workplace safety.",
+        "We leverage advanced risk assessment tools to systematically identify and mitigate workplace hazards, ensuring a secure environment for all team members.",
+        "We deliver continuous, scenario-based safety training programs to equip employees with the knowledge to handle emergencies effectively.",
+        "We integrate ergonomic design principles and wellness initiatives into our workspace, optimizing both physical and mental health.",
+        "We will deploy an anonymous digital platform for employees to report safety concerns, enabling swift and data-driven responses.",
+        "We use real-time monitoring systems to track and refine our health and safety protocols, ensuring compliance with the latest industry regulations"
+      ],
+      "Workplace Environment": [
+        "At YT, we focus on creating a work environment that supports work-life balance and respects employees' right to disconnect after work hours for personal time.",
+        "We prioritize fair and transparent remuneration practices that reflect the true value of our team members’ contributions and align with industry standards across the company.",
+        "We ensure that employees work under conditions that promote their well- being, free from undue stress or unreasonable workloads, fostering job satisfaction within the firm.",
+        "We are committed to maintaining clear communication channels to address and resolve any concerns related to working conditions promptly and effectively across the organization.",
+        "We regularly review and enhance working conditions to align with industry standards and employee expectations, adapting to evolving workplace needs at the company.",
+        "We implement cloud-based collaboration tools and flexible work arrangements, enabling employees to maintain work-life balance and adhere to the right to disconnect.",
+        "We will use data analytics to conduct periodic assessments of working conditions, ensuring continuous alignment with industry best practices.",
+        "We equip our offices with state-of-the-art technology and adaptive workstations, fostering an efficient and productive work environment.",
+        "We maintain transparent communication channels through project management platforms, ensuring employees have clear and consistent guidance on work expectations.",
+        "We will cultivate a culture of inclusivity and recognition by using AI-driven feedback systems to ensure that employee’s feel valued and acknowledged."
+      ],
+      "Labor Relations": [
+        "At the firm, we prioritize maintaining open and constructive dialogue with employee representatives to foster mutual understanding and strengthen labor relations.",
+        "We ensure that team members have the right to freely associate and collectively bargain in accordance with local laws, upholding their rights within the company.",
+        "We focus on resolving conflicts through negotiation and mediation to maintain a harmonious work environment, avoiding unnecessary disruptions at YT.",
+        "We are committed to ensuring that all labor relations practices within our organization are conducted with respect for employees' rights and dignity, maintaining ethical standards.",
+        "We will employ structured communication protocols with employee representatives, facilitated by digital platforms, to ensure all stakeholder voices are heard and acted upon.",
+        "We will establish clear, documented policies on labor relations, accessible through our employee portal, ensuring transparency and mutual respect.",
+        "We utilize sentiment analysis tools from employee feedback to inform our labor relations strategy and address emerging issues preemptively."
+      ],
+      "Career development": [
+        "At our firm, we focus on creating clear career paths that provide employees with opportunities for professional growth and advancement within the organization.",
+        "We prioritize regular performance evaluations to identify areas for development and recognize achievements, supporting continuous employee progress at YT.",
+        "We ensure that all employees have access to training programs that enhance their skills and support career progression, fostering personal development within the company.",
+        "We emphasize the importance of equitable recruitment practices that attract diverse talent across all levels of the organization, ensuring inclusivity at our firm.",
+        "We are committed to providing mentorship programs that support employees in achieving their career goals, facilitating guidance and growth within the organization.",
+        "We will deploy AI-driven recruitment systems to enhance diversity, equity, and inclusion, ensuring fair and equal opportunities for all applicants.",
+        "We provide continuous learning opportunities through a digital learning management system (LMS), helping employees upskill and adapt to industry advancements.",
+        "We will implement a structured, data-backed performance management system to deliver consistent feedback and identify growth opportunities.",
+        "We offer virtual mentorship programs and career pathing tools to support employees in their professional development journeys.",
+        "We will regularly review and optimize our career management practices using predictive analytics to align with both industry trends and employee aspirations."
+      ],
+      "Ethical Labor Practices": [
+        "At YT, we focus on stringent screening processes to ensure no child or forced labor is present in our operations or throughout our supply chain.",
+        "We are committed to collaborating with external stakeholders to promote and implement best practices for eradicating child and forced labor across our global operations.",
+        "We focus on regular audits of our suppliers to ensure compliance with our strict labor standards, identifying and addressing potential violations at the firm.",
+        "We emphasize the importance of educating employees and partners about the risks and signs of child and forced labor, raising awareness throughout the company.",
+        "We are dedicated to taking immediate action to address any violations related to child or forced labor that are identified through our practices at YT.",
+        "We strictly enforce a zero-tolerance policy on child and forced labor, supported by blockchain-based supply chain monitoring to ensure compliance.",
+        "We will conduct regular third-party audits and utilize AI tools to assess and mitigate any risks related to child and forced labor within our supply chain.",
+        "We are committed to transparency by publishing detailed reports on our efforts to prevent child and forced labor, accessible via our corporate website.",
+        "We will partner with local communities and NGOs, using our platform to support and scale initiatives aimed at eradicating child and forced labor.",
+        "We deliver targeted training through e-learning modules to raise awareness among employees and partners about the importance of preventing child and forced labor."
+      ],
+      "Diversity, Equity & Inclusion": [
+        "At our organization, we focus on fostering an inclusive workplace where all employees feel valued, respected, and heard, celebrating diverse perspectives and contributions.",
+        "We prioritize equitable hiring practices to ensure a diverse workforce that reflects the communities we serve and promotes varied viewpoints within YT.",
+        "We ensure that all team members have equal access to opportunities, resources, and support within the company, promoting fairness and inclusivity across the firm.",
+        "We emphasize the importance of continuous education on diversity and inclusion to build awareness and cultural competence throughout the organization.",
+        "We are committed to regularly reviewing our diversity, equity, and inclusion initiatives to identify and address any gaps in our practices at the company.",
+        "We will promote a diverse and inclusive workplace by implementing AI-based recruitment tools to remove biases and ensure equal opportunity for all candidates.",
+        "We will deploy immersive, interactive training programs to foster a culture of respect, equity, and inclusion across our organization.",
+        "We are committed to transparency, using data dashboards to track, analyze, and report our diversity metrics and progress in real-time.",
+        "We will establish employee resource groups and leverage digital platforms to support underrepresented groups within our workforce, fostering a sense of belonging.",
+        "We will continuously enhance our diversity, equity, and inclusion initiatives by leveraging machine learning algorithms to predict and address evolving employee needs."
+      ],
+      "Discrimination & Harassment": [
+        "At our organization, we maintain a zero-tolerance policy towards any form of discrimination, harassment, or bullying, ensuring a safe and respectful environment for all employees.",
+        "We actively promote equal treatment, free from bias based on gender, race, age, religion, disability, sexual orientation, or any other protected characteristic.",
+        "We ensure that every employee has access to fair complaint and grievance mechanisms to report incidents confidentially and without fear of retaliation.",
+        "We provide regular training and awareness programs to sensitize employees on recognizing, preventing, and addressing discriminatory or harassing behavior.",
+        "We are committed to continuous monitoring and periodic review of our workplace culture to eliminate risks of discrimination and harassment and to strengthen a culture of dignity and respect.",
+        "We aim to conduct regular employee training sessions on anti-discrimination and harassment prevention, ensuring continuous learning and practical workplace application.",
+        "We plan to implement periodic workplace risk assessments to identify and mitigate potential harassment or discrimination risks, fostering a safer organizational culture.",
+        "Our goal is to maintain a confidential grievance redressal system that ensures fair and timely resolution of cases, strengthening employee trust and accountability.",
+        "We commit to organizing awareness campaigns to promote respectful behaviour and cultural sensitivity, encouraging inclusivity and positive employee engagement across teams.",
+        "We strive to conduct annual reviews of all workplace practices related to discrimination and harassment to ensure they remain effective, relevant, and responsive to evolving workplace challenges."
+      ],
+      "External Stakeholder Human Rights": [
+        "At our firm, we focus on conducting thorough human rights impact assessments to understand our operations' effects on external stakeholders and their communities.",
+        "We prioritize working with suppliers and partners who share our commitment to upholding human rights, ensuring responsible business practices within YT.",
+        "We ensure that our business practices respect the rights of communities, workers, and individuals impacted by our operations, maintaining ethical standards across the company.",
+        "We emphasize the importance of transparency in reporting our efforts to protect external stakeholders' human rights, building trust and accountability within the firm.",
+        "We are committed to engaging with external stakeholders to address any human rights concerns raised about our activities, ensuring responsible action at YT.",
+        "We will engage with external stakeholders using our integrated supply chain management system to ensure that our operations uphold human rights standards.",
+        "We will implement a comprehensive due diligence framework, powered by AI, to assess and mitigate potential human rights impacts across our business activities.",
+        "We are committed to transparency by using our digital reporting tools to share updates on our human rights initiatives and progress with stakeholders.",
+        "We will collaborate with industry peers and NGOs through blockchain technology to advance and standardize human rights practices in the IT sector.",
+        "We will establish digital grievance mechanisms, accessible to external stakeholders, to report and resolve human rights concerns efficiently and effectively."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employees' Health and Safety",
+        "targets": [
+          {
+            "target": "Continue to maintain the annual incident rate of workplace injuries to 0% as of baseline year 2022",
+            "baseline": "baseline year 2022",
+            "deadline": ""
+          },
+          {
+            "target": "Increase the percentage of employees attending safety training annually to 90% by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 25% reduction in work-related stress cases by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Improve workplace ergonomic assessments, increasing coverage to 95% by 2025, based on the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Enhance mental health support access, aiming for a 30% increase in utilization by 2025 compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Environment",
+        "targets": [
+          {
+            "target": "Reduce average overtime hours per employee by 15% by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Continue to maintain 80%+ employee satisfaction rate with work-life balance in years to come, as standardized in the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": ""
+          },
+          {
+            "target": "Continue to maintain the percentage of employees with access to flexible working arrangements in range of 80% + in years to come as standardized in baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": ""
+          },
+          {
+            "target": "Continue to make the annual employee feedback more robust and elaborative for employees to share their thoughts and views for organizational development and employee well being",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Enhance workplace cleanliness and maintenance standards, achieving a 25% improvement in ratings by 2025, based on the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Labor Relations",
+        "targets": [
+          {
+            "target": "Increase the number of structured meetings with employee representatives to bi-monthly by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Develop and implement a formal grievance resolution process, achieving full adoption by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase the percentage of employees aware of their rights and grievance mechanisms to 90% by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Aim to cover 100% of employees in collective bargaining agreement and employee representative election procedure by 2025 from the baseline 2022.",
+            "baseline": "baseline 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Career development",
+        "targets": [
+          {
+            "target": "Continue to maintain the percentage of employees receiving annual performance reviews at 100% in year to come as standardized",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Continue to maintain percentage of employees participating in professional development programs at range of 95%-100% in year to come.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Improve the internal promotion rate to 30% by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase recruitment efficiency, reducing the average time-to-fill positions by 20% by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Continue to maintain career advancement opportunities and sustaining 80%+employee satisfaction in career progression in 2025 and beyond.",
+            "baseline": "",
+            "deadline": "2025 and beyond"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Labor Practices",
+        "targets": [
+          {
+            "target": "Continue to maintain 100% compliance with child and forced labor regulations across all supply chains and sustain this rate in 2025 and beyond.",
+            "baseline": "",
+            "deadline": "2025 and beyond"
+          },
+          {
+            "target": "Increase the percentage of suppliers audited for child and forced labor practices to 95% by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Continue to maintain reported child and forced labor incidents in the supply chain at 0% in 2025 and beyond.",
+            "baseline": "",
+            "deadline": "2025 and beyond"
+          },
+          {
+            "target": "Implement mandatory training on child and forced labor prevention for 100% of relevant employees by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Establish a transparent reporting system for child and forced labor issues, aiming for 100% implementation by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity & Inclusion",
+        "targets": [
+          {
+            "target": "Increase the percentage of underrepresented groups in leadership positions to 10% by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 20% increase in employee satisfaction with diversity and inclusion practices by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement annual diversity training for 100% of employees by 2025, based on the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Enhance recruitment practices to increase the diversity of new hires by 5% by 2025 and to maintain ration of 30:70 for Women to Men, compared to the baseline year 2022",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase the percentage of diverse suppliers to 15% by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and harassment",
+        "targets": [
+          {
+            "target": "We strive to achieve 100% employee participation in anti-discrimination and harassment training programs annually by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Our goal is to maintain zero reported cases of workplace harassment and discrimination consistently through 2025.",
+            "baseline": "",
+            "deadline": "through 2025"
+          },
+          {
+            "target": "We plan to ensure 100% of grievances related to discrimination and harassment are resolved within 30 days by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We commit to conducting workplace risk assessments for discrimination and harassment at least twice per year across 100% of departments by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "We commit to conducting internal assessments on discrimination and harassment at least twice annually across all locations by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Achieve a 100% compliance rate with human rights standards for external stakeholders by 2025, based on the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase the number of human rights impact assessments conducted for key external stakeholders to 90% by 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Develop and implement a human rights due diligence process for 100% of external partnerships by 2025, relative to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Enhance transparency by publishing annual human rights reports on external stakeholder impacts, starting from 2025, compared to the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "starting from 2025"
+          },
+          {
+            "target": "Increase stakeholder engagement on human rights issues by 30% by 2025, based on the baseline year 2022.",
+            "baseline": "baseline year 2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Oversee the implementation and adherence to the Labor and Human Rights Assurance Policy."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Ensure regular updates to the policy based on legal requirements, best practices, and audit findings."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Review and approve the annual Labor and Human Rights Report."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Lead biannual performance review meetings and ensure integration of recommendations into action plans."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Supervise the compliance audits and human rights impact assessments."
+      },
+      {
+        "role": "Human Resources Manager (HRM)",
+        "duty": "Implement and manage internal procedures related to labor and human rights, including employee health, safety, and career development."
+      },
+      {
+        "role": "Human Resources Manager (HRM)",
+        "duty": "Conduct and analyze employee feedback and engagement surveys."
+      },
+      {
+        "role": "Human Resources Manager (HRM)",
+        "duty": "Coordinate with external auditors for periodic compliance audits."
+      },
+      {
+        "role": "Human Resources Manager (HRM)",
+        "duty": "Facilitate regular training sessions on labor and human rights for employees."
+      },
+      {
+        "role": "Human Resources Manager (HRM)",
+        "duty": "Report on progress towards meeting labor and human rights targets during performance review meetings."
+      },
+      {
+        "role": "Head of Operations",
+        "duty": "Ensure operational practices comply with the Labor and Human Rights Assurance Policy."
+      },
+      {
+        "role": "Head of Operations",
+        "duty": "Oversee the integration of human rights considerations into daily operations."
+      },
+      {
+        "role": "Head of Operations",
+        "duty": "Collaborate with HRM to address any operational issues related to employee rights and workplace environment."
+      },
+      {
+        "role": "Head of Operations",
+        "duty": "Assist in preparing the annual Labor and Human Rights Report by providing relevant operational data."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Assist in conducting regular monitoring and reporting of labor and human rights metrics."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Support the preparation and dissemination of the annual Labor and Human Rights Report."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Monitor compliance with internal standards and external regulations."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Coordinate with HRM for scheduling and conducting performance reviews and audits."
+      },
+      {
+        "role": "Employee Relations Specialist",
+        "duty": "Handle employee grievances and issues related to labor and human rights."
+      },
+      {
+        "role": "Employee Relations Specialist",
+        "duty": "Facilitate communication between employees and management to resolve concerns."
+      },
+      {
+        "role": "Employee Relations Specialist",
+        "duty": "Conduct periodic surveys to gauge employee satisfaction and areas needing improvement."
+      },
+      {
+        "role": "Employee Relations Specialist",
+        "duty": "Provide insights and recommendations based on survey results to the HRM and CCO."
+      },
+      {
+        "role": "External Auditor",
+        "duty": "Conduct periodic compliance audits to evaluate adherence to labor and human rights standards."
+      },
+      {
+        "role": "External Auditor",
+        "duty": "Provide independent assessments and recommendations to the CCO and HRM."
+      },
+      {
+        "role": "External Auditor",
+        "duty": "Review and validate data included in the annual Labor and Human Rights Report."
+      },
+      {
+        "role": "Legal Counsel",
+        "duty": "Provide guidance on legal requirements and changes related to labor and human rights."
+      },
+      {
+        "role": "Legal Counsel",
+        "duty": "Assist in updating the Labor and Human Rights Assurance Policy to ensure compliance with relevant laws."
+      },
+      {
+        "role": "Legal Counsel",
+        "duty": "Support the CCO and HRM in addressing any legal issues arising from compliance audits or employee grievances."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Oversee initiatives related to sustainable practices that impact labor and human rights."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Collaborate with HRM to integrate sustainability considerations into workforce practices and policies."
+      },
+      {
+        "role": "Sustainability Manager",
+        "duty": "Support the development of the annual Labor and Human Rights Report with relevant sustainability data."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to the Labor and Human Rights Assurance Policy and participate in related training sessions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any violations or concerns related to labor and human rights to their immediate supervisor or HRM."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in feedback surveys and provide honest input regarding their workplace environment and practices."
+      },
+      {
+        "role": "Employees",
+        "duty": "Engage in ongoing education and awareness efforts to uphold labor and human rights standards."
+      }
+    ],
+    "monitoring": "Regular Monitoring and Reporting: Firm will conduct regular monitoring of labor and human rights performance metrics to ensure compliance with the objectives set forth in this policy. Performance data will be collected and analyzed quarterly to assess progress against the established targets.\n\nAnnual Labor and Human Rights Report: An annual Labor and Human Rights Report will be prepared and published, detailing achievements, challenges, and progress towards meeting the quantitative targets. This report will include data on employee health and safety, workplace environment, labor relations, career development, ethical labor practices, diversity, equity, inclusion, and external stakeholder human rights.\n\nPerformance Review Meetings: Biannual performance review meetings will be held with key stakeholders, including department heads and HR managers, to evaluate progress, discuss issues, and identify areas for improvement. Recommendations from these meetings will be integrated into policy updates and action plans.\n\nCompliance Audits: Periodic compliance audits will be conducted to ensure adherence to labor laws and internal standards. These audits will be performed by both internal and external auditors to provide an objective assessment of compliance and identify any potential areas of non-compliance.\n\nEmployee Feedback and Engagement Surveys: Regular employee feedback and engagement surveys will be conducted semi-annually to gauge the effectiveness of our labor and human rights initiatives. Survey results will be analyzed to identify areas for improvement and ensure that employee concerns are addressed promptly.\n\nHuman Rights Impact Assessments: Annual human rights impact assessments will be carried out to evaluate the effectiveness of our policies and practices in protecting employee rights and well-being. These assessments will help identify potential risks and areas for improvement, ensuring that our operations remain aligned with best practices and human rights standards.\n\nStakeholder Communication: Transparent communication with stakeholders, including employees, suppliers, and customers, will be maintained through regular updates and briefings. The outcomes of labor and human rights performance and any significant changes to the policy will be communicated to all relevant parties to ensure continued alignment and engagement.",
+    "reviewMechanism": "Yash Technologies is committed to continuously enhancing our Labor and Human Rights Assurance Policy by regularly reviewing performance metrics, seeking employee feedback, and integrating best practices. We will analyze audit results and industry developments to identify areas for improvement. Ongoing training and stakeholder engagement will support policy evolution, ensuring we adapt to emerging challenges and uphold the highest standards of labor and human rights across all operations.\n\nThe Chief Compliance Officer (CCO) will conduct an annual review of the Labor and Human Rights Assurance Policy. This review will assess policy effectiveness, compliance with legal and ethical standards, and alignment with organizational goals."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Yash Tech/2. Labor and Human rights Assurance Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Yash Tech/2. Labor and Human rights Assurance Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 35618,
+  "parsedAt": "2026-09-11T07:18:12.577Z"
+}

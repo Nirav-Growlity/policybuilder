@@ -1,0 +1,266 @@
+{
+  "id": "labour-human-rights-trinity",
+  "name": "Trinity",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Inclusive Workplace policy - Updated - GRW 29-07.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Trinity Logistics, Inc.",
+      "industry": "",
+      "site": "50 Fallon Avenue, Seaford, DE 19973",
+      "sites": [
+        {
+          "location": "Trinity Logistics Corporate Office",
+          "address": "50 Fallon Avenue, Seaford, DE 19973",
+          "primaryFunction": "Corporate office"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "50 Fallon Avenue, Seaford, DE 19973"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Trinity, we prioritize our team members above all else. Our policy reflects our commitment to fostering a workplace that upholds the dignity, safety, and rights of every individual. We recognize the intrinsic value of our team members and are dedicated to creating an environment that promotes fairness, equality, and respect. Through this policy, we aim to ensure that every member of our team feels valued, supported, and empowered to thrive.",
+      "declaration": "Trinity Logistics, Inc. is dedicated to promoting and safeguarding the rights and well-being of our team members. Our primary objective is to establish and maintain a work environment that upholds labor standards, human rights principles, and ethical practices. Through this policy, we aim to:\n\nEnsure compliance with local and national labor laws and regulations.\n\nFoster a culture of respect, dignity, and fairness among all team members.\n\nProvide avenues for open communication, feedback, and resolution of issues.\n\nEducate and empower team members to understand their rights and responsibilities within the workplace.",
+      "scope": "This Inclusive Workplace policy applies to all team members of Trinity Logistics, Inc. across all operational locations."
+    },
+    "focusAreas": [
+      "Equal Employment Opportunity",
+      "Open Door Policy",
+      "Performance Evaluations and Reviews",
+      "Safe Work Environment",
+      "Anti-Discrimination and Harassment",
+      "Employee Health and Safety",
+      "Working Conditions",
+      "Career Management",
+      "Child Labour and Forced Labour",
+      "Diversity, Equity, and Inclusion",
+      "Discrimination and Harassment",
+      "External Stakeholder Human Rights",
+      "Labor relation"
+    ],
+    "qualitative": {
+      "Employee Health and Safety": [
+        "We aim to foster a proactive health and safety culture by ensuring widespread employee participation in relevant training, which will include regular safety workshops and comprehensive risk assessments.",
+        "We commit to providing continuous mental health support to all employees, maintaining our dedication to overall well-being through accessible counseling services and mental health awareness programs."
+      ],
+      "Working Conditions": [
+        "We strive to enhance employee satisfaction through regular feedback and improvements based on annual survey results, implementing action plans to address key concerns and improving work-life balance through flexible working hours.",
+        "Our goal is to reduce employee turnover by addressing key areas of engagement and satisfaction, introducing mentorship programs and career development opportunities.",
+        "We aim to provide ergonomic workstations to the majority of our employees to ensure comfort and well-being, conducting workspace assessments and providing necessary equipment upgrades.",
+        "We commit to fostering regular employee engagement through quarterly meetings to maintain strong communication and alignment, while encouraging open dialogue and participation in decision-making processes."
+      ],
+      "Career Management": [
+        "We are dedicated to providing sufficient training hours for each employee to support professional growth and skill development by organizing tailored training sessions and access to online learning platforms.",
+        "Our goal is to ensure that most employees have personal development plans to guide their career advancement, with regular one-on-one reviews and goal-setting initiatives."
+      ],
+      "Child Labour and Forced Labour": [
+        "We are committed to maintaining zero incidents of child labor or forced labor within our operations by implementing rigorous audits and supplier vetting processes, alongside robust awareness training for employees."
+      ],
+      "Diversity, Equity, and Inclusion": [
+        "We aim to ensure the majority of employees receive diversity training annually, fostering an inclusive and equitable workplace through targeted training programs and promoting diversity in recruitment and leadership roles.",
+        "Our goal is to increase employee satisfaction with diversity initiatives, ensuring a positive and inclusive work environment through continuous feedback loops and active diversity task forces."
+      ],
+      "Discrimination and Harassment": [
+        "The company will continue to enforce its Equal Employment Opportunity (EEO) framework by ensuring all employment-related decisions—such as hiring, compensation, promotion, and disciplinary actions—remain free from discrimination, in full compliance with applicable federal, state, and local laws.",
+        "We are committed to maintaining a workplace culture that does not tolerate any form of discrimination or harassment, ensuring a respectful and inclusive environment for all team members.",
+        "We aim to reinforce awareness and accountability by conducting annual company-wide training on discrimination, harassment prevention, and respectful workplace behavior for all team members, with a focus on real-world scenarios and inclusive practices.",
+        "Trinity will also maintain open and confidential reporting systems to address discrimination and harassment concerns, promoting a safe environment where all employees feel empowered to report issues without fear of retaliation."
+      ],
+      "External Stakeholder Human Rights": [
+        "We are committed to maintaining zero human rights violations across our logistics partners, ensuring ethical practices throughout our supply chain by conducting regular partner evaluations, audits, and establishing stringent human rights criteria in supplier contracts."
+      ],
+      "Labor relation": [
+        "We aim to strengthen collaborative labor relations by regularly engaging with employee representatives through structured dialogue sessions, ensuring open communication and addressing concerns promptly to foster mutual trust and respect.",
+        "We are committed to maintaining a positive and cooperative work environment by implementing regular conflict resolution training for both management and employees, ensuring that workplace disputes are handled fairly and efficiently."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Achieve 95% employee participation in health and safety training",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide mental health support to 100% of employees",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Achieve 80% employee satisfaction in annual surveys",
+            "baseline": "Baseline year 2022, which had 77% satisfaction, no survey in 2023, and 66% satisfaction in 2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce the employee turnover rate to 20%",
+            "baseline": "Baseline year 2022, which had 14.6%, 31.49% in 2023, and 24.16% in 2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 95% of employees have access to ergonomic workstations",
+            "baseline": "Baseline year 2022, which had 80% access in 2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct quarterly employee engagement meetings with 100% participation",
+            "baseline": "Baseline year 2022, achieving 100% in 2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Career Management",
+        "targets": [
+          {
+            "target": "Provide 15 hours of training per employee annually",
+            "baseline": "Baseline year 2022, which had 11 hours of training per employee",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 80% of employees have personal development plans",
+            "baseline": "Baseline year 2022, which had 60% in 2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Child Labour and Forced Labour",
+        "targets": [
+          {
+            "target": "Maintain zero incidents of child labor or forced labor annually",
+            "baseline": "Baseline year 2022, which had zero incidents",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity, and Inclusion",
+        "targets": [
+          {
+            "target": "Ensure 80% of employees receive annual diversity training",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase employee satisfaction with diversity initiatives to 80%",
+            "baseline": "Baseline year 2022, which had 64% satisfaction in 2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination and Harassment",
+        "targets": [
+          {
+            "target": "We aim to achieve 100% completion rate of annual anti-discrimination and harassment training for all employees",
+            "baseline": "FY 2022 as the baseline year",
+            "deadline": "2030"
+          },
+          {
+            "target": "Anti-discrimination and harassment compliance checks will be integrated into 100% of internal audits",
+            "baseline": "FY 2022 audit practices",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will ensure 95% of team members rate the workplace as respectful and inclusive in employee surveys",
+            "baseline": "FY 2022 as the baseline year",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to maintain zero reported cases of discrimination and all forms of harassment, including sexual harassment annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to conduct at least one company-wide training program on discrimination and harassment annually",
+            "baseline": "",
+            "deadline": "Through to 2030"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder Human Rights",
+        "targets": [
+          {
+            "target": "Maintain zero human rights violations across logistics partners",
+            "baseline": "Baseline year 2022, which had zero violations in 2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Labor relations",
+        "targets": [
+          {
+            "target": "Our goal is to resolve 95% of employee concerns reported through the open-door policy within 30 days",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to ensure that 100% of employees are aware of the open-door policy",
+            "baseline": "Baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "The Executive Leadership Team is responsible for championing the implementation of this policy throughout the organization. They are tasked with providing visible leadership, allocating necessary resources, and fostering a culture that prioritizes the well-being and rights of all team members."
+      },
+      {
+        "role": "Team Services Department",
+        "duty": "The Team Services department plays a pivotal role in ensuring the effective dissemination of this policy to all employees. Our Team Services including the People Operations team is responsible for facilitating training sessions, managing grievance procedures, and monitoring compliance with labor laws and human rights standards."
+      },
+      {
+        "role": "Department Managers",
+        "duty": "Department managers and team leads are accountable for implementing the specific measures outlined in this policy within their respective teams. They are responsible for ensuring that team members receive adequate training, have access to necessary resources, and are supported in maintaining safe and respectful working conditions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Every individual within Trinity Logistics, Inc. is responsible for upholding the principles outlined in this policy. Team members are encouraged to actively participate in creating a workplace culture that promotes fairness, equality, and respect for all."
+      }
+    ],
+    "monitoring": "Trinity Logistics, Inc. is committed to fostering a transparent and accountable reporting mechanism to address any concerns related to labor standards and human rights violations. The following reporting channels are available to employees, contractors, partners, and clients:\n\nInternal Reporting: Employees are encouraged to report any violations of this policy or concerns regarding labor standards and human rights issues to their immediate supervisor, department manager, or the Team Services department. Trinity Logistics guarantees confidentiality and non-retaliation for individuals reporting in good faith.\n\nAnonymous Hotline: Trinity Logistics provides an anonymous hotline for individuals who wish to report concerns anonymously. This hotline is managed by a third-party service provider to ensure confidentiality and impartiality in handling reports.\n\nExternal Reporting: In addition to internal channels, individuals have the option to report concerns to relevant external authorities or regulatory bodies, such as labor agencies or human rights organizations, if they feel their concerns are not adequately addressed internally.",
+    "reviewMechanism": "Team Service Director is committed to annually reviewing and evaluating the effectiveness of this Inclusive workplace policy and labor and human right policy to ensure continuous improvement and alignment with evolving standards. The following review mechanisms are established:\n\nPeriodic Audits: Trinity Logistics conducts regular audits of its operations to assess compliance with labor laws, human rights standards, and the provisions outlined in this policy. These audits include both internal assessments and external audits conducted by independent third parties.\n\nStakeholder Feedback: Trinity Logistics actively seeks feedback from team members and other stakeholders to gauge the effectiveness of this policy in promoting a safe, fair, and respectful workplace. Feedback is collected through surveys, focus groups, and other engagement initiatives.\n\nPolicy Review Committee: Trinity Logistics has established a dedicated committee responsible for overseeing the review and revision of this policy as needed. The committee comprises representatives from executive leadership team, the Team Services department, legal counsel, and relevant stakeholders to ensure comprehensive review and alignment with best practices."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Trinity/Inclusive Workplace policy - Updated - GRW 29-07.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Trinity/Inclusive Workplace policy - Updated - GRW 29-07.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 22421,
+  "parsedAt": "2026-09-11T07:16:57.115Z"
+}

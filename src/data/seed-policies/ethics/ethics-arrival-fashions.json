@@ -1,0 +1,425 @@
+{
+  "id": "ethics-arrival-fashions",
+  "name": "Arrival Fashions",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Ethics _Policy AFL.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Arrival Fashion Ltd",
+      "industry": "",
+      "site": "Apt No.5, House No. 3, Road No.23/B, Gulshan 1, Dhaka 1212.",
+      "sites": [
+        {
+          "location": "Arrival Fashion Ltd, Colomesshor, Board Bazar, Gazipur.",
+          "address": "Arrival Fashion Ltd, Colomesshor, Board Bazar, Gazipur.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Arrival Fashion Ltd, Plot 10, Block # Kha, Section 6, Road 1, Mirpur, Dhaka - 1216.",
+          "address": "Arrival Fashion Ltd, Plot 10, Block # Kha, Section 6, Road 1, Mirpur, Dhaka - 1216.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Holding: 17, Vill: Mamarishpur, Post: Mallik Bari, P.s: Bhaluka, Dist: Mymensingh, Bangladesh.",
+          "address": "Holding: 17, Vill: Mamarishpur, Post: Mallik Bari, P.s: Bhaluka, Dist: Mymensingh, Bangladesh.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Apt No.5, House No. 3, Road No.23/B, Gulshan 1, Dhaka 1212."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Arrival Fashion Ltd is dedicated to maintaining the highest standards of ethical conduct in every facet of its operations. This policy outlines our commitment to preventing corruption and safeguarding information security throughout our vertically integrated processes, from the design and production of high-quality garments to their distribution. We strive to ensure that our business practices reflect integrity, transparency, and respect for all stakeholders involved in our supply chain.",
+      "declaration": "Our company is dedicated to preventing any form of corruption and ensuring the secure handling of information. This policy sets forth our commitments and quantitative targets for achieving these goals.",
+      "scope": "This policy applies to all workers, employees, directors, officers, agents, contractors, and any third parties acting on behalf of Arrival Fashion Ltd (AFL). It covers all business activities, including procurement, sales, marketing, and any interactions with government officials, customers, suppliers, and other stakeholders. The policy is applicable globally, regardless of local business practices or cultural norms. This policy applies to below mentioned locations:"
+    },
+    "focusAreas": [
+      "Anti-Corruption Initiatives",
+      "Data Protection and Privacy",
+      "Sustainable Procurement Practices",
+      "Social Responsibility Initiatives",
+      "Transparency in Operations",
+      "Fraud Prevention",
+      "Money Laundering Prevention",
+      "Reporting Protection Measures",
+      "Supplier Code of Conduct",
+      "Conflict of Interest Mitigation",
+      "Gift and Entertainment Management",
+      "Integrity and Anti-Corruption Controls",
+      "Conflict of Interest",
+      "Anti-Money Laundering (AML) and Financial Integrity Controls",
+      "Fair Competition and Market Conduct Compliance",
+      "Information Security and Privacy Governance",
+      "Enforcement and Disciplinary Measures"
+    ],
+    "qualitative": {
+      "Anti-Corruption Initiatives": [
+        "Commitment: Prevent bribery, corruption, facilitation payments, and unethical inducements across all business activities through robust governance, training, and enforcement mechanisms."
+      ],
+      "Data Protection and Privacy": [
+        "Commitment: Protect personal, commercial, and operational information through secure systems, controlled access, and responsible handling practices."
+      ],
+      "Sustainable Procurement Practices": [
+        "Commitment: Ensure that all raw materials are sourced ethically, transparently, and responsibly, with supply chain practices aligned to sustainability principles, human rights standards, and environmental stewardship requirements."
+      ],
+      "Social Responsibility Initiatives": [
+        "Commitment: Foster sustainable and inclusive community development by actively engaging with and supporting the communities where we operate through structured social investment, partnerships, and long-term outreach initiatives."
+      ],
+      "Transparency in Operations": [
+        "Commitment: Ensure full transparency, accountability, and integrity across all business operations and sustainability reporting, with accurate and timely disclosures."
+      ],
+      "Fraud Prevention": [
+        "Commitment: Prevent and eliminate fraud through robust internal controls, continuous monitoring, and full compliance with established policies and regulations."
+      ],
+      "Money Laundering Prevention": [
+        "Commitment: Ensure full prevention of money laundering by adhering to all applicable AML regulations and implementing robust internal controls and monitoring procedures."
+      ],
+      "Reporting Protection Measures": [
+        "Commitment: Maintain a safe and transparent environment where employees and stakeholders can report unethical behavior, ensuring confidentiality and protection from retaliation."
+      ],
+      "Supplier Code of Conduct": [
+        "Commitment: Ensure that all suppliers comply with ethical, social, and environmental standards as defined in the Supplier Code of Conduct."
+      ],
+      "Conflict of Interest Mitigation": [
+        "Commitment: Ensure all conflicts of interest are proactively identified, disclosed, and effectively managed to maintain transparency and uphold ethical decision-making across the organization."
+      ],
+      "Gift and Entertainment Management": [
+        "Commitment: Prevent any offering or acceptance of gifts, hospitality, or entertainment that could influence business decisions or create conflicts of interest through clear policies, employee awareness, and enforcement mechanisms."
+      ],
+      "Integrity and Anti-Corruption Controls": [
+        "Promptly report suspected bribery, fraud, or unethical conduct through the designated compliance or whistleblower mechanism.",
+        "Maintain accurate, complete, and transparent records for all financial and business transactions.",
+        "Exercise due diligence in third-party engagements and business dealings.",
+        "Decline any gifts, favors, or benefits that could improperly influence business decisions.",
+        "Do not offer, request, authorize, or accept bribes, kickbacks, facilitation payments, or any improper advantage.",
+        "Do not falsify, manipulate, misrepresent, or conceal financial, contractual, or operational records.",
+        "Do not bypass internal controls or approval processes.",
+        "Do not ignore red flags or fail to report suspected misconduct."
+      ],
+      "Conflict of Interest": [
+        "Disclose any actual, potential, or perceived conflicts of interest promptly and transparently.",
+        "Obtain prior written approval before engaging in external employment, investments, or business activities that may conflict with company interests.",
+        "Follow established internal reporting, review, and approval mechanisms for conflict management.",
+        "Recuse yourself from decision-making processes where a conflict exists.",
+        "Do not make business decisions for personal gain or for the benefit of family members, friends, or associates.",
+        "Do not engage in unauthorized dealings or preferential arrangements with competitors, suppliers, or customers.",
+        "Do not misuse company resources, assets, or confidential information for personal advantage.",
+        "Do not conceal or fail to report a known conflict of interest."
+      ],
+      "Anti-Money Laundering (AML) and Financial Integrity Controls": [
+        "Report suspicious, unusual, or high-risk financial activities promptly to the Compliance or Finance team.",
+        "Conduct appropriate due diligence on customers, suppliers, agents, and other business partners before engagement.",
+        "Maintain accurate, verifiable, and complete records of transactions, payments, and contracts.",
+        "Ensure transactions are consistent with legitimate business purposes and approved procedures.",
+        "Do not approve or process transactions without proper documentation and legitimate business justification.",
+        "Do not ignore red flags such as unexplained payments, complex transaction structures, or dealings with high-risk entities.",
+        "Do not participate in or facilitate activities intended to disguise, conceal, or misrepresent the origin of funds.",
+        "Do not bypass customer verification, screening, or approval processes."
+      ],
+      "Fair Competition and Market Conduct Compliance": [
+        "Compete fairly, independently, and ethically in pricing, tendering, and all market activities.",
+        "Comply fully with applicable competition and antitrust laws in all jurisdictions of operation.",
+        "Ensure transparency, accuracy, and integrity in proposals, contracts, and commercial communications.",
+        "Seek guidance from the Legal or Compliance team when in doubt about competitive practices.",
+        "Do not engage in price-fixing, bid-rigging, collusion, market allocation, or any coordinated conduct with competitors.",
+        "Do not exchange or share sensitive commercial information (e.g., pricing, costs, strategies, customer data) with competitors.",
+        "Do not abuse a dominant market position to restrict, distort, or eliminate fair competition.",
+        "Do not enter into informal agreements or understandings that could limit competitive behavior."
+      ],
+      "Information Security and Privacy Governance": [
+        "Adhere strictly to company IT, cybersecurity, and data protection policies and procedures.",
+        "Use strong passwords, multi-factor authentication, approved devices, and authorized systems when accessing company data.",
+        "Classify, store, and transmit confidential or personal data securely in accordance with company guidelines.",
+        "Immediately report suspected data breaches, phishing attempts, malware incidents, or unauthorized access to the IT or Compliance team.",
+        "Do not disclose, transfer, or share confidential or personal data without proper authorization and legitimate business purpose.",
+        "Do not use unapproved devices, applications, or cloud platforms to store or process sensitive information.",
+        "Do not bypass security controls, disable protective systems, or share login credentials with others.",
+        "Do not access systems or data beyond your authorized role or business need."
+      ],
+      "Enforcement and Disciplinary Measures": [
+        "Arrival Fashion Ltd. is committed to maintaining the highest standards of integrity, transparency, and ethical conduct. Compliance with this Governance Policy is mandatory for all employees, directors, management, contractors, suppliers, and business partners. Any violation of this Policy will be addressed promptly, consistently, and proportionately, based on the severity and impact of the breach.",
+        "Employees who violate this Policy may be subject to disciplinary measures, including but not limited to: Verbal or written warnings; Mandatory retraining or corrective counseling; Suspension from duties; Withholding of performance incentives or benefits; Termination of employment.",
+        "Disciplinary action will reflect the seriousness of the violation, intent, recurrence, and overall impact on the Company.",
+        "Violations involving members of management or senior leadership will be subject to independent review and heightened scrutiny. Consequences may include: Removal from managerial or executive responsibilities; Formal reprimand or performance action; Termination of employment or board review, where applicable; Referral to regulatory or legal authorities, if required.",
+        "Arrival Fashion Ltd. applies a zero-tolerance approach to misconduct at all organizational levels.",
+        "Contractors, suppliers, consultants, and other business partners are required to adhere to this Policy and related contractual obligations. Non-compliance may result in: Formal notice and requirement for corrective action; Financial penalties as defined in contractual agreements; Suspension or termination of contracts; Legal action for recovery of losses or damages, where appropriate.",
+        "Where violations involve unlawful conduct, including fraud, corruption, financial misconduct, or regulatory breaches, Arrival Fashion Ltd. will report the matter to the appropriate authorities and cooperate fully with investigations. Individuals involved may face civil or criminal liability under applicable laws.",
+        "In addition to disciplinary action, the Company will implement corrective measures to address root causes and prevent recurrence. These may include: Strengthening internal controls and monitoring systems; Revising policies and procedures; Conducting targeted training and awareness programs; Enhancing oversight mechanisms.",
+        "Individuals subject to disciplinary action have the right to appeal through established grievance and review mechanisms. All appeals will be handled impartially, confidentially, and in accordance with Company procedures to ensure fairness and due process."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption Initiatives",
+        "targets": [
+          {
+            "target": "Maintain zero (0) substantiated cases of corruption annually.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employee coverage under the Code of Ethics and Anti-Corruption Policy.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct biennial corruption risk assessments covering 100% of business units.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Complete ethics due diligence for 100% of high-risk third parties.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Data Protection and Privacy",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with internal information security and data protection protocols across all operations.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of employees complete annual data protection and cybersecurity training.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% annual vulnerability assessments and user access reviews for all critical IT systems.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 0% major data breaches or unauthorized information disclosures annually.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Procurement Practices",
+        "targets": [
+          {
+            "target": "Source at least 20 % of raw materials from certified sustainable or responsible suppliers.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100 % ESG and ethical compliance screening for all new suppliers.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Perform annual audits of 20 % of high-risk suppliers to ensure adherence to ethical and sustainability standards.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Social Responsibility Initiatives",
+        "targets": [
+          {
+            "target": "Increase the number of structured community engagement initiatives by 20% from the 2022 baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure at least 60% of employees participate in community programs annually.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Allocate a minimum of 2% of average annual net profits toward social and community initiatives.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Transparency in Operations",
+        "targets": [
+          {
+            "target": "Achieve 100% on-time publication of governance and sustainability disclosures annually.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of reported ESG and operational data is internally validated for accuracy.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce reporting errors, corrections, or restatements to less than 2% annually.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees in risk-relevant roles complete anti-fraud training annually.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% of business functions covered by annual fraud risk assessments.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Close 100% of identified control gaps within defined timelines.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero (0) unresolved material fraud incidents annually.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering Prevention",
+        "targets": [
+          {
+            "target": "Ensure 100% of relevant employees complete AML training annually.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% screening of high-risk transactions and business counterparties.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero (0) regulatory penalties or non-compliance incidents related to AML.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Reporting Protection Measures",
+        "targets": [
+          {
+            "target": "Provide 100% of employees with training on ethical reporting procedures.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of business units have clearly communicated reporting channels.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Code of Conduct",
+        "targets": [
+          {
+            "target": "Ensure 20 % of active suppliers acknowledge and comply with the Supplier Code of Conduct.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual ethical and sustainability briefings for 15 % of strategic suppliers.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Mitigation",
+        "targets": [
+          {
+            "target": "Ensure 100% of senior management and relevant employees complete annual conflict of interest disclosures.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Integrate 100% of disclosed conflicts into review and approval workflows.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct annual refresher training on conflict-of-interest policies for 100% of employees.",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Include 100% of business units in periodic audits of conflict-of-interest adherence.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Gift and Entertainment Management",
+        "targets": [
+          {
+            "target": "Maintain a maximum annual gift limit of ₹5,000 per individual or entity, representing a 50% reduction from the ₹10,000 limit in 2022.",
+            "baseline": "₹10,000 limit in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% disclosure of gifts and hospitality exceeding predefined thresholds.",
+            "baseline": "",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Manager, Mr. Mainuddin Sarker",
+        "duty": "The Manager, Mr. Mainuddin Sarker is tasked with the implementation and compliance of this policy, ensuring that all principles are woven into daily operations."
+      },
+      {
+        "role": "Head of Department (HOD)",
+        "duty": "The Head of Department (HOD) will take charge of monitoring compliance and conducting evaluations, offering recommendations for enhancements."
+      },
+      {
+        "role": "Every employee",
+        "duty": "Every employee is required to follow the principles set forth in this policy and report any suspected breaches."
+      },
+      {
+        "role": "Human Resource Manager",
+        "duty": "The Human Resource Manager will guarantee that all employees receive the appropriate training and resources to fully understand and adhere to this policy."
+      }
+    ],
+    "monitoring": "The Head of Department (HOD) will take charge of monitoring compliance and conducting evaluations, offering recommendations for enhancements.",
+    "reviewMechanism": "The Compliance Officer, working alongside the Executive Manager, will conduct an annual evaluation of this policy to determine its effectiveness and ongoing relevance. This assessment will include a review of progress towards the established quantitative targets and the implementation of any necessary modifications to improve the policy's effectiveness. The subsequent review is scheduled for September 2026. Any changes or updates to the policy will be communicated swiftly to all employees, contractors, and third-party partners."
+  },
+  "sourcePath": "Policies - Kenal/Arrival Fashions/Ethics _Policy AFL.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Arrival Fashions/Ethics _Policy AFL.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 17530,
+  "parsedAt": "2026-09-11T07:21:13.787Z"
+}

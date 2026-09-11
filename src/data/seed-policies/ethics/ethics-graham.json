@@ -1,0 +1,190 @@
+{
+  "id": "ethics-graham",
+  "name": "Graham",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. ETHICS POLICY.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Graham Packaging Company",
+      "industry": "",
+      "site": "700 Indian Springs Drive, Suite 100, Lancaster, PA 17601",
+      "sites": [
+        {
+          "location": "Graham Packaging Company",
+          "address": "700 Indian Springs Drive, Suite 100, Lancaster, PA 17601",
+          "primaryFunction": "Leading manufacturer in the plastic bottle industry"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "700 Indian Springs Drive, Suite 100, Lancaster, PA 17601"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Graham Packaging Company, we recognize that ethical conduct is fundamental to our success as a leading manufacturer in the plastic bottle industry. We are committed to upholding the highest standards of integrity, transparency, and social responsibility in all aspects of our operations. This Ethics Policy serves as a guiding framework for our employees, outlining the principles and values that define our corporate culture. By adhering to these principles, we aim to foster a workplace environment where honesty, fairness, and respect are upheld, thereby strengthening trust with our stakeholders and contributing positively to society.",
+      "declaration": "At Graham Packaging Company, we are committed to conducting business ethically and with integrity. We prioritize honesty, fairness, and respect in all our interactions with employees, stakeholders, and the environment. Our Ethics Policy guides our conduct, ensuring transparency, accountability, and adherence to ethical standards in everything we do.",
+      "scope": "This Policy applies exclusively to the operations of Graham Packaging Company, encompassing all employees, contractors, suppliers, and stakeholders directly associated with our facilities."
+    },
+    "focusAreas": [
+      "Ethical Conduct",
+      "Conflict of Interest Management",
+      "Fraud Deterrence",
+      "Anti-Money Laundering Measures",
+      "Promoting a Fair Marketplace",
+      "Cybersecurity Protocols"
+    ],
+    "qualitative": {
+      "Strengthening Ethical Conduct": [
+        "Conduct quarterly integrity workshops to discuss real-life ethical dilemmas and best practices in ethical decision-making, fostering a culture of integrity throughout the organization."
+      ],
+      "Advancing Sustainability Initiatives": [
+        "For example, invest in research for alternative packaging materials and optimize production processes to minimize waste, promoting a circular economy."
+      ],
+      "Enhancing Community Engagement": [
+        "Collaborate with local schools and nonprofit organizations to educate on recycling and environmental conservation, supporting community development projects. For instance, sponsor recycling awareness campaigns in partnership with local schools."
+      ],
+      "Promoting Transparency and Accountability": [
+        "Maintain open communication channels and regularly publish updates on sustainability efforts to build trust with stakeholders. For example, establish a dedicated section on the company website to provide transparent updates on progress towards environmental goals and initiatives to improve supply chain transparency."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Ethical Conduct",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with anti-corruption regulations by 2025 compared to the baseline year of 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Maintain transparent record-keeping with zero instances of corruption-related issues.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct annual ethical conduct assessments, aiming for a score of 95% or above.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Management",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees complete comprehensive ethics training by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Deterrence",
+        "targets": [
+          {
+            "target": "Reduce instances of fraudulent financial practices by 50% by 2025 compared to 2018 levels.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Conduct quarterly assessments of vendors and suppliers, aiming for a completely eliminate fraud risk associated with suppliers and vendors.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering Measures",
+        "targets": [
+          {
+            "target": "Achieve a 90% effectiveness rate in detecting and reporting suspicious activities by 2025 compared to the baseline year of 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Conduct bi-annual risk assessments, with a target of reducing overall money laundering risk by 30% compared to 2018.",
+            "baseline": "2018",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Promoting a Fair Marketplace",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with antitrust laws and regulations by 2025 compared to the baseline year of 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement policies that result in a 20% increase in SME (Small and Medium Enterprises) participation within the plastic packaging industry by 2025 compared to the baseline year of 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Cybersecurity Protocols",
+        "targets": [
+          {
+            "target": "Enhance cybersecurity measures to achieve a 99% success rate in preventing data breaches or cyberattacks by 2025, compared to the baseline year of 2018.",
+            "baseline": "2018",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Oversee ethics program implementation, manage whistleblowing channels, and investigate reported violations."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Enforce code of conduct, coordinate ethics training, and address workforce compliance issues."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Maintain data privacy controls, safeguard confidential information, and ensure cybersecurity compliance."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conduct periodic compliance audits, assess anti-corruption controls, and report findings to management."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Promote an ethical culture, approve ethics policies, and ensure organizational accountability."
+      },
+      {
+        "role": "Employees",
+        "duty": "Uphold ethical standards, report misconduct or conflicts of interest, and complete mandatory training."
+      }
+    ],
+    "monitoring": "Continuous improvement is intrinsic to Graham Packaging's Ethics Policy.\n\nWe prioritize systematic evaluation and feedback mechanisms to foster transparency, accountability, and integrity. Employees are encouraged to voice concerns openly, creating a culture of trust and vigilance against unethical practices.\n\nProactive engagement with stakeholders helps us address emerging ethical challenges and regulatory changes effectively.\n\nTo promote sustainability within the plastic packaging manufacturing sector, Graham Packaging has established a comprehensive reporting mechanism within our Ethics Policy.\n\nThis mechanism includes regular policy reviews, the formation of a review committee, clear incident reporting procedures, structured investigation protocols, thorough documentation and record-keeping, ongoing training and awareness programs, continuous improvement initiatives, and transparent communication practices.",
+    "reviewMechanism": "Annually, Graham Packaging will conduct a comprehensive review of its Ethics Policy to evaluate adherence to ethical standards, identify areas for improvement, and ensure alignment with industry best practices.\n\nContinuous improvement and accountability remain paramount in upholding our ethical commitments. Our commitment to ethical excellence drives us to continually raise the bar and ensure that our actions reflect our values."
+  },
+  "sourcePath": "Policies - Kenal/Graham/3. ETHICS POLICY.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Graham/3. ETHICS POLICY.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 7393,
+  "parsedAt": "2026-09-11T07:23:45.372Z"
+}

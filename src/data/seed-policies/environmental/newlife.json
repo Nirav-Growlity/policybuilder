@@ -1,0 +1,448 @@
+{
+  "id": "newlife",
+  "name": "Newlife",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Responsibiloty Policy_grw_v1_1202.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "NewLife Medicals",
+      "industry": "",
+      "site": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059",
+      "sites": [
+        {
+          "location": "NewLife Medicals Pvt Ltd",
+          "address": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059",
+          "primaryFunction": "Offices"
+        },
+        {
+          "location": "NewLife Medicals (USA), Inc",
+          "address": "146 Donmoor CT, Garner, North Carolina 27529, USA",
+          "primaryFunction": ""
+        },
+        {
+          "location": "NewLife Biopharma Limited",
+          "address": "SKY Business Centre, Office 12, Unit 9a, Plato Business Park, Damastown, Dublin 15, Ireland D15 PA4C",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "NewLife Medicals recognizes its responsibility to protect the environment while delivering high-quality pharmaceutical sourcing and supply chain solutions globally. As a company engaged in procurement, storage, and distribution of pharmaceutical products, APIs, and clinical trial supplies, we understand the environmental impact associated with logistics, packaging, energy use, and waste management. We are committed to conducting our operations in an environmentally responsible and sustainable manner, ensuring compliance with all applicable environmental laws and regulations across the regions where we operate. Through continuous improvement, resource efficiency, responsible waste handling, and reduction of emissions, we strive to minimize our environmental footprint. Our commitment extends to employees, suppliers, and partners, promoting environmentally conscious practices throughout our value chain.",
+      "declaration": "The objectives of the Policy of NewLife Medicals are to:\n\nEnsure compliance with all applicable environmental laws, regulations, and statutory requirements in the regions where the Company operates.\n\nMinimize environmental impacts arising from business operations, logistics activities, and supply chain engagements.\n\nPromote efficient use of natural resources, including energy, water, and materials, through conservation and optimization measures.\n\nPrevent pollution by adopting responsible waste management, safe handling of materials, and environmentally sound operational practices.\n\nEncourage environmentally responsible practices among suppliers, logistics partners, and contractors.\n\nRaise environmental awareness among employees through training and participation in sustainability initiatives.\n\nSupport continual improvement in environmental performance by setting objectives, monitoring progress, and reviewing outcomes periodically.",
+      "scope": "This Policy applies to all operations of NewLife Medicals, including its offices, warehouses, distribution activities, and global sourcing and supply chain operations. It is applicable to all employees, management, contract workers, business associates, and stakeholders, whether internal or external, working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Energy Stewardship & GHG Management",
+      "Responsible Materials, Chemicals & Waste Management",
+      "Customer Health and Safety",
+      "Environmental Engagement, Services & Advocacy",
+      "Climate Risk & Business Continuity",
+      "Water Management"
+    ],
+    "qualitative": {
+      "Energy Stewardship & GHG Management": [
+        "We strive to reduce energy consumption in offices and warehouses by installing LED lighting, energy-efficient HVAC systems, motion sensors, and star-rated equipment, as well as optimizing refrigeration and storage systems to lower electricity usage and operational costs.",
+        "We will work towards lowering Scope 1 and Scope 2 emissions through improved fuel management, energy conservation initiatives, and gradual transition to cleaner energy sources.",
+        "We will explore and increase the adoption of renewable energy (such as solar power) wherever feasible to minimize dependence on fossil fuels and support climate action goals.",
+        "We strive to minimize direct greenhouse gas emissions (Scope 1) associated with owned or controlled vehicles, equipment, and fuel usage through improved planning and maintenance.",
+        "We seek to build employee awareness on energy efficiency and climate responsibility through periodic training and communication initiatives.",
+        "We will identify and evaluate key Scope 3 emission categories, including purchased goods and services, upstream transportation, business travel, and waste generated in operations, to understand the company’s broader carbon footprint.",
+        "We will encourage suppliers and logistics partners to adopt sustainable practices, energy efficiency measures, and low-carbon alternatives through responsible sourcing and supplier engagement programs."
+      ],
+      "Responsible Materials, Chemicals & Waste Management": [
+        "We aim to minimize hazardous and non-hazardous waste generation through process optimization, source reduction, material efficiency, lean and continuous improvement practices, and good housekeeping.",
+        "We aim to minimize waste generation in offices and warehouses through source reduction, digital documentation practices, material efficiency, and good housekeeping.",
+        "We strive to follow the principles of Reduce, Reuse, and Recycle (3R) across waste management practices.",
+        "We seek to ensure safe handling, storage, labeling, and use of materials and chemicals to prevent environmental and safety risks.",
+        "We aim to comply with applicable waste-related regulations, including requirements for hazardous, electronic, and other regulated wastes.",
+        "We promote employee training on waste segregation, hazardous material / chemicals handling, and appropriate use of Personal Protective Equipment (PPE) to minimize environmental and safety risks.",
+        "We ensure waste disposal only through authorized recyclers and treatment facilities.",
+        "We seek to train relevant employees on waste segregation, chemical handling, spill prevention, and emergency response.",
+        "We maintain compliance with applicable waste management regulations, including disposal of expired or damaged pharmaceutical products through authorized vendors."
+      ],
+      "Customer Health and Safety": [
+        "We Ensure that all products sourced and distributed comply with applicable CDSCO, FDA (if applicable), Drugs & Cosmetics Act, and other relevant regulatory requirements. No sale of non-compliant or expired products.",
+        "Implement batch-level verification, expiry checks, and documentation review before product dispatch to customers to eliminate risks related to expired or damaged goods.",
+        "We seek to minimize environmental and safety risks associated with product storage, transportation, and customer use.",
+        "We will source products only from authorized manufacturers and verified suppliers & conduct supplier due diligence and maintain proper purchase documentation to prevent counterfeit risks.",
+        "We aim to support product lifecycle environmental responsibility by providing guidance on safe handling, storage, use, and disposal through documentation, labeling, and customer communication, where applicable.",
+        "We will utilize digital platforms, QR codes, batch tracking systems, website disclosures, and electronic communication to provide real-time access to product specifications, safety instructions, certifications, and recall updates, ensuring informed and safe product usage by customers.",
+        "Commit to distributing products that carry clear, accurate, and regulatory-compliant labels including product name, batch number, manufacturing and expiry dates, storage conditions, usage instructions, safety warnings, and manufacturer details, in accordance with applicable laws and standards."
+      ],
+      "Environmental Engagement, Services & Advocacy": [
+        "We strive to encourage customers to select products with lower environmental impact, including those with reduced packaging, recyclable materials, or improved environmental certifications.",
+        "We aim to provide guidance to customers, where applicable, on safe and environmentally sound disposal of expired or damaged medical products and packaging materials.",
+        "We will explore and encourage logistics optimization, route planning, and energy-efficient transportation solutions to reduce value chain emissions.",
+        "Encourage suppliers to adopt energy-efficient practices, reduce emissions, and comply with environmental regulations through responsible procurement practices.",
+        "Promote electronic invoicing, digital documentation, and online communication to reduce paper usage and associated environmental impacts.",
+        "We aim to engage stakeholders to support environmental protection initiatives aligned with business operations and sustainability goals."
+      ],
+      "Climate Risk & Business Continuity": [
+        "We will periodically assess physical risks such as floods, extreme heat, storms, and supply chain disruptions that may impact warehouses, transportation, and storage conditions.",
+        "Establish and periodically review a documented Business Continuity Plan to ensure preparedness for climate-related disruptions and other emergencies.",
+        "We will strengthen infrastructure such as temperature monitoring systems, backup power supply (e.g., generators or UPS), and emergency response protocols to safeguard sensitive medical products during extreme weather events."
+      ],
+      "Water Management": [
+        "We will conduct periodic inspection of plumbing systems and storage tanks to detect and rectify leakages, thereby reducing unnecessary water wastage.",
+        "Maintain hygienic sanitation facilities while encouraging responsible water usage among employees through awareness initiatives.",
+        "Strive to optimize water consumption in offices and warehouse facilities through regular monitoring, preventive maintenance, and installation of water-efficient fixtures where feasible.",
+        "We will conduct awareness sessions to encourage responsible water usage behavior within the workplace."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Stewardship & GHG Management",
+        "targets": [
+          {
+            "target": "We aim to reduce Scope 1 and Scope 2 GHG emissions by 8% by 2029, compared to our 2023 baseline, through energy efficiency measures and cleaner energy adoption.",
+            "baseline": "2023",
+            "deadline": "2029"
+          },
+          {
+            "target": "Our goal is to reduce electricity consumption intensity by 8% by 2029, compared to 2023 levels, by optimizing operations and upgrading to energy-efficient systems.",
+            "baseline": "2023 levels",
+            "deadline": "2029"
+          },
+          {
+            "target": "We plan to evaluate and progressively adopt renewable energy solutions by 2029, with a target to source at least 5% of total electricity consumption from renewable sources, subject to technical and commercial feasibility, compared to 2023 baseline (currently 0%).",
+            "baseline": "2023 baseline (currently 0%)",
+            "deadline": "2029"
+          },
+          {
+            "target": "The Company strives to reduce fuel consumption in logistics operations by 3% per delivery unit by 2029, compared to 2023 baseline performance.",
+            "baseline": "2023 baseline performance",
+            "deadline": "2029"
+          },
+          {
+            "target": "We will ensure 100% annual monitoring and reporting of Scope 1, Scope 2 and Scope 3 emissions starting from 2023 year.",
+            "baseline": "",
+            "deadline": "starting from 2023 year"
+          },
+          {
+            "target": "We aim to assess and quantify at least 80% of relevant Scope 3 emission categories by 2026, and strive to reduce key Scope 3 emissions (purchased goods and transportation) by 8% by 2029**, compared to 2023 baseline.",
+            "baseline": "2023 baseline",
+            "deadline": "2026 for assessment and quantification; 2029 for reduction"
+          },
+          {
+            "target": "We plan to implement energy-efficient lighting (LED) across 100% of owned facilities by 2027, compared to the 2023 infrastructure status.",
+            "baseline": "2023 infrastructure status",
+            "deadline": "2027"
+          },
+          {
+            "target": "We aim to provide 100% energy and climate awareness training to relevant employees at least once annually.",
+            "baseline": "",
+            "deadline": "at least once annually"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals & Waste Management",
+        "targets": [
+          {
+            "target": "We aim to reduce total waste generation by 10% by 2029, compared to our 2023 baseline.",
+            "baseline": "2023 baseline",
+            "deadline": "2029"
+          },
+          {
+            "target": "We will ensure 100% disposal of hazardous waste through authorized recyclers or government-approved agencies from 2025 onwards, maintaining compliance with applicable regulations.",
+            "baseline": "",
+            "deadline": "from 2025 onwards"
+          },
+          {
+            "target": "We aim to reduce expired or damaged inventory waste by 30% by 2029, compared to 2023 baseline, through improved inventory management and stock rotation systems.",
+            "baseline": "2023 baseline",
+            "deadline": "2029"
+          },
+          {
+            "target": "We plan to provide annual training on chemical handling and waste management to 100% of relevant employees from 2025 onwards, using 2023 as the baseline year for training coverage.",
+            "baseline": "2023",
+            "deadline": "from 2025 onwards"
+          },
+          {
+            "target": "We commit to achieving a minimum 10% reducing rate for paper, cardboard, plastic, and packaging waste by 2028, compared to the baseline year 2023.",
+            "baseline": "2023",
+            "deadline": "2028"
+          },
+          {
+            "target": "We commit that 100% of electronic waste shall be disposed of through authorized recyclers every year.",
+            "baseline": "",
+            "deadline": "every year"
+          },
+          {
+            "target": "We aim to ensure 100% regulatory compliance for waste handling, storage, and disposal annually.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "We aim for zero environmental incidents related to improper waste or chemical handling.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Customer health and Safety",
+        "targets": [
+          {
+            "target": "We commit to maintaining zero product recalls related to environmental, storage, or handling issues each year, against the baseline year 2023.",
+            "baseline": "2023",
+            "deadline": "each year"
+          },
+          {
+            "target": "We aim to ensure 100% compliance with product storage, handling, and distribution requirements annually.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "We commit that 100% of applicable products are supplied with clear storage, handling, and disposal instructions by 2027, compared to the baseline year 2023.",
+            "baseline": "2023",
+            "deadline": "2027"
+          },
+          {
+            "target": "We aim to conduct documented compliance checks for 100% of incoming and outgoing products.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to close 100% of customer safety or environmental complaints within defined internal timelines each year.",
+            "baseline": "",
+            "deadline": "each year"
+          },
+          {
+            "target": "We aim to maintain 100% regulatory compliance for all distributed products annually from 2025 onwards.",
+            "baseline": "",
+            "deadline": "annually from 2025 onwards"
+          },
+          {
+            "target": "Our goal is to sustain zero distribution of expired, counterfeit, damaged, or non-compliant products by 2026, maintaining this performance through 2029.",
+            "baseline": "",
+            "deadline": "by 2026 and through 2029"
+          },
+          {
+            "target": "We aim to conduct 100% verification of batch number, expiry date, and labelling compliance prior to dispatch from 2025 onwards, compared to 2023 verification controls.",
+            "baseline": "2023 verification controls",
+            "deadline": "from 2025 onwards"
+          },
+          {
+            "target": "Our goal is to ensure 100% temperature-controlled storage monitoring with automated recording systems by 2026, compared to 2023 infrastructure status.",
+            "baseline": "2023 infrastructure status",
+            "deadline": "2026"
+          },
+          {
+            "target": "We aim to provide annual product safety and regulatory compliance training to 100% of relevant employees starting 2025, improving training coverage from 2023 baseline.",
+            "baseline": "2023 baseline",
+            "deadline": "starting 2025"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Engagement, Service & Advocacy",
+        "targets": [
+          {
+            "target": "We aim to increase the share of environmentally preferable or responsibly packaged products in our sourcing portfolio to 30% by 2029, compared to 2023 baseline.",
+            "baseline": "2023 baseline",
+            "deadline": "2029"
+          },
+          {
+            "target": "Our goal is to reduce paper-based documentation by 70% by 2029, compared to 2023 levels, through digital invoicing, electronic records, and online communication systems.",
+            "baseline": "2023 levels",
+            "deadline": "2029"
+          },
+          {
+            "target": "We plan to ensure 100% digital invoicing and electronic transaction documentation by 2026, compared to 2023 documentation practices.",
+            "baseline": "2023 documentation practices",
+            "deadline": "2026"
+          },
+          {
+            "target": "The Company strives to engage at least 60% of key suppliers on environmental performance disclosure by 2027, compared to 2023 supplier engagement levels.",
+            "baseline": "2023 supplier engagement levels",
+            "deadline": "2027"
+          },
+          {
+            "target": "We aim to conduct annual sustainability awareness communication or engagement initiatives with customers and suppliers from 2025 onwards, using 2023 as baseline year.",
+            "baseline": "2023",
+            "deadline": "from 2025 onwards"
+          },
+          {
+            "target": "Our goal is to encourage at least 50% of strategic suppliers to adopt documented environmental policies by 2029, compared to 2023 baseline.",
+            "baseline": "2023 baseline",
+            "deadline": "2029"
+          },
+          {
+            "target": "Our goal is to require at least 70% of key suppliers to maintain recognized environmental or quality management certifications (such as ISO 14001, ISO 9001, GMP, or equivalent) by 2029, compared to 2023 baseline certification coverage.",
+            "baseline": "2023 baseline certification coverage",
+            "deadline": "2029"
+          }
+        ]
+      },
+      {
+        "area": "Climate Risk & Business Continuity",
+        "targets": [
+          {
+            "target": "We aim to conduct a comprehensive climate risk assessment covering 100% of owned facilities by 2026, compared to 2023 baseline risk evaluation practices.",
+            "baseline": "2023 baseline risk evaluation practices",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our goal is to establish and maintain a documented Business Continuity Plan (BCP) covering 100% of critical operations by 2025, compared to 2023 baseline preparedness level.",
+            "baseline": "2023 baseline preparedness level",
+            "deadline": "2025"
+          },
+          {
+            "target": "We plan to conduct at least one annual Business Continuity and emergency response drill starting 2025, improving preparedness compared to 2023 baseline.",
+            "baseline": "2023 baseline",
+            "deadline": "starting 2025"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Our goal is to implement water usage monitoring across 100% of owned facilities by 2029, compared to 2023 monitoring coverage.",
+            "baseline": "2023 monitoring coverage",
+            "deadline": "2029"
+          },
+          {
+            "target": "The Company strives to detect and rectify 100% of identified water leakages within defined corrective timelines starting 2025, compared to 2023 response practices.",
+            "baseline": "2023 response practices",
+            "deadline": "starting 2025"
+          },
+          {
+            "target": "We aim to install water-efficient fixtures (such as low-flow taps or dual-flush systems) in at least 75% of facilities by 2029, compared to 2023 infrastructure status.",
+            "baseline": "2023 infrastructure status",
+            "deadline": "2029"
+          },
+          {
+            "target": "Our goal is to conduct annual employee awareness programs on water conservation starting 2025, achieving 100% coverage of relevant staff by 2029.",
+            "baseline": "",
+            "deadline": "starting 2025; 100% coverage by 2029"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Approve the Environmental Policy and overall environmental strategy of the Company."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Provide leadership commitment and ensure integration of environmental responsibility into business decisions."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure availability of resources for implementation of environmental objectives and targets."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Translate the Environmental Policy into actionable programs, objectives, and targets."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Review environmental performance, progress against targets, and compliance status on a periodic basis."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Identify environmental risks and opportunities associated with operations and supply chain activities."
+      },
+      {
+        "role": "EHS / Sustainability Head",
+        "duty": "Implement environmental procedures and controls across offices, warehouses, and operational facilities."
+      },
+      {
+        "role": "EHS / Sustainability Head",
+        "duty": "Review the policy regularly"
+      },
+      {
+        "role": "EHS / Sustainability Head",
+        "duty": "Monitor compliance with applicable environmental laws, permits, and internal requirements."
+      },
+      {
+        "role": "EHS / Sustainability Head",
+        "duty": "Track environmental performance indicators related to energy, water, waste, emissions, and incidents."
+      },
+      {
+        "role": "Operations / Facility Manager",
+        "duty": "Ensure environmentally responsible practices in daily operations and facility management."
+      },
+      {
+        "role": "Operations / Facility Manager",
+        "duty": "Ensure proper handling, storage, and movement of materials and products in compliance with procedures."
+      },
+      {
+        "role": "Operations / Facility Manager",
+        "duty": "Support implementation of environmental improvement initiatives and monitoring activities."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Integrate environmental considerations into supplier and logistics partner selection and evaluation."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Ensure engagement with authorized waste vendors, recyclers, and service providers."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Promote environmental expectations and compliance among suppliers and service partners."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with all applicable environmental laws, internal policies, procedures, and instructions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow safe and environmentally responsible work practices in daily activities."
+      },
+      {
+        "role": "Employees",
+        "duty": "Promptly report environmental incidents, spills, leaks, or unsafe conditions to supervisors or EHS."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in environmental awareness, training, and continuous improvement initiatives."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Comply with applicable environmental laws and regulatory requirements."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Align operations with the environmental principles outlined in this policy."
+      },
+      {
+        "role": "Suppliers & Business Partners",
+        "duty": "Cooperate with NewLife Medicals in environmental assessments, audits, and improvement initiatives."
+      }
+    ],
+    "monitoring": "NewLife Medicals has established a structured process to monitor and report environmental performance across its operations. Key data on energy and water use, waste generation, emissions, incidents, and legal compliance is regularly collected and reviewed to track performance against internal targets and regulatory requirements. All environmental incidents, near misses, spills, and complaints are promptly reported and investigated to identify root causes. Corrective and preventive actions are implemented and monitored, and any significant incident or non-compliance is escalated to Senior and Top Management within defined timelines.\n\nNewLife Medicals is committed to continuously improving its environmental performance by identifying risks, setting targets, and implementing effective controls. Environmental considerations are integrated into operations and supply chain activities to reduce resource use, minimize waste and emissions, and prevent pollution. Key parameters such as energy, water, waste, emissions, and compliance are regularly monitored, with corrective actions taken to ensure ongoing improvement and regulatory compliance.",
+    "reviewMechanism": "This Environmental Responsibility  Policy is reviewed at least once every year or as per requirement by Sustainability Head to ensure its continued suitability, adequacy, and effectiveness. The review also takes into account changes in business operations, applicable legal and regulatory requirements, stakeholder expectations, and emerging environmental risks."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Newlife/1. Environmental Responsibiloty Policy_grw_v1_1202.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Newlife/1. Environmental Responsibiloty Policy_grw_v1_1202.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 22069,
+  "parsedAt": "2026-09-11T07:11:10.875Z"
+}

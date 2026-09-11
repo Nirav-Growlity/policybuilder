@@ -1,0 +1,285 @@
+{
+  "id": "ethics-agistek",
+  "name": "Agistek",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethics and compliance Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Aegistek Corporation Ltd.",
+      "industry": "",
+      "site": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand",
+      "sites": [
+        {
+          "location": "Aegistek Corporation Ltd.",
+          "address": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "101 Moo 4 50130 SAN KAMPHAENG, CHIANG MAI Thailand"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Aegistek Corporation Ltd., our foremost commitment is to conduct business with integrity, transparency, and respect for all stakeholders involved. We recognize that our industry's activities have significant social, environmental, and economic impacts, and therefore, we are dedicated to upholding the highest ethical standards in all facets of our operations. Environmental stewardship is the central principle of our ethics and compliance policy.",
+      "declaration": "Promote Integrity: Uphold honesty, fairness, and transparency in all our dealings, both internally and externally. Which includes:\n\nRefrain from accepting and giving gifts to outsiders. To avoid actions that may affect discretion or decisions in the performance of duties which lead to discrimination or cause conflicts of interest\n\nDonations and support Must be done on behalf of the organization with transparent principles.\n\nNot provide financial support or resources directly or indirectly. Which will cause the organization to lose its political neutrality.\n\nNot perform any actions that will cause the company to lose its benefits or receive less benefit than expected. Not use the name or location of the company for personal gain.\n\nNot pay, give, or give gifts of any kind to government officer unofficially. To ensure that government officer will carry out the process or encouragement to act more quickly.\n\nNot hire officer from the government sector to work in the organization. Which will cause the risk of corruption in terms of conflicts of interests of the people who have roles and responsibilities in both organizations.\n\nEnforce and apply ethics and practices with affiliated companies, business representatives, and business partners equally. Without increasing or decreasing any terms which would result in an unfair advantage or disadvantage to any party.\n\nSupervise, store, use, and monitor personal data of stakeholders under the organization's responsibility appropriately. Not cause information to be leaked which may result in misuse later.\n\nEnsure Compliance: Adhere to all applicable laws, regulations, and industry standards, fostering a culture of legal and regulatory compliance.\n\nProtect Reputation: Safeguard the reputation and credibility of Aegistek Corporation by maintaining ethical conduct in all business activities.\n\nFoster Trust: Build and maintain trust among stakeholders, including employees, customers, suppliers, shareholders, and the community at large.\n\nEncourage Accountability: Hold individuals and teams accountable for their actions and decisions, promoting responsible behavior at all levels of the organization.",
+      "scope": "This Ethical Policy applies to the operation of Aegistek Corporation Ltd., covering all Employees, Stakeholders, Contractors and individual affiliated with Aegistek."
+    },
+    "focusAreas": [
+      "Corruption/ Bribery",
+      "Conflicting of interest",
+      "Compliance with Regulations",
+      "Fraudulence",
+      "Money Laundering",
+      "Price Fixing / Anti-Competitive",
+      "Data Security",
+      "Employee Privacy Protection"
+    ],
+    "qualitative": {
+      "Corruption/ Bribery": [
+        "A tangible measure of the effectiveness of anti-corruption efforts is to aim completely eliminate incidents of corruption within the industry by 2025 compared to the 2023 baseline.",
+        "By 2025, thorough due diligence is to be conducted on 60% of new suppliers, compared to the baseline established in 2023."
+      ],
+      "Conflicting of interest": [
+        "To eliminate cases of conflicts of interest by 2025 from the baseline year 2023."
+      ],
+      "Compliance with Regulations": [
+        "Target to achieve 100% compliance with legal requirements and company policies regarding connected transactions and disclosure of information by 2025, from a baseline of 2023."
+      ],
+      "Fraudulence": [
+        "By 2025, aim to reduce the number of fraudulent claims related to product defects or damages by 40% compared to the levels recorded in 2023 by enhancing quality control measures.",
+        "Establish a target to mitigate financial losses resulting from fraud-related incidents by 25% and ensure 100% reporting by employees who suspect any unethical behavior within the unit by the end of 2025 as compared to 2023 levels."
+      ],
+      "Money Laundering": [
+        "By 2025, our goal is to implement a system to monitor 15% of transactions for suspicious activities, up from the baseline in 2023.",
+        "We are dedicated to achieving zero internal cases of money laundering by conducting quarterly reviews of internal controls."
+      ],
+      "Price Fixing / Anti-Competitive": [
+        "To prevent collusion and foster fair competition by 2025, we'll aim to maintain price differentials between competitors within +/- 5% from 2023 baseline levels.",
+        "Our aim is to be transparent by mandating the disclosure of pricing strategies, production costs and agreements with suppliers or distributors.",
+        "We'll strive for a 100% resolution rate for complaints regarding anti-competitive behavior, ensuring swift action against any such practices."
+      ],
+      "Data Security": [
+        "By 2025, our target is to decrease data breaches by 20% compared to the baseline year 2023."
+      ],
+      "Employee Privacy Protection": [
+        "Aim to reduce unauthorized data access incidents by 20% by 2025 compared to 2023, prioritizing employee privacy and confidentiality.",
+        "Aim to achieve full compliance with all data protection regulations by 2025, enhancing the protection of employee rights and personal data.",
+        "We aim to include 100% of employees in these comprehensive training sessions on all ethical issues at least once every quarter, ensuring a thorough understanding and adherence to ethical standards."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption/ Bribery",
+        "targets": [
+          {
+            "target": "aim completely eliminate incidents of corruption within the industry",
+            "baseline": "2023 baseline",
+            "deadline": "2025"
+          },
+          {
+            "target": "thorough due diligence is to be conducted on 60% of new suppliers",
+            "baseline": "baseline established in 2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Conflicting of interest",
+        "targets": [
+          {
+            "target": "eliminate cases of conflicts of interest",
+            "baseline": "baseline year 2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Compliance with Regulations",
+        "targets": [
+          {
+            "target": "achieve 100% compliance with legal requirements and company policies regarding connected transactions and disclosure of information",
+            "baseline": "baseline of 2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Fraudulence",
+        "targets": [
+          {
+            "target": "reduce the number of fraudulent claims related to product defects or damages by 40%",
+            "baseline": "levels recorded in 2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "mitigate financial losses resulting from fraud-related incidents by 25%",
+            "baseline": "2023 levels",
+            "deadline": "end of 2025"
+          },
+          {
+            "target": "ensure 100% reporting by employees who suspect any unethical behavior within the unit",
+            "baseline": "2023 levels",
+            "deadline": "end of 2025"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "implement a system to monitor 15% of transactions for suspicious activities",
+            "baseline": "baseline in 2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "achieving zero internal cases of money laundering by conducting quarterly reviews of internal controls",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Price Fixing / Anti-Competitive",
+        "targets": [
+          {
+            "target": "maintain price differentials between competitors within +/- 5%",
+            "baseline": "2023 baseline levels",
+            "deadline": "2025"
+          },
+          {
+            "target": "100% resolution rate for complaints regarding anti-competitive behavior",
+            "baseline": "",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Data Security",
+        "targets": [
+          {
+            "target": "decrease data breaches by 20%",
+            "baseline": "baseline year 2023",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Employee Privacy Protection",
+        "targets": [
+          {
+            "target": "reduce unauthorized data access incidents by 20%",
+            "baseline": "2023",
+            "deadline": "2025"
+          },
+          {
+            "target": "achieve full compliance with all data protection regulations",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "include 100% of employees in these comprehensive training sessions on all ethical issues at least once every quarter",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Set the overall direction and tone for ethical conduct within Aegistek Corporation Ltd."
+      },
+      {
+        "role": "Chief Compliance Officer (COO)",
+        "duty": "Responsible for implementation and oversight for this policy."
+      },
+      {
+        "role": "Chief Compliance Officer (COO)",
+        "duty": "Ensure that ethical considerations are integrated into the company's strategic decision-making processes."
+      },
+      {
+        "role": "Chief Compliance Officer (COO)",
+        "duty": "Lead by example in upholding the values and principles outlined in the Ethics and compliance Policy."
+      },
+      {
+        "role": "Chief Compliance Officer (COO)",
+        "duty": "Communicate the importance of ethical behavior to all employees and stakeholders."
+      },
+      {
+        "role": "Ethics Committee",
+        "duty": "Formulate and oversee the implementation of specific initiatives to promote ethical conduct."
+      },
+      {
+        "role": "Ethics Committee",
+        "duty": "Provide guidance and support to employees facing ethical dilemmas or concerns."
+      },
+      {
+        "role": "Ethics Committee",
+        "duty": "Regularly review and assess the effectiveness of the Ethics Policy and related procedures."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Develop training programs to educate employees about ethical standards and expectations."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Facilitate the reporting and investigation of ethical violations or concerns."
+      },
+      {
+        "role": "Human Resources Department",
+        "duty": "Incorporate ethical considerations into recruitment, performance evaluation, and disciplinary processes."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Demonstrate leadership in promoting ethical behavior and adherence to the Ethics Policy."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Address ethical concerns raised by their team members promptly and appropriately."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Ensure that employees receive the necessary support and resources to uphold ethical standards in their roles."
+      },
+      {
+        "role": "Employees",
+        "duty": "Familiarize themselves with the provisions of the Ethics Policy and abide by its principles in their daily work."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report any suspected violations of the policy or unethical behavior through the appropriate channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Contribute to a culture of integrity and accountability within the organization."
+      }
+    ],
+    "monitoring": "Employees can report ethical concerns or violations confidentially to their supervisor or HR department.\n\nAll reports will be promptly investigated by the Ethics Committee or relevant authorities, ensuring confidentiality and protection for whistleblowers.\n\nAegistek Corporation Ltd. encourages external stakeholders, such as customers, suppliers, or community members, to report any ethical issues or misconduct they encounter while interacting with the company.\n\nContact information for external reporting channels will be made available on the company's website and other relevant communication platforms.",
+    "reviewMechanism": "Ethics and Compliance Policy will be reviewed annually by the Chief Compliance Officer, approved by the General Manager, and updated as needed to reflect changes in ethical standards, regulatory requirements, and organizational goals. Final approval from the Board of Directors is required for any updates.\n\nThe policy will be communicated to the entire staff and stakeholders through a clear, accessible and comprehensive Ethics and Compliance Guide.\n\nEffective From: 01/01/2024                                                                Next review date:01/01/2025"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Agistek/3. Ethics and compliance Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Agistek/3. Ethics and compliance Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 10051,
+  "parsedAt": "2026-09-11T07:06:13.245Z"
+}

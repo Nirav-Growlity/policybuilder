@@ -1,0 +1,272 @@
+{
+  "id": "labour-human-rights-stella-hospitality",
+  "name": "Stella Hospitality",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Labor and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Stella Hospitality",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Saudi",
+          "address": "Ad Dahiah, Jeddah, Saudi Arabia.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "UAE",
+          "address": "Umm Dera - Emirate of Umm Al Quwain - United Arab Emirates.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Jordan - Marka",
+          "address": "Nicola Yousef Al Turk St 7, Amman, Jordan.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Jordan - Aqaba",
+          "address": "Al-Herafya Area - New Business District-Bilal Nihad Al-Athira Co, Aqaba, Jordan.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Bahrain",
+          "address": "Building 2639, Road/Street 1537, HIDD, Block 115, Bahrain.",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Stella Hospitality, we are committed to upholding the highest standards of labor and human rights across our operations and supply chain. We believe that a safe, fair, and inclusive work environment is essential for the well-being of our employees, business partners, and stakeholders. This policy outlines our commitment to fair wages, safe working conditions, non-discrimination, ethical labor practices, and human dignity in line with international labor standards. We expect all employees, suppliers, and business partners to adhere to these principles, ensuring that Stella Hospitality remains a responsible and ethical employer. This policy is regularly reviewed and updated to align with evolving human rights and labor standards.",
+      "declaration": "At Stella Hospitality, we are dedicated to fostering an inclusive, ethical, and fair work environment by upholding the highest standards of labor and human rights across all our operations and supply chains. We recognize our responsibility to ensure fair treatment, safe working conditions, and respect for human dignity while promoting diversity, equity, and inclusion (DEI). Our commitment is reflected in the following key areas:",
+      "scope": "This Labor and Human Rights Policy applies to all employees, contractors, suppliers, business partners, and stakeholders associated with Stella Hospitality. It is applicable to all site locations:"
+    },
+    "focusAreas": [
+      "Fair & Ethical Working Conditions",
+      "Health, Safety & Well-being",
+      "Diversity, Equity, and Inclusion (DEI)",
+      "Prevention of Child & Forced Labor",
+      "Career Growth & Employee Development",
+      "Freedom of Association & Employee Rights",
+      "Whistleblower Protection & Grievance Mechanisms",
+      "Compliance with Labor Laws & Global Standards",
+      "Fair Wage Assessments",
+      "Workplace Safety Audits",
+      "Diversity & Inclusion Training",
+      "Employee Development Programs",
+      "Transparent Grievance Mechanisms"
+    ],
+    "qualitative": {
+      "Fair & Ethical Working Conditions": [
+        "We ensure that all employees, contractors, and supply chain partners operate under fair and ethical working conditions. This includes providing fair wages, reasonable working hours, rest periods, and a respectful, harassment-free workplace.",
+        "We conduct annual wage assessments to ensure fair and competitive compensation, aligning with international labor standards and regional regulations."
+      ],
+      "Health, Safety & Well-being": [
+        "We prioritize the health, safety, and well-being of our employees by maintaining safe and hygienic workplaces, enforcing occupational health standards, and providing necessary training and protective equipment.",
+        "Regular health and safety audits are conducted across all facilities to identify and mitigate risks, ensuring a safe working environment for all employees."
+      ],
+      "Diversity, Equity, and Inclusion (DEI)": [
+        "Stella Hospitality is committed to creating a workplace that embraces diversity and ensures equal opportunities for all, regardless of gender, race, age, nationality, disability, or background. We actively promote an inclusive work environment that fosters respect and belonging.",
+        "Annual unconscious bias and DEI training sessions are provided for management and hiring teams to foster an inclusive and equitable workplace."
+      ],
+      "Prevention of Child & Forced Labor": [
+        "We have a zero-tolerance policy against child labor, forced labor. We require all our suppliers and business partners to adhere to strict ethical labor standards."
+      ],
+      "Career Growth & Employee Development": [
+        "We support our employees' professional growth through continuous training, career advancement programs, and leadership development initiatives to foster long-term success.",
+        "Skill development programs are implemented to provide continuous learning opportunities, ensuring all employees have access to career advancement initiatives."
+      ],
+      "Freedom of Association & Employee Rights": [
+        "We respect and uphold employees’ rights to organize, participate in collective bargaining, and voice concerns without fear of retaliation. Open communication and structured social dialogue are encouraged at all levels."
+      ],
+      "Whistleblower Protection & Grievance Mechanisms": [
+        "We maintain strict whistleblower protection policies, allowing employees and stakeholders to report any labor rights violations confidentially and without retaliation. A structured grievance redressal mechanism ensures fair resolution of workplace concerns.",
+        "A confidential and accessible grievance system is in place to allow employees to report concerns safely, with a commitment to timely resolution and fair treatment."
+      ],
+      "Compliance with Labor Laws & Global Standards": [
+        "We fully comply with all national and international labor laws and local labor regulations. We continuously seek third-party certifications and independent audits to ensure alignment with global labor rights standards."
+      ],
+      "Fair Wage Assessments": [
+        "We conduct annual wage assessments to ensure fair and competitive compensation, aligning with international labor standards and regional regulations."
+      ],
+      "Workplace Safety Audits": [
+        "Regular health and safety audits are conducted across all facilities to identify and mitigate risks, ensuring a safe working environment for all employees."
+      ],
+      "Diversity & Inclusion Training": [
+        "Annual unconscious bias and DEI training sessions are provided for management and hiring teams to foster an inclusive and equitable workplace."
+      ],
+      "Employee Development Programs": [
+        "Skill development programs are implemented to provide continuous learning opportunities, ensuring all employees have access to career advancement initiatives."
+      ],
+      "Transparent Grievance Mechanisms": [
+        "A confidential and accessible grievance system is in place to allow employees to report concerns safely, with a commitment to timely resolution and fair treatment."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health and Safety",
+        "targets": [
+          {
+            "target": "Achieve zero workplace fatalities by 2028 through enhanced safety training and risk mitigation programs.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 100% of employees undergo health and safety training at least once per year by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct 100% compliance audits for occupational health and safety standards by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with international labor standards by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Implement ergonomic workplace improvements in all office facilities by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct annual employee satisfaction surveys, targeting a 10% increase in employee well-being scores by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Career Management & Training",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees have access to skill development programs by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Increase annual training hours per employee by 30% by 2028, focusing on leadership, sustainability, and hospitality industry advancements.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Launch a women’s leadership program with a goal of 40% female representation in management roles by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity and Inclusion",
+        "targets": [
+          {
+            "target": "Implement equal pay for equal work, with a goal of closing gender pay gaps by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Establish inclusive hiring policies, ensuring at least 5% of new hires come from underrepresented groups by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct annual unconscious bias and DEI training for 100% of management and hiring teams.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Leadership & Management",
+        "duty": "Set labor and human rights objectives"
+      },
+      {
+        "role": "Leadership & Management",
+        "duty": "Monitor compliance with international labor laws"
+      },
+      {
+        "role": "Leadership & Management",
+        "duty": "Engage in policy reviews and continuous improvement"
+      },
+      {
+        "role": "Human Resource Department",
+        "duty": "Develop and oversee training programs on DEI, health & safety, and ethical labor practices"
+      },
+      {
+        "role": "Human Resource Department",
+        "duty": "Manage grievance mechanisms and fair dispute resolution"
+      },
+      {
+        "role": "Human Resource Department",
+        "duty": "Monitor working conditions, fair wages, and benefits"
+      },
+      {
+        "role": "Health, Safety and Compliance Team",
+        "duty": "Conduct workplace safety assessments and risk evaluations"
+      },
+      {
+        "role": "Health, Safety and Compliance Team",
+        "duty": "Implement accident prevention measures and emergency response plans"
+      },
+      {
+        "role": "Health, Safety and Compliance Team",
+        "duty": "Report and track work-related accidents to improve performance"
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to company policies on safety, DEI, and ethical behaviour"
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in training programs for career growth and compliance"
+      },
+      {
+        "role": "Employees",
+        "duty": "Report workplace hazards, discrimination, or unethical labor practices"
+      }
+    ],
+    "monitoring": "To ensure the effectiveness of Stella Hospitality’s Labor and Human Rights Policy, a structured monitoring and reporting framework is essential. This ensures transparency, accountability, and continuous improvement in workplace conditions, employee well-being, and ethical business practices.\n\nRegular internal audits are conducted to assess compliance with labor laws, workplace safety, DEI initiatives, and employee welfare.\n\nKey performance indicators (KPIs) such as workplace safety incidents, training hours, employee satisfaction, and diversity metrics are tracked.\n\nEmployees have access to anonymous reporting channels for workplace concerns related to discrimination, unfair labor practices, or unsafe working conditions.\n\nRegular supplier audits ensure compliance with labor rights, ethical sourcing, and fair employment practices across the supply chain.\n\nThe Policy is publicly available on Stella Hospitality’s website and shared through various stakeholder communication channels.\n\nEmployees are kept informed of updates and expected to integrate these practices into their work.",
+    "reviewMechanism": "The Human Resources Department is responsible for overseeing the implementation and review of this Labor and Human Rights Policy. This policy will be reviewed annually to ensure its effectiveness and alignment with evolving labor laws, industry standards, and organizational commitments.\n\nAny updates or modifications will be communicated to all stakeholders to ensure continued compliance and adaptation to changing labor rights challenges."
+  },
+  "sourcePath": "Policies - Kenal/Stella Hospitality/Labor and Human Rights Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Stella Hospitality/Labor and Human Rights Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 10928,
+  "parsedAt": "2026-09-11T07:29:51.442Z"
+}

@@ -1,0 +1,339 @@
+{
+  "id": "asrotex",
+  "name": "Asrotex",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental  policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Asrotex",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Asrotex",
+          "address": "Dharmaganj, Enayet Nagar, Fatullah, 1421 Narayanganj, Dhaka, Bangladesh.",
+          "primaryFunction": "Manufacturing, warehouse, utility, maintenance, laboratory, and administrative functions"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Asrotex  is committed to conducting its operations in an environmentally responsible and sustainable manner. We recognize our responsibility to minimize environmental impacts by promoting efficient resource utilization, pollution prevention, climate action, and continual improvement across all business activities.\n\nThis Environmental Policy provides the framework for integrating environmental considerations into our operations, supporting compliance with applicable legal requirements, customer expectations, and internationally recognized standards. Through innovation, employee engagement, and responsible business practices, Asrotex strives to enhance environmental performance and contribute to sustainable development while creating long-term value for all stakeholders.",
+      "declaration": "The purpose of this Environmental Policy is to establish a framework for managing Asrotex's environmental responsibilities. It aims to promote regulatory compliance, pollution prevention, efficient resource utilization, and continual improvement in environmental performance across all operations.\n\nAsrotex Ltd. is committed to:\n\nIntegrating environmental sustainability into strategic planning and business operations.\n\nEncouraging innovation and adopting environmentally responsible technologies and practices.\n\nStrengthening environmental risk management and business resilience.\n\nCollaborating with employees, suppliers, customers, and other stakeholders to promote sustainable practices.\n\nMonitoring environmental performance and using data-driven decisions to improve operational efficiency.\n\nDriving continual improvement to support long-term sustainable business growth.\n\nThe Company has established 2023 as the baseline year for measuring environmental performance and tracking progress against its environmental objectives and targets.",
+      "scope": "This Environmental Policy applies to all operations and activities of Asrotex located below\n\nThe policy covers all manufacturing, warehouse, utility, maintenance, laboratory, and administrative functions under the Company's operational control. It is applicable to all employees, contract workers, contractors, suppliers, service providers, and other relevant stakeholders engaged in activities on behalf of Asrotex."
+    },
+    "focusAreas": [
+      "Energy Consumption and Greenhouse Gases (GHG)",
+      "Water Management",
+      "Sustainable Materials, Chemicals, and Waste Management",
+      "Biodiversity & Natural Resource Conservation",
+      "Air Pollution and Emission Control",
+      "Product Use",
+      "Customer Health and Safety",
+      "Product End-of-Life treatment",
+      "Environmental Services and Advocacy"
+    ],
+    "qualitative": {
+      "Energy Consumption and Greenhouse Gases (GHG)": [
+        "Objective To improve energy efficiency, reduce greenhouse gas (GHG) emissions, and promote the use of cleaner energy sources across Asrotex's operations.",
+        "Improve energy efficiency across knitting, garment manufacturing, warehouse, and administrative operations.",
+        "Optimize the performance of production equipment, lighting, and utility systems through regular monitoring and maintenance.",
+        "Promote the adoption of energy-efficient technologies and renewable energy solutions, where technically and economically feasible.",
+        "Monitor energy consumption and greenhouse gas (GHG) emissions to support data-driven decision-making and continual improvement."
+      ],
+      "Water Management": [
+        "Objective To optimize water consumption, enhance water efficiency, and ensure responsible management of wastewater across Asrotex's operations.",
+        "Optimize water use across production, utility, and support operations through efficient water management practices.",
+        "Monitor water consumption and identify opportunities to improve water efficiency.",
+        "Promote water conservation through operational controls, preventive maintenance, and employee awareness.",
+        "Ensure wastewater is managed and discharged in accordance with applicable environmental requirements."
+      ],
+      "Sustainable Materials, Chemicals, and Waste Management": [
+        "ObjectiveTo promote the responsible use of materials and chemicals while minimizing waste generation through sustainable resource management and circular economy practices.",
+        "Promote the responsible procurement and efficient use of sustainable materials across manufacturing operations.",
+        "Ensure the safe handling, storage, use, and disposal of chemicals in accordance with applicable requirements and industry best practices.",
+        "Minimize waste generation by adopting waste reduction, reuse, recycling, and resource recovery practices.",
+        "Strengthen waste segregation and ensure environmentally responsible disposal of hazardous and non-hazardous waste through authorized service providers."
+      ],
+      "Biodiversity & Natural Resource Conservation": [
+        "ObjectiveTo protect biodiversity and conserve natural resources by minimizing the environmental impacts of Asrotex's operations.",
+        "Protect and maintain green areas within and around the Company's operational premises.",
+        "Consider biodiversity aspects in operational planning and expansion activities, where applicable.",
+        "Encourage tree plantation and environmental conservation initiatives in collaboration with employees and local communities."
+      ],
+      "Air Pollution and Emission Control": [
+        "ObjectiveTo minimize air emissions and improve air quality by implementing effective emission control measures and cleaner operational practices.",
+        "Monitor and control air emissions from manufacturing and utility operations.",
+        "Maintain emission control equipment to ensure effective performance and regulatory compliance.",
+        "Promote cleaner production practices and energy-efficient technologies to reduce air pollutants.",
+        "Periodically assess emission performance and identify opportunities for continual improvement."
+      ],
+      "Product Use": [
+        "ObjectiveTo promote the responsible use of products by enhancing product quality, safety, durability, and environmental performance throughout their intended lifecycle.",
+        "Design and manufacture products that meet applicable quality, environmental, and customer requirements.",
+        "Promote the efficient use of sustainable and responsibly sourced materials in product development.",
+        "Continuously improve product durability, functionality, and resource efficiency.",
+        "Consider environmental impacts during product design and manufacturing processes."
+      ],
+      "Customer Health and Safety": [
+        "ObjectiveTo ensure that products manufactured by Asrotex are safe for customers and comply with applicable quality, environmental, and product safety requirements.",
+        "Ensure products comply with applicable customer, regulatory, and product safety requirements.",
+        "Conduct product quality and safety testing before shipment, where applicable.",
+        "Continuously improve product safety and quality through monitoring and customer feedback."
+      ],
+      "Product End-of-Life treatment": [
+        "ObjectiveTo support responsible end-of-life management of products by promoting circular economy principles, resource recovery, and environmentally responsible disposal practices.",
+        "Encourage the use of recyclable and environmentally preferred materials in product development.",
+        "Promote product designs that support reuse, recycling, and resource recovery, where feasible.",
+        "Collaborate with customers, suppliers, and other stakeholders to encourage responsible end-of-life management practices.",
+        "Continuously improve product lifecycle performance by considering end-of-life impacts during product development."
+      ],
+      "Environmental Services and Advocacy": [
+        "ObjectiveTo promote environmental stewardship by encouraging awareness, collaboration, and participation in sustainability initiatives among employees, suppliers, customers, and local communities.",
+        "Promote environmental awareness through training, communication, and engagement programmes.",
+        "Encourage suppliers, customers, and business partners to adopt environmentally responsible practices.",
+        "Support environmental conservation and community initiatives that contribute to sustainable development."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption and Greenhouse Gases (GHG)",
+        "targets": [
+          {
+            "target": "Reduce Scope 1 and Scope 2 GHG emissions intensity by 40% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Increase the share of renewable energy to 30% of total electricity consumption by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Reduce total Energy Consumption by 5% till year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Reduce freshwater consumption intensity by 25% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Reuse or recycle 30% of treated wastewater by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Materials, Chemicals, and Waste Management",
+        "targets": [
+          {
+            "target": "Increase the use of sustainable or certified raw materials to at least 50% of total material consumption by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Reduce waste sent to landfill by 30% by year 2030 through waste reduction, reuse, and recycling initiatives.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Increase the recycling or recovery of non-hazardous waste to 80% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity & Natural Resource Conservation",
+        "targets": [
+          {
+            "target": "Plant and maintain 1,000 trees and green plantation till year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Maintain 100% compliance with biodiversity and land-use requirements applicable to the Company's operations by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Implement two biodiversity conservation or green campus initiatives by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution and Emission Control",
+        "targets": [
+          {
+            "target": "Reduce particulate matter (PM) emissions by 20% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Reduce air emission intensity by 25% by year 2030 through process improvements and cleaner technologies.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Increase the use of sustainable or certified raw materials in products to at 50% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Ensure 100% of applicable products comply with customer and regulatory environmental requirements by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Maintain a customer complaint rate related to product quality and safety below 1% annually.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Reduce product use defects by 99% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with applicable customer product safety and regulatory requirements annually.",
+            "baseline": "2023",
+            "deadline": "annually"
+          },
+          {
+            "target": "Maintain zero product recalls related to health and safety issues each year till 2030 and thereafter.",
+            "baseline": "2023",
+            "deadline": "each year till 2030 and thereafter"
+          },
+          {
+            "target": "Maintain a customer complaint rate related to product health and safety below 1% annually.",
+            "baseline": "2023",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-Life treatment",
+        "targets": [
+          {
+            "target": "Support the reuse, recycling, or recovery of 20% of end-of-life products by year 2030 through buy-back programs.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Increase the proportion of recyclable or reusable materials in applicable products to 50% by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Implement one product circularity or end-of-life improvement initiatives by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services and Advocacy",
+        "targets": [
+          {
+            "target": "Conduct two environmental awareness or community engagement initiatives by year 2030.",
+            "baseline": "2023",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Engage 80% of suppliers and business partners in environmental sustainability initiatives by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide environmental awareness training to 100% of employees annually",
+            "baseline": "2023",
+            "deadline": "annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      9,
+      12,
+      13,
+      15,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Provide leadership and strategic direction for environmental management."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure adequate resources are available to achieve the Company's environmental objectives and commitments."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Implement this policy within their respective departments."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure compliance with applicable environmental procedures and support the achievement of environmental objectives and targets."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with the requirements of this policy and established environmental procedures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Use resources responsibly and report environmental concerns or improvement opportunities."
+      },
+      {
+        "role": "Contractors, Suppliers & Business Partners",
+        "duty": "Conduct activities in accordance with Asrotex's environmental requirements."
+      },
+      {
+        "role": "Contractors, Suppliers & Business Partners",
+        "duty": "Support the Company's environmental commitments and applicable sustainability requirements while performing work on behalf of Asrotex."
+      }
+    ],
+    "monitoring": "Asrotex is committed to regularly monitoring and evaluating its environmental performance to ensure the effective implementation of this policy and the achievement of its environmental objectives and targets.\n\nMonitor key environmental performance indicators, including energy, water, emissions, waste, and resource consumption.\n\nMaintain accurate environmental records and periodically review performance against established objectives and targets.\n\nConduct internal assessments to identify improvement opportunities and implement corrective actions where required.\n\nReport environmental performance to management and relevant stakeholders, where applicable, to support transparency and continual improvement.",
+    "reviewMechanism": "This Environmental Policy shall be reviewed once after every two years, or earlier if required due to changes in legal requirements, business operations, customer expectations, or other relevant factors.\n\nAsrotex shall periodically evaluate the effectiveness of this policy, review progress against environmental objectives and targets, and implement necessary improvements to enhance environmental performance. The outcomes of reviews shall be considered in updating the policy and supporting the Company's commitment to continual improvement."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Asrotex/Environmental  policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Asrotex/Environmental  policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 15408,
+  "parsedAt": "2026-09-11T07:33:01.197Z"
+}

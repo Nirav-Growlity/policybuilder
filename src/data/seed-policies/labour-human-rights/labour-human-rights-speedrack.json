@@ -1,0 +1,407 @@
+{
+  "id": "labour-human-rights-speedrack",
+  "name": "Speedrack",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Fair Labour - Human Rights Policy_grw_v1.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Speedrack Products Group Ltd.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Manufacturing Site",
+          "address": "42 Cole St, Quincy, MI 49082",
+          "primaryFunction": "Manufacturing"
+        },
+        {
+          "location": "3060 S Industrial Dr NW Walker, MI 49544",
+          "address": "3060 S Industrial Dr NW Walker, MI 49544",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Corporate Office",
+          "address": "",
+          "primaryFunction": "Corporate Office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Speedrack Products Group Ltd. is committed to upholding internationally recognized human rights and fair Labor practices across our organization and global value chain. As a 100% employee-owned manufacturer of pallet racking and storage systems, we prioritize a work environment that protects the dignity, health, safety, and well-being of all employees, suppliers, contractors, customers, and communities. Respecting human rights is central to our corporate values, culture, and decision-making. This Policy aligns with the UDHR, ILO Core Labor Standards, UNGPs, and applicable local employment laws.",
+      "declaration": "The primary goals of this Fair Labor & Human Rights Policy include:\n\nEstablishing clear standards for ethical and responsible Labor practices within Speedrack and across our supply chain.\n\nPreventing and addressing any form of human rights abuse or Labor exploitation, including discrimination, unsafe working conditions, forced Labor, harassment, or unfair treatment.\n\nPromoting diversity, equal opportunity, respect, and workplace inclusion.\n\nProviding guidance to employees, suppliers, and stakeholders on reporting violations and accessing support.\n\nDemonstrating Speedrack’s commitment toward sustainable and responsible manufacturing practices that prioritize people and society.",
+      "scope": "This Policy applies to all Speedrack employees, including permanent, temporary, contractual, trainees, interns, management staff and all internal and external stakeholders associated with Speedrack. It covers all company locations and work environments, including manufacturing plants and all offices. Compliance with this Policy is mandatory for all individuals covered under its scope."
+    },
+    "focusAreas": [
+      "Ethical Employment Practices",
+      "Protection of Vulnerable Groups",
+      "Health, Safety & Wellbeing",
+      "Fair Compensation & Working Hours",
+      "Respect & Non-Discrimination",
+      "Career Management & Development",
+      "Human Rights",
+      "Expression & Grievance Resolution"
+    ],
+    "qualitative": {
+      "Ethical Employment Practices": [
+        "Ensure fair, transparent, and lawful hiring, onboarding, work conditions, and terminations, protecting workers from exploitation or forced Labor.",
+        "Recruitment and employment practices will be strengthened through thorough background checks, transparent contracts, and clear communication of employee rights in accordance with US federal and state labor laws.",
+        "The organization will ensure fair and humane working conditions by enforcing standardized working hours, breaks, and weekly off policies in accordance with the Fair Labor Standards Act (FLSA) and applicable state laws."
+      ],
+      "Protection of Vulnerable Groups": [
+        "Safeguard minors, migrant workers, persons with disabilities, and temporary staff from discrimination or unsafe conditions while promoting diversity and equal opportunity.",
+        "We will actively promote diversity and inclusion by implementing employee resource groups, mentoring programs, and awareness campaigns to support underrepresented groups."
+      ],
+      "Health, Safety & Wellbeing": [
+        "Maintain safe work environments with proper controls and emergency systems, supporting physical and mental wellbeing.",
+        "We commit to fostering a strong safety culture and enhancing employee wellbeing through proactive risk management, safety programs, ergonomics, wellness, and mental health support.",
+        "We commit to providing structured, role-based health and safety training to employees every year, with refresher training for high-risk roles.",
+        "We are committed to maintaining safe work environments through preventive maintenance and responsible operational controls.",
+        "We commit to strengthening employee well-being by continuously promoting mental health awareness and ergonomic best practices through regular communication, training, and workplace improvement initiatives.",
+        "We have maintained Zero Lost Time Injuries (LTI) and Zero workplace incidents for the past several years through robust safety systems and strong employee engagement.",
+        "Safe and hygienic workplace conditions will be maintained through regular housekeeping, clean sanitation facilities, drinking water access, and proper ventilation in compliance with OSHA standards.",
+        "Employee comfort and productivity will be enhanced through ergonomic workstation design, adequate lighting, temperature control, and noise mitigation measures.",
+        "Dignified working environments will be ensured by strictly prohibiting overcrowding, unsafe workloads, harassment, or any form of degrading treatment, in line with federal and state labor laws.",
+        "Work–life balance will be promoted through flexible work arrangements where feasible, regulated overtime practices, and employee wellness programs, following FLSA overtime regulations."
+      ],
+      "Fair Compensation & Working Hours": [
+        "Provide wages, benefits, leave, and hours in line with legal and fair Labor standards; ensure overtime is voluntary and compensated.",
+        "The organization will ensure fair and humane working conditions by enforcing standardized working hours, breaks, and weekly off policies in accordance with the Fair Labor Standards Act (FLSA) and applicable state laws.",
+        "Work–life balance will be promoted through flexible work arrangements where feasible, regulated overtime practices, and employee wellness programs, following FLSA overtime regulations."
+      ],
+      "Respect & Non-Discrimination": [
+        "Foster a culture free from harassment or abuse, respecting individual identity and diversity.",
+        "We aim to ensure all recruitment and promotion processes are free from bias by implementing structured selection criteria, standardized evaluation procedures, diverse hiring panels, and regular monitoring of decisions for fairness.",
+        "We commit to promoting a respectful, safe, and abuse-free workplace, preventing all forms of bullying, intimidation, or harassment, and ensuring dignity and equal respect for all.",
+        "The organization will foster an inclusive and respectful workplace by enforcing a zero-tolerance policy against all forms of discrimination and harassment, aligned with Title VII of the Civil Rights Act and applicable state laws.",
+        "Recruitment, promotion, and compensation practices will be strengthened to ensure fairness, equal opportunity, and bias-free decision-making through structured processes and objective criteria.",
+        "Employee awareness will be enhanced by conducting regular anti-discrimination and anti-harassment training, covering topics such as unconscious bias, workplace conduct, and reporting mechanisms."
+      ],
+      "Career Management & Development": [
+        "Support employee growth through training, skill development, mentorship, and clear career progression paths.",
+        "The organization will implement structured career development programs by providing clear role progression paths, competency frameworks, and performance-based promotion guidelines.",
+        "Employee skill enhancement will be strengthened through targeted training programs, mentoring, and cross-functional exposure to prepare employees for advanced roles.",
+        "High-potential employees will be identified and supported through personalized development plans, coaching, and succession planning initiatives.",
+        "Transparent performance evaluation processes will be maintained, including regular feedback, goal setting, and career conversations aligned with employee aspirations.",
+        "Opportunities for continuous learning and professional growth will be promoted through access to workshops, certifications, and knowledge-sharing platforms across departments."
+      ],
+      "Human Rights": [
+        "Uphold fundamental human rights across all operations, ensuring no involvement in violations, forced Labor, or child Labor.",
+        "We will implement a zero-tolerance policy for forced & child labor, and human trafficking by embedding strict hiring protocols, employee verification procedures, and supplier compliance requirements.",
+        "Employee awareness will be enhanced by conducting regular training sessions on identifying and reporting signs of Labor exploitation.",
+        "Supplier and contractor compliance will be ensured by incorporating explicit anti-forced-labor clauses in contracts and conducting periodic audits of high-risk vendors.",
+        "The organization will uphold fundamental human rights across all operations by embedding respect for dignity, equality, and non-discrimination into workplace policies and practices.",
+        "Employee rights will be protected through clear policies on freedom of association, collective bargaining, privacy, and protection from harassment or retaliation, in line with US labor laws and human rights principles.",
+        "Human rights awareness will be promoted through regular training programs, internal communications, and workshops for employees and management."
+      ],
+      "Expression & Grievance Resolution": [
+        "Offer confidential channels for concerns and violations without retaliation, encouraging open communication.",
+        "We will ensure 100% transparent reporting and closure of all related grievances with documented outcomes and employee feedback tracking.",
+        "Conflict resolution mechanisms will be institutionalized by implementing grievance procedures, confidential reporting channels, and mediation processes to ensure fair and timely resolution.",
+        "Maintain confidential channels for employees to report workplace concerns or violations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Health, Safety & Wellbeing",
+        "targets": [
+          {
+            "target": "100% transparent reporting and closure of all related grievances with documented outcomes and employee feedback tracking.",
+            "baseline": "2022 baseline data",
+            "deadline": ""
+          },
+          {
+            "target": "100% monthly safety inspections and quarterly emergency response drills across all facilities.",
+            "baseline": "2022 baseline data",
+            "deadline": ""
+          },
+          {
+            "target": "Minimum 50% employee training completion and participation annually on Health and safety across all locations.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% PPE usage compliance and two mandatory safety and firefighting training programs per employee every year.",
+            "baseline": "2022 baseline data",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain Zero Lost Time Injuries (LTI) and Zero workplace incidents.",
+            "baseline": "Zero Lost Time Injuries (LTI) and Zero workplace incidents for the past several years",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Human Rights",
+        "targets": [
+          {
+            "target": "Maintain zero cases related to labor exploitation.",
+            "baseline": "2022 baseline data",
+            "deadline": ""
+          },
+          {
+            "target": "100% compliance with US federal and state labor laws prohibiting forced labor and child labor.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Annual verification of employment eligibility and age documentation for 100% of new hires.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Mandatory anti-forced-labor and trafficking awareness training to 100% of employees and contractors.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct at least one internal audit and risk assessment on labor exploitation.",
+            "baseline": "2022 baseline data",
+            "deadline": ""
+          },
+          {
+            "target": "All reported incidents of suspected forced labor, child labor, or human trafficking are investigated and closed within 30 days, with zero unresolved cases.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% compliance with US labor laws and international human rights standards across all operations.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Mandatory human rights training to 100% of employees, managers, and contractors annually.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Annual audits of at least 100% of high-risk suppliers and contractors for human rights compliance.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Expression & Grievance Resolution",
+        "targets": [
+          {
+            "target": "Formal employee feedback sessions covering 100% of departments annually.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of employees are included in representative selection procedures and covered under collective bargaining agreements where applicable.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "At least one townhall meeting per major operational area each year.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of reported grievances are acknowledged within 48 hours and resolved within 30 days.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Compensation & Working Hours",
+        "targets": [
+          {
+            "target": "100% compliance with FLSA-mandated working hours, breaks, and overtime limits.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% of workplaces meet OSHA standards for sanitation, ventilation, and safety.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "At least 2 ergonomic and working-condition assessments per site annually.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Overtime limited to within legal limits for 100% of employees, with zero instances of unpaid or forced overtime.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Annual employee satisfaction surveys on working conditions, with at least 90% of action items implemented.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide health care plan for 100% of eligible employees.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Respect & Non-Discrimination",
+        "targets": [
+          {
+            "target": "100% compliance with federal and state anti-discrimination laws.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Mandatory anti-discrimination and anti-harassment training to 100% of employees annually.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "All reported cases of discrimination or harassment are investigated and resolved within 30 days, with zero unresolved cases.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Diversity, equity, and inclusion metrics integrated into 100% of managerial performance evaluations.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the representation of women in the organization by 5%.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Hire at least 10% of new employees from minority and vulnerable groups.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero cases of discrimination and harassment each year.",
+            "baseline": "Zero cases of discrimination and harassment each year, building on the record of the past several years",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Career Management & Development",
+        "targets": [
+          {
+            "target": "Provide a documented career development plan to 10% of employees.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "100% employee participation in skill-building and career development training programs.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Performance evaluations for 100% of employees.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 10% increase in employee skill certifications.",
+            "baseline": "2022 baseline data",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Endorse and champion the effective implementation of this policy across all business operations."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Ensure adequate resources, systems, and governance mechanisms are in place to protect Labor and human rights."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Review performance reports and drive continuous improvement to uphold global ethical Labor standards."
+      },
+      {
+        "role": "Board of Directors & Executive Leadership",
+        "duty": "Integrate human rights considerations into strategic planning, sourcing decisions, and business growth initiatives."
+      },
+      {
+        "role": "CHRO",
+        "duty": "Review the entire policy annually."
+      },
+      {
+        "role": "CHRO",
+        "duty": "Communicate policy requirements clearly to all employees, contractors, and stakeholders."
+      },
+      {
+        "role": "CHRO",
+        "duty": "Conduct regular awareness programs, training sessions, audits, and compliance assessments."
+      },
+      {
+        "role": "CHRO",
+        "duty": "Track legal, regulatory, and global human rights updates and incorporate revisions into internal practices."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Implement and enforce policy practices within daily operations and team behaviour."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Promote a safe, inclusive, and respectful workplace environment free from harassment or discrimination."
+      },
+      {
+        "role": "Managers & Supervisors",
+        "duty": "Ensure workers are provided equitable treatment, welfare facilities, and rights related to working hours, wages, and breaks."
+      },
+      {
+        "role": "Employees",
+        "duty": "Understand and comply with the principles outlined in this policy and related procedures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate actively in training, awareness, and improvement programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Support a respectful, harassment-free, inclusive work environment."
+      },
+      {
+        "role": "Employees",
+        "duty": "Maintain honesty, fairness, and professionalism in workplace interactions."
+      }
+    ],
+    "monitoring": "Regular Internal Audits: Conduct periodic audits across operations to verify compliance with labor, health and safety, and human rights standards.\n\nEmployee Feedback & Grievance Mechanisms: Maintain confidential channels for employees to report workplace concerns or violations.\n\nSupplier & Contractor Monitoring: Track compliance of suppliers and contractors through contractual obligations, self-assessments, and on-site audits for high-risk vendors.\n\nPerformance Metrics & Reporting: Progress will be reviewed quarterly and reported to senior leadership.\n\nSpeedrack Products Group Ltd is committed to strengthening its Fair Labor and Human Rights practices in alignment with global ethical standards. The organization will assess performance through audits, employee feedback, and external evaluations, and invest in training, systems, and tools to improve workplace conditions. Speedrack will work with employees, unions, and supply chain partners to identify opportunities and address challenges. Corrective and preventive actions will be taken promptly to resolve non-compliance, close gaps, and protect worker well-being.",
+    "reviewMechanism": "The Chief Human Resources Officer (CHRO), supported by Senior Leadership, will conduct an annual review or as needed of this policy to monitor progress, identify areas for improvement, and ensure alignment with evolving legal, ethical, and industry requirements. Based on review outcomes, compliance assessments, emerging global standards, and organizational needs, the policy may be updated or strengthened accordingly."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Speedrack/2. Fair Labour - Human Rights Policy_grw_v1.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Speedrack/2. Fair Labour - Human Rights Policy_grw_v1.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 18051,
+  "parsedAt": "2026-09-11T07:16:40.379Z"
+}

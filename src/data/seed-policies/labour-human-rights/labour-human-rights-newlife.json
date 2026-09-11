@@ -1,0 +1,436 @@
+{
+  "id": "labour-human-rights-newlife",
+  "name": "Newlife",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Employee Rights - Welfare Policy_grw_v1_1202.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "NewLife Medicals",
+      "industry": "",
+      "site": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059",
+      "sites": [
+        {
+          "location": "NewLife Medicals Pvt Ltd",
+          "address": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059",
+          "primaryFunction": "Offices"
+        },
+        {
+          "location": "NewLife Medicals (USA), Inc",
+          "address": "146 Donmoor CT, Garner, North Carolina 27529, USA",
+          "primaryFunction": ""
+        },
+        {
+          "location": "NewLife Biopharma Limited",
+          "address": "SKY Business Centre, Office 12, Unit 9a, Plato Business Park, Damastown, Dublin 15, Ireland D15 PA4C",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1020 & 1021, 10th Floor, Maple Trade Center, Near Surdhara Circle, Thaltej, Ahmedabad – 380059"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "NewLife Medicals is committed to fostering a workplace that upholds the dignity, rights, and well-being of all employees. We recognize that our people are our most valuable asset and that a respectful, inclusive, and supportive work environment is essential for sustainable business success. This Employee Rights & Welfare Policy outlines our commitment to fair employment practices, equal opportunity, non-discrimination, and zero tolerance for harassment or exploitation.\n\nWe strive to ensure safe working conditions, fair wages, reasonable working hours, and access to grievance mechanisms without fear of retaliation. The Company complies with all applicable labor laws and regulations in the regions where we operate. Through this policy, we aim to promote a culture of trust, transparency, professional growth, and mutual respect across all levels of the organization.",
+      "declaration": "The key objectives of this policy are to:\n\nEnsure fair, lawful, and transparent employment practices for all employees, contract workers, and associates.\n\nPrevent child labor, forced labor, bonded labor, and any form of human trafficking within operations and the supply chain.\n\nPromote equal opportunity, diversity, and non-discrimination in recruitment, employment, and career development.\n\nProvide a safe, healthy, and respectful working environment for all personnel.\n\nEnsure fair wages, reasonable working hours, and statutory benefits in compliance with applicable laws.\n\nRespect employees’ rights to freedom of association and collective bargaining, in accordance with local regulations.",
+      "scope": "This Policy applies to all operations of NewLife Medicals., including its offices, warehouses, distribution activities, and global sourcing and supply chain operations. It is applicable to all employees, management, contract workers, business associates, and stakeholders, whether internal or external, working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Employee Safety & Welfare",
+      "Workplace Standards",
+      "Learning & Training",
+      "Equal Opportunity & Fair Treatment",
+      "Diversity, Equality and Inclusion",
+      "Fair Wage and benefits"
+    ],
+    "qualitative": {
+      "Employee Safety & Welfare": [
+        "We aim to maintain a safe, healthy, and hygienic working environment across all locations through robust occupational health and safety management systems.",
+        "We aim to address workplace health and safety risks in offices, warehouses, and distribution operations by implementing structured safety procedures, periodic risk assessments, and preventive controls to ensure a safe and healthy working environment.",
+        "Promote ergonomic workplace design, proper seating arrangements, safe lifting techniques, and periodic breaks to reduce the risk of RSI and work-related musculoskeletal issues.",
+        "We maintain strict compliance with applicable occupational health and safety regulations, including OSHA requirements, and continuously monitor compliance through inspections, audits, and supervisory reviews.",
+        "We conduct periodic emergency preparedness drills, including fire response, medical emergencies, and evacuation exercises, to ensure employee readiness.",
+        "We promote employee awareness on safety responsibilities through periodic training and internal communication to strengthen a culture of prevention and compliance.",
+        "We maintain fire safety systems, emergency response procedures, and first-aid preparedness across operational locations to protect employees, visitors, and stakeholders.",
+        "We strive to provide appropriate Personal Protective Equipment (PPE) to employees involved in warehouse handling, inspection, or logistics coordination to minimize occupational risks and prevent injuries."
+      ],
+      "Workplace Standards": [
+        "We ensure compliance with applicable National federal, state, and local labor laws, including wage and hour regulations, workplace safety laws, and employee welfare requirements.",
+        "We aim to maintain a professional, respectful, and compliant workplace environment by implementing clear HR policies, codes of conduct, and ethical business standards to uphold dignity and discipline.",
+        "We maintain structured grievance redressal mechanisms to allow employees to raise concerns confidentially and without fear of retaliation to ensure fairness and accountability.",
+        "Maintain working hours, overtime, and rest periods in compliance with applicable laws, ensuring employees are not subjected to excessive working hours.",
+        "Provide clear appointment letters or employment contracts outlining roles, responsibilities, wages, working conditions, and rights.",
+        "We will maintain clean sanitation facilities, adequate lighting, ventilation, drinking water, and rest areas across offices and warehouses.",
+        "We strive to continuously improve workplace conditions through employee feedback, internal assessments, and policy enhancements.",
+        "We provide comprehensive health insurance coverage to eligible employees to support their medical needs and promote overall well-being.",
+        "We provide eligible employees with legally mandated and company-sponsored benefits, supporting physical, mental, and financial well-being."
+      ],
+      "Learning & Training": [
+        "We aim to foster a culture of continuous learning by encouraging employees to regularly upgrade their professional and technical skills.",
+        "We strive to provide role-specific training programs to enhance operational efficiency in areas such as regulatory compliance, warehouse management, quality control, digital systems, and safety practices.",
+        "Our goal is to ensure equal and non-discriminatory access to training and career growth opportunities for all employees across departments and levels.",
+        "We plan to conduct periodic performance and development discussions to identify skill gaps and create structured development pathways.",
+        "We aim to promote internal career progression by prioritizing merit-based promotions and succession planning wherever feasible.",
+        "We strive to strengthen leadership capabilities by identifying high-potential employees and providing them with growth and mentoring opportunities.",
+        "We plan to enhance digital competencies across the workforce to improve efficiency, traceability, and data-driven decision-making.",
+        "We will conduct regular compliance and industry-related training programs to ensure employees remain updated with regulatory and operational requirements.",
+        "We aim to encourage cross-functional learning and knowledge sharing to build organizational resilience and collaboration."
+      ],
+      "Equal Opportunity & Fair Treatment": [
+        "We strive to maintain equal opportunity for all employees regardless of gender, religion, caste, age, disability, or other protected characteristics to promote diversity and respect.",
+        "We ensure employment decisions are based on merit, qualifications, performance, and business needs.",
+        "Our goal is to maintain zero tolerance for any form of workplace harassment, including sexual harassment, verbal abuse, bullying, intimidation, or inappropriate conduct.",
+        "We aim to eliminate discrimination in recruitment, promotion, compensation, and performance evaluation by implementing merit-based and transparent HR processes to ensure fairness and inclusivity.",
+        "We aim to provide regular training and awareness programs on equal opportunity and respectful workplace conduct.",
+        "We will conduct periodic reviews to identify and mitigate risks related to workplace misconduct.",
+        "We aim to provide mandatory training to all managers and supervisors on non-discrimination, anti-harassment, and respectful workplace practices.",
+        "We ensure complaints are handled through confidential, impartial, and effective grievance mechanisms, with protection against retaliation.",
+        "We encourage open communication and employee engagement to foster an inclusive and supportive workplace culture."
+      ],
+      "Diversity, Equality and Inclusion": [
+        "We aim to foster a diverse and inclusive workplace by implementing structured and unbiased recruitment processes, including standardized interview evaluation formats.",
+        "We strive to ensure equitable hiring practices by including at least two interview panel members for managerial roles to reduce individual bias.",
+        "Our goal is to promote gender diversity by actively encouraging applications from underrepresented groups in recruitment advertisements.",
+        "We plan to conduct annual DEI awareness and sensitization training sessions for all employees, including managers and supervisors.",
+        "We will integrate inclusive workplace practices, such as flexible working arrangements where feasible, to support diverse employee needs."
+      ],
+      "Fair Wage and benefits": [
+        "We aim to ensure that all employees receive wages that meet or exceed applicable statutory minimum wage requirements in compliance with labor laws.",
+        "We strive to ensure timely and accurate payment of salaries and wages, without unlawful deductions or delays.",
+        "Our goal is to maintain transparent compensation structures, clearly communicated through appointment letters and employment contracts.",
+        "We plan to comply fully with statutory benefits requirements, including provident fund, employee state insurance, gratuity, paid leave, maternity benefits, and other legally mandated entitlements.",
+        "We will conduct periodic internal payroll reviews to ensure wage compliance, accuracy, and fairness."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Safety & Welfare",
+        "targets": [
+          {
+            "target": "We aim to maintain zero workplace accidents across all operations each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to achieve a minimum 20% reduction in Lost Time Injury Frequency Rate (LTIFR)",
+            "baseline": "Baseline year 2023",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We aim to ensure that 100% of employees and contract workers are provided with appropriate Personal Protective Equipment (PPE) relevant to their job roles and risk exposure each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We will provide mandatory health & safety training to 100% of employees and contract workers annually",
+            "baseline": "Compared to 2023 levels",
+            "deadline": "Starting 2025"
+          },
+          {
+            "target": "Our goal is to conduct at least one annual mental health and stress awareness program, achieving 100% employee participation",
+            "baseline": "",
+            "deadline": "From 2025 onwards; 100% participation by 2029"
+          },
+          {
+            "target": "We continue to ensure that 100% of workplace incidents, near-misses, and unsafe conditions are reported within 24–48 hours.",
+            "baseline": "",
+            "deadline": "Within 24–48 hours"
+          },
+          {
+            "target": "We strive to ensure 100% availability of functional fire safety equipment, first-aid kits, and emergency signage across all facilities",
+            "baseline": "Compared to 2023 infrastructure status",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We aim to conduct annual workplace ergonomics assessments, covering 100% of office and warehouse workstations",
+            "baseline": "",
+            "deadline": "Starting 2025; 100% coverage by 2029"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Standards",
+        "targets": [
+          {
+            "target": "We plan to ensure 100% employees receive written employment contracts",
+            "baseline": "Compared to 2023 documentation coverage",
+            "deadline": "By 2026"
+          },
+          {
+            "target": "We aim to ensure 100% compliance with applicable labor laws, statutory requirements, and regulatory obligations across all locations each year, with compliance status monitored through internal audits and reviews.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We will ensure 100% of employees have access to hygienic sanitation facilities, safe drinking water, and rest areas",
+            "baseline": "Compared to 2023 infrastructure status",
+            "deadline": "By 2026"
+          },
+          {
+            "target": "We aim to ensure that 100% of eligible employees covered under statutory and company-provided insurance schemes, including health insurance, employee state insurance, and other legally mandated coverage, each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We aim to achieve and maintain at least a 90% employee satisfaction rate related to workplace conditions, fairness, and compliance, as measured through periodic employee surveys",
+            "baseline": "Baseline year 2023",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We continue to maintain zero confirmed cases of wages, benefits, or overtime exceeding statutory limits annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We continue to conduct annual payroll, wage, and working-hours compliance audits at 100% of sites.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to achieve at least 90% positive responses related to fair treatment and working conditions in employee surveys",
+            "baseline": "Baseline year 2023",
+            "deadline": "By 2029"
+          }
+        ]
+      },
+      {
+        "area": "Learning & Training",
+        "targets": [
+          {
+            "target": "We aim to provide a minimum of 12 training hours per employee per year",
+            "baseline": "Compared to 2023 average training hours",
+            "deadline": "By 2027"
+          },
+          {
+            "target": "We plan to allocate at least 2% of annual payroll cost towards employee training and development",
+            "baseline": "Compared to 2023 training investment levels",
+            "deadline": "By 2028"
+          },
+          {
+            "target": "We strive to ensure that 80% of managerial and supervisory roles are filled through internal promotions",
+            "baseline": "Compared to 2023 internal promotion rate",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We continue to ensure that 100% of new employees receive induction, code-of-conduct, and labor rights training within their joining period each year.",
+            "baseline": "",
+            "deadline": "Each year"
+          },
+          {
+            "target": "We plan to provide cross-functional or multi-skill training to at least 60% of operational staff",
+            "baseline": "Compared to 2023 skill matrix data",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We aim to ensure that at least 70% of employees have documented annual performance and development reviews",
+            "baseline": "Baseline year 2023",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We continue to ensure that at least 80% of employees participate annually in skill development or leadership development programs",
+            "baseline": "Baseline year 2023",
+            "deadline": "By 2029"
+          }
+        ]
+      },
+      {
+        "area": "Equal Opportunity & Fair Treatment",
+        "targets": [
+          {
+            "target": "We aim to maintain zero cases related to discrimination and harassment annually.",
+            "baseline": "",
+            "deadline": "Annually"
+          },
+          {
+            "target": "We aim to maintain zero tolerance for discrimination and harassment, ensuring that 100% of substantiated cases are investigated and closed within defined timelines.",
+            "baseline": "",
+            "deadline": "Within defined timelines"
+          },
+          {
+            "target": "We continue to provide annual anti-harassment, POSH, and equal-opportunity training to 100% of employees",
+            "baseline": "Compared to 2023 training coverage",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We plan to ensure 100% of managerial staff complete specialized training on prevention of workplace discrimination and harassment",
+            "baseline": "Compared to 2023 managerial training levels",
+            "deadline": "By 2026"
+          },
+          {
+            "target": "We aim to ensure that 100% of grievances and complaints are recorded, investigated, and resolved in accordance with internal procedures.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to ensure equal opportunity in recruitment, training, promotion, and compensation, with employment decisions for 100% of roles based on merit, qualifications, and performance, without discrimination.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equality and Inclusion",
+        "targets": [
+          {
+            "target": "Our goal is to increase women representation in total workforce to at least 35%",
+            "baseline": "Compared to 2023 gender ratio",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We plan to increase women representation in managerial and supervisory roles to 25%",
+            "baseline": "Compared to 2023 leadership composition",
+            "deadline": "By 2029"
+          },
+          {
+            "target": "We strive to ensure 100% equal pay compliance across genders and roles",
+            "baseline": "Compared to 2023 pay gap assessment status",
+            "deadline": "By 2026"
+          },
+          {
+            "target": "Our goal is to provide DEI awareness training to 100% of employees every two years",
+            "baseline": "Compared to 2023 training coverage",
+            "deadline": "Starting 2026"
+          },
+          {
+            "target": "We plan to ensure 100% of recruitment panels are trained on inclusive hiring practices",
+            "baseline": "Compared to 2023 recruitment practices",
+            "deadline": "By 2026"
+          }
+        ]
+      },
+      {
+        "area": "Fair Wage and benefits",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% compliance with statutory minimum wage requirements",
+            "baseline": "Compared to 2023 wage compliance status",
+            "deadline": "From 2024 onwards"
+          },
+          {
+            "target": "Our goal is to achieve 100% on-time salary and wage payments",
+            "baseline": "Compared to 2023 payment performance",
+            "deadline": "From 2024 onwards"
+          },
+          {
+            "target": "We strive to ensure 100% statutory benefit coverage (PF, ESI, gratuity, maternity benefits, paid leave, etc.)",
+            "baseline": "Compared to 2023 benefits coverage",
+            "deadline": "By 2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Provides overall oversight of labor and human rights performance across the organization."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Reviews key risks, incidents, compliance status, and performance indicators at least annually."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensures alignment of labor and human rights commitments with business strategy."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Approves updates to the Employee Rights & Welfare Policy and related frameworks."
+      },
+      {
+        "role": "Head – Human Resources",
+        "duty": "Leads the implementation of the Employee Rights & Welfare Policy across all operations."
+      },
+      {
+        "role": "Head – Human Resources",
+        "duty": "Review Policy regularly"
+      },
+      {
+        "role": "Head – Human Resources",
+        "duty": "Oversees recruitment practices, employment contracts, wages, working hours, and disciplinary procedures."
+      },
+      {
+        "role": "Head – Human Resources",
+        "duty": "Ensures grievance mechanisms are effective, accessible, and free from retaliation."
+      },
+      {
+        "role": "Head – Human Resources",
+        "duty": "Monitors compliance with applicable labor laws and internal policies."
+      },
+      {
+        "role": "EHS Head",
+        "duty": "Oversees health and safety management systems and risk assessments."
+      },
+      {
+        "role": "EHS Head",
+        "duty": "Tracks incidents, near-misses, and corrective and preventive actions."
+      },
+      {
+        "role": "EHS Head",
+        "duty": "Ensures compliance with health, safety, and environmental regulations."
+      },
+      {
+        "role": "EHS Head",
+        "duty": "Reports safety performance indicators and emerging risks to management."
+      },
+      {
+        "role": "EHS Officers",
+        "duty": "Conduct site inspections, safety audits, and emergency preparedness drills."
+      },
+      {
+        "role": "EHS Officers",
+        "duty": "Deliver toolbox talks and safety awareness sessions."
+      },
+      {
+        "role": "EHS Officers",
+        "duty": "Investigate incidents and support root-cause analysis and corrective actions."
+      },
+      {
+        "role": "EHS Officers",
+        "duty": "Ensure availability and proper use of personal protective equipment (PPE)."
+      },
+      {
+        "role": "Employees",
+        "duty": "Comply with company policies, ethical standards, and workplace rules."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate actively in training, awareness, and safety programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report concerns, violations, or unsafe conditions through designated channels."
+      }
+    ],
+    "monitoring": "NewLife Medicals maintains transparent reporting mechanisms to monitor compliance with the Employee Rights & Welfare Policy. All labor-related incidents, grievances, health and safety events, discrimination complaints, working-hour deviations, and policy violations are recorded through established internal systems. Periodic reports are reviewed by HR and Compliance teams to analyze trends and identify risks. Serious incidents or material non-compliances are promptly escalated to senior management and, where required, to relevant authorities.\n\nThe Company is committed to continuously improving its labor and human rights practices through regular monitoring and corrective actions. Key indicators such as safety performance, grievance resolution, training coverage, employee turnover, absenteeism, and audit findings are periodically reviewed. Internal audits, inspections, surveys, and management reviews help identify gaps and risks. Identified non-conformities are analyzed for root causes, and appropriate corrective and preventive actions are implemented.",
+    "reviewMechanism": "This Employee Rights & Welfare Policy is reviewed by HR Head annually or as per requirement to ensure it remains effective, relevant, and aligned with applicable legal requirements, international standards, and industry best practices."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Newlife/2. Employee Rights - Welfare Policy_grw_v1_1202.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Newlife/2. Employee Rights - Welfare Policy_grw_v1_1202.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 20428,
+  "parsedAt": "2026-09-11T07:11:05.732Z"
+}

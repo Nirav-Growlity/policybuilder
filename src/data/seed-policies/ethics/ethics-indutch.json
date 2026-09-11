@@ -1,0 +1,255 @@
+{
+  "id": "ethics-indutch",
+  "name": "Indutch",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Indutch Composites Technology Pvt Ltd",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Indutch Composites Technology Pvt Ltd..",
+          "address": "Plot No. 187/P/1B-1, Waghodia Industrial Estate, Pipalia - Waghodia Road, Vadodara - 391760, Gujarat, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Indutch Composites Technology Pvt Ltd",
+          "address": "9-2E, 9-1A, 12-2, 11-6, 11-4B, 11-3A, 11-3, 10-2, Zuvve Chelika Village, 30/P2, P4, P5, 30/3, Padmavati Kandriga Village, Sullurpeta (M), S.P.S.R. Nellore – 524121, Andhra Pradesh - 524121",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Indutch Composites Technology Pvt Ltd",
+          "address": "Plot/Survey No. 16P1 Shed-2, Village : Chandrapura, Taluka : Halol, Dist : Panchmahal - 389350",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Indutch Composites Technology Pvt Ltd, ethical conduct is the cornerstone of our operations. As a leading manufacturer in the composite industry, we recognize our responsibility to uphold the highest standards of integrity, transparency, and social responsibility. Our commitment to ethical behaviour extends beyond mere compliance with legal requirements; it is a fundamental aspect of how we conduct business and interact with stakeholders.\n\nOur Ethics Policy serves as a guiding framework for all employees, outlining the principles and values that underpin our corporate culture. It reflects our dedication to fostering a workplace environment where honesty, fairness, and respect are paramount. By adhering to these principles, we not only strengthen trust with our customers, partners, and communities but also cultivate a positive impact on society as a whole. Through continuous reinforcement and integration into our daily operations, we strive to ensure that ethical conduct remains at the core of everything we do at Indutch Composites Technology Pvt Ltd",
+      "declaration": "At Indutch Composites Technology Pvt Ltd, we are committed to upholding the highest ethical standards in all aspects of our operations. We prioritize integrity, honesty, and respect in our interactions with employees, stakeholders, and the environment. Our Ethics Policy guides our conduct, ensuring transparency, fairness, and accountability in everything we do.",
+      "scope": "This policy is exclusively applicable to the operations of Indutch Composites Technology Pvt Ltd, covering all employees, workers, subcontractors, and other stakeholders directly affiliated with our site."
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of interest",
+      "Fraud",
+      "Money Laundering",
+      "Anti-Competitive Practices",
+      "Information Security"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Implement a strict zero-tolerance policy towards corruption, ensuring that no bribes or kickbacks are offered or accepted during any stage of the manufacturing process.",
+        "Promote ethical leadership by appointing integrity champions responsible for overseeing ethical conduct across all departments, including quality control inspections.",
+        "Establish clear reporting mechanisms and whistleblower protections to encourage employees to come forward with any suspicions or concerns regarding corrupt activities."
+      ],
+      "Conflict of interest": [
+        "Implement a robust conflict of interest policy, ensuring clear separation between personal interests and company decisions in all phases of the manufacturing process.",
+        "Mandate regular disclosures of potential conflicts, integrating them into the vetting process for suppliers and stakeholders in the composite manufacturing workflow.",
+        "Establish an independent review board to evaluate and mitigate any identified conflicts of interest throughout the composite manufacturing chain.",
+        "Conduct regular training sessions on conflict-of-interest awareness, educating employees on recognizing and navigating potential conflicts within the composite manufacturing process."
+      ],
+      "Fraud": [
+        "Enhanced Vendor Due Diligence: Implement a rigorous vendor screening process to ensure that only reputable suppliers are engaged, reducing the risk of fraudulent transactions.",
+        "Internal Controls Review: Conduct regular assessments of internal controls to identify potential loopholes or weaknesses that could be exploited by fraudsters.",
+        "Segregation of Duties: Implement a system of checks and balances by segregating duties among different employees to prevent any single individual from having too much control over critical processes."
+      ],
+      "Money Laundering": [
+        "Composite Material Traceability Program: Implement a comprehensive system to trace the origin and movement of composite materials throughout the supply chain.",
+        "Customer Due Diligence Enhancement: Strengthen customer due diligence processes to ensure thorough identification and verification of all clients and stakeholders.",
+        "Automated Transaction Reporting System: Implement an automated system for generating and submitting transaction reports to regulatory authorities in a timely manner."
+      ],
+      "Anti-Competitive Practices": [
+        "Promote Fair Competition: Ensure that all market participants have equal opportunities to compete and thrive within the composite industry.",
+        "Prevent Collusion: Implement measures to deter companies from engaging in collusive behaviour such as price-fixing or bid-rigging.",
+        "Support Small and Medium Enterprises (SMEs): Implement policies that support the growth and competitiveness of SMEs within the composite industry, preventing dominance by larger corporations.",
+        "Periodic Industry Audit: Conduct periodic audits of companies within the composite sector to identify and address any signs of anticompetitive behaviour, ensuring proactive intervention before market distortions occur."
+      ],
+      "Information Security": [
+        "Multi-factor Authentication (MFA): Implementing MFA across all systems and applications to add an extra layer of protection against unauthorized access attempts.",
+        "Enhanced Data Encryption: Implementing advanced encryption protocols to safeguard sensitive data across all digital platforms and communication channels.",
+        "Regular Security Audits: Conducting periodic comprehensive audits to identify vulnerabilities and strengthen security measures proactively."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Ensure Zero incidents of corruption by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement AI-driven audits to detect and prevent corruption, targeting a 30% improvement by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement blockchain technology for transparent financial transactions, aiming for 20% corruption reduction by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of interest",
+        "targets": [
+          {
+            "target": "Ensure zero cases of Conflict-of-Interest reduction by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve 100% monitoring rate by advanced monitoring systems by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement conflict of interest training for 100% of employees by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Ensure Zero Incident of fraudulent through enhanced verification measures by 2025",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase fraud detection accuracy to 95% by implementing advanced algorithms by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Decrease financial losses from fraud by 25% through real-time transaction monitoring by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Ensure Zero incident of Money Laundering in composite manufacturing industry by 2025",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure compliance with anti-money laundering regulations by 100% by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 25% improvement in detecting suspicious financial activities by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement advanced AI-based monitoring systems for a 25% reduction in illicit transactions by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Reduce market concentration by 15% in the composite manufacturing industry by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve Zero Competitive Incidents by 2025.",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase competition awareness through targeted campaigns, aiming for a 25% improvement by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Achieve 95% compliance with data encryption standards by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Reduce cybersecurity incident response time by 25% by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement multifactor authentication for 100% of user accounts by 2025 from the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "CEO",
+        "duty": "Provide overall leadership and commitment to uphold ethical standards across the organization, approve and support the implementation and review of the Ethics Policy."
+      },
+      {
+        "role": "Compliance Officer",
+        "duty": "Oversees implementation of Ethics Policy, monitors compliance, and addresses risks related to corruption, fraud, AML, and conflicts of interest."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts audits covering fraud, anti-competitive behaviour, and financial transparency to test and strengthen internal control."
+      },
+      {
+        "role": "Information Security Manager",
+        "duty": "Manages information protection strategies and oversees efforts to prevent data breaches and ensure data integrity."
+      },
+      {
+        "role": "Employees",
+        "duty": "Expected to adhere to ethical standards, participate in training, and report any violations of the policy."
+      }
+    ],
+    "monitoring": "Within our Ethics Policy at Indutch Composites Technology Pvt Ltd, we acknowledge our paramount responsibility to promote sustainability within the composite manufacturing sector. To gain deeper insights into our present status and identify areas for enhancement, we have established a comprehensive reporting mechanism. This mechanism encompasses crucial components delineated as follows:\n\nEstablish a schedule for regular review of the Ethics Policy. This could be annually or bi-annually, depending on the company's size, industry standards, and regulatory requirements.\n\nCreate a dedicated Review Committee responsible for overseeing the Ethics Policy and its implementation.\n\nThe committee should be composed of representatives from different departments or levels within the organization to ensure diverse perspectives and expertise.\n\nEstablish clear procedures and channels for employees to report ethical concerns, misconduct, or violations confidentially and without fear of retaliation.\n\nEnsure that multiple reporting channels are available, such as anonymous hotlines, online platforms, or designated individuals within HR or compliance departments.\n\nOutline a structured process for investigating reported incidents or ethical breaches:\n\nDefine roles and responsibilities of individuals involved in the investigation process, ensuring impartiality and confidentiality.\n\nMaintain thorough documentation of reported incidents, investigations, and resolutions for future reference and audit purposes.\n\nImplement secure record-keeping systems to protect sensitive information and maintain confidentiality.\n\nConduct regular training sessions and awareness programs to educate employees about the Ethics Policy, company values, and expected standards of conduct.\n\nProvide resources and guidance to help employees understand their ethical responsibilities and how to apply them in their daily work.\n\nEncourage ongoing feedback and suggestions from employees, stakeholders, and external parties to identify areas for enhancing the Ethics Policy and related processes.\n\nRegularly review industry best practices, regulatory requirements, and emerging ethical issues to ensure the Ethics Policy remains relevant and effective.\n\nFoster a culture of transparency by regularly communicating updates, changes, and outcomes related to the Ethics Policy and review mechanisms.\n\nEnsure that employees are aware of their rights, responsibilities, and available resources for addressing ethical concerns.",
+    "reviewMechanism": "The Chief Compliance Officer at Indutch Pvt Ltd is responsible for the implementation, oversight, and review of this policy. The Ethics Policy will be reviewed annually, and any updates will be communicated as necessary."
+  },
+  "sourcePath": "Policies - Kenal/Indutch/3. Ethics Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Indutch/3. Ethics Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 22828,
+  "parsedAt": "2026-09-11T07:24:09.560Z"
+}

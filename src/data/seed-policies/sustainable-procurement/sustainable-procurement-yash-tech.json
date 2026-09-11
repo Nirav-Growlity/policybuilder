@@ -1,0 +1,533 @@
+{
+  "id": "sustainable-procurement-yash-tech",
+  "name": "Yash Tech",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Sourcing and procurement policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Yash Technologies",
+      "industry": "",
+      "site": "841 Avenue of the CitiesEast Moline IL, 61244",
+      "sites": [
+        {
+          "location": "India",
+          "address": "201-205 Bansi Trade Center,, 581/5 M. G. Road, Indore, Madhya Pradesh 452001",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "India",
+          "address": "STP-1, Ground Floor, IT/ITES- SEZ, Near Bhawar Kuwan Square, Indore, Madhya Pradesh 452001",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Plot No. 1, Scheme Number 166, Super Corridor Road, Indore, Madhya Pradesh 452005",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "702, 7th Floor, Campus C, RMZ Centennial, Survey No. 74 & 77, Doddanakudi Village, Krishnarajapuram, HobliBengaluru, Karnataka 560048",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Awfis, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Guindy Chennai, Tamil Nadu 600032 (Office Space)",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "C/o Sundew Properties Limited (SEZ Developer), Office 1,2,3 & 4 (2nd Office Floor), 6th Floor Building #20, Raheja Mind space, CyberabadMadhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "C/o Sundew Properties Limited (SEZ Developer), 10th Floor Building #20, Raheja Mind space, Cyberabad, Madhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "UrbanWrk, 10th Floor, Building No 10, Raheja Mindspace, Hitech City, Madhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Wing A & B, Level 2, Tower No.1, Cyber City, Magarpatta City, Hadapsur, Pune, Maharashtra 411013",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Plot No. 23/1, IT & ITES SEZ (MIDC), Rajiv Gandhi InfoTech Park, Hinjewadi, Phase – III, Pune, Maharashtra 411057",
+          "primaryFunction": ""
+        },
+        {
+          "location": "China",
+          "address": "Suite 2006 20/F, Hua Qin International Building, 340 Queen’s Road Central, Hong Kong 999077",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Malaysia",
+          "address": "C-05-02 , C-05-3A, C-05-10,C-05-12, iTech Tower, Jalan Impact, Cyber 6, Cyberjaya, Selangor Darul Ehsan 63000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Singapore",
+          "address": "17 Phillip Street, #05-01 Grand Building, Singapore 048695",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Thailand",
+          "address": "87/1 Capital Tower, All Seasons Place, 16th Floor, Unit 1603 -6, Wireless Road, Lumpini Sub-districtPathumwan District, Bangkok, Thailand 10330",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "C/o Crown Corporate Services, Level 35, Tower One, Barangaroo, Sydney, New South Wales 2000",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Australia",
+          "address": "Level 5/121 King William St, Adelaide, South Australia 5000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "22nd Floor, Northbank Plaza, 69 Ann Street, Brisbane, Queensland 4000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "Rialto, Level 27, South Tower, 525, Collins Street, Melbourne, Victoria 3000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "Level 27, St Martins Tower, 44 St Georges Terrace, Perth, Western Australia 6000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Finland",
+          "address": "Bertel Jungin aukio 5, Espoo, Southern Finland province 02600",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Germany",
+          "address": "Konrad-Zuse-Ring 28, Mannheim, Baden-Württemberg, 68163",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Netherland",
+          "address": "Prinsengracht 697-2, Amsterdam, North Holland 1017 JV",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Netherland",
+          "address": "Hullenberweg 278-308, Amsterdam, North Holland 1101 BV",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Poland",
+          "address": "ul. Domaniewska 37, Warszawa, Poland 02-672",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Romania",
+          "address": "Soseaua Mihai Bravu n Subsol, Modul S083, Sector 3, Bucharest, Southeastern Romania",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Swedan",
+          "address": "Sveavägen 33, 3rd Floor, 111 34 Stockholm",
+          "primaryFunction": ""
+        },
+        {
+          "location": "United Kingdom",
+          "address": "Level 8, One Canada Square, Canary Wharf, London E14 5AA, United Kingdom",
+          "primaryFunction": ""
+        },
+        {
+          "location": "UAE",
+          "address": "Office 3602, 36th Floor, Al Shatha Towers, Dubai Internet CityDubai, P.O.Box 501714",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "UAE",
+          "address": "Office 848, Al Ansari Building, Khalifa Street, Abu Dhabi, P.O.Box 28346",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Egypt",
+          "address": "34A Al-Multaqa Al-Arabi District, 2nd Floor Office 201 Helioplis Division, Sheraton ,Cairo, P.O.Box 11799",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Lebanon",
+          "address": "Office Unit No. 1291, Section 4 Sarba, Lebanon",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Oman",
+          "address": "5th Floor Office A5, Bank Sohar Building Dohat Al Adab Street, Al Khuwair P.O. Box 395, PC 118, Muscat",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Saudi Arabia",
+          "address": "5th Floor, Balhamer Business GateAsh Shati Ash Sharqi 8196, Dammam, P.O.Box 32414",
+          "primaryFunction": ""
+        },
+        {
+          "location": "State of Qatar",
+          "address": "Office 1111, 11th Floor, Marina Twin Towers, Tower B, Regus Doha Twin Towers. Lusail, State of Qatar P.O. Box 301477",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "841 Avenue of the CitiesEast Moline IL, 61244",
+          "primaryFunction": "Global Headquarters (Corporate Office)"
+        },
+        {
+          "location": "USA",
+          "address": "4801 E Independence Blvd, Suite #900, Charlotte, North Carolina 28212",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "333 N. Michigan AvenueSuite #800, Chicago, Illinois 60601",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "455 Avenue of the Cities, East Moline, Illinois 61244",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "7760 France Ave S, Suite #1100, Minneapolis, Minnesota 55435",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "2000 W Pioneer Pkwy, Suite #16, Peoria, Illinois 61615",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "211 College Road East, Suite #102, Princeton, New Jersey 08540",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "Y & L Consulting, Inc.,A YASH Technologies Company, 5750 Epsilon, San Antonio, Texas 78249",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "3 City Place Drive, Suite #520, St. Louis, Missouri 63141",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "17406 Royalton Rd., Suite #104, Strongsville, Ohio 44136",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "Aurora Business Park, Building 15, 4408 114th Street, Urbandale, Iowa 50322",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "400 Tradecenter Drive, Suite #4880, Woburn, Massachusetts 01801",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Canada",
+          "address": "350 Burnhamthorpe Rd. West, Suite #200, Office 28, Mississauga, Ontario L5B 3J1",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "841 Avenue of the CitiesEast Moline IL, 61244"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Yash Technologies, we recognize the critical role that sustainable sourcing and procurement play in advancing our commitment to environmental stewardship and social responsibility. Our Sustainable Sourcing and Procurement Policy reflects our dedication to integrating sustainable practices into every aspect of our supply chain. This policy is designed to ensure that our sourcing decisions align with our values of integrity, transparency, and environmental stewardship. By prioritizing suppliers who demonstrate a commitment to ethical practices, resource efficiency, and social responsibility, we aim to reduce our ecological footprint and enhance the sustainability of our operations. Our approach encompasses rigorous evaluation criteria for suppliers, a focus on minimizing waste, and fostering long-term partnerships that support sustainable development. Through this policy, Yash Technologies strives to lead by example, driving positive change within the IT industry and contributing to a more sustainable future.",
+      "declaration": "Promote Sustainable Practices: Integrate sustainability into procurement decisions by prioritizing suppliers who adhere to environmentally friendly practices, including resource conservation, waste reduction, and energy efficiency.\n\nEnsure Ethical Sourcing: Maintain high ethical standards by selecting suppliers that uphold fair labor practices, human rights, and anti-corruption measures in their operations.\n\nMinimize Environmental Impact: Reduce the ecological footprint of our supply chain by sourcing materials and services that minimize environmental harm and support biodiversity conservation.\n\nEnhance Supply Chain Transparency: Foster transparency and traceability in our supply chain to ensure accountability and facilitate informed decision-making on sourcing practices.\n\nSupport Innovation and Efficiency: Encourage suppliers to adopt innovative solutions and technologies that drive sustainability and operational efficiency, contributing to long-term environmental and economic benefits.\n\nBuild Long-Term Partnerships: Develop and maintain collaborative relationships with suppliers who share our commitment to sustainability, fostering mutual growth and reinforcing our corporate values.\n\nMonitor and Evaluate Performance: Implement robust mechanisms for monitoring and evaluating supplier performance against sustainability criteria, ensuring continuous improvement and adherence to our policy standards.\n\nPromote Regulatory Compliance: Ensure that all sourcing and procurement activities comply with relevant environmental regulations and industry standards, mitigating legal and reputational risks.\n\nEngage Stakeholders: Involve stakeholders in the development and implementation of sustainable sourcing practices to align with broader corporate sustainability goals and community expectations.\n\nFoster Employee Awareness: Increase awareness and training among employees about sustainable sourcing practices to ensure that procurement decisions reflect our commitment to sustainability.",
+      "scope": "This Policy applies to all entities, offices, facilities, joint ventures, subsidiaries, and stakeholders of Yash Technologies Group across Asia, Australia, the Middle East & Africa, North America, the United States, and Europe.\n\nThe Policy extends to all stakeholders, including employees, workers, contractors, subcontractors, suppliers, and business partners."
+    },
+    "focusAreas": [
+      "Environmental issues",
+      "Labor and Human rights issue",
+      "General Principles"
+    ],
+    "qualitative": {
+      "Environmental issues": [
+        "We are focusing on ensuring that all suppliers adhere to strict environmental regulations and implement practices to minimize their carbon footprint.",
+        "Our focus is on selecting suppliers who actively engage in waste reduction, recycling, and sustainable resource management to support a circular economy.",
+        "We emphasize the importance of suppliers using energy-efficient technologies and renewable energy sources to reduce their environmental impact.",
+        "We are committed to requiring suppliers to regularly report their environmental performance and improvements to ensure transparency and accountability.",
+        "Our approach involves collaborating with suppliers to develop and implement strategies for reducing greenhouse gas emissions across the supply chain",
+        "We are implementing a rigorous supplier assessment process to ensure compliance with local and international environmental laws, aiming to reduce overall environmental impact.",
+        "We will utilize advanced tracking technologies to monitor suppliers’ adherence to environmental regulations, ensuring that their practices align with legal requirements and our sustainability goals.",
+        "We are integrating environmental performance metrics into our supplier evaluation criteria, in accordance with environmental legislation, to foster continuous improvement in ecological responsibility.",
+        "We are collaborating with suppliers to promote the adoption of eco-friendly materials and processes, ensuring compliance with environmental laws and supporting our sustainability objectives.",
+        "We are conducting regular audits of our suppliers' environmental practices to verify adherence to both our internal standards and relevant legal requirements, enhancing overall environmental stewardship.",
+        "We aim to provide regular and comprehensive training for procurement staff on ESG issues associated with procurement."
+      ],
+      "Labor and Human rights issue": [
+        "We are focusing on ensuring that all suppliers uphold fair labor practices, including safe working conditions and fair wages for all employees.",
+        "Our focus is on requiring suppliers to have robust policies in place to prevent and address any forms of child labor, forced labor, or human trafficking.",
+        "We emphasize the need for suppliers to provide regular training on labor rights and workplace safety to all their employees.",
+        "We are committed to evaluating suppliers based on their adherence to international human rights standards and their efforts to promote equality and non-discrimination.",
+        "Our approach involves working with suppliers to ensure they have effective grievance mechanisms in place for employees to report violations and seek resolution.",
+        "We are establishing a comprehensive supplier code of conduct that mandates adherence to local labor laws and international human rights standards, ensuring ethical treatment across our supply chain.",
+        "We will implement regular human rights training programs for our suppliers, aligned with applicable labor laws, to ensure awareness and compliance with our labor standards.",
+        "We are utilizing advanced monitoring tools to evaluate and verify suppliers' labor practices, ensuring alignment with legal requirements and our human rights commitments.",
+        "We are fostering transparent communication channels with our suppliers to address any labor and human rights concerns in accordance with legal standards, ensuring prompt and effective resolution.",
+        "We are conducting periodic audits and reviews of our suppliers' labor practices to ensure continuous compliance with both our ethical standards and relevant labor laws and human rights regulations.",
+        "We aim to provide regular and comprehensive training for procurement staff on ESG issues associated with procurement."
+      ],
+      "General Principles": [
+        "We will maintain ongoing communication with suppliers to strengthen collaboration, build mutual trust, and drive improvements in sustainability practices.",
+        "Joint sustainability initiatives will be developed with strategic suppliers to promote consistent ethical sourcing and sustainable practices across the company.",
+        "A robust supplier sustainability evaluation system, incorporating environmental, social, and governance (ESG) indicators, will be applied to monitor and enhance supplier performance on a regular basis.",
+        "Sustainability will be embedded into every procurement category by defining clear sustainability standards tailored to each product group."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental issues",
+        "targets": [
+          {
+            "target": "Ensure that all suppliers comply with relevant environmental laws and regulations",
+            "baseline": "50% adherence rate from 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure large scale suppliers report their greenhouse gas (GHG) emissions annually",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Require at least 20% of suppliers to implement energy-saving practices",
+            "baseline": "0% in 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 35% increase in suppliers adopting waste reduction programs, rising from 15%",
+            "baseline": "15% in 2022",
+            "deadline": "End of 2025"
+          },
+          {
+            "target": "Increase the percentage of suppliers using renewable energy sources to 30%",
+            "baseline": "10% in 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase partnerships with suppliers holding recognized environmental certifications (like ISO 1400, ISO 45001, EMAS etc) to 40%",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Train 100% of procurement staff on ESG issues",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "Labor and Human rights issue",
+        "targets": [
+          {
+            "target": "Require 75% of suppliers to comply with international labor laws and human rights standards",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 90% of suppliers have documented policies on preventing child labor",
+            "baseline": "60% in 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Achieve a 50% increase in suppliers conducting regular audits for labor rights compliance",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Ensure that 75% of suppliers offer fair wages and benefits to their employees",
+            "baseline": "45% in 2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase partnerships with suppliers holding recognized labor and human rights certifications (such as SA8000, ISO 26000, SMETA, or BSCI) to 40%",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Train 100% of procurement staff on ESG issues",
+            "baseline": "2022",
+            "deadline": "2025"
+          }
+        ]
+      },
+      {
+        "area": "General Principles",
+        "targets": [
+          {
+            "target": "Ensure 50% of suppliers (IT hardware, software, facilities, travel, and utilities) undergo ESG/sustainability screening",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure 100% of key strategic suppliers comply with Supplier Code of Conduct",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Implement a structured Corrective Action Plan (CAP) process for suppliers who fail to meet sustainability, ethics, or compliance requirements",
+            "baseline": "",
+            "deadline": "2025"
+          },
+          {
+            "target": "Increase local procurement spend by 45%, supporting small and diverse suppliers",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Policy Oversight and review : Provide strategic direction and approve major sustainability goals and targets. Ensure alignment with the company’s overall mission and values."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Stakeholder Engagement: Engage with key stakeholders, including investors and external partners, to communicate sustainability commitments and progress."
+      },
+      {
+        "role": "Procurement and Supply Chain Management",
+        "duty": "Supplier Evaluation: Implement rigorous evaluation criteria for selecting and assessing suppliers based on environmental, labor, and ethical standards."
+      },
+      {
+        "role": "Procurement and Supply Chain Management",
+        "duty": "Supplier Relations: Develop and maintain relationships with suppliers, ensuring adherence to the Sustainable Sourcing and Procurement Policy."
+      },
+      {
+        "role": "Procurement and Supply Chain Management",
+        "duty": "Performance Monitoring: Conduct regular performance reviews and audits of suppliers to assess compliance with sustainability and ethical standards."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Regulatory Compliance: Ensure that all sourcing practices comply with environmental regulations and standards."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Impact Reduction: Oversee initiatives to reduce suppliers’ environmental impact, including waste reduction, energy efficiency, and greenhouse gas emissions."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Reporting and Metrics: Track and report on environmental performance metrics, including supplier adherence to environmental laws and sustainability targets."
+      },
+      {
+        "role": "Human Resources and Compliance",
+        "duty": "Labor Standards: Ensure suppliers comply with fair labor practices, including safety, wages, and anti-child labor measures."
+      },
+      {
+        "role": "Human Resources and Compliance",
+        "duty": "Training and Awareness: Develop and implement training programs for suppliers on labor rights and workplace safety. Promote awareness of human rights standards among employees."
+      },
+      {
+        "role": "Human Resources and Compliance",
+        "duty": "Grievance Mechanisms: Monitor the effectiveness of grievance mechanisms for employees within the supply chain and address any reported issues."
+      },
+      {
+        "role": "Sustainability and Corporate Responsibility Team",
+        "duty": "Policy Development: Develop and update the Sustainable Sourcing and Procurement Policy to reflect best practices and evolving sustainability goals."
+      },
+      {
+        "role": "Sustainability and Corporate Responsibility Team",
+        "duty": "Impact Assessments: Conduct annual impact assessments to evaluate the effectiveness of sustainable sourcing practices and identify opportunities for improvement."
+      },
+      {
+        "role": "Sustainability and Corporate Responsibility Team",
+        "duty": "Internal Reporting: Compile and analyze data for internal reporting and ensure transparency in sustainability achievements and challenges."
+      },
+      {
+        "role": "Compliance and Audit Team",
+        "duty": "Supplier Audits: Conduct regular internal and external audits of suppliers to verify compliance with environmental and labor standards."
+      },
+      {
+        "role": "Compliance and Audit Team",
+        "duty": "Performance Reviews: Review audit findings and recommend corrective actions to address non-compliance issues."
+      },
+      {
+        "role": "Compliance and Audit Team",
+        "duty": "Regulatory Reporting: Ensure timely and accurate reporting of compliance with relevant regulations and industry standards."
+      },
+      {
+        "role": "Training and Development Team",
+        "duty": "Employee Training: Develop and deliver training programs on sustainable sourcing practices and policy updates to employees."
+      },
+      {
+        "role": "Training and Development Team",
+        "duty": "Feedback Collection: Gather employee feedback on training effectiveness and make necessary adjustments to improve the content and delivery."
+      },
+      {
+        "role": "Training and Development Team",
+        "duty": "Awareness Programs: Increase employee awareness of sustainability initiatives and their role in achieving the company’s goals."
+      },
+      {
+        "role": "Communications and Public Relations",
+        "duty": "Public Reporting: Prepare and disseminate the annual sustainability report and other public communications regarding the company’s sustainability efforts."
+      },
+      {
+        "role": "Communications and Public Relations",
+        "duty": "Stakeholder Communication: Maintain transparent communication with stakeholders about sustainability progress, challenges, and achievements."
+      },
+      {
+        "role": "Communications and Public Relations",
+        "duty": "Reputation Management: Manage the company’s public image related to sustainability and address any external concerns or queries."
+      },
+      {
+        "role": "Executive Leadership Team",
+        "duty": "Provides strategic direction, allocates resources, and ensures high-level oversight of the Sustainable Sourcing and Procurement Policy."
+      },
+      {
+        "role": "Chief Procurement Officer (CPO)",
+        "duty": "Responsible for the day-to-day implementation, monitoring, reporting, and review of the policy. This role ensures that sourcing practices adhere to environmental regulations, ethical standards, and sustainability goals while addressing any emerging issues."
+      },
+      {
+        "role": "Environmental Compliance Team and Human Resources and Compliance Team",
+        "duty": "Support the CPO by conducting audits, evaluating supplier performance, and ensuring regulatory compliance."
+      }
+    ],
+    "monitoring": "Regular Monitoring and Reporting: Yash Technologies will implement a robust system for monitoring and reporting on sustainable sourcing. Monthly assessments will track supplier compliance with environmental and labor standards. Collected data will be analyzed to measure adherence to sustainability goals and pinpoint areas needing improvement.\n\nAnnual Sustainability Report: We will publish an annual report detailing our progress, challenges, and achievements in sustainable sourcing. This report will offer insights into our environmental and labor practices, supplier compliance, and sustainability metrics, and will be made publicly available to ensure transparency.\n\nPerformance Review Meetings: Every six months, review meetings will be held with key stakeholders, including procurement and compliance teams, to assess our progress on Sustainability objectives. These meetings will address challenges, evaluate performance, and adjust strategies as needed to achieve our sustainability targets.\n\nSupplier Compliance Audits: We will conduct regular audits to verify that suppliers meet our environmental and labor standards. Both internal and external auditors will perform these checks to provide an unbiased evaluation of compliance. Audit findings will guide further improvements and actions.\n\nEmployee Feedback and Training Evaluations: We will gather employee feedback through semi-annual surveys and discussions to evaluate the effectiveness of our training programs and sustainability initiatives. Insights from these surveys will be used to enhance training content and address any concerns, ensuring alignment with our sustainability goals.\n\nSustainability Impact Assessments: Annual impact assessments will review the effectiveness of our sustainable sourcing practices. These assessments will identify strengths and weaknesses, provide opportunities for improvement, and ensure that our sourcing decisions support our environmental and social objectives.\n\nStakeholder Engagement: We will maintain transparent communication with all stakeholders, including suppliers and community members, through regular updates. Any significant changes or issues related to our sustainable sourcing practices will be communicated promptly to build and maintain trust.\n\nSupplier Performance Reporting: Quarterly performance reports will evaluate suppliers against our sustainability criteria. These reports will include data on environmental practices, labor conditions, and compliance with our standards, informing future procurement decisions.\n\nRegulatory Compliance Reporting: Periodic reports will ensure our compliance with relevant environmental and labor regulations. These reports will document adherence to laws and standards, and outline any deviations and corrective measures taken.",
+    "reviewMechanism": "The Chief Compliance Officer (CCO) conducts an annual review of the Sustainable Sourcing and Procurement Policy to ensure its effectiveness and relevance."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Yash Tech/4. Sustainable Sourcing and procurement policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Yash Tech/4. Sustainable Sourcing and procurement policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 25011,
+  "parsedAt": "2026-09-11T07:18:03.039Z"
+}

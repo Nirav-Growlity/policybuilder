@@ -1,0 +1,362 @@
+{
+  "id": "ethics-transpek",
+  "name": "Transpek",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from ETHICS POLICY.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Transpek Industry Limited",
+      "industry": "",
+      "site": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+      "sites": [
+        {
+          "location": "Vadodara",
+          "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India",
+          "primaryFunction": "Office"
+        },
+        {
+          "location": "Ekalbara",
+          "address": "At & Post: Ekalbara, Taluka: Padra, Dist.: Vadodara, 391440 Gujarat India",
+          "primaryFunction": "Chemical manufacturing production unit"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "4th Floor, Lilleria 1038 Gotri-Sevasi Road 390021 Vadodara, Gujarat India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Transpek Industry Limited, we are dedicated to upholding the highest standards of ethical conduct in all aspects of our chemical manufacturing operations. Our Ethics Policy outlines key principles designed to foster transparency, accountability, and integrity across the organization. This policy focuses on areas critical to our business, such as anti-corruption practices, workplace safety, environmental responsibility, and compliance with legal and regulatory frameworks.\n\nWe emphasize the importance of responsible decision-making, effective risk management, and maintaining a workplace free from unethical practices such as fraud, conflicts of interest, and unsafe operations. By promoting a culture of integrity and ethical leadership, we are committed to creating long-term value for our stakeholders, ensuring our operations not only meet but exceed industry standards, while adapting to emerging challenges.",
+      "declaration": "Transpek Industry Limited is committed to maintaining the highest standards of ethics, transparency, and integrity in all business operations. We prioritize fairness, accountability, and respect for our employees, stakeholders, and the environment. Our Ethics Policy ensures adherence to legal and regulatory requirements, while promoting ethical behaviour, preventing corruption, safeguarding confidential information, and fostering fair competition. We are dedicated to sustainable practices, continuous improvement, and the safety and well-being of our workforce. By upholding these values, we aim to build trust and long-term, positive relationships with our partners, customers, and the wider community.",
+      "scope": "This Ethics Policy applies to all employees, management, contractors, vendors, and stakeholders engaged with Transpek. It guides behaviour across all company sites, production units, and offices, both domestically and internationally."
+    },
+    "focusAreas": [
+      "Corruption and Bribery Prevention",
+      "Managing Conflicts of Interest",
+      "Promoting Fair Competition",
+      "Fraud Prevention and Detection",
+      "Data Privacy and Information Security",
+      "Anti-Money Laundering (AML) Measures"
+    ],
+    "qualitative": {
+      "Objectives": [
+        "Uphold Integrity: Cultivate a culture rooted in honesty and openness at every level of the organization, ensuring that all personnel adhere to the highest ethical benchmarks.",
+        "Prevent Unethical Behaviour: Implement preventive measures to detect and curb unethical actions, including fraud, bribery, and conflicts of interest.",
+        "Ensure Legal Compliance: Ensure that all employees and associated parties are fully aware of and adhere to applicable laws, regulations, and company standards.",
+        "Encourage Whistleblowing: Establish a confidential and safe platform for employees to voice ethical concerns or report violations without fear of reprisal. (Reporting Platform Which is available in Employee Handbook).",
+        "Provide Ethical Education: Offer ongoing education and resources to employees on ethical conduct, informed decision-making, and compliance with the company’s ethical guidelines.",
+        "Support Equal Treatment: Uphold fairness and equity across all company practices, promoting non-discrimination and respecting diversity.",
+        "Strengthen Accountability: Set clear protocols for managing ethical violations, including investigation procedures and appropriate disciplinary measures.",
+        "Promote Openness: Foster transparency in the company’s operations and decision-making to strengthen trust among employees, stakeholders, and the community.",
+        "Continuously Improve: Regularly evaluate and revise the ethics policy to address emerging ethical issues and enhance organizational standards.",
+        "Encourage Ethical Leadership: Promote leadership that models ethical behaviour and serves as a positive role model for all employees."
+      ],
+      "Corruption and Bribery Prevention": [
+        "We enforce a zero-tolerance policy towards corruption, bribery, or any unethical behaviour, both internally and in our dealings with external partners.",
+        "Our strategy includes ongoing training and awareness programs to prevent unethical conduct and ensure compliance with anti-bribery regulations.",
+        "We are dedicated to performing thorough risk assessments and audits to detect and address any potential corruption or bribery risks."
+      ],
+      "Managing Conflicts of Interest": [
+        "We are committed to preventing conflicts of interest by mandating full transparency and disclosure from all employees and stakeholders.",
+        "Our focus is on implementing comprehensive policies to ensure that personal interests do not interfere with professional decisions.",
+        "We are dedicated to training employees on how to identify and manage conflicts of interest, promoting a culture of fairness and transparency."
+      ],
+      "Promoting Fair Competition": [
+        "We adhere strictly to competition laws and ensure fair business practices that contribute to a healthy competitive environment.",
+        "Our efforts include preventing anti-competitive behaviours such as price-fixing and monopolistic practices and ensuring ethical competition through regular audits.",
+        "We aim to foster a culture of fair competition with regular training programs that educate employees on maintaining compliance with competition laws."
+      ],
+      "Fraud Prevention and Detection": [
+        "We are committed to preventing, detecting, and addressing fraudulent activities within the organization.",
+        "Our fraud prevention measures include strong internal controls, routine audits, and a clear process for reporting any suspected fraud.",
+        "We encourage a culture of integrity, ensuring that employees understand the consequences of fraud and feel safe to report suspicious activities."
+      ],
+      "Data Privacy and Information Security": [
+        "Confidentiality: The company is committed to protecting confidential information related to clients, employees, and partners.",
+        "Security Audits: We will conduct regular security audits to safeguard sensitive data from unauthorized access and breaches.",
+        "Compliance: All data handling procedures will comply with local and international data protection regulations (such as GDPR)."
+      ],
+      "Anti-Money Laundering (AML) Measures": [
+        "We are committed to preventing money laundering through strict adherence to anti-money laundering regulations.",
+        "Our measures include comprehensive due diligence, monitoring of financial transactions, and risk assessments to identify and mitigate potential money laundering activities.",
+        "We strive to educate both employees and business partners on the risks of money laundering and their responsibilities in ensuring compliance."
+      ],
+      "Enhancing Ethical Compliance": [
+        "We conduct thorough, frequent assessments to ensure that our ethical standards are consistently followed and regulatory expectations are met.",
+        "We plan to refresh our ethical guidelines annually, incorporating the latest legal and industry developments.",
+        "Our focus includes delivering tailored training to ensure employees understand and embrace our ethical standards.",
+        "We aim to introduce a real-time monitoring system to proactively track compliance with our ethical guidelines.",
+        "We hold quarterly reviews to benchmark and continuously improve our ethical practices."
+      ],
+      "Strengthening Information Security": [
+        "We plan to conduct regular, detailed audits to verify that data protection guidelines are properly implemented and maintained across the organization.",
+        "Our information security protocols will be updated annually to incorporate advancements in cybersecurity technologies.",
+        "We provide comprehensive training on cybersecurity, empowering employees to safeguard confidential information.",
+        "We aim to develop an automated threat detection system that responds to security risks in real time.",
+        "We collaborate with leading cybersecurity firms to conduct regular reviews, further enhancing our data protection measures."
+      ],
+      "Fighting Corruption and Bribery": [
+        "We maintain robust, recurring internal reviews to minimize the risk of corruption and bribery across all business levels.",
+        "We annually update our anti-bribery guidelines to ensure compliance with global anti-corruption standards.",
+        "We plan to introduce strict due diligence protocols for third-party partners to align them with our anti-bribery practices.",
+        "We train employees to avoid soliciting or accepting bribes, offering advantages to others for favours, accepting excessive gifts, or offering benefits to government officials during business dealings. We will develop a secure, anonymous reporting platform for employees to report bribery incidents without fear of retaliation."
+      ],
+      "Addressing Conflicts of Interest": [
+        "We require employees to disclose actual, potential, or perceived conflicts of interest through established declaration processes.",
+        "We regularly review and strengthen our conflict-of-interest procedures to ensure transparency and accountability.",
+        "We conduct awareness programs and training sessions to help employees identify and appropriately manage conflicts of interest.",
+        "We maintain systems and procedures to record, monitor, and address conflict of interest disclosures.",
+        "We investigate reported conflict of interest cases promptly, fairly, and confidentially."
+      ],
+      "Preventing Anti-Competitive Practices": [
+        "We maintain compliance procedures to ensure that all business activities are conducted in accordance with applicable competition and antitrust laws.",
+        "Our anti-competitive practice guidelines regularly updated to reflect regulatory and market changes.",
+        "We provide training sessions to educate employees on preventing anti-competitive behaviour.",
+        "We seek appropriate legal experts to ensure continued compliance with competition laws through periodic reviews."
+      ],
+      "Detecting and Preventing Fraud": [
+        "We plan to launch comprehensive fraud risk assessments to identify vulnerabilities and improve fraud prevention measures.",
+        "Our fraud prevention guidelines revised annually to stay updated with emerging risks.",
+        "We offer tailored fraud awareness training to help employees recognize and report fraud.",
+        "We foster a culture of transparency, encouraging open communication about fraud concerns and protecting whistleblowers."
+      ],
+      "Advancing Anti-Money Laundering (AML) Compliance": [
+        "We conduct stringent due diligence processes to verify the integrity of financial transactions, reducing the risk of money laundering.",
+        "Our AML guidelines regularly revised to meet evolving regulatory standards.",
+        "We deliver focused training to employees on identifying and reporting suspicious financial activities.",
+        "We work closely with regulatory authorities to conduct regular audits, ensuring that our financial operations are transparent and compliant."
+      ],
+      "Stakeholder Ethical Conduct Guidelines": [
+        "Corruption and Bribery Prevention — Stakeholder Must: Conduct all business activities honestly and ethically; Report any suspected bribery, corruption, or improper payments immediately; Follow company procedures for gifts, hospitality, donations, and sponsorships. Stakeholder Must Not: Offer, accept, or solicit bribes, kickbacks, facilitation payments, or any improper advantage; Use third parties to make improper payments on behalf of the company; Conceal or falsify records relating to business transactions.",
+        "Managing Conflicts of Interest — Stakeholder Must: Disclose any actual, potential, or perceived conflicts of interest; Make business decisions solely in the best interests of the company; Seek guidance from management when a conflict situation arises. Stakeholder Must Not: Allow personal relationships or financial interests to influence business decisions; Use company information, resources, or position for personal benefit; Conceal relationships with suppliers, customers, competitors, or contractors.",
+        "Promoting Fair Competition — Stakeholder Must: Compete fairly and comply with all applicable competition and antitrust laws; Conduct business independently without improper coordination with competitors; Seek guidance when participating in industry meetings or trade associations. Stakeholder Must Not: Discuss pricing, bids, customers, market allocation, or business strategies with competitors; Participate in price-fixing, bid-rigging, or anti-competitive agreements; Exchange confidential business information with competitors.",
+        "Fraud Prevention and Detection — Stakeholder Must: Maintain accurate, complete, and truthful business records; Report suspected fraud, theft, misappropriation, or financial irregularities; Follow approved authorization and approval procedures. Stakeholder Must Not: Falsify financial records, invoices, timesheets, or expense claims; Misuse company funds, assets, or resources for personal gain; Conceal fraudulent activities or assist others in committing fraud.",
+        "Data Privacy and Information Security — Stakeholder Must: Protect confidential and sensitive company, customer, supplier, and employee information; Use approved systems, devices, and security controls when handling data; Immediately report any suspected data breach or cybersecurity incident. Stakeholder Must Not: Share confidential information with unauthorized individuals; Access, copy, store, or distribute information without authorization; Circumvent information security controls or use unauthorized software.",
+        "Anti-Money Laundering (AML) Measures — Stakeholder Must: Conduct business only with legitimate customers, suppliers, and business partners; Report unusual, suspicious, or unexplained financial transactions; Maintain accurate records of all financial transactions. Stakeholder Must Not: Participate in transactions intended to conceal the source or destination of funds; Accept payments from unidentified or suspicious parties without verification; Ignore warning signs of potential money laundering or financial misconduct."
+      ],
+      "Violation of This Policy": [
+        "At Transpek Industry Limited, adherence to the Ethics Policy is mandatory. Any violation of this policy will be taken seriously and may result in disciplinary actions, including termination of employment or contractual agreements, depending on the severity of the breach.",
+        "All alleged violations will be thoroughly investigated by the Compliance Officer in collaboration with relevant departments.",
+        "Investigations will follow a transparent and unbiased approach to ensure fairness.",
+        "Disciplinary measures may include, but are not limited to, verbal or written warnings, suspension, or termination.",
+        "Severe breaches involving legal implications may be reported to the appropriate authorities.",
+        "All reports of policy violations will be handled confidentially.",
+        "Individuals reporting violations in good faith are protected under the company’s whistleblower policy and will not face retaliation.",
+        "Where appropriate, corrective measures will be implemented to address the root cause of the violation and prevent recurrence.",
+        "Training sessions or awareness programs may be mandated for individuals or teams involved."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Ethical Compliance",
+        "targets": [
+          {
+            "target": "Maintain 100% adherence to ethical standards, fostering a culture of integrity.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% participation in employee training on ethics",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 0% ethical violations every year.",
+            "baseline": "",
+            "deadline": "Every year"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with information security protocols.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% employee participation in cybersecurity training",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 0% confirmed security breaches.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Corruption and Bribery",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with anti-corruption policies.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% participation in employee training on anti-bribery",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 0% of bribery incidents.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain 0% confirmed cases of corruption.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Managing Conflicts of Interest",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with conflict-of-interest policies.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct training on conflicts of interest for 100% of the relevant employees",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with competition laws.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% participation in training on competition laws for the concern employees",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with fraud prevention guidelines.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% participation of concern employees in fraud awareness training",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Maintain 0% confirmed cases of fraud.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering Prevention",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with anti-money laundering guidelines.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% employee participation in AML training for the relevant employees",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Policy Oversight: The Managing Director will oversee the implementation and adherence to the Ethics Policy, ensuring alignment with the company’s strategic objectives and ethical standards."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Annual Policy Review: Responsible for conducting an annual assessment of the Ethics Policy to evaluate its effectiveness, relevance, and compliance with applicable regulations."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Monitoring Reporting Mechanisms: Ensure that internal reporting mechanisms are effective, confidential, and accessible to all employees, with a commitment to protecting those who report concerns from retaliation."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Stakeholder Communication: Engage with internal stakeholders to gather feedback on ethical practices and address any concerns raised by employees."
+      },
+      {
+        "role": "Information Security Manager",
+        "duty": "Data Protection Strategy: Implement and maintain robust data protection measures to safeguard sensitive information, ensuring compliance with applicable data protection regulations."
+      },
+      {
+        "role": "Information Security Manager",
+        "duty": "Employee Awareness: Provide training and resources to employees regarding data security protocols and their significance in upholding ethical standards."
+      },
+      {
+        "role": "Information Security Manager",
+        "duty": "Incident Management: Lead the response to any data breaches or security incidents, ensuring that they are managed promptly and effectively while minimizing risks to the organization."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Cultural Promotion: Foster a culture of ethical leadership throughout the organization, ensuring that ethical principles are prioritized at all levels of decision-making."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Strategic Oversight: Oversee the integration of ethical practices into the overall strategic framework of the organization, ensuring that ethical considerations are factored into all business decisions."
+      },
+      {
+        "role": "Executive Leadership",
+        "duty": "Resource Allocation: Ensure that adequate resources are allocated to support the effective implementation and continuous enhancement of the Ethics Policy."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Commitment to Compliance: Adhere to the Ethics Policy and uphold the highest ethical standards in all professional activities."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Reporting Responsibilities: Promptly report any concerns or violations related to ethics or governance practices through established internal channels, fostering a culture of transparency."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Engagement in Training: Actively participate in training programs to stay informed about ethical principles and reinforce their importance in daily operations."
+      }
+    ],
+    "monitoring": "All employees, contractors, and temporary workers at Transpek Industry Limited are urged to report any concerns or breaches related to ethics and governance, including misconduct, corruption, data breaches, or violations of legal and regulatory obligations. Reports can be submitted via designated internal channels such as a confidential hotline, secure email, or face-to-face meetings with appointed representatives.\n\nThe company guarantees that all reports will be managed promptly and discreetly. Individuals who report concerns in good faith will not face retaliation.\n\nRegular internal audits will be conducted to evaluate compliance with the Ethics Policy. These audits will be performed biannually and will assess adherence to policy objectives, effectiveness of controls, and identification of any improvement areas.\n\nResults from these audits will be thoroughly documented, and action plans will be created to address any identified gaps or areas needing enhancement.\n\nAn annual report outlining the company’s progress in implementing the Ethics Policy and achieving its objectives will be published. This report will include information on anti-corruption efforts, information security measures, compliance with legal and regulatory requirements, and overall ethical practices.\n\nThe annual ethics report will be accessible to all stakeholders, including employees, suppliers, investors, and the public, to ensure transparency and accountability.\n\nA strong whistleblower protection system will be maintained to safeguard individuals who report violations. This system ensures that whistleblowers are shielded from retaliation and that their identities remain confidential.\n\nEmployees may choose to report concerns anonymously, further encouraging the disclosure of unethical behaviour without fear.\n\nThe Compliance Officer will oversee the internal reporting mechanisms, ensure that reports are appropriately handled, and maintain the confidentiality of whistleblowers.\n\nA dedicated Governance Committee, led by the Compliance Officer, will oversee the implementation and continuous improvement of the Ethics Policy. This committee will convene quarterly to review policy effectiveness, audit results, and stakeholder feedback.",
+    "reviewMechanism": "Regular Policy Reviews: The Ethics Policy will be reviewed and updated annually to incorporate the latest legal requirements, industry standards, and best practices.\n\nFeedback Mechanisms: Employee feedback, audit findings, and stakeholder input will be systematically collected and analysed to identify areas for improvement.\n\nTraining and Development: Ongoing training programs will be provided to keep employees informed about updates to the Ethics Policy and to reinforce the importance of ethical behaviour and compliance.\n\nTechnology Integration: We will leverage advanced technologies to enhance ethical governance processes, including automated monitoring systems for real-time compliance tracking and data security.\n\nBenchmarking and Best Practices: Regular benchmarking against industry standards and the adoption of best practices will ensure that our ethical framework remains robust and effective in addressing emerging challenges.\n\nThe Governance Policy at Transpek Industry Limited will be subject to a structured review process to maintain its relevance and effectiveness. This process includes an annual review led by the Chief Compliance Officer, who will assess the policy's performance, incorporate stakeholder feedback, and ensure alignment with changing legal and regulatory frameworks. Insights from internal audits will be used to address any gaps or areas requiring improvement. Regular consultations with key stakeholders, such as employees, suppliers, and external partners, will be held to gather valuable input for policy revisions. All amendments will be reviewed and approved by the General Manager to ensure they align with the company’s strategic goals and governance standards. A comprehensive record of review activities, findings, and updates will be maintained, documenting the rationale for any policy changes."
+  },
+  "sourcePath": "Policies - Kenal/Transpek/ETHICS POLICY.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Transpek/ETHICS POLICY.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 26299,
+  "parsedAt": "2026-09-11T07:30:48.374Z"
+}

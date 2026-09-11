@@ -1,0 +1,437 @@
+{
+  "id": "ethics-birla",
+  "name": "Birla",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Compliance and Ethics Policy_grw_v1_3012.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Birla Jute Mills",
+      "industry": "",
+      "site": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India",
+      "sites": [
+        {
+          "location": "Birla Jute Mills",
+          "address": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Birlapur, 24 Parganas (S), West Bengal 743 318 Kolkata, West Bengal India"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Birla Jute Mills, we recognize that our success and reputation are built not only on the quality of our products but also on the integrity of our actions. We are committed to conducting our business with the highest standards of ethics and compliance, going beyond mere adherence to laws and regulations. We believe that ethical behaviour is fundamental to fostering trust with our stakeholders, maintaining our competitive edge, and contributing positively to society.\n\nThis Compliance and Ethics Policy serves as a cornerstone of our corporate culture, guiding our decisions and actions across all levels of the organization. It reflects our commitment to transparency, accountability, and responsible business practices. By integrating ethical considerations into every aspect of our operations, we aim to create sustainable value for our shareholders, employees, customers, and the communities in which we operate.",
+      "declaration": "This policy applies to all employees, stakeholders, suppliers, vendors, contractors, partners, customers, contractual workers, and anyone acting on behalf of following site:",
+      "scope": "This policy covers the following Ethical issues at Birla Jute Mills premises:"
+    },
+    "focusAreas": [
+      "Anti-bribery and Corruption Prevention",
+      "Ethical Conflict Resolution",
+      "Financial Integrity and Anti-fraud Measures",
+      "Economic Crime Prevention",
+      "Fair Competition Practices",
+      "Data Manipulation",
+      "Intellectual property theft",
+      "Data Protection and Cybersecurity"
+    ],
+    "qualitative": {
+      "Objectives": [
+        "Ethical Conduct: To promote and maintain the highest standards of ethical behavior in all our business activities, fostering a culture where integrity is non-negotiable.",
+        "Compliance: To ensure full compliance with all applicable laws, regulations, and industry standards, both in letter and spirit, across all jurisdictions where we operate.",
+        "Transparency: To foster a culture of openness and accountability in all our dealings, ensuring clear and honest communication with all stakeholders.",
+        "Risk Management: To identify, assess, and mitigate ethical and compliance risks effectively, safeguarding our operations and reputation.",
+        "Continuous Improvement: To regularly review and enhance our ethical practices and compliance measures, adapting to evolving business environments and stakeholder expectations.",
+        "Stakeholder Trust: To build and maintain trust with our employees, customers, suppliers, shareholders, and the wider community through consistent ethical behavior.",
+        "Leadership in Ethics: To set an example in our industry for ethical business practices and corporate responsibility."
+      ],
+      "Anti-bribery and Corruption Prevention": [
+        "We aim to establish clear reporting mechanisms for employees to confidentially report any suspicious activities related to bribery or corruption within the firm.",
+        "We aim to uphold the highest standards of integrity by rigorously enforcing anti-bribery policies across all levels.",
+        "We focus on transparent financial practices, ensuring that all transactions in our jute production supply chain are accurately recorded and documented.",
+        "We focus on implementing strict controls to monitor and review all financial transactions related to our jute manufacturing operations to detect any signs of corruption.",
+        "We are currently implementing a comprehensive anti-bribery management system aligned with ISO 37001 standards to enhance our integrity.",
+        "Annual corruption risk assessments are meticulously conducted across all business operations to identify potential risks.",
+        "A confidential whistleblowing hotline and secure online reporting system are established for reporting suspected violations, safeguarding employee anonymity.",
+        "We maintain a detailed gifts and hospitality register with clearly defined approval processes to manage and monitor acceptable practices."
+      ],
+      "Ethical Conflict Resolution": [
+        "We emphasize establishing clear guidelines for handling situations where personal and professional responsibilities may conflict, promoting integrity and accountability in decision-making processes.",
+        "We aim to foster a culture where ethical behaviour is encouraged and rewarded, reducing the likelihood of conflicts arising between personal and professional responsibilities.",
+        "A structured decision-making framework helps employees navigate ethical dilemmas and make informed choices aligned with company values.",
+        "An annual conflict of interest declaration process is systematically implemented for all employees and board members to maintain transparency.",
+        "Regular ethics audits are conducted to identify potential conflicts and ensure adherence to policy, reinforcing our commitment to ethical standards."
+      ],
+      "Financial Integrity and Anti-fraud Measures": [
+        "We emphasize implementing advanced fraud detection technologies to monitor transactions and identify unusual patterns that may indicate fraudulent behaviour.",
+        "We focus on regular internal and external audits to identify and address any discrepancies or irregularities in financial practices promptly.",
+        "A robust Enterprise Resource Planning (ERP) system with advanced built-in fraud detection capabilities is used to monitor financial activities effectively.",
+        "Surprise audits and spot checks are routinely conducted in addition to regular internal and external audits to detect and address potential fraud.",
+        "A comprehensive fraud response plan outlining investigation procedure and reporting protocols is established to address and manage fraud incidents efficiently.",
+        "Advanced data analytics tools are used to identify unusual patterns or transactions, helping to detect and prevent fraudulent activities proactively."
+      ],
+      "Economic Crime Prevention": [
+        "We commit to regular audits and reviews of financial records to detect and prevent any concealment of illegal funds within our legitimate business processes.",
+        "We strive to conduct thorough due diligence on all transactions to uncover any hidden attempts to integrate illicit money into our legitimate economic operations.",
+        "We prioritize the development of comprehensive training programs to educate employees on recognizing and reporting activities related to economic crime and money laundering.",
+        "We aim to foster a culture of transparency and accountability by ensuring all financial activities are fully documented and aligned with anti-money laundering regulations.",
+        "An advanced transaction monitoring system is actively implemented to detect suspicious activities and prevent potential economic crimes.",
+        "Enhanced due diligence is performed on high-risk customers and transactions to mitigate risks and ensure compliance with regulatory requirements.",
+        "A dedicated Anti-Money Laundering (AML) team is established to oversee compliance, conduct investigations, and address potential money laundering activities."
+      ],
+      "Fair Competition Practices": [
+        "We aim to uphold fair competition by avoiding practices that unfairly limit market access, ensuring our operations are transparent and competitive for all industry players.",
+        "Our commitment is to never engage in market manipulation or abusive tactics that could harm competitors, fostering a healthy and dynamic business environment.",
+        "We focus on maintaining ethical standards by refraining from colluding with competitors, ensuring our market position is achieved through fair and legitimate means.",
+        "We strive to ensure our business practices do not restrict competitors or misuse our market power, promoting a competitive and fair marketplace for all stakeholders.",
+        "A comprehensive competition law compliance program is developed to ensure adherence to fair competition practices and regulatory requirements.",
+        "A structured pre-approval process is implemented for all interactions with competitors to avoid anti-competitive practices and potential legal issues.",
+        "Clear guidelines are established for pricing strategies, tender participation, and market intelligence gathering to ensure fair and ethical competition."
+      ],
+      "Data Manipulation": [
+        "We aim to maintain transparent data reporting, ensuring all information is accurately represented and free from manipulation.",
+        "Our commitment is to regularly audit data systems to detect and prevent any form of unauthorized manipulation or tampering.",
+        "We focus on implementing robust access controls to safeguard against data manipulation by unauthorized personnel or external threats.",
+        "All data manipulation activities are logged and monitored to maintain a comprehensive record of data changes and ensure accountability.",
+        "Access to sensitive data is restricted through role-based permissions and is regularly reviewed to prevent unauthorized access."
+      ],
+      "Intellectual property theft": [
+        "Our commitment involves educating employees about intellectual property rights and the importance of safeguarding proprietary information against internal and external threats.",
+        "Our goal is to monitor and enforce compliance with intellectual property laws and regulations to mitigate the risk of theft and infringement.",
+        "We aim to collaborate with legal experts to address any potential breaches of intellectual property rights swiftly and effectively to protect our innovations.",
+        "Our commitment includes conducting thorough due diligence when entering into partnerships or agreements to ensure the protection of our intellectual property.",
+        "We have implemented robust intellectual property (IP) protection measures, including legal safeguards and technological solutions, to prevent theft.",
+        "Regular audits of our IP assets are conducted to ensure their protection and to identify any potential vulnerabilities.",
+        "Access to intellectual property is restricted through secure systems and is only available to authorized personnel based on their roles."
+      ],
+      "Data Protection and Cybersecurity": [
+        "We aim to protect all data with advanced encryption methods, ensuring only authorized individuals have access and preserving the confidentiality of our information.",
+        "We aim to establish effective incident response protocols to swiftly manage and mitigate the impact of any data security breaches.",
+        "We focus on keeping our software and security patches current to defend against known vulnerabilities and emerging cyber threats.",
+        "A comprehensive Information Security Management System (ISMS) aligned with ISO 27001 standards is implemented to safeguard our information assets effectively.",
+        "Regular penetration testing and vulnerability assessments of our IT infrastructure are conducted to identify and address potential security weaknesses.",
+        "Multi-factor authentication and end-to-end encryption are used for sensitive data and communications to ensure robust protection against unauthorized access."
+      ],
+      "Training": [
+        "We aim to conduct comprehensive training for all employees on anti-bribery, ethical conflict resolution, financial integrity, economic crime prevention, fair competition, data manipulation, intellectual property protection, and cybersecurity, ensuring ongoing awareness and compliance.",
+        "Our goal is to ensure that 75% of employees participate in training sessions related to all Ethical issues mentioned above."
+      ],
+      "Guidelines for Employees": [
+        "Always act honestly, ethically, and responsibly in all business activities.",
+        "Maintain professionalism in behavior, communication, and appearance at all times.",
+        "Treat everyone with dignity and respect, regardless of role, background, or opinion.",
+        "Address concerns, complaints, or issues promptly through appropriate channels.",
+        "Follow all applicable laws, regulations, and internal company policies.",
+        "Understand and comply with workplace rules, safety procedures, and operational guidelines.",
+        "Never engage in activities that violate legal or regulatory requirements.",
+        "Seek guidance if unsure about legal or policy obligations before acting.",
+        "Do not offer, accept, or solicit bribes, kickbacks, or improper benefits.",
+        "Ensure all business decisions are based on merit, quality, and transparency.",
+        "Avoid influencing decisions through personal favors or unofficial payments.",
+        "Report any suspected corruption or unethical practices immediately.",
+        "Avoid situations where personal interests may conflict with company interests.",
+        "Disclose any actual or potential conflict of interest to management.",
+        "Do not use company position for personal gain or benefit of relatives or friends.",
+        "Follow all health and safety rules to protect yourself and others.",
+        "Use personal protective equipment (PPE) as required.",
+        "Report unsafe conditions, accidents, or near-miss incidents immediately.",
+        "Support environmentally responsible practices and waste reduction.",
+        "Use company property, materials, and resources responsibly and only for official purposes.",
+        "Prevent misuse, theft, or damage of company assets.",
+        "Protect confidential information, records, and intellectual property.",
+        "Avoid unauthorized sharing of sensitive business information.",
+        "Act honestly and transparently in all financial and business transactions.",
+        "Do not engage in falsification, manipulation, or misrepresentation of records, reports, or data.",
+        "Ensure all expenses, invoices, claims, and approvals are accurate and supported by valid documentation.",
+        "Immediately report any suspected fraud, misappropriation, or financial irregularity.",
+        "Comply with all applicable anti-money laundering laws, regulations, and internal AML procedures.",
+        "Conduct business only with authorized, legitimate, and verified customers, suppliers, and partners.",
+        "Be alert to unusual or suspicious transactions, payment patterns, or requests.",
+        "Promptly report any suspected money laundering or suspicious financial activity through designated channels.",
+        "Protect company information, systems, and data from unauthorized access, misuse, or disclosure.",
+        "Follow all information security policies, access controls, and data handling procedures.",
+        "Use company IT systems, passwords, and credentials responsibly and securely.",
+        "Immediately report any data breach, cyber incident, or suspected information security risk.",
+        "Speak up about unethical behavior, safety risks, or policy violations.",
+        "Report concerns through designated reporting or grievance mechanisms.",
+        "Cooperate honestly during internal investigations.",
+        "Reports made in good faith will be treated confidentially and without retaliation.",
+        "Take responsibility for your actions and decisions.",
+        "Correct mistakes promptly and honestly.",
+        "Cooperate with audits, inspections, and compliance reviews.",
+        "Understand that violations of this policy may lead to disciplinary action."
+      ],
+      "Risk Management": [
+        "Regular Risk Assessments: Conducting comprehensive risk assessments annually to identify and evaluate potential risks in our operations.",
+        "Stakeholder Feedback: Collecting and analyzing feedback from employees, customers, and other stakeholders to uncover any emerging risks.",
+        "Regulatory Changes: Monitoring changes in laws, regulations, and industry standards that could impact our compliance requirements.",
+        "Risk Matrix: Utilizing a risk matrix to assess the likelihood and impact of each risk, categorizing them into high, medium, or low risk levels.",
+        "Scenario Analysis: Performing scenario analysis to understand potential outcomes and impacts of identified risks.",
+        "Impact Assessment: Analyzing the potential impact of each risk on our business operations, financial performance, and reputation.",
+        "Control Measures: Establishing robust internal controls and procedures to address high-risk areas, such as anti-bribery, financial integrity, and data protection.",
+        "Training and Awareness: Providing ongoing training and awareness programs to employees to ensure they understand and can effectively manage risks.",
+        "Incident Response Plans: Developing and maintaining incident response plans to manage and respond to any ethical or compliance breaches swiftly.",
+        "Regular Audits: Conducting regular internal and external audits to assess the effectiveness of our risk management controls and practices.",
+        "Risk Reporting: Implementing a risk reporting system to track and report on identified risks, mitigation efforts, and incidents.",
+        "Reporting Channels: Maintaining clear reporting channels for employees to raise concerns or report risks anonymously.",
+        "Stakeholder Engagement: Engaging with stakeholders to communicate our risk management efforts and any changes to our policies or procedures.",
+        "Transparency: Providing transparent reports on risk management activities and outcomes to senior management and relevant stakeholders.",
+        "Risk Owners: Assigning risk owners for each identified risk, responsible for monitoring and managing the risk.",
+        "Management Oversight: Ensuring senior management provides oversight and support for risk management activities.",
+        "Accountability: Holding individuals accountable for implementing and adhering to risk management controls and procedures."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-bribery and Corruption Prevention",
+        "targets": [
+          {
+            "target": "We aim to completely eliminate of corruption-related incidents in FY 2029-30 compared to FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Decrease the average time to resolve corruption-related complaints by 15% in FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the frequency of anti-corruption workshops to twice annually for all senior management by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Conflict Resolution",
+        "targets": [
+          {
+            "target": "Resolve 90% of reported conflict of interest issues within 30 days of receipt by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 20% decline in conflict-of-interest cases by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Financial Integrity and Anti-fraud Measures",
+        "targets": [
+          {
+            "target": "Increase the number of fraud risk assessments conducted annually by 15% by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve a 20% reduction in the average time to investigate fraud cases by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase the frequency of internal audits focusing on fraud prevention to twice annually by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Economic Crime Prevention",
+        "targets": [
+          {
+            "target": "We aim to implement more rigorous verification protocols, targeting a 20% reduction in fraudulent activities by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Upgrade surveillance systems to identify and prevent fraud, aiming for a 25% decrease in incidents by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% documentation and record-keeping compliance for AML-related checks (KYC, vendor verification, payment approvals) by FY 2029–30, using FY 2023–24 as the baseline.",
+            "baseline": "FY 2023–24",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Fair Competition Practices",
+        "targets": [
+          {
+            "target": "Reduce price-fixing incidents by 20% by the end of FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Increase transparency in equipment procurement processes by 15% to prevent anti-competitive practices by FY 2029-30 form the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% compliance with anti-competitive regulations by FY 2029-30, building upon FY 2023-24 baseline.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Data Manipulation",
+        "targets": [
+          {
+            "target": "Implement data encryption on 90% of all data manipulation devices by the end of FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 100% of data manipulation processes are documented and reviewed quarterly by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce the average response time to data manipulation incidents by 35% through enhanced reporting systems by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Intellectual property theft",
+        "targets": [
+          {
+            "target": "We aim to reduce instances of IP theft through unauthorized digital access by 25% by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "We focus on improving data encryption practices to reduce IP theft incidents by 20% by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Data Protection and Cybersecurity",
+        "targets": [
+          {
+            "target": "Reduce the number of reported phishing attacks by 40% compared to FY 2022-23 by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24; comparison stated as FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce equipment-related data breaches by 50% compared to FY 2022-23 baseline by FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24; comparison stated as FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Implement multi-factor authentication (MFA) on 95% of all company devices by the end of FY 2029-30 from the baseline FY 2023-24.",
+            "baseline": "FY 2023-24",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Oversight and Approval: Ensure the Compliance and Ethics Policy is approved and reviewed regularly to reflect current legal and ethical standards."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Governance: Provide strategic direction and oversight for the implementation and effectiveness of the policy across all business operations."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Leadership: Promote a culture of integrity and compliance within the organization, leading by example and supporting ethical behaviour."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Policy Management: Oversee the development, implementation, and ongoing review of the Compliance and Ethics Policy. Ensure that it aligns with evolving laws, regulations, and industry best practices."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Training and Awareness: Develop and deliver training programs on compliance and ethical behaviour to all employees, ensuring understanding and adherence to the policy."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Monitoring and Reporting: Continuously monitor compliance with the policy, conduct investigations into potential breaches, and report findings to senior management and the Board of Directors."
+      },
+      {
+        "role": "Chief Compliance Officer",
+        "duty": "Review and Improvement: Regularly assess the effectiveness of the policy and its implementation, making recommendations for improvements as necessary. Ensure that the policy is updated in response to changes in laws or business operations"
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Enforcement: Implement and enforce the Compliance and Ethics Policy within their respective departments or teams, ensuring all employees understand and adhere to ethical standards."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Support: Provide support and guidance to employees on ethical issues and conflict resolution, facilitating a transparent and accountable work environment."
+      },
+      {
+        "role": "Managers and Supervisors",
+        "duty": "Reporting: Report any violations or concerns related to the policy to the Compliance Officer or through established reporting channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adherence: Follow the Compliance and Ethics Policy in all business activities, demonstrating ethical behaviour and integrity in their roles."
+      },
+      {
+        "role": "Employees",
+        "duty": "Reporting: Report any suspected violations of the policy, ethical concerns, or breaches through designated reporting mechanisms."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participation: Participate in mandatory training and awareness programs to stay informed about compliance requirements and ethical practices."
+      },
+      {
+        "role": "Supplier, Contractors and Partners",
+        "duty": "Compliance: Adhere to the ethical standards outlined in the Compliance and Ethics Policy when conducting business with Birla Jute Mills."
+      },
+      {
+        "role": "Supplier, Contractors and Partners",
+        "duty": "Cooperation: Cooperate with Birla Jute Mills in any investigations or audits related to compliance and ethical practices."
+      },
+      {
+        "role": "Supplier, Contractors and Partners",
+        "duty": "Reporting: Report any ethical concerns or breaches that may impact the company’s operations or reputation."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Support: Assist in integrating the Compliance and Ethics Policy into employee handbooks, onboarding programs, and performance evaluations."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Conflict Resolution: Support the resolution of ethical conflicts and concerns, ensuring fair and transparent processes are followed."
+      }
+    ],
+    "monitoring": "We continuously monitor compliance with the Compliance and Ethics Policy through routine audits, employee feedback, and reporting mechanisms. This includes evaluating adherence to anti-bribery, ethical conflict resolution, financial integrity, and other key focus areas.\n\nWe regularly review performance metrics related to the policy’s objectives, such as the frequency of ethical training, the number of reported incidents, and the effectiveness of fraud detection measures. This review process helps identify areas for improvement and ensure alignment with our ethical standards.\n\nWe analyze reports of policy violations or ethical concerns to assess trends and recurring issues. This analysis helps us address systemic problems, refine our risk management strategies, and enhance overall policy effectiveness.\n\nWe evaluate the impact of our training programs on employee awareness and understanding of compliance requirements. This involves assessing participation rates, feedback from training sessions, and the practical application of learned concepts in daily operations.\n\nWe gather feedback from employees, suppliers, contractors, and other stakeholders to gain insights into the effectiveness of our policy and identify any areas where additional support or changes may be necessary.\n\nAudit findings related to compliance and ethics are documented and reported to senior management and the Board of Directors. This reporting includes recommendations for corrective actions and improvements based on audit results.\n\nWe prepare and distribute compliance reports to senior management and the Board of Directors, summarizing the effectiveness of the policy, any incidents or breaches, and the actions taken to address them.\n\nAll incidents of policy violations or ethical breaches are documented, including the nature of the issue, the investigation process, and the resolution. This documentation is reviewed to ensure appropriate actions are taken and to prevent recurrence.\n\nDisciplinary Actions: May include verbal warnings, written reprimands, suspension, or termination based on severity.\n\nLegal Action: Legal proceedings or civil actions may be pursued for violations involving illegal activities or significant harm.\n\nFines and Penalties: Financial penalties or fines may be imposed for breaches of regulatory requirements or ethical standards.\n\nLoss of Privileges: Access to certain roles, responsibilities, or company resources may be revoked.\n\nReputation Damage: Internal and external reputation may be adversely affected, impacting professional standing and career advancement.\n\nRemedial Measures: Required to undergo additional training or counselling to address and correct behaviour.\n\nContract Termination: Termination of contracts or partnerships with suppliers, vendors, or partners involved in policy violations.\n\nCivil Liability: Responsibility for damages caused by the violation, including compensation to affected parties.\n\nReporting to Authorities: Mandatory reporting to relevant regulatory or law enforcement authorities if required by law.",
+    "reviewMechanism": "The Chief Compliance Officer will conduct an annual and Ad hoc review of this policy.\n\nWe are committed to the ongoing enhancement of our Compliance and Ethics Policy. We will regularly review and update this policy to address emerging ethical challenges, regulatory changes, and stakeholder feedback. Through periodic audits, risk assessments, and employee feedback, we aim to identify areas for improvement and implement necessary changes. This proactive approach ensures that our ethical standards remain robust, relevant, and effective in supporting our mission and values."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Birla/3. Compliance and Ethics Policy_grw_v1_3012.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Birla/3. Compliance and Ethics Policy_grw_v1_3012.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 32118,
+  "parsedAt": "2026-09-11T07:07:34.219Z"
+}

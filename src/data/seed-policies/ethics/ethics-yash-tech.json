@@ -1,0 +1,641 @@
+{
+  "id": "ethics-yash-tech",
+  "name": "Yash Tech",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethics Integrity Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Yash Technologies",
+      "industry": "",
+      "site": "841 Avenue of the CitiesEast Moline IL, 61244",
+      "sites": [
+        {
+          "location": "India",
+          "address": "201-205 Bansi Trade Center,, 581/5 M. G. Road, Indore, Madhya Pradesh 452001",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "India",
+          "address": "STP-1, Ground Floor, IT/ITES- SEZ, Near Bhawar Kuwan Square, Indore, Madhya Pradesh 452001",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Plot No. 1, Scheme Number 166, Super Corridor Road, Indore, Madhya Pradesh 452005",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "702, 7th Floor, Campus C, RMZ Centennial, Survey No. 74 & 77, Doddanakudi Village, Krishnarajapuram, HobliBengaluru, Karnataka 560048",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Awfis, Primus Building, Door No. SP – 7A, Guindy Industrial Estate, SIDCO Industrial Estate, Guindy Chennai, Tamil Nadu 600032 (Office Space)",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "C/o Sundew Properties Limited (SEZ Developer), Office 1,2,3 & 4 (2nd Office Floor), 6th Floor Building #20, Raheja Mind space, CyberabadMadhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "C/o Sundew Properties Limited (SEZ Developer), 10th Floor Building #20, Raheja Mind space, Cyberabad, Madhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "UrbanWrk, 10th Floor, Building No 10, Raheja Mindspace, Hitech City, Madhapur, Telangana 500081",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Wing A & B, Level 2, Tower No.1, Cyber City, Magarpatta City, Hadapsur, Pune, Maharashtra 411013",
+          "primaryFunction": ""
+        },
+        {
+          "location": "India",
+          "address": "Plot No. 23/1, IT & ITES SEZ (MIDC), Rajiv Gandhi InfoTech Park, Hinjewadi, Phase – III, Pune, Maharashtra 411057",
+          "primaryFunction": ""
+        },
+        {
+          "location": "China",
+          "address": "Suite 2006 20/F, Hua Qin International Building, 340 Queen’s Road Central, Hong Kong 999077",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Malaysia",
+          "address": "C-05-02 , C-05-3A, C-05-10,C-05-12, iTech Tower, Jalan Impact, Cyber 6, Cyberjaya, Selangor Darul Ehsan 63000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Singapore",
+          "address": "17 Phillip Street, #05-01 Grand Building, Singapore 048695",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Thailand",
+          "address": "87/1 Capital Tower, All Seasons Place, 16th Floor, Unit 1603 -6, Wireless Road, Lumpini Sub-districtPathumwan District, Bangkok, Thailand 10330",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "C/o Crown Corporate Services, Level 35, Tower One, Barangaroo, Sydney, New South Wales 2000",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Australia",
+          "address": "Level 5/121 King William St, Adelaide, South Australia 5000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "22nd Floor, Northbank Plaza, 69 Ann Street, Brisbane, Queensland 4000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "Rialto, Level 27, South Tower, 525, Collins Street, Melbourne, Victoria 3000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Australia",
+          "address": "Level 27, St Martins Tower, 44 St Georges Terrace, Perth, Western Australia 6000",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Finland",
+          "address": "Bertel Jungin aukio 5, Espoo, Southern Finland province 02600",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Germany",
+          "address": "Konrad-Zuse-Ring 28, Mannheim, Baden-Württemberg, 68163",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Netherland",
+          "address": "Prinsengracht 697-2, Amsterdam, North Holland 1017 JV",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Netherland",
+          "address": "Hullenberweg 278-308, Amsterdam, North Holland 1101 BV",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Poland",
+          "address": "ul. Domaniewska 37, Warszawa, Poland 02-672",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Romania",
+          "address": "Soseaua Mihai Bravu n Subsol, Modul S083, Sector 3, Bucharest, Southeastern Romania",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Swedan",
+          "address": "Sveavägen 33, 3rd Floor, 111 34 Stockholm",
+          "primaryFunction": ""
+        },
+        {
+          "location": "United Kingdom",
+          "address": "Level 8, One Canada Square, Canary Wharf, London E14 5AA, United Kingdom",
+          "primaryFunction": ""
+        },
+        {
+          "location": "UAE",
+          "address": "Office 3602, 36th Floor, Al Shatha Towers, Dubai Internet CityDubai, P.O.Box 501714",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "UAE",
+          "address": "Office 848, Al Ansari Building, Khalifa Street, Abu Dhabi, P.O.Box 28346",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Egypt",
+          "address": "34A Al-Multaqa Al-Arabi District, 2nd Floor Office 201 Helioplis Division, Sheraton ,Cairo, P.O.Box 11799",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Lebanon",
+          "address": "Office Unit No. 1291, Section 4 Sarba, Lebanon",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Oman",
+          "address": "5th Floor Office A5, Bank Sohar Building Dohat Al Adab Street, Al Khuwair P.O. Box 395, PC 118, Muscat",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Saudi Arabia",
+          "address": "5th Floor, Balhamer Business GateAsh Shati Ash Sharqi 8196, Dammam, P.O.Box 32414",
+          "primaryFunction": ""
+        },
+        {
+          "location": "State of Qatar",
+          "address": "Office 1111, 11th Floor, Marina Twin Towers, Tower B, Regus Doha Twin Towers. Lusail, State of Qatar P.O. Box 301477",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "841 Avenue of the CitiesEast Moline IL, 61244",
+          "primaryFunction": "Global Headquarters (Corporate Office)"
+        },
+        {
+          "location": "USA",
+          "address": "4801 E Independence Blvd, Suite #900, Charlotte, North Carolina 28212",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "333 N. Michigan AvenueSuite #800, Chicago, Illinois 60601",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "455 Avenue of the Cities, East Moline, Illinois 61244",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "7760 France Ave S, Suite #1100, Minneapolis, Minnesota 55435",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "2000 W Pioneer Pkwy, Suite #16, Peoria, Illinois 61615,",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "211 College Road East, Suite #102, Princeton, New Jersey 08540",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "Y & L Consulting, Inc.,A YASH Technologies Company, 5750 Epsilon, San Antonio, Texas 78249",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "3 City Place Drive, Suite #520, St. Louis, Missouri 63141",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "17406 Royalton Rd., Suite #104, Strongsville, Ohio 44136",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "Aurora Business Park, Building 15, 4408 114th Street, Urbandale, Iowa 50322",
+          "primaryFunction": ""
+        },
+        {
+          "location": "USA",
+          "address": "400 Tradecenter Drive, Suite #4880, Woburn, Massachusetts 01801",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Canada",
+          "address": "350 Burnhamthorpe Rd. West, Suite #200, Office 28, Mississauga, Ontario L5B 3J1",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "841 Avenue of the CitiesEast Moline IL, 61244"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Yash Technologies, we are committed to upholding the highest standards of ethical conduct in all our business activities. As a global IT services company, we recognize that our success depends not only on our technological expertise but also on our unwavering commitment to integrity, transparency, and accountability. This Ethics Policy serves as a guiding framework for our employees, partners, and stakeholders, ensuring that every decision and action aligns with our core values. By adhering to this policy, we aim to foster a culture of trust, respect, and ethical behavior across all levels of our organization. Our commitment to ethics extends beyond compliance with legal requirements; it reflects our dedication to doing what is right, even in challenging situations. We believe that maintaining an ethical workplace is essential to building lasting relationships with our clients, empowering our employees, and contributing positively to the communities we serve.",
+      "declaration": "Promote Ethical Behavior: Foster a culture where ethical decision-making is encouraged and expected, ensuring that all actions align with Yash Technologies' core values and principles.\n\nEnsure Compliance: Establish guidelines that ensure adherence to legal requirements, industry standards, and internal policies, minimizing the risk of misconduct and non-compliance.\n\nProtect Integrity: Safeguard the integrity and reputation of Yash Technologies by preventing unethical practices, including fraud, corruption, and conflicts of interest.\n\nEnhance Transparency: Encourage openness and honesty in all business dealings, promoting clear communication and accountability across all levels of the organization.\n\nSupport Ethical Leadership: Empower leaders at Yash Technologies to model ethical behavior, guiding their teams to make responsible and principled decisions.\n\nFacilitate Reporting: Provide a safe and confidential mechanism for reporting unethical behavior, ensuring that all concerns are addressed promptly and appropriately.\n\nBuild Trust: Strengthen relationships with clients, employees, and stakeholders by demonstrating a consistent commitment to ethical practices in all aspects of our operations.\n\nPromote Fair Treatment: Ensure that all employees and partners are treated with fairness, respect, and dignity, fostering an inclusive and supportive work environment.",
+      "scope": "This Policy applies to all entities, offices, facilities, joint ventures, subsidiaries, and stakeholders of Yash Technologies Group across Asia, Australia, the Middle East & Africa, North America, the United States, and Europe.\n\nThe Policy extends to all stakeholders, including employees, workers, contractors, subcontractors, suppliers, and business partners."
+    },
+    "focusAreas": [
+      "Anti-Corruption Measures",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Anti-Money Laundering",
+      "Fair Competition",
+      "Information Security"
+    ],
+    "qualitative": {
+      "Anti-Corruption Measures": [
+        "We strive to implement rigorous anti-corruption measures to eradicate bribery and unethical practices within our operations.",
+        "Our priority is to provide regular training to employees to help them recognize and report potential corruption risks.",
+        "We commit to conducting thorough due diligence on all third-party partners to ensure their compliance with anti-corruption standards.",
+        "We are dedicated to establishing a clear, confidential reporting mechanism for employees to report any suspected corruption.",
+        "We are determined to perform regular audits of financial transactions and business practices to uncover and address any corruption-related issues.",
+        "We are implementing a comprehensive anti-corruption framework to foster transparency and uphold integrity in all business dealings.",
+        "Our goal is to introduce regular training sessions that use advanced e-learning tools to help employees recognize and prevent corrupt practices.",
+        "We are adopting a rigorous due diligence process for evaluating third-party vendors and partners to minimize risks associated with corruption.",
+        "We plan to integrate blockchain technology to enhance accountability and verify financial transactions with greater transparency.",
+        "We are establishing a whistleblower protection system to support employees in reporting corrupt activities without fear of retaliation."
+      ],
+      "Conflict of Interest": [
+        "We mandate all employees to disclose any potential conflicts of interest to uphold transparency and integrity in decision-making.",
+        "Our approach involves implementing effective policies to manage and resolve conflicts of interest, protecting our company’s reputation and ethical standards.",
+        "We continuously review to identify and address potential conflicts of interest among senior management and board members.",
+        "We emphasize providing clear guidelines on handling personal and professional relationships to prevent conflicts of interest.",
+        "We ensure that all new hires are well-informed about conflict of interest guidelines during their onboarding process.",
+        "We are enforcing a conflict-of-interest policy that requires employees to disclose any personal or financial interests that could impact their professional decisions.",
+        "Our objective is to deploy automated conflict of interest management software to effectively identify and manage potential conflicts.",
+        "We are instituting a mandatory review process for all major business decisions to ensure they are free from any conflicts of interest.",
+        "We aim to conduct regular audits to ensure compliance with our conflict-of-interest guidelines and address any identified issues promptly.",
+        "We are providing ongoing training using interactive simulations to help employees recognize and manage conflicts of interest more effectively."
+      ],
+      "Fraud Prevention": [
+        "We are committed to developing robust internal controls and procedures to prevent and detect fraudulent activities within the organization.",
+        "Regular fraud risk assessments are a key part of our strategy to identify and mitigate potential vulnerabilities.",
+        "We have established a comprehensive fraud reporting system that allows employees to report suspected fraud anonymously.",
+        "Our focus is on providing continuous fraud awareness training to improve employees’ ability to recognize and report fraudulent behavior.",
+        "We work with external auditors to conduct independent reviews of our financial practices and fraud prevention strategies.",
+        "We are adopting advanced fraud detection systems powered by artificial intelligence to identify and prevent fraudulent activities effectively.",
+        "Our approach includes implementing stringent internal controls and conducting regular audits to detect and address any fraudulent behavior.",
+        "We are upholding a zero-tolerance stance on fraud, ensuring all employees understand and adhere to our established anti-fraud measures.",
+        "We plan to utilize secure digital platforms for financial transactions to reduce the risk of fraud and ensure data integrity.",
+        "We are committed to regularly reviewing and updating our fraud prevention strategies to adapt to evolving threats and challenges."
+      ],
+      "Anti-Money Laundering": [
+        "We aim to enforce strong anti-money laundering (AML) controls to prevent the misuse of our services for illegal financial activities.",
+        "Thorough customer due diligence is central to our process to verify the legitimacy of our clients and their transactions.",
+        "We have procedures in place for monitoring and reporting suspicious financial activities to ensure legal compliance.",
+        "Our goal is to provide AML training to all employees to enhance their awareness and adherence to anti-money laundering regulations.",
+        "We regularly review and update our AML policies to stay ahead of evolving financial crime threats and regulatory changes.",
+        "We are executing a comprehensive anti-money laundering (AML) program that includes real-time monitoring and reporting of suspicious activities.",
+        "Our strategy involves using cutting-edge software for thorough background checks and due diligence on clients and business partners.",
+        "We are rolling out an extensive AML training program for employees to enhance their ability to identify and report potential money laundering activities.",
+        "We aim to establish clear procedures for reporting and investigating suspicious transactions, ensuring compliance with all relevant legal requirements.",
+        "We are continuously refining our AML strategies to stay ahead of emerging money laundering techniques and maintain robust preventive measures."
+      ],
+      "Fair Competition": [
+        "We adhere strictly to fair competition laws and regulations to prevent anti- competitive practices and foster a level playing field.",
+        "Our training programs emphasize the legal implications of anti-competitive behavior and how to avoid such practices.",
+        "We actively monitor market practices to ensure our business activities do not compromise fair competition.",
+        "Clear guidelines for competitive conduct are implemented to prevent any practices that could be considered anti-competitive.",
+        "We conduct regular reviews of our business practices to ensure alignment with fair competition laws and regulations.",
+        "We are adhering to competition laws by regularly reviewing our business practices to prevent any form of anti-competitive behavior.",
+        "Our plan includes implementing competitive intelligence tools to ensure our business strategies align with ethical standards and foster fair competition.",
+        "We are enforcing a strict internal compliance program, providing training on anti-competitive practices and legal requirements to all employees.",
+        "We aim to conduct periodic audits to ensure our practices comply with competition laws and address any issues proactively.",
+        "We are collaborating with legal experts to review our business practices and ensure they align with anti-competitive regulations and standards."
+      ],
+      "Information Security": [
+        "Our goal is to implement robust information security measures to safeguard sensitive data and ensure its confidentiality, integrity, and availability.",
+        "We prioritize regular training for employees on best practices for information security and the importance of protecting company data.",
+        "Routine security audits and assessments are integral to identifying and addressing potential vulnerabilities in our information systems.",
+        "We enforce stringent access controls and monitoring to prevent unauthorized access to sensitive information.",
+        "We are dedicated to developing and maintaining a comprehensive incident response plan to manage and mitigate information security breaches effectively.",
+        "We are adopting advanced cybersecurity measures, including encryption and multi-factor authentication, to protect sensitive information from unauthorized access.",
+        "Our focus is on implementing state-of-the-art threat detection systems to monitor and respond to potential security breaches in real-time.",
+        "We are maintaining a stringent data protection policy, featuring regular security audits and updates to ensure the confidentiality of our information.",
+        "We aim to provide ongoing training for employees on best practices in information security, including safe data handling and phishing prevention.",
+        "We are committed to continually evaluating and enhancing our information security infrastructure to address emerging threats effectively."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption Measures",
+        "targets": [
+          {
+            "target": "We are committed to maintain zero tolerance for Corruption incidents and sustain zero corruption cases in times to come.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the frequency of anti-corruption training sessions by 40% to ensure all employees are aware of and adhere to anti-corruption measures.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Continue to conduct annual third-party audits with the objective of maintaining zero findings related to corruption.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Continue to ensure employee complete anti-corruption training with a 100% participation in 2030 as well.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Continue to maintain zero cases for conflicts of interest in years to come as standardized.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Give further exposure for disclosure and notifying the number of conflict-of- interest cases and their overall number below 10% through improved reporting mechanisms.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement bi-annual training sessions on conflict of interest, achieving a 100% attendance rate among relevant employees by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Establish a monitoring system to track and manage conflicts of interest more effectively, aiming for a 100% reduction in reported cases.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Continue to maintain zero tolerance for fraud and committed to maintain zero fraud cases in upcoming years as well",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the frequency of fraud detection audits by 50% to strengthen internal controls and oversight.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure that 95% of employees complete annual anti-fraud training to enhance awareness and prevention measures.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Continue to maintain zero instances of fraud through improved internal controls and enhanced employee training.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Continue to maintain zero tolerance for unethical practice of Money Laundering and sustain 0% incidents of money laundering incidents in upcoming years as well",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Enhance employee training on money laundering regulations by 50% to improve compliance and awareness.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Continue to maintain quarterly audits to ensure zero violations related to money laundering.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement enhanced monitoring and reporting systems to sustain zero money laundering incidents effectively by in upcoming years as well",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fair Competition",
+        "targets": [
+          {
+            "target": "Continue to maintain zero incidents of anti-competitive practices in upcoming years as well",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase awareness programs on anti-competitive practices by 30% to ensure all employees are informed and compliant.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Continue to maintain a zero-incident target for anti-competitive practices through the implementation of a robust internal reporting mechanism.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employee participation in anti-competitive practices training sessions by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Maintain the data breaches incident at 0% for ongoing years compared to the baseline year 2022.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase the frequency of information security training by 20% to keep employees updated on best practices and security protocols.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 95% compliance rate with internal security audits to ensure adherence to information security standards.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement enhanced security protocols to maintain zero data breaches through improved monitoring and protective measures by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Overall Responsibility: Oversee the implementation, enforcement & review of the Ethics Policy."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Monitoring and Reporting: Ensure regular monitoring of ethical performance metrics and compile the Annual Ethics Report."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Compliance Audits: Coordinate with internal and external auditors to conduct periodic compliance audits."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Performance Review Meetings: Lead biannual performance review meetings to evaluate progress and recommend improvements."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Ethics Impact Assessments: Oversee annual ethics impact assessments and ensure alignment with best practices."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Anti-Corruption Measures: Implement anti-corruption measures within their departments and ensure compliance with training requirements."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Conflict of Interest: Review and manage conflict of interest disclosures within their teams."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Fraud Prevention: Monitor and address potential fraud-related issues in departmental operations."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Fair Competition: Ensure departmental adherence to fair competition laws and practices."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Information Security: Enforce information security protocols and address any breaches or vulnerabilities within their departments."
+      },
+      {
+        "role": "HR Managers",
+        "duty": "Employee Training: Organize and ensure participation in regular training sessions on anti- corruption, conflict of interest, fraud prevention, anti-money laundering, fair competition, and information security."
+      },
+      {
+        "role": "HR Managers",
+        "duty": "Employee Feedback and Engagement Surveys: Conduct and analyze semi-annual surveys to gather employee feedback on ethical practices and address concerns."
+      },
+      {
+        "role": "HR Managers",
+        "duty": "Conflict of Interest: Facilitate the disclosure process and review conflict of interest statements from new hires and current employees."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Monitoring and Reporting: Support the CCO in monitoring ethical performance and preparing reports."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Compliance Audits: Assist in coordinating internal audits and follow up on audit findings."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Ethics Impact Assessments: Contribute to the execution of annual ethics impact assessments and analysis."
+      },
+      {
+        "role": "IT Security Team",
+        "duty": "Information Security: Implement and manage information security measures, including encryption, multi-factor authentication, and threat detection systems."
+      },
+      {
+        "role": "IT Security Team",
+        "duty": "Security Audits: Conduct routine security audits and assessments to identify and address potential vulnerabilities."
+      },
+      {
+        "role": "IT Security Team",
+        "duty": "Incident Response: Develop and maintain the incident response plan for managing information security breaches."
+      },
+      {
+        "role": "Legal Team",
+        "duty": "Fair Competition: Advise on compliance with competition laws and regulations, and address any legal issues related to anti-competitive practices."
+      },
+      {
+        "role": "Legal Team",
+        "duty": "Anti-Money Laundering: Ensure compliance with anti-money laundering regulations and provide legal guidance on related issues."
+      },
+      {
+        "role": "Legal Team",
+        "duty": "Conflict of Interest: Review and provide guidance on policies related to conflicts of interest."
+      },
+      {
+        "role": "Finance Team",
+        "duty": "Fraud Prevention: Implement and monitor internal controls to prevent and detect fraudulent activities."
+      },
+      {
+        "role": "Finance Team",
+        "duty": "Anti-Money Laundering: Assist in customer due diligence and monitoring suspicious financial activities."
+      },
+      {
+        "role": "Finance Team",
+        "duty": "Regular Reporting: Collaborate with the CCO to provide accurate financial data for auditing and reporting purposes."
+      },
+      {
+        "role": "External Auditors",
+        "duty": "Compliance Audits: Conduct independent audits of financial practices and ethical compliance to ensure objectivity and identify any areas of non-compliance."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Ethical Conduct: Adhere to the Ethics Policy and actively participate in training programs."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow the employee guidelines"
+      },
+      {
+        "role": "All Employees",
+        "duty": "Reporting: Report any suspected unethical behavior through the established reporting mechanisms."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Feedback: Provide feedback and engage in surveys to contribute to the improvement of ethical practices within the organization."
+      }
+    ],
+    "monitoring": "Regular Monitoring and Reporting: Yash Technologies will implement a systematic approach for monitoring and reporting ethical performance. Quarterly assessments will be conducted to evaluate adherence to anti-corruption, conflict of interest, fraud prevention, anti-money laundering, fair competition, and information security objectives. Performance data will be analyzed to track progress and ensure alignment with set targets.\n\nAnnual Ethics Report: An annual report will be generated to detail achievements, challenges, and progress in ethical practices. This report will include comprehensive data on anti-corruption efforts, conflict of interest disclosures, fraud prevention measures, anti-money laundering activities, fair competition practices, and information security incidents. The report will be publicly available to ensure transparency.\n\nPerformance Review Meetings: Biannual meetings with key stakeholders, including department heads and compliance officers, will be held to review progress against ethical targets. These meetings will facilitate discussions on challenges, progress, and necessary improvements. Outcomes and recommendations will be integrated into ongoing policy adjustments and action plans.\n\nCompliance Audits: Regular compliance audits will be carried out to ensure adherence to ethical standards and legal requirements. These audits will be conducted by both internal and external auditors to provide an independent assessment of compliance with anti-corruption, conflict of interest, fraud prevention, anti-money laundering, fair competition, and information security policies.\n\nEmployee Feedback and Engagement Surveys: Semi-annual surveys will gather employee feedback on ethical practices and policies. These surveys will assess the effectiveness of training programs and reporting mechanisms. Results will be analyzed to identify areas for improvement and ensure employee concerns are addressed in a timely manner.\n\nEthics Impact Assessments: Annual assessments will evaluate the effectiveness of ethical practices and their impact on organizational integrity. These assessments will identify potential risks and areas for improvement, ensuring that Yash Technologies' operations continue to align with best practices and ethical standards.\n\nStakeholder Communication: Transparent communication with all stakeholders, including employees, suppliers, and clients, will be maintained through regular updates. Any significant changes to ethical practices or reported issues will be communicated promptly to ensure ongoing alignment and engagement with all relevant parties.",
+    "reviewMechanism": "The Chief Compliance Officer (CCO) conducts an annual review of the Ethics Policy to ensure its effectiveness and relevance.\n\nPolicy Evaluation: The CCO assesses the policy’s performance, identifying strengths and areas for improvement based on feedback from stakeholders, audit results, and emerging regulatory requirements.\n\nPerformance Analysis: Review of key performance metrics and incidents related to ethical issues, analyzing trends and effectiveness of implemented measures.\n\nStakeholder Feedback: Collection and evaluation of feedback from employees, clients, and external partners to understand their perspectives and experiences.\n\nCompliance Checks: Verification of adherence to the policy through internal audits and external assessments.\n\nUpdates and Enhancements: Based on the review findings, the CCO recommends updates or enhancements to the policy, ensuring it addresses current challenges and aligns with best practices.\n\nReporting: Preparation of a comprehensive report detailing the findings, actions taken, and recommendations for policy improvements, which is presented to the Executive Management Team for approval and implementation.\n\nContinuous improvement is a cornerstone of our Ethics Policy. We are committed to regularly reviewing and enhancing our ethical practices to ensure they remain effective and relevant. This involves conducting periodic assessments and audits to identify areas for improvement and adapt to new challenges and regulatory changes. Feedback from employees, stakeholders, and external audits is actively sought and analyzed to drive refinements. We implement advanced tools and technologies to enhance our monitoring and reporting capabilities, ensuring timely and accurate data. Training programs are updated regularly to address emerging ethical issues and reinforce our commitment to integrity. By fostering a culture of ongoing evaluation and responsiveness, we aim to continually elevate our ethical standards and operational excellence."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Yash Tech/3. Ethics Integrity Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Yash Tech/3. Ethics Integrity Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 35642,
+  "parsedAt": "2026-09-11T07:18:06.845Z"
+}

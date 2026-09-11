@@ -1,0 +1,410 @@
+{
+  "id": "labour-human-rights-gppl",
+  "name": "GPPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Labor and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Gujarat Paraffins Pvt Ltd",
+      "industry": "",
+      "site": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054",
+      "sites": [
+        {
+          "location": "Corporate Office",
+          "address": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "Factory",
+          "address": "C-1/29, Gujarat State Highway 71, G.I.D.C. Estate, Kalol, Gujarat 382725",
+          "primaryFunction": "Manufacturing unit"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Gujarat Paraffins Pvt Ltd recognizes that respect for labour and human rights is fundamental to sustainable business practices and responsible manufacturing operations. The Company is committed to providing a safe, fair, and inclusive workplace where all individuals are treated with dignity, equality, and respect.\n\nThis Labour and Human Rights Policy outlines the principles and standards governing employment practices, working conditions, and employee relations across all operations. It applies to all employees, contract workers, and relevant business partners and is guided by applicable labour laws, human rights regulations, and internationally recognized standards. Through this policy, the Company aims to prevent discrimination, forced labour, child labour, and harassment, while promoting freedom of association, fair wages, occupational health and safety, and ethical employment practices.",
+      "declaration": "This policy upholds the fundamental rights of all employees, workers, and contractors, ensuring a safe, fair, and inclusive workplace. It prevents child labour, forced labour, bonded labour, and human trafficking while promoting health, safety, well-being, and professional growth. The policy also ensures compliance with labor laws, fosters ethical behavior, and encourages a culture of respect, equality, and accountability.",
+      "scope": "This policy applies to all operational locations of Gujarat Paraffins Pvt. Ltd., including manufacturing units and the corporate office. It covers all employees, contractors, suppliers, and all stakeholders (both internal and external). The policy applies to the following locations:"
+    },
+    "focusAreas": [
+      "Prevention of Discrimination & Harassment",
+      "Fair Working Practices",
+      "Workplace Health, Safety & Well-Being",
+      "Career Development & Skill Building",
+      "Community and Social Contribution"
+    ],
+    "qualitative": {
+      "Prevention of Discrimination & Harassment": [
+        "GPPL is committed to ensuring non-discriminatory and bias-free practices across recruitment, promotion, performance evaluation, compensation, training, and career progression by applying objective criteria, transparent processes, and equal opportunity principles for all employees.",
+        "We commit to fostering a respectful, diverse, and inclusive workplace culture through regular awareness and sensitization programs.",
+        "A formal anti-discrimination and anti-harassment framework will be implemented through clear policies, codes of conduct, and communication to ensure a respectful, inclusive, and dignified workplace for all employees.",
+        "Preventive mechanisms will be implemented and strengthened, including sensitization programs, awareness sessions, and clear behavioral standards to reduce incidents of discrimination and harassment across the workplace.",
+        "Accessible and confidential grievance redressal mechanisms for reporting discrimination and harassment concerns are maintained and strengthened through structured processes.",
+        "Protection against retaliation will be ensured through strict confidentiality and disciplinary measures to encourage employees to report concerns without fear or adverse consequences.",
+        "Gender-sensitive and legally compliant mechanisms, including an Internal Complaints Committee (ICC) as per applicable laws, will be implemented and maintained to address complaints related to sexual harassment effectively.",
+        "Periodic workplace assessments and employee feedback mechanisms will be strengthened to proactively identify risks related to discriminatory or harassing behaviour.",
+        "Equal opportunity principles will be implemented and monitored in recruitment, training, promotion, and workplace practices to prevent bias and promote fairness across all employment decisions.",
+        "Training effectiveness and participation will be monitored and reviewed through records, feedback, and assessments to continuously improve training quality and outcomes."
+      ],
+      "Fair Working Practices": [
+        "Fair and transparent compensation practices will be strengthened by periodically benchmarking wages, addressing pay disparities, and aligning remuneration with applicable industry standards and statutory requirements to ensure equitable and competitive employee compensation.",
+        "A comprehensive employee benefits framework will be implemented and enhanced by providing healthcare coverage, statutory and company-defined leave, retirement benefits, and performance-linked incentives to support employee well-being and long-term financial security.",
+        "Clean, well-ventilated, and ergonomically designed workplaces will be maintained and improved to promote employee comfort, health, and sustained productivity across all facilities.",
+        "Continuous access to safe drinking water, hygienic sanitation facilities, and adequate rest areas will be ensured to uphold employee dignity, health, and workplace well-being.",
+        "Fair work scheduling practices will be implemented and monitored by regulating working hours, managing overtime, and ensuring compliance with the Factories Act, 1948, and applicable Indian labor laws to support work-life balance and employee health.",
+        "Environmental working conditions, including lighting, noise levels, and temperature controls, will be optimized and monitored to reduce workplace stress and enhance comfort, safety, and concentration.",
+        "Compliance with applicable labor laws related to wages, working hours, and statutory benefits will be implemented and monitored to ensure employees receive fair compensation and lawful employment conditions.",
+        "We commit to promoting employee well-being by strengthening initiatives focused on work–life balance, stress management, and a supportive workplace culture."
+      ],
+      "Workplace Health, Safety & Well-Being": [
+        "We will fully comply with applicable health and safety laws and regulations.",
+        "Health and safety systems and practices will be aligned with applicable occupational health and safety laws, rules, and regulatory requirements to ensure full legal compliance and safe working conditions across all operations.",
+        "A structured occupational health and safety system will be implemented by defining safety procedures for machinery operation, material handling, electrical work, and high-risk activities to reduce workplace accidents and unsafe practices.",
+        "Workplace hazard identification and risk assessments will be conducted and regularly updated for production areas, warehouses, and maintenance activities to identify risks and apply preventive and corrective controls.",
+        "Comprehensive emergency preparedness and response measures to be maintained through regular mock drills, inspections, and continuous improvement actions.",
+        "Mandatory use of appropriate personal protective equipment (PPE), including helmets, gloves, safety shoes, eye protection, and hearing protection, will be implemented and enforced to minimize employee exposure to physical, chemical, and noise-related hazards.",
+        "Incident and near-miss reporting mechanisms will be implemented and strengthened to investigate root causes, implement corrective actions, and prevent recurrence.",
+        "We commit to strengthening health and safety awareness through periodic training, drills, and employee participation initiatives.",
+        "Provision of occupational health support, including medical check-ups and health surveillance, will be ensured through structured health programs."
+      ],
+      "Career Development & Skill Building": [
+        "Equal access to career development opportunities will be ensured through fair and non-discriminatory practices to support inclusive growth and prevent bias in career advancement.",
+        "Structured career development frameworks will be implemented by defining role-based competencies, skill requirements, and progression pathways to provide employees with clear visibility of growth and advancement opportunities.",
+        "Performance management and appraisal processes will be implemented and strengthened through regular evaluations, documented feedback, and development planning to support employee growth, accountability, and career progression.",
+        "Training and skill development programs will be implemented and expanded, including technical, safety, leadership, and soft-skill training to enhance employee capability, productivity, and long-term employability.",
+        "Internal job postings and promotion practices will be implemented and promoted to encourage internal mobility, recognize talent, and retain skilled employees.",
+        "Career guidance and mentoring initiatives will be implemented and strengthened to support employee engagement, knowledge transfer, and long-term career planning."
+      ],
+      "Community and Social Contribution": [
+        "Annual participation of employees in at least one community or social development initiative is planned to strengthen social engagement and corporate responsibility.",
+        "Positive contribution to local communities is promoted through responsible business practices, social initiatives, and stakeholder engagement programs.",
+        "We commit to supporting community development initiatives focused on education, health, environmental protection, and social well-being."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Prevention of Discrimination & Harassment",
+        "targets": [
+          {
+            "target": "Zero confirmed cases of discrimination and harassment will be maintained across all operations through preventive controls and awareness initiatives",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "100% of employees will receive mandatory training on workplace conduct, discrimination prevention, and anti-harassment practices",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "100% of reported discrimination and harassment complaints will be investigated and addressed within defined timelines",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Gender diversity in the workforce will improve by at least 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "At least one structured training session on discrimination and harassment will be conducted annually for all employees to promote awareness, prevention, and respectful workplace behaviour",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "At least one formal risk assessment on discrimination and harassment will be conducted annually to identify potential risks, gaps, and corrective actions",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Fair Working Practices",
+        "targets": [
+          {
+            "target": "100% compliance with legal working hours, rest breaks, and leave requirements will be achieved and maintained",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "100% of employees will receive fair wages and statutory benefits in full compliance with labour regulations",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "100% of employees will be covered under medical insurance and welfare programs",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "At least 90% employee satisfaction score related to working conditions will be achieved through periodic employee surveys",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "100% of employee grievances related to working conditions will be resolved within defined timelines",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Annual employee turnover related to workplace dissatisfaction will be reduced by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Workplace Health, Safety & Well-Being",
+        "targets": [
+          {
+            "target": "Aim to maintain zero recordable safety-related incidents through continuous monitoring and preventive measures",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Workplace fatalities will be maintained to zero and a Lost Time Injury Frequency Rate (LTIFR) below 1.0 will be maintained",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "100% of employees will be provided with required PPE, and 100% PPE compliance will be achieved through regular inspections",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "A minimum of 2 emergency mock drills per year will be consistently conducted at all applicable sites",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "At least 8 hours of health & safety training per employee per year will be achieved",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "100% of employees will undergo periodic health check-ups in line with occupational health requirements",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "100% closure of reported safety incidents and corrective actions within defined timelines will be achieved",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Aim to train 100% of employees on health and safety requirements, including safe work practices and emergency procedures, to ensure a safe and compliant workplace",
+            "baseline": "",
+            "deadline": "2030-31"
+          }
+        ]
+      },
+      {
+        "area": "Career Development & Skill Building",
+        "targets": [
+          {
+            "target": "Aim to train 100% of employees under skill and career development training",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2030-31"
+          },
+          {
+            "target": "Average training hours per employee will increase by 10%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Annual training budget allocation will increase by 30%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "At least 90% of employees will have documented Individual Development Plans (IDPs)",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Leadership and supervisory training coverage will reach 100% of managers and supervisors",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Community and Social Contribution",
+        "targets": [
+          {
+            "target": "Annual CSR/community investment will increase by 30%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Employee volunteering participation will reach 60% of the workforce annually",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Total employee volunteering hours will increase by 50%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "Partnerships with at least 3 local community or social organizations will be established and maintained",
+            "baseline": "",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Approve the Social Policy and demonstrate leadership commitment to social responsibility."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensure compliance with applicable labour laws, health & safety regulations, and ethical standards."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Allocate adequate resources for employee safety, welfare, training, and development."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Review social performance, key risks, and improvement actions periodically."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure effective implementation of the Social Policy across all locations and operations."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Integrate social objectives into operational planning and performance management."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure timely corrective actions for incidents, grievances, and non-compliances."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Promote a culture of safety, respect, and ethical workplace behavior."
+      },
+      {
+        "role": "Human Resources (HR) manager",
+        "duty": "Review the entire policy regularly."
+      },
+      {
+        "role": "Human Resources (HR) manager",
+        "duty": "Ensure compliance with labour laws, employment conditions, and workplace conduct requirements."
+      },
+      {
+        "role": "Human Resources (HR) manager",
+        "duty": "Implement policies related to working conditions, equal opportunity, career management, and employee wellbeing."
+      },
+      {
+        "role": "Human Resources (HR) manager",
+        "duty": "Manage recruitment, training, performance evaluation, and grievance redressal mechanisms."
+      },
+      {
+        "role": "Human Resources (HR) manager",
+        "duty": "Maintain statutory and social compliance records and reports."
+      },
+      {
+        "role": "Health & Safety Officer",
+        "duty": "Implement occupational health and safety programs in line with legal and company requirements."
+      },
+      {
+        "role": "Health & Safety Officer",
+        "duty": "Conduct risk assessments, safety audits, inspections, and emergency preparedness activities."
+      },
+      {
+        "role": "Health & Safety Officer",
+        "duty": "Ensure availability and proper use of personal protective equipment (PPE)."
+      },
+      {
+        "role": "Health & Safety Officer",
+        "duty": "Investigate incidents and recommend preventive and corrective actions."
+      },
+      {
+        "role": "Internal Complaints Committee",
+        "duty": "Address complaints related to discrimination, harassment, and workplace misconduct."
+      },
+      {
+        "role": "Internal Complaints Committee",
+        "duty": "Ensure confidentiality, impartiality, and timely resolution of grievances."
+      },
+      {
+        "role": "Internal Complaints Committee",
+        "duty": "Recommend corrective and disciplinary actions as per company procedures and applicable laws."
+      },
+      {
+        "role": "Internal Complaints Committee",
+        "duty": "Monitor grievance trends and suggest preventive measures."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Implement social and safety practices within their respective departments."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure safe working conditions, fair work allocation, and respectful conduct."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Monitor working hours, attendance, and employee wellbeing at the department level."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Encourage participation in training, safety, and engagement initiatives."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Comply with all safety, workplace conduct, and social responsibility requirements."
+      },
+      {
+        "role": "Employees",
+        "duty": "Use safety equipment correctly and follow safe working procedures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report unsafe conditions, incidents, discrimination, harassment, or violations promptly."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in training, awareness, and wellbeing programs."
+      }
+    ],
+    "monitoring": "The organization continuously enhances its labor and human rights practices by reviewing policies, audits, and employee feedback. Training, monitoring, and processes are regularly updated to strengthen compliance, safety, and workplace culture.\n\nEmployees, contractors, and other stakeholders are encouraged to promptly report any concerns, incidents, or non-compliance related to this policy through designated reporting channels. All reports will be handled confidentially and investigated in a fair and timely manner. Retaliation against individuals raising concerns in good faith is strictly prohibited.",
+    "reviewMechanism": "The Labor and Human Rights Policy will be reviewed annually or as per requirement by the HR Manager assessing its effectiveness and recommending improvements to senior management.\n\nEmployee feedback, audits, and social performance indicators will be considered during the review process.\n\nAny updates will be communicated to all employees and relevant stakeholders."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/GPPL/2. Labor and Human Rights Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/GPPL/2. Labor and Human Rights Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 19181,
+  "parsedAt": "2026-09-11T07:08:10.645Z"
+}

@@ -1,0 +1,224 @@
+{
+  "id": "amwl",
+  "name": "AMWL",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy - AMWL.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Agrawal Metal Works Pvt. Ltd.",
+      "industry": "",
+      "site": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India",
+      "sites": [
+        {
+          "location": "Agrawal Metal Works Pvt. Ltd.",
+          "address": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India",
+          "primaryFunction": "Manufacturing of Copper and Copper Alloys Semis"
+        },
+        {
+          "location": "Jhajjar Road",
+          "address": "Jhajjar Road, Rewari-123401, Haryana, India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "205, “Arunachal Building”",
+          "address": "19, Barakhamba Road –110001, New Delhi, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "SP-144, RIICO Ind. Area, Phase-1, Bhiwadi – 301019, Maharastra, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Agrawal Metal Works Pvt. Ltd., a premier manufacturer of Copper and Copper Alloys Semis, we recognize our duty to protect the environment. As a prominent player in the metal industry, we are committed to integrate sustainable practices and environmental responsibilities into every aspect of our business. Our environmental policy is designed to minimize our ecological footprint, promote resource efficiency, and contribute to the well-being of the communities we serve.\n\nTo uphold our commitment to environmental protection, Agrawal Metal Works has implemented a \"Zero Liquid” Discharge Policy which is being achieved through the utilization of advanced Effluent Treatment Plants (ETP) and Sewage Treatment Plants (STP), ensuring that no harmful discharge affect to our surroundings. Furthermore, we have established a dedicated Air Pollution Control System to maintain the quality of air emissions, thereby protecting the atmosphere. By adhering to stringent environmental standards and continuously seeking innovative solutions, Agarwal Metal Works aims to lead in the journey towards a greener and more sustainable future.",
+      "declaration": "At Agrawal Metal Works Pvt. Ltd., we are dedicated to conducting our operations in a manner that prioritizes environmental sustainability and minimizes our ecological footprint. The goal is to integrate responsible practices that preserve natural resources and enhance environmental quality for future generations, building on the baseline set for FY 2019-20.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Energy Efficiency & Emission Reduction",
+      "Water Resource Management",
+      "Responsible Material & Chemical Use",
+      "Air Quality & Pollution Control",
+      "Waste Reduction & Circular Economy",
+      "Customer Health & Safety",
+      "Biodiversity & Ecosystem Protection",
+      "Legal Compliance & Environmental Advocacy",
+      "Innovation in Green Technologies"
+    ],
+    "qualitative": {
+      "Energy Efficiency & Emission Reduction": [
+        "Implementing energy-efficient technologies and optimizing processes to minimize carbon/Energy footprint and greenhouse gas emissions.",
+        "Conduct feasibility studies to develop and enhance the energy efficiency technology through audits and upgrades, and explore financial incentives and partnerships for cost-effective implementation."
+      ],
+      "Water Resource Management": [
+        "Reducing water consumption through recycling, reuse initiatives, and responsible wastewater treatment. Enhancing the process of reduction in quantum of ground water with use of treated water.",
+        "To enhance water conservation practices and ensuring stringent monitoring and maintenance of the treatment equipment to maintain the water quality standards of treated water."
+      ],
+      "Responsible Material & Chemical Use": [
+        "Ensuring safe handling of chemicals, following the MSDS sheet, minimizing hazardous substances, and promoting use of scrap materials as a part of raw material for our sustainable environment."
+      ],
+      "Air Quality & Pollution Control": [
+        "Implementing advanced filtration, treatment methods and emission control systems to maintain compliance with air, noise and water quality standards.",
+        "To regularly optimize the existing Air Pollution Control Systems to exceed regulatory requirements and maintain air quality standards."
+      ],
+      "Waste Reduction & Circular Economy": [
+        "Maximizing material recovery and yield output, minimizing waste generation, and promoting recycling and reuse strategies.",
+        "To report the quantities of the major waste such as metallic waste, chemical waste, electroplating waste generated and make efforts to reduce, recycle, and maintain sustainable disposal practices of the waste."
+      ],
+      "Customer Health & Safety": [
+        "Ensuring product safety, reducing environmental and safety risks, and promoting sustainable practices in customer use.",
+        "Maintain stringent product safety standards and continuously improve product quality to ensure customer satisfaction."
+      ],
+      "Biodiversity & Ecosystem Protection": [
+        "Minimizing environmental impact on local ecosystems through responsible land use and conservation efforts.",
+        "Actively participate in local biodiversity conservation efforts through habitat preservation and restoration initiatives like land conservation, native planting under environment responsibility."
+      ],
+      "Legal Compliance & Environmental Advocacy": [
+        "Engaging in sustainability initiatives, complying with environmental regulations and norms, and promoting eco-conscious industry practices.",
+        "Expand community environmental education programs to raise awareness and foster sustainable practices.",
+        "Advocate for policies that support environmental protection, sustainable development, and responsible resource management at local and regional levels."
+      ],
+      "Innovation in Green Technologies": [
+        "Investing in R&D for eco-friendly solutions, process improvements, and sustainable product innovation."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Efficiency & Emission Reduction",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in greenhouse gas emissions intensity",
+            "baseline": "Base year FY 2019-20",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity & Ecosystem Protection",
+        "targets": [
+          {
+            "target": "Expand green spaces within the factory premises to increase green coverage by 40%",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Plant and maintain 500 native trees and shrubs within and around the operational premises and nearby community areas",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Allocate 5% of the facility’s open land area for biodiversity conservation zones, including habitat restoration and protection",
+            "baseline": "",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Water Resource Management",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with regulatory water quality standards through continuous monitoring and improvement",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Air Quality & Pollution Control",
+        "targets": [
+          {
+            "target": "Invest in technologies to reduce air emissions by 25% from manufacturing processes",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Waste Reduction & Circular Economy",
+        "targets": [
+          {
+            "target": "To achieve a 10% reduction in waste generation by integration of waste reduction and recycling initiatives",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with all applicable product safety regulations and standards across every product line, with third-party audits for verification",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Legal Compliance & Environmental Advocacy",
+        "targets": [
+          {
+            "target": "Engage 500 community members annually through environmental education development programs",
+            "baseline": "",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Integrate sustainability into business strategy, allocate resources, and review environmental performance. Senior management is responsible to provide a safe and environmentally friendly workplace for their workers, employees and auditors."
+      },
+      {
+        "role": "Environment & Safety Team",
+        "duty": "Implement sustainable initiatives, conduct internal as well as external audits, and monitoring of environmental parameters in term of energy, water, and emissions. The EHS team shall monitor all physical and occupational health hazards in the workplace, report them to top management, and take corrective action in case of any issues. All local and national legal and regulatory requirements shall be closely monitored and complied with by the Environment and Safety team."
+      },
+      {
+        "role": "Operations & Maintenance Teams",
+        "duty": "Optimize energy use, manage emissions, and support water recycling and waste reduction. Section In-charges shall conduct trainings for their workers to promote good practices and maintain a clean, pollution-free environment."
+      },
+      {
+        "role": "Supply Chain & Procurement Teams",
+        "duty": "Source recycled materials, engage responsible vendors, and promote sustainable inputs. Regulatory compliance documents shall also be collected from supply chain partners and verified by the Environment and Safety Officer."
+      },
+      {
+        "role": "Employees",
+        "duty": "Follow environmental practices, conserve resources, and actively contribute to sustainability goals."
+      },
+      {
+        "role": "R&D & Engineering Teams",
+        "duty": "Innovate cleaner technologies, improve process efficiency, and reduce environmental impacts by comparing new and existing technologies with a focus on environmental parameters and their effects."
+      },
+      {
+        "role": "Legal Team",
+        "duty": "Ensure compliance with all regulatory requirements, monitor whether records are properly maintained, and provide support for certifications and audits."
+      }
+    ],
+    "monitoring": "Environmental Performance Metrics: Provide annual updates on energy efficiency improvements, greenhouse gas emissions reductions, and water conservation efforts.\n\nWaste and Chemical Management: Report annually on waste generation reduction initiatives, recycling rates, and advancements in chemical management practices to enhance safety, sustainability and waste reduction.\n\nCommunity Engagement and Advocacy: Regularly report on community engagement activities, environmental education programs, and collaborative efforts with stakeholders to advocate for sustainable practices and environmental policy support.\n\nSustainability Initiatives and Innovations: Provide updates on new sustainability initiatives implemented each year and their impact on environmental sustainability.",
+    "reviewMechanism": "To ensure continual progress and effectiveness of our sustainability efforts at Agrawal Metal Works, we have established the following robust review mechanism:\n\nAnnual Sustainability Assessment: Conduct yearly evaluations of environmental performance in key areas like energy, emissions, water, air quality, waste, biodiversity, customer safety, and community engagement.\n\nCross-Functional Review: Involve Environment, Health, Safety, Operations, and Quality Assurance departments for a comprehensive policy review.\n\nFeedback and Improvement: Gather feedback from stakeholders, develop actionable recommendations, and implement continuous improvement\n\nThis policy will be reviewed by the Environmental Manager on annual basis, to ensure accountability, transparency, and proactive management of environmental responsibilities at Agrawal Metal Works Pvt. Ltd."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/AMWL/1. Environmental Policy - AMWL.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/AMWL/1. Environmental Policy - AMWL.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12228,
+  "parsedAt": "2026-09-11T07:32:16.977Z"
+}

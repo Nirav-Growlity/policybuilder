@@ -1,0 +1,302 @@
+{
+  "id": "apackaging-group",
+  "name": "APackaging Group",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Green Environmental policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Apackaging Group LLC",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "California, USA",
+          "address": "1350 Mountain View Circle 91702 Azusa, CA United States of America",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Defiance,Ohio",
+          "address": "25925 Commerce Drive, Defiance, OH 43512",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Apackaging Group, we recognize our pivotal role in the cosmetic and beauty packaging industry and the responsibility it entails. As a global leader, we prioritize environmental stewardship for future generations. Our Green Environmental Policy embodies this commitment, outlining efforts to minimize our footprint and promote eco-friendly practices.\n\nWe integrate sustainability into core strategies, aiming to lead by example and inspire positive change. Through innovation, collaboration, and continuous improvement, we prioritize the health of the planet and communities.\n\nTogether, we strive to achieve business goals while building a more sustainable future. By fostering a culture of environmental consciousness, we aim to create lasting impacts that extend beyond our industry.",
+      "declaration": "At A Packaging Group, we are committed to minimizing our environmental footprint and promoting sustainable practices. Through innovation and collaboration, we strive to reduce waste, conserve resources, and prioritize eco-friendly materials in our cosmetic and beauty packaging solutions. Our dedication to environmental stewardship drives our actions and decisions.",
+      "scope": "This comprehensive policy applies to all Packaging Group sites globally, encompassing all employees, contractors, subcontractors, and all stakeholders aligned with us."
+    },
+    "focusAreas": [
+      "Energy Consumption and Green House Gases",
+      "Water",
+      "Air Pollution",
+      "Material, Chemical and Waste",
+      "Environmental Impacts from use of products",
+      "Environmental impacts from Product End-of-Life",
+      "Customer Health and Safety",
+      "Promotion of Sustainable Consumption"
+    ],
+    "qualitative": {
+      "Energy Consumption and Green House Gases": [
+        "Material sourcing: Prioritize eco-friendly materials to reduce energy consumption and greenhouse gas emissions in packaging production.",
+        "Renewable energy adoption: Transition production facilities to renewable energy sources, reducing greenhouse gas emissions from energy consumption.",
+        "Lightweight packaging: Optimize packaging design to minimize material usage and transportation energy, lowering greenhouse gas emissions.",
+        "Reduce energy consumption by implementing eco-friendly production processes, such as utilizing solar power and optimizing machinery to minimize waste.",
+        "Implement sustainable packaging solutions to decrease greenhouse gas emissions, prioritizing biodegradable materials like plant-based plastics and recyclable packaging options.",
+        "Enhance efficiency through innovative technologies, like energy-efficient lighting and machinery upgrades, to lessen the carbon footprint of cosmetic packaging manufacturing."
+      ],
+      "Water": [
+        "Efficient Manufacturing: Optimizing processes to reduce water usage throughout the manufacturing of cosmetic and beauty packaging.",
+        "Product Innovation: Researching and developing water-efficient packaging solutions to minimize environmental impact.",
+        "Rainwater Harvesting: Utilizing rainwater harvesting systems to collect and reuse rainwater for non-potable purposes within facility.",
+        "Recyclable Materials: Shift towards utilizing recyclable packaging materials in cosmetic production, decreasing water pollution caused by non-recyclable packaging materials like certain plastics.",
+        "Water-Efficient Processes: Implement water-efficient manufacturing processes in cosmetic packaging production, utilizing technologies like water recycling systems to minimize water consumption and waste.",
+        "Alternative Materials: Explore alternatives to traditional packaging materials, such as bamboo or paper-based options, to decrease water consumption in manufacturing and disposal processes."
+      ],
+      "Air Pollution": [
+        "VOC Reduction: Implementing technology to minimize volatile organic compound emissions from manufacturing processes and product packaging.",
+        "Employing integrated strategies aimed at mitigating noise, light, odor, and dust emissions across all stages of manufacturing operations and infrastructure.",
+        "Energy Efficiency: Implementing energy-saving measures in manufacturing processes to reduce emissions of pollutants such as SOx and NOx.",
+        "Reduce emissions of volatile organic compounds (VOCs) by optimizing production processes and adopting eco-friendly alternatives, such as water-based coatings for packaging materials.",
+        "Implement soundproofing measures to minimize noise pollution from manufacturing facilities, ensuring a quieter environment for nearby communities and wildlife habitats.",
+        "Introduce advanced filtration systems to capture particulate matter (PM) emissions, safeguarding air quality and reducing health risks for employees and neighbouring residents."
+      ],
+      "Material, Chemical and Waste": [
+        "Chemical Reduction: Implement measures to reduce the use of harmful chemicals in manufacturing, prioritizing eco-friendly alternatives.",
+        "Biodegradable Materials: Prioritize the adoption of biodegradable materials in packaging to mitigate environmental pollution and promote sustainability.",
+        "Hazardous and Non-Hazardous Waste Management: Implement stringent protocols for the proper handling and disposal of hazardous waste generated during manufacturing.",
+        "Reduce reliance on single-use plastics by implementing innovative packaging solutions sourced from sustainable materials like biodegradable plastics derived from plant-based sources.",
+        "Minimize the use of harmful chemicals in manufacturing processes by adopting eco-friendly alternatives and prioritizing natural ingredients for product formulations.",
+        "Implement a comprehensive waste management system to ensure efficient recycling and responsible disposal of packaging materials, aiming for zero landfill waste."
+      ],
+      "Environmental Impacts from use of products": [
+        "Recyclable Packaging Materials: Increasing the use of recyclable materials in cosmetic packaging to promote circularity and reduce environmental harm.",
+        "Sustainable Packaging Design: Implementing eco-friendly materials and minimizing waste in cosmetic packaging production for reduced environmental impact.",
+        "Reusable Packaging Solutions: Developing innovative reusable packaging options to minimize single-use plastic waste in the beauty industry.",
+        "Optimize Packaging Design: Develop packaging solutions that prioritize minimalistic designs, reducing material usage while maintaining functionality and aesthetic appeal.",
+        "Minimize Plastic Dependency: Transition to eco-friendly packaging materials, reducing reliance on single-use plastics, such as PET bottles and PVC containers.",
+        "Promote Sustainable Sourcing: Encourage the procurement of renewable and responsibly sourced materials like bamboo, glass, or biodegradable alternatives for packaging production."
+      ],
+      "Environmental impacts from Product End-of-Life": [
+        "Sustainable Materials: Prioritize the use of biodegradable and recyclable materials in cosmetic packaging to mitigate environmental impacts.",
+        "Emissions Control: Employ eco-friendly manufacturing processes to minimize emissions and pollution associated with cosmetic packaging production.",
+        "Hazardous Material Elimination: Eliminate the use of hazardous substances in cosmetic packaging to prevent environmental contamination upon disposal.",
+        "Hazardous Waste Reduction: Reduce hazardous waste through innovative recycling initiatives, minimizing the environmental footprint of discarded cosmetic packaging materials like plastic tubes and glass jars.",
+        "Sustainable Disposal Practices: Implement sustainable disposal practices to limit non-hazardous waste, ensuring responsible handling of by-products from beauty product packaging production processes.",
+        "Emission Control: Enhance emission control technologies to mitigate air pollutants released during the manufacturing of cosmetic packaging components, promoting cleaner production methods.",
+        "Accident Prevention: Strengthen accident prevention protocols to minimize the risk of pollution incidents, safeguarding ecosystems from potential harm caused by mishaps in packaging material manufacturing."
+      ],
+      "Customer Health and Safety": [
+        "Label Transparency: Ensuring all cosmetic packaging clearly discloses ingredients to empower informed consumer choices.",
+        "Sustainable Materials: Prioritizing eco-friendly packaging materials to reduce environmental impact and safeguard consumer health.",
+        "Product Safety Testing: Implementing rigorous testing protocols to guarantee the safety of cosmetic packaging materials and formulations.",
+        "Chemical-Free Formulations: Committing to using non-toxic substances in packaging to safeguard both consumer health and the environment.",
+        "Reduce the use of harmful chemicals in packaging materials to safeguard customer well-being, prioritizing non-toxic alternatives like plant-based inks.",
+        "Enhance product labeling clarity to ensure consumers can make informed choices, highlighting ingredients and potential allergens prominently on packaging.",
+        "Implement sustainable packaging solutions to minimize environmental impact, such as biodegradable or recyclable materials like bamboo or glass containers."
+      ],
+      "Promotion of Sustainable Consumption": [
+        "Biodegradable materials adoption: Shift towards using biodegradable materials in cosmetic packaging to minimize environmental impact.",
+        "Minimalist packaging design: Optimize packaging design to reduce material usage and promote eco-conscious consumption in the beauty industry.",
+        "Carbon footprint reduction: Implement measures to minimize the carbon footprint associated with cosmetic packaging manufacturing processes.",
+        "Reduce Single-Use Plastic: Phase out single-use plastic packaging, favouring biodegradable alternatives like plant-based plastics or recycled materials to minimize environmental impact.",
+        "Encourage Refillable Options: Advocate for refillable packaging solutions, allowing customers to reuse containers, reducing waste generation and promoting a circular economy model.",
+        "Promote Eco-Friendly Materials: Highlight the use of sustainable materials such as bamboo, glass, or aluminium, emphasizing their recyclability and lower ecological footprint."
+      ],
+      "Action Framework": [
+        "APG reduces its environmental footprint by optimizing production energy use. Initiatives include upgrading to energy‑efficient equipment and lighting, and implementing power-saving measures on injection molding lines to enhance energy performance.",
+        "APG supports closed-loop material cycles by increasing the use of reusable containers, supplying options with post-consumer recycled (PCR) content, and engineering packaging formats that minimize waste and simplify recyclability.",
+        "APG integrates sustainable materials such as FSC‐certified recycled paper, plant-based polymers, and biodegradable tubes (e.g. sugarcane‑based designs), reducing reliance on virgin plastics while maintaining luxury packaging aesthetics."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption and Green House Gases",
+        "targets": [
+          {
+            "target": "reduce energy consumption in cosmetic packaging manufacturing by 15%",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 20% decrease in GHG emissions from beauty packaging production",
+            "baseline": "2023 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Improve energy efficiency in cosmetic packaging facilities by 10%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Water",
+        "targets": [
+          {
+            "target": "Reduce water usage in cosmetic packaging manufacturing by 15%",
+            "baseline": "2023 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement water recycling systems, aiming for 20% reduction in freshwater consumption",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 10% decrease in water intensity per unit of production in beauty packaging",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Reduce air pollutant emissions by 15%",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 20% decrease in greenhouse gas emissions",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce particulate matter emissions by 25%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Material, Chemical and Waste",
+        "targets": [
+          {
+            "target": "Reduce material usage in packaging by 15%",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement eco-friendly packaging materials for 70% of products",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from use of products",
+        "targets": [
+          {
+            "target": "Increase the use of recycled materials in packaging by 20%",
+            "baseline": "2023 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 25% reduction in single-use plastics in packaging",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental impacts from Product End-of-Life",
+        "targets": [
+          {
+            "target": "Achieve a 20% increase in recyclability of packaging materials",
+            "baseline": "2023 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Decrease landfill contributions by 25%",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Ensure a 20% reduction in customer complaints regarding product safety",
+            "baseline": "2023 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve a 10% decline in product recalls due to health and safety concerns",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement measures to eliminate 25% of hazardous materials in product packaging",
+            "baseline": "2023 levels",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Promotion of Sustainable Consumption",
+        "targets": [
+          {
+            "target": "Ensure that 30% of packaging materials are sourced from renewable or sustainable sources",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement reusable packaging solutions for 25% of products",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce the use of single-use plastics in packaging by 25%",
+            "baseline": "2023 figures",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Sustainability Office",
+        "duty": "Oversees the implementation of APG’s sustainability policies, ensures compliance with environmental and governance regulations, and publishes annual ESG performance reports."
+      },
+      {
+        "role": "Sustainability Task Force",
+        "duty": "A cross-functional team consisting of operations, design, and supply chain experts monitors daily execution of ESG initiatives, focusing on energy efficiency, waste reduction, and recyclable packaging innovations."
+      },
+      {
+        "role": "Employees & Innovation Teams",
+        "duty": "All employees receive regular training on responsible manufacturing and sustainable packaging design, with innovation labs encouraging new eco-friendly product concepts."
+      }
+    ],
+    "monitoring": "Comprehensive tracking of key environmental performance indicators (KPIs) including energy consumption, water usage, waste generation, greenhouse gas emissions, and raw material utilization.\n\nThorough documentation of adherence to pertinent environmental regulations and standards at local, national, and international levels.\n\nTransparent reporting of any incidents, non-compliance instances, or fines incurred during the reporting period along with corrective actions taken.\n\nHighlighting of environmental initiatives and programs aimed at reducing environmental impacts and fostering sustainability within our manufacturing processes.\n\nSpecific details regarding projects, campaigns, or collaborations focused on minimizing resource consumption, optimizing waste management, and enhancing overall environmental performance.\n\nOverview of investments directed towards technological advancements, infrastructure enhancements, and process optimizations to bolster environmental sustainability efforts.\n\nDocumentation of research and development initiatives targeting eco-friendly materials, innovative product designs, and sustainable manufacturing practices.\n\nDescription of employee engagement strategies and training programs designed to promote environmental awareness, in still sustainability practices, and ensure compliance with environmental regulations.\n\nInstances of employee-led initiatives or participation in environmental improvement projects to foster a culture of sustainability within the organization.\n\nEngagement activities with stakeholders including clients, suppliers, regulatory bodies, and local communities to address environmental concerns, solicit feedback, and foster collaboration towards sustainable solutions.\n\nHighlights of collaborative endeavours or partnerships aimed at advancing environmental sustainability goals and fostering shared responsibility.\n\nClear articulation of specific environmental targets and objectives established by \"A Packaging Group\" to drive continuous improvement and gauge progress over time.\n\nReporting on progress towards achieving set targets, including challenges encountered and strategies employed to overcome them.\n\nAcknowledgment of any industry accolades, certifications, or awards received for exemplary environmental performance, innovation, or commitment to sustainability.\n\nRecognition from industry associations, governmental entities, or other organizations for outstanding contributions towards environmental stewardship.\n\nAPG’s sustainability and ESG policies are published on its official website and included in annual sustainability reports, ensuring easy access for stakeholders.\n\nEmployees are regularly informed of policy updates through internal bulletins, training, and workshops, with clear expectations to integrate ESG practices into daily operations.\n\nAPG openly shares its certifications (e.g., ISO Certificates, EcoVadis Platinum, APR Design® recognition) and reports performance metrics to build stakeholder trust.\n\nContinuous improvement is foundational to our Green Environment policy at A Packaging Group within the cosmetic and beauty packaging industry. We understand the critical importance of consistently reassessing our practices to minimize environmental impact while meeting the evolving needs of our customers and stakeholders. Through ongoing evaluation of our processes, materials, and technologies, we aim to identify areas for enhancement and innovation. This includes investing in research and development to explore eco-friendly alternatives, optimizing energy usage, and reducing waste across all stages of production and distribution.\n\nMoreover, we are committed to fostering a culture of sustainability within our organization, empowering employees to contribute ideas and initiatives for improvement. By embracing continuous improvement as a core principle, we aspire to not only meet but exceed environmental standards, setting new benchmarks for sustainability in the cosmetic and beauty packaging industry.",
+    "reviewMechanism": "The Sustainability Office at APG is responsible for monitoring the implementation and annually review of green environmental policy. This policy is reviewed annually to ensure their effectiveness, alignment with global ESG standards, and relevance to emerging industry trends. Any updates or revisions are communicated promptly to all stakeholders, reflecting operational improvements, regulatory changes, and evolving sustainability challenges."
+  },
+  "sourcePath": "Policies - Kenal/APackaging Group/1. Green Environmental policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/APackaging Group/1. Green Environmental policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 22113,
+  "parsedAt": "2026-09-11T07:20:21.750Z"
+}

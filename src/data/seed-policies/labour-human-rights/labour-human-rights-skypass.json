@@ -1,0 +1,367 @@
+{
+  "id": "labour-human-rights-skypass",
+  "name": "Skypass",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from Fair Labour & Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Skypass Travel Inc. (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Skypass is committed to upholding the highest standards of labor practices and human rights across all operations. We respect the dignity, equality, and rights of every employee, contractor, and stakeholder. This policy ensures compliance with national and international labor laws, promotes safe and inclusive workplaces, prohibits child and forced labor, and fosters a culture of fairness, respect, and equal opportunity for all.\n\nThe purpose of this policy is to establish a clear framework for promoting and safeguarding labour and human rights throughout Skypass Travel’s operations and value chain. The policy aims to:\n\nProtect employees from any form of forced, exploitative, or discriminatory practices.\n\nEnsure safe, healthy, and equitable working conditions for all.\n\nEncourage fair remuneration, open dialogue, and employee participation in decision-making.\n\nGuide suppliers and partners in adopting ethical labour standards aligned with global best practices.",
+      "declaration": "Skypass Travel respects and supports the fundamental human rights of every individual and is dedicated to maintaining a work environment free from abuse, coercion, and inequality.\n\nWe prohibit all forms of forced or compulsory labour, child labour, discrimination, and harassment. Employment at Skypass Travel is based solely on merit, competence, and fairness. We ensure that all employees have access to a safe, inclusive, and empowering workplace with freedom of expression and association.",
+      "scope": "This Fair Labour & Human Rights Policy applies to all operations, business functions, and services of Skypass Travel Inc. (Group) across all locations worldwide, including corporate offices, registered offices, branch offices, subsidiaries, joint ventures, and all associated supply chain activities. It is applicable to all employees, workers, contractors, and stakeholders engaged with Skypass Travel Inc. (Group), directly or indirectly, and requires strict compliance and accountability at every organizational level."
+    },
+    "focusAreas": [
+      "Working Conditions and Hours",
+      "Health, Safety, and Wellbeing",
+      "Non-Discrimination and Diversity",
+      "Freedom of Association and Employee Dialogue",
+      "Employee Development and Engagement",
+      "Grievance and Whistleblower Protection",
+      "Child Labor, Forced Labor, and Human Trafficking"
+    ],
+    "qualitative": {
+      "Working Conditions and Hours": [
+        "We are dedicated to upholding labor standards throughout all operations by reinforcing internal policies and implementing effective monitoring and compliance mechanisms.",
+        "Annual employee satisfaction surveys will be conducted to assess overall working conditions and identify areas for improvement.",
+        "We are willing to promote flexible work schedules that enhance employee satisfaction and work-life balance.",
+        "We will ensure transparent communication of leave, attendance, and overtime policies across all departments.",
+        "We aim to maintain a fair workload distribution to prevent fatigue and burnout.",
+        "All employees will be provided with comprehensive healthcare benefits, including medical insurance and mental health support."
+      ],
+      "Health, Safety, and Wellbeing": [
+        "We will comply with all applicable occupational health and safety laws, regulations, and industry standards.",
+        "We are willing to foster a preventive safety culture through ongoing awareness and training programs.",
+        "We will promote holistic employee wellbeing, encompassing physical, mental, and emotional health.",
+        "We will conduct regular risk assessments and implement preventive measures to eliminate hazards in the workplace.",
+        "We will promote a culture of reporting unsafe conditions, near-misses, and incidents without fear of retaliation.",
+        "We aim to establish proactive stress management and ergonomic practices to enhance workplace comfort.",
+        "We will conduct bi-annual safety and emergency response training for all employees."
+      ],
+      "Non-Discrimination and Diversity": [
+        "We aim to foster an inclusive workplace that values diversity, equity, and mutual respect across all levels of the organization.",
+        "We will maintain a zero-tolerance approach toward any form of discrimination, harassment, or bullying.",
+        "We will strengthen diversity in leadership roles and decision-making positions across all levels.",
+        "We will establish clear reporting channels for complaints, ensuring confidentiality, protection from retaliation, and timely resolution.",
+        "We aim to enforce gender-neutral hiring, evaluation, and promotion practices.",
+        "We will conduct annual training sessions on diversity, inclusion, and unconscious.",
+        "We will promote equal opportunity in recruitment, promotions, and all employment practices, monitored through periodic audits."
+      ],
+      "Freedom of Association and Employee Dialogue": [
+        "We are willing to encourage open communication between management and employees at every level.",
+        "We will promote a safe and respectful environment for employees to voice opinions or grievances.",
+        "We aim to strengthen feedback mechanisms through regular consultations and surveys.",
+        "We will conduct regular town hall meetings to ensure transparency and alignment across all levels of the organization.",
+        "We aim to cover all employees under collective bargaining agreements to promote fair representation and participation.",
+        "We will implement an employee representative election process, ensuring all employees have the opportunity to participate and be represented."
+      ],
+      "Employee Development and Engagement": [
+        "We aim to foster a transparent, fair, and merit-based career development culture across all levels of the organization.",
+        "We will ensure equitable access to training and career development opportunities for all employees.",
+        "We aim to recognize, appreciate, and celebrate employee contributions and achievements regularly.",
+        "We will provide equal opportunities for promotions, internal mobility, and skill development for all employees.",
+        "We will implement structured training, mentorship, and upskilling programs to support career growth and succession planning."
+      ],
+      "Grievance and Whistleblower Protection": [
+        "We are willing to strengthen trust and transparency by maintaining secure and accessible grievance channels.",
+        "We will promote a culture of ethical reporting, ensuring fairness and accountability.",
+        "We aim to guarantee anonymity and non-retaliation for all whistleblowers and complainants.",
+        "We are willing to conduct annual audits to review the effectiveness and transparency of grievance redressal mechanisms."
+      ],
+      "Child Labor, Forced Labor, and Human Trafficking": [
+        "We have a zero-tolerance approach toward child labor, forced labor, and human trafficking in all operations and supply chains.",
+        "We will ensure compliance with all national and international labor laws and standards, including ILO conventions.",
+        "We will conduct regular risk assessments to identify potential exposure in our operations and supply chains.",
+        "We will carry out regular internal audits and assessments to ensure compliance with labor laws and ethical standards.",
+        "We will implement monitoring and auditing systems to identify and remediate any violations promptly."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Working Conditions and Hours",
+        "targets": [
+          {
+            "target": "We will limit average working hours to ≤48 hours per week (excluding voluntary overtime)",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure at least 80% participation in annual employee satisfaction surveys to assess working conditions and identify improvement areas.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "Cover 100% of employees with comprehensive healthcare benefits, including medical insurance and mental health support",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% compliance with all applicable labor laws and regulations across operations",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We are willing to introduce flexible or hybrid work options for at least 20% of eligible employees",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Health, Safety, and Wellbeing",
+        "targets": [
+          {
+            "target": "We aim to maintain zero workplace accidents annually",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will ensure 40% of employees receive health, safety, and emergency response training annually",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim for 100% of critical safety equipment to be tested and certified annually",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to achieve at least 40% employee satisfaction in annual well-being surveys",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Non-Discrimination and Diversity",
+        "targets": [
+          {
+            "target": "We aim for zero confirmed incidents of workplace discrimination or harassment",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to increase the representation of women in the total workforce to 10%",
+            "baseline": "baseline 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will ensure 100% of employees complete annual training on diversity, inclusion, and anti-harassment policies",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to increase representation of underrepresented groups by 20%",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Freedom of Association and Employee Dialogue",
+        "targets": [
+          {
+            "target": "We aim to conduct at least one annual town hall meeting to ensure transparency, alignment, and open communication across all levels of the organization.",
+            "baseline": "",
+            "deadline": ""
+          },
+          {
+            "target": "We aim to cover 100% of employees under collective bargaining agreements",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to implement an employee representative election process covering 100% of employees",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to achieve 90% awareness among employees regarding their rights to collective participation",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will ensure 100% resolution of employee concerns within 30 working days",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Employee Development and Engagement",
+        "targets": [
+          {
+            "target": "We aim for 100% of employees to complete annual career development and skills enhancement training",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim to maintain zero instances of biased or non-transparent promotion decisions",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will ensure 100% of employees have access to annual performance reviews and personalized development plans",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will provide a minimum of 7 training hours per employee per year",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Grievance and Whistleblower Protection",
+        "targets": [
+          {
+            "target": "We will ensure 100% employee awareness of grievance and whistleblower procedures",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "We aim to achieve 100% closure of all registered grievances within 45 days of receipt.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Child Labor, Forced Labor, and Human Trafficking",
+        "targets": [
+          {
+            "target": "We will conduct due diligence to ensure 100% of suppliers and third parties are free from child labor and forced labor practices",
+            "baseline": "baseline year 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will provide regular training to 100% of employees to raise awareness on labor rights, ethical recruitment, and reporting mechanisms",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We aim for zero confirmed incidents of child labor, forced labor, or human trafficking across operations and supply chains",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will ensure 100% of reported labor rights violations are reviewed and resolved within 30 days",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "We will conduct one comprehensive risk assessment annually to identify potential exposure in operations and supply chains.",
+            "baseline": "",
+            "deadline": "annually"
+          },
+          {
+            "target": "We will perform one internal assessment annually to verify compliance with labor laws, ethical standards, and company policies.",
+            "baseline": "",
+            "deadline": "annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Executive Leadership Team",
+        "duty": "The Executive Leadership Team is responsible for ensuring this policy aligns with corporate strategy and global human rights standards."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "The Sustainability & Compliance Team oversees policy implementation, conducts due diligence, and reports findings to management."
+      },
+      {
+        "role": "Department Heads and HR Managers",
+        "duty": "Department Heads and HR Managers are accountable for enforcing the policy in recruitment, compensation, and workplace practices."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Approve and endorse this policy and ensure adequate resources for its implementation."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Review annual human rights reports and ensure remedial actions are taken where necessary."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Lead due diligence, training, and monitoring of human rights initiatives."
+      },
+      {
+        "role": "Sustainability & Compliance Team",
+        "duty": "Maintain documentation and report performance metrics to leadership."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Review this policy annually"
+      },
+      {
+        "role": "HR Head",
+        "duty": "Enforce equitable hiring, wage, and promotion practices."
+      },
+      {
+        "role": "HR Head",
+        "duty": "Manage the grievance and remediation processes confidentially and effectively."
+      },
+      {
+        "role": "Department Heads / Supervisors",
+        "duty": "Ensure day-to-day compliance and promote a respectful workplace culture."
+      },
+      {
+        "role": "Department Heads / Supervisors",
+        "duty": "Respond promptly to employee concerns and escalate issues where necessary."
+      },
+      {
+        "role": "Employees",
+        "duty": "Uphold respect and fairness in all interactions."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report violations or unethical behaviour through designated grievance channels."
+      },
+      {
+        "role": "Suppliers & Contractors",
+        "duty": "Adhere to Skypass Travel’s Supplier Code of Conduct and maintain labour and human rights compliance in their operations."
+      }
+    ],
+    "monitoring": "Regular communication between departments, employees, and suppliers will ensure that the principles of this policy are consistently applied across all business operations.\n\nSkypass Travel will publish an annual Human Rights and Labour Compliance Report that outlines progress toward 2030 goals, audit results, and key performance indicators. Feedback from employees, audits, and stakeholder engagement will inform continuous improvement actions. The company will implement corrective measures, update training programs, and strengthen supplier oversight to prevent and mitigate any potential violations.",
+    "reviewMechanism": "This policy will be reviewed annually or earlier if there are major changes in regulations, operations, or organizational structure by HR Head. Progress toward labour and human rights targets will be monitored each year, and revisions will be communicated to all employees, partners, and stakeholders to ensure alignment and accountability.\n\nNext Review Date: 01-04-2026"
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Skypass/Fair Labour & Human Rights Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Skypass/Fair Labour & Human Rights Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 14485,
+  "parsedAt": "2026-09-11T07:16:18.199Z"
+}

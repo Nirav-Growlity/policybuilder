@@ -1,0 +1,393 @@
+{
+  "id": "ethics-amlrs",
+  "name": "AMLRS",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethics and Integrity Policy_v1507.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "THE AML RIGHTSOURCE GROUP",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "United States",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Canada",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Germany",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Poland",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Austria",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Switzerland",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "United Kingdom",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Denmark",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Bulgaria",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "India",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Singapore",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Hong Kong",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Brazil",
+          "address": "",
+          "primaryFunction": "Operations"
+        },
+        {
+          "location": "Malaysia",
+          "address": "",
+          "primaryFunction": "Operations"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "THE AML RIGHTSOURCE GROUP of companies (referred to herein as “AMLRS”) is committed to upholding the highest standards of ethics and integrity in all aspects of its operations. As a leader in financial crime compliance, the group recognizes the critical importance of fostering a culture of transparency, accountability, and ethical behavior. We are dedicated to ensuring that our business practices are aligned with the principles of fairness, honesty, and legal compliance. This approach underpins our mission to provide effective solutions to clients while safeguarding against financial crime and ensuring adherence to regulatory frameworks. Our commitment to ethics and integrity is reflected in the actions of our leadership, employees, and partners, who are expected to embody these values in every decision and interaction. This framework supports our goal to continually strengthen trust and maintain the reputation of THE AML RIGHTSOURCE GROUP as a trusted leader in the industry.",
+      "declaration": "The purpose of this policy is to establish a clear framework for promoting ethical conduct, ensuring integrity in decision-making, and fostering compliance with legal and regulatory standards, reinforcing THE AML RIGHTSOURCE GROUP’s commitment to combating financial crime and maintaining organizational trustworthiness.",
+      "scope": "This Ethics and Integrity Policy applies to all operations, legal entities, offices, partner offices, registered business addresses, remote work locations, and other workplaces of the AML RightSource Group of Companies (\"AMLRS\"), including all subsidiaries, affiliates, and controlled entities operating in the United States, Canada, Germany, Poland, Austria, Switzerland, the United Kingdom, Denmark, Bulgaria, India, Singapore, Hong Kong, Brazil, and Malaysia, as well as any future locations where AMLRS conducts business.\n\nThe policy applies irrespective of whether business activities are carried out from AMLRS-owned or leased premises, partner offices, co-working spaces, client locations, registered legal addresses, or remote work environments. It covers all employees, including full-time, part-time, temporary, fixed-term, and contract employees, interns, consultants, agency workers, and management. The policy also extends to suppliers, vendors, contractors, service providers, business partners, and any other third parties engaged in providing products or services on behalf of AMLRS.\n\nAll individuals and entities covered by this policy are expected to comply with its requirements and uphold AMLRS's commitment to conducting business ethically, honestly, transparently, and with integrity. This includes complying with applicable laws and regulations, preventing bribery, corruption, fraud, conflicts of interest, and other unethical conduct, and maintaining high standards of professional and responsible business conduct throughout AMLRS's global operations."
+    },
+    "focusAreas": [
+      "Prevention of Corruption and Bribery",
+      "Information Security",
+      "Managing Conflicts of Interest",
+      "Fraud Prevention and Detection",
+      "Anti-Money Laundering"
+    ],
+    "qualitative": {
+      "Prevention of Corruption and Bribery": [
+        "Foster a culture of integrity and ethical conduct across all levels of the organization.",
+        "Promote accountability and transparency in business operations and stakeholder engagements.",
+        "Uphold compliance with global standards and regulations to prevent corruption and bribery.",
+        "Encourage ethical decision-making and fairness in all professional interactions.",
+        "Strengthen trust and credibility by prioritizing honesty and ethical business practices.",
+        "We will implement regular internal audits to minimize the risk of corruption and bribery across all business areas.",
+        "Our anti-bribery framework will be reviewed annually to ensure compliance with global anti-corruption regulations and uphold ethical business practices.",
+        "We will enforce rigorous due diligence processes for third-party partners to ensure alignment with our anti-bribery policies.",
+        "Engaging, scenario-based training will be provided to employees, helping them recognize and prevent bribery and corruption.",
+        "A secure, anonymous reporting platform has been developed via the AMLRS Ethics Portal, empowering employees to report suspected bribery incidents without fear of retaliation."
+      ],
+      "Information Security": [
+        "Foster a culture of awareness and responsibility for protecting sensitive information at all organizational levels.",
+        "Promote compliance with legal and regulatory requirements to safeguard data confidentiality, integrity, and availability.",
+        "Strengthen trust by prioritizing transparency and accountability in data protection practices.",
+        "Encourage vigilance and ethical handling of information in day-to-day operations.",
+        "Ensure alignment with global standards to mitigate risks related to data security threats.",
+        "We will conduct detailed, regular audits to ensure that data protection measures are implemented correctly and maintained consistently across all operations.",
+        "Our information security protocols will be reviewed and updated annually to align with the latest cybersecurity advancements and emerging risks.",
+        "Comprehensive, tailored cybersecurity training will be provided to employees, ensuring they are equipped to protect sensitive data effectively.",
+        "We will implement best practice multi-factor authentication (MFA) methods to enhance secure access to sensitive systems and data.",
+        "Our strategy includes collaborating with cybersecurity experts to conduct periodic reviews, continually strengthening our data protection practices."
+      ],
+      "Managing Conflicts of Interest": [
+        "Maintain transparency and fairness in all professional relationships and decision-making processes.",
+        "Foster an organizational culture that prioritizes objectivity over personal interests.",
+        "Encourage employees to disclose any potential conflicts to uphold trust and integrity.",
+        "Promote accountability by ensuring professional responsibilities remain unaffected by external influences.",
+        "Strengthen ethical standards to prevent situations that may compromise impartiality.",
+        "We will identify and address conflicts of interest through self-assessments and transparent reporting, ensuring ethical decisions.",
+        "We will establish clear guidelines to help employees identify and avoid situations that may lead to conflicts of interest.",
+        "A mandatory disclosure process will be implemented, requiring employees to report any personal interests that could compromise professional decisions.",
+        "Training programs will educate employees on recognizing, mitigating, and managing potential conflicts of interest effectively.",
+        "A confidential Ethics Portal has been introduced, enabling employees to seek advice or report concerns related to conflicts of interest without fear of reprisal."
+      ],
+      "Fraud Prevention and Detection": [
+        "Foster a workplace environment that values honesty, transparency, and ethical behaviour.",
+        "Promote accountability and vigilance in identifying and addressing potential fraud risks.",
+        "Uphold compliance with laws and standards to ensure fraud prevention across all operations.",
+        "Build trust by emphasizing integrity and fairness in business practices.",
+        "Strengthen awareness to create a proactive approach toward fraud detection and reporting.",
+        "We will implement robust internal controls and monitoring systems to detect and prevent fraudulent activities effectively.",
+        "Annual fraud risk assessments will be conducted to identify vulnerabilities and strengthen preventive measures.",
+        "Employees will receive targeted training to recognize, report, and mitigate fraudulent activities in their roles.",
+        "A secure whistleblowing system has been introduced via the AMLRS Ethics Portal, ensuring employees can report suspected fraud confidentially and without retaliation.",
+        "Collaboration with external auditors and forensic experts will enhance fraud detection and response strategies."
+      ],
+      "Anti-Money Laundering": [
+        "Promote a commitment to preventing money laundering in all business operations and financial transactions.",
+        "Uphold strict compliance with international anti-money laundering laws and regulations.",
+        "Foster a culture of vigilance, ensuring that suspicious activities are promptly identified and addressed.",
+        "Encourage transparency and accountability in financial practices to deter money laundering risks.",
+        "Strengthen relationships with partners and stakeholders by ensuring shared responsibility for combating money laundering.",
+        "We will implement stringent AML controls to detect and prevent illicit financial activities across all business operations.",
+        "Regular risk assessments will identify vulnerabilities in transactions and strengthen safeguards against money laundering.",
+        "Employees will undergo specialized training to recognize and report suspicious activities in compliance with AML regulations.",
+        "A secure, centralized reporting system will be established to ensure timely reporting of suspicious transactions to relevant authorities.",
+        "Collaborations with regulatory bodies will ensure our AML practices remain aligned with evolving global standards."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Reach a 95% success rate in anti-bribery compliance checks",
+            "baseline": "Assessment levels from 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Sustain 100% compliance with anti-corruption guidelines",
+            "baseline": "2022 benchmarks",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% employee participation in anti-bribery training programs",
+            "baseline": "Baseline in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain a 0 confirmed corruption cases",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Achieve a 95% security compliance rate in annual audits",
+            "baseline": "Status in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain full compliance with information security standards",
+            "baseline": "Baseline in 2022",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% engagement in employee participation in information security training",
+            "baseline": "Participation levels from 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce potential information security incidents by 40%",
+            "baseline": "Baseline incident rate in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Uphold a 0% confirmed information security breaches",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Managing Conflicts of Interest",
+        "targets": [
+          {
+            "target": "Achieve a 90% compliance rate in annual conflict of interest declarations",
+            "baseline": "2022 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% adherence to conflict-of-interest guidelines",
+            "baseline": "2022 benchmarks",
+            "deadline": ""
+          },
+          {
+            "target": "Train 100% of employees on conflict-of-interest awareness",
+            "baseline": "2022 levels",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce reported conflict-of-interest cases by 50%",
+            "baseline": "Baseline identified in 2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention and Detection",
+        "targets": [
+          {
+            "target": "Achieve a 90% fraud detection rate in internal audits",
+            "baseline": "Detection capabilities in 2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% compliance with fraud prevention guidelines",
+            "baseline": "Established in 2022",
+            "deadline": ""
+          },
+          {
+            "target": "Achieve 100% employee participation in fraud awareness training",
+            "baseline": "2022 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 0 confirmed fraud cases",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with anti-money laundering guidelines",
+            "baseline": "",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% employee participation in money laundering awareness training",
+            "baseline": "2022 baseline",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero money laundering cases every year",
+            "baseline": "2022 reports",
+            "deadline": "Every year"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Responsible for implementing this policy and ensuring all Partners and employees are aware of and adhere to this Policy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Foster a culture of ethical decision-making at all levels."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Integrate governance practices into the company’s strategy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Encourage the allocation of, and deploy available resources, for implementing the Ethics and Integrity Policy."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Regularly assess compliance across departments and take corrective actions when necessary."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Encourage that governance-related metrics be included in employee performance reviews for executives and senior leaders."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Maintain open communication with stakeholders about governance practices."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Ensure the Ethics and Integrity Policy aligns with organizational objectives."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Conduct an annual review to assess policy effectiveness."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Maintain confidential, accessible reporting systems."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Identify and manage compliance risks across the organization."
+      },
+      {
+        "role": "Lead Compliance Officer",
+        "duty": "Lead internal audits to evaluate governance and compliance across departments."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to the Ethics and Integrity Policy and ethical standards."
+      },
+      {
+        "role": "Employees",
+        "duty": "Report concerns or violations through internal channels."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participate in governance-related training programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participate in internal audits and assessments."
+      },
+      {
+        "role": "Employees",
+        "duty": "Take initiative to identify and address governance-related issues."
+      },
+      {
+        "role": "Employees",
+        "duty": "Safeguard confidential information and report any breaches."
+      },
+      {
+        "role": "Employees",
+        "duty": "Encourage colleagues to uphold governance standards and ethical practices."
+      }
+    ],
+    "monitoring": "Regular and transparent reporting practices are essential for tracking progress, identifying potential risks, and maintaining accountability in ethics and governance. AMLRS follows these reporting procedures:\n\nAnnual Reviews: We conduct annual evaluations of our ethics performance, collecting data on key metrics defined in our governance framework.\n\nInternal Audits: Regular internal audits are conducted to ensure compliance with ethical standards, evaluate the effectiveness of governance systems, and identify opportunities for improvement.\n\nStakeholder Communication: We engage with stakeholders, including employees, customers, regulators, and local communities, to gather insights, address concerns, and transparently communicate our governance progress and initiatives.\n\nTHE AML RIGHTSOURCE GROUP is dedicated to continuously enhancing our ethics and integrity standards. We regularly review and update our Ethics and Integrity Policy, integrating best practices, new technologies, and stakeholder feedback. Our efforts prioritize promoting ethical conduct, transparency, and accountability across all operations.\n\nWe actively seek innovative solutions, improve decision-making processes, and engage employees through targeted training. By fostering a culture of integrity and ethical behavior, we aim to exceed regulatory expectations and uphold the highest standards of business ethics.",
+    "reviewMechanism": "The Lead Compliance Officer will review the Ethics and Integrity Policy annually, and any updates will be communicated as necessary."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/AMLRS/3. Ethics and Integrity Policy_v1507.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/AMLRS/3. Ethics and Integrity Policy_v1507.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 22623,
+  "parsedAt": "2026-09-11T07:06:34.348Z"
+}

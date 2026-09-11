@@ -1,0 +1,121 @@
+{
+  "id": "living-wage-permeshwar-creations-pvt-ltd",
+  "name": "PERMESHWAR CREATIONS PVT. LTD",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from Policy on Living Wage.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Permeshwar Creations",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "PK Enterprises",
+          "address": "C-19, Hoisery Complex, Phase II, Noida, U.P- 201301.India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Rishita Fashion",
+          "address": "Plot no. 1102, Phase III, GIDC,Vapi, Valsad, Gujrat- 396195",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Permeshwar Creations is a leading apparel manufacturing company in India, dedicated to ensuring the well-being and fair compensation of all our employees. We believe that every employee deserves a wage that meets their basic needs and supports a dignified standard of living.",
+      "declaration": "Permeshwar Creations is committed to paying a living wage that supports the well-being and dignity of our employees. We recognize the importance of fair compensation in enhancing the quality of life for our workforce and contributing to sustainable development. This policy outlines our commitments, targets, and objectives related to paying a living wage across all operations.",
+      "scope": "This policy applies to all operations at Permeshwar Creations, including our manufacturing facilities, transportation, and product lifecycle management. It is applicable to all workers, employees, suppliers, and stakeholders involved in our operations. The policy is effective across the following locations:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "We believe that every employee deserves a wage that meets their basic needs and supports a dignified standard of living. This policy reflects our commitment to paying a living wage to all employees, ensuring they can afford essentials such as food, housing, healthcare, education, and transportation.\n\nEnsure that all employees receive a living wage that is at least 20% higher than the current statutory minimum wage by the end of 2025.\n\nWe will engage in regular wage assessments, considering inflation, cost of living, and economic conditions to maintain fair compensation for our employees.\n\nThis policy is applicable to all workers, employees, suppliers, and stakeholders involved in our operations.\n\nBelow are our commitments and targets towards ensuring a living wage for all employees, with 2022 as the baseline year."
+    },
+    "focusAreas": [
+      "Living Wage Target",
+      "Continuous Commitment to a Living Wage",
+      "Principles and Engagements"
+    ],
+    "qualitative": {
+      "Continuous Commitment to a Living Wage": [
+        "Even after achieving the living wage target, Permeshwar Creations is dedicated to continuously reviewing and adjusting wages to ensure they remain above the living wage threshold.",
+        "We will engage in regular wage assessments, considering inflation, cost of living, and economic conditions to maintain fair compensation for our employees."
+      ],
+      "Principles and Engagements": [
+        "Permeshwar Creations is committed to the principle that fair compensation is a fundamental right of all employees.",
+        "We will actively engage with suppliers and partners to promote living wage practices throughout our supply chain, ensuring that fair compensation extends beyond our direct operations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Target",
+        "targets": [
+          {
+            "target": "Permeshwar Creations is committed to achieving 100% compliance with paying a living wage to all employees.",
+            "baseline": "2022",
+            "deadline": "2025"
+          },
+          {
+            "target": "Ensure that all employees receive a living wage that is at least 20% higher than the current statutory minimum wage.",
+            "baseline": "2022",
+            "deadline": "End of 2025"
+          }
+        ]
+      },
+      {
+        "area": "Continuous Commitment to a Living Wage",
+        "targets": [
+          {
+            "target": "We aim to review and adjust wages at least annually, with a minimum increase of 5% above inflation each year.",
+            "baseline": "2022",
+            "deadline": "Each year"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Human Resources Manager",
+        "duty": "The Human Resources Manager is responsible for ensuring compliance with living wage standards and overseeing wage assessments."
+      },
+      {
+        "role": "Finance Manager",
+        "duty": "The Finance Manager will allocate resources to support the implementation of this policy."
+      },
+      {
+        "role": "Every manager",
+        "duty": "Every manager is expected to uphold this policy and work towards achieving our living wage targets."
+      }
+    ],
+    "monitoring": "Permeshwar Creations publicly commits to this target and will transparently report progress annually.\n\nWe will engage in regular wage assessments, considering inflation, cost of living, and economic conditions to maintain fair compensation for our employees.",
+    "reviewMechanism": "This policy will be reviewed annually to assess progress towards our living wage objectives and to update targets as necessary. The Human Resources Manager, in consultation with the Finance Manager, will lead the review process. Feedback from employees and stakeholders will be incorporated to enhance the policy's effectiveness and relevance."
+  },
+  "sourcePath": "Policies - Kenal/PERMESHWAR CREATIONS PVT. LTD/Policy on Living Wage.docx",
+  "sourceFiles": [
+    "Policies - Kenal/PERMESHWAR CREATIONS PVT. LTD/Policy on Living Wage.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 4965,
+  "parsedAt": "2026-09-11T07:26:05.983Z"
+}

@@ -1,0 +1,307 @@
+{
+  "id": "rhpl",
+  "name": "RHPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Ravindra Heraeus Private Limited",
+      "industry": "",
+      "site": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India.",
+      "sites": [
+        {
+          "location": "Ravindra Heraeus Pvt. Ltd.",
+          "address": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India.",
+          "primaryFunction": "Precious metal processing and refining, catalyst manufacturing and recycling, chemical handling, utility operations, waste management, packaging, storage, and dispatch activities."
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A -196 (A), F Road, Madri Industrial Area, Udaipur - 313001, Rajasthan, India."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Ravindra Heraeus Private Limited is committed to conducting its operations in an environmentally responsible manner by integrating sustainability and environmental protection into all aspects of its business. As a manufacturer and recycler of precious metal products and catalysts, the Company recognises its responsibility to minimize environmental impacts, promote efficient use of resources, and support circular economy practices across its operations.\n\nThe Company is dedicated to complying with all applicable environmental laws and regulations, preventing pollution, and continually improving its environmental performance through a structured Environmental Management System. This Environmental Policy reflects Ravindra Heraeus’ commitment to responsible growth, alignment with global sustainability standards, and protection of the environment for present and future generations.",
+      "declaration": "Ravindra Heraeus Private Limited shall comply with applicable environmental laws and implement controls to prevent pollution, minimize waste, conserve resources, and manage chemicals responsibly. The Company will set environmental objectives, monitor performance, and drive continual improvement through effective implementation and review.",
+      "scope": "This Environmental Policy shall apply to all operational areas of Ravindra Heraeus Private Limited (RHPL), including precious metal processing and refining, catalyst manufacturing and recycling, chemical handling, utility operations, waste management, packaging, storage, and dispatch activities. It shall extend to all employees, contract workers, sub-contractors, suppliers, and other relevant stakeholders associated with RHPL’s operations."
+    },
+    "focusAreas": [
+      "Energy Consumption and GHG Emissions",
+      "Air Emissions",
+      "Materials and Waste Management",
+      "Water Management",
+      "Biodiversity Protection",
+      "Customer Health and Safety",
+      "Product Use",
+      "Product End-of-Life and Circularity",
+      "Environmental Risk and Emergency Management",
+      "Environmental Engagement and Advocacy"
+    ],
+    "qualitative": {
+      "Energy consumption and GHG Emissions": [
+        "To conduct regular energy monitoring and audits to optimize power consumption across all manufacturing, forming, and assembly operations.",
+        "Transition to renewable energy sources wherever feasible, including rooftop and captive solar projects to significantly reduce Scope 2 GHG emissions.",
+        "Implement energy-efficient technologies, including high-efficiency motors, variable frequency drives (VFDs), LED lighting, and efficient compressors and furnaces, and promote the use of green electricity."
+      ],
+      "Air Emissions": [
+        "Conduct regular maintenance and periodic performance assessments of air pollution control systems at RHPL’s processing and recycling facilities to identify opportunities for improvement.",
+        "Monitor ambient air quality around the sites on a quarterly basis and report the results to ensure compliance and transparency."
+      ],
+      "Materials and Waste Management": [
+        "Reduce crucible consumption per kilogram of product through continuous plant and process optimization.",
+        "Investing in advanced technologies, such as high-capacity melting furnaces, minimizes the use of consumables and reduces overall waste generation.",
+        "Promote recycling and recovery of precious metals from process residues and scrap to minimize landfill disposal."
+      ],
+      "Water Management": [
+        "Maximize the recycling and reuse of process water and condensate to reduce dependency on freshwater resources.",
+        "Regularly monitor the efficiency of wastewater treatment systems, to prevent environmental contamination.",
+        "Implement rainwater harvesting and responsible water use strategies across all facilities to support water conservation and ecosystem protection."
+      ],
+      "Biodiversity Protection": [
+        "Enhance local biodiversity by developing green belts around manufacturing sites, planting native trees, protecting saplings, and using tree guards where necessary.",
+        "Support community-based environmental programs in local regions, including Udaipur and surrounding villages, to enhance ecological balance."
+      ],
+      "Customer Health and Safety": [
+        "Ensure all products comply with applicable safety regulations through rigorous testing and continuous monitoring.",
+        "Maintain transparent labeling and hazard communication, and implement best practices to uphold high standards of product quality and safety.",
+        "Engage with customers to provide guidance and support for the safe handling, use, and disposal of products."
+      ],
+      "Product Use": [
+        "Customize products and catalysts to meet customer requirements while promoting energy-efficient and environmentally responsible performance.",
+        "Promote best practices and operational measures to customers through training and advisory programs to minimize resource consumption and reduce emissions during product use."
+      ],
+      "Product End-of-Life and Circularity": [
+        "Facilitate take-back programs and collaborate with recycling partners to recover valuable materials.",
+        "Provide guidance to customers on reprocessing, reuse, or circular economy practices.",
+        "Monitor and evaluate end-of-life practices to improve recovery rates and reduce environmental impact."
+      ],
+      "Environmental Risk and Emergency Management": [
+        "Identify and manage environmental risks to prevent pollution and operational incidents.",
+        "Maintain procedures and training to respond effectively to spills, leaks, or other environmental emergencies."
+      ],
+      "Environmental Services & Advocacy": [
+        "Participate in industry associations to promote sustainable practices.",
+        "Support local environmental initiatives and awareness programs to promote sustainability.",
+        "Publish annual sustainability reports aligned with GRI/SDG frameworks to ensure transparency and accountability."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy consumption and GHG Emissions",
+        "targets": [
+          {
+            "target": "Achieve a 5% reduction in energy consumption per unit of production by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Reduce total Scope 1, 2, 3 greenhouse gas emissions by 15% by FY 2029‑30 through energy efficiency measures, transition to renewable energy, and optimized operational practices.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          }
+        ]
+      },
+      {
+        "area": "Air Emissions",
+        "targets": [
+          {
+            "target": "Reduce particulate matter (PM), SOX and NOₓ emissions from operations by 25% till FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 95% efficiency in air pollution control devices across all facilities by FY 2029-30 through regular device inspections.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Materials and Waste Management",
+        "targets": [
+          {
+            "target": "Reduce crucible and consumable usage per kg of product by 15% by FY 2029‑30 through continuous process improvements and use of high-capacity furnaces.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Increase recycling/recovery of precious metals and process scrap to 95% by FY 2029‑30 by collaborating with recycling partners and improving internal recovery systems.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Reduce hazardous waste generation by 10% by FY 2029‑30 through safe handling, process optimization, and substitution of less hazardous chemicals.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Reduce overall water consumption by 20% by FY 2029‑30 by maximizing condensate recovery, reuse, and implementing water-efficient processes.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Recycle and Reuse 75% of total wastewater generated by FY 2029-30.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Protection",
+        "targets": [
+          {
+            "target": "Develop green belts covering 25% of site area by FY 2029‑30 by planting native trees, protecting saplings, and maintaining tree guards.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Plant a minimum of 500 native trees annually until FY 2029‑30 through annual plantation drives with employee and community participation.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Ensure 100% of products are labelled with hazard communication and handling instructions by FY 2029‑30 by standardizing labelling processes and verification checks.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Conduct annual customer safety audits and hence maintain zero customer complaints related to product safety.",
+            "baseline": "FY 2022-23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero product-related environmental incidents annually.",
+            "baseline": "FY 2022-23",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Product Use",
+        "targets": [
+          {
+            "target": "Provide sustainable usage guidelines with 100% of products delivered to customers by FY 2029‑30 by including instructions in product manuals and digital resources.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Conduct annual training for 80% of key customers through FY 2029‑30 via workshops, webinars, and advisory visits.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          }
+        ]
+      },
+      {
+        "area": "Product End-of-life",
+        "targets": [
+          {
+            "target": "Track and review end-of-life practices annually through FY 2029‑30 to improve material recovery and reduce environmental impact.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Recover and recycle 10% of end-of-life products and catalysts by FY 2029‑30, promoting circular material use in RHPL’s operations and through customer partnerships.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Risk and Emergency Management",
+        "targets": [
+          {
+            "target": "Conduct annual environmental risk assessments through FY 2029‑30 by identifying hazards, evaluating risks, and implementing mitigation measures.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Train 100% of staff in critical areas on emergency response by FY 2029‑30 through regular drills, workshops, and refresher courses.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Achieve zero reportable environmental incidents annually through FY 2029‑30 by preventive maintenance, monitoring, and corrective actions.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Engagement & Advocacy",
+        "targets": [
+          {
+            "target": "Participate in 2 industry sustainability forums per year through FY 2029‑30 by actively engaging in industry associations.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          },
+          {
+            "target": "Conduct 2 community/environment awareness programs per year through FY 2029‑30 by organizing events, workshops, and campaigns with local stakeholders.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029‑30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Management Team",
+        "duty": "Drive environmental strategy and allocate resources to achieve targets."
+      },
+      {
+        "role": "Environmental Compliance Team",
+        "duty": "Ensure regulatory compliance, monitor performance, and report progress."
+      },
+      {
+        "role": "Production & Operations Team",
+        "duty": "Implement energy, water, and waste management initiatives and maintain pollution control measures."
+      },
+      {
+        "role": "Procurement & Supply Chain Team",
+        "duty": "Promote responsible sourcing and collaborate with suppliers for sustainable practices."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow environmental procedures, adopt sustainability practices, and participate in training."
+      },
+      {
+        "role": "Customers & External Stakeholders",
+        "duty": "Support RHPL’s environmental objectives through partnerships and responsible engagement."
+      }
+    ],
+    "monitoring": "Ravindra Heraeus Pvt. Ltd. is committed to systematically monitoring its environmental performance across key areas, including energy consumption, greenhouse gas emissions, water use, and waste reduction. Dedicated Key Performance Indicators (KPIs) are defined for each area and tracked through internal systems to measure progress against sustainability targets. Quarterly reviews are conducted to evaluate performance, and the consolidated findings are reported to senior management to support strategic decision-making. Annual assessments highlight achievements, identify improvement gaps, and recommend corrective actions, while relevant results are shared with stakeholders to uphold transparency and accountability. All monitoring and reporting activities comply with regulatory requirements and industry best practices, ensuring accuracy, reliability, and credibility in all disclosures.",
+    "reviewMechanism": "This policy will be reviewed annually by the Environmental Manager to assess its effectiveness and alignment with evolving sustainability goals, regulatory requirements, and industry best practices. Feedback from audits, employee suggestions, and stakeholder engagements will be incorporated into policy updates. Necessary revisions will be made to strengthen environmental commitments and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/RHPL/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/RHPL/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 14666,
+  "parsedAt": "2026-09-11T07:40:40.837Z"
+}

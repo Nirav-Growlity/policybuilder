@@ -1,0 +1,197 @@
+{
+  "id": "living-wage-praveen-labs",
+  "name": "Praveen labs",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage Policy_GRW_v1.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "PRAVEEN LABORATORIES PVT. LTD.",
+      "industry": "",
+      "site": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India",
+      "sites": [
+        {
+          "location": "Praveen Laboratories Pvt. Ltd. Office",
+          "address": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India",
+          "primaryFunction": "Office"
+        },
+        {
+          "location": "Praveen Laboratories Pvt. Ltd. Factory",
+          "address": "BlockNo.206, Village: Jolwa, Taluka: Palsana, Dist: Surat‐394305, Gujarat, India",
+          "primaryFunction": "Factory"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "720, Golden Point, Falsawadi, Ring Road, Surat-395003, Gujarat, India"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "PRAVEEN LABORATORIES PVT. LTD. is committed to ensuring fair compensation for all employees, promoting economic stability, and extending our commitment to living wages across our entire supply chain. This commitment is not only an important social responsibility but also creates value for our business, customers, stakeholders, and employees by fostering a motivated and productive workforce.",
+      "declaration": "It is the policy of PRAVEEN LABORATORIES PVT. LTD. to compensate our employees with a living wage that allows them to meet their basic needs and those of their families. This includes fair remuneration, benefits, and working conditions that promote dignity and economic security. We extend this commitment across our value chain, encouraging our suppliers and partners to adopt similar practices.\n\nWe set annual goals, develop necessary capabilities, and commit appropriate resources to achieve this policy through fair labor practices, operational efficiency, and aligning our supply chain with this policy.",
+      "scope": "This policy applies to all employees, stakeholders, contractors, partners, customers, contractual workers, and anyone acting on behalf of following sites:"
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "Living wage that allows them to meet their basic needs and those of their families.\n\nThis includes fair remuneration, benefits, and working conditions that promote dignity and economic security.\n\nImplementing a living wage calculation methodology that considers local cost of living.\n\nWe aim to ensure 100% of our direct employees receive a living wage by 2026, using a locally-adjusted living wage calculator.\n\nWe aim to provide comprehensive health insurance coverage for 100% of employees and their immediate family members by 2026.\n\nWe plan to implement a retirement savings program with company matching contributions up to 5% of salary by 2026.\n\nThe Chief Human Resources Officer reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations.\n\nCompany can also change or review policy if any necessary changes is required."
+    },
+    "focusAreas": [
+      "Living Wage Compliance",
+      "Living Wage Implementation",
+      "Benefits Enhancement",
+      "Wage Equity"
+    ],
+    "qualitative": {
+      "Living Wage Compliance": [
+        "PRAVEEN LABORATORIES PVT. LTD. complies with all applicable labor laws and regulations, while also striving to provide wages that exceed minimum requirements.",
+        "We foster employee engagement, set performance standards, and utilize a Wage Management System to drive compliance and continuous improvement.",
+        "Providing comprehensive benefits packages that support employees' well-being.",
+        "Supporting skills development and career progression opportunities.",
+        "Managing subcontractors and suppliers to ensure living wage standards are met throughout our supply chain.",
+        "Advocating for industry-wide adoption of living wage standards."
+      ],
+      "Living Wage Implementation": [
+        "Conduct a thorough and comprehensive wage assessment across all operations, ensuring that the evaluation is completed by the year 2026."
+      ],
+      "Benefits Enhancement": [],
+      "Wage Equity": [
+        "Setting and achieving wage equity targets across all levels of the organization.",
+        "Minimizing wage gaps between different employee categories."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Implementation",
+        "targets": [
+          {
+            "target": "We aim to ensure 100% of our direct employees receive a living wage by 2026, using a locally-adjusted living wage calculator.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to extend living wage requirements to 60% of our tier 1 suppliers by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct a thorough and comprehensive wage assessment across all operations, ensuring that the evaluation is completed by the year 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Benefits Enhancement",
+        "targets": [
+          {
+            "target": "We aim to provide comprehensive health insurance coverage for 100% of employees and their immediate family members by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to implement a retirement savings program with company matching contributions up to 5% of salary by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Wage Equity",
+        "targets": [
+          {
+            "target": "We aim to achieve a maximum 10:1 ratio between the highest and lowest paid employees for 100% of our workforce by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We plan to eliminate 100% of gender pay gaps across all job categories by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We intend to implement transparent pay scales and job grading systems 100% of positions by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Oversees the overall living wage strategy and approves long-term fair compensation goals."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensures alignment of living wage initiatives with business objectives and stakeholder expectations."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Leads the development and implementation of the Living Wage policy across the organization."
+      },
+      {
+        "role": "Chief Human Resources Officer (CHRO)",
+        "duty": "Reports directly to the CEO and provides regular updates to the Board of Directors."
+      },
+      {
+        "role": "Finance Department Head",
+        "duty": "Departmental heads are responsible for integrating fair compensation practices into their respective areas of operation."
+      },
+      {
+        "role": "Finance Department Head",
+        "duty": "They ensure compliance with labor regulations, promote wage equity, and support employee engagement in living wage efforts."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Conducting audits and risk assessments related to living wage."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Investigating reported violations and ensuring corrective actions are taken."
+      },
+      {
+        "role": "Compliance Manager",
+        "duty": "Maintaining comprehensive records of compliance initiatives and reports."
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are encouraged to actively participate in fair compensation discussions."
+      },
+      {
+        "role": "Employees",
+        "duty": "They are expected to understand their compensation packages, report any wage-related concerns, and contribute ideas for continuous improvement."
+      },
+      {
+        "role": "Compensation and Benefits Manager",
+        "duty": "Investigates all reports and implements corrective actions."
+      }
+    ],
+    "monitoring": "Praveen Laboratories Pvt. Ltd. ensures strong governance in implementing its Living Wage Policy. The Managing Director oversees strategy, while the CHRO leads execution and reports to the Board. The Finance Head integrates fair pay into operations, and the Compliance Manager conducts audits and ensures adherence. Employees engage in open discussions, report concerns, and contribute to continuous improvement. Regular assessments, transparent reporting, and stakeholder engagement drive policy effectiveness.\n\nThe CHRO presents a comprehensive fair compensation dashboard to senior management and the Board.\n\nThe dashboard highlights progress towards annual targets, wage trends, and areas needing attention.\n\nA dedicated system for employees to report wage discrepancies or concerns.\n\nThe Compensation and Benefits Manager investigates all reports and implements corrective actions.\n\nExternal reporting is conducted annually to communicate our fair compensation performance to stakeholders, including employees, investors, and regulatory bodies.\n\nReports are prepared in accordance with internationally recognized standards such as the Global Reporting Initiative (GRI) guidelines or UN Guiding Principles Reporting Framework.\n\nWe actively engage with stakeholders to gather feedback, address concerns, and foster transparency in our fair compensation practices.\n\nStakeholder input is considered in decision-making processes and incorporated into living wage initiatives where applicable.",
+    "reviewMechanism": "The Chief Human Resources Officer reviews this policy annually to ensure alignment with changing regulatory requirements, industry best practices, and stakeholder expectations.\n\nCompany can also change or review policy if any necessary changes is required.\n\nUpdates to the policy are communicated internally, and relevant training is provided to ensure awareness and compliance."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Praveen labs/5. Living Wage Policy_GRW_v1.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Praveen labs/5. Living Wage Policy_GRW_v1.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 8425,
+  "parsedAt": "2026-09-11T07:13:39.666Z"
+}

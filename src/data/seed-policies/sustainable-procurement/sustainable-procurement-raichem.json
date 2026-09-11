@@ -1,0 +1,198 @@
+{
+  "id": "sustainable-procurement-raichem",
+  "name": "Raichem",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Raichem Medicare Pvt. Ltd.",
+      "industry": "",
+      "site": "Plot No. 24,25,26 & 26P Raichur Industrial Growth Centre, Wadloor cross, Chicksugur Village 584134 Raichur, Karnataka, India",
+      "sites": [
+        {
+          "location": "Raichem Medicare Pvt. Ltd.",
+          "address": "Plot No. 24,25,26 & 26P Raichur Industrial Growth Centre, Wadloor cross, Chicksugur Village 584134 Raichur, Karnataka, India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 24,25,26 & 26P Raichur Industrial Growth Centre, Wadloor cross, Chicksugur Village 584134 Raichur, Karnataka, India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Raichem Medicare Pvt. Ltd., an ICE Pharma company, is committed to responsible and sustainable procurement practices that support ethical business conduct, environmental protection, and social responsibility across its supply chain. Recognizing that suppliers play a critical role in product quality, regulatory compliance, and long-term business resilience, Raichem integrates sustainability considerations into procurement decisions and supplier relationships. This policy outlines Raichem’s commitment to sourcing goods and services in a manner that aligns with applicable laws, international standards, and ESG principles, while promoting transparency, risk management, and continuous improvement throughout the procurement lifecycle.",
+      "declaration": "Raichem Medicare Pvt. Ltd. is committed to responsible and sustainable procurement practices that support ethical conduct, environmental responsibility, and social accountability throughout its supply network. All suppliers and business partners are required to operate in compliance with applicable legal requirements and Raichem’s sustainability expectations. By actively engaging with suppliers and monitoring performance, Raichem seeks to manage supply chain risks, encourage responsible sourcing, and enhance long-term sustainability across its procurement activities.",
+      "scope": "This policy applies to all procurement activities undertaken by Raichem and covers each stage of the sourcing and purchasing process. It is applicable to all functions involved in procurement, including the sourcing of raw materials, goods, and services that support the Company’s operations. The policy extends to all direct and indirect suppliers, contractors, and service providers, and includes activities such as supplier assessment, onboarding, performance evaluation, and the development of long-term supplier relationships."
+    },
+    "focusAreas": [
+      "Environmentally Responsible Sourcing: Prefer suppliers and materials with reduced environmental impact.",
+      "Supplier Social Responsibility: Work with suppliers that ensure fair labour practices and safe working conditions.",
+      "Ethical Supplier Practices: Engage only with suppliers that comply with legal, ethical, and anti-corruption standards.",
+      "Local & Inclusive Sourcing: Promote sourcing from local, regional, and diverse suppliers where feasible.",
+      "Capacity Building & Training: Support ESG awareness and sustainability training for suppliers and procurement teams."
+    ],
+    "qualitative": {
+      "Environmentally Responsible sourcing": [
+        "Partner with suppliers who implement recognized environmental management systems (e.g., ISO 14001) and demonstrate measurable improvements in resource efficiency, emissions, and waste reduction.",
+        "Encourage suppliers to adopt sustainable production practices and comply with environmental regulations.",
+        "Prioritize sourcing materials with low carbon footprints, high recycled content, or certified sustainability credentials."
+      ],
+      "Supplier Social Responsibility": [
+        "Collaborate with suppliers who uphold labor rights, fair working conditions, and human rights.",
+        "Conduct supplier self-assessments, audits, and remediation programs to monitor social responsibility performance and drive continuous improvement.",
+        "Promote supplier transparency in social and ethical practices, including reporting on ESG commitments."
+      ],
+      "Ethical Supplier Practices": [
+        "Ensure suppliers comply with all applicable laws, regulations, and anti-bribery and anti-corruption standards.",
+        "Promote transparency, accountability, and integrity in supplier business operations.",
+        "Foster a culture of ethical behavior and responsible decision-making throughout the supply chain."
+      ],
+      "Local & Inclusive Sourcing": [
+        "Support local suppliers and communities, promoting regional economic development.",
+        "Encourage diversity in supplier base, including small, minority-owned suppliers.",
+        "Evaluate procurement opportunities for inclusive sourcing practices, balancing cost, quality, and social impact."
+      ],
+      "Capacity Building & Training": [
+        "Strengthen ESG knowledge and skills among suppliers and procurement teams through structured training programs.",
+        "Encourage proactive risk management and responsible decision-making in procurement and supplier operations.",
+        "Support continuous improvement in supplier ESG performance through guidance, collaboration, and follow-up."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmentally Responsible sourcing",
+        "targets": [
+          {
+            "target": "Embed ESG and environmental requirements into 100% of supplier onboarding processes, sourcing evaluations, and supplier codes of conduct by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase sourcing from suppliers holding recognised ISO certifications, public ESG disclosures, or validated sustainability commitments by 50% by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Responsibility",
+        "targets": [
+          {
+            "target": "Evaluate 100% of suppliers for social compliance, covering labour standards, occupational health and safety, and human rights, by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Ensure 100% suppliers have implemented grievance mechanisms accessible to their workers and relevant stakeholders.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Practices",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers sign and comply with the Raichem’s Supplier Code of Conduct by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 100% participation of procurement and supplier management employees in annual ethics and compliance training.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Implement a supplier whistleblower mechanism with 100% of suppliers informed of the process by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase procurement spend with local and diverse suppliers to 25% of total procurement spend by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve a 5% increase in engagement with women-owned suppliers by FY 2029–30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Capacity Building & Training",
+        "targets": [
+          {
+            "target": "Provide ESG capacity-building training to 100% of suppliers by FY 2029-30.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Conduct two supplier capacity-building or collaboration initiatives per year focused on ESG improvement areas.",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Integrates ESG criteria into sourcing and contracts and ensures suppliers comply with the Supplier Code of Conduct."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Defines ESG standards, supports implementation, and monitors and reports performance."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Comply with the Supplier Code of Conduct and participate in assessments and improvement actions."
+      },
+      {
+        "role": "Human Resources",
+        "duty": "Delivers ESG and ethics training and supports diversity, equity, and inclusion initiatives."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees",
+        "duty": "Follow the policy and report any suspected violations or risks."
+      }
+    ],
+    "monitoring": "Raichem monitors its sustainable procurement performance across key areas, including ethical sourcing, supplier environmental and social compliance, occupational health and safety, and adherence to applicable regulatory requirements. Defined Key Performance Indicators (KPIs) are tracked through internal procurement and supplier management processes to evaluate progress against sustainability objectives. Performance is reviewed on a quarterly basis and consolidated for senior management review to support responsible sourcing and risk-based decision-making. Annual assessments are conducted to identify achievements, gaps, and improvement actions, and relevant outcomes are communicated to appropriate stakeholders to ensure transparency and accountability. All monitoring and reporting activities are aligned with applicable laws, recognized sustainability frameworks, and industry best practices to ensure consistency, accuracy, and credibility.",
+    "reviewMechanism": "The Sustainable Procurement Policy will be reviewed annually by the Procurement Officer to ensure its continued relevance, effectiveness, and alignment with evolving regulations, industry best practices, and business objectives. The review will be conducted in coordination with the Procurement and Sustainability Teams and relevant department heads. Supplier compliance will be monitored through regular audits, sustainability scorecards, and feedback mechanisms. Any significant revisions or enhancements to the policy will require senior management approval and will be communicated to all relevant stakeholders across the supply chain."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Raichem/4. Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Raichem/4. Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 10500,
+  "parsedAt": "2026-09-11T07:40:10.708Z"
+}

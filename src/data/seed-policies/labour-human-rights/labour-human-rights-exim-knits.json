@@ -1,0 +1,266 @@
+{
+  "id": "labour-human-rights-exim-knits",
+  "name": "Exim Knits",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 1. Labour and Human Right - Exim Knits.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Exim Knits Pvt Ltd.",
+      "industry": "",
+      "site": "S F 334 Palankarai Village, Nambiyur Road, Avinashi, Tamil Nadu.- 641654",
+      "sites": [
+        {
+          "location": "Exim Knits Pvt Ltd.",
+          "address": "S F 334 Palankarai Village, Nambiyur Road, Avinashi, Tamil Nadu.- 641654",
+          "primaryFunction": "Knitted garment manufacturing"
+        }
+      ],
+      "docNum": "SP-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "S F 334 Palankarai Village, Nambiyur Road, Avinashi, Tamil Nadu.- 641654"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "In an era defined by global interconnectedness and ethical considerations, Exim Knits Pvt Ltd, a pioneering force in the textile industry, is committed to upholding the highest standards of Labor and human rights. Recognizing the intrinsic value of every individual within our workforce and beyond, we firmly believe that the success of our business is intertwined with the well-being, dignity, and empowerment of our employees and the communities in which we operate.\n\nAt Exim Knits Pvt Ltd, we understand the profound impact a textile company can have on the lives of those involved in its various stages, from raw material cultivation to manufacturing and distribution. It is with this awareness that we have crafted a comprehensive Labor and Human Rights Policy that serves as the ethical cornerstone of our operations. This policy reflects our dedication to fostering an environment where human rights are respected, workers are treated with fairness and dignity, and communities are uplifted through sustainable and responsible practices.\n\nOur commitment extends beyond mere compliance with local and international regulations. We strive to set a benchmark for social responsibility within the textile company, championing transparency, inclusivity, and continuous improvement. This policy articulates our pledge to prioritize the well-being of our employees, promote diversity and inclusion, and contribute positively to the communities that support our business.",
+      "declaration": "Exim Knits Pvt Ltd. firmly believes in fostering a workplace of dignity and respect. Committed to fair labor practices, we prioritize the well-being of our employees, ensuring a safe and inclusive environment. Aligned with local and international standards, this policy reflects our steadfast dedication in upholding human rights, promoting equality, and contributing to the betterment of communities.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Employee Health & Safety",
+      "Working Conditions",
+      "Labor Relations",
+      "Career Management",
+      "Child and Forced Labor",
+      "Diversity, Equity & Inclusion",
+      "External Stakeholder and Human Rights"
+    ],
+    "qualitative": {
+      "Employee Health & Safety": [
+        "Chemical Exposure: Enforce rigorous safety measures for chemical handling, supply necessary personal protective equipment (PPE), conduct frequent training on safe procedures, and maintain adequate ventilation systems",
+        "Machinery and Equipment Safety: Regularly inspect and maintain machinery, install safety guards, provide comprehensive training for machine operators, and enforce strict adherence to safety guidelines and procedures.",
+        "Ergonomics and Musculoskeletal Health: Design ergonomic workstations, conduct regular ergonomic assessments, implement job rotation to reduce repetitive strain, and provide training on proper lifting techniques and posture.",
+        "Fire and Electrical Hazards: Install and maintain fire detection and suppression systems, ensure compliance with electrical safety standards, conduct regular fire drills, provide firefighting equipment, and train employees on emergency evacuation procedures.",
+        "Air Quality and Dust Control: Implement effective dust control measures, install ventilation systems, provide respiratory protection where necessary, regularly monitor air quality, and conduct risk assessments to identify and address potential hazards."
+      ],
+      "Working Conditions": [
+        "Noise Control in Textile Printing: Install noise control measures such as acoustic barriers, provide hearing protection, and conduct regular assessments to maintain a safe noise environment.",
+        "Gender Equality and Diversity in Textile Management: Promote diversity and inclusion initiatives, implement fair hiring practices, and provide training programs to ensure equal opportunities for career advancement.",
+        "Temperature Regulation in Textile Finishing: Install temperature control systems, provide appropriate clothing, and implement flexible scheduling during extreme weather conditions to ensure a comfortable working environment."
+      ],
+      "Labor Relations": [
+        "Collective Bargaining and Communication: Foster transparent communication, regular dialogues, and collaborative collective bargaining in labor relations. Ensure labor agreements are regularly reviewed and updated to meet evolving needs.",
+        "Worker Engagement and Participation: Establish feedback mechanisms, involve workers in decision-making, and create forums for addressing concerns. Promote an inclusive culture with open communication.",
+        "Training on Labor Rights and Responsibilities: Conduct regular training on labor laws for all, ensuring awareness of rights and procedures. Promote a culture of compliance with labor laws."
+      ],
+      "Career Management": [
+        "Skills Development and Training: Implement regular training programs, workshops, and skill development initiatives to enhance the capabilities of employees. Establish a clear career development path with access to relevant training resources.",
+        "Performance Evaluation and Recognition: Implement transparent and fair performance evaluation systems. Recognize and reward employees for their contributions to motivate and encourage career progression.",
+        "Work-Life Balance and Employee Well-being: Promote a healthy work-life balance, implement flexible working arrangements where possible, and provide support programs for employee well-being. Prioritize mental and physical health initiatives."
+      ],
+      "Child and Forced Labor": [
+        "Employee Education and Awareness: Implement regular training to empower employees in identifying and reporting signs of child and forced labor. Cultivate an open communication culture, ensuring a safe environment for reporting without fear of retaliation.",
+        "Verification of Age and Identity: Implement thorough age verification procedures during recruitment, collaborate with local authorities, and explore innovative technologies for identity verification.",
+        "Collaboration with Industry and NGOs: Collaborate with industry peers, NGOs, and stakeholders to share best practices, intelligence, and collectively address root causes of child and forced labor in textiles.",
+        "Regular Audits and Monitoring: Regularly audit suppliers independently to ensure labor standards compliance. Implement a transparent monitoring system to track and report progress in eradicating child and forced labor."
+      ],
+      "Diversity, Equity & Inclusion": [
+        "Representation in Leadership: Implement diversity recruitment initiatives, mentorship programs, and provide equal opportunities for career advancement to enhance leadership diversity.",
+        "Equal Opportunities and Fair Compensation: Regularly review and adjust compensation structures, enforce equal opportunity policies, and conduct pay equity assessments to ensure fair and unbiased remuneration.",
+        "Inclusive Workplace Culture: Foster an inclusive culture through diversity training, awareness programs, and creating Employee Resource Groups (ERGs) to support underrepresented groups.",
+        "Supplier Diversity and Ethical Sourcing: Establish supplier diversity programs, promoting a diverse supplier base. Evaluate suppliers for ethical practices, ensuring adherence to fair labor standards and a commitment to diversity and inclusion in the supply chain."
+      ],
+      "External Stakeholder and Human Rights": [
+        "Supply Chain Transparency: Implement supply chain transparency initiatives, disclose sourcing information, and engage in partnerships with suppliers committed to ethical practices.",
+        "Collaboration with NGOs and Human Rights Organizations: Establish partnerships with NGOs and human rights organizations to leverage their expertise, receive guidance on best practices, and strengthen the textile industry's commitment to human rights.",
+        "Continuous Human Rights Impact Assessment: Conduct regular human rights impact assessments, identify potential risks, and implement measures to address and mitigate any adverse effects. Share findings transparently with stakeholders."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Employee Health & Safety",
+        "targets": [
+          {
+            "target": "Achieve a 20% reduction in reported chemical-related incidents through rigorous safety measures, enhanced PPE availability, and regular safety training",
+            "baseline": "2022-23",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Attain 100% compliance with machinery maintenance schedules, reducing equipment-related incidents by 15%",
+            "baseline": "",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Reduce musculoskeletal issues by 20% through ergonomic interventions",
+            "baseline": "2022-23",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Achieve 100% compliance with fire and electrical safety standards",
+            "baseline": "",
+            "deadline": "year 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions",
+        "targets": [
+          {
+            "target": "Achieve a 15% reduction in noise levels through the installation of acoustic barriers",
+            "baseline": "",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Increase the representation of underrepresented genders in management positions by 20%",
+            "baseline": "2022-23",
+            "deadline": "year 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Labor Relations",
+        "targets": [
+          {
+            "target": "Achieve 95% satisfaction in employee surveys regarding transparency and communication in labor relations",
+            "baseline": "",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Increase employee participation in decision-making by 15%",
+            "baseline": "2022-23",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Attain 100% completion of mandatory labor laws training for all employees by regular monitoring of training completion rates, conduct assessments to ensure understanding, and address any identified gaps promptly.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Career Management",
+        "targets": [
+          {
+            "target": "Achieve 90% completion of annual training programs for all employees",
+            "baseline": "",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Maintain a performance satisfaction rate of 85% or higher among employees",
+            "baseline": "2022-23",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Increase overall employee well-being satisfaction by 20% by regularly assessing employee well-being through surveys, monitoring the utilization of flexible work arrangements, and track participation in health and wellness programs.",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Child and Forced Labor",
+        "targets": [
+          {
+            "target": "Attain 95% accuracy in age verification during recruitment processes by conducting regular audits of recruitment procedures, track accuracy in age verification",
+            "baseline": "",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Establish partnerships with at least three industry peers and two NGOs",
+            "baseline": "year 2022-23",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Achieve 100% compliance with labor standards in supplier audits",
+            "baseline": "",
+            "deadline": "year 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "Diversity, Equity & Inclusion",
+        "targets": [
+          {
+            "target": "Increase leadership diversity by achieving a 25% rise in the representation of underrepresented groups",
+            "baseline": "",
+            "deadline": "within the year 2025-26"
+          },
+          {
+            "target": "Maintain a 98% or higher satisfaction rate among employees with compensation fairness",
+            "baseline": "year 2022-23",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Establish at least two new Employee Resource Groups (ERGs)",
+            "baseline": "",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Increase the percentage of diverse suppliers by 20%",
+            "baseline": "year 2022-23",
+            "deadline": "year 2025-26"
+          }
+        ]
+      },
+      {
+        "area": "External Stakeholder and Human Rights",
+        "targets": [
+          {
+            "target": "Achieve a 95% transparency rate in the supply chain by disclosing sourcing information",
+            "baseline": "year 2022-23",
+            "deadline": "year 2025-26"
+          },
+          {
+            "target": "Conduct bi-annual human rights impact assessments, identifying and mitigating potential risks",
+            "baseline": "year 2022-23",
+            "deadline": "year 2025-26"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Environment, Social, and Governance (ESG) Team",
+        "duty": "The responsibility for this annual review has been delegated to the Environment, Social, and Governance (ESG) Team, comprised of representatives from crucial departments within the organization."
+      },
+      {
+        "role": "Environment, Social, and Governance (ESG) Team",
+        "duty": "The ESG Team is mandated to rigorously assess the implementation of the policy, measure the achievement of established targets, and suggest adjustments or improvements to align with emerging environmental standards and best practices."
+      },
+      {
+        "role": "CEO of Exim Knits Pvt Ltd.",
+        "duty": "The final approval for any alterations to the policy lies with the CEO of Exim Knits Pvt Ltd."
+      }
+    ],
+    "monitoring": "Exim Knits Pvt Ltd. is unwavering in its dedication to transparency, accountability, and the ongoing enhancement of Environmental, Social, and Governance (ESG) principles, particularly within the intricate landscape of knitted garment manufacturing. Our commitment to understanding our present state and identifying avenues for continuous improvement is reflected in the implementation of a rigorous reporting system. This mechanism is structured around key components to provide a comprehensive view of our endeavors in sustainable practices and ethical operations.\n\nApparel Inspection and Evaluation Records: We consistently generate internal monitoring, audit reports, and external assessments, specifically tailored to evaluate and document our performance in social responsibility within the knitted garment manufacturing sphere. These reports offer a meticulous overview of our adherence to established standards, pinpointing areas for improvement in Knitting, Dyeing, Elastic, Embroidery, Stitching, Printing, and Finishing divisions.\n\nWorkforce Feedback and Operational Health Surveys: We conduct health surveys tailored to manufacturing, focusing on respiratory system-related diseases, coupled with feedback mechanisms to gauge the impact of our labor and human rights initiatives. This invaluable input enables us to assess employee satisfaction, identify concerns specific to knitted garment processes, and refine our strategies for continuous improvement.\n\nRecords of Outreach Initiatives to External Stakeholders: Our comprehensive records meticulously detail communication with external stakeholders, particularly within knitted garment manufacturing. This includes social responsibility initiatives, partnerships, and collaborations specific to Knitting, Dyeing, Elastic, Embroidery, Stitching, Printing, and Finishing divisions. This repository underscores our commitment to engaging external entities and driving positive change in the knitted garment industry.\n\nLegal and Regulatory Adherence Records & Protocols: We diligently document our unwavering adherence to local, national, and international laws and regulations concerning social responsibility, with a dedicated focus on knitted garment manufacturing. These documents underscore our commitment to ethical practices, ensuring alignment with legal frameworks and upholding the highest standards in our operations across Knitting, Dyeing, Elastic, Embroidery, Stitching, Printing, and Finishing divisions.",
+    "reviewMechanism": "To uphold the perpetual relevance and effectiveness of this policy, a comprehensive review will be conducted on an annual basis. This evaluation will consider alterations in environmental legislation, technological progress, and the evolving expectations of our stakeholders. The responsibility for this annual review has been delegated to the Environment, Social, and Governance (ESG) Team, comprised of representatives from crucial departments within the organization.\n\nThe ESG Team is mandated to rigorously assess the implementation of the policy, measure the achievement of established targets, and suggest adjustments or improvements to align with emerging environmental standards and best practices. Leveraging their collective expertise, the team ensures a holistic perspective in addressing dynamic challenges and opportunities.\n\nThe final approval for any alterations to the policy lies with the CEO of Exim Knits Pvt Ltd. This ensures the highest level of leadership support for our environmental initiatives, emphasizing the organization's steadfast commitment to sustainability and responsible business practices. This systematic review process underscores our dedication to staying informed about environmental developments and continuously enhancing our policies to meet the most rigorous standards.\n\nThis policy will undergo a yearly assessment to monitor advancements on each concern and its targets. The examination will be carried out by delegates from pivotal departments within the organization, guaranteeing a thorough evaluation of our environmental initiatives. Any requisite modifications or improvements will be proposed based on the findings of this annual assessment"
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Exim Knits/1. Labour and Human Right - Exim Knits.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Exim Knits/1. Labour and Human Right - Exim Knits.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 20115,
+  "parsedAt": "2026-09-11T07:38:28.466Z"
+}

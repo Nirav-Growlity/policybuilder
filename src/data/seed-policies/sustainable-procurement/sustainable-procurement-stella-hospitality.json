@@ -1,0 +1,180 @@
+{
+  "id": "sustainable-procurement-stella-hospitality",
+  "name": "Stella Hospitality",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Stella Hospitality",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Saudi",
+          "address": "Ad Dahiah, Jeddah, Saudi Arabia.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "UAE",
+          "address": "Umm Dera - Emirate of Umm Al Quwain - United Arab Emirates.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Jordan - Marka",
+          "address": "Nicola Yousef Al Turk St 7, Amman, Jordan.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Jordan - Aqaba",
+          "address": "Al-Herafya Area - New Business District-Bilal Nihad Al-Athira Co, Aqaba, Jordan.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Bahrain",
+          "address": "Building 2639, Road/Street 1537, HIDD, Block 115, Bahrain.",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Stella Hospitality is committed to integrating sustainability into its procurement practices to minimize environmental impact and promote social responsibility. Our procurement strategy ensures that all sourced materials, products, and services align with ethical, environmental, and social best practices. This policy applies with the goal of fostering a responsible supply chain that supports our sustainability objectives.",
+      "declaration": "At Stella Hospitality, we are committed to integrating sustainability into our procurement practices by upholding the highest standards of ethics, integrity, and social responsibility. We recognize the critical role our supply chain plays in driving positive environmental and social impact. By ensuring fair, transparent, and responsible sourcing, we aim to foster long-term partnerships built on trust, accountability, and shared sustainability goals. Our commitment is reflected in the following key areas:\n\nResponsible Sourcing: We prioritize suppliers who demonstrate sustainable practices in environmental and social aspects by ensuring their adherence to recognized sustainability certifications and industry best practices.\n\nReducing Environmental Impact: We encourage procurement of materials and products that reduce carbon footprint, waste, and resource consumption through responsible sourcing.\n\nEnhancing Circular Economy Practices: We support suppliers who incorporate circular economy principles, such as waste reduction, recycling, and product life-cycle extensions, to promote sustainability across the supply chain.",
+      "scope": "This Sustainable Procurement Policy applies to all stakeholders involved in procurement, including suppliers, vendors. It covers all locations:"
+    },
+    "focusAreas": [
+      "Responsible Sourcing",
+      "Reducing Environmental Impact",
+      "Enhancing Circular Economy Practices",
+      "Environmental Sustainability",
+      "Ethical & Social Responsibility",
+      "Compliance & Transparency"
+    ],
+    "qualitative": {
+      "Environmental Sustainability": [
+        "We aim to prioritize the procurement of those sourced materials and packaging that have minimal environmental impact, focusing on biodegradable, recyclable, and responsibly sourced materials.",
+        "We strive to work with suppliers who adopt environmentally friendly production methods, including energy efficiency, water conservation, and pollution reduction.",
+        "We commit to encourage suppliers to implement waste reduction strategies, such as responsible disposal, recycling programs, and sustainable packaging innovations."
+      ],
+      "Ethical & Social Responsibility": [
+        "We aim to collaborate with suppliers who uphold human rights, fair wages, and safe working conditions, ensuring compliance with international labor standards.",
+        "We entrust our supplier network with the responsibility of continuous sustainability improvements through training, awareness programs, and strategic partnerships.",
+        "We seek to strengthen relationships with local and diverse suppliers to support regional economies and foster inclusive business growth."
+      ],
+      "Compliance & Transparency": [
+        "We pledge to implement Supplier Code of Conduct that ensures ethical and sustainable procurement practices align with our corporate values.",
+        "We hold ourselves accountable for conducting regular supplier assessments based on environmental, social, and governance (ESG) criteria.",
+        "We commit to collaborating with stakeholders, including clients, partners, and industry bodies, to continuously advance sustainable procurement initiatives."
+      ],
+      "Supplier Screening & Assessment": [
+        "Establish a sustainability scorecard for evaluating suppliers based on their environmental and social performance.",
+        "We also conduct on-site ESG audits of suppliers, as well as supplier ESG self-assessments."
+      ],
+      "Training & Capacity Building": [
+        "Provide sustainability training and workshops to suppliers to improve compliance with best practices."
+      ],
+      "Collaboration & Innovation": [
+        "Engage with suppliers to develop innovative, sustainable solutions for product development and packaging."
+      ],
+      "Incentives & Compliance Monitoring": [
+        "Develop incentive programs for suppliers demonstrating strong sustainability efforts while implementing strict monitoring mechanisms for compliance."
+      ],
+      "Stakeholder Engagement": [
+        "Maintain transparent communication with internal and external stakeholders to ensure continuous improvement and alignment with global sustainability goals."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Supplier Environmental Practices",
+        "targets": [
+          {
+            "target": "We aim to reduce carbon emissions from our supply chain by 30% by 2028, through optimizing transportation, using low-carbon energy sources, and enhancing logistics efficiency.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Our goal is that 90% of our suppliers implement a structured waste management program, diverting at least 50% of waste from landfills by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "By 2028, we aim that 80% of our suppliers will source raw materials from certified sustainable sources.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Social Practices",
+        "targets": [
+          {
+            "target": "By 2028, we aim to implement a 100% comprehensive supplier training program that focuses on sustainability, human rights, and responsible sourcing practices.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to achieve 100% compliance among tier-1 suppliers with fair wages and ethical labor conditions in line with ILO standards by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "We aim to promote gender equality in our supply chain by ensuring that at least 30% of leadership positions within our key supplier organizations are held by women by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "Ensures that sustainability criteria are integrated into supplier selection and evaluation."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "Adhere to Stella Hospitality’s sustainability requirements and continuously improve their practices."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "Monitors progress on targets and supports supplier development through training and collaboration."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provides strategic direction and ensures alignment with business sustainability goals."
+      },
+      {
+        "role": "Third Party Auditors",
+        "duty": "Conduct independent assessments of supplier compliance with sustainability commitments."
+      }
+    ],
+    "monitoring": "To uphold the effectiveness of Stella Hospitality’s Sustainable Procurement Policy, a structured monitoring and reporting framework is essential. This ensures transparency, accountability, and continuous improvements in responsible sourcing, supplier compliance, environmental impact reduction, and ethical business practices.\n\nConduct annual sustainability audits on key suppliers.\n\nRequire suppliers to submit sustainability performance reports annually.\n\nPublish a yearly sustainability report highlighting progress towards procurement targets.\n\nUse key performance indicators (KPIs) to assess compliance and impact.\n\nThe Policy is publicly available on Stella Hospitality’s website and shared through various stakeholder communication channels.\n\nUpdates will be made in response to emerging sustainability trends, regulatory changes, and stakeholder feedback.",
+    "reviewMechanism": "The Sustainability Manager is responsible for overseeing the implementation and review of this Policy. This policy will be reviewed annually to ensure its effectiveness and alignment with evolving regulatory requirements, industry best practices, and sustainability goals.\n\nAny updates or modifications will be communicated to all stakeholders to ensure continued compliance."
+  },
+  "sourcePath": "Policies - Kenal/Stella Hospitality/Sustainable Procurement Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Stella Hospitality/Sustainable Procurement Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 9628,
+  "parsedAt": "2026-09-11T07:29:51.660Z"
+}

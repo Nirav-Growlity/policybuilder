@@ -1,0 +1,299 @@
+{
+  "id": "ethics-true-up",
+  "name": "True Up",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from True Up Business Practices Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "TRUE UP COMPANIES LLC",
+      "industry": "",
+      "site": "20713 E. Ocotillo Rd. Suite 101 Queen Creek, AZ 85142",
+      "sites": [],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "20713 E. Ocotillo Rd. Suite 101 Queen Creek, AZ 85142"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At TRUE UP COMPANIES LLC, we prioritize integrity, transparency, and ethical responsibility in all aspects of our operations. Our Ethical Practices Policy serves as a foundation for decision-making, ensuring that our business practices align with legal requirements, industry regulations, and our core values. We are dedicated to maintaining accountability at all levels, fostering stakeholder trust, and upholding ethical excellence. This policy establishes clear guidelines for preventing corruption, addressing conflicts of interest, mitigating fraud risks, ensuring compliance with financial regulations, strengthening stakeholder relationships, evaluating leadership performance, and safeguarding sensitive information.",
+      "declaration": "At TRUE UP COMPANIES LLC is committed to maintaining the highest standards of ethical conduct in all aspects of our operations. We pledge to uphold integrity, honesty, and fairness in our dealings with employees, customers, suppliers, and the communities we serve. Our Ethical Practices policy emphasizes transparency, accountability, and respect for all individuals, ensuring a work environment free from discrimination, harassment, and unethical practices. We are dedicated to fostering a culture where ethical decision-making guides our actions, and we will continuously evaluate and reinforce our commitment to these principles across all levels of the organization.",
+      "scope": "At TRUE UP COMPANIES, our Ethical Practices Policy extends across all aspects of our e-commerce, supply chain, and customer service operations. This policy applies to employees, contractors, vendors, and all stakeholders within our business ecosystem, ensuring that ethical governance is upheld at every level of our organization. We are committed to integrity, transparency, and fairness in our interactions with customers, partners, and the broader community."
+    },
+    "focusAreas": [
+      "Preventing Corruption",
+      "Fair Business Practices",
+      "Managing Conflicts of Interest",
+      "Anti-Fraud & Cybersecurity",
+      "Anti-Money Laundering (AML)",
+      "Information Security",
+      "Enhancing Stakeholder Engagement",
+      "Corporate Social Responsibility (CSR)",
+      "Sustainability & Environmental Responsibility",
+      "Fraud Prevention and Risk Mitigation",
+      "Board Evaluation and Accountability",
+      "Anti-competitive practices"
+    ],
+    "qualitative": {
+      "Preventing Corruption": [
+        "We enforce strict anti-corruption policies, ensuring a zero-tolerance approach to unethical behaviour. Strong internal controls help us detect and address any misconduct.",
+        "We maintain a zero-tolerance policy for bribery, kickbacks, and unethical influence.",
+        "Integrate anti-corruption clauses in all contracts with suppliers and business partners to ensure compliance.",
+        "Employees and partners are expected to report any suspicious activities through a Whistle blower mechanism."
+      ],
+      "Fair Business Practices": [
+        "We commit to honest advertising, transparent pricing, and ethical competition to maintain customer trust."
+      ],
+      "Managing Conflicts of Interest": [
+        "Clear guidelines are in place to identify, disclose, and mitigate any conflicts of interest, ensuring transparency in decision-making.",
+        "We require full disclosure of any personal or financial interests that may impact business decisions.",
+        "Employees must act in the best interests of the company and its stakeholders."
+      ],
+      "Anti-Fraud & Cybersecurity": [
+        "We safeguard transactions, prevent fraud, and protect customer information through advanced security measures."
+      ],
+      "Anti-Money Laundering (AML)": [
+        "Enforce compliance with AML laws and conduct due diligence on financial transactions.",
+        "We comply with all laws to prevent money laundering, terrorist financing, and financial crimes.",
+        "Transactions are monitored for suspicious activities and reported when necessary.",
+        "Conduct due diligence for all vendors, suppliers, and business partners."
+      ],
+      "Information Security": [
+        "Protect sensitive data through secure technologies and compliance with data privacy laws.",
+        "We prioritize customer data protection through secure systems and compliance with global privacy laws.",
+        "Train employees on secure data handling practices to prevent breaches."
+      ],
+      "Enhancing Stakeholder Engagement": [
+        "Open communication with stakeholders is a priority, fostering trust and collaborative partnerships for mutual growth.",
+        "Conduct biannual stakeholder meetings to discuss governance, ethical practices, and business sustainability.",
+        "Publish detailed reports on governance initiatives and progress in alignment with industry standards.",
+        "Actively seek feedback from employees, customers, and business partners to refine governance practices."
+      ],
+      "Corporate Social Responsibility (CSR)": [
+        "TRUE UP COMPANIES actively contributes to community development initiatives, supporting education, skill development, and local employment opportunities."
+      ],
+      "Sustainability & Environmental Responsibility": [
+        "We implement eco-friendly packaging, responsible shipping, and sustainable business operations."
+      ],
+      "Fraud Prevention and Risk Mitigation": [
+        "Strengthen internal controls to reduce fraud risks within production, supply chain, and financial operations.",
+        "Maintain an anonymous reporting channel for employees to report fraud concerns safely.",
+        "Regular risk assessments help protect customers, partners, and the company."
+      ],
+      "Board Evaluation and Accountability": [
+        "Conduct annual evaluations of board performance against defined governance benchmarks.",
+        "Implement a feedback mechanism to enhance board decision-making processes.",
+        "Develop training programs for board members to strengthen governance knowledge.",
+        "Review the alignment of board decisions with company objectives and governance standards.",
+        "Ensure documentation and transparency in board activities and resolutions."
+      ],
+      "Anti-competitive practices": [
+        "We commit to ethical competition and transparent business practices."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption",
+        "targets": [
+          {
+            "target": "Maintain 85% compliance with anti-corruption policies across all supplier and partner contracts by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Conduct annual anti-corruption training for 100% of employees and business partners.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Maintain zero incidents of bribery, kickbacks, or unethical influence in business dealings.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest Management",
+        "targets": [
+          {
+            "target": "Ensure that 100% of procurement decisions are reviewed annually, with a target of reducing procurement-related conflicts by 20% by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Increase employee participation in conflict management training to 60% by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Implement real-time monitoring of key business transactions with 95% accuracy in detecting conflicts",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention and Risk Mitigation",
+        "targets": [
+          {
+            "target": "Maintain zero fraud-related incidents through enhanced monitoring, stricter controls, and employee awareness programs.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Implement advanced fraud detection tools, targeting a 25% improvement in financial transparency by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Ensure 100% of fraud reports are investigated and resolved within a predefined timeframe.",
+            "baseline": "2022",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering Compliance",
+        "targets": [
+          {
+            "target": "Maintain 80% compliance with global anti-money laundering regulations (AML).",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Train 100% of finance and procurement employees in AML compliance by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Maintain detailed financial transaction records with 95% audit trail accuracy by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Anti-competitive practices",
+        "targets": [
+          {
+            "target": "Conduct annual training on ethical competition for at least 95% of employees.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Perform internal audits with a 100% compliance rate to assess and improve competitive practices by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Information Security and Data Protection",
+        "targets": [
+          {
+            "target": "Ensure 100% employee participation in annual cybersecurity training.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Conduct biannual cybersecurity audits, reducing identified vulnerabilities by 15% by year 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Stakeholder Engagement and Transparency",
+        "targets": [
+          {
+            "target": "Conduct annual stakeholder surveys, targeting 75% satisfaction in ethical policy transparency by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Publish biannual governance performance reports, ensuring at least 60% stakeholder engagement by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Establish collaborations with at least 5 industry partners by 2028 to enhance ethical business practices",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      },
+      {
+        "area": "Board Evaluation and Accountability",
+        "targets": [
+          {
+            "target": "Conduct annual board performance evaluations for 80% of board members by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Address 60% of board review findings within six months by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Achieve 40% compliance with governance training for board members by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          },
+          {
+            "target": "Publish board performance summaries in 80% of governance reports by 2028.",
+            "baseline": "2022",
+            "deadline": "2028"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Leadership & Management",
+        "duty": "Set ethical standards, ensure compliance, and promote integrity."
+      },
+      {
+        "role": "Employees",
+        "duty": "Adhere to ethical guidelines, report misconduct, and act responsibly."
+      },
+      {
+        "role": "Ethics Committee",
+        "duty": "Oversee compliance, investigate concerns, and update policies."
+      },
+      {
+        "role": "HR & Training",
+        "duty": "Implement ethics training, enforce fair practices, and address violations."
+      },
+      {
+        "role": "Audit & Compliance",
+        "duty": "Monitor risks, conduct audits, and ensure legal adherence."
+      }
+    ],
+    "monitoring": "We encourage all employees, suppliers, and stakeholders to report any suspected unethical behaviour through designated reporting channels. Reports can be submitted confidentially or anonymously, ensuring protection from retaliation.\n\nEvery reported case undergoes a thorough investigation conducted by the Ethics & Compliance Team.\n\nEvidence gathering, witness interviews, and procedural reviews are carried out to assess the severity and impact of the violation.\n\nInvestigations are handled objectively, fairly, and in accordance with company policies and legal requirements.\n\nRegular policy reviews and employee training sessions will be conducted to strengthen ethical compliance.\n\nPeriodic audits and assessments will help identify risks and improve existing frameworks.\n\nFeedback mechanisms will be enhanced to encourage proactive reporting and awareness.\n\nAll reported incidents are reviewed within 30 days, with corrective measures documented and implemented.\n\nIncludes cases of fraud, corruption, conflicts of interest, data security breaches, and money laundering risks.\n\nEmployees can report concerns via HR, the Compliance Officer, or a dedicated anonymous reporting system.\n\nReports are submitted to senior management, HR, the Compliance Officer, and the Board of Directors.\n\nIncludes compliance status, incidents of non-compliance, corrective measures taken, and overall governance performance.\n\nMonthly compliance updates for management and a detailed annual governance report for board review.\n\nEmployees receive regular updates on governance policies, training opportunities, and ethical best practices.\n\nEmployees can share suggestions through surveys, direct feedback channels, or structured discussions with HR and compliance teams.\n\nEmployees who demonstrate exceptional commitment to compliance and ethical business conduct are acknowledged through awards and appreciation programs.",
+    "reviewMechanism": "The Ethical Practices Policy will be reviewed annually by Senior Management, the Compliance Officer, and the Board of Directors. The review will assess governance performance, compliance, and incident management using data from audits, feedback, and reports. Policy updates will be proposed and approved by the Board. Changes will be communicated internally and to stakeholders through reports and meetings, ensuring alignment with company goals and industry standards."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/True Up/Policies/True Up Business Practices Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/True Up/Policies/True Up Business Practices Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 16471,
+  "parsedAt": "2026-09-11T07:41:51.686Z"
+}

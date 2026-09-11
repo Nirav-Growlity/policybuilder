@@ -1,0 +1,477 @@
+{
+  "id": "ethics-hikal",
+  "name": "Hikal",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Fair Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Hikal Ltd. (Group)",
+      "industry": "",
+      "site": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India.",
+      "sites": [
+        {
+          "location": "Hikal Limited",
+          "address": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India.",
+          "primaryFunction": "Headquarter"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "T-21, MIDC. Ind. Area, Taloja - 410 208, Dist Raigad, Maharashtra, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "A-18, MIDC Ind. Area, Mahad - 402 309, Dist. Raigad, Maharashtra, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Manufacturing Plant",
+          "address": "629 / 630-B, GIDC Estate, Panoli -394 116, Dist. Bharuch, Gujarat, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "JIGANI UNIT I",
+          "address": "82/A, KIADB lnd. Area, Jigani, Anekal Taluk, Bangalore – 560 105, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "JIGANI UNIT II",
+          "address": "28, KIADB lndl. Area, Jigani, Anekal Taluk, Bangalore – 560 105, India.",
+          "primaryFunction": "Manufacturing Plant"
+        },
+        {
+          "location": "Research and Technology (R&T) Centres",
+          "address": "Plot No. 3A & 3B, 2nd Phase, International Biotech Park, Hinjewadi,Pune - 411 057, India.",
+          "primaryFunction": "Research and Technology (R&T) Centres"
+        },
+        {
+          "location": "Research and Technology (R&T) Centres",
+          "address": "3rd floor, Grey Rock, No.10, 24th Main, J.P. Nagar, 2nd Phase, Bangalore - 560 078, India.",
+          "primaryFunction": "Research and Technology (R&T) Centres"
+        },
+        {
+          "location": "Office",
+          "address": "Kyodo Bldg. 503, 1-18 Kanda Sudacho,Chiyoda-ku, Tokyo 101-0041, Japan.",
+          "primaryFunction": "Office"
+        },
+        {
+          "location": "Office",
+          "address": "Please mention office address of USA",
+          "primaryFunction": "Office"
+        },
+        {
+          "location": "Office",
+          "address": "Please mention office address of EUROPE",
+          "primaryFunction": "Office"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Great Eastern Chambers, Sector 11, CBD Belapur, Navi Mumbai - 400 614, India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Hikal Ltd. (Group) is committed to conducting all business activities with the highest standards of integrity, fairness, transparency, and accountability. Ethical conduct is fundamental to the Company’s long-term value creation, stakeholder trust, and regulatory compliance. This Fair Ethics Policy establishes the principles and expectations governing the behavior of all employees, contractors, partners, suppliers, and other stakeholders associated with Hikal Ltd. It ensures that all business decisions are made in a manner that is honest, transparent, and aligned with applicable laws, regulations, and industry best practices.",
+      "declaration": "This Fair Ethics Policy establishes the principles and expectations governing the behavior of all employees, contractors, partners, suppliers, and other stakeholders associated with Hikal Ltd. It ensures that all business decisions are made in a manner that is honest, transparent, and aligned with applicable laws, regulations, and industry best practices.",
+      "scope": "This Fair Ethics Policy applies to all employees, stakeholders, contractors, partners, customers, contract workers, and any individuals representing the Hikal Limited Group. It is applicable to all manufacturing units, operational facilities, branch offices, registered locations, warehouses, and any other premises owned, leased, or managed by the Hikal Limited Group, as listed below:"
+    },
+    "focusAreas": [
+      "Integrity and ethical conduct in all business activities",
+      "Zero tolerance towards bribery, corruption, fraud, and unethical practices",
+      "Identification, disclosure, and management of conflicts of interest",
+      "Promotion of fair competition and responsible business practices",
+      "Respect for human rights, dignity, diversity, and non-discrimination",
+      "Protection of confidential, proprietary, and personal information",
+      "Responsible and appropriate use of company assets and resources",
+      "Transparent reporting of ethical concerns through established mechanisms"
+    ],
+    "qualitative": {
+      "Information Security and Management": [
+        "We commit to maintaining an enterprise-wide Information Security Management System (ISMS) with clearly defined roles, responsibilities, and access controls for all critical information assets.",
+        "We will implement information based on sensitivity and apply role-based access, multi-factor authentication, and encryption for confidential and personal data.",
+        "We will conduct periodic vulnerability assessments, penetration testing, and system access reviews to identify and remediate information security risks.",
+        "We commit to maintaining documented incident response and data breach management procedures, including timely internal escalation and regulatory reporting where required.",
+        "We will provide mandatory information security and cyber awareness training to all employees, with enhanced training for personnel handling sensitive or regulated data."
+      ],
+      "Data Manipulation": [
+        "We commit to ensuring that all financial, operational, regulatory, and ESG data is recorded, processed, and reported accurately and in a timely manner.",
+        "We prohibit unauthorized alteration, suppression, or misrepresentation of data, including manipulation of laboratory results, quality records, financial statements, or sustainability disclosures.",
+        "We will implement segregation of duties, maker-checker controls, and system-based validations for data creation, modification, and approval processes.",
+        "We commit to conducting periodic internal audits and management reviews of critical data sets and reporting processes.",
+        "We will investigate all reported instances of suspected data manipulation and take corrective and disciplinary action in line with company policies and applicable laws."
+      ],
+      "Anti-Corruption & Bribery": [
+        "We commit to a zero-tolerance approach towards bribery, corruption, facilitation payments, kickbacks, or improper benefits in any form, whether direct or indirect.",
+        "We prohibit offering, giving, soliciting, or accepting bribes, including through third parties such as agents, consultants, distributors, or intermediaries.",
+        "We will require pre-approval, documentation, and periodic review of gifts, hospitality, donations, sponsorships, and charitable contributions.",
+        "We will conduct corruption risk assessments and due diligence for high-risk third parties, geographies, and transactions.",
+        "We will ensure mandatory anti-corruption training for all employees in procurement, sales, finance, regulatory, and leadership roles."
+      ],
+      "Anti Money Laundering": [
+        "We commit to strict compliance with applicable anti-money laundering (AML) laws and regulations, ensuring due diligence is applied to all relevant financial transactions and business relationships.",
+        "We will implement systematic screening and verification of customers, business partners, and transactions to detect and prevent money laundering, terrorist financing, or other illicit activities.",
+        "We commit to providing periodic AML training to employees in finance, procurement, sales, and other relevant functions to enhance awareness of risk indicators, reporting obligations, and due diligence procedures.",
+        "We will ensure comprehensive KYC checks are completed and documented prior to onboarding third parties, entering into contracts, or executing high-value or high-risk transactions.",
+        "We will maintain accurate, secure, and retrievable records of financial transactions, due diligence documentation, and third-party engagements in line with AML requirements and audit and regulatory expectations."
+      ],
+      "Conflict of Interest": [
+        "We maintain zero tolerance for non-disclosure, concealment, or misuse of position arising from conflicts of interest, and will take disciplinary action in line with Company policies and applicable laws",
+        "We commit to requiring employees to proactively disclose any personal, financial, or familial interests that may influence, or appear to influence, professional judgment or business decisions.",
+        "We will provide clear procedures and guidance to managers for identifying, assessing, and mitigating actual, potential, or perceived conflicts of interest.",
+        "We aim to strengthen awareness through periodic training and communication on conflict-of-interest scenarios, ethical decision-making, and reporting responsibilities across all functions.",
+        "We commit to ensuring that all disclosed conflicts of interest are appropriately reviewed, managed, and resolved in a transparent manner, reinforcing a strong and consistent compliance culture."
+      ],
+      "Fraud Management": [
+        "We will establish and maintain robust internal controls and clearly defined approval procedures to proactively detect, deter, and prevent fraudulent activities across all operations and financial processes.",
+        "We will Strengthen internal control frameworks to ensure effective identification, timely reporting, and prevention of fraud across all business functions.",
+        "Our aim is to foster a transparent and ethical culture that encourages employees and stakeholders to report suspected or observed fraudulent activities without fear of retaliation.",
+        "We will ensure comprehensive, structured, and role-based fraud prevention training is provided to employees at regular intervals to enhance awareness, reinforce ethical conduct, and build capability to identify and respond to fraud risks.",
+        "We continuously enhance employee knowledge, skills, and compliance through ongoing training programs aligned with organizational policies, ethical standards, and applicable regulatory requirements."
+      ],
+      "Consequences of Policy Violations": [
+        "Violations of the Fair Ethics Policy may result in disciplinary action, up to and including termination of employment or contract.",
+        "Serious breaches, including bribery, corruption, fraud, data manipulation, or conflicts of interest, may result in legal action under applicable laws and regulations.",
+        "Non-compliance with mandatory training or awareness programs may lead to restrictions on system access, project participation, or role responsibilities.",
+        "Unauthorized disclosure, misuse, or loss of confidential information or company assets may result in financial recovery, disciplinary action, or legal proceedings.",
+        "Acts of retaliation against individuals reporting concerns in good faith will result in strict disciplinary measures, including termination, and potential legal consequences.",
+        "All violations will be investigated promptly, fairly, and confidentially, with actions proportionate to the severity, impact, and recurrence of the breach.",
+        "Continuous or repeated violations may affect career progression, performance appraisal, and eligibility for internal opportunities.",
+        "Hikal Ltd. reserves the right to take any additional action deemed necessary to protect the company, its stakeholders, and compliance with laws and regulations."
+      ],
+      "Employee Guidelines": [
+        "Employees of Hikal Ltd. are expected to uphold the highest standards of ethical conduct and comply with all aspects of the Fair Ethics Policy.",
+        "Always act with honesty, fairness, and transparency in all business dealings.",
+        "Avoid any behavior that could damage Hikal Ltd.’s reputation or stakeholder trust.",
+        "Report any suspected unethical behavior, misconduct, or breaches of company policy immediately.",
+        "Follow all applicable laws, regulations, and internal company policies in every action and decision.",
+        "Never offer, give, solicit, or accept bribes, facilitation payments, kickbacks, or any form of improper benefit.",
+        "Ensure all gifts, hospitality, donations, or sponsorships comply with company approval procedures.",
+        "Conduct due diligence on all third parties to avoid involvement in corrupt practices.",
+        "Disclose any personal, financial, or familial interests that may influence, or appear to influence, business decisions.",
+        "Recuse yourself from decisions where a conflict of interest exists until the matter is reviewed and resolved.",
+        "Update conflict-of-interest declarations annually or whenever new conflicts arise.",
+        "Follow all AML procedures when dealing with customers, vendors, or third parties.",
+        "Report any suspicious transactions or activities immediately to the Compliance team.",
+        "Ensure accurate documentation and retention of all financial and contractual records.",
+        "Ensure that all financial, operational, laboratory, and ESG data is accurate, complete, and timely.",
+        "Never manipulate, falsify, or suppress data for personal or professional gain.",
+        "Follow all internal approval and maker-checker processes for data creation, modification, and reporting.",
+        "Protect company information and systems by following ISMS policies, including password controls, multi-factor authentication, and encryption.",
+        "Report any suspected or actual information security incidents immediately.",
+        "Use company IT resources responsibly and only for authorized purposes.",
+        "Be vigilant and proactive in identifying and reporting any suspected fraudulent activity.",
+        "Participate in mandatory fraud prevention training programs.",
+        "Support internal investigations and audits by providing accurate information.",
+        "Use designated reporting channels to report concerns, misconduct, or violations of this Policy.",
+        "Reports made in good faith will be treated confidentially, and employees will be protected from retaliation.",
+        "Complete all mandatory training programs on ethics, anti-corruption, AML, fraud, conflict-of-interest, and information security.",
+        "Seek guidance from managers or the Compliance team when in doubt about ethical or policy matters.",
+        "Treat all colleagues, partners, and stakeholders with respect, dignity, and fairness, promoting diversity and inclusion."
+      ],
+      "Continuous Improvement": [
+        "Hikal Ltd. is committed to continuously enhancing its ethical standards, compliance frameworks, and risk management practices.",
+        "Policies, procedures, and training programs will be periodically reviewed and updated based on audits, feedback, regulatory changes, and industry best practices.",
+        "Employees are encouraged to provide suggestions for improvement.",
+        "Lessons learned from investigations, incidents, and audits will be applied to strengthen controls, promote ethical behavior, and drive sustainable and responsible business growth."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Information Security and Management",
+        "targets": [
+          {
+            "target": "We aim to implement formal information security controls across 100% of critical IT systems",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to achieve that 100% of employees receive annual training on information security and data privacy",
+            "baseline": "2022-23",
+            "deadline": "2027-28"
+          },
+          {
+            "target": "We maintain encryption and access controls 80% on all critical systems and devices across the organization",
+            "baseline": "2022-23",
+            "deadline": "2027-28"
+          },
+          {
+            "target": "We continuously respond to reported 80% data-breach incidents within 12 hours",
+            "baseline": "",
+            "deadline": "2027-28"
+          },
+          {
+            "target": "We aim to maintain zero confirmed cases of information security breaches, unauthorized access, or data loss each year.",
+            "baseline": "",
+            "deadline": "each year"
+          }
+        ]
+      },
+      {
+        "area": "Data Manipulation",
+        "targets": [
+          {
+            "target": "We aim to establish documented data integrity and approval controls for 100% of critical data and reporting processes",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to cover 80% of relevant employees through mandatory data integrity and ethical reporting training",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We seek to maintain zero confirmed cases of intentional data manipulation per year",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Corruption & Bribery",
+        "targets": [
+          {
+            "target": "We aim to achieve 100% of employees complete annual ethics and anti-corruption training, with enhanced training provided to high-risk functions such as sales, procurement, and clinical operations",
+            "baseline": "2022-23",
+            "deadline": "2027-28"
+          },
+          {
+            "target": "We aim to achieve 100% of contracts with agents, distributors, and consultants include clear anti-bribery and corruption clauses",
+            "baseline": "2022-23",
+            "deadline": "2027-28"
+          },
+          {
+            "target": "We aim to maintain zero confirmed cases of bribery, facilitation payments, or improper influence each year.",
+            "baseline": "",
+            "deadline": "each year"
+          },
+          {
+            "target": "We aim to conduct anti-corruption due diligence for 100% of high-risk third-party engagements",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Anti Money Laundering",
+        "targets": [
+          {
+            "target": "We aim to implement AML screening and monitoring mechanisms for 100% of applicable customers, vendors, and intermediaries",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to maintain 100% of payments through traceable banking channels and reports all suspicious transactions in line with regulatory requirements",
+            "baseline": "2022-23",
+            "deadline": "2026-27"
+          },
+          {
+            "target": "We strive to cover 80% of relevant employees through AML awareness and compliance training",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to conduct periodic AML risk assessments across all applicable operations",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We seek to maintain zero confirmed cases of money laundering or regulatory non-compliance",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "We aim to obtain annual conflict of interest declarations from at least 95% of employees and key management personnel",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We strive to ensure 100% of identified conflict of interest cases are documented, reviewed, and resolved through defined processes",
+            "baseline": "",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to cover 80% of employees through conflict-of-interest awareness training",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to maintain zero cases of conflict-of-interest cases per year.",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Fraud Management",
+        "targets": [
+          {
+            "target": "We aim to implement fraud risk assessments and control mechanisms across 100% of high-risk business and financial processes",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We strive to cover 70% of employees through mandatory fraud prevention and awareness training",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027–28"
+          },
+          {
+            "target": "We aim to conduct regular internal audits and ensures that 100% of financial and operational records are reviewed according to the internal control schedule",
+            "baseline": "2022-23",
+            "deadline": "2027-28"
+          },
+          {
+            "target": "We are commit to investigates 100% of reported fraud allegations within 30 days and implements corrective actions where required",
+            "baseline": "2022-23",
+            "deadline": "2027-28"
+          },
+          {
+            "target": "We aim to maintain zero confirmed fraud incidents per year.",
+            "baseline": "",
+            "deadline": "per year"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Provide strategic oversight and ensure that the Fair Ethics Policy aligns with corporate governance standards and regulatory requirements."
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Review significant ethical breaches, corruption cases, fraud incidents, conflicts of interest, and data manipulation cases."
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Allocate necessary resources for ethics programs, awareness campaigns, and compliance monitoring."
+      },
+      {
+        "role": "Chief Executive Officer",
+        "duty": "Promote a culture of integrity, transparency, and accountability across the organization."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure the effective implementation of the Fair Ethics Policy across all functions and business units."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Lead by example and reinforce a zero-tolerance approach towards unethical practices, bribery, corruption, and fraud."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Regularly review organizational ethical performance and report to the Board."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Drive integration of ethics and compliance considerations into strategic and operational decisions."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Develop, maintain, and update the Fair Ethics Policy and associated procedures."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Oversee implementation of anti-corruption, anti-money laundering (AML), fraud prevention, conflict of interest, and information security controls."
+      },
+      {
+        "role": "Chief Compliance Officer (CCO)",
+        "duty": "Ensure that all employees, contractors, and third parties receive mandatory ethics, AML, anti-bribery, and fraud prevention training."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Implement and maintain the Information Security Management System (ISMS) for all critical systems."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Ensure proper access controls, multi-factor authentication, encryption, and regular security audits."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Conduct periodic vulnerability assessments, penetration testing, and data breach simulations."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Coordinate mandatory cybersecurity and data privacy awareness training for employees."
+      },
+      {
+        "role": "Chief Financial Officer",
+        "duty": "Ensure accurate, transparent, and timely financial reporting in line with regulatory requirements."
+      },
+      {
+        "role": "Chief Financial Officer",
+        "duty": "Implement internal controls to prevent financial fraud, data manipulation, and money laundering."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Integrate ethical principles and compliance requirements into hiring, onboarding, and performance management processes."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Facilitate training programs on ethics, anti-corruption, conflict of interest, and fraud prevention."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Manage whistleblower and grievance mechanisms, ensuring protection against retaliation."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Maintain records of employee disclosures, conflict-of-interest declarations, and training completion."
+      },
+      {
+        "role": "All Employees, Contractors, and Third Parties",
+        "duty": "Adhere to the Fair Ethics Policy and related procedures in all business activities."
+      },
+      {
+        "role": "All Employees, Contractors, and Third Parties",
+        "duty": "Disclose any actual, potential, or perceived conflicts of interest in a timely manner."
+      },
+      {
+        "role": "All Employees, Contractors, and Third Parties",
+        "duty": "Report suspected violations of ethics, fraud, data manipulation, bribery, or corruption through established channels."
+      },
+      {
+        "role": "All Employees, Contractors, and Third Parties",
+        "duty": "Protect confidential and proprietary information and use company resources responsibly."
+      },
+      {
+        "role": "All Employees, Contractors, and Third Parties",
+        "duty": "Follow the employee guidelines."
+      },
+      {
+        "role": "All Employees, Contractors, and Third Parties",
+        "duty": "Participate in mandatory ethics, compliance, AML, anti-corruption, and fraud awareness training."
+      }
+    ],
+    "monitoring": "Employees and stakeholders must promptly report any suspected violations, misconduct, or ethical concerns through designated channels, including the whistleblower hotline, email, or reporting portal. All reports will be treated confidentially and investigated impartially. The Compliance team, Internal Audit, and management will monitor adherence to this Policy, track incidents, implement corrective actions, and ensure timely reporting to leadership and regulatory authorities as required.",
+    "reviewMechanism": "Hikal Ltd. will conduct periodic reviews of the Fair Ethics Policy annually or as required to ensure its continued relevance, effectiveness, and alignment with regulatory requirements and industry best practices. Reviews will include assessment of policy implementation, compliance metrics, training effectiveness, incident reports, and feedback from employees and stakeholders. Updates will be approved by senior management and communicated to all employees to reinforce a culture of integrity, accountability, and continuous improvement."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Hikal/3. Fair Ethics Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Hikal/3. Fair Ethics Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 23366,
+  "parsedAt": "2026-09-11T07:08:41.799Z"
+}

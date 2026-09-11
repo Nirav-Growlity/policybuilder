@@ -1,0 +1,180 @@
+{
+  "id": "living-wage-val-organic",
+  "name": "Val Organic",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from 5. Living Wage Policy.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Val Organics Private Limited",
+      "industry": "",
+      "site": "Plot No. 2201, Road No. 21, GIDC Estate, Sarigam, Valsad, Gujarat – 396155",
+      "sites": [
+        {
+          "location": "Val Organics Private Limited",
+          "address": "Plot No. 2201, Road No. 21, GIDC Estate, Sarigam, Valsad, Gujarat – 396155",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "Ground Floor, Chadha Building, Plot No-95, Wadala, Wadala, Mumbai, Maharashtra 400031",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 2201, Road No. 21, GIDC Estate, Sarigam, Valsad, Gujarat – 396155"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Val Organics Private Limited, we are dedicated to fostering a work environment that prioritizes the well-being of our employees. Our commitment to fair and equitable compensation practices forms the cornerstone of our Living Wage Policy. This policy aims to ensure that every employee receives compensation that not only meets their basic needs but also enables them to achieve a decent standard of living.",
+      "declaration": "Val Organics Private Limited is steadfast in its commitment to providing fair and equitable compensation to all employees, aligning with our core values of integrity and compassion. We will regularly assess and adjust living wage rates in accordance with prevailing standards and market conditions, ensuring that our employees can sustain themselves and their families while contributing meaningfully to our organization's success.",
+      "scope": "This policy applies to all Val Organics Private Limited locations and extends to all employees, contractors, suppliers, partners, and stakeholders associated directly or indirectly with the company."
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": "This policy aims to ensure that every employee receives compensation that not only meets their basic needs but also enables them to achieve a decent standard of living.\n\nVal Organics Pvt. Ltd. is committed to ensuring that employee compensation supports a decent standard of living and aligns with applicable living wage principles.\n\nData Collection and Assessment: Collect and analyze relevant wage, cost-of-living, inflation, statutory wage, and economic data from reliable sources to assess wage adequacy and identify potential gaps between current wages and living wage benchmarks.\n\nLiving Wage Benchmarking: Compare employee compensation levels against recognized living wage benchmarks, industry standards, regional wage data, and legal minimum wage requirements to evaluate competitiveness and adequacy.\n\nGap Analysis: Conduct periodic assessments to identify any gaps between current compensation practices and living wage benchmarks, considering factors such as employee categories, geographic locations, and workforce demographics.\n\nPerformance Evaluation: Review compensation performance using relevant indicators such as wage levels, employee retention, employee satisfaction, workforce stability, and compliance with legal and organizational requirements.\n\nContinuous Monitoring and Review: Monitor wage practices regularly and conduct annual reviews to evaluate progress, ensure ongoing alignment with living wage principles, and identify opportunities for continuous improvement.\n\nThe policy applies to all Val Organics Private Limited locations and extends to all employees, contractors, suppliers, partners, and stakeholders associated directly or indirectly with the company.\n\nWe believe in compensating employees fairly for their contributions, recognizing their intrinsic value to the company.\n\nAcknowledging regional variations in the cost of living, we will adjust wages to ensure that all employees can afford essential necessities.\n\nWe will conduct regular reviews of industry benchmarks to remain competitive and uphold fair wage standards.\n\nEmployees will be provided with clear and transparent information about how their wages are determined and the factors influencing their compensation."
+    },
+    "focusAreas": [
+      "Enhanced Quality of Life",
+      "Equality and Justice",
+      "Compliance and Enforcement",
+      "Collaboration",
+      "Wage Equity",
+      "Employee Engagement and Consultation",
+      "Continuous Wage Assessment"
+    ],
+    "qualitative": {
+      "Enhanced Quality of Life": [
+        "Our aim is to elevate the overall well-being of employees by providing them with adequate income to sustain a decent standard of living, encompassing essential needs such as healthcare, nutrition, and housing."
+      ],
+      "Equality and Justice": [
+        "We are committed to reducing income inequality and ensuring equal pay for equal work, thereby fostering a more just and equitable society."
+      ],
+      "Compliance and Enforcement": [
+        "We will establish robust mechanisms to monitor compliance with the living wage policy, enforcing it rigorously to safeguard against exploitation and uphold fair labor standards."
+      ],
+      "Collaboration": [
+        "We will engage in collaborative efforts with relevant stakeholders to develop and implement the living wage policy in a manner that reflects diverse perspectives and interests."
+      ],
+      "Wage Equity": [
+        "Through our Wage Equity Initiative, we aim to narrow the wage gap with respect to local wage standards, promoting fairness and equity across all levels of our workforce."
+      ],
+      "Employee Engagement and Consultation": [
+        "We will engage employees and relevant stakeholders through regular consultations and feedback mechanisms to understand wage-related concerns and continuously improve living wage practices."
+      ],
+      "Continuous Wage Assessment": [
+        "We are committed to periodically assessing wage adequacy against recognized living wage benchmarks to ensure compensation remains aligned with changing economic conditions and employee needs."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Living Wage Coverage",
+        "targets": [
+          {
+            "target": "Ensure that 100% of employees receive wages equal to or above the established living wage benchmark",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Living Wage Non-Compliance Complaints",
+        "targets": [
+          {
+            "target": "Maintain zero substantiated complaints related to living wage non-compliance",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Living Wage Assessments",
+        "targets": [
+          {
+            "target": "Conduct living wage assessments at least twice annually",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Awareness",
+        "targets": [
+          {
+            "target": "Achieve 100% employee awareness of the Living Wage Policy through annual communication and training programs",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Cost-of-Living Considerations",
+        "targets": [
+          {
+            "target": "Integrate cost-of-living considerations into 100% of compensation review processes",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Offer strategic guidance and oversight for the effective execution of the living wage policy, ensuring it resonates with the company's ethos and objectives."
+      },
+      {
+        "role": "HR Department",
+        "duty": "Regularly evaluate living wage benchmarks, conduct periodic wage assessments, review and update compensation structures as necessary, address employee wage-related concerns, monitor compliance with the Living Wage Policy, and review and update the Policy annually or as required to reflect changes in legal requirements, economic conditions, and organizational needs."
+      },
+      {
+        "role": "Finance Department",
+        "duty": "Strategically allocate financial resources to support the policy's implementation, manage fiscal aspects linked to wage adjustments, and uphold compliance with financial reporting and auditing protocols."
+      },
+      {
+        "role": "Compliance and Legal Affairs Team",
+        "duty": "Guarantee adherence to labor laws and regulations, furnishing expertise on legal obligations and requirements to ensure alignment with statutory provisions."
+      },
+      {
+        "role": "Employee Advocacy Group / Employees",
+        "duty": "Advocate for equitable remuneration, actively monitor adherence to the policy, and voice any wage-related grievances or suggestions for improvement."
+      },
+      {
+        "role": "Stakeholder Engagement Team",
+        "duty": "Collaborate with governmental bodies, labor unions, advocacy groups, and suppliers to foster the successful implementation of the policy and contribute to broader societal and economic goals."
+      },
+      {
+        "role": "Monitoring and Evaluation Team",
+        "duty": "Systematically track the advancement of policy implementation, assess its impact on employee welfare and income parity, and pinpoint areas necessitating refinement or enhancement."
+      }
+    ],
+    "monitoring": "Val Organics Pvt. Ltd. shall monitor and review living wage performance on an annual basis.\n\nLiving wage-related information shall be reported through internal management reviews, HR reports, and sustainability or ESG disclosures, where applicable.\n\nReports shall be prepared in a clear and accessible format to support effective decision-making and stakeholder communication.\n\nThe reporting process may include monitoring of the following indicators:\n\nPercentage of employees receiving wages at or above the established living wage benchmark.\n\nLiving wage gap identified and addressed during the reporting period.\n\nEmployee retention and workforce stability indicators.\n\nEmployee satisfaction and well-being metrics related to compensation and benefits.\n\nNumber of wage-related grievances received and resolved.\n\nCompliance with applicable wage and labor regulations.\n\nThe reporting process shall utilize information obtained from:\n\nPayroll and compensation records.\n\nLiving wage assessments and gap analysis reports.\n\nEmployee surveys, feedback mechanisms, and grievance records.\n\nInternal audits and management reviews.\n\nHuman Resources records and workforce performance data.\n\nApplicable legal and regulatory compliance documentation.\n\nRecognized living wage benchmark data and industry references.",
+    "reviewMechanism": "The Human Resources Manager shall review the Living Wage Policy at least annually, or more frequently if significant changes occur in wage regulations, economic conditions, inflation rates, business operations, workforce composition, or stakeholder expectations.\n\nFeedback from relevant stakeholders, including employees, management representatives, worker representatives, and other relevant parties, shall be considered during the review process.\n\nThe implementation of the Policy and progress toward achieving established living wage objectives and commitments shall be evaluated to identify areas for improvement.\n\nWage assessments, living wage benchmark data, employee feedback, compensation trends, workforce retention indicators, and other relevant metrics shall be reviewed against defined objectives and industry best practices.\n\nThe effectiveness of actions taken to address identified wage gaps and improve employee well-being shall be assessed as part of the review process.\n\nBased on the review findings, necessary updates, corrective actions, and enhancements shall be recommended to strengthen the effectiveness of the Policy and align with evolving labor standards, living wage methodologies, and stakeholder expectations.\n\nAny revisions to the Policy shall be subject to approval by the CEO of Val Organics Pvt. Ltd., demonstrating leadership commitment to fair compensation and responsible employment practices.\n\nThe outcomes of the review process and significant policy updates shall be communicated to relevant stakeholders, as appropriate.\n\nThis review mechanism will ensure that Val Organics Pvt. Ltd.'s Living Wage Policy remains relevant, effective, and aligned with its commitment to fair compensation, employee well-being, responsible business practices, and continuous improvement."
+  },
+  "sourcePath": "Policies - Kenal/Val Organic/5. Living Wage Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Val Organic/5. Living Wage Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 12270,
+  "parsedAt": "2026-09-11T07:31:09.801Z"
+}

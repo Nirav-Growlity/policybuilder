@@ -1,0 +1,278 @@
+{
+  "id": "riya-travels",
+  "name": "RIYA TRAVELS",
+  "industry": "Travel and Tourism",
+  "summary": "Parsed Environmental Policy from Environmental Stewardship Policy.docx.",
+  "tagline": "Travel responsibly, source sustainably.",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Riya Travels and Tours (India) Pvt Ltd (Group)",
+      "address": "Riya Travels and Tours Pvt ltd (Group)",
+      "site": "Riya Travels and Tours Pvt ltd (Group)"
+    },
+    "standards": [
+      "ISO 14001",
+      "SA8000",
+      "Fair Trade"
+    ],
+    "declaration": {
+      "preface": "At Riya Travels and Tours Pvt ltd (Group), we recognize our responsibility to minimize our environmental impact and contribute to a sustainable future. As a leading travel service provider, we acknowledge that the tourism and travel industry plays a crucial role in environmental conservation. Our commitment to environmental stewardship is rooted in responsible business practices that aim to reduce carbon emissions, minimize waste, and promote eco-friendly travel solutions. Through sustainable procurement, energy-efficient operations, and awareness initiatives, we strive to make a positive impact on the environment while delivering high-quality services to our customers. This policy outlines our approach to integrating environmental sustainability into our business practices, ensuring compliance with relevant regulations, and fostering a culture of environmental responsibility within our organization and among our stakeholders.",
+      "declaration": "Riya Travels is committed to environmental stewardship by integrating sustainable practices into our operations. We strive to minimize our ecological footprint, promote responsible tourism, and support environmental conservation. Through innovation and collaboration, we aim to reduce waste, enhance resource efficiency, and contribute to a greener future.",
+      "scope": "This Environmental Stewardship Policy is applicable across all operations, business functions, and services of Riya Travel and Tours (India) Pvt Ltd (Group), covering all global locations, including corporate offices, registered offices, branch locations, subsidiaries, joint ventures, and associated supply chain activities. It applies to all employees, workers, contractors, and stakeholders connected to Riya Travel and Tours (India) Pvt Ltd (Group), whether directly or indirectly, and mandates strict adherence and accountability at every level."
+    },
+    "focusAreas": [
+      "Minimizing waste generation and its environmental impact",
+      "Lowering energy consumption and reducing greenhouse gas emissions",
+      "Responsible water use and conservation efforts",
+      "Customer health and safety",
+      "Maintaining a safe and healthy workplace for employees",
+      "Environmental sustainability and eco-friendly practices"
+    ],
+    "qualitative": {
+      "Waste": [
+        "Collaboration will be established with certified waste recyclers, e-waste collection programs, and responsible disposal agencies.",
+        "Steps will be taken to encourage employees to reduce personal waste, promote bring-your-own-container initiatives, and introduce sustainable office pantry practices.",
+        "Regular training will be provided on waste reduction, proper sorting, and eco-friendly habits."
+      ],
+      "Energy and Carbon": [
+        "To reduce overall energy consumption, we are installing energy-efficient LED lighting, smart sensors, and automated systems.",
+        "Commits to replacing conventional lighting with LED alternatives, installing motion sensors, and optimizing lighting use.",
+        "Plans are in place to upgrade office equipment with energy-efficient alternatives, improve air conditioning efficiency, and reduce standby power consumption.",
+        "The company seeks to partner with renewable energy providers, explore solar power integration, and reduce reliance on fossil fuels.",
+        "Plans to reduce total GHG emissions by improving energy efficiency in offices, using renewable energy where feasible, optimizing business travel, and encouraging virtual meetings.",
+        "Employees will undergo energy conservation and climate action training through awareness campaigns and best practice sharing."
+      ],
+      "Water": [
+        "We are committed to installing water-saving fixtures, such as low-flow faucets and dual-flush toilets, in all office locations.",
+        "Water audits will be conducted regularly to detect leaks early and implement quick maintenance solutions.",
+        "Plan to promote rainwater conservation by collaborating with building management and encouraging the use of harvested rainwater for non-potable purposes.",
+        "Plastic bottled water will be eliminated by encouraging refillable bottle use and providing filtered drinking water stations in all offices.",
+        "Training sessions will be arranged to educate employees on water conservation."
+      ],
+      "Customer Health and Safety": [
+        "The company plans to offer eco-friendly and hygienic travel choices by partnering with service providers that use non-toxic cleaning and sanitization methods.",
+        "Commits to providing customers with travel options that meet the highest health and safety standards.",
+        "Customer safety protocols will be strengthened by providing clear health guidelines, ensuring emergency preparedness, and offering 24/7 support.",
+        "Awareness sessions will be conducted for customers on travel safety, responsible tourism, and emergency preparedness."
+      ],
+      "Environmental Service and Advocacy": [
+        "We are dedicated to offering eco-friendly travel packages, collaborating with sustainable tourism partners, and promoting responsible travel choices.",
+        "Customers will be encouraged to adopt sustainable travel behaviours through green travel tips, carbon offset programs, and sustainability guidance.",
+        "Collaboration with environmental agencies will be established to conduct one or more sustainability training sessions."
+      ],
+      "General Environmental Stewardship": [
+        "Implement energy-efficient practices in office operations and advocate for carbon offset programs in travel services.",
+        "Adopt paperless booking processes, reduce plastic use, and promote recycling initiatives within office spaces.",
+        "Educate employees and travelers on responsible tourism and environmental best practices.",
+        "Ensure adherence to local and international environmental laws while continuously improving sustainability efforts.",
+        "Encourage eco-friendly travel options by partnering with sustainable airlines, hotels, and transportation providers.",
+        "Prioritize eco-friendly and ethically sourced office supplies, travel packages, and vendor partnerships.",
+        "Implement strategies to reduce water consumption in office spaces and promote water-saving practices among employees.",
+        "Regularly assess and disclose the company’s environmental impact, setting targets for continuous improvement."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Sustainable Waste Practices",
+        "targets": [
+          {
+            "target": "reduce paper usage by 30%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "achieve 100% waste sorting compliance",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "reduce plastic waste by 50%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "ensure 100% compliance with waste regulations",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "minimize waste generation by 25%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "ensure 100% workforce participation",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Energy Efficiency and Carbon Reduction",
+        "targets": [
+          {
+            "target": "reduce office electricity usage by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "reduce energy consumption by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "lower electricity usage by 15%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "increase renewable energy usage by 40%",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "15% overall Scope 1-2-3 GHG emission reduction",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "ensuring 100% workforce engagement",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Water Stewardship and Efficiency",
+        "targets": [
+          {
+            "target": "reduce water consumption by 20%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "decreasing water wastage by 30%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "increase water efficiency by 15%",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "Plastic bottled water will be eliminated",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "ensuring 100% participation in water-saving initiatives",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "ensuring 100% safe travel experiences",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "ensuring 100% compliance with global safety guidelines",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "zero major safety incidents",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "ensure 100% informed travelers",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Service and Advocacy",
+        "targets": [
+          {
+            "target": "ensure 30% of services are green-certified",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "increasing customer participation in eco-friendly travel by 50%",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          },
+          {
+            "target": "ensuring 100% of stakeholders, including suppliers, community, and partners, are educated and comply with eco-friendly standards",
+            "baseline": "",
+            "deadline": "FY 2027-28"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      13,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Sustainability Officer",
+        "duty": "Responsible for overseeing and review the implementation of the policy."
+      },
+      {
+        "role": "Sustainability Officer",
+        "duty": "Tracking progress on sustainability goals."
+      },
+      {
+        "role": "Sustainability Officer",
+        "duty": "Ensuring compliance with environmental regulations, and promoting continuous improvement."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Provides strategic direction, allocates necessary resources"
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Integrates sustainability into corporate decision-making to drive long-term environmental responsibility."
+      },
+      {
+        "role": "Employees",
+        "duty": "Expected to adopt eco-friendly workplace practices, reduce waste, conserve energy and water"
+      },
+      {
+        "role": "Employees",
+        "duty": "Actively participate in sustainability initiatives."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "Ensures that all purchases prioritize sustainability by selecting eco-friendly, ethically sourced products and working with responsible suppliers."
+      },
+      {
+        "role": "Facility Management",
+        "duty": "Implements and maintains energy-efficient operations, waste segregation systems, and water conservation measures across all office locations."
+      }
+    ],
+    "monitoring": "The governance of this Environmental Stewardship Policy will be overseen by a designated Sustainability Officer. This individual will ensure compliance with sustainability targets, monitor progress, and report on key environmental performance indicators. They will collaborate with all departments, stakeholders, and external partners to drive eco-friendly initiatives, implement best practices, and align operations with global environmental standards. Regular audits, training sessions, and policy updates will be conducted to foster continuous improvement. The Sustainability Officer will be accountable for integrating sustainability into corporate decision-making and driving long-term environmental responsibility.\n\nThe Sustainability Officer will submit quarterly reports to senior management on policy implementation, progress, and key environmental performance indicators.\n\nDepartment heads will provide updates on sustainability initiatives, challenges, and corrective actions taken.\n\nRegular audits will be conducted to ensure adherence to environmental regulations and corporate sustainability commitments.\n\nNon-compliance incidents will be documented, investigated, and addressed through corrective measures.\n\nAn annual sustainability report will be published to communicate the company’s environmental impact, progress on targets, and future commitments.\n\nReports will be shared with relevant stakeholders, including regulatory bodies, business partners, and customers.\n\nA reporting mechanism will be established for employees and stakeholders to raise concerns or suggest improvements related to environmental practices.\n\nFeedback will be reviewed regularly to enhance the effectiveness of the policy.\n\nWe are committed to continuously enhancing our environmental stewardship efforts. We will regularly assess our sustainability strategies, integrate innovative eco-friendly solutions, and refine our policies based on industry advancements and stakeholder feedback. Through ongoing training, technological upgrades, and strategic partnerships, we will ensure sustained progress toward our environmental goals while adapting to emerging sustainability challenges.",
+    "reviewMechanism": "The Sustainability Officer will review this policy every year or when needed to ensure its relevance and effectiveness. In collaboration with senior management and key stakeholders, they will evaluate progress, assess compliance, and identify areas for improvement. Adjustments will be made based on regulatory updates, operational changes, and sustainability advancements to maintain alignment with best practices and corporate goals."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/RIYA TRAVELS/Environmental Stewardship Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/RIYA TRAVELS/Environmental Stewardship Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 13435,
+  "parsedAt": "2026-09-11T07:13:59.517Z"
+}

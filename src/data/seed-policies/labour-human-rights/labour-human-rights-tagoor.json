@@ -1,0 +1,408 @@
+{
+  "id": "labour-human-rights-tagoor",
+  "name": "Tagoor",
+  "industry": "Source policy template",
+  "summary": "Parsed Labour & Human Rights Policy from 2. Responsible Labour and Human Rights Policy.docx.",
+  "tagline": "Labour & Human Rights Policy",
+  "policy": {
+    "policyType": "labour-human-rights",
+    "company": {
+      "name": "Tagoor Laboratories Pvt Ltd",
+      "industry": "",
+      "site": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India.",
+      "sites": [
+        {
+          "location": "Tagoor Laboratories Pvt Ltd",
+          "address": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India.",
+          "primaryFunction": "Pharmaceutical and chemical manufacturing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. 12, Jawaharlal Nehru Pharma City, Parawada, Anakapalli District, Visakhapatnam, Andhra Pradesh – 531021, India."
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 45001",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "This Responsible Labour and Human Rights Policy (“Policy”) is developed and implemented by Tagoor Laboratories Pvt Ltd (“the Company”) to ensure fair, ethical, and responsible labour practices and to uphold human rights across its operations.\n\nThe Company integrates respect for labour standards and human rights into its daily operations, business practices, and interactions with employees, workers, suppliers, and other stakeholders. This Policy defines the Company’s commitments, key focus areas, and mechanisms for implementation, monitoring, and continuous improvement.\n\nThe Company adopts appropriate policies, procedures, and best practices to promote safe, fair, and inclusive working conditions and fosters a culture of respect, dignity, and accountability across all levels of the organization.",
+      "declaration": "I, the undersigned employee of Tagoor Laboratories Pvt. Ltd., hereby acknowledge my understanding and commitment to the Company’s Responsible Labour and Human Rights framework and confirm the following:\n\nI confirm that I have received the Responsible Labour and Human Rights Policy\n\nI have read and understood its purpose, scope, and requirements\n\nI understand how the policy applies to my role and workplace activities\n\nI agree to comply with all applicable labour laws, company policies, and human rights requirements\n\nI will follow fair, ethical, and lawful workplace practices in all my activities\n\nI will support the Company’s commitment to responsible labour and human rights standards\n\nI will participate in training and awareness programs related to labour rights and workplace conduct\n\nI will contribute to maintaining a respectful, inclusive, and safe work environment\n\nI will support initiatives aimed at improving workplace practices and employee well-being\n\nI will report any concerns, violations, or risks related to labour practices or human rights\n\nI will use the designated grievance mechanisms responsibly and without fear of retaliation\n\nI will communicate improvement opportunities to the HR Manager\n\nI acknowledge that responsible labour practices and respect for human rights are ongoing responsibilities\n\nI commit to supporting continuous improvement in workplace practices and ethical conduct",
+      "scope": "This Responsible Labour and Human Rights Policy (“Policy”) applies to all operations, activities, and facilities of Tagoor Laboratories Pvt Ltd (“the Company”). It is applicable to all employees at all levels, as well as contract workers, suppliers, service providers, business partners, and any other individuals or entities working on behalf of the Company."
+    },
+    "focusAreas": [
+      "Child Labour, Forced Labour & Human Trafficking",
+      "Discrimination & Harassment Prevention",
+      "Respectful Workplace & Dignity at Work",
+      "Employee Health, Safety & Well-being",
+      "Working Conditions & Fair Employment",
+      "Equitable Compensation & Benefits",
+      "Social Dialogue & Employee Engagement",
+      "Career Development & Training"
+    ],
+    "qualitative": {
+      "Overall Responsible Labour and Human Rights Objectives": [
+        "To ensure a safe, healthy, and secure working environment for all employees, contractors, and associated personnel across all operations.",
+        "To uphold and respect internationally recognized human rights principles by promoting fair, ethical, and dignified treatment of all individuals.",
+        "To ensure compliance with all applicable labour laws, statutory requirements, and relevant human rights standards.",
+        "To prohibit and eliminate all forms of child labour, forced labour, and human trafficking within operations and the supply chain.",
+        "To promote equality, diversity, and inclusion by preventing discrimination and harassment in the workplace.",
+        "To ensure fair, transparent, and equitable compensation and benefits practices in line with applicable laws and industry standards.",
+        "To promote responsible labour practices across the supply chain by encouraging adherence to human rights and labour standards among business partners.",
+        "To foster a workplace culture based on dignity, respect, and ethical conduct in all interactions.",
+        "To encourage employee participation and effective communication through appropriate grievance and feedback mechanisms.",
+        "To promote awareness and understanding of labour rights and human rights principles through training and engagement initiatives."
+      ],
+      "Approach: Prevent, Comply and Improve": [
+        "Potential risks related to labour practices and human rights are identified, assessed, and addressed through appropriate policies, procedures, and operational controls.",
+        "The Company complies with all applicable labour laws, regulations, and statutory requirements, and aligns its practices with recognized human rights principles and standards.",
+        "The Company promotes continuous improvement in labour practices and human rights performance through regular monitoring, evaluation, and implementation of corrective and preventive actions."
+      ],
+      "Child Labour, Forced Labour and Human Trafficking": [
+        "Implement a strict zero-tolerance policy integrated into all HR and operational procedures",
+        "Strengthen robust age verification system at the time of recruitment with documented proof retention",
+        "Conduct mandatory contract worker screening and internal workforce screening for forced labour risks",
+        "Conduct annual human rights risk assessments covering all sites and functions",
+        "Provide mandatory annual training on human rights, child labour prevention, and ethical recruitment for all employees and HR staff",
+        "Establish a confidential grievance mechanism for reporting violations anonymously",
+        "Conduct internal compliance audits and corrective action tracking system"
+      ],
+      "Discrimination and Harassment Prevention": [
+        "Ensure employees are fully aware of grievance mechanisms related to discrimination and harassment through regular communication, training, and awareness initiatives",
+        "Ensure all reported cases of discrimination and harassment are promptly and fairly investigated in accordance with defined internal procedures and timelines",
+        "Ensure timely resolution of all cases, with no pending cases remaining unresolved beyond the defined closure period",
+        "Conduct regular workplace risk assessments to identify, evaluate, and mitigate risks related to discrimination and harassment across all operations"
+      ],
+      "Respectful Workplace and Dignity at Work": [
+        "Ensure all employees acknowledge and understand workplace conduct and dignity-related policies",
+        "Conduct regular behavioral awareness and ethics training for all employees to strengthen respectful workplace culture",
+        "Maintain a zero-tolerance approach towards severe misconduct, ensuring strict adherence to disciplinary standards",
+        "Promote and sustain a positive workplace culture based on mutual respect, collaboration, and ethical behavior",
+        "Ensure all disciplinary actions are properly recorded and documented in accordance with established procedures"
+      ],
+      "Employee Health, Safety and Well-being": [
+        "Maintain a safe working environment with zero tolerance for fatal accidents and life-threatening incidents",
+        "Conduct regular health and safety risk assessments across all operations to identify, evaluate, and mitigate workplace hazards",
+        "Ensure all employees receive appropriate safety training to promote awareness, safe practices, and risk prevention",
+        "Carry out statutory inspections and audits in compliance with applicable legal and regulatory requirements",
+        "Ensure timely implementation and closure of all corrective and preventive actions arising from audits, inspections, and incidents",
+        "Promote employee health and well-being through periodic medical check-ups in line with regulatory and organizational requirements"
+      ],
+      "Working Conditions and Fair Employment Practices": [
+        "Ensure full compliance with all applicable labour laws and statutory regulations across all operations",
+        "Ensure all employees are engaged under formal and legally compliant employment contracts",
+        "Conduct regular internal audits to monitor and strengthen compliance with labour and employment standards",
+        "Maintain strict adherence to regulatory requirements with no critical non-compliance in workplace practices",
+        "Ensure fair, transparent, and compliant management of working hours, wages, and employee benefits in line with legal requirements"
+      ],
+      "Equitable Compensation and Benefits": [
+        "Ensure full compliance with all applicable statutory wage requirements across the organization",
+        "Conduct regular compensation benchmarking to ensure fairness, competitiveness, and alignment with industry standards",
+        "Promote equitable pay practices by minimizing unjustified pay disparities across similar roles",
+        "Ensure all eligible employees are fully covered under applicable statutory benefits in accordance with legal requirements"
+      ],
+      "Social Dialogue and Employee Engagement": [
+        "Conduct regular employee engagement sessions to strengthen communication, feedback, and workplace participation",
+        "Encourage broad employee participation in engagement surveys to capture meaningful feedback and improve workplace practices",
+        "Ensure employee representation is included in relevant decision-making processes related to workplace policies and practices",
+        "Promote a culture of recognition by implementing structured employee appreciation and reward initiatives across all departments"
+      ],
+      "Career Development and Training": [
+        "Ensure all employees are provided training opportunities in line with the defined competency and training matrix",
+        "Promote a culture of continuous learning by ensuring all assigned training programs are completed effectively",
+        "Encourage skill development through regular training initiatives to enhance employee capabilities and performance",
+        "Ensure all new employees receive structured induction and onboarding within the defined onboarding period",
+        "Promote internal career growth by prioritizing internal talent development and advancement opportunities within the organization"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Child Labour, Forced Labour & Human Trafficking",
+        "targets": [
+          {
+            "target": "Maintain zero (0) cases of child labour and forced labour across company operations",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain zero (0) reported cases of labour or human rights violations within company operations",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employees and contract workers receive regular human rights awareness and training",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% documented age verification records for all workers and zero child labour cases",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct human rights risk assessments at least once annually, covering 100% of operations",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of HR personnel and recruitment staff receive annual training on ethical recruitment practices, including child labour, forced labour, and age verification requirements.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Discrimination & Harassment Prevention",
+        "targets": [
+          {
+            "target": "Achieve 100% employee awareness on grievance mechanisms related to discrimination and harassment, through regular communication and training programs.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% investigation of reported cases within defined timelines",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain Zero (0) cases unresolved beyond 30 days",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% annual risk assessments covering discrimination and harassment risks across all operations.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Respectful Workplace & Dignity at Work",
+        "targets": [
+          {
+            "target": "Ensure 100% policy acknowledgment by employees",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% annual behavioral awareness training",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain Zero (0) tolerance incidents of severe misconduct annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 90% positive workplace behavior score",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% documentation of disciplinary actions",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Employee Health, Safety & Well-being",
+        "targets": [
+          {
+            "target": "Maintain Zero (0) fatal accidents (LTI fatalities)",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% health and safety risk assessments across all operations annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employee safety training coverage annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% statutory inspections and audits",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% closure of corrective actions within timelines",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employees undergo periodic health check-ups as per regulatory and company requirements",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Working Conditions & Fair Employment",
+        "targets": [
+          {
+            "target": "Maintain 100% compliance with labour laws",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employees under formal contracts",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% annual internal audits",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain Zero (0) critical non-compliance cases",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain 100% compliance in working hours and benefits",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Equitable Compensation & Benefits",
+        "targets": [
+          {
+            "target": "Ensure 100% statutory wage compliance",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct 100% annual compensation benchmarking",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve < 5% pay variance across similar roles",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% employee coverage under statutory benefits",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Social Dialogue & Employee Engagement",
+        "targets": [
+          {
+            "target": "Conduct minimum 4 employee engagement sessions annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve at least 80% participation in employee engagement surveys",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% inclusion of employee representatives in decision-making forums related to workplace policies",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement employee recognition programs across all departments, ensuring at least 90% of employees are recognized annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Career Development & Training",
+        "targets": [
+          {
+            "target": "Ensure 100% training coverage as per matrix",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 100% training completion rate",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Provide minimum 20 training hours per employee annually",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% induction completion within 30 days",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 70% internal promotion rate",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      3,
+      4,
+      5,
+      8,
+      10,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management — Managing Director",
+        "duty": "Provide strategic oversight of labour and human rights framework; ensure alignment with organizational values and objectives; allocate financial, human, and operational resources; engage with regulatory authorities and stakeholders; oversee risk identification and mitigation; review performance and drive continuous improvement"
+      },
+      {
+        "role": "Labour Compliance Manager — HR Manager",
+        "duty": "Implement and monitor Labour and Human Rights Policy; ensure compliance with labour laws and human rights standards; manage grievance redressal mechanisms; coordinate training and awareness programs; maintain records and compliance documentation"
+      },
+      {
+        "role": "Sustainability & Compliance Manager — Compliance Manager",
+        "duty": "Conduct audits and inspections related to labour and human rights; investigate incidents and ensure corrective actions; maintain monitoring and reporting systems; recommend policy improvements; liaise with auditors and external stakeholders"
+      },
+      {
+        "role": "Operations & Facilities Management — Site In-charge",
+        "duty": "Ensure implementation of labour standards and safe working conditions; monitor workplace practices; support incident reporting and corrective actions; ensure contractor and worker compliance; maintain safe and fair work environment"
+      },
+      {
+        "role": "Employee Representatives — Worker Representative",
+        "duty": "Collect and communicate employee feedback; promote awareness of labour rights and workplace policies; support employee engagement initiatives; act as communication link between workforce and management"
+      },
+      {
+        "role": "Employees — All Staff",
+        "duty": "Comply with labour and human rights policies; follow ethical and safe work practices; participate in training programs; report concerns, violations, or risks; contribute to a respectful and compliant workplace"
+      }
+    ],
+    "monitoring": "At Tagoor Laboratories Pvt. Ltd., structured monitoring and reporting systems are established to track labour and human rights performance and ensure continuous improvement.\n\nMonitoring: Key labour and human rights parameters such as workplace safety, grievance management, training coverage, and compliance status are monitored against defined KPIs on a periodic basis. Performance data is compiled and reviewed to assess trends and progress.\n\nInternal Audits: Labour and human rights compliance audits are conducted periodically to evaluate adherence to applicable laws, internal policies, and standards. Audit findings are reported to management and corrective actions are tracked to closure.\n\nManagement Review: Senior management reviews labour and human rights performance, audit outcomes, and progress against targets at defined intervals. Outputs from these reviews are used to strengthen systems and drive continuous improvement.\n\nDocumentation & Data Management: Accurate records are maintained for employee data, training, grievances, and compliance activities to ensure transparency, traceability, and effective decision-making.\n\nReporting & Disclosure: Labour and human rights performance is communicated through internal reporting systems and external disclosures, where applicable.",
+    "reviewMechanism": "This Responsible Labour and Human Rights Policy is subject to periodic evaluation by HR Manager at least once every two years or earlier if required due to regulatory changes, operational developments, audit findings, or stakeholder feedback, to ensure its continued relevance, effectiveness, and alignment with evolving legal requirements, regulatory standards, and organizational priorities.\n\nThe review encompasses an assessment of compliance status, effectiveness of labour and human rights practices, progress against established objectives, and inputs from employees, internal audits, and relevant stakeholders. Based on this evaluation, necessary updates are incorporated to strengthen the policy framework and ensure alignment with applicable laws, industry best practices, and the Company’s commitment to continuous improvement in labour and human rights performance."
+  },
+  "sourcePath": "Policies - Kenal/Tagoor/2. Responsible Labour and Human Rights Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Tagoor/2. Responsible Labour and Human Rights Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 18845,
+  "parsedAt": "2026-09-11T07:30:14.750Z"
+}

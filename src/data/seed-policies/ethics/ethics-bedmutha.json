@@ -1,0 +1,221 @@
+{
+  "id": "ethics-bedmutha",
+  "name": "Bedmutha",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Bedmutha Industries Ltd",
+      "industry": "",
+      "site": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra.",
+      "sites": [
+        {
+          "location": "Bedmutha Industries Ltd",
+          "address": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Plot No. E-1, Nardana Central Government Industrial Growth Centre, Phase - II, Waghadi-Khurd, Shindhkheda, Dist - Dhule - 424309, Maharashtra."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Bedmutha Industries Ltd is committed to conducting business with the highest standards of integrity, transparency, and accountability. This policy reflects our unwavering dedication to ethical behavior, ensuring that our operations, interactions, and business decisions align with core principles of honesty, fairness, and respect for all stakeholders. We strive to maintain a positive corporate culture that adheres to ethical conduct and legal compliance at every level of the organization.",
+      "declaration": "At Bedmutha Industries Ltd, we focus on fostering an environment where all employees, suppliers, and stakeholders are empowered to act with integrity and accountability. We actively work to prevent unethical practices, ensuring that all business decisions are made with the highest respect for legal and moral standards. This includes a zero-tolerance approach toward corruption, fraud, money laundering, and all forms of unethical behavior.",
+      "scope": "This Ethics Policy applies to all employees, contractors, consultants, suppliers, and business partners of Bedmutha Industries Ltd, including all operations, facilities, and jurisdictions where the company conducts business:"
+    },
+    "focusAreas": [
+      "Corruption",
+      "Conflict of Interest",
+      "Fraud",
+      "Money Laundering",
+      "Anti-Competitive Practices",
+      "Information Security",
+      "Whistleblower Protection"
+    ],
+    "qualitative": {
+      "Corruption": [
+        "The company aims to implement a digital monitoring system for detecting and preventing corrupt practices in all business dealings."
+      ],
+      "Conflict of Interest": [
+        "The company plans to establish a conflict-of-interest declaration process.",
+        "Bedmutha prioritizes integrating an automated system to monitor and flag potential conflicts in procurement and contracting."
+      ],
+      "Fraud": [
+        "Bedmutha aims to reduce identified fraud risks through annual fraud risk assessments initiated in 2026."
+      ],
+      "Money Laundering": [
+        "Bedmutha emphasizes enhanced financial transaction monitoring systems.",
+        "The company plans to provide specialized AML training to all finance and procurement teams, ensuring effective identification and reporting of suspicious transactions by 2026."
+      ],
+      "Anti-Competitive Practices": [
+        "Bedmutha prioritizes full compliance with local and international competition laws, supported by regular training programs for senior management and sales teams.",
+        "The company focuses on establishing a compliance task force to monitor and review anti-competitive risks across all business functions, completing annual audits by 2026."
+      ],
+      "Information Security": [
+        "Bedmutha is committed to implementing ISO 27001-compliant data security systems.",
+        "The company plans to conduct annual cybersecurity training sessions."
+      ],
+      "Whistleblower Protection": [
+        "Bedmutha emphasizes the establishment of a confidential whistleblower hotline accessible 24/7.",
+        "The company focuses on resolving whistleblower reports within 60 days, ensuring fairness and transparency in the process by 2026."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Bedmutha focuses on ensuring 100% of employees, suppliers, and contractors complete annual anti-corruption training programs by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company aims to implement a digital monitoring system for detecting and preventing corrupt practices in all business dealings, targeting 95% compliance with global anti-bribery standards by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "The company plans to establish a conflict-of-interest declaration process, aiming for annual disclosures from 100% of employees in managerial roles by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Bedmutha prioritizes integrating an automated system to monitor and flag potential conflicts in procurement and contracting, targeting 90% operational coverage by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Bedmutha aims to reduce identified fraud risks by 30% by 2026 through annual fraud risk assessments initiated in 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company focuses on training 100% of financial and operational employees in fraud detection and prevention techniques by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Bedmutha emphasizes enhanced financial transaction monitoring systems, targeting 100% compliance with global anti-money laundering (AML) standards by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company plans to provide specialized AML training to all finance and procurement teams, ensuring effective identification and reporting of suspicious transactions by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Competitive Practices",
+        "targets": [
+          {
+            "target": "Bedmutha prioritizes full compliance with local and international competition laws by 2026, supported by regular training programs for 100% of senior management and sales teams.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company focuses on establishing a compliance task force to monitor and review anti-competitive risks across all business functions, completing annual audits by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Bedmutha is committed to implementing ISO 27001-compliant data security systems, ensuring 100% coverage of sensitive corporate and personal data by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company plans to conduct annual cybersecurity training sessions, aiming for full participation from all employees by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower Protection",
+        "targets": [
+          {
+            "target": "Bedmutha emphasizes the establishment of a confidential whistleblower hotline accessible 24/7, targeting a response time of less than 48 hours for all reports by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "The company focuses on resolving 95% of whistleblower reports within 60 days, ensuring fairness and transparency in the process by 2026.",
+            "baseline": "2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "The Board of Directors",
+        "duty": "The Board of Directors ensures the overall implementation and monitoring of the Ethics Policy, holding senior management accountable for compliance with ethical standards. They also review and approve policy updates and handle any significant violations."
+      },
+      {
+        "role": "The Chief Compliance Officer (CCO)",
+        "duty": "The CCO is responsible for leading the implementation of this policy, reporting to the CEO and the Board. The CCO ensures training programs are conducted and investigates allegations of unethical behavior."
+      },
+      {
+        "role": "Managers and Department Heads",
+        "duty": "Managers and Department Heads are responsible for enforcing this policy within their departments, ensuring employees are aware of their ethical obligations and fostering an environment of integrity."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees are expected to follow the company’s ethical standards, report unethical conduct, and participate in required training programs."
+      },
+      {
+        "role": "Legal and Compliance Team",
+        "duty": "Legal and Compliance Team ensures the company adheres to all legal requirements concerning anti-corruption, money laundering, and other ethical concerns. They conduct regular audits and manage investigations related to fraud or other violations."
+      }
+    ],
+    "monitoring": "Conducting regular training on ethics, legal compliance, and anti-corruption measures for all employees and stakeholders.\n\nEnsuring compliance with relevant laws, including those related to anti-corruption, competition, fraud prevention, and money laundering.\n\nEstablishing and maintaining clear channels for reporting unethical practices and ensuring confidentiality for whistleblowers.\n\nEngaging in transparent business practices, ensuring fairness and equal opportunity for all stakeholders.\n\nMonitoring compliance with this policy and taking appropriate actions for violations, including disciplinary measures.\n\nReviewing the company’s business transactions for potential conflicts of interest and implementing safeguards to prevent unethical practices.\n\nMaintaining an open door for employees and external partners to report any issues of concern without fear of retaliation.\n\nInternal Reporting mechanisms include confidential channels such as a dedicated ethics hotline and regular ethics training sessions. Employees can report violations of this policy to their direct supervisors, the HR department, or the Chief Compliance Officer without fear of retaliation.\n\nExternal Reporting ensures transparency by publishing annual ethics reports, including audits of compliance with anti-corruption, fraud prevention, and information security standards. Bedmutha also participates in external ethics reviews by independent auditors to assess adherence to the policy.",
+    "reviewMechanism": "Bedmutha will conduct an annual review of this Ethics Policy to assess its effectiveness, including any emerging ethical concerns related to corruption, fraud, and conflicts of interest. The review will involve feedback from employees, stakeholders, and external auditors.\n\nThe Chief Compliance Officer annually review the policy, ensuring that updates reflect changes in regulations, industry standards, and stakeholder expectations. The Board of Directors will approve any revisions to this policy."
+  },
+  "sourcePath": "Policies - Kenal/Bedmutha/Ethics Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Bedmutha/Ethics Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 13534,
+  "parsedAt": "2026-09-11T07:21:19.807Z"
+}

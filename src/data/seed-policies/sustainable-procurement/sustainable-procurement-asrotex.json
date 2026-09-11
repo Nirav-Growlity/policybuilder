@@ -1,0 +1,239 @@
+{
+  "id": "sustainable-procurement-asrotex",
+  "name": "Asrotex",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from Sustainable Sourcing Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Asrotex",
+      "industry": "",
+      "site": "Dharmaganj, Enayet Nagar, Fatullah, 1421 Narayanganj, Dhaka, Bangladesh.",
+      "sites": [
+        {
+          "location": "Asrotex",
+          "address": "Dharmaganj, Enayet Nagar, Fatullah, 1421 Narayanganj, Dhaka, Bangladesh.",
+          "primaryFunction": "Operational location for procurement and sourcing activities"
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Dharmaganj, Enayet Nagar, Fatullah, 1421 Narayanganj, Dhaka, Bangladesh."
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Asrotex is committed to integrating sustainability into its procurement and supply chain management practices. We recognize that responsible sourcing plays a vital role in creating long-term value by promoting ethical business conduct, environmental stewardship, respect for labour and human rights, and resilient supplier relationships.\n\nThis Sustainable Sourcing Policy establishes the framework for incorporating environmental, social, and ethical considerations into procurement decisions and supplier engagement activities. Through responsible supplier selection, continuous performance evaluation, collaboration, and continual improvement, Asrotex aims to build a sustainable and transparent supply chain that supports responsible business growth while meeting the expectations of customers, stakeholders, and applicable regulatory requirements.",
+      "declaration": "The purpose of this Sustainable Sourcing Policy is to establish a framework for integrating environmental, social, ethical, and governance (ESG) considerations into Asrotex's procurement and supply chain management practices. The policy aims to promote responsible sourcing, strengthen supplier sustainability performance, ensure ethical and transparent procurement practices, and drive continual improvement across the Company's supply chain.",
+      "scope": "This Sustainable Sourcing Policy applies to all procurement and sourcing activities carried out at the following operational location of Asrotex:\n\nThis policy covers the procurement of raw materials, packaging materials, consumables, machinery, equipment, services, and other goods required for the Company's operations. It applies to all employees involved in procurement and supplier management, as well as suppliers, contractors, service providers, agents, and other business partners engaged in activities on behalf of Asrotex. The policy also establishes the framework for integrating environmental, social, ethical, and governance (ESG) considerations into supplier selection, evaluation, and ongoing business relationships."
+    },
+    "focusAreas": [
+      "General Sustainable Sourcing Commitments",
+      "Environmental Sustainability in the Supply Chain",
+      "Labour & Human Rights in the Supply Chain",
+      "Supplier Engagement and Capacity Building",
+      "Supplier Inclusivity",
+      "Ethical Sourcing"
+    ],
+    "qualitative": {
+      "General Sustainable Sourcing Commitments": [
+        "Integrating environmental, social, ethical, and governance (ESG) considerations into procurement and supplier management practices.",
+        "Conducting procurement activities with integrity, transparency, fairness, and accountability while preventing conflicts of interest, bribery, and other unethical practices.",
+        "Building long-term partnerships with suppliers through collaboration, capacity building, and continual improvement of sustainability performance.",
+        "Assessing and managing sustainability risks across the supply chain through appropriate due diligence, monitoring, and performance evaluations.",
+        "Encouraging suppliers and business partners to comply with applicable legal requirements, internationally recognized sustainability principles, and Asrotex's responsible sourcing expectations."
+      ],
+      "Environmental Sustainability in the Supply Chain": [
+        "To promote environmentally responsible procurement practices.",
+        "Integrate environmental sustainability criteria into supplier selection, evaluation, and procurement decisions.",
+        "Encourage suppliers to improve environmental performance through responsible resource management, waste reduction, and emission control practices.",
+        "Promote the procurement of sustainable, certified, recycled, and lower-impact materials, where feasible.",
+        "Collaborate with suppliers to strengthen environmental performance and support continual improvement across the supply chain."
+      ],
+      "Labour & Human Rights in the Supply Chain": [
+        "To promote responsible sourcing by ensuring suppliers uphold internationally recognized labour and human rights principles throughout the supply chain.",
+        "Integrate labour and human rights requirements into supplier selection, evaluation, and ongoing performance monitoring.",
+        "Promote supplier awareness of ethical labour practices through engagement, communication, and capacity-building initiatives.",
+        "Encourage suppliers to establish effective grievance mechanisms and periodically assess compliance with labour and human rights requirements."
+      ],
+      "Supplier Engagement and Capacity Building": [
+        "To strengthen supplier sustainability performance by promoting collaboration, knowledge sharing, and continuous capacity building across the supply chain.",
+        "Develop long-term supplier partnerships based on transparency, collaboration, and shared sustainability objectives.",
+        "Encourage suppliers to adopt internationally recognized management systems and sustainability certifications relevant to their operations.",
+        "Conduct supplier engagement programmes to communicate Asrotex's sustainability expectations and emerging ESG requirements.",
+        "Support suppliers through guidance, communication, and improvement initiatives to enhance sustainability performance."
+      ],
+      "Supplier Inclusivity": [
+        "To promote an inclusive and resilient supply chain by providing equitable procurement opportunities and encouraging supplier diversity.",
+        "Encourage participation of local, small, and diverse suppliers in procurement opportunities, where feasible.",
+        "Promote fair and transparent supplier selection processes based on objective evaluation criteria.",
+        "Support capable small and medium-sized enterprises (SMEs) in strengthening their sustainability performance."
+      ],
+      "Ethical Sourcing": [
+        "To promote ethical procurement practices by ensuring integrity, transparency, accountability, and responsible business conduct throughout the supply chain.",
+        "Encourage suppliers to adopt ethical business practices, governance systems, and whistleblower mechanisms.",
+        "Periodically monitor supplier compliance with ethical sourcing requirements and support continual improvement."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental Sustainability in the Supply Chain",
+        "targets": [
+          {
+            "target": "Ensure 80% of suppliers implement environmental management practices or hold recognized environmental certifications by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct environmental sustainability assessments for 100% of suppliers by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Close corrective action plans for 100% of strategic suppliers identified with significant environmental risks within the agreed timeframe by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Labour & Human Rights in the Supply Chain",
+        "targets": [
+          {
+            "target": "Provide labour and human rights awareness programmes to 100% of key suppliers by 2030",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of key suppliers comply with Asrotex's minimum labour and human rights requirements by 2030 through supplier audits and assessments.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement corrective action plans for 100% of suppliers identified with significant labour and human rights non-conformities within the agreed timeframe.",
+            "baseline": "2023",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Supplier Engagement and Capacity Building",
+        "targets": [
+          {
+            "target": "Conduct at least two supplier engagement or sustainability awareness programmes annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Recognize the top-performing 5% of suppliers annually based on sustainability performance.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Engage 80% of suppliers in supplier sustainability or capacity-building programmes by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Inclusivity",
+        "targets": [
+          {
+            "target": "Maintain equal opportunity and transparent evaluation criteria for 100% of supplier selection processes annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Increase procurement from local, diverse, or small and medium-sized suppliers to 10% of applicable procurement by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Sourcing",
+        "targets": [
+          {
+            "target": "Conduct ethical sourcing assessments for 100% of high-risk suppliers by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 100% of procurement personnel receive ethical sourcing and anti-corruption training annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      13,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Managing Director",
+        "duty": "Provide leadership and strategic direction for sustainable sourcing and responsible supply chain management."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure adequate resources are available to implement this policy and achieve its objectives."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Integrate sustainability requirements into supplier selection, evaluation, contracting, and procurement decisions."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Monitor supplier performance and promote continual improvement in sustainable sourcing practices."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Conduct procurement activities ethically, transparently, and in accordance with this policy."
+      },
+      {
+        "role": "Procurement Department",
+        "duty": "Report any concerns relating to supplier performance, unethical conduct, or non-compliance through the established reporting channels."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure procurement activities within their respective departments comply with this policy and support the achievement of sustainable sourcing objectives and targets."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Promote collaboration with suppliers to strengthen environmental, social, and ethical performance."
+      },
+      {
+        "role": "Suppliers, Contractors & Business Partners",
+        "duty": "Comply with Asrotex's sustainable sourcing requirements and applicable legal and regulatory obligations."
+      },
+      {
+        "role": "Suppliers, Contractors & Business Partners",
+        "duty": "Cooperate in sustainability assessments, due diligence activities, and continual improvement initiatives to strengthen responsible supply chain performance."
+      }
+    ],
+    "monitoring": "Asrotex is committed to regularly monitoring and evaluating its sustainable sourcing performance to ensure the effective implementation of this policy and the achievement of its objectives and targets.\n\nMonitor key sustainable sourcing performance indicators, including supplier sustainability performance, responsible procurement, supplier assessments, corrective actions, supplier engagement, and ethical sourcing practices.\n\nMaintain accurate procurement and supplier sustainability records and periodically review performance against established sustainable sourcing objectives and targets.\n\nConduct supplier assessments, internal reviews, and performance evaluations to identify opportunities for improvement and implement appropriate corrective and preventive actions.\n\nReport sustainable sourcing performance to management and relevant stakeholders, where applicable, to support transparency, responsible procurement, and continual improvement across the supply chain.\n\nAsrotex is committed to continuously monitoring supplier sustainability performance to strengthen responsible sourcing practices and improve supply chain resilience. Supplier performance shall be evaluated through a structured due diligence process that considers environmental, social, ethical, legal, and operational performance.\n\nPeriodic supplier sustainability assessments based on defined ESG evaluation criteria.\n\nReview of supplier compliance with applicable legal requirements, customer expectations, and contractual sustainability commitments.\n\nRisk-based supplier classification to identify suppliers requiring enhanced monitoring or additional support.\n\nMonitoring of corrective action plans and verification of timely closure of identified non-conformities.\n\nReview of supplier certifications, audit findings, sustainability disclosures, and performance indicators.\n\nPeriodic management review of supplier sustainability performance to support procurement decisions and continuous improvement.\n\nCollaboration with suppliers to encourage innovation, responsible sourcing practices, and long-term sustainability improvements across the supply chain.\n\nThe outcomes of supplier monitoring shall be incorporated into procurement planning, supplier development programmes, contract renewal decisions, and future sourcing strategies to ensure continual enhancement of Asrotex's sustainable sourcing performance.\n\nAsrotex expects all suppliers to comply with the principles outlined in this Policy. Where non-compliance is identified, the Company shall adopt a structured and fair approach to encourage timely improvement while protecting the integrity of the supply chain.\n\nCommunicate identified non-compliance issues to the supplier.\n\nRequest corrective and preventive action plans with defined implementation timelines.\n\nConduct follow-up assessments or verification activities to evaluate improvement.\n\nProvide guidance or technical support where feasible to strengthen supplier performance.\n\nIncrease monitoring frequency for suppliers presenting elevated sustainability risks.\n\nSuspend new business opportunities where significant issues remain unresolved.\n\nDiscontinue business relationships where serious or repeated violations occur and adequate corrective actions are not implemented.\n\nAll supplier non-compliance cases shall be documented, reviewed, and managed in accordance with established procurement and compliance procedures.",
+    "reviewMechanism": "This Sustainable Sourcing Policy shall be reviewed biennially, or earlier if required due to changes in applicable legal requirements, business operations, supplier expectations, customer requirements, or other relevant factors.\n\nAsrotex shall periodically evaluate the effectiveness of this policy, review progress against its sustainable sourcing objectives and targets, and implement necessary improvements to strengthen responsible procurement practices and supplier sustainability performance. The outcomes of these reviews shall be considered when updating the policy and supporting the Company's commitment to continual improvement across the supply chain."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Asrotex/Sustainable Sourcing Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Asrotex/Sustainable Sourcing Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 16551,
+  "parsedAt": "2026-09-11T07:33:06.814Z"
+}

@@ -1,0 +1,208 @@
+{
+  "id": "ethics-somakannan",
+  "name": "Somakannan",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3) Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Somakannan Textiles",
+      "industry": "",
+      "site": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu India.",
+      "sites": [
+        {
+          "location": "Somakannan Textiles",
+          "address": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu India.",
+          "primaryFunction": "Manufacturer and exporter of quality cotton home textiles"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "284/1 ERS Thottam Pattnam Post Rasipuram – 637 408 Namakkal Dt Tamil Nadu India."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "",
+      "declaration": "At Somakannan Textiles, we are committed to conducting our business with the highest standards of ethics, transparency, and integrity. As a reputable manufacturer and exporter of quality cotton home textiles, we recognize that responsible business conduct and ethical decision-making are essential to sustaining long-term relationships with employees, customers, suppliers, and communities. This Ethics Policy outlines our dedication to honest and fair practices, compliance with applicable laws and regulations, and the prevention of unethical behavior across all aspects of our operations. We expect all employees, contractors, and business partners to uphold the principles set forth in this policy, ensuring that Somakannan Textiles operates with accountability, respect, and trust in every engagement.",
+      "scope": "This policy applies to all employees, contractors, suppliers, partners, and stakeholders associated with Somakannan textiles, across all locations worldwide. It encompasses all our operational sites and extends to interactions with clients, suppliers, regulators, and the wider community."
+    },
+    "focusAreas": [
+      "Corruption: Strictly prohibit bribery, kickbacks, and any form of corrupt practices through clear policies, training, and enforcement.",
+      "Conflict of Interest: Require disclosure and proper handling of personal or professional interests that may influence company decisions.",
+      "Fraud: Prevent and detect fraud through internal controls, regular audits, and secure reporting mechanisms.",
+      "Anti-Money Laundering: Comply with AML laws by verifying transactions, monitoring for suspicious activity, and training employees on red flags.",
+      "Information Security: Safeguard sensitive data through robust cybersecurity measures, access controls, and regular employee awareness programs."
+    ],
+    "qualitative": {
+      "Corruption": [
+        "Carry out due diligence specific to anti-bribery and corruption when evaluating mergers and acquisitions and joint ventures.",
+        "Maintain a zero-tolerance policy for bribery and corruption and ensure strict compliance with anti-corruption laws and company policies.",
+        "Promote a culture of integrity where employees understand the importance of rejecting bribery and unethical practices."
+      ],
+      "Conflict of Interest": [
+        "Promote a culture of transparency, encouraging employees to avoid situations where personal interests could conflict with business interests.",
+        "Maintain transparency in dealings with suppliers, clients, and partners by documenting and managing conflicts appropriately."
+      ],
+      "Fraud": [
+        "Strengthen organizational trust by establishing a zero-tolerance approach to fraudulent behavior.",
+        "Encourage vigilance and accountability among employees in detecting unusual or suspicious activities."
+      ],
+      "Anti-Money Laundering (AML)": [
+        "Promote awareness of AML responsibilities among employees, emphasizing vigilance in transactions.",
+        "Ensure adherence to legal and regulatory requirements to prevent misuse of company operations for illegal purposes."
+      ],
+      "Information Security": [
+        "Enforce and maintain stringent information security protocols to protect sensitive business, employee, and client data from unauthorized access, breaches, and cyber threats.",
+        "Ensure continuous improvement of security measures in line with emerging threats and regulatory requirements."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Corruption",
+        "targets": [
+          {
+            "target": "Ensure inclusion and compliance of anti-bribery clauses into 100% of supplier and partner contracts by year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Train 100% of procurement and finance teams on anti-corruption policies annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero instances of corruption reported in annual audits.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Conduct annual conflict-of-interest declarations for 100% of managerial and supervisory employees till 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Review and resolve 100% of disclosed conflict-of-interest cases within 30 days of identification.",
+            "baseline": "2023",
+            "deadline": "Within 30 days of identification"
+          },
+          {
+            "target": "Maintain zero unresolved conflict-of-interest cases annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "To maintain the implementation of a fraud detection mechanism to monitor and flag suspicious activities, and hence achieve 0% of undetected fraudulent transactions till year 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct fraud risk assessments across all functions annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero fraud - related incidents annually.",
+            "baseline": "2023",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering",
+        "targets": [
+          {
+            "target": "Provide annual AML awareness training to 100% of relevant employees",
+            "baseline": "2023",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Implement and maintain transaction monitoring and reporting procedures to ensure 100% of identified suspicious activities are reviewed and addressed in line with legal requirements by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure due diligence for 100% high-value financial transactions and business partners",
+            "baseline": "2023",
+            "deadline": "Not specified"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Achieve 100% implementation of role-based access controls for systems handling sensitive or confidential information by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          },
+          {
+            "target": "Achieve 90% of third-party vendors comply with company’s information security standards and annual risk assessments by 2030.",
+            "baseline": "2023",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "Oversee corruption prevention, conflict-of-interest management, fraud prevention, AML compliance, and ensure timely review and resolution of reported ethical concerns."
+      },
+      {
+        "role": "Ethics and Compliance Officer",
+        "duty": "Responsible for overseeing the implementation of Somakannan’s Ethics Policy, ensuring adherence to anti-corruption, anti-fraud, and anti-money laundering regulations, and managing any conflicts of interest that arise."
+      },
+      {
+        "role": "Finance & Internal Audit Team",
+        "duty": "Monitor financial controls and fraud risks, conduct periodic internal audits, ensure compliance with AML requirements, review financial transactions and contracts, and support investigations and corrective actions related to ethical breaches."
+      },
+      {
+        "role": "Human Resources (HR)",
+        "duty": "Coordinate ethics, compliance, and awareness training programs; manage conflict-of-interest declarations; support grievance handling mechanisms; and integrate ethical standards into recruitment, performance management, and employee conduct processes."
+      },
+      {
+        "role": "Information Security Manager",
+        "duty": "Implement and maintain information security controls, conduct regular cybersecurity and data protection risk assessments, manage secure data handling practices, and deliver information security awareness and training programs."
+      },
+      {
+        "role": "Employees",
+        "duty": "Every employee is accountable for upholding ethical standards, reporting any violations, and participating in regular ethics and compliance training programs."
+      }
+    ],
+    "monitoring": "Ethics Hotline: Somakannan Textiles has established a confidential reporting channel for all employees, suppliers, and stakeholders to raise concerns related to unethical behavior, including corruption, fraud, or conflicts of interest. This system ensures issues are reported safely and without fear of retaliation, promoting transparency and ethical conduct throughout the organization.\n\nInternal and External Audits: Somakannan Textiles conducts regular internal and external audits to ensure adherence to applicable laws, industry standards, and internal policies. These audits cover areas such as anti‑corruption, fraud prevention, anti‑money laundering (AML), and ISO‑certified quality management practices. By systematically reviewing operations, these audits strengthen integrity in both manufacturing and export processes and promote continuous improvement in compliance and governance.\n\nIncident Reporting:  All reported incidents related to corruption, ethical breaches, or non‑compliance are promptly documented and investigated by qualified personnel. Appropriate corrective actions are taken to address root causes, prevent recurrence, and uphold the company’s ethical standards and reputation in both domestic and global markets.",
+    "reviewMechanism": "The Ethics Policy will be reviewed annually by the Ethics and Compliance Officer in collaboration with the Internal Audit Team to ensure its ongoing effectiveness and relevance. This review will consider regulatory changes, stakeholder feedback, and the company’s evolving objectives. Any updates or revisions will be communicated to all employees and stakeholders. Progress toward the policy’s goals will be monitored, and necessary adjustments will be made to ensure continued alignment with Somakannan Textiles’ ethical standards."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Somakannan/3) Ethics Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Somakannan/3) Ethics Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 16688,
+  "parsedAt": "2026-09-11T07:41:25.396Z"
+}

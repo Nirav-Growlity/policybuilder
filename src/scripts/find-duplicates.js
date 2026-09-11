@@ -2,12 +2,21 @@ const fs = require('fs');
 const path = require('path');
 
 const SEED_DIR = path.join(__dirname, '../data/seed-policies');
-const files = fs.readdirSync(SEED_DIR).filter(f => f.endsWith('.json'));
+function collectJsonFiles(directory, files = []) {
+    if (!fs.existsSync(directory)) return files;
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+        const file = path.join(directory, entry.name);
+        if (entry.isDirectory()) collectJsonFiles(file, files);
+        else if (entry.name.endsWith('.json')) files.push(file);
+    }
+    return files;
+}
+const files = collectJsonFiles(SEED_DIR);
 
 const companyMap = new Map();
 
-for (const file of files) {
-    const filePath = path.join(SEED_DIR, file);
+for (const filePath of files) {
+    const file = path.relative(SEED_DIR, filePath);
     try {
         const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         const companyName = data.name || data.policy?.company?.name || 'Unknown';

@@ -1,0 +1,122 @@
+{
+  "id": "living-wage-ami-life-science",
+  "name": "Ami Life-Science",
+  "industry": "Source policy template",
+  "summary": "Parsed Living Wage Policy from Living Wage Policy acknowledge.docx.",
+  "tagline": "Living Wage Policy",
+  "policy": {
+    "policyType": "living-wage",
+    "company": {
+      "name": "Ami Lifesciences Pvt. Ltd.",
+      "industry": "",
+      "site": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021",
+      "sites": [
+        {
+          "location": "Ami Lifesciences Pvt Ltd [Corporate Office]",
+          "address": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021",
+          "primaryFunction": "Corporate Office"
+        },
+        {
+          "location": "Ami Lifesciences Pvt Ltd [Manufacturing Unit]",
+          "address": "Block No.82/B, ECP Road, At & Post. Karakhadi-391450 Taluka: Padra Dist.: Vadodara Gujarat, INDIA.",
+          "primaryFunction": "Manufacturing Unit"
+        },
+        {
+          "location": "Ami Lifesciences Pvt Ltd [Marketing Office]",
+          "address": "305, 3rd Floor, Nitco Biz Park, Rd Number 16U, Nehru Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604",
+          "primaryFunction": "Marketing Office"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "701 to 710, 7th Floor, 1038 Lilleria, Gotri-Sevasi Road, New Alkapuri, Vadodara, Gujarat – 390021"
+    },
+    "standards": [
+      "EcoVadis",
+      "UNGC",
+      "ILO",
+      "ISO 26000",
+      "SA8000",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "I acknowledge that I have received, read, and understood the Living Wage Policy of Ami Lifesciences Pvt. Ltd.",
+      "declaration": "I recognize the importance of fair and adequate compensation and commit to:\n\nUnderstanding the principles outlined in the policy and how they relate to wage standards.\n\nSupporting the company’s commitment to paying wages that meet basic living needs and ensure a decent standard of living.\n\nEnsuring transparency and fairness in wage-related matters within my role.\n\nComplying with all relevant laws, regulations, and company guidelines regarding wages and remuneration.\n\nReporting any concerns or discrepancies related to wage payments or living wage compliance immediately.",
+      "scope": ""
+    },
+    "definitions": {
+      "title": "Living Wage Definition & Methodology",
+      "content": ""
+    },
+    "focusAreas": [
+      "Fair and adequate compensation",
+      "Wage standards",
+      "Basic living needs and a decent standard of living",
+      "Transparency and fairness in wage-related matters",
+      "Laws, regulations, and company guidelines regarding wages and remuneration",
+      "Living wage compliance"
+    ],
+    "qualitative": {
+      "Fair and adequate compensation": [
+        "I recognize the importance of fair and adequate compensation"
+      ],
+      "Wage standards": [
+        "Understanding the principles outlined in the policy and how they relate to wage standards."
+      ],
+      "Basic living needs and a decent standard of living": [
+        "Supporting the company’s commitment to paying wages that meet basic living needs and ensure a decent standard of living."
+      ],
+      "Transparency and fairness in wage-related matters": [
+        "Ensuring transparency and fairness in wage-related matters within my role."
+      ],
+      "Laws, regulations, and company guidelines regarding wages and remuneration": [
+        "Complying with all relevant laws, regulations, and company guidelines regarding wages and remuneration."
+      ],
+      "Living wage compliance": [
+        "Reporting any concerns or discrepancies related to wage payments or living wage compliance immediately."
+      ]
+    },
+    "quantitative": [],
+    "sdgs": [
+      1,
+      3,
+      5,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Employee",
+        "duty": "Understanding the principles outlined in the policy and how they relate to wage standards."
+      },
+      {
+        "role": "Employee",
+        "duty": "Supporting the company’s commitment to paying wages that meet basic living needs and ensure a decent standard of living."
+      },
+      {
+        "role": "Employee",
+        "duty": "Ensuring transparency and fairness in wage-related matters within my role."
+      },
+      {
+        "role": "Employee",
+        "duty": "Complying with all relevant laws, regulations, and company guidelines regarding wages and remuneration."
+      },
+      {
+        "role": "Employee",
+        "duty": "Reporting any concerns or discrepancies related to wage payments or living wage compliance immediately."
+      }
+    ],
+    "monitoring": "Reporting any concerns or discrepancies related to wage payments or living wage compliance immediately.",
+    "reviewMechanism": "I understand that failure to comply with this policy may result in disciplinary action, which may include warnings, suspension, termination, or legal consequences, as per company procedures."
+  },
+  "sourcePath": "Policies - Kenal/Ami Life-Science/Living Wage Policy acknowledge.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Ami Life-Science/Living Wage Policy acknowledge.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 1023,
+  "parsedAt": "2026-09-11T07:19:25.600Z"
+}

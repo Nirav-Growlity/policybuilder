@@ -1,0 +1,353 @@
+{
+  "id": "alchem-ballabgarh-site-policies",
+  "name": "Alchem Ballabgarh Site Policies",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environmental Management & Responsibility Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Alchem International Pvt. Ltd.",
+      "industry": "",
+      "site": "201, Empire Plaza, Mehrauli Gurgaon Road Sultanpur 110030 New Delhi, Delhi, India",
+      "sites": [
+        {
+          "location": "BALLABGARH SITE",
+          "address": "201, Empire Plaza, Mehrauli Gurgaon Road Sultanpur 110030 New Delhi, Delhi, India",
+          "primaryFunction": "Manufacturing, warehousing, logistics, administration, product design, research & development, and procurement"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "201, Empire Plaza, Mehrauli Gurgaon Road Sultanpur 110030 New Delhi, Delhi, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Alchem International Pvt. Ltd., we are committed to responsible growth and the highest standards of environmental stewardship. As a global leader in plant‑derived active ingredients and phytochemicals, we recognise our profound responsibility to protect natural resources, mitigate climate change, and safeguard the health of communities while delivering safe, effective, and sustainable products.",
+      "declaration": "This policy establishes a clear framework for action, assigning roles, setting measurable targets, and committing to continuous improvement. It applies to every person and process associated with this site from the boardroom to the factory floor, from raw material sourcing to product end‑of‑life.",
+      "scope": "This policy applies to:\n\nAll employees, workers, contractors, subcontractors, suppliers, consultants, and business partners operating at or for BALLABGARH SITE\n\nAll activities including manufacturing, warehousing, logistics, administration, product design, research & development, and procurement.\n\nThe surrounding communities and ecosystems that may be affected by our operations.\n\nBaseline Year: FY 2023‑24\n\nTarget Year: FY 2030‑31"
+    },
+    "focusAreas": [
+      "Energy Consumption & Greenhouse Gas (GHG) Emissions",
+      "Water Conservation & Management",
+      "Biodiversity Protection",
+      "Air Pollution Control",
+      "Materials, Chemicals & Hazardous Substances",
+      "Product End‑of‑Life & Circular Economy",
+      "Customer Health & Safety",
+      "Environmental Services & Advocacy"
+    ],
+    "qualitative": {
+      "Energy Consumption & Greenhouse Gas (GHG) Emissions": [
+        "Transition to a low‑carbon energy mix by prioritising renewable energy sources (solar, biomass, wind) wherever technically and commercially feasible.",
+        "Embed energy efficiency into all equipment procurement, process design, and facility management decisions.",
+        "Foster a culture of energy consciousness among employees through awareness campaigns, performance feedback, and incentivised suggestions.",
+        "Engage with energy service companies (ESCOs) and government schemes to identify and implement advanced energy‑saving technologies."
+      ],
+      "Water Conservation & Management": [
+        "Adopt a water stewardship approach that balances withdrawal, consumption, and discharge to maintain local water security.",
+        "Implement closed‑loop and cascade water reuse systems across all production and utility operations.",
+        "Protect water quality by treating all wastewater to standards that enable safe reuse or discharge.",
+        "Engage with local communities and authorities to understand shared water risks and collaborate on watershed management."
+      ],
+      "Biodiversity Protection": [
+        "Achieve no net loss of biodiversity for all site development and operational activities.",
+        "Enhance local ecosystems by creating green corridors, planting native species, and restoring degraded land.",
+        "Ensure that raw material sourcing does not contribute to deforestation or habitat destruction.",
+        "Collaborate with environmental NGOs, academic institutions, and government bodies on biodiversity research and conservation projects."
+      ],
+      "Air Pollution Control": [
+        "Minimise emissions of particulate matter (PM), nitrogen oxides (NOx), sulphur oxides (SOx), volatile organic compounds (VOCs), and odour.",
+        "Invest in state‑of‑the‑art air pollution control equipment (bag filters, scrubbers, thermal oxidisers) and keep them optimally maintained.",
+        "Continuously monitor air emissions and make real‑time data available to the public and regulators where required.",
+        "Reduce fugitive emissions through improved material handling, storage tank management, and leak detection programs."
+      ],
+      "Materials, Chemicals & Hazardous Substances": [
+        "Substitute hazardous chemicals with safer, greener alternatives whenever technically and economically feasible.",
+        "Implement green chemistry principles – maximise atom economy, use renewable feedstocks, and design for degradation.",
+        "Maintain rigorous inventory control and storage practices to prevent spills, leaks, and accidental releases.",
+        "Ensure that all waste, especially hazardous waste, is tracked from cradle to grave and disposed of only through authorised, environmentally sound facilities."
+      ],
+      "Product End‑of‑Life & Circular Economy": [
+        "Design packaging for recyclability, reusability, or compostability without compromising product protection.",
+        "Establish or join Extended Producer Responsibility (EPR) schemes for packaging and product containers.",
+        "Collaborate with customers and waste management partners to facilitate take‑back, collection, and responsible recycling.",
+        "Continuously reduce material intensity in packaging and products through lightweighting and material substitution."
+      ],
+      "Customer Health & Safety": [
+        "Ensure that every product is thoroughly tested for safety, efficacy, and purity before market release.",
+        "Provide accurate, up‑to‑date, and easily accessible safety information through Material Safety Data Sheets (MSDS), labels, and digital platforms.",
+        "Continuously monitor product safety during post‑market surveillance and act promptly on any adverse findings.",
+        "Train all relevant employees (R&D, production, quality, sales) on product safety, toxicology, and regulatory compliance."
+      ],
+      "Environmental Services & Advocacy": [
+        "Proactively engage with industry associations (e.g., IPA, CII, FICCI) to advance environmental policy and share best practices.",
+        "Support local environmental initiatives such as river clean‑ups, tree planting drives, and environmental education in schools.",
+        "Publicly disclose environmental performance and policy updates to build trust and transparency.",
+        "Pursue voluntary certifications (ISO 14001, ISO 50001) and participate in global sustainability platforms (EcoVadis, CDP, SBTi)."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption & Greenhouse Gas (GHG) Emissions",
+        "targets": [
+          {
+            "target": "Reduce energy consumption intensity (kWh per kg product) by 15%.",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Increase renewable energy share to 10% of total electricity consumption.",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Reduce Scope 1 & 2 GHG emissions intensity (kg CO₂e per kg product) by 10%.",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Reduce absolute Scope 1 & 2 GHG emissions by 10%.",
+            "baseline": "FY 2023‑24",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Establish Scope 3 baseline by FY 2023‑24 and reduce Scope 3 intensity by 10% by 2030‑31 (covering purchased goods, upstream transport, business travel, waste disposal, and product use).",
+            "baseline": "FY 2023‑24",
+            "deadline": "2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Water Conservation & Management",
+        "targets": [
+          {
+            "target": "Reduce freshwater consumption intensity (m³ per kg product) by 10%.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Achieve 20% wastewater reuse (for cooling, gardening, floor washing, and process applications where feasible).",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Conduct half‑yearly water audits starting FY 2024‑25, identifying at least three new water‑saving opportunities per audit.",
+            "baseline": "",
+            "deadline": "Starting FY 2024‑25"
+          },
+          {
+            "target": "Install rainwater harvesting capacity equal to at least 10% of annual freshwater consumption.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Protection",
+        "targets": [
+          {
+            "target": "Plant at least 1,500 native trees cumulatively (minimum 200 per year), with a survival rate of ≥80% after three years.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Restore or create 5% of site area as natural habitat (e.g., grassland, wetlands, forest patch).",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Ensure 0% raw material sourcing from deforestation or high‑conservation‑value areas (verified by supplier declarations and third‑party audits).",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Complete a biodiversity baseline assessment by FY 2025‑26 and update every three years.",
+            "baseline": "",
+            "deadline": "FY 2025‑26; update every three years"
+          },
+          {
+            "target": "Achieve zero accidental releases that could harm local flora or fauna.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution Control",
+        "targets": [
+          {
+            "target": "Keep all criteria pollutant concentrations at least 15% below regulatory limits at all times.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Install continuous emission monitoring systems (CEMS) for all major stacks by FY 2025‑26.",
+            "baseline": "",
+            "deadline": "FY 2025‑26"
+          },
+          {
+            "target": "Reduce NOx emissions from diesel generators by 10% through retrofitting with selective catalytic reduction (SCR) or similar technology.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Achieve zero visible smoke from any stack or fugitive source.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals & Hazardous Substances",
+        "targets": [
+          {
+            "target": "Replace 15% of hazardous solvents (by volume) with greener alternatives (e.g., bio‑based, low‑toxicity, or water‑based).",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Maintain 100% compliant disposal of hazardous waste via authorised Treatment, Storage, and Disposal Facilities (TSDFs).",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Reduce total waste generation intensity (kg waste per kg product) by 20%.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Increase non‑hazardous waste recycling rate to 75%.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Achieve zero waste to landfill for non‑hazardous waste (all recyclable or recoverable materials diverted).",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Product End‑of‑Life & Circular Economy",
+        "targets": [
+          {
+            "target": "Collect and recycle 60% of product packaging waste through EPR or certified recycling partners.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Reduce primary packaging weight by 15% (where product safety and stability permit).",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Ensure 100% of industrial containers (drums, IBCs, jerricans) are either reused, recycled, or responsibly disposed.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          },
+          {
+            "target": "Achieve zero export of plastic packaging waste to countries with inadequate recycling infrastructure.",
+            "baseline": "",
+            "deadline": "FY 2030‑31"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Maintain zero product safety incidents (adverse health effects attributable to product use).",
+            "baseline": "",
+            "deadline": "Annual, ongoing"
+          },
+          {
+            "target": "Update 100% of MSDS and labels annually or upon any formulation change.",
+            "baseline": "",
+            "deadline": "Annual or upon any formulation change"
+          },
+          {
+            "target": "Train 100% of relevant employees on product safety annually, with assessment of comprehension.",
+            "baseline": "",
+            "deadline": "Annual"
+          },
+          {
+            "target": "Conduct annual product safety audits for the top 10 highest‑volume or highest‑risk products.",
+            "baseline": "",
+            "deadline": "Annual"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Participate in at least two local environmental initiatives or industry working groups per year.",
+            "baseline": "",
+            "deadline": "Per year through FY 2030‑31"
+          },
+          {
+            "target": "Publish an annual sustainability progress update on Alchem’s website.",
+            "baseline": "",
+            "deadline": "Annual through FY 2030‑31"
+          },
+          {
+            "target": "Achieve ISO 14001 certification for the site by FY 2026‑27.",
+            "baseline": "",
+            "deadline": "FY 2026‑27"
+          },
+          {
+            "target": "Achieve ISO 50001 certification (Energy Management) by FY 2028‑29.",
+            "baseline": "",
+            "deadline": "FY 2028‑29"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors / Corporate Management",
+        "duty": "Approve policy, allocate resources, review annual progress, and ensure alignment with business strategy."
+      },
+      {
+        "role": "Site Head",
+        "duty": "Overall ownership of policy implementation; ensure targets are integrated into site business plan."
+      },
+      {
+        "role": "Environment, Health & Safety (EHS) Manager",
+        "duty": "Day‑to‑day coordination: data collection, internal audits, training, reporting, and corrective action follow‑up."
+      },
+      {
+        "role": "All Department Heads (Production, Maintenance, QA, Purchase, HR, etc.)",
+        "duty": "Set departmental environmental KPIs; ensure their teams comply; report deviations."
+      },
+      {
+        "role": "All Employees & Contractors",
+        "duty": "Follow environmental procedures; report spills or anomalies; participate in training and improvement suggestions."
+      }
+    ],
+    "monitoring": "Internal Audits: Full environmental compliance audit annually by cross‑functional team.\n\nQuarterly Reviews: Site EHS team presents progress against targets to Site Head and corporate EHS.\n\nAnnual Sustainability Report: Publicly available summary of KPIs, achievements, and challenges.\n\nExternal Verification: Third‑party verification of GHG emissions, water use, and waste data every two years (or as required by customers/regulators).\n\nManagement Review: Top management reviews policy effectiveness annually and authorises revisions.",
+    "reviewMechanism": "This policy will be reviewed annually by the EHS Manager and Site Head. Revisions require approval by the Board of Directors. The next scheduled review is one year from the Effective Date.\n\nLast Review Date: 06-04-2026\n\nNext Review Date: 06-04-2027"
+  },
+  "sourcePath": "Policies - Kenal/Alchem Ballabgarh Site Policies/Environmental Management & Responsibility Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Alchem Ballabgarh Site Policies/Environmental Management & Responsibility Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 15561,
+  "parsedAt": "2026-09-11T07:18:39.942Z"
+}

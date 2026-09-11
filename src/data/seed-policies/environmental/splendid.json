@@ -1,0 +1,259 @@
+{
+  "id": "splendid",
+  "name": "Splendid",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1) Environmental Sustainability Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Splendid Industries Pvt. Ltd.",
+      "industry": "",
+      "site": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India.",
+      "sites": [
+        {
+          "location": "Splendid Industries Pvt. Ltd.",
+          "address": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India.",
+          "primaryFunction": "Steel fabrication and precision engineering solutions"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A/155B, H.B. Town, Road No.-4, Panihati, P.O. - Sodpur Kolkata – 700110, India."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "At Splendid Industries Pvt. Ltd., we understand that environmental sustainability is not only a corporate responsibility but also a strategic priority in today’s industrial landscape. As a leading provider of steel fabrication and precision engineering solutions, we are committed to reducing our environmental impact through innovative practices and technological advancement.\n\nThis policy serves as a framework for embedding sustainable principles across our operations. We strive to optimize material efficiency, minimize energy consumption, reduce process-related emissions, and adopt advanced manufacturing technologies that support cleaner production. Our focus includes energy conservation, responsible waste segregation and recycling, water efficiency, and strict adherence to pollution control measures.\n\nBy aligning our business growth with eco-conscious practices, we aim to contribute to a greener future while maintaining operational excellence.",
+      "declaration": "Splendid Industries Pvt. Ltd. is committed to integrating environmental sustainability into its operations by improving energy efficiency and reducing greenhouse gas emissions, including Scope 1 and Scope 2 emissions from operations and transport. We focus on minimizing energy use, conserving water, optimizing resources, and managing waste responsibly. Committed to complying with all environmental laws, we strive for continuous improvement through innovation and employee engagement, recognizing that long-term success depends on operating in harmony with the environment.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders"
+    },
+    "focusAreas": [
+      "Energy Consumption & Greenhouse Gas Emissions",
+      "Water Management",
+      "Air Pollution",
+      "Materials, Chemicals & Waste",
+      "Biodiversity & Ecosystems",
+      "Customer Health & Safety",
+      "Environmental Services & Advocacy",
+      "Sustainable Procurement",
+      "Employee Awareness & Training"
+    ],
+    "qualitative": {
+      "Energy Consumption & Greenhouse Gas Emissions": [
+        "Adopting energy-efficient systems and optimizing operations to reduce carbon footprint and greenhouse gas emissions.",
+        "Improve energy efficiency by adopting energy-saving technologies and optimizing machinery operations to reduce power use across all units.",
+        "Implement real-time energy monitoring systems to identify and reduce wastage."
+      ],
+      "Water Management": [
+        "Implementing water-saving technologies and promoting reuse and recycling to reduce freshwater consumption and ensure responsible wastewater treatment.",
+        "Optimize water recycling and reuse to reduce freshwater intake and implement advanced water treatment technologies to enhance sustainability."
+      ],
+      "Air Pollution": [
+        "Installing effective filtration and emission control systems to maintain clean air and comply with air quality regulations.",
+        "Reduce air emissions by upgrading filtration, emission control systems and hence promote cleaner production methods to minimize atmospheric pollution."
+      ],
+      "Materials, Chemicals & Waste": [
+        "Using materials and chemicals responsibly, reducing hazardous inputs, and promoting recycling and waste reduction across all processes.",
+        "Promote the use of recyclable, non-hazardous, and environmentally friendly materials.",
+        "Minimize waste generation through process efficiency improvements and strengthen the recycling and material recovery process to support circular economy goals."
+      ],
+      "Biodiversity & Ecosystems": [
+        "Minimizing ecological impact through responsible land use, pollution prevention, and conservation of local habitats.",
+        "Prevent environmental harm to surrounding ecosystems through land-use planning i.e.: green belt development around facilities using native species.",
+        "Conduct regular biodiversity risk assessments for all future expansion projects."
+      ],
+      "Customer Health & Safety": [
+        "Ensuring that all products meet safety standards and encouraging sustainable practices during product use and disposal.",
+        "Ensure product design considers environmental and user safety aspects."
+      ],
+      "Environmental Services & Advocacy": [
+        "Complying with environmental regulations, engaging in sustainability initiatives, and promoting environmental awareness across the value chain.",
+        "Actively participate in industry sustainability forums and green manufacturing networks.",
+        "Promote environmental responsibility through community and industry engagement."
+      ],
+      "Sustainable Procurement": [
+        "Sourcing raw materials and components from environmentally responsible suppliers and encouraging sustainability practices across the supply chain.",
+        "Encourage suppliers to follow environmental best practices and submit compliance records.",
+        "Include environmental criteria in all supplier evaluations.",
+        "Conduct annual sustainability training for suppliers annually."
+      ],
+      "Employee Awareness & Training": [
+        "Building a culture of environmental responsibility by training employees on sustainability practices, compliance, and continuous improvement.",
+        "Build environmental responsibility among staff through training, SOPs, and engagement campaigns.",
+        "Integrate environmental KPIs into employee performance reviews for key roles."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption & Greenhouse Gas Emissions",
+        "targets": [
+          {
+            "target": "Achieve a 10% reduction in energy consumption per unit of production",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 10% reduction in Scope 1 and 2 GHG emissions",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Water Management",
+        "targets": [
+          {
+            "target": "Reduce overall freshwater consumption by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Achieve 50% reuse of total water consumption through recycling",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Maintain 100% compliance with wastewater discharge regulations annually",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Achieve a 10% reduction in particulate emissions",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          },
+          {
+            "target": "Ensure 95% efficiency in air pollution control devices across all facilities by regular device inspections",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals & Waste",
+        "targets": [
+          {
+            "target": "Reduce total waste generation per unit of production by 15%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Achieve 40% segregation and recycling rate of non-hazardous solid waste",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity & Ecosystems",
+        "targets": [
+          {
+            "target": "Plant 100 native trees in and around facility premises",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health & Safety",
+        "targets": [
+          {
+            "target": "Maintain provision of clear handling, use, and disposal instructions for 100% products",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Maintain zero customer-reported product-related environmental incidents annually",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          },
+          {
+            "target": "Integrate eco-safety labels in 100% of product packaging",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Conduct 2 environmental awareness events",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Procurement",
+        "targets": [
+          {
+            "target": "Source at least 30% of packaging materials from recycled or certified sustainable sources",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Employee Awareness & Training",
+        "targets": [
+          {
+            "target": "Provide mandatory annual environmental training for 100% plant employees",
+            "baseline": "FY 2022–23",
+            "deadline": "Annually"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Senior Management",
+        "duty": "sets priorities, reviews progress, and ensures regulatory compliance."
+      },
+      {
+        "role": "The EHS Team",
+        "duty": "implements environmental programs and monitors targets."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "ensure execution of initiatives within their functions."
+      },
+      {
+        "role": "Procurement",
+        "duty": "integrates sustainability in supplier selection."
+      },
+      {
+        "role": "All Employees",
+        "duty": "follow environmental practices and support continuous improvement."
+      }
+    ],
+    "monitoring": "Splendid Industries is committed to regularly monitoring its environmental performance across key focus areas such as energy, emissions, water, waste, and material efficiency. Key Performance Indicators (KPIs) will be defined for each area and tracked through internal systems to measure progress against sustainability targets. These KPIs will be reviewed quarterly, and findings will be compiled in performance reports submitted to senior management for strategic evaluation. Annual assessments will highlight achievements, gaps, and necessary actions, while relevant outcomes may also be shared with stakeholders to ensure transparency and accountability. All monitoring and reporting activities will align with applicable regulations and industry best practices to maintain accuracy and credibility.",
+    "reviewMechanism": "This policy will be reviewed annually by the Environmental Manager to assess its effectiveness and alignment with evolving sustainability goals, regulatory requirements, and industry best practices. Feedback from audits, employee suggestions, and stakeholder engagements will be incorporated into policy updates. Necessary revisions will be made to strengthen environmental commitments and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Splendid/1) Environmental Sustainability Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Splendid/1) Environmental Sustainability Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 10529,
+  "parsedAt": "2026-09-11T07:41:28.342Z"
+}

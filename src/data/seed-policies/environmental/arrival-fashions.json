@@ -1,0 +1,370 @@
+{
+  "id": "arrival-fashions",
+  "name": "Arrival Fashions",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from Environment _Policy AFL.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Arrival Fashion Ltd.",
+      "industry": "",
+      "site": "Apt #5, House # 3, Road # 23/B, Gulshan 1, Dhaka 1212.",
+      "sites": [
+        {
+          "location": "Gulshan 1, Dhaka",
+          "address": "Apt No.5, House No. 3, Road No.23/B, Gulshan 1, Dhaka 1212.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Colomesshor, Board Bazar, Gazipur",
+          "address": "Arrival Fashion Ltd, Colomesshor, Board Bazar, Gazipur.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Mirpur, Dhaka",
+          "address": "Arrival Fashion Ltd, Plot 10, Block # Kha, Section 6, Road 1, Mirpur, Dhaka - 1216.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Bhaluka, Mymensingh, Bangladesh",
+          "address": "Holding: 17, Vill: Mamarishpur, Post: Mallik Bari, P.s: Bhaluka, Dist: Mymensingh, Bangladesh.",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Apt #5, House # 3, Road # 23/B, Gulshan 1, Dhaka 1212."
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "Arrival Fashion Ltd. began its journey in 1998 with just two production lines and a monthly production capacity of 50,000 pairs. In 2006, the company expanded into a new production facility, boosting its production capacity to 350,000 pairs per month. Arrival Fashion places a strong emphasis on quality assurance, maintaining international standards from fabric sourcing to the production of finished goods. The company boasts an independent quality team of 112 members, and all products pass through 11 checkpoints to ensure the highest quality. This policy outlines our approach to environmental management of operations and products, focusing on key sustainability issues such as energy consumption, greenhouse gas emissions, water usage, air pollution, materials, chemicals, waste, product end-of-life, and customer health and safety.",
+      "declaration": "Arrival Fashion Ltd is dedicated to conducting business in an environmentally responsible manner. We strive to minimize our environmental footprint and promote sustainable practices throughout our operations and product offerings.",
+      "scope": "This policy applies to all workers, employees, directors, officers, agents, contractors, and any third parties acting on behalf of Arrival Fashion Ltd. (AFL). It covers all business activities, including procurement, sales, marketing, and any interactions with government officials, customers, suppliers, and other stakeholders. The policy is applicable globally, regardless of local business practices or cultural norms. This policy applies to the below mentioned locations:"
+    },
+    "focusAreas": [
+      "Energy Optimization & Greenhouse Gas Reduction",
+      "Sustainable Water Management",
+      "Air Pollution Mitigation",
+      "Sustainable Resource Utilization",
+      "Waste Minimization and Control",
+      "Product Lifecycle Assessment",
+      "Customer Safety and Health Initiatives",
+      "Biodiversity Protection Strategies",
+      "Sustainable Logistics Practices",
+      "Responsible Procurement Practices",
+      "Sustainable Product Utilization Practices",
+      "Environmental Compliance, Governance & Transparency",
+      "Employee Awareness and Participation"
+    ],
+    "qualitative": {
+      "Energy Optimization & Greenhouse Gas Reduction": [
+        "Minimize energy consumption and cut greenhouse gas emissions by optimizing operational efficiency and increasing the use of renewable energy."
+      ],
+      "Sustainable Water Management": [
+        "Adopt water-efficient technologies and sustainable practices to optimize water use and strengthen water stewardship efforts."
+      ],
+      "Air Pollution Mitigation": [
+        "Reduce air pollutants and enhance local air quality by deploying advanced emission control technologies"
+      ],
+      "Sustainable Resource Utilization": [
+        "Foster sustainable sourcing and material use across the supply chain by significantly increasing the procurement of certified sustainable materials."
+      ],
+      "Waste Minimization and Control": [
+        "Reduce waste generation and enhance the recycling and reuse of materials."
+      ],
+      "Product Lifecycle Assessment": [
+        "Mitigate environmental impacts across the entire product lifecycle, from design to disposal."
+      ],
+      "Customer Safety and Health Initiatives": [
+        "Uphold rigorous safety standards to safeguard product safety and customer health."
+      ],
+      "Biodiversity Protection Strategies": [
+        "Preserve and enhance biodiversity affected by our operations and supply chain activities."
+      ],
+      "Sustainable Logistics Practices": [
+        "Enhance transportation and logistics efficiency to lower carbon emissions and environmental impact."
+      ],
+      "Responsible Procurement Practices": [
+        "Prioritize ethical sourcing by selecting suppliers with robust environmental and social practices."
+      ],
+      "Sustainable Product Utilization Practices": [
+        "Minimize environmental impact during product use by promoting sustainable consumption behaviors."
+      ],
+      "Environmental Compliance, Governance & Transparency": [
+        "Ensure full adherence to environmental laws, effective governance, and transparent reporting across all operations."
+      ],
+      "Employee Awareness and Participation": [
+        "Ensure full adherence to environmental laws, effective governance, and transparent reporting across all operations."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Optimization & Greenhouse Gas Reduction",
+        "targets": [
+          {
+            "target": "Achieve a 25 % reduction in total Scope 1 and Scope 2 GHG emissions (CO₂e).",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Increase renewable energy usage to 25 % of total electricity consumption.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Improve energy intensity per unit of production by 25%.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Water Management",
+        "targets": [
+          {
+            "target": "Achieve a 25% reduction in water intensity per unit of production.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Recycle or reuse at least 23 % of wastewater generated in operations.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement water risk assessments at 100 % operational sites.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure zero (0) discharge of untreated wastewater.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution Mitigation",
+        "targets": [
+          {
+            "target": "Achieve a 15 % reduction in SOx, NOx, particulate matter (PM), and dust emissions.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce VOC emissions by 20 %.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce community-level nuisance impacts (odor, noise, dust, traffic complaints) by 15 %.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Resource Utilization",
+        "targets": [
+          {
+            "target": "Increase the use of certified sustainable materials by 20 %.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce raw-material consumption intensity by 20%.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Waste Minimization and Control",
+        "targets": [
+          {
+            "target": "Achieve 23 % waste recycling and recovery rate.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce landfill disposal by 46 %.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Reduce hazardous waste generation per unit of production by 25%.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Product Lifecycle Assessment",
+        "targets": [
+          {
+            "target": "Ensure 15 % of products are designed for recyclability or reuse.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Implement take-back, reuse, or end-of-life management programs for at least 15 % of products.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Customer Safety and Health Initiatives",
+        "targets": [
+          {
+            "target": "Ensure 100% compliance with applicable chemical safety regulations.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Eliminate 20 % hazardous substances listed under international restricted substance lists from all products.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity Protection Strategies",
+        "targets": [
+          {
+            "target": "Improve the biodiversity index score by 15 % from the 2022 baseline.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct biodiversity impact assessments for 15 % operational sites.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure zero (0) sourcing from protected or high-biodiversity-risk areas.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Logistics Practices",
+        "targets": [
+          {
+            "target": "Improve logistics and transportation efficiency by 10 %.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Shift 15 % of outbound logistics to low-emission or optimized transport modes.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Responsible Procurement Practices",
+        "targets": [
+          {
+            "target": "Source 20 % of goods and services from suppliers meeting environmental and social sustainability criteria by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Conduct sustainability risk assessments for 20 % of high-risk suppliers by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Sustainable Product Utilization Practices",
+        "targets": [
+          {
+            "target": "Increase customer adoption of sustainable product usage practices by 20%.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Ensure 10 % of products include sustainability usage guidance by 2030.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Compliance, Governance & Transparency",
+        "targets": [
+          {
+            "target": "Environmental management systems implemented and reviewed at 100% of operational locations annually.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Environmental risk assessments conducted and updated for 100% of operational sites at defined intervals.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Employee Awareness and Participation",
+        "targets": [
+          {
+            "target": "100% of relevant employees trained on environmental sustainability practices.",
+            "baseline": "2022",
+            "deadline": "2030"
+          },
+          {
+            "target": "Employee-led environmental improvement initiatives implemented at a minimum of 20% of operational sites.",
+            "baseline": "2022",
+            "deadline": "2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer, Mr. Mainuddin Sarker",
+        "duty": "Responsible for ensuring adherence to environmental regulations and overseeing the execution of our sustainability initiatives."
+      },
+      {
+        "role": "Environmental Manager",
+        "duty": "Developing and monitoring environmental programs, tracking performance, and reporting progress."
+      },
+      {
+        "role": "All employees",
+        "duty": "Expected to comply with the policy and actively contribute to achieving our sustainability objectives."
+      },
+      {
+        "role": "Management",
+        "duty": "Supporting these efforts by providing the necessary resources and fostering a culture of environmental responsibility."
+      }
+    ],
+    "monitoring": "The Environmental Manager plays a key role in developing and monitoring environmental programs, tracking performance, and reporting progress.",
+    "reviewMechanism": "The Environmental Manager will conduct an annual review of this policy to evaluate its effectiveness and relevance. This review process will incorporate feedback from stakeholders, including employees, customers, and regulatory bodies, to ensure continuous improvement in our environmental performance."
+  },
+  "sourcePath": "Policies - Kenal/Arrival Fashions/Environment _Policy AFL.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Arrival Fashions/Environment _Policy AFL.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 9758,
+  "parsedAt": "2026-09-11T07:21:01.598Z"
+}

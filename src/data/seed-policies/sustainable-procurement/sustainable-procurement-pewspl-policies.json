@@ -1,0 +1,378 @@
+{
+  "id": "sustainable-procurement-pewspl-policies",
+  "name": "PEWSPL Policies",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Green Procurement Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Parekh E-Com and Warehousing Services Private Limited (PEWSPL)",
+      "industry": "",
+      "site": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+      "sites": [
+        {
+          "location": "HO",
+          "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063",
+          "primaryFunction": "Corporate"
+        },
+        {
+          "location": "Shakambari",
+          "address": "Shakambari Logistic Park-Unit #A-1Premises # 1 to 7Next to All Saint High School,Pise Pipeline Road, Village LonadTal-Bhiwandi - Thane, Maharashtra – 421302",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Lonikand",
+          "address": "Parekh E-com & warehousing services Pvt. Ltd.Chondhe Warehouse, Vadhu Khurd, Gate no-128/142/144,Lonikand, Tal-Haveli, Dist-Pune Pin code- 412216, Maharashtra, India.",
+          "primaryFunction": "Warehouse"
+        },
+        {
+          "location": "Chakan",
+          "address": "Gut No. 318/02, (P), Village-Kuruli, Tal. Khed, Dist.-Pune, 410501",
+          "primaryFunction": "Warehouse"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "Parekh Ecom & Warehousing Services Pvt. Ltd., C/o Parekh Prints, 1st Floor, Italian Textile Compound, ITT Bhatti, Off Goregaon Mulund Link Road, Goregaon (E), Mumbai - 400 063"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Parekh E-Com and Warehousing Services Private Limited (PEWSPL) is committed to conducting procurement activities in a responsible, ethical, transparent, and sustainable manner. As a technology-driven logistics and supply chain solutions provider, PEWSPL integrates environmental, social, governance (ESG), quality, safety, and compliance considerations into its procurement and supplier management practices to support sustainable business growth and long-term stakeholder value.",
+      "declaration": "The purpose of this Policy is to:\n\nPromote responsible and sustainable procurement practices across PEWSPL operations.\n\nEncourage suppliers and business partners to adopt environmentally and socially responsible practices.\n\nReduce environmental and social risks within the supply chain.\n\nEnsure compliance with applicable laws, regulations, and ethical standards.\n\nSupport resource efficiency, operational resilience, and long-term sustainable growth.\n\nStrengthen transparency, accountability, and supplier engagement throughout the procurement lifecycle.",
+      "scope": "This policy applies to all operations of PEWSPL, including transportation activities, operational facilities, warehouses, and office locations across all locations where PEWSPL operates. It covers all permanent, temporary, and contractual employees across all functions, as well as all internal and external stakeholders associated with PEWSPL, whether directly or indirectly engaged with the organization’s operations and services."
+    },
+    "focusAreas": [
+      "Environmental Responsibility",
+      "Ethical Business Practices",
+      "Social Responsibility",
+      "Compliance & Governance",
+      "Sustainable Innovation",
+      "Social Compliance in Supply Chain",
+      "Supplier Performance & Quality Management",
+      "Environmental Stewardship by Suppliers",
+      "Local Sourcing & Supplier Development"
+    ],
+    "qualitative": {
+      "Environmental Responsibility": [
+        "Promoting environmentally responsible procurement through energy-efficient products, sustainable packaging, waste reduction, and low-emission logistics solutions."
+      ],
+      "Ethical Business Practices": [
+        "Ensuring fair, transparent, and ethical procurement practices while preventing corruption, fraud, and conflicts of interest."
+      ],
+      "Social Responsibility": [
+        "Encouraging suppliers to uphold fair labor practices, workplace safety, human rights, diversity, and employee well-being."
+      ],
+      "Compliance & Governance": [
+        "Ensuring compliance with applicable legal, environmental, health & safety, and corporate governance requirements across the supply chain."
+      ],
+      "Sustainable Innovation": [
+        "Promoting innovative, technology-driven, and resource-efficient solutions that support sustainable and paperless procurement practices."
+      ],
+      "General Commitments": [
+        "We will integrate sustainability considerations into procurement and supplier selection processes through ESG-based evaluation criteria.",
+        "We strive to encourage suppliers to adopt management systems and compliance practices aligned with standards such as ISO 9001, ISO 14001, and ISO 45001 wherever applicable.",
+        "We aim to maintain periodic supplier assessments and on-site audits to evaluate compliance with PEWSPL’s sustainability, quality, and operational requirements.",
+        "We strive to promote ethical, transparent, and fair procurement practices by strengthening governance and monitoring mechanisms.",
+        "We aim to encourage suppliers and service providers to align with PEWSPL’s sustainability values and ESG expectations through continuous engagement.",
+        "We are committed to supporting responsible sourcing practices that minimize environmental and social risks across the supply chain.",
+        "We will strengthen supplier engagement and sustainability awareness through periodic communication, collaboration, and training initiatives.",
+        "We aim to maintain the implementation and communication of the Supplier Code of Conduct covering ethics, compliance, human rights, environmental responsibility, and occupational health & safety."
+      ],
+      "Social Compliance in Supply Chain": [
+        "We will encourage suppliers to uphold human rights, fair labor practices, and equal opportunity principles through responsible employment practices.",
+        "We strive to promote safe, healthy, and secure working conditions across the supply chain through compliance-driven operational controls.",
+        "We are committed to discouraging child labor, forced labor, harassment, discrimination, and unethical employment practices through supplier compliance expectations.",
+        "We aim to encourage suppliers to strengthen occupational health and safety practices aligned with ISO 45001 principles to support safe and healthy workplaces.",
+        "We aim to encourage suppliers to support employee welfare, training, and skill development initiatives to strengthen workforce capability.",
+        "We seek to foster diversity, inclusion, and responsible workplace practices among suppliers and contractors through fair engagement principles.",
+        "We will provide training to our Purchasing Department on Human rights issues that may arise from improper procurement decisions.",
+        "We are committed to identifying and minimizing social risks within our supply chain by promoting ethical labor practices, human rights, and responsible working conditions among suppliers."
+      ],
+      "Supplier Performance & Quality Management": [
+        "We will procure goods and services that meet required quality, safety, and operational standards through structured procurement specifications.",
+        "We strive to encourage suppliers to maintain quality management systems and operational controls aligned with ISO 9001 principles for continuous improvement and service reliability.",
+        "We are committed to promoting continuous improvement and supplier performance enhancement through periodic evaluations and feedback processes.",
+        "We seek to encourage suppliers to adopt process optimization and operational best practices to improve efficiency and service quality.",
+        "We will support proactive communication and coordination with suppliers to improve supply chain responsiveness and operational continuity."
+      ],
+      "Environmental Stewardship by Suppliers": [
+        "We aim to encourage suppliers to reduce energy consumption, greenhouse gas emissions, and environmental impacts through resource-efficient operational practices.",
+        "We aim to support environmentally responsible procurement by favouring suppliers, products, and services with lower environmental impact where cost and quality considerations are comparable.",
+        "We seek to encourage suppliers to implement environmental management practices aligned with ISO 14001 principles for improved environmental performance and compliance management.",
+        "We strive to support responsible waste management and pollution prevention practices through supplier awareness and sustainability initiatives.",
+        "We are committed to encouraging suppliers to implement environmental management systems and sustainability-focused operational practices.",
+        "We will promote digital and paperless procurement practices through technology-enabled procurement systems and electronic documentation.",
+        "We will provide training to our Purchasing Department on environmental issues that may arise from improper procurement decisions.",
+        "We are committed to reducing environmental risks across our supply chain by encouraging suppliers to adopt environmentally responsible and sustainable operational practices."
+      ],
+      "Local Sourcing & Supplier Development": [
+        "We aim to encourage procurement from local and regional suppliers wherever feasible to support local economic development and supply chain resilience.",
+        "We will support supplier capability development and long-term business partnerships through collaboration and engagement initiatives.",
+        "We strive to promote inclusive and responsible supplier engagement practices through fair and transparent procurement processes.",
+        "We are committed to strengthening collaboration and communication with suppliers to improve operational efficiency and supply chain resilience."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "General Commitments",
+        "targets": [
+          {
+            "target": "Increase sustainable supplier assessment coverage by 30%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 2 supplier sustainability engagement or awareness programs annually",
+            "baseline": "FY 2022–23",
+            "deadline": "Through FY 2029–30"
+          },
+          {
+            "target": "Integrate ESG-related evaluation criteria into 100% of key supplier assessment processes",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase engagement with suppliers maintaining ISO-certified management systems by 20% wherever feasible",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase supplier participation in sustainability-related disclosures and information sharing by 25%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct sustainability screening for at least 80% of new key suppliers",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Social Compliance in Supply Chain",
+        "targets": [
+          {
+            "target": "Increase supplier awareness initiatives related to workplace safety, labor rights, and ethical employment practices by conducting at least 2 engagement programs annually",
+            "baseline": "FY 2022–23",
+            "deadline": "Through FY 2029–30"
+          },
+          {
+            "target": "Integrate social compliance considerations into 100% of major supplier evaluation processes",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Encourage 100% compliance with applicable labor and employment regulations among key suppliers",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Provide responsible sourcing, labor practices, and social compliance awareness training to at least 80% of relevant procurement employees",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase engagement with suppliers promoting employee welfare and skill development practices by 15%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier Performance & Quality Management",
+        "targets": [
+          {
+            "target": "Increase supplier performance evaluations covering quality and delivery parameters by 25%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase procurement from suppliers maintaining documented quality management systems aligned with ISO 9001 principles by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase procurement from suppliers maintaining documented quality management practices by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Stewardship by Suppliers",
+        "targets": [
+          {
+            "target": "Increase procurement from suppliers implementing environmentally responsible practices such as energy efficiency, waste reduction, resource conservation, and environmental management initiatives by 25%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase procurement of energy-efficient equipment and operational solutions by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Reduce procurement-related paper usage by 50% through digital procurement systems and paperless documentation",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Increase engagement with transportation partners adopting lower-emission logistics solutions, including EV and CNG-based vehicles, by 15% wherever operationally feasible",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 2 supplier environmental sustainability awareness or engagement initiatives annually",
+            "baseline": "FY 2022–23",
+            "deadline": "Through FY 2029–30"
+          },
+          {
+            "target": "Provide responsible sourcing, environmental mangement awareness training to at least 80% of relevant procurement employees",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      },
+      {
+        "area": "Local Sourcing & Supplier Development",
+        "targets": [
+          {
+            "target": "Increase procurement engagement with local suppliers by 20%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          },
+          {
+            "target": "Conduct at least 1 supplier development or capability-building initiative annually",
+            "baseline": "FY 2022–23",
+            "deadline": "Through FY 2029–30"
+          },
+          {
+            "target": "Increase supplier participation in training, awareness, or development programs by 25%",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2029–30"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Top Management",
+        "duty": "Provide strategic direction and support for sustainable procurement practices across the organization."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Approve procurement objectives, sustainability initiatives, and related improvement programs."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Ensure adequate resources are available for implementation of the Green Procurement Policy."
+      },
+      {
+        "role": "Top Management",
+        "duty": "Promote responsible sourcing, ethical procurement, and supplier sustainability practices."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Implement sustainable procurement practices in supplier selection, evaluation, and procurement activities."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Encourage suppliers and vendors to comply with environmental, social, ethical, and regulatory requirements."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Integrate sustainability considerations into procurement decisions wherever feasible."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Maintain transparent, fair, and ethical procurement processes."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Monitor supplier performance related to sustainability and compliance requirements."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Promote responsible sourcing, waste reduction, and environmentally responsible purchasing practices."
+      },
+      {
+        "role": "Procurement Head",
+        "duty": "Review this policy regularly."
+      },
+      {
+        "role": "Compliance / Sustainability / EHS Team",
+        "duty": "Support implementation and monitoring of sustainability-related procurement initiatives."
+      },
+      {
+        "role": "Compliance / Sustainability / EHS Team",
+        "duty": "Conduct supplier sustainability assessments, reviews, or awareness programs where applicable."
+      },
+      {
+        "role": "Compliance / Sustainability / EHS Team",
+        "duty": "Monitor compliance with applicable environmental, labour, ethical, and regulatory requirements related to procurement activities."
+      },
+      {
+        "role": "Compliance / Sustainability / EHS Team",
+        "duty": "Support corrective action and continuous improvement initiatives related to supplier sustainability performance."
+      },
+      {
+        "role": "Department Heads and Employees",
+        "duty": "Follow approved procurement procedures and ethical purchasing practices."
+      },
+      {
+        "role": "Department Heads and Employees",
+        "duty": "Support procurement of environmentally and socially responsible products and services wherever feasible."
+      },
+      {
+        "role": "Department Heads and Employees",
+        "duty": "Avoid conflicts of interest and maintain transparency during procurement-related activities."
+      },
+      {
+        "role": "Department Heads and Employees",
+        "duty": "Report unethical procurement practices, non-compliance concerns, or supplier-related risks through designated channels."
+      },
+      {
+        "role": "Suppliers, Vendors, and Contractors",
+        "duty": "Comply with applicable laws, regulations, and Company sustainability requirements."
+      },
+      {
+        "role": "Suppliers, Vendors, and Contractors",
+        "duty": "Support ethical business conduct, fair labour practices, environmental protection, and safe working conditions."
+      },
+      {
+        "role": "Suppliers, Vendors, and Contractors",
+        "duty": "Provide accurate and transparent information related to products, services, and compliance obligations."
+      },
+      {
+        "role": "Suppliers, Vendors, and Contractors",
+        "duty": "Cooperate with PEWSPL in sustainability assessments, audits, or improvement initiatives where applicable."
+      }
+    ],
+    "monitoring": "Implementation of this Green Procurement Policy shall be monitored through annual reviews, supplier evaluations, compliance assessments, and monitoring of sustainability-related procurement practices. Supplier performance, procurement-related concerns, and corrective actions shall be reviewed regularly.\n\nPEWSPL is committed to continually improving sustainable procurement practices through regular review of procurement processes, supplier engagement initiatives, compliance monitoring, awareness programs, and implementation of improvement actions. The Company will continue strengthening responsible sourcing and ethical procurement practices in line with sustainability commitments and business requirements.",
+    "reviewMechanism": "This Sustainable Procurement Policy shall be reviewed annually by the Procurement Head, or whenever significant changes occur in procurement practices, regulatory requirements, supplier expectations, or sustainability priorities, to ensure its continued relevance, effectiveness, and alignment with the Company’s responsible sourcing commitments."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/PEWSPL Policies/4. Green Procurement Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/PEWSPL Policies/4. Green Procurement Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 17782,
+  "parsedAt": "2026-09-11T07:12:03.861Z"
+}

@@ -1,0 +1,160 @@
+{
+  "id": "sustainable-procurement-renewsys",
+  "name": "Renewsys",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 4. Green Supply Chain Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "RenewSys India Pvt Ltd.",
+      "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "site": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+      "sites": [
+        {
+          "location": "RenewSys India Pvt. Ltd.",
+          "address": "Unit No 607, 6th Floor, Trade Centre, Bandra Kurla Complex, Bandra East- 400051 Mumbai, Maharashtra India",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Additional Patalganga MIDC Industrial Area",
+          "address": "Plot No. E-141, Additional Patalganga MIDC Industrial Area, Village - Karade Khurd, Taluka Panvel, District Raigad, Maharashtra - 410 206, India.",
+          "primaryFunction": ""
+        },
+        {
+          "location": "Srinagar Village, Maheshwaram Mandal, Rangareddy Dist.",
+          "address": "Plot No. 6, Survey # 114/P, Srinagar Village, Maheshwaram Mandal, Rangareddy Dist. - 501 359,Telangana, India.",
+          "primaryFunction": ""
+        }
+      ]
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At RenewSys India Pvt Ltd., we are committed to promote sustainability throughout our supply chain. As part of our broader corporate sustainability goals, we aim to integrate environmentally friendly and socially responsible practices into every aspect of our procurement and supply chain management. This Green Supply Chain Policy outlines our dedication to minimizing environmental impact, upholding human rights, and ensuring fair labor practices in all supplier relationships.",
+      "declaration": "We pledge to work with suppliers who share our commitment to sustainability, ensuring that our products are sourced, produced, and delivered with minimal environmental impact and in accordance with the highest standards of ethical labor practices. This policy is guided by our responsibility to reduce our carbon footprint, support human rights, and foster fair labor conditions across the supply chain. Our green supply chain policy, with a baseline set for the year 2022-23, will focus on achieving targets in areas of environmental protection, resource efficiency, and the wellbeing of all workers involved.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Environmental protection",
+      "Resource efficiency",
+      "The wellbeing of all workers involved",
+      "Human rights",
+      "Fair labor practices",
+      "Supplier diversity",
+      "Sustainable sourcing",
+      "Sustainable packaging",
+      "Renewable energy",
+      "Energy efficiency"
+    ],
+    "qualitative": {
+      "Environmental protection": [
+        "To collaborate with suppliers to adopt eco-friendly materials and reduce the use of non-renewable resources in the production process.",
+        "Ensure that 100% of all suppliers by 2029-30 meet the company’s environmental standards, which include carbon reduction and responsible resource use.",
+        "Reduce the overall carbon footprint of the supply chain by 25% by 2029-30 through initiatives such as energy efficiency and low-impact transportation methods",
+        "Collaborate with suppliers to implement sustainable packaging solutions that reduce plastic use and promote recyclability."
+      ],
+      "Resource efficiency": [
+        "Partner with suppliers to reduce energy consumption through the adoption of renewable energy sources and energy-efficient technologies."
+      ],
+      "Supplier diversity": [
+        "Promote supplier diversity by increasing partnerships with minority-owned, women-owned, and locally-based suppliers."
+      ],
+      "Human rights and fair labor practices": [
+        "Achieve 90% supplier compliance with our labor and human rights standards by 2029-30, verified through annual audits.",
+        "To develop a corrective action plan for non-compliant suppliers, with a commitment to resolve identified issues within 90 days.",
+        "To ensure 100% suppliers sign and adhere to a Supplier Code of Conduct that includes specific commitments to fair labor practices, human rights, and non-discrimination."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Environmental protection",
+        "targets": [
+          {
+            "target": "Ensure that 100% of all suppliers by 2029-30 meet the company’s environmental standards, which include carbon reduction and responsible resource use.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          },
+          {
+            "target": "Reduce the overall carbon footprint of the supply chain by 25% by 2029-30 through initiatives such as energy efficiency and low-impact transportation methods",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Supplier diversity and local sourcing",
+        "targets": [
+          {
+            "target": "Increase the proportion of local and diverse suppliers in the supply chain by 20% by 2029-30.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          },
+          {
+            "target": "Source 30% of raw materials from local suppliers by 2029-30 to reduce carbon emissions associated with transportation.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          }
+        ]
+      },
+      {
+        "area": "Labor and human rights",
+        "targets": [
+          {
+            "target": "Achieve 90% supplier compliance with our labor and human rights standards by 2029-30, verified through annual audits.",
+            "baseline": "2022-23",
+            "deadline": "2029-30"
+          },
+          {
+            "target": "To develop a corrective action plan for non-compliant suppliers, with a commitment to resolve identified issues within 90 days.",
+            "baseline": "2022-23",
+            "deadline": "90 days"
+          },
+          {
+            "target": "To ensure 100% suppliers sign and adhere to a Supplier Code of Conduct that includes specific commitments to fair labor practices, human rights, and non-discrimination.",
+            "baseline": "2022-23",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      12,
+      13,
+      8,
+      10
+    ],
+    "responsibilities": [
+      {
+        "role": "Sustainability Manager",
+        "duty": "The Sustainability Manager will be responsible for collecting, compiling, and preparing the annual Green Supply Chain performance report."
+      },
+      {
+        "role": "Procurement Team",
+        "duty": "For insights on sustainable sourcing"
+      },
+      {
+        "role": "Compliance and Audit Team",
+        "duty": "For information on supplier audits and compliance data"
+      },
+      {
+        "role": "Environmental and Human Rights Team",
+        "duty": "For progress on eco-friendly initiatives and labor rights monitoring"
+      }
+    ],
+    "monitoring": "The progress of our Green Supply Chain Policy will be reported highlighting key performance indicators (KPIs) related to environmental and labor practices. This report will track our supply chain compliance with the company’s sustainability standards and will identify areas for improvement.\n\nTopics covered in the report include:\n\nSupplier adherence to environmental and human rights standards\n\nProgress toward meeting sustainability targets\n\nResults of supplier audits and compliance checks\n\nInitiatives taken to reduce carbon emissions and promote fair labor practices",
+    "reviewMechanism": "This Green Supply Chain Policy will be reviewed annually by the Sustainability Manager to ensure it aligns with industry best practices and emerging sustainability challenges. Feedback from supplier audits, employee input, and external assessments will be incorporated into updates to ensure continuous improvement in our green procurement practices and labor standards."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Renewsys/4. Green Supply Chain Policy.docx",
+  "sourceTextLength": 5231,
+  "parsedAt": "2026-09-11T07:40:26.545Z",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Renewsys/4. Green Supply Chain Policy.docx"
+  ],
+  "sourceGroup": "Hetvi"
+}

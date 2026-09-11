@@ -1,0 +1,208 @@
+{
+  "id": "sustainable-procurement-chpl",
+  "name": "CHPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Sustainable Procurement Policy from 5 Responsible Sourcing Policy.docx.",
+  "tagline": "Sustainable Procurement Policy",
+  "policy": {
+    "policyType": "sustainable-procurement",
+    "company": {
+      "name": "Choksi Heraeus Pvt. Ltd.",
+      "industry": "",
+      "site": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India",
+      "sites": [
+        {
+          "location": "CHOKSI HERAEUS PVT. LTD",
+          "address": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A-195, 196, \"F\" Road, M.I.A., Madri 313 003 Udaipur, Rajasthan India"
+    },
+    "standards": [
+      "ISO 20400",
+      "EcoVadis",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Choksi Heraeus Pvt. Ltd., a leading provider of precious metal-based products and solutions, is committed to building a responsible and sustainable supply chain that reflects the highest standards of ethics, integrity, and accountability. We recognize that our sourcing decisions can have far-reaching impacts on human rights, the environment, and broader society. Therefore, we prioritize working with suppliers and partners who share our values and are committed to operating transparently and responsibly.\n\nThis Responsible Sourcing Policy outlines our expectations for ethical business conduct, legal compliance, environmental stewardship, and social responsibility throughout our supply network. It serves as a foundation for our due diligence processes, supplier assessments, and engagement with stakeholders to ensure that our sourcing activities contribute positively to the global community.\n\nWe align our approach with internationally recognized frameworks such as the OECD Due Diligence Guidance for Responsible Supply Chains, and promote traceability, fair labor practices, and conflict-free material sourcing. Through this policy, Choksi Heraeus aims to foster long-term relationships with suppliers who demonstrate a shared commitment to sustainable development, continuous improvement, and responsible business practices.",
+      "declaration": "Choksi Heraeus Pvt. Ltd. is committed to sourcing materials and services in a responsible, ethical, and sustainable manner. We require all suppliers and business partners to adhere to our standards on environmental protection, human rights, fair labor, and anti-corruption. This policy reflects our dedication to building transparent, resilient, and socially responsible supply chains that contribute to long-term value creation and stakeholder trust.",
+      "scope": "This policy applies to all sourcing and procurement activities at Choksi Heraeus Pvt. Ltd., including raw materials, components, and services. It extends to the entire supply chain, covering suppliers, contractors, and business partners and ensures responsible practices related to labor, environment, compliance, and human rights across all regions of operation."
+    },
+    "focusAreas": [
+      "Eco-Conscious Procurement",
+      "Fair Labor & Working Conditions",
+      "Conflict-Free & Traceable Materials",
+      "Ethical Supplier Conduct",
+      "Collaborative Sustainability",
+      "Local & Inclusive Sourcing"
+    ],
+    "qualitative": {
+      "Eco-Conscious Procurement": [
+        "Preference for suppliers who actively minimize environmental impacts through resource efficiency, emission control, and responsible waste management."
+      ],
+      "Fair Labor & Working Conditions": [
+        "Commitment to safe workplaces, fair wages, and the elimination of child, forced, or exploitative labor across all tiers of the supply chain."
+      ],
+      "Conflict-Free & Traceable Materials": [
+        "Alignment with global frameworks like the OECD Guidance to ensure responsible sourcing and full traceability of key raw materials."
+      ],
+      "Ethical Supplier Conduct": [
+        "Expectation of legal compliance, anti-corruption, and full transparency in business practices from all partners."
+      ],
+      "Collaborative Sustainability": [
+        "Engagement with suppliers to drive innovation, reduce environmental impact, and enhance long-term social value."
+      ],
+      "Local & Inclusive Sourcing": [
+        "Support for community-based suppliers and inclusion of diverse, small, and responsible enterprises in the supply base."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Eco-Conscious Procurement",
+        "targets": [
+          {
+            "target": "Ensure 100% of suppliers comply with Choksi Heraeus’ environmental standards by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Increase procurement from ISO 14001 certified suppliers by 50% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Achieve a 10% reduction in supplier-related carbon emissions per unit of product procured by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Fair Labor & Working Conditions",
+        "targets": [
+          {
+            "target": "Conduct annual audits covering labor standards across 100% of Tier 1 suppliers.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Maintain 100% supplier compliance with the company’s child and forced labor policies.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Reach 50% verified compliance with labor and human rights benchmarks among suppliers by FY 2028-29, with ongoing monitoring and engagement.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Conflict-Free & Traceable Materials",
+        "targets": [
+          {
+            "target": "Maintain 100% traceability for all raw materials by FY 2028-29",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Ensure 100% compliance with OECD Due Diligence Guidance among mineral suppliers by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Ethical Supplier Conduct",
+        "targets": [
+          {
+            "target": "Integrate anti-corruption clauses in 100% of supplier contracts by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Deliver ethics and compliance training to 90% of key suppliers by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Collaborative Sustainability",
+        "targets": [
+          {
+            "target": "Launch a joint supplier sustainability initiative by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Increase supplier participation in sustainability reporting by 40% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      },
+      {
+        "area": "Local & Inclusive Sourcing",
+        "targets": [
+          {
+            "target": "Increase national sourcing by 50% by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          },
+          {
+            "target": "Ensure 15% of supplier base includes small or diverse businesses by FY 2028-29.",
+            "baseline": "FY 2022-23",
+            "deadline": "FY 2028-29"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      9,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Procurement Team",
+        "duty": "is responsible for integrating responsible sourcing principles into supplier selection, contract terms, and ongoing evaluations."
+      },
+      {
+        "role": "Sustainability Team",
+        "duty": "monitors supplier performance on environmental, social, and ethical parameters and supports improvement initiatives."
+      },
+      {
+        "role": "Suppliers",
+        "duty": "are expected to comply with Choksi Heraeus’ sourcing standards, provide required disclosures, and cooperate during audits and assessments."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "ensures oversight, resource allocation, and enforcement of the policy through regular reviews and strategic direction."
+      },
+      {
+        "role": "All Employees involved in sourcing or supplier engagement",
+        "duty": "are expected to uphold this policy and report any violations or concerns through established channels."
+      }
+    ],
+    "monitoring": "Supplier compliance will be assessed through regular audits, sustainability scorecards, and feedback mechanisms. Findings from these reviews will inform corrective actions, supplier engagement plans, and policy updates.",
+    "reviewMechanism": "The Responsible Sourcing Policy will be reviewed annually Procurement officer to ensure its continued relevance, effectiveness, and alignment with evolving regulatory requirements, international best practices, and business priorities. The review process will be overseen by the Procurement and Sustainability Teams, in coordination with relevant department heads.\n\nAny significant updates or improvements to the policy will be approved by senior management and communicated across the supply chain.\n\nEffective Date: 01.01.2025\n\nNext Review Date: 01.01.2026"
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/CHPL/5 Responsible Sourcing Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/CHPL/5 Responsible Sourcing Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 9012,
+  "parsedAt": "2026-09-11T07:37:57.845Z"
+}

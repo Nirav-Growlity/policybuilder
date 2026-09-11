@@ -1,0 +1,285 @@
+{
+  "id": "lps-bossard",
+  "name": "LPS Bossard",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "LPS BOSSARD PVT. LTD.",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Rohak -Corporate office",
+          "address": "N.H.10 Delhi Road Kehrawar Bye Pass, Kila No 103//6/2/2,15/2,16/1/2 Khewat276, Khatauni 302, The Sampla, Rohtak 124021, Haryana",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "New Delhi- Registered Office",
+          "address": "A-1/134, Safdarjung Enclave, New Delhi - 110029",
+          "primaryFunction": "Registered Office"
+        },
+        {
+          "location": "Pune- Sales & Marketing & Warehouse",
+          "address": "LPS Bossard Pvt. Ltd.  - Pune​ 303, Gulmohar Center Point, 34/A/5, Wadgaonsheri, Pune - 411014, Maharashtra.",
+          "primaryFunction": "Sales & Marketing & Warehouse"
+        },
+        {
+          "location": "Vadodara- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd.  - Vadodara​ 433/2/2 Dashrath, Opp. GSFC Township Gate, Vadodara - 391750, Gujarat.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Bengaluru- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd.  - Bangalore​ 2nd floor, Novel MSR Building Subbiah Reddy colony, Marathahalli village, Bengaluru - 560037, Karnataka.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Hyderabad- Sales & Marketing",
+          "address": "LPS Bossard Pvt. Ltd. - Hyderabad Aditya Trade center, 7-1-618, No: 211, 2nd Floor, Ameerpet, Hyderabad - 500038, Telangana.",
+          "primaryFunction": "Sales & Marketing"
+        },
+        {
+          "location": "Chennai- Sales & Marketing & Warehouse",
+          "address": "Survey No. 331/6, 331/5, 331/1B, Village No. 71, Mettukuppam Road, Vanagaram, Maduravoyal Taluk, Near Porur, Tambaram Toll gate, Chennai - 600095, Tamil Nadu.",
+          "primaryFunction": "Sales & Marketing & Warehouse"
+        },
+        {
+          "location": "Haridwar- Sales & Marketing",
+          "address": "PS Bossard Pvt. Ltd. – Haridwar​ D43, 1st Floor, Shibalik Nagar, Haridwar - 249403, Uttarakhand.",
+          "primaryFunction": "Sales & Marketing"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "LPS BOSSARD PVT. LTD., is a leading provider of fastening and assembly-technology solutions, the company actively supports sustainable development and environmental stewardship through an integrated culture of accountability and innovation.\n\nAt LPS, we believe environmental stewardship is integral to sustainable business success. We are committed to conducting our operations in a manner that respects the environment, safeguards natural resources, and advances sustainable development. we aim to support a circular economy, contribute to the achievement of the United Nations Sustainable Development Goals, and build long-term value for our stakeholders while protecting the planet for future generations.",
+      "declaration": "LPS BOSSARD PVT. LTD., we pledge to comply fully with applicable environmental laws and regulations, and to integrate a preventive approach that avoids environmental impacts rather than simply mitigating them. We will continuously monitor and report our energy, waste, water and emissions performance, and seek measurable improvements in efficiency, reuse and recycling. We will promote responsible procurement, encourage sustainable innovation in our products and services, and work closely with suppliers, customers and local communities to uphold high standards of environmental stewardship.",
+      "scope": "This policy applies to all below given operations of LPS BOSSARD PVT. LTD., including the sourcing, warehousing, distribution, and logistics of fastening and assembly-technology solutions across its facilities in India. The scope covers procurement, packaging, product distribution, internal operations (energy, water, waste), and the supply chain insofar as Bossard India exercises influence. All employees, contractors, and suppliers are expected to adhere to the policy’s requirements when engaged in activities that have environmental impact."
+    },
+    "focusAreas": [
+      "Energy consumption and GHGs – Reduce energy use in logistics, warehousing and operations; transition to renewable energy and lower carbon emissions.",
+      "Air pollution – Minimize emissions from transport, facilities and supply-chain activities; ensure clean air in operational zones.",
+      "Materials and waste – Promote efficient material use, increase recycling of packaging and components, and reduce waste to landfill.",
+      "Water – Optimize water consumption in operations and ensure responsible water management including reuse and reduction of wastewater.",
+      "Biodiversity – Prevent operational impacts on ecosystems, minimize land disturbance and support local habitat protection through site practices.",
+      "Customer health and safety – Ensure that all products comply with safety standards, pose no risk to users, and support safe assembly, handling and disposal.",
+      "Environmental services and advocacy – Engage with suppliers, customers and communities to increase environmental awareness, provide sustainable solutions, and advocate for responsible practices."
+    ],
+    "qualitative": {
+      "Energy consumption and GHGs": [
+        "Promote the use of energy-efficient lighting, equipment, and HVAC systems across all warehouse facilities.",
+        "Transition to renewable energy sources where feasible to reduce Scope 2 emissions."
+      ],
+      "Air Pollution": [
+        "Maintain all warehouse vehicles and forklifts in optimal condition to minimize emissions.",
+        "Encourage the use of electric or low-emission vehicles for short-distance logistics.",
+        "Improve ventilation, filtration, and maintenance in warehouse and logistic facilities to ensure ambient air quality is maintained."
+      ],
+      "Materials and Waste": [
+        "Implement a segregation system for recyclable, reusable, and general waste within the warehouse.",
+        "Minimize single-use packaging materials by promoting returnable or reusable alternatives.",
+        "Collaborate with waste management vendors to ensure responsible recycling, recovery, or safe disposal of all waste streams generated at the warehouse.",
+        "Implement tracking practices of waste generation and disposal to monitor progress, identify reduction opportunities, and ensure transparency in waste management practices."
+      ],
+      "Water": [
+        "Promote efficient water use and eliminate leaks through regular monitoring and maintenance.",
+        "Implement rainwater harvesting to supplement non-potable water use."
+      ],
+      "Biodiversity": [
+        "Promote landscape management practices (green belts, native plantings) around warehouses and logistic centres to enhance local ecology.",
+        "Ensure facility expansions or logistics activities avoid sensitive ecosystems and protect surrounding natural habitats.",
+        "Avoid use of harmful pesticides or chemicals in landscaping and pest control."
+      ],
+      "Customer Health and Safety": [
+        "Ensure that all provided products meet rigorous safety and regulatory standards to protect end-users and prevent contamination or harm.",
+        "Maintain safe indoor air quality and hygiene standards within all warehouse zones."
+      ],
+      "Environmental Services & Advocacy": [
+        "Report transparently on environmental performance, collaborate in industry initiatives, and advocate for sustainable procurement and circular economy practices.",
+        "Promote awareness of environmental sustainability among employees, customers, and logistics partners.",
+        "Participate in local or industry-level environmental programs and partnerships."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy consumption and GHGs",
+        "targets": [
+          {
+            "target": "Improve overall energy efficiency of operations by 25% by year 2030 through process optimization and energy audits.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Achieve total reduction of Scope 1 and Scope 2 GHG emissions by 50% till year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Achieve 20% renewable energy usage (through solar or green energy purchase) by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Reduce particulate matter (PM) and NOₓ emissions from operations by 10% till year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Maintain 100% compliance with national ambient air quality standards for indoor and outdoor emissions.",
+            "baseline": "2022",
+            "deadline": ""
+          },
+          {
+            "target": "Reduce diesel vehicle use by 15% by year 2030 through route optimization and scheduling.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Materials and Waste",
+        "targets": [
+          {
+            "target": "Increase the use of recycled and certified sustainable packaging materials to 60% by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Achieve 90% segregation of waste streams at all operational sites by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Water",
+        "targets": [
+          {
+            "target": "Reduce total freshwater consumption by 10% till year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Meet 30% of non-potable needs through rainwater or recycled water by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Develop green belt or plantation coverage for 20% of total facility area by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Plant and maintain 500 native trees by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Conduct annual biodiversity impact assessments at all sites starting from year 2025.",
+            "baseline": "2022",
+            "deadline": "starting from year 2025"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Audit 100% of product lines for compliance with global material safety standards by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Maintain zero incidents of customer injury or harm related to warehouse operations annually.",
+            "baseline": "2022",
+            "deadline": "annually"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Services & Advocacy",
+        "targets": [
+          {
+            "target": "Train 80% of key suppliers in sustainability and environmental management by year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Conduct annual environmental training or awareness sessions for warehouse staff.",
+            "baseline": "2022",
+            "deadline": "annually"
+          },
+          {
+            "target": "Participate in one community environmental initiative (tree plantation, clean-up, etc.) till year 2030.",
+            "baseline": "2022",
+            "deadline": "year 2030"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Management",
+        "duty": "Provide leadership, approve environmental targets, and review sustainability performance annually."
+      },
+      {
+        "role": "Environmental & Facility Team",
+        "duty": "Implement and monitor environmental programs, maintain records, and conduct audits."
+      },
+      {
+        "role": "Operations & Warehouse Team",
+        "duty": "Ensure compliance with environmental procedures and support daily resource efficiency initiatives."
+      },
+      {
+        "role": "Procurement & Supplier Management",
+        "duty": "Source eco-friendly materials and engage suppliers in sustainable practices."
+      },
+      {
+        "role": "Employees & Contractors",
+        "duty": "Follow environmental guidelines, participate in training, and report any non-compliance or hazards."
+      },
+      {
+        "role": "ESG / Sustainability Coordinator",
+        "duty": "Track target progress, prepare performance reports, and ensure alignment with regulatory standards."
+      }
+    ],
+    "monitoring": "LPS Bossard Pvt. Ltd. is committed to regularly monitoring its environmental performance across key focus areas such as energy consumption, greenhouse gas emissions, water management and waste reduction. Key Performance Indicators (KPIs) are established for each area and tracked through internal monitoring systems to evaluate progress against defined sustainability targets. These KPIs are reviewed on a quarterly basis, and findings are consolidated into performance reports for senior management to guide strategic decision-making. Annual assessments capture achievements, identify gaps, and recommend corrective measures, while relevant outcomes are shared with stakeholders to promote transparency and accountability. All monitoring and reporting practices adhere to applicable regulatory requirements and industry best practices, ensuring reliability, accuracy, and credibility in disclosures.",
+    "reviewMechanism": "This policy will be reviewed annually by the Environmental Manager to assess its effectiveness and alignment with evolving sustainability goals, regulatory requirements, and industry best practices. Feedback from audits, employee suggestions, and stakeholder engagements will be incorporated into policy updates. Necessary revisions will be made to strengthen environmental commitments and drive continuous improvement. Any significant changes or updates will be communicated to all employees and relevant stakeholders to ensure effective implementation."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/LPS Bossard/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/LPS Bossard/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 12707,
+  "parsedAt": "2026-09-11T07:39:17.875Z"
+}

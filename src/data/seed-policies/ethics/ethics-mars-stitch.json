@@ -1,0 +1,312 @@
+{
+  "id": "ethics-mars-stitch",
+  "name": "Mars Stitch",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethics Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Mars Stitch Ltd.",
+      "industry": "",
+      "site": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+      "sites": [
+        {
+          "location": "Mars Stitch Ltd.",
+          "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh.",
+          "primaryFunction": "Textile and garment industry"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "1/E Nayem Uddin Mollah Road, Auchpara, Tongi, Gazipur, Bangladesh."
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Mars Stitch Ltd. is committed to fostering a culture of integrity and transparency in all aspects of our business operations. As a leader in the textile and garment industry, we uphold the highest ethical standards to ensure fairness, accountability, and trust among our employees, stakeholders, and communities. Our Ethics Policy outlines our commitment to ethical practices, promoting honest and responsible decision-making across the organization.\n\nAt Mars Stitch Ltd., we believe that ethical behavior forms the foundation of sustainable success. This policy serves as a guiding framework to address ethical dilemmas, prevent misconduct, and reinforce our values of integrity, respect, and responsibility. Together, we strive to create a work environment where ethical practices are celebrated, and accountability is paramount.",
+      "declaration": "Mars Stitch Ltd. is dedicated to fostering a workplace rooted in ethical principles. By prioritizing transparency, accountability, and fairness, we aim to build trust with our stakeholders and positively impact the communities we serve. Through adherence to international ethical standards and robust internal policies, we are committed to setting a benchmark for ethical excellence in the textile industry.",
+      "scope": "This policy applies to all employees, workers, contractors, contractual worker, subcontractors, internal and external stakeholders associated with Mars Stitch Ltd. It covers every level of the organization, ensuring ethical practices in all activities, interactions, and transactions."
+    },
+    "focusAreas": [
+      "Transparency",
+      "Accountability",
+      "Anti-Corruption Practices",
+      "Fair Treatment",
+      "Whistleblower Protection",
+      "Conflict of Interest",
+      "Fraud",
+      "Money Laundering",
+      "Information Security"
+    ],
+    "qualitative": {
+      "Transparency": [
+        "Provide quarterly updates on company performance and initiatives to stakeholders.",
+        "Conduct annual training sessions on ethical communication for employees."
+      ],
+      "Accountability": [
+        "Establish an ethics committee to oversee compliance and address ethical concerns.",
+        "Develop a reporting system to track and resolve ethical violations within 30 days.",
+        "Hold monthly reviews to identify and address lapses in ethical behaviour."
+      ],
+      "Anti-Corruption Practices": [
+        "Conduct annual audits to identify and eliminate potential corruption risks.",
+        "Monitor financial transactions monthly to detect and prevent corrupt activities.",
+        "Enforce disciplinary action against confirmed cases of corruption within 30 days.",
+        "Implement training programs to educate employees on recognizing and preventing corruption."
+      ],
+      "Fair Treatment": [
+        "Implement diversity and inclusion programs to ensure equal opportunities.",
+        "Resolve grievances related to unfair treatment within 15 days of filing.",
+        "Conduct sensitivity training to foster respect and understanding among employees.",
+        "Regularly assess hiring and promotion processes to eliminate bias."
+      ],
+      "Whistleblower Protection": [
+        "Launch an anonymous whistleblower hotline accessible to all employees.",
+        "Investigate 100% of reported cases within 45 days.",
+        "Provide training on the importance of whistleblowing and protection measures."
+      ],
+      "Conflict of Interest": [
+        "Require all employees to disclose potential conflicts of interest annually.",
+        "Conduct annual assessments of high-risk roles for potential conflicts.",
+        "Educate employees on recognizing and avoiding conflicts of interest through regular workshops."
+      ],
+      "Fraud": [
+        "Perform annually financial audits to detect and prevent fraudulent activities.",
+        "Develop robust internal controls to minimize opportunities for fraud.",
+        "Provide whistleblower mechanisms specifically for reporting fraud.",
+        "Train employees on identifying red flags associated with fraudulent behaviour."
+      ],
+      "Money Laundering": [
+        "Train finance and compliance teams on AML protocols annually.",
+        "Monitor all large financial transactions for suspicious activity.",
+        "Collaborate with financial institutions to strengthen AML compliance."
+      ],
+      "Information Security": [
+        "Conduct regular risk assessments to identify and mitigate data security threats.",
+        "Provide mandatory cybersecurity training for all employees annually.",
+        "Implement multi-layered security measures to protect sensitive data.",
+        "Establish rapid response protocols for addressing data breaches effectively"
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption Practices",
+        "targets": [
+          {
+            "target": "Perform annual audits of 100% of financial records to prevent corruption by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Maintain zero confirmed corruption cases by 2026 through training and monitoring.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Train 100% of employees annually on anti-corruption practices by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct annually monitoring of 100% of financial transactions to detect corruption risks by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Fair Treatment",
+        "targets": [
+          {
+            "target": "Implement diversity programs to increase representation of underrepresented groups by 10% by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct sensitivity training for 100% of employees annually by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Whistleblower Protection",
+        "targets": [
+          {
+            "target": "Investigate 95% of whistleblower reports within 45 days by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Increase whistleblower participation by 20% annually through improved reporting systems by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Train 100% of employees on whistleblower protection protocols annually by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Require 100% of employees to submit conflict of interest disclosures annually by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Review 100% of high-risk roles quarterly for potential conflicts by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Conduct conflict of interest resolution training for 100% of managers by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "Perform annually financial audits to detect fraudulent activities across all departments by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Train 100% of employees annually on identifying and reporting fraudulent behaviors by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Resolve fraud reports within 30 days of detection by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Train 100% of finance and compliance teams annually on AML protocols by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Monitor all financial transactions above 10,000 for suspicious activity by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Ensure 100% compliance with AML regulations by 2026 through rigorous monitoring.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Conduct annual cybersecurity assessments to address potential vulnerabilities by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Train 100% of employees annually on cybersecurity best practices by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          },
+          {
+            "target": "Reduce data breach risks by 20% annually through enhanced security protocols by 2026.",
+            "baseline": "2023",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Dedicated committee",
+        "duty": "This committee is responsible for monitoring, reviewing, and enforcing the policy while maintaining compliance with internal and external standards."
+      },
+      {
+        "role": "S.M Azmal Huda, General Manager(Operation), President",
+        "duty": "Responsible as President of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Mahmodul Hasan, Manager – HR, Admin & Com., Vice President",
+        "duty": "Responsible as Vice President of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Eva Akter, Executive-Welfare, Member Secretary",
+        "duty": "Responsible as Member Secretary of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Nonda Gopal, Sr. Executive -Compliance, Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Md.Shanta, Maintenance In-charge, Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Md. Masud, Asst. Manager-Admin, Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Mr. Antar, Asst. Manager-Store, Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Md. Samim, Cutting Asst., Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Md. Nayeem Hosan, Quality Inspector, Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Mst. Ruma Akter, Operator(Sewing), Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Mst. Jushna Begam, Operator(Sewing), Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      },
+      {
+        "role": "Mst. Mira, Finishing Asst., Member",
+        "duty": "Responsible as a Member of the dedicated committee for implementing the Ethics Policy."
+      }
+    ],
+    "monitoring": "Mars Stitch Ltd. is committed to continuous improvement in ethical practices through:\n\nRegular reviews of the Ethics Policy to align with evolving standards and stakeholder expectations.\n\nEstablishing partnerships with ethical organizations to promote best practices.\n\nEncouraging feedback from employees and stakeholders to identify areas for enhancement.\n\nMonitoring ethical performance through key performance indicators (KPIs).\n\nTo ensure transparency and accountability:\n\nAnnual Review: Publish an annual Ethics Report detailing compliance, progress, and future goals.\n\nStakeholder Communication: Provide regular updates on ethical initiatives through newsletters and meetings.\n\nIncident Reporting: Maintain a secure system for reporting and addressing ethical violations.\n\nMars Stitch Ltd. enforces strict disciplinary measures for violations of the Ethics Policy to uphold integrity and accountability across all levels of the organization. Any employee found in breach of this policy will face consequences proportional to the severity of the violation, which may include:\n\nVerbal or written warnings for minor infractions.\n\nSuspension or demotion for serious or repeated violations.\n\nImmediate termination of employment in cases of gross misconduct, such as fraud, corruption, or willful negligence.\n\nAdditionally, incidents involving external stakeholders, such as suppliers or contractors, will result in termination of contracts and potential legal actions as per applicable laws. Mars Stitch Ltd. ensures that all disciplinary actions are conducted fairly, transparently, and in compliance with legal and regulatory requirements.",
+    "reviewMechanism": "This policy will be reviewed annually by the Sr. Executive -Compliance to ensure its effectiveness and alignment with industry standards. Revisions will incorporate stakeholder feedback and evolving ethical expectations."
+  },
+  "sourcePath": "Policies - Kenal/Mars Stitch/3. Ethics Policy.docx",
+  "sourceFiles": [
+    "Policies - Kenal/Mars Stitch/3. Ethics Policy.docx"
+  ],
+  "sourceGroup": "Kenal",
+  "sourceTextLength": 11809,
+  "parsedAt": "2026-09-11T07:24:34.121Z"
+}

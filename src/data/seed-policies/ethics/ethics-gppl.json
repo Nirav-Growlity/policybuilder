@@ -1,0 +1,314 @@
+{
+  "id": "ethics-gppl",
+  "name": "GPPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 4. Information Security Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Gujarat Paraffins Pvt Ltd",
+      "industry": "",
+      "site": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054",
+      "sites": [
+        {
+          "location": "Corporate Office",
+          "address": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054",
+          "primaryFunction": "Corporate office"
+        },
+        {
+          "location": "Factory",
+          "address": "C-1/29, Gujarat State Highway 71, G.I.D.C. Estate, Kalol, Gujarat 382725",
+          "primaryFunction": "Manufacturing unit"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "401/402 Sarthik Square Nr. GNFC Tower Sarkhej-Gandhinagar Highway Ahmedabad - 380054"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Gujarat Paraffins Pvt Ltd is an established manufacturing company in India engaged in the production of paraffin waxes and specialty wax products. The Company recognizes information as a vital business asset essential for efficient operations, regulatory compliance, and stakeholder confidence.\n\nThis Information Security Policy outlines the principles for protecting information in both physical and electronic forms. It applies to all employees, contractors, and third parties and aims to ensure the confidentiality, integrity, and availability of information in accordance with applicable laws and business needs.",
+      "declaration": "The purpose of this Policy is to protect the confidentiality, integrity, and availability of information assets of Gujarat Paraffins Pvt. Ltd. It aims to establish a structured framework for managing information security risks, preventing unauthorized access, data breaches, and misuse of information, ensuring compliance with applicable legal and regulatory requirements, and maintaining the trust of customers, employees, and business partners.\n\nInformation security governance will be strengthened through the implementation of structured procedures, clearly defined roles, and periodic reviews to ensure consistent protection of information assets across all operations.\n\nAccess control mechanisms will be enhanced through the implementation of Role-Based Access Control (RBAC), least-privilege access, unique user authentication, and periodic access reviews to reduce the risk of unauthorized access to sensitive systems and data.\n\nData protection practices will be improved by implementing encryption and secure data handling procedures to maintain the confidentiality and integrity of sensitive and personal information.\n\nSystem resilience will be increased by maintaining regular data backups and testing recovery procedures to ensure business continuity and minimize disruption during security incidents.\n\nNetwork and system defenses will be strengthened through the deployment of firewalls, malware protection, and timely security updates to prevent, detect, and respond effectively to cyber threats.\n\nEmployee security awareness will be developed through ongoing training and communication initiatives to reduce human-related security risks and improve incident reporting behavior.",
+      "scope": "This policy applies to all operational locations of Gujarat Paraffins Pvt. Ltd., including manufacturing units and the corporate office. It covers all employees, contractors, suppliers, and all stakeholders (both internal and external). The policy applies to the following locations:"
+    },
+    "focusAreas": [
+      "Protection of Information Assets",
+      "Access Control and Identity Management",
+      "Data Protection and Continuity",
+      "IT Infrastructure and Operational Security",
+      "Security Awareness and Capability Building"
+    ],
+    "qualitative": {
+      "Protection of Information Assets": [
+        "Protect physical and digital information assets, including business, financial, customer, and operational data, throughout their lifecycle.",
+        "Information security governance will be strengthened through the implementation of structured procedures, clearly defined roles, and periodic reviews to ensure consistent protection of information assets across all operations.",
+        "Classify, store, and handle confidential information according to Company requirements.",
+        "Dispose of sensitive documents and electronic files securely.",
+        "Share confidential information only on a need-to-know basis within the Company."
+      ],
+      "Access Control and Identity Management": [
+        "Ensure controlled and authorized access to information based on defined roles and responsibilities, while maintaining data accuracy and integrity.",
+        "Access control mechanisms will be enhanced through the implementation of Role-Based Access Control (RBAC), least-privilege access, unique user authentication, and periodic access reviews to reduce the risk of unauthorized access to sensitive systems and data.",
+        "Access to systems, applications, and data is controlled to ensure employees and contractors can perform their roles securely and efficiently while minimizing risk.",
+        "Individual User Authentication: Unique user IDs are issued to all users, with strong password requirements and periodic credential updates.",
+        "Role-Based Authorization: Access permissions are aligned with job roles, operational duties, and manufacturing responsibilities.",
+        "Task Segregation: Critical processes involving sensitive or production-related data are divided among multiple roles to reduce misuse or error.",
+        "Periodic access reviews are conducted to remove inactive or unnecessary privileges.",
+        "Keep all passwords, user IDs, and authentication credentials confidential.",
+        "Avoid sharing login credentials with anyone.",
+        "Regularly update passwords and avoid using the same password across multiple systems."
+      ],
+      "Data Protection and Continuity": [
+        "Data protection practices will be improved by implementing encryption and secure data handling procedures to maintain the confidentiality and integrity of sensitive and personal information.",
+        "System resilience will be increased by maintaining regular data backups and testing recovery procedures to ensure business continuity and minimize disruption during security incidents.",
+        "The organization safeguards personal, technical, and business-critical information in compliance with applicable data protection laws, contractual obligations, and industrial regulations relevant to manufacturing operations.",
+        "Lawful Data Processing: Personal data is collected and processed only for legitimate business purposes and retained as required by law.",
+        "Encryption Controls: Sensitive and confidential data is protected through encryption during storage and electronic transmission.",
+        "Data Continuity Measures: Regular backups of critical production, financial, and operational data are maintained and stored securely.",
+        "Recovery and restoration procedures are documented and periodically tested.",
+        "Use only authorized external storage devices.",
+        "Ensure remote devices are protected with encryption and antivirus software."
+      ],
+      "IT Infrastructure and Operational Security": [
+        "Prevent cyber threats and unauthorized access through appropriate technical and organizational security measures.",
+        "Identify, manage, and respond to information security risks and incidents, including those arising from suppliers, contractors, and service providers.",
+        "Network and system defenses will be strengthened through the deployment of firewalls, malware protection, and timely security updates to prevent, detect, and respond effectively to cyber threats.",
+        "Digital infrastructure, production networks, and connected systems are protected against cyber threats, unauthorized access, and operational disruptions.",
+        "Network Defense Mechanisms: Firewalls and intrusion detection or prevention tools are deployed to protect network boundaries.",
+        "Malware and Threat Protection: Approved anti-malware solutions are installed and regularly updated across systems.",
+        "System Hardening and Updates: Operating systems, applications, and industrial devices receive timely patches and security updates.",
+        "Remote access to systems is monitored and restricted.",
+        "Use company IT systems, computers, and devices only for authorized business purposes.",
+        "Do not install unauthorized software or applications.",
+        "Ensure devices are locked or logged off when unattended.",
+        "Access systems securely when working remotely."
+      ],
+      "Security Awareness and Capability Building": [
+        "Promote information security awareness, regulatory compliance, and continuous improvement of security controls across the organization.",
+        "Employee security awareness will be developed through ongoing training and communication initiatives to reduce human-related security risks and improve incident reporting behavior.",
+        "The organization promotes a culture of information security through regular awareness initiatives and training programs for employees, contractors, and relevant third parties.",
+        "Mandatory Awareness Sessions: Periodic training on information handling, password security, and cyber hygiene.",
+        "Threat Recognition Training: Awareness of phishing, social engineering, and common cyber risks relevant to manufacturing environments.",
+        "Training effectiveness is evaluated through assessments or simulations.",
+        "Refresher training is conducted based on risk exposure and operational changes.",
+        "Exercise caution when opening emails, attachments, or links to prevent phishing attacks.",
+        "Do not share confidential information through unsecured channels.",
+        "Avoid visiting non-work-related or suspicious websites using company networks.",
+        "Report suspected information security incidents, breaches, or vulnerabilities immediately.",
+        "Cooperate fully during investigations and audits.",
+        "Notify IT immediately if company devices are lost or stolen.",
+        "Maintain accurate, complete, and truthful records of all IT transactions and data handling.",
+        "Do not falsify, alter, or misrepresent information.",
+        "Ensure proper documentation of all data access and modifications.",
+        "Understand and comply with this Information Security Policy at all times.",
+        "Seek guidance from IT or Compliance when in doubt.",
+        "Stay updated on the latest security policies, practices, and threats through periodic trainings."
+      ],
+      "Compliance and Consequences": [
+        "Gujarat Paraffins Pvt Ltd maintains strict standards of information security. Any non-compliance with this Information Security Policy shall be addressed decisively and in line with the Company’s disciplinary framework.",
+        "The Company will examine all reported or suspected violations through a structured and confidential review process led by authorized functions such as IT, HR, Compliance, or designated management representatives.",
+        "Depending on the nature and seriousness of the violation, the Company may issue formal warnings or take disciplinary action deemed appropriate under internal rules.",
+        "In cases involving significant risk or seriousness, the Company may place individuals on temporary suspension while assessments or investigations are carried out.",
+        "Instances of repeated misconduct or grave breaches of this policy may result in separation from service in accordance with applicable company procedures and legal requirements.",
+        "Where violations involve breach of law or regulatory obligations, the Company shall take steps to inform and cooperate with appropriate authorities.",
+        "The Company may require individuals involved in violations to undergo corrective actions such as information security awareness programs, retraining, or counseling to reinforce compliance expectations.",
+        "Failure by supervisors or managers to uphold, monitor, or enforce this policy within their teams shall be treated as a lapse in responsibility and may attract disciplinary action.",
+        "All disciplinary decisions shall be implemented in a fair, consistent, and well-documented manner to ensure transparency and accountability.",
+        "Acts involving data theft, unauthorized access, system misuse, or falsification of records shall be treated as critical violations and may result in immediate termination and legal action where applicable.",
+        "Business relationships with suppliers, contractors, or partners found engaging in insecure, non-compliant, or unethical practices may be suspended or terminated by the Company."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Security Awareness and Capability Building",
+        "targets": [
+          {
+            "target": "Information security awareness training shall be completed by 100% of employees and relevant contractors on an annual basis by FY 2030–31",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Incident Management",
+        "targets": [
+          {
+            "target": "All information security incidents shall be formally logged, investigated, and closed in accordance with defined response procedures",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          },
+          {
+            "target": "The number of high-severity information security breaches is targeted to remain at zero annually",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Risk Management",
+        "targets": [
+          {
+            "target": "At least one formal information security risk assessment per year covering IT and operational technology systems shall be conducted consistently",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Access Control and Identity Management",
+        "targets": [
+          {
+            "target": "Role-Based Access Control (RBAC) and least-privilege access shall be implemented across 100% of systems handling sensitive or confidential information",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      },
+      {
+        "area": "Data Protection and Continuity",
+        "targets": [
+          {
+            "target": "Regular data backup processes shall ensure coverage of 100% of critical business and production data, supported by documented recovery procedures",
+            "baseline": "FY 2022–23",
+            "deadline": "FY 2030–31"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "Provide strategic oversight and demonstrate commitment to information security and data protection."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Approve the Information Security Policy and ensure its alignment with the Company’s values, business objectives, and legal obligations."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Ensure adequate resources are allocated for information security controls, training, and monitoring."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Periodically review significant information security risks, incidents, and overall policy effectiveness."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure effective implementation of the Information Security Policy across all business units and locations."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Promote a strong culture of information security through leadership example and communication."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Ensure timely corrective actions are taken to address identified risks, incidents, or non-compliance."
+      },
+      {
+        "role": "Managing Director",
+        "duty": "Support independence and effectiveness of information security governance and reporting mechanisms."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Review the entire Policy"
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Act as the primary owner of the Information Security Policy."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Design, implement, and maintain technical and administrative security controls."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Monitor IT systems, networks, and applications for security incidents and vulnerabilities."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Manage incident response, investigation, documentation, and corrective actions."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Maintain secure backups, access controls, and system configurations."
+      },
+      {
+        "role": "IT Officer",
+        "duty": "Conduct periodic risk assessments and recommend improvements."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Monitor compliance with information security laws, regulations, and internal policies."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Support internal audits and reviews related to information security and data protection."
+      },
+      {
+        "role": "Compliance Team",
+        "duty": "Report significant risks or non-compliance to senior management."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure implementation of information security controls within their respective departments."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Ensure employees follow secure information handling and system usage practices."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Identify information security risks related to departmental activities and report them promptly."
+      },
+      {
+        "role": "Department Heads",
+        "duty": "Support audits, investigations, and corrective actions as required."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Comply with this Information Security Policy and related procedures at all times."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Protect Company information assets from unauthorized access, disclosure, or misuse."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Use IT systems, data, and devices responsibly and only for authorized purposes."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Promptly report any suspected or actual information security incidents or weaknesses."
+      },
+      {
+        "role": "Employees and Contract Workers",
+        "duty": "Cooperate fully with investigations, audits, and training programs."
+      }
+    ],
+    "monitoring": "Progress against information security commitments and targets will be reviewed periodically and reported to senior management. Key metrics, incidents, and improvement actions will be monitored through internal reviews and audits, with corrective measures implemented to address gaps and strengthen overall information security performance.\n\nWe continuously enhance our information security practices through regular audits, risk assessments, employee training, and feedback from incidents. Policies and controls are updated as needed to address emerging threats, technological changes, and regulatory requirements, ensuring the ongoing protection of our information assets.",
+    "reviewMechanism": "The IT Officer will review this Policy annually or as needed and recommend updates to senior management.\n\nInputs from internal audits, incident investigations, risk assessments, employee feedback, and regulatory or customer requirements shall be considered during the review.\n\nAny revisions to the policy will be approved by the Management and communicated to all employees and relevant stakeholders in a timely manner.\n\nAwareness or refresher training will be conducted, where required, to ensure continued understanding and compliance with the updated policy."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/GPPL/4. Information Security Policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/GPPL/4. Information Security Policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 18993,
+  "parsedAt": "2026-09-11T07:08:20.970Z"
+}

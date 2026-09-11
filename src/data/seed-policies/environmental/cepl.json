@@ -1,0 +1,361 @@
+{
+  "id": "cepl",
+  "name": "CEPL",
+  "industry": "Source policy template",
+  "summary": "Parsed Environmental Policy from 1. Environmental Policy.docx.",
+  "tagline": "Environmental Policy",
+  "policy": {
+    "policyType": "environmental",
+    "company": {
+      "name": "Clifton Export (P) Ltd",
+      "industry": "",
+      "site": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk,Tirupur - 641605, Tamilnadu, India",
+      "sites": [
+        {
+          "location": "Clifton Export (P) Ltd",
+          "address": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk,Tirupur - 641605, Tamilnadu, India",
+          "primaryFunction": "Textile manufacturing"
+        }
+      ],
+      "docNum": "LHR-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "108/3E, Sedapalayam Road, Arulpuram - P.O, Palladam Taluk,Tirupur - 641605, Tamilnadu, India"
+    },
+    "standards": [
+      "GRI",
+      "SDGs",
+      "ISO 14001"
+    ],
+    "declaration": {
+      "preface": "In light of the ongoing environmental degradation and the depletion of crucial resources, Clifton Export (P) Ltd acknowledges the urgent need for responsible corporate initiatives. We are steadfastly committed to seamlessly integrating Environment, Social, and Governance (ESG) principles into the heart of our daily operations.\n\nWithin the Clifton Export (P) Ltd, our unwavering dedication to addressing sustainability challenges is articulated through our comprehensive Integrated Environment Policy. This underscores our proactive commitment to addressing a range of environmental issues, including energy consumption, water conservation, greenhouse gas emissions reduction, biodiversity preservation, adoption of renewable energy, air pollution control, and responsible management of hazardous waste. To confront these challenges head-on, we have implemented innovative measures aligned with the fundamental sustainability tenets of Reduce, Reuse, and Recycle.\n\nWe not only pledge to comply with relevant environmental regulations but also aspire to achieve excellence in environmental performance. Through a culture of innovation, the adoption of responsible practices, and ongoing engagement with stakeholders, our objective is to surpass industry standards in environmental sustainability.",
+      "declaration": "Clifton Export (P) Ltd is dedicated to driving ongoing growth through the seamless integration of financial prosperity and environmental stewardship. Our commitment extends to pioneering innovative strategies that not only enhance operational efficiency but also contribute to building a more resilient and sustainable future for generations to come.",
+      "scope": "This Policy is applicable to following sites and all of its employees, workers, sub-contractors and other stakeholders:"
+    },
+    "focusAreas": [
+      "Energy Consumption and Greenhouse Gases",
+      "Water",
+      "Air Pollution",
+      "Biodiversity",
+      "Local & Accidental Pollution",
+      "Materials, Chemicals, and Waste",
+      "Environmental Impacts from the Use of Products",
+      "Environmental Impacts from Product End-of-Life",
+      "Customer Health and Safety",
+      "Promotion of Sustainable Consumption"
+    ],
+    "qualitative": {
+      "Energy Consumption and Greenhouse Gases": [
+        "Implementation of renewable energy sources: Harnessing solar, wind, or other renewable energy sources to power textile manufacturing units, significantly reducing the carbon footprint associated with electricity consumption.",
+        "Adoption of energy-efficient technologies: Upgrade machines with new, energy-saving technology like servo motors and automation to cut down on energy use, make things run better, and be eco-friendly in textile manufacturing.",
+        "Adopting Eco-Friendly Fabrics: Elevate our textile industry practices by integrating sustainable alternatives, including organic cotton, recycled polyester, and other environmentally friendly fabrics.",
+        "Bleaching Alternatives: Adopt enzymatic bleaching agents or oxygen-based bleaching agents, which are less energy-intensive and environmentally friendly compared to traditional chlorine-based methods.",
+        "Energy-Efficient Technologies: Invest in and adopt advanced technologies and machinery that enhance energy efficiency in manufacturing processes, aiming to reduce overall energy consumption while maintaining or improving production output.",
+        "Transport and logistics: Collaborate with logistics partners to implement consolidated shipments, utilize electric or hybrid vehicles, and explore sustainable transportation options."
+      ],
+      "Water": [
+        "Green Dyeing: Adoption of low-impact dyeing techniques and water recycling systems to minimize water usage and pollution.",
+        "Preference for Eco-Friendly Fabrics: Prioritize the selection of fabrics that demand reduced water usage in cultivation and processing, with a preference for sustainable alternatives like Tencel or hemp.",
+        "Community Engagement: Educate consumers about the water footprint associated with various fabrics and raise awareness about the environmental implications linked to fabric usage.",
+        "Close loop water system: Implement a closed-loop water system, treat and reuse process water, and invest in advanced water purification technologies.",
+        "Pre-treatment and Desizing: Integrate enzymatic desizing, efficient washing techniques, and rinse water recycling as key components of our sustainability initiatives.",
+        "Monitoring and Reporting: Invest in sensor technologies, implement water management software, and regularly publish water consumption reports to create transparency and accountability."
+      ],
+      "Air Pollution": [
+        "Green Manufacturing Process: Implement environmentally conscious dyeing and finishing methods, utilizing water-based or low-impact dyes to minimize the release of harmful chemicals into the air.",
+        "Continuous Emission Monitoring: Implementing real-time monitoring systems for emissions to promptly identify and address any deviations from acceptable levels.",
+        "Advocacy for Industry Standards: Actively participating in and advocating for the development of industry-wide standards for air quality and emissions, contributing to a more sustainable textile manufacturing ecosystem.",
+        "Fiber Production: Implement filtration systems in fiber production machinery to capture airborne particles, reducing particulate matter (PM) emissions.",
+        "Spinning and Weaving: Optimize machine settings and adopt technologies that minimize the release of volatile organic compounds (VOCs) during spinning and weaving processes.",
+        "Finishing processes: Switch to renewable energy sources and adopt technologies that reduce the carbon footprint specifically in the finishing stage."
+      ],
+      "Biodiversity": [
+        "Sustainable Agriculture Partnerships: Collaborate with suppliers engaged in sustainable agricultural practices, ensuring that raw materials, such as cotton, are sourced responsibly and do not contribute to deforestation or biodiversity loss.",
+        "Habitat Preservation Initiatives: Support initiatives that contribute to the preservation and restoration of natural habitats, mitigating the impact of textile industry activities on local ecosystems.",
+        "Chemical Usage: Prioritize bleaching agents with lower ecological toxicity to minimize the impact on aquatic ecosystems and soil.",
+        "Chlorine-Free Bleaching Commitment: Committing to environmental stewardship through the transition to chlorine-free bleaching methods, ensuring prevention of harmful chemical release.",
+        "Sustainable Agricultural Practices: Encourage and support the adoption of sustainable agricultural practices among suppliers to mitigate the impact of raw material cultivation on biodiversity.",
+        "Biodiversity Education Programs: Promote awareness among consumers about the environmental impact of textiles, encouraging responsible product use and disposal."
+      ],
+      "Local & Accidental Pollution": [
+        "Dye Effluent Prevention: Implementation of measures to prevent accidental discharge of dye effluents into local water bodies during the dyeing process.",
+        "Community Engagement Programs: Establish programs to engage local communities, creating awareness about pollution prevention measures and fostering a sense of shared responsibility for environmental protection.",
+        "Bleach Residue Control: Adopt effective bleach residue treatment to reduce the risk of local soil contamination near manufacturing facilities.",
+        "Implementation of Green Technologies: Adopting and implementing eco-friendly and sustainable technologies in the manufacturing processes to minimize the release of pollutants.",
+        "Continuous Improvement in Manufacturing Processes: Implement a continuous improvement program to identify and address potential sources of local pollution.",
+        "Collaboration with Local Authorities: Foster strong partnerships with local environmental agencies and authorities to promptly address any accidental pollution events and work collectively on preventative measures."
+      ],
+      "Materials, Chemicals, and Waste": [
+        "Raw Material Selection: Prioritize the use of organic and sustainably sourced fibers like organic cotton or bamboo for fabric production.",
+        "Fabric Waste: Implement strategies to reduce fabric waste during the cutting and sewing stages, such as optimizing pattern layouts.",
+        "Finishing Chemicals: Minimize the use of hazardous finishing chemicals, such as formaldehyde or perfluorinated compounds (PFCs).",
+        "Implementation of Sustainable Materials: Incorporate a higher percentage of organic and recycled materials in the manufacturing of all textile products.",
+        "Waste Reduction Strategies: Develop and implement comprehensive waste reduction strategies, including the optimization of cutting patterns, recycling initiatives, and the responsible disposal of waste materials to minimize the environmental impact of textile manufacturing.",
+        "Chemical Management and Substitution: Evaluate and substitute hazardous chemicals with safer alternatives, adhering to environmentally friendly chemical management practices and ensuring that the use of chemicals aligns with established safety and environmental standards."
+      ],
+      "Environmental Impacts from the Use of Products": [
+        "Recycling Programs: Establish take-back or recycling programs for used products, encouraging customers to return items for proper recycling or repurposing.",
+        "Environmental Impact Awareness: Educate consumers about the environmental impact of their choices and how sustainable practices can contribute to positive change.",
+        "Material Innovation: Introduce and prioritize the use of sustainable and eco-friendly materials in textile production, such as organic cotton, recycled polyester, and lyocell, to reduce the overall environmental footprint.",
+        "Customer Education Programs: Develop educational programs for customers, highlighting the proper care and use of products to extend their lifespan, ultimately reducing the frequency of replacements and minimizing the overall environmental impact",
+        "Innovative Product Design for Sustainability: Foster a culture of sustainable product design, emphasizing the development of products with longer lifespans, versatility, and reduced environmental impact throughout their use."
+      ],
+      "Environmental Impacts from Product End-of-Life": [
+        "Biodegradable Materials: Promote the use of eco-friendly materials such as PLA, hemp, jute, organic cotton, and bamboo in manufacturing to enable natural decomposition at the end of the product life cycle, minimizing environmental impact.",
+        "Product Design for Disassembly: Design garments with a modular approach, enabling easy disassembly of various components. This supports efficient recycling and proper disposal, as individual garment parts can be separated and processed appropriately.",
+        "Innovative Recycling Technologies: Invest in and explore innovative recycling technologies to address challenges associated with certain materials, striving for more efficient and sustainable solutions for end-of-life product management.",
+        "Circular Design: Implementing circular design principles to encourage the reusability of textile products, promoting a closed-loop system.",
+        "Extended Product Lifespan: Design products with durability in mind, promoting longer lifespans and reducing the frequency of disposal.",
+        "Collaboration with Recycling Initiatives: Collaborate with recycling organizations and initiatives to explore innovative methods for repurposing and recycling end-of-life products, contributing to the development of sustainable waste management solutions."
+      ],
+      "Customer Health and Safety": [
+        "Transparent Ingredient Disclosures: Mandate the use of eco-friendly and low-impact dyes in the dyeing process to minimize harmful chemical exposure.",
+        "Dyeing Eco-Friendly: Proactively conducting research on emerging risks related to textile production, ensuring the continuous improvement of safety standards.",
+        "Health and Safety Training: Providing ongoing training for workers to raise awareness about potential health and safety hazards and promote a culture of safety within the industry.",
+        "Chemical-Free Product Options: Offer product lines that are free from harmful chemicals and allergens, prioritizing the health and safety of customers and promoting the adoption of safer and more sustainable textile alternatives.",
+        "Transparent Product Information: Provide clear and transparent information about the materials used in products, including potential allergens or irritants, enabling customers to make informed decisions based on their health and safety preferences.",
+        "Quality Assurance for Consumer Safety: Implement rigorous quality assurance processes to ensure that products meet safety standards, conducting regular testing for harmful substances and adhering to regulatory guidelines to guarantee customer safety."
+      ],
+      "Promotion of Sustainable Consumption": [
+        "Incentivizing Sustainable Choices: Offering incentives, such as loyalty points or discounts, to consumers who consistently make sustainable choices when purchasing textiles.",
+        "Product Accessibility: Ensuring that sustainable products are accessible and competitively priced to encourage a broader adoption of eco-friendly options among diverse consumer demographics.",
+        "Consumer Awareness Campaigns: Launch educational campaigns to increase consumer awareness about the environmental impact of textile consumption, promoting the importance of sustainable choices and responsible purchasing behavior.",
+        "Incentives for Sustainable Choices: Introduce incentives such as discounts or rewards for customers choosing sustainable and eco-friendly products, encouraging a shift towards more environmentally conscious consumption patterns.",
+        "Collaboration with Sustainable Brands: Collaborate with other sustainable brands and organizations to collectively promote sustainable consumption practices, fostering a community committed to minimizing the ecological footprint of the textile industry."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Energy Consumption and Greenhouse Gases",
+        "targets": [
+          {
+            "target": "Renewable Energy Integration: Achieve a 20% increase in the utilization of renewable energy sources in textile manufacturing processes by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Optimize Dyeing Efficiency: Aim to achieve a substantial 20% reduction in energy consumption during the dyeing process by 2027, deploying strategic investments in state-of-the-art, energy-efficient machines.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Emission-Reducing Bleaching Techniques: Aspire to attain a noteworthy 20% reduction in greenhouse gas emissions from the bleaching process by 2027, embracing low-impact bleaching agents and optimizing process conditions for enhanced environmental sustainability.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Water",
+        "targets": [
+          {
+            "target": "Efficient Dyeing with Environmental Impact Reduction: Implement water-efficient technologies, such as low-water or waterless dyeing processes, to achieve a 20% reduction in water consumption during the dyeing process.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Water-Efficient Technologies: Implement water-efficient technologies to achieve a 15% reduction in water consumption per unit of textile output by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Wastewater Treatment: Target a 15% reduction in water-intensive packaging processes by exploring sustainable alternatives and innovative designs that minimize water usage in production by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Air Pollution",
+        "targets": [
+          {
+            "target": "Emission Control Measures: Implement air pollution control measures to reduce particulate matter and volatile organic compound emissions by 25% in textile manufacturing facilities by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Switch to Low-Impact Dyes: Transition to the use of low-impact and eco-friendly dyes to minimize air pollution associated with traditional dyeing processes, aiming for a 20% reduction by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Air Quality Monitoring: Install real-time air quality monitoring systems in key production areas to ensure compliance with air quality standards and prompt corrective actions, achieving a 95% compliance rate by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Biodiversity",
+        "targets": [
+          {
+            "target": "Dyeing Water Efficiency: Achieve a 20% reduction in water usage for dyeing processes by 2027 with the implementation of advanced water-efficient technologies, such as the adoption of low-water dyeing machines and closed-loop systems.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Biodiversity Impact Mitigation: Integrate biodiversity assessment for a 15% environmental impact reduction by 2027. Conduct life cycle assessments to address biodiversity impacts in material sourcing, cutting, sewing, and assembly.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Product Recycling Initiative: Encourage responsible disposal and recycling by implementing a take-back program for used garments, with a goal to collect and recycle 25% of products by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Local & Accidental Pollution",
+        "targets": [
+          {
+            "target": "Emergency Response Training: Conduct routine emergency response training drills to minimize the risk of accidental pollution incidents, targeting a 20% reduction in response time and a 100% improvement in staff preparedness by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Zero Spill Target: Set a goal of achieving zero accidental spills or releases into local waterways or soil, aiming for a 15% reduction in spill incidents through enhanced preventive measures by the end of 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Community Awareness Programs: Implement community awareness programs to educate 80% of local communities about the risks of pollution and emergency response measures, fostering a more informed and engaged populace by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Materials, Chemicals, and Waste",
+        "targets": [
+          {
+            "target": "Chemical Substitution: Replace high-impact chemicals with safer alternatives in textile manufacturing, targeting a 30% reduction in the use of hazardous chemicals by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Circular Economy Initiatives: Implement circular economy practices to achieve a 20% reduction in textile waste generation by promoting recycling, upcycling, and reusing materials by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Zero-Waste Production: Strive for zero-waste production by implementing efficient cutting and sewing techniques, aiming for a 15% reduction in overall textile production waste by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from the Use of Products",
+        "targets": [
+          {
+            "target": "Eco-Friendly Product Labeling: Ensure that 70% of textile products are labeled with clear information on eco-friendly care practices and sustainable use by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Reduce Landfill contribution: Encourage responsible disposal practices among customers, targeting a 15% reduction in landfill contribution by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Product Life Extension: Promote the durability and reparability of textile products, aiming for a 15% increase in the average lifespan of textiles through design improvements and consumer awareness by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Environmental Impacts from Product End-of-Life",
+        "targets": [
+          {
+            "target": "Establish take-back programs to facilitate the responsible disposal and recycling of textile products, aiming to collect and recycle 20% of end-of-life textiles by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Biodegradable Materials Adoption: Increase the use of biodegradable materials in textile production to ensure that 40% of end-of-life textiles decompose within environmentally acceptable time frames by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Collaboration for Recycling Infrastructure: Collaborate with local governments and recycling facilities to improve textile recycling infrastructure, targeting an 40% increase in accessible textile recycling facilities by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Customer Health and Safety",
+        "targets": [
+          {
+            "target": "Product Safety Certifications: Obtain and maintain safety certifications for 90% of textile products, ensuring they meet or exceed established safety standards by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Transparent Supply Chain Reporting: Implement transparent reporting mechanisms to inform customers about the safety measures taken throughout the textile supply chain, with the goal of achieving a 95% transparency rate by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      },
+      {
+        "area": "Promotion of Sustainable Consumption",
+        "targets": [
+          {
+            "target": "Sustainable Product Marketing: Increase the market share of sustainable textile products through targeted marketing campaigns, aiming for a 15% increase in the sales of eco-friendly textiles by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Consumer Incentive Programs: Implement incentive programs for customers who choose sustainable textile options, with the goal of achieving a 10% increase in the adoption of sustainable textiles by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          },
+          {
+            "target": "Education and Awareness Initiatives: Launch educational initiatives to inform consumers about the benefits of sustainable consumption, targeting a 20% increase in consumer awareness and understanding by 2027.",
+            "baseline": "2022",
+            "deadline": "2027"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      6,
+      7,
+      12,
+      13,
+      15
+    ],
+    "responsibilities": [
+      {
+        "role": "Environment, Social, and Governance (ESG) Team",
+        "duty": "The ESG Team's mandate is to thoroughly evaluate the implementation of the policy, assess the achievement of established targets, and recommend adjustments or enhancements to align with emerging environmental standards and best practices."
+      },
+      {
+        "role": "Environment, Social, and Governance (ESG) Team",
+        "duty": "The responsibility for this annual review is assigned to the Environment, Social, and Governance (ESG) Team, consisting of representatives from key departments within the organization."
+      },
+      {
+        "role": "CEO of Clifton Export (P) Ltd",
+        "duty": "The final approval of any adjustments to the policy will be granted by the CEO of Clifton Export (P) Ltd"
+      },
+      {
+        "role": "Representatives from key departments within the organization",
+        "duty": "The evaluation will be conducted by representatives from key departments within the organization, ensuring a comprehensive assessment of our environmental initiatives."
+      }
+    ],
+    "monitoring": "Clifton Export (P) Ltd is dedicated to fostering transparency, accountability, and continuous improvement in the implementation of various Environmental, Social, and Governance (ESG) principles within its operations. To enhance understanding of the current scenario and identify areas for future improvement, we have developed a comprehensive reporting mechanism. The key components of our reporting mechanism are outlined below:\n\nEnvironmental Performance Indicators:\n\nFrequency: Annual/Monthly\n\nMonitoring Areas: Energy consumption, water usage, waste generation, emissions, and more.\n\nMonthly Records for Performance Evaluation:\n\nEnergy Audit Report\n\nWater Consumption and Quality Report\n\nGHG Emissions Report/Carbon Emissions Report\n\nWaste Generation Record\n\nWaste Treatment and Disposal Record\n\nPerformance Analysis:\n\nA consolidated document providing an overview of the company's overall performance in implementing environmental practices outlined in this policy.\n\nESG Report:\n\nAn annual report summarizing all measures taken and improvements made in the company's sustainability practices, encompassing the broader spectrum of Environmental, Social, and Governance aspects.",
+    "reviewMechanism": "To ensure the ongoing relevance and effectiveness of this policy, a comprehensive review will be conducted after one year. This review will consider changes in environmental laws, technological advancements, and the evolving needs of our stakeholders. The responsibility for this annual review is assigned to the Environment, Social, and Governance (ESG) Team, consisting of representatives from key departments within the organization.\n\nThe ESG Team's mandate is to thoroughly evaluate the implementation of the policy, assess the achievement of established targets, and recommend adjustments or enhancements to align with emerging environmental standards and best practices. Their collective expertise ensures a holistic perspective in addressing evolving challenges and opportunities.\n\nThe final approval of any adjustments to the policy will be granted by the CEO of Clifton Export (P) Ltd This ensures the highest level of leadership endorsement for our environmental initiatives, emphasizing the organization's commitment to sustainability and responsible business practices. This systematic review process underscores our dedication to staying abreast of developments in the environmental landscape and continuously improving our policies to meet the highest standards.\n\nThis policy will undergo an annual review to track progress on each issue and its targets. The evaluation will be conducted by representatives from key departments within the organization, ensuring a comprehensive assessment of our environmental initiatives. Any necessary adjustments or enhancements will be recommended based on the outcomes of this annual review."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/CEPL/1. Environmental Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/CEPL/1. Environmental Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 24883,
+  "parsedAt": "2026-09-11T07:36:49.104Z"
+}

@@ -1,0 +1,367 @@
+{
+  "id": "ethics-living-wage",
+  "name": "Living wage",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Corporate governance policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Plastipak Packaging Inc. (Group)",
+      "industry": "",
+      "site": "",
+      "sites": [
+        {
+          "location": "Toledo, Spain",
+          "address": "",
+          "primaryFunction": "manufacturing site"
+        }
+      ],
+      "docNum": "ENV-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": ""
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "At Plastipak Packaging Inc. (Group) we are committed to maintaining the highest standards of corporate governance to foster transparency, accountability, and ethical decision-making. Our governance framework is designed to ensure compliance with applicable laws and regulations while aligning with best practices in sustainability and stakeholder engagement. We recognize that strong governance is essential for maintaining the trust of our stakeholders, enhancing long-term shareholder value, and driving innovation in sustainable packaging solutions. Our Board of Directors plays a crucial role in overseeing the implementation of this policy, ensuring that our operations align with our corporate values and strategic objectives.",
+      "declaration": "Enhance Transparency: Ensure that all corporate actions and decisions are transparent to stakeholders, facilitating informed decision-making and fostering trust in the organization.\n\nStrengthen Accountability: Define clear roles and responsibilities for the Board of Directors and management to enhance accountability in decision-making processes and corporate governance.\n\nPromote Ethical Conduct: Uphold the highest standards of ethics and integrity across all operations, encouraging a culture of compliance and ethical behavior among employees and stakeholders.\n\nFacilitate Risk Management: Implement effective risk management strategies to identify, assess, and mitigate potential risks that could impact the organization’s performance and reputation.\n\nEnsure Regulatory Compliance: Adhere to all applicable laws, regulations, and industry standards to maintain compliance and protect the organization from legal and financial penalties.\n\nSupport Stakeholder Engagement: Foster strong relationships with stakeholders, including investors, customers, and employees, by promoting open communication and addressing their concerns and interests.\n\nPromote Sustainability: Align corporate governance practices with sustainability goals to enhance environmental and social responsibility in our operations and product offerings.",
+      "scope": "This Corporate Governance Policy applies to all employees, officers, directors, contractors, and third-party partners of Plastipak Holdings, Inc. It encompasses all operational sites, including headquarters, manufacturing facilities, and recycling centers globally. The policy is designed to govern interactions and practices among internal and external stakeholders, ensuring that all parties involved in our business operations adhere to the principles of transparency, accountability, and ethical conduct. By fostering a culture of compliance and responsibility, this policy extends to all aspects of Plastipak’s business activities, thereby enhancing our commitment to sustainable practices and stakeholder engagement."
+    },
+    "focusAreas": [
+      "Bribery and Misconduct",
+      "Unfair Competition",
+      "Information Security / Data Protection",
+      "Fraud",
+      "Money Laundering",
+      "Conflict of interest"
+    ],
+    "qualitative": {
+      "Bribery and Misconduct": [
+        "We are committed to adopting a zero tolerance policy against bribery and misconduct within our organization.",
+        "Our focus is on promoting transparent reporting channels that encourage the disclosure of suspected misconduct.",
+        "Our objective is to enhance employee understanding of bribery issues through regular educational initiatives.",
+        "We are dedicated to abiding by all relevant laws concerning bribery and misconduct in our operations.",
+        "We strive to cultivate an organizational culture that supports whistleblowers and protects those who report wrongdoing.",
+        "We strive to cultivate an organizational culture that actively prevents all forms of corruption through comprehensive training programs and awareness campaigns.",
+        "Our commitment entails implementing transparent reporting mechanisms that empower employees to report suspected corrupt activities without fear of retaliation or backlash.",
+        "Emphasizing strict compliance with local and international anti-corruption laws assists us in maintaining the highest ethical standards in all business dealings and operations.",
+        "We aim to conduct regular audits and thorough assessments will ensure that anti-corruption efforts are effectively integrated into daily operations and critical decision-making processes.",
+        "We aim to develop an Anti-Corruption Management System (ACMS) that utilizes machine learning technology to monitor and analyze suspicious transactions in real time."
+      ],
+      "Unfair Competition": [
+        "We are committed to fostering an environment of fair competition in the market while adhering to antitrust regulations.",
+        "Our goal is to provide continuous education on compliance to ensure employees understand unfair competition laws.",
+        "We focus on monitoring market behavior to prevent any practices that could be deemed unfair competition.",
+        "We seek to incorporate clauses against unfair competition in all agreements with suppliers and partners.",
+        "We are resolutely focused on promoting fair competition by adhering strictly to antitrust laws and regulations within our industry and market.",
+        "Our initiative includes training employees on the importance of ethical business practices and the serious implications of anti-competitive behavior.",
+        "Establishing clear and concise guidelines that prohibit collusion or any actions that may unfairly limit competition in the marketplace is essential for integrity.",
+        "Regular monitoring and detailed evaluations will help ensure that all business practices foster a competitive and fair environment for all stakeholders involved.",
+        "We aim to develop an Ethical Compliance Tool (ECT) that employs artificial intelligence to analyze market practices and flag any potential anti-competitive behavior."
+      ],
+      "Information Security / Data Protection": [
+        "We are devoted to implementing strong data protection policies to secure sensitive information.",
+        "We seek to inform our employees about best practices for data protection through comprehensive training programs.",
+        "Our goal is to have established protocols for responding to data breaches in a timely and effective manner.",
+        "We focus on enforcing strict access controls to ensure that only authorized personnel can access sensitive data.",
+        "We are committed to adhering to all applicable laws and regulations related to data protection.",
+        "Recognizing the critical importance of protecting sensitive information, we are committed to enforcing robust information security protocols and measures.",
+        "Our objective involves conducting regular training sessions for employees to raise awareness about data protection and essential cybersecurity best practices.",
+        "Comprehensive incident response plans will effectively address potential breaches and minimize their significant impact on the organization.",
+        "Continuous assessment and ongoing improvement of information security measures will ensure compliance with relevant regulations and industry standards.",
+        "We aim to develop an Identity and Access Management System (IAMS) that employs role-based access control (RBAC) to safeguard sensitive information and restrict unauthorized access."
+      ],
+      "Fraud": [
+        "We are focused on adopting robust strategies for preventing deception and misrepresentation within our organization.",
+        "Our aim is to implement strong internal checks to scrutinize financial transactions for any signs of deception.",
+        "We strive to create an atmosphere that encourages the reporting of suspected deceptive practices without fear.",
+        "Our goal is to educate staff about recognizing and preventing deception through targeted training sessions.",
+        "We intend to establish a strong zero-tolerance approach toward fraud by promoting integrity and ethical behavior at all levels of the organization.",
+        "Our commitment involves implementing strict internal controls and regular audits to effectively detect and prevent fraudulent activities.",
+        "Providing comprehensive training to employees on recognizing and reporting potential fraud fosters an environment of vigilance and responsibility.",
+        "Continuous evaluation of fraud prevention measures will ensure their ongoing effectiveness and adaptability to emerging risks and threats.",
+        "We aim to develop a Fraud Detection System (FDS) that integrates advanced analytics and machine learning to identify patterns indicative of fraudulent activities."
+      ],
+      "Money Laundering": [
+        "We are committed to establishing a strong stance against financial crime to protect our organization from associated risks.",
+        "We aim to continuously monitor transactions for any irregularities that may suggest financial crime activities.",
+        "Our goal is to provide training on financial crime awareness to enhance our employees' understanding of risks.",
+        "Our intention is to regularly assess risks to evaluate and mitigate vulnerabilities associated with financial crime.",
+        "We are resolved to combat money laundering by implementing rigorous due diligence procedures and monitoring practices across the organization.",
+        "Ongoing training for employees will ensure they understand the signs of money laundering and their critical responsibilities in reporting suspicious activities.",
+        "Establishing strong partnerships with regulatory bodies and law enforcement agencies significantly enhances our compliance efforts and effectiveness.",
+        "Regular audits and detailed reviews of anti-money laundering measures will help identify areas for improvement and ensure alignment with legal requirements.",
+        "We aim to develop a Comprehensive Anti-Money Laundering Platform (CAMLP) that utilizes big data analytics to enhance transaction monitoring and risk assessment."
+      ],
+      "Conflict of Interest": [
+        "We are committed to maintaining transparency in all business dealings to avoid any potential conflicts of interest.",
+        "Our goal is to educate employees about identifying and disclosing any actual or perceived conflicts of interest through regular training sessions.",
+        "We focus on implementing clear guidelines that outline the procedures for disclosing conflicts of interest to promote accountability.",
+        "Our objective is to ensure that decisions are made in the best interest of the organization, free from any undue influence.",
+        "We strive to cultivate an organizational culture that encourages open communication regarding potential conflicts and supports employees in making ethical choices.",
+        "We aspire to promote transparency and accountability by implementing clear and effective guidelines regarding conflicts of interest within the organization.",
+        "Training employees to recognize and disclose potential conflicts prevents any adverse impacts on decision-making and organizational integrity.",
+        "Establishing a confidential reporting mechanism facilitates the reporting of conflicts of interest without fear of repercussions or negative consequences.",
+        "Continuous monitoring and comprehensive assessments will ensure effectiveness in maintaining integrity and ethical behavior throughout the organization.",
+        "We aim to develop a Conflict of Interest Management Application (CIMA) that automates the reporting and resolution process, ensuring timely disclosures and follow-ups."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Bribery and Misconduct",
+        "targets": [
+          {
+            "target": "Our objective is to achieve a 95% success rate in anti-bribery compliance checks by 2026",
+            "baseline": "our current assessment in 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We aim to ensure 100% compliance with anti-corruption guidelines",
+            "baseline": "as established in 2022",
+            "deadline": ""
+          },
+          {
+            "target": "We are focused on increasing employee training participation in anti-bribery practices to 100% by 2026",
+            "baseline": "our baseline in 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to maintaining 0% confirmed cases of corruption across our operations and across globally",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Unfair Competition",
+        "targets": [
+          {
+            "target": "Our objective is to achieve a 95% compliance rate in internal assessments of anti-competitive practices by 2026",
+            "baseline": "our 2022 benchmarks",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to maintaining 100% adherence to competition laws",
+            "baseline": "our 2022 baseline",
+            "deadline": ""
+          },
+          {
+            "target": "We plan to increase training participation on competition laws to 100% by 2026",
+            "baseline": "2022 metrics",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to maintaining 0% confirmed cases of conflict of interest across our operations and across globally",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Information Security / Data Protection",
+        "targets": [
+          {
+            "target": "We strive for a 95% compliance rate in annual security audits by 2026",
+            "baseline": "our current status in 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our objective is to maintain 100% compliance with information security standards",
+            "baseline": "our 2022 baseline",
+            "deadline": ""
+          },
+          {
+            "target": "We focus on enhancing employee awareness training participation to 100% by 2026",
+            "baseline": "current levels in 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to maintaining 0% confirmed cases of information security breach across our operations and across globally",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Fraud",
+        "targets": [
+          {
+            "target": "We aim to achieve a 90% fraud detection rate in internal audits by 2026",
+            "baseline": "our existing detection capabilities established in 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are committed to ensuring 100% compliance with fraud prevention guidelines by 2026",
+            "baseline": "our 2022 baseline",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our goal is to increase employee participation in fraud awareness training to 100% by 2026",
+            "baseline": "our baseline in 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are dedicated to maintaining 0% confirmed cases of fraud within our operations",
+            "baseline": "",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Money Laundering",
+        "targets": [
+          {
+            "target": "Our target is to achieve a 95% success rate in financial transaction verifications by 2026",
+            "baseline": "our findings in 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "We aim to ensure 100% compliance with anti-money laundering guidelines by 2026",
+            "baseline": "",
+            "deadline": "2026"
+          },
+          {
+            "target": "We are focused on enhancing employee training on money laundering awareness to achieve 100% participation by 2026",
+            "baseline": "our 2022 baseline",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our goal is to maintain suspected money laundering cases by 0% by 2026",
+            "baseline": "current reports from 2022",
+            "deadline": "2026"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "We aim to achieve a 90% compliance rate in annual conflict of interest declarations by 2026",
+            "baseline": "our 2022 baseline",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our goal is to ensure 100% adherence to conflict-of-interest guidelines",
+            "baseline": "our 2022 baseline",
+            "deadline": ""
+          },
+          {
+            "target": "We are focused on providing conflict of interest training for 100% of employees by 2026",
+            "baseline": "current participation metrics established in 2022",
+            "deadline": "2026"
+          },
+          {
+            "target": "Our intention is to maintain reported conflicts of interest by 0% by 2026",
+            "baseline": "current reporting statistics as of 2022",
+            "deadline": "2026"
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Board of Directors",
+        "duty": "The Board of Directors will set the strategic direction of the organization, ensuring that governance practices align with long-term objectives."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Regular evaluations of Board performance will be conducted to enhance effectiveness and accountability."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "They will oversee the establishment of ethical standards and policies that govern the organization’s operations."
+      },
+      {
+        "role": "Board of Directors",
+        "duty": "Board members will participate in ongoing training to stay informed about governance best practices and emerging trends."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Executive management will ensure the implementation of governance policies and procedures throughout the organization."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "They will promote a culture of accountability and ethical behavior among employees, setting a positive example at all levels."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Regular communication with the Board will be prioritized to align on strategic objectives and governance matters."
+      },
+      {
+        "role": "Executive Management",
+        "duty": "Leadership development programs will be introduced to cultivate future leaders within the organization."
+      },
+      {
+        "role": "Governance Committees",
+        "duty": "Governance committees will be tasked with overseeing specific areas, such as audit, risk, and compensation, ensuring that best practices are followed."
+      },
+      {
+        "role": "Governance Committees",
+        "duty": "Each committee will conduct regular meetings to review performance and provide recommendations to the Board."
+      },
+      {
+        "role": "Governance Committees",
+        "duty": "Committee members will engage in continuous professional development to enhance their expertise in governance issues."
+      },
+      {
+        "role": "Governance Committees",
+        "duty": "Clear documentation of committee meetings and decisions will be maintained to ensure accountability and transparency."
+      },
+      {
+        "role": "Employees",
+        "duty": "All employees are expected to uphold the organization’s values and comply with governance policies and procedures."
+      },
+      {
+        "role": "Employees",
+        "duty": "Participation in training programs on ethics and governance will be encouraged to enhance understanding and awareness."
+      },
+      {
+        "role": "Employees",
+        "duty": "Employees will have access to resources for reporting concerns or seeking guidance on governance-related issues."
+      },
+      {
+        "role": "Employees",
+        "duty": "Recognition programs will be established to celebrate employees who exemplify ethical behavior and contribute to good governance."
+      },
+      {
+        "role": "External Auditor",
+        "duty": "External auditors will conduct independent reviews of our financial statements and governance practices to ensure transparency and compliance."
+      },
+      {
+        "role": "External Auditor",
+        "duty": "They will provide insights and recommendations to the Board for enhancing our governance framework."
+      },
+      {
+        "role": "External Auditor",
+        "duty": "Regular meetings will be held between the auditors and the Board to discuss audit findings and address any concerns."
+      },
+      {
+        "role": "External Auditor",
+        "duty": "A rotation policy may be considered to maintain independence and objectivity in the auditing process."
+      }
+    ],
+    "monitoring": "A comprehensive system will be implemented to measure the effectiveness of our governance practices against established benchmarks.\n\nKey performance indicators (KPIs) will be developed to track progress and identify areas for enhancement.\n\nAnnual reports will be published to communicate our governance performance and highlight key achievements and challenges.\n\nRegular updates will be provided to stakeholders, fostering transparency and trust in our governance framework.\n\nA dedicated compliance framework will be established to ensure adherence to all relevant laws, regulations, and industry standards.\n\nContinuous monitoring will be conducted to assess compliance levels and implement corrective actions when necessary.\n\nTraining programs will be developed to educate employees about compliance requirements and ethical standards.\n\nAn independent compliance officer may be appointed to oversee compliance activities and report directly to the Board.\n\nA proactive risk management strategy will be developed to identify, assess, and mitigate potential risks to the organization.\n\nRegular risk assessments will be conducted to evaluate the effectiveness of our risk management practices.\n\nAn enterprise risk management framework will be established to integrate risk considerations into strategic decision-making.\n\nRisk management training will be provided to employees to enhance awareness and preparedness for potential challenges.\n\nClear reporting mechanisms will be established to ensure timely communication of governance-related issues and concerns.\n\nEmployees will be encouraged to report any governance breaches or ethical violations through designated channels.\n\nFeedback from stakeholders will be regularly solicited to improve our governance practices and address any concerns.\n\nTransparent reporting of governance issues will be prioritized to maintain accountability and integrity.\n\nAll suspected violations of this policy must be reported through the designated reporting channels. Each report will be investigated promptly and thoroughly. Retaliation against individuals who report suspected violations in good faith is strictly prohibited and may result in disciplinary action.\n\nThe governance framework of this policy promotes accountability across all organizational levels. The Board of Directors provides overarching guidance, establishing strategic objectives and ensuring that governance practices align with our mission. Executive management is responsible for embedding governance principles into daily operations and evaluating performance against established benchmarks. The Governance Officer oversees compliance with internal policies and external regulations, providing regular updates on governance effectiveness. Department leaders implement governance strategies within their teams, fostering a culture of integrity and ethical conduct. Employees are encouraged to participate actively in governance initiatives, providing feedback and reporting any concerns. External stakeholders, including partners and suppliers, are expected to uphold governance standards, ensuring alignment with our ethical commitments. Continuous assessments, stakeholder consultations, and transparent communication will drive ongoing enhancements to our governance framework and adapt to emerging best practices.\n\nWe are committed to continuously enhancing our governance practices by regularly evaluating our policies and procedures. Feedback from stakeholders will be actively sought to identify opportunities for improvement and innovation. A culture of learning will be fostered to encourage the adoption of best practices and lessons learned from both internal and external experiences. Benchmarking against industry standards and peers will guide our governance evolution and improvement initiatives.\n\nComprehensive training programs will be developed to equip employees and management with the knowledge and skills necessary for effective governance. Regular workshops and seminars will be organized to address emerging governance trends and challenges. Resources will be allocated for continuous professional development, ensuring that our governance practices remain relevant and effective. Mentorship programs will be established to support the development of future leaders in governance roles.",
+    "reviewMechanism": "The Chief Compliance officer will conduct an annual review of this corporate governance policy to evaluate its effectiveness and relevance. This process will involve assessing compliance with applicable laws and regulations, analyzing governance performance metrics, and identifying opportunities for improvement. Recommendations will be documented and presented to the Board of Directors for consideration and action."
+  },
+  "sourcePath": "KUSH_Policies/KUSH/Living wage/3. Corporate governance policy.docx",
+  "sourceFiles": [
+    "KUSH_Policies/KUSH/Living wage/3. Corporate governance policy.docx"
+  ],
+  "sourceGroup": "KUSH",
+  "sourceTextLength": 25963,
+  "parsedAt": "2026-09-11T07:10:33.183Z"
+}

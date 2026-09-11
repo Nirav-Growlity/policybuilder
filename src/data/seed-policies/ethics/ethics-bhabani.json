@@ -1,0 +1,224 @@
+{
+  "id": "ethics-bhabani",
+  "name": "Bhabani",
+  "industry": "Source policy template",
+  "summary": "Parsed Ethics Policy from 3. Ethical Conduct Policy.docx.",
+  "tagline": "Ethics Policy",
+  "policy": {
+    "policyType": "ethics",
+    "company": {
+      "name": "Bhabani Colors Pvt. Ltd.",
+      "industry": "",
+      "site": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044",
+      "sites": [
+        {
+          "location": "Bhabani Colors Pvt. Ltd.",
+          "address": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044",
+          "primaryFunction": ""
+        },
+        {
+          "location": "",
+          "address": "SP7, MIA, Alwar - 301030, Rajasthan",
+          "primaryFunction": ""
+        }
+      ],
+      "docNum": "ETH-001",
+      "revNum": "01",
+      "effectiveDate": "",
+      "reviewDate": "",
+      "approver": "",
+      "address": "A-30/BI, Mohan Cooperative Industrial Estate, New Delhi - 110044"
+    },
+    "standards": [
+      "ISO 37001",
+      "UNGC",
+      "BRSR",
+      "SDGs"
+    ],
+    "declaration": {
+      "preface": "Bhabani Colors Pvt. Ltd. is committed to upholding the highest standards of ethical conduct across all its operations. The Company recognizes that ethical behavior is fundamental to long-term sustainability, business credibility, and organizational reputation. This policy defines the core principles that guide conduct and decision-making, ensuring integrity, transparency, and accountability in all interactions with employees, business partners, and stakeholders. These standards form an integral part of the Company’s governance framework and organizational culture.\n\nThrough consistent adherence to ethical principles, Bhabani Colors Pvt. Ltd. seeks to build trusted relationships with employees, customers, suppliers, and the wider community. A strong ethical foundation supports responsible business practices, strengthens stakeholder confidence, and contributes to a fair, respectful, and responsible working environment across all operations.",
+      "declaration": "Bhabani Colors Pvt. Ltd. establishes a zero-tolerance approach toward unethical conduct in all business activities. The Company commits to preventing corrupt practices, improper influence, financial misconduct, and misuse of information through strong governance, internal controls, and compliance systems. Safeguarding information assets and ensuring responsible data handling form a core part of this commitment. This policy serves as a binding framework for lawful, responsible, and accountable conduct across all operations and business relationships.",
+      "scope": "This Ethical Conduct Policy applies to all employees, contract workers, consultants, and representatives of Bhabani Colors Pvt. Ltd. and governs conduct across all business functions and operations, including manufacturing, quality control, procurement, sales, logistics, and customer interactions. It also extends to all engagements with suppliers, vendors, service providers, contractors, and other external stakeholders, ensuring that every business relationship is conducted in accordance with the Company’s principles of integrity, accountability, and ethical responsibility :"
+    },
+    "focusAreas": [
+      "Anti-Corruption",
+      "Conflict of Interest",
+      "Fraud Prevention",
+      "Anti-Money Laundering (AML)",
+      "Information Security",
+      "Use of Company Assets"
+    ],
+    "qualitative": {
+      "Anti-Corruption": [
+        "To enforce a zero-tolerance policy for bribery and corruption in all business transactions and provide annual training for all employees on identifying and reporting corrupt practices."
+      ],
+      "Conflict of Interest": [
+        "Ensure implementation of clear procedures for handling potential conflicts of interest fairly and impartially.",
+        "Promote a culture of transparency, encouraging employees to avoid situations where personal interests could conflict with business interests"
+      ],
+      "Fraud Prevention": [
+        "Provide training on identifying, preventing, and reporting fraud to all employees and encourage a culture of accountability, where fraudulent activities are promptly reported and addressed."
+      ],
+      "Anti-Money Laundering (AML)": [
+        "Comply with all relevant AML laws, regulations, and internal procedures to prevent misuse of company operations.",
+        "Ensure employees are aware of AML obligations, including monitoring transactions and recognizing warning signs.",
+        "Maintain accurate records of transactions to support transparency and regulatory adherence."
+      ],
+      "Information Security": [
+        "Protect confidential business, employee, and customer information through robust access controls and cyber security measures.",
+        "Continuously assess and strengthen data protection practices to address evolving risks and regulatory requirements and thereby ensure secure handling, storage, and disposal of physical and digital information.",
+        "Restrict access to sensitive information based on role and need-to-know principles.",
+        "Promote employee awareness of information security responsibilities through regular training."
+      ],
+      "Use of Company Assets": [
+        "Encourage employees to report any suspected misuse or damage promptly.",
+        "Encourage responsible, ethical, and authorized use of company resources by all employees by monitoring asset usage to optimize efficiency and reduce risk."
+      ]
+    },
+    "quantitative": [
+      {
+        "area": "Anti-Corruption",
+        "targets": [
+          {
+            "target": "Ensure 100% of supplier and business partner contracts include anti-bribery and anti-corruption clauses by year 2030.",
+            "baseline": "2024",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Maintain zero confirmed incidents of corruption in internal or external audits each year.",
+            "baseline": "2024",
+            "deadline": "each year"
+          },
+          {
+            "target": "Provide annual anti-corruption training to 100% of employees in procurement, finance, and senior management till year 2030.",
+            "baseline": "2024",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Conflict of Interest",
+        "targets": [
+          {
+            "target": "Achieve 100% compliance with conflict-of-interest disclosures requirement by year 2030.",
+            "baseline": "2024",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Ensure 100% of new employees complete conflict-of-interest awareness and disclosure as part of onboarding procedures.",
+            "baseline": "2024",
+            "deadline": ""
+          }
+        ]
+      },
+      {
+        "area": "Fraud Prevention",
+        "targets": [
+          {
+            "target": "Maintain zero confirmed fraud incidents across all operations till year 2030",
+            "baseline": "2024",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Review and enhance fraud detection mechanism and internal controls to cover 100% of critical processes by year 2030.",
+            "baseline": "2024",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Conduct annual fraud risk assessments covering 100% of high-risk functions by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          }
+        ]
+      },
+      {
+        "area": "Anti-Money Laundering (AML)",
+        "targets": [
+          {
+            "target": "Conduct 2 AML internal audits covering 100% of relevant business units to identify and mitigate risks by year 2030.",
+            "baseline": "2024",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Implement transaction monitoring and suspicious activity detection mechanisms covering 100% of high-risk operations by year 2030.",
+            "baseline": "2024",
+            "deadline": "year 2030"
+          }
+        ]
+      },
+      {
+        "area": "Information Security",
+        "targets": [
+          {
+            "target": "Implement encryption and security controls for 100% of sensitive data by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Mainitain zero incidents of unauthorized data access or breaches through strengthened access controls and monitoring by year 2030.",
+            "baseline": "2024",
+            "deadline": "year 2030"
+          },
+          {
+            "target": "Ensure 100% of employees complete data protection and cybersecurity awareness training by 2030 and annually thereafter.",
+            "baseline": "2024",
+            "deadline": "2030 and annually thereafter"
+          }
+        ]
+      },
+      {
+        "area": "Use of Company Assets",
+        "targets": [
+          {
+            "target": "Ensure 100% of employees handling sensitive assets receive annual training on proper use and safeguarding by 2030.",
+            "baseline": "2024",
+            "deadline": "2030"
+          },
+          {
+            "target": "Maintain a 100% reporting mechanism availability for employees to report suspected misuse.",
+            "baseline": "2024",
+            "deadline": ""
+          }
+        ]
+      }
+    ],
+    "sdgs": [
+      8,
+      10,
+      12,
+      16,
+      17
+    ],
+    "responsibilities": [
+      {
+        "role": "Compliance Officer",
+        "duty": "Oversees the implementation of the ethical conduct policies and ensures compliance with anti-corruption, conflict of interest, fraud, money laundering, and information security standards."
+      },
+      {
+        "role": "HR Manager",
+        "duty": "Manages the training programs for all employees on ethical conduct, including anti-corruption, fraud prevention, and conflict-of-interest policies."
+      },
+      {
+        "role": "IT Manager",
+        "duty": "Ensures the protection of company and customer data through secure information management systems and practices."
+      },
+      {
+        "role": "Internal Audit Team",
+        "duty": "Conducts regular audits to assess compliance with the ethical conduct policies and identifies potential risks."
+      },
+      {
+        "role": "Senior Management",
+        "duty": "Reviews ethical conduct performance, allocates resources for compliance initiatives, and ensures that ethical principles are embedded into the company culture."
+      }
+    ],
+    "monitoring": "Bhabani Colors Pvt. Ltd. is committed to continuously enhancing its ethical standards to align with evolving business practices, regulatory requirements, and societal expectations. The Compliance officer will annually review and assess the effectiveness of its Ethical Conduct Policy through feedback from employees, stakeholders, and industry experts, periodic audits, and benchmarking against best industry practices. This approach ensures that the policy remains relevant and adaptive to emerging challenges. By fostering a culture of continuous improvement, we aim to uphold the highest standards of integrity, transparency, and accountability, ensuring that all employees are equipped to maintain ethical conduct in all aspects of their work.",
+    "reviewMechanism": "The Compliance Officer, will annually review this policy to evaluate the effectiveness of the ethical conduct policy. This process includes assessing adherence to ethical standards, monitoring the implementation of anti-corruption measures, and addressing any reported incidents of unethical behavior. The review will involve analyzing internal and external audit findings, employee and stakeholder feedback, and the outcomes of ethics training programs. Based on these reviews, necessary updates to the policy or associated procedures will be implemented to strengthen the organization’s commitment to integrity, transparency, and ethical governance across all operations."
+  },
+  "sourcePath": "Polices- All Comapnies Hetvi/All Company- Polices/Bhabani/3. Ethical Conduct Policy.docx",
+  "sourceFiles": [
+    "Polices- All Comapnies Hetvi/All Company- Polices/Bhabani/3. Ethical Conduct Policy.docx"
+  ],
+  "sourceGroup": "Hetvi",
+  "sourceTextLength": 14495,
+  "parsedAt": "2026-09-11T07:33:59.151Z"
+}
