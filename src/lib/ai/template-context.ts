@@ -5,10 +5,11 @@ import { POLICY_PROFILES } from "../constants";
 import type { PolicyType } from "../types";
 import type { AIRequestType } from "./prompts";
 
+// Keep seed evidence useful without turning every generation request into a large prompt.
 const MAX_CONTEXT_CHARS = 12_000;
-const MAX_TEMPLATES = 12;
-const MAX_TEXT_CHARS = 1_600;
-const MAX_ITEM_CHARS = 600;
+const MAX_TEMPLATES = 6;
+const MAX_TEXT_CHARS = 900;
+const MAX_ITEM_CHARS = 360;
 
 type SeedPolicy = {
   policyType?: string;
@@ -45,14 +46,24 @@ function compactText(value: unknown, maxChars = MAX_ITEM_CHARS): string | undefi
   if (typeof value !== "string") return undefined;
   const compact = value.replace(/\s+/g, " ").trim();
   if (!compact) return undefined;
-  return compact.length <= maxChars ? compact : `${compact.slice(0, maxChars - 1).trimEnd()}…`;
+  if (compact.length <= maxChars) return compact;
+  const sentence = compact.slice(0, maxChars).lastIndexOf(". ");
+  const end = sentence >= Math.floor(maxChars * 0.55) ? sentence + 1 : maxChars - 1;
+  return `${compact.slice(0, end).trimEnd()}…`;
 }
 
 function compactStringList(value: unknown, maxItems: number): string[] {
   if (!Array.isArray(value)) return [];
+  const seen = new Set<string>();
   return value
-    .map((item) => compactText(item))
+    .map((item) => compactText(item, 220))
     .filter((item): item is string => Boolean(item))
+    .filter((item) => {
+      const key = item.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
     .slice(0, maxItems);
 }
 
@@ -213,6 +224,35 @@ function readTemplates(seedDirectory: string): SeedTemplate[] {
   return templates;
 }
 
+function candidateContentKey(candidate: ContextCandidate): string {
+  const { template: _template, ...content } = candidate.value;
+  return JSON.stringify(content);
+}
+
+function selectCandidates(candidates: ContextCandidate[], areaName?: string): ContextCandidate[] {
+  const unique = new Map<string, ContextCandidate>();
+  for (const candidate of candidates) {
+    const key = candidateContentKey(candidate);
+    if (!unique.has(key)) unique.set(key, candidate);
+  }
+
+  const ranked = [...unique.values()].sort(
+    (a, b) => b.score - a.score || String(a.value.template).localeCompare(String(b.value.template))
+  );
+  if (ranked.length <= MAX_TEMPLATES) return ranked;
+
+  // Area-specific requests should use the strongest matches. Other sections sample
+  // evenly across the complete seed pool so the context is not biased toward the
+  // first alphabetic company files.
+  if (areaName) return ranked.slice(0, MAX_TEMPLATES);
+  const selected: ContextCandidate[] = [];
+  const step = ranked.length / MAX_TEMPLATES;
+  for (let index = 0; index < MAX_TEMPLATES; index += 1) {
+    selected.push(ranked[Math.min(ranked.length - 1, Math.floor(index * step))]);
+  }
+  return selected;
+}
+
 export type TemplateContextInput = {
   policyType: PolicyType;
   requestType: AIRequestType;
@@ -231,15 +271,13 @@ export function buildTemplateContext({
 
   const matchingTemplates = readTemplates(seedDirectory)
     .filter((template) => template.policy?.policyType === policyType);
-  const candidates = matchingTemplates
+  const candidates = selectCandidates(matchingTemplates
     .map((template) => buildCandidate(template, requestType, areaName))
-    .filter((candidate): candidate is ContextCandidate => Boolean(candidate))
-    .sort((a, b) => b.score - a.score || String(a.value.template).localeCompare(String(b.value.template)));
+    .filter((candidate): candidate is ContextCandidate => Boolean(candidate)), areaName);
 
   const preamble = `Reference templates scoped to ${profile.label} and the ${requestType} section only. Use them as drafting evidence; adapt language to the user's company and never copy template-specific company facts or targets without confirmation.\n`;
   const included: Record<string, unknown>[] = [];
   for (const candidate of candidates) {
-    if (included.length >= MAX_TEMPLATES) break;
     const next = [...included, candidate.value];
     if ((preamble + JSON.stringify(next)).length <= MAX_CONTEXT_CHARS) included.push(candidate.value);
   }
