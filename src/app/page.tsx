@@ -66,14 +66,22 @@ export default function Home() {
               <Loader2 size={14} className="animate-spin" />
             </span>
           ) : session ? (
-            <button
-              type="button"
-              onClick={() => void handleSignOut()}
-              disabled={signingOut}
-              className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-3 text-[12.5px] font-medium text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)] disabled:opacity-60"
-            >
-              <LogOut size={14} /> {signingOut ? "Signing out…" : "Sign out"}
-            </button>
+            <>
+              <Link
+                href="/dashboard"
+                className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-3 text-[12.5px] font-medium text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)]"
+              >
+                <FileText size={14} /> Drafts
+              </Link>
+              <button
+                type="button"
+                onClick={() => void handleSignOut()}
+                disabled={signingOut}
+                className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-3 text-[12.5px] font-medium text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)] disabled:opacity-60"
+              >
+                <LogOut size={14} /> {signingOut ? "Signing out…" : "Sign out"}
+              </button>
+            </>
           ) : (
             <Link
               href="/login"
