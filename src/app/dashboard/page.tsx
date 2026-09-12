@@ -21,7 +21,7 @@ export default function DashboardPage() {
     setError("");
     const [bootstrapResponse, documentsResponse] = await Promise.all([fetch("/api/policycraft/bootstrap"), fetch("/api/policycraft/documents")]);
     if (bootstrapResponse.status === 401 || documentsResponse.status === 401) {
-      router.replace("/login?next=/dashboard");
+      router.replace("/login?next=/drafts");
       return;
     }
     if (!bootstrapResponse.ok || !documentsResponse.ok) {

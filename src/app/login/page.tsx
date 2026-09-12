@@ -6,7 +6,8 @@ import { ArrowRight, Leaf, Loader2, LockKeyhole } from "lucide-react";
 import { signIn } from "@/lib/auth-client";
 
 function safeNext(value: string | null): string {
-  return value && value.startsWith("/") && !value.startsWith("//") ? value : "/dashboard";
+  if (!value || value === "/dashboard" || value === "/drafts") return "/";
+  return value.startsWith("/") && !value.startsWith("//") ? value : "/";
 }
 
 export default function LoginPage() {
@@ -67,4 +68,3 @@ export default function LoginPage() {
     </main>
   );
 }
-

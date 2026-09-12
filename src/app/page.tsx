@@ -68,7 +68,7 @@ export default function Home() {
           ) : session ? (
             <>
               <Link
-                href="/dashboard"
+                href="/drafts"
                 className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-3 text-[12.5px] font-medium text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)]"
               >
                 <FileText size={14} /> Drafts

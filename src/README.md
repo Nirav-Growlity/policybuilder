@@ -28,7 +28,7 @@ PolicyCraft runs independently of the ESG application. Configure the local MySQL
 npm run dev -- -p 3000
 ```
 
-The additive migration in `migrations/2026_09_create_policycraft_documents.sql` creates the PolicyCraft-owned draft table without modifying the existing organization or site tables. The standalone login is available at `/login` and the signed-in workspace at `/dashboard`.
+The additive migration in `migrations/2026_09_create_policycraft_documents.sql` creates the PolicyCraft-owned draft table without modifying the existing organization or site tables. The standalone login is available at `/login` and the signed-in drafts workspace at `/drafts`.
 
 ## Learn More
 
