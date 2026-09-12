@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Local PolicyCraft workspace
+
+PolicyCraft runs independently of the ESG application. Configure the local MySQL connection and `BETTER_AUTH_SECRET` in `.env` (use the ESG secret when cookie compatibility is required), then start it on port 3000:
+
+```bash
+npm run dev -- -p 3000
+```
+
+The additive migration in `migrations/2026_09_create_policycraft_documents.sql` creates the PolicyCraft-owned draft table without modifying the existing organization or site tables. The standalone login is available at `/login` and the signed-in workspace at `/dashboard`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -7,17 +7,20 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --import tsx --test --test-force-exit lib/calendar.test.ts lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/universal-templates.test.ts lib/professional-templates.test.ts lib/pdf/generate.test.ts lib/pdf/layout.test.ts lib/ai/template-context.test.ts lib/docx/generate.test.ts",
+    "test": "node --import tsx --test --test-force-exit lib/calendar.test.ts lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/universal-templates.test.ts lib/professional-templates.test.ts lib/pdf/generate.test.ts lib/pdf/layout.test.ts lib/ai/template-context.test.ts lib/docx/generate.test.ts lib/policycraft-mapping.test.ts",
     "templates:previews": "tsx scripts/generate-professional-previews.ts",
     "seeds:import": "tsx scripts/import-policy-seeds.ts"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.5.1",
+    "bcryptjs": "^3.0.2",
+    "better-auth": "^1.3.32",
     "clsx": "^2.1.1",
     "docx": "^9.7.1",
     "dotenv": "^17.4.2",
     "lucide-react": "^1.27.0",
     "mammoth": "^1.12.0",
+    "mysql2": "^3.15.2",
     "next": "16.2.12",
     "openai": "^7.3.0",
     "pdf-lib": "^1.17.1",
@@ -26,9 +29,9 @@
     "react": "19.2.4",
     "react-colorful": "^5.8.1",
     "react-dom": "19.2.4",
+    "sharp": "^0.34.5",
     "word-extractor": "^1.0.4",
-    "zustand": "^5.0.14",
-    "sharp": "^0.34.5"
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

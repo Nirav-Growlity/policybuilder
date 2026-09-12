@@ -21,6 +21,8 @@ import { PolicySelector } from "@/components/builder/policy-selector";
 import { CompanySetupScreen } from "@/components/builder/company-setup-screen";
 import type { PolicyType } from "@/lib/types";
 import { extractLogoPalette } from "@/lib/logo-palette";
+import { applyCompanyMaster } from "@/lib/policycraft-mapping";
+import type { PolicyCraftDocumentState } from "@/lib/policycraft-types";
 
 const STEP_RENDERERS: Record<string, React.ComponentType> = {
   structure: StepStructure,
@@ -54,9 +56,19 @@ export function BuilderClient() {
   const templateId = searchParams.get("template");
   const visualTemplateId = searchParams.get("visualTemplate");
   const selectedType = searchParams.get("type") as PolicyType | null;
+  const draftId = searchParams.get("draft");
   const router = useRouter();
   const [dragOver, setDragOver] = React.useState(false);
   const [templateLoaded, setTemplateLoaded] = React.useState(false);
+  const [companyLoaded, setCompanyLoaded] = React.useState(false);
+  const [documentLoaded, setDocumentLoaded] = React.useState(!draftId);
+  const [backendDocumentId, setBackendDocumentId] = React.useState<string | null>(draftId);
+  const [backendTitle, setBackendTitle] = React.useState("");
+  const backendLockVersion = React.useRef(1);
+  const [saveStatus, setSaveStatus] = React.useState<"idle" | "saving" | "saved" | "offline" | "conflict">("idle");
+  const backendLoadKey = React.useRef<string>("");
+  const createAttempted = React.useRef(false);
+  const skipNextSave = React.useRef(false);
 
   const order = getStepOrder(policy);
   const currentIndex = Math.max(0, order.indexOf(step));
@@ -68,8 +80,65 @@ export function BuilderClient() {
     if (hydrated && !order.includes(step)) setStep(order[0]);
   }, [hydrated, order, setStep, step]);
 
+  // Every new/legacy local builder session is hydrated from the authenticated
+  // organization. A saved draft is loaded instead and remains user-editable.
   React.useEffect(() => {
-    if (!hydrated || templateLoaded || !templateId) return;
+    if (!hydrated) return;
+    const key = draftId ? `draft:${draftId}` : "company-master";
+    if (backendLoadKey.current === key) return;
+    backendLoadKey.current = key;
+    if (draftId) {
+      fetch(`/api/policycraft/documents/${encodeURIComponent(draftId)}`)
+        .then(async (response) => {
+          if (response.status === 401) {
+            router.replace(`/login?next=${encodeURIComponent(window.location.pathname + window.location.search)}`);
+            return null;
+          }
+          if (!response.ok) throw new Error("Could not load draft");
+          return response.json();
+        })
+        .then((data) => {
+          if (!data?.document) return;
+          const loaded = data.document;
+          setPolicy(loaded.state.policy);
+          if (loaded.state.importedPolicy) setImportedPolicy(loaded.state.importedPolicy);
+          else clearImportedPolicy();
+          setStep(loaded.state.step);
+          setBackendDocumentId(loaded.id);
+          setBackendTitle(loaded.title);
+          backendLockVersion.current = loaded.lockVersion;
+          skipNextSave.current = true;
+          setDocumentLoaded(true);
+          setCompanyLoaded(true);
+        })
+        .catch(() => {
+          push("Could not load that draft", "error");
+          setDocumentLoaded(true);
+        });
+      return;
+    }
+
+    fetch("/api/policycraft/bootstrap")
+      .then(async (response) => {
+        if (response.status === 401) {
+          router.replace(`/login?next=${encodeURIComponent(window.location.pathname + window.location.search)}`);
+          return null;
+        }
+        if (!response.ok) throw new Error("Could not load company");
+        return response.json();
+      })
+      .then((data) => {
+        if (data?.company) updatePolicy((current) => applyCompanyMaster(current, data.company));
+        setCompanyLoaded(true);
+      })
+      .catch(() => {
+        push("Could not load company information", "error");
+        setCompanyLoaded(true);
+      });
+  }, [clearImportedPolicy, draftId, hydrated, push, router, setImportedPolicy, setPolicy, setStep, updatePolicy]);
+
+  React.useEffect(() => {
+    if (!hydrated || !companyLoaded || templateLoaded || !templateId || draftId) return;
     (async () => {
       try {
         const res = await fetch(`/api/templates/${templateId}`);
@@ -99,11 +168,11 @@ export function BuilderClient() {
         setTemplateLoaded(true);
       }
     })();
-  }, [hydrated, push, setPolicy, setStep, templateId, templateLoaded]);
+  }, [companyLoaded, draftId, hydrated, push, setPolicy, setStep, templateId, templateLoaded]);
 
   // Universal visual templates travel through company + policy setup without bypassing either step.
   React.useEffect(() => {
-    if (!hydrated || !visualTemplateId) return;
+    if (!hydrated || !companyLoaded || !visualTemplateId || draftId) return;
     (async () => {
       try {
         const { upgradeDocumentThemeId, getDocumentTemplatePatch } = await import("@/lib/document-themes");
@@ -117,7 +186,76 @@ export function BuilderClient() {
         // ignore invalid template ids
       }
     })();
-  }, [hydrated, visualTemplateId, policy.policyType]);
+  }, [companyLoaded, draftId, hydrated, visualTemplateId, policy.policyType]);
+
+  React.useEffect(() => {
+    if (!hydrated || !companyLoaded || !selectedType || draftId || templateId) return;
+    if (policy.policyType !== selectedType) startPolicy(selectedType);
+  }, [companyLoaded, draftId, hydrated, policy.policyType, selectedType, startPolicy, templateId]);
+
+  // Create the server draft once a policy type/template is known. Until then
+  // the existing local Zustand draft remains a safe temporary workspace.
+  React.useEffect(() => {
+    const selectedTypeReady = !selectedType || policy.policyType === selectedType;
+    const shouldCreate = hydrated && companyLoaded && documentLoaded && selectedTypeReady && !draftId && !backendDocumentId && !createAttempted.current && (Boolean(selectedType) || (Boolean(templateId) && templateLoaded));
+    if (!shouldCreate) return;
+    createAttempted.current = true;
+    const current = useBuilder.getState();
+    const state: PolicyCraftDocumentState = { step: current.step, policy: current.policy, importedPolicy: current.importedPolicy };
+    fetch("/api/policycraft/documents", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title: `${current.policy.company.name || "Untitled"} ${current.policy.policyType} policy`, state }),
+    })
+      .then(async (response) => {
+        if (response.status === 401) {
+          router.replace("/login");
+          return null;
+        }
+        if (!response.ok) throw new Error("Could not create draft");
+        return response.json();
+      })
+      .then((data) => {
+        if (!data?.document) return;
+        setBackendDocumentId(data.document.id);
+        setBackendTitle(data.document.title);
+        backendLockVersion.current = data.document.lockVersion;
+        router.replace(`/builder?draft=${encodeURIComponent(data.document.id)}`);
+        setSaveStatus("saved");
+      })
+      .catch(() => {
+        createAttempted.current = false;
+        push("Draft storage is unavailable; your local copy is still open", "error");
+      });
+  }, [backendDocumentId, companyLoaded, draftId, documentLoaded, hydrated, policy.policyType, push, router, selectedType, templateId, templateLoaded]);
+
+  React.useEffect(() => {
+    if (!backendDocumentId || !companyLoaded || !documentLoaded) return;
+    if (skipNextSave.current) {
+      skipNextSave.current = false;
+      return;
+    }
+    const state: PolicyCraftDocumentState = { step, policy, importedPolicy };
+    const timer = window.setTimeout(() => {
+      setSaveStatus("saving");
+      fetch(`/api/policycraft/documents/${encodeURIComponent(backendDocumentId)}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: backendTitle || `${policy.company.name || "Untitled"} ${policy.policyType} policy`, state, lockVersion: backendLockVersion.current }),
+      }).then(async (response) => {
+        if (response.status === 409) {
+          setSaveStatus("conflict");
+          push("This draft changed in another window. Reload it before continuing.", "error");
+          return;
+        }
+        if (!response.ok) throw new Error("save failed");
+        const data = await response.json();
+        if (data?.document?.lockVersion) backendLockVersion.current = data.document.lockVersion;
+        setSaveStatus("saved");
+      }).catch(() => setSaveStatus("offline"));
+    }, 900);
+    return () => window.clearTimeout(timer);
+  }, [backendDocumentId, backendTitle, companyLoaded, documentLoaded, draftId, importedPolicy, policy, push, step]);
 
   // Legacy saved policies may contain a logo but no cached palette. Keep this
   // migration alive at the builder level so it also runs on Preview/Export,
@@ -170,7 +308,15 @@ export function BuilderClient() {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const [setupPhase, setSetupPhase] = React.useState<"company" | "policy">("company");
 
-  if (!templateId && !selectedType) {
+  if (draftId && !documentLoaded) {
+    return <div className="min-h-screen bg-[var(--color-cream)]" />;
+  }
+
+  if (!companyLoaded) {
+    return <div className="min-h-screen bg-[var(--color-cream)]" />;
+  }
+
+  if (!draftId && !templateId && !selectedType) {
     if (setupPhase === "company") {
       return <CompanySetupScreen onContinue={() => setSetupPhase("policy")} />;
     }
@@ -187,7 +333,7 @@ export function BuilderClient() {
   }
 
   // Visual-template flow must not bypass setup: show company step first when type is missing.
-  if (visualTemplateId && !selectedType && !templateId) {
+  if (visualTemplateId && !selectedType && !templateId && !draftId) {
     if (setupPhase === "company") {
       return <CompanySetupScreen onContinue={() => setSetupPhase("policy")} />;
     }
@@ -275,7 +421,7 @@ export function BuilderClient() {
       onDrop={handleDrop}
       className="relative"
     >
-      <BuilderShell topActions={topActions}>
+      <BuilderShell topActions={<>{backendDocumentId ? <span className="mr-2 text-[11px] text-[var(--color-muted)]">{saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""}</span> : null}{topActions}</>}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8">
           <StepCmp />
         </div>
