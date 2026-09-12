@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Archive, ArrowRight, FileText, Leaf, Loader2, LogOut, Plus, RefreshCw } from "lucide-react";
-import { signOut } from "@/lib/auth-client";
+import { Archive, ArrowRight, FileText, Leaf, Loader2, Plus, RefreshCw } from "lucide-react";
 import type { PolicyDocumentSummary } from "@/lib/policycraft-types";
 
 function label(value: string): string {
@@ -65,17 +64,10 @@ export default function DashboardPage() {
     }
   }
 
-  async function logout() {
-    await signOut();
-    router.replace("/login");
-    router.refresh();
-  }
-
   return (
     <main className="min-h-screen bg-[var(--color-cream)] text-[var(--color-ink)]">
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12">
         <div className="flex items-center gap-2.5"><div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-forest)] text-white"><Leaf size={18} /></div><div><div className="font-display font-semibold">PolicyCraft</div><div className="text-[10px] uppercase tracking-[0.14em] text-[var(--color-muted)]">Workspace</div></div></div>
-        <button type="button" onClick={logout} className="inline-flex items-center gap-2 text-sm text-[var(--color-ink-2)] hover:text-[var(--color-forest)]"><LogOut size={15} /> Sign out</button>
       </header>
       <section className="mx-auto max-w-7xl px-6 py-10 lg:px-12">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">

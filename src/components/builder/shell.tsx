@@ -8,7 +8,6 @@ import { Icon } from "@/components/icons";
 import {
   Leaf,
   ArrowLeft,
-  Sparkles,
   RotateCcw,
   Users,
   BadgeIndianRupee,
@@ -29,7 +28,7 @@ export function BuilderShell({
   topActions?: React.ReactNode;
   showSidebar?: boolean;
 }) {
-  const { step, setStep, policy, reset, loadSample } = useBuilder();
+  const { step, setStep, policy, reset } = useBuilder();
 
   const policyMeta = getPolicyProfile(policy.policyType);
   const PolicyIcon = policyMeta.icon === "Users" ? Users : policyMeta.icon === "BadgeIndianRupee" ? BadgeIndianRupee : Leaf;
@@ -43,19 +42,17 @@ export function BuilderShell({
   const contentRef = React.useRef<HTMLDivElement>(null);
   const [inspectorOpen, setInspectorOpen] = React.useState(true);
   const [workflowOpen, setWorkflowOpen] = React.useState(false);
-  const [sidebarCollapsed, setSidebarCollapsed] = React.useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = React.useState(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      return localStorage.getItem("policycraft_sidebar_collapsed") === "true";
+    } catch {
+      return false;
+    }
+  });
   const workflowPanel = React.useRef<HTMLElement>(null);
   const closeInspector = React.useCallback(() => setInspectorOpen(false), [setInspectorOpen]);
   const { download, exporting, pdfReady } = usePolicyDownload();
-
-  React.useEffect(() => {
-    try {
-      const saved = localStorage.getItem("policycraft_sidebar_collapsed");
-      if (saved !== null) {
-        setSidebarCollapsed(saved === "true");
-      }
-    } catch {}
-  }, []);
 
   const toggleSidebar = React.useCallback(() => {
     setSidebarCollapsed((prev) => {
@@ -197,15 +194,6 @@ export function BuilderShell({
 
               {/* Bottom Minimal Actions */}
               <div className="border-t border-[var(--color-line)] p-2 flex flex-col items-center gap-2 flex-shrink-0">
-                <button
-                  type="button"
-                  onClick={loadSample}
-                  title="Load sample policy"
-                  aria-label="Load sample policy"
-                  className="w-9 h-9 rounded-xl border border-[var(--color-line-2)] bg-[var(--color-paper)] hover:bg-[var(--color-cream-2)] text-[var(--color-forest)] flex items-center justify-center transition-colors shadow-xs"
-                >
-                  <Sparkles size={15} />
-                </button>
                 <button
                   type="button"
                   onClick={() => {
@@ -357,12 +345,6 @@ export function BuilderShell({
 
             {/* Footer actions */}
             <div className="border-t border-[var(--color-line)] p-3 space-y-2 flex-shrink-0">
-              <button
-                onClick={loadSample}
-                className="w-full inline-flex items-center justify-center gap-2 h-9 px-3 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] hover:bg-[var(--color-cream-2)] text-[12.5px] font-medium transition-colors"
-              >
-                <Sparkles size={13} className="text-[var(--color-forest)]" /> Load sample policy
-              </button>
               <div className="flex items-center gap-2">
                 <div
                   className="w-8 h-8 rounded-full bg-[var(--color-ink)] text-white flex items-center justify-center text-[11px] font-semibold shadow-xs flex-shrink-0 select-none"

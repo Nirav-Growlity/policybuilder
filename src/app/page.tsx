@@ -1,22 +1,42 @@
+"use client";
+
+import * as React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signOut, useSession } from "@/lib/auth-client";
 import {
   ArrowRight,
-  Sparkles,
   Globe2,
   ShieldCheck,
   FileText,
   Leaf,
   CheckCircle2,
-  Building2,
   Award,
   BarChart3,
   ScrollText,
   Target,
   ListChecks,
   Users,
+  LogIn,
+  LogOut,
+  Loader2,
 } from "lucide-react";
 
 export default function Home() {
+  const router = useRouter();
+  const { data: session, isPending } = useSession();
+  const [signingOut, setSigningOut] = React.useState(false);
+
+  async function handleSignOut() {
+    setSigningOut(true);
+    try {
+      await signOut();
+      router.refresh();
+    } finally {
+      setSigningOut(false);
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[var(--color-cream)] text-[var(--color-ink)]">
       {/* Top nav */}
@@ -31,16 +51,38 @@ export default function Home() {
           </div>
         </Link>
         <nav className="flex items-center gap-7 text-[13.5px] text-[var(--color-ink-2)]">
-          <Link href="/templates" className="hover:text-[var(--color-forest)] transition-colors">Templates</Link>
           <a href="#how" className="hover:text-[var(--color-forest)] transition-colors">How it works</a>
           <a href="#standards" className="hover:text-[var(--color-forest)] transition-colors">Standards</a>
         </nav>
-        <Link
-          href="/builder"
-          className="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-[var(--color-ink)] text-[var(--color-cream)] text-[13px] font-medium hover:bg-[var(--color-forest-deep)] transition-colors"
-        >
-          Open builder <ArrowRight size={14} />
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/builder"
+            className="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-[var(--color-ink)] text-[var(--color-cream)] text-[13px] font-medium hover:bg-[var(--color-forest-deep)] transition-colors"
+          >
+            Open builder <ArrowRight size={14} />
+          </Link>
+          {isPending ? (
+            <span className="inline-flex h-10 items-center gap-1.5 px-3 text-[12px] text-[var(--color-muted)]" aria-label="Checking login status">
+              <Loader2 size={14} className="animate-spin" />
+            </span>
+          ) : session ? (
+            <button
+              type="button"
+              onClick={() => void handleSignOut()}
+              disabled={signingOut}
+              className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-3 text-[12.5px] font-medium text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)] disabled:opacity-60"
+            >
+              <LogOut size={14} /> {signingOut ? "Signing out…" : "Sign out"}
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-3 text-[12.5px] font-medium text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)]"
+            >
+              <LogIn size={14} /> Log in
+            </Link>
+          )}
+        </div>
       </header>
 
       {/* Hero */}
@@ -75,12 +117,6 @@ export default function Home() {
                 className="inline-flex items-center gap-2 h-12 px-6 rounded-xl bg-[var(--color-forest)] text-white text-[14.5px] font-semibold hover:bg-[var(--color-forest-deep)] transition-colors shadow-[0_8px_24px_rgba(26,92,58,0.25)]"
               >
                 Start a new policy <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/templates"
-                className="inline-flex items-center gap-2 h-12 px-6 rounded-xl border border-[var(--color-line-2)] bg-[var(--color-paper)] text-[var(--color-ink)] text-[14.5px] font-semibold hover:bg-[var(--color-cream-2)] transition-colors"
-              >
-                <FileText size={15} /> Browse templates
               </Link>
             </div>
             <div className="mt-10 flex items-center gap-6 text-[12.5px] text-[var(--color-muted)]">
@@ -231,8 +267,7 @@ export default function Home() {
           Ready when you are.
         </h2>
         <p className="text-[16px] text-[var(--color-ink-2)] mt-4 max-w-lg mx-auto leading-[1.65]">
-          Open the builder, pick a template, or drop in an existing policy. We'll handle the structure, the AI, and
-          the export.
+          Open the builder or drop in an existing policy. We&apos;ll handle the structure, the AI, and the export.
         </p>
         <div className="mt-9 flex items-center justify-center gap-3">
           <Link
@@ -240,12 +275,6 @@ export default function Home() {
             className="inline-flex items-center gap-2 h-12 px-6 rounded-xl bg-[var(--color-ink)] text-[var(--color-cream)] text-[14.5px] font-semibold hover:bg-[var(--color-forest-deep)] transition-colors"
           >
             Open the builder <ArrowRight size={16} />
-          </Link>
-          <Link
-            href="/templates"
-            className="inline-flex items-center gap-2 h-12 px-6 rounded-xl border border-[var(--color-line-2)] bg-[var(--color-paper)] text-[var(--color-ink)] text-[14.5px] font-semibold hover:bg-[var(--color-cream-2)] transition-colors"
-          >
-            <Sparkles size={15} /> Browse templates
           </Link>
         </div>
       </section>

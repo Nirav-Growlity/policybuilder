@@ -53,13 +53,10 @@ export function BuilderClient() {
   } = useBuilder();
   const { push } = useToast();
   const searchParams = useSearchParams();
-  const templateId = searchParams.get("template");
-  const visualTemplateId = searchParams.get("visualTemplate");
   const selectedType = searchParams.get("type") as PolicyType | null;
   const draftId = searchParams.get("draft");
   const router = useRouter();
   const [dragOver, setDragOver] = React.useState(false);
-  const [templateLoaded, setTemplateLoaded] = React.useState(false);
   const [companyLoaded, setCompanyLoaded] = React.useState(false);
   const [documentLoaded, setDocumentLoaded] = React.useState(!draftId);
   const [backendDocumentId, setBackendDocumentId] = React.useState<string | null>(draftId);
@@ -138,66 +135,15 @@ export function BuilderClient() {
   }, [clearImportedPolicy, draftId, hydrated, push, router, setImportedPolicy, setPolicy, setStep, updatePolicy]);
 
   React.useEffect(() => {
-    if (!hydrated || !companyLoaded || templateLoaded || !templateId || draftId) return;
-    (async () => {
-      try {
-        const res = await fetch(`/api/templates/${templateId}`);
-        if (!res.ok) return;
-        const data = await res.json();
-        if (data.template?.policy) {
-          const incoming = data.template.policy;
-          const currentCompany = useBuilder.getState().policy.company;
-          setPolicy({
-            ...incoming,
-            company: { ...incoming.company, ...currentCompany },
-          });
-          push(`Loaded preset: ${data.template.name}`, "success");
-          setStep("structure");
-        } else if (data.template?.id) {
-          // Universal visual template: composition only, never replace content.
-          const { updatePolicy } = useBuilder.getState();
-          const current = useBuilder.getState().policy;
-          const { getDocumentTemplatePatch } = await import("@/lib/document-themes");
-          updatePolicy(() => getDocumentTemplatePatch(data.template.id, current));
-          push(`Applied visual template: ${data.template.name}`, "success");
-          setStep("structure");
-        }
-      } catch {
-        // ignore
-      } finally {
-        setTemplateLoaded(true);
-      }
-    })();
-  }, [companyLoaded, draftId, hydrated, push, setPolicy, setStep, templateId, templateLoaded]);
-
-  // Universal visual templates travel through company + policy setup without bypassing either step.
-  React.useEffect(() => {
-    if (!hydrated || !companyLoaded || !visualTemplateId || draftId) return;
-    (async () => {
-      try {
-        const { upgradeDocumentThemeId, getDocumentTemplatePatch } = await import("@/lib/document-themes");
-        const id = upgradeDocumentThemeId(visualTemplateId);
-        const current = useBuilder.getState().policy;
-        const resolved = current.documentTemplate ?? current.documentTheme;
-        if (resolved !== id) {
-          useBuilder.getState().updatePolicy(() => getDocumentTemplatePatch(id, current));
-        }
-      } catch {
-        // ignore invalid template ids
-      }
-    })();
-  }, [companyLoaded, draftId, hydrated, visualTemplateId, policy.policyType]);
-
-  React.useEffect(() => {
-    if (!hydrated || !companyLoaded || !selectedType || draftId || templateId) return;
+    if (!hydrated || !companyLoaded || !selectedType || draftId) return;
     if (policy.policyType !== selectedType) startPolicy(selectedType);
-  }, [companyLoaded, draftId, hydrated, policy.policyType, selectedType, startPolicy, templateId]);
+  }, [companyLoaded, draftId, hydrated, policy.policyType, selectedType, startPolicy]);
 
-  // Create the server draft once a policy type/template is known. Until then
+  // Create the server draft once a policy type is known. Until then
   // the existing local Zustand draft remains a safe temporary workspace.
   React.useEffect(() => {
     const selectedTypeReady = !selectedType || policy.policyType === selectedType;
-    const shouldCreate = hydrated && companyLoaded && documentLoaded && selectedTypeReady && !draftId && !backendDocumentId && !createAttempted.current && (Boolean(selectedType) || (Boolean(templateId) && templateLoaded));
+    const shouldCreate = hydrated && companyLoaded && documentLoaded && selectedTypeReady && !draftId && !backendDocumentId && !createAttempted.current && Boolean(selectedType);
     if (!shouldCreate) return;
     createAttempted.current = true;
     const current = useBuilder.getState();
@@ -227,7 +173,7 @@ export function BuilderClient() {
         createAttempted.current = false;
         push("Draft storage is unavailable; your local copy is still open", "error");
       });
-  }, [backendDocumentId, companyLoaded, draftId, documentLoaded, hydrated, policy.policyType, push, router, selectedType, templateId, templateLoaded]);
+  }, [backendDocumentId, companyLoaded, draftId, documentLoaded, hydrated, policy.policyType, push, router, selectedType]);
 
   React.useEffect(() => {
     if (!backendDocumentId || !companyLoaded || !documentLoaded) return;
@@ -316,7 +262,7 @@ export function BuilderClient() {
     return <div className="min-h-screen bg-[var(--color-cream)]" />;
   }
 
-  if (!draftId && !templateId && !selectedType) {
+  if (!draftId && !selectedType) {
     if (setupPhase === "company") {
       return <CompanySetupScreen onContinue={() => setSetupPhase("policy")} />;
     }
@@ -324,24 +270,7 @@ export function BuilderClient() {
       <PolicySelector
         onSelect={(type) => {
           startPolicy(type);
-          // Carry the visual template through setup without bypassing either step.
-          router.push(visualTemplateId ? `/builder?visualTemplate=${visualTemplateId}&type=${type}` : `/builder?type=${type}`);
-        }}
-        onBack={() => setSetupPhase("company")}
-      />
-    );
-  }
-
-  // Visual-template flow must not bypass setup: show company step first when type is missing.
-  if (visualTemplateId && !selectedType && !templateId && !draftId) {
-    if (setupPhase === "company") {
-      return <CompanySetupScreen onContinue={() => setSetupPhase("policy")} />;
-    }
-    return (
-      <PolicySelector
-        onSelect={(type) => {
-          startPolicy(type);
-          router.push(`/builder?visualTemplate=${visualTemplateId}&type=${type}`);
+          router.push(`/builder?type=${type}`);
         }}
         onBack={() => setSetupPhase("company")}
       />

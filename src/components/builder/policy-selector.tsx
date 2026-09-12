@@ -60,7 +60,7 @@ export function PolicySelector({ onSelect, onBack }: { onSelect: (type: PolicyTy
               );
             })}
           </div>
-          <p className="mt-7 flex items-center gap-2 text-[11px] text-[var(--color-muted)]"><ShieldCheck size={13} /> You can import an existing policy or choose a source template next.</p>
+          <p className="mt-7 flex items-center gap-2 text-[11px] text-[var(--color-muted)]"><ShieldCheck size={13} /> You can import an existing policy after choosing the policy type.</p>
         </div>
       </section>
     </main>

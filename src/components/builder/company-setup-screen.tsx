@@ -1,16 +1,10 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 import { CompanyInfoForm } from "@/components/builder/company-info-form";
-import { ArrowRight, Sparkles, ShieldCheck, Leaf } from "lucide-react";
-import { useBuilder } from "@/lib/store";
-import { useToast } from "@/components/ui/toast";
+import { ArrowRight, ShieldCheck, Leaf } from "lucide-react";
 
 export function CompanySetupScreen({ onContinue }: { onContinue: () => void }) {
-  const { loadSample } = useBuilder();
-  const { push } = useToast();
-
   return (
     <main className="min-h-screen bg-[var(--color-cream)] text-[var(--color-ink)] pb-20">
       {/* Header */}
@@ -30,7 +24,7 @@ export function CompanySetupScreen({ onContinue }: { onContinue: () => void }) {
 
       {/* Main Section */}
       <section className="max-w-5xl mx-auto px-6 pt-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div className="mb-8">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--color-forest)]">
               New document · Step 1 of 2
@@ -43,16 +37,6 @@ export function CompanySetupScreen({ onContinue }: { onContinue: () => void }) {
             </p>
           </div>
 
-          <button
-            type="button"
-            onClick={() => {
-              loadSample();
-              push("Sample company information loaded", "success");
-            }}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[var(--color-line-2)] bg-white text-[12.5px] font-medium text-[var(--color-ink-2)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] transition-colors cursor-pointer shrink-0 shadow-sm"
-          >
-            <Sparkles size={14} className="text-[var(--color-forest)]" /> Load sample company
-          </button>
         </div>
 
         {/* Company Info Form */}

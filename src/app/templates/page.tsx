@@ -1,28 +1,5 @@
-import Link from "next/link";
-import { ArrowRight, Leaf } from "lucide-react";
-import { DOCUMENT_THEMES } from "@/lib/document-themes";
-import { UniversalTemplateCatalog } from "@/components/templates/universal-template-catalog";
+import { notFound } from "next/navigation";
 
 export default function TemplatesPage() {
-  return (
-    <main className="min-h-screen bg-[var(--color-cream)] text-[var(--color-ink)]">
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-14">
-        <Link href="/" className="group flex items-center gap-2.5">
-          <div className="grid h-9 w-9 place-items-center rounded-lg bg-[var(--color-forest)] text-white transition-transform group-hover:-translate-y-0.5"><Leaf size={18} strokeWidth={2.2} /></div>
-          <div><div className="font-display text-[17px] font-semibold leading-none tracking-tight">PolicyCraft</div><div className="mt-1 text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)]">Visual template library</div></div>
-        </Link>
-        <Link href="/builder" className="inline-flex h-10 items-center gap-1.5 rounded-lg bg-[var(--color-ink)] px-4 text-[13px] font-medium text-[var(--color-cream)] transition-colors hover:bg-[var(--color-forest-deep)]">Open builder <ArrowRight size={14} /></Link>
-      </header>
-
-      <section className="mx-auto max-w-7xl px-5 pb-10 pt-12 sm:px-8 lg:px-14 lg:pt-16">
-        <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.19em] text-[var(--color-forest)]">8 sample-based universal templates</div>
-        <div className="grid items-end gap-7 lg:grid-cols-[minmax(0,1fr)_360px]">
-          <h1 className="max-w-4xl font-display text-[44px] font-semibold leading-[0.98] tracking-[-0.03em] sm:text-[58px] lg:text-[68px]">Layouts drawn from your project documents.</h1>
-          <p className="border-l border-[var(--color-line-2)] pl-5 text-[14px] leading-7 text-[var(--color-ink-2)]">Each template follows a distinct sample layout. Your policy content, targets, dates, company details, and sections stay intact when you switch designs.</p>
-        </div>
-      </section>
-
-      <UniversalTemplateCatalog templates={[...DOCUMENT_THEMES]} />
-    </main>
-  );
+  notFound();
 }
