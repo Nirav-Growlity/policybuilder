@@ -1265,6 +1265,13 @@ const previewStyles = `
   [data-collection="professional"] .policy-table th { padding: 2.5mm 2mm; background: var(--doc-soft) !important; color: var(--doc-ink) !important; border: 1px solid var(--doc-line); font-weight: 600; }
   [data-collection="professional"] .policy-table td { padding: 2.5mm 2mm; border: 1px solid var(--doc-line); vertical-align: top; }
   [data-collection="professional"] .policy-acknowledgement { padding: 0; border: 0; background: transparent; }
+  [data-collection="professional"] .policy-acknowledgement.acknowledgement-legal-form {
+    padding: 10mm 12mm 9mm;
+    border: 1px solid var(--doc-primary);
+    outline: 0;
+    box-shadow: inset 0 0 0 1px var(--doc-line);
+    background: var(--doc-paper);
+  }
   [data-collection="professional"] .policy-footer { display: flex; gap: 8mm; padding: 4mm 20mm; border-top: 1px solid var(--doc-line); background: var(--doc-paper); color: var(--doc-muted); font-size: 8pt; }
 
   /* Covers use real document content, typographic hierarchy and quiet rules. */
