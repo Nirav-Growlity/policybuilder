@@ -47,3 +47,23 @@ export function normalizePolicyQuantitative(policy: Policy): Policy {
     })),
   };
 }
+
+export function syncQuantitativeAreas(
+  quantitative: Policy["quantitative"],
+  focusAreas: string[],
+  reportingPeriod: "FY" | "CY" = "FY"
+): Policy["quantitative"] {
+  const areas = focusAreas.filter(Boolean);
+  const focusAreaTargets = new Map(quantitative.map((area) => [area.area, area.targets]));
+  const syncedFocusAreas = areas.map((area) => ({
+    area,
+    targets: (focusAreaTargets.get(area) || []).map((target) => normalizeQuantitativeTarget(target, reportingPeriod)),
+  }));
+  const customAreas = quantitative
+    .filter((area) => !areas.includes(area.area))
+    .map((area) => ({
+      ...area,
+      targets: area.targets.map((target) => normalizeQuantitativeTarget(target, reportingPeriod)),
+    }));
+  return [...syncedFocusAreas, ...customAreas];
+}

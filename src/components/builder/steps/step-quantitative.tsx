@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, TARGET_PERIOD } from "@/lib/quantitative";
+import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, syncQuantitativeAreas, TARGET_PERIOD } from "@/lib/quantitative";
 import { Plus, Sparkles, Target, Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 
@@ -21,7 +21,7 @@ export function StepQuantitative() {
   const [checkingTopic, setCheckingTopic] = React.useState(false);
   const reportingPeriod = policy.company.reportingPeriod || "FY";
   const yearOptions = React.useMemo(() => getQuantitativeYearOptions(reportingPeriod), [reportingPeriod]);
-  const areas = policy.focusAreas.filter(Boolean);
+  const areas = React.useMemo(() => policy.focusAreas.filter(Boolean), [policy.focusAreas]);
 
   const normalize = React.useCallback(
     (target: Parameters<typeof normalizeQuantitativeTarget>[0]) => normalizeQuantitativeTarget(target, reportingPeriod),
@@ -30,19 +30,11 @@ export function StepQuantitative() {
 
   React.useEffect(() => {
     updatePolicy((p) => {
-      const focusAreaTargets = new Map(p.quantitative.map((q) => [q.area, q.targets]));
-      const syncedFocusAreas = areas.map((area) => ({
-        area,
-        targets: (focusAreaTargets.get(area) || [{}]).map((target) => normalizeQuantitativeTarget(target, p.company.reportingPeriod || "FY")),
-      }));
-      const customAreas = p.quantitative
-        .filter((q) => !areas.includes(q.area))
-        .map((q) => ({ ...q, targets: q.targets.map((target) => normalizeQuantitativeTarget(target, p.company.reportingPeriod || "FY")) }));
-      const quantitative = [...syncedFocusAreas, ...customAreas];
+      const quantitative = syncQuantitativeAreas(p.quantitative, areas, p.company.reportingPeriod || "FY");
       const changed = JSON.stringify(quantitative) !== JSON.stringify(p.quantitative);
       return changed ? { quantitative } : {};
     });
-  }, [areas.join("|"), reportingPeriod, updatePolicy]);
+  }, [areas, reportingPeriod, updatePolicy]);
 
   const generatedTargets = (targets: NonNullable<Awaited<ReturnType<typeof callAI>>["targets"]>) =>
     targets.map(normalize);
