@@ -9,10 +9,11 @@ function isDocumentState(value: unknown): value is PolicyCraftDocumentState {
   return typeof candidate.step === "string" && !!candidate.policy && typeof candidate.policy === "object";
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   const auth = await getPolicyCraftAuth();
   if (!auth) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  return NextResponse.json({ documents: await listDocuments(auth.organization.id) });
+  const view = new URL(request.url).searchParams.get("view");
+  return NextResponse.json({ documents: await listDocuments(auth.organization.id, view === "archived") });
 }
 
 export async function POST(request: Request) {
@@ -35,4 +36,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Could not create document" }, { status: 500 });
   }
 }
-

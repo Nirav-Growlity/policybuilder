@@ -40,10 +40,15 @@ type DocumentRow = RowDataPacket & {
   lock_version: number;
   created_at: Date | string;
   updated_at: Date | string;
+  archived_at: Date | string | null;
 };
 
 function isoDate(value: Date | string): string {
   return value instanceof Date ? value.toISOString() : new Date(value).toISOString();
+}
+
+function nullableIsoDate(value: Date | string | null): string | null {
+  return value === null ? null : isoDate(value);
 }
 
 function parseJson<T>(value: unknown): T {
@@ -59,6 +64,7 @@ function toSummary(row: DocumentRow): PolicyDocumentSummary {
     lockVersion: row.lock_version,
     createdAt: isoDate(row.created_at),
     updatedAt: isoDate(row.updated_at),
+    archivedAt: nullableIsoDate(row.archived_at),
   };
 }
 
@@ -95,12 +101,12 @@ export async function getCompanyMaster(auth: PolicyCraftAuthContext): Promise<Co
   return mapCompanyMaster(organization, sites);
 }
 
-export async function listDocuments(orgId: number): Promise<PolicyDocumentSummary[]> {
+export async function listDocuments(orgId: number, archived = false): Promise<PolicyDocumentSummary[]> {
   const [rows] = await policyCraftPool.execute<DocumentRow[]>(
     `SELECT id, title, policy_type, current_step, policy_json, imported_policy_json,
-            lock_version, created_at, updated_at
+            lock_version, created_at, updated_at, archived_at
        FROM policycraft_documents
-      WHERE org_id = ? AND archived_at IS NULL
+      WHERE org_id = ? AND archived_at ${archived ? "IS NOT NULL" : "IS NULL"}
       ORDER BY updated_at DESC`,
     [orgId],
   );
@@ -110,7 +116,7 @@ export async function listDocuments(orgId: number): Promise<PolicyDocumentSummar
 export async function getDocument(orgId: number, id: string): Promise<StoredPolicyDocument | null> {
   const [rows] = await policyCraftPool.execute<DocumentRow[]>(
     `SELECT id, title, policy_type, current_step, policy_json, imported_policy_json,
-            lock_version, created_at, updated_at
+            lock_version, created_at, updated_at, archived_at
        FROM policycraft_documents
       WHERE id = ? AND org_id = ? AND archived_at IS NULL
       LIMIT 1`,
@@ -199,6 +205,16 @@ export async function archiveDocument(orgId: number, userId: number, id: string)
     `UPDATE policycraft_documents
         SET archived_at = CURRENT_TIMESTAMP(3), updated_by_user_id = ?, updated_at = CURRENT_TIMESTAMP(3)
       WHERE id = ? AND org_id = ? AND archived_at IS NULL`,
+    [userId, id, orgId],
+  );
+  return result.affectedRows > 0;
+}
+
+export async function restoreDocument(orgId: number, userId: number, id: string): Promise<boolean> {
+  const [result] = await policyCraftPool.execute<ResultSetHeader>(
+    `UPDATE policycraft_documents
+        SET archived_at = NULL, updated_by_user_id = ?, updated_at = CURRENT_TIMESTAMP(3)
+      WHERE id = ? AND org_id = ? AND archived_at IS NOT NULL`,
     [userId, id, orgId],
   );
   return result.affectedRows > 0;

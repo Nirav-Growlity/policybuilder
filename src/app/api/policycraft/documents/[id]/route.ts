@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getPolicyCraftAuth } from "@/lib/policycraft-auth";
-import { archiveDocument, getDocument, renameDocument, updateDocument } from "@/lib/policycraft-repository";
+import { archiveDocument, getDocument, renameDocument, restoreDocument, updateDocument } from "@/lib/policycraft-repository";
 import type { PolicyCraftDocumentState } from "@/lib/policycraft-types";
 
 function isDocumentState(value: unknown): value is PolicyCraftDocumentState {
@@ -33,6 +33,13 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
   if (body?.archived === true) {
     const archived = await archiveDocument(auth.organization.id, Number(auth.user.id), id);
     return archived
+      ? NextResponse.json({ ok: true })
+      : NextResponse.json({ error: "Document not found" }, { status: 404 });
+  }
+
+  if (body?.archived === false) {
+    const restored = await restoreDocument(auth.organization.id, Number(auth.user.id), id);
+    return restored
       ? NextResponse.json({ ok: true })
       : NextResponse.json({ error: "Document not found" }, { status: 404 });
   }

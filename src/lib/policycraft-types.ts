@@ -34,9 +34,9 @@ export type PolicyDocumentSummary = {
   lockVersion: number;
   updatedAt: string;
   createdAt: string;
+  archivedAt: string | null;
 };
 
 export type StoredPolicyDocument = PolicyDocumentSummary & {
   state: PolicyCraftDocumentState;
 };
-
