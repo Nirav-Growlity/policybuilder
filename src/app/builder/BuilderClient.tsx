@@ -19,10 +19,13 @@ import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { PolicySelector } from "@/components/builder/policy-selector";
 import { CompanySetupScreen } from "@/components/builder/company-setup-screen";
+import { CompanyInfoForm } from "@/components/builder/company-info-form";
+import { Modal } from "@/components/ui/modal";
 import type { PolicyType } from "@/lib/types";
 import { extractLogoPalette } from "@/lib/logo-palette";
 import { applyCompanyMaster } from "@/lib/policycraft-mapping";
 import type { PolicyCraftDocumentState } from "@/lib/policycraft-types";
+import { AlertTriangle, Building2 } from "lucide-react";
 
 const STEP_RENDERERS: Record<string, React.ComponentType> = {
   structure: StepStructure,
@@ -253,6 +256,8 @@ export function BuilderClient() {
 
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const [setupPhase, setSetupPhase] = React.useState<"company" | "policy">("company");
+  const [showCompanyWarning, setShowCompanyWarning] = React.useState(false);
+  const [showCompanyEditor, setShowCompanyEditor] = React.useState(false);
 
   if (draftId && !documentLoaded) {
     return <div className="min-h-screen bg-[var(--color-cream)]" />;
@@ -321,6 +326,16 @@ export function BuilderClient() {
           Add policy context
         </Button>
       )}
+      {(draftId || backendDocumentId) ? (
+        <Button
+          variant="secondary"
+          size="md"
+          icon={<Building2 size={14} />}
+          onClick={() => setShowCompanyWarning(true)}
+        >
+          Company details
+        </Button>
+      ) : null}
       <div className="w-px h-6 bg-[var(--color-line-2)] mx-1" />
       <Button variant="secondary" size="md" icon={<ArrowLeft size={14} />} onClick={prev} disabled={isFirst}>
         Back
@@ -364,6 +379,56 @@ export function BuilderClient() {
           </div>
         </div>
       )}
+      <Modal
+        open={showCompanyWarning}
+        onClose={() => setShowCompanyWarning(false)}
+        title="Before you change company details"
+        description="Company information is used throughout this policy draft."
+        width={520}
+      >
+        <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+          <div className="flex items-start gap-3">
+            <AlertTriangle size={19} className="mt-0.5 shrink-0 text-amber-700" />
+            <div>
+              <p className="text-[13px] font-semibold text-amber-950">Some policy content may need updating</p>
+              <p className="mt-1.5 text-[12.5px] leading-relaxed text-amber-900/85">
+                Changing the company name, industry, sites, or other details does not rewrite the policy text automatically. After saving, review the declaration, scope, focus areas, targets, responsibilities, and document metadata so they still match the company.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="mt-5 flex justify-end gap-2">
+          <Button variant="ghost" size="md" onClick={() => setShowCompanyWarning(false)}>
+            Cancel
+          </Button>
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => {
+              setShowCompanyWarning(false);
+              setShowCompanyEditor(true);
+            }}
+          >
+            Continue to edit
+          </Button>
+        </div>
+      </Modal>
+      <Modal
+        open={showCompanyEditor}
+        onClose={() => setShowCompanyEditor(false)}
+        title="Edit company details"
+        description="Changes are saved to this draft automatically. Review the policy sections after editing."
+        width={980}
+      >
+        <div className="max-h-[calc(100vh-170px)] overflow-y-auto pr-1 scrollbar-thin">
+          <CompanyInfoForm />
+        </div>
+        <div className="mt-5 flex justify-end border-t border-[var(--color-line)] pt-4">
+          <Button variant="primary" size="md" onClick={() => setShowCompanyEditor(false)}>
+            Done
+          </Button>
+        </div>
+      </Modal>
     </div>
   );
 }
