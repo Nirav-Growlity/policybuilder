@@ -2,6 +2,7 @@
 import * as React from "react";
 import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
 import { policyPreviewKey, usePdfPreviewState } from "@/lib/pdf-preview-state";
+import { getPdfPageWidth } from "@/lib/pdf-preview-layout";
 import type { Policy } from "@/lib/types";
 import "pdfjs-dist/web/pdf_viewer.css";
 
@@ -97,6 +98,7 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
     readyReported.current = true;
     onRendered?.();
   }, [onRendered]);
+  const renderPdfPage = (number: number) => <div key={number} data-pdf-page={number}><PdfPage document={document!} number={number} width={getPdfPageWidth(number, targetWidth)} onRendered={number === 1 && source === bytes ? reportFirstPage : undefined} /></div>;
   return <div ref={host} className="pdf-pages">
     <style>{`
       .pdf-pages .textLayer ::selection { color: transparent !important; -webkit-text-fill-color: transparent; text-shadow: none; background: rgba(37, 99, 235, .26); }
@@ -107,7 +109,7 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
       <div className="flex flex-wrap items-center gap-2"><div className="flex rounded border border-slate-200 bg-white p-0.5" role="group" aria-label="Document view"><button type="button" aria-pressed={viewMode === "continuous"} onClick={() => setViewMode("continuous")} className={`rounded px-2 py-1 text-[12px] ${viewMode === "continuous" ? "bg-slate-900 text-white" : "text-slate-600"}`}>Continuous scroll</button><button type="button" aria-pressed={viewMode === "paged"} onClick={() => setViewMode("paged")} className={`rounded px-2 py-1 text-[12px] ${viewMode === "paged" ? "bg-slate-900 text-white" : "text-slate-600"}`}>Single page</button></div><select aria-label="Preview zoom" value={zoom} onChange={e => setZoom(e.target.value)} className="rounded border border-slate-200 bg-white px-2 py-1.5"><option value="fit">Fit to width</option><option value=".75">75%</option><option value="1">100%</option><option value="1.25">125%</option></select></div>
     </div>
     {error && <p role="alert">{error}</p>}
-    <div className={viewMode === "continuous" ? "space-y-8 overflow-x-auto pb-5" : "overflow-x-auto pb-5"}>{document && (viewMode === "continuous" ? pages.map(number => <div key={number} data-pdf-page={number}><PdfPage document={document} number={number} width={targetWidth} onRendered={number === 1 && source === bytes ? reportFirstPage : undefined} /></div>) : <PdfPage document={document} number={pageNumber} width={targetWidth} onRendered={source === bytes ? onRendered : undefined} />)}</div>
+    <div className={viewMode === "continuous" ? "space-y-8 overflow-x-auto pb-5" : "overflow-x-auto pb-5"}>{document && (viewMode === "continuous" ? pages.map(renderPdfPage) : <PdfPage document={document} number={pageNumber} width={getPdfPageWidth(pageNumber, targetWidth)} onRendered={source === bytes ? onRendered : undefined} />)}</div>
   </div>;
 }
 

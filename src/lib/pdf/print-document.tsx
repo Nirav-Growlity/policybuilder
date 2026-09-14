@@ -4,6 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server.browser";
 import { chromium, type Browser } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
 import { PolicyPreview } from "@/components/policy/policy-preview";
+import { customCoverImage } from "@/lib/docx/generate";
 import { getPolicyDocumentTheme, logoScaleFactor } from "@/lib/document-themes";
 import { getRunningHeaderBrand } from "@/lib/document-render-model";
 import { A4, pageBorderContentInsetMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
@@ -20,7 +21,9 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const logoHeight = hasLogo ? 8 * logoScale : 0;
   const horizontalMargin = pageMarginMm(theme.pageBorder);
   const topMargin = hasLogo ? pageHeaderMarginMm(theme.pageBorder, logoHeight) : horizontalMargin;
-  const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} />));
+  const customCover = policy.coverComposition ? await customCoverImage(policy, (await import("@/lib/document-render-model")).buildDocumentRenderModel(policy)) : null;
+  const customCoverPng = customCover ? `data:image/png;base64,${Buffer.from(customCover.data).toString("base64")}` : undefined;
+  const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} />));
   const browser = await getPdfBrowser();
   const page = await browser.newPage();
   const timer = setTimeout(() => { void page.close(); }, 45000);
@@ -57,7 +60,8 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
     });
     if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");
     const withBackground = await applyPageBackground(output, theme.background, policy.company.companyLogo ? topMargin : 0);
-    return applyPageBorders(withBackground, theme.pageBorder, theme.colors.primary);
+    const withCover = customCover ? await applyCustomCoverPage(withBackground, customCover.data) : withBackground;
+    return applyPageBorders(withCover, theme.pageBorder, theme.colors.primary);
   } finally { clearTimeout(timer); await page.close().catch(() => undefined); }
 }
 
@@ -108,6 +112,16 @@ export async function applyPageBackground(bytes: Uint8Array, background: ThemeBa
   return Buffer.from(await pdf.save());
 }
 
+/** Paint the saved cover over the complete first PDF page, including print margins and furniture. */
+export async function applyCustomCoverPage(bytes: Uint8Array, coverData: Uint8Array): Promise<Buffer> {
+  const pdf = await PDFDocument.load(bytes);
+  const page = pdf.getPages()[0];
+  if (!page) return Buffer.from(bytes);
+  const image = await pdf.embedPng(coverData);
+  page.drawImage(image, { x: 0, y: 0, width: page.getWidth(), height: page.getHeight() });
+  return Buffer.from(await pdf.save());
+}
+
 export async function applyPageBorders(bytes: Uint8Array, border: PageBorder, primary: string): Promise<Buffer> {
   if (!border.enabled) return Buffer.from(bytes);
   const pdf = await PDFDocument.load(bytes);
@@ -139,13 +153,14 @@ async function inlinePublicAssets(markup: string): Promise<string> {
   return output;
 }
 
-function createPrintDocument(markup: string, policy: Policy, topMargin = pageMarginMm(getPolicyDocumentTheme(policy).pageBorder), horizontalMargin = pageMarginMm(getPolicyDocumentTheme(policy).pageBorder)): string {
+export function createPrintDocument(markup: string, policy: Policy, topMargin = pageMarginMm(getPolicyDocumentTheme(policy).pageBorder), horizontalMargin = pageMarginMm(getPolicyDocumentTheme(policy).pageBorder)): string {
   return `<!doctype html><html><head><meta charset="utf-8"/></head><body>${markup}<style>
     @page { size:A4; margin:${topMargin}mm ${horizontalMargin}mm ${horizontalMargin}mm; }
     html,body { margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .policy-preview-document { background:transparent !important; }
     .policy-preview-document { width:${210 - horizontalMargin * 2}mm; max-width:none; margin:0; box-shadow:none; animation:none!important; opacity:1!important; transform:none!important; overflow:visible; color:var(--doc-ink); }
     .policy-cover { break-after:page; }
+    .policy-custom-cover { height:${297 - topMargin - horizontalMargin}mm; min-height:0; width:100%; break-after:page; }
     [data-collection="professional"] :is(.professional-cover, .editorial-policy-cover) { height:${297 - topMargin - horizontalMargin - 1}mm; min-height:0; break-inside:avoid; }
     [data-collection="professional"] .professional-cover-frame { min-height:0; }
     [data-collection="professional"] .professional-meta { break-inside:avoid; flex-shrink:0; }

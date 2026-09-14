@@ -257,6 +257,66 @@ export type PolicyFeatureImage = {
   altText: string;
 };
 
+export type CoverBinding = "policyTitle" | "companyName" | "documentNumber" | "effectiveDate" | "revision" | "nextReview";
+
+export type CoverElementGeometry = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  rotation: number;
+  opacity: number;
+  zIndex: number;
+  visible: boolean;
+  locked: boolean;
+};
+
+export type CoverTextElement = CoverElementGeometry & {
+  id: string;
+  type: "text";
+  content: { kind: "literal"; text: string } | { kind: "binding"; binding: CoverBinding };
+  fontFamily: string;
+  fontSize: number;
+  color: string;
+  bold: boolean;
+  italic: boolean;
+  underline: boolean;
+  align: "left" | "center" | "right";
+  lineHeight: number;
+  letterSpacing: number;
+};
+
+export type CoverImageElement = CoverElementGeometry & {
+  id: string;
+  type: "image";
+  assetId: string;
+  fit: "contain" | "cover";
+  focalPoint: { x: number; y: number };
+  altText: string;
+};
+
+export type CoverLogoElement = CoverElementGeometry & {
+  id: string;
+  type: "logo";
+  fit: "contain";
+  focalPoint: { x: number; y: number };
+  altText: string;
+};
+
+export type CoverElement = CoverTextElement | CoverImageElement | CoverLogoElement;
+
+export type CoverComposition = {
+  schemaVersion: 1;
+  sourceTemplateId: string;
+  background: {
+    color: string;
+    assetId?: string;
+    fit: "contain" | "cover";
+    focalPoint: { x: number; y: number };
+  };
+  elements: CoverElement[];
+};
+
 export interface RevisionEntry {
   revisionNo: string;
   date: string;
@@ -304,6 +364,7 @@ export interface Policy {
   logoPosition?: LogoPosition;
   typography?: DocumentTypography;
   featureImage?: PolicyFeatureImage;
+  coverComposition?: CoverComposition;
   company: Company;
   standards: string[];
   declaration: Declaration;

@@ -7,6 +7,7 @@ import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, REVISION_HISTORY_DEFAULT
 import { normalizePolicyQuantitative } from "./quantitative";
 import { getWorkflowSteps, normalizePolicyStructure } from "./sections";
 import { DEFAULT_DOCUMENT_THEME_ID } from "./document-themes";
+import { normalizeCoverComposition } from "./cover-composition";
 
 export const initialPolicy = (policyType: PolicyType = "environmental"): Policy => {
   const profile = getPolicyProfile(policyType);
@@ -94,9 +95,15 @@ export const useBuilder = create<BuilderState>()(
       updatePolicy: (updater) => {
         const current = get().policy;
         const patch = updater(current);
-        set({ policy: normalizePolicyStructure(normalizePolicyQuantitative(patch ? { ...current, ...patch } : current)) });
+        const next = normalizePolicyStructure(normalizePolicyQuantitative(patch ? { ...current, ...patch } : current));
+        next.coverComposition = normalizeCoverComposition(next.coverComposition);
+        set({ policy: next });
       },
-      setPolicy: (p) => set({ policy: normalizePolicyStructure(normalizePolicyQuantitative(p)) }),
+      setPolicy: (p) => {
+        const next = normalizePolicyStructure(normalizePolicyQuantitative(p));
+        next.coverComposition = normalizeCoverComposition(next.coverComposition);
+        set({ policy: next });
+      },
       setImportedPolicy: (reference) => set({ importedPolicy: reference }),
       clearImportedPolicy: () => set({ importedPolicy: null }),
       startPolicy: (type) => {
@@ -136,6 +143,7 @@ export const useBuilder = create<BuilderState>()(
       onRehydrateStorage: () => (state) => {
         if (state) {
           state.policy = normalizePolicyStructure(normalizePolicyQuantitative(state.policy));
+          state.policy.coverComposition = normalizeCoverComposition(state.policy.coverComposition);
           state.hydrated = true;
         }
       },

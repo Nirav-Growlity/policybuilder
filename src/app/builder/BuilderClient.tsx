@@ -27,7 +27,7 @@ import { applyCompanyMaster } from "@/lib/policycraft-mapping";
 import type { PolicyCraftDocumentState } from "@/lib/policycraft-types";
 import { AlertTriangle, Building2 } from "lucide-react";
 
-const STEP_RENDERERS: Record<string, React.ComponentType> = {
+const STEP_RENDERERS: Record<string, React.ComponentType<{ onCoverEditingChange?: (editing: boolean) => void }>> = {
   structure: StepStructure,
   declaration: StepDeclaration,
   focus: StepFocus,
@@ -258,6 +258,7 @@ export function BuilderClient() {
   const [setupPhase, setSetupPhase] = React.useState<"company" | "policy">("company");
   const [showCompanyWarning, setShowCompanyWarning] = React.useState(false);
   const [showCompanyEditor, setShowCompanyEditor] = React.useState(false);
+  const [coverEditing, setCoverEditing] = React.useState(false);
 
   if (draftId && !documentLoaded) {
     return <div className="min-h-screen bg-[var(--color-cream)]" />;
@@ -365,9 +366,9 @@ export function BuilderClient() {
       onDrop={handleDrop}
       className="relative"
     >
-      <BuilderShell topActions={<>{backendDocumentId ? <span className="mr-2 text-[11px] text-[var(--color-muted)]">{saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""}</span> : null}{topActions}</>}>
+      <BuilderShell hideDesignInspector={coverEditing} topActions={<>{backendDocumentId ? <span className="mr-2 text-[11px] text-[var(--color-muted)]">{saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""}</span> : null}{topActions}</>}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8">
-          <StepCmp />
+          <StepCmp onCoverEditingChange={step === "export" ? setCoverEditing : undefined} />
         </div>
       </BuilderShell>
       {dragOver && (

@@ -10,20 +10,12 @@ import {
   type DocumentRenderSection,
 } from "@/lib/document-render-model";
 import type { Policy, RichTextBlock } from "@/lib/types";
+import { getCoverBindingValue } from "@/lib/cover-composition";
 
-export function PolicyPreview({ policy }: { policy: Policy }) {
+export function PolicyPreview({ policy, customCoverPng }: { policy: Policy; customCoverPng?: string }) {
   const model = buildDocumentRenderModel(policy);
   const { theme, typography } = model;
-  const style = {
-    ...documentThemeCssVariables(theme),
-    background: "var(--doc-page-background)",
-    "--policy-font": JSON.stringify(typography.fontFamily),
-    "--policy-heading-font": JSON.stringify(typography.headingFontFamily || typography.fontFamily),
-    "--policy-heading-size": `${typography.headingSize}pt`,
-    "--policy-subheading-size": `${typography.subheadingSize}pt`,
-    "--policy-paragraph-size": `${typography.paragraphSize}pt`,
-    "--policy-line-height": String(typography.lineSpacing),
-  } as CSSProperties;
+  const style = previewDocumentStyle(theme, typography);
 
   return (
     <article
@@ -46,7 +38,7 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
       className="policy-preview-document mx-auto max-w-4xl overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)] shadow-[0_18px_50px_rgba(42,50,42,.14)]"
     >
       <style>{`${fontFaceCssFor([typography.fontFamily, typography.headingFontFamily || ""])}${previewStyles}`}</style>
-      <PolicyCover model={model} policy={policy} />
+      <PolicyCover model={model} policy={policy} customCoverPng={customCoverPng} />
       {policy.showTableOfContents && <PolicyToc model={model} />}
       <RunningHeader model={model} policy={policy} />
       <main className={`policy-main ${theme.collection === "professional" ? `professional-main professional-main-${theme.layout.professionalVariant || "corporate"}` : ""}`}>
@@ -61,7 +53,46 @@ export function PolicyPreview({ policy }: { policy: Policy }) {
   );
 }
 
-function PolicyCover({ model, policy }: { model: DocumentRenderModel; policy: Policy }) {
+/**
+ * The cover-only version of the document preview. It deliberately uses the
+ * same theme variables and cover component as the complete preview so the
+ * inline editor never invents a second visual language for page one.
+ */
+export function PolicyCoverPreview({ policy, customCoverPng, showElements = true }: { policy: Policy; customCoverPng?: string; showElements?: boolean }) {
+  const model = buildDocumentRenderModel(policy);
+  const { theme, typography } = model;
+  return (
+    <article
+      style={previewDocumentStyle(theme, typography)}
+      data-collection={theme.collection}
+      data-document-theme={theme.id}
+      data-document-template={theme.id}
+      data-cover-layout={theme.layout.cover}
+      data-cover-scene={theme.layout.cover}
+      data-professional-variant={theme.layout.professionalVariant || ""}
+      className="policy-preview-document cover-preview-only overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)]"
+    >
+      <style>{`${fontFaceCssFor([typography.fontFamily, typography.headingFontFamily || ""])}${previewStyles}`}</style>
+      <PolicyCover model={model} policy={policy} customCoverPng={customCoverPng} showElements={showElements} />
+    </article>
+  );
+}
+
+function previewDocumentStyle(theme: ReturnType<typeof buildDocumentRenderModel>["theme"], typography: ReturnType<typeof buildDocumentRenderModel>["typography"]) {
+  return {
+    ...documentThemeCssVariables(theme),
+    background: "var(--doc-page-background)",
+    "--policy-font": JSON.stringify(typography.fontFamily),
+    "--policy-heading-font": JSON.stringify(typography.headingFontFamily || typography.fontFamily),
+    "--policy-heading-size": `${typography.headingSize}pt`,
+    "--policy-subheading-size": `${typography.subheadingSize}pt`,
+    "--policy-paragraph-size": `${typography.paragraphSize}pt`,
+    "--policy-line-height": String(typography.lineSpacing),
+  } as CSSProperties;
+}
+
+export function PolicyCover({ model, policy, customCoverPng, showElements = true }: { model: DocumentRenderModel; policy: Policy; customCoverPng?: string; showElements?: boolean }) {
+  if (model.cover.composition) return customCoverPng ? <section className="policy-cover policy-custom-cover" data-cover-mode="custom"><img src={customCoverPng} alt="Custom cover" className="policy-custom-cover-rendered" /></section> : <CustomCover model={model} policy={policy} showElements={showElements} />;
   const { theme } = model;
   const brand = getRunningHeaderBrand(policy.company);
   const cover = { ...model.cover, companyName: brand.kind === "logo" ? "" : model.cover.companyName };
@@ -441,6 +472,23 @@ function PolicyCover({ model, policy }: { model: DocumentRenderModel; policy: Po
   }
 }
 
+function CustomCover({ model, policy, showElements = true }: { model: DocumentRenderModel; policy: Policy; showElements?: boolean }) {
+  const composition = model.cover.composition!;
+  const background = composition.background.assetId?.startsWith("data:") ? composition.background.assetId : undefined;
+  return <section className="policy-cover policy-custom-cover" style={{ backgroundColor: composition.background.color }} data-cover-mode="custom">
+    {background ? <img src={background} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit }} /> : null}
+    {composition.elements.filter((element) => element.visible && (showElements || element.type !== "text")).sort((a, b) => a.zIndex - b.zIndex).map((element) => {
+      const style: CSSProperties = { left: `${(element.x / 210) * 100}%`, top: `${(element.y / 297) * 100}%`, width: `${(element.width / 210) * 100}%`, height: `${(element.height / 297) * 100}%`, opacity: element.opacity, zIndex: element.zIndex, transform: `rotate(${element.rotation}deg)` };
+      if (element.type === "text") {
+        const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
+        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: element.color, fontFamily: element.fontFamily, fontSize: `calc(${element.fontSize}pt * var(--cover-editor-scale, 1))`, fontWeight: element.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: `calc(${element.letterSpacing}pt * var(--cover-editor-scale, 1))` }}>{text}</div>;
+      }
+      const source = element.type === "logo" ? policy.company.companyLogo : element.assetId.startsWith("data:") ? element.assetId : `/api/policycraft/cover-assets/${element.assetId}`;
+      return <div key={element.id} className="policy-custom-cover-image" style={style}>{source ? <img src={source} alt={element.altText} style={{ objectFit: element.fit, objectPosition: `${element.focalPoint.x}% ${element.focalPoint.y}%` }} /> : null}</div>;
+    })}
+  </section>;
+}
+
 function ProfessionalCover({ model, feature }: { model: DocumentRenderModel; feature: ReactNode }) {
   const { cover, theme } = model;
   const design = coverDesign(theme.layout.cover);
@@ -644,6 +692,8 @@ function Acknowledgement({ model }: { model: DocumentRenderModel }) {
 }
 
 const previewStyles = `
+  .cover-preview-only { width:100%; height:100%; max-width:none; box-shadow:none; }
+  .cover-preview-only > .policy-cover { min-height:100% !important; height:100% !important; box-sizing:border-box; }
   @keyframes documentThemeIn { from { opacity: .72; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
   .policy-preview-document { animation: documentThemeIn 220ms ease-out both; font-family: var(--policy-font), Arial, sans-serif; font-size: var(--policy-paragraph-size); line-height: var(--policy-line-height); }
   .policy-preview-document *, .policy-preview-document *::before, .policy-preview-document *::after { box-sizing: border-box; }
@@ -661,6 +711,12 @@ const previewStyles = `
   .policy-cover-feature.feature-section-led img { opacity: .17; }
   .policy-section-feature { margin: 0; height: 250px; overflow: hidden; border-block: 1px solid var(--doc-line); }
   .policy-section-feature img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .policy-custom-cover { min-height: 842px; height: 842px; page-break-after: always; background: var(--doc-paper); }
+  .policy-custom-cover-background { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .policy-custom-cover-text, .policy-custom-cover-image { position: absolute; overflow: hidden; }
+  .policy-custom-cover-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .policy-custom-cover-image img { display: block; width: 100%; height: 100%; }
+  .policy-custom-cover-rendered { display:block; width:100%; height:100%; object-fit:cover; }
   .policy-cover-logo { width: auto; height: var(--doc-logo-height); transition: height 180ms ease; }
   .policy-cover-kicker { display: none !important; color: var(--doc-primary); font-size: 10px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
   .policy-cover h1 { max-width: 100%; text-wrap: balance; overflow-wrap: anywhere; }

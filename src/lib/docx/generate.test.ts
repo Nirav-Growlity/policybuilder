@@ -57,3 +57,19 @@ for (const format of ["png", "jpeg", "webp", "svg+xml"] as const) {
     }
   });
 }
+
+test("custom cover is embedded as the first-page image", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.company.name = "Cover Test Ltd";
+  policy.coverComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "standard-pack",
+    background: { color: "#FFFFFF", fit: "cover", focalPoint: { x: 50, y: 50 } },
+    elements: [{ id: "title", type: "text", x: 20, y: 20, width: 150, height: 20, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false, content: { kind: "binding", binding: "companyName" }, fontFamily: "Arial", fontSize: 20, color: "#123456", bold: true, italic: false, underline: false, align: "left", lineHeight: 1.2, letterSpacing: 0 }],
+  };
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const media = Object.keys(zip.files).filter((name) => name.startsWith("word/media/") && name.endsWith(".png"));
+  assert.ok(media.length, "custom cover PNG should be embedded");
+  const document = await zip.file("word/document.xml")!.async("string");
+  assert.match(document, /<w:br w:type="page"\/>/);
+});

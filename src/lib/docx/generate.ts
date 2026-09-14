@@ -15,6 +15,7 @@ import {
   PageBreak,
   PageNumber,
   Paragraph,
+  SectionType,
   ShadingType,
   Table,
   TableCell,
@@ -39,6 +40,7 @@ import { buildDocumentRenderModel, getRunningHeaderBrand, type DocumentRenderMod
 import { documentHex, type DocumentThemeDefinition } from "../document-themes";
 import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
 import { normalizePolicyQuantitative } from "../quantitative";
+import { getCoverBindingValue } from "../cover-composition";
 import type { Policy, QuantitativeArea, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
 import { embeddedDocumentFonts } from "./document-fonts";
@@ -70,8 +72,11 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
   const sdgImages = policy.sdgDisplay === "tiles" ? await loadSdgImages(policy.sdgs) : new Map<number, Uint8Array>();
   const children: DocBlock[] = [];
 
-  // Keep the cover clean. The logo is supplied by the default running header.
-  children.push(...buildCover(model, null, logoAlignment));
+  const customCover = model.cover.composition ? await customCoverImage(policy, model) : null;
+  if (!customCover) {
+    // Keep the cover clean. The logo is supplied by the default running header.
+    children.push(...buildCover(model, null, logoAlignment));
+  }
   if (model.featureImage?.placement === "cover" && featureImage) {
     children.push(imageParagraph(featureImage, AlignmentType.CENTER, 520, 220, 120, model.featureImage.altText));
   }
@@ -104,6 +109,18 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
 
   const primary = documentHex(theme.colors.primary);
   const ink = documentHex(theme.colors.ink);
+  const pageBorders = theme.pageBorder.enabled ? {
+    pageBorders: { display: theme.pageBorder.scope === "cover" ? "firstPage" as const : "allPages" as const, offsetFrom: "page" as const },
+    // Native Word page-edge borders support at most 31 points of spacing.
+    // Text-relative offsets can exceed that limit and hug the content.
+    ...Object.fromEntries(["pageBorderTop", "pageBorderRight", "pageBorderBottom", "pageBorderLeft"].map(side => [side, { style: BorderStyle.SINGLE, color: documentHex(theme.pageBorder.color || theme.colors.primary), size: theme.pageBorder.widthPt * 8, space: Math.min(31, Math.round(theme.pageBorder.insetMm * A4.pointsPerMm)) }]))
+  } : undefined;
+  const pageSize = { width: PAGE_WIDTH, height: PAGE_HEIGHT };
+  const regularPage = {
+    size: pageSize,
+    ...(pageBorders ? { borders: pageBorders } : {}),
+    margin: { top: pageMargin(), right: pageMargin(), bottom: pageMargin(), left: pageMargin() },
+  };
   const doc = new Document({
     fonts: await embeddedDocumentFonts([typography.fontFamily, typography.headingFontFamily || typography.fontFamily]),
     creator: "PolicyCraft",
@@ -163,20 +180,22 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
         },
       ],
     },
-    sections: [{
-      properties: {
-        page: {
-          size: { width: PAGE_WIDTH, height: PAGE_HEIGHT },
-          ...(theme.pageBorder.enabled ? { borders: {
-            pageBorders: { display: theme.pageBorder.scope === "cover" ? "firstPage" as const : "allPages" as const, offsetFrom: "page" as const },
-            // Native Word page-edge borders support at most 31 points of spacing.
-            // Text-relative offsets can exceed that limit and hug the content.
-            ...Object.fromEntries(["pageBorderTop", "pageBorderRight", "pageBorderBottom", "pageBorderLeft"].map(side => [side, { style: BorderStyle.SINGLE, color: documentHex(theme.pageBorder.color || theme.colors.primary), size: theme.pageBorder.widthPt * 8, space: Math.min(31, Math.round(theme.pageBorder.insetMm * A4.pointsPerMm)) }]))
-          } } : {}),
-          margin: { top: pageMargin(), right: pageMargin(), bottom: pageMargin(), left: pageMargin() },
+    sections: customCover ? [
+      {
+        properties: {
+          page: { size: pageSize, ...(pageBorders ? { borders: pageBorders } : {}), margin: { top: 0, right: 0, bottom: 0, left: 0 } },
+          titlePage: true,
         },
-        titlePage: true,
+        children: [imageParagraph(customCover, AlignmentType.CENTER, 595, 842, 0, "Custom cover")],
       },
+      {
+        properties: { type: SectionType.NEXT_PAGE, page: regularPage },
+        headers: { default: buildHeader(model, logoImage, logoAlignment) },
+        footers: { default: buildFooter(model) },
+        children,
+      },
+    ] : [{
+      properties: { page: regularPage, titlePage: true },
       // The preview keeps the cover free of running furniture; Word needs an
       // explicit first-page header/footer to achieve the same composition.
       headers: { first: buildPageBackgroundHeader(model), default: buildHeader(model, logoImage, logoAlignment) },
@@ -1250,6 +1269,38 @@ function tableCell(children: DocBlock[], width: number, options: {
 
 function imageParagraph(logo: NonNullable<LogoImage>, alignment: typeof AlignmentType[keyof typeof AlignmentType], width: number, height: number, after = 80, description = "Policy image") {
   return new Paragraph({ alignment, spacing: { after }, children: [new ImageRun({ data: logo.data, type: logo.type, transformation: { width, height }, altText: { title: description, description, name: description } })] });
+}
+
+export async function customCoverImage(policy: Policy, model: DocumentRenderModel): Promise<LogoImage> {
+  const composition = model.cover.composition;
+  if (!composition) return null;
+  const width = 2480;
+  const height = 3508;
+  const scale = width / 210;
+  const backgroundImage = composition.background.assetId?.startsWith("data:") ? composition.background.assetId : undefined;
+  const imageHref = (source?: string) => source?.startsWith("data:image/") ? source : undefined;
+  const escape = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const imageMarkup = (source: string | undefined, x: number, y: number, w: number, h: number, fit: "contain" | "cover", focalX: number, focalY: number, opacity: number, alt: string) => {
+    if (!source) return "";
+    const preserve = fit === "contain" ? "xMidYMid meet" : "xMidYMid slice";
+    return `<svg x="${x * scale}" y="${y * scale}" width="${w * scale}" height="${h * scale}" viewBox="0 0 ${w * scale} ${h * scale}" preserveAspectRatio="none" opacity="${opacity}"><image href="${source}" width="${w * scale}" height="${h * scale}" preserveAspectRatio="${preserve}" x="0" y="0" aria-label="${escape(alt)}" /></svg>`;
+  };
+  const elements = composition.elements.filter((element) => element.visible).sort((a, b) => a.zIndex - b.zIndex).map((element) => {
+    const transform = `translate(${element.x * scale} ${element.y * scale}) rotate(${element.rotation} ${element.width * scale / 2} ${element.height * scale / 2})`;
+    if (element.type === "text") {
+      const value = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
+      const lines = value.split(/\r?\n/).slice(0, 40);
+      const weight = element.bold ? "700" : "400";
+      const style = `font-family:${escape(element.fontFamily)};font-size:${element.fontSize * 300 / 72}px;font-weight:${weight};font-style:${element.italic ? "italic" : "normal"};text-decoration:${element.underline ? "underline" : "none"};letter-spacing:${element.letterSpacing * 300 / 72}px;fill:${element.color};`;
+      const anchor = element.align === "center" ? "middle" : element.align === "right" ? "end" : "start";
+      const anchorX = element.align === "center" ? element.width * scale / 2 : element.align === "right" ? element.width * scale : 0;
+      return `<g transform="${transform}" opacity="${element.opacity}"><text x="${anchorX}" y="0" dominant-baseline="hanging" text-anchor="${anchor}" style="${style}">${lines.map((line, index) => `<tspan x="${anchorX}" dy="${index ? element.fontSize * element.lineHeight * 300 / 72 : 0}">${escape(line)}</tspan>`).join("")}</text></g>`;
+    }
+    const source = element.type === "logo" ? imageHref(policy.company.companyLogo) : imageHref(element.assetId);
+    return `<g transform="${transform}">${imageMarkup(source, 0, 0, element.width, element.height, element.fit, element.focalPoint.x, element.focalPoint.y, element.opacity, element.altText)}</g>`;
+  }).join("");
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="100%" height="100%" fill="${composition.background.color}"/>${imageMarkup(imageHref(backgroundImage), 0, 0, 210, 297, composition.background.fit, composition.background.focalPoint.x, composition.background.focalPoint.y, 1, "Cover background")}${elements}</svg>`;
+  return { data: await sharp(Buffer.from(svg)).png().toBuffer(), type: "png" };
 }
 
 function pageBackgroundParagraph(model: DocumentRenderModel) {

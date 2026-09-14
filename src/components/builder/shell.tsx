@@ -23,10 +23,12 @@ export function BuilderShell({
   children,
   topActions,
   showSidebar = true,
+  hideDesignInspector = false,
 }: {
   children: React.ReactNode;
   topActions?: React.ReactNode;
   showSidebar?: boolean;
+  hideDesignInspector?: boolean;
 }) {
   const { step, setStep, policy, reset } = useBuilder();
 
@@ -419,7 +421,7 @@ export function BuilderShell({
                 </button>
               </div>
             )}
-            {showSidebar && (
+            {showSidebar && !hideDesignInspector && (
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -447,7 +449,7 @@ export function BuilderShell({
         <div ref={contentRef} className="flex-1 overflow-y-auto scrollbar-thin">{children}</div>
       </main>
 
-      {showSidebar && <DesignInspector open={inspectorOpen} onClose={closeInspector} />}
+      {showSidebar && !hideDesignInspector && <DesignInspector open={inspectorOpen} onClose={closeInspector} />}
     </div>
   );
 }
