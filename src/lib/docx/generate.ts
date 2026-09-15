@@ -8,6 +8,7 @@ import {
   Header,
   HorizontalPositionAlign,
   HorizontalPositionRelativeFrom,
+  ImportedXmlComponent,
   ImageRun,
   InternalHyperlink,
   LevelFormat,
@@ -51,6 +52,11 @@ type LogoImage = { data: Uint8Array; type: "png" | "jpg" } | null;
 
 const PAGE_WIDTH = 11906;
 const PAGE_HEIGHT = 16838;
+// docx ImageRun transformations are expressed in pixels, while the page
+// dimensions above are Word twips. Use the 96-DPI A4 pixel canvas so a
+// custom cover reaches the page edges in Word just as it does in preview.
+const A4_WIDTH_PX = Math.round(A4.widthMm / 25.4 * 96);
+const A4_HEIGHT_PX = Math.round(A4.heightMm / 25.4 * 96);
 const geometry = new AsyncLocalStorage<number>();
 const pageMargin = () => geometry.getStore() ?? 1000;
 const contentWidth = () => PAGE_WIDTH - pageMargin() * 2;
@@ -72,7 +78,8 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
   const sdgImages = policy.sdgDisplay === "tiles" ? await loadSdgImages(policy.sdgs) : new Map<number, Uint8Array>();
   const children: DocBlock[] = [];
 
-  const customCover = model.cover.composition ? await customCoverImage(policy, model) : null;
+  const customCover = model.cover.composition ? await customCoverImage(policy, model, false) : null;
+  const customCoverElements = customCover ? await buildEditableCustomCoverElements(policy, model) : [];
   if (!customCover) {
     // Keep the cover clean. The logo is supplied by the default running header.
     children.push(...buildCover(model, null, logoAlignment));
@@ -80,8 +87,14 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
   if (model.featureImage?.placement === "cover" && featureImage) {
     children.push(imageParagraph(featureImage, AlignmentType.CENTER, 520, 220, 120, model.featureImage.altText));
   }
-  if (policy.showTableOfContents) children.push(new Paragraph({ children: [new PageBreak()] }), ...buildToc(model));
-  children.push(new Paragraph({ children: [new PageBreak()] }));
+  if (policy.showTableOfContents) {
+    // A custom cover already ends with a NEXT_PAGE section break. Adding a
+    // leading page break here would create an entirely blank page after it.
+    if (!customCover) children.push(new Paragraph({ children: [new PageBreak()] }));
+    children.push(...buildToc(model), new Paragraph({ children: [new PageBreak()] }));
+  } else if (!customCover) {
+    children.push(new Paragraph({ children: [new PageBreak()] }));
+  }
 
   if (model.featureImage?.placement === "section" && featureImage) {
     children.push(imageParagraph(featureImage, AlignmentType.CENTER, 520, 230, 220, model.featureImage.altText));
@@ -186,7 +199,10 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
           page: { size: pageSize, ...(pageBorders ? { borders: pageBorders } : {}), margin: { top: 0, right: 0, bottom: 0, left: 0 } },
           titlePage: true,
         },
-        children: [imageParagraph(customCover, AlignmentType.CENTER, 595, 842, 0, "Custom cover")],
+        // Keep the full-page background and editable cover objects in one
+        // anchored paragraph. Placing the overlays after an inline full-page
+        // image makes Word flow them onto a second, otherwise blank page.
+        children: [customCoverParagraph(customCover, customCoverElements)],
       },
       {
         properties: { type: SectionType.NEXT_PAGE, page: regularPage },
@@ -1098,10 +1114,11 @@ function pairedCards(cards: (DocBlock[] | string)[], width: number, theme: Docum
 }
 
 function entryRow(number: string, text: string, width: number, theme: DocumentThemeDefinition, editorial = false, splitRole = false) {
-  const numberWidth = editorial ? 900 : 700;
+  const professional = theme.collection === "professional";
+  const numberWidth = professional ? Math.round(8 * A4.pointsPerMm * 20) : editorial ? 900 : 700;
   const [title, ...rest] = text.split("\n");
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: number, bold: !editorial, color: documentHex(editorial ? theme.colors.accent : theme.colors.onPrimary), size: editorial ? 28 : 18, font: editorial ? "Georgia" : "Arial" })] })], numberWidth, { fill: editorial ? undefined : documentHex(theme.colors.primary), borders: editorial ? { top: border(documentHex(theme.colors.line), 5) } : noBorders() }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: number, bold: !editorial && !professional, color: documentHex(professional ? theme.colors.muted : editorial ? theme.colors.accent : theme.colors.onPrimary), size: professional || editorial ? 20 : 18, font: professional ? theme.defaults.typography.fontFamily : editorial ? "Georgia" : "Arial" })] })], numberWidth, { fill: professional || editorial ? undefined : documentHex(theme.colors.primary), borders: professional || editorial ? { top: border(documentHex(theme.colors.line), 5) } : noBorders(), margins: professional ? { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } : undefined }),
     tableCell([
       new Paragraph({ children: [new TextRun({ text: title, bold: splitRole, color: documentHex(theme.colors.ink), size: 20 })] }),
       ...(rest.length ? [new Paragraph({ spacing: { before: 45 }, children: [new TextRun({ text: rest.join(" "), size: 19 })] })] : []),
@@ -1271,7 +1288,7 @@ function imageParagraph(logo: NonNullable<LogoImage>, alignment: typeof Alignmen
   return new Paragraph({ alignment, spacing: { after }, children: [new ImageRun({ data: logo.data, type: logo.type, transformation: { width, height }, altText: { title: description, description, name: description } })] });
 }
 
-export async function customCoverImage(policy: Policy, model: DocumentRenderModel): Promise<LogoImage> {
+export async function customCoverImage(policy: Policy, model: DocumentRenderModel, includeElements = true): Promise<LogoImage> {
   const composition = model.cover.composition;
   if (!composition) return null;
   const width = 2480;
@@ -1285,7 +1302,7 @@ export async function customCoverImage(policy: Policy, model: DocumentRenderMode
     const preserve = fit === "contain" ? "xMidYMid meet" : "xMidYMid slice";
     return `<svg x="${x * scale}" y="${y * scale}" width="${w * scale}" height="${h * scale}" viewBox="0 0 ${w * scale} ${h * scale}" preserveAspectRatio="none" opacity="${opacity}"><image href="${source}" width="${w * scale}" height="${h * scale}" preserveAspectRatio="${preserve}" x="0" y="0" aria-label="${escape(alt)}" /></svg>`;
   };
-  const elements = composition.elements.filter((element) => element.visible).sort((a, b) => a.zIndex - b.zIndex).map((element) => {
+  const elements = includeElements ? composition.elements.filter((element) => element.visible).sort((a, b) => a.zIndex - b.zIndex).map((element) => {
     const transform = `translate(${element.x * scale} ${element.y * scale}) rotate(${element.rotation} ${element.width * scale / 2} ${element.height * scale / 2})`;
     if (element.type === "text") {
       const value = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
@@ -1298,9 +1315,104 @@ export async function customCoverImage(policy: Policy, model: DocumentRenderMode
     }
     const source = element.type === "logo" ? imageHref(policy.company.companyLogo) : imageHref(element.assetId);
     return `<g transform="${transform}">${imageMarkup(source, 0, 0, element.width, element.height, element.fit, element.focalPoint.x, element.focalPoint.y, element.opacity, element.altText)}</g>`;
-  }).join("");
+  }).join("") : "";
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="100%" height="100%" fill="${composition.background.color}"/>${imageMarkup(imageHref(backgroundImage), 0, 0, 210, 297, composition.background.fit, composition.background.focalPoint.x, composition.background.focalPoint.y, 1, "Cover background")}${elements}</svg>`;
   return { data: await sharp(Buffer.from(svg)).png().toBuffer(), type: "png" };
+}
+
+function customCoverParagraph(background: NonNullable<LogoImage>, overlays: ParagraphChild[]) {
+  return new Paragraph({
+    spacing: { before: 0, after: 0 },
+    children: [new ImageRun({
+      data: background.data,
+      type: background.type,
+      transformation: { width: A4_WIDTH_PX, height: A4_HEIGHT_PX },
+      floating: {
+        horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, align: HorizontalPositionAlign.CENTER },
+        verticalPosition: { relative: VerticalPositionRelativeFrom.PAGE, align: VerticalPositionAlign.CENTER },
+        behindDocument: true,
+        allowOverlap: true,
+        lockAnchor: true,
+        layoutInCell: false,
+        zIndex: 1,
+        wrap: { type: TextWrappingType.NONE },
+        margins: { top: 0, bottom: 0, left: 0, right: 0 },
+      },
+      altText: { title: "Custom cover background", description: "Custom cover background", name: "Custom cover background" },
+    }), ...overlays],
+  });
+}
+
+async function buildEditableCustomCoverElements(policy: Policy, model: DocumentRenderModel): Promise<ParagraphChild[]> {
+  const composition = model.cover.composition;
+  if (!composition) return [];
+  const elements: ParagraphChild[] = [];
+  for (const element of composition.elements.filter((item) => item.visible)) {
+    const x = Math.round(element.x * 36000);
+    const y = Math.round(element.y * 36000);
+    const width = Math.max(1, Math.round(element.width * 96 / 25.4));
+    const height = Math.max(1, Math.round(element.height * 96 / 25.4));
+    const floating = {
+      horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, offset: x },
+      verticalPosition: { relative: VerticalPositionRelativeFrom.PAGE, offset: y },
+      allowOverlap: true,
+      lockAnchor: true,
+      layoutInCell: false,
+      wrap: { type: TextWrappingType.NONE },
+      margins: { top: 0, bottom: 0, left: 0, right: 0 },
+      // Keep every editable overlay above the background drawing in Word's
+      // floating-object stacking order.
+      zIndex: 100 + Math.max(1, element.zIndex),
+    } as const;
+    if (element.type === "text") {
+      const value = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
+      const lines = value.split(/\r?\n/).slice(0, 40);
+      elements.push(editableCoverTextBox(element, value) as unknown as ParagraphChild);
+      continue;
+    }
+    const source = element.type === "logo" ? policy.company.companyLogo : element.assetId;
+    const image = await logoFromDataUrl(source);
+    if (!image) continue;
+    elements.push(new ImageRun({
+      data: image.data,
+      type: image.type,
+      transformation: { width, height, rotation: element.rotation },
+      floating,
+      altText: { title: element.altText, description: element.altText, name: element.altText },
+    }));
+  }
+  return elements;
+}
+
+function editableCoverTextBox(element: Extract<NonNullable<DocumentRenderModel["cover"]["composition"]>["elements"][number], { type: "text" }>, value: string) {
+  const escapeXml = (text: string) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&apos;");
+  const pt = (mm: number) => `${(mm * 72 / 25.4).toFixed(2)}pt`;
+  const color = documentHex(element.color);
+  const font = escapeXml(element.fontFamily);
+  const lines = value.split(/\r?\n/).slice(0, 40);
+  const runs = lines.map((line, index) => `${index ? "<w:br/>" : ""}<w:t xml:space="preserve">${escapeXml(line)}</w:t>`).join("");
+  const runProperties = `<w:rPr><w:rFonts w:ascii="${font}" w:cs="${font}" w:eastAsia="${font}" w:hAnsi="${font}"/>${element.bold ? "<w:b/><w:bCs/>" : ""}${element.italic ? "<w:i/><w:iCs/>" : ""}${element.underline ? '<w:u w:val="single"/>' : ""}<w:color w:val="${color}"/><w:sz w:val="${Math.round(element.fontSize * 2)}"/><w:szCs w:val="${Math.round(element.fontSize * 2)}"/></w:rPr>`;
+  const alignment = element.align === "center" ? "center" : element.align === "right" ? "right" : "left";
+  const style = [
+    "position:absolute",
+    `margin-left:${pt(element.x)}`,
+    `margin-top:${pt(element.y)}`,
+    `width:${pt(element.width)}`,
+    `height:${pt(element.height)}`,
+    `rotation:${element.rotation}`,
+    `z-index:${100 + Math.max(1, element.zIndex)}`,
+    "mso-position-horizontal-relative:page",
+    "mso-position-vertical-relative:page",
+    "mso-wrap-style:none",
+  ].join(";");
+  const xml = `<w:r><w:pict><v:shape id="cover-text-${escapeXml(element.id)}" type="#_x0000_t202" filled="f" stroked="f" style="${style}"><v:textbox inset="0,0,0,0"><w:txbxContent><w:p><w:pPr><w:jc w:val="${alignment}"/><w:spacing w:before="0" w:after="0" w:line="${Math.round(240 * element.lineHeight)}"/></w:pPr><w:r>${runProperties}${runs}</w:r></w:p></w:txbxContent></v:textbox></v:shape></w:pict></w:r>`;
+  // docx's fromXmlString currently parses the XML fragment into a synthetic
+  // wrapper whose rootKey is undefined. Attach its actual w:r child instead
+  // of serializing that wrapper as an invalid <undefined> element.
+  const imported = ImportedXmlComponent.fromXmlString(xml) as unknown as { root?: unknown[] };
+  const root = imported.root?.[0];
+  if (!root) throw new Error("Unable to import editable cover text box XML");
+  return root as ParagraphChild;
 }
 
 function pageBackgroundParagraph(model: DocumentRenderModel) {
