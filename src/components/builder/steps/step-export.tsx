@@ -6,10 +6,14 @@ import { InfoBar } from "@/components/ui/panel";
 import { PdfPolicyPreview } from "@/components/policy/pdf-policy-preview";
 import { CoverEditor } from "@/components/builder/cover-editor";
 import { Check, AlertTriangle } from "lucide-react";
+import type { CoverComposition } from "@/lib/types";
 
 export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (editing: boolean) => void }) {
   const { policy, updatePolicy } = useBuilder();
   const [editingCover, setEditingCover] = React.useState(false);
+  const autosaveCover = React.useCallback((composition: CoverComposition) => {
+    updatePolicy(() => ({ coverComposition: composition }));
+  }, [updatePolicy]);
 
   const co = policy.company;
   const areas = policy.focusAreas.filter(Boolean);
@@ -37,7 +41,7 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
         </div>
       </InfoBar>
 
-      {editingCover ? <CoverEditor initialComposition={policy.coverComposition} policy={policy} onSave={(composition) => { updatePolicy(() => ({ coverComposition: composition })); setEditingCover(false); onCoverEditingChange?.(false); }} onCancel={() => { setEditingCover(false); onCoverEditingChange?.(false); }} /> : <div className="space-y-3 bg-[#f3f4f2] p-3 lg:p-5">
+      {editingCover ? <CoverEditor initialComposition={policy.coverComposition} policy={policy} onDraftChange={autosaveCover} onSave={(composition) => { updatePolicy(() => ({ coverComposition: composition })); setEditingCover(false); onCoverEditingChange?.(false); }} onCancel={() => { setEditingCover(false); onCoverEditingChange?.(false); }} /> : <div className="space-y-3 bg-[#f3f4f2] p-3 lg:p-5">
         <button type="button" onClick={() => { setEditingCover(true); onCoverEditingChange?.(true); }} className="inline-flex min-h-10 items-center rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white shadow-sm">Edit cover</button>
         <div key={policy.documentTheme || "governance-manual"} className="min-h-0 flex-1 pr-1"><PdfPolicyPreview policy={policy} shareDownload /></div>
       </div>}
