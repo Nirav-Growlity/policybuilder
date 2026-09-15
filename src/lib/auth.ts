@@ -11,11 +11,32 @@ function authSecret(): string {
   return "policycraft-local-development-secret-change-me";
 }
 
+function originFromEnv(value: string | undefined): string | undefined {
+  const configured = value?.trim();
+  if (!configured) return undefined;
+  try {
+    return new URL(configured.includes("://") ? configured : `https://${configured}`).origin;
+  } catch {
+    return undefined;
+  }
+}
+
+const configuredBaseURL = process.env.NEXT_PUBLIC_BASE_URL?.trim() || process.env.BETTER_AUTH_URL?.trim();
+const vercelOrigin = originFromEnv(process.env.VERCEL_URL);
+const authBaseURL = configuredBaseURL || vercelOrigin;
+const trustedOrigins = [
+  originFromEnv(configuredBaseURL),
+  vercelOrigin,
+  originFromEnv(process.env.VERCEL_BRANCH_URL),
+  originFromEnv(process.env.VERCEL_PROJECT_PRODUCTION_URL),
+].filter((origin, index, origins): origin is string => Boolean(origin) && origins.indexOf(origin) === index);
+
 export const auth = betterAuth({
   database: policyCraftPool,
   secret: authSecret(),
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+  baseURL: authBaseURL,
   basePath: "/api/auth",
+  trustedOrigins,
   emailAndPassword: {
     enabled: true,
     disableSignUp: true,
