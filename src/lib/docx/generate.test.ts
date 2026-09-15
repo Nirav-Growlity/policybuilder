@@ -89,7 +89,7 @@ test("custom cover text remains an editable Word text box", async () => {
     sourceTemplateId: "standard-pack",
     background: { color: "#FFFFFF", fit: "cover", focalPoint: { x: 50, y: 50 } },
     elements: [
-      { id: "logo", type: "logo", x: 20, y: 20, width: 50, height: 18, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false, focalPoint: { x: 50, y: 50 }, altText: "Company logo" },
+      { id: "logo", type: "logo", x: 20, y: 20, width: 50, height: 18, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Company logo" },
       { id: "title", type: "text", x: 20, y: 50, width: 150, height: 20, rotation: 0, opacity: 1, zIndex: 2, visible: true, locked: false, content: { kind: "binding", binding: "companyName" }, fontFamily: "Arial", fontSize: 20, color: "#123456", bold: true, italic: false, underline: false, align: "left", lineHeight: 1.2, letterSpacing: 0 },
     ],
   };

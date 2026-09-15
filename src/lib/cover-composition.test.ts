@@ -12,6 +12,15 @@ test("normalizes a cover scene and clamps geometry", () => {
   assert.equal(result?.background.color, "#FFFFFF");
 });
 
+test("normalizes old compositions with media aspect locking defaults", () => {
+  const result = normalizeCoverComposition({ schemaVersion: 1, elements: [
+    { id: "old-text", type: "text", content: { kind: "literal", text: "Text" } },
+    { id: "old-logo", type: "logo", focalPoint: { x: 50, y: 50 }, altText: "Logo" },
+  ] });
+  assert.equal(result?.elements.find((element) => element.id === "old-text")?.aspectLocked, false);
+  assert.equal(result?.elements.find((element) => element.id === "old-logo")?.aspectLocked, true);
+});
+
 test("rejects unknown schema and preserves live bindings", () => {
   assert.equal(normalizeCoverComposition({ schemaVersion: 99 }), undefined);
   const policy = initialPolicy("environmental");

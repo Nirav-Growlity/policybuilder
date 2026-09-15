@@ -164,6 +164,13 @@
   :is(input, textarea)[data-grammar-checking="true"] { animation: none; }
 }
 
+@media (min-width: 1400px) {
+  .cover-editor {
+    height: calc(100vh - 12rem);
+    min-height: 0;
+  }
+}
+
 @media print {
   body { background: #fff; }
 }

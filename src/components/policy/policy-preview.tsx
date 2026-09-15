@@ -483,7 +483,8 @@ function CustomCover({ model, policy, showElements = true }: { model: DocumentRe
         const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
         return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: element.color, fontFamily: element.fontFamily, fontSize: `calc(${element.fontSize}pt * var(--cover-editor-scale, 1))`, fontWeight: element.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: `calc(${element.letterSpacing}pt * var(--cover-editor-scale, 1))` }}>{text}</div>;
       }
-      const source = element.type === "logo" ? policy.company.companyLogo : element.assetId.startsWith("data:") ? element.assetId : `/api/policycraft/cover-assets/${element.assetId}`;
+      const rawSource = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
+      const source = rawSource?.startsWith("data:") ? rawSource : rawSource ? `/api/policycraft/cover-assets/${rawSource}` : undefined;
       return <div key={element.id} className="policy-custom-cover-image" style={style}>{source ? <img src={source} alt={element.altText} style={{ objectFit: element.fit, objectPosition: `${element.focalPoint.x}% ${element.focalPoint.y}%` }} /> : null}</div>;
     })}
   </section>;

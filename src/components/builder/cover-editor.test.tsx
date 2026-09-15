@@ -17,4 +17,11 @@ test("cover editor renders a single page-one workspace without document navigati
   assert.doesNotMatch(markup, /Continuous scroll|Single page/);
   assert.doesNotMatch(markup, /position:fixed|position: fixed/);
   assert.match(markup, /data-editor-guides="off"/);
+  assert.match(markup, /Grid/);
+  assert.match(markup, /Snap on/);
+  assert.match(markup, /grid-cols-\[220px_minmax\(0,1fr\)_380px\]/);
+  assert.match(markup, /min-h-0 min-w-0 flex-col border-l/);
+  assert.match(markup, /min-h-0 min-w-0 flex-1 overflow-y-auto/);
+  assert.match(markup, /Select an element to edit it/);
+  assert.match(markup, /Background/);
 });

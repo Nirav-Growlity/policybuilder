@@ -31,6 +31,7 @@ function geometry(input: Partial<CoverElement>, index: number) {
     y: clamp(input.y, 0, COVER_HEIGHT_MM - height, 20),
     width,
     height,
+    aspectLocked: typeof input.aspectLocked === "boolean" ? input.aspectLocked : input.type !== "text",
     rotation: clamp(input.rotation, -180, 180, 0),
     opacity: clamp(input.opacity, 0, 1, 1),
     zIndex: Math.round(clamp(input.zIndex, 0, 9999, index)),
@@ -72,6 +73,7 @@ function normalizeElement(input: unknown, index: number): CoverElement | null {
   if (candidate.type === "logo") {
     return {
       ...base, id, type: "logo", fit: "contain",
+      ...(typeof candidate.assetId === "string" && candidate.assetId ? { assetId: candidate.assetId } : {}),
       focalPoint: { x: clamp(candidate.focalPoint?.x, 0, 100, 50), y: clamp(candidate.focalPoint?.y, 0, 100, 50) },
       altText: typeof candidate.altText === "string" ? candidate.altText.slice(0, 180) : "Company logo",
     };

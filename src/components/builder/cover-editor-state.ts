@@ -59,6 +59,32 @@ export function updateCoverElement(composition: CoverComposition, id: string, pa
   }) || composition;
 }
 
+/** Apply a complete geometry update while preserving media aspect ratio when requested. */
+export function resizeCoverElement(composition: CoverComposition, id: string, next: Pick<CoverElement, "x" | "y" | "width" | "height">): CoverComposition {
+  const element = composition.elements.find((candidate) => candidate.id === id);
+  if (!element) return composition;
+  let width = Math.max(1, next.width);
+  let height = Math.max(1, next.height);
+  if (element.aspectLocked) {
+    const ratio = element.width / Math.max(1, element.height);
+    const widthChange = Math.abs(width / Math.max(1, element.width) - 1);
+    const heightChange = Math.abs(height / Math.max(1, element.height) - 1);
+    if (widthChange >= heightChange) height = width / ratio;
+    else width = height * ratio;
+  }
+  width = Math.min(COVER_WIDTH_MM, width);
+  height = Math.min(COVER_HEIGHT_MM, height);
+  const x = Math.min(COVER_WIDTH_MM - width, Math.max(0, next.x));
+  const y = Math.min(COVER_HEIGHT_MM - height, Math.max(0, next.y));
+  return updateCoverElement(composition, id, { x, y, width, height });
+}
+
+export function detachCoverText(composition: CoverComposition, id: string, value: string): CoverComposition {
+  const element = composition.elements.find((candidate) => candidate.id === id);
+  if (!element || element.type !== "text" || element.content.kind !== "binding") return composition;
+  return updateCoverElement(composition, id, { content: { kind: "literal", text: value } });
+}
+
 export function removeCoverElement(composition: CoverComposition, id: string): CoverComposition {
   return { ...composition, elements: composition.elements.filter((element) => element.id !== id) };
 }

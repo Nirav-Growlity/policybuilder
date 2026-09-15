@@ -26,7 +26,7 @@ test("custom cover overlay is attached to the complete first page", async () => 
   const page = (await PDFDocument.load(output)).getPages()[0];
   const { Resources } = page.node.normalizedEntries();
   const xObjects = Resources.lookupMaybe(PDFName.of("XObject"), PDFDict);
-  assert.ok(xObjects && xObjects.size > 0, "the first page should contain the full-page cover image");
+  assert.ok(xObjects && xObjects.keys().length > 0, "the first page should contain the full-page cover image");
 });
 
 test("generatePdf renders a custom gradient theme as A4", async () => {

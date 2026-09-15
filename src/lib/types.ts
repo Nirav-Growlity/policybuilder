@@ -264,6 +264,8 @@ export type CoverElementGeometry = {
   y: number;
   width: number;
   height: number;
+  /** Media defaults to true; text defaults to false when omitted by older saves. */
+  aspectLocked?: boolean;
   rotation: number;
   opacity: number;
   zIndex: number;
@@ -298,6 +300,8 @@ export type CoverImageElement = CoverElementGeometry & {
 export type CoverLogoElement = CoverElementGeometry & {
   id: string;
   type: "logo";
+  /** Optional cover-local replacement; omitted means use the company logo. */
+  assetId?: string;
   fit: "contain";
   focalPoint: { x: number; y: number };
   altText: string;

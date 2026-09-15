@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { normalizeCoverComposition } from "@/lib/cover-composition";
-import { coverEditorReducer, coverPointSizeToPixels, createCoverEditorState, normalizeCoverForSave, screenToCover, snapElementPosition } from "./cover-editor-state";
+import { coverEditorReducer, coverPointSizeToPixels, createCoverEditorState, detachCoverText, normalizeCoverForSave, resizeCoverElement, screenToCover, snapElementPosition, updateCoverElement } from "./cover-editor-state";
 
 const composition = normalizeCoverComposition({
   schemaVersion: 1,
@@ -26,6 +26,31 @@ test("save normalization preserves the current draft instead of allowing an empt
   assert.equal(savedTitle?.x, 88);
   assert.equal(savedTitle?.type, "text");
   if (savedTitle?.type === "text") assert.deepEqual(savedTitle.content, { kind: "literal", text: "Edited title" });
+});
+
+test("resize updates can enlarge a text layer within the A4 page", () => {
+  const resized = updateCoverElement(composition, "title", { width: 120, height: 42 });
+  assert.equal(resized.elements[0]?.width, 120);
+  assert.equal(resized.elements[0]?.height, 42);
+});
+
+test("resize preserves media aspect ratio and clamps the page bounds", () => {
+  const media = normalizeCoverComposition({ ...composition, elements: [{ ...composition.elements[0], type: "image", assetId: "asset", x: 180, y: 280, width: 20, height: 10, rotation: 37, aspectLocked: true }] })!;
+  const resized = resizeCoverElement(media, "title", { x: 190, y: 290, width: 80, height: 40 });
+  const element = resized.elements[0];
+  assert.equal(element.x, 130);
+  assert.equal(element.y, 257);
+  assert.equal(element.width, 80);
+  assert.equal(element.height, 40);
+  assert.equal(element.rotation, 37);
+});
+
+test("bound text can be detached without changing its displayed value", () => {
+  const bound = updateCoverElement(composition, "title", { content: { kind: "binding", binding: "policyTitle" } });
+  const detached = detachCoverText(bound, "title", "Custom cover title");
+  const detachedTitle = detached.elements[0];
+  assert.equal(detachedTitle?.type, "text");
+  if (detachedTitle?.type === "text") assert.deepEqual(detachedTitle.content, { kind: "literal", text: "Custom cover title" });
 });
 
 test("screen coordinates convert to the persisted A4 coordinate system", () => {

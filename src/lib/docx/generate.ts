@@ -1313,7 +1313,7 @@ export async function customCoverImage(policy: Policy, model: DocumentRenderMode
       const anchorX = element.align === "center" ? element.width * scale / 2 : element.align === "right" ? element.width * scale : 0;
       return `<g transform="${transform}" opacity="${element.opacity}"><text x="${anchorX}" y="0" dominant-baseline="hanging" text-anchor="${anchor}" style="${style}">${lines.map((line, index) => `<tspan x="${anchorX}" dy="${index ? element.fontSize * element.lineHeight * 300 / 72 : 0}">${escape(line)}</tspan>`).join("")}</text></g>`;
     }
-    const source = element.type === "logo" ? imageHref(policy.company.companyLogo) : imageHref(element.assetId);
+    const source = imageHref(element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId);
     return `<g transform="${transform}">${imageMarkup(source, 0, 0, element.width, element.height, element.fit, element.focalPoint.x, element.focalPoint.y, element.opacity, element.altText)}</g>`;
   }).join("") : "";
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="100%" height="100%" fill="${composition.background.color}"/>${imageMarkup(imageHref(backgroundImage), 0, 0, 210, 297, composition.background.fit, composition.background.focalPoint.x, composition.background.focalPoint.y, 1, "Cover background")}${elements}</svg>`;
@@ -1370,7 +1370,7 @@ async function buildEditableCustomCoverElements(policy: Policy, model: DocumentR
       elements.push(editableCoverTextBox(element, value) as unknown as ParagraphChild);
       continue;
     }
-    const source = element.type === "logo" ? policy.company.companyLogo : element.assetId;
+    const source = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
     const image = await logoFromDataUrl(source);
     if (!image) continue;
     elements.push(new ImageRun({
