@@ -10,7 +10,7 @@ function safeNext(value: string | null): string {
   return value.startsWith("/") && !value.startsWith("//") ? value : "/";
 }
 
-export default function LoginPage() {
+function LoginPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [email, setEmail] = React.useState("");
@@ -66,5 +66,13 @@ export default function LoginPage() {
         </section>
       </div>
     </main>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <React.Suspense fallback={<main className="min-h-screen bg-[var(--color-cream)]" />}>
+      <LoginPageContent />
+    </React.Suspense>
   );
 }
