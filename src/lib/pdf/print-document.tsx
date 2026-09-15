@@ -1,5 +1,6 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
+import serverlessChromium from "@sparticuz/chromium";
 import { renderToStaticMarkup } from "react-dom/server.browser";
 import { chromium, type Browser } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
@@ -70,7 +71,8 @@ async function getPdfBrowser(): Promise<Browser> {
   pdfBrowser = null;
   if (!pdfBrowserPromise) {
     pdfBrowserPromise = (async () => {
-      const browser = await chromium.launch({ executablePath: await findChrome(), headless: true, timeout: 15000 });
+      const launch = await getChromeLaunchOptions();
+      const browser = await chromium.launch({ ...launch, headless: true, timeout: 15000 });
       pdfBrowser = browser;
       browser.on("disconnected", () => { if (pdfBrowser === browser) pdfBrowser = null; });
       return browser;
@@ -130,6 +132,15 @@ export async function applyPageBorders(bytes: Uint8Array, border: PageBorder, pr
   const inset = border.insetMm * A4.pointsPerMm;
   for (const page of border.scope === "cover" ? pdf.getPages().slice(0, 1) : pdf.getPages()) page.drawRectangle({ x: inset, y: inset, width: page.getWidth() - 2 * inset, height: page.getHeight() - 2 * inset, borderWidth: border.widthPt, borderColor: color });
   return Buffer.from(await pdf.save());
+}
+
+async function getChromeLaunchOptions(): Promise<{ executablePath: string; args?: string[] }> {
+  const isServerless = process.env.VERCEL === "1" || Boolean(process.env.AWS_LAMBDA_FUNCTION_NAME);
+  if (isServerless && !process.env.POLICY_PDF_CHROME_PATH) {
+    serverlessChromium.setGraphicsMode = false;
+    return { executablePath: await serverlessChromium.executablePath(), args: serverlessChromium.args };
+  }
+  return { executablePath: await findChrome() };
 }
 
 async function findChrome(): Promise<string> {
