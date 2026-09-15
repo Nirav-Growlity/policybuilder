@@ -23,6 +23,12 @@ export function createCoverEditorState(composition: CoverComposition): CoverEdit
   return { draft: cloneCoverComposition(composition), history: [], future: [] };
 }
 
+export function normalizeCoverForSave(composition: CoverComposition): CoverComposition {
+  const normalized = normalizeCoverComposition(composition);
+  if (!normalized) throw new Error("Cover composition could not be saved");
+  return normalized;
+}
+
 export function coverEditorReducer(state: CoverEditorState, action: CoverEditorAction): CoverEditorState {
   switch (action.type) {
     case "apply":

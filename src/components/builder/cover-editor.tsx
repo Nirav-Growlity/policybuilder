@@ -9,7 +9,7 @@ import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { cloneCoverComposition, getCoverBindingValue, normalizeCoverComposition, COVER_HEIGHT_MM, COVER_WIDTH_MM } from "@/lib/cover-composition";
 import type { CoverComposition, CoverElement, Policy } from "@/lib/types";
 import { useBuilder } from "@/lib/store";
-import { coverEditorReducer, coverPointSizeToPixels, createCoverEditorState, duplicateCoverElement, moveCoverElementRelative, moveCoverElementToEdge, removeCoverElement, reorderCoverElement, screenToCover, snapElementPosition, updateCoverElement } from "./cover-editor-state";
+import { coverEditorReducer, coverPointSizeToPixels, createCoverEditorState, duplicateCoverElement, moveCoverElementRelative, moveCoverElementToEdge, normalizeCoverForSave, removeCoverElement, reorderCoverElement, screenToCover, snapElementPosition, updateCoverElement } from "./cover-editor-state";
 
 type CoverTemplateSummary = { id: string; name: string; composition?: CoverComposition };
 type AutosaveStatus = "idle" | "saving" | "saved" | "offline";
@@ -33,7 +33,7 @@ export function createInitialCoverComposition(policy: Policy): CoverComposition 
 
 function readImage(file: File): Promise<string> { return new Promise((resolve, reject) => { const reader = new FileReader(); reader.onload = () => resolve(String(reader.result)); reader.onerror = () => reject(new Error("Could not read image")); reader.readAsDataURL(file); }); }
 
-export type CoverEditorProps = { initialComposition?: CoverComposition; onSave: (composition?: CoverComposition) => void; onCancel: () => void; onDraftChange?: (composition: CoverComposition) => void; policy?: Policy; onReady?: () => void };
+export type CoverEditorProps = { initialComposition?: CoverComposition; onSave: (composition: CoverComposition) => void; onCancel: () => void; onDraftChange?: (composition: CoverComposition) => void; policy?: Policy; onReady?: () => void };
 const ZOOM_LEVELS = [0.75, 1, 1.25, 1.5, 2] as const;
 
 export function CoverEditor({ initialComposition, onSave, onCancel, onDraftChange, policy: suppliedPolicy, onReady }: CoverEditorProps) {
@@ -128,7 +128,9 @@ export function CoverEditor({ initialComposition, onSave, onCancel, onDraftChang
   const saveTemplate = async () => { const name = templateName.trim(); if (!name) return; const response = await fetch("/api/policycraft/cover-templates", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, composition: normalizeCoverComposition(editor.draft) }) }); if (!response.ok) { setTemplateError("Could not save this cover template."); return; } setTemplateDialog(false); setTemplateName(""); setTemplateError(""); const body = await response.json() as { id?: string }; if (body.id) setLibrary((items) => [{ id: body.id!, name, composition: cloneCoverComposition(editor.draft) }, ...items]); };
   const requestCancel = () => { if (dirty) setDiscardOpen(true); else onCancel(); };
   const discard = () => { if (onDraftChange) onDraftChange(cloneCoverComposition(openingComposition)); setDiscardOpen(false); onCancel(); };
-  const save = React.useCallback(() => onSave(dirty ? normalizeCoverComposition(editor.draft) : undefined), [dirty, editor.draft, onSave]);
+  const save = React.useCallback(() => {
+    onSave(normalizeCoverForSave(editor.draft));
+  }, [editor.draft, onSave]);
   const nudge = React.useCallback((dx: number, dy: number) => { if (!selected || selected.locked) return; updateElement(selected.id, { x: selected.x + dx, y: selected.y + dy }); }, [selected, updateElement]);
 
   React.useEffect(() => { const key = (event: KeyboardEvent) => { const target = event.target as HTMLElement; const editing = target.tagName === "TEXTAREA" || target.isContentEditable; if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") { event.preventDefault(); if (!editing && dirty) save(); return; } if (editing) { if (event.key === "Escape") { event.preventDefault(); cancelTextEdit(); } return; } if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "z") { event.preventDefault(); dispatch({ type: event.shiftKey ? "redo" : "undo" }); return; } if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "y") { event.preventDefault(); dispatch({ type: "redo" }); return; } if (event.key === "Escape") { event.preventDefault(); if (discardOpen) setDiscardOpen(false); else if (templateDialog) setTemplateDialog(false); else setSelectedId(null); return; } if (event.key === "Delete" || event.key === "Backspace") { event.preventDefault(); remove(); return; } if (event.key === "Enter" || event.key === "F2") { if (selected?.type === "text" && selected.content.kind === "literal") { event.preventDefault(); beginTextEdit(selected.id); } return; } const amount = event.shiftKey ? 5 : 1; if (event.key === "ArrowLeft") { event.preventDefault(); nudge(-amount, 0); } if (event.key === "ArrowRight") { event.preventDefault(); nudge(amount, 0); } if (event.key === "ArrowUp") { event.preventDefault(); nudge(0, -amount); } if (event.key === "ArrowDown") { event.preventDefault(); nudge(0, amount); } }; window.addEventListener("keydown", key); return () => window.removeEventListener("keydown", key); }, [beginTextEdit, cancelTextEdit, dirty, discardOpen, nudge, remove, save, selected, templateDialog]);

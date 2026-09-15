@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { normalizeCoverComposition } from "@/lib/cover-composition";
-import { coverEditorReducer, coverPointSizeToPixels, createCoverEditorState, screenToCover, snapElementPosition } from "./cover-editor-state";
+import { coverEditorReducer, coverPointSizeToPixels, createCoverEditorState, normalizeCoverForSave, screenToCover, snapElementPosition } from "./cover-editor-state";
 
 const composition = normalizeCoverComposition({
   schemaVersion: 1,
@@ -17,6 +17,15 @@ test("gesture updates stay out of history until the gesture commits", () => {
   const committed = coverEditorReducer(transient, { type: "commit", before: composition, draft: moved });
   assert.equal(committed.history.length, 1);
   assert.equal(committed.draft.elements[0].x, 40);
+});
+
+test("save normalization preserves the current draft instead of allowing an empty save", () => {
+  const current = { ...composition, elements: [{ ...composition.elements[0], x: 88, content: { kind: "literal" as const, text: "Edited title" } }] };
+  const saved = normalizeCoverForSave(current);
+  const savedTitle = saved.elements[0];
+  assert.equal(savedTitle?.x, 88);
+  assert.equal(savedTitle?.type, "text");
+  if (savedTitle?.type === "text") assert.deepEqual(savedTitle.content, { kind: "literal", text: "Edited title" });
 });
 
 test("screen coordinates convert to the persisted A4 coordinate system", () => {
