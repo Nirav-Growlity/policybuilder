@@ -1,7 +1,9 @@
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, rm } from "node:fs/promises";
+import { randomUUID } from "node:crypto";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { renderToStaticMarkup } from "react-dom/server.browser";
-import { chromium, type Browser } from "playwright-core";
+import { chromium, type BrowserContext } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
 import { PolicyPreview } from "@/components/policy/policy-preview";
 import { customCoverImage } from "@/lib/docx/generate";
@@ -9,9 +11,6 @@ import { getPolicyDocumentTheme, logoScaleFactor } from "@/lib/document-themes";
 import { getRunningHeaderBrand } from "@/lib/document-render-model";
 import { A4, pageBorderContentInsetMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
 import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
-
-let pdfBrowser: Browser | null = null;
-let pdfBrowserPromise: Promise<Browser> | null = null;
 
 export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const theme = getPolicyDocumentTheme(policy);
@@ -24,8 +23,8 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const customCover = policy.coverComposition ? await customCoverImage(policy, (await import("@/lib/document-render-model")).buildDocumentRenderModel(policy)) : null;
   const customCoverPng = customCover ? `data:image/png;base64,${Buffer.from(customCover.data).toString("base64")}` : undefined;
   const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} />));
-  const browser = await getPdfBrowser();
-  const page = await browser.newPage();
+  const { context, userDataDir } = await createPdfContext();
+  const page = await context.newPage();
   const timer = setTimeout(() => { void page.close(); }, 45000);
   try {
     await page.route(/^https?:/, route => route.abort());
@@ -62,22 +61,24 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
     const withBackground = await applyPageBackground(output, theme.background, policy.company.companyLogo ? topMargin : 0);
     const withCover = customCover ? await applyCustomCoverPage(withBackground, customCover.data) : withBackground;
     return applyPageBorders(withCover, theme.pageBorder, theme.colors.primary);
-  } finally { clearTimeout(timer); await page.close().catch(() => undefined); }
+  } finally {
+    clearTimeout(timer);
+    await page.close().catch(() => undefined);
+    await context.close().catch(() => undefined);
+    await rm(userDataDir, { recursive: true, force: true });
+  }
 }
 
-async function getPdfBrowser(): Promise<Browser> {
-  if (pdfBrowser?.isConnected()) return pdfBrowser;
-  pdfBrowser = null;
-  if (!pdfBrowserPromise) {
-    pdfBrowserPromise = (async () => {
-      const launch = await getChromeLaunchOptions();
-      const browser = await chromium.launch({ ...launch, headless: true, timeout: 15000 });
-      pdfBrowser = browser;
-      browser.on("disconnected", () => { if (pdfBrowser === browser) pdfBrowser = null; });
-      return browser;
-    })().finally(() => { pdfBrowserPromise = null; });
+async function createPdfContext(): Promise<{ context: BrowserContext; userDataDir: string }> {
+  const launch = await getChromeLaunchOptions();
+  const userDataDir = path.join(tmpdir(), `policycraft-pdf-${randomUUID()}`);
+  try {
+    const context = await chromium.launchPersistentContext(userDataDir, { ...launch, headless: true, timeout: 15000 });
+    return { context, userDataDir };
+  } catch (error) {
+    await rm(userDataDir, { recursive: true, force: true });
+    throw error;
   }
-  return pdfBrowserPromise;
 }
 
 /** Paint behind the content streams: Chromium clips CSS backgrounds to @page
