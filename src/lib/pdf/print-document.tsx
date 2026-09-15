@@ -1,6 +1,5 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
-import serverlessChromium from "@sparticuz/chromium";
 import { renderToStaticMarkup } from "react-dom/server.browser";
 import { chromium, type Browser } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
@@ -137,6 +136,7 @@ export async function applyPageBorders(bytes: Uint8Array, border: PageBorder, pr
 async function getChromeLaunchOptions(): Promise<{ executablePath: string; args?: string[] }> {
   const isServerless = process.env.VERCEL === "1" || Boolean(process.env.AWS_LAMBDA_FUNCTION_NAME);
   if (isServerless && !process.env.POLICY_PDF_CHROME_PATH) {
+    const { default: serverlessChromium } = await import("@sparticuz/chromium");
     serverlessChromium.setGraphicsMode = false;
     return { executablePath: await serverlessChromium.executablePath(), args: serverlessChromium.args };
   }
