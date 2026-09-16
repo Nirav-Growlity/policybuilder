@@ -25,6 +25,7 @@ import type { PolicyType } from "@/lib/types";
 import { extractLogoPalette } from "@/lib/logo-palette";
 import { applyCompanyMaster } from "@/lib/policycraft-mapping";
 import type { PolicyCraftDocumentState } from "@/lib/policycraft-types";
+import { createDraftAutosave } from "@/lib/policycraft-autosave";
 import { AlertTriangle, Building2 } from "lucide-react";
 
 const STEP_RENDERERS: Record<string, React.ComponentType<{ onCoverEditingChange?: (editing: boolean) => void }>> = {
@@ -69,6 +70,8 @@ export function BuilderClient() {
   const backendLoadKey = React.useRef<string>("");
   const createAttempted = React.useRef(false);
   const skipNextSave = React.useRef(false);
+  const draftAutosave = React.useRef<ReturnType<typeof createDraftAutosave<PolicyCraftDocumentState>> | null>(null);
+  if (!draftAutosave.current) draftAutosave.current = createDraftAutosave<PolicyCraftDocumentState>();
 
   const order = getStepOrder(policy);
   const currentIndex = Math.max(0, order.indexOf(step));
@@ -88,7 +91,7 @@ export function BuilderClient() {
     if (backendLoadKey.current === key) return;
     backendLoadKey.current = key;
     if (draftId) {
-      fetch(`/api/policycraft/documents/${encodeURIComponent(draftId)}`)
+      fetch(`/api/policycraft/documents/${encodeURIComponent(draftId)}`, { cache: "no-store" })
         .then(async (response) => {
           if (response.status === 401) {
             router.replace(`/login?next=${encodeURIComponent(window.location.pathname + window.location.search)}`);
@@ -106,7 +109,8 @@ export function BuilderClient() {
           setStep(loaded.state.step);
           setBackendDocumentId(loaded.id);
           setBackendTitle(loaded.title);
-          backendLockVersion.current = loaded.lockVersion;
+          const loadedLockVersion = Number(loaded.lockVersion);
+          if (Number.isInteger(loadedLockVersion) && loadedLockVersion > 0) backendLockVersion.current = loadedLockVersion;
           skipNextSave.current = true;
           setDocumentLoaded(true);
           setCompanyLoaded(true);
@@ -168,7 +172,8 @@ export function BuilderClient() {
         if (!data?.document) return;
         setBackendDocumentId(data.document.id);
         setBackendTitle(data.document.title);
-        backendLockVersion.current = data.document.lockVersion;
+        const createdLockVersion = Number(data.document.lockVersion);
+        if (Number.isInteger(createdLockVersion) && createdLockVersion > 0) backendLockVersion.current = createdLockVersion;
         router.replace(`/builder?draft=${encodeURIComponent(data.document.id)}`);
         setSaveStatus("saved");
       })
@@ -185,25 +190,32 @@ export function BuilderClient() {
       return;
     }
     const state: PolicyCraftDocumentState = { step, policy, importedPolicy };
-    const timer = window.setTimeout(() => {
+    const autosave = draftAutosave.current;
+    if (!autosave) return;
+    autosave.schedule(state, async (nextState) => {
       setSaveStatus("saving");
-      fetch(`/api/policycraft/documents/${encodeURIComponent(backendDocumentId)}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title: backendTitle || `${policy.company.name || "Untitled"} ${policy.policyType} policy`, state, lockVersion: backendLockVersion.current }),
-      }).then(async (response) => {
+      try {
+        const response = await fetch(`/api/policycraft/documents/${encodeURIComponent(backendDocumentId)}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title: backendTitle || `${nextState.policy.company.name || "Untitled"} ${nextState.policy.policyType} policy`, state: nextState, lockVersion: backendLockVersion.current }),
+        });
         if (response.status === 409) {
           setSaveStatus("conflict");
           push("This draft changed in another window. Reload it before continuing.", "error");
-          return;
+          throw new Error("draft conflict");
         }
         if (!response.ok) throw new Error("save failed");
         const data = await response.json();
-        if (data?.document?.lockVersion) backendLockVersion.current = data.document.lockVersion;
+        const savedLockVersion = Number(data?.document?.lockVersion);
+        if (Number.isInteger(savedLockVersion) && savedLockVersion > 0) backendLockVersion.current = savedLockVersion;
         setSaveStatus("saved");
-      }).catch(() => setSaveStatus("offline"));
-    }, 900);
-    return () => window.clearTimeout(timer);
+      } catch (error) {
+        if (error instanceof Error && error.message === "draft conflict") throw error;
+        setSaveStatus("offline");
+        throw error;
+      }
+    });
   }, [backendDocumentId, backendTitle, companyLoaded, documentLoaded, draftId, importedPolicy, policy, push, step]);
 
   // Legacy saved policies may contain a logo but no cached palette. Keep this
