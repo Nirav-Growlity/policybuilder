@@ -5,8 +5,7 @@ import path from "node:path";
 import { renderToStaticMarkup } from "react-dom/server.browser";
 import { chromium, type BrowserContext } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
-import { PolicyPreview } from "@/components/policy/policy-preview";
-import { customCoverImage } from "@/lib/docx/generate";
+import { PolicyCoverPreview, PolicyPreview } from "@/components/policy/policy-preview";
 import { getPolicyDocumentTheme, logoScaleFactor } from "@/lib/document-themes";
 import { getRunningHeaderBrand } from "@/lib/document-render-model";
 import { A4, pageBorderContentInsetMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
@@ -20,7 +19,7 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const logoHeight = hasLogo ? 8 * logoScale : 0;
   const horizontalMargin = pageMarginMm(theme.pageBorder);
   const topMargin = hasLogo ? pageHeaderMarginMm(theme.pageBorder, logoHeight) : horizontalMargin;
-  const customCover = policy.coverComposition ? await customCoverImage(policy, (await import("@/lib/document-render-model")).buildDocumentRenderModel(policy)) : null;
+  const customCover = policy.coverComposition ? { data: await renderCustomCoverPng(policy), type: "png" as const } : null;
   const customCoverPng = customCover ? `data:image/png;base64,${Buffer.from(customCover.data).toString("base64")}` : undefined;
   const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} />));
   const { context, userDataDir } = await createPdfContext();
@@ -63,6 +62,33 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
     return applyPageBorders(withCover, theme.pageBorder, theme.colors.primary);
   } finally {
     clearTimeout(timer);
+    await page.close().catch(() => undefined);
+    await context.close().catch(() => undefined);
+    await rm(userDataDir, { recursive: true, force: true });
+  }
+}
+
+async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
+  const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyCoverPreview policy={policy} />));
+  const { context, userDataDir } = await createPdfContext();
+  const page = await context.newPage();
+  await page.setViewportSize({ width: 794, height: 1123 });
+  try {
+    await page.route(/^https?:/, route => route.abort());
+    await page.setContent(`<!doctype html><html><head><meta charset="utf-8"/></head><body>${markup}<style>
+      html,body { margin:0!important; padding:0!important; width:210mm; height:297mm; overflow:hidden; background:#fff; }
+      .cover-preview-only { width:210mm!important; height:297mm!important; max-width:none!important; overflow:hidden!important; box-shadow:none!important; }
+      .cover-preview-only > .policy-cover { width:210mm!important; height:297mm!important; min-height:297mm!important; max-height:297mm!important; overflow:hidden!important; }
+      .cover-preview-only .policy-custom-cover { width:210mm!important; height:297mm!important; min-height:297mm!important; max-height:297mm!important; page-break-after:none!important; }
+    </style></body></html>`, { waitUntil: "load", timeout: 20000 });
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+      await Promise.all(Array.from(document.images, image => image.decode().catch(() => undefined)));
+    });
+    const cover = page.locator(".policy-custom-cover");
+    if (!(await cover.count())) throw new Error("Custom cover could not be rendered");
+    return await cover.screenshot({ type: "png" });
+  } finally {
     await page.close().catch(() => undefined);
     await context.close().catch(() => undefined);
     await rm(userDataDir, { recursive: true, force: true });

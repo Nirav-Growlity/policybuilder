@@ -7,6 +7,9 @@ import { initialPolicy, makeSamplePolicy } from "@/lib/store";
 import { coverDesign } from "@/lib/cover-designs";
 import { getPolicyDocumentTheme } from "@/lib/document-themes";
 import { pageMarginMm } from "@/lib/page-geometry";
+import { createCoverCompositionSvg } from "@/lib/cover-renderer";
+import { buildDocumentRenderModel } from "@/lib/document-render-model";
+import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 
 test("cover editor renders a single page-one workspace without document navigation or fixed editor chrome", () => {
   const markup = renderToStaticMarkup(React.createElement(CoverEditor, {
@@ -80,4 +83,59 @@ test("legacy generated covers receive the preview metadata furniture when reopen
 
   assert.equal(prepared.elements.some((element) => element.id === "cover-metadata-rule"), true);
   assert.equal(prepared.elements.filter((element) => element.id.endsWith("-label")).length, 4);
+});
+
+test("solid page themes remove the legacy generated gradient from a reopened cover", () => {
+  const policy = makeSamplePolicy();
+  const legacyGradient = `data:image/svg+xml;base64,${Buffer.from('<svg><linearGradient id="page-wash"/><rect fill="url(#page-wash)"/></svg>').toString("base64")}`;
+  const generated = createInitialCoverComposition(policy);
+  const prepared = prepareCoverEditorComposition(policy, {
+    ...generated,
+    background: { ...generated.background, assetId: legacyGradient },
+  });
+
+  assert.equal(prepared.background.assetId, undefined);
+  assert.equal(buildDocumentRenderModel({ ...policy, coverComposition: { ...generated, background: { ...generated.background, assetId: legacyGradient } } }).cover.composition?.background.assetId, undefined);
+});
+
+test("the shared cover renderer carries edited composition geometry and text into preview output", () => {
+  const policy = makeSamplePolicy();
+  const composition = createInitialCoverComposition(policy);
+  const edited = {
+    ...composition,
+    elements: composition.elements.map((element) => element.id === "cover-policy-title"
+      ? { ...element, x: 44, y: 72, content: { kind: "literal" as const, text: "Edited cover title" } }
+      : element),
+  };
+
+  const svg = createCoverCompositionSvg(policy, edited);
+
+  assert.match(svg, /translate\(44 72\)/);
+  assert.match(svg, /Edited cover title/);
+  assert.match(svg, /font-size:/);
+
+  const previewMarkup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, {
+    policy: { ...policy, coverComposition: edited },
+  }));
+  assert.match(previewMarkup, /class="policy-custom-cover-text"/);
+  assert.match(previewMarkup, /Edited cover title/);
+});
+
+test("cover preview keeps edited text in the same browser typography box as the editor", () => {
+  const policy = makeSamplePolicy();
+  const composition = createInitialCoverComposition(policy);
+  const edited = {
+    ...composition,
+    elements: composition.elements.map((element) => element.id === "cover-policy-title"
+      ? { ...element, width: 91, content: { kind: "literal" as const, text: "Sustainable Procurement Policy" } }
+      : element),
+  };
+
+  const previewMarkup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, {
+    policy: { ...policy, coverComposition: edited },
+  }));
+
+  assert.match(previewMarkup, /class="policy-custom-cover-text"/);
+  assert.doesNotMatch(previewMarkup, /data-cover-renderer="shared-svg"/);
+  assert.match(previewMarkup, /font-family:Bell MT/);
 });

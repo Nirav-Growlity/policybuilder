@@ -122,3 +122,17 @@ export function getCoverBindingValue(policy: Policy, binding: CoverBinding): str
 export function cloneCoverComposition(composition: CoverComposition): CoverComposition {
   return structuredClone(composition);
 }
+
+export function isLegacyThemeGradientAsset(assetId?: string): boolean {
+  if (!assetId?.startsWith("data:image/svg+xml;base64,")) return false;
+  try {
+    return atob(assetId.slice("data:image/svg+xml;base64,".length)).includes('id="page-wash"');
+  } catch {
+    return false;
+  }
+}
+
+export function removeLegacyThemeGradient(composition: CoverComposition): CoverComposition {
+  if (!isLegacyThemeGradientAsset(composition.background.assetId)) return composition;
+  return normalizeCoverComposition({ ...composition, background: { ...composition.background, assetId: undefined } }) || composition;
+}

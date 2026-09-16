@@ -37,7 +37,7 @@ export function PolicyPreview({ policy, customCoverPng }: { policy: Policy; cust
       data-composition-fingerprint={theme.compositionFingerprint}
       className="policy-preview-document mx-auto max-w-4xl overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)] shadow-[0_18px_50px_rgba(42,50,42,.14)]"
     >
-      <style>{`${fontFaceCssFor([typography.fontFamily, typography.headingFontFamily || ""])}${previewStyles}`}</style>
+      <style>{`${fontFaceCssFor(coverFontFamilies(model))}${previewStyles}`}</style>
       <PolicyCover model={model} policy={policy} customCoverPng={customCoverPng} />
       {policy.showTableOfContents && <PolicyToc model={model} />}
       <RunningHeader model={model} policy={policy} />
@@ -72,7 +72,7 @@ export function PolicyCoverPreview({ policy, customCoverPng, showElements = true
       data-professional-variant={theme.layout.professionalVariant || ""}
       className="policy-preview-document cover-preview-only overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)]"
     >
-      <style>{`${fontFaceCssFor([typography.fontFamily, typography.headingFontFamily || ""])}${previewStyles}`}</style>
+      <style>{`${fontFaceCssFor(coverFontFamilies(model))}${previewStyles}`}</style>
       <PolicyCover model={model} policy={policy} customCoverPng={customCoverPng} showElements={showElements} />
     </article>
   );
@@ -89,6 +89,16 @@ function previewDocumentStyle(theme: ReturnType<typeof buildDocumentRenderModel>
     "--policy-paragraph-size": `${typography.paragraphSize}pt`,
     "--policy-line-height": String(typography.lineSpacing),
   } as CSSProperties;
+}
+
+function coverFontFamilies(model: DocumentRenderModel): string[] {
+  return [
+    model.typography.fontFamily,
+    model.typography.headingFontFamily || "",
+    ...(model.cover.composition?.elements
+      .filter((element) => element.type === "text")
+      .map((element) => element.fontFamily) || []),
+  ];
 }
 
 export function PolicyCover({ model, policy, customCoverPng, showElements = true }: { model: DocumentRenderModel; policy: Policy; customCoverPng?: string; showElements?: boolean }) {
@@ -474,21 +484,30 @@ export function PolicyCover({ model, policy, customCoverPng, showElements = true
 
 function CustomCover({ model, policy, showElements = true }: { model: DocumentRenderModel; policy: Policy; showElements?: boolean }) {
   const composition = model.cover.composition!;
-  const background = composition.background.assetId?.startsWith("data:") ? composition.background.assetId : undefined;
   return <section className="policy-cover policy-custom-cover" style={{ backgroundColor: composition.background.color }} data-cover-mode="custom">
-    {background ? <img src={background} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit }} /> : null}
+    <CoverCompositionElements composition={composition} policy={policy} showElements={showElements} />
+  </section>;
+}
+
+/* eslint-disable @next/next/no-img-element */
+function CoverCompositionElements({ composition, policy, showElements }: { composition: NonNullable<DocumentRenderModel["cover"]["composition"]>; policy: Policy; showElements: boolean }) {
+  const background = composition.background.assetId;
+  return <>
+    {background ? <><span className="sr-only">Cover background</span><img src={background.startsWith("data:") ? background : `/api/policycraft/cover-assets/${encodeURIComponent(background)}`} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit }} /></> : null}
     {composition.elements.filter((element) => element.visible && (showElements || element.type !== "text")).sort((a, b) => a.zIndex - b.zIndex).map((element) => {
       const style: CSSProperties = { left: `${(element.x / 210) * 100}%`, top: `${(element.y / 297) * 100}%`, width: `${(element.width / 210) * 100}%`, height: `${(element.height / 297) * 100}%`, opacity: element.opacity, zIndex: element.zIndex, transform: `rotate(${element.rotation}deg)` };
       if (element.type === "text") {
         const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
-        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: element.color, fontFamily: element.fontFamily, fontSize: `calc(${element.fontSize}pt * var(--cover-editor-scale, 1))`, fontWeight: element.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: `calc(${element.letterSpacing}pt * var(--cover-editor-scale, 1))` }}>{text}</div>;
+        const responsivePointSize = (pointSize: number) => `${pointSize * (25.4 / 72) / 210 * 100}cqw`;
+        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: element.color, fontFamily: element.fontFamily, fontSize: responsivePointSize(element.fontSize), fontWeight: element.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: responsivePointSize(element.letterSpacing) }}>{text}</div>;
       }
       const rawSource = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
-      const source = rawSource?.startsWith("data:") ? rawSource : rawSource ? `/api/policycraft/cover-assets/${rawSource}` : undefined;
+      const source = rawSource?.startsWith("data:") ? rawSource : rawSource ? `/api/policycraft/cover-assets/${encodeURIComponent(rawSource)}` : undefined;
       return <div key={element.id} className="policy-custom-cover-image" style={style}>{source ? <img src={source} alt={element.altText} style={{ objectFit: element.fit, objectPosition: `${element.focalPoint.x}% ${element.focalPoint.y}%` }} /> : null}</div>;
     })}
-  </section>;
+  </>;
 }
+/* eslint-enable @next/next/no-img-element */
 
 function ProfessionalCover({ model, feature }: { model: DocumentRenderModel; feature: ReactNode }) {
   const { cover, theme } = model;
@@ -712,7 +731,7 @@ const previewStyles = `
   .policy-cover-feature.feature-section-led img { opacity: .17; }
   .policy-section-feature { margin: 0; height: 250px; overflow: hidden; border-block: 1px solid var(--doc-line); }
   .policy-section-feature img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .policy-custom-cover { min-height: 842px; height: 842px; page-break-after: always; background: var(--doc-paper); }
+  .policy-custom-cover { min-height: 842px; height: 842px; page-break-after: always; background: var(--doc-paper); container-type: inline-size; }
   .policy-custom-cover-background { position: absolute; inset: 0; width: 100%; height: 100%; }
   .policy-custom-cover-text, .policy-custom-cover-image { position: absolute; overflow: hidden; }
   .policy-custom-cover-text { white-space: pre-wrap; overflow-wrap: anywhere; }
