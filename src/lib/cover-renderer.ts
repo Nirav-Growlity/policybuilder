@@ -2,6 +2,8 @@ import { getCoverBindingValue } from "./cover-composition";
 import type { CoverComposition, CoverElement, Policy } from "./types";
 
 type CoverSvgOptions = {
+  /** Render only the page background when DOCX supplies the layers separately. */
+  includeElements?: boolean;
   includeText?: boolean;
   width?: number;
   height?: number;
@@ -16,6 +18,51 @@ function escapeXml(value: string): string {
 
 function alignment(value: number): "Min" | "Mid" | "Max" {
   return value <= 33 ? "Min" : value >= 67 ? "Max" : "Mid";
+}
+
+function approximateTextWidth(value: string, fontSize: number, letterSpacing: number): number {
+  return [...value].reduce((total, character) => {
+    const factor = character === " " ? 0.28 : /[ilI1.,'`]/.test(character) ? 0.28 : /[MW@#%&]/.test(character) ? 0.82 : 0.52;
+    return total + fontSize * factor + letterSpacing;
+  }, 0);
+}
+
+function wrapText(value: string, width: number, fontSize: number, letterSpacing: number): string[] {
+  const lines: string[] = [];
+  for (const paragraph of value.split(/\r?\n/)) {
+    if (!paragraph) {
+      lines.push("");
+      continue;
+    }
+    let line = "";
+    for (const word of paragraph.split(/\s+/)) {
+      const candidate = line ? `${line} ${word}` : word;
+      if (approximateTextWidth(candidate, fontSize, letterSpacing) <= width) {
+        line = candidate;
+        continue;
+      }
+      if (line) lines.push(line);
+      line = "";
+      let remaining = word;
+      while (approximateTextWidth(remaining, fontSize, letterSpacing) > width && remaining.length > 1) {
+        let split = remaining.length;
+        while (split > 1 && approximateTextWidth(remaining.slice(0, split), fontSize, letterSpacing) > width) split -= 1;
+        lines.push(remaining.slice(0, split));
+        remaining = remaining.slice(split);
+      }
+      line = remaining;
+    }
+    lines.push(line);
+  }
+  return lines.length ? lines : [""];
+}
+
+export function wrapCoverText(value: string, widthMm: number, fontSizePt: number, letterSpacingPt: number): string[] {
+  return wrapText(value, widthMm, fontSizePt * MM_PER_POINT, letterSpacingPt * MM_PER_POINT).slice(0, 40);
+}
+
+function clipId(elementId: string): string {
+  return `cover-text-clip-${elementId.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
 }
 
 function defaultAssetSource(assetId: string | undefined): string | undefined {
@@ -35,9 +82,10 @@ function elementMarkup(policy: Policy, element: CoverElement, includeText: boole
   if (element.type === "text") {
     if (!includeText) return "";
     const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
-    const lines = text.split(/\r?\n/).slice(0, 40);
     const fontSize = element.fontSize * MM_PER_POINT;
     const lineHeight = fontSize * element.lineHeight;
+    const letterSpacing = element.letterSpacing * MM_PER_POINT;
+    const lines = wrapText(text, element.width, fontSize, letterSpacing).slice(0, 40);
     const anchor = element.align === "center" ? "middle" : element.align === "right" ? "end" : "start";
     const anchorX = element.align === "center" ? element.width / 2 : element.align === "right" ? element.width : 0;
     const styles = [
@@ -46,11 +94,12 @@ function elementMarkup(policy: Policy, element: CoverElement, includeText: boole
       `font-weight:${element.bold ? 700 : 400}`,
       `font-style:${element.italic ? "italic" : "normal"}`,
       `text-decoration:${element.underline ? "underline" : "none"}`,
-      `letter-spacing:${element.letterSpacing * MM_PER_POINT}`,
+      `letter-spacing:${letterSpacing}`,
       `fill:${element.color}`,
     ].join(";");
     const tspans = lines.map((line, index) => `<tspan x="${anchorX}" dy="${index ? lineHeight : 0}">${escapeXml(line)}</tspan>`).join("");
-    return `<g transform="${transform}" opacity="${element.opacity}"><text x="${anchorX}" y="0" dominant-baseline="hanging" text-anchor="${anchor}" style="${styles}">${tspans}</text></g>`;
+    const id = clipId(element.id);
+    return `<g transform="${transform}" opacity="${element.opacity}"><clipPath id="${id}"><rect width="${element.width}" height="${element.height}" /></clipPath><text x="${anchorX}" y="0" clip-path="url(#${id})" dominant-baseline="hanging" text-anchor="${anchor}" style="${styles}">${tspans}</text></g>`;
   }
   const assetId = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
   return `<g transform="${transform}">${imageMarkup({ assetId, fit: element.fit, focalPoint: element.focalPoint, opacity: element.opacity, altText: element.altText }, 0, 0, element.width, element.height, resolveAsset)}</g>`;
@@ -61,6 +110,7 @@ export function createCoverCompositionSvg(policy: Policy, composition: CoverComp
   const width = options.width ?? 210;
   const height = options.height ?? 297;
   const includeText = options.includeText !== false;
+  const includeElements = options.includeElements !== false;
   const resolveAsset = options.resolveAsset || defaultAssetSource;
   const background = imageMarkup({
     assetId: composition.background.assetId,
@@ -69,7 +119,9 @@ export function createCoverCompositionSvg(policy: Policy, composition: CoverComp
     opacity: 1,
     altText: "Cover background",
   }, 0, 0, 210, 297, resolveAsset);
-  const elements = composition.elements.filter((element) => element.visible).sort((left, right) => left.zIndex - right.zIndex).map((element) => elementMarkup(policy, element, includeText, resolveAsset)).join("");
+  const elements = includeElements
+    ? composition.elements.filter((element) => element.visible).sort((left, right) => left.zIndex - right.zIndex).map((element) => elementMarkup(policy, element, includeText, resolveAsset)).join("")
+    : "";
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 210 297"><rect width="210" height="297" fill="${composition.background.color}"/>${background}${elements}</svg>`;
 }
 

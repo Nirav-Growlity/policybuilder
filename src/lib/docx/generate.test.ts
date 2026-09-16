@@ -80,25 +80,41 @@ test("custom cover is embedded as the first-page image", async () => {
   assert.deepEqual(extent?.slice(1).map(Number), [794 * 9525, 1123 * 9525], "custom cover should use the full A4 pixel canvas");
 });
 
-test("custom cover text remains an editable Word text box", async () => {
+test("custom cover keeps background and authored layers separate in Word", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.company.name = "Editable Cover Ltd";
-  policy.company.companyLogo = `data:image/svg+xml;base64,${Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40"><rect width="120" height="40" fill="#126845"/></svg>').toString("base64")}`;
+  policy.company.companyLogo = `data:image/svg+xml;base64,${svg.toString("base64")}`;
   policy.coverComposition = {
     schemaVersion: 1,
     sourceTemplateId: "standard-pack",
     background: { color: "#FFFFFF", fit: "cover", focalPoint: { x: 50, y: 50 } },
     elements: [
       { id: "logo", type: "logo", x: 20, y: 20, width: 50, height: 18, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Company logo" },
-      { id: "title", type: "text", x: 20, y: 50, width: 150, height: 20, rotation: 0, opacity: 1, zIndex: 2, visible: true, locked: false, content: { kind: "binding", binding: "companyName" }, fontFamily: "Arial", fontSize: 20, color: "#123456", bold: true, italic: false, underline: false, align: "left", lineHeight: 1.2, letterSpacing: 0 },
+      { id: "photo", type: "image", x: 90, y: 20, width: 70, height: 40, rotation: 8, opacity: .75, zIndex: 2, visible: true, locked: false, assetId: `data:image/svg+xml;base64,${svg.toString("base64")}`, fit: "cover", focalPoint: { x: 35, y: 65 }, altText: "Cover photo" },
+      { id: "title", type: "text", x: 20, y: 70, width: 170, height: 40, rotation: 0, opacity: 1, zIndex: 3, visible: true, locked: false, content: { kind: "binding", binding: "companyName" }, fontFamily: "Arial", fontSize: 36, color: "#123456", bold: true, italic: false, underline: false, align: "center", lineHeight: 1.2, letterSpacing: 0 },
+      { id: "hidden", type: "text", x: 20, y: 120, width: 170, height: 20, rotation: 0, opacity: 1, zIndex: 4, visible: false, locked: false, content: { kind: "literal", text: "Hidden cover layer" }, fontFamily: "Arial", fontSize: 20, color: "#123456", bold: false, italic: false, underline: false, align: "left", lineHeight: 1.2, letterSpacing: 0 },
     ],
   };
   const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const media = Object.keys(zip.files).filter((name) => name.startsWith("word/media/") && name.endsWith(".png"));
+  const coverEntries = (await Promise.all(media.map(async (name) => {
+    const bytes = await zip.file(name)!.async("nodebuffer");
+    return { name, bytes, metadata: await sharp(bytes).metadata() };
+  }))).filter((entry) => entry.metadata.width === 2480 && entry.metadata.height === 3508);
+  assert.equal(coverEntries.length, 1, "custom cover should have one full-page background image");
+  const backgroundPixel = await sharp(coverEntries[0].bytes).extract({ left: 300, top: 300, width: 1, height: 1 }).removeAlpha().raw().toBuffer();
+  assert.ok(backgroundPixel.every((channel) => channel > 250), "cover layers should not be baked into the background image");
   const document = await zip.file("word/document.xml")!.async("string");
-  assert.doesNotMatch(document, /<undefined>/, "custom cover text must not add an invalid XML wrapper");
-  assert.match(document, /<w:txbxContent>[\s\S]*Editable Cover Ltd[\s\S]*<\/w:txbxContent>/);
-  assert.match(document, /<v:shape[^>]*type="#_x0000_t202"/);
-  assert.match(document, /<wp:anchor\b[^>]*>[\s\S]*<pic:pic\b/, "custom cover logo should remain a separate floating Word image");
+  assert.doesNotMatch(document, /<undefined>/, "custom cover layers must not add invalid XML wrappers");
+  assert.match(document, /<w:txbxContent>[\s\S]*Editable Cover Ltd[\s\S]*<\/w:txbxContent>/, "cover title should remain editable text");
+  assert.match(document, /<v:shape[^>]*type="#_x0000_t202"/, "cover title should be a Word text box");
+  assert.match(document, /text-align:center;v-text-anchor:top/, "Word text box should match the editor's centered top-aligned text");
+  assert.match(document, /<w:jc w:val="center"\/><w:ind w:left="0" w:right="0" w:firstLine="0"\//, "Word text box should have no implicit paragraph indentation");
+  assert.match(document, /mso-fit-shape-to-text:false/, "Word text box should retain its saved height");
+  assert.match(document, /Company logo/, "cover logo should remain a separate Word image");
+  assert.match(document, /Cover photo/, "cover image should remain a separate Word image");
+  assert.equal((document.match(/<wp:anchor[\s\S]*?<pic:pic[\s\S]*?<\/pic:pic>[\s\S]*?<\/wp:anchor>/g) || []).length, 3, "background, logo, and photo should be separate anchored images");
+  assert.doesNotMatch(document, /Hidden cover layer/, "hidden cover layers should not be exported");
 });
 
 test("professional focus rows keep number markers transparent like preview", async () => {

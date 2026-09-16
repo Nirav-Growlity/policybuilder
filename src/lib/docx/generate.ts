@@ -45,7 +45,7 @@ import { getCoverBindingValue } from "../cover-composition";
 import type { Policy, QuantitativeArea, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
 import { embeddedDocumentFonts } from "./document-fonts";
-import { createCoverCompositionSvg } from "../cover-renderer";
+import { createCoverCompositionSvg, wrapCoverText } from "../cover-renderer";
 
 type Typography = NonNullable<Policy["typography"]>;
 type DocBlock = Paragraph | Table;
@@ -58,6 +58,8 @@ const PAGE_HEIGHT = 16838;
 // custom cover reaches the page edges in Word just as it does in preview.
 const A4_WIDTH_PX = Math.round(A4.widthMm / 25.4 * 96);
 const A4_HEIGHT_PX = Math.round(A4.heightMm / 25.4 * 96);
+const COVER_MM_TO_PX = 96 / 25.4;
+const COVER_MM_TO_EMU = 36000;
 const geometry = new AsyncLocalStorage<number>();
 const pageMargin = () => geometry.getStore() ?? 1000;
 const contentWidth = () => PAGE_WIDTH - pageMargin() * 2;
@@ -200,9 +202,9 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
           page: { size: pageSize, ...(pageBorders ? { borders: pageBorders } : {}), margin: { top: 0, right: 0, bottom: 0, left: 0 } },
           titlePage: true,
         },
-        // Keep the full-page background and editable cover objects in one
-        // anchored paragraph. Placing the overlays after an inline full-page
-        // image makes Word flow them onto a second, otherwise blank page.
+        // Keep the page artwork behind the independently editable cover
+        // layers. All objects share one anchored paragraph so Word does not
+        // flow overlays onto a second page.
         children: [customCoverParagraph(customCover, customCoverElements)],
       },
       {
@@ -1293,7 +1295,7 @@ export async function customCoverImage(policy: Policy, model: DocumentRenderMode
   const composition = model.cover.composition;
   if (!composition) return null;
   const svg = createCoverCompositionSvg(policy, composition, {
-    includeText: includeElements,
+    includeElements,
     width: 2480,
     height: 3508,
     resolveAsset: (source) => source?.startsWith("data:image/") ? source : undefined,
@@ -1324,75 +1326,111 @@ function customCoverParagraph(background: NonNullable<LogoImage>, overlays: Para
   });
 }
 
+type EditableCoverMediaElement = Extract<NonNullable<DocumentRenderModel["cover"]["composition"]>["elements"][number], { type: "image" | "logo" }>;
+type EditableCoverTextElement = Extract<NonNullable<DocumentRenderModel["cover"]["composition"]>["elements"][number], { type: "text" }>;
+
 async function buildEditableCustomCoverElements(policy: Policy, model: DocumentRenderModel): Promise<ParagraphChild[]> {
   const composition = model.cover.composition;
   if (!composition) return [];
   const elements: ParagraphChild[] = [];
-  for (const element of composition.elements.filter((item) => item.visible)) {
-    const x = Math.round(element.x * 36000);
-    const y = Math.round(element.y * 36000);
-    const width = Math.max(1, Math.round(element.width * 96 / 25.4));
-    const height = Math.max(1, Math.round(element.height * 96 / 25.4));
-    const floating = {
-      horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, offset: x },
-      verticalPosition: { relative: VerticalPositionRelativeFrom.PAGE, offset: y },
-      allowOverlap: true,
-      lockAnchor: true,
-      layoutInCell: false,
-      wrap: { type: TextWrappingType.NONE },
-      margins: { top: 0, bottom: 0, left: 0, right: 0 },
-      // Keep every editable overlay above the background drawing in Word's
-      // floating-object stacking order.
-      zIndex: 100 + Math.max(1, element.zIndex),
-    } as const;
+  for (const element of composition.elements.filter((item) => item.visible).sort((left, right) => left.zIndex - right.zIndex)) {
     if (element.type === "text") {
       const value = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
       elements.push(editableCoverTextBox(element, value) as unknown as ParagraphChild);
       continue;
     }
     const source = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
-    const image = await logoFromDataUrl(source);
+    const image = await coverLayerImage(source, element);
     if (!image) continue;
     elements.push(new ImageRun({
       data: image.data,
       type: image.type,
-      transformation: { width, height, rotation: element.rotation },
-      floating,
+      transformation: {
+        width: Math.max(1, Math.round(element.width * COVER_MM_TO_PX)),
+        height: Math.max(1, Math.round(element.height * COVER_MM_TO_PX)),
+        rotation: element.rotation,
+      },
+      floating: coverElementFloating(element),
       altText: { title: element.altText, description: element.altText, name: element.altText },
     }));
   }
   return elements;
 }
 
-function editableCoverTextBox(element: Extract<NonNullable<DocumentRenderModel["cover"]["composition"]>["elements"][number], { type: "text" }>, value: string) {
-  const escapeXml = (text: string) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&apos;");
-  const pt = (mm: number) => `${(mm * 72 / 25.4).toFixed(2)}pt`;
+function coverElementFloating(element: EditableCoverMediaElement) {
+  return {
+    horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, offset: Math.round(element.x * COVER_MM_TO_EMU) },
+    verticalPosition: { relative: VerticalPositionRelativeFrom.PAGE, offset: Math.round(element.y * COVER_MM_TO_EMU) },
+    allowOverlap: true,
+    lockAnchor: true,
+    layoutInCell: false,
+    wrap: { type: TextWrappingType.NONE },
+    margins: { top: 0, bottom: 0, left: 0, right: 0 },
+    zIndex: 100 + Math.max(1, element.zIndex),
+  } as const;
+}
+
+async function coverLayerImage(source: string | undefined, element: EditableCoverMediaElement): Promise<LogoImage> {
+  const image = await logoFromDataUrl(source);
+  if (!image) return null;
+  const width = Math.max(1, Math.round(element.width * COVER_MM_TO_PX));
+  const height = Math.max(1, Math.round(element.height * COVER_MM_TO_PX));
+  let rendered = sharp(image.data)
+    .ensureAlpha()
+    .resize({
+      width,
+      height,
+      fit: element.fit,
+      position: coverImageGravity(element.focalPoint.x, element.focalPoint.y),
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    });
+  if (element.opacity < 1) {
+    const alpha = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><rect width="100%" height="100%" fill="rgba(255,255,255,${element.opacity})"/></svg>`);
+    rendered = rendered.composite([{ input: alpha, blend: "dest-in" }]);
+  }
+  return { data: await rendered.png().toBuffer(), type: "png" };
+}
+
+function coverImageGravity(x: number, y: number): string {
+  const horizontal = x <= 33 ? "west" : x >= 67 ? "east" : "centre";
+  const vertical = y <= 33 ? "north" : y >= 67 ? "south" : "centre";
+  if (horizontal === "centre" && vertical === "centre") return "centre";
+  if (horizontal === "centre") return vertical;
+  if (vertical === "centre") return horizontal;
+  return `${vertical}${horizontal}`;
+}
+
+function editableCoverTextBox(element: EditableCoverTextElement, value: string) {
+  const escapeXml = (text: string) => text.replace(/[&<>\"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[character]!);
+  const points = (millimetres: number) => `${(millimetres * 72 / 25.4).toFixed(2)}pt`;
   const color = documentHex(element.color);
   const font = escapeXml(element.fontFamily);
-  const lines = value.split(/\r?\n/).slice(0, 40);
+  const lines = wrapCoverText(value, element.width, element.fontSize, element.letterSpacing);
   const runs = lines.map((line, index) => `${index ? "<w:br/>" : ""}<w:t xml:space="preserve">${escapeXml(line)}</w:t>`).join("");
-  const runProperties = `<w:rPr><w:rFonts w:ascii="${font}" w:cs="${font}" w:eastAsia="${font}" w:hAnsi="${font}"/>${element.bold ? "<w:b/><w:bCs/>" : ""}${element.italic ? "<w:i/><w:iCs/>" : ""}${element.underline ? '<w:u w:val="single"/>' : ""}<w:color w:val="${color}"/><w:sz w:val="${Math.round(element.fontSize * 2)}"/><w:szCs w:val="${Math.round(element.fontSize * 2)}"/></w:rPr>`;
+  const characterSpacing = element.letterSpacing ? `<w:spacing w:val="${Math.round(element.letterSpacing * 20)}"/>` : "";
+  const runProperties = `<w:rPr><w:rFonts w:ascii="${font}" w:cs="${font}" w:eastAsia="${font}" w:hAnsi="${font}"/>${element.bold ? "<w:b/><w:bCs/>" : ""}${element.italic ? "<w:i/><w:iCs/>" : ""}${element.underline ? '<w:u w:val="single"/>' : ""}<w:color w:val="${color}"/><w:sz w:val="${Math.round(element.fontSize * 2)}"/><w:szCs w:val="${Math.round(element.fontSize * 2)}"/>${characterSpacing}</w:rPr>`;
   const alignment = element.align === "center" ? "center" : element.align === "right" ? "right" : "left";
   const style = [
     "position:absolute",
-    `margin-left:${pt(element.x)}`,
-    `margin-top:${pt(element.y)}`,
-    `width:${pt(element.width)}`,
-    `height:${pt(element.height)}`,
+    `margin-left:${points(element.x)}`,
+    `margin-top:${points(element.y)}`,
+    `width:${points(element.width)}`,
+    `height:${points(element.height)}`,
     `rotation:${element.rotation}`,
     `z-index:${100 + Math.max(1, element.zIndex)}`,
+    `opacity:${Math.round(element.opacity * 100)}%`,
+    `text-align:${alignment}`,
+    "v-text-anchor:top",
     "mso-position-horizontal-relative:page",
     "mso-position-vertical-relative:page",
     "mso-wrap-style:none",
+    "mso-fit-shape-to-text:false",
   ].join(";");
-  const xml = `<w:r><w:pict><v:shape id="cover-text-${escapeXml(element.id)}" type="#_x0000_t202" filled="f" stroked="f" style="${style}"><v:textbox inset="0,0,0,0"><w:txbxContent><w:p><w:pPr><w:jc w:val="${alignment}"/><w:spacing w:before="0" w:after="0" w:line="${Math.round(240 * element.lineHeight)}"/></w:pPr><w:r>${runProperties}${runs}</w:r></w:p></w:txbxContent></v:textbox></v:shape></w:pict></w:r>`;
-  // docx's fromXmlString currently parses the XML fragment into a synthetic
-  // wrapper whose rootKey is undefined. Attach its actual w:r child instead
-  // of serializing that wrapper as an invalid <undefined> element.
+  const xml = `<w:r><w:pict><v:shape id="cover-text-${escapeXml(element.id)}" type="#_x0000_t202" filled="f" stroked="f" style="${style}"><v:textbox inset="0,0,0,0" style="mso-fit-shape-to-text:false"><w:txbxContent><w:p><w:pPr><w:jc w:val="${alignment}"/><w:ind w:left="0" w:right="0" w:firstLine="0"/><w:spacing w:before="0" w:after="0" w:line="${Math.round(240 * element.lineHeight)}" w:lineRule="auto"/></w:pPr><w:r>${runProperties}${runs}</w:r></w:p></w:txbxContent></v:textbox></v:shape></w:pict></w:r>`;
   const imported = ImportedXmlComponent.fromXmlString(xml) as unknown as { root?: unknown[] };
   const root = imported.root?.[0];
   if (!root) throw new Error("Unable to import editable cover text box XML");
-  return root as ParagraphChild;
+  return root;
 }
 
 function pageBackgroundParagraph(model: DocumentRenderModel) {

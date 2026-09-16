@@ -139,3 +139,20 @@ test("cover preview keeps edited text in the same browser typography box as the 
   assert.doesNotMatch(previewMarkup, /data-cover-renderer="shared-svg"/);
   assert.match(previewMarkup, /font-family:Bell MT/);
 });
+
+test("shared cover renderer wraps long text inside the saved element box", () => {
+  const policy = makeSamplePolicy();
+  const composition = createInitialCoverComposition(policy);
+  const edited = {
+    ...composition,
+    elements: composition.elements.map((element) => element.id === "cover-policy-title"
+      ? { ...element, width: 91, height: 60, content: { kind: "literal" as const, text: "Sustainable Procurement Policy" } }
+      : element),
+  };
+
+  const svg = createCoverCompositionSvg(policy, edited);
+
+  assert.match(svg, /<clipPath id="cover-text-clip-cover-policy-title"><rect width="91" height="60" \/><\/clipPath>/);
+  assert.match(svg, /<tspan x="0" dy="0">Sustainable<\/tspan><tspan x="0" dy="/);
+  assert.match(svg, /<tspan x="0" dy="[^"]+">Policy<\/tspan>/);
+});

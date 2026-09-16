@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
         if (auth) resolved = await resolveCoverAssets(policy, auth.organization.id);
       } catch { /* asset-free exports remain available in local/demo mode */ }
     }
-    if (policy.coverComposition && !auth && (Boolean(policy.coverComposition.background.assetId && !policy.coverComposition.background.assetId.startsWith("data:")) || policy.coverComposition.elements.some((element) => element.type === "image" && !element.assetId.startsWith("data:")))) throw new Error("Cover assets require authentication");
+    if (policy.coverComposition && !auth && (Boolean(policy.coverComposition.background.assetId && !policy.coverComposition.background.assetId.startsWith("data:")) || Boolean(policy.company.companyLogo && !policy.company.companyLogo.startsWith("data:")) || policy.coverComposition.elements.some((element) => (element.type === "image" || element.type === "logo") && Boolean(element.assetId && !element.assetId.startsWith("data:"))))) throw new Error("Cover assets require authentication");
     const buf = await generateDocx(normalizePolicyQuantitative(resolved));
     return new NextResponse(new Uint8Array(buf), {
       status: 200,

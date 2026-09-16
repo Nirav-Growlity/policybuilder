@@ -37,8 +37,12 @@ export async function resolveCoverAssets(policy: Policy, orgId: number): Promise
     return asset ? `data:${asset.mime_type};base64,${asset.content.toString("base64")}` : undefined;
   };
   const backgroundAsset = await resolve(composition.background.assetId);
-  const elements = await Promise.all(composition.elements.map(async (element) => element.type === "image" ? { ...element, assetId: (await resolve(element.assetId)) || element.assetId } : element));
-  return { ...policy, coverComposition: { ...composition, background: { ...composition.background, assetId: backgroundAsset }, elements } };
+  const companyLogo = await resolve(policy.company.companyLogo);
+  const elements = await Promise.all(composition.elements.map(async (element) => {
+    if (element.type !== "image" && element.type !== "logo") return element;
+    return { ...element, ...(element.assetId ? { assetId: (await resolve(element.assetId)) || element.assetId } : {}) };
+  }));
+  return { ...policy, company: { ...policy.company, companyLogo }, coverComposition: { ...composition, background: { ...composition.background, assetId: backgroundAsset }, elements } };
 }
 
 export async function listCoverTemplates(orgId: number) {
