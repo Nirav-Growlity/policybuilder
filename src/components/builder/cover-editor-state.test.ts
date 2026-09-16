@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { normalizeCoverComposition } from "@/lib/cover-composition";
-import { coverEditorReducer, coverPointSizeToPixels, createCoverEditorState, detachCoverText, normalizeCoverForSave, resizeCoverElement, screenToCover, snapElementPosition, updateCoverElement } from "./cover-editor-state";
+import { alignCoverElement, coverEditorReducer, coverPointSizeToPixels, createCoverEditorState, detachCoverText, normalizeCoverForSave, resizeCoverElement, screenToCover, snapElementPosition, updateCoverElement } from "./cover-editor-state";
 
 const composition = normalizeCoverComposition({
   schemaVersion: 1,
@@ -66,4 +66,12 @@ test("element positions snap to the page center", () => {
   const snapped = snapElementPosition(composition, element, { x: 73, y: 40 });
   assert.equal(snapped.x, 75);
   assert.deepEqual(snapped.guides, [{ axis: "x", value: 105 }]);
+});
+
+test("vertical page alignment preserves the existing horizontal position", () => {
+  const moved = updateCoverElement(composition, "title", { x: 61, y: 93 });
+  const aligned = alignCoverElement(moved, "title", undefined, "bottom");
+  const element = aligned.elements[0];
+  assert.equal(element.x, 61);
+  assert.equal(element.y, 277);
 });

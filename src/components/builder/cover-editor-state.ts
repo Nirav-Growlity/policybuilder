@@ -59,6 +59,15 @@ export function updateCoverElement(composition: CoverComposition, id: string, pa
   }) || composition;
 }
 
+export function alignCoverElement(composition: CoverComposition, id: string, horizontal?: "left" | "center" | "right", vertical?: "top" | "middle" | "bottom"): CoverComposition {
+  const element = composition.elements.find((candidate) => candidate.id === id);
+  if (!element) return composition;
+  const patch: Partial<CoverElement> = {};
+  if (horizontal) patch.x = horizontal === "left" ? 0 : horizontal === "right" ? COVER_WIDTH_MM - element.width : (COVER_WIDTH_MM - element.width) / 2;
+  if (vertical) patch.y = vertical === "top" ? 0 : vertical === "bottom" ? COVER_HEIGHT_MM - element.height : (COVER_HEIGHT_MM - element.height) / 2;
+  return Object.keys(patch).length ? updateCoverElement(composition, id, patch) : composition;
+}
+
 /** Apply a complete geometry update while preserving media aspect ratio when requested. */
 export function resizeCoverElement(composition: CoverComposition, id: string, next: Pick<CoverElement, "x" | "y" | "width" | "height">): CoverComposition {
   const element = composition.elements.find((candidate) => candidate.id === id);
