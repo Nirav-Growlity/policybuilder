@@ -226,6 +226,6 @@ export function createPrintDocument(markup: string, policy: Policy, topMargin = 
        preview-only cover inset so titles and control rows use that same width. */
     [data-collection="professional"] :is(.professional-cover, .editorial-policy-cover) { padding-inline:0 !important; }
     [data-collection="professional"] .policy-section-heading { display:flex; gap:4mm; align-items:baseline; }
-    [data-collection="professional"] .policy-section-heading > span { display:block; font-size:10pt; color:var(--doc-muted); }
+    [data-collection="professional"] .policy-section:not(.frame-numbered-rail):not(.frame-editorial-margin) .policy-section-heading > span { display:block; font-size:10pt; color:var(--doc-muted); }
   </style></body></html>`;
 }
