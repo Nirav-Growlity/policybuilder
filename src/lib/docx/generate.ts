@@ -1419,14 +1419,13 @@ function editableCoverTextBox(element: EditableCoverTextElement, value: string) 
     `rotation:${element.rotation}`,
     `z-index:${100 + Math.max(1, element.zIndex)}`,
     `opacity:${Math.round(element.opacity * 100)}%`,
-    `text-align:${alignment}`,
-    "v-text-anchor:top",
+    "mso-position-horizontal:absolute",
     "mso-position-horizontal-relative:page",
+    "mso-position-vertical:absolute",
     "mso-position-vertical-relative:page",
     "mso-wrap-style:none",
-    "mso-fit-shape-to-text:false",
   ].join(";");
-  const xml = `<w:r><w:pict><v:shape id="cover-text-${escapeXml(element.id)}" type="#_x0000_t202" filled="f" stroked="f" style="${style}"><v:textbox inset="0,0,0,0" style="mso-fit-shape-to-text:false"><w:txbxContent><w:p><w:pPr><w:jc w:val="${alignment}"/><w:ind w:left="0" w:right="0" w:firstLine="0"/><w:spacing w:before="0" w:after="0" w:line="${Math.round(240 * element.lineHeight)}" w:lineRule="auto"/></w:pPr><w:r>${runProperties}${runs}</w:r></w:p></w:txbxContent></v:textbox></v:shape></w:pict></w:r>`;
+  const xml = `<w:r><w:pict><v:shape id="cover-text-${escapeXml(element.id)}" type="#_x0000_t202" filled="f" stroked="f" o:allowincell="f" style="${style}"><v:textbox inset="0,0,0,0" style="mso-fit-shape-to-text:true;v-text-anchor:top"><w:txbxContent><w:p><w:pPr><w:jc w:val="${alignment}"/><w:ind w:left="0" w:right="0" w:firstLine="0"/><w:spacing w:before="0" w:after="0" w:line="${Math.round(240 * element.lineHeight)}" w:lineRule="auto"/></w:pPr><w:r>${runProperties}${runs}</w:r></w:p></w:txbxContent></v:textbox><w10:wrap type="none" anchorx="page" anchory="page"/></v:shape></w:pict></w:r>`;
   const imported = ImportedXmlComponent.fromXmlString(xml) as unknown as { root?: unknown[] };
   const root = imported.root?.[0];
   if (!root) throw new Error("Unable to import editable cover text box XML");

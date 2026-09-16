@@ -107,14 +107,55 @@ test("custom cover keeps background and authored layers separate in Word", async
   const document = await zip.file("word/document.xml")!.async("string");
   assert.doesNotMatch(document, /<undefined>/, "custom cover layers must not add invalid XML wrappers");
   assert.match(document, /<w:txbxContent>[\s\S]*Editable Cover Ltd[\s\S]*<\/w:txbxContent>/, "cover title should remain editable text");
-  assert.match(document, /<v:shape[^>]*type="#_x0000_t202"/, "cover title should be a Word text box");
-  assert.match(document, /text-align:center;v-text-anchor:top/, "Word text box should match the editor's centered top-aligned text");
+  assert.match(document, /v-text-anchor:top/, "Word text box should match the editor's top-aligned text");
   assert.match(document, /<w:jc w:val="center"\/><w:ind w:left="0" w:right="0" w:firstLine="0"\//, "Word text box should have no implicit paragraph indentation");
-  assert.match(document, /mso-fit-shape-to-text:false/, "Word text box should retain its saved height");
+  assert.match(document, /mso-fit-shape-to-text:true/, "Word text box should fit shape to text to avoid clipping");
+  assert.doesNotMatch(document, /<v:shape[^>]*style="[^"]*text-align:/, "Word shape style must not include text-align as it causes horizontal displacement");
   assert.match(document, /Company logo/, "cover logo should remain a separate Word image");
   assert.match(document, /Cover photo/, "cover image should remain a separate Word image");
   assert.equal((document.match(/<wp:anchor[\s\S]*?<pic:pic[\s\S]*?<\/pic:pic>[\s\S]*?<\/wp:anchor>/g) || []).length, 3, "background, logo, and photo should be separate anchored images");
   assert.doesNotMatch(document, /Hidden cover layer/, "hidden cover layers should not be exported");
+});
+
+test("custom cover text boxes encode horizontal alignment in the VML textbox", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "sustainable-procurement");
+  policy.coverComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "standard-pack",
+    background: { color: "#FFFFFF", fit: "cover", focalPoint: { x: 50, y: 50 } },
+    elements: [{
+      id: "policy-title",
+      type: "text",
+      x: 20,
+      y: 70,
+      width: 170,
+      height: 60,
+      rotation: 0,
+      opacity: 1,
+      zIndex: 1,
+      visible: true,
+      locked: false,
+      content: { kind: "binding", binding: "policyTitle" },
+      fontFamily: "Georgia",
+      fontSize: 36,
+      color: "#123456",
+      bold: false,
+      italic: false,
+      underline: false,
+      align: "center",
+      lineHeight: 1.16,
+      letterSpacing: 0,
+    }],
+  };
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+
+  assert.match(document, /<w:jc w:val="center"\/>/, "Word paragraphs should retain the same horizontal alignment");
+  assert.match(document, /<v:shape[^>]*o:allowincell="f"[^>]*style="[^"]*position:absolute;[^\"]*margin-left:56\.69pt;[^\"]*margin-top:198\.43pt;/, "Word VML text boxes should use absolute page positioning with saved coordinates");
+  assert.match(document, /<v:shape[^>]*style="[^\"]*mso-position-horizontal:absolute;[^\"]*mso-position-horizontal-relative:page;[^\"]*mso-position-vertical:absolute;[^\"]*mso-position-vertical-relative:page;/, "Word VML text boxes should be anchored to the page");
+  assert.doesNotMatch(document, /<v:shape[^>]*style="[^"]*text-align:/, "VML shape style should not include text-align as it causes horizontal double-offset in Word");
+  assert.match(document, /<v:textbox[^>]*style="[^"]*mso-fit-shape-to-text:true[^"]*"/, "Word VML text boxes should fit shape to text to prevent vertical clipping");
+  assert.match(document, /<w10:wrap type="none" anchorx="page" anchory="page"\/>/, "Word VML text boxes should not participate in document flow");
 });
 
 test("professional focus rows keep number markers transparent like preview", async () => {
