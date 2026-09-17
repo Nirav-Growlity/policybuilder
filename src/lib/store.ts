@@ -37,6 +37,7 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
     lastReviewDate: "",
     reviewDate: "",
     approver: "",
+    reviewerDesignations: [],
   },
   standards: [],
   declaration: { preface: "", declaration: "", scope: "" },

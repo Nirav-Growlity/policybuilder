@@ -33,23 +33,23 @@ import {
 } from "docx";
 import { AsyncLocalStorage } from "node:async_hooks";
 import { A4, pageMarginMm } from "../page-geometry";
-import { getPolicyDocumentTheme, logoScaleFactor } from "../document-themes";
+import { getPolicyDocumentTheme, runningLogoFit } from "../document-themes";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import { buildDocumentRenderModel, getRunningHeaderBrand, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
 import { documentHex, type DocumentThemeDefinition } from "../document-themes";
 import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
-import { normalizePolicyQuantitative } from "../quantitative";
+import { formatQuantitativeTargetSentence, normalizePolicyQuantitative } from "../quantitative";
 import { getCoverBindingValue } from "../cover-composition";
-import type { Policy, QuantitativeArea, RichTextBlock } from "../types";
+import type { Policy, QuantitativeArea, QuantitativeTarget, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
 import { embeddedDocumentFonts } from "./document-fonts";
 import { createCoverCompositionSvg, wrapCoverText } from "../cover-renderer";
 
 type Typography = NonNullable<Policy["typography"]>;
 type DocBlock = Paragraph | Table;
-type LogoImage = { data: Uint8Array; type: "png" | "jpg" } | null;
+type LogoImage = { data: Uint8Array; type: "png" | "jpg"; width: number; height: number } | null;
 
 const PAGE_WIDTH = 11906;
 const PAGE_HEIGHT = 16838;
@@ -1000,15 +1000,15 @@ function renderQuantitative(areas: QuantitativeArea[], section: DocumentRenderSe
   if (model.dataTreatment === "clean-bullets") {
     return [intro, ...targets.map((target, index) => entryRow(
       String(index + 1).padStart(2, "0"),
-      `${target.area}\n${target.target}\n${target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Due ${target.deadline || "-"}`}`,
+      `${target.area}\n${formatQuantitativeTargetSentence(target)}${target.subtopics?.length ? `\n${target.subtopics.map((item) => `• ${item}`).join("\n")}` : ""}\n${target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Achievement ${target.deadline || "-"}`}`,
       availableWidth,
       model.theme,
       model.theme.layout.pageFrame === "editorial-margin",
     ))];
   }
   return [intro, dataTable(
-    ["#", "Focus Area", "Target", "Baseline", "Deadline", "Reporting"],
-    targets.map((target, index) => [String(index + 1), target.area, target.target, target.reportingFrequency === "Annually" ? "-" : target.baseline, target.reportingFrequency === "Annually" ? "-" : target.deadline, target.reportingFrequency || "Target period"]),
+    ["#", "Focus Area", "Target", "Baseline", "Achievement year", "Reporting"],
+    targets.map((target, index) => [String(index + 1), target.area, [formatQuantitativeTargetSentence(target), ...(target.subtopics || []).map((item) => `• ${item}`)].join("\n"), target.reportingFrequency === "Annually" ? "-" : target.baseline, target.reportingFrequency === "Annually" ? "-" : target.deadline, target.reportingFrequency || "Target period"]),
     scaledWidths([450, 1800, 3300, 1250, 1250, 1856], availableWidth), model.theme,
   )];
 }
@@ -1058,7 +1058,7 @@ function renderCustomBlocks(blocks: RichTextBlock[], model: DocumentRenderModel,
   });
 }
 
-function targetBand(target: { area: string; target: string; baseline: string; deadline: string; reportingFrequency?: string }, index: number, model: DocumentRenderModel, availableWidth: number) {
+function targetBand(target: QuantitativeTarget & { area: string }, index: number, model: DocumentRenderModel, availableWidth: number) {
   const numberWidth = 750;
   const metaWidth = 1900;
   const bodyWidth = availableWidth - numberWidth - metaWidth;
@@ -1066,7 +1066,8 @@ function targetBand(target: { area: string; target: string; baseline: string; de
     tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.colors.primary), size: 30, font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft) }),
     tableCell([
       new Paragraph({ spacing: { after: 55 }, children: [new TextRun({ text: target.area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] }),
-      new Paragraph({ children: [new TextRun({ text: target.target, size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] }),
+      new Paragraph({ children: [new TextRun({ text: formatQuantitativeTargetSentence(target), size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] }),
+      ...(target.subtopics || []).map((item) => listParagraph(item, "bullet", model.typography, model.theme)),
     ], bodyWidth, { fill: documentHex(model.theme.colors.soft), borders: { left: border(documentHex(model.theme.colors.line), 5), right: border(documentHex(model.theme.colors.line), 5) } }),
     tableCell([
       new Paragraph({ children: [new TextRun({ text: target.reportingFrequency === "Annually" ? "REPORTED ANNUALLY" : target.deadline || "TARGET PERIOD", bold: true, size: 14, color: documentHex(model.theme.colors.ink), font: model.typography.fontFamily })] }),
@@ -1075,14 +1076,15 @@ function targetBand(target: { area: string; target: string; baseline: string; de
   ] })], [numberWidth, bodyWidth, metaWidth]);
 }
 
-function journalTarget(target: { area: string; target: string; baseline: string; deadline: string; reportingFrequency?: string }, model: DocumentRenderModel) {
+function journalTarget(target: QuantitativeTarget & { area: string }, model: DocumentRenderModel) {
   return new Paragraph({
     border: { top: border(documentHex(model.theme.colors.line), 5) },
     spacing: { before: 90, after: 120 },
     children: [
       new TextRun({ text: `${target.area}\n`, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
-      new TextRun({ text: `${target.target}\n`, size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily }),
-      new TextRun({ text: target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} - Due ${target.deadline || "-"}`, italics: true, color: documentHex(model.theme.colors.muted), size: 16, font: model.typography.fontFamily }),
+      new TextRun({ text: `${formatQuantitativeTargetSentence(target)}\n`, size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily }),
+      ...(target.subtopics || []).flatMap((item) => [new TextRun({ text: `• ${item}\n`, color: documentHex(model.theme.colors.muted), size: 15, font: model.typography.fontFamily })]),
+      new TextRun({ text: target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} - Achievement ${target.deadline || "-"}`, italics: true, color: documentHex(model.theme.colors.muted), size: 16, font: model.typography.fontFamily }),
     ],
   });
 }
@@ -1223,8 +1225,9 @@ function buildHeader(model: DocumentRenderModel, logo: LogoImage, alignment: typ
   const children: ParagraphChild[] = [];
   const brand = getRunningHeaderBrand({ name: model.cover.companyName, companyLogo: model.cover.logo });
   if (brand.kind === "logo" && logo) {
-    const logoScale = logoScaleFactor(theme.logoScale);
-    children.push(new ImageRun({ data: logo.data, type: logo.type, transformation: { width: Math.round(72 * logoScale), height: Math.round(34 * logoScale) } }));
+    const logoFit = runningLogoFit(theme.logoScale);
+    const scale = Math.min(1, logoFit.widthPx / logo.width, logoFit.heightPx / logo.height);
+    children.push(new ImageRun({ data: logo.data, type: logo.type, transformation: { width: Math.max(1, Math.round(logo.width * scale)), height: Math.max(1, Math.round(logo.height * scale)) } }));
   } else if (brand.kind === "name") {
     children.push(new TextRun({ text: brand.text, bold: true, color: documentHex(theme.colors.muted), size: 14, characterSpacing: 20, font: typography.fontFamily }));
   }
@@ -1243,16 +1246,20 @@ function buildPageBackgroundHeader(model: DocumentRenderModel) {
 function buildFooter(model: DocumentRenderModel) {
   const { theme, typography } = model;
   const color = documentHex(theme.colors.muted);
-  const footerAlignment = theme.layout.professionalVariant === "institutional" ? AlignmentType.CENTER : AlignmentType.LEFT;
-  return new Footer({ children: [new Paragraph({
-    alignment: footerAlignment,
-    border: { top: border(documentHex(theme.colors.line), 5) },
-    spacing: { before: 80 },
-    children: [
-      new TextRun({ text: `Effective ${model.footer.effectiveDate}   -   Revision ${model.footer.revision}   -   Page `, color, size: 14, italics: theme.layout.runningFurniture === "outer-folio", font: typography.fontFamily }),
-      new TextRun({ children: [PageNumber.CURRENT], color, size: 14, font: typography.fontFamily }),
-    ],
-  })] });
+  const width = contentWidth();
+  const columns = [Math.floor(width * .3), Math.floor(width * .4), width - Math.floor(width * .3) - Math.floor(width * .4)];
+  const cell = (label: string, value: ParagraphChild[], alignment: typeof AlignmentType[keyof typeof AlignmentType], cellWidth: number) => tableCell([
+    new Paragraph({ alignment, border: { top: border(documentHex(theme.colors.line), 5) }, spacing: { before: 80 }, children: [
+      new TextRun({ text: `${label} `, bold: true, color: documentHex(theme.colors.primary), size: 12, font: typography.fontFamily }),
+      ...value,
+    ] }),
+  ], cellWidth, { margins: { top: 80, bottom: 20, left: 40, right: 40 } });
+  const reviewInfo = [model.footer.reviewDate, ...model.footer.reviewerDesignations].filter(Boolean).join(" · ");
+  return new Footer({ children: [fixedTable([new TableRow({ children: [
+    cell("Document No.", [new TextRun({ text: model.footer.documentNumber, color, size: 12, font: typography.fontFamily })], AlignmentType.LEFT, columns[0]),
+    cell("Review", [new TextRun({ text: reviewInfo, color, size: 12, font: typography.fontFamily })], AlignmentType.CENTER, columns[1]),
+    cell("Page", [new TextRun({ text: " ", color, size: 12, font: typography.fontFamily }), new TextRun({ children: [PageNumber.CURRENT], color, size: 12, font: typography.fontFamily })], AlignmentType.RIGHT, columns[2]),
+  ] })], columns, { width })] });
 }
 
 function fixedTable(rows: TableRow[], columnWidths: number[], options: { width?: number; alignment?: typeof AlignmentType[keyof typeof AlignmentType]; cellSpacing?: number } = {}) {
@@ -1300,7 +1307,7 @@ export async function customCoverImage(policy: Policy, model: DocumentRenderMode
     height: 3508,
     resolveAsset: (source) => source?.startsWith("data:image/") ? source : undefined,
   });
-  return { data: await sharp(Buffer.from(svg)).png().toBuffer(), type: "png" };
+  return { data: await sharp(Buffer.from(svg)).png().toBuffer(), type: "png", width: 2480, height: 3508 };
 }
 
 function customCoverParagraph(background: NonNullable<LogoImage>, overlays: ParagraphChild[]) {
@@ -1388,7 +1395,7 @@ async function coverLayerImage(source: string | undefined, element: EditableCove
     const alpha = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><rect width="100%" height="100%" fill="rgba(255,255,255,${element.opacity})"/></svg>`);
     rendered = rendered.composite([{ input: alpha, blend: "dest-in" }]);
   }
-  return { data: await rendered.png().toBuffer(), type: "png" };
+  return { data: await rendered.png().toBuffer(), type: "png", width, height };
 }
 
 function coverImageGravity(x: number, y: number): string {
@@ -1540,7 +1547,10 @@ async function logoFromDataUrl(source?: string): Promise<LogoImage> {
   const format = match[1].toLowerCase();
   const data = Buffer.from(match[2], "base64");
   if (format === "webp" || format === "svg+xml") {
-    return { data: await sharp(data).png().toBuffer(), type: "png" };
+    const converted = await sharp(data).png().toBuffer();
+    const metadata = await sharp(converted).metadata();
+    return { data: converted, type: "png", width: metadata.width || 106, height: metadata.height || 30 };
   }
-  return { data, type: format === "png" ? "png" : "jpg" };
+  const metadata = await sharp(data).metadata();
+  return { data, type: format === "png" ? "png" : "jpg", width: metadata.width || 106, height: metadata.height || 30 };
 }

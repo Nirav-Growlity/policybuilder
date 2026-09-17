@@ -171,3 +171,33 @@ test("professional focus rows keep number markers transparent like preview", asy
   assert.match(row, />01<\/w:t>/);
   assert.doesNotMatch(row, /w:fill="/, "professional focus marker should not render as a filled blue cell");
 });
+
+test("Word footer aligns document number, review ownership, and page number", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.company.docNum = "ENV-001";
+  policy.company.reviewDate = "2027-01-14";
+  policy.company.reviewerDesignations = ["Environmental Manager"];
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const footerFiles = Object.keys(zip.files).filter((name) => name.startsWith("word/footer") && name.endsWith(".xml"));
+  assert.ok(footerFiles.length, "expected a Word footer");
+  const footer = await zip.file(footerFiles[0])!.async("string");
+  assert.match(footer, /Document No\./);
+  assert.match(footer, /ENV-001/);
+  assert.match(footer, /Review/);
+  assert.match(footer, /Environmental Manager/);
+  assert.match(footer, /w:instrText[^>]*>PAGE<\/w:instrText>/);
+});
+
+test("small Word logos are contained without being upscaled", async () => {
+  const tiny = await sharp({ create: { width: 20, height: 10, channels: 4, background: { r: 18, g: 104, b: 69, alpha: 1 } } }).png().toBuffer();
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.company.companyLogo = `data:image/png;base64,${tiny.toString("base64")}`;
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const relationships = await zip.file("word/_rels/document.xml.rels")!.async("string");
+  const id = document.match(/<w:headerReference w:type="default" r:id="([^"]+)"/)![1];
+  const target = relationships.match(new RegExp(`<Relationship[^>]*Id="${id}"[^>]*Target="([^"]+)"`))![1];
+  const header = await zip.file(`word/${target}`)!.async("string");
+  const inlineExtent = header.slice(header.indexOf("<wp:inline")).match(/<wp:extent[^>]*cx="(\d+)"[^>]*cy="(\d+)"/);
+  assert.deepEqual(inlineExtent?.slice(1).map(Number), [20 * 9525, 10 * 9525]);
+});

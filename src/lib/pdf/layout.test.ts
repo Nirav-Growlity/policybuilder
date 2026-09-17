@@ -27,10 +27,12 @@ for (const direction of ["vertical", "horizontal", "diagonal"] as const) {
 }
 
 for (const { theme, withLogo } of DOCUMENT_THEMES.flatMap(theme => [false, true].map(withLogo => ({ theme, withLogo })))) {
-  test(`${theme.id}${withLogo ? " with large logo" : ""}: cover stays on page one and revision is separate from page numbers`, async () => {
+  test(`${theme.id}${withLogo ? " with large logo" : ""}: cover stays on page one and footer controls remain separated`, async () => {
     const policy = templatePreviewPolicy(theme.id, "labour-human-rights");
+    policy.company.docNum = "DOC-CHECK";
     policy.company.revNum = "REV-CHECK";
     policy.company.reviewDate = "REVIEW-CHECK";
+    policy.company.reviewerDesignations = ["Environmental Manager"];
     policy.sdgDisplay = "tiles";
     policy.sdgs = [3, 6, 7, 12, 13, 14, 15, 17];
     policy.showTableOfContents = true;
@@ -52,9 +54,13 @@ for (const { theme, withLogo } of DOCUMENT_THEMES.flatMap(theme => [false, true]
         const page = await pdf.getPage(number);
         const content = await page.getTextContent();
         const text = content.items.filter(item => "str" in item).map(item => item.str).join(" ");
-        if (number === 1) assert.ok(text.includes("REVIEW-CHECK"), `${theme.id}: cover metadata spilled onto another page`);
-        assert.ok(text.includes("Revision REV-CHECK"), `page ${number}: missing fixed revision`);
-        assert.match(text, new RegExp(`Page ${number}\\s*[/]\\s*${pdf.numPages}`), `page ${number}: page label missing or joined to revision`);
+        if (number === 1) {
+          assert.ok(text.includes("REVIEW-CHECK"), `${theme.id}: cover metadata spilled onto another page`);
+          assert.ok(text.includes("REV-CHECK"), `${theme.id}: cover revision metadata is missing`);
+        }
+        assert.ok(text.includes("DOC-CHECK"), `page ${number}: missing document number`);
+        assert.ok(text.includes("Environmental Manager"), `page ${number}: missing reviewer designation`);
+        assert.match(text, new RegExp(`Page\\s+${number}\\s*[/]\\s*${pdf.numPages}`), `page ${number}: page label missing or joined to document controls`);
         const operators = await page.getOperatorList();
         let matrix = [1, 0, 0, 1, 0, 0];
         const stack: number[][] = [];

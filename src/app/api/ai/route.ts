@@ -43,7 +43,9 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
   const company = co.name || "a manufacturing company";
   const reportingPeriod = co.reportingPeriod || "FY";
   const quantitativeYears = getQuantitativeYearOptions(reportingPeriod);
-  const quantitativeRules = `Use ${reportingPeriod === "FY" ? "fiscal-year labels in the format FY YYYY-YY" : "calendar years"}. reportingFrequency must be either "${REPORTING_FREQUENCY}" or "${TARGET_PERIOD}". For "${REPORTING_FREQUENCY}", baseline and deadline must be empty. For "${TARGET_PERIOD}", baseline must be one of ${quantitativeYears.baseline.join(", ")} and deadline must be one of ${quantitativeYears.deadline.join(", ")}. Use "${TARGET_PERIOD}" unless the target is explicitly an annual activity.`;
+  const quantitativeRules = `Use ${reportingPeriod === "FY" ? "fiscal-year labels in the format FY YYYY-YY" : "calendar years"}. reportingFrequency must be either "${REPORTING_FREQUENCY}" or "${TARGET_PERIOD}". For "${REPORTING_FREQUENCY}", baseline and deadline must be empty and the output must explicitly be an ongoing annual activity. For "${TARGET_PERIOD}", baseline must be one of ${quantitativeYears.baseline.join(", ")} and deadline must be one of ${quantitativeYears.deadline.join(", ")}; mention both in the same main target sentence as baseline year and achievement year. Use "${TARGET_PERIOD}" unless the target is explicitly an annual activity. Use a percentage (%) for percentage-based reductions, increases, shares, coverage, compliance, adoption, participation, diversion, renewable sourcing, or similar outcomes; retain valid physical units, counts, rates, or thresholds when those are the natural metric. Keep exactly one main topic in target and put related subtopics in a string[] of bullet items.`;
+  const targetShape = '{"target": "one main target sentence", "baseline": "...", "deadline": "...", "reportingFrequency": "Target period", "subtopics": ["related subtopic"]}';
+  const reviewerDesignations = (p.company.reviewerDesignations || []).map((designation) => designation.trim()).filter(Boolean);
 
   const existingStr =
     ctx.existingContent &&
@@ -96,21 +98,21 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
       const area = p.quantitative[ctx.areaIndex ?? 0]?.area || "this area";
       return {
         system: SYSTEM,
-        user: `Write quantitative targets for "${area}" in a ${profile.label} of ${company}. ${quantitativeRules}${existingStr}${customStr}\nIf no count is specified in the user directive, generate 3 new targets. Return JSON: {"targets": [{"target": "...", "baseline": "...", "deadline": "...", "reportingFrequency": "Target period"}]}`,
+        user: `Write quantitative targets for "${area}" in a ${profile.label} of ${company}. ${quantitativeRules}${existingStr}${customStr}\nIf no count is specified in the user directive, generate 3 new targets. Return JSON: {"targets": [${targetShape}]}`,
       };
     }
     case "quantitative-topic": {
       const area = ctx.areaName || "this area";
       return {
         system: SYSTEM,
-        user: `Write 3 quantitative targets for the user-defined topic "${area}" in a ${profile.label} of ${company}. ${quantitativeRules}${customStr}\nReturn JSON: {"targets": [{"target": "...", "baseline": "...", "deadline": "...", "reportingFrequency": "Target period"}]}`,
+        user: `Write 3 quantitative targets for the user-defined topic "${area}" in a ${profile.label} of ${company}. ${quantitativeRules}${customStr}\nReturn JSON: {"targets": [${targetShape}]}`,
       };
     }
     case "quantitative-refine": {
       const area = ctx.areaName || p.quantitative[ctx.areaIndex ?? 0]?.area || "this area";
       return {
         system: SYSTEM,
-        user: `Refine this single quantitative target for "${area}" in a ${profile.label} of ${company}: ${JSON.stringify(ctx.existingContent)}. Preserve the user's intent while making it specific and measurable. ${quantitativeRules}${customStr}\nReturn JSON: {"targets": [{"target": "...", "baseline": "...", "deadline": "...", "reportingFrequency": "Target period"}]}`,
+        user: `Refine this single quantitative target for "${area}" in a ${profile.label} of ${company}: ${JSON.stringify(ctx.existingContent)}. Preserve the user's intent while making it specific and measurable. ${quantitativeRules}${customStr}\nReturn JSON: {"targets": [${targetShape}]}`,
       };
     }
     case "sdg":
@@ -131,7 +133,7 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
     case "review":
       return {
         system: SYSTEM,
-        user: `Write a Review Mechanism & Continuous Improvement section for a ${profile.label} of ${company}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
+        user: `Write a Review Mechanism & Continuous Improvement section for a ${profile.label} of ${company}. Name the responsible reviewer designation(s) explicitly (for example, Sustainability Manager, EHS Manager, Compliance Officer, or Executive Committee); do not refer only to a department or function. ${reviewerDesignations.length ? `Use these configured reviewer designation(s): ${reviewerDesignations.join(", ")}.` : "If no designation is configured, propose at least one suitable named designation."} State review frequency, triggers, approval, feedback, and communication.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
     case "all":
     default:

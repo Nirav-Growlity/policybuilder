@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, syncQuantitativeAreas, TARGET_PERIOD } from "@/lib/quantitative";
+import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, syncQuantitativeAreas, TARGET_PERIOD, validateQuantitativeTarget } from "@/lib/quantitative";
 import { Plus, Sparkles, Target, Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 
@@ -55,6 +55,7 @@ export function StepQuantitative() {
         updatePolicy((p) => ({
           quantitative: p.quantitative.map((q, i) => i === qi ? { ...q, targets: [...q.targets, ...uniqueNew] } : q),
         }));
+        if (uniqueNew.some((target) => validateQuantitativeTarget(target).length)) push("Some generated targets need a quick percentage or year review", "info");
         push(`Added ${uniqueNew.length} target${uniqueNew.length === 1 ? "" : "s"}`, "success");
       }
     } catch {
@@ -146,6 +147,7 @@ export function StepQuantitative() {
       updatePolicy((p) => ({
         quantitative: p.quantitative.map((q, i) => i === qi ? { ...q, targets: q.targets.map((t, j) => j === ti ? refined : t) } : q),
       }));
+      if (validateQuantitativeTarget(refined).length) push("Review the refined target's percentage or year wording", "info");
       push("Target refined", "success");
     } catch {
       push("AI generation failed", "error");
@@ -183,15 +185,18 @@ export function StepQuantitative() {
           <div className="overflow-x-auto rounded-lg border border-[var(--color-line)]">
             <table className="w-full min-w-[840px] text-[13px]">
               <thead><tr className="border-b border-[var(--color-line)] bg-[var(--color-cream-2)]">
-                <th className="w-[43%] px-4 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Target description</th>
+                <th className="w-[43%] px-4 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Target & related subtopics</th>
                 <th className="w-[16%] px-3 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Baseline year</th>
-                <th className="w-[16%] px-3 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Deadline</th>
+                <th className="w-[16%] px-3 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Achievement year</th>
                 <th className="w-[15%] px-3 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Reporting basis</th>
                 <th className="w-[10%] px-3 py-2.5 text-right font-semibold text-[var(--color-ink-2)]"></th>
               </tr></thead>
               <tbody>{q.targets.map((target, ti) => (
                 <tr key={ti} className="border-t border-[var(--color-line)] hover:bg-[#fafaf5]">
-                  <td className="px-3 py-2"><Textarea rows={Math.max(2, Math.ceil((target.target || "").length / 45))} value={target.target} onChange={(e) => updateCell(qi, ti, "target", e.target.value)} placeholder="e.g. Reduce specific energy consumption by 15%" className="resize-y border-transparent bg-transparent py-1.5 text-[13px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]" /></td>
+                  <td className="px-3 py-2"><Textarea rows={Math.max(2, Math.ceil((target.target || "").length / 45))} value={target.target} onChange={(e) => updateCell(qi, ti, "target", e.target.value)} placeholder="One main target, e.g. Reduce energy consumption by 15%" className="resize-y border-transparent bg-transparent py-1.5 text-[13px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]" />
+                    <Textarea rows={Math.max(1, (target.subtopics || []).length)} value={(target.subtopics || []).join("\n")} onChange={(e) => updatePolicy((p) => ({ quantitative: p.quantitative.map((q, i) => i === qi ? { ...q, targets: q.targets.map((t, j) => j === ti ? { ...t, subtopics: e.target.value.split(/\r?\n/).map((item) => item.trim()).filter(Boolean) } : t) } : q) }))} placeholder="Related subtopics, one bullet per line (optional)" className="mt-1 resize-y border-transparent bg-transparent py-1 text-[12px] text-[var(--color-muted)] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]" />
+                    {validateQuantitativeTarget(target).map((issue) => <p key={issue} className="mt-1 text-[11px] text-amber-700">{issue}</p>)}
+                  </td>
                   <td className="px-3 py-2">{target.reportingFrequency === REPORTING_FREQUENCY ? <span className="text-[12px] text-[var(--color-muted)]">—</span> : <Select value={target.baseline} onChange={(e) => updateCell(qi, ti, "baseline", e.target.value)} className="border-transparent bg-transparent text-[12px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]">{yearOptions.baseline.map((year) => <option key={year}>{year}</option>)}</Select>}</td>
                   <td className="px-3 py-2">{target.reportingFrequency === REPORTING_FREQUENCY ? <span className="text-[12px] text-[var(--color-muted)]">—</span> : <Select value={target.deadline} onChange={(e) => updateCell(qi, ti, "deadline", e.target.value)} className="border-transparent bg-transparent text-[12px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]">{yearOptions.deadline.map((year) => <option key={year}>{year}</option>)}</Select>}</td>
                   <td className="px-3 py-2"><Select value={target.reportingFrequency || TARGET_PERIOD} onChange={(e) => updateReportingFrequency(qi, ti, e.target.value as typeof REPORTING_FREQUENCY | typeof TARGET_PERIOD)} className="border-transparent bg-transparent text-[12px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"><option value={TARGET_PERIOD}>Target period</option><option value={REPORTING_FREQUENCY}>Annually</option></Select></td>

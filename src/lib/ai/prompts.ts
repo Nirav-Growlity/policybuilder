@@ -29,7 +29,7 @@ export interface AIResponse {
   text?: string;
   areas?: string[];
   objectives?: string[];
-  targets?: { target: string; baseline: string; deadline: string; reportingFrequency?: "Annually" | "Target period" }[];
+  targets?: { target: string; baseline: string; deadline: string; reportingFrequency?: "Annually" | "Target period"; subtopics?: string[] }[];
   sdgs?: number[];
   responsibilities?: { role: string; duty: string }[];
   source: "mock" | "claude";

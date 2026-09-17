@@ -24,6 +24,7 @@ export interface Company {
   lastReviewDate?: string;
   reviewDate: string;
   approver: string;
+  reviewerDesignations?: string[];
 }
 
 export function getCompanySites(company?: Company): Site[] {
@@ -60,6 +61,7 @@ export interface QuantitativeTarget {
   baseline: string;
   deadline: string;
   reportingFrequency?: "Annually" | "Target period";
+  subtopics?: string[];
 }
 
 export interface QuantitativeArea {

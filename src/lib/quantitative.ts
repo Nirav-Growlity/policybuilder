@@ -3,6 +3,41 @@ import type { Policy, QuantitativeTarget } from "./types";
 export const REPORTING_FREQUENCY = "Annually" as const;
 export const TARGET_PERIOD = "Target period" as const;
 
+const PERCENTAGE_SIGNALS = /\b(?:reduce|decrease|increase|improve|achieve|maintain|ensure|cover(?:age)?|divert(?:ed)?|source|adopt|engage|participat(?:e|ion)|compliance|renewab|recycl|reuse|train(?:ing)?|workforce|supplier|spend|certif)\b/i;
+const UNIT_SIGNALS = /\b(?:kg|tonnes?|tco2e|co2e|kwh|mwh|lit(?:re|er)s?|hours?|days?|sites?|facilit(?:y|ies)|initiatives?|audits?|incidents?|units?|per\s+(?:employee|unit|tonne|site|product)|rate|intensity|count|number|zero|no\s+exceedance)\b/i;
+
+export function normalizeQuantitativeSubtopics(value?: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value.map((item) => String(item).trim()).filter(Boolean);
+}
+
+export function targetRequiresPercentage(target: string): boolean {
+  const text = target.trim();
+  return Boolean(text && PERCENTAGE_SIGNALS.test(text) && !UNIT_SIGNALS.test(text));
+}
+
+export function validateQuantitativeTarget(target: Partial<QuantitativeTarget>): string[] {
+  const issues: string[] = [];
+  const text = (target.target || "").trim();
+  if (targetRequiresPercentage(text) && !/\b\d+(?:\.\d+)?\s*%/.test(text)) {
+    issues.push("Add a percentage (%) because this target describes a percentage-based outcome.");
+  }
+  if (text && target.reportingFrequency !== REPORTING_FREQUENCY && (!target.baseline || !target.deadline)) {
+    issues.push("Specify both a baseline year and an achievement year.");
+  }
+  return issues;
+}
+
+export function formatQuantitativeTargetSentence(target: Pick<QuantitativeTarget, "target" | "baseline" | "deadline" | "reportingFrequency">): string {
+  const text = target.target.trim();
+  if (!text || target.reportingFrequency === REPORTING_FREQUENCY) return text;
+  const baseline = target.baseline || "baseline year not set";
+  const achievement = target.deadline || "achievement year not set";
+  if (text.includes(baseline) && text.includes(achievement)) return text;
+  const sentence = text.replace(/[.!?]+\s*$/, "");
+  return `${sentence} (baseline year: ${baseline}; achievement year: ${achievement}).`;
+}
+
 export function formatQuantitativeYear(year: number, reportingPeriod: "FY" | "CY" = "FY") {
   return reportingPeriod === "FY"
     ? `FY ${year}-${String(year + 1).slice(-2)}`
@@ -34,6 +69,7 @@ export function normalizeQuantitativeTarget(
     baseline: reportingFrequency === REPORTING_FREQUENCY ? "" : (years.baseline.includes(target.baseline || "") ? target.baseline! : years.baseline.at(-1)!),
     deadline: reportingFrequency === REPORTING_FREQUENCY ? "" : (years.deadline.includes(target.deadline || "") ? target.deadline! : years.deadline[0]),
     reportingFrequency,
+    ...(Array.isArray(target.subtopics) ? { subtopics: normalizeQuantitativeSubtopics(target.subtopics) } : {}),
   };
 }
 

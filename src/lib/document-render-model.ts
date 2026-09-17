@@ -58,10 +58,12 @@ export type DocumentRenderModel = {
     fields: string[];
   };
   footer: {
+    documentNumber: string;
     effectiveDate: string;
     reviewDate: string;
     approver: string;
     revision: string;
+    reviewerDesignations: string[];
   };
 };
 
@@ -119,10 +121,12 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
         }
       : undefined,
     footer: {
+      documentNumber: policy.company.docNum || "",
       effectiveDate: policy.company.effectiveDate || "",
       reviewDate: policy.company.reviewDate || "",
       approver: policy.company.approver || "",
       revision: policy.company.revNum || "",
+      reviewerDesignations: (policy.company.reviewerDesignations || []).map((designation) => designation.trim()).filter(Boolean),
     },
   };
 }
@@ -185,8 +189,8 @@ function getSectionMetrics(policy: Policy, section: PolicySection) {
     case "quantitative": {
       const targets = content.areas.flatMap((area) => area.targets.filter((target) => target.target));
       return {
-        characters: targets.reduce((total, target) => total + `${target.target}${target.baseline}${target.deadline}`.length, 0),
-        items: targets.length,
+        characters: targets.reduce((total, target) => total + `${target.target}${target.baseline}${target.deadline}${(target.subtopics || []).join("")}`.length, 0),
+        items: targets.reduce((total, target) => total + 1 + (target.subtopics || []).length, 0),
         cells: targets.length * 6,
       };
     }

@@ -6,17 +6,18 @@ import { renderToStaticMarkup } from "react-dom/server.browser";
 import { chromium, type BrowserContext } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
 import { PolicyCoverPreview, PolicyPreview } from "@/components/policy/policy-preview";
-import { getPolicyDocumentTheme, logoScaleFactor } from "@/lib/document-themes";
-import { getRunningHeaderBrand } from "@/lib/document-render-model";
+import { getPolicyDocumentTheme, runningLogoFit } from "@/lib/document-themes";
+import { buildDocumentRenderModel, getRunningHeaderBrand } from "@/lib/document-render-model";
 import { A4, pageBorderContentInsetMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
 import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
 
 export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
-  const theme = getPolicyDocumentTheme(policy);
+  const model = buildDocumentRenderModel(policy);
+  const theme = model.theme;
   const brand = getRunningHeaderBrand(policy.company);
-  const logoScale = logoScaleFactor(theme.logoScale);
+  const logoFit = runningLogoFit(theme.logoScale);
   const hasLogo = brand.kind === "logo";
-  const logoHeight = hasLogo ? 8 * logoScale : 0;
+  const logoHeight = hasLogo ? logoFit.heightMm : 0;
   const horizontalMargin = pageMarginMm(theme.pageBorder);
   const topMargin = hasLogo ? pageHeaderMarginMm(theme.pageBorder, logoHeight) : horizontalMargin;
   const customCover = policy.coverComposition ? { data: await renderCustomCoverPng(policy), type: "png" as const } : null;
@@ -35,25 +36,20 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
     const escape = (s: string) => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
     const logoPosition = policy.logoPosition || theme.defaults.logoPosition;
     const logo = brand.kind === "logo" && /^data:image\/(png|jpeg|jpg|webp|svg\+xml);base64,/i.test(brand.source)
-      ? `<img src="${brand.source}" style="display:block;height:${8 * logoScale}mm;max-width:${28 * logoScale}mm;object-fit:contain;" alt=""/>`
+      ? `<img src="${brand.source}" style="display:block;width:auto;height:auto;max-width:${logoFit.widthMm}mm;max-height:${logoFit.heightMm}mm;object-fit:contain;" alt=""/>`
       : brand.kind === "name" ? `<span>${escape(brand.text)}</span>` : "";
-    const brandPosition = logoPosition === "right"
-      ? "right:0;"
-      : logoPosition === "center"
-        ? "left:50%;"
-        : "left:0;";
-    const documentNumberPosition = logoPosition === "right" ? "left:0;" : "right:0;";
     const headerInset = pageBorderContentInsetMm(theme.pageBorder);
     const logoTop = pageHeaderLogoTopMm(theme.pageBorder);
     const logoCenter = logoTop + (hasLogo ? logoHeight / 2 : 2);
     const headerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${topMargin}mm;margin:0 ${headerInset}mm;position:relative;display:block;overflow:visible;`;
     const footerHeight = theme.pageBorder.enabled ? Math.max(10, headerInset - 2) : 10;
-    const footerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;position:relative;display:block;`;
-    const brandMarkup = `<span style="position:absolute;top:${logoCenter}mm;transform:${logoPosition === "center" ? "translate(-50%,-50%)" : "translateY(-50%)"};${brandPosition}">${logo}</span>`;
-    const documentNumber = `<span style="position:absolute;top:${logoCenter}mm;transform:translateY(-50%);${documentNumberPosition}">${escape(policy.company.docNum || "")}</span>`;
+    const footerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;gap:8mm;`;
+    const brandPosition = logoPosition === "right" ? "right:0;" : logoPosition === "center" ? "left:50%;" : "left:0;";
+    const brandMarkup = `<span style="position:absolute;top:${logoCenter}mm;width:${logoFit.widthMm}mm;height:${logoFit.heightMm}mm;display:flex;align-items:center;justify-content:center;transform:${logoPosition === "center" ? "translate(-50%,-50%)" : "translateY(-50%)"};${brandPosition}">${logo}</span>`;
+    const reviewInfo = [model.footer.reviewDate, ...model.footer.reviewerDesignations].filter(Boolean).join(" · ");
     const output = await page.pdf({ format: "A4", printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true,
-      headerTemplate: `<div style="${headerStyle}">${brandMarkup}${documentNumber}</div>`,
-      footerTemplate: `<div style="${footerStyle}"><span style="position:absolute;left:0;top:0;">${escape(policy.company.revNum ? `Revision ${policy.company.revNum}` : "")}</span><span style="position:absolute;right:0;top:0;">Page <span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
+      headerTemplate: `<div style="${headerStyle}">${brandMarkup}</div>`,
+      footerTemplate: `<div style="${footerStyle}"><span><b>Document No.</b> ${escape(model.footer.documentNumber)}</span><span style="text-align:center;"><b>Review</b> ${escape(reviewInfo)}</span><span style="text-align:right;"><b>Page</b> <span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
       margin: { top: `${topMargin}mm`, right: `${horizontalMargin}mm`, bottom: `${horizontalMargin}mm`, left: `${horizontalMargin}mm` },
     });
     if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");

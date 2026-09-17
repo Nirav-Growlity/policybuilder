@@ -11,6 +11,7 @@ import {
 } from "@/lib/document-render-model";
 import type { Policy, RichTextBlock } from "@/lib/types";
 import { getCoverBindingValue } from "@/lib/cover-composition";
+import { formatQuantitativeTargetSentence } from "@/lib/quantitative";
 
 export function PolicyPreview({ policy, customCoverPng }: { policy: Policy; customCoverPng?: string }) {
   const model = buildDocumentRenderModel(policy);
@@ -657,15 +658,19 @@ function QuantitativeTargets({ areas, model, density }: { areas: Policy["quantit
   const useBands = useModernTreatment && model.theme.layout.dataLayout === "target-bands" && density !== "dense";
   const useJournalEntries = useModernTreatment && model.theme.layout.dataLayout === "quiet-rules" && density !== "dense";
   if (useBands) {
-    return <div className="policy-target-bands">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{target.area}</h3><p>{target.target}</p></section><aside><span>{target.reportingFrequency === "Annually" ? "Reported annually" : target.deadline || "Target period"}</span><small>{target.reportingFrequency === "Annually" ? "Ongoing" : target.baseline || "No baseline"}</small></aside></div>)}</div>;
+    return <div className="policy-target-bands">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{target.area}</h3><TargetDescription target={target} /></section><aside><span>{target.reportingFrequency === "Annually" ? "Reported annually" : target.deadline || "Target period"}</span><small>{target.reportingFrequency === "Annually" ? "Ongoing" : target.baseline || "No baseline"}</small></aside></div>)}</div>;
   }
   if (useJournalEntries) {
-    return <div className="policy-journal-targets">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{target.area}</b><p>{target.target}</p><span>{target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Due ${target.deadline || "-"}`}</span></div>)}</div>;
+    return <div className="policy-journal-targets">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{target.area}</b><TargetDescription target={target} /><span>{target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Achievement ${target.deadline || "-"}`}</span></div>)}</div>;
   }
   if (useModernTreatment) {
-    return <div className="policy-modern-targets">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{target.area}</h3><p>{target.target}</p><small>{target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Due ${target.deadline || "-"}`}</small></section></div>)}</div>;
+    return <div className="policy-modern-targets">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{target.area}</h3><TargetDescription target={target} /><small>{target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Achievement ${target.deadline || "-"}`}</small></section></div>)}</div>;
   }
-  return <PolicyTable headers={["#", "Focus Area", "Target", "Baseline", "Deadline", "Reporting"]} rows={targets.map((target, index) => [String(index + 1), target.area, target.target, target.reportingFrequency === "Annually" ? "-" : target.baseline, target.reportingFrequency === "Annually" ? "-" : target.deadline, target.reportingFrequency || "Target period"])} />;
+  return <PolicyTable headers={["#", "Focus Area", "Target", "Baseline", "Achievement year", "Reporting"]} rows={targets.map((target, index) => [String(index + 1), target.area, [formatQuantitativeTargetSentence(target), ...(target.subtopics || []).map((item) => `• ${item}`)].join("\n"), target.reportingFrequency === "Annually" ? "-" : target.baseline, target.reportingFrequency === "Annually" ? "-" : target.deadline, target.reportingFrequency || "Target period"])} />;
+}
+
+function TargetDescription({ target }: { target: Policy["quantitative"][number]["targets"][number] }) {
+  return <><p>{formatQuantitativeTargetSentence(target)}</p>{target.subtopics?.length ? <ul className="policy-target-subtopics">{target.subtopics.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ul> : null}</>;
 }
 
 function SdgGoals({ goals, model, policy }: { goals: { number: number; label: string; color: string }[]; model: DocumentRenderModel; policy: Policy }) {
@@ -703,7 +708,8 @@ function Blocks({ blocks, recipe }: { blocks: RichTextBlock[]; recipe: string })
 
 function PolicyFooter({ model }: { model: DocumentRenderModel }) {
   const layout = model.theme.layout.runningFurniture;
-  return <footer className={`policy-footer footer-${layout} ${model.theme.collection === "professional" ? `professional-footer-${model.theme.layout.professionalVariant || "corporate"}` : ""}`}><span>Effective {model.footer.effectiveDate}</span><span>Approved by {model.footer.approver}</span><span>Revision {model.footer.revision}</span><b>{model.cover.companyName}</b></footer>;
+  const reviewer = model.footer.reviewerDesignations.join(", ");
+  return <footer className={`policy-footer footer-${layout} ${model.theme.collection === "professional" ? `professional-footer-${model.theme.layout.professionalVariant || "corporate"}` : ""}`}><span><b>Document No.</b>{model.footer.documentNumber}</span><span><b>Review</b>{[model.footer.reviewDate, reviewer].filter(Boolean).join(" · ")}</span><span><b>Page</b>—</span></footer>;
 }
 
 function Acknowledgement({ model }: { model: DocumentRenderModel }) {
@@ -737,7 +743,7 @@ const previewStyles = `
   .policy-custom-cover-text { white-space: pre-wrap; overflow-wrap: anywhere; }
   .policy-custom-cover-image img { display: block; width: 100%; height: 100%; }
   .policy-custom-cover-rendered { display:block; width:100%; height:100%; object-fit:cover; }
-  .policy-cover-logo { width: auto; height: var(--doc-logo-height); transition: height 180ms ease; }
+  .policy-cover-logo { width: auto; max-width: var(--doc-running-logo-width); max-height: var(--doc-logo-height); object-fit: contain; transition: max-height 180ms ease; }
   .policy-cover-kicker { display: none !important; color: var(--doc-primary); font-size: 10px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
   .policy-cover h1 { max-width: 100%; text-wrap: balance; overflow-wrap: anywhere; }
   .policy-cover-company { margin: 13px 0 0; color: var(--doc-muted); font-size: 14px; }
@@ -1106,9 +1112,13 @@ const previewStyles = `
   .policy-custom-blocks > p { margin-bottom: 12px; }
   .policy-custom-blocks ul, .policy-custom-blocks ol { margin: 12px 0; padding-left: 20px; }
   .policy-custom-blocks li { margin: 5px 0; }
-  .policy-footer { display: flex; align-items: center; gap: 18px; border-top: 1px solid var(--doc-primary); padding: 18px 50px; color: var(--doc-muted); font-size: 8px; }
-  .policy-running-header img { width: auto; max-width: var(--doc-running-logo-width); max-height: var(--doc-running-logo-height); }
-  .policy-footer b { margin-left: auto; color: var(--doc-primary); }
+  .policy-target-subtopics { margin: 7px 0 0; padding-left: 18px; color: var(--doc-muted); font-size: .92em; }
+  .policy-target-subtopics li { margin: 3px 0; }
+  .policy-footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr; align-items: center; gap: 18px; border-top: 1px solid var(--doc-primary); padding: 18px 50px; color: var(--doc-muted); font-size: 8px; }
+  .policy-footer > span { min-width: 0; overflow-wrap: anywhere; }
+  .policy-footer > span:nth-child(2) { text-align: center; }
+  .policy-footer > span:last-child { text-align: right; }
+  .policy-footer b { display: block; margin-bottom: 2px; color: var(--doc-primary); font-size: .9em; letter-spacing: .08em; text-transform: uppercase; }
   .footer-breadcrumb-bar { background: var(--doc-primary); color: var(--doc-on-primary); }
   .footer-breadcrumb-bar b { color: var(--doc-on-primary); }
   .footer-edge-folio { border-color: var(--doc-line); }
@@ -1154,7 +1164,8 @@ const previewStyles = `
     .recipe-dossier-columns.policy-focus-list, .recipe-atlas-modules.policy-focus-list, .recipe-dossier-columns.policy-objective-groups, .recipe-atlas-modules.policy-objective-groups, .responsibility-numbered-rail, .responsibility-modular-grid, .sdg-atlas-mosaic { grid-template-columns: 1fr; }
     .policy-target-bands > div { grid-template-columns: 42px 1fr; }
     .policy-target-bands > div > aside { grid-column: 2; border-top: 1px solid var(--doc-line); }
-    .policy-footer { flex-wrap: wrap; padding-inline: 28px; }
+    .policy-footer { grid-template-columns: 1fr; gap: 8px; padding-inline: 28px; }
+    .policy-footer > span:nth-child(2), .policy-footer > span:last-child { text-align: left; }
   }
   @media (prefers-reduced-motion: reduce) { .policy-preview-document { animation: none; } }
 
@@ -1348,7 +1359,7 @@ const previewStyles = `
     box-shadow: inset 0 0 0 1px var(--doc-line);
     background: var(--doc-paper);
   }
-  [data-collection="professional"] .policy-footer { display: flex; gap: 8mm; padding: 4mm 20mm; border-top: 1px solid var(--doc-line); background: var(--doc-paper); color: var(--doc-muted); font-size: 8pt; }
+  [data-collection="professional"] .policy-footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 8mm; padding: 4mm 20mm; border-top: 1px solid var(--doc-line); background: var(--doc-paper); color: var(--doc-muted); font-size: 8pt; }
 
   /* Covers use real document content, typographic hierarchy and quiet rules. */
   [data-collection="professional"] .editorial-policy-cover { min-height: 230mm; box-sizing: border-box; display: flex; flex-direction: column; padding: 10mm 8mm 8mm; border: 0; background: transparent; }

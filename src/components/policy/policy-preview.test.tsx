@@ -86,3 +86,15 @@ test("printed outer-number sections do not restore the heading number", async ()
     await browser.close();
   }
 });
+
+test("footer uses the aligned document-control contract", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.company.docNum = "ENV-001";
+  policy.company.reviewDate = "2027-01-14";
+  policy.company.reviewerDesignations = ["Environmental Manager", "Compliance Officer"];
+  const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
+  const footer = markup.slice(markup.indexOf('class="policy-footer'));
+  assert.match(footer, /Document No\.[\s\S]*ENV-001/);
+  assert.match(footer, /Review[\s\S]*2027-01-14[\s\S]*Environmental Manager[\s\S]*Compliance Officer/);
+  assert.match(footer, /Page[\s\S]*—/);
+});

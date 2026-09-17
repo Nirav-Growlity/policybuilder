@@ -205,7 +205,7 @@ test("optional document-control metadata remains blank when it is not authored",
   policy.company.approver = "";
   const model = buildDocumentRenderModel(policy);
   assert.deepEqual(model.cover.metadata.map((item) => item.value), ["", "", "", ""]);
-  assert.deepEqual(model.footer, { effectiveDate: "", reviewDate: "", approver: "", revision: "" });
+  assert.deepEqual(model.footer, { documentNumber: "", effectiveDate: "", reviewDate: "", approver: "", revision: "", reviewerDesignations: [] });
 });
 
 test("custom theme overrides resolve without mutating the built-in theme", () => {
@@ -302,7 +302,7 @@ test("logo colors reach headings, TOC rules, and running-logo scale", () => {
 
   const markup = renderToStaticMarkup(createElement(PolicyPreview, { policy }));
   assert.match(markup, /data-logo-scale="large"/);
-  assert.match(markup, /--doc-running-logo-height:46\.08px/);
+  assert.match(markup, /--doc-running-logo-height:38px/);
   assert.match(markup, /--doc-ink:#07442F/);
 });
 

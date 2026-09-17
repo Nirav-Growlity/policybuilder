@@ -8,7 +8,7 @@ import { Field, Input } from "@/components/ui/input";
 import { DatePicker } from "@/components/ui/calendar";
 import { Panel } from "@/components/ui/panel";
 import { Button } from "@/components/ui/button";
-import { Eye, EyeOff, GripVertical, ChevronUp, ChevronDown, Plus, Trash2, ListTree, FileText } from "lucide-react";
+import { Eye, EyeOff, GripVertical, ChevronUp, ChevronDown, Plus, Trash2, X, ListTree, FileText } from "lucide-react";
 
 const labelFor = (section: PolicySection) => section.kind === "custom" ? "Custom section" : section.kind.replaceAll("-", " ");
 
@@ -134,6 +134,29 @@ export function StepStructure() {
               ariaLabel="Next review date"
             />
           </Field>
+        </div>
+        <div className="mt-4 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]/50 p-3">
+          <div className="mb-2 flex items-start justify-between gap-3">
+            <div>
+              <p className="text-[12px] font-semibold text-[var(--color-ink-2)]">Responsible reviewer designation(s)</p>
+              <p className="text-[11px] text-[var(--color-muted)]">Use named roles such as Sustainability Manager or Compliance Officer, not only a department.</p>
+            </div>
+            <Button variant="ghost" size="sm" icon={<Plus size={13} />} onClick={() => updatePolicy((p) => ({ company: { ...p.company, reviewerDesignations: [...(p.company.reviewerDesignations || []), ""] } }))}>Add designation</Button>
+          </div>
+          <div className="space-y-2">
+            {(co.reviewerDesignations || []).map((designation, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <Input
+                  value={designation}
+                  onChange={(e) => updatePolicy((p) => ({ company: { ...p.company, reviewerDesignations: (p.company.reviewerDesignations || []).map((value, i) => i === index ? e.target.value : value) } }))}
+                  placeholder="Sustainability Manager"
+                  aria-label={`Reviewer designation ${index + 1}`}
+                />
+                <button type="button" onClick={() => updatePolicy((p) => ({ company: { ...p.company, reviewerDesignations: (p.company.reviewerDesignations || []).filter((_, i) => i !== index) } }))} className="rounded-md p-2 text-[var(--color-muted)] hover:bg-[#fdecec] hover:text-[#9b2929]" aria-label={`Remove reviewer designation ${index + 1}`}><X size={14} /></button>
+              </div>
+            ))}
+            {!(co.reviewerDesignations || []).length && <p className="text-[11px] text-amber-700">Add at least one designation before finalizing the review section.</p>}
+          </div>
         </div>
       </Panel>
 
