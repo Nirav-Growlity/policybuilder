@@ -3,6 +3,7 @@ import test from "node:test";
 import JSZip from "jszip";
 import sharp from "sharp";
 import { DOCUMENT_THEMES } from "../document-themes";
+import { pageFooterDistanceMm } from "../page-geometry";
 import { templatePreviewPolicy } from "../sample-policies";
 import { generateDocx } from "./generate";
 
@@ -20,7 +21,38 @@ test("page borders use Word's native page-edge border with valid spacing", async
     const sides = [...border.matchAll(/<w:(top|left|bottom|right)\b[^>]*w:space="(\d+)"/g)];
     assert.equal(sides.length, 4);
     for (const side of sides) assert.equal(Number(side[2]), Math.min(31, Math.round(insetMm * 72 / 25.4)));
+    const pageMargins = xml.match(/<w:pgMar\b[^>]*>/)![0];
+    const footerDistance = Number(pageMargins.match(/w:footer="(\d+)"/)![1]);
+    assert.equal(footerDistance, Math.round(pageFooterDistanceMm({ enabled: true, widthPt: 1, insetMm, scope: "all" }) * 72 / 25.4 * 20));
   }
+});
+
+test("quantitative Word output groups repeated areas and omits metadata columns", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.quantitative = [{
+    area: "Gifts & Hospitality",
+    targets: [
+      { target: "Achieve 100% timely disclosure of reportable gifts", baseline: "FY 2025-26", deadline: "FY 2028-29", reportingFrequency: "Target period", subtopics: ["Maintain a centralized register.", "Apply approval thresholds."] },
+      { target: "Complete 100% compliance training for relevant employees", baseline: "FY 2025-26", deadline: "FY 2029-30", reportingFrequency: "Target period", subtopics: ["Cover conflicts of interest."] },
+    ],
+  }];
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  assert.equal((document.match(/Gifts &amp; Hospitality/g) || []).length, 1);
+  assert.match(document, />01<\/w:t>/, "quantitative area numbers should be zero-padded");
+  assert.equal((document.match(/Achieve 100%/g) || []).length, 1);
+  assert.equal((document.match(/Complete 100%/g) || []).length, 1);
+  assert.doesNotMatch(document, /Achievement year|Reporting basis|Targets are tracked/);
+  assert.doesNotMatch(document, /Maintain a centralized register|Apply approval thresholds|Cover conflicts of interest/);
+  assert.ok((document.match(/w:numId/g) || []).length >= 2, "quantitative targets should use Word bullets");
+});
+
+test("Word running header leaves a visible gap after the logo rule", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const headerNames = Object.keys(zip.files).filter((name) => /^word\/header\d+\.xml$/.test(name));
+  const headers = await Promise.all(headerNames.map((name) => zip.file(name)!.async("string")));
+  assert.ok(headers.some((header) => header.includes('w:after="180"')), "content header should separate the logo rule from body content");
 });
 
 test("Word table headers use the preview's soft fill and subheading color", async () => {

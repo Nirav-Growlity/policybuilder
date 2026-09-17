@@ -1,14 +1,30 @@
-import type { Policy, QuantitativeTarget } from "./types";
+import type { Policy, QuantitativeArea, QuantitativeTarget } from "./types";
 
 export const REPORTING_FREQUENCY = "Annually" as const;
 export const TARGET_PERIOD = "Target period" as const;
 
 const PERCENTAGE_SIGNALS = /\b(?:reduce|decrease|increase|improve|achieve|maintain|ensure|cover(?:age)?|divert(?:ed)?|source|adopt|engage|participat(?:e|ion)|compliance|renewab|recycl|reuse|train(?:ing)?|workforce|supplier|spend|certif)\b/i;
 const UNIT_SIGNALS = /\b(?:kg|tonnes?|tco2e|co2e|kwh|mwh|lit(?:re|er)s?|hours?|days?|sites?|facilit(?:y|ies)|initiatives?|audits?|incidents?|units?|per\s+(?:employee|unit|tonne|site|product)|rate|intensity|count|number|zero|no\s+exceedance)\b/i;
+const NUMERIC_MEASURE = /(?:\b\d+(?:\.\d+)?\b|\bzero\b)/i;
+const TIMING_YEAR = /\b(?:FY\s+)?(?:19|20)\d{2}(?:[-/]\d{2,4})?\b/gi;
 
 export function normalizeQuantitativeSubtopics(value?: unknown): string[] {
   if (!Array.isArray(value)) return [];
   return value.map((item) => String(item).trim()).filter(Boolean);
+}
+
+export type QuantitativeTargetGroup = { area: string; targets: QuantitativeTarget[] };
+
+export function groupQuantitativeTargets(areas: QuantitativeArea[]): QuantitativeTargetGroup[] {
+  const groups = new Map<string, QuantitativeTargetGroup>();
+  for (const area of areas) {
+    const targets = area.targets.filter((target) => target.target.trim());
+    if (!targets.length) continue;
+    const existing = groups.get(area.area);
+    if (existing) existing.targets.push(...targets);
+    else groups.set(area.area, { area: area.area, targets: [...targets] });
+  }
+  return [...groups.values()];
 }
 
 export function targetRequiresPercentage(target: string): boolean {
@@ -16,11 +32,16 @@ export function targetRequiresPercentage(target: string): boolean {
   return Boolean(text && PERCENTAGE_SIGNALS.test(text) && !UNIT_SIGNALS.test(text));
 }
 
+export function targetHasNumericMeasure(target: string): boolean {
+  const withoutTimingYears = target.replace(TIMING_YEAR, " ");
+  return NUMERIC_MEASURE.test(withoutTimingYears);
+}
+
 export function validateQuantitativeTarget(target: Partial<QuantitativeTarget>): string[] {
   const issues: string[] = [];
   const text = (target.target || "").trim();
-  if (targetRequiresPercentage(text) && !/\b\d+(?:\.\d+)?\s*%/.test(text)) {
-    issues.push("Add a percentage (%) because this target describes a percentage-based outcome.");
+  if (text && !targetHasNumericMeasure(text)) {
+    issues.push("Add a percentage (%) or numeric value so this target can be measured.");
   }
   if (text && target.reportingFrequency !== REPORTING_FREQUENCY && (!target.baseline || !target.deadline)) {
     issues.push("Specify both a baseline year and an achievement year.");
@@ -30,12 +51,21 @@ export function validateQuantitativeTarget(target: Partial<QuantitativeTarget>):
 
 export function formatQuantitativeTargetSentence(target: Pick<QuantitativeTarget, "target" | "baseline" | "deadline" | "reportingFrequency">): string {
   const text = target.target.trim();
-  if (!text || target.reportingFrequency === REPORTING_FREQUENCY) return text;
+  if (!text) return text;
+  const sentence = text.replace(/[.!?]+\s*$/, "");
+  if (target.reportingFrequency === REPORTING_FREQUENCY) {
+    return /\b(?:reported\s+annually|annually|ongoing|each\s+year)\b/i.test(text)
+      ? text
+      : `${sentence}, reported annually.`;
+  }
   const baseline = target.baseline || "baseline year not set";
   const achievement = target.deadline || "achievement year not set";
-  if (text.includes(baseline) && text.includes(achievement)) return text;
-  const sentence = text.replace(/[.!?]+\s*$/, "");
-  return `${sentence} (baseline year: ${baseline}; achievement year: ${achievement}).`;
+  const hasBaseline = text.includes(baseline) || /\b(?:from\s+(?:a\s+)?baseline|baseline\s+year)\b/i.test(text);
+  const hasAchievement = text.includes(achievement) || /\b(?:by|before|until|through|in)\s+(?:FY\s+)?(?:19|20)\d{2}(?:[-/]\d{2,4})?\b/i.test(text);
+  if (hasBaseline && hasAchievement) return text;
+  if (!hasBaseline && !hasAchievement) return `${sentence}, by ${achievement}, measured from the ${baseline} baseline.`;
+  if (!hasBaseline) return `${sentence}, measured from the ${baseline} baseline.`;
+  return `${sentence}, with achievement by ${achievement}.`;
 }
 
 export function formatQuantitativeYear(year: number, reportingPeriod: "FY" | "CY" = "FY") {

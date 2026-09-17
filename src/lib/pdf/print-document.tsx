@@ -8,7 +8,7 @@ import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
 import { PolicyCoverPreview, PolicyPreview } from "@/components/policy/policy-preview";
 import { getPolicyDocumentTheme, runningLogoFit } from "@/lib/document-themes";
 import { buildDocumentRenderModel, getRunningHeaderBrand } from "@/lib/document-render-model";
-import { A4, pageBorderContentInsetMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
+import { A4, pageBorderContentInsetMm, pageFooterVerticalShiftMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
 import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
 
 export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
@@ -43,7 +43,8 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
     const logoCenter = logoTop + (hasLogo ? logoHeight / 2 : 2);
     const headerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${topMargin}mm;margin:0 ${headerInset}mm;position:relative;display:block;overflow:visible;`;
     const footerHeight = theme.pageBorder.enabled ? Math.max(10, headerInset - 2) : 10;
-    const footerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;gap:8mm;`;
+    const footerShift = pageFooterVerticalShiftMm(theme.pageBorder);
+    const footerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;gap:8mm;position:relative;transform:translateY(-${footerShift}mm);`;
     const brandPosition = logoPosition === "right" ? "right:0;" : logoPosition === "center" ? "left:50%;" : "left:0;";
     const brandMarkup = `<span style="position:absolute;top:${logoCenter}mm;width:${logoFit.widthMm}mm;height:${logoFit.heightMm}mm;display:flex;align-items:center;justify-content:center;transform:${logoPosition === "center" ? "translate(-50%,-50%)" : "translateY(-50%)"};${brandPosition}">${logo}</span>`;
     const reviewInfo = [model.footer.reviewDate, ...model.footer.reviewerDesignations].filter(Boolean).join(" · ");

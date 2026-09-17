@@ -32,7 +32,7 @@ import {
   type ParagraphChild,
 } from "docx";
 import { AsyncLocalStorage } from "node:async_hooks";
-import { A4, pageMarginMm } from "../page-geometry";
+import { A4, pageBorderSpaceMm, pageFooterDistanceMm, pageMarginMm } from "../page-geometry";
 import { getPolicyDocumentTheme, runningLogoFit } from "../document-themes";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -40,7 +40,7 @@ import sharp from "sharp";
 import { buildDocumentRenderModel, getRunningHeaderBrand, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
 import { documentHex, type DocumentThemeDefinition } from "../document-themes";
 import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
-import { formatQuantitativeTargetSentence, normalizePolicyQuantitative } from "../quantitative";
+import { formatQuantitativeTargetSentence, groupQuantitativeTargets, normalizePolicyQuantitative, type QuantitativeTargetGroup } from "../quantitative";
 import { getCoverBindingValue } from "../cover-composition";
 import type { Policy, QuantitativeArea, QuantitativeTarget, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
@@ -129,13 +129,19 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
     pageBorders: { display: theme.pageBorder.scope === "cover" ? "firstPage" as const : "allPages" as const, offsetFrom: "page" as const },
     // Native Word page-edge borders support at most 31 points of spacing.
     // Text-relative offsets can exceed that limit and hug the content.
-    ...Object.fromEntries(["pageBorderTop", "pageBorderRight", "pageBorderBottom", "pageBorderLeft"].map(side => [side, { style: BorderStyle.SINGLE, color: documentHex(theme.pageBorder.color || theme.colors.primary), size: theme.pageBorder.widthPt * 8, space: Math.min(31, Math.round(theme.pageBorder.insetMm * A4.pointsPerMm)) }]))
+    ...Object.fromEntries(["pageBorderTop", "pageBorderRight", "pageBorderBottom", "pageBorderLeft"].map(side => [side, { style: BorderStyle.SINGLE, color: documentHex(theme.pageBorder.color || theme.colors.primary), size: theme.pageBorder.widthPt * 8, space: Math.round(pageBorderSpaceMm(theme.pageBorder) * A4.pointsPerMm) }]))
   } : undefined;
   const pageSize = { width: PAGE_WIDTH, height: PAGE_HEIGHT };
   const regularPage = {
     size: pageSize,
     ...(pageBorders ? { borders: pageBorders } : {}),
-    margin: { top: pageMargin(), right: pageMargin(), bottom: pageMargin(), left: pageMargin() },
+    margin: {
+      top: pageMargin(),
+      right: pageMargin(),
+      bottom: pageMargin(),
+      left: pageMargin(),
+      footer: Math.round(pageFooterDistanceMm(theme.pageBorder) * A4.pointsPerMm * 20),
+    },
   };
   const doc = new Document({
     fonts: await embeddedDocumentFonts([typography.fontFamily, typography.headingFontFamily || typography.fontFamily]),
@@ -989,28 +995,17 @@ function renderQualitative(groups: { area: string; items: string[] }[], section:
 }
 
 function renderQuantitative(areas: QuantitativeArea[], section: DocumentRenderSection, model: DocumentRenderModel, availableWidth: number): DocBlock[] {
-  const targets = areas.flatMap((area) => area.targets.filter((target) => target.target).map((target) => ({ ...target, area: area.area })));
-  const intro = new Paragraph({ spacing: { after: 120 }, children: [new TextRun({ text: "Targets are tracked against a defined period or reported annually as ongoing commitments.", italics: true, color: documentHex(model.theme.colors.muted), size: 17, font: model.typography.fontFamily })] });
+  const groups = groupQuantitativeTargets(areas);
   if (model.dataTreatment === "clean-bullets" && model.theme.layout.dataLayout === "target-bands" && section.density !== "dense") {
-    return [intro, ...targets.map((target, index) => targetBand(target, index + 1, model, availableWidth))];
+    return groups.map((group, index) => targetBand(group, index + 1, model, availableWidth));
   }
   if (model.dataTreatment === "clean-bullets" && model.theme.layout.dataLayout === "quiet-rules" && section.density !== "dense") {
-    return [intro, ...targets.map((target) => journalTarget(target, model))];
+    return groups.flatMap((group) => journalTarget(group, model));
   }
   if (model.dataTreatment === "clean-bullets") {
-    return [intro, ...targets.map((target, index) => entryRow(
-      String(index + 1).padStart(2, "0"),
-      `${target.area}\n${formatQuantitativeTargetSentence(target)}${target.subtopics?.length ? `\n${target.subtopics.map((item) => `• ${item}`).join("\n")}` : ""}\n${target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Achievement ${target.deadline || "-"}`}`,
-      availableWidth,
-      model.theme,
-      model.theme.layout.pageFrame === "editorial-margin",
-    ))];
+    return groups.map((group, index) => quantitativeEntryGroup(group, index + 1, model, availableWidth));
   }
-  return [intro, dataTable(
-    ["#", "Focus Area", "Target", "Baseline", "Achievement year", "Reporting"],
-    targets.map((target, index) => [String(index + 1), target.area, [formatQuantitativeTargetSentence(target), ...(target.subtopics || []).map((item) => `• ${item}`)].join("\n"), target.reportingFrequency === "Annually" ? "-" : target.baseline, target.reportingFrequency === "Annually" ? "-" : target.deadline, target.reportingFrequency || "Target period"]),
-    scaledWidths([450, 1800, 3300, 1250, 1250, 1856], availableWidth), model.theme,
-  )];
+  return [quantitativeTable(groups, availableWidth, model)];
 }
 
 function renderResponsibilities(entries: Policy["responsibilities"], section: DocumentRenderSection, model: DocumentRenderModel, availableWidth: number): DocBlock[] {
@@ -1058,35 +1053,63 @@ function renderCustomBlocks(blocks: RichTextBlock[], model: DocumentRenderModel,
   });
 }
 
-function targetBand(target: QuantitativeTarget & { area: string }, index: number, model: DocumentRenderModel, availableWidth: number) {
+function targetBand(group: QuantitativeTargetGroup, index: number, model: DocumentRenderModel, availableWidth: number) {
   const numberWidth = 750;
-  const metaWidth = 1900;
-  const bodyWidth = availableWidth - numberWidth - metaWidth;
+  const bodyWidth = availableWidth - numberWidth;
   return fixedTable([new TableRow({ cantSplit: true, children: [
     tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.colors.primary), size: 30, font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft) }),
-    tableCell([
-      new Paragraph({ spacing: { after: 55 }, children: [new TextRun({ text: target.area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] }),
-      new Paragraph({ children: [new TextRun({ text: formatQuantitativeTargetSentence(target), size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] }),
-      ...(target.subtopics || []).map((item) => listParagraph(item, "bullet", model.typography, model.theme)),
-    ], bodyWidth, { fill: documentHex(model.theme.colors.soft), borders: { left: border(documentHex(model.theme.colors.line), 5), right: border(documentHex(model.theme.colors.line), 5) } }),
-    tableCell([
-      new Paragraph({ children: [new TextRun({ text: target.reportingFrequency === "Annually" ? "REPORTED ANNUALLY" : target.deadline || "TARGET PERIOD", bold: true, size: 14, color: documentHex(model.theme.colors.ink), font: model.typography.fontFamily })] }),
-      new Paragraph({ spacing: { before: 45 }, children: [new TextRun({ text: target.reportingFrequency === "Annually" ? "Ongoing" : target.baseline || "No baseline", color: documentHex(model.theme.colors.muted), size: 14, font: model.typography.fontFamily })] }),
-    ], metaWidth, { fill: documentHex(model.theme.colors.soft) }),
-  ] })], [numberWidth, bodyWidth, metaWidth]);
+    tableCell(quantitativeTargetBody(group, model), bodyWidth, { fill: documentHex(model.theme.colors.soft), borders: { left: border(documentHex(model.theme.colors.line), 5), right: border(documentHex(model.theme.colors.line), 5) } }),
+  ] })], [numberWidth, bodyWidth]);
 }
 
-function journalTarget(target: QuantitativeTarget & { area: string }, model: DocumentRenderModel) {
-  return new Paragraph({
+function journalTarget(group: QuantitativeTargetGroup, model: DocumentRenderModel): DocBlock[] {
+  return [new Paragraph({
     border: { top: border(documentHex(model.theme.colors.line), 5) },
-    spacing: { before: 90, after: 120 },
-    children: [
-      new TextRun({ text: `${target.area}\n`, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
-      new TextRun({ text: `${formatQuantitativeTargetSentence(target)}\n`, size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily }),
-      ...(target.subtopics || []).flatMap((item) => [new TextRun({ text: `• ${item}\n`, color: documentHex(model.theme.colors.muted), size: 15, font: model.typography.fontFamily })]),
-      new TextRun({ text: target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} - Achievement ${target.deadline || "-"}`, italics: true, color: documentHex(model.theme.colors.muted), size: 16, font: model.typography.fontFamily }),
-    ],
-  });
+    spacing: { before: 90, after: 55 },
+    children: [new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })],
+  }), ...quantitativeTargetParagraphs(group, model)];
+}
+
+function quantitativeTargetBody(group: QuantitativeTargetGroup, model: DocumentRenderModel): DocBlock[] {
+  return [
+    areaHeading(group.area, model),
+    ...quantitativeTargetParagraphs(group, model),
+  ];
+}
+
+function quantitativeTargetParagraphs(group: QuantitativeTargetGroup, model: DocumentRenderModel): Paragraph[] {
+  return group.targets.map((target) => listParagraph(formatQuantitativeTargetSentence(target), "bullet", model.typography, model.theme));
+}
+
+function areaHeading(area: string, model: DocumentRenderModel): Paragraph {
+  return new Paragraph({ spacing: { after: 55 }, children: [new TextRun({ text: area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] });
+}
+
+function quantitativeEntryGroup(group: QuantitativeTargetGroup, index: number, model: DocumentRenderModel, availableWidth: number): DocBlock {
+  const numberWidth = model.theme.collection === "professional" ? Math.round(8 * A4.pointsPerMm * 20) : 700;
+  return fixedTable([new TableRow({ cantSplit: true, children: [
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.collection === "professional" ? model.theme.colors.muted : model.theme.colors.primary), size: 20, font: model.typography.fontFamily })] })], numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) } }),
+    tableCell(quantitativeTargetBody(group, model), availableWidth - numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) } }),
+  ] })], [numberWidth, availableWidth - numberWidth]);
+}
+
+function quantitativeTable(groups: QuantitativeTargetGroup[], availableWidth: number, model: DocumentRenderModel): Table {
+  const widths = scaledWidths([700, 2100, 5706], availableWidth);
+  const headers = ["#", "Focus Area", "Targets"];
+  const lightHeader = model.theme.collection === "professional" || model.theme.layout.dataLayout === "quiet-rules";
+  const borders = allBorders(documentHex(model.theme.colors.line), BorderStyle.SINGLE, 5);
+  const headerFill = lightHeader ? documentHex(model.theme.colors.soft) : documentHex(model.theme.colors.primary);
+  const headerColor = lightHeader ? documentHex(model.theme.colors.subheading) : documentHex(model.theme.colors.onPrimary);
+  return fixedTable([
+    new TableRow({ tableHeader: true, cantSplit: true, children: headers.map((header, index) => tableCell([
+      new Paragraph({ children: [new TextRun({ text: header, bold: true, color: headerColor, size: 17 })] }),
+    ], widths[index], { fill: headerFill, borders })) }),
+    ...groups.map((group, index) => new TableRow({ cantSplit: true, children: [
+      tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index + 1).padStart(2, "0"), bold: true, size: 17 })] })], widths[0], { borders }),
+      tableCell([areaHeading(group.area, model)], widths[1], { borders }),
+      tableCell(quantitativeTargetParagraphs(group, model), widths[2], { borders }),
+    ] })),
+  ], widths);
 }
 
 function numberedCard(index: number, text: string, model: DocumentRenderModel, filled: boolean, splitRole = false): DocBlock[] {
@@ -1234,7 +1257,7 @@ function buildHeader(model: DocumentRenderModel, logo: LogoImage, alignment: typ
   return new Header({ children: [pageBackgroundParagraph(model), new Paragraph({
     alignment,
     border: { bottom: border(layout === "outer-folio" ? documentHex(theme.colors.accent) : documentHex(theme.colors.line), 5) },
-    spacing: { after: 60 },
+    spacing: { after: 480 },
     children,
   })] });
 }

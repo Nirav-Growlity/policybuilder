@@ -3,6 +3,7 @@ import { getPolicyDocumentTheme, getResolvedTypography, type DocumentSectionReci
 import { getEnabledSections, sectionHasContent } from "./sections";
 import { getCompanySites, type CoverComposition, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
 import { normalizeCoverComposition, removeLegacyThemeGradient } from "./cover-composition";
+import { groupQuantitativeTargets } from "./quantitative";
 
 export type ContentDensity = "short" | "regular" | "dense";
 export type DataTreatment = "formal-tables" | "clean-bullets";
@@ -187,11 +188,12 @@ function getSectionMetrics(policy: Policy, section: PolicySection) {
       cells: 0,
     };
     case "quantitative": {
-      const targets = content.areas.flatMap((area) => area.targets.filter((target) => target.target));
+      const groups = groupQuantitativeTargets(content.areas);
+      const targets = groups.flatMap((group) => group.targets);
       return {
-        characters: targets.reduce((total, target) => total + `${target.target}${target.baseline}${target.deadline}${(target.subtopics || []).join("")}`.length, 0),
-        items: targets.reduce((total, target) => total + 1 + (target.subtopics || []).length, 0),
-        cells: targets.length * 6,
+        characters: targets.reduce((total, target) => total + `${target.target}${target.baseline}${target.deadline}`.length, 0),
+        items: targets.length,
+        cells: groups.length * 3,
       };
     }
     case "sdg": return { characters: content.goals.reduce((total, goal) => total + goal.label.length, 0), items: content.goals.length, cells: 0 };

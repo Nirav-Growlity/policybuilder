@@ -11,7 +11,7 @@ import {
 } from "@/lib/document-render-model";
 import type { Policy, RichTextBlock } from "@/lib/types";
 import { getCoverBindingValue } from "@/lib/cover-composition";
-import { formatQuantitativeTargetSentence } from "@/lib/quantitative";
+import { formatQuantitativeTargetSentence, groupQuantitativeTargets, type QuantitativeTargetGroup } from "@/lib/quantitative";
 
 export function PolicyPreview({ policy, customCoverPng }: { policy: Policy; customCoverPng?: string }) {
   const model = buildDocumentRenderModel(policy);
@@ -653,24 +653,28 @@ function QualitativeGroups({ groups, recipe, density }: { groups: { area: string
 }
 
 function QuantitativeTargets({ areas, model, density }: { areas: Policy["quantitative"]; model: DocumentRenderModel; density: string }) {
-  const targets = areas.flatMap((area) => area.targets.filter((target) => target.target).map((target) => ({ ...target, area: area.area })));
+  const groups = groupQuantitativeTargets(areas);
   const useModernTreatment = model.dataTreatment === "clean-bullets";
   const useBands = useModernTreatment && model.theme.layout.dataLayout === "target-bands" && density !== "dense";
   const useJournalEntries = useModernTreatment && model.theme.layout.dataLayout === "quiet-rules" && density !== "dense";
   if (useBands) {
-    return <div className="policy-target-bands">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{target.area}</h3><TargetDescription target={target} /></section><aside><span>{target.reportingFrequency === "Annually" ? "Reported annually" : target.deadline || "Target period"}</span><small>{target.reportingFrequency === "Annually" ? "Ongoing" : target.baseline || "No baseline"}</small></aside></div>)}</div>;
+    return <div className="policy-target-bands">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{group.area}</h3><TargetDescription targets={group.targets} /></section></div>)}</div>;
   }
   if (useJournalEntries) {
-    return <div className="policy-journal-targets">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{target.area}</b><TargetDescription target={target} /><span>{target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Achievement ${target.deadline || "-"}`}</span></div>)}</div>;
+    return <div className="policy-journal-targets">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{group.area}</b><TargetDescription targets={group.targets} /></div>)}</div>;
   }
   if (useModernTreatment) {
-    return <div className="policy-modern-targets">{targets.map((target, index) => <div key={`${target.area}-${target.target}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{target.area}</h3><TargetDescription target={target} /><small>{target.reportingFrequency === "Annually" ? "Reported annually" : `Baseline ${target.baseline || "-"} · Achievement ${target.deadline || "-"}`}</small></section></div>)}</div>;
+    return <div className="policy-modern-targets">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{group.area}</h3><TargetDescription targets={group.targets} /></section></div>)}</div>;
   }
-  return <PolicyTable headers={["#", "Focus Area", "Target", "Baseline", "Achievement year", "Reporting"]} rows={targets.map((target, index) => [String(index + 1), target.area, [formatQuantitativeTargetSentence(target), ...(target.subtopics || []).map((item) => `• ${item}`)].join("\n"), target.reportingFrequency === "Annually" ? "-" : target.baseline, target.reportingFrequency === "Annually" ? "-" : target.deadline, target.reportingFrequency || "Target period"])} />;
+  return <QuantitativeTable groups={groups} />;
 }
 
-function TargetDescription({ target }: { target: Policy["quantitative"][number]["targets"][number] }) {
-  return <><p>{formatQuantitativeTargetSentence(target)}</p>{target.subtopics?.length ? <ul className="policy-target-subtopics">{target.subtopics.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ul> : null}</>;
+function TargetDescription({ targets }: { targets: QuantitativeTargetGroup["targets"] }) {
+  return <ul className="policy-target-list">{targets.map((target, index) => <li key={`${target.target}-${index}`}>{formatQuantitativeTargetSentence(target)}</li>)}</ul>;
+}
+
+function QuantitativeTable({ groups }: { groups: QuantitativeTargetGroup[] }) {
+  return <div className="policy-table-wrap"><table className="policy-table" data-target-table="true"><colgroup><col className="policy-target-index-column" /><col className="policy-target-area-column" /><col /></colgroup><thead><tr><th>#</th><th>Focus Area</th><th>Targets</th></tr></thead><tbody>{groups.map((group, index) => <tr key={`${group.area}-${index}`}><td>{String(index + 1).padStart(2, "0")}</td><td>{group.area}</td><td><TargetDescription targets={group.targets} /></td></tr>)}</tbody></table></div>;
 }
 
 function SdgGoals({ goals, model, policy }: { goals: { number: number; label: string; color: string }[]; model: DocumentRenderModel; policy: Policy }) {
@@ -977,7 +981,7 @@ const previewStyles = `
   .toc-editorial-item b { color: var(--doc-accent); font-family: var(--policy-heading-font); font-size: 22px; font-weight: 400; }
   .toc-editorial-item span { font-size: 10px; }
 
-  .policy-running-header { display: grid; grid-template-columns: 1fr auto 1fr; min-height: 58px; align-items: center; margin: 0 50px; border-bottom: 1px solid var(--doc-line); color: var(--doc-muted); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+  .policy-running-header { display: grid; grid-template-columns: 1fr auto 1fr; min-height: 58px; align-items: center; margin: 0 50px 14px; border-bottom: 1px solid var(--doc-line); color: var(--doc-muted); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
   .policy-running-header-brand { display: flex; min-width: 0; align-items: center; }
   .policy-running-header-brand.logo-position-left { grid-column: 1; justify-content: flex-start; }
   .policy-running-header-brand.logo-position-center { grid-column: 2; justify-content: center; }
@@ -1033,6 +1037,10 @@ const previewStyles = `
   .policy-table { width: 100%; border-collapse: collapse; border: 1px solid var(--doc-line); font-size: calc(var(--policy-paragraph-size) * .83); line-height: 1.35; }
   .policy-table th, .policy-table td { border-right: 1px solid var(--doc-line); border-bottom: 1px solid var(--doc-line); padding: 9px; text-align: left; vertical-align: middle; }
   .policy-table th { background: var(--doc-primary); color: var(--doc-on-primary); font-weight: 800; }
+  .policy-table[data-target-table="true"] { table-layout: fixed; }
+  .policy-table[data-target-table="true"] .policy-target-index-column { width: 12%; }
+  .policy-table[data-target-table="true"] .policy-target-area-column { width: 25%; }
+  .policy-table[data-target-table="true"] th:first-child, .policy-table[data-target-table="true"] td:first-child { white-space: nowrap; text-align: center; }
   [data-data-layout="compact-ledger"] .policy-table { border-inline: 0; font-size: calc(var(--policy-paragraph-size) * .78); }
   [data-data-layout="compact-ledger"] .policy-table th { border-bottom: 2px solid var(--doc-primary); background: var(--doc-soft); color: var(--doc-primary-dark); }
   [data-data-layout="compact-ledger"] .policy-table th, [data-data-layout="compact-ledger"] .policy-table td { padding: 7px 8px; }
@@ -1068,22 +1076,16 @@ const previewStyles = `
   .density-dense.recipe-dossier-columns.policy-objective-groups, .density-dense.recipe-atlas-modules.policy-objective-groups { grid-template-columns: 1fr; }
 
   .policy-target-bands { display: grid; gap: 8px; }
-  .policy-target-bands > div { display: grid; grid-template-columns: 52px minmax(0,1fr) 130px; align-items: stretch; background: var(--doc-soft); }
+  .policy-target-bands > div { display: grid; grid-template-columns: 52px minmax(0,1fr); align-items: stretch; background: var(--doc-soft); }
   .policy-target-bands > div > b { display: grid; place-items: center; color: var(--doc-primary); font-size: 20px; font-weight: 500; }
   .policy-target-bands > div > section { padding: 13px 15px; border-inline: 1px solid var(--doc-line); }
-  .policy-target-bands > div > section p { margin: 6px 0 0; text-align: left; }
-  .policy-target-bands > div > aside { display: flex; flex-direction: column; justify-content: center; padding: 10px 13px; }
-  .policy-target-bands > div > aside span { font-size: 9px; font-weight: 800; }
-  .policy-target-bands > div > aside small { margin-top: 4px; color: var(--doc-muted); font-size: 8px; }
   .policy-journal-targets > div { display: grid; grid-template-columns: 150px 1fr; border-top: 1px solid var(--doc-line); padding: 14px 0; }
   .policy-journal-targets b { color: var(--doc-accent); font-family: var(--policy-heading-font); }
-  .policy-journal-targets p { margin: 0; text-align: left; }
-  .policy-journal-targets span { grid-column: 2; margin-top: 4px; color: var(--doc-muted); font-size: 9px; font-style: italic; }
   .policy-modern-targets { display: grid; gap: 9px; }
   .policy-modern-targets > div { display: grid; grid-template-columns: 42px 1fr; border-top: 1px solid var(--doc-line); padding-top: 10px; }
   .policy-modern-targets > div > b { color: var(--doc-primary); }
-  .policy-modern-targets p { margin: 5px 0; text-align: left; }
-  .policy-modern-targets small { color: var(--doc-muted); font-size: 9px; }
+  .policy-target-list { margin: 6px 0 0; padding-left: 20px; text-align: left; }
+  .policy-target-list > li { margin: 5px 0; }
 
   .policy-responsibility-list { display: grid; gap: 9px; }
   .policy-responsibility-list > div { display: grid; grid-template-columns: 42px 1fr; border-top: 1px solid var(--doc-line); padding-top: 10px; }
@@ -1112,8 +1114,6 @@ const previewStyles = `
   .policy-custom-blocks > p { margin-bottom: 12px; }
   .policy-custom-blocks ul, .policy-custom-blocks ol { margin: 12px 0; padding-left: 20px; }
   .policy-custom-blocks li { margin: 5px 0; }
-  .policy-target-subtopics { margin: 7px 0 0; padding-left: 18px; color: var(--doc-muted); font-size: .92em; }
-  .policy-target-subtopics li { margin: 3px 0; }
   .policy-footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr; align-items: center; gap: 18px; border-top: 1px solid var(--doc-primary); padding: 18px 50px; color: var(--doc-muted); font-size: 8px; }
   .policy-footer > span { min-width: 0; overflow-wrap: anywhere; }
   .policy-footer > span:nth-child(2) { text-align: center; }
@@ -1163,7 +1163,6 @@ const previewStyles = `
     .policy-metadata-strip { grid-template-columns: repeat(2, 1fr); }
     .recipe-dossier-columns.policy-focus-list, .recipe-atlas-modules.policy-focus-list, .recipe-dossier-columns.policy-objective-groups, .recipe-atlas-modules.policy-objective-groups, .responsibility-numbered-rail, .responsibility-modular-grid, .sdg-atlas-mosaic { grid-template-columns: 1fr; }
     .policy-target-bands > div { grid-template-columns: 42px 1fr; }
-    .policy-target-bands > div > aside { grid-column: 2; border-top: 1px solid var(--doc-line); }
     .policy-footer { grid-template-columns: 1fr; gap: 8px; padding-inline: 28px; }
     .policy-footer > span:nth-child(2), .policy-footer > span:last-child { text-align: left; }
   }
@@ -1351,6 +1350,8 @@ const previewStyles = `
   [data-collection="professional"] .policy-table { border-collapse: collapse; border: 1px solid var(--doc-line); font-size: 9.5pt; }
   [data-collection="professional"] .policy-table th { padding: 2.5mm 2mm; background: var(--doc-soft) !important; color: var(--doc-ink) !important; border: 1px solid var(--doc-line); font-weight: 600; }
   [data-collection="professional"] .policy-table td { padding: 2.5mm 2mm; border: 1px solid var(--doc-line); vertical-align: top; }
+  [data-collection="professional"] .policy-target-list { margin: 0; padding-left: 5mm; }
+  [data-collection="professional"] .policy-target-list > li { margin: 1.5mm 0; }
   [data-collection="professional"] .policy-acknowledgement { padding: 0; border: 0; background: transparent; }
   [data-collection="professional"] .policy-acknowledgement.acknowledgement-legal-form {
     padding: 10mm 12mm 9mm;

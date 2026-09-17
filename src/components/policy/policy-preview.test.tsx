@@ -98,3 +98,24 @@ test("footer uses the aligned document-control contract", () => {
   assert.match(footer, /Review[\s\S]*2027-01-14[\s\S]*Environmental Manager[\s\S]*Compliance Officer/);
   assert.match(footer, /Page[\s\S]*—/);
 });
+
+test("quantitative preview groups repeated areas and keeps timing inside target bullets", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.quantitative = [{
+    area: "Gifts & Hospitality",
+    targets: [
+      { target: "Achieve 100% timely disclosure of reportable gifts", baseline: "FY 2025-26", deadline: "FY 2028-29", reportingFrequency: "Target period", subtopics: ["Maintain a centralized register.", "Apply approval thresholds."] },
+      { target: "Complete 100% compliance training for relevant employees", baseline: "FY 2025-26", deadline: "FY 2029-30", reportingFrequency: "Target period", subtopics: ["Cover conflicts of interest."] },
+    ],
+  }];
+  const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
+  const quantitative = markup.slice(markup.indexOf('id="standard-quantitative"'));
+  assert.equal((quantitative.match(/Gifts &amp; Hospitality/g) || []).length, 1);
+  assert.match(quantitative, />01<\//, "quantitative area numbers should be zero-padded");
+  assert.equal((quantitative.match(/class="policy-target-list"/g) || []).length, 1);
+  assert.equal((quantitative.match(/class="policy-target-subtopics"/g) || []).length, 0);
+  assert.equal((quantitative.match(/Achieve 100%/g) || []).length, 1);
+  assert.equal((quantitative.match(/Complete 100%/g) || []).length, 1);
+  assert.doesNotMatch(quantitative, /Baseline year|Achievement year|Reporting basis|Targets are tracked/);
+  assert.doesNotMatch(quantitative, /Maintain a centralized register|Apply approval thresholds|Cover conflicts of interest/);
+});

@@ -4,10 +4,11 @@ import { getDocument, OPS, Util } from "pdfjs-dist/legacy/build/pdf.mjs";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { DOCUMENT_THEMES } from "../document-themes";
+import { A4, pageFooterDistanceMm, pageFooterVerticalShiftMm } from "../page-geometry";
 import { templatePreviewPolicy } from "../sample-policies";
 import { generatePdf } from "./generate";
 import { PDFDocument, PDFDict, PDFArray, PDFName } from "pdf-lib";
-import { applyPageBackground } from "./print-document";
+import { applyPageBackground, generatePreviewPdf } from "./print-document";
 
 for (const direction of ["vertical", "horizontal", "diagonal"] as const) {
   test(`${direction} gradient covers the complete page and repeats on every page`, async () => {
@@ -25,6 +26,27 @@ for (const direction of ["vertical", "horizontal", "diagonal"] as const) {
     }
   });
 }
+
+test("bordered PDF footer stays above the rendered border stroke", async () => {
+  for (const { insetMm, widthPt } of [{ insetMm: 5, widthPt: .5 }, { insetMm: 10, widthPt: 1 }, { insetMm: 20, widthPt: 6 }]) {
+    const policy = templatePreviewPolicy("standard-pack", "environmental");
+    policy.company.docNum = "BORDER-FOOTER";
+    policy.templateBrandOverrides = { schemaVersion: 1, pageBorder: { enabled: true, widthPt, insetMm, scope: "all" } };
+    const bytes = await generatePreviewPdf(policy);
+    const pdf = await getDocument({ data: new Uint8Array(bytes), useSystemFonts: true }).promise;
+    try {
+      const page = await pdf.getPage(1);
+      const content = await page.getTextContent();
+      const pageLabel = content.items.find((item) => "str" in item && item.str === "Page");
+      assert.ok(pageLabel && "transform" in pageLabel, `${insetMm}mm/${widthPt}pt: footer page label is missing`);
+      const baselineY = pageLabel.transform[5];
+      const borderY = insetMm * A4.pointsPerMm;
+      assert.ok(baselineY > borderY + widthPt / 2 + 3, `${insetMm}mm/${widthPt}pt: footer baseline ${baselineY}pt crosses border at ${borderY}pt`);
+    } finally { await pdf.destroy(); }
+  }
+  assert.equal(pageFooterVerticalShiftMm({ enabled: false, widthPt: 1, insetMm: 10, scope: "all" }), 0);
+  assert.equal(pageFooterDistanceMm({ enabled: false, widthPt: 1, insetMm: 10, scope: "all" }), 12.5);
+});
 
 for (const { theme, withLogo } of DOCUMENT_THEMES.flatMap(theme => [false, true].map(withLogo => ({ theme, withLogo })))) {
   test(`${theme.id}${withLogo ? " with large logo" : ""}: cover stays on page one and footer controls remain separated`, async () => {

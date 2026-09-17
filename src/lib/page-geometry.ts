@@ -23,6 +23,21 @@ export function pageBorderContentInsetMm(border: PageBorder): number {
   return border.enabled ? border.insetMm + border.widthPt / A4.pointsPerMm / 2 + 2 : pageMarginMm(border);
 }
 
+/** Return the effective native Word border spacing, which is capped at 31pt. */
+export function pageBorderSpaceMm(border: PageBorder): number {
+  return border.enabled ? Math.min(31, border.insetMm * A4.pointsPerMm) / A4.pointsPerMm : 0;
+}
+
+/** Reserve footer room above the rendered border without changing footer content. */
+export function pageFooterDistanceMm(border: PageBorder, clearanceMm = 6.5): number {
+  return border.enabled ? pageBorderSpaceMm(border) + border.widthPt / A4.pointsPerMm / 2 + clearanceMm : 12.5;
+}
+
+/** Move PDF footer furniture above the rendered border stroke. */
+export function pageFooterVerticalShiftMm(border: PageBorder, clearanceMm = 6.5): number {
+  return border.enabled ? border.widthPt / A4.pointsPerMm / 2 + clearanceMm : 0;
+}
+
 /** Move header furniture below the top border rather than straddling it. */
 export function pageBorderHeaderVerticalShiftMm(border: PageBorder): number {
   return border.enabled ? Math.max(3, border.insetMm - 7) : 0;
