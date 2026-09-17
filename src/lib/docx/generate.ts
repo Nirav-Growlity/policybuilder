@@ -25,6 +25,7 @@ import {
   TextDirection,
   TextRun,
   TextWrappingType,
+  type TableVerticalAlign,
   VerticalAlign,
   VerticalPositionAlign,
   VerticalPositionRelativeFrom,
@@ -64,6 +65,7 @@ const geometry = new AsyncLocalStorage<number>();
 const pageMargin = () => geometry.getStore() ?? 1000;
 const contentWidth = () => PAGE_WIDTH - pageMargin() * 2;
 const CELL_MARGIN = 120;
+const QUANTITATIVE_NUMBER_WIDTH = 1000;
 
 export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   const theme = getPolicyDocumentTheme(inputPolicy);
@@ -1054,10 +1056,10 @@ function renderCustomBlocks(blocks: RichTextBlock[], model: DocumentRenderModel,
 }
 
 function targetBand(group: QuantitativeTargetGroup, index: number, model: DocumentRenderModel, availableWidth: number) {
-  const numberWidth = 750;
+  const numberWidth = QUANTITATIVE_NUMBER_WIDTH;
   const bodyWidth = availableWidth - numberWidth;
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.colors.primary), size: 30, font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft) }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.colors.primary), size: 30, font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft), verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
     tableCell(quantitativeTargetBody(group, model), bodyWidth, { fill: documentHex(model.theme.colors.soft), borders: { left: border(documentHex(model.theme.colors.line), 5), right: border(documentHex(model.theme.colors.line), 5) } }),
   ] })], [numberWidth, bodyWidth]);
 }
@@ -1086,15 +1088,15 @@ function areaHeading(area: string, model: DocumentRenderModel): Paragraph {
 }
 
 function quantitativeEntryGroup(group: QuantitativeTargetGroup, index: number, model: DocumentRenderModel, availableWidth: number): DocBlock {
-  const numberWidth = model.theme.collection === "professional" ? Math.round(8 * A4.pointsPerMm * 20) : 700;
+  const numberWidth = QUANTITATIVE_NUMBER_WIDTH;
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.collection === "professional" ? model.theme.colors.muted : model.theme.colors.primary), size: 20, font: model.typography.fontFamily })] })], numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) } }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.collection === "professional" ? model.theme.colors.muted : model.theme.colors.primary), size: 20, font: model.typography.fontFamily })] })], numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) }, verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
     tableCell(quantitativeTargetBody(group, model), availableWidth - numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) } }),
   ] })], [numberWidth, availableWidth - numberWidth]);
 }
 
 function quantitativeTable(groups: QuantitativeTargetGroup[], availableWidth: number, model: DocumentRenderModel): Table {
-  const widths = scaledWidths([700, 2100, 5706], availableWidth);
+  const widths = scaledWidths([QUANTITATIVE_NUMBER_WIDTH, 2100, 5406], availableWidth);
   const headers = ["#", "Focus Area", "Targets"];
   const lightHeader = model.theme.collection === "professional" || model.theme.layout.dataLayout === "quiet-rules";
   const borders = allBorders(documentHex(model.theme.colors.line), BorderStyle.SINGLE, 5);
@@ -1301,6 +1303,7 @@ function fixedTable(rows: TableRow[], columnWidths: number[], options: { width?:
 function tableCell(children: DocBlock[], width: number, options: {
   fill?: string;
   textDirection?: typeof TextDirection[keyof typeof TextDirection];
+  verticalAlign?: TableVerticalAlign;
   columnSpan?: number;
   margins?: { top: number; bottom: number; left: number; right: number };
   borders?: ReturnType<typeof allBorders> | Partial<ReturnType<typeof allBorders>>;
@@ -1309,7 +1312,7 @@ function tableCell(children: DocBlock[], width: number, options: {
     width: { size: width, type: WidthType.DXA },
     shading: options.fill ? { type: ShadingType.SOLID, color: options.fill, fill: options.fill } : undefined,
     margins: options.margins || { top: CELL_MARGIN, bottom: CELL_MARGIN, left: CELL_MARGIN, right: CELL_MARGIN },
-    verticalAlign: VerticalAlign.CENTER,
+    verticalAlign: options.verticalAlign || VerticalAlign.CENTER,
     textDirection: options.textDirection,
     columnSpan: options.columnSpan,
     borders: options.borders,

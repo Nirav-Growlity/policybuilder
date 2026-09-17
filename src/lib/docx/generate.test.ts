@@ -47,12 +47,27 @@ test("quantitative Word output groups repeated areas and omits metadata columns"
   assert.ok((document.match(/w:numId/g) || []).length >= 2, "quantitative targets should use Word bullets");
 });
 
+test("Word quantitative area numbers stay horizontal and align with the title", async () => {
+  const policy = templatePreviewPolicy("sustainability-charter", "environmental");
+  policy.quantitative = [{
+    area: "Gifts & Hospitality",
+    targets: [
+      { target: "Achieve 100% timely disclosure of reportable gifts", baseline: "FY 2025-26", deadline: "FY 2028-29", reportingFrequency: "Target period", subtopics: [] },
+      { target: "Complete 100% compliance training for relevant employees", baseline: "FY 2025-26", deadline: "FY 2029-30", reportingFrequency: "Target period", subtopics: [] },
+    ],
+  }];
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  assert.match(document, /w:tcW w:type="dxa" w:w="1000"/, "quantitative area number cells should have enough width for two digits");
+  assert.match(document, /w:vAlign w:val="top"/, "quantitative area numbers should align with the area title");
+});
+
 test("Word running header leaves a visible gap after the logo rule", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   const zip = await JSZip.loadAsync(await generateDocx(policy));
   const headerNames = Object.keys(zip.files).filter((name) => /^word\/header\d+\.xml$/.test(name));
   const headers = await Promise.all(headerNames.map((name) => zip.file(name)!.async("string")));
-  assert.ok(headers.some((header) => header.includes('w:after="180"')), "content header should separate the logo rule from body content");
+  assert.ok(headers.some((header) => header.includes('w:after="480"')), "content header should separate the logo rule from body content");
 });
 
 test("Word table headers use the preview's soft fill and subheading color", async () => {
