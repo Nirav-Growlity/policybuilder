@@ -3,6 +3,7 @@ import { generatePdf } from "@/lib/pdf/generate";
 import type { Policy } from "@/lib/types";
 import { normalizePolicyQuantitative } from "@/lib/quantitative";
 import { getPolicyProfile } from "@/lib/constants";
+import { hasExternalCoverAssets, stripExternalActiveCoverAssets } from "@/lib/cover-composition";
 
 export const runtime = "nodejs";
 
@@ -11,14 +12,20 @@ export async function POST(req: NextRequest) {
     const { policy } = (await req.json()) as { policy: Policy };
     let auth: Awaited<ReturnType<(typeof import("@/lib/policycraft-auth"))["getPolicyCraftAuth"]>> = null;
     let resolved = policy;
-    if (policy.coverComposition) {
+    if (policy.coverComposition || policy.aiCoverComposition) {
       try {
         const [{ getPolicyCraftAuth }, { resolveCoverAssets }] = await Promise.all([import("@/lib/policycraft-auth"), import("@/lib/cover-repository")]);
-        auth = await getPolicyCraftAuth();
-        if (auth) resolved = await resolveCoverAssets(policy, auth.organization.id);
-      } catch { /* asset-free exports remain available in local/demo mode */ }
+        const candidateAuth = await getPolicyCraftAuth();
+        if (candidateAuth) {
+          resolved = await resolveCoverAssets(policy, candidateAuth.organization.id);
+          auth = candidateAuth;
+        }
+      } catch {
+        auth = null;
+        resolved = policy;
+      }
     }
-    if (policy.coverComposition && !auth && (Boolean(policy.coverComposition.background.assetId && !policy.coverComposition.background.assetId.startsWith("data:")) || policy.coverComposition.elements.some((element) => element.type === "image" && !element.assetId.startsWith("data:")))) throw new Error("Cover assets require authentication");
+    if (!auth && hasExternalCoverAssets(policy)) resolved = stripExternalActiveCoverAssets(policy);
     const buf = await generatePdf(normalizePolicyQuantitative(resolved));
     return new NextResponse(new Uint8Array(buf), {
       status: 200,

@@ -7,7 +7,7 @@ import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, REVISION_HISTORY_DEFAULT
 import { normalizePolicyQuantitative } from "./quantitative";
 import { getWorkflowSteps, normalizePolicyStructure } from "./sections";
 import { DEFAULT_DOCUMENT_THEME_ID } from "./document-themes";
-import { normalizeCoverComposition } from "./cover-composition";
+import { normalizePolicyCovers } from "./cover-composition";
 
 export const initialPolicy = (policyType: PolicyType = "environmental"): Policy => {
   const profile = getPolicyProfile(policyType);
@@ -50,6 +50,7 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
   reviewMechanism: "",
   showRevisionHistory: true,
   revisionHistory: [...REVISION_HISTORY_DEFAULT],
+  activeCoverVariant: "manual",
   definitions: policyType === "living-wage" ? { title: "Living Wage", content: "A living wage is remuneration sufficient to provide a decent standard of living for a worker and their family, considering local conditions and statutory requirements." } : undefined,
 });
 };
@@ -97,12 +98,12 @@ export const useBuilder = create<BuilderState>()(
         const current = get().policy;
         const patch = updater(current);
         const next = normalizePolicyStructure(normalizePolicyQuantitative(patch ? { ...current, ...patch } : current));
-        next.coverComposition = normalizeCoverComposition(next.coverComposition);
+        Object.assign(next, normalizePolicyCovers(next));
         set({ policy: next });
       },
       setPolicy: (p) => {
         const next = normalizePolicyStructure(normalizePolicyQuantitative(p));
-        next.coverComposition = normalizeCoverComposition(next.coverComposition);
+        Object.assign(next, normalizePolicyCovers(next));
         set({ policy: next });
       },
       setImportedPolicy: (reference) => set({ importedPolicy: reference }),
@@ -144,7 +145,7 @@ export const useBuilder = create<BuilderState>()(
       onRehydrateStorage: () => (state) => {
         if (state) {
           state.policy = normalizePolicyStructure(normalizePolicyQuantitative(state.policy));
-          state.policy.coverComposition = normalizeCoverComposition(state.policy.coverComposition);
+          state.policy = normalizePolicyCovers(state.policy);
           state.hydrated = true;
         }
       },

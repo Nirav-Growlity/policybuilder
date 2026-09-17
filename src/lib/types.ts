@@ -371,6 +371,9 @@ export interface Policy {
   typography?: DocumentTypography;
   featureImage?: PolicyFeatureImage;
   coverComposition?: CoverComposition;
+  /** The manually edited cover remains in coverComposition for compatibility. */
+  aiCoverComposition?: CoverComposition;
+  activeCoverVariant?: "manual" | "ai";
   company: Company;
   standards: string[];
   declaration: Declaration;

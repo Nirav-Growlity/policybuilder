@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getPolicyCraftAuth } from "@/lib/policycraft-auth";
 import { archiveDocument, getDocument, renameDocument, restoreDocument, updateDocument } from "@/lib/policycraft-repository";
 import type { PolicyCraftDocumentState } from "@/lib/policycraft-types";
-import { normalizeCoverComposition } from "@/lib/cover-composition";
+import { normalizePolicyCovers } from "@/lib/cover-composition";
 
 function isDocumentState(value: unknown): value is PolicyCraftDocumentState {
   if (!value || typeof value !== "object") return false;
@@ -59,7 +59,7 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
   const title = typeof body.title === "string" && body.title.trim()
     ? body.title.trim().slice(0, 255)
     : `${body.state.policy.policyType} policy`;
-  const state: PolicyCraftDocumentState = { ...body.state, policy: { ...body.state.policy, coverComposition: normalizeCoverComposition(body.state.policy.coverComposition) } };
+  const state: PolicyCraftDocumentState = { ...body.state, policy: normalizePolicyCovers(body.state.policy) };
   const result = await updateDocument(auth, id, title, state, body.lockVersion);
   if (result === "not_found") return NextResponse.json({ error: "Document not found" }, { status: 404 });
   if (result === "conflict") return NextResponse.json({ error: "Document changed by another user" }, { status: 409 });

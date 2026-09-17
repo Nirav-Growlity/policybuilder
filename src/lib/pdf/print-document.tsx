@@ -20,7 +20,7 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const logoHeight = hasLogo ? logoFit.heightMm : 0;
   const horizontalMargin = pageMarginMm(theme.pageBorder);
   const topMargin = hasLogo ? pageHeaderMarginMm(theme.pageBorder, logoHeight) : horizontalMargin;
-  const customCover = policy.coverComposition ? { data: await renderCustomCoverPng(policy), type: "png" as const } : null;
+  const customCover = model.cover.composition ? { data: await renderCustomCoverPng(policy), type: "png" as const } : null;
   const customCoverPng = customCover ? `data:image/png;base64,${Buffer.from(customCover.data).toString("base64")}` : undefined;
   const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} />));
   const { context, userDataDir } = await createPdfContext();

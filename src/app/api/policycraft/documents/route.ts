@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getPolicyCraftAuth } from "@/lib/policycraft-auth";
 import { createDocument, listDocuments } from "@/lib/policycraft-repository";
 import type { PolicyCraftDocumentState } from "@/lib/policycraft-types";
-import { normalizeCoverComposition } from "@/lib/cover-composition";
+import { normalizePolicyCovers } from "@/lib/cover-composition";
 
 function isDocumentState(value: unknown): value is PolicyCraftDocumentState {
   if (!value || typeof value !== "object") return false;
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     : `${body.state.policy.policyType} policy`;
 
   try {
-    const state: PolicyCraftDocumentState = { ...body.state, policy: { ...body.state.policy, coverComposition: normalizeCoverComposition(body.state.policy.coverComposition) } };
+    const state: PolicyCraftDocumentState = { ...body.state, policy: normalizePolicyCovers(body.state.policy) };
     const document = await createDocument(auth, title, state);
     return NextResponse.json({ document }, { status: 201 });
   } catch (error) {

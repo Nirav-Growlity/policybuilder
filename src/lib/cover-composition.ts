@@ -8,6 +8,8 @@ export const COVER_MAX_IMAGES = 12;
 export const COVER_MAX_TEXT_LENGTH = 5000;
 export const COVER_BINDINGS: readonly CoverBinding[] = ["policyTitle", "companyName", "documentNumber", "effectiveDate", "revision", "nextReview"];
 
+export type CoverVariant = "manual" | "ai";
+
 const HEX = /^#[0-9A-F]{6}$/i;
 const DEFAULT_FONT = "Arial";
 
@@ -135,4 +137,61 @@ export function isLegacyThemeGradientAsset(assetId?: string): boolean {
 export function removeLegacyThemeGradient(composition: CoverComposition): CoverComposition {
   if (!isLegacyThemeGradientAsset(composition.background.assetId)) return composition;
   return normalizeCoverComposition({ ...composition, background: { ...composition.background, assetId: undefined } }) || composition;
+}
+
+export function normalizePolicyCovers(policy: Policy): Policy {
+  const coverComposition = normalizeCoverComposition(policy.coverComposition);
+  const aiCoverComposition = normalizeCoverComposition(policy.aiCoverComposition);
+  return {
+    ...policy,
+    coverComposition,
+    aiCoverComposition,
+    activeCoverVariant: policy.activeCoverVariant === "ai" && aiCoverComposition ? "ai" : "manual",
+  };
+}
+
+export function getActiveCoverVariant(policy: Pick<Policy, "activeCoverVariant" | "aiCoverComposition">): CoverVariant {
+  return policy.activeCoverVariant === "ai" && normalizeCoverComposition(policy.aiCoverComposition) ? "ai" : "manual";
+}
+
+export function getActiveCoverComposition(policy: Pick<Policy, "coverComposition" | "aiCoverComposition" | "activeCoverVariant">): CoverComposition | undefined {
+  return getActiveCoverVariant(policy) === "ai"
+    ? normalizeCoverComposition(policy.aiCoverComposition)
+    : normalizeCoverComposition(policy.coverComposition);
+}
+
+function isExternalCoverAsset(assetId?: string): boolean {
+  return Boolean(assetId && !assetId.startsWith("data:") && !assetId.startsWith("/"));
+}
+
+export function hasExternalCoverAssets(policy: Policy): boolean {
+  const composition = getActiveCoverComposition(policy);
+  if (!composition) return false;
+  if (isExternalCoverAsset(composition.background.assetId)) return true;
+  if (composition.elements.some((element) => (element.type === "image" || element.type === "logo") && isExternalCoverAsset(element.assetId))) return true;
+  return composition.elements.some((element) => element.type === "logo") && isExternalCoverAsset(policy.company.companyLogo);
+}
+
+/**
+ * Local/demo exports can still render the document when a saved private asset
+ * cannot be resolved because there is no session. Never turn those IDs into
+ * URLs in the export copy, and never mutate the persisted policy.
+ */
+export function stripExternalActiveCoverAssets(policy: Policy): Policy {
+  const composition = getActiveCoverComposition(policy);
+  if (!composition) return policy;
+  const elements = composition.elements.filter((element) => {
+    if (element.type === "image") return !isExternalCoverAsset(element.assetId);
+    if (element.type === "logo") return !isExternalCoverAsset(element.assetId || policy.company.companyLogo);
+    return true;
+  });
+  const background = isExternalCoverAsset(composition.background.assetId)
+    ? { ...composition.background, assetId: undefined }
+    : composition.background;
+  const active = normalizeCoverComposition({ ...composition, background, elements }) || composition;
+  return {
+    ...policy,
+    company: { ...policy.company, ...(isExternalCoverAsset(policy.company.companyLogo) ? { companyLogo: undefined } : {}) },
+    ...(getActiveCoverVariant(policy) === "ai" ? { aiCoverComposition: active } : { coverComposition: active }),
+  };
 }

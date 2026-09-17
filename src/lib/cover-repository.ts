@@ -29,20 +29,30 @@ export async function getCoverAsset(orgId: number, id: string) {
 }
 
 export async function resolveCoverAssets(policy: Policy, orgId: number): Promise<Policy> {
-  const composition = policy.coverComposition;
-  if (!composition) return policy;
+  if (!policy.coverComposition && !policy.aiCoverComposition) return policy;
   const resolve = async (id?: string) => {
     if (!id || id.startsWith("data:") || id.startsWith("/")) return id;
     const asset = await getCoverAsset(orgId, id);
     return asset ? `data:${asset.mime_type};base64,${asset.content.toString("base64")}` : undefined;
   };
-  const backgroundAsset = await resolve(composition.background.assetId);
   const companyLogo = await resolve(policy.company.companyLogo);
-  const elements = await Promise.all(composition.elements.map(async (element) => {
-    if (element.type !== "image" && element.type !== "logo") return element;
-    return { ...element, ...(element.assetId ? { assetId: (await resolve(element.assetId)) || element.assetId } : {}) };
-  }));
-  return { ...policy, company: { ...policy.company, companyLogo }, coverComposition: { ...composition, background: { ...composition.background, assetId: backgroundAsset }, elements } };
+  const resolveComposition = async (composition: CoverComposition | undefined) => {
+    if (!composition) return undefined;
+    const backgroundAsset = await resolve(composition.background.assetId);
+    const elements = await Promise.all(composition.elements.map(async (element) => {
+      if (element.type !== "image" && element.type !== "logo") return element;
+      return { ...element, ...(element.assetId ? { assetId: (await resolve(element.assetId)) || element.assetId } : {}) };
+    }));
+    return { ...composition, background: { ...composition.background, assetId: backgroundAsset }, elements };
+  };
+  const coverComposition = await resolveComposition(policy.coverComposition);
+  const aiCoverComposition = await resolveComposition(policy.aiCoverComposition);
+  return {
+    ...policy,
+    company: { ...policy.company, companyLogo },
+    coverComposition,
+    aiCoverComposition,
+  };
 }
 
 export async function listCoverTemplates(orgId: number) {

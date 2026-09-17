@@ -2,7 +2,7 @@ import { REVISION_HISTORY_DEFAULT, SDG_DATA, getPolicyProfile } from "./constant
 import { getPolicyDocumentTheme, getResolvedTypography, type DocumentSectionRecipe } from "./document-themes";
 import { getEnabledSections, sectionHasContent } from "./sections";
 import { getCompanySites, type CoverComposition, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
-import { normalizeCoverComposition, removeLegacyThemeGradient } from "./cover-composition";
+import { getActiveCoverComposition, getActiveCoverVariant, removeLegacyThemeGradient } from "./cover-composition";
 import { groupQuantitativeTargets } from "./quantitative";
 
 export type ContentDensity = "short" | "regular" | "dense";
@@ -45,6 +45,7 @@ export type DocumentRenderModel = {
   dataTreatment: DataTreatment;
   featureImage?: PolicyFeatureImage;
   cover: {
+    variant: "manual" | "ai";
     policyLabel: string;
     companyName: string;
     logo?: string;
@@ -105,8 +106,9 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
         { label: "Revision", value: policy.company.revNum || "" },
         { label: "Next Review", value: policy.company.reviewDate || "" },
       ],
+      variant: getActiveCoverVariant(policy),
       composition: (() => {
-        const composition = normalizeCoverComposition(policy.coverComposition);
+        const composition = getActiveCoverComposition(policy);
         return composition && theme.background.kind === "solid" && composition.sourceTemplateId !== "custom"
           ? removeLegacyThemeGradient(composition)
           : composition;
