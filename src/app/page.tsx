@@ -148,7 +148,7 @@ export default function Home() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-wider text-[var(--color-muted)]">
                     <span className="w-2 h-2 rounded-full bg-[var(--color-forest)]" />
-                    Live preview
+                    PDF preview
                   </div>
                   <span className="font-mono text-[10.5px] text-[var(--color-muted)]">ASC-ENV-001 · Rev 01</span>
                 </div>

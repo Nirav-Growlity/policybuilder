@@ -42,7 +42,7 @@ import { buildDocumentRenderModel, getRunningHeaderBrand, type DocumentRenderMod
 import { documentHex, type DocumentThemeDefinition } from "../document-themes";
 import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, normalizePolicyQuantitative, type QuantitativeTargetGroup } from "../quantitative";
-import { getCoverBindingValue } from "../cover-composition";
+import { getCoverBindingValue, getCoverTextPresentation } from "../cover-composition";
 import type { Policy, QuantitativeArea, QuantitativeTarget, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
 import { embeddedDocumentFonts } from "./document-fonts";
@@ -1369,7 +1369,7 @@ async function buildEditableCustomCoverElements(policy: Policy, model: DocumentR
   for (const element of composition.elements.filter((item) => item.visible).sort((left, right) => left.zIndex - right.zIndex)) {
     if (element.type === "text") {
       const value = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
-      elements.push(editableCoverTextBox(element, value) as unknown as ParagraphChild);
+      elements.push(editableCoverTextBox(element, value, composition.sourceTemplateId) as unknown as ParagraphChild);
       continue;
     }
     const source = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
@@ -1433,15 +1433,16 @@ function coverImageGravity(x: number, y: number): string {
   return `${vertical}${horizontal}`;
 }
 
-function editableCoverTextBox(element: EditableCoverTextElement, value: string) {
+function editableCoverTextBox(element: EditableCoverTextElement, value: string, sourceTemplateId: string) {
   const escapeXml = (text: string) => text.replace(/[&<>\"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[character]!);
   const points = (millimetres: number) => `${(millimetres * 72 / 25.4).toFixed(2)}pt`;
-  const color = documentHex(element.color);
+  const presentation = getCoverTextPresentation(element, sourceTemplateId);
+  const color = documentHex(presentation.color);
   const font = escapeXml(element.fontFamily);
-  const lines = wrapCoverText(value, element.width, element.fontSize, element.letterSpacing);
+  const lines = wrapCoverText(value, element.width, presentation.fontSize, presentation.letterSpacing);
   const runs = lines.map((line, index) => `${index ? "<w:br/>" : ""}<w:t xml:space="preserve">${escapeXml(line)}</w:t>`).join("");
-  const characterSpacing = element.letterSpacing ? `<w:spacing w:val="${Math.round(element.letterSpacing * 20)}"/>` : "";
-  const runProperties = `<w:rPr><w:rFonts w:ascii="${font}" w:cs="${font}" w:eastAsia="${font}" w:hAnsi="${font}"/>${element.bold ? "<w:b/><w:bCs/>" : ""}${element.italic ? "<w:i/><w:iCs/>" : ""}${element.underline ? '<w:u w:val="single"/>' : ""}<w:color w:val="${color}"/><w:sz w:val="${Math.round(element.fontSize * 2)}"/><w:szCs w:val="${Math.round(element.fontSize * 2)}"/>${characterSpacing}</w:rPr>`;
+  const characterSpacing = presentation.letterSpacing ? `<w:spacing w:val="${Math.round(presentation.letterSpacing * 20)}"/>` : "";
+  const runProperties = `<w:rPr><w:rFonts w:ascii="${font}" w:cs="${font}" w:eastAsia="${font}" w:hAnsi="${font}"/>${presentation.bold ? "<w:b/><w:bCs/>" : ""}${element.italic ? "<w:i/><w:iCs/>" : ""}${element.underline ? '<w:u w:val="single"/>' : ""}<w:color w:val="${color}"/><w:sz w:val="${Math.round(presentation.fontSize * 2)}"/><w:szCs w:val="${Math.round(presentation.fontSize * 2)}"/>${characterSpacing}</w:rPr>`;
   const alignment = element.align === "center" ? "center" : element.align === "right" ? "right" : "left";
   const style = [
     "position:absolute",

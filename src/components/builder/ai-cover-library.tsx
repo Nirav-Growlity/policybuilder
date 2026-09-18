@@ -23,13 +23,13 @@ export function AICoverLibraryPanel() {
     setLoading(true);
     setError("");
     try {
-      setItems(await fetchAICoverLibrary());
+      setItems(await fetchAICoverLibrary(policy.policyType));
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "The AI cover library could not be loaded.");
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [policy.policyType]);
 
   React.useEffect(() => {
     const frame = window.requestAnimationFrame(() => void load());
@@ -49,7 +49,7 @@ export function AICoverLibraryPanel() {
         const persisted = await persistCoverArtwork(composition);
         if (!active) return;
         if (!coverCompositionsEqual(persisted, composition)) updatePolicy(() => ({ aiCoverComposition: persisted }));
-        await saveAICoverToLibrary(persisted, "Recovered AI cover");
+        await saveAICoverToLibrary(persisted, policy.policyType, "Recovered AI cover");
         if (active) await load();
       } catch (cause) {
         if (active) setError(cause instanceof Error ? `Current AI cover could not be added to the library: ${cause.message}` : "Current AI cover could not be added to the library.");
@@ -58,7 +58,7 @@ export function AICoverLibraryPanel() {
       }
     })();
     return () => { active = false; };
-  }, [items, load, loading, policy.aiCoverComposition, updatePolicy]);
+  }, [items, load, loading, policy.aiCoverComposition, policy.policyType, updatePolicy]);
 
   const applyCover = (item: CoverLibraryItem) => updatePolicy(() => ({ aiCoverComposition: item.composition, activeCoverVariant: "ai" }));
 

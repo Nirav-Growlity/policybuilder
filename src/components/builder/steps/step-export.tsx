@@ -74,7 +74,7 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
           </div>
           <div className="mt-3"><AICoverWorkflow policy={policy} onApply={(composition) => updatePolicy(() => ({ aiCoverComposition: composition, activeCoverVariant: "ai" }))} onEdit={(composition) => { updatePolicy(() => ({ aiCoverComposition: composition, activeCoverVariant: "ai" })); setEditingCover("ai"); onCoverEditingChange?.(true); }} /></div>
         </section>
-        <div key={`${policy.documentTheme || "governance-manual"}-${policy.activeCoverVariant || "manual"}`} className="min-h-0 flex-1 pr-1"><PdfPolicyPreview policy={policy} shareDownload /></div>
+        <div key={`${policy.documentTheme || "governance-manual"}-${policy.activeCoverVariant || "manual"}`} className="min-h-0 flex-1 pr-1"><PdfPolicyPreview policy={policy} /></div>
       </div>}
     </div>
   );

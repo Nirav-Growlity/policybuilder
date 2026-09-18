@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { getActiveCoverComposition, getActiveCoverVariant, getCoverBindingValue, hasExternalCoverAssets, normalizeCoverComposition, normalizePolicyCovers, stripExternalActiveCoverAssets } from "./cover-composition";
+import { getActiveCoverComposition, getActiveCoverVariant, getCoverBindingValue, getCoverTextPresentation, hasExternalCoverAssets, normalizeCoverComposition, normalizePolicyCovers, stripExternalActiveCoverAssets } from "./cover-composition";
 import { initialPolicy } from "./store";
 import { buildDocumentRenderModel } from "./document-render-model";
 
@@ -29,6 +29,20 @@ test("removes the retired AI cover readability panel while preserving editable l
   ] });
   assert.equal(result?.elements.some((element) => element.id === "ai-cover-metadata-backdrop"), false);
   assert.equal(result?.elements.some((element) => element.id === "ai-cover-policyTitle"), true);
+});
+
+test("AI cover text presentation strengthens contrast without changing saved composition values", () => {
+  const composition = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "ai-generated", background: { color: "#FFFFFF", assetId: "art" }, elements: [
+    { id: "ai-cover-policyTitle", type: "text", fontSize: 20, color: "#315C49", content: { kind: "literal", text: "Policy" } },
+  ] })!;
+  const title = composition.elements.find((element) => element.type === "text")!;
+  const presentation = getCoverTextPresentation(title, composition.sourceTemplateId);
+
+  assert.equal(title.color, "#315C49");
+  assert.equal(presentation.color, "#FFFFFF");
+  assert.equal(presentation.fontSize, 32);
+  assert.equal(presentation.bold, true);
+  assert.ok(presentation.textShadow);
 });
 
 test("rejects unknown schema and preserves live bindings", () => {

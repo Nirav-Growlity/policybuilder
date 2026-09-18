@@ -20,7 +20,7 @@ export async function POST(_request: Request, context: { params: Promise<{ id: s
   const { id } = await context.params;
   const template = (await listCoverTemplates(auth.organization.id)).find((item) => item.id === id);
   if (!template?.composition) return NextResponse.json({ error: "Template not found" }, { status: 404 });
-  const duplicateId = await createCoverTemplate(auth, `${template.name} copy`, template.composition, template.previewAssetId);
+  const duplicateId = await createCoverTemplate(auth, `${template.name} copy`, template.composition, template.previewAssetId, template.policyType);
   return NextResponse.json({ id: duplicateId }, { status: 201 });
 }
 

@@ -1,15 +1,16 @@
-import { access, readFile, rm } from "node:fs/promises";
-import { randomUUID } from "node:crypto";
-import { tmpdir } from "node:os";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { renderToStaticMarkup } from "react-dom/server.browser";
-import { chromium, type BrowserContext } from "playwright-core";
+import { chromium, type Browser, type BrowserContext } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
 import { PolicyCoverPreview, PolicyPreview } from "@/components/policy/policy-preview";
 import { getPolicyDocumentTheme, runningLogoFit } from "@/lib/document-themes";
 import { buildDocumentRenderModel, getRunningHeaderBrand } from "@/lib/document-render-model";
 import { A4, pageBorderContentInsetMm, pageFooterVerticalShiftMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
 import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
+
+let pdfBrowserPromise: Promise<Browser> | null = null;
+const customCoverCache = new Map<string, Promise<Uint8Array>>();
 
 export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const model = buildDocumentRenderModel(policy);
@@ -20,10 +21,10 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const logoHeight = hasLogo ? logoFit.heightMm : 0;
   const horizontalMargin = pageMarginMm(theme.pageBorder);
   const topMargin = hasLogo ? pageHeaderMarginMm(theme.pageBorder, logoHeight) : horizontalMargin;
-  const customCover = model.cover.composition ? { data: await renderCustomCoverPng(policy), type: "png" as const } : null;
+  const customCover = model.cover.composition ? { data: await getCachedCustomCoverPng(policy, model), type: "png" as const } : null;
   const customCoverPng = customCover ? `data:image/png;base64,${Buffer.from(customCover.data).toString("base64")}` : undefined;
   const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} />));
-  const { context, userDataDir } = await createPdfContext();
+  const { context } = await createPdfContext();
   const page = await context.newPage();
   const timer = setTimeout(() => { void page.close(); }, 45000);
   try {
@@ -54,20 +55,37 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
       margin: { top: `${topMargin}mm`, right: `${horizontalMargin}mm`, bottom: `${horizontalMargin}mm`, left: `${horizontalMargin}mm` },
     });
     if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");
-    const withBackground = await applyPageBackground(output, theme.background, policy.company.companyLogo ? topMargin : 0);
-    const withCover = customCover ? await applyCustomCoverPage(withBackground, customCover.data) : withBackground;
-    return applyPageBorders(withCover, theme.pageBorder, theme.colors.primary);
+    const result = await finalizePdf(output, theme.background, policy.company.companyLogo ? topMargin : 0, customCover?.data, theme.pageBorder, theme.colors.primary);
+    return result;
   } finally {
     clearTimeout(timer);
     await page.close().catch(() => undefined);
     await context.close().catch(() => undefined);
-    await rm(userDataDir, { recursive: true, force: true });
   }
+}
+
+async function getCachedCustomCoverPng(policy: Policy, model: ReturnType<typeof buildDocumentRenderModel>): Promise<Uint8Array> {
+  const key = JSON.stringify({
+    cover: model.cover,
+    theme: model.theme,
+    typography: model.typography,
+    logoPosition: policy.logoPosition,
+    companyLogo: policy.company.companyLogo,
+  });
+  const cached = customCoverCache.get(key);
+  if (cached) return cached;
+  const pending = renderCustomCoverPng(policy).catch(error => {
+    customCoverCache.delete(key);
+    throw error;
+  });
+  customCoverCache.set(key, pending);
+  while (customCoverCache.size > 8) customCoverCache.delete(customCoverCache.keys().next().value!);
+  return pending;
 }
 
 async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
   const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyCoverPreview policy={policy} />));
-  const { context, userDataDir } = await createPdfContext();
+  const { context } = await createPdfContext();
   const page = await context.newPage();
   await page.setViewportSize({ width: 794, height: 1123 });
   try {
@@ -88,20 +106,30 @@ async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
   } finally {
     await page.close().catch(() => undefined);
     await context.close().catch(() => undefined);
-    await rm(userDataDir, { recursive: true, force: true });
   }
 }
 
-async function createPdfContext(): Promise<{ context: BrowserContext; userDataDir: string }> {
-  const launch = await getChromeLaunchOptions();
-  const userDataDir = path.join(tmpdir(), `policycraft-pdf-${randomUUID()}`);
-  try {
-    const context = await chromium.launchPersistentContext(userDataDir, { ...launch, headless: true, timeout: 15000 });
-    return { context, userDataDir };
-  } catch (error) {
-    await rm(userDataDir, { recursive: true, force: true });
-    throw error;
+async function createPdfContext(): Promise<{ context: BrowserContext }> {
+  const browser = await getPdfBrowser();
+  return { context: await browser.newContext() };
+}
+
+async function getPdfBrowser(): Promise<Browser> {
+  if (!pdfBrowserPromise) {
+    pdfBrowserPromise = (async () => {
+      const launch = await getChromeLaunchOptions();
+      return chromium.launch({ ...launch, headless: true, timeout: 15000 });
+    })().catch((error) => {
+      pdfBrowserPromise = null;
+      throw error;
+    });
   }
+  const browser = await pdfBrowserPromise;
+  if (!browser.isConnected()) {
+    pdfBrowserPromise = null;
+    return getPdfBrowser();
+  }
+  return browser;
 }
 
 /** Paint behind the content streams: Chromium clips CSS backgrounds to @page
@@ -109,6 +137,11 @@ async function createPdfContext(): Promise<{ context: BrowserContext; userDataDi
 export async function applyPageBackground(bytes: Uint8Array, background: ThemeBackground, coverHeaderMm = 0): Promise<Buffer> {
   if (background.kind === "solid" && background.color.toUpperCase() === "#FFFFFF" && !coverHeaderMm) return Buffer.from(bytes);
   const pdf = await PDFDocument.load(bytes);
+  paintPageBackground(pdf, background, coverHeaderMm);
+  return Buffer.from(await pdf.save());
+}
+
+function paintPageBackground(pdf: PDFDocument, background: ThemeBackground, coverHeaderMm: number): void {
   const channels = (hex: string) => [1, 3, 5].map(start => parseInt(hex.slice(start, start + 2), 16) / 255);
   for (const [index, page] of pdf.getPages().entries()) {
     const width = page.getWidth(), height = page.getHeight();
@@ -134,26 +167,43 @@ export async function applyPageBackground(bytes: Uint8Array, background: ThemeBa
       page.node.addContentStream(pdf.context.register(pdf.context.flateStream(`q\n0 ${height - band} ${width} ${band} re W n\n${paint}\nQ`)));
     }
   }
-  return Buffer.from(await pdf.save());
 }
 
 /** Paint the saved cover over the complete first PDF page, including print margins and furniture. */
 export async function applyCustomCoverPage(bytes: Uint8Array, coverData: Uint8Array): Promise<Buffer> {
   const pdf = await PDFDocument.load(bytes);
+  await drawCustomCover(pdf, coverData);
+  return Buffer.from(await pdf.save());
+}
+
+async function drawCustomCover(pdf: PDFDocument, coverData: Uint8Array): Promise<void> {
   const page = pdf.getPages()[0];
-  if (!page) return Buffer.from(bytes);
+  if (!page) return;
   const image = await pdf.embedPng(coverData);
   page.drawImage(image, { x: 0, y: 0, width: page.getWidth(), height: page.getHeight() });
-  return Buffer.from(await pdf.save());
 }
 
 export async function applyPageBorders(bytes: Uint8Array, border: PageBorder, primary: string): Promise<Buffer> {
   if (!border.enabled) return Buffer.from(bytes);
   const pdf = await PDFDocument.load(bytes);
+  drawPageBorders(pdf, border, primary);
+  return Buffer.from(await pdf.save());
+}
+
+function drawPageBorders(pdf: PDFDocument, border: PageBorder, primary: string): void {
   const hex = (border.color || primary).slice(1);
   const color = rgb(parseInt(hex.slice(0, 2), 16) / 255, parseInt(hex.slice(2, 4), 16) / 255, parseInt(hex.slice(4, 6), 16) / 255);
   const inset = border.insetMm * A4.pointsPerMm;
   for (const page of border.scope === "cover" ? pdf.getPages().slice(0, 1) : pdf.getPages()) page.drawRectangle({ x: inset, y: inset, width: page.getWidth() - 2 * inset, height: page.getHeight() - 2 * inset, borderWidth: border.widthPt, borderColor: color });
+}
+
+async function finalizePdf(bytes: Uint8Array, background: ThemeBackground, coverHeaderMm: number, coverData: Uint8Array | undefined, border: PageBorder, primary: string): Promise<Buffer> {
+  const shouldPaintBackground = !(background.kind === "solid" && background.color.toUpperCase() === "#FFFFFF" && !coverHeaderMm);
+  if (!shouldPaintBackground && !coverData && !border.enabled) return Buffer.from(bytes);
+  const pdf = await PDFDocument.load(bytes);
+  if (shouldPaintBackground) paintPageBackground(pdf, background, coverHeaderMm);
+  if (coverData) await drawCustomCover(pdf, coverData);
+  if (border.enabled) drawPageBorders(pdf, border, primary);
   return Buffer.from(await pdf.save());
 }
 

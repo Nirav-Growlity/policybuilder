@@ -1,4 +1,4 @@
-import { getCoverBindingValue } from "./cover-composition";
+import { getCoverBindingValue, getCoverTextPresentation } from "./cover-composition";
 import type { CoverComposition, CoverElement, Policy } from "./types";
 
 type CoverSvgOptions = {
@@ -77,25 +77,27 @@ function imageMarkup(element: { assetId?: string; fit: "contain" | "cover"; foca
   return `<image x="${x}" y="${y}" width="${width}" height="${height}" preserveAspectRatio="${preserveAspectRatio}" opacity="${element.opacity}" href="${escapeXml(source)}" aria-label="${escapeXml(element.altText)}" />`;
 }
 
-function elementMarkup(policy: Policy, element: CoverElement, includeText: boolean, resolveAsset: (assetId: string | undefined) => string | undefined): string {
+function elementMarkup(policy: Policy, composition: CoverComposition, element: CoverElement, includeText: boolean, resolveAsset: (assetId: string | undefined) => string | undefined): string {
   const transform = `translate(${element.x} ${element.y}) rotate(${element.rotation} ${element.width / 2} ${element.height / 2})`;
   if (element.type === "text") {
     if (!includeText) return "";
     const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
-    const fontSize = element.fontSize * MM_PER_POINT;
+    const presentation = getCoverTextPresentation(element, composition.sourceTemplateId);
+    const fontSize = presentation.fontSize * MM_PER_POINT;
     const lineHeight = fontSize * element.lineHeight;
-    const letterSpacing = element.letterSpacing * MM_PER_POINT;
+    const letterSpacing = presentation.letterSpacing * MM_PER_POINT;
     const lines = wrapText(text, element.width, fontSize, letterSpacing).slice(0, 40);
     const anchor = element.align === "center" ? "middle" : element.align === "right" ? "end" : "start";
     const anchorX = element.align === "center" ? element.width / 2 : element.align === "right" ? element.width : 0;
     const styles = [
       `font-family:${escapeXml(element.fontFamily)}`,
       `font-size:${fontSize}`,
-      `font-weight:${element.bold ? 700 : 400}`,
+      `font-weight:${presentation.bold ? 700 : 400}`,
       `font-style:${element.italic ? "italic" : "normal"}`,
       `text-decoration:${element.underline ? "underline" : "none"}`,
       `letter-spacing:${letterSpacing}`,
-      `fill:${element.color}`,
+      `fill:${presentation.color}`,
+      ...(presentation.textShadow ? ["stroke:rgba(0,0,0,.45)", "stroke-width:.35", "paint-order:stroke fill"] : []),
     ].join(";");
     const tspans = lines.map((line, index) => `<tspan x="${anchorX}" dy="${index ? lineHeight : 0}">${escapeXml(line)}</tspan>`).join("");
     const id = clipId(element.id);
@@ -120,7 +122,7 @@ export function createCoverCompositionSvg(policy: Policy, composition: CoverComp
     altText: "Cover background",
   }, 0, 0, 210, 297, resolveAsset);
   const elements = includeElements
-    ? composition.elements.filter((element) => element.visible).sort((left, right) => left.zIndex - right.zIndex).map((element) => elementMarkup(policy, element, includeText, resolveAsset)).join("")
+    ? composition.elements.filter((element) => element.visible).sort((left, right) => left.zIndex - right.zIndex).map((element) => elementMarkup(policy, composition, element, includeText, resolveAsset)).join("")
     : "";
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 210 297"><rect width="210" height="297" fill="${composition.background.color}"/>${background}${elements}</svg>`;
 }

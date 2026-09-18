@@ -30,13 +30,13 @@ export function AICoverWorkflow({
   const saveGenerated = React.useCallback(async (composition: CoverComposition) => {
     setSavingLibrary(true);
     try {
-      const item = await saveAICoverToLibrary(composition);
+      const item = await saveAICoverToLibrary(composition, policy.policyType);
       setGeneratedLibraryId(item.id);
       setError("");
     } finally {
       setSavingLibrary(false);
     }
-  }, []);
+  }, [policy.policyType]);
 
   const apply = React.useCallback(async (action: AICoverHandler) => {
     if (!previewComposition || generatedNeedsSaving) return;

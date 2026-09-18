@@ -54,7 +54,7 @@ export function BuilderShell({
   });
   const workflowPanel = React.useRef<HTMLElement>(null);
   const closeInspector = React.useCallback(() => setInspectorOpen(false), [setInspectorOpen]);
-  const { download, exporting, pdfReady } = usePolicyDownload();
+  const { download, exporting } = usePolicyDownload();
 
   const toggleSidebar = React.useCallback(() => {
     setSidebarCollapsed((prev) => {
@@ -405,7 +405,7 @@ export function BuilderShell({
               <div className="flex gap-2">
                 <button
                   type="button"
-                  disabled={!pdfReady || !!exporting}
+                  disabled={!!exporting}
                   onClick={() => download("pdf")}
                   className="rounded-lg bg-[var(--color-forest)] px-4 py-2.5 text-[13px] font-semibold text-white disabled:opacity-40"
                 >

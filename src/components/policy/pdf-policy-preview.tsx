@@ -1,41 +1,80 @@
 "use client";
 import * as React from "react";
 import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
-import { policyPreviewKey, usePdfPreviewState } from "@/lib/pdf-preview-state";
+import { policyPreviewKey } from "@/lib/pdf-preview-state";
 import { getPdfPageWidth } from "@/lib/pdf-preview-layout";
 import type { Policy } from "@/lib/types";
 import "pdfjs-dist/web/pdf_viewer.css";
 
-export function PdfPolicyPreview({ policy, shareDownload = false }: { policy: Policy; shareDownload?: boolean }) {
+type PreviewResult = { key: string; bytes: Uint8Array };
+
+// Keep completed previews across remounts (theme dialogs and builder steps are
+// frequently opened more than once) and deduplicate requests shared by those
+// surfaces. The PDF remains the source of truth; this only avoids regenerating
+// an identical document.
+const previewCache = new Map<string, Uint8Array>();
+const previewRequests = new Map<string, Promise<Uint8Array>>();
+const MAX_CACHED_PREVIEWS = 6;
+
+function cachePreview(key: string, bytes: Uint8Array): void {
+  previewCache.delete(key);
+  previewCache.set(key, bytes);
+  while (previewCache.size > MAX_CACHED_PREVIEWS) previewCache.delete(previewCache.keys().next().value!);
+}
+
+function requestPreview(key: string): Promise<Uint8Array> {
+  const cached = previewCache.get(key);
+  if (cached) {
+    previewCache.delete(key);
+    previewCache.set(key, cached);
+    return Promise.resolve(cached);
+  }
+  const pending = previewRequests.get(key);
+  if (pending) return pending;
+  const request = fetch("/api/export/pdf", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: `{"policy":${key}}`,
+  }).then(async response => {
+    if (!response.ok) throw new Error("The preview could not be generated.");
+    const blob = await response.blob();
+    const bytes = new Uint8Array(await blob.arrayBuffer());
+    if (new TextDecoder().decode(bytes.slice(0, 5)) !== "%PDF-") throw new Error("The preview returned an invalid PDF.");
+    cachePreview(key, bytes);
+    return bytes;
+  }).finally(() => previewRequests.delete(key));
+  previewRequests.set(key, request);
+  return request;
+}
+
+export function PdfPolicyPreview({ policy }: { policy: Policy }) {
   const key = policyPreviewKey(policy);
-  const [result, setResult] = React.useState<{ key: string; bytes: Uint8Array; blob: Blob } | null>(null);
+  const [result, setResult] = React.useState<PreviewResult | null>(() => {
+    const bytes = previewCache.get(key);
+    return bytes ? { key, bytes } : null;
+  });
   const [renderedKey, setRenderedKey] = React.useState("");
   const [failure, setFailure] = React.useState<{ key: string; message: string } | null>(null);
   const [retry, setRetry] = React.useState(0);
   React.useEffect(() => {
-    const abort = new AbortController();
+    let disposed = false;
     const timer = setTimeout(async () => {
       try {
-        const response = await fetch("/api/export/pdf", { method: "POST", headers: { "Content-Type": "application/json" }, body: `{"policy":${key}}`, signal: abort.signal });
-        if (!response.ok) throw new Error("The preview could not be generated.");
-        const blob = await response.blob();
-        const bytes = new Uint8Array(await blob.arrayBuffer());
-        if (new TextDecoder().decode(bytes.slice(0, 5)) !== "%PDF-") throw new Error("The preview returned an invalid PDF.");
-        if (abort.signal.aborted) return;
-        setResult({ key, bytes, blob });
+        const bytes = await requestPreview(key);
+        if (disposed) return;
+        setResult({ key, bytes });
         setFailure(null);
       } catch (error) {
-        if (!abort.signal.aborted) setFailure({ key, message: error instanceof Error ? error.message : "Preview unavailable." });
+        if (!disposed) setFailure({ key, message: error instanceof Error ? error.message : "Preview unavailable." });
       }
-    }, 150);
-    return () => { clearTimeout(timer); abort.abort(); };
-  }, [key, retry, shareDownload]);
+    }, 0);
+    return () => { disposed = true; clearTimeout(timer); };
+  }, [key, retry]);
   const updating = renderedKey !== key;
   const onRendered = React.useCallback(() => {
     if (!result || result.key !== key) return;
     setRenderedKey(result.key);
-    if (shareDownload) usePdfPreviewState.getState().set(result.key, result.blob);
-  }, [result, key, shareDownload]);
+  }, [result, key]);
   const onRenderError = React.useCallback(() => setFailure({ key, message: "Could not display this PDF. Please retry." }), [key]);
   return <div className="pdf-preview" aria-label="PDF document preview" aria-busy={updating}>
     <div className="mb-3 flex min-h-6 items-center justify-between gap-3 text-[13px] text-[var(--color-muted)]" role="status">
@@ -58,6 +97,7 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
   const host = React.useRef<HTMLDivElement>(null);
   const readyReported = React.useRef(false);
   const [width, setWidth] = React.useState(700);
+  const [mountedPages, setMountedPages] = React.useState<{ document: PDFDocumentProxy | null; pages: Set<number> }>(() => ({ document: null, pages: new Set([1]) }));
   React.useEffect(() => {
     const element = host.current;
     if (!element) return;
@@ -83,12 +123,26 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
       const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       const number = visible?.target instanceof HTMLElement ? Number(visible.target.dataset.pdfPage) : 0;
       if (number) setPageNumber(number);
+      const pagesToMount = entries
+        .filter(entry => entry.isIntersecting)
+        .map(entry => entry.target instanceof HTMLElement ? Number(entry.target.dataset.pdfPage) : 0)
+        .filter(Boolean);
+      if (pagesToMount.length) {
+        setMountedPages(current => {
+          const next = new Set(current.document === document ? current.pages : [1]);
+          pagesToMount.forEach(page => next.add(page));
+          return current.document === document && next.size === current.pages.size
+            ? current
+            : { document, pages: next };
+        });
+      }
     }, { threshold: [0.25, 0.6, 0.9] });
     host.current?.querySelectorAll<HTMLElement>("[data-pdf-page]").forEach(element => observer.observe(element));
     return () => observer.disconnect();
   }, [document, viewMode]);
   const pages = document ? Array.from({ length: document.numPages }, (_, index) => index + 1) : [];
   const targetWidth = zoom === "fit" ? Math.min(width, 1000) : 794 * Number(zoom);
+  const pagesToRender = mountedPages.document === document ? mountedPages.pages : new Set([1]);
   const goToPage = (next: number) => {
     setPageNumber(next);
     if (viewMode === "continuous") host.current?.querySelector<HTMLElement>(`[data-pdf-page="${next}"]`)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -98,7 +152,12 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
     readyReported.current = true;
     onRendered?.();
   }, [onRendered]);
-  const renderPdfPage = (number: number) => <div key={number} data-pdf-page={number}><PdfPage document={document!} number={number} width={getPdfPageWidth(number, targetWidth)} onRendered={number === 1 && source === bytes ? reportFirstPage : undefined} /></div>;
+  const renderPdfPage = (number: number) => {
+    const pageWidth = getPdfPageWidth(number, targetWidth);
+    return <div key={number} data-pdf-page={number} className="mx-auto" style={{ width: pageWidth, aspectRatio: "210 / 297" }}>
+      {pagesToRender.has(number) && <PdfPage document={document!} number={number} width={pageWidth} onRendered={number === 1 && source === bytes ? reportFirstPage : undefined} />}
+    </div>;
+  };
   return <div ref={host} className="pdf-pages">
     <style>{`
       .pdf-pages .textLayer ::selection { color: transparent !important; -webkit-text-fill-color: transparent; text-shadow: none; background: rgba(37, 99, 235, .26); }

@@ -10,7 +10,7 @@ import {
   type DocumentRenderSection,
 } from "@/lib/document-render-model";
 import type { Policy, RichTextBlock } from "@/lib/types";
-import { getCoverBindingValue } from "@/lib/cover-composition";
+import { getCoverBindingValue, getCoverTextPresentation } from "@/lib/cover-composition";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, type QuantitativeTargetGroup } from "@/lib/quantitative";
 
 export function PolicyPreview({ policy, customCoverPng }: { policy: Policy; customCoverPng?: string }) {
@@ -499,12 +499,16 @@ function CoverCompositionElements({ composition, policy, showElements }: { compo
       const style: CSSProperties = { left: `${(element.x / 210) * 100}%`, top: `${(element.y / 297) * 100}%`, width: `${(element.width / 210) * 100}%`, height: `${(element.height / 297) * 100}%`, opacity: element.opacity, zIndex: element.zIndex, transform: `rotate(${element.rotation}deg)` };
       if (element.type === "text") {
         const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
+        const presentation = getCoverTextPresentation(element, composition.sourceTemplateId);
         const responsivePointSize = (pointSize: number) => `${pointSize * (25.4 / 72) / 210 * 100}cqw`;
-        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: element.color, fontFamily: element.fontFamily, fontSize: responsivePointSize(element.fontSize), fontWeight: element.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: responsivePointSize(element.letterSpacing) }}>{text}</div>;
+        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: presentation.color, fontFamily: element.fontFamily, fontSize: responsivePointSize(presentation.fontSize), fontWeight: presentation.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: responsivePointSize(presentation.letterSpacing), textShadow: presentation.textShadow }}>{text}</div>;
       }
       const rawSource = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
       const source = rawSource?.startsWith("data:") ? rawSource : rawSource ? `/api/policycraft/cover-assets/${encodeURIComponent(rawSource)}` : undefined;
-      return <div key={element.id} className="policy-custom-cover-image" style={style}>{source ? <img src={source} alt={element.altText} style={{ objectFit: element.fit, objectPosition: `${element.focalPoint.x}% ${element.focalPoint.y}%` }} /> : null}</div>;
+      const imageStyle = composition.sourceTemplateId === "ai-generated" && element.id === "ai-cover-metadata-rule"
+        ? { ...style, filter: "drop-shadow(0 1px 3px rgba(0,0,0,.8)) brightness(1.7)" }
+        : style;
+      return <div key={element.id} className="policy-custom-cover-image" style={imageStyle}>{source ? <img src={source} alt={element.altText} style={{ objectFit: element.fit, objectPosition: `${element.focalPoint.x}% ${element.focalPoint.y}%` }} /> : null}</div>;
     })}
   </>;
 }

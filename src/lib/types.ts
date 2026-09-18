@@ -328,6 +328,7 @@ export type CoverLibrarySource = "ai" | "manual";
 export type CoverLibraryItem = {
   id: string;
   name: string;
+  policyType?: PolicyType;
   composition: CoverComposition;
   previewAssetId: string | null;
   lockVersion: number;

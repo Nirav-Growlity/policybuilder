@@ -1,11 +1,11 @@
 import { createHash, randomUUID } from "node:crypto";
 import type { ResultSetHeader, RowDataPacket } from "mysql2";
-import type { CoverComposition, CoverLibrarySource, Policy } from "./types";
+import type { CoverComposition, CoverLibrarySource, Policy, PolicyType } from "./types";
 import { normalizeCoverComposition } from "./cover-composition";
 import type { PolicyCraftAuthContext } from "./policycraft-auth";
 import { policyCraftPool } from "./db";
 
-type TemplateRow = RowDataPacket & { id: string; name: string; composition_json: unknown; preview_asset_id: string | null; lock_version: number; created_by_user_id: number; created_at: Date | string; updated_at: Date | string };
+type TemplateRow = RowDataPacket & { id: string; name: string; policy_type: PolicyType | null; composition_json: unknown; preview_asset_id: string | null; lock_version: number; created_by_user_id: number; created_at: Date | string; updated_at: Date | string };
 type AssetRow = RowDataPacket & { id: string; mime_type: string; width: number; height: number; content: Buffer };
 const iso = (value: Date | string) => value instanceof Date ? value.toISOString() : new Date(value).toISOString();
 const parse = <T>(value: unknown): T => typeof value === "string" ? JSON.parse(value) as T : value as T;
@@ -55,19 +55,19 @@ export async function resolveCoverAssets(policy: Policy, orgId: number): Promise
   };
 }
 
-export async function listCoverTemplates(orgId: number, source?: CoverLibrarySource) {
-  const [rows] = await policyCraftPool.execute<TemplateRow[]>("SELECT id, name, composition_json, preview_asset_id, lock_version, created_by_user_id, created_at, updated_at FROM policycraft_cover_templates WHERE org_id = ? AND archived_at IS NULL ORDER BY updated_at DESC", [orgId]);
+export async function listCoverTemplates(orgId: number, source?: CoverLibrarySource, policyType?: PolicyType) {
+  const [rows] = await policyCraftPool.execute<TemplateRow[]>("SELECT id, name, policy_type, composition_json, preview_asset_id, lock_version, created_by_user_id, created_at, updated_at FROM policycraft_cover_templates WHERE org_id = ? AND archived_at IS NULL AND (? IS NULL OR policy_type = ?) ORDER BY updated_at DESC", [orgId, policyType || null, policyType || null]);
   return rows.map((row) => {
     const composition = normalizeCoverComposition(parse<CoverComposition>(row.composition_json));
     if (!composition) return null;
     const itemSource: CoverLibrarySource = composition.sourceTemplateId === "ai-generated" ? "ai" : "manual";
-    return { id: row.id, name: row.name, composition, previewAssetId: row.preview_asset_id, lockVersion: row.lock_version, createdByUserId: row.created_by_user_id, createdAt: iso(row.created_at), updatedAt: iso(row.updated_at), source: itemSource };
+    return { id: row.id, name: row.name, ...(row.policy_type ? { policyType: row.policy_type } : {}), composition, previewAssetId: row.preview_asset_id, lockVersion: row.lock_version, createdByUserId: row.created_by_user_id, createdAt: iso(row.created_at), updatedAt: iso(row.updated_at), source: itemSource };
   }).filter((item): item is NonNullable<typeof item> => Boolean(item && (!source || item.source === source)));
 }
 
-export async function createCoverTemplate(auth: PolicyCraftAuthContext, name: string, composition: CoverComposition, previewAssetId?: string | null) {
+export async function createCoverTemplate(auth: PolicyCraftAuthContext, name: string, composition: CoverComposition, previewAssetId?: string | null, policyType?: PolicyType) {
   const id = randomUUID();
-  await policyCraftPool.execute("INSERT INTO policycraft_cover_templates (id, org_id, created_by_user_id, name, composition_json, preview_asset_id) VALUES (?, ?, ?, ?, CAST(? AS JSON), ?)", [id, auth.organization.id, Number(auth.user.id), name.trim().slice(0, 160), JSON.stringify(composition), previewAssetId || null]);
+  await policyCraftPool.execute("INSERT INTO policycraft_cover_templates (id, org_id, created_by_user_id, name, policy_type, composition_json, preview_asset_id) VALUES (?, ?, ?, ?, ?, CAST(? AS JSON), ?)", [id, auth.organization.id, Number(auth.user.id), name.trim().slice(0, 160), policyType || null, JSON.stringify(composition), previewAssetId || null]);
   return id;
 }
 

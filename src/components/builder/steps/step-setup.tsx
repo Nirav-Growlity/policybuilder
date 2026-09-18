@@ -11,7 +11,7 @@ import { getCompanySites, type Site } from "@/lib/types";
 import { Building2, Award, Sparkles, Info as InfoIcon, MapPin, Plus, Trash2, Upload } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { Modal } from "@/components/ui/modal";
-import { PolicyPreview } from "@/components/policy/policy-preview";
+import { PdfPolicyPreview } from "@/components/policy/pdf-policy-preview";
 import { CompanyInfoForm } from "@/components/builder/company-info-form";
 
 export function StepSetup() {
@@ -270,9 +270,9 @@ export function StepSetup() {
         </div>
       </Panel>}
 
-      <Modal open={showPreview} onClose={() => setShowPreview(false)} width={800} title="Live Document Preview">
+      <Modal open={showPreview} onClose={() => setShowPreview(false)} width={800} title="PDF Document Preview">
         <div className="max-h-[70vh] overflow-y-auto scrollbar-thin bg-gray-50 border border-[var(--color-line)] rounded-xl p-6">
-          <PolicyPreview policy={{ ...makeTemplatePolicy(), presentationTemplate: policy.presentationTemplate, visualStyle: policy.visualStyle }} />
+          <PdfPolicyPreview policy={{ ...makeTemplatePolicy(), presentationTemplate: policy.presentationTemplate, visualStyle: policy.visualStyle }} />
         </div>
       </Modal>
 

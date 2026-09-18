@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { policyPreviewKey, usePdfPreviewState } from "@/lib/pdf-preview-state";
 import { getPolicyProfile } from "@/lib/constants";
 import { useBuilder } from "@/lib/store";
 import { Panel, Badge } from "@/components/ui/panel";
@@ -12,8 +11,6 @@ import { Download, FileText, Sparkles, FileType, BookOpen } from "lucide-react";
 export function usePolicyDownload() {
   const { policy } = useBuilder();
   const { push } = useToast();
-  const preview = usePdfPreviewState();
-  const pdfReady = preview.key === policyPreviewKey(policy) && !!preview.blob;
   const [exporting, setExporting] = React.useState<"pdf" | "docx" | null>(null);
 
   const download = async (kind: "pdf" | "docx") => {
@@ -21,14 +18,13 @@ export function usePolicyDownload() {
     try {
       const fileBase = (policy.company.name || "Policy").replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
       const url = kind === "pdf" ? "/api/export/pdf" : "/api/export/docx";
-      if (kind === "pdf" && !pdfReady) throw new Error("Wait for the current preview.");
-      const res = kind === "pdf" ? null : await fetch(url, {
+      const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ policy }),
       });
-      if (res && !res.ok) throw new Error("Export failed");
-      const blob = kind === "pdf" ? preview.blob! : await res!.blob();
+      if (!res.ok) throw new Error("Export failed");
+      const blob = await res.blob();
       if (blob.size === 0) throw new Error("Export returned an empty file");
       const a = document.createElement("a");
       const objectUrl = URL.createObjectURL(blob);
@@ -46,7 +42,7 @@ export function usePolicyDownload() {
     }
   };
 
-  return { exporting, download, pdfReady };
+  return { exporting, download };
 }
 
 export function DockOptionsPanel() {
