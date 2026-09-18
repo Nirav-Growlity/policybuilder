@@ -1,6 +1,6 @@
 import { createHash, randomUUID } from "node:crypto";
 import type { ResultSetHeader, RowDataPacket } from "mysql2";
-import type { CoverComposition, Policy } from "./types";
+import type { CoverComposition, CoverLibrarySource, Policy } from "./types";
 import { normalizeCoverComposition } from "./cover-composition";
 import type { PolicyCraftAuthContext } from "./policycraft-auth";
 import { policyCraftPool } from "./db";
@@ -55,9 +55,14 @@ export async function resolveCoverAssets(policy: Policy, orgId: number): Promise
   };
 }
 
-export async function listCoverTemplates(orgId: number) {
+export async function listCoverTemplates(orgId: number, source?: CoverLibrarySource) {
   const [rows] = await policyCraftPool.execute<TemplateRow[]>("SELECT id, name, composition_json, preview_asset_id, lock_version, created_by_user_id, created_at, updated_at FROM policycraft_cover_templates WHERE org_id = ? AND archived_at IS NULL ORDER BY updated_at DESC", [orgId]);
-  return rows.map((row) => ({ id: row.id, name: row.name, composition: normalizeCoverComposition(parse<CoverComposition>(row.composition_json)), previewAssetId: row.preview_asset_id, lockVersion: row.lock_version, createdByUserId: row.created_by_user_id, createdAt: iso(row.created_at), updatedAt: iso(row.updated_at) }));
+  return rows.map((row) => {
+    const composition = normalizeCoverComposition(parse<CoverComposition>(row.composition_json));
+    if (!composition) return null;
+    const itemSource: CoverLibrarySource = composition.sourceTemplateId === "ai-generated" ? "ai" : "manual";
+    return { id: row.id, name: row.name, composition, previewAssetId: row.preview_asset_id, lockVersion: row.lock_version, createdByUserId: row.created_by_user_id, createdAt: iso(row.created_at), updatedAt: iso(row.updated_at), source: itemSource };
+  }).filter((item): item is NonNullable<typeof item> => Boolean(item && (!source || item.source === source)));
 }
 
 export async function createCoverTemplate(auth: PolicyCraftAuthContext, name: string, composition: CoverComposition, previewAssetId?: string | null) {

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { acceptsAICoverArtworkInspection, buildAICoverArtworkContext, buildAICoverArtworkValidationPrompt, buildAICoverContext, buildAICoverDesignPrompt, buildAICoverImagePrompt, createAICoverComposition, fallbackAICoverDesign, fallbackAICoverLayout, normalizeAICoverDesign, normalizeAICoverLayout } from "./cover";
+import { acceptsAICoverArtworkInspection, buildAICoverArtworkContext, buildAICoverArtworkValidationPrompt, buildAICoverContext, buildAICoverDesignPrompt, buildAICoverImagePrompt, buildAICoverLayoutPrompt, createAICoverComposition, fallbackAICoverDesign, fallbackAICoverLayout, normalizeAICoverDesign, normalizeAICoverLayout } from "./cover";
 import { getPolicyDocumentTheme } from "../document-themes";
 import { makeSamplePolicy } from "../store";
 
@@ -61,7 +61,7 @@ test("AI cover composition follows the selected template when logo branding is d
   assert.notEqual(title.color, policy.company.logoPalette.primaryDark);
 });
 
-test("AI cover design applies image-aware colors, fonts, and metadata contrast treatment", () => {
+test("AI cover design applies image-aware colors and cover-local fonts without a panel", () => {
   const policy = makeSamplePolicy();
   const design = normalizeAICoverDesign({
     titleColor: "#FFFFFF",
@@ -70,9 +70,6 @@ test("AI cover design applies image-aware colors, fonts, and metadata contrast t
     metadataValueColor: "#FFFFFF",
     headingFontFamily: "Fraunces",
     bodyFontFamily: "Public Sans",
-    metadataBackdropEnabled: true,
-    metadataBackdropColor: "#17343E",
-    metadataBackdropOpacity: 0.62,
   }, fallbackAICoverDesign(policy));
   const composition = createAICoverComposition(policy, "data:image/png;base64,art", fallbackAICoverLayout(), design);
   const title = composition.elements.find((element) => element.id === "ai-cover-policyTitle");
@@ -85,8 +82,7 @@ test("AI cover design applies image-aware colors, fonts, and metadata contrast t
   assert.equal(metadata?.type, "text");
   assert.equal(metadata?.color, "#FFFFFF");
   assert.equal(metadata?.fontFamily, "Public Sans");
-  assert.equal(backdrop?.type, "image");
-  assert.equal(backdrop?.opacity, 0.62);
+  assert.equal(backdrop, undefined);
 });
 
 test("AI cover context uses policy and design signals without imported reference text", () => {
@@ -99,6 +95,7 @@ test("AI cover context uses policy and design signals without imported reference
   const artworkContext = buildAICoverArtworkContext(policy);
   assert.match(buildAICoverImagePrompt(artworkContext), /Transparency is optional/);
   assert.match(buildAICoverImagePrompt(artworkContext), /never default to generic blue/);
+  assert.match(buildAICoverImagePrompt(artworkContext), /quiet, low-detail vertical region/);
   assert.ok(context.length <= 12000, "AI layout context should stay bounded");
 });
 
@@ -118,9 +115,18 @@ test("AI cover prompts use the resolved logo palette and policy theme", () => {
 test("AI cover design prompt asks vision analysis to choose readable cover-local typography", () => {
   const prompt = buildAICoverDesignPrompt(buildAICoverArtworkContext(makeSamplePolicy()));
   assert.match(prompt.system, /legible over the actual image/);
-  assert.match(prompt.user, /metadata backdrop/);
+  assert.match(prompt.system, /never solve readability with a white or colored backdrop/);
+  assert.match(prompt.user, /actual image/);
   assert.match(prompt.user, /headingFontFamily/);
   assert.match(prompt.user, /Fraunces/);
+});
+
+test("AI cover layout prompt keeps overlays in a quiet image region without a readability panel", () => {
+  const prompt = buildAICoverLayoutPrompt(buildAICoverArtworkContext(makeSamplePolicy()));
+  assert.match(prompt.system, /quietest, most uniform/);
+  assert.match(prompt.system, /Never create any such layer|do not create any such layer/i);
+  assert.match(prompt.user, /actual image/);
+  assert.match(prompt.user, /Never add a backdrop/);
 });
 
 test("AI artwork context excludes document data and free-form policy text", () => {

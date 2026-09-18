@@ -8,6 +8,7 @@ import {
   buildAICoverDesignPrompt,
   buildAICoverArtworkContext,
   buildAICoverImagePrompt,
+  buildAICoverLayoutPrompt,
   createAICoverComposition,
   fallbackAICoverDesign,
   fallbackAICoverLayout,
@@ -51,9 +52,39 @@ async function responseError(response: Response, fallback: string): Promise<Erro
   return new Error(fallback);
 }
 
-async function analyzeAICoverDesign(policy: Policy, imageDataUrl: string, artworkContext: string, apiKey: string): Promise<AICoverDesign> {
+async function analyzeAICoverLayout(imageDataUrl: string, artworkContext: string, apiKey: string) {
+  const fallback = fallbackAICoverLayout();
+  const prompt = buildAICoverLayoutPrompt(artworkContext);
+  try {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+      body: JSON.stringify({
+        model: AI_COVER_LAYOUT_MODEL,
+        response_format: { type: "json_object" },
+        messages: [
+          { role: "system", content: prompt.system },
+          { role: "user", content: [
+            { type: "text", text: prompt.user },
+            { type: "image_url", image_url: { url: imageDataUrl, detail: "high" } },
+          ] },
+        ],
+      }),
+    });
+    if (!response.ok) return fallback;
+    const body = await response.json() as { choices?: Array<{ message?: { content?: unknown } }> };
+    const content = body.choices?.[0]?.message?.content;
+    if (typeof content !== "string" || !content.trim()) return fallback;
+    return normalizeAICoverLayout(JSON.parse(content.replace(/```json|```/g, "").trim()));
+  } catch (error) {
+    console.warn("AI cover layout analysis fell back to the safe default", error instanceof Error ? error.message : error);
+    return fallback;
+  }
+}
+
+async function analyzeAICoverDesign(policy: Policy, imageDataUrl: string, artworkContext: string, layout: ReturnType<typeof fallbackAICoverLayout>, apiKey: string): Promise<AICoverDesign> {
   const fallback = fallbackAICoverDesign(policy);
-  const prompt = buildAICoverDesignPrompt(artworkContext);
+  const prompt = buildAICoverDesignPrompt(artworkContext, layout);
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -112,8 +143,8 @@ export async function POST(request: Request) {
     const metadata = await sharp(Buffer.from(encoded, "base64")).metadata();
     if (metadata.format !== "png" || !metadata.width || !metadata.height || metadata.width >= metadata.height) throw new Error("The image service returned artwork with invalid A4 portrait dimensions.");
     const imageDataUrl = `data:image/png;base64,${encoded}`;
-    const design = await analyzeAICoverDesign(policy, imageDataUrl, artworkContext, apiKey);
-    const layout = normalizeAICoverLayout(fallbackAICoverLayout());
+    const layout = await analyzeAICoverLayout(imageDataUrl, artworkContext, apiKey);
+    const design = await analyzeAICoverDesign(policy, imageDataUrl, artworkContext, layout, apiKey);
     const revisedPrompt = typeof imageData.data?.[0]?.revised_prompt === "string" ? imageData.data[0].revised_prompt : undefined;
 
     const composition = createAICoverComposition(policy, imageDataUrl, layout, design);

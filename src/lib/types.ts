@@ -323,6 +323,22 @@ export type CoverComposition = {
   elements: CoverElement[];
 };
 
+export type CoverLibrarySource = "ai" | "manual";
+
+export type CoverLibraryItem = {
+  id: string;
+  name: string;
+  composition: CoverComposition;
+  previewAssetId: string | null;
+  lockVersion: number;
+  createdByUserId: number;
+  createdAt: string;
+  updatedAt: string;
+  source: CoverLibrarySource;
+  isActive?: boolean;
+  canDelete?: boolean;
+};
+
 export interface RevisionEntry {
   revisionNo: string;
   date: string;

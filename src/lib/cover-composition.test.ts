@@ -22,6 +22,15 @@ test("normalizes old compositions with media aspect locking defaults", () => {
   assert.equal(result?.elements.find((element) => element.id === "old-logo")?.aspectLocked, true);
 });
 
+test("removes the retired AI cover readability panel while preserving editable layers", () => {
+  const result = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "ai-generated", background: { color: "#FFFFFF", assetId: "art" }, elements: [
+    { id: "ai-cover-metadata-backdrop", type: "image", assetId: "white-panel" },
+    { id: "ai-cover-policyTitle", type: "text", content: { kind: "literal", text: "Policy" } },
+  ] });
+  assert.equal(result?.elements.some((element) => element.id === "ai-cover-metadata-backdrop"), false);
+  assert.equal(result?.elements.some((element) => element.id === "ai-cover-policyTitle"), true);
+});
+
 test("rejects unknown schema and preserves live bindings", () => {
   assert.equal(normalizeCoverComposition({ schemaVersion: 99 }), undefined);
   const policy = initialPolicy("environmental");

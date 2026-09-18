@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { ImportedPolicyContext, Policy, PolicyType, StepId } from "./types";
+import type { CoverComposition, ImportedPolicyContext, Policy, PolicyType, StepId } from "./types";
 import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, REVISION_HISTORY_DEFAULT, getPolicyProfile } from "./constants";
 import { normalizePolicyQuantitative } from "./quantitative";
 import { getWorkflowSteps, normalizePolicyStructure } from "./sections";
@@ -59,6 +59,7 @@ interface BuilderState {
   step: StepId;
   policy: Policy;
   importedPolicy: ImportedPolicyContext | null;
+  coverEditorRequest: { variant: "manual" | "ai"; composition?: CoverComposition; requestId: string } | null;
   hydrated: boolean;
   setStep: (s: StepId) => void;
   next: () => void;
@@ -67,6 +68,8 @@ interface BuilderState {
   setPolicy: (p: Policy) => void;
   setImportedPolicy: (reference: ImportedPolicyContext) => void;
   clearImportedPolicy: () => void;
+  requestCoverEdit: (variant: "manual" | "ai", composition?: CoverComposition) => void;
+  clearCoverEditorRequest: () => void;
   startPolicy: (type: PolicyType) => void;
   reset: () => void;
   loadSample: () => void;
@@ -82,6 +85,7 @@ export const useBuilder = create<BuilderState>()(
       step: "structure",
       policy: initialPolicy(),
       importedPolicy: null,
+      coverEditorRequest: null,
       hydrated: false,
       setStep: (s) => set({ step: s }),
       next: () => {
@@ -108,6 +112,8 @@ export const useBuilder = create<BuilderState>()(
       },
       setImportedPolicy: (reference) => set({ importedPolicy: reference }),
       clearImportedPolicy: () => set({ importedPolicy: null }),
+      requestCoverEdit: (variant, composition) => set({ coverEditorRequest: { variant, composition, requestId: crypto.randomUUID() } }),
+      clearCoverEditorRequest: () => set({ coverEditorRequest: null }),
       startPolicy: (type) => {
         const currentCompany = get().policy.company;
         const newPolicy = initialPolicy(type);
@@ -120,13 +126,14 @@ export const useBuilder = create<BuilderState>()(
             },
           },
           importedPolicy: null,
+          coverEditorRequest: null,
           step: "structure",
         });
       },
-      reset: () => set({ policy: initialPolicy(), importedPolicy: null, step: "structure" }),
+      reset: () => set({ policy: initialPolicy(), importedPolicy: null, coverEditorRequest: null, step: "structure" }),
       loadSample: () => {
         const sample = makeSamplePolicy();
-        set({ policy: normalizePolicyQuantitative(sample), step: "structure" });
+        set({ policy: normalizePolicyQuantitative(sample), coverEditorRequest: null, step: "structure" });
       },
     }),
     {

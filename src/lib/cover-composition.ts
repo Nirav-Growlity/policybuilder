@@ -86,11 +86,13 @@ function normalizeElement(input: unknown, index: number): CoverElement | null {
 export function normalizeCoverComposition(input: unknown): CoverComposition | undefined {
   if (!input || typeof input !== "object") return undefined;
   const candidate = input as Partial<CoverComposition>;
+  const sourceTemplateId = typeof candidate.sourceTemplateId === "string" ? candidate.sourceTemplateId : "custom";
   if (candidate.schemaVersion !== 1) return undefined;
   let imageCount = 0;
   const elements = Array.isArray(candidate.elements)
     ? candidate.elements.slice(0, COVER_MAX_ELEMENTS).map(normalizeElement).filter((item): item is CoverElement => {
       if (!item) return false;
+      if (sourceTemplateId === "ai-generated" && item.id === "ai-cover-metadata-backdrop") return false;
       if (item.type === "image") { imageCount += 1; return imageCount <= COVER_MAX_IMAGES; }
       return true;
     })
@@ -98,7 +100,7 @@ export function normalizeCoverComposition(input: unknown): CoverComposition | un
   const background = (candidate.background && typeof candidate.background === "object" ? candidate.background : {}) as Partial<CoverComposition["background"]>;
   return {
     schemaVersion: 1,
-    sourceTemplateId: typeof candidate.sourceTemplateId === "string" ? candidate.sourceTemplateId : "custom",
+    sourceTemplateId,
     background: {
       color: typeof background.color === "string" && HEX.test(background.color) ? background.color.toUpperCase() : "#FFFFFF",
       ...(typeof background.assetId === "string" && background.assetId ? { assetId: background.assetId } : {}),

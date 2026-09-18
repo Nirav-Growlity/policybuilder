@@ -12,8 +12,9 @@ test("AI cover workflow is separate and does not require an existing manual cove
     onEdit: () => undefined,
   }));
 
-  assert.match(markup, /AI Cover/);
+  assert.match(markup, /AI cover/i);
   assert.match(markup, /Generate AI cover/);
   assert.match(markup, /will not change your manual cover/);
+  assert.match(markup, /Document design/);
   assert.doesNotMatch(markup, /Imported policy|reference policy/);
 });
