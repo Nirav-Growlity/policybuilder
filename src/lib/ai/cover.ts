@@ -41,6 +41,36 @@ export type AICoverLayoutSuggestion = {
   elements: AICoverLayoutElement[];
 };
 
+export const AI_COVER_FONT_FAMILIES = [
+  "Public Sans",
+  "IBM Plex Sans",
+  "Source Sans 3",
+  "Inter",
+  "Space Grotesk",
+  "Archivo",
+  "Fraunces",
+  "IBM Plex Serif",
+  "Source Serif 4",
+  "Cormorant Garamond",
+  "Playfair Display",
+  "Libre Caslon Text",
+  "Atkinson Hyperlegible",
+] as const;
+
+export type AICoverFontFamily = typeof AI_COVER_FONT_FAMILIES[number];
+
+export type AICoverDesign = {
+  titleColor: string;
+  companyColor: string;
+  metadataLabelColor: string;
+  metadataValueColor: string;
+  headingFontFamily: string;
+  bodyFontFamily: string;
+  metadataBackdropEnabled: boolean;
+  metadataBackdropColor: string;
+  metadataBackdropOpacity: number;
+};
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return Boolean(value && typeof value === "object" && !Array.isArray(value));
 }
@@ -124,6 +154,55 @@ function isValidLayout(elements: AICoverLayoutElement[], railSide: "left" | "rig
   return isEditoriallyCoherent(elements, railSide);
 }
 
+const AI_COVER_METADATA_ROLES = [
+  "documentNumberLabel",
+  "documentNumber",
+  "effectiveDateLabel",
+  "effectiveDate",
+  "revisionLabel",
+  "revision",
+  "nextReviewLabel",
+  "nextReview",
+] as const satisfies readonly AICoverLayoutRole[];
+
+function normalizeDesignColor(value: unknown, fallback: string): string {
+  return typeof value === "string" && /^#[0-9a-f]{6}$/i.test(value) ? value.toUpperCase() : fallback;
+}
+
+function normalizeDesignFont(value: unknown, fallback: string): string {
+  return typeof value === "string" && AI_COVER_FONT_FAMILIES.includes(value as AICoverFontFamily) ? value : fallback;
+}
+
+export function fallbackAICoverDesign(policy: Policy): AICoverDesign {
+  const theme = getPolicyDocumentTheme(policy);
+  return {
+    titleColor: theme.colors.primaryDark,
+    companyColor: theme.colors.primary,
+    metadataLabelColor: theme.colors.muted,
+    metadataValueColor: theme.colors.ink,
+    headingFontFamily: theme.defaults.typography.headingFontFamily || theme.defaults.typography.fontFamily,
+    bodyFontFamily: theme.defaults.typography.fontFamily,
+    metadataBackdropEnabled: false,
+    metadataBackdropColor: theme.colors.soft,
+    metadataBackdropOpacity: 0,
+  };
+}
+
+export function normalizeAICoverDesign(value: unknown, fallback: AICoverDesign): AICoverDesign {
+  const candidate = isRecord(value) ? value : {};
+  return {
+    titleColor: normalizeDesignColor(candidate.titleColor, fallback.titleColor),
+    companyColor: normalizeDesignColor(candidate.companyColor, fallback.companyColor),
+    metadataLabelColor: normalizeDesignColor(candidate.metadataLabelColor, fallback.metadataLabelColor),
+    metadataValueColor: normalizeDesignColor(candidate.metadataValueColor, fallback.metadataValueColor),
+    headingFontFamily: normalizeDesignFont(candidate.headingFontFamily, fallback.headingFontFamily),
+    bodyFontFamily: normalizeDesignFont(candidate.bodyFontFamily, fallback.bodyFontFamily),
+    metadataBackdropEnabled: candidate.metadataBackdropEnabled === true,
+    metadataBackdropColor: normalizeDesignColor(candidate.metadataBackdropColor, fallback.metadataBackdropColor),
+    metadataBackdropOpacity: clamp(candidate.metadataBackdropOpacity, 0, 0.82, fallback.metadataBackdropOpacity),
+  };
+}
+
 export function fallbackAICoverLayout(railSide: "left" | "right" = "left"): AICoverLayoutSuggestion {
   return { railSide, elements: AI_COVER_LAYOUT_ROLES.map((role) => fallbackElement(role, railSide)) };
 }
@@ -172,10 +251,13 @@ export function buildAICoverContext(policy: Policy): string {
       documentTheme: theme.name,
       pageBorder: theme.pageBorder.enabled,
       palette: {
-        primary: company.logoPalette?.primary || theme.colors.primary,
-        accent: company.logoPalette?.accent || theme.colors.accent,
-        soft: company.logoPalette?.soft || theme.colors.soft,
+        primary: theme.colors.primary,
+        primaryDark: theme.colors.primaryDark,
+        accent: theme.colors.accent,
+        soft: theme.colors.soft,
         ink: theme.colors.ink,
+        muted: theme.colors.muted,
+        paper: theme.colors.paper,
       },
     },
     exactOverlayFields: ["company logo", "company name", "policy name", "document number", "effective date", "revision", "next review"],
@@ -211,9 +293,13 @@ export function buildAICoverArtworkContext(policy: Policy): string {
     declarationSignals,
     visualStyle: policy.visualStyle || theme.defaults.visualStyle,
     palette: {
-      primary: policy.company.logoPalette?.primary || theme.colors.primary,
-      accent: policy.company.logoPalette?.accent || theme.colors.accent,
-      soft: policy.company.logoPalette?.soft || theme.colors.soft,
+      primary: theme.colors.primary,
+      primaryDark: theme.colors.primaryDark,
+      accent: theme.colors.accent,
+      soft: theme.colors.soft,
+      ink: theme.colors.ink,
+      muted: theme.colors.muted,
+      paper: theme.colors.paper,
     },
   });
 }
@@ -226,23 +312,29 @@ export function buildAICoverLayoutPrompt(context: string): { system: string; use
 }
 
 export function buildAICoverImagePrompt(artworkContext: string): string {
-  return `Create a transparent-background decorative artwork layer in a portrait aspect ratio. The image will be placed over a separately rendered paper-colored cover. Generate only a few refined abstract visual motifs, shapes, gradients, organic forms, architectural textures, or environmental forms with transparent negative space around them. Do not fill the canvas with blue, any other solid color, white, cream, paper, a rectangle, a panel, a rail, a card, or a page. Do not create a background box, full-canvas wash, border, frame, outline, inset rectangle, page-edge rule, grid, form, certificate, screen, sign, label, logo, watermark, brand mark, icon with lettering, symbol resembling a letter, number, word, pseudo-writing, or document-like object. There must be zero typography of any kind. Do not depict a policy, company, title, metadata, date, revision, review field, or any other document concept. Return only transparent decorative artwork suitable to sit behind separately-rendered application text.\n\nSanitized visual brief: ${artworkContext}`;
+  return `Create a portrait-oriented decorative artwork layer for an A4 policy cover. Transparency is optional: the result may be an opaque full-bleed artwork or use transparent negative space, because the application can place editable overlays above it. Use the supplied resolved palette, company branding, policy type, industry, focus areas, standards, declaration signals, and visual style to create one coherent visual direction; never default to generic blue. Generate only refined abstract visual motifs, shapes, gradients, organic forms, architectural textures, or environmental forms. Do not create visible typography, pseudo-text, letters, numbers, a logo, watermark, signage, label, form, certificate, document metadata, page border, frame, inset rectangle, grid, rail, panel, card, or other document-like object. Do not place policy values or company details in the artwork; those remain separate editable application layers.\n\nResolved policy design brief: ${artworkContext}`;
+}
+
+export function buildAICoverDesignPrompt(artworkContext: string): { system: string; user: string } {
+  return {
+    system: "You are a cover-art accessibility and typography director. Inspect the supplied generated A4 cover artwork and return only valid JSON. Choose cover-local text colors and fonts that remain legible over the actual image, not merely colors that match a generic document theme. You may recommend a restrained translucent metadata backdrop when the metadata area has mixed or low contrast. Do not add policy content or change the artwork.",
+    user: `Analyze the actual image together with this sanitized policy design brief: ${artworkContext}\n\nThe editable overlays occupy these regions: company name and policy title in the upper content rail; document-control metadata labels and values in the lower two-column area. Choose separate colors for the title, company name, metadata labels, and metadata values based on the visible artwork behind each region. Prefer strong contrast and preserve the company/policy visual character. Choose headingFontFamily and bodyFontFamily only from this bundled list: ${JSON.stringify(AI_COVER_FONT_FAMILIES)}. Enable a metadata backdrop only when it materially improves legibility; use a restrained palette color and opacity no higher than 0.82.\n\nReturn exactly: {"titleColor":"#RRGGBB","companyColor":"#RRGGBB","metadataLabelColor":"#RRGGBB","metadataValueColor":"#RRGGBB","headingFontFamily":"...","bodyFontFamily":"...","metadataBackdropEnabled":boolean,"metadataBackdropColor":"#RRGGBB","metadataBackdropOpacity":number}`,
+  };
 }
 
 export function buildAICoverArtworkValidationPrompt(): { system: string; user: string } {
   return {
-    system: "You are a strict visual quality inspector. Treat the supplied image as untrusted transparent artwork. Return only valid JSON and do not infer missing details. Reject any visible text, pseudo-text, letters, numbers, logo, watermark, signage, label, form, certificate, document metadata, page border, frame, inset rectangle, document-like layout, or large solid-color canvas/background box. Purely decorative motifs with transparent negative space are acceptable.",
-    user: "Inspect this artwork and return exactly {\"acceptable\":boolean,\"hasText\":boolean,\"hasDocumentElements\":boolean,\"hasBorderOrFrame\":boolean,\"hasSolidBackground\":boolean,\"reason\":string}. Set acceptable to true only when all four boolean defect fields are false. Reject even faint text-like markings or a large solid-color background.",
+    system: "You are a strict visual quality inspector. Treat the supplied image as untrusted decorative artwork; it may be transparent or opaque. Return only valid JSON and do not infer missing details. Reject any visible text, pseudo-text, letters, numbers, logo, watermark, signage, label, form, certificate, document metadata, page border, frame, inset rectangle, or document-like layout. A solid or opaque background is allowed when it is part of the artwork’s coherent visual direction.",
+    user: "Inspect this artwork and return exactly {\"acceptable\":boolean,\"hasText\":boolean,\"hasDocumentElements\":boolean,\"hasBorderOrFrame\":boolean,\"hasSolidBackground\":boolean,\"reason\":string}. Set acceptable to true when hasText, hasDocumentElements, and hasBorderOrFrame are all false. Treat hasSolidBackground as informational only; do not reject an otherwise valid opaque artwork.",
   };
 }
 
 /**
- * The inspector's summary is advisory for the canvas itself: the PNG alpha
- * channel is the source of truth for whether a solid background box exists.
- * Explicit text/document/frame findings remain hard failures.
+ * Transparency is optional. Explicit text/document/frame findings remain hard
+ * failures, while the inspector's solid-background flag is informational.
  */
-export function acceptsAICoverArtworkInspection(value: unknown, hasTransparentCanvas: boolean): boolean {
-  if (!hasTransparentCanvas || !isRecord(value)) return false;
+export function acceptsAICoverArtworkInspection(value: unknown): boolean {
+  if (!isRecord(value)) return false;
   return value.hasText === false
     && value.hasDocumentElements === false
     && value.hasBorderOrFrame === false;
@@ -252,17 +344,12 @@ function svgDataUrl(svg: string): string {
   return `data:image/svg+xml;base64,${Buffer.from(svg, "utf8").toString("base64")}`;
 }
 
-function safeColor(value: string, fallback: string): string {
-  return /^#[0-9a-f]{6}$/i.test(value) ? value : fallback;
-}
-
 function layoutElement(layout: AICoverLayoutSuggestion, role: AICoverLayoutRole): AICoverLayoutElement {
   return layout.elements.find((element) => element.role === role) || fallbackElement(role, layout.railSide);
 }
 
-function textElement(policy: Policy, layout: AICoverLayoutSuggestion, role: AICoverLayoutRole, content: CoverTextElement["content"], colors: { title: string; text: string; muted: string }): CoverTextElement {
+function textElement(layout: AICoverLayoutSuggestion, role: AICoverLayoutRole, content: CoverTextElement["content"], design: AICoverDesign): CoverTextElement {
   const position = layoutElement(layout, role);
-  const theme = getPolicyDocumentTheme(policy);
   return {
     id: `ai-cover-${role}`,
     type: "text",
@@ -277,9 +364,9 @@ function textElement(policy: Policy, layout: AICoverLayoutSuggestion, role: AICo
     locked: false,
     aspectLocked: false,
     content,
-    fontFamily: role === "policyTitle" ? theme.defaults.typography.headingFontFamily || theme.defaults.typography.fontFamily : theme.defaults.typography.fontFamily,
+    fontFamily: role === "policyTitle" ? design.headingFontFamily : design.bodyFontFamily,
     fontSize: position.fontSize || (role === "policyTitle" ? 30 : role.endsWith("Label") ? 7.5 : 10),
-    color: role.endsWith("Label") ? colors.muted : role === "policyTitle" ? colors.title : colors.text,
+    color: role.endsWith("Label") ? design.metadataLabelColor : role === "policyTitle" ? design.titleColor : role === "companyName" ? design.companyColor : design.metadataValueColor,
     bold: position.bold === true || role === "policyTitle",
     italic: false,
     underline: false,
@@ -296,36 +383,41 @@ const labelFor: Record<Extract<AICoverLayoutRole, `${string}Label`>, string> = {
   nextReviewLabel: "NEXT REVIEW",
 };
 
-export function createAICoverComposition(policy: Policy, backgroundAssetId: string, layoutInput: AICoverLayoutSuggestion): CoverComposition {
+export function createAICoverComposition(policy: Policy, backgroundAssetId: string, layoutInput: AICoverLayoutSuggestion, designInput?: AICoverDesign): CoverComposition {
   const theme = getPolicyDocumentTheme(policy);
-  const colors = {
-    paper: safeColor(theme.colors.paper, "#FFFFFF"),
-    title: safeColor(theme.colors.primaryDark, "#183A5A"),
-    ink: safeColor(theme.colors.ink, "#1D2822"),
-    muted: safeColor(theme.colors.muted, "#5C6962"),
-    line: safeColor(theme.colors.line, "#C8D0CA"),
-  };
+  const design = normalizeAICoverDesign(designInput, fallbackAICoverDesign(policy));
   const layout = normalizeAICoverLayout(layoutInput);
-  const ruleAsset = svgDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="1" viewBox="0 0 100 1"><rect width="100" height="1" fill="${colors.line}"/></svg>`);
+  const ruleAsset = svgDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="1" viewBox="0 0 100 1"><rect width="100" height="1" fill="${theme.colors.line}"/></svg>`);
   const rule = layoutElement(layout, "metadataRule");
+  const metadataElements = AI_COVER_METADATA_ROLES.map((role) => layoutElement(layout, role));
+  const metadataBounds = {
+    x: Math.max(8, Math.min(...metadataElements.map((element) => element.x)) - 4),
+    y: Math.max(8, Math.min(...metadataElements.map((element) => element.y)) - 3),
+    right: Math.min(202, Math.max(...metadataElements.map((element) => element.x + element.width)) + 4),
+    bottom: Math.min(289, Math.max(...metadataElements.map((element) => element.y + element.height)) + 3),
+  };
+  const metadataBackdrop = design.metadataBackdropEnabled && design.metadataBackdropOpacity > 0
+    ? [{ id: "ai-cover-metadata-backdrop", type: "image" as const, assetId: svgDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="${metadataBounds.right - metadataBounds.x}" height="${metadataBounds.bottom - metadataBounds.y}" viewBox="0 0 ${metadataBounds.right - metadataBounds.x} ${metadataBounds.bottom - metadataBounds.y}"><rect width="100%" height="100%" rx="2" fill="${design.metadataBackdropColor}"/></svg>`), x: metadataBounds.x, y: metadataBounds.y, width: metadataBounds.right - metadataBounds.x, height: metadataBounds.bottom - metadataBounds.y, rotation: 0, opacity: design.metadataBackdropOpacity, zIndex: 9, visible: true, locked: false, aspectLocked: false, fit: "contain" as const, focalPoint: { x: 50, y: 50 }, altText: "AI cover metadata contrast backdrop" }]
+    : [];
   const elements: CoverElement[] = [
+    ...metadataBackdrop,
     { id: "ai-cover-metadata-rule", type: "image", assetId: ruleAsset, x: rule.x, y: rule.y, width: rule.width, height: 1, rotation: 0, opacity: 1, zIndex: 10, visible: true, locked: false, aspectLocked: false, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Cover metadata divider" },
-    textElement(policy, layout, "companyName", { kind: "binding", binding: "companyName" }, { title: colors.title, text: colors.title, muted: colors.muted }),
-    textElement(policy, layout, "policyTitle", { kind: "binding", binding: "policyTitle" }, { title: colors.title, text: colors.ink, muted: colors.muted }),
-    textElement(policy, layout, "documentNumberLabel", { kind: "literal", text: labelFor.documentNumberLabel }, { title: colors.title, text: colors.ink, muted: colors.muted }),
-    textElement(policy, layout, "documentNumber", { kind: "binding", binding: "documentNumber" }, { title: colors.title, text: colors.ink, muted: colors.muted }),
-    textElement(policy, layout, "effectiveDateLabel", { kind: "literal", text: labelFor.effectiveDateLabel }, { title: colors.title, text: colors.ink, muted: colors.muted }),
-    textElement(policy, layout, "effectiveDate", { kind: "binding", binding: "effectiveDate" }, { title: colors.title, text: colors.ink, muted: colors.muted }),
-    textElement(policy, layout, "revisionLabel", { kind: "literal", text: labelFor.revisionLabel }, { title: colors.title, text: colors.ink, muted: colors.muted }),
-    textElement(policy, layout, "revision", { kind: "binding", binding: "revision" }, { title: colors.title, text: colors.ink, muted: colors.muted }),
-    textElement(policy, layout, "nextReviewLabel", { kind: "literal", text: labelFor.nextReviewLabel }, { title: colors.title, text: colors.ink, muted: colors.muted }),
-    textElement(policy, layout, "nextReview", { kind: "binding", binding: "nextReview" }, { title: colors.title, text: colors.ink, muted: colors.muted }),
+    textElement(layout, "companyName", { kind: "binding", binding: "companyName" }, design),
+    textElement(layout, "policyTitle", { kind: "binding", binding: "policyTitle" }, design),
+    textElement(layout, "documentNumberLabel", { kind: "literal", text: labelFor.documentNumberLabel }, design),
+    textElement(layout, "documentNumber", { kind: "binding", binding: "documentNumber" }, design),
+    textElement(layout, "effectiveDateLabel", { kind: "literal", text: labelFor.effectiveDateLabel }, design),
+    textElement(layout, "effectiveDate", { kind: "binding", binding: "effectiveDate" }, design),
+    textElement(layout, "revisionLabel", { kind: "literal", text: labelFor.revisionLabel }, design),
+    textElement(layout, "revision", { kind: "binding", binding: "revision" }, design),
+    textElement(layout, "nextReviewLabel", { kind: "literal", text: labelFor.nextReviewLabel }, design),
+    textElement(layout, "nextReview", { kind: "binding", binding: "nextReview" }, design),
   ];
   if (policy.company.companyLogo) {
     const logo = layoutElement(layout, "logo");
     elements.push({ id: "ai-cover-logo", type: "logo", x: logo.x, y: logo.y, width: logo.width, height: logo.height, rotation: 0, opacity: 1, zIndex: 12, visible: true, locked: false, aspectLocked: true, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Company logo" });
   }
-  return normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "ai-generated", background: { color: colors.paper, assetId: backgroundAssetId, fit: "contain", focalPoint: { x: 50, y: 50 } }, elements })!;
+  return normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "ai-generated", background: { color: theme.colors.paper, assetId: backgroundAssetId, fit: "contain", focalPoint: { x: 50, y: 50 } }, elements })!;
 }
 
 export function parseAIJson(value: string): unknown {

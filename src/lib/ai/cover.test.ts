@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { acceptsAICoverArtworkInspection, buildAICoverArtworkContext, buildAICoverArtworkValidationPrompt, buildAICoverContext, buildAICoverImagePrompt, createAICoverComposition, fallbackAICoverLayout, normalizeAICoverLayout } from "./cover";
+import { acceptsAICoverArtworkInspection, buildAICoverArtworkContext, buildAICoverArtworkValidationPrompt, buildAICoverContext, buildAICoverDesignPrompt, buildAICoverImagePrompt, createAICoverComposition, fallbackAICoverDesign, fallbackAICoverLayout, normalizeAICoverDesign, normalizeAICoverLayout } from "./cover";
+import { getPolicyDocumentTheme } from "../document-themes";
 import { makeSamplePolicy } from "../store";
 
 test("AI cover layout falls back to a complete non-overlapping A4 arrangement", () => {
@@ -23,21 +24,69 @@ test("AI cover layout keeps the editable content in one aligned rail", () => {
 test("AI cover composition keeps exact bindings and editable layout layers", () => {
   const policy = makeSamplePolicy();
   policy.company.companyLogo = "data:image/png;base64,logo";
+  policy.company.logoPalette = { primary: "#0B6E4F", primaryDark: "#07442F", soft: "#E7F4EF", accent: "#E0A458", onPrimary: "#FFFFFF" };
   const composition = createAICoverComposition(policy, "data:image/png;base64,art", fallbackAICoverLayout());
   const text = composition.elements.filter((element) => element.type === "text");
+  const theme = getPolicyDocumentTheme(policy);
 
   assert.equal(composition.sourceTemplateId, "ai-generated");
   assert.equal(composition.background.assetId, "data:image/png;base64,art");
   assert.equal(composition.background.fit, "contain");
   assert.equal(composition.background.color, "#FFFFFF");
+  assert.equal(composition.background.color, theme.colors.paper);
   assert.equal(composition.elements.some((element) => element.type === "logo"), true);
   assert.equal(text.some((element) => element.type === "text" && element.content.kind === "binding" && element.content.binding === "policyTitle"), true);
   assert.equal(text.some((element) => element.type === "text" && element.content.kind === "binding" && element.content.binding === "documentNumber"), true);
   assert.equal(text.some((element) => element.type === "text" && element.content.kind === "literal" && element.content.text === "NEXT REVIEW"), true);
   assert.equal(composition.elements.every((element) => element.locked === false), true);
   assert.equal(composition.elements.some((element) => element.id === "ai-cover-rail"), false);
+  assert.equal(text.find((element) => element.id === "ai-cover-companyName")?.color, theme.colors.primary);
+  assert.equal(text.find((element) => element.id === "ai-cover-policyTitle")?.color, theme.colors.primaryDark);
+  assert.equal(text.find((element) => element.id === "ai-cover-nextReviewLabel")?.color, theme.colors.muted);
+  assert.equal(text.find((element) => element.id === "ai-cover-nextReview")?.color, theme.colors.ink);
   const divider = composition.elements.find((element) => element.id === "ai-cover-metadata-rule");
   assert.ok(divider?.type === "image");
+});
+
+test("AI cover composition follows the selected template when logo branding is disabled", () => {
+  const policy = makeSamplePolicy();
+  policy.company.logoPalette = { primary: "#0B6E4F", primaryDark: "#07442F", soft: "#E7F4EF", accent: "#E0A458", onPrimary: "#FFFFFF" };
+  policy.brandColorSource = "template";
+  const theme = getPolicyDocumentTheme(policy);
+  const composition = createAICoverComposition(policy, "data:image/png;base64,art", fallbackAICoverLayout());
+  const title = composition.elements.find((element) => element.id === "ai-cover-policyTitle");
+
+  assert.ok(title?.type === "text");
+  assert.equal(title.color, theme.colors.primaryDark);
+  assert.notEqual(title.color, policy.company.logoPalette.primaryDark);
+});
+
+test("AI cover design applies image-aware colors, fonts, and metadata contrast treatment", () => {
+  const policy = makeSamplePolicy();
+  const design = normalizeAICoverDesign({
+    titleColor: "#FFFFFF",
+    companyColor: "#E7F4EF",
+    metadataLabelColor: "#E0A458",
+    metadataValueColor: "#FFFFFF",
+    headingFontFamily: "Fraunces",
+    bodyFontFamily: "Public Sans",
+    metadataBackdropEnabled: true,
+    metadataBackdropColor: "#17343E",
+    metadataBackdropOpacity: 0.62,
+  }, fallbackAICoverDesign(policy));
+  const composition = createAICoverComposition(policy, "data:image/png;base64,art", fallbackAICoverLayout(), design);
+  const title = composition.elements.find((element) => element.id === "ai-cover-policyTitle");
+  const metadata = composition.elements.find((element) => element.id === "ai-cover-nextReview");
+  const backdrop = composition.elements.find((element) => element.id === "ai-cover-metadata-backdrop");
+
+  assert.equal(title?.type, "text");
+  assert.equal(title?.color, "#FFFFFF");
+  assert.equal(title?.fontFamily, "Fraunces");
+  assert.equal(metadata?.type, "text");
+  assert.equal(metadata?.color, "#FFFFFF");
+  assert.equal(metadata?.fontFamily, "Public Sans");
+  assert.equal(backdrop?.type, "image");
+  assert.equal(backdrop?.opacity, 0.62);
 });
 
 test("AI cover context uses policy and design signals without imported reference text", () => {
@@ -48,9 +97,30 @@ test("AI cover context uses policy and design signals without imported reference
   assert.match(context, /Environmental Policy/);
   assert.doesNotMatch(context, /importedPolicy|referencePolicy/);
   const artworkContext = buildAICoverArtworkContext(policy);
-  assert.match(buildAICoverImagePrompt(artworkContext), /transparent-background/);
-  assert.match(buildAICoverImagePrompt(artworkContext), /solid color/);
+  assert.match(buildAICoverImagePrompt(artworkContext), /Transparency is optional/);
+  assert.match(buildAICoverImagePrompt(artworkContext), /never default to generic blue/);
   assert.ok(context.length <= 12000, "AI layout context should stay bounded");
+});
+
+test("AI cover prompts use the resolved logo palette and policy theme", () => {
+  const policy = makeSamplePolicy();
+  policy.company.logoPalette = { primary: "#0B6E4F", primaryDark: "#07442F", soft: "#E7F4EF", accent: "#E0A458", onPrimary: "#FFFFFF" };
+  const theme = getPolicyDocumentTheme(policy);
+  const context = buildAICoverContext(policy);
+  const artworkContext = buildAICoverArtworkContext(policy);
+
+  for (const value of [theme.colors.primary, theme.colors.primaryDark, theme.colors.accent, theme.colors.soft, theme.colors.ink, theme.colors.muted, theme.colors.paper]) {
+    assert.match(context, new RegExp(value));
+    assert.match(artworkContext, new RegExp(value));
+  }
+});
+
+test("AI cover design prompt asks vision analysis to choose readable cover-local typography", () => {
+  const prompt = buildAICoverDesignPrompt(buildAICoverArtworkContext(makeSamplePolicy()));
+  assert.match(prompt.system, /legible over the actual image/);
+  assert.match(prompt.user, /metadata backdrop/);
+  assert.match(prompt.user, /headingFontFamily/);
+  assert.match(prompt.user, /Fraunces/);
 });
 
 test("AI artwork context excludes document data and free-form policy text", () => {
@@ -80,19 +150,22 @@ test("AI artwork context excludes document data and free-form policy text", () =
     assert.equal(prompt.includes(forbidden), false);
   }
   assert.match(artworkContext, /industryStyle/);
-  assert.match(prompt, /transparent negative space/);
-  assert.match(prompt, /zero typography/);
+  assert.match(prompt, /Transparency is optional/);
+  assert.match(prompt, /visible typography/);
 });
 
-test("AI artwork validation rejects document-like image content and solid boxes", () => {
+test("AI artwork validation rejects document-like image content but allows opaque artwork", () => {
   const validation = buildAICoverArtworkValidationPrompt();
   assert.match(validation.system, /Reject any visible text/);
   assert.match(validation.user, /hasSolidBackground/);
   assert.match(validation.user, /acceptable/);
+  assert.match(validation.system, /transparent or opaque/);
+  assert.match(validation.user, /informational only/);
 });
 
-test("AI artwork validation trusts PNG transparency over an overly strict summary flag", () => {
-  assert.equal(acceptsAICoverArtworkInspection({ acceptable: false, hasText: false, hasDocumentElements: false, hasBorderOrFrame: false, hasSolidBackground: true }, true), true);
-  assert.equal(acceptsAICoverArtworkInspection({ acceptable: true, hasText: true, hasDocumentElements: false, hasBorderOrFrame: false }, true), false);
-  assert.equal(acceptsAICoverArtworkInspection({ acceptable: true, hasText: false, hasDocumentElements: false, hasBorderOrFrame: false }, false), false);
+test("AI artwork validation accepts transparent and opaque decorative artwork", () => {
+  assert.equal(acceptsAICoverArtworkInspection({ acceptable: false, hasText: false, hasDocumentElements: false, hasBorderOrFrame: false, hasSolidBackground: true }), true);
+  assert.equal(acceptsAICoverArtworkInspection({ acceptable: true, hasText: true, hasDocumentElements: false, hasBorderOrFrame: false }), false);
+  assert.equal(acceptsAICoverArtworkInspection({ acceptable: true, hasText: false, hasDocumentElements: true, hasBorderOrFrame: false }), false);
+  assert.equal(acceptsAICoverArtworkInspection({ acceptable: true, hasText: false, hasDocumentElements: false, hasBorderOrFrame: true }), false);
 });

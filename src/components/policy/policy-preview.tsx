@@ -494,7 +494,7 @@ function CustomCover({ model, policy, showElements = true }: { model: DocumentRe
 function CoverCompositionElements({ composition, policy, showElements }: { composition: NonNullable<DocumentRenderModel["cover"]["composition"]>; policy: Policy; showElements: boolean }) {
   const background = composition.background.assetId;
   return <>
-    {background ? <><span className="sr-only">Cover background</span><img src={background.startsWith("data:") ? background : `/api/policycraft/cover-assets/${encodeURIComponent(background)}`} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit }} /></> : null}
+    {background ? <img src={background.startsWith("data:") ? background : `/api/policycraft/cover-assets/${encodeURIComponent(background)}`} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit }} /> : null}
     {composition.elements.filter((element) => element.visible && (showElements || element.type !== "text")).sort((a, b) => a.zIndex - b.zIndex).map((element) => {
       const style: CSSProperties = { left: `${(element.x / 210) * 100}%`, top: `${(element.y / 297) * 100}%`, width: `${(element.width / 210) * 100}%`, height: `${(element.height / 297) * 100}%`, opacity: element.opacity, zIndex: element.zIndex, transform: `rotate(${element.rotation}deg)` };
       if (element.type === "text") {

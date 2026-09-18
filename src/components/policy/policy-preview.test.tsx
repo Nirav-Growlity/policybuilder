@@ -3,13 +3,25 @@ import test from "node:test";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { chromium } from "playwright-core";
-import { PolicyPreview } from "./policy-preview";
+import { PolicyCoverPreview, PolicyPreview } from "./policy-preview";
+import { createAICoverComposition, fallbackAICoverLayout } from "../../lib/ai/cover";
 import { templatePreviewPolicy } from "../../lib/sample-policies";
 import { createPrintDocument } from "../../lib/pdf/print-document";
 
 function chromePath() {
   return process.env.POLICY_PDF_CHROME_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 }
+
+test("custom cover keeps its background image without rendering a background label", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const composition = createAICoverComposition(policy, "data:image/png;base64,art", fallbackAICoverLayout());
+  const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, {
+    policy: { ...policy, coverComposition: composition },
+  }));
+
+  assert.match(markup, /policy-custom-cover-background/);
+  assert.doesNotMatch(markup, /Cover background/);
+});
 
 test("professional legal-form acknowledgement keeps signature rule inside its box", async () => {
   const markup = renderToStaticMarkup(
