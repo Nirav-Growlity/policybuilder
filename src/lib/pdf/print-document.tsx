@@ -13,8 +13,10 @@ let pdfBrowserPromise: Promise<Browser> | null = null;
 const customCoverCache = new Map<string, Promise<Uint8Array>>();
 const PDF_CONTEXT_TIMEOUT_MS = 20_000;
 const PDF_PAGE_TIMEOUT_MS = 10_000;
+const PDF_RENDER_TIMEOUT_MS = 65_000;
 const CUSTOM_COVER_RENDER_TIMEOUT_MS = 45_000;
 const PDF_CONTEXT_CLEANUP_TIMEOUT_MS = 2_000;
+const pdfContextClosures = new WeakMap<BrowserContext, Promise<void>>();
 
 export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const model = buildDocumentRenderModel(policy);
@@ -42,42 +44,41 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const page = await withTimeout(
     context.newPage(),
     PDF_PAGE_TIMEOUT_MS,
-    () => { void closePdfContext(context); resetPdfBrowser(); },
+    () => { void closePdfContext(context); },
     "PDF page creation timed out",
   );
-  const timer = setTimeout(() => { void closePdfContext(context); }, 45000);
   try {
-    await page.route(/^https?:/, route => route.abort());
-    await page.setContent(createPrintDocument(markup, policy, topMargin, horizontalMargin), { waitUntil: "load", timeout: 20000 });
-    await page.evaluate(async () => {
-      await document.fonts.ready;
-      await Promise.all(Array.from(document.images, image => image.decode()));
-    });
-    const escape = (s: string) => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
-    const logoPosition = policy.logoPosition || theme.defaults.logoPosition;
-    const logo = brand.kind === "logo" && /^data:image\/(png|jpeg|jpg|webp|svg\+xml);base64,/i.test(brand.source)
-      ? `<img src="${brand.source}" style="display:block;width:auto;height:auto;max-width:${logoFit.widthMm}mm;max-height:${logoFit.heightMm}mm;object-fit:contain;" alt=""/>`
-      : brand.kind === "name" ? `<span>${escape(brand.text)}</span>` : "";
-    const headerInset = pageBorderContentInsetMm(theme.pageBorder);
-    const logoTop = pageHeaderLogoTopMm(theme.pageBorder);
-    const logoCenter = logoTop + (hasLogo ? logoHeight / 2 : 2);
-    const headerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${topMargin}mm;margin:0 ${headerInset}mm;position:relative;display:block;overflow:visible;`;
-    const footerHeight = theme.pageBorder.enabled ? Math.max(10, headerInset - 2) : 10;
-    const footerShift = pageFooterVerticalShiftMm(theme.pageBorder);
-    const footerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;gap:8mm;position:relative;transform:translateY(-${footerShift}mm);`;
-    const brandPosition = logoPosition === "right" ? "right:0;" : logoPosition === "center" ? "left:50%;" : "left:0;";
-    const brandMarkup = `<span style="position:absolute;top:${logoCenter}mm;width:${logoFit.widthMm}mm;height:${logoFit.heightMm}mm;display:flex;align-items:center;justify-content:center;transform:${logoPosition === "center" ? "translate(-50%,-50%)" : "translateY(-50%)"};${brandPosition}">${logo}</span>`;
-    const reviewInfo = [model.footer.reviewDate, ...model.footer.reviewerDesignations].filter(Boolean).join(" · ");
-    const output = await page.pdf({ format: "A4", printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true,
-      headerTemplate: `<div style="${headerStyle}">${brandMarkup}</div>`,
-      footerTemplate: `<div style="${footerStyle}"><span><b>Document No.</b> ${escape(model.footer.documentNumber)}</span><span style="text-align:center;"><b>Review</b> ${escape(reviewInfo)}</span><span style="text-align:right;"><b>Page</b> <span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
-      margin: { top: `${topMargin}mm`, right: `${horizontalMargin}mm`, bottom: `${horizontalMargin}mm`, left: `${horizontalMargin}mm` },
-    });
-    if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");
-    const result = await finalizePdf(output, theme.background, policy.company.companyLogo ? topMargin : 0, customCoverData, theme.pageBorder, theme.colors.primary);
-    return result;
+    return await withTimeout((async () => {
+      await page.route(/^https?:/, route => route.abort());
+      await page.setContent(createPrintDocument(markup, policy, topMargin, horizontalMargin), { waitUntil: "load", timeout: 20000 });
+      await page.evaluate(async () => {
+        await document.fonts.ready;
+        await Promise.all(Array.from(document.images, image => image.decode()));
+      });
+      const escape = (s: string) => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+      const logoPosition = policy.logoPosition || theme.defaults.logoPosition;
+      const logo = brand.kind === "logo" && /^data:image\/(png|jpeg|jpg|webp|svg\+xml);base64,/i.test(brand.source)
+        ? `<img src="${brand.source}" style="display:block;width:auto;height:auto;max-width:${logoFit.widthMm}mm;max-height:${logoFit.heightMm}mm;object-fit:contain;" alt=""/>`
+        : brand.kind === "name" ? `<span>${escape(brand.text)}</span>` : "";
+      const headerInset = pageBorderContentInsetMm(theme.pageBorder);
+      const logoTop = pageHeaderLogoTopMm(theme.pageBorder);
+      const logoCenter = logoTop + (hasLogo ? logoHeight / 2 : 2);
+      const headerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${topMargin}mm;margin:0 ${headerInset}mm;position:relative;display:block;overflow:visible;`;
+      const footerHeight = theme.pageBorder.enabled ? Math.max(10, headerInset - 2) : 10;
+      const footerShift = pageFooterVerticalShiftMm(theme.pageBorder);
+      const footerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;gap:8mm;position:relative;transform:translateY(-${footerShift}mm);`;
+      const brandPosition = logoPosition === "right" ? "right:0;" : logoPosition === "center" ? "left:50%;" : "left:0;";
+      const brandMarkup = `<span style="position:absolute;top:${logoCenter}mm;width:${logoFit.widthMm}mm;height:${logoFit.heightMm}mm;display:flex;align-items:center;justify-content:center;transform:${logoPosition === "center" ? "translate(-50%,-50%)" : "translateY(-50%)"};${brandPosition}">${logo}</span>`;
+      const reviewInfo = [model.footer.reviewDate, ...model.footer.reviewerDesignations].filter(Boolean).join(" · ");
+      const output = await page.pdf({ format: "A4", printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true,
+        headerTemplate: `<div style="${headerStyle}">${brandMarkup}</div>`,
+        footerTemplate: `<div style="${footerStyle}"><span><b>Document No.</b> ${escape(model.footer.documentNumber)}</span><span style="text-align:center;"><b>Review</b> ${escape(reviewInfo)}</span><span style="text-align:right;"><b>Page</b> <span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
+        margin: { top: `${topMargin}mm`, right: `${horizontalMargin}mm`, bottom: `${horizontalMargin}mm`, left: `${horizontalMargin}mm` },
+      });
+      if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");
+      return finalizePdf(output, theme.background, policy.company.companyLogo ? topMargin : 0, customCoverData, theme.pageBorder, theme.colors.primary);
+    })(), PDF_RENDER_TIMEOUT_MS, () => { void closePdfContext(context); }, "PDF rendering timed out");
   } finally {
-    clearTimeout(timer);
     await closePdfContext(context);
   }
 }
@@ -131,23 +132,31 @@ async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
 async function createPdfContextWithTimeout(): Promise<{ context: BrowserContext }> {
   const pending = createPdfContext();
   try {
-    return await withTimeout(pending, PDF_CONTEXT_TIMEOUT_MS, resetPdfBrowser, "Chromium context creation timed out");
+    // A slow context belongs to this request. Closing the shared browser here
+    // would also interrupt other in-flight PDF renders in the same function.
+    return await withTimeout(pending, PDF_CONTEXT_TIMEOUT_MS, () => undefined, "Chromium context creation timed out");
   } catch (error) {
     void pending.then(({ context }) => closePdfContext(context), () => undefined);
     throw error;
   }
 }
 
-async function closePdfContext(context: BrowserContext): Promise<void> {
-  let timer: ReturnType<typeof setTimeout> | undefined;
-  try {
-    await Promise.race([
-      context.close().catch(() => undefined),
-      new Promise<void>(resolve => { timer = setTimeout(resolve, PDF_CONTEXT_CLEANUP_TIMEOUT_MS); }),
-    ]);
-  } finally {
-    if (timer) clearTimeout(timer);
-  }
+function closePdfContext(context: BrowserContext): Promise<void> {
+  const closing = pdfContextClosures.get(context);
+  if (closing) return closing;
+  const promise = (async () => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    try {
+      await Promise.race([
+        context.close().catch(() => undefined),
+        new Promise<void>(resolve => { timer = setTimeout(resolve, PDF_CONTEXT_CLEANUP_TIMEOUT_MS); }),
+      ]);
+    } finally {
+      if (timer) clearTimeout(timer);
+    }
+  })();
+  pdfContextClosures.set(context, promise);
+  return promise;
 }
 
 function withTimeout<T>(promise: Promise<T>, timeoutMs: number, onTimeout: () => void, message: string): Promise<T> {
@@ -161,14 +170,6 @@ function withTimeout<T>(promise: Promise<T>, timeoutMs: number, onTimeout: () =>
       error => { clearTimeout(timer); reject(error); },
     );
   });
-}
-
-function resetPdfBrowser(): void {
-  const current = pdfBrowserPromise;
-  pdfBrowserPromise = null;
-  if (current) {
-    void current.then(browser => browser.close().catch(() => undefined), () => undefined);
-  }
 }
 
 async function createPdfContext(): Promise<{ context: BrowserContext }> {
