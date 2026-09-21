@@ -261,8 +261,8 @@ test("AI cover keeps editable Word text layers over its full-page artwork", asyn
     .raw()
     .toBuffer();
   assert.ok(artworkPixel[1] > artworkPixel[0] * 2, "AI artwork must contribute visible pixels to the full-page cover image");
-  assert.match(document, /<wps:wsp>/, "AI cover text should remain an editable Word shape");
-  assert.match(document, /Ethics Policy/, "AI cover title should remain editable document text");
+  assert.match(document, /<v:shape[^>]*id="cover-text-policy-title"/, "AI cover text should use a Word-editable text box");
+  assert.match(document, /<w:txbxContent>[\s\S]*Ethics Policy[\s\S]*<\/w:txbxContent>/, "AI cover title should remain editable document text");
 });
 
 test("professional focus rows keep number markers transparent like preview", async () => {
