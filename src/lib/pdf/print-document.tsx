@@ -21,7 +21,21 @@ const PDF_CONTEXT_CLEANUP_TIMEOUT_MS = 2_000;
 const pdfContextClosures = new WeakMap<BrowserContext, Promise<void>>();
 
 export function generatePreviewPdf(policy: Policy): Promise<Buffer> {
-  return withSerializedPdfRender(() => generatePreviewPdfNow(policy));
+  return withSerializedPdfRender(async () => {
+    try {
+      return await generatePreviewPdfNow(policy);
+    } catch (error) {
+      if (!isClosedChromiumTargetError(error)) throw error;
+      console.warn("PDF export encountered a closed Chromium target; recycling the browser and retrying once.");
+      resetPdfBrowser();
+      return generatePreviewPdfNow(policy);
+    }
+  });
+}
+
+function isClosedChromiumTargetError(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error);
+  return message.includes("Target page, context or browser has been closed");
 }
 
 async function generatePreviewPdfNow(policy: Policy): Promise<Buffer> {
