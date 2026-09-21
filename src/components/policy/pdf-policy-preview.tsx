@@ -15,6 +15,7 @@ type PreviewResult = { key: string; bytes: Uint8Array };
 const previewCache = new Map<string, Uint8Array>();
 const previewRequests = new Map<string, Promise<Uint8Array>>();
 const MAX_CACHED_PREVIEWS = 6;
+const PREVIEW_REQUEST_TIMEOUT_MS = 150_000;
 
 function cachePreview(key: string, bytes: Uint8Array): void {
   previewCache.delete(key);
@@ -35,6 +36,7 @@ function requestPreview(key: string): Promise<Uint8Array> {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: `{"policy":${key}}`,
+    signal: AbortSignal.timeout(PREVIEW_REQUEST_TIMEOUT_MS),
   }).then(async response => {
     if (!response.ok) throw new Error("The preview could not be generated.");
     const blob = await response.blob();
@@ -42,6 +44,11 @@ function requestPreview(key: string): Promise<Uint8Array> {
     if (new TextDecoder().decode(bytes.slice(0, 5)) !== "%PDF-") throw new Error("The preview returned an invalid PDF.");
     cachePreview(key, bytes);
     return bytes;
+  }).catch(error => {
+    if (error instanceof DOMException && error.name === "TimeoutError") {
+      throw new Error("Preview generation timed out. Please retry.");
+    }
+    throw error;
   }).finally(() => previewRequests.delete(key));
   previewRequests.set(key, request);
   return request;

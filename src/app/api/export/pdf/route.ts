@@ -6,6 +6,7 @@ import { getPolicyProfile } from "@/lib/constants";
 import { hasExternalCoverAssets, stripExternalActiveCoverAssets } from "@/lib/cover-composition";
 
 export const runtime = "nodejs";
+export const maxDuration = 120;
 
 export async function POST(req: NextRequest) {
   try {

@@ -11,6 +11,10 @@ import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
 
 let pdfBrowserPromise: Promise<Browser> | null = null;
 const customCoverCache = new Map<string, Promise<Uint8Array>>();
+const PDF_CONTEXT_TIMEOUT_MS = 20_000;
+const PDF_PAGE_TIMEOUT_MS = 10_000;
+const CUSTOM_COVER_RENDER_TIMEOUT_MS = 45_000;
+const PDF_CONTEXT_CLEANUP_TIMEOUT_MS = 2_000;
 
 export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const model = buildDocumentRenderModel(policy);
@@ -21,12 +25,27 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   const logoHeight = hasLogo ? logoFit.heightMm : 0;
   const horizontalMargin = pageMarginMm(theme.pageBorder);
   const topMargin = hasLogo ? pageHeaderMarginMm(theme.pageBorder, logoHeight) : horizontalMargin;
-  const customCover = model.cover.composition ? { data: await getCachedCustomCoverPng(policy, model), type: "png" as const } : null;
-  const customCoverPng = customCover ? `data:image/png;base64,${Buffer.from(customCover.data).toString("base64")}` : undefined;
+  let customCoverData: Uint8Array | undefined;
+  if (model.cover.composition) {
+    try {
+      customCoverData = await getCachedCustomCoverPng(policy, model);
+    } catch (error) {
+      // Keep PDF preview/export available if the optional full-bleed cover
+      // raster takes too long. PolicyPreview will render the editable cover
+      // composition directly into the PDF page as a fallback.
+      console.warn("Custom cover rasterization failed; using the in-flow cover fallback.", error);
+    }
+  }
+  const customCoverPng = customCoverData ? `data:image/png;base64,${Buffer.from(customCoverData).toString("base64")}` : undefined;
   const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} />));
-  const { context } = await createPdfContext();
-  const page = await context.newPage();
-  const timer = setTimeout(() => { void page.close(); }, 45000);
+  const { context } = await createPdfContextWithTimeout();
+  const page = await withTimeout(
+    context.newPage(),
+    PDF_PAGE_TIMEOUT_MS,
+    () => { void closePdfContext(context); resetPdfBrowser(); },
+    "PDF page creation timed out",
+  );
+  const timer = setTimeout(() => { void closePdfContext(context); }, 45000);
   try {
     await page.route(/^https?:/, route => route.abort());
     await page.setContent(createPrintDocument(markup, policy, topMargin, horizontalMargin), { waitUntil: "load", timeout: 20000 });
@@ -55,12 +74,11 @@ export async function generatePreviewPdf(policy: Policy): Promise<Buffer> {
       margin: { top: `${topMargin}mm`, right: `${horizontalMargin}mm`, bottom: `${horizontalMargin}mm`, left: `${horizontalMargin}mm` },
     });
     if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");
-    const result = await finalizePdf(output, theme.background, policy.company.companyLogo ? topMargin : 0, customCover?.data, theme.pageBorder, theme.colors.primary);
+    const result = await finalizePdf(output, theme.background, policy.company.companyLogo ? topMargin : 0, customCoverData, theme.pageBorder, theme.colors.primary);
     return result;
   } finally {
     clearTimeout(timer);
-    await page.close().catch(() => undefined);
-    await context.close().catch(() => undefined);
+    await closePdfContext(context);
   }
 }
 
@@ -85,27 +103,71 @@ async function getCachedCustomCoverPng(policy: Policy, model: ReturnType<typeof 
 
 async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
   const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyCoverPreview policy={policy} />));
-  const { context } = await createPdfContext();
-  const page = await context.newPage();
-  await page.setViewportSize({ width: 794, height: 1123 });
+  const { context } = await createPdfContextWithTimeout();
   try {
-    await page.route(/^https?:/, route => route.abort());
-    await page.setContent(`<!doctype html><html><head><meta charset="utf-8"/></head><body>${markup}<style>
-      html,body { margin:0!important; padding:0!important; width:210mm; height:297mm; overflow:hidden; background:#fff; }
-      .cover-preview-only { width:210mm!important; height:297mm!important; max-width:none!important; overflow:hidden!important; box-shadow:none!important; }
-      .cover-preview-only > .policy-cover { width:210mm!important; height:297mm!important; min-height:297mm!important; max-height:297mm!important; overflow:hidden!important; }
-      .cover-preview-only .policy-custom-cover { width:210mm!important; height:297mm!important; min-height:297mm!important; max-height:297mm!important; page-break-after:none!important; }
-    </style></body></html>`, { waitUntil: "load", timeout: 20000 });
-    await page.evaluate(async () => {
-      await document.fonts.ready;
-      await Promise.all(Array.from(document.images, image => image.decode().catch(() => undefined)));
-    });
-    const cover = page.locator(".policy-custom-cover");
-    if (!(await cover.count())) throw new Error("Custom cover could not be rendered");
-    return await cover.screenshot({ type: "png" });
+    return await withTimeout((async () => {
+      const page = await context.newPage();
+      await page.setViewportSize({ width: 794, height: 1123 });
+      await page.route(/^https?:/, route => route.abort());
+      await page.setContent(`<!doctype html><html><head><meta charset="utf-8"/></head><body>${markup}<style>
+        html,body { margin:0!important; padding:0!important; width:210mm; height:297mm; overflow:hidden; background:#fff; }
+        .cover-preview-only { width:210mm!important; height:297mm!important; max-width:none!important; overflow:hidden!important; box-shadow:none!important; }
+        .cover-preview-only > .policy-cover { width:210mm!important; height:297mm!important; min-height:297mm!important; max-height:297mm!important; overflow:hidden!important; }
+        .cover-preview-only .policy-custom-cover { width:210mm!important; height:297mm!important; min-height:297mm!important; max-height:297mm!important; page-break-after:none!important; }
+      </style></body></html>`, { waitUntil: "load", timeout: 20000 });
+      await page.evaluate(async () => {
+        await document.fonts.ready;
+        await Promise.all(Array.from(document.images, image => image.decode().catch(() => undefined)));
+      });
+      const cover = page.locator(".policy-custom-cover");
+      if (!(await cover.count())) throw new Error("Custom cover could not be rendered");
+      return await cover.screenshot({ type: "png" });
+    })(), CUSTOM_COVER_RENDER_TIMEOUT_MS, () => { void closePdfContext(context); }, "Custom cover rasterization timed out");
   } finally {
-    await page.close().catch(() => undefined);
-    await context.close().catch(() => undefined);
+    await closePdfContext(context);
+  }
+}
+
+async function createPdfContextWithTimeout(): Promise<{ context: BrowserContext }> {
+  const pending = createPdfContext();
+  try {
+    return await withTimeout(pending, PDF_CONTEXT_TIMEOUT_MS, resetPdfBrowser, "Chromium context creation timed out");
+  } catch (error) {
+    void pending.then(({ context }) => closePdfContext(context), () => undefined);
+    throw error;
+  }
+}
+
+async function closePdfContext(context: BrowserContext): Promise<void> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    await Promise.race([
+      context.close().catch(() => undefined),
+      new Promise<void>(resolve => { timer = setTimeout(resolve, PDF_CONTEXT_CLEANUP_TIMEOUT_MS); }),
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+function withTimeout<T>(promise: Promise<T>, timeoutMs: number, onTimeout: () => void, message: string): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      try { onTimeout(); } catch { /* Preserve the timeout even if cleanup fails. */ }
+      reject(new Error(message));
+    }, timeoutMs);
+    promise.then(
+      value => { clearTimeout(timer); resolve(value); },
+      error => { clearTimeout(timer); reject(error); },
+    );
+  });
+}
+
+function resetPdfBrowser(): void {
+  const current = pdfBrowserPromise;
+  pdfBrowserPromise = null;
+  if (current) {
+    void current.then(browser => browser.close().catch(() => undefined), () => undefined);
   }
 }
 
