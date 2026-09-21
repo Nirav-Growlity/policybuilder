@@ -12,7 +12,7 @@ import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
 let pdfBrowserPromise: Promise<Browser> | null = null;
 const customCoverCache = new Map<string, Promise<Uint8Array>>();
 const PDF_CONTEXT_TIMEOUT_MS = 20_000;
-const PDF_PAGE_TIMEOUT_MS = 10_000;
+const PDF_PAGE_TIMEOUT_MS = 30_000;
 const PDF_RENDER_TIMEOUT_MS = 65_000;
 const CUSTOM_COVER_RENDER_TIMEOUT_MS = 45_000;
 const PDF_CONTEXT_CLEANUP_TIMEOUT_MS = 2_000;
@@ -107,7 +107,12 @@ async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
   const { context } = await createPdfContextWithTimeout();
   try {
     return await withTimeout((async () => {
-      const page = await context.newPage();
+      const page = await withTimeout(
+        context.newPage(),
+        PDF_PAGE_TIMEOUT_MS,
+        () => { void closePdfContext(context); },
+        "Custom cover page creation timed out",
+      );
       await page.setViewportSize({ width: 794, height: 1123 });
       await page.route(/^https?:/, route => route.abort());
       await page.setContent(`<!doctype html><html><head><meta charset="utf-8"/></head><body>${markup}<style>
