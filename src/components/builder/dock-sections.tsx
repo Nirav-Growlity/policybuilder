@@ -8,6 +8,7 @@ import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
 import { Download, FileText, Sparkles, FileType, BookOpen } from "lucide-react";
 import { preparePolicyForDocxExport } from "@/lib/docx/export-assets";
+import { visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
 
 export function usePolicyDownload() {
   const { policy } = useBuilder();
@@ -113,7 +114,7 @@ export function DockSummaryPanel() {
   const { policy } = useBuilder();
   const co = policy.company;
   const areas = policy.focusAreas.filter(Boolean);
-  const quantEntries = policy.quantitative.filter((q) => q.targets && q.targets.some((t) => t.target));
+  const quantEntries = visibleQuantitativeAreas(policy).filter((q) => q.targets && q.targets.some((t) => t.target));
   return (
     <Panel
       title="Document summary"

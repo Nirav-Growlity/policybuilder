@@ -7,7 +7,6 @@ const REQUEST_KINDS: Partial<Record<AIRequestType, StandardSectionKind[]>> = {
   preface: ["preface"],
   declaration: ["declaration", "preface"],
   scope: ["scope"],
-  focus: ["focus", "qualitative", "quantitative"],
   qualitative: ["qualitative", "focus"],
   quantitative: ["quantitative", "focus"],
   "quantitative-topic": ["quantitative", "focus"],

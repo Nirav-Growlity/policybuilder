@@ -4,6 +4,7 @@ import { getEnabledSections, sectionHasContent } from "./sections";
 import { getCompanySites, type CoverComposition, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
 import { getActiveCoverComposition, getActiveCoverVariant, removeLegacyThemeGradient } from "./cover-composition";
 import { groupQuantitativeTargets } from "./quantitative";
+import { visibleQualitativeEntries, visibleQuantitativeAreas } from "./focus-area-catalog";
 
 export type ContentDensity = "short" | "regular" | "dense";
 export type DataTreatment = "formal-tables" | "clean-bullets";
@@ -150,13 +151,13 @@ function getSectionContent(policy: Policy, section: PolicySection): DocumentSect
     case "focus": return { type: "focus", areas: policy.focusAreas.filter(Boolean) };
     case "qualitative": return {
       type: "qualitative",
-      groups: Object.entries(policy.qualitative)
+      groups: visibleQualitativeEntries(policy)
         .filter(([, items]) => items.length > 0)
         .map(([area, items]) => ({ area, items })),
     };
     case "quantitative": return {
       type: "quantitative",
-      areas: policy.quantitative.filter((area) => area.targets.some((target) => target.target)),
+      areas: visibleQuantitativeAreas(policy).filter((area) => area.targets.some((target) => target.target)),
     };
     case "sdg": return {
       type: "sdg",

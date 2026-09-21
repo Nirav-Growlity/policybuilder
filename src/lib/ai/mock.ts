@@ -3,21 +3,6 @@ import type { Policy } from "../types";
 import { normalizeQuantitativeTarget } from "../quantitative";
 import { getPolicyProfile } from "../constants";
 
-const FOCUS_AREAS_POOL = [
-  "Energy Consumption & GHG Emissions",
-  "Air Emissions Control",
-  "Raw Materials & Resource Efficiency",
-  "Waste Management & Circularity",
-  "Water Stewardship",
-  "Biodiversity & Land Use",
-  "Climate Risk & Emergency Preparedness",
-  "Product End-of-Life & Environmental Stewardship",
-  "Chemical Stewardship & Pollution Prevention",
-  "Sustainable Packaging",
-];
-
-const SDGS_POOL = [6, 7, 9, 11, 12, 13, 14, 15, 17];
-
 function ctxText(p: Policy): string {
   const c = p.company;
   return `${c.name || "a manufacturing company"} in ${c.industry || "the industrial sector"}`;
@@ -45,8 +30,6 @@ export function mockGenerate(ctx: AIContext): AIResponse {
         source: "mock",
         text: `This ${profile.label} applies to all operations, sites and activities of ${p.company.name || "the Company"}, including employees, workers, contractors, suppliers and business partners acting on its behalf. Where local requirements are stricter than this policy, the more stringent standard applies.`,
       };
-    case "focus":
-      return { source: "mock", areas: profile.focusAreas };
     case "sdg":
       return { source: "mock", sdgs: [...profile.sdgs] };
     case "qualitative": {

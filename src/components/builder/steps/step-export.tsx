@@ -8,6 +8,7 @@ import { CoverEditor } from "@/components/builder/cover-editor";
 import { AICoverWorkflow } from "@/components/builder/ai-cover-workflow";
 import { Check, AlertTriangle } from "lucide-react";
 import type { CoverComposition } from "@/lib/types";
+import { visibleQualitativeEntries, visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
 
 export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (editing: boolean) => void }) {
   const { policy, updatePolicy, coverEditorRequest, clearCoverEditorRequest } = useBuilder();
@@ -33,8 +34,8 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
 
   const co = policy.company;
   const areas = policy.focusAreas.filter(Boolean);
-  const qualEntries = Object.entries(policy.qualitative).filter(([, v]) => v && v.length);
-  const quantEntries = policy.quantitative.filter((q) => q.targets && q.targets.some((t) => t.target));
+  const qualEntries = visibleQualitativeEntries(policy).filter(([, v]) => v && v.length);
+  const quantEntries = visibleQuantitativeAreas(policy).filter((q) => q.targets && q.targets.some((t) => t.target));
 
   const completeness = [
     !!co.name,

@@ -56,6 +56,28 @@ export interface PolicyDefinitions {
   content: string;
 }
 
+export interface FocusAreaSelectionItem {
+  id: string;
+  label: string;
+  selected: boolean;
+}
+
+export type FocusAreaSelectionState =
+  | { mode: "profile-default" }
+  | {
+      mode: "custom";
+      /** Optional selectable rows for profile defaults and user-managed areas. */
+      focusAreaItems?: FocusAreaSelectionItem[];
+    }
+  | {
+      mode: "catalog";
+      catalogKey: string;
+      selectedFixedAreaIds: string[];
+      manualAreas: string[];
+      /** Includes unchecked manual rows so they remain available to reselect. */
+      focusAreaItems?: FocusAreaSelectionItem[];
+    };
+
 export interface QuantitativeTarget {
   target: string;
   baseline: string;
@@ -396,6 +418,8 @@ export interface Policy {
   declaration: Declaration;
   definitions?: PolicyDefinitions;
   focusAreas: string[];
+  /** Distinguishes the applied sector catalog from legacy and profile-default focus lists. */
+  focusAreaSelection?: FocusAreaSelectionState;
   qualitative: Record<string, string[]>;
   quantitative: QuantitativeArea[];
   sdgs: number[];

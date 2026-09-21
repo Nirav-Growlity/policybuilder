@@ -4,7 +4,6 @@ export type AIRequestType =
   | "preface"
   | "declaration"
   | "scope"
-  | "focus"
   | "qualitative"
   | "quantitative"
   | "quantitative-topic"
@@ -27,7 +26,6 @@ export interface AIContext {
 
 export interface AIResponse {
   text?: string;
-  areas?: string[];
   objectives?: string[];
   targets?: { target: string; baseline: string; deadline: string; reportingFrequency?: "Annually" | "Target period"; subtopics?: string[] }[];
   sdgs?: number[];

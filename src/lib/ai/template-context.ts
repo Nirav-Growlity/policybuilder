@@ -142,10 +142,6 @@ function buildCandidate(template: SeedTemplate, requestType: AIRequestType, area
       const text = compactText(policy.declaration?.[requestType], MAX_TEXT_CHARS);
       return text ? { score: 0, value: { ...base, [requestType]: text } } : undefined;
     }
-    case "focus": {
-      const focusAreas = compactStringList(policy.focusAreas, 12);
-      return focusAreas.length ? { score: 0, value: { ...base, focusAreas } } : undefined;
-    }
     case "qualitative": {
       const selected = bestQualitativeArea(policy.qualitative, areaName);
       return selected ? {

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --import tsx --test --test-force-exit lib/calendar.test.ts lib/cover-composition.test.ts lib/ai-cover-library.test.ts components/builder/cover-editor.test.tsx components/builder/ai-cover-workflow.test.tsx lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/universal-templates.test.ts lib/professional-templates.test.ts lib/pdf/generate.test.ts lib/pdf/layout.test.ts lib/ai/template-context.test.ts lib/ai/cover.test.ts lib/docx/generate.test.ts lib/policycraft-mapping.test.ts lib/quantitative.test.ts lib/policycraft-autosave.test.ts components/policy/policy-preview.test.tsx components/policy/pdf-policy-preview.test.ts",
+    "test": "node --import tsx --test --test-force-exit lib/calendar.test.ts lib/cover-composition.test.ts lib/ai-cover-library.test.ts components/builder/cover-editor.test.tsx components/builder/ai-cover-workflow.test.tsx lib/document-themes.test.ts lib/theme-library.test.ts lib/starter-templates.test.ts lib/universal-templates.test.ts lib/professional-templates.test.ts lib/pdf/generate.test.ts lib/pdf/layout.test.ts lib/ai/template-context.test.ts lib/ai/cover.test.ts lib/docx/generate.test.ts lib/policycraft-mapping.test.ts lib/quantitative.test.ts lib/focus-area-catalog.test.ts lib/policycraft-autosave.test.ts components/policy/policy-preview.test.tsx components/policy/pdf-policy-preview.test.ts",
     "templates:previews": "tsx scripts/generate-professional-previews.ts",
     "seeds:import": "tsx scripts/import-policy-seeds.ts"
   },

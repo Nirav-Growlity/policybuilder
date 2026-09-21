@@ -82,11 +82,6 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
         system: SYSTEM,
         user: `Write a Scope section for a ${profile.label} of ${company} operating at ${co.site || "its covered sites"}.${existingStr}${customStr}\nReturn JSON: {"text": "..."}`,
       };
-    case "focus":
-      return {
-        system: SYSTEM,
-        user: `Suggest key focus areas for a ${profile.label} of ${company} in ${industry}, aligned with ${stds}.${existingStr}${customStr}\nIf no count is specified in the user directive, suggest 7-9 areas. Return JSON: {"areas": ["...", "..."]}`,
-      };
     case "qualitative": {
       const area = p.focusAreas[ctx.areaIndex ?? 0] || "this focus area";
       return {

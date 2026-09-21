@@ -1,6 +1,7 @@
 import type { Policy, PolicySection, StandardSectionKind, StepId } from "./types";
 import { DEFAULT_TYPOGRAPHY } from "./typography";
 import { DEFAULT_DOCUMENT_THEME_ID, getDocumentTheme, resolveDocumentTemplateId, upgradeDocumentThemeId } from "./document-themes";
+import { visibleQualitativeEntries, visibleQuantitativeAreas } from "./focus-area-catalog";
 
 export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] = [
   { kind: "preface", title: "Preface" },
@@ -87,8 +88,8 @@ export function sectionHasContent(policy: Policy, section: PolicySection) {
     case "scope": return Boolean(policy.declaration.scope);
     case "definitions": return Boolean(policy.definitions?.content);
     case "focus": return policy.focusAreas.some(Boolean);
-    case "qualitative": return Object.values(policy.qualitative).some((v) => v.length);
-    case "quantitative": return policy.quantitative.some((q) => q.targets.some((t) => t.target));
+    case "qualitative": return visibleQualitativeEntries(policy).some(([, items]) => items.length > 0);
+    case "quantitative": return visibleQuantitativeAreas(policy).some((q) => q.targets.some((t) => t.target));
     case "sdg": return policy.sdgs.length > 0;
     case "responsibilities": return policy.responsibilities.length > 0;
     case "monitoring": return Boolean(policy.monitoring);

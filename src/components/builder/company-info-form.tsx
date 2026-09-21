@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
-import { INDUSTRY_SECTORS, INDUSTRY_SUBSECTORS } from "@/lib/constants";
+import { INDUSTRY_SECTORS } from "@/lib/constants";
+import { getIndustrySubsectorOptions } from "@/lib/focus-area-catalog";
 import { Panel, Badge } from "@/components/ui/panel";
 import { Combobox, Field, Input } from "@/components/ui/input";
 import { getCompanySites } from "@/lib/types";
@@ -74,7 +75,7 @@ export function CompanyInfoForm() {
             value={co.subCategory || ""}
             onValueChange={(subCategory) => updatePolicy((p) => ({ company: { ...p.company, subCategory } }))}
             placeholder={co.industry ? "Select or type a sub-category" : "Select an industry sector first"}
-            options={INDUSTRY_SUBSECTORS[co.industry] || []}
+            options={getIndustrySubsectorOptions(co.industry)}
             disabled={!co.industry}
           />
         </Field>

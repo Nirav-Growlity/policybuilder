@@ -11,6 +11,7 @@ import { parseRequestedCount } from "@/lib/ai/prompts";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, syncQuantitativeAreas, TARGET_PERIOD, validateQuantitativeTarget } from "@/lib/quantitative";
 import { Plus, Sparkles, Target, Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
+import { visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
 
 export function StepQuantitative() {
   const { policy, updatePolicy } = useBuilder();
@@ -22,6 +23,7 @@ export function StepQuantitative() {
   const reportingPeriod = policy.company.reportingPeriod || "FY";
   const yearOptions = React.useMemo(() => getQuantitativeYearOptions(reportingPeriod), [reportingPeriod]);
   const areas = React.useMemo(() => policy.focusAreas.filter(Boolean), [policy.focusAreas]);
+  const visibleQuantitative = visibleQuantitativeAreas(policy).map((area) => ({ area, index: policy.quantitative.indexOf(area) }));
 
   const normalize = React.useCallback(
     (target: Parameters<typeof normalizeQuantitativeTarget>[0]) => normalizeQuantitativeTarget(target, reportingPeriod),
@@ -172,7 +174,7 @@ export function StepQuantitative() {
         )}
       </div>
 
-      {policy.quantitative.map((q, qi) => (
+      {visibleQuantitative.map(({ area: q, index: qi }) => (
         <Panel
           key={`${q.area}-${qi}`}
           title={`${qi + 1}. ${q.area}`}
