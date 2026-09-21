@@ -137,7 +137,7 @@ test("cover preview keeps edited text in the same browser typography box as the 
 
   assert.match(previewMarkup, /class="policy-custom-cover-text"/);
   assert.doesNotMatch(previewMarkup, /data-cover-renderer="shared-svg"/);
-  assert.match(previewMarkup, /font-family:Bell MT/);
+  assert.match(previewMarkup, /--policy-heading-font:&quot;Fraunces&quot;/);
 });
 
 test("shared cover renderer wraps long text inside the saved element box", () => {

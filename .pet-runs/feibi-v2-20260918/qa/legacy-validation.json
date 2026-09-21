@@ -1,0 +1,724 @@
+{
+  "ok": false,
+  "file": "D:\\Policy PoC\\.pet-runs\\feibi-v2-20260918\\final\\spritesheet.webp",
+  "format": "WEBP",
+  "mode": "RGBA",
+  "columns": 8,
+  "rows": 9,
+  "sprite_version_number": 1,
+  "width": 1536,
+  "height": 1872,
+  "transparent_rgb_residue_pixels": 1042270,
+  "errors": [
+    "atlas has 1042270 fully transparent pixels with non-zero RGB residue"
+  ],
+  "warnings": [
+    "idle row 0 column 0 has 81 visible edge pixels contaminated by chroma key #FF00FF",
+    "idle row 0 column 1 has 62 visible edge pixels contaminated by chroma key #FF00FF",
+    "idle row 0 column 2 has 75 visible edge pixels contaminated by chroma key #FF00FF",
+    "idle row 0 column 3 has 64 visible edge pixels contaminated by chroma key #FF00FF",
+    "idle row 0 column 4 has 78 visible edge pixels contaminated by chroma key #FF00FF",
+    "idle row 0 column 5 has 95 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-right row 1 column 0 has 99 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-right row 1 column 1 has 101 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-right row 1 column 2 has 123 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-right row 1 column 3 has 103 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-right row 1 column 4 has 94 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-right row 1 column 5 has 72 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-right row 1 column 6 has 95 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-right row 1 column 7 has 110 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-left row 2 column 0 has 110 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-left row 2 column 1 has 95 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-left row 2 column 2 has 72 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-left row 2 column 3 has 94 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-left row 2 column 4 has 103 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-left row 2 column 5 has 123 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-left row 2 column 6 has 101 visible edge pixels contaminated by chroma key #FF00FF",
+    "running-left row 2 column 7 has 99 visible edge pixels contaminated by chroma key #FF00FF",
+    "waving row 3 column 0 has 44 visible edge pixels contaminated by chroma key #FF00FF",
+    "waving row 3 column 1 has 47 visible edge pixels contaminated by chroma key #FF00FF",
+    "waving row 3 column 2 has 44 visible edge pixels contaminated by chroma key #FF00FF",
+    "waving row 3 column 3 has 43 visible edge pixels contaminated by chroma key #FF00FF",
+    "jumping row 4 column 0 has 70 visible edge pixels contaminated by chroma key #FF00FF",
+    "jumping row 4 column 1 has 77 visible edge pixels contaminated by chroma key #FF00FF",
+    "jumping row 4 column 2 has 58 visible edge pixels contaminated by chroma key #FF00FF",
+    "jumping row 4 column 3 has 64 visible edge pixels contaminated by chroma key #FF00FF",
+    "jumping row 4 column 4 has 74 visible edge pixels contaminated by chroma key #FF00FF",
+    "failed row 5 column 0 has 103 visible edge pixels contaminated by chroma key #FF00FF",
+    "failed row 5 column 1 has 100 visible edge pixels contaminated by chroma key #FF00FF",
+    "failed row 5 column 2 has 121 visible edge pixels contaminated by chroma key #FF00FF",
+    "failed row 5 column 3 has 97 visible edge pixels contaminated by chroma key #FF00FF",
+    "failed row 5 column 4 has 97 visible edge pixels contaminated by chroma key #FF00FF",
+    "failed row 5 column 5 has 88 visible edge pixels contaminated by chroma key #FF00FF",
+    "failed row 5 column 6 has 100 visible edge pixels contaminated by chroma key #FF00FF",
+    "failed row 5 column 7 has 75 visible edge pixels contaminated by chroma key #FF00FF",
+    "waiting row 6 column 0 has 95 visible edge pixels contaminated by chroma key #FF00FF",
+    "waiting row 6 column 1 has 68 visible edge pixels contaminated by chroma key #FF00FF",
+    "waiting row 6 column 2 has 52 visible edge pixels contaminated by chroma key #FF00FF",
+    "waiting row 6 column 3 has 70 visible edge pixels contaminated by chroma key #FF00FF",
+    "waiting row 6 column 4 has 76 visible edge pixels contaminated by chroma key #FF00FF",
+    "waiting row 6 column 5 has 72 visible edge pixels contaminated by chroma key #FF00FF",
+    "running row 7 column 0 has 71 visible edge pixels contaminated by chroma key #FF00FF",
+    "running row 7 column 1 has 73 visible edge pixels contaminated by chroma key #FF00FF",
+    "running row 7 column 2 has 65 visible edge pixels contaminated by chroma key #FF00FF",
+    "running row 7 column 3 has 75 visible edge pixels contaminated by chroma key #FF00FF",
+    "running row 7 column 4 has 64 visible edge pixels contaminated by chroma key #FF00FF",
+    "running row 7 column 5 has 80 visible edge pixels contaminated by chroma key #FF00FF",
+    "review row 8 column 0 has 48 visible edge pixels contaminated by chroma key #FF00FF",
+    "review row 8 column 1 has 55 visible edge pixels contaminated by chroma key #FF00FF",
+    "review row 8 column 2 has 56 visible edge pixels contaminated by chroma key #FF00FF",
+    "review row 8 column 3 has 62 visible edge pixels contaminated by chroma key #FF00FF",
+    "review row 8 column 4 has 66 visible edge pixels contaminated by chroma key #FF00FF",
+    "review row 8 column 5 has 48 visible edge pixels contaminated by chroma key #FF00FF"
+  ],
+  "cells": [
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 22498,
+      "opaque_chroma_key_pixels": 37,
+      "chroma_fringe_pixels": 81
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 21949,
+      "opaque_chroma_key_pixels": 21,
+      "chroma_fringe_pixels": 62
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 22362,
+      "opaque_chroma_key_pixels": 26,
+      "chroma_fringe_pixels": 75
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 22400,
+      "opaque_chroma_key_pixels": 22,
+      "chroma_fringe_pixels": 64
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 4,
+      "used": true,
+      "nontransparent_pixels": 22803,
+      "opaque_chroma_key_pixels": 29,
+      "chroma_fringe_pixels": 78
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 5,
+      "used": true,
+      "nontransparent_pixels": 22518,
+      "opaque_chroma_key_pixels": 39,
+      "chroma_fringe_pixels": 95
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 6,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "idle",
+      "row": 0,
+      "column": 7,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 18235,
+      "opaque_chroma_key_pixels": 33,
+      "chroma_fringe_pixels": 99
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 17992,
+      "opaque_chroma_key_pixels": 30,
+      "chroma_fringe_pixels": 101
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 19406,
+      "opaque_chroma_key_pixels": 42,
+      "chroma_fringe_pixels": 123
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 17773,
+      "opaque_chroma_key_pixels": 42,
+      "chroma_fringe_pixels": 103
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 4,
+      "used": true,
+      "nontransparent_pixels": 18468,
+      "opaque_chroma_key_pixels": 28,
+      "chroma_fringe_pixels": 94
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 5,
+      "used": true,
+      "nontransparent_pixels": 17638,
+      "opaque_chroma_key_pixels": 27,
+      "chroma_fringe_pixels": 72
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 6,
+      "used": true,
+      "nontransparent_pixels": 18475,
+      "opaque_chroma_key_pixels": 32,
+      "chroma_fringe_pixels": 95
+    },
+    {
+      "state": "running-right",
+      "row": 1,
+      "column": 7,
+      "used": true,
+      "nontransparent_pixels": 19120,
+      "opaque_chroma_key_pixels": 32,
+      "chroma_fringe_pixels": 110
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 19120,
+      "opaque_chroma_key_pixels": 32,
+      "chroma_fringe_pixels": 110
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 18475,
+      "opaque_chroma_key_pixels": 32,
+      "chroma_fringe_pixels": 95
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 17638,
+      "opaque_chroma_key_pixels": 27,
+      "chroma_fringe_pixels": 72
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 18468,
+      "opaque_chroma_key_pixels": 28,
+      "chroma_fringe_pixels": 94
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 4,
+      "used": true,
+      "nontransparent_pixels": 17773,
+      "opaque_chroma_key_pixels": 42,
+      "chroma_fringe_pixels": 103
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 5,
+      "used": true,
+      "nontransparent_pixels": 19406,
+      "opaque_chroma_key_pixels": 42,
+      "chroma_fringe_pixels": 123
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 6,
+      "used": true,
+      "nontransparent_pixels": 17992,
+      "opaque_chroma_key_pixels": 30,
+      "chroma_fringe_pixels": 101
+    },
+    {
+      "state": "running-left",
+      "row": 2,
+      "column": 7,
+      "used": true,
+      "nontransparent_pixels": 18235,
+      "opaque_chroma_key_pixels": 33,
+      "chroma_fringe_pixels": 99
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 22883,
+      "opaque_chroma_key_pixels": 11,
+      "chroma_fringe_pixels": 44
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 22653,
+      "opaque_chroma_key_pixels": 11,
+      "chroma_fringe_pixels": 47
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 22727,
+      "opaque_chroma_key_pixels": 10,
+      "chroma_fringe_pixels": 44
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 22577,
+      "opaque_chroma_key_pixels": 7,
+      "chroma_fringe_pixels": 43
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 4,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 5,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 6,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "waving",
+      "row": 3,
+      "column": 7,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 24113,
+      "opaque_chroma_key_pixels": 19,
+      "chroma_fringe_pixels": 70
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 21283,
+      "opaque_chroma_key_pixels": 33,
+      "chroma_fringe_pixels": 77
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 21936,
+      "opaque_chroma_key_pixels": 22,
+      "chroma_fringe_pixels": 58
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 20647,
+      "opaque_chroma_key_pixels": 30,
+      "chroma_fringe_pixels": 64
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 4,
+      "used": true,
+      "nontransparent_pixels": 23914,
+      "opaque_chroma_key_pixels": 28,
+      "chroma_fringe_pixels": 74
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 5,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 6,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "jumping",
+      "row": 4,
+      "column": 7,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 22609,
+      "opaque_chroma_key_pixels": 36,
+      "chroma_fringe_pixels": 103
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 24117,
+      "opaque_chroma_key_pixels": 35,
+      "chroma_fringe_pixels": 100
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 26325,
+      "opaque_chroma_key_pixels": 41,
+      "chroma_fringe_pixels": 121
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 25512,
+      "opaque_chroma_key_pixels": 29,
+      "chroma_fringe_pixels": 97
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 4,
+      "used": true,
+      "nontransparent_pixels": 24218,
+      "opaque_chroma_key_pixels": 32,
+      "chroma_fringe_pixels": 97
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 5,
+      "used": true,
+      "nontransparent_pixels": 24503,
+      "opaque_chroma_key_pixels": 41,
+      "chroma_fringe_pixels": 88
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 6,
+      "used": true,
+      "nontransparent_pixels": 24005,
+      "opaque_chroma_key_pixels": 32,
+      "chroma_fringe_pixels": 100
+    },
+    {
+      "state": "failed",
+      "row": 5,
+      "column": 7,
+      "used": true,
+      "nontransparent_pixels": 23037,
+      "opaque_chroma_key_pixels": 13,
+      "chroma_fringe_pixels": 75
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 22929,
+      "opaque_chroma_key_pixels": 38,
+      "chroma_fringe_pixels": 95
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 22758,
+      "opaque_chroma_key_pixels": 19,
+      "chroma_fringe_pixels": 68
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 22468,
+      "opaque_chroma_key_pixels": 20,
+      "chroma_fringe_pixels": 52
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 22436,
+      "opaque_chroma_key_pixels": 26,
+      "chroma_fringe_pixels": 70
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 4,
+      "used": true,
+      "nontransparent_pixels": 22590,
+      "opaque_chroma_key_pixels": 26,
+      "chroma_fringe_pixels": 76
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 5,
+      "used": true,
+      "nontransparent_pixels": 22670,
+      "opaque_chroma_key_pixels": 29,
+      "chroma_fringe_pixels": 72
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 6,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "waiting",
+      "row": 6,
+      "column": 7,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 22773,
+      "opaque_chroma_key_pixels": 25,
+      "chroma_fringe_pixels": 71
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 22329,
+      "opaque_chroma_key_pixels": 26,
+      "chroma_fringe_pixels": 73
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 24293,
+      "opaque_chroma_key_pixels": 19,
+      "chroma_fringe_pixels": 65
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 22257,
+      "opaque_chroma_key_pixels": 22,
+      "chroma_fringe_pixels": 75
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 4,
+      "used": true,
+      "nontransparent_pixels": 22679,
+      "opaque_chroma_key_pixels": 29,
+      "chroma_fringe_pixels": 64
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 5,
+      "used": true,
+      "nontransparent_pixels": 23887,
+      "opaque_chroma_key_pixels": 32,
+      "chroma_fringe_pixels": 80
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 6,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "running",
+      "row": 7,
+      "column": 7,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 0,
+      "used": true,
+      "nontransparent_pixels": 21795,
+      "opaque_chroma_key_pixels": 15,
+      "chroma_fringe_pixels": 48
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 1,
+      "used": true,
+      "nontransparent_pixels": 22102,
+      "opaque_chroma_key_pixels": 17,
+      "chroma_fringe_pixels": 55
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 2,
+      "used": true,
+      "nontransparent_pixels": 21717,
+      "opaque_chroma_key_pixels": 21,
+      "chroma_fringe_pixels": 56
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 3,
+      "used": true,
+      "nontransparent_pixels": 21800,
+      "opaque_chroma_key_pixels": 26,
+      "chroma_fringe_pixels": 62
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 4,
+      "used": true,
+      "nontransparent_pixels": 24317,
+      "opaque_chroma_key_pixels": 33,
+      "chroma_fringe_pixels": 66
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 5,
+      "used": true,
+      "nontransparent_pixels": 21779,
+      "opaque_chroma_key_pixels": 15,
+      "chroma_fringe_pixels": 48
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 6,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    },
+    {
+      "state": "review",
+      "row": 8,
+      "column": 7,
+      "used": false,
+      "nontransparent_pixels": 0,
+      "opaque_chroma_key_pixels": 0,
+      "chroma_fringe_pixels": 0
+    }
+  ]
+}

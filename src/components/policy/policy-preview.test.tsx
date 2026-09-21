@@ -109,6 +109,19 @@ test("footer uses the aligned document-control contract", () => {
   assert.match(footer, /Document No\.[\s\S]*ENV-001/);
   assert.match(footer, /Review[\s\S]*2027-01-14[\s\S]*Environmental Manager[\s\S]*Compliance Officer/);
   assert.match(footer, /Page[\s\S]*—/);
+  assert.doesNotMatch(markup, /\.policy-running-header \{[^}]*border-bottom/);
+  assert.doesNotMatch(markup, /\.policy-footer \{[^}]*border-top/);
+});
+
+test("PDF print furniture keeps header and footer free of separator rules", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
+  const printDocument = createPrintDocument(markup, policy);
+  const headerRule = printDocument.match(/\.policy-running-header \{[^}]*\}/)?.[0] || "";
+  const footerRule = printDocument.match(/\.policy-footer \{[^}]*\}/)?.[0] || "";
+  assert.doesNotMatch(headerRule, /border-(?:top|bottom)\s*:/i);
+  assert.doesNotMatch(footerRule, /border-(?:top|bottom)\s*:/i);
+  assert.doesNotMatch(printDocument, /\.professional-running-[^}]*\{[^}]*border-bottom/i);
 });
 
 test("quantitative preview groups repeated areas and keeps timing inside target bullets", () => {

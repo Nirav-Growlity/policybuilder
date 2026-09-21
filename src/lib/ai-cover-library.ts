@@ -12,7 +12,14 @@ export function coverCompositionsEqual(left: CoverComposition | undefined, right
 }
 
 export function filterAICoverLibrary(items: CoverLibraryItem[], policyType: PolicyType): CoverLibraryItem[] {
-  return items.filter((item) => item.source === "ai" && item.policyType === policyType);
+  const seen = new Set<string>();
+  return items.filter((item) => {
+    if (item.source !== "ai" || item.policyType !== policyType) return false;
+    const key = JSON.stringify(item.composition);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 export async function persistCoverArtwork(composition: CoverComposition): Promise<CoverComposition> {
@@ -32,6 +39,13 @@ export async function persistCoverArtwork(composition: CoverComposition): Promis
 }
 
 export async function saveAICoverToLibrary(composition: CoverComposition, policyType: PolicyType, name = createAICoverName()): Promise<{ id: string }> {
+  try {
+    const existing = await fetchAICoverLibrary(policyType);
+    const matching = existing.find((item) => coverCompositionsEqual(item.composition, composition));
+    if (matching) return { id: matching.id };
+  } catch {
+    // A failed lookup should not prevent the save attempt from reporting its own result.
+  }
   const response = await fetch("/api/policycraft/cover-templates", {
     method: "POST",
     headers: { "Content-Type": "application/json" },

@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { getActiveCoverComposition, getActiveCoverVariant, getCoverBindingValue, getCoverTextPresentation, hasExternalCoverAssets, normalizeCoverComposition, normalizePolicyCovers, stripExternalActiveCoverAssets } from "./cover-composition";
+import { coverAssetIdFromReference, getActiveCoverComposition, getActiveCoverVariant, getCoverBindingValue, getCoverTextPresentation, hasExternalCoverAssets, normalizeCoverComposition, normalizePolicyCovers, stripExternalActiveCoverAssets } from "./cover-composition";
 import { initialPolicy } from "./store";
 import { buildDocumentRenderModel } from "./document-render-model";
 
@@ -92,4 +92,17 @@ test("missing auth strips only unresolved active cover assets from an export cop
   assert.equal(exportCopy.aiCoverComposition?.elements.some((element) => element.type === "image" || element.type === "logo"), false);
   assert.equal(exportCopy.coverComposition?.background.assetId, "manual-asset");
   assert.equal(ai.background.assetId, "ai-asset");
+});
+
+test("cover asset references normalize browser endpoint URLs for server-side export", () => {
+  assert.equal(coverAssetIdFromReference("cover-asset-id"), "cover-asset-id");
+  assert.equal(coverAssetIdFromReference("/api/policycraft/cover-assets/cover-asset-id"), "cover-asset-id");
+  assert.equal(coverAssetIdFromReference("/api/policycraft/cover-assets/cover%2Fasset"), "cover/asset");
+  assert.equal(coverAssetIdFromReference("data:image/png;base64,abc"), "data:image/png;base64,abc");
+});
+
+test("browser endpoint cover assets remain eligible for authenticated export resolution", () => {
+  const policy = initialPolicy("environmental");
+  const ai = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "ai-generated", background: { color: "#FFFFFF", assetId: "/api/policycraft/cover-assets/cover-asset-id" }, elements: [] })!;
+  assert.equal(hasExternalCoverAssets({ ...policy, aiCoverComposition: ai, activeCoverVariant: "ai" }), true);
 });

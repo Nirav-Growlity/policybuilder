@@ -23,7 +23,7 @@ function originFromEnv(value: string | undefined): string | undefined {
 
 const configuredBaseURL = process.env.NEXT_PUBLIC_BASE_URL?.trim() || process.env.BETTER_AUTH_URL?.trim();
 const vercelOrigin = originFromEnv(process.env.VERCEL_URL);
-const authBaseURL = configuredBaseURL || vercelOrigin;
+const authBaseURL = configuredBaseURL || vercelOrigin || (process.env.NODE_ENV === "production" ? undefined : "http://localhost:3000");
 const trustedOrigins = [
   originFromEnv(configuredBaseURL),
   vercelOrigin,
@@ -111,6 +111,9 @@ export const auth = betterAuth({
   advanced: {
     cookiePrefix: "better-auth",
     useSecureCookies: process.env.NODE_ENV === "production",
+    database: {
+      validateSchema: false,
+    },
   },
   plugins: [nextCookies()],
 });

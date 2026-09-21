@@ -190,8 +190,21 @@ export function getActiveCoverComposition(policy: Pick<Policy, "coverComposition
     : normalizeCoverComposition(policy.coverComposition);
 }
 
+/**
+ * Cover assets can be persisted as an opaque asset id or observed in the
+ * browser as the authenticated asset endpoint URL. Exporters need the
+ * underlying id so they can load the bytes server-side instead of passing an
+ * authenticated URL to an image library.
+ */
+export function coverAssetIdFromReference(assetId?: string): string | undefined {
+  if (!assetId || assetId.startsWith("data:")) return assetId;
+  const match = assetId.match(/^\/api\/policycraft\/cover-assets\/([^/?#]+)$/);
+  return match ? decodeURIComponent(match[1]) : assetId;
+}
+
 function isExternalCoverAsset(assetId?: string): boolean {
-  return Boolean(assetId && !assetId.startsWith("data:") && !assetId.startsWith("/"));
+  const normalized = coverAssetIdFromReference(assetId);
+  return Boolean(normalized && !normalized.startsWith("data:") && !normalized.startsWith("/"));
 }
 
 export function hasExternalCoverAssets(policy: Policy): boolean {

@@ -23,6 +23,7 @@ import {
 } from "./document-themes";
 import type { Policy } from "./types";
 import { motifSvg } from "./cover-motifs";
+import { DOCUMENT_FONT_FAMILIES } from "./document-fonts";
 
 test("defines eight universal visual templates with unique IDs and structural fingerprints", () => {
   assert.equal(DOCUMENT_THEMES.length, 8);
@@ -48,6 +49,15 @@ test("defines eight universal visual templates with unique IDs and structural fi
   });
   assert.equal(families.size, 8);
   assert.equal(new Set(DOCUMENT_THEMES.map((theme) => theme.layout.controlTreatment)).size, 4);
+});
+
+test("built-in templates use distinct bundled typography pairs", () => {
+  const pairs = DOCUMENT_THEMES.map((theme) => `${theme.defaults.typography.fontFamily}|${theme.defaults.typography.headingFontFamily}`);
+  assert.equal(new Set(pairs).size, DOCUMENT_THEMES.length);
+  for (const theme of DOCUMENT_THEMES) {
+    assert.ok(DOCUMENT_FONT_FAMILIES.includes(theme.defaults.typography.fontFamily), `${theme.id}: body font is not bundled`);
+    assert.ok(DOCUMENT_FONT_FAMILIES.includes(theme.defaults.typography.headingFontFamily || ""), `${theme.id}: heading font is not bundled`);
+  }
 });
 
 test("each design has a unique structural signature independent of color", () => {

@@ -9,6 +9,15 @@ import type { CoverComposition, Policy } from "@/lib/types";
 type AICoverResponse = { composition?: CoverComposition; error?: string };
 type AICoverHandler = (composition: CoverComposition) => void | Promise<void>;
 
+export async function persistAndApplyGeneratedCover(
+  composition: CoverComposition,
+  onApply: AICoverHandler,
+): Promise<CoverComposition> {
+  const persisted = await persistCoverArtwork(composition);
+  await onApply(persisted);
+  return persisted;
+}
+
 export function AICoverWorkflow({
   policy,
   onApply,
@@ -65,7 +74,7 @@ export function AICoverWorkflow({
       });
       const body = await response.json().catch(() => ({})) as AICoverResponse;
       if (!response.ok || !body.composition) throw new Error(body.error || "The AI cover could not be generated.");
-      const persisted = await persistCoverArtwork(body.composition);
+      const persisted = await persistAndApplyGeneratedCover(body.composition, onApply);
       setGenerated(persisted);
       try {
         await saveGenerated(persisted);
@@ -77,7 +86,7 @@ export function AICoverWorkflow({
     } finally {
       setBusy(false);
     }
-  }, [policy, saveGenerated]);
+  }, [onApply, policy, saveGenerated]);
 
   const retrySave = React.useCallback(async () => {
     if (!generated) return;
@@ -106,11 +115,11 @@ export function AICoverWorkflow({
         <PolicyCoverPreview policy={{ ...policy, aiCoverComposition: previewComposition, activeCoverVariant: "ai" }} />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-[13px] font-semibold text-[var(--color-ink)]">{generatedNeedsSaving ? "New result needs saving" : generated ? "New AI cover saved" : "Current AI cover"}</p>
+        <p className="text-[13px] font-semibold text-[var(--color-ink)]">{generatedNeedsSaving ? "New AI cover active; library save pending" : generated ? "New AI cover active" : "Current AI cover"}</p>
         <p className="mt-1 text-[12px] leading-5 text-[var(--color-muted)]">Your manual cover remains stored separately.</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {generatedNeedsSaving ? <button type="button" disabled={busy || savingLibrary} onClick={() => void retrySave()} className="rounded-md bg-[var(--color-forest)] px-2.5 py-1.5 text-[12px] font-semibold text-white disabled:opacity-50">Retry save</button> : <>
-            <button type="button" disabled={busy || savingLibrary} onClick={() => void apply(onApply)} className="rounded-md bg-[var(--color-forest)] px-2.5 py-1.5 text-[12px] font-semibold text-white disabled:opacity-50">{generated ? "Use AI cover" : "Use current AI cover"}</button>
+            <button type="button" disabled={busy || savingLibrary} onClick={() => void apply(onApply)} className="rounded-md bg-[var(--color-forest)] px-2.5 py-1.5 text-[12px] font-semibold text-white disabled:opacity-50">{generated ? "Reapply AI cover" : "Use current AI cover"}</button>
             <button type="button" disabled={busy || savingLibrary} onClick={() => void apply(onEdit)} className="rounded-md border border-[var(--color-line-2)] bg-white px-2.5 py-1.5 text-[12px] font-semibold text-[var(--color-ink-2)] disabled:opacity-50">Edit</button>
           </>}
           {generated ? <button type="button" disabled={busy || savingLibrary} onClick={() => { setGenerated(null); setGeneratedLibraryId(null); setError(""); }} className="rounded-md px-2.5 py-1.5 text-[12px] font-medium text-[var(--color-muted)] hover:bg-white disabled:opacity-50">Cancel</button> : null}

@@ -5,12 +5,6 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 
@@ -25,7 +19,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 PolicyCraft runs independently of the ESG application. Configure the local MySQL connection and `BETTER_AUTH_SECRET` in `.env` (use the ESG secret when cookie compatibility is required), then start it on port 3000:
 
 ```bash
-npm run dev -- -p 3000
+bun run dev -- -p 3000
 ```
 
 The additive migration in `migrations/2026_09_create_policycraft_documents.sql` creates the PolicyCraft-owned draft table without modifying the existing organization or site tables. The standalone login is available at `/login` and the signed-in drafts workspace at `/drafts`.

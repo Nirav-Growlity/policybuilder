@@ -12,8 +12,8 @@ import type { Policy } from "../lib/types";
 
 const run = promisify(execFile);
 const smoke = process.argv.includes("--smoke");
-const qa = path.resolve(".theme-qa/templates");
-const assets = path.resolve("public/template-previews");
+const qa = path.resolve(process.env.POLICYCRAFT_THEME_QA_DIR || ".theme-qa/templates");
+const assets = path.resolve(process.env.POLICYCRAFT_THEME_ASSETS_DIR || "public/template-previews");
 async function raster(pdf: string, out: string, page: number, width = 700) {
   await run(process.env.PDFTOPPM_PATH || "pdftoppm", ["-f", String(page), "-l", String(page), "-singlefile", "-scale-to", String(width), "-png", pdf, out], { windowsHide: true });
 }

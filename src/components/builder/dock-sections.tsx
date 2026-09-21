@@ -7,6 +7,7 @@ import { Panel, Badge } from "@/components/ui/panel";
 import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
 import { Download, FileText, Sparkles, FileType, BookOpen } from "lucide-react";
+import { preparePolicyForDocxExport } from "@/lib/docx/export-assets";
 
 export function usePolicyDownload() {
   const { policy } = useBuilder();
@@ -18,10 +19,11 @@ export function usePolicyDownload() {
     try {
       const fileBase = (policy.company.name || "Policy").replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
       const url = kind === "pdf" ? "/api/export/pdf" : "/api/export/docx";
+      const exportPolicy = kind === "docx" ? await preparePolicyForDocxExport(policy) : policy;
       const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ policy }),
+        body: JSON.stringify({ policy: exportPolicy }),
       });
       if (!res.ok) throw new Error("Export failed");
       const blob = await res.blob();

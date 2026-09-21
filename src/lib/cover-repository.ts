@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import type { ResultSetHeader, RowDataPacket } from "mysql2";
 import type { CoverComposition, CoverLibrarySource, Policy, PolicyType } from "./types";
-import { normalizeCoverComposition } from "./cover-composition";
+import { coverAssetIdFromReference, normalizeCoverComposition } from "./cover-composition";
 import type { PolicyCraftAuthContext } from "./policycraft-auth";
 import { policyCraftPool } from "./db";
 
@@ -9,6 +9,10 @@ type TemplateRow = RowDataPacket & { id: string; name: string; policy_type: Poli
 type AssetRow = RowDataPacket & { id: string; mime_type: string; width: number; height: number; content: Buffer };
 const iso = (value: Date | string) => value instanceof Date ? value.toISOString() : new Date(value).toISOString();
 const parse = <T>(value: unknown): T => typeof value === "string" ? JSON.parse(value) as T : value as T;
+const stableAICoverTemplateId = (orgId: number, policyType: PolicyType, composition: CoverComposition) => {
+  const hash = createHash("sha256").update(`${orgId}:${policyType}:${JSON.stringify(composition)}`).digest("hex");
+  return `${hash.slice(0, 8)}-${hash.slice(8, 12)}-${hash.slice(12, 16)}-${hash.slice(16, 20)}-${hash.slice(20, 32)}`;
+};
 
 export function assetIdForBytes(bytes: Buffer): string { return createHash("sha256").update(bytes).digest("hex"); }
 
@@ -31,8 +35,9 @@ export async function getCoverAsset(orgId: number, id: string) {
 export async function resolveCoverAssets(policy: Policy, orgId: number): Promise<Policy> {
   if (!policy.coverComposition && !policy.aiCoverComposition) return policy;
   const resolve = async (id?: string) => {
-    if (!id || id.startsWith("data:") || id.startsWith("/")) return id;
-    const asset = await getCoverAsset(orgId, id);
+    const assetId = coverAssetIdFromReference(id);
+    if (!assetId || assetId.startsWith("data:")) return assetId;
+    const asset = await getCoverAsset(orgId, assetId);
     return asset ? `data:${asset.mime_type};base64,${asset.content.toString("base64")}` : undefined;
   };
   const companyLogo = await resolve(policy.company.companyLogo);
@@ -66,8 +71,23 @@ export async function listCoverTemplates(orgId: number, source?: CoverLibrarySou
 }
 
 export async function createCoverTemplate(auth: PolicyCraftAuthContext, name: string, composition: CoverComposition, previewAssetId?: string | null, policyType?: PolicyType) {
-  const id = randomUUID();
-  await policyCraftPool.execute("INSERT INTO policycraft_cover_templates (id, org_id, created_by_user_id, name, policy_type, composition_json, preview_asset_id) VALUES (?, ?, ?, ?, ?, CAST(? AS JSON), ?)", [id, auth.organization.id, Number(auth.user.id), name.trim().slice(0, 160), policyType || null, JSON.stringify(composition), previewAssetId || null]);
+  const isAICover = composition.sourceTemplateId === "ai-generated" && Boolean(policyType);
+  if (isAICover && policyType) {
+    const [existingRows] = await policyCraftPool.execute<RowDataPacket[]>("SELECT id, composition_json FROM policycraft_cover_templates WHERE org_id = ? AND policy_type = ? AND archived_at IS NULL", [auth.organization.id, policyType]);
+    const compositionJson = JSON.stringify(composition);
+    const existing = existingRows.find((row) => {
+      const existingComposition = normalizeCoverComposition(parse<CoverComposition>(row.composition_json));
+      return existingComposition && JSON.stringify(existingComposition) === compositionJson;
+    });
+    if (existing?.id) return String(existing.id);
+  }
+  const id = isAICover && policyType ? stableAICoverTemplateId(auth.organization.id, policyType, composition) : randomUUID();
+  try {
+    await policyCraftPool.execute("INSERT INTO policycraft_cover_templates (id, org_id, created_by_user_id, name, policy_type, composition_json, preview_asset_id) VALUES (?, ?, ?, ?, ?, CAST(? AS JSON), ?)", [id, auth.organization.id, Number(auth.user.id), name.trim().slice(0, 160), policyType || null, JSON.stringify(composition), previewAssetId || null]);
+  } catch (cause) {
+    const code = typeof cause === "object" && cause !== null && "code" in cause ? cause.code : undefined;
+    if (!isAICover || code !== "ER_DUP_ENTRY") throw cause;
+  }
   return id;
 }
 

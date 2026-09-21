@@ -62,12 +62,14 @@ test("Word quantitative area numbers stay horizontal and align with the title", 
   assert.match(document, /w:vAlign w:val="top"/, "quantitative area numbers should align with the area title");
 });
 
-test("Word running header leaves a visible gap after the logo rule", async () => {
+test("Word running header keeps spacing without a separator rule", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   const zip = await JSZip.loadAsync(await generateDocx(policy));
   const headerNames = Object.keys(zip.files).filter((name) => /^word\/header\d+\.xml$/.test(name));
   const headers = await Promise.all(headerNames.map((name) => zip.file(name)!.async("string")));
-  assert.ok(headers.some((header) => header.includes('w:after="480"')), "content header should separate the logo rule from body content");
+  assert.ok(headers.some((header) => header.includes('w:after="480"')), "content header should retain spacing before body content");
+  assert.ok(headers.every((header) => !header.includes("<w:pBdr")), "running header should not contain a separator rule");
+  assert.ok(headers.every((header) => !header.includes("M0 116H178")), "running header background should not contain a separator path");
 });
 
 test("Word table headers use the preview's soft fill and subheading color", async () => {
@@ -122,9 +124,13 @@ test("custom cover is embedded as the first-page image", async () => {
   const sectionBreak = document.indexOf("<w:sectPr>");
   const firstPageBreak = document.indexOf('<w:br w:type="page"/>');
   assert.ok(sectionBreak >= 0 && firstPageBreak > sectionBreak, "custom cover must not add a blank page before the next section");
-  assert.match(document, /<wp:anchor[^>]*relativeHeight="1"[^>]*>[^]*?<wp:docPr[^>]*Custom cover background/);
+  const backgroundAnchor = document.match(/<wp:anchor[^>]*relativeHeight="1"[^>]*>[^]*?<wp:docPr[^>]*Custom cover background[^]*?<\/wp:anchor>/)?.[0] || "";
+  assert.match(backgroundAnchor, /behindDoc="0"/, "custom cover artwork must remain visible in Word's drawing stack");
+  assert.match(document, /<wp:positionH relativeFrom="page"><wp:posOffset>0<\/wp:posOffset><\/wp:positionH>/, "the cover image should start at the page's left edge");
+  assert.match(document, /<wp:positionV relativeFrom="page"><wp:posOffset>0<\/wp:posOffset><\/wp:positionV>/, "the cover image should start at the page's top edge");
   const extent = document.match(/<wp:extent cx="(\d+)" cy="(\d+)"\/>/);
   assert.deepEqual(extent?.slice(1).map(Number), [794 * 9525, 1123 * 9525], "custom cover should use the full A4 pixel canvas");
+  assert.doesNotMatch(document, /M0 116H178/, "Word page background must not add a running-header separator path");
 });
 
 test("custom cover keeps background and authored layers separate in Word", async () => {
@@ -198,11 +204,65 @@ test("custom cover text boxes encode horizontal alignment in the VML textbox", a
   const document = await zip.file("word/document.xml")!.async("string");
 
   assert.match(document, /<w:jc w:val="center"\/>/, "Word paragraphs should retain the same horizontal alignment");
+  assert.match(document, /<v:shape[^>]*style="left:0;top:0;[^\"]*position:absolute;/, "Word VML text boxes should start from the page origin before applying their saved offsets");
   assert.match(document, /<v:shape[^>]*o:allowincell="f"[^>]*style="[^"]*position:absolute;[^\"]*margin-left:56\.69pt;[^\"]*margin-top:198\.43pt;/, "Word VML text boxes should use absolute page positioning with saved coordinates");
   assert.match(document, /<v:shape[^>]*style="[^\"]*mso-position-horizontal:absolute;[^\"]*mso-position-horizontal-relative:page;[^\"]*mso-position-vertical:absolute;[^\"]*mso-position-vertical-relative:page;/, "Word VML text boxes should be anchored to the page");
   assert.doesNotMatch(document, /<v:shape[^>]*style="[^"]*text-align:/, "VML shape style should not include text-align as it causes horizontal double-offset in Word");
   assert.match(document, /<v:textbox[^>]*style="[^"]*mso-fit-shape-to-text:true[^"]*"/, "Word VML text boxes should fit shape to text to prevent vertical clipping");
   assert.match(document, /<w10:wrap type="none" anchorx="page" anchory="page"\/>/, "Word VML text boxes should not participate in document flow");
+});
+
+test("AI cover keeps editable Word text layers over its full-page artwork", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "ethics");
+  policy.activeCoverVariant = "ai";
+  policy.aiCoverComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "ai-generated",
+    background: { color: "#FFFFFF", assetId: `data:image/svg+xml;base64,${svg.toString("base64")}`, fit: "cover", focalPoint: { x: 50, y: 50 } },
+    elements: [{
+      id: "policy-title",
+      type: "text",
+      x: 20,
+      y: 70,
+      width: 170,
+      height: 60,
+      rotation: 0,
+      opacity: 1,
+      zIndex: 1,
+      visible: true,
+      locked: false,
+      content: { kind: "binding", binding: "policyTitle" },
+      fontFamily: "Arial",
+      fontSize: 36,
+      color: "#FFFFFF",
+      bold: false,
+      italic: false,
+      underline: false,
+      align: "center",
+      lineHeight: 1.16,
+      letterSpacing: 0,
+    }],
+  };
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const fullPageMedia = (await Promise.all(Object.keys(zip.files)
+    .filter((name) => name.startsWith("word/media/") && name.endsWith(".png"))
+    .map(async (name) => {
+      const bytes = await zip.file(name)!.async("nodebuffer");
+      return { bytes, metadata: await sharp(bytes).metadata() };
+    })))
+    .filter((entry) => entry.metadata.width === 2480 && entry.metadata.height === 3508);
+
+  assert.match(document, /Custom cover background/, "Word should contain the composed AI cover artwork");
+  assert.equal(fullPageMedia.length, 1, "AI artwork should remain a single background image");
+  const artworkPixel = await sharp(fullPageMedia[0].bytes)
+    .extract({ left: 300, top: 300, width: 1, height: 1 })
+    .removeAlpha()
+    .raw()
+    .toBuffer();
+  assert.ok(artworkPixel[1] > artworkPixel[0] * 2, "AI artwork must contribute visible pixels to the full-page cover image");
+  assert.match(document, /<wps:wsp>/, "AI cover text should remain an editable Word shape");
+  assert.match(document, /Ethics Policy/, "AI cover title should remain editable document text");
 });
 
 test("professional focus rows keep number markers transparent like preview", async () => {
@@ -233,6 +293,7 @@ test("Word footer aligns document number, review ownership, and page number", as
   assert.match(footer, /Review/);
   assert.match(footer, /Environmental Manager/);
   assert.match(footer, /w:instrText[^>]*>PAGE<\/w:instrText>/);
+  assert.doesNotMatch(footer, /<w:pBdr/, "running footer should not contain a separator rule");
 });
 
 test("small Word logos are contained without being upscaled", async () => {
