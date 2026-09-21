@@ -77,6 +77,11 @@ export const RESPONSIBILITIES_DEFAULT: { role: string; duty: string }[] = [
 ];
 
 export const REVISION_HISTORY_DEFAULT: RevisionEntry[] = [
+  { revisionNo: "0.0", date: "", description: "Initial release of policy", source: "scheduled" },
+];
+
+/** Previous static defaults are recognized while migrating persisted builder state. */
+export const LEGACY_REVISION_HISTORY_DEFAULT: RevisionEntry[] = [
   { revisionNo: "0.0", date: "01/01/2024", description: "Initial release of policy" },
   { revisionNo: "1.0", date: "01/01/2025", description: "Policy updated to strengthen compliance controls, risk management systems, and reporting structure" },
   { revisionNo: "2.0", date: "01/01/2026", description: "Policy revised to enhance monitoring mechanisms, performance tracking, and continuous improvement approach" },

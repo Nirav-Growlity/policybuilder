@@ -76,6 +76,8 @@ export type FocusAreaSelectionState =
       manualAreas: string[];
       /** Includes unchecked manual rows so they remain available to reselect. */
       focusAreaItems?: FocusAreaSelectionItem[];
+      /** Display labels chosen for fixed area IDs; IDs retain their workbook identity. */
+      fixedAreaLabelOverrides?: Record<string, string>;
     };
 
 export interface QuantitativeTarget {
@@ -366,6 +368,10 @@ export interface RevisionEntry {
   revisionNo: string;
   date: string;
   description: string;
+  /** Scheduled rows are kept in sync with the policy metadata dates. */
+  source?: "scheduled" | "custom";
+  /** Scheduled row index that a custom revision follows. */
+  scheduleAnchor?: number;
 }
 
 export type ImportedPolicyBlock =

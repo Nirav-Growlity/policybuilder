@@ -193,6 +193,7 @@ export function withFocusAreaCatalogSelection(
   selectedIds: string[],
   manualAreas: string[],
   focusAreaItems?: FocusAreaSelectionItem[],
+  fixedAreaLabelOverrides?: Record<string, string>,
 ): Pick<Policy, "focusAreas" | "focusAreaSelection"> {
   const selected = new Set(selectedIds.filter((id) => catalog.areas.some((area) => area.id === id)));
   const seenManual = new Set<string>();
@@ -217,14 +218,23 @@ export function withFocusAreaCatalogSelection(
   }
   const selectedFixedAreas = catalog.areas.filter((area) => selected.has(area.id));
   const remainingManual = uniqueLabels(remainingItems.filter((item) => item.selected).map((item) => item.label));
+  const validLabelOverrides = Object.fromEntries(
+    Object.entries(fixedAreaLabelOverrides ?? {}).filter(([id, label]) =>
+      catalog.areas.some((area) => area.id === id) && Boolean(label.trim())
+    ),
+  );
   return {
-    focusAreas: uniqueLabels([...selectedFixedAreas.map((area) => area.label), ...remainingManual]),
+    focusAreas: uniqueLabels([
+      ...selectedFixedAreas.map((area) => validLabelOverrides[area.id] ?? area.label),
+      ...remainingManual,
+    ]),
     focusAreaSelection: {
       mode: "catalog",
       catalogKey: catalog.key,
       selectedFixedAreaIds: selectedFixedAreas.map((area) => area.id),
       manualAreas: remainingManual,
       focusAreaItems: remainingItems,
+      ...(Object.keys(validLabelOverrides).length > 0 ? { fixedAreaLabelOverrides: validLabelOverrides } : {}),
     },
   };
 }
@@ -251,7 +261,14 @@ export function getInactiveFixedFocusAreaLabels(policy: Policy): Set<string> {
   const catalog = getFocusAreaCatalogByKey(selection.catalogKey);
   if (!catalog) return new Set();
   const selected = new Set(selection.selectedFixedAreaIds);
-  return new Set(catalog.areas.filter((area) => !selected.has(area.id)).map((area) => normalizeSubSector(area.label)));
+  const inactive = new Set<string>();
+  for (const area of catalog.areas) {
+    if (selected.has(area.id)) continue;
+    inactive.add(normalizeSubSector(area.label));
+    const override = selection.fixedAreaLabelOverrides?.[area.id];
+    if (override) inactive.add(normalizeSubSector(override));
+  }
+  return inactive;
 }
 
 export function visibleQuantitativeAreas(policy: Policy): Policy["quantitative"] {

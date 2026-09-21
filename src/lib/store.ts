@@ -9,6 +9,7 @@ import { getWorkflowSteps, normalizePolicyStructure } from "./sections";
 import { DEFAULT_DOCUMENT_THEME_ID } from "./document-themes";
 import { normalizePolicyCovers } from "./cover-composition";
 import { initializeFocusAreaCatalogFromDefaults } from "./focus-area-catalog";
+import { normalizePolicyRevisionHistory } from "./revision-history";
 
 export const initialPolicy = (policyType: PolicyType = "environmental"): Policy => {
   const profile = getPolicyProfile(policyType);
@@ -104,12 +105,12 @@ export const useBuilder = create<BuilderState>()(
         const current = get().policy;
         const patch = updater(current);
         const updated = initializeFocusAreaCatalogFromDefaults(patch ? { ...current, ...patch } : current);
-        const next = normalizePolicyStructure(normalizePolicyQuantitative(updated));
+        const next = normalizePolicyRevisionHistory(normalizePolicyStructure(normalizePolicyQuantitative(updated)));
         Object.assign(next, normalizePolicyCovers(next));
         set({ policy: next });
       },
       setPolicy: (p) => {
-        const next = normalizePolicyStructure(normalizePolicyQuantitative(initializeFocusAreaCatalogFromDefaults(p)));
+        const next = normalizePolicyRevisionHistory(normalizePolicyStructure(normalizePolicyQuantitative(initializeFocusAreaCatalogFromDefaults(p))));
         Object.assign(next, normalizePolicyCovers(next));
         set({ policy: next });
       },
@@ -120,13 +121,13 @@ export const useBuilder = create<BuilderState>()(
       startPolicy: (type) => {
         const currentCompany = get().policy.company;
         const newPolicy = initialPolicy(type);
-        const policy = initializeFocusAreaCatalogFromDefaults({
+        const policy = normalizePolicyRevisionHistory(initializeFocusAreaCatalogFromDefaults({
           ...newPolicy,
           company: {
             ...newPolicy.company,
             ...currentCompany,
           },
-        });
+        }));
         set({
           policy,
           importedPolicy: null,
@@ -134,10 +135,10 @@ export const useBuilder = create<BuilderState>()(
           step: "structure",
         });
       },
-      reset: () => set({ policy: initialPolicy(), importedPolicy: null, coverEditorRequest: null, step: "structure" }),
+      reset: () => set({ policy: normalizePolicyRevisionHistory(initialPolicy()), importedPolicy: null, coverEditorRequest: null, step: "structure" }),
       loadSample: () => {
         const sample = makeSamplePolicy();
-        set({ policy: normalizePolicyQuantitative(sample), coverEditorRequest: null, step: "structure" });
+        set({ policy: normalizePolicyRevisionHistory(normalizePolicyQuantitative(sample)), coverEditorRequest: null, step: "structure" });
       },
     }),
     {
@@ -155,7 +156,7 @@ export const useBuilder = create<BuilderState>()(
       partialize: (s) => ({ step: s.step, policy: s.policy, importedPolicy: s.importedPolicy }),
       onRehydrateStorage: () => (state) => {
         if (state) {
-          state.policy = normalizePolicyStructure(normalizePolicyQuantitative(initializeFocusAreaCatalogFromDefaults(state.policy)));
+          state.policy = normalizePolicyRevisionHistory(normalizePolicyStructure(normalizePolicyQuantitative(initializeFocusAreaCatalogFromDefaults(state.policy))));
           state.policy = normalizePolicyCovers(state.policy);
           state.hydrated = true;
         }

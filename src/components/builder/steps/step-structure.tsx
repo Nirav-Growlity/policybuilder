@@ -9,6 +9,7 @@ import { DatePicker } from "@/components/ui/calendar";
 import { Panel } from "@/components/ui/panel";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, GripVertical, ChevronUp, ChevronDown, Plus, Trash2, X, ListTree, FileText } from "lucide-react";
+import { resolveRevisionHistory } from "@/lib/revision-history";
 
 const labelFor = (section: PolicySection) => section.kind === "custom" ? "Custom section" : section.kind.replaceAll("-", " ");
 
@@ -39,7 +40,10 @@ export function StepStructure() {
       if (date && updatedCompany.reviewDate && updatedCompany.reviewDate < date) {
         updatedCompany.reviewDate = "";
       }
-      return { company: updatedCompany };
+      return {
+        company: updatedCompany,
+        revisionHistory: resolveRevisionHistory(p.revisionHistory, date, updatedCompany.lastReviewDate),
+      };
     });
   };
 
@@ -118,7 +122,10 @@ export function StepStructure() {
               minDate={co.effectiveDate || undefined}
               disabled={!co.effectiveDate}
               hasError={!!lastReviewError}
-              onChange={(date) => updatePolicy((p) => ({ company: { ...p.company, lastReviewDate: date } }))}
+              onChange={(date) => updatePolicy((p) => ({
+                company: { ...p.company, lastReviewDate: date },
+                revisionHistory: resolveRevisionHistory(p.revisionHistory, p.company.effectiveDate, date),
+              }))}
               placeholder="DD-MM-YYYY"
               ariaLabel="Last review date"
             />

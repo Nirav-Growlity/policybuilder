@@ -5,9 +5,11 @@ import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
 import { Field, Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Check, Plus, Target, Trash2, LockKeyhole } from "lucide-react";
+import { Check, Plus, RefreshCw, Target, Trash2, LockKeyhole } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
-import type { FocusAreaSelectionItem } from "@/lib/types";
+import type { FocusAreaSelectionItem, Policy } from "@/lib/types";
+import { getPolicyProfile } from "@/lib/constants";
+import { pickSystemFocusAreaSynonym, getSystemFocusAreaSynonyms } from "@/lib/focus-area-synonyms";
 import {
   getFocusAreaCatalog,
   getFocusAreaCatalogByKey,
@@ -40,12 +42,36 @@ function withEditableFocusAreaItems(policy: PolicyDraft, items: FocusAreaSelecti
         policy.focusAreaSelection.selectedFixedAreaIds,
         items.filter((item) => item.selected).map((item) => item.label),
         items,
+        policy.focusAreaSelection.fixedAreaLabelOverrides,
       );
     }
   }
   return {
     focusAreas: items.filter((item) => item.selected).map((item) => item.label.trim()).filter(Boolean),
     focusAreaSelection: { mode: "custom" as const, focusAreaItems: items },
+  };
+}
+
+function renameAreaContent(policy: Policy, previousLabel: string, nextLabel: string): Partial<Policy> {
+  const previousKey = normalizeSubSector(previousLabel);
+  const nextKey = normalizeSubSector(nextLabel);
+  if (!previousKey || previousKey === nextKey) return {};
+
+  const matchingQualitativeKeys = Object.keys(policy.qualitative).filter((area) => normalizeSubSector(area) === previousKey);
+  let qualitative = policy.qualitative;
+  if (matchingQualitativeKeys.length > 0) {
+    qualitative = { ...policy.qualitative };
+    const movedObjectives = matchingQualitativeKeys.flatMap((area) => qualitative[area] || []);
+    for (const area of matchingQualitativeKeys) delete qualitative[area];
+    qualitative[nextLabel] = [...(qualitative[nextLabel] || []), ...movedObjectives];
+  }
+
+  const quantitative = policy.quantitative.map((area) =>
+    normalizeSubSector(area.area) === previousKey ? { ...area, area: nextLabel } : area,
+  );
+  return {
+    ...(matchingQualitativeKeys.length > 0 ? { qualitative } : {}),
+    ...(quantitative.some((area, index) => area !== policy.quantitative[index]) ? { quantitative } : {}),
   };
 }
 
@@ -66,7 +92,7 @@ function FocusAreaCheckmark({ checked }: { checked: boolean }) {
         : "border-[var(--color-line-2)] bg-[var(--color-paper)] text-transparent group-hover:border-[var(--color-forest)]"
       }`}
     >
-      <Check size={12} strokeWidth={3} />
+      {checked ? <Check size={12} strokeWidth={3} /> : null}
     </span>
   );
 }
@@ -89,6 +115,22 @@ export function StepFocus() {
   const currentCompanyCatalog = getFocusAreaCatalog(policy.company.subCategory, policy.policyType);
   const preservedOldCatalog = Boolean(appliedCatalog && currentCompanyCatalog?.key !== appliedCatalog.key);
 
+  const refreshSynonym = (
+    currentLabel: string,
+    canonicalLabel: string,
+    applyLabel: (label: string) => void,
+  ) => {
+    const activeLabels = policy.focusAreas.filter(
+      (area) => normalizeSubSector(area) !== normalizeSubSector(currentLabel),
+    );
+    const nextLabel = pickSystemFocusAreaSynonym(canonicalLabel, currentLabel, activeLabels);
+    if (!nextLabel) {
+      push("No unused alternatives are available for this focus area", "info");
+      return;
+    }
+    applyLabel(nextLabel);
+  };
+
   const toggleFixedArea = (areaId: string, checked: boolean) => {
     if (!catalog) return;
     const priorSelected = catalogIsApplied && selection?.mode === "catalog"
@@ -103,7 +145,31 @@ export function StepFocus() {
       nextSelected,
       priorItems.filter((item) => item.selected).map((item) => item.label),
       priorItems,
+      catalogIsApplied && selection?.mode === "catalog" ? selection.fixedAreaLabelOverrides : undefined,
     ));
+  };
+
+  const updateFixedAreaLabel = (areaId: string, canonicalLabel: string, nextLabel: string) => {
+    if (!catalog) return;
+    updatePolicy((p) => {
+      const currentSelection = p.focusAreaSelection?.mode === "catalog" && p.focusAreaSelection.catalogKey === catalog.key
+        ? p.focusAreaSelection
+        : undefined;
+      const labelOverrides = { ...currentSelection?.fixedAreaLabelOverrides };
+      const previousLabel = labelOverrides[areaId] ?? canonicalLabel;
+      if (nextLabel === canonicalLabel) delete labelOverrides[areaId];
+      else labelOverrides[areaId] = nextLabel;
+      const items = editableFocusAreaItems(p, Boolean(currentSelection));
+      const selectedIds = currentSelection?.selectedFixedAreaIds ?? [];
+      const result = withFocusAreaCatalogSelection(
+        catalog,
+        selectedIds,
+        items.filter((item) => item.selected).map((item) => item.label),
+        items,
+        labelOverrides,
+      );
+      return { ...result, ...renameAreaContent(p, previousLabel, nextLabel) };
+    });
   };
 
   const add = () => {
@@ -126,6 +192,7 @@ export function StepFocus() {
             [...selected, matchingFixed.id],
             currentItems.filter((item) => item.selected).map((item) => item.label),
             currentItems,
+            catalogIsApplied && selection?.mode === "catalog" ? selection.fixedAreaLabelOverrides : undefined,
           ));
         }
         setNewArea("");
@@ -144,10 +211,21 @@ export function StepFocus() {
     setNewArea("");
   };
 
-  const updateEditableArea = (id: string, value: string) => {
+  const updateEditableArea = (id: string, value: string, previousLabel?: string) => {
     updatePolicy((p) => {
-      const items = editableFocusAreaItems(p, catalogIsApplied).map((item) => item.id === id ? { ...item, label: value } : item);
-      return withEditableFocusAreaItems(p, items);
+      const items = editableFocusAreaItems(p, catalogIsApplied).map((item) => {
+        if (item.id !== id) return item;
+        const isManualEdit = previousLabel === undefined && /^profile-\d+$/.test(item.id);
+        return {
+          ...item,
+          ...(isManualEdit ? { id: newFocusAreaItem(value).id } : {}),
+          label: value,
+        };
+      });
+      return {
+        ...withEditableFocusAreaItems(p, items),
+        ...(previousLabel ? renameAreaContent(p, previousLabel, value) : {}),
+      };
     });
   };
 
@@ -200,22 +278,40 @@ export function StepFocus() {
             <ul className="space-y-2">
               {catalog.areas.map((area) => {
                 const checked = selectedFixedIds.has(area.id);
+                const currentLabel = catalogIsApplied && selection?.mode === "catalog"
+                  ? selection.fixedAreaLabelOverrides?.[area.id] ?? area.label
+                  : area.label;
                 return (
                   <li key={area.id}>
-                    <label className={`group flex min-h-[52px] cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 transition-colors duration-150 ${checked
+                    <div className={`group flex min-h-[52px] items-center gap-3 rounded-xl border px-4 py-2.5 transition-colors duration-150 ${checked
                       ? "border-[#c7ded1] bg-[var(--color-forest-soft)]/55"
                       : "border-[var(--color-line)] bg-[var(--color-cream-2)]/50 hover:border-[var(--color-line-2)] hover:bg-[var(--color-paper)]"
                     }`}>
-                      <input
-                        type="checkbox"
-                        checked={checked}
-                        onChange={(event) => toggleFixedArea(area.id, event.target.checked)}
-                        className="peer sr-only"
-                        aria-label={`Include ${area.label}`}
-                      />
-                      <FocusAreaCheckmark checked={checked} />
-                      <span className="flex-1 text-[13.5px] leading-relaxed text-[var(--color-ink)]">{area.label}</span>
-                    </label>
+                      <label className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 py-1">
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={(event) => toggleFixedArea(area.id, event.target.checked)}
+                          className="peer sr-only appearance-none"
+                          aria-label={`Include ${currentLabel}`}
+                        />
+                        <FocusAreaCheckmark checked={checked} />
+                        <span className="min-w-0 flex-1 text-[13.5px] leading-relaxed text-[var(--color-ink)]">{currentLabel}</span>
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => refreshSynonym(
+                          currentLabel,
+                          area.label,
+                          (nextLabel) => updateFixedAreaLabel(area.id, area.label, nextLabel),
+                        )}
+                        className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[var(--color-muted)] transition-colors hover:bg-[var(--color-forest-soft)] hover:text-[var(--color-forest)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-forest)]/30"
+                        aria-label={`Show a random alternative for ${currentLabel}`}
+                        title="Show a random alternative"
+                      >
+                        <RefreshCw size={14} />
+                      </button>
+                    </div>
                   </li>
                 );
               })}
@@ -237,42 +333,69 @@ export function StepFocus() {
               ) : null}
             </div>
             <ul className="space-y-2">
-              {editableAreas.map((area, i) => (
-                <li
-                  key={area.id}
-                  className={`group flex min-h-[52px] items-center gap-3 rounded-xl border px-4 py-2.5 transition-colors duration-150 ${area.selected
-                    ? "border-[#c7ded1] bg-[var(--color-forest-soft)]/55"
-                    : "border-[var(--color-line)] bg-[var(--color-cream-2)]/50 hover:border-[var(--color-line-2)] hover:bg-[var(--color-paper)]"
-                  }`}
-                >
-                  <label htmlFor={`focus-area-${area.id}`} className="grid shrink-0 cursor-pointer place-items-center">
-                    <input
-                      id={`focus-area-${area.id}`}
-                      type="checkbox"
-                      checked={area.selected}
-                      onChange={(event) => toggleEditableArea(area.id, event.target.checked)}
-                      className="peer sr-only"
-                      aria-label={`Include ${area.label || `focus area ${i + 1}`}`}
-                    />
-                    <FocusAreaCheckmark checked={area.selected} />
-                  </label>
-                  <Textarea
-                    rows={Math.max(1, Math.ceil((area.label || "").length / 72))}
-                    value={area.label}
-                    onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => updateEditableArea(area.id, event.target.value)}
-                    aria-label={`Edit focus area ${i + 1}`}
-                    className="min-w-0 flex-1 resize-y border-transparent bg-transparent px-2 text-[13.5px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => removeEditableArea(area.id)}
-                    className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[var(--color-muted)] transition-colors hover:bg-[#fdecec] hover:text-[#9b2929] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9b2929]/30"
-                    aria-label={`Remove focus area ${i + 1}`}
+              {editableAreas.map((area, i) => {
+                const profileDefaultIndex = /^profile-(\d+)$/.exec(area.id);
+                const profileDefaultLabel = profileDefaultIndex
+                  ? getPolicyProfile(policy.policyType).focusAreas[Number(profileDefaultIndex[1])]
+                  : undefined;
+                const profileDefaultSynonyms = profileDefaultLabel
+                  ? getSystemFocusAreaSynonyms(profileDefaultLabel)
+                  : null;
+                const canRefresh = Boolean(profileDefaultLabel && profileDefaultSynonyms?.some(
+                  (label) => normalizeSubSector(label) === normalizeSubSector(area.label),
+                )) || Boolean(profileDefaultLabel && normalizeSubSector(profileDefaultLabel) === normalizeSubSector(area.label));
+                return (
+                  <li
+                    key={area.id}
+                    className={`group flex min-h-[52px] items-center gap-3 rounded-xl border px-4 py-2.5 transition-colors duration-150 ${area.selected
+                      ? "border-[#c7ded1] bg-[var(--color-forest-soft)]/55"
+                      : "border-[var(--color-line)] bg-[var(--color-cream-2)]/50 hover:border-[var(--color-line-2)] hover:bg-[var(--color-paper)]"
+                    }`}
                   >
-                    <Trash2 size={14} />
-                  </button>
-                </li>
-              ))}
+                    <label htmlFor={`focus-area-${area.id}`} className="grid shrink-0 cursor-pointer place-items-center">
+                      <input
+                        id={`focus-area-${area.id}`}
+                        type="checkbox"
+                        checked={area.selected}
+                        onChange={(event) => toggleEditableArea(area.id, event.target.checked)}
+                        className="peer sr-only appearance-none"
+                        aria-label={`Include ${area.label || `focus area ${i + 1}`}`}
+                      />
+                      <FocusAreaCheckmark checked={area.selected} />
+                    </label>
+                    <Textarea
+                      rows={Math.max(1, Math.ceil((area.label || "").length / 72))}
+                      value={area.label}
+                      onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => updateEditableArea(area.id, event.target.value)}
+                      aria-label={`Edit focus area ${i + 1}`}
+                      className="min-w-0 flex-1 resize-y border-transparent bg-transparent px-2 text-[13.5px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"
+                    />
+                    {canRefresh ? (
+                    <button
+                      type="button"
+                      onClick={() => refreshSynonym(
+                        area.label,
+                        profileDefaultLabel!,
+                        (nextLabel) => updateEditableArea(area.id, nextLabel, area.label),
+                      )}
+                      className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[var(--color-muted)] transition-colors hover:bg-[var(--color-forest-soft)] hover:text-[var(--color-forest)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-forest)]/30"
+                      aria-label={`Show a random alternative for ${area.label}`}
+                      title="Show a random alternative"
+                    >
+                      <RefreshCw size={14} />
+                    </button>
+                    ) : null}
+                    <button
+                      type="button"
+                      onClick={() => removeEditableArea(area.id)}
+                      className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[var(--color-muted)] transition-colors hover:bg-[#fdecec] hover:text-[#9b2929] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9b2929]/30"
+                      aria-label={`Remove focus area ${i + 1}`}
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           </section>
         ) : null}

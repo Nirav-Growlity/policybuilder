@@ -2,40 +2,47 @@
 
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
-import { Panel, InfoBar, Badge } from "@/components/ui/panel";
-import { Field, Input, Textarea } from "@/components/ui/input";
+import { Panel, InfoBar } from "@/components/ui/panel";
+import { Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { BarChart3, History, Plus, RefreshCw, Sparkles, Trash2, Users } from "lucide-react";
+import { BarChart3, History, Plus, RefreshCw, Trash2, Users } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
 import type { RevisionEntry } from "@/lib/types";
-import { REVISION_HISTORY_DEFAULT } from "@/lib/constants";
+import { resolveRevisionHistory, scheduleAnchorAfter, suggestMinorRevisionNumber } from "@/lib/revision-history";
 
 export function StepResponsibilities() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
   const [busy, setBusy] = React.useState<Record<string, boolean>>({});
 
-  const revisionHistory = policy.revisionHistory || REVISION_HISTORY_DEFAULT;
+  const revisionHistory = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate);
 
-  const addRevisionEntry = () => {
-    const list = policy.revisionHistory ? [...policy.revisionHistory] : [...REVISION_HISTORY_DEFAULT];
-    const lastRev = list.length > 0 ? parseFloat(list[list.length - 1].revisionNo) : 0;
-    const nextRevNo = isNaN(lastRev) ? `${list.length}.0` : (lastRev + 1.0).toFixed(1);
-    const today = new Date().toLocaleDateString("en-GB");
-    updatePolicy(() => ({ revisionHistory: [...list, { revisionNo: nextRevNo, date: today, description: "" }] }));
+  const insertRevisionEntry = (afterIndex: number) => {
+    const current = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate);
+    const nextRevision: RevisionEntry = {
+      revisionNo: suggestMinorRevisionNumber(current, afterIndex),
+      date: "",
+      description: "",
+      source: "custom",
+      scheduleAnchor: scheduleAnchorAfter(current, afterIndex),
+    };
+    const next = [...current];
+    next.splice(afterIndex + 1, 0, nextRevision);
+    updatePolicy(() => ({ revisionHistory: next }));
   };
 
   const removeRevisionEntry = (i: number) => {
-    const list = policy.revisionHistory ? [...policy.revisionHistory] : [...REVISION_HISTORY_DEFAULT];
+    const list = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate);
+    if (list[i]?.source !== "custom") return;
     updatePolicy(() => ({ revisionHistory: list.filter((_, idx) => idx !== i) }));
   };
 
   const updateRevisionEntry = (i: number, field: keyof RevisionEntry, v: string) => {
-    const list = policy.revisionHistory ? [...policy.revisionHistory] : [...REVISION_HISTORY_DEFAULT];
+    const list = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate);
     updatePolicy(() => ({
       revisionHistory: list.map((item, idx) => (idx === i ? { ...item, [field]: v } : item)),
     }));
@@ -69,7 +76,7 @@ export function StepResponsibilities() {
       const existing = policy.monitoring;
       const r = await callAI({ type: "monitoring", policy, customPrompt, existingContent: existing });
       if (r.text) {
-        updatePolicy((p) => ({ monitoring: r.text! }));
+        updatePolicy(() => ({ monitoring: r.text! }));
         push("Monitoring section generated", "success");
       }
     } catch {
@@ -85,7 +92,7 @@ export function StepResponsibilities() {
       const existing = policy.reviewMechanism;
       const r = await callAI({ type: "review", policy, customPrompt, existingContent: existing });
       if (r.text) {
-        updatePolicy((p) => ({ reviewMechanism: r.text! }));
+        updatePolicy(() => ({ reviewMechanism: r.text! }));
         push("Review section generated", "success");
       }
     } catch {
@@ -177,7 +184,7 @@ export function StepResponsibilities() {
       >
         <Textarea
           value={policy.monitoring}
-          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy((p) => ({ monitoring: e.target.value }))}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy(() => ({ monitoring: e.target.value }))}
           rows={5}
           placeholder="Describe how performance is monitored, which KPIs are tracked, review frequency, and how findings are reported..."
         />
@@ -197,7 +204,7 @@ export function StepResponsibilities() {
       >
         <Textarea
           value={policy.reviewMechanism}
-          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy((p) => ({ reviewMechanism: e.target.value }))}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy(() => ({ reviewMechanism: e.target.value }))}
           rows={5}
           placeholder="Describe how and when this policy is reviewed, who owns the review, and how changes are communicated..."
         />
@@ -209,7 +216,7 @@ export function StepResponsibilities() {
           description="Track version history, revision dates, and change logs."
           icon={<History size={17} strokeWidth={1.8} />}
           actions={
-            <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={addRevisionEntry}>
+            <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={() => insertRevisionEntry(revisionHistory.length - 1)}>
               Add revision
             </Button>
           }
@@ -235,8 +242,11 @@ export function StepResponsibilities() {
                 <Input
                   value={rev.date}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRevisionEntry(i, "date", e.target.value)}
-                  placeholder="01/01/2026"
-                  className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px]"
+                  placeholder="DD-MM-YYYY"
+                  readOnly={rev.source === "scheduled"}
+                  aria-label={`Revision ${rev.revisionNo} date`}
+                  title={rev.source === "scheduled" ? "Set by the effective and last review dates" : undefined}
+                  className={`border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] ${rev.source === "scheduled" ? "cursor-not-allowed opacity-70" : ""}`}
                 />
                 <Textarea
                   rows={Math.max(2, Math.ceil((rev.description || "").length / 60))}
@@ -245,13 +255,25 @@ export function StepResponsibilities() {
                   placeholder="Description of change..."
                   className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] resize-y"
                 />
-                <button
-                  onClick={() => removeRevisionEntry(i)}
-                  className="text-[var(--color-muted)] hover:text-[#9b2929] hover:bg-[#fdecec] p-2 rounded-md transition-colors opacity-0 group-hover:opacity-100 self-center"
-                  aria-label="Remove revision"
-                >
-                  <Trash2 size={14} />
-                </button>
+                <div className="flex items-center gap-1 self-center">
+                  <button
+                    onClick={() => insertRevisionEntry(i)}
+                    className="text-[var(--color-muted)] hover:text-[var(--color-forest)] hover:bg-[var(--color-paper)] p-2 rounded-md transition-colors"
+                    aria-label={`Insert revision after ${rev.revisionNo}`}
+                    title="Insert revision"
+                  >
+                    <Plus size={14} />
+                  </button>
+                  <button
+                    onClick={() => removeRevisionEntry(i)}
+                    disabled={rev.source !== "custom"}
+                    className="text-[var(--color-muted)] hover:text-[#9b2929] hover:bg-[#fdecec] p-2 rounded-md transition-colors disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-[var(--color-muted)]"
+                    aria-label={rev.source === "custom" ? "Remove revision" : `Scheduled revision ${rev.revisionNo} cannot be removed`}
+                    title={rev.source === "custom" ? "Remove revision" : "Scheduled revisions follow the effective and last review dates"}
+                  >
+                    <Trash2 size={14} />
+                  </button>
+                </div>
               </div>
             ))}
           </div>

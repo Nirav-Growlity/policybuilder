@@ -1,10 +1,11 @@
-import { REVISION_HISTORY_DEFAULT, SDG_DATA, getPolicyProfile } from "./constants";
+import { SDG_DATA, getPolicyProfile } from "./constants";
 import { getPolicyDocumentTheme, getResolvedTypography, type DocumentSectionRecipe } from "./document-themes";
 import { getEnabledSections, sectionHasContent } from "./sections";
 import { getCompanySites, type CoverComposition, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
 import { getActiveCoverComposition, getActiveCoverVariant, removeLegacyThemeGradient } from "./cover-composition";
 import { groupQuantitativeTargets } from "./quantitative";
 import { visibleQualitativeEntries, visibleQuantitativeAreas } from "./focus-area-catalog";
+import { resolveRevisionHistory } from "./revision-history";
 
 export type ContentDensity = "short" | "regular" | "dense";
 export type DataTreatment = "formal-tables" | "clean-bullets";
@@ -169,7 +170,10 @@ function getSectionContent(policy: Policy, section: PolicySection): DocumentSect
     case "responsibilities": return { type: "responsibilities", entries: policy.responsibilities };
     case "monitoring": return { type: "narrative", text: policy.monitoring };
     case "review": return { type: "narrative", text: policy.reviewMechanism };
-    case "revision": return { type: "revision", entries: policy.revisionHistory || REVISION_HISTORY_DEFAULT };
+    case "revision": return {
+      type: "revision",
+      entries: resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate),
+    };
     case "custom": return { type: "custom", blocks: section.blocks || [] };
   }
 }

@@ -2,6 +2,7 @@ import type { Policy, PolicySection, StandardSectionKind, StepId } from "./types
 import { DEFAULT_TYPOGRAPHY } from "./typography";
 import { DEFAULT_DOCUMENT_THEME_ID, getDocumentTheme, resolveDocumentTemplateId, upgradeDocumentThemeId } from "./document-themes";
 import { visibleQualitativeEntries, visibleQuantitativeAreas } from "./focus-area-catalog";
+import { resolveRevisionHistory } from "./revision-history";
 
 export const STANDARD_SECTIONS: { kind: StandardSectionKind; title: string }[] = [
   { kind: "preface", title: "Preface" },
@@ -94,7 +95,11 @@ export function sectionHasContent(policy: Policy, section: PolicySection) {
     case "responsibilities": return policy.responsibilities.length > 0;
     case "monitoring": return Boolean(policy.monitoring);
     case "review": return Boolean(policy.reviewMechanism);
-    case "revision": return Boolean(policy.revisionHistory && policy.revisionHistory.length > 0);
+    case "revision": return resolveRevisionHistory(
+      policy.revisionHistory,
+      policy.company.effectiveDate,
+      policy.company.lastReviewDate,
+    ).length > 0;
     case "custom": return Boolean(section.blocks?.some((b) => b.text.trim()));
   }
 }
