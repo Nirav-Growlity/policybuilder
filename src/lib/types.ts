@@ -174,6 +174,18 @@ export type RichTextBlock = {
   rows?: string[][];
 };
 
+export type ListMarkerStyle = "bullet" | "number";
+
+export interface PolicyListFormatting {
+  outline?: ListMarkerStyle;
+  focusAreas?: ListMarkerStyle;
+  qualitativeGroups?: ListMarkerStyle;
+  qualitativeItems?: ListMarkerStyle;
+  quantitativeGroups?: ListMarkerStyle;
+  quantitativeItems?: ListMarkerStyle;
+  responsibilities?: ListMarkerStyle;
+}
+
 export interface PolicySection {
   id: string;
   kind: StandardSectionKind | "custom";
@@ -407,6 +419,7 @@ export interface Policy {
   /** Logo is the default brand source; template keeps the selected template palette. */
   brandColorSource?: BrandColorSource;
   visualStyle?: VisualStyle;
+  listFormatting?: PolicyListFormatting;
   sections?: PolicySection[];
   showTableOfContents?: boolean;
   showAcknowledgement?: boolean;

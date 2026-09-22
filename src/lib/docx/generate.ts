@@ -48,6 +48,7 @@ import type { Policy, QuantitativeArea, QuantitativeTarget, RichTextBlock } from
 import { DEFAULT_TYPOGRAPHY } from "../typography";
 import { embeddedDocumentFonts } from "./document-fonts";
 import { createCoverCompositionSvg, wrapCoverText } from "../cover-renderer";
+import { listMarkerText } from "../list-formatting";
 
 type Typography = NonNullable<Policy["typography"]>;
 type DocBlock = Paragraph | Table;
@@ -119,7 +120,7 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
 
   model.sections.forEach((section) => {
     const content = renderSectionContent(section, model, policy, sdgImages, sectionContentWidth(section, theme));
-    children.push(...wrapSection(section, content, theme, typography, spacingScale));
+    children.push(...wrapSection(section, content, model, spacingScale));
   });
 
   children.push(
@@ -823,7 +824,7 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
       children: [0, 1].map((slot) => {
         const entry = pair[slot];
         return entry ? tableCell([
-          new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: String(entry.index).padStart(2, "0"), color: primary, size: 36, font: typography.headingFontFamily || typography.fontFamily })] }),
+          new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: listMarkerText(model.listFormatting.outline, entry.index), color: primary, size: 36, font: typography.headingFontFamily || typography.fontFamily })] }),
           new Paragraph({ spacing: { after: 70 }, children: [new InternalHyperlink({ anchor: entry.id, children: [new TextRun({ text: entry.title, bold: true, color: documentHex(theme.colors.primary), size: 20, font: typography.fontFamily })] })] }),
           new Paragraph({ children: [new TextRun({ text: "SECTION", color: documentHex(theme.colors.muted), size: 13, characterSpacing: 35, font: typography.fontFamily })] }),
         ], tileWidth, { fill: documentHex(theme.colors.soft), margins: { top: 180, bottom: 180, left: 190, right: 190 } }) : tableCell([new Paragraph("")], tileWidth);
@@ -869,16 +870,18 @@ function tocParagraph(entry: { id: string; index: number; title: string }, model
     children: [new InternalHyperlink({
       anchor: entry.id,
       children: [
-        new TextRun({ text: `${String(entry.index).padStart(2, "0")}   `, bold: true, color: mode === "rail" ? documentHex(theme.colors.accent) : documentHex(theme.colors.primary), size: numberSize, font: typography.headingFontFamily || typography.fontFamily }),
+        new TextRun({ text: `${listMarkerText(model.listFormatting.outline, entry.index)}   `, bold: true, color: mode === "rail" ? documentHex(theme.colors.accent) : documentHex(theme.colors.primary), size: numberSize, font: typography.headingFontFamily || typography.fontFamily }),
         new TextRun({ text: entry.title, color: documentHex(theme.colors.primary), size: 20, font: typography.fontFamily }),
       ],
     })],
   });
 }
 
-function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme: DocumentThemeDefinition, typography: Typography, spacingScale = 1): DocBlock[] {
+function wrapSection(section: DocumentRenderSection, content: DocBlock[], model: DocumentRenderModel, spacingScale = 1): DocBlock[] {
+  const { theme, typography } = model;
   const frame = theme.layout.pageFrame;
-  const title = sectionTitle(section, typography, theme);
+  const title = sectionTitle(section, model);
+  const marker = listMarkerText(model.listFormatting.outline, section.index);
   if (theme.collection === "professional") {
     // Sample-based documents stay in one readable column; variants only tune
     // typography and alignment.
@@ -887,12 +890,12 @@ function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme:
     if (variant === "governance" && section.density !== "dense") {
       const rail = 1100;
       const body = contentWidth() - rail;
-      return [fixedTable([new TableRow({ children: [tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(section.index).padStart(2, "0"), color: documentHex(theme.colors.onPrimary), size: 46, font: typography.headingFontFamily || typography.fontFamily })] })], rail, { fill: documentHex(theme.colors.primary) }), tableCell([title, ...content], body, { margins: { top: 180, bottom: 210, left: 260, right: 180 } })] })], [rail, body]), spacer(Math.round(70 * spacingScale))];
+      return [fixedTable([new TableRow({ children: [tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: marker, color: documentHex(theme.colors.onPrimary), size: 46, font: typography.headingFontFamily || typography.fontFamily })] })], rail, { fill: documentHex(theme.colors.primary) }), tableCell([title, ...content], body, { margins: { top: 180, bottom: 210, left: 260, right: 180 } })] })], [rail, body]), spacer(Math.round(70 * spacingScale))];
     }
     if (variant === "editorial" && section.density !== "dense") {
       const margin = 1450;
       const body = contentWidth() - margin;
-      return [fixedTable([new TableRow({ children: [tableCell([new Paragraph({ children: [new TextRun({ text: String(section.index).padStart(2, "0"), color: documentHex(theme.colors.accent), size: 62, font: typography.headingFontFamily || typography.fontFamily })] })], margin), tableCell([title, ...content], body, { margins: { top: 0, bottom: 120, left: 120, right: 0 } })] })], [margin, body]), spacer(Math.round(100 * spacingScale))];
+      return [fixedTable([new TableRow({ children: [tableCell([new Paragraph({ children: [new TextRun({ text: marker, color: documentHex(theme.colors.accent), size: 62, font: typography.headingFontFamily || typography.fontFamily })] })], margin), tableCell([title, ...content], body, { margins: { top: 0, bottom: 120, left: 120, right: 0 } })] })], [margin, body]), spacer(Math.round(100 * spacingScale))];
     }
     return [title, ...content, spacer(Math.round(180 * spacingScale))];
   }
@@ -901,7 +904,7 @@ function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme:
     const body = contentWidth() - rail;
     return [fixedTable([new TableRow({ children: [
       tableCell([
-        new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(section.index).padStart(2, "0"), color: documentHex(theme.colors.onPrimary), size: 46, font: typography.headingFontFamily || typography.fontFamily })] }),
+        new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: marker, color: documentHex(theme.colors.onPrimary), size: 46, font: typography.headingFontFamily || typography.fontFamily })] }),
         spacer(300),
         new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: section.kind.toUpperCase(), color: documentHex(theme.colors.onPrimary), size: 13, characterSpacing: 40, font: typography.fontFamily })] }),
       ], rail, { fill: documentHex(theme.colors.primary), textDirection: TextDirection.BOTTOM_TO_TOP_LEFT_TO_RIGHT }),
@@ -913,7 +916,7 @@ function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme:
     const body = contentWidth() - margin;
     return [fixedTable([new TableRow({ children: [
       tableCell([
-        new Paragraph({ children: [new TextRun({ text: String(section.index).padStart(2, "0"), color: documentHex(theme.colors.accent), size: 62, font: typography.headingFontFamily || typography.fontFamily })] }),
+        new Paragraph({ children: [new TextRun({ text: marker, color: documentHex(theme.colors.accent), size: 62, font: typography.headingFontFamily || typography.fontFamily })] }),
         new Paragraph({ spacing: { before: 100 }, children: [new TextRun({ text: section.kind.toUpperCase(), color: documentHex(theme.colors.muted), size: 13, characterSpacing: 45, font: typography.fontFamily })] }),
       ], margin),
       tableCell([title, ...content, spacer(90)], body, { margins: { top: 0, bottom: 120, left: 100, right: 0 } }),
@@ -922,13 +925,14 @@ function wrapSection(section: DocumentRenderSection, content: DocBlock[], theme:
   return [title, ...content, spacer(Math.round((frame === "modular-grid" ? 80 : 120) * spacingScale))];
 }
 
-function sectionTitle(section: DocumentRenderSection, typography: Typography, theme: DocumentThemeDefinition) {
+function sectionTitle(section: DocumentRenderSection, model: DocumentRenderModel) {
+  const { theme, typography } = model;
   const layout = theme.layout.sectionOpener;
   const primary = documentHex(theme.colors.primary);
   const accent = documentHex(theme.colors.accent);
   const onPrimary = documentHex(theme.colors.onPrimary);
   const children: ParagraphChild[] = [new Bookmark({ id: section.id, children: [] })];
-  const number = String(section.index).padStart(2, "0");
+  const number = listMarkerText(model.listFormatting.outline, section.index);
   if (theme.collection === "professional") {
     const professionalSectionSize = 20;
     children.push(new TextRun({ text: number + "   ", color: documentHex(theme.colors.primary), size: professionalSectionSize, font: typography.fontFamily }), new TextRun({ text: section.title, color: documentHex(theme.colors.primary), bold: true, size: professionalSectionSize, font: typography.headingFontFamily || typography.fontFamily }));
@@ -986,9 +990,9 @@ function renderSectionContent(section: DocumentRenderSection, model: DocumentRen
 function renderFocus(areas: string[], section: DocumentRenderSection, model: DocumentRenderModel, availableWidth: number): DocBlock[] {
   const layout = model.theme.layout.pageFrame;
   if ((layout === "numbered-rail" || layout === "modular-grid") && section.density !== "dense") {
-    return [pairedCards(areas.map((area, index) => numberedCard(index + 1, area, model, layout === "modular-grid")), availableWidth, model.theme, layout === "modular-grid")];
+    return [pairedCards(areas.map((area, index) => numberedCard(listMarkerText(model.listFormatting.focusAreas, index + 1), area, model, layout === "modular-grid")), availableWidth, model.theme, layout === "modular-grid")];
   }
-  return areas.map((area, index) => entryRow(String(index + 1).padStart(2, "0"), area, availableWidth, model.theme, layout === "editorial-margin"));
+  return areas.map((area, index) => entryRow(listMarkerText(model.listFormatting.focusAreas, index + 1), area, availableWidth, model.theme, layout === "editorial-margin"));
 }
 
 function renderQualitative(groups: { area: string; items: string[] }[], section: DocumentRenderSection, model: DocumentRenderModel, availableWidth: number): DocBlock[] {
@@ -996,10 +1000,10 @@ function renderQualitative(groups: { area: string; items: string[] }[], section:
   const qualitativeNumberSize = model.theme.collection === "professional" ? Math.round(model.typography.subheadingSize * 2) : 18;
   const cards = groups.map((group, index) => [
     new Paragraph({ spacing: { after: 90 }, children: [
-      new TextRun({ text: `${String(index + 1).padStart(2, "0")}  `, bold: true, color: documentHex(model.theme.colors.primary), size: qualitativeNumberSize, font: model.typography.fontFamily }),
+      new TextRun({ text: `${listMarkerText(model.listFormatting.qualitativeGroups, index + 1)}  `, bold: true, color: documentHex(model.theme.colors.primary), size: qualitativeNumberSize, font: model.typography.fontFamily }),
       new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
     ] }),
-    ...group.items.map((item) => listParagraph(item, "bullet", model.typography, model.theme)),
+    ...group.items.map((item) => listParagraph(item, model.listFormatting.qualitativeItems, model.typography, model.theme)),
   ]);
   if ((layout === "numbered-rail" || layout === "modular-grid") && section.density !== "dense") {
     return [pairedCards(cards, availableWidth, model.theme, layout === "modular-grid")];
@@ -1025,11 +1029,11 @@ function renderResponsibilities(entries: Policy["responsibilities"], section: Do
   if (model.dataTreatment === "formal-tables") {
     return [dataTable(["Role / Department", "Responsibility"], entries.map((entry) => [entry.role, entry.duty]), scaledWidths([3000, 6906], availableWidth), model.theme)];
   }
-  const cards = entries.map((entry, index) => numberedCard(index + 1, `${entry.role}\n${entry.duty}`, model, model.theme.layout.pageFrame === "modular-grid", true));
+  const cards = entries.map((entry, index) => numberedCard(listMarkerText(model.listFormatting.responsibilities, index + 1), `${entry.role}\n${entry.duty}`, model, model.theme.layout.pageFrame === "modular-grid", true));
   if ((model.theme.layout.pageFrame === "numbered-rail" || model.theme.layout.pageFrame === "modular-grid") && section.density !== "dense") {
     return [pairedCards(cards, availableWidth, model.theme, model.theme.layout.pageFrame === "modular-grid")];
   }
-  return entries.map((entry, index) => entryRow(String(index + 1).padStart(2, "0"), `${entry.role}\n${entry.duty}`, availableWidth, model.theme, model.theme.layout.pageFrame === "editorial-margin", true));
+  return entries.map((entry, index) => entryRow(listMarkerText(model.listFormatting.responsibilities, index + 1), `${entry.role}\n${entry.duty}`, availableWidth, model.theme, model.theme.layout.pageFrame === "editorial-margin", true));
 }
 
 function renderSdgs(goals: { number: number; label: string; color: string }[], model: DocumentRenderModel, policy: Policy, images: Map<number, Uint8Array>, availableWidth: number): DocBlock[] {
@@ -1070,7 +1074,7 @@ function targetBand(group: QuantitativeTargetGroup, index: number, model: Docume
   const numberWidth = QUANTITATIVE_NUMBER_WIDTH;
   const bodyWidth = availableWidth - numberWidth;
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft), verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: listMarkerText(model.listFormatting.quantitativeGroups, index), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft), verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
     tableCell(quantitativeTargetBody(group, model), bodyWidth, { fill: documentHex(model.theme.colors.soft), borders: { left: border(documentHex(model.theme.colors.line), 5), right: border(documentHex(model.theme.colors.line), 5) } }),
   ] })], [numberWidth, bodyWidth]);
 }
@@ -1091,7 +1095,7 @@ function quantitativeTargetBody(group: QuantitativeTargetGroup, model: DocumentR
 }
 
 function quantitativeTargetParagraphs(group: QuantitativeTargetGroup, model: DocumentRenderModel): Paragraph[] {
-  return group.targets.map((target) => listParagraph(formatQuantitativeTargetSentence(target), "bullet", model.typography, model.theme));
+  return group.targets.map((target) => listParagraph(formatQuantitativeTargetSentence(target), model.listFormatting.quantitativeItems, model.typography, model.theme));
 }
 
 function areaHeading(area: string, model: DocumentRenderModel): Paragraph {
@@ -1101,14 +1105,14 @@ function areaHeading(area: string, model: DocumentRenderModel): Paragraph {
 function quantitativeEntryGroup(group: QuantitativeTargetGroup, index: number, model: DocumentRenderModel, availableWidth: number): DocBlock {
   const numberWidth = QUANTITATIVE_NUMBER_WIDTH;
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) }, verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: listMarkerText(model.listFormatting.quantitativeGroups, index), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) }, verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
     tableCell(quantitativeTargetBody(group, model), availableWidth - numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) } }),
   ] })], [numberWidth, availableWidth - numberWidth]);
 }
 
 function quantitativeTable(groups: QuantitativeTargetGroup[], availableWidth: number, model: DocumentRenderModel): Table {
   const widths = scaledWidths([QUANTITATIVE_NUMBER_WIDTH, 2100, 5406], availableWidth);
-  const headers = ["#", "Focus Area", "Targets"];
+  const headers = [model.listFormatting.quantitativeGroups === "bullet" ? "•" : "#", "Focus Area", "Targets"];
   const lightHeader = model.theme.collection === "professional" || model.theme.layout.dataLayout === "quiet-rules";
   const borders = allBorders(documentHex(model.theme.colors.line), BorderStyle.SINGLE, 5);
   const headerFill = lightHeader ? documentHex(model.theme.colors.soft) : documentHex(model.theme.colors.primary);
@@ -1118,18 +1122,18 @@ function quantitativeTable(groups: QuantitativeTargetGroup[], availableWidth: nu
       new Paragraph({ children: [new TextRun({ text: header, bold: true, color: headerColor, size: 17 })] }),
     ], widths[index], { fill: headerFill, borders })) }),
     ...groups.map((group, index) => new TableRow({ cantSplit: true, children: [
-      tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index + 1).padStart(2, "0"), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], widths[0], { borders }),
+      tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: listMarkerText(model.listFormatting.quantitativeGroups, index + 1), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], widths[0], { borders }),
       tableCell([areaHeading(group.area, model)], widths[1], { borders }),
       tableCell(quantitativeTargetParagraphs(group, model), widths[2], { borders }),
     ] })),
   ], widths);
 }
 
-function numberedCard(index: number, text: string, model: DocumentRenderModel, filled: boolean, splitRole = false): DocBlock[] {
+function numberedCard(marker: string, text: string, model: DocumentRenderModel, filled: boolean, splitRole = false): DocBlock[] {
   const [title, ...rest] = text.split("\n");
   return [
     new Paragraph({ spacing: { after: 70 }, children: [
-      new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.colors.primary), size: filled ? 30 : 20, font: model.typography.headingFontFamily || model.typography.fontFamily }),
+      new TextRun({ text: marker, color: documentHex(model.theme.colors.primary), size: filled ? 30 : 20, font: model.typography.headingFontFamily || model.typography.fontFamily }),
       new TextRun({ text: `  ${title}`, bold: true, color: documentHex(splitRole ? model.theme.colors.subheading : model.theme.colors.ink), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
     ] }),
     ...(splitRole && rest.length ? [new Paragraph({ children: [new TextRun({ text: rest.join(" "), size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] })] : []),

@@ -6,6 +6,7 @@ import { getActiveCoverComposition, getActiveCoverVariant, removeLegacyThemeGrad
 import { groupQuantitativeTargets } from "./quantitative";
 import { visibleQualitativeEntries, visibleQuantitativeAreas } from "./focus-area-catalog";
 import { resolveRevisionHistory } from "./revision-history";
+import { resolvePolicyListFormatting } from "./list-formatting";
 
 export type ContentDensity = "short" | "regular" | "dense";
 export type DataTreatment = "formal-tables" | "clean-bullets";
@@ -45,6 +46,7 @@ export type DocumentRenderModel = {
   theme: ReturnType<typeof getPolicyDocumentTheme>;
   typography: ReturnType<typeof getResolvedTypography>;
   dataTreatment: DataTreatment;
+  listFormatting: ReturnType<typeof resolvePolicyListFormatting>;
   featureImage?: PolicyFeatureImage;
   cover: {
     variant: "manual" | "ai";
@@ -95,6 +97,7 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
     // The design selects the document's structural language; this explicit
     // customization selects how policy data is presented within that design.
     dataTreatment: policy.visualStyle === "corporate" ? "formal-tables" : "clean-bullets",
+    listFormatting: resolvePolicyListFormatting(policy),
     featureImage: policy.featureImage && theme.imageSupport.includes(policy.featureImage.placement)
       ? structuredClone(policy.featureImage)
       : undefined,

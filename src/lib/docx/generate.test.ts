@@ -62,6 +62,45 @@ test("Word quantitative area numbers stay horizontal and align with the title", 
   assert.match(document, /w:vAlign w:val="top"/, "quantitative area numbers should align with the area title");
 });
 
+test("Word applies independent marker choices without changing semantic numbers", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.visualStyle = "modern";
+  policy.focusAreas = ["Energy"];
+  policy.qualitative = { Energy: ["Improve training coverage."] };
+  policy.quantitative = [{ area: "Energy", targets: [{ target: "Reduce energy use by 10%", baseline: "FY 2025-26", deadline: "FY 2028-29", reportingFrequency: "Target period" }] }];
+  policy.responsibilities = [{ role: "Energy Manager", duty: "Track performance." }];
+  policy.sdgs = [7];
+  policy.listFormatting = {
+    outline: "bullet",
+    focusAreas: "bullet",
+    qualitativeGroups: "bullet",
+    qualitativeItems: "number",
+    quantitativeGroups: "bullet",
+    quantitativeItems: "number",
+    responsibilities: "bullet",
+  };
+
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const numbering = await zip.file("word/numbering.xml")!.async("string");
+  const paragraphContaining = (text: string) => [...document.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map((match) => match[0]).find((paragraph) => paragraph.includes(text)) || "";
+  const numberingIdFor = (text: string) => paragraphContaining(text).match(/<w:numId w:val="(\d+)"/)?.[1];
+  const abstractBlocks = [...numbering.matchAll(/<w:abstractNum\b[^>]*>[\s\S]*?<\/w:abstractNum>/g)].map((match) => match[0]);
+  const decimalAbstractIds = new Set(abstractBlocks.filter((block) => block.includes('w:numFmt w:val="decimal"')).map((block) => block.match(/w:abstractNumId="(\d+)"/)?.[1]).filter((id): id is string => Boolean(id)));
+  const numberBlocks = [...numbering.matchAll(/<w:num\b[^>]*>[\s\S]*?<\/w:num>/g)].map((match) => match[0]);
+  const decimalNumberIds = new Set(numberBlocks.filter((block) => decimalAbstractIds.has(block.match(/w:abstractNumId w:val="(\d+)"/)?.[1] || "")).map((block) => block.match(/w:numId="(\d+)"/)?.[1]).filter((id): id is string => Boolean(id)));
+
+  const literalBullets = document.match(/•/g) || [];
+  assert.ok(literalBullets.length >= 5, `outline and content group markers should use bullets; found ${literalBullets.length}`);
+  const qualitativeNumberId = numberingIdFor("Improve training coverage.");
+  const quantitativeNumberId = numberingIdFor("Reduce energy use by 10%");
+  assert.ok(qualitativeNumberId, `qualitative numbering id is missing: ${paragraphContaining("Improve training coverage.")}`);
+  assert.ok(quantitativeNumberId, `quantitative numbering id is missing: ${paragraphContaining("Reduce energy use by 10%")}`);
+  assert.equal(qualitativeNumberId, quantitativeNumberId, "both configured item lists should share Word decimal numbering");
+  assert.ok(decimalNumberIds.has(qualitativeNumberId), `qualitative items should use Word decimal numbering; found ${qualitativeNumberId}, decimal ids ${[...decimalNumberIds].join(",")}`);
+  assert.match(document, /SDG 7/, "semantic SDG numbers must not be replaced");
+});
+
 test("Word quantitative numbers match area-heading typography and primary color", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.visualStyle = "modern";

@@ -12,6 +12,7 @@ import {
 import type { Policy, RichTextBlock } from "@/lib/types";
 import { getCoverBindingValue, getCoverTextPresentation } from "@/lib/cover-composition";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, type QuantitativeTargetGroup } from "@/lib/quantitative";
+import { listMarkerText } from "@/lib/list-formatting";
 
 export function PolicyPreview({ policy, customCoverPng }: { policy: Policy; customCoverPng?: string }) {
   const model = buildDocumentRenderModel(policy);
@@ -548,13 +549,14 @@ function PolicyToc({ model }: { model: DocumentRenderModel }) {
     ? [...model.tocEntries, { id: "acknowledgement", index: model.tocEntries.length + 1, title: model.acknowledgement.title }]
     : model.tocEntries;
   const layout = model.theme.layout.toc;
-  if (model.theme.collection === "professional") return <section className={`policy-toc professional-toc professional-toc-${model.theme.layout.professionalVariant || "corporate"}`}><h2>Contents</h2><ol>{entries.map(entry => <li key={entry.id}><a href={`#${entry.id}`}><span>{String(entry.index).padStart(2, "0")}</span>{entry.title}</a></li>)}</ol></section>;
+  const TocList = model.listFormatting.outline === "bullet" ? "ul" : "ol";
+  if (model.theme.collection === "professional") return <section className={`policy-toc professional-toc professional-toc-${model.theme.layout.professionalVariant || "corporate"}`}><h2>Contents</h2><TocList>{entries.map(entry => <li key={entry.id}><a href={`#${entry.id}`}><span>{listMarkerText(model.listFormatting.outline, entry.index)}</span>{entry.title}</a></li>)}</TocList></section>;
 
   if (layout === "rail-index") {
     return (
       <section className="policy-toc toc-rail-index">
         <aside><span>Document</span><b>INDEX</b><small>{String(entries.length).padStart(2, "0")} sections</small></aside>
-        <div className="toc-rail-list"><h2>Contents</h2>{entries.map((entry) => <TocLink key={entry.id} entry={entry} mode="rail" />)}</div>
+        <div className="toc-rail-list"><h2>Contents</h2>{entries.map((entry) => <TocLink key={entry.id} entry={entry} mode="rail" model={model} />)}</div>
       </section>
     );
   }
@@ -563,7 +565,7 @@ function PolicyToc({ model }: { model: DocumentRenderModel }) {
     return (
       <section className="policy-toc toc-tile-index">
         <div className="toc-title-row"><span>Navigate the policy</span><h2>Contents</h2></div>
-        <div className="toc-tile-grid">{entries.map((entry) => <TocLink key={entry.id} entry={entry} mode="tile" />)}</div>
+        <div className="toc-tile-grid">{entries.map((entry) => <TocLink key={entry.id} entry={entry} mode="tile" model={model} />)}</div>
       </section>
     );
   }
@@ -572,7 +574,7 @@ function PolicyToc({ model }: { model: DocumentRenderModel }) {
     return (
       <section className="policy-toc toc-editorial-index">
         <header><span>Index</span><h2>Inside this policy</h2></header>
-        <div className="toc-editorial-columns">{entries.map((entry) => <TocLink key={entry.id} entry={entry} mode="editorial" />)}</div>
+        <div className="toc-editorial-columns">{entries.map((entry) => <TocLink key={entry.id} entry={entry} mode="editorial" model={model} />)}</div>
       </section>
     );
   }
@@ -580,17 +582,17 @@ function PolicyToc({ model }: { model: DocumentRenderModel }) {
   return (
     <section className="policy-toc toc-dotted-leaders">
       <div className="charter-ornament"><span /><b>Contents</b><span /></div>
-      <ol>{entries.map((entry) => <TocLink key={entry.id} entry={entry} mode="leaders" />)}</ol>
+      <TocList>{entries.map((entry) => <TocLink key={entry.id} entry={entry} mode="leaders" model={model} />)}</TocList>
     </section>
   );
 }
 
-function TocLink({ entry, mode }: { entry: { id: string; index: number; title: string }; mode: "leaders" | "rail" | "tile" | "editorial" }) {
-  const number = String(entry.index).padStart(2, "0");
-  if (mode === "leaders") return <li><b>{number}</b><span>{entry.title}</span><i /><small>{entry.index + 1}</small></li>;
-  if (mode === "tile") return <div className="toc-tile"><b>{number}</b><span>{entry.title}</span><small>Section</small></div>;
-  if (mode === "editorial") return <div className="toc-editorial-item"><b>{number}</b><span>{entry.title}</span></div>;
-  return <div className="toc-rail-item"><b>{number}</b><span>{entry.title}</span><small>{entry.index + 1}</small></div>;
+function TocLink({ entry, mode, model }: { entry: { id: string; index: number; title: string }; mode: "leaders" | "rail" | "tile" | "editorial"; model: DocumentRenderModel }) {
+  const marker = listMarkerText(model.listFormatting.outline, entry.index);
+  if (mode === "leaders") return <li><b>{marker}</b><span>{entry.title}</span><i /><small>{entry.index + 1}</small></li>;
+  if (mode === "tile") return <div className="toc-tile"><b>{marker}</b><span>{entry.title}</span><small>Section</small></div>;
+  if (mode === "editorial") return <div className="toc-editorial-item"><b>{marker}</b><span>{entry.title}</span></div>;
+  return <div className="toc-rail-item"><b>{marker}</b><span>{entry.title}</span><small>{entry.index + 1}</small></div>;
 }
 
 function RunningHeader({ model, policy }: { model: DocumentRenderModel; policy: Policy }) {
@@ -610,23 +612,23 @@ function RunningHeader({ model, policy }: { model: DocumentRenderModel; policy: 
 function PolicySection({ section, model, policy }: { section: DocumentRenderSection; model: DocumentRenderModel; policy: Policy }) {
   const frame = model.theme.layout.pageFrame;
   const opener = model.theme.layout.sectionOpener;
-  const number = String(section.index).padStart(2, "0");
+  const marker = listMarkerText(model.listFormatting.outline, section.index);
   const content = <SectionContent section={section} model={model} policy={policy} />;
 
   if (frame === "numbered-rail") {
-    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-numbered-rail density-${section.density}`}><aside><b>{number}</b><span>{section.kind}</span></aside><div className="policy-section-body"><SectionHeading section={section} opener={opener} />{content}</div></section>;
+    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-numbered-rail density-${section.density}`}><aside><b>{marker}</b><span>{section.kind}</span></aside><div className="policy-section-body"><SectionHeading section={section} opener={opener} marker={marker} />{content}</div></section>;
   }
   if (frame === "modular-grid") {
-    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-modular-grid density-${section.density}`}><SectionHeading section={section} opener={opener} /><div className="policy-section-body">{content}</div></section>;
+    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-modular-grid density-${section.density}`}><SectionHeading section={section} opener={opener} marker={marker} /><div className="policy-section-body">{content}</div></section>;
   }
   if (frame === "editorial-margin") {
-    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-editorial-margin density-${section.density}`}><aside><b>{number}</b><span>{section.kind}</span></aside><div className="policy-section-body"><SectionHeading section={section} opener={opener} />{content}</div></section>;
+    return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-editorial-margin density-${section.density}`}><aside><b>{marker}</b><span>{section.kind}</span></aside><div className="policy-section-body"><SectionHeading section={section} opener={opener} marker={marker} />{content}</div></section>;
   }
-  return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-single-folio density-${section.density}`}><SectionHeading section={section} opener={opener} /><div className="policy-section-body">{content}</div></section>;
+  return <section id={section.id} className={`policy-section ${model.theme.collection === "professional" ? `professional-section professional-section-${model.theme.layout.professionalVariant || "corporate"}` : ""} frame-single-folio density-${section.density}`}><SectionHeading section={section} opener={opener} marker={marker} /><div className="policy-section-body">{content}</div></section>;
 }
 
-function SectionHeading({ section, opener }: { section: DocumentRenderSection; opener?: string }) {
-  return <header className={`policy-section-heading heading-${opener || "default"}`}><span>{String(section.index).padStart(2, "0")}</span><h2>{section.title}</h2><i /></header>;
+function SectionHeading({ section, opener, marker }: { section: DocumentRenderSection; opener?: string; marker: string }) {
+  return <header className={`policy-section-heading heading-${opener || "default"}`}><span>{marker}</span><h2>{section.title}</h2><i /></header>;
 }
 
 function SectionContent({ section, model, policy }: { section: DocumentRenderSection; model: DocumentRenderModel; policy: Policy }) {
@@ -634,8 +636,8 @@ function SectionContent({ section, model, policy }: { section: DocumentRenderSec
   const recipeClass = `recipe-${recipe}`;
   switch (content.type) {
     case "narrative": return <div className={recipeClass}><Paras text={content.text} />{content.sites?.length ? <SiteTable sites={content.sites} /> : null}</div>;
-    case "focus": return <FocusAreas areas={content.areas} recipe={recipe} density={section.density} />;
-    case "qualitative": return <QualitativeGroups groups={content.groups} recipe={recipe} density={section.density} />;
+    case "focus": return <FocusAreas areas={content.areas} recipe={recipe} density={section.density} model={model} />;
+    case "qualitative": return <QualitativeGroups groups={content.groups} recipe={recipe} density={section.density} model={model} />;
     case "quantitative": return <QuantitativeTargets areas={content.areas} model={model} density={section.density} />;
     case "sdg": return <SdgGoals goals={content.goals} model={model} policy={policy} />;
     case "responsibilities": return <Responsibilities entries={content.entries} model={model} density={section.density} />;
@@ -648,12 +650,13 @@ function Paras({ text }: { text: string }) {
   return <>{text.split(/\r?\n+/).filter(Boolean).map((paragraph, index) => <p key={index}>{paragraph}</p>)}</>;
 }
 
-function FocusAreas({ areas, recipe, density }: { areas: string[]; recipe: string; density: string }) {
-  return <div className={`policy-focus-list recipe-${recipe} density-${density}`}>{areas.map((area, index) => <div key={`${area}-${index}`} className="policy-focus-item"><b>{String(index + 1).padStart(2, "0")}</b><span>{area}</span></div>)}</div>;
+function FocusAreas({ areas, recipe, density, model }: { areas: string[]; recipe: string; density: string; model: DocumentRenderModel }) {
+  return <div className={`policy-focus-list recipe-${recipe} density-${density}`}>{areas.map((area, index) => <div key={`${area}-${index}`} className="policy-focus-item"><b>{listMarkerText(model.listFormatting.focusAreas, index + 1)}</b><span>{area}</span></div>)}</div>;
 }
 
-function QualitativeGroups({ groups, recipe, density }: { groups: { area: string; items: string[] }[]; recipe: string; density: string }) {
-  return <div className={`policy-objective-groups recipe-${recipe} density-${density}`}>{groups.map((group, index) => <section key={`${group.area}-${index}`}><header><b>{String(index + 1).padStart(2, "0")}</b><h3>{group.area}</h3></header><ul>{group.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}>{item}</li>)}</ul></section>)}</div>;
+function QualitativeGroups({ groups, recipe, density, model }: { groups: { area: string; items: string[] }[]; recipe: string; density: string; model: DocumentRenderModel }) {
+  const ItemList = model.listFormatting.qualitativeItems === "bullet" ? "ul" : "ol";
+  return <div className={`policy-objective-groups recipe-${recipe} density-${density}`}>{groups.map((group, index) => <section key={`${group.area}-${index}`}><header><b>{listMarkerText(model.listFormatting.qualitativeGroups, index + 1)}</b><h3>{group.area}</h3></header><ItemList>{group.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}>{item}</li>)}</ItemList></section>)}</div>;
 }
 
 function QuantitativeTargets({ areas, model, density }: { areas: Policy["quantitative"]; model: DocumentRenderModel; density: string }) {
@@ -662,23 +665,25 @@ function QuantitativeTargets({ areas, model, density }: { areas: Policy["quantit
   const useBands = useModernTreatment && model.theme.layout.dataLayout === "target-bands" && density !== "dense";
   const useJournalEntries = useModernTreatment && model.theme.layout.dataLayout === "quiet-rules" && density !== "dense";
   if (useBands) {
-    return <div className="policy-target-bands">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{group.area}</h3><TargetDescription targets={group.targets} /></section></div>)}</div>;
+    return <div className="policy-target-bands">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{listMarkerText(model.listFormatting.quantitativeGroups, index + 1)}</b><section><h3>{group.area}</h3><TargetDescription targets={group.targets} model={model} /></section></div>)}</div>;
   }
   if (useJournalEntries) {
-    return <div className="policy-journal-targets">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{group.area}</b><TargetDescription targets={group.targets} /></div>)}</div>;
+    return <div className="policy-journal-targets">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{group.area}</b><TargetDescription targets={group.targets} model={model} /></div>)}</div>;
   }
   if (useModernTreatment) {
-    return <div className="policy-modern-targets">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{group.area}</h3><TargetDescription targets={group.targets} /></section></div>)}</div>;
+    return <div className="policy-modern-targets">{groups.map((group, index) => <div key={`${group.area}-${index}`}><b>{listMarkerText(model.listFormatting.quantitativeGroups, index + 1)}</b><section><h3>{group.area}</h3><TargetDescription targets={group.targets} model={model} /></section></div>)}</div>;
   }
-  return <QuantitativeTable groups={groups} />;
+  return <QuantitativeTable groups={groups} model={model} />;
 }
 
-function TargetDescription({ targets }: { targets: QuantitativeTargetGroup["targets"] }) {
-  return <ul className="policy-target-list">{targets.map((target, index) => <li key={`${target.target}-${index}`}>{formatQuantitativeTargetSentence(target)}</li>)}</ul>;
+function TargetDescription({ targets, model }: { targets: QuantitativeTargetGroup["targets"]; model: DocumentRenderModel }) {
+  const TargetList = model.listFormatting.quantitativeItems === "bullet" ? "ul" : "ol";
+  return <TargetList className="policy-target-list">{targets.map((target, index) => <li key={`${target.target}-${index}`}>{formatQuantitativeTargetSentence(target)}</li>)}</TargetList>;
 }
 
-function QuantitativeTable({ groups }: { groups: QuantitativeTargetGroup[] }) {
-  return <div className="policy-table-wrap"><table className="policy-table" data-target-table="true"><colgroup><col className="policy-target-index-column" /><col className="policy-target-area-column" /><col /></colgroup><thead><tr><th>#</th><th>Focus Area</th><th>Targets</th></tr></thead><tbody>{groups.map((group, index) => <tr key={`${group.area}-${index}`}><td>{String(index + 1).padStart(2, "0")}</td><td>{group.area}</td><td><TargetDescription targets={group.targets} /></td></tr>)}</tbody></table></div>;
+function QuantitativeTable({ groups, model }: { groups: QuantitativeTargetGroup[]; model: DocumentRenderModel }) {
+  const groupStyle = model.listFormatting.quantitativeGroups;
+  return <div className="policy-table-wrap"><table className="policy-table" data-target-table="true"><colgroup><col className="policy-target-index-column" /><col className="policy-target-area-column" /><col /></colgroup><thead><tr><th>{groupStyle === "bullet" ? "•" : "#"}</th><th>Focus Area</th><th>Targets</th></tr></thead><tbody>{groups.map((group, index) => <tr key={`${group.area}-${index}`}><td>{listMarkerText(groupStyle, index + 1)}</td><td>{group.area}</td><td><TargetDescription targets={group.targets} model={model} /></td></tr>)}</tbody></table></div>;
 }
 
 function SdgGoals({ goals, model, policy }: { goals: { number: number; label: string; color: string }[]; model: DocumentRenderModel; policy: Policy }) {
@@ -690,7 +695,7 @@ function SdgGoals({ goals, model, policy }: { goals: { number: number; label: st
 
 function Responsibilities({ entries, model, density }: { entries: Policy["responsibilities"]; model: DocumentRenderModel; density: string }) {
   if (model.dataTreatment === "formal-tables") return <PolicyTable headers={["Role / Department", "Responsibility"]} rows={entries.map((entry) => [entry.role, entry.duty])} />;
-  return <div className={`policy-responsibility-list responsibility-${model.theme.layout.pageFrame} density-${density}`}>{entries.map((entry, index) => <div key={`${entry.role}-${index}`}><b>{String(index + 1).padStart(2, "0")}</b><section><h3>{entry.role}</h3><p>{entry.duty}</p></section></div>)}</div>;
+  return <div className={`policy-responsibility-list responsibility-${model.theme.layout.pageFrame} density-${density}`}>{entries.map((entry, index) => <div key={`${entry.role}-${index}`}><b>{listMarkerText(model.listFormatting.responsibilities, index + 1)}</b><section><h3>{entry.role}</h3><p>{entry.duty}</p></section></div>)}</div>;
 }
 
 function SiteTable({ sites }: { sites: NonNullable<Extract<DocumentRenderSection["content"], { type: "narrative" }>["sites"]> }) {
@@ -955,7 +960,7 @@ const previewStyles = `
   .toc-dotted-leaders { padding: 58px 90px 64px; }
   .charter-ornament { display: flex; align-items: center; justify-content: center; gap: 16px; color: var(--doc-primary); font-family: var(--policy-heading-font); font-size: var(--policy-heading-size); }
   .charter-ornament span { width: 54px; height: 1px; background: var(--doc-accent); }
-  .toc-dotted-leaders ol { margin: 32px auto 0; max-width: 620px; padding: 0; list-style: none; }
+  .toc-dotted-leaders :is(ol, ul) { margin: 32px auto 0; max-width: 620px; padding: 0; list-style: none; }
   .toc-dotted-leaders li { display: flex; align-items: end; gap: 9px; margin: 11px 0; font-size: 11px; }
   .toc-dotted-leaders li b { color: var(--doc-primary); }
   .toc-dotted-leaders li i { margin-bottom: 4px; flex: 1; border-bottom: 1px dotted var(--doc-muted); }
@@ -1071,7 +1076,7 @@ const previewStyles = `
   .policy-objective-groups > section { border-top: 1px solid var(--doc-line); padding-top: 10px; }
   .policy-objective-groups header { display: flex; align-items: baseline; gap: 10px; }
   .policy-objective-groups header b { color: var(--doc-primary); font-size: 9px; }
-  .policy-objective-groups ul { margin: 9px 0 0; padding-left: 19px; }
+  .policy-objective-groups :is(ul, ol) { margin: 9px 0 0; padding-left: 19px; }
   .policy-objective-groups li { margin: 5px 0; }
   .recipe-dossier-columns.policy-objective-groups, .recipe-atlas-modules.policy-objective-groups { grid-template-columns: repeat(2, 1fr); }
   .recipe-dossier-columns.policy-objective-groups > section { padding: 12px 14px; border: 1px solid var(--doc-line); border-top: 3px solid var(--doc-primary); }
@@ -1199,7 +1204,7 @@ const previewStyles = `
   [data-collection="professional"] .policy-main { padding: 0; }
   [data-collection="professional"] .policy-toc { padding: 0; background: transparent; border: none; }
   .professional-toc h2 { margin-bottom: 12mm; }
-  .professional-toc ol { list-style: none; padding: 0; }
+  .professional-toc :is(ol, ul) { list-style: none; padding: 0; }
   .professional-toc li { border-bottom: 1px solid var(--doc-line); padding: 4mm 0; }
   .professional-toc a { text-decoration: none; color: var(--doc-ink); display: flex; gap: 6mm; }
   .professional-toc a span { color: var(--doc-muted); font-variant-numeric: tabular-nums; }
@@ -1381,7 +1386,7 @@ const previewStyles = `
   .editorial-policy-cover .policy-cover-feature { margin: 0 0 10mm; max-height: 45mm; }
 
   [data-collection="professional"][data-toc-layout="rail-index"] .professional-toc { border-left: 3px solid var(--doc-primary) !important; padding-left: 10mm !important; }
-  [data-collection="professional"][data-toc-layout="tile-index"] .professional-toc ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm; }
+  [data-collection="professional"][data-toc-layout="tile-index"] .professional-toc :is(ol, ul) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm; }
   [data-collection="professional"][data-toc-layout="tile-index"] .professional-toc li { border: 1px solid var(--doc-line); padding: 5mm; background: var(--doc-soft); }
   [data-collection="professional"][data-page-frame="numbered-rail"] .policy-section { display: grid !important; grid-template-columns: 18mm minmax(0, 1fr) !important; gap: 7mm; }
   [data-collection="professional"][data-page-frame="numbered-rail"] .policy-section > aside { display: block; }

@@ -7,6 +7,8 @@ import { PolicyCoverPreview, PolicyPreview } from "./policy-preview";
 import { createAICoverComposition, fallbackAICoverLayout } from "../../lib/ai/cover";
 import { templatePreviewPolicy } from "../../lib/sample-policies";
 import { createPrintDocument } from "../../lib/pdf/print-document";
+import { buildDocumentRenderModel } from "../../lib/document-render-model";
+import { DEFAULT_POLICY_LIST_FORMATTING } from "../../lib/list-formatting";
 
 function chromePath() {
   return process.env.POLICY_PDF_CHROME_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
@@ -21,6 +23,45 @@ test("custom cover keeps its background image without rendering a background lab
 
   assert.match(markup, /policy-custom-cover-background/);
   assert.doesNotMatch(markup, /Cover background/);
+});
+
+test("list formatting keeps legacy defaults and independently changes every document marker", () => {
+  const legacy = templatePreviewPolicy("standard-pack", "environmental");
+  assert.deepEqual(buildDocumentRenderModel(legacy).listFormatting, DEFAULT_POLICY_LIST_FORMATTING);
+
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.visualStyle = "modern";
+  policy.focusAreas = ["Energy"];
+  policy.qualitative = { Energy: ["Improve training coverage."] };
+  policy.quantitative = [{ area: "Energy", targets: [{ target: "Reduce energy use by 10%", baseline: "FY 2025-26", deadline: "FY 2028-29", reportingFrequency: "Target period" }] }];
+  policy.responsibilities = [{ role: "Energy Manager", duty: "Track performance." }];
+  policy.sdgs = [7];
+  policy.listFormatting = {
+    outline: "bullet",
+    focusAreas: "bullet",
+    qualitativeGroups: "bullet",
+    qualitativeItems: "number",
+    quantitativeGroups: "bullet",
+    quantitativeItems: "number",
+    responsibilities: "bullet",
+  };
+
+  const reloaded = JSON.parse(JSON.stringify(policy));
+  assert.deepEqual(buildDocumentRenderModel(reloaded).listFormatting, policy.listFormatting);
+  const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy: reloaded }));
+  const focus = markup.slice(markup.indexOf('id="standard-focus"'), markup.indexOf('id="standard-qualitative"'));
+  const qualitative = markup.slice(markup.indexOf('id="standard-qualitative"'), markup.indexOf('id="standard-quantitative"'));
+  const quantitative = markup.slice(markup.indexOf('id="standard-quantitative"'), markup.indexOf('id="standard-sdg"'));
+  const responsibilities = markup.slice(markup.indexOf('id="standard-responsibilities"'));
+
+  assert.match(markup, /professional-toc[\s\S]*?<ul>[\s\S]*?<span>•<\/span>/);
+  assert.match(focus, /policy-section-heading[\s\S]*?<span>•<\/span>/);
+  assert.match(focus, /policy-focus-item"><b>•<\/b>/);
+  assert.match(qualitative, /<header><b>•<\/b>[\s\S]*?<ol><li>Improve training coverage\.<\/li><\/ol>/);
+  assert.match(quantitative, /<b>•<\/b>[\s\S]*?<ol class="policy-target-list">/);
+  assert.match(responsibilities, /policy-responsibility-list[\s\S]*?<b>•<\/b>/);
+  assert.match(markup, /SDG 7/, "semantic SDG numbers must not be replaced");
+  assert.match(createPrintDocument(markup, policy), /policy-focus-item"><b>•<\/b>/);
 });
 
 test("professional legal-form acknowledgement keeps signature rule inside its box", async () => {
