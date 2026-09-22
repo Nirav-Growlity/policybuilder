@@ -25,17 +25,20 @@ export function generatePreviewPdf(policy: Policy): Promise<Buffer> {
     try {
       return await generatePreviewPdfNow(policy);
     } catch (error) {
-      if (!isClosedChromiumTargetError(error)) throw error;
-      console.warn("PDF export encountered a closed Chromium target; recycling the browser and retrying once.");
+      if (!isRecoverablePdfBrowserError(error)) throw error;
+      console.warn("PDF export encountered an unhealthy Chromium instance; recycling the browser and retrying once.", error);
       resetPdfBrowser();
       return generatePreviewPdfNow(policy);
     }
   });
 }
 
-function isClosedChromiumTargetError(error: unknown): boolean {
+function isRecoverablePdfBrowserError(error: unknown): boolean {
   const message = error instanceof Error ? error.message : String(error);
-  return message.includes("Target page, context or browser has been closed");
+  return message.includes("Target page, context or browser has been closed")
+    || message.includes("PDF page creation timed out")
+    || message.includes("Custom cover page creation timed out")
+    || message.includes("Chromium context creation timed out");
 }
 
 async function generatePreviewPdfNow(policy: Policy): Promise<Buffer> {
