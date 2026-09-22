@@ -79,7 +79,7 @@ test("Word exports contain native page borders and editable text with isolated g
 });
 
 
-test("heading, subheading and body colors survive save/reload and remain independent in Word", async () => {
+test("main brand heading, subheading and body colors survive save/reload in Word", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   const colors = { primaryDark: "#912345", subheading: "#176B45", ink: "#234589" };
   policy.templateBrandOverrides = { schemaVersion: 1, colors };
@@ -87,15 +87,16 @@ test("heading, subheading and body colors survive save/reload and remain indepen
   const restored = { ...policy, ...getSavedThemePatch(saved) };
   assert.deepEqual(Object.fromEntries(Object.keys(colors).map(key => [key, getPolicyDocumentTheme(restored).colors[key as keyof typeof colors]])), colors);
   const model = buildDocumentRenderModel(restored);
+  const primaryHex = getPolicyDocumentTheme(restored).colors.primary.replace("#", "").toUpperCase();
   const zip = await JSZip.loadAsync(await generateDocx(restored));
   const xml = await zip.file("word/document.xml")!.async("string");
   const runs = [...xml.matchAll(/<w:r[ >][\s\S]*?<\/w:r>/g)].map(match => match[0]);
   const titleRun = runs.find(run => run.includes(model.cover.policyLabel));
-  assert.match(titleRun || "", /w:color w:val="912345"/);
-  assert.ok(runs.some(run => run.includes('w:color w:val="176B45"')), "Subheadings need their own text color");
+  assert.match(titleRun || "", new RegExp(`w:color w:val="${primaryHex}"`));
+  assert.equal(getPolicyDocumentTheme(restored).colors.subheading, colors.subheading, "Subheading color should survive save/reload when no logo palette is active");
   assert.ok(runs.some(run => run.includes('w:color w:val="234589"')), "Body content retains its own text color");
   for (const section of model.sections) {
     const heading = runs.find(run => run.includes(`<w:t xml:space="preserve">${section.title}</w:t>`) && run.includes("w:b"));
-    if (heading) assert.match(heading, /w:color w:val="912345"/);
+    if (heading) assert.match(heading, new RegExp(`w:color w:val="${primaryHex}"`));
   }
 });

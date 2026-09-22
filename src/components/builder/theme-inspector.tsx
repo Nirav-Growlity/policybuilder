@@ -56,7 +56,7 @@ type GalleryTab = "public" | "mine";
 type DesignSnapshot = Pick<Policy, "documentTemplate" | "documentTheme" | "documentThemeOverrides" | "templateBrandOverrides" | "typography" | "visualStyle" | "logoPosition" | "sdgDisplay" | "featureImage" | "brandColorSource">;
 
 const COLOR_FIELDS: { key: keyof DocumentThemePalette; label: string; description: string }[] = [
-  { key: "primary", label: "Main brand color", description: "Title bands, section numbers and key details." },
+  { key: "primary", label: "Main brand color", description: "Title bands, section numbers, headings and key details." },
   { key: "soft", label: "Section background", description: "Soft shading behind content and tables." },
   { key: "accent", label: "Highlights", description: "Decorative details and emphasis." },
   { key: "primaryDark", label: "Heading color", description: "Document titles and section headings." },
@@ -262,7 +262,10 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
                     open={openColor === field.key}
                     onOpenChange={(open) => setOpenColor(open ? field.key : null)}
                     onValidityChange={setColorValidity}
-                    onChange={(color) => updateOverrides((current) => ({ ...current, colors: { ...current.colors, [field.key]: color } }))}
+                    onChange={(color) => updateOverrides((current) => {
+                      const linkedHeadingColor = field.key === "primary" || field.key === "primaryDark" || field.key === "subheading";
+                      return { ...current, colors: { ...current.colors, ...(linkedHeadingColor ? { primary: color, primaryDark: color, subheading: color } : { [field.key]: color }) } };
+                    })}
                   />
                 ))}
               </div>

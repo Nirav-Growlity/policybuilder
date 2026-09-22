@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import JSZip from "jszip";
 import sharp from "sharp";
-import { DOCUMENT_THEMES } from "../document-themes";
+import { documentHex, DOCUMENT_THEMES, getPolicyDocumentTheme } from "../document-themes";
 import { pageFooterDistanceMm } from "../page-geometry";
 import { templatePreviewPolicy } from "../sample-policies";
 import { generateDocx } from "./generate";
@@ -62,6 +62,53 @@ test("Word quantitative area numbers stay horizontal and align with the title", 
   assert.match(document, /w:vAlign w:val="top"/, "quantitative area numbers should align with the area title");
 });
 
+test("Word quantitative numbers match area-heading typography and primary color", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.visualStyle = "modern";
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const quantitativeStart = document.indexOf('<w:bookmarkStart w:name="standard-quantitative"');
+  assert.ok(quantitativeStart >= 0, "quantitative heading bookmark is missing");
+  const quantitative = document.slice(quantitativeStart);
+  const runFor = (text: string) => quantitative.match(new RegExp(`<w:r>[\\s\\S]*?<w:color w:val="([^"]+)"[\\s\\S]*?<w:sz w:val="(\\d+)"[\\s\\S]*?<w:t[^>]*>${text}[\\s\\S]*?</w:t>[\\s\\S]*?</w:r>`));
+  const number = runFor("01");
+  const heading = runFor("Energy Consumption &amp; GHG Emissions");
+  assert.ok(number && heading, "quantitative number or area heading run is missing");
+  assert.equal(number![2], heading![2], "quantitative number and area heading sizes should match");
+  assert.equal(number![1], heading![1], "quantitative number and area heading colors should match");
+  assert.equal(number![1], documentHex(getPolicyDocumentTheme(policy).colors.primary), "quantitative number should use the primary color");
+});
+
+test("Word professional section numbers and titles match focus-row typography", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const headingStart = document.indexOf('<w:bookmarkStart w:name="standard-focus"');
+  assert.ok(headingStart >= 0, "professional focus heading bookmark is missing");
+  const heading = document.slice(headingStart, document.indexOf("</w:p>", headingStart) + 6);
+  const focusRows = document.slice(headingStart + heading.length);
+  const runSize = (xml: string, text: RegExp) => Number(xml.match(new RegExp(`<w:r>[\\s\\S]*?<w:sz w:val="(\\d+)"[\\s\\S]*?<w:t[^>]*>${text.source}[\\s\\S]*?</w:t>[\\s\\S]*?</w:r>`))?.[1]);
+  const headingNumberSize = runSize(heading, /04\s*/);
+  const headingTitleSize = runSize(heading, /Key Focus Areas/);
+  const focusNumberSize = runSize(focusRows, /01/);
+  const focusTitleSize = runSize(focusRows, /Energy Consumption &amp; GHG Emissions/);
+  assert.deepEqual([headingNumberSize, headingTitleSize], [focusNumberSize, focusTitleSize]);
+  assert.equal(new Set([headingNumberSize, headingTitleSize]).size, 1, "professional section number and title should share one size");
+});
+
+test("Word professional qualitative numbers match their area-heading size", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const qualitativeStart = document.indexOf('<w:bookmarkStart w:name="standard-qualitative"');
+  assert.ok(qualitativeStart >= 0, "professional qualitative heading bookmark is missing");
+  const qualitative = document.slice(qualitativeStart);
+  const headingEnd = qualitative.indexOf("</w:p>") + 6;
+  const areaHeading = qualitative.slice(headingEnd).match(/<w:p>[\s\S]*?<w:t[^>]*>01\s*<\/w:t>[\s\S]*?<\/w:p>/)?.[0] || "";
+  const sizes = [...areaHeading.matchAll(/<w:r>[\s\S]*?<w:sz w:val="(\d+)"[\s\S]*?<w:t[^>]*>/g)].map((match) => Number(match[1]));
+  assert.deepEqual(sizes.slice(0, 2), [26, 26], "qualitative number and area title should share the subheading size");
+});
+
 test("Word running header keeps spacing without a separator rule", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   const zip = await JSZip.loadAsync(await generateDocx(policy));
@@ -72,7 +119,7 @@ test("Word running header keeps spacing without a separator rule", async () => {
   assert.ok(headers.every((header) => !header.includes("M0 116H178")), "running header background should not contain a separator path");
 });
 
-test("Word table headers use the preview's soft fill and subheading color", async () => {
+test("Word table headers use the preview's soft fill and primary color", async () => {
   for (const theme of DOCUMENT_THEMES) {
     const policy = templatePreviewPolicy(theme.id, "environmental");
     policy.templateBrandOverrides = { schemaVersion: 1, colors: { soft: "#DDEEDD", subheading: "#234567" } };
@@ -82,7 +129,8 @@ test("Word table headers use the preview's soft fill and subheading color", asyn
     assert.ok(headers.length, `${theme.id}: expected data tables`);
     for (const header of headers) {
       assert.match(header, /w:fill="DDEEDD"/, `${theme.id}: preview table fill`);
-      assert.match(header, /w:color w:val="234567"/, `${theme.id}: preview table text`);
+      const expectedColor = theme.colors.primary.replace("#", "").toUpperCase();
+      assert.match(header, new RegExp(`w:color w:val="${expectedColor}"`), `${theme.id}: preview table text`);
     }
   }
 });
@@ -125,7 +173,7 @@ test("custom cover is embedded as the first-page image", async () => {
   const firstPageBreak = document.indexOf('<w:br w:type="page"/>');
   assert.ok(sectionBreak >= 0 && firstPageBreak > sectionBreak, "custom cover must not add a blank page before the next section");
   const backgroundAnchor = document.match(/<wp:anchor[^>]*relativeHeight="1"[^>]*>[^]*?<wp:docPr[^>]*Custom cover background[^]*?<\/wp:anchor>/)?.[0] || "";
-  assert.match(backgroundAnchor, /behindDoc="0"/, "custom cover artwork must remain visible in Word's drawing stack");
+  assert.match(backgroundAnchor, /behindDoc="1"/, "custom cover artwork must stay behind editable Word layers");
   assert.match(document, /<wp:positionH relativeFrom="page"><wp:posOffset>0<\/wp:posOffset><\/wp:positionH>/, "the cover image should start at the page's left edge");
   assert.match(document, /<wp:positionV relativeFrom="page"><wp:posOffset>0<\/wp:posOffset><\/wp:positionV>/, "the cover image should start at the page's top edge");
   const extent = document.match(/<wp:extent cx="(\d+)" cy="(\d+)"\/>/);
@@ -167,6 +215,12 @@ test("custom cover keeps background and authored layers separate in Word", async
   assert.match(document, /Company logo/, "cover logo should remain a separate Word image");
   assert.match(document, /Cover photo/, "cover image should remain a separate Word image");
   assert.equal((document.match(/<wp:anchor[\s\S]*?<pic:pic[\s\S]*?<\/pic:pic>[\s\S]*?<\/wp:anchor>/g) || []).length, 3, "background, logo, and photo should be separate anchored images");
+  const coverAnchors = [...document.matchAll(/<wp:anchor[^>]*behindDoc="(\d+)"[^>]*relativeHeight="(\d+)"[\s\S]*?<wp:docPr[^>]*descr="([^"]+)"[\s\S]*?<\/wp:anchor>/g)];
+  assert.deepEqual(coverAnchors.map(([, behindDoc, relativeHeight, description]) => ({ relativeHeight: Number(relativeHeight), behindDoc, description })), [
+    { relativeHeight: 1, behindDoc: "1", description: "Custom cover background" },
+    { relativeHeight: 101, behindDoc: "0", description: "Company logo" },
+    { relativeHeight: 102, behindDoc: "0", description: "Cover photo" },
+  ], "editable cover media must remain in front of the page artwork");
   assert.doesNotMatch(document, /Hidden cover layer/, "hidden cover layers should not be exported");
 });
 

@@ -172,7 +172,7 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
           basedOn: "Normal",
           next: "PolicyBody",
           quickFormat: true,
-          run: { font: typography.headingFontFamily || typography.fontFamily, size: Math.round(typography.headingSize * 2), bold: true, color: documentHex(theme.colors.primaryDark) },
+          run: { font: typography.headingFontFamily || typography.fontFamily, size: Math.round(typography.headingSize * 2), bold: true, color: documentHex(theme.colors.primary) },
           paragraph: { keepNext: true, spacing: { before: Math.round(300 * spacingScale), after: Math.round(180 * spacingScale) } },
         },
         {
@@ -328,7 +328,7 @@ function coverTitleParagraph(text: string, theme: DocumentThemeDefinition, typog
   return new Paragraph({
     alignment,
     spacing: { after: 140 },
-    children: [new TextRun({ text, bold: true, color: color || documentHex(theme.colors.primaryDark), size, font: typography.headingFontFamily || typography.fontFamily })],
+    children: [new TextRun({ text, bold: true, color: color || documentHex(theme.colors.primary), size, font: typography.headingFontFamily || typography.fontFamily })],
   });
 }
 
@@ -810,7 +810,7 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
         new Paragraph({ children: [new TextRun({ text: `${String(entries.length).padStart(2, "0")} SECTIONS`, color: onPrimary, size: 15, characterSpacing: 45, font: typography.fontFamily })] }),
       ], rail, { fill: primary }),
       tableCell([
-        new Paragraph({ spacing: { after: 280 }, children: [new TextRun({ text: "Contents", bold: true, size: 38, color: documentHex(theme.colors.primaryDark), font: typography.headingFontFamily || typography.fontFamily })] }),
+         new Paragraph({ spacing: { after: 280 }, children: [new TextRun({ text: "Contents", bold: true, size: 38, color: documentHex(theme.colors.primary), font: typography.headingFontFamily || typography.fontFamily })] }),
         ...entries.map((entry) => tocParagraph(entry, model, "rail")),
       ], body),
     ] })], [rail, body])];
@@ -824,14 +824,14 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
         const entry = pair[slot];
         return entry ? tableCell([
           new Paragraph({ spacing: { after: 80 }, children: [new TextRun({ text: String(entry.index).padStart(2, "0"), color: primary, size: 36, font: typography.headingFontFamily || typography.fontFamily })] }),
-          new Paragraph({ spacing: { after: 70 }, children: [new InternalHyperlink({ anchor: entry.id, children: [new TextRun({ text: entry.title, bold: true, color: documentHex(theme.colors.primaryDark), size: 20, font: typography.fontFamily })] })] }),
+          new Paragraph({ spacing: { after: 70 }, children: [new InternalHyperlink({ anchor: entry.id, children: [new TextRun({ text: entry.title, bold: true, color: documentHex(theme.colors.primary), size: 20, font: typography.fontFamily })] })] }),
           new Paragraph({ children: [new TextRun({ text: "SECTION", color: documentHex(theme.colors.muted), size: 13, characterSpacing: 35, font: typography.fontFamily })] }),
         ], tileWidth, { fill: documentHex(theme.colors.soft), margins: { top: 180, bottom: 180, left: 190, right: 190 } }) : tableCell([new Paragraph("")], tileWidth);
       }),
     }));
     return [
       new Paragraph({ spacing: { after: 90 }, children: [new TextRun({ text: "NAVIGATE THE POLICY", bold: true, color: primary, size: 16, characterSpacing: 60, font: typography.fontFamily })] }),
-      new Paragraph({ spacing: { after: 260 }, children: [new TextRun({ text: "Contents", bold: true, color: documentHex(theme.colors.ink), size: 42, font: typography.headingFontFamily || typography.fontFamily })] }),
+      new Paragraph({ spacing: { after: 260 }, children: [new TextRun({ text: "Contents", bold: true, color: primary, size: 42, font: typography.headingFontFamily || typography.fontFamily })] }),
       fixedTable(rows, [tileWidth, tileWidth], { width: tileWidth * 2, cellSpacing: 120 }),
     ];
   }
@@ -841,7 +841,7 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
     const columns = [entries.filter((_, index) => index % 2 === 0), entries.filter((_, index) => index % 2 === 1)];
     return [
       new Paragraph({ border: { top: border(accent, 18) }, spacing: { after: 100 }, children: [new TextRun({ text: "INDEX", bold: true, color: accent, size: 15, characterSpacing: 60, font: typography.fontFamily })] }),
-      new Paragraph({ spacing: { after: 360 }, children: [new TextRun({ text: "Inside this policy", bold: true, color: documentHex(theme.colors.ink), size: 44, font: typography.headingFontFamily || typography.fontFamily })] }),
+      new Paragraph({ spacing: { after: 360 }, children: [new TextRun({ text: "Inside this policy", bold: true, color: primary, size: 44, font: typography.headingFontFamily || typography.fontFamily })] }),
       fixedTable([new TableRow({ children: columns.map((column) => tableCell(column.map((entry) => tocParagraph(entry, model, "editorial")), half)) })], [half, half], { width: half * 2, cellSpacing: 160 }),
     ];
   }
@@ -870,7 +870,7 @@ function tocParagraph(entry: { id: string; index: number; title: string }, model
       anchor: entry.id,
       children: [
         new TextRun({ text: `${String(entry.index).padStart(2, "0")}   `, bold: true, color: mode === "rail" ? documentHex(theme.colors.accent) : documentHex(theme.colors.primary), size: numberSize, font: typography.headingFontFamily || typography.fontFamily }),
-        new TextRun({ text: entry.title, color: documentHex(theme.colors.primaryDark), size: 20, font: typography.fontFamily }),
+        new TextRun({ text: entry.title, color: documentHex(theme.colors.primary), size: 20, font: typography.fontFamily }),
       ],
     })],
   });
@@ -930,7 +930,8 @@ function sectionTitle(section: DocumentRenderSection, typography: Typography, th
   const children: ParagraphChild[] = [new Bookmark({ id: section.id, children: [] })];
   const number = String(section.index).padStart(2, "0");
   if (theme.collection === "professional") {
-    children.push(new TextRun({ text: number + "   ", color: documentHex(theme.colors.muted), size: 20, font: typography.fontFamily }), new TextRun({ text: section.title, color: documentHex(theme.colors.primaryDark), bold: true, size: Math.round(typography.headingSize * 2), font: typography.headingFontFamily || typography.fontFamily }));
+    const professionalSectionSize = 20;
+    children.push(new TextRun({ text: number + "   ", color: documentHex(theme.colors.primary), size: professionalSectionSize, font: typography.fontFamily }), new TextRun({ text: section.title, color: documentHex(theme.colors.primary), bold: true, size: professionalSectionSize, font: typography.headingFontFamily || typography.fontFamily }));
     return new Paragraph({ style: "PolicyHeading", alignment: theme.layout.professionalVariant === "institutional" ? AlignmentType.CENTER : AlignmentType.LEFT, border: { bottom: border(documentHex(theme.colors.primary), 4) }, spacing: { before: 260, after: 180 }, children });
   }
   if (layout === "formal-ordinal") {
@@ -942,7 +943,7 @@ function sectionTitle(section: DocumentRenderSection, typography: Typography, th
     return new Paragraph({ style: "PolicyHeading", shading: { type: ShadingType.SOLID, color: primary, fill: primary }, spacing: { before: 220, after: 180 }, indent: { left: 170, right: 170 }, children });
   }
   if (layout === "chapter-number") {
-    children.push(new TextRun({ text: section.title, bold: true, italics: true, color: documentHex(theme.colors.primaryDark), size: Math.round(typography.headingSize * 2), font: typography.headingFontFamily || typography.fontFamily }));
+    children.push(new TextRun({ text: section.title, bold: true, italics: true, color: documentHex(theme.colors.primary), size: Math.round(typography.headingSize * 2), font: typography.headingFontFamily || typography.fontFamily }));
     return new Paragraph({ style: "PolicyHeading", border: { top: border(accent, 12) }, spacing: { before: 260, after: 190 }, children });
   }
   children.push(new TextRun({ text: section.title, bold: true, color: primary, size: Math.round(typography.headingSize * 2), font: typography.headingFontFamily || typography.fontFamily }));
@@ -992,10 +993,11 @@ function renderFocus(areas: string[], section: DocumentRenderSection, model: Doc
 
 function renderQualitative(groups: { area: string; items: string[] }[], section: DocumentRenderSection, model: DocumentRenderModel, availableWidth: number): DocBlock[] {
   const layout = model.theme.layout.pageFrame;
+  const qualitativeNumberSize = model.theme.collection === "professional" ? Math.round(model.typography.subheadingSize * 2) : 18;
   const cards = groups.map((group, index) => [
     new Paragraph({ spacing: { after: 90 }, children: [
-      new TextRun({ text: `${String(index + 1).padStart(2, "0")}  `, bold: true, color: documentHex(model.theme.colors.primary), size: 18, font: model.typography.fontFamily }),
-      new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
+      new TextRun({ text: `${String(index + 1).padStart(2, "0")}  `, bold: true, color: documentHex(model.theme.colors.primary), size: qualitativeNumberSize, font: model.typography.fontFamily }),
+      new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily }),
     ] }),
     ...group.items.map((item) => listParagraph(item, "bullet", model.typography, model.theme)),
   ]);
@@ -1068,7 +1070,7 @@ function targetBand(group: QuantitativeTargetGroup, index: number, model: Docume
   const numberWidth = QUANTITATIVE_NUMBER_WIDTH;
   const bodyWidth = availableWidth - numberWidth;
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.colors.primary), size: 30, font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft), verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { fill: documentHex(model.theme.colors.soft), verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
     tableCell(quantitativeTargetBody(group, model), bodyWidth, { fill: documentHex(model.theme.colors.soft), borders: { left: border(documentHex(model.theme.colors.line), 5), right: border(documentHex(model.theme.colors.line), 5) } }),
   ] })], [numberWidth, bodyWidth]);
 }
@@ -1077,7 +1079,7 @@ function journalTarget(group: QuantitativeTargetGroup, model: DocumentRenderMode
   return [new Paragraph({
     border: { top: border(documentHex(model.theme.colors.line), 5) },
     spacing: { before: 90, after: 55 },
-    children: [new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })],
+    children: [new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })],
   }), ...quantitativeTargetParagraphs(group, model)];
 }
 
@@ -1093,13 +1095,13 @@ function quantitativeTargetParagraphs(group: QuantitativeTargetGroup, model: Doc
 }
 
 function areaHeading(area: string, model: DocumentRenderModel): Paragraph {
-  return new Paragraph({ spacing: { after: 55 }, children: [new TextRun({ text: area, bold: true, color: documentHex(model.theme.colors.subheading), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] });
+  return new Paragraph({ spacing: { after: 55 }, children: [new TextRun({ text: area, bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] });
 }
 
 function quantitativeEntryGroup(group: QuantitativeTargetGroup, index: number, model: DocumentRenderModel, availableWidth: number): DocBlock {
   const numberWidth = QUANTITATIVE_NUMBER_WIDTH;
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), color: documentHex(model.theme.collection === "professional" ? model.theme.colors.muted : model.theme.colors.primary), size: 20, font: model.typography.fontFamily })] })], numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) }, verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index).padStart(2, "0"), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) }, verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
     tableCell(quantitativeTargetBody(group, model), availableWidth - numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) } }),
   ] })], [numberWidth, availableWidth - numberWidth]);
 }
@@ -1110,13 +1112,13 @@ function quantitativeTable(groups: QuantitativeTargetGroup[], availableWidth: nu
   const lightHeader = model.theme.collection === "professional" || model.theme.layout.dataLayout === "quiet-rules";
   const borders = allBorders(documentHex(model.theme.colors.line), BorderStyle.SINGLE, 5);
   const headerFill = lightHeader ? documentHex(model.theme.colors.soft) : documentHex(model.theme.colors.primary);
-  const headerColor = lightHeader ? documentHex(model.theme.colors.subheading) : documentHex(model.theme.colors.onPrimary);
+  const headerColor = lightHeader ? documentHex(model.theme.colors.primary) : documentHex(model.theme.colors.onPrimary);
   return fixedTable([
     new TableRow({ tableHeader: true, cantSplit: true, children: headers.map((header, index) => tableCell([
       new Paragraph({ children: [new TextRun({ text: header, bold: true, color: headerColor, size: 17 })] }),
     ], widths[index], { fill: headerFill, borders })) }),
     ...groups.map((group, index) => new TableRow({ cantSplit: true, children: [
-      tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index + 1).padStart(2, "0"), bold: true, size: 17 })] })], widths[0], { borders }),
+      tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: String(index + 1).padStart(2, "0"), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], widths[0], { borders }),
       tableCell([areaHeading(group.area, model)], widths[1], { borders }),
       tableCell(quantitativeTargetParagraphs(group, model), widths[2], { borders }),
     ] })),
@@ -1168,7 +1170,7 @@ function entryRow(number: string, text: string, width: number, theme: DocumentTh
 function dataTable(headers: string[], rows: string[][], widths: number[], theme: DocumentThemeDefinition) {
   const lightHeader = theme.collection === "professional" || theme.layout.dataLayout === "compact-ledger" || theme.layout.dataLayout === "quiet-rules";
   const headerFill = lightHeader ? documentHex(theme.colors.soft) : documentHex(theme.colors.primary);
-  const headerColor = lightHeader ? documentHex(theme.colors.subheading) : documentHex(theme.colors.onPrimary);
+  const headerColor = lightHeader ? documentHex(theme.colors.primary) : documentHex(theme.colors.onPrimary);
   const quiet = theme.collection !== "professional" && theme.layout.dataLayout === "quiet-rules";
   const borders = quiet ? {
     top: border(documentHex(theme.colors.accent), 7),
@@ -1214,7 +1216,7 @@ function listParagraph(text: string, kind: "bullet" | "number", typography: Typo
 function buildAcknowledgement(model: DocumentRenderModel): DocBlock[] {
   const acknowledgement = model.acknowledgement!;
   const { theme, typography } = model;
-  const title = new Paragraph({ alignment: theme.layout.acknowledgement === "legal-form" ? AlignmentType.CENTER : AlignmentType.LEFT, spacing: { after: 180 }, children: [new Bookmark({ id: "acknowledgement", children: [] }), new TextRun({ text: acknowledgement.title, bold: true, italics: theme.layout.acknowledgement === "affidavit", color: documentHex(theme.colors.primaryDark), size: 36, font: typography.headingFontFamily || typography.fontFamily })] });
+  const title = new Paragraph({ alignment: theme.layout.acknowledgement === "legal-form" ? AlignmentType.CENTER : AlignmentType.LEFT, spacing: { after: 180 }, children: [new Bookmark({ id: "acknowledgement", children: [] }), new TextRun({ text: acknowledgement.title, bold: true, italics: theme.layout.acknowledgement === "affidavit", color: documentHex(theme.colors.primary), size: 36, font: typography.headingFontFamily || typography.fontFamily })] });
   const statement = new Paragraph({ alignment: theme.layout.acknowledgement === "legal-form" ? AlignmentType.CENTER : AlignmentType.JUSTIFIED, spacing: { after: 260, line: Math.round(240 * typography.lineSpacing) }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
   const kicker = new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "ACKNOWLEDGEMENT - FINAL PAGE", bold: true, color: documentHex(theme.colors.primary), size: 15, characterSpacing: 50, font: typography.fontFamily })] });
 
@@ -1356,7 +1358,9 @@ function customCoverParagraph(background: NonNullable<LogoImage>, overlays: Para
           horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, offset: 0 },
           verticalPosition: { relative: VerticalPositionRelativeFrom.PAGE, offset: 0 },
           allowOverlap: true,
-          behindDocument: false,
+          // Keep the full-page artwork behind editable cover layers so Word
+          // cannot paint it over the company logo or authored text.
+          behindDocument: true,
           lockAnchor: true,
           layoutInCell: false,
           wrap: { type: TextWrappingType.NONE },

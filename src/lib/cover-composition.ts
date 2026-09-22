@@ -209,6 +209,7 @@ function isExternalCoverAsset(assetId?: string): boolean {
 
 export function hasExternalCoverAssets(policy: Policy): boolean {
   const composition = getActiveCoverComposition(policy);
+  if (isExternalCoverAsset(policy.company.companyLogo)) return true;
   if (!composition) return false;
   if (isExternalCoverAsset(composition.background.assetId)) return true;
   if (composition.elements.some((element) => (element.type === "image" || element.type === "logo") && isExternalCoverAsset(element.assetId))) return true;
@@ -222,7 +223,12 @@ export function hasExternalCoverAssets(policy: Policy): boolean {
  */
 export function stripExternalActiveCoverAssets(policy: Policy): Policy {
   const composition = getActiveCoverComposition(policy);
-  if (!composition) return policy;
+  if (!composition) {
+    return {
+      ...policy,
+      company: { ...policy.company, ...(isExternalCoverAsset(policy.company.companyLogo) ? { companyLogo: undefined } : {}) },
+    };
+  }
   const elements = composition.elements.filter((element) => {
     if (element.type === "image") return !isExternalCoverAsset(element.assetId);
     if (element.type === "logo") return !isExternalCoverAsset(element.assetId || policy.company.companyLogo);

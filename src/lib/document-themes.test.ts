@@ -303,11 +303,15 @@ test("logo colors reach headings, TOC rules, and running-logo scale", () => {
     onPrimary: "#FFFFFF",
   };
   policy.company.companyLogo = "data:image/png;base64,logo";
-  policy.documentThemeOverrides = { schemaVersion: 1, logoScale: "large" };
+  policy.documentThemeOverrides = {
+    schemaVersion: 1,
+    logoScale: "large",
+    colors: { primary: "#0B6E4F", primaryDark: "#07442F", subheading: "#07442F" },
+  };
 
   const theme = getPolicyDocumentTheme(policy);
-  assert.equal(theme.colors.primaryDark, "#07442F");
-  assert.equal(theme.colors.subheading, "#07442F");
+  assert.equal(theme.colors.primaryDark, "#0B6E4F");
+  assert.equal(theme.colors.subheading, "#0B6E4F");
   assert.equal(theme.colors.ink, "#000000");
   assert.notEqual(theme.colors.line, getDocumentTheme(policy.documentTheme).colors.line);
   assert.equal(theme.logoScale, "large");

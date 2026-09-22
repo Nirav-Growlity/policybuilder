@@ -35,3 +35,22 @@ test("DOCX export leaves inline cover artwork inline", async () => {
   const exportPolicy = await preparePolicyForDocxExport(policy);
   assert.equal(exportPolicy.coverComposition?.background.assetId, dataUrl);
 });
+
+test("DOCX export hydrates a private company logo without an active cover", async () => {
+  const policy = initialPolicy("environmental");
+  policy.company.companyLogo = "company-logo-id";
+  const originalFetch = globalThis.fetch;
+  const requests: string[] = [];
+  globalThis.fetch = async (input) => {
+    requests.push(String(input));
+    return new Response(new Uint8Array([137, 80, 78, 71]), { status: 200, headers: { "Content-Type": "image/png" } });
+  };
+  try {
+    const exportPolicy = await preparePolicyForDocxExport(policy);
+    assert.match(exportPolicy.company.companyLogo || "", /^data:image\/png;base64,/);
+    assert.deepEqual(requests, ["/api/policycraft/cover-assets/company-logo-id"]);
+    assert.equal(policy.company.companyLogo, "company-logo-id");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

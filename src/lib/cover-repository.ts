@@ -33,7 +33,7 @@ export async function getCoverAsset(orgId: number, id: string) {
 }
 
 export async function resolveCoverAssets(policy: Policy, orgId: number): Promise<Policy> {
-  if (!policy.coverComposition && !policy.aiCoverComposition) return policy;
+  if (!policy.coverComposition && !policy.aiCoverComposition && !policy.company.companyLogo) return policy;
   const resolve = async (id?: string) => {
     const assetId = coverAssetIdFromReference(id);
     if (!assetId || assetId.startsWith("data:")) return assetId;

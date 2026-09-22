@@ -15,14 +15,15 @@ async function coverAssetDataUrl(assetReference: string | undefined): Promise<st
   return `data:${blob.type || "image/png"};base64,${btoa(binary)}`;
 }
 
-/** Resolve the active private cover only in the transient export payload. */
+/** Resolve private cover and running-header assets only in the transient export payload. */
 export async function preparePolicyForDocxExport(policy: Policy): Promise<Policy> {
   const composition = getActiveCoverComposition(policy);
-  if (!composition) return policy;
-  const [backgroundAssetId, companyLogo] = await Promise.all([
-    coverAssetDataUrl(composition.background.assetId),
-    coverAssetDataUrl(policy.company.companyLogo),
-  ]);
+  const companyLogo = await coverAssetDataUrl(policy.company.companyLogo);
+  if (!composition) {
+    if (companyLogo === policy.company.companyLogo) return policy;
+    return { ...policy, company: { ...policy.company, companyLogo } };
+  }
+  const backgroundAssetId = await coverAssetDataUrl(composition.background.assetId);
   const elements = await Promise.all(composition.elements.map(async (element) => {
     if (element.type !== "image" && element.type !== "logo") return element;
     const assetId = await coverAssetDataUrl(element.assetId || (element.type === "logo" ? policy.company.companyLogo : undefined));

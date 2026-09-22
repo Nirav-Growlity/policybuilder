@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     const { policy } = (await req.json()) as { policy: Policy };
     let auth: Awaited<ReturnType<(typeof import("@/lib/policycraft-auth"))["getPolicyCraftAuth"]>> = null;
     let resolved = policy;
-    if (policy.coverComposition || policy.aiCoverComposition) {
+    if (policy.coverComposition || policy.aiCoverComposition || policy.company.companyLogo) {
       try {
         const [{ getPolicyCraftAuth }, { resolveCoverAssets }] = await Promise.all([import("@/lib/policycraft-auth"), import("@/lib/cover-repository")]);
         const candidateAuth = await getPolicyCraftAuth();

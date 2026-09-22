@@ -99,6 +99,35 @@ test("printed outer-number sections do not restore the heading number", async ()
   }
 });
 
+test("professional numbered content matches its heading typography in screen and print", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
+  const browser = await chromium.launch({ executablePath: chromePath(), headless: true });
+  try {
+    for (const documentMarkup of [markup, createPrintDocument(markup, policy)]) {
+      const page = await browser.newPage({ viewport: { width: 980, height: 643 } });
+      await page.setContent(documentMarkup);
+      const sizes = await page.locator(".policy-focus-list").first().evaluate((list) => {
+        const section = list.closest(".policy-section");
+        const headingNumber = section?.querySelector<HTMLElement>(".policy-section-heading > span");
+        const headingTitle = section?.querySelector<HTMLElement>(".policy-section-heading h2");
+        const tileNumber = list.querySelector<HTMLElement>(".policy-focus-item b");
+        const tileTitle = list.querySelector<HTMLElement>(".policy-focus-item span");
+        const objectiveGroup = document.querySelector<HTMLElement>('[data-collection="professional"] .policy-objective-groups > section');
+        const objectiveNumber = objectiveGroup?.querySelector<HTMLElement>("header b");
+        const objectiveTitle = objectiveGroup?.querySelector<HTMLElement>("header h3");
+        if (!headingNumber || !headingTitle || !tileNumber || !tileTitle || !objectiveNumber || !objectiveTitle) throw new Error("professional numbered typography is missing");
+        return [headingNumber, headingTitle, tileNumber, tileTitle, objectiveNumber, objectiveTitle].map((element) => getComputedStyle(element).fontSize);
+      });
+      assert.equal(new Set(sizes.slice(0, 4)).size, 1, `section and focus-row font sizes differ: ${sizes.slice(0, 4).join(", ")}`);
+      assert.equal(sizes[4], sizes[5], `qualitative number and area heading sizes differ: ${sizes.slice(4).join(", ")}`);
+      await page.close();
+    }
+  } finally {
+    await browser.close();
+  }
+});
+
 test("footer uses the aligned document-control contract", () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.company.docNum = "ENV-001";
@@ -143,4 +172,55 @@ test("quantitative preview groups repeated areas and keeps timing inside target 
   assert.equal((quantitative.match(/Complete 100%/g) || []).length, 1);
   assert.doesNotMatch(quantitative, /Baseline year|Achievement year|Reporting basis|Targets are tracked/);
   assert.doesNotMatch(quantitative, /Maintain a centralized register|Apply approval thresholds|Cover conflicts of interest/);
+});
+
+test("quantitative numbers match area-heading typography and primary color in screen and print", async () => {
+  const policies = [
+    { policy: { ...templatePreviewPolicy("standard-pack", "environmental"), visualStyle: "modern" as const }, rowSelector: ".policy-modern-targets > div", expectSectionHeadingPrimary: true },
+    { policy: templatePreviewPolicy("sustainability-charter", "environmental"), rowSelector: ".policy-target-bands > div", expectSectionHeadingPrimary: false },
+  ];
+  const browser = await chromium.launch({ executablePath: chromePath(), headless: true });
+  try {
+    for (const { policy, rowSelector, expectSectionHeadingPrimary } of policies) {
+      const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
+      for (const documentMarkup of [markup, createPrintDocument(markup, policy)]) {
+        const page = await browser.newPage({ viewport: { width: 980, height: 643 } });
+        await page.setContent(documentMarkup);
+        const styles = await page.locator(`[id$="-quantitative"] ${rowSelector}`).first().evaluate((row) => {
+          const number = row.querySelector<HTMLElement>(":scope > b");
+          const title = row.querySelector<HTMLElement>("h3");
+          const section = row.closest<HTMLElement>(".policy-section");
+          const sectionNumber = section?.querySelector<HTMLElement>(".policy-section-heading > span");
+          const sectionTitle = section?.querySelector<HTMLElement>(".policy-section-heading h2");
+          if (!number || !title || !sectionNumber || !sectionTitle) throw new Error("quantitative typography elements are missing");
+          const numberStyle = getComputedStyle(number);
+          const titleStyle = getComputedStyle(title);
+          const sectionNumberStyle = getComputedStyle(sectionNumber);
+          const sectionTitleStyle = getComputedStyle(sectionTitle);
+          const primaryProbe = document.createElement("span");
+          primaryProbe.style.color = "var(--doc-primary)";
+          row.append(primaryProbe);
+          const primary = getComputedStyle(primaryProbe).color;
+          primaryProbe.remove();
+          return {
+            primary,
+            number: { size: numberStyle.fontSize, color: numberStyle.color },
+            title: { size: titleStyle.fontSize, color: titleStyle.color },
+            sectionNumber: { size: sectionNumberStyle.fontSize, color: sectionNumberStyle.color },
+            sectionTitle: { size: sectionTitleStyle.fontSize, color: sectionTitleStyle.color },
+          };
+        });
+        assert.equal(styles.number.size, styles.title.size, `quantitative number and area heading sizes differ: ${styles.number.size}, ${styles.title.size}`);
+        assert.equal(styles.number.color, styles.title.color, `quantitative number and area heading colors differ: ${styles.number.color}, ${styles.title.color}`);
+        assert.equal(styles.number.color, styles.primary, `quantitative number should use the main brand color: ${styles.number.color} vs ${styles.primary}`);
+        if (expectSectionHeadingPrimary) {
+          assert.equal(styles.sectionNumber.color, styles.sectionTitle.color, `section number and heading colors differ: ${styles.sectionNumber.color}, ${styles.sectionTitle.color}`);
+          assert.equal(styles.sectionTitle.color, styles.primary, `section heading should use the main brand color: ${styles.sectionTitle.color} vs ${styles.primary}`);
+        }
+        await page.close();
+      }
+    }
+  } finally {
+    await browser.close();
+  }
 });
