@@ -16,6 +16,7 @@ test("canonical templates and legacy IDs coexist; new policies start with Standa
   assert.equal(DOCUMENT_THEMES.length, 8);
   assert.equal(DOCUMENT_THEMES.filter(t => t.collection === "professional").length, 8);
   assert.equal(getPolicyDocumentTheme(initialPolicy()).pageBorder.enabled, false);
+  assert.equal(getPolicyDocumentTheme(initialPolicy()).pageBorder.scope, "all-except-cover");
 });
 
 test("canonical variants drive distinct document composition", () => {
@@ -38,7 +39,7 @@ test("canonical variants drive distinct document composition", () => {
 });
 
 test("border input is normalized and enough room is reserved for its thickest setting", () => {
-  assert.deepEqual(normalizePageBorder({ enabled: true, widthPt: 99, insetMm: -5, color: "red", scope: "invalid" }), { enabled: true, widthPt: 6, insetMm: 5, scope: "all" });
+  assert.deepEqual(normalizePageBorder({ enabled: true, widthPt: 99, insetMm: -5, color: "red", scope: "invalid" }), { enabled: true, widthPt: 6, insetMm: 5, scope: "all-except-cover" });
   assert.equal(normalizePageBorder({ widthPt: NaN, insetMm: Infinity }).widthPt, 1);
   assert.ok(pageMarginMm(normalizePageBorder({ enabled: true, widthPt: 6, insetMm: 20 })) > 30);
 });
@@ -65,6 +66,16 @@ test("cover-only PDF border touches only page one; disabling preserves bytes", a
   assert.ok(output.getPage(0).node.get(PDFName.of("Contents")));
   assert.equal(output.getPage(1).node.get(PDFName.of("Contents")), undefined);
   assert.deepEqual(await applyPageBorders(bytes, { ...border, enabled: false }, "#233F59"), Buffer.from(bytes));
+});
+
+test("except-cover PDF border touches every page after page one", async () => {
+  const document = await PDFDocument.create(); document.addPage([595.28, 841.89]); document.addPage([595.28, 841.89]); document.addPage([595.28, 841.89]);
+  const bytes = await document.save();
+  const border = normalizePageBorder({ enabled: true, widthPt: 6, insetMm: 20, scope: "all-except-cover" });
+  const output = await PDFDocument.load(await applyPageBorders(bytes, border, "#233F59"));
+  assert.equal(output.getPage(0).node.get(PDFName.of("Contents")), undefined);
+  assert.ok(output.getPage(1).node.get(PDFName.of("Contents")));
+  assert.ok(output.getPage(2).node.get(PDFName.of("Contents")));
 });
 
 test("Word exports contain native page borders and editable text with isolated geometry", async () => {

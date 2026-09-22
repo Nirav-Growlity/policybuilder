@@ -236,7 +236,8 @@ export type DocumentTextAlignment = "left" | "center" | "right" | "justify";
 /** Logo size as a percentage of the existing medium size; legacy labels remain readable. */
 export type LogoScale = number | "small" | "medium" | "large";
 
-export type PageBorder = { enabled: boolean; widthPt: number; insetMm: number; color?: string; scope: "all" | "cover" };
+export type PageBorderScope = "all" | "all-except-cover" | "cover";
+export type PageBorder = { enabled: boolean; widthPt: number; insetMm: number; color?: string; scope: PageBorderScope };
 
 export type DocumentThemeOverrides = {
   pageBorder?: PageBorder;

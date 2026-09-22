@@ -8,7 +8,7 @@ import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
 import { PolicyCoverPreview, PolicyPreview } from "@/components/policy/policy-preview";
 import { getPolicyDocumentTheme, runningLogoFit } from "@/lib/document-themes";
 import { buildDocumentRenderModel, getRunningHeaderBrand } from "@/lib/document-render-model";
-import { A4, pageBorderContentInsetMm, pageFooterVerticalShiftMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
+import { A4, pageBorderAppliesToPage, pageBorderContentInsetMm, pageFooterVerticalShiftMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
 import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
 
 let pdfRenderQueue: Promise<void> = Promise.resolve();
@@ -284,7 +284,10 @@ function drawPageBorders(pdf: PDFDocument, border: PageBorder, primary: string):
   const hex = (border.color || primary).slice(1);
   const color = rgb(parseInt(hex.slice(0, 2), 16) / 255, parseInt(hex.slice(2, 4), 16) / 255, parseInt(hex.slice(4, 6), 16) / 255);
   const inset = border.insetMm * A4.pointsPerMm;
-  for (const page of border.scope === "cover" ? pdf.getPages().slice(0, 1) : pdf.getPages()) page.drawRectangle({ x: inset, y: inset, width: page.getWidth() - 2 * inset, height: page.getHeight() - 2 * inset, borderWidth: border.widthPt, borderColor: color });
+  for (const [pageIndex, page] of pdf.getPages().entries()) {
+    if (!pageBorderAppliesToPage(border.scope, pageIndex)) continue;
+    page.drawRectangle({ x: inset, y: inset, width: page.getWidth() - 2 * inset, height: page.getHeight() - 2 * inset, borderWidth: border.widthPt, borderColor: color });
+  }
 }
 
 async function finalizePdf(bytes: Uint8Array, background: ThemeBackground, coverHeaderMm: number, coverData: Uint8Array | undefined, border: PageBorder, primary: string): Promise<Buffer> {

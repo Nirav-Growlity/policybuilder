@@ -62,6 +62,15 @@ test("Word quantitative area numbers stay horizontal and align with the title", 
   assert.match(document, /w:vAlign w:val="top"/, "quantitative area numbers should align with the area title");
 });
 
+test("except-cover Word borders use the native not-first-page display", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.templateBrandOverrides = { schemaVersion: 1, pageBorder: { enabled: true, widthPt: 1, insetMm: 10, scope: "all-except-cover", color: "#234567" } };
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const xml = await zip.file("word/document.xml")!.async("string");
+  const border = xml.match(/<w:pgBorders[\s\S]*?<\/w:pgBorders>/)![0];
+  assert.match(border, /w:display="notFirstPage"/);
+});
+
 test("Word applies independent marker choices without changing semantic numbers", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.visualStyle = "modern";

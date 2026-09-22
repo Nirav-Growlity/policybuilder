@@ -144,16 +144,24 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
 
   const primary = documentHex(theme.colors.primary);
   const ink = documentHex(theme.colors.ink);
-  const pageBorders = theme.pageBorder.enabled ? {
-    pageBorders: { display: theme.pageBorder.scope === "cover" ? "firstPage" as const : "allPages" as const, offsetFrom: "page" as const },
+  const pageBorderDefinition = (display: "allPages" | "firstPage" | "notFirstPage") => ({
+    pageBorders: { display, offsetFrom: "page" as const },
     // Native Word page-edge borders support at most 31 points of spacing.
     // Text-relative offsets can exceed that limit and hug the content.
     ...Object.fromEntries(["pageBorderTop", "pageBorderRight", "pageBorderBottom", "pageBorderLeft"].map(side => [side, { style: BorderStyle.SINGLE, color: documentHex(theme.pageBorder.color || theme.colors.primary), size: theme.pageBorder.widthPt * 8, space: Math.round(pageBorderSpaceMm(theme.pageBorder) * A4.pointsPerMm) }]))
-  } : undefined;
+  });
+  const pageBorders = theme.pageBorder.enabled
+    ? pageBorderDefinition(theme.pageBorder.scope === "cover" ? "firstPage" : theme.pageBorder.scope === "all-except-cover" ? "notFirstPage" : "allPages")
+    : undefined;
+  // A custom cover is its own Word section. Use section-specific borders so
+  // "except cover" still borders the first body page, and "cover only" does
+  // not accidentally border the first page of the body section.
+  const customCoverBorders = theme.pageBorder.enabled && theme.pageBorder.scope !== "all-except-cover" ? pageBorderDefinition("allPages") : undefined;
+  const customBodyBorders = theme.pageBorder.enabled && theme.pageBorder.scope !== "cover" ? pageBorderDefinition("allPages") : undefined;
   const pageSize = { width: PAGE_WIDTH, height: PAGE_HEIGHT };
   const regularPage = {
     size: pageSize,
-    ...(pageBorders ? { borders: pageBorders } : {}),
+    ...(customCover ? (customBodyBorders ? { borders: customBodyBorders } : {}) : (pageBorders ? { borders: pageBorders } : {})),
     margin: {
       top: pageMargin(),
       right: pageMargin(),
@@ -224,7 +232,7 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
     sections: customCover ? [
       {
         properties: {
-          page: { size: pageSize, ...(pageBorders ? { borders: pageBorders } : {}), margin: { top: 0, right: 0, bottom: 0, left: 0 } },
+          page: { size: pageSize, ...(customCoverBorders ? { borders: customCoverBorders } : {}), margin: { top: 0, right: 0, bottom: 0, left: 0 } },
         },
         // Keep the artwork and editable text/media layers in the document body.
         children: [customCoverParagraph(customCover, customCoverElements)],

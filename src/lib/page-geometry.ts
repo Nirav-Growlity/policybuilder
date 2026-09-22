@@ -8,9 +8,14 @@ export function normalizePageBorder(value: unknown): PageBorder {
     enabled: raw.enabled === true,
     widthPt: Math.round(Math.min(6, Math.max(.5, finite(raw.widthPt, 1))) * 2) / 2,
     insetMm: Math.min(20, Math.max(5, finite(raw.insetMm, 10))),
-    scope: raw.scope === "cover" ? "cover" : "all",
+    scope: raw.scope === "all" || raw.scope === "cover" ? raw.scope : "all-except-cover",
     ...(typeof raw.color === "string" && /^#[a-f0-9]{6}$/i.test(raw.color) ? { color: raw.color.toUpperCase() } : {}),
   };
+}
+
+/** Whether a zero-based PDF page index receives the configured page border. */
+export function pageBorderAppliesToPage(scope: PageBorder["scope"], pageIndex: number): boolean {
+  return scope === "all" || (scope === "cover" ? pageIndex === 0 : pageIndex > 0);
 }
 
 /** Reserve room for border stroke, running furniture, and body copy. */

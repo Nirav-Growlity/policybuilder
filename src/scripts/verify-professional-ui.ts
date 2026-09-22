@@ -38,6 +38,7 @@ async function main() {
     await page.locator("#inspector-tab-design").click();
     await page.getByRole("tab", { name: "design", exact: true }).last().click();
     await page.getByLabel("Show page border").check();
+    if (await page.getByLabel("Border pages").inputValue() !== "all-except-cover") throw new Error("New page borders did not default to all pages except the cover.");
     await page.getByLabel("Border thickness").fill("3");
     await page.getByLabel("Border inset").fill("14");
     await page.getByLabel("Border pages").selectOption("cover");
