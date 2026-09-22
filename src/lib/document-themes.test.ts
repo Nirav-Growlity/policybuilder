@@ -306,14 +306,16 @@ test("logo colors reach headings, TOC rules, and running-logo scale", () => {
   policy.documentThemeOverrides = { schemaVersion: 1, logoScale: "large" };
 
   const theme = getPolicyDocumentTheme(policy);
-  assert.equal(theme.colors.ink, "#07442F");
+  assert.equal(theme.colors.primaryDark, "#07442F");
+  assert.equal(theme.colors.subheading, "#07442F");
+  assert.equal(theme.colors.ink, "#000000");
   assert.notEqual(theme.colors.line, getDocumentTheme(policy.documentTheme).colors.line);
   assert.equal(theme.logoScale, "large");
 
   const markup = renderToStaticMarkup(createElement(PolicyPreview, { policy }));
   assert.match(markup, /data-logo-scale="large"/);
   assert.match(markup, /--doc-running-logo-height:38px/);
-  assert.match(markup, /--doc-ink:#07442F/);
+  assert.match(markup, /--doc-ink:#000000/);
 });
 
 test("logo palette extraction ignores transparent and near-white pixels", () => {
