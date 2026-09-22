@@ -3,12 +3,14 @@
 import * as React from "react";
 import { getPolicyProfile } from "@/lib/constants";
 import { useBuilder } from "@/lib/store";
-import { Panel, Badge } from "@/components/ui/panel";
+import { Panel } from "@/components/ui/panel";
 import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
-import { Download, FileText, Sparkles, FileType, BookOpen } from "lucide-react";
+import { Download, FileText, FileType, BookOpen, Palette } from "lucide-react";
 import { preparePolicyForDocxExport } from "@/lib/docx/export-assets";
-import { visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
+import { AICoverWorkflow } from "@/components/builder/ai-cover-workflow";
+import { ListStyleToggle } from "@/components/builder/list-style-toggle";
+import { resolvePolicyListFormatting } from "@/lib/list-formatting";
 
 export function usePolicyDownload() {
   const { policy } = useBuilder();
@@ -110,49 +112,39 @@ export function DockExportPanel() {
   );
 }
 
-export function DockSummaryPanel() {
-  const { policy } = useBuilder();
-  const co = policy.company;
-  const areas = policy.focusAreas.filter(Boolean);
-  const quantEntries = visibleQuantitativeAreas(policy).filter((q) => q.targets && q.targets.some((t) => t.target));
-  return (
-    <Panel
-      title="Document summary"
-      description="At a glance"
-      icon={<FileText size={17} strokeWidth={1.8} />}
-    >
-      <dl className="space-y-2.5 text-[12.5px]">
-        <Row label="Company" value={co.name || "—"} />
-        <Row label="Document No." value={co.docNum || "—"} mono />
-        <Row label="Revision" value={co.revNum || "01"} mono />
-        <Row label="Effective" value={co.effectiveDate || "—"} mono />
-        <Row label="Next review" value={co.reviewDate || "—"} mono />
-        <Row label="Focus areas" value={String(areas.length)} mono />
-        <Row label="Quantitative targets" value={String(quantEntries.flatMap((q) => q.targets).filter((t) => t.target).length)} mono />
-        <Row label="SDGs selected" value={String(policy.sdgs.length)} mono />
-        <Row label="Responsibilities" value={String(policy.responsibilities.length)} mono />
-      </dl>
-      {policy.standards.length > 0 && (
-        <div className="mt-4">
-          <div className="mb-2 flex items-center gap-1.5 text-[11px] font-semibold"><Sparkles size={12} /> Standards aligned</div>
-          <div className="flex flex-wrap gap-1.5">
-            {policy.standards.map((s) => (
-              <Badge key={s} variant="forest">
-                {s}
-              </Badge>
-            ))}
-          </div>
-        </div>
-      )}
-    </Panel>
-  );
-}
+export function DockDocumentDesignPanel() {
+  const { policy, updatePolicy, setStep, requestCoverEdit } = useBuilder();
+  const listFormatting = resolvePolicyListFormatting(policy);
+  const activeCover = policy.activeCoverVariant === "ai" ? "ai" : "manual";
 
-function Row({ label, value, mono }: { label: string; value: string; mono?: boolean }) {
   return (
-    <div className="flex items-center justify-between gap-3">
-      <dt className="text-[var(--color-muted)]">{label}</dt>
-      <dd className={`text-[var(--color-ink-2)] font-medium truncate ${mono ? "font-mono text-[12px]" : ""}`}>{value}</dd>
-    </div>
+    <>
+      <Panel title="Cover" description="Choose and refine the first page." icon={<Palette size={17} strokeWidth={1.8} />}>
+        <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Active cover">
+          <button type="button" aria-pressed={activeCover === "manual"} onClick={() => updatePolicy(() => ({ activeCoverVariant: "manual" }))} className={`rounded-lg px-3 py-2 text-[12px] font-semibold ${activeCover === "manual" ? "bg-[var(--color-forest)] text-white" : "border border-[var(--color-line-2)] bg-white text-[var(--color-ink-2)]"}`}>Manual</button>
+          <button type="button" disabled={!policy.aiCoverComposition} aria-pressed={activeCover === "ai"} onClick={() => updatePolicy(() => ({ activeCoverVariant: "ai" }))} className={`rounded-lg px-3 py-2 text-[12px] font-semibold disabled:cursor-not-allowed disabled:opacity-40 ${activeCover === "ai" ? "bg-[var(--color-forest)] text-white" : "border border-[var(--color-line-2)] bg-white text-[var(--color-ink-2)]"}`}>AI</button>
+          <span className="text-[11px] text-[var(--color-muted)]">{activeCover === "ai" ? "AI active" : "Manual active"}</span>
+          <button type="button" onClick={() => { requestCoverEdit(activeCover, activeCover === "ai" ? policy.aiCoverComposition : undefined); setStep("export"); }} className="w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 py-2 text-[12px] font-semibold text-[var(--color-ink-2)]">Edit active cover</button>
+        </div>
+        <div className="mt-3">
+          <AICoverWorkflow
+            policy={policy}
+            onApply={(composition) => updatePolicy(() => ({ aiCoverComposition: composition, activeCoverVariant: "ai" }))}
+          />
+        </div>
+      </Panel>
+
+      <Panel title="List markers" description="Choose how lists appear in the preview and exports." icon={<FileText size={17} strokeWidth={1.8} />}>
+        <div className="space-y-2.5">
+          <ListStyleToggle label="Sections" value={listFormatting.outline} onChange={(value) => updatePolicy((p) => ({ listFormatting: { ...p.listFormatting, outline: value } }))} />
+          <ListStyleToggle label="Focus areas" value={listFormatting.focusAreas} onChange={(value) => updatePolicy((p) => ({ listFormatting: { ...p.listFormatting, focusAreas: value } }))} />
+          <ListStyleToggle label="Qual. areas" value={listFormatting.qualitativeGroups} onChange={(value) => updatePolicy((p) => ({ listFormatting: { ...p.listFormatting, qualitativeGroups: value } }))} />
+          <ListStyleToggle label="Objectives" value={listFormatting.qualitativeItems} onChange={(value) => updatePolicy((p) => ({ listFormatting: { ...p.listFormatting, qualitativeItems: value } }))} />
+          <ListStyleToggle label="Quant. areas" value={listFormatting.quantitativeGroups} onChange={(value) => updatePolicy((p) => ({ listFormatting: { ...p.listFormatting, quantitativeGroups: value } }))} />
+          <ListStyleToggle label="Targets" value={listFormatting.quantitativeItems} onChange={(value) => updatePolicy((p) => ({ listFormatting: { ...p.listFormatting, quantitativeItems: value } }))} />
+          <ListStyleToggle label="Responsibilities" value={listFormatting.responsibilities} onChange={(value) => updatePolicy((p) => ({ listFormatting: { ...p.listFormatting, responsibilities: value } }))} />
+        </div>
+      </Panel>
+    </>
   );
 }

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { X } from "lucide-react";
 import { ThemeInspector } from "./theme-inspector";
-import { DockOptionsPanel, DockSummaryPanel } from "./dock-sections";
+import { DockOptionsPanel, DockDocumentDesignPanel } from "./dock-sections";
 import { AICoverLibraryPanel } from "./ai-cover-library";
 
 export function DesignInspector({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -35,7 +35,7 @@ export function DesignInspector({ open, onClose }: { open: boolean; onClose: () 
       <div className="min-h-0 flex-1 overflow-hidden p-3">
         <div id="inspector-templates" role="tabpanel" aria-labelledby="inspector-tab-templates" hidden={tab !== "templates"} className="h-full min-h-0 overflow-y-auto scrollbar-thin"><ThemeInspector /></div>
         <div id="inspector-design" role="tabpanel" aria-labelledby="inspector-tab-design" hidden={tab !== "design"} className="h-full min-h-0"><ThemeInspector designOnly /></div>
-        <div id="inspector-document" role="tabpanel" aria-labelledby="inspector-tab-document" hidden={tab !== "document"} className="h-full min-h-0 space-y-5 overflow-y-auto scrollbar-thin"><DockOptionsPanel/><DockSummaryPanel/></div>
+        <div id="inspector-document" role="tabpanel" aria-labelledby="inspector-tab-document" hidden={tab !== "document"} className="h-full min-h-0 space-y-5 overflow-y-auto scrollbar-thin"><DockOptionsPanel/><DockDocumentDesignPanel/></div>
         <div id="inspector-ai-covers" role="tabpanel" aria-labelledby="inspector-tab-ai-covers" hidden={tab !== "ai-covers"} className="h-full min-h-0"><AICoverLibraryPanel /></div>
       </div>
     </aside>

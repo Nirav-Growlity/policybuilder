@@ -10,13 +10,13 @@ test("AI cover workflow is separate and does not require an existing manual cove
   const markup = renderToStaticMarkup(React.createElement(AICoverWorkflow, {
     policy: makeSamplePolicy(),
     onApply: () => undefined,
-    onEdit: () => undefined,
   }));
 
   assert.match(markup, /AI cover/i);
   assert.match(markup, /Generate AI cover/);
   assert.match(markup, /will not change your manual cover/);
   assert.match(markup, /Document design/);
+  assert.doesNotMatch(markup, /Current AI cover/);
   assert.doesNotMatch(markup, /Imported policy|reference policy/);
 });
 
