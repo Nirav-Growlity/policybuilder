@@ -131,6 +131,15 @@ test("manual typography changes are detected and can be reset", () => {
   assert.equal(isDocumentThemeCustomized(reset), false);
 });
 
+test("content alignment defaults to justified and accepts the four document choices", () => {
+  const policy = initialPolicy();
+  assert.equal(getPolicyDocumentTheme(policy).textAlignment, "justify");
+
+  policy.documentThemeOverrides = { schemaVersion: 1, textAlignment: "right" };
+  assert.equal(getPolicyDocumentTheme(policy).textAlignment, "right");
+  assert.equal(normalizeDocumentThemeOverrides({ schemaVersion: 1, textAlignment: "diagonal" }).textAlignment, undefined);
+});
+
 test("the shared render model preserves enabled order and classifies density deterministically", () => {
   const policy = initialPolicy();
   policy.declaration.preface = "Short statement.";

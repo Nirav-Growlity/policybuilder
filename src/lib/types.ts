@@ -232,6 +232,7 @@ export type ThemeBackground =
     };
 
 export type ThemeDensity = "compact" | "balanced" | "spacious";
+export type DocumentTextAlignment = "left" | "center" | "right" | "justify";
 /** Logo size as a percentage of the existing medium size; legacy labels remain readable. */
 export type LogoScale = number | "small" | "medium" | "large";
 
@@ -244,6 +245,7 @@ export type DocumentThemeOverrides = {
   colors?: Partial<DocumentThemePalette>;
   background?: ThemeBackground;
   density?: ThemeDensity;
+  textAlignment?: DocumentTextAlignment;
   logoScale?: LogoScale;
 };
 

@@ -297,6 +297,7 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
               <ThemeBaseSelect value={resolved.id} onChange={(id) => updatePolicy(() => getDocumentTemplatePatch(id as NonNullable<Policy["documentTemplate"]>, useBuilder.getState().policy))} />
               <ChoiceGroup label="Data treatment" options={[{ value: "corporate", label: "Formal tables" }, { value: "modern", label: "Clean lists" }]} value={policy.visualStyle || resolved.defaults.visualStyle} onChange={(visualStyle) => updatePolicy(() => ({ visualStyle: visualStyle as Policy["visualStyle"] }))} />
               <ChoiceGroup label="Document spacing" options={[{ value: "compact", label: "Compact" }, { value: "balanced", label: "Balanced" }, { value: "spacious", label: "Spacious" }]} value={resolved.density} onChange={(density) => updateOverrides((current) => ({ ...current, density: density as typeof resolved.density }))} />
+              <ChoiceGroup label="Content alignment" columns={2} options={[{ value: "left", label: "Left" }, { value: "center", label: "Center" }, { value: "right", label: "Right" }, { value: "justify", label: "Justify" }]} value={resolved.textAlignment} onChange={(textAlignment) => updateOverrides((current) => ({ ...current, textAlignment: textAlignment as NonNullable<typeof resolved.textAlignment> }))} />
             </div>
           )}
 

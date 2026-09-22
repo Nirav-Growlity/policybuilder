@@ -44,7 +44,7 @@ import { documentHex, type DocumentThemeDefinition } from "../document-themes";
 import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, normalizePolicyQuantitative, type QuantitativeTargetGroup } from "../quantitative";
 import { getCoverBindingValue, getCoverTextPresentation } from "../cover-composition";
-import type { Policy, QuantitativeArea, QuantitativeTarget, RichTextBlock } from "../types";
+import type { DocumentTextAlignment, Policy, QuantitativeArea, QuantitativeTarget, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
 import { embeddedDocumentFonts } from "./document-fonts";
 import { createCoverCompositionSvg, wrapCoverText } from "../cover-renderer";
@@ -69,6 +69,10 @@ const pageMargin = () => geometry.getStore() ?? 1000;
 const contentWidth = () => PAGE_WIDTH - pageMargin() * 2;
 const CELL_MARGIN = 120;
 const QUANTITATIVE_NUMBER_WIDTH = 1000;
+
+function docxContentAlignment(value: DocumentTextAlignment = "justify"): typeof AlignmentType[keyof typeof AlignmentType] {
+  return value === "center" ? AlignmentType.CENTER : value === "right" ? AlignmentType.RIGHT : value === "left" ? AlignmentType.LEFT : AlignmentType.JUSTIFIED;
+}
 
 export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
   const theme = getPolicyDocumentTheme(inputPolicy);
@@ -164,7 +168,7 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
     title: `${model.cover.policyLabel} - ${model.cover.companyName}`,
     styles: {
       default: {
-        document: { run: { font: typography.fontFamily, size: Math.round(typography.paragraphSize * 2), color: ink } },
+        document: { run: { font: typography.fontFamily, size: Math.round(typography.paragraphSize * 2), color: ink }, paragraph: { alignment: docxContentAlignment(model.theme.textAlignment) } },
       },
       paragraphStyles: [
         {
@@ -174,7 +178,7 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
           next: "PolicyBody",
           quickFormat: true,
           run: { font: typography.headingFontFamily || typography.fontFamily, size: Math.round(typography.headingSize * 2), bold: true, color: documentHex(theme.colors.primary) },
-          paragraph: { keepNext: true, spacing: { before: Math.round(300 * spacingScale), after: Math.round(180 * spacingScale) } },
+          paragraph: { alignment: docxContentAlignment(model.theme.textAlignment), keepNext: true, spacing: { before: Math.round(300 * spacingScale), after: Math.round(180 * spacingScale) } },
         },
         {
           id: "PolicyBody",
@@ -183,7 +187,7 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
           next: "PolicyBody",
           quickFormat: true,
           run: { font: typography.fontFamily, size: Math.round(typography.paragraphSize * 2), color: ink },
-          paragraph: { spacing: { after: Math.round(150 * spacingScale), line: Math.round(240 * typography.lineSpacing) } },
+          paragraph: { alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: Math.round(150 * spacingScale), line: Math.round(240 * typography.lineSpacing) } },
         },
       ],
     },
@@ -787,8 +791,7 @@ function metadataTable(model: DocumentRenderModel, width: number, mode: "strip" 
 
 function buildToc(model: DocumentRenderModel): DocBlock[] {
   if (model.theme.collection === "professional") {
-    const variant = model.theme.layout.professionalVariant || "corporate";
-    const alignment = variant === "institutional" ? AlignmentType.CENTER : AlignmentType.LEFT;
+    const alignment = docxContentAlignment(model.theme.textAlignment);
     return [new Paragraph({ text: "Contents", style: "PolicyHeading", alignment, spacing: { after: 360 } }), ...model.tocEntries.map(entry => tocParagraph(entry, model, "leaders"))];
   }
   const entries = model.acknowledgement
@@ -849,7 +852,7 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
 
   return [
     new Paragraph({
-      alignment: AlignmentType.CENTER,
+      alignment: docxContentAlignment(model.theme.textAlignment),
       spacing: { after: 300 },
       children: [
         new TextRun({ text: "--------  ", color: accent, size: 14 }),
@@ -936,11 +939,11 @@ function sectionTitle(section: DocumentRenderSection, model: DocumentRenderModel
   if (theme.collection === "professional") {
     const professionalSectionSize = 20;
     children.push(new TextRun({ text: number + "   ", color: documentHex(theme.colors.primary), size: professionalSectionSize, font: typography.fontFamily }), new TextRun({ text: section.title, color: documentHex(theme.colors.primary), bold: true, size: professionalSectionSize, font: typography.headingFontFamily || typography.fontFamily }));
-    return new Paragraph({ style: "PolicyHeading", alignment: theme.layout.professionalVariant === "institutional" ? AlignmentType.CENTER : AlignmentType.LEFT, border: { bottom: border(documentHex(theme.colors.primary), 4) }, spacing: { before: 260, after: 180 }, children });
+    return new Paragraph({ style: "PolicyHeading", alignment: docxContentAlignment(model.theme.textAlignment), border: { bottom: border(documentHex(theme.colors.primary), 4) }, spacing: { before: 260, after: 180 }, children });
   }
   if (layout === "formal-ordinal") {
     children.push(new TextRun({ text: `${section.title.toUpperCase()}  -  ${number}`, bold: true, color: primary, size: Math.round(typography.headingSize * 2), characterSpacing: 45, font: typography.headingFontFamily || typography.fontFamily }));
-    return new Paragraph({ style: "PolicyHeading", alignment: AlignmentType.CENTER, border: { bottom: border(accent, 6) }, spacing: { before: 300, after: 180 }, children });
+    return new Paragraph({ style: "PolicyHeading", alignment: docxContentAlignment(model.theme.textAlignment), border: { bottom: border(accent, 6) }, spacing: { before: 300, after: 180 }, children });
   }
   if (layout === "statement-band") {
     children.push(new TextRun({ text: `${number}   ${section.title.toUpperCase()}`, bold: true, color: onPrimary, size: Math.round(typography.headingSize * 2), characterSpacing: 35, font: typography.headingFontFamily || typography.fontFamily }));
@@ -966,7 +969,7 @@ function renderSectionContent(section: DocumentRenderSection, model: DocumentRen
   const { content } = section;
   switch (content.type) {
     case "narrative": return [
-      ...bodyParagraphs(content.text, model.typography, model.theme.layout.pageFrame === "editorial-margin"),
+      ...bodyParagraphs(content.text, model.typography, model.theme.layout.pageFrame === "editorial-margin", docxContentAlignment(model.theme.textAlignment)),
       ...(content.sites?.length ? [dataTable(
         ["Location / Unit", "Address", "Primary Function"],
         content.sites.map((site, index) => [site.location || `Site ${index + 1}`, site.address, site.primaryFunction || "Operating Site"]),
@@ -1059,7 +1062,7 @@ function renderSdgs(goals: { number: number; label: string; color: string }[], m
 
 function renderCustomBlocks(blocks: RichTextBlock[], model: DocumentRenderModel, availableWidth: number): DocBlock[] {
   return blocks.flatMap((block) => {
-    if (block.type === "paragraph") return bodyParagraphs(block.text, model.typography, model.theme.layout.pageFrame === "editorial-margin");
+    if (block.type === "paragraph") return bodyParagraphs(block.text, model.typography, model.theme.layout.pageFrame === "editorial-margin", docxContentAlignment(model.theme.textAlignment));
     if (block.type === "table") {
       const columns = block.columns || [];
       if (!columns.length) return [];
@@ -1194,7 +1197,7 @@ function dataTable(headers: string[], rows: string[][], widths: number[], theme:
   ], widths);
 }
 
-function bodyParagraphs(text: string, typography: Typography = DEFAULT_TYPOGRAPHY, editorialLead = false): Paragraph[] {
+function bodyParagraphs(text: string, typography: Typography = DEFAULT_TYPOGRAPHY, editorialLead = false, alignment: typeof AlignmentType[keyof typeof AlignmentType] = AlignmentType.JUSTIFIED): Paragraph[] {
   const parts = text.split(/\r?\n+/).map((paragraph) => paragraph.trim()).filter(Boolean);
   return parts.map((paragraph, index) => {
     const children: ParagraphChild[] = [];
@@ -1204,7 +1207,7 @@ function bodyParagraphs(text: string, typography: Typography = DEFAULT_TYPOGRAPH
     } else {
       children.push(new TextRun({ text: paragraph, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily }));
     }
-    return new Paragraph({ style: "PolicyBody", alignment: AlignmentType.JUSTIFIED, spacing: { after: 150, line: Math.round(240 * typography.lineSpacing) }, children });
+    return new Paragraph({ style: "PolicyBody", alignment, spacing: { after: 150, line: Math.round(240 * typography.lineSpacing) }, children });
   });
 }
 
@@ -1220,8 +1223,8 @@ function listParagraph(text: string, kind: "bullet" | "number", typography: Typo
 function buildAcknowledgement(model: DocumentRenderModel): DocBlock[] {
   const acknowledgement = model.acknowledgement!;
   const { theme, typography } = model;
-  const title = new Paragraph({ alignment: theme.layout.acknowledgement === "legal-form" ? AlignmentType.CENTER : AlignmentType.LEFT, spacing: { after: 180 }, children: [new Bookmark({ id: "acknowledgement", children: [] }), new TextRun({ text: acknowledgement.title, bold: true, italics: theme.layout.acknowledgement === "affidavit", color: documentHex(theme.colors.primary), size: 36, font: typography.headingFontFamily || typography.fontFamily })] });
-  const statement = new Paragraph({ alignment: theme.layout.acknowledgement === "legal-form" ? AlignmentType.CENTER : AlignmentType.JUSTIFIED, spacing: { after: 260, line: Math.round(240 * typography.lineSpacing) }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
+  const title = new Paragraph({ alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: 180 }, children: [new Bookmark({ id: "acknowledgement", children: [] }), new TextRun({ text: acknowledgement.title, bold: true, italics: theme.layout.acknowledgement === "affidavit", color: documentHex(theme.colors.primary), size: 36, font: typography.headingFontFamily || typography.fontFamily })] });
+  const statement = new Paragraph({ alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: 260, line: Math.round(240 * typography.lineSpacing) }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
   const kicker = new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "ACKNOWLEDGEMENT - FINAL PAGE", bold: true, color: documentHex(theme.colors.primary), size: 15, characterSpacing: 50, font: typography.fontFamily })] });
 
   if (theme.collection === "professional") return [title, statement, acknowledgementFields(model, contentWidth())];
