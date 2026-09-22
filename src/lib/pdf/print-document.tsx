@@ -1,7 +1,9 @@
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, rm } from "node:fs/promises";
+import { randomUUID } from "node:crypto";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { renderToStaticMarkup } from "react-dom/server.browser";
-import { chromium, type Browser, type BrowserContext } from "playwright-core";
+import { chromium, type BrowserContext } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
 import { PolicyCoverPreview, PolicyPreview } from "@/components/policy/policy-preview";
 import { getPolicyDocumentTheme, runningLogoFit } from "@/lib/document-themes";
@@ -9,8 +11,6 @@ import { buildDocumentRenderModel, getRunningHeaderBrand } from "@/lib/document-
 import { A4, pageBorderContentInsetMm, pageFooterVerticalShiftMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
 import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
 
-let pdfBrowserPromise: Promise<Browser> | null = null;
-let pdfBrowserClosePromise: Promise<void> = Promise.resolve();
 let pdfRenderQueue: Promise<void> = Promise.resolve();
 const customCoverCache = new Map<string, Promise<Uint8Array>>();
 const PDF_CONTEXT_TIMEOUT_MS = 20_000;
@@ -19,6 +19,7 @@ const PDF_RENDER_TIMEOUT_MS = 65_000;
 const CUSTOM_COVER_RENDER_TIMEOUT_MS = 45_000;
 const PDF_CONTEXT_CLEANUP_TIMEOUT_MS = 2_000;
 const pdfContextClosures = new WeakMap<BrowserContext, Promise<void>>();
+const pdfContextDirectories = new WeakMap<BrowserContext, string>();
 
 export function generatePreviewPdf(policy: Policy): Promise<Buffer> {
   return withSerializedPdfRender(async () => {
@@ -26,8 +27,7 @@ export function generatePreviewPdf(policy: Policy): Promise<Buffer> {
       return await generatePreviewPdfNow(policy);
     } catch (error) {
       if (!isRecoverablePdfBrowserError(error)) throw error;
-      console.warn("PDF export encountered an unhealthy Chromium instance; recycling the browser and retrying once.", error);
-      resetPdfBrowser();
+      console.warn("PDF export encountered an unhealthy Chromium context; retrying once with a fresh isolated context.", error instanceof Error ? error.message : String(error));
       return generatePreviewPdfNow(policy);
     }
   });
@@ -64,13 +64,13 @@ async function generatePreviewPdfNow(policy: Policy): Promise<Buffer> {
   const customCoverPng = customCoverData ? `data:image/png;base64,${Buffer.from(customCoverData).toString("base64")}` : undefined;
   const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} />));
   const { context } = await createPdfContextWithTimeout();
-  const page = await withTimeout(
-    context.newPage(),
-    PDF_PAGE_TIMEOUT_MS,
-    () => { void closePdfContext(context); resetPdfBrowser(); },
-    "PDF page creation timed out",
-  );
   try {
+    const page = await withTimeout(
+      context.newPage(),
+      PDF_PAGE_TIMEOUT_MS,
+      () => { void closePdfContext(context); },
+      "PDF page creation timed out",
+    );
     return await withTimeout((async () => {
       await page.route(/^https?:/, route => route.abort());
       await page.setContent(createPrintDocument(markup, policy, topMargin, horizontalMargin), { waitUntil: "load", timeout: 20000 });
@@ -100,7 +100,7 @@ async function generatePreviewPdfNow(policy: Policy): Promise<Buffer> {
       });
       if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");
       return finalizePdf(output, theme.background, policy.company.companyLogo ? topMargin : 0, customCoverData, theme.pageBorder, theme.colors.primary);
-    })(), PDF_RENDER_TIMEOUT_MS, () => { void closePdfContext(context); resetPdfBrowser(); }, "PDF rendering timed out");
+    })(), PDF_RENDER_TIMEOUT_MS, () => { void closePdfContext(context); }, "PDF rendering timed out");
   } finally {
     await closePdfContext(context);
   }
@@ -133,7 +133,7 @@ async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
       const page = await withTimeout(
         context.newPage(),
         PDF_PAGE_TIMEOUT_MS,
-        () => { void closePdfContext(context); resetPdfBrowser(); },
+        () => { void closePdfContext(context); },
         "Custom cover page creation timed out",
       );
       await page.setViewportSize({ width: 794, height: 1123 });
@@ -151,7 +151,7 @@ async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
       const cover = page.locator(".policy-custom-cover");
       if (!(await cover.count())) throw new Error("Custom cover could not be rendered");
       return await cover.screenshot({ type: "png" });
-    })(), CUSTOM_COVER_RENDER_TIMEOUT_MS, () => { void closePdfContext(context); resetPdfBrowser(); }, "Custom cover rasterization timed out");
+    })(), CUSTOM_COVER_RENDER_TIMEOUT_MS, () => { void closePdfContext(context); }, "Custom cover rasterization timed out");
   } finally {
     await closePdfContext(context);
   }
@@ -160,8 +160,7 @@ async function renderCustomCoverPng(policy: Policy): Promise<Uint8Array> {
 async function createPdfContextWithTimeout(): Promise<{ context: BrowserContext }> {
   const pending = createPdfContext();
   try {
-    // PDF renders are serialized, so a timed-out browser can be recycled safely.
-    return await withTimeout(pending, PDF_CONTEXT_TIMEOUT_MS, resetPdfBrowser, "Chromium context creation timed out");
+    return await withTimeout(pending, PDF_CONTEXT_TIMEOUT_MS, () => undefined, "Chromium context creation timed out");
   } catch (error) {
     void pending.then(({ context }) => closePdfContext(context), () => undefined);
     throw error;
@@ -180,6 +179,8 @@ function closePdfContext(context: BrowserContext): Promise<void> {
       ]);
     } finally {
       if (timer) clearTimeout(timer);
+      const userDataDir = pdfContextDirectories.get(context);
+      if (userDataDir) await rm(userDataDir, { recursive: true, force: true }).catch(() => undefined);
     }
   })();
   pdfContextClosures.set(context, promise);
@@ -208,43 +209,17 @@ function withSerializedPdfRender<T>(render: () => Promise<T>): Promise<T> {
   return previous.then(render).finally(release);
 }
 
-function resetPdfBrowser(): void {
-  const current = pdfBrowserPromise;
-  pdfBrowserPromise = null;
-  if (!current) return;
-  pdfBrowserClosePromise = pdfBrowserClosePromise.then(async () => {
-    try {
-      const browser = await current;
-      await browser.close().catch(() => undefined);
-    } catch {
-      // The launch already failed; allow the next render to start a new browser.
-    }
-  });
-}
-
 async function createPdfContext(): Promise<{ context: BrowserContext }> {
-  const browser = await getPdfBrowser();
-  return { context: await browser.newContext() };
-}
-
-async function getPdfBrowser(): Promise<Browser> {
-  await pdfBrowserClosePromise;
-  if (!pdfBrowserPromise) {
-    const pending = (async () => {
-      const launch = await getChromeLaunchOptions();
-      return chromium.launch({ ...launch, headless: true, timeout: 15000 });
-    })().catch((error) => {
-      if (pdfBrowserPromise === pending) pdfBrowserPromise = null;
-      throw error;
-    });
-    pdfBrowserPromise = pending;
+  const userDataDir = path.join(tmpdir(), `policycraft-pdf-${randomUUID()}`);
+  try {
+    const launch = await getChromeLaunchOptions();
+    const context = await chromium.launchPersistentContext(userDataDir, { ...launch, headless: true, timeout: 15000 });
+    pdfContextDirectories.set(context, userDataDir);
+    return { context };
+  } catch (error) {
+    await rm(userDataDir, { recursive: true, force: true }).catch(() => undefined);
+    throw error;
   }
-  const browser = await pdfBrowserPromise;
-  if (!browser.isConnected()) {
-    pdfBrowserPromise = null;
-    return getPdfBrowser();
-  }
-  return browser;
 }
 
 /** Paint behind the content streams: Chromium clips CSS backgrounds to @page

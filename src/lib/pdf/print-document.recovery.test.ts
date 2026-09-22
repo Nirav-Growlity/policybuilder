@@ -1,13 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { chromium, type Browser, type Page } from "playwright-core";
+import { chromium, type BrowserContext, type Page } from "playwright-core";
 import { makeSamplePolicy } from "../store";
 import { generatePreviewPdf } from "./print-document";
 
 test("generatePreviewPdf retries when Chromium closes before newPage", async () => {
-  const browserType = chromium as unknown as { launch: typeof chromium.launch };
-  const originalLaunch = browserType.launch;
-  const disconnectBrowsers: Array<() => void> = [];
+  const browserType = chromium as unknown as { launchPersistentContext: typeof chromium.launchPersistentContext };
+  const originalLaunch = browserType.launchPersistentContext;
   let launchCount = 0;
 
   const page = {
@@ -17,39 +16,31 @@ test("generatePreviewPdf retries when Chromium closes before newPage", async () 
     pdf: async () => Buffer.from("%PDF-1.4\n%%EOF", "ascii"),
   } as unknown as Page;
 
-  browserType.launch = (async () => {
+  browserType.launchPersistentContext = (async () => {
     const launchNumber = ++launchCount;
-    let connected = true;
-    disconnectBrowsers.push(() => { connected = false; });
-    const browser = {
-      isConnected: () => connected,
-      close: async () => { connected = false; },
-      newContext: async () => ({
-        newPage: async () => {
-          if (launchNumber === 1) {
-            throw new Error("browserContext.newPage: Target page, context or browser has been closed");
-          }
-          return page;
-        },
-        close: async () => undefined,
-      }),
-    };
-    return browser as unknown as Browser;
-  }) as typeof chromium.launch;
+    return {
+      newPage: async () => {
+        if (launchNumber === 1) {
+          throw new Error("browserContext.newPage: Target page, context or browser has been closed");
+        }
+        return page;
+      },
+      close: async () => undefined,
+    } as unknown as BrowserContext;
+  }) as typeof chromium.launchPersistentContext;
 
   try {
     const output = await generatePreviewPdf(makeSamplePolicy());
     assert.equal(output.subarray(0, 5).toString("ascii"), "%PDF-");
     assert.equal(launchCount, 2, "the closed Chromium instance should be replaced once");
   } finally {
-    browserType.launch = originalLaunch;
-    for (const disconnect of disconnectBrowsers) disconnect();
+    browserType.launchPersistentContext = originalLaunch;
   }
 });
 
 test("generatePreviewPdf retries when page creation times out", async () => {
-  const browserType = chromium as unknown as { launch: typeof chromium.launch };
-  const originalLaunch = browserType.launch;
+  const browserType = chromium as unknown as { launchPersistentContext: typeof chromium.launchPersistentContext };
+  const originalLaunch = browserType.launchPersistentContext;
   let launchCount = 0;
 
   const page = {
@@ -59,26 +50,22 @@ test("generatePreviewPdf retries when page creation times out", async () => {
     pdf: async () => Buffer.from("%PDF-1.4\n%%EOF", "ascii"),
   } as unknown as Page;
 
-  browserType.launch = (async () => {
+  browserType.launchPersistentContext = (async () => {
     const launchNumber = ++launchCount;
     return {
-      isConnected: () => true,
+      newPage: async () => {
+        if (launchNumber === 1) throw new Error("PDF page creation timed out");
+        return page;
+      },
       close: async () => undefined,
-      newContext: async () => ({
-        newPage: async () => {
-          if (launchNumber === 1) throw new Error("PDF page creation timed out");
-          return page;
-        },
-        close: async () => undefined,
-      }),
-    } as unknown as Browser;
-  }) as typeof chromium.launch;
+    } as unknown as BrowserContext;
+  }) as typeof chromium.launchPersistentContext;
 
   try {
     const output = await generatePreviewPdf(makeSamplePolicy());
     assert.equal(output.subarray(0, 5).toString("ascii"), "%PDF-");
     assert.equal(launchCount, 2, "the timed-out Chromium instance should be replaced once");
   } finally {
-    browserType.launch = originalLaunch;
+    browserType.launchPersistentContext = originalLaunch;
   }
 });
