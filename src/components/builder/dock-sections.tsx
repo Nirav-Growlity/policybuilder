@@ -8,12 +8,12 @@ import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
 import { Download, FileText, FileType, BookOpen, Palette } from "lucide-react";
 import { preparePolicyForDocxExport } from "@/lib/docx/export-assets";
-import { AICoverWorkflow } from "@/components/builder/ai-cover-workflow";
+import { AICoverWorkflow, generateAndApplyAICover } from "@/components/builder/ai-cover-workflow";
 import { ListStyleToggle } from "@/components/builder/list-style-toggle";
 import { resolvePolicyListFormatting } from "@/lib/list-formatting";
 
 export function usePolicyDownload() {
-  const { policy } = useBuilder();
+  const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
   const [exporting, setExporting] = React.useState<"pdf" | "docx" | null>(null);
 
@@ -22,7 +22,16 @@ export function usePolicyDownload() {
     try {
       const fileBase = (policy.company.name || "Policy").replace(/[^\w\s-]/g, "").replace(/\s+/g, "-");
       const url = kind === "pdf" ? "/api/export/pdf" : "/api/export/docx";
-      const exportPolicy = kind === "docx" ? await preparePolicyForDocxExport(policy) : policy;
+      let policyForExport = policy;
+      if (!policy.aiCoverComposition) {
+        try {
+          const composition = await generateAndApplyAICover(policy, (next) => updatePolicy(() => ({ aiCoverComposition: next, activeCoverVariant: "ai" })));
+          policyForExport = { ...policy, aiCoverComposition: composition, activeCoverVariant: "ai" };
+        } catch (cause) {
+          push(`${cause instanceof Error ? cause.message : "The AI cover could not be generated."} Exporting the current cover instead.`, "info");
+        }
+      }
+      const exportPolicy = kind === "docx" ? await preparePolicyForDocxExport(policyForExport) : policyForExport;
       const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

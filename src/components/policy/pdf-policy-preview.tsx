@@ -84,11 +84,15 @@ export function PdfPolicyPreview({ policy }: { policy: Policy }) {
   }, [result, key]);
   const onRenderError = React.useCallback(() => setFailure({ key, message: "Could not display this PDF. Please retry." }), [key]);
   return <div className="pdf-preview" aria-label="PDF document preview" aria-busy={updating}>
-    <div className="mb-3 flex min-h-6 items-center justify-between gap-3 text-[13px] text-[var(--color-muted)]" role="status">
-      <span>{failure?.key === key ? failure.message : updating ? "Updating preview…" : "Preview matches your PDF download"}</span>
-      {failure?.key === key && <button type="button" className="underline" onClick={() => { setFailure(null); setRetry(v => v + 1); }}>Retry</button>}
+    <div className="mb-2 flex min-h-8 items-center justify-between gap-3 px-1 text-[12px] text-[var(--color-muted)]" role="status" aria-live="polite">
+      <span className="flex min-w-0 items-center gap-2">
+        <span className={`h-2 w-2 shrink-0 rounded-full ${failure?.key === key ? "bg-[#b73a3a]" : updating ? "animate-pulse bg-[#b58a23] motion-reduce:animate-none" : "bg-[var(--color-forest-mid)]"}`} />
+        <span className="truncate">{failure?.key === key ? failure.message : updating ? "Updating PDF preview…" : "PDF preview ready"}</span>
+      </span>
+      <span className="shrink-0 text-[11px] text-[#89948d]">{failure?.key === key ? null : updating ? "Rendering" : "Matches download"}</span>
+      {failure?.key === key && <button type="button" className="shrink-0 rounded-md border border-[var(--color-line-2)] bg-white px-2.5 py-1 text-[11px] font-semibold text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)]" onClick={() => { setFailure(null); setRetry(v => v + 1); }}>Retry preview</button>}
     </div>
-    {result ? <PdfPages bytes={result.bytes} onRendered={onRendered} onError={onRenderError} /> : <div className="mx-auto grid aspect-[210/297] max-w-[794px] place-items-center bg-white text-sm text-slate-500 shadow-sm">Preparing document…</div>}
+    {result ? <PdfPages bytes={result.bytes} onRendered={onRendered} onError={onRenderError} /> : <div className="mx-auto grid aspect-[210/297] max-w-[794px] place-items-center rounded-xl border border-[var(--color-line)] bg-white text-sm text-slate-500 shadow-[0_8px_28px_rgba(14,26,20,.06)]">Preparing document…</div>}
   </div>;
 }
 
@@ -165,17 +169,29 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
       {pagesToRender.has(number) && <PdfPage document={document!} number={number} width={pageWidth} onRendered={number === 1 && source === bytes ? reportFirstPage : undefined} />}
     </div>;
   };
-  return <div ref={host} className="pdf-pages">
+  return <div ref={host} className="pdf-pages rounded-xl border border-[var(--color-line)] bg-[#eef1ed]">
     <style>{`
       .pdf-pages .textLayer ::selection { color: transparent !important; -webkit-text-fill-color: transparent; text-shadow: none; background: rgba(37, 99, 235, .26); }
       .pdf-pages .textLayer ::-moz-selection { color: transparent !important; text-shadow: none; background: rgba(37, 99, 235, .26); }
     `}</style>
-    <div className="sticky top-0 z-10 mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-[#f3f4f2]/95 py-3 text-[13px] backdrop-blur">
-      <div className="flex items-center gap-3"><button type="button" disabled={pageNumber <= 1} onClick={() => goToPage(pageNumber - 1)} className="disabled:opacity-30" aria-label="Previous page">←</button><span>Page {pageNumber} of {document?.numPages || "—"}</span><button type="button" disabled={!document || pageNumber >= document.numPages} onClick={() => goToPage(pageNumber + 1)} className="disabled:opacity-30" aria-label="Next page">→</button></div>
-      <div className="flex flex-wrap items-center gap-2"><div className="flex rounded border border-slate-200 bg-white p-0.5" role="group" aria-label="Document view"><button type="button" aria-pressed={viewMode === "continuous"} onClick={() => setViewMode("continuous")} className={`rounded px-2 py-1 text-[12px] ${viewMode === "continuous" ? "bg-slate-900 text-white" : "text-slate-600"}`}>Continuous scroll</button><button type="button" aria-pressed={viewMode === "paged"} onClick={() => setViewMode("paged")} className={`rounded px-2 py-1 text-[12px] ${viewMode === "paged" ? "bg-slate-900 text-white" : "text-slate-600"}`}>Single page</button></div><select aria-label="Preview zoom" value={zoom} onChange={e => setZoom(e.target.value)} className="rounded border border-slate-200 bg-white px-2 py-1.5"><option value="fit">Fit to width</option><option value=".75">75%</option><option value="1">100%</option><option value="1.25">125%</option></select></div>
+    <div className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-[var(--color-line)] bg-white/95 px-3 py-2.5 text-[12px] backdrop-blur sm:px-4">
+      <div className="flex items-center gap-2">
+        <button type="button" disabled={pageNumber <= 1} onClick={() => goToPage(pageNumber - 1)} className="grid h-8 w-8 place-items-center rounded-md border border-[var(--color-line)] bg-white text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-35" aria-label="Previous page">←</button>
+        <span className="min-w-[86px] text-center font-medium tabular-nums text-[var(--color-ink-2)]">Page {pageNumber} <span className="text-[var(--color-muted)]">/ {document?.numPages || "—"}</span></span>
+        <button type="button" disabled={!document || pageNumber >= document.numPages} onClick={() => goToPage(pageNumber + 1)} className="grid h-8 w-8 place-items-center rounded-md border border-[var(--color-line)] bg-white text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-35" aria-label="Next page">→</button>
+      </div>
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="flex rounded-lg border border-[var(--color-line)] bg-[#f5f6f3] p-0.5" role="group" aria-label="Document view">
+          <button type="button" aria-pressed={viewMode === "continuous"} onClick={() => setViewMode("continuous")} className={`h-7 rounded-md px-3 text-[11px] font-medium transition-colors ${viewMode === "continuous" ? "bg-[var(--color-forest)] text-white shadow-sm" : "text-[var(--color-ink-2)] hover:bg-white"}`}>Continuous</button>
+          <button type="button" aria-pressed={viewMode === "paged"} onClick={() => setViewMode("paged")} className={`h-7 rounded-md px-3 text-[11px] font-medium transition-colors ${viewMode === "paged" ? "bg-[var(--color-forest)] text-white shadow-sm" : "text-[var(--color-ink-2)] hover:bg-white"}`}>Single page</button>
+        </div>
+        <select aria-label="Preview zoom" value={zoom} onChange={e => setZoom(e.target.value)} className="h-8 rounded-md border border-[var(--color-line)] bg-white px-2.5 text-[11px] font-medium text-[var(--color-ink-2)] outline-none transition-colors focus:border-[var(--color-forest)]">
+          <option value="fit">Fit to width</option><option value=".75">75%</option><option value="1">100%</option><option value="1.25">125%</option>
+        </select>
+      </div>
     </div>
-    {error && <p role="alert">{error}</p>}
-    <div className={viewMode === "continuous" ? "space-y-8 overflow-x-auto pb-5" : "overflow-x-auto pb-5"}>{document && (viewMode === "continuous" ? pages.map(renderPdfPage) : <PdfPage document={document} number={pageNumber} width={getPdfPageWidth(pageNumber, targetWidth)} onRendered={source === bytes ? onRendered : undefined} />)}</div>
+    {error && <p role="alert" className="mx-4 mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[12px] text-red-800">{error}</p>}
+    <div className={viewMode === "continuous" ? "min-h-[480px] space-y-8 overflow-x-auto px-3 py-5 sm:px-6 sm:py-7" : "min-h-[480px] overflow-x-auto px-3 py-5 sm:px-6 sm:py-7"}>{document && (viewMode === "continuous" ? pages.map(renderPdfPage) : <PdfPage document={document} number={pageNumber} width={getPdfPageWidth(pageNumber, targetWidth)} onRendered={source === bytes ? onRendered : undefined} />)}</div>
   </div>;
 }
 
@@ -218,5 +234,5 @@ function PdfPage({ document: pdf, number, width, onRendered }: { document: PDFDo
     })().catch(error => { if (!cancelled) console.error("PDF page rendering failed", error); });
     return () => { cancelled = true; render?.cancel(); layer?.cancel(); };
   }, [pdf, number, width]);
-  return <div ref={surface} className="relative mx-auto bg-white shadow-[0_3px_18px_rgba(0,0,0,.10)]" style={{ width }} />;
+  return <div ref={surface} role="group" aria-label={`Preview page ${number}`} className="relative mx-auto aspect-[210/297] bg-white shadow-[0_8px_28px_rgba(14,26,20,.14)]" style={{ width }} />;
 }

@@ -8,6 +8,38 @@ import type { CoverComposition, Policy } from "@/lib/types";
 type AICoverResponse = { composition?: CoverComposition; error?: string };
 type AICoverHandler = (composition: CoverComposition) => void | Promise<void>;
 
+const pendingAICoverGenerations = new Map<string, Promise<CoverComposition>>();
+
+function aiCoverGenerationKey(policy: Policy): string {
+  return JSON.stringify({ ...policy, aiCoverComposition: undefined, activeCoverVariant: undefined });
+}
+
+async function requestAICoverComposition(policy: Policy): Promise<CoverComposition> {
+  const response = await fetch("/api/policycraft/ai-cover", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ policy }),
+  });
+  const body = await response.json().catch(() => ({})) as AICoverResponse;
+  if (!response.ok || !body.composition) throw new Error(body.error || "The AI cover could not be generated.");
+  return persistCoverArtwork(body.composition);
+}
+
+export function generateAICoverComposition(policy: Policy): Promise<CoverComposition> {
+  const key = aiCoverGenerationKey(policy);
+  const pending = pendingAICoverGenerations.get(key);
+  if (pending) return pending;
+  const request = requestAICoverComposition(policy).finally(() => pendingAICoverGenerations.delete(key));
+  pendingAICoverGenerations.set(key, request);
+  return request;
+}
+
+export async function generateAndApplyAICover(policy: Policy, onApply: AICoverHandler): Promise<CoverComposition> {
+  const composition = await generateAICoverComposition(policy);
+  await onApply(composition);
+  return composition;
+}
+
 export async function persistAndApplyGeneratedCover(
   composition: CoverComposition,
   onApply: AICoverHandler,
@@ -49,14 +81,7 @@ export function AICoverWorkflow({
     setGenerated(null);
     setGeneratedLibraryId(null);
     try {
-      const response = await fetch("/api/policycraft/ai-cover", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ policy }),
-      });
-      const body = await response.json().catch(() => ({})) as AICoverResponse;
-      if (!response.ok || !body.composition) throw new Error(body.error || "The AI cover could not be generated.");
-      const persisted = await persistAndApplyGeneratedCover(body.composition, onApply);
+      const persisted = await generateAndApplyAICover(policy, onApply);
       setGenerated(persisted);
       try {
         await saveGenerated(persisted);
