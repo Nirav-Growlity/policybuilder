@@ -98,6 +98,14 @@
     border-radius: 14px;
     box-shadow: var(--shadow-soft);
   }
+  .draft-card-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  @media (min-width: 640px) {
+    .draft-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
   .ink-link {
     color: var(--color-forest);
     text-decoration: none;

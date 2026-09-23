@@ -25,6 +25,22 @@ test("custom cover keeps its background image without rendering a background lab
   assert.doesNotMatch(markup, /Cover background/);
 });
 
+test("cover-only preview renders the standard policy cover", () => {
+  const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, {
+    policy: templatePreviewPolicy("standard-pack", "environmental"),
+  }));
+  assert.match(markup, /<header class="policy-cover /);
+});
+
+test("cover-only preview renders the active AI cover composition", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.aiCoverComposition = createAICoverComposition(policy, "data:image/png;base64,art", fallbackAICoverLayout());
+  policy.activeCoverVariant = "ai";
+  const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, { policy }));
+  assert.match(markup, /data-cover-mode="custom"/);
+  assert.match(markup, /policy-custom-cover-background/);
+});
+
 test("list formatting keeps legacy defaults and independently changes every document marker", () => {
   const legacy = templatePreviewPolicy("standard-pack", "environmental");
   assert.deepEqual(buildDocumentRenderModel(legacy).listFormatting, DEFAULT_POLICY_LIST_FORMATTING);

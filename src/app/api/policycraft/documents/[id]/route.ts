@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getPolicyCraftAuth } from "@/lib/policycraft-auth";
-import { archiveDocument, getDocument, renameDocument, restoreDocument, updateDocument } from "@/lib/policycraft-repository";
+import { archiveDocument, deleteArchivedDocument, getDocument, renameDocument, restoreDocument, updateDocument } from "@/lib/policycraft-repository";
 import type { PolicyCraftDocumentState } from "@/lib/policycraft-types";
 import { normalizePolicyCovers } from "@/lib/cover-composition";
 
@@ -65,4 +65,14 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
   if (result === "conflict") return NextResponse.json({ error: "Document changed by another user" }, { status: 409 });
   const document = await getDocument(auth.organization.id, id);
   return NextResponse.json({ document });
+}
+
+export async function DELETE(_request: Request, context: { params: Promise<{ id: string }> }) {
+  const auth = await getPolicyCraftAuth();
+  if (!auth) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const { id } = await context.params;
+  const deleted = await deleteArchivedDocument(auth.organization.id, id);
+  return deleted
+    ? NextResponse.json({ ok: true })
+    : NextResponse.json({ error: "Archived document not found" }, { status: 404 });
 }

@@ -1,5 +1,24 @@
 import type { ImportedPolicyContext, Policy, PolicyType, StepId } from "./types";
 
+export type PolicyCoverPreviewSnapshot = Pick<Policy,
+  | "policyType"
+  | "presentationTemplate"
+  | "documentTemplate"
+  | "documentTheme"
+  | "documentThemeOverrides"
+  | "templateBrandOverrides"
+  | "brandColorSource"
+  | "visualStyle"
+  | "logoPosition"
+  | "typography"
+  | "featureImage"
+  | "coverComposition"
+  | "aiCoverComposition"
+  | "activeCoverVariant"
+> & {
+  company: Pick<Policy["company"], "name" | "companyLogo" | "logoPalette" | "docNum" | "effectiveDate" | "revNum" | "reviewDate">;
+};
+
 export type CompanyMasterSite = {
   id: string;
   location: string;
@@ -35,6 +54,7 @@ export type PolicyDocumentSummary = {
   updatedAt: string;
   createdAt: string;
   archivedAt: string | null;
+  coverPreview?: PolicyCoverPreviewSnapshot;
 };
 
 export type StoredPolicyDocument = PolicyDocumentSummary & {
