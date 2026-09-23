@@ -162,7 +162,7 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
           `}</style>
         </div> : <>
           {aiCoverError ? <div className={`flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-[12px] ${aiCoverState === "failed" ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-900"}`} role={aiCoverState === "failed" ? "alert" : "status"}><span>{aiCoverError}{aiCoverState === "failed" ? " The manual cover is shown below." : ""}</span>{aiCoverState === "failed" ? <button type="button" className="shrink-0 rounded-md bg-[var(--color-forest)] px-2.5 py-1.5 font-semibold text-white" onClick={() => void startAICoverGeneration()}>Retry</button> : null}</div> : null}
-          <div key={`${policy.documentTheme || "governance-manual"}-${policy.activeCoverVariant || "manual"}`} className="min-h-0 flex-1 pr-1"><PdfPolicyPreview policy={policy} /></div>
+          <div className="min-h-0 flex-1 pr-1"><PdfPolicyPreview policy={policy} /></div>
         </>}
       </div>}
     </div>

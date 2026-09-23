@@ -3,10 +3,12 @@ import * as React from "react";
 import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
 import { policyPreviewKey } from "@/lib/pdf-preview-state";
 import { getPdfPageWidth } from "@/lib/pdf-preview-layout";
+import { PdfRenderLoader } from "@/components/policy/pdf-render-loader";
 import type { Policy } from "@/lib/types";
 import "pdfjs-dist/web/pdf_viewer.css";
 
-type PreviewResult = { key: string; bytes: Uint8Array };
+type PreviewResult = { key: string; bytes: Uint8Array; id: number };
+type PdfViewState = { pageNumber: number; zoom: string; viewMode: "continuous" | "paged" };
 
 // Keep completed previews across remounts (theme dialogs and builder steps are
 // frequently opened more than once) and deduplicate requests shared by those
@@ -56,59 +58,93 @@ function requestPreview(key: string): Promise<Uint8Array> {
 
 export function PdfPolicyPreview({ policy }: { policy: Policy }) {
   const key = policyPreviewKey(policy);
-  const [result, setResult] = React.useState<PreviewResult | null>(() => {
+  const [active, setActive] = React.useState<PreviewResult | null>(() => {
     const bytes = previewCache.get(key);
-    return bytes ? { key, bytes } : null;
+    return bytes ? { key, bytes, id: 0 } : null;
   });
-  const [renderedKey, setRenderedKey] = React.useState("");
+  const [candidate, setCandidate] = React.useState<PreviewResult | null>(null);
+  const [paintedId, setPaintedId] = React.useState<number | null>(null);
+  const [view, setView] = React.useState<PdfViewState>({ pageNumber: 1, zoom: "fit", viewMode: "continuous" });
   const [failure, setFailure] = React.useState<{ key: string; message: string } | null>(null);
-  const [retry, setRetry] = React.useState(0);
+  const [retry, setRetry] = React.useState<{ key: string; count: number } | null>(null);
+  const nextId = React.useRef(1);
+  const currentKey = React.useRef(key);
+  React.useLayoutEffect(() => { currentKey.current = key; }, [key]);
+  const retryCount = retry?.key === key ? retry.count : 0;
   React.useEffect(() => {
+    // A cached, already mounted result can paint without another request.
+    if (active?.key === key && retryCount === 0) return;
     let disposed = false;
     const timer = setTimeout(async () => {
       try {
         const bytes = await requestPreview(key);
         if (disposed) return;
-        setResult({ key, bytes });
+        setCandidate({ key, bytes, id: nextId.current++ });
         setFailure(null);
       } catch (error) {
-        if (!disposed) setFailure({ key, message: error instanceof Error ? error.message : "Preview unavailable." });
+        if (!disposed) { setCandidate(current => current?.key === key ? null : current); setFailure({ key, message: error instanceof Error ? error.message : "Preview unavailable." }); }
       }
     }, 0);
     return () => { disposed = true; clearTimeout(timer); };
-  }, [key, retry]);
-  const updating = renderedKey !== key;
-  const onRendered = React.useCallback(() => {
-    if (!result || result.key !== key) return;
-    setRenderedKey(result.key);
-  }, [result, key]);
-  const onRenderError = React.useCallback(() => setFailure({ key, message: "Could not display this PDF. Please retry." }), [key]);
-  return <div className="pdf-preview" aria-label="PDF document preview" aria-busy={updating}>
+    // active is deliberately read only when a key or retry changes; promoting
+    // a painted candidate must not start the same request again.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key, retryCount]);
+  const currentCandidate = candidate?.key === key ? candidate : null;
+  const hasPaintedActive = active !== null && paintedId === active.id;
+  const currentFailure = failure?.key === key ? failure : null;
+  const ready = hasPaintedActive && active?.key === key && retryCount === 0;
+  const updating = !ready && !currentFailure;
+  const visible = updating ? null : hasPaintedActive ? active : currentCandidate || active;
+  const results = [active, currentCandidate].filter((result): result is PreviewResult => result !== null);
+  const onRendered = (result: PreviewResult) => {
+    if (currentKey.current !== result.key) return;
+    if (currentCandidate?.id === result.id) {
+      setActive(result);
+      setPaintedId(result.id);
+      setCandidate(current => current?.id === result.id ? null : current);
+      setRetry(null);
+      setFailure(null);
+    } else if (active?.id === result.id) {
+      setPaintedId(result.id);
+    }
+  };
+  const onRenderError = (result: PreviewResult) => {
+    if (currentKey.current !== result.key) return;
+    setFailure({ key: result.key, message: "Could not display this PDF. Please retry." });
+    setCandidate(current => current?.id === result.id ? null : current);
+  };
+  return <div className="pdf-preview" aria-label="PDF document preview" aria-busy={updating || undefined}>
     <div className="mb-2 flex min-h-8 items-center justify-between gap-3 px-1 text-[12px] text-[var(--color-muted)]" role="status" aria-live="polite">
       <span className="flex min-w-0 items-center gap-2">
-        <span className={`h-2 w-2 shrink-0 rounded-full ${failure?.key === key ? "bg-[#b73a3a]" : updating ? "animate-pulse bg-[#b58a23] motion-reduce:animate-none" : "bg-[var(--color-forest-mid)]"}`} />
-        <span className="truncate">{failure?.key === key ? failure.message : updating ? "Updating PDF preview…" : "PDF preview ready"}</span>
+        <span className={`h-2 w-2 shrink-0 rounded-full ${currentFailure ? "bg-[#b73a3a]" : updating ? "animate-pulse bg-[#b58a23] motion-reduce:animate-none" : "bg-[var(--color-forest-mid)]"}`} />
+        <span className="truncate">{currentFailure ? `${currentFailure.message}${hasPaintedActive && active?.key !== key ? " Showing previous version." : ""}` : updating ? "Updating PDF preview…" : "PDF preview ready"}</span>
       </span>
-      <span className="shrink-0 text-[11px] text-[#89948d]">{failure?.key === key ? null : updating ? "Rendering" : "Matches download"}</span>
-      {failure?.key === key && <button type="button" className="shrink-0 rounded-md border border-[var(--color-line-2)] bg-white px-2.5 py-1 text-[11px] font-semibold text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)]" onClick={() => { setFailure(null); setRetry(v => v + 1); }}>Retry preview</button>}
+      <span className="shrink-0 text-[11px] text-[#89948d]">{currentFailure ? null : updating ? "Rendering" : "Matches download"}</span>
+      {currentFailure && <button type="button" className="shrink-0 rounded-md border border-[var(--color-line-2)] bg-white px-2.5 py-1 text-[11px] font-semibold text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)]" onClick={() => { setFailure(null); setRetry(current => ({ key, count: current?.key === key ? current.count + 1 : 1 })); }}>Retry preview</button>}
     </div>
-    {result ? <PdfPages bytes={result.bytes} onRendered={onRendered} onError={onRenderError} /> : <div className="mx-auto grid aspect-[210/297] max-w-[794px] place-items-center rounded-xl border border-[var(--color-line)] bg-white text-sm text-slate-500 shadow-[0_8px_28px_rgba(14,26,20,.06)]">Preparing document…</div>}
+    <div className="relative">
+      {results.map(result => <div key={result.id} className={result.id === visible?.id ? "relative" : "invisible pointer-events-none absolute inset-x-0 top-0"} aria-hidden={result.id !== visible?.id} inert={result.id !== visible?.id}>
+        <PdfPages bytes={result.bytes} view={view} onViewChange={setView} interactive={result.id === visible?.id} onRendered={() => onRendered(result)} onError={() => onRenderError(result)} />
+      </div>)}
+      {(updating || !visible) && <div className="grid min-h-[clamp(460px,70vh,700px)] w-full place-items-center"><PdfRenderLoader updating={hasPaintedActive && updating} still={!!currentFailure} /></div>}
+    </div>
   </div>;
 }
 
-export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; onRendered?: () => void; onError?: () => void }) {
+export function PdfPages({ bytes, view, onViewChange, interactive, onRendered, onError }: { bytes: Uint8Array; view: PdfViewState; onViewChange: React.Dispatch<React.SetStateAction<PdfViewState>>; interactive: boolean; onRendered?: () => void; onError?: () => void }) {
   const errorHandler = React.useRef(onError);
   React.useEffect(() => { errorHandler.current = onError; }, [onError]);
   const [document, setDocument] = React.useState<PDFDocumentProxy | null>(null);
   const [source, setSource] = React.useState<Uint8Array | null>(null);
   const [error, setError] = React.useState("");
-  const [pageNumber, setPageNumber] = React.useState(1);
-  const [zoom, setZoom] = React.useState("fit");
-  const [viewMode, setViewMode] = React.useState<"continuous" | "paged">("continuous");
+  const { zoom, viewMode } = view;
+  const pageNumber = Math.min(view.pageNumber, document?.numPages || view.pageNumber);
   const host = React.useRef<HTMLDivElement>(null);
   const readyReported = React.useRef(false);
+  const paintedPages = React.useRef(new Set<number>());
   const [width, setWidth] = React.useState(700);
-  const [mountedPages, setMountedPages] = React.useState<{ document: PDFDocumentProxy | null; pages: Set<number> }>(() => ({ document: null, pages: new Set([1]) }));
+  const [mountedPages, setMountedPages] = React.useState<{ document: PDFDocumentProxy | null; pages: Set<number> }>(() => ({ document: null, pages: new Set([1, view.pageNumber]) }));
   React.useEffect(() => {
     const element = host.current;
     if (!element) return;
@@ -117,6 +153,7 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
   }, []);
   React.useEffect(() => {
     readyReported.current = false;
+    paintedPages.current.clear();
     let disposed = false;
     let task: ReturnType<typeof import("pdfjs-dist")["getDocument"]> | undefined;
     void import("pdfjs-dist").then(async pdfjs => {
@@ -124,16 +161,20 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
       pdfjs.GlobalWorkerOptions.workerSrc = "/api/pdf-worker";
       task = pdfjs.getDocument({ data: bytes.slice() });
       const pdf = await task.promise;
-      if (!disposed) { setDocument(pdf); setSource(bytes); setPageNumber(current => Math.min(current, pdf.numPages)); setError(""); }
+      if (!disposed) { setDocument(pdf); setSource(bytes); setError(""); }
     }).catch(() => { if (!disposed) { setError("Could not display this PDF. Please retry the preview."); errorHandler.current?.(); } });
     return () => { disposed = true; void task?.destroy(); };
   }, [bytes]);
   React.useEffect(() => {
-    if (viewMode !== "continuous" || !document) return;
+    if (!interactive || !document) return;
+    onViewChange(current => current.pageNumber > document.numPages ? { ...current, pageNumber: document.numPages } : current);
+  }, [document, interactive, onViewChange]);
+  React.useEffect(() => {
+    if (!interactive || viewMode !== "continuous" || !document) return;
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       const number = visible?.target instanceof HTMLElement ? Number(visible.target.dataset.pdfPage) : 0;
-      if (number) setPageNumber(number);
+      if (number) onViewChange(current => current.pageNumber === number ? current : { ...current, pageNumber: number });
       const pagesToMount = entries
         .filter(entry => entry.isIntersecting)
         .map(entry => entry.target instanceof HTMLElement ? Number(entry.target.dataset.pdfPage) : 0)
@@ -150,23 +191,35 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
     }, { threshold: [0.25, 0.6, 0.9] });
     host.current?.querySelectorAll<HTMLElement>("[data-pdf-page]").forEach(element => observer.observe(element));
     return () => observer.disconnect();
-  }, [document, viewMode]);
+  }, [document, viewMode, interactive, onViewChange]);
   const pages = document ? Array.from({ length: document.numPages }, (_, index) => index + 1) : [];
   const targetWidth = zoom === "fit" ? Math.min(width, 1000) : 794 * Number(zoom);
-  const pagesToRender = mountedPages.document === document ? mountedPages.pages : new Set([1]);
+  const pagesToRender = new Set(mountedPages.document === document ? mountedPages.pages : [1]);
+  pagesToRender.add(pageNumber);
   const goToPage = (next: number) => {
-    setPageNumber(next);
+    onViewChange(current => ({ ...current, pageNumber: next }));
     if (viewMode === "continuous") host.current?.querySelector<HTMLElement>(`[data-pdf-page="${next}"]`)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  const reportFirstPage = React.useCallback(() => {
+  const reportPage = React.useCallback((number: number) => {
     if (readyReported.current) return;
+    paintedPages.current.add(number);
+    const required = viewMode === "continuous" ? [1, pageNumber] : [pageNumber];
+    if (!required.every(page => paintedPages.current.has(page))) return;
     readyReported.current = true;
     onRendered?.();
-  }, [onRendered]);
+  }, [onRendered, pageNumber, viewMode]);
+  React.useEffect(() => {
+    if (readyReported.current || source !== bytes) return;
+    const required = viewMode === "continuous" ? [1, pageNumber] : [pageNumber];
+    if (required.every(page => paintedPages.current.has(page))) {
+      readyReported.current = true;
+      onRendered?.();
+    }
+  }, [bytes, onRendered, pageNumber, source, viewMode]);
   const renderPdfPage = (number: number) => {
     const pageWidth = getPdfPageWidth(number, targetWidth);
     return <div key={number} data-pdf-page={number} className="mx-auto" style={{ width: pageWidth, aspectRatio: "210 / 297" }}>
-      {pagesToRender.has(number) && <PdfPage document={document!} number={number} width={pageWidth} onRendered={number === 1 && source === bytes ? reportFirstPage : undefined} />}
+      {pagesToRender.has(number) && <PdfPage document={document!} number={number} width={pageWidth} onRendered={(number === 1 || number === pageNumber) && source === bytes ? () => reportPage(number) : undefined} onError={onError} />}
     </div>;
   };
   return <div ref={host} className="pdf-pages rounded-xl border border-[var(--color-line)] bg-[#eef1ed]">
@@ -182,23 +235,25 @@ export function PdfPages({ bytes, onRendered, onError }: { bytes: Uint8Array; on
       </div>
       <div className="flex flex-wrap items-center gap-2">
         <div className="flex rounded-lg border border-[var(--color-line)] bg-[#f5f6f3] p-0.5" role="group" aria-label="Document view">
-          <button type="button" aria-pressed={viewMode === "continuous"} onClick={() => setViewMode("continuous")} className={`h-7 rounded-md px-3 text-[11px] font-medium transition-colors ${viewMode === "continuous" ? "bg-[var(--color-forest)] text-white shadow-sm" : "text-[var(--color-ink-2)] hover:bg-white"}`}>Continuous</button>
-          <button type="button" aria-pressed={viewMode === "paged"} onClick={() => setViewMode("paged")} className={`h-7 rounded-md px-3 text-[11px] font-medium transition-colors ${viewMode === "paged" ? "bg-[var(--color-forest)] text-white shadow-sm" : "text-[var(--color-ink-2)] hover:bg-white"}`}>Single page</button>
+          <button type="button" aria-pressed={viewMode === "continuous"} onClick={() => onViewChange(current => ({ ...current, viewMode: "continuous" }))} className={`h-7 rounded-md px-3 text-[11px] font-medium transition-colors ${viewMode === "continuous" ? "bg-[var(--color-forest)] text-white shadow-sm" : "text-[var(--color-ink-2)] hover:bg-white"}`}>Continuous</button>
+          <button type="button" aria-pressed={viewMode === "paged"} onClick={() => onViewChange(current => ({ ...current, viewMode: "paged" }))} className={`h-7 rounded-md px-3 text-[11px] font-medium transition-colors ${viewMode === "paged" ? "bg-[var(--color-forest)] text-white shadow-sm" : "text-[var(--color-ink-2)] hover:bg-white"}`}>Single page</button>
         </div>
-        <select aria-label="Preview zoom" value={zoom} onChange={e => setZoom(e.target.value)} className="h-8 rounded-md border border-[var(--color-line)] bg-white px-2.5 text-[11px] font-medium text-[var(--color-ink-2)] outline-none transition-colors focus:border-[var(--color-forest)]">
+        <select aria-label="Preview zoom" value={zoom} onChange={e => onViewChange(current => ({ ...current, zoom: e.target.value }))} className="h-8 rounded-md border border-[var(--color-line)] bg-white px-2.5 text-[11px] font-medium text-[var(--color-ink-2)] outline-none transition-colors focus:border-[var(--color-forest)]">
           <option value="fit">Fit to width</option><option value=".75">75%</option><option value="1">100%</option><option value="1.25">125%</option>
         </select>
       </div>
     </div>
     {error && <p role="alert" className="mx-4 mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[12px] text-red-800">{error}</p>}
-    <div className={viewMode === "continuous" ? "min-h-[480px] space-y-8 overflow-x-auto px-3 py-5 sm:px-6 sm:py-7" : "min-h-[480px] overflow-x-auto px-3 py-5 sm:px-6 sm:py-7"}>{document && (viewMode === "continuous" ? pages.map(renderPdfPage) : <PdfPage document={document} number={pageNumber} width={getPdfPageWidth(pageNumber, targetWidth)} onRendered={source === bytes ? onRendered : undefined} />)}</div>
+    <div className={viewMode === "continuous" ? "min-h-[480px] space-y-8 overflow-x-auto px-3 py-5 sm:px-6 sm:py-7" : "min-h-[480px] overflow-x-auto px-3 py-5 sm:px-6 sm:py-7"}>{document && (viewMode === "continuous" ? pages.map(renderPdfPage) : <PdfPage document={document} number={pageNumber} width={getPdfPageWidth(pageNumber, targetWidth)} onRendered={source === bytes ? () => reportPage(pageNumber) : undefined} onError={onError} />)}</div>
   </div>;
 }
 
-function PdfPage({ document: pdf, number, width, onRendered }: { document: PDFDocumentProxy; number: number; width: number; onRendered?: () => void }) {
+function PdfPage({ document: pdf, number, width, onRendered, onError }: { document: PDFDocumentProxy; number: number; width: number; onRendered?: () => void; onError?: () => void }) {
   const surface = React.useRef<HTMLDivElement>(null);
   const renderedHandler = React.useRef(onRendered);
+  const errorHandler = React.useRef(onError);
   React.useEffect(() => { renderedHandler.current = onRendered; }, [onRendered]);
+  React.useEffect(() => { errorHandler.current = onError; }, [onError]);
   React.useEffect(() => {
     let cancelled = false;
     let render: ReturnType<PDFPageProxy["render"]> | undefined;
@@ -231,7 +286,7 @@ function PdfPage({ document: pdf, number, width, onRendered }: { document: PDFDo
       // Commit the matching pixels and text in one synchronous operation.
       surface.current.replaceChildren(nextCanvas, nextText);
       renderedHandler.current?.();
-    })().catch(error => { if (!cancelled) console.error("PDF page rendering failed", error); });
+    })().catch(error => { if (!cancelled) { console.error("PDF page rendering failed", error); errorHandler.current?.(); } });
     return () => { cancelled = true; render?.cancel(); layer?.cancel(); };
   }, [pdf, number, width]);
   return <div ref={surface} role="group" aria-label={`Preview page ${number}`} className="relative mx-auto aspect-[210/297] bg-white shadow-[0_8px_28px_rgba(14,26,20,.14)]" style={{ width }} />;
