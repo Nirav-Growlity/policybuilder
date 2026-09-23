@@ -150,17 +150,30 @@ export async function getCompanyMaster(auth: PolicyCraftAuthContext): Promise<Co
 }
 
 export async function listDocuments(orgId: number, archived = false): Promise<PolicyDocumentSummary[]> {
+  const archivePredicate = archived ? "IS NOT NULL" : "IS NULL";
+  const [orderedIds] = await policyCraftPool.execute<(RowDataPacket & { id: string })[]>(
+    `SELECT id
+       FROM policycraft_documents
+      WHERE org_id = ? AND archived_at ${archivePredicate}
+      ORDER BY updated_at DESC, id ASC`,
+    [orgId],
+  );
+  if (orderedIds.length === 0) return [];
+
+  const idPlaceholders = orderedIds.map(() => "?").join(", ");
   const [rows] = await policyCraftPool.execute<DocumentRow[]>(
     `SELECT id, title, policy_type, current_step, policy_json, imported_policy_json,
             lock_version, created_at, updated_at, archived_at
        FROM policycraft_documents
-      WHERE org_id = ? AND archived_at ${archived ? "IS NOT NULL" : "IS NULL"}
-      ORDER BY updated_at DESC`,
-    [orgId],
+      WHERE org_id = ? AND archived_at ${archivePredicate} AND id IN (${idPlaceholders})`,
+    [orgId, ...orderedIds.map((row) => row.id)],
   );
-  return rows.map((row) => {
+  const rowsById = new Map(rows.map((row) => [row.id, row]));
+  return orderedIds.flatMap(({ id }) => {
+    const row = rowsById.get(id);
+    if (!row) return [];
     const policy = parseJson<Policy>(row.policy_json);
-    return { ...toSummary(row), coverPreview: toCoverPreview(policy) };
+    return [{ ...toSummary(row), coverPreview: toCoverPreview(policy) }];
   });
 }
 
