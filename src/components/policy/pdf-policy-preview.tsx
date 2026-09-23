@@ -95,7 +95,8 @@ export function PdfPolicyPreview({ policy }: { policy: Policy }) {
   const currentFailure = failure?.key === key ? failure : null;
   const ready = hasPaintedActive && active?.key === key && retryCount === 0;
   const updating = !ready && !currentFailure;
-  const visible = updating ? null : hasPaintedActive ? active : currentCandidate || active;
+  const visible = updating ? hasPaintedActive ? active : null : hasPaintedActive ? active : currentCandidate || active;
+  const showUpdateOverlay = updating && hasPaintedActive;
   const results = [active, currentCandidate].filter((result): result is PreviewResult => result !== null);
   const onRendered = (result: PreviewResult) => {
     if (currentKey.current !== result.key) return;
@@ -124,15 +125,20 @@ export function PdfPolicyPreview({ policy }: { policy: Policy }) {
       {currentFailure && <button type="button" className="shrink-0 rounded-md border border-[var(--color-line-2)] bg-white px-2.5 py-1 text-[11px] font-semibold text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)]" onClick={() => { setFailure(null); setRetry(current => ({ key, count: current?.key === key ? current.count + 1 : 1 })); }}>Retry preview</button>}
     </div>
     <div className="relative">
+      {showUpdateOverlay && <div className="pointer-events-none sticky top-0 z-20 h-px">
+        <div className="absolute inset-x-0 top-0 grid h-[clamp(460px,70vh,700px)] place-items-center">
+          <PdfRenderLoader updating />
+        </div>
+      </div>}
       {results.map(result => <div key={result.id} className={result.id === visible?.id ? "relative" : "invisible pointer-events-none absolute inset-x-0 top-0"} aria-hidden={result.id !== visible?.id} inert={result.id !== visible?.id}>
-        <PdfPages bytes={result.bytes} view={view} onViewChange={setView} interactive={result.id === visible?.id} onRendered={() => onRendered(result)} onError={() => onRenderError(result)} />
+        <PdfPages bytes={result.bytes} view={view} onViewChange={setView} interactive={result.id === visible?.id} dimmed={showUpdateOverlay && result.id === active?.id} onRendered={() => onRendered(result)} onError={() => onRenderError(result)} />
       </div>)}
-      {(updating || !visible) && <div className="grid min-h-[clamp(460px,70vh,700px)] w-full place-items-center"><PdfRenderLoader updating={hasPaintedActive && updating} still={!!currentFailure} /></div>}
+      {!showUpdateOverlay && (updating || !visible) && <div className="grid min-h-[clamp(460px,70vh,700px)] w-full place-items-center"><PdfRenderLoader updating={hasPaintedActive && updating} still={!!currentFailure} /></div>}
     </div>
   </div>;
 }
 
-export function PdfPages({ bytes, view, onViewChange, interactive, onRendered, onError }: { bytes: Uint8Array; view: PdfViewState; onViewChange: React.Dispatch<React.SetStateAction<PdfViewState>>; interactive: boolean; onRendered?: () => void; onError?: () => void }) {
+export function PdfPages({ bytes, view, onViewChange, interactive, dimmed = false, onRendered, onError }: { bytes: Uint8Array; view: PdfViewState; onViewChange: React.Dispatch<React.SetStateAction<PdfViewState>>; interactive: boolean; dimmed?: boolean; onRendered?: () => void; onError?: () => void }) {
   const errorHandler = React.useRef(onError);
   React.useEffect(() => { errorHandler.current = onError; }, [onError]);
   const [document, setDocument] = React.useState<PDFDocumentProxy | null>(null);
@@ -244,7 +250,7 @@ export function PdfPages({ bytes, view, onViewChange, interactive, onRendered, o
       </div>
     </div>
     {error && <p role="alert" className="mx-4 mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[12px] text-red-800">{error}</p>}
-    <div className={viewMode === "continuous" ? "min-h-[480px] space-y-8 overflow-x-auto px-3 py-5 sm:px-6 sm:py-7" : "min-h-[480px] overflow-x-auto px-3 py-5 sm:px-6 sm:py-7"}>{document && (viewMode === "continuous" ? pages.map(renderPdfPage) : <PdfPage document={document} number={pageNumber} width={getPdfPageWidth(pageNumber, targetWidth)} onRendered={source === bytes ? () => reportPage(pageNumber) : undefined} onError={onError} />)}</div>
+    <div className={viewMode === "continuous" ? "min-h-[480px] space-y-8 overflow-x-auto px-3 py-5 sm:px-6 sm:py-7" : "min-h-[480px] overflow-x-auto px-3 py-5 sm:px-6 sm:py-7"} style={{ opacity: dimmed ? 0.16 : 1, transition: "opacity 180ms ease" }}>{document && (viewMode === "continuous" ? pages.map(renderPdfPage) : <PdfPage document={document} number={pageNumber} width={getPdfPageWidth(pageNumber, targetWidth)} onRendered={source === bytes ? () => reportPage(pageNumber) : undefined} onError={onError} />)}</div>
   </div>;
 }
 
