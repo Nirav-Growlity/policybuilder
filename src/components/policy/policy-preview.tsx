@@ -50,7 +50,6 @@ export function PolicyPreview({ policy, customCoverPng }: { policy: Policy; cust
           <PolicySection key={section.id} section={section} model={model} policy={policy} />
         ))}
       </main>
-      <PolicyFooter model={model} />
       {model.acknowledgement && <Acknowledgement model={model} />}
     </article>
   );
@@ -720,12 +719,6 @@ function Blocks({ blocks, recipe }: { blocks: RichTextBlock[]; recipe: string })
   })}</div>;
 }
 
-function PolicyFooter({ model }: { model: DocumentRenderModel }) {
-  const layout = model.theme.layout.runningFurniture;
-  const reviewer = model.footer.reviewerDesignations.join(", ");
-  return <footer className={`policy-footer footer-${layout} ${model.theme.collection === "professional" ? `professional-footer-${model.theme.layout.professionalVariant || "corporate"}` : ""}`}><span><b>Document No.</b>{model.footer.documentNumber}</span><span><b>Review</b>{[model.footer.reviewDate, reviewer].filter(Boolean).join(" · ")}</span><span><b>Page</b>—</span></footer>;
-}
-
 function Acknowledgement({ model }: { model: DocumentRenderModel }) {
   const acknowledgement = model.acknowledgement!;
   return <section className={`policy-acknowledgement acknowledgement-${model.theme.layout.acknowledgement}`}><span className="ack-kicker">Acknowledgement · Final page</span><h2>{acknowledgement.title}</h2><p>{acknowledgement.statement}</p><div className="ack-fields">{acknowledgement.fields.map((field) => <div key={field} className={field === "Signature" ? "ack-signature" : ""}><span>{field}</span><i /></div>)}</div></section>;
@@ -1127,14 +1120,6 @@ const previewStyles = `
   .policy-custom-blocks > p { margin-bottom: 12px; }
   .policy-custom-blocks ul, .policy-custom-blocks ol { margin: 12px 0; padding-left: 20px; }
   .policy-custom-blocks li { margin: 5px 0; }
-  .policy-footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr; align-items: center; gap: 18px; padding: 18px 50px; color: var(--doc-muted); font-size: 8px; }
-  .policy-footer > span { min-width: 0; overflow-wrap: anywhere; }
-  .policy-footer > span:nth-child(2) { text-align: center; }
-  .policy-footer > span:last-child { text-align: right; }
-  .policy-footer b { display: block; margin-bottom: 2px; color: var(--doc-primary); font-size: .9em; letter-spacing: .08em; text-transform: uppercase; }
-  .footer-breadcrumb-bar { background: var(--doc-primary); color: var(--doc-on-primary); }
-  .footer-breadcrumb-bar b { color: var(--doc-on-primary); }
-  .footer-outer-folio { margin-inline: 64px; padding-inline: 0; font-style: italic; }
 
   .policy-acknowledgement { margin-top: 0; border-top: 1px dashed var(--doc-line); padding: 50px 64px 60px; background: var(--doc-soft); }
   .policy-acknowledgement .ack-kicker { color: var(--doc-primary); font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
@@ -1175,8 +1160,6 @@ const previewStyles = `
     .policy-metadata-strip { grid-template-columns: repeat(2, 1fr); }
     .recipe-dossier-columns.policy-focus-list, .recipe-atlas-modules.policy-focus-list, .recipe-dossier-columns.policy-objective-groups, .recipe-atlas-modules.policy-objective-groups, .responsibility-numbered-rail, .responsibility-modular-grid, .sdg-atlas-mosaic { grid-template-columns: 1fr; }
     .policy-target-bands > div { grid-template-columns: 42px 1fr; }
-    .policy-footer { grid-template-columns: 1fr; gap: 8px; padding-inline: 28px; }
-    .policy-footer > span:nth-child(2), .policy-footer > span:last-child { text-align: left; }
   }
   @media (prefers-reduced-motion: reduce) { .policy-preview-document { animation: none; } }
 
@@ -1298,7 +1281,6 @@ const previewStyles = `
   [data-professional-variant="institutional"] .professional-toc h2 { font-family: var(--policy-heading-font); font-weight: 500; }
   [data-professional-variant="institutional"] .professional-section-heading { justify-content: center; border-block: 1px solid var(--doc-primary); padding-block: 3mm; }
   [data-professional-variant="institutional"] .professional-section-heading h2 { font-family: var(--policy-heading-font); font-weight: 500; }
-  [data-professional-variant="institutional"] .professional-footer-institutional { justify-content: center; }
   [data-professional-variant="institutional"] .policy-table { border: 0; }
   [data-professional-variant="institutional"] .policy-table th { background: transparent; color: var(--doc-primary); border-block: 2px double var(--doc-primary); font-family: var(--policy-heading-font); font-weight: 500; text-align: center; }
   [data-professional-variant="institutional"] .policy-table td { text-align: center; }
@@ -1371,7 +1353,6 @@ const previewStyles = `
     box-shadow: inset 0 0 0 1px var(--doc-line);
     background: var(--doc-paper);
   }
-  [data-collection="professional"] .policy-footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 8mm; padding: 4mm 20mm; background: var(--doc-paper); color: var(--doc-muted); font-size: 8pt; }
 
   /* Covers use real document content, typographic hierarchy and quiet rules. */
   [data-collection="professional"] .editorial-policy-cover { min-height: 230mm; box-sizing: border-box; display: flex; flex-direction: column; padding: 10mm 8mm 8mm; border: 0; background: transparent; }

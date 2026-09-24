@@ -67,9 +67,7 @@ export type DocumentRenderModel = {
     documentNumber: string;
     effectiveDate: string;
     reviewDate: string;
-    approver: string;
     revision: string;
-    reviewerDesignations: string[];
   };
 };
 
@@ -132,9 +130,7 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
       documentNumber: policy.company.docNum || "",
       effectiveDate: policy.company.effectiveDate || "",
       reviewDate: policy.company.reviewDate || "",
-      approver: policy.company.approver || "",
       revision: policy.company.revNum || "",
-      reviewerDesignations: (policy.company.reviewerDesignations || []).map((designation) => designation.trim()).filter(Boolean),
     },
   };
 }

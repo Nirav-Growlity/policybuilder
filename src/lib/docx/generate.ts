@@ -127,17 +127,6 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
     children.push(...wrapSection(section, content, model, spacingScale));
   });
 
-  children.push(
-    spacer(100),
-    new Paragraph({
-      spacing: { before: 160, after: 120 },
-      children: [
-        new TextRun({ text: "Approved by: ", bold: true, font: typography.fontFamily, color: documentHex(theme.colors.primaryDark) }),
-        new TextRun({ text: model.footer.approver, font: typography.fontFamily }),
-      ],
-    }),
-  );
-
   if (model.acknowledgement) {
     children.push(new Paragraph({ children: [new PageBreak()] }), ...buildAcknowledgement(model));
   }
@@ -1293,21 +1282,21 @@ function buildPageBackgroundHeader(model: DocumentRenderModel) {
 }
 
 function buildFooter(model: DocumentRenderModel) {
-  const { theme, typography } = model;
-  const color = documentHex(theme.colors.muted);
+  const { typography } = model;
+  const color = "000000";
   const width = contentWidth();
   const columns = [Math.floor(width * .3), Math.floor(width * .4), width - Math.floor(width * .3) - Math.floor(width * .4)];
   const cell = (label: string, value: ParagraphChild[], alignment: typeof AlignmentType[keyof typeof AlignmentType], cellWidth: number) => tableCell([
     new Paragraph({ alignment, spacing: { before: 80 }, children: [
-      new TextRun({ text: `${label} `, bold: true, color: documentHex(theme.colors.primary), size: 12, font: typography.fontFamily }),
+      new TextRun({ text: `${label} `, bold: true, color, size: 16, font: typography.fontFamily }),
       ...value,
     ] }),
   ], cellWidth, { margins: { top: 80, bottom: 20, left: 40, right: 40 } });
-  const reviewInfo = [model.footer.reviewDate, ...model.footer.reviewerDesignations].filter(Boolean).join(" · ");
+  const reviewInfo = model.footer.reviewDate;
   return new Footer({ children: [fixedTable([new TableRow({ children: [
-    cell("Document No.", [new TextRun({ text: model.footer.documentNumber, color, size: 12, font: typography.fontFamily })], AlignmentType.LEFT, columns[0]),
-    cell("Review", [new TextRun({ text: reviewInfo, color, size: 12, font: typography.fontFamily })], AlignmentType.CENTER, columns[1]),
-    cell("Page", [new TextRun({ text: " ", color, size: 12, font: typography.fontFamily }), new TextRun({ children: [PageNumber.CURRENT], color, size: 12, font: typography.fontFamily })], AlignmentType.RIGHT, columns[2]),
+    cell("Document No.", [new TextRun({ text: model.footer.documentNumber, color, size: 16, font: typography.fontFamily })], AlignmentType.LEFT, columns[0]),
+    cell("Next Review", [new TextRun({ text: reviewInfo, color, size: 16, font: typography.fontFamily })], AlignmentType.CENTER, columns[1]),
+    cell("Page", [new TextRun({ text: " ", color, size: 16, font: typography.fontFamily }), new TextRun({ children: [PageNumber.CURRENT], color, size: 16, font: typography.fontFamily })], AlignmentType.RIGHT, columns[2]),
   ] })], columns, { width })] });
 }
 

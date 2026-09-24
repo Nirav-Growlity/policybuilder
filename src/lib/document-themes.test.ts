@@ -224,7 +224,7 @@ test("optional document-control metadata remains blank when it is not authored",
   policy.company.approver = "";
   const model = buildDocumentRenderModel(policy);
   assert.deepEqual(model.cover.metadata.map((item) => item.value), ["", "", "", ""]);
-  assert.deepEqual(model.footer, { documentNumber: "", effectiveDate: "", reviewDate: "", approver: "", revision: "", reviewerDesignations: [] });
+  assert.deepEqual(model.footer, { documentNumber: "", effectiveDate: "", reviewDate: "", revision: "" });
 });
 
 test("custom theme overrides resolve without mutating the built-in theme", () => {

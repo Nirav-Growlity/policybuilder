@@ -89,13 +89,14 @@ async function generatePreviewPdfNow(policy: Policy): Promise<Buffer> {
       const headerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${topMargin}mm;margin:0 ${headerInset}mm;position:relative;display:block;overflow:visible;`;
       const footerHeight = theme.pageBorder.enabled ? Math.max(10, headerInset - 2) : 10;
       const footerShift = pageFooterVerticalShiftMm(theme.pageBorder);
-      const footerStyle = `box-sizing:border-box;font-family:Arial;font-size:8px;color:${theme.colors.muted};width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;gap:8mm;position:relative;transform:translateY(-${footerShift}mm);`;
+      const footerFontFamily = `'${model.typography.fontFamily.replace(/\\/g, "\\\\").replace(/'/g, "\\'")}'`;
+      const footerStyle = `box-sizing:border-box;font-family:${footerFontFamily};font-size:10px;font-weight:500;color:${theme.colors.ink};border-top:1px solid ${theme.colors.line};padding-top:2mm;width:calc(100% - ${headerInset * 2}mm);height:${footerHeight}mm;margin:0 ${headerInset}mm;display:grid;grid-template-columns:1fr 1.5fr 1fr;align-items:center;gap:8mm;position:relative;transform:translateY(-${footerShift}mm);`;
       const brandPosition = logoPosition === "right" ? "right:0;" : logoPosition === "center" ? "left:50%;" : "left:0;";
       const brandMarkup = `<span style="position:absolute;top:${logoCenter}mm;width:${logoFit.widthMm}mm;height:${logoFit.heightMm}mm;display:flex;align-items:center;justify-content:center;transform:${logoPosition === "center" ? "translate(-50%,-50%)" : "translateY(-50%)"};${brandPosition}">${logo}</span>`;
-      const reviewInfo = [model.footer.reviewDate, ...model.footer.reviewerDesignations].filter(Boolean).join(" · ");
+      const reviewInfo = model.footer.reviewDate;
       const output = await page.pdf({ format: "A4", printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true,
         headerTemplate: `<div style="${headerStyle}">${brandMarkup}</div>`,
-        footerTemplate: `<div style="${footerStyle}"><span><b>Document No.</b> ${escape(model.footer.documentNumber)}</span><span style="text-align:center;"><b>Review</b> ${escape(reviewInfo)}</span><span style="text-align:right;"><b>Page</b> <span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
+        footerTemplate: `<div style="${footerStyle}"><span><b>Document No.</b> ${escape(model.footer.documentNumber)}</span><span style="text-align:center;"><b>Next Review</b> ${escape(reviewInfo)}</span><span style="text-align:right;"><b>Page</b> <span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
         margin: { top: `${topMargin}mm`, right: `${horizontalMargin}mm`, bottom: `${horizontalMargin}mm`, left: `${horizontalMargin}mm` },
       });
       if (!output.length || output.subarray(0, 5).toString() !== "%PDF-") throw new Error("Invalid PDF output");
@@ -343,7 +344,7 @@ export function createPrintDocument(markup: string, policy: Policy, topMargin = 
     [data-collection="professional"] .professional-cover-frame { min-height:0; }
     [data-collection="professional"] .professional-meta { break-inside:avoid; flex-shrink:0; }
     .policy-toc { break-after:page; }
-    .policy-running-header,.policy-footer { display:none; }
+    .policy-running-header { display:none; }
     .policy-main { padding:0; }
     /* Professional preview rules add an on-screen reading inset. Print pages
        already receive their A4 margins from @page, so do not reserve that
