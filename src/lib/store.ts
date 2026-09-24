@@ -63,6 +63,8 @@ interface BuilderState {
   policy: Policy;
   importedPolicy: ImportedPolicyContext | null;
   coverEditorRequest: { variant: "manual" | "ai"; composition?: CoverComposition; requestId: string } | null;
+  aiCoverGenerationCount: number;
+  isAICoverGenerating: boolean;
   hydrated: boolean;
   setStep: (s: StepId) => void;
   next: () => void;
@@ -73,6 +75,8 @@ interface BuilderState {
   clearImportedPolicy: () => void;
   requestCoverEdit: (variant: "manual" | "ai", composition?: CoverComposition) => void;
   clearCoverEditorRequest: () => void;
+  beginAICoverGeneration: () => void;
+  endAICoverGeneration: () => void;
   startPolicy: (type: PolicyType) => void;
   reset: () => void;
   loadSample: () => void;
@@ -89,6 +93,8 @@ export const useBuilder = create<BuilderState>()(
       policy: initialPolicy(),
       importedPolicy: null,
       coverEditorRequest: null,
+      aiCoverGenerationCount: 0,
+      isAICoverGenerating: false,
       hydrated: false,
       setStep: (s) => set({ step: s }),
       next: () => {
@@ -118,6 +124,14 @@ export const useBuilder = create<BuilderState>()(
       clearImportedPolicy: () => set({ importedPolicy: null }),
       requestCoverEdit: (variant, composition) => set({ coverEditorRequest: { variant, composition, requestId: crypto.randomUUID() } }),
       clearCoverEditorRequest: () => set({ coverEditorRequest: null }),
+      beginAICoverGeneration: () => set((state) => {
+        const aiCoverGenerationCount = state.aiCoverGenerationCount + 1;
+        return { aiCoverGenerationCount, isAICoverGenerating: aiCoverGenerationCount > 0 };
+      }),
+      endAICoverGeneration: () => set((state) => {
+        const aiCoverGenerationCount = Math.max(0, state.aiCoverGenerationCount - 1);
+        return { aiCoverGenerationCount, isAICoverGenerating: aiCoverGenerationCount > 0 };
+      }),
       startPolicy: (type) => {
         const currentCompany = get().policy.company;
         const newPolicy = initialPolicy(type);

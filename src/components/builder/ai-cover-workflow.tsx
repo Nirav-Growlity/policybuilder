@@ -3,6 +3,7 @@
 import * as React from "react";
 import { RefreshCw, Sparkles } from "lucide-react";
 import { persistCoverArtwork, saveAICoverToLibrary } from "@/lib/ai-cover-library";
+import { useBuilder } from "@/lib/store";
 import type { CoverComposition, Policy } from "@/lib/types";
 
 type AICoverResponse = { composition?: CoverComposition; error?: string };
@@ -56,6 +57,8 @@ export function AICoverWorkflow({
   policy: Policy;
   onApply: AICoverHandler;
 }) {
+  const beginAICoverGeneration = useBuilder((state) => state.beginAICoverGeneration);
+  const endAICoverGeneration = useBuilder((state) => state.endAICoverGeneration);
   const [generated, setGenerated] = React.useState<CoverComposition | null>(null);
   const [generatedLibraryId, setGeneratedLibraryId] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
@@ -80,6 +83,7 @@ export function AICoverWorkflow({
     setError("");
     setGenerated(null);
     setGeneratedLibraryId(null);
+    beginAICoverGeneration();
     try {
       const persisted = await generateAndApplyAICover(policy, onApply);
       setGenerated(persisted);
@@ -92,8 +96,9 @@ export function AICoverWorkflow({
       setError(cause instanceof Error ? cause.message : "The AI cover could not be generated.");
     } finally {
       setBusy(false);
+      endAICoverGeneration();
     }
-  }, [onApply, policy, saveGenerated]);
+  }, [beginAICoverGeneration, endAICoverGeneration, onApply, policy, saveGenerated]);
 
   const retrySave = React.useCallback(async () => {
     if (!generated) return;
