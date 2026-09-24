@@ -171,7 +171,7 @@ function getSectionContent(policy: Policy, section: PolicySection): DocumentSect
     case "review": return { type: "narrative", text: policy.reviewMechanism };
     case "revision": return {
       type: "revision",
-      entries: resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate),
+      entries: resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate, policy.company.reviewFrequency),
     };
     case "custom": return { type: "custom", blocks: section.blocks || [] };
   }

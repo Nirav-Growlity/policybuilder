@@ -99,6 +99,7 @@ export function sectionHasContent(policy: Policy, section: PolicySection) {
       policy.revisionHistory,
       policy.company.effectiveDate,
       policy.company.lastReviewDate,
+      policy.company.reviewFrequency,
     ).length > 0;
     case "custom": return Boolean(section.blocks?.some((b) => b.text.trim()));
   }

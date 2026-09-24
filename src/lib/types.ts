@@ -1,4 +1,5 @@
 export type PolicyType = "environmental" | "labour-human-rights" | "living-wage" | "ethics" | "sustainable-procurement";
+export type ReviewFrequency = "Quarterly" | "Half-Yearly" | "Yearly" | "Bi-Yearly";
 
 export interface Site {
   id?: string;
@@ -23,6 +24,7 @@ export interface Company {
   effectiveDate: string;
   lastReviewDate?: string;
   reviewDate: string;
+  reviewFrequency?: ReviewFrequency;
   approver: string;
   reviewerDesignations?: string[];
 }

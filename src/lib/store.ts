@@ -38,6 +38,7 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
     effectiveDate: "",
     lastReviewDate: "",
     reviewDate: "",
+    reviewFrequency: "Yearly",
     approver: "",
     reviewerDesignations: [],
   },

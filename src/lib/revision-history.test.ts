@@ -26,6 +26,58 @@ test("uses effective-date anniversaries and the exact last review date", () => {
   ]);
 });
 
+test("generates quarterly revisions and keeps the exact last review date", () => {
+  const entries = resolveRevisionHistory(undefined, "2024-01-31", "2024-11-15", "Quarterly");
+
+  assert.deepEqual(entries.map(({ revisionNo, date }) => [revisionNo, date]), [
+    ["0.0", "31-01-2024"],
+    ["1.0", "30-04-2024"],
+    ["2.0", "31-07-2024"],
+    ["3.0", "31-10-2024"],
+    ["4.0", "15-11-2024"],
+  ]);
+});
+
+test("generates half-yearly and every-two-year schedules", () => {
+  const halfYearly = resolveRevisionHistory(undefined, "2023-02-28", "2024-02-28", "Half-Yearly");
+  const biYearly = resolveRevisionHistory(undefined, "2023-02-28", "2027-02-28", "Bi-Yearly");
+
+  assert.deepEqual(halfYearly.map(({ revisionNo, date }) => [revisionNo, date]), [
+    ["0.0", "28-02-2023"],
+    ["1.0", "28-08-2023"],
+    ["2.0", "28-02-2024"],
+  ]);
+  assert.deepEqual(biYearly.map(({ revisionNo, date }) => [revisionNo, date]), [
+    ["0.0", "28-02-2023"],
+    ["1.0", "28-02-2025"],
+    ["2.0", "28-02-2027"],
+  ]);
+});
+
+test("keeps custom rows when the schedule frequency changes", () => {
+  const annualEntries = resolveRevisionHistory(undefined, "2023-01-01", "2025-01-01");
+  const withCustom = [...annualEntries.slice(0, 1), {
+    revisionNo: "0.1",
+    date: "15-03-2023",
+    description: "Urgent correction",
+    source: "custom" as const,
+    scheduleAnchor: 0,
+  }, ...annualEntries.slice(1)];
+
+  const quarterlyEntries = resolveRevisionHistory(withCustom, "2023-01-01", "2024-01-01", "Quarterly");
+
+  assert.ok(quarterlyEntries.some((entry) => entry.source === "custom"
+    && entry.date === "15-03-2023"
+    && entry.description === "Urgent correction"));
+  assert.deepEqual(quarterlyEntries.filter((entry) => entry.source === "scheduled").map(({ date }) => date), [
+    "01-01-2023",
+    "01-04-2023",
+    "01-07-2023",
+    "01-10-2023",
+    "01-01-2024",
+  ]);
+});
+
 test("keeps only the effective-date row when there is no last review date", () => {
   const entries = resolveRevisionHistory(undefined, "2023-07-04");
 

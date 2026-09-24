@@ -1,5 +1,5 @@
 import { LEGACY_REVISION_HISTORY_DEFAULT, REVISION_HISTORY_DEFAULT } from "./constants";
-import type { Policy, RevisionEntry } from "./types";
+import type { Policy, ReviewFrequency, RevisionEntry } from "./types";
 
 const DATE_RE = /^(\d{4})-(\d{2})-(\d{2})$/;
 const MAJOR_REVISION_RE = /^(\d+)\.0$/;
@@ -20,13 +20,21 @@ function formatRevisionDate(isoDate: string): string {
   return `${day}-${month}-${year}`;
 }
 
-function anniversaryDate(effectiveDate: string, yearOffset: number): string {
+function scheduledDate(effectiveDate: string, monthOffset: number): string {
   const [, year, month, day] = DATE_RE.exec(effectiveDate)!;
-  const targetYear = Number(year) + yearOffset;
-  const targetMonth = Number(month);
+  const date = new Date(Date.UTC(Number(year), Number(month) - 1 + monthOffset, 1));
+  const targetYear = date.getUTCFullYear();
+  const targetMonth = date.getUTCMonth() + 1;
   const maxDay = new Date(Date.UTC(targetYear, targetMonth, 0)).getUTCDate();
-  return `${targetYear}-${month}-${String(Math.min(Number(day), maxDay)).padStart(2, "0")}`;
+  return `${targetYear}-${String(targetMonth).padStart(2, "0")}-${String(Math.min(Number(day), maxDay)).padStart(2, "0")}`;
 }
+
+const FREQUENCY_MONTHS: Record<ReviewFrequency, number> = {
+  Quarterly: 3,
+  "Half-Yearly": 6,
+  Yearly: 12,
+  "Bi-Yearly": 24,
+};
 
 function isLegacyDefault(entries: RevisionEntry[]): boolean {
   return entries.length === LEGACY_REVISION_HISTORY_DEFAULT.length
@@ -69,6 +77,7 @@ function buildScheduledEntries(
   effectiveDate: string,
   lastReviewDate: string | undefined,
   previousScheduled: RevisionEntry[],
+  frequency: ReviewFrequency,
 ): RevisionEntry[] {
   const validEffectiveDate = isValidIsoDate(effectiveDate) ? effectiveDate : "";
   if (!validEffectiveDate) return [];
@@ -76,27 +85,38 @@ function buildScheduledEntries(
   const validLastReviewDate = isValidIsoDate(lastReviewDate) && lastReviewDate >= validEffectiveDate
     ? lastReviewDate
     : "";
-  const previousYear = Number(DATE_RE.exec(validEffectiveDate)![1]);
-  const reviewYear = validLastReviewDate ? Number(DATE_RE.exec(validLastReviewDate)![1]) : previousYear;
-  const yearSpan = reviewYear - previousYear;
+  const intervalMonths = FREQUENCY_MONTHS[frequency] || FREQUENCY_MONTHS.Yearly;
+  const dates = [validEffectiveDate];
+  if (validLastReviewDate && validLastReviewDate > validEffectiveDate) {
+    if (intervalMonths === FREQUENCY_MONTHS.Yearly) {
+      const yearSpan = Number(DATE_RE.exec(validLastReviewDate)![1]) - Number(DATE_RE.exec(validEffectiveDate)![1]);
+      const count = yearSpan === 0 ? 2 : yearSpan + 1;
+      for (let index = 1; index < count; index += 1) {
+        dates.push(index === count - 1
+          ? validLastReviewDate
+          : scheduledDate(validEffectiveDate, intervalMonths * index));
+      }
+    } else {
+      for (let index = 1; ; index += 1) {
+        const date = scheduledDate(validEffectiveDate, intervalMonths * index);
+        if (date >= validLastReviewDate) {
+          if (date !== validLastReviewDate) dates.push(validLastReviewDate);
+          break;
+        }
+        dates.push(date);
+      }
+    }
+  }
+
   const entries: RevisionEntry[] = [];
-  const count = yearSpan === 0 && validLastReviewDate && validLastReviewDate !== validEffectiveDate
-    ? 2
-    : yearSpan + 1;
-
-  for (let index = 0; index < count; index += 1) {
+  for (let index = 0; index < dates.length; index += 1) {
     const prior = previousScheduled[index];
-    let date = index === 0
-      ? validEffectiveDate
-      : index === yearSpan && validLastReviewDate
-        ? validLastReviewDate
-        : anniversaryDate(validEffectiveDate, index);
-
-    // If the review happens in the effective year, the second row is a same-year minor revision.
-    let revisionNo = yearSpan === 0 && index === 1 ? "0.1" : `${index}.0`;
-    if (prior && !(yearSpan === 0 && index === 1 && prior.revisionNo === "1.0")) revisionNo = prior.revisionNo;
-    if (index === 0) date = validEffectiveDate;
-    if (index === count - 1 && validLastReviewDate) date = validLastReviewDate;
+    const date = dates[index];
+    // Preserve the existing same-period minor revision convention for annual schedules.
+    const samePeriodReview = index === 1 && intervalMonths === 12
+      && date.slice(0, 4) === validEffectiveDate.slice(0, 4);
+    let revisionNo = samePeriodReview ? "0.1" : `${index}.0`;
+    if (prior && !(samePeriodReview && prior.revisionNo === "1.0")) revisionNo = prior.revisionNo;
 
     entries.push({
       revisionNo,
@@ -126,11 +146,12 @@ function mergeScheduledAndCustom(scheduled: RevisionEntry[], custom: RevisionEnt
   return merged;
 }
 
-/** Build and reconcile date-linked annual rows while retaining custom revisions. */
+/** Build and reconcile frequency-based date-linked rows while retaining custom revisions. */
 export function resolveRevisionHistory(
   entries: RevisionEntry[] | undefined,
   effectiveDate: string,
   lastReviewDate?: string,
+  frequency: ReviewFrequency = "Yearly",
 ): RevisionEntry[] {
   const provided = Array.isArray(entries) ? entries : [];
   const legacyStaticDefault = isLegacyDefault(provided);
@@ -149,7 +170,7 @@ export function resolveRevisionHistory(
     ? []
     : tagged.filter((entry) => entry.source === "scheduled");
   const custom = tagged.filter((entry) => entry.source === "custom");
-  const scheduled = buildScheduledEntries(effectiveDate, lastReviewDate, previousScheduled);
+  const scheduled = buildScheduledEntries(effectiveDate, lastReviewDate, previousScheduled, frequency);
   return mergeScheduledAndCustom(scheduled, custom);
 }
 
@@ -161,6 +182,7 @@ export function normalizePolicyRevisionHistory(policy: Policy): Policy {
       policy.revisionHistory,
       policy.company.effectiveDate,
       policy.company.lastReviewDate,
+      policy.company.reviewFrequency,
     ),
   };
 }

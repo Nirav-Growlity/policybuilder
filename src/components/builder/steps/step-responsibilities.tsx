@@ -19,10 +19,10 @@ export function StepResponsibilities() {
   const { push } = useToast();
   const [busy, setBusy] = React.useState<Record<string, boolean>>({});
 
-  const revisionHistory = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate);
+  const revisionHistory = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate, policy.company.reviewFrequency);
 
   const insertRevisionEntry = (afterIndex: number) => {
-    const current = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate);
+    const current = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate, policy.company.reviewFrequency);
     const nextRevision: RevisionEntry = {
       revisionNo: suggestMinorRevisionNumber(current, afterIndex),
       date: "",
@@ -36,13 +36,13 @@ export function StepResponsibilities() {
   };
 
   const removeRevisionEntry = (i: number) => {
-    const list = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate);
+    const list = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate, policy.company.reviewFrequency);
     if (list[i]?.source !== "custom") return;
     updatePolicy(() => ({ revisionHistory: list.filter((_, idx) => idx !== i) }));
   };
 
   const updateRevisionEntry = (i: number, field: keyof RevisionEntry, v: string) => {
-    const list = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate);
+    const list = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate, policy.company.reviewFrequency);
     updatePolicy(() => ({
       revisionHistory: list.map((item, idx) => (idx === i ? { ...item, [field]: v } : item)),
     }));

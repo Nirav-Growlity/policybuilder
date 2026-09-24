@@ -4,7 +4,7 @@ import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { getEnabledSections, sectionHasContent } from "@/lib/sections";
 import type { PolicySection } from "@/lib/types";
-import { Field, Input } from "@/components/ui/input";
+import { Field, Input, Select } from "@/components/ui/input";
 import { DatePicker } from "@/components/ui/calendar";
 import { Panel } from "@/components/ui/panel";
 import { Button } from "@/components/ui/button";
@@ -42,7 +42,7 @@ export function StepStructure() {
       }
       return {
         company: updatedCompany,
-        revisionHistory: resolveRevisionHistory(p.revisionHistory, date, updatedCompany.lastReviewDate),
+        revisionHistory: resolveRevisionHistory(p.revisionHistory, date, updatedCompany.lastReviewDate, updatedCompany.reviewFrequency),
       };
     });
   };
@@ -107,7 +107,7 @@ export function StepStructure() {
             />
           </Field>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 mt-4">
           <Field label="Effective date">
             <DatePicker
               value={co.effectiveDate || ""}
@@ -124,7 +124,7 @@ export function StepStructure() {
               hasError={!!lastReviewError}
               onChange={(date) => updatePolicy((p) => ({
                 company: { ...p.company, lastReviewDate: date },
-                revisionHistory: resolveRevisionHistory(p.revisionHistory, p.company.effectiveDate, date),
+                revisionHistory: resolveRevisionHistory(p.revisionHistory, p.company.effectiveDate, date, p.company.reviewFrequency),
               }))}
               placeholder="DD-MM-YYYY"
               ariaLabel="Last review date"
@@ -140,6 +140,25 @@ export function StepStructure() {
               placeholder="DD-MM-YYYY"
               ariaLabel="Next review date"
             />
+          </Field>
+          <Field label="Revision frequency">
+            <Select
+              value={co.reviewFrequency || "Yearly"}
+              onChange={(event) => updatePolicy((p) => {
+                const reviewFrequency = event.target.value as NonNullable<typeof p.company.reviewFrequency>;
+                return {
+                  company: { ...p.company, reviewFrequency },
+                  revisionHistory: resolveRevisionHistory(p.revisionHistory, p.company.effectiveDate, p.company.lastReviewDate, reviewFrequency),
+                };
+              })}
+              aria-label="Revision frequency"
+              className="h-9 px-2.5 text-[12.5px]"
+            >
+              <option>Quarterly</option>
+              <option>Half-Yearly</option>
+              <option>Yearly</option>
+              <option>Bi-Yearly</option>
+            </Select>
           </Field>
         </div>
         <div className="mt-4 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]/50 p-3">
