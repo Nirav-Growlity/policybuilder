@@ -65,8 +65,8 @@ function projectCoverComposition(composition: CoverComposition, policy: Policy, 
   const titleSource = textLayers.find((element) => element.content.kind === "binding" && element.content.binding === "policyTitle")
     || textLayers.find((element) => /title/i.test(element.id));
   const title = titleSource
-    ? { ...titleSource, content: { kind: "binding" as const, binding: "policyTitle" as const } }
-    : coverTextLayer("policy-title", "policyTitle", { x: 24, y: 78, width: 162, height: 64 }, typography, theme.colors.primaryDark);
+    ? { ...titleSource, content: { kind: "binding" as const, binding: "policyTitle" as const }, color: theme.colors.primary }
+    : coverTextLayer("policy-title", "policyTitle", { x: 24, y: 78, width: 162, height: 64 }, typography, theme.colors.primary);
 
   const companySource = textLayers.find((element) => element.content.kind === "binding" && element.content.binding === "companyName")
     || textLayers.find((element) => /company|brand/i.test(element.id));
