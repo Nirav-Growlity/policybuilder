@@ -15,7 +15,7 @@ dotenv.config({ path: path.join(__dirname, "../.env") });
 
 const ROOT = path.join(__dirname, "../..");
 const SEED_DIR = path.join(__dirname, "../data/seed-policies");
-const MODEL = "gpt-5.6-luna";
+const MODEL = "gpt-6-luna";
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const execFileAsync = promisify(execFile);
 

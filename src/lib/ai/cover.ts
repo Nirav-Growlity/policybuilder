@@ -4,7 +4,7 @@ import { normalizeCoverComposition } from "../cover-composition";
 import type { CoverComposition, CoverElement, CoverTextElement, Policy } from "../types";
 
 export const AI_COVER_IMAGE_MODEL = "gpt-image-2.5-flare";
-export const AI_COVER_LAYOUT_MODEL = "gpt-5.6-luna";
+export const AI_COVER_LAYOUT_MODEL = "gpt-6-luna";
 export const AI_COVER_IMAGE_SIZE = "1024x1456";
 export const AI_COVER_IMAGE_MAX_ATTEMPTS = 3;
 

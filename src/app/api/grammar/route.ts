@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-5.6-luna",
+        model: "gpt-6-luna",
         reasoning: { effort: "none" },
         text: { verbosity: "low" },
         max_output_tokens: Math.min(8_192, Math.max(256, Math.ceil(text.length / 3) + 64)),

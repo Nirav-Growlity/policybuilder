@@ -40,7 +40,7 @@ async function parse(file: string) {
   const company = path.basename(path.dirname(file));
   const seed = seedPath(company);
   const source = await text(file);
-  const model = process.env.OPENAI_MODEL || "gpt-5.6-luna";
+  const model = process.env.OPENAI_MODEL || "gpt-6-luna";
   const response = await client.chat.completions.create({
     model,
     response_format: { type: "json_object" },

@@ -159,7 +159,7 @@ export async function POST(req: NextRequest) {
         "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-5.6-luna",
+        model: "gpt-6-luna",
         response_format: { type: "json_object" },
         messages: [
           { role: "system", content: system },

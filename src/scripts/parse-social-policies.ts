@@ -29,7 +29,7 @@ async function parse(file: string) {
   const company = path.basename(path.dirname(file));
   const seed = seedPath(type, company);
   const source = await text(file);
-  const response = await client.chat.completions.create({ model: "gpt-5.6-luna", response_format: { type: "json_object" }, messages: [{ role: "system", content: prompt(type) }, { role: "user", content: `Company: ${company}\nFile: ${path.basename(file)}\n\nPolicy text:\n${source}` }] });
+  const response = await client.chat.completions.create({ model: "gpt-6-luna", response_format: { type: "json_object" }, messages: [{ role: "system", content: prompt(type) }, { role: "user", content: `Company: ${company}\nFile: ${path.basename(file)}\n\nPolicy text:\n${source}` }] });
   const data = JSON.parse(response.choices[0].message.content || "{}") as Record<string, any>;
   const existing = JSON.parse(fs.readFileSync(seed, "utf8"));
   const old = existing.policy;
