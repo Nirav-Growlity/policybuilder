@@ -1,7 +1,7 @@
 import { SDG_DATA, getPolicyProfile } from "./constants";
 import { getPolicyDocumentTheme, getResolvedTypography, type DocumentSectionRecipe } from "./document-themes";
 import { getEnabledSections, sectionHasContent } from "./sections";
-import { getCompanySites, type CoverComposition, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
+import { getCompanySites, type CoverComposition, type CoverElement, type CoverTextElement, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
 import { getActiveCoverComposition, getActiveCoverVariant, removeLegacyThemeGradient } from "./cover-composition";
 import { groupQuantitativeTargets } from "./quantitative";
 import { visibleQualitativeEntries, visibleQuantitativeAreas } from "./focus-area-catalog";
@@ -20,6 +20,100 @@ export function getRunningHeaderBrand(company: Pick<Policy["company"], "name" | 
   return logo
     ? { kind: "logo", source: logo }
     : { kind: "name", text: company.name || "[Company Name]" };
+}
+
+function coverTextLayer(
+  id: string,
+  binding: "companyName" | "policyTitle",
+  geometry: Pick<CoverTextElement, "x" | "y" | "width" | "height">,
+  typography: ReturnType<typeof getResolvedTypography>,
+  color: string,
+): CoverTextElement {
+  const title = binding === "policyTitle";
+  return {
+    id,
+    type: "text",
+    ...geometry,
+    rotation: 0,
+    opacity: 1,
+    zIndex: title ? 100 : 99,
+    visible: true,
+    locked: false,
+    aspectLocked: false,
+    content: { kind: "binding", binding },
+    fontFamily: title ? typography.headingFontFamily || typography.fontFamily : typography.fontFamily,
+    fontSize: title ? 32 : 12,
+    color,
+    bold: title,
+    italic: false,
+    underline: false,
+    align: "left",
+    lineHeight: title ? 1.08 : 1.2,
+    letterSpacing: 0,
+  };
+}
+
+/** Returns a display-only cover projection; the persisted composition stays unchanged. */
+function projectCoverComposition(composition: CoverComposition, policy: Policy, typography: ReturnType<typeof getResolvedTypography>, theme: ReturnType<typeof getPolicyDocumentTheme>): CoverComposition {
+  const visible = composition.elements.filter((element) => element.visible);
+  const textLayers = visible.filter((element): element is CoverTextElement => element.type === "text");
+  const logoLayers = visible.filter((element) => element.type === "logo");
+  const isMetadataFurniture = (element: CoverElement) => element.type === "image"
+    && /metadata[-_ ]?(?:rule|divider|backdrop)|document[-_ ]?control/i.test(`${element.id} ${element.altText}`);
+  const artwork = visible.filter((element) => element.type !== "text" && element.type !== "logo" && !isMetadataFurniture(element));
+
+  const titleSource = textLayers.find((element) => element.content.kind === "binding" && element.content.binding === "policyTitle")
+    || textLayers.find((element) => /title/i.test(element.id));
+  const title = titleSource
+    ? { ...titleSource, content: { kind: "binding" as const, binding: "policyTitle" as const } }
+    : coverTextLayer("policy-title", "policyTitle", { x: 24, y: 78, width: 162, height: 64 }, typography, theme.colors.primaryDark);
+
+  const companySource = textLayers.find((element) => element.content.kind === "binding" && element.content.binding === "companyName")
+    || textLayers.find((element) => /company|brand/i.test(element.id));
+  const logoSource = logoLayers.find((element) => element.assetId || policy.company.companyLogo);
+  const hasLogo = Boolean(policy.company.companyLogo || logoSource?.assetId);
+  let brand: CoverElement;
+  if (hasLogo) {
+    const source = logoSource || companySource;
+    brand = source && source.type === "logo"
+      ? { ...source, assetId: policy.company.companyLogo || source.assetId }
+      : {
+          id: "company-logo",
+          type: "logo",
+          x: source?.x ?? 24,
+          y: source?.y ?? 24,
+          width: source?.width ?? 80,
+          height: Math.max(24, source?.height ?? 24),
+          rotation: source?.rotation ?? 0,
+          opacity: source?.opacity ?? 1,
+          zIndex: 99,
+          visible: true,
+          locked: false,
+          aspectLocked: true,
+          fit: "contain",
+          focalPoint: { x: 50, y: 50 },
+          altText: "Company logo",
+        };
+  } else {
+    const nameGeometry = companySource;
+    brand = companySource
+      ? { ...companySource, content: { kind: "binding" as const, binding: "companyName" as const } }
+      : coverTextLayer("company-name", "companyName", {
+          x: 24,
+          y: 24,
+          width: 162,
+          height: 18,
+        }, typography, theme.colors.muted);
+    if (nameGeometry && brand.type === "text") {
+      brand = { ...brand, x: nameGeometry.x, y: nameGeometry.y, width: nameGeometry.width, height: Math.max(18, nameGeometry.height) };
+    }
+  }
+
+  const titleTop = Math.min(233, Math.max(title.y, brand.y + brand.height + 10));
+  const overlayZ = Math.max(99, ...artwork.map((element) => element.zIndex + 1));
+  const projectedTitle = { ...title, y: titleTop, zIndex: overlayZ + 1 };
+  const projectedBrand = { ...brand, zIndex: overlayZ };
+  return { ...composition, elements: [...artwork, projectedBrand, projectedTitle].sort((left, right) => left.zIndex - right.zIndex) };
 }
 
 export type DocumentSectionContent =
@@ -112,9 +206,10 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
       variant: getActiveCoverVariant(policy),
       composition: (() => {
         const composition = getActiveCoverComposition(policy);
-        return composition && theme.background.kind === "solid" && composition.sourceTemplateId !== "custom"
+        const cleaned = composition && theme.background.kind === "solid" && composition.sourceTemplateId !== "custom"
           ? removeLegacyThemeGradient(composition)
           : composition;
+        return cleaned ? projectCoverComposition(cleaned, policy, typography, theme) : undefined;
       })(),
     },
     tocEntries: sections.map(({ id, index, title }) => ({ id, index, title })),

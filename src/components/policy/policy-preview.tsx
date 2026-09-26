@@ -1,5 +1,4 @@
-import { coverDesign } from "@/lib/cover-designs";
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties } from "react";
 import { documentThemeCssVariables } from "@/lib/document-themes";
 import { fontFaceCssFor } from "@/lib/document-fonts";
 import { CoverArt, type CoverMotifScene } from "@/components/policy/cover-art";
@@ -104,14 +103,18 @@ function coverFontFamilies(model: DocumentRenderModel): string[] {
 }
 
 export function PolicyCover({ model, policy, customCoverPng, showElements = true }: { model: DocumentRenderModel; policy: Policy; customCoverPng?: string; showElements?: boolean }) {
-  if (model.cover.composition) return customCoverPng ? <section className="policy-cover policy-custom-cover" data-cover-mode="custom"><img src={customCoverPng} alt="Custom cover" className="policy-custom-cover-rendered" /></section> : <CustomCover model={model} policy={policy} showElements={showElements} />;
+  if (model.cover.composition) {
+    return customCoverPng
+      ? <section className="policy-cover policy-custom-cover" data-cover-mode="custom"><img src={customCoverPng} alt="Custom cover" className="policy-custom-cover-rendered" /></section>
+      : <CustomCover model={model} policy={policy} showElements={showElements} />;
+  }
+
   const { theme } = model;
   const brand = getRunningHeaderBrand(policy.company);
-  const cover = { ...model.cover, companyName: brand.kind === "logo" ? "" : model.cover.companyName };
-  const scene = theme.layout.cover;
-  const logoAlign = policy.logoPosition === "right" ? "flex-end" : policy.logoPosition === "center" ? "center" : "flex-start";
-  const logo = brand.kind === "logo" ? <img src={brand.source} alt="Company logo" className="policy-cover-logo object-contain" /> : null;
-  const feature = model.featureImage?.placement === "cover" ? <FeatureImage image={model.featureImage} className={`policy-cover-feature feature-${theme.layout.imageTreatment}`} /> : null;
+  const scene = theme.layout.cover as CoverMotifScene;
+  const feature = model.featureImage?.placement === "cover"
+    ? <FeatureImage image={model.featureImage} className={`policy-cover-feature feature-${theme.layout.imageTreatment}`} />
+    : null;
   const motifColors = {
     primary: theme.colors.primary,
     accent: theme.colors.accent,
@@ -120,368 +123,17 @@ export function PolicyCover({ model, policy, customCoverPng, showElements = true
     paper: theme.colors.paper,
     ink: theme.colors.ink,
   };
-  const art = <CoverArt scene={scene as CoverMotifScene} colors={motifColors} className="cover-motif" />;
-  const kicker = "";
-  const meta = cover.metadata;
 
-  if (theme.collection === "professional") return <ProfessionalCover model={model} feature={feature} />;
-  switch (scene) {
-    case "civic-plain":
-      return (
-        <header className="policy-cover cover-civic-plain">
-          {feature}
-          <div className="civic-rule" aria-hidden="true" />
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker"><span />{kicker}<span /></div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          {art}
-          <div className="civic-colophon">{meta.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}</div>
-        </header>
-      );
-    case "signal-split":
-      return (
-        <header className="policy-cover cover-signal-split">
-          {feature}
-          <div className="signal-body">
-            {logo && <div className="mb-auto flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="policy-cover-company">{cover.companyName}</p>
-            <MetadataStrip metadata={meta} className="signal-meta" />
-          </div>
-          <div className="signal-panel" aria-hidden="true">{art}</div>
-        </header>
-      );
-    case "open-broad":
-      return (
-        <header className="policy-cover cover-open-broad">
-          {feature}
-          <div className="open-band" aria-hidden="true" />
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          {art}
-          <MetadataStrip metadata={meta} className="open-meta" />
-        </header>
-      );
-    case "swiss-poster":
-      return (
-        <header className="policy-cover cover-swiss-poster">
-          {feature}
-          <div className="swiss-rail" aria-hidden="true"><span>Grid · 01</span></div>
-          <div className="swiss-body">
-            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            {art}
-            <p className="policy-cover-company">{cover.companyName}</p>
-            <MetadataStrip metadata={meta} className="swiss-meta" />
-          </div>
-        </header>
-      );
-    case "ledger-rail":
-      return (
-        <header className="policy-cover cover-ledger-rail">
-          {feature}
-          <aside className="ledger-rail-side"><span>Executive ledger</span><b>01</b><small>Board edition</small></aside>
-          <div className="ledger-rail-body">
-            {logo && <div className="mb-auto flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="policy-cover-company">{cover.companyName}</p>
-            {art}
-            <MetadataStrip metadata={meta} className="ledger-rail-meta" />
-          </div>
-        </header>
-      );
-    case "decision-stamp":
-      return (
-        <header className="policy-cover cover-decision-stamp">
-          {feature}
-          <div className="decision-frame">
-            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            {art}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="policy-cover-company">{cover.companyName}</p>
-            <MetadataStrip metadata={meta} className="decision-meta" />
-          </div>
-        </header>
-      );
-    case "routing-slip":
-      return (
-        <header className="policy-cover cover-routing-slip">
-          {feature}
-          <div className="routing-masthead">Memorandum</div>
-          <div className="routing-slip-grid">
-            <span>To · Leadership</span><span>From · {cover.companyName}</span>
-            <span>Date · {meta[1]?.value || "-"}</span><span>Subject · {cover.policyLabel}</span>
-          </div>
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          {art}
-          <MetadataStrip metadata={meta} className="routing-meta" />
-        </header>
-      );
-    case "seal-medallion":
-      return (
-        <header className="policy-cover cover-seal-medallion">
-          {feature}
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="seal-art" aria-hidden="true">{art}</div>
-          <div className="policy-cover-kicker"><span />{kicker}<span /></div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <div className="seal-colophon">{meta.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}</div>
-        </header>
-      );
-    case "clause-code":
-      return (
-        <header className="policy-cover cover-clause-code">
-          {feature}
-          <div className="clause-numbers" aria-hidden="true"><span>§1</span><span>§2</span><span>§3</span><b>§4</b></div>
-          <div className="clause-body">
-            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="policy-cover-company">{cover.companyName}</p>
-            {art}
-            <MetadataStrip metadata={meta} className="clause-meta" />
-          </div>
-        </header>
-      );
-    case "exhibit-file":
-      return (
-        <header className="policy-cover cover-exhibit-file">
-          {feature}
-          <div className="exhibit-tabs" aria-hidden="true"><span>A</span><span>B</span><span>C</span></div>
-          <div className="exhibit-body">
-            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="policy-cover-company">{cover.companyName}</p>
-            {art}
-            <MetadataStrip metadata={meta} className="exhibit-meta" />
-          </div>
-        </header>
-      );
-    case "gazette-masthead":
-      return (
-        <header className="policy-cover cover-gazette-masthead">
-          {feature}
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="gazette-crest" aria-hidden="true">{art}</div>
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <div className="gazette-colophon">{meta.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}</div>
-        </header>
-      );
-    case "colonnade-rule":
-      return (
-        <header className="policy-cover cover-colonnade-rule">
-          {feature}
-          <div className="colonnade-cornice" aria-hidden="true" />
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <div className="colonnade-columns">
-            <p>{cover.companyName} · {meta[0]?.label} {meta[0]?.value}</p>
-            <p>{meta[2]?.label} {meta[2]?.value} · {meta[1]?.label} {meta[1]?.value}</p>
-          </div>
-          {art}
-          <MetadataStrip metadata={meta} className="colonnade-meta" />
-        </header>
-      );
-    case "indenture-margin":
-      return (
-        <header className="policy-cover cover-indenture-margin">
-          {feature}
-          <div className="indenture-body">
-            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="policy-cover-company">{cover.companyName}</p>
-            {art}
-            <MetadataStrip metadata={meta} className="indenture-meta" />
-          </div>
-          <aside className="indenture-margin-col" aria-hidden="true"><span>¶1</span><span>¶2</span><span>¶3</span></aside>
-        </header>
-      );
-    case "chapterhouse-drop":
-      return (
-        <header className="policy-cover cover-chapterhouse-drop">
-          {feature}
-          <div className="chapter-top">
-            <div className="chapter-drop" aria-hidden="true">{art}</div>
-            <div className="chapter-head">
-              {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-              <div className="policy-cover-kicker">{kicker}</div>
-              <h1>{cover.policyLabel}</h1>
-              <p className="policy-cover-company">{cover.companyName}</p>
-            </div>
-          </div>
-          <MetadataStrip metadata={meta} className="chapter-meta" />
-        </header>
-      );
-    case "broadsheet-columns":
-      return (
-        <header className="policy-cover cover-broadsheet-columns">
-          {feature}
-          <div className="broadsheet-masthead"><span>{cover.companyName}</span><b>Policy Broadsheet</b><span>{meta[1]?.value || ""}</span></div>
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          {art}
-          <MetadataStrip metadata={meta} className="broadsheet-meta" />
-        </header>
-      );
-    case "fieldbook-grid":
-      return (
-        <header className="policy-cover cover-fieldbook-grid">
-          {feature}
-          <div className="fieldbook-card">
-            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="policy-cover-company">{cover.companyName}</p>
-            <div className="fieldbook-plot" aria-hidden="true">{art}<span className="fieldbook-pin">Survey · 01</span></div>
-            <MetadataStrip metadata={meta} className="fieldbook-meta" />
-          </div>
-        </header>
-      );
-    case "canopy-band":
-      return (
-        <header className="policy-cover cover-canopy-band">
-          {feature}
-          <div className="canopy-art" aria-hidden="true">{art}</div>
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <MetadataStrip metadata={meta} className="canopy-meta" />
-        </header>
-      );
-    case "summit-target":
-      return (
-        <header className="policy-cover cover-summit-target">
-          {feature}
-          <div className="summit-art" aria-hidden="true">{art}</div>
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <MetadataStrip metadata={meta} className="summit-meta" />
-        </header>
-      );
-    case "commons-card":
-      return (
-        <header className="policy-cover cover-commons-card">
-          {feature}
-          <div className="commons-card-body">
-            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="policy-cover-company">{cover.companyName}</p>
-            {art}
-            <MetadataStrip metadata={meta} className="commons-meta" />
-          </div>
-        </header>
-      );
-    case "scoreboard-tiles":
-      return (
-        <header className="policy-cover cover-scoreboard-tiles">
-          {feature}
-          <div className="scoreboard-grid" aria-hidden="true">
-            {[["01", "Coverage"], ["02", "Targets"], ["03", "Owners"], ["04", "Review"]].map(([n, label]) => (
-              <div key={n} className="scoreboard-tile"><b>{n}</b><span>{label}</span></div>
-            ))}
-          </div>
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <MetadataStrip metadata={meta} className="scoreboard-meta" />
-        </header>
-      );
-    case "tape-ledger":
-      return (
-        <header className="policy-cover cover-tape-ledger">
-          {feature}
-          <div className="tape-strip" aria-hidden="true" />
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          {art}
-          <MetadataStrip metadata={meta} className="tape-meta" />
-        </header>
-      );
-    case "dial-review":
-      return (
-        <header className="policy-cover cover-dial-review">
-          {feature}
-          <div className="dial-top">
-            <div className="dial-head">
-              {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-              <div className="policy-cover-kicker">{kicker}</div>
-              <h1>{cover.policyLabel}</h1>
-              <p className="policy-cover-company">{cover.companyName}</p>
-            </div>
-            <div className="dial-art" aria-hidden="true">{art}</div>
-          </div>
-          <MetadataStrip metadata={meta} className="dial-meta" />
-        </header>
-      );
-    case "proceedings-abstract":
-      return (
-        <header className="policy-cover cover-proceedings-abstract">
-          {feature}
-          <div className="proceedings-box">
-            {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-            <div className="policy-cover-kicker">{kicker}</div>
-            <h1>{cover.policyLabel}</h1>
-            <p className="proceedings-keywords">Keywords · {cover.companyName} · {meta[0]?.value || ""}</p>
-            {art}
-          </div>
-          <MetadataStrip metadata={meta} className="proceedings-meta" />
-        </header>
-      );
-    case "blueprint-spec":
-      return (
-        <header className="policy-cover cover-blueprint-spec">
-          {feature}
-          <div className="blueprint-tag">Spec · {meta[0]?.value || "STD-01"}</div>
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <div className="blueprint-art" aria-hidden="true">{art}</div>
-          <MetadataStrip metadata={meta} className="blueprint-meta" />
-        </header>
-      );
-    case "docket-matrix":
-    default:
-      return (
-        <header className="policy-cover cover-docket-matrix">
-          {feature}
-          <div className="docket-grid" aria-hidden="true">
-            <div className="docket-cell"><b>F-01</b></div>
-            <div className="docket-cell"><b>SRC</b></div>
-            <div className="docket-cell"><b>F-02</b></div>
-            <div className="docket-cell docket-art">{art}</div>
-          </div>
-          {logo && <div className="flex" style={{ justifyContent: logoAlign }}>{logo}</div>}
-          <div className="policy-cover-kicker">{kicker}</div>
-          <h1>{cover.policyLabel}</h1>
-          <p className="policy-cover-company">{cover.companyName}</p>
-          <MetadataStrip metadata={meta} className="docket-meta" />
-        </header>
-      );
-  }
+  return <header className="policy-cover policy-cover-simplified" data-cover-mode="standard">
+    {feature}
+    <div className="policy-cover-simplified-brand">
+      {brand.kind === "logo"
+        ? <img src={brand.source} alt="Company logo" className="policy-cover-logo object-contain" />
+        : <p className="policy-cover-company">{brand.text}</p>}
+    </div>
+    <h1>{model.cover.policyLabel}</h1>
+    <div className="policy-cover-simplified-art"><CoverArt scene={scene} colors={motifColors} className="cover-motif" /></div>
+  </header>;
 }
 
 function CustomCover({ model, policy, showElements = true }: { model: DocumentRenderModel; policy: Policy; showElements?: boolean }) {
@@ -515,17 +167,6 @@ function CoverCompositionElements({ composition, policy, showElements }: { compo
 }
 /* eslint-enable @next/next/no-img-element */
 
-function ProfessionalCover({ model, feature }: { model: DocumentRenderModel; feature: ReactNode }) {
-  const { cover, theme } = model;
-  const design = coverDesign(theme.layout.cover);
-  const style = { "--cover-title-size": `${design.titlePt}pt`, "--cover-space": `${design.spaceMm}mm`, "--cover-columns": design.columns, textAlign: design.align } as CSSProperties;
-  return <header className="policy-cover editorial-policy-cover" data-cover-rule={design.rule} style={style}>
-    <div className="cover-publisher">{cover.companyName}</div>
-    <div className="cover-heading"><h1>{cover.policyLabel}</h1></div>
-    {feature}
-    <MetadataStrip metadata={cover.metadata} className="cover-register" />
-  </header>;
-}
 
 function FeatureImage({ image, className }: { image: NonNullable<DocumentRenderModel["featureImage"]>; className: string }) {
   return (
@@ -536,13 +177,6 @@ function FeatureImage({ image, className }: { image: NonNullable<DocumentRenderM
   );
 }
 
-function MetadataStrip({ metadata, className = "" }: { metadata: DocumentRenderModel["cover"]["metadata"]; className?: string }) {
-  return <div className={`policy-metadata-strip ${className}`}>{metadata.map((item) => <MetaPair key={item.label} label={item.label} value={item.value} />)}</div>;
-}
-
-function MetaPair({ label, value }: { label: string; value: string }) {
-  return <div className="policy-meta-pair"><span>{label}</span><b>{value}</b></div>;
-}
 
 function PolicyToc({ model }: { model: DocumentRenderModel }) {
   const entries = model.acknowledgement
@@ -736,6 +370,13 @@ const previewStyles = `
   .policy-preview-document h3 { margin: 0; font-size: var(--policy-subheading-size); line-height: 1.2; }
   .policy-preview-document p { margin: 0 0 12px; text-align: var(--doc-content-align); }
   .policy-cover { position: relative; min-height: 510px; overflow: hidden; }
+  .policy-cover-simplified { display:flex; flex-direction:column; min-height:297mm; height:297mm; padding:48px; background:var(--doc-paper); color:var(--doc-ink); }
+  .policy-cover-simplified-brand { position:relative; z-index:2; display:flex; align-items:flex-start; min-height:34px; max-height:72px; }
+  .policy-cover-simplified-brand .policy-cover-logo { max-width:38%; max-height:64px; }
+  .policy-cover-simplified-brand .policy-cover-company { margin:0; color:var(--doc-primary); font-size:14px; font-weight:700; }
+  .policy-cover-simplified h1 { position:relative; z-index:2; max-width:76%; margin:42px 0 0; color:var(--doc-primary); }
+  .policy-cover-simplified-art { display:flex; align-items:flex-end; justify-content:center; width:100%; margin-top:auto; }
+  .policy-cover-simplified-art .cover-motif { width:min(72%, 540px); }
   .policy-cover > :not(.policy-cover-feature) { z-index: 1; }
   .policy-cover-feature { position: absolute; inset: 0; z-index: 0; margin: 0; pointer-events: none; }
   .policy-cover-feature img { width: 100%; height: 100%; object-fit: cover; opacity: .22; filter: saturate(.72); }

@@ -71,6 +71,31 @@ test("except-cover Word borders use the native not-first-page display", async ()
   assert.match(border, /w:display="notFirstPage"/);
 });
 
+test("Word standard cover shows logo and policy title while keeping document details in the footer", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.coverComposition = undefined;
+  policy.aiCoverComposition = undefined;
+  policy.company.name = "Name Hidden By Logo";
+  policy.company.companyLogo = `data:image/svg+xml;base64,${svg.toString("base64")}`;
+  policy.company.docNum = "FOOTER-DOC-991";
+  policy.company.effectiveDate = "FOOTER-DATE-992";
+  policy.company.revNum = "FOOTER-REV-993";
+  policy.company.reviewDate = "FOOTER-REVIEW-994";
+
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const cover = document.slice(0, document.indexOf('<w:br w:type="page"/>'));
+  const footerName = Object.keys(zip.files).find((name) => /^word\/footer\d+\.xml$/.test(name));
+  assert.ok(footerName, "Word output should retain a document footer");
+  const footer = await zip.file(footerName!)!.async("string");
+
+  assert.match(document, /Environmental Policy/);
+  assert.match(document, /Company logo/);
+  assert.doesNotMatch(cover, /Name Hidden By Logo|DOCUMENT NO\.|EFFECTIVE DATE|NEXT REVIEW|REVISION|FOOTER-DOC-991|FOOTER-DATE-992|FOOTER-REV-993|FOOTER-REVIEW-994/);
+  assert.match(footer, /FOOTER-DOC-991/);
+  assert.match(footer, /FOOTER-REVIEW-994/);
+});
+
 test("Word applies independent marker choices without changing semantic numbers", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.visualStyle = "modern";
@@ -229,7 +254,7 @@ test("custom cover is embedded as the first-page image", async () => {
   assert.doesNotMatch(document, /M0 116H178/, "Word page background must not add a running-header separator path");
 });
 
-test("custom cover keeps background and authored layers separate in Word", async () => {
+test("custom cover keeps decorative layers but renders only logo and policy title in Word", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.company.name = "Editable Cover Ltd";
   policy.company.companyLogo = `data:image/svg+xml;base64,${svg.toString("base64")}`;
@@ -254,8 +279,10 @@ test("custom cover keeps background and authored layers separate in Word", async
   const backgroundPixel = await sharp(coverEntries[0].bytes).extract({ left: 300, top: 300, width: 1, height: 1 }).removeAlpha().raw().toBuffer();
   assert.ok(backgroundPixel.every((channel) => channel > 250), "cover layers should not be baked into the background image");
   const document = await zip.file("word/document.xml")!.async("string");
+  const cover = document.slice(0, document.indexOf('<w:br w:type="page"/>'));
   assert.doesNotMatch(document, /<undefined>/, "custom cover layers must not add invalid XML wrappers");
-  assert.match(document, /<w:txbxContent>[\s\S]*Editable Cover Ltd[\s\S]*<\/w:txbxContent>/, "cover title should remain editable text");
+  assert.match(document, /<w:txbxContent>[\s\S]*Environmental Policy[\s\S]*<\/w:txbxContent>/, "policy title should remain editable text");
+  assert.doesNotMatch(cover, /Editable Cover Ltd/, "the company name should not duplicate the available logo");
   assert.match(document, /v-text-anchor:top/, "Word text box should match the editor's top-aligned text");
   assert.match(document, /<w:jc w:val="center"\/><w:ind w:left="0" w:right="0" w:firstLine="0"\//, "Word text box should have no implicit paragraph indentation");
   assert.match(document, /mso-fit-shape-to-text:true/, "Word text box should fit shape to text to avoid clipping");
@@ -266,8 +293,8 @@ test("custom cover keeps background and authored layers separate in Word", async
   const coverAnchors = [...document.matchAll(/<wp:anchor[^>]*behindDoc="(\d+)"[^>]*relativeHeight="(\d+)"[\s\S]*?<wp:docPr[^>]*descr="([^"]+)"[\s\S]*?<\/wp:anchor>/g)];
   assert.deepEqual(coverAnchors.map(([, behindDoc, relativeHeight, description]) => ({ relativeHeight: Number(relativeHeight), behindDoc, description })), [
     { relativeHeight: 1, behindDoc: "1", description: "Custom cover background" },
-    { relativeHeight: 101, behindDoc: "0", description: "Company logo" },
     { relativeHeight: 102, behindDoc: "0", description: "Cover photo" },
+    { relativeHeight: 199, behindDoc: "0", description: "Company logo" },
   ], "editable cover media must remain in front of the page artwork");
   assert.doesNotMatch(document, /Hidden cover layer/, "hidden cover layers should not be exported");
 });

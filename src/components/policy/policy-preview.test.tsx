@@ -26,10 +26,70 @@ test("custom cover keeps its background image without rendering a background lab
 });
 
 test("cover-only preview renders the standard policy cover", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.coverComposition = undefined;
+  policy.aiCoverComposition = undefined;
   const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, {
-    policy: templatePreviewPolicy("standard-pack", "environmental"),
+    policy,
   }));
-  assert.match(markup, /<header class="policy-cover /);
+  assert.match(markup, /data-cover-mode="standard"/);
+  assert.match(markup, /class="cover-motif"/);
+  assert.match(markup, /Environmental Policy/);
+  assert.match(markup, /policy-cover-company/);
+  assert.doesNotMatch(markup, /alt="Company logo"/);
+  assert.doesNotMatch(markup, /DOCUMENT NO\.|EFFECTIVE DATE|NEXT REVIEW|REVISION/);
+});
+
+test("standard cover shows the company logo instead of the company name", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.coverComposition = undefined;
+  policy.aiCoverComposition = undefined;
+  policy.company.name = "Company Name Must Be Hidden";
+  policy.company.companyLogo = "data:image/png;base64,logo";
+  policy.company.docNum = "COVER-DOC-771";
+  policy.company.effectiveDate = "COVER-DATE-772";
+  policy.company.revNum = "COVER-REV-773";
+  policy.company.reviewDate = "COVER-REVIEW-774";
+  const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, { policy }));
+  const printDocument = createPrintDocument(markup, policy);
+
+  assert.match(markup, /alt="Company logo"/);
+  assert.match(markup, /Environmental Policy/);
+  assert.doesNotMatch(markup, /Company Name Must Be Hidden|COVER-DOC-771|COVER-DATE-772|COVER-REV-773|COVER-REVIEW-774/);
+  assert.match(printDocument, /alt="Company logo"/);
+  assert.doesNotMatch(printDocument, /COVER-DOC-771|COVER-DATE-772|COVER-REV-773|COVER-REVIEW-774/);
+});
+
+test("saved custom covers render only the company brand and policy title", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.company.companyLogo = "";
+  policy.company.name = "Cover Company Fallback";
+  policy.company.docNum = "CUSTOM-DOC-881";
+  policy.company.effectiveDate = "CUSTOM-DATE-882";
+  policy.company.revNum = "CUSTOM-REV-883";
+  policy.company.reviewDate = "CUSTOM-REVIEW-884";
+  const composition = createAICoverComposition(policy, "data:image/png;base64,background", fallbackAICoverLayout());
+  const nameLayer = composition.elements.find((element) => element.type === "text" && element.content.kind === "binding" && element.content.binding === "companyName");
+  assert.ok(nameLayer?.type === "text");
+  composition.elements.push(
+    { ...nameLayer, id: "saved-document-number", content: { kind: "binding", binding: "documentNumber" } },
+    { ...nameLayer, id: "saved-extra-copy", content: { kind: "literal", text: "REVISION 99" } },
+    { id: "saved-metadata-rule", type: "image", assetId: "data:image/png;base64,rule", x: 20, y: 220, width: 160, height: 1, rotation: 0, opacity: 1, zIndex: 20, visible: true, locked: false, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Metadata divider" },
+    { id: "saved-decoration", type: "image", assetId: "data:image/png;base64,decoration", x: 18, y: 170, width: 80, height: 40, rotation: 0, opacity: 1, zIndex: 3, visible: true, locked: false, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Decorative artwork" },
+  );
+  policy.coverComposition = composition;
+  policy.activeCoverVariant = "manual";
+  const savedComposition = structuredClone(composition);
+  const model = buildDocumentRenderModel(policy);
+  const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, { policy }));
+
+  assert.deepEqual(policy.coverComposition, savedComposition);
+  assert.equal(model.cover.composition?.elements.some((element) => element.type === "image" && /saved-decoration/.test(element.id)), true);
+  assert.deepEqual(model.cover.composition?.elements.filter((element) => element.type === "text").map((element) => element.type === "text" && element.content.kind === "binding" ? element.content.binding : "literal").sort(), ["companyName", "policyTitle"]);
+  assert.match(markup, /Cover Company Fallback/);
+  assert.match(markup, /Environmental Policy/);
+  assert.match(markup, /Decorative artwork/);
+  assert.doesNotMatch(markup, /CUSTOM-DOC-881|CUSTOM-DATE-882|CUSTOM-REV-883|CUSTOM-REVIEW-884|REVISION 99|Metadata divider/);
 });
 
 test("cover-only preview renders the active AI cover composition", () => {
@@ -185,16 +245,17 @@ test("professional numbered content matches its heading typography in screen and
   }
 });
 
-test("footer uses the aligned document-control contract", () => {
+test("cover omits document details while the render model retains footer values", () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.company.docNum = "ENV-001";
   policy.company.reviewDate = "2027-01-14";
   policy.company.reviewerDesignations = ["Environmental Manager", "Compliance Officer"];
   const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
-  const footer = markup.slice(markup.indexOf('class="policy-footer'));
-  assert.match(footer, /Document No\.[\s\S]*ENV-001/);
-  assert.match(footer, /Review[\s\S]*2027-01-14[\s\S]*Environmental Manager[\s\S]*Compliance Officer/);
-  assert.match(footer, /Page[\s\S]*—/);
+  const model = buildDocumentRenderModel(policy);
+  const cover = markup.slice(markup.indexOf('data-cover-mode="standard"'), markup.indexOf("</header>"));
+  assert.equal(model.footer.documentNumber, "ENV-001");
+  assert.equal(model.footer.reviewDate, "2027-01-14");
+  assert.doesNotMatch(cover, /ENV-001|2027-01-14|REVISION|NEXT REVIEW/);
   assert.doesNotMatch(markup, /\.policy-running-header \{[^}]*border-bottom/);
   assert.doesNotMatch(markup, /\.policy-footer \{[^}]*border-top/);
 });
