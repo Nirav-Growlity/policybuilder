@@ -98,7 +98,7 @@ function coverFontFamilies(model: DocumentRenderModel): string[] {
     model.typography.headingFontFamily || "",
     ...(model.cover.composition?.elements
       .filter((element) => element.type === "text")
-      .map((element) => element.fontFamily) || []),
+      .map((element) => getCoverTextPresentation(element, model.cover.composition!.sourceTemplateId).fontFamily) || []),
   ];
 }
 
@@ -154,7 +154,7 @@ function CoverCompositionElements({ composition, policy, showElements }: { compo
         const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
         const presentation = getCoverTextPresentation(element, composition.sourceTemplateId);
         const responsivePointSize = (pointSize: number) => `${pointSize * (25.4 / 72) / 210 * 100}cqw`;
-        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: presentation.color, fontFamily: element.fontFamily, fontSize: responsivePointSize(presentation.fontSize), fontWeight: presentation.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: responsivePointSize(presentation.letterSpacing), textShadow: presentation.textShadow }}>{text}</div>;
+        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: presentation.color, fontFamily: presentation.fontFamily, fontSize: responsivePointSize(presentation.fontSize), fontWeight: presentation.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: responsivePointSize(presentation.letterSpacing), textShadow: presentation.textShadow }}>{text}</div>;
       }
       const rawSource = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
       const source = rawSource?.startsWith("data:") ? rawSource : rawSource ? `/api/policycraft/cover-assets/${encodeURIComponent(rawSource)}` : undefined;

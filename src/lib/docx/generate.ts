@@ -159,7 +159,13 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
     },
   };
   const doc = new Document({
-    fonts: await embeddedDocumentFonts([typography.fontFamily, typography.headingFontFamily || typography.fontFamily]),
+    fonts: await embeddedDocumentFonts([
+      typography.fontFamily,
+      typography.headingFontFamily || typography.fontFamily,
+      ...(model.cover.composition?.elements.flatMap((element) => element.type === "text"
+        ? [getCoverTextPresentation(element, model.cover.composition!.sourceTemplateId).fontFamily]
+        : []) || []),
+    ]),
     creator: "PolicyCraft",
     title: `${model.cover.policyLabel} - ${model.cover.companyName}`,
     styles: {
@@ -992,11 +998,11 @@ function editableCoverTextBox(element: EditableCoverTextElement, value: string, 
   const escapeXml = (text: string) => text.replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[character]!);
   const points = (millimetres: number) => `${(millimetres * 72 / 25.4).toFixed(2)}pt`;
   const color = documentHex(presentation.color);
-  const font = escapeXml(element.fontFamily);
+  const font = escapeXml(presentation.fontFamily);
   const lines = wrapCoverText(value, element.width, presentation.fontSize, presentation.letterSpacing).slice(0, 40);
   const runs = lines.map((line, index) => `${index ? "<w:br/>" : ""}<w:t xml:space="preserve">${escapeXml(line)}</w:t>`).join("");
   const characterSpacing = presentation.letterSpacing ? `<w:spacing w:val="${Math.round(presentation.letterSpacing * 20)}"/>` : "";
-  const runProperties = `<w:rPr><w:rFonts w:ascii="${font}" w:cs="${font}" w:eastAsia="${font}" w:hAnsi="${font}"/>${presentation.bold ? "<w:b/><w:bCs/>" : ""}${element.italic ? "<w:i/><w:iCs/>" : ""}${element.underline ? '<w:u w:val="single"/>' : ""}<w:color w:val="${color}"/><w:sz w:val="${Math.round(presentation.fontSize * 2)}"/><w:szCs w:val="${Math.round(presentation.fontSize * 2)}"/>${characterSpacing}</w:rPr>`;
+  const runProperties = `<w:rPr><w:rFonts w:ascii="${font}" w:cs="${font}" w:eastAsia="${font}" w:hAnsi="${font}"/>${presentation.bold ? "<w:b/><w:bCs/>" : ""}${element.italic ? "<w:i/><w:iCs/>" : ""}${element.underline ? '<w:u w:val="single"/>' : ""}${presentation.textShadow ? '<w:shadow w:val="true"/>' : ""}<w:color w:val="${color}"/><w:sz w:val="${Math.round(presentation.fontSize * 2)}"/><w:szCs w:val="${Math.round(presentation.fontSize * 2)}"/>${characterSpacing}</w:rPr>`;
   const alignment = element.align === "center" ? "center" : element.align === "right" ? "right" : "left";
   const style = [
     "left:0",
@@ -1015,7 +1021,7 @@ function editableCoverTextBox(element: EditableCoverTextElement, value: string, 
     "mso-position-vertical-relative:page",
     "mso-wrap-style:none",
   ].join(";");
-  const xml = `<w:r><w:pict><v:shape id="cover-text-${escapeXml(element.id)}" type="#_x0000_t202" filled="f" stroked="f" o:allowincell="f" style="${style}"><v:textbox inset="0,0,0,0" style="mso-fit-shape-to-text:true;v-text-anchor:top"><w:txbxContent><w:p><w:pPr><w:jc w:val="${alignment}"/><w:ind w:left="0" w:right="0" w:firstLine="0"/><w:spacing w:before="0" w:after="0" w:line="${Math.round(240 * element.lineHeight)}" w:lineRule="auto"/></w:pPr><w:r>${runProperties}${runs}</w:r></w:p></w:txbxContent></v:textbox></v:shape><w10:wrap type="none" anchorx="page" anchory="page"/></w:pict></w:r>`;
+  const xml = `<w:r><w:pict><v:shape id="cover-text-${escapeXml(element.id)}" type="#_x0000_t202" filled="f" stroked="f" o:allowincell="f" style="${style}"><v:textbox inset="0,0,0,0" style="v-text-anchor:top"><w:txbxContent><w:p><w:pPr><w:jc w:val="${alignment}"/><w:ind w:left="0" w:right="0" w:firstLine="0"/><w:spacing w:before="0" w:after="0" w:line="${Math.round(240 * element.lineHeight)}" w:lineRule="auto"/></w:pPr><w:r>${runProperties}${runs}</w:r></w:p></w:txbxContent></v:textbox></v:shape><w10:wrap type="none" anchorx="page" anchory="page"/></w:pict></w:r>`;
   const imported = ImportedXmlComponent.fromXmlString(xml) as unknown as { root?: unknown[] };
   const root = imported.root?.[0];
   if (!root) throw new Error("Unable to import editable cover text box XML");

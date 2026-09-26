@@ -285,7 +285,7 @@ test("custom cover keeps decorative layers but renders only logo and policy titl
   assert.doesNotMatch(cover, /Editable Cover Ltd/, "the company name should not duplicate the available logo");
   assert.match(document, /v-text-anchor:top/, "Word text box should match the editor's top-aligned text");
   assert.match(document, /<w:jc w:val="center"\/><w:ind w:left="0" w:right="0" w:firstLine="0"\//, "Word text box should have no implicit paragraph indentation");
-  assert.match(document, /mso-fit-shape-to-text:true/, "Word text box should fit shape to text to avoid clipping");
+  assert.match(document, /width:481\.89pt;height:113\.39pt/, "Word text boxes should preserve the saved cover element size");
   assert.doesNotMatch(document, /<v:shape[^>]*style="[^"]*text-align:/, "Word shape style must not include text-align as it causes horizontal displacement");
   assert.match(document, /Company logo/, "cover logo should remain a separate Word image");
   assert.match(document, /Cover photo/, "cover image should remain a separate Word image");
@@ -337,7 +337,7 @@ test("custom cover text boxes encode horizontal alignment in the VML textbox", a
   assert.match(document, /<v:shape[^>]*o:allowincell="f"[^>]*style="[^"]*position:absolute;[^\"]*margin-left:56\.69pt;[^\"]*margin-top:198\.43pt;/, "Word VML text boxes should use absolute page positioning with saved coordinates");
   assert.match(document, /<v:shape[^>]*style="[^\"]*mso-position-horizontal:absolute;[^\"]*mso-position-horizontal-relative:page;[^\"]*mso-position-vertical:absolute;[^\"]*mso-position-vertical-relative:page;/, "Word VML text boxes should be anchored to the page");
   assert.doesNotMatch(document, /<v:shape[^>]*style="[^"]*text-align:/, "VML shape style should not include text-align as it causes horizontal double-offset in Word");
-  assert.match(document, /<v:textbox[^>]*style="[^"]*mso-fit-shape-to-text:true[^"]*"/, "Word VML text boxes should fit shape to text to prevent vertical clipping");
+  assert.match(document, /<v:textbox[^>]*style="[^"]*v-text-anchor:top[^"]*"/, "Word VML text boxes should preserve preview's top alignment");
   assert.match(document, /<w10:wrap type="none" anchorx="page" anchory="page"\/>/, "Word VML text boxes should not participate in document flow");
 });
 
@@ -392,6 +392,8 @@ test("AI cover keeps editable Word text layers over its full-page artwork", asyn
   assert.ok(artworkPixel[1] > artworkPixel[0] * 2, "AI artwork must contribute visible pixels to the full-page cover image");
   assert.match(document, /<v:shape[^>]*id="cover-text-policy-title"/, "AI cover text should use a Word-editable text box");
   assert.match(document, /<w:txbxContent>[\s\S]*Ethics Policy[\s\S]*<\/w:txbxContent>/, "AI cover title should remain editable document text");
+  assert.match(document, /<w:rFonts w:ascii="Source Serif 4"/, "Word should use the same bundled AI title font as the preview");
+  assert.match(document, /<w:shadow w:val="true"\/>/, "Word should retain the AI cover title shadow used in preview");
 });
 
 test("professional focus rows keep number markers transparent like preview", async () => {

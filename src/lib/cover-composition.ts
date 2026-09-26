@@ -17,6 +17,7 @@ export function getCoverTextPresentation(element: CoverTextElement, sourceTempla
   if (sourceTemplateId !== "ai-generated") {
     return {
       color: element.color,
+      fontFamily: element.fontFamily,
       fontSize: element.fontSize,
       bold: element.bold,
       letterSpacing: element.letterSpacing,
@@ -24,11 +25,27 @@ export function getCoverTextPresentation(element: CoverTextElement, sourceTempla
     };
   }
   const id = element.id.toLowerCase();
-  const isTitle = id.includes("policytitle");
-  const isCompany = id.includes("companyname");
+  const isTitle = /policy[-_]?title/.test(id);
+  const isCompany = /company[-_]?name/.test(id);
   const isLabel = id.endsWith("label");
+  const printSafeFonts: Record<string, string> = {
+    "Public Sans": "Source Sans 3",
+    "IBM Plex Sans": "IBM Plex Sans",
+    "Source Sans 3": "Source Sans 3",
+    Inter: "Inter",
+    "Space Grotesk": "Source Sans 3",
+    Archivo: "Source Sans 3",
+    Fraunces: "Source Serif 4",
+    "IBM Plex Serif": "IBM Plex Serif",
+    "Source Serif 4": "Source Serif 4",
+    "Cormorant Garamond": "Source Serif 4",
+    "Playfair Display": "Source Serif 4",
+    "Libre Caslon Text": "Libre Caslon Text",
+    "Atkinson Hyperlegible": "Source Sans 3",
+  };
   return {
     color: isLabel ? "#F8FAFC" : "#FFFFFF",
+    fontFamily: printSafeFonts[element.fontFamily] || (isTitle ? "Source Serif 4" : "Source Sans 3"),
     fontSize: Math.max(element.fontSize, isTitle ? 32 : isCompany ? 13 : isLabel ? 8.5 : 11.5),
     bold: true,
     letterSpacing: isLabel ? Math.max(element.letterSpacing, 0.8) : element.letterSpacing,

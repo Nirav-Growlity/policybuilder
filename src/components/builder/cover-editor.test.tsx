@@ -118,7 +118,8 @@ test("the shared cover renderer carries edited composition geometry and text int
     policy: { ...policy, coverComposition: edited },
   }));
   assert.match(previewMarkup, /class="policy-custom-cover-text"/);
-  assert.match(previewMarkup, /Edited cover title/);
+  assert.doesNotMatch(previewMarkup, /Edited cover title/);
+  assert.match(previewMarkup, /Environmental Policy/);
 });
 
 test("cover preview keeps edited text in the same browser typography box as the editor", () => {

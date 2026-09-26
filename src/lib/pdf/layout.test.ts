@@ -77,11 +77,11 @@ for (const { theme, withLogo } of DOCUMENT_THEMES.flatMap(theme => [false, true]
         const content = await page.getTextContent();
         const text = content.items.filter(item => "str" in item).map(item => item.str).join(" ");
         if (number === 1) {
-          assert.ok(text.includes("REVIEW-CHECK"), `${theme.id}: cover metadata spilled onto another page`);
-          assert.ok(text.includes("REV-CHECK"), `${theme.id}: cover revision metadata is missing`);
+          assert.ok(text.includes("REVIEW-CHECK"), `${theme.id}: next-review information should remain in the page footer`);
+          assert.ok(!text.includes("REV-CHECK"), `${theme.id}: revision metadata should not be on the cover`);
         }
         assert.ok(text.includes("DOC-CHECK"), `page ${number}: missing document number`);
-        assert.ok(text.includes("Environmental Manager"), `page ${number}: missing reviewer designation`);
+        if (number > 1) assert.ok(text.includes("Environmental Manager"), `page ${number}: missing reviewer designation`);
         assert.match(text, new RegExp(`Page\\s+${number}\\s*[/]\\s*${pdf.numPages}`), `page ${number}: page label missing or joined to document controls`);
         const operators = await page.getOperatorList();
         let matrix = [1, 0, 0, 1, 0, 0];

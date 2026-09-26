@@ -94,11 +94,13 @@ test("saved custom covers render only the company brand and policy title", () =>
 
 test("cover-only preview renders the active AI cover composition", () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
-  policy.aiCoverComposition = createAICoverComposition(policy, "data:image/png;base64,art", fallbackAICoverLayout());
+  policy.aiCoverComposition = createAICoverComposition(policy, "data:image/png;base64,art", fallbackAICoverLayout(), { titleColor: "#FFFFFF", brandColor: "#FFFFFF", headingFontFamily: "Fraunces", bodyFontFamily: "Public Sans" });
   policy.activeCoverVariant = "ai";
   const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, { policy }));
   assert.match(markup, /data-cover-mode="custom"/);
   assert.match(markup, /policy-custom-cover-background/);
+  assert.match(markup, /font-family:Source Serif 4/);
+  assert.match(markup, /text-shadow:/);
 });
 
 test("list formatting keeps legacy defaults and independently changes every document marker", () => {

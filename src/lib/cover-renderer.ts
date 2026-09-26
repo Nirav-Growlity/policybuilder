@@ -90,7 +90,7 @@ function elementMarkup(policy: Policy, composition: CoverComposition, element: C
     const anchor = element.align === "center" ? "middle" : element.align === "right" ? "end" : "start";
     const anchorX = element.align === "center" ? element.width / 2 : element.align === "right" ? element.width : 0;
     const styles = [
-      `font-family:${escapeXml(element.fontFamily)}`,
+      `font-family:${escapeXml(presentation.fontFamily)}`,
       `font-size:${fontSize}`,
       `font-weight:${presentation.bold ? 700 : 400}`,
       `font-style:${element.italic ? "italic" : "normal"}`,

@@ -42,6 +42,7 @@ test("AI cover text presentation strengthens contrast without changing saved com
   assert.equal(presentation.color, "#FFFFFF");
   assert.equal(presentation.fontSize, 32);
   assert.equal(presentation.bold, true);
+  assert.equal(presentation.fontFamily, "Source Serif 4");
   assert.ok(presentation.textShadow);
 });
 
@@ -71,7 +72,10 @@ test("older policies default to the manual cover and selected AI covers stay ind
   assert.equal(getActiveCoverVariant({ ...normalized, activeCoverVariant: "ai" }), "ai");
   assert.deepEqual(getActiveCoverComposition({ ...normalized, activeCoverVariant: "ai" }), ai);
   assert.equal(buildDocumentRenderModel({ ...normalized, activeCoverVariant: "ai" }).cover.variant, "ai");
-  assert.deepEqual(buildDocumentRenderModel({ ...normalized, activeCoverVariant: "ai" }).cover.composition, ai);
+  const projectedAI = buildDocumentRenderModel({ ...normalized, activeCoverVariant: "ai" }).cover.composition!;
+  assert.deepEqual(getActiveCoverComposition({ ...normalized, activeCoverVariant: "ai" }), ai);
+  assert.deepEqual(projectedAI.elements.filter(element => element.type === "text").map(element => element.type === "text" ? element.content.kind === "binding" ? element.content.binding : element.content.text : ""), ["companyName", "policyTitle"]);
+  assert.deepEqual(ai.elements, [], "display projection must not mutate the saved AI composition");
   assert.equal(hasExternalCoverAssets({ ...normalized, activeCoverVariant: "ai" }), false);
   assert.equal(hasExternalCoverAssets({ ...normalized, activeCoverVariant: "ai", aiCoverComposition: { ...ai, background: { ...ai.background, assetId: "asset-id" } } }), true);
 });
