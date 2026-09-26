@@ -72,6 +72,31 @@ test("cover editor exposes the resolved print frame used by the document preview
   assert.match(markup, /data-cover-page-background="solid:#FFFFFF"/);
 });
 
+test("cover editor renders saved AI text colors and typography instead of generated defaults", () => {
+  const composition = {
+    schemaVersion: 1 as const,
+    sourceTemplateId: "ai-generated",
+    background: { color: "#FFFFFF", fit: "cover" as const, focalPoint: { x: 50, y: 50 } },
+    elements: [{
+      id: "ai-cover-policyTitle",
+      type: "text" as const,
+      x: 30, y: 40, width: 140, height: 45, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false,
+      content: { kind: "literal" as const, text: "Editable title" },
+      fontFamily: "Arial", fontSize: 24, color: "#27C5EC", bold: false, italic: false, underline: false, align: "right" as const, lineHeight: 1.1, letterSpacing: 0.3,
+    }],
+  };
+  const markup = renderToStaticMarkup(React.createElement(CoverEditor, {
+    policy: makeSamplePolicy(),
+    initialComposition: composition,
+    onSave: () => undefined,
+    onCancel: () => undefined,
+  }));
+
+  assert.match(markup, /color:#27C5EC/);
+  assert.match(markup, /font-family:Arial/);
+  assert.match(markup, /letter-spacing:/);
+});
+
 test("legacy generated covers receive the preview metadata furniture when reopened", () => {
   const policy = makeSamplePolicy();
   const generated = createInitialCoverComposition(policy);
@@ -154,6 +179,8 @@ test("shared cover renderer wraps long text inside the saved element box", () =>
   const svg = createCoverCompositionSvg(policy, edited);
 
   assert.match(svg, /<clipPath id="cover-text-clip-cover-policy-title"><rect width="91" height="60" \/><\/clipPath>/);
-  assert.match(svg, /<tspan x="0" dy="0">Sustainable<\/tspan><tspan x="0" dy="/);
-  assert.match(svg, /<tspan x="0" dy="[^"]+">Policy<\/tspan>/);
+  const titleMarkup = svg.match(/<text[^>]*clip-path="url\(#cover-text-clip-cover-policy-title\)"[^>]*>([\s\S]*?)<\/text>/)?.[1] || "";
+  const lines = [...titleMarkup.matchAll(/<tspan x="0" dy="[^"]+">([^<]*)<\/tspan>/g)].map((match) => match[1]);
+  assert.ok(lines.length > 1, "long text should wrap within the saved box");
+  assert.equal(lines.join("").replace(/\s/g, ""), "SustainableProcurementPolicy");
 });

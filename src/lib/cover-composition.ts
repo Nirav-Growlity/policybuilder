@@ -8,48 +8,18 @@ export const COVER_MAX_IMAGES = 12;
 export const COVER_MAX_TEXT_LENGTH = 5000;
 export const COVER_BINDINGS: readonly CoverBinding[] = ["policyTitle", "companyName", "documentNumber", "effectiveDate", "revision", "nextReview"];
 
-/**
- * AI artwork can be light, dark, or mixed even when its saved design colors
- * are valid. Keep the stored editable values intact, but give every renderer a
- * consistent, high-contrast presentation for the generated-artwork variant.
- */
+/** Keep authored typography authoritative while retaining the generated-cover contrast aid. */
 export function getCoverTextPresentation(element: CoverTextElement, sourceTemplateId: string) {
-  if (sourceTemplateId !== "ai-generated") {
-    return {
-      color: element.color,
-      fontFamily: element.fontFamily,
-      fontSize: element.fontSize,
-      bold: element.bold,
-      letterSpacing: element.letterSpacing,
-      textShadow: undefined as string | undefined,
-    };
-  }
-  const id = element.id.toLowerCase();
-  const isTitle = /policy[-_]?title/.test(id);
-  const isCompany = /company[-_]?name/.test(id);
-  const isLabel = id.endsWith("label");
-  const printSafeFonts: Record<string, string> = {
-    "Public Sans": "Source Sans 3",
-    "IBM Plex Sans": "IBM Plex Sans",
-    "Source Sans 3": "Source Sans 3",
-    Inter: "Inter",
-    "Space Grotesk": "Source Sans 3",
-    Archivo: "Source Sans 3",
-    Fraunces: "Source Serif 4",
-    "IBM Plex Serif": "IBM Plex Serif",
-    "Source Serif 4": "Source Serif 4",
-    "Cormorant Garamond": "Source Serif 4",
-    "Playfair Display": "Source Serif 4",
-    "Libre Caslon Text": "Libre Caslon Text",
-    "Atkinson Hyperlegible": "Source Sans 3",
-  };
+  const aiTextShadow = sourceTemplateId === "ai-generated"
+    ? "0 1px 2px rgba(0,0,0,.88), 0 0 7px rgba(0,0,0,.55)"
+    : undefined;
   return {
-    color: isLabel ? "#F8FAFC" : "#FFFFFF",
-    fontFamily: printSafeFonts[element.fontFamily] || (isTitle ? "Source Serif 4" : "Source Sans 3"),
-    fontSize: Math.max(element.fontSize, isTitle ? 32 : isCompany ? 13 : isLabel ? 8.5 : 11.5),
-    bold: true,
-    letterSpacing: isLabel ? Math.max(element.letterSpacing, 0.8) : element.letterSpacing,
-    textShadow: "0 1px 2px rgba(0,0,0,.88), 0 0 7px rgba(0,0,0,.55)",
+    color: element.color,
+    fontFamily: element.fontFamily,
+    fontSize: element.fontSize,
+    bold: element.bold,
+    letterSpacing: element.letterSpacing,
+    textShadow: aiTextShadow,
   };
 }
 

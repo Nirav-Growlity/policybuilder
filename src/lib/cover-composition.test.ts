@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { coverAssetIdFromReference, getActiveCoverComposition, getActiveCoverVariant, getCoverBindingValue, getCoverTextPresentation, hasExternalCoverAssets, normalizeCoverComposition, normalizePolicyCovers, stripExternalActiveCoverAssets } from "./cover-composition";
 import { initialPolicy } from "./store";
 import { buildDocumentRenderModel } from "./document-render-model";
+import { resolveCoverTextLayout } from "./cover-renderer";
 
 test("normalizes a cover scene and clamps geometry", () => {
   const result = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "standard-pack", background: { color: "#fff" }, elements: [{ id: "a", type: "text", x: -10, y: 999, width: 999, height: 0, rotation: 900, opacity: 2, zIndex: 4, content: { kind: "literal", text: "hello" } }] });
@@ -31,19 +32,36 @@ test("removes the retired AI cover readability panel while preserving editable l
   assert.equal(result?.elements.some((element) => element.id === "ai-cover-policyTitle"), true);
 });
 
-test("AI cover text presentation strengthens contrast without changing saved composition values", () => {
+test("AI cover text presentation preserves saved styles and adds only the contrast shadow", () => {
   const composition = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "ai-generated", background: { color: "#FFFFFF", assetId: "art" }, elements: [
-    { id: "ai-cover-policyTitle", type: "text", fontSize: 20, color: "#315C49", content: { kind: "literal", text: "Policy" } },
+    { id: "ai-cover-policyTitle", type: "text", fontFamily: "Arial", fontSize: 20, color: "#315C49", bold: false, letterSpacing: 0.25, content: { kind: "literal", text: "Policy" } },
   ] })!;
   const title = composition.elements.find((element) => element.type === "text")!;
   const presentation = getCoverTextPresentation(title, composition.sourceTemplateId);
 
   assert.equal(title.color, "#315C49");
-  assert.equal(presentation.color, "#FFFFFF");
-  assert.equal(presentation.fontSize, 32);
-  assert.equal(presentation.bold, true);
-  assert.equal(presentation.fontFamily, "Source Serif 4");
+  assert.equal(presentation.color, "#315C49");
+  assert.equal(presentation.fontSize, 20);
+  assert.equal(presentation.bold, false);
+  assert.equal(presentation.fontFamily, "Arial");
+  assert.equal(presentation.letterSpacing, 0.25);
   assert.ok(presentation.textShadow);
+});
+
+test("shared cover text layout wraps inside the box and shrinks only when its height requires it", () => {
+  const element = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "ai-generated", elements: [{
+    id: "ai-cover-policyTitle", type: "text", x: 20, y: 20, width: 42, height: 18, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false,
+    content: { kind: "literal", text: "Labour & Human Rights Policy" }, fontFamily: "Arial", fontSize: 32, color: "#27C5EC", bold: false, italic: false, underline: false, align: "right", lineHeight: 1.08, letterSpacing: 0,
+  }] })!.elements[0];
+  assert.equal(element.type, "text");
+  if (element.type !== "text") return;
+
+  const layout = resolveCoverTextLayout("Labour & Human Rights Policy", element, "ai-generated");
+  assert.ok(layout.lines.length > 1);
+  assert.ok(layout.presentation.fontSize < element.fontSize);
+  assert.ok(layout.lines.length * layout.presentation.fontSize * (25.4 / 72) * element.lineHeight <= element.height);
+  assert.equal(layout.presentation.color, element.color);
+  assert.equal(layout.presentation.fontFamily, element.fontFamily);
 });
 
 test("rejects unknown schema and preserves live bindings", () => {

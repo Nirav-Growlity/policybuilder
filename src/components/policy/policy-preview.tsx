@@ -10,6 +10,7 @@ import {
 } from "@/lib/document-render-model";
 import type { Policy, RichTextBlock } from "@/lib/types";
 import { getCoverBindingValue, getCoverTextPresentation } from "@/lib/cover-composition";
+import { resolveCoverTextLayout } from "@/lib/cover-renderer";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, type QuantitativeTargetGroup } from "@/lib/quantitative";
 import { listMarkerText } from "@/lib/list-formatting";
 
@@ -152,9 +153,10 @@ function CoverCompositionElements({ composition, policy, showElements }: { compo
       const style: CSSProperties = { left: `${(element.x / 210) * 100}%`, top: `${(element.y / 297) * 100}%`, width: `${(element.width / 210) * 100}%`, height: `${(element.height / 297) * 100}%`, opacity: element.opacity, zIndex: element.zIndex, transform: `rotate(${element.rotation}deg)` };
       if (element.type === "text") {
         const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
-        const presentation = getCoverTextPresentation(element, composition.sourceTemplateId);
+        const layout = resolveCoverTextLayout(text, element, composition.sourceTemplateId);
+        const presentation = layout.presentation;
         const responsivePointSize = (pointSize: number) => `${pointSize * (25.4 / 72) / 210 * 100}cqw`;
-        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: presentation.color, fontFamily: presentation.fontFamily, fontSize: responsivePointSize(presentation.fontSize), fontWeight: presentation.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: responsivePointSize(presentation.letterSpacing), textShadow: presentation.textShadow }}>{text}</div>;
+        return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: presentation.color, fontFamily: presentation.fontFamily, fontSize: responsivePointSize(presentation.fontSize), fontWeight: presentation.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: responsivePointSize(presentation.letterSpacing), textShadow: presentation.textShadow, whiteSpace: "pre-line", overflowWrap: "anywhere" }}>{layout.lines.join("\n")}</div>;
       }
       const rawSource = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
       const source = rawSource?.startsWith("data:") ? rawSource : rawSource ? `/api/policycraft/cover-assets/${encodeURIComponent(rawSource)}` : undefined;

@@ -336,8 +336,9 @@ test("custom cover text boxes encode horizontal alignment in the VML textbox", a
   assert.match(document, /<v:shape[^>]*style="left:0;top:0;[^\"]*position:absolute;/, "Word VML text boxes should start from the page origin before applying their saved offsets");
   assert.match(document, /<v:shape[^>]*o:allowincell="f"[^>]*style="[^"]*position:absolute;[^\"]*margin-left:56\.69pt;[^\"]*margin-top:198\.43pt;/, "Word VML text boxes should use absolute page positioning with saved coordinates");
   assert.match(document, /<v:shape[^>]*style="[^\"]*mso-position-horizontal:absolute;[^\"]*mso-position-horizontal-relative:page;[^\"]*mso-position-vertical:absolute;[^\"]*mso-position-vertical-relative:page;/, "Word VML text boxes should be anchored to the page");
+  assert.match(document, /<v:shape[^>]*style="[^\"]*mso-wrap-style:square/, "Word must wrap text within the saved box width");
   assert.doesNotMatch(document, /<v:shape[^>]*style="[^"]*text-align:/, "VML shape style should not include text-align as it causes horizontal double-offset in Word");
-  assert.match(document, /<v:textbox[^>]*style="[^"]*v-text-anchor:top[^"]*"/, "Word VML text boxes should preserve preview's top alignment");
+  assert.match(document, /<v:textbox[^>]*style="[^"]*mso-fit-shape-to-text:f;v-text-anchor:top[^"]*"/, "Word must retain the saved box dimensions and top alignment");
   assert.match(document, /<w10:wrap type="none" anchorx="page" anchory="page"\/>/, "Word VML text boxes should not participate in document flow");
 });
 
@@ -392,8 +393,40 @@ test("AI cover keeps editable Word text layers over its full-page artwork", asyn
   assert.ok(artworkPixel[1] > artworkPixel[0] * 2, "AI artwork must contribute visible pixels to the full-page cover image");
   assert.match(document, /<v:shape[^>]*id="cover-text-policy-title"/, "AI cover text should use a Word-editable text box");
   assert.match(document, /<w:txbxContent>[\s\S]*Ethics Policy[\s\S]*<\/w:txbxContent>/, "AI cover title should remain editable document text");
-  assert.match(document, /<w:rFonts w:ascii="Source Serif 4"/, "Word should use the same bundled AI title font as the preview");
+  const titleShape = document.match(/<v:shape[^>]*id="cover-text-policy-title"[\s\S]*?<\/v:shape>/)?.[0];
+  assert.ok(titleShape);
+  assert.match(titleShape, /<w:rFonts w:ascii="Arial"/, "Word should use the saved editor font");
+  assert.match(titleShape, /<w:color w:val="FFFFFF"\/>/, "Word should use the saved editor color");
+  assert.match(titleShape, /<w:sz w:val="72"\/>/, "Word should use the saved editor font size when it fits the box");
+  assert.doesNotMatch(titleShape, /<w:b\/>/, "Word should preserve the saved non-bold setting");
   assert.match(document, /<w:shadow w:val="true"\/>/, "Word should retain the AI cover title shadow used in preview");
+});
+
+test("Word wraps and reduces long cover titles to stay within the saved text box", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "labour-human-rights");
+  policy.activeCoverVariant = "ai";
+  policy.aiCoverComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "ai-generated",
+    background: { color: "#FFFFFF", fit: "cover", focalPoint: { x: 50, y: 50 } },
+    elements: [{
+      id: "policy-title", type: "text", x: 60, y: 70, width: 90, height: 20, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false,
+      content: { kind: "literal", text: "Labour & Human Rights Policy" }, fontFamily: "Arial", fontSize: 32, color: "#27C5EC", bold: false, italic: false, underline: false, align: "right", lineHeight: 1.08, letterSpacing: 0,
+    }],
+  };
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const titleShape = document.match(/<v:shape[^>]*id="cover-text-policy-title"[\s\S]*?<\/v:shape>/)?.[0];
+
+  assert.ok(titleShape);
+  assert.match(titleShape, /<w:br\/>/, "Word text should receive the same explicit line breaks as the preview");
+  const renderedSize = Number(titleShape.match(/<w:sz w:val="(\d+)"/)?.[1]);
+  assert.ok(renderedSize > 0 && renderedSize < 64, "Word should shrink only the rendered font size when wrapping does not fit the saved box");
+  assert.match(titleShape, /margin-left:170\.08pt/);
+  assert.match(titleShape, /width:255\.12pt/);
+  assert.match(titleShape, /height:56\.69pt/);
+  assert.match(titleShape, /mso-wrap-style:square/, "Word should wrap long titles within their saved width");
+  assert.match(titleShape, /mso-fit-shape-to-text:f/, "Word should not expand the title box to fit its text");
 });
 
 test("professional focus rows keep number markers transparent like preview", async () => {

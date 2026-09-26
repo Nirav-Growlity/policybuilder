@@ -1,5 +1,5 @@
 import { getCoverBindingValue, getCoverTextPresentation } from "./cover-composition";
-import type { CoverComposition, CoverElement, Policy } from "./types";
+import type { CoverComposition, CoverElement, CoverTextElement, Policy } from "./types";
 
 type CoverSvgOptions = {
   /** Render only the page background when DOCX supplies the layers separately. */
@@ -21,10 +21,13 @@ function alignment(value: number): "Min" | "Mid" | "Max" {
 }
 
 function approximateTextWidth(value: string, fontSize: number, letterSpacing: number): number {
-  return [...value].reduce((total, character) => {
+  const estimate = [...value].reduce((total, character) => {
     const factor = character === " " ? 0.28 : /[ilI1.,'`]/.test(character) ? 0.28 : /[MW@#%&]/.test(character) ? 0.82 : 0.52;
     return total + fontSize * factor + letterSpacing;
   }, 0);
+  // The shared estimate is intentionally conservative so Word's real font
+  // metrics do not push an apparently fitting line past the saved box edge.
+  return estimate * 1.08;
 }
 
 function wrapText(value: string, width: number, fontSize: number, letterSpacing: number): string[] {
@@ -61,6 +64,31 @@ export function wrapCoverText(value: string, widthMm: number, fontSizePt: number
   return wrapText(value, widthMm, fontSizePt * MM_PER_POINT, letterSpacingPt * MM_PER_POINT).slice(0, 40);
 }
 
+export function resolveCoverTextLayout(value: string, element: CoverTextElement, sourceTemplateId: string) {
+  const presentation = getCoverTextPresentation(element, sourceTemplateId);
+  const fitsHeight = (fontSize: number) => {
+    const lines = wrapCoverText(value, element.width, fontSize, presentation.letterSpacing);
+    const requiredHeight = lines.length * fontSize * MM_PER_POINT * element.lineHeight;
+    return { lines, fits: requiredHeight <= element.height };
+  };
+
+  let fontSize = presentation.fontSize;
+  let layout = fitsHeight(fontSize);
+  if (!layout.fits && fontSize > 6) {
+    let low = 6;
+    let high = fontSize;
+    for (let iteration = 0; iteration < 14; iteration += 1) {
+      const candidate = (low + high) / 2;
+      if (fitsHeight(candidate).fits) low = candidate;
+      else high = candidate;
+    }
+    fontSize = low;
+    layout = fitsHeight(fontSize);
+  }
+
+  return { presentation: { ...presentation, fontSize }, lines: layout.lines };
+}
+
 function clipId(elementId: string): string {
   return `cover-text-clip-${elementId.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
 }
@@ -82,11 +110,12 @@ function elementMarkup(policy: Policy, composition: CoverComposition, element: C
   if (element.type === "text") {
     if (!includeText) return "";
     const text = element.content.kind === "binding" ? getCoverBindingValue(policy, element.content.binding) : element.content.text;
-    const presentation = getCoverTextPresentation(element, composition.sourceTemplateId);
+    const layout = resolveCoverTextLayout(text, element, composition.sourceTemplateId);
+    const presentation = layout.presentation;
     const fontSize = presentation.fontSize * MM_PER_POINT;
     const lineHeight = fontSize * element.lineHeight;
     const letterSpacing = presentation.letterSpacing * MM_PER_POINT;
-    const lines = wrapText(text, element.width, fontSize, letterSpacing).slice(0, 40);
+    const lines = layout.lines;
     const anchor = element.align === "center" ? "middle" : element.align === "right" ? "end" : "start";
     const anchorX = element.align === "center" ? element.width / 2 : element.align === "right" ? element.width : 0;
     const styles = [
