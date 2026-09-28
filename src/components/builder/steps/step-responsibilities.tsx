@@ -321,7 +321,7 @@ export function StepResponsibilities() {
                   onChange={(event: React.ChangeEvent<HTMLInputElement>) => updateAcknowledgementDetail(field, event.target.value)}
                   aria-label={label}
                   autoComplete="off"
-                  className="h-9 rounded-none border-0 border-b border-[var(--color-line-2)] bg-transparent px-1.5 text-[13px] shadow-none focus-visible:border-[var(--color-forest)] focus-visible:ring-0"
+                  className="h-10 rounded-lg border-[var(--color-line-2)] bg-[var(--color-paper)] px-3.5 text-[13px] shadow-none focus-visible:border-[var(--color-forest)] focus-visible:ring-2 focus-visible:ring-[var(--color-forest)]/15"
                 />
               </div>
             );

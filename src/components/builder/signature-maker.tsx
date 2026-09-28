@@ -4,6 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import { Check, Eraser, PenLine, Trash2, Type, Upload } from "lucide-react";
 import { useBuilder } from "@/lib/store";
+import { Panel } from "@/components/ui/panel";
 
 type SignatureRecord = { dataUrl: string; updatedAt: string };
 type SignatureMode = "draw" | "type" | "upload";
@@ -158,14 +159,11 @@ export function SignatureMaker() {
   };
 
   return (
-    <section aria-labelledby="signature-maker-title" className="rounded-xl border border-[var(--color-line)] bg-white p-4 sm:p-5">
-      <div className="flex items-start gap-3">
-        <span className="mt-0.5 text-[var(--color-forest)]"><PenLine size={18} aria-hidden="true" /></span>
-        <div className="min-w-0 flex-1">
-          <h2 id="signature-maker-title" className="text-[14px] font-semibold text-[var(--color-ink)]">Policy author signature</h2>
-          <p className="mt-1 text-[12px] leading-5 text-[var(--color-muted)]">Save one personal mark, then choose whether to include it on this policy.</p>
-        </div>
-      </div>
+    <Panel
+      title="Policy author signature"
+      description="Save one personal mark, then choose whether to include it on this policy."
+      icon={<PenLine size={17} strokeWidth={1.8} aria-hidden="true" />}
+    >
 
       {loading ? <p className="mt-4 text-[12px] text-[var(--color-muted)]" role="status">Loading saved signature…</p> : signature ? <div className="mt-4 flex flex-wrap items-center gap-3">
         <Image src={signature.dataUrl} alt="Your saved signature" width={220} height={56} unoptimized className="h-14 max-w-[220px] rounded border border-[var(--color-line)] object-contain p-2" />
@@ -194,6 +192,6 @@ export function SignatureMaker() {
         </label>
         <p className="mt-2 text-[10px] leading-4 text-[var(--color-muted)]">This is a visual signature mark and does not verify identity.</p>
       </div>}
-    </section>
+    </Panel>
   );
 }
