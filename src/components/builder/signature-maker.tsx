@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Check, Eraser, PenLine, Trash2, Type, Upload } from "lucide-react";
+import { Check, Eraser, PenLine, Redo2, Trash2, Type, Undo2, Upload } from "lucide-react";
+import SignaturePad, { type PointGroup } from "signature_pad";
 import { useBuilder } from "@/lib/store";
 import { Panel } from "@/components/ui/panel";
 
@@ -28,9 +29,13 @@ export function SignatureMaker() {
   const [saving, setSaving] = React.useState(false);
   const [error, setError] = React.useState("");
   const [confirmDelete, setConfirmDelete] = React.useState(false);
+  const [historyIndex, setHistoryIndex] = React.useState(-1);
+  const [historyLength, setHistoryLength] = React.useState(0);
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
+  const signaturePadRef = React.useRef<SignaturePad | null>(null);
+  const historyRef = React.useRef<PointGroup[][]>([]);
+  const historyCursorRef = React.useRef(-1);
   const previousSignature = React.useRef<SignatureRecord | null>(null);
-  const drawing = React.useRef(false);
   const canApply = policy.showAcknowledgement !== false && signature !== null;
 
   React.useEffect(() => {
@@ -55,30 +60,102 @@ export function SignatureMaker() {
     return () => controller.abort();
   }, [setAuthorSignatureUpdatedAt]);
 
-  const point = (event: React.PointerEvent<HTMLCanvasElement>) => {
+  React.useEffect(() => {
+    if (loading || mode !== "draw" || signature) return;
     const canvas = canvasRef.current;
-    const context = canvas?.getContext("2d");
-    if (!canvas || !context) return;
-    const rect = canvas.getBoundingClientRect();
-    return { context, x: (event.clientX - rect.left) * (canvas.width / rect.width), y: (event.clientY - rect.top) * (canvas.height / rect.height) };
+    if (!canvas) return;
+    historyRef.current = [];
+    historyCursorRef.current = -1;
+    setHistoryLength(0);
+    setHistoryIndex(-1);
+    const pad = new SignaturePad(canvas, {
+      minWidth: 0.65,
+      maxWidth: 2.8,
+      throttle: 8,
+      velocityFilterWeight: 0.7,
+      penColor: "#17211b",
+      backgroundColor: "rgba(0,0,0,0)",
+    });
+    signaturePadRef.current = pad;
+    let previousWidth = 0;
+    let previousHeight = 0;
+    const recordStroke = () => {
+      if (pad.isEmpty()) return;
+      const nextHistory = historyRef.current.slice(0, historyCursorRef.current + 1);
+      nextHistory.push(pad.toData());
+      historyRef.current = nextHistory;
+      historyCursorRef.current = nextHistory.length - 1;
+      setHistoryLength(nextHistory.length);
+      setHistoryIndex(historyCursorRef.current);
+    };
+    pad.addEventListener("endStroke", recordStroke);
+    const resizeCanvas = () => {
+      const ratio = Math.max(window.devicePixelRatio || 1, 1);
+      const { width, height } = canvas.getBoundingClientRect();
+      if (!width || !height) return;
+      const scaleX = previousWidth ? width / previousWidth : 1;
+      const scaleY = previousHeight ? height / previousHeight : 1;
+      const strokeScale = Math.min(scaleX, scaleY);
+      const resizeStrokeData = (groups: PointGroup[]) => groups.map((group) => ({
+        ...group,
+        dotSize: group.dotSize * strokeScale,
+        minWidth: group.minWidth * strokeScale,
+        maxWidth: group.maxWidth * strokeScale,
+        points: group.points.map((point) => ({ ...point, x: point.x * scaleX, y: point.y * scaleY })),
+      }));
+      const data = resizeStrokeData(pad.toData());
+      historyRef.current = historyRef.current.map(resizeStrokeData);
+      pad.off();
+      canvas.width = Math.round(width * ratio);
+      canvas.height = Math.round(height * ratio);
+      const context = canvas.getContext("2d");
+      if (!context) return;
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      pad.on();
+      if (data.length) pad.fromData(data);
+      previousWidth = width;
+      previousHeight = height;
+    };
+    const resizeObserver = new ResizeObserver(resizeCanvas);
+    resizeObserver.observe(canvas);
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("orientationchange", resizeCanvas);
+    resizeCanvas();
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("orientationchange", resizeCanvas);
+      pad.removeEventListener("endStroke", recordStroke);
+      pad.off();
+      signaturePadRef.current = null;
+      historyRef.current = [];
+      historyCursorRef.current = -1;
+    };
+  }, [loading, mode, signature]);
+
+  const undo = () => {
+    if (historyIndex < 0) return;
+    const nextIndex = historyIndex - 1;
+    const pad = signaturePadRef.current;
+    if (nextIndex < 0) pad?.clear();
+    else if (pad) pad.fromData(historyRef.current[nextIndex]);
+    historyCursorRef.current = nextIndex;
+    setHistoryIndex(nextIndex);
   };
-  const startDrawing = (event: React.PointerEvent<HTMLCanvasElement>) => {
-    const p = point(event);
-    if (!p) return;
-    drawing.current = true;
-    event.currentTarget.setPointerCapture(event.pointerId);
-    p.context.beginPath(); p.context.moveTo(p.x, p.y);
+  const redo = () => {
+    const nextIndex = historyIndex + 1;
+    const strokes = historyRef.current[nextIndex];
+    if (!strokes) return;
+    signaturePadRef.current?.fromData(strokes);
+    historyCursorRef.current = nextIndex;
+    setHistoryIndex(nextIndex);
   };
-  const draw = (event: React.PointerEvent<HTMLCanvasElement>) => {
-    if (!drawing.current) return;
-    const p = point(event);
-    if (!p) return;
-    p.context.lineTo(p.x, p.y); p.context.stroke();
-  };
-  const stopDrawing = () => { drawing.current = false; };
   const clearCanvas = () => {
-    const canvas = canvasRef.current;
-    canvas?.getContext("2d")?.clearRect(0, 0, canvas.width, canvas.height);
+    signaturePadRef.current?.clear();
+    historyRef.current = [];
+    historyCursorRef.current = -1;
+    setHistoryLength(0);
+    setHistoryIndex(-1);
   };
 
   const makeTypedImage = (): string => {
@@ -116,12 +193,11 @@ export function SignatureMaker() {
     } finally { setSaving(false); }
   };
   const saveDrawn = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    if (canvas.getContext("2d")?.getImageData(0, 0, canvas.width, canvas.height).data.some((value, index) => index % 4 === 3 && value > 0) !== true) {
+    const pad = signaturePadRef.current;
+    if (!pad || pad.isEmpty()) {
       setError("Draw your signature before saving."); return;
     }
-    void save(canvas.toDataURL("image/png"));
+    void save(pad.toDataURL("image/png"));
   };
   const upload = (file?: File) => {
     if (!file) return;
@@ -176,8 +252,8 @@ export function SignatureMaker() {
         </div>
         {mode === "draw" ? <div className="mt-3">
           <p id="signature-draw-help" className="mb-2 text-[11px] text-[var(--color-muted)]">Draw with your pointer or touch. You can also choose Type for keyboard input.</p>
-          <canvas ref={canvasRef} width={720} height={160} aria-label="Draw your signature here" aria-describedby="signature-draw-help" className="h-28 w-full touch-none rounded-md border border-dashed border-[var(--color-line-2)] bg-[#fffefa]" style={{ touchAction: "none" }} onPointerDown={startDrawing} onPointerMove={draw} onPointerUp={stopDrawing} onPointerCancel={stopDrawing} />
-          <div className="mt-2 flex justify-between"><button type="button" onClick={clearCanvas} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Eraser size={13} aria-hidden="true" />Clear</button><button type="button" disabled={saving} onClick={saveDrawn} className="inline-flex items-center gap-1.5 rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : <><Check size={14} aria-hidden="true" />Save signature</>}</button></div>
+          <canvas ref={canvasRef} aria-label="Draw your signature here" aria-describedby="signature-draw-help" className="h-28 w-full touch-none rounded-md border border-dashed border-[var(--color-line-2)] bg-[#fffefa]" style={{ touchAction: "none" }} />
+          <div className="mt-2 flex flex-wrap items-center justify-between gap-2"><div className="flex gap-1"><button type="button" aria-label="Undo last stroke" disabled={historyIndex < 0 || saving} onClick={undo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Undo2 size={13} aria-hidden="true" />Undo</button><button type="button" aria-label="Redo stroke" disabled={historyIndex >= historyLength - 1 || saving} onClick={redo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Redo2 size={13} aria-hidden="true" />Redo</button><button type="button" disabled={historyIndex < 0 || saving} onClick={clearCanvas} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Eraser size={13} aria-hidden="true" />Clear</button></div><button type="button" disabled={saving} onClick={saveDrawn} className="inline-flex items-center gap-1.5 rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : <><Check size={14} aria-hidden="true" />Save signature</>}</button></div>
         </div> : mode === "type" ? <form className="mt-3 flex flex-col gap-2 sm:flex-row" onSubmit={(event) => { event.preventDefault(); if (typedName.trim()) void save(makeTypedImage()); }}>
           <label className="sr-only" htmlFor="signature-typed-name">Type your signature</label><input id="signature-typed-name" name="signature" value={typedName} onChange={(event) => setTypedName(event.target.value)} placeholder="Type your name…" autoComplete="name" className="min-w-0 flex-1 rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[13px] text-[var(--color-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]" />
           <button type="submit" disabled={saving || !typedName.trim()} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button>
