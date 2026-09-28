@@ -404,6 +404,14 @@ export interface ImportedPolicySection {
   blocks: ImportedPolicyBlock[];
 }
 
+/** Optional employee supplied details printed on the acknowledgement form. */
+export interface EmployeeAcknowledgementDetails {
+  employeeName: string;
+  employeeId: string;
+  department: string;
+  date: string;
+}
+
 /** A DOCX reference used by AI generation. It is intentionally separate from Policy. */
 export interface ImportedPolicyContext {
   fileName: string;
@@ -428,6 +436,7 @@ export interface Policy {
   sections?: PolicySection[];
   showTableOfContents?: boolean;
   showAcknowledgement?: boolean;
+  employeeAcknowledgement?: EmployeeAcknowledgementDetails;
   showRevisionHistory?: boolean;
   sdgDisplay?: SdgDisplayMode;
   logoPosition?: LogoPosition;

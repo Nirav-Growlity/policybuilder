@@ -162,7 +162,7 @@ export type DocumentRenderModel = {
   acknowledgement?: {
     title: string;
     statement: string;
-    fields: string[];
+    fields: { label: string; value?: string }[];
     authorApproval?: AuthorApprovalRenderData;
   };
   footer: {
@@ -226,7 +226,16 @@ export function buildDocumentRenderModel(policy: Policy, authorApproval?: Author
       ? {
           title: "Employee Acknowledgement Form",
           statement: `I acknowledge that I have read and understood the ${profile.label} of ${companyName} and agree to uphold its commitments in my work.`,
-          fields: ["Employee Name", "Employee ID", "Department", "Date", "Signature"],
+          fields: (() => {
+            const values = policy.employeeAcknowledgement;
+            return [
+              { label: "Employee Name", value: values?.employeeName?.trim() || undefined },
+              { label: "Employee ID", value: values?.employeeId?.trim() || undefined },
+              { label: "Department", value: values?.department?.trim() || undefined },
+              { label: "Date", value: values?.date?.trim() || undefined },
+              { label: "Signature" },
+            ];
+          })(),
           authorApproval,
         }
       : undefined,

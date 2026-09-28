@@ -359,7 +359,7 @@ function Blocks({ blocks, recipe }: { blocks: RichTextBlock[]; recipe: string })
 function Acknowledgement({ model }: { model: DocumentRenderModel }) {
   const acknowledgement = model.acknowledgement!;
   const authorApproval = acknowledgement.authorApproval;
-  return <section className={`policy-acknowledgement acknowledgement-${model.theme.layout.acknowledgement}`}><span className="ack-kicker">Acknowledgement · Final page</span><h2>{acknowledgement.title}</h2><p>{acknowledgement.statement}</p><div className="ack-fields">{acknowledgement.fields.map((field) => <div key={field} className={field === "Signature" ? "ack-signature" : ""}><span>{field}</span>{field === "Signature" && authorApproval ? <div className="ack-signature-mark"><img src={authorApproval.signatureDataUrl} alt="Signature" /></div> : <i />}</div>)}</div></section>;
+  return <section className={`policy-acknowledgement acknowledgement-${model.theme.layout.acknowledgement}`}><span className="ack-kicker">Acknowledgement · Final page</span><h2>{acknowledgement.title}</h2><p>{acknowledgement.statement}</p><div className="ack-fields">{acknowledgement.fields.map(({ label, value }) => <div key={label} className={label === "Signature" ? "ack-signature" : ""}><span>{label}</span>{label === "Signature" && authorApproval ? <div className="ack-signature-mark"><img src={authorApproval.signatureDataUrl} alt="Signature" /></div> : value ? <div className="ack-field-value">{value}</div> : <i />}</div>)}</div></section>;
 }
 
 const previewStyles = `
@@ -773,6 +773,7 @@ const previewStyles = `
   .ack-fields { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 34px; margin-top: 32px; }
   .ack-fields > div span { color: var(--doc-muted); font-size: 8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
   .ack-fields i { display: block; height: 31px; border-bottom: 1px solid var(--doc-muted); }
+  .ack-fields .ack-field-value { min-height: 31px; padding-top: 5px; color: var(--doc-ink); font-size: var(--policy-paragraph-size); }
   .ack-fields .ack-signature { grid-column: 1 / 3; }
   .ack-fields .ack-signature-mark { display: flex; min-height: 31px; align-items: flex-end; border-bottom: 1px solid var(--doc-muted); }
   .ack-fields .ack-signature-mark img { display: block; width: auto; max-width: 180px; max-height: 31px; object-fit: contain; object-position: left bottom; }

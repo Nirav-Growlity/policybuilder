@@ -20,6 +20,18 @@ export function StepResponsibilities() {
   const { push } = useToast();
   const [busy, setBusy] = React.useState<Record<string, boolean>>({});
 
+  const updateAcknowledgementDetail = (field: "employeeName" | "employeeId" | "department" | "date", value: string) => {
+    updatePolicy((current) => ({
+      employeeAcknowledgement: {
+        employeeName: current.employeeAcknowledgement?.employeeName ?? "",
+        employeeId: current.employeeAcknowledgement?.employeeId ?? "",
+        department: current.employeeAcknowledgement?.department ?? "",
+        date: current.employeeAcknowledgement?.date ?? "",
+        [field]: value,
+      },
+    }));
+  };
+
   const revisionHistory = resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate, policy.company.reviewFrequency);
 
   const insertRevisionEntry = (afterIndex: number) => {
@@ -280,6 +292,42 @@ export function StepResponsibilities() {
           </div>
         </Panel>
       )}
+      <Panel
+        title="Employee acknowledgement form"
+        description="Details employees complete when acknowledging this policy."
+        icon={<Users size={17} strokeWidth={1.8} />}
+      >
+        <div className="grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
+          {([
+            ["employeeName", "Employee name", "text"],
+            ["employeeId", "Employee ID", "text"],
+            ["department", "Department", "text"],
+            ["date", "Date", "date"],
+          ] as const).map(([field, label, type]) => {
+            const id = `employee-acknowledgement-${field}`;
+            return (
+              <div key={field} className="flex min-w-0 flex-col gap-2">
+                <label
+                  htmlFor={id}
+                  className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]"
+                >
+                  {label}
+                </label>
+                <Input
+                  id={id}
+                  name={id}
+                  type={type}
+                  value={policy.employeeAcknowledgement?.[field] ?? ""}
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => updateAcknowledgementDetail(field, event.target.value)}
+                  aria-label={label}
+                  autoComplete="off"
+                  className="h-9 rounded-none border-0 border-b border-[var(--color-line-2)] bg-transparent px-1.5 text-[13px] shadow-none focus-visible:border-[var(--color-forest)] focus-visible:ring-0"
+                />
+              </div>
+            );
+          })}
+        </div>
+      </Panel>
       <SignatureMaker />
     </div>
   );
