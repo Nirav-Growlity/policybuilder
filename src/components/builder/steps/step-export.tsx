@@ -12,7 +12,7 @@ import { generateAndApplyAICover } from "@/components/builder/ai-cover-workflow"
 import { saveAICoverToLibrary } from "@/lib/ai-cover-library";
 
 export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (editing: boolean) => void }) {
-  const { policy, updatePolicy, coverEditorRequest, clearCoverEditorRequest, beginAICoverGeneration, endAICoverGeneration, isAICoverGenerating } = useBuilder();
+  const { policy, updatePolicy, coverEditorRequest, clearCoverEditorRequest, beginAICoverGeneration, endAICoverGeneration, isAICoverGenerating, includeAuthorSignature, authorSignatureDate, authorSignatureUpdatedAt } = useBuilder();
   const [editingCover, setEditingCover] = React.useState<"manual" | "ai" | null>(null);
   const [aiCoverState, setAICoverState] = React.useState<"generating" | "ready" | "failed">(() => policy.aiCoverComposition ? "ready" : "generating");
   const [aiCoverError, setAICoverError] = React.useState("");
@@ -111,7 +111,7 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
         <div className="relative min-h-[clamp(520px,70vh,760px)]">
           {aiCoverState === "generating" || isAICoverGenerating ? <AICoverGenerationLoader /> : <>
           {aiCoverError ? <div className={`flex items-center justify-between gap-3 rounded-lg px-3 py-2 text-[12px] ${aiCoverState === "failed" ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-900"}`} role={aiCoverState === "failed" ? "alert" : "status"}><span>{aiCoverError}{aiCoverState === "failed" ? " The manual cover is shown below." : ""}</span>{aiCoverState === "failed" ? <button type="button" className="shrink-0 rounded-md bg-[var(--color-forest)] px-2.5 py-1.5 font-semibold text-white" onClick={() => void startAICoverGeneration()}>Retry</button> : null}</div> : null}
-          <div className="min-h-0 flex-1 pr-1"><PdfPolicyPreview policy={policy} /></div>
+          <div className="min-h-0 flex-1 pr-1"><PdfPolicyPreview policy={policy} includeAuthorSignature={includeAuthorSignature} authorSignatureDate={authorSignatureDate ?? ""} signatureUpdatedAt={authorSignatureUpdatedAt} /></div>
           </>}
         </div>
       </div>}

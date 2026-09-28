@@ -13,6 +13,7 @@ import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
 import type { RevisionEntry } from "@/lib/types";
 import { resolveRevisionHistory, scheduleAnchorAfter, suggestMinorRevisionNumber } from "@/lib/revision-history";
+import { SignatureMaker } from "@/components/builder/signature-maker";
 
 export function StepResponsibilities() {
   const { policy, updatePolicy } = useBuilder();
@@ -279,6 +280,7 @@ export function StepResponsibilities() {
           </div>
         </Panel>
       )}
+      <SignatureMaker />
     </div>
   );
 }

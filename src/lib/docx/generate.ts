@@ -38,7 +38,7 @@ import { getPolicyDocumentTheme, runningLogoFit } from "../document-themes";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
-import { buildDocumentRenderModel, getRunningHeaderBrand, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
+import { buildDocumentRenderModel, getRunningHeaderBrand, type AuthorApprovalRenderData, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
 import { documentHex, type DocumentThemeDefinition } from "../document-themes";
 import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, normalizePolicyQuantitative, type QuantitativeTargetGroup } from "../quantitative";
@@ -73,10 +73,10 @@ function docxContentAlignment(value: DocumentTextAlignment = "justify"): typeof 
   return value === "center" ? AlignmentType.CENTER : value === "right" ? AlignmentType.RIGHT : value === "left" ? AlignmentType.LEFT : AlignmentType.JUSTIFIED;
 }
 
-export async function generateDocx(inputPolicy: Policy): Promise<Buffer> {
+export async function generateDocx(inputPolicy: Policy, authorApproval?: AuthorApprovalRenderData): Promise<Buffer> {
   const theme = getPolicyDocumentTheme(inputPolicy);
   const margin = theme.collection === "professional" || theme.pageBorder.enabled ? Math.round(pageMarginMm(theme.pageBorder) * A4.pointsPerMm * 20) : 1000;
-  return geometry.run(margin, () => docPropertyIds.run(docPropertiesUniqueNumericIdGen(), () => generateDocxDocument(inputPolicy)));
+  return geometry.run(margin, () => docPropertyIds.run(docPropertiesUniqueNumericIdGen(), () => generateDocxDocument(inputPolicy, authorApproval)));
 }
 
 function drawingAltText(name: string, description = name) {
@@ -84,9 +84,9 @@ function drawingAltText(name: string, description = name) {
   if (!nextId) throw new Error("Word drawing properties must be created during DOCX generation.");
   return { id: String(nextId()), title: name, description, name };
 }
-async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
+async function generateDocxDocument(inputPolicy: Policy, authorApproval?: AuthorApprovalRenderData): Promise<Buffer> {
   const policy = normalizePolicyQuantitative(inputPolicy);
-  const model = buildDocumentRenderModel(policy);
+  const model = buildDocumentRenderModel(policy, authorApproval);
   const { theme, typography } = model;
   const spacingScale = densityScale(theme.density);
   const logoImage = await logoFromDataUrl(policy.company.companyLogo);
@@ -127,7 +127,7 @@ async function generateDocxDocument(inputPolicy: Policy): Promise<Buffer> {
   });
 
   if (model.acknowledgement) {
-    children.push(new Paragraph({ children: [new PageBreak()] }), ...buildAcknowledgement(model));
+    children.push(new Paragraph({ children: [new PageBreak()] }), ...await buildAcknowledgement(model));
   }
 
   const primary = documentHex(theme.colors.primary);
@@ -755,44 +755,50 @@ function listParagraph(text: string, kind: "bullet" | "number", typography: Typo
   });
 }
 
-function buildAcknowledgement(model: DocumentRenderModel): DocBlock[] {
+async function buildAcknowledgement(model: DocumentRenderModel): Promise<DocBlock[]> {
   const acknowledgement = model.acknowledgement!;
   const { theme, typography } = model;
   const title = new Paragraph({ alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: 180 }, children: [new Bookmark({ id: "acknowledgement", children: [] }), new TextRun({ text: acknowledgement.title, bold: true, italics: theme.layout.acknowledgement === "affidavit", color: documentHex(theme.colors.primary), size: 36, font: typography.headingFontFamily || typography.fontFamily })] });
   const statement = new Paragraph({ alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: 260, line: Math.round(240 * typography.lineSpacing) }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
   const kicker = new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "ACKNOWLEDGEMENT - FINAL PAGE", bold: true, color: documentHex(theme.colors.primary), size: 15, characterSpacing: 50, font: typography.fontFamily })] });
-
-  if (theme.collection === "professional") return [title, statement, acknowledgementFields(model, contentWidth())];
+  const approval = acknowledgement.authorApproval
+    ? await logoFromDataUrl(acknowledgement.authorApproval.signatureDataUrl)
+    : null;
+  const fields = acknowledgementFields(model, contentWidth(), approval);
+  if (theme.collection === "professional") return [title, statement, fields];
   if (theme.layout.acknowledgement === "approval-block") {
     const rail = 1350;
     const body = contentWidth() - rail;
-    const fields = acknowledgementFields(model, body - 520);
+    const compactFields = acknowledgementFields(model, body - 520, approval);
     return [fixedTable([new TableRow({ children: [
       tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "ACK", bold: true, color: documentHex(theme.colors.onPrimary), size: 36, characterSpacing: 40 })] })], rail, { fill: documentHex(theme.colors.primary), textDirection: TextDirection.BOTTOM_TO_TOP_LEFT_TO_RIGHT }),
-      tableCell([kicker, title, statement, fields], body, { margins: { top: 280, bottom: 280, left: 300, right: 220 } }),
+      tableCell([kicker, title, statement, compactFields], body, { margins: { top: 280, bottom: 280, left: 300, right: 220 } }),
     ] })], [rail, body])];
   }
   if (theme.layout.acknowledgement === "legal-form") {
     const innerWidth = contentWidth() - 1240;
-    const fields = acknowledgementFields(model, innerWidth);
-    return [fixedTable([new TableRow({ children: [tableCell([kicker, title, statement, fields], contentWidth() - 520, { borders: allBorders(documentHex(theme.colors.primary), BorderStyle.DOUBLE, 8), margins: { top: 320, bottom: 320, left: 360, right: 360 } })] })], [contentWidth() - 520], { width: contentWidth() - 520, alignment: AlignmentType.CENTER })];
+    const compactFields = acknowledgementFields(model, innerWidth, approval);
+    return [fixedTable([new TableRow({ children: [tableCell([kicker, title, statement, compactFields], contentWidth() - 520, { borders: allBorders(documentHex(theme.colors.primary), BorderStyle.DOUBLE, 8), margins: { top: 320, bottom: 320, left: 360, right: 360 } })] })], [contentWidth() - 520], { width: contentWidth() - 520, alignment: AlignmentType.CENTER })];
   }
-  const fields = acknowledgementFields(model, contentWidth());
   if (theme.layout.acknowledgement === "signature-panel") {
     return [new Paragraph({ shading: { type: ShadingType.SOLID, color: documentHex(theme.colors.primary), fill: documentHex(theme.colors.primary) }, spacing: { after: 180 }, children: [new TextRun({ text: "FINAL COMMITMENT", bold: true, color: documentHex(theme.colors.onPrimary), size: 18, characterSpacing: 55 })] }), title, statement, fields];
   }
   return [new Paragraph({ border: { top: border(documentHex(theme.colors.accent), 18) }, children: [new TextRun({ text: "AFFIDAVIT OF ACKNOWLEDGEMENT", bold: true, color: documentHex(theme.colors.accent), size: 15, characterSpacing: 50 })] }), spacer(180), title, statement, fields];
 }
 
-function acknowledgementFields(model: DocumentRenderModel, availableWidth: number) {
+function acknowledgementFields(model: DocumentRenderModel, availableWidth: number, authorSignature: LogoImage = null) {
   const fields = model.acknowledgement!.fields;
   const half = Math.floor(availableWidth / 2);
   const rows = chunk(fields, 2).map((pair) => new TableRow({ cantSplit: true, children: [0, 1].map((index) => {
     const field = pair[index];
-    return field ? tableCell([
+    if (!field) return tableCell([new Paragraph("")], half);
+    const signatureImage = field === "Signature" && authorSignature
+      ? new Paragraph({ spacing: { after: 260 }, children: [new ImageRun({ data: authorSignature.data, type: authorSignature.type, transformation: { width: Math.max(1, Math.round(authorSignature.width * Math.min(1, 180 / Math.max(authorSignature.width, 1), 44 / Math.max(authorSignature.height, 1)))), height: Math.max(1, Math.round(authorSignature.height * Math.min(1, 180 / Math.max(authorSignature.width, 1), 44 / Math.max(authorSignature.height, 1)))) }, altText: drawingAltText("Signature") })] })
+      : new Paragraph({ border: { bottom: border(documentHex(model.theme.colors.muted), 6) }, spacing: { after: field === "Signature" ? 260 : 170 }, children: [new TextRun({ text: " " })] });
+    return tableCell([
       new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: field.toUpperCase(), bold: true, color: documentHex(model.theme.colors.muted), size: 14, characterSpacing: 35, font: model.typography.fontFamily })] }),
-      new Paragraph({ border: { bottom: border(documentHex(model.theme.colors.muted), 6) }, spacing: { after: field === "Signature" ? 260 : 170 }, children: [new TextRun({ text: " " })] }),
-    ], half, { fill: model.theme.layout.acknowledgement === "signature-panel" ? documentHex(model.theme.colors.soft) : undefined, margins: { top: 120, bottom: 120, left: 140, right: 140 } }) : tableCell([new Paragraph("")], half);
+      signatureImage,
+    ], half, { fill: model.theme.layout.acknowledgement === "signature-panel" ? documentHex(model.theme.colors.soft) : undefined, margins: { top: 120, bottom: 120, left: 140, right: 140 } });
   }) }));
   return fixedTable(rows, [half, half]);
 }

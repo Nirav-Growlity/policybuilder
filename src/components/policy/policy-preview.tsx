@@ -5,6 +5,7 @@ import { CoverArt, type CoverMotifScene } from "@/components/policy/cover-art";
 import {
   buildDocumentRenderModel,
   getRunningHeaderBrand,
+  type AuthorApprovalRenderData,
   type DocumentRenderModel,
   type DocumentRenderSection,
 } from "@/lib/document-render-model";
@@ -14,8 +15,8 @@ import { resolveCoverTextLayout } from "@/lib/cover-renderer";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, type QuantitativeTargetGroup } from "@/lib/quantitative";
 import { listMarkerText } from "@/lib/list-formatting";
 
-export function PolicyPreview({ policy, customCoverPng }: { policy: Policy; customCoverPng?: string }) {
-  const model = buildDocumentRenderModel(policy);
+export function PolicyPreview({ policy, customCoverPng, authorApproval }: { policy: Policy; customCoverPng?: string; authorApproval?: AuthorApprovalRenderData }) {
+  const model = buildDocumentRenderModel(policy, authorApproval);
   const { theme, typography } = model;
   const style = previewDocumentStyle(theme, typography);
 
@@ -357,7 +358,8 @@ function Blocks({ blocks, recipe }: { blocks: RichTextBlock[]; recipe: string })
 
 function Acknowledgement({ model }: { model: DocumentRenderModel }) {
   const acknowledgement = model.acknowledgement!;
-  return <section className={`policy-acknowledgement acknowledgement-${model.theme.layout.acknowledgement}`}><span className="ack-kicker">Acknowledgement · Final page</span><h2>{acknowledgement.title}</h2><p>{acknowledgement.statement}</p><div className="ack-fields">{acknowledgement.fields.map((field) => <div key={field} className={field === "Signature" ? "ack-signature" : ""}><span>{field}</span><i /></div>)}</div></section>;
+  const authorApproval = acknowledgement.authorApproval;
+  return <section className={`policy-acknowledgement acknowledgement-${model.theme.layout.acknowledgement}`}><span className="ack-kicker">Acknowledgement · Final page</span><h2>{acknowledgement.title}</h2><p>{acknowledgement.statement}</p><div className="ack-fields">{acknowledgement.fields.map((field) => <div key={field} className={field === "Signature" ? "ack-signature" : ""}><span>{field}</span>{field === "Signature" && authorApproval ? <div className="ack-signature-mark"><img src={authorApproval.signatureDataUrl} alt="Signature" /></div> : <i />}</div>)}</div></section>;
 }
 
 const previewStyles = `
@@ -772,6 +774,8 @@ const previewStyles = `
   .ack-fields > div span { color: var(--doc-muted); font-size: 8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
   .ack-fields i { display: block; height: 31px; border-bottom: 1px solid var(--doc-muted); }
   .ack-fields .ack-signature { grid-column: 1 / 3; }
+  .ack-fields .ack-signature-mark { display: flex; min-height: 31px; align-items: flex-end; border-bottom: 1px solid var(--doc-muted); }
+  .ack-fields .ack-signature-mark img { display: block; width: auto; max-width: 180px; max-height: 31px; object-fit: contain; object-position: left bottom; }
   .acknowledgement-legal-form { margin: 26px; border: 1px solid var(--doc-primary); outline: 1px solid var(--doc-line); outline-offset: -9px; background: var(--doc-paper); text-align: center; }
   .acknowledgement-legal-form > p { margin-inline: auto; text-align: center; }
   .acknowledgement-approval-block { border: 0; border-left: 110px solid var(--doc-primary); background: var(--doc-paper); }

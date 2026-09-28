@@ -13,7 +13,7 @@ import { ListStyleToggle } from "@/components/builder/list-style-toggle";
 import { resolvePolicyListFormatting } from "@/lib/list-formatting";
 
 export function usePolicyDownload() {
-  const { policy, updatePolicy } = useBuilder();
+  const { policy, updatePolicy, includeAuthorSignature, authorSignatureDate } = useBuilder();
   const { push } = useToast();
   const [exporting, setExporting] = React.useState<"pdf" | "docx" | null>(null);
 
@@ -35,7 +35,7 @@ export function usePolicyDownload() {
       const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ policy: exportPolicy }),
+        body: JSON.stringify({ policy: exportPolicy, includeAuthorSignature, authorSignatureDate }),
       });
       if (!res.ok) throw new Error("Export failed");
       const blob = await res.blob();

@@ -15,6 +15,13 @@ export type RunningHeaderBrand =
   | { kind: "logo"; source: string }
   | { kind: "name"; text: string };
 
+/** Transient author-signature data supplied by an authenticated export caller. */
+export type AuthorApprovalRenderData = {
+  displayName: string;
+  date: string;
+  signatureDataUrl: string;
+};
+
 export function getRunningHeaderBrand(company: Pick<Policy["company"], "name" | "companyLogo">): RunningHeaderBrand {
   const logo = company.companyLogo?.trim();
   return logo
@@ -156,6 +163,7 @@ export type DocumentRenderModel = {
     title: string;
     statement: string;
     fields: string[];
+    authorApproval?: AuthorApprovalRenderData;
   };
   footer: {
     documentNumber: string;
@@ -165,7 +173,7 @@ export type DocumentRenderModel = {
   };
 };
 
-export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
+export function buildDocumentRenderModel(policy: Policy, authorApproval?: AuthorApprovalRenderData): DocumentRenderModel {
   const theme = getPolicyDocumentTheme(policy);
   const typography = getResolvedTypography(policy);
   const profile = getPolicyProfile(policy.policyType);
@@ -219,6 +227,7 @@ export function buildDocumentRenderModel(policy: Policy): DocumentRenderModel {
           title: "Employee Acknowledgement Form",
           statement: `I acknowledge that I have read and understood the ${profile.label} of ${companyName} and agree to uphold its commitments in my work.`,
           fields: ["Employee Name", "Employee ID", "Department", "Date", "Signature"],
+          authorApproval,
         }
       : undefined,
     footer: {

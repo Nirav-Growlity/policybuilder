@@ -18,6 +18,22 @@ test("generatePdf returns a non-empty PDF buffer", async () => {
   }
 });
 
+test("generatePdf renders a distinct author approval block on the acknowledgement page", async () => {
+  const policy = makeSamplePolicy();
+  policy.showAcknowledgement = true;
+  const signature = await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="240" height="70"><path d="M8 55 C40 4 62 68 95 30 S150 52 226 10" fill="none" stroke="#173F4B" stroke-width="5"/></svg>')).png().toBuffer();
+  const output = await generatePdf(policy, {
+    displayName: "Policy Author",
+    date: "2026-09-28",
+    signatureDataUrl: `data:image/png;base64,${signature.toString("base64")}`,
+  });
+  const pages = (await PDFDocument.load(output)).getPages();
+  assert.ok(pages.length > 0);
+  const finalPageResources = pages.at(-1)!.node.normalizedEntries().Resources;
+  const images = finalPageResources.lookupMaybe(PDFName.of("XObject"), PDFDict);
+  assert.ok(images && images.keys().length > 0, "the acknowledgement page should include signature artwork");
+});
+
 test("custom cover overlay is attached to the complete first page", async () => {
   const document = await PDFDocument.create();
   document.addPage([595.28, 841.89]);

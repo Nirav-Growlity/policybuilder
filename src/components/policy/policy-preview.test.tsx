@@ -165,6 +165,24 @@ test("professional legal-form acknowledgement keeps signature rule inside its bo
   }
 });
 
+test("author signature is rendered inside the existing employee signature field only", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const approval = {
+    displayName: "Policy Author",
+    date: "2026-09-28",
+    signatureDataUrl: "data:image/png;base64,aGVsbG8=",
+  };
+  const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy, authorApproval: approval }));
+  const model = buildDocumentRenderModel(policy, approval);
+
+  assert.equal(model.acknowledgement?.authorApproval, approval);
+  const signatureField = markup.match(/<div class="ack-signature">[\s\S]*?<\/div>/)?.[0];
+  assert.ok(signatureField, "the acknowledgement should retain its Signature field");
+  assert.match(signatureField, /<span>Signature<\/span>/);
+  assert.match(signatureField, /<img src="data:image\/png;base64,aGVsbG8=" alt="Signature"/);
+  assert.doesNotMatch(markup, /Policy Author|2026-09-28|Policy author|data-author-approval/);
+});
+
 test("editorial-margin sections expose only the outer section number", async () => {
   const markup = renderToStaticMarkup(
     React.createElement(PolicyPreview, {

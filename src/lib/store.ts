@@ -66,6 +66,11 @@ interface BuilderState {
   coverEditorRequest: { variant: "manual" | "ai"; composition?: CoverComposition; requestId: string } | null;
   aiCoverGenerationCount: number;
   isAICoverGenerating: boolean;
+  includeAuthorSignature: boolean;
+  authorSignatureDate: string | null;
+  authorSignatureUpdatedAt: string | null;
+  setAuthorSignatureApplied: (applied: boolean, date?: string | null) => void;
+  setAuthorSignatureUpdatedAt: (updatedAt: string | null) => void;
   hydrated: boolean;
   setStep: (s: StepId) => void;
   next: () => void;
@@ -96,6 +101,11 @@ export const useBuilder = create<BuilderState>()(
       coverEditorRequest: null,
       aiCoverGenerationCount: 0,
       isAICoverGenerating: false,
+      includeAuthorSignature: false,
+      authorSignatureDate: null,
+      authorSignatureUpdatedAt: null,
+      setAuthorSignatureApplied: (applied, date = null) => set({ includeAuthorSignature: applied, authorSignatureDate: applied ? date : null }),
+      setAuthorSignatureUpdatedAt: (updatedAt) => set({ authorSignatureUpdatedAt: updatedAt }),
       hydrated: false,
       setStep: (s) => set({ step: s }),
       next: () => {
@@ -119,7 +129,7 @@ export const useBuilder = create<BuilderState>()(
       setPolicy: (p) => {
         const next = normalizePolicyRevisionHistory(normalizePolicyStructure(normalizePolicyQuantitative(initializeFocusAreaCatalogFromDefaults(p))));
         Object.assign(next, normalizePolicyCovers(next));
-        set({ policy: next });
+        set({ policy: next, includeAuthorSignature: false, authorSignatureDate: null });
       },
       setImportedPolicy: (reference) => set({ importedPolicy: reference }),
       clearImportedPolicy: () => set({ importedPolicy: null }),
@@ -148,12 +158,14 @@ export const useBuilder = create<BuilderState>()(
           importedPolicy: null,
           coverEditorRequest: null,
           step: "structure",
+          includeAuthorSignature: false,
+          authorSignatureDate: null,
         });
       },
-      reset: () => set({ policy: normalizePolicyRevisionHistory(initialPolicy()), importedPolicy: null, coverEditorRequest: null, step: "structure" }),
+      reset: () => set({ policy: normalizePolicyRevisionHistory(initialPolicy()), importedPolicy: null, coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureDate: null }),
       loadSample: () => {
         const sample = makeSamplePolicy();
-        set({ policy: normalizePolicyRevisionHistory(normalizePolicyQuantitative(sample)), coverEditorRequest: null, step: "structure" });
+        set({ policy: normalizePolicyRevisionHistory(normalizePolicyQuantitative(sample)), coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureDate: null });
       },
     }),
     {
