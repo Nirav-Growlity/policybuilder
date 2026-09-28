@@ -62,6 +62,27 @@ test("Word quantitative area numbers stay horizontal and align with the title", 
   assert.match(document, /w:vAlign w:val="top"/, "quantitative area numbers should align with the area title");
 });
 
+test("author signature image appears inside the employee Signature field in Word output", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const signatureDataUrl = `data:image/png;base64,${(await sharp(svg).png().toBuffer()).toString("base64")}`;
+  const zip = await JSZip.loadAsync(await generateDocx(policy, {
+    displayName: "Policy Author",
+    date: "2026-09-28",
+    signatureDataUrl,
+  }));
+  const document = await zip.file("word/document.xml")!.async("string");
+
+  const signatureLabelIndex = document.indexOf(">SIGNATURE</w:t>");
+  assert.ok(signatureLabelIndex >= 0, "the acknowledgement should retain its Signature field");
+  const signatureCellStart = document.lastIndexOf("<w:tc>", signatureLabelIndex);
+  const signatureCellEnd = document.indexOf("</w:tc>", signatureLabelIndex);
+  const signatureCell = document.slice(signatureCellStart, signatureCellEnd);
+  assert.match(signatureCell, /<w:drawing>/, "the saved signature image should be in the Signature field cell");
+  assert.match(signatureCell, /name="Signature"/);
+  assert.doesNotMatch(document, /POLICY AUTHOR|Policy Author|2026-09-28/);
+  assert.ok(Object.keys(zip.files).some((name) => /^word\/media\//.test(name)), "the signature artwork should be embedded as an image");
+});
+
 test("except-cover Word borders use the native not-first-page display", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.templateBrandOverrides = { schemaVersion: 1, pageBorder: { enabled: true, widthPt: 1, insetMm: 10, scope: "all-except-cover", color: "#234567" } };

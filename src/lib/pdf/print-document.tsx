@@ -7,7 +7,7 @@ import { chromium, type BrowserContext } from "playwright-core";
 import { PDFDocument, PDFDict, PDFName, rgb } from "pdf-lib";
 import { PolicyCoverPreview, PolicyPreview } from "@/components/policy/policy-preview";
 import { getPolicyDocumentTheme, runningLogoFit } from "@/lib/document-themes";
-import { buildDocumentRenderModel, getRunningHeaderBrand } from "@/lib/document-render-model";
+import { buildDocumentRenderModel, getRunningHeaderBrand, type AuthorApprovalRenderData } from "@/lib/document-render-model";
 import { A4, pageBorderAppliesToPage, pageBorderContentInsetMm, pageFooterVerticalShiftMm, pageHeaderLogoTopMm, pageHeaderMarginMm, pageMarginMm } from "@/lib/page-geometry";
 import type { Policy, PageBorder, ThemeBackground } from "@/lib/types";
 
@@ -21,14 +21,14 @@ const PDF_CONTEXT_CLEANUP_TIMEOUT_MS = 2_000;
 const pdfContextClosures = new WeakMap<BrowserContext, Promise<void>>();
 const pdfContextDirectories = new WeakMap<BrowserContext, string>();
 
-export function generatePreviewPdf(policy: Policy): Promise<Buffer> {
+export function generatePreviewPdf(policy: Policy, authorApproval?: AuthorApprovalRenderData): Promise<Buffer> {
   return withSerializedPdfRender(async () => {
     try {
-      return await generatePreviewPdfNow(policy);
+      return await generatePreviewPdfNow(policy, authorApproval);
     } catch (error) {
       if (!isRecoverablePdfBrowserError(error)) throw error;
       console.warn("PDF export encountered an unhealthy Chromium context; retrying once with a fresh isolated context.", error instanceof Error ? error.message : String(error));
-      return generatePreviewPdfNow(policy);
+      return generatePreviewPdfNow(policy, authorApproval);
     }
   });
 }
@@ -41,8 +41,8 @@ function isRecoverablePdfBrowserError(error: unknown): boolean {
     || message.includes("Chromium context creation timed out");
 }
 
-async function generatePreviewPdfNow(policy: Policy): Promise<Buffer> {
-  const model = buildDocumentRenderModel(policy);
+async function generatePreviewPdfNow(policy: Policy, authorApproval?: AuthorApprovalRenderData): Promise<Buffer> {
+  const model = buildDocumentRenderModel(policy, authorApproval);
   const theme = model.theme;
   const brand = getRunningHeaderBrand(policy.company);
   const logoFit = runningLogoFit(theme.logoScale);
@@ -62,7 +62,7 @@ async function generatePreviewPdfNow(policy: Policy): Promise<Buffer> {
     }
   }
   const customCoverPng = customCoverData ? `data:image/png;base64,${Buffer.from(customCoverData).toString("base64")}` : undefined;
-  const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} />));
+  const markup = await inlinePublicAssets(renderToStaticMarkup(<PolicyPreview policy={policy} customCoverPng={customCoverPng} authorApproval={authorApproval} />));
   const { context } = await createPdfContextWithTimeout();
   try {
     const page = await withTimeout(
