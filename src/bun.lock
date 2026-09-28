@@ -5,6 +5,11 @@
     "": {
       "name": "poc",
       "dependencies": {
+        "@fontsource/allura": "^5.3.0",
+        "@fontsource/bad-script": "^5.3.0",
+        "@fontsource/caveat": "^5.3.0",
+        "@fontsource/mr-de-haviland": "^5.3.0",
+        "@fontsource/pacifico": "^5.3.0",
         "@react-pdf/renderer": "^4.5.1",
         "@sparticuz/chromium": "^147.0.0",
         "bcryptjs": "^3.0.2",
@@ -184,6 +189,16 @@
     "@eslint/object-schema": ["@eslint/object-schema@2.1.7", "", {}, "sha512-VtAOaymWVfZcmZbp6E2mympDIHvyjXs/12LqWYjVw6qjrfF+VK+fyG33kChz3nnK+SU5/NeHOqrTEHS8sXO3OA=="],
 
     "@eslint/plugin-kit": ["@eslint/plugin-kit@0.4.1", "", { "dependencies": { "@eslint/core": "^0.17.0", "levn": "^0.4.1" } }, "sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA=="],
+
+    "@fontsource/allura": ["@fontsource/allura@5.3.0", "", {}, "sha512-UqloNNVxl03+psvtIXCYuo7/v2mD9XmX2HGiczhK6NmDDwbFJJDjrbHZ5tpNuVXKsMEQPc46tZu3hewYN82/YA=="],
+
+    "@fontsource/bad-script": ["@fontsource/bad-script@5.3.0", "", {}, "sha512-7MElotXA5LHyvyElVXnwPpT71wYSKLmpvm7TV0e4ahaRP6D1vXocyfHOgENi9MHgRmGxhmz7Gr1fDuji0MNvkQ=="],
+
+    "@fontsource/caveat": ["@fontsource/caveat@5.3.0", "", {}, "sha512-eHTfzQxFSW9ABERRLNruHoNJmKed2J7pqTUc5lp4a4POMgXGKpxmWj3d9Hz10kmAg6iuTTLe6UagbA4bnsmfQw=="],
+
+    "@fontsource/mr-de-haviland": ["@fontsource/mr-de-haviland@5.3.0", "", {}, "sha512-qpBK2wuVNnWNmtz4IWvNvJYNHShzmFkXwrZLYS2nauN2+Oy3Z6zXexq3lUj8QbO4Zz+D0IpL9cs8I/67lvp/iA=="],
+
+    "@fontsource/pacifico": ["@fontsource/pacifico@5.3.0", "", {}, "sha512-bWv0fHR1n36p7scRn+maaEaVeQCOq9yvfVfjyAeUzKrK4Y/3qiRAEj4hJgfxj/sjgZZGkeHyKPrbWdDaZtpCVw=="],
 
     "@humanfs/core": ["@humanfs/core@0.19.2", "", { "dependencies": { "@humanfs/types": "^0.15.0" } }, "sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA=="],
 

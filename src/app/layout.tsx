@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { DOCUMENT_FONT_FACE_CSS_ALL } from "@/lib/document-fonts";
+import "@fontsource/allura/400.css";
+import "@fontsource/bad-script/400.css";
+import "@fontsource/caveat/600.css";
+import "@fontsource/mr-de-haviland/400.css";
+import "@fontsource/pacifico/400.css";
 import "./globals.css";
 
 export const metadata: Metadata = {

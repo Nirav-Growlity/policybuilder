@@ -9,6 +9,15 @@ import { Panel } from "@/components/ui/panel";
 
 type SignatureRecord = { dataUrl: string; updatedAt: string };
 type SignatureMode = "draw" | "type" | "upload";
+type TypedSignatureStyle = "allura" | "natural" | "caveat" | "pacifico" | "mrDeHaviland";
+
+const TYPED_SIGNATURE_STYLES: Record<TypedSignatureStyle, { label: string; description: string; family: string; weight: number; size: number; previewSize: number }> = {
+  allura: { label: "Allura", description: "Elegant", family: "Allura", weight: 400, size: 110, previewSize: 44 },
+  natural: { label: "Natural", description: "Neat handwriting", family: "Bad Script", weight: 400, size: 100, previewSize: 38 },
+  caveat: { label: "Caveat", description: "Handwritten", family: "Caveat", weight: 600, size: 104, previewSize: 46 },
+  pacifico: { label: "Pacifico", description: "Bold brush", family: "Pacifico", weight: 400, size: 86, previewSize: 38 },
+  mrDeHaviland: { label: "Mr De Haviland", description: "Dramatic flourish", family: "Mr De Haviland", weight: 400, size: 140, previewSize: 52 },
+};
 
 function localDate(): string {
   const date = new Date();
@@ -25,6 +34,8 @@ export function SignatureMaker() {
   const [signature, setSignature] = React.useState<SignatureRecord | null>(null);
   const [mode, setMode] = React.useState<SignatureMode>("draw");
   const [typedName, setTypedName] = React.useState("");
+  const [typedStyle, setTypedStyle] = React.useState<TypedSignatureStyle>("allura");
+  const [fontStatus, setFontStatus] = React.useState<"loading" | "ready" | "error">("loading");
   const [loading, setLoading] = React.useState(true);
   const [saving, setSaving] = React.useState(false);
   const [error, setError] = React.useState("");
@@ -37,6 +48,8 @@ export function SignatureMaker() {
   const historyCursorRef = React.useRef(-1);
   const previousSignature = React.useRef<SignatureRecord | null>(null);
   const canApply = policy.showAcknowledgement !== false && signature !== null;
+  const selectedTypedStyle = TYPED_SIGNATURE_STYLES[typedStyle];
+  const fontSpec = `${selectedTypedStyle.weight} ${selectedTypedStyle.size}px "${selectedTypedStyle.family}"`;
 
   React.useEffect(() => {
     if (policy.showAcknowledgement === false && includeAuthorSignature) {
@@ -133,6 +146,18 @@ export function SignatureMaker() {
     };
   }, [loading, mode, signature]);
 
+  React.useEffect(() => {
+    if (mode !== "type") return;
+    let current = true;
+    void Promise.resolve().then(async () => {
+      if (!current) return;
+      setFontStatus("loading");
+      const loadedFaces = await document.fonts.load(fontSpec, "Signature");
+      if (current) setFontStatus(loadedFaces.length > 0 && document.fonts.check(fontSpec, "Signature") ? "ready" : "error");
+    }).catch(() => { if (current) setFontStatus("error"); });
+    return () => { current = false; };
+  }, [fontSpec, mode]);
+
   const undo = () => {
     if (historyIndex < 0) return;
     const nextIndex = historyIndex - 1;
@@ -158,16 +183,44 @@ export function SignatureMaker() {
     setHistoryIndex(-1);
   };
 
-  const makeTypedImage = (): string => {
+  const makeTypedImage = async (): Promise<string> => {
+    const name = typedName.trim();
+    const loadedFaces = await document.fonts.load(fontSpec, "Signature");
+    if (!loadedFaces.length || !document.fonts.check(fontSpec, "Signature")) throw new Error("That signature style could not be loaded. Choose another style or try again.");
+    const measureCanvas = document.createElement("canvas");
+    const measureContext = measureCanvas.getContext("2d");
+    if (!measureContext) throw new Error("Your browser could not create the signature image.");
+    measureContext.font = fontSpec;
+    const metrics = measureContext.measureText(name);
+    const horizontalPadding = 12;
+    const verticalPadding = 10;
+    const inkWidth = Math.max(1, metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight);
+    const inkHeight = Math.max(1, metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent);
+    const pixelRatio = Math.min(2, 2400 / (inkWidth + horizontalPadding * 2), 600 / (inkHeight + verticalPadding * 2));
     const canvas = document.createElement("canvas");
-    canvas.width = 900; canvas.height = 200;
+    canvas.width = Math.ceil((inkWidth + horizontalPadding * 2) * pixelRatio);
+    canvas.height = Math.ceil((inkHeight + verticalPadding * 2) * pixelRatio);
     const context = canvas.getContext("2d");
     if (!context) throw new Error("Your browser could not create the signature image.");
+    context.scale(pixelRatio, pixelRatio);
+    context.font = fontSpec;
     context.fillStyle = "#17211b";
-    context.font = 'italic 76px "Segoe Script", "Brush Script MT", cursive';
-    context.textBaseline = "middle";
-    context.fillText(typedName.trim(), 24, 100, 850);
+    context.textAlign = "left";
+    context.textBaseline = "alphabetic";
+    context.fillText(name, horizontalPadding + metrics.actualBoundingBoxLeft, verticalPadding + metrics.actualBoundingBoxAscent);
     return canvas.toDataURL("image/png");
+  };
+  const saveTyped = async () => {
+    if (!typedName.trim()) return;
+    setError("");
+    setFontStatus("loading");
+    try {
+      await save(await makeTypedImage());
+      setFontStatus("ready");
+    } catch (cause) {
+      setFontStatus("error");
+      setError(cause instanceof Error ? cause.message : "Could not prepare the typed signature.");
+    }
   };
   const save = async (dataUrl: string) => {
     const replacing = previousSignature.current !== null;
@@ -254,9 +307,25 @@ export function SignatureMaker() {
           <p id="signature-draw-help" className="mb-2 text-[11px] text-[var(--color-muted)]">Draw with your pointer or touch. You can also choose Type for keyboard input.</p>
           <canvas ref={canvasRef} aria-label="Draw your signature here" aria-describedby="signature-draw-help" className="h-28 w-full touch-none rounded-md border border-dashed border-[var(--color-line-2)] bg-[#fffefa]" style={{ touchAction: "none" }} />
           <div className="mt-2 flex flex-wrap items-center justify-between gap-2"><div className="flex gap-1"><button type="button" aria-label="Undo last stroke" disabled={historyIndex < 0 || saving} onClick={undo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Undo2 size={13} aria-hidden="true" />Undo</button><button type="button" aria-label="Redo stroke" disabled={historyIndex >= historyLength - 1 || saving} onClick={redo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Redo2 size={13} aria-hidden="true" />Redo</button><button type="button" disabled={historyIndex < 0 || saving} onClick={clearCanvas} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Eraser size={13} aria-hidden="true" />Clear</button></div><button type="button" disabled={saving} onClick={saveDrawn} className="inline-flex items-center gap-1.5 rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : <><Check size={14} aria-hidden="true" />Save signature</>}</button></div>
-        </div> : mode === "type" ? <form className="mt-3 flex flex-col gap-2 sm:flex-row" onSubmit={(event) => { event.preventDefault(); if (typedName.trim()) void save(makeTypedImage()); }}>
-          <label className="sr-only" htmlFor="signature-typed-name">Type your signature</label><input id="signature-typed-name" name="signature" value={typedName} onChange={(event) => setTypedName(event.target.value)} placeholder="Type your name…" autoComplete="name" className="min-w-0 flex-1 rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[13px] text-[var(--color-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]" />
-          <button type="submit" disabled={saving || !typedName.trim()} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button>
+        </div> : mode === "type" ? <form className="mt-3" onSubmit={(event) => { event.preventDefault(); void saveTyped(); }}>
+          <label className="mb-1.5 block text-[11px] font-medium text-[var(--color-ink-2)]" htmlFor="signature-typed-name">Your name</label>
+          <input id="signature-typed-name" name="signature" value={typedName} onChange={(event) => { setTypedName(event.target.value); setError(""); }} placeholder="Type your name…" autoComplete="name" maxLength={80} className="w-full rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[13px] text-[var(--color-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]" />
+          <fieldset className="mt-3">
+            <legend className="mb-1.5 text-[11px] font-medium text-[var(--color-ink-2)]">Choose a signature style</legend>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3" role="radiogroup" aria-label="Typed signature style">
+              {(Object.entries(TYPED_SIGNATURE_STYLES) as [TypedSignatureStyle, typeof selectedTypedStyle][]).map(([style, option]) => <label key={style} className={`flex min-w-0 cursor-pointer flex-col rounded-md border px-2.5 py-2 transition-colors focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--color-forest)] ${typedStyle === style ? "border-[var(--color-forest)] bg-[var(--color-cream-2)]" : "border-[var(--color-line-2)] hover:bg-[var(--color-cream-2)]"}`}>
+                <span className="flex items-center gap-1.5 text-[11px] font-medium text-[var(--color-ink-2)]"><input type="radio" name="typed-signature-style" value={style} checked={typedStyle === style} onChange={() => { setTypedStyle(style); setError(""); }} className="accent-[var(--color-forest)]" />{option.label}</span>
+                <span className="mt-2 h-9 overflow-hidden whitespace-nowrap text-[24px] leading-9 text-[var(--color-ink)]" style={{ fontFamily: `"${option.family}", cursive`, fontWeight: option.weight }} aria-hidden="true">{typedName.trim() || "Your name"}</span>
+                <span className="text-[10px] text-[var(--color-muted)]">{option.description}</span>
+              </label>)}
+            </div>
+          </fieldset>
+          <div className="mt-3 overflow-hidden rounded-md border border-[var(--color-line)] bg-[#fffefa] px-3 py-2.5">
+            <p className="mb-1 text-[10px] font-medium uppercase tracking-wide text-[var(--color-muted)]">Preview</p>
+            <div className="overflow-x-auto" aria-live="polite" aria-label="Signature preview"><span className="block min-h-12 w-max whitespace-nowrap leading-[1.2] text-[#17211b]" style={{ fontFamily: `"${selectedTypedStyle.family}", cursive`, fontSize: selectedTypedStyle.previewSize, fontWeight: selectedTypedStyle.weight }}>{typedName.trim() || "Your name"}</span></div>
+          </div>
+          <p className="mt-1.5 min-h-4 text-[10px] text-[var(--color-muted)]" role="status" aria-live="polite">{fontStatus === "loading" ? "Loading signature style…" : fontStatus === "error" ? "This font could not be loaded. Try another style." : ""}</p>
+          <div className="mt-2 flex justify-end"><button type="submit" disabled={saving || !typedName.trim() || fontStatus !== "ready"} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button></div>
         </form> : <div className="mt-3"><label htmlFor="signature-upload" className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)]"><Upload size={14} aria-hidden="true" />Choose image</label><input id="signature-upload" type="file" accept="image/*" className="sr-only" onChange={(event) => upload(event.target.files?.[0])} /></div>}
       </>}
 
