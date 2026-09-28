@@ -19,7 +19,7 @@ function responseMessage(body: unknown, fallback: string): string {
 }
 
 export function SignatureMaker() {
-  const { policy, includeAuthorSignature, authorSignatureDate, setAuthorSignatureApplied, setAuthorSignatureUpdatedAt } = useBuilder();
+  const { policy, includeAuthorSignature, authorSignatureChoiceMade, authorSignatureDate, setAuthorSignatureApplied, setAuthorSignatureUpdatedAt } = useBuilder();
   const [signature, setSignature] = React.useState<SignatureRecord | null>(null);
   const [mode, setMode] = React.useState<SignatureMode>("draw");
   const [typedName, setTypedName] = React.useState("");
@@ -33,8 +33,12 @@ export function SignatureMaker() {
   const canApply = policy.showAcknowledgement !== false && signature !== null;
 
   React.useEffect(() => {
-    if (policy.showAcknowledgement === false && includeAuthorSignature) setAuthorSignatureApplied(false);
-  }, [includeAuthorSignature, policy.showAcknowledgement, setAuthorSignatureApplied]);
+    if (policy.showAcknowledgement === false && includeAuthorSignature) {
+      setAuthorSignatureApplied(false, null, "system");
+    } else if (canApply && !authorSignatureChoiceMade && !includeAuthorSignature) {
+      setAuthorSignatureApplied(true, localDate(), "automatic");
+    }
+  }, [authorSignatureChoiceMade, canApply, includeAuthorSignature, policy.showAcknowledgement, setAuthorSignatureApplied, signature]);
 
   React.useEffect(() => {
     const controller = new AbortController();
@@ -88,6 +92,7 @@ export function SignatureMaker() {
     return canvas.toDataURL("image/png");
   };
   const save = async (dataUrl: string) => {
+    const replacing = previousSignature.current !== null;
     setSaving(true); setError("");
     try {
       const response = await fetch("/api/policycraft/signatures/me", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ dataUrl }) });
@@ -96,7 +101,11 @@ export function SignatureMaker() {
       setSignature(body?.signature ?? { dataUrl, updatedAt: new Date().toISOString() });
       previousSignature.current = null;
       setAuthorSignatureUpdatedAt(`${body?.userId ?? "current"}:${body?.signature?.updatedAt ?? new Date().toISOString()}`);
-      setAuthorSignatureApplied(false);
+      if (replacing) {
+        setAuthorSignatureApplied(includeAuthorSignature, includeAuthorSignature ? localDate() : null, "system");
+      } else {
+        setAuthorSignatureApplied(true, localDate(), "automatic");
+      }
     } catch (cause) {
       if (previousSignature.current) {
         setSignature(previousSignature.current);
@@ -140,12 +149,12 @@ export function SignatureMaker() {
       const response = await fetch("/api/policycraft/signatures/me", { method: "DELETE" });
       const body = await response.json().catch(() => null);
       if (!response.ok) throw new Error(responseMessage(body, "Could not delete your saved signature."));
-      setSignature(null); setConfirmDelete(false); setAuthorSignatureApplied(false); setAuthorSignatureUpdatedAt(null);
+      setSignature(null); setConfirmDelete(false); setAuthorSignatureApplied(false, null, "system"); setAuthorSignatureUpdatedAt(null);
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Could not delete your saved signature."); }
     finally { setSaving(false); }
   };
   const toggleApply = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAuthorSignatureApplied(event.target.checked, event.target.checked ? localDate() : null);
+    setAuthorSignatureApplied(event.target.checked, event.target.checked ? localDate() : null, "user");
   };
 
   return (
@@ -160,7 +169,7 @@ export function SignatureMaker() {
 
       {loading ? <p className="mt-4 text-[12px] text-[var(--color-muted)]" role="status">Loading saved signature…</p> : signature ? <div className="mt-4 flex flex-wrap items-center gap-3">
         <Image src={signature.dataUrl} alt="Your saved signature" width={220} height={56} unoptimized className="h-14 max-w-[220px] rounded border border-[var(--color-line)] object-contain p-2" />
-        <div className="flex flex-wrap gap-2"><button type="button" onClick={() => { previousSignature.current = signature; setSignature(null); setAuthorSignatureApplied(false); setError(""); }} className="rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Replace</button>{confirmDelete ? <><span className="self-center text-[11px] text-red-800">Delete this saved signature?</span><button type="button" disabled={saving} onClick={() => void remove()} className="rounded-md bg-red-700 px-3 py-2 text-[12px] font-medium text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700">Confirm delete</button><button type="button" onClick={() => setConfirmDelete(false)} className="rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</button></> : <button type="button" disabled={saving} onClick={() => setConfirmDelete(true)} className="inline-flex items-center gap-1.5 rounded-md border border-red-200 px-3 py-2 text-[12px] font-medium text-red-800 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"><Trash2 size={14} aria-hidden="true" />Delete</button>}</div>
+        <div className="flex flex-wrap gap-2"><button type="button" onClick={() => { previousSignature.current = signature; setSignature(null); setAuthorSignatureApplied(false, null, "system"); setError(""); }} className="rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Replace</button>{confirmDelete ? <><span className="self-center text-[11px] text-red-800">Delete this saved signature?</span><button type="button" disabled={saving} onClick={() => void remove()} className="rounded-md bg-red-700 px-3 py-2 text-[12px] font-medium text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700">Confirm delete</button><button type="button" onClick={() => setConfirmDelete(false)} className="rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</button></> : <button type="button" disabled={saving} onClick={() => setConfirmDelete(true)} className="inline-flex items-center gap-1.5 rounded-md border border-red-200 px-3 py-2 text-[12px] font-medium text-red-800 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"><Trash2 size={14} aria-hidden="true" />Delete</button>}</div>
       </div> : <>
         <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Signature input method">
           {(["draw", "type", "upload"] as const).map((choice) => <button key={choice} type="button" aria-pressed={mode === choice} onClick={() => { setMode(choice); setError(""); }} className={`inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-[12px] font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] ${mode === choice ? "bg-[var(--color-forest)] text-white" : "border border-[var(--color-line-2)] text-[var(--color-ink-2)]"}`}>

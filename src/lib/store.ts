@@ -67,9 +67,10 @@ interface BuilderState {
   aiCoverGenerationCount: number;
   isAICoverGenerating: boolean;
   includeAuthorSignature: boolean;
+  authorSignatureChoiceMade: boolean;
   authorSignatureDate: string | null;
   authorSignatureUpdatedAt: string | null;
-  setAuthorSignatureApplied: (applied: boolean, date?: string | null) => void;
+  setAuthorSignatureApplied: (applied: boolean, date?: string | null, source?: "user" | "automatic" | "system") => void;
   setAuthorSignatureUpdatedAt: (updatedAt: string | null) => void;
   hydrated: boolean;
   setStep: (s: StepId) => void;
@@ -102,9 +103,17 @@ export const useBuilder = create<BuilderState>()(
       aiCoverGenerationCount: 0,
       isAICoverGenerating: false,
       includeAuthorSignature: false,
+      authorSignatureChoiceMade: false,
       authorSignatureDate: null,
       authorSignatureUpdatedAt: null,
-      setAuthorSignatureApplied: (applied, date = null) => set({ includeAuthorSignature: applied, authorSignatureDate: applied ? date : null }),
+      setAuthorSignatureApplied: (applied, date = null, source = "user") => {
+        if (source === "automatic" && get().authorSignatureChoiceMade) return;
+        set({
+          includeAuthorSignature: applied,
+          authorSignatureDate: applied ? date : null,
+          ...(source === "user" ? { authorSignatureChoiceMade: true } : {}),
+        });
+      },
       setAuthorSignatureUpdatedAt: (updatedAt) => set({ authorSignatureUpdatedAt: updatedAt }),
       hydrated: false,
       setStep: (s) => set({ step: s }),
@@ -129,7 +138,7 @@ export const useBuilder = create<BuilderState>()(
       setPolicy: (p) => {
         const next = normalizePolicyRevisionHistory(normalizePolicyStructure(normalizePolicyQuantitative(initializeFocusAreaCatalogFromDefaults(p))));
         Object.assign(next, normalizePolicyCovers(next));
-        set({ policy: next, includeAuthorSignature: false, authorSignatureDate: null });
+        set({ policy: next, includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null });
       },
       setImportedPolicy: (reference) => set({ importedPolicy: reference }),
       clearImportedPolicy: () => set({ importedPolicy: null }),
@@ -159,13 +168,14 @@ export const useBuilder = create<BuilderState>()(
           coverEditorRequest: null,
           step: "structure",
           includeAuthorSignature: false,
+          authorSignatureChoiceMade: false,
           authorSignatureDate: null,
         });
       },
-      reset: () => set({ policy: normalizePolicyRevisionHistory(initialPolicy()), importedPolicy: null, coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureDate: null }),
+      reset: () => set({ policy: normalizePolicyRevisionHistory(initialPolicy()), importedPolicy: null, coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null }),
       loadSample: () => {
         const sample = makeSamplePolicy();
-        set({ policy: normalizePolicyRevisionHistory(normalizePolicyQuantitative(sample)), coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureDate: null });
+        set({ policy: normalizePolicyRevisionHistory(normalizePolicyQuantitative(sample)), coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null });
       },
     }),
     {
