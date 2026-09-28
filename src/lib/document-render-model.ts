@@ -173,6 +173,15 @@ export type DocumentRenderModel = {
   };
 };
 
+function formatAcknowledgementDate(value?: string): string | undefined {
+  const trimmed = value?.trim();
+  if (!trimmed) return undefined;
+  const match = /^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(trimmed);
+  if (!match) return trimmed;
+  const [, year, month, day] = match;
+  return `${day.padStart(2, "0")}-${month.padStart(2, "0")}-${year}`;
+}
+
 export function buildDocumentRenderModel(policy: Policy, authorApproval?: AuthorApprovalRenderData): DocumentRenderModel {
   const theme = getPolicyDocumentTheme(policy);
   const typography = getResolvedTypography(policy);
@@ -232,7 +241,7 @@ export function buildDocumentRenderModel(policy: Policy, authorApproval?: Author
               { label: "Employee Name", value: values?.employeeName?.trim() || undefined },
               { label: "Employee ID", value: values?.employeeId?.trim() || undefined },
               { label: "Department", value: values?.department?.trim() || undefined },
-              { label: "Date", value: values?.date?.trim() || undefined },
+              { label: "Date", value: formatAcknowledgementDate(values?.date) },
               { label: "Signature" },
             ];
           })(),
