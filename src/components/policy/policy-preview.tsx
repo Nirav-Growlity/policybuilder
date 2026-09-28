@@ -773,7 +773,7 @@ const previewStyles = `
   .ack-fields { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 34px; margin-top: 32px; }
   .ack-fields > div span { color: var(--doc-muted); font-size: 8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
   .ack-fields i { display: block; height: 31px; border-bottom: 1px solid var(--doc-muted); }
-  .ack-fields .ack-field-value { min-height: 31px; padding-top: 5px; color: var(--doc-ink); font-size: var(--policy-paragraph-size); }
+  .ack-fields .ack-field-value { min-height: 31px; padding-top: 5px; border-bottom: 1px solid var(--doc-muted); color: var(--doc-ink); font-family: var(--policy-font); font-size: var(--policy-paragraph-size); line-height: var(--policy-line-height); }
   .ack-fields .ack-signature { grid-column: 1 / 3; }
   .ack-fields .ack-signature-mark { display: flex; min-height: 31px; align-items: flex-end; border-bottom: 1px solid var(--doc-muted); }
   .ack-fields .ack-signature-mark img { display: block; width: auto; max-width: 180px; max-height: 31px; object-fit: contain; object-position: left bottom; }

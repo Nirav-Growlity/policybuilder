@@ -795,7 +795,7 @@ function acknowledgementFields(model: DocumentRenderModel, availableWidth: numbe
     const signatureImage = field.label === "Signature" && authorSignature
       ? new Paragraph({ spacing: { after: 260 }, children: [new ImageRun({ data: authorSignature.data, type: authorSignature.type, transformation: { width: Math.max(1, Math.round(authorSignature.width * Math.min(1, 180 / Math.max(authorSignature.width, 1), 44 / Math.max(authorSignature.height, 1)))), height: Math.max(1, Math.round(authorSignature.height * Math.min(1, 180 / Math.max(authorSignature.width, 1), 44 / Math.max(authorSignature.height, 1)))) }, altText: drawingAltText("Signature") })] })
       : field.value
-        ? new Paragraph({ spacing: { after: field.label === "Signature" ? 260 : 170 }, children: [new TextRun({ text: field.value, color: documentHex(model.theme.colors.ink), size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] })
+        ? new Paragraph({ border: { bottom: border(documentHex(model.theme.colors.muted), 6) }, spacing: { after: field.label === "Signature" ? 260 : 170 }, children: [new TextRun({ text: field.value, color: documentHex(model.theme.colors.ink), size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] })
         : new Paragraph({ border: { bottom: border(documentHex(model.theme.colors.muted), 6) }, spacing: { after: field.label === "Signature" ? 260 : 170 }, children: [new TextRun({ text: " " })] });
     return tableCell([
       new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: field.label.toUpperCase(), bold: true, color: documentHex(model.theme.colors.muted), size: 14, characterSpacing: 35, font: model.typography.fontFamily })] }),
