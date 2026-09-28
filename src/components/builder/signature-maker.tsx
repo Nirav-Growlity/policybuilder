@@ -11,8 +11,10 @@ import { cloneSignaturePointGroups, recordSignatureHistoryEntry } from "./signat
 type SignatureRecord = { dataUrl: string; updatedAt: string };
 type SignatureMode = "draw" | "type" | "upload";
 type TypedSignatureStyle = "allura" | "natural" | "caveat" | "pacifico" | "mrDeHaviland";
+type TypedSignatureStyleOption = { label: string; description: string; family: string; weight: number; size: number; previewSize: number };
+type TypedSignatureArtwork = { dataUrl: string; width: number; height: number };
 
-const TYPED_SIGNATURE_STYLES: Record<TypedSignatureStyle, { label: string; description: string; family: string; weight: number; size: number; previewSize: number }> = {
+const TYPED_SIGNATURE_STYLES: Record<TypedSignatureStyle, TypedSignatureStyleOption> = {
   allura: { label: "Allura", description: "Elegant", family: "Allura", weight: 400, size: 110, previewSize: 44 },
   natural: { label: "Natural", description: "Neat handwriting", family: "Bad Script", weight: 400, size: 100, previewSize: 38 },
   caveat: { label: "Caveat", description: "Handwritten", family: "Caveat", weight: 600, size: 104, previewSize: 46 },
@@ -30,12 +32,43 @@ function responseMessage(body: unknown, fallback: string): string {
   return fallback;
 }
 
+async function createTypedSignatureArtwork(name: string, style: TypedSignatureStyleOption): Promise<TypedSignatureArtwork> {
+  const fontSpec = `${style.weight} ${style.size}px "${style.family}"`;
+  const loadedFaces = await document.fonts.load(fontSpec, "Signature");
+  if (!loadedFaces.length || !document.fonts.check(fontSpec, "Signature")) throw new Error("That signature style could not be loaded. Choose another style or try again.");
+  const measureCanvas = document.createElement("canvas");
+  const measureContext = measureCanvas.getContext("2d");
+  if (!measureContext) throw new Error("Your browser could not create the signature image.");
+  measureContext.font = fontSpec;
+  const metrics = measureContext.measureText(name);
+  const horizontalPadding = Math.max(12, Math.ceil(style.size * 0.18));
+  const verticalPadding = Math.max(12, Math.ceil(style.size * 0.18));
+  const inkWidth = Math.max(1, metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight);
+  const inkHeight = Math.max(1, metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent);
+  const logicalWidth = inkWidth + horizontalPadding * 2;
+  const logicalHeight = inkHeight + verticalPadding * 2;
+  const pixelRatio = Math.min(2, 2400 / logicalWidth, 600 / logicalHeight);
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.ceil(logicalWidth * pixelRatio);
+  canvas.height = Math.ceil(logicalHeight * pixelRatio);
+  const context = canvas.getContext("2d");
+  if (!context) throw new Error("Your browser could not create the signature image.");
+  context.scale(pixelRatio, pixelRatio);
+  context.font = fontSpec;
+  context.fillStyle = "#17211b";
+  context.textAlign = "left";
+  context.textBaseline = "alphabetic";
+  context.fillText(name, horizontalPadding + metrics.actualBoundingBoxLeft, verticalPadding + metrics.actualBoundingBoxAscent);
+  return { dataUrl: canvas.toDataURL("image/png"), width: canvas.width / pixelRatio, height: canvas.height / pixelRatio };
+}
+
 export function SignatureMaker() {
   const { policy, includeAuthorSignature, authorSignatureChoiceMade, authorSignatureDate, setAuthorSignatureApplied, setAuthorSignatureUpdatedAt } = useBuilder();
   const [signature, setSignature] = React.useState<SignatureRecord | null>(null);
   const [mode, setMode] = React.useState<SignatureMode>("draw");
   const [typedName, setTypedName] = React.useState("");
   const [typedStyle, setTypedStyle] = React.useState<TypedSignatureStyle>("allura");
+  const [typedPreviewResult, setTypedPreviewResult] = React.useState<{ key: string; artwork?: TypedSignatureArtwork; status: "ready" | "error" } | null>(null);
   const [fontStatus, setFontStatus] = React.useState<"loading" | "ready" | "error">("loading");
   const [loading, setLoading] = React.useState(true);
   const [saving, setSaving] = React.useState(false);
@@ -51,6 +84,10 @@ export function SignatureMaker() {
   const canApply = policy.showAcknowledgement !== false && signature !== null;
   const selectedTypedStyle = TYPED_SIGNATURE_STYLES[typedStyle];
   const fontSpec = `${selectedTypedStyle.weight} ${selectedTypedStyle.size}px "${selectedTypedStyle.family}"`;
+  const previewName = typedName.trim() || "Your name";
+  const typedPreviewKey = `${typedStyle}\u0000${previewName}`;
+  const typedPreview = typedPreviewResult?.key === typedPreviewKey ? typedPreviewResult.artwork : null;
+  const typedPreviewStatus = typedPreviewResult?.key === typedPreviewKey ? typedPreviewResult.status : "loading";
 
   React.useEffect(() => {
     if (policy.showAcknowledgement === false && includeAuthorSignature) {
@@ -158,6 +195,21 @@ export function SignatureMaker() {
     return () => { current = false; };
   }, [fontSpec, mode]);
 
+  React.useEffect(() => {
+    if (mode !== "type") return;
+    let current = true;
+    void createTypedSignatureArtwork(previewName, selectedTypedStyle)
+      .then((artwork) => {
+        if (!current) return;
+        setTypedPreviewResult({ key: typedPreviewKey, artwork, status: "ready" });
+      })
+      .catch(() => {
+        if (!current) return;
+        setTypedPreviewResult({ key: typedPreviewKey, status: "error" });
+      });
+    return () => { current = false; };
+  }, [mode, previewName, selectedTypedStyle, typedPreviewKey]);
+
   const undo = () => {
     if (historyCursorRef.current < 0) return;
     const nextIndex = historyCursorRef.current - 1;
@@ -183,39 +235,14 @@ export function SignatureMaker() {
     setHistoryIndex(-1);
   };
 
-  const makeTypedImage = async (): Promise<string> => {
-    const name = typedName.trim();
-    const loadedFaces = await document.fonts.load(fontSpec, "Signature");
-    if (!loadedFaces.length || !document.fonts.check(fontSpec, "Signature")) throw new Error("That signature style could not be loaded. Choose another style or try again.");
-    const measureCanvas = document.createElement("canvas");
-    const measureContext = measureCanvas.getContext("2d");
-    if (!measureContext) throw new Error("Your browser could not create the signature image.");
-    measureContext.font = fontSpec;
-    const metrics = measureContext.measureText(name);
-    const horizontalPadding = 12;
-    const verticalPadding = 10;
-    const inkWidth = Math.max(1, metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight);
-    const inkHeight = Math.max(1, metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent);
-    const pixelRatio = Math.min(2, 2400 / (inkWidth + horizontalPadding * 2), 600 / (inkHeight + verticalPadding * 2));
-    const canvas = document.createElement("canvas");
-    canvas.width = Math.ceil((inkWidth + horizontalPadding * 2) * pixelRatio);
-    canvas.height = Math.ceil((inkHeight + verticalPadding * 2) * pixelRatio);
-    const context = canvas.getContext("2d");
-    if (!context) throw new Error("Your browser could not create the signature image.");
-    context.scale(pixelRatio, pixelRatio);
-    context.font = fontSpec;
-    context.fillStyle = "#17211b";
-    context.textAlign = "left";
-    context.textBaseline = "alphabetic";
-    context.fillText(name, horizontalPadding + metrics.actualBoundingBoxLeft, verticalPadding + metrics.actualBoundingBoxAscent);
-    return canvas.toDataURL("image/png");
-  };
   const saveTyped = async () => {
-    if (!typedName.trim()) return;
+    if (!typedName.trim() || typedPreviewStatus !== "ready") return;
+    const preview = typedPreviewResult?.key === typedPreviewKey ? typedPreviewResult.artwork : null;
+    if (!preview) return;
     setError("");
     setFontStatus("loading");
     try {
-      await save(await makeTypedImage());
+      await save(preview.dataUrl);
       setFontStatus("ready");
     } catch (cause) {
       setFontStatus("error");
@@ -322,10 +349,19 @@ export function SignatureMaker() {
           </fieldset>
           <div className="mt-3 rounded-md border border-[var(--color-line)] bg-[#fffefa] px-3 py-3">
             <p className="mb-1 text-[10px] font-medium uppercase tracking-wide text-[var(--color-muted)]">Preview</p>
-            <div className="overflow-x-auto" aria-live="polite" aria-label="Signature preview"><span className="block min-h-24 w-max whitespace-nowrap py-3 leading-[1.5] text-[#17211b]" style={{ fontFamily: `"${selectedTypedStyle.family}", cursive`, fontSize: selectedTypedStyle.previewSize, fontWeight: selectedTypedStyle.weight }}>{typedName.trim() || "Your name"}</span></div>
+            <div className="flex min-h-28 items-center overflow-x-auto" aria-live="polite" aria-label="Signature preview">
+              {typedPreview ? <Image
+                src={typedPreview.dataUrl}
+                alt={typedName.trim() || "Your name"}
+                width={Math.ceil(typedPreview.width * selectedTypedStyle.previewSize / selectedTypedStyle.size)}
+                height={Math.ceil(typedPreview.height * selectedTypedStyle.previewSize / selectedTypedStyle.size)}
+                unoptimized
+                className="block max-w-none shrink-0"
+              /> : <span className="text-[11px] text-[var(--color-muted)]" role="status">{typedPreviewStatus === "error" ? "Couldn’t render the signature preview. Choose another style and try again." : "Preparing signature preview…"}</span>}
+            </div>
           </div>
           <p className="mt-1.5 min-h-4 text-[10px] text-[var(--color-muted)]" role="status" aria-live="polite">{fontStatus === "loading" ? "Loading signature style…" : fontStatus === "error" ? "This font could not be loaded. Try another style." : ""}</p>
-          <div className="mt-2 flex justify-end"><button type="submit" disabled={saving || !typedName.trim() || fontStatus !== "ready"} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button></div>
+          <div className="mt-2 flex justify-end"><button type="submit" disabled={saving || !typedName.trim() || fontStatus !== "ready" || typedPreviewStatus !== "ready"} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button></div>
         </form> : <div className="mt-3"><label htmlFor="signature-upload" className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)]"><Upload size={14} aria-hidden="true" />Choose image</label><input id="signature-upload" type="file" accept="image/*" className="sr-only" onChange={(event) => upload(event.target.files?.[0])} /></div>}
       </>}
 
