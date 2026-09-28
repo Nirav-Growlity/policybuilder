@@ -6,6 +6,7 @@ import { Check, Eraser, PenLine, Redo2, Trash2, Type, Undo2, Upload } from "luci
 import SignaturePad, { type PointGroup } from "signature_pad";
 import { useBuilder } from "@/lib/store";
 import { Panel } from "@/components/ui/panel";
+import { cloneSignaturePointGroups, recordSignatureHistoryEntry } from "./signature-history";
 
 type SignatureRecord = { dataUrl: string; updatedAt: string };
 type SignatureMode = "draw" | "type" | "upload";
@@ -94,11 +95,10 @@ export function SignatureMaker() {
     let previousHeight = 0;
     const recordStroke = () => {
       if (pad.isEmpty()) return;
-      const nextHistory = historyRef.current.slice(0, historyCursorRef.current + 1);
-      nextHistory.push(pad.toData());
-      historyRef.current = nextHistory;
-      historyCursorRef.current = nextHistory.length - 1;
-      setHistoryLength(nextHistory.length);
+      const next = recordSignatureHistoryEntry(historyRef.current, historyCursorRef.current, pad.toData());
+      historyRef.current = next.history;
+      historyCursorRef.current = next.cursor;
+      setHistoryLength(next.history.length);
       setHistoryIndex(historyCursorRef.current);
     };
     pad.addEventListener("endStroke", recordStroke);
@@ -159,19 +159,19 @@ export function SignatureMaker() {
   }, [fontSpec, mode]);
 
   const undo = () => {
-    if (historyIndex < 0) return;
-    const nextIndex = historyIndex - 1;
+    if (historyCursorRef.current < 0) return;
+    const nextIndex = historyCursorRef.current - 1;
     const pad = signaturePadRef.current;
     if (nextIndex < 0) pad?.clear();
-    else if (pad) pad.fromData(historyRef.current[nextIndex]);
+    else if (pad) pad.fromData(cloneSignaturePointGroups(historyRef.current[nextIndex]));
     historyCursorRef.current = nextIndex;
     setHistoryIndex(nextIndex);
   };
   const redo = () => {
-    const nextIndex = historyIndex + 1;
+    const nextIndex = historyCursorRef.current + 1;
     const strokes = historyRef.current[nextIndex];
     if (!strokes) return;
-    signaturePadRef.current?.fromData(strokes);
+    signaturePadRef.current?.fromData(cloneSignaturePointGroups(strokes));
     historyCursorRef.current = nextIndex;
     setHistoryIndex(nextIndex);
   };
@@ -315,14 +315,14 @@ export function SignatureMaker() {
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-3" role="radiogroup" aria-label="Typed signature style">
               {(Object.entries(TYPED_SIGNATURE_STYLES) as [TypedSignatureStyle, typeof selectedTypedStyle][]).map(([style, option]) => <label key={style} className={`flex min-w-0 cursor-pointer flex-col rounded-md border px-2.5 py-2 transition-colors focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--color-forest)] ${typedStyle === style ? "border-[var(--color-forest)] bg-[var(--color-cream-2)]" : "border-[var(--color-line-2)] hover:bg-[var(--color-cream-2)]"}`}>
                 <span className="flex items-center gap-1.5 text-[11px] font-medium text-[var(--color-ink-2)]"><input type="radio" name="typed-signature-style" value={style} checked={typedStyle === style} onChange={() => { setTypedStyle(style); setError(""); }} className="accent-[var(--color-forest)]" />{option.label}</span>
-                <span className="mt-1 min-h-12 overflow-x-auto py-1 whitespace-nowrap text-[24px] leading-[1.5] text-[var(--color-ink)]" style={{ fontFamily: `"${option.family}", cursive`, fontWeight: option.weight }} aria-hidden="true">{typedName.trim() || "Your name"}</span>
+                <span className="mt-1 min-h-14 overflow-x-auto py-2 whitespace-nowrap text-[24px] leading-[1.5] text-[var(--color-ink)]" style={{ fontFamily: `"${option.family}", cursive`, fontWeight: option.weight }} aria-hidden="true">{typedName.trim() || "Your name"}</span>
                 <span className="text-[10px] text-[var(--color-muted)]">{option.description}</span>
               </label>)}
             </div>
           </fieldset>
           <div className="mt-3 rounded-md border border-[var(--color-line)] bg-[#fffefa] px-3 py-3">
             <p className="mb-1 text-[10px] font-medium uppercase tracking-wide text-[var(--color-muted)]">Preview</p>
-            <div className="overflow-x-auto" aria-live="polite" aria-label="Signature preview"><span className="block min-h-16 w-max whitespace-nowrap py-1 leading-[1.4] text-[#17211b]" style={{ fontFamily: `"${selectedTypedStyle.family}", cursive`, fontSize: selectedTypedStyle.previewSize, fontWeight: selectedTypedStyle.weight }}>{typedName.trim() || "Your name"}</span></div>
+            <div className="overflow-x-auto" aria-live="polite" aria-label="Signature preview"><span className="block min-h-24 w-max whitespace-nowrap py-3 leading-[1.5] text-[#17211b]" style={{ fontFamily: `"${selectedTypedStyle.family}", cursive`, fontSize: selectedTypedStyle.previewSize, fontWeight: selectedTypedStyle.weight }}>{typedName.trim() || "Your name"}</span></div>
           </div>
           <p className="mt-1.5 min-h-4 text-[10px] text-[var(--color-muted)]" role="status" aria-live="polite">{fontStatus === "loading" ? "Loading signature style…" : fontStatus === "error" ? "This font could not be loaded. Try another style." : ""}</p>
           <div className="mt-2 flex justify-end"><button type="submit" disabled={saving || !typedName.trim() || fontStatus !== "ready"} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button></div>

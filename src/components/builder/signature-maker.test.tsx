@@ -6,6 +6,31 @@ import { SignatureMaker } from "./signature-maker";
 import { StepResponsibilities } from "./steps/step-responsibilities";
 import { Toaster } from "@/components/ui/toast";
 import { initialPolicy, useBuilder } from "@/lib/store";
+import { cloneSignaturePointGroups, recordSignatureHistoryEntry } from "./signature-history";
+
+test("signature history keeps each stroke snapshot independent from the live pad data", () => {
+  const livePadData = [] as Parameters<typeof recordSignatureHistoryEntry>[2];
+  const firstStroke = { dotSize: 0, minWidth: 1, maxWidth: 2, penColor: "#17211b", velocityFilterWeight: 0.7, compositeOperation: "source-over" as GlobalCompositeOperation, points: [{ x: 12, y: 14, pressure: 0.5, time: 1 }] };
+  livePadData.push(firstStroke);
+
+  const firstEntry = recordSignatureHistoryEntry([], -1, livePadData);
+  livePadData.push({ ...firstStroke, points: [{ x: 32, y: 34, pressure: 0.5, time: 2 }] });
+  const secondEntry = recordSignatureHistoryEntry(firstEntry.history, firstEntry.cursor, livePadData);
+
+  assert.equal(secondEntry.history[0].length, 1, "the first undo point should contain only the first stroke");
+  assert.equal(secondEntry.history[1].length, 2, "the current drawing should contain both strokes");
+  assert.notEqual(secondEntry.history[0], secondEntry.history[1], "each undo point should be an independent snapshot");
+  assert.notEqual(secondEntry.history[0][0], livePadData[0], "snapshots should not share mutable stroke groups with the pad");
+  assert.notEqual(secondEntry.history[0][0].points[0], livePadData[0].points[0], "snapshots should not share mutable points with the pad");
+
+  const branchedPadData = cloneSignaturePointGroups(secondEntry.history[0]);
+  branchedPadData.push({ ...firstStroke, points: [{ x: 52, y: 54, pressure: 0.5, time: 3 }] });
+  const branched = recordSignatureHistoryEntry(secondEntry.history, 0, branchedPadData);
+  assert.equal(branched.cursor, 1);
+  assert.equal(branched.history.length, 2, "drawing after undo should discard the redo branch");
+  assert.equal(branched.history[0].length, 1, "branching should preserve the earlier undo point");
+  assert.equal(branched.history[1].length, 2, "the new branch should contain the restored and new strokes");
+});
 
 test("signature maker explains the saved author mark and acknowledgement relationship", () => {
   const markup = renderToStaticMarkup(React.createElement(SignatureMaker));
