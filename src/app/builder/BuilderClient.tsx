@@ -63,6 +63,7 @@ export function BuilderClient() {
   const [dragOver, setDragOver] = React.useState(false);
   const [companyLoaded, setCompanyLoaded] = React.useState(false);
   const [documentLoaded, setDocumentLoaded] = React.useState(!draftId);
+  const [authorSignatureLoaded, setAuthorSignatureLoaded] = React.useState(false);
   const [backendDocumentId, setBackendDocumentId] = React.useState<string | null>(draftId);
   const [backendTitle, setBackendTitle] = React.useState("");
   const backendLockVersion = React.useRef(1);
@@ -71,6 +72,7 @@ export function BuilderClient() {
   const createAttempted = React.useRef(false);
   const skipNextSave = React.useRef(false);
   const draftAutosave = React.useRef<ReturnType<typeof createDraftAutosave<PolicyCraftDocumentState>> | null>(null);
+  const authorSignatureLoadKey = React.useRef("");
   if (!draftAutosave.current) draftAutosave.current = createDraftAutosave<PolicyCraftDocumentState>();
 
   const order = getStepOrder(policy);
@@ -145,6 +147,35 @@ export function BuilderClient() {
     if (!hydrated || !companyLoaded || !selectedType || draftId) return;
     if (policy.policyType !== selectedType) startPolicy(selectedType);
   }, [companyLoaded, draftId, hydrated, policy.policyType, selectedType, startPolicy]);
+
+  // Resolve the account signature before showing Export. The signature itself
+  // is account-scoped, while the previous lookup lived inside the
+  // Responsibilities step and could be skipped when a draft reopened on Export.
+  React.useEffect(() => {
+    const policyTypeReady = !selectedType || draftId || policy.policyType === selectedType;
+    if (!hydrated || !companyLoaded || !documentLoaded || !policyTypeReady) return;
+    const key = `${draftId ?? "local"}:${policy.policyType}`;
+    if (authorSignatureLoadKey.current === key) return;
+    authorSignatureLoadKey.current = key;
+    setAuthorSignatureLoaded(false);
+    const controller = new AbortController();
+    void fetch("/api/policycraft/signatures/me", { cache: "no-store", signal: controller.signal })
+      .then(async (response) => {
+        const body = await response.json().catch(() => null);
+        if (!response.ok) return;
+        const signature = body?.signature;
+        const state = useBuilder.getState();
+        state.setAuthorSignatureUpdatedAt(signature?.updatedAt ? `${body.userId}:${signature.updatedAt}` : null);
+        if (signature && state.policy.showAcknowledgement !== false && !state.authorSignatureChoiceMade) {
+          state.setAuthorSignatureApplied(true, new Date().toISOString().slice(0, 10), "automatic");
+        }
+      })
+      .catch(() => undefined)
+      .finally(() => {
+        if (!controller.signal.aborted) setAuthorSignatureLoaded(true);
+      });
+    return () => controller.abort();
+  }, [companyLoaded, documentLoaded, draftId, hydrated, policy.policyType, selectedType]);
 
   // Create the server draft once a policy type is known. Until then
   // the existing local Zustand draft remains a safe temporary workspace.
@@ -277,6 +308,10 @@ export function BuilderClient() {
   }
 
   if (!companyLoaded) {
+    return <div className="min-h-screen bg-[var(--color-cream)]" />;
+  }
+
+  if (step === "export" && !authorSignatureLoaded) {
     return <div className="min-h-screen bg-[var(--color-cream)]" />;
   }
 
