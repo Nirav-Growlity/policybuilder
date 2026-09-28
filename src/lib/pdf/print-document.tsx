@@ -346,6 +346,7 @@ export function createPrintDocument(markup: string, policy: Policy, topMargin = 
     .policy-toc { break-after:page; }
     .policy-running-header { display:none; }
     .policy-main { padding:0; }
+    [data-collection="professional"] .policy-acknowledgement.acknowledgement-legal-form { border:0; outline:0; box-shadow:none; }
     /* Professional preview rules add an on-screen reading inset. Print pages
        already receive their A4 margins from @page, so do not reserve that
        inset a second time in PDF output. */
