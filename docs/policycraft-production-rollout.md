@@ -12,7 +12,7 @@ The application code does not apply migrations automatically. **You or your data
 - [ ] Test the UI with the API-mocked scripts `node scripts/verify-access-ui.mjs` and `node scripts/verify-admin-transfer-ui.mjs`, plus `node scripts/verify-access-anonymous.mjs`. Start a local app first and use a writable screenshot directory. These tests do not validate production data or email delivery.
 - [ ] Finish the live acceptance checks in staging: invitations, account linking, role restrictions, assignment revocation, shared policy editing, saves/conflicts, organization scoping, previews, and PDF/DOCX exports.
 - [ ] Choose an existing, active shared account for the first PolicyCraft admin. Confirm the person can sign in and that their normalized email belongs to exactly one active `users` row.
-- [ ] Decide the production origin and confirm the ZeptoMail sender/domain and regional API endpoint.
+- [ ] Decide the production origin and confirm the ZeptoMail sender/domain and regional SMTP host.
 
 Do not use a production account for invitation, transfer, or destructive-policy tests. Use dedicated staging accounts and organizations first.
 
@@ -128,14 +128,17 @@ Required for the app and authentication:
 - `BETTER_AUTH_SECRET`: a strong production secret. Use the shared ESG secret only if that is required for the intended shared login/cookie compatibility.
 - `NEXT_PUBLIC_BASE_URL` or `BETTER_AUTH_URL`: the exact HTTPS production origin used for auth callbacks and redirects.
 
-Required before enabling manager invitations:
+Required before sending invitations to people without an existing account:
 
 - `POLICYCRAFT_APP_URL`: the exact HTTPS PolicyCraft origin.
-- `ZEPTOMAIL_API_URL`: the endpoint for the account's region.
-- `ZEPTOMAIL_API_KEY`.
-- `ZEPTOMAIL_FROM_ADDRESS` and `ZEPTOMAIL_FROM_NAME`.
+- `MAIL_HOST`: the ZeptoMail SMTP host for the account's region.
+- `MAIL_PORT`: `587` for required STARTTLS or `465` for TLS.
+- `MAIL_USERNAME` and `MAIL_PASSWORD`: the SMTP credentials.
+- `MAIL_EMAIL`: the verified sender address, displayed as PolicyCraft.
 
-Verify the sender domain with ZeptoMail and test delivery in staging. The email sender settings are separate from the application's login credentials. Public signup remains disabled. Invitation links expire after 72 hours; resend invalidates the previous link.
+Verify the sender domain with ZeptoMail and test delivery in staging. No ZeptoMail API key is required. `ADMIN_EMAIL` is not used for invitation delivery; the recipient is the manager being invited. The SMTP credentials are separate from the application's login credentials. Public signup remains disabled. Invitation links expire after 72 hours; resend invalidates the previous link.
+
+Existing active accounts are granted manager access directly after administrator confirmation and keep their current password. This path does not send an invitation or require mail settings. For localhost tests, set `POLICYCRAFT_APP_URL=http://localhost:3000`; email delivery uses an outbound SMTP connection, but a localhost link can only be opened on the computer running the app.
 
 ## 8. Deploy in order
 
@@ -151,8 +154,8 @@ Verify the sender domain with ZeptoMail and test delivery in staging. The email 
 Start with the smallest safe checks, using dedicated test accounts where possible:
 
 - [ ] The first admin can sign in and open Managers, Policies, and Administration.
-- [ ] A manager invitation reaches the intended test mailbox; the recipient can accept, choose a password if new, and sign in.
-- [ ] An existing account can link only after that account signs in and accepts. Its password and ESG organization details stay the same.
+- [ ] A new-account manager invitation reaches the intended test mailbox; the recipient can accept, choose a password, and sign in.
+- [ ] After explicit administrator confirmation, an existing account gains manager access without an invitation email or password change. Its ESG organization details stay the same, and an existing manager's assignments are preserved while the selected organizations are added.
 - [ ] Assign the manager to a test organization. The manager can work only in assigned organizations; another manager assigned to the same organization can see shared policies.
 - [ ] A client user still reaches their existing organization workspace and cannot access another organization's policies.
 - [ ] Removing a manager's assignment prevents subsequent reads and saves, including from a previously open tab.

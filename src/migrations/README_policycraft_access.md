@@ -51,7 +51,7 @@ Do not set or change `users.role`, `users.org_id`, or `users.org_code` to grant 
     WHERE a.role = 'admin';
    ```
 
-5. Configure `ZEPTOMAIL_API_URL`, `ZEPTOMAIL_API_KEY`, `ZEPTOMAIL_FROM_ADDRESS`, `ZEPTOMAIL_FROM_NAME`, and `POLICYCRAFT_APP_URL` in the deployment environment before enabling manager invitation UI. Check the exact regional endpoint and sender domain in ZeptoMail first.
+5. Configure `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_EMAIL`, and `POLICYCRAFT_APP_URL` in the deployment environment before inviting new accounts. Use the SMTP host for your ZeptoMail account's region and a verified sender address. Port 587 requires STARTTLS; port 465 uses TLS. No ZeptoMail API key is required. Confirmed existing accounts receive manager access directly and need no SMTP configuration.
 6. Deploy the app only after the tables and administrator designation are verified. Smoke test admin access, manager invitation delivery/acceptance, manager org assignment, and an attempted cross-org request. Review both DB row counts and app logs. A failed mail delivery remains listed and can be explicitly resent.
 
 For verification counts, use `SELECT COUNT(*) FROM policycraft_user_access;`, `SELECT COUNT(*) FROM policycraft_manager_organizations;`, and `SELECT COUNT(*) FROM policycraft_manager_invitations;`. Do not infer successful mail delivery from an invitation row; check `delivery_status`.
@@ -61,7 +61,7 @@ For verification counts, use `SELECT COUNT(*) FROM policycraft_user_access;`, `S
 Once the access migration and first-admin bootstrap have been applied, future handovers use the application. No additional SQL or migration is required.
 
 1. Sign in as the current PolicyCraft administrator and open **Administration**.
-2. Enter the next administrator's own email in **New administrator email**, then choose **Find account**. They need an existing active account with a working password login. For someone new, invite them as a manager first and wait for acceptance. For an existing email, use **Link existing account** in the invitation flow. Resolve any pending manager invitation for the recipient before transferring.
+2. Enter the next administrator's own email in **New administrator email**, then choose **Find account**. They need an existing active account with a working password login. For someone new, add them as a manager and wait for invitation acceptance. For an existing email, the manager form offers **Grant manager access** without sending an invitation. Resolve any pending manager invitation for the recipient before transferring.
 3. Check the displayed name and email. Choose **Transfer admin access**, enter your current password, then choose **Confirm transfer**.
 4. You are signed out and your PolicyCraft access is removed. The recipient signs in with their own existing email and password and receives administrator access. Shared ESG account details, policy creators, and organization assignments are preserved.
 5. Ask the new administrator to open **Managers** and **Resend** outstanding invitations you sent. Resend replaces each old link and makes the new administrator its inviter. Invitations expire 72 hours after sending.
@@ -71,11 +71,11 @@ The outgoing account's PolicyCraft grant stays disabled, preventing ordinary-use
 
 ## Invitation mail configuration
 
-Manager invites require explicit server configuration: `ZEPTOMAIL_API_URL` (the HTTPS API endpoint for the account's region), `ZEPTOMAIL_API_KEY`, `ZEPTOMAIL_FROM_ADDRESS`, `ZEPTOMAIL_FROM_NAME`, and `POLICYCRAFT_APP_URL` (the HTTPS PolicyCraft origin, or localhost for local development). The app stores only a SHA-256 token hash. Tokens expire after 72 hours; resend replaces the token hash and expiry. A delivery failure remains visible for administrator retry.
+Manager invites require explicit server configuration: `MAIL_HOST` (the SMTP host for the account's region), `MAIL_PORT` (587 for STARTTLS or 465 for TLS), `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_EMAIL` (the verified sender address), and `POLICYCRAFT_APP_URL` (the HTTPS PolicyCraft origin, or localhost for local development). SMTP credentials remain server-side. `ADMIN_EMAIL` is not used as the sender or recipient of invitations. The app stores only a SHA-256 token hash. Tokens expire after 72 hours; resend replaces the token hash and expiry. A delivery failure remains visible for administrator retry.
 
-New shared ESG user rows and credential accounts are created only when a new invite is accepted. Existing-account linking requires the invited account’s current session and never changes its password or ESG organization fields.
+New shared ESG user rows and credential accounts are created only when a new invite is accepted; the new user then signs in at `/login` with the password they selected. Existing-account access is granted directly after administrator confirmation and never changes the password, shared ESG role, or ESG organization fields. Existing active managers retain their assignments and gain the selected organizations; pending invitation links for that email are invalidated. Administrators and disabled accounts cannot be silently converted or reactivated. Legacy existing-account invitations still require the invited account's matching session when accepted.
 
-The email payload and authorization header follow the [official sending API](https://www.zoho.com/cpaas/help/api/email-sending.html). Configure the actual account's regional endpoint rather than copying another deployment's URL.
+The SMTP connection follows the [official ZeptoMail SMTP settings](https://help.zoho.com/portal/en/kb/zoho-cpaas/faqs/sending-emails/articles/how-to-configure-smtp). Configure the actual account's regional SMTP host rather than copying another deployment's host.
 
 ## Rollback (destructive; database owner only)
 

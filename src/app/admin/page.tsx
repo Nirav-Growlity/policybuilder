@@ -110,8 +110,8 @@ export default function AdminManagersPage() {
   return (
     <div>
       <div className="flex flex-wrap items-end justify-between gap-4">
-        <div><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Administration</p><h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-pretty">Managers</h1><p className="mt-1 text-sm text-[var(--color-muted)]">Create manager accounts and control the organizations they can open.</p></div>
-        <Link href="/admin/managers/new" className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Plus size={15} aria-hidden="true" />Invite manager</Link>
+        <div><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Administration</p><h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-pretty">Managers</h1><p className="mt-1 text-sm text-[var(--color-muted)]">Add manager access and control the organizations each manager can open.</p></div>
+        <Link href="/admin/managers/new" className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Plus size={15} aria-hidden="true" />Add manager</Link>
       </div>
 
       {error ? <div className="mt-6 flex items-start justify-between gap-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900" role="alert" aria-live="polite"><p>{error}</p><button type="button" onClick={() => void load()} className="inline-flex shrink-0 items-center gap-1 rounded px-2 py-1 text-xs font-semibold hover:bg-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700"><RefreshCw size={13} aria-hidden="true" />Retry</button></div> : null}
@@ -138,7 +138,7 @@ export default function AdminManagersPage() {
               </tbody>
             </table>
           </div>
-        ) : <div className="px-6 py-16 text-center"><UsersIcon /><h2 className="mt-4 font-display text-xl font-semibold">No managers yet</h2><p className="mx-auto mt-2 max-w-md text-sm text-[var(--color-muted)]">Invite a manager, then assign the organizations they will manage.</p><Link href="/admin/managers/new" className="mt-5 inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)]"><Plus size={15} aria-hidden="true" />Invite manager</Link></div>}
+        ) : <div className="px-6 py-16 text-center"><UsersIcon /><h2 className="mt-4 font-display text-xl font-semibold">No managers yet</h2><p className="mx-auto mt-2 max-w-md text-sm text-[var(--color-muted)]">Add an existing account or invite someone new, then assign their organizations.</p><Link href="/admin/managers/new" className="mt-5 inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)]"><Plus size={15} aria-hidden="true" />Add manager</Link></div>}
       </section>
 
       <Modal open={Boolean(managerToEdit)} onClose={() => setManagerToEdit(null)} title="Assign organizations" description={`Choose the organizations ${managerToEdit?.name || "this manager"} can access.`} width={560}>

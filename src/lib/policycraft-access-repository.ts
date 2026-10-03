@@ -5,6 +5,7 @@ import type { PolicyCraftManagerSummary, PolicyCraftOrganization } from "./polic
 import { normalizePolicyCraftEmail } from "./policycraft-access-policy";
 import { createPolicyCraftInvitationToken, hashPolicyCraftInvitationToken } from "./policycraft-invitation-tokens";
 import { acceptPolicyCraftInvitation, type InvitationAcceptancePort, type InvitationAcceptanceTransaction, type PolicyCraftInvitation } from "./policycraft-invitation-workflow";
+import { grantPolicyCraftManagerAccess as grantManagerAccess, type ManagerGrantPort, type ManagerGrantTransaction } from "./policycraft-manager-grant-workflow";
 
 const INVITATION_MS = 72 * 60 * 60 * 1000;
 
@@ -22,8 +23,8 @@ type InvitationRow = RowDataPacket & {
   cancelled_at: Date | string | null; invited_by_user_id: number;
 };
 
-export type ExistingAccount = { id: number; name: string; email: string; active: number; isDeleted: number };
-export type InvitationDraft = { name: string; email: string; organizationIds: number[]; linkExisting?: boolean };
+export type ExistingAccount = { id: number; name: string; email: string; active: number; isDeleted: number; isSuperAdmin: number };
+export type InvitationDraft = { name: string; email: string; organizationIds: number[]; linkExisting?: boolean; confirmedExistingAccountId?: number };
 export type InvitationSummary = {
   id: string; email: string; name: string; organizationIds: number[]; status: "pending" | "delivery_failed";
   expiresAt: string; existingAccount: boolean;
@@ -103,16 +104,90 @@ export async function listPolicyCraftManagers(): Promise<{ managers: PolicyCraft
 }
 
 export async function findSharedAccountByEmail(email: string): Promise<ExistingAccount | null> {
-  const [rows] = await policyCraftPool.execute<(RowDataPacket & { id: number; name: string; email: string; active: number; is_deleted: number })[]>(
-    `SELECT id, name, email, active, is_deleted FROM users WHERE LOWER(email) = ? ORDER BY id ASC LIMIT 2`,
+  const [rows] = await policyCraftPool.execute<(RowDataPacket & { id: number; name: string; email: string; active: number; is_deleted: number; is_super_admin: number })[]>(
+    `SELECT id, name, email, active, is_deleted, is_super_admin FROM users WHERE LOWER(email) = ? ORDER BY id ASC LIMIT 2`,
     [normalizePolicyCraftEmail(email)],
   );
   if (rows.length > 1) throw new Error("Multiple shared accounts match this email; resolve the duplicate before linking.");
   const row = rows[0];
-  return row ? { id: row.id, name: row.name, email: row.email, active: row.active, isDeleted: row.is_deleted } : null;
+  return row ? { id: row.id, name: row.name, email: row.email, active: row.active, isDeleted: row.is_deleted, isSuperAdmin: Number(row.is_super_admin || 0) } : null;
 }
 
-async function validateOrganizations(connection: { execute: typeof policyCraftPool.execute }, ids: number[], allowEmpty = false): Promise<number[]> {
+export async function grantExistingPolicyCraftManagerAccess(email: string, expectedAccountId: number, organizationIds: number[], grantedByUserId: number): Promise<number> {
+  const connection = await policyCraftPool.getConnection();
+  const port: ManagerGrantPort = {
+    async withTransaction<T>(run: (transaction: ManagerGrantTransaction) => Promise<T>) {
+      try {
+        await connection.beginTransaction();
+        const transaction: ManagerGrantTransaction = {
+          async cancelPendingInvitations(normalizedEmail) {
+            const [rows] = await connection.execute<(RowDataPacket & { id: string })[]>(
+              `SELECT id FROM policycraft_manager_invitations
+                WHERE email = ? AND accepted_at IS NULL AND cancelled_at IS NULL FOR UPDATE`, [normalizedEmail],
+            );
+            for (const row of rows) {
+              await connection.execute(
+                `UPDATE policycraft_manager_invitations SET cancelled_at = CURRENT_TIMESTAMP(3), updated_at = CURRENT_TIMESTAMP(3)
+                  WHERE id = ? AND accepted_at IS NULL AND cancelled_at IS NULL`, [row.id],
+              );
+            }
+          },
+          async findSharedAccountByEmail(normalizedEmail) {
+            const [rows] = await connection.execute<(RowDataPacket & { id: number; active: number; is_deleted: number; is_super_admin: number })[]>(
+              `SELECT id, active, is_deleted, is_super_admin FROM users
+                WHERE LOWER(email) = ? ORDER BY id ASC LIMIT 2 FOR UPDATE`, [normalizedEmail],
+            );
+            if (rows.length > 1) throw new Error("Multiple shared accounts match this email; resolve the duplicate before linking.");
+            const row = rows[0];
+            return row ? { id: row.id, active: row.active, isDeleted: row.is_deleted, isSuperAdmin: row.is_super_admin } : null;
+          },
+          async findPolicyCraftAccess(userId) {
+            const [rows] = await connection.execute<(RowDataPacket & { role: "admin" | "manager"; status: "active" | "disabled" })[]>(
+              `SELECT role, status FROM policycraft_user_access WHERE user_id = ? LIMIT 1 FOR UPDATE`, [userId],
+            );
+            return rows[0] ? { role: rows[0].role, status: rows[0].status } : null;
+          },
+          async validateOrganizations(ids) {
+            try {
+              await validateOrganizations(connection, ids, false, true, true);
+              return true;
+            } catch (error) {
+              if (error instanceof Error && error.message === "One or more organizations are unavailable.") return false;
+              throw error;
+            }
+          },
+          async grantManagerAccess(userId, ids, actorId) {
+            await connection.execute(
+              `INSERT INTO policycraft_user_access (user_id, role, status, created_by_user_id)
+               VALUES (?, 'manager', 'active', ?)
+               ON DUPLICATE KEY UPDATE user_id = VALUES(user_id)`, [userId, actorId],
+            );
+            for (const orgId of ids) {
+              await connection.execute(
+                `INSERT INTO policycraft_manager_organizations (manager_user_id, org_id, assigned_by_user_id, active)
+                 VALUES (?, ?, ?, 1)
+                 ON DUPLICATE KEY UPDATE active = 1`,
+                [userId, orgId, actorId],
+              );
+            }
+          },
+        };
+        const result = await run(transaction);
+        await connection.commit();
+        return result;
+      } catch (error) {
+        await connection.rollback();
+        throw error;
+      } finally {
+        connection.release();
+      }
+    },
+  };
+  const result = await grantManagerAccess(port, { email, expectedAccountId, organizationIds, grantedByUserId });
+  return result.userId;
+}
+
+async function validateOrganizations(connection: { execute: typeof policyCraftPool.execute }, ids: number[], allowEmpty = false, lockRows = false, requireUnexpired = false): Promise<number[]> {
   const uniqueIds = [...new Set(ids)];
   if (!uniqueIds.length) {
     if (allowEmpty) return [];
@@ -121,9 +196,9 @@ async function validateOrganizations(connection: { execute: typeof policyCraftPo
   const placeholders = uniqueIds.map(() => "?").join(", ");
   const [rows] = await connection.execute<OrganizationRow[]>(
     `SELECT id, org_code, company_name, is_deleted, expiry_date
-       FROM organizations WHERE id IN (${placeholders})`, uniqueIds,
+       FROM organizations WHERE id IN (${placeholders})${lockRows ? " FOR UPDATE" : ""}`, uniqueIds,
   );
-  const valid = new Set(rows.filter((row) => !row.is_deleted).map((row) => row.id));
+  const valid = new Set(rows.filter((row) => !row.is_deleted && (!requireUnexpired || !isExpired(row.expiry_date))).map((row) => row.id));
   if (valid.size !== uniqueIds.length) throw new Error("One or more organizations are unavailable.");
   return uniqueIds;
 }
@@ -134,40 +209,59 @@ export async function createPolicyCraftManagerInvitation(
   deliver: (email: string, name: string, url: string) => Promise<void>,
 ): Promise<{ invitation: InvitationSummary; existingAccount: ExistingAccount | null; sent: boolean }> {
   const email = normalizePolicyCraftEmail(draft.email);
-  const organizations = await validateOrganizations(policyCraftPool, draft.organizationIds);
+  const organizations = await validateOrganizations(policyCraftPool, draft.organizationIds, false, false, true);
   const existingAccount = await findSharedAccountByEmail(email);
-  if (existingAccount && draft.linkExisting !== true) return { invitation: { id: "", email, name: draft.name, organizationIds: organizations, status: "pending", expiresAt: "", existingAccount: true }, existingAccount, sent: false };
+  if (existingAccount) return { invitation: { id: "", email, name: draft.name, organizationIds: organizations, status: "pending", expiresAt: "", existingAccount: true }, existingAccount, sent: false };
   if (!existingAccount && draft.linkExisting === true) throw new Error("No existing account matches this email.");
-  if (existingAccount) {
-    if (!existingAccount.active || existingAccount.isDeleted) throw new Error("The existing account is disabled and cannot be linked.");
-    const [accessRows] = await policyCraftPool.execute<RowDataPacket[]>(
-      `SELECT user_id FROM policycraft_user_access WHERE user_id = ? LIMIT 1`, [existingAccount.id],
-    );
-    if (accessRows.length) throw new Error("This account already has PolicyCraft access.");
-  }
   const pair = createPolicyCraftInvitationToken();
   const now = Date.now();
   const id = randomUUID();
   const expiresAt = new Date(now + INVITATION_MS);
   const connection = await policyCraftPool.getConnection();
+  let accountFoundDuringCreate: ExistingAccount | null = null;
   try {
     await connection.beginTransaction();
-    const normalizedOrganizations = await validateOrganizations(connection, organizations);
-    await connection.execute(
-      `INSERT INTO policycraft_manager_invitations
-        (id, email, name, organization_ids_json, token_hash, existing_user_id, invited_by_user_id, expires_at, delivery_status)
-       VALUES (?, ?, ?, CAST(? AS JSON), ?, ?, ?, ?, 'pending')
-       ON DUPLICATE KEY UPDATE id = VALUES(id), name = VALUES(name), organization_ids_json = VALUES(organization_ids_json),
-         token_hash = VALUES(token_hash), existing_user_id = VALUES(existing_user_id), invited_by_user_id = VALUES(invited_by_user_id),
-         expires_at = VALUES(expires_at), accepted_at = NULL, cancelled_at = NULL, delivery_status = 'pending', updated_at = CURRENT_TIMESTAMP(3)`,
-      [id, email, draft.name.trim().slice(0, 255), JSON.stringify(normalizedOrganizations), pair.tokenHash, existingAccount?.id ?? null, invitedByUserId, expiresAt],
+    // Lock the invitation key first, matching acceptance/direct-grant lock order, then recheck users.
+    await connection.execute<RowDataPacket[]>(
+      `SELECT id FROM policycraft_manager_invitations WHERE email = ? LIMIT 1 FOR UPDATE`, [email],
     );
+    const [accountRows] = await connection.execute<(RowDataPacket & { id: number; name: string; email: string; active: number; is_deleted: number; is_super_admin: number })[]>(
+      `SELECT id, name, email, active, is_deleted, is_super_admin FROM users
+        WHERE LOWER(email) = ? ORDER BY id ASC LIMIT 2 FOR UPDATE`, [email],
+    );
+    if (accountRows.length > 1) throw new Error("Multiple shared accounts match this email; resolve the duplicate before linking.");
+    const accountRow = accountRows[0];
+    if (accountRow) {
+      accountFoundDuringCreate = {
+        id: accountRow.id, name: accountRow.name, email: accountRow.email,
+        active: accountRow.active, isDeleted: accountRow.is_deleted, isSuperAdmin: accountRow.is_super_admin,
+      };
+    } else {
+      const normalizedOrganizations = await validateOrganizations(connection, organizations, false, true, true);
+      await connection.execute(
+        `INSERT INTO policycraft_manager_invitations
+          (id, email, name, organization_ids_json, token_hash, existing_user_id, invited_by_user_id, expires_at, delivery_status)
+         VALUES (?, ?, ?, CAST(? AS JSON), ?, NULL, ?, ?, 'pending')
+         ON DUPLICATE KEY UPDATE id = VALUES(id), name = VALUES(name), organization_ids_json = VALUES(organization_ids_json),
+           token_hash = VALUES(token_hash), existing_user_id = NULL, invited_by_user_id = VALUES(invited_by_user_id),
+           expires_at = VALUES(expires_at), accepted_at = NULL, cancelled_at = NULL, delivery_status = 'pending', updated_at = CURRENT_TIMESTAMP(3)`,
+        [id, email, draft.name.trim().slice(0, 255), JSON.stringify(normalizedOrganizations), pair.tokenHash, invitedByUserId, expiresAt],
+      );
+    }
     await connection.commit();
   } catch (error) {
     await connection.rollback();
     throw error;
   } finally {
     connection.release();
+  }
+
+  if (accountFoundDuringCreate) {
+    return {
+      invitation: { id: "", email, name: draft.name, organizationIds: organizations, status: "pending", expiresAt: "", existingAccount: true },
+      existingAccount: accountFoundDuringCreate,
+      sent: false,
+    };
   }
 
   let sent = false;
@@ -225,23 +319,47 @@ export async function updatePolicyCraftManagerInvitation(
   const name = (draft?.name || current.name).trim().slice(0, 255);
   const organizationIds = draft ? await validateOrganizations(policyCraftPool, draft.organizationIds, true) : current.organizationIds;
   const foundAccount = await findSharedAccountByEmail(email);
-  let existingUserId: number | null = current.existingAccount ? await findSharedAccountIdByEmail(current.email) : null;
-  if (action === "edit" && (draft?.linkExisting === true || email !== current.email)) {
-    if (foundAccount && draft?.linkExisting !== true) return { invitation: current, sent: false, existingAccount: foundAccount };
-    if (!foundAccount && draft?.linkExisting === true) throw new Error("No existing account matches this email.");
-    if (foundAccount && (!foundAccount.active || foundAccount.isDeleted)) throw new Error("The existing account is disabled and cannot be linked.");
-    existingUserId = foundAccount?.id ?? null;
-  }
+  if (foundAccount) return { invitation: current, sent: false, existingAccount: foundAccount };
   const pair = createPolicyCraftInvitationToken();
   const expiresAt = new Date(Date.now() + INVITATION_MS);
-  const [updateResult] = await policyCraftPool.execute<ResultSetHeader>(
-    `UPDATE policycraft_manager_invitations
-        SET email = ?, name = ?, organization_ids_json = CAST(? AS JSON), token_hash = ?, existing_user_id = ?,
-            invited_by_user_id = ?, expires_at = ?, delivery_status = 'pending', updated_at = CURRENT_TIMESTAMP(3)
-      WHERE id = ? AND accepted_at IS NULL AND cancelled_at IS NULL`,
-    [email, name, JSON.stringify(organizationIds), pair.tokenHash, existingUserId, invitedByUserId, expiresAt, id],
-  );
-  if (!updateResult.affectedRows) throw new Error("Invitation was accepted or cancelled while this request was being processed.");
+  const connection = await policyCraftPool.getConnection();
+  let accountFoundDuringUpdate: ExistingAccount | null = null;
+  try {
+    await connection.beginTransaction();
+    const [invitationRows] = await connection.execute<(RowDataPacket & { id: string })[]>(
+      `SELECT id FROM policycraft_manager_invitations
+        WHERE id = ? AND accepted_at IS NULL AND cancelled_at IS NULL FOR UPDATE`, [id],
+    );
+    if (!invitationRows.length) throw new Error("Invitation was accepted or cancelled while this request was being processed.");
+    const [accountRows] = await connection.execute<(RowDataPacket & { id: number; name: string; email: string; active: number; is_deleted: number; is_super_admin: number })[]>(
+      `SELECT id, name, email, active, is_deleted, is_super_admin FROM users
+        WHERE LOWER(email) = ? ORDER BY id ASC LIMIT 2 FOR UPDATE`, [email],
+    );
+    if (accountRows.length > 1) throw new Error("Multiple shared accounts match this email; resolve the duplicate before linking.");
+    const accountRow = accountRows[0];
+    if (accountRow) {
+      accountFoundDuringUpdate = {
+        id: accountRow.id, name: accountRow.name, email: accountRow.email,
+        active: accountRow.active, isDeleted: accountRow.is_deleted, isSuperAdmin: accountRow.is_super_admin,
+      };
+    } else {
+      const [updateResult] = await connection.execute<ResultSetHeader>(
+        `UPDATE policycraft_manager_invitations
+            SET email = ?, name = ?, organization_ids_json = CAST(? AS JSON), token_hash = ?, existing_user_id = NULL,
+                invited_by_user_id = ?, expires_at = ?, delivery_status = 'pending', updated_at = CURRENT_TIMESTAMP(3)
+          WHERE id = ? AND accepted_at IS NULL AND cancelled_at IS NULL`,
+        [email, name, JSON.stringify(organizationIds), pair.tokenHash, invitedByUserId, expiresAt, id],
+      );
+      if (!updateResult.affectedRows) throw new Error("Invitation was accepted or cancelled while this request was being processed.");
+    }
+    await connection.commit();
+  } catch (error) {
+    await connection.rollback();
+    throw error;
+  } finally {
+    connection.release();
+  }
+  if (accountFoundDuringUpdate) return { invitation: current, sent: false, existingAccount: accountFoundDuringUpdate };
   let sent = false;
   try {
     await deliver(email, name, invitationUrl(pair.token));
@@ -255,13 +373,6 @@ export async function updatePolicyCraftManagerInvitation(
     [sent ? "sent" : "failed", id, pair.tokenHash],
   );
   return { invitation: await readInvitationSummary(id), sent, existingAccount: null };
-}
-
-async function findSharedAccountIdByEmail(email: string): Promise<number | null> {
-  const [rows] = await policyCraftPool.execute<(RowDataPacket & { id: number })[]>(
-    `SELECT id FROM users WHERE LOWER(email) = ? LIMIT 1`, [normalizePolicyCraftEmail(email)],
-  );
-  return rows[0]?.id || null;
 }
 
 export async function updatePolicyCraftManager(

@@ -13,6 +13,13 @@ const organizations = [
 let role = "admin";
 let patch;
 let inviteCount = 0;
+const managerRequests = [];
+const invitationRequests = [];
+let newInviteAccepted = false;
+let sessionCleared = false;
+let signOutCalls = 0;
+let signOutFailuresRemaining = 0;
+let invitationPostCount = 0;
 let savedState;
 let failSave = false;
 let includeDocument = false;
@@ -32,11 +39,23 @@ await context.route("**/api/**", async (route) => {
   const path = url.pathname;
   let data;
   let status = 200;
-  if (path === "/api/policycraft/access") data = { actor: { id: "7", name: "Alex Administrator", email: "alex@example.test", role }, organizations, homeHref: role === "admin" ? "/admin" : "/manager" };
+  if (path === "/api/policycraft/access") {
+    if (newInviteAccepted && sessionCleared) { status = 401; data = { error: "Unauthorized" }; }
+    else data = { actor: { id: "7", name: "Alex Administrator", email: "alex@example.test", role }, organizations, homeHref: role === "admin" ? "/admin" : "/manager" };
+  }
   else if (path === "/api/policycraft/admin/managers" && route.request().method() === "POST") {
     inviteCount++;
-    data = inviteCount === 1 ? { code: "ACCOUNT_EXISTS", existingAccount: { id: "9", name: "Morgan Manager", email: "morgan@example.test" } } : { manager: { email: "morgan@example.test" }, delivery: { sent: true } };
-    status = inviteCount === 1 ? 409 : 200;
+    const request = route.request().postDataJSON();
+    managerRequests.push(request);
+    if (inviteCount === 1) {
+      data = { code: "ACCOUNT_EXISTS", existingAccount: { id: "9", name: "Morgan Manager", email: "morgan@example.test" } };
+      status = 409;
+    } else if (request.linkExisting === true) {
+      data = { mode: "existing", manager: { id: "9", name: "Morgan Manager", email: "morgan@example.test", status: "active", organizations, policyCount: 3 }, delivery: { sent: false } };
+    } else {
+      data = { mode: "new", manager: { id: "19", name: request.name, email: request.email, status: "pending", organizations: [], policyCount: 0 }, invitation: { id: "invite-19" }, delivery: { sent: true } };
+      status = 201;
+    }
   } else if (path === "/api/policycraft/admin/managers") data = { managers: [{ id: "9", name: "Morgan Manager", email: "morgan@example.test", status: "active", organizations, policyCount: 3 }], organizations };
   else if (path === "/api/policycraft/admin/managers/9") { patch = route.request().postDataJSON(); data = { success: true }; }
   else if (path === "/api/policycraft/documents" || path === "/api/policycraft/admin/documents") data = { documents: includeDocument ? [document] : [], creators: [document.createdBy] };
@@ -47,7 +66,27 @@ await context.route("**/api/**", async (route) => {
     }
     data = { document: { ...document, state: savedState || document.state, lockVersion: 2 } };
   }
-  else if (path.startsWith("/api/invitations/")) data = { mode: "new", email: "morgan@example.test", name: "Morgan Manager", expiresAt: "2026-10-04T10:00:00Z" };
+  else if (path.startsWith("/api/invitations/")) {
+    invitationRequests.push({ method: route.request().method(), body: route.request().postDataJSON() });
+    if (route.request().method() === "GET") {
+      data = { invitation: { mode: "new", email: "avery@example.test", name: "Avery New Manager", expiresAt: "2026-10-04T10:00:00Z" } };
+    } else {
+      invitationPostCount++;
+      newInviteAccepted = true;
+      data = { accepted: true, mode: "new", userId: "19", next: "/login" };
+    }
+  }
+  else if (path === "/api/auth/sign-out") {
+    signOutCalls++;
+    if (signOutFailuresRemaining > 0) {
+      signOutFailuresRemaining--;
+      status = 500;
+      data = { message: "Could not sign out." };
+    } else {
+      sessionCleared = true;
+      data = { success: true };
+    }
+  }
   else if (path.startsWith("/api/auth/")) data = { user: { id: "7", name: "Alex Administrator", email: "alex@example.test" }, session: {} };
   else data = {};
   await route.fulfill({ status, contentType: "application/json", body: JSON.stringify(data) });
@@ -70,10 +109,61 @@ try {
   await page.getByLabel("Full name", { exact: true }).fill("Morgan Manager");
   await page.getByLabel("Work email", { exact: true }).fill("morgan@example.test");
   await page.getByRole("checkbox").first().check();
-  await page.getByRole("button", { name: "Send invitation", exact: true }).click();
-  await page.getByRole("button", { name: "Link existing account", exact: true }).waitFor();
-  await page.getByRole("button", { name: "Link existing account", exact: true }).click();
+  await page.getByRole("button", { name: "Add manager", exact: true }).click();
+  await page.getByRole("button", { name: "Grant manager access", exact: true }).waitFor();
+  await page.getByText("No invitation or new password email will be sent.", { exact: false }).waitFor();
+  await page.screenshot({ path: `${output}/existing-account-confirmation-desktop.png`, fullPage: true });
+  await page.getByRole("button", { name: "Grant manager access", exact: true }).click();
+  await page.getByRole("heading", { name: "Manager access granted", exact: true }).waitFor();
+  await page.screenshot({ path: `${output}/manager-access-granted-desktop.png`, fullPage: true });
+  assert.equal(managerRequests[1].linkExisting, true);
+  assert.equal(managerRequests[1].confirmedExistingAccountId, "9", "confirmation stays bound to the reviewed shared account");
+  assert.equal(managerRequests[1].name, "Morgan Manager", "existing account name remains canonical");
+  assert.equal(managerRequests[1].email, "morgan@example.test");
+  assert.equal(invitationRequests.length, 0, "existing account access does not create or send an invitation");
+
+  await page.goto(`${base}/admin/managers/new`);
+  await page.getByLabel("Full name", { exact: true }).fill("Avery New Manager");
+  await page.getByLabel("Work email", { exact: true }).fill("avery@example.test");
+  await page.getByRole("checkbox").first().check();
+  await page.getByRole("button", { name: "Add manager", exact: true }).click();
   await page.getByRole("heading", { name: "Invitation sent", exact: true }).waitFor();
+  assert.equal(managerRequests[2].linkExisting, undefined, "new accounts use the invitation path");
+
+  await page.goto(`${base}/accept-invitation?token=mock-token`);
+  await page.getByLabel("Create password", { exact: true }).waitFor();
+  await page.getByLabel("Confirm password", { exact: true }).waitFor();
+  await page.screenshot({ path: `${output}/new-manager-password-desktop.png`, fullPage: true });
+  await page.getByLabel("Create password", { exact: true }).fill("valid-test-password");
+  await page.getByLabel("Confirm password", { exact: true }).fill("valid-test-password");
+  await page.getByRole("button", { name: "Create account & accept", exact: true }).click();
+  await page.waitForURL((url) => url.pathname === "/login" && url.searchParams.get("next") === "/manager");
+  await page.getByRole("heading", { name: "Sign in to your workspace", exact: true }).waitFor();
+  assert.deepEqual(invitationRequests.map(({ method }) => method), ["GET", "POST"]);
+  assert.deepEqual(invitationRequests[1].body, { password: "valid-test-password" });
+  assert.equal(signOutCalls, 1, "new account acceptance clears the previous signed-in account");
+  assert.equal(sessionCleared, true);
+
+  newInviteAccepted = false;
+  sessionCleared = false;
+  role = "admin";
+  signOutFailuresRemaining = 1;
+  await page.goto(`${base}/accept-invitation?token=mock-token-cleanup-retry`);
+  await page.getByLabel("Create password", { exact: true }).waitFor();
+  await page.getByLabel("Create password", { exact: true }).fill("another-test-password");
+  await page.getByLabel("Confirm password", { exact: true }).fill("another-test-password");
+  await page.getByRole("button", { name: "Create account & accept", exact: true }).click();
+  await page.getByRole("heading", { name: "Manager account created", exact: true }).waitFor();
+  await page.getByRole("button", { name: "Retry sign in", exact: true }).waitFor();
+  assert.equal(invitationPostCount, 2, "the accepted invitation is not posted again after sign-out fails");
+  await page.screenshot({ path: `${output}/new-manager-accepted-signout-retry.png`, fullPage: true });
+  await page.getByRole("button", { name: "Retry sign in", exact: true }).click();
+  await page.waitForURL((url) => url.pathname === "/login" && url.searchParams.get("next") === "/manager");
+  await page.getByRole("heading", { name: "Sign in to your workspace", exact: true }).waitFor();
+  assert.equal(invitationPostCount, 2, "sign-in retry does not repost the consumed invitation");
+  assert.equal(signOutCalls, 3, "retry repeats only the session cleanup step");
+  newInviteAccepted = false;
+  sessionCleared = false;
   includeDocument = true;
   await page.goto(`${base}/admin/policies`);
   await page.getByRole("heading", { name: "All policies" }).waitFor();
@@ -92,11 +182,14 @@ try {
   await page.getByRole("heading", { name: "Greenfield Group", exact: true }).waitFor();
   await page.screenshot({ path: `${output}/manager-mobile.png`, fullPage: true });
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
-  await page.goto(`${base}/accept-invitation?token=mock-token`);
-  await page.getByRole("heading").first().waitFor();
-  await page.screenshot({ path: `${output}/invitation-mobile.png`, fullPage: true });
+  role = "admin";
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${base}/admin/managers/new`);
+  await page.getByRole("heading", { name: "Add manager", exact: true }).waitFor();
+  await page.screenshot({ path: `${output}/manager-add-mobile.png`, fullPage: true });
   includeDocument = true;
   await page.setViewportSize({ width: 1440, height: 1000 });
+  role = "manager";
   await page.goto(`${base}/manager?orgId=22`);
   await page.getByRole("link", { name: "Open", exact: true }).waitFor();
   const managerHistory = await page.evaluate(() => history.state);
@@ -131,7 +224,7 @@ try {
   assert.equal((await reloadDialog).type(), "beforeunload");
   assert.equal(new URL(page.url()).pathname, "/builder", "dismissed reload must keep the unsaved policy open");
   assert.deepEqual(errors, []);
-  console.log("PASS: desktop/mobile workspaces, assignment revocation, modal keyboard containment, existing-account invite link, organization selection, pending-save history and reload guards, no page errors.");
+  console.log("PASS: direct existing-account grant without invitation; new-account acceptance clears the prior session; sign-out failure retries without reposting the consumed invitation; desktop/mobile workspaces, assignment revocation, modal keyboard containment, organization selection, pending-save guards, and no page errors.");
 } catch (error) {
   await page.screenshot({ path: `${output}/access-ui-failure.png`, fullPage: true });
   console.error((await page.locator("body").innerText()).slice(-2500));

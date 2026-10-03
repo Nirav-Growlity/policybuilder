@@ -32,7 +32,11 @@ The same login now opens `/admin` for PolicyCraft administrators, `/manager` for
 
 Before deploying this version, the database owner must follow [the access migration runbook](migrations/README_policycraft_access.md), apply the additive access migration, and designate an existing first administrator using [the bootstrap example](migrations/bootstrap_policycraft_admin.example.sql). Migration execution is manual. Missing access tables fail closed, so apply and verify them before switching application traffic.
 
-Configure the ZeptoMail and application URL settings from `.env.example` before inviting managers. Public signup remains disabled; invitations expire after 72 hours and existing accounts require explicit linking.
+Existing active accounts receive manager access directly after an administrator confirms the account. They sign in with their existing password; no email or SMTP configuration is needed. Adding an existing manager preserves their current organization assignments and adds the selected organizations.
+
+Only people without an existing account receive an invitation to choose a password. Configure `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_EMAIL`, and `POLICYCRAFT_APP_URL` from `.env.example` before sending these invitations. Invitations use ZeptoMail SMTP: port 587 requires STARTTLS; port 465 uses TLS. `MAIL_EMAIL` is the verified sender address; invitations go to the manager's email, not `ADMIN_EMAIL`. No ZeptoMail API key is required. Public signup remains disabled; invitations expire after 72 hours.
+
+For local invitation tests, set `POLICYCRAFT_APP_URL=http://localhost:3000` and load the SMTP settings into the local environment. The app connects outbound to ZeptoMail, so a hosted application is not required to send mail. Open a localhost invitation link on the computer running the app; use a reachable HTTPS app origin for invitees on another computer.
 
 Run `npm run test:access` for the isolated access, invitation, storage, and export tests. The repeatable browser smoke check is `node --import tsx scripts/verify-access-ui.mjs`; start a development server first and set `POLICYCRAFT_UI_URL` to its origin. It mocks API responses and does not touch database records or send mail. Screenshots default to `output/playwright`; use `POLICYCRAFT_UI_OUTPUT` to choose another writable directory. `node scripts/verify-access-anonymous.mjs` checks that the generation, import, and export handlers reject requests without cookies before processing content.
 
