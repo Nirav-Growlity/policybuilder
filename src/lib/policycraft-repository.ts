@@ -34,13 +34,11 @@ type SiteRow = RowDataPacket & {
   type: string;
 };
 
-type DocumentRow = RowDataPacket & {
+type DocumentSummaryRow = RowDataPacket & {
   id: string;
   title: string;
   policy_type: PolicyDocumentSummary["policyType"];
   current_step: PolicyDocumentSummary["currentStep"];
-  policy_json: unknown;
-  imported_policy_json: unknown;
   lock_version: number;
   created_at: Date | string;
   updated_at: Date | string;
@@ -55,6 +53,11 @@ type DocumentRow = RowDataPacket & {
   created_by_user_id?: number;
 };
 
+type DocumentRow = DocumentSummaryRow & {
+  policy_json: unknown;
+  imported_policy_json: unknown;
+};
+
 function isoDate(value: Date | string): string {
   return value instanceof Date ? value.toISOString() : new Date(value).toISOString();
 }
@@ -67,7 +70,7 @@ function parseJson<T>(value: unknown): T {
   return typeof value === "string" ? (JSON.parse(value) as T) : (value as T);
 }
 
-function toSummary(row: DocumentRow): PolicyDocumentSummary {
+function toSummary(row: DocumentSummaryRow): PolicyDocumentSummary {
   return {
     id: row.id,
     title: row.title,
@@ -89,11 +92,12 @@ function toSummary(row: DocumentRow): PolicyDocumentSummary {
   };
 }
 
-const documentMetadataSelect = `d.id, d.title, d.policy_type, d.current_step, d.policy_json, d.imported_policy_json,
+const documentSummarySelect = `d.id, d.title, d.policy_type, d.current_step,
   d.lock_version, d.created_at, d.updated_at, d.archived_at, d.created_by_user_id,
   creator.name AS created_by_name, creator.email AS created_by_email,
   o.id AS organization_id, o.org_code AS organization_code, o.company_name AS organization_name,
   o.is_deleted AS organization_deleted, o.expiry_date AS organization_expiry`;
+const documentMetadataSelect = `${documentSummarySelect}, d.policy_json, d.imported_policy_json`;
 
 function coverAssetUrl(value: string | undefined): string | undefined {
   if (!value || value.startsWith("data:") || value.startsWith("/") || /^https?:\/\//i.test(value)) return value;
@@ -221,8 +225,8 @@ export async function listAllAdminDocuments(filters: { organizationId?: number; 
   if (filters.creatorId) { predicates.push("d.created_by_user_id = ?"); values.push(filters.creatorId); }
   if (filters.policyType) { predicates.push("d.policy_type = ?"); values.push(filters.policyType); }
   if (filters.archived !== undefined) predicates.push(`d.archived_at IS ${filters.archived ? "NOT " : ""}NULL`);
-  const [rows] = await policyCraftPool.execute<DocumentRow[]>(
-    `SELECT ${documentMetadataSelect}
+  const [rows] = await policyCraftPool.execute<DocumentSummaryRow[]>(
+    `SELECT ${documentSummarySelect}
        FROM policycraft_documents d
        INNER JOIN organizations o ON o.id = d.org_id
        LEFT JOIN users creator ON creator.id = d.created_by_user_id
