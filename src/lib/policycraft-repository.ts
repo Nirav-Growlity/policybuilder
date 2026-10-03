@@ -45,6 +45,14 @@ type DocumentRow = RowDataPacket & {
   created_at: Date | string;
   updated_at: Date | string;
   archived_at: Date | string | null;
+  created_by_name?: string | null;
+  created_by_email?: string | null;
+  organization_id?: number;
+  organization_code?: string;
+  organization_name?: string;
+  organization_deleted?: number;
+  organization_expiry?: Date | string | null;
+  created_by_user_id?: number;
 };
 
 function isoDate(value: Date | string): string {
@@ -69,8 +77,23 @@ function toSummary(row: DocumentRow): PolicyDocumentSummary {
     createdAt: isoDate(row.created_at),
     updatedAt: isoDate(row.updated_at),
     archivedAt: nullableIsoDate(row.archived_at),
+    ...(row.created_by_user_id !== undefined && row.created_by_name !== null && row.created_by_email !== null
+      ? { createdBy: { id: String(row.created_by_user_id), name: row.created_by_name || "", email: row.created_by_email || "" } } : {}),
+    ...(row.organization_id !== undefined ? { organization: {
+      id: row.organization_id,
+      code: row.organization_code || "",
+      name: row.organization_name || "",
+      deleted: Boolean(row.organization_deleted),
+      expired: row.organization_expiry !== null && row.organization_expiry !== undefined && new Date(row.organization_expiry).getTime() < Date.now(),
+    } } : {}),
   };
 }
+
+const documentMetadataSelect = `d.id, d.title, d.policy_type, d.current_step, d.policy_json, d.imported_policy_json,
+  d.lock_version, d.created_at, d.updated_at, d.archived_at, d.created_by_user_id,
+  creator.name AS created_by_name, creator.email AS created_by_email,
+  o.id AS organization_id, o.org_code AS organization_code, o.company_name AS organization_name,
+  o.is_deleted AS organization_deleted, o.expiry_date AS organization_expiry`;
 
 function coverAssetUrl(value: string | undefined): string | undefined {
   if (!value || value.startsWith("data:") || value.startsWith("/") || /^https?:\/\//i.test(value)) return value;
@@ -162,10 +185,11 @@ export async function listDocuments(orgId: number, archived = false): Promise<Po
 
   const idPlaceholders = orderedIds.map(() => "?").join(", ");
   const [rows] = await policyCraftPool.execute<DocumentRow[]>(
-    `SELECT id, title, policy_type, current_step, policy_json, imported_policy_json,
-            lock_version, created_at, updated_at, archived_at
-       FROM policycraft_documents
-      WHERE org_id = ? AND archived_at ${archivePredicate} AND id IN (${idPlaceholders})`,
+    `SELECT ${documentMetadataSelect}
+       FROM policycraft_documents d
+       INNER JOIN organizations o ON o.id = d.org_id
+       LEFT JOIN users creator ON creator.id = d.created_by_user_id
+      WHERE d.org_id = ? AND d.archived_at ${archivePredicate} AND d.id IN (${idPlaceholders})`,
     [orgId, ...orderedIds.map((row) => row.id)],
   );
   const rowsById = new Map(rows.map((row) => [row.id, row]));
@@ -177,16 +201,45 @@ export async function listDocuments(orgId: number, archived = false): Promise<Po
   });
 }
 
-export async function getDocument(orgId: number, id: string): Promise<StoredPolicyDocument | null> {
+export async function getDocument(orgId: number, id: string, includeArchived = false): Promise<StoredPolicyDocument | null> {
   const [rows] = await policyCraftPool.execute<DocumentRow[]>(
-    `SELECT id, title, policy_type, current_step, policy_json, imported_policy_json,
-            lock_version, created_at, updated_at, archived_at
-       FROM policycraft_documents
-      WHERE id = ? AND org_id = ? AND archived_at IS NULL
+    `SELECT ${documentMetadataSelect}
+       FROM policycraft_documents d
+       INNER JOIN organizations o ON o.id = d.org_id
+       LEFT JOIN users creator ON creator.id = d.created_by_user_id
+      WHERE d.id = ? AND d.org_id = ? ${includeArchived ? "" : "AND d.archived_at IS NULL"}
       LIMIT 1`,
     [id, orgId],
   );
   return rows[0] ? toDocument(rows[0]) : null;
+}
+
+export async function listAllAdminDocuments(filters: { organizationId?: number; creatorId?: number; policyType?: string; archived?: boolean }) {
+  const predicates: string[] = [];
+  const values: (number | string)[] = [];
+  if (filters.organizationId) { predicates.push("d.org_id = ?"); values.push(filters.organizationId); }
+  if (filters.creatorId) { predicates.push("d.created_by_user_id = ?"); values.push(filters.creatorId); }
+  if (filters.policyType) { predicates.push("d.policy_type = ?"); values.push(filters.policyType); }
+  if (filters.archived !== undefined) predicates.push(`d.archived_at IS ${filters.archived ? "NOT " : ""}NULL`);
+  const [rows] = await policyCraftPool.execute<DocumentRow[]>(
+    `SELECT ${documentMetadataSelect}
+       FROM policycraft_documents d
+       INNER JOIN organizations o ON o.id = d.org_id
+       LEFT JOIN users creator ON creator.id = d.created_by_user_id
+       ${predicates.length ? `WHERE ${predicates.join(" AND ")}` : ""}
+      ORDER BY d.updated_at DESC, d.id ASC`, values,
+  );
+  return rows.map(toSummary);
+}
+
+export async function listPolicyCraftDocumentCreators(): Promise<Array<{ id: string; name: string; email: string }>> {
+  const [rows] = await policyCraftPool.execute<(RowDataPacket & { id: number; name: string; email: string })[]>(
+    `SELECT DISTINCT u.id, u.name, u.email
+       FROM policycraft_documents d
+       INNER JOIN users u ON u.id = d.created_by_user_id
+      ORDER BY u.name ASC, u.id ASC`,
+  );
+  return rows.map((row) => ({ id: String(row.id), name: row.name, email: row.email }));
 }
 
 export async function createDocument(

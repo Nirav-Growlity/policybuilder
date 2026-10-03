@@ -10,6 +10,7 @@ import { DEFAULT_DOCUMENT_THEME_ID } from "./document-themes";
 import { normalizePolicyCovers } from "./cover-composition";
 import { initializeFocusAreaCatalogFromDefaults } from "./focus-area-catalog";
 import { normalizePolicyRevisionHistory } from "./revision-history";
+import { policyCraftBuilderStorage } from "./policycraft-builder-storage";
 
 export const initialPolicy = (policyType: PolicyType = "environmental"): Policy => {
   const profile = getPolicyProfile(policyType);
@@ -180,16 +181,7 @@ export const useBuilder = create<BuilderState>()(
     }),
     {
       name: "policycraft-builder-v1",
-      storage: createJSONStorage(() => {
-        if (typeof window === "undefined") {
-          return {
-            getItem: () => null,
-            setItem: () => {},
-            removeItem: () => {},
-          };
-        }
-        return window.localStorage;
-      }),
+      storage: createJSONStorage(() => policyCraftBuilderStorage.storage),
       partialize: (s) => ({ step: s.step, policy: s.policy, importedPolicy: s.importedPolicy }),
       onRehydrateStorage: () => (state) => {
         if (state) {
@@ -198,6 +190,7 @@ export const useBuilder = create<BuilderState>()(
           state.hydrated = true;
         }
       },
+      skipHydration: true,
     }
   )
 );

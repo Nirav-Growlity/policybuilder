@@ -4,64 +4,19 @@ import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
 import { getPdfPageWidth } from "@/lib/pdf-preview-layout";
 import { PdfRenderLoader } from "@/components/policy/pdf-render-loader";
 import type { Policy } from "@/lib/types";
+import { policyCraftExportContext, policyCraftScopeKey, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
+import { requestPolicyPreview } from "@/lib/pdf/policy-preview-request";
 import "pdfjs-dist/web/pdf_viewer.css";
 
-type PreviewResult = { key: string; bytes: Uint8Array; id: number; includesAuthorSignature: boolean };
+type PreviewResult = { key: string; scopeKey: string; bytes: Uint8Array; id: number; includesAuthorSignature: boolean };
 type PdfViewState = { pageNumber: number; zoom: string; viewMode: "continuous" | "paged" };
 
-// Keep completed previews across remounts (theme dialogs and builder steps are
-// frequently opened more than once) and deduplicate requests shared by those
-// surfaces. The PDF remains the source of truth; this only avoids regenerating
-// an identical document.
-const previewCache = new Map<string, Uint8Array>();
-const previewRequests = new Map<string, Promise<Uint8Array>>();
-const MAX_CACHED_PREVIEWS = 6;
-const PREVIEW_REQUEST_TIMEOUT_MS = 150_000;
-
-function cachePreview(key: string, bytes: Uint8Array): void {
-  previewCache.delete(key);
-  previewCache.set(key, bytes);
-  while (previewCache.size > MAX_CACHED_PREVIEWS) previewCache.delete(previewCache.keys().next().value!);
-}
-
-function requestPreview(key: string, body: string, includeAuthorSignature: boolean): Promise<Uint8Array> {
-  const cached = includeAuthorSignature ? undefined : previewCache.get(key);
-  if (cached) {
-    previewCache.delete(key);
-    previewCache.set(key, cached);
-    return Promise.resolve(cached);
-  }
-  const pending = includeAuthorSignature ? undefined : previewRequests.get(key);
-  if (pending) return pending;
-  const request = fetch("/api/export/pdf", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body,
-    signal: AbortSignal.timeout(PREVIEW_REQUEST_TIMEOUT_MS),
-  }).then(async response => {
-    if (!response.ok) throw new Error("The preview could not be generated.");
-    const blob = await response.blob();
-    const bytes = new Uint8Array(await blob.arrayBuffer());
-    if (new TextDecoder().decode(bytes.slice(0, 5)) !== "%PDF-") throw new Error("The preview returned an invalid PDF.");
-    if (!includeAuthorSignature) cachePreview(key, bytes);
-    return bytes;
-  }).catch(error => {
-    if (error instanceof DOMException && error.name === "TimeoutError") {
-      throw new Error("Preview generation timed out. Please retry.");
-    }
-    throw error;
-  }).finally(() => { if (previewRequests.get(key) === request) previewRequests.delete(key); });
-  if (!includeAuthorSignature) previewRequests.set(key, request);
-  return request;
-}
-
 export function PdfPolicyPreview({ policy, includeAuthorSignature = false, authorSignatureDate = "", signatureUpdatedAt }: { policy: Policy; includeAuthorSignature?: boolean; authorSignatureDate?: string; signatureUpdatedAt?: string | number | null }) {
-  const body = JSON.stringify({ policy, includeAuthorSignature, authorSignatureDate });
-  const key = JSON.stringify({ body, signatureUpdatedAt: includeAuthorSignature ? signatureUpdatedAt ?? null : null });
-  const [active, setActive] = React.useState<PreviewResult | null>(() => {
-    const bytes = includeAuthorSignature ? undefined : previewCache.get(key);
-    return bytes ? { key, bytes, id: 0, includesAuthorSignature: includeAuthorSignature } : null;
-  });
+  const scope = usePolicyCraftScope((state) => state.scope);
+  const scopeKey = policyCraftScopeKey(scope);
+  const body = JSON.stringify({ policy, includeAuthorSignature, authorSignatureDate, ...policyCraftExportContext(scope) });
+  const key = JSON.stringify({ scopeKey, body, signatureUpdatedAt: includeAuthorSignature ? signatureUpdatedAt ?? null : null });
+  const [active, setActive] = React.useState<PreviewResult | null>(null);
   const [candidate, setCandidate] = React.useState<PreviewResult | null>(null);
   const [paintedId, setPaintedId] = React.useState<number | null>(null);
   const [view, setView] = React.useState<PdfViewState>({ pageNumber: 1, zoom: "fit", viewMode: "continuous" });
@@ -72,12 +27,12 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
   React.useLayoutEffect(() => { currentKey.current = key; }, [key]);
   React.useEffect(() => {
     const frame = requestAnimationFrame(() => {
-      setActive(current => current?.includesAuthorSignature && current.key !== key ? null : current);
-      setCandidate(current => current?.includesAuthorSignature && current.key !== key ? null : current);
-      setPaintedId(current => active?.includesAuthorSignature && active.key !== key && current === active.id ? null : current);
+      setActive(current => current && (current.scopeKey !== scopeKey || (current.includesAuthorSignature && current.key !== key)) ? null : current);
+      setCandidate(current => current && (current.scopeKey !== scopeKey || (current.includesAuthorSignature && current.key !== key)) ? null : current);
+      setPaintedId(current => active && (active.scopeKey !== scopeKey || (active.includesAuthorSignature && active.key !== key)) && current === active.id ? null : current);
     });
     return () => cancelAnimationFrame(frame);
-  }, [active, key]);
+  }, [active, key, scopeKey]);
   const retryCount = retry?.key === key ? retry.count : 0;
   React.useEffect(() => {
     // A cached, already mounted result can paint without another request.
@@ -85,9 +40,10 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
     let disposed = false;
     const timer = setTimeout(async () => {
       try {
-        const bytes = await requestPreview(key, body, includeAuthorSignature);
+        if (!scope) throw new Error("Select an organization to preview this policy.");
+        const bytes = await requestPolicyPreview({ key, body, includeAuthorSignature, scope });
         if (disposed) return;
-        setCandidate({ key, bytes, id: nextId.current++, includesAuthorSignature: includeAuthorSignature });
+        setCandidate({ key, scopeKey, bytes, id: nextId.current++, includesAuthorSignature: includeAuthorSignature });
         setFailure(null);
       } catch (error) {
         if (!disposed) { setCandidate(current => current?.key === key ? null : current); setFailure({ key, message: error instanceof Error ? error.message : "Preview unavailable." }); }
@@ -97,16 +53,16 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
     // active is deliberately read only when a key or retry changes; promoting
     // a painted candidate must not start the same request again.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [key, retryCount]);
-  const currentCandidate = candidate?.key === key ? candidate : null;
-  const currentActive = active !== null && (!active.includesAuthorSignature || active.key === key) ? active : null;
+  }, [key, retryCount, scope, scopeKey, body, includeAuthorSignature]);
+  const currentCandidate = candidate?.key === key && candidate.scopeKey === scopeKey ? candidate : null;
+  const currentActive = active !== null && active.scopeKey === scopeKey && (!active.includesAuthorSignature || active.key === key) ? active : null;
   const hasPaintedActive = currentActive !== null && paintedId === currentActive.id;
   const currentFailure = failure?.key === key ? failure : null;
   const ready = hasPaintedActive && active?.key === key && retryCount === 0;
   const updating = !ready && !currentFailure;
   const visible = updating ? hasPaintedActive ? currentActive : null : hasPaintedActive ? currentActive : currentCandidate || currentActive;
   const showUpdateOverlay = updating && hasPaintedActive;
-  const results = [active, currentCandidate].filter((result): result is PreviewResult => result !== null);
+  const results = [currentActive, currentCandidate].filter((result): result is PreviewResult => result !== null);
   const onRendered = (result: PreviewResult) => {
     if (currentKey.current !== result.key) return;
     if (currentCandidate?.id === result.id) {

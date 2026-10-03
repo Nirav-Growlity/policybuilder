@@ -119,6 +119,7 @@ test("missing auth strips only unresolved active cover assets from an export cop
 test("cover asset references normalize browser endpoint URLs for server-side export", () => {
   assert.equal(coverAssetIdFromReference("cover-asset-id"), "cover-asset-id");
   assert.equal(coverAssetIdFromReference("/api/policycraft/cover-assets/cover-asset-id"), "cover-asset-id");
+  assert.equal(coverAssetIdFromReference("/api/policycraft/cover-assets/cover-asset-id?orgId=42"), "cover-asset-id");
   assert.equal(coverAssetIdFromReference("/api/policycraft/cover-assets/cover%2Fasset"), "cover/asset");
   assert.equal(coverAssetIdFromReference("data:image/png;base64,abc"), "data:image/png;base64,abc");
 });

@@ -1,10 +1,12 @@
 import { coverAssetIdFromReference, getActiveCoverComposition, getActiveCoverVariant } from "../cover-composition";
+import { policyCraftUrl, usePolicyCraftScope } from "../policycraft-client-scope";
+import type { PolicyCraftWorkspaceScope } from "../policycraft-access-types";
 import type { Policy } from "../types";
 
-async function coverAssetDataUrl(assetReference: string | undefined): Promise<string | undefined> {
+async function coverAssetDataUrl(assetReference: string | undefined, scope: PolicyCraftWorkspaceScope | null): Promise<string | undefined> {
   const assetId = coverAssetIdFromReference(assetReference);
   if (!assetId || assetId.startsWith("data:")) return assetId;
-  const response = await fetch(`/api/policycraft/cover-assets/${encodeURIComponent(assetId)}`, { credentials: "same-origin" });
+  const response = await fetch(policyCraftUrl(`/api/policycraft/cover-assets/${encodeURIComponent(assetId)}`, scope), { cache: "no-store", credentials: "same-origin" });
   if (!response.ok) throw new Error("The cover artwork could not be loaded for Word export.");
   const blob = await response.blob();
   const bytes = new Uint8Array(await blob.arrayBuffer());
@@ -16,17 +18,17 @@ async function coverAssetDataUrl(assetReference: string | undefined): Promise<st
 }
 
 /** Resolve private cover and running-header assets only in the transient export payload. */
-export async function preparePolicyForDocxExport(policy: Policy): Promise<Policy> {
+export async function preparePolicyForDocxExport(policy: Policy, scope = usePolicyCraftScope.getState().scope): Promise<Policy> {
   const composition = getActiveCoverComposition(policy);
-  const companyLogo = await coverAssetDataUrl(policy.company.companyLogo);
+  const companyLogo = await coverAssetDataUrl(policy.company.companyLogo, scope);
   if (!composition) {
     if (companyLogo === policy.company.companyLogo) return policy;
     return { ...policy, company: { ...policy.company, companyLogo } };
   }
-  const backgroundAssetId = await coverAssetDataUrl(composition.background.assetId);
+  const backgroundAssetId = await coverAssetDataUrl(composition.background.assetId, scope);
   const elements = await Promise.all(composition.elements.map(async (element) => {
     if (element.type !== "image" && element.type !== "logo") return element;
-    const assetId = await coverAssetDataUrl(element.assetId || (element.type === "logo" ? policy.company.companyLogo : undefined));
+    const assetId = await coverAssetDataUrl(element.assetId || (element.type === "logo" ? policy.company.companyLogo : undefined), scope);
     return { ...element, ...(assetId ? { assetId } : {}) };
   }));
   const resolvedComposition = { ...composition, background: { ...composition.background, assetId: backgroundAssetId }, elements };

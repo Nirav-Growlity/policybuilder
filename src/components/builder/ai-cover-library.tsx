@@ -4,6 +4,7 @@ import * as React from "react";
 import { Edit3, RefreshCw, Trash2, WandSparkles } from "lucide-react";
 import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { archiveAICover, coverCompositionsEqual, fetchAICoverLibrary, persistCoverArtwork, saveAICoverToLibrary } from "@/lib/ai-cover-library";
+import { policyCraftScopeKey, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { useBuilder } from "@/lib/store";
 import type { CoverLibraryItem } from "@/lib/types";
 
@@ -13,7 +14,10 @@ function activeItem(item: CoverLibraryItem, activeComposition: CoverLibraryItem[
 
 export function AICoverLibraryPanel() {
   const { policy, updatePolicy, setStep, requestCoverEdit } = useBuilder();
+  const scope = usePolicyCraftScope((state) => state.scope);
+  const scopeKey = policyCraftScopeKey(scope);
   const [items, setItems] = React.useState<CoverLibraryItem[]>([]);
+  const [itemsScopeKey, setItemsScopeKey] = React.useState<string | null>(null);
   const [loading, setLoading] = React.useState(true);
   const [busyId, setBusyId] = React.useState<string | null>(null);
   const [error, setError] = React.useState("");
@@ -23,13 +27,19 @@ export function AICoverLibraryPanel() {
     setLoading(true);
     setError("");
     try {
-      setItems(await fetchAICoverLibrary(policy.policyType));
+      const nextItems = await fetchAICoverLibrary(policy.policyType, scope);
+      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) === scopeKey) {
+        setItems(nextItems);
+        setItemsScopeKey(scopeKey);
+      }
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "The AI cover library could not be loaded.");
+      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) === scopeKey) setError(cause instanceof Error ? cause.message : "The AI cover library could not be loaded.");
     } finally {
-      setLoading(false);
+      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) === scopeKey) setLoading(false);
     }
-  }, [policy.policyType]);
+  }, [policy.policyType, scope, scopeKey]);
+  const scopedItems = React.useMemo(() => itemsScopeKey === scopeKey ? items : [], [items, itemsScopeKey, scopeKey]);
+  const scopedLoading = loading || itemsScopeKey !== scopeKey;
 
   React.useEffect(() => {
     const frame = window.requestAnimationFrame(() => void load());
@@ -38,27 +48,31 @@ export function AICoverLibraryPanel() {
 
   React.useEffect(() => {
     const composition = policy.aiCoverComposition;
-    if (loading || !composition || composition.sourceTemplateId !== "ai-generated") return;
-    const key = JSON.stringify(composition);
-    if (backfillAttempt.current === key || items.some((item) => coverCompositionsEqual(item.composition, composition))) return;
+    if (scopedLoading || !composition || composition.sourceTemplateId !== "ai-generated") return;
+    const key = JSON.stringify({ scopeKey, composition });
+    if (backfillAttempt.current === key || scopedItems.some((item) => coverCompositionsEqual(item.composition, composition))) return;
     backfillAttempt.current = key;
+    const backfillScope = scope;
+    const backfillScopeKey = scopeKey;
     let active = true;
     void (async () => {
       setBusyId("backfill");
       try {
-        const persisted = await persistCoverArtwork(composition);
+        const persisted = await persistCoverArtwork(composition, backfillScope);
+        if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== backfillScopeKey) return;
         if (!active) return;
         if (!coverCompositionsEqual(persisted, composition)) updatePolicy(() => ({ aiCoverComposition: persisted }));
-        await saveAICoverToLibrary(persisted, policy.policyType, "Recovered AI cover");
+        await saveAICoverToLibrary(persisted, policy.policyType, "Recovered AI cover", backfillScope);
+        if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== backfillScopeKey) return;
         if (active) await load();
       } catch (cause) {
-        if (active) setError(cause instanceof Error ? `Current AI cover could not be added to the library: ${cause.message}` : "Current AI cover could not be added to the library.");
+        if (active && policyCraftScopeKey(usePolicyCraftScope.getState().scope) === backfillScopeKey) setError(cause instanceof Error ? `Current AI cover could not be added to the library: ${cause.message}` : "Current AI cover could not be added to the library.");
       } finally {
-        if (active) setBusyId(null);
+        if (active && policyCraftScopeKey(usePolicyCraftScope.getState().scope) === backfillScopeKey) setBusyId(null);
       }
     })();
     return () => { active = false; };
-  }, [items, load, loading, policy.aiCoverComposition, policy.policyType, updatePolicy]);
+  }, [load, policy.aiCoverComposition, policy.policyType, scope, scopeKey, scopedItems, scopedLoading, updatePolicy]);
 
   const applyCover = (item: CoverLibraryItem) => updatePolicy(() => ({ aiCoverComposition: item.composition, activeCoverVariant: "ai" }));
 
@@ -77,12 +91,12 @@ export function AICoverLibraryPanel() {
     setBusyId(item.id);
     setError("");
     try {
-      await archiveAICover(item.id);
-      setItems((current) => current.filter((candidate) => candidate.id !== item.id));
+      await archiveAICover(item.id, scope);
+      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) === scopeKey) setItems((current) => current.filter((candidate) => candidate.id !== item.id));
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "The AI cover could not be deleted.");
+      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) === scopeKey) setError(cause instanceof Error ? cause.message : "The AI cover could not be deleted.");
     } finally {
-      setBusyId(null);
+      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) === scopeKey) setBusyId(null);
     }
   };
 
@@ -96,13 +110,13 @@ export function AICoverLibraryPanel() {
     </div>
     {error ? <p role="alert" className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-[12px] leading-5 text-red-800">{error}</p> : null}
     <div className="min-h-0 flex-1 overflow-y-auto py-3 scrollbar-thin">
-      {loading ? <p className="py-8 text-center text-[12px] text-[var(--color-muted)]">Loading saved AI covers…</p> : items.length ? <div className="grid grid-cols-2 gap-3">
-        {items.map((item) => {
+      {scopedLoading ? <p className="py-8 text-center text-[12px] text-[var(--color-muted)]">Loading saved AI covers…</p> : scopedItems.length ? <div className="grid grid-cols-2 gap-3">
+        {scopedItems.map((item) => {
           const active = activeItem(item, policy.aiCoverComposition, policy.activeCoverVariant);
           const busy = busyId === item.id;
           return <article key={item.id} className={`overflow-hidden rounded-lg border ${active ? "border-[var(--color-forest)] ring-1 ring-[var(--color-forest)]" : "border-[var(--color-line)]"}`}>
             <div className="h-[156px] overflow-hidden bg-[#f3f4f2]">
-              <PolicyCoverPreview policy={{ ...policy, aiCoverComposition: item.composition, activeCoverVariant: "ai" }} />
+              <PolicyCoverPreview policy={{ ...policy, aiCoverComposition: item.composition, activeCoverVariant: "ai" }} assetScope={scope} />
             </div>
             <div className="p-2">
               <p className="truncate text-[11px] font-semibold text-[var(--color-ink)]" title={item.name}>{item.name}</p>

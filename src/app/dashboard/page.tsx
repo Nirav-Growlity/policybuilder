@@ -10,6 +10,8 @@ import { getDraftDisplayTitles, groupDraftsByPolicyType } from "@/lib/policycraf
 import { initialPolicy } from "@/lib/store";
 import type { Policy, PolicyType } from "@/lib/types";
 import type { PolicyDocumentSummary } from "@/lib/policycraft-types";
+import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
+import { policyCraftScopedUrl } from "@/lib/policycraft-scope-utils";
 
 type DocumentView = "active" | "archived";
 type PolicyFilter = "all" | PolicyType;
@@ -22,9 +24,17 @@ function label(value: string): string {
 
 export default function DashboardPage() {
   const router = useRouter();
+  const { access } = usePolicyCraftWorkspace();
+  const organization = access.organizations.find((item) => !item.deleted) || null;
+  const scopeFor = React.useCallback((document?: PolicyDocumentSummary) => ({
+    userId: access.actor.id,
+    role: access.actor.role,
+    organizationId: document?.organization?.id || organization?.id || 0,
+    organizationName: document?.organization?.name || organization?.name || "",
+    ...(document?.id ? { documentId: document.id } : {}),
+  }), [access.actor.id, access.actor.role, organization]);
   const [view, setView] = React.useState<DocumentView>("active");
   const [policyFilter, setPolicyFilter] = React.useState<PolicyFilter>("all");
-  const [organization, setOrganization] = React.useState<{ name: string } | null>(null);
   const [documents, setDocuments] = React.useState<PolicyDocumentSummary[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState("");
@@ -37,25 +47,21 @@ export default function DashboardPage() {
   const load = React.useCallback(async () => {
     setLoading(true);
     setError("");
-    const [bootstrapResponse, documentsResponse] = await Promise.all([
-      fetch("/api/policycraft/bootstrap"),
-      fetch(`/api/policycraft/documents?view=${view}`),
-    ]);
-    if (bootstrapResponse.status === 401 || documentsResponse.status === 401) {
+    if (!organization) { setDocuments([]); setLoading(false); return; }
+    const documentsResponse = await fetch(policyCraftScopedUrl(`/api/policycraft/documents?view=${view}`, organization.id), { cache: "no-store" });
+    if (documentsResponse.status === 401) {
       router.replace("/login?next=/drafts");
       return;
     }
-    if (!bootstrapResponse.ok || !documentsResponse.ok) {
+    if (!documentsResponse.ok) {
       setError("Could not load your PolicyCraft workspace.");
       setLoading(false);
       return;
     }
-    const bootstrap = await bootstrapResponse.json();
     const documentData = await documentsResponse.json();
-    setOrganization(bootstrap.organization);
     setDocuments(documentData.documents || []);
     setLoading(false);
-  }, [router, view]);
+  }, [organization, router, view]);
 
   React.useEffect(() => {
     const timer = window.setTimeout(() => { void load(); }, 0);
@@ -76,7 +82,7 @@ export default function DashboardPage() {
     setRenaming(true);
     setError("");
     try {
-      const response = await fetch(`/api/policycraft/documents/${document.id}`, {
+      const response = await fetch(policyCraftScopedUrl(`/api/policycraft/documents/${document.id}`, document.organization?.id || organization?.id), {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, lockVersion: document.lockVersion }),
@@ -104,7 +110,8 @@ export default function DashboardPage() {
     setActionId(id);
     setError("");
     try {
-      const response = await fetch(`/api/policycraft/documents/${id}`, {
+      const document = documents.find((item) => item.id === id);
+      const response = await fetch(policyCraftScopedUrl(`/api/policycraft/documents/${id}`, document?.organization?.id || organization?.id), {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ archived }),
@@ -127,7 +134,7 @@ export default function DashboardPage() {
     setActionId(document.id);
     setError("");
     try {
-      const response = await fetch(`/api/policycraft/documents/${document.id}`, { method: "DELETE" });
+      const response = await fetch(policyCraftScopedUrl(`/api/policycraft/documents/${document.id}`, document.organization?.id || organization?.id), { method: "DELETE" });
       if (!response.ok) {
         setError(response.status === 404 ? "That archived draft is no longer available." : "Could not delete that draft.");
         return;
@@ -170,7 +177,7 @@ export default function DashboardPage() {
             <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight">Your policy drafts</h1>
             <p className="mt-2 text-sm text-[var(--color-ink-2)]">{organization?.name || "Loading organization…"}</p>
           </div>
-          <button type="button" onClick={() => router.push("/builder?new=1")} className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[var(--color-forest)] px-5 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)]"><Plus size={16} /> New policy</button>
+          <Link href={organization ? `/builder?orgId=${organization.id}` : "#"} aria-disabled={!organization} tabIndex={organization ? undefined : -1} className={`inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[var(--color-forest)] px-5 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] ${organization ? "" : "pointer-events-none opacity-50"}`}><Plus size={16} /> New policy</Link>
         </div>
 
         <div className="mt-8 inline-flex rounded-xl border border-[var(--color-line)] bg-white p-1" role="tablist" aria-label="Draft views">
@@ -208,7 +215,7 @@ export default function DashboardPage() {
                   {groupDocuments.map((document) => (
                     <article key={document.id} className="flex min-w-0 gap-3 rounded-2xl border border-[var(--color-line)] bg-white p-3 shadow-sm transition-shadow hover:shadow-md sm:gap-4 sm:p-4">
                       <div role="img" aria-label={`Cover preview for ${displayTitles.get(document.id) || document.title}`} className="relative shrink-0 self-center overflow-hidden rounded-md border border-[var(--color-line)] bg-[var(--color-cream-2)] shadow-sm" style={{ width: 72, height: 102 }} onErrorCapture={(event) => { if (event.target instanceof HTMLImageElement) event.target.style.visibility = "hidden"; }}>
-                        <div className="absolute left-0 top-0" style={{ width: "210mm", height: "297mm", transform: "scale(.09)", transformOrigin: "top left" }} aria-hidden="true"><PolicyCoverPreview policy={previewPolicy(document)} /></div>
+                        <div className="absolute left-0 top-0" style={{ width: "210mm", height: "297mm", transform: "scale(.09)", transformOrigin: "top left" }} aria-hidden="true"><PolicyCoverPreview policy={previewPolicy(document)} assetScope={scopeFor(document)} /></div>
                       </div>
                       <div className="flex min-w-0 flex-1 flex-col py-1">
                         <div className="flex flex-wrap items-start justify-end gap-x-3 gap-y-2">
@@ -221,7 +228,7 @@ export default function DashboardPage() {
                         </div>
                         <h3 className="mt-2 line-clamp-3 break-words font-display text-lg font-semibold leading-snug">{displayTitles.get(document.id) || document.title}</h3>
                         <p className="mt-1 text-[11px] uppercase tracking-wider text-[var(--color-muted)]">{label(document.currentStep)} · Updated {new Date(document.updatedAt).toLocaleDateString()}</p>
-                        {!isArchived ? <button type="button" onClick={() => router.push(`/builder?draft=${encodeURIComponent(document.id)}`)} className="mt-auto inline-flex items-center gap-2 pt-3 text-sm font-semibold text-[var(--color-forest)]">Resume <ArrowRight size={15} /></button> : <p className="mt-auto inline-flex items-center gap-2 pt-3 text-xs font-semibold text-[var(--color-muted)]"><Archive size={14} /> Archived</p>}
+                        {!isArchived ? <Link href={`/builder?draft=${encodeURIComponent(document.id)}&orgId=${document.organization?.id || organization?.id || ""}`} className="mt-auto inline-flex items-center gap-2 pt-3 text-sm font-semibold text-[var(--color-forest)]">Resume <ArrowRight size={15} /></Link> : <p className="mt-auto inline-flex items-center gap-2 pt-3 text-xs font-semibold text-[var(--color-muted)]"><Archive size={14} /> Archived</p>}
                       </div>
                     </article>
                   ))}

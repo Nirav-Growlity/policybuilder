@@ -4,6 +4,9 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signOut, useSession } from "@/lib/auth-client";
+import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
+import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
+import { policyCraftBuilderStorage } from "@/lib/policycraft-builder-storage";
 import {
   ArrowRight,
   Globe2,
@@ -25,11 +28,24 @@ import {
 export default function Home() {
   const router = useRouter();
   const { data: session, isPending } = useSession();
+  const [workspaceHref, setWorkspaceHref] = React.useState("/login");
+  const setScope = usePolicyCraftScope((state) => state.setScope);
   const [signingOut, setSigningOut] = React.useState(false);
+
+  React.useEffect(() => {
+    let active = true;
+    if (!session) return () => { active = false; };
+    void fetch("/api/policycraft/access", { cache: "no-store" }).then(async (response) => response.ok ? response.json() as Promise<PolicyCraftAccess> : null).then((access) => {
+      if (active && access) setWorkspaceHref(access.homeHref);
+    }).catch(() => undefined);
+    return () => { active = false; };
+  }, [session]);
 
   async function handleSignOut() {
     setSigningOut(true);
     try {
+      setScope(null);
+      policyCraftBuilderStorage.clearScope();
       await signOut();
       router.refresh();
     } finally {
@@ -56,10 +72,10 @@ export default function Home() {
         </nav>
         <div className="flex items-center gap-2">
           <Link
-            href="/builder"
+            href={workspaceHref}
             className="inline-flex items-center gap-1.5 h-10 px-4 rounded-lg bg-[var(--color-ink)] text-[var(--color-cream)] text-[13px] font-medium hover:bg-[var(--color-forest-deep)] transition-colors"
           >
-            Open builder <ArrowRight size={14} />
+            {session ? "Open workspace" : "Open builder"} <ArrowRight size={14} />
           </Link>
           {isPending ? (
             <span className="inline-flex h-10 items-center gap-1.5 px-3 text-[12px] text-[var(--color-muted)]" aria-label="Checking login status">
@@ -68,10 +84,10 @@ export default function Home() {
           ) : session ? (
             <>
               <Link
-                href="/drafts"
+                href={workspaceHref}
                 className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-3 text-[12.5px] font-medium text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)]"
               >
-                <FileText size={14} /> Drafts
+                <FileText size={14} /> Workspace
               </Link>
               <button
                 type="button"
@@ -120,8 +136,8 @@ export default function Home() {
               <span className="font-semibold text-[var(--color-ink)]">EcoVadis, UNGC, ILO, BRSR, ISO</span> and the UN Sustainable Development Goals.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <Link
-                href="/builder"
+                <Link
+                href={workspaceHref}
                 className="inline-flex items-center gap-2 h-12 px-6 rounded-xl bg-[var(--color-forest)] text-white text-[14.5px] font-semibold hover:bg-[var(--color-forest-deep)] transition-colors shadow-[0_8px_24px_rgba(26,92,58,0.25)]"
               >
                 Start a new policy <ArrowRight size={16} />
@@ -279,7 +295,7 @@ export default function Home() {
         </p>
         <div className="mt-9 flex items-center justify-center gap-3">
           <Link
-            href="/builder"
+            href={workspaceHref}
             className="inline-flex items-center gap-2 h-12 px-6 rounded-xl bg-[var(--color-ink)] text-[var(--color-cream)] text-[14.5px] font-semibold hover:bg-[var(--color-forest-deep)] transition-colors"
           >
             Open the builder <ArrowRight size={16} />

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getPolicyCraftAuth } from "@/lib/policycraft-auth";
+import { getPolicyCraftActorResult, isPolicyCraftSameOriginRequest, policyCraftMutationFailure } from "@/lib/policycraft-auth";
 import {
   deletePolicyCraftUserSignature,
   getPolicyCraftUserSignature,
@@ -57,13 +57,13 @@ async function readJsonWithinLimit(request: Request): Promise<unknown | null> {
 }
 
 export async function GET() {
-  const auth = await getPolicyCraftAuth();
-  if (!auth) return privateJson({ error: "Unauthorized" }, 401);
+  const { actor, response } = await getPolicyCraftActorResult();
+  if (!actor) return response || privateJson({ error: "Unauthorized" }, 401);
 
   try {
-    const signature = await getPolicyCraftUserSignature(auth.user.id);
+    const signature = await getPolicyCraftUserSignature(actor.user.id);
     return privateJson({
-      userId: auth.user.id,
+      userId: actor.user.id,
       signature: signature
         ? { dataUrl: `data:image/png;base64,${signature.bytes.toString("base64")}`, updatedAt: signature.updatedAt }
         : null,
@@ -75,8 +75,10 @@ export async function GET() {
 }
 
 export async function PUT(request: Request) {
-  const auth = await getPolicyCraftAuth();
-  if (!auth) return privateJson({ error: "Unauthorized" }, 401);
+  const { actor, response } = await getPolicyCraftActorResult();
+  if (!actor) return response || privateJson({ error: "Unauthorized" }, 401);
+  const invalid = policyCraftMutationFailure(request);
+  if (invalid) return invalid;
 
   const body = await readJsonWithinLimit(request);
   if (!body || typeof body !== "object" || !("dataUrl" in body)) {
@@ -85,11 +87,11 @@ export async function PUT(request: Request) {
 
   try {
     const bytes = await normalizePolicyCraftSignature(body.dataUrl);
-    await savePolicyCraftUserSignature(auth.user.id, bytes);
-    const signature = await getPolicyCraftUserSignature(auth.user.id);
+    await savePolicyCraftUserSignature(actor.user.id, bytes);
+    const signature = await getPolicyCraftUserSignature(actor.user.id);
     if (!signature) throw new Error("Saved signature could not be loaded");
     return privateJson({
-      userId: auth.user.id,
+      userId: actor.user.id,
       signature: { dataUrl: `data:image/png;base64,${signature.bytes.toString("base64")}`, updatedAt: signature.updatedAt },
     });
   } catch (error) {
@@ -102,12 +104,13 @@ export async function PUT(request: Request) {
   }
 }
 
-export async function DELETE() {
-  const auth = await getPolicyCraftAuth();
-  if (!auth) return privateJson({ error: "Unauthorized" }, 401);
+export async function DELETE(request: Request) {
+  const { actor, response } = await getPolicyCraftActorResult();
+  if (!actor) return response || privateJson({ error: "Unauthorized" }, 401);
+  if (!isPolicyCraftSameOriginRequest(request)) return privateJson({ error: "A trusted same-origin request is required." }, 403);
 
   try {
-    await deletePolicyCraftUserSignature(auth.user.id);
+    await deletePolicyCraftUserSignature(actor.user.id);
     return privateJson({ signature: null });
   } catch (error) {
     if (isSignatureTableMissing(error)) return storageUnavailable();

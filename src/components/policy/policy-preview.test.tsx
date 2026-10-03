@@ -25,6 +25,35 @@ test("custom cover keeps its background image without rendering a background lab
   assert.doesNotMatch(markup, /Cover background/);
 });
 
+test("private cover and logo assets carry the selected organization in browser preview URLs", () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.coverComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "custom",
+    background: { color: "#FFFFFF", assetId: "/api/policycraft/cover-assets/background-id?orgId=12", fit: "cover", focalPoint: { x: 50, y: 50 } },
+    elements: [
+      { id: "preview-image", type: "image", assetId: "image-id", x: 20, y: 30, width: 40, height: 15, rotation: 0, opacity: 1, zIndex: 20, visible: true, locked: false, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Cover image" },
+      { id: "preview-logo", type: "logo", assetId: "logo-id", x: 60, y: 30, width: 40, height: 15, rotation: 0, opacity: 1, zIndex: 25, visible: true, locked: false, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Company logo" },
+    ],
+  };
+  policy.activeCoverVariant = "manual";
+  policy.aiCoverComposition = undefined;
+  policy.company.companyLogo = "header-logo-id";
+  const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, {
+    policy,
+    assetScope: { userId: "manager-77", role: "manager", organizationId: 77, organizationName: "Northwind" },
+  }));
+  const fullMarkup = renderToStaticMarkup(React.createElement(PolicyPreview, {
+    policy,
+    assetScope: { userId: "manager-77", role: "manager", organizationId: 77, organizationName: "Northwind" },
+  }));
+
+  assert.match(markup, /(?:href|src)="\/api\/policycraft\/cover-assets\/background-id\?orgId=77"/);
+  assert.match(markup, /(?:href|src)="\/api\/policycraft\/cover-assets\/image-id\?orgId=77"/);
+  assert.match(fullMarkup, /(?:href|src)="\/api\/policycraft\/cover-assets\/header-logo-id\?orgId=77"/);
+  assert.doesNotMatch(markup, /background-id\?orgId=12/);
+});
+
 test("cover-only preview renders the standard policy cover", () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.coverComposition = undefined;

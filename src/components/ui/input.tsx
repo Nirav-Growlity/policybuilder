@@ -3,6 +3,7 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { useToast } from "./toast";
+import { policyCraftScopeKey, policyCraftUrl, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 
 interface FieldProps {
   label?: React.ReactNode;
@@ -35,7 +36,7 @@ export function Field({ label, hint, error, required, children, className }: Fie
 const baseInput =
   "w-full h-10 px-3.5 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] text-[13.5px] text-[var(--color-ink)] placeholder:text-[var(--color-muted)] focus:outline-none focus:border-[var(--color-forest)] focus:ring-2 focus:ring-[var(--color-forest)]/15 transition-colors";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input({ className, ...rest }, ref) {
   return <input ref={ref} className={clsx(baseInput, className)} {...rest} />;
@@ -123,7 +124,7 @@ export function Combobox({ value, options, onValueChange, placeholder, emptyMess
   );
 }
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
   { className, rows, onBlur, onChange, ...rest },
@@ -152,10 +153,12 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(fun
 
     manuallyEdited.current = false;
     const requestVersion = editVersion.current;
+    const requestScope = usePolicyCraftScope.getState().scope;
+    if (!requestScope) return;
     setChecking(true);
 
     try {
-      const response = await fetch("/api/grammar", {
+      const response = await fetch(policyCraftUrl("/api/grammar", requestScope), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: original }),
@@ -164,7 +167,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(fun
       const { text: corrected } = await response.json() as { text?: string };
 
       // Do not overwrite a new edit made while the check was in flight.
-      if (typeof corrected !== "string" || editVersion.current !== requestVersion) return;
+      if (typeof corrected !== "string" || editVersion.current !== requestVersion || !textarea.isConnected || policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== policyCraftScopeKey(requestScope)) return;
       if (corrected !== original) {
         const setter = Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, "value")?.set;
         setter?.call(textarea, corrected);
@@ -197,7 +200,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(fun
   );
 });
 
-interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {}
+type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement>;
 
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select({ className, children, ...rest }, ref) {
   return (

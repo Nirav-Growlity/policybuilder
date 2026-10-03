@@ -10,9 +10,11 @@ import type { CoverComposition } from "@/lib/types";
 import { visibleQualitativeEntries, visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
 import { generateAndApplyAICover } from "@/components/builder/ai-cover-workflow";
 import { saveAICoverToLibrary } from "@/lib/ai-cover-library";
+import { policyCraftScopeKey, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 
 export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (editing: boolean) => void }) {
   const { policy, updatePolicy, coverEditorRequest, clearCoverEditorRequest, beginAICoverGeneration, endAICoverGeneration, isAICoverGenerating, includeAuthorSignature, authorSignatureDate, authorSignatureUpdatedAt } = useBuilder();
+  const scope = usePolicyCraftScope((state) => state.scope);
   const [editingCover, setEditingCover] = React.useState<"manual" | "ai" | null>(null);
   const [aiCoverState, setAICoverState] = React.useState<"generating" | "ready" | "failed">(() => policy.aiCoverComposition ? "ready" : "generating");
   const [aiCoverError, setAICoverError] = React.useState("");
@@ -30,10 +32,13 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
     setAICoverState("generating");
     setAICoverError("");
     try {
-      const composition = await generateAndApplyAICover(policy, applyAICover);
+      const scopeKey = policyCraftScopeKey(scope);
+      const composition = await generateAndApplyAICover(policy, applyAICover, scope);
       setAICoverState("ready");
       try {
-        await saveAICoverToLibrary(composition, policy.policyType);
+        if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== scopeKey) throw new Error("The workspace changed before the cover could be saved. Please retry.");
+        await saveAICoverToLibrary(composition, policy.policyType, undefined, scope);
+        if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== scopeKey) throw new Error("The workspace changed while the cover was being saved. Please retry.");
       } catch (cause) {
         setAICoverError(cause instanceof Error ? `AI cover is ready, but it could not be saved to the library: ${cause.message}` : "AI cover is ready, but it could not be saved to the library.");
       }
@@ -43,7 +48,7 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
     } finally {
       endAICoverGeneration();
     }
-  }, [applyAICover, beginAICoverGeneration, endAICoverGeneration, policy]);
+  }, [applyAICover, beginAICoverGeneration, endAICoverGeneration, policy, scope]);
 
   React.useEffect(() => {
     if (policy.aiCoverComposition || aiCoverGenerationStarted.current) return;

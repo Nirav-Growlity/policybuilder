@@ -185,7 +185,7 @@ export function getActiveCoverComposition(policy: Pick<Policy, "coverComposition
  */
 export function coverAssetIdFromReference(assetId?: string): string | undefined {
   if (!assetId || assetId.startsWith("data:")) return assetId;
-  const match = assetId.match(/^\/api\/policycraft\/cover-assets\/([^/?#]+)$/);
+  const match = assetId.match(/^\/api\/policycraft\/cover-assets\/([^/?#]+)(?:\?[^#]*)?(?:#.*)?$/);
   return match ? decodeURIComponent(match[1]) : assetId;
 }
 

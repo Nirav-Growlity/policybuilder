@@ -5,6 +5,12 @@ import { buildTemplateContext } from "@/lib/ai/template-context";
 import { buildImportedPolicyContext } from "@/lib/ai/imported-policy-context";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, TARGET_PERIOD } from "@/lib/quantitative";
 import { getPolicyProfile, POLICY_PROFILES } from "@/lib/constants";
+import {
+  getPolicyCraftAuthResult,
+  parsePolicyCraftOrganizationSelector,
+  policyCraftAuthFailure,
+  policyCraftMutationFailure,
+} from "@/lib/policycraft-auth";
 
 export const runtime = "nodejs";
 
@@ -140,7 +146,34 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
 }
 
 export async function POST(req: NextRequest) {
-  const ctx = (await req.json()) as AIContext;
+  const mutationFailure = policyCraftMutationFailure(req, "json");
+  if (mutationFailure) return mutationFailure;
+
+  const selector = parsePolicyCraftOrganizationSelector(req.nextUrl.searchParams.get("orgId"));
+  if (!selector.provided || !selector.valid) {
+    return NextResponse.json({ error: "A valid organization is required." }, { status: 400 });
+  }
+
+  let access: Awaited<ReturnType<typeof getPolicyCraftAuthResult>>;
+  try {
+    access = await getPolicyCraftAuthResult({
+      organizationId: selector.organizationId,
+      documentId: req.nextUrl.searchParams.get("documentId") || undefined,
+      operation: "write",
+    });
+  } catch (error) {
+    const failure = policyCraftAuthFailure(error);
+    if (failure) return failure;
+    throw error;
+  }
+  if (!access.auth) return access.response || NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  let ctx: AIContext;
+  try {
+    ctx = await req.json() as AIContext;
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON request body." }, { status: 400 });
+  }
   if (!ctx?.policy || !Object.prototype.hasOwnProperty.call(POLICY_PROFILES, ctx.policy.policyType)) {
     return NextResponse.json({ error: "Unsupported policy type" }, { status: 400 });
   }

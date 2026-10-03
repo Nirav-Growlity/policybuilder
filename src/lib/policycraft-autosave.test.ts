@@ -55,3 +55,34 @@ test("does not replay queued changes after a failed save", async () => {
   assert.deepEqual(calls, ["first"]);
   autosave.cancel();
 });
+
+test("flush writes the latest pending state immediately and waits for completion", async () => {
+  const autosave = createDraftAutosave<string>(60_000);
+  const calls: string[] = [];
+  let release!: () => void;
+  const saving = new Promise<void>((resolve) => { release = resolve; });
+  const save = async (payload: string) => {
+    calls.push(payload);
+    await saving;
+  };
+
+  autosave.schedule("stale", save);
+  autosave.schedule("latest", save);
+  let flushed = false;
+  const flush = autosave.flush().then(() => { flushed = true; });
+  await wait(0);
+  assert.deepEqual(calls, ["latest"]);
+  assert.equal(flushed, false);
+
+  release();
+  await flush;
+  assert.equal(flushed, true);
+  autosave.cancel();
+});
+
+test("flush rejects a failed save instead of allowing navigation as if it succeeded", async () => {
+  const autosave = createDraftAutosave<string>(60_000);
+  autosave.schedule("draft", async () => { throw new Error("offline"); });
+  await assert.rejects(autosave.flush(), /offline/);
+  autosave.cancel();
+});

@@ -4,6 +4,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { AICoverWorkflow, generateAndApplyAICover, persistAndApplyGeneratedCover } from "./ai-cover-workflow";
 import { makeSamplePolicy } from "@/lib/store";
+import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import type { CoverComposition } from "@/lib/types";
 
 test("AI cover workflow is separate and does not require an existing manual cover", () => {
@@ -64,6 +65,39 @@ test("preview and export callers share one in-flight AI cover generation", async
     assert.deepEqual(exportResult, composition);
     assert.deepEqual(applied, [composition, composition]);
   } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("an AI cover generated for a previous organization is not applied after a workspace switch", async () => {
+  const composition: CoverComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "ai-generated",
+    background: { color: "#ffffff", fit: "cover", focalPoint: { x: 50, y: 50 } },
+    elements: [],
+  };
+  const originalFetch = globalThis.fetch;
+  const originalScope = usePolicyCraftScope.getState().scope;
+  const capturedScope = { userId: "manager-a", role: "manager" as const, organizationId: 11, organizationName: "Northwind" };
+  const nextScope = { userId: "manager-a", role: "manager" as const, organizationId: 12, organizationName: "Contoso" };
+  let resolveResponse: ((response: Response) => void) | undefined;
+  let requestedUrl = "";
+  const applied: CoverComposition[] = [];
+  globalThis.fetch = async (input) => {
+    requestedUrl = String(input);
+    return await new Promise<Response>((resolve) => { resolveResponse = resolve; });
+  };
+  try {
+    usePolicyCraftScope.getState().setScope(capturedScope);
+    const pending = generateAndApplyAICover(makeSamplePolicy(), (next) => { applied.push(next); }, capturedScope);
+    usePolicyCraftScope.getState().setScope(nextScope);
+    resolveResponse?.(Response.json({ composition }));
+
+    await assert.rejects(pending, /workspace changed/i);
+    assert.equal(new URL(requestedUrl, "https://policycraft.invalid").searchParams.get("orgId"), "11");
+    assert.deepEqual(applied, []);
+  } finally {
+    usePolicyCraftScope.getState().setScope(originalScope);
     globalThis.fetch = originalFetch;
   }
 });

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { useBuilder } from "@/lib/store";
 import { INDUSTRY_SECTORS } from "@/lib/constants";
 import { getIndustrySubsectorOptions } from "@/lib/focus-area-catalog";
@@ -8,11 +9,21 @@ import { Panel, Badge } from "@/components/ui/panel";
 import { Combobox, Field, Input } from "@/components/ui/input";
 import { getCompanySites } from "@/lib/types";
 import { extractLogoPalette } from "@/lib/logo-palette";
+import { coverAssetIdFromReference } from "@/lib/cover-composition";
+import { policyCraftUrl, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { Building2, MapPin, Plus, Trash2, Upload } from "lucide-react";
 
 export function CompanyInfoForm() {
   const { policy, updatePolicy } = useBuilder();
   const co = policy.company;
+  const workspaceScope = usePolicyCraftScope((state) => state.scope);
+  const logoSource = React.useMemo(() => {
+    const reference = co.companyLogo;
+    if (!reference || reference.startsWith("data:") || /^https?:\/\//i.test(reference)) return reference;
+    if (reference.startsWith("/") && !reference.startsWith("/api/policycraft/cover-assets/")) return reference;
+    const assetId = coverAssetIdFromReference(reference);
+    return assetId ? policyCraftUrl(`/api/policycraft/cover-assets/${encodeURIComponent(assetId)}`, workspaceScope) : reference;
+  }, [co.companyLogo, workspaceScope]);
   const sampledLogoRef = React.useRef<string>("");
   const [logoSampleAttempt, setLogoSampleAttempt] = React.useState(0);
   const [logoSampling, setLogoSampling] = React.useState<"idle" | "sampling" | "ready" | "unsupported">("idle");
@@ -30,7 +41,7 @@ export function CompanyInfoForm() {
     let active = true;
     void Promise.resolve().then(() => {
       if (active) setLogoSampling("sampling");
-      return extractLogoPalette(logo);
+      return extractLogoPalette(logoSource || logo);
     }).then((logoPalette) => {
       if (!active) return;
       if (!logoPalette) {
@@ -45,7 +56,7 @@ export function CompanyInfoForm() {
     return () => {
       active = false;
     };
-  }, [co.companyLogo, co.logoPalette, logoSampleAttempt, updatePolicy]);
+  }, [co.companyLogo, co.logoPalette, logoSampleAttempt, logoSource, updatePolicy]);
 
   return (
     <Panel
@@ -116,7 +127,7 @@ export function CompanyInfoForm() {
           <div className="space-y-1.5">
             <div className="flex items-center gap-3 h-10">
             {co.companyLogo ? (
-              <img src={co.companyLogo} alt="Company logo" className="h-9 w-14 object-contain rounded border border-[var(--color-line)] bg-white" />
+              <Image src={logoSource || ""} alt="Company logo" width={56} height={36} unoptimized className="h-9 w-14 object-contain rounded border border-[var(--color-line)] bg-white" />
             ) : null}
             <label className="inline-flex items-center gap-1.5 px-3 h-9 rounded-lg border border-[var(--color-line-2)] bg-white text-[12px] font-medium text-[var(--color-ink-2)] cursor-pointer hover:bg-[var(--color-cream)]">
               <Upload size={14} /> {co.companyLogo ? "Replace logo" : "Upload logo"}
@@ -277,6 +288,7 @@ export function CompanyInfoForm() {
                   <div className="col-span-12 md:col-span-1 flex justify-end md:justify-center">
                     <button
                       type="button"
+                      aria-label={`Delete operating site ${idx + 1}`}
                       onClick={() => {
                         const updated = sitesList.filter((_, i) => i !== idx);
                         updatePolicy((p) => ({

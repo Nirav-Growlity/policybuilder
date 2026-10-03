@@ -3,7 +3,9 @@
 import * as React from "react";
 import { RefreshCw, Sparkles } from "lucide-react";
 import { persistCoverArtwork, saveAICoverToLibrary } from "@/lib/ai-cover-library";
+import { policyCraftScopeKey, policyCraftUrl, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { useBuilder } from "@/lib/store";
+import type { PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
 import type { CoverComposition, Policy } from "@/lib/types";
 
 type AICoverResponse = { composition?: CoverComposition; error?: string };
@@ -11,32 +13,35 @@ type AICoverHandler = (composition: CoverComposition) => void | Promise<void>;
 
 const pendingAICoverGenerations = new Map<string, Promise<CoverComposition>>();
 
-function aiCoverGenerationKey(policy: Policy): string {
-  return JSON.stringify({ ...policy, aiCoverComposition: undefined, activeCoverVariant: undefined });
+function aiCoverGenerationKey(policy: Policy, scope: PolicyCraftWorkspaceScope | null): string {
+  return JSON.stringify({ scope: policyCraftScopeKey(scope), policy: { ...policy, aiCoverComposition: undefined, activeCoverVariant: undefined } });
 }
 
-async function requestAICoverComposition(policy: Policy): Promise<CoverComposition> {
-  const response = await fetch("/api/policycraft/ai-cover", {
+async function requestAICoverComposition(policy: Policy, scope: PolicyCraftWorkspaceScope | null): Promise<CoverComposition> {
+  const response = await fetch(policyCraftUrl("/api/policycraft/ai-cover", scope), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ policy }),
+    cache: "no-store",
   });
   const body = await response.json().catch(() => ({})) as AICoverResponse;
   if (!response.ok || !body.composition) throw new Error(body.error || "The AI cover could not be generated.");
-  return persistCoverArtwork(body.composition);
+  return persistCoverArtwork(body.composition, scope);
 }
 
-export function generateAICoverComposition(policy: Policy): Promise<CoverComposition> {
-  const key = aiCoverGenerationKey(policy);
+export function generateAICoverComposition(policy: Policy, scope = usePolicyCraftScope.getState().scope): Promise<CoverComposition> {
+  const key = aiCoverGenerationKey(policy, scope);
   const pending = pendingAICoverGenerations.get(key);
   if (pending) return pending;
-  const request = requestAICoverComposition(policy).finally(() => pendingAICoverGenerations.delete(key));
+  const request = requestAICoverComposition(policy, scope).finally(() => pendingAICoverGenerations.delete(key));
   pendingAICoverGenerations.set(key, request);
   return request;
 }
 
-export async function generateAndApplyAICover(policy: Policy, onApply: AICoverHandler): Promise<CoverComposition> {
-  const composition = await generateAICoverComposition(policy);
+export async function generateAndApplyAICover(policy: Policy, onApply: AICoverHandler, scope = usePolicyCraftScope.getState().scope): Promise<CoverComposition> {
+  const capturedScopeKey = policyCraftScopeKey(scope);
+  const composition = await generateAICoverComposition(policy, scope);
+  if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== capturedScopeKey) throw new Error("The workspace changed while the cover was being generated. Please retry.");
   await onApply(composition);
   return composition;
 }
@@ -44,8 +49,11 @@ export async function generateAndApplyAICover(policy: Policy, onApply: AICoverHa
 export async function persistAndApplyGeneratedCover(
   composition: CoverComposition,
   onApply: AICoverHandler,
+  scope = usePolicyCraftScope.getState().scope,
 ): Promise<CoverComposition> {
-  const persisted = await persistCoverArtwork(composition);
+  const capturedScopeKey = policyCraftScopeKey(scope);
+  const persisted = await persistCoverArtwork(composition, scope);
+  if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== capturedScopeKey) throw new Error("The workspace changed while the cover was being saved. Please retry.");
   await onApply(persisted);
   return persisted;
 }
@@ -59,6 +67,7 @@ export function AICoverWorkflow({
 }) {
   const beginAICoverGeneration = useBuilder((state) => state.beginAICoverGeneration);
   const endAICoverGeneration = useBuilder((state) => state.endAICoverGeneration);
+  const scope = usePolicyCraftScope((state) => state.scope);
   const [generated, setGenerated] = React.useState<CoverComposition | null>(null);
   const [generatedLibraryId, setGeneratedLibraryId] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
@@ -70,13 +79,16 @@ export function AICoverWorkflow({
   const saveGenerated = React.useCallback(async (composition: CoverComposition) => {
     setSavingLibrary(true);
     try {
-      const item = await saveAICoverToLibrary(composition, policy.policyType);
+      const scopeKey = policyCraftScopeKey(scope);
+      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== scopeKey) throw new Error("The workspace changed before the cover could be saved. Please retry.");
+      const item = await saveAICoverToLibrary(composition, policy.policyType, undefined, scope);
+      if (policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== scopeKey) throw new Error("The workspace changed while the cover was being saved. Please retry.");
       setGeneratedLibraryId(item.id);
       setError("");
     } finally {
       setSavingLibrary(false);
     }
-  }, [policy.policyType]);
+  }, [policy.policyType, scope]);
 
   const generate = React.useCallback(async () => {
     setBusy(true);
@@ -85,7 +97,7 @@ export function AICoverWorkflow({
     setGeneratedLibraryId(null);
     beginAICoverGeneration();
     try {
-      const persisted = await generateAndApplyAICover(policy, onApply);
+      const persisted = await generateAndApplyAICover(policy, onApply, scope);
       setGenerated(persisted);
       try {
         await saveGenerated(persisted);
@@ -98,7 +110,7 @@ export function AICoverWorkflow({
       setBusy(false);
       endAICoverGeneration();
     }
-  }, [beginAICoverGeneration, endAICoverGeneration, onApply, policy, saveGenerated]);
+  }, [beginAICoverGeneration, endAICoverGeneration, onApply, policy, saveGenerated, scope]);
 
   const retrySave = React.useCallback(async () => {
     if (!generated) return;

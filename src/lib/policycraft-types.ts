@@ -55,6 +55,8 @@ export type PolicyDocumentSummary = {
   createdAt: string;
   archivedAt: string | null;
   coverPreview?: PolicyCoverPreviewSnapshot;
+  createdBy?: { id: string; name: string; email: string };
+  organization?: { id: number; code: string; name: string; deleted: boolean; expired: boolean };
 };
 
 export type StoredPolicyDocument = PolicyDocumentSummary & {

@@ -1,11 +1,44 @@
 import { NextRequest, NextResponse } from "next/server";
+import {
+  getPolicyCraftAuthResult,
+  parsePolicyCraftOrganizationSelector,
+  policyCraftAuthFailure,
+  policyCraftMutationFailure,
+} from "@/lib/policycraft-auth";
 
 export const runtime = "nodejs";
 
 const INSTRUCTIONS = `You are a precise proofreader. Correct only spelling, punctuation, capitalization, grammar, and clear typographical errors in the user's text. Preserve the original meaning, facts, tone, formatting, terminology, proper nouns, abbreviations, numbers, and line breaks. Do not add ideas, remove ideas, paraphrase, summarize, or explain. Return only the corrected text.`;
 
 export async function POST(request: NextRequest) {
-  const { text } = await request.json() as { text?: unknown };
+  const mutationFailure = policyCraftMutationFailure(request, "json");
+  if (mutationFailure) return mutationFailure;
+
+  const selector = parsePolicyCraftOrganizationSelector(request.nextUrl.searchParams.get("orgId"));
+  if (!selector.provided || !selector.valid) {
+    return NextResponse.json({ error: "A valid organization is required." }, { status: 400 });
+  }
+
+  let access: Awaited<ReturnType<typeof getPolicyCraftAuthResult>>;
+  try {
+    access = await getPolicyCraftAuthResult({
+      organizationId: selector.organizationId,
+      documentId: request.nextUrl.searchParams.get("documentId") || undefined,
+      operation: "write",
+    });
+  } catch (error) {
+    const failure = policyCraftAuthFailure(error);
+    if (failure) return failure;
+    throw error;
+  }
+  if (!access.auth) return access.response || NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  let text: unknown;
+  try {
+    ({ text } = await request.json() as { text?: unknown });
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON request body." }, { status: 400 });
+  }
   if (typeof text !== "string" || !text.trim()) {
     return NextResponse.json({ error: "Text is required" }, { status: 400 });
   }

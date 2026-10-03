@@ -4,10 +4,15 @@ import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Leaf, Loader2, LockKeyhole } from "lucide-react";
 import { signIn } from "@/lib/auth-client";
+import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
 
-function safeNext(value: string | null): string {
-  if (!value || value === "/dashboard" || value === "/drafts") return "/";
-  return value.startsWith("/") && !value.startsWith("//") ? value : "/";
+function safeNext(value: string | null, access: PolicyCraftAccess): string {
+  const path = value?.startsWith("/") && !value.startsWith("//") ? value : "";
+  if (path.startsWith("/builder")) return path;
+  if (access.actor.role === "admin" && path.startsWith("/admin")) return path;
+  if (access.actor.role === "manager" && path.startsWith("/manager")) return path;
+  if (access.actor.role === "user" && (path.startsWith("/drafts") || path.startsWith("/dashboard"))) return path.replace(/^\/dashboard/, "/drafts");
+  return access.homeHref.startsWith("/") && !access.homeHref.startsWith("//") ? access.homeHref : "/";
 }
 
 function LoginPageContent() {
@@ -17,6 +22,17 @@ function LoginPageContent() {
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
+
+  React.useEffect(() => {
+    let active = true;
+    void fetch("/api/policycraft/access", { cache: "no-store" }).then(async (response) => {
+      if (!response.ok) return null;
+      return response.json() as Promise<PolicyCraftAccess>;
+    }).then((access) => {
+      if (active && access) router.replace(safeNext(searchParams.get("next"), access));
+    }).catch(() => undefined);
+    return () => { active = false; };
+  }, [router, searchParams]);
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -28,7 +44,14 @@ function LoginPageContent() {
       setSubmitting(false);
       return;
     }
-    router.replace(safeNext(searchParams.get("next")));
+    const accessResponse = await fetch("/api/policycraft/access", { cache: "no-store" });
+    if (!accessResponse.ok) {
+      setError("You signed in, but your workspace could not be loaded. Contact an administrator.");
+      setSubmitting(false);
+      return;
+    }
+    const access = await accessResponse.json() as PolicyCraftAccess;
+    router.replace(safeNext(searchParams.get("next"), access));
     router.refresh();
   }
 
@@ -47,14 +70,15 @@ function LoginPageContent() {
           </div>
           <h1 className="font-display text-3xl font-semibold tracking-tight">Sign in to your workspace</h1>
           <p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]">Use your existing ESG account. The ESG application does not need to be running.</p>
+          {searchParams.get("adminTransferred") === "1" ? <p role="status" className="mt-4 rounded-lg bg-[var(--color-forest-soft)] px-3 py-3 text-sm leading-6 text-[var(--color-forest-deep)]">Administrator access was transferred. The new administrator can sign in with their existing account.</p> : null}
           <form className="mt-7 space-y-4" onSubmit={submit}>
             <label className="block text-sm font-medium">
               Email
-              <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm outline-none focus:border-[var(--color-forest)]" type="email" required autoComplete="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+              <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" type="email" name="email" required autoComplete="email" spellCheck={false} value={email} onChange={(event) => setEmail(event.target.value)} />
             </label>
             <label className="block text-sm font-medium">
               Password
-              <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm outline-none focus:border-[var(--color-forest)]" type="password" required autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" type="password" name="password" required autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
             </label>
             {error ? <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p> : null}
             <button className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] text-sm font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] disabled:cursor-wait disabled:opacity-70" type="submit" disabled={submitting}>

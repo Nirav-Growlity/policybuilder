@@ -1,8 +1,8 @@
 import { betterAuth } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
 import bcrypt from "bcryptjs";
-import { createHash } from "node:crypto";
 import { policyCraftPool } from "./db";
+import { verifyPolicyCraftPasswordHash } from "./policycraft-password";
 
 function authSecret(): string {
   const configured = process.env.BETTER_AUTH_SECRET?.trim();
@@ -22,10 +22,13 @@ function originFromEnv(value: string | undefined): string | undefined {
 }
 
 const configuredBaseURL = process.env.NEXT_PUBLIC_BASE_URL?.trim() || process.env.BETTER_AUTH_URL?.trim();
+const policyCraftAppOrigin = originFromEnv(process.env.POLICYCRAFT_APP_URL);
 const vercelOrigin = originFromEnv(process.env.VERCEL_URL);
 const authBaseURL = configuredBaseURL || vercelOrigin || (process.env.NODE_ENV === "production" ? undefined : "http://localhost:3000");
-const trustedOrigins = [
+export const policyCraftTrustedOrigins = [
+  originFromEnv(authBaseURL),
   originFromEnv(configuredBaseURL),
+  policyCraftAppOrigin,
   vercelOrigin,
   originFromEnv(process.env.VERCEL_BRANCH_URL),
   originFromEnv(process.env.VERCEL_PROJECT_PRODUCTION_URL),
@@ -36,19 +39,14 @@ export const auth = betterAuth({
   secret: authSecret(),
   baseURL: authBaseURL,
   basePath: "/api/auth",
-  trustedOrigins,
+  trustedOrigins: policyCraftTrustedOrigins,
   emailAndPassword: {
     enabled: true,
     disableSignUp: true,
     requireEmailVerification: false,
     password: {
       hash: async (password: string) => bcrypt.hash(password, 10),
-      verify: async ({ hash, password }: { hash: string; password: string }) => {
-        if (hash.length === 64 && /^[a-f0-9]+$/i.test(hash)) {
-          return createHash("sha256").update(password).digest("hex") === hash;
-        }
-        return bcrypt.compare(password, hash);
-      },
+      verify: async ({ hash, password }: { hash: string; password: string }) => verifyPolicyCraftPasswordHash(hash, password),
     },
   },
   user: {

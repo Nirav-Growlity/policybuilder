@@ -1,8 +1,5 @@
-import { redirect } from "next/navigation";
-import { getPolicyCraftAuth } from "@/lib/policycraft-auth";
+import { WorkspaceShell } from "@/components/workspace/workspace-shell";
 
-export default async function DashboardLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const auth = await getPolicyCraftAuth();
-  if (!auth) redirect("/login?next=/drafts");
-  return children;
+export default function DashboardLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <WorkspaceShell role="user">{children}</WorkspaceShell>;
 }

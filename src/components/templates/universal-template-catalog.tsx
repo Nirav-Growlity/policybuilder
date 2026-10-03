@@ -6,7 +6,7 @@ import { ArrowRight, Eye, Search, X } from "lucide-react";
 import { DOCUMENT_THEMES } from "@/lib/document-themes";
 import { POLICY_PROFILES } from "@/lib/constants";
 import { templatePreviewPolicy, PREVIEW_POLICY_TYPES } from "@/lib/sample-policies";
-import { PdfPolicyPreview as PolicyPreview } from "@/components/policy/pdf-policy-preview";
+import { PolicyPreview } from "@/components/policy/policy-preview";
 import { ThemeContactSheet } from "@/components/builder/document-theme-picker";
 import type { PolicyType } from "@/lib/types";
 

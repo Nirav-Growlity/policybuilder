@@ -1,7 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import type { ResultSetHeader, RowDataPacket } from "mysql2";
 import type { CoverComposition, CoverLibrarySource, Policy, PolicyType } from "./types";
-import { coverAssetIdFromReference, normalizeCoverComposition } from "./cover-composition";
+import { coverAssetIdFromReference, getActiveCoverVariant, normalizeCoverComposition } from "./cover-composition";
 import type { PolicyCraftAuthContext } from "./policycraft-auth";
 import { policyCraftPool } from "./db";
 
@@ -15,6 +15,10 @@ const stableAICoverTemplateId = (orgId: number, policyType: PolicyType, composit
 };
 
 export function assetIdForBytes(bytes: Buffer): string { return createHash("sha256").update(bytes).digest("hex"); }
+
+export class CoverAssetUnavailableError extends Error {
+  constructor() { super("The policy artwork is unavailable in this organization."); }
+}
 
 export async function createCoverAsset(auth: PolicyCraftAuthContext, bytes: Buffer, mimeType: string, width: number, height: number) {
   const hash = assetIdForBytes(bytes);
@@ -34,24 +38,26 @@ export async function getCoverAsset(orgId: number, id: string) {
 
 export async function resolveCoverAssets(policy: Policy, orgId: number): Promise<Policy> {
   if (!policy.coverComposition && !policy.aiCoverComposition && !policy.company.companyLogo) return policy;
-  const resolve = async (id?: string) => {
+  const resolve = async (id?: string, required = true) => {
     const assetId = coverAssetIdFromReference(id);
     if (!assetId || assetId.startsWith("data:")) return assetId;
     const asset = await getCoverAsset(orgId, assetId);
+    if (!asset && required) throw new CoverAssetUnavailableError();
     return asset ? `data:${asset.mime_type};base64,${asset.content.toString("base64")}` : undefined;
   };
   const companyLogo = await resolve(policy.company.companyLogo);
-  const resolveComposition = async (composition: CoverComposition | undefined) => {
+  const resolveComposition = async (composition: CoverComposition | undefined, required: boolean) => {
     if (!composition) return undefined;
-    const backgroundAsset = await resolve(composition.background.assetId);
+    const backgroundAsset = await resolve(composition.background.assetId, required);
     const elements = await Promise.all(composition.elements.map(async (element) => {
       if (element.type !== "image" && element.type !== "logo") return element;
-      return { ...element, ...(element.assetId ? { assetId: (await resolve(element.assetId)) || element.assetId } : {}) };
+      return { ...element, ...(element.assetId ? { assetId: (await resolve(element.assetId, required && element.visible !== false)) || element.assetId } : {}) };
     }));
     return { ...composition, background: { ...composition.background, assetId: backgroundAsset }, elements };
   };
-  const coverComposition = await resolveComposition(policy.coverComposition);
-  const aiCoverComposition = await resolveComposition(policy.aiCoverComposition);
+  const activeVariant = getActiveCoverVariant(policy);
+  const coverComposition = await resolveComposition(policy.coverComposition, activeVariant === "manual");
+  const aiCoverComposition = await resolveComposition(policy.aiCoverComposition, activeVariant === "ai");
   return {
     ...policy,
     company: { ...policy.company, companyLogo },

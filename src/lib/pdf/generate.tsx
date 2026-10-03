@@ -7,12 +7,12 @@ const pdfCache = new Map<string, Buffer>();
 const pdfRequests = new Map<string, Promise<Buffer>>();
 const MAX_CACHED_PDFS = 4;
 
-export function generatePdf(inputPolicy: Policy, authorApproval?: AuthorApprovalRenderData): Promise<Buffer> {
+export function generatePdf(inputPolicy: Policy, authorApproval?: AuthorApprovalRenderData, cacheScope = "public-template"): Promise<Buffer> {
   const policy = normalizePolicyQuantitative(inputPolicy);
   // A signed PDF is personal data. Avoid retaining it or its signature bytes in
   // the shared process cache; callers requesting an unsigned PDF keep caching.
   if (authorApproval) return generatePreviewPdf(policy, authorApproval);
-  const key = JSON.stringify(policy);
+  const key = JSON.stringify([cacheScope, policy]);
   const cached = pdfCache.get(key);
   if (cached) {
     pdfCache.delete(key);

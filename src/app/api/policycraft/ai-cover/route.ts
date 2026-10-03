@@ -17,6 +17,7 @@ import {
 } from "@/lib/ai/cover";
 import type { AICoverDesign } from "@/lib/ai/cover";
 import type { Policy } from "@/lib/types";
+import { getPolicyCraftAuthResult, parsePolicyCraftOrganizationSelector, policyCraftMutationFailure } from "@/lib/policycraft-auth";
 
 export const runtime = "nodejs";
 
@@ -113,6 +114,12 @@ async function analyzeAICoverDesign(policy: Policy, imageDataUrl: string, artwor
 }
 
 export async function POST(request: Request) {
+  const invalid = policyCraftMutationFailure(request);
+  if (invalid) return invalid;
+  const selector = parsePolicyCraftOrganizationSelector(new URL(request.url).searchParams.get("orgId"));
+  if (selector.provided && !selector.valid) return NextResponse.json({ error: "orgId must be a positive integer." }, { status: 400 });
+  const { auth, response } = await getPolicyCraftAuthResult({ ...(selector.provided ? { organizationId: selector.organizationId } : {}), operation: "write" });
+  if (!auth) return response || NextResponse.json({ error: "Organization access denied." }, { status: 403 });
   const body = await request.json().catch(() => null) as { policy?: unknown } | null;
   if (!isPolicy(body?.policy)) return NextResponse.json({ error: "A valid policy is required." }, { status: 400 });
 

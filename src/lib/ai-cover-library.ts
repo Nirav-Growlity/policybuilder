@@ -1,4 +1,6 @@
 import type { CoverComposition, CoverLibraryItem, PolicyType } from "./types";
+import { policyCraftUrl, usePolicyCraftScope } from "./policycraft-client-scope";
+import type { PolicyCraftWorkspaceScope } from "./policycraft-access-types";
 
 export type CoverLibraryResponse = { templates?: CoverLibraryItem[]; error?: string };
 
@@ -22,7 +24,7 @@ export function filterAICoverLibrary(items: CoverLibraryItem[], policyType: Poli
   });
 }
 
-export async function persistCoverArtwork(composition: CoverComposition): Promise<CoverComposition> {
+export async function persistCoverArtwork(composition: CoverComposition, scope = usePolicyCraftScope.getState().scope): Promise<CoverComposition> {
   const assetId = composition.background.assetId;
   if (!assetId?.startsWith("data:image/")) return composition;
 
@@ -31,40 +33,41 @@ export async function persistCoverArtwork(composition: CoverComposition): Promis
   const blob = await image.blob();
   const form = new FormData();
   form.append("file", new File([blob], "ai-cover.png", { type: blob.type || "image/png" }));
-  const response = await fetch("/api/policycraft/cover-assets", { method: "POST", body: form });
+  const response = await fetch(policyCraftUrl("/api/policycraft/cover-assets", scope), { method: "POST", body: form, cache: "no-store" });
   const body = await response.json().catch(() => ({})) as { asset?: { id?: string }; error?: string };
   const storedId = body.asset?.id;
   if (!response.ok || !storedId) throw new Error(body.error || "The generated artwork could not be saved.");
   return { ...composition, background: { ...composition.background, assetId: storedId } };
 }
 
-export async function saveAICoverToLibrary(composition: CoverComposition, policyType: PolicyType, name = createAICoverName()): Promise<{ id: string }> {
+export async function saveAICoverToLibrary(composition: CoverComposition, policyType: PolicyType, name = createAICoverName(), scope: PolicyCraftWorkspaceScope | null = usePolicyCraftScope.getState().scope): Promise<{ id: string }> {
   try {
-    const existing = await fetchAICoverLibrary(policyType);
+    const existing = await fetchAICoverLibrary(policyType, scope);
     const matching = existing.find((item) => coverCompositionsEqual(item.composition, composition));
     if (matching) return { id: matching.id };
   } catch {
     // A failed lookup should not prevent the save attempt from reporting its own result.
   }
-  const response = await fetch("/api/policycraft/cover-templates", {
+  const response = await fetch(policyCraftUrl("/api/policycraft/cover-templates", scope), {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, policyType, composition, previewAssetId: composition.background.assetId || null }),
+    cache: "no-store",
   });
   const body = await response.json().catch(() => ({})) as { id?: string; error?: string };
   if (!response.ok || !body.id) throw new Error(body.error || "The AI cover could not be added to the library.");
   return { id: body.id };
 }
 
-export async function fetchAICoverLibrary(policyType: PolicyType): Promise<CoverLibraryItem[]> {
-  const response = await fetch(`/api/policycraft/cover-templates?source=ai&policyType=${encodeURIComponent(policyType)}`, { cache: "no-store" });
+export async function fetchAICoverLibrary(policyType: PolicyType, scope: PolicyCraftWorkspaceScope | null = usePolicyCraftScope.getState().scope): Promise<CoverLibraryItem[]> {
+  const response = await fetch(policyCraftUrl(`/api/policycraft/cover-templates?source=ai&policyType=${encodeURIComponent(policyType)}`, scope), { cache: "no-store" });
   const body = await response.json().catch(() => ({})) as CoverLibraryResponse;
   if (!response.ok) throw new Error(body.error || "The AI cover library could not be loaded.");
   return filterAICoverLibrary(body.templates || [], policyType);
 }
 
-export async function archiveAICover(id: string): Promise<void> {
-  const response = await fetch(`/api/policycraft/cover-templates/${encodeURIComponent(id)}`, { method: "DELETE" });
+export async function archiveAICover(id: string, scope: PolicyCraftWorkspaceScope | null = usePolicyCraftScope.getState().scope): Promise<void> {
+  const response = await fetch(policyCraftUrl(`/api/policycraft/cover-templates/${encodeURIComponent(id)}`, scope), { method: "DELETE", cache: "no-store" });
   const body = await response.json().catch(() => ({})) as { error?: string };
   if (!response.ok) throw new Error(body.error || "The AI cover could not be deleted.");
 }

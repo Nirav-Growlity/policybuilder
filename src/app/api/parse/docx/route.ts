@@ -1,10 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
 import { parseDocxBuffer } from "@/lib/docx/parse";
 import type { PolicyType } from "@/lib/types";
+import {
+  getPolicyCraftAuthResult,
+  parsePolicyCraftOrganizationSelector,
+  policyCraftAuthFailure,
+  policyCraftMutationFailure,
+} from "@/lib/policycraft-auth";
 
 export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
+  const mutationFailure = policyCraftMutationFailure(req, "multipart");
+  if (mutationFailure) return mutationFailure;
+
+  const selector = parsePolicyCraftOrganizationSelector(req.nextUrl.searchParams.get("orgId"));
+  if (!selector.provided || !selector.valid) {
+    return NextResponse.json({ error: "A valid organization is required." }, { status: 400 });
+  }
+
+  try {
+    const access = await getPolicyCraftAuthResult({
+      organizationId: selector.organizationId,
+      documentId: req.nextUrl.searchParams.get("documentId") || undefined,
+      operation: "write",
+    });
+    if (!access.auth) return access.response || NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  } catch (error) {
+    const failure = policyCraftAuthFailure(error);
+    if (failure) return failure;
+    throw error;
+  }
+
   try {
     const fd = await req.formData();
     const file = fd.get("file") as File | null;

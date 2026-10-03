@@ -18,6 +18,7 @@ import {
 import { clsx } from "clsx";
 import { DesignInspector } from "@/components/builder/design-inspector";
 import { usePolicyDownload } from "@/components/builder/dock-sections";
+import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 
 export function BuilderShell({
   children,
@@ -31,6 +32,7 @@ export function BuilderShell({
   hideDesignInspector?: boolean;
 }) {
   const { step, setStep, policy, reset } = useBuilder();
+  const workspaceScope = usePolicyCraftScope((state) => state.scope);
 
   const policyMeta = getPolicyProfile(policy.policyType);
   const PolicyIcon = policyMeta.icon === "Users" ? Users : policyMeta.icon === "BadgeIndianRupee" ? BadgeIndianRupee : Leaf;
@@ -41,6 +43,11 @@ export function BuilderShell({
   const progress = ((currentIndex + 1) / visibleSteps.length) * 100;
 
   const currentStep = visibleSteps[currentIndex];
+  const workspaceHref = workspaceScope?.role === "admin"
+    ? "/admin/policies"
+    : workspaceScope?.role === "manager"
+      ? `/manager?orgId=${workspaceScope.organizationId}`
+      : "/drafts";
   const contentRef = React.useRef<HTMLDivElement>(null);
   const [inspectorOpen, setInspectorOpen] = React.useState(true);
   const [workflowOpen, setWorkflowOpen] = React.useState(false);
@@ -385,8 +392,8 @@ export function BuilderShell({
             )}
             <div className="min-w-0">
               <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)] font-semibold">
-                <Link href="/" className="hover:text-[var(--color-ink)] inline-flex items-center gap-1">
-                  <ArrowLeft size={11} /> Home
+                <Link href={workspaceHref} className="hover:text-[var(--color-ink)] inline-flex items-center gap-1">
+                  <ArrowLeft size={11} /> Workspace
                 </Link>
                 <span className="text-[var(--color-line-2)]">/</span>
                 <span>Builder</span>
@@ -395,7 +402,7 @@ export function BuilderShell({
                 {currentStep?.label}
               </h1>
               <p className="text-[12.5px] text-[var(--color-muted)] mt-0.5 truncate">
-                Step {currentIndex + 1} of {visibleSteps.length} — {currentStep?.desc}
+                {workspaceScope?.organizationName ? <><span className="font-medium text-[var(--color-ink-2)]">{workspaceScope.organizationName}</span><span aria-hidden="true"> · </span></> : null}Step {currentIndex + 1} of {visibleSteps.length} — {currentStep?.desc}
               </p>
             </div>
           </div>

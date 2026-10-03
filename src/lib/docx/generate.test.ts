@@ -6,6 +6,8 @@ import { documentHex, DOCUMENT_THEMES, getPolicyDocumentTheme } from "../documen
 import { pageFooterDistanceMm } from "../page-geometry";
 import { templatePreviewPolicy } from "../sample-policies";
 import { generateDocx } from "./generate";
+import { preparePolicyForDocxExport } from "./export-assets";
+import { usePolicyCraftScope } from "../policycraft-client-scope";
 
 const svg = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40"><rect width="120" height="40" fill="#126845"/></svg>');
 
@@ -493,4 +495,38 @@ test("small Word logos are contained without being upscaled", async () => {
   const header = await zip.file(`word/${target}`)!.async("string");
   const inlineExtent = header.slice(header.indexOf("<wp:inline")).match(/<wp:extent[^>]*cx="(\d+)"[^>]*cy="(\d+)"/);
   assert.deepEqual(inlineExtent?.slice(1).map(Number), [20 * 9525, 10 * 9525]);
+});
+
+test("DOCX cover hydration requests every private asset in the captured organization and keeps an export-only copy", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.company.companyLogo = "header-logo";
+  policy.coverComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "custom",
+    background: { color: "#FFFFFF", assetId: "/api/policycraft/cover-assets/background?orgId=12", fit: "cover", focalPoint: { x: 50, y: 50 } },
+    elements: [{ id: "cover-image", type: "image", assetId: "cover-image", x: 20, y: 20, width: 80, height: 50, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false, fit: "contain", focalPoint: { x: 50, y: 50 }, altText: "Cover art" }],
+  };
+  const original = structuredClone(policy);
+  const originalFetch = globalThis.fetch;
+  const originalScope = usePolicyCraftScope.getState().scope;
+  const scope = { userId: "manager-77", role: "manager" as const, organizationId: 77, organizationName: "Northwind", documentId: "document-7" };
+  const requests: { url: string; init?: RequestInit }[] = [];
+  globalThis.fetch = async (input, init) => {
+    requests.push({ url: String(input), init });
+    return new Response(new Uint8Array([137, 80, 78, 71]), { headers: { "Content-Type": "image/png" } });
+  };
+  try {
+    usePolicyCraftScope.getState().setScope(scope);
+    const exportPolicy = await preparePolicyForDocxExport(policy, scope);
+    assert.equal(requests.length, 3);
+    assert.deepEqual(requests.map(({ url }) => new URL(url, "https://policycraft.invalid").searchParams.get("orgId")), ["77", "77", "77"]);
+    assert.ok(requests.every(({ init }) => init?.cache === "no-store" && init.credentials === "same-origin"));
+    assert.ok(exportPolicy.company.companyLogo?.startsWith("data:image/png;base64,"));
+    assert.ok(exportPolicy.coverComposition?.background.assetId?.startsWith("data:image/png;base64,"));
+    assert.ok(exportPolicy.coverComposition?.elements[0].type === "image" && exportPolicy.coverComposition.elements[0].assetId?.startsWith("data:image/png;base64,"));
+    assert.deepEqual(policy, original, "asset hydration must not modify the saved policy object");
+  } finally {
+    usePolicyCraftScope.getState().setScope(originalScope);
+    globalThis.fetch = originalFetch;
+  }
 });

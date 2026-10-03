@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createAICoverName, coverCompositionsEqual, filterAICoverLibrary, saveAICoverToLibrary } from "./ai-cover-library";
+import { createAICoverName, coverCompositionsEqual, filterAICoverLibrary, persistCoverArtwork, saveAICoverToLibrary } from "./ai-cover-library";
+import { usePolicyCraftScope } from "./policycraft-client-scope";
 import type { CoverComposition, CoverLibraryItem } from "./types";
 
 const composition = (assetId = "asset-1"): CoverComposition => ({
@@ -61,6 +62,52 @@ test("saving an AI cover reuses an existing identical composition", async () => 
     assert.deepEqual(await saveAICoverToLibrary(composition(), "environmental"), { id: "existing-id" });
     assert.deepEqual(calls, ["/api/policycraft/cover-templates?source=ai&policyType=environmental"]);
   } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("AI cover library reads and saves carry the captured organization", async () => {
+  const originalFetch = globalThis.fetch;
+  const originalScope = usePolicyCraftScope.getState().scope;
+  const scope = { userId: "manager-library", role: "manager" as const, organizationId: 54, organizationName: "Northwind" };
+  const calls: string[] = [];
+  globalThis.fetch = async (input) => {
+    calls.push(String(input));
+    return String(input).includes("source=ai") ? Response.json({ templates: [] }) : Response.json({ id: "saved-cover" }, { status: 201 });
+  };
+  try {
+    usePolicyCraftScope.getState().setScope(scope);
+    assert.deepEqual(await saveAICoverToLibrary(composition(), "environmental", "Scoped cover", scope), { id: "saved-cover" });
+    assert.deepEqual(calls, [
+      "/api/policycraft/cover-templates?source=ai&policyType=environmental&orgId=54",
+      "/api/policycraft/cover-templates?orgId=54",
+    ]);
+  } finally {
+    usePolicyCraftScope.getState().setScope(originalScope);
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("AI cover artwork uploads use the organization captured before the upload", async () => {
+  const originalFetch = globalThis.fetch;
+  const originalScope = usePolicyCraftScope.getState().scope;
+  const scope = { userId: "manager-upload", role: "manager" as const, organizationId: 63, organizationName: "Northwind" };
+  const requests: { url: string; init?: RequestInit }[] = [];
+  globalThis.fetch = async (input, init) => {
+    const url = String(input);
+    if (url.startsWith("data:")) return new Response(new Blob([new Uint8Array([1, 2, 3])], { type: "image/png" }));
+    requests.push({ url, init });
+    return Response.json({ asset: { id: "uploaded-cover" } }, { status: 201 });
+  };
+  try {
+    usePolicyCraftScope.getState().setScope(scope);
+    const persisted = await persistCoverArtwork(composition("data:image/png;base64,YQ=="), scope);
+    assert.equal(persisted.background.assetId, "uploaded-cover");
+    assert.equal(new URL(requests[0].url, "https://policycraft.invalid").searchParams.get("orgId"), "63");
+    assert.equal(requests[0].init?.cache, "no-store");
+    assert.ok(requests[0].init?.body instanceof FormData);
+  } finally {
+    usePolicyCraftScope.getState().setScope(originalScope);
     globalThis.fetch = originalFetch;
   }
 });
