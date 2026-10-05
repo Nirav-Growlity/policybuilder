@@ -167,7 +167,7 @@ try {
   includeDocument = true;
   await page.goto(`${base}/admin/policies`);
   await page.getByRole("heading", { name: "All policies" }).waitFor();
-  await page.getByText(document.title, { exact: true }).waitFor();
+  await page.getByText(document.title, { exact: true }).filter({ visible: true }).waitFor();
   await page.screenshot({ path: `${output}/admin-policies-desktop.png`, fullPage: true });
   includeDocument = false;
   await page.setViewportSize({ width: 390, height: 844 });

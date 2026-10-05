@@ -42,15 +42,19 @@ await context.route("**/api/**", async (route) => {
 });
 const page = await context.newPage();
 page.on("pageerror", (error) => errors.push(error.message));
+async function invitationAction(name) {
+  await page.getByRole("button", { name: `More actions for ${pending.name}`, exact: true }).click();
+  await page.getByRole("button", { name, exact: true }).click();
+}
 try {
   await page.goto(`${base}/admin`);
 
-  await page.getByRole("button", { name: "Resend", exact: true }).click();
+  await invitationAction("Resend invitation");
   await page.getByRole("alert").getByText("The invitation is still pending, but email delivery failed.").waitFor();
   assert.deepEqual(requests, [{ method: "PATCH", body: { action: "resend" } }], "resend must remain an independent action");
   await page.getByRole("alert").getByRole("button", { name: "Retry" }).click();
 
-  await page.getByRole("button", { name: "Cancel invite", exact: true }).click();
+  await invitationAction("Cancel invitation");
   let dialog = page.getByRole("dialog", { name: "Cancel manager invitation?" });
   await dialog.waitFor();
   assert.equal(requests.length, 1, "opening confirmation must not mutate the invitation");
@@ -58,20 +62,20 @@ try {
   await dialog.waitFor({ state: "detached" });
   assert.equal(requests.length, 1, "dismissing with Keep invitation must not mutate the invitation");
 
-  await page.getByRole("button", { name: "Cancel invite", exact: true }).click();
+  await invitationAction("Cancel invitation");
   dialog = page.getByRole("dialog", { name: "Cancel manager invitation?" });
   await dialog.waitFor();
   await page.keyboard.press("Escape");
   await dialog.waitFor({ state: "detached" });
   assert.equal(requests.length, 1, "dismissing with Escape must not mutate the invitation");
 
-  await page.getByRole("button", { name: "Cancel invite", exact: true }).click();
+  await invitationAction("Cancel invitation");
   await dialog.waitFor();
   await dialog.getByRole("button", { name: "Close", exact: true }).click();
   await dialog.waitFor({ state: "detached" });
   assert.equal(requests.length, 1, "dismissing with Close must not mutate the invitation");
 
-  await page.getByRole("button", { name: "Cancel invite", exact: true }).click();
+  await invitationAction("Cancel invitation");
   dialog = page.getByRole("dialog", { name: "Cancel manager invitation?" });
   await dialog.getByRole("button", { name: "Cancel invitation", exact: true }).click();
   await dialog.getByRole("alert").getByText("Could not cancel this invitation.").waitFor();
@@ -93,7 +97,7 @@ try {
   cancelled = false;
   await page.setViewportSize({ width: 390, height: 844 });
   await page.reload();
-  await page.getByRole("button", { name: "Cancel invite", exact: true }).click();
+  await invitationAction("Cancel invitation");
   await dialog.waitFor();
   await page.waitForFunction(() => {
     const confirmation = document.querySelector('[role="dialog"]');
