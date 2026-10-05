@@ -136,7 +136,7 @@ Required before sending invitations to people without an existing account:
 - `MAIL_USERNAME` and `MAIL_PASSWORD`: the SMTP credentials.
 - `MAIL_EMAIL`: the verified sender address, displayed as PolicyCraft.
 
-Verify the sender domain with ZeptoMail and test delivery in staging. No ZeptoMail API key is required. `ADMIN_EMAIL` is not used for invitation delivery; the recipient is the manager being invited. The SMTP credentials are separate from the application's login credentials. Public signup remains disabled. Invitation links expire after 72 hours; resend invalidates the previous link.
+Verify the sender domain with ZeptoMail and test delivery in staging. Production (`NODE_ENV=production`) defaults to ZeptoMail; leave `POLICYCRAFT_MAIL_PROVIDER` unset or set it to `zeptomail`. To capture staging invitations in Mailtrap instead, explicitly set that variable to `mailtrap` and configure the independent `MAILTRAP_*` sandbox settings from the [application setup](../src/README.md#admin-and-manager-workspaces). Sandbox capture does not verify production delivery. No ZeptoMail API key is required. `ADMIN_EMAIL` is not used for invitation delivery; the recipient is the manager being invited. The SMTP credentials are separate from the application's login credentials. Public signup remains disabled. Invitation links expire after 72 hours; resend invalidates the previous link.
 
 Existing active accounts are granted manager access directly after administrator confirmation and keep their current password. This path does not send an invitation or require mail settings. For localhost tests, set `POLICYCRAFT_APP_URL=http://localhost:3000`; email delivery uses an outbound SMTP connection, but a localhost link can only be opened on the computer running the app.
 

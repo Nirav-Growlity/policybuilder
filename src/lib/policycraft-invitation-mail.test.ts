@@ -4,6 +4,7 @@ import type { SendMailOptions, Transporter } from "nodemailer";
 import { createPolicyCraftInvitationSender } from "./policycraft-invitation-mail";
 
 const validEnv = (): Record<string, string | undefined> => ({
+  NODE_ENV: "production",
   MAIL_HOST: "smtp.zeptomail.com",
   MAIL_PORT: "587",
   MAIL_USERNAME: "emailapikey",
@@ -33,9 +34,11 @@ function mockTransport(
   return { sender, options, messages, get closeCount() { return closeCount; } };
 }
 
-test("sends through authenticated STARTTLS SMTP using the configured sender and escaped invitation content", async () => {
+test("sends through authenticated STARTTLS SMTP with an escaped, complete invitation email", async () => {
   const smtp = mockTransport();
-  await smtp.sender("manager@example.test", "Morgan <Manager> & Co", "https://app.example.test/accept?token=a&other=1");
+  const name = 'Morgan </td><img src=x onerror="alert(1)"> & Co';
+  const invitationUrl = 'https://app.example.test/accept?token=a&next=" onclick="alert(1)&other=1';
+  await smtp.sender("manager@example.test", name, invitationUrl);
 
   assert.deepEqual(smtp.options[0], {
     host: "smtp.zeptomail.com",
@@ -49,10 +52,25 @@ test("sends through authenticated STARTTLS SMTP using the configured sender and 
     tls: { minVersion: "TLSv1.2" },
   });
   assert.deepEqual(smtp.messages[0]?.from, { name: "PolicyCraft", address: "invites@example.test" });
-  assert.deepEqual(smtp.messages[0]?.to, { name: "Morgan <Manager> & Co", address: "manager@example.test" });
-  assert.match(String(smtp.messages[0]?.html), /Morgan &lt;Manager&gt; &amp; Co/);
-  assert.match(String(smtp.messages[0]?.html), /token=a&amp;other=1/);
-  assert.match(String(smtp.messages[0]?.text), /72 hours/);
+  assert.deepEqual(smtp.messages[0]?.to, { name, address: "manager@example.test" });
+
+  const html = String(smtp.messages[0]?.html);
+  const text = String(smtp.messages[0]?.text);
+  assert.match(html, /PolicyCraft/);
+  assert.match(html, /Accept invitation/);
+  assert.match(html, /Morgan &lt;\/td&gt;&lt;img src=x onerror=&quot;alert\(1\)&quot;&gt; &amp; Co/);
+  assert.doesNotMatch(html, /<img src=x onerror=/);
+  assert.match(html, /href="https:\/\/app\.example\.test\/accept\?token=a&amp;next=&quot; onclick=&quot;alert\(1\)&amp;other=1"/);
+  assert.match(html, /This invitation expires in <strong[^>]*>72 hours<\/strong>/);
+  assert.match(html, /If the button does not work, copy and paste this address into your browser/);
+  assert.match(html, /https:\/\/app\.example\.test\/accept\?token=a&amp;next=&quot; onclick=&quot;alert\(1\)&amp;other=1/);
+  assert.doesNotMatch(html, /<a href="https:\/\/app\.example\.test\/accept\?token=a&amp;next=" onclick=/);
+
+  assert.match(text, /Hello Morgan <\/td><img src=x onerror="alert\(1\)"> & Co/);
+  assert.match(text, /Accept invitation:\nhttps:\/\/app\.example\.test\/accept\?token=a&next=" onclick="alert\(1\)&other=1/);
+  assert.match(text, /This invitation expires in 72 hours/);
+  assert.match(text, /If the button does not work, copy and paste this address into your browser/);
+  assert.equal((text.match(/https:\/\/app\.example\.test\/accept\?token=a&next=" onclick="alert\(1\)&other=1/g) ?? []).length, 2);
   assert.equal(smtp.closeCount, 1);
 });
 
@@ -127,4 +145,180 @@ test("sanitizes SMTP errors and rejects a recipient the SMTP server did not acce
   }));
   await assert.rejects(rejected.sender("manager@example.test", "Morgan", "https://app.example.test/accept"), /Unable to send/);
   assert.equal(rejected.closeCount, 1);
+});
+
+test("retains safe SMTP authentication diagnostics without provider text or credentials", async () => {
+  const smtp = mockTransport(async () => {
+    throw Object.assign(new Error("535 password secret-token manager@example.test"), {
+      code: "EAUTH", responseCode: 535, response: "secret-token", command: "AUTH PLAIN secret-token",
+    });
+  });
+  await assert.rejects(smtp.sender("manager@example.test", "Morgan", "https://app.example.test/accept"), (error: Error) => {
+    assert.match(error.message, /SMTP authentication failed/);
+    assert.match(error.message, /EAUTH; SMTP 535/);
+    assert.match(error.message, /MAIL_USERNAME and MAIL_PASSWORD/);
+    assert.doesNotMatch(JSON.stringify(error) + error.stack, /secret-token|manager@example\.test|AUTH PLAIN/);
+    return true;
+  });
+  assert.equal(smtp.closeCount, 1);
+});
+
+test("distinguishes connection and envelope failures using only allowed diagnostics", async () => {
+  for (const [code, responseCode, expected] of [
+    ["ETIMEDOUT", undefined, /SMTP connection timed out/],
+    ["EENVELOPE", 553, /SMTP rejected the sender or recipient/],
+    ["ETLS", undefined, /SMTP TLS connection failed/],
+  ] as const) {
+    const smtp = mockTransport(async () => { throw { code, responseCode, response: "secret-token" }; });
+    await assert.rejects(smtp.sender("manager@example.test", "Morgan", "https://app.example.test/accept"), (error: Error) => {
+      assert.match(error.message, expected);
+      assert.doesNotMatch(error.message, /secret-token/);
+      return true;
+    });
+  }
+});
+
+test("never copies unknown SMTP diagnostic fields", async () => {
+  const smtp = mockTransport(async () => { throw { code: "secret-token", responseCode: "535 secret-token" }; });
+  await assert.rejects(smtp.sender("manager@example.test", "Morgan", "https://app.example.test/accept"), (error: Error) =>
+    error.message === "Unable to send the PolicyCraft invitation email.");
+});
+
+test("defaults non-production delivery to the isolated Mailtrap sandbox over STARTTLS on port 2525", async () => {
+  const env = {
+    ...validEnv(),
+    NODE_ENV: "development",
+    MAILTRAP_HOST: "sandbox.smtp.mailtrap.io",
+    MAILTRAP_USERNAME: "sandbox-user",
+    MAILTRAP_PASSWORD: "sandbox secret",
+    MAILTRAP_EMAIL: "invites@policycraft.test",
+    MAILTRAP_PORT: "2525",
+  };
+  let options: unknown;
+  const sender = createPolicyCraftInvitationSender(env, (config) => {
+    options = config;
+    return { sendMail: async () => ({ accepted: ["manager@example.test"] }), close: () => undefined } as unknown as Transporter;
+  });
+
+  await sender("manager@example.test", "Morgan", "https://app.example.test/accept");
+  assert.deepEqual(options, {
+    host: "sandbox.smtp.mailtrap.io",
+    port: 2525,
+    secure: false,
+    requireTLS: true,
+    auth: { user: "sandbox-user", pass: "sandbox secret" },
+    connectionTimeout: 15_000,
+    greetingTimeout: 15_000,
+    socketTimeout: 15_000,
+    tls: { minVersion: "TLSv1.2" },
+  });
+});
+
+test("does not fall back to production MAIL credentials when sandbox credentials are missing", async () => {
+  const env = { ...validEnv(), NODE_ENV: "development" };
+  let transportCreated = false;
+  const sender = createPolicyCraftInvitationSender(env, () => {
+    transportCreated = true;
+    throw new Error("must not construct a transport");
+  });
+  await assert.rejects(sender("manager@example.test", "Morgan", "https://app.example.test/accept"), /MAILTRAP_USERNAME/);
+  assert.equal(transportCreated, false);
+});
+
+test("supports an explicit Mailtrap provider in production without using ZeptoMail settings", async () => {
+  const env = {
+    ...validEnv(),
+    POLICYCRAFT_MAIL_PROVIDER: "mailtrap",
+    MAILTRAP_HOST: "sandbox.smtp.mailtrap.io",
+    MAILTRAP_USERNAME: "sandbox-user",
+    MAILTRAP_PASSWORD: "sandbox secret",
+    MAILTRAP_EMAIL: "invites@policycraft.test",
+    MAILTRAP_PORT: "587",
+  };
+  let options: unknown;
+  const sender = createPolicyCraftInvitationSender(env, (config) => {
+    options = config;
+    return { sendMail: async () => ({ accepted: ["manager@example.test"] }), close: () => undefined } as unknown as Transporter;
+  });
+  await sender("manager@example.test", "Morgan", "https://app.example.test/accept");
+  assert.equal((options as { host: string }).host, "sandbox.smtp.mailtrap.io");
+  assert.deepEqual((options as { auth: unknown }).auth, { user: "sandbox-user", pass: "sandbox secret" });
+});
+
+test("rejects an unsupported provider before constructing a transport", async () => {
+  const env = { ...validEnv(), POLICYCRAFT_MAIL_PROVIDER: "unknown-provider" };
+  let transportCreated = false;
+  const sender = createPolicyCraftInvitationSender(env, () => {
+    transportCreated = true;
+    throw new Error("must not construct a transport");
+  });
+  await assert.rejects(sender("manager@example.test", "Morgan", "https://app.example.test/accept"), /POLICYCRAFT_MAIL_PROVIDER/);
+  assert.equal(transportCreated, false);
+});
+
+test("uses provider-safe diagnostics for Mailtrap authentication errors", async () => {
+  const env = {
+    ...validEnv(),
+    NODE_ENV: "development",
+    MAILTRAP_HOST: "sandbox.smtp.mailtrap.io",
+    MAILTRAP_USERNAME: "sandbox-user",
+    MAILTRAP_PASSWORD: "sandbox secret",
+    MAILTRAP_EMAIL: "invites@policycraft.test",
+    MAILTRAP_PORT: "2525",
+  };
+  const sender = createPolicyCraftInvitationSender(env, () => ({
+    sendMail: async () => { throw Object.assign(new Error("535 leaked password"), { code: "EAUTH", responseCode: 535 }); },
+    close: () => undefined,
+  } as unknown as Transporter));
+  await assert.rejects(sender("manager@example.test", "Morgan", "https://app.example.test/accept"), (error: Error) => {
+    assert.match(error.message, /MAILTRAP_USERNAME and MAILTRAP_PASSWORD/);
+    assert.doesNotMatch(error.message, /ZeptoMail|MAIL_USERNAME|MAIL_PASSWORD|leaked password/);
+    return true;
+  });
+});
+
+test("rejects the Mailtrap live SMTP endpoint so sandbox delivery stays isolated", async () => {
+  const env = {
+    NODE_ENV: "development",
+    MAILTRAP_HOST: "smtp.mailtrap.io",
+    MAILTRAP_PORT: "2525",
+    MAILTRAP_USERNAME: "sandbox-user",
+    MAILTRAP_PASSWORD: "sandbox secret",
+    MAILTRAP_EMAIL: "invites@policycraft.test",
+  };
+  let transportCreated = false;
+  const sender = createPolicyCraftInvitationSender(env, () => {
+    transportCreated = true;
+    throw new Error("must not construct a transport");
+  });
+  await assert.rejects(sender("manager@example.test", "Morgan", "https://app.example.test/accept"), /MAILTRAP_HOST must be sandbox/);
+  assert.equal(transportCreated, false);
+});
+
+test("allows an explicit ZeptoMail selection in non-production", async () => {
+  const env = { ...validEnv(), NODE_ENV: "development", POLICYCRAFT_MAIL_PROVIDER: "zeptomail" };
+  let options: unknown;
+  const sender = createPolicyCraftInvitationSender(env, (config) => {
+    options = config;
+    return { sendMail: async () => ({ accepted: ["manager@example.test"] }), close: () => undefined } as unknown as Transporter;
+  });
+  await sender("manager@example.test", "Morgan", "https://app.example.test/accept");
+  assert.equal((options as { host: string }).host, "smtp.zeptomail.com");
+});
+
+test("supports an unset NODE_ENV as the Mailtrap default", async () => {
+  const env = {
+    MAILTRAP_HOST: "sandbox.smtp.mailtrap.io",
+    MAILTRAP_PORT: "2525",
+    MAILTRAP_USERNAME: "sandbox-user",
+    MAILTRAP_PASSWORD: "sandbox secret",
+    MAILTRAP_EMAIL: "invites@policycraft.test",
+  };
+  let host: string | undefined;
+  const sender = createPolicyCraftInvitationSender(env, (config) => {
+    host = config.host;
+    return { sendMail: async () => ({ accepted: ["manager@example.test"] }), close: () => undefined } as unknown as Transporter;
+  });
+  await sender("manager@example.test", "Morgan", "https://app.example.test/accept");
+  assert.equal(host, "sandbox.smtp.mailtrap.io");
 });

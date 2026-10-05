@@ -35,6 +35,7 @@ export default function AdminManagersPage() {
   const [selectedOrganizations, setSelectedOrganizations] = React.useState<number[]>([]);
   const [organizationSearch, setOrganizationSearch] = React.useState("");
   const [cancelTarget, setCancelTarget] = React.useState<PolicyCraftManagerSummary | null>(null);
+  const [cancelError, setCancelError] = React.useState("");
 
   const load = React.useCallback(async () => {
     setLoading(true);
@@ -87,7 +88,7 @@ export default function AdminManagersPage() {
 
   async function invitationAction(manager: PolicyCraftManagerSummary, action: "resend" | "cancel") {
     if (!manager.invitationId || busyId) return;
-    if (action === "cancel") { setCancelTarget(manager); return; }
+    if (action === "cancel") { setCancelError(""); setCancelTarget(manager); return; }
     setBusyId(manager.id);
     setError("");
     try {
@@ -100,6 +101,25 @@ export default function AdminManagersPage() {
       await load();
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : `Could not ${action} this invitation.`);
+    } finally {
+      setBusyId(null);
+    }
+  }
+
+  async function cancelInvitation(manager: PolicyCraftManagerSummary) {
+    if (!manager.invitationId || busyId) return;
+    setBusyId(manager.id);
+    setCancelError("");
+    try {
+      const response = await fetch(`/api/policycraft/admin/invitations/${encodeURIComponent(manager.invitationId)}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "cancel" }),
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok) throw new Error(result?.error || "Could not cancel this invitation.");
+      setCancelTarget(null);
+      await load();
+    } catch (cause) {
+      setCancelError(cause instanceof Error ? cause.message : "Could not cancel this invitation.");
     } finally {
       setBusyId(null);
     }
@@ -149,8 +169,9 @@ export default function AdminManagersPage() {
           <div className="mt-5 flex justify-end gap-2"><button type="button" onClick={() => setManagerToEdit(null)} className="min-h-10 rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-medium hover:bg-[var(--color-cream-2)]">Cancel</button><button type="submit" disabled={busyId === managerToEdit.id} className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] disabled:opacity-60">{busyId === managerToEdit.id ? <Loader2 size={14} className="animate-spin" aria-hidden="true" /> : <Check size={14} aria-hidden="true" />}Save assignments</button></div>
         </form> : null}
       </Modal>
-      <Modal open={Boolean(cancelTarget)} onClose={() => setCancelTarget(null)} title="Cancel manager invitation?" description={`The invitation for ${cancelTarget?.email || "this manager"} will stop working.`} width={480}>
-        <div className="flex justify-end gap-2"><button type="button" onClick={() => setCancelTarget(null)} className="min-h-10 rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-medium hover:bg-[var(--color-cream-2)]">Keep invitation</button><button type="button" disabled={busyId === cancelTarget?.id} onClick={() => { if (cancelTarget) { const manager = cancelTarget; setCancelTarget(null); void invitationAction(manager, "cancel"); } }} className="min-h-10 rounded-lg bg-red-700 px-4 text-sm font-semibold text-white hover:bg-red-800 disabled:opacity-60">Cancel invitation</button></div>
+      <Modal open={Boolean(cancelTarget)} onClose={() => { if (!busyId) { setCancelTarget(null); setCancelError(""); } }} title="Cancel manager invitation?" description={`The invitation for ${cancelTarget?.email || "this manager"} will stop working.`} width={480}>
+        {cancelError ? <p role="alert" aria-live="polite" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-900">{cancelError}</p> : null}
+        <div className="flex justify-end gap-2"><button type="button" disabled={Boolean(busyId)} onClick={() => { setCancelTarget(null); setCancelError(""); }} className="min-h-10 rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-medium hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-60">Keep invitation</button><button type="button" disabled={Boolean(busyId) || !cancelTarget} onClick={() => { if (cancelTarget) void cancelInvitation(cancelTarget); }} className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-red-700 px-4 text-sm font-semibold text-white hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 disabled:opacity-60">{busyId ? <><Loader2 size={14} className="animate-spin" aria-hidden="true" />Canceling…</> : "Cancel invitation"}</button></div>
       </Modal>
     </div>
   );

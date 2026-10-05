@@ -34,9 +34,27 @@ Before deploying this version, the database owner must follow [the access migrat
 
 Existing active accounts receive manager access directly after an administrator confirms the account. They sign in with their existing password; no email or SMTP configuration is needed. Adding an existing manager preserves their current organization assignments and adds the selected organizations.
 
-Only people without an existing account receive an invitation to choose a password. Configure `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_EMAIL`, and `POLICYCRAFT_APP_URL` from `.env.example` before sending these invitations. Invitations use ZeptoMail SMTP: port 587 requires STARTTLS; port 465 uses TLS. `MAIL_EMAIL` is the verified sender address; invitations go to the manager's email, not `ADMIN_EMAIL`. No ZeptoMail API key is required. Public signup remains disabled; invitations expire after 72 hours.
+Only people without an existing account receive an invitation to choose a password. Public signup remains disabled; invitations expire after 72 hours. Invitation mail uses Mailtrap Email Sandbox in development/test and ZeptoMail in production (`NODE_ENV=production`). Set `POLICYCRAFT_MAIL_PROVIDER=mailtrap` or `zeptomail` to explicitly select a provider, including Mailtrap for a locally run production build or staging deployment. Missing Mailtrap configuration fails without falling back to ZeptoMail.
 
-For local invitation tests, set `POLICYCRAFT_APP_URL=http://localhost:3000` and load the SMTP settings into the local environment. The app connects outbound to ZeptoMail, so a hosted application is not required to send mail. Open a localhost invitation link on the computer running the app; use a reachable HTTPS app origin for invitees on another computer.
+For local invitation tests, open [Mailtrap Sandboxes](https://mailtrap.io/sandboxes), select a sandbox and copy its **Integration → SMTP** username and password into `src/.env.development.local` (this application's root directory). Use the Email Sandbox credentials, not Mailtrap's live sending credentials or API token:
+
+```dotenv
+POLICYCRAFT_MAIL_PROVIDER=mailtrap
+POLICYCRAFT_APP_URL=http://localhost:3000
+MAILTRAP_HOST=sandbox.smtp.mailtrap.io
+MAILTRAP_PORT=2525
+MAILTRAP_USERNAME=your-sandbox-smtp-username
+MAILTRAP_PASSWORD=your-sandbox-smtp-password
+MAILTRAP_EMAIL=invites@policycraft.test
+```
+
+Ports 2525 and 587 require STARTTLS; 465 uses implicit TLS. [Mailtrap Email Sandbox](https://docs.mailtrap.io/email-sandbox/overview) captures messages in its dashboard without delivering them to the manager's actual inbox; no sender domain verification is required for sandbox testing. After restarting the development server, resend the invitation, open the captured message in Mailtrap and follow its invitation link on the computer running PolicyCraft. For another computer, use a reachable HTTPS application origin. Sandbox acceptance tests the invitation email flow, not production inbox delivery.
+
+For production, retain `MAIL_HOST`, `MAIL_PORT`, `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_EMAIL` and an HTTPS `POLICYCRAFT_APP_URL` in the deployment environment. Leave `POLICYCRAFT_MAIL_PROVIDER` unset or set it to `zeptomail`. Use the SMTP host and credentials from your account's Agent → SMTP tab: port 587 requires STARTTLS and 465 uses TLS. `MAIL_EMAIL` must be a verified sender; invitations go to the manager's email, not `ADMIN_EMAIL`. SMTP uses the SMTP password rather than an HTTP API integration.
+
+Run `node --import tsx scripts/verify-invitation-smtp.ts` from this application directory to check the selected provider's SMTP connection, TLS and authentication without sending email. It loads Next.js environment files (development by default; production when `NODE_ENV=production`) and prints only safe diagnostics. To check ZeptoMail from PowerShell without sending mail, set `$env:POLICYCRAFT_MAIL_PROVIDER='zeptomail'` before running it; remove that temporary override with `Remove-Item Env:POLICYCRAFT_MAIL_PROVIDER` afterward. Shell environment variables take precedence over `.env` files.
+
+`EAUTH; SMTP 535` means authentication was rejected before email content was submitted, so a localhost invitation URL cannot explain that failure. Check the selected provider's SMTP username/password pairing. For ZeptoMail, also check account status, credits, regional host and any configured IP restrictions: Zoho lists expired/blocked credits and a blocked account as causes of 535 ([error reference](https://www.zoho.com/zeptomail/help/api/smtp-error-codes.html)). A generated shorter SMTP password requires its generated username or the From address ([SMTP setup](https://www.zoho.com/cpaas/help/smtp-home.html)). Restart the dev server after updating the environment. Passing verification does not establish sender or recipient acceptance. Resend responses contain `delivery.sent`; HTTP 200 alone does not mean mail delivery succeeded. See the [provider investigation](../docs/invitation-mail-providers-research.md) for evidence and remaining live checks.
 
 Run `npm run test:access` for the isolated access, invitation, storage, and export tests. The repeatable browser smoke check is `node --import tsx scripts/verify-access-ui.mjs`; start a development server first and set `POLICYCRAFT_UI_URL` to its origin. It mocks API responses and does not touch database records or send mail. Screenshots default to `output/playwright`; use `POLICYCRAFT_UI_OUTPUT` to choose another writable directory. `node scripts/verify-access-anonymous.mjs` checks that the generation, import, and export handlers reject requests without cookies before processing content.
 
