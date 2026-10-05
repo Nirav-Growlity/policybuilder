@@ -4,9 +4,11 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Archive, ArchiveRestore, ArrowDownToLine, ArrowUpRight, FileText, Loader2, Plus, RefreshCw, Search, Trash2 } from "lucide-react";
+import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { ActionDisclosure, ActionDisclosureItem } from "@/components/ui/action-disclosure";
 import { Modal } from "@/components/ui/modal";
 import { POLICY_PROFILES } from "@/lib/constants";
+import { initialPolicy } from "@/lib/store";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
 import { policyCraftExportContext } from "@/lib/policycraft-client-scope";
 import type { PolicyCraftDocumentState, PolicyDocumentSummary } from "@/lib/policycraft-types";
@@ -17,6 +19,12 @@ type OrganizationLabel = { id: number; name: string; code?: string; deleted?: bo
 type AdminPolicy = PolicyDocumentSummary & { organization: OrganizationLabel; createdBy: Creator; state?: PolicyCraftDocumentState };
 type AdminDocumentResponse = { documents: AdminPolicy[]; creators?: Creator[] };
 
+const PolicyCoverThumbnail = React.memo(function PolicyCoverThumbnail({ document, userId }: { document: AdminPolicy; userId: string }) {
+  const policy = React.useMemo(() => policyFromSummary(document), [document]);
+  const assetScope = React.useMemo(() => ({ userId, role: "admin" as const, organizationId: document.organization.id, organizationName: document.organization.name, documentId: document.id, readOnly: !!document.organization.deleted }), [document, userId]);
+  return <div role="img" aria-label={`Cover preview for ${document.title || "Untitled policy"}`} className="relative h-[64px] w-[46px] shrink-0 overflow-hidden rounded-sm border border-[var(--color-line)] bg-[var(--color-cream-2)] sm:h-[70px] sm:w-[50px]"><div className="absolute left-1/2 top-1/2 origin-center [transform:translate(-50%,-50%)_scale(.055)] sm:[transform:translate(-50%,-50%)_scale(.06)]" style={{ width: "210mm", height: "297mm" }} aria-hidden="true"><PolicyCoverPreview policy={policy} assetScope={assetScope} /></div></div>;
+});
+
 const POLICY_TYPES = Object.keys(POLICY_PROFILES) as PolicyType[];
 type View = "active" | "archived";
 
@@ -26,6 +34,12 @@ function formatDate(value: string) {
 }
 
 function label(value: string) { return value.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()); }
+
+function policyFromSummary(document: AdminPolicy): Policy {
+  const base = initialPolicy(document.policyType);
+  const snapshot = document.coverPreview;
+  return snapshot ? { ...base, ...snapshot, company: { ...base.company, ...snapshot.company }, sections: base.sections } : base;
+}
 
 function filenameFromResponse(response: Response, fallback: string) {
   const disposition = response.headers.get("content-disposition") || "";
@@ -255,10 +269,12 @@ function AdminPoliciesContent() {
     </div>;
   };
 
-  const renderPolicyIdentity = (document: AdminPolicy) => <div className="flex min-w-0 items-start gap-3">
-    <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[var(--color-forest-soft)] text-[var(--color-forest)]"><FileText size={18} aria-hidden="true" /></span>
-    <div className="min-w-0"><h3 className="break-words font-display text-[16px] font-semibold leading-snug text-[var(--color-ink)]">{document.title || "Untitled policy"}</h3><p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--color-muted)]"><span>{POLICY_PROFILES[document.policyType]?.label || label(document.policyType)}</span><span aria-hidden="true">·</span><span className="inline-flex items-center gap-1.5"><span className={`h-1.5 w-1.5 rounded-full ${document.archivedAt ? "bg-slate-400" : "bg-emerald-600"}`} aria-hidden="true" />{document.archivedAt ? "Archived" : label(document.currentStep)}</span></p>{actionId === document.id ? <p className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--color-forest)]" role="status" aria-live="polite"><Loader2 size={12} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />{actionLabel}</p> : null}</div>
+  const renderPolicyIdentity = (document: AdminPolicy) => {
+    return <div className="flex min-w-0 items-start gap-3">
+      <PolicyCoverThumbnail document={document} userId={access.actor.id} />
+      <div className="min-w-0"><h3 className="break-words font-display text-[16px] font-semibold leading-snug text-[var(--color-ink)]">{document.title || "Untitled policy"}</h3><p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--color-muted)]"><span>{POLICY_PROFILES[document.policyType]?.label || label(document.policyType)}</span><span aria-hidden="true">·</span><span>{document.archivedAt ? "Archived" : label(document.currentStep)}</span></p>{actionId === document.id ? <p className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--color-forest)]" role="status" aria-live="polite"><Loader2 size={12} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />{actionLabel}</p> : null}</div>
   </div>;
+  };
 
   return <div>
     <div className="flex flex-wrap items-end justify-between gap-5"><div><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Administration</p><h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-pretty sm:text-[34px]">All policies</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Browse, manage, and export policies across organizations.</p></div><Link href="/builder" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Plus size={15} aria-hidden="true" />New policy</Link></div>

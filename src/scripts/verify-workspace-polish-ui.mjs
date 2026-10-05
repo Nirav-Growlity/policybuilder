@@ -30,13 +30,14 @@ function document(id, title, type, organization) {
   const policy = initialPolicy(type);
   policy.title = title;
   policy.company.name = organization.name;
-  return { id, title, policyType: type, currentStep: "declaration", lockVersion: 1, updatedAt: "2026-10-05T10:00:00Z", createdAt: "2026-10-01T10:00:00Z", archivedAt: null, organization, createdBy: creator, state: { step: "declaration", policy, importedPolicy: null } };
+  return { id, title, policyType: type, currentStep: "declaration", lockVersion: 1, updatedAt: "2026-10-05T10:00:00Z", createdAt: "2026-10-01T10:00:00Z", archivedAt: null, organization, createdBy: creator, coverPreview: { ...policy, company: policy.company }, state: { step: "declaration", policy, importedPolicy: null } };
 }
 let documents = [
   document("environmental", "Environmental stewardship and responsible resource management policy", "environmental", organizations[0]),
   document("social", "Social responsibility policy", "labour-human-rights", organizations[0]),
   document("riverside", "Riverside environmental policy", "environmental", organizations[1]),
 ];
+documents[2].updatedAt = "2026-10-05T11:00:00Z";
 const additionalAdminDocuments = Array.from({ length: 20 }, (_, index) => document(
   `admin-fixture-${index}`,
   `Growlity Private Limited ${index % 2 ? "labour and human rights" : "environmental"} policy — supply chain standards and responsible operations ${index + 1}`,
@@ -47,6 +48,8 @@ let role = "admin";
 let failManagers = false;
 let failAssignment = false;
 let failPolicies = false;
+let failedOrganization = null;
+let singleOrganization = false;
 let failMutation = false;
 let failSignOut = false;
 let failRefreshAfterDelete = false;
@@ -55,6 +58,7 @@ let releaseOrganization;
 let organizationRequestStarted;
 let emptyOrganizations = false;
 const mutations = [];
+const managerListRequests = [];
 const errors = [];
 const browser = await chromium.launch({ channel: "msedge", headless: true });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce" });
@@ -66,7 +70,7 @@ await context.route("**/api/**", async (route) => {
   let status = 200;
   let data = {};
   if (method !== "GET") mutations.push({ path, method, orgId: url.searchParams.get("orgId"), body: route.request().postDataJSON() });
-  if (path === "/api/policycraft/access") data = { actor: { id: "7", name: "Alex Administrator With A Long Account Name", email: "alex@example.test", role }, organizations: emptyOrganizations ? [] : organizations, homeHref: role === "admin" ? "/admin" : "/manager" };
+  if (path === "/api/policycraft/access") data = { actor: { id: "7", name: "Alex Administrator With A Long Account Name", email: "alex@example.test", role }, organizations: emptyOrganizations ? [] : singleOrganization ? [organizations[0]] : role === "manager" ? [...organizations, { id: 33, code: "DEL", name: "Deleted organization", deleted: true, expired: false }, { id: 44, code: "EXP", name: "Expired organization", deleted: false, expired: true }] : organizations, homeHref: role === "admin" ? "/admin" : "/manager" };
   else if (path === "/api/policycraft/admin/managers") { status = failManagers ? 503 : 200; data = { managers, organizations }; }
   else if (path.startsWith("/api/policycraft/admin/managers/")) {
     status = failAssignment ? 503 : 200;
@@ -79,17 +83,22 @@ await context.route("**/api/**", async (route) => {
     }
   }
   else if (path === "/api/policycraft/documents" || path === "/api/policycraft/admin/documents") {
+    if (path === "/api/policycraft/documents" && role === "manager") {
+      managerListRequests.push(url.searchParams.get("orgId"));
+      assert(organizations.some((item) => String(item.id) === url.searchParams.get("orgId")), "manager list requests require an assigned concrete organization");
+    }
     if (pausedOrganization !== null && url.searchParams.get("orgId") === pausedOrganization) {
       pausedOrganization = null;
       organizationRequestStarted?.();
       await new Promise((resolve) => { releaseOrganization = resolve; });
     }
-    status = failPolicies ? 503 : 200;
+    status = failPolicies || (failedOrganization !== null && url.searchParams.get("orgId") === failedOrganization) ? 503 : 200;
     const org = url.searchParams.get("orgId");
     const archived = url.searchParams.get("view") === "archived";
     const type = url.searchParams.get("policyType");
     const candidates = path === "/api/policycraft/admin/documents" ? [...documents, ...additionalAdminDocuments] : documents;
-    data = { documents: candidates.filter((item) => Boolean(item.archivedAt) === archived && (!org || String(item.organization.id) === org) && (!type || item.policyType === type)), creators: [creator] };
+    const matching = candidates.filter((item) => Boolean(item.archivedAt) === archived && (!org || String(item.organization.id) === org) && (!type || item.policyType === type));
+    data = { documents: path === "/api/policycraft/documents" && role === "manager" ? matching.map((entry) => { const item = { ...entry }; delete item.organization; return item; }) : matching, creators: [creator] };
   } else if (path.startsWith("/api/policycraft/documents/")) {
     const id = decodeURIComponent(path.split("/").at(-1));
     const item = documents.find((entry) => entry.id === id);
@@ -154,6 +163,12 @@ try {
       if (name === "managers") await page.getByRole("button", { name: "Assignments", exact: true }).first().waitFor();
       if (name === "admin-policies") {
         await policyTitle(documents[0].title).waitFor();
+        await page.getByRole("img", { name: `Cover preview for ${documents[0].title}`, exact: true }).filter({ visible: true }).waitFor();
+        assert.equal(await page.getByRole("img", { name: `Cover preview for ${documents[0].title}`, exact: true }).filter({ visible: true }).evaluate((preview) => {
+          const frame = preview.getBoundingClientRect();
+          const canvas = preview.firstElementChild.getBoundingClientRect();
+          return canvas.left >= frame.left && canvas.top >= frame.top && canvas.right <= frame.right && canvas.bottom <= frame.bottom;
+        }), true, "entire cover preview fits its frame");
         assert.equal(await policyTitle(documents[0].title).evaluate((element) => element.scrollHeight <= element.clientHeight + 1 && getComputedStyle(element).textOverflow !== "ellipsis"), true, "full policy title is readable without truncation");
       }
       if (name === "admin-policies" || name === "managers") await checkAdminRecords();
@@ -178,8 +193,10 @@ try {
     await open("/accept-invitation?token=mock-ui-only", "Accept your invitation");
     await screenshot(`invitation-${viewport.width}x${viewport.height}`);
     role = "manager";
-    await open("/manager?orgId=11", "Organizations & policies");
+    await open("/manager", "Organizations & policies");
     await page.getByRole("heading", { name: documents[0].title, exact: true }).waitFor();
+    await page.getByRole("heading", { name: documents[2].title, exact: true }).waitFor();
+    assert.equal(await page.getByLabel("Organization", { exact: true }).inputValue(), "all", "All organizations is the default manager view");
     await screenshot(`manager-${viewport.width}x${viewport.height}`);
   }
 
@@ -291,6 +308,43 @@ try {
   assert.equal(mutations.length, beforeAdminArchive);
 
   role = "manager";
+  await open("/manager", "Organizations & policies");
+  await page.getByRole("heading", { name: documents[2].title, exact: true }).waitFor();
+  const organizationSelect = page.getByLabel("Organization", { exact: true });
+  assert.equal(await organizationSelect.inputValue(), "all");
+  await page.getByRole("button", { name: "New policy", exact: true }).click();
+  await dialog.getByRole("heading", { name: "Choose an organization", exact: true }).waitFor();
+  await dialog.getByLabel("Organization", { exact: true }).selectOption("22");
+  assert.equal(await dialog.getByRole("button", { name: "Continue to builder", exact: true }).isEnabled(), true);
+  await dialog.getByRole("button", { name: "Cancel", exact: true }).click();
+  await dialog.waitFor({ state: "hidden" });
+  assert.equal(await organizationSelect.locator("option").count(), 3, "deleted and expired organizations are excluded");
+  assert.deepEqual(await page.locator('main article > div h3').allTextContents(), [documents[2].title, documents[0].title, documents[1].title], "all organizations sort policies globally by updated time");
+  const riversideRecord = page.locator("main article").filter({ has: page.getByRole("heading", { name: documents[2].title, exact: true }) }).first();
+  const riversideHref = new URL(await riversideRecord.getByRole("link", { name: "Open", exact: true }).getAttribute("href"), base);
+  assert.equal(riversideHref.searchParams.get("orgId"), "22", "aggregate Open uses the document organization");
+  await riversideRecord.getByRole("button", { name: `Archive ${documents[2].title}`, exact: true }).click();
+  await dialog.getByRole("button", { name: /Archive policy/ }).click();
+  await dialog.waitFor({ state: "hidden" });
+  assert.equal(mutations.at(-1).orgId, "22", "aggregate archive uses the document organization");
+  await page.getByRole("button", { name: "Archived", exact: true }).click();
+  await page.getByRole("heading", { name: documents[2].title, exact: true }).waitFor();
+  documents[2].archivedAt = null;
+  failedOrganization = "22";
+  await open("/manager", "Organizations & policies");
+  await page.locator("main").getByRole("alert").waitFor();
+  assert.equal(await page.getByRole("heading", { name: documents[0].title, exact: true }).count(), 0, "failed aggregate load does not show a partial all-organizations list");
+  failedOrganization = null;
+  await page.getByRole("button", { name: "Retry loading policies", exact: true }).click();
+  await page.getByRole("heading", { name: documents[2].title, exact: true }).waitFor();
+  await screenshot("manager-all-organizations-mobile");
+  singleOrganization = true;
+  await open("/manager", "Organizations & policies");
+  await page.getByRole("heading", { name: documents[0].title, exact: true }).waitFor();
+  assert.equal(await organizationSelect.inputValue(), "all", "All organizations stays default with one assignment");
+  assert.equal(await page.getByRole("heading", { name: documents[2].title, exact: true }).count(), 0);
+  singleOrganization = false;
+  assert(managerListRequests.every((id) => id === "11" || id === "22"), "only assigned active organizations are queried");
   await open("/manager?orgId=11&type=environmental", "Organizations & policies");
   await page.getByRole("heading", { name: documents[0].title, exact: true }).waitFor();
   assert.equal(await page.getByRole("heading", { name: "Social responsibility policy", exact: true }).count(), 0);

@@ -58,6 +58,10 @@ type DocumentRow = DocumentSummaryRow & {
   imported_policy_json: unknown;
 };
 
+type AdminDocumentSummaryRow = DocumentSummaryRow & {
+  policy_json: unknown;
+};
+
 function isoDate(value: Date | string): string {
   return value instanceof Date ? value.toISOString() : new Date(value).toISOString();
 }
@@ -225,15 +229,18 @@ export async function listAllAdminDocuments(filters: { organizationId?: number; 
   if (filters.creatorId) { predicates.push("d.created_by_user_id = ?"); values.push(filters.creatorId); }
   if (filters.policyType) { predicates.push("d.policy_type = ?"); values.push(filters.policyType); }
   if (filters.archived !== undefined) predicates.push(`d.archived_at IS ${filters.archived ? "NOT " : ""}NULL`);
-  const [rows] = await policyCraftPool.execute<DocumentSummaryRow[]>(
-    `SELECT ${documentSummarySelect}
+  const [rows] = await policyCraftPool.execute<AdminDocumentSummaryRow[]>(
+    `SELECT ${documentSummarySelect}, d.policy_json
        FROM policycraft_documents d
        INNER JOIN organizations o ON o.id = d.org_id
        LEFT JOIN users creator ON creator.id = d.created_by_user_id
        ${predicates.length ? `WHERE ${predicates.join(" AND ")}` : ""}
       ORDER BY d.updated_at DESC, d.id ASC`, values,
   );
-  return rows.map(toSummary);
+  return rows.map((row) => ({
+    ...toSummary(row),
+    coverPreview: toCoverPreview(parseJson<Policy>(row.policy_json)),
+  }));
 }
 
 export async function listPolicyCraftDocumentCreators(): Promise<Array<{ id: string; name: string; email: string }>> {

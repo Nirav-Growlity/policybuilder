@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import type { Pool } from "mysql2/promise";
+import type { Policy } from "./types";
 
 process.env.HOST ||= "127.0.0.1";
 process.env.USER_NAME ||= "policycraft-test";
@@ -44,7 +45,23 @@ test("admin listing uses a summary projection and leaves organization scope opti
   policyCraftPool.execute = (async (query: string, params?: unknown[]) => {
     sql = query;
     values = params || [];
-    return [[adminRow("document-1")], []] as never;
+    return [[{
+      ...adminRow("document-1"),
+      policy_json: {
+        policyType: "environmental",
+        documentTheme: "classic",
+        coverComposition: {
+          schemaVersion: 1,
+          sourceTemplateId: "custom",
+          background: { color: "#FFFFFF", assetId: "/api/policycraft/cover-assets/background-1", fit: "cover", focalPoint: { x: 50, y: 50 } },
+          elements: [],
+        },
+        company: { name: "Example Organization", companyLogo: "logo-1", docNum: "POL-1", effectiveDate: "2026-01-01", revNum: "1", reviewDate: "2027-01-01" },
+        sections: [{ id: "private-section", title: "Restricted content", content: "Confidential policy text" }],
+        internalNotes: "This must never be returned",
+      } as unknown as Policy,
+      imported_policy_json: { sections: [{ content: "Imported confidential content" }] },
+    }], []] as never;
   }) as unknown as PoolExecute;
 
   try {
@@ -52,7 +69,45 @@ test("admin listing uses a summary projection and leaves organization scope opti
     assert.equal(documents.length, 1);
     assert.equal(documents[0].organization?.id, 21);
     assert.equal(documents[0].createdBy?.id, "7");
-    assert.doesNotMatch(sql, /d\.(?:imported_)?policy_json/i);
+    assert.deepEqual(documents[0].coverPreview, {
+      policyType: "environmental",
+      documentTheme: "classic",
+      coverComposition: {
+        schemaVersion: 1,
+        sourceTemplateId: "custom",
+        background: { color: "#FFFFFF", assetId: "background-1", fit: "cover", focalPoint: { x: 50, y: 50 } },
+        elements: [],
+      },
+      company: {
+        name: "Example Organization",
+        companyLogo: "/api/policycraft/cover-assets/logo-1",
+        docNum: "POL-1",
+        effectiveDate: "2026-01-01",
+        revNum: "1",
+        reviewDate: "2027-01-01",
+        logoPalette: undefined,
+      },
+      presentationTemplate: undefined,
+      documentTemplate: undefined,
+      documentThemeOverrides: undefined,
+      templateBrandOverrides: undefined,
+      brandColorSource: undefined,
+      visualStyle: undefined,
+      logoPosition: undefined,
+      typography: undefined,
+      featureImage: undefined,
+      aiCoverComposition: undefined,
+      activeCoverVariant: undefined,
+    });
+    assert.doesNotMatch(sql, /d\.imported_policy_json/i);
+    assert.match(sql, /d\.policy_json/);
+    assert.equal("state" in documents[0], false);
+    assert.equal("policy_json" in documents[0], false);
+    assert.equal("sections" in documents[0].coverPreview!, false);
+    assert.equal("internalNotes" in documents[0].coverPreview!, false);
+    assert.equal("importedPolicy" in documents[0], false);
+    assert.equal(JSON.stringify(documents[0]).includes("Confidential policy text"), false);
+    assert.equal(JSON.stringify(documents[0]).includes("Imported confidential content"), false);
     assert.match(sql, /ORDER BY d\.updated_at DESC, d\.id ASC/);
     assert.doesNotMatch(sql, /WHERE\s+d\.org_id\s*=/i);
     assert.deepEqual(values, []);
