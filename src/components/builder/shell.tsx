@@ -381,7 +381,7 @@ export function BuilderShell({
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* Top bar */}
         <header className="px-7 py-4 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-md flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3 min-w-0">
+          <div className={clsx("flex items-center gap-3 min-w-0", step === "export" && "w-full min-[1200px]:w-[230px] min-[1200px]:flex-none")}>
             {showSidebar && sidebarCollapsed && (
               <button
                 type="button"
@@ -409,7 +409,7 @@ export function BuilderShell({
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className={clsx("flex flex-wrap items-center", step === "export" ? "gap-1.5 w-full min-w-0 justify-end min-[1200px]:w-auto min-[1200px]:flex-1" : "gap-2")}>
             {topActions}
             {step === "export" && (
               <div className="flex flex-wrap items-center gap-2">
@@ -418,7 +418,7 @@ export function BuilderShell({
                   disabled={!!exporting}
                   onClick={() => download("pdf")}
                   aria-busy={exporting === "pdf"}
-                  className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55 motion-reduce:transition-none"
+                  className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55 motion-reduce:transition-none min-[1200px]:min-h-9 min-[1200px]:min-w-[140px] min-[1200px]:px-3 min-[1200px]:text-[12px]"
                 >
                   <span className="inline-flex w-4 shrink-0 justify-center" aria-hidden="true">
                     {exporting === "pdf" ? <Loader2 size={16} className="animate-spin motion-reduce:animate-none" /> : <FileDown size={16} />}
@@ -430,7 +430,7 @@ export function BuilderShell({
                   disabled={!!exporting}
                   onClick={() => download("docx")}
                   aria-busy={exporting === "docx"}
-                  className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-4 text-[13px] font-semibold text-[var(--color-forest-deep)] transition-colors hover:border-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55 motion-reduce:transition-none"
+                  className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-4 text-[13px] font-semibold text-[var(--color-forest-deep)] transition-colors hover:border-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55 motion-reduce:transition-none min-[1200px]:min-h-9 min-[1200px]:min-w-[140px] min-[1200px]:px-3 min-[1200px]:text-[12px]"
                 >
                   <span className="inline-flex w-4 shrink-0 justify-center" aria-hidden="true">
                     {exporting === "docx" ? <Loader2 size={16} className="animate-spin motion-reduce:animate-none" /> : <FileText size={16} />}
@@ -449,7 +449,7 @@ export function BuilderShell({
                   aria-expanded={workflowOpen}
                   aria-controls="builder-workflow"
                   onClick={() => setWorkflowOpen((value) => !value)}
-                  className="rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px] min-[1200px]:hidden"
+                  className={clsx("rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px] min-[1200px]:hidden", step === "export" && "min-[1200px]:py-2 min-[1200px]:text-[12px]")}
                 >
                   {workflowOpen ? "Hide workflow" : "Workflow"}
                 </button>
@@ -458,7 +458,7 @@ export function BuilderShell({
                   aria-expanded={inspectorOpen}
                   aria-controls="design-inspector"
                   onClick={() => setInspectorOpen((value) => !value)}
-                  className="rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px]"
+                  className={clsx("rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px]", step === "export" && "min-[1200px]:py-2 min-[1200px]:text-[12px]")}
                 >
                   {inspectorOpen ? "Hide controls" : "Design controls"}
                 </button>

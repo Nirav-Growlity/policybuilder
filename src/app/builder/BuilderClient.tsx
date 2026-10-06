@@ -693,7 +693,8 @@ function BuilderClientWorkspace() {
       ) : (
         <Button
           variant="secondary"
-          size="md"
+          size={step === "export" ? "sm" : "md"}
+          className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined}
           icon={<FileUp size={14} />}
           onClick={() => fileInputRef.current?.click()}
         >
@@ -703,7 +704,8 @@ function BuilderClientWorkspace() {
       {(draftId || backendDocumentId) ? (
         <Button
           variant="secondary"
-          size="md"
+          size={step === "export" ? "sm" : "md"}
+          className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined}
           icon={<Building2 size={14} />}
           onClick={() => setShowCompanyWarning(true)}
         >
@@ -711,7 +713,7 @@ function BuilderClientWorkspace() {
         </Button>
       ) : null}
       <div className="w-px h-6 bg-[var(--color-line-2)] mx-1" />
-      <Button variant="secondary" size="md" icon={<ArrowLeft size={14} />} onClick={prev} disabled={isFirst}>
+      <Button variant="secondary" size={step === "export" ? "sm" : "md"} className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined} icon={<ArrowLeft size={14} />} onClick={prev} disabled={isFirst}>
         Back
       </Button>
       {!isLast && (<Button
