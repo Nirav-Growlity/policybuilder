@@ -3,62 +3,15 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { CoverComposition, ImportedPolicyContext, Policy, PolicyType, StepId } from "./types";
-import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT, REVISION_HISTORY_DEFAULT, getPolicyProfile } from "./constants";
+import { FOCUS_AREAS_DEFAULT, RESPONSIBILITIES_DEFAULT } from "./constants";
 import { normalizePolicyQuantitative } from "./quantitative";
 import { getWorkflowSteps, normalizePolicyStructure } from "./sections";
-import { DEFAULT_DOCUMENT_THEME_ID } from "./document-themes";
 import { normalizePolicyCovers } from "./cover-composition";
 import { initializeFocusAreaCatalogFromDefaults } from "./focus-area-catalog";
 import { normalizePolicyRevisionHistory } from "./revision-history";
 import { policyCraftBuilderStorage } from "./policycraft-builder-storage";
-
-export const initialPolicy = (policyType: PolicyType = "environmental"): Policy => {
-  const profile = getPolicyProfile(policyType);
-  return normalizePolicyStructure({
-  policyType,
-  documentTemplate: DEFAULT_DOCUMENT_THEME_ID,
-  documentTheme: DEFAULT_DOCUMENT_THEME_ID,
-  visualStyle: "corporate",
-  brandColorSource: "logo",
-  showTableOfContents: true,
-  showAcknowledgement: true,
-  sdgDisplay: "tiles",
-  company: {
-    name: "",
-    industry: "",
-    subCategory: "",
-    country: "",
-    websiteLink: "",
-    companyLogo: "",
-    logoPalette: undefined,
-    reportingPeriod: "FY",
-    site: "",
-    sites: [],
-    docNum: "",
-    revNum: "01",
-    effectiveDate: "",
-    lastReviewDate: "",
-    reviewDate: "",
-    reviewFrequency: "Yearly",
-    approver: "",
-    reviewerDesignations: [],
-  },
-  standards: [],
-  declaration: { preface: "", declaration: "", scope: "" },
-  focusAreas: [...profile.focusAreas],
-  focusAreaSelection: { mode: "profile-default" },
-  qualitative: {},
-  quantitative: [],
-  sdgs: [],
-  responsibilities: profile.responsibilities.map((r) => ({ ...r })),
-  monitoring: "",
-  reviewMechanism: "",
-  showRevisionHistory: true,
-  revisionHistory: [...REVISION_HISTORY_DEFAULT],
-  activeCoverVariant: "manual",
-  definitions: policyType === "living-wage" ? { title: "Living Wage", content: "A living wage is remuneration sufficient to provide a decent standard of living for a worker and their family, considering local conditions and statutory requirements." } : undefined,
-});
-};
+import { initialPolicy } from "./initial-policy";
+export { initialPolicy } from "./initial-policy";
 
 interface BuilderState {
   step: StepId;

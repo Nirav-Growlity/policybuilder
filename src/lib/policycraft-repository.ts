@@ -2,9 +2,10 @@ import { randomUUID } from "node:crypto";
 import type { ResultSetHeader, RowDataPacket } from "mysql2";
 import { policyCraftPool } from "./db";
 import type { PolicyCraftAuthContext } from "./policycraft-auth";
+import { arePolicyCraftTaskTablesInstalled, isTaskLinkedDocument, saveManagerProgressSnapshot } from "./policycraft-task-repository";
 import { coverAssetIdFromReference } from "./cover-composition";
 import { alignGeneratedDraftTitle, nextUniqueDraftTitle } from "./policycraft-draft-view";
-import { mapCompanyMaster } from "./policycraft-mapping";
+import { getCompanyMasterFromRegistry, policyCraftOrganizationLookupSql } from "./policycraft-organization-repository";
 import type {
   CompanyMasterSnapshot,
   PolicyCraftDocumentState,
@@ -13,26 +14,6 @@ import type {
   StoredPolicyDocument,
 } from "./policycraft-types";
 import type { Policy } from "./types";
-
-type OrganizationRow = RowDataPacket & {
-  id: number;
-  org_code: string;
-  company_name: string;
-  address: string;
-  country: string;
-  city: string;
-  website: string;
-  sector: string | null;
-  sub_sector: string | null;
-};
-
-type SiteRow = RowDataPacket & {
-  id: number;
-  site_code: string;
-  name: string;
-  address: string;
-  type: string;
-};
 
 type DocumentSummaryRow = RowDataPacket & {
   id: string;
@@ -48,6 +29,7 @@ type DocumentSummaryRow = RowDataPacket & {
   organization_id?: number;
   organization_code?: string;
   organization_name?: string;
+  organization_source?: "esg" | "standalone";
   organization_deleted?: number;
   organization_expiry?: Date | string | null;
   created_by_user_id?: number;
@@ -90,6 +72,7 @@ function toSummary(row: DocumentSummaryRow): PolicyDocumentSummary {
       id: row.organization_id,
       code: row.organization_code || "",
       name: row.organization_name || "",
+      ...(row.organization_source ? { source: row.organization_source } : {}),
       deleted: Boolean(row.organization_deleted),
       expired: row.organization_expiry !== null && row.organization_expiry !== undefined && new Date(row.organization_expiry).getTime() < Date.now(),
     } } : {}),
@@ -100,6 +83,7 @@ const documentSummarySelect = `d.id, d.title, d.policy_type, d.current_step,
   d.lock_version, d.created_at, d.updated_at, d.archived_at, d.created_by_user_id,
   creator.name AS created_by_name, creator.email AS created_by_email,
   o.id AS organization_id, o.org_code AS organization_code, o.company_name AS organization_name,
+  o.source AS organization_source,
   o.is_deleted AS organization_deleted, o.expiry_date AS organization_expiry`;
 const documentMetadataSelect = `${documentSummarySelect}, d.policy_json, d.imported_policy_json`;
 
@@ -159,25 +143,7 @@ function toDocument(row: DocumentRow): StoredPolicyDocument {
 }
 
 export async function getCompanyMaster(auth: PolicyCraftAuthContext): Promise<CompanyMasterSnapshot> {
-  const [organizations] = await policyCraftPool.execute<OrganizationRow[]>(
-    `SELECT id, org_code, company_name, address, country, city, website, sector, sub_sector
-       FROM organizations
-      WHERE id = ? AND is_deleted = 0
-      LIMIT 1`,
-    [auth.organization.id],
-  );
-  const organization = organizations[0];
-  if (!organization) throw new Error("Organization not found");
-
-  const [sites] = await policyCraftPool.execute<SiteRow[]>(
-    `SELECT id, site_code, name, address, type
-       FROM sites
-      WHERE org_id = ? AND is_deleted = 0
-      ORDER BY id ASC`,
-    [String(auth.organization.id)],
-  );
-
-  return mapCompanyMaster(organization, sites);
+  return getCompanyMasterFromRegistry(auth.organization.id);
 }
 
 export async function listDocuments(orgId: number, archived = false): Promise<PolicyDocumentSummary[]> {
@@ -195,7 +161,7 @@ export async function listDocuments(orgId: number, archived = false): Promise<Po
   const [rows] = await policyCraftPool.execute<DocumentRow[]>(
     `SELECT ${documentMetadataSelect}
        FROM policycraft_documents d
-       INNER JOIN organizations o ON o.id = d.org_id
+       INNER JOIN (${policyCraftOrganizationLookupSql}) o ON o.id = d.org_id
        LEFT JOIN users creator ON creator.id = d.created_by_user_id
       WHERE d.org_id = ? AND d.archived_at ${archivePredicate} AND d.id IN (${idPlaceholders})`,
     [orgId, ...orderedIds.map((row) => row.id)],
@@ -213,7 +179,7 @@ export async function getDocument(orgId: number, id: string, includeArchived = f
   const [rows] = await policyCraftPool.execute<DocumentRow[]>(
     `SELECT ${documentMetadataSelect}
        FROM policycraft_documents d
-       INNER JOIN organizations o ON o.id = d.org_id
+       INNER JOIN (${policyCraftOrganizationLookupSql}) o ON o.id = d.org_id
        LEFT JOIN users creator ON creator.id = d.created_by_user_id
       WHERE d.id = ? AND d.org_id = ? ${includeArchived ? "" : "AND d.archived_at IS NULL"}
       LIMIT 1`,
@@ -229,18 +195,32 @@ export async function listAllAdminDocuments(filters: { organizationId?: number; 
   if (filters.creatorId) { predicates.push("d.created_by_user_id = ?"); values.push(filters.creatorId); }
   if (filters.policyType) { predicates.push("d.policy_type = ?"); values.push(filters.policyType); }
   if (filters.archived !== undefined) predicates.push(`d.archived_at IS ${filters.archived ? "NOT " : ""}NULL`);
+  const whereClause = predicates.length ? `WHERE ${predicates.join(" AND ")}` : "";
+  // Sort lightweight IDs only; full policy JSON can exhaust MySQL's sort buffer.
+  const [orderedIds] = await policyCraftPool.execute<(RowDataPacket & { id: string })[]>(
+    `SELECT d.id
+       FROM policycraft_documents d
+       INNER JOIN (${policyCraftOrganizationLookupSql}) o ON o.id = d.org_id
+       ${whereClause}
+      ORDER BY d.updated_at DESC, d.id ASC`, values,
+  );
+  if (orderedIds.length === 0) return [];
+
+  const idPlaceholders = orderedIds.map(() => "?").join(", ");
   const [rows] = await policyCraftPool.execute<AdminDocumentSummaryRow[]>(
     `SELECT ${documentSummarySelect}, d.policy_json
        FROM policycraft_documents d
-       INNER JOIN organizations o ON o.id = d.org_id
+       INNER JOIN (${policyCraftOrganizationLookupSql}) o ON o.id = d.org_id
        LEFT JOIN users creator ON creator.id = d.created_by_user_id
-       ${predicates.length ? `WHERE ${predicates.join(" AND ")}` : ""}
-      ORDER BY d.updated_at DESC, d.id ASC`, values,
+       ${whereClause ? `${whereClause} AND` : "WHERE"} d.id IN (${idPlaceholders})`,
+    [...values, ...orderedIds.map((row) => row.id)],
   );
-  return rows.map((row) => ({
-    ...toSummary(row),
-    coverPreview: toCoverPreview(parseJson<Policy>(row.policy_json)),
-  }));
+  const rowsById = new Map(rows.map((row) => [row.id, row]));
+  return orderedIds.flatMap(({ id }) => {
+    const row = rowsById.get(id);
+    if (!row) return [];
+    return [{ ...toSummary(row), coverPreview: toCoverPreview(parseJson<Policy>(row.policy_json)) }];
+  });
 }
 
 export async function listPolicyCraftDocumentCreators(): Promise<Array<{ id: string; name: string; email: string }>> {
@@ -263,6 +243,7 @@ export async function createDocument(
   const connection = await policyCraftPool.getConnection();
   try {
     await connection.beginTransaction();
+    const taskTablesInstalled = await arePolicyCraftTaskTablesInstalled(connection);
     const [existingTitles] = await connection.execute<(RowDataPacket & { title: string })[]>(
       `SELECT title FROM policycraft_documents WHERE org_id = ? FOR UPDATE`,
       [auth.organization.id],
@@ -285,6 +266,9 @@ export async function createDocument(
         state.importedPolicy ? JSON.stringify(state.importedPolicy) : null,
       ],
     );
+    if (taskTablesInstalled && auth.role === "manager") {
+      await saveManagerProgressSnapshot({ connection, auth, documentId: id, title: savedTitle, policyType: state.policy.policyType, state, documentVersion: 1 });
+    }
     await connection.commit();
   } catch (error) {
     await connection.rollback();
@@ -303,34 +287,54 @@ export async function updateDocument(
   title: string,
   state: PolicyCraftDocumentState,
   lockVersion: number,
-): Promise<"updated" | "conflict" | "not_found"> {
-  let savedTitle = alignGeneratedDraftTitle(title, state.policy.policyType);
-  if (savedTitle !== title.trim()) {
-    const [existingTitles] = await policyCraftPool.execute<(RowDataPacket & { title: string })[]>(
-      `SELECT title FROM policycraft_documents WHERE org_id = ? AND id <> ?`,
-      [auth.organization.id, id],
+): Promise<"updated" | "conflict" | "not_found" | "type_locked"> {
+  const connection = await policyCraftPool.getConnection();
+  let affectedRows = 0;
+  try {
+    await connection.beginTransaction();
+    const taskTablesInstalled = await arePolicyCraftTaskTablesInstalled(connection);
+    if (taskTablesInstalled && await isTaskLinkedDocument(connection, auth.organization.id, id)) {
+      const [tasks] = await connection.execute<(RowDataPacket & { policy_type: string })[]>(
+        `SELECT policy_type FROM policycraft_tasks WHERE org_id = ? AND document_id = ? LIMIT 1 FOR UPDATE`,
+        [auth.organization.id, id],
+      );
+      if (tasks[0] && tasks[0].policy_type !== state.policy.policyType) {
+        await connection.rollback();
+        return "type_locked";
+      }
+    }
+    let savedTitle = alignGeneratedDraftTitle(title, state.policy.policyType);
+    if (savedTitle !== title.trim()) {
+      const [existingTitles] = await connection.execute<(RowDataPacket & { title: string })[]>(
+        `SELECT title FROM policycraft_documents WHERE org_id = ? AND id <> ?`,
+        [auth.organization.id, id],
+      );
+      savedTitle = nextUniqueDraftTitle(savedTitle, existingTitles.map((row) => row.title));
+    }
+    const [result] = await connection.execute<ResultSetHeader>(
+      `UPDATE policycraft_documents
+          SET title = ?, policy_type = ?, current_step = ?, policy_json = CAST(? AS JSON),
+              imported_policy_json = CAST(? AS JSON), updated_by_user_id = ?,
+              lock_version = lock_version + 1, updated_at = CURRENT_TIMESTAMP(3)
+        WHERE id = ? AND org_id = ? AND archived_at IS NULL AND lock_version = ?`,
+      [savedTitle, state.policy.policyType, state.step, JSON.stringify(state.policy),
+        state.importedPolicy ? JSON.stringify(state.importedPolicy) : null, Number(auth.user.id), id, auth.organization.id, lockVersion],
     );
-    savedTitle = nextUniqueDraftTitle(savedTitle, existingTitles.map((row) => row.title));
+    affectedRows = result.affectedRows;
+    if (affectedRows > 0 && taskTablesInstalled && auth.role === "manager") {
+      await saveManagerProgressSnapshot({
+        connection, auth, documentId: id, title: savedTitle, policyType: state.policy.policyType,
+        state, documentVersion: lockVersion + 1,
+      });
+    }
+    await connection.commit();
+  } catch (error) {
+    await connection.rollback();
+    throw error;
+  } finally {
+    connection.release();
   }
-  const [result] = await policyCraftPool.execute<ResultSetHeader>(
-    `UPDATE policycraft_documents
-        SET title = ?, policy_type = ?, current_step = ?, policy_json = CAST(? AS JSON),
-            imported_policy_json = CAST(? AS JSON), updated_by_user_id = ?,
-            lock_version = lock_version + 1, updated_at = CURRENT_TIMESTAMP(3)
-      WHERE id = ? AND org_id = ? AND archived_at IS NULL AND lock_version = ?`,
-    [
-      savedTitle,
-      state.policy.policyType,
-      state.step,
-      JSON.stringify(state.policy),
-      state.importedPolicy ? JSON.stringify(state.importedPolicy) : null,
-      Number(auth.user.id),
-      id,
-      auth.organization.id,
-      lockVersion,
-    ],
-  );
-  if (result.affectedRows > 0) return "updated";
+  if (affectedRows > 0) return "updated";
   const existing = await getDocument(auth.organization.id, id);
   return existing ? "conflict" : "not_found";
 }
@@ -372,11 +376,24 @@ export async function restoreDocument(orgId: number, userId: number, id: string)
   return result.affectedRows > 0;
 }
 
-export async function deleteArchivedDocument(orgId: number, id: string): Promise<boolean> {
-  const [result] = await policyCraftPool.execute<ResultSetHeader>(
-    `DELETE FROM policycraft_documents
-      WHERE id = ? AND org_id = ? AND archived_at IS NOT NULL`,
-    [id, orgId],
-  );
-  return result.affectedRows > 0;
+export async function deleteArchivedDocument(orgId: number, id: string): Promise<boolean | "task_linked"> {
+  const connection = await policyCraftPool.getConnection();
+  try {
+    await connection.beginTransaction();
+    if (await arePolicyCraftTaskTablesInstalled(connection) && await isTaskLinkedDocument(connection, orgId, id)) {
+      await connection.rollback();
+      return "task_linked";
+    }
+    const [result] = await connection.execute<ResultSetHeader>(
+      `DELETE FROM policycraft_documents
+        WHERE id = ? AND org_id = ? AND archived_at IS NOT NULL`, [id, orgId],
+    );
+    await connection.commit();
+    return result.affectedRows > 0;
+  } catch (error) {
+    await connection.rollback();
+    throw error;
+  } finally {
+    connection.release();
+  }
 }

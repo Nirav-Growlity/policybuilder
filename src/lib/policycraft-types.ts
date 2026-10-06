@@ -37,6 +37,9 @@ export type CompanyMasterSnapshot = {
   address: string;
   city: string;
   sites: CompanyMasterSite[];
+  source?: "esg" | "standalone";
+  reportingPeriod?: "FY" | "CY";
+  companyLogo?: string;
 };
 
 export type PolicyCraftDocumentState = {
@@ -56,7 +59,7 @@ export type PolicyDocumentSummary = {
   archivedAt: string | null;
   coverPreview?: PolicyCoverPreviewSnapshot;
   createdBy?: { id: string; name: string; email: string };
-  organization?: { id: number; code: string; name: string; deleted: boolean; expired: boolean };
+  organization?: { id: number; code: string; name: string; source?: "esg" | "standalone"; deleted: boolean; expired: boolean };
 };
 
 export type StoredPolicyDocument = PolicyDocumentSummary & {

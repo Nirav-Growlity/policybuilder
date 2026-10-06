@@ -3,6 +3,7 @@ import { policyCraftPool } from "@/lib/db";
 import { listPolicyCraftOrganizations } from "@/lib/policycraft-access-repository";
 import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
 import { getPolicyCraftActorResult, resolvePolicyCraftOrganization } from "@/lib/policycraft-auth";
+import { policyCraftOrganizationLookupSql } from "@/lib/policycraft-organization-repository";
 
 export async function GET() {
   const result = await getPolicyCraftActorResult();
@@ -16,7 +17,7 @@ export async function GET() {
   } else if (actor.role === "manager") {
     const [rows] = await policyCraftPool.execute<(RowDataPacket & { org_id: number })[]>(
       `SELECT m.org_id FROM policycraft_manager_organizations m
-        INNER JOIN organizations o ON o.id = m.org_id
+        INNER JOIN (${policyCraftOrganizationLookupSql}) o ON o.id = m.org_id
        WHERE m.manager_user_id = ? AND m.active = 1 AND o.is_deleted = 0
          AND (o.expiry_date IS NULL OR o.expiry_date >= CURRENT_TIMESTAMP(3))
        ORDER BY o.company_name ASC, o.id ASC`,

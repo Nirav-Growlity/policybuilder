@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import type { Pool } from "mysql2/promise";
 import type { Policy } from "./types";
+import { initialPolicy } from "./initial-policy";
 
 process.env.HOST ||= "127.0.0.1";
 process.env.USER_NAME ||= "policycraft-test";
@@ -40,11 +41,13 @@ function adminRow(id: string) {
 test("admin listing uses a summary projection and leaves organization scope optional", async () => {
   const [{ policyCraftPool }, repository] = await modules;
   const originalExecute = policyCraftPool.execute.bind(policyCraftPool) as PoolExecute;
-  let sql = "";
-  let values: unknown[] = [];
+  const calls: Array<{ sql: string; values: unknown[] }> = [];
   policyCraftPool.execute = (async (query: string, params?: unknown[]) => {
-    sql = query;
-    values = params || [];
+    calls.push({ sql: query, values: params || [] });
+    if (/policy_json/i.test(query) && /ORDER BY/i.test(query)) {
+      throw Object.assign(new Error("Out of sort memory, consider increasing server sort buffer size"), { code: "ER_OUT_OF_SORTMEMORY" });
+    }
+    if (!/policy_json/i.test(query)) return [[{ id: "document-1" }], []] as never;
     return [[{
       ...adminRow("document-1"),
       policy_json: {
@@ -66,6 +69,9 @@ test("admin listing uses a summary projection and leaves organization scope opti
 
   try {
     const documents = await repository.listAllAdminDocuments({});
+    assert.equal(calls.length, 2);
+    const [ordered, payload] = calls;
+    const sql = payload.sql;
     assert.equal(documents.length, 1);
     assert.equal(documents[0].organization?.id, 21);
     assert.equal(documents[0].createdBy?.id, "7");
@@ -108,9 +114,13 @@ test("admin listing uses a summary projection and leaves organization scope opti
     assert.equal("importedPolicy" in documents[0], false);
     assert.equal(JSON.stringify(documents[0]).includes("Confidential policy text"), false);
     assert.equal(JSON.stringify(documents[0]).includes("Imported confidential content"), false);
-    assert.match(sql, /ORDER BY d\.updated_at DESC, d\.id ASC/);
+    assert.match(ordered.sql, /SELECT d\.id\s+FROM/);
+    assert.match(ordered.sql, /ORDER BY d\.updated_at DESC, d\.id ASC/);
+    assert.doesNotMatch(ordered.sql, /policy_json/);
+    assert.doesNotMatch(sql, /ORDER BY/i);
     assert.doesNotMatch(sql, /WHERE\s+d\.org_id\s*=/i);
-    assert.deepEqual(values, []);
+    assert.deepEqual(ordered.values, []);
+    assert.deepEqual(payload.values, ["document-1"]);
   } finally {
     policyCraftPool.execute = originalExecute;
   }
@@ -121,7 +131,9 @@ test("admin listing keeps parameterized organization, creator, type, and archive
   const originalExecute = policyCraftPool.execute.bind(policyCraftPool) as PoolExecute;
   let sql = "";
   let values: unknown[] = [];
+  let calls = 0;
   policyCraftPool.execute = (async (query: string, params?: unknown[]) => {
+    calls += 1;
     sql = query;
     values = params || [];
     return [[], []] as never;
@@ -134,10 +146,51 @@ test("admin listing keeps parameterized organization, creator, type, and archive
     assert.match(sql, /d\.policy_type = \?/);
     assert.match(sql, /d\.archived_at IS NOT NULL/);
     assert.deepEqual(values, [21, 7, "environmental"]);
+    assert.equal(calls, 1, "an empty ID list must not fetch policy payloads");
   } finally {
     policyCraftPool.execute = originalExecute;
   }
 });
+
+for (const archived of [false, true, undefined]) {
+  test(`admin listing preserves filtered ID order without sorting payloads (archived=${archived})`, async () => {
+    const [{ policyCraftPool }, repository] = await modules;
+    const originalExecute = policyCraftPool.execute.bind(policyCraftPool) as PoolExecute;
+    const calls: Array<{ sql: string; values: unknown[] }> = [];
+    policyCraftPool.execute = (async (sql: string, params?: unknown[]) => {
+      calls.push({ sql, values: params || [] });
+      if (/policy_json/i.test(sql) && /ORDER BY/i.test(sql)) {
+        throw Object.assign(new Error("Out of sort memory, consider increasing server sort buffer size"), { code: "ER_OUT_OF_SORTMEMORY" });
+      }
+      if (calls.length === 1) return [[{ id: "b" }, { id: "removed" }, { id: "a" }], []] as never;
+      return [["a", "b"].map((id) => ({
+        ...adminRow(id),
+        archived_at: archived ? "2026-02-04T00:00:00.000Z" : null,
+        policy_json: id === "a" ? JSON.stringify(initialPolicy("environmental")) : initialPolicy("environmental"),
+      })), []] as never;
+    }) as unknown as PoolExecute;
+
+    try {
+      const documents = await repository.listAllAdminDocuments({ organizationId: 21, creatorId: 7, policyType: "environmental", archived });
+      assert.deepEqual(documents.map((document) => document.id), ["b", "a"]);
+      assert.equal(calls.length, 2);
+      for (const { sql } of calls) {
+        assert.match(sql, /INNER JOIN \(SELECT pco\.id,[\s\S]*pco\.esg_org_id/);
+        assert.match(sql, /d\.org_id = \? AND d\.created_by_user_id = \? AND d\.policy_type = \?/);
+        if (archived === undefined) assert.doesNotMatch(sql, /d\.archived_at IS/);
+        else assert.match(sql, archived ? /d\.archived_at IS NOT NULL/ : /d\.archived_at IS NULL/);
+      }
+      assert.deepEqual(calls[0].values, [21, 7, "environmental"]);
+      assert.deepEqual(calls[1].values, [21, 7, "environmental", "b", "removed", "a"]);
+      assert.match(calls[0].sql, /SELECT d\.id\s+FROM/);
+      assert.match(calls[0].sql, /ORDER BY d\.updated_at DESC, d\.id ASC/);
+      assert.match(calls[1].sql, /AND d\.id IN \(\?, \?, \?\)/);
+      assert.doesNotMatch(calls[1].sql, /ORDER BY|imported_policy_json/i);
+    } finally {
+      policyCraftPool.execute = originalExecute;
+    }
+  });
+}
 
 test("admin API accepts the listing UI's view and orgId query names", () => {
   return modules.then(([, , filters]) => {

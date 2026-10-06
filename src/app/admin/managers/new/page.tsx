@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AlertTriangle, ArrowLeft, Check, Loader2, RefreshCw, ShieldCheck, UserPlus } from "lucide-react";
 import type { PolicyCraftManagerSummary, PolicyCraftOrganization } from "@/lib/policycraft-access-types";
+import { OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
 
 type AdminManagersResponse = { managers: PolicyCraftManagerSummary[]; organizations: PolicyCraftOrganization[] };
 type ExistingAccount = { id: string; name: string; email: string };
@@ -35,6 +36,10 @@ export default function CreateManagerPage() {
       if (!response.ok) throw new Error("Could not load organizations. Retry to try again.");
       const data = await response.json() as AdminManagersResponse;
       setOrganizations(data.organizations);
+      const requestedOrganizationId = Number(new URLSearchParams(window.location.search).get("organizationId"));
+      if (Number.isSafeInteger(requestedOrganizationId) && requestedOrganizationId > 0 && data.organizations.some((organization) => organization.id === requestedOrganizationId && !organization.deleted && !organization.expired)) {
+        setOrganizationIds((current) => [...new Set([...current, requestedOrganizationId])]);
+      }
     } catch (cause) {
       setLoadingError(cause instanceof Error ? cause.message : "Could not load organizations.");
     } finally {
@@ -84,7 +89,7 @@ export default function CreateManagerPage() {
   }
 
   const activeOrganizations = organizations.filter((organization) => !organization.deleted && !organization.expired);
-  const visibleOrganizations = activeOrganizations.filter((organization) => `${organization.name} ${organization.code}`.toLowerCase().includes(organizationSearch.trim().toLowerCase()));
+  const visibleOrganizations = activeOrganizations.filter((organization) => `${organization.name} ${organization.code} ${organizationSourceName(organization)}`.toLowerCase().includes(organizationSearch.trim().toLowerCase()));
   const createDisabledReason = loading
     ? "Organizations are still loading."
     : loadingError
@@ -130,7 +135,7 @@ export default function CreateManagerPage() {
           <section className="mt-8 border-t border-[var(--color-line)] pt-6" aria-labelledby="organization-access-title"><div className="flex items-baseline justify-between gap-3"><h2 id="organization-access-title" className="text-base font-semibold">Organization access</h2><span className="text-xs text-[var(--color-muted)]">Step 2 of 2</span></div><p className="mt-1 text-sm leading-5 text-[var(--color-muted)]">Choose the client organizations this manager can open. Their policies are shared with assigned users.</p>
             <label htmlFor="invite-org-search" className="mt-4 mb-2 block text-xs font-semibold text-[var(--color-ink-2)]">Search organizations</label><input id="invite-org-search" name="organizationSearch" autoComplete="off" type="search" value={organizationSearch} onChange={(event) => setOrganizationSearch(event.target.value)} disabled={submitting} placeholder="Search by name or code" className="mb-3 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-forest)] disabled:opacity-60" />
             <fieldset><legend className="sr-only">Assigned organizations</legend><div className="max-h-72 divide-y divide-[var(--color-line)] overflow-y-auto rounded-lg border border-[var(--color-line)] bg-white" aria-busy={loading}>
-              {loading ? <p className="flex min-h-16 items-center gap-2 px-4 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organizations…</p> : loadingError ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">Organizations could not be loaded. Retry above to continue.</p> : visibleOrganizations.map((organization) => <label key={organization.id} className="flex min-h-12 cursor-pointer items-center gap-3 px-4 py-2 text-sm hover:bg-[var(--color-cream-2)] focus-within:outline focus-within:outline-2 focus-within:outline-[var(--color-forest)]"><input type="checkbox" disabled={submitting} checked={organizationIds.includes(organization.id)} onChange={(event) => setOrganizationIds((current) => event.target.checked ? [...new Set([...current, organization.id])] : current.filter((id) => id !== organization.id))} className="h-4 w-4 shrink-0 accent-[var(--color-forest)] disabled:opacity-60" /><span className="min-w-0 flex-1 break-words">{organization.name}</span><span className="shrink-0 text-[10px] text-[var(--color-muted)]">{organization.code}</span></label>)}
+              {loading ? <p className="flex min-h-16 items-center gap-2 px-4 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organizations…</p> : loadingError ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">Organizations could not be loaded. Retry above to continue.</p> : visibleOrganizations.map((organization) => <label key={organization.id} className="flex min-h-12 cursor-pointer items-center gap-3 px-4 py-2 text-sm hover:bg-[var(--color-cream-2)] focus-within:outline focus-within:outline-2 focus-within:outline-[var(--color-forest)]"><input type="checkbox" disabled={submitting} checked={organizationIds.includes(organization.id)} onChange={(event) => setOrganizationIds((current) => event.target.checked ? [...new Set([...current, organization.id])] : current.filter((id) => id !== organization.id))} className="h-4 w-4 shrink-0 accent-[var(--color-forest)] disabled:opacity-60" /><span className="min-w-0 flex-1 break-words">{organization.name}</span><OrganizationSourceBadge organization={organization} /><span className="shrink-0 text-[10px] text-[var(--color-muted)]">{organization.code}</span></label>)}
               {!loading && !loadingError && activeOrganizations.length === 0 ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">No active organizations are available to assign.</p> : null}
               {!loading && !loadingError && activeOrganizations.length > 0 && visibleOrganizations.length === 0 ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">No organizations match your search.</p> : null}
             </div></fieldset>

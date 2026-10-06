@@ -70,6 +70,8 @@ export function applyCompanyMaster(policy: Policy, snapshot: CompanyMasterSnapsh
       websiteLink: snapshot.websiteLink,
       site: firstAddress,
       sites: snapshot.sites.map((site) => ({ ...site })),
+      ...(snapshot.reportingPeriod ? { reportingPeriod: snapshot.reportingPeriod } : {}),
+      ...(snapshot.companyLogo !== undefined ? { companyLogo: snapshot.companyLogo } : {}),
     },
   };
 }

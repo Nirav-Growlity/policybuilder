@@ -6,16 +6,16 @@ import { normalizePolicyCraftEmail } from "./policycraft-access-policy";
 import { createPolicyCraftInvitationToken, hashPolicyCraftInvitationToken } from "./policycraft-invitation-tokens";
 import { acceptPolicyCraftInvitation, type InvitationAcceptancePort, type InvitationAcceptanceTransaction, type PolicyCraftInvitation } from "./policycraft-invitation-workflow";
 import { grantPolicyCraftManagerAccess as grantManagerAccess, type ManagerGrantPort, type ManagerGrantTransaction } from "./policycraft-manager-grant-workflow";
+import { ensurePolicyCraftOrganizationRegistry, listPolicyCraftOrganizationRecords } from "./policycraft-organization-repository";
 
 const INVITATION_MS = 72 * 60 * 60 * 1000;
 
 type OrganizationRow = RowDataPacket & {
-  id: number; org_code: string; company_name: string; is_deleted: number; expiry_date: Date | string | null;
+  id: number; source: "esg" | "standalone"; org_code: string | null; company_name: string | null; is_deleted: number | null; expiry_date: Date | string | null; profile_json: unknown;
 };
 type ManagerRow = RowDataPacket & {
   id: number; name: string; email: string; status: "active" | "disabled";
-  policy_count: number; org_id: number | null; org_code: string | null; company_name: string | null;
-  org_is_deleted: number | null; expiry_date: Date | string | null;
+  policy_count: number;
 };
 type InvitationRow = RowDataPacket & {
   id: string; email: string; name: string; organization_ids_json: unknown; existing_user_id: number | null;
@@ -44,43 +44,36 @@ function parseOrganizationIds(value: unknown): number[] {
 }
 
 export async function listPolicyCraftOrganizations(): Promise<PolicyCraftOrganization[]> {
-  const [rows] = await policyCraftPool.execute<OrganizationRow[]>(
-    `SELECT id, org_code, company_name, is_deleted, expiry_date
-       FROM organizations ORDER BY company_name ASC, id ASC`,
-  );
-  return rows.map((row) => ({
-    id: row.id, code: row.org_code, name: row.company_name,
-    deleted: Boolean(row.is_deleted), expired: isExpired(row.expiry_date),
-  }));
+  return listPolicyCraftOrganizationRecords();
 }
 
 export async function listPolicyCraftManagers(): Promise<{ managers: PolicyCraftManagerSummary[]; invitations: InvitationSummary[]; organizations: PolicyCraftOrganization[] }> {
   const [rows] = await policyCraftPool.execute<ManagerRow[]>(
-    `SELECT u.id, u.name, u.email, a.status,
-            COUNT(DISTINCT d.id) AS policy_count,
-            o.id AS org_id, o.org_code, o.company_name, o.is_deleted AS org_is_deleted, o.expiry_date
+    `SELECT u.id, u.name, u.email, a.status, COUNT(DISTINCT d.id) AS policy_count
        FROM policycraft_user_access a
        INNER JOIN users u ON u.id = a.user_id
-       LEFT JOIN policycraft_manager_organizations m ON m.manager_user_id = u.id AND m.active = 1
-       LEFT JOIN organizations o ON o.id = m.org_id
        LEFT JOIN policycraft_documents d ON d.created_by_user_id = u.id
       WHERE a.role = 'manager' AND u.is_deleted = 0
-      GROUP BY u.id, u.name, u.email, a.status, o.id, o.org_code, o.company_name, o.is_deleted, o.expiry_date
+      GROUP BY u.id, u.name, u.email, a.status
       ORDER BY u.name ASC, u.id ASC`,
   );
+  const [assignments] = await policyCraftPool.execute<(RowDataPacket & { manager_user_id: number; org_id: number })[]>(
+    `SELECT manager_user_id, org_id FROM policycraft_manager_organizations WHERE active = 1 ORDER BY org_id ASC`,
+  );
+  const organizationsById = new Map((await listPolicyCraftOrganizations()).map((org) => [org.id, org]));
+  const assignedByManager = new Map<number, PolicyCraftOrganization[]>();
+  for (const assignment of assignments) {
+    const organization = organizationsById.get(assignment.org_id);
+    if (!organization) continue;
+    assignedByManager.set(assignment.manager_user_id, [...(assignedByManager.get(assignment.manager_user_id) || []), organization]);
+  }
   const grouped = new Map<string, PolicyCraftManagerSummary>();
   for (const row of rows) {
     const id = String(row.id);
     const manager = grouped.get(id) || {
       id, name: row.name, email: row.email, status: row.status,
-      organizations: [], policyCount: Number(row.policy_count || 0),
+      organizations: assignedByManager.get(row.id) || [], policyCount: Number(row.policy_count || 0),
     };
-    if (row.org_id !== null && row.org_code !== null && row.company_name !== null) {
-      manager.organizations.push({
-        id: row.org_id, code: row.org_code, name: row.company_name,
-        deleted: Boolean(row.org_is_deleted), expired: isExpired(row.expiry_date),
-      });
-    }
     grouped.set(id, manager);
   }
   const [pendingRows] = await policyCraftPool.execute<InvitationRow[]>(
@@ -188,6 +181,7 @@ export async function grantExistingPolicyCraftManagerAccess(email: string, expec
 }
 
 async function validateOrganizations(connection: { execute: typeof policyCraftPool.execute }, ids: number[], allowEmpty = false, lockRows = false, requireUnexpired = false): Promise<number[]> {
+  await ensurePolicyCraftOrganizationRegistry(connection);
   const uniqueIds = [...new Set(ids)];
   if (!uniqueIds.length) {
     if (allowEmpty) return [];
@@ -195,10 +189,16 @@ async function validateOrganizations(connection: { execute: typeof policyCraftPo
   }
   const placeholders = uniqueIds.map(() => "?").join(", ");
   const [rows] = await connection.execute<OrganizationRow[]>(
-    `SELECT id, org_code, company_name, is_deleted, expiry_date
-       FROM organizations WHERE id IN (${placeholders})${lockRows ? " FOR UPDATE" : ""}`, uniqueIds,
+    `SELECT pco.id, pco.source, esg.org_code, esg.company_name, esg.is_deleted, esg.expiry_date, pop.profile_json
+       FROM policycraft_organizations pco
+       LEFT JOIN organizations esg ON esg.id = pco.esg_org_id AND pco.source = 'esg'
+       LEFT JOIN policycraft_organization_profiles pop ON pop.org_id = pco.id
+      WHERE pco.id IN (${placeholders})${lockRows ? " FOR UPDATE" : ""}`, uniqueIds,
   );
-  const valid = new Set(rows.filter((row) => !row.is_deleted && (!requireUnexpired || !isExpired(row.expiry_date))).map((row) => row.id));
+  const valid = new Set(rows.filter((row) => {
+    if (row.source === "standalone") return row.profile_json !== null;
+    return Boolean(row.company_name && !row.is_deleted && (!requireUnexpired || !isExpired(row.expiry_date)));
+  }).map((row) => row.id));
   if (valid.size !== uniqueIds.length) throw new Error("One or more organizations are unavailable.");
   return uniqueIds;
 }
@@ -491,8 +491,11 @@ export function createPolicyCraftInvitationAcceptancePort(): InvitationAcceptanc
             if (!organizationIds.length) return true;
             const uniqueIds = [...new Set(organizationIds)];
             const [rows] = await connection.execute<OrganizationRow[]>(
-              `SELECT id, org_code, company_name, is_deleted, expiry_date
-                 FROM organizations WHERE id IN (${uniqueIds.map(() => "?").join(", ")}) FOR UPDATE`, uniqueIds,
+              `SELECT pco.id FROM policycraft_organizations pco
+                 LEFT JOIN organizations esg ON esg.id = pco.esg_org_id AND pco.source = 'esg'
+                 LEFT JOIN policycraft_organization_profiles pop ON pop.org_id = pco.id
+                WHERE pco.id IN (${uniqueIds.map(() => "?").join(", ")})
+                  AND ((pco.source = 'standalone' AND pop.org_id IS NOT NULL) OR (pco.source = 'esg' AND esg.id IS NOT NULL AND esg.is_deleted = 0)) FOR UPDATE`, uniqueIds,
             );
             return rows.length === uniqueIds.length && rows.every((row) => !row.is_deleted);
           },

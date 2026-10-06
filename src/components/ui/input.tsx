@@ -46,13 +46,17 @@ interface ComboboxProps {
   value: string;
   options: string[];
   onValueChange: (value: string) => void;
+  id?: string;
+  name?: string;
+  required?: boolean;
+  ariaLabel?: string;
   placeholder?: string;
   emptyMessage?: string;
   disabled?: boolean;
 }
 
 /** An editable dropdown with app-native styling, rather than a browser datalist. */
-export function Combobox({ value, options, onValueChange, placeholder, emptyMessage = "No matching options", disabled = false }: ComboboxProps) {
+export function Combobox({ value, options, onValueChange, id, name, required, ariaLabel, placeholder, emptyMessage = "No matching options", disabled = false }: ComboboxProps) {
   const [open, setOpen] = React.useState(false);
   const [showAll, setShowAll] = React.useState(false);
   const rootRef = React.useRef<HTMLDivElement>(null);
@@ -70,6 +74,10 @@ export function Combobox({ value, options, onValueChange, placeholder, emptyMess
     <div ref={rootRef} className="relative">
       <Input
         value={value}
+        id={id}
+        name={name}
+        required={required}
+        aria-label={ariaLabel}
         placeholder={placeholder}
         disabled={disabled}
         onFocus={() => { setShowAll(false); setOpen(true); }}
@@ -87,7 +95,7 @@ export function Combobox({ value, options, onValueChange, placeholder, emptyMess
           type="button"
           aria-label="Clear selection"
           onClick={() => { onValueChange(""); setShowAll(true); setOpen(true); }}
-          className="absolute right-10 top-1 bottom-1 w-8 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] transition-colors cursor-pointer"
+          className="absolute right-10 top-1 bottom-1 w-8 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] transition-colors cursor-pointer"
         >
           <svg className="mx-auto" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg>
         </button>
@@ -99,7 +107,7 @@ export function Combobox({ value, options, onValueChange, placeholder, emptyMess
           setShowAll(true);
           setOpen((shown) => !shown);
         }}
-        className="absolute right-1 top-1 bottom-1 w-9 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] transition-colors cursor-pointer"
+        className="absolute right-1 top-1 bottom-1 w-9 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] transition-colors cursor-pointer"
       >
         <svg className={`mx-auto transition-transform ${open ? "rotate-180" : ""}`} width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>}
@@ -113,7 +121,7 @@ export function Combobox({ value, options, onValueChange, placeholder, emptyMess
               key={option}
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => { onValueChange(option); setShowAll(false); setOpen(false); }}
-              className={`w-full rounded-md px-3 py-2 text-left text-[12.5px] transition-colors cursor-pointer ${option === value ? "bg-[var(--color-forest-soft)] text-[var(--color-forest)] font-semibold" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream)]"}`}
+              className={`w-full rounded-md px-3 py-2 text-left text-[12.5px] transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] ${option === value ? "bg-[var(--color-forest-soft)] text-[var(--color-forest)] font-semibold" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream)]"}`}
             >
               {option}
             </button>

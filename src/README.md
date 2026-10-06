@@ -58,6 +58,26 @@ Run `node --import tsx scripts/verify-invitation-smtp.ts` from this application 
 
 Run `npm run test:access` for the isolated access, invitation, storage, and export tests. The repeatable browser smoke check is `node --import tsx scripts/verify-access-ui.mjs`; start a development server first and set `POLICYCRAFT_UI_URL` to its origin. It mocks API responses and does not touch database records or send mail. Screenshots default to `output/playwright`; use `POLICYCRAFT_UI_OUTPUT` to choose another writable directory. `node scripts/verify-access-anonymous.mjs` checks that the generation, import, and export handlers reject requests without cookies before processing content.
 
+## PolicyCraft-only organizations
+
+Admins create company profiles at `/admin/organizations` for organizations that exist only in PolicyCraft. Profiles require company name, sector/sub-sector, country, website, FY/CY reporting period, logo and operating sites. Assign managers through the existing manager workflow; creation grants no manager access automatically. Admins and assigned managers can edit these profiles. New policies inherit the latest profile; saved policies retain their existing company details and logos.
+
+These records are stored in PolicyCraft-owned tables and never added to the shared ESG organization or site tables. Regular client users cannot access them. ESG organizations remain available through a separate source mapping with their existing master details.
+
+Before deploying this feature, the database owner must apply the additive `migrations/2026_10_create_policycraft_organizations.sql` migration during the cutover described in [the organization rollout guide](../docs/policycraft-organizations-rollout.md). Existing organization IDs are retained at initial seeding; subsequent registry IDs are allocated independently. Missing registry tables fail closed. Follow the guide's acceptance and rollback constraints after new organizations have been created.
+
+Run `npm run test:organizations` for profile, logo, authorization, company mapping and task integration checks. With the app running locally, `node scripts/verify-organizations-anonymous.mjs` verifies that cookie-free requests cannot use the new organization APIs. Real-account and rendered-output acceptance remains manual as described in the rollout guide.
+
+## Tasks and manager progress
+
+Administrators assign policy work at `/admin/tasks` and monitor manager-only saved progress in the Manager Work tab. Managers start and resume their assignments at `/manager/tasks`; completion saves the current policy first and requires acknowledgement when sections remain empty. Deadlines are due at the end of the chosen day in India Standard Time.
+
+The database owner must apply `migrations/2026_10_create_policycraft_tasks.sql` before using assignments. Follow the [task rollout guide](../docs/policycraft-tasks-rollout.md) for migration checks, independently evidenced historical backfill, and live-account acceptance. Existing policy saves remain available without the task migration; task endpoints report that the migration is required.
+
+Run `npm run test:tasks` for progress and transactional task checks. With the app running locally, `npm run tasks:verify-ui` runs desktop/mobile/short-height browser fixtures with all APIs mocked, without changing live data. Use `POLICYCRAFT_UI_URL` and `POLICYCRAFT_UI_OUTPUT` to override the origin and screenshot directory.
+
+`node scripts/verify-tasks-anonymous.mjs` checks that all task/admin-progress operations reject callers without cookies before processing mutation bodies.
+
 ## Administrator handover
 
 Administrator handover is available at **Administration → New administrator email → Find account → Transfer admin access**. Review the recipient, enter your current password, and confirm. The recipient must have an existing active account with a working password login; a new person can accept a manager invitation first. This transfers PolicyCraft permissions without changing either shared ESG email/password. The outgoing account loses PolicyCraft access and is signed out. The new administrator should resend outstanding invitations sent by the outgoing administrator. This uses the existing access tables and requires no additional migration after the access migration.

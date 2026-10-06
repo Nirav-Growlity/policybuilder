@@ -5,6 +5,7 @@ export type PolicyCraftOrganization = {
   id: number;
   code: string;
   name: string;
+  source: "esg" | "standalone";
   deleted: boolean;
   expired: boolean;
 };

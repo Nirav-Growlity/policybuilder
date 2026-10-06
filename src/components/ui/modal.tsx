@@ -66,7 +66,7 @@ export function Modal({ open, onClose, title, description, children, width = 460
   if (!mounted || !open) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overscroll-contain p-4 bg-[rgba(14,26,20,0.4)] backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overscroll-contain p-4 bg-[rgba(14,26,20,0.4)] backdrop-blur-sm animate-fade-in motion-reduce:animate-none">
       <div
         ref={dialogRef}
         role="dialog"

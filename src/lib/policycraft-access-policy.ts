@@ -6,6 +6,7 @@ export type PolicyCraftAuthorizationActor = {
 
 export type PolicyCraftOrganizationAvailability = {
   id: number;
+  source?: "esg" | "standalone";
   deleted: boolean;
   expired: boolean;
 };
@@ -27,6 +28,7 @@ export function canAccessOrganization(
   hasAssignment: boolean,
 ): boolean {
   if (actor.role === "admin") return true;
+  if (actor.role === "user" && organization.source === "standalone") return false;
   if (!hasAssignment || organization.deleted || organization.expired) return false;
   return actor.role === "manager" || actor.role === "user";
 }
@@ -36,6 +38,7 @@ export function canMutateOrganization(
   organization: PolicyCraftOrganizationAvailability,
   hasAssignment = true,
 ): boolean {
+  if (actor.role === "user" && organization.source === "standalone") return false;
   if (organization.deleted) return false;
   if (actor.role === "admin") return true;
   return hasAssignment && !organization.expired && (actor.role === "manager" || actor.role === "user");

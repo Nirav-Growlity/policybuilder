@@ -14,7 +14,7 @@ import { StepQuantitative } from "@/components/builder/steps/step-quantitative";
 import { StepSDG } from "@/components/builder/steps/step-sdg";
 import { StepResponsibilities } from "@/components/builder/steps/step-responsibilities";
 import { StepExport } from "@/components/builder/steps/step-export";
-import { ArrowLeft, ArrowRight, FileCheck2, FileUp, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, FileCheck2, FileUp, Loader2, RefreshCw, X } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { PolicySelector } from "@/components/builder/policy-selector";
@@ -32,6 +32,10 @@ import { PolicyPreview } from "@/components/policy/policy-preview";
 import type { PolicyCraftAccess, PolicyCraftOrganization, PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
 import { policyCraftScopeKey, policyCraftUrl, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { policyCraftBuilderStorage, runPolicyCraftBuilderStorageTransition } from "@/lib/policycraft-builder-storage";
+import type { PolicyCraftTask } from "@/lib/policycraft-task-types";
+import { DeadlineLabel, TaskProgress, TaskStatus } from "@/components/tasks/task-ui";
+import { POLICY_PROFILES } from "@/lib/constants";
+import { organizationSourceName } from "@/components/workspace/organization-source-label";
 
 const STEP_RENDERERS: Record<string, React.ComponentType<{ onCoverEditingChange?: (editing: boolean) => void }>> = {
   structure: StepStructure,
@@ -76,6 +80,7 @@ function BuilderClientWorkspace() {
   const searchParams = useSearchParams();
   const selectedType = searchParams.get("type") as PolicyType | null;
   const draftId = searchParams.get("draft");
+  const taskId = searchParams.get("taskId");
   const requestedOrgId = searchParams.get("orgId");
   const router = useRouter();
   const [dragOver, setDragOver] = React.useState(false);
@@ -92,6 +97,14 @@ function BuilderClientWorkspace() {
   const [backendTitle, setBackendTitle] = React.useState("");
   const backendLockVersion = React.useRef(1);
   const [saveStatus, setSaveStatus] = React.useState<"idle" | "saving" | "saved" | "offline" | "conflict">("idle");
+  const [taskContext, setTaskContext] = React.useState<PolicyCraftTask | null>(null);
+  const taskHasIncompleteProgress = !taskContext?.progress || taskContext.progress.percentage < 100;
+  const [taskContextLoading, setTaskContextLoading] = React.useState(false);
+  const [taskContextError, setTaskContextError] = React.useState("");
+  const [taskCompleteOpen, setTaskCompleteOpen] = React.useState(false);
+  const [taskIncompleteAcknowledged, setTaskIncompleteAcknowledged] = React.useState(false);
+  const [taskCompleting, setTaskCompleting] = React.useState(false);
+  const flushDraftForTaskRef = React.useRef<((force?: boolean) => Promise<void>) | null>(null);
   const createAttempted = React.useRef(false);
   const skipNextSave = React.useRef(false);
   const draftAutosave = React.useRef<ReturnType<typeof createDraftAutosave<PolicyCraftDocumentState>> | null>(null);
@@ -125,6 +138,84 @@ function BuilderClientWorkspace() {
     lastSavedState.current = JSON.stringify(nextState);
     setSaveStatus("saved");
   };
+
+  const loadTaskContext = React.useCallback(async () => {
+    if (!backendDocumentId || workspaceAccess?.actor.role !== "manager") {
+      setTaskContext(null);
+      setTaskContextError("");
+      return null;
+    }
+    setTaskContextLoading(true);
+    setTaskContextError("");
+    try {
+      const response = await fetch(`/api/policycraft/tasks?documentId=${encodeURIComponent(backendDocumentId)}`, { cache: "no-store" });
+      const body = await response.json().catch(() => null);
+      if (!response.ok) throw new Error(body?.error || "Could not load this task. Return to My tasks and retry.");
+      const tasks = Array.isArray(body?.tasks) ? body.tasks as PolicyCraftTask[] : [];
+      const task = tasks.find((item) => (!taskId || item.id === taskId) && item.manager.id === workspaceAccess.actor.id) || null;
+      if (!task) {
+        setTaskContext(null);
+        if (taskId) throw new Error("This assignment is no longer available for this manager.");
+        return null;
+      }
+      setTaskContext(task);
+      return task;
+    } catch (cause) {
+      const message = cause instanceof Error ? cause.message : "Could not load this task.";
+      setTaskContextError(message);
+      return null;
+    } finally { setTaskContextLoading(false); }
+  }, [backendDocumentId, taskId, workspaceAccess]);
+
+  React.useEffect(() => { const timer = window.setTimeout(() => void loadTaskContext(), 0); return () => window.clearTimeout(timer); }, [loadTaskContext]);
+
+  async function prepareTaskCompletion() {
+    if (!taskContext || taskCompleting) return;
+    setTaskCompleting(true);
+    setTaskContextError("");
+    try {
+      if (!flushDraftForTaskRef.current) throw new Error("The policy workspace is not ready to save. Wait for the saved indicator and retry.");
+      await flushDraftForTaskRef.current(true);
+      const latestTask = await loadTaskContext();
+      if (!latestTask) throw new Error("The latest task state could not be loaded. Retry after the task progress refreshes.");
+      setTaskIncompleteAcknowledged(false);
+      setTaskCompleteOpen(true);
+    } catch (cause) {
+      const message = cause instanceof Error ? cause.message : "Could not prepare task completion.";
+      setTaskContextError(message);
+      push(message, "error");
+    } finally { setTaskCompleting(false); }
+  }
+
+  async function completeAssignedTask() {
+    if (!taskContext || taskCompleting) return;
+    setTaskCompleting(true);
+    setTaskContextError("");
+    try {
+      if (!flushDraftForTaskRef.current) throw new Error("The policy workspace is not ready to save. Wait for the saved indicator and retry.");
+      await flushDraftForTaskRef.current(true);
+      const latestTask = await loadTaskContext();
+      if (!latestTask) throw new Error("The latest task state could not be loaded. Retry after the task progress refreshes.");
+      const confirmIncomplete = (latestTask.progress?.percentage ?? 0) < 100;
+      if (confirmIncomplete && !taskIncompleteAcknowledged) {
+        setTaskContextError("Confirm that you want to complete this task with empty sections.");
+        return;
+      }
+      const response = await fetch(`/api/policycraft/tasks/${encodeURIComponent(latestTask.id)}/complete`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ version: latestTask.version, documentVersion: backendLockVersion.current, confirmIncomplete }),
+      });
+      const body = await response.json().catch(() => null);
+      if (!response.ok) throw new Error(body?.error || "Could not complete this task. Check the save status and retry.");
+      setTaskContext(body?.task || { ...latestTask, status: "completed" });
+      setTaskCompleteOpen(false);
+      push("Task marked complete.", "success");
+    } catch (cause) {
+      const message = cause instanceof Error ? cause.message : "Could not complete this task.";
+      setTaskContextError(message);
+      push(message, "error");
+    } finally { setTaskCompleting(false); }
+  }
 
   React.useLayoutEffect(() => {
     setPolicyCraftScope(null);
@@ -380,12 +471,12 @@ function BuilderClientWorkspace() {
       return { step: state.step, policy: state.policy, importedPolicy: state.importedPolicy };
     }
 
-    async function flushForNavigation(): Promise<void> {
+    async function flushForNavigation(force = false): Promise<void> {
       if (saveStatus === "conflict") throw new Error("This policy changed in another window. Reload it before continuing.");
       for (let attempt = 0; attempt < 5; attempt += 1) {
         const state = currentState();
         const serialized = JSON.stringify(state);
-        if (serialized !== lastSavedState.current || activeAutosave.hasPending() || activeAutosave.isSaving()) {
+        if ((force && attempt === 0) || serialized !== lastSavedState.current || activeAutosave.hasPending() || activeAutosave.isSaving()) {
           if (!saveDraftRef.current) throw new Error("The policy workspace is not ready to save.");
           activeAutosave.schedule(state, (nextState) => saveDraftRef.current!(nextState));
           await activeAutosave.flush();
@@ -394,6 +485,8 @@ function BuilderClientWorkspace() {
       }
       throw new Error("The policy is still changing. Wait for the save indicator, then try again.");
     }
+
+    flushDraftForTaskRef.current = flushForNavigation;
 
     const beforeUnload = (event: BeforeUnloadEvent) => {
       const stateChanged = JSON.stringify(currentState()) !== lastSavedState.current;
@@ -444,6 +537,7 @@ function BuilderClientWorkspace() {
     window.addEventListener("popstate", interceptHistoryNavigation, true);
     document.addEventListener("click", interceptInternalNavigation, true);
     return () => {
+      if (flushDraftForTaskRef.current === flushForNavigation) flushDraftForTaskRef.current = null;
       window.removeEventListener("beforeunload", beforeUnload);
       window.removeEventListener("popstate", interceptHistoryNavigation, true);
       document.removeEventListener("click", interceptInternalNavigation, true);
@@ -511,7 +605,7 @@ function BuilderClientWorkspace() {
   if (workspaceState === "error") return <main className="mx-auto grid min-h-screen max-w-xl content-center px-5 text-center"><h1 className="font-display text-2xl font-semibold">Workspace unavailable</h1><p className="mt-2 text-sm leading-6 text-[var(--color-muted)]" role="alert">{workspaceError}</p><Link href={workspaceAccess?.homeHref || "/login"} className="mx-auto mt-5 inline-flex min-h-10 items-center rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)]">Return to workspace</Link></main>;
   if (workspaceState === "choose") {
     const candidates = workspaceOrganizations.filter((organization) => !organization.deleted && (workspaceAccess?.actor.role === "admin" || !organization.expired));
-    return <main className="mx-auto min-h-screen max-w-2xl px-5 py-12 text-[var(--color-ink)]"><Link href={workspaceAccess?.homeHref || "/"} className="text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)]">← Workspace</Link><p className="mt-8 text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">New policy</p><h1 className="mt-1 font-display text-3xl font-semibold">Choose an organization</h1><p className="mt-2 text-sm text-[var(--color-muted)]">Each policy belongs to one organization. You can switch organizations from the workspace after this draft is saved.</p>{candidates.length ? <ul className="mt-6 divide-y divide-[var(--color-line)] rounded-xl border border-[var(--color-line)] bg-white">{candidates.map((organization) => <li key={organization.id} className="flex flex-wrap items-center justify-between gap-3 px-4 py-3"><div className="min-w-0"><p className="truncate text-sm font-semibold">{organization.name}</p><p className="mt-0.5 text-[11px] text-[var(--color-muted)]">{organization.code}{organization.expired ? " · expired · admin access" : ""}</p></div><button type="button" onClick={() => router.replace(`/builder?orgId=${organization.id}`)} className="min-h-9 shrink-0 rounded-lg bg-[var(--color-forest)] px-3 text-xs font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Use organization</button></li>)}</ul> : <div className="mt-6 rounded-xl border border-dashed border-[var(--color-line-2)] bg-white px-5 py-10 text-center"><h2 className="font-display text-lg font-semibold">No available organizations</h2><p className="mt-1 text-sm text-[var(--color-muted)]">Ask an administrator to assign an active organization to your account.</p></div>}</main>;
+    return <main className="mx-auto min-h-screen max-w-2xl px-5 py-12 text-[var(--color-ink)]"><Link href={workspaceAccess?.homeHref || "/"} className="text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)]">← Workspace</Link><p className="mt-8 text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">New policy</p><h1 className="mt-1 font-display text-3xl font-semibold">Choose an organization</h1><p className="mt-2 text-sm text-[var(--color-muted)]">Each policy belongs to one organization. You can switch organizations from the workspace after this draft is saved.</p>{candidates.length ? <ul className="mt-6 divide-y divide-[var(--color-line)] rounded-xl border border-[var(--color-line)] bg-white">{candidates.map((organization) => <li key={organization.id} className="flex flex-wrap items-center justify-between gap-3 px-4 py-3"><div className="min-w-0"><p className="truncate text-sm font-semibold">{organization.name}</p><p className="mt-0.5 text-[11px] text-[var(--color-muted)]">{organization.code} · {organizationSourceName(organization)}{organization.expired ? " · expired · admin access" : ""}</p></div><button type="button" onClick={() => router.replace(`/builder?orgId=${organization.id}`)} className="min-h-9 shrink-0 rounded-lg bg-[var(--color-forest)] px-3 text-xs font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Use organization</button></li>)}</ul> : <div className="mt-6 rounded-xl border border-dashed border-[var(--color-line-2)] bg-white px-5 py-10 text-center"><h2 className="font-display text-lg font-semibold">No available organizations</h2><p className="mt-1 text-sm text-[var(--color-muted)]">Ask an administrator to assign an active organization to your account.</p></div>}</main>;
   }
 
   if (!companyLoaded || (draftId && !documentLoaded)) return <div className="grid min-h-screen place-items-center bg-[var(--color-cream)] text-sm text-[var(--color-muted)]" aria-busy="true">Loading policy…</div>;
@@ -621,9 +715,19 @@ function BuilderClientWorkspace() {
     >
       <BuilderShell hideDesignInspector={coverEditing} topActions={<>{backendDocumentId ? <span className="mr-2 text-[11px] text-[var(--color-muted)]">{saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""}</span> : null}{topActions}</>}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8">
+          {workspaceScope?.role === "manager" && (taskContext || taskContextLoading || taskContextError) ? <section aria-label="Assigned task" className="mb-6 rounded-lg border border-[var(--color-line)] bg-white p-4 sm:p-5">
+            {taskContextLoading && !taskContext ? <p className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)]" role="status"><Loader2 size={15} className="animate-spin" aria-hidden="true"/>Loading task details…</p> : null}
+            {taskContextError ? <div role="alert" className="flex flex-wrap items-center justify-between gap-3 text-sm text-red-900"><span>{taskContextError}</span><button type="button" onClick={() => void loadTaskContext()} className="inline-flex min-h-9 items-center gap-2 rounded-md px-2 font-semibold text-red-900 hover:bg-red-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]"><RefreshCw size={14} aria-hidden="true"/>Retry</button></div> : null}
+            {taskContext ? <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"><div className="min-w-0 sm:col-span-2"><p className="text-[10px] font-semibold uppercase text-[var(--color-forest)]">Assigned task · {taskContext.organization.name}</p><h2 className="mt-1 break-words font-display text-lg font-semibold">{taskContext.title}</h2><p className="mt-1 text-xs text-[var(--color-ink-2)]">{POLICY_PROFILES[taskContext.policyType]?.label || taskContext.policyType} · <DeadlineLabel value={taskContext.dueDate} status={taskContext.status}/></p></div><TaskProgress progress={taskContext.progress} unavailableReason={taskContext.unavailableReason}/><div className="flex flex-wrap items-center gap-2 sm:justify-end"><TaskStatus status={taskContext.status} dueDate={taskContext.dueDate}/>{taskContext.status === "in_progress" ? <Button variant="primary" size="sm" loading={taskCompleting} disabled={!taskContext.available || taskCompleting} onClick={() => void prepareTaskCompletion()}>Mark task complete</Button> : taskContext.status === "completed" ? <span className="text-xs font-medium text-emerald-900">Completed</span> : null}</div></div> : null}
+          </section> : null}
           <StepCmp onCoverEditingChange={step === "export" ? setCoverEditing : undefined} />
         </div>
       </BuilderShell>
+      <Modal open={taskCompleteOpen} onClose={() => { if (!taskCompleting) setTaskCompleteOpen(false); }} title="Mark this task complete?" description="Your current policy has been saved and its progress refreshed." width={520} hideClose={taskCompleting}>
+        {taskContext && taskHasIncompleteProgress ? <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-950"><p className="font-semibold">{taskContext.progress ? `${taskContext.progress.totalSections - taskContext.progress.filledSections} sections are still empty.` : "Saved section progress is not available yet."}</p><p className="mt-1 text-xs leading-5">The admin will see the saved section count and completion status.</p><label className="mt-3 flex items-start gap-2.5 font-medium"><input type="checkbox" checked={taskIncompleteAcknowledged} onChange={(event) => setTaskIncompleteAcknowledged(event.target.checked)} className="mt-0.5 size-4 shrink-0 accent-[var(--color-forest)]"/><span>I understand and want to complete the task with empty sections.</span></label></div> : <p className="text-sm text-[var(--color-ink-2)]">The admin will see this task as completed after your latest save succeeds.</p>}
+        {taskContextError ? <p role="alert" className="mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-900">{taskContextError}</p> : null}
+        <div className="mt-5 flex flex-col-reverse justify-end gap-2 sm:flex-row"><Button variant="secondary" size="md" disabled={taskCompleting} onClick={() => setTaskCompleteOpen(false)}>Keep editing</Button><Button variant="primary" size="md" loading={taskCompleting} disabled={taskCompleting || (!!taskContext && taskHasIncompleteProgress && !taskIncompleteAcknowledged)} icon={taskCompleting ? undefined : <FileCheck2 size={14} aria-hidden="true"/>} onClick={() => void completeAssignedTask()}>{taskCompleting ? "Saving & completing…" : "Confirm completion"}</Button></div>
+      </Modal>
       {dragOver && (
         <div className="absolute inset-0 z-50 bg-[var(--color-forest-soft)]/95 border-2 border-dashed border-[var(--color-forest)] flex items-center justify-center pointer-events-none animate-fade-in">
           <div className="text-center">

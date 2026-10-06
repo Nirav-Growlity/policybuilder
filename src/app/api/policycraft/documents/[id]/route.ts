@@ -47,6 +47,7 @@ export async function PATCH(request: Request, context: Context) {
       return restored ? NextResponse.json({ restored: true }) : NextResponse.json({ error: "Archived document not found." }, { status: 404 });
     }
     const deleted = await deleteArchivedDocument(auth.organization.id, id);
+    if (deleted === "task_linked") return NextResponse.json({ code: "POLICYCRAFT_TASK_LINKED_DOCUMENT", error: "This draft is linked to a task and must be retained for task history." }, { status: 409 });
     return deleted ? NextResponse.json({ deleted: true }) : NextResponse.json({ error: "Archived document not found." }, { status: 404 });
   }
   if (typeof body.title !== "string" || !body.title.trim() || !Number.isInteger(body.lockVersion) || Number(body.lockVersion) < 1) {
@@ -56,6 +57,7 @@ export async function PATCH(request: Request, context: Context) {
     if (!validState(body.state)) return NextResponse.json({ error: "A valid document state is required." }, { status: 400 });
     const state = { ...body.state, policy: normalizePolicyCovers(body.state.policy) };
     const result = await updateDocument(auth, id, body.title.trim().slice(0, 255), state, Number(body.lockVersion));
+    if (result === "type_locked") return NextResponse.json({ code: "POLICYCRAFT_TASK_POLICY_TYPE_LOCKED", error: "Policy type is fixed after the task draft is created." }, { status: 409 });
     return policyCraftDocumentMutationResponse(result, () => getDocument(auth.organization.id, id));
   }
   const result = await renameDocument(auth.organization.id, id, body.title.trim().slice(0, 255), Number(body.lockVersion));
@@ -74,5 +76,6 @@ export async function DELETE(request: Request, context: Context) {
   if (!auth) return response || NextResponse.json({ error: "Organization access denied." }, { status: 403 });
   if (!canPerformPolicyCraftDocumentAction(auth.role, "delete")) return NextResponse.json({ error: "Forbidden." }, { status: 403 });
   const deleted = await deleteArchivedDocument(auth.organization.id, id);
+  if (deleted === "task_linked") return NextResponse.json({ code: "POLICYCRAFT_TASK_LINKED_DOCUMENT", error: "This draft is linked to a task and must be retained for task history." }, { status: 409 });
   return deleted ? NextResponse.json({ deleted: true }) : NextResponse.json({ error: "Archive the document before deleting it." }, { status: 409 });
 }

@@ -4,6 +4,7 @@ import type { PolicyCraftAccess, PolicyCraftRole } from "./policycraft-access-ty
 import { canAccessOrganization, canFallbackToLegacyOrganization, canMutateOrganization } from "./policycraft-access-policy";
 import { auth, policyCraftTrustedOrigins } from "./auth";
 import { policyCraftPool } from "./db";
+import { ensurePolicyCraftOrganizationRegistry, getPolicyCraftOrganizationRecord, organizationSummary, PolicyCraftOrganizationsMigrationRequiredError, registerESGOrganization } from "./policycraft-organization-repository";
 
 type ActorRow = RowDataPacket & {
   id: number;
@@ -14,13 +15,6 @@ type ActorRow = RowDataPacket & {
   is_deleted: number;
 };
 type RoleRow = RowDataPacket & { role: "admin" | "manager"; status: "active" | "disabled" };
-type OrganizationRow = RowDataPacket & {
-  id: number;
-  org_code: string;
-  company_name: string;
-  is_deleted: number;
-  expiry_date: Date | string | null;
-};
 type DocumentOrganizationRow = RowDataPacket & { org_id: number };
 
 export type PolicyCraftActor = {
@@ -111,6 +105,7 @@ export async function getPolicyCraftActor(): Promise<PolicyCraftActor | null> {
   }
   if (access) {
     if (access.status !== "active") return null;
+    await ensurePolicyCraftOrganizationRegistry();
     return {
       user: { id: String(user.id), name: user.name, email: user.email, ...(user.org_id ? { org_id: user.org_id } : {}) },
       role: access.role,
@@ -119,10 +114,13 @@ export async function getPolicyCraftActor(): Promise<PolicyCraftActor | null> {
 
   const orgId = Number(user.org_id);
   if (!canFallbackToLegacyOrganization(null, user.org_id) || !Number.isInteger(orgId)) return null;
+  // Legacy shared users resolve only through the ESG source key. A colliding standalone ID cannot grant access.
+  const organizationId = await registerESGOrganization(orgId);
+  if (!organizationId) return null;
   return {
     user: { id: String(user.id), name: user.name, email: user.email, org_id: user.org_id },
     role: "user",
-    homeOrganizationId: orgId,
+    homeOrganizationId: organizationId,
   };
 }
 
@@ -159,6 +157,9 @@ export function policyCraftMutationFailure(
 }
 
 export function policyCraftAuthFailure(error: unknown): Response | null {
+  if (error instanceof PolicyCraftOrganizationsMigrationRequiredError) {
+    return Response.json({ code: "POLICYCRAFT_ORGANIZATIONS_MIGRATION_REQUIRED", error: error.message }, { status: 503 });
+  }
   if (error instanceof PolicyCraftAccessUnavailableError || isMissingAccessTable(error)) {
     return Response.json({ code: "POLICYCRAFT_MIGRATION_REQUIRED", error: "PolicyCraft access tables are not installed. Apply the PolicyCraft access migration first." }, { status: 503 });
   }
@@ -192,19 +193,13 @@ export async function resolvePolicyCraftOrganization(
   if (organizationId === undefined) organizationId = actor.homeOrganizationId;
   if (typeof organizationId !== "number" || !Number.isInteger(organizationId) || organizationId <= 0) return null;
 
-  const [organizations] = await policyCraftPool.execute<OrganizationRow[]>(
-    `SELECT id, org_code, company_name, is_deleted, expiry_date
-       FROM organizations
-      WHERE id = ?
-      LIMIT 1`,
-    [organizationId],
-  );
-  const organization = organizations[0];
+  const organization = await getPolicyCraftOrganizationRecord(organizationId);
   if (!organization) return null;
   const availability = {
     id: organization.id,
-    deleted: Boolean(organization.is_deleted),
-    expired: expired(organization.expiry_date),
+    source: organization.source,
+    deleted: organization.source === "esg" && Boolean(organization.is_deleted),
+    expired: organization.source === "esg" && expired(organization.expiry_date),
   };
 
   let hasAssignment = actor.role === "admin";
@@ -217,7 +212,7 @@ export async function resolvePolicyCraftOrganization(
     );
     hasAssignment = assignments.length > 0;
   } else if (actor.role === "user") {
-    hasAssignment = actor.homeOrganizationId === organization.id;
+    hasAssignment = organization.source === "esg" && actor.homeOrganizationId === organization.id;
   }
 
   const allowed = request.operation === "write"
@@ -225,9 +220,7 @@ export async function resolvePolicyCraftOrganization(
     : canAccessOrganization(actor, availability, hasAssignment);
   if (!allowed) return null;
   return {
-    id: organization.id,
-    code: organization.org_code,
-    name: organization.company_name,
+    ...organizationSummary(organization),
     deleted: availability.deleted,
     expired: availability.expired,
     readOnly: availability.deleted,
@@ -253,11 +246,13 @@ export async function getPolicyCraftAuth(
 ): Promise<PolicyCraftAuthContext | null> {
   const actor = await getPolicyCraftActor();
   if (!actor) return null;
-  const scope = await resolvePolicyCraftOrganization(actor, {
-    ...request,
-    operation: request.operation || "read",
-  });
-  return scope ? { user: actor.user, role: actor.role, organization: scope } : null;
+  try {
+    const scope = await resolvePolicyCraftOrganization(actor, {
+      ...request,
+      operation: request.operation || "read",
+    });
+    return scope ? { user: actor.user, role: actor.role, organization: scope } : null;
+  } catch { return null; }
 }
 
 export async function getPolicyCraftAuthResult(
@@ -265,11 +260,17 @@ export async function getPolicyCraftAuthResult(
 ): Promise<{ auth: PolicyCraftAuthContext | null; response?: Response }> {
   const result = await getPolicyCraftActorResult();
   if (result.response || !result.actor) return { auth: null, response: result.response || Response.json({ error: "Unauthorized" }, { status: 401 }) };
-  const scope = await resolvePolicyCraftOrganization(result.actor, {
-    ...request,
-    operation: request.operation || "read",
-  });
-  return scope
-    ? { auth: { user: result.actor.user, role: result.actor.role, organization: scope } }
-    : { auth: null, response: Response.json({ error: "Organization access denied." }, { status: 403 }) };
+  try {
+    const scope = await resolvePolicyCraftOrganization(result.actor, {
+      ...request,
+      operation: request.operation || "read",
+    });
+    return scope
+      ? { auth: { user: result.actor.user, role: result.actor.role, organization: scope } }
+      : { auth: null, response: Response.json({ error: "Organization access denied." }, { status: 403 }) };
+  } catch (error) {
+    const migration = policyCraftAuthFailure(error);
+    if (migration) return { auth: null, response: migration };
+    throw error;
+  }
 }

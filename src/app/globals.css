@@ -169,6 +169,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .animate-fade-in, .animate-fade-up { animation: none; }
   :is(input, textarea)[data-grammar-checking="true"] { animation: none; }
 }
 

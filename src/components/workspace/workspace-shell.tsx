@@ -3,9 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { FileText, Loader2, LogOut, Settings2, Shield, Users } from "lucide-react";
+import { Building2, ClipboardList, FileText, Loader2, LogOut, Settings2, Shield, Users } from "lucide-react";
 import { signOut } from "@/lib/auth-client";
 import type { PolicyCraftAccess, PolicyCraftRole } from "@/lib/policycraft-access-types";
+import type { PolicyCraftManagerTaskCollection } from "@/lib/policycraft-task-types";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { policyCraftBuilderStorage } from "@/lib/policycraft-builder-storage";
 
@@ -21,10 +22,15 @@ export function usePolicyCraftWorkspace(): WorkspaceContextValue {
 const NAVIGATION: Record<PolicyCraftRole, { href: string; label: string; icon: typeof FileText }[]> = {
   admin: [
     { href: "/admin", label: "Managers", icon: Users },
+    { href: "/admin/organizations", label: "Organizations", icon: Building2 },
     { href: "/admin/policies", label: "Policies", icon: FileText },
+    { href: "/admin/tasks", label: "Tasks", icon: ClipboardList },
     { href: "/admin/administration", label: "Administration", icon: Settings2 },
   ],
-  manager: [{ href: "/manager", label: "Organizations & policies", icon: FileText }],
+  manager: [
+    { href: "/manager", label: "Organizations & policies", icon: FileText },
+    { href: "/manager/tasks", label: "Tasks", icon: ClipboardList },
+  ],
   user: [{ href: "/drafts", label: "Policies", icon: FileText }],
 };
 
@@ -42,6 +48,7 @@ export function WorkspaceShell({
   const [error, setError] = React.useState("");
   const [signingOut, setSigningOut] = React.useState(false);
   const [retryAccess, setRetryAccess] = React.useState(0);
+  const [openTaskCount, setOpenTaskCount] = React.useState(0);
   const setScope = usePolicyCraftScope((state) => state.setScope);
 
   React.useEffect(() => {
@@ -74,6 +81,26 @@ export function WorkspaceShell({
     }, 0);
     return () => { active = false; window.clearTimeout(timer); };
   }, [pathname, retryAccess, role, router, setScope]);
+
+  React.useEffect(() => {
+    if (!access || role !== "manager") return;
+    let active = true;
+    const refreshTaskCount = () => {
+      if (document.visibilityState !== "visible") return;
+      void fetch("/api/policycraft/tasks", { cache: "no-store" }).then(async (response) => {
+        if (!response.ok) return;
+        const body = await response.json().catch(() => null);
+        if (!active) return;
+        const tasks = Array.isArray(body?.tasks) ? body.tasks as PolicyCraftManagerTaskCollection["tasks"] : [];
+        setOpenTaskCount(tasks.filter((task) => task.status === "assigned" || task.status === "in_progress").length);
+      }).catch(() => undefined);
+    };
+    const timer = window.setInterval(refreshTaskCount, 30_000);
+    window.addEventListener("focus", refreshTaskCount);
+    document.addEventListener("visibilitychange", refreshTaskCount);
+    refreshTaskCount();
+    return () => { active = false; window.clearInterval(timer); window.removeEventListener("focus", refreshTaskCount); document.removeEventListener("visibilitychange", refreshTaskCount); };
+  }, [access, role]);
 
   async function handleSignOut() {
     if (signingOut) return;
@@ -112,8 +139,8 @@ export function WorkspaceShell({
             </Link>
             <nav aria-label="Workspace navigation" className="col-span-2 row-start-2 flex min-w-0 flex-wrap items-center gap-1 lg:col-span-1 lg:col-start-2 lg:row-start-1">
               {NAVIGATION[role].map(({ href, label, icon: Icon }) => {
-                const active = pathname === href || (href !== "/admin" && pathname.startsWith(`${href}/`)) || (href === "/admin" && pathname.startsWith("/admin/managers/"));
-                return <Link key={href} href={href} aria-current={active ? "page" : undefined} className={`inline-flex min-h-9 items-center gap-2 rounded-lg px-3 text-[13px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] ${active ? "bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)]" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)]"}`}><Icon size={15} aria-hidden="true" />{label}</Link>;
+                const active = pathname === href || (href === "/manager" && pathname.startsWith("/manager/") && !pathname.startsWith("/manager/tasks")) || (href !== "/admin" && href !== "/manager" && pathname.startsWith(`${href}/`)) || (href === "/admin" && pathname.startsWith("/admin/managers/"));
+                return <Link key={href} href={href} aria-current={active ? "page" : undefined} aria-label={role === "manager" && href === "/manager/tasks" ? `Tasks${openTaskCount ? `, ${openTaskCount} open` : ""}` : undefined} className={`inline-flex min-h-9 items-center gap-2 rounded-lg px-3 text-[13px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] ${active ? "bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)]" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)]"}`}><Icon size={15} aria-hidden="true" />{label}{role === "manager" && href === "/manager/tasks" && openTaskCount > 0 ? <span className="ml-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-[var(--color-forest)] px-1 text-[10px] font-bold tabular-nums text-white" aria-hidden="true">{openTaskCount > 99 ? "99+" : openTaskCount}</span> : null}</Link>;
               })}
             </nav>
             <div className="col-start-2 row-start-1 flex min-w-0 items-center justify-self-end gap-2 sm:gap-3 lg:col-start-3">

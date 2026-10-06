@@ -8,6 +8,8 @@ The application code does not apply migrations automatically. **You or your data
 
 - [ ] Finish code changes and review the release commit. Deploy the same reviewed commit that passed your staging checks.
 - [ ] Run focused access checks from `src/`: `npm run test:access`.
+- [ ] For the task workspace release, run `npm run test:tasks` and follow the [task rollout guide](policycraft-tasks-rollout.md). The database owner must apply and verify the additive task migration; legacy progress requires independently verified evidence or a fresh manager save.
+- [ ] For PolicyCraft-only organizations, follow the [organization rollout guide](policycraft-organizations-rollout.md). The owner applies and verifies the registry migration before deploying; retain the explicit ESG mappings and review rollback compatibility after standalone records are created.
 - [ ] Run the release TypeScript, lint, and production-build checks required by your team. A past full test run reported 23 existing cover-color/footer-layout failures; review the current result rather than assuming those failures are still present or resolved.
 - [ ] Test the UI with the API-mocked scripts `node scripts/verify-access-ui.mjs` and `node scripts/verify-admin-transfer-ui.mjs`, plus `node scripts/verify-access-anonymous.mjs`. Start a local app first and use a writable screenshot directory. These tests do not validate production data or email delivery.
 - [ ] Finish the live acceptance checks in staging: invitations, account linking, role restrictions, assignment revocation, shared policy editing, saves/conflicts, organization scoping, previews, and PDF/DOCX exports.
@@ -71,6 +73,8 @@ For a fresh PolicyCraft database, apply the files in this order:
 3. `src/migrations/2026_09_add_policy_type_to_policycraft_cover_templates.sql`
 4. `src/migrations/2026_09_create_policycraft_user_signatures.sql`
 5. `src/migrations/2026_10_create_policycraft_access.sql`
+6. `src/migrations/2026_10_create_policycraft_organizations.sql` (registry cutover; follow the organization rollout guide)
+7. `src/migrations/2026_10_create_policycraft_tasks.sql` (when deploying the task workspace)
 
 For an existing database, apply only migrations that are confirmed missing. In particular, `2026_09_add_policy_type_to_policycraft_cover_templates.sql` uses `ALTER TABLE` and `CREATE INDEX`; do not run it again if those changes are already present. Stop if a migration is partly applied or its expected schema does not match. Have the database owner reconcile it instead of guessing or re-running SQL.
 

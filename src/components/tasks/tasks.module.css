@@ -1,0 +1,401 @@
+.workspace,
+:global([role="dialog"]):has(.dialogContent) {
+  --color-ink: #17251e;
+  --color-ink-2: #45534c;
+  --color-muted: #617068;
+  --color-line: #dfe5e1;
+  --color-line-2: #cbd5ce;
+  --color-cream: #f7f9f8;
+  --color-cream-2: #f0f4f1;
+  --font-display: "Inter", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+.workspace {
+  min-width: 0;
+  color: var(--color-ink);
+}
+
+.workspace :where(*),
+:global([role="dialog"]):has(.dialogContent) :where(*) {
+  letter-spacing: 0;
+}
+
+.workspace :is(h1, h2, h3),
+:global([role="dialog"]):has(.dialogContent) h2 {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  text-wrap: pretty;
+}
+
+.workspace :is(button, a, input, select, textarea),
+.dialogContent :is(button, a, input, select, textarea) {
+  touch-action: manipulation;
+  transition: background-color 150ms, border-color 150ms, color 150ms, box-shadow 150ms;
+}
+
+.workspace :is(button, a, input, select, textarea):focus-visible,
+.dialogContent :is(button, a, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 3px;
+}
+
+.header {
+  align-items: flex-start;
+  padding-bottom: 22px;
+}
+
+@media (min-width: 640px) {
+  .header {
+    align-items: center;
+  }
+}
+
+.header h1 {
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 650;
+}
+
+.header p {
+  max-width: 65ch;
+  line-height: 1.6;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 22px 0;
+  border-bottom: 1px solid var(--color-line);
+  padding: 0 0 22px;
+  gap: 16px;
+}
+
+.summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 22px;
+  border-left: 1px solid var(--color-line);
+}
+
+.summary > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.summary dt {
+  color: var(--color-ink-2);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.summary dd {
+  order: -1;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.tabs {
+  margin-top: 0;
+  gap: 12px;
+}
+
+.tabs button {
+  min-height: 44px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.filters {
+  align-items: end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.filters label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.filters input,
+.filters select {
+  min-width: 0;
+  margin-top: 0;
+  height: 40px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.results {
+  display: block;
+  min-width: 0;
+  padding: 12px 0 0;
+  color: var(--color-ink);
+  font-size: 12px;
+}
+
+.results > div:first-of-type {
+  min-height: 32px;
+  color: var(--color-muted);
+}
+
+.table {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.table thead {
+  background: #f6f8f7;
+  color: var(--color-ink-2);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 11px;
+}
+
+.table thead th {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.table tbody tr {
+  vertical-align: top;
+  transition: background-color 150ms;
+}
+
+.table tbody tr:hover,
+.table tbody tr:focus-within {
+  background: #fafcfb;
+}
+
+.table tbody :is(td, th) {
+  overflow-wrap: anywhere;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.table tbody th > p:first-child {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.table tbody th > p:not(:first-child) {
+  font-weight: 400;
+}
+
+.table td:last-child :is(button, a) {
+  white-space: nowrap;
+}
+
+.workspace :is(button, a) svg {
+  flex-shrink: 0;
+}
+
+.workspace [role="progressbar"] {
+  height: 5px;
+  background: #e9eeeb;
+}
+
+.workspace [role="progressbar"] > div {
+  background: var(--color-forest);
+}
+
+.workspace [role="progressbar"] + p {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.mobileRows article {
+  padding: 20px;
+}
+
+.mobileRows h2 {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.mobileRows article :is(p, span) {
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  min-height: 240px;
+  border-top: 0;
+  border-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.empty h2 {
+  font-size: 16px;
+}
+
+.empty > svg {
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  border-radius: 8px;
+  background: var(--color-cream-2);
+  color: var(--color-forest);
+}
+
+:global([role="dialog"]):has(.dialogContent) {
+  border-radius: 8px;
+  border: 1px solid var(--color-line);
+  overscroll-behavior: contain;
+}
+
+:global([role="dialog"]):has(.dialogContent) > header {
+  padding: 24px 24px 20px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+:global([role="dialog"]):has(.dialogContent) > div {
+  padding: 22px 24px;
+}
+
+:global([role="dialog"]):has(.dialogContent) > header button {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 6px;
+}
+
+.dialogContent {
+  min-width: 0;
+}
+
+.dialogContent :is(input, select, textarea) {
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.dialogContent :is(input, select, textarea):disabled {
+  background: var(--color-cream-2);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.dialogContent :is(input, textarea)::placeholder {
+  color: var(--color-muted);
+}
+
+.dialogContent form > div:last-child {
+  border-top: 1px solid var(--color-line);
+  padding-top: 20px;
+}
+
+.dialogContent button {
+  min-height: 40px;
+  border-radius: 6px;
+}
+
+@media (max-width: 639px) {
+  .header {
+    gap: 10px;
+    padding-bottom: 16px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .summary {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin: 18px 0;
+    padding-bottom: 18px;
+  }
+
+  .summary > div {
+    padding-left: 6px;
+  }
+
+  .summary dt {
+    font-size: 11px;
+  }
+
+  .summary dd {
+    font-size: 22px;
+  }
+
+  .filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 16px;
+    gap: 10px;
+  }
+
+  .filters label {
+    gap: 5px;
+  }
+
+  .filters > label:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .filters > label:last-child:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .results {
+    margin-top: 16px;
+    padding-top: 0;
+  }
+
+  .filters input,
+  .filters select,
+  .dialogContent :is(input, select, textarea) {
+    font-size: 16px;
+    height: 44px;
+  }
+
+  .dialogContent textarea {
+    height: auto;
+  }
+
+  .mobileRows button {
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  .mobileRows article > div:first-child {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .mobileRows article > div:first-child > :last-child {
+    align-self: flex-start;
+  }
+
+  :global([role="dialog"]):has(.dialogContent) > header {
+    padding: 20px;
+  }
+
+  :global([role="dialog"]):has(.dialogContent) > div {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workspace *,
+  .dialogContent * {
+    animation: none;
+    transition: none;
+  }
+}

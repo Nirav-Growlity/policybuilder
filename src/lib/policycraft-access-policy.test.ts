@@ -22,6 +22,14 @@ test("managers need a current assignment and an available organization", () => {
   assert.equal(canAccessOrganization(manager, { id: 7, deleted: true, expired: false }, true), false);
 });
 
+test("legacy users can never access a standalone organization even when IDs collide", () => {
+  const user = { role: "user" as const };
+  const standalone = { id: 12, source: "standalone" as const, deleted: false, expired: false };
+  assert.equal(canAccessOrganization(user, standalone, true), false);
+  assert.equal(canMutateOrganization(user, standalone, true), false);
+  assert.equal(canAccessOrganization(user, { ...standalone, source: "esg" }, true), true);
+});
+
 test("legacy single-organization fallback applies only when PolicyCraft access is absent", () => {
   assert.equal(canFallbackToLegacyOrganization(null, "12"), true);
   assert.equal(canFallbackToLegacyOrganization("disabled", "12"), false);
