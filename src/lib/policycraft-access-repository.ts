@@ -378,11 +378,35 @@ export async function updatePolicyCraftManagerInvitation(
 export async function updatePolicyCraftManager(
   managerUserId: number,
   updatedByUserId: number,
-  changes: { organizationIds?: number[]; active?: boolean },
+  changes: { organizationIds?: number[]; active?: boolean; addOrganizationId?: number },
 ): Promise<boolean> {
+  if (changes.addOrganizationId !== undefined && (changes.organizationIds !== undefined || changes.active !== undefined)) {
+    throw new Error("addOrganizationId cannot be combined with organizationIds or active.");
+  }
+  if (changes.addOrganizationId !== undefined && (!Number.isSafeInteger(changes.addOrganizationId) || changes.addOrganizationId <= 0)) {
+    throw new Error("addOrganizationId must be a positive safe integer.");
+  }
   const connection = await policyCraftPool.getConnection();
   try {
     await connection.beginTransaction();
+    if (changes.addOrganizationId !== undefined) {
+      const [managers] = await connection.execute<RowDataPacket[]>(
+        `SELECT a.user_id FROM policycraft_user_access a
+          INNER JOIN users u ON u.id = a.user_id
+         WHERE a.user_id = ? AND a.role = 'manager' AND a.status = 'active' AND u.active = 1 AND u.is_deleted = 0
+         FOR UPDATE`, [managerUserId],
+      );
+      if (!managers.length) throw new Error("Manager must be active and linked to an active shared account.");
+      const organizationIds = await validateOrganizations(connection, [changes.addOrganizationId], false, true, true);
+      await connection.execute(
+        `INSERT INTO policycraft_manager_organizations (manager_user_id, org_id, assigned_by_user_id, active)
+         VALUES (?, ?, ?, 1)
+         ON DUPLICATE KEY UPDATE active = 1, updated_at = CURRENT_TIMESTAMP(3)`,
+        [managerUserId, organizationIds[0], updatedByUserId],
+      );
+      await connection.commit();
+      return true;
+    }
     const [managers] = await connection.execute<RowDataPacket[]>(
       `SELECT user_id FROM policycraft_user_access WHERE user_id = ? AND role = 'manager' FOR UPDATE`, [managerUserId],
     );

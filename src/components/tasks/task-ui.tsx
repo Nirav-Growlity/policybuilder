@@ -82,11 +82,11 @@ export type TaskFormDraft = {
   instructions: string;
   organizationId: string;
   managerId: string;
-  policyType: PolicyType;
+  policyType: PolicyType | "";
   dueDate: string;
 };
 
-const defaultDraft: TaskFormDraft = { title: "", instructions: "", organizationId: "", managerId: "", policyType: "environmental", dueDate: "" };
+const defaultDraft: TaskFormDraft = { title: "", instructions: "", organizationId: "", managerId: "", policyType: "", dueDate: "" };
 
 type TaskEditorModalProps = {
   open: boolean;
@@ -114,7 +114,7 @@ function TaskEditorModalContent({
     managerId: task.manager.id,
     policyType: task.policyType,
     dueDate: task.dueDate.slice(0, 10),
-  } : { ...defaultDraft, organizationId: String(organizations.find((item) => !item.deleted && !item.expired)?.id || "") });
+  } : { ...defaultDraft });
   const [fieldError, setFieldError] = React.useState("");
   const organizationId = draft.organizationId;
   const eligibleManagers = managers.filter((manager) => {
@@ -132,6 +132,7 @@ function TaskEditorModalContent({
     event.preventDefault();
     if (!draft.title.trim()) { setFieldError("Enter a task title."); return; }
     if (!draft.organizationId) { setFieldError("Choose an organization."); return; }
+    if (!draft.policyType) { setFieldError("Choose a policy type."); return; }
     if ((!task || !linked) && (!draft.managerId || !eligibleManagers.some((manager) => manager.id === draft.managerId))) { setFieldError("Choose a manager assigned to this organization."); return; }
     if (!draft.dueDate) { setFieldError("Choose a deadline."); return; }
     setFieldError("");
@@ -144,7 +145,7 @@ function TaskEditorModalContent({
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-xs font-semibold text-[var(--color-ink-2)] sm:col-span-2">Task title<input name="title" autoComplete="off" value={draft.title} onChange={(event) => setDraft({ ...draft, title: event.target.value })} maxLength={180} required className={fieldClass} placeholder="Create an environmental policy…" /></label>
         <label className="block text-xs font-semibold text-[var(--color-ink-2)]">Organization<select aria-label="Organization" name="organizationId" value={draft.organizationId} onChange={(event) => changeOrganization(event.target.value)} disabled={linked} required className={fieldClass}><option value="">Choose organization</option>{organizations.filter((organization) => !organization.deleted && !organization.expired).map((organization) => <option key={organization.id} value={organization.id}>{organization.name} · {organizationSourceName(organization)}</option>)}</select></label>
-        <label className="block text-xs font-semibold text-[var(--color-ink-2)]">Policy type<select aria-label="Policy type" name="policyType" value={draft.policyType} onChange={(event) => setDraft({ ...draft, policyType: event.target.value as PolicyType })} disabled={linked} className={fieldClass}>{Object.entries(POLICY_PROFILES).map(([key, profile]) => <option key={key} value={key}>{profile.label}</option>)}</select></label>
+        <label className="block text-xs font-semibold text-[var(--color-ink-2)]">Policy type<select aria-label="Policy type" name="policyType" value={draft.policyType} onChange={(event) => setDraft({ ...draft, policyType: event.target.value as PolicyType | "" })} disabled={linked} required className={fieldClass}><option value="">Choose policy</option>{Object.entries(POLICY_PROFILES).map(([key, profile]) => <option key={key} value={key}>{profile.label}</option>)}</select></label>
         {!task || !linked ? <label className="block text-xs font-semibold text-[var(--color-ink-2)] sm:col-span-2">Assign to<select aria-label="Assign to" name="managerId" value={draft.managerId} onChange={(event) => setDraft({ ...draft, managerId: event.target.value })} required className={fieldClass}><option value="">{eligibleManagers.length ? "Choose an assigned manager" : "No eligible managers"}</option>{eligibleManagers.map((manager) => <option key={manager.id} value={manager.id}>{manager.name || manager.email} · {manager.email}</option>)}</select>{organizationId && !eligibleManagers.length ? <span className="mt-1 block font-normal text-amber-800">Assign a manager to this organization before creating the task.</span> : null}</label> : null}
         <label className="block text-xs font-semibold text-[var(--color-ink-2)] sm:col-span-2">Deadline <span className="font-normal">· end of day, India Standard Time</span><input type="date" name="dueDate" value={draft.dueDate} onChange={(event) => setDraft({ ...draft, dueDate: event.target.value })} required className={fieldClass} /></label>
         <label className="block text-xs font-semibold text-[var(--color-ink-2)] sm:col-span-2">Instructions <span className="font-normal">· optional</span><textarea name="instructions" value={draft.instructions} onChange={(event) => setDraft({ ...draft, instructions: event.target.value })} maxLength={4000} className={textareaClass} placeholder="Add scope or delivery notes…" /></label>

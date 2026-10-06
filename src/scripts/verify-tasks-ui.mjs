@@ -199,7 +199,13 @@ try {
   await page.getByRole("button", { name: "Create task", exact: true }).click();
   const dialog = page.getByRole("dialog");
   assert.equal(await dialog.evaluate((element) => getComputedStyle(element).borderRadius), "8px", "task-only dialogs share the compact surface style");
+  assert.equal(await dialog.getByLabel("Organization", { exact: true }).inputValue(), "", "new tasks require choosing an organization");
+  assert.equal(await dialog.getByLabel("Policy type", { exact: true }).inputValue(), "", "new tasks require choosing a policy type");
+  assert.equal(await dialog.getByLabel("Organization", { exact: true }).getByRole("option", { name: "Choose organization", exact: true }).count(), 1);
+  assert.equal(await dialog.getByLabel("Policy type", { exact: true }).getByRole("option", { name: "Choose policy", exact: true }).count(), 1);
   await dialog.getByLabel("Task title", { exact: true }).fill("New environmental policy assignment");
+  await dialog.getByLabel("Organization", { exact: true }).selectOption("11");
+  await dialog.getByLabel("Policy type", { exact: true }).selectOption("environmental");
   await dialog.getByLabel("Assign to", { exact: false }).selectOption("9");
   await dialog.getByLabel("Organization", { exact: true }).selectOption("22");
   assert.equal(await dialog.getByLabel("Assign to", { exact: false }).inputValue(), "", "organization change clears manager selection");
