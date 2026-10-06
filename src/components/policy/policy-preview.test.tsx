@@ -294,15 +294,16 @@ test("printed outer-number sections do not restore the heading number", async ()
   }
 });
 
-test("professional numbered content matches its heading typography in screen and print", async () => {
+test("professional section headings exceed subsection headings in screen and print", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.visualStyle = "modern";
   const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
   const browser = await chromium.launch({ executablePath: chromePath(), headless: true });
   try {
     for (const documentMarkup of [markup, createPrintDocument(markup, policy)]) {
       const page = await browser.newPage({ viewport: { width: 980, height: 643 } });
       await page.setContent(documentMarkup);
-      const sizes = await page.locator(".policy-focus-list").first().evaluate((list) => {
+      const styles = await page.locator(".policy-focus-list").first().evaluate((list) => {
         const section = list.closest(".policy-section");
         const headingNumber = section?.querySelector<HTMLElement>(".policy-section-heading > span");
         const headingTitle = section?.querySelector<HTMLElement>(".policy-section-heading h2");
@@ -311,11 +312,39 @@ test("professional numbered content matches its heading typography in screen and
         const objectiveGroup = document.querySelector<HTMLElement>('[data-collection="professional"] .policy-objective-groups > section');
         const objectiveNumber = objectiveGroup?.querySelector<HTMLElement>("header b");
         const objectiveTitle = objectiveGroup?.querySelector<HTMLElement>("header h3");
-        if (!headingNumber || !headingTitle || !tileNumber || !tileTitle || !objectiveNumber || !objectiveTitle) throw new Error("professional numbered typography is missing");
-        return [headingNumber, headingTitle, tileNumber, tileTitle, objectiveNumber, objectiveTitle].map((element) => getComputedStyle(element).fontSize);
+        const quantitativeRow = document.querySelector<HTMLElement>('[data-collection="professional"] .policy-modern-targets > div');
+        const quantitativeNumber = quantitativeRow?.querySelector<HTMLElement>(":scope > b");
+        const quantitativeTitle = quantitativeRow?.querySelector<HTMLElement>("h3");
+        const responsibility = document.querySelector<HTMLElement>('[data-collection="professional"] .policy-responsibility-list > div');
+        const responsibilityTitle = responsibility?.querySelector<HTMLElement>("h3");
+        if (!headingNumber || !headingTitle || !tileNumber || !tileTitle || !objectiveNumber || !objectiveTitle || !quantitativeRow || !quantitativeNumber || !quantitativeTitle || !responsibility || !responsibilityTitle) throw new Error("professional numbered typography is missing");
+        return {
+          headingNumber: parseFloat(getComputedStyle(headingNumber).fontSize),
+          headingTitle: parseFloat(getComputedStyle(headingTitle).fontSize),
+          focusNumber: parseFloat(getComputedStyle(tileNumber).fontSize),
+          focusTitle: parseFloat(getComputedStyle(tileTitle).fontSize),
+          objectiveNumber: parseFloat(getComputedStyle(objectiveNumber).fontSize),
+          objectiveTitle: parseFloat(getComputedStyle(objectiveTitle).fontSize),
+          quantitativeNumber: parseFloat(getComputedStyle(quantitativeNumber).fontSize),
+          quantitativeTitle: parseFloat(getComputedStyle(quantitativeTitle).fontSize),
+          responsibilityTitle: parseFloat(getComputedStyle(responsibilityTitle).fontSize),
+          focusRule: getComputedStyle(list.querySelector<HTMLElement>(".policy-focus-item")!).borderBottomWidth,
+          objectiveRule: getComputedStyle(objectiveGroup!).borderTopWidth,
+          quantitativeRule: getComputedStyle(quantitativeRow).borderTopWidth,
+          responsibilityRule: getComputedStyle(responsibility).borderTopWidth,
+        };
       });
-      assert.equal(new Set(sizes.slice(0, 4)).size, 1, `section and focus-row font sizes differ: ${sizes.slice(0, 4).join(", ")}`);
-      assert.equal(sizes[4], sizes[5], `qualitative number and area heading sizes differ: ${sizes.slice(4).join(", ")}`);
+      assert.equal(styles.headingNumber, styles.headingTitle, "professional section number and title should share a size");
+      assert.ok(styles.headingTitle > styles.focusTitle, `section heading should exceed focus text: ${JSON.stringify(styles)}`);
+      assert.equal(styles.objectiveNumber, styles.objectiveTitle, "qualitative group number and area heading should share a size");
+      assert.ok(styles.headingTitle > styles.objectiveTitle, `section heading should exceed qualitative area heading: ${JSON.stringify(styles)}`);
+      assert.equal(styles.quantitativeNumber, styles.quantitativeTitle, "quantitative group number and area heading should share a size");
+      assert.ok(styles.headingTitle > styles.quantitativeTitle, `section heading should exceed quantitative area heading: ${JSON.stringify(styles)}`);
+      assert.ok(styles.headingTitle > styles.responsibilityTitle, `section heading should exceed responsibility heading: ${JSON.stringify(styles)}`);
+      assert.equal(styles.focusRule, "0px", "focus rows should not have decorative separators");
+      assert.equal(styles.objectiveRule, "0px", "qualitative groups should not have decorative separators");
+      assert.equal(styles.quantitativeRule, "0px", "quantitative groups should not have decorative separators");
+      assert.equal(styles.responsibilityRule, "0px", "responsibility entries should not have decorative separators");
       await page.close();
     }
   } finally {
@@ -415,6 +444,16 @@ test("quantitative numbers match area-heading typography and primary color in sc
         }
         await page.close();
       }
+    }
+    const journalPolicy = templatePreviewPolicy("operations-guide", "environmental");
+    journalPolicy.visualStyle = "modern";
+    const journalMarkup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy: journalPolicy }));
+    for (const documentMarkup of [journalMarkup, createPrintDocument(journalMarkup, journalPolicy)]) {
+      const page = await browser.newPage({ viewport: { width: 980, height: 643 } });
+      await page.setContent(documentMarkup);
+      const separatorWidth = await page.locator('[id$="-quantitative"] .policy-journal-targets > div').first().evaluate((row) => getComputedStyle(row).borderTopWidth);
+      assert.equal(separatorWidth, "0px", "journal quantitative rows should not have decorative separators");
+      await page.close();
     }
   } finally {
     await browser.close();

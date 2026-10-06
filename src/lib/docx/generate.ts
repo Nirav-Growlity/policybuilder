@@ -472,7 +472,7 @@ function sectionTitle(section: DocumentRenderSection, model: DocumentRenderModel
   const children: ParagraphChild[] = [new Bookmark({ id: section.id, children: [] })];
   const number = listMarkerText(model.listFormatting.outline, section.index);
   if (theme.collection === "professional") {
-    const professionalSectionSize = 20;
+    const professionalSectionSize = Math.round(typography.headingSize * 2);
     children.push(new TextRun({ text: number + "   ", color: documentHex(theme.colors.primary), size: professionalSectionSize, font: typography.fontFamily }), new TextRun({ text: section.title, color: documentHex(theme.colors.primary), bold: true, size: professionalSectionSize, font: typography.headingFontFamily || typography.fontFamily }));
     return new Paragraph({ style: "PolicyHeading", alignment: docxContentAlignment(model.theme.textAlignment), border: { bottom: border(documentHex(theme.colors.primary), 4) }, spacing: { before: 260, after: 180 }, children });
   }
@@ -619,7 +619,6 @@ function targetBand(group: QuantitativeTargetGroup, index: number, model: Docume
 
 function journalTarget(group: QuantitativeTargetGroup, model: DocumentRenderModel): DocBlock[] {
   return [new Paragraph({
-    border: { top: border(documentHex(model.theme.colors.line), 5) },
     spacing: { before: 90, after: 55 },
     children: [new TextRun({ text: group.area, bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })],
   }), ...quantitativeTargetParagraphs(group, model)];
@@ -643,8 +642,8 @@ function areaHeading(area: string, model: DocumentRenderModel): Paragraph {
 function quantitativeEntryGroup(group: QuantitativeTargetGroup, index: number, model: DocumentRenderModel, availableWidth: number): DocBlock {
   const numberWidth = QUANTITATIVE_NUMBER_WIDTH;
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: listMarkerText(model.listFormatting.quantitativeGroups, index), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) }, verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
-    tableCell(quantitativeTargetBody(group, model), availableWidth - numberWidth, { borders: { top: border(documentHex(model.theme.colors.line), 5) } }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: listMarkerText(model.listFormatting.quantitativeGroups, index), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], numberWidth, { verticalAlign: VerticalAlign.TOP, margins: { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } }),
+    tableCell(quantitativeTargetBody(group, model), availableWidth - numberWidth),
   ] })], [numberWidth, availableWidth - numberWidth]);
 }
 
@@ -701,11 +700,11 @@ function entryRow(number: string, text: string, width: number, theme: DocumentTh
   const numberWidth = professional ? Math.round(8 * A4.pointsPerMm * 20) : editorial ? 900 : 700;
   const [title, ...rest] = text.split("\n");
   return fixedTable([new TableRow({ cantSplit: true, children: [
-    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: number, bold: !editorial && !professional, color: documentHex(professional ? theme.colors.muted : editorial ? theme.colors.accent : theme.colors.onPrimary), size: professional || editorial ? 20 : 18, font: professional ? theme.defaults.typography.fontFamily : editorial ? "Georgia" : "Arial" })] })], numberWidth, { fill: professional || editorial ? undefined : documentHex(theme.colors.primary), borders: professional || editorial ? { top: border(documentHex(theme.colors.line), 5) } : noBorders(), margins: professional ? { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } : undefined }),
+    tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: number, bold: !editorial && !professional, color: documentHex(professional ? theme.colors.muted : editorial ? theme.colors.accent : theme.colors.onPrimary), size: professional || editorial ? 20 : 18, font: professional ? theme.defaults.typography.fontFamily : editorial ? "Georgia" : "Arial" })] })], numberWidth, { fill: professional || editorial ? undefined : documentHex(theme.colors.primary), borders: noBorders(), margins: professional ? { top: CELL_MARGIN, bottom: CELL_MARGIN, left: 0, right: 0 } : undefined }),
     tableCell([
       new Paragraph({ children: [new TextRun({ text: title, bold: splitRole, color: documentHex(theme.colors.ink), size: 20 })] }),
       ...(rest.length ? [new Paragraph({ spacing: { before: 45 }, children: [new TextRun({ text: rest.join(" "), size: 19 })] })] : []),
-    ], width - numberWidth, { borders: { top: border(documentHex(theme.colors.line), 5) } }),
+    ], width - numberWidth, { borders: noBorders() }),
   ] })], [numberWidth, width - numberWidth]);
 }
 

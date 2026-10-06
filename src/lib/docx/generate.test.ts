@@ -175,7 +175,7 @@ test("Word quantitative numbers match area-heading typography and primary color"
   assert.equal(number![1], documentHex(getPolicyDocumentTheme(policy).colors.primary), "quantitative number should use the primary color");
 });
 
-test("Word professional section numbers and titles match focus-row typography", async () => {
+test("Word professional section headings exceed subsection headings", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   const zip = await JSZip.loadAsync(await generateDocx(policy));
   const document = await zip.file("word/document.xml")!.async("string");
@@ -188,8 +188,11 @@ test("Word professional section numbers and titles match focus-row typography", 
   const headingTitleSize = runSize(heading, /Key Focus Areas/);
   const focusNumberSize = runSize(focusRows, /01/);
   const focusTitleSize = runSize(focusRows, /Energy Consumption &amp; GHG Emissions/);
-  assert.deepEqual([headingNumberSize, headingTitleSize], [focusNumberSize, focusTitleSize]);
-  assert.equal(new Set([headingNumberSize, headingTitleSize]).size, 1, "professional section number and title should share one size");
+  assert.equal(headingNumberSize, headingTitleSize, "professional section number and title should share one size");
+  assert.ok(headingTitleSize > focusNumberSize, `professional section heading should exceed focus-row number: ${headingTitleSize} vs ${focusNumberSize}`);
+  assert.ok(headingTitleSize > focusTitleSize, `professional section heading should exceed focus-row title: ${headingTitleSize} vs ${focusTitleSize}`);
+  const model = getPolicyDocumentTheme(policy);
+  assert.equal(headingTitleSize, Math.round(model.defaults.typography.headingSize * 2), "professional section heading should use the shared heading size");
 });
 
 test("Word professional qualitative numbers match their area-heading size", async () => {
