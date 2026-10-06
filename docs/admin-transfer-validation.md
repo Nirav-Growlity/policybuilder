@@ -1,5 +1,7 @@
 # Administrator handover implementation evidence
 
+Historical report: the transfer behavior below was replaced on 2026-10-06 by adding administrators while retaining the acting administrator's access. See [the current validation report](./admin-add-validation.md) and [current setup instructions](../src/migrations/README_policycraft_access.md#add-administrators-after-setup).
+
 Date: 2026-10-01. Base: `2948b0c082e9c18e96f0268e2b2cb0b5841538c8`. Changes remain uncommitted.
 
 The request and dependent work items are recorded in `.scratch/admin-transfer/`. The architecture specialist provided a read-only impact map; the data specialist owned the workflow, repository, and API. The main agent integrated the change and implemented the UI because the UI specialist could not start within the agent thread capacity. The UI applies `frontend-skill` app guidance and was checked against `web-design-guidelines`.

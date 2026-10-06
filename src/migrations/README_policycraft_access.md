@@ -56,18 +56,18 @@ Do not set or change `users.role`, `users.org_id`, or `users.org_code` to grant 
 
 For verification counts, use `SELECT COUNT(*) FROM policycraft_user_access;`, `SELECT COUNT(*) FROM policycraft_manager_organizations;`, and `SELECT COUNT(*) FROM policycraft_manager_invitations;`. Do not infer successful mail delivery from an invitation row; check `delivery_status`.
 
-## Transfer administration after setup
+## Add administrators after setup
 
-Once the access migration and first-admin bootstrap have been applied, future handovers use the application. No additional SQL or migration is required.
+Once the access migration and first-admin bootstrap have been applied, administrators can add other administrators in the application. Multiple active administrator grants are supported by the existing access table. No additional SQL or migration is required.
 
 1. Sign in as the current PolicyCraft administrator and open **Administration**.
-2. Enter the next administrator's own email in **New administrator email**, then choose **Find account**. They need an existing active account with a working password login. For someone new, add them as a manager and wait for invitation acceptance. For an existing email, the manager form offers **Grant manager access** without sending an invitation. Resolve any pending manager invitation for the recipient before transferring.
-3. Check the displayed name and email. Choose **Transfer admin access**, enter your current password, then choose **Confirm transfer**.
-4. You are signed out and your PolicyCraft access is removed. The recipient signs in with their own existing email and password and receives administrator access. Shared ESG account details, policy creators, and organization assignments are preserved.
-5. Ask the new administrator to open **Managers** and **Resend** outstanding invitations you sent. Resend replaces each old link and makes the new administrator its inviter. Invitations expire 72 hours after sending.
-6. Verify the recipient can open the admin workspace and your old browser tabs can no longer make protected requests. If a network interruption leaves the result unclear, refresh and verify which account has access before retrying.
+2. Enter the additional administrator's email in **New administrator email**, then choose **Find account**. An existing active manager is eligible. They need a working password login. For someone new, invite them as a manager and wait for acceptance. Resolve any pending manager invitation for the recipient before adding administrator access.
+3. Check the displayed name and email. Choose **Add administrator**, enter your current password, then confirm.
+4. You retain administrator access and stay signed in. The recipient signs in with their own existing email and password and receives administrator access. Promoting a manager replaces that account's PolicyCraft role with admin; its existing manager assignment records, shared ESG account details and policy attribution are preserved.
+5. Verify both accounts can open the admin workspace. Existing invitations from you remain valid because you remain an active administrator. Enter another email to repeat the flow.
+6. If a network interruption leaves the result unclear, look up the account again to verify its current access before retrying.
 
-The outgoing account's PolicyCraft grant stays disabled, preventing ordinary-user fallback. Disabled staff accounts cannot be selected as recipients. A later handover can select another eligible active account; reactivating a disabled former administrator is outside this screen.
+Disabled staff accounts cannot be selected as recipients. An account that already has administrator access is reported as such; it does not need another grant. Reactivating disabled staff accounts is outside this screen.
 
 ## Invitation mail configuration
 

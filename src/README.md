@@ -26,7 +26,7 @@ The additive migration in `migrations/2026_09_create_policycraft_documents.sql` 
 
 ## Admin and manager workspaces
 
-For release, production migration/bootstrap, deployment, smoke checks, rollback, and future handovers, follow the [PolicyCraft production rollout runbook](../docs/policycraft-production-rollout.md).
+For release, production migration/bootstrap, deployment, smoke checks, rollback, and adding administrators, follow the [PolicyCraft production rollout runbook](../docs/policycraft-production-rollout.md).
 
 The same login now opens `/admin` for PolicyCraft administrators, `/manager` for managers, and `/drafts` for existing client users. Staff access is independent of shared ESG roles. Managers share policies within their assigned organizations; policy ownership and creator attribution stay attached to the original organization and account.
 
@@ -78,13 +78,13 @@ Run `npm run test:tasks` for progress and transactional task checks. With the ap
 
 `node scripts/verify-tasks-anonymous.mjs` checks that all task/admin-progress operations reject callers without cookies before processing mutation bodies.
 
-## Administrator handover
+## Add administrators
 
-Administrator handover is available at **Administration → New administrator email → Find account → Transfer admin access**. Review the recipient, enter your current password, and confirm. The recipient must have an existing active account with a working password login; a new person can accept a manager invitation first. This transfers PolicyCraft permissions without changing either shared ESG email/password. The outgoing account loses PolicyCraft access and is signed out. The new administrator should resend outstanding invitations sent by the outgoing administrator. This uses the existing access tables and requires no additional migration after the access migration.
+Additional administrators can be added at **Administration → New administrator email → Find account → Add administrator**. Review the account, enter your current administrator password, and confirm. An existing active manager is eligible and becomes an administrator. The account must have a working password login; a new person can accept a manager invitation first. You remain an administrator and stay signed in. Existing passwords, shared ESG account fields, manager assignment records and policy attribution are preserved. This uses the existing access tables and requires no additional migration after the access migration.
 
-Admin-transfer browser fixtures (all application APIs mocked, no live account changes): `node scripts/verify-admin-transfer-ui.mjs`. Set `POLICYCRAFT_UI_URL` and `POLICYCRAFT_UI_OUTPUT` for your local server and writable screenshot directory.
+Add-administrator browser fixtures (all application APIs mocked, no live account changes): `node scripts/verify-admin-add-ui.mjs`. Set `POLICYCRAFT_UI_URL` and `POLICYCRAFT_UI_OUTPUT` for your local server and writable screenshot directory.
 
-Follow the [manual handover steps](migrations/README_policycraft_access.md#transfer-administration-after-setup). Implementation evidence and pending live checks are recorded in [the handover validation report](../docs/admin-transfer-validation.md).
+Follow the [add-administrator steps](migrations/README_policycraft_access.md#add-administrators-after-setup). Implementation evidence and pending live checks are recorded in [the administrator validation report](../docs/admin-add-validation.md).
 
 ## Learn More
 

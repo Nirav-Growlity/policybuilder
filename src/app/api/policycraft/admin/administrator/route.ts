@@ -1,12 +1,12 @@
 import { getPolicyCraftAdminResult, policyCraftMutationFailure } from "@/lib/policycraft-auth";
 import {
-  isValidTransferEmail,
-  lookupPolicyCraftAdminTransferRecipient,
-  normalizeTransferEmail,
-  PolicyCraftAdminTransferError,
-  transferPolicyCraftAdministrator,
-} from "@/lib/policycraft-admin-transfer";
-import { policyCraftAdminTransferRepository } from "@/lib/policycraft-admin-transfer-repository";
+  addPolicyCraftAdministrator,
+  isValidAdminAddEmail,
+  lookupPolicyCraftAdminRecipient,
+  normalizeAdminAddEmail,
+  PolicyCraftAdminAddError,
+} from "@/lib/policycraft-admin-add";
+import { policyCraftAdminAddRepository } from "@/lib/policycraft-admin-add-repository";
 import { verifyPolicyCraftPasswordHash } from "@/lib/policycraft-password";
 
 type RequestBody = {
@@ -17,7 +17,7 @@ type RequestBody = {
   password?: unknown;
 };
 
-function transferErrorResponse(error: PolicyCraftAdminTransferError): Response {
+function addErrorResponse(error: PolicyCraftAdminAddError): Response {
   const status = error.code === "ACTOR_UNAUTHORIZED" ? 401
     : error.code === "INVALID_PASSWORD" ? 403
       : error.code === "RECIPIENT_NOT_FOUND" ? 404
@@ -36,18 +36,18 @@ export async function POST(request: Request) {
   if (mutationFailure) return mutationFailure;
 
   const body = await request.json().catch(() => null) as RequestBody | null;
-  if (!body || (body.action !== "lookup" && body.action !== "transfer") || typeof body.email !== "string") {
+  if (!body || (body.action !== "lookup" && body.action !== "add") || typeof body.email !== "string") {
     return Response.json({ error: "Provide a valid action and email address." }, { status: 400 });
   }
-  const email = normalizeTransferEmail(body.email);
-  if (!isValidTransferEmail(email)) {
+  const email = normalizeAdminAddEmail(body.email);
+  if (!isValidAdminAddEmail(email)) {
     return Response.json({ error: "Enter a valid email address." }, { status: 400 });
   }
 
   try {
     if (body.action === "lookup") {
-      const recipient = await lookupPolicyCraftAdminTransferRecipient(
-        policyCraftAdminTransferRepository,
+      const recipient = await lookupPolicyCraftAdminRecipient(
+        policyCraftAdminAddRepository,
         Number(actor.user.id),
         email,
       );
@@ -55,18 +55,18 @@ export async function POST(request: Request) {
     }
 
     if (typeof body.recipientId !== "string" || body.confirmed !== true || typeof body.password !== "string" || !body.password) {
-      return Response.json({ error: "Confirm the reviewed recipient and enter your current administrator password." }, { status: 400 });
+      return Response.json({ error: "Confirm the reviewed account and enter your current administrator password." }, { status: 400 });
     }
-    const recipient = await transferPolicyCraftAdministrator(policyCraftAdminTransferRepository, {
+    const recipient = await addPolicyCraftAdministrator(policyCraftAdminAddRepository, {
       actorId: Number(actor.user.id),
       email,
       recipientId: body.recipientId,
       confirmed: true,
       password: body.password,
     }, verifyPolicyCraftPasswordHash);
-    return Response.json({ transferred: true, recipient }, { headers: { "Cache-Control": "private, no-store" } });
+    return Response.json({ added: true, recipient }, { headers: { "Cache-Control": "private, no-store" } });
   } catch (error) {
-    if (error instanceof PolicyCraftAdminTransferError) return transferErrorResponse(error);
-    return Response.json({ error: "Could not complete the administrator transfer." }, { status: 500 });
+    if (error instanceof PolicyCraftAdminAddError) return addErrorResponse(error);
+    return Response.json({ error: "Could not add the administrator." }, { status: 500 });
   }
 }

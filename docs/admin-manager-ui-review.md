@@ -2,6 +2,8 @@
 
 Date: 5 October 2026
 
+The Administration handover described and tested below was replaced on 6 October 2026 by adding administrators while retaining the acting admin's access/session. Its browser fixture is now `src/scripts/verify-admin-add-ui.mjs`; see [the current validation report](./admin-add-validation.md). Earlier transfer/sign-out results below are historical evidence.
+
 ## Scope and direction
 
 Review `/admin`, `/admin/managers/new`, `/admin/policies`, `/admin/administration`, `/manager`, the invitation acceptance handoff, and their shared workspace shell and dialogs. Preserve the existing horizontal navigation, cream background, forest-green accent, Fraunces headings, Inter body text, route structure, and authorization contracts. The user requires visual consistency, then rejected the initial subtle admin refinement and supplied a policy-list screenshot showing clipped actions and heavily truncated titles. The final admin work therefore restructures list and form surfaces visibly within the existing brand.

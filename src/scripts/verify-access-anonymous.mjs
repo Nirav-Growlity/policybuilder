@@ -11,4 +11,4 @@ const form = new FormData();
 form.set("file", new Blob(["not a policy"]), "policy.docx");
 const response = await fetch(`${base}/api/parse/docx?orgId=11`, { method: "POST", headers: { Origin: new URL(base).origin }, body: form });
 assert.equal(response.status, 401, "DOCX import must reject anonymous callers before reading a file");
-console.log("PASS: all six protected generation/import/export/admin-transfer handlers deny anonymous requests before processing.");
+console.log("PASS: all six protected generation/import/export/add-administrator handlers deny anonymous requests before processing.");

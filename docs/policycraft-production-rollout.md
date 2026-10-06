@@ -11,12 +11,12 @@ The application code does not apply migrations automatically. **You or your data
 - [ ] For the task workspace release, run `npm run test:tasks` and follow the [task rollout guide](policycraft-tasks-rollout.md). The database owner must apply and verify the additive task migration; legacy progress requires independently verified evidence or a fresh manager save.
 - [ ] For PolicyCraft-only organizations, follow the [organization rollout guide](policycraft-organizations-rollout.md). The owner applies and verifies the registry migration before deploying; retain the explicit ESG mappings and review rollback compatibility after standalone records are created.
 - [ ] Run the release TypeScript, lint, and production-build checks required by your team. A past full test run reported 23 existing cover-color/footer-layout failures; review the current result rather than assuming those failures are still present or resolved.
-- [ ] Test the UI with the API-mocked scripts `node scripts/verify-access-ui.mjs` and `node scripts/verify-admin-transfer-ui.mjs`, plus `node scripts/verify-access-anonymous.mjs`. Start a local app first and use a writable screenshot directory. These tests do not validate production data or email delivery.
+- [ ] Test the UI with the API-mocked scripts `node scripts/verify-access-ui.mjs` and `node scripts/verify-admin-add-ui.mjs`, plus `node scripts/verify-access-anonymous.mjs`. Start a local app first and use a writable screenshot directory. These tests do not validate production data or email delivery.
 - [ ] Finish the live acceptance checks in staging: invitations, account linking, role restrictions, assignment revocation, shared policy editing, saves/conflicts, organization scoping, previews, and PDF/DOCX exports.
 - [ ] Choose an existing, active shared account for the first PolicyCraft admin. Confirm the person can sign in and that their normalized email belongs to exactly one active `users` row.
 - [ ] Decide the production origin and confirm the ZeptoMail sender/domain and regional SMTP host.
 
-Do not use a production account for invitation, transfer, or destructive-policy tests. Use dedicated staging accounts and organizations first.
+Do not use a production account for invitation, administrator-grant, or destructive-policy tests. Use dedicated staging accounts and organizations first.
 
 ## 2. Confirm the production target and make a backup
 
@@ -120,7 +120,7 @@ The first admin is an existing active shared account. This is a one-time PolicyC
 
    Confirm the intended account is the active admin. If the script reports a collation error, you are likely running an old copy or the production column uses a different collation. Do not continue until the two email comparisons match that column's collation.
 
-Do not designate a first admin by changing shared ESG account fields. Later admin handovers happen in the app and do not require a migration or bootstrap SQL.
+Do not designate a first admin by changing shared ESG account fields. Later administrators are added in the app and do not require a migration or bootstrap SQL.
 
 ## 7. Set production application configuration
 
@@ -166,7 +166,7 @@ Start with the smallest safe checks, using dedicated test accounts where possibl
 - [ ] Admin policy filters, creator attribution, archive/restore, and permitted delete behavior work as intended.
 - [ ] Test forged organization/document identifiers and stale-save conflicts using a safe test account.
 - [ ] Verify private cover artwork and the current user's signature in preview, downloaded PDF, and a Word-rendered DOCX.
-- [ ] Transfer admin access only in staging first: confirm the recipient account, current-password prompt, recipient login, outgoing-admin signout, and denial from an old outgoing-admin tab. Resend outstanding manager invitations as the new admin.
+- [ ] Add administrator access in staging first: confirm the recipient account, current-password prompt and recipient login, and verify the acting admin stays signed in with active access. Confirm existing passwords, manager assignment records and outstanding invitations are preserved.
 
 Do not use a real customer policy to test deletion or export changes. Record results and the test account IDs in the deployment record without storing passwords or invitation URLs.
 
@@ -184,14 +184,14 @@ If a migration only partly applied, stop and have the database owner inspect the
 
 If admin access is unavailable, do not edit shared ESG roles. Use the documented bootstrap only after verifying there is no active admin, the target email uniquely identifies one active account, and the database owner approves the grant. Record the recovery action.
 
-## 12. Future administrator handover
+## 12. Add administrators
 
-After production is healthy, a current admin can hand over access without SQL:
+After production is healthy, a current admin can add other administrators without SQL:
 
-1. Open **Administration**, enter the next admin's email, and select **Find account**.
+1. Open **Administration**, enter the additional admin's email, and select **Find account**.
 2. Review the person's name and email. The person must have an active account and working password login. Invite a new person as a manager first, then wait for acceptance.
-3. Select **Transfer admin access**, enter the current admin's password, and confirm.
-4. The outgoing admin is signed out and loses PolicyCraft access. The recipient signs in with their own account.
-5. The new admin resends outstanding invitations originally sent by the outgoing admin.
+3. Select **Add administrator**, enter the current admin's password, and confirm.
+4. The current admin retains access and stays signed in. The recipient signs in with their own existing account and password.
+5. Verify both accounts can open the admin workspace. Invitations sent by the current admin remain valid.
 
-The transfer does not change shared ESG identity fields or policy attribution. It uses the existing access tables; no new migration is needed.
+Existing managers are eligible; their PolicyCraft role becomes admin and their assignment records remain intact. Adding an administrator does not change shared ESG identity fields or policy attribution. It uses the existing access tables; no new migration is needed.

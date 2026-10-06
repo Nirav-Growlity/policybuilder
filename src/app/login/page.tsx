@@ -70,7 +70,6 @@ function LoginPageContent() {
           </div>
           <h1 className="font-display text-3xl font-semibold tracking-tight">Sign in to your workspace</h1>
           <p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]">Use your existing ESG account. The ESG application does not need to be running.</p>
-          {searchParams.get("adminTransferred") === "1" ? <p role="status" className="mt-4 rounded-lg bg-[var(--color-forest-soft)] px-3 py-3 text-sm leading-6 text-[var(--color-forest-deep)]">Administrator access was transferred. The new administrator can sign in with their existing account.</p> : null}
           <form className="mt-7 space-y-4" onSubmit={submit}>
             <label className="block text-sm font-medium">
               Email
