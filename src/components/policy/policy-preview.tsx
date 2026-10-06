@@ -10,7 +10,7 @@ import {
   type DocumentRenderSection,
 } from "@/lib/document-render-model";
 import type { Policy, RichTextBlock } from "@/lib/types";
-import { getCoverBindingValue, getCoverTextPresentation } from "@/lib/cover-composition";
+import { COVER_BACKGROUND_OVERSCAN, getCoverBindingValue, getCoverTextPresentation } from "@/lib/cover-composition";
 import { coverAssetIdFromReference } from "@/lib/cover-composition";
 import { policyCraftScopedUrl } from "@/lib/policycraft-scope-utils";
 import { resolveCoverTextLayout } from "@/lib/cover-renderer";
@@ -163,7 +163,7 @@ function coverAssetSource(reference: string | undefined, scope?: PolicyCraftWork
 function CoverCompositionElements({ composition, policy, showElements, assetScope }: { composition: NonNullable<DocumentRenderModel["cover"]["composition"]>; policy: Policy; showElements: boolean; assetScope?: PolicyCraftWorkspaceScope | null }) {
   const background = composition.background.assetId;
   return <>
-    {background ? <img src={coverAssetSource(background, assetScope)} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit }} /> : null}
+    {background ? <img src={coverAssetSource(background, assetScope)} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit, transform: `scale(${COVER_BACKGROUND_OVERSCAN})`, transformOrigin: "center" }} /> : null}
     {composition.elements.filter((element) => element.visible && (showElements || element.type !== "text")).sort((a, b) => a.zIndex - b.zIndex).map((element) => {
       const style: CSSProperties = { left: `${(element.x / 210) * 100}%`, top: `${(element.y / 297) * 100}%`, width: `${(element.width / 210) * 100}%`, height: `${(element.height / 297) * 100}%`, opacity: element.opacity, zIndex: element.zIndex, transform: `rotate(${element.rotation}deg)` };
       if (element.type === "text") {

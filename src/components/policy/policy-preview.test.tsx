@@ -3,6 +3,7 @@ import test from "node:test";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { chromium } from "playwright-core";
+import sharp from "sharp";
 import { PolicyCoverPreview, PolicyPreview } from "./policy-preview";
 import { createAICoverComposition, fallbackAICoverLayout } from "../../lib/ai/cover";
 import { templatePreviewPolicy } from "../../lib/sample-policies";
@@ -23,6 +24,33 @@ test("custom cover keeps its background image without rendering a background lab
 
   assert.match(markup, /policy-custom-cover-background/);
   assert.doesNotMatch(markup, /Cover background/);
+});
+
+test("custom cover background overscan hides narrow white source edges", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const source = (await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="210" height="297"><rect width="210" height="297" fill="#176B45"/><rect width="0.6" height="297" fill="#fff"/><rect x="209.4" width="0.6" height="297" fill="#fff"/></svg>')).resize(2100, 2970).png().toBuffer()).toString("base64");
+  policy.coverComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "custom",
+    background: { color: "#176B45", assetId: `data:image/png;base64,${source}`, fit: "contain", focalPoint: { x: 50, y: 50 } },
+    elements: [],
+  };
+  policy.aiCoverComposition = undefined;
+  policy.activeCoverVariant = "manual";
+  const markup = renderToStaticMarkup(React.createElement(PolicyCoverPreview, { policy, showElements: false }));
+  const browser = await chromium.launch({ executablePath: chromePath(), headless: true });
+  try {
+    const page = await browser.newPage({ viewport: { width: 794, height: 1123 }, deviceScaleFactor: 1 });
+    await page.setContent(markup);
+    await page.addStyleTag({ content: "html,body{margin:0;width:210mm;height:297mm}.cover-preview-only{width:210mm!important;height:297mm!important}.policy-custom-cover{width:210mm!important;height:297mm!important}" });
+    const png = await page.locator(".policy-custom-cover").screenshot();
+    const { data, info } = await sharp(png).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+    const sample = (x: number) => [...data.subarray((Math.floor(info.height / 2) * info.width + x) * info.channels, (Math.floor(info.height / 2) * info.width + x) * info.channels + 3)];
+    assert.deepEqual(sample(0), [23, 107, 69], "left source edge should be covered by background overscan");
+    assert.deepEqual(sample(info.width - 1), [23, 107, 69], "right source edge should be covered by background overscan");
+  } finally {
+    await browser.close();
+  }
 });
 
 test("private cover and logo assets carry the selected organization in browser preview URLs", () => {

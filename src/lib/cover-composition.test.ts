@@ -1,9 +1,37 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { coverAssetIdFromReference, getActiveCoverComposition, getActiveCoverVariant, getCoverBindingValue, getCoverTextPresentation, hasExternalCoverAssets, normalizeCoverComposition, normalizePolicyCovers, stripExternalActiveCoverAssets } from "./cover-composition";
+import sharp from "sharp";
+import { COVER_BACKGROUND_OVERSCAN, coverAssetIdFromReference, getActiveCoverComposition, getActiveCoverVariant, getCoverBindingValue, getCoverTextPresentation, hasExternalCoverAssets, normalizeCoverComposition, normalizePolicyCovers, stripExternalActiveCoverAssets } from "./cover-composition";
 import { initialPolicy } from "./store";
 import { buildDocumentRenderModel } from "./document-render-model";
-import { resolveCoverTextLayout } from "./cover-renderer";
+import { createCoverCompositionSvg, resolveCoverTextLayout } from "./cover-renderer";
+
+test("cover SVG crops narrow white edges while preserving intentional contain letterboxing", async () => {
+  const backgroundSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="210" height="297"><rect width="210" height="297" fill="#176B45"/><rect width="0.6" height="297" fill="#fff"/><rect x="209.4" width="0.6" height="297" fill="#fff"/></svg>';
+  const baseComposition = {
+    schemaVersion: 1,
+    sourceTemplateId: "custom",
+    background: { color: "#176B45", assetId: `data:image/svg+xml;base64,${Buffer.from(backgroundSvg).toString("base64")}`, fit: "cover", focalPoint: { x: 50, y: 50 } },
+    elements: [{ id: "fixed-title", type: "text", x: 12, y: 34, width: 80, height: 20, rotation: 0, opacity: 1, zIndex: 1, visible: true, locked: false, content: { kind: "literal", text: "Title" }, fontFamily: "Arial", fontSize: 20, color: "#FFFFFF", bold: false, italic: false, underline: false, align: "left", lineHeight: 1.2, letterSpacing: 0 }],
+  } as const;
+  const policy = initialPolicy("environmental");
+  const backgroundPng = await sharp(Buffer.from(backgroundSvg)).resize(2100, 2970).png().toBuffer();
+  const cover = normalizeCoverComposition({ ...baseComposition, background: { ...baseComposition.background, assetId: `data:image/png;base64,${backgroundPng.toString("base64")}` } })!;
+  const coverSvg = createCoverCompositionSvg(policy, cover, { width: 2100, height: 2970 });
+  const rendered = await sharp(Buffer.from(coverSvg)).resize(2100, 2970).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const sample = (x: number) => [...rendered.data.subarray((Math.floor(rendered.info.height / 2) * rendered.info.width + x) * rendered.info.channels, (Math.floor(rendered.info.height / 2) * rendered.info.width + x) * rendered.info.channels + 3)];
+  assert.deepEqual(sample(0), [23, 107, 69]);
+  assert.deepEqual(sample(rendered.info.width - 1), [23, 107, 69]);
+  assert.match(coverSvg, /translate\(12 34\)/, "overscan must not move editable cover layers");
+
+  const narrowPng = await sharp({ create: { width: 160, height: 297, channels: 3, background: { r: 23, g: 107, b: 69 } } }).png().toBuffer();
+  const containComposition = normalizeCoverComposition({ ...baseComposition, background: { ...baseComposition.background, color: "#FFFFFF", assetId: `data:image/png;base64,${narrowPng.toString("base64")}`, fit: "contain" } })!;
+  const containSvg = createCoverCompositionSvg(policy, containComposition, { width: 2100, height: 2970 });
+  const contained = await sharp(Buffer.from(containSvg)).resize(2100, 2970).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const left = [...contained.data.subarray(Math.floor(contained.info.height / 2) * contained.info.width * contained.info.channels, Math.floor(contained.info.height / 2) * contained.info.width * contained.info.channels + 3)];
+  assert.deepEqual(left, [255, 255, 255], "small overscan retains intentional contain letterboxing for a narrow source");
+  assert.equal(COVER_BACKGROUND_OVERSCAN, 1.02);
+});
 
 test("normalizes a cover scene and clamps geometry", () => {
   const result = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "standard-pack", background: { color: "#fff" }, elements: [{ id: "a", type: "text", x: -10, y: 999, width: 999, height: 0, rotation: 900, opacity: 2, zIndex: 4, content: { kind: "literal", text: "hello" } }] });

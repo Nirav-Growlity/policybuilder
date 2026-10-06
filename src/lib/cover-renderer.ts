@@ -1,4 +1,4 @@
-import { getCoverBindingValue, getCoverTextPresentation } from "./cover-composition";
+import { COVER_BACKGROUND_OVERSCAN, COVER_HEIGHT_MM, COVER_WIDTH_MM, getCoverBindingValue, getCoverTextPresentation } from "./cover-composition";
 import type { CoverComposition, CoverElement, CoverTextElement, Policy } from "./types";
 
 type CoverSvgOptions = {
@@ -143,13 +143,19 @@ export function createCoverCompositionSvg(policy: Policy, composition: CoverComp
   const includeText = options.includeText !== false;
   const includeElements = options.includeElements !== false;
   const resolveAsset = options.resolveAsset || defaultAssetSource;
+  const backgroundScale = COVER_BACKGROUND_OVERSCAN;
   const background = imageMarkup({
     assetId: composition.background.assetId,
     fit: composition.background.fit,
     focalPoint: composition.background.focalPoint,
     opacity: 1,
     altText: "Cover background",
-  }, 0, 0, 210, 297, resolveAsset);
+  },
+    -(COVER_WIDTH_MM * (backgroundScale - 1)) / 2,
+    -(COVER_HEIGHT_MM * (backgroundScale - 1)) / 2,
+    COVER_WIDTH_MM * backgroundScale,
+    COVER_HEIGHT_MM * backgroundScale,
+    resolveAsset);
   const elements = includeElements
     ? composition.elements.filter((element) => element.visible).sort((left, right) => left.zIndex - right.zIndex).map((element) => elementMarkup(policy, composition, element, includeText, resolveAsset)).join("")
     : "";

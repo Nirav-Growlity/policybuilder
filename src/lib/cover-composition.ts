@@ -3,10 +3,13 @@ import { getPolicyProfile } from "./constants";
 
 export const COVER_WIDTH_MM = 210;
 export const COVER_HEIGHT_MM = 297;
+/** Crop narrow source-image hairlines while leaving editable cover layers in place. */
+export const COVER_BACKGROUND_OVERSCAN = 1.02;
 export const COVER_MAX_ELEMENTS = 40;
 export const COVER_MAX_IMAGES = 12;
 export const COVER_MAX_TEXT_LENGTH = 5000;
 export const COVER_BINDINGS: readonly CoverBinding[] = ["policyTitle", "companyName", "documentNumber", "effectiveDate", "revision", "nextReview"];
+
 
 /** Keep authored typography authoritative while retaining the generated-cover contrast aid. */
 export function getCoverTextPresentation(element: CoverTextElement, sourceTemplateId: string) {
