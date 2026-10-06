@@ -5,6 +5,7 @@ import { buildTemplateContext } from "@/lib/ai/template-context";
 import { buildImportedPolicyContext } from "@/lib/ai/imported-policy-context";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, TARGET_PERIOD } from "@/lib/quantitative";
 import { getPolicyProfile, POLICY_PROFILES } from "@/lib/constants";
+import { getCompanyClassificationContext } from "@/lib/company-classification";
 import {
   getPolicyCraftAuthResult,
   parsePolicyCraftOrganizationSelector,
@@ -42,10 +43,11 @@ function buildPrompt(ctx: AIContext): { user: string; system: string } {
     areaName: activeArea,
   });
   const importedReference = buildImportedPolicyContext(ctx.referencePolicy, ctx.type);
-  const SYSTEM = `${SYSTEM_BASE}\n\n${importedReference ? `${importedReference}\n\n` : ""}SECONDARY TEMPLATE CONTEXT: ${templateContext}\n\n${templateReferences}`;
   const co = p.company;
+  const classificationContext = getCompanyClassificationContext(co);
+  const SYSTEM = `${SYSTEM_BASE}\n\nCOMPANY CLASSIFICATION CONTEXT: ${classificationContext || "Not provided"}. Treat these labels as factual company context and use the most specific supplied level when adapting content.\n\n${importedReference ? `${importedReference}\n\n` : ""}SECONDARY TEMPLATE CONTEXT: ${templateContext}\n\n${templateReferences}`;
   const stds = p.standards.join(", ") || profile.standards.join(", ");
-  const industry = co.industry || "manufacturing";
+  const industry = co.industryDetail || co.subCategory || co.industry || "manufacturing";
   const company = co.name || "a manufacturing company";
   const reportingPeriod = co.reportingPeriod || "FY";
   const quantitativeYears = getQuantitativeYearOptions(reportingPeriod);

@@ -2,10 +2,12 @@ import type { AIContext, AIResponse } from "./prompts";
 import type { Policy } from "../types";
 import { normalizeQuantitativeTarget } from "../quantitative";
 import { getPolicyProfile } from "../constants";
+import { getCompanyClassificationContext } from "../company-classification";
 
 function ctxText(p: Policy): string {
   const c = p.company;
-  return `${c.name || "a manufacturing company"} in ${c.industry || "the industrial sector"}`;
+  const classification = getCompanyClassificationContext(c);
+  return `${c.name || "a manufacturing company"}${classification ? ` (${classification})` : " in the industrial sector"}`;
 }
 
 export function mockGenerate(ctx: AIContext): AIResponse {
@@ -15,11 +17,13 @@ export function mockGenerate(ctx: AIContext): AIResponse {
   const company = ctxText(p);
 
   switch (t) {
-    case "preface":
+    case "preface": {
+      const classification = getCompanyClassificationContext(p.company);
       return {
         source: "mock",
-        text: `${p.company.name || "The Company"} is committed to the principles set out in this ${profile.label}. Operating in ${p.company.industry || "its sector"}, the Company will align its practices with applicable laws, recognized standards, and the needs of people and stakeholders affected by its operations. This policy establishes the framework for clear commitments, accountable implementation, and continual improvement.`,
+        text: `${p.company.name || "The Company"} is committed to the principles set out in this ${profile.label}. Operating within ${classification || "its sector"}, the Company will align its practices with applicable laws, recognized standards, and the needs of people and stakeholders affected by its operations. This policy establishes the framework for clear commitments, accountable implementation, and continual improvement.`,
       };
+    }
     case "declaration":
       return {
         source: "mock",

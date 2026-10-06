@@ -1,0 +1,5812 @@
+[
+  {
+    "code": "A",
+    "value": "Agriculture, forestry and fishing",
+    "slug": "a_agriculture_forestry_and_fishing",
+    "subsectors": [
+      {
+        "code": "01",
+        "value": "Crop and animal production, hunting and related service activities",
+        "slug": "01_crop_and_animal_production_hunting_and_r",
+        "industries": [
+          {
+            "code": "011",
+            "value": "Growing of non-perennial crops",
+            "slug": "011_growing_of_non_perennial_crops",
+            "group": "011",
+            "type": "group"
+          },
+          {
+            "code": "0111",
+            "value": "Growing of cereals (except rice), leguminous crops and oil seeds",
+            "slug": "0111_growing_of_cereals_except_rice_leguminou",
+            "group": "011",
+            "type": "class"
+          },
+          {
+            "code": "0112",
+            "value": "Growing of rice",
+            "slug": "0112_growing_of_rice",
+            "group": "011",
+            "type": "class"
+          },
+          {
+            "code": "0113",
+            "value": "Growing of vegetables and melons, roots and tubers",
+            "slug": "0113_growing_of_vegetables_and_melons_roots_a",
+            "group": "011",
+            "type": "class"
+          },
+          {
+            "code": "0114",
+            "value": "Growing of sugar cane",
+            "slug": "0114_growing_of_sugar_cane",
+            "group": "011",
+            "type": "class"
+          },
+          {
+            "code": "0115",
+            "value": "Growing of tobacco",
+            "slug": "0115_growing_of_tobacco",
+            "group": "011",
+            "type": "class"
+          },
+          {
+            "code": "0116",
+            "value": "Growing of fibre crops",
+            "slug": "0116_growing_of_fibre_crops",
+            "group": "011",
+            "type": "class"
+          },
+          {
+            "code": "0119",
+            "value": "Growing of other non-perennial crops",
+            "slug": "0119_growing_of_other_non_perennial_crops",
+            "group": "011",
+            "type": "class"
+          },
+          {
+            "code": "012",
+            "value": "Growing of perennial crops",
+            "slug": "012_growing_of_perennial_crops",
+            "group": "012",
+            "type": "group"
+          },
+          {
+            "code": "0121",
+            "value": "Growing of grapes",
+            "slug": "0121_growing_of_grapes",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "0122",
+            "value": "Growing of tropical and subtropical fruits",
+            "slug": "0122_growing_of_tropical_and_subtropical_frui",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "0123",
+            "value": "Growing of citrus fruits",
+            "slug": "0123_growing_of_citrus_fruits",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "0124",
+            "value": "Growing of pome fruits and stone fruits",
+            "slug": "0124_growing_of_pome_fruits_and_stone_fruits",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "0125",
+            "value": "Growing of other tree and bush fruits and nuts",
+            "slug": "0125_growing_of_other_tree_and_bush_fruits_an",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "0126",
+            "value": "Growing of oleaginous fruits",
+            "slug": "0126_growing_of_oleaginous_fruits",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "0127",
+            "value": "Growing of beverage crops",
+            "slug": "0127_growing_of_beverage_crops",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "0128",
+            "value": "Growing of spices, aromatic, drug and pharmaceutical crops",
+            "slug": "0128_growing_of_spices_aromatic_drug_and_phar",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "0129",
+            "value": "Growing of other perennial crops",
+            "slug": "0129_growing_of_other_perennial_crops",
+            "group": "012",
+            "type": "class"
+          },
+          {
+            "code": "013",
+            "value": "Plant propagation",
+            "slug": "013_plant_propagation",
+            "group": "013",
+            "type": "group"
+          },
+          {
+            "code": "0130",
+            "value": "Plant propagation",
+            "slug": "0130_plant_propagation",
+            "group": "013",
+            "type": "class"
+          },
+          {
+            "code": "014",
+            "value": "Animal production",
+            "slug": "014_animal_production",
+            "group": "014",
+            "type": "group"
+          },
+          {
+            "code": "0141",
+            "value": "Raising of cattle and buffaloes",
+            "slug": "0141_raising_of_cattle_and_buffaloes",
+            "group": "014",
+            "type": "class"
+          },
+          {
+            "code": "0142",
+            "value": "Raising of horses and other equines",
+            "slug": "0142_raising_of_horses_and_other_equines",
+            "group": "014",
+            "type": "class"
+          },
+          {
+            "code": "0143",
+            "value": "Raising of camels and camelids",
+            "slug": "0143_raising_of_camels_and_camelids",
+            "group": "014",
+            "type": "class"
+          },
+          {
+            "code": "0144",
+            "value": "Raising of sheep and goats",
+            "slug": "0144_raising_of_sheep_and_goats",
+            "group": "014",
+            "type": "class"
+          },
+          {
+            "code": "0145",
+            "value": "Raising of swine and pigs",
+            "slug": "0145_raising_of_swine_and_pigs",
+            "group": "014",
+            "type": "class"
+          },
+          {
+            "code": "0146",
+            "value": "Raising of poultry",
+            "slug": "0146_raising_of_poultry",
+            "group": "014",
+            "type": "class"
+          },
+          {
+            "code": "0149",
+            "value": "Raising of other animals",
+            "slug": "0149_raising_of_other_animals",
+            "group": "014",
+            "type": "class"
+          },
+          {
+            "code": "015",
+            "value": "Mixed farming",
+            "slug": "015_mixed_farming",
+            "group": "015",
+            "type": "group"
+          },
+          {
+            "code": "0150",
+            "value": "Mixed farming",
+            "slug": "0150_mixed_farming",
+            "group": "015",
+            "type": "class"
+          },
+          {
+            "code": "016",
+            "value": "Support activities to agriculture and post-harvest crop activities",
+            "slug": "016_support_activities_to_agriculture_and_po",
+            "group": "016",
+            "type": "group"
+          },
+          {
+            "code": "0161",
+            "value": "Support activities for crop production",
+            "slug": "0161_support_activities_for_crop_production",
+            "group": "016",
+            "type": "class"
+          },
+          {
+            "code": "0162",
+            "value": "Support activities for animal production",
+            "slug": "0162_support_activities_for_animal_production",
+            "group": "016",
+            "type": "class"
+          },
+          {
+            "code": "0163",
+            "value": "Post-harvest crop activities",
+            "slug": "0163_post_harvest_crop_activities",
+            "group": "016",
+            "type": "class"
+          },
+          {
+            "code": "0164",
+            "value": "Seed processing for propagation",
+            "slug": "0164_seed_processing_for_propagation",
+            "group": "016",
+            "type": "class"
+          },
+          {
+            "code": "017",
+            "value": "Hunting, trapping and related service activities",
+            "slug": "017_hunting_trapping_and_related_service_act",
+            "group": "017",
+            "type": "group"
+          },
+          {
+            "code": "0170",
+            "value": "Hunting, trapping and related service activities",
+            "slug": "0170_hunting_trapping_and_related_service_act",
+            "group": "017",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "02",
+        "value": "Forestry and logging",
+        "slug": "02_forestry_and_logging",
+        "industries": [
+          {
+            "code": "021",
+            "value": "Silviculture and other forestry activities",
+            "slug": "021_silviculture_and_other_forestry_activiti",
+            "group": "021",
+            "type": "group"
+          },
+          {
+            "code": "0210",
+            "value": "Silviculture and other forestry activities",
+            "slug": "0210_silviculture_and_other_forestry_activiti",
+            "group": "021",
+            "type": "class"
+          },
+          {
+            "code": "022",
+            "value": "Logging",
+            "slug": "022_logging",
+            "group": "022",
+            "type": "group"
+          },
+          {
+            "code": "0220",
+            "value": "Logging",
+            "slug": "0220_logging",
+            "group": "022",
+            "type": "class"
+          },
+          {
+            "code": "023",
+            "value": "Gathering of non-wood forest products",
+            "slug": "023_gathering_of_non_wood_forest_products",
+            "group": "023",
+            "type": "group"
+          },
+          {
+            "code": "0230",
+            "value": "Gathering of non-wood forest products",
+            "slug": "0230_gathering_of_non_wood_forest_products",
+            "group": "023",
+            "type": "class"
+          },
+          {
+            "code": "024",
+            "value": "Support services to forestry",
+            "slug": "024_support_services_to_forestry",
+            "group": "024",
+            "type": "group"
+          },
+          {
+            "code": "0240",
+            "value": "Support services to forestry",
+            "slug": "0240_support_services_to_forestry",
+            "group": "024",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "03",
+        "value": "Fishing and aquaculture",
+        "slug": "03_fishing_and_aquaculture",
+        "industries": [
+          {
+            "code": "031",
+            "value": "Fishing",
+            "slug": "031_fishing",
+            "group": "031",
+            "type": "group"
+          },
+          {
+            "code": "0311",
+            "value": "Marine fishing",
+            "slug": "0311_marine_fishing",
+            "group": "031",
+            "type": "class"
+          },
+          {
+            "code": "0312",
+            "value": "Freshwater fishing",
+            "slug": "0312_freshwater_fishing",
+            "group": "031",
+            "type": "class"
+          },
+          {
+            "code": "032",
+            "value": "Aquaculture",
+            "slug": "032_aquaculture",
+            "group": "032",
+            "type": "group"
+          },
+          {
+            "code": "0321",
+            "value": "Marine aquaculture",
+            "slug": "0321_marine_aquaculture",
+            "group": "032",
+            "type": "class"
+          },
+          {
+            "code": "0322",
+            "value": "Freshwater aquaculture",
+            "slug": "0322_freshwater_aquaculture",
+            "group": "032",
+            "type": "class"
+          },
+          {
+            "code": "033",
+            "value": "Support activities for fishing and aquaculture",
+            "slug": "033_support_activities_for_fishing_and_aquac",
+            "group": "033",
+            "type": "group"
+          },
+          {
+            "code": "0330",
+            "value": "Support activities for fishing and aquaculture",
+            "slug": "0330_support_activities_for_fishing_and_aquac",
+            "group": "033",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "B",
+    "value": "Mining and quarrying",
+    "slug": "b_mining_and_quarrying",
+    "subsectors": [
+      {
+        "code": "05",
+        "value": "Mining of coal and lignite",
+        "slug": "05_mining_of_coal_and_lignite",
+        "industries": [
+          {
+            "code": "051",
+            "value": "Mining of hard coal",
+            "slug": "051_mining_of_hard_coal",
+            "group": "051",
+            "type": "group"
+          },
+          {
+            "code": "0510",
+            "value": "Mining of hard coal",
+            "slug": "0510_mining_of_hard_coal",
+            "group": "051",
+            "type": "class"
+          },
+          {
+            "code": "052",
+            "value": "Mining of lignite",
+            "slug": "052_mining_of_lignite",
+            "group": "052",
+            "type": "group"
+          },
+          {
+            "code": "0520",
+            "value": "Mining of lignite",
+            "slug": "0520_mining_of_lignite",
+            "group": "052",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "06",
+        "value": "Extraction of crude petroleum and natural gas",
+        "slug": "06_extraction_of_crude_petroleum_and_natura",
+        "industries": [
+          {
+            "code": "061",
+            "value": "Extraction of crude petroleum",
+            "slug": "061_extraction_of_crude_petroleum",
+            "group": "061",
+            "type": "group"
+          },
+          {
+            "code": "0610",
+            "value": "Extraction of crude petroleum",
+            "slug": "0610_extraction_of_crude_petroleum",
+            "group": "061",
+            "type": "class"
+          },
+          {
+            "code": "062",
+            "value": "Extraction of natural gas",
+            "slug": "062_extraction_of_natural_gas",
+            "group": "062",
+            "type": "group"
+          },
+          {
+            "code": "0620",
+            "value": "Extraction of natural gas",
+            "slug": "0620_extraction_of_natural_gas",
+            "group": "062",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "07",
+        "value": "Mining of metal ores",
+        "slug": "07_mining_of_metal_ores",
+        "industries": [
+          {
+            "code": "071",
+            "value": "Mining of iron ores",
+            "slug": "071_mining_of_iron_ores",
+            "group": "071",
+            "type": "group"
+          },
+          {
+            "code": "0710",
+            "value": "Mining of iron ores",
+            "slug": "0710_mining_of_iron_ores",
+            "group": "071",
+            "type": "class"
+          },
+          {
+            "code": "072",
+            "value": "Mining of non-ferrous metal ores",
+            "slug": "072_mining_of_non_ferrous_metal_ores",
+            "group": "072",
+            "type": "group"
+          },
+          {
+            "code": "0721",
+            "value": "Mining of uranium and thorium ores",
+            "slug": "0721_mining_of_uranium_and_thorium_ores",
+            "group": "072",
+            "type": "class"
+          },
+          {
+            "code": "0729",
+            "value": "Mining of other non-ferrous metal ores",
+            "slug": "0729_mining_of_other_non_ferrous_metal_ores",
+            "group": "072",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "08",
+        "value": "Other mining and quarrying",
+        "slug": "08_other_mining_and_quarrying",
+        "industries": [
+          {
+            "code": "081",
+            "value": "Quarrying of stone, sand and clay",
+            "slug": "081_quarrying_of_stone_sand_and_clay",
+            "group": "081",
+            "type": "group"
+          },
+          {
+            "code": "0810",
+            "value": "Quarrying of stone, sand and clay",
+            "slug": "0810_quarrying_of_stone_sand_and_clay",
+            "group": "081",
+            "type": "class"
+          },
+          {
+            "code": "089",
+            "value": "Mining and quarrying n.e.c.",
+            "slug": "089_mining_and_quarrying_n_e_c",
+            "group": "089",
+            "type": "group"
+          },
+          {
+            "code": "0891",
+            "value": "Mining of chemical and fertilizer minerals",
+            "slug": "0891_mining_of_chemical_and_fertilizer_minera",
+            "group": "089",
+            "type": "class"
+          },
+          {
+            "code": "0892",
+            "value": "Extraction of peat",
+            "slug": "0892_extraction_of_peat",
+            "group": "089",
+            "type": "class"
+          },
+          {
+            "code": "0893",
+            "value": "Extraction of salt",
+            "slug": "0893_extraction_of_salt",
+            "group": "089",
+            "type": "class"
+          },
+          {
+            "code": "0899",
+            "value": "Other mining and quarrying n.e.c.",
+            "slug": "0899_other_mining_and_quarrying_n_e_c",
+            "group": "089",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "09",
+        "value": "Mining support service activities",
+        "slug": "09_mining_support_service_activities",
+        "industries": [
+          {
+            "code": "091",
+            "value": "Support activities for petroleum and natural gas extraction",
+            "slug": "091_support_activities_for_petroleum_and_nat",
+            "group": "091",
+            "type": "group"
+          },
+          {
+            "code": "0910",
+            "value": "Support activities for petroleum and natural gas extraction",
+            "slug": "0910_support_activities_for_petroleum_and_nat",
+            "group": "091",
+            "type": "class"
+          },
+          {
+            "code": "099",
+            "value": "Support activities for other mining and quarrying",
+            "slug": "099_support_activities_for_other_mining_and_",
+            "group": "099",
+            "type": "group"
+          },
+          {
+            "code": "0990",
+            "value": "Support activities for other mining and quarrying",
+            "slug": "0990_support_activities_for_other_mining_and_",
+            "group": "099",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "C",
+    "value": "Manufacturing",
+    "slug": "c_manufacturing",
+    "subsectors": [
+      {
+        "code": "10",
+        "value": "Manufacture of food products",
+        "slug": "10_manufacture_of_food_products",
+        "industries": [
+          {
+            "code": "101",
+            "value": "Processing and preserving of meat",
+            "slug": "101_processing_and_preserving_of_meat",
+            "group": "101",
+            "type": "group"
+          },
+          {
+            "code": "1010",
+            "value": "Processing and preserving of meat",
+            "slug": "1010_processing_and_preserving_of_meat",
+            "group": "101",
+            "type": "class"
+          },
+          {
+            "code": "102",
+            "value": "Processing and preserving of fish, crustaceans and molluscs",
+            "slug": "102_processing_and_preserving_of_fish_crusta",
+            "group": "102",
+            "type": "group"
+          },
+          {
+            "code": "1020",
+            "value": "Processing and preserving of fish, crustaceans and molluscs",
+            "slug": "1020_processing_and_preserving_of_fish_crusta",
+            "group": "102",
+            "type": "class"
+          },
+          {
+            "code": "103",
+            "value": "Processing and preserving of fruit and vegetables",
+            "slug": "103_processing_and_preserving_of_fruit_and_v",
+            "group": "103",
+            "type": "group"
+          },
+          {
+            "code": "1030",
+            "value": "Processing and preserving of fruit and vegetables",
+            "slug": "1030_processing_and_preserving_of_fruit_and_v",
+            "group": "103",
+            "type": "class"
+          },
+          {
+            "code": "104",
+            "value": "Manufacture of vegetable and animal oils and fats",
+            "slug": "104_manufacture_of_vegetable_and_animal_oils",
+            "group": "104",
+            "type": "group"
+          },
+          {
+            "code": "1040",
+            "value": "Manufacture of vegetable and animal oils and fats",
+            "slug": "1040_manufacture_of_vegetable_and_animal_oils",
+            "group": "104",
+            "type": "class"
+          },
+          {
+            "code": "105",
+            "value": "Manufacture of dairy products",
+            "slug": "105_manufacture_of_dairy_products",
+            "group": "105",
+            "type": "group"
+          },
+          {
+            "code": "1050",
+            "value": "Manufacture of dairy products",
+            "slug": "1050_manufacture_of_dairy_products",
+            "group": "105",
+            "type": "class"
+          },
+          {
+            "code": "106",
+            "value": "Manufacture of grain mill products, starches and starch products",
+            "slug": "106_manufacture_of_grain_mill_products_starc",
+            "group": "106",
+            "type": "group"
+          },
+          {
+            "code": "1061",
+            "value": "Manufacture of grain mill products",
+            "slug": "1061_manufacture_of_grain_mill_products",
+            "group": "106",
+            "type": "class"
+          },
+          {
+            "code": "1062",
+            "value": "Manufacture of starches and starch products",
+            "slug": "1062_manufacture_of_starches_and_starch_produ",
+            "group": "106",
+            "type": "class"
+          },
+          {
+            "code": "107",
+            "value": "Manufacture of other food products",
+            "slug": "107_manufacture_of_other_food_products",
+            "group": "107",
+            "type": "group"
+          },
+          {
+            "code": "1071",
+            "value": "Manufacture of bakery products",
+            "slug": "1071_manufacture_of_bakery_products",
+            "group": "107",
+            "type": "class"
+          },
+          {
+            "code": "1072",
+            "value": "Manufacture of sugar",
+            "slug": "1072_manufacture_of_sugar",
+            "group": "107",
+            "type": "class"
+          },
+          {
+            "code": "1073",
+            "value": "Manufacture of cocoa, chocolate and sugar confectionery",
+            "slug": "1073_manufacture_of_cocoa_chocolate_and_sugar",
+            "group": "107",
+            "type": "class"
+          },
+          {
+            "code": "1074",
+            "value": "Manufacture of macaroni, noodles, couscous and similar farinaceous products",
+            "slug": "1074_manufacture_of_macaroni_noodles_couscous",
+            "group": "107",
+            "type": "class"
+          },
+          {
+            "code": "1075",
+            "value": "Manufacture of prepared meals and dishes",
+            "slug": "1075_manufacture_of_prepared_meals_and_dishes",
+            "group": "107",
+            "type": "class"
+          },
+          {
+            "code": "1076",
+            "value": "Processing of coffee and tea",
+            "slug": "1076_processing_of_coffee_and_tea",
+            "group": "107",
+            "type": "class"
+          },
+          {
+            "code": "1079",
+            "value": "Manufacture of other food products n.e.c.",
+            "slug": "1079_manufacture_of_other_food_products_n_e_c",
+            "group": "107",
+            "type": "class"
+          },
+          {
+            "code": "108",
+            "value": "Manufacture of prepared animal feeds",
+            "slug": "108_manufacture_of_prepared_animal_feeds",
+            "group": "108",
+            "type": "group"
+          },
+          {
+            "code": "1080",
+            "value": "Manufacture of prepared animal feeds",
+            "slug": "1080_manufacture_of_prepared_animal_feeds",
+            "group": "108",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "11",
+        "value": "Manufacture of beverages",
+        "slug": "11_manufacture_of_beverages",
+        "industries": [
+          {
+            "code": "110",
+            "value": "Manufacture of beverages",
+            "slug": "110_manufacture_of_beverages",
+            "group": "110",
+            "type": "group"
+          },
+          {
+            "code": "1101",
+            "value": "Distilling, rectifying and blending of spirits",
+            "slug": "1101_distilling_rectifying_and_blending_of_sp",
+            "group": "110",
+            "type": "class"
+          },
+          {
+            "code": "1102",
+            "value": "Manufacture of wines",
+            "slug": "1102_manufacture_of_wines",
+            "group": "110",
+            "type": "class"
+          },
+          {
+            "code": "1103",
+            "value": "Manufacture of beer",
+            "slug": "1103_manufacture_of_beer",
+            "group": "110",
+            "type": "class"
+          },
+          {
+            "code": "1104",
+            "value": "Manufacture of malt",
+            "slug": "1104_manufacture_of_malt",
+            "group": "110",
+            "type": "class"
+          },
+          {
+            "code": "1105",
+            "value": "Manufacture of soft drinks; production of mineral waters and other bottled waters",
+            "slug": "1105_manufacture_of_soft_drinks_production_of",
+            "group": "110",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "12",
+        "value": "Manufacture of tobacco products",
+        "slug": "12_manufacture_of_tobacco_products",
+        "industries": [
+          {
+            "code": "120",
+            "value": "Manufacture of tobacco products",
+            "slug": "120_manufacture_of_tobacco_products",
+            "group": "120",
+            "type": "group"
+          },
+          {
+            "code": "1200",
+            "value": "Manufacture of tobacco products",
+            "slug": "1200_manufacture_of_tobacco_products",
+            "group": "120",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "13",
+        "value": "Manufacture of textiles",
+        "slug": "13_manufacture_of_textiles",
+        "industries": [
+          {
+            "code": "131",
+            "value": "Spinning, weaving and finishing of textiles",
+            "slug": "131_spinning_weaving_and_finishing_of_textil",
+            "group": "131",
+            "type": "group"
+          },
+          {
+            "code": "1311",
+            "value": "Preparation and spinning of textile fibres",
+            "slug": "1311_preparation_and_spinning_of_textile_fibr",
+            "group": "131",
+            "type": "class"
+          },
+          {
+            "code": "1312",
+            "value": "Weaving of textiles",
+            "slug": "1312_weaving_of_textiles",
+            "group": "131",
+            "type": "class"
+          },
+          {
+            "code": "1313",
+            "value": "Finishing of textiles",
+            "slug": "1313_finishing_of_textiles",
+            "group": "131",
+            "type": "class"
+          },
+          {
+            "code": "139",
+            "value": "Manufacture of other textiles",
+            "slug": "139_manufacture_of_other_textiles",
+            "group": "139",
+            "type": "group"
+          },
+          {
+            "code": "1391",
+            "value": "Manufacture of knitted and crocheted fabrics",
+            "slug": "1391_manufacture_of_knitted_and_crocheted_fab",
+            "group": "139",
+            "type": "class"
+          },
+          {
+            "code": "1392",
+            "value": "Manufacture of made-up textile articles, except apparel",
+            "slug": "1392_manufacture_of_made_up_textile_articles_",
+            "group": "139",
+            "type": "class"
+          },
+          {
+            "code": "1393",
+            "value": "Manufacture of carpets and rugs",
+            "slug": "1393_manufacture_of_carpets_and_rugs",
+            "group": "139",
+            "type": "class"
+          },
+          {
+            "code": "1394",
+            "value": "Manufacture of cordage, rope, twine and netting",
+            "slug": "1394_manufacture_of_cordage_rope_twine_and_ne",
+            "group": "139",
+            "type": "class"
+          },
+          {
+            "code": "1399",
+            "value": "Manufacture of other textiles n.e.c.",
+            "slug": "1399_manufacture_of_other_textiles_n_e_c",
+            "group": "139",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "14",
+        "value": "Manufacture of wearing apparel",
+        "slug": "14_manufacture_of_wearing_apparel",
+        "industries": [
+          {
+            "code": "141",
+            "value": "Manufacture of wearing apparel, except fur apparel",
+            "slug": "141_manufacture_of_wearing_apparel_except_fu",
+            "group": "141",
+            "type": "group"
+          },
+          {
+            "code": "1410",
+            "value": "Manufacture of wearing apparel, except fur apparel",
+            "slug": "1410_manufacture_of_wearing_apparel_except_fu",
+            "group": "141",
+            "type": "class"
+          },
+          {
+            "code": "142",
+            "value": "Manufacture of articles of fur",
+            "slug": "142_manufacture_of_articles_of_fur",
+            "group": "142",
+            "type": "group"
+          },
+          {
+            "code": "1420",
+            "value": "Manufacture of articles of fur",
+            "slug": "1420_manufacture_of_articles_of_fur",
+            "group": "142",
+            "type": "class"
+          },
+          {
+            "code": "143",
+            "value": "Manufacture of knitted and crocheted apparel",
+            "slug": "143_manufacture_of_knitted_and_crocheted_app",
+            "group": "143",
+            "type": "group"
+          },
+          {
+            "code": "1430",
+            "value": "Manufacture of knitted and crocheted apparel",
+            "slug": "1430_manufacture_of_knitted_and_crocheted_app",
+            "group": "143",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "15",
+        "value": "Manufacture of leather and related products",
+        "slug": "15_manufacture_of_leather_and_related_produ",
+        "industries": [
+          {
+            "code": "151",
+            "value": "Tanning, dyeing, dressing of leather and fur; manufacture of luggage, handbags, saddlery and harness",
+            "slug": "151_tanning_dyeing_dressing_of_leather_and_f",
+            "group": "151",
+            "type": "group"
+          },
+          {
+            "code": "1511",
+            "value": "Tanning and dressing of leather; dressing and dyeing of fur",
+            "slug": "1511_tanning_and_dressing_of_leather_dressing",
+            "group": "151",
+            "type": "class"
+          },
+          {
+            "code": "1512",
+            "value": "Manufacture of luggage, handbags and the like, saddlery and harness of any material",
+            "slug": "1512_manufacture_of_luggage_handbags_and_the_",
+            "group": "151",
+            "type": "class"
+          },
+          {
+            "code": "152",
+            "value": "Manufacture of footwear",
+            "slug": "152_manufacture_of_footwear",
+            "group": "152",
+            "type": "group"
+          },
+          {
+            "code": "1520",
+            "value": "Manufacture of footwear",
+            "slug": "1520_manufacture_of_footwear",
+            "group": "152",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "16",
+        "value": "Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials",
+        "slug": "16_manufacture_of_wood_and_of_products_of_w",
+        "industries": [
+          {
+            "code": "161",
+            "value": "Sawmilling and planing of wood",
+            "slug": "161_sawmilling_and_planing_of_wood",
+            "group": "161",
+            "type": "group"
+          },
+          {
+            "code": "1610",
+            "value": "Sawmilling and planing of wood",
+            "slug": "1610_sawmilling_and_planing_of_wood",
+            "group": "161",
+            "type": "class"
+          },
+          {
+            "code": "162",
+            "value": "Manufacture of products of wood, cork, straw and plaiting materials",
+            "slug": "162_manufacture_of_products_of_wood_cork_str",
+            "group": "162",
+            "type": "group"
+          },
+          {
+            "code": "1621",
+            "value": "Manufacture of veneer sheets and wood-based panels",
+            "slug": "1621_manufacture_of_veneer_sheets_and_wood_ba",
+            "group": "162",
+            "type": "class"
+          },
+          {
+            "code": "1622",
+            "value": "Manufacture of builders' carpentry and joinery",
+            "slug": "1622_manufacture_of_builders_carpentry_and_jo",
+            "group": "162",
+            "type": "class"
+          },
+          {
+            "code": "1623",
+            "value": "Manufacture of wooden containers",
+            "slug": "1623_manufacture_of_wooden_containers",
+            "group": "162",
+            "type": "class"
+          },
+          {
+            "code": "1629",
+            "value": "Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials",
+            "slug": "1629_manufacture_of_other_products_of_wood_ma",
+            "group": "162",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "17",
+        "value": "Manufacture of paper and paper products",
+        "slug": "17_manufacture_of_paper_and_paper_products",
+        "industries": [
+          {
+            "code": "170",
+            "value": "Manufacture of paper and paper products",
+            "slug": "170_manufacture_of_paper_and_paper_products",
+            "group": "170",
+            "type": "group"
+          },
+          {
+            "code": "1701",
+            "value": "Manufacture of pulp, paper and paperboard",
+            "slug": "1701_manufacture_of_pulp_paper_and_paperboard",
+            "group": "170",
+            "type": "class"
+          },
+          {
+            "code": "1702",
+            "value": "Manufacture of corrugated paper and paperboard and of containers of paper and paperboard",
+            "slug": "1702_manufacture_of_corrugated_paper_and_pape",
+            "group": "170",
+            "type": "class"
+          },
+          {
+            "code": "1709",
+            "value": "Manufacture of other articles of paper and paperboard",
+            "slug": "1709_manufacture_of_other_articles_of_paper_a",
+            "group": "170",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "18",
+        "value": "Printing and reproduction of recorded media",
+        "slug": "18_printing_and_reproduction_of_recorded_me",
+        "industries": [
+          {
+            "code": "181",
+            "value": "Printing and service activities related to printing",
+            "slug": "181_printing_and_service_activities_related_",
+            "group": "181",
+            "type": "group"
+          },
+          {
+            "code": "1811",
+            "value": "Printing",
+            "slug": "1811_printing",
+            "group": "181",
+            "type": "class"
+          },
+          {
+            "code": "1812",
+            "value": "Service activities related to printing",
+            "slug": "1812_service_activities_related_to_printing",
+            "group": "181",
+            "type": "class"
+          },
+          {
+            "code": "182",
+            "value": "Reproduction of recorded media",
+            "slug": "182_reproduction_of_recorded_media",
+            "group": "182",
+            "type": "group"
+          },
+          {
+            "code": "1820",
+            "value": "Reproduction of recorded media",
+            "slug": "1820_reproduction_of_recorded_media",
+            "group": "182",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "19",
+        "value": "Manufacture of coke and refined petroleum products",
+        "slug": "19_manufacture_of_coke_and_refined_petroleu",
+        "industries": [
+          {
+            "code": "191",
+            "value": "Manufacture of coke oven products",
+            "slug": "191_manufacture_of_coke_oven_products",
+            "group": "191",
+            "type": "group"
+          },
+          {
+            "code": "1910",
+            "value": "Manufacture of coke oven products",
+            "slug": "1910_manufacture_of_coke_oven_products",
+            "group": "191",
+            "type": "class"
+          },
+          {
+            "code": "192",
+            "value": "Manufacture of refined petroleum products; manufacture of fossil fuel products",
+            "slug": "192_manufacture_of_refined_petroleum_product",
+            "group": "192",
+            "type": "group"
+          },
+          {
+            "code": "1920",
+            "value": "Manufacture of refined petroleum products; manufacture of fossil fuel products",
+            "slug": "1920_manufacture_of_refined_petroleum_product",
+            "group": "192",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "20",
+        "value": "Manufacture of chemicals and chemical products",
+        "slug": "20_manufacture_of_chemicals_and_chemical_pr",
+        "industries": [
+          {
+            "code": "201",
+            "value": "Manufacture of basic chemicals, fertilizers and nitrogen compounds, plastics and synthetic rubber in primary forms",
+            "slug": "201_manufacture_of_basic_chemicals_fertilize",
+            "group": "201",
+            "type": "group"
+          },
+          {
+            "code": "2011",
+            "value": "Manufacture of basic chemicals",
+            "slug": "2011_manufacture_of_basic_chemicals",
+            "group": "201",
+            "type": "class"
+          },
+          {
+            "code": "2012",
+            "value": "Manufacture of fertilizers and nitrogen compounds",
+            "slug": "2012_manufacture_of_fertilizers_and_nitrogen_",
+            "group": "201",
+            "type": "class"
+          },
+          {
+            "code": "2013",
+            "value": "Manufacture of plastics and synthetic rubber in primary forms",
+            "slug": "2013_manufacture_of_plastics_and_synthetic_ru",
+            "group": "201",
+            "type": "class"
+          },
+          {
+            "code": "202",
+            "value": "Manufacture of other chemical products",
+            "slug": "202_manufacture_of_other_chemical_products",
+            "group": "202",
+            "type": "group"
+          },
+          {
+            "code": "2021",
+            "value": "Manufacture of pesticides and other agrochemical products",
+            "slug": "2021_manufacture_of_pesticides_and_other_agro",
+            "group": "202",
+            "type": "class"
+          },
+          {
+            "code": "2022",
+            "value": "Manufacture of paints, varnishes and similar coatings, printing ink and mastics",
+            "slug": "2022_manufacture_of_paints_varnishes_and_simi",
+            "group": "202",
+            "type": "class"
+          },
+          {
+            "code": "2023",
+            "value": "Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations",
+            "slug": "2023_manufacture_of_soap_and_detergents_clean",
+            "group": "202",
+            "type": "class"
+          },
+          {
+            "code": "2029",
+            "value": "Manufacture of other chemical products n.e.c.",
+            "slug": "2029_manufacture_of_other_chemical_products_n",
+            "group": "202",
+            "type": "class"
+          },
+          {
+            "code": "203",
+            "value": "Manufacture of man-made fibres",
+            "slug": "203_manufacture_of_man_made_fibres",
+            "group": "203",
+            "type": "group"
+          },
+          {
+            "code": "2030",
+            "value": "Manufacture of man-made fibres",
+            "slug": "2030_manufacture_of_man_made_fibres",
+            "group": "203",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "21",
+        "value": "Manufacture of basic pharmaceutical products and pharmaceutical preparations",
+        "slug": "21_manufacture_of_basic_pharmaceutical_prod",
+        "industries": [
+          {
+            "code": "210",
+            "value": "Manufacture of pharmaceuticals, medicinal chemical and botanical products",
+            "slug": "210_manufacture_of_pharmaceuticals_medicinal",
+            "group": "210",
+            "type": "group"
+          },
+          {
+            "code": "2100",
+            "value": "Manufacture of pharmaceuticals, medicinal chemical and botanical products",
+            "slug": "2100_manufacture_of_pharmaceuticals_medicinal",
+            "group": "210",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "22",
+        "value": "Manufacture of rubber and plastic products",
+        "slug": "22_manufacture_of_rubber_and_plastic_produc",
+        "industries": [
+          {
+            "code": "221",
+            "value": "Manufacture of rubber products",
+            "slug": "221_manufacture_of_rubber_products",
+            "group": "221",
+            "type": "group"
+          },
+          {
+            "code": "2211",
+            "value": "Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres",
+            "slug": "2211_manufacture_of_rubber_tyres_and_tubes_re",
+            "group": "221",
+            "type": "class"
+          },
+          {
+            "code": "2219",
+            "value": "Manufacture of other rubber products",
+            "slug": "2219_manufacture_of_other_rubber_products",
+            "group": "221",
+            "type": "class"
+          },
+          {
+            "code": "222",
+            "value": "Manufacture of plastics products",
+            "slug": "222_manufacture_of_plastics_products",
+            "group": "222",
+            "type": "group"
+          },
+          {
+            "code": "2220",
+            "value": "Manufacture of plastics products",
+            "slug": "2220_manufacture_of_plastics_products",
+            "group": "222",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "23",
+        "value": "Manufacture of other non-metallic mineral products",
+        "slug": "23_manufacture_of_other_non_metallic_minera",
+        "industries": [
+          {
+            "code": "231",
+            "value": "Manufacture of glass and glass products",
+            "slug": "231_manufacture_of_glass_and_glass_products",
+            "group": "231",
+            "type": "group"
+          },
+          {
+            "code": "2310",
+            "value": "Manufacture of glass and glass products",
+            "slug": "2310_manufacture_of_glass_and_glass_products",
+            "group": "231",
+            "type": "class"
+          },
+          {
+            "code": "239",
+            "value": "Manufacture of non-metallic mineral products n.e.c.",
+            "slug": "239_manufacture_of_non_metallic_mineral_prod",
+            "group": "239",
+            "type": "group"
+          },
+          {
+            "code": "2391",
+            "value": "Manufacture of refractory products",
+            "slug": "2391_manufacture_of_refractory_products",
+            "group": "239",
+            "type": "class"
+          },
+          {
+            "code": "2392",
+            "value": "Manufacture of clay building materials",
+            "slug": "2392_manufacture_of_clay_building_materials",
+            "group": "239",
+            "type": "class"
+          },
+          {
+            "code": "2393",
+            "value": "Manufacture of other porcelain and ceramic products",
+            "slug": "2393_manufacture_of_other_porcelain_and_ceram",
+            "group": "239",
+            "type": "class"
+          },
+          {
+            "code": "2394",
+            "value": "Manufacture of cement, lime and plaster",
+            "slug": "2394_manufacture_of_cement_lime_and_plaster",
+            "group": "239",
+            "type": "class"
+          },
+          {
+            "code": "2395",
+            "value": "Manufacture of articles of concrete, cement and plaster",
+            "slug": "2395_manufacture_of_articles_of_concrete_ceme",
+            "group": "239",
+            "type": "class"
+          },
+          {
+            "code": "2396",
+            "value": "Cutting, shaping and finishing of stone",
+            "slug": "2396_cutting_shaping_and_finishing_of_stone",
+            "group": "239",
+            "type": "class"
+          },
+          {
+            "code": "2399",
+            "value": "Manufacture of other non-metallic mineral products n.e.c.",
+            "slug": "2399_manufacture_of_other_non_metallic_minera",
+            "group": "239",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "24",
+        "value": "Manufacture of basic metals",
+        "slug": "24_manufacture_of_basic_metals",
+        "industries": [
+          {
+            "code": "241",
+            "value": "Manufacture of basic iron and steel",
+            "slug": "241_manufacture_of_basic_iron_and_steel",
+            "group": "241",
+            "type": "group"
+          },
+          {
+            "code": "2410",
+            "value": "Manufacture of basic iron and steel",
+            "slug": "2410_manufacture_of_basic_iron_and_steel",
+            "group": "241",
+            "type": "class"
+          },
+          {
+            "code": "242",
+            "value": "Manufacture of basic precious and other non-ferrous metals",
+            "slug": "242_manufacture_of_basic_precious_and_other_",
+            "group": "242",
+            "type": "group"
+          },
+          {
+            "code": "2420",
+            "value": "Manufacture of basic precious and other non-ferrous metals",
+            "slug": "2420_manufacture_of_basic_precious_and_other_",
+            "group": "242",
+            "type": "class"
+          },
+          {
+            "code": "243",
+            "value": "Casting of metals",
+            "slug": "243_casting_of_metals",
+            "group": "243",
+            "type": "group"
+          },
+          {
+            "code": "2431",
+            "value": "Casting of iron and steel",
+            "slug": "2431_casting_of_iron_and_steel",
+            "group": "243",
+            "type": "class"
+          },
+          {
+            "code": "2432",
+            "value": "Casting of non-ferrous metals",
+            "slug": "2432_casting_of_non_ferrous_metals",
+            "group": "243",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "25",
+        "value": "Manufacture of fabricated metal products, except machinery and equipment",
+        "slug": "25_manufacture_of_fabricated_metal_products",
+        "industries": [
+          {
+            "code": "251",
+            "value": "Manufacture of structural metal products, tanks, reservoirs and steam generators",
+            "slug": "251_manufacture_of_structural_metal_products",
+            "group": "251",
+            "type": "group"
+          },
+          {
+            "code": "2511",
+            "value": "Manufacture of structural metal products",
+            "slug": "2511_manufacture_of_structural_metal_products",
+            "group": "251",
+            "type": "class"
+          },
+          {
+            "code": "2512",
+            "value": "Manufacture of tanks, reservoirs and containers of metal",
+            "slug": "2512_manufacture_of_tanks_reservoirs_and_cont",
+            "group": "251",
+            "type": "class"
+          },
+          {
+            "code": "2513",
+            "value": "Manufacture of steam generators, except central heating hot water boilers",
+            "slug": "2513_manufacture_of_steam_generators_except_c",
+            "group": "251",
+            "type": "class"
+          },
+          {
+            "code": "252",
+            "value": "Manufacture of weapons and ammunition",
+            "slug": "252_manufacture_of_weapons_and_ammunition",
+            "group": "252",
+            "type": "group"
+          },
+          {
+            "code": "2520",
+            "value": "Manufacture of weapons and ammunition",
+            "slug": "2520_manufacture_of_weapons_and_ammunition",
+            "group": "252",
+            "type": "class"
+          },
+          {
+            "code": "259",
+            "value": "Manufacture of other fabricated metal products; metalworking service activities",
+            "slug": "259_manufacture_of_other_fabricated_metal_pr",
+            "group": "259",
+            "type": "group"
+          },
+          {
+            "code": "2591",
+            "value": "Forging, pressing, stamping and roll-forming of metal; powder metallurgy",
+            "slug": "2591_forging_pressing_stamping_and_roll_formi",
+            "group": "259",
+            "type": "class"
+          },
+          {
+            "code": "2592",
+            "value": "Treatment and coating of metals; machining",
+            "slug": "2592_treatment_and_coating_of_metals_machinin",
+            "group": "259",
+            "type": "class"
+          },
+          {
+            "code": "2593",
+            "value": "Manufacture of cutlery, hand tools and general hardware",
+            "slug": "2593_manufacture_of_cutlery_hand_tools_and_ge",
+            "group": "259",
+            "type": "class"
+          },
+          {
+            "code": "2599",
+            "value": "Manufacture of other fabricated metal products n.e.c.",
+            "slug": "2599_manufacture_of_other_fabricated_metal_pr",
+            "group": "259",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "26",
+        "value": "Manufacture of computer, electronic and optical products",
+        "slug": "26_manufacture_of_computer_electronic_and_o",
+        "industries": [
+          {
+            "code": "261",
+            "value": "Manufacture of electronic components and boards",
+            "slug": "261_manufacture_of_electronic_components_and",
+            "group": "261",
+            "type": "group"
+          },
+          {
+            "code": "2611",
+            "value": "Manufacture of solar cells, solar panels and photovoltaic inverters",
+            "slug": "2611_manufacture_of_solar_cells_solar_panels_",
+            "group": "261",
+            "type": "class"
+          },
+          {
+            "code": "2619",
+            "value": "Manufacture of other electronic components and boards",
+            "slug": "2619_manufacture_of_other_electronic_componen",
+            "group": "261",
+            "type": "class"
+          },
+          {
+            "code": "262",
+            "value": "Manufacture of computers and peripheral equipment",
+            "slug": "262_manufacture_of_computers_and_peripheral_",
+            "group": "262",
+            "type": "group"
+          },
+          {
+            "code": "2620",
+            "value": "Manufacture of computers and peripheral equipment",
+            "slug": "2620_manufacture_of_computers_and_peripheral_",
+            "group": "262",
+            "type": "class"
+          },
+          {
+            "code": "263",
+            "value": "Manufacture of communication equipment",
+            "slug": "263_manufacture_of_communication_equipment",
+            "group": "263",
+            "type": "group"
+          },
+          {
+            "code": "2630",
+            "value": "Manufacture of communication equipment",
+            "slug": "2630_manufacture_of_communication_equipment",
+            "group": "263",
+            "type": "class"
+          },
+          {
+            "code": "264",
+            "value": "Manufacture of consumer electronics",
+            "slug": "264_manufacture_of_consumer_electronics",
+            "group": "264",
+            "type": "group"
+          },
+          {
+            "code": "2640",
+            "value": "Manufacture of consumer electronics",
+            "slug": "2640_manufacture_of_consumer_electronics",
+            "group": "264",
+            "type": "class"
+          },
+          {
+            "code": "265",
+            "value": "Manufacture of measuring, testing, navigating and control equipment; watches and clocks",
+            "slug": "265_manufacture_of_measuring_testing_navigat",
+            "group": "265",
+            "type": "group"
+          },
+          {
+            "code": "2651",
+            "value": "Manufacture of measuring, testing, navigating and control equipment",
+            "slug": "2651_manufacture_of_measuring_testing_navigat",
+            "group": "265",
+            "type": "class"
+          },
+          {
+            "code": "2652",
+            "value": "Manufacture of watches and clocks",
+            "slug": "2652_manufacture_of_watches_and_clocks",
+            "group": "265",
+            "type": "class"
+          },
+          {
+            "code": "266",
+            "value": "Manufacture of irradiation, electromedical and electrotherapeutic equipment",
+            "slug": "266_manufacture_of_irradiation_electromedica",
+            "group": "266",
+            "type": "group"
+          },
+          {
+            "code": "2660",
+            "value": "Manufacture of irradiation, electromedical and electrotherapeutic equipment",
+            "slug": "2660_manufacture_of_irradiation_electromedica",
+            "group": "266",
+            "type": "class"
+          },
+          {
+            "code": "267",
+            "value": "Manufacture of optical instruments and photographic equipment",
+            "slug": "267_manufacture_of_optical_instruments_and_p",
+            "group": "267",
+            "type": "group"
+          },
+          {
+            "code": "2670",
+            "value": "Manufacture of optical instruments and photographic equipment",
+            "slug": "2670_manufacture_of_optical_instruments_and_p",
+            "group": "267",
+            "type": "class"
+          },
+          {
+            "code": "268",
+            "value": "Manufacture of magnetic and optical media",
+            "slug": "268_manufacture_of_magnetic_and_optical_medi",
+            "group": "268",
+            "type": "group"
+          },
+          {
+            "code": "2680",
+            "value": "Manufacture of magnetic and optical media",
+            "slug": "2680_manufacture_of_magnetic_and_optical_medi",
+            "group": "268",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "27",
+        "value": "Manufacture of electrical equipment",
+        "slug": "27_manufacture_of_electrical_equipment",
+        "industries": [
+          {
+            "code": "271",
+            "value": "Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",
+            "slug": "271_manufacture_of_electric_motors_generator",
+            "group": "271",
+            "type": "group"
+          },
+          {
+            "code": "2710",
+            "value": "Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",
+            "slug": "2710_manufacture_of_electric_motors_generator",
+            "group": "271",
+            "type": "class"
+          },
+          {
+            "code": "272",
+            "value": "Manufacture of batteries and accumulators",
+            "slug": "272_manufacture_of_batteries_and_accumulator",
+            "group": "272",
+            "type": "group"
+          },
+          {
+            "code": "2720",
+            "value": "Manufacture of batteries and accumulators",
+            "slug": "2720_manufacture_of_batteries_and_accumulator",
+            "group": "272",
+            "type": "class"
+          },
+          {
+            "code": "273",
+            "value": "Manufacture of wiring and wiring devices",
+            "slug": "273_manufacture_of_wiring_and_wiring_devices",
+            "group": "273",
+            "type": "group"
+          },
+          {
+            "code": "2731",
+            "value": "Manufacture of fibre optic cables",
+            "slug": "2731_manufacture_of_fibre_optic_cables",
+            "group": "273",
+            "type": "class"
+          },
+          {
+            "code": "2732",
+            "value": "Manufacture of other electronic and electric wires and cables",
+            "slug": "2732_manufacture_of_other_electronic_and_elec",
+            "group": "273",
+            "type": "class"
+          },
+          {
+            "code": "2733",
+            "value": "Manufacture of wiring devices",
+            "slug": "2733_manufacture_of_wiring_devices",
+            "group": "273",
+            "type": "class"
+          },
+          {
+            "code": "274",
+            "value": "Manufacture of lighting equipment",
+            "slug": "274_manufacture_of_lighting_equipment",
+            "group": "274",
+            "type": "group"
+          },
+          {
+            "code": "2740",
+            "value": "Manufacture of lighting equipment",
+            "slug": "2740_manufacture_of_lighting_equipment",
+            "group": "274",
+            "type": "class"
+          },
+          {
+            "code": "275",
+            "value": "Manufacture of domestic appliances",
+            "slug": "275_manufacture_of_domestic_appliances",
+            "group": "275",
+            "type": "group"
+          },
+          {
+            "code": "2750",
+            "value": "Manufacture of domestic appliances",
+            "slug": "2750_manufacture_of_domestic_appliances",
+            "group": "275",
+            "type": "class"
+          },
+          {
+            "code": "279",
+            "value": "Manufacture of other electrical equipment",
+            "slug": "279_manufacture_of_other_electrical_equipmen",
+            "group": "279",
+            "type": "group"
+          },
+          {
+            "code": "2790",
+            "value": "Manufacture of other electrical equipment",
+            "slug": "2790_manufacture_of_other_electrical_equipmen",
+            "group": "279",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "28",
+        "value": "Manufacture of machinery and equipment n.e.c.",
+        "slug": "28_manufacture_of_machinery_and_equipment_n",
+        "industries": [
+          {
+            "code": "281",
+            "value": "Manufacture of general-purpose machinery",
+            "slug": "281_manufacture_of_general_purpose_machinery",
+            "group": "281",
+            "type": "group"
+          },
+          {
+            "code": "2811",
+            "value": "Manufacture of engines and turbines, except aircraft, vehicle and cycle engines",
+            "slug": "2811_manufacture_of_engines_and_turbines_exce",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "2812",
+            "value": "Manufacture of fluid power equipment",
+            "slug": "2812_manufacture_of_fluid_power_equipment",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "2813",
+            "value": "Manufacture of other pumps, compressors, taps and valves",
+            "slug": "2813_manufacture_of_other_pumps_compressors_t",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "2814",
+            "value": "Manufacture of bearings, gears, gearing and driving elements",
+            "slug": "2814_manufacture_of_bearings_gears_gearing_an",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "2815",
+            "value": "Manufacture of ovens, furnaces and permanent household heating equipment",
+            "slug": "2815_manufacture_of_ovens_furnaces_and_perman",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "2816",
+            "value": "Manufacture of lifting and handling equipment",
+            "slug": "2816_manufacture_of_lifting_and_handling_equi",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "2817",
+            "value": "Manufacture of office machinery and equipment (except computers and peripheral equipment)",
+            "slug": "2817_manufacture_of_office_machinery_and_equi",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "2818",
+            "value": "Manufacture of power-driven hand tools",
+            "slug": "2818_manufacture_of_power_driven_hand_tools",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "2819",
+            "value": "Manufacture of other general-purpose machinery",
+            "slug": "2819_manufacture_of_other_general_purpose_mac",
+            "group": "281",
+            "type": "class"
+          },
+          {
+            "code": "282",
+            "value": "Manufacture of special-purpose machinery",
+            "slug": "282_manufacture_of_special_purpose_machinery",
+            "group": "282",
+            "type": "group"
+          },
+          {
+            "code": "2821",
+            "value": "Manufacture of agricultural and forestry machinery",
+            "slug": "2821_manufacture_of_agricultural_and_forestry",
+            "group": "282",
+            "type": "class"
+          },
+          {
+            "code": "2822",
+            "value": "Manufacture of metal-forming machinery and machine tools",
+            "slug": "2822_manufacture_of_metal_forming_machinery_a",
+            "group": "282",
+            "type": "class"
+          },
+          {
+            "code": "2823",
+            "value": "Manufacture of machinery for metallurgy",
+            "slug": "2823_manufacture_of_machinery_for_metallurgy",
+            "group": "282",
+            "type": "class"
+          },
+          {
+            "code": "2824",
+            "value": "Manufacture of machinery for mining, quarrying and construction",
+            "slug": "2824_manufacture_of_machinery_for_mining_quar",
+            "group": "282",
+            "type": "class"
+          },
+          {
+            "code": "2825",
+            "value": "Manufacture of machinery for food, beverage and tobacco processing",
+            "slug": "2825_manufacture_of_machinery_for_food_bevera",
+            "group": "282",
+            "type": "class"
+          },
+          {
+            "code": "2826",
+            "value": "Manufacture of machinery for textile, apparel and leather production",
+            "slug": "2826_manufacture_of_machinery_for_textile_app",
+            "group": "282",
+            "type": "class"
+          },
+          {
+            "code": "2829",
+            "value": "Manufacture of other special-purpose machinery",
+            "slug": "2829_manufacture_of_other_special_purpose_mac",
+            "group": "282",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "29",
+        "value": "Manufacture of motor vehicles, trailers and semi-trailers",
+        "slug": "29_manufacture_of_motor_vehicles_trailers_a",
+        "industries": [
+          {
+            "code": "291",
+            "value": "Manufacture of motor vehicles",
+            "slug": "291_manufacture_of_motor_vehicles",
+            "group": "291",
+            "type": "group"
+          },
+          {
+            "code": "2910",
+            "value": "Manufacture of motor vehicles",
+            "slug": "2910_manufacture_of_motor_vehicles",
+            "group": "291",
+            "type": "class"
+          },
+          {
+            "code": "292",
+            "value": "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers",
+            "slug": "292_manufacture_of_bodies_coachwork_for_moto",
+            "group": "292",
+            "type": "group"
+          },
+          {
+            "code": "2920",
+            "value": "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers",
+            "slug": "2920_manufacture_of_bodies_coachwork_for_moto",
+            "group": "292",
+            "type": "class"
+          },
+          {
+            "code": "293",
+            "value": "Manufacture of parts and accessories for motor vehicles",
+            "slug": "293_manufacture_of_parts_and_accessories_for",
+            "group": "293",
+            "type": "group"
+          },
+          {
+            "code": "2930",
+            "value": "Manufacture of parts and accessories for motor vehicles",
+            "slug": "2930_manufacture_of_parts_and_accessories_for",
+            "group": "293",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "30",
+        "value": "Manufacture of other transport equipment",
+        "slug": "30_manufacture_of_other_transport_equipment",
+        "industries": [
+          {
+            "code": "301",
+            "value": "Building of ships and boats",
+            "slug": "301_building_of_ships_and_boats",
+            "group": "301",
+            "type": "group"
+          },
+          {
+            "code": "3011",
+            "value": "Building of ships and floating structures",
+            "slug": "3011_building_of_ships_and_floating_structure",
+            "group": "301",
+            "type": "class"
+          },
+          {
+            "code": "3012",
+            "value": "Building of pleasure and sporting boats",
+            "slug": "3012_building_of_pleasure_and_sporting_boats",
+            "group": "301",
+            "type": "class"
+          },
+          {
+            "code": "302",
+            "value": "Manufacture of railway locomotives and rolling stock",
+            "slug": "302_manufacture_of_railway_locomotives_and_r",
+            "group": "302",
+            "type": "group"
+          },
+          {
+            "code": "3020",
+            "value": "Manufacture of railway locomotives and rolling stock",
+            "slug": "3020_manufacture_of_railway_locomotives_and_r",
+            "group": "302",
+            "type": "class"
+          },
+          {
+            "code": "303",
+            "value": "Manufacture of air and spacecraft and related machinery",
+            "slug": "303_manufacture_of_air_and_spacecraft_and_re",
+            "group": "303",
+            "type": "group"
+          },
+          {
+            "code": "3030",
+            "value": "Manufacture of air and spacecraft and related machinery",
+            "slug": "3030_manufacture_of_air_and_spacecraft_and_re",
+            "group": "303",
+            "type": "class"
+          },
+          {
+            "code": "304",
+            "value": "Manufacture of military fighting vehicles",
+            "slug": "304_manufacture_of_military_fighting_vehicle",
+            "group": "304",
+            "type": "group"
+          },
+          {
+            "code": "3040",
+            "value": "Manufacture of military fighting vehicles",
+            "slug": "3040_manufacture_of_military_fighting_vehicle",
+            "group": "304",
+            "type": "class"
+          },
+          {
+            "code": "309",
+            "value": "Manufacture of transport equipment n.e.c.",
+            "slug": "309_manufacture_of_transport_equipment_n_e_c",
+            "group": "309",
+            "type": "group"
+          },
+          {
+            "code": "3091",
+            "value": "Manufacture of motorcycles",
+            "slug": "3091_manufacture_of_motorcycles",
+            "group": "309",
+            "type": "class"
+          },
+          {
+            "code": "3092",
+            "value": "Manufacture of bicycles and invalid carriages",
+            "slug": "3092_manufacture_of_bicycles_and_invalid_carr",
+            "group": "309",
+            "type": "class"
+          },
+          {
+            "code": "3099",
+            "value": "Manufacture of other transport equipment n.e.c.",
+            "slug": "3099_manufacture_of_other_transport_equipment",
+            "group": "309",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "31",
+        "value": "Manufacture of furniture",
+        "slug": "31_manufacture_of_furniture",
+        "industries": [
+          {
+            "code": "310",
+            "value": "Manufacture of furniture",
+            "slug": "310_manufacture_of_furniture",
+            "group": "310",
+            "type": "group"
+          },
+          {
+            "code": "3101",
+            "value": "Manufacture of wooden furniture",
+            "slug": "3101_manufacture_of_wooden_furniture",
+            "group": "310",
+            "type": "class"
+          },
+          {
+            "code": "3102",
+            "value": "Manufacture of other furniture",
+            "slug": "3102_manufacture_of_other_furniture",
+            "group": "310",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "32",
+        "value": "Other manufacturing",
+        "slug": "32_other_manufacturing",
+        "industries": [
+          {
+            "code": "321",
+            "value": "Manufacture of jewellery, bijouterie and related articles",
+            "slug": "321_manufacture_of_jewellery_bijouterie_and_",
+            "group": "321",
+            "type": "group"
+          },
+          {
+            "code": "3211",
+            "value": "Manufacture of jewellery and related articles",
+            "slug": "3211_manufacture_of_jewellery_and_related_art",
+            "group": "321",
+            "type": "class"
+          },
+          {
+            "code": "3212",
+            "value": "Manufacture of imitation jewellery and related articles",
+            "slug": "3212_manufacture_of_imitation_jewellery_and_r",
+            "group": "321",
+            "type": "class"
+          },
+          {
+            "code": "322",
+            "value": "Manufacture of musical instruments",
+            "slug": "322_manufacture_of_musical_instruments",
+            "group": "322",
+            "type": "group"
+          },
+          {
+            "code": "3220",
+            "value": "Manufacture of musical instruments",
+            "slug": "3220_manufacture_of_musical_instruments",
+            "group": "322",
+            "type": "class"
+          },
+          {
+            "code": "323",
+            "value": "Manufacture of sports goods",
+            "slug": "323_manufacture_of_sports_goods",
+            "group": "323",
+            "type": "group"
+          },
+          {
+            "code": "3230",
+            "value": "Manufacture of sports goods",
+            "slug": "3230_manufacture_of_sports_goods",
+            "group": "323",
+            "type": "class"
+          },
+          {
+            "code": "324",
+            "value": "Manufacture of games and toys",
+            "slug": "324_manufacture_of_games_and_toys",
+            "group": "324",
+            "type": "group"
+          },
+          {
+            "code": "3240",
+            "value": "Manufacture of games and toys",
+            "slug": "3240_manufacture_of_games_and_toys",
+            "group": "324",
+            "type": "class"
+          },
+          {
+            "code": "325",
+            "value": "Manufacture of medical and dental instruments and supplies",
+            "slug": "325_manufacture_of_medical_and_dental_instru",
+            "group": "325",
+            "type": "group"
+          },
+          {
+            "code": "3250",
+            "value": "Manufacture of medical and dental instruments and supplies",
+            "slug": "3250_manufacture_of_medical_and_dental_instru",
+            "group": "325",
+            "type": "class"
+          },
+          {
+            "code": "329",
+            "value": "Other manufacturing n.e.c.",
+            "slug": "329_other_manufacturing_n_e_c",
+            "group": "329",
+            "type": "group"
+          },
+          {
+            "code": "3290",
+            "value": "Other manufacturing n.e.c.",
+            "slug": "3290_other_manufacturing_n_e_c",
+            "group": "329",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "33",
+        "value": "Repair, maintenance and installation of machinery and equipment",
+        "slug": "33_repair_maintenance_and_installation_of_m",
+        "industries": [
+          {
+            "code": "331",
+            "value": "Repair and maintenance of fabricated metal products, machinery and equipment",
+            "slug": "331_repair_and_maintenance_of_fabricated_met",
+            "group": "331",
+            "type": "group"
+          },
+          {
+            "code": "3311",
+            "value": "Repair and maintenance of fabricated metal products",
+            "slug": "3311_repair_and_maintenance_of_fabricated_met",
+            "group": "331",
+            "type": "class"
+          },
+          {
+            "code": "3312",
+            "value": "Repair and maintenance of machinery",
+            "slug": "3312_repair_and_maintenance_of_machinery",
+            "group": "331",
+            "type": "class"
+          },
+          {
+            "code": "3313",
+            "value": "Repair and maintenance of electronic and optical equipment",
+            "slug": "3313_repair_and_maintenance_of_electronic_and",
+            "group": "331",
+            "type": "class"
+          },
+          {
+            "code": "3314",
+            "value": "Repair and maintenance of electrical equipment",
+            "slug": "3314_repair_and_maintenance_of_electrical_equ",
+            "group": "331",
+            "type": "class"
+          },
+          {
+            "code": "3315",
+            "value": "Repair and maintenance of transport equipment, except motor vehicles",
+            "slug": "3315_repair_and_maintenance_of_transport_equi",
+            "group": "331",
+            "type": "class"
+          },
+          {
+            "code": "3319",
+            "value": "Repair and maintenance of other equipment",
+            "slug": "3319_repair_and_maintenance_of_other_equipmen",
+            "group": "331",
+            "type": "class"
+          },
+          {
+            "code": "332",
+            "value": "Installation of industrial machinery and equipment",
+            "slug": "332_installation_of_industrial_machinery_and",
+            "group": "332",
+            "type": "group"
+          },
+          {
+            "code": "3320",
+            "value": "Installation of industrial machinery and equipment",
+            "slug": "3320_installation_of_industrial_machinery_and",
+            "group": "332",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "D",
+    "value": "Electricity, gas, steam and air conditioning supply",
+    "slug": "d_electricity_gas_steam_and_air_conditioni",
+    "subsectors": [
+      {
+        "code": "35",
+        "value": "Electricity, gas, steam and air conditioning supply",
+        "slug": "35_electricity_gas_steam_and_air_conditioni",
+        "industries": [
+          {
+            "code": "351",
+            "value": "Electric power generation, transmission and distribution activities",
+            "slug": "351_electric_power_generation_transmission_a",
+            "group": "351",
+            "type": "group"
+          },
+          {
+            "code": "3511",
+            "value": "Electric power generation activities from non-renewable sources",
+            "slug": "3511_electric_power_generation_activities_fro",
+            "group": "351",
+            "type": "class"
+          },
+          {
+            "code": "3512",
+            "value": "Electric power generation activities from renewable sources",
+            "slug": "3512_electric_power_generation_activities_fro",
+            "group": "351",
+            "type": "class"
+          },
+          {
+            "code": "3513",
+            "value": "Electric power transmission and distribution activities",
+            "slug": "3513_electric_power_transmission_and_distribu",
+            "group": "351",
+            "type": "class"
+          },
+          {
+            "code": "352",
+            "value": "Manufacture of gas; distribution of gaseous fuels through mains",
+            "slug": "352_manufacture_of_gas_distribution_of_gaseo",
+            "group": "352",
+            "type": "group"
+          },
+          {
+            "code": "3520",
+            "value": "Manufacture of gas; distribution of gaseous fuels through mains",
+            "slug": "3520_manufacture_of_gas_distribution_of_gaseo",
+            "group": "352",
+            "type": "class"
+          },
+          {
+            "code": "353",
+            "value": "Steam and air conditioning supply",
+            "slug": "353_steam_and_air_conditioning_supply",
+            "group": "353",
+            "type": "group"
+          },
+          {
+            "code": "3530",
+            "value": "Steam and air conditioning supply",
+            "slug": "3530_steam_and_air_conditioning_supply",
+            "group": "353",
+            "type": "class"
+          },
+          {
+            "code": "354",
+            "value": "Activities of brokers and agents for electric power and natural gas",
+            "slug": "354_activities_of_brokers_and_agents_for_ele",
+            "group": "354",
+            "type": "group"
+          },
+          {
+            "code": "3540",
+            "value": "Activities of brokers and agents for electric power and natural gas",
+            "slug": "3540_activities_of_brokers_and_agents_for_ele",
+            "group": "354",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "E",
+    "value": "Water supply; sewerage, waste management and remediation activities",
+    "slug": "e_water_supply_sewerage_waste_management_a",
+    "subsectors": [
+      {
+        "code": "36",
+        "value": "Water collection, treatment and supply",
+        "slug": "36_water_collection_treatment_and_supply",
+        "industries": [
+          {
+            "code": "360",
+            "value": "Water collection, treatment and supply",
+            "slug": "360_water_collection_treatment_and_supply",
+            "group": "360",
+            "type": "group"
+          },
+          {
+            "code": "3600",
+            "value": "Water collection, treatment and supply",
+            "slug": "3600_water_collection_treatment_and_supply",
+            "group": "360",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "37",
+        "value": "Sewerage",
+        "slug": "37_sewerage",
+        "industries": [
+          {
+            "code": "370",
+            "value": "Sewerage",
+            "slug": "370_sewerage",
+            "group": "370",
+            "type": "group"
+          },
+          {
+            "code": "3700",
+            "value": "Sewerage",
+            "slug": "3700_sewerage",
+            "group": "370",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "38",
+        "value": "Waste collection, treatment and disposal, and recovery activities",
+        "slug": "38_waste_collection_treatment_and_disposal_",
+        "industries": [
+          {
+            "code": "381",
+            "value": "Waste collection activities",
+            "slug": "381_waste_collection_activities",
+            "group": "381",
+            "type": "group"
+          },
+          {
+            "code": "3811",
+            "value": "Collection of non-hazardous waste",
+            "slug": "3811_collection_of_non_hazardous_waste",
+            "group": "381",
+            "type": "class"
+          },
+          {
+            "code": "3812",
+            "value": "Collection of hazardous waste",
+            "slug": "3812_collection_of_hazardous_waste",
+            "group": "381",
+            "type": "class"
+          },
+          {
+            "code": "382",
+            "value": "Waste treatment and disposal",
+            "slug": "382_waste_treatment_and_disposal",
+            "group": "382",
+            "type": "group"
+          },
+          {
+            "code": "3821",
+            "value": "Treatment and disposal of non-hazardous waste",
+            "slug": "3821_treatment_and_disposal_of_non_hazardous_",
+            "group": "382",
+            "type": "class"
+          },
+          {
+            "code": "3822",
+            "value": "Treatment and disposal of hazardous waste",
+            "slug": "3822_treatment_and_disposal_of_hazardous_wast",
+            "group": "382",
+            "type": "class"
+          },
+          {
+            "code": "383",
+            "value": "Materials and other waste recovery",
+            "slug": "383_materials_and_other_waste_recovery",
+            "group": "383",
+            "type": "group"
+          },
+          {
+            "code": "3830",
+            "value": "Materials and other waste recovery",
+            "slug": "3830_materials_and_other_waste_recovery",
+            "group": "383",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "39",
+        "value": "Remediation and other waste management service activities",
+        "slug": "39_remediation_and_other_waste_management_s",
+        "industries": [
+          {
+            "code": "390",
+            "value": "Remediation and other waste management service activities",
+            "slug": "390_remediation_and_other_waste_management_s",
+            "group": "390",
+            "type": "group"
+          },
+          {
+            "code": "3900",
+            "value": "Remediation and other waste management service activities",
+            "slug": "3900_remediation_and_other_waste_management_s",
+            "group": "390",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "F",
+    "value": "Construction",
+    "slug": "f_construction",
+    "subsectors": [
+      {
+        "code": "41",
+        "value": "Construction of residential and non-residential buildings",
+        "slug": "41_construction_of_residential_and_non_resi",
+        "industries": [
+          {
+            "code": "410",
+            "value": "Construction of residential and non-residential buildings",
+            "slug": "410_construction_of_residential_and_non_resi",
+            "group": "410",
+            "type": "group"
+          },
+          {
+            "code": "4100",
+            "value": "Construction of residential and non-residential buildings",
+            "slug": "4100_construction_of_residential_and_non_resi",
+            "group": "410",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "42",
+        "value": "Civil engineering",
+        "slug": "42_civil_engineering",
+        "industries": [
+          {
+            "code": "421",
+            "value": "Construction of roads and railways",
+            "slug": "421_construction_of_roads_and_railways",
+            "group": "421",
+            "type": "group"
+          },
+          {
+            "code": "4210",
+            "value": "Construction of roads and railways",
+            "slug": "4210_construction_of_roads_and_railways",
+            "group": "421",
+            "type": "class"
+          },
+          {
+            "code": "422",
+            "value": "Construction of utility projects",
+            "slug": "422_construction_of_utility_projects",
+            "group": "422",
+            "type": "group"
+          },
+          {
+            "code": "4220",
+            "value": "Construction of utility projects",
+            "slug": "4220_construction_of_utility_projects",
+            "group": "422",
+            "type": "class"
+          },
+          {
+            "code": "429",
+            "value": "Construction of other civil engineering projects",
+            "slug": "429_construction_of_other_civil_engineering_",
+            "group": "429",
+            "type": "group"
+          },
+          {
+            "code": "4290",
+            "value": "Construction of other civil engineering projects",
+            "slug": "4290_construction_of_other_civil_engineering_",
+            "group": "429",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "43",
+        "value": "Specialized construction activities",
+        "slug": "43_specialized_construction_activities",
+        "industries": [
+          {
+            "code": "431",
+            "value": "Demolition and site preparation",
+            "slug": "431_demolition_and_site_preparation",
+            "group": "431",
+            "type": "group"
+          },
+          {
+            "code": "4311",
+            "value": "Demolition",
+            "slug": "4311_demolition",
+            "group": "431",
+            "type": "class"
+          },
+          {
+            "code": "4312",
+            "value": "Site preparation",
+            "slug": "4312_site_preparation",
+            "group": "431",
+            "type": "class"
+          },
+          {
+            "code": "432",
+            "value": "Electrical, plumbing and other construction installation activities",
+            "slug": "432_electrical_plumbing_and_other_constructi",
+            "group": "432",
+            "type": "group"
+          },
+          {
+            "code": "4321",
+            "value": "Electrical installation",
+            "slug": "4321_electrical_installation",
+            "group": "432",
+            "type": "class"
+          },
+          {
+            "code": "4322",
+            "value": "Plumbing, heat and air-conditioning installation",
+            "slug": "4322_plumbing_heat_and_air_conditioning_insta",
+            "group": "432",
+            "type": "class"
+          },
+          {
+            "code": "4329",
+            "value": "Other construction installation",
+            "slug": "4329_other_construction_installation",
+            "group": "432",
+            "type": "class"
+          },
+          {
+            "code": "433",
+            "value": "Building completion and finishing",
+            "slug": "433_building_completion_and_finishing",
+            "group": "433",
+            "type": "group"
+          },
+          {
+            "code": "4330",
+            "value": "Building completion and finishing",
+            "slug": "4330_building_completion_and_finishing",
+            "group": "433",
+            "type": "class"
+          },
+          {
+            "code": "434",
+            "value": "Intermediation service activities for specialized construction services",
+            "slug": "434_intermediation_service_activities_for_sp",
+            "group": "434",
+            "type": "group"
+          },
+          {
+            "code": "4340",
+            "value": "Intermediation service activities for specialized construction services",
+            "slug": "4340_intermediation_service_activities_for_sp",
+            "group": "434",
+            "type": "class"
+          },
+          {
+            "code": "439",
+            "value": "Other specialized construction activities",
+            "slug": "439_other_specialized_construction_activitie",
+            "group": "439",
+            "type": "group"
+          },
+          {
+            "code": "4390",
+            "value": "Other specialized construction activities",
+            "slug": "4390_other_specialized_construction_activitie",
+            "group": "439",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "G",
+    "value": "Wholesale and retail trade",
+    "slug": "g_wholesale_and_retail_trade",
+    "subsectors": [
+      {
+        "code": "46",
+        "value": "Wholesale trade",
+        "slug": "46_wholesale_trade",
+        "industries": [
+          {
+            "code": "461",
+            "value": "Wholesale on a fee or contract basis",
+            "slug": "461_wholesale_on_a_fee_or_contract_basis",
+            "group": "461",
+            "type": "group"
+          },
+          {
+            "code": "4610",
+            "value": "Wholesale on a fee or contract basis",
+            "slug": "4610_wholesale_on_a_fee_or_contract_basis",
+            "group": "461",
+            "type": "class"
+          },
+          {
+            "code": "462",
+            "value": "Wholesale of agricultural raw materials and live animals",
+            "slug": "462_wholesale_of_agricultural_raw_materials_",
+            "group": "462",
+            "type": "group"
+          },
+          {
+            "code": "4620",
+            "value": "Wholesale of agricultural raw materials and live animals",
+            "slug": "4620_wholesale_of_agricultural_raw_materials_",
+            "group": "462",
+            "type": "class"
+          },
+          {
+            "code": "463",
+            "value": "Wholesale of food, beverages and tobacco",
+            "slug": "463_wholesale_of_food_beverages_and_tobacco",
+            "group": "463",
+            "type": "group"
+          },
+          {
+            "code": "4630",
+            "value": "Wholesale of food, beverages and tobacco",
+            "slug": "4630_wholesale_of_food_beverages_and_tobacco",
+            "group": "463",
+            "type": "class"
+          },
+          {
+            "code": "464",
+            "value": "Wholesale of household goods",
+            "slug": "464_wholesale_of_household_goods",
+            "group": "464",
+            "type": "group"
+          },
+          {
+            "code": "4641",
+            "value": "Wholesale of textiles, clothing and footwear",
+            "slug": "4641_wholesale_of_textiles_clothing_and_footw",
+            "group": "464",
+            "type": "class"
+          },
+          {
+            "code": "4642",
+            "value": "Wholesale of household, office and shop furniture, carpets and lighting equipment",
+            "slug": "4642_wholesale_of_household_office_and_shop_f",
+            "group": "464",
+            "type": "class"
+          },
+          {
+            "code": "4649",
+            "value": "Wholesale of other household goods",
+            "slug": "4649_wholesale_of_other_household_goods",
+            "group": "464",
+            "type": "class"
+          },
+          {
+            "code": "465",
+            "value": "Wholesale of machinery, equipment and supplies",
+            "slug": "465_wholesale_of_machinery_equipment_and_sup",
+            "group": "465",
+            "type": "group"
+          },
+          {
+            "code": "4651",
+            "value": "Wholesale of computers, computer peripheral equipment and software",
+            "slug": "4651_wholesale_of_computers_computer_peripher",
+            "group": "465",
+            "type": "class"
+          },
+          {
+            "code": "4652",
+            "value": "Wholesale of electronic and telecommunications equipment and parts",
+            "slug": "4652_wholesale_of_electronic_and_telecommunic",
+            "group": "465",
+            "type": "class"
+          },
+          {
+            "code": "4653",
+            "value": "Wholesale of agricultural machinery, equipment and supplies",
+            "slug": "4653_wholesale_of_agricultural_machinery_equi",
+            "group": "465",
+            "type": "class"
+          },
+          {
+            "code": "4659",
+            "value": "Wholesale of other machinery and equipment",
+            "slug": "4659_wholesale_of_other_machinery_and_equipme",
+            "group": "465",
+            "type": "class"
+          },
+          {
+            "code": "466",
+            "value": "Wholesale of motor vehicles, motorcycles and related parts and accessories",
+            "slug": "466_wholesale_of_motor_vehicles_motorcycles_",
+            "group": "466",
+            "type": "group"
+          },
+          {
+            "code": "4661",
+            "value": "Wholesale of motor vehicles",
+            "slug": "4661_wholesale_of_motor_vehicles",
+            "group": "466",
+            "type": "class"
+          },
+          {
+            "code": "4662",
+            "value": "Wholesale of motor vehicle parts and accessories",
+            "slug": "4662_wholesale_of_motor_vehicle_parts_and_acc",
+            "group": "466",
+            "type": "class"
+          },
+          {
+            "code": "4663",
+            "value": "Wholesale of motorcycles, motorcycle parts and accessories",
+            "slug": "4663_wholesale_of_motorcycles_motorcycle_part",
+            "group": "466",
+            "type": "class"
+          },
+          {
+            "code": "467",
+            "value": "Other specialized wholesale",
+            "slug": "467_other_specialized_wholesale",
+            "group": "467",
+            "type": "group"
+          },
+          {
+            "code": "4671",
+            "value": "Wholesale of solid, liquid and gaseous fuels and related products",
+            "slug": "4671_wholesale_of_solid_liquid_and_gaseous_fu",
+            "group": "467",
+            "type": "class"
+          },
+          {
+            "code": "4672",
+            "value": "Wholesale of metals and metal ores",
+            "slug": "4672_wholesale_of_metals_and_metal_ores",
+            "group": "467",
+            "type": "class"
+          },
+          {
+            "code": "4673",
+            "value": "Wholesale of construction materials, hardware, plumbing and heating equipment and supplies",
+            "slug": "4673_wholesale_of_construction_materials_hard",
+            "group": "467",
+            "type": "class"
+          },
+          {
+            "code": "4679",
+            "value": "Wholesale of chemicals, waste and scrap and other products n.e.c.",
+            "slug": "4679_wholesale_of_chemicals_waste_and_scrap_a",
+            "group": "467",
+            "type": "class"
+          },
+          {
+            "code": "469",
+            "value": "Non-specialized wholesale trade",
+            "slug": "469_non_specialized_wholesale_trade",
+            "group": "469",
+            "type": "group"
+          },
+          {
+            "code": "4690",
+            "value": "Non-specialized wholesale trade",
+            "slug": "4690_non_specialized_wholesale_trade",
+            "group": "469",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "47",
+        "value": "Retail trade",
+        "slug": "47_retail_trade",
+        "industries": [
+          {
+            "code": "471",
+            "value": "Non-specialized retail sale",
+            "slug": "471_non_specialized_retail_sale",
+            "group": "471",
+            "type": "group"
+          },
+          {
+            "code": "4711",
+            "value": "Non-specialized retail sale with food, beverages or tobacco predominating",
+            "slug": "4711_non_specialized_retail_sale_with_food_be",
+            "group": "471",
+            "type": "class"
+          },
+          {
+            "code": "4719",
+            "value": "Other non-specialized retail sale",
+            "slug": "4719_other_non_specialized_retail_sale",
+            "group": "471",
+            "type": "class"
+          },
+          {
+            "code": "472",
+            "value": "Retail sale of food, beverages and tobacco",
+            "slug": "472_retail_sale_of_food_beverages_and_tobacc",
+            "group": "472",
+            "type": "group"
+          },
+          {
+            "code": "4721",
+            "value": "Retail sale of food",
+            "slug": "4721_retail_sale_of_food",
+            "group": "472",
+            "type": "class"
+          },
+          {
+            "code": "4722",
+            "value": "Retail sale of beverages",
+            "slug": "4722_retail_sale_of_beverages",
+            "group": "472",
+            "type": "class"
+          },
+          {
+            "code": "4723",
+            "value": "Retail sale of tobacco products",
+            "slug": "4723_retail_sale_of_tobacco_products",
+            "group": "472",
+            "type": "class"
+          },
+          {
+            "code": "473",
+            "value": "Retail sale of automotive fuel",
+            "slug": "473_retail_sale_of_automotive_fuel",
+            "group": "473",
+            "type": "group"
+          },
+          {
+            "code": "4730",
+            "value": "Retail sale of automotive fuel",
+            "slug": "4730_retail_sale_of_automotive_fuel",
+            "group": "473",
+            "type": "class"
+          },
+          {
+            "code": "474",
+            "value": "Retail sale of information and communication equipment",
+            "slug": "474_retail_sale_of_information_and_communica",
+            "group": "474",
+            "type": "group"
+          },
+          {
+            "code": "4740",
+            "value": "Retail sale of information and communication equipment",
+            "slug": "4740_retail_sale_of_information_and_communica",
+            "group": "474",
+            "type": "class"
+          },
+          {
+            "code": "475",
+            "value": "Retail sale of other household equipment",
+            "slug": "475_retail_sale_of_other_household_equipment",
+            "group": "475",
+            "type": "group"
+          },
+          {
+            "code": "4751",
+            "value": "Retail sale of textiles",
+            "slug": "4751_retail_sale_of_textiles",
+            "group": "475",
+            "type": "class"
+          },
+          {
+            "code": "4752",
+            "value": "Retail sale of hardware, building materials, paints and glass",
+            "slug": "4752_retail_sale_of_hardware_building_materia",
+            "group": "475",
+            "type": "class"
+          },
+          {
+            "code": "4753",
+            "value": "Retail sale of carpets, rugs, wall and floor coverings",
+            "slug": "4753_retail_sale_of_carpets_rugs_wall_and_flo",
+            "group": "475",
+            "type": "class"
+          },
+          {
+            "code": "4759",
+            "value": "Retail sale of electrical household appliances, furniture, lighting equipment and other household articles",
+            "slug": "4759_retail_sale_of_electrical_household_appl",
+            "group": "475",
+            "type": "class"
+          },
+          {
+            "code": "476",
+            "value": "Retail sale of cultural and recreational goods",
+            "slug": "476_retail_sale_of_cultural_and_recreational",
+            "group": "476",
+            "type": "group"
+          },
+          {
+            "code": "4761",
+            "value": "Retail sale of books, newspapers, stationery and office supplies",
+            "slug": "4761_retail_sale_of_books_newspapers_statione",
+            "group": "476",
+            "type": "class"
+          },
+          {
+            "code": "4762",
+            "value": "Retail sale of sporting equipment",
+            "slug": "4762_retail_sale_of_sporting_equipment",
+            "group": "476",
+            "type": "class"
+          },
+          {
+            "code": "4763",
+            "value": "Retail sale of games and toys",
+            "slug": "4763_retail_sale_of_games_and_toys",
+            "group": "476",
+            "type": "class"
+          },
+          {
+            "code": "4769",
+            "value": "Retail sale of cultural and recreational goods n.e.c.",
+            "slug": "4769_retail_sale_of_cultural_and_recreational",
+            "group": "476",
+            "type": "class"
+          },
+          {
+            "code": "477",
+            "value": "Retail sale of other goods, except motor vehicles and motorcycles",
+            "slug": "477_retail_sale_of_other_goods_except_motor_",
+            "group": "477",
+            "type": "group"
+          },
+          {
+            "code": "4771",
+            "value": "Retail sale of clothing, footwear and leather articles",
+            "slug": "4771_retail_sale_of_clothing_footwear_and_lea",
+            "group": "477",
+            "type": "class"
+          },
+          {
+            "code": "4772",
+            "value": "Retail sale of pharmaceutical and medical goods, cosmetic and toilet articles",
+            "slug": "4772_retail_sale_of_pharmaceutical_and_medica",
+            "group": "477",
+            "type": "class"
+          },
+          {
+            "code": "4773",
+            "value": "Retail sale of other new goods n.e.c.",
+            "slug": "4773_retail_sale_of_other_new_goods_n_e_c",
+            "group": "477",
+            "type": "class"
+          },
+          {
+            "code": "4774",
+            "value": "Retail sale of second-hand goods",
+            "slug": "4774_retail_sale_of_second_hand_goods",
+            "group": "477",
+            "type": "class"
+          },
+          {
+            "code": "478",
+            "value": "Retail sale of motor vehicles, motorcycles and related parts and accessories",
+            "slug": "478_retail_sale_of_motor_vehicles_motorcycle",
+            "group": "478",
+            "type": "group"
+          },
+          {
+            "code": "4781",
+            "value": "Retail sale of motor vehicles",
+            "slug": "4781_retail_sale_of_motor_vehicles",
+            "group": "478",
+            "type": "class"
+          },
+          {
+            "code": "4782",
+            "value": "Retail sale of motor vehicle parts and accessories",
+            "slug": "4782_retail_sale_of_motor_vehicle_parts_and_a",
+            "group": "478",
+            "type": "class"
+          },
+          {
+            "code": "4783",
+            "value": "Retail sale of motorcycles, motorcycles parts and accessories",
+            "slug": "4783_retail_sale_of_motorcycles_motorcycles_p",
+            "group": "478",
+            "type": "class"
+          },
+          {
+            "code": "479",
+            "value": "Intermediation service activities for retail sale",
+            "slug": "479_intermediation_service_activities_for_re",
+            "group": "479",
+            "type": "group"
+          },
+          {
+            "code": "4790",
+            "value": "Intermediation service activities for retail sale",
+            "slug": "4790_intermediation_service_activities_for_re",
+            "group": "479",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "H",
+    "value": "Transportation and storage",
+    "slug": "h_transportation_and_storage",
+    "subsectors": [
+      {
+        "code": "49",
+        "value": "Land transport and transport via pipelines",
+        "slug": "49_land_transport_and_transport_via_pipelin",
+        "industries": [
+          {
+            "code": "491",
+            "value": "Transport via railways",
+            "slug": "491_transport_via_railways",
+            "group": "491",
+            "type": "group"
+          },
+          {
+            "code": "4911",
+            "value": "Passenger rail transport, interurban",
+            "slug": "4911_passenger_rail_transport_interurban",
+            "group": "491",
+            "type": "class"
+          },
+          {
+            "code": "4912",
+            "value": "Freight rail transport",
+            "slug": "4912_freight_rail_transport",
+            "group": "491",
+            "type": "class"
+          },
+          {
+            "code": "492",
+            "value": "Other land transport",
+            "slug": "492_other_land_transport",
+            "group": "492",
+            "type": "group"
+          },
+          {
+            "code": "4921",
+            "value": "Urban and suburban passenger land transport",
+            "slug": "4921_urban_and_suburban_passenger_land_transp",
+            "group": "492",
+            "type": "class"
+          },
+          {
+            "code": "4922",
+            "value": "Other passenger land transport",
+            "slug": "4922_other_passenger_land_transport",
+            "group": "492",
+            "type": "class"
+          },
+          {
+            "code": "4923",
+            "value": "Freight transport by road",
+            "slug": "4923_freight_transport_by_road",
+            "group": "492",
+            "type": "class"
+          },
+          {
+            "code": "493",
+            "value": "Transport via pipeline",
+            "slug": "493_transport_via_pipeline",
+            "group": "493",
+            "type": "group"
+          },
+          {
+            "code": "4930",
+            "value": "Transport via pipeline",
+            "slug": "4930_transport_via_pipeline",
+            "group": "493",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "50",
+        "value": "Water transport",
+        "slug": "50_water_transport",
+        "industries": [
+          {
+            "code": "501",
+            "value": "Sea and coastal water transport",
+            "slug": "501_sea_and_coastal_water_transport",
+            "group": "501",
+            "type": "group"
+          },
+          {
+            "code": "5011",
+            "value": "Sea and coastal passenger water transport",
+            "slug": "5011_sea_and_coastal_passenger_water_transpor",
+            "group": "501",
+            "type": "class"
+          },
+          {
+            "code": "5012",
+            "value": "Sea and coastal freight water transport",
+            "slug": "5012_sea_and_coastal_freight_water_transport",
+            "group": "501",
+            "type": "class"
+          },
+          {
+            "code": "502",
+            "value": "Inland water transport",
+            "slug": "502_inland_water_transport",
+            "group": "502",
+            "type": "group"
+          },
+          {
+            "code": "5021",
+            "value": "Inland passenger water transport",
+            "slug": "5021_inland_passenger_water_transport",
+            "group": "502",
+            "type": "class"
+          },
+          {
+            "code": "5022",
+            "value": "Inland freight water transport",
+            "slug": "5022_inland_freight_water_transport",
+            "group": "502",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "51",
+        "value": "Air transport",
+        "slug": "51_air_transport",
+        "industries": [
+          {
+            "code": "511",
+            "value": "Passenger air transport",
+            "slug": "511_passenger_air_transport",
+            "group": "511",
+            "type": "group"
+          },
+          {
+            "code": "5110",
+            "value": "Passenger air transport",
+            "slug": "5110_passenger_air_transport",
+            "group": "511",
+            "type": "class"
+          },
+          {
+            "code": "512",
+            "value": "Freight air transport",
+            "slug": "512_freight_air_transport",
+            "group": "512",
+            "type": "group"
+          },
+          {
+            "code": "5120",
+            "value": "Freight air transport",
+            "slug": "5120_freight_air_transport",
+            "group": "512",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "52",
+        "value": "Warehousing and support activities for transportation",
+        "slug": "52_warehousing_and_support_activities_for_t",
+        "industries": [
+          {
+            "code": "521",
+            "value": "Warehousing and storage",
+            "slug": "521_warehousing_and_storage",
+            "group": "521",
+            "type": "group"
+          },
+          {
+            "code": "5210",
+            "value": "Warehousing and storage",
+            "slug": "5210_warehousing_and_storage",
+            "group": "521",
+            "type": "class"
+          },
+          {
+            "code": "522",
+            "value": "Support activities for transportation",
+            "slug": "522_support_activities_for_transportation",
+            "group": "522",
+            "type": "group"
+          },
+          {
+            "code": "5221",
+            "value": "Service activities incidental to land transportation",
+            "slug": "5221_service_activities_incidental_to_land_tr",
+            "group": "522",
+            "type": "class"
+          },
+          {
+            "code": "5222",
+            "value": "Service activities incidental to water transportation",
+            "slug": "5222_service_activities_incidental_to_water_t",
+            "group": "522",
+            "type": "class"
+          },
+          {
+            "code": "5223",
+            "value": "Service activities incidental to air transportation",
+            "slug": "5223_service_activities_incidental_to_air_tra",
+            "group": "522",
+            "type": "class"
+          },
+          {
+            "code": "5224",
+            "value": "Cargo handling",
+            "slug": "5224_cargo_handling",
+            "group": "522",
+            "type": "class"
+          },
+          {
+            "code": "5229",
+            "value": "Other support activities for transportation",
+            "slug": "5229_other_support_activities_for_transportat",
+            "group": "522",
+            "type": "class"
+          },
+          {
+            "code": "523",
+            "value": "Intermediation service activities for transportation",
+            "slug": "523_intermediation_service_activities_for_tr",
+            "group": "523",
+            "type": "group"
+          },
+          {
+            "code": "5231",
+            "value": "Intermediation service activities for freight transportation",
+            "slug": "5231_intermediation_service_activities_for_fr",
+            "group": "523",
+            "type": "class"
+          },
+          {
+            "code": "5232",
+            "value": "Intermediation service activities for passenger transportation",
+            "slug": "5232_intermediation_service_activities_for_pa",
+            "group": "523",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "53",
+        "value": "Postal and courier activities",
+        "slug": "53_postal_and_courier_activities",
+        "industries": [
+          {
+            "code": "531",
+            "value": "Postal activities",
+            "slug": "531_postal_activities",
+            "group": "531",
+            "type": "group"
+          },
+          {
+            "code": "5310",
+            "value": "Postal activities",
+            "slug": "5310_postal_activities",
+            "group": "531",
+            "type": "class"
+          },
+          {
+            "code": "532",
+            "value": "Courier activities",
+            "slug": "532_courier_activities",
+            "group": "532",
+            "type": "group"
+          },
+          {
+            "code": "5320",
+            "value": "Courier activities",
+            "slug": "5320_courier_activities",
+            "group": "532",
+            "type": "class"
+          },
+          {
+            "code": "533",
+            "value": "Intermediation service activities for postal and courier activities",
+            "slug": "533_intermediation_service_activities_for_po",
+            "group": "533",
+            "type": "group"
+          },
+          {
+            "code": "5330",
+            "value": "Intermediation service activities for postal and courier activities",
+            "slug": "5330_intermediation_service_activities_for_po",
+            "group": "533",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "I",
+    "value": "Accommodation and food service activities",
+    "slug": "i_accommodation_and_food_service_activitie",
+    "subsectors": [
+      {
+        "code": "55",
+        "value": "Accommodation",
+        "slug": "55_accommodation",
+        "industries": [
+          {
+            "code": "551",
+            "value": "Hotels and similar accommodation activities",
+            "slug": "551_hotels_and_similar_accommodation_activit",
+            "group": "551",
+            "type": "group"
+          },
+          {
+            "code": "5510",
+            "value": "Hotels and similar accommodation activities",
+            "slug": "5510_hotels_and_similar_accommodation_activit",
+            "group": "551",
+            "type": "class"
+          },
+          {
+            "code": "552",
+            "value": "Other short term accommodation activities",
+            "slug": "552_other_short_term_accommodation_activitie",
+            "group": "552",
+            "type": "group"
+          },
+          {
+            "code": "5520",
+            "value": "Other short term accommodation activities",
+            "slug": "5520_other_short_term_accommodation_activitie",
+            "group": "552",
+            "type": "class"
+          },
+          {
+            "code": "553",
+            "value": "Camping grounds, recreational vehicle parks and trailer parks",
+            "slug": "553_camping_grounds_recreational_vehicle_par",
+            "group": "553",
+            "type": "group"
+          },
+          {
+            "code": "5530",
+            "value": "Camping grounds, recreational vehicle parks and trailer parks",
+            "slug": "5530_camping_grounds_recreational_vehicle_par",
+            "group": "553",
+            "type": "class"
+          },
+          {
+            "code": "554",
+            "value": "Intermediation service activities for accommodation",
+            "slug": "554_intermediation_service_activities_for_ac",
+            "group": "554",
+            "type": "group"
+          },
+          {
+            "code": "5540",
+            "value": "Intermediation service activities for accommodation",
+            "slug": "5540_intermediation_service_activities_for_ac",
+            "group": "554",
+            "type": "class"
+          },
+          {
+            "code": "559",
+            "value": "Other accommodation n.e.c.",
+            "slug": "559_other_accommodation_n_e_c",
+            "group": "559",
+            "type": "group"
+          },
+          {
+            "code": "5590",
+            "value": "Other accommodation n.e.c.",
+            "slug": "5590_other_accommodation_n_e_c",
+            "group": "559",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "56",
+        "value": "Food and beverage service activities",
+        "slug": "56_food_and_beverage_service_activities",
+        "industries": [
+          {
+            "code": "561",
+            "value": "Restaurants and mobile food service activities",
+            "slug": "561_restaurants_and_mobile_food_service_acti",
+            "group": "561",
+            "type": "group"
+          },
+          {
+            "code": "5610",
+            "value": "Restaurants and mobile food service activities",
+            "slug": "5610_restaurants_and_mobile_food_service_acti",
+            "group": "561",
+            "type": "class"
+          },
+          {
+            "code": "562",
+            "value": "Event catering and other food service activities",
+            "slug": "562_event_catering_and_other_food_service_ac",
+            "group": "562",
+            "type": "group"
+          },
+          {
+            "code": "5621",
+            "value": "Event catering activities",
+            "slug": "5621_event_catering_activities",
+            "group": "562",
+            "type": "class"
+          },
+          {
+            "code": "5629",
+            "value": "Other food service activities",
+            "slug": "5629_other_food_service_activities",
+            "group": "562",
+            "type": "class"
+          },
+          {
+            "code": "563",
+            "value": "Beverage serving activities",
+            "slug": "563_beverage_serving_activities",
+            "group": "563",
+            "type": "group"
+          },
+          {
+            "code": "5630",
+            "value": "Beverage serving activities",
+            "slug": "5630_beverage_serving_activities",
+            "group": "563",
+            "type": "class"
+          },
+          {
+            "code": "564",
+            "value": "Intermediation service activities for food and beverage services activities",
+            "slug": "564_intermediation_service_activities_for_fo",
+            "group": "564",
+            "type": "group"
+          },
+          {
+            "code": "5640",
+            "value": "Intermediation service activities for food and beverage services activities",
+            "slug": "5640_intermediation_service_activities_for_fo",
+            "group": "564",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "J",
+    "value": "Publishing, broadcasting, and content production and distribution activities",
+    "slug": "j_publishing_broadcasting_and_content_prod",
+    "subsectors": [
+      {
+        "code": "58",
+        "value": "Publishing activities",
+        "slug": "58_publishing_activities",
+        "industries": [
+          {
+            "code": "581",
+            "value": "Publishing of books, newspapers, periodicals and other publishing activities",
+            "slug": "581_publishing_of_books_newspapers_periodica",
+            "group": "581",
+            "type": "group"
+          },
+          {
+            "code": "5811",
+            "value": "Publishing of books",
+            "slug": "5811_publishing_of_books",
+            "group": "581",
+            "type": "class"
+          },
+          {
+            "code": "5812",
+            "value": "Publishing of newspapers",
+            "slug": "5812_publishing_of_newspapers",
+            "group": "581",
+            "type": "class"
+          },
+          {
+            "code": "5813",
+            "value": "Publishing of journals and periodicals",
+            "slug": "5813_publishing_of_journals_and_periodicals",
+            "group": "581",
+            "type": "class"
+          },
+          {
+            "code": "5819",
+            "value": "Other publishing activities",
+            "slug": "5819_other_publishing_activities",
+            "group": "581",
+            "type": "class"
+          },
+          {
+            "code": "582",
+            "value": "Software publishing",
+            "slug": "582_software_publishing",
+            "group": "582",
+            "type": "group"
+          },
+          {
+            "code": "5821",
+            "value": "Publishing of video games",
+            "slug": "5821_publishing_of_video_games",
+            "group": "582",
+            "type": "class"
+          },
+          {
+            "code": "5829",
+            "value": "Other software publishing",
+            "slug": "5829_other_software_publishing",
+            "group": "582",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "59",
+        "value": "Motion picture, video and television programme production, sound recording and music publishing activities",
+        "slug": "59_motion_picture_video_and_television_prog",
+        "industries": [
+          {
+            "code": "591",
+            "value": "Motion picture, video and television programme activities",
+            "slug": "591_motion_picture_video_and_television_prog",
+            "group": "591",
+            "type": "group"
+          },
+          {
+            "code": "5911",
+            "value": "Motion picture, video and television programme production activities",
+            "slug": "5911_motion_picture_video_and_television_prog",
+            "group": "591",
+            "type": "class"
+          },
+          {
+            "code": "5912",
+            "value": "Motion picture, video and television programme post-production activities",
+            "slug": "5912_motion_picture_video_and_television_prog",
+            "group": "591",
+            "type": "class"
+          },
+          {
+            "code": "5913",
+            "value": "Motion picture, video and television programme distribution activities",
+            "slug": "5913_motion_picture_video_and_television_prog",
+            "group": "591",
+            "type": "class"
+          },
+          {
+            "code": "5914",
+            "value": "Motion picture projection activities",
+            "slug": "5914_motion_picture_projection_activities",
+            "group": "591",
+            "type": "class"
+          },
+          {
+            "code": "592",
+            "value": "Sound recording and music publishing activities",
+            "slug": "592_sound_recording_and_music_publishing_act",
+            "group": "592",
+            "type": "group"
+          },
+          {
+            "code": "5920",
+            "value": "Sound recording and music publishing activities",
+            "slug": "5920_sound_recording_and_music_publishing_act",
+            "group": "592",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "60",
+        "value": "Programming, broadcasting, news agency and other content distribution activities",
+        "slug": "60_programming_broadcasting_news_agency_and",
+        "industries": [
+          {
+            "code": "601",
+            "value": "Radio broadcasting and audio distribution activities",
+            "slug": "601_radio_broadcasting_and_audio_distributio",
+            "group": "601",
+            "type": "group"
+          },
+          {
+            "code": "6010",
+            "value": "Radio broadcasting and audio distribution activities",
+            "slug": "6010_radio_broadcasting_and_audio_distributio",
+            "group": "601",
+            "type": "class"
+          },
+          {
+            "code": "602",
+            "value": "Television programming, broadcasting and video distribution activities",
+            "slug": "602_television_programming_broadcasting_and_",
+            "group": "602",
+            "type": "group"
+          },
+          {
+            "code": "6020",
+            "value": "Television programming, broadcasting and video distribution activities",
+            "slug": "6020_television_programming_broadcasting_and_",
+            "group": "602",
+            "type": "class"
+          },
+          {
+            "code": "603",
+            "value": "News agency and other content distribution activities",
+            "slug": "603_news_agency_and_other_content_distributi",
+            "group": "603",
+            "type": "group"
+          },
+          {
+            "code": "6031",
+            "value": "News agency activities",
+            "slug": "6031_news_agency_activities",
+            "group": "603",
+            "type": "class"
+          },
+          {
+            "code": "6039",
+            "value": "Social network sites and other content distribution activities",
+            "slug": "6039_social_network_sites_and_other_content_d",
+            "group": "603",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "K",
+    "value": "Telecommunications, computer programming, consultancy, computing infrastructure, and other information service activities",
+    "slug": "k_telecommunications_computer_programming_",
+    "subsectors": [
+      {
+        "code": "61",
+        "value": "Telecommunications",
+        "slug": "61_telecommunications",
+        "industries": [
+          {
+            "code": "611",
+            "value": "Wired, wireless, and satellite telecommunication activities",
+            "slug": "611_wired_wireless_and_satellite_telecommuni",
+            "group": "611",
+            "type": "group"
+          },
+          {
+            "code": "6110",
+            "value": "Wired, wireless, and satellite telecommunication activities",
+            "slug": "6110_wired_wireless_and_satellite_telecommuni",
+            "group": "611",
+            "type": "class"
+          },
+          {
+            "code": "612",
+            "value": "Telecommunication reselling activities and intermediation service activities for telecommunication",
+            "slug": "612_telecommunication_reselling_activities_a",
+            "group": "612",
+            "type": "group"
+          },
+          {
+            "code": "6120",
+            "value": "Telecommunication reselling activities and intermediation service activities for telecommunication",
+            "slug": "6120_telecommunication_reselling_activities_a",
+            "group": "612",
+            "type": "class"
+          },
+          {
+            "code": "619",
+            "value": "Other telecommunication activities",
+            "slug": "619_other_telecommunication_activities",
+            "group": "619",
+            "type": "group"
+          },
+          {
+            "code": "6190",
+            "value": "Other telecommunication activities",
+            "slug": "6190_other_telecommunication_activities",
+            "group": "619",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "62",
+        "value": "Computer programming, consultancy and related activities",
+        "slug": "62_computer_programming_consultancy_and_rel",
+        "industries": [
+          {
+            "code": "621",
+            "value": "Computer programming activities",
+            "slug": "621_computer_programming_activities",
+            "group": "621",
+            "type": "group"
+          },
+          {
+            "code": "6211",
+            "value": "Development of video games, video game software, and video game software tools",
+            "slug": "6211_development_of_video_games_video_game_so",
+            "group": "621",
+            "type": "class"
+          },
+          {
+            "code": "6219",
+            "value": "Other computer programming activities",
+            "slug": "6219_other_computer_programming_activities",
+            "group": "621",
+            "type": "class"
+          },
+          {
+            "code": "622",
+            "value": "Computer consultancy and computer facilities management activities",
+            "slug": "622_computer_consultancy_and_computer_facili",
+            "group": "622",
+            "type": "group"
+          },
+          {
+            "code": "6220",
+            "value": "Computer consultancy and computer facilities management activities",
+            "slug": "6220_computer_consultancy_and_computer_facili",
+            "group": "622",
+            "type": "class"
+          },
+          {
+            "code": "629",
+            "value": "Other information technology and computer service activities",
+            "slug": "629_other_information_technology_and_compute",
+            "group": "629",
+            "type": "group"
+          },
+          {
+            "code": "6290",
+            "value": "Other information technology and computer service activities",
+            "slug": "6290_other_information_technology_and_compute",
+            "group": "629",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "63",
+        "value": "Computing infrastructure, data processing, hosting, and other information service activities",
+        "slug": "63_computing_infrastructure_data_processing",
+        "industries": [
+          {
+            "code": "631",
+            "value": "Computing infrastructure, data processing, hosting and related activities",
+            "slug": "631_computing_infrastructure_data_processing",
+            "group": "631",
+            "type": "group"
+          },
+          {
+            "code": "6310",
+            "value": "Computing infrastructure, data processing, hosting and related activities",
+            "slug": "6310_computing_infrastructure_data_processing",
+            "group": "631",
+            "type": "class"
+          },
+          {
+            "code": "639",
+            "value": "Web search portals activities and other information service activities",
+            "slug": "639_web_search_portals_activities_and_other_",
+            "group": "639",
+            "type": "group"
+          },
+          {
+            "code": "6390",
+            "value": "Web search portals activities and other information service activities",
+            "slug": "6390_web_search_portals_activities_and_other_",
+            "group": "639",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "L",
+    "value": "Financial and insurance activities",
+    "slug": "l_financial_and_insurance_activities",
+    "subsectors": [
+      {
+        "code": "64",
+        "value": "Financial service activities, except insurance and pension funding",
+        "slug": "64_financial_service_activities_except_insu",
+        "industries": [
+          {
+            "code": "641",
+            "value": "Monetary intermediation",
+            "slug": "641_monetary_intermediation",
+            "group": "641",
+            "type": "group"
+          },
+          {
+            "code": "6411",
+            "value": "Central banking",
+            "slug": "6411_central_banking",
+            "group": "641",
+            "type": "class"
+          },
+          {
+            "code": "6419",
+            "value": "Other monetary intermediation",
+            "slug": "6419_other_monetary_intermediation",
+            "group": "641",
+            "type": "class"
+          },
+          {
+            "code": "642",
+            "value": "Activities of holding companies and financing conduits",
+            "slug": "642_activities_of_holding_companies_and_fina",
+            "group": "642",
+            "type": "group"
+          },
+          {
+            "code": "6421",
+            "value": "Activities of holding companies",
+            "slug": "6421_activities_of_holding_companies",
+            "group": "642",
+            "type": "class"
+          },
+          {
+            "code": "6422",
+            "value": "Activities of financing conduits",
+            "slug": "6422_activities_of_financing_conduits",
+            "group": "642",
+            "type": "class"
+          },
+          {
+            "code": "643",
+            "value": "Activities of trusts, funds and similar financial entities",
+            "slug": "643_activities_of_trusts_funds_and_similar_f",
+            "group": "643",
+            "type": "group"
+          },
+          {
+            "code": "6431",
+            "value": "Activities of money market funds",
+            "slug": "6431_activities_of_money_market_funds",
+            "group": "643",
+            "type": "class"
+          },
+          {
+            "code": "6432",
+            "value": "Activities of non-money market investments funds",
+            "slug": "6432_activities_of_non_money_market_investmen",
+            "group": "643",
+            "type": "class"
+          },
+          {
+            "code": "6433",
+            "value": "Activities of trust, estate and agency accounts",
+            "slug": "6433_activities_of_trust_estate_and_agency_ac",
+            "group": "643",
+            "type": "class"
+          },
+          {
+            "code": "649",
+            "value": "Other financial service activities, except insurance and pension funding activities",
+            "slug": "649_other_financial_service_activities_excep",
+            "group": "649",
+            "type": "group"
+          },
+          {
+            "code": "6491",
+            "value": "Financial leasing activities",
+            "slug": "6491_financial_leasing_activities",
+            "group": "649",
+            "type": "class"
+          },
+          {
+            "code": "6492",
+            "value": "International trade financing activities",
+            "slug": "6492_international_trade_financing_activities",
+            "group": "649",
+            "type": "class"
+          },
+          {
+            "code": "6493",
+            "value": "Factoring activities",
+            "slug": "6493_factoring_activities",
+            "group": "649",
+            "type": "class"
+          },
+          {
+            "code": "6494",
+            "value": "Securitisation activities",
+            "slug": "6494_securitisation_activities",
+            "group": "649",
+            "type": "class"
+          },
+          {
+            "code": "6495",
+            "value": "Other credit granting activities",
+            "slug": "6495_other_credit_granting_activities",
+            "group": "649",
+            "type": "class"
+          },
+          {
+            "code": "6499",
+            "value": "Other financial service activities n.e.c., except insurance and pension funding activities",
+            "slug": "6499_other_financial_service_activities_n_e_c",
+            "group": "649",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "65",
+        "value": "Insurance, reinsurance and pension funding, except compulsory social security",
+        "slug": "65_insurance_reinsurance_and_pension_fundin",
+        "industries": [
+          {
+            "code": "651",
+            "value": "Insurance",
+            "slug": "651_insurance",
+            "group": "651",
+            "type": "group"
+          },
+          {
+            "code": "6511",
+            "value": "Life insurance",
+            "slug": "6511_life_insurance",
+            "group": "651",
+            "type": "class"
+          },
+          {
+            "code": "6512",
+            "value": "Non-life insurance",
+            "slug": "6512_non_life_insurance",
+            "group": "651",
+            "type": "class"
+          },
+          {
+            "code": "652",
+            "value": "Reinsurance",
+            "slug": "652_reinsurance",
+            "group": "652",
+            "type": "group"
+          },
+          {
+            "code": "6520",
+            "value": "Reinsurance",
+            "slug": "6520_reinsurance",
+            "group": "652",
+            "type": "class"
+          },
+          {
+            "code": "653",
+            "value": "Pension funding",
+            "slug": "653_pension_funding",
+            "group": "653",
+            "type": "group"
+          },
+          {
+            "code": "6530",
+            "value": "Pension funding",
+            "slug": "6530_pension_funding",
+            "group": "653",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "66",
+        "value": "Activities auxiliary to financial service and insurance activities",
+        "slug": "66_activities_auxiliary_to_financial_servic",
+        "industries": [
+          {
+            "code": "661",
+            "value": "Activities auxiliary to financial services, except insurance and pension funding",
+            "slug": "661_activities_auxiliary_to_financial_servic",
+            "group": "661",
+            "type": "group"
+          },
+          {
+            "code": "6611",
+            "value": "Administration of financial markets",
+            "slug": "6611_administration_of_financial_markets",
+            "group": "661",
+            "type": "class"
+          },
+          {
+            "code": "6612",
+            "value": "Security and commodity contracts brokerage",
+            "slug": "6612_security_and_commodity_contracts_brokera",
+            "group": "661",
+            "type": "class"
+          },
+          {
+            "code": "6619",
+            "value": "Other activities auxiliary to financial service activities, except insurance and pension funding",
+            "slug": "6619_other_activities_auxiliary_to_financial_",
+            "group": "661",
+            "type": "class"
+          },
+          {
+            "code": "662",
+            "value": "Activities auxiliary to insurance and pension funding",
+            "slug": "662_activities_auxiliary_to_insurance_and_pe",
+            "group": "662",
+            "type": "group"
+          },
+          {
+            "code": "6621",
+            "value": "Risk and damage evaluation",
+            "slug": "6621_risk_and_damage_evaluation",
+            "group": "662",
+            "type": "class"
+          },
+          {
+            "code": "6622",
+            "value": "Activities of insurance agents and brokers",
+            "slug": "6622_activities_of_insurance_agents_and_broke",
+            "group": "662",
+            "type": "class"
+          },
+          {
+            "code": "6629",
+            "value": "Other activities auxiliary to insurance and pension funding",
+            "slug": "6629_other_activities_auxiliary_to_insurance_",
+            "group": "662",
+            "type": "class"
+          },
+          {
+            "code": "663",
+            "value": "Fund management activities",
+            "slug": "663_fund_management_activities",
+            "group": "663",
+            "type": "group"
+          },
+          {
+            "code": "6630",
+            "value": "Fund management activities",
+            "slug": "6630_fund_management_activities",
+            "group": "663",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "M",
+    "value": "Real estate activities",
+    "slug": "m_real_estate_activities",
+    "subsectors": [
+      {
+        "code": "68",
+        "value": "Real estate activities",
+        "slug": "68_real_estate_activities",
+        "industries": [
+          {
+            "code": "681",
+            "value": "Real estate activities with own or leased property",
+            "slug": "681_real_estate_activities_with_own_or_lease",
+            "group": "681",
+            "type": "group"
+          },
+          {
+            "code": "6810",
+            "value": "Real estate activities with own or leased property",
+            "slug": "6810_real_estate_activities_with_own_or_lease",
+            "group": "681",
+            "type": "class"
+          },
+          {
+            "code": "682",
+            "value": "Real estate activities on a fee or contract basis",
+            "slug": "682_real_estate_activities_on_a_fee_or_contr",
+            "group": "682",
+            "type": "group"
+          },
+          {
+            "code": "6821",
+            "value": "Intermediation service activities for real estate",
+            "slug": "6821_intermediation_service_activities_for_re",
+            "group": "682",
+            "type": "class"
+          },
+          {
+            "code": "6829",
+            "value": "Other real estate activities on a fee or contract basis",
+            "slug": "6829_other_real_estate_activities_on_a_fee_or",
+            "group": "682",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "N",
+    "value": "Professional, scientific and technical activities",
+    "slug": "n_professional_scientific_and_technical_ac",
+    "subsectors": [
+      {
+        "code": "69",
+        "value": "Legal and accounting activities",
+        "slug": "69_legal_and_accounting_activities",
+        "industries": [
+          {
+            "code": "691",
+            "value": "Legal activities",
+            "slug": "691_legal_activities",
+            "group": "691",
+            "type": "group"
+          },
+          {
+            "code": "6910",
+            "value": "Legal activities",
+            "slug": "6910_legal_activities",
+            "group": "691",
+            "type": "class"
+          },
+          {
+            "code": "692",
+            "value": "Accounting, bookkeeping and auditing activities; tax consultancy",
+            "slug": "692_accounting_bookkeeping_and_auditing_acti",
+            "group": "692",
+            "type": "group"
+          },
+          {
+            "code": "6920",
+            "value": "Accounting, bookkeeping and auditing activities; tax consultancy",
+            "slug": "6920_accounting_bookkeeping_and_auditing_acti",
+            "group": "692",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "70",
+        "value": "Activities of head offices; management consultancy activities",
+        "slug": "70_activities_of_head_offices_management_co",
+        "industries": [
+          {
+            "code": "701",
+            "value": "Activities of head offices",
+            "slug": "701_activities_of_head_offices",
+            "group": "701",
+            "type": "group"
+          },
+          {
+            "code": "7010",
+            "value": "Activities of head offices",
+            "slug": "7010_activities_of_head_offices",
+            "group": "701",
+            "type": "class"
+          },
+          {
+            "code": "702",
+            "value": "Business and other management consultancy activities",
+            "slug": "702_business_and_other_management_consultanc",
+            "group": "702",
+            "type": "group"
+          },
+          {
+            "code": "7020",
+            "value": "Business and other management consultancy activities",
+            "slug": "7020_business_and_other_management_consultanc",
+            "group": "702",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "71",
+        "value": "Architectural and engineering activities; technical testing and analysis",
+        "slug": "71_architectural_and_engineering_activities",
+        "industries": [
+          {
+            "code": "711",
+            "value": "Architectural and engineering, and related technical consultancy activities",
+            "slug": "711_architectural_and_engineering_and_relate",
+            "group": "711",
+            "type": "group"
+          },
+          {
+            "code": "7110",
+            "value": "Architectural and engineering, and related technical consultancy activities",
+            "slug": "7110_architectural_and_engineering_and_relate",
+            "group": "711",
+            "type": "class"
+          },
+          {
+            "code": "712",
+            "value": "Technical testing and analysis",
+            "slug": "712_technical_testing_and_analysis",
+            "group": "712",
+            "type": "group"
+          },
+          {
+            "code": "7120",
+            "value": "Technical testing and analysis",
+            "slug": "7120_technical_testing_and_analysis",
+            "group": "712",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "72",
+        "value": "Scientific research and development",
+        "slug": "72_scientific_research_and_development",
+        "industries": [
+          {
+            "code": "721",
+            "value": "Research and experimental development on natural sciences and engineering",
+            "slug": "721_research_and_experimental_development_on",
+            "group": "721",
+            "type": "group"
+          },
+          {
+            "code": "7210",
+            "value": "Research and experimental development on natural sciences and engineering",
+            "slug": "7210_research_and_experimental_development_on",
+            "group": "721",
+            "type": "class"
+          },
+          {
+            "code": "722",
+            "value": "Research and experimental development on social sciences and humanities",
+            "slug": "722_research_and_experimental_development_on",
+            "group": "722",
+            "type": "group"
+          },
+          {
+            "code": "7220",
+            "value": "Research and experimental development on social sciences and humanities",
+            "slug": "7220_research_and_experimental_development_on",
+            "group": "722",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "73",
+        "value": "Activities of advertising, market research and public relations",
+        "slug": "73_activities_of_advertising_market_researc",
+        "industries": [
+          {
+            "code": "731",
+            "value": "Advertising activities",
+            "slug": "731_advertising_activities",
+            "group": "731",
+            "type": "group"
+          },
+          {
+            "code": "7310",
+            "value": "Advertising activities",
+            "slug": "7310_advertising_activities",
+            "group": "731",
+            "type": "class"
+          },
+          {
+            "code": "732",
+            "value": "Market research and public opinion polling activities",
+            "slug": "732_market_research_and_public_opinion_polli",
+            "group": "732",
+            "type": "group"
+          },
+          {
+            "code": "7320",
+            "value": "Market research and public opinion polling activities",
+            "slug": "7320_market_research_and_public_opinion_polli",
+            "group": "732",
+            "type": "class"
+          },
+          {
+            "code": "733",
+            "value": "Public relations activities",
+            "slug": "733_public_relations_activities",
+            "group": "733",
+            "type": "group"
+          },
+          {
+            "code": "7330",
+            "value": "Public relations activities",
+            "slug": "7330_public_relations_activities",
+            "group": "733",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "74",
+        "value": "Other professional, scientific and technical activities",
+        "slug": "74_other_professional_scientific_and_techni",
+        "industries": [
+          {
+            "code": "741",
+            "value": "Specialized design activities",
+            "slug": "741_specialized_design_activities",
+            "group": "741",
+            "type": "group"
+          },
+          {
+            "code": "7410",
+            "value": "Specialized design activities",
+            "slug": "7410_specialized_design_activities",
+            "group": "741",
+            "type": "class"
+          },
+          {
+            "code": "742",
+            "value": "Photographic activities",
+            "slug": "742_photographic_activities",
+            "group": "742",
+            "type": "group"
+          },
+          {
+            "code": "7420",
+            "value": "Photographic activities",
+            "slug": "7420_photographic_activities",
+            "group": "742",
+            "type": "class"
+          },
+          {
+            "code": "743",
+            "value": "Translation and interpretation activities",
+            "slug": "743_translation_and_interpretation_activitie",
+            "group": "743",
+            "type": "group"
+          },
+          {
+            "code": "7430",
+            "value": "Translation and interpretation activities",
+            "slug": "7430_translation_and_interpretation_activitie",
+            "group": "743",
+            "type": "class"
+          },
+          {
+            "code": "749",
+            "value": "Other professional, scientific and technical activities n.e.c.",
+            "slug": "749_other_professional_scientific_and_techni",
+            "group": "749",
+            "type": "group"
+          },
+          {
+            "code": "7491",
+            "value": "Patent brokering and marketing service activities",
+            "slug": "7491_patent_brokering_and_marketing_service_a",
+            "group": "749",
+            "type": "class"
+          },
+          {
+            "code": "7499",
+            "value": "All other professional, scientific and technical activities n.e.c.",
+            "slug": "7499_all_other_professional_scientific_and_te",
+            "group": "749",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "75",
+        "value": "Veterinary activities",
+        "slug": "75_veterinary_activities",
+        "industries": [
+          {
+            "code": "750",
+            "value": "Veterinary activities",
+            "slug": "750_veterinary_activities",
+            "group": "750",
+            "type": "group"
+          },
+          {
+            "code": "7500",
+            "value": "Veterinary activities",
+            "slug": "7500_veterinary_activities",
+            "group": "750",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "O",
+    "value": "Administrative and support service activities",
+    "slug": "o_administrative_and_support_service_activ",
+    "subsectors": [
+      {
+        "code": "77",
+        "value": "Rental and leasing activities",
+        "slug": "77_rental_and_leasing_activities",
+        "industries": [
+          {
+            "code": "771",
+            "value": "Rental and leasing of motor vehicles",
+            "slug": "771_rental_and_leasing_of_motor_vehicles",
+            "group": "771",
+            "type": "group"
+          },
+          {
+            "code": "7710",
+            "value": "Rental and leasing of motor vehicles",
+            "slug": "7710_rental_and_leasing_of_motor_vehicles",
+            "group": "771",
+            "type": "class"
+          },
+          {
+            "code": "772",
+            "value": "Rental and leasing of personal and household goods",
+            "slug": "772_rental_and_leasing_of_personal_and_house",
+            "group": "772",
+            "type": "group"
+          },
+          {
+            "code": "7721",
+            "value": "Rental and leasing of recreational and sports goods",
+            "slug": "7721_rental_and_leasing_of_recreational_and_s",
+            "group": "772",
+            "type": "class"
+          },
+          {
+            "code": "7729",
+            "value": "Rental and leasing of other personal and household goods",
+            "slug": "7729_rental_and_leasing_of_other_personal_and",
+            "group": "772",
+            "type": "class"
+          },
+          {
+            "code": "773",
+            "value": "Rental and leasing of other machinery, equipment and tangible goods",
+            "slug": "773_rental_and_leasing_of_other_machinery_eq",
+            "group": "773",
+            "type": "group"
+          },
+          {
+            "code": "7730",
+            "value": "Rental and leasing of other machinery, equipment and tangible goods",
+            "slug": "7730_rental_and_leasing_of_other_machinery_eq",
+            "group": "773",
+            "type": "class"
+          },
+          {
+            "code": "774",
+            "value": "Leasing of intellectual property and similar products, except copyrighted works",
+            "slug": "774_leasing_of_intellectual_property_and_sim",
+            "group": "774",
+            "type": "group"
+          },
+          {
+            "code": "7740",
+            "value": "Leasing of intellectual property and similar products, except copyrighted works",
+            "slug": "7740_leasing_of_intellectual_property_and_sim",
+            "group": "774",
+            "type": "class"
+          },
+          {
+            "code": "775",
+            "value": "Intermediation service activities for rental and leasing of tangible goods and non-financial intangible assets",
+            "slug": "775_intermediation_service_activities_for_re",
+            "group": "775",
+            "type": "group"
+          },
+          {
+            "code": "7751",
+            "value": "Intermediation service activities for rental and leasing of cars, motorhomes and trailers",
+            "slug": "7751_intermediation_service_activities_for_re",
+            "group": "775",
+            "type": "class"
+          },
+          {
+            "code": "7752",
+            "value": "Intermediation service activities for rental and leasing of other tangible goods and non-financial intangible assets",
+            "slug": "7752_intermediation_service_activities_for_re",
+            "group": "775",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "78",
+        "value": "Employment activities",
+        "slug": "78_employment_activities",
+        "industries": [
+          {
+            "code": "781",
+            "value": "Activities of employment placement agencies",
+            "slug": "781_activities_of_employment_placement_agenc",
+            "group": "781",
+            "type": "group"
+          },
+          {
+            "code": "7810",
+            "value": "Activities of employment placement agencies",
+            "slug": "7810_activities_of_employment_placement_agenc",
+            "group": "781",
+            "type": "class"
+          },
+          {
+            "code": "782",
+            "value": "Temporary employment agency activities and other human resource provisions",
+            "slug": "782_temporary_employment_agency_activities_a",
+            "group": "782",
+            "type": "group"
+          },
+          {
+            "code": "7820",
+            "value": "Temporary employment agency activities and other human resource provisions",
+            "slug": "7820_temporary_employment_agency_activities_a",
+            "group": "782",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "79",
+        "value": "Travel agency, tour operator, and other travel related activities",
+        "slug": "79_travel_agency_tour_operator_and_other_tr",
+        "industries": [
+          {
+            "code": "791",
+            "value": "Travel agency and tour operator activities",
+            "slug": "791_travel_agency_and_tour_operator_activiti",
+            "group": "791",
+            "type": "group"
+          },
+          {
+            "code": "7911",
+            "value": "Travel agency activities",
+            "slug": "7911_travel_agency_activities",
+            "group": "791",
+            "type": "class"
+          },
+          {
+            "code": "7912",
+            "value": "Tour operator activities",
+            "slug": "7912_tour_operator_activities",
+            "group": "791",
+            "type": "class"
+          },
+          {
+            "code": "799",
+            "value": "Other travel related activities",
+            "slug": "799_other_travel_related_activities",
+            "group": "799",
+            "type": "group"
+          },
+          {
+            "code": "7990",
+            "value": "Other travel related activities",
+            "slug": "7990_other_travel_related_activities",
+            "group": "799",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "80",
+        "value": "Investigation and security activities",
+        "slug": "80_investigation_and_security_activities",
+        "industries": [
+          {
+            "code": "801",
+            "value": "Investigation and security activities",
+            "slug": "801_investigation_and_security_activities",
+            "group": "801",
+            "type": "group"
+          },
+          {
+            "code": "8011",
+            "value": "Investigation and private security activities",
+            "slug": "8011_investigation_and_private_security_activ",
+            "group": "801",
+            "type": "class"
+          },
+          {
+            "code": "8019",
+            "value": "Security activities n.e.c.",
+            "slug": "8019_security_activities_n_e_c",
+            "group": "801",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "81",
+        "value": "Services to buildings and landscape activities",
+        "slug": "81_services_to_buildings_and_landscape_acti",
+        "industries": [
+          {
+            "code": "811",
+            "value": "Combined facilities support activities",
+            "slug": "811_combined_facilities_support_activities",
+            "group": "811",
+            "type": "group"
+          },
+          {
+            "code": "8110",
+            "value": "Combined facilities support activities",
+            "slug": "8110_combined_facilities_support_activities",
+            "group": "811",
+            "type": "class"
+          },
+          {
+            "code": "812",
+            "value": "Cleaning activities",
+            "slug": "812_cleaning_activities",
+            "group": "812",
+            "type": "group"
+          },
+          {
+            "code": "8121",
+            "value": "General cleaning of buildings",
+            "slug": "8121_general_cleaning_of_buildings",
+            "group": "812",
+            "type": "class"
+          },
+          {
+            "code": "8129",
+            "value": "Other cleaning activities",
+            "slug": "8129_other_cleaning_activities",
+            "group": "812",
+            "type": "class"
+          },
+          {
+            "code": "813",
+            "value": "Landscape service activities",
+            "slug": "813_landscape_service_activities",
+            "group": "813",
+            "type": "group"
+          },
+          {
+            "code": "8130",
+            "value": "Landscape service activities",
+            "slug": "8130_landscape_service_activities",
+            "group": "813",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "82",
+        "value": "Office administrative, office support and other business support activities",
+        "slug": "82_office_administrative_office_support_and",
+        "industries": [
+          {
+            "code": "821",
+            "value": "Office administrative and support activities",
+            "slug": "821_office_administrative_and_support_activi",
+            "group": "821",
+            "type": "group"
+          },
+          {
+            "code": "8210",
+            "value": "Office administrative and support activities",
+            "slug": "8210_office_administrative_and_support_activi",
+            "group": "821",
+            "type": "class"
+          },
+          {
+            "code": "822",
+            "value": "Activities of call centres",
+            "slug": "822_activities_of_call_centres",
+            "group": "822",
+            "type": "group"
+          },
+          {
+            "code": "8220",
+            "value": "Activities of call centres",
+            "slug": "8220_activities_of_call_centres",
+            "group": "822",
+            "type": "class"
+          },
+          {
+            "code": "823",
+            "value": "Organization of conventions and trade shows",
+            "slug": "823_organization_of_conventions_and_trade_sh",
+            "group": "823",
+            "type": "group"
+          },
+          {
+            "code": "8230",
+            "value": "Organization of conventions and trade shows",
+            "slug": "8230_organization_of_conventions_and_trade_sh",
+            "group": "823",
+            "type": "class"
+          },
+          {
+            "code": "824",
+            "value": "Intermediation service activities for business support activities n.e.c., except financial intermediation",
+            "slug": "824_intermediation_service_activities_for_bu",
+            "group": "824",
+            "type": "group"
+          },
+          {
+            "code": "8240",
+            "value": "Intermediation service activities for business support activities n.e.c., except financial intermediation",
+            "slug": "8240_intermediation_service_activities_for_bu",
+            "group": "824",
+            "type": "class"
+          },
+          {
+            "code": "829",
+            "value": "Business support service activities n.e.c.",
+            "slug": "829_business_support_service_activities_n_e_",
+            "group": "829",
+            "type": "group"
+          },
+          {
+            "code": "8291",
+            "value": "Activities of collection agencies and credit bureaus",
+            "slug": "8291_activities_of_collection_agencies_and_cr",
+            "group": "829",
+            "type": "class"
+          },
+          {
+            "code": "8292",
+            "value": "Packaging activities",
+            "slug": "8292_packaging_activities",
+            "group": "829",
+            "type": "class"
+          },
+          {
+            "code": "8299",
+            "value": "Other business support service activities n.e.c.",
+            "slug": "8299_other_business_support_service_activitie",
+            "group": "829",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "P",
+    "value": "Public administration and defence; compulsory social security",
+    "slug": "p_public_administration_and_defence_compul",
+    "subsectors": [
+      {
+        "code": "84",
+        "value": "Public administration and defence; compulsory social security",
+        "slug": "84_public_administration_and_defence_compul",
+        "industries": [
+          {
+            "code": "841",
+            "value": "Administration of the State and the economic, social and environmental policies of the community",
+            "slug": "841_administration_of_the_state_and_the_econ",
+            "group": "841",
+            "type": "group"
+          },
+          {
+            "code": "8411",
+            "value": "General public administration activities",
+            "slug": "8411_general_public_administration_activities",
+            "group": "841",
+            "type": "class"
+          },
+          {
+            "code": "8412",
+            "value": "Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security and environment",
+            "slug": "8412_regulation_of_the_activities_of_providin",
+            "group": "841",
+            "type": "class"
+          },
+          {
+            "code": "8413",
+            "value": "Regulation of the activities of providing environmental services",
+            "slug": "8413_regulation_of_the_activities_of_providin",
+            "group": "841",
+            "type": "class"
+          },
+          {
+            "code": "8414",
+            "value": "Regulation of and contribution to more efficient operation of businesses",
+            "slug": "8414_regulation_of_and_contribution_to_more_e",
+            "group": "841",
+            "type": "class"
+          },
+          {
+            "code": "842",
+            "value": "Provision of services to the community as a whole",
+            "slug": "842_provision_of_services_to_the_community_a",
+            "group": "842",
+            "type": "group"
+          },
+          {
+            "code": "8421",
+            "value": "Foreign affairs",
+            "slug": "8421_foreign_affairs",
+            "group": "842",
+            "type": "class"
+          },
+          {
+            "code": "8422",
+            "value": "Defence activities",
+            "slug": "8422_defence_activities",
+            "group": "842",
+            "type": "class"
+          },
+          {
+            "code": "8423",
+            "value": "Public order and safety activities",
+            "slug": "8423_public_order_and_safety_activities",
+            "group": "842",
+            "type": "class"
+          },
+          {
+            "code": "843",
+            "value": "Compulsory social security activities",
+            "slug": "843_compulsory_social_security_activities",
+            "group": "843",
+            "type": "group"
+          },
+          {
+            "code": "8430",
+            "value": "Compulsory social security activities",
+            "slug": "8430_compulsory_social_security_activities",
+            "group": "843",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "Q",
+    "value": "Education",
+    "slug": "q_education",
+    "subsectors": [
+      {
+        "code": "85",
+        "value": "Education",
+        "slug": "85_education",
+        "industries": [
+          {
+            "code": "851",
+            "value": "Pre-primary education",
+            "slug": "851_pre_primary_education",
+            "group": "851",
+            "type": "group"
+          },
+          {
+            "code": "8510",
+            "value": "Pre-primary education",
+            "slug": "8510_pre_primary_education",
+            "group": "851",
+            "type": "class"
+          },
+          {
+            "code": "852",
+            "value": "Primary education",
+            "slug": "852_primary_education",
+            "group": "852",
+            "type": "group"
+          },
+          {
+            "code": "8520",
+            "value": "Primary education",
+            "slug": "8520_primary_education",
+            "group": "852",
+            "type": "class"
+          },
+          {
+            "code": "853",
+            "value": "Secondary and post-secondary non-tertiary education",
+            "slug": "853_secondary_and_post_secondary_non_tertiar",
+            "group": "853",
+            "type": "group"
+          },
+          {
+            "code": "8531",
+            "value": "General secondary education",
+            "slug": "8531_general_secondary_education",
+            "group": "853",
+            "type": "class"
+          },
+          {
+            "code": "8532",
+            "value": "Vocational secondary education",
+            "slug": "8532_vocational_secondary_education",
+            "group": "853",
+            "type": "class"
+          },
+          {
+            "code": "8533",
+            "value": "Post-secondary non-tertiary education",
+            "slug": "8533_post_secondary_non_tertiary_education",
+            "group": "853",
+            "type": "class"
+          },
+          {
+            "code": "854",
+            "value": "Tertiary education",
+            "slug": "854_tertiary_education",
+            "group": "854",
+            "type": "group"
+          },
+          {
+            "code": "8540",
+            "value": "Tertiary education",
+            "slug": "8540_tertiary_education",
+            "group": "854",
+            "type": "class"
+          },
+          {
+            "code": "855",
+            "value": "Other education",
+            "slug": "855_other_education",
+            "group": "855",
+            "type": "group"
+          },
+          {
+            "code": "8551",
+            "value": "Sports and recreation education",
+            "slug": "8551_sports_and_recreation_education",
+            "group": "855",
+            "type": "class"
+          },
+          {
+            "code": "8552",
+            "value": "Cultural education",
+            "slug": "8552_cultural_education",
+            "group": "855",
+            "type": "class"
+          },
+          {
+            "code": "8553",
+            "value": "Driving school activities",
+            "slug": "8553_driving_school_activities",
+            "group": "855",
+            "type": "class"
+          },
+          {
+            "code": "8559",
+            "value": "Other education n.e.c.",
+            "slug": "8559_other_education_n_e_c",
+            "group": "855",
+            "type": "class"
+          },
+          {
+            "code": "856",
+            "value": "Educational support activities",
+            "slug": "856_educational_support_activities",
+            "group": "856",
+            "type": "group"
+          },
+          {
+            "code": "8561",
+            "value": "Intermediation service activities for courses and tutors",
+            "slug": "8561_intermediation_service_activities_for_co",
+            "group": "856",
+            "type": "class"
+          },
+          {
+            "code": "8569",
+            "value": "Other educational support activities",
+            "slug": "8569_other_educational_support_activities",
+            "group": "856",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "R",
+    "value": "Human health and social work activities",
+    "slug": "r_human_health_and_social_work_activities",
+    "subsectors": [
+      {
+        "code": "86",
+        "value": "Human health activities",
+        "slug": "86_human_health_activities",
+        "industries": [
+          {
+            "code": "861",
+            "value": "Hospital activities",
+            "slug": "861_hospital_activities",
+            "group": "861",
+            "type": "group"
+          },
+          {
+            "code": "8610",
+            "value": "Hospital activities",
+            "slug": "8610_hospital_activities",
+            "group": "861",
+            "type": "class"
+          },
+          {
+            "code": "862",
+            "value": "Medical and dental practice activities",
+            "slug": "862_medical_and_dental_practice_activities",
+            "group": "862",
+            "type": "group"
+          },
+          {
+            "code": "8620",
+            "value": "Medical and dental practice activities",
+            "slug": "8620_medical_and_dental_practice_activities",
+            "group": "862",
+            "type": "class"
+          },
+          {
+            "code": "869",
+            "value": "Other human health activities",
+            "slug": "869_other_human_health_activities",
+            "group": "869",
+            "type": "group"
+          },
+          {
+            "code": "8691",
+            "value": "Intermediation service activities for medical, dental, and other human health services",
+            "slug": "8691_intermediation_service_activities_for_me",
+            "group": "869",
+            "type": "class"
+          },
+          {
+            "code": "8699",
+            "value": "Other human health activities n.e.c",
+            "slug": "8699_other_human_health_activities_n_e_c",
+            "group": "869",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "87",
+        "value": "Residential care activities",
+        "slug": "87_residential_care_activities",
+        "industries": [
+          {
+            "code": "871",
+            "value": "Residential nursing care activities",
+            "slug": "871_residential_nursing_care_activities",
+            "group": "871",
+            "type": "group"
+          },
+          {
+            "code": "8710",
+            "value": "Residential nursing care activities",
+            "slug": "8710_residential_nursing_care_activities",
+            "group": "871",
+            "type": "class"
+          },
+          {
+            "code": "872",
+            "value": "Residential care activities for persons living with or having a diagnosis of a mental illness or substance abuse",
+            "slug": "872_residential_care_activities_for_persons_",
+            "group": "872",
+            "type": "group"
+          },
+          {
+            "code": "8720",
+            "value": "Residential care activities for persons living with or having a diagnosis of a mental illness or substance abuse",
+            "slug": "8720_residential_care_activities_for_persons_",
+            "group": "872",
+            "type": "class"
+          },
+          {
+            "code": "873",
+            "value": "Residential care activities for older persons or persons with physical disabilities",
+            "slug": "873_residential_care_activities_for_older_pe",
+            "group": "873",
+            "type": "group"
+          },
+          {
+            "code": "8730",
+            "value": "Residential care activities for older persons or persons with physical disabilities",
+            "slug": "8730_residential_care_activities_for_older_pe",
+            "group": "873",
+            "type": "class"
+          },
+          {
+            "code": "879",
+            "value": "Other residential care activities",
+            "slug": "879_other_residential_care_activities",
+            "group": "879",
+            "type": "group"
+          },
+          {
+            "code": "8791",
+            "value": "Intermediation service activities for residential care activities",
+            "slug": "8791_intermediation_service_activities_for_re",
+            "group": "879",
+            "type": "class"
+          },
+          {
+            "code": "8799",
+            "value": "Other residential care activities n.e.c.",
+            "slug": "8799_other_residential_care_activities_n_e_c",
+            "group": "879",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "88",
+        "value": "Social work activities without accommodation",
+        "slug": "88_social_work_activities_without_accommoda",
+        "industries": [
+          {
+            "code": "881",
+            "value": "Social work activities without accommodation for older persons or persons with disabilities",
+            "slug": "881_social_work_activities_without_accommoda",
+            "group": "881",
+            "type": "group"
+          },
+          {
+            "code": "8810",
+            "value": "Social work activities without accommodation for older persons or persons with disabilities",
+            "slug": "8810_social_work_activities_without_accommoda",
+            "group": "881",
+            "type": "class"
+          },
+          {
+            "code": "889",
+            "value": "Other social work activities without accommodation",
+            "slug": "889_other_social_work_activities_without_acc",
+            "group": "889",
+            "type": "group"
+          },
+          {
+            "code": "8890",
+            "value": "Other social work activities without accommodation",
+            "slug": "8890_other_social_work_activities_without_acc",
+            "group": "889",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "S",
+    "value": "Arts, sports and recreation",
+    "slug": "s_arts_sports_and_recreation",
+    "subsectors": [
+      {
+        "code": "90",
+        "value": "Arts creation and performing arts activities",
+        "slug": "90_arts_creation_and_performing_arts_activi",
+        "industries": [
+          {
+            "code": "901",
+            "value": "Arts creation activities",
+            "slug": "901_arts_creation_activities",
+            "group": "901",
+            "type": "group"
+          },
+          {
+            "code": "9011",
+            "value": "Literary creation and musical composition activities",
+            "slug": "9011_literary_creation_and_musical_compositio",
+            "group": "901",
+            "type": "class"
+          },
+          {
+            "code": "9012",
+            "value": "Visual arts creation activities",
+            "slug": "9012_visual_arts_creation_activities",
+            "group": "901",
+            "type": "class"
+          },
+          {
+            "code": "9013",
+            "value": "Other arts creation activities",
+            "slug": "9013_other_arts_creation_activities",
+            "group": "901",
+            "type": "class"
+          },
+          {
+            "code": "902",
+            "value": "Activities of performing arts",
+            "slug": "902_activities_of_performing_arts",
+            "group": "902",
+            "type": "group"
+          },
+          {
+            "code": "9020",
+            "value": "Activities of performing arts",
+            "slug": "9020_activities_of_performing_arts",
+            "group": "902",
+            "type": "class"
+          },
+          {
+            "code": "903",
+            "value": "Support activities to arts creation and performing arts",
+            "slug": "903_support_activities_to_arts_creation_and_",
+            "group": "903",
+            "type": "group"
+          },
+          {
+            "code": "9031",
+            "value": "Operation of arts facilities and sites",
+            "slug": "9031_operation_of_arts_facilities_and_sites",
+            "group": "903",
+            "type": "class"
+          },
+          {
+            "code": "9039",
+            "value": "Other support activities to arts creation and performing arts",
+            "slug": "9039_other_support_activities_to_arts_creatio",
+            "group": "903",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "91",
+        "value": "Library, archives, museum and other cultural activities",
+        "slug": "91_library_archives_museum_and_other_cultur",
+        "industries": [
+          {
+            "code": "911",
+            "value": "Library and archive activities",
+            "slug": "911_library_and_archive_activities",
+            "group": "911",
+            "type": "group"
+          },
+          {
+            "code": "9111",
+            "value": "Library activities",
+            "slug": "9111_library_activities",
+            "group": "911",
+            "type": "class"
+          },
+          {
+            "code": "9112",
+            "value": "Archive activities",
+            "slug": "9112_archive_activities",
+            "group": "911",
+            "type": "class"
+          },
+          {
+            "code": "912",
+            "value": "Museum, collection, historical site and monument activities",
+            "slug": "912_museum_collection_historical_site_and_mo",
+            "group": "912",
+            "type": "group"
+          },
+          {
+            "code": "9121",
+            "value": "Museum and collection activities",
+            "slug": "9121_museum_and_collection_activities",
+            "group": "912",
+            "type": "class"
+          },
+          {
+            "code": "9122",
+            "value": "Historical site and monument activities",
+            "slug": "9122_historical_site_and_monument_activities",
+            "group": "912",
+            "type": "class"
+          },
+          {
+            "code": "913",
+            "value": "Conservation, restoration and other support activities for cultural heritage",
+            "slug": "913_conservation_restoration_and_other_suppo",
+            "group": "913",
+            "type": "group"
+          },
+          {
+            "code": "9130",
+            "value": "Conservation, restoration and other support activities for cultural heritage",
+            "slug": "9130_conservation_restoration_and_other_suppo",
+            "group": "913",
+            "type": "class"
+          },
+          {
+            "code": "914",
+            "value": "Botanical and zoological garden and nature reserve activities",
+            "slug": "914_botanical_and_zoological_garden_and_natu",
+            "group": "914",
+            "type": "group"
+          },
+          {
+            "code": "9141",
+            "value": "Botanical and zoological garden activities",
+            "slug": "9141_botanical_and_zoological_garden_activiti",
+            "group": "914",
+            "type": "class"
+          },
+          {
+            "code": "9142",
+            "value": "Nature reserve activities",
+            "slug": "9142_nature_reserve_activities",
+            "group": "914",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "92",
+        "value": "Gambling and betting activities",
+        "slug": "92_gambling_and_betting_activities",
+        "industries": [
+          {
+            "code": "920",
+            "value": "Gambling and betting activities",
+            "slug": "920_gambling_and_betting_activities",
+            "group": "920",
+            "type": "group"
+          },
+          {
+            "code": "9200",
+            "value": "Gambling and betting activities",
+            "slug": "9200_gambling_and_betting_activities",
+            "group": "920",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "93",
+        "value": "Sports activities and amusement and recreation activities",
+        "slug": "93_sports_activities_and_amusement_and_recr",
+        "industries": [
+          {
+            "code": "931",
+            "value": "Sports activities",
+            "slug": "931_sports_activities",
+            "group": "931",
+            "type": "group"
+          },
+          {
+            "code": "9311",
+            "value": "Operation of sports facilities",
+            "slug": "9311_operation_of_sports_facilities",
+            "group": "931",
+            "type": "class"
+          },
+          {
+            "code": "9312",
+            "value": "Activities of sports clubs",
+            "slug": "9312_activities_of_sports_clubs",
+            "group": "931",
+            "type": "class"
+          },
+          {
+            "code": "9319",
+            "value": "Other sports activities",
+            "slug": "9319_other_sports_activities",
+            "group": "931",
+            "type": "class"
+          },
+          {
+            "code": "932",
+            "value": "Amusement and recreation activities",
+            "slug": "932_amusement_and_recreation_activities",
+            "group": "932",
+            "type": "group"
+          },
+          {
+            "code": "9321",
+            "value": "Activities of amusement parks and theme parks",
+            "slug": "9321_activities_of_amusement_parks_and_theme_",
+            "group": "932",
+            "type": "class"
+          },
+          {
+            "code": "9329",
+            "value": "Other amusement and recreation activities",
+            "slug": "9329_other_amusement_and_recreation_activitie",
+            "group": "932",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "T",
+    "value": "Other service activities",
+    "slug": "t_other_service_activities",
+    "subsectors": [
+      {
+        "code": "94",
+        "value": "Activities of membership organizations",
+        "slug": "94_activities_of_membership_organizations",
+        "industries": [
+          {
+            "code": "941",
+            "value": "Activities of business, employers and professional membership organizations",
+            "slug": "941_activities_of_business_employers_and_pro",
+            "group": "941",
+            "type": "group"
+          },
+          {
+            "code": "9411",
+            "value": "Activities of business and employers membership organizations",
+            "slug": "9411_activities_of_business_and_employers_mem",
+            "group": "941",
+            "type": "class"
+          },
+          {
+            "code": "9412",
+            "value": "Activities of professional membership organizations",
+            "slug": "9412_activities_of_professional_membership_or",
+            "group": "941",
+            "type": "class"
+          },
+          {
+            "code": "942",
+            "value": "Activities of trade unions",
+            "slug": "942_activities_of_trade_unions",
+            "group": "942",
+            "type": "group"
+          },
+          {
+            "code": "9420",
+            "value": "Activities of trade unions",
+            "slug": "9420_activities_of_trade_unions",
+            "group": "942",
+            "type": "class"
+          },
+          {
+            "code": "949",
+            "value": "Activities of other membership organizations",
+            "slug": "949_activities_of_other_membership_organizat",
+            "group": "949",
+            "type": "group"
+          },
+          {
+            "code": "9491",
+            "value": "Activities of religious organizations",
+            "slug": "9491_activities_of_religious_organizations",
+            "group": "949",
+            "type": "class"
+          },
+          {
+            "code": "9492",
+            "value": "Activities of political organizations",
+            "slug": "9492_activities_of_political_organizations",
+            "group": "949",
+            "type": "class"
+          },
+          {
+            "code": "9499",
+            "value": "Activities of other membership organizations n.e.c.",
+            "slug": "9499_activities_of_other_membership_organizat",
+            "group": "949",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "95",
+        "value": "Repair and maintenance of computers, personal and household goods, and motor vehicles and motorcycles",
+        "slug": "95_repair_and_maintenance_of_computers_pers",
+        "industries": [
+          {
+            "code": "951",
+            "value": "Repair and maintenance of computers and communication equipment",
+            "slug": "951_repair_and_maintenance_of_computers_and_",
+            "group": "951",
+            "type": "group"
+          },
+          {
+            "code": "9510",
+            "value": "Repair and maintenance of computers and communication equipment",
+            "slug": "9510_repair_and_maintenance_of_computers_and_",
+            "group": "951",
+            "type": "class"
+          },
+          {
+            "code": "952",
+            "value": "Repair and maintenance of personal and household goods",
+            "slug": "952_repair_and_maintenance_of_personal_and_h",
+            "group": "952",
+            "type": "group"
+          },
+          {
+            "code": "9521",
+            "value": "Repair and maintenance of consumer electronics",
+            "slug": "9521_repair_and_maintenance_of_consumer_elect",
+            "group": "952",
+            "type": "class"
+          },
+          {
+            "code": "9522",
+            "value": "Repair and maintenance of household appliances and home and garden equipment",
+            "slug": "9522_repair_and_maintenance_of_household_appl",
+            "group": "952",
+            "type": "class"
+          },
+          {
+            "code": "9523",
+            "value": "Repair and maintenance of footwear and leather goods",
+            "slug": "9523_repair_and_maintenance_of_footwear_and_l",
+            "group": "952",
+            "type": "class"
+          },
+          {
+            "code": "9524",
+            "value": "Repair and maintenance of furniture and home furnishings",
+            "slug": "9524_repair_and_maintenance_of_furniture_and_",
+            "group": "952",
+            "type": "class"
+          },
+          {
+            "code": "9529",
+            "value": "Repair and maintenance of other personal and household goods",
+            "slug": "9529_repair_and_maintenance_of_other_personal",
+            "group": "952",
+            "type": "class"
+          },
+          {
+            "code": "953",
+            "value": "Repair and maintenance of motor vehicles and motorcycles",
+            "slug": "953_repair_and_maintenance_of_motor_vehicles",
+            "group": "953",
+            "type": "group"
+          },
+          {
+            "code": "9531",
+            "value": "Repair and maintenance of motor vehicles",
+            "slug": "9531_repair_and_maintenance_of_motor_vehicles",
+            "group": "953",
+            "type": "class"
+          },
+          {
+            "code": "9532",
+            "value": "Repair and maintenance of motorcycles",
+            "slug": "9532_repair_and_maintenance_of_motorcycles",
+            "group": "953",
+            "type": "class"
+          },
+          {
+            "code": "954",
+            "value": "Intermediation service activities for repair and maintenance of computers, personal and household goods, and motor vehicles and motorcycles",
+            "slug": "954_intermediation_service_activities_for_re",
+            "group": "954",
+            "type": "group"
+          },
+          {
+            "code": "9540",
+            "value": "Intermediation service activities for repair and maintenance of computers, personal and household goods, and motor vehicles and motorcycles",
+            "slug": "9540_intermediation_service_activities_for_re",
+            "group": "954",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "96",
+        "value": "Personal service activities",
+        "slug": "96_personal_service_activities",
+        "industries": [
+          {
+            "code": "961",
+            "value": "Washing and cleaning of textile and fur products",
+            "slug": "961_washing_and_cleaning_of_textile_and_fur_",
+            "group": "961",
+            "type": "group"
+          },
+          {
+            "code": "9610",
+            "value": "Washing and cleaning of textile and fur products",
+            "slug": "9610_washing_and_cleaning_of_textile_and_fur_",
+            "group": "961",
+            "type": "class"
+          },
+          {
+            "code": "962",
+            "value": "Hairdressing, beauty treatment, day spa and similar activities",
+            "slug": "962_hairdressing_beauty_treatment_day_spa_an",
+            "group": "962",
+            "type": "group"
+          },
+          {
+            "code": "9621",
+            "value": "Hairdressing and barber activities",
+            "slug": "9621_hairdressing_and_barber_activities",
+            "group": "962",
+            "type": "class"
+          },
+          {
+            "code": "9622",
+            "value": "Beauty care and other beauty treatment activities",
+            "slug": "9622_beauty_care_and_other_beauty_treatment_a",
+            "group": "962",
+            "type": "class"
+          },
+          {
+            "code": "9623",
+            "value": "Day spa, sauna and steam bath activities",
+            "slug": "9623_day_spa_sauna_and_steam_bath_activities",
+            "group": "962",
+            "type": "class"
+          },
+          {
+            "code": "963",
+            "value": "Funeral and related activities",
+            "slug": "963_funeral_and_related_activities",
+            "group": "963",
+            "type": "group"
+          },
+          {
+            "code": "9630",
+            "value": "Funeral and related activities",
+            "slug": "9630_funeral_and_related_activities",
+            "group": "963",
+            "type": "class"
+          },
+          {
+            "code": "964",
+            "value": "Intermediation service activities for personal services",
+            "slug": "964_intermediation_service_activities_for_pe",
+            "group": "964",
+            "type": "group"
+          },
+          {
+            "code": "9640",
+            "value": "Intermediation service activities for personal services",
+            "slug": "9640_intermediation_service_activities_for_pe",
+            "group": "964",
+            "type": "class"
+          },
+          {
+            "code": "969",
+            "value": "Other personal service activities n.e.c.",
+            "slug": "969_other_personal_service_activities_n_e_c",
+            "group": "969",
+            "type": "group"
+          },
+          {
+            "code": "9690",
+            "value": "Other personal service activities n.e.c.",
+            "slug": "9690_other_personal_service_activities_n_e_c",
+            "group": "969",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "U",
+    "value": "Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use",
+    "slug": "u_activities_of_households_as_employers_un",
+    "subsectors": [
+      {
+        "code": "97",
+        "value": "Activities of households as employers of domestic personnel",
+        "slug": "97_activities_of_households_as_employers_of",
+        "industries": [
+          {
+            "code": "970",
+            "value": "Activities of households as employers of domestic personnel",
+            "slug": "970_activities_of_households_as_employers_of",
+            "group": "970",
+            "type": "group"
+          },
+          {
+            "code": "9700",
+            "value": "Activities of households as employers of domestic personnel",
+            "slug": "9700_activities_of_households_as_employers_of",
+            "group": "970",
+            "type": "class"
+          }
+        ]
+      },
+      {
+        "code": "98",
+        "value": "Undifferentiated goods- and services-producing activities of private households for own use",
+        "slug": "98_undifferentiated_goods_and_services_prod",
+        "industries": [
+          {
+            "code": "981",
+            "value": "Undifferentiated goods-producing activities of private households for own use",
+            "slug": "981_undifferentiated_goods_producing_activit",
+            "group": "981",
+            "type": "group"
+          },
+          {
+            "code": "9810",
+            "value": "Undifferentiated goods-producing activities of private households for own use",
+            "slug": "9810_undifferentiated_goods_producing_activit",
+            "group": "981",
+            "type": "class"
+          },
+          {
+            "code": "982",
+            "value": "Undifferentiated service-producing activities of private households for own use",
+            "slug": "982_undifferentiated_service_producing_activ",
+            "group": "982",
+            "type": "group"
+          },
+          {
+            "code": "9820",
+            "value": "Undifferentiated service-producing activities of private households for own use",
+            "slug": "9820_undifferentiated_service_producing_activ",
+            "group": "982",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "V",
+    "value": "Activities of extraterritorial organizations and bodies",
+    "slug": "v_activities_of_extraterritorial_organizat",
+    "subsectors": [
+      {
+        "code": "99",
+        "value": "Activities of extraterritorial organizations and bodies",
+        "slug": "99_activities_of_extraterritorial_organizat",
+        "industries": [
+          {
+            "code": "990",
+            "value": "Activities of extraterritorial organizations and bodies",
+            "slug": "990_activities_of_extraterritorial_organizat",
+            "group": "990",
+            "type": "group"
+          },
+          {
+            "code": "9900",
+            "value": "Activities of extraterritorial organizations and bodies",
+            "slug": "9900_activities_of_extraterritorial_organizat",
+            "group": "990",
+            "type": "class"
+          }
+        ]
+      }
+    ]
+  }
+]

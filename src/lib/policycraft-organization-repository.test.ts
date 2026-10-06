@@ -16,6 +16,12 @@ const validProfile = {
 test("standalone profiles require all company fields, an HTTP(S) website, and complete operating sites", async () => {
   const [, repository] = await modules;
   assert.equal(repository.validateStandaloneOrganizationProfile(validProfile).ok, true);
+  const legacy = repository.validateStandaloneOrganizationProfile(validProfile);
+  assert.equal(legacy.ok && legacy.profile.industryDetail, "", "missing industryDetail defaults to a blank string");
+  const custom = repository.validateStandaloneOrganizationProfile({ ...validProfile, industryDetail: "Custom legacy industry" });
+  assert.equal(custom.ok && custom.profile.industryDetail, "Custom legacy industry");
+  assert.equal(repository.validateStandaloneOrganizationProfile({ ...validProfile, industryDetail: 17 }).ok, false);
+  assert.equal(repository.validateStandaloneOrganizationProfile({ ...validProfile, industryDetail: "x".repeat(501) }).ok, false);
   assert.equal(repository.validateStandaloneOrganizationProfile({ ...validProfile, websiteLink: "javascript:alert(1)" }).ok, false);
   assert.equal(repository.validateStandaloneOrganizationProfile({ ...validProfile, sites: [] }).ok, false);
   assert.equal(repository.validateStandaloneOrganizationProfile({ ...validProfile, sites: [{ location: "Pune", address: "", primaryFunction: "Plant" }] }).ok, false);
@@ -81,6 +87,30 @@ test("registry reads fail closed until the owner-run seed completion marker exis
   try {
     await assert.rejects(repository.ensurePolicyCraftOrganizationRegistry(), repository.PolicyCraftOrganizationsMigrationRequiredError);
   } finally { policyCraftPool.execute = originalExecute; }
+});
+
+test("ESG company master reads the distinct industry column and keeps legacy sector fields", async () => {
+  const [, repository] = await modules;
+  const calls: string[] = [];
+  const executor = {
+    async execute(sql: string) {
+      calls.push(sql);
+      if (sql.includes("policycraft_organization_migration_state")) return [[{ marker: "initial_esg_seed_complete" }], []];
+      if (sql.includes("FROM policycraft_organizations pco")) return [[{
+        id: 44, source: "esg", esg_org_id: 104, lock_version: 1, profile_json: null,
+        org_code: "ORG-44", company_name: "Example Co", address: "Address", country: "India", city: "Pune",
+        website: "https://example.test", sector: "Manufacturing", sub_sector: "Chemicals", industry: "Industrial gases",
+        is_deleted: 0, expiry_date: null,
+      }], []];
+      if (sql.includes("FROM sites")) return [[{ id: 5, name: "Plant", address: "Site address", type: "Factory" }], []];
+      throw new Error(`Unexpected SQL: ${sql}`);
+    },
+  };
+  const snapshot = await repository.getCompanyMasterFromRegistry(44, executor as never);
+  assert.equal(snapshot.industry, "Manufacturing");
+  assert.equal(snapshot.subCategory, "Chemicals");
+  assert.equal(snapshot.industryDetail, "Industrial gases");
+  assert.match(calls.find((sql) => sql.includes("FROM policycraft_organizations pco")) || "", /esg\.industry/);
 });
 
 test("authorization requires the matching ESG source and an active manager assignment", async () => {
@@ -208,6 +238,7 @@ test("profile edits retain the existing logo asset when no replacement is upload
       { user: { id: "1", name: "Admin", email: "admin@example.test" }, role: "admin" }, 31, 4, { ...validProfile, name: "Edited Co" },
     );
     assert.equal(result && typeof result === "object" ? result.profile.companyLogo : undefined, "old-logo");
+    assert.equal(result && typeof result === "object" ? result.profile.industryDetail : undefined, "", "legacy stored profile defaults industryDetail");
     assert.equal(JSON.parse(String(writes[0]?.values[0])).companyLogo, "old-logo");
     assert.equal(writes.some(({ sql }) => sql.includes("policycraft_cover_assets")), false);
   } finally {

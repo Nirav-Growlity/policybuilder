@@ -18,6 +18,7 @@ export const initialPolicy = (policyType: PolicyType = "environmental"): Policy 
       name: "",
       industry: "",
       subCategory: "",
+      industryDetail: "",
       country: "",
       websiteLink: "",
       companyLogo: "",

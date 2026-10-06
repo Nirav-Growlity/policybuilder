@@ -93,8 +93,9 @@ function createStarter(policyType: PolicyType, starterProfile: StarterProfile): 
     sections,
     company: {
       name: "[Organization Name]",
-      industry: "[Industry]",
+      industry: "[Sector]",
       subCategory: "",
+      industryDetail: "",
       country: "[Country]",
       websiteLink: "",
       reportingPeriod: "FY",

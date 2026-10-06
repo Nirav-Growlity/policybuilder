@@ -15,7 +15,7 @@ export class PolicyCraftOrganizationsMigrationRequiredError extends Error {
 }
 export type StandaloneOrganizationSite = { id?: string; location: string; address: string; primaryFunction: string };
 export type StandaloneOrganizationProfile = {
-  name: string; industry: string; subCategory: string; country: string; websiteLink: string;
+  name: string; industry: string; subCategory: string; industryDetail?: string; country: string; websiteLink: string;
   reportingPeriod: "FY" | "CY"; sites: StandaloneOrganizationSite[]; companyLogo?: string;
 };
 type Executor = Pick<Pool | PoolConnection, "execute">;
@@ -23,6 +23,7 @@ type RegistryRow = RowDataPacket & {
   id: number; source: OrganizationSource; esg_org_id: number | null; lock_version: number;
   profile_json: unknown; org_code: string | null; company_name: string | null; address: string | null;
   country: string | null; city: string | null; website: string | null; sector: string | null; sub_sector: string | null;
+  industry?: string | null;
   is_deleted: number | null; expiry_date: Date | string | null;
 };
 
@@ -34,14 +35,15 @@ function expired(value: Date | string | null): boolean {
 }
 function profileFrom(row: RegistryRow): StandaloneOrganizationProfile | null {
   if (row.source !== "standalone" || row.profile_json == null) return null;
-  return parseJson<StandaloneOrganizationProfile>(row.profile_json);
+  const profile = parseJson<StandaloneOrganizationProfile>(row.profile_json);
+  return { ...profile, industryDetail: profile.industryDetail || "" };
 }
 const registryJoin = `FROM policycraft_organizations pco
   LEFT JOIN organizations esg ON esg.id = pco.esg_org_id AND pco.source = 'esg'
   LEFT JOIN policycraft_organization_profiles pop ON pop.org_id = pco.id`;
 const registrySelect = `SELECT pco.id, pco.source, pco.esg_org_id, pco.lock_version, pop.profile_json,
   esg.org_code, esg.company_name, esg.address, esg.country, esg.city, esg.website,
-  esg.sector, esg.sub_sector, esg.is_deleted, esg.expiry_date`;
+  esg.sector, esg.sub_sector, esg.industry, esg.is_deleted, esg.expiry_date`;
 
 export const policyCraftOrganizationLookupSql = `SELECT pco.id,
   pco.source,
@@ -120,7 +122,7 @@ export function companySnapshotFromRecord(row: RegistryRow): CompanyMasterSnapsh
   }
   return {
     id: row.id, code: row.org_code || "", name: row.company_name || "", industry: row.sector || "",
-    subCategory: row.sub_sector || "", country: row.country || "", websiteLink: row.website || "",
+    subCategory: row.sub_sector || "", industryDetail: row.industry || "", country: row.country || "", websiteLink: row.website || "",
     address: row.address || "", city: row.city || "", sites: [], source: "esg",
   };
 }
@@ -131,6 +133,7 @@ export function standaloneCompanySnapshot(id: number, profile: StandaloneOrganiz
   }));
   return {
     id, code: `PC-${id}`, name: profile.name, industry: profile.industry, subCategory: profile.subCategory,
+    industryDetail: profile.industryDetail || "",
     country: profile.country, websiteLink: profile.websiteLink, address: sites[0]?.address || "", city: "", sites,
     reportingPeriod: profile.reportingPeriod,
     companyLogo: profile.companyLogo ? `/api/policycraft/cover-assets/${encodeURIComponent(profile.companyLogo)}?orgId=${id}` : "",
@@ -151,7 +154,10 @@ export function validateStandaloneOrganizationProfile(input: unknown): { ok: tru
   const raw = input as Record<string, unknown>;
   const strings = ["name", "industry", "subCategory", "country", "websiteLink"] as const;
   const values = Object.fromEntries(strings.map((key) => [key, typeof raw[key] === "string" ? raw[key].trim() : ""])) as Record<(typeof strings)[number], string>;
-  if (strings.some((key) => !values[key]) || strings.some((key) => values[key].length > 500)) return { ok: false, error: "Company name, industry, sub-sector, country and website are required." };
+  if (raw.industryDetail !== undefined && typeof raw.industryDetail !== "string") return { ok: false, error: "industryDetail must be a string." };
+  const industryDetail = typeof raw.industryDetail === "string" ? raw.industryDetail.trim() : "";
+  if (industryDetail.length > 500) return { ok: false, error: "industryDetail must be at most 500 characters." };
+  if (strings.some((key) => !values[key]) || strings.some((key) => values[key].length > 500)) return { ok: false, error: "Company name, sector, subsector, country and website are required." };
   try {
     const website = new URL(values.websiteLink);
     if (website.protocol !== "https:" && website.protocol !== "http:") return { ok: false, error: "websiteLink must be an HTTP or HTTPS URL." };
@@ -173,7 +179,7 @@ export function validateStandaloneOrganizationProfile(input: unknown): { ok: tru
     sites.push({ id, location: location.slice(0, 255), address: address.slice(0, 1000), primaryFunction: primaryFunction.slice(0, 255) });
   }
   if (raw.companyLogo !== undefined && typeof raw.companyLogo !== "string") return { ok: false, error: "companyLogo must be an asset ID." };
-  return { ok: true, profile: { ...values, reportingPeriod: raw.reportingPeriod, sites, ...(raw.companyLogo ? { companyLogo: raw.companyLogo as string } : {}) } };
+  return { ok: true, profile: { ...values, industryDetail, reportingPeriod: raw.reportingPeriod, sites, ...(raw.companyLogo ? { companyLogo: raw.companyLogo as string } : {}) } };
 }
 
 async function saveOrganizationLogo(connection: PoolConnection, orgId: number, actorId: number, bytes: Buffer, width: number, height: number): Promise<string> {
@@ -264,6 +270,7 @@ export async function getCompanyMasterFromRegistry(id: number, executor: Executo
   const snapshot = mapCompanyMaster({
     id: row.id, org_code: row.org_code || "", company_name: row.company_name || "", address: row.address || "",
     country: row.country || "", city: row.city || "", website: row.website || "", sector: row.sector, sub_sector: row.sub_sector,
+    industry: row.industry,
   }, sites.map((site) => ({ id: site.id, site_code: "", name: site.name || "", address: site.address || "", type: site.type || "" })));
   return { ...snapshot, source: "esg" };
 }

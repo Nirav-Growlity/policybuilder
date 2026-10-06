@@ -10,8 +10,12 @@ export interface Site {
 
 export interface Company {
   name: string;
+  /** Sector. Retains its historical JSON key for saved-policy compatibility. */
   industry: string;
+  /** Subsector. Retains its historical JSON key for saved-policy compatibility. */
   subCategory?: string;
+  /** Industry group or detailed class within the selected subsector. */
+  industryDetail?: string;
   country?: string;
   websiteLink?: string;
   companyLogo?: string;

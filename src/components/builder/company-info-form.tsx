@@ -3,8 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { useBuilder } from "@/lib/store";
-import { INDUSTRY_SECTORS } from "@/lib/constants";
-import { getIndustrySubsectorOptions } from "@/lib/focus-area-catalog";
+import { getIndustryOptions, getSectorOptions, getSubsectorOptions, withCompanyClassification } from "@/lib/company-classification";
 import { Panel, Badge } from "@/components/ui/panel";
 import { Combobox, Field, Input } from "@/components/ui/input";
 import { getCompanySites } from "@/lib/types";
@@ -61,7 +60,7 @@ export function CompanyInfoForm() {
   return (
     <Panel
       title="Company information"
-      description="The legal entity, industry and operating site."
+      description="The legal entity, Sector, Subsector, Industry and operating sites."
       icon={<Building2 size={17} strokeWidth={1.8} />}
       actions={<Badge variant="blue">Required for document header</Badge>}
     >
@@ -73,23 +72,41 @@ export function CompanyInfoForm() {
             placeholder="e.g. Acme Specialty Chemicals Pvt. Ltd."
           />
         </Field>
-        <Field label="Industry sector">
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="company-sector" className="text-[11.5px] font-semibold tracking-wide text-[var(--color-ink-2)] uppercase">Sector</label>
           <Combobox
+            id="company-sector"
+            ariaLabel="Sector"
             value={co.industry || ""}
-            onValueChange={(industry) => updatePolicy((p) => ({ company: { ...p.company, industry, subCategory: p.company.industry === industry ? p.company.subCategory : "" } }))}
+            onValueChange={(industry) => updatePolicy((p) => ({ company: withCompanyClassification(p.company, "industry", industry) }))}
             placeholder="Select or type a sector"
-            options={INDUSTRY_SECTORS}
+            options={getSectorOptions()}
           />
-        </Field>
-        <Field label="Industry sub-category">
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="company-subsector" className="text-[11.5px] font-semibold tracking-wide text-[var(--color-ink-2)] uppercase">Subsector</label>
           <Combobox
+            id="company-subsector"
+            ariaLabel="Subsector"
             value={co.subCategory || ""}
-            onValueChange={(subCategory) => updatePolicy((p) => ({ company: { ...p.company, subCategory } }))}
-            placeholder={co.industry ? "Select or type a sub-category" : "Select an industry sector first"}
-            options={getIndustrySubsectorOptions(co.industry)}
+            onValueChange={(subCategory) => updatePolicy((p) => ({ company: withCompanyClassification(p.company, "subCategory", subCategory) }))}
+            placeholder={co.industry ? "Select or type a subsector" : "Select a sector first"}
+            options={getSubsectorOptions(co.industry)}
             disabled={!co.industry}
           />
-        </Field>
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="company-industry-detail" className="text-[11.5px] font-semibold tracking-wide text-[var(--color-ink-2)] uppercase">Industry</label>
+          <Combobox
+            id="company-industry-detail"
+            ariaLabel="Industry"
+            value={co.industryDetail || ""}
+            onValueChange={(industryDetail) => updatePolicy((p) => ({ company: withCompanyClassification(p.company, "industryDetail", industryDetail) }))}
+            placeholder={co.subCategory ? "Select or type an industry" : "Select a subsector first"}
+            options={getIndustryOptions(co.industry, co.subCategory || "")}
+            disabled={!co.industry || !co.subCategory}
+          />
+        </div>
         <Field label="Country">
           <Input
             value={co.country || ""}

@@ -92,6 +92,7 @@ test("AI cover context uses policy and design signals without imported reference
   policy.declaration.declaration = "Protect water and reduce process waste.";
   policy.company.industry = "Renewable Energy";
   policy.company.subCategory = "Solar Power Generation";
+  policy.company.industryDetail = "Photovoltaic power generation";
   const context = buildAICoverContext(policy);
   assert.match(context, /Protect water and reduce process waste/);
   assert.match(context, /Environmental Policy/);
@@ -100,8 +101,11 @@ test("AI cover context uses policy and design signals without imported reference
   assert.match(buildAICoverImagePrompt(artworkContext), /Transparency is optional/);
   assert.match(buildAICoverImagePrompt(artworkContext), /never default to generic blue/);
   assert.match(buildAICoverImagePrompt(artworkContext), /quiet, low-detail region/);
+  assert.match(buildAICoverImagePrompt(artworkContext), /sector, subsector, industry/);
   assert.match(artworkContext, /"sector":"Renewable Energy"/);
   assert.match(artworkContext, /"subsector":"Solar Power Generation"/);
+  assert.match(artworkContext, /"industry":"Photovoltaic power generation"/);
+  assert.match(artworkContext, /Sector: Renewable Energy; Subsector: Solar Power Generation; Industry: Photovoltaic power generation/);
   assert.ok(context.length <= 12000, "AI layout context should stay bounded");
 });
 

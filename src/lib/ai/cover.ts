@@ -2,6 +2,7 @@ import { getPolicyProfile } from "../constants";
 import { getPolicyDocumentTheme } from "../document-themes";
 import { normalizeCoverComposition } from "../cover-composition";
 import type { CoverComposition, CoverElement, CoverTextElement, Policy } from "../types";
+import { getCompanyClassificationContext } from "../company-classification";
 
 export const AI_COVER_IMAGE_MODEL = "gpt-image-2.5-flare";
 export const AI_COVER_LAYOUT_MODEL = "gpt-6-luna";
@@ -189,6 +190,7 @@ export function buildAICoverContext(policy: Policy): string {
       name: compact(company.name, 180),
       industry: compact(company.industry, 180),
       subCategory: compact(company.subCategory, 180),
+      industryDetail: compact(company.industryDetail, 180),
       country: compact(company.country, 100),
     },
     standards: policy.standards.map((value) => compact(value, 80)).filter(Boolean).slice(0, 12),
@@ -213,8 +215,8 @@ export function buildAICoverContext(policy: Policy): string {
   });
 }
 
-function visualIndustryCategory(industry: string, subCategory: string): string {
-  const value = `${industry} ${subCategory}`.toLowerCase();
+function visualIndustryCategory(sector: string, subsector: string, industry: string): string {
+  const value = `${sector} ${subsector} ${industry}`.toLowerCase();
   if (/water|waste|environment|renewable|energy|climate|sustainab/.test(value)) return "environmental and sustainability operations";
   if (/manufactur|factory|industrial|chemical|automotive|engineering/.test(value)) return "industrial and engineered operations";
   if (/realty|real estate|construction|infrastructure|property|building/.test(value)) return "built-environment operations";
@@ -238,7 +240,9 @@ export function buildAICoverArtworkContext(policy: Policy): string {
     policyType: getPolicyProfile(policy.policyType).label,
     sector: text(policy.company.industry, 180),
     subsector: text(policy.company.subCategory, 180),
-    industryStyle: visualIndustryCategory(policy.company.industry || "", policy.company.subCategory || ""),
+    industry: text(policy.company.industryDetail, 180),
+    classificationContext: getCompanyClassificationContext(policy.company),
+    industryStyle: visualIndustryCategory(policy.company.industry || "", policy.company.subCategory || "", policy.company.industryDetail || ""),
     focusAreas: policy.focusAreas.map((value) => text(value, 120)).filter(Boolean).slice(0, 8),
     standards: policy.standards.map((value) => text(value, 80)).filter(Boolean).slice(0, 8),
     declarationSignals,
@@ -263,7 +267,7 @@ export function buildAICoverLayoutPrompt(context: string): { system: string; use
 }
 
 export function buildAICoverImagePrompt(artworkContext: string): string {
-  return `Create a portrait-oriented decorative artwork layer for an A4 policy cover. Transparency is optional: the result may be full-bleed artwork or use transparent negative space, because the application adds editable company branding and policy-title overlays. Use the supplied sector, subsector, policy type, focus areas, standards, declaration signals, visual style, and palette to create one coherent and policy-relevant visual direction; never default to generic blue. Reserve one generous, quiet, low-detail region for the company logo or fallback company name and the policy title, and keep strong focal subjects away from it. Generate only decorative motifs, shapes, gradients, organic forms, architecture, or environmental forms. Do not create visible text, pseudo-text, logos, watermarks, signage, labels, document details, borders, frames, panels, or other document-like objects.\n\nResolved policy design brief: ${artworkContext}`;
+  return `Create a portrait-oriented decorative artwork layer for an A4 policy cover. Transparency is optional: the result may be full-bleed artwork or use transparent negative space, because the application adds editable company branding and policy-title overlays. Use the supplied sector, subsector, industry, policy type, focus areas, standards, declaration signals, visual style, and palette to create one coherent and policy-relevant visual direction; prioritize the most specific supplied industry and never default to generic blue. Reserve one generous, quiet, low-detail region for the company logo or fallback company name and the policy title, and keep strong focal subjects away from it. Generate only decorative motifs, shapes, gradients, organic forms, architecture, or environmental forms. Do not create visible text, pseudo-text, logos, watermarks, signage, labels, document details, borders, frames, panels, or other document-like objects.\n\nResolved policy design brief: ${artworkContext}`;
 }
 
 export function buildAICoverDesignPrompt(artworkContext: string, layout?: AICoverLayoutSuggestion): { system: string; user: string } {

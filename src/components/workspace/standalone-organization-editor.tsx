@@ -6,14 +6,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Loader2, MapPin, Plus, Trash2, Upload } from "lucide-react";
 import { Combobox, Field } from "@/components/ui/input";
-import { INDUSTRY_SECTORS } from "@/lib/constants";
-import { getIndustrySubsectorOptions } from "@/lib/focus-area-catalog";
+import { getIndustryOptions, getSectorOptions, getSubsectorOptions, withCompanyClassification } from "@/lib/company-classification";
 
 export type StandaloneOrganizationSite = { id?: string; location: string; address: string; primaryFunction: string };
 export type StandaloneOrganizationProfile = {
   name: string;
   industry: string;
   subCategory: string;
+  industryDetail?: string;
   country: string;
   websiteLink: string;
   reportingPeriod: "FY" | "CY";
@@ -38,6 +38,7 @@ export function normalizeStandaloneOrganization(result: { organization: Record<s
     name: String(company.name ?? ""),
     industry: String(company.industry ?? ""),
     subCategory: String(company.subCategory ?? ""),
+    industryDetail: String(company.industryDetail ?? ""),
     country: String(company.country ?? ""),
     websiteLink: String(company.websiteLink ?? ""),
     reportingPeriod: company.reportingPeriod === "CY" ? "CY" : "FY",
@@ -47,7 +48,7 @@ export function normalizeStandaloneOrganization(result: { organization: Record<s
 }
 
 const emptyProfile: StandaloneOrganizationProfile = {
-  name: "", industry: "", subCategory: "", country: "", websiteLink: "", reportingPeriod: "FY", sites: [{ location: "", address: "", primaryFunction: "" }],
+  name: "", industry: "", subCategory: "", industryDetail: "", country: "", websiteLink: "", reportingPeriod: "FY", sites: [{ location: "", address: "", primaryFunction: "" }],
 };
 
 function imageSource(reference: string | undefined, organizationId?: number) {
@@ -62,7 +63,7 @@ function imageSource(reference: string | undefined, organizationId?: number) {
 export function StandaloneOrganizationEditor({ organizationId, initial, backHref = "/admin/organizations/policycraft" }: { organizationId?: number; initial?: StandaloneOrganization; backHref?: string }) {
   const router = useRouter();
   const [profile, setProfile] = React.useState<StandaloneOrganizationProfile>(initial ? {
-    name: initial.name || "", industry: initial.industry || "", subCategory: initial.subCategory || "", country: initial.country || "", websiteLink: initial.websiteLink || "", reportingPeriod: initial.reportingPeriod || "FY", sites: initial.sites?.length ? initial.sites.map((site) => ({ ...site })) : [{ location: "", address: "", primaryFunction: "" }], companyLogo: initial.companyLogo,
+    name: initial.name || "", industry: initial.industry || "", subCategory: initial.subCategory || "", industryDetail: initial.industryDetail || "", country: initial.country || "", websiteLink: initial.websiteLink || "", reportingPeriod: initial.reportingPeriod || "FY", sites: initial.sites?.length ? initial.sites.map((site) => ({ ...site })) : [{ location: "", address: "", primaryFunction: "" }], companyLogo: initial.companyLogo,
   } : emptyProfile);
   const [lockVersion, setLockVersion] = React.useState(initial?.lockVersion ?? 1);
   const [logo, setLogo] = React.useState<File | null>(null);
@@ -117,7 +118,7 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
       const result = await response.json().catch(() => null);
       if (!response.ok || !result?.organization) throw new Error(result?.error || "Could not reload the organization. Retry or return to Organizations.");
       const next = normalizeStandaloneOrganization(result);
-      setProfile({ name: next.name, industry: next.industry, subCategory: next.subCategory, country: next.country, websiteLink: next.websiteLink, reportingPeriod: next.reportingPeriod, sites: next.sites, companyLogo: next.companyLogo });
+      setProfile({ name: next.name, industry: next.industry, subCategory: next.subCategory, industryDetail: next.industryDetail, country: next.country, websiteLink: next.websiteLink, reportingPeriod: next.reportingPeriod, sites: next.sites, companyLogo: next.companyLogo });
       setLockVersion(next.lockVersion);
       clearSelectedLogo();
       setSaved(false);
@@ -149,7 +150,7 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
       if (organizationId) {
         const saved = normalizeStandaloneOrganization(result);
         setLockVersion(saved.lockVersion);
-        setProfile({ name: saved.name, industry: saved.industry, subCategory: saved.subCategory, country: saved.country, websiteLink: saved.websiteLink, reportingPeriod: saved.reportingPeriod, sites: saved.sites, companyLogo: saved.companyLogo });
+        setProfile({ name: saved.name, industry: saved.industry, subCategory: saved.subCategory, industryDetail: saved.industryDetail, country: saved.country, websiteLink: saved.websiteLink, reportingPeriod: saved.reportingPeriod, sites: saved.sites, companyLogo: saved.companyLogo });
         clearSelectedLogo();
         setError("");
         setSaved(true);
@@ -164,13 +165,14 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
 
   return <div className="mx-auto max-w-5xl">
     <nav aria-label="Breadcrumb"><Link href={backHref} className="inline-flex min-h-9 items-center gap-1.5 text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowLeft size={14} aria-hidden="true" />{backLabel}</Link></nav>
-    <div className="mt-4"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">PolicyCraft organization</p><h1 className="mt-1 text-pretty font-display text-3xl font-semibold tracking-tight">{organizationId ? "Edit organization details" : "Create organization"}</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Company details set the defaults for new policies. Existing policies keep their saved details.</p></div>
+    <div className="mt-4"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">PolicyCraft organization</p><h1 className="mt-1 text-pretty font-display text-3xl font-semibold tracking-tight">{organizationId ? "Edit organization details" : "Create organization"}</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Set the company profile, Sector, Subsector and Industry used as defaults for new policies. Existing policies keep their saved details.</p></div>
     {organizationId && !initial ? <div className="mt-8 flex items-center gap-3 rounded-lg border border-[var(--color-line)] bg-white p-4 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organization…</div> : <form className="mt-6 overflow-hidden rounded-xl border border-[var(--color-line)] bg-white" onSubmit={(event) => void submit(event)} aria-busy={saving}>
       <div className="p-5 sm:p-7">
-        <section aria-labelledby="organization-profile-title"><div className="flex flex-wrap items-baseline justify-between gap-2"><h2 id="organization-profile-title" className="text-base font-semibold">Company profile</h2><span className="text-xs text-[var(--color-muted)]">All fields required</span></div><div className="mt-5 grid gap-4 sm:grid-cols-2">
+        <section aria-labelledby="organization-profile-title"><div className="flex flex-wrap items-baseline justify-between gap-2"><h2 id="organization-profile-title" className="text-base font-semibold">Company profile</h2><span className="text-xs text-[var(--color-muted)]">Required fields marked *</span></div><div className="mt-5 grid gap-4 sm:grid-cols-2">
           <label className="text-xs font-semibold text-[var(--color-ink-2)]">Company name<input name="name" autoComplete="organization" required maxLength={180} value={profile.name} onChange={(event) => update("name", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="e.g. Acme Manufacturing Ltd." /></label>
-          <Field label="Industry sector" required><Combobox id="organization-industry" name="industry" required ariaLabel="Industry sector" value={profile.industry} onValueChange={(value) => setProfile((current) => ({ ...current, industry: value, subCategory: current.industry === value ? current.subCategory : "" }))} placeholder="Select or type a sector" options={INDUSTRY_SECTORS} disabled={saving} /></Field>
-          <Field label="Industry sub-category" required><Combobox id="organization-subcategory" name="subCategory" required ariaLabel="Industry sub-category" value={profile.subCategory} onValueChange={(value) => update("subCategory", value)} placeholder={profile.industry ? "Select or type a sub-category" : "Select an industry sector first"} options={getIndustrySubsectorOptions(profile.industry)} disabled={saving || !profile.industry} /></Field>
+          <div className="flex flex-col gap-1.5"><label htmlFor="organization-sector" className="text-xs font-semibold text-[var(--color-ink-2)]">Sector <span className="text-red-700" aria-hidden="true">*</span></label><Combobox id="organization-sector" name="industry" required ariaLabel="Sector" value={profile.industry} onValueChange={(value) => { setSaved(false); setProfile((current) => withCompanyClassification(current, "industry", value)); }} placeholder="Select or type a sector" options={getSectorOptions()} disabled={saving} /></div>
+          <div className="flex flex-col gap-1.5"><label htmlFor="organization-subsector" className="text-xs font-semibold text-[var(--color-ink-2)]">Subsector <span className="text-red-700" aria-hidden="true">*</span></label><Combobox id="organization-subsector" name="subCategory" required ariaLabel="Subsector" value={profile.subCategory} onValueChange={(value) => { setSaved(false); setProfile((current) => withCompanyClassification(current, "subCategory", value)); }} placeholder={profile.industry ? "Select or type a subsector" : "Select a sector first"} options={getSubsectorOptions(profile.industry)} disabled={saving || !profile.industry} /></div>
+          <div className="flex flex-col gap-1.5"><label htmlFor="organization-industry-detail" className="text-xs font-semibold text-[var(--color-ink-2)]">Industry</label><Combobox id="organization-industry-detail" name="industryDetail" ariaLabel="Industry" value={profile.industryDetail || ""} onValueChange={(value) => { setSaved(false); setProfile((current) => withCompanyClassification(current, "industryDetail", value)); }} placeholder={profile.industry && profile.subCategory ? "Select or type an industry" : "Select a sector and subsector first"} options={getIndustryOptions(profile.industry, profile.subCategory || "")} disabled={saving || !profile.industry || !profile.subCategory} /></div>
           <label className="text-xs font-semibold text-[var(--color-ink-2)]">Country<input name="country" autoComplete="country-name" required maxLength={100} value={profile.country} onChange={(event) => update("country", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="e.g. India" /></label>
           <label className="text-xs font-semibold text-[var(--color-ink-2)]">Website<input name="websiteLink" type="url" autoComplete="url" required maxLength={255} value={profile.websiteLink} onChange={(event) => update("websiteLink", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="https://example.com" /></label>
           <fieldset><legend className="text-xs font-semibold text-[var(--color-ink-2)]">Financial reporting period <span className="text-red-700">*</span></legend><input type="hidden" name="reportingPeriod" required value={profile.reportingPeriod} readOnly /><div className="mt-1.5 flex min-h-11 overflow-hidden rounded-lg border border-[var(--color-line-2)]" role="group" aria-label="Financial reporting period">{(["FY", "CY"] as const).map((period) => <button key={period} type="button" aria-pressed={profile.reportingPeriod === period} disabled={saving} onClick={() => update("reportingPeriod", period)} className={`min-h-11 flex-1 px-3 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[var(--color-forest)] disabled:opacity-60 ${profile.reportingPeriod === period ? "bg-[var(--color-forest)] text-white" : "bg-white text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)]"}`}>{period === "FY" ? "Financial year (FY)" : "Calendar year (CY)"}</button>)}</div></fieldset>

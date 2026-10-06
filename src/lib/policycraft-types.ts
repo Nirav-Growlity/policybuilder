@@ -32,6 +32,7 @@ export type CompanyMasterSnapshot = {
   name: string;
   industry: string;
   subCategory: string;
+  industryDetail?: string;
   country: string;
   websiteLink: string;
   address: string;

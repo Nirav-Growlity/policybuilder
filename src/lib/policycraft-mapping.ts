@@ -11,6 +11,7 @@ type OrganizationRow = {
   website: string;
   sector: string | null;
   sub_sector: string | null;
+  industry?: string | null;
 };
 
 type SiteRow = {
@@ -44,6 +45,7 @@ export function mapCompanyMaster(organization: OrganizationRow, siteRows: SiteRo
     name: organization.company_name,
     industry: organization.sector || "",
     subCategory: organization.sub_sector || "",
+    industryDetail: organization.industry || "",
     country: organization.country || "",
     websiteLink: organization.website || "",
     address: organization.address || "",
@@ -66,6 +68,7 @@ export function applyCompanyMaster(policy: Policy, snapshot: CompanyMasterSnapsh
       name: snapshot.name,
       industry: snapshot.industry,
       subCategory: snapshot.subCategory,
+      industryDetail: snapshot.industryDetail || "",
       country: snapshot.country,
       websiteLink: snapshot.websiteLink,
       site: firstAddress,

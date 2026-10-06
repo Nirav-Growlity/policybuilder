@@ -1,4 +1,5 @@
 import type { PolicyType, Responsibility, RevisionEntry, StepDef } from "./types";
+import { COMPANY_CLASSIFICATION, getSectorOptions, getSubsectorOptions } from "./company-classification";
 
 export const STEPS: StepDef[] = [
   { id: "structure", label: "Document structure", desc: "Arrange the sections in your policy", icon: "FileText" },
@@ -14,7 +15,7 @@ export const STEPS: StepDef[] = [
 
 export const STANDARDS: string[] = [];
 
-export const INDUSTRY_SUBSECTORS: Record<string, string[]> = {
+export const LEGACY_INDUSTRY_SUBSECTORS: Record<string, string[]> = {
   "Food & Beverage": ["Distilling, rectifying and blending of spirits", "Manufacture of dairy products", "Manufacture of grain mill products, starches and starch products", "Manufacture of malt liquors and malt", "Manufacture of other food products", "Manufacture of prepared animal feeds", "Manufacture of soft drinks; production of mineral waters and other bottled waters", "Manufacture of vegetable and animal oils and fats", "Manufacture of wines", "Processing and preserving of fish, crustaceans and molluscs", "Processing and preserving of fruit and vegetables", "Processing and preserving of meat"],
   "Manufacturing Light": ["Manufacture of corrugated paper and paperboard", "Manufacture of footwear", "Manufacture of furniture", "Manufacture of games and toys", "Manufacture of jewellery, bijouterie and related articles", "Manufacture of luggage, handbags and the like", "Manufacture of medical and dental instruments and supplies", "Manufacture of other textiles", "Manufacture of pulp, paper and paperboard", "Manufacture of wearing apparel", "Manufacture of wood and products of wood and cork", "Other manufacturing n.e.c.", "Printing and service activities related to printing", "Repair and installation of machinery and equipment", "Spinning, weaving and finishing of textiles"],
   "Manufacturing Heavy": ["Casting of metals", "Cutting, shaping and finishing of stone", "Electricity, gas, steam and air conditioning supply", "Manufacture of basic chemicals, fertilizers and plastics", "Manufacture of basic chemicals, fertilizers and nitrogen compounds, plastics and synthetic rubber in primary forms", "Manufacture of basic iron and steel", "Manufacture of basic pharmaceutical products and preparations", "Manufacture of basic pharmaceutical products and pharmaceutical preparations", "Manufacture of cement, lime and plaster", "Manufacture of coke and refined petroleum products", "Manufacture of glass and glass products", "Manufacture of other chemical products n.e.c.", "Manufacture of pesticides and other agrochemical products", "Manufacture of plastics products", "Manufacture of rubber products", "Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations", "Materials recovery", "Remediation and waste management services", "Water collection, treatment and supply"],
@@ -28,7 +29,11 @@ export const INDUSTRY_SUBSECTORS: Record<string, string[]> = {
   "Non-classified": ["Higher education", "Human health activities", "Other education", "Other personal service activities n.e.c.", "Residential care activities", "Sports and recreation activities"],
 };
 
-export const INDUSTRY_SECTORS = Object.keys(INDUSTRY_SUBSECTORS);
+export const INDUSTRY_SUBSECTORS: Record<string, string[]> = Object.fromEntries(
+  COMPANY_CLASSIFICATION.map((sector) => [sector.value, getSubsectorOptions(sector.value)]),
+);
+
+export const INDUSTRY_SECTORS = getSectorOptions();
 
 export const FRAMEWORK_ALIGNMENT: Record<string, string> = {};
 

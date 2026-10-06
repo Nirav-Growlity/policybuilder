@@ -169,8 +169,9 @@ export function makeSamplePolicy(): Policy {
     visualStyle: "modern",
     company: {
       name: "Acme Specialty Chemicals Pvt. Ltd.",
-      industry: "Specialty chemicals manufacturing",
-      subCategory: "Specialty chemical products",
+      industry: "Manufacturing",
+      subCategory: "Manufacture of chemicals and chemical products",
+      industryDetail: "Manufacture of other chemical products n.e.c.",
       country: "India",
       websiteLink: "https://www.acmespecialtychemicals.example",
       reportingPeriod: "FY",
@@ -290,8 +291,9 @@ export function makeTemplatePolicy(): Policy {
     visualStyle: "modern",
     company: {
       name: "[Company Name]",
-      industry: "[Industry]",
-      subCategory: "[Industry Sub-category]",
+      industry: "[Sector]",
+      subCategory: "[Subsector]",
+      industryDetail: "[Industry]",
       country: "[Country]",
       websiteLink: "[https://www.company.com]",
       reportingPeriod: "FY",

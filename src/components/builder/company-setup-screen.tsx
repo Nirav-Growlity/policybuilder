@@ -33,7 +33,7 @@ export function CompanySetupScreen({ onContinue }: { onContinue: () => void }) {
               Enter company information.
             </h1>
             <p className="text-[14.5px] text-[var(--color-ink-2)] mt-1.5 max-w-2xl">
-              Provide legal entity details, industry sector, website, financial reporting period, company logo and site coverage before selecting your policy type.
+              Provide legal entity details, Sector, Subsector, Industry, website, reporting period, logo and site coverage before selecting a policy type.
             </p>
           </div>
 

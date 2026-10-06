@@ -1,4 +1,5 @@
-import { INDUSTRY_SUBSECTORS, getPolicyProfile } from "./constants";
+import { INDUSTRY_SUBSECTORS, LEGACY_INDUSTRY_SUBSECTORS, getPolicyProfile } from "./constants";
+import { getIndustryGroup, getSubsectorOptions } from "./company-classification";
 import type { FocusAreaSelectionItem, Policy, PolicyType } from "./types";
 
 export interface FixedFocusArea {
@@ -79,6 +80,7 @@ const SUBSECTOR_ALIASES: Record<string, string> = {
   "Manufacture of basic chemicals, fertilizers and plastics": "Manufacture of basic chemicals, fertilizers and nitrogen compounds, plastics and synthetic rubber in primary forms",
   "Manufacture of basic pharmaceutical products and preparations": "Manufacture of basic pharmaceutical products and pharmaceutical preparations",
   "Manufacture of electric motors, generators and transformers": "Manufacture of electric motors, generators, transformers and electricity distribution and control ap",
+  "Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus": "Manufacture of electric motors, generators, transformers and electricity distribution and control ap",
 };
 
 const SUBSECTORS_BY_INDUSTRY: Record<string, string[]> = {
@@ -104,6 +106,7 @@ for (const subSector of Object.keys(SUBSECTOR_CATALOG)) {
 }
 for (const subSector of [
   ...Object.values(INDUSTRY_SUBSECTORS).flat(),
+  ...Object.values(LEGACY_INDUSTRY_SUBSECTORS).flat(),
   ...Object.values(SUBSECTORS_BY_INDUSTRY).flat(),
 ]) {
   const normalized = normalizeSubSector(subSector);
@@ -163,8 +166,20 @@ export function getFocusAreaCatalogByKey(key: string): FocusAreaCatalog | null {
   return CATALOGS_BY_KEY.get(key) || null;
 }
 
+/** Prefer the new industry/class, then its group, with the legacy subsector fallback. */
+export function getCompanyFocusAreaCatalog(company: Policy["company"], policyType: PolicyType): FocusAreaCatalog | null {
+  const labels = [company.industryDetail, getIndustryGroup(company), company.subCategory];
+  // Shared policy-wide catalogs must not hide a more specific group match.
+  for (const label of labels) {
+    if (!label?.trim()) continue;
+    const canonical = CANONICAL_SUBSECTORS.get(normalizeSubSector(label));
+    if (canonical && SUBSECTOR_CATALOG[canonical]?.[policyType]) return getFocusAreaCatalog(canonical, policyType);
+  }
+  return getFocusAreaCatalog(labels.find((label) => label?.trim()), policyType);
+}
+
 export function getIndustrySubsectorOptions(industry: string): string[] {
-  const options = [...(INDUSTRY_SUBSECTORS[industry] || []), ...(SUBSECTORS_BY_INDUSTRY[industry] || [])];
+  const options = [...getSubsectorOptions(industry), ...(LEGACY_INDUSTRY_SUBSECTORS[industry] || []), ...(SUBSECTORS_BY_INDUSTRY[industry] || [])];
   const seen = new Set<string>();
   return options.filter((option) => {
     const normalized = normalizeSubSector(option);
@@ -247,7 +262,7 @@ export function initializeFocusAreaCatalogFromDefaults(policy: Policy): Policy {
   if (!sameFocusAreaList(policy.focusAreas, defaults) || hasAuthoredAreaContent) {
     return { ...policy, focusAreaSelection: { mode: "custom" } };
   }
-  const catalog = getFocusAreaCatalog(policy.company.subCategory, policy.policyType);
+  const catalog = getCompanyFocusAreaCatalog(policy.company, policy.policyType);
   if (!catalog) return policy;
   return {
     ...policy,
@@ -287,9 +302,9 @@ export function policyFocusAreaCatalog(policy: Policy): FocusAreaCatalog | null 
   if (policy.focusAreaSelection?.mode === "catalog") {
     const catalog = getFocusAreaCatalogByKey(policy.focusAreaSelection.catalogKey);
     if (catalog?.key === `all-subsectors::${policy.policyType}`) {
-      return { ...catalog, subSector: policy.company.subCategory || catalog.subSector };
+      return { ...catalog, subSector: policy.company.industryDetail || policy.company.subCategory || catalog.subSector };
     }
     return catalog;
   }
-  return getFocusAreaCatalog(policy.company.subCategory, policy.policyType);
+  return getCompanyFocusAreaCatalog(policy.company, policy.policyType);
 }

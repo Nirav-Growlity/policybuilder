@@ -11,8 +11,8 @@ import type { FocusAreaSelectionItem, Policy } from "@/lib/types";
 import { getPolicyProfile } from "@/lib/constants";
 import { pickSystemFocusAreaSynonym, getSystemFocusAreaSynonyms } from "@/lib/focus-area-synonyms";
 import {
-  getFocusAreaCatalog,
   getFocusAreaCatalogByKey,
+  getCompanyFocusAreaCatalog,
   normalizeSubSector,
   policyFocusAreaCatalog,
   withFocusAreaCatalogSelection,
@@ -112,8 +112,9 @@ export function StepFocus() {
     ? new Set(selection.selectedFixedAreaIds)
     : new Set<string>();
   const editableAreas = editableFocusAreaItems(policy, catalogIsApplied);
-  const currentCompanyCatalog = getFocusAreaCatalog(policy.company.subCategory, policy.policyType);
+  const currentCompanyCatalog = getCompanyFocusAreaCatalog(policy.company, policy.policyType);
   const preservedOldCatalog = Boolean(appliedCatalog && currentCompanyCatalog?.key !== appliedCatalog.key);
+  const coverageDescription = policy.company.industryDetail || policy.company.subCategory || policy.company.industry;
 
   const refreshSynonym = (
     currentLabel: string,
@@ -253,7 +254,7 @@ export function StepFocus() {
 
       <Panel
         title="Key focus areas"
-        description={policy.company.subCategory ? `Policy coverage for ${policy.company.subCategory}.` : "Choose the themes this policy will cover."}
+        description={coverageDescription ? `Policy coverage for ${coverageDescription}.` : "Choose the themes this policy will cover."}
         icon={<Target size={17} strokeWidth={1.8} />}
         actions={<Badge variant="muted">{policy.focusAreas.filter(Boolean).length} selected</Badge>}
       >

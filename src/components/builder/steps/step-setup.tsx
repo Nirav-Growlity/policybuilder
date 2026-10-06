@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { useBuilder, makeSamplePolicy, makeTemplatePolicy } from "@/lib/store";
-import { STANDARDS, INDUSTRY_SECTORS, INDUSTRY_SUBSECTORS, FRAMEWORK_ALIGNMENT } from "@/lib/constants";
+import { STANDARDS, FRAMEWORK_ALIGNMENT } from "@/lib/constants";
+import { getCompanyClassificationContext } from "@/lib/company-classification";
 import { Panel, Badge, InfoBar } from "@/components/ui/panel";
 import { Combobox, Field, Input, Textarea } from "@/components/ui/input";
 import { Tag } from "@/components/ui/tag";
@@ -31,7 +32,9 @@ export function StepSetup() {
           company: {
             ...co,
             name: co.name || "Acme Specialty Chemicals Pvt. Ltd.",
-            industry: co.industry || "Specialty chemicals manufacturing",
+            industry: co.industry || "Manufacturing",
+            subCategory: co.subCategory || "Manufacture of chemicals and chemical products",
+            industryDetail: co.industryDetail || "Manufacture of other chemical products n.e.c.",
             site:
               co.site ||
               "Plot 14, Sector 4, IMT Manesar, Gurugram - 122051, Haryana, India",
@@ -69,7 +72,7 @@ export function StepSetup() {
               </span>
             </div>
             <p className="text-[12px] text-[var(--color-muted)] mt-0.5">
-              {[co.industry, co.country, co.docNum ? `Doc: ${co.docNum}` : null].filter(Boolean).join(" · ") || "Universal company details configured"}
+              {[getCompanyClassificationContext(co), co.country, co.docNum ? `Doc: ${co.docNum}` : null].filter(Boolean).join(" · ") || "Universal company details configured"}
             </p>
           </div>
         </div>
