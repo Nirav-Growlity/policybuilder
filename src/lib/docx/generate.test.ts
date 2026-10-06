@@ -29,6 +29,32 @@ test("page borders use Word's native page-edge border with valid spacing", async
   }
 });
 
+test("professional Word contents spacing matches the PDF and keeps its links", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const paragraphs = [...document.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map((match) => match[0]);
+  const contentsIndex = paragraphs.findIndex((paragraph) => paragraph.includes(">Contents</w:t>"));
+  assert.ok(contentsIndex >= 0, "the professional contents heading should remain present");
+  const contents = paragraphs[contentsIndex];
+  const tocRows: string[] = [];
+  for (const paragraph of paragraphs.slice(contentsIndex + 1)) {
+    if (paragraph.includes('w:anchor="standard-')) tocRows.push(paragraph);
+    else if (tocRows.length) break;
+  }
+  assert.ok(tocRows.length > 0, "professional contents links should remain present");
+  assert.match(contents, /<w:sz w:val="34"\/>/, "Contents should use the matching 17pt PDF heading size");
+  assert.match(contents, /<w:spacing[^>]*w:after="597"/, "the contents heading should provide the measured 10pt additional gap");
+  for (const row of tocRows) {
+    assert.match(row, /w:after="340"/, "each row should use the PDF's 32.25pt pitch after Word margin collapse");
+    assert.match(row, /w:line="305"[^>]*w:lineRule="exact"/, "Word line spacing should use an exact 10.5pt-derived measure");
+    assert.match(row, /<w:sz w:val="21"\/>/, "TOC labels should use 10.5pt text");
+    assert.doesNotMatch(row, /<w:pBdr/, "professional TOC rows should not have decorative separators");
+  }
+  assert.ok(tocRows.some((row) => row.includes('w:anchor="standard-focus"')), "the Focus Areas TOC anchor should remain intact");
+  assert.ok(!tocRows.some((row) => row.includes('w:anchor="standard-acknowledgement"')), "the existing professional TOC entry set should remain unchanged");
+});
+
 test("quantitative Word output groups repeated areas and omits metadata columns", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.quantitative = [{
@@ -49,6 +75,28 @@ test("quantitative Word output groups repeated areas and omits metadata columns"
   assert.ok((document.match(/w:numId/g) || []).length >= 2, "quantitative targets should use Word bullets");
 });
 
+test("Word quantitative table uses a serial label and preserves configured bullet headers", async () => {
+  const numberedPolicy = templatePreviewPolicy("standard-pack", "environmental");
+  numberedPolicy.visualStyle = "corporate";
+  numberedPolicy.listFormatting = { quantitativeGroups: "number" };
+  const numberedZip = await JSZip.loadAsync(await generateDocx(numberedPolicy));
+  const numberedDocument = await numberedZip.file("word/document.xml")!.async("string");
+  const numberedHeader = [...numberedDocument.matchAll(/<w:tr[ >][\s\S]*?<\/w:tr>/g)].map(([row]) => row).find((row) => row.includes("Focus Area") && row.includes("Targets"));
+  assert.ok(numberedHeader, "the quantitative table header row should remain present");
+  assert.match(numberedHeader!, /Sr No\./);
+  assert.doesNotMatch(numberedHeader!, /<w:t[^>]*>#<\/w:t>/);
+
+  const bulletPolicy = templatePreviewPolicy("standard-pack", "environmental");
+  bulletPolicy.visualStyle = "corporate";
+  bulletPolicy.listFormatting = { quantitativeGroups: "bullet" };
+  const bulletZip = await JSZip.loadAsync(await generateDocx(bulletPolicy));
+  const bulletDocument = await bulletZip.file("word/document.xml")!.async("string");
+  const bulletHeader = [...bulletDocument.matchAll(/<w:tr[ >][\s\S]*?<\/w:tr>/g)].map(([row]) => row).find((row) => row.includes("Focus Area") && row.includes("Targets"));
+  assert.ok(bulletHeader, "the quantitative table header row should remain present");
+  assert.match(bulletHeader!, /<w:t[^>]*>•<\/w:t>/, "configured bullet headers should remain bullets");
+  assert.doesNotMatch(bulletHeader!, /Sr No\./);
+});
+
 test("Word quantitative area numbers stay horizontal and align with the title", async () => {
   const policy = templatePreviewPolicy("sustainability-charter", "environmental");
   policy.quantitative = [{
@@ -66,6 +114,12 @@ test("Word quantitative area numbers stay horizontal and align with the title", 
 
 test("author signature image appears inside the employee Signature field in Word output", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.employeeAcknowledgement = {
+    employeeName: "Asha Rao",
+    employeeId: "EMP-041",
+    department: "Operations",
+    date: "2026-09-28",
+  };
   const signatureDataUrl = `data:image/png;base64,${(await sharp(svg).png().toBuffer()).toString("base64")}`;
   const zip = await JSZip.loadAsync(await generateDocx(policy, {
     displayName: "Policy Author",
@@ -81,6 +135,13 @@ test("author signature image appears inside the employee Signature field in Word
   const signatureCell = document.slice(signatureCellStart, signatureCellEnd);
   assert.match(signatureCell, /<w:drawing>/, "the saved signature image should be in the Signature field cell");
   assert.match(signatureCell, /name="Signature"/);
+  const signatureParagraph = [...signatureCell.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map(([paragraph]) => paragraph).find((paragraph) => paragraph.includes("<w:drawing>"));
+  assert.ok(signatureParagraph, "the signature drawing paragraph should remain present");
+  assert.match(signatureParagraph!, /<w:pBdr>[\s\S]*?<w:bottom[^>]*w:val="single"[\s\S]*?w:sz="6"[\s\S]*?<\/w:pBdr>/, "the saved signature should retain the same underline as the employee fields");
+  assert.match(document, /Asha Rao/);
+  assert.match(document, /EMP-041/);
+  assert.match(document, /Operations/);
+  assert.match(document, /28-09-2026/, "employee acknowledgement date formatting should remain unchanged");
   assert.doesNotMatch(document, /POLICY AUTHOR|Policy Author|2026-09-28/);
   assert.ok(Object.keys(zip.files).some((name) => /^word\/media\//.test(name)), "the signature artwork should be embedded as an image");
 });

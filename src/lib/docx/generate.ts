@@ -10,6 +10,7 @@ import {
   ImageRun,
   InternalHyperlink,
   LevelFormat,
+  LineRuleType,
   Packer,
   PageBreak,
   PageNumber,
@@ -327,7 +328,7 @@ function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: 
 function buildToc(model: DocumentRenderModel): DocBlock[] {
   if (model.theme.collection === "professional") {
     const alignment = docxContentAlignment(model.theme.textAlignment);
-    return [new Paragraph({ text: "Contents", style: "PolicyHeading", alignment, spacing: { after: 360 } }), ...model.tocEntries.map(entry => tocParagraph(entry, model, "leaders"))];
+    return [new Paragraph({ style: "PolicyHeading", alignment, spacing: { after: 597 }, children: [new TextRun({ text: "Contents", bold: true, color: documentHex(model.theme.colors.primary), size: 34, font: model.typography.headingFontFamily || model.typography.fontFamily })] }), ...model.tocEntries.map((entry) => tocParagraph(entry, model, "leaders"))];
   }
   const entries = model.acknowledgement
     ? [...model.tocEntries, { id: "acknowledgement", index: model.tocEntries.length + 1, title: model.acknowledgement.title }]
@@ -401,15 +402,18 @@ function buildToc(model: DocumentRenderModel): DocBlock[] {
 
 function tocParagraph(entry: { id: string; index: number; title: string }, model: DocumentRenderModel, mode: "leaders" | "rail" | "editorial") {
   const { theme, typography } = model;
+  const professional = theme.collection === "professional" && mode === "leaders";
   const numberSize = mode === "editorial" ? 30 : 20;
   return new Paragraph({
-    border: { bottom: border(documentHex(theme.colors.line), mode === "leaders" ? 3 : 5, mode === "leaders" ? BorderStyle.DOTTED : BorderStyle.SINGLE) },
-    spacing: { before: mode === "editorial" ? 100 : 60, after: mode === "editorial" ? 120 : 95 },
+    ...(professional ? {} : { border: { bottom: border(documentHex(theme.colors.line), mode === "leaders" ? 3 : 5, mode === "leaders" ? BorderStyle.DOTTED : BorderStyle.SINGLE) } }),
+    spacing: professional
+      ? { before: 0, after: 340, line: Math.round(10.5 * typography.lineSpacing * 20), lineRule: LineRuleType.EXACT }
+      : { before: mode === "editorial" ? 100 : 60, after: mode === "editorial" ? 120 : 95 },
     children: [new InternalHyperlink({
       anchor: entry.id,
       children: [
-        new TextRun({ text: `${listMarkerText(model.listFormatting.outline, entry.index)}   `, bold: true, color: mode === "rail" ? documentHex(theme.colors.accent) : documentHex(theme.colors.primary), size: numberSize, font: typography.headingFontFamily || typography.fontFamily }),
-        new TextRun({ text: entry.title, color: documentHex(theme.colors.primary), size: 20, font: typography.fontFamily }),
+        new TextRun({ text: `${listMarkerText(model.listFormatting.outline, entry.index)}   `, bold: true, color: mode === "rail" ? documentHex(theme.colors.accent) : documentHex(theme.colors.primary), size: professional ? 21 : numberSize, font: typography.headingFontFamily || typography.fontFamily }),
+        new TextRun({ text: entry.title, color: documentHex(theme.colors.primary), size: professional ? 21 : 20, font: typography.fontFamily }),
       ],
     })],
   });
@@ -649,7 +653,7 @@ function quantitativeEntryGroup(group: QuantitativeTargetGroup, index: number, m
 
 function quantitativeTable(groups: QuantitativeTargetGroup[], availableWidth: number, model: DocumentRenderModel): Table {
   const widths = scaledWidths([QUANTITATIVE_NUMBER_WIDTH, 2100, 5406], availableWidth);
-  const headers = [model.listFormatting.quantitativeGroups === "bullet" ? "•" : "#", "Focus Area", "Targets"];
+  const headers = [model.listFormatting.quantitativeGroups === "bullet" ? "•" : "Sr No.", "Focus Area", "Targets"];
   const lightHeader = model.theme.collection === "professional" || model.theme.layout.dataLayout === "quiet-rules";
   const borders = allBorders(documentHex(model.theme.colors.line), BorderStyle.SINGLE, 5);
   const headerFill = lightHeader ? documentHex(model.theme.colors.soft) : documentHex(model.theme.colors.primary);
@@ -757,8 +761,8 @@ function listParagraph(text: string, kind: "bullet" | "number", typography: Typo
 async function buildAcknowledgement(model: DocumentRenderModel): Promise<DocBlock[]> {
   const acknowledgement = model.acknowledgement!;
   const { theme, typography } = model;
-  const title = new Paragraph({ alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: 180 }, children: [new Bookmark({ id: "acknowledgement", children: [] }), new TextRun({ text: acknowledgement.title, bold: true, italics: theme.layout.acknowledgement === "affidavit", color: documentHex(theme.colors.primary), size: 36, font: typography.headingFontFamily || typography.fontFamily })] });
-  const statement = new Paragraph({ alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: 260, line: Math.round(240 * typography.lineSpacing) }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
+  const title = new Paragraph({ alignment: docxContentAlignment(theme.textAlignment), spacing: { after: 180 }, children: [new Bookmark({ id: "acknowledgement", children: [] }), new TextRun({ text: acknowledgement.title, bold: true, italics: theme.layout.acknowledgement === "affidavit", color: documentHex(theme.colors.primary), size: 36, font: typography.headingFontFamily || typography.fontFamily })] });
+  const statement = new Paragraph({ alignment: docxContentAlignment(theme.textAlignment), spacing: { after: 260, line: Math.round(240 * typography.lineSpacing) }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
   const kicker = new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "ACKNOWLEDGEMENT - FINAL PAGE", bold: true, color: documentHex(theme.colors.primary), size: 15, characterSpacing: 50, font: typography.fontFamily })] });
   const approval = acknowledgement.authorApproval
     ? await logoFromDataUrl(acknowledgement.authorApproval.signatureDataUrl)
@@ -792,7 +796,7 @@ function acknowledgementFields(model: DocumentRenderModel, availableWidth: numbe
     const field = pair[index];
     if (!field) return tableCell([new Paragraph("")], half);
     const signatureImage = field.label === "Signature" && authorSignature
-      ? new Paragraph({ spacing: { after: 260 }, children: [new ImageRun({ data: authorSignature.data, type: authorSignature.type, transformation: { width: Math.max(1, Math.round(authorSignature.width * Math.min(1, 180 / Math.max(authorSignature.width, 1), 44 / Math.max(authorSignature.height, 1)))), height: Math.max(1, Math.round(authorSignature.height * Math.min(1, 180 / Math.max(authorSignature.width, 1), 44 / Math.max(authorSignature.height, 1)))) }, altText: drawingAltText("Signature") })] })
+      ? new Paragraph({ border: { bottom: border(documentHex(model.theme.colors.muted), 6) }, spacing: { after: 260 }, children: [new ImageRun({ data: authorSignature.data, type: authorSignature.type, transformation: { width: Math.max(1, Math.round(authorSignature.width * Math.min(1, 180 / Math.max(authorSignature.width, 1), 44 / Math.max(authorSignature.height, 1)))), height: Math.max(1, Math.round(authorSignature.height * Math.min(1, 180 / Math.max(authorSignature.width, 1), 44 / Math.max(authorSignature.height, 1)))) }, altText: drawingAltText("Signature") })] })
       : field.value
         ? new Paragraph({ border: { bottom: border(documentHex(model.theme.colors.muted), 6) }, spacing: { after: field.label === "Signature" ? 260 : 170 }, children: [new TextRun({ text: field.value, color: documentHex(model.theme.colors.ink), size: Math.round(model.typography.paragraphSize * 2), font: model.typography.fontFamily })] })
         : new Paragraph({ border: { bottom: border(documentHex(model.theme.colors.muted), 6) }, spacing: { after: field.label === "Signature" ? 260 : 170 }, children: [new TextRun({ text: " " })] });

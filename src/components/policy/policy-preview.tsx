@@ -94,6 +94,7 @@ function previewDocumentStyle(theme: ReturnType<typeof buildDocumentRenderModel>
     "--policy-subheading-size": `${typography.subheadingSize}pt`,
     "--policy-paragraph-size": `${typography.paragraphSize}pt`,
     "--policy-line-height": String(typography.lineSpacing),
+    "--policy-acknowledgement-line-height": `${typography.paragraphSize * typography.lineSpacing * 1.22}pt`,
   } as CSSProperties;
 }
 
@@ -334,7 +335,7 @@ function TargetDescription({ targets, model }: { targets: QuantitativeTargetGrou
 
 function QuantitativeTable({ groups, model }: { groups: QuantitativeTargetGroup[]; model: DocumentRenderModel }) {
   const groupStyle = model.listFormatting.quantitativeGroups;
-  return <div className="policy-table-wrap"><table className="policy-table" data-target-table="true"><colgroup><col className="policy-target-index-column" /><col className="policy-target-area-column" /><col /></colgroup><thead><tr><th>{groupStyle === "bullet" ? "•" : "#"}</th><th>Focus Area</th><th>Targets</th></tr></thead><tbody>{groups.map((group, index) => <tr key={`${group.area}-${index}`}><td>{listMarkerText(groupStyle, index + 1)}</td><td>{group.area}</td><td><TargetDescription targets={group.targets} model={model} /></td></tr>)}</tbody></table></div>;
+  return <div className="policy-table-wrap"><table className="policy-table" data-target-table="true"><colgroup><col className="policy-target-index-column" /><col className="policy-target-area-column" /><col /></colgroup><thead><tr><th>{groupStyle === "bullet" ? "•" : "Sr No."}</th><th>Focus Area</th><th>Targets</th></tr></thead><tbody>{groups.map((group, index) => <tr key={`${group.area}-${index}`}><td>{listMarkerText(groupStyle, index + 1)}</td><td>{group.area}</td><td><TargetDescription targets={group.targets} model={model} /></td></tr>)}</tbody></table></div>;
 }
 
 function SdgGoals({ goals, model, policy }: { goals: { number: number; label: string; color: string }[]; model: DocumentRenderModel; policy: Policy }) {
@@ -851,7 +852,7 @@ const previewStyles = `
   [data-collection="professional"] .policy-toc { padding: 0; background: transparent; border: none; }
   .professional-toc h2 { margin-bottom: 12mm; }
   .professional-toc :is(ol, ul) { list-style: none; padding: 0; }
-  .professional-toc li { padding: 4mm 0; }
+  .professional-toc li { padding: 4mm 0; border-bottom: 0; }
   .professional-toc a { text-decoration: none; color: var(--doc-ink); display: flex; gap: 6mm; }
   .professional-toc a span { color: var(--doc-muted); font-variant-numeric: tabular-nums; }
   [data-collection="professional"] .policy-section { padding: 0; margin-bottom: calc(9mm * var(--doc-density-factor)); border: 0; background: transparent; }
@@ -974,7 +975,7 @@ const previewStyles = `
   [data-collection="professional"] .professional-cover-minimal .professional-brand { margin-bottom: 32mm; }
   [data-collection="professional"] .professional-toc { max-width: none; margin: 0; padding: 12mm 0 !important; border: 0 !important; background: transparent; }
   [data-collection="professional"] .professional-toc h2 { margin-bottom: 7mm; color: var(--doc-ink); font-size: 17pt; font-weight: 600; }
-  [data-collection="professional"] .professional-toc li { padding: 3mm 0; }
+  [data-collection="professional"] .professional-toc li { padding: 3mm 0; border-bottom: 0; }
   [data-collection="professional"] .professional-toc a { gap: 5mm; color: var(--doc-ink); font-size: 10.5pt; }
   [data-collection="professional"] .professional-toc a span { color: var(--doc-primary); font-variant-numeric: tabular-nums; }
   [data-collection="professional"] .policy-main { max-width: none; padding-inline: 20mm !important; }
@@ -1055,4 +1056,23 @@ const previewStyles = `
   [data-collection="professional"] .policy-section-heading > span, [data-collection="professional"] .policy-section-heading h2 { color: var(--doc-primary) !important; }
   .editorial-policy-cover .cover-publisher, .editorial-policy-cover .cover-register b { color: var(--doc-muted); }
   .policy-preview-document .professional-toc a { color: var(--doc-primary-dark); }
+
+  [data-collection="professional"] .policy-acknowledgement {
+    width: 100%; max-width: none; margin: 0 !important; padding: 27pt 0 0 !important;
+    border: 0 !important; outline: 0 !important; box-shadow: none !important;
+    background: transparent !important; text-align: left;
+  }
+  [data-collection="professional"] .policy-acknowledgement .ack-kicker { display: none; }
+  [data-collection="professional"] .policy-acknowledgement h2 { margin: 0 0 7pt; font-size: 18pt; line-height: 1.14; text-align: var(--doc-content-align); }
+  [data-collection="professional"] .policy-acknowledgement > p { max-width: none; margin: 0 0 14.1pt; line-height: var(--policy-acknowledgement-line-height); text-align: var(--doc-content-align); }
+  [data-collection="professional"] .ack-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 0; row-gap: 3.7pt; width: 100%; margin-top: 0; }
+  [data-collection="professional"] .ack-fields > div { min-width: 0; padding: 6pt 7pt; }
+  [data-collection="professional"] .ack-fields > div > span { display: block; margin-bottom: 5pt; font-size: 7pt; letter-spacing: 1.75pt; }
+  [data-collection="professional"] .ack-fields i { height: 11pt; margin-bottom: 8.5pt; border-bottom: .75pt solid var(--doc-muted); }
+  [data-collection="professional"] .ack-fields .ack-field-value { min-height: 11pt; margin-bottom: 8.5pt; padding: 0; border-bottom: .75pt solid var(--doc-muted); font-family: var(--policy-font); font-size: var(--policy-paragraph-size); line-height: 1; }
+  [data-collection="professional"] .ack-fields .ack-signature { grid-column: auto; }
+  [data-collection="professional"] .ack-fields .ack-signature i,
+  [data-collection="professional"] .ack-fields .ack-signature .ack-field-value { margin-bottom: 13pt; }
+  [data-collection="professional"] .ack-fields .ack-signature-mark { min-height: 44px; margin-bottom: 13pt; border: 0; border-bottom: .75pt solid var(--doc-muted); }
+  [data-collection="professional"] .ack-fields .ack-signature-mark img { max-width: 180px; max-height: 44px; }
 `;

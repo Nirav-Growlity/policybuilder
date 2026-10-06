@@ -14,6 +14,9 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   X,
+  FileDown,
+  FileText,
+  Loader2,
 } from "lucide-react";
 import { clsx } from "clsx";
 import { DesignInspector } from "@/components/builder/design-inspector";
@@ -409,23 +412,34 @@ export function BuilderShell({
           <div className="flex flex-wrap items-center gap-2">
             {topActions}
             {step === "export" && (
-              <div className="flex gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <button
                   type="button"
                   disabled={!!exporting}
                   onClick={() => download("pdf")}
-                  className="rounded-lg bg-[var(--color-forest)] px-4 py-2.5 text-[13px] font-semibold text-white disabled:opacity-40"
+                  aria-busy={exporting === "pdf"}
+                  className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55 motion-reduce:transition-none"
                 >
-                  {exporting === "pdf" ? "Downloading…" : "Download PDF"}
+                  <span className="inline-flex w-4 shrink-0 justify-center" aria-hidden="true">
+                    {exporting === "pdf" ? <Loader2 size={16} className="animate-spin motion-reduce:animate-none" /> : <FileDown size={16} />}
+                  </span>
+                  <span>{exporting === "pdf" ? "Downloading PDF…" : "Download PDF"}</span>
                 </button>
                 <button
                   type="button"
                   disabled={!!exporting}
                   onClick={() => download("docx")}
-                  className="rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px]"
+                  aria-busy={exporting === "docx"}
+                  className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-4 text-[13px] font-semibold text-[var(--color-forest-deep)] transition-colors hover:border-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55 motion-reduce:transition-none"
                 >
-                  Word
+                  <span className="inline-flex w-4 shrink-0 justify-center" aria-hidden="true">
+                    {exporting === "docx" ? <Loader2 size={16} className="animate-spin motion-reduce:animate-none" /> : <FileText size={16} />}
+                  </span>
+                  <span>{exporting === "docx" ? "Downloading Word…" : "Download Word"}</span>
                 </button>
+                <span className="sr-only" role="status" aria-live="polite">
+                  {exporting ? `Preparing ${exporting === "pdf" ? "PDF" : "Word"} download.` : ""}
+                </span>
               </div>
             )}
             {showSidebar && !hideDesignInspector && (

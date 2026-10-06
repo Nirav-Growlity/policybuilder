@@ -200,30 +200,128 @@ test("list formatting keeps legacy defaults and independently changes every docu
   assert.match(createPrintDocument(markup, policy), /policy-focus-item"><b>•<\/b>/);
 });
 
-test("professional legal-form acknowledgement keeps signature rule inside its box", async () => {
-  const markup = renderToStaticMarkup(
-    React.createElement(PolicyPreview, {
-      policy: templatePreviewPolicy("clean-essentials", "sustainable-procurement"),
-    }),
-  );
+test("professional acknowledgement preview and print match Word's field layout", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  const documentMarkups = [policy, {
+    ...policy,
+    employeeAcknowledgement: { employeeName: "Test Employee", employeeId: "QA-001", department: "Operations", date: "2026-10-06" },
+  }].flatMap((casePolicy) => {
+    const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy: casePolicy }));
+    return [markup, createPrintDocument(markup, casePolicy)];
+  });
   const browser = await chromium.launch({ executablePath: chromePath(), headless: true });
   try {
-    const page = await browser.newPage({ viewport: { width: 980, height: 643 } });
-    await page.setContent(markup);
-    const geometry = await page.evaluate(() => {
-      const form = document.querySelector<HTMLElement>(".acknowledgement-legal-form")?.getBoundingClientRect();
-      const signature = document.querySelector<HTMLElement>(".ack-signature i")?.getBoundingClientRect();
-      if (!form || !signature) throw new Error("Acknowledgement form geometry is missing");
-      return { bottomClearance: form.bottom - signature.bottom };
-    });
-    assert.ok(geometry.bottomClearance > 8, `signature rule has only ${geometry.bottomClearance}px of bottom clearance`);
+    for (const documentMarkup of documentMarkups) {
+      const page = await browser.newPage({ viewport: { width: 980, height: 643 } });
+      await page.setContent(documentMarkup);
+      const layout = await page.evaluate(() => {
+        const article = document.querySelector<HTMLElement>(".policy-preview-document");
+        const form = document.querySelector<HTMLElement>(".policy-acknowledgement");
+        const title = form?.querySelector<HTMLElement>("h2");
+        const statement = form?.querySelector<HTMLElement>(":scope > p");
+        const fields = form?.querySelector<HTMLElement>(".ack-fields");
+        const field = fields?.querySelector<HTMLElement>(":scope > div");
+        const label = field?.querySelector<HTMLElement>(":scope > span");
+        const signature = fields?.querySelector<HTMLElement>(".ack-signature");
+        const signatureLine = signature?.querySelector<HTMLElement>("i");
+        const kicker = form?.querySelector<HTMLElement>(".ack-kicker");
+        if (!article || !form || !title || !statement || !fields || !field || !label || !signature || !signatureLine || !kicker) throw new Error("Acknowledgement layout elements are missing");
+        const formStyle = getComputedStyle(form);
+        const titleStyle = getComputedStyle(title);
+        const statementStyle = getComputedStyle(statement);
+        const fieldsStyle = getComputedStyle(fields);
+        const fieldStyle = getComputedStyle(field);
+        const labelStyle = getComputedStyle(label);
+        const signatureStyle = getComputedStyle(signature);
+        const signatureLineStyle = getComputedStyle(signatureLine);
+        const columns = fieldsStyle.gridTemplateColumns.split(" ").map(Number.parseFloat);
+        const articleRect = article.getBoundingClientRect();
+        const formRect = form.getBoundingClientRect();
+        const fieldsRect = fields.getBoundingClientRect();
+        const signatureRect = signature.getBoundingClientRect();
+        const labels = Array.from(fields.querySelectorAll<HTMLElement>(":scope > div > span"));
+        return {
+          widthMatchesArticle: Math.abs(formRect.width - articleRect.width) < 1,
+          startsAtArticleEdge: Math.abs(formRect.left - articleRect.left) < 1,
+          titleFontSize: titleStyle.fontSize,
+          titleAlignment: titleStyle.textAlign,
+          statementAlignment: statementStyle.textAlign,
+          expectedAlignment: article.dataset.contentAlignment,
+          statementMaxWidth: statementStyle.maxWidth,
+          kickerDisplay: getComputedStyle(kicker).display,
+          formMargin: formStyle.margin,
+          formPaddingTop: formStyle.paddingTop,
+          formBorderWidth: formStyle.borderWidth,
+          formBackground: formStyle.backgroundColor,
+          fieldColumns: columns,
+          fieldGap: fieldsStyle.columnGap,
+          cellPadding: fieldStyle.padding,
+          labelFontSize: labelStyle.fontSize,
+          labelLetterSpacing: labelStyle.letterSpacing,
+          labelMarginBottom: labelStyle.marginBottom,
+          signatureColumn: signatureStyle.gridColumnStart,
+          signatureLeftHalf: signatureRect.left < fieldsRect.left + fieldsRect.width / 2,
+          signatureRuleWidth: signatureLineStyle.borderBottomWidth,
+          labelPitchPt: labels.length > 2 ? (labels[2].getBoundingClientRect().top - labels[0].getBoundingClientRect().top) * .75 : 0,
+          fieldRowGap: fieldsStyle.rowGap,
+          fieldsMarginTop: fieldsStyle.marginTop,
+        };
+      });
+      assert.equal(layout.widthMatchesArticle, true, "professional acknowledgement should use the full content width");
+      assert.equal(layout.startsAtArticleEdge, true, "professional acknowledgement should not retain an outer inset");
+      assert.equal(layout.titleFontSize, "24px", "professional acknowledgement title should be 18pt");
+      assert.equal(layout.titleAlignment, layout.expectedAlignment);
+      assert.equal(layout.statementAlignment, layout.expectedAlignment);
+      assert.equal(layout.statementMaxWidth, "none");
+      assert.equal(layout.kickerDisplay, "none");
+      assert.match(layout.formMargin, /^0px/);
+      assert.equal(layout.formBorderWidth, "0px");
+      assert.equal(layout.formBackground, "rgba(0, 0, 0, 0)");
+      assert.equal(layout.fieldColumns.length, 2);
+      assert.ok(Math.abs(layout.fieldColumns[0] - layout.fieldColumns[1]) < 1, "acknowledgement columns should be equal");
+      assert.equal(layout.fieldGap, "0px");
+      assert.match(layout.cellPadding, /^8px 9\.3/);
+      assert.equal(layout.labelFontSize, "9.33333px", "field labels should be 7pt");
+      assert.equal(layout.labelLetterSpacing, "2.33333px", "field label spacing should match Word's 35 twips");
+      assert.equal(layout.labelMarginBottom, "6.66667px", "field labels should use Word's 100-twip after spacing");
+      assert.equal(layout.signatureColumn, "auto", "signature should occupy one field column");
+      assert.equal(layout.signatureLeftHalf, true, "signature should stay in the left column");
+      assert.equal(layout.signatureRuleWidth, "1px");
+      assert.ok(Math.abs(layout.labelPitchPt - 50.2) < 1, `field label row pitch should match Word: ${layout.labelPitchPt}pt`);
+      assert.equal(layout.fieldRowGap, "4.93333px", "field rows should match Word's measured row pitch");
+      assert.equal(layout.fieldsMarginTop, "0px", "the first field row should follow the acknowledgement statement spacing");
+      await page.close();
+    }
   } finally {
     await browser.close();
   }
 });
 
-test("author signature is rendered inside the existing employee signature field only", () => {
+test("quantitative table serial header is readable and keeps configured bullet markers", () => {
+  const numberedPolicy = templatePreviewPolicy("standard-pack", "environmental");
+  numberedPolicy.visualStyle = "corporate";
+  numberedPolicy.listFormatting = { quantitativeGroups: "number" };
+  const numberedMarkup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy: numberedPolicy }));
+  const numberedHeader = numberedMarkup.match(/<table[^>]*data-target-table="true"[\s\S]*?<thead><tr><th>(.*?)<\/th>/)?.[1];
+  assert.equal(numberedHeader, "Sr No.");
+  assert.doesNotMatch(numberedHeader || "", /#/);
+
+  const bulletPolicy = templatePreviewPolicy("standard-pack", "environmental");
+  bulletPolicy.visualStyle = "corporate";
+  bulletPolicy.listFormatting = { quantitativeGroups: "bullet" };
+  const bulletMarkup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy: bulletPolicy }));
+  const bulletHeader = bulletMarkup.match(/<table[^>]*data-target-table="true"[\s\S]*?<thead><tr><th>(.*?)<\/th>/)?.[1];
+  assert.equal(bulletHeader, "•", "configured bullet headers should remain bullets");
+});
+
+test("author signature is rendered inside the existing employee signature field only", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.employeeAcknowledgement = {
+    employeeName: "Asha Rao",
+    employeeId: "EMP-041",
+    department: "Operations",
+    date: "2026-09-28",
+  };
   const approval = {
     displayName: "Policy Author",
     date: "2026-09-28",
@@ -233,11 +331,32 @@ test("author signature is rendered inside the existing employee signature field 
   const model = buildDocumentRenderModel(policy, approval);
 
   assert.equal(model.acknowledgement?.authorApproval, approval);
+  assert.deepEqual(model.acknowledgement?.fields.slice(0, 4).map(({ value }) => value), ["Asha Rao", "EMP-041", "Operations", "28-09-2026"]);
   const signatureField = markup.match(/<div class="ack-signature">[\s\S]*?<\/div>/)?.[0];
   assert.ok(signatureField, "the acknowledgement should retain its Signature field");
   assert.match(signatureField, /<span>Signature<\/span>/);
   assert.match(signatureField, /<img src="data:image\/png;base64,aGVsbG8=" alt="Signature"/);
+  assert.match(signatureField, /data:image\/png;base64,aGVsbG8=/);
+  assert.match(markup, /<div class="ack-field-value">Asha Rao<\/div>/);
+  assert.match(markup, /<div class="ack-field-value">28-09-2026<\/div>/);
   assert.doesNotMatch(markup, /Policy Author|2026-09-28|Policy author|data-author-approval/);
+
+  const browser = await chromium.launch({ executablePath: chromePath(), headless: true });
+  try {
+    for (const documentMarkup of [markup, createPrintDocument(markup, policy)]) {
+      const page = await browser.newPage();
+      await page.setContent(documentMarkup);
+      const signatureRule = await page.locator(".ack-signature-mark").evaluate((element) => {
+        const style = getComputedStyle(element);
+        return { width: style.borderBottomWidth, style: style.borderBottomStyle };
+      });
+      assert.equal(signatureRule.width, "1px", "the signed acknowledgement should keep the field underline");
+      assert.equal(signatureRule.style, "solid", "the signature underline should match the other field rules");
+      await page.close();
+    }
+  } finally {
+    await browser.close();
+  }
 });
 
 test("editorial-margin sections expose only the outer section number", async () => {
