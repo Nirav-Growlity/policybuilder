@@ -60,7 +60,7 @@ Run `npm run test:access` for the isolated access, invitation, storage, and expo
 
 ## PolicyCraft-only organizations
 
-Admins create company profiles at `/admin/organizations` for organizations that exist only in PolicyCraft. Profiles require company name, sector/sub-sector, country, website, FY/CY reporting period, logo and operating sites. Assign managers through the existing manager workflow; creation grants no manager access automatically. Admins and assigned managers can edit these profiles. New policies inherit the latest profile; saved policies retain their existing company details and logos.
+The main `/admin/organizations` page lists normal ESG organizations. The separate PolicyCraft organizations module at `/admin/organizations/policycraft` lists organizations that exist only in PolicyCraft and provides company-profile creation. Profiles require company name, sector/sub-sector, country, website, FY/CY reporting period, logo and operating sites. Assign existing managers from either list, or add a new manager separately; creation grants no manager access automatically. Admins and assigned managers can edit PolicyCraft profiles. New policies inherit the latest profile; saved policies retain their existing company details and logos.
 
 These records are stored in PolicyCraft-owned tables and never added to the shared ESG organization or site tables. Regular client users cannot access them. ESG organizations remain available through a separate source mapping with their existing master details.
 

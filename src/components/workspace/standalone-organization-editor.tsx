@@ -59,7 +59,7 @@ function imageSource(reference: string | undefined, organizationId?: number) {
   return `${url.pathname}${url.search}`;
 }
 
-export function StandaloneOrganizationEditor({ organizationId, initial, backHref = "/admin/organizations" }: { organizationId?: number; initial?: StandaloneOrganization; backHref?: string }) {
+export function StandaloneOrganizationEditor({ organizationId, initial, backHref = "/admin/organizations/policycraft" }: { organizationId?: number; initial?: StandaloneOrganization; backHref?: string }) {
   const router = useRouter();
   const [profile, setProfile] = React.useState<StandaloneOrganizationProfile>(initial ? {
     name: initial.name || "", industry: initial.industry || "", subCategory: initial.subCategory || "", country: initial.country || "", websiteLink: initial.websiteLink || "", reportingPeriod: initial.reportingPeriod || "FY", sites: initial.sites?.length ? initial.sites.map((site) => ({ ...site })) : [{ location: "", address: "", primaryFunction: "" }], companyLogo: initial.companyLogo,
@@ -154,14 +154,16 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
         setError("");
         setSaved(true);
       } else {
-        router.push(`/admin/organizations?created=${result.organization.id}`);
+        router.push(`/admin/organizations/policycraft?created=${result.organization.id}`);
       }
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Could not save this organization."); }
     finally { setSaving(false); }
   }
 
+  const backLabel = backHref.startsWith("/manager") ? "Organizations" : "PolicyCraft organizations";
+
   return <div className="mx-auto max-w-5xl">
-    <nav aria-label="Breadcrumb"><Link href={backHref} className="inline-flex min-h-9 items-center gap-1.5 text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowLeft size={14} aria-hidden="true" />Organizations</Link></nav>
+    <nav aria-label="Breadcrumb"><Link href={backHref} className="inline-flex min-h-9 items-center gap-1.5 text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowLeft size={14} aria-hidden="true" />{backLabel}</Link></nav>
     <div className="mt-4"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">PolicyCraft organization</p><h1 className="mt-1 text-pretty font-display text-3xl font-semibold tracking-tight">{organizationId ? "Edit organization details" : "Create organization"}</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Company details set the defaults for new policies. Existing policies keep their saved details.</p></div>
     {organizationId && !initial ? <div className="mt-8 flex items-center gap-3 rounded-lg border border-[var(--color-line)] bg-white p-4 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organization…</div> : <form className="mt-6 overflow-hidden rounded-xl border border-[var(--color-line)] bg-white" onSubmit={(event) => void submit(event)} aria-busy={saving}>
       <div className="p-5 sm:p-7">
