@@ -101,6 +101,11 @@ function BuilderClientWorkspace() {
   const taskHasIncompleteProgress = !taskContext?.progress || taskContext.progress.percentage < 100;
   const [taskContextLoading, setTaskContextLoading] = React.useState(false);
   const [taskContextError, setTaskContextError] = React.useState("");
+  const taskContextRequest = React.useRef(0);
+  const taskContextIdentity = `${backendDocumentId || ""}:${taskId || ""}:${workspaceAccess?.actor.role === "manager" ? workspaceAccess.actor.id : ""}`;
+  const taskContextIdentityRef = React.useRef(taskContextIdentity);
+  taskContextIdentityRef.current = taskContextIdentity;
+  const refreshTaskContextRef = React.useRef<(() => Promise<PolicyCraftTask | null>) | null>(null);
   const [taskCompleteOpen, setTaskCompleteOpen] = React.useState(false);
   const [taskIncompleteAcknowledged, setTaskIncompleteAcknowledged] = React.useState(false);
   const [taskCompleting, setTaskCompleting] = React.useState(false);
@@ -137,22 +142,35 @@ function BuilderClientWorkspace() {
     if (Number.isInteger(savedLockVersion) && savedLockVersion > 0) backendLockVersion.current = savedLockVersion;
     lastSavedState.current = JSON.stringify(nextState);
     setSaveStatus("saved");
+    // The task endpoint owns the persisted manager-progress snapshot. Refresh
+    // it after a successful document save so the task panel reflects that
+    // snapshot without conflating a task-read failure with a failed save.
+    if (workspaceAccess?.actor.role === "manager") await refreshTaskContextRef.current?.();
   };
 
   const loadTaskContext = React.useCallback(async () => {
+    const identity = taskContextIdentity;
+    const request = ++taskContextRequest.current;
+    const isCurrentRequest = () => request === taskContextRequest.current && identity === taskContextIdentityRef.current;
     if (!backendDocumentId || workspaceAccess?.actor.role !== "manager") {
-      setTaskContext(null);
-      setTaskContextError("");
+      if (isCurrentRequest()) {
+        setTaskContext(null);
+        setTaskContextLoading(false);
+        setTaskContextError("");
+      }
       return null;
     }
-    setTaskContextLoading(true);
-    setTaskContextError("");
+    if (isCurrentRequest()) {
+      setTaskContextLoading(true);
+      setTaskContextError("");
+    }
     try {
       const response = await fetch(`/api/policycraft/tasks?documentId=${encodeURIComponent(backendDocumentId)}`, { cache: "no-store" });
       const body = await response.json().catch(() => null);
       if (!response.ok) throw new Error(body?.error || "Could not load this task. Return to My tasks and retry.");
       const tasks = Array.isArray(body?.tasks) ? body.tasks as PolicyCraftTask[] : [];
       const task = tasks.find((item) => (!taskId || item.id === taskId) && item.manager.id === workspaceAccess.actor.id) || null;
+      if (!isCurrentRequest()) return null;
       if (!task) {
         setTaskContext(null);
         if (taskId) throw new Error("This assignment is no longer available for this manager.");
@@ -162,12 +180,20 @@ function BuilderClientWorkspace() {
       return task;
     } catch (cause) {
       const message = cause instanceof Error ? cause.message : "Could not load this task.";
-      setTaskContextError(message);
+      if (isCurrentRequest()) setTaskContextError(message);
       return null;
-    } finally { setTaskContextLoading(false); }
-  }, [backendDocumentId, taskId, workspaceAccess]);
+    } finally { if (isCurrentRequest()) setTaskContextLoading(false); }
+  }, [backendDocumentId, taskContextIdentity, taskId, workspaceAccess]);
+  refreshTaskContextRef.current = loadTaskContext;
 
-  React.useEffect(() => { const timer = window.setTimeout(() => void loadTaskContext(), 0); return () => window.clearTimeout(timer); }, [loadTaskContext]);
+  React.useEffect(() => {
+    const identity = taskContextIdentity;
+    const timer = window.setTimeout(() => void loadTaskContext(), 0);
+    return () => {
+      window.clearTimeout(timer);
+      if (taskContextIdentityRef.current === identity) taskContextRequest.current += 1;
+    };
+  }, [loadTaskContext, taskContextIdentity]);
 
   async function prepareTaskCompletion() {
     if (!taskContext || taskCompleting) return;
@@ -715,10 +741,21 @@ function BuilderClientWorkspace() {
     >
       <BuilderShell hideDesignInspector={coverEditing} topActions={<>{backendDocumentId ? <span className="mr-2 text-[11px] text-[var(--color-muted)]">{saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""}</span> : null}{topActions}</>}>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8">
-          {workspaceScope?.role === "manager" && (taskContext || taskContextLoading || taskContextError) ? <section aria-label="Assigned task" className="mb-6 rounded-lg border border-[var(--color-line)] bg-white p-4 sm:p-5">
+          {workspaceScope?.role === "manager" && (taskContext || taskContextLoading || taskContextError) ? <section aria-label="Assigned task" className="mb-4 rounded-lg border border-[var(--color-line)] bg-white px-3 py-2.5 sm:px-4">
             {taskContextLoading && !taskContext ? <p className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)]" role="status"><Loader2 size={15} className="animate-spin" aria-hidden="true"/>Loading task details…</p> : null}
             {taskContextError ? <div role="alert" className="flex flex-wrap items-center justify-between gap-3 text-sm text-red-900"><span>{taskContextError}</span><button type="button" onClick={() => void loadTaskContext()} className="inline-flex min-h-9 items-center gap-2 rounded-md px-2 font-semibold text-red-900 hover:bg-red-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]"><RefreshCw size={14} aria-hidden="true"/>Retry</button></div> : null}
-            {taskContext ? <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"><div className="min-w-0 sm:col-span-2"><p className="text-[10px] font-semibold uppercase text-[var(--color-forest)]">Assigned task · {taskContext.organization.name}</p><h2 className="mt-1 break-words font-display text-lg font-semibold">{taskContext.title}</h2><p className="mt-1 text-xs text-[var(--color-ink-2)]">{POLICY_PROFILES[taskContext.policyType]?.label || taskContext.policyType} · <DeadlineLabel value={taskContext.dueDate} status={taskContext.status}/></p></div><TaskProgress progress={taskContext.progress} unavailableReason={taskContext.unavailableReason}/><div className="flex flex-wrap items-center gap-2 sm:justify-end"><TaskStatus status={taskContext.status} dueDate={taskContext.dueDate}/>{taskContext.status === "in_progress" ? <Button variant="primary" size="sm" loading={taskCompleting} disabled={!taskContext.available || taskCompleting} onClick={() => void prepareTaskCompletion()}>Mark task complete</Button> : taskContext.status === "completed" ? <span className="text-xs font-medium text-emerald-900">Completed</span> : null}</div></div> : null}
+            {taskContext ? <div className="grid gap-x-4 gap-y-2 lg:grid-cols-[minmax(0,1fr)_minmax(150px,220px)_auto] lg:items-center">
+              <div className="min-w-0">
+                <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                  <p className="shrink-0 text-[10px] font-semibold uppercase text-[var(--color-forest)]">Assigned task</p>
+                  <span className="min-w-0 break-words text-[11px] text-[var(--color-muted)]">{taskContext.organization.name}</span>
+                </div>
+                <h2 className="mt-0.5 break-words text-[15px] font-semibold leading-snug">{taskContext.title}</h2>
+                <p className="mt-0.5 flex flex-wrap items-center gap-x-1 text-xs text-[var(--color-ink-2)]">{POLICY_PROFILES[taskContext.policyType]?.label || taskContext.policyType}<span aria-hidden="true">·</span><DeadlineLabel value={taskContext.dueDate} status={taskContext.status}/></p>
+              </div>
+              <TaskProgress progress={taskContext.progress} unavailableReason={taskContext.unavailableReason} compact showSavedAt/>
+              <div className="flex flex-wrap items-center gap-2 sm:justify-end"><TaskStatus status={taskContext.status} dueDate={taskContext.dueDate}/>{taskContext.status === "in_progress" ? <Button variant="primary" size="sm" loading={taskCompleting} disabled={!taskContext.available || taskCompleting} onClick={() => void prepareTaskCompletion()}>Mark task complete</Button> : taskContext.status === "completed" ? <span className="text-xs font-medium text-emerald-900">Completed</span> : null}</div>
+            </div> : null}
           </section> : null}
           <StepCmp onCoverEditingChange={step === "export" ? setCoverEditing : undefined} />
         </div>

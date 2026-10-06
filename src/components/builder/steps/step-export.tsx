@@ -5,7 +5,6 @@ import { useBuilder } from "@/lib/store";
 import { PdfPolicyPreview } from "@/components/policy/pdf-policy-preview";
 import { CoverEditor } from "@/components/builder/cover-editor";
 import { AICoverGenerationLoader } from "@/components/builder/ai-cover-generation-loader";
-import { Leaf } from "lucide-react";
 import type { CoverComposition } from "@/lib/types";
 import { visibleQualitativeEntries, visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
 import { generateAndApplyAICover } from "@/components/builder/ai-cover-workflow";
@@ -88,21 +87,18 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
 
   return (
     <div className="space-y-6">
-      {aiCoverState !== "generating" ? <div className="flex items-start gap-4 rounded-xl border border-[var(--color-line)] bg-white px-5 py-4 shadow-[var(--shadow-soft)] sm:items-center">
-        <div className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[var(--color-forest-soft)] text-[var(--color-forest)] sm:mt-0">
-          <Leaf size={18} strokeWidth={2} />
-        </div>
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <p className="text-[13px] font-semibold text-[var(--color-ink)]">Policy readiness</p>
-            <p className="text-[12px] text-[var(--color-muted)]"><span className="font-semibold tabular-nums text-[var(--color-ink-2)]">{completeness} of 9</span> sections complete</p>
-          </div>
-          <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-forest-soft)]" role="progressbar" aria-label="Policy completeness" aria-valuemin={0} aria-valuemax={9} aria-valuenow={completeness} aria-valuetext={`${completeness} of 9 sections complete`}>
-            <span className="block h-full rounded-full bg-[var(--color-forest)] transition-[width] duration-500" style={{ width: `${(completeness / 9) * 100}%` }} />
-          </div>
-          <p className="mt-2 text-[12px] leading-5 text-[var(--color-muted)]">
+      {aiCoverState !== "generating" ? <div className="grid gap-y-2 rounded-lg border border-[var(--color-line)] bg-white px-3 py-2.5 sm:px-4 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center lg:gap-x-4">
+        <div className="min-w-0">
+          <p className="text-[13px] font-semibold text-[var(--color-ink)]">Policy readiness</p>
+          <p className="mt-0.5 text-[11px] leading-4 text-[var(--color-muted)]">
             {completeness < 7 ? "Add more completed sections for a more comprehensive policy." : "Your policy is ready to export. You can still refine the cover."}
           </p>
+        </div>
+        <div className="min-w-0 lg:w-[220px]">
+          <p className="mb-1 text-right text-[11px] text-[var(--color-muted)]"><span className="font-semibold tabular-nums text-[var(--color-ink-2)]">{completeness} of 9</span> sections complete</p>
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-forest-soft)]" role="progressbar" aria-label="Policy completeness" aria-valuemin={0} aria-valuemax={9} aria-valuenow={completeness} aria-valuetext={`${completeness} of 9 sections complete`}>
+            <span className="block h-full rounded-full bg-[var(--color-forest)] transition-[width] duration-300 motion-reduce:transition-none" style={{ width: `${(completeness / 9) * 100}%` }} />
+          </div>
         </div>
       </div> : null}
 

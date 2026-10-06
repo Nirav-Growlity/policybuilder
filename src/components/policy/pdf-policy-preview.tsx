@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
-import { getPdfPageWidth } from "@/lib/pdf-preview-layout";
+import { getPdfCanvasTransform, getPdfPageWidth } from "@/lib/pdf-preview-layout";
 import { PdfRenderLoader } from "@/components/policy/pdf-render-loader";
 import type { Policy } from "@/lib/types";
 import { policyCraftExportContext, policyCraftScopeKey, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
@@ -241,7 +241,7 @@ function PdfPage({ document: pdf, number, width, onRendered, onError }: { docume
       nextCanvas.height = Math.ceil(viewport.height * ratio);
       nextCanvas.style.width = `${viewport.width}px`;
       nextCanvas.style.height = `${viewport.height}px`;
-      render = page.render({ canvas: nextCanvas, viewport, transform: [ratio, 0, 0, ratio, 0, 0] });
+      render = page.render({ canvas: nextCanvas, viewport, transform: getPdfCanvasTransform(viewport.width, viewport.height, nextCanvas.width, nextCanvas.height) });
       await render.promise;
       if (cancelled) return;
       const { TextLayer } = await import("pdfjs-dist");

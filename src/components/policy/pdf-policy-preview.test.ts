@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getPdfPageWidth } from "@/lib/pdf-preview-layout";
+import { getPdfCanvasTransform, getPdfPageWidth } from "@/lib/pdf-preview-layout";
 import { clearPolicyPreviewCache, requestPolicyPreview } from "@/lib/pdf/policy-preview-request";
 import { policyCraftExportContext, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import type { PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
@@ -18,6 +18,19 @@ test("all rendered PDF pages use the same preview width", () => {
 
   assert.equal(getPdfPageWidth(1, targetWidth), targetWidth);
   assert.equal(getPdfPageWidth(2, targetWidth), targetWidth);
+});
+
+test("fractional PDF preview dimensions map across the entire rounded canvas", () => {
+  const viewportWidth = 997.25;
+  const viewportHeight = 1410.67;
+  for (const devicePixelRatio of [1, 1.25, 2]) {
+    const canvasWidth = Math.ceil(viewportWidth * devicePixelRatio);
+    const canvasHeight = Math.ceil(viewportHeight * devicePixelRatio);
+    const transform = getPdfCanvasTransform(viewportWidth, viewportHeight, canvasWidth, canvasHeight);
+
+    assert.ok(Math.abs(transform[0] * viewportWidth - canvasWidth) < 1e-9);
+    assert.ok(Math.abs(transform[3] * viewportHeight - canvasHeight) < 1e-9);
+  }
 });
 
 test("preview requests are deduplicated within a workspace and invalidated across accounts", async () => {
