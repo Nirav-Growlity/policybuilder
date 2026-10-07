@@ -12,7 +12,7 @@ export type PolicyExportPorts<Actor extends ExportActor> = {
   actor: () => Promise<Actor | null>;
   organization: (actor: Actor, options: { organizationId?: number; documentId?: string; operation: "read" }) => Promise<{ organization: { id: number } } | null>;
   assets: (policy: Policy, organizationId: number) => Promise<Policy>;
-  signature: (userId: string) => Promise<{ bytes: Buffer } | null>;
+  signature: (userId: string, organizationId: number, documentId: string) => Promise<{ bytes: Buffer } | null>;
 };
 
 /** Shared authorization boundary for PDF/Word, independent of either renderer. */
@@ -36,20 +36,24 @@ export async function prepareAuthorizedPolicyExport<Actor extends ExportActor>(
     organizationId = Number(body.orgId);
     if (!Number.isSafeInteger(organizationId) || organizationId <= 0) throw new PolicyExportError(400, "Choose a valid organization.");
   }
-  const documentId = body.documentId;
-  if (documentId !== undefined && (typeof documentId !== "string" || !documentId.trim() || documentId.length > 128)) {
+  const rawDocumentId = body.documentId;
+  if (rawDocumentId !== undefined && (typeof rawDocumentId !== "string" || !rawDocumentId.trim() || rawDocumentId.length > 128)) {
     throw new PolicyExportError(400, "A valid document identifier is required.");
   }
+  const documentId = typeof rawDocumentId === "string" ? rawDocumentId.trim() : undefined;
   const scope = await ports.organization(actor, { organizationId, documentId: documentId as string | undefined, operation: "read" });
   if (!scope) throw new PolicyExportError(403, "You no longer have access to this organization's policy.");
 
   let authorApproval: AuthorApprovalRenderData | undefined;
   if (body.includeAuthorSignature === true) {
+    if (typeof documentId !== "string" || !documentId.trim()) {
+      throw new PolicyExportError(400, "Save the policy before applying an author signature.");
+    }
     const date = body.authorSignatureDate;
     if (typeof date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new PolicyExportError(400, "Choose a valid author signature date.");
     const parsed = new Date(`${date}T00:00:00.000Z`);
     if (!Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date) throw new PolicyExportError(400, "Choose a valid author signature date.");
-    const signature = await ports.signature(actor.user.id);
+    const signature = await ports.signature(actor.user.id, scope.organization.id, documentId);
     if (!signature) throw new PolicyExportError(404, "Save a signature before applying it.");
     authorApproval = {
       displayName: actor.user.name.trim() || actor.user.email,

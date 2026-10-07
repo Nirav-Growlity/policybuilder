@@ -28,7 +28,7 @@ test("authorized private cover artwork and current actor signature reach PDF pre
   };
 
   let resolvedOrganizationId: number | undefined;
-  let signatureUserId: string | undefined;
+  let signatureScope: unknown[] = [];
   const ports: PolicyExportPorts<typeof actor> = {
     actor: async () => actor,
     organization: async () => ({ organization: { id: 23 } }),
@@ -42,8 +42,8 @@ test("authorized private cover artwork and current actor signature reach PDF pre
         },
       };
     },
-    signature: async (userId) => {
-      signatureUserId = userId;
+    signature: async (...scope) => {
+      signatureScope = scope;
       return { bytes: signaturePng };
     },
   };
@@ -51,12 +51,13 @@ test("authorized private cover artwork and current actor signature reach PDF pre
   const prepared = await prepareAuthorizedPolicyExport({
     policy,
     orgId: 23,
+    documentId: "policy-a",
     includeAuthorSignature: true,
     authorSignatureDate: "2026-10-01",
     createdByUserId: "99",
   }, ports);
   assert.equal(resolvedOrganizationId, 23);
-  assert.equal(signatureUserId, actor.user.id);
+  assert.deepEqual(signatureScope, [actor.user.id, 23, "policy-a"]);
   assert.equal(prepared.policy.coverComposition?.background.assetId, artworkDataUrl);
   assert.equal(prepared.authorApproval?.displayName, actor.user.name);
 

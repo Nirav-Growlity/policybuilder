@@ -31,6 +31,7 @@ import Link from "next/link";
 import { PolicyPreview } from "@/components/policy/policy-preview";
 import type { PolicyCraftAccess, PolicyCraftOrganization, PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
 import { policyCraftScopeKey, policyCraftUrl, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
+import { isCurrentPolicyCraftSignatureScope, policyCraftSignatureScopeKey, policyCraftSignatureUrl } from "@/lib/policycraft-signature-scope";
 import { policyCraftBuilderStorage, runPolicyCraftBuilderStorageTransition } from "@/lib/policycraft-builder-storage";
 import type { PolicyCraftTask } from "@/lib/policycraft-task-types";
 import { DeadlineLabel, TaskProgress, TaskStatus } from "@/components/tasks/task-ui";
@@ -92,7 +93,7 @@ function BuilderClientWorkspace() {
   const [workspaceOrganizations, setWorkspaceOrganizations] = React.useState<PolicyCraftOrganization[]>([]);
   const [workspaceScope, setWorkspaceScope] = React.useState<PolicyCraftWorkspaceScope | null>(null);
   const setPolicyCraftScope = usePolicyCraftScope((state) => state.setScope);
-  const [authorSignatureLoaded, setAuthorSignatureLoaded] = React.useState(false);
+  const [authorSignatureLoadState, setAuthorSignatureLoadState] = React.useState<{ scopeKey: string; loaded: boolean } | null>(null);
   const [backendDocumentId, setBackendDocumentId] = React.useState<string | null>(draftId);
   const [backendTitle, setBackendTitle] = React.useState("");
   const backendLockVersion = React.useRef(1);
@@ -114,6 +115,8 @@ function BuilderClientWorkspace() {
   const skipNextSave = React.useRef(false);
   const draftAutosave = React.useRef<ReturnType<typeof createDraftAutosave<PolicyCraftDocumentState>> | null>(null);
   const authorSignatureLoadKey = React.useRef("");
+  const signatureScopeKey = policyCraftSignatureScopeKey(workspaceScope);
+  const authorSignatureLoaded = signatureScopeKey === null || (authorSignatureLoadState?.scopeKey === signatureScopeKey && authorSignatureLoadState.loaded);
   const lastSavedState = React.useRef("");
   const saveDraftRef = React.useRef<((nextState: PolicyCraftDocumentState) => Promise<void>) | null>(null);
   if (!draftAutosave.current) draftAutosave.current = createDraftAutosave<PolicyCraftDocumentState>();
@@ -328,7 +331,7 @@ function BuilderClientWorkspace() {
         if (!active) return;
         setPolicyCraftScope(scope);
         setWorkspaceScope(scope);
-        setAuthorSignatureLoaded(false);
+        setAuthorSignatureLoadState(null);
         authorSignatureLoadKey.current = "";
 
         if (loadedDocument) {
@@ -387,22 +390,28 @@ function BuilderClientWorkspace() {
     if (policy.policyType !== selectedType) startPolicy(selectedType);
   }, [companyLoaded, draftId, hydrated, policy.policyType, selectedType, startPolicy]);
 
-  // Resolve the account signature before showing Export. The signature itself
-  // is account-scoped, while the previous lookup lived inside the
-  // Responsibilities step and could be skipped when a draft reopened on Export.
+  React.useLayoutEffect(() => {
+    useBuilder.setState({ includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null, authorSignatureUpdatedAt: null });
+    authorSignatureLoadKey.current = "";
+  }, [signatureScopeKey]);
+
+  // Resolve this policy's signature before showing Export. New drafts become
+  // eligible only after their backend document ID has been assigned.
   React.useEffect(() => {
     const policyTypeReady = !selectedType || draftId || policy.policyType === selectedType;
     if (!hydrated || !companyLoaded || !documentLoaded || !policyTypeReady) return;
-    const key = `${workspaceScope?.userId ?? "unbound"}:${workspaceScope?.organizationId ?? "none"}:${draftId ?? "local"}:${policy.policyType}`;
+    const key = signatureScopeKey;
+    if (!key) return;
     if (authorSignatureLoadKey.current === key) return;
     authorSignatureLoadKey.current = key;
-    setAuthorSignatureLoaded(false);
+    let settled = false;
     const controller = new AbortController();
-    const expectedScopeKey = policyCraftScopeKey(workspaceScope);
-    void fetch("/api/policycraft/signatures/me", { cache: "no-store", signal: controller.signal })
+    const signatureUrl = policyCraftSignatureUrl(workspaceScope);
+    if (!signatureUrl) return () => controller.abort();
+    void fetch(signatureUrl, { cache: "no-store", signal: controller.signal })
       .then(async (response) => {
         const body = await response.json().catch(() => null);
-        if (!response.ok || controller.signal.aborted || policyCraftScopeKey(usePolicyCraftScope.getState().scope) !== expectedScopeKey) return;
+        if (!response.ok || controller.signal.aborted || !isCurrentPolicyCraftSignatureScope(key, usePolicyCraftScope.getState().scope)) return;
         const signature = body?.signature;
         const state = useBuilder.getState();
         state.setAuthorSignatureUpdatedAt(signature?.updatedAt ? `${body.userId}:${signature.updatedAt}` : null);
@@ -412,10 +421,14 @@ function BuilderClientWorkspace() {
       })
       .catch(() => undefined)
       .finally(() => {
-        if (!controller.signal.aborted) setAuthorSignatureLoaded(true);
+        settled = true;
+        if (!controller.signal.aborted && isCurrentPolicyCraftSignatureScope(key, usePolicyCraftScope.getState().scope)) setAuthorSignatureLoadState({ scopeKey: key, loaded: true });
       });
-    return () => controller.abort();
-  }, [companyLoaded, documentLoaded, draftId, hydrated, policy.policyType, selectedType, workspaceScope]);
+    return () => {
+      controller.abort();
+      if (!settled && authorSignatureLoadKey.current === key) authorSignatureLoadKey.current = "";
+    };
+  }, [companyLoaded, documentLoaded, draftId, hydrated, policy.policyType, selectedType, signatureScopeKey, workspaceScope]);
 
   // Create the server draft once a policy type is known. Until then
   // the existing local Zustand draft remains a safe temporary workspace.

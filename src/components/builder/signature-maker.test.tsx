@@ -35,8 +35,9 @@ test("signature history keeps each stroke snapshot independent from the live pad
 test("signature maker explains the saved author mark and acknowledgement relationship", () => {
   const markup = renderToStaticMarkup(React.createElement(SignatureMaker));
   assert.match(markup, /Policy author signature/);
-  assert.match(markup, /Save one personal mark/);
-  assert.match(markup, /Loading saved signature/);
+  assert.match(markup, /this organization and policy/);
+  assert.match(markup, /won’t appear on other policies/);
+  assert.match(markup, /Save this draft before adding a signature/);
 });
 
 test("signature controls follow Revision History as the final item in the Responsibilities step", () => {
@@ -47,7 +48,7 @@ test("signature controls follow Revision History as the final item in the Respon
 
   assert.ok(revisionIndex >= 0);
   assert.ok(signatureIndex > revisionIndex);
-  assert.ok(markup.slice(signatureIndex).includes("Loading saved signature"));
+  assert.ok(markup.slice(signatureIndex).includes("Save this draft before adding a signature"));
 });
 
 test("signature controls remain available when Revision History is disabled", () => {
@@ -72,7 +73,28 @@ test("applied author signature is transient and resets when another policy is lo
 
   useBuilder.getState().setPolicy(initialPolicy("labour-human-rights"));
   assert.equal(useBuilder.getState().includeAuthorSignature, false);
+  assert.equal(useBuilder.getState().authorSignatureChoiceMade, false);
   assert.equal(useBuilder.getState().authorSignatureDate, null);
-  assert.equal(useBuilder.getState().authorSignatureUpdatedAt, "2026-09-27T12:00:00.000Z");
-  useBuilder.getState().setAuthorSignatureUpdatedAt(null);
+  assert.equal(useBuilder.getState().authorSignatureUpdatedAt, null);
+});
+
+test("signature timestamp and application choice clear across policy start, reset, and sample transitions", () => {
+  const store = useBuilder.getState();
+  store.setAuthorSignatureApplied(true, "2026-09-28");
+  store.setAuthorSignatureUpdatedAt("user-1:2026-09-27T12:00:00.000Z");
+  store.startPolicy("environmental");
+  assert.equal(useBuilder.getState().authorSignatureUpdatedAt, null);
+  assert.equal(useBuilder.getState().authorSignatureChoiceMade, false);
+  useBuilder.getState().setAuthorSignatureUpdatedAt("user-1:2026-09-27T12:00:00.000Z");
+  useBuilder.getState().reset();
+  assert.equal(useBuilder.getState().authorSignatureUpdatedAt, null);
+  useBuilder.getState().setAuthorSignatureUpdatedAt("user-1:2026-09-27T12:00:00.000Z");
+  useBuilder.getState().loadSample();
+  assert.equal(useBuilder.getState().authorSignatureUpdatedAt, null);
+});
+
+test("unsigned new drafts explain that signatures are saved only after the draft is saved", () => {
+  const markup = renderToStaticMarkup(React.createElement(SignatureMaker));
+  assert.match(markup, /Save this draft before adding a signature/);
+  assert.match(markup, /Each policy keeps its own signature/);
 });

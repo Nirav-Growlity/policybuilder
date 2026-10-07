@@ -53,7 +53,7 @@ test("invalid selectors and signature dates fail without falling back to another
 
 test("signature export uses the current actor rather than the policy creator", async () => {
   let signatureUser: string | undefined;
-  const result = await prepareAuthorizedPolicyExport({ policy: initialPolicy(), orgId: 23, includeAuthorSignature: true, authorSignatureDate: "2026-10-01", createdByUserId: "99" }, ports({
+  const result = await prepareAuthorizedPolicyExport({ policy: initialPolicy(), orgId: 23, documentId: "policy-a", includeAuthorSignature: true, authorSignatureDate: "2026-10-01", createdByUserId: "99" }, ports({
     signature: async (id) => { signatureUser = id; return { bytes: Buffer.from("editor-signature") }; },
   }));
   assert.equal(signatureUser, "7");
@@ -65,4 +65,50 @@ test("failed private artwork resolution never falls back to an anonymous export"
   await assert.rejects(prepareAuthorizedPolicyExport({ policy: initialPolicy(), orgId: 23 }, ports({
     assets: async () => { throw new Error("missing artwork"); },
   })), /missing artwork/);
+});
+
+test("signature lookup is bound to the authorized organization and exact policy document", async () => {
+  let selected: unknown[] = [];
+  await prepareAuthorizedPolicyExport({ policy: initialPolicy(), orgId: 23, documentId: "policy-a", includeAuthorSignature: true, authorSignatureDate: "2026-10-01" }, ports({
+    signature: async (...args) => { selected = args; return { bytes: Buffer.from("policy-a-signature") }; },
+  }));
+  assert.deepEqual(selected, ["7", 23, "policy-a"], "an account signature must never be reused without organization and policy identity");
+});
+
+test("a signature saved for one policy never signs another policy or organization", async () => {
+  const scopedPorts = ports({
+    organization: async (_actor, options) => ({ organization: { id: options.organizationId ?? 23 } }),
+    signature: async (_userId, organizationId, documentId) => organizationId === 23 && documentId === "policy-a"
+      ? { bytes: Buffer.from("policy-a-signature") }
+      : null,
+  });
+  const payload = { policy: initialPolicy(), includeAuthorSignature: true, authorSignatureDate: "2026-10-01" };
+  const first = await prepareAuthorizedPolicyExport({ ...payload, orgId: 23, documentId: "policy-a" }, scopedPorts);
+  assert.ok(first.authorApproval);
+  await assert.rejects(prepareAuthorizedPolicyExport({ ...payload, orgId: 23, documentId: "policy-b" }, scopedPorts), denied(404));
+  await assert.rejects(prepareAuthorizedPolicyExport({ ...payload, orgId: 24, documentId: "policy-a" }, scopedPorts), denied(404));
+});
+
+test("a signed export requires a saved policy identity before reading a signature", async () => {
+  let reads = 0;
+  await assert.rejects(prepareAuthorizedPolicyExport({ policy: initialPolicy(), orgId: 23, includeAuthorSignature: true, authorSignatureDate: "2026-10-01" }, ports({
+    signature: async () => { reads += 1; return { bytes: Buffer.from("account-signature") }; },
+  })), denied(400));
+  assert.equal(reads, 0);
+});
+
+test("unsigned policies export without consulting signature storage", async () => {
+  const result = await prepareAuthorizedPolicyExport({ policy: initialPolicy(), orgId: 23 }, ports({
+    signature: async () => { throw new Error("Signature storage unavailable"); },
+  }));
+  assert.equal(result.authorApproval, undefined);
+});
+
+test("signature lookup uses the document's canonical organization resolved by authorization", async () => {
+  let selected: unknown[] = [];
+  await prepareAuthorizedPolicyExport({ policy: initialPolicy(), documentId: "policy-a", includeAuthorSignature: true, authorSignatureDate: "2026-10-01" }, ports({
+    organization: async () => ({ organization: { id: 23 } }),
+    signature: async (...args) => { selected = args; return { bytes: Buffer.from("policy-a-signature") }; },
+  }));
+  assert.deepEqual(selected, ["7", 23, "policy-a"]);
 });

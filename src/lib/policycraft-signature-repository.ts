@@ -13,6 +13,11 @@ type SignatureRow = RowDataPacket & {
   updated_at: Date | string;
 };
 
+export type PolicyCraftSignatureScope = {
+  organizationId: number;
+  documentId: string;
+};
+
 export type StoredPolicyCraftSignature = {
   bytes: Buffer;
   updatedAt: string;
@@ -29,6 +34,16 @@ function normalizeUserId(userId: string | number): number {
   const parsed = typeof userId === "number" ? userId : Number(userId);
   if (!Number.isSafeInteger(parsed) || parsed <= 0) throw new Error("Invalid PolicyCraft user ID");
   return parsed;
+}
+
+function normalizeScope(scope: PolicyCraftSignatureScope): PolicyCraftSignatureScope {
+  if (!Number.isSafeInteger(scope.organizationId) || scope.organizationId <= 0) {
+    throw new Error("Invalid PolicyCraft organization ID");
+  }
+  if (typeof scope.documentId !== "string" || !scope.documentId.trim() || scope.documentId.length > 128) {
+    throw new Error("Invalid PolicyCraft document ID");
+  }
+  return { organizationId: scope.organizationId, documentId: scope.documentId.trim() };
 }
 
 function toIsoDate(value: Date | string): string {
@@ -77,34 +92,53 @@ export async function normalizePolicyCraftSignature(dataUrl: unknown): Promise<B
 
 export async function getPolicyCraftUserSignature(
   userId: string | number,
+  scope: PolicyCraftSignatureScope,
 ): Promise<StoredPolicyCraftSignature | null> {
+  const normalizedScope = normalizeScope(scope);
   const [rows] = await policyCraftPool.execute<SignatureRow[]>(
-    `SELECT content, updated_at
-       FROM policycraft_user_signatures
-      WHERE user_id = ?
+    `SELECT signature.content, signature.updated_at
+       FROM policycraft_user_signatures signature
+       INNER JOIN policycraft_documents document
+         ON document.id = signature.document_id AND document.org_id = signature.org_id
+      WHERE signature.user_id = ?
+        AND signature.org_id = ?
+        AND signature.document_id = ?
       LIMIT 1`,
-    [normalizeUserId(userId)],
+    [normalizeUserId(userId), normalizedScope.organizationId, normalizedScope.documentId],
   );
   const row = rows[0];
   if (!row) return null;
   return { bytes: Buffer.from(row.content), updatedAt: toIsoDate(row.updated_at) };
 }
 
-export async function savePolicyCraftUserSignature(userId: string | number, bytes: Buffer): Promise<void> {
+export async function savePolicyCraftUserSignature(
+  userId: string | number,
+  scope: PolicyCraftSignatureScope,
+  bytes: Buffer,
+): Promise<boolean> {
   if (!Buffer.isBuffer(bytes) || bytes.byteLength === 0 || bytes.byteLength > MAX_STORED_BYTES) {
     throw new InvalidSignatureError("The normalized signature image is invalid.");
   }
-  await policyCraftPool.execute<ResultSetHeader>(
-    `INSERT INTO policycraft_user_signatures (user_id, content)
-     VALUES (?, ?)
+  const normalizedScope = normalizeScope(scope);
+  const [result] = await policyCraftPool.execute<ResultSetHeader>(
+    `INSERT INTO policycraft_user_signatures (user_id, org_id, document_id, content)
+     SELECT ?, document.org_id, document.id, ?
+       FROM policycraft_documents document
+      WHERE document.id = ? AND document.org_id = ?
      ON DUPLICATE KEY UPDATE content = VALUES(content), updated_at = CURRENT_TIMESTAMP(3)`,
-    [normalizeUserId(userId), bytes],
+    [normalizeUserId(userId), bytes, normalizedScope.documentId, normalizedScope.organizationId],
   );
+  return result.affectedRows > 0;
 }
 
-export async function deletePolicyCraftUserSignature(userId: string | number): Promise<void> {
+export async function deletePolicyCraftUserSignature(
+  userId: string | number,
+  scope: PolicyCraftSignatureScope,
+): Promise<void> {
+  const normalizedScope = normalizeScope(scope);
   await policyCraftPool.execute<ResultSetHeader>(
-    `DELETE FROM policycraft_user_signatures WHERE user_id = ?`,
-    [normalizeUserId(userId)],
+    `DELETE FROM policycraft_user_signatures
+      WHERE user_id = ? AND org_id = ? AND document_id = ?`,
+    [normalizeUserId(userId), normalizedScope.organizationId, normalizedScope.documentId],
   );
 }

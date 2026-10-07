@@ -5,6 +5,9 @@ import Image from "next/image";
 import { Check, Eraser, PenLine, Redo2, Trash2, Type, Undo2, Upload } from "lucide-react";
 import SignaturePad, { type PointGroup } from "signature_pad";
 import { useBuilder } from "@/lib/store";
+import type { PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
+import { isCurrentPolicyCraftSignatureScope, policyCraftSignatureScopeKey, policyCraftSignatureUrl } from "@/lib/policycraft-signature-scope";
+import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { Panel } from "@/components/ui/panel";
 import { cloneSignaturePointGroups, recordSignatureHistoryEntry } from "./signature-history";
 
@@ -63,14 +66,21 @@ async function createTypedSignatureArtwork(name: string, style: TypedSignatureSt
 }
 
 export function SignatureMaker() {
+  const scope = usePolicyCraftScope((state) => state.scope);
+  const scopeKey = policyCraftSignatureScopeKey(scope);
+  return <SignatureMakerForScope key={scopeKey ?? "unscoped"} scope={scope} scopeKey={scopeKey} />;
+}
+
+function SignatureMakerForScope({ scope, scopeKey }: { scope: PolicyCraftWorkspaceScope | null; scopeKey: string | null }) {
   const { policy, includeAuthorSignature, authorSignatureChoiceMade, authorSignatureDate, setAuthorSignatureApplied, setAuthorSignatureUpdatedAt } = useBuilder();
   const [signature, setSignature] = React.useState<SignatureRecord | null>(null);
+  const [loadedScopeKey, setLoadedScopeKey] = React.useState<string | null>(null);
   const [mode, setMode] = React.useState<SignatureMode>("draw");
   const [typedName, setTypedName] = React.useState("");
   const [typedStyle, setTypedStyle] = React.useState<TypedSignatureStyle>("allura");
   const [typedPreviewResult, setTypedPreviewResult] = React.useState<{ key: string; artwork?: TypedSignatureArtwork; status: "ready" | "error" } | null>(null);
   const [fontStatus, setFontStatus] = React.useState<"loading" | "ready" | "error">("loading");
-  const [loading, setLoading] = React.useState(true);
+  const loading = scopeKey !== null && loadedScopeKey !== scopeKey;
   const [saving, setSaving] = React.useState(false);
   const [error, setError] = React.useState("");
   const [confirmDelete, setConfirmDelete] = React.useState(false);
@@ -81,7 +91,8 @@ export function SignatureMaker() {
   const historyRef = React.useRef<PointGroup[][]>([]);
   const historyCursorRef = React.useRef(-1);
   const previousSignature = React.useRef<SignatureRecord | null>(null);
-  const canApply = policy.showAcknowledgement !== false && signature !== null;
+  const canApply = scopeKey !== null && !loading && policy.showAcknowledgement !== false && signature !== null;
+  const canSave = scopeKey !== null;
   const selectedTypedStyle = TYPED_SIGNATURE_STYLES[typedStyle];
   const fontSpec = `${selectedTypedStyle.weight} ${selectedTypedStyle.size}px "${selectedTypedStyle.family}"`;
   const previewName = typedName.trim() || "Your name";
@@ -99,17 +110,24 @@ export function SignatureMaker() {
 
   React.useEffect(() => {
     const controller = new AbortController();
-    void fetch("/api/policycraft/signatures/me", { signal: controller.signal })
+    const signatureUrl = policyCraftSignatureUrl(scope);
+    if (!signatureUrl || !scopeKey) return () => controller.abort();
+    void fetch(signatureUrl, { signal: controller.signal, cache: "no-store" })
       .then(async (response) => {
         const body = await response.json().catch(() => null);
         if (!response.ok) throw new Error(responseMessage(body, "Could not load your saved signature."));
+        if (controller.signal.aborted || !isCurrentPolicyCraftSignatureScope(scopeKey, usePolicyCraftScope.getState().scope)) return;
         setSignature(body?.signature ?? null);
         setAuthorSignatureUpdatedAt(body?.signature?.updatedAt ? `${body.userId}:${body.signature.updatedAt}` : null);
       })
-      .catch((cause) => { if (!controller.signal.aborted) setError(cause instanceof Error ? cause.message : "Could not load your saved signature."); })
-      .finally(() => { if (!controller.signal.aborted) setLoading(false); });
+      .catch((cause) => {
+        if (!controller.signal.aborted && isCurrentPolicyCraftSignatureScope(scopeKey, usePolicyCraftScope.getState().scope)) setError(cause instanceof Error ? cause.message : "Could not load your saved signature.");
+      })
+      .finally(() => {
+        if (!controller.signal.aborted && isCurrentPolicyCraftSignatureScope(scopeKey, usePolicyCraftScope.getState().scope)) setLoadedScopeKey(scopeKey);
+      });
     return () => controller.abort();
-  }, [setAuthorSignatureUpdatedAt]);
+  }, [scope, scopeKey, setAuthorSignatureUpdatedAt]);
 
   React.useEffect(() => {
     if (loading || mode !== "draw" || signature) return;
@@ -250,12 +268,19 @@ export function SignatureMaker() {
     }
   };
   const save = async (dataUrl: string) => {
+    const expectedScopeKey = scopeKey;
+    const signatureUrl = policyCraftSignatureUrl(scope);
+    if (!signatureUrl || !expectedScopeKey || !isCurrentPolicyCraftSignatureScope(expectedScopeKey, usePolicyCraftScope.getState().scope)) {
+      setError("Save this policy draft before saving its signature.");
+      return;
+    }
     const replacing = previousSignature.current !== null;
     setSaving(true); setError("");
     try {
-      const response = await fetch("/api/policycraft/signatures/me", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ dataUrl }) });
+      const response = await fetch(signatureUrl, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ dataUrl }) });
       const body = await response.json().catch(() => null);
       if (!response.ok) throw new Error(responseMessage(body, "Could not save your signature."));
+      if (!isCurrentPolicyCraftSignatureScope(expectedScopeKey, usePolicyCraftScope.getState().scope)) return;
       setSignature(body?.signature ?? { dataUrl, updatedAt: new Date().toISOString() });
       previousSignature.current = null;
       setAuthorSignatureUpdatedAt(`${body?.userId ?? "current"}:${body?.signature?.updatedAt ?? new Date().toISOString()}`);
@@ -265,12 +290,13 @@ export function SignatureMaker() {
         setAuthorSignatureApplied(true, localDate(), "automatic");
       }
     } catch (cause) {
+      if (!isCurrentPolicyCraftSignatureScope(expectedScopeKey, usePolicyCraftScope.getState().scope)) return;
       if (previousSignature.current) {
         setSignature(previousSignature.current);
         previousSignature.current = null;
       }
       setError(cause instanceof Error ? cause.message : "Could not save your signature.");
-    } finally { setSaving(false); }
+    } finally { if (isCurrentPolicyCraftSignatureScope(expectedScopeKey, usePolicyCraftScope.getState().scope)) setSaving(false); }
   };
   const saveDrawn = () => {
     const pad = signaturePadRef.current;
@@ -301,14 +327,18 @@ export function SignatureMaker() {
     image.src = objectUrl;
   };
   const remove = async () => {
+    const expectedScopeKey = scopeKey;
+    const signatureUrl = policyCraftSignatureUrl(scope);
+    if (!signatureUrl || !expectedScopeKey || !isCurrentPolicyCraftSignatureScope(expectedScopeKey, usePolicyCraftScope.getState().scope)) return;
     setSaving(true); setError("");
     try {
-      const response = await fetch("/api/policycraft/signatures/me", { method: "DELETE" });
+      const response = await fetch(signatureUrl, { method: "DELETE" });
       const body = await response.json().catch(() => null);
       if (!response.ok) throw new Error(responseMessage(body, "Could not delete your saved signature."));
+      if (!isCurrentPolicyCraftSignatureScope(expectedScopeKey, usePolicyCraftScope.getState().scope)) return;
       setSignature(null); setConfirmDelete(false); setAuthorSignatureApplied(false, null, "system"); setAuthorSignatureUpdatedAt(null);
-    } catch (cause) { setError(cause instanceof Error ? cause.message : "Could not delete your saved signature."); }
-    finally { setSaving(false); }
+    } catch (cause) { if (isCurrentPolicyCraftSignatureScope(expectedScopeKey, usePolicyCraftScope.getState().scope)) setError(cause instanceof Error ? cause.message : "Could not delete your saved signature."); }
+    finally { if (isCurrentPolicyCraftSignatureScope(expectedScopeKey, usePolicyCraftScope.getState().scope)) setSaving(false); }
   };
   const toggleApply = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAuthorSignatureApplied(event.target.checked, event.target.checked ? localDate() : null, "user");
@@ -317,11 +347,11 @@ export function SignatureMaker() {
   return (
     <Panel
       title="Policy author signature"
-      description="Save one personal mark, then choose whether to include it on this policy."
+      description="Save a signature for this organization and policy. It won’t appear on other policies."
       icon={<PenLine size={17} strokeWidth={1.8} aria-hidden="true" />}
     >
 
-      {loading ? <p className="mt-4 text-[12px] text-[var(--color-muted)]" role="status">Loading saved signature…</p> : signature ? <div className="mt-4 flex flex-wrap items-center gap-3">
+      {!scopeKey ? <p className="mt-4 text-[12px] text-[var(--color-muted)]" role="status">Save this draft before adding a signature. Each policy keeps its own signature.</p> : loading ? <p className="mt-4 text-[12px] text-[var(--color-muted)]" role="status">Loading saved signature…</p> : signature ? <div className="mt-4 flex flex-wrap items-center gap-3">
         <Image src={signature.dataUrl} alt="Your saved signature" width={220} height={56} unoptimized className="h-14 max-w-[220px] rounded border border-[var(--color-line)] object-contain p-2" />
         <div className="flex flex-wrap gap-2"><button type="button" onClick={() => { previousSignature.current = signature; setSignature(null); setAuthorSignatureApplied(false, null, "system"); setError(""); }} className="rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Replace</button>{confirmDelete ? <><span className="self-center text-[11px] text-red-800">Delete this saved signature?</span><button type="button" disabled={saving} onClick={() => void remove()} className="rounded-md bg-red-700 px-3 py-2 text-[12px] font-medium text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700">Confirm delete</button><button type="button" onClick={() => setConfirmDelete(false)} className="rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</button></> : <button type="button" disabled={saving} onClick={() => setConfirmDelete(true)} className="inline-flex items-center gap-1.5 rounded-md border border-red-200 px-3 py-2 text-[12px] font-medium text-red-800 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"><Trash2 size={14} aria-hidden="true" />Delete</button>}</div>
       </div> : <>
@@ -333,7 +363,7 @@ export function SignatureMaker() {
         {mode === "draw" ? <div className="mt-3">
           <p id="signature-draw-help" className="mb-2 text-[11px] text-[var(--color-muted)]">Draw with your pointer or touch. You can also choose Type for keyboard input.</p>
           <canvas ref={canvasRef} aria-label="Draw your signature here" aria-describedby="signature-draw-help" className="h-60 w-full touch-none rounded-md border border-dashed border-[var(--color-line-2)] bg-[#fffefa] sm:h-72" style={{ touchAction: "none" }} />
-          <div className="mt-2 flex flex-wrap items-center justify-between gap-2"><div className="flex gap-1"><button type="button" aria-label="Undo last stroke" disabled={historyIndex < 0 || saving} onClick={undo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Undo2 size={13} aria-hidden="true" />Undo</button><button type="button" aria-label="Redo stroke" disabled={historyIndex >= historyLength - 1 || saving} onClick={redo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Redo2 size={13} aria-hidden="true" />Redo</button><button type="button" disabled={historyIndex < 0 || saving} onClick={clearCanvas} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Eraser size={13} aria-hidden="true" />Clear</button></div><button type="button" disabled={saving} onClick={saveDrawn} className="inline-flex items-center gap-1.5 rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : <><Check size={14} aria-hidden="true" />Save signature</>}</button></div>
+          <div className="mt-2 flex flex-wrap items-center justify-between gap-2"><div className="flex gap-1"><button type="button" aria-label="Undo last stroke" disabled={historyIndex < 0 || saving} onClick={undo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Undo2 size={13} aria-hidden="true" />Undo</button><button type="button" aria-label="Redo stroke" disabled={historyIndex >= historyLength - 1 || saving} onClick={redo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Redo2 size={13} aria-hidden="true" />Redo</button><button type="button" disabled={historyIndex < 0 || saving} onClick={clearCanvas} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Eraser size={13} aria-hidden="true" />Clear</button></div><button type="button" disabled={saving || !canSave} onClick={saveDrawn} className="inline-flex items-center gap-1.5 rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : <><Check size={14} aria-hidden="true" />Save signature</>}</button></div>
         </div> : mode === "type" ? <form className="mt-3" onSubmit={(event) => { event.preventDefault(); void saveTyped(); }}>
           <label className="mb-1.5 block text-[11px] font-medium text-[var(--color-ink-2)]" htmlFor="signature-typed-name">Your name</label>
           <input id="signature-typed-name" name="signature" value={typedName} onChange={(event) => { setTypedName(event.target.value); setError(""); }} placeholder="Type your name…" autoComplete="name" maxLength={80} className="w-full rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[13px] text-[var(--color-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]" />
@@ -361,14 +391,14 @@ export function SignatureMaker() {
             </div>
           </div>
           <p className="mt-1.5 min-h-4 text-[10px] text-[var(--color-muted)]" role="status" aria-live="polite">{fontStatus === "loading" ? "Loading signature style…" : fontStatus === "error" ? "This font could not be loaded. Try another style." : ""}</p>
-          <div className="mt-2 flex justify-end"><button type="submit" disabled={saving || !typedName.trim() || fontStatus !== "ready" || typedPreviewStatus !== "ready"} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button></div>
-        </form> : <div className="mt-3"><label htmlFor="signature-upload" className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)]"><Upload size={14} aria-hidden="true" />Choose image</label><input id="signature-upload" type="file" accept="image/*" className="sr-only" onChange={(event) => upload(event.target.files?.[0])} /></div>}
+          <div className="mt-2 flex justify-end"><button type="submit" disabled={saving || !canSave || !typedName.trim() || fontStatus !== "ready" || typedPreviewStatus !== "ready"} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button></div>
+        </form> : <div className="mt-3"><label htmlFor="signature-upload" className={`inline-flex items-center gap-2 rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] ${canSave ? "cursor-pointer" : "cursor-not-allowed opacity-50"}`}><Upload size={14} aria-hidden="true" />Choose image</label><input id="signature-upload" type="file" accept="image/*" disabled={!canSave} className="sr-only" onChange={(event) => upload(event.target.files?.[0])} /></div>}
       </>}
 
       {error ? <p className="mt-3 text-[12px] text-red-800" role="alert" aria-live="polite">{error}</p> : null}
       {!loading && <div className="mt-4 border-t border-[var(--color-line)] pt-4">
         <label className={`flex items-start gap-2.5 text-[12px] ${canApply ? "text-[var(--color-ink-2)]" : "text-[var(--color-muted)]"}`}>
-          <input type="checkbox" className="mt-0.5 accent-[var(--color-forest)]" checked={includeAuthorSignature} disabled={!canApply} onChange={toggleApply} />
+          <input type="checkbox" className="mt-0.5 accent-[var(--color-forest)]" checked={canApply && includeAuthorSignature} disabled={!canApply} onChange={toggleApply} />
           <span><span className="font-medium">Add my signature to this policy</span><span className="mt-0.5 block text-[11px] leading-4">{policy.showAcknowledgement === false ? "Enable the acknowledgement page to apply your signature." : !signature ? "Save a signature before applying it." : includeAuthorSignature && authorSignatureDate ? `Applies to this document · ${authorSignatureDate}` : "Your mark appears in the existing Signature field."}</span></span>
         </label>
         <p className="mt-2 text-[10px] leading-4 text-[var(--color-muted)]">This is a visual signature mark and does not verify identity.</p>

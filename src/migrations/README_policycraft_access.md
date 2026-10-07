@@ -29,7 +29,7 @@ Confirm all participating tables use InnoDB, case-insensitive email uniqueness i
 
 ## Migration order
 
-For an existing installation, verify earlier migrations are already recorded; do not reapply ALTER statements blindly. For a fresh installation apply, in order: `2026_09_create_policycraft_documents.sql`, `2026_09_create_policycraft_cover_assets.sql`, `2026_09_add_policy_type_to_policycraft_cover_templates.sql`, `2026_09_create_policycraft_user_signatures.sql`, then `2026_10_create_policycraft_access.sql`. The administrator bootstrap is a separate manual step after the access tables. Record filename, applied UTC time, operator, and verification result in your deployment migration ledger. No application startup path runs these SQL files.
+For an existing installation, verify earlier migrations are already recorded; do not reapply ALTER statements blindly. For a fresh installation apply, in order: `2026_09_create_policycraft_documents.sql`, `2026_09_create_policycraft_cover_assets.sql`, `2026_09_add_policy_type_to_policycraft_cover_templates.sql`, `2026_10_reset_policycraft_signatures.sql`, then `2026_10_create_policycraft_access.sql`. The single signature migration deletes existing signatures and creates one table scoped to user, organization, and policy; run it once with signature writes paused. The administrator bootstrap is a separate manual step after the access tables. Record filename, applied UTC time, operator, and verification result in your deployment migration ledger. No application startup path runs these SQL files.
 
 ## Apply and bootstrap
 

@@ -92,7 +92,7 @@ export const useBuilder = create<BuilderState>()(
       setPolicy: (p) => {
         const next = normalizePolicyRevisionHistory(normalizePolicyStructure(normalizePolicyQuantitative(initializeFocusAreaCatalogFromDefaults(p))));
         Object.assign(next, normalizePolicyCovers(next));
-        set({ policy: next, includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null });
+        set({ policy: next, includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null, authorSignatureUpdatedAt: null });
       },
       setImportedPolicy: (reference) => set({ importedPolicy: reference }),
       clearImportedPolicy: () => set({ importedPolicy: null }),
@@ -124,12 +124,13 @@ export const useBuilder = create<BuilderState>()(
           includeAuthorSignature: false,
           authorSignatureChoiceMade: false,
           authorSignatureDate: null,
+          authorSignatureUpdatedAt: null,
         });
       },
-      reset: () => set({ policy: normalizePolicyRevisionHistory(initialPolicy()), importedPolicy: null, coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null }),
+      reset: () => set({ policy: normalizePolicyRevisionHistory(initialPolicy()), importedPolicy: null, coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null, authorSignatureUpdatedAt: null }),
       loadSample: () => {
         const sample = makeSamplePolicy();
-        set({ policy: normalizePolicyRevisionHistory(normalizePolicyQuantitative(sample)), coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null });
+        set({ policy: normalizePolicyRevisionHistory(normalizePolicyQuantitative(sample)), coverEditorRequest: null, step: "structure", includeAuthorSignature: false, authorSignatureChoiceMade: false, authorSignatureDate: null, authorSignatureUpdatedAt: null });
       },
     }),
     {

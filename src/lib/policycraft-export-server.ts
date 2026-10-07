@@ -15,7 +15,7 @@ export async function preparePolicyCraftRequestExport(request: Request) {
       return organization ? { organization } : null;
     },
     assets: resolveCoverAssets,
-    signature: getPolicyCraftUserSignature,
+    signature: (userId, organizationId, documentId) => getPolicyCraftUserSignature(userId, { organizationId, documentId }),
   });
   return { prepared };
 }

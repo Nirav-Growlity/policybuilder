@@ -71,14 +71,14 @@ For a fresh PolicyCraft database, apply the files in this order:
 1. `src/migrations/2026_09_create_policycraft_documents.sql`
 2. `src/migrations/2026_09_create_policycraft_cover_assets.sql`
 3. `src/migrations/2026_09_add_policy_type_to_policycraft_cover_templates.sql`
-4. `src/migrations/2026_09_create_policycraft_user_signatures.sql`
+4. `src/migrations/2026_10_reset_policycraft_signatures.sql` (one signature table, scoped to user, organization, and policy; deletes existing signatures)
 5. `src/migrations/2026_10_create_policycraft_access.sql`
 6. `src/migrations/2026_10_create_policycraft_organizations.sql` (registry cutover; follow the organization rollout guide)
 7. `src/migrations/2026_10_create_policycraft_tasks.sql` (when deploying the task workspace)
 
 For an existing database, apply only migrations that are confirmed missing. In particular, `2026_09_add_policy_type_to_policycraft_cover_templates.sql` uses `ALTER TABLE` and `CREATE INDEX`; do not run it again if those changes are already present. Stop if a migration is partly applied or its expected schema does not match. Have the database owner reconcile it instead of guessing or re-running SQL.
 
-These are additive PolicyCraft tables; they do not change ESG users, organizations, or sites. Never grant PolicyCraft access by editing `users.role`, `users.org_id`, or `users.org_code`.
+The single signature migration replaces both previous signature tables with `policycraft_user_signatures`, scoped to user, organization, and policy. It deletes all stored signatures each time it is run; run it once during the owner's deployment process with signature writes paused. These migrations do not change ESG users, organizations, or sites. Never grant PolicyCraft access by editing `users.role`, `users.org_id`, or `users.org_code`.
 
 ## 5. Apply the access migration and verify it
 
