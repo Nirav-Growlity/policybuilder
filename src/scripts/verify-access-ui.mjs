@@ -133,12 +133,18 @@ try {
   await page.goto(`${base}/accept-invitation?token=mock-token`);
   await page.getByLabel("Create password", { exact: true }).waitFor();
   await page.getByLabel("Confirm password", { exact: true }).waitFor();
+  const newManagerEmail = page.getByLabel("Email", { exact: true });
+  assert.equal(await newManagerEmail.inputValue(), "avery@example.test");
+  assert.equal(await newManagerEmail.getAttribute("autocomplete"), "username");
+  assert.equal(await newManagerEmail.isEditable(), false, "the invited email is fixed during account creation");
   await page.screenshot({ path: `${output}/new-manager-password-desktop.png`, fullPage: true });
   await page.getByLabel("Create password", { exact: true }).fill("valid-test-password");
   await page.getByLabel("Confirm password", { exact: true }).fill("valid-test-password");
   await page.getByRole("button", { name: "Create account & accept", exact: true }).click();
   await page.waitForURL((url) => url.pathname === "/login" && url.searchParams.get("next") === "/manager");
   await page.getByRole("heading", { name: "Sign in to your workspace", exact: true }).waitFor();
+  assert.equal(await page.getByLabel("Email", { exact: true }).inputValue(), "avery@example.test");
+  assert.equal(await page.getByLabel("Email", { exact: true }).isEditable(), false, "invitation sign-in keeps the new manager email fixed");
   assert.deepEqual(invitationRequests.map(({ method }) => method), ["GET", "POST"]);
   assert.deepEqual(invitationRequests[1].body, { password: "valid-test-password" });
   assert.equal(signOutCalls, 1, "new account acceptance clears the previous signed-in account");
@@ -160,6 +166,7 @@ try {
   await page.getByRole("button", { name: "Retry sign in", exact: true }).click();
   await page.waitForURL((url) => url.pathname === "/login" && url.searchParams.get("next") === "/manager");
   await page.getByRole("heading", { name: "Sign in to your workspace", exact: true }).waitFor();
+  assert.equal(await page.getByLabel("Email", { exact: true }).inputValue(), "avery@example.test", "sign-in retry retains the manager email");
   assert.equal(invitationPostCount, 2, "sign-in retry does not repost the consumed invitation");
   assert.equal(signOutCalls, 3, "retry repeats only the session cleanup step");
   newInviteAccepted = false;

@@ -18,7 +18,9 @@ function safeNext(value: string | null, access: PolicyCraftAccess): string {
 function LoginPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [email, setEmail] = React.useState("");
+  const invitedEmail = searchParams.get("email")?.trim() || "";
+  const [email, setEmail] = React.useState(invitedEmail);
+  const [emailLocked, setEmailLocked] = React.useState(Boolean(invitedEmail));
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
@@ -73,8 +75,9 @@ function LoginPageContent() {
           <form className="mt-7 space-y-4" onSubmit={submit}>
             <label className="block text-sm font-medium">
               Email
-              <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" type="email" name="email" required autoComplete="email" spellCheck={false} value={email} onChange={(event) => setEmail(event.target.value)} />
+              <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] read-only:bg-[var(--color-cream-2)]" type="email" name="email" required autoComplete="username" spellCheck={false} readOnly={emailLocked} value={email} onChange={(event) => setEmail(event.target.value)} />
             </label>
+            {emailLocked ? <button type="button" className="text-xs font-semibold text-[var(--color-forest)] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]" onClick={() => { setEmailLocked(false); setEmail(""); }}>Use another email</button> : null}
             <label className="block text-sm font-medium">
               Password
               <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" type="password" name="password" required autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
