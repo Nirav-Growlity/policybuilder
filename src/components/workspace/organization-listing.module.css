@@ -1,0 +1,102 @@
+.listing {
+  --color-forest: var(--pc-primary);
+  --color-forest-deep: var(--pc-primary);
+  --color-forest-soft: var(--pc-selection);
+  --color-line: var(--pc-divider);
+  --color-line-2: var(--pc-control);
+  --color-cream-2: var(--pc-inset);
+  --color-ink: var(--pc-text);
+  --color-ink-2: var(--pc-text);
+  --color-muted: var(--pc-muted);
+  color: var(--pc-text);
+  font-family: var(--pc-font);
+}
+
+.listing :global(h1),
+.listing :global(h2),
+.listing :global(h3),
+.listing :global(h4),
+.listing :global(h5),
+.listing :global(h6) { font-family: var(--pc-font); }
+
+.listing :global(.bg-white) { background-color: var(--pc-panel) !important; }
+.listing :global(.bg-red-50) { background-color: var(--pc-error-surface) !important; }
+.listing :global(.text-red-900) { color: var(--pc-error) !important; }
+.listing :global(.border-red-200) { border-color: color-mix(in srgb, var(--pc-error) 34%, var(--pc-divider)) !important; }
+.listing :global(.border-emerald-200) { border-color: color-mix(in srgb, var(--pc-success) 35%, var(--pc-divider)) !important; }
+.listing :global(.bg-emerald-50) { background-color: var(--pc-success-surface) !important; }
+.listing :global(.text-emerald-900) { color: var(--pc-success) !important; }
+.listing :global(.bg-emerald-100) { background-color: color-mix(in srgb, var(--pc-success) 12%, var(--pc-panel)) !important; }
+.listing :global(.text-emerald-800) { color: var(--pc-success) !important; }
+
+.pageTitle {
+  color: var(--pc-text);
+  font-size: clamp(28px, 2.2vw, 32px);
+  line-height: 1.15;
+}
+
+.actionLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: var(--pc-text);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+.actionLink:hover { background: var(--pc-inset); }
+.actionLink:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+.primaryAction { min-height: 44px; padding: 0 16px; border-color: var(--pc-primary); background: var(--pc-primary); color: var(--pc-primary-text); font-size: 14px; }
+.primaryAction:hover { background: color-mix(in srgb, var(--pc-primary) 90%, var(--pc-text)); }
+.outlineAction { border-color: var(--pc-control); color: var(--pc-selection-text); }
+.outlineAction:hover { background: var(--pc-selection); }
+
+.searchPanel, .organizationList, .emptyState {
+  border-color: var(--pc-divider);
+  background-color: var(--pc-panel);
+}
+
+.searchField { position: relative; display: block; }
+.searchIcon { position: absolute; z-index: 1; top: 50%; left: 12px; color: var(--pc-muted); pointer-events: none; transform: translateY(-50%); }
+.searchInput { padding-left: 38px !important; }
+.initialLoading { display: grid; gap: 16px; margin-top: 24px; }
+.loadingStatus { display: inline-flex; align-items: center; gap: 8px; color: var(--pc-muted); font-size: 14px; }
+.listHeading { border-color: var(--pc-divider); background: color-mix(in srgb, var(--pc-inset) 76%, var(--pc-panel)); color: var(--pc-muted); }
+.organizationList :global(.divide-y > :not([hidden]) ~ :not([hidden])) { border-color: var(--pc-divider); }
+
+.organizationRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-color: var(--pc-divider);
+}
+
+.rowDetails { min-width: 0; }
+.organizationName { overflow-wrap: anywhere; color: var(--pc-text); font-size: 14px; font-weight: 600; line-height: 1.45; }
+.organizationCode { margin-top: 4px; overflow-wrap: anywhere; color: var(--pc-muted); font-size: 12px; line-height: 1.45; }
+.sourceBadge { max-width: 100%; white-space: normal; }
+.rowActions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.managedLabel { display: inline-flex; min-height: 44px; align-items: center; padding: 0 10px; color: var(--pc-muted); font-size: 12px; }
+
+.createdNotice {
+  border-color: color-mix(in srgb, var(--pc-success) 35%, var(--pc-divider));
+  background: var(--pc-success-surface);
+  color: var(--pc-success);
+}
+
+@media (max-width: 767px) {
+  .organizationRow { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 16px; }
+  .rowActions { justify-content: flex-start; }
+  .primaryAction { width: 100%; }
+  .initialLoading { gap: 12px; margin-top: 20px; }
+  .loadingStatus { justify-self: start; }
+}

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { clsx } from "clsx";
+import { useApplicationSurface } from "./application-surface";
 
 type Variant = "primary" | "secondary" | "ghost" | "ai" | "danger" | "outline";
 type Size = "sm" | "md" | "lg";
@@ -40,6 +41,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     { variant = "secondary", size = "md", icon, trailingIcon, loading, className, children, disabled, ...rest },
     ref
   ) {
+    const application = useApplicationSurface();
     return (
       <button
         ref={ref}
@@ -48,9 +50,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-150 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed",
           variantClasses[variant],
           sizeClasses[size],
+          application && "pc-feature-button pc-focus",
           className
         )}
+        data-pc-variant={application ? variant : undefined}
+        data-pc-size={application ? size : undefined}
         {...rest}
+        aria-busy={loading || rest["aria-busy"] || undefined}
       >
         {loading ? (
           <span className="w-3.5 h-3.5 border-2 border-current border-t-transparent rounded-full animate-spin" />

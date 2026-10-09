@@ -3,12 +3,17 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Building2, ClipboardList, FileText, Loader2, LogOut, Settings2, Shield, Users } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { Building2, ChevronDown, ClipboardList, FileText, Loader2, LogOut, Menu, Settings2, Shield, Users, X } from "lucide-react";
 import { signOut } from "@/lib/auth-client";
 import type { PolicyCraftAccess, PolicyCraftRole } from "@/lib/policycraft-access-types";
 import type { PolicyCraftManagerTaskCollection } from "@/lib/policycraft-task-types";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { policyCraftBuilderStorage } from "@/lib/policycraft-builder-storage";
+import { ApplicationSurface } from "@/components/ui/application-surface";
+import { ApplicationThemeControl } from "@/components/ui/application-theme-control";
+import { ApplicationButton } from "@/components/ui/app-primitives";
+import styles from "./workspace-shell.module.css";
 
 type WorkspaceContextValue = { access: PolicyCraftAccess };
 const WorkspaceContext = React.createContext<WorkspaceContextValue | null>(null);
@@ -49,7 +54,104 @@ export function WorkspaceShell({
   const [signingOut, setSigningOut] = React.useState(false);
   const [retryAccess, setRetryAccess] = React.useState(0);
   const [openTaskCount, setOpenTaskCount] = React.useState(0);
+  const [accountOpenPath, setAccountOpenPath] = React.useState<string | null>(null);
+  const [mobileNavOpenPath, setMobileNavOpenPath] = React.useState<string | null>(null);
+  const accountOpen = accountOpenPath === pathname;
+  const mobileNavOpen = mobileNavOpenPath === pathname;
+  const accountTriggerRef = React.useRef<HTMLButtonElement>(null);
+  const accountBreakpointAtOpenRef = React.useRef<boolean | null>(null);
+  const mobileTriggerRef = React.useRef<HTMLButtonElement>(null);
+  const drawerRef = React.useRef<HTMLElement>(null);
+  const drawerCloseRef = React.useRef<HTMLButtonElement>(null);
+  const reducedMotion = useReducedMotion();
   const setScope = usePolicyCraftScope((state) => state.setScope);
+  const closeAccountMenu = React.useCallback(() => {
+    accountBreakpointAtOpenRef.current = null;
+    setAccountOpenPath(null);
+  }, []);
+
+  React.useEffect(() => {
+    if (!accountOpen) return;
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      closeAccountMenu();
+      accountTriggerRef.current?.focus();
+    }
+    function handlePointerDown(event: PointerEvent) {
+      if (event.target instanceof Element && !event.target.closest(`.${styles.account}`)) closeAccountMenu();
+    }
+    const media = window.matchMedia("(min-width: 1024px)");
+    function handleBreakpointChange(event: MediaQueryListEvent) {
+      if (event.matches === accountBreakpointAtOpenRef.current) return;
+      closeAccountMenu();
+      window.requestAnimationFrame(() => accountTriggerRef.current?.focus());
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("pointerdown", handlePointerDown);
+    media.addEventListener("change", handleBreakpointChange);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("pointerdown", handlePointerDown);
+      media.removeEventListener("change", handleBreakpointChange);
+    };
+  }, [accountOpen, closeAccountMenu]);
+
+  const closeMobileDrawer = React.useCallback(() => {
+    setMobileNavOpenPath(null);
+    window.requestAnimationFrame(() => mobileTriggerRef.current?.focus());
+  }, []);
+
+  React.useEffect(() => {
+    if (accountOpenPath !== null && accountOpenPath !== pathname) {
+      queueMicrotask(closeAccountMenu);
+    }
+    if (mobileNavOpenPath !== null && mobileNavOpenPath !== pathname) {
+      queueMicrotask(() => {
+        setMobileNavOpenPath(null);
+        window.requestAnimationFrame(() => mobileTriggerRef.current?.focus());
+      });
+    }
+  }, [accountOpenPath, closeAccountMenu, mobileNavOpenPath, pathname]);
+
+  function handleDrawerKeyDown(event: React.KeyboardEvent<HTMLElement>) {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMobileDrawer();
+      return;
+    }
+    if (event.key !== "Tab" || !drawerRef.current) return;
+    const focusable = Array.from(drawerRef.current.querySelectorAll<HTMLElement>("a[href], button:not([disabled]), [tabindex]:not([tabindex='-1'])"));
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (!first || !last) {
+      event.preventDefault();
+      drawerCloseRef.current?.focus();
+    } else if (event.shiftKey && (document.activeElement === first || !drawerRef.current.contains(document.activeElement))) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && (document.activeElement === last || !drawerRef.current.contains(document.activeElement))) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
+  React.useEffect(() => {
+    if (!mobileNavOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    drawerCloseRef.current?.focus();
+    const media = window.matchMedia("(min-width: 1024px)");
+    const handleBreakpoint = (event: MediaQueryListEvent) => {
+      if (!event.matches) return;
+      setMobileNavOpenPath(null);
+      window.requestAnimationFrame(() => accountTriggerRef.current?.focus());
+    };
+    media.addEventListener("change", handleBreakpoint);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      media.removeEventListener("change", handleBreakpoint);
+    };
+  }, [mobileNavOpen]);
 
   React.useEffect(() => {
     let active = true;
@@ -121,41 +223,74 @@ export function WorkspaceShell({
 
   if (!access) {
     return (
-      <main className="grid min-h-screen place-items-center bg-[var(--color-cream)] px-5 text-[var(--color-ink)]" aria-busy={!error}>
-        {error ? <div className="max-w-md text-center"><p role="alert" className="text-sm leading-6 text-red-800">{error}</p><button type="button" onClick={() => setRetryAccess((attempt) => attempt + 1)} className="mt-4 inline-flex min-h-10 items-center gap-2 rounded-lg border border-[var(--color-line-2)] bg-white px-4 text-sm font-semibold text-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Shield size={14} aria-hidden="true" />Retry loading workspace</button></div> : <span className="inline-flex items-center gap-2 text-sm text-[var(--color-ink-2)]" role="status" aria-live="polite"><Loader2 size={16} className="animate-spin" aria-hidden="true" />Loading workspace…</span>}
-      </main>
+      <ApplicationSurface className={styles.accessState} aria-busy={!error}>
+        {error ? <main className={styles.accessMessage}><p role="alert">{error}</p><ApplicationButton type="button" onClick={() => setRetryAccess((attempt) => attempt + 1)} leadingIcon={<Shield size={14} aria-hidden="true" />}>Retry loading workspace</ApplicationButton></main> : <main className={styles.loading} role="status" aria-live="polite"><Loader2 size={16} className={styles.spinner} aria-hidden="true" />Loading workspace…</main>}
+      </ApplicationSurface>
     );
   }
 
   return (
     <WorkspaceContext.Provider value={{ access }}>
-      <div className="min-h-screen bg-[var(--color-cream)] text-[var(--color-ink)]" style={role === "user" ? undefined : { "--color-muted": "#5f6e65" } as React.CSSProperties}>
-        <a href="#workspace-main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[200] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow">Skip to workspace</a>
-        <header className="border-b border-[var(--color-line)] bg-[var(--color-paper)]">
-          <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-3 px-5 py-4 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-x-6 lg:px-10">
-            <Link href={safeInternalPath(access.homeHref)} className="col-start-1 row-start-1 flex min-w-0 shrink-0 items-center gap-2.5 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[var(--color-forest)] text-white"><Shield size={17} aria-hidden="true" /></span>
-              <span className="min-w-0"><span className="block font-display text-[15px] font-semibold leading-tight">PolicyCraft</span><span className="block text-[10px] uppercase tracking-[.14em] text-[var(--color-ink-2)]">Workspace</span></span>
-            </Link>
-            <nav aria-label="Workspace navigation" className="col-span-2 row-start-2 flex min-w-0 flex-wrap items-center gap-1 lg:col-span-1 lg:col-start-2 lg:row-start-1">
-              {NAVIGATION[role].map(({ href, label, icon: Icon }) => {
-                const active = pathname === href || (href === "/manager" && pathname.startsWith("/manager/") && !pathname.startsWith("/manager/tasks")) || (href !== "/admin" && href !== "/manager" && pathname.startsWith(`${href}/`)) || (href === "/admin" && pathname.startsWith("/admin/managers/"));
-                return <Link key={href} href={href} aria-current={active ? "page" : undefined} aria-label={role === "manager" && href === "/manager/tasks" ? `Tasks${openTaskCount ? `, ${openTaskCount} open` : ""}` : undefined} className={`inline-flex min-h-9 items-center gap-2 rounded-lg px-3 text-[13px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] ${active ? "bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)]" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)]"}`}><Icon size={15} aria-hidden="true" />{label}{role === "manager" && href === "/manager/tasks" && openTaskCount > 0 ? <span className="ml-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-[var(--color-forest)] px-1 text-[10px] font-bold tabular-nums text-white" aria-hidden="true">{openTaskCount > 99 ? "99+" : openTaskCount}</span> : null}</Link>;
-              })}
-            </nav>
-            <div className="col-start-2 row-start-1 flex min-w-0 items-center justify-self-end gap-2 sm:gap-3 lg:col-start-3">
-              <div className="min-w-0 text-right">
-                <p className="max-w-24 truncate text-[12px] font-semibold sm:max-w-48" title={access.actor.name}>{access.actor.name || access.actor.email}</p>
-                <p className="max-w-24 truncate text-[10px] capitalize text-[var(--color-ink-2)] sm:max-w-48" title={access.actor.email}>{role}</p>
+      <div className={styles.workspaceRoot} style={role === "user" ? undefined : { "--color-muted": "#5f6e65" } as React.CSSProperties}>
+        <ApplicationSurface className={styles.chrome}>
+          <a href="#workspace-main" className={styles.skipLink}>Skip to workspace</a>
+          <header className={styles.header} inert={mobileNavOpen}>
+            <div className={styles.headerInner}>
+              <Link href={safeInternalPath(access.homeHref)} className={styles.brand}>
+                <span className={styles.brandMark}><Shield size={17} aria-hidden="true" /></span>
+                <span><span className={styles.brandName}>PolicyCraft</span><span className={styles.brandCaption}>Workspace</span></span>
+              </Link>
+              <nav aria-label="Workspace navigation" className={styles.desktopNav}>
+                {NAVIGATION[role].map(({ href, label, icon: Icon }) => {
+                  const active = pathname === href || (href === "/manager" && pathname.startsWith("/manager/") && !pathname.startsWith("/manager/tasks")) || (href !== "/admin" && href !== "/manager" && pathname.startsWith(`${href}/`)) || (href === "/admin" && pathname.startsWith("/admin/managers/"));
+                  return <Link key={href} href={href} aria-current={active ? "page" : undefined} aria-label={role === "manager" && href === "/manager/tasks" ? `Tasks${openTaskCount ? `, ${openTaskCount} open` : ""}` : undefined} className={`${styles.navLink} ${active ? styles.navLinkActive : ""}`}>
+                    {active ? <motion.span className={styles.navMarker} layoutId="workspace-nav-marker" transition={{ duration: reducedMotion ? 0 : 0.15, ease: "easeOut" }} aria-hidden="true" /> : null}
+                    <Icon size={15} aria-hidden="true" /><span>{label}</span>{role === "manager" && href === "/manager/tasks" && openTaskCount > 0 ? <span className={styles.taskBadge} aria-hidden="true">{openTaskCount > 99 ? "99+" : openTaskCount}</span> : null}
+                  </Link>;
+                })}
+              </nav>
+              <div className={styles.headerActions}>
+                <div className={styles.account} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) closeAccountMenu(); }}>
+                  <button ref={accountTriggerRef} type="button" className={styles.accountTrigger} aria-label={`Account for ${access.actor.name || access.actor.email}, ${role}`} aria-expanded={accountOpen} aria-controls={accountOpen ? "workspace-account-menu" : undefined} onClick={() => { if (accountOpen) closeAccountMenu(); else { accountBreakpointAtOpenRef.current = window.matchMedia("(min-width: 1024px)").matches; setAccountOpenPath(pathname); } setMobileNavOpenPath(null); }}>
+                    <span className={styles.accountIdentity}><span className={styles.accountName}>{access.actor.name || access.actor.email}</span><span className={styles.accountRole}>{role}</span></span>
+                    <ChevronDown size={16} aria-hidden="true" className={accountOpen ? styles.chevronOpen : ""} />
+                  </button>
+                  {accountOpen ? <motion.div id="workspace-account-menu" className={styles.accountMenu} role="group" aria-label="Account actions" initial={reducedMotion ? false : { opacity: 0, scale: 0.97, y: -3 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: reducedMotion ? 0 : 0.15, ease: "easeOut" }}>
+                      <div className={styles.accountDetails}><strong>{access.actor.name || "Your account"}</strong><span title={access.actor.email}>{access.actor.email}</span><span className={styles.roleLabel}>{role}</span></div>
+                      <ApplicationThemeControl />
+                      <ApplicationButton type="button" variant="ghost" className={styles.signOutButton} onClick={() => void handleSignOut()} disabled={signingOut} busy={signingOut} busyLabel="Signing out…" leadingIcon={!signingOut ? <LogOut size={15} aria-hidden="true" /> : undefined}>Sign out</ApplicationButton>
+                    </motion.div> : null}
+                </div>
+                <button ref={mobileTriggerRef} type="button" className={styles.mobileNavTrigger} aria-label={mobileNavOpen ? "Close workspace navigation" : "Open workspace navigation"} aria-expanded={mobileNavOpen} aria-controls={mobileNavOpen ? "workspace-mobile-navigation" : undefined} onClick={() => { setMobileNavOpenPath(mobileNavOpen ? null : pathname); setAccountOpenPath(null); }}>
+                  {mobileNavOpen ? <X size={19} aria-hidden="true" /> : <Menu size={19} aria-hidden="true" />}
+                </button>
               </div>
-              <button type="button" onClick={() => void handleSignOut()} disabled={signingOut} aria-label={signingOut ? "Signing out" : "Sign out"} title={signingOut ? "Signing out" : "Sign out"} className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] px-3 text-[12px] font-medium text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-60">
-                {signingOut ? <Loader2 size={14} className="animate-spin" aria-hidden="true" /> : <LogOut size={14} aria-hidden="true" />}<span className="hidden sm:inline">{signingOut ? "Signing out…" : "Sign out"}</span>
-              </button>
             </div>
-          </div>
-        </header>
-        {error ? <div role="alert" className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 pt-4 text-sm text-red-800 lg:px-10"><p className="min-w-0">{error}</p><button type="button" onClick={() => void handleSignOut()} disabled={signingOut} className="inline-flex min-h-9 shrink-0 items-center gap-2 rounded-md px-3 font-semibold hover:bg-red-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-red-900 disabled:opacity-60"><LogOut size={14} aria-hidden="true" />Retry sign out</button></div> : null}
-        <main id="workspace-main" className="mx-auto max-w-7xl px-5 py-7 lg:px-10 lg:py-9">{children}</main>
+          </header>
+          {error ? <div role="alert" className={styles.signOutError} inert={mobileNavOpen}><p>{error}</p><ApplicationButton type="button" variant="ghost" size="sm" onClick={() => void handleSignOut()} disabled={signingOut} leadingIcon={<LogOut size={14} aria-hidden="true" />}>Retry sign out</ApplicationButton></div> : null}
+          {mobileNavOpen ? <div className={styles.drawerLayer}>
+            <button type="button" className={styles.drawerBackdrop} aria-hidden="true" tabIndex={-1} onClick={closeMobileDrawer} />
+            <motion.aside ref={drawerRef} id="workspace-mobile-navigation" className={styles.mobileDrawer} role="dialog" aria-modal="true" aria-labelledby="workspace-drawer-title" initial={reducedMotion ? false : { x: "100%" }} animate={{ x: 0 }} transition={{ duration: reducedMotion ? 0 : 0.25, ease: "easeOut" }} onKeyDown={handleDrawerKeyDown}>
+              <div className={styles.drawerHeader}>
+                <Link href={safeInternalPath(access.homeHref)} className={styles.brand} onClick={closeMobileDrawer}><span className={styles.brandMark}><Shield size={17} aria-hidden="true" /></span><span><span className={styles.brandName}>PolicyCraft</span><span className={styles.brandCaption}>Workspace</span></span></Link>
+                <h2 id="workspace-drawer-title" className={styles.visuallyHidden}>Workspace navigation</h2>
+                <button ref={drawerCloseRef} type="button" className={styles.mobileNavTrigger} aria-label="Close workspace navigation" onClick={closeMobileDrawer}><X size={19} aria-hidden="true" /></button>
+              </div>
+              <section className={styles.drawerAccount} aria-label="Account">
+                <div className={styles.drawerIdentity}><strong>{access.actor.name || access.actor.email}</strong><span>{access.actor.email}</span><span className={styles.roleLabel}>{role}</span></div>
+                <ApplicationThemeControl />
+                <ApplicationButton type="button" variant="ghost" className={styles.signOutButton} onClick={() => void handleSignOut()} disabled={signingOut} busy={signingOut} busyLabel="Signing out…" leadingIcon={!signingOut ? <LogOut size={15} aria-hidden="true" /> : undefined}>Sign out</ApplicationButton>
+              </section>
+              <nav aria-label="Workspace navigation" className={styles.mobileNav}>
+                {NAVIGATION[role].map(({ href, label, icon: Icon }) => {
+                  const active = pathname === href || (href === "/manager" && pathname.startsWith("/manager/") && !pathname.startsWith("/manager/tasks")) || (href !== "/admin" && href !== "/manager" && pathname.startsWith(`${href}/`)) || (href === "/admin" && pathname.startsWith("/admin/managers/"));
+                  return <Link key={href} href={href} aria-current={active ? "page" : undefined} aria-label={role === "manager" && href === "/manager/tasks" ? `Tasks${openTaskCount ? `, ${openTaskCount} open` : ""}` : undefined} className={`${styles.mobileNavLink} ${active ? styles.mobileNavLinkActive : ""}`} onClick={closeMobileDrawer}><Icon size={17} aria-hidden="true" /><span>{label}</span>{role === "manager" && href === "/manager/tasks" && openTaskCount > 0 ? <span className={styles.taskBadge} aria-hidden="true">{openTaskCount > 99 ? "99+" : openTaskCount}</span> : null}</Link>;
+                })}
+              </nav>
+            </motion.aside>
+          </div> : null}
+        </ApplicationSurface>
+        <main id="workspace-main" className="mx-auto max-w-7xl px-5 py-7 lg:px-10 lg:py-9" inert={mobileNavOpen}>{children}</main>
       </div>
     </WorkspaceContext.Provider>
   );

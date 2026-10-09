@@ -1,0 +1,16 @@
+.application { min-height: 100dvh; background: var(--pc-page); color: var(--pc-text); }
+.stepContent { min-height: 100%; animation: step-appear 150ms ease both; }
+.taskSummary { container-type: inline-size; }
+.taskSummaryGrid { display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr); gap: 8px 16px; }
+.taskSummaryHeading, .taskSummaryProgress { min-width: 0; }
+.taskSummaryActions { display: flex; min-width: 0; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 8px; }
+@container (min-width: 520px) {
+  .taskSummaryGrid { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .taskSummaryHeading { grid-column: 1 / -1; }
+  .taskSummaryActions { justify-content: flex-end; }
+}
+@container (min-width: 900px) {
+  .taskSummaryGrid { grid-template-columns: minmax(0, 1fr) minmax(150px, 220px) auto; }
+  .taskSummaryHeading { grid-column: auto; }
+}
+@keyframes step-appear { from { opacity: .82; } to { opacity: 1; } }

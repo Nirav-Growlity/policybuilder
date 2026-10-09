@@ -8,12 +8,16 @@ import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { Modal } from "@/components/ui/modal";
 import { isStandaloneOrganization, OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
+import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
+import { ApplicationSurface } from "@/components/ui/application-surface";
+import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { POLICY_PROFILES } from "@/lib/constants";
 import { initialPolicy } from "@/lib/store";
 import { policyCraftScopedUrl } from "@/lib/policycraft-scope-utils";
 import type { PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
 import type { PolicyDocumentSummary } from "@/lib/policycraft-types";
 import type { Policy, PolicyType } from "@/lib/types";
+import styles from "./page.module.css";
 
 type View = "active" | "archived";
 type Filter = "all" | PolicyType;
@@ -219,78 +223,105 @@ export default function ManagerWorkspacePage() {
   } : null;
 
   if (!organizations.length) return (
-    <section className="mx-auto max-w-2xl py-12 text-center">
-      <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-[var(--color-forest-soft)] text-[var(--color-forest)]"><Building2 size={22} aria-hidden="true" /></div>
-      <h1 className="mt-5 font-display text-2xl font-semibold">No organizations assigned</h1>
-      <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-[var(--color-ink-2)]">Ask your PolicyCraft administrator to assign an organization. Its shared policies will appear here when access is ready.</p>
-    </section>
+    <ApplicationSurface data-pc-workspace="manager" className={styles.surface}>
+      <section className={styles.page} aria-labelledby="manager-page-title">
+        <section className={styles.emptyOrganizations}>
+          <div className={styles.emptyIcon}><Building2 size={22} aria-hidden="true" /></div>
+          <h1 id="manager-page-title" className={styles.pageTitle}>No organizations assigned</h1>
+          <p>Ask your PolicyCraft administrator to assign an organization. Its shared policies will appear here when access is ready.</p>
+        </section>
+      </section>
+    </ApplicationSurface>
   );
 
-  return <>
-    <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-      <div className="min-w-0">
-        <p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Manager workspace</p>
-        <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight sm:text-[34px]">Organizations & policies</h1>
-        <p className="mt-1 text-sm text-[var(--color-ink-2)]">View shared policies across all assigned organizations or focus on one.</p>
-      </div>
-      <div className="flex flex-col gap-2 sm:min-w-64">
-        <label htmlFor="manager-organization" className="text-[11px] font-semibold text-[var(--color-ink-2)]">Organization</label>
-        <select id="manager-organization" name="organizationId" value={organization ? String(organization.id) : "all"} onChange={(event) => selectOrganization(event.target.value)} className="h-11 min-w-0 rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm text-[var(--color-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]">
-          <option value="all">All organizations</option>
+  return <ApplicationSurface data-pc-workspace="manager" className={styles.surface}>
+    <section className={styles.page} aria-labelledby="manager-page-title">
+      <header className={styles.header}>
+        <div className={styles.headingGroup}>
+          <p className={styles.eyebrow}>Manager workspace</p>
+          <h1 id="manager-page-title" className={styles.pageTitle}>Organizations &amp; policies</h1>
+          <p className={styles.description}>View shared policies across all assigned organizations or focus on one.</p>
+        </div>
+        <div className={styles.headerControls}>
+          <label htmlFor="manager-organization" className={styles.filterLabel}>Organization</label>
+          <select id="manager-organization" name="organizationId" value={organization ? String(organization.id) : "all"} onChange={(event) => selectOrganization(event.target.value)} className={styles.select}>
+            <option value="all">All organizations</option>
+            {organizations.map((item) => <option key={item.id} value={item.id}>{item.name} · {organizationSourceName(item)}</option>)}
+          </select>
+        </div>
+      </header>
+
+      {visibleError ? <div role="alert" className={styles.alert}><span>{visibleError}</span><button type="button" onClick={() => void load()} aria-label="Retry loading policies" className={styles.alertAction}><RefreshCw size={15} aria-hidden="true" />Retry</button></div> : null}
+      {visibleNotice ? <p role="status" aria-live="polite" className={styles.notice}>{visibleNotice}</p> : null}
+
+      <section className={styles.recordsSection} aria-label="Policy records">
+        <div className={styles.sectionHeader}>
+          <div className={styles.sectionIdentity}>
+            <h2 className={styles.organizationName}>{organization?.name || "All organizations"}{organization ? <OrganizationSourceBadge organization={organization} className={styles.sourceBadge} /> : null}</h2>
+            <p className={styles.recordCount} aria-live="polite">{visibleDocuments.length} of {documents.length} {view === "archived" ? "archived" : "active"} {documents.length === 1 ? "policy" : "policies"}</p>
+          </div>
+          <div className={styles.headerActions}>
+            <div className={styles.viewSegments} role="group" aria-label="Policy status">
+              {(["active", "archived"] as const).map((item) => <button key={item} type="button" aria-pressed={view === item} onClick={() => { setNotice(null); updateQuery({ view: item }, "push"); }} className={`${styles.segment} ${view === item ? styles.segmentSelected : ""}`}>{item === "archived" ? <><Archive size={13} aria-hidden="true" />Archived</> : "Active"}</button>)}
+            </div>
+            {view === "active" ? organization ? <>
+              <Link href={`/builder?orgId=${organization.id}`} className={styles.newPolicy}><Plus size={15} aria-hidden="true" />New policy</Link>
+              {isStandaloneOrganization(organization) ? <Link href={`/manager/organizations/${organization.id}`} className={styles.editLink}>Edit organization details</Link> : null}
+            </> : <ApplicationButton variant="primary" size="md" leadingIcon={<Plus size={15} aria-hidden="true" />} onClick={() => { setNewPolicyOrgId(String(organizations[0]?.id || "")); setNewPolicyOpen(true); }}>New policy</ApplicationButton> : null}
+          </div>
+        </div>
+
+        <div className={styles.filterBar}>
+          <div className={styles.typeFilters} role="group" aria-label="Filter by policy type">
+            {["all", ...TYPES].map((type) => <button key={type} type="button" aria-pressed={filter === type} onClick={() => updateQuery({ type: type as Filter }, "push")} className={`${styles.filter} ${filter === type ? styles.filterSelected : ""}`}>{type === "all" ? "All" : POLICY_PROFILES[type as PolicyType].short}</button>)}
+          </div>
+          <label htmlFor="manager-policy-search" className={styles.searchField}>
+            <Search size={15} aria-hidden="true" className={styles.searchIcon} />
+            <ApplicationInput id="manager-policy-search" name="q" type="search" autoComplete="off" value={searchDraft} onChange={(event) => setSearchDraft(event.target.value)} placeholder="Search policies…" className={styles.searchInput} />
+            <span className={styles.visuallyHidden}>Search policies by title</span>
+          </label>
+        </div>
+
+        {isLoading ? documents.length === 0 ? (
+          <div className={styles.loadingRecords}>
+            <div className={styles.loading} role="status" aria-live="polite" aria-busy="true"><Loader2 size={20} className={styles.spinner} aria-hidden="true" /><span>Loading policies…</span></div>
+            <RecordSkeleton />
+          </div>
+        ) : (
+          <div className={styles.loading} role="status" aria-live="polite" aria-busy="true"><Loader2 size={20} className={styles.spinner} aria-hidden="true" /><span>Loading policies…</span></div>
+        ) : visibleError ? null : visibleDocuments.length === 0 ? <div className={styles.emptyState}><FileText size={24} className={styles.emptyStateIcon} aria-hidden="true" /><h2>{documents.length === 0 ? view === "archived" ? "No archived policies" : "No policies yet" : "No matching policies"}</h2><p>{documents.length === 0 ? view === "archived" ? "Archived policies will be listed here." : allOrganizationsSelected ? "Create a policy in an assigned organization to start the shared workspace." : "Create a policy for this organization to start the shared workspace." : "Try another title or policy type filter."}</p>{documents.length > 0 && (searchDraft || filter !== "all") ? <button type="button" onClick={() => { setSearchDraft(""); updateQuery({ q: "", type: "all" }, "push"); }} className={styles.clearFilters}>Clear filters</button> : null}</div> : <div className={styles.records}>
+          {visibleDocuments.map((document) => <article key={`${document.organizationId}:${document.id}`} className={styles.record}>
+            <div role="img" aria-label={`Cover preview for ${document.title}`} className={styles.coverThumbnail}><div className={styles.coverPage} aria-hidden="true"><PolicyCoverPreview policy={policyFromSummary(document)} assetScope={policyScopeForDocument(document)} /></div></div>
+            <div className={styles.recordBody}>
+              <h3 className={styles.policyTitle} title={document.title}>{document.title}</h3>
+              <p className={styles.policyMeta}><span>{POLICY_PROFILES[document.policyType]?.label || readable(document.policyType)}</span><span aria-hidden="true">·</span><span>Updated {new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(document.updatedAt))}</span></p>
+              {allOrganizationsSelected ? <p className={styles.organizationMeta}>{document.organizationName} · {document.organizationSource === "standalone" ? "PolicyCraft organization" : "ESG organization"}</p> : null}
+              <p className={styles.ownerMeta}>Created by <span>{document.createdBy?.name || document.createdBy?.email || "Workspace member"}</span></p>
+            </div>
+            <div className={styles.actionRow}>
+              {view === "active" ? <><button type="button" aria-label={`Archive ${document.title}`} disabled={Boolean(activeActionId)} onClick={() => { setNotice(null); setArchiveError(""); setArchiveTarget({ document, scopeKey, generation: requestGeneration.current }); }} className={styles.textAction}><Archive size={14} aria-hidden="true" />Archive</button><Link href={`/builder?draft=${encodeURIComponent(document.id)}&orgId=${document.organizationId}`} className={styles.openLink}>Open <ArrowRight size={14} aria-hidden="true" /></Link></> : <span className={styles.archivedLabel}>Archived · contact an administrator to restore</span>}
+            </div>
+          </article>)}
+        </div>}
+      </section>
+
+      <Modal open={newPolicyOpen} onClose={() => setNewPolicyOpen(false)} title="Choose an organization" description="Select where to create this policy. The builder will open with that organization selected." width={460}>
+        <label htmlFor="new-policy-organization" className={styles.modalLabel}>Organization</label>
+        <select id="new-policy-organization" value={newPolicyOrgId} onChange={(event) => setNewPolicyOrgId(event.target.value)} className={styles.modalSelect}>
           {organizations.map((item) => <option key={item.id} value={item.id}>{item.name} · {organizationSourceName(item)}</option>)}
         </select>
-      </div>
-    </div>
-
-    {visibleError ? <div role="alert" className="mt-6 flex items-center justify-between gap-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"><span className="min-w-0">{visibleError}</span><button type="button" onClick={() => void load()} aria-label="Retry loading policies" className="inline-flex min-h-10 shrink-0 items-center gap-2 rounded-md px-2 text-xs font-semibold text-red-900 hover:bg-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-red-900"><RefreshCw size={15} aria-hidden="true" />Retry</button></div> : null}
-    {visibleNotice ? <p role="status" aria-live="polite" className="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">{visibleNotice}</p> : null}
-
-      <div className="mt-7 flex flex-col justify-between gap-3 border-b border-[var(--color-line)] pb-4 sm:flex-row sm:items-end">
-        <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><h2 className="break-words font-display text-xl font-semibold">{organization?.name || "All organizations"}</h2>{organization ? <OrganizationSourceBadge organization={organization} /> : null}</div><p className="mt-1 text-xs text-[var(--color-ink-2)]" aria-live="polite">{visibleDocuments.length} of {documents.length} {view === "archived" ? "archived" : "active"} {documents.length === 1 ? "policy" : "policies"}</p></div>
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="inline-flex rounded-lg border border-[var(--color-line)] bg-white p-1" aria-label="Policy status">
-            {(["active", "archived"] as const).map((item) => <button key={item} type="button" aria-pressed={view === item} onClick={() => { setNotice(null); updateQuery({ view: item }, "push"); }} className={`min-h-9 rounded-md px-3 text-xs font-semibold capitalize focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] ${view === item ? "bg-[var(--color-forest)] text-white" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)]"}`}>{item === "archived" ? <><Archive size={13} className="mr-1 inline" aria-hidden="true" />Archived</> : "Active"}</button>)}
-          </div>
-          {view === "active" ? organization ? <><Link href={`/builder?orgId=${organization.id}`} className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Plus size={15} aria-hidden="true" />New policy</Link>{isStandaloneOrganization(organization) ? <Link href={`/manager/organizations/${organization.id}`} className="inline-flex min-h-10 items-center rounded-lg border border-[var(--color-line-2)] px-3 text-xs font-semibold text-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Edit organization details</Link> : null}</> : <button type="button" onClick={() => { setNewPolicyOrgId(String(organizations[0]?.id || "")); setNewPolicyOpen(true); }} className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Plus size={15} aria-hidden="true" />New policy</button> : null}
+        <div className={styles.dialogActions}>
+          <ApplicationButton type="button" variant="outline" onClick={() => setNewPolicyOpen(false)}>Cancel</ApplicationButton>
+          <ApplicationButton type="button" variant="primary" leadingIcon={<Plus size={15} aria-hidden="true" />} disabled={!newPolicyOrgId} onClick={() => { if (newPolicyOrgId && organizations.some((item) => String(item.id) === newPolicyOrgId)) router.push(`/builder?orgId=${newPolicyOrgId}`); }}>Continue to builder</ApplicationButton>
         </div>
-      </div>
-
-      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by policy type">
-          {["all", ...TYPES].map((type) => <button key={type} type="button" aria-pressed={filter === type} onClick={() => updateQuery({ type: type as Filter }, "push")} className={`min-h-9 rounded-full border px-3 py-1.5 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] ${filter === type ? "border-[var(--color-forest)] bg-[var(--color-forest)] text-white" : "border-[var(--color-line)] bg-white text-[var(--color-ink-2)] hover:border-[var(--color-forest)]"}`}>{type === "all" ? "All" : POLICY_PROFILES[type as PolicyType].short}</button>)}
+      </Modal>
+      <Modal open={Boolean(activeArchiveTarget)} onClose={() => { if (!activeActionId) setArchiveTarget(null); }} title="Archive this policy?" description={`“${activeArchiveTarget?.title || "This policy"}” from ${activeArchiveTarget?.organizationName || "this organization"} will move to Archived and remain available there.`} width={460}>
+        {archiveError ? <p role="alert" className={styles.inlineError}>{archiveError}</p> : null}
+        <div className={styles.dialogActions}>
+          <ApplicationButton type="button" variant="outline" disabled={Boolean(activeActionId)} onClick={() => setArchiveTarget(null)}>Cancel</ApplicationButton>
+          <ApplicationButton type="button" variant="primary" busy={Boolean(activeActionId)} busyLabel="Archiving…" leadingIcon={<Archive size={15} aria-hidden="true" />} disabled={!activeArchiveTarget} onClick={() => activeArchiveTarget && void mutateDocument(activeArchiveTarget, "archive")}>Archive policy</ApplicationButton>
         </div>
-        <label htmlFor="manager-policy-search" className="relative block w-full sm:max-w-xs">
-          <span className="sr-only">Search policies by title</span>
-          <Search size={15} aria-hidden="true" className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-ink-2)]" />
-          <input id="manager-policy-search" name="q" type="search" autoComplete="off" value={searchDraft} onChange={(event) => setSearchDraft(event.target.value)} placeholder="Search policies…" className="h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white pl-9 pr-3 text-sm text-[var(--color-ink)] placeholder:text-[var(--color-ink-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" />
-        </label>
-    </div>
-
-      {isLoading ? <div className="flex justify-center py-20" aria-live="polite" aria-busy="true"><Loader2 size={20} className="animate-spin text-[var(--color-forest)]" aria-hidden="true" /><span className="sr-only">Loading policies…</span></div> : visibleError ? null : visibleDocuments.length === 0 ? <div className="mt-8 rounded-xl border border-dashed border-[var(--color-line-2)] bg-white px-6 py-14 text-center"><FileText size={24} className="mx-auto text-[var(--color-ink-2)]" aria-hidden="true" /><h3 className="mt-3 font-display text-lg font-semibold">{documents.length === 0 ? view === "archived" ? "No archived policies" : "No policies yet" : "No matching policies"}</h3><p className="mx-auto mt-1 max-w-md text-sm text-[var(--color-ink-2)]">{documents.length === 0 ? view === "archived" ? "Archived policies will be listed here." : allOrganizationsSelected ? "Create a policy in an assigned organization to start the shared workspace." : "Create a policy for this organization to start the shared workspace." : "Try another title or policy type filter."}</p>{documents.length > 0 && (searchDraft || filter !== "all") ? <button type="button" onClick={() => { setSearchDraft(""); updateQuery({ q: "", type: "all" }, "push"); }} className="mt-4 inline-flex min-h-10 items-center rounded-lg px-3 text-sm font-semibold text-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Clear filters</button> : null}</div> : <div className="mt-6 divide-y divide-[var(--color-line)] overflow-hidden rounded-xl border border-[var(--color-line)] bg-white">
-        {visibleDocuments.map((document) => <article key={`${document.organizationId}:${document.id}`} className="flex min-w-0 flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-5">
-          <div role="img" aria-label={`Cover preview for ${document.title}`} className="relative h-[88px] w-[64px] shrink-0 overflow-hidden rounded border border-[var(--color-line)] bg-[var(--color-cream-2)]"><div className="absolute left-0 top-0 origin-top-left" style={{ width: "210mm", height: "297mm", transform: "scale(.0765)" }} aria-hidden="true"><PolicyCoverPreview policy={policyFromSummary(document)} assetScope={policyScopeForDocument(document)} /></div></div>
-          <div className="min-w-0 flex-1"><h3 className="truncate font-display text-lg font-semibold" title={document.title}>{document.title}</h3><p className="mt-1 text-xs text-[var(--color-ink-2)]">{POLICY_PROFILES[document.policyType]?.label || readable(document.policyType)} · Updated {new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(document.updatedAt))}</p>{allOrganizationsSelected ? <p className="mt-2 break-words text-xs font-semibold text-[var(--color-forest)]">{document.organizationName} · {document.organizationSource === "standalone" ? "PolicyCraft organization" : "ESG organization"}</p> : null}<p className="mt-2 text-xs text-[var(--color-ink-2)]">Created by <span className="font-semibold">{document.createdBy?.name || document.createdBy?.email || "Workspace member"}</span></p></div>
-          <div className="flex flex-wrap items-center justify-between gap-2 sm:justify-end">
-            {view === "active" ? <><button type="button" aria-label={`Archive ${document.title}`} disabled={Boolean(activeActionId)} onClick={() => { setNotice(null); setArchiveError(""); setArchiveTarget({ document, scopeKey, generation: requestGeneration.current }); }} className="inline-flex min-h-10 items-center gap-1 rounded-lg px-3 text-xs font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-50"><Archive size={13} aria-hidden="true" />Archive</button><Link href={`/builder?draft=${encodeURIComponent(document.id)}&orgId=${document.organizationId}`} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] px-3 text-sm font-semibold text-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]">Open <ArrowRight size={14} aria-hidden="true" /></Link></> : <span className="text-xs text-[var(--color-ink-2)]">Archived · contact an administrator to restore</span>}
-          </div>
-        </article>)}
-      </div>}
-    <Modal open={newPolicyOpen} onClose={() => setNewPolicyOpen(false)} title="Choose an organization" description="Select where to create this policy. The builder will open with that organization selected." width={460}>
-      <label htmlFor="new-policy-organization" className="block text-sm font-semibold">Organization</label>
-      <select id="new-policy-organization" value={newPolicyOrgId} onChange={(event) => setNewPolicyOrgId(event.target.value)} className="mt-2 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]">
-        {organizations.map((item) => <option key={item.id} value={item.id}>{item.name} · {organizationSourceName(item)}</option>)}
-      </select>
-      <div className="mt-6 flex flex-col-reverse justify-end gap-2 sm:flex-row">
-        <button type="button" onClick={() => setNewPolicyOpen(false)} className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</button>
-        <button type="button" disabled={!newPolicyOrgId} onClick={() => { if (newPolicyOrgId && organizations.some((item) => String(item.id) === newPolicyOrgId)) router.push(`/builder?orgId=${newPolicyOrgId}`); }} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-55"><Plus size={15} aria-hidden="true" />Continue to builder</button>
-      </div>
-    </Modal>
-    <Modal open={Boolean(activeArchiveTarget)} onClose={() => { if (!activeActionId) setArchiveTarget(null); }} title="Archive this policy?" description={`“${activeArchiveTarget?.title || "This policy"}” from ${activeArchiveTarget?.organizationName || "this organization"} will move to Archived and remain available there.`} width={460}>
-      {archiveError ? <p role="alert" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-900">{archiveError}</p> : null}
-      <div className="flex flex-col-reverse justify-end gap-2 sm:flex-row">
-        <button type="button" disabled={Boolean(activeActionId)} onClick={() => setArchiveTarget(null)} className="inline-flex min-h-10 items-center justify-center rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-60">Cancel</button>
-        <button type="button" disabled={!activeArchiveTarget || Boolean(activeActionId)} onClick={() => activeArchiveTarget && void mutateDocument(activeArchiveTarget, "archive")} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-60">{activeActionId ? <Loader2 size={15} className="animate-spin" aria-hidden="true" /> : <Archive size={15} aria-hidden="true" />}{activeActionId ? "Archiving…" : "Archive policy"}</button>
-      </div>
-    </Modal>
-  </>;
+      </Modal>
+    </section>
+  </ApplicationSurface>;
 }

@@ -3,6 +3,7 @@ import * as React from "react";
 import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
 import { getPdfCanvasTransform, getPdfPageWidth } from "@/lib/pdf-preview-layout";
 import { PdfRenderLoader } from "@/components/policy/pdf-render-loader";
+import styles from "@/components/policy/pdf-policy-preview.module.css";
 import type { Policy } from "@/lib/types";
 import { policyCraftExportContext, policyCraftScopeKey, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { requestPolicyPreview } from "@/lib/pdf/policy-preview-request";
@@ -81,13 +82,13 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
     setCandidate(current => current?.id === result.id ? null : current);
   };
   return <div className="pdf-preview" aria-label="PDF document preview" aria-busy={updating || undefined}>
-    <div className="mb-2 flex min-h-8 items-center justify-between gap-3 px-1 text-[12px] text-[var(--color-muted)]" role="status" aria-live="polite">
+    <div className="mb-2 flex min-h-8 items-center justify-between gap-3 px-1 text-[12px] text-[var(--pc-muted)]" role="status" aria-live="polite">
       <span className="flex min-w-0 items-center gap-2">
-        <span className={`h-2 w-2 shrink-0 rounded-full ${currentFailure ? "bg-[#b73a3a]" : updating ? "animate-pulse bg-[#b58a23] motion-reduce:animate-none" : "bg-[var(--color-forest-mid)]"}`} />
+        <span className={`h-2 w-2 shrink-0 rounded-full ${currentFailure ? "bg-[var(--pc-error)]" : updating ? "animate-pulse bg-[var(--pc-warning)] motion-reduce:animate-none" : "bg-[var(--pc-success)]"}`} />
         <span className="truncate">{currentFailure ? `${currentFailure.message}${hasPaintedActive && active?.key !== key ? " Showing previous version." : ""}` : updating ? "Updating PDF preview…" : "PDF preview ready"}</span>
       </span>
-      <span className="shrink-0 text-[11px] text-[#89948d]">{currentFailure ? null : updating ? "Rendering" : "Matches download"}</span>
-      {currentFailure && <button type="button" className="shrink-0 rounded-md border border-[var(--color-line-2)] bg-white px-2.5 py-1 text-[11px] font-semibold text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)]" onClick={() => { setFailure(null); setRetry(current => ({ key, count: current?.key === key ? current.count + 1 : 1 })); }}>Retry preview</button>}
+      <span className="shrink-0 text-[11px] text-[var(--pc-muted)]">{currentFailure ? null : updating ? "Rendering" : "Matches download"}</span>
+      {currentFailure && <button type="button" className="shrink-0 rounded-lg border border-[var(--pc-divider)] bg-[var(--pc-panel)] px-2.5 py-1 text-[11px] font-semibold text-[var(--pc-text)] transition-colors hover:border-[var(--pc-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--pc-primary)]" onClick={() => { setFailure(null); setRetry(current => ({ key, count: current?.key === key ? current.count + 1 : 1 })); }}>Retry preview</button>}
     </div>
     <div className="relative">
       {showUpdateOverlay && <div className="pointer-events-none sticky top-0 z-20 h-px">
@@ -193,28 +194,30 @@ export function PdfPages({ bytes, view, onViewChange, interactive, dimmed = fals
       {pagesToRender.has(number) && <PdfPage document={document!} number={number} width={pageWidth} onRendered={(number === 1 || number === pageNumber) && source === bytes ? () => reportPage(number) : undefined} onError={onError} />}
     </div>;
   };
-  return <div ref={host} className="pdf-pages rounded-xl border border-[var(--color-line)] bg-[#eef1ed]">
+  return <div ref={host} className={`${styles.pages} pdf-pages rounded-xl border`}>
     <style>{`
       .pdf-pages .textLayer ::selection { color: transparent !important; -webkit-text-fill-color: transparent; text-shadow: none; background: rgba(37, 99, 235, .26); }
       .pdf-pages .textLayer ::-moz-selection { color: transparent !important; text-shadow: none; background: rgba(37, 99, 235, .26); }
     `}</style>
-    <div className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b border-[var(--color-line)] bg-white/95 px-3 py-2.5 text-[12px] backdrop-blur sm:px-4">
-      <div className="flex items-center gap-2">
-        <button type="button" disabled={pageNumber <= 1} onClick={() => goToPage(pageNumber - 1)} className="grid h-8 w-8 place-items-center rounded-md border border-[var(--color-line)] bg-white text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-35" aria-label="Previous page">←</button>
-        <span className="min-w-[86px] text-center font-medium tabular-nums text-[var(--color-ink-2)]">Page {pageNumber} <span className="text-[var(--color-muted)]">/ {document?.numPages || "—"}</span></span>
-        <button type="button" disabled={!document || pageNumber >= document.numPages} onClick={() => goToPage(pageNumber + 1)} className="grid h-8 w-8 place-items-center rounded-md border border-[var(--color-line)] bg-white text-[var(--color-ink-2)] transition-colors hover:border-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-35" aria-label="Next page">→</button>
-      </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <div className="flex rounded-lg border border-[var(--color-line)] bg-[#f5f6f3] p-0.5" role="group" aria-label="Document view">
-          <button type="button" aria-pressed={viewMode === "continuous"} onClick={() => onViewChange(current => ({ ...current, viewMode: "continuous" }))} className={`h-7 rounded-md px-3 text-[11px] font-medium transition-colors ${viewMode === "continuous" ? "bg-[var(--color-forest)] text-white shadow-sm" : "text-[var(--color-ink-2)] hover:bg-white"}`}>Continuous</button>
-          <button type="button" aria-pressed={viewMode === "paged"} onClick={() => onViewChange(current => ({ ...current, viewMode: "paged" }))} className={`h-7 rounded-md px-3 text-[11px] font-medium transition-colors ${viewMode === "paged" ? "bg-[var(--color-forest)] text-white shadow-sm" : "text-[var(--color-ink-2)] hover:bg-white"}`}>Single page</button>
+    <div className={styles.toolbar}>
+      <div className={styles.pageViewControls}>
+        <div className={styles.pageControls} role="group" aria-label="Page navigation">
+          <button type="button" disabled={pageNumber <= 1} onClick={() => goToPage(pageNumber - 1)} className={styles.controlButton} aria-label="Previous page">←</button>
+          <span className="min-w-[86px] text-center font-medium tabular-nums text-[var(--pc-text)]">Page {pageNumber} <span className="text-[var(--pc-muted)]">/ {document?.numPages || "—"}</span></span>
+          <button type="button" disabled={!document || pageNumber >= document.numPages} onClick={() => goToPage(pageNumber + 1)} className={styles.controlButton} aria-label="Next page">→</button>
         </div>
-        <select aria-label="Preview zoom" value={zoom} onChange={e => onViewChange(current => ({ ...current, zoom: e.target.value }))} className="h-8 rounded-md border border-[var(--color-line)] bg-white px-2.5 text-[11px] font-medium text-[var(--color-ink-2)] outline-none transition-colors focus:border-[var(--color-forest)]">
+        <div className={styles.modeControls} role="group" aria-label="Document view">
+          <button type="button" aria-pressed={viewMode === "continuous"} onClick={() => onViewChange(current => ({ ...current, viewMode: "continuous" }))} className={`${styles.modeButton} ${viewMode === "continuous" ? styles.modeButtonActive : ""}`}>Continuous</button>
+          <button type="button" aria-pressed={viewMode === "paged"} onClick={() => onViewChange(current => ({ ...current, viewMode: "paged" }))} className={`${styles.modeButton} ${viewMode === "paged" ? styles.modeButtonActive : ""}`}>Single page</button>
+        </div>
+      </div>
+      <div className={styles.zoomControls} role="group" aria-label="Zoom controls">
+        <select aria-label="Preview zoom" value={zoom} onChange={e => onViewChange(current => ({ ...current, zoom: e.target.value }))} className={styles.zoomSelect}>
           <option value="fit">Fit to width</option><option value=".75">75%</option><option value="1">100%</option><option value="1.25">125%</option>
         </select>
       </div>
     </div>
-    {error && <p role="alert" className="mx-4 mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-[12px] text-red-800">{error}</p>}
+    {error && <p role="alert" className="mx-4 mt-3 rounded-lg border border-[var(--pc-divider)] bg-[var(--pc-error-surface)] px-3 py-2 text-[12px] text-[var(--pc-error)]">{error}</p>}
     <div className={viewMode === "continuous" ? "min-h-[480px] space-y-8 overflow-x-auto px-3 py-5 sm:px-6 sm:py-7" : "min-h-[480px] overflow-x-auto px-3 py-5 sm:px-6 sm:py-7"} style={{ opacity: dimmed ? 0.16 : 1, transition: "opacity 180ms ease" }}>{document && (viewMode === "continuous" ? pages.map(renderPdfPage) : <PdfPage document={document} number={pageNumber} width={getPdfPageWidth(pageNumber, targetWidth)} onRendered={source === bytes ? () => reportPage(pageNumber) : undefined} onError={onError} />)}</div>
   </div>;
 }
@@ -260,5 +263,5 @@ function PdfPage({ document: pdf, number, width, onRendered, onError }: { docume
     })().catch(error => { if (!cancelled) { console.error("PDF page rendering failed", error); errorHandler.current?.(); } });
     return () => { cancelled = true; render?.cancel(); layer?.cancel(); };
   }, [pdf, number, width]);
-  return <div ref={surface} role="group" aria-label={`Preview page ${number}`} className="relative mx-auto aspect-[210/297] bg-white shadow-[0_8px_28px_rgba(14,26,20,.14)]" style={{ width }} />;
+  return <div ref={surface} role="group" aria-label={`Preview page ${number}`} className={`${styles.paper} relative mx-auto aspect-[210/297] bg-white`} style={{ width }} />;
 }

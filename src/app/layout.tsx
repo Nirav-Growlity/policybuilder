@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ApplicationThemeProvider } from "@/components/ui/application-theme-provider";
+import { Toaster } from "@/components/ui/toast";
 import { DOCUMENT_FONT_FACE_CSS_ALL } from "@/lib/document-fonts";
 import "@fontsource/allura/400.css";
 import "@fontsource/bad-script/400.css";
@@ -22,6 +24,7 @@ export default function RootLayout({
     <html
       lang="en"
       className="h-full antialiased"
+      suppressHydrationWarning
     >
       <head>
         {/* Self-hosted OFL document fonts. Injected as <style> so the CSS
@@ -29,7 +32,7 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: DOCUMENT_FONT_FACE_CSS_ALL }} />
       </head>
       <body className="min-h-full flex flex-col bg-[var(--color-cream)] text-[var(--color-ink)]">
-        {children}
+        <ApplicationThemeProvider><Toaster>{children}</Toaster></ApplicationThemeProvider>
       </body>
     </html>
   );

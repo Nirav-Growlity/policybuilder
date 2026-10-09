@@ -350,59 +350,106 @@ function SignatureMakerForScope({ scope, scopeKey }: { scope: PolicyCraftWorkspa
       description="Save a signature for this organization and policy. It won’t appear on other policies."
       icon={<PenLine size={17} strokeWidth={1.8} aria-hidden="true" />}
     >
-
-      {!scopeKey ? <p className="mt-4 text-[12px] text-[var(--color-muted)]" role="status">Save this draft before adding a signature. Each policy keeps its own signature.</p> : loading ? <p className="mt-4 text-[12px] text-[var(--color-muted)]" role="status">Loading saved signature…</p> : signature ? <div className="mt-4 flex flex-wrap items-center gap-3">
-        <Image src={signature.dataUrl} alt="Your saved signature" width={220} height={56} unoptimized className="h-14 max-w-[220px] rounded border border-[var(--color-line)] object-contain p-2" />
-        <div className="flex flex-wrap gap-2"><button type="button" onClick={() => { previousSignature.current = signature; setSignature(null); setAuthorSignatureApplied(false, null, "system"); setError(""); }} className="rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Replace</button>{confirmDelete ? <><span className="self-center text-[11px] text-red-800">Delete this saved signature?</span><button type="button" disabled={saving} onClick={() => void remove()} className="rounded-md bg-red-700 px-3 py-2 text-[12px] font-medium text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700">Confirm delete</button><button type="button" onClick={() => setConfirmDelete(false)} className="rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</button></> : <button type="button" disabled={saving} onClick={() => setConfirmDelete(true)} className="inline-flex items-center gap-1.5 rounded-md border border-red-200 px-3 py-2 text-[12px] font-medium text-red-800 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"><Trash2 size={14} aria-hidden="true" />Delete</button>}</div>
-      </div> : <>
-        <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Signature input method">
-          {(["draw", "type", "upload"] as const).map((choice) => <button key={choice} type="button" aria-pressed={mode === choice} onClick={() => { setMode(choice); setError(""); }} className={`inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-[12px] font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] ${mode === choice ? "bg-[var(--color-forest)] text-white" : "border border-[var(--color-line-2)] text-[var(--color-ink-2)]"}`}>
-            {choice === "draw" ? <PenLine size={14} aria-hidden="true" /> : choice === "type" ? <Type size={14} aria-hidden="true" /> : <Upload size={14} aria-hidden="true" />}{choice[0].toUpperCase() + choice.slice(1)}
-          </button>)}
-        </div>
-        {mode === "draw" ? <div className="mt-3">
-          <p id="signature-draw-help" className="mb-2 text-[11px] text-[var(--color-muted)]">Draw with your pointer or touch. You can also choose Type for keyboard input.</p>
-          <canvas ref={canvasRef} aria-label="Draw your signature here" aria-describedby="signature-draw-help" className="h-60 w-full touch-none rounded-md border border-dashed border-[var(--color-line-2)] bg-[#fffefa] sm:h-72" style={{ touchAction: "none" }} />
-          <div className="mt-2 flex flex-wrap items-center justify-between gap-2"><div className="flex gap-1"><button type="button" aria-label="Undo last stroke" disabled={historyIndex < 0 || saving} onClick={undo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Undo2 size={13} aria-hidden="true" />Undo</button><button type="button" aria-label="Redo stroke" disabled={historyIndex >= historyLength - 1 || saving} onClick={redo} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Redo2 size={13} aria-hidden="true" />Redo</button><button type="button" disabled={historyIndex < 0 || saving} onClick={clearCanvas} className="inline-flex items-center gap-1 rounded px-2 py-1 text-[11px] text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Eraser size={13} aria-hidden="true" />Clear</button></div><button type="button" disabled={saving || !canSave} onClick={saveDrawn} className="inline-flex items-center gap-1.5 rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : <><Check size={14} aria-hidden="true" />Save signature</>}</button></div>
-        </div> : mode === "type" ? <form className="mt-3" onSubmit={(event) => { event.preventDefault(); void saveTyped(); }}>
-          <label className="mb-1.5 block text-[11px] font-medium text-[var(--color-ink-2)]" htmlFor="signature-typed-name">Your name</label>
-          <input id="signature-typed-name" name="signature" value={typedName} onChange={(event) => { setTypedName(event.target.value); setError(""); }} placeholder="Type your name…" autoComplete="name" maxLength={80} className="w-full rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[13px] text-[var(--color-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]" />
-          <fieldset className="mt-3">
-            <legend className="mb-1.5 text-[11px] font-medium text-[var(--color-ink-2)]">Choose a signature style</legend>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3" role="radiogroup" aria-label="Typed signature style">
-              {(Object.entries(TYPED_SIGNATURE_STYLES) as [TypedSignatureStyle, typeof selectedTypedStyle][]).map(([style, option]) => <label key={style} className={`flex min-w-0 cursor-pointer flex-col rounded-md border px-2.5 py-2 transition-colors focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--color-forest)] ${typedStyle === style ? "border-[var(--color-forest)] bg-[var(--color-cream-2)]" : "border-[var(--color-line-2)] hover:bg-[var(--color-cream-2)]"}`}>
-                <span className="flex items-center gap-1.5 text-[11px] font-medium text-[var(--color-ink-2)]"><input type="radio" name="typed-signature-style" value={style} checked={typedStyle === style} onChange={() => { setTypedStyle(style); setError(""); }} className="accent-[var(--color-forest)]" />{option.label}</span>
-                <span className="mt-1 min-h-14 overflow-x-auto py-2 whitespace-nowrap text-[24px] leading-[1.5] text-[var(--color-ink)]" style={{ fontFamily: `"${option.family}", cursive`, fontWeight: option.weight }} aria-hidden="true">{typedName.trim() || "Your name"}</span>
-                <span className="text-[10px] text-[var(--color-muted)]">{option.description}</span>
-              </label>)}
+      <div className="mt-4 space-y-5" data-signature-maker>
+        {!scopeKey ? <p className="text-[13px] text-[var(--color-muted)]" role="status">Save this draft before adding a signature. Each policy keeps its own signature.</p> : loading ? <p className="text-[13px] text-[var(--color-muted)]" role="status">Loading saved signature…</p> : <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1.45fr)_minmax(260px,0.85fr)]">
+          <section aria-labelledby="signature-create-heading" className="min-w-0" data-signature-workspace>
+            <div className="mb-3">
+              <h4 id="signature-create-heading" className="text-[13px] font-semibold text-[var(--color-ink)]">Create a signature</h4>
+              <p className="mt-1 text-[14px] leading-5 text-[var(--color-muted)]">Choose how to add your mark to this policy.</p>
             </div>
-          </fieldset>
-          <div className="mt-3 rounded-md border border-[var(--color-line)] bg-[#fffefa] px-3 py-3">
-            <p className="mb-1 text-[10px] font-medium uppercase tracking-wide text-[var(--color-muted)]">Preview</p>
-            <div className="flex min-h-28 items-center overflow-x-auto" aria-live="polite" aria-label="Signature preview">
-              {typedPreview ? <Image
-                src={typedPreview.dataUrl}
-                alt={typedName.trim() || "Your name"}
-                width={Math.ceil(typedPreview.width * selectedTypedStyle.previewSize / selectedTypedStyle.size)}
-                height={Math.ceil(typedPreview.height * selectedTypedStyle.previewSize / selectedTypedStyle.size)}
-                unoptimized
-                className="block max-w-none shrink-0"
-              /> : <span className="text-[11px] text-[var(--color-muted)]" role="status">{typedPreviewStatus === "error" ? "Couldn’t render the signature preview. Choose another style and try again." : "Preparing signature preview…"}</span>}
-            </div>
-          </div>
-          <p className="mt-1.5 min-h-4 text-[10px] text-[var(--color-muted)]" role="status" aria-live="polite">{fontStatus === "loading" ? "Loading signature style…" : fontStatus === "error" ? "This font could not be loaded. Try another style." : ""}</p>
-          <div className="mt-2 flex justify-end"><button type="submit" disabled={saving || !canSave || !typedName.trim() || fontStatus !== "ready" || typedPreviewStatus !== "ready"} className="rounded-md bg-[var(--color-forest)] px-3 py-2 text-[12px] font-semibold text-white disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button></div>
-        </form> : <div className="mt-3"><label htmlFor="signature-upload" className={`inline-flex items-center gap-2 rounded-md border border-[var(--color-line-2)] px-3 py-2 text-[12px] font-medium text-[var(--color-ink-2)] ${canSave ? "cursor-pointer" : "cursor-not-allowed opacity-50"}`}><Upload size={14} aria-hidden="true" />Choose image</label><input id="signature-upload" type="file" accept="image/*" disabled={!canSave} className="sr-only" onChange={(event) => upload(event.target.files?.[0])} /></div>}
-      </>}
+            {!signature ? <>
+              <div className="flex flex-wrap gap-2 border-b border-[var(--color-line)] pb-3" role="group" aria-label="Signature input method">
+                {(["draw", "type", "upload"] as const).map((choice) => <button key={choice} type="button" aria-pressed={mode === choice} onClick={() => { setMode(choice); setError(""); }} className={`inline-flex min-h-10 items-center gap-2 rounded-lg px-3.5 text-[13px] font-medium transition-[color,background-color,transform] duration-150 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] ${mode === choice ? "bg-[var(--color-blue-bg)] text-[var(--color-blue-ink)]" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)]"}`}>
+                  {choice === "draw" ? <PenLine size={15} aria-hidden="true" /> : choice === "type" ? <Type size={15} aria-hidden="true" /> : <Upload size={15} aria-hidden="true" />}{choice[0].toUpperCase() + choice.slice(1)}
+                </button>)}
+              </div>
+              {mode === "draw" ? <div className="mt-4">
+                <p id="signature-draw-help" className="mb-2 text-[14px] text-[var(--color-muted)]">Draw with your pointer or touch. You can also choose Type for keyboard input.</p>
+                <canvas ref={canvasRef} aria-label="Draw your signature here" aria-describedby="signature-draw-help" data-signature-preview className="h-60 w-full touch-none rounded-lg border border-dashed border-[var(--color-line-2)] bg-white sm:h-72" style={{ touchAction: "none" }} />
+                <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex flex-wrap gap-1">
+                    <button type="button" aria-label="Undo last stroke" disabled={historyIndex < 0 || saving} onClick={undo} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg px-2.5 text-[13px] text-[var(--color-ink-2)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Undo2 size={14} aria-hidden="true" />Undo</button>
+                    <button type="button" aria-label="Redo stroke" disabled={historyIndex >= historyLength - 1 || saving} onClick={redo} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg px-2.5 text-[13px] text-[var(--color-ink-2)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Redo2 size={14} aria-hidden="true" />Redo</button>
+                    <button type="button" disabled={historyIndex < 0 || saving} onClick={clearCanvas} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg px-2.5 text-[13px] text-[var(--color-ink-2)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:bg-[var(--color-cream-2)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><Eraser size={14} aria-hidden="true" />Clear</button>
+                  </div>
+                  <button type="button" disabled={saving || !canSave} onClick={saveDrawn} className="inline-flex min-h-10 min-w-[148px] items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-[13px] font-semibold text-[var(--pc-primary-text)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:brightness-95 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : <><Check size={15} aria-hidden="true" />Save signature</>}</button>
+                </div>
+              </div> : mode === "type" ? <form className="mt-4" onSubmit={(event) => { event.preventDefault(); void saveTyped(); }}>
+                <label className="mb-1.5 block text-[13px] font-medium text-[var(--color-ink-2)]" htmlFor="signature-typed-name">Your name</label>
+                <input id="signature-typed-name" name="signature" value={typedName} onChange={(event) => { setTypedName(event.target.value); setError(""); }} placeholder="Type your name…" autoComplete="name" maxLength={80} className="h-10 w-full rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-3.5 text-[13px] text-[var(--color-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]" />
+                <fieldset className="mt-4">
+                  <legend className="mb-2 text-[13px] font-medium text-[var(--color-ink-2)]">Choose a signature style</legend>
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3" role="radiogroup" aria-label="Typed signature style">
+                    {(Object.entries(TYPED_SIGNATURE_STYLES) as [TypedSignatureStyle, typeof selectedTypedStyle][]).map(([style, option]) => <label key={style} className={`flex min-w-0 cursor-pointer flex-col rounded-lg border p-3 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--color-forest)] ${typedStyle === style ? "border-[var(--color-blue-ink)] bg-[var(--color-blue-bg)]" : "border-[var(--color-line)] hover:bg-[var(--color-cream-2)]"}`}>
+                      <span className="flex min-h-5 items-center gap-2 text-[13px] font-medium text-[var(--color-ink-2)]"><input type="radio" name="typed-signature-style" value={style} checked={typedStyle === style} onChange={() => { setTypedStyle(style); setError(""); }} className="accent-[var(--color-forest)]" />{option.label}</span>
+                      <span className="mt-2 min-h-14 overflow-x-auto py-2 whitespace-nowrap text-[24px] leading-[1.5] text-[var(--color-ink)]" style={{ fontFamily: `"${option.family}", cursive`, fontWeight: option.weight }} aria-hidden="true">{typedName.trim() || "Your name"}</span>
+                      <span className="text-[11px] text-[var(--color-muted)]">{option.description}</span>
+                    </label>)}
+                  </div>
+                </fieldset>
+                <div className="mt-4 rounded-lg border border-[var(--color-line)] bg-white px-4 py-3.5" data-signature-preview>
+                  <p className="mb-2 text-[12px] font-medium text-[#475569]">Preview</p>
+                  <div className="flex min-h-36 items-center overflow-x-auto" aria-live="polite" aria-label="Signature preview">
+                    {typedPreview ? <Image
+                      src={typedPreview.dataUrl}
+                      alt={typedName.trim() || "Your name"}
+                      width={Math.ceil(typedPreview.width * selectedTypedStyle.previewSize / selectedTypedStyle.size)}
+                      height={Math.ceil(typedPreview.height * selectedTypedStyle.previewSize / selectedTypedStyle.size)}
+                      unoptimized
+                      className="block max-w-none shrink-0"
+                    /> : <span className="text-[12px] text-[#475569]" role="status">{typedPreviewStatus === "error" ? "Couldn’t render the signature preview. Choose another style and try again." : "Preparing signature preview…"}</span>}
+                  </div>
+                </div>
+                <p className="mt-2 min-h-5 text-[11px] text-[var(--color-muted)]" role="status" aria-live="polite">{fontStatus === "loading" ? "Loading signature style…" : fontStatus === "error" ? "This font could not be loaded. Try another style." : ""}</p>
+                <div className="mt-2 flex justify-end"><button type="submit" disabled={saving || !canSave || !typedName.trim() || fontStatus !== "ready" || typedPreviewStatus !== "ready"} className="min-h-10 min-w-[148px] rounded-lg bg-[var(--color-forest)] px-4 text-[13px] font-semibold text-[var(--pc-primary-text)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:brightness-95 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">{saving ? "Saving…" : "Save signature"}</button></div>
+              </form> : <div className="mt-4">
+                <p className="mb-3 text-[14px] text-[var(--color-muted)]">Upload a clear image of your signature. It will be saved as a PNG.</p>
+                <label htmlFor="signature-upload" className={`inline-flex min-h-10 items-center gap-2 rounded-lg border border-[var(--color-line-2)] px-4 text-[13px] font-medium text-[var(--color-ink-2)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[var(--color-forest)] ${canSave ? "cursor-pointer hover:bg-[var(--color-cream-2)]" : "cursor-not-allowed opacity-50"}`}><Upload size={15} aria-hidden="true" />Choose image<input id="signature-upload" name="signature-upload" type="file" accept="image/*" disabled={!canSave} className="sr-only" onChange={(event) => upload(event.target.files?.[0])} /></label>
+                <p className="mt-3 text-[11px] text-[var(--color-muted)]">PNG, JPEG, or WebP · up to 2 MB</p>
+              </div>}
+            </> : <div className="rounded-lg border border-[var(--color-line)] bg-[var(--color-cream)] p-4">
+              <p className="text-[13px] font-medium text-[var(--color-ink)]">Your signature is saved for this policy.</p>
+              <p className="mt-1 text-[12px] leading-5 text-[var(--color-muted)]">Use Replace in the saved library to create a new mark.</p>
+            </div>}
+          </section>
 
-      {error ? <p className="mt-3 text-[12px] text-red-800" role="alert" aria-live="polite">{error}</p> : null}
-      {!loading && <div className="mt-4 border-t border-[var(--color-line)] pt-4">
-        <label className={`flex items-start gap-2.5 text-[12px] ${canApply ? "text-[var(--color-ink-2)]" : "text-[var(--color-muted)]"}`}>
-          <input type="checkbox" className="mt-0.5 accent-[var(--color-forest)]" checked={canApply && includeAuthorSignature} disabled={!canApply} onChange={toggleApply} />
-          <span><span className="font-medium">Add my signature to this policy</span><span className="mt-0.5 block text-[11px] leading-4">{policy.showAcknowledgement === false ? "Enable the acknowledgement page to apply your signature." : !signature ? "Save a signature before applying it." : includeAuthorSignature && authorSignatureDate ? `Applies to this document · ${authorSignatureDate}` : "Your mark appears in the existing Signature field."}</span></span>
-        </label>
-        <p className="mt-2 text-[10px] leading-4 text-[var(--color-muted)]">This is a visual signature mark and does not verify identity.</p>
-      </div>}
+          <section aria-labelledby="signature-library-heading" className="min-w-0 rounded-xl border border-[var(--color-line)] p-4 sm:p-5" data-signature-library>
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <h4 id="signature-library-heading" className="text-[13px] font-semibold text-[var(--color-ink)]">Saved signature</h4>
+                <p className="mt-1 text-[12px] leading-5 text-[var(--color-muted)]">This mark is saved for this organization and policy.</p>
+              </div>
+              <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-medium ${signature ? "bg-[var(--color-blue-bg)] text-[var(--color-blue-ink)]" : "bg-[var(--color-cream-2)] text-[var(--color-muted)]"}`}>{signature ? "Saved" : "Empty"}</span>
+            </div>
+            {signature ? <>
+              <div className="mt-4 flex min-h-40 items-center justify-center overflow-hidden rounded-lg border border-[var(--color-line)] bg-white px-4 py-5" data-signature-preview>
+                <Image src={signature.dataUrl} alt="Your saved signature" width={520} height={160} unoptimized className="block h-32 w-full max-w-[520px] object-contain sm:h-36" />
+              </div>
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <button type="button" disabled={saving} onClick={() => { previousSignature.current = signature; setSignature(null); setAuthorSignatureApplied(false, null, "system"); setError(""); }} className="min-h-10 rounded-lg border border-[var(--color-line-2)] px-3.5 text-[13px] font-medium text-[var(--color-ink-2)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:bg-[var(--color-cream-2)] disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Replace</button>
+                {confirmDelete ? <>
+                  <span className="text-[12px] text-[var(--color-danger)]" role="status">Delete this saved signature?</span>
+                  <button type="button" disabled={saving} onClick={() => void remove()} className="min-h-10 rounded-lg bg-[var(--color-danger)] px-3.5 text-[13px] font-medium text-[var(--pc-error-text)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:brightness-95 disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-danger)]">Confirm delete</button>
+                  <button type="button" disabled={saving} onClick={() => setConfirmDelete(false)} className="min-h-10 rounded-lg border border-[var(--color-line-2)] px-3.5 text-[13px] font-medium text-[var(--color-ink-2)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:bg-[var(--color-cream-2)] disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</button>
+                </> : <button type="button" disabled={saving} onClick={() => setConfirmDelete(true)} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-[var(--color-danger)] px-3.5 text-[13px] font-medium text-[var(--color-danger)] transition-[color,background-color,transform] duration-150 active:scale-[0.98] hover:bg-[var(--color-cream-2)] disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-danger)]"><Trash2 size={15} aria-hidden="true" />Delete</button>}
+              </div>
+            </> : <div className="mt-4 flex min-h-40 flex-col items-center justify-center rounded-lg border border-dashed border-[var(--color-line-2)] bg-[var(--color-cream)] px-5 py-6 text-center">
+              <PenLine size={20} className="text-[var(--color-muted)]" aria-hidden="true" />
+              <p className="mt-2 text-[12px] font-medium text-[var(--color-ink-2)]">No saved signature yet</p>
+              <p className="mt-1 max-w-[260px] text-[12px] leading-5 text-[var(--color-muted)]">Choose Draw, Type, or Upload to add a reusable mark to this policy.</p>
+            </div>}
+          </section>
+        </div>}
+
+        {error ? <p className="text-[13px] text-[var(--color-danger)]" role="alert" aria-live="polite">{error}</p> : null}
+        {!loading && <div className="border-t border-[var(--color-line)] pt-4">
+          <label className={`flex min-h-11 items-start gap-3 rounded-lg px-2 py-2 text-[13px] ${canApply ? "text-[var(--color-ink-2)]" : "text-[var(--color-muted)]"}`}>
+            <input type="checkbox" className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-forest)]" checked={canApply && includeAuthorSignature} disabled={!canApply} onChange={toggleApply} />
+            <span className="min-w-0"><span className="font-medium">Add my signature to this policy</span><span className="mt-1 block text-[12px] leading-5">{policy.showAcknowledgement === false ? "Enable the acknowledgement page to apply your signature." : !signature ? "Save a signature before applying it." : includeAuthorSignature && authorSignatureDate ? `Applies to this document · ${authorSignatureDate}` : "Your mark appears in the existing Signature field."}</span></span>
+          </label>
+          <p className="mt-1 pl-2 text-[11px] leading-5 text-[var(--color-muted)]">This is a visual signature mark and does not verify identity.</p>
+        </div>}
+      </div>
     </Panel>
   );
 }

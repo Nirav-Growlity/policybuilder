@@ -1,0 +1,39 @@
+.loader {
+  color: var(--pc-text);
+  font-family: var(--pc-font);
+}
+
+.stack {
+  width: clamp(230px, 30vw, 320px);
+  height: clamp(230px, 30vw, 320px);
+}
+
+.loader:not([data-still]) .frontPage {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: frontPageAssemble 2.4s ease-in-out 2 both;
+}
+
+.loader:not([data-still]) .backPage {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: backPageAssemble 2.4s ease-in-out 2 both;
+}
+
+@keyframes frontPageAssemble {
+  0% { opacity: .72; transform: translate(-5px, 5px); }
+  58% { opacity: 1; transform: translate(2px, -2px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+
+@keyframes backPageAssemble {
+  0% { opacity: .45; transform: translate(5px, -4px); }
+  58% { opacity: .8; transform: translate(-2px, 2px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader :is(.frontPage, .backPage) {
+    animation: none;
+  }
+}

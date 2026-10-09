@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import { createPortal } from "react-dom";
-import { Check, X, Info, AlertTriangle } from "lucide-react";
+import { CheckCircle2, X, Info, AlertTriangle, CircleAlert } from "lucide-react";
 import { clsx } from "clsx";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 type ToastType = "success" | "error" | "info";
 
@@ -27,15 +28,15 @@ export function useToast() {
 
 export function Toaster({ children }: { children: React.ReactNode }) {
   const [items, setItems] = React.useState<ToastItem[]>([]);
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => setMounted(true), []);
+  const nextId = React.useRef(0);
+  const mounted = React.useSyncExternalStore(() => () => undefined, () => true, () => false);
 
   const push = React.useCallback((text: string, type: ToastType = "success") => {
-    const id = Date.now() + Math.random();
+    const id = ++nextId.current;
     setItems((prev) => [...prev, { id, text, type }]);
-    setTimeout(() => {
-      setItems((prev) => prev.filter((t) => t.id !== id));
-    }, 3500);
+  }, []);
+  const dismiss = React.useCallback((id: number) => {
+    setItems((prev) => prev.filter((item) => item.id !== id));
   }, []);
 
   const ctx = React.useMemo(() => ({ push }), [push]);
@@ -45,27 +46,56 @@ export function Toaster({ children }: { children: React.ReactNode }) {
       {children}
       {mounted &&
         createPortal(
-          <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none">
-            {items.map((t) => (
-              <div
-                key={t.id}
-                className={clsx(
-                  "pointer-events-auto flex items-center gap-2.5 px-4 py-3 rounded-xl text-sm font-medium shadow-[var(--shadow-lift)] animate-fade-up max-w-sm",
-                  t.type === "success" && "bg-[var(--color-forest)] text-white",
-                  t.type === "error" && "bg-[#7a1f1f] text-white",
-                  t.type === "info" && "bg-[var(--color-blue-ink)] text-white"
-                )}
-              >
-                {t.type === "success" && <Check size={16} />}
-                {t.type === "error" && <X size={16} />}
-                {t.type === "info" && <Info size={16} />}
-                <span>{t.text}</span>
-              </div>
-            ))}
+          <div className="pc-ui pc-toast-region" aria-label="Notifications">
+            <AnimatePresence initial={false}>
+              {items.map((item) => <ToastNotification key={item.id} item={item} dismiss={dismiss} />)}
+            </AnimatePresence>
           </div>,
           document.body
         )}
     </ToastContext.Provider>
+  );
+}
+
+function ToastNotification({ item, dismiss }: { item: ToastItem; dismiss: (id: number) => void }) {
+  const reduceMotion = useReducedMotion();
+  const [hovered, setHovered] = React.useState(false);
+  const [focused, setFocused] = React.useState(false);
+  const remaining = React.useRef(5000);
+  const paused = hovered || focused;
+
+  React.useEffect(() => {
+    if (paused) return;
+    const started = performance.now();
+    const timer = window.setTimeout(() => dismiss(item.id), remaining.current);
+    return () => {
+      window.clearTimeout(timer);
+      remaining.current = Math.max(0, remaining.current - (performance.now() - started));
+    };
+  }, [dismiss, item.id, paused]);
+
+  const Icon = item.type === "success" ? CheckCircle2 : item.type === "error" ? CircleAlert : Info;
+  return (
+    <motion.div
+      className={clsx("pc-toast", `pc-toast-${item.type}`)}
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      initial={{ opacity: 0, y: reduceMotion ? 0 : 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: reduceMotion ? 0 : 6 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      onPointerEnter={() => setHovered(true)}
+      onPointerLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false); }}
+    >
+      <Icon size={18} aria-hidden="true" className="pc-toast-icon" />
+      <span className="pc-toast-text">{item.text}</span>
+      <button type="button" className="pc-toast-close pc-focus" aria-label={`Dismiss notification: ${item.text}`} onClick={() => dismiss(item.id)}>
+        <X size={16} aria-hidden="true" />
+      </button>
+    </motion.div>
   );
 }
 

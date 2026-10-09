@@ -1,0 +1,443 @@
+.workspaceRoot {
+  min-height: 100vh;
+  color: var(--color-ink);
+  background: var(--color-cream);
+}
+
+.chrome {
+  position: relative;
+  z-index: 20;
+}
+
+.accessState {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+  color: var(--pc-text);
+  background: var(--pc-page);
+}
+
+.accessMessage,
+.loading {
+  display: flex;
+  max-width: 440px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.accessMessage p {
+  color: var(--pc-error);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.loading {
+  flex-direction: row;
+  color: var(--pc-muted);
+  font-size: 14px;
+}
+
+.spinner {
+  animation: shell-spin 1s linear infinite;
+}
+
+@keyframes shell-spin {
+  to { transform: rotate(360deg); }
+}
+
+.skipLink {
+  position: absolute;
+  z-index: 40;
+  top: 8px;
+  left: 12px;
+  transform: translateY(-150%);
+  border-radius: 8px;
+  background: var(--pc-panel);
+  padding: 9px 13px;
+  color: var(--pc-text);
+  font-size: 13px;
+  box-shadow: 0 8px 24px rgb(16 24 40 / 12%);
+}
+
+.skipLink:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--pc-brand);
+  outline-offset: 2px;
+}
+
+.header {
+  position: relative;
+  border-bottom: 1px solid var(--pc-divider);
+  background: var(--pc-panel);
+}
+
+.headerInner {
+  display: grid;
+  width: min(100%, 1280px);
+  min-height: 67px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  margin-inline: auto;
+  padding: 0 40px;
+}
+
+.brand {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  color: var(--pc-text);
+  text-decoration: none;
+}
+
+.brandName { transition: color 150ms ease; }
+.brand:hover .brandName { color: var(--pc-brand); }
+
+.brand:focus-visible,
+.navLink:focus-visible,
+.mobileNavLink:focus-visible,
+.accountTrigger:focus-visible,
+.mobileNavTrigger:focus-visible {
+  outline: 2px solid var(--pc-brand);
+  outline-offset: 2px;
+}
+
+.brandMark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--pc-primary);
+  color: var(--pc-primary-text);
+}
+
+.brandName {
+  display: block;
+  font-family: var(--pc-font);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brandCaption {
+  display: block;
+  margin-top: 2px;
+  color: var(--pc-muted);
+  font-size: 10px;
+  letter-spacing: .12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.desktopNav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.navLink,
+.mobileNavLink {
+  position: relative;
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 0 11px;
+  color: var(--pc-muted);
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 150ms ease, background-color 150ms ease;
+  touch-action: manipulation;
+}
+
+.navLink:hover,
+.mobileNavLink:hover {
+  background: var(--pc-inset);
+  color: var(--pc-text);
+}
+
+.navLinkActive,
+.mobileNavLinkActive {
+  color: var(--pc-text);
+}
+
+.navMarker {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--pc-selection);
+}
+
+.navLink > *:not(.navMarker) {
+  position: relative;
+  z-index: 1;
+}
+
+.taskBadge {
+  display: inline-grid;
+  min-width: 20px;
+  height: 20px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--pc-primary);
+  padding: 0 5px;
+  color: var(--pc-primary-text);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+  gap: 8px;
+}
+
+.account {
+  position: relative;
+}
+
+.accountTrigger {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  padding: 4px 8px;
+  color: var(--pc-text);
+  cursor: pointer;
+  text-align: left;
+  touch-action: manipulation;
+}
+
+.accountTrigger:hover,
+.accountTrigger[aria-expanded="true"] {
+  border-color: var(--pc-divider);
+  background: var(--pc-inset);
+}
+
+.accountIdentity {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.accountName {
+  max-width: 170px;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.accountRole {
+  color: var(--pc-muted);
+  font-size: 10px;
+  line-height: 1.35;
+  text-transform: capitalize;
+}
+
+.accountTrigger > svg {
+  flex: 0 0 auto;
+  color: var(--pc-muted);
+  transition: transform 150ms ease;
+}
+
+.chevronOpen { transform: rotate(180deg); }
+
+.accountMenu {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 8px);
+  right: 0;
+  display: grid;
+  width: min(340px, calc(100vw - 32px));
+  max-height: calc(100dvh - 88px);
+  gap: 14px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform-origin: top right;
+  border: 1px solid var(--pc-divider);
+  border-radius: 12px;
+  background: var(--pc-panel);
+  padding: 16px;
+  box-shadow: 0 16px 40px rgb(16 24 40 / 14%);
+}
+
+.accountDetails {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+  color: var(--pc-text);
+}
+
+.accountDetails strong { font-size: 13px; }
+.accountDetails > span:not(.roleLabel) { overflow-wrap: anywhere; color: var(--pc-muted); font-size: 12px; }
+.roleLabel { color: var(--pc-muted); font-size: 11px; text-transform: capitalize; }
+
+.signOutButton { justify-content: flex-start; }
+
+.mobileNavTrigger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--pc-divider);
+  border-radius: 8px;
+  background: var(--pc-panel);
+  color: var(--pc-text);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mobileDrawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  width: min(360px, calc(100vw - 32px));
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--pc-panel);
+  padding: max(18px, env(safe-area-inset-top)) 20px max(18px, env(safe-area-inset-bottom));
+  box-shadow: -12px 0 36px rgb(16 24 40 / 14%);
+}
+
+.drawerLayer {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+}
+
+.drawerBackdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: rgb(12 20 32 / 48%);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.drawerHeader {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.drawerHeader .mobileNavTrigger { display: grid; }
+
+.drawerAccount {
+  display: grid;
+  gap: 14px;
+  border-block: 1px solid var(--pc-divider);
+  padding-block: 16px;
+}
+
+.drawerIdentity {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+  color: var(--pc-text);
+}
+
+.drawerIdentity strong { overflow: hidden; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.drawerIdentity > span:not(.roleLabel) { overflow-wrap: anywhere; color: var(--pc-muted); font-size: 12px; }
+
+.mobileNav { display: grid; align-content: start; gap: 3px; }
+
+.mobileNavLink {
+  display: flex;
+  min-height: 44px;
+  justify-content: flex-start;
+  padding-inline: 12px;
+}
+
+.mobileNavLinkActive { background: var(--pc-selection); }
+.mobileNavLink .taskBadge { margin-left: auto; }
+
+.signOutError {
+  display: flex;
+  width: min(100%, 1200px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-inline: auto;
+  padding: 12px 24px;
+  color: var(--pc-error);
+  font-size: 13px;
+}
+
+.signOutError p { min-width: 0; overflow-wrap: anywhere; }
+
+@media (max-width: 1023px) {
+  .headerInner {
+    min-height: 67px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    padding-inline: 20px;
+  }
+
+  .desktopNav { display: none; }
+  .mobileNavTrigger { display: grid; }
+  .accountMenu { position: fixed; top: 76px; right: 8px; }
+  .accountName { max-width: clamp(72px, 24vw, 160px); }
+}
+
+@media (min-width: 1024px) {
+  .drawerLayer { display: none; }
+}
+
+@media (max-width: 480px) {
+  .headerInner { padding-inline: 14px; }
+  .headerActions { gap: 4px; }
+  .accountTrigger { gap: 5px; padding-inline: 5px; }
+  .accountName { max-width: 68px; }
+  .signOutError { align-items: flex-start; flex-direction: column; padding-inline: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navLink,
+  .mobileNavLink,
+  .accountTrigger > svg { transition-duration: 0.01ms; }
+  .spinner { animation-duration: 1s; }
+}

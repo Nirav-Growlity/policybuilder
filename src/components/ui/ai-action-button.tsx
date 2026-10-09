@@ -5,6 +5,8 @@ import { createPortal } from "react-dom";
 import { Sparkles, Wand2, MessageSquarePlus, Send, X, Loader2 } from "lucide-react";
 import { clsx } from "clsx";
 import { Textarea } from "./input";
+import { useApplicationSurface } from "./application-surface";
+import { motion, useReducedMotion } from "motion/react";
 
 interface AIActionButtonProps {
   onGenerate: (customPrompt?: string) => Promise<void> | void;
@@ -25,28 +27,29 @@ export function AIActionButton({
   className = "",
   placeholder = "e.g. Focus on zero waste packaging, renewable energy targets for Gujarat units...",
 }: AIActionButtonProps) {
+  const application = useApplicationSurface();
+  const reduceMotion = useReducedMotion();
+  const popoverId = React.useId();
   const [open, setOpen] = React.useState(false);
   const [mode, setMode] = React.useState<"menu" | "custom">("menu");
   const [customPrompt, setCustomPrompt] = React.useState("");
   const [coords, setCoords] = React.useState<{ top: number; right: number }>({ top: 0, right: 0 });
-  const [mounted, setMounted] = React.useState(false);
+  const mounted = React.useSyncExternalStore(() => () => undefined, () => true, () => false);
 
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const popoverRef = React.useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const updateCoords = React.useCallback(() => {
     if (buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
+      const height = popoverRef.current?.getBoundingClientRect().height || 220;
+      const below = rect.bottom + 6;
       setCoords({
-        top: rect.bottom + 6,
+        top: application && below + height > window.innerHeight - 12 ? Math.max(12, rect.top - height - 6) : below,
         right: Math.max(12, window.innerWidth - rect.right),
       });
     }
-  }, []);
+  }, [application]);
 
   React.useEffect(() => {
     if (open) {
@@ -58,7 +61,27 @@ export function AIActionButton({
       window.removeEventListener("scroll", updateCoords, true);
       window.removeEventListener("resize", updateCoords);
     };
-  }, [open, updateCoords]);
+  }, [open, mode, updateCoords]);
+
+  React.useEffect(() => {
+    if (!application || !open) return;
+    const frame = requestAnimationFrame(() => {
+      updateCoords();
+      popoverRef.current?.querySelector<HTMLElement>(mode === "custom" ? "textarea" : "button")?.focus();
+    });
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault(); event.stopPropagation(); setOpen(false); setMode("menu"); buttonRef.current?.focus();
+      } else if (mode === "menu" && ["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key) && popoverRef.current?.contains(document.activeElement)) {
+        const buttons = Array.from(popoverRef.current.querySelectorAll<HTMLButtonElement>("button:not([disabled])"));
+        const current = buttons.indexOf(document.activeElement as HTMLButtonElement);
+        const next = event.key === "Home" ? 0 : event.key === "End" ? buttons.length - 1 : (current + (event.key === "ArrowDown" ? 1 : -1) + buttons.length) % buttons.length;
+        event.preventDefault(); buttons[next]?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey, true);
+    return () => { cancelAnimationFrame(frame); document.removeEventListener("keydown", onKey, true); };
+  }, [application, open, mode, updateCoords]);
 
   React.useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -120,11 +143,16 @@ export function AIActionButton({
           setOpen(!open);
         }}
         className={btnClasses}
+        aria-expanded={open}
+        aria-controls={popoverId}
+        aria-haspopup="dialog"
+        aria-busy={loading || undefined}
+        data-pc-ai-action={application ? variant : undefined}
       >
         {loading ? (
           <Loader2 size={13} className="animate-spin" />
         ) : (
-          <Wand2 size={13} className="text-amber-300" />
+          <Wand2 size={13} className={application ? "text-current" : "text-amber-300"} />
         )}
         <span>{loading ? "Generating…" : label}</span>
       </button>
@@ -132,15 +160,21 @@ export function AIActionButton({
       {open &&
         mounted &&
         createPortal(
-          <div
+          <motion.div
             ref={popoverRef}
+            id={popoverId}
+            role="dialog"
+            aria-label="Policy generation"
             style={{
               position: "fixed",
               top: `${coords.top}px`,
               right: `${coords.right}px`,
               zIndex: 999999,
             }}
-            className="w-80 sm:w-96 rounded-xl bg-white border border-[var(--color-line)] shadow-2xl overflow-hidden text-left font-sans text-[13px] animate-in fade-in zoom-in-95 duration-150"
+            className={clsx("w-80 sm:w-96 rounded-xl bg-white border border-[var(--color-line)] shadow-2xl overflow-hidden text-left font-sans text-[13px]", application ? "pc-ui pc-builder-authoring pc-generation-popover" : "animate-in fade-in zoom-in-95 duration-150")}
+            initial={application ? {opacity: 0, ...(reduceMotion ? {} : {scale: .98})} : false}
+            animate={application ? {opacity: 1, scale: 1} : undefined}
+            transition={{duration: .15, ease: "easeOut"}}
           >
             {mode === "menu" ? (
               <div className="p-2 space-y-1">
@@ -192,6 +226,7 @@ export function AIActionButton({
                   <button
                     type="button"
                     onClick={() => setMode("menu")}
+                    aria-label="Back to generation options"
                     className="p-1 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream-2)]"
                   >
                     <X size={14} />
@@ -200,6 +235,7 @@ export function AIActionButton({
 
                 <Textarea
                   autoFocus
+                  aria-label="Custom generation instructions"
                   rows={3}
                   value={customPrompt}
                   onChange={(e) => setCustomPrompt(e.target.value)}
@@ -224,7 +260,7 @@ export function AIActionButton({
                 </div>
               </form>
             )}
-          </div>,
+          </motion.div>,
           document.body
         )}
     </div>

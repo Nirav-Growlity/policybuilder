@@ -1,0 +1,38 @@
+.surface {
+  --font-display: var(--pc-font);
+  --color-forest: var(--pc-primary);
+  --color-forest-deep: var(--pc-primary);
+  --color-forest-soft: var(--pc-selection);
+  --color-line: var(--pc-divider);
+  --color-line-2: var(--pc-control);
+  --color-cream: var(--pc-inset);
+  --color-cream-2: var(--pc-inset);
+  --color-ink: var(--pc-text);
+  --color-ink-2: var(--pc-text);
+  --color-muted: var(--pc-muted);
+  color: var(--pc-text);
+  font-family: var(--pc-font);
+}
+
+.surface :global(h1), .surface :global(h2), .surface :global(h3) { font-family: var(--pc-font); }
+.surface :global(.bg-white) { background-color: var(--pc-panel) !important; }
+.surface :global(.bg-red-50) { background-color: var(--pc-error-surface) !important; }
+.surface :global(.text-red-800) { color: var(--pc-error) !important; }
+.surface :global(.rounded-xl) { border-radius: 12px; }
+.surface :global(.rounded-lg) { border-radius: 8px; }
+.surface :global(.shadow-sm) { box-shadow: none; }
+.surface :global(fieldset) { min-inline-size: 0; }
+.lookupForm { display: flex; flex-direction: column; gap: 0; }
+.lookupForm :global(input) { min-width: 0; }
+.lookupForm :global(button) { flex: none; }
+.lookupButton { min-width: 160px; }
+.addButton { min-width: 142px; }
+.dialogFooter { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+.successMessage { border: 1px solid color-mix(in srgb, var(--pc-success) 26%, var(--pc-divider)); background: var(--pc-success-surface); color: var(--pc-success); }
+
+@media (max-width: 639px) {
+  .dialogFooter { flex-direction: column; }
+  .dialogFooter :global(button) { width: 100%; }
+  .lookupForm > div { align-items: stretch; flex-direction: column; }
+  .lookupForm > div button { width: 100%; }
+}

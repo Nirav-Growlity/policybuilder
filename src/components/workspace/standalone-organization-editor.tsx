@@ -4,9 +4,15 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Controller, useFieldArray, useForm, useWatch } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { ArrowLeft, Loader2, MapPin, Plus, Trash2, Upload } from "lucide-react";
-import { Combobox, Field } from "@/components/ui/input";
+import { Combobox } from "@/components/ui/input";
+import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
+import { ApplicationSurface } from "@/components/ui/application-surface";
 import { getIndustryOptions, getSectorOptions, getSubsectorOptions, withCompanyClassification } from "@/lib/company-classification";
+import styles from "./standalone-organization-editor.module.css";
 
 export type StandaloneOrganizationSite = { id?: string; location: string; address: string; primaryFunction: string };
 export type StandaloneOrganizationProfile = {
@@ -47,9 +53,19 @@ export function normalizeStandaloneOrganization(result: { organization: Record<s
   };
 }
 
-const emptyProfile: StandaloneOrganizationProfile = {
-  name: "", industry: "", subCategory: "", industryDetail: "", country: "", websiteLink: "", reportingPeriod: "FY", sites: [{ location: "", address: "", primaryFunction: "" }],
-};
+const organizationFormSchema = z.object({
+  name: z.string(),
+  industry: z.string(),
+  subCategory: z.string(),
+  industryDetail: z.string().optional(),
+  country: z.string(),
+  websiteLink: z.string(),
+  reportingPeriod: z.enum(["FY", "CY"]),
+  sites: z.array(z.object({ id: z.string().optional(), location: z.string(), address: z.string(), primaryFunction: z.string() })),
+  companyLogo: z.string().optional(),
+  logo: z.any().optional(),
+});
+type OrganizationFormValues = StandaloneOrganizationProfile & { logo?: unknown };
 
 function imageSource(reference: string | undefined, organizationId?: number) {
   if (!reference || reference.startsWith("data:") || /^https?:\/\//i.test(reference)) return reference || "";
@@ -60,38 +76,54 @@ function imageSource(reference: string | undefined, organizationId?: number) {
   return `${url.pathname}${url.search}`;
 }
 
+function toFormValues(profile?: StandaloneOrganization): OrganizationFormValues {
+  return {
+    name: profile?.name || "",
+    industry: profile?.industry || "",
+    subCategory: profile?.subCategory || "",
+    industryDetail: profile?.industryDetail || "",
+    country: profile?.country || "",
+    websiteLink: profile?.websiteLink || "",
+    reportingPeriod: profile?.reportingPeriod || "FY",
+    sites: profile?.sites?.length ? profile.sites.map((site) => ({ ...site })) : [{ location: "", address: "", primaryFunction: "" }],
+    companyLogo: profile?.companyLogo,
+    logo: undefined,
+  };
+}
+
 export function StandaloneOrganizationEditor({ organizationId, initial, backHref = "/admin/organizations/policycraft" }: { organizationId?: number; initial?: StandaloneOrganization; backHref?: string }) {
   const router = useRouter();
-  const [profile, setProfile] = React.useState<StandaloneOrganizationProfile>(initial ? {
-    name: initial.name || "", industry: initial.industry || "", subCategory: initial.subCategory || "", industryDetail: initial.industryDetail || "", country: initial.country || "", websiteLink: initial.websiteLink || "", reportingPeriod: initial.reportingPeriod || "FY", sites: initial.sites?.length ? initial.sites.map((site) => ({ ...site })) : [{ location: "", address: "", primaryFunction: "" }], companyLogo: initial.companyLogo,
-  } : emptyProfile);
   const [lockVersion, setLockVersion] = React.useState(initial?.lockVersion ?? 1);
-  const [logo, setLogo] = React.useState<File | null>(null);
   const [logoPreview, setLogoPreview] = React.useState("");
   const logoPreviewRef = React.useRef("");
   const [error, setError] = React.useState("");
   const [saved, setSaved] = React.useState(false);
   const [saving, setSaving] = React.useState(false);
   const [conflict, setConflict] = React.useState(false);
+  const { register, control, handleSubmit, getValues, setValue, reset, resetField } = useForm<OrganizationFormValues>({
+    resolver: zodResolver(organizationFormSchema),
+    defaultValues: toFormValues(initial),
+  });
+  const profile = useWatch({ control }) || toFormValues(initial);
+  const siteFields = useFieldArray({ control, name: "sites", keyName: "fieldKey" });
+  const logoRegistration = register("logo");
 
   React.useEffect(() => () => {
     if (logoPreviewRef.current) URL.revokeObjectURL(logoPreviewRef.current);
   }, []);
 
-  function update<K extends keyof StandaloneOrganizationProfile>(key: K, value: StandaloneOrganizationProfile[K]) {
+  function setClassification(key: "industry" | "subCategory" | "industryDetail", value: string) {
+    const next = withCompanyClassification(getValues(), key, value);
+    setValue("industry", next.industry, { shouldDirty: true });
+    setValue("subCategory", next.subCategory, { shouldDirty: true });
+    setValue("industryDetail", next.industryDetail, { shouldDirty: true });
     setSaved(false);
-    setProfile((current) => ({ ...current, [key]: value }));
-  }
-
-  function setSite(index: number, key: keyof StandaloneOrganizationSite, value: string) {
-    setSaved(false);
-    setProfile((current) => ({ ...current, sites: current.sites.map((site, siteIndex) => siteIndex === index ? { ...site, [key]: value } : site) }));
   }
 
   function chooseLogo(file?: File) {
     setError("");
     if (!file) return;
-    if (!(["image/png", "image/jpeg", "image/webp"].includes(file.type)) || file.size > 10 * 1024 * 1024) {
+    if (!( ["image/png", "image/jpeg", "image/webp"].includes(file.type)) || file.size > 10 * 1024 * 1024) {
       setError("Choose a PNG, JPEG or WebP image under 10 MB.");
       return;
     }
@@ -99,14 +131,14 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
     setSaved(false);
     logoPreviewRef.current = URL.createObjectURL(file);
     setLogoPreview(logoPreviewRef.current);
-    setLogo(file);
+    setValue("logo", file, { shouldDirty: true });
   }
 
   function clearSelectedLogo() {
     if (logoPreviewRef.current) URL.revokeObjectURL(logoPreviewRef.current);
     logoPreviewRef.current = "";
     setLogoPreview("");
-    setLogo(null);
+    resetField("logo");
   }
 
   async function reload() {
@@ -118,7 +150,7 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
       const result = await response.json().catch(() => null);
       if (!response.ok || !result?.organization) throw new Error(result?.error || "Could not reload the organization. Retry or return to Organizations.");
       const next = normalizeStandaloneOrganization(result);
-      setProfile({ name: next.name, industry: next.industry, subCategory: next.subCategory, industryDetail: next.industryDetail, country: next.country, websiteLink: next.websiteLink, reportingPeriod: next.reportingPeriod, sites: next.sites, companyLogo: next.companyLogo });
+      reset(toFormValues(next));
       setLockVersion(next.lockVersion);
       clearSelectedLogo();
       setSaved(false);
@@ -127,17 +159,17 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
     finally { setSaving(false); }
   }
 
-  async function submit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function submit(values: OrganizationFormValues) {
     if (saving) return;
     setSaving(true);
     setError("");
     setSaved(false);
     setConflict(false);
     const form = new FormData();
-    form.set("profile", JSON.stringify({ ...profile, sites: profile.sites.map(({ id, location, address, primaryFunction }) => ({ ...(id ? { id } : {}), location: location.trim(), address: address.trim(), primaryFunction: primaryFunction.trim() })) }));
+    const { logo, ...organizationProfile } = values;
+    form.set("profile", JSON.stringify({ ...organizationProfile, sites: values.sites.map(({ id, location, address, primaryFunction }) => ({ ...(id ? { id } : {}), location: location.trim(), address: address.trim(), primaryFunction: primaryFunction.trim() })) }));
     if (organizationId) form.set("lockVersion", String(lockVersion));
-    if (logo) form.set("logo", logo);
+    if (logo instanceof File) form.set("logo", logo);
     try {
       const response = await fetch(organizationId ? `/api/policycraft/organizations/${organizationId}` : "/api/policycraft/admin/organizations", { method: organizationId ? "PATCH" : "POST", body: form });
       const result = await response.json().catch(() => null);
@@ -148,9 +180,9 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
       }
       if (!response.ok || !result?.organization) throw new Error(result?.error || "Could not save this organization. Check the required fields and try again.");
       if (organizationId) {
-        const saved = normalizeStandaloneOrganization(result);
-        setLockVersion(saved.lockVersion);
-        setProfile({ name: saved.name, industry: saved.industry, subCategory: saved.subCategory, industryDetail: saved.industryDetail, country: saved.country, websiteLink: saved.websiteLink, reportingPeriod: saved.reportingPeriod, sites: saved.sites, companyLogo: saved.companyLogo });
+        const normalized = normalizeStandaloneOrganization(result);
+        setLockVersion(normalized.lockVersion);
+        reset(toFormValues(normalized));
         clearSelectedLogo();
         setError("");
         setSaved(true);
@@ -161,28 +193,37 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
     finally { setSaving(false); }
   }
 
-  const backLabel = backHref.startsWith("/manager") ? "Organizations" : "PolicyCraft organizations";
+  function submitForm(event: React.FormEvent<HTMLFormElement>) {
+    void handleSubmit(submit)(event);
+  }
 
-  return <div className="mx-auto max-w-5xl">
-    <nav aria-label="Breadcrumb"><Link href={backHref} className="inline-flex min-h-9 items-center gap-1.5 text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowLeft size={14} aria-hidden="true" />{backLabel}</Link></nav>
-    <div className="mt-4"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">PolicyCraft organization</p><h1 className="mt-1 text-pretty font-display text-3xl font-semibold tracking-tight">{organizationId ? "Edit organization details" : "Create organization"}</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Set the company profile, Sector, Subsector and Industry used as defaults for new policies. Existing policies keep their saved details.</p></div>
-    {organizationId && !initial ? <div className="mt-8 flex items-center gap-3 rounded-lg border border-[var(--color-line)] bg-white p-4 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organization…</div> : <form className="mt-6 overflow-hidden rounded-xl border border-[var(--color-line)] bg-white" onSubmit={(event) => void submit(event)} aria-busy={saving}>
-      <div className="p-5 sm:p-7">
-        <section aria-labelledby="organization-profile-title"><div className="flex flex-wrap items-baseline justify-between gap-2"><h2 id="organization-profile-title" className="text-base font-semibold">Company profile</h2><span className="text-xs text-[var(--color-muted)]">Required fields marked *</span></div><div className="mt-5 grid gap-4 sm:grid-cols-2">
-          <label className="text-xs font-semibold text-[var(--color-ink-2)]">Company name<input name="name" autoComplete="organization" required maxLength={180} value={profile.name} onChange={(event) => update("name", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="e.g. Acme Manufacturing Ltd." /></label>
-          <div className="flex flex-col gap-1.5"><label htmlFor="organization-sector" className="text-xs font-semibold text-[var(--color-ink-2)]">Sector <span className="text-red-700" aria-hidden="true">*</span></label><Combobox id="organization-sector" name="industry" required ariaLabel="Sector" value={profile.industry} onValueChange={(value) => { setSaved(false); setProfile((current) => withCompanyClassification(current, "industry", value)); }} placeholder="Select or type a sector" options={getSectorOptions()} disabled={saving} /></div>
-          <div className="flex flex-col gap-1.5"><label htmlFor="organization-subsector" className="text-xs font-semibold text-[var(--color-ink-2)]">Subsector <span className="text-red-700" aria-hidden="true">*</span></label><Combobox id="organization-subsector" name="subCategory" required ariaLabel="Subsector" value={profile.subCategory} onValueChange={(value) => { setSaved(false); setProfile((current) => withCompanyClassification(current, "subCategory", value)); }} placeholder={profile.industry ? "Select or type a subsector" : "Select a sector first"} options={getSubsectorOptions(profile.industry)} disabled={saving || !profile.industry} /></div>
-          <div className="flex flex-col gap-1.5"><label htmlFor="organization-industry-detail" className="text-xs font-semibold text-[var(--color-ink-2)]">Industry</label><Combobox id="organization-industry-detail" name="industryDetail" ariaLabel="Industry" value={profile.industryDetail || ""} onValueChange={(value) => { setSaved(false); setProfile((current) => withCompanyClassification(current, "industryDetail", value)); }} placeholder={profile.industry && profile.subCategory ? "Select or type an industry" : "Select a sector and subsector first"} options={getIndustryOptions(profile.industry, profile.subCategory || "")} disabled={saving || !profile.industry || !profile.subCategory} /></div>
-          <label className="text-xs font-semibold text-[var(--color-ink-2)]">Country<input name="country" autoComplete="country-name" required maxLength={100} value={profile.country} onChange={(event) => update("country", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="e.g. India" /></label>
-          <label className="text-xs font-semibold text-[var(--color-ink-2)]">Website<input name="websiteLink" type="url" autoComplete="url" required maxLength={255} value={profile.websiteLink} onChange={(event) => update("websiteLink", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="https://example.com" /></label>
-          <fieldset><legend className="text-xs font-semibold text-[var(--color-ink-2)]">Financial reporting period <span className="text-red-700">*</span></legend><input type="hidden" name="reportingPeriod" required value={profile.reportingPeriod} readOnly /><div className="mt-1.5 flex min-h-11 overflow-hidden rounded-lg border border-[var(--color-line-2)]" role="group" aria-label="Financial reporting period">{(["FY", "CY"] as const).map((period) => <button key={period} type="button" aria-pressed={profile.reportingPeriod === period} disabled={saving} onClick={() => update("reportingPeriod", period)} className={`min-h-11 flex-1 px-3 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[var(--color-forest)] disabled:opacity-60 ${profile.reportingPeriod === period ? "bg-[var(--color-forest)] text-white" : "bg-white text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)]"}`}>{period === "FY" ? "Financial year (FY)" : "Calendar year (CY)"}</button>)}</div></fieldset>
-          <Field label="Company logo" required={!profile.companyLogo}><div className="flex min-h-11 flex-wrap items-center gap-3">{(logoPreview || imageSource(profile.companyLogo, organizationId)) ? <Image src={logoPreview || imageSource(profile.companyLogo, organizationId)} alt="Company logo preview" width={64} height={44} unoptimized className="h-11 w-16 rounded border border-[var(--color-line)] bg-white object-contain" /> : null}<label className="inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-xs font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-within:outline focus-within:outline-2 focus-within:outline-[var(--color-forest)]"><Upload size={14} aria-hidden="true" />{logo || profile.companyLogo ? "Replace logo" : "Upload logo"}<input name="logo" type="file" accept="image/png,image/jpeg,image/webp" required={!profile.companyLogo && !logo} disabled={saving} className="sr-only" onChange={(event) => chooseLogo(event.currentTarget.files?.[0])} /></label><span className="text-xs text-[var(--color-muted)]">PNG, JPEG or WebP · up to 10 MB</span></div></Field>
-        </div></section>
-        <section className="mt-8 border-t border-[var(--color-line)] pt-6" aria-labelledby="organization-sites-title"><div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end"><div><h2 id="organization-sites-title" className="flex items-center gap-2 text-base font-semibold"><MapPin size={16} className="text-[var(--color-forest)]" aria-hidden="true" />Operating sites</h2><p className="mt-1 text-sm text-[var(--color-muted)]">Add at least one location covered by future policies.</p></div><button type="button" disabled={saving} onClick={() => update("sites", [...profile.sites, { location: "", address: "", primaryFunction: "" }])} className="inline-flex min-h-10 items-center gap-2 self-start rounded-lg bg-[var(--color-forest)] px-3.5 text-xs font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-60"><Plus size={14} aria-hidden="true" />Add site</button></div>
-          <div className="mt-4 space-y-3">{profile.sites.map((site, index) => <fieldset key={site.id ?? index} className="grid gap-3 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]/40 p-4 sm:grid-cols-12"><legend className="sr-only">Operating site {index + 1}</legend><label className="text-xs font-semibold text-[var(--color-ink-2)] sm:col-span-3">Location / unit<input name={`sites[${index}].location`} required maxLength={180} value={site.location} onChange={(event) => setSite(index, "location", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="e.g. Surat manufacturing unit" /></label><label className="text-xs font-semibold text-[var(--color-ink-2)] sm:col-span-5">Address<input name={`sites[${index}].address`} autoComplete="street-address" required maxLength={500} value={site.address} onChange={(event) => setSite(index, "address", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="Full site address" /></label><label className="text-xs font-semibold text-[var(--color-ink-2)] sm:col-span-3">Primary function<input name={`sites[${index}].primaryFunction`} required maxLength={180} value={site.primaryFunction} onChange={(event) => setSite(index, "primaryFunction", event.target.value)} disabled={saving} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" placeholder="e.g. Manufacturing" /></label><div className="flex justify-end sm:col-span-1 sm:items-end"><button type="button" aria-label={`Remove operating site ${index + 1}`} title="Remove site" disabled={saving || profile.sites.length <= 1} onClick={() => update("sites", profile.sites.filter((_, siteIndex) => siteIndex !== index))} className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-[var(--color-muted)] hover:bg-red-50 hover:text-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-30"><Trash2 size={15} aria-hidden="true" /></button></div></fieldset>)}</div>
-        </section>
-      </div>
-      {error ? <div className="mx-5 mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900 sm:mx-7" role="alert" aria-live="polite"><p>{error}</p>{conflict ? <button type="button" onClick={() => void reload()} disabled={saving} className="mt-2 inline-flex min-h-9 items-center rounded-md px-2 text-xs font-semibold underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-60">Reload latest profile</button> : null}</div> : null}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[var(--color-line)] bg-[var(--color-cream-2)]/60 px-5 py-4 sm:px-7"><p className="text-xs text-[var(--color-muted)]" aria-live="polite">{saving ? "Saving organization…" : saved ? "Organization details saved." : "Your changes apply to policies created after they are saved."}</p><div className="flex flex-wrap gap-2"><Link href={backHref} className="inline-flex min-h-11 items-center rounded-lg border border-[var(--color-line-2)] bg-white px-4 text-sm font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</Link><button type="submit" disabled={saving} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55">{saving ? <Loader2 size={15} className="animate-spin motion-reduce:animate-none" aria-hidden="true" /> : null}{saving ? "Saving…" : organizationId ? "Save organization" : "Create organization"}</button></div></div>
-    </form>}</div>;
+  const backLabel = backHref.startsWith("/manager") ? "Organizations" : "PolicyCraft organizations";
+  const hasExistingLogo = Boolean(profile.companyLogo);
+  const chosenLogo = logoPreview || imageSource(profile.companyLogo, organizationId);
+
+  return <ApplicationSurface data-pc-workspace="organization-editor" className={styles.surface}>
+    <div className={styles.page}>
+      <nav aria-label="Breadcrumb"><Link href={backHref} className={styles.backLink}><ArrowLeft size={14} aria-hidden="true" />{backLabel}</Link></nav>
+      <header className={styles.header}><p>PolicyCraft organization</p><h1>{organizationId ? "Edit organization details" : "Create organization"}</h1><p>Set the company profile, Sector, Subsector and Industry used as defaults for new policies. Existing policies keep their saved details.</p></header>
+      {organizationId && !initial ? <div className={styles.loading} aria-live="polite"><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organization…</div> : <form className={styles.form} onSubmit={submitForm} onChange={() => setSaved(false)} aria-busy={saving}>
+        <div className={styles.formBody}>
+          <section aria-labelledby="organization-profile-title"><div className={styles.sectionHeading}><h2 id="organization-profile-title">Company profile</h2><span>Required fields marked *</span></div><div className={styles.profileGrid}>
+            <label className={styles.field}>Company name<ApplicationInput {...register("name", { required: true, maxLength: 180 })} autoComplete="organization" required maxLength={180} disabled={saving} placeholder="e.g. Acme Manufacturing Ltd." /></label>
+            <div className={styles.field}><label htmlFor="organization-sector">Sector <span aria-hidden="true">*</span></label><Controller control={control} name="industry" render={({ field }) => <Combobox id="organization-sector" name={field.name} required ariaLabel="Sector" value={field.value || ""} onValueChange={(value) => setClassification("industry", value)} placeholder="Select or type a sector" options={getSectorOptions()} disabled={saving} />} /></div>
+            <div className={styles.field}><label htmlFor="organization-subsector">Subsector <span aria-hidden="true">*</span></label><Controller control={control} name="subCategory" render={({ field }) => <Combobox id="organization-subsector" name={field.name} required ariaLabel="Subsector" value={field.value || ""} onValueChange={(value) => setClassification("subCategory", value)} placeholder={profile.industry ? "Select or type a subsector" : "Select a sector first"} options={getSubsectorOptions(profile.industry || "")} disabled={saving || !profile.industry} />} /></div>
+            <div className={styles.field}><label htmlFor="organization-industry-detail">Industry</label><Controller control={control} name="industryDetail" render={({ field }) => <Combobox id="organization-industry-detail" name={field.name} ariaLabel="Industry" value={field.value || ""} onValueChange={(value) => setClassification("industryDetail", value)} placeholder={profile.industry && profile.subCategory ? "Select or type an industry" : "Select a sector and subsector first"} options={getIndustryOptions(profile.industry || "", profile.subCategory || "")} disabled={saving || !profile.industry || !profile.subCategory} />} /></div>
+            <label className={styles.field}>Country<ApplicationInput {...register("country", { required: true, maxLength: 100 })} autoComplete="country-name" required maxLength={100} disabled={saving} placeholder="e.g. India" /></label>
+            <label className={styles.field}>Website<ApplicationInput {...register("websiteLink", { required: true, maxLength: 255 })} type="url" autoComplete="url" required maxLength={255} disabled={saving} placeholder="https://example.com" /></label>
+            <fieldset className={styles.periodField}><legend>Financial reporting period <span aria-hidden="true">*</span></legend><Controller control={control} name="reportingPeriod" render={({ field }) => <><input type="hidden" name={field.name} required value={field.value} readOnly /><div className={styles.periodControl} role="group" aria-label="Financial reporting period">{(["FY", "CY"] as const).map((period) => <button key={period} type="button" aria-pressed={field.value === period} disabled={saving} onClick={() => { field.onChange(period); setSaved(false); }}>{period === "FY" ? "Financial year (FY)" : "Calendar year (CY)"}</button>)}</div></>} /></fieldset>
+            <div className={styles.logoField}><span className={styles.fieldLabel}>Company logo</span><div className={styles.logoRow}>{chosenLogo ? <Image src={chosenLogo} alt="Company logo preview" width={64} height={44} unoptimized className={styles.logoPreview} /> : null}<label className={styles.fileButton}><Upload size={14} aria-hidden="true" />{profile.logo || hasExistingLogo ? "Replace logo" : "Upload logo"}<input {...logoRegistration} name="logo" type="file" accept="image/png,image/jpeg,image/webp" required={!hasExistingLogo && !profile.logo} disabled={saving} className={styles.visuallyHidden} onChange={(event) => chooseLogo(event.currentTarget.files?.[0])} /></label><span className={styles.hint}>PNG, JPEG or WebP · up to 10 MB</span></div></div>
+          </div></section>
+          <section className={styles.sitesSection} aria-labelledby="organization-sites-title"><div className={styles.sitesHeading}><div><h2 id="organization-sites-title"><MapPin size={16} aria-hidden="true" />Operating sites</h2><p>Add at least one location covered by future policies.</p></div><ApplicationButton type="button" variant="primary" size="md" onClick={() => { siteFields.append({ location: "", address: "", primaryFunction: "" }); setSaved(false); }} disabled={saving} leadingIcon={<Plus size={14} aria-hidden="true" />}>Add site</ApplicationButton></div>
+            <div className={styles.siteList}>{siteFields.fields.map((site, index) => <fieldset key={site.fieldKey} className={styles.siteRow}><legend className={styles.visuallyHidden}>Operating site {index + 1}</legend><label className={styles.field}>Location / unit<ApplicationInput {...register(`sites.${index}.location`, { required: true, maxLength: 180 })} required maxLength={180} disabled={saving} placeholder="e.g. Surat manufacturing unit" /></label><label className={styles.field}>Address<ApplicationInput {...register(`sites.${index}.address`, { required: true, maxLength: 500 })} autoComplete="street-address" required maxLength={500} disabled={saving} placeholder="Full site address" /></label><label className={styles.field}>Primary function<ApplicationInput {...register(`sites.${index}.primaryFunction`, { required: true, maxLength: 180 })} required maxLength={180} disabled={saving} placeholder="e.g. Manufacturing" /></label><div className={styles.removeCell}><button type="button" aria-label={`Remove operating site ${index + 1}`} title="Remove site" disabled={saving || siteFields.fields.length <= 1} onClick={() => { siteFields.remove(index); setSaved(false); }}><Trash2 size={15} aria-hidden="true" /></button></div></fieldset>)}</div>
+          </section>
+        </div>
+        {error ? <div className={styles.error} role="alert" aria-live="polite"><p>{error}</p>{conflict ? <button type="button" onClick={() => void reload()} disabled={saving}>Reload latest profile</button> : null}</div> : null}
+        <div className={styles.formFooter}><p aria-live="polite">{saving ? "Saving organization…" : saved ? "Organization details saved." : "Your changes apply to policies created after they are saved."}</p><div><Link href={backHref}>Cancel</Link><ApplicationButton type="submit" variant="primary" size="lg" className={styles.submitButton} disabled={saving} busy={saving} busyLabel="Saving…">{organizationId ? "Save organization" : "Create organization"}</ApplicationButton></div></div>
+      </form>}
+    </div>
+  </ApplicationSurface>;
 }

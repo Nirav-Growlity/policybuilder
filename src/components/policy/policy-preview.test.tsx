@@ -4,6 +4,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { chromium } from "playwright-core";
 import sharp from "sharp";
+import postcss from "postcss";
 import { PolicyCoverPreview, PolicyPreview } from "./policy-preview";
 import { createAICoverComposition, fallbackAICoverLayout } from "../../lib/ai/cover";
 import { templatePreviewPolicy } from "../../lib/sample-policies";
@@ -14,6 +15,85 @@ import { DEFAULT_POLICY_LIST_FORMATTING } from "../../lib/list-formatting";
 function chromePath() {
   return process.env.POLICY_PDF_CHROME_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 }
+
+type PostCssParent = postcss.Document | NonNullable<postcss.Rule["parent"]>;
+
+function cascadeColorForModularHeading(css: string, medium: "screen" | "print", collection: string | undefined) {
+  const path = [
+    { tag: "article", classes: ["policy-preview-document"], collection },
+    { tag: "section", classes: ["policy-section", "frame-modular-grid"], collection: undefined },
+    { tag: "div", classes: ["policy-section-heading"], collection: undefined },
+    { tag: "h2", classes: [], collection: undefined },
+  ];
+  const matches = (selector: string) => {
+    const compounds = selector.trim().split(/\s+|\s*>\s*/).filter(Boolean);
+    let nextNode = 0;
+    for (const compound of compounds) {
+      let matchedAt = -1;
+      for (let index = nextNode; index < path.length; index += 1) {
+        const node = path[index];
+        const tag = compound.match(/^[a-z][a-z0-9-]*/i)?.[0];
+        const classes = [...compound.matchAll(/\.([a-z0-9_-]+)/gi)].map(([, name]) => name);
+        const collection = compound.replace(/:not\([^)]*\)/g, "").match(/\[data-collection=["']?([^"'\]]+)["']?\]/)?.[1];
+        const excludesProfessional = compound.includes(":not([data-collection=\"professional\"])");
+        if ((tag && node.tag !== tag) || classes.some((name) => !node.classes.includes(name)) || (collection && node.collection !== collection) || (excludesProfessional && node.collection === "professional")) continue;
+        matchedAt = index;
+        break;
+      }
+      if (matchedAt < 0) return false;
+      nextNode = matchedAt + 1;
+    }
+    return nextNode === path.length;
+  };
+  const specificity = (selector: string) => [
+    (selector.match(/#[a-z0-9_-]+/gi) || []).length,
+    (selector.match(/\.[a-z0-9_-]+|\[[^\]]+\]|:(?!not\()[a-z0-9_-]+/gi) || []).length,
+    (selector.match(/(?:^|[\s>+~])(?:[a-z][a-z0-9-]*)/gi) || []).length,
+  ];
+  const compare = (left: number[], right: number[]) => {
+    for (let index = 0; index < left.length; index += 1) {
+      if (left[index] !== right[index]) return Math.sign(left[index] - right[index]);
+    }
+    return 0;
+  };
+  let winner: { value: string; important: boolean; specificity: number[]; order: number } | undefined;
+  let order = 0;
+  postcss.parse(css).walkRules((rule) => {
+    order += 1;
+    let active = true;
+    for (let parent: PostCssParent | undefined = rule.parent; parent; parent = parent.parent) {
+      if (parent.type !== "atrule" || parent.name !== "media") continue;
+      const query = parent.params.toLowerCase();
+      if ((query.includes("print") && medium !== "print") || (query.includes("screen") && medium !== "screen")) active = false;
+    }
+    if (!active) return;
+    for (const selector of rule.selector.split(",")) {
+      if (!selector.includes(".policy-section-heading") || !selector.includes("h2") || !matches(selector)) continue;
+      rule.walkDecls("color", (declaration) => {
+        const candidate = { value: declaration.value, important: Boolean(declaration.important), specificity: specificity(selector), order };
+        if (!winner || Number(candidate.important) > Number(winner.important) || (candidate.important === winner.important && compare(candidate.specificity, winner.specificity) > 0) || (candidate.important === winner.important && compare(candidate.specificity, winner.specificity) === 0 && candidate.order >= winner.order)) winner = candidate;
+      });
+    }
+  });
+  return winner?.value;
+}
+
+test("professional modular headings keep primary contrast on soft cards in screen and print CSS", () => {
+  for (const theme of ["operations-guide", "sustainability-charter", "metrics-ledger"] as const) {
+    const policy = templatePreviewPolicy(theme, "environmental");
+    const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
+    assert.match(markup, /data-collection="professional"/);
+    assert.match(markup, /data-page-frame="modular-grid"/);
+    assert.match(markup, /frame-modular-grid[\s\S]*?policy-section-heading[\s\S]*?<h2/);
+
+    for (const medium of ["screen", "print"] as const) {
+      const source = medium === "screen" ? markup : createPrintDocument(markup, policy);
+      const css = [...source.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)].map(([, styles]) => styles).join("\n");
+      assert.equal(cascadeColorForModularHeading(css, medium, "professional"), "var(--doc-primary)", `${theme}: modular heading should use primary on soft in ${medium}`);
+      assert.equal(cascadeColorForModularHeading(css, medium, undefined), "var(--doc-on-primary)", `${theme}: nonprofessional modular heading should keep its white band in ${medium}`);
+    }
+  }
+});
 
 test("custom cover keeps its background image without rendering a background label", () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
@@ -43,6 +123,10 @@ test("custom cover background overscan hides narrow white source edges", async (
     const page = await browser.newPage({ viewport: { width: 794, height: 1123 }, deviceScaleFactor: 1 });
     await page.setContent(markup);
     await page.addStyleTag({ content: "html,body{margin:0;width:210mm;height:297mm}.cover-preview-only{width:210mm!important;height:297mm!important}.policy-custom-cover{width:210mm!important;height:297mm!important}" });
+    // Compare the artwork after the finite preview entrance has reached full opacity.
+    await page.evaluate(async () => {
+      await Promise.all(document.getAnimations().map((animation) => animation.finished));
+    });
     const png = await page.locator(".policy-custom-cover").screenshot();
     const { data, info } = await sharp(png).removeAlpha().raw().toBuffer({ resolveWithObject: true });
     const sample = (x: number) => [...data.subarray((Math.floor(info.height / 2) * info.width + x) * info.channels, (Math.floor(info.height / 2) * info.width + x) * info.channels + 3)];

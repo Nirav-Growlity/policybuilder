@@ -1,0 +1,119 @@
+.shell {
+  --shell-border: var(--pc-divider);
+  --shell-panel: var(--pc-panel);
+  --shell-page: var(--pc-page);
+  --shell-inset: var(--pc-inset);
+  --shell-text: var(--pc-text);
+  --shell-muted: var(--pc-muted);
+  --shell-primary: var(--pc-primary);
+  --shell-selection: var(--pc-selection);
+  --shell-selection-text: var(--pc-selection-text);
+  display: flex;
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  color: var(--shell-text);
+  background: var(--shell-page);
+  font-family: var(--pc-font);
+}
+
+.scrim { position: fixed; inset: 0; z-index: 30; border: 0; background: rgb(15 23 42 / 32%); }
+.rail {
+  z-index: 40;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid var(--shell-border);
+  background: var(--shell-panel);
+  transition: width 200ms ease;
+}
+.railExpanded { width: 272px; }
+.railCollapsed { width: 68px; }
+.brandRow { display: flex; height: 64px; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid var(--shell-border); padding: 0 16px; }
+.brand { display: flex; min-width: 0; align-items: center; gap: 10px; color: var(--shell-text); text-decoration: none; }
+.brandMark { display: grid; width: 32px; height: 32px; flex: 0 0 auto; place-items: center; border-radius: 8px; background: var(--pc-selection); color: var(--shell-selection-text); }
+.brandTitle { overflow: hidden; font-size: 15px; font-weight: 650; line-height: 1.1; text-overflow: ellipsis; white-space: nowrap; }
+.brandSub { margin-top: 3px; color: var(--shell-muted); font-size: 10px; line-height: 1.1; }
+.brandTitle, .brandSub, .metaEyebrow, .metaLabel, .stepTitle, .stepDescription { display: block; }
+.railButton, .navButton, .stepIcon, .headerButton {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--shell-muted);
+  cursor: pointer;
+  font: inherit;
+  transition: color 150ms, background-color 150ms, border-color 150ms;
+}
+.railButton { width: 36px; height: 36px; min-height: 36px; flex: 0 0 auto; }
+.railButton:hover, .mobileClose:hover, .headerButton:hover { border-color: var(--shell-border); background: var(--shell-inset); color: var(--shell-text); }
+.policyMeta { margin: 14px 14px 0; display: flex; align-items: center; gap: 10px; border: 1px solid var(--shell-border); border-radius: 8px; padding: 10px; }
+.policyIcon { display: grid; width: 30px; height: 30px; flex: 0 0 auto; place-items: center; border-radius: 7px; background: var(--shell-selection); color: var(--shell-selection-text); }
+.metaEyebrow { color: var(--shell-muted); font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.metaLabel { overflow: hidden; margin-top: 2px; font-size: 13px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.progress { margin: 14px 16px 0; }
+.progressLabels { display: flex; justify-content: space-between; color: var(--shell-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.progressTrack { height: 4px; margin-top: 7px; overflow: hidden; border-radius: 999px; background: var(--shell-inset); }
+.progressBar { height: 100%; border-radius: inherit; background: var(--shell-primary); transition: width 300ms ease; }
+.nav { min-height: 0; flex: 1 1 auto; overflow: auto; padding: 14px 10px; }
+.navLabel { margin: 0 8px 8px; color: var(--shell-muted); font-size: 10px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+.navList { display: grid; gap: 3px; margin: 0; padding: 0; list-style: none; }
+.navButton { position: relative; width: 100%; min-height: 44px; justify-content: flex-start; padding: 6px 9px; text-align: left; color: var(--shell-text); }
+.navButton:hover { background: var(--shell-inset); }
+.navButton[aria-current="step"] { background: var(--shell-selection); color: var(--shell-selection-text); }
+.workflowMarker { position: absolute; top: 8px; bottom: 8px; left: 0; width: 3px; border-radius: 0 3px 3px 0; background: var(--shell-primary); pointer-events: none; }
+.stepNumber { display: grid; width: 25px; height: 25px; flex: 0 0 auto; place-items: center; border: 1px solid var(--shell-border); border-radius: 7px; color: var(--shell-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.navButton[aria-current="step"] .stepNumber, .stepDone { border-color: var(--shell-primary); background: var(--shell-primary); color: var(--pc-primary-text); }
+.stepText { min-width: 0; }
+.stepTitle { overflow: hidden; font-size: 13px; font-weight: 600; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+.stepDescription { overflow: hidden; margin-top: 2px; color: var(--shell-muted); font-size: 11px; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+.railFooter { flex: 0 0 auto; border-top: 1px solid var(--shell-border); padding: 10px 12px; }
+.resetButton { width: 100%; justify-content: flex-start; padding: 0 10px; font-size: 12px; }
+.collapsedContent { display: grid; min-height: 0; flex: 1 1 auto; grid-template-rows: auto auto 1fr auto; justify-items: center; gap: 12px; padding: 12px 7px; }
+.miniPolicy { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid var(--shell-border); border-radius: 8px; background: var(--shell-selection); color: var(--shell-selection-text); }
+.miniProgress { color: var(--shell-muted); font-size: 10px; font-variant-numeric: tabular-nums; text-align: center; }
+.miniNav { display: grid; align-content: start; justify-items: center; gap: 4px; overflow: auto; width: 100%; }
+.stepIcon { position: relative; width: 36px; height: 36px; min-height: 36px; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stepIcon[aria-current="step"] { border-color: var(--shell-primary); background: var(--shell-selection); color: var(--shell-selection-text); }
+.workflowMarkerCompact { position: absolute; top: 4px; bottom: 4px; left: 0; width: 3px; border-radius: 0 3px 3px 0; background: var(--shell-primary); pointer-events: none; }
+.contentColumn { display: flex; min-width: 0; min-height: 0; flex: 1 1 auto; flex-direction: column; overflow: hidden; }
+.header { z-index: 10; display: flex; min-height: 76px; flex: 0 0 auto; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; border-bottom: 1px solid var(--shell-border); background: var(--shell-panel); padding: 10px 20px; }
+.headingGroup { display: flex; min-width: 0; align-items: center; gap: 10px; }
+.headingText { min-width: 0; }
+.breadcrumb { display: flex; align-items: center; gap: 7px; color: var(--shell-muted); font-size: 11px; }
+.breadcrumb a { display: inline-flex; align-items: center; gap: 4px; color: inherit; text-decoration: none; }
+.breadcrumb a:hover { color: var(--shell-text); }
+.title { overflow: hidden; margin: 4px 0 0; font-family: var(--pc-font); font-size: 20px; font-weight: 650; letter-spacing: -.015em; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
+.subtitle { overflow: hidden; margin: 3px 0 0; color: var(--shell-muted); font-size: 12px; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+.headerActions { display: flex; min-width: 0; max-width: 100%; flex: 0 1 auto; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.headerButton { min-height: 40px; border-color: var(--shell-border); padding: 0 11px; color: var(--shell-text); font-size: 13px; }
+.mobileWorkflow { display: none; }
+.scrollRegion { min-height: 0; flex: 1 1 auto; overflow: auto; overscroll-behavior: contain; scroll-behavior: auto; }
+.shell :global(.pc-theme-option) { min-height: 40px; }
+.shell :is(button, a[href]):focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+
+@media (max-width: 1199px) {
+  .rail { position: fixed; inset: 0 auto 0 0; width: min(280px, calc(100vw - 40px)); height: 100dvh; transform: translateX(-102%); transition: transform 250ms ease; }
+  .railOpen { transform: translateX(0); }
+  .railExpanded, .railCollapsed { width: min(280px, calc(100vw - 40px)); }
+  .collapsedContent { display: none; }
+  .mobileWorkflow { display: inline-flex; }
+  .header { padding-inline: 14px; }
+  .headerActions { flex-wrap: wrap; }
+}
+@media (max-width: 599px) {
+  .header { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .headingGroup, .headerActions { width: 100%; }
+  .headerActions { justify-content: space-between; }
+  .title { font-size: 18px; }
+  .subtitle { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rail, .progressBar { transition: none; animation: none; }
+}

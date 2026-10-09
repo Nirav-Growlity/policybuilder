@@ -71,9 +71,9 @@ export function DockOptionsPanel() {
   const { policy, updatePolicy } = useBuilder();
   return (
     <Panel title="Document options" description="Choose which supporting pages appear." icon={<FileText size={17} strokeWidth={1.8} />}>
-      <label className="flex items-center justify-between text-[12px]"><span>Show table of contents</span><input type="checkbox" checked={policy.showTableOfContents !== false} onChange={(event) => updatePolicy(() => ({ showTableOfContents: event.target.checked }))} /></label>
-      <label className="mt-3 flex items-center justify-between text-[12px]"><span>Include acknowledgement</span><input type="checkbox" checked={policy.showAcknowledgement !== false} onChange={(event) => updatePolicy(() => ({ showAcknowledgement: event.target.checked }))} /></label>
-      <label className="mt-3 flex items-center justify-between text-[12px]"><span>Include revision history</span><input type="checkbox" checked={getSection(policy, "revision")?.enabled !== false} onChange={(event) => { const enabled = event.target.checked; updatePolicy((current) => ({ showRevisionHistory: enabled, sections: (current.sections || []).map((section) => section.kind === "revision" ? { ...section, enabled } : section) })); }} /></label>
+      <label className="flex min-h-11 items-center justify-between gap-3 text-[13px]"><span>Show table of contents</span><input aria-label="Show table of contents" type="checkbox" checked={policy.showTableOfContents !== false} onChange={(event) => updatePolicy(() => ({ showTableOfContents: event.target.checked }))} /></label>
+      <label className="mt-2 flex min-h-11 items-center justify-between gap-3 text-[13px]"><span>Include acknowledgement</span><input aria-label="Include acknowledgement" type="checkbox" checked={policy.showAcknowledgement !== false} onChange={(event) => updatePolicy(() => ({ showAcknowledgement: event.target.checked }))} /></label>
+      <label className="mt-2 flex min-h-11 items-center justify-between gap-3 text-[13px]"><span>Include revision history</span><input aria-label="Include revision history" type="checkbox" checked={getSection(policy, "revision")?.enabled !== false} onChange={(event) => { const enabled = event.target.checked; updatePolicy((current) => ({ showRevisionHistory: enabled, sections: (current.sections || []).map((section) => section.kind === "revision" ? { ...section, enabled } : section) })); }} /></label>
     </Panel>
   );
 }
@@ -138,10 +138,10 @@ export function DockDocumentDesignPanel() {
     <>
       <Panel title="Cover" description="Choose and refine the first page." icon={<Palette size={17} strokeWidth={1.8} />}>
         <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Active cover">
-          <button type="button" aria-pressed={activeCover === "manual"} onClick={() => updatePolicy(() => ({ activeCoverVariant: "manual" }))} className={`rounded-lg px-3 py-2 text-[12px] font-semibold ${activeCover === "manual" ? "bg-[var(--color-forest)] text-white" : "border border-[var(--color-line-2)] bg-white text-[var(--color-ink-2)]"}`}>Manual</button>
-          <button type="button" disabled={!policy.aiCoverComposition} aria-pressed={activeCover === "ai"} onClick={() => updatePolicy(() => ({ activeCoverVariant: "ai" }))} className={`rounded-lg px-3 py-2 text-[12px] font-semibold disabled:cursor-not-allowed disabled:opacity-40 ${activeCover === "ai" ? "bg-[var(--color-forest)] text-white" : "border border-[var(--color-line-2)] bg-white text-[var(--color-ink-2)]"}`}>AI</button>
+          <button type="button" aria-pressed={activeCover === "manual"} onClick={() => updatePolicy(() => ({ activeCoverVariant: "manual" }))} className={`min-h-10 rounded-lg px-3 text-[13px] font-semibold ${activeCover === "manual" ? "bg-[var(--color-forest)] text-[var(--pc-primary-text)]" : "border border-[var(--color-line-2)] bg-[var(--pc-panel)] text-[var(--color-ink-2)]"}`}>Manual</button>
+          <button type="button" disabled={!policy.aiCoverComposition} aria-pressed={activeCover === "ai"} onClick={() => updatePolicy(() => ({ activeCoverVariant: "ai" }))} className={`min-h-10 rounded-lg px-3 text-[13px] font-semibold disabled:cursor-not-allowed disabled:opacity-40 ${activeCover === "ai" ? "bg-[var(--color-forest)] text-[var(--pc-primary-text)]" : "border border-[var(--color-line-2)] bg-[var(--pc-panel)] text-[var(--color-ink-2)]"}`}>AI</button>
           <span className="text-[11px] text-[var(--color-muted)]">{activeCover === "ai" ? "AI active" : "Manual active"}</span>
-          <button type="button" onClick={() => { requestCoverEdit(activeCover, activeCover === "ai" ? policy.aiCoverComposition : undefined); setStep("export"); }} className="w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 py-2 text-[12px] font-semibold text-[var(--color-ink-2)]">Edit active cover</button>
+          <button type="button" onClick={() => { requestCoverEdit(activeCover, activeCover === "ai" ? policy.aiCoverComposition : undefined); setStep("export"); }} className="w-full min-h-10 rounded-lg border border-[var(--color-line-2)] bg-[var(--pc-panel)] px-3 text-[13px] font-semibold text-[var(--color-ink-2)]">Edit active cover</button>
         </div>
         <div className="mt-3">
           <AICoverWorkflow

@@ -88,7 +88,7 @@ function FocusAreaCheckmark({ checked }: { checked: boolean }) {
     <span
       aria-hidden="true"
       className={`grid h-[18px] w-[18px] shrink-0 place-items-center rounded-[5px] border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--color-forest)]/35 peer-focus-visible:ring-offset-2 ${checked
-        ? "border-[var(--color-forest)] bg-[var(--color-forest)] text-white"
+        ? "border-[var(--color-forest)] bg-[var(--color-forest)] text-[var(--pc-primary-text)]"
         : "border-[var(--color-line-2)] bg-[var(--color-paper)] text-transparent group-hover:border-[var(--color-forest)]"
       }`}
     >
@@ -284,8 +284,8 @@ export function StepFocus() {
                   : area.label;
                 return (
                   <li key={area.id}>
-                    <div className={`group flex min-h-[52px] items-center gap-3 rounded-xl border px-4 py-2.5 transition-colors duration-150 ${checked
-                      ? "border-[#c7ded1] bg-[var(--color-forest-soft)]/55"
+                    <div className={`group flex min-h-[52px] items-center gap-3 rounded-lg border px-4 py-2.5 transition-colors duration-150 ${checked
+                      ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)]"
                       : "border-[var(--color-line)] bg-[var(--color-cream-2)]/50 hover:border-[var(--color-line-2)] hover:bg-[var(--color-paper)]"
                     }`}>
                       <label className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 py-1">
@@ -348,8 +348,8 @@ export function StepFocus() {
                 return (
                   <li
                     key={area.id}
-                    className={`group flex min-h-[52px] items-center gap-3 rounded-xl border px-4 py-2.5 transition-colors duration-150 ${area.selected
-                      ? "border-[#c7ded1] bg-[var(--color-forest-soft)]/55"
+                    className={`group flex min-h-[52px] items-center gap-3 rounded-lg border px-4 py-2.5 transition-colors duration-150 ${area.selected
+                      ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)]"
                       : "border-[var(--color-line)] bg-[var(--color-cream-2)]/50 hover:border-[var(--color-line-2)] hover:bg-[var(--color-paper)]"
                     }`}
                   >

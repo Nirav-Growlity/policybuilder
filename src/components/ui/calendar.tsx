@@ -3,6 +3,8 @@
 import * as React from "react";
 import { clsx } from "clsx";
 import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useApplicationSurface } from "./application-surface";
+import { useFieldAccessibility } from "./field-accessibility";
 
 export interface DatePickerProps {
   value?: string; // Format: "YYYY-MM-DD"
@@ -71,8 +73,12 @@ export function DatePicker({
   id,
   ariaLabel,
 }: DatePickerProps) {
+  const application = useApplicationSurface();
+  const accessibility = useFieldAccessibility({"aria-label": ariaLabel, "aria-invalid": hasError || undefined});
   const [open, setOpen] = React.useState(false);
   const rootRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef<HTMLDivElement>(null);
+  const popoverId = React.useId();
 
   // Normalize initial viewing month/year from current value or today
   const initialDate = value || minDate || getTodayIso();
@@ -85,14 +91,16 @@ export function DatePicker({
     return parts.length === 3 ? parseInt(parts[1], 10) - 1 : new Date().getMonth();
   });
 
-  // Keep view synchronized when value changes and popover opens
-  React.useEffect(() => {
+  // Keep controlled-value changes synchronized before painting the calendar.
+  const [synchronizedValue, setSynchronizedValue] = React.useState(value);
+  if (value !== synchronizedValue) {
+    setSynchronizedValue(value);
     if (value && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
       const [y, m] = value.split("-");
       setViewYear(parseInt(y, 10));
       setViewMonth(parseInt(m, 10) - 1);
     }
-  }, [value]);
+  }
 
   // Dismiss popover on outside click
   React.useEffect(() => {
@@ -155,6 +163,7 @@ export function DatePicker({
     if (isDateDisabled(isoString)) return;
     onChange(isoString);
     setOpen(false);
+    if (application) triggerRef.current?.focus();
   };
 
   const handleClear = (e: React.MouseEvent) => {
@@ -172,6 +181,7 @@ export function DatePicker({
       setViewYear(parseInt(y, 10));
       setViewMonth(parseInt(m, 10) - 1);
       setOpen(false);
+      if (application) triggerRef.current?.focus();
     }
   };
 
@@ -179,15 +189,27 @@ export function DatePicker({
   const displayVal = formatToDisplay(value);
 
   return (
-    <div ref={rootRef} className={clsx("relative inline-block w-full", className)}>
+    <div ref={rootRef} className={clsx("relative inline-block w-full", application && "pc-calendar-control", className)} onKeyDown={application && open ? event => {
+      if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); setOpen(false); triggerRef.current?.focus(); return; }
+      const target = event.target;
+      if (!(target instanceof HTMLButtonElement) || !target.dataset.calendarDay) return;
+      const day = Number(target.dataset.calendarDay);
+      const offset = ({ArrowLeft:-1, ArrowRight:1, ArrowUp:-7, ArrowDown:7} as Record<string,number>)[event.key];
+      if (!offset) return;
+      const next = rootRef.current?.querySelector<HTMLButtonElement>(`button[data-calendar-day="${day + offset}"]:not([disabled])`);
+      event.preventDefault(); next?.focus();
+    } : undefined}>
       {/* Trigger input field */}
       <div
+        ref={triggerRef}
         role="button"
         tabIndex={disabled ? -1 : 0}
         id={id}
         aria-label={ariaLabel || "Date picker"}
         aria-expanded={open}
         aria-haspopup="dialog"
+        aria-controls={open ? popoverId : undefined}
+        {...accessibility}
         onClick={() => {
           if (!disabled) setOpen((prev) => !prev);
         }}
@@ -198,6 +220,10 @@ export function DatePicker({
           }
           if (e.key === "Escape" && open) {
             setOpen(false);
+          }
+          if (application && e.key === "ArrowDown" && !disabled) {
+            e.preventDefault(); setOpen(true);
+            requestAnimationFrame(() => rootRef.current?.querySelector<HTMLButtonElement>('button[data-calendar-day]:not([disabled])')?.focus());
           }
         }}
         className={clsx(
@@ -240,8 +266,9 @@ export function DatePicker({
       {open && (
         <div
           role="dialog"
+          id={popoverId}
           aria-label="Calendar date picker"
-          className="absolute z-50 mt-1.5 left-0 w-[290px] sm:w-[310px] p-3.5 rounded-xl border border-[var(--color-line-2)] bg-[var(--color-paper)] shadow-[0_12px_32px_rgba(35,52,42,0.16)] animate-in fade-in zoom-in-95 duration-100"
+          className={clsx("absolute z-50 mt-1.5 left-0 w-[290px] sm:w-[310px] p-3.5 rounded-xl border border-[var(--color-line-2)] bg-[var(--color-paper)] shadow-[0_12px_32px_rgba(35,52,42,0.16)]", application ? "pc-calendar-popover" : "animate-in fade-in zoom-in-95 duration-100")}
         >
           {/* Header with Month/Year Navigation */}
           <div className="flex items-center justify-between gap-1 mb-3">
@@ -324,6 +351,10 @@ export function DatePicker({
                   key={day}
                   type="button"
                   disabled={disabledDay}
+                  data-calendar-day={day}
+                  data-pc-selected={application && isSelected ? "true" : undefined}
+                  aria-pressed={application ? isSelected : undefined}
+                  aria-label={application ? `${day} ${MONTH_NAMES[viewMonth]} ${viewYear}` : undefined}
                   onClick={() => handleSelectDay(day)}
                   className={clsx(
                     "h-8 w-8 rounded-lg text-[12px] font-medium transition-all flex items-center justify-center relative",

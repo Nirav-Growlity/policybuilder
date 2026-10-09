@@ -12,9 +12,10 @@ import {
   Search,
   Trash2,
   Upload,
-  X,
 } from "lucide-react";
 import { HexColorInput, HexColorPicker } from "react-colorful";
+import { Modal } from "@/components/ui/modal";
+import { useApplicationSurface } from "@/components/ui/application-surface";
 import { PageBorderControls } from "./page-border-controls";
 import { PdfPolicyPreview } from "@/components/policy/pdf-policy-preview";
 import { ThemeContactSheet } from "./document-theme-picker";
@@ -334,7 +335,7 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
           {error && <p className="mb-3 text-[13px] font-medium text-red-700" role="alert">{error}</p>}
           <div className="grid grid-cols-[.72fr_1.28fr] gap-2">
             <button type="button" onClick={cancelEdit} className="h-10 rounded-xl border border-[var(--color-line-2)] text-[13px] font-semibold text-[var(--color-ink-2)]">Cancel</button>
-            <button type="button" onClick={commitTheme} className="h-10 rounded-xl bg-[var(--color-forest)] text-[13px] font-semibold text-white shadow-[0_8px_18px_rgba(26,92,58,.2)]">{editingId ? "Update template" : "Save to My Templates"}</button>
+            <button type="button" onClick={commitTheme} className="h-10 rounded-xl bg-[var(--color-forest)] text-[13px] font-semibold text-[var(--pc-primary-text)] shadow-[0_8px_18px_rgba(26,92,58,.2)]">{editingId ? "Update template" : "Save to My Templates"}</button>
           </div>
         </div>
       </aside>
@@ -369,7 +370,7 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
               const selected = resolved.id === theme.id;
               return <article key={theme.id} className={`rounded-xl border p-2 transition-[border-color,box-shadow,transform] motion-reduce:transition-none ${selected ? "border-[var(--color-forest)] shadow-[0_8px_20px_rgba(26,92,58,.11)]" : "border-[var(--color-line)] hover:-translate-y-0.5 hover:border-[var(--color-line-2)] motion-reduce:hover:translate-y-0"}`}>
                 <ThemeContactSheet theme={theme} companyName={policy.company.name} policyLabel={profile.label} policyType={policy.policyType} compact />
-                <div className="mt-2 flex items-start gap-1.5"><div className="min-w-0 flex-1"><div className="flex items-center gap-1.5"><span className="truncate text-[12px] font-semibold">{theme.name}</span>{selected && <Check size={12} className="shrink-0 text-[var(--color-forest)]" />}</div><div className="mt-0.5 text-[11px] capitalize text-[var(--color-muted)]">{theme.intent.replace("-", " ")} · {theme.defaults.density}</div></div><button type="button" onClick={() => setPreviewTheme(theme)} className="inline-flex h-7 items-center gap-1 rounded-md border border-[var(--color-line)] px-1.5 text-[11px] font-semibold"><Eye size={10} /> Preview</button><button type="button" onClick={() => applyPublic(theme.id)} className="h-7 rounded-md bg-[var(--color-forest)] px-2 text-[11px] font-semibold text-white">{selected ? "Applied" : "Apply"}</button></div>
+                <div className="mt-2 flex items-start gap-1.5"><div className="min-w-0 flex-1"><div className="flex items-center gap-1.5"><span className="truncate text-[13px] font-semibold">{theme.name}</span>{selected && <Check size={14} className="shrink-0 text-[var(--color-forest)]" />}</div><div className="mt-0.5 text-[12px] capitalize text-[var(--color-muted)]">{theme.intent.replace("-", " ")} · {theme.defaults.density}</div></div><button type="button" onClick={() => setPreviewTheme(theme)} className="inline-flex items-center gap-1 rounded-md border border-[var(--color-line)] px-2 text-[12px] font-semibold"><Eye size={12} /> Preview</button><button type="button" aria-pressed={selected} onClick={() => applyPublic(theme.id)} className="rounded-md bg-[var(--pc-primary)] px-2.5 text-[12px] font-semibold text-[var(--pc-primary-text)]">{selected ? "Applied" : "Apply"}</button></div>
               </article>;
             })}</div></section>)}
           </div> : <div className="px-5 py-10 text-center"><div className="text-[13px] font-semibold">No matching templates</div><p className="mt-1 text-[13px] text-[var(--color-muted)]">Try another family, intent, density, image, or search.</p></div>
@@ -403,9 +404,25 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
         )}
       </div>
       <div className="border-t border-[var(--color-line)] p-3">
-        <button type="button" onClick={beginNew} className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-forest)] text-[13px] font-semibold text-white shadow-[0_8px_18px_rgba(26,92,58,.2)]"><Plus size={15} /> New custom theme</button>
+        <button type="button" onClick={beginNew} className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-forest)] text-[13px] font-semibold text-[var(--pc-primary-text)] shadow-[0_8px_18px_rgba(26,92,58,.2)]"><Plus size={15} /> New custom theme</button>
       </div>
-      {previewTheme && <div className="fixed inset-0 z-50 grid place-items-center bg-[#122018]/55 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={`${previewTheme.name} preview`} onMouseDown={(event) => { if (event.target === event.currentTarget) setPreviewTheme(null); }}><div className="w-full max-w-4xl bg-[var(--color-paper)] p-4 shadow-2xl sm:p-6"><div className="mb-4 flex items-start justify-between"><div><div className="text-[13px] font-bold uppercase tracking-[.15em] text-[var(--color-forest)]">{previewTheme.family} · {previewTheme.intent.replace("-", " ")}</div><h3 className="mt-1 font-display text-[27px] font-semibold">{previewTheme.name}</h3><p className="mt-1 max-w-2xl text-[13px] text-[var(--color-muted)]">{previewTheme.description}</p></div><button type="button" onClick={() => setPreviewTheme(null)} aria-label="Close theme preview" className="grid h-8 w-8 place-items-center text-[var(--color-muted)]"><X size={17} /></button></div><div className="max-h-[65vh] overflow-auto scrollbar-thin"><PdfPolicyPreview policy={{ ...policy, ...getDocumentTemplatePatch(previewTheme.id, policy) }} /></div><div className="mt-4 flex items-center justify-between"><p className="text-[13px] text-[var(--color-muted)]">{previewTheme.previewRecipe}</p><button type="button" onClick={() => { applyPublic(previewTheme.id); setPreviewTheme(null); }} className="h-10 bg-[var(--color-forest)] px-5 py-2.5 text-[13px] font-semibold text-white">Apply template</button></div></div></div>}
+      <Modal
+        open={Boolean(previewTheme)}
+        onClose={() => setPreviewTheme(null)}
+        title={previewTheme ? `${previewTheme.name} preview` : "Template preview"}
+        description={previewTheme ? `${previewTheme.family} · ${previewTheme.intent.replace("-", " ")}. ${previewTheme.description}` : undefined}
+        width={980}
+      >
+        {previewTheme && <>
+          <div className="max-h-[65vh] overflow-auto scrollbar-thin">
+            <PdfPolicyPreview policy={{ ...policy, ...getDocumentTemplatePatch(previewTheme.id, policy) }} />
+          </div>
+          <div className="pc-builder-authoring mt-4 flex items-center justify-between gap-4">
+            <p className="text-[13px]">{previewTheme.previewRecipe}</p>
+            <button type="button" onClick={() => { applyPublic(previewTheme.id); setPreviewTheme(null); }} className="min-h-11 bg-[var(--pc-primary)] px-5 text-[13px] font-semibold text-[var(--pc-primary-text)]">Apply template</button>
+          </div>
+        </>}
+      </Modal>
     </aside>
   );
 }
@@ -415,6 +432,7 @@ function InspectorHeading({ title, description }: { title: string; description: 
 }
 
 function ColorControl({ id, label, description, value, open, onOpenChange, onChange, onValidityChange }: { id: string; label: string; description: string; value: string; open: boolean; onOpenChange: (open: boolean) => void; onChange: (value: string) => void; onValidityChange: (id: string, valid: boolean) => void }) {
+  const application = useApplicationSurface();
   const [edit, setEdit] = React.useState({ source: value, draft: value });
   const draft = edit.source === value ? edit.draft : value;
   const anchorRef = React.useRef<HTMLButtonElement>(null);
@@ -445,10 +463,14 @@ function ColorControl({ id, label, description, value, open, onOpenChange, onCha
       const left = Math.min(Math.max(8, anchorBox.left), window.innerWidth - width - 8);
       setPickerPosition({ left, top });
     };
-    const frame = window.requestAnimationFrame(updatePosition);
+    let focusFrame: number | undefined;
+    const frame = window.requestAnimationFrame(() => {
+      updatePosition();
+      focusFrame = window.requestAnimationFrame(() => pickerRef.current?.querySelector<HTMLElement>('[tabindex="0"]')?.focus());
+    });
     window.addEventListener("resize", updatePosition);
     window.addEventListener("scroll", updatePosition, true);
-    return () => { window.cancelAnimationFrame(frame); window.removeEventListener("resize", updatePosition); window.removeEventListener("scroll", updatePosition, true); };
+    return () => { window.cancelAnimationFrame(frame); if (focusFrame !== undefined) window.cancelAnimationFrame(focusFrame); window.removeEventListener("resize", updatePosition); window.removeEventListener("scroll", updatePosition, true); };
   }, [open]);
   React.useEffect(() => {
     if (!open) return undefined;
@@ -468,7 +490,7 @@ function ColorControl({ id, label, description, value, open, onOpenChange, onCha
         <button ref={anchorRef} type="button" onClick={() => { setPickerPosition(null); onOpenChange(!open); }} aria-label={`Open ${label} color picker`} className="mr-2 h-5 w-5 rounded-md border border-black/10" style={{ background: value }} />
         <HexColorInput color={draft} onChange={commit} prefixed aria-label={`${label} HEX color`} className="min-w-0 flex-1 bg-transparent font-mono text-[13px] uppercase outline-none" />
       </div>
-      {open && <div ref={pickerRef} className="fixed z-50 rounded-xl border border-[var(--color-line)] bg-white p-2 shadow-xl" style={pickerPosition ? { left: pickerPosition.left, top: pickerPosition.top } : { left: 0, top: 0, visibility: "hidden" }}><HexColorPicker color={value} onChange={commit} /><button type="button" onClick={() => onOpenChange(false)} className="mt-2 w-full rounded-lg bg-[var(--color-cream-2)] py-1.5 text-[13px] font-semibold">Done</button></div>}
+      {open && <div ref={pickerRef} data-pc-color-picker role="group" aria-label={`${label} color picker`} className={`fixed z-50 rounded-xl border border-[var(--color-line)] p-2 shadow-xl ${application ? "pc-ui pc-builder-authoring bg-[var(--pc-panel)]" : "bg-white"}`} style={pickerPosition ? { left: pickerPosition.left, top: pickerPosition.top } : { left: 0, top: 0, visibility: "hidden" }} onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); onOpenChange(false); anchorRef.current?.focus(); } }}><HexColorPicker color={value} onChange={commit} /><button type="button" onClick={() => { onOpenChange(false); anchorRef.current?.focus(); }} className="mt-2 min-h-10 w-full rounded-lg bg-[var(--color-cream-2)] py-1.5 text-[13px] font-semibold">Done</button></div>}
     </div>
   );
 }
@@ -492,7 +514,7 @@ function BackgroundEditor({ background, onChange }: { background: ThemeBackgroun
 }
 
 function NativeColor({ label, value, onChange }: { label: string; value: string; onChange: (color: string) => void }) {
-  return <label className="text-[13px] font-semibold text-[var(--color-ink-2)]">{label}<span className="mt-1 flex h-9 items-center gap-2 rounded-lg border border-[var(--color-line-2)] bg-white px-2"><input type="color" value={value} onChange={(event) => onChange(event.target.value.toUpperCase())} className="h-5 w-6 cursor-pointer border-0 bg-transparent p-0" /><span className="font-mono text-[13px]">{value}</span></span></label>;
+  return <label className="text-[13px] font-semibold text-[var(--color-ink-2)]">{label}<span className="mt-1 flex h-10 items-center gap-2 rounded-lg border border-[var(--color-line-2)] bg-[var(--pc-panel)] px-2"><input type="color" aria-label={label} value={value} onChange={(event) => onChange(event.target.value.toUpperCase())} className="h-7 w-8 cursor-pointer border-0 bg-transparent p-0" /><span className="font-mono text-[13px]">{value}</span></span></label>;
 }
 
 function ChoiceGroup({ label, options, value, onChange, columns = 3 }: { label: string; options: { value: string; label: string }[]; value: string; onChange: (value: string) => void; columns?: 2 | 3 }) {
@@ -500,7 +522,7 @@ function ChoiceGroup({ label, options, value, onChange, columns = 3 }: { label: 
 }
 
 function SelectField({ label, value, options, onChange }: { label: string; value: string; options: readonly string[]; onChange: (value: string) => void }) {
-  return <label className="block font-semibold text-[var(--color-ink-2)]">{label}<select value={value} onChange={(event) => onChange(event.target.value)} className="mt-1 h-9 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-2 text-[13px] outline-none focus:border-[var(--color-forest)]">{options.map((option) => <option key={option}>{option}</option>)}</select></label>;
+  return <label className="block font-semibold text-[var(--color-ink-2)]">{label}<select value={value} onChange={(event) => onChange(event.target.value)} className="mt-1 min-h-10 w-full rounded-lg border border-[var(--color-line-2)] bg-[var(--pc-panel)] px-3 text-[13px] outline-none focus:border-[var(--color-forest)]">{options.map((option) => <option key={option}>{option}</option>)}</select></label>;
 }
 
 function ThemeBaseSelect({ value, onChange }: { value: string; onChange: (value: string) => void }) {
@@ -508,7 +530,7 @@ function ThemeBaseSelect({ value, onChange }: { value: string; onChange: (value:
 }
 
 function CompactSelect({ label, value, options, onChange }: { label: string; value: string; options: readonly string[]; onChange: (value: string) => void }) {
-  return <label className="text-[8px] font-bold uppercase tracking-[.1em] text-[var(--color-muted)]">{label}<select value={value} onChange={(event) => onChange(event.target.value)} className="mt-1 h-8 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-2 text-[13px] font-semibold normal-case tracking-normal text-[var(--color-ink)] outline-none"><option value="all">All</option>{options.filter((option) => option !== "all").map((option) => <option key={option} value={option}>{option}</option>)}</select></label>;
+  return <label className="text-[12px] font-semibold text-[var(--color-muted)]">{label}<select value={value} onChange={(event) => onChange(event.target.value)} className="mt-1 min-h-10 w-full rounded-lg border border-[var(--color-line-2)] bg-[var(--pc-panel)] px-2 text-[13px] font-medium text-[var(--color-ink)] outline-none"><option value="all">All</option>{options.filter((option) => option !== "all").map((option) => <option key={option} value={option}>{option}</option>)}</select></label>;
 }
 
 function NumberField({ label, value, min, max, step, onChange }: { label: string; value: number; min: number; max: number; step: number; onChange: (value: number) => void }) {
@@ -520,7 +542,7 @@ function RangeField({ label, value, onChange }: { label: string; value: number; 
 }
 
 function IconButton({ label, onClick, danger = false, children }: { label: string; onClick: () => void; danger?: boolean; children: React.ReactNode }) {
-  return <button type="button" aria-label={label} title={label} onClick={onClick} className={`grid h-7 w-7 place-items-center rounded-md transition-colors ${danger ? "text-red-600 hover:bg-red-50" : "text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] hover:text-[var(--color-ink)]"}`}>{children}</button>;
+  return <button type="button" aria-label={label} title={label} onClick={onClick} className={`grid min-h-10 min-w-10 place-items-center rounded-md transition-colors ${danger ? "text-red-600 hover:bg-red-50" : "text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] hover:text-[var(--color-ink)]"}`}>{children}</button>;
 }
 
 function contrastRatio(first: string, second: string): number {

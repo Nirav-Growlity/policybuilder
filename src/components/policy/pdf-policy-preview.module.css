@@ -1,0 +1,137 @@
+.toolbar {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  border-bottom: 1px solid var(--pc-divider);
+  background: color-mix(in srgb, var(--pc-panel) 95%, transparent);
+  padding: .625rem .75rem;
+  font-size: 12px;
+  color: var(--pc-text);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.pages {
+  border-color: var(--pc-divider);
+  background: var(--pc-page);
+}
+
+.paper {
+  box-shadow: 0 8px 28px rgb(15 23 42 / 14%);
+}
+
+.pageViewControls,
+.pageControls,
+.modeControls,
+.zoomControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+
+.pageViewControls {
+  gap: .75rem;
+}
+
+.controlButton {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  touch-action: manipulation;
+  border: 1px solid var(--pc-divider);
+  border-radius: .5rem;
+  background: var(--pc-panel);
+  color: var(--pc-text);
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, transform 100ms ease;
+}
+
+.controlButton:hover:not(:disabled) {
+  border-color: var(--pc-primary);
+}
+
+.controlButton:active:not(:disabled),
+.modeButton:active {
+  transform: scale(.98);
+}
+
+.controlButton:focus-visible,
+.modeButton:focus-visible,
+.zoomSelect:focus-visible {
+  outline: 2px solid var(--pc-primary);
+  outline-offset: 2px;
+}
+
+.controlButton:disabled {
+  cursor: not-allowed;
+  opacity: .35;
+}
+
+.modeControls {
+  gap: .125rem;
+  border: 1px solid var(--pc-divider);
+  border-radius: .5rem;
+  background: var(--pc-inset);
+  padding: .125rem;
+}
+
+.modeButton {
+  min-height: 1.75rem;
+  touch-action: manipulation;
+  border: 0;
+  border-radius: .5rem;
+  background: transparent;
+  padding: 0 .75rem;
+  color: var(--pc-text);
+  font-size: 11px;
+  font-weight: 500;
+  transition: color 150ms ease, background-color 150ms ease, transform 100ms ease;
+}
+
+.modeButton:hover {
+  background: var(--pc-panel);
+}
+
+.modeButtonActive,
+.modeButtonActive:hover {
+  background: var(--pc-primary);
+  color: var(--pc-primary-text);
+  box-shadow: 0 1px 2px rgb(16 24 16 / 12%);
+}
+
+.zoomSelect {
+  height: 2rem;
+  max-width: 100%;
+  border: 1px solid var(--pc-divider);
+  border-radius: .5rem;
+  background-color: var(--pc-panel);
+  padding: 0 .625rem;
+  color: var(--pc-text);
+  font-size: 11px;
+  font-weight: 500;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.zoomSelect:hover {
+  border-color: var(--pc-primary);
+}
+
+@media (min-width: 640px) {
+  .toolbar {
+    padding-inline: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .controlButton,
+  .modeButton,
+  .zoomSelect {
+    transition: none;
+  }
+}

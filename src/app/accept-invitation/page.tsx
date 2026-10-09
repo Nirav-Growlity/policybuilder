@@ -3,11 +3,37 @@
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Check, Leaf, Loader2, LockKeyhole, Mail } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { signIn, signOut } from "@/lib/auth-client";
 import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
+import { ApplicationSurface } from "@/components/ui/application-surface";
+import { ApplicationThemeControl } from "@/components/ui/application-theme-control";
+import { ApplicationButton, ApplicationField, ApplicationInput } from "@/components/ui/app-primitives";
+import styles from "./page.module.css";
 
 type Invitation = { mode: "new" | "existing"; email: string; name: string; expiresAt: string };
 type InvitationResponse = { invitation?: Invitation; error?: string };
+
+const existingInvitationSchema = z.object({
+  // The native email input remains the source of email-format validation.
+  email: z.string(),
+  password: z.string(),
+  confirmPassword: z.string(),
+});
+
+const newInvitationSchema = existingInvitationSchema.extend({
+  password: z.string().min(8, "Use a password with at least 8 characters."),
+  confirmPassword: z.string().min(8, "Use a password with at least 8 characters."),
+}).superRefine(({ password, confirmPassword }, context) => {
+  if (password !== confirmPassword) {
+    context.addIssue({ code: "custom", path: ["confirmPassword"], message: "Passwords do not match." });
+  }
+});
+
+type InvitationFormValues = z.infer<typeof existingInvitationSchema>;
 
 function AcceptInvitationContent() {
   const params = useSearchParams();
@@ -15,11 +41,7 @@ function AcceptInvitationContent() {
   const token = params.get("token") || "";
   const [invitation, setInvitation] = React.useState<Invitation | null>(null);
   const [loading, setLoading] = React.useState(true);
-  const [submitting, setSubmitting] = React.useState(false);
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [confirmPassword, setConfirmPassword] = React.useState("");
-  const [error, setError] = React.useState("");
+  const [notice, setNotice] = React.useState("");
   const [accepted, setAccepted] = React.useState(false);
   const [newAccountAccepted, setNewAccountAccepted] = React.useState(false);
   const [signInRedirectError, setSignInRedirectError] = React.useState("");
@@ -28,6 +50,21 @@ function AcceptInvitationContent() {
   const acceptanceStarted = React.useRef(false);
   const signInRedirectStarted = React.useRef(false);
   const newAccountAcceptedHeading = React.useRef<HTMLHeadingElement>(null);
+  const reducedMotion = useReducedMotion();
+  const schema = React.useMemo(() => invitation?.mode === "new" ? newInvitationSchema : existingInvitationSchema, [invitation?.mode]);
+  const {
+    clearErrors,
+    formState: { errors: formErrors, isSubmitting },
+    handleSubmit,
+    register,
+    setError,
+    setValue,
+  } = useForm<InvitationFormValues>({
+    resolver: zodResolver(schema),
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
+    defaultValues: { email: "", password: "", confirmPassword: "" },
+  });
 
   React.useEffect(() => {
     if (newAccountAccepted) newAccountAcceptedHeading.current?.focus();
@@ -36,7 +73,7 @@ function AcceptInvitationContent() {
   React.useEffect(() => {
     let active = true;
     const timer = window.setTimeout(() => {
-      if (!token) { setError("This invitation link is missing its token. Ask your administrator to resend it."); setLoading(false); return; }
+      if (!token) { setNotice("This invitation link is missing its token. Ask your administrator to resend it."); setLoading(false); return; }
       void fetch(`/api/invitations/${encodeURIComponent(token)}`, { cache: "no-store" })
       .then(async (response) => {
         const body = await response.json().catch(() => null);
@@ -47,16 +84,17 @@ function AcceptInvitationContent() {
         }
         return invitation;
       })
-      .then((data) => { if (active) { setInvitation(data); setEmail(data.email); } })
-      .catch((cause) => { if (active) setError(cause instanceof Error ? cause.message : "This invitation is unavailable."); })
+      .then((data) => { if (active) { setInvitation(data); setValue("email", data.email); } })
+      .catch((cause) => { if (active) setNotice(cause instanceof Error ? cause.message : "This invitation is unavailable."); })
       .finally(() => { if (active) setLoading(false); });
     }, 0);
     return () => { active = false; window.clearTimeout(timer); };
-  }, [retryCount, token]);
+  }, [retryCount, setValue, token]);
 
   function retryInvitationLookup() {
     setInvitation(null);
-    setError("");
+    setNotice("");
+    clearErrors();
     setLoading(true);
     setRetryCount((attempt) => attempt + 1);
   }
@@ -66,7 +104,7 @@ function AcceptInvitationContent() {
     const accessResponse = await fetch("/api/policycraft/access", { cache: "no-store" });
     if (!accessResponse.ok) {
       setAccepted(true);
-      setError("Your invitation was accepted. Sign in to open your workspace.");
+      setNotice("Your invitation was accepted. Sign in to open your workspace.");
       return;
     }
     const access = await accessResponse.json() as PolicyCraftAccess;
@@ -93,14 +131,11 @@ function AcceptInvitationContent() {
     }
   }
 
-  async function submit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (!invitation || submitting || accepted || newAccountAccepted || acceptanceStarted.current) return;
-    setError("");
-    if (invitation.mode === "new" && password !== confirmPassword) { setError("Passwords do not match."); return; }
-    if (invitation.mode === "new" && password.length < 8) { setError("Use a password with at least 8 characters."); return; }
+  async function submitValues({ email, password }: InvitationFormValues) {
+    if (!invitation || isSubmitting || accepted || newAccountAccepted || acceptanceStarted.current) return;
+    clearErrors("root");
+    setNotice("");
     acceptanceStarted.current = true;
-    setSubmitting(true);
     try {
       if (invitation.mode === "existing") {
         const signInResult = await signIn.email({ email: email.trim(), password });
@@ -122,30 +157,51 @@ function AcceptInvitationContent() {
       setAccepted(true);
       await finishSignIn(true);
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Could not accept this invitation.");
+      setError("root.server", { type: "server", message: cause instanceof Error ? cause.message : "Could not accept this invitation." });
     } finally {
       acceptanceStarted.current = false;
-      setSubmitting(false);
     }
   }
 
-  return <main className="grid min-h-screen place-items-center bg-[var(--color-cream)] px-5 py-10 text-[var(--color-ink)]">
-    <section className="w-full max-w-md rounded-2xl border border-[var(--color-line)] bg-white p-7 shadow-[var(--shadow-lift)] sm:p-9">
-      <div className="mb-7 flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--color-forest)] text-white"><Leaf size={19} aria-hidden="true" /></span><span><span className="block font-display text-lg font-semibold">PolicyCraft</span><span className="block text-[10px] uppercase tracking-[.15em] text-[var(--color-muted)]">Manager invitation</span></span></div>
-      {loading ? <div className="flex min-h-44 items-center justify-center gap-2 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={16} className="animate-spin" aria-hidden="true" />Checking invitation…</div> : newAccountAccepted ? <div role="status" aria-live="polite"><span className="grid h-11 w-11 place-items-center rounded-full bg-emerald-50 text-emerald-800"><Check size={19} aria-hidden="true" /></span><h1 ref={newAccountAcceptedHeading} tabIndex={-1} className="mt-4 font-display text-2xl font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Manager account created</h1><p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]">Your invitation was accepted. Sign in with the password you just created to open your manager workspace.</p>{signInRedirectError ? <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950" role="alert">{signInRedirectError}</p> : null}<button type="button" onClick={() => void continueNewAccountToSignIn()} disabled={redirectingToSignIn} className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-60">{redirectingToSignIn ? <Loader2 size={15} className="animate-spin" aria-hidden="true" /> : <ArrowRight size={15} aria-hidden="true" />}{redirectingToSignIn ? "Signing out…" : signInRedirectError ? "Retry sign in" : "Continue to sign in"}</button></div> : accepted ? <><span className="grid h-11 w-11 place-items-center rounded-full bg-emerald-50 text-emerald-800"><Check size={19} aria-hidden="true" /></span><h1 className="mt-4 font-display text-2xl font-semibold">Invitation accepted</h1><p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]">Your manager access is ready. Opening your workspace…</p>{error ? <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900" role="status">{error}</p> : null}</> : !invitation ? <><h1 className="font-display text-2xl font-semibold">Invitation unavailable</h1><p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]" role="alert">{error || "Ask your administrator to send a new link."}</p>{token ? <button type="button" onClick={retryInvitationLookup} className="mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-semibold text-[var(--color-forest)] transition-colors hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowRight size={15} aria-hidden="true" />Try this link again</button> : null}</> : <>
-        <h1 className="font-display text-2xl font-semibold tracking-tight">Accept your invitation</h1>
-        <p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]">{invitation.mode === "new" ? "Create your PolicyCraft manager account. You will choose your own password." : "Sign in to the existing ESG account linked to this invitation. Its password and organization details will stay unchanged."}</p>
-        <div className="mt-5 flex items-center gap-2 rounded-lg bg-[var(--color-cream-2)] px-3 py-2.5 text-[12px] text-[var(--color-ink-2)]"><Mail size={14} aria-hidden="true" /><span className="min-w-0 truncate font-medium">{invitation.email}</span>{invitation.name ? <span className="ml-auto max-w-32 truncate text-[var(--color-muted)]">{invitation.name}</span> : null}</div>
-        <form className="mt-5 space-y-4" onSubmit={(event) => void submit(event)}>
-          {invitation.mode === "existing" ? <><label className="block text-[12px] font-semibold">Email<input name="email" type="email" autoComplete="username" spellCheck={false} required value={email} onChange={(event) => setEmail(event.target.value)} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" /></label><label className="block text-[12px] font-semibold">Existing password<input name="password" type="password" autoComplete="current-password" required value={password} onChange={(event) => setPassword(event.target.value)} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" /></label></> : <><label className="block text-[12px] font-semibold">Email<input name="email" type="email" autoComplete="username" spellCheck={false} required readOnly value={invitation.email} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-[var(--color-cream-2)] px-3 text-sm font-normal text-[var(--color-ink-2)]" /></label><label className="block text-[12px] font-semibold">Create password<input name="new-password" type="password" autoComplete="new-password" minLength={8} required value={password} onChange={(event) => setPassword(event.target.value)} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" /></label><label className="block text-[12px] font-semibold">Confirm password<input name="confirm-password" type="password" autoComplete="new-password" minLength={8} required value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" /></label></>}
-          {error ? <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-900" role="alert" aria-live="polite">{error}</p> : null}
-          <button type="submit" disabled={submitting} className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-60">{submitting ? <Loader2 size={15} className="animate-spin" aria-hidden="true" /> : <LockKeyhole size={15} aria-hidden="true" />}{submitting ? "Accepting invitation…" : invitation.mode === "new" ? "Create account & accept" : "Sign in & accept"}{!submitting ? <ArrowRight size={15} aria-hidden="true" /> : null}</button>
-        </form>
-      </>}
-    </section>
-  </main>;
+  const submitInvalid = () => {
+    clearErrors("root.server");
+    setNotice("");
+  };
+
+  const submit = (event: React.FormEvent<HTMLFormElement>) => {
+    void handleSubmit(submitValues, submitInvalid)(event);
+  };
+
+  const serverError = formErrors.root?.server?.message;
+
+  return <ApplicationSurface className={styles.surface}>
+    <div className={styles.themeControl}><ApplicationThemeControl /></div>
+    <a className={styles.skipLink} href="#invitation-main">Skip to invitation</a>
+    <main className={styles.main} id="invitation-main">
+      <motion.section className={`${styles.card} pc-auth-entrance`} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion ? 0 : 0.2, ease: "easeOut" }}>
+        <div className={styles.brand}><span className={styles.brandMark}><Leaf size={19} aria-hidden="true" /></span><span><span className={styles.brandName}>PolicyCraft</span><span className={styles.brandCaption}>Manager invitation</span></span></div>
+        {loading ? <div className={styles.loading} aria-live="polite"><Loader2 size={16} className={styles.spinner} aria-hidden="true" />Checking invitation…</div> : newAccountAccepted ? <div role="status" aria-live="polite"><span className={styles.successIcon}><Check size={19} aria-hidden="true" /></span><h1 ref={newAccountAcceptedHeading} tabIndex={-1} className={styles.title}>Manager account created</h1><p className={styles.copy}>Your invitation was accepted. Sign in with the password you just created to open your manager workspace.</p>{signInRedirectError ? <p className={styles.warning} role="alert">{signInRedirectError}</p> : null}<ApplicationButton type="button" variant="primary" className={styles.fullButton} onClick={() => void continueNewAccountToSignIn()} busy={redirectingToSignIn} busyLabel="Signing out…" leadingIcon={!redirectingToSignIn ? <ArrowRight size={15} aria-hidden="true" /> : undefined}>{signInRedirectError ? "Retry sign in" : "Continue to sign in"}</ApplicationButton></div> : accepted ? <><span className={styles.successIcon}><Check size={19} aria-hidden="true" /></span><h1 className={styles.title}>Invitation accepted</h1><p className={styles.copy}>Your manager access is ready. Opening your workspace…</p>{notice ? <p className={styles.warning} role="status">{notice}</p> : null}</> : !invitation ? <><h1 className={styles.title}>Invitation unavailable</h1><p className={styles.errorCopy} role="alert">{notice || "Ask your administrator to send a new link."}</p>{token ? <ApplicationButton type="button" variant="outline" className={styles.fullButton} onClick={retryInvitationLookup} leadingIcon={<ArrowRight size={15} aria-hidden="true" />}>Try this link again</ApplicationButton> : null}</> : <>
+          <h1 className={styles.title}>Accept your invitation</h1>
+          <p className={styles.copy}>{invitation.mode === "new" ? "Create your PolicyCraft manager account. You will choose your own password." : "Sign in to the existing ESG account linked to this invitation. Its password and organization details will stay unchanged."}</p>
+          <div className={styles.invitee}><Mail size={15} aria-hidden="true" /><span className={styles.inviteeEmail}>{invitation.email}</span>{invitation.name ? <span className={styles.inviteeName}>{invitation.name}</span> : null}</div>
+          <form className={styles.form} onSubmit={(event) => { void submit(event); }} aria-describedby={serverError ? "invitation-form-error" : undefined}>
+            {invitation.mode === "existing" ? <>
+              <ApplicationField className={styles.formField} id="invitation-email" label="Email" required><ApplicationInput type="email" autoComplete="username" spellCheck={false} required invalid={Boolean(formErrors.email)} {...register("email")} /></ApplicationField>
+              <ApplicationField className={styles.formField} id="invitation-password" label="Existing password" required><ApplicationInput type="password" autoComplete="current-password" required invalid={Boolean(formErrors.password)} {...register("password")} /></ApplicationField>
+            </> : <>
+              <ApplicationField className={styles.formField} id="invitation-email" label="Email" required><ApplicationInput type="email" autoComplete="username" spellCheck={false} required readOnly {...register("email")} /></ApplicationField>
+              <ApplicationField className={styles.formField} id="invitation-new-password" label="Create password" required error={formErrors.password?.message}><ApplicationInput type="password" autoComplete="new-password" minLength={8} required invalid={Boolean(formErrors.password)} {...register("password")} /></ApplicationField>
+              <ApplicationField className={styles.formField} id="invitation-confirm-password" label="Confirm password" required error={formErrors.confirmPassword?.message}><ApplicationInput type="password" autoComplete="new-password" minLength={8} required invalid={Boolean(formErrors.confirmPassword)} {...register("confirmPassword")} /></ApplicationField>
+            </>}
+            {serverError ? <p id="invitation-form-error" className={styles.formError} role="alert" aria-live="polite">{serverError}</p> : null}
+            <ApplicationButton type="submit" variant="primary" className={styles.fullButton} busy={isSubmitting} busyLabel="Accepting invitation…" leadingIcon={!isSubmitting ? <LockKeyhole size={15} aria-hidden="true" /> : undefined} trailingIcon={!isSubmitting ? <ArrowRight size={15} aria-hidden="true" /> : undefined}>{invitation.mode === "new" ? "Create account & accept" : "Sign in & accept"}</ApplicationButton>
+          </form>
+        </>}
+      </motion.section>
+    </main>
+  </ApplicationSurface>;
 }
 
 export default function AcceptInvitationPage() {
-  return <React.Suspense fallback={<main className="min-h-screen bg-[var(--color-cream)]" aria-busy="true" />}><AcceptInvitationContent /></React.Suspense>;
+  return <React.Suspense fallback={<ApplicationSurface className={styles.surface} aria-busy="true"><div className={styles.fallback} /></ApplicationSurface>}><AcceptInvitationContent /></React.Suspense>;
 }

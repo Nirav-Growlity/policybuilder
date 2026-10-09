@@ -18,6 +18,16 @@ import { formatQuantitativeTargetSentence, groupQuantitativeTargets, type Quanti
 import { listMarkerText } from "@/lib/list-formatting";
 import type { PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
 
+const previewEntranceStyles = `
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .policy-preview-document[data-preview-entrance="true"] { animation: policyPreviewEnter 220ms ease-out both; }
+  }
+  @keyframes policyPreviewEnter { from { opacity: 0; } to { opacity: 1; } }
+  @media print, (prefers-reduced-motion: reduce) {
+    .policy-preview-document[data-preview-entrance="true"] { animation: none !important; opacity: 1; }
+  }
+`;
+
 export function PolicyPreview({ policy, customCoverPng, authorApproval, assetScope }: { policy: Policy; customCoverPng?: string; authorApproval?: AuthorApprovalRenderData; assetScope?: PolicyCraftWorkspaceScope | null }) {
   const model = buildDocumentRenderModel(policy, authorApproval);
   const { theme, typography } = model;
@@ -42,9 +52,10 @@ export function PolicyPreview({ policy, customCoverPng, authorApproval, assetSco
       data-theme-density={theme.density}
       data-content-alignment={theme.textAlignment}
       data-composition-fingerprint={theme.compositionFingerprint}
+      data-preview-entrance="true"
       className="policy-preview-document mx-auto max-w-4xl overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)] shadow-[0_18px_50px_rgba(42,50,42,.14)]"
     >
-      <style>{`${fontFaceCssFor(coverFontFamilies(model))}${previewStyles}`}</style>
+      <style>{`${fontFaceCssFor(coverFontFamilies(model))}${previewStyles}${previewEntranceStyles}`}</style>
       <PolicyCover model={model} policy={policy} customCoverPng={customCoverPng} assetScope={assetScope} />
       {policy.showTableOfContents && <PolicyToc model={model} />}
       <RunningHeader model={model} policy={policy} assetScope={assetScope} />
@@ -76,9 +87,10 @@ export function PolicyCoverPreview({ policy, customCoverPng, showElements = true
       data-cover-layout={theme.layout.cover}
       data-cover-scene={theme.layout.cover}
       data-professional-variant={theme.layout.professionalVariant || ""}
+      data-preview-entrance="true"
       className="policy-preview-document cover-preview-only overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)]"
     >
-      <style>{`${fontFaceCssFor(coverFontFamilies(model))}${previewStyles}`}</style>
+      <style>{`${fontFaceCssFor(coverFontFamilies(model))}${previewStyles}${previewEntranceStyles}`}</style>
       <PolicyCover model={model} policy={policy} customCoverPng={customCoverPng} showElements={showElements} assetScope={assetScope} />
     </article>
   );
@@ -380,8 +392,7 @@ function Acknowledgement({ model }: { model: DocumentRenderModel }) {
 const previewStyles = `
   .cover-preview-only { width:100%; height:100%; max-width:none; box-shadow:none; }
   .cover-preview-only > .policy-cover { min-height:100% !important; height:100% !important; box-sizing:border-box; }
-  @keyframes documentThemeIn { from { opacity: .72; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-  .policy-preview-document { animation: documentThemeIn 220ms ease-out both; font-family: var(--policy-font), Arial, sans-serif; font-size: var(--policy-paragraph-size); line-height: var(--policy-line-height); }
+  .policy-preview-document { font-family: var(--policy-font), Arial, sans-serif; font-size: var(--policy-paragraph-size); line-height: var(--policy-line-height); }
   .policy-preview-document *, .policy-preview-document *::before, .policy-preview-document *::after { box-sizing: border-box; }
   .policy-preview-document h1, .policy-preview-document h2, .policy-preview-document h3 { font-family: var(--policy-heading-font), Georgia, serif; }
   .policy-preview-document h1 { margin: 0; font-size: calc(var(--policy-heading-size) * 2.65); line-height: 1.04; }
@@ -1052,7 +1063,7 @@ const previewStyles = `
   .policy-preview-document h1, .policy-preview-document h2, .policy-preview-document h3, .policy-preview-document h4 { color: var(--doc-primary) !important; }
   .policy-preview-document .cover-blueprint-spec h1,
   .policy-preview-document .heading-statement-band > h2,
-  .policy-preview-document .frame-modular-grid .policy-section-heading h2 { color: var(--doc-on-primary) !important; }
+  .policy-preview-document:not([data-collection="professional"]) .frame-modular-grid .policy-section-heading h2 { color: var(--doc-on-primary) !important; }
   [data-collection="professional"] .policy-section-heading > span, [data-collection="professional"] .policy-section-heading h2 { color: var(--doc-primary) !important; }
   .editorial-policy-cover .cover-publisher, .editorial-policy-cover .cover-register b { color: var(--doc-muted); }
   .policy-preview-document .professional-toc a { color: var(--doc-primary-dark); }

@@ -4,11 +4,20 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AlertTriangle, ArrowLeft, Check, Loader2, RefreshCw, ShieldCheck, UserPlus } from "lucide-react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, useWatch } from "react-hook-form";
+import { z } from "zod";
 import type { PolicyCraftManagerSummary, PolicyCraftOrganization } from "@/lib/policycraft-access-types";
 import { OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
+import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
+import { ApplicationSurface } from "@/components/ui/application-surface";
+import styles from "./page.module.css";
 
 type AdminManagersResponse = { managers: PolicyCraftManagerSummary[]; organizations: PolicyCraftOrganization[] };
 type ExistingAccount = { id: string; name: string; email: string };
+const managerFormSchema = z.object({ name: z.string(), email: z.string(), organizationIds: z.array(z.number()) });
+type ManagerFormValues = z.infer<typeof managerFormSchema>;
+type ExistingConfirmation = { account: ExistingAccount };
 type ManagerSuccess =
   | { mode: "existing"; email: string }
   | { mode: "invited"; email: string; deliverySent: boolean };
@@ -16,16 +25,20 @@ type ManagerSuccess =
 export default function CreateManagerPage() {
   const router = useRouter();
   const [organizations, setOrganizations] = React.useState<PolicyCraftOrganization[]>([]);
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [organizationIds, setOrganizationIds] = React.useState<number[]>([]);
   const [organizationSearch, setOrganizationSearch] = React.useState("");
-  const [existingAccount, setExistingAccount] = React.useState<ExistingAccount | null>(null);
+  const [existingConfirmation, setExistingConfirmation] = React.useState<ExistingConfirmation | null>(null);
   const [success, setSuccess] = React.useState<ManagerSuccess | null>(null);
   const [loading, setLoading] = React.useState(true);
   const [loadingError, setLoadingError] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
   const [error, setError] = React.useState("");
+  const { register, control, handleSubmit, setValue, getValues } = useForm<ManagerFormValues>({
+    resolver: zodResolver(managerFormSchema),
+    defaultValues: { name: "", email: "", organizationIds: [] },
+  });
+  const name = useWatch({ control, name: "name" }) || "";
+  const email = useWatch({ control, name: "email" }) || "";
+  const organizationIds = useWatch({ control, name: "organizationIds" }) || [];
 
   const loadOrganizations = React.useCallback(async () => {
     setLoading(true);
@@ -38,14 +51,14 @@ export default function CreateManagerPage() {
       setOrganizations(data.organizations);
       const requestedOrganizationId = Number(new URLSearchParams(window.location.search).get("organizationId"));
       if (Number.isSafeInteger(requestedOrganizationId) && requestedOrganizationId > 0 && data.organizations.some((organization) => organization.id === requestedOrganizationId && !organization.deleted && !organization.expired)) {
-        setOrganizationIds((current) => [...new Set([...current, requestedOrganizationId])]);
+        setValue("organizationIds", [...new Set([...getValues("organizationIds"), requestedOrganizationId])]);
       }
     } catch (cause) {
       setLoadingError(cause instanceof Error ? cause.message : "Could not load organizations.");
     } finally {
       setLoading(false);
     }
-  }, [router]);
+  }, [router, getValues, setValue]);
 
   React.useEffect(() => {
     let active = true;
@@ -56,36 +69,41 @@ export default function CreateManagerPage() {
     return () => { active = false; window.clearTimeout(timer); };
   }, [loadOrganizations]);
 
-  async function createManager(linkExisting = false) {
-    if (submitting || loading || loadingError || organizationIds.length === 0 || (linkExisting && !existingAccount)) return;
+  async function createManager(values: ManagerFormValues, confirmation?: ExistingConfirmation) {
+    if (submitting || loading || loadingError || values.organizationIds.length === 0) return;
     setSubmitting(true);
     setError("");
+    const requestValues = confirmation
+      ? { name: confirmation.account.name, email: confirmation.account.email, organizationIds: values.organizationIds }
+      : { name: values.name.trim(), email: values.email.trim(), organizationIds: values.organizationIds };
     try {
       const response = await fetch("/api/policycraft/admin/managers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: linkExisting && existingAccount ? existingAccount.name : name.trim(),
-          email: linkExisting && existingAccount ? existingAccount.email : email.trim(),
-          organizationIds,
-          ...(linkExisting && existingAccount ? { linkExisting: true, confirmedExistingAccountId: existingAccount.id } : {}),
+          ...requestValues,
+          ...(confirmation ? { linkExisting: true, confirmedExistingAccountId: confirmation.account.id } : {}),
         }),
       });
       const result = await response.json().catch(() => null);
       if (response.status === 409 && result?.code === "ACCOUNT_EXISTS" && result.existingAccount) {
-        setExistingAccount(result.existingAccount as ExistingAccount);
+        setExistingConfirmation({ account: result.existingAccount as ExistingAccount });
         return;
       }
       if (!response.ok) throw new Error(result?.error || "Could not add this manager.");
       setSuccess(result?.mode === "existing"
-        ? { mode: "existing", email: result.manager?.email || existingAccount?.email || email.trim() }
-        : { mode: "invited", email: result.manager?.email || email.trim(), deliverySent: result.delivery?.sent !== false });
-      setExistingAccount(null);
+        ? { mode: "existing", email: result.manager?.email || confirmation?.account.email || requestValues.email }
+        : { mode: "invited", email: result.manager?.email || requestValues.email, deliverySent: result.delivery?.sent !== false });
+      setExistingConfirmation(null);
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Could not add this manager.");
     } finally {
       setSubmitting(false);
     }
+  }
+
+  function submitManager(event: React.FormEvent<HTMLFormElement>) {
+    void handleSubmit((values) => createManager(values))(event);
   }
 
   const activeOrganizations = organizations.filter((organization) => !organization.deleted && !organization.expired);
@@ -103,7 +121,7 @@ export default function CreateManagerPage() {
   if (success) {
     const granted = success.mode === "existing";
     const deliverySent = success.mode === "invited" && success.deliverySent;
-    return <div className="mx-auto max-w-2xl" role="status" aria-live="polite">
+    return <ApplicationSurface data-pc-workspace="manager-create" className={`${styles.surface} mx-auto max-w-2xl`} role="status" aria-live="polite">
       <div className={`grid h-12 w-12 place-items-center rounded-xl ${granted || deliverySent ? "bg-emerald-50 text-emerald-800" : "bg-amber-50 text-amber-900"}`}>
         {granted || deliverySent ? <Check size={20} aria-hidden="true" /> : <AlertTriangle size={20} aria-hidden="true" />}
       </div>
@@ -113,29 +131,29 @@ export default function CreateManagerPage() {
         : deliverySent
           ? `An invitation link was sent to ${success.email}. They will choose a password when they accept.`
           : `The invitation for ${success.email} is ready, but the email could not be delivered. Resend it from the Managers list after checking the address.`}</p>
-      <div className="mt-6 flex flex-wrap gap-3"><Link href="/admin" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowLeft size={14} aria-hidden="true" />Back to managers</Link><Link href="/admin/policies" className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">View policies</Link></div>
-    </div>;
+      <div className="mt-6 flex flex-wrap gap-3"><Link href="/admin" className={styles.primaryLink}><ArrowLeft size={14} aria-hidden="true" />Back to managers</Link><Link href="/admin/policies" className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">View policies</Link></div>
+    </ApplicationSurface>;
   }
 
-  return <div className="mx-auto max-w-5xl">
+  return <ApplicationSurface data-pc-workspace="manager-create" className={`${styles.surface} mx-auto max-w-5xl`}>
     <nav aria-label="Breadcrumb"><Link href="/admin" className="inline-flex min-h-9 items-center gap-1.5 text-[12px] font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowLeft size={14} aria-hidden="true" />Managers</Link></nav>
-    <div className="mt-4"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Manager access</p><h1 className="mt-1 font-display text-3xl font-semibold tracking-tight sm:text-[34px]">Add manager</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Set up a manager account and choose which client organizations they can access.</p></div>
+    <div className="mt-4"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Manager access</p><h1 className="mt-1 font-display text-3xl font-semibold tracking-tight sm:text-[32px]">Add manager</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Set up a manager account and choose which client organizations they can access.</p></div>
 
     {loadingError ? <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900" role="alert" aria-live="polite"><p>{loadingError}</p><button type="button" onClick={() => void loadOrganizations()} className="inline-flex min-h-11 items-center gap-2 rounded-md px-3 font-semibold hover:bg-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700"><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : error ? <p className="mt-5 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900" role="alert" aria-live="polite">{error}</p> : null}
-    {existingAccount ? <section className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4" aria-labelledby="existing-account-title" aria-live="polite"><div className="flex items-start gap-3"><AlertTriangle size={18} className="mt-0.5 shrink-0 text-amber-800" aria-hidden="true" /><div className="min-w-0"><h2 id="existing-account-title" className="text-sm font-semibold text-amber-950">This email already has an ESG account</h2><p className="mt-1 break-words text-sm text-amber-900">{existingAccount.name} · {existingAccount.email}</p><p className="mt-2 text-xs leading-5 text-amber-900">Granting access adds this existing account as a manager. They keep their current password, account name, and organization details. No invitation or new password email will be sent.</p><div className="mt-4 flex flex-wrap gap-2"><button type="button" onClick={() => void createManager(true)} disabled={submitting} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-amber-900 px-4 text-sm font-semibold text-white hover:bg-amber-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-900 disabled:opacity-60">{submitting ? <Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true" /> : <ShieldCheck size={14} aria-hidden="true" />}{submitting ? "Granting access…" : "Grant manager access"}</button><button type="button" onClick={() => setExistingAccount(null)} disabled={submitting} className="min-h-11 rounded-lg border border-amber-300 px-4 text-sm font-medium text-amber-950 hover:bg-amber-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-900 disabled:opacity-60">Use another email</button></div></div></div></section> : null}
+    {existingConfirmation ? <section className={styles.existingAccount} aria-labelledby="existing-account-title" aria-live="polite"><div className={styles.existingAccountContent}><AlertTriangle size={18} aria-hidden="true" /><div className="min-w-0"><h2 id="existing-account-title">This email already has an ESG account</h2><p className="mt-1 break-words text-sm">{existingConfirmation.account.name} · {existingConfirmation.account.email}</p><p className="mt-2 text-xs leading-5">Granting access adds this existing account as a manager. They keep their current password, account name, and organization details. No invitation or new password email will be sent. This confirms the {organizationIds.length} organization{organizationIds.length === 1 ? "" : "s"} currently selected.</p><div className="mt-4 flex flex-wrap gap-2"><ApplicationButton type="button" variant="primary" size="lg" className={styles.grantButton} onClick={() => void createManager(getValues(), existingConfirmation)} busy={submitting} busyLabel="Granting access…" leadingIcon={<ShieldCheck size={14} aria-hidden="true" />}>Grant manager access</ApplicationButton><ApplicationButton type="button" variant="outline" size="lg" onClick={() => setExistingConfirmation(null)} disabled={submitting}>Use another email</ApplicationButton></div></div></div></section> : null}
 
-    <form className="mt-6 overflow-hidden rounded-xl border border-[var(--color-line)] bg-white shadow-sm" onSubmit={(event) => { event.preventDefault(); void createManager(false); }} aria-busy={submitting}>
+    <form className={`${styles.form} mt-6`} onSubmit={submitManager} aria-busy={submitting}>
       <div className="grid lg:grid-cols-[minmax(0,1.65fr)_minmax(17rem,.85fr)]">
         <div className="min-w-0 p-5 sm:p-7">
           <section aria-labelledby="manager-details-title"><div className="flex items-baseline justify-between gap-3"><h2 id="manager-details-title" className="text-base font-semibold">Account details</h2><span className="text-xs text-[var(--color-muted)]">Step 1 of 2</span></div><p className="mt-1 text-sm text-[var(--color-muted)]">Enter the person’s name and work email.</p><div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <label className="block text-xs font-semibold text-[var(--color-ink-2)]">Full name<input name="name" autoComplete="name" required minLength={2} maxLength={120} value={name} onChange={(event) => setName(event.target.value)} disabled={submitting} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" /></label>
-            <label className="block text-xs font-semibold text-[var(--color-ink-2)]">Work email<input name="email" type="email" autoComplete="email" spellCheck={false} required maxLength={254} value={email} onChange={(event) => { setEmail(event.target.value); setExistingAccount(null); }} disabled={submitting} className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-normal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] disabled:opacity-60" /></label>
+            <label className={styles.field}>Full name<ApplicationInput {...register("name", { required: true, minLength: 2, maxLength: 120 })} autoComplete="name" required minLength={2} maxLength={120} disabled={submitting} /></label>
+            <label className={styles.field}>Work email<ApplicationInput {...register("email", { required: true, maxLength: 254 })} type="email" autoComplete="email" spellCheck={false} required maxLength={254} disabled={submitting} onChange={(event) => { register("email").onChange(event); setExistingConfirmation(null); }} /></label>
           </div></section>
 
           <section className="mt-8 border-t border-[var(--color-line)] pt-6" aria-labelledby="organization-access-title"><div className="flex items-baseline justify-between gap-3"><h2 id="organization-access-title" className="text-base font-semibold">Organization access</h2><span className="text-xs text-[var(--color-muted)]">Step 2 of 2</span></div><p className="mt-1 text-sm leading-5 text-[var(--color-muted)]">Choose the client organizations this manager can open. Their policies are shared with assigned users.</p>
-            <label htmlFor="invite-org-search" className="mt-4 mb-2 block text-xs font-semibold text-[var(--color-ink-2)]">Search organizations</label><input id="invite-org-search" name="organizationSearch" autoComplete="off" type="search" value={organizationSearch} onChange={(event) => setOrganizationSearch(event.target.value)} disabled={submitting} placeholder="Search by name or code" className="mb-3 h-11 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-forest)] disabled:opacity-60" />
+            <label htmlFor="invite-org-search" className="mt-4 mb-2 block text-xs font-semibold text-[var(--color-ink-2)]">Search organizations</label><ApplicationInput id="invite-org-search" name="organizationSearch" autoComplete="off" type="search" value={organizationSearch} onChange={(event) => setOrganizationSearch(event.target.value)} disabled={submitting} placeholder="Search by name or code" />
             <fieldset><legend className="sr-only">Assigned organizations</legend><div className="max-h-72 divide-y divide-[var(--color-line)] overflow-y-auto rounded-lg border border-[var(--color-line)] bg-white" aria-busy={loading}>
-              {loading ? <p className="flex min-h-16 items-center gap-2 px-4 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organizations…</p> : loadingError ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">Organizations could not be loaded. Retry above to continue.</p> : visibleOrganizations.map((organization) => <label key={organization.id} className="flex min-h-12 cursor-pointer items-center gap-3 px-4 py-2 text-sm hover:bg-[var(--color-cream-2)] focus-within:outline focus-within:outline-2 focus-within:outline-[var(--color-forest)]"><input type="checkbox" disabled={submitting} checked={organizationIds.includes(organization.id)} onChange={(event) => setOrganizationIds((current) => event.target.checked ? [...new Set([...current, organization.id])] : current.filter((id) => id !== organization.id))} className="h-4 w-4 shrink-0 accent-[var(--color-forest)] disabled:opacity-60" /><span className="min-w-0 flex-1 break-words">{organization.name}</span><OrganizationSourceBadge organization={organization} /><span className="shrink-0 text-[10px] text-[var(--color-muted)]">{organization.code}</span></label>)}
+              {loading ? <p className="flex min-h-16 items-center gap-2 px-4 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organizations…</p> : loadingError ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">Organizations could not be loaded. Retry above to continue.</p> : visibleOrganizations.map((organization) => <label key={organization.id} className={styles.organizationOption}><input type="checkbox" disabled={submitting} checked={organizationIds.includes(organization.id)} onChange={(event) => setValue("organizationIds", event.target.checked ? [...new Set([...organizationIds, organization.id])] : organizationIds.filter((id) => id !== organization.id), { shouldDirty: true })} className="h-4 w-4 shrink-0 accent-[var(--color-forest)] disabled:opacity-60" /><span className="min-w-0 flex-1 break-words">{organization.name}</span><OrganizationSourceBadge organization={organization} /><span className="shrink-0 text-[10px] text-[var(--color-muted)]">{organization.code}</span></label>)}
               {!loading && !loadingError && activeOrganizations.length === 0 ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">No active organizations are available to assign.</p> : null}
               {!loading && !loadingError && activeOrganizations.length > 0 && visibleOrganizations.length === 0 ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">No organizations match your search.</p> : null}
             </div></fieldset>
@@ -147,11 +165,11 @@ export default function CreateManagerPage() {
           <h2 id="manager-access-summary-title" className="mt-4 font-display text-xl font-semibold">Access summary</h2>
           <p className="mt-1 text-sm leading-5 text-[var(--color-muted)]">The manager will be able to open the organizations selected here.</p>
           <div className="mt-5 rounded-lg border border-[var(--color-line)] bg-white p-4" aria-live="polite" aria-atomic="true"><p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--color-muted)]">Organizations selected</p><p className="mt-1 font-display text-3xl font-semibold tabular-nums text-[var(--color-forest)]">{organizationIds.length}</p><p className="text-sm text-[var(--color-ink-2)]">{organizationIds.length === 1 ? "organization" : "organizations"}</p></div>
-          <div className="mt-5 border-t border-[var(--color-line)] pt-4"><h3 className="text-sm font-semibold">Account setup</h3>{existingAccount ? <p className="mt-2 break-words text-sm leading-5 text-[var(--color-muted)]">This person already has an ESG account. Granting access keeps their existing password and sends no invitation.</p> : <p className="mt-2 text-sm leading-5 text-[var(--color-muted)]">A new account receives an invitation to set a password. Existing accounts keep their current password and receive no invitation.</p>}</div>
-          {!submitting && createDisabledReason ? <p className="mt-5 rounded-lg border border-[var(--color-line)] bg-white/70 p-3 text-xs leading-5 text-[var(--color-ink-2)]">{createDisabledReason}</p> : null}
+          <div className="mt-5 border-t border-[var(--color-line)] pt-4"><h3 className="text-sm font-semibold">Account setup</h3>{existingConfirmation ? <p className="mt-2 break-words text-sm leading-5 text-[var(--color-muted)]">This person already has an ESG account. Granting access keeps their existing password and sends no invitation.</p> : <p className="mt-2 text-sm leading-5 text-[var(--color-muted)]">A new account receives an invitation to set a password. Existing accounts keep their current password and receive no invitation.</p>}</div>
+          {!submitting && createDisabledReason ? <p className={styles.disabledReason}>{createDisabledReason}</p> : null}
         </aside>
       </div>
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[var(--color-line)] bg-white px-5 py-4 sm:px-7"><p className="text-xs text-[var(--color-muted)]" aria-live="polite" aria-atomic="true">{organizationIds.length} organization{organizationIds.length === 1 ? "" : "s"} selected</p><div className="flex flex-wrap gap-2"><Link href="/admin" className="inline-flex min-h-11 items-center rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-medium hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</Link><button type="submit" disabled={loading || Boolean(loadingError) || submitting || !name.trim() || !email.trim() || organizationIds.length === 0} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-55">{submitting ? <Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true" /> : <UserPlus size={14} aria-hidden="true" />}{submitting ? "Adding manager…" : "Add manager"}</button></div></div>
+      <div className={styles.formFooter}><p className="text-xs text-[var(--color-muted)]" aria-live="polite" aria-atomic="true">{organizationIds.length} organization{organizationIds.length === 1 ? "" : "s"} selected</p><div className="flex flex-wrap gap-2"><Link href="/admin" className="inline-flex min-h-11 items-center rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-medium hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</Link><ApplicationButton type="submit" variant="primary" size="lg" className={styles.submitButton} disabled={loading || Boolean(loadingError) || submitting || !name.trim() || !email.trim() || organizationIds.length === 0} busy={submitting} busyLabel="Adding manager…" leadingIcon={<UserPlus size={14} aria-hidden="true" />}>Add manager</ApplicationButton></div></div>
     </form>
-  </div>;
+  </ApplicationSurface>;
 }

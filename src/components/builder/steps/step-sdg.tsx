@@ -29,7 +29,7 @@ export function StepSDG() {
     try {
       const r = await callAI({ type: "sdg", policy, customPrompt });
       if (r.sdgs) {
-        updatePolicy((p) => ({ sdgs: r.sdgs!.filter((n) => n >= 1 && n <= 17).sort((a, b) => a - b) }));
+        updatePolicy(() => ({ sdgs: r.sdgs!.filter((n) => n >= 1 && n <= 17).sort((a, b) => a - b) }));
         push("SDGs suggested", "success");
       }
     } catch {
@@ -65,23 +65,25 @@ export function StepSDG() {
             const sel = policy.sdgs.includes(s.n);
             return (
               <button
+                type="button"
                 key={s.n}
                 onClick={() => toggle(s.n)}
+                  aria-pressed={sel}
+                  aria-label={`SDG ${s.n}: ${s.label}`}
                 className={clsx(
-                  "relative p-3 rounded-lg text-left transition-all duration-200 group",
+                  "relative min-h-24 p-3 rounded-lg border border-transparent text-left transition-colors duration-150 group",
                   sel
-                    ? "shadow-[var(--shadow-card)] ring-2 ring-offset-2 ring-offset-[var(--color-paper)]"
+                    ? "ring-2 ring-offset-2 ring-offset-[var(--color-paper)]"
                     : "opacity-55 hover:opacity-90"
                 )}
                 style={{
                   background: `${s.c}14`,
                   color: s.c,
-                  // @ts-ignore
                   "--tw-ring-color": s.c,
-                }}
+                } as React.CSSProperties}
               >
                 <div className="text-[20px] font-display font-bold leading-none">{s.n}</div>
-                <div className="text-[10.5px] mt-1.5 leading-tight font-medium line-clamp-2">{s.label}</div>
+                <div className="text-[13px] mt-1.5 leading-tight font-medium line-clamp-2">{s.label}</div>
                 {sel && (
                   <div className="absolute top-1.5 right-1.5 w-4 h-4 rounded-full flex items-center justify-center" style={{ background: s.c }}>
                     <X size={9} className="text-white" />

@@ -11,6 +11,63 @@ import { usePolicyCraftScope } from "../policycraft-client-scope";
 
 const svg = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40"><rect width="120" height="40" fill="#126845"/></svg>');
 
+test("long quantitative target groups can flow across Word pages with repeating headers", async () => {
+  for (const theme of ["operations-guide", "sustainability-charter", "people-charter"]) {
+    const policy = templatePreviewPolicy(theme, "environmental");
+    policy.quantitative = [{
+      ...policy.quantitative[0],
+      targets: Array.from({ length: 4 }, (_, index) => ({
+        ...policy.quantitative[0].targets[0],
+        target: `Long target ${index + 1}: ${"Keep documented evidence and accountable owners across all operating locations. ".repeat(12)}`,
+      })),
+    }];
+    const zip = await JSZip.loadAsync(await generateDocx(policy));
+    const xml = await zip.file("word/document.xml")!.async("string");
+    const table = [...xml.matchAll(/<w:tbl>[\s\S]*?<\/w:tbl>/g)].find(([value]) => value.includes("Long target 1:"))?.[0];
+    assert.ok(table, "the long target group should remain a table");
+    const rows = [...table.matchAll(/<w:tr>[\s\S]*?<\/w:tr>/g)].map(([value]) => value);
+    if (theme === "operations-guide") {
+      assert.equal(rows.length, 2, "one header and one target-group row should be retained");
+      assert.match(rows[0], /<w:tblHeader\b/, "continuation pages should repeat the table header");
+      assert.match(rows[0], /<w:cantSplit\b/, "the compact header should remain together");
+    } else assert.equal(rows.length, 1, "the target-group band should retain its single row");
+    const targetRow = rows[rows.length - 1];
+    assert.doesNotMatch(targetRow, /<w:cantSplit\b/, `${theme}: an oversized target group must be allowed to flow`);
+    for (let index = 1; index <= 4; index++) assert.ok(targetRow.includes(`Long target ${index}:`), "flowing the row must retain every target");
+  }
+});
+
+test("active theme fonts are named and embedded as regular Word fonts", async () => {
+  for (const fixture of [
+    { theme: "standard-pack", families: ["Source Sans 3", "Source Serif 4"] },
+    { theme: "executive-brief", families: ["IBM Plex Sans", "IBM Plex Serif"] },
+    { theme: "controlled-manual", families: ["Public Sans", "Archivo"] },
+    { theme: "governance-register", families: ["Inter", "Playfair Display"] },
+    { theme: "operations-guide", families: ["Atkinson Hyperlegible", "Space Grotesk"] },
+    { theme: "sustainability-charter", families: ["Libre Caslon Text", "Fraunces"] },
+    { theme: "people-charter", families: ["Cormorant Garamond", "Source Serif 4"] },
+    { theme: "metrics-ledger", families: ["IBM Plex Mono", "IBM Plex Sans"] },
+  ]) {
+    const zip = await JSZip.loadAsync(await generateDocx(templatePreviewPolicy(fixture.theme, "environmental")));
+    const document = await zip.file("word/document.xml")!.async("string");
+    const fontTable = await zip.file("word/fontTable.xml")!.async("string");
+    const relationships = await zip.file("word/_rels/fontTable.xml.rels")!.async("string");
+
+    for (const family of fixture.families) {
+      assert.ok(document.includes(`w:ascii="${family}"`), `${fixture.theme}: document runs should request ${family}`);
+      const escapedFamily = family.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const fontRecord = fontTable.match(new RegExp(`<w:font w:name="${escapedFamily}">[\\s\\S]*?<\\/w:font>`));
+      assert.ok(fontRecord, `${fixture.theme}: font table should declare ${family}`);
+      const relationshipId = fontRecord[0].match(/<w:embedRegular r:id="([^"]+)"/);
+      assert.ok(relationshipId, `${fixture.theme}: font table should embed ${family} as a regular face`);
+      const relationship = relationships.match(new RegExp(`<Relationship[^>]*Id="${relationshipId[1]}"[^>]*Target="fonts/font(\\d+)\\.odttf"`));
+      assert.ok(relationship, `${fixture.theme}: ${family} should reference an embedded OpenType part`);
+      const embeddedFont = await zip.file(`word/fonts/font${relationship[1]}.odttf`)!.async("nodebuffer");
+      assert.ok(embeddedFont.length > 10_000, `${fixture.theme}: ${family} embedded data should contain the font face`);
+    }
+  }
+});
+
 test("page borders use Word's native page-edge border with valid spacing", async () => {
   for (const insetMm of [5, 10, 20]) {
     const policy = templatePreviewPolicy("standard-pack", "environmental");
@@ -144,6 +201,24 @@ test("author signature image appears inside the employee Signature field in Word
   assert.match(document, /28-09-2026/, "employee acknowledgement date formatting should remain unchanged");
   assert.doesNotMatch(document, /POLICY AUTHOR|Policy Author|2026-09-28/);
   assert.ok(Object.keys(zip.files).some((name) => /^word\/media\//.test(name)), "the signature artwork should be embedded as an image");
+});
+
+test("professional acknowledgement starts on a new page without a trailing section spacer", async () => {
+  const policy = templatePreviewPolicy("people-charter", "environmental");
+  policy.showTableOfContents = false;
+  policy.sections = [{ id: "standard-preface", kind: "preface", title: "Preface", enabled: true }];
+  policy.declaration.preface = "Short body content before the acknowledgement.";
+
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const paragraphs = [...document.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map(([paragraph]) => paragraph);
+  const acknowledgementIndex = paragraphs.findIndex((paragraph) => paragraph.includes("Employee Acknowledgement Form"));
+  const acknowledgementParagraph = paragraphs[acknowledgementIndex];
+  const precedingParagraph = paragraphs[acknowledgementIndex - 1] ?? "";
+
+  assert.ok(acknowledgementParagraph, "the employee acknowledgement title should remain present");
+  assert.match(acknowledgementParagraph!, /<w:pPr>[\s\S]*?<w:pageBreakBefore\/>[\s\S]*?<\/w:pPr>/, "the acknowledgement title should own its page break");
+  assert.doesNotMatch(precedingParagraph, /<w:t xml:space="preserve"> <\/w:t>/, "there should be no trailing spacer paragraph before the acknowledgement page");
 });
 
 test("except-cover Word borders use the native not-first-page display", async () => {

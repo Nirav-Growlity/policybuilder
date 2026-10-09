@@ -77,7 +77,7 @@ export function StepStructure() {
   });
 
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-y-5">
       {/* Document metadata fields at the start of document structure */}
       <Panel
         title="Document Header & Revision Metadata"
@@ -187,16 +187,16 @@ export function StepStructure() {
       </Panel>
 
       {/* Document outline reordering & section customization */}
-      <div className="grid xl:grid-cols-[minmax(0,1fr)_300px] gap-8 items-start">
-        <div className="bg-[var(--color-paper)] border border-[var(--color-line)] rounded-2xl overflow-hidden shadow-[0_12px_34px_rgba(35,52,42,.06)]">
-          <div className="px-6 py-5 border-b border-[var(--color-line)] flex items-start justify-between gap-4">
+      <div className="grid xl:grid-cols-[minmax(0,1fr)_280px] gap-5 items-start">
+        <div className="bg-[var(--color-paper)] border border-[var(--color-line)] rounded-[14px] overflow-hidden">
+          <div className="px-4 py-4 border-b border-[var(--color-line)] flex items-start justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 text-[var(--color-forest)]">
                 <ListTree size={17}/>
-                <span className="text-[11px] uppercase tracking-[.15em] font-bold">Document outline</span>
+                <span className="text-[12px] uppercase tracking-[.1em] font-semibold">Document outline</span>
               </div>
-              <h2 className="font-display text-[24px] font-semibold tracking-tight mt-2">Shape the policy your way.</h2>
-              <p className="text-[12.5px] text-[var(--color-muted)] mt-1">Rename, show, hide, and reorder sections. Preface always stays first.</p>
+              <h2 className="font-display text-[18px] font-semibold tracking-tight mt-2">Shape the policy your way.</h2>
+              <p className="text-[14px] text-[var(--color-muted)] mt-1">Rename, show, hide, and reorder sections. Preface always stays first.</p>
             </div>
             <Button variant="primary" size="sm" icon={<Plus size={14}/>} onClick={add}>Add section</Button>
           </div>
@@ -213,9 +213,9 @@ export function StepStructure() {
                   onDragOver={(e) => e.preventDefault()}
                   onDrop={() => drop(section.id)}
                   onClick={() => setSelected(section.id)}
-                  className={`group grid grid-cols-[auto_minmax(0,1fr)_auto] gap-3 items-center p-3 rounded-xl border transition-all ${
+                  className={`group grid grid-cols-[auto_minmax(0,1fr)_auto] gap-2 items-center p-2.5 rounded-lg border transition-colors ${
                     active
-                      ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)]/45 shadow-sm"
+                      ? "border-[var(--color-forest)] bg-[var(--color-forest-soft)]"
                       : "border-transparent hover:border-[var(--color-line)] hover:bg-[var(--color-cream-2)]/70"
                   } ${dragged === section.id ? "opacity-45" : ""}`}
                 >
@@ -227,10 +227,10 @@ export function StepStructure() {
                     <Input
                       value={section.title}
                       onChange={(e) => update(section.id, { title: e.target.value })}
-                      className="h-8 border-transparent bg-transparent px-2 font-semibold focus:bg-white"
+                      className="h-10 border-transparent bg-transparent px-2 font-semibold focus:bg-[var(--pc-panel)]"
                       aria-label={`${labelFor(section)} title`}
                     />
-                    <div className="px-2 mt-1 text-[10.5px] uppercase tracking-wide text-[var(--color-muted)] flex gap-2">
+                    <div className="px-2 mt-1 text-[12px] text-[var(--color-muted)] flex flex-wrap gap-2">
                       <span>{labelFor(section)}</span>
                       {sectionHasContent(policy, section) && <span className="text-[var(--color-forest)]">Content added</span>}
                     </div>
@@ -239,7 +239,7 @@ export function StepStructure() {
                     <button
                       onClick={(e) => { e.stopPropagation(); if (!locked) update(section.id, { enabled: !section.enabled }); }}
                       disabled={locked}
-                      className="p-2 rounded-lg text-[var(--color-muted)] hover:bg-white hover:text-[var(--color-forest)] disabled:opacity-40"
+                      className="min-h-10 min-w-10 rounded-lg text-[var(--color-muted)] hover:bg-[var(--pc-panel)] hover:text-[var(--color-forest)] disabled:opacity-40"
                       title={section.enabled ? "Hide from document" : "Show in document"}
                     >
                       {section.enabled ? <Eye size={16}/> : <EyeOff size={16}/>}
@@ -247,7 +247,7 @@ export function StepStructure() {
                     <button
                       onClick={(e) => { e.stopPropagation(); move(index, -1); }}
                       disabled={locked || index <= 1}
-                      className="p-1.5 disabled:opacity-25"
+                      className="min-h-10 min-w-10 rounded-md disabled:opacity-25"
                       aria-label="Move section up"
                     >
                       <ChevronUp size={15}/>
@@ -255,7 +255,7 @@ export function StepStructure() {
                     <button
                       onClick={(e) => { e.stopPropagation(); move(index, 1); }}
                       disabled={locked || index === sections.length - 1}
-                      className="p-1.5 disabled:opacity-25"
+                      className="min-h-10 min-w-10 rounded-md disabled:opacity-25"
                       aria-label="Move section down"
                     >
                       <ChevronDown size={15}/>
@@ -263,7 +263,7 @@ export function StepStructure() {
                     {section.kind === "custom" && (
                       <button
                         onClick={(e) => { e.stopPropagation(); remove(section.id); }}
-                        className="p-2 text-[var(--color-muted)] hover:text-red-700"
+                        className="min-h-10 min-w-10 rounded-md text-[var(--color-muted)] hover:text-[var(--pc-error)]"
                         aria-label="Remove custom section"
                       >
                         <Trash2 size={15}/>
@@ -276,19 +276,19 @@ export function StepStructure() {
           </div>
         </div>
 
-        <aside className="xl:sticky xl:top-5 bg-[#fffdf7] border border-[var(--color-line)] rounded-2xl p-5 shadow-[0_12px_34px_rgba(35,52,42,.05)]">
-          <div className="text-[10px] uppercase tracking-[.16em] text-[var(--color-muted)] font-bold">Table of contents</div>
-          <h3 className="font-display text-[18px] font-semibold mt-1">Live outline</h3>
-          <ol className="mt-5 space-y-3">
+        <aside className="xl:sticky xl:top-5 bg-[var(--pc-panel)] border border-[var(--color-line)] rounded-[14px] p-4">
+          <div className="text-[12px] text-[var(--color-muted)] font-semibold">Table of contents</div>
+          <h3 className="font-display text-[16px] font-semibold mt-1">Live outline</h3>
+          <ol className="mt-4 space-y-2">
             {getEnabledSections(policy).map((section, index) => (
-              <li key={section.id} className="flex gap-3 text-[12px]">
-                <span className="font-mono text-[var(--color-forest)] font-bold">{String(index + 1).padStart(2,"0")}</span>
+              <li key={section.id} className="flex gap-3 text-[13px]">
+                <span className="font-mono text-[var(--pc-selection-text)] font-semibold">{String(index + 1).padStart(2,"0")}</span>
                 <span>{section.title || "Untitled section"}</span>
               </li>
             ))}
             {policy.showAcknowledgement && (
-              <li className="flex gap-3 text-[12px]">
-                <span className="font-mono text-[var(--color-forest)] font-bold">{String(getEnabledSections(policy).length + 1).padStart(2,"0")}</span>
+              <li className="flex gap-3 text-[13px]">
+                <span className="font-mono text-[var(--pc-selection-text)] font-semibold">{String(getEnabledSections(policy).length + 1).padStart(2,"0")}</span>
                 <span>Employee Acknowledgement Form</span>
               </li>
             )}

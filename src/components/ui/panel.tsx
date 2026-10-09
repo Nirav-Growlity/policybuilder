@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { clsx } from "clsx";
+import { useApplicationSurface } from "./application-surface";
 
 interface PanelProps {
   title?: React.ReactNode;
@@ -14,10 +15,11 @@ interface PanelProps {
 }
 
 export function Panel({ title, description, icon, actions, children, className, bodyClassName }: PanelProps) {
+  const application = useApplicationSurface();
   return (
-    <section className={clsx("doc-card overflow-visible", className)}>
+    <section className={clsx("doc-card overflow-visible", application && "pc-authoring-panel", className)}>
       {(title || actions) && (
-        <header className="flex items-center justify-between gap-3 px-6 py-4 border-b border-[var(--color-line)] bg-gradient-to-b from-[#fafaf5] to-[var(--color-cream-2)] rounded-t-[inherit]">
+        <header className={clsx("flex items-center justify-between gap-3 px-6 py-4 border-b border-[var(--color-line)] bg-gradient-to-b from-[#fafaf5] to-[var(--color-cream-2)] rounded-t-[inherit]", application && "pc-authoring-panel-header")}>
           <div className="flex items-center gap-2.5 min-w-0">
             {icon && <span className="text-[var(--color-forest)] flex-shrink-0">{icon}</span>}
             <div className="min-w-0">
@@ -28,7 +30,7 @@ export function Panel({ title, description, icon, actions, children, className, 
           {actions && <div className="flex items-center gap-2 flex-shrink-0">{actions}</div>}
         </header>
       )}
-      <div className={clsx("px-6 py-5", bodyClassName)}>{children}</div>
+      <div className={clsx("px-6 py-5", application && "pc-authoring-panel-body", bodyClassName)}>{children}</div>
     </section>
   );
 }
@@ -42,13 +44,16 @@ export function InfoBar({
   icon?: React.ReactNode;
   children: React.ReactNode;
 }) {
+  const application = useApplicationSurface();
   return (
     <div
       className={clsx(
         "flex items-start gap-2.5 px-4 py-3 rounded-lg text-[13px] leading-relaxed",
         variant === "info" && "bg-[var(--color-forest-soft)] border border-[#cfe2d7] text-[var(--color-forest-deep)]",
-        variant === "warn" && "bg-[var(--color-amber-bg)] border border-[var(--color-amber-line)] text-[var(--color-amber-ink)]"
+        variant === "warn" && "bg-[var(--color-amber-bg)] border border-[var(--color-amber-line)] text-[var(--color-amber-ink)]",
+        application && "pc-feature-notice"
       )}
+      data-pc-tone={application ? variant : undefined}
     >
       {icon && <span className="flex-shrink-0 mt-0.5">{icon}</span>}
       <div>{children}</div>
@@ -64,6 +69,7 @@ interface BadgeProps {
 }
 
 export function Badge({ variant = "muted", children, icon, className }: BadgeProps) {
+  const application = useApplicationSurface();
   const styles = {
     forest: "bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)] border border-[#cfe2d7]",
     amber: "bg-[var(--color-amber-bg)] text-[var(--color-amber-ink)] border border-[var(--color-amber-line)]",
@@ -76,8 +82,10 @@ export function Badge({ variant = "muted", children, icon, className }: BadgePro
       className={clsx(
         "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide",
         styles[variant],
+        application && "pc-feature-badge",
         className
       )}
+      data-pc-tone={application ? variant : undefined}
     >
       {icon}
       {children}

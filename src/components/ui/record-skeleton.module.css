@@ -1,0 +1,11 @@
+.records { width: 100%; overflow: hidden; border: 1px solid var(--pc-divider); border-radius: 12px; background: var(--pc-panel); animation: pulse 2s ease-in-out 2; }
+.row { display: flex; align-items: center; gap: 16px; padding: 20px 24px; }
+.row + .row { border-top: 1px solid var(--pc-divider); }
+.identity { width: 36px; height: 36px; flex-shrink: 0; border-radius: 8px; background: var(--pc-inset); }
+.copy { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 8px; }
+.title { width: min(68%, 380px); height: 12px; border-radius: 4px; background: var(--pc-inset); }
+.detail { width: min(48%, 250px); height: 9px; border-radius: 4px; background: var(--pc-inset); }
+.action { width: 70px; height: 28px; border-radius: 8px; background: var(--pc-inset); }
+@keyframes pulse { 50% { opacity: .55; } }
+@media (max-width: 639px) { .row { padding: 18px 16px; gap: 12px; } .action { width: 40px; } }
+@media (prefers-reduced-motion: reduce) { .records { animation: none; } }

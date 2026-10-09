@@ -2,6 +2,8 @@
 
 import * as React from "react";
 import { MoreHorizontal } from "lucide-react";
+import { motion } from "motion/react";
+import { useApplicationSurface } from "./application-surface";
 
 type ActionDisclosureProps = {
   label: string;
@@ -11,6 +13,7 @@ type ActionDisclosureProps = {
 
 /** Compact actions that stay in the normal Tab order instead of emulating an ARIA menu. */
 export function ActionDisclosure({ label, children, disabled = false }: ActionDisclosureProps) {
+  const application = useApplicationSurface();
   const [open, setOpen] = React.useState(false);
   const id = React.useId();
   const rootRef = React.useRef<HTMLDivElement>(null);
@@ -19,6 +22,12 @@ export function ActionDisclosure({ label, children, disabled = false }: ActionDi
 
   React.useEffect(() => {
     if (!open) return;
+    if (application && panelRef.current) {
+      const bounds = panelRef.current.getBoundingClientRect();
+      if (bounds.bottom > window.innerHeight - 12 || bounds.top < 12) {
+        panelRef.current.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "instant" });
+      }
+    }
     const onPointerDown = (event: PointerEvent) => {
       if (event.target instanceof Node && !rootRef.current?.contains(event.target)) setOpen(false);
     };
@@ -39,10 +48,10 @@ export function ActionDisclosure({ label, children, disabled = false }: ActionDi
       document.removeEventListener("focusin", onFocusIn, true);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [open]);
+  }, [open, application]);
 
   return (
-    <div ref={rootRef} className={`relative inline-flex ${open ? "z-30" : ""}`}>
+    <div ref={rootRef} className={`relative inline-flex ${application ? "pc-disclosure-root" : ""} ${open ? "z-30" : ""}`}>
       <button
         ref={triggerRef}
         type="button"
@@ -51,22 +60,26 @@ export function ActionDisclosure({ label, children, disabled = false }: ActionDi
         aria-controls={id}
         disabled={disabled}
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--color-line-2)] bg-white text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-50"
+        className={application ? "pc-disclosure-trigger pc-focus" : "inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--color-line-2)] bg-white text-[var(--color-ink-2)] transition-colors hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-50"}
       >
         <MoreHorizontal size={19} aria-hidden="true" />
       </button>
       {open ? (
-        <div
+        <motion.div
           ref={panelRef}
           id={id}
-          className="absolute right-0 top-full z-50 mt-2 min-w-52 rounded-xl border border-[var(--color-line)] bg-white p-1.5 shadow-[0_16px_44px_rgba(29,45,36,.16)]"
+          className={application ? "pc-disclosure-panel" : "absolute right-0 top-full z-50 mt-2 min-w-52 rounded-xl border border-[var(--color-line)] bg-white p-1.5 shadow-[0_16px_44px_rgba(29,45,36,.16)]"}
+          initial={application ? { opacity: 0, scale: 0.98 } : false}
+          animate={application ? { opacity: 1, scale: 1 } : undefined}
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          style={application ? { transformOrigin: "top right" } : undefined}
           onClick={() => {
             triggerRef.current?.focus();
             setOpen(false);
           }}
         >
           {children}
-        </div>
+        </motion.div>
       ) : null}
     </div>
   );
@@ -85,12 +98,13 @@ export function ActionDisclosureItem({
   destructive?: boolean;
   busy?: boolean;
 }) {
+  const application = useApplicationSurface();
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={disabled || busy}
-      className={`flex min-h-11 w-full items-center gap-2.5 rounded-lg px-3 text-left text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-60 ${destructive ? "text-red-800 hover:bg-red-50" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)]"}`}
+      className={application ? `pc-disclosure-item pc-focus ${destructive ? "pc-disclosure-danger" : ""}` : `flex min-h-11 w-full items-center gap-2.5 rounded-lg px-3 text-left text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-60 ${destructive ? "text-red-800 hover:bg-red-50" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)]"}`}
     >
       {children}
     </button>
