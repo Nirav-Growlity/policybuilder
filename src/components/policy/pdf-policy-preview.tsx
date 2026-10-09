@@ -196,8 +196,8 @@ export function PdfPages({ bytes, view, onViewChange, interactive, dimmed = fals
   };
   return <div ref={host} className={`${styles.pages} pdf-pages rounded-xl border`}>
     <style>{`
-      .pdf-pages .textLayer ::selection { color: transparent !important; -webkit-text-fill-color: transparent; text-shadow: none; background: rgba(37, 99, 235, .26); }
-      .pdf-pages .textLayer ::-moz-selection { color: transparent !important; text-shadow: none; background: rgba(37, 99, 235, .26); }
+      .pdf-pages .textLayer ::selection { color: transparent !important; -webkit-text-fill-color: transparent; text-shadow: none; background: rgba(65, 134, 243, .26); }
+      .pdf-pages .textLayer ::-moz-selection { color: transparent !important; text-shadow: none; background: rgba(65, 134, 243, .26); }
     `}</style>
     <div className={styles.toolbar}>
       <div className={styles.pageViewControls}>

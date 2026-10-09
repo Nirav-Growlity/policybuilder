@@ -184,9 +184,12 @@
   body { background: #fff; }
 }
 
-/* Application scopes deliberately leave legacy and document tokens untouched. */
-.pc-ui {
+:root {
   --pc-brand: #4186f3;
+}
+
+/* Application scopes deliberately leave document tokens untouched. */
+.pc-ui {
   --pc-page: #f8fafc;
   --pc-panel: #ffffff;
   --pc-inset: #f1f5f9;
@@ -194,10 +197,10 @@
   --pc-muted: #475569;
   --pc-divider: #cbd5e1;
   --pc-control: #8495aa;
-  --pc-primary: #2563eb;
-  --pc-primary-text: #ffffff;
+  --pc-primary: var(--pc-brand);
+  --pc-primary-text: #0b1220;
   --pc-selection: #eff6ff;
-  --pc-selection-text: #1d4ed8;
+  --pc-selection-text: var(--pc-brand);
   --pc-success: #15803d;
   --pc-warning: #92400e;
   --pc-error: #b91c1c;
@@ -220,10 +223,10 @@
   --pc-muted: #a8b6cd;
   --pc-divider: #334765;
   --pc-control: #647a98;
-  --pc-primary: #60a5fa;
+  --pc-primary: var(--pc-brand);
   --pc-primary-text: #0b1220;
   --pc-selection: #1b3157;
-  --pc-selection-text: #93c5fd;
+  --pc-selection-text: var(--pc-brand);
   --pc-success: #86efac;
   --pc-warning: #fcd34d;
   --pc-error: #fca5a5;
@@ -328,6 +331,7 @@
 .pc-ui [data-cover-readiness] { font-family: var(--pc-font); }
 .pc-ui [data-cover-editor] { isolation: isolate; border-color: var(--pc-divider); border-radius: 14px; background: var(--pc-inset); box-shadow: none; }
 .pc-ui [data-cover-canvas] { background: var(--pc-inset); }
+.pc-ui [data-cover-canvas] .moveable-control-box { --moveable-color: var(--pc-brand); }
 .pc-ui :is([data-cover-toolbar], [data-cover-tools], [data-cover-properties], [data-cover-mobile-tools], [data-cover-mobile-panel], [data-cover-status], [data-cover-dialog], .pc-ai-cover-workflow, .pc-ai-cover-library) {
   --color-ink: var(--pc-text);
   --color-ink-2: var(--pc-muted);
@@ -379,7 +383,7 @@
 }
 .pc-ui :is(.pc-ai-cover-workflow, .pc-ai-cover-library) button { min-height: 40px; border-radius: 8px; font-family: var(--pc-font); font-size: 13px; transition: color 150ms, background-color 150ms, border-color 150ms; box-shadow: none; }
 .pc-ui .pc-ai-cover-library article:not([data-ai-cover-preview] *) { border-color: var(--pc-divider); border-radius: 14px; box-shadow: none; }
-.pc-ui [data-cover-canvas] [data-cover-element]:focus-visible { outline: 2px solid #2d9cff; outline-offset: 2px; }
+.pc-ui [data-cover-canvas] [data-cover-element]:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
 .pc-ui :is([data-cover-toolbar], [data-cover-tools], [data-cover-properties], [data-cover-mobile-tools], [data-cover-mobile-panel], [data-cover-dialog], .pc-ai-cover-workflow, .pc-ai-cover-library) button:active:not(:disabled) { transform: scale(.98); }
 @keyframes pc-calendar-entrance { from {opacity: 0; transform: scale(.98);} to {opacity: 1; transform: scale(1);} }
 

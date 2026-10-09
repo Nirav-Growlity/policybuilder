@@ -55,7 +55,7 @@ export function TaskStatus({ status, dueDate }: { status: PolicyCraftTaskStatus;
           ? "border-red-200 bg-red-50 text-red-900"
           : status === "in_progress"
             ? "border-[var(--color-forest)]/25 bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)]"
-            : "border-sky-200 bg-sky-50 text-sky-900";
+            : "border-[var(--pc-brand)]/30 bg-[var(--pc-brand)]/10 text-[var(--pc-text,#0b1220)]";
     return <span className={`inline-flex min-h-7 items-center gap-1.5 whitespace-nowrap rounded-md border px-2.5 text-[11px] font-semibold ${colors}`}><Icon size={13} aria-hidden="true" />{label}</span>;
   }
   const tone = overdue ? "error" : status === "completed" ? "success" : status === "in_progress" ? "info" : "neutral";

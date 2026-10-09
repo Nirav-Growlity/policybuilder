@@ -5,7 +5,7 @@
   --walkthrough-muted: #64748b;
   --walkthrough-line: #cbd5e1;
   --walkthrough-tint: #f1f5f9;
-  --walkthrough-accent: #2563eb;
+  --walkthrough-accent: var(--pc-brand);
   --walkthrough-accent-soft: #eff6ff;
   border-bottom: 1px solid var(--home-border, #cbd5e1);
   background: var(--home-background, #f8fafc);
@@ -19,7 +19,7 @@
   --walkthrough-muted: #a8b6cd;
   --walkthrough-line: #334765;
   --walkthrough-tint: #182842;
-  --walkthrough-accent: #60a5fa;
+  --walkthrough-accent: var(--pc-brand);
   --walkthrough-accent-soft: #1b3157;
 }
 

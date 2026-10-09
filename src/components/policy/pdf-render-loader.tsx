@@ -12,7 +12,7 @@ export function PdfRenderLoader({ updating = false, still = false }: PdfRenderLo
       </g>
       <g className={styles.frontPage}>
         <rect x="30" y="13" width="88" height="123" rx="6" fill="white" stroke="#cbd5e1" strokeWidth="1.5" />
-        <rect x="43" y="31" width="30" height="5" rx="2.5" fill="#2563eb" />
+        <rect x="43" y="31" width="30" height="5" rx="2.5" fill="var(--pc-brand)" />
         <rect x="43" y="49" width="61" height="4" rx="2" fill="#94a3b8" />
         <rect x="43" y="59" width="49" height="4" rx="2" fill="#cbd5e1" />
         <path d="M43 75h62" stroke="#e2e8f0" strokeWidth="1.5" />
