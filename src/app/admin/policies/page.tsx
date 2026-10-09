@@ -9,7 +9,6 @@ import { ActionDisclosure, ActionDisclosureItem } from "@/components/ui/action-d
 import { Modal } from "@/components/ui/modal";
 import { ApplicationStatus } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
-import { ApplicationThemeControl } from "@/components/ui/application-theme-control";
 import { POLICY_PROFILES } from "@/lib/constants";
 import { initialPolicy } from "@/lib/store";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
@@ -282,7 +281,7 @@ function AdminPoliciesContent() {
   };
 
   return <ApplicationSurface className={styles.surface} data-pc-pilot="inventory"><div className={styles.page}>
-    <header className={styles.header}><div><p className={styles.eyebrow}>Administration</p><h1 className={styles.pageTitle}>All policies</h1><p className={styles.description}>Browse, manage, and export policies across organizations.</p></div><div className={styles.headerActions}><ApplicationThemeControl /><Link href="/builder" className={styles.newPolicy}><Plus size={16} aria-hidden="true" />New policy</Link></div></header>
+    <header className={styles.header}><div><p className={styles.eyebrow}>Administration</p><h1 className={styles.pageTitle}>All policies</h1><p className={styles.description}>Browse, manage, and export policies across organizations.</p></div><div className={styles.headerActions}><Link href="/builder" className={styles.newPolicy}><Plus size={16} aria-hidden="true" />New policy</Link></div></header>
     {error ? <div className={styles.alert} role="alert" aria-live="polite"><p>{error}</p><button type="button" onClick={() => void retryLoad()} aria-label="Retry loading policies" className={styles.alertAction}><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : null}
     {loadError ? <div className={styles.alert} role="alert" aria-live="polite"><p>{loadError}</p><button type="button" onClick={() => void retryLoad()} className={styles.alertAction}><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : null}
 

@@ -10,7 +10,6 @@ import { z } from "zod";
 import { signIn, signOut } from "@/lib/auth-client";
 import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
 import { ApplicationSurface } from "@/components/ui/application-surface";
-import { ApplicationThemeControl } from "@/components/ui/application-theme-control";
 import { ApplicationButton, ApplicationField, ApplicationInput } from "@/components/ui/app-primitives";
 import styles from "./page.module.css";
 
@@ -175,7 +174,6 @@ function AcceptInvitationContent() {
   const serverError = formErrors.root?.server?.message;
 
   return <ApplicationSurface className={styles.surface}>
-    <div className={styles.themeControl}><ApplicationThemeControl /></div>
     <a className={styles.skipLink} href="#invitation-main">Skip to invitation</a>
     <main className={styles.main} id="invitation-main">
       <motion.section className={`${styles.card} pc-auth-entrance`} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion ? 0 : 0.2, ease: "easeOut" }}>

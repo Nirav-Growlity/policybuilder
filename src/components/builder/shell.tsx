@@ -10,7 +10,7 @@ import { getPolicyProfile, getPolicySteps } from "@/lib/constants";
 import { DesignInspector } from "@/components/builder/design-inspector";
 import { usePolicyDownload } from "@/components/builder/dock-sections";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
-import { ApplicationThemeControl } from "@/components/ui/application-theme-control";
+import { ApplicationSessionMenu } from "@/components/ui/application-user-menu";
 import styles from "./shell.module.css";
 
 const COLLAPSE_KEY = "policycraft_sidebar_collapsed";
@@ -191,7 +191,7 @@ export function BuilderShell({
               <button type="button" disabled={!!exporting} onClick={() => download("docx")} aria-busy={exporting === "docx"} className={styles.headerButton}><span className="inline-flex w-4 justify-center" aria-hidden="true">{exporting === "docx" ? <Loader2 size={16} className="animate-spin motion-reduce:animate-none" /> : <FileText size={16} />}</span>{exporting === "docx" ? "Downloading Word…" : "Download Word"}</button>
               <span className="sr-only" role="status" aria-live="polite">{exporting ? `Preparing ${exporting === "pdf" ? "PDF" : "Word"} download.` : ""}</span>
             </div>}
-            <ApplicationThemeControl />
+            <ApplicationSessionMenu workspaceHref={workspaceHref} />
             {showSidebar && !hideDesignInspector && <>
               <button ref={workflowTrigger} type="button" aria-expanded={workflowOpen} aria-controls="builder-workflow" onClick={() => setWorkflowOpen((value) => !value)} className={clsx(styles.headerButton, styles.mobileWorkflow)}>{workflowOpen ? "Hide workflow" : "Workflow"}</button>
               <button type="button" aria-expanded={inspectorOpen} aria-controls="design-inspector" onClick={() => setInspectorOpen(!inspectorOpen)} className={styles.headerButton}>{inspectorOpen ? "Hide controls" : "Design controls"}</button>

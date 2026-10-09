@@ -46,7 +46,7 @@ export function Toaster({ children }: { children: React.ReactNode }) {
       {children}
       {mounted &&
         createPortal(
-          <div className="pc-ui pc-toast-region" aria-label="Notifications">
+          <div className="pc-ui pc-toast-region" role="region" aria-label="Notifications">
             <AnimatePresence initial={false}>
               {items.map((item) => <ToastNotification key={item.id} item={item} dismiss={dismiss} />)}
             </AnimatePresence>

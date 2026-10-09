@@ -278,7 +278,6 @@ export function WorkspaceShell({
               </div>
               <section className={styles.drawerAccount} aria-label="Account">
                 <div className={styles.drawerIdentity}><strong>{access.actor.name || access.actor.email}</strong><span>{access.actor.email}</span><span className={styles.roleLabel}>{role}</span></div>
-                <ApplicationThemeControl />
                 <ApplicationButton type="button" variant="ghost" className={styles.signOutButton} onClick={() => void handleSignOut()} disabled={signingOut} busy={signingOut} busyLabel="Signing out…" leadingIcon={!signingOut ? <LogOut size={15} aria-hidden="true" /> : undefined}>Sign out</ApplicationButton>
               </section>
               <nav aria-label="Workspace navigation" className={styles.mobileNav}>

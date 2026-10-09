@@ -11,7 +11,6 @@ import { signIn } from "@/lib/auth-client";
 import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
 import { ApplicationButton, ApplicationField, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
-import { ApplicationThemeControl } from "@/components/ui/application-theme-control";
 import styles from "./page.module.css";
 
 const loginSchema = z.object({
@@ -87,7 +86,6 @@ function LoginPageContent() {
 
   return (
     <ApplicationSurface className={styles.surface}>
-      <div className={styles.themeControl}><ApplicationThemeControl /></div>
       <a className={styles.skipLink} href="#login-main">Skip to sign in</a>
       <main className={styles.main} id="login-main" aria-label="Sign in">
         <motion.section className={`${styles.card} pc-auth-entrance`} aria-labelledby="login-title" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion ? 0 : 0.2, ease: "easeOut" }}>
