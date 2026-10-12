@@ -9,6 +9,7 @@ import { useTheme } from "next-themes";
 import { signOut, useSession } from "@/lib/auth-client";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { policyCraftBuilderStorage } from "@/lib/policycraft-builder-storage";
+import { flushPendingNavigation } from "@/lib/policycraft-navigation-flush";
 import styles from "./application-user-menu.module.css";
 
 type UserMenuProps = {
@@ -66,6 +67,14 @@ export function ApplicationSessionMenu({ workspaceHref }: { workspaceHref: strin
   async function handleSignOut() {
     setSigningOut(true);
     setError("");
+    try {
+      // Save any queued builder draft while the session can still authenticate it.
+      await flushPendingNavigation();
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "Could not save this policy. Stay here and retry.");
+      setSigningOut(false);
+      return;
+    }
     try {
       const result = await signOut();
       if (result.error) throw new Error("Could not sign out. Please try again.");

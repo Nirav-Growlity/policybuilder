@@ -26,6 +26,7 @@ import { extractLogoPalette } from "@/lib/logo-palette";
 import { applyCompanyMaster } from "@/lib/policycraft-mapping";
 import type { PolicyCraftDocumentState, StoredPolicyDocument } from "@/lib/policycraft-types";
 import { createDraftAutosave } from "@/lib/policycraft-autosave";
+import { registerNavigationFlush } from "@/lib/policycraft-navigation-flush";
 import { AlertTriangle, Building2 } from "lucide-react";
 import Link from "next/link";
 import { PolicyPreview } from "@/components/policy/policy-preview";
@@ -528,6 +529,7 @@ function BuilderClientWorkspace() {
     }
 
     flushDraftForTaskRef.current = flushForNavigation;
+    const unregisterNavigationFlush = registerNavigationFlush(() => flushForNavigation());
 
     const beforeUnload = (event: BeforeUnloadEvent) => {
       const stateChanged = JSON.stringify(currentState()) !== lastSavedState.current;
@@ -579,6 +581,7 @@ function BuilderClientWorkspace() {
     document.addEventListener("click", interceptInternalNavigation, true);
     return () => {
       if (flushDraftForTaskRef.current === flushForNavigation) flushDraftForTaskRef.current = null;
+      unregisterNavigationFlush();
       window.removeEventListener("beforeunload", beforeUnload);
       window.removeEventListener("popstate", interceptHistoryNavigation, true);
       document.removeEventListener("click", interceptInternalNavigation, true);
