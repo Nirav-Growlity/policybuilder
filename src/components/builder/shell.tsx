@@ -11,6 +11,7 @@ import { getPolicyProfile, getPolicySteps } from "@/lib/constants";
 import { DesignInspector } from "@/components/builder/design-inspector";
 import { usePolicyDownload } from "@/components/builder/dock-sections";
 import { DebouncedPolicyPreview } from "@/components/builder/live-preview";
+import { AICoverGenerationLoader } from "@/components/builder/ai-cover-generation-loader";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { ApplicationSessionMenu } from "@/components/ui/application-user-menu";
 import { Button } from "@/components/ui/button";
@@ -108,7 +109,7 @@ export function BuilderShell({
   isFirstStep?: boolean;
   isLastStep?: boolean;
 }) {
-  const { step, setStep, policy, next, prev, coverEditorRequest, includeAuthorSignature, authorSignatureDate, authorSignatureUpdatedAt } = useBuilder();
+  const { step, setStep, policy, next, prev, coverEditorRequest, includeAuthorSignature, authorSignatureDate, authorSignatureUpdatedAt, isAICoverGenerating } = useBuilder();
   const workspaceScope = usePolicyCraftScope((state) => state.scope);
   const { download, exporting } = usePolicyDownload();
   const policyMeta = getPolicyProfile(policy.policyType);
@@ -310,7 +311,9 @@ export function BuilderShell({
               <section aria-label="Document preview" className={styles.designPreview}>
                 <div className={styles.paneHeader}><h2 className={styles.paneTitle}>Document preview</h2></div>
                 <div className={styles.designPreviewBody}>
-                  <DebouncedPolicyPreview policy={policy} includeAuthorSignature={includeAuthorSignature} authorSignatureDate={authorSignatureDate} signatureUpdatedAt={signatureUpdatedAt} />
+                  {isAICoverGenerating
+                    ? <div className="relative h-full min-h-[clamp(520px,70vh,760px)]"><AICoverGenerationLoader title={policyMeta.label} company={policy.company.name} accent={policyMeta.accent} /></div>
+                    : <DebouncedPolicyPreview policy={policy} includeAuthorSignature={includeAuthorSignature} authorSignatureDate={authorSignatureDate} signatureUpdatedAt={signatureUpdatedAt} />}
                 </div>
               </section>
             </div>
