@@ -5,6 +5,8 @@ import { useBuilder, getStepOrder, initialPolicy } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/toast";
 import { BuilderShell } from "@/components/builder/shell";
+import { PolicyMenu } from "@/components/builder/policy-menu";
+import { TaskPopover } from "@/components/builder/task-popover";
 import { StepStructure } from "@/components/builder/steps/step-structure";
 import { StepCustom } from "@/components/builder/steps/step-custom";
 import { StepDeclaration } from "@/components/builder/steps/step-declaration";
@@ -14,7 +16,7 @@ import { StepQuantitative } from "@/components/builder/steps/step-quantitative";
 import { StepSDG } from "@/components/builder/steps/step-sdg";
 import { StepResponsibilities } from "@/components/builder/steps/step-responsibilities";
 import { StepExport } from "@/components/builder/steps/step-export";
-import { ArrowLeft, ArrowRight, FileCheck2, FileUp, Loader2, RefreshCw, X } from "lucide-react";
+import { FileCheck2, FileUp, Loader2, RefreshCw } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { PolicySelector } from "@/components/builder/policy-selector";
@@ -27,7 +29,7 @@ import { applyCompanyMaster } from "@/lib/policycraft-mapping";
 import type { PolicyCraftDocumentState, StoredPolicyDocument } from "@/lib/policycraft-types";
 import { createDraftAutosave } from "@/lib/policycraft-autosave";
 import { registerNavigationFlush } from "@/lib/policycraft-navigation-flush";
-import { AlertTriangle, Building2 } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 import Link from "next/link";
 import { PolicyPreview } from "@/components/policy/policy-preview";
 import type { PolicyCraftAccess, PolicyCraftOrganization, PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
@@ -71,8 +73,6 @@ function BuilderClientWorkspace() {
     policy,
     importedPolicy,
     setStep,
-    next,
-    prev,
     setPolicy,
     setImportedPolicy,
     clearImportedPolicy,
@@ -674,95 +674,12 @@ function BuilderClientWorkspace() {
     );
   }
 
-  const topActions = (
-    <>
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept=".docx"
-        className="hidden"
-        onChange={(e) => {
-          const f = e.target.files?.[0];
-          if (f) uploadFile(f);
-          e.target.value = "";
-        }}
-      />
-      {importedPolicy ? (
-        <div className="flex items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-white/70 px-2 py-1">
-          <FileCheck2 size={14} className="shrink-0 text-[var(--color-forest)]" />
-          <button
-            type="button"
-            className="max-w-44 truncate text-left text-[12px] font-medium text-[var(--color-ink)]"
-            title={`${importedPolicy.fileName} is the primary AI context. Click to replace it.`}
-            onClick={() => fileInputRef.current?.click()}
-          >
-            {importedPolicy.fileName}
-          </button>
-          <button
-            type="button"
-            aria-label="Remove imported policy context"
-            title="Remove imported policy context"
-            className="rounded p-1 text-[var(--color-muted)] transition-colors hover:bg-black/5 hover:text-[var(--color-ink)]"
-            onClick={clearImportedPolicy}
-          >
-            <X size={13} />
-          </button>
-        </div>
-      ) : (
-        <Button
-          variant="secondary"
-          size={step === "export" ? "sm" : "md"}
-          className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined}
-          icon={<FileUp size={14} />}
-          onClick={() => fileInputRef.current?.click()}
-        >
-          Add policy context
-        </Button>
-      )}
-      {(draftId || backendDocumentId) ? (
-        <Button
-          variant="secondary"
-          size={step === "export" ? "sm" : "md"}
-          className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined}
-          icon={<Building2 size={14} />}
-          onClick={() => setShowCompanyWarning(true)}
-        >
-          Company details
-        </Button>
-      ) : null}
-      <div className="w-px h-6 bg-[var(--color-line-2)] mx-1" />
-      <Button variant="secondary" size={step === "export" ? "sm" : "md"} className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined} icon={<ArrowLeft size={14} />} onClick={prev} disabled={isFirst}>
-        Back
-      </Button>
-      {!isLast && (<Button
-        variant="primary"
-        size="md"
-        trailingIcon={<ArrowRight size={14} />}
-        onClick={next}
-        disabled={isLast}
-      >
-        Continue
-      </Button>)}
-    </>
-  );
-
-  return (
-    <div
-      onDragOver={(e) => {
-        if (!Array.from(e.dataTransfer.types).includes("Files")) return;
-        e.preventDefault();
-        setDragOver(true);
-      }}
-      onDragLeave={(e) => {
-        if (Array.from(e.dataTransfer.types).includes("Files")) setDragOver(false);
-      }}
-      onDrop={handleDrop}
-      className="relative"
-    >
-      <BuilderShell hideDesignInspector={coverEditing} topActions={<>{backendDocumentId ? <span role="status" aria-live="polite" className="mr-2 text-[12px] text-[var(--color-muted)]">{saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""}</span> : null}{topActions}</>}>
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-10 py-6 xl:py-7">
-          <div key={step} className={step === "export" ? undefined : `pc-builder-authoring ${styles.stepContent}`}>
-          {workspaceScope?.role === "manager" && (taskContext || taskContextLoading || taskContextError) ? <section aria-label="Assigned task" className={`pc-builder-authoring ${styles.taskSummary} mb-4 rounded-lg border border-[var(--color-line)] bg-[var(--pc-panel)] px-3 py-2.5 sm:px-4`}>
+  // Builder chrome slots. The shell owns layout, modes, rail and footer; these
+  // nodes keep the existing handlers and state.
+  const taskState: "loading" | "error" | "ready" = taskContext ? "ready" : taskContextError ? "error" : "loading";
+  const taskChip = workspaceScope?.role === "manager" && (taskContext || taskContextLoading || taskContextError) ? (
+    <TaskPopover state={taskState} complete={taskContext?.status === "completed"} percentage={taskContext?.progress?.percentage ?? 0}>
+      <section aria-label="Assigned task" className={`pc-builder-authoring ${styles.taskSummary} mb-4 rounded-lg border border-[var(--color-line)] bg-[var(--pc-panel)] px-3 py-2.5 sm:px-4`}>
             {taskContextLoading && !taskContext ? <p className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)]" role="status"><Loader2 size={15} className="animate-spin" aria-hidden="true"/>Loading task details…</p> : null}
             {taskContextError ? <div role="alert" className="flex flex-wrap items-center justify-between gap-3 text-sm text-red-900"><span>{taskContextError}</span><button type="button" onClick={() => void loadTaskContext()} className="inline-flex min-h-9 items-center gap-2 rounded-md px-2 font-semibold text-red-900 hover:bg-red-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]"><RefreshCw size={14} aria-hidden="true"/>Retry</button></div> : null}
             {taskContext ? <div className={styles.taskSummaryGrid}>
@@ -777,9 +694,48 @@ function BuilderClientWorkspace() {
               <div className={styles.taskSummaryProgress}><TaskProgress progress={taskContext.progress} unavailableReason={taskContext.unavailableReason} compact showSavedAt/></div>
               <div className={styles.taskSummaryActions}><TaskStatus status={taskContext.status} dueDate={taskContext.dueDate}/>{taskContext.status === "in_progress" ? <Button variant="primary" size="sm" loading={taskCompleting} disabled={!taskContext.available || taskCompleting} onClick={() => void prepareTaskCompletion()}>Mark task complete</Button> : taskContext.status === "completed" ? <span className="text-xs font-medium text-emerald-900">Completed</span> : null}</div>
             </div> : null}
-          </section> : null}
+          </section>
+    </TaskPopover>
+  ) : null;
+  const policyMenu = (
+    <PolicyMenu
+      contextFileName={importedPolicy?.fileName ?? null}
+      onChooseContext={() => fileInputRef.current?.click()}
+      onRemoveContext={clearImportedPolicy}
+      onCompanyDetails={draftId || backendDocumentId ? () => setShowCompanyWarning(true) : undefined}
+    />
+  );
+  const saveStatusLabel = backendDocumentId
+    ? saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""
+    : null;
+
+  return (
+    <div
+      onDragOver={(e) => {
+        if (!Array.from(e.dataTransfer.types).includes("Files")) return;
+        e.preventDefault();
+        setDragOver(true);
+      }}
+      onDragLeave={(e) => {
+        if (Array.from(e.dataTransfer.types).includes("Files")) setDragOver(false);
+      }}
+      onDrop={handleDrop}
+      className="relative"
+    >
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".docx"
+        className="hidden"
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) uploadFile(f);
+          e.target.value = "";
+        }}
+      />
+      <BuilderShell coverEditing={coverEditing} saveStatus={saveStatusLabel} policyMenu={policyMenu} taskChip={taskChip} isFirstStep={isFirst} isLastStep={isLast}>
+        <div key={step} className={step === "export" ? undefined : `pc-builder-authoring ${styles.stepContent}`}>
           <StepCmp onCoverEditingChange={step === "export" ? setCoverEditing : undefined} />
-          </div>
         </div>
       </BuilderShell>
       <Modal open={taskCompleteOpen} onClose={() => { if (!taskCompleting) setTaskCompleteOpen(false); }} title="Mark this task complete?" description="Your current policy has been saved and its progress refreshed." width={520} hideClose={taskCompleting}>

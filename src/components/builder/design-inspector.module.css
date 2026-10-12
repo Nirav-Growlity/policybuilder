@@ -65,5 +65,5 @@
 @keyframes inspector-reveal { from { opacity: .86; } to { opacity: 1; } }
 @keyframes inspector-drawer-reveal { from { opacity: .86; transform: translateX(14px); } to { opacity: 1; transform: none; } }
 @media (max-width: 1199px) { .frame { animation: inspector-drawer-reveal 250ms ease backwards; } }
-@media (min-width: 1200px) { .frame { position: relative; inset: auto; z-index: auto; width: 360px; min-width: 360px; box-shadow: none; } .scrim { display: none; } }
+@media (min-width: 1200px) { .frame { position: relative; inset: auto; z-index: auto; width: 360px; min-width: 360px; min-height: 0; border-left: 0; border-right: 1px solid var(--pc-divider); box-shadow: none; } .scrim { display: none; } }
 @media (prefers-reduced-motion: reduce) { .frame { animation-name: inspector-reveal; animation-duration: 200ms; } }

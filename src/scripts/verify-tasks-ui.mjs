@@ -123,6 +123,12 @@ page.on("pageerror", (error) => pageErrors.push(error.message));
 await mkdir(output, { recursive: true });
 async function noOverflow() { assert(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), `Page overflows at ${JSON.stringify(page.viewportSize())}`); }
 async function screenshot(name, fullPage = true) { await page.screenshot({ path: `${output}/${name}.png`, fullPage, animations: "disabled" }); }
+// The assignment summary lives in the builder task chip popover.
+async function openAssignedTask() {
+  const markComplete = page.getByRole("button", { name: "Mark task complete", exact: true });
+  if (!(await markComplete.isVisible().catch(() => false))) await page.getByRole("button", { name: /^Task\b/ }).click();
+  await markComplete.waitFor();
+}
 async function taskLayout() {
   await noOverflow();
   const heading = page.getByRole("heading", { level: 1 });
@@ -295,21 +301,22 @@ try {
   assert.equal(await page.getByRole("button", { name: "Mark task complete", exact: true }).count(), 0, "independent manager work must not show an assignment strip");
   assert.equal(await page.getByText(/assignment.*no longer available/i).count(), 0);
   await page.goto(`${base}/builder?draft=draft-started&orgId=11`);
-  await page.getByRole("button", { name: "Mark task complete", exact: true }).waitFor();
-  await page.getByRole("button", { name: "Close controls", exact: true }).click();
+  await openAssignedTask();
   await noOverflow();
   await screenshot("builder-mobile");
   await page.setViewportSize({ width: 1440, height: 1000 });
+  await openAssignedTask();
   const headingBox = await page.getByRole("region", { name: "Assigned task", exact: true }).getByRole("heading").boundingBox();
-  assert(headingBox.width > 350, "builder assignment title must have readable space beside the design inspector");
+  assert(headingBox.width > 350, "builder assignment title must have readable space in the task popover");
   assert((await page.getByRole("region", { name: "Assigned task", exact: true }).getByRole("heading").evaluate((element) => getComputedStyle(element).fontFamily)).includes("Fraunces"), "task workspace styling must not leak into the builder");
   for (const failure of ["offline", "conflict", "stale"]) {
     await page.goto(`${base}/builder?draft=draft-started&orgId=11`);
-    await page.getByRole("button", { name: "Mark task complete", exact: true }).waitFor();
+    await openAssignedTask();
     failSaves = failure === "offline";
     conflictSaves = failure === "conflict";
     if (failure === "stale") documents.get("draft-started").lockVersion++;
     await page.getByPlaceholder("Mention your industry, your commitment, and the standards you align with.", { exact: true }).fill(`Unsaved ${failure} changes`);
+    await openAssignedTask();
     await page.getByRole("button", { name: "Mark task complete", exact: true }).click();
     await page.getByText(/could not.*sav|conflict|save unavailable|offline|newer version|changed in another/i).filter({ visible: true }).first().waitFor();
     assert.equal(await page.getByRole("dialog").count(), 0, `${failure} save must prevent completion confirmation`);
@@ -318,9 +325,10 @@ try {
     conflictSaves = false;
   }
   await page.goto(`${base}/builder?draft=draft-started&orgId=11`);
-  await page.getByRole("button", { name: "Mark task complete", exact: true }).waitFor();
+  await openAssignedTask();
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.getByPlaceholder("Mention your industry, your commitment, and the standards you align with.", { exact: true }).fill("Manager's latest unsaved environmental commitment.");
+  await openAssignedTask();
   await page.getByRole("button", { name: "Mark task complete", exact: true }).click();
   await page.getByRole("dialog").waitFor();
   assert.equal(await page.getByRole("dialog").evaluate((element) => getComputedStyle(element).borderRadius), "16px", "the existing builder completion dialog is unchanged");
