@@ -8,3 +8,9 @@
 
 # Local browser validation screenshots
 /src/output/playwright/
+
+# graphify knowledge-graph output and cache
+graphify-out/
+
+# Claude Code project subagents
+.claude/agents/
