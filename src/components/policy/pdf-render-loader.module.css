@@ -3,37 +3,62 @@
   font-family: var(--pc-font);
 }
 
-.stack {
-  width: clamp(230px, 30vw, 320px);
-  height: clamp(230px, 30vw, 320px);
+.stage {
+  --sheet-width: clamp(150px, 17vw, 184px);
+  position: relative;
+  width: calc(var(--sheet-width) + 40px);
+  height: calc(var(--sheet-width) * 297 / 210 + 40px);
 }
 
-.loader:not([data-still]) .frontPage {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: frontPageAssemble 2.4s ease-in-out 2 both;
+.sheet {
+  position: absolute;
+  left: 14px;
+  top: 26px;
+  width: var(--sheet-width);
+  aspect-ratio: 210 / 297;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(15 23 42 / .05), 0 14px 30px -14px rgb(15 23 42 / .22);
 }
 
-.loader:not([data-still]) .backPage {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: backPageAssemble 2.4s ease-in-out 2 both;
+.pileNear {
+  transform: translate(10px, -12px) rotate(2.4deg) scale(.97);
+  background: #fbfcfe;
 }
 
-@keyframes frontPageAssemble {
-  0% { opacity: .72; transform: translate(-5px, 5px); }
-  58% { opacity: 1; transform: translate(2px, -2px); }
-  100% { opacity: 1; transform: translate(0, 0); }
+.pileFar {
+  transform: translate(19px, -22px) rotate(4.6deg) scale(.94);
+  background: #f6f8fb;
+  box-shadow: 0 1px 2px rgb(15 23 42 / .04);
 }
 
-@keyframes backPageAssemble {
-  0% { opacity: .45; transform: translate(5px, -4px); }
-  58% { opacity: .8; transform: translate(-2px, 2px); }
-  100% { opacity: 1; transform: translate(0, 0); }
+.pageArt {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .loader :is(.frontPage, .backPage) {
-    animation: none;
-  }
+.floor {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 78%;
+  height: 14px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgb(15 23 42 / .14), transparent);
 }
+
+.loader[data-still] .sheet {
+  box-shadow: 0 1px 2px rgb(15 23 42 / .05);
+}
+
+[data-pc-theme="dark"] .sheet {
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgb(0 0 0 / .3), 0 16px 34px -14px rgb(0 0 0 / .6);
+}
+
+[data-pc-theme="dark"] .pileNear { background: #e7ecf3; }
+[data-pc-theme="dark"] .pileFar { background: #cfd8e4; }
+[data-pc-theme="dark"] .floor { background: radial-gradient(closest-side, rgb(0 0 0 / .45), transparent); }

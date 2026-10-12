@@ -6,6 +6,7 @@ import { PdfPolicyPreview } from "@/components/policy/pdf-policy-preview";
 import { CoverEditor } from "@/components/builder/cover-editor";
 import { AICoverGenerationLoader } from "@/components/builder/ai-cover-generation-loader";
 import type { CoverComposition } from "@/lib/types";
+import { getPolicyProfile } from "@/lib/constants";
 import { visibleQualitativeEntries, visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
 import { generateAndApplyAICover } from "@/components/builder/ai-cover-workflow";
 import { saveAICoverToLibrary } from "@/lib/ai-cover-library";
@@ -110,7 +111,7 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
         onCancel={() => { setEditingCover(null); onCoverEditingChange?.(false); }}
       /> : <div className="space-y-4">
         <div className="relative min-h-[clamp(520px,70vh,760px)]">
-          {aiCoverState === "generating" || isAICoverGenerating ? <AICoverGenerationLoader /> : <>
+          {aiCoverState === "generating" || isAICoverGenerating ? <AICoverGenerationLoader title={getPolicyProfile(policy.policyType).label} company={policy.company.name} accent={getPolicyProfile(policy.policyType).accent} /> : <>
           {aiCoverError ? <div className={`flex items-center justify-between gap-3 rounded-lg border px-3 py-2 text-[13px] ${aiCoverState === "failed" ? "border-[var(--pc-divider)] bg-[var(--pc-error-surface)] text-[var(--pc-error)]" : "border-[var(--pc-divider)] bg-[var(--pc-warning-surface)] text-[var(--pc-warning)]"}`} role={aiCoverState === "failed" ? "alert" : "status"}><span>{aiCoverError}{aiCoverState === "failed" ? " The manual cover is shown below." : ""}</span>{aiCoverState === "failed" ? <button data-cover-action="primary" type="button" className="shrink-0 min-h-10 rounded-lg px-3 font-semibold" onClick={() => void startAICoverGeneration()}>Retry</button> : null}</div> : null}
           <div className="min-h-0 flex-1 pr-1"><PdfPolicyPreview policy={policy} includeAuthorSignature={includeAuthorSignature} authorSignatureDate={authorSignatureDate ?? ""} signatureUpdatedAt={authorSignatureUpdatedAt} /></div>
           </>}
