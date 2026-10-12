@@ -8,7 +8,8 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motion, useReducedMotion } from "motion/react";
+import { animate, motion, useReducedMotion } from "motion/react";
+import { HomeLoginOverlay } from "@/components/auth/home-login-overlay";
 import { signOut, useSession } from "@/lib/auth-client";
 import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
@@ -55,6 +56,47 @@ export default function Home() {
   const drawerRef = React.useRef<HTMLDivElement>(null);
   const pageRef = React.useRef<HTMLElement>(null);
   const lenisRef = React.useRef<Lenis | null>(null);
+  const docRef = React.useRef<HTMLElement>(null);
+  const [loginPhase, setLoginPhase] = React.useState<"closed" | "open" | "closing">("closed");
+  const loginActive = loginPhase !== "closed";
+  const loginUsedRef = React.useRef(false);
+
+  // Closing goes through history so the Back button and the Close control agree.
+  const requestCloseLogin = React.useCallback(() => {
+    if (window.location.pathname === "/login") window.history.back();
+    else setLoginPhase((phase) => (phase === "open" ? "closing" : phase));
+  }, []);
+  const finishCloseLogin = React.useCallback(() => setLoginPhase("closed"), []);
+
+  React.useEffect(() => {
+    function onPopState() {
+      if (window.location.pathname === "/login") setLoginPhase((phase) => (phase === "closed" ? "open" : phase));
+      else setLoginPhase((phase) => (phase === "open" ? "closing" : phase));
+    }
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  // The hero copy gives way to the sheet and returns once it has settled back.
+  React.useEffect(() => {
+    const copy = pageRef.current?.querySelectorAll<HTMLElement>("[data-home-intro]");
+    if (!copy?.length) return;
+    if (loginPhase === "open") void animate(copy, { opacity: 0 }, { duration: 0.25, ease: "easeOut" });
+    else if (loginPhase === "closing") void animate(copy, { opacity: 1 }, { duration: 0.3, delay: 0.35, ease: "easeOut" });
+    else if (loginUsedRef.current) copy.forEach((element) => { element.style.opacity = ""; });
+    if (loginPhase !== "closed") loginUsedRef.current = true;
+  }, [loginPhase]);
+
+  React.useEffect(() => {
+    if (!loginActive) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    lenisRef.current?.stop();
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      lenisRef.current?.start();
+    };
+  }, [loginActive]);
 
   React.useEffect(() => {
     let active = true;
@@ -79,6 +121,23 @@ export default function Home() {
 
   function closeMenu() {
     setMenuOpen(false);
+  }
+
+  // Sign-in opens over the hero in place; the URL follows so links, reloads and Back keep working.
+  function openLogin(event: React.MouseEvent<HTMLAnchorElement>) {
+    closeMenu();
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (loginActive) return;
+    lenisRef.current?.scrollTo(0, { immediate: true });
+    window.scrollTo(0, 0);
+    window.history.pushState(null, "", "/login");
+    setLoginPhase("open");
+  }
+
+  function openWorkspace(event: React.MouseEvent<HTMLAnchorElement>) {
+    if (workspaceHref === "/login") openLogin(event);
+    else closeMenu();
   }
 
   React.useEffect(() => {
@@ -248,13 +307,13 @@ export default function Home() {
           </nav>
 
           <div className={styles.desktopActions}>
-            <Link ref={desktopCtaRef} href={workspaceHref} className={styles.primaryNavLink}>
+            <Link ref={desktopCtaRef} href={workspaceHref} onClick={openWorkspace} className={styles.primaryNavLink}>
               {workspaceLabel}<ArrowUpRight size={15} aria-hidden="true" />
             </Link>
             {isPending ? (
               <span className={styles.sessionStatus} role="status"><Loader2 size={15} className={styles.statusIcon} aria-hidden="true" /><span>Checking login status</span></span>
             ) : session ? null : (
-              <Link href="/login" className={styles.loginLink}><LogIn size={14} aria-hidden="true" />Log in</Link>
+              <Link href="/login" onClick={openLogin} className={styles.loginLink}><LogIn size={14} aria-hidden="true" />Log in</Link>
             )}
           </div>
           {!isPending && session && (
@@ -310,7 +369,7 @@ export default function Home() {
               {isPending ? (
                 <span className={styles.sessionStatus} role="status"><Loader2 size={15} className={styles.statusIcon} aria-hidden="true" /><span>Checking login status</span></span>
               ) : session ? null : (
-                <Link href="/login" onClick={closeMenu} className={styles.loginLink}><LogIn size={14} aria-hidden="true" />Log in</Link>
+                <Link href="/login" onClick={openLogin} className={styles.loginLink}><LogIn size={14} aria-hidden="true" />Log in</Link>
               )}
             </div>
             <Link href={workspaceHref} onClick={closeMenu} className={styles.primaryNavLink}>
@@ -325,16 +384,16 @@ export default function Home() {
           <Image src="/home/coastline.webp" alt="" fill priority sizes="100vw" className={styles.coastImage} data-coast-image />
         </div>
         <div className={styles.heroShade} aria-hidden="true" />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} inert={loginActive}>
           <p className={styles.heroEyebrow} data-home-intro>Sustainability, made actionable</p>
           <h1 id="home-heading" tabIndex={-1} data-home-intro>Good intentions.<br />Clear commitments.</h1>
           <p className={styles.heroDescription} data-home-intro>Build a policy your people can follow and your stakeholders can trust.</p>
           <div className={styles.heroActions} data-home-intro>
-            <Link href={workspaceHref} className={styles.primaryCta}>Start a new policy<ArrowRight size={16} aria-hidden="true" /></Link>
+            <Link href={workspaceHref} onClick={openWorkspace} className={styles.primaryCta}>Start a new policy<ArrowRight size={16} aria-hidden="true" /></Link>
             <a href="#how" className={styles.secondaryCta}>See how it works<ArrowDown size={14} aria-hidden="true" /></a>
           </div>
         </div>
-        <figure className={styles.heroDocument} data-home-intro>
+        <figure className={styles.heroDocument} ref={docRef} data-home-intro inert={loginActive}>
           <div className={styles.heroDocumentTop}><span>POLICYCRAFT&nbsp; / &nbsp;SAMPLE</span><span>01 / 08</span></div>
           <div className={styles.heroDocumentRule} />
           <p className={styles.heroDocumentKicker}>ENVIRONMENTAL POLICY</p>
@@ -342,6 +401,11 @@ export default function Home() {
           <p className={styles.heroDocumentIntro}>A clear framework for the choices we make, the resources we use, and the future we share.</p>
           <div className={styles.heroDocumentFoot}><span>Scope · Commitments · Review</span><span>2026</span></div>
         </figure>
+        {loginActive ? (
+          <React.Suspense fallback={null}>
+            <HomeLoginOverlay docRef={docRef} phase={loginPhase === "closing" ? "closing" : "open"} onRequestClose={requestCloseLogin} onClosed={finishCloseLogin} />
+          </React.Suspense>
+        ) : null}
       </section>
 
       <section id="collection" className={styles.collection} aria-labelledby="collection-heading">
