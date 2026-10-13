@@ -2,13 +2,13 @@
 
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
-import { Panel, InfoBar } from "@/components/ui/panel";
+import { Panel } from "@/components/ui/panel";
 import { Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { ListChecks, Plus, Sparkles, X } from "lucide-react";
+import { ListChecks, Plus, X } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 
 export function StepQualitative() {
@@ -140,10 +140,6 @@ export function StepQualitative() {
 
   return (
     <div className="space-y-6">
-      <InfoBar icon={<Sparkles size={16} className="text-[var(--color-forest)]" />}>
-        Write policy commitment statements for each focus area. These are qualitative — what the company commits to
-        doing, not measurable numbers.
-      </InfoBar>
 
       {areas.map((area, i) => {
         const objs = policy.qualitative[area] || [];

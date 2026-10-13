@@ -2,14 +2,14 @@
 
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
-import { Panel, InfoBar } from "@/components/ui/panel";
+import { Panel } from "@/components/ui/panel";
 import { Input, Select, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, syncQuantitativeAreas, TARGET_PERIOD, validateQuantitativeTarget } from "@/lib/quantitative";
-import { Plus, Sparkles, Target, Trash2 } from "lucide-react";
+import { Plus, Target, Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
 
@@ -158,9 +158,6 @@ export function StepQuantitative() {
 
   return (
     <div className="space-y-6">
-      <InfoBar icon={<Sparkles size={16} className="text-[var(--color-forest)]" />}>
-        Set measurable targets. Choose a target period with a baseline and deadline, or select Annually for an ongoing target with no dates.
-      </InfoBar>
 
       <div className="flex justify-end">
         {!addingTopic ? (

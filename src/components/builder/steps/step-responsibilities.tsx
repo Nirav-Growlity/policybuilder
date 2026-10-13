@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
-import { Panel, InfoBar } from "@/components/ui/panel";
+import { Panel } from "@/components/ui/panel";
 import { Input, Textarea } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
@@ -131,13 +131,9 @@ export function StepResponsibilities() {
 
   return (
     <div className="space-y-6">
-      <InfoBar icon={<Users size={16} className="text-[var(--color-forest)]" />}>
-        Define who owns the policy, how performance is monitored, and how the policy is reviewed over time.
-      </InfoBar>
 
       {getSection(policy, "responsibilities")?.enabled && <Panel
         title="Roles & responsibilities"
-        description="Assign ownership of the policy across the organization."
         icon={<Users size={17} strokeWidth={1.8} />}
         actions={
           <>
@@ -185,7 +181,6 @@ export function StepResponsibilities() {
 
       {getSection(policy, "monitoring")?.enabled && <Panel
         title="Monitoring, reporting & transparency"
-        description="How performance is tracked, reviewed and disclosed."
         icon={<BarChart3 size={17} strokeWidth={1.8} />}
         actions={
           <AIActionButton
@@ -205,7 +200,6 @@ export function StepResponsibilities() {
 
       {getSection(policy, "review")?.enabled && <Panel
         title="Review mechanism & continuous improvement"
-        description="When and how this policy is revisited."
         icon={<RefreshCw size={17} strokeWidth={1.8} />}
         actions={
           <AIActionButton
@@ -226,7 +220,6 @@ export function StepResponsibilities() {
       {getSection(policy, "revision")?.enabled && (
         <Panel
           title={getSection(policy, "revision")?.title || "Revision history"}
-          description="Track version history, revision dates, and change logs."
           icon={<History size={17} strokeWidth={1.8} />}
           actions={
             <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={() => insertRevisionEntry(revisionHistory.length - 1)}>
@@ -294,7 +287,6 @@ export function StepResponsibilities() {
       )}
       <Panel
         title="Employee acknowledgement form"
-        description="Details employees complete when acknowledging this policy."
         icon={<Users size={17} strokeWidth={1.8} />}
       >
         <div className="grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">

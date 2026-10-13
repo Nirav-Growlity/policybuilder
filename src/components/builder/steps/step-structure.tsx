@@ -98,7 +98,6 @@ export function StepStructure() {
       {/* Document metadata: a summary by default, with the full form behind "Edit details". */}
       <Panel
         title="Document Header & Revision Metadata"
-        description="Specify document control numbers, approver, and review schedule."
         icon={<FileText size={17} strokeWidth={1.8} />}
       >
         <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
@@ -210,7 +209,6 @@ export function StepStructure() {
             <div className="mb-2 flex items-start justify-between gap-3">
               <div>
                 <p className="text-[12px] font-semibold text-[var(--color-ink-2)]">Responsible reviewer designation(s)</p>
-                <p className="text-[11px] text-[var(--color-muted)]">Use named roles such as Sustainability Manager or Compliance Officer, not only a department.</p>
               </div>
               <Button variant="ghost" size="sm" icon={<Plus size={13} />} onClick={() => updatePolicy((p) => ({ company: { ...p.company, reviewerDesignations: [...(p.company.reviewerDesignations || []), ""] } }))}>Add designation</Button>
             </div>
@@ -239,8 +237,6 @@ export function StepStructure() {
               <ListTree size={17}/>
               <span className="text-[12px] uppercase tracking-[.1em] font-semibold">Document outline</span>
             </div>
-            <h2 className="font-display text-[18px] font-semibold tracking-tight mt-2">Shape the policy your way.</h2>
-            <p className="text-[14px] text-[var(--color-muted)] mt-1">Rename, show, hide, and reorder sections. Preface always stays first.</p>
           </div>
           <Button variant="primary" size="sm" className="shrink-0 whitespace-nowrap" icon={<Plus size={14}/>} onClick={add}>Add section</Button>
         </div>

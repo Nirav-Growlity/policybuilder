@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
-import { Panel, InfoBar } from "@/components/ui/panel";
+import { Panel } from "@/components/ui/panel";
 import { Field, Textarea } from "@/components/ui/input";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { BookOpen, Flag, MapPin, Sparkles } from "lucide-react";
+import { BookOpen, Flag, MapPin } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { clsx } from "clsx";
 import { getSection } from "@/lib/sections";
@@ -14,28 +14,24 @@ import { getSection } from "@/lib/sections";
 const SECTIONS: {
   key: "preface" | "declaration" | "scope";
   title: string;
-  desc: string;
   icon: React.ReactNode;
   hint: string;
 }[] = [
   {
     key: "preface",
     title: "Preface",
-    desc: "Company background, commitment, and values (3-4 sentences).",
     icon: <BookOpen size={17} strokeWidth={1.8} />,
     hint: "Mention your industry, your commitment, and the standards you align with.",
   },
   {
     key: "declaration",
     title: "Policy declaration",
-    desc: "Core commitment statement of this policy (2-3 sentences).",
     icon: <Flag size={17} strokeWidth={1.8} />,
     hint: "State clearly what the company commits to and how it will be achieved.",
   },
   {
     key: "scope",
     title: "Scope",
-    desc: "Who and what this policy covers — employees, contractors, sites, activities.",
     icon: <MapPin size={17} strokeWidth={1.8} />,
     hint: "Mention all employees, contractors, suppliers, sites and operational activities.",
   },
@@ -101,9 +97,6 @@ export function StepDeclaration() {
 
   return (
     <div className="space-y-6">
-      <InfoBar icon={<Sparkles size={16} className="text-[var(--color-forest)]" />}>
-        Click <span className="font-semibold">AI Write</span> on each section for a tailored draft.
-      </InfoBar>
 
       {SECTIONS.filter((s) => getSection(policy, s.key)?.enabled).map((s) => {
         const value = policy.declaration[s.key];
@@ -113,7 +106,6 @@ export function StepDeclaration() {
           <Panel
             key={s.key}
             title={configured?.title || s.title}
-            description={s.desc}
             icon={s.icon}
             actions={
               <AIActionButton
@@ -123,7 +115,7 @@ export function StepDeclaration() {
               />
             }
           >
-            <Field hint={s.hint}>
+            <Field>
               <AutosizingDeclarationTextarea
                 value={value}
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
@@ -138,8 +130,8 @@ export function StepDeclaration() {
       })}
 
       {getSection(policy, "definitions")?.enabled && (
-        <Panel title={getSection(policy, "definitions")?.title || "Definition & Methodology"} description="Define the living-wage benchmark, covered remuneration and review approach." icon={<BookOpen size={17} strokeWidth={1.8} />}>
-          <Field hint="State how the company defines a living wage, determines the benchmark, and reviews it over time.">
+        <Panel title={getSection(policy, "definitions")?.title || "Definition & Methodology"} icon={<BookOpen size={17} strokeWidth={1.8} />}>
+          <Field>
             <Textarea value={policy.definitions?.content || ""} onChange={(e) => updatePolicy((p) => ({ definitions: { title: p.definitions?.title || "Living Wage", content: e.target.value } }))} rows={9} />
           </Field>
         </Panel>

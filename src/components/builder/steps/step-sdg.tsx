@@ -3,10 +3,10 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { SDG_DATA } from "@/lib/constants";
-import { Panel, InfoBar, Badge } from "@/components/ui/panel";
+import { Panel, Badge } from "@/components/ui/panel";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { Globe2, Sparkles, X } from "lucide-react";
+import { Globe2, X } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { clsx } from "clsx";
 
@@ -41,13 +41,9 @@ export function StepSDG() {
 
   return (
     <div className="space-y-6">
-      <InfoBar icon={<Sparkles size={16} className="text-[var(--color-forest)]" />}>
-        Click the goals your policy contributes to, or use AI Suggest to infer from your focus areas.
-      </InfoBar>
 
       <Panel
         title="UN Sustainable Development Goals alignment"
-        description="Selected goals are shown as colored chips in the published document."
         icon={<Globe2 size={17} strokeWidth={1.8} />}
         actions={
           <>

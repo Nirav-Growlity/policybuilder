@@ -114,7 +114,6 @@ export function StepFocus() {
   const editableAreas = editableFocusAreaItems(policy, catalogIsApplied);
   const currentCompanyCatalog = getCompanyFocusAreaCatalog(policy.company, policy.policyType);
   const preservedOldCatalog = Boolean(appliedCatalog && currentCompanyCatalog?.key !== appliedCatalog.key);
-  const coverageDescription = policy.company.industryDetail || policy.company.subCategory || policy.company.industry;
 
   const refreshSynonym = (
     currentLabel: string,
@@ -246,15 +245,9 @@ export function StepFocus() {
 
   return (
     <div className="space-y-6">
-      <InfoBar icon={<Target size={16} className="text-[var(--color-forest)]" />}>
-        {catalog
-          ? "Select the areas to include in this policy. Workbook-defined areas can be checked or unchecked but cannot be renamed or removed. Add your own areas below."
-          : "Select the policy areas to include. You can rename or remove the profile areas, and add your own below."}
-      </InfoBar>
 
       <Panel
         title="Key focus areas"
-        description={coverageDescription ? `Policy coverage for ${coverageDescription}.` : "Choose the themes this policy will cover."}
         icon={<Target size={17} strokeWidth={1.8} />}
         actions={<Badge variant="muted">{policy.focusAreas.filter(Boolean).length} selected</Badge>}
       >
@@ -264,7 +257,6 @@ export function StepFocus() {
               <h4 id="fixed-focus-areas-heading" className="text-[12px] font-semibold uppercase tracking-wide text-[var(--color-ink-2)]">
                 Fixed areas for {catalog.subSector}
               </h4>
-              <p className="mt-1 text-[12px] text-[var(--color-muted)]">These workbook-defined labels are fixed. Select the ones to include.</p>
             </div>
             {preservedOldCatalog ? (
               <InfoBar variant="warn" icon={<LockKeyhole size={14} />}>
@@ -327,11 +319,7 @@ export function StepFocus() {
                 <h4 id="custom-focus-areas-heading" className="text-[12px] font-semibold uppercase tracking-wide text-[var(--color-ink-2)]">
                   {catalog ? "Your focus areas" : "Default focus areas"}
                 </h4>
-                <span className="text-[11px] text-[var(--color-muted)]">Editable</span>
               </div>
-              {!catalog ? (
-                <p className="mt-1 text-[12px] text-[var(--color-muted)]">Choose which profile areas to include, or edit and remove them.</p>
-              ) : null}
             </div>
             <ul className="space-y-2">
               {editableAreas.map((area, i) => {
