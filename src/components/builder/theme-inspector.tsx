@@ -7,7 +7,6 @@ import {
   Copy,
   Edit3,
   Eye,
-  Palette,
   Plus,
   Search,
   Trash2,
@@ -246,12 +245,10 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
         <div className="min-h-0 flex-1 overflow-y-auto overflow-x-visible px-4 py-5 scrollbar-thin">
           {editorTab === "colors" && (
             <div>
-              <InspectorHeading title="Colors" description="Start with logo or template colors, then edit any color below. Changes apply to the document." />
               <ChoiceGroup label="Color source" options={[{ value: "logo", label: "Logo colors" }, { value: "template", label: "Template theme" }]} value={policy.brandColorSource || "logo"} onChange={(brandColorSource) => resetColors(brandColorSource as NonNullable<Policy["brandColorSource"]>)} />
-              {!policy.company.companyLogo && <p className="mt-3 rounded-lg bg-[var(--color-cream-2)] px-3 py-2 text-[12px] leading-relaxed text-[var(--color-muted)]">Upload a company logo to suggest document colors automatically. You can edit them here.</p>}
-              {policy.company.companyLogo && policy.brandColorSource !== "template" && !policy.company.logoPalette && <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-[12px] leading-relaxed text-amber-900">The logo is saved, but no usable colors were detected. The template palette is being used until another logo is uploaded.</p>}
+              {!policy.company.companyLogo && <p className="mt-3 rounded-lg bg-[var(--color-cream-2)] px-3 py-2 text-[12px] leading-relaxed text-[var(--color-muted)]">Upload a company logo to pull colors from it.</p>}
+              {policy.company.companyLogo && policy.brandColorSource !== "template" && !policy.company.logoPalette && <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-[12px] leading-relaxed text-amber-900">No usable colors found in the logo, so template colors are used.</p>}
               <button type="button" onClick={() => resetColors()} className="mt-3 text-[12px] font-semibold text-[var(--color-forest)] underline underline-offset-2">{policy.brandColorSource !== "template" && policy.company.logoPalette ? "Reset to logo colors" : "Reset to template colors"}</button>
-              <p className="mt-1 text-[11px] text-[var(--color-muted)]">Reset restores these colors only. The uploaded logo image stays unchanged.</p>
               <div className="mt-4 grid grid-cols-2 gap-3">
                 {COLOR_FIELDS.map((field) => (
                   <ColorControl
@@ -277,8 +274,7 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
 
           {editorTab === "fonts" && (
             <div>
-              <InspectorHeading title="Fonts" description="Use fonts that remain dependable in Word and PDF." />
-              <div className="mt-4 space-y-4 text-[13px]">
+              <div className="space-y-4 text-[13px]">
                 <SelectField label="Heading font" value={typography.headingFontFamily || typography.fontFamily} options={FONT_FAMILY_OPTIONS} onChange={(value) => updatePolicy(() => ({ typography: { ...typography, headingFontFamily: value } }))} />
                 <SelectField label="Body font" value={typography.fontFamily} options={FONT_FAMILY_OPTIONS} onChange={(value) => updatePolicy(() => ({ typography: { ...typography, fontFamily: value } }))} />
                 <div className="grid grid-cols-2 gap-3">
@@ -294,7 +290,6 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
           {editorTab === "design" && (
             <div>
               <PageBorderControls />
-              <InspectorHeading title="Design" description="Choose the structural language and document rhythm. Brand is kept unless reset." />
               <ThemeBaseSelect value={resolved.id} onChange={(id) => updatePolicy(() => getDocumentTemplatePatch(id as NonNullable<Policy["documentTemplate"]>, useBuilder.getState().policy))} />
               <ChoiceGroup label="Data treatment" options={[{ value: "corporate", label: "Formal tables" }, { value: "modern", label: "Clean lists" }]} value={policy.visualStyle || resolved.defaults.visualStyle} onChange={(visualStyle) => updatePolicy(() => ({ visualStyle: visualStyle as Policy["visualStyle"] }))} />
               <ChoiceGroup label="Document spacing" options={[{ value: "compact", label: "Compact" }, { value: "balanced", label: "Balanced" }, { value: "spacious", label: "Spacious" }]} value={resolved.density} onChange={(density) => updateOverrides((current) => ({ ...current, density: density as typeof resolved.density }))} />
@@ -304,20 +299,19 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
 
           {editorTab === "images" && (
             <div>
-              <InspectorHeading title="Images" description="Control the logo and policy imagery treatment." />
               <ChoiceGroup label="Logo alignment" options={[{ value: "left", label: "Left" }, { value: "center", label: "Center" }, { value: "right", label: "Right" }]} value={policy.logoPosition || resolved.defaults.logoPosition} onChange={(logoPosition) => updatePolicy(() => ({ logoPosition: logoPosition as Policy["logoPosition"] }))} />
               <label className="mt-5 block text-[13px] font-semibold text-[var(--color-ink-2)]">Logo scale <output className="float-right font-mono text-[12px] text-[var(--color-muted)]">{logoScalePercent(resolved.logoScale)}%</output><input aria-label="Logo scale" type="range" min={LOGO_SCALE_MIN} max={LOGO_SCALE_MAX} step={1} value={logoScalePercent(resolved.logoScale)} onChange={(event) => updateOverrides((current) => ({ ...current, logoScale: Number(event.currentTarget.value) }))} className="mt-3 w-full accent-[var(--color-forest)]" /><span className="mt-1 flex justify-between text-[11px] font-normal text-[var(--color-muted)]"><span>{LOGO_SCALE_MIN}%</span><span>Medium</span><span>{LOGO_SCALE_MAX}%</span></span></label>
               <ChoiceGroup label="SDG appearance" options={[{ value: "tiles", label: "Goal tiles" }, { value: "names", label: "Names only" }]} value={policy.sdgDisplay || resolved.defaults.sdgDisplay} onChange={(sdgDisplay) => updatePolicy(() => ({ sdgDisplay: sdgDisplay as Policy["sdgDisplay"] }))} />
               <section className="mt-6 border-t border-[var(--color-line)] pt-5">
                 <div className="text-[13px] font-semibold">Feature image</div>
-                <p className="mt-1 text-[13px] leading-relaxed text-[var(--color-muted)]">Optional PNG, JPEG, or WebP. Uploads are resized before they are stored with the policy.</p>
+                <p className="mt-1 text-[13px] leading-relaxed text-[var(--color-muted)]">PNG, JPEG or WebP, up to 8 MB.</p>
                 {policy.featureImage ? (
                   <div className="mt-3">
                     <div className="relative h-28 overflow-hidden rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={policy.featureImage.dataUrl} alt={policy.featureImage.altText || "Feature preview"} className="h-full w-full object-cover" style={{ objectPosition: `${policy.featureImage.focalPosition.x}% ${policy.featureImage.focalPosition.y}%` }} />
                     </div>
-                    {!resolved.imageSupport.includes(policy.featureImage.placement) && <p className="mt-2 rounded-lg bg-amber-50 px-2.5 py-2 text-[13px] leading-relaxed text-amber-900">This theme does not display the selected placement. The image remains saved and will reappear in a compatible theme.</p>}
+                    {!resolved.imageSupport.includes(policy.featureImage.placement) && <p className="mt-2 rounded-lg bg-amber-50 px-2.5 py-2 text-[13px] leading-relaxed text-amber-900">This template doesn&apos;t show an image here. It stays saved for templates that do.</p>}
                     <ChoiceGroup label="Placement" columns={2} options={[{ value: "cover", label: "Cover" }, { value: "section", label: "Section opener" }]} value={policy.featureImage.placement} onChange={(placement) => updatePolicy((current) => ({ featureImage: current.featureImage ? { ...current.featureImage, placement: placement as "cover" | "section" } : undefined }))} />
                     <label className="mt-4 block text-[13px] font-semibold">Alternative text<input value={policy.featureImage.altText} onChange={(event) => updatePolicy((current) => ({ featureImage: current.featureImage ? { ...current.featureImage, altText: event.target.value.slice(0, 180) } : undefined }))} placeholder="Describe the image" maxLength={180} className="mt-1 h-9 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-2 text-[13px] outline-none focus:border-[var(--color-forest)]" /></label>
                     <div className="mt-4 grid grid-cols-2 gap-3"><RangeField label="Horizontal focus" value={policy.featureImage.focalPosition.x} onChange={(x) => updatePolicy((current) => ({ featureImage: current.featureImage ? { ...current.featureImage, focalPosition: { ...current.featureImage.focalPosition, x } } : undefined }))} /><RangeField label="Vertical focus" value={policy.featureImage.focalPosition.y} onChange={(y) => updatePolicy((current) => ({ featureImage: current.featureImage ? { ...current.featureImage, focalPosition: { ...current.featureImage.focalPosition, y } } : undefined }))} /></div>
@@ -345,16 +339,14 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
   return (
     <aside className="overflow-hidden bg-white">
       <div className="border-b border-[var(--color-line)] px-4 py-4">
-        <div className="flex items-center gap-2"><Palette size={16} className="text-[var(--color-forest)]" /><h2 className="font-display text-[17px] font-semibold">Template &amp; Brand</h2></div>
-        <p className="mt-1 text-[13px] leading-relaxed text-[var(--color-muted)]">Choose a layout for your policy. Preview it with your content before applying.</p>
-        <label className="mt-3 flex h-10 items-center gap-2 rounded-xl border border-[var(--color-line-2)] bg-white px-3 focus-within:border-[var(--color-forest)]">
+        <label className="flex h-10 items-center gap-2 rounded-xl border border-[var(--color-line-2)] bg-white px-3 focus-within:border-[var(--color-forest)]">
           <Search size={14} className="text-[var(--color-muted)]" />
           <span className="sr-only">Search templates</span>
           <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search templates" className="min-w-0 flex-1 bg-transparent text-[13px] outline-none" />
         </label>
         <div className="mt-3 grid grid-cols-2 rounded-xl bg-[var(--color-cream-2)] p-1" role="tablist" aria-label="Template library">
-          <button type="button" role="tab" aria-selected={galleryTab === "public"} onClick={() => setGalleryTab("public")} className={`rounded-lg py-2 text-[13px] font-semibold ${galleryTab === "public" ? "bg-white text-[var(--color-forest)] shadow-sm" : "text-[var(--color-muted)]"}`}>Public Templates</button>
-          <button type="button" role="tab" aria-selected={galleryTab === "mine"} onClick={() => setGalleryTab("mine")} className={`rounded-lg py-2 text-[13px] font-semibold ${galleryTab === "mine" ? "bg-white text-[var(--color-forest)] shadow-sm" : "text-[var(--color-muted)]"}`}>My Templates · {themes.length}</button>
+          <button type="button" role="tab" aria-selected={galleryTab === "public"} onClick={() => setGalleryTab("public")} className={`rounded-lg py-2 text-[13px] font-semibold ${galleryTab === "public" ? "bg-white text-[var(--color-forest)] shadow-sm" : "text-[var(--color-muted)]"}`}>Built-in</button>
+          <button type="button" role="tab" aria-selected={galleryTab === "mine"} onClick={() => setGalleryTab("mine")} className={`rounded-lg py-2 text-[13px] font-semibold ${galleryTab === "mine" ? "bg-white text-[var(--color-forest)] shadow-sm" : "text-[var(--color-muted)]"}`}>My templates · {themes.length}</button>
         </div>
         {galleryTab === "public" && <div className="mt-3 grid grid-cols-2 gap-2"><CompactSelect label="Family" value={familyFilter} onChange={setFamilyFilter} options={["all", ...new Set(DOCUMENT_THEMES.map((theme) => theme.universalFamily))]} /><CompactSelect label="Intent" value={intentFilter} onChange={setIntentFilter} options={["all", ...new Set(DOCUMENT_THEMES.map((theme) => theme.intent))]} /><CompactSelect label="Density" value={densityFilter} onChange={setDensityFilter} options={["all", "compact", "balanced", "spacious"]} /><CompactSelect label="Image" value={imageFilter} onChange={setImageFilter} options={["all", "none", "cover", "section"]} /></div>}
         <button type="button" onClick={resetToDefaults} className="mt-3 h-9 w-full rounded-lg border border-[var(--color-line-2)] text-[13px] font-semibold text-[var(--color-ink-2)] hover:border-[var(--color-forest)]">Reset to template defaults</button>
@@ -373,7 +365,7 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
                 <div className="mt-2 flex items-start gap-1.5"><div className="min-w-0 flex-1"><div className="flex items-center gap-1.5"><span className="truncate text-[13px] font-semibold">{theme.name}</span>{selected && <Check size={14} className="shrink-0 text-[var(--color-forest)]" />}</div><div className="mt-0.5 text-[12px] capitalize text-[var(--color-muted)]">{theme.intent.replace("-", " ")} · {theme.defaults.density}</div></div><button type="button" onClick={() => setPreviewTheme(theme)} className="inline-flex items-center gap-1 rounded-md border border-[var(--color-line)] px-2 text-[12px] font-semibold"><Eye size={12} /> Preview</button><button type="button" aria-pressed={selected} onClick={() => applyPublic(theme.id)} className="rounded-md bg-[var(--pc-primary)] px-2.5 text-[12px] font-semibold text-[var(--pc-primary-text)]">{selected ? "Applied" : "Apply"}</button></div>
               </article>;
             })}</div></section>)}
-          </div> : <div className="px-5 py-10 text-center"><div className="text-[13px] font-semibold">No matching templates</div><p className="mt-1 text-[13px] text-[var(--color-muted)]">Try another family, intent, density, image, or search.</p></div>
+          </div> : <div className="px-5 py-10 text-center"><div className="text-[13px] font-semibold">No matching templates</div><p className="mt-1 text-[13px] text-[var(--color-muted)]">Try a different filter or search.</p></div>
         ) : filteredMine.length ? (
           <div className="space-y-2">
             {filteredMine.map((saved) => {
@@ -400,7 +392,7 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
             })}
           </div>
         ) : (
-          <div className="px-5 py-10 text-center"><div className="text-[13px] font-semibold">{query ? "No matching templates" : "No custom templates yet"}</div><p className="mt-1 text-[13px] leading-relaxed text-[var(--color-muted)]">{query ? "Try a different search." : "Create one from the design currently on the page."}</p></div>
+          <div className="px-5 py-10 text-center"><div className="text-[13px] font-semibold">{query ? "No matching templates" : "No custom templates yet"}</div><p className="mt-1 text-[13px] leading-relaxed text-[var(--color-muted)]">{query ? "Try a different search." : "Save the current design as a custom theme."}</p></div>
         )}
       </div>
       <div className="border-t border-[var(--color-line)] p-3">
@@ -410,25 +402,20 @@ export function ThemeInspector({ designOnly = false }: { designOnly?: boolean })
         open={Boolean(previewTheme)}
         onClose={() => setPreviewTheme(null)}
         title={previewTheme ? `${previewTheme.name} preview` : "Template preview"}
-        description={previewTheme ? `${previewTheme.family} · ${previewTheme.intent.replace("-", " ")}. ${previewTheme.description}` : undefined}
+        description={previewTheme ? `${previewTheme.family} · ${previewTheme.intent.replace("-", " ")}` : undefined}
         width={980}
       >
         {previewTheme && <>
           <div className="max-h-[65vh] overflow-auto scrollbar-thin">
             <PdfPolicyPreview policy={{ ...policy, ...getDocumentTemplatePatch(previewTheme.id, policy) }} />
           </div>
-          <div className="pc-builder-authoring mt-4 flex items-center justify-between gap-4">
-            <p className="text-[13px]">{previewTheme.previewRecipe}</p>
+          <div className="pc-builder-authoring mt-4 flex items-center justify-end gap-4">
             <button type="button" onClick={() => { applyPublic(previewTheme.id); setPreviewTheme(null); }} className="min-h-11 bg-[var(--pc-primary)] px-5 text-[13px] font-semibold text-[var(--pc-primary-text)]">Apply template</button>
           </div>
         </>}
       </Modal>
     </aside>
   );
-}
-
-function InspectorHeading({ title, description }: { title: string; description: string }) {
-  return <div><h3 className="text-[14px] font-semibold">{title}</h3><p className="mt-1 text-[13px] text-[var(--color-muted)]">{description}</p></div>;
 }
 
 function ColorControl({ id, label, description, value, open, onOpenChange, onChange, onValidityChange }: { id: string; label: string; description: string; value: string; open: boolean; onOpenChange: (open: boolean) => void; onChange: (value: string) => void; onValidityChange: (id: string, valid: boolean) => void }) {
@@ -484,8 +471,7 @@ function ColorControl({ id, label, description, value, open, onOpenChange, onCha
   }, [open, onOpenChange]);
   return (
     <div className="relative">
-      <label className="block text-[13px] font-semibold text-[var(--color-ink-2)]">{label}</label>
-      <p className="mt-1 min-h-8 text-[11px] leading-4 text-[var(--color-muted)]">{description}</p>
+      <label title={description} className="block text-[13px] font-semibold text-[var(--color-ink-2)]">{label}</label>
       <div className={`mt-1 flex h-9 items-center rounded-lg border bg-white px-2 ${valid ? "border-[var(--color-line-2)]" : "border-red-400"}`}>
         <button ref={anchorRef} type="button" onClick={() => { setPickerPosition(null); onOpenChange(!open); }} aria-label={`Open ${label} color picker`} className="mr-2 h-5 w-5 rounded-md border border-black/10" style={{ background: value }} />
         <HexColorInput color={draft} onChange={commit} prefixed aria-label={`${label} HEX color`} className="min-w-0 flex-1 bg-transparent font-mono text-[13px] uppercase outline-none" />

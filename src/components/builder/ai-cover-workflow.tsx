@@ -126,7 +126,6 @@ export function AICoverWorkflow({
     <div className="flex flex-wrap items-center justify-between gap-3">
       <div className="min-w-0">
         <p className="text-[13px] font-semibold uppercase tracking-[.1em] text-[var(--pc-muted)]">AI cover</p>
-        <p className="mt-1 text-[14px] leading-5 text-[var(--pc-muted)]">Generate and apply an AI first page. Every saved result remains available in Document design and will not change your manual cover.</p>
       </div>
       <button data-cover-action="primary" type="button" disabled={busy || savingLibrary || generatedNeedsSaving} onClick={() => void generate()} className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-[var(--pc-primary)] px-3 text-[13px] font-semibold text-[var(--pc-primary-text)] disabled:cursor-wait disabled:opacity-60">
         {busy || savingLibrary ? <RefreshCw size={14} aria-hidden="true" className="animate-spin" /> : <Sparkles size={14} aria-hidden="true" />}
@@ -135,7 +134,7 @@ export function AICoverWorkflow({
     </div>
     {error ? <p role="alert" className="mt-3 rounded-lg border border-[var(--pc-divider)] bg-[var(--pc-warning-surface)] px-3 py-2 text-[13px] leading-5 text-[var(--pc-warning)]">{error}</p> : null}
     {generatedNeedsSaving ? <div className="mt-3 flex items-center justify-between gap-3 rounded-lg bg-[var(--pc-inset)] px-3 py-2">
-      <p className="text-[13px] leading-5 text-[var(--pc-muted)]">AI cover applied; library save pending.</p>
+      <p className="text-[13px] leading-5 text-[var(--pc-muted)]">Cover applied but not saved to the library yet.</p>
       <button data-cover-action="primary" type="button" disabled={busy || savingLibrary} onClick={() => void retrySave()} className="shrink-0 min-h-10 rounded-lg bg-[var(--pc-primary)] px-3 text-[13px] font-semibold text-[var(--pc-primary-text)] disabled:opacity-50">Retry save</button>
     </div> : null}
   </section>;

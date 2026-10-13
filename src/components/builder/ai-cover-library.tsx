@@ -128,8 +128,7 @@ export function AICoverLibraryPanel() {
   return <section aria-label="AI cover library" aria-busy={scopedLoading || busyId === "backfill" || Boolean(busyId)} className="pc-ai-cover-library flex h-full min-h-0 flex-col">
     <div className="flex items-start justify-between gap-2 border-b border-[var(--color-line)] pb-3">
       <div>
-        <div className="flex items-center gap-2"><WandSparkles size={16} aria-hidden="true" className="text-[var(--pc-ai)]" /><h3 className="text-[15px] font-semibold text-[var(--pc-text)]">AI Covers</h3></div>
-        <p className="mt-1 text-[14px] leading-5 text-[var(--pc-muted)]">Saved generations stay here until you remove them.</p>
+        <div className="flex items-center gap-2"><WandSparkles size={16} aria-hidden="true" className="text-[var(--pc-ai)]" /><h3 className="text-[15px] font-semibold text-[var(--pc-text)]">Saved covers</h3></div>
       </div>
       <button type="button" aria-label="Refresh AI cover library" onClick={() => void load()} disabled={loading || busyId === "backfill"} className="min-h-10 min-w-10 rounded-lg p-2 text-[var(--pc-muted)] hover:bg-[var(--pc-inset)] disabled:opacity-50"><RefreshCw size={15} aria-hidden="true" className={loading ? "animate-spin" : ""} /></button>
     </div>
@@ -154,7 +153,7 @@ export function AICoverLibraryPanel() {
             </div>
           </article>;
         })}
-      </div> : <div role="status" className="rounded-lg bg-[var(--pc-inset)] px-3 py-6 text-center"><WandSparkles size={18} aria-hidden="true" className="mx-auto text-[var(--pc-muted)]" /><p className="mt-2 text-[14px] font-semibold text-[var(--pc-text)]">No saved AI covers</p><p className="mt-1 text-[14px] leading-5 text-[var(--pc-muted)]">Generate a cover from the Export step and it will appear here.</p></div>}
+      </div> : <div role="status" className="rounded-lg bg-[var(--pc-inset)] px-3 py-6 text-center"><WandSparkles size={18} aria-hidden="true" className="mx-auto text-[var(--pc-muted)]" /><p className="mt-2 text-[14px] font-semibold text-[var(--pc-text)]">No saved AI covers</p><p className="mt-1 text-[14px] leading-5 text-[var(--pc-muted)]">Generate one from the Document tab.</p></div>}
     </div>
     {pendingDeleteItem ? <Modal open onClose={() => { if (!busyId) setPendingDelete(null); }} title="Delete AI cover?" description={`Delete “${pendingDeleteItem.name}” from the AI cover library?`} width={460}><div data-cover-dialog>{error ? <p role="alert" className="mb-4 rounded-lg border border-[var(--pc-divider)] bg-[var(--pc-error-surface)] px-3 py-2 text-[13px] text-[var(--pc-error)]">{error}</p> : null}<div className="flex flex-col gap-2 sm:flex-row sm:justify-end"><button type="button" onClick={() => setPendingDelete(null)} disabled={busyId === pendingDeleteItem.id} className="min-h-10 w-full rounded-lg px-3 text-[13px] sm:w-auto">Cancel</button><button data-cover-action="danger" type="button" onClick={() => void deleteCover()} disabled={busyId === pendingDeleteItem.id} className="min-h-10 w-full rounded-lg bg-[var(--pc-error)] px-3 text-[13px] font-semibold text-[var(--pc-error-text)] disabled:opacity-50 sm:w-auto">{busyId === pendingDeleteItem.id ? "Deleting…" : "Delete cover"}</button></div></div></Modal> : null}
   </section>;
