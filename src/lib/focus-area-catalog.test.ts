@@ -153,3 +153,13 @@ test("missing workbook themes keep the existing policy profile defaults", () => 
   assert.deepEqual(result.focusAreas, getPolicyProfile(type).focusAreas);
   assert.equal(result.focusAreaSelection?.mode, "profile-default");
 });
+
+test("qualitative objectives follow focus-area order, not the order they were first added", () => {
+  const policy = initialPolicy("environmental");
+  policy.focusAreaSelection = undefined;
+  policy.focusAreas = ["Energy", "Water", "Waste"];
+  policy.qualitative = { Water: ["Reuse water."], Legacy: ["Kept from an earlier focus area."], Energy: ["Use less energy."] };
+  assert.deepEqual(visibleQualitativeEntries(policy).map(([area]) => area), ["Energy", "Water", "Legacy"]);
+  const section = buildDocumentRenderModel(policy).sections.find((entry) => entry.content.type === "qualitative");
+  assert.deepEqual(section?.content.type === "qualitative" && section.content.groups.map((group) => group.area), ["Energy", "Water", "Legacy"]);
+});
