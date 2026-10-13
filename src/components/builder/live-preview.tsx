@@ -40,6 +40,7 @@ export function DebouncedPolicyPreview({ policy, includeAuthorSignature, authorS
       includeAuthorSignature={settled.includeAuthorSignature}
       authorSignatureDate={settled.authorSignatureDate ?? ""}
       signatureUpdatedAt={settled.signatureUpdatedAt}
+      surface="pane"
     />
   );
 }

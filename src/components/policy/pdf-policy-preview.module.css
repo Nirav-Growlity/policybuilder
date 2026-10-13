@@ -1,139 +1,568 @@
+/* Document viewer: the paper is the subject, the chrome recedes into one floating bar. */
+
+.preview {
+  --pdf-ease: cubic-bezier(.22, 1, .36, 1);
+  --pdf-desk: color-mix(in srgb, var(--pc-inset) 70%, var(--pc-page));
+  --pdf-bar: color-mix(in srgb, var(--pc-panel) 90%, transparent);
+  --pdf-hover: color-mix(in srgb, var(--pc-text) 6%, transparent);
+  --pdf-sheet-shadow: 0 0 0 1px rgb(12 22 40 / 6%), 0 1px 3px rgb(12 22 40 / 6%), 0 18px 40px -20px rgb(12 22 40 / 30%);
+  --pdf-gutter: 12px;
+  color: var(--pc-text);
+}
+
+:global([data-pc-theme="dark"]) .preview {
+  --pdf-sheet-shadow: 0 0 0 1px rgb(0 0 0 / 30%), 0 2px 6px rgb(0 0 0 / 25%), 0 22px 48px -18px rgb(0 0 0 / 60%);
+}
+
+.preview[data-surface="pane"] {
+  min-height: 100%;
+  --pdf-desk: transparent;
+  --pdf-gutter: 10px;
+}
+
+.viewer {
+  container: pdf-viewer / inline-size;
+  position: relative;
+  border-radius: 14px;
+  background: var(--pdf-desk);
+}
+
+.preview[data-surface="pane"] .viewer {
+  border-radius: 0;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────────────── */
+
 .toolbar {
   position: sticky;
   z-index: 10;
-  top: 0;
+  top: var(--pdf-gutter);
+  margin: var(--pdf-gutter) var(--pdf-gutter) 0;
+  border: 1px solid var(--pc-divider);
+  border-radius: 12px;
+  background: var(--pdf-bar);
+  box-shadow: 0 1px 2px rgb(12 22 40 / 5%), 0 10px 28px -16px rgb(12 22 40 / 28%);
+  color: var(--pc-text);
+  font-size: 12px;
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  backdrop-filter: blur(12px) saturate(1.4);
+}
+
+.toolbarRow {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: .75rem;
-  border-bottom: 1px solid var(--pc-divider);
-  background: color-mix(in srgb, var(--pc-panel) 95%, transparent);
-  padding: .625rem .75rem;
-  font-size: 12px;
-  color: var(--pc-text);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  gap: 6px 10px;
+  padding: 5px 6px;
 }
 
-.pages {
-  border-color: var(--pc-divider);
-  background: var(--pc-page);
-}
-
-.paper {
-  box-shadow: 0 8px 28px rgb(15 23 42 / 14%);
-}
-
-.pageViewControls,
-.pageControls,
-.modeControls,
-.zoomControls {
+.toolbarEnd {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: .5rem;
+  justify-content: flex-end;
+  gap: 6px 10px;
+  min-width: 0;
 }
 
-.pageViewControls {
-  gap: .75rem;
+.group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
-.controlButton {
-  display: grid;
-  width: 2rem;
-  height: 2rem;
+.divider {
+  width: 1px;
+  height: 18px;
+  margin: 0 4px;
+  background: var(--pc-divider);
+}
+
+.iconButton {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  flex: none;
   place-items: center;
   touch-action: manipulation;
-  border: 1px solid var(--pc-divider);
-  border-radius: .5rem;
-  background: var(--pc-panel);
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
   color: var(--pc-text);
-  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, transform 100ms ease;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease, transform 120ms var(--pdf-ease);
 }
 
-.controlButton:hover:not(:disabled) {
+.iconButton:hover:not(:disabled) {
+  background: var(--pdf-hover);
+}
+
+.iconButton:active:not(:disabled) {
+  transform: scale(.92);
+}
+
+.iconButton[data-active] {
+  background: var(--pc-selection);
+  color: var(--pc-selection-text);
+}
+
+.iconButton:disabled {
+  cursor: default;
+  color: var(--pc-muted);
+  opacity: .4;
+}
+
+.pageCounter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  padding: 0 2px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pageInput {
+  height: 28px;
+  min-width: 0;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: var(--pc-inset);
+  color: var(--pc-text);
+  font: 600 12.5px/1 var(--pc-font);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  transition: border-color 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.pageInput:hover:not(:disabled) {
+  border-color: var(--pc-divider);
+}
+
+.pageInput:focus {
+  outline: none;
   border-color: var(--pc-primary);
+  background: var(--pc-panel);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pc-primary) 22%, transparent);
 }
 
-.controlButton:active:not(:disabled),
-.modeButton:active {
-  transform: scale(.98);
+.pageTotal {
+  color: var(--pc-muted);
+  font-size: 12px;
 }
 
-.controlButton:focus-visible,
-.modeButton:focus-visible,
-.zoomSelect:focus-visible {
+/* Status: a quiet word, never a banner. */
+.status {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0 4px;
+  color: var(--pc-muted);
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+
+
+.status[data-status="failed"] {
+  color: var(--pc-error);
+}
+
+
+.statusText {
+  display: inline-block;
+}
+
+/* Layout toggle with a thumb that slides between options. */
+.segmented {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  border-radius: 9px;
+  background: var(--pc-inset);
+  padding: 2px;
+}
+
+.segment {
+  position: relative;
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  gap: 6px;
+  touch-action: manipulation;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  padding: 0 10px;
+  color: var(--pc-muted);
+  cursor: pointer;
+  font: 500 12px/1 var(--pc-font);
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.segment:hover {
+  color: var(--pc-text);
+}
+
+.segment[aria-pressed="true"] {
+  color: var(--pc-text);
+}
+
+.segmentThumb {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: 7px;
+  background: var(--pc-panel);
+  box-shadow: 0 0 0 1px var(--pc-divider), 0 1px 2px rgb(12 22 40 / 8%);
+}
+
+.segmentIcon,
+.segmentLabel {
+  position: relative;
+  z-index: 1;
+}
+
+.group .zoomSelect {
+  width: auto;
+  min-width: 6.25rem;
+  height: 32px;
+  border-color: transparent;
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 0 .375rem 0 .625rem;
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.group .zoomSelect:hover {
+  background-color: var(--pdf-hover);
+}
+
+.iconButton:focus-visible,
+.segment:focus-visible,
+.thumb:focus-visible,
+.retryButton:focus-visible,
+.group .zoomSelect:focus-visible {
   outline: 2px solid var(--pc-primary);
   outline-offset: 2px;
 }
 
-.controlButton:disabled {
-  cursor: not-allowed;
-  opacity: .35;
+/* Indeterminate line under the bar while a fresh render is prepared. */
+.progress {
+  position: absolute;
+  right: 10px;
+  bottom: -1px;
+  left: 10px;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 2px;
 }
 
-.modeControls {
-  gap: .125rem;
-  border: 1px solid var(--pc-divider);
-  border-radius: .5rem;
-  background: var(--pc-inset);
-  padding: .125rem;
-}
-
-.modeButton {
-  min-height: 1.75rem;
-  touch-action: manipulation;
-  border: 0;
-  border-radius: .5rem;
-  background: transparent;
-  padding: 0 .75rem;
-  color: var(--pc-text);
-  font-size: 11px;
-  font-weight: 500;
-  transition: color 150ms ease, background-color 150ms ease, transform 100ms ease;
-}
-
-.modeButton:hover {
-  background: var(--pc-panel);
-}
-
-.modeButtonActive,
-.modeButtonActive:hover {
+.progress::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 35%;
+  border-radius: inherit;
   background: var(--pc-primary);
-  color: var(--pc-primary-text);
-  box-shadow: 0 1px 2px rgb(16 24 16 / 12%);
+  animation: pdf-progress 1.15s var(--pdf-ease) infinite;
 }
 
-.zoomControls .zoomSelect {
-  width: auto;
-  min-width: 8.5rem;
-  height: 2rem;
-  max-width: 100%;
+/* ── All-pages panel ─────────────────────────────────────────────────────── */
+
+.pagePanel {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  left: 0;
+  width: min(100%, 560px);
+  max-height: min(62vh, 520px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  transform-origin: top left;
   border: 1px solid var(--pc-divider);
-  border-radius: .5rem;
-  background-color: var(--pc-panel);
-  padding: 0 .5rem 0 .625rem;
-  color: var(--pc-text);
-  font-size: 12px;
-  font-weight: 500;
-  transition: border-color 150ms ease, background-color 150ms ease;
+  border-radius: 12px;
+  background: var(--pc-panel);
+  box-shadow: 0 2px 4px rgb(12 22 40 / 6%), 0 24px 48px -20px rgb(12 22 40 / 34%);
+  scrollbar-width: thin;
 }
 
-.zoomControls .zoomSelect:hover {
+.pagePanelGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 14px 12px;
+  padding: 14px;
+}
+
+.thumb {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  padding: 4px;
+  color: var(--pc-muted);
+  cursor: pointer;
+}
+
+.thumbPaper {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 210 / 297;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgb(12 22 40 / 10%), 0 4px 10px -6px rgb(12 22 40 / 30%);
+  transition: box-shadow 160ms ease, transform 200ms var(--pdf-ease);
+}
+
+.thumbPaper:not(:has(img)) {
+  animation: pdf-placeholder 1.4s ease-in-out infinite;
+}
+
+.thumbImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: pdf-fade-in 220ms ease both;
+}
+
+.thumb:hover .thumbPaper {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgb(12 22 40 / 14%), 0 10px 18px -10px rgb(12 22 40 / 40%);
+}
+
+.thumb[aria-current="page"] .thumbPaper {
+  box-shadow: 0 0 0 2px var(--pc-primary), 0 6px 14px -8px rgb(12 22 40 / 35%);
+}
+
+.thumbLabel {
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.thumb[aria-current="page"] .thumbLabel {
+  color: var(--pc-text);
+  font-weight: 650;
+}
+
+/* ── Notice ──────────────────────────────────────────────────────────────── */
+
+.noticeWrap {
+  overflow: hidden;
+  margin: 0 var(--pdf-gutter);
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: var(--pc-error-surface);
+  padding: 8px 8px 8px 12px;
+  color: var(--pc-error);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.retryButton {
+  display: inline-flex;
+  min-height: 30px;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--pc-divider);
+  border-radius: 8px;
+  background: var(--pc-panel);
+  padding: 0 10px;
+  color: var(--pc-text);
+  cursor: pointer;
+  font: 600 12px/1 var(--pc-font);
+  transition: border-color 140ms ease, transform 120ms var(--pdf-ease);
+}
+
+.retryButton:hover {
   border-color: var(--pc-primary);
 }
 
-@media (min-width: 640px) {
-  .toolbar {
-    padding-inline: 1rem;
+.retryButton:active {
+  transform: scale(.97);
+}
+
+/* ── Pages ───────────────────────────────────────────────────────────────── */
+
+.stage {
+  position: relative;
+  display: flex;
+  min-height: 480px;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  overflow-x: auto;
+  padding: 24px 20px 40px;
+  transition: opacity 220ms ease, filter 220ms ease;
+}
+
+.stage:focus-visible {
+  outline: 2px solid var(--pc-primary);
+  outline-offset: -2px;
+  border-radius: 14px;
+}
+
+.stage[data-refreshing] {
+  opacity: .55;
+  filter: saturate(.7);
+}
+
+.turn {
+  display: flex;
+  justify-content: center;
+}
+
+.sheet {
+  position: relative;
+  flex: none;
+  max-width: none;
+  aspect-ratio: 210 / 297;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: var(--pdf-sheet-shadow);
+  scroll-margin-top: calc(var(--pdf-toolbar-h) + var(--pdf-gutter) * 2 + 8px);
+}
+
+/* Unpainted paper breathes softly until its page arrives. */
+.sheet:not(:has([data-painted])) {
+  animation: pdf-placeholder 1.4s ease-in-out infinite;
+}
+
+.viewer[data-zooming] .sheet {
+  transition: width 280ms var(--pdf-ease);
+}
+
+.paper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.paper canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.paper canvas[data-enter] {
+  animation: pdf-fade-in 320ms ease both;
+}
+
+.loaderStage {
+  display: grid;
+  min-height: clamp(460px, 70vh, 700px);
+  width: 100%;
+  place-items: center;
+}
+
+/* ── Narrow hosts (the live preview pane, phones) ─────────────────────────
+   The bar stays on one row: labels give way to icons first, then the quiet
+   "Up to date" word, then spacing. Updating and failed states always show. */
+
+@container pdf-viewer (max-width: 760px) {
+  .segmentLabel,
+  .zoomStep {
+    display: none;
+  }
+
+  .segment {
+    padding: 0 8px;
+  }
+
+  .status[data-status="ready"] {
+    display: none;
+  }
+
+  .stage {
+    gap: 20px;
+    padding-inline: 14px;
   }
 }
 
+@container pdf-viewer (max-width: 440px) {
+  .toolbarRow {
+    gap: 4px 6px;
+    padding: 4px;
+  }
+
+  .divider {
+    margin: 0 2px;
+  }
+
+  .iconButton {
+    width: 30px;
+  }
+
+  .group .zoomSelect {
+    min-width: 0;
+    padding-inline: .5rem .25rem;
+  }
+
+  /* The progress line and the error notice carry status here. */
+  .status {
+    display: none;
+  }
+
+  .stage {
+    gap: 16px;
+    padding: 18px 10px 28px;
+  }
+}
+
+@keyframes pdf-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pdf-placeholder {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .62; }
+}
+
+
+@keyframes pdf-progress {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(290%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .controlButton,
-  .modeButton,
-  .zoomSelect {
+  .iconButton,
+  .segment,
+  .pageInput,
+  .retryButton,
+  .thumbPaper,
+  .stage,
+  .viewer[data-zooming] .sheet {
     transition: none;
+  }
+
+  .sheet:not(:has([data-painted])),
+  .thumbPaper:not(:has(img)),
+  .paper canvas[data-enter],
+  .thumbImage {
+    animation: none;
+  }
+
+  .progress::after {
+    width: 100%;
+    opacity: .5;
+    animation: none;
   }
 }

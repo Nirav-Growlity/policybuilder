@@ -148,22 +148,11 @@
 .previewPane { display: flex; min-width: 0; min-height: 0; flex: 0 0 clamp(380px, 40%, 640px); flex-direction: column; border-left: 1px solid var(--shell-border); background: var(--shell-page); }
 .paneHeader { display: flex; min-height: 48px; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid var(--shell-border); background: var(--shell-panel); padding: 0 10px 0 16px; }
 .paneTitle { margin: 0; color: var(--shell-text); font-family: var(--pc-font); font-size: 14px; font-weight: 650; letter-spacing: 0; }
-.previewBody { min-height: 0; flex: 1 1 auto; overflow: auto; overscroll-behavior: contain; padding: 16px; }
-/* PdfPolicyPreview sizes each page to its host's content box, but its scroller adds padding of its own,
-   so pages overflowed by that padding. The gutter moves onto the host here, so pages and scroller share one width. */
-:global(#builder-preview) :global(.pdf-pages) { padding-inline: 12px; }
-:global(#builder-preview) :global(.pdf-pages) > div:last-child { margin-inline: -12px; padding-inline: 12px; }
-/* Toolbar: page navigation and zoom share the first row, the view mode takes the second row. */
-:global(#builder-preview) :global(.pdf-pages) > div:first-of-type { margin-inline: -12px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px 12px; }
-:global(#builder-preview) :global(.pdf-pages) > div:first-of-type > div:first-child { display: contents; }
-:global(#builder-preview) :global(.pdf-pages) > div:first-of-type > div:first-child > div:first-child { grid-column: 1; grid-row: 1; min-width: 0; }
-:global(#builder-preview) :global(.pdf-pages) > div:first-of-type > div:first-child > div:last-child { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
-:global(#builder-preview) :global(.pdf-pages) > div:first-of-type > div:last-child { grid-column: 2; grid-row: 1; justify-self: end; }
-
+.previewBody { min-height: 0; flex: 1 1 auto; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
 /* Design mode: inspector beside a large preview. */
 .designLayout { display: flex; min-width: 0; min-height: 0; flex: 1 1 auto; overflow: hidden; }
 .designPreview { display: flex; min-width: 0; min-height: 0; flex: 1 1 auto; flex-direction: column; background: var(--shell-page); }
-.designPreviewBody { min-height: 0; flex: 1 1 auto; overflow: auto; overscroll-behavior: contain; padding: 20px 24px; }
+.designPreviewBody { min-height: 0; flex: 1 1 auto; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
 
 .shell :global(.pc-theme-option) { min-height: 40px; }
 .shell :is(button, a[href]):focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
