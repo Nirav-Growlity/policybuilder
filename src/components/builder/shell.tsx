@@ -300,7 +300,7 @@ export function BuilderShell({
           </div>}
           <div className={styles.headerEnd}>
             {taskChip}
-            {policyMenu}
+            {mode === "write" && policyMenu}
             {mode === "write" && <button ref={previewTrigger} type="button" aria-pressed={previewOpen} aria-controls={previewOpen ? "builder-preview" : undefined} onClick={togglePreview} className={clsx(styles.headerButton, previewOpen && styles.headerButtonActive)}>Preview</button>}
             <ApplicationSessionMenu workspaceHref={workspaceHref} />
             {mode === "write" && <button ref={workflowTrigger} type="button" aria-expanded={workflowOpen} aria-controls="builder-workflow" onClick={toggleWorkflow} className={clsx(styles.headerButton, styles.mobileWorkflow)}>{workflowOpen ? "Hide workflow" : "Workflow"}</button>}
