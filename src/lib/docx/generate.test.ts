@@ -12,6 +12,10 @@ import { FONT_FAMILY_OPTIONS, pickerFontFamilies } from "../typography";
 import { fontFaceCssFor } from "../document-fonts";
 import { embeddedDocumentFonts } from "./document-fonts";
 
+// Justified prose is split around native optional hyphens; rejoin it to
+// compare the text a reader sees.
+const visibleText = (xml: string) => xml.replaceAll(`</w:t><w:softHyphen/><w:t xml:space="preserve">`, "");
+
 const svg = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40"><rect width="120" height="40" fill="#126845"/></svg>');
 
 test("long quantitative target groups can flow across Word pages with repeating headers", async () => {
@@ -25,7 +29,7 @@ test("long quantitative target groups can flow across Word pages with repeating 
       })),
     }];
     const zip = await JSZip.loadAsync(await generateDocx(policy));
-    const xml = await zip.file("word/document.xml")!.async("string");
+    const xml = visibleText(await zip.file("word/document.xml")!.async("string"));
     const table = [...xml.matchAll(/<w:tbl>[\s\S]*?<\/w:tbl>/g)].find(([value]) => value.includes("Long target 1:"))?.[0];
     assert.ok(table, "the long target group should remain a table");
     const rows = [...table.matchAll(/<w:tr>[\s\S]*?<\/w:tr>/g)].map(([value]) => value);
@@ -151,7 +155,7 @@ test("quantitative Word output groups repeated areas and omits metadata columns"
     ],
   }];
   const zip = await JSZip.loadAsync(await generateDocx(policy));
-  const document = await zip.file("word/document.xml")!.async("string");
+  const document = visibleText(await zip.file("word/document.xml")!.async("string"));
   assert.equal((document.match(/Gifts &amp; Hospitality/g) || []).length, 1);
   assert.match(document, />01<\/w:t>/, "quantitative area numbers should be zero-padded");
   assert.equal((document.match(/Achieve 100%/g) || []).length, 1);
@@ -303,7 +307,7 @@ test("Word applies independent marker choices without changing semantic numbers"
   };
 
   const zip = await JSZip.loadAsync(await generateDocx(policy));
-  const document = await zip.file("word/document.xml")!.async("string");
+  const document = visibleText(await zip.file("word/document.xml")!.async("string"));
   const numbering = await zip.file("word/numbering.xml")!.async("string");
   const paragraphContaining = (text: string) => [...document.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map((match) => match[0]).find((paragraph) => paragraph.includes(text)) || "";
   const numberingIdFor = (text: string) => paragraphContaining(text).match(/<w:numId w:val="(\d+)"/)?.[1];
@@ -697,4 +701,15 @@ test("DOCX cover hydration requests every private asset in the captured organiza
     usePolicyCraftScope.getState().setScope(originalScope);
     globalThis.fetch = originalFetch;
   }
+});
+
+test("justified Word tables keep label columns start-aligned and justify the prose column", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.visualStyle = "corporate";
+  policy.responsibilities = [{ role: "Waste Management & Pollution Control", duty: "Follow environmental procedures and report incidents or concerns." }];
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = visibleText(await zip.file("word/document.xml")!.async("string"));
+  const paragraphContaining = (text: string) => [...document.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map((match) => match[0]).find((paragraph) => paragraph.includes(text)) || "";
+  assert.match(paragraphContaining("Waste Management &amp; Pollution Control"), /<w:jc w:val="left"\/>/);
+  assert.doesNotMatch(paragraphContaining("Follow environmental procedures"), /<w:jc /, "the prose cell inherits the justified document default");
 });

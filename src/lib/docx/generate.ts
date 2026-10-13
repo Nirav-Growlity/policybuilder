@@ -40,9 +40,11 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import { buildDocumentRenderModel, getRunningHeaderBrand, type AuthorApprovalRenderData, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
-import { documentHex, type DocumentThemeDefinition } from "../document-themes";
+import { documentHex, tableLabelAlignment, type DocumentThemeDefinition, type ResolvedDocumentThemeDefinition } from "../document-themes";
 import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, normalizePolicyQuantitative, type QuantitativeTargetGroup } from "../quantitative";
+import { typesetProse } from "../hyphenation";
+import { convertSoftHyphens } from "./soft-hyphens";
 import { getCoverBindingValue, getCoverTextPresentation } from "../cover-composition";
 import type { DocumentTextAlignment, Policy, QuantitativeArea, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
@@ -72,6 +74,11 @@ const QUANTITATIVE_NUMBER_WIDTH = 1000;
 
 function docxContentAlignment(value: DocumentTextAlignment = "justify"): typeof AlignmentType[keyof typeof AlignmentType] {
   return value === "center" ? AlignmentType.CENTER : value === "right" ? AlignmentType.RIGHT : value === "left" ? AlignmentType.LEFT : AlignmentType.JUSTIFIED;
+}
+
+// Table cell paragraphs otherwise inherit the document's justified default.
+function docxTableLabelAlignment(value: DocumentTextAlignment) {
+  return docxContentAlignment(tableLabelAlignment(value));
 }
 
 export async function generateDocx(inputPolicy: Policy, authorApproval?: AuthorApprovalRenderData): Promise<Buffer> {
@@ -251,7 +258,7 @@ async function generateDocxDocument(inputPolicy: Policy, authorApproval?: Author
     }],
   });
 
-  return embedDocumentFontStyles((await Packer.toBuffer(doc)) as Buffer, fontFamilies);
+  return embedDocumentFontStyles(await convertSoftHyphens((await Packer.toBuffer(doc)) as Buffer), fontFamilies);
 }
 
 
@@ -639,11 +646,11 @@ function quantitativeTargetBody(group: QuantitativeTargetGroup, model: DocumentR
 }
 
 function quantitativeTargetParagraphs(group: QuantitativeTargetGroup, model: DocumentRenderModel): Paragraph[] {
-  return group.targets.map((target) => listParagraph(formatQuantitativeTargetSentence(target), model.listFormatting.quantitativeItems, model.typography, model.theme));
+  return group.targets.map((target) => listParagraph(typesetProse(formatQuantitativeTargetSentence(target), model.theme.textAlignment), model.listFormatting.quantitativeItems, model.typography, model.theme));
 }
 
-function areaHeading(area: string, model: DocumentRenderModel): Paragraph {
-  return new Paragraph({ spacing: { after: 55 }, children: [new TextRun({ text: area, bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] });
+function areaHeading(area: string, model: DocumentRenderModel, alignment?: typeof AlignmentType[keyof typeof AlignmentType]): Paragraph {
+  return new Paragraph({ alignment, spacing: { after: 55 }, children: [new TextRun({ text: area, bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] });
 }
 
 function quantitativeEntryGroup(group: QuantitativeTargetGroup, index: number, model: DocumentRenderModel, availableWidth: number): DocBlock {
@@ -669,7 +676,7 @@ function quantitativeTable(groups: QuantitativeTargetGroup[], availableWidth: nu
     // not push the heading, header and first row onto separate pages.
     ...groups.map((group, index) => new TableRow({ children: [
       tableCell([new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: listMarkerText(model.listFormatting.quantitativeGroups, index + 1), bold: true, color: documentHex(model.theme.colors.primary), size: Math.round(model.typography.subheadingSize * 2), font: model.typography.headingFontFamily || model.typography.fontFamily })] })], widths[0], { borders }),
-      tableCell([areaHeading(group.area, model)], widths[1], { borders }),
+      tableCell([areaHeading(group.area, model, docxTableLabelAlignment(model.theme.textAlignment))], widths[1], { borders }),
       tableCell(quantitativeTargetParagraphs(group, model), widths[2], { borders }),
     ] })),
   ], widths);
@@ -722,7 +729,8 @@ function tableTextSize(theme: DocumentThemeDefinition) {
   return theme.collection === "professional" ? 19 : 17;
 }
 
-function dataTable(headers: string[], rows: string[][], widths: number[], theme: DocumentThemeDefinition) {
+function dataTable(headers: string[], rows: string[][], widths: number[], theme: ResolvedDocumentThemeDefinition) {
+  const labelAlignment = docxTableLabelAlignment(theme.textAlignment);
   const lightHeader = theme.collection === "professional" || theme.layout.dataLayout === "compact-ledger" || theme.layout.dataLayout === "quiet-rules";
   const headerFill = lightHeader ? documentHex(theme.colors.soft) : documentHex(theme.colors.primary);
   const headerColor = lightHeader ? documentHex(theme.colors.primary) : documentHex(theme.colors.onPrimary);
@@ -740,7 +748,7 @@ function dataTable(headers: string[], rows: string[][], widths: number[], theme:
       new Paragraph({ children: [new TextRun({ text: header, bold: true, color: headerColor, size: tableTextSize(theme) })] }),
     ], widths[index], { fill: quiet ? undefined : headerFill, borders })) }),
     ...rows.map((row, rowIndex) => new TableRow({ cantSplit: true, children: headers.map((_, columnIndex) => tableCell([
-      new Paragraph({ children: [new TextRun({ text: row[columnIndex] || "", bold: theme.collection !== "professional" && columnIndex === 0 && headers.length <= 3, size: tableTextSize(theme) })] }),
+      new Paragraph({ alignment: columnIndex < headers.length - 1 ? labelAlignment : undefined, children: [new TextRun({ text: row[columnIndex] || "", bold: theme.collection !== "professional" && columnIndex === 0 && headers.length <= 3, size: tableTextSize(theme) })] }),
     ], widths[columnIndex], { fill: theme.layout.dataLayout === "target-bands" && rowIndex % 2 === 1 ? documentHex(theme.colors.soft) : undefined, borders })) })),
   ], widths);
 }

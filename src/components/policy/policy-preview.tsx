@@ -15,6 +15,7 @@ import { coverAssetIdFromReference } from "@/lib/cover-composition";
 import { policyCraftScopedUrl } from "@/lib/policycraft-scope-utils";
 import { resolveCoverTextLayout } from "@/lib/cover-renderer";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, type QuantitativeTargetGroup } from "@/lib/quantitative";
+import { typesetProse } from "@/lib/hyphenation";
 import { listMarkerText } from "@/lib/list-formatting";
 import type { PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
 
@@ -342,7 +343,7 @@ function QuantitativeTargets({ areas, model, density }: { areas: Policy["quantit
 
 function TargetDescription({ targets, model }: { targets: QuantitativeTargetGroup["targets"]; model: DocumentRenderModel }) {
   const TargetList = model.listFormatting.quantitativeItems === "bullet" ? "ul" : "ol";
-  return <TargetList className="policy-target-list">{targets.map((target, index) => <li key={`${target.target}-${index}`}>{formatQuantitativeTargetSentence(target)}</li>)}</TargetList>;
+  return <TargetList className="policy-target-list">{targets.map((target, index) => <li key={`${target.target}-${index}`}>{typesetProse(formatQuantitativeTargetSentence(target), model.theme.textAlignment)}</li>)}</TargetList>;
 }
 
 function QuantitativeTable({ groups, model }: { groups: QuantitativeTargetGroup[]; model: DocumentRenderModel }) {
@@ -709,6 +710,7 @@ const previewStyles = `
   .policy-table-wrap { margin-top: 17px; overflow-x: auto; }
   .policy-table { width: 100%; border-collapse: collapse; border: 1px solid var(--doc-line); font-size: calc(var(--policy-paragraph-size) * .83); line-height: 1.35; }
   .policy-table th, .policy-table td { border-right: 1px solid var(--doc-line); border-bottom: 1px solid var(--doc-line); padding: 9px; text-align: var(--doc-content-align); vertical-align: middle; }
+  .policy-table td:not(:last-child) { text-align: var(--doc-table-label-align); }
   .policy-table th { background: var(--doc-primary); color: var(--doc-on-primary); font-weight: 800; }
   .policy-table[data-target-table="true"] { table-layout: fixed; }
   .policy-table[data-target-table="true"] .policy-target-index-column { width: 12%; }

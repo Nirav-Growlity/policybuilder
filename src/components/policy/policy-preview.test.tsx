@@ -11,6 +11,10 @@ import { templatePreviewPolicy } from "../../lib/sample-policies";
 import { createPrintDocument } from "../../lib/pdf/print-document";
 import { buildDocumentRenderModel } from "../../lib/document-render-model";
 import { DEFAULT_POLICY_LIST_FORMATTING } from "../../lib/list-formatting";
+import { SOFT_HYPHEN } from "../../lib/hyphenation";
+
+// Justified prose carries invisible soft hyphens; compare the text a reader sees.
+const visibleText = (markup: string) => markup.replaceAll(SOFT_HYPHEN, "");
 
 function chromePath() {
   return process.env.POLICY_PDF_CHROME_PATH || "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
@@ -268,8 +272,8 @@ test("list formatting keeps legacy defaults and independently changes every docu
 
   const reloaded = JSON.parse(JSON.stringify(policy));
   assert.deepEqual(buildDocumentRenderModel(reloaded).listFormatting, policy.listFormatting);
-  const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy: reloaded }));
-  const focus = markup.slice(markup.indexOf('id="standard-focus"'), markup.indexOf('id="standard-qualitative"'));
+  const markup = visibleText(renderToStaticMarkup(React.createElement(PolicyPreview, { policy: reloaded })));
+  const focus =markup.slice(markup.indexOf('id="standard-focus"'), markup.indexOf('id="standard-qualitative"'));
   const qualitative = markup.slice(markup.indexOf('id="standard-qualitative"'), markup.indexOf('id="standard-quantitative"'));
   const quantitative = markup.slice(markup.indexOf('id="standard-quantitative"'), markup.indexOf('id="standard-sdg"'));
   const responsibilities = markup.slice(markup.indexOf('id="standard-responsibilities"'));
@@ -590,7 +594,7 @@ test("quantitative preview groups repeated areas and keeps timing inside target 
       { target: "Complete 100% compliance training for relevant employees", baseline: "FY 2025-26", deadline: "FY 2029-30", reportingFrequency: "Target period", subtopics: ["Cover conflicts of interest."] },
     ],
   }];
-  const markup = renderToStaticMarkup(React.createElement(PolicyPreview, { policy }));
+  const markup = visibleText(renderToStaticMarkup(React.createElement(PolicyPreview, { policy })));
   const quantitative = markup.slice(markup.indexOf('id="standard-quantitative"'));
   assert.equal((quantitative.match(/Gifts &amp; Hospitality/g) || []).length, 1);
   assert.match(quantitative, />01<\//, "quantitative area numbers should be zero-padded");

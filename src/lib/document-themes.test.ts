@@ -16,6 +16,7 @@ import {
   getDocumentTheme,
   getDocumentThemePatch,
   getPolicyDocumentTheme,
+  documentThemeCssVariables,
   getPolicyColorResetPatch,
   isDocumentThemeCustomized,
   normalizeDocumentThemeOverrides,
@@ -465,4 +466,11 @@ test("manual logo colors survive reload and reset restores source without changi
   assert.equal(getPolicyDocumentTheme(reset).logoScale, 140);
   assert.deepEqual(reset.company, policy.company);
   assert.equal(getPolicyDocumentTheme({ ...reset, brandColorSource: "template" }).colors.primary, getDocumentTheme(policy.documentTemplate).colors.primary);
+});
+
+test("table labels fall back to left only when the document is justified", () => {
+  const policy = initialPolicy("environmental");
+  assert.equal(documentThemeCssVariables(getPolicyDocumentTheme(policy))["--doc-table-label-align"], "left");
+  policy.documentThemeOverrides = { schemaVersion: 1, textAlignment: "center" };
+  assert.equal(documentThemeCssVariables(getPolicyDocumentTheme(policy))["--doc-table-label-align"], "center");
 });

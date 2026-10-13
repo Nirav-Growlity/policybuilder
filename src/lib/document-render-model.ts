@@ -1,12 +1,13 @@
 import { SDG_DATA, getPolicyProfile } from "./constants";
 import { getPolicyDocumentTheme, getResolvedTypography, type DocumentSectionRecipe } from "./document-themes";
 import { getEnabledSections, sectionHasContent } from "./sections";
-import { getCompanySites, type CoverComposition, type CoverElement, type CoverTextElement, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
+import { getCompanySites, type CoverComposition, type CoverElement, type CoverTextElement, type DocumentTextAlignment, type Policy, type PolicyFeatureImage, type PolicySection, type RichTextBlock } from "./types";
 import { getActiveCoverComposition, getActiveCoverVariant, removeLegacyThemeGradient } from "./cover-composition";
 import { groupQuantitativeTargets } from "./quantitative";
 import { visibleQualitativeEntries, visibleQuantitativeAreas } from "./focus-area-catalog";
 import { resolveRevisionHistory } from "./revision-history";
 import { resolvePolicyListFormatting } from "./list-formatting";
+import { collapseSpaces, typesetProse } from "./hyphenation";
 
 export type ContentDensity = "short" | "regular" | "dense";
 export type DataTreatment = "formal-tables" | "clean-bullets";
@@ -196,7 +197,7 @@ export function buildDocumentRenderModel(policy: Policy, authorApproval?: Author
     index: zeroIndex + 1,
     density: estimateSectionDensity(policy, section),
     recipe: theme.layout.sectionRecipes[section.kind],
-    content: getSectionContent(policy, section),
+    content: typesetSectionContent(getSectionContent(policy, section), theme.textAlignment),
   }));
   const companyName = policy.company.name || "[Company Name]";
 
@@ -296,6 +297,28 @@ function getSectionContent(policy: Policy, section: PolicySection): DocumentSect
       entries: resolveRevisionHistory(policy.revisionHistory, policy.company.effectiveDate, policy.company.lastReviewDate, policy.company.reviewFrequency),
     };
     case "custom": return { type: "custom", blocks: section.blocks || [] };
+  }
+}
+
+// Running prose is spaced and, when justified, hyphenated. Labels such as
+// roles, card titles and table headers only lose stray double spaces.
+// Quantitative targets are typeset by the renderers after
+// formatQuantitativeTargetSentence, whose patterns need the plain words.
+function typesetSectionContent(content: DocumentSectionContent, alignment: DocumentTextAlignment): DocumentSectionContent {
+  const prose = (text: string) => typesetProse(text, alignment);
+  switch (content.type) {
+    case "narrative": return { ...content, text: prose(content.text) };
+    case "focus": return { ...content, areas: content.areas.map((area) => {
+      const [title, ...rest] = area.split("\n");
+      return [collapseSpaces(title), ...rest.map(prose)].join("\n");
+    }) };
+    case "qualitative": return { ...content, groups: content.groups.map((group) => ({ ...group, items: group.items.map(prose) })) };
+    case "responsibilities": return { ...content, entries: content.entries.map((entry) => ({ ...entry, role: collapseSpaces(entry.role), duty: prose(entry.duty) })) };
+    case "revision": return { ...content, entries: content.entries.map((entry) => ({ ...entry, description: prose(entry.description) })) };
+    case "custom": return { ...content, blocks: content.blocks.map((block) => block.type === "table"
+      ? { ...block, columns: block.columns?.map(collapseSpaces), rows: block.rows?.map((row) => row.map(prose)) }
+      : { ...block, text: prose(block.text) }) };
+    default: return content;
   }
 }
 
