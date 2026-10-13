@@ -34,7 +34,7 @@
 .filterInput { padding-left: 38px; }
 .filterInput::placeholder { color: var(--pc-muted); opacity: 0.8; }
 .filterInput:focus-visible, .filterSelect:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; border-color: var(--pc-brand); }
-.filterSelect { margin-top: 6px; }
+.filterSelect, .filterMenu { margin-top: 6px; }
 .filterSelect option { color: var(--pc-text); background: var(--pc-panel); }
 .filterLabel { min-width: 0; color: var(--pc-muted); font-size: 12px; font-weight: 600; }
 .filterFields { display: contents; }

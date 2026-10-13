@@ -7,10 +7,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight, CalendarClock, ClipboardList, Loader2, RefreshCw, Search } from "lucide-react";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
-import { organizationSourceName } from "@/components/workspace/organization-source-label";
+import { organizationSelectOptions, organizationSourceName } from "@/components/workspace/organization-source-label";
 import { POLICY_PROFILES } from "@/lib/constants";
 import type { PolicyCraftTask, PolicyCraftTaskStatus } from "@/lib/policycraft-task-types";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
+import { SelectMenu } from "@/components/ui/select-menu";
 import { ApplicationSurface } from "@/components/ui/application-surface";
 import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { useRecordMotion, WorkspaceHero, WorkspaceSheet } from "@/components/workspace/workspace-motion";
@@ -137,9 +138,9 @@ export function ManagerTaskWorkspace() {
     <WorkspaceSheet as="section" aria-label="Assigned tasks">
       <div className={styles.filterBand}>
         <label className={`${styles.fieldLabel} ${styles.searchField}`}><span>Search</span><span className={styles.searchControl}><Search size={15} aria-hidden="true" className={styles.searchIcon}/><ApplicationInput aria-label="Search tasks" autoComplete="off" name="q" value={filters.q} onChange={(event) => updateFilters({ q: event.target.value }, "replace")} placeholder="Task or organization…" size="compact"/></span></label>
-        <label className={styles.fieldLabel}>Organization<select name="orgId" value={filters.orgId} onChange={(event) => updateFilters({ orgId: event.target.value })}><option value="all">All organizations</option>{activeOrganizations.map((organization) => <option key={organization.id} value={organization.id}>{organization.name} · {organizationSourceName(organization)}</option>)}</select></label>
-        <label className={styles.fieldLabel}>Policy type<select name="type" value={filters.type} onChange={(event) => updateFilters({ type: event.target.value })}><option value="all">All policy types</option>{Object.entries(POLICY_PROFILES).map(([type, profile]) => <option key={type} value={type}>{profile.label}</option>)}</select></label>
-        <label className={styles.fieldLabel}>Status<select name="status" value={filters.status} onChange={(event) => updateFilters({ status: event.target.value })}><option value="all">All tasks</option><option value="assigned">Assigned</option><option value="in_progress">In progress</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select></label>
+        <label className={styles.fieldLabel}>Organization<SelectMenu name="orgId" value={filters.orgId} onValueChange={(orgId) => updateFilters({ orgId })} options={[{ value: "all", label: "All organizations" }, ...organizationSelectOptions(activeOrganizations)]} searchPlaceholder="Search organizations…" /></label>
+        <label className={styles.fieldLabel}>Policy type<SelectMenu name="type" value={filters.type} onValueChange={(type) => updateFilters({ type })} options={[{ value: "all", label: "All policy types" }, ...Object.entries(POLICY_PROFILES).map(([type, profile]) => ({ value: type, label: profile.label }))]} /></label>
+        <label className={styles.fieldLabel}>Status<SelectMenu name="status" value={filters.status} onValueChange={(status) => updateFilters({ status })} options={[{ value: "all", label: "All tasks" }, { value: "assigned", label: "Assigned" }, { value: "in_progress", label: "In progress" }, { value: "completed", label: "Completed" }, { value: "cancelled", label: "Cancelled" }]} /></label>
       </div>
 
       <div className={styles.messages}>

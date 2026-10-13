@@ -7,12 +7,13 @@ import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { Modal } from "@/components/ui/modal";
 import { ApplicationButton, ApplicationField, ApplicationInput, ApplicationStatus } from "@/components/ui/app-primitives";
+import { SelectMenu } from "@/components/ui/select-menu";
 import { useApplicationSurface } from "@/components/ui/application-surface";
 import { POLICY_PROFILES } from "@/lib/constants";
 import type { PolicyType } from "@/lib/types";
 import type { PolicyCraftManagerSummary, PolicyCraftOrganization } from "@/lib/policycraft-access-types";
 import type { PolicyCraftManagerWork, PolicyCraftTask, PolicyCraftTaskProgress, PolicyCraftTaskStatus } from "@/lib/policycraft-task-types";
-import { organizationSourceName } from "@/components/workspace/organization-source-label";
+import { organizationSelectOptions } from "@/components/workspace/organization-source-label";
 import styles from "./tasks.module.css";
 
 export function TaskModal({ children, ...props }: React.ComponentProps<typeof Modal>) {
@@ -145,6 +146,7 @@ function TaskEditorModalContent({
   });
   const organizationId = useWatch({ control: form.control, name: "organizationId" });
   const managerId = useWatch({ control: form.control, name: "managerId" });
+  const policyType = useWatch({ control: form.control, name: "policyType" });
   const eligibleManagers = managers.filter((manager) => {
     if (!organizationId) return false;
     return manager.status === "active" && manager.organizations.some((organization) => organization.id === Number(organizationId) && !organization.deleted && !organization.expired);
@@ -161,9 +163,9 @@ function TaskEditorModalContent({
       {(error || Object.keys(form.formState.errors).length > 0) ? <p role="alert" aria-live="polite" className={`${styles.errorMessage} mb-4`}>{error || Object.values(form.formState.errors)[0]?.message}</p> : null}
       <div className="grid gap-4 sm:grid-cols-2">
         <ApplicationField id="task-title" label="Task title" required error={form.formState.errors.title?.message} className="sm:col-span-2"><ApplicationInput {...form.register("title")} autoComplete="off" maxLength={180} required placeholder="Create an environmental policy…" size="operational" /></ApplicationField>
-        <ApplicationField id="task-organization" label="Organization" required error={form.formState.errors.organizationId?.message}><select aria-label="Organization" {...form.register("organizationId", { onChange: (event) => changeOrganization(event.target.value) })} disabled={linked} required className={`${styles.select} ${fieldClass}`}><option value="">Choose organization</option>{organizations.filter((organization) => !organization.deleted && !organization.expired).map((organization) => <option key={organization.id} value={organization.id}>{organization.name} · {organizationSourceName(organization)}</option>)}</select></ApplicationField>
-        <ApplicationField id="task-policy-type" label="Policy type" required error={form.formState.errors.policyType?.message}><select aria-label="Policy type" {...form.register("policyType")} disabled={linked} required className={`${styles.select} ${fieldClass}`}><option value="">Choose policy</option>{Object.entries(POLICY_PROFILES).map(([key, profile]) => <option key={key} value={key}>{profile.label}</option>)}</select></ApplicationField>
-        {!task || !linked ? <ApplicationField id="task-manager" label="Assign to" required error={form.formState.errors.managerId?.message} hint={organizationId && !eligibleManagers.length ? "Assign a manager to this organization before creating the task." : undefined} className="sm:col-span-2"><select aria-label="Assign to" {...form.register("managerId", { required: "Choose a manager assigned to this organization." })} required className={`${styles.select} ${fieldClass}`}><option value="">{eligibleManagers.length ? "Choose an assigned manager" : "No eligible managers"}</option>{eligibleManagers.map((manager) => <option key={manager.id} value={manager.id}>{manager.name || manager.email} · {manager.email}</option>)}</select></ApplicationField> : null}
+        <ApplicationField id="task-organization" label="Organization" required error={form.formState.errors.organizationId?.message}><SelectMenu value={organizationId} onValueChange={changeOrganization} options={organizationSelectOptions(organizations.filter((organization) => !organization.deleted && !organization.expired))} disabled={linked} required placeholder="Choose organization" searchPlaceholder="Search organizations…" className={fieldClass} /></ApplicationField>
+        <ApplicationField id="task-policy-type" label="Policy type" required error={form.formState.errors.policyType?.message}><SelectMenu value={policyType} onValueChange={(next) => form.setValue("policyType", next as TaskFormDraft["policyType"], { shouldDirty: true })} options={Object.entries(POLICY_PROFILES).map(([key, profile]) => ({ value: key, label: profile.label }))} disabled={linked} required placeholder="Choose policy" className={fieldClass} /></ApplicationField>
+        {!task || !linked ? <ApplicationField id="task-manager" label="Assign to" required error={form.formState.errors.managerId?.message} hint={organizationId && !eligibleManagers.length ? "Assign a manager to this organization before creating the task." : undefined} className="sm:col-span-2"><SelectMenu value={managerId} onValueChange={(next) => form.setValue("managerId", next, { shouldDirty: true })} options={eligibleManagers.map((manager) => ({ value: manager.id, label: manager.name || manager.email, description: manager.name ? manager.email : undefined }))} disabled={!eligibleManagers.length} required placeholder={eligibleManagers.length ? "Choose an assigned manager" : "No eligible managers"} searchPlaceholder="Search managers…" className={fieldClass} /></ApplicationField> : null}
         <ApplicationField id="task-deadline" label={<>Deadline <span className="font-normal">· end of day, India Standard Time</span></>} required error={form.formState.errors.dueDate?.message} className="sm:col-span-2"><input type="date" {...form.register("dueDate")} required className={`${styles.dateInput} ${fieldClass}`} /></ApplicationField>
         <ApplicationField id="task-instructions" label={<>Instructions <span className="font-normal">· optional</span></>} error={form.formState.errors.instructions?.message} className="sm:col-span-2"><textarea {...form.register("instructions")} maxLength={4000} className={styles.textarea} placeholder="Add scope or delivery notes…" /></ApplicationField>
       </div>

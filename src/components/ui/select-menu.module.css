@@ -1,0 +1,117 @@
+/* Trigger matches the application inputs so filters and forms keep one rhythm. */
+.trigger {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px 0 14px;
+  border: 1px solid var(--pc-control);
+  border-radius: 10px;
+  color: var(--pc-text);
+  background: var(--pc-panel);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+.triggerCompact { height: 40px; font-size: 13px; }
+.trigger:hover:not(:disabled) { border-color: color-mix(in srgb, var(--pc-text) 45%, var(--pc-control)); }
+.trigger:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; border-color: var(--pc-brand); }
+.trigger[aria-expanded="true"] { border-color: var(--pc-brand); box-shadow: 0 0 0 3px color-mix(in srgb, var(--pc-brand) 18%, transparent); }
+.trigger[aria-invalid="true"] { border-color: var(--pc-error); }
+.trigger:disabled { color: var(--pc-muted); background: var(--pc-inset); cursor: not-allowed; }
+
+.value { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.placeholder { color: var(--pc-muted); font-weight: 400; }
+.chevron { flex: none; color: var(--pc-muted); transition: transform 200ms cubic-bezier(.16, 1, .3, 1); }
+.trigger[aria-expanded="true"] .chevron { color: var(--pc-text); transform: rotate(180deg); }
+
+/* Panel: at least as wide as the trigger, wide enough for long organization names. */
+.panel {
+  z-index: 120;
+  display: flex;
+  width: max(var(--radix-popover-trigger-width), 280px);
+  max-width: min(440px, calc(100vw - 24px));
+  max-height: min(400px, var(--radix-popover-content-available-height));
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--pc-divider);
+  border-radius: 12px;
+  color: var(--pc-text);
+  background: var(--pc-panel);
+  box-shadow: 0 1px 2px rgb(8 17 33 / 6%), 0 22px 48px -18px rgb(8 17 33 / 32%);
+  font-family: var(--pc-font);
+  transform-origin: var(--radix-popover-content-transform-origin);
+}
+
+.searchRow { position: relative; flex: none; border-bottom: 1px solid var(--pc-divider); }
+.searchIcon { position: absolute; top: 50%; left: 14px; color: var(--pc-muted); pointer-events: none; transform: translateY(-50%); }
+.search {
+  display: block;
+  width: 100%;
+  height: 46px;
+  padding: 0 14px 0 38px;
+  border: 0;
+  color: var(--pc-text);
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+}
+.search::placeholder { color: var(--pc-muted); opacity: .85; }
+.search:focus { outline: none; }
+.searchRow:focus-within { box-shadow: inset 0 -2px 0 var(--pc-brand); }
+
+.list { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 6px; scroll-padding-block: 34px 6px; scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--pc-muted) 45%, transparent) transparent; }
+.list:focus { outline: none; }
+
+.groupLabel {
+  position: sticky;
+  z-index: 1;
+  top: -6px;
+  margin: 0 -6px;
+  padding: 10px 16px 6px;
+  color: var(--pc-muted);
+  background: var(--pc-panel);
+  font-size: 12px;
+  font-weight: 600;
+}
+.group + .group { margin-top: 4px; border-top: 1px solid var(--pc-divider); }
+
+.option {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: var(--pc-text);
+  font-size: 14px;
+  line-height: 1.35;
+  cursor: pointer;
+  user-select: none;
+}
+.option[data-active] { background: var(--pc-inset); }
+.option[aria-selected="true"] { color: var(--pc-selection-text); font-weight: 600; }
+.option[aria-disabled="true"] { color: var(--pc-muted); cursor: not-allowed; }
+.optionText { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.optionLabel { overflow-wrap: anywhere; }
+.optionDescription { margin-top: 1px; overflow-wrap: anywhere; color: var(--pc-muted); font-size: 12.5px; font-weight: 400; }
+.check { flex: none; color: var(--pc-selection-text); }
+
+.empty { margin: 0; padding: 18px 12px; color: var(--pc-muted); font-size: 13.5px; text-align: center; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .panel[data-state="open"] { animation: select-menu-in 160ms cubic-bezier(.16, 1, .3, 1); }
+}
+@keyframes select-menu-in {
+  from { opacity: 0; transform: translateY(-4px) scale(.985); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trigger, .chevron { transition: none; }
+}

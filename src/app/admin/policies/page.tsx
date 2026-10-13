@@ -9,6 +9,7 @@ import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { ActionDisclosure, ActionDisclosureItem } from "@/components/ui/action-disclosure";
 import { Modal } from "@/components/ui/modal";
 import { ApplicationStatus } from "@/components/ui/app-primitives";
+import { SelectMenu } from "@/components/ui/select-menu";
 import { ApplicationSurface } from "@/components/ui/application-surface";
 import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { POLICY_PROFILES } from "@/lib/constants";
@@ -17,7 +18,7 @@ import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell"
 import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceRouteFallback, WorkspaceSheet } from "@/components/workspace/workspace-motion";
 import { DelayedLoading, ListRegion, Pagination, useMediaQuery, usePagination } from "@/components/workspace/workspace-list";
 import { policyCraftExportContext } from "@/lib/policycraft-client-scope";
-import { organizationSourceName } from "@/components/workspace/organization-source-label";
+import { organizationSelectOptions, organizationSourceName } from "@/components/workspace/organization-source-label";
 import type { PolicyCraftDocumentState, PolicyDocumentSummary } from "@/lib/policycraft-types";
 import type { Policy, PolicyType } from "@/lib/types";
 import styles from "./page.module.css";
@@ -323,9 +324,9 @@ function AdminPoliciesContent() {
     <div className={styles.filterBar}>
       <div className={styles.searchAndToggle}><label className={styles.searchField}><span className="sr-only">Search policies</span><Search size={15} aria-hidden="true" className={styles.searchIcon} /><input name="policySearch" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search policies…" className={styles.filterInput} /></label><button type="button" aria-expanded={filtersOpen} aria-controls="policy-filter-options" onClick={() => setFiltersOpen((open) => !open)} className={styles.filterToggle}>Filters</button></div>
       <div id="policy-filter-options" className={`${styles.filterFields} ${filtersOpen ? styles.filterFieldsOpen : styles.filterFieldsClosed}`}>
-        <label className={styles.filterLabel}>Organization<select name="organizationFilter" value={orgId} onChange={(event) => setOrgId(event.target.value)} className={styles.filterSelect}><option value="all">All organizations</option>{organizations.map((organization) => <option key={organization.id} value={String(organization.id)}>{organization.name} · {organizationSourceName(organization)}{organization.deleted ? " · deleted" : ""}</option>)}</select></label>
-        <label className={styles.filterLabel}>Creator<select name="creatorFilter" value={creatorId} onChange={(event) => setCreatorId(event.target.value)} className={styles.filterSelect}><option value="all">All creators</option>{creatorId !== "all" && !creators.some((creator) => creator.id === creatorId) ? <option value={creatorId}>Selected creator</option> : null}{creators.map((creator) => <option key={creator.id} value={creator.id}>{creator.name || creator.email}</option>)}</select></label>
-        <label className={styles.filterLabel}>Policy type<select name="policyTypeFilter" value={policyType} onChange={(event) => setPolicyType(event.target.value)} className={styles.filterSelect}><option value="all">All policy types</option>{POLICY_TYPES.map((type) => <option key={type} value={type}>{POLICY_PROFILES[type].label}</option>)}</select></label>
+        <label className={styles.filterLabel}>Organization<SelectMenu name="organizationFilter" value={orgId} onValueChange={setOrgId} options={[{ value: "all", label: "All organizations" }, ...organizationSelectOptions(organizations)]} searchPlaceholder="Search organizations…" className={styles.filterMenu} /></label>
+        <label className={styles.filterLabel}>Creator<SelectMenu name="creatorFilter" value={creatorId} onValueChange={setCreatorId} options={[{ value: "all", label: "All creators" }, ...(creatorId !== "all" && !creators.some((creator) => creator.id === creatorId) ? [{ value: creatorId, label: "Selected creator" }] : []), ...creators.map((creator) => ({ value: creator.id, label: creator.name || creator.email, description: creator.name ? creator.email : undefined }))]} searchPlaceholder="Search creators…" className={styles.filterMenu} /></label>
+        <label className={styles.filterLabel}>Policy type<SelectMenu name="policyTypeFilter" value={policyType} onValueChange={setPolicyType} options={[{ value: "all", label: "All policy types" }, ...POLICY_TYPES.map((type) => ({ value: type, label: POLICY_PROFILES[type].label }))]} className={styles.filterMenu} /></label>
       </div>
     </div>
 

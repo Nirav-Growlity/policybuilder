@@ -7,11 +7,12 @@ import { AnimatePresence, motion } from "motion/react";
 import { Archive, ArrowRight, Building2, CheckCircle2, FileText, Loader2, PencilLine, Plus, RefreshCw, Search } from "lucide-react";
 import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { Modal } from "@/components/ui/modal";
-import { isStandaloneOrganization, OrganizationSourceLabel, organizationSourceName } from "@/components/workspace/organization-source-label";
+import { isStandaloneOrganization, organizationSelectOptions, OrganizationSourceLabel } from "@/components/workspace/organization-source-label";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
 import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
 import { DelayedLoading, ListFooter, ListRegion, useProgressiveList } from "@/components/workspace/workspace-list";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
+import { SelectMenu } from "@/components/ui/select-menu";
 import { ApplicationSurface } from "@/components/ui/application-surface";
 import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { POLICY_PROFILES } from "@/lib/constants";
@@ -253,10 +254,7 @@ export default function ManagerWorkspacePage() {
         ]}
         actions={<div className={styles.headerControls}>
           <label htmlFor="manager-organization" className={styles.filterLabel}>Organization</label>
-          <select id="manager-organization" name="organizationId" value={organization ? String(organization.id) : "all"} onChange={(event) => selectOrganization(event.target.value)} className={styles.select}>
-            <option value="all">All organizations</option>
-            {organizations.map((item) => <option key={item.id} value={item.id}>{item.name} · {organizationSourceName(item)}</option>)}
-          </select>
+          <SelectMenu id="manager-organization" name="organizationId" value={organization ? String(organization.id) : "all"} onValueChange={selectOrganization} options={[{ value: "all", label: "All organizations" }, ...organizationSelectOptions(organizations)]} searchPlaceholder="Search organizations…" />
         </div>}
       />
 
@@ -326,9 +324,7 @@ export default function ManagerWorkspacePage() {
 
       <Modal open={newPolicyOpen} onClose={() => setNewPolicyOpen(false)} title="Choose an organization" description="Select where to create this policy. The builder will open with that organization selected." width={460}>
         <label htmlFor="new-policy-organization" className={styles.modalLabel}>Organization</label>
-        <select id="new-policy-organization" value={newPolicyOrgId} onChange={(event) => setNewPolicyOrgId(event.target.value)} className={styles.modalSelect}>
-          {organizations.map((item) => <option key={item.id} value={item.id}>{item.name} · {organizationSourceName(item)}</option>)}
-        </select>
+        <SelectMenu id="new-policy-organization" value={newPolicyOrgId} onValueChange={setNewPolicyOrgId} options={organizationSelectOptions(organizations)} placeholder="Choose organization" searchPlaceholder="Search organizations…" className={styles.modalSelect} />
         <div className={styles.dialogActions}>
           <ApplicationButton type="button" variant="outline" onClick={() => setNewPolicyOpen(false)}>Cancel</ApplicationButton>
           <ApplicationButton type="button" variant="primary" leadingIcon={<Plus size={15} aria-hidden="true" />} disabled={!newPolicyOrgId} onClick={() => { if (newPolicyOrgId && organizations.some((item) => String(item.id) === newPolicyOrgId)) router.push(`/builder?orgId=${newPolicyOrgId}`); }}>Continue to builder</ApplicationButton>

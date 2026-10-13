@@ -4,9 +4,6 @@
 /* Organization picker on the ink band. */
 .headerControls { display: flex; width: min(100%, 340px); flex-direction: column; gap: 7px; flex: none; }
 .filterLabel { color: var(--ws-on-ink-muted); font-size: 12px; font-weight: 600; }
-.select, .modalSelect { width: 100%; min-width: 0; height: 44px; padding: 0 12px; color: var(--pc-text); background: var(--pc-panel); border: 1px solid var(--pc-control); border-radius: 10px; font: inherit; font-size: 14px; cursor: pointer; }
-.select option, .modalSelect option { color: var(--pc-text); background: var(--pc-panel); }
-.select:focus-visible, .modalSelect:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; border-color: var(--pc-brand); }
 
 .recordsSection { min-width: 0; overflow: clip; }
 .sectionHeader { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 22px; border-bottom: 1px solid var(--pc-divider); }
