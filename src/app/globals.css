@@ -70,8 +70,7 @@
     letter-spacing: -0.015em;
   }
   ::selection {
-    background: var(--color-forest-soft);
-    color: var(--color-forest-deep);
+    background: rgb(65 134 243 / 24%);
   }
 }
 
