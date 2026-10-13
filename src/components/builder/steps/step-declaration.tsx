@@ -4,7 +4,8 @@ import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel } from "@/components/ui/panel";
 import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI } from "@/lib/ai/client";
+import { streamAI } from "@/lib/ai/client";
+import { keepFinishedSentences, useGenerationStreams } from "@/lib/ai/use-generation-streams";
 import { BookOpen, Flag, MapPin } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
@@ -39,21 +40,29 @@ const SECTIONS: {
 export function StepDeclaration() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
-  const [busy, setBusy] = React.useState<Record<string, boolean>>({});
+  const streams = useGenerationStreams();
 
   const generate = async (key: "preface" | "declaration" | "scope", customPrompt?: string) => {
-    setBusy((b) => ({ ...b, [key]: true }));
+    const { reveal, signal } = streams.start(key);
+    const name = key[0].toUpperCase() + key.slice(1);
     try {
       const existing = policy.declaration[key];
-      const r = await callAI({ type: key, policy, customPrompt, existingContent: existing });
-      if (r.text) {
-        updatePolicy((p) => ({ declaration: { ...p.declaration, [key]: r.text! } }));
-        push(`${key[0].toUpperCase() + key.slice(1)} generated`, "success");
+      const r = await streamAI({ type: key, policy, customPrompt, existingContent: existing }, {
+        signal,
+        onPartial: (partial) => reveal.set(partial.text ?? ""),
+      });
+      const text = signal.aborted ? keepFinishedSentences(r.text ?? "") : r.text;
+      if (text) {
+        await reveal.finish(text);
+        updatePolicy((p) => ({ declaration: { ...p.declaration, [key]: text } }));
+        push(signal.aborted ? `${name} stopped. Finished sentences were kept.` : `${name} generated`, signal.aborted ? "info" : "success");
+      } else if (signal.aborted) {
+        push(`${name} stopped before any text was written`, "info");
       }
-    } catch (e) {
+    } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy((b) => ({ ...b, [key]: false }));
+      streams.end(key, reveal);
     }
   };
 
@@ -61,7 +70,7 @@ export function StepDeclaration() {
     <StepRoot>
       {SECTIONS.filter((s) => getSection(policy, s.key)?.enabled).map((s) => {
         const value = policy.declaration[s.key];
-        const isBusy = busy[s.key];
+        const isBusy = streams.busy(s.key);
         const configured = getSection(policy, s.key);
         return (
           <Panel
@@ -73,6 +82,7 @@ export function StepDeclaration() {
                 label="AI Write"
                 loading={isBusy}
                 onGenerate={(prompt) => generate(s.key, prompt)}
+                onStop={() => streams.stop(s.key)}
               />
             }
           >
@@ -80,6 +90,7 @@ export function StepDeclaration() {
               value={value}
               label={configured?.title || s.title}
               busy={isBusy}
+              stream={streams.reveal(s.key)}
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                 updatePolicy((p) => ({ declaration: { ...p.declaration, [s.key]: e.target.value } }))
               }

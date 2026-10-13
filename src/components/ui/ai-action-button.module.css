@@ -40,13 +40,63 @@
 .quiet:hover:not(:disabled) { border-color: transparent; background: color-mix(in srgb, var(--ai) 12%, transparent); box-shadow: none; }
 .quiet[aria-expanded="true"] { border-color: transparent; background: color-mix(in srgb, var(--ai) 14%, transparent); }
 
-/* Busy: the pill settles into a solid brand state with an arc spinner. */
-.trigger[aria-busy="true"] { border-color: color-mix(in srgb, var(--ai) 55%, transparent); background: color-mix(in srgb, var(--ai) 16%, var(--pc-panel, #fff)); opacity: 1; }
-.spinner { width: 15px; height: 15px; animation: spin 900ms linear infinite; }
-.spinner circle { fill: none; stroke-width: 2.4; }
-.spinnerTrack { stroke: color-mix(in srgb, var(--ai) 22%, transparent); }
-.spinnerArc { stroke: var(--ai); stroke-linecap: round; stroke-dasharray: 14 40; }
-@keyframes spin { to { transform: rotate(360deg); } }
+/* Busy: an arc orbits a small star, echoing the light that travels around the sheet.
+   A soft band of light passes along the pill. When the run can be stopped, hover or
+   focus turns it into a Stop control. */
+.trigger[aria-busy="true"] {
+  border-color: color-mix(in srgb, var(--ai) 50%, transparent);
+  background: color-mix(in srgb, var(--ai) 13%, var(--pc-panel, #fff));
+  cursor: progress;
+  opacity: 1;
+}
+.trigger[aria-busy="true"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 20%, color-mix(in srgb, var(--ai) 22%, transparent) 50%, transparent 80%);
+  transform: translateX(-100%);
+  animation: pill-sheen 2.4s cubic-bezier(.45, 0, .2, 1) infinite;
+  pointer-events: none;
+}
+.trigger[data-stoppable] { cursor: pointer; }
+.trigger[aria-busy="true"] > * { position: relative; }
+.trigger[aria-busy="true"] .icon { position: relative; width: 16px; height: 16px; }
+.trigger[aria-busy="true"]:hover .icon { transform: none; }
+
+.orbit { width: 16px; height: 16px; overflow: visible; transition: opacity 160ms ease, transform 200ms cubic-bezier(.22, 1, .36, 1); }
+.orbit circle { fill: none; stroke-width: 2.2; }
+.orbitTrack { stroke: color-mix(in srgb, var(--ai) 20%, transparent); }
+.orbitArc {
+  stroke: var(--ai);
+  stroke-linecap: round;
+  stroke-dasharray: 26 74;
+  transform-origin: 10px 10px;
+  animation: orbit-turn 1.25s cubic-bezier(.55, .15, .45, .85) infinite;
+}
+.orbitStar { fill: var(--ai); transform-origin: 10px 10px; animation: star-breathe 1.6s ease-in-out infinite; }
+
+.stopMark {
+  position: absolute;
+  inset: 4px;
+  border-radius: 2.5px;
+  background: var(--ai);
+  opacity: 0;
+  transform: scale(.4);
+  transition: opacity 160ms ease, transform 220ms cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.busyLabel { display: inline-grid; }
+.busyLabel > span { grid-area: 1 / 1; transition: opacity 160ms ease, transform 200ms cubic-bezier(.22, 1, .36, 1); }
+.stopLabel { opacity: 0; transform: translateY(4px); }
+
+.trigger[data-stoppable]:is(:hover, :focus-visible) .orbit { opacity: 0; transform: scale(.6); }
+.trigger[data-stoppable]:is(:hover, :focus-visible) .stopMark { opacity: 1; transform: scale(1); }
+.trigger[data-stoppable]:is(:hover, :focus-visible) .writingLabel { opacity: 0; transform: translateY(-4px); }
+.trigger[data-stoppable]:is(:hover, :focus-visible) .stopLabel { opacity: 1; transform: none; }
+
+@keyframes orbit-turn { to { transform: rotate(360deg); } }
+@keyframes star-breathe { 0%, 100% { transform: scale(.78) rotate(0deg); opacity: .75; } 50% { transform: scale(1.08) rotate(45deg); opacity: 1; } }
+@keyframes pill-sheen { 0% { transform: translateX(-100%); } 60%, 100% { transform: translateX(100%); } }
 
 /* ── Menu ─────────────────────────────────────────────── */
 .popover {
@@ -137,5 +187,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .trigger, .icon, .chevron, .optionIcon, .generate { transition-duration: .01ms; }
-  .spinner { animation-duration: 2.4s; }
+  .orbitArc { animation-duration: 3s; }
+  .orbitStar, .trigger[aria-busy="true"]::before { animation: none; }
+  .trigger[aria-busy="true"]::before { display: none; }
 }

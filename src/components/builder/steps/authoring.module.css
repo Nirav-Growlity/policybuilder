@@ -136,8 +136,8 @@
 .root .inline.inline:is(input, textarea, select)[readonly] { cursor: not-allowed; color: var(--pc-muted); }
 .root .inline.inline:is(input, textarea, select)[readonly]:hover { background: transparent; }
 
-/* Writing surface for long-form sections. */
-.root .writing.writing:is(textarea) {
+/* Writing surface for long-form sections. The div form holds text while the AI streams it in. */
+.root .writing.writing:is(textarea, div) {
   display: block;
   min-height: 112px;
   border: 1px solid transparent;
@@ -151,6 +151,7 @@
   transition: background-color 160ms ease, border-color 160ms ease, box-shadow 200ms var(--w-ease), opacity 200ms ease;
 }
 .root .writing.writing:is(textarea):hover:not(:focus) { border-color: var(--w-line); }
+.root .writing.writing:is(div) { margin: 0; color: var(--pc-text); }
 .root .writing.writing:is(textarea)::placeholder { color: var(--pc-muted); opacity: .8; }
 
 .fieldMeta { display: flex; min-height: 20px; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 8px; padding: 0 4px; color: var(--pc-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
@@ -339,7 +340,7 @@ label:active .check { transform: scale(.9); }
 .toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
 .topicComposer { width: min(100%, 620px); }
 .tableWrap { overflow-x: auto; margin: 0 -18px -18px; border-top: 1px solid var(--w-line); }
-.table { width: 100%; min-width: 840px; border-collapse: collapse; font-size: 13px; }
+.table { width: 100%; min-width: 840px; border-collapse: collapse; table-layout: fixed; font-size: 13px; }
 .table th { padding: 10px 10px 8px; color: var(--pc-muted); font-size: 12px; font-weight: 600; text-align: left; white-space: nowrap; }
 .table th:first-child, .table td:first-child { padding-left: 18px; }
 .table th:last-child, .table td:last-child { padding-right: 14px; }
@@ -353,6 +354,12 @@ label:active .check { transform: scale(.9); }
 .cellEmpty { display: block; padding: 9px 10px; color: var(--pc-muted); }
 .table .rowActions { justify-content: flex-end; padding-top: 2px; }
 .cellIssues { display: flex; flex-direction: column; gap: 4px; padding: 2px 10px 4px; }
+/* Table cells the AI is still filling: a short pending bar until the value is known, then the value settles in. */
+.cellValue { display: flex; height: 38px; align-items: center; padding: 0 11px; color: var(--pc-text); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; animation: cell-settle 520ms cubic-bezier(.22, 1, .36, 1) both; }
+.cellPending { display: flex; height: 38px; align-items: center; padding: 0 11px; }
+.cellPending::before { content: ""; width: min(72px, 100%); height: 8px; border-radius: 999px; background: linear-gradient(90deg, color-mix(in srgb, var(--pc-divider) 70%, transparent) 0 35%, color-mix(in srgb, var(--pc-brand) 35%, transparent) 50%, color-mix(in srgb, var(--pc-divider) 70%, transparent) 65% 100%); background-size: 300% 100%; animation: cell-pending 1.8s ease-in-out infinite; }
+@keyframes cell-settle { 0% { opacity: 0; filter: blur(3px); color: var(--pc-brand); } 40% { opacity: 1; filter: blur(0); color: var(--pc-brand); } 100% { opacity: 1; color: var(--pc-text); } }
+@keyframes cell-pending { from { background-position: 100% 0; } to { background-position: 0 0; } }
 
 /* ── Step 6: goals ────────────────────────────────────── */
 /* Official goal icons: muted until chosen, full colour with a check once selected. */
@@ -382,6 +389,12 @@ label:active .check { transform: scale(.9); }
 .goal[aria-pressed="true"] .goalIcon { filter: none; opacity: 1; }
 .goal[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--pc-panel), 0 0 0 4px var(--pc-brand); }
 .root .goal:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 4px; }
+/* While the AI suggests goals, a light reads across the grid and each chosen goal settles in. */
+.goals[data-scanning] .goal { cursor: progress; }
+.goals[data-scanning] .goal:not([aria-pressed="true"]) .goalIcon { animation: goal-scan 2.6s ease-in-out calc(var(--n) * 60ms) infinite; }
+.goal[data-picked] { animation: goal-pick 560ms cubic-bezier(.34, 1.56, .64, 1) both; }
+@keyframes goal-scan { 0%, 22%, 100% { filter: grayscale(.85); opacity: .5; } 8% { filter: grayscale(.5); opacity: .78; } }
+@keyframes goal-pick { 0% { scale: .9; } 60% { scale: 1.05; } 100% { scale: 1; } }
 .goalMark {
   position: absolute;
   top: -7px;
@@ -408,6 +421,14 @@ label:active .check { transform: scale(.9); }
 .root .roleName.roleName { height: auto; min-height: 40px; padding: 8px 10px; font-size: 14px; font-weight: 650; }
 .root .roleDuty.roleDuty { padding: 8px 10px; font-size: 14px; line-height: 1.6; resize: none; }
 .roleRow .rowActions { padding-top: 3px; }
+
+/* Rows the AI is still writing. Cells keep the metrics of the inline fields they become. */
+.root .streamCell.streamCell { margin: 0; border: 1px solid transparent; color: var(--pc-text); white-space: pre-wrap; overflow-wrap: anywhere; }
+.root .roleName.streamCell { display: flex; align-items: center; }
+.streamSpacer { visibility: hidden; }
+/* In a table cell the textarea sits on a text line (inline-block), which adds space beneath it; streamed cells match that. */
+.root .table td > .streamCell.streamCell { display: inline-block; width: 100%; box-sizing: border-box; overflow: hidden; vertical-align: baseline; }
+.dimmed { color: color-mix(in srgb, var(--pc-text) 45%, transparent); }
 .revisionHead, .revisionRow { display: grid; grid-template-columns: 96px 136px minmax(0, 1fr) auto; align-items: start; gap: 8px; }
 .revisionHead { padding: 0 0 6px; color: var(--pc-muted); font-size: 12px; font-weight: 600; }
 .revisionHead > span { padding-left: 10px; }
@@ -430,6 +451,7 @@ label:active .check { transform: scale(.9); }
 
 @media (prefers-reduced-motion: reduce) {
   .root *, .root *::before, .root *::after { transition-duration: .01ms !important; }
+  .goals[data-scanning] .goal .goalIcon, .goal[data-picked], .cellValue, .cellPending::before { animation: none; }
   .root :global(.pc-authoring-panel):has(> header [data-ai-trigger][aria-busy="true"])::after { animation: none; --ai-angle: 90deg; }
   .root .writing.writing:is(textarea)[data-busy],
   .root :is(.objective, .tableRow):has([data-ai-trigger][aria-busy="true"]) :is(.objectiveText, .cellText).inline { animation: none; background-image: none; }

@@ -7,7 +7,9 @@ import { Input } from "@/components/ui/input";
 import { DatePicker } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI } from "@/lib/ai/client";
+import { streamAI } from "@/lib/ai/client";
+import { FIELD_BREAK, ITEM_BREAK, keepFinishedSentences, useGenerationStreams } from "@/lib/ai/use-generation-streams";
+import { Composing, StreamField, StreamingItems } from "@/components/ui/ai-stream";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { BarChart3, History, Plus, RefreshCw, Trash2, UserCheck, Users } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -21,7 +23,14 @@ import { AutosizeTextarea, StepRoot, WritingField, authoring as ui, itemEnter } 
 export function StepResponsibilities() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
-  const [busy, setBusy] = React.useState<Record<string, boolean>>({});
+  const streams = useGenerationStreams();
+  // Roles that replace a streamed preview appear without an entrance, so the hand-off is invisible.
+  const [settledFrom, setSettledFrom] = React.useState<number | null>(null);
+  React.useEffect(() => {
+    if (settledFrom === null) return;
+    const frame = requestAnimationFrame(() => setSettledFrom(null));
+    return () => cancelAnimationFrame(frame);
+  }, [settledFrom]);
 
   const updateAcknowledgementDetail = (field: "employeeName" | "employeeId" | "department" | "date", value: string) => {
     updatePolicy((current) => ({
@@ -65,56 +74,63 @@ export function StepResponsibilities() {
   };
 
   const generateResp = async (customPrompt?: string) => {
-    setBusy((b) => ({ ...b, resp: true }));
+    const { reveal, signal } = streams.start("resp");
     try {
       const existing = policy.responsibilities;
-      const r = await callAI({ type: "responsibilities", policy, customPrompt, existingContent: existing });
-      if (r.responsibilities) {
+      const r = await streamAI({ type: "responsibilities", policy, customPrompt, existingContent: existing }, {
+        signal,
+        onPartial: (partial) => reveal.set((partial.responsibilities ?? [])
+          .filter((item) => item && typeof item === "object")
+          .map((item) => `${typeof item.role === "string" ? item.role : ""}${typeof item.duty === "string" ? `${FIELD_BREAK}${item.duty}` : ""}`)
+          .join(ITEM_BREAK)),
+      });
+      let generated = (r.responsibilities ?? []).filter((item) => typeof item?.role === "string" && typeof item?.duty === "string" && item.role.trim());
+      // A stopped stream keeps only the roles whose duty was finished.
+      if (signal.aborted) generated = generated.filter((item, i) => i < generated.length - 1 || /[.!?]$/.test(item.duty.trim()));
+      if (r.responsibilities || signal.aborted) {
         const existingRolesLower = new Set(existing.map((x) => x.role.toLowerCase().trim()));
-        let uniqueNew = r.responsibilities.filter((x) => !existingRolesLower.has(x.role.toLowerCase().trim()));
+        let uniqueNew = generated.filter((x) => !existingRolesLower.has(x.role.toLowerCase().trim()));
         const reqCount = parseRequestedCount(customPrompt);
         if (reqCount && reqCount > 0) {
           uniqueNew = uniqueNew.slice(0, reqCount);
         }
+        if (uniqueNew.length === 0) {
+          push(signal.aborted ? "Stopped before a role was finished" : "No new roles generated", "info");
+          return;
+        }
+        await reveal.finish(uniqueNew.map((x) => `${x.role}${FIELD_BREAK}${x.duty}`).join(ITEM_BREAK));
+        setSettledFrom(existing.length);
         updatePolicy((p) => ({ responsibilities: [...p.responsibilities, ...uniqueNew] }));
         push(`Added ${uniqueNew.length} role responsibility details`, "success");
       }
     } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy((b) => ({ ...b, resp: false }));
+      streams.end("resp", reveal);
     }
   };
 
-  const generateMonitoring = async (customPrompt?: string) => {
-    setBusy((b) => ({ ...b, monitoring: true }));
+  const generateText = async (key: "monitoring" | "review", customPrompt?: string) => {
+    const { reveal, signal } = streams.start(key);
+    const field = key === "monitoring" ? "monitoring" : "reviewMechanism";
+    const name = key === "monitoring" ? "Monitoring section" : "Review section";
     try {
-      const existing = policy.monitoring;
-      const r = await callAI({ type: "monitoring", policy, customPrompt, existingContent: existing });
-      if (r.text) {
-        updatePolicy(() => ({ monitoring: r.text! }));
-        push("Monitoring section generated", "success");
+      const r = await streamAI({ type: key, policy, customPrompt, existingContent: policy[field] }, {
+        signal,
+        onPartial: (partial) => reveal.set(partial.text ?? ""),
+      });
+      const text = signal.aborted ? keepFinishedSentences(r.text ?? "") : r.text;
+      if (text) {
+        await reveal.finish(text);
+        updatePolicy(() => ({ [field]: text }));
+        push(signal.aborted ? `${name} stopped. Finished sentences were kept.` : `${name} generated`, signal.aborted ? "info" : "success");
+      } else if (signal.aborted) {
+        push(`${name} stopped before any text was written`, "info");
       }
     } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy((b) => ({ ...b, monitoring: false }));
-    }
-  };
-
-  const generateReview = async (customPrompt?: string) => {
-    setBusy((b) => ({ ...b, review: true }));
-    try {
-      const existing = policy.reviewMechanism;
-      const r = await callAI({ type: "review", policy, customPrompt, existingContent: existing });
-      if (r.text) {
-        updatePolicy(() => ({ reviewMechanism: r.text! }));
-        push("Review section generated", "success");
-      }
-    } catch {
-      push("AI generation failed", "error");
-    } finally {
-      setBusy((b) => ({ ...b, review: false }));
+      streams.end(key, reveal);
     }
   };
 
@@ -144,17 +160,18 @@ export function StepResponsibilities() {
             </Button>
             <AIActionButton
               label="AI Generate"
-              loading={busy.resp}
+              loading={streams.busy("resp")}
               onGenerate={(prompt) => generateResp(prompt)}
+              onStop={() => streams.stop("resp")}
             />
           </>
         }
       >
-        {policy.responsibilities.length > 0 ? (
+        {policy.responsibilities.length > 0 || streams.busy("resp") ? (
           <div className={ui.roles}>
             <AnimatePresence initial={false}>
               {policy.responsibilities.map((r, i) => (
-                <motion.div key={i} className={ui.roleRow} {...itemEnter}>
+                <motion.div key={i} className={ui.roleRow} {...itemEnter} initial={settledFrom !== null && i >= settledFrom ? false : itemEnter.initial}>
                   <Input
                     value={r.role}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRole(i, "role", e.target.value)}
@@ -183,6 +200,19 @@ export function StepResponsibilities() {
                 </motion.div>
               ))}
             </AnimatePresence>
+            {streams.reveal("resp") ? (
+              <StreamingItems
+                reveal={streams.reveal("resp")!}
+                waiting={<div className={ui.roleRow} aria-busy="true"><Composing lines={1} compact note="" /><Composing lines={2} compact note="Writing roles and their duties" /></div>}
+                render={([role, duty], index, writing) => (
+                  <div key={`streaming-${index}`} className={ui.roleRow} aria-busy={writing || undefined}>
+                    <StreamField text={role ?? ""} writing={writing && duty === undefined} className={`${ui.roleName} ${ui.streamCell}`} />
+                    <StreamField text={duty ?? ""} writing={writing && duty !== undefined} className={`${ui.roleDuty} ${ui.streamCell}`} />
+                    <div className={`${ui.rowActions} ${ui.streamSpacer}`} aria-hidden="true"><span className={ui.iconButton}><Trash2 size={15} /></span></div>
+                  </div>
+                )}
+              />
+            ) : null}
           </div>
         ) : (
           <div className={ui.empty}>
@@ -197,15 +227,17 @@ export function StepResponsibilities() {
         actions={
           <AIActionButton
             label="AI Write"
-            loading={busy.monitoring}
-            onGenerate={(prompt) => generateMonitoring(prompt)}
+            loading={streams.busy("monitoring")}
+            onGenerate={(prompt) => generateText("monitoring", prompt)}
+            onStop={() => streams.stop("monitoring")}
           />
         }
       >
         <WritingField
           value={policy.monitoring}
           label="Monitoring, reporting & transparency"
-          busy={busy.monitoring}
+          busy={streams.busy("monitoring")}
+          stream={streams.reveal("monitoring")}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy(() => ({ monitoring: e.target.value }))}
           placeholder="Describe how performance is monitored, which KPIs are tracked, review frequency, and how findings are reported..."
         />
@@ -217,15 +249,17 @@ export function StepResponsibilities() {
         actions={
           <AIActionButton
             label="AI Write"
-            loading={busy.review}
-            onGenerate={(prompt) => generateReview(prompt)}
+            loading={streams.busy("review")}
+            onGenerate={(prompt) => generateText("review", prompt)}
+            onStop={() => streams.stop("review")}
           />
         }
       >
         <WritingField
           value={policy.reviewMechanism}
           label="Review mechanism & continuous improvement"
-          busy={busy.review}
+          busy={streams.busy("review")}
+          stream={streams.reveal("review")}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy(() => ({ reviewMechanism: e.target.value }))}
           placeholder="Describe how and when this policy is reviewed, who owns the review, and how changes are communicated..."
         />

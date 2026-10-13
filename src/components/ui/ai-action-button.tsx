@@ -17,6 +17,8 @@ interface AIActionButtonProps {
   size?: "sm" | "md";
   className?: string;
   placeholder?: string;
+  /** While loading, turns the button into a Stop control for a streaming generation. */
+  onStop?: () => void;
 }
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -29,6 +31,7 @@ export function AIActionButton({
   size = "sm",
   className = "",
   placeholder = "e.g. Focus on zero waste packaging, renewable energy targets for Gujarat units...",
+  onStop,
 }: AIActionButtonProps) {
   const application = useApplicationSurface();
   const reduceMotion = useReducedMotion();
@@ -39,6 +42,7 @@ export function AIActionButton({
   const [coords, setCoords] = React.useState<{ top: number; right: number; above: boolean }>({ top: 0, right: 0, above: false });
   const mounted = React.useSyncExternalStore(() => () => undefined, () => true, () => false);
   const quiet = variant === "ghost";
+  const stoppable = loading && Boolean(onStop);
 
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const popoverRef = React.useRef<HTMLDivElement>(null);
@@ -141,23 +145,45 @@ export function AIActionButton({
       <button
         ref={buttonRef}
         type="button"
-        disabled={loading}
+        disabled={loading && !stoppable}
         onClick={() => {
+          if (loading) { onStop?.(); return; }
           if (!open) updateCoords();
           setOpen(!open);
         }}
         className={clsx(styles.trigger, quiet && styles.quiet, className)}
-        aria-expanded={open}
+        aria-expanded={loading ? undefined : open}
         aria-controls={open ? popoverId : undefined}
-        aria-haspopup="dialog"
+        aria-haspopup={loading ? undefined : "dialog"}
         aria-busy={loading || undefined}
+        aria-label={stoppable ? "Stop writing" : undefined}
         data-ai-trigger={variant}
+        data-stoppable={stoppable || undefined}
       >
-        <span className={styles.icon} aria-hidden="true">
-          {loading ? <svg viewBox="0 0 20 20" className={styles.spinner}><circle cx="10" cy="10" r="7.5" className={styles.spinnerTrack} /><circle cx="10" cy="10" r="7.5" className={styles.spinnerArc} /></svg> : quiet ? <WandSparkles size={iconSize} /> : <Sparkles size={iconSize} />}
-        </span>
-        <span>{loading ? "Generating…" : label}</span>
-        {!quiet && !loading && <ChevronDown size={14} aria-hidden="true" className={styles.chevron} />}
+        {loading ? (
+          <>
+            <span className={styles.icon} aria-hidden="true">
+              <svg viewBox="0 0 20 20" className={styles.orbit}>
+                <circle cx="10" cy="10" r="7.5" className={styles.orbitTrack} />
+                <circle cx="10" cy="10" r="7.5" className={styles.orbitArc} pathLength={100} />
+                <path d="M10 6.2 11.05 8.95 13.8 10 11.05 11.05 10 13.8 8.95 11.05 6.2 10 8.95 8.95Z" className={styles.orbitStar} />
+              </svg>
+              {stoppable ? <span className={styles.stopMark} /> : null}
+            </span>
+            <span className={styles.busyLabel}>
+              <span className={styles.writingLabel}>{quiet ? "Refining" : "Writing"}</span>
+              {stoppable ? <span className={styles.stopLabel}>Stop</span> : null}
+            </span>
+          </>
+        ) : (
+          <>
+            <span className={styles.icon} aria-hidden="true">
+              {quiet ? <WandSparkles size={iconSize} /> : <Sparkles size={iconSize} />}
+            </span>
+            <span>{label}</span>
+            {!quiet && <ChevronDown size={14} aria-hidden="true" className={styles.chevron} />}
+          </>
+        )}
       </button>
 
       {mounted &&

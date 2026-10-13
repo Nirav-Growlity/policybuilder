@@ -7,6 +7,8 @@ import { useGSAP } from "@gsap/react";
 import { MotionConfig, motion } from "motion/react";
 import { Textarea } from "@/components/ui/input";
 import styles from "./authoring.module.css";
+import { StreamingProse, useRevealText } from "@/components/ui/ai-stream";
+import type { TextReveal } from "@/lib/ai/text-reveal";
 
 gsap.registerPlugin(useGSAP);
 
@@ -71,44 +73,33 @@ export function AutosizeTextarea({ value, onChange, className, rows = 1, ...rest
 
 const countWords = (text: string) => text.trim() ? text.trim().split(/\s+/).length : 0;
 
-/** Long-form section body: a calm writing surface with a word count beneath it. */
-export function WritingField({ value, onChange, placeholder, busy, label }: {
+/** Long-form section body: a calm writing surface with a word count beneath it. While `stream` is set, the AI's words arrive in place. */
+export function WritingField({ value, onChange, placeholder, busy, label, stream }: {
   value: string;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
   busy?: boolean;
   label?: string;
+  stream?: TextReveal;
 }) {
-  const words = countWords(value);
-  const surfaceRef = React.useRef<HTMLDivElement>(null);
-  const wasBusy = React.useRef(busy);
-
-  // When generation finishes, the new text resolves from a soft blur into focus.
-  React.useEffect(() => {
-    const finished = wasBusy.current && !busy;
-    wasBusy.current = busy;
-    const surface = surfaceRef.current;
-    if (!finished || !surface) return;
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.fromTo(surface, { opacity: 0.35, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "power2.out", clearProps: "opacity,filter" });
-    });
-    return () => media.revert();
-  }, [busy]);
+  const streamed = useRevealText(stream);
+  const words = countWords(stream ? streamed : value);
 
   return (
     <div>
-      <div ref={surfaceRef}>
-      <AutosizeTextarea
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        rows={4}
-        aria-label={label}
-        data-busy={busy || undefined}
-        className={styles.writing}
-      />
-      </div>
+      {stream ? (
+        <StreamingProse reveal={stream} label={label} className={styles.writing} />
+      ) : (
+        <AutosizeTextarea
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          rows={4}
+          aria-label={label}
+          data-busy={busy || undefined}
+          className={styles.writing}
+        />
+      )}
       <div className={styles.fieldMeta} aria-hidden="true">
         {words > 0 ? <span>{words} {words === 1 ? "word" : "words"}</span> : null}
       </div>
