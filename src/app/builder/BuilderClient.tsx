@@ -258,7 +258,6 @@ function BuilderClientWorkspace() {
   const order = getStepOrder(policy);
   const currentIndex = Math.max(0, order.indexOf(step));
   const isFirst = currentIndex === 0;
-  const isLast = currentIndex === order.length - 1;
   const StepCmp = STEP_RENDERERS[step] || StepStructure;
 
   React.useEffect(() => {
@@ -734,7 +733,7 @@ function BuilderClientWorkspace() {
           e.target.value = "";
         }}
       />
-      <BuilderShell coverEditing={coverEditing} saveStatus={saveStatusLabel} policyMenu={policyMenu} taskChip={taskChip} isFirstStep={isFirst} isLastStep={isLast}>
+      <BuilderShell coverEditing={coverEditing} saveStatus={saveStatusLabel} policyMenu={policyMenu} taskChip={taskChip} isFirstStep={isFirst}>
         <div key={step} className={step === "export" ? undefined : `pc-builder-authoring ${styles.stepContent}`}>
           <StepCmp onCoverEditingChange={step === "export" ? setCoverEditing : undefined} />
         </div>

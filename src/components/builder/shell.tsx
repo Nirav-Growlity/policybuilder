@@ -98,16 +98,14 @@ export function BuilderShell({
   policyMenu,
   taskChip,
   isFirstStep = false,
-  isLastStep = false,
 }: {
   children: React.ReactNode;
   coverEditing?: boolean;
   saveStatus?: string | null;
   policyMenu?: React.ReactNode;
   taskChip?: React.ReactNode;
-  // Step-order flags come from the builder, which owns the step order.
+  // The first-step flag comes from the builder, which owns the step order.
   isFirstStep?: boolean;
-  isLastStep?: boolean;
 }) {
   const { step, setStep, policy, next, prev, coverEditorRequest, includeAuthorSignature, authorSignatureDate, authorSignatureUpdatedAt, isAICoverGenerating } = useBuilder();
   const workspaceScope = usePolicyCraftScope((state) => state.scope);
@@ -116,10 +114,14 @@ export function BuilderShell({
   const PolicyIcon = policyMeta.icon === "Users" ? Users : policyMeta.icon === "BadgeIndianRupee" ? BadgeIndianRupee : Leaf;
   const order = getStepOrder(policy);
   const visibleSteps = getPolicySteps(policy.policyType).filter((item) => order.includes(item.id));
-  const currentIndex = Math.max(0, visibleSteps.findIndex((item) => item.id === step));
-  const currentStep = visibleSteps[currentIndex];
-  const nextStep = visibleSteps[currentIndex + 1];
-  const progress = visibleSteps.length ? ((currentIndex + 1) / visibleSteps.length) * 100 : 0;
+  // The rail lists the writing steps only; review and export lives behind its own mode tab.
+  const railSteps = visibleSteps.filter((item) => item.id !== "export");
+  const reviewing = step === "export";
+  const currentIndex = reviewing ? railSteps.length : Math.max(0, railSteps.findIndex((item) => item.id === step));
+  const currentStep = visibleSteps.find((item) => item.id === step) ?? railSteps[currentIndex];
+  const nextStep = railSteps[currentIndex + 1];
+  const progress = reviewing ? 100 : railSteps.length ? ((currentIndex + 1) / railSteps.length) * 100 : 0;
+  const stepNumber = Math.min(currentIndex + 1, railSteps.length);
   const workspaceHref = workspaceScope?.role === "admin" ? "/admin/policies" : workspaceScope?.role === "manager" ? `/manager?orgId=${workspaceScope.organizationId}` : "/drafts";
   const narrowViewport = React.useSyncExternalStore(subscribeViewport, getNarrowViewport, getServerFlag);
   const sidebarCollapsed = React.useSyncExternalStore(subscribeSidebarPreference, getSidebarPreference, getServerFlag);
@@ -234,7 +236,7 @@ export function BuilderShell({
   );
 
   return (
-    <div className={styles.shell} data-sidebar-preference-loaded={sidebarPreferenceLoaded || undefined} data-builder-mode={mode}>
+    <div className={styles.shell} data-sidebar-preference-loaded={sidebarPreferenceLoaded || undefined} data-builder-mode={mode} style={{ "--rail-offset": `${showRail && !narrowViewport ? (railExpanded ? 272 : 68) : 0}px` } as React.CSSProperties}>
       {showRail && workflowOpen && <button type="button" aria-label="Close workflow navigation" onClick={closeWorkflow} className={styles.scrim} />}
       {showRail && (
         <aside ref={workflowPanel} tabIndex={-1} id="builder-workflow" role={narrowViewport ? "dialog" : undefined} aria-modal={narrowViewport && workflowOpen || undefined} aria-label="Builder workflow navigation" aria-hidden={narrowViewport && !workflowOpen || undefined} inert={narrowViewport && !workflowOpen}
@@ -249,12 +251,12 @@ export function BuilderShell({
               <button type="button" onClick={closeWorkflow} aria-label="Close navigation" className={clsx(styles.railButton, styles.narrowOnly)}><X size={16} aria-hidden="true" /></button>
             </div>
             <div className={styles.policyMeta}><span className={styles.policyIcon}><PolicyIcon size={15} aria-hidden="true" /></span><span className="min-w-0"><span className={styles.metaEyebrow}>Active policy</span><span className={styles.metaLabel}>{policyMeta.label}</span></span></div>
-            <div className={styles.progress} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress)} aria-valuetext={`${Math.round(progress)} percent, step ${currentIndex + 1} of ${visibleSteps.length}`} aria-label="Builder progress">
-              <div className={styles.progressLabels}><span>{String(currentIndex + 1).padStart(2, "0")} / {String(visibleSteps.length).padStart(2, "0")}</span><span>{Math.round(progress)}%</span></div>
+            <div className={styles.progress} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress)} aria-valuetext={`${Math.round(progress)} percent, step ${stepNumber} of ${railSteps.length}`} aria-label="Builder progress">
+              <div className={styles.progressLabels}><span>{String(stepNumber).padStart(2, "0")} / {String(railSteps.length).padStart(2, "0")}</span><span>{Math.round(progress)}%</span></div>
               <div className={styles.progressTrack}><div className={styles.progressBar} style={{ width: `${progress}%` }} /></div>
             </div>
             <nav className={styles.nav} aria-label="Policy sections">
-              <ul className={styles.navList}>{visibleSteps.map((item, index) => {
+              <ul className={styles.navList}>{railSteps.map((item, index) => {
                 const active = item.id === step;
                 const done = index < currentIndex;
                 return <li key={item.id}><button type="button" onClick={() => setStep(item.id)} aria-current={active ? "step" : undefined} title={item.desc} className={styles.navButton}>
@@ -271,7 +273,7 @@ export function BuilderShell({
             <div className={styles.collapsedContent}>
               <span className={styles.miniPolicy} title={`Active policy: ${policyMeta.label}`}><PolicyIcon size={15} aria-hidden="true" /></span>
               <span className={styles.miniProgress} title={`Progress ${Math.round(progress)}%`}>{Math.round(progress)}%</span>
-              <nav className={styles.miniNav} aria-label="Policy sections">{visibleSteps.map((item, index) => <button type="button" key={item.id} onClick={() => setStep(item.id)} title={`Step ${index + 1}: ${item.label} — ${item.desc}`} aria-label={`Step ${index + 1}: ${item.label}`} aria-current={item.id === step ? "step" : undefined} className={styles.stepIcon}>{item.id === step && <motion.span layoutId="builder-workflow-selection" aria-hidden="true" className={styles.workflowMarkerCompact} transition={markerTransition} />}{index < currentIndex ? <Check size={13} aria-hidden="true" /> : String(index + 1).padStart(2, "0")}</button>)}</nav>
+              <nav className={styles.miniNav} aria-label="Policy sections">{railSteps.map((item, index) => <button type="button" key={item.id} onClick={() => setStep(item.id)} title={`Step ${index + 1}: ${item.label} — ${item.desc}`} aria-label={`Step ${index + 1}: ${item.label}`} aria-current={item.id === step ? "step" : undefined} className={styles.stepIcon}>{item.id === step && <motion.span layoutId="builder-workflow-selection" aria-hidden="true" className={styles.workflowMarkerCompact} transition={markerTransition} />}{index < currentIndex ? <Check size={13} aria-hidden="true" /> : String(index + 1).padStart(2, "0")}</button>)}</nav>
             </div>
           </>}
         </aside>
@@ -330,7 +332,7 @@ export function BuilderShell({
                   </div>
                 </div>
                 <div className={styles.footer}>
-                  <p className={styles.stepCount}>Step {currentIndex + 1} of {visibleSteps.length}</p>
+                  <p className={styles.stepCount}>{reviewing ? "Review & export" : `Step ${stepNumber} of ${railSteps.length}`}</p>
                   <div className={styles.footerActions}>
                     <Button variant="secondary" size="md" icon={<ArrowLeft size={14} aria-hidden="true" />} onClick={prev} disabled={isFirstStep}>Back</Button>
                     {mode === "review" && <div role="group" aria-label="Export document" className={styles.exportActions}>
@@ -338,7 +340,9 @@ export function BuilderShell({
                       <Button variant="primary" size="md" disabled={!!exporting} loading={exporting === "pdf"} icon={<FileDown size={14} aria-hidden="true" />} onClick={() => download("pdf")}>{exporting === "pdf" ? "Downloading PDF…" : "Download PDF"}</Button>
                       <span className="sr-only" role="status" aria-live="polite">{exporting ? `Preparing ${exporting === "pdf" ? "PDF" : "Word"} download.` : ""}</span>
                     </div>}
-                    {!isLastStep && nextStep && <Button variant="primary" size="md" trailingIcon={<ArrowRight size={14} aria-hidden="true" />} onClick={next}>Next: {nextStep.label}</Button>}
+                    {!reviewing && (nextStep
+                      ? <Button variant="primary" size="md" trailingIcon={<ArrowRight size={14} aria-hidden="true" />} onClick={next}>Next: {nextStep.label}</Button>
+                      : <Button variant="primary" size="md" trailingIcon={<ArrowRight size={14} aria-hidden="true" />} onClick={enterDesign}>Next: Design</Button>)}
                   </div>
                 </div>
               </div>

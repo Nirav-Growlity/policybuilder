@@ -110,6 +110,21 @@
 .headerButton:hover { background: var(--shell-inset); }
 .headerButtonActive { border-color: var(--shell-primary); background: var(--shell-selection); }
 .mobileWorkflow { display: none; }
+/* The mode switch keeps one position whichever mode is open and whatever the header holds.
+   Desktop: centred in the header between equal columns. Wide: centred on the window, so it
+   also stays put when the rail appears or collapses (--rail-offset is the rail's width). */
+@media (min-width: 1200px) {
+  .header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .headerStart { grid-column: 1; }
+  .modeSwitch { grid-column: 2; }
+  .headerEnd { grid-column: 3; }
+}
+@media (min-width: 1440px) {
+  .header { position: relative; display: flex; flex-wrap: nowrap; }
+  .modeSwitch { position: absolute; top: 50%; left: calc(50vw - var(--rail-offset, 0px)); transform: translate(-50%, -50%); }
+  .headerStart { flex: 0 1 auto; max-width: calc(50vw - var(--rail-offset, 0px) - 172px); }
+  .headerEnd { flex: 0 1 auto; max-width: calc(50vw - 172px); margin-left: auto; }
+}
 
 .body { display: flex; min-height: 0; flex: 1 1 auto; overflow: hidden; }
 .main { display: flex; min-width: 0; min-height: 0; flex: 1 1 auto; flex-direction: column; }
