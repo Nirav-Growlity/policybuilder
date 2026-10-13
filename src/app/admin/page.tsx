@@ -13,7 +13,7 @@ import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { ActionDisclosure, ActionDisclosureItem } from "@/components/ui/action-disclosure";
 import { OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
 import { DelayedLoading, ListRegion } from "@/components/workspace/workspace-list";
-import { Avatar, SelectionPill, useRecordMotion, WorkspaceHero, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
+import { Avatar, SelectionPill, useRecordMotion, WorkspaceHero, WorkspaceRouteFallback, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
 import styles from "./page.module.css";
 
 type AdminManagersResponse = { managers: PolicyCraftManagerSummary[]; organizations: PolicyCraftOrganization[] };
@@ -305,5 +305,5 @@ function AdminManagersContent() {
 function UsersIcon() { return <span className={styles.emptyIcon}><UserRound size={22} aria-hidden="true" /></span>; }
 
 export default function AdminManagersPage() {
-  return <React.Suspense fallback={<div className="min-h-48" aria-busy="true" aria-label="Loading manager filters" />}><AdminManagersContent /></React.Suspense>;
+  return <React.Suspense fallback={<WorkspaceRouteFallback label="Loading managers" />}><AdminManagersContent /></React.Suspense>;
 }

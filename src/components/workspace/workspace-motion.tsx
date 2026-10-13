@@ -186,6 +186,28 @@ function StatValue({ value }: { value: number | string | null }) {
   );
 }
 
+/**
+ * Stand-in while a route's client tree mounts. It draws the same masthead band
+ * and sheet footprint as a real page, so swapping it for the live content only
+ * changes text. A blank box here made every route change flash empty, then jump.
+ */
+export function WorkspaceRouteFallback({ label }: { label: string }) {
+  return (
+    <div role="status" aria-busy="true">
+      <span className={styles.visuallyHidden}>{label}</span>
+      <section className={styles.hero} aria-hidden="true">
+        <div className={styles.heroInner}>
+          <div className={styles.heroText}>
+            <span className={styles.routeSkeletonEyebrow} />
+            <span className={styles.routeSkeletonTitle} />
+          </div>
+        </div>
+      </section>
+      <div className={styles.sheet} aria-hidden="true" style={{ minHeight: 360 }} />
+    </div>
+  );
+}
+
 /** The light working surface laid over the masthead's lower edge. */
 export function WorkspaceSheet({ as = "div", className, children, ...props }: { as?: "div" | "section" } & Omit<HTMLMotionProps<"div">, "ref">) {
   const entrance = useEntranceOnce("sheet");

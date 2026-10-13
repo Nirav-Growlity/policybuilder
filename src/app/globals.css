@@ -594,6 +594,12 @@ html[data-pc-shell] .pc-ui :is(input:not([type="checkbox"]):not([type="radio"]),
   html[data-pc-shell] .pc-modal-close:hover { transform: none; }
 }
 
+/* Always reserve the scrollbar's space. During a page change the document is
+   briefly too short to scroll (old page gone, new one still loading); without
+   this the scrollbar vanished and the centred layout slid sideways by half its
+   width, then slid back once the new page filled in. */
+html[data-pc-shell] { scrollbar-gutter: stable; }
+
 /* ── Workspace page transitions (React <ViewTransition> in WorkspaceShell) ──
    The header is anchored; the page underneath leaves fast and the next one
    settles in with a short rise and a blur-to-sharp resolve. */

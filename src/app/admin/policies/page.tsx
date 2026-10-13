@@ -14,7 +14,7 @@ import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { POLICY_PROFILES } from "@/lib/constants";
 import { initialPolicy } from "@/lib/store";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
-import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceSheet } from "@/components/workspace/workspace-motion";
+import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceRouteFallback, WorkspaceSheet } from "@/components/workspace/workspace-motion";
 import { DelayedLoading, ListRegion, Pagination, useMediaQuery, usePagination } from "@/components/workspace/workspace-list";
 import { policyCraftExportContext } from "@/lib/policycraft-client-scope";
 import { organizationSourceName } from "@/components/workspace/organization-source-label";
@@ -347,5 +347,5 @@ function AdminPoliciesContent() {
 }
 
 export default function AdminPoliciesPage() {
-  return <React.Suspense fallback={<div className="min-h-48" aria-busy="true" />}><AdminPoliciesContent /></React.Suspense>;
+  return <React.Suspense fallback={<WorkspaceRouteFallback label="Loading policies" />}><AdminPoliciesContent /></React.Suspense>;
 }

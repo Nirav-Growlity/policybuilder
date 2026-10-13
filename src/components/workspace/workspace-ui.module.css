@@ -6,6 +6,10 @@
   --ws-spot-y: 20%;
   position: relative;
   isolation: isolate;
+  /* Every masthead is at least as tall as the tallest one (the Organizations
+     page with its tab row). The sheet laid over the bottom edge then starts at
+     the same height on every page, so changing pages no longer moves it. */
+  min-height: 394px;
   margin-inline: calc(50% - 50vw);
   padding: 44px 0 104px;
   overflow: hidden;
@@ -87,6 +91,24 @@
 /* Each title word rises out of its own mask; padding keeps descenders unclipped. */
 .heroWordMask { display: inline-block; overflow: hidden; padding: 0 .04em .12em; margin: 0 -.04em -.12em; vertical-align: top; }
 .heroWord { display: inline-block; }
+
+/* Route fallback: static placeholders sized like the real eyebrow and title. */
+.routeSkeletonEyebrow {
+  display: block;
+  width: 120px;
+  height: 12px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: var(--ws-ink-line);
+}
+
+.routeSkeletonTitle {
+  display: block;
+  width: min(560px, 80vw);
+  height: clamp(34px, 4.4vw, 52px);
+  border-radius: 12px;
+  background: var(--ws-ink-line);
+}
 
 .heroDescription {
   max-width: 62ch;

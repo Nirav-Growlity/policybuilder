@@ -114,7 +114,9 @@ export function WorkspaceShell({
   if (visit.path !== pathname) setVisit({ path: pathname, id: visit.id + 1 });
 
   // Each page starts at the top with no smooth-scroll momentum carried over.
-  React.useEffect(() => {
+  // A layout effect runs before the browser paints, so the new page never
+  // shows for a frame at the previous page's scroll offset and then jumps.
+  React.useLayoutEffect(() => {
     lenisRef.current?.scrollTo(0, { immediate: true, force: true });
   }, [pathname]);
   const closeAccountMenu = React.useCallback(() => {
