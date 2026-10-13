@@ -6,9 +6,18 @@ import { SDG_DATA } from "@/lib/constants";
 import { Panel, Badge } from "@/components/ui/panel";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
-import { Globe2, X } from "lucide-react";
+import { Check, Globe2, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import { useToast } from "@/components/ui/toast";
-import { clsx } from "clsx";
+import { StepRoot, authoring as ui } from "./authoring-ui";
+
+// Text colour on a filled goal tile: dark ink on light goal colours, white otherwise.
+function inkOn(hex: string) {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
+    .map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  return luminance > 0.179 ? "#0b1220" : "#ffffff";
+}
 
 export function StepSDG() {
   const { policy, updatePolicy } = useBuilder();
@@ -40,8 +49,7 @@ export function StepSDG() {
   };
 
   return (
-    <div className="space-y-6">
-
+    <StepRoot>
       <Panel
         title="UN Sustainable Development Goals alignment"
         icon={<Globe2 size={17} strokeWidth={1.8} />}
@@ -56,71 +64,77 @@ export function StepSDG() {
           </>
         }
       >
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
+        <div className={ui.goals}>
           {SDG_DATA.map((s) => {
             const sel = policy.sdgs.includes(s.n);
             return (
-              <button
+              <motion.button
                 type="button"
                 key={s.n}
                 onClick={() => toggle(s.n)}
-                  aria-pressed={sel}
-                  aria-label={`SDG ${s.n}: ${s.label}`}
-                className={clsx(
-                  "relative min-h-24 p-3 rounded-lg border border-transparent text-left transition-colors duration-150 group",
-                  sel
-                    ? "ring-2 ring-offset-2 ring-offset-[var(--color-paper)]"
-                    : "opacity-55 hover:opacity-90"
-                )}
-                style={{
-                  background: `${s.c}14`,
-                  color: s.c,
-                  "--tw-ring-color": s.c,
-                } as React.CSSProperties}
+                aria-pressed={sel}
+                aria-label={`SDG ${s.n}: ${s.label}`}
+                className={ui.goal}
+                style={{ "--goal": s.c, "--goal-ink": inkOn(s.c) } as React.CSSProperties}
+                whileTap={{ scale: 0.96 }}
               >
-                <div className="text-[20px] font-display font-bold leading-none">{s.n}</div>
-                <div className="text-[13px] mt-1.5 leading-tight font-medium line-clamp-2">{s.label}</div>
-                {sel && (
-                  <div className="absolute top-1.5 right-1.5 w-4 h-4 rounded-full flex items-center justify-center" style={{ background: s.c }}>
-                    <X size={9} className="text-white" />
-                  </div>
-                )}
-              </button>
+                <span className={ui.goalNumber}>{s.n}</span>
+                <span className={ui.goalLabel}>{s.label}</span>
+                <AnimatePresence initial={false}>
+                  {sel && (
+                    <motion.span
+                      key="mark"
+                      className={ui.goalMark}
+                      aria-hidden="true"
+                      initial={{ scale: 0.4, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.4, opacity: 0 }}
+                      transition={{ type: "spring", stiffness: 520, damping: 28 }}
+                    >
+                      <Check size={13} strokeWidth={3} />
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </motion.button>
             );
           })}
         </div>
 
         {policy.sdgs.length > 0 && (
-          <div className="mt-6 pt-5 border-t border-[var(--color-line)]">
-            <div className="text-[11.5px] font-semibold uppercase tracking-wider text-[var(--color-ink-2)] mb-3">
-              Selected ({policy.sdgs.length})
+          <>
+            <hr className={ui.divider} />
+            <div className={ui.groupHead}>
+              <h4 className={ui.groupTitle}>Selected goals</h4>
+              <span className={ui.groupCount}>{policy.sdgs.length} of {SDG_DATA.length}</span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {policy.sdgs.map((n) => {
-                const s = SDG_DATA.find((d) => d.n === n)!;
-                return (
-                  <span
-                    key={n}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11.5px] font-semibold border"
-                    style={{ background: `${s.c}15`, color: s.c, borderColor: `${s.c}40` }}
-                  >
-                    <span
-                      className="w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold text-white"
-                      style={{ background: s.c }}
+            <div className={ui.chips}>
+              <AnimatePresence initial={false}>
+                {policy.sdgs.map((n) => {
+                  const s = SDG_DATA.find((d) => d.n === n)!;
+                  return (
+                    <motion.span
+                      key={n}
+                      layout="position"
+                      className={ui.chip}
+                      style={{ "--goal": s.c, "--goal-ink": inkOn(s.c) } as React.CSSProperties}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.18 }}
                     >
-                      {s.n}
-                    </span>
-                    SDG {s.n}: {s.label}
-                    <button onClick={() => toggle(n)} className="ml-1 opacity-60 hover:opacity-100">
-                      <X size={11} />
-                    </button>
-                  </span>
-                );
-              })}
+                      <span className={ui.chipNumber}>{s.n}</span>
+                      {s.label}
+                      <button type="button" onClick={() => toggle(n)} className={ui.chipRemove} aria-label={`Remove SDG ${s.n}: ${s.label}`}>
+                        <X size={13} />
+                      </button>
+                    </motion.span>
+                  );
+                })}
+              </AnimatePresence>
             </div>
-          </div>
+          </>
         )}
       </Panel>
-    </div>
+    </StepRoot>
   );
 }

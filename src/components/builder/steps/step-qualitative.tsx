@@ -3,13 +3,15 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel } from "@/components/ui/panel";
-import { Input, Textarea } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { ListChecks, Plus, X } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
+import { AnimatePresence, motion } from "motion/react";
+import { AutosizeTextarea, StepRoot, authoring as ui, itemEnter } from "./authoring-ui";
 
 export function StepQualitative() {
   const { policy, updatePolicy } = useBuilder();
@@ -139,15 +141,14 @@ export function StepQualitative() {
   };
 
   return (
-    <div className="space-y-6">
-
+    <StepRoot>
       {areas.map((area, i) => {
         const objs = policy.qualitative[area] || [];
         const isBusy = busy[`area-${i}`];
         return (
           <Panel
             key={area}
-            title={`${i + 1}. ${area}`}
+            title={<><span className={ui.areaIndex}>{i + 1}</span>{area}</>}
             description={`${objs.length} objective${objs.length === 1 ? "" : "s"}`}
             icon={<ListChecks size={17} strokeWidth={1.8} />}
             actions={
@@ -158,47 +159,47 @@ export function StepQualitative() {
               />
             }
           >
-            <ol className="space-y-2">
-              {objs.map((obj, oi) => (
-                <li
-                  key={oi}
-                  className="group flex items-start gap-3 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]/45 px-3.5 py-2.5 transition-colors hover:border-[var(--color-line-2)]"
-                >
-                  <div className="w-5 h-5 rounded-full bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)] flex items-center justify-center flex-shrink-0 mt-1 text-[10px] font-bold">
-                    •
-                  </div>
-                  <Textarea
-                    rows={Math.max(1, Math.ceil((obj || "").length / 110))}
-                    value={obj}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => update(area, oi, e.target.value)}
-                    className="min-w-0 border-transparent bg-transparent px-1.5 -mx-1.5 py-1 leading-6 text-[13px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] resize-y"
-                  />
-                  <div className="flex shrink-0 items-center gap-1 self-center">
-                    <AIActionButton
-                      label="Refine"
-                      variant="ghost"
-                      loading={busy[`objective-${i}-${oi}`]}
-                      onGenerate={(prompt) => generateObjective(area, i, oi, prompt)}
-                      placeholder="e.g. Make this more specific to our manufacturing operations..."
-                      className="text-[12px]"
-                    />
-                    <button
-                      onClick={() => remove(area, oi)}
-                      className="rounded-md p-1.5 text-[var(--color-muted)] transition-colors hover:bg-[#fdecec] hover:text-[#9b2929]"
-                      aria-label="Remove objective"
-                    >
-                      <X size={14} />
-                    </button>
-                  </div>
-                </li>
-              ))}
-              {objs.length === 0 && (
-                <li className="text-[12.5px] text-[var(--color-muted)] italic px-1">
-                  No objectives yet. Add one below or use AI Generate.
-                </li>
-              )}
-            </ol>
-            <div className="mt-4 flex gap-2 border-t border-[var(--color-line)] pt-4">
+            {objs.length > 0 ? (
+              <ol className={ui.objectives}>
+                <AnimatePresence initial={false}>
+                  {objs.map((obj, oi) => (
+                    <motion.li key={oi} className={ui.objective} {...itemEnter}>
+                      <AutosizeTextarea
+                        value={obj}
+                        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => update(area, oi, e.target.value)}
+                        aria-label={`${area} objective ${oi + 1}`}
+                        className={`${ui.inline} ${ui.objectiveText}`}
+                      />
+                      <div className={ui.rowActions}>
+                        <AIActionButton
+                          label="Refine"
+                          variant="ghost"
+                          loading={busy[`objective-${i}-${oi}`]}
+                          onGenerate={(prompt) => generateObjective(area, i, oi, prompt)}
+                          placeholder="e.g. Make this more specific to our manufacturing operations..."
+                        />
+                        <button
+                          type="button"
+                          onClick={() => remove(area, oi)}
+                          className={ui.iconButton}
+                          data-tone="danger"
+                          aria-label="Remove objective"
+                        >
+                          <X size={15} />
+                        </button>
+                      </div>
+                    </motion.li>
+                  ))}
+                </AnimatePresence>
+              </ol>
+            ) : (
+              <div className={`${ui.empty} mb-3`}>
+                <ListChecks size={18} aria-hidden="true" />
+                No objectives yet. Add one below or use AI Generate.
+              </div>
+            )}
+            <div className={ui.composer}>
+              <span className={ui.composerIcon} aria-hidden="true"><Plus size={16} /></span>
               <Input
                 value={newObj[i] || ""}
                 data-grammar-checking={checkingNewObjective[i] ? "true" : undefined}
@@ -210,16 +211,17 @@ export function StepQualitative() {
                   }
                 }}
                 placeholder="Add a qualitative objective..."
-                className="border-dashed text-[13px]"
+                aria-label={`Add an objective to ${area}`}
+                className={ui.composerInput}
                 disabled={checkingNewObjective[i]}
               />
-              <Button variant="primary" size="md" icon={<Plus size={14} />} onClick={() => { void add(area, i); }} disabled={checkingNewObjective[i]}>
-                Add Objective
+              <Button variant="primary" size="sm" loading={checkingNewObjective[i]} onClick={() => { void add(area, i); }} disabled={checkingNewObjective[i]} className={ui.composerAdd}>
+                Add objective
               </Button>
             </div>
           </Panel>
         );
       })}
-    </div>
+    </StepRoot>
   );
 }

@@ -8,6 +8,7 @@ import { z } from "zod";
 import { Modal } from "@/components/ui/modal";
 import { ApplicationButton, ApplicationField, ApplicationInput, ApplicationStatus } from "@/components/ui/app-primitives";
 import { SelectMenu } from "@/components/ui/select-menu";
+import { DatePicker } from "@/components/ui/calendar";
 import { useApplicationSurface } from "@/components/ui/application-surface";
 import { POLICY_PROFILES } from "@/lib/constants";
 import type { PolicyType } from "@/lib/types";
@@ -146,6 +147,7 @@ function TaskEditorModalContent({
   });
   const organizationId = useWatch({ control: form.control, name: "organizationId" });
   const managerId = useWatch({ control: form.control, name: "managerId" });
+  const dueDate = useWatch({ control: form.control, name: "dueDate" });
   const policyType = useWatch({ control: form.control, name: "policyType" });
   const eligibleManagers = managers.filter((manager) => {
     if (!organizationId) return false;
@@ -166,7 +168,7 @@ function TaskEditorModalContent({
         <ApplicationField id="task-organization" label="Organization" required error={form.formState.errors.organizationId?.message}><SelectMenu value={organizationId} onValueChange={changeOrganization} options={organizationSelectOptions(organizations.filter((organization) => !organization.deleted && !organization.expired))} disabled={linked} required placeholder="Choose organization" searchPlaceholder="Search organizations…" className={fieldClass} /></ApplicationField>
         <ApplicationField id="task-policy-type" label="Policy type" required error={form.formState.errors.policyType?.message}><SelectMenu value={policyType} onValueChange={(next) => form.setValue("policyType", next as TaskFormDraft["policyType"], { shouldDirty: true })} options={Object.entries(POLICY_PROFILES).map(([key, profile]) => ({ value: key, label: profile.label }))} disabled={linked} required placeholder="Choose policy" className={fieldClass} /></ApplicationField>
         {!task || !linked ? <ApplicationField id="task-manager" label="Assign to" required error={form.formState.errors.managerId?.message} hint={organizationId && !eligibleManagers.length ? "Assign a manager to this organization before creating the task." : undefined} className="sm:col-span-2"><SelectMenu value={managerId} onValueChange={(next) => form.setValue("managerId", next, { shouldDirty: true })} options={eligibleManagers.map((manager) => ({ value: manager.id, label: manager.name || manager.email, description: manager.name ? manager.email : undefined }))} disabled={!eligibleManagers.length} required placeholder={eligibleManagers.length ? "Choose an assigned manager" : "No eligible managers"} searchPlaceholder="Search managers…" className={fieldClass} /></ApplicationField> : null}
-        <ApplicationField id="task-deadline" label={<>Deadline <span className="font-normal">· end of day, India Standard Time</span></>} required error={form.formState.errors.dueDate?.message} className="sm:col-span-2"><input type="date" {...form.register("dueDate")} required className={`${styles.dateInput} ${fieldClass}`} /></ApplicationField>
+        <ApplicationField id="task-deadline" label={<>Deadline <span className="font-normal">· end of day, India Standard Time</span></>} required error={form.formState.errors.dueDate?.message} className="sm:col-span-2"><DatePicker id="task-deadline" value={dueDate} onChange={(date) => form.setValue("dueDate", date, { shouldDirty: true })} hasError={!!form.formState.errors.dueDate} placeholder="Choose a deadline" className={fieldClass} /></ApplicationField>
         <ApplicationField id="task-instructions" label={<>Instructions <span className="font-normal">· optional</span></>} error={form.formState.errors.instructions?.message} className="sm:col-span-2"><textarea {...form.register("instructions")} maxLength={4000} className={styles.textarea} placeholder="Add scope or delivery notes…" /></ApplicationField>
       </div>
       <div className="mt-6 flex flex-col-reverse justify-end gap-2 sm:flex-row">

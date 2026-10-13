@@ -307,18 +307,6 @@
 .pc-feature-field-error { color: var(--pc-error); }
 .pc-feature-field-hint { color: var(--pc-muted); }
 .pc-builder-authoring [role="option"][data-pc-active="true"] { background: var(--pc-selection); color: var(--pc-selection-text); }
-.pc-ui [data-pc-ai-action] { min-width: 128px; min-height: 36px; border-radius: 8px; background: var(--pc-panel); background-image: none; border: 1px solid var(--pc-ai); color: var(--pc-ai); box-shadow: none; font-family: var(--pc-font); font-size: 13px; }
-.pc-ui [data-pc-ai-action]:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
-.pc-generation-popover { max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px); overflow-y: auto; background: var(--pc-panel); border-color: var(--pc-divider); box-shadow: 0 12px 28px rgb(0 0 0 / 14%); transform-origin: top right; }
-.pc-generation-popover button[type="submit"] { background: var(--pc-primary); background-image: none; color: var(--pc-primary-text); border-radius: 8px; box-shadow: none; }
-.pc-generation-popover :is(.bg-amber-50,.bg-amber-600) { background: var(--pc-inset); }
-.pc-generation-popover :is(.text-amber-600,.text-amber-700) { color: var(--pc-ai); }
-.pc-generation-popover button:hover > div:first-child { background: var(--pc-selection); color: var(--pc-ai); }
-.pc-calendar-control > [role="button"] { border-radius: 8px; color: var(--pc-text); background: var(--pc-panel); font-family: var(--pc-font); font-size: 13px; }
-.pc-calendar-control > [role="button"]:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
-.pc-calendar-popover { max-width: 100%; border-color: var(--pc-divider); background: var(--pc-panel); font-family: var(--pc-font); animation: pc-calendar-entrance 150ms ease-out; transform-origin: top left; }
-.pc-calendar-popover [data-calendar-day] { width: 100%; min-width: 0; }
-.pc-calendar-popover [data-pc-selected="true"] { color: var(--pc-primary-text); background: var(--pc-primary); box-shadow: none; }
 
 @media (max-width: 640px) {
   .pc-company-info-panel > .pc-authoring-panel-header { flex-direction: column; align-items: stretch; }
@@ -384,7 +372,6 @@
 .pc-ui .pc-ai-cover-library article:not([data-ai-cover-preview] *) { border-color: var(--pc-divider); border-radius: 14px; box-shadow: none; }
 .pc-ui [data-cover-canvas] [data-cover-element]:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
 .pc-ui :is([data-cover-toolbar], [data-cover-tools], [data-cover-properties], [data-cover-mobile-tools], [data-cover-mobile-panel], [data-cover-dialog], .pc-ai-cover-workflow, .pc-ai-cover-library) button:active:not(:disabled) { transform: scale(.98); }
-@keyframes pc-calendar-entrance { from {opacity: 0; transform: scale(.98);} to {opacity: 1; transform: scale(1);} }
 
 /* Opted-in record pages own their backdrop; later feature bodies retain legacy styling. */
 div:has(> #workspace-main > [data-pc-pilot="inventory"]),

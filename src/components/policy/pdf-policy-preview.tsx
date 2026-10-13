@@ -4,10 +4,13 @@ import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
 import { getPdfCanvasTransform, getPdfPageWidth } from "@/lib/pdf-preview-layout";
 import { PdfRenderLoader } from "@/components/policy/pdf-render-loader";
 import styles from "@/components/policy/pdf-policy-preview.module.css";
+import { SelectMenu } from "@/components/ui/select-menu";
 import type { Policy } from "@/lib/types";
 import { policyCraftExportContext, policyCraftScopeKey, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { requestPolicyPreview } from "@/lib/pdf/policy-preview-request";
 import "pdfjs-dist/web/pdf_viewer.css";
+
+const ZOOM_OPTIONS = [{ value: "fit", label: "Fit to width" }, { value: ".75", label: "75%" }, { value: "1", label: "100%" }, { value: "1.25", label: "125%" }];
 
 type PreviewResult = { key: string; scopeKey: string; bytes: Uint8Array; id: number; includesAuthorSignature: boolean };
 type PdfViewState = { pageNumber: number; zoom: string; viewMode: "continuous" | "paged" };
@@ -212,9 +215,7 @@ export function PdfPages({ bytes, view, onViewChange, interactive, dimmed = fals
         </div>
       </div>
       <div className={styles.zoomControls} role="group" aria-label="Zoom controls">
-        <select aria-label="Preview zoom" value={zoom} onChange={e => onViewChange(current => ({ ...current, zoom: e.target.value }))} className={styles.zoomSelect}>
-          <option value="fit">Fit to width</option><option value=".75">75%</option><option value="1">100%</option><option value="1.25">125%</option>
-        </select>
+        <SelectMenu aria-label="Preview zoom" size="compact" value={zoom} onValueChange={value => onViewChange(current => ({ ...current, zoom: value }))} options={ZOOM_OPTIONS} className={styles.zoomSelect} />
       </div>
     </div>
     {error && <p role="alert" className="mx-4 mt-3 rounded-lg border border-[var(--pc-divider)] bg-[var(--pc-error-surface)] px-3 py-2 text-[12px] text-[var(--pc-error)]">{error}</p>}

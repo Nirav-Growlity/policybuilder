@@ -3,17 +3,20 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel } from "@/components/ui/panel";
-import { Input, Textarea } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
+import { DatePicker } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { BarChart3, History, Plus, RefreshCw, Trash2, Users } from "lucide-react";
+import { BarChart3, History, Plus, RefreshCw, Trash2, UserCheck, Users } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
 import type { RevisionEntry } from "@/lib/types";
 import { resolveRevisionHistory, scheduleAnchorAfter, suggestMinorRevisionNumber } from "@/lib/revision-history";
 import { SignatureMaker } from "@/components/builder/signature-maker";
+import { AutosizeTextarea, StepRoot, WritingField, authoring as ui, itemEnter } from "./authoring-ui";
 
 export function StepResponsibilities() {
   const { policy, updatePolicy } = useBuilder();
@@ -130,14 +133,13 @@ export function StepResponsibilities() {
   };
 
   return (
-    <div className="space-y-6">
-
+    <StepRoot>
       {getSection(policy, "responsibilities")?.enabled && <Panel
         title="Roles & responsibilities"
         icon={<Users size={17} strokeWidth={1.8} />}
         actions={
           <>
-            <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={addRole}>
+            <Button variant="secondary" size="sm" icon={<Plus size={14} />} onClick={addRole}>
               Add role
             </Button>
             <AIActionButton
@@ -148,35 +150,46 @@ export function StepResponsibilities() {
           </>
         }
       >
-        <div className="space-y-2.5">
-          {policy.responsibilities.map((r, i) => (
-            <div
-              key={i}
-              className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-2 px-3 py-2.5 rounded-lg bg-[var(--color-cream-2)]/60 border border-[var(--color-line)]"
-            >
-              <Input
-                value={r.role}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRole(i, "role", e.target.value)}
-                placeholder="Role / department"
-                className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] font-semibold text-[13px]"
-              />
-              <Textarea
-                rows={Math.max(2, Math.ceil((r.duty || "").length / 50))}
-                value={r.duty}
-                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateRole(i, "duty", e.target.value)}
-                placeholder="Responsibility description"
-                className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] resize-y"
-              />
-              <button
-                onClick={() => removeRole(i)}
-                className="text-[var(--color-muted)] hover:text-[#9b2929] hover:bg-[#fdecec] p-2 rounded-md transition-colors opacity-0 group-hover:opacity-100 self-center"
-                aria-label="Remove"
-              >
-                <Trash2 size={14} />
-              </button>
-            </div>
-          ))}
-        </div>
+        {policy.responsibilities.length > 0 ? (
+          <div className={ui.roles}>
+            <AnimatePresence initial={false}>
+              {policy.responsibilities.map((r, i) => (
+                <motion.div key={i} className={ui.roleRow} {...itemEnter}>
+                  <Input
+                    value={r.role}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRole(i, "role", e.target.value)}
+                    placeholder="Role / department"
+                    aria-label={`Role ${i + 1}`}
+                    className={`${ui.inline} ${ui.roleName}`}
+                  />
+                  <AutosizeTextarea
+                    value={r.duty}
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateRole(i, "duty", e.target.value)}
+                    placeholder="Responsibility description"
+                    aria-label={`${r.role || `Role ${i + 1}`} responsibilities`}
+                    className={`${ui.inline} ${ui.roleDuty}`}
+                  />
+                  <div className={ui.rowActions}>
+                    <button
+                      type="button"
+                      onClick={() => removeRole(i)}
+                      className={ui.iconButton}
+                      data-tone="danger"
+                      aria-label={`Remove ${r.role || `role ${i + 1}`}`}
+                    >
+                      <Trash2 size={15} />
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        ) : (
+          <div className={ui.empty}>
+            <Users size={18} aria-hidden="true" />
+            No roles yet. Add one or use AI Generate.
+          </div>
+        )}
       </Panel>}
 
       {getSection(policy, "monitoring")?.enabled && <Panel
@@ -190,10 +203,11 @@ export function StepResponsibilities() {
           />
         }
       >
-        <Textarea
+        <WritingField
           value={policy.monitoring}
+          label="Monitoring, reporting & transparency"
+          busy={busy.monitoring}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy(() => ({ monitoring: e.target.value }))}
-          rows={5}
           placeholder="Describe how performance is monitored, which KPIs are tracked, review frequency, and how findings are reported..."
         />
       </Panel>}
@@ -209,10 +223,11 @@ export function StepResponsibilities() {
           />
         }
       >
-        <Textarea
+        <WritingField
           value={policy.reviewMechanism}
+          label="Review mechanism & continuous improvement"
+          busy={busy.review}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy(() => ({ reviewMechanism: e.target.value }))}
-          rows={5}
           placeholder="Describe how and when this policy is reviewed, who owns the review, and how changes are communicated..."
         />
       </Panel>}
@@ -222,28 +237,31 @@ export function StepResponsibilities() {
           title={getSection(policy, "revision")?.title || "Revision history"}
           icon={<History size={17} strokeWidth={1.8} />}
           actions={
-            <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={() => insertRevisionEntry(revisionHistory.length - 1)}>
+            <Button variant="secondary" size="sm" icon={<Plus size={14} />} onClick={() => insertRevisionEntry(revisionHistory.length - 1)}>
               Add revision
             </Button>
           }
         >
-          <div className="space-y-2.5">
-            <div className="hidden md:grid grid-cols-[100px_130px_1fr_auto] gap-2 px-3 py-1 text-[11px] font-semibold text-[var(--color-muted)] uppercase tracking-wider">
-              <span>Rev No.</span>
-              <span>Date</span>
-              <span>Description of Change</span>
-              <span className="w-8"></span>
-            </div>
+          <div className={ui.revisionHead} aria-hidden="true">
+            <span>Rev no.</span>
+            <span>Date</span>
+            <span>Description of change</span>
+            <span className="w-[70px]"></span>
+          </div>
+          <AnimatePresence initial={false}>
             {revisionHistory.map((rev, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="group grid grid-cols-1 md:grid-cols-[100px_130px_1fr_auto] gap-2 px-3 py-2.5 rounded-lg bg-[var(--color-cream-2)]/60 border border-[var(--color-line)]"
+                className={ui.revisionRow}
+                data-scheduled={rev.source === "scheduled" || undefined}
+                {...itemEnter}
               >
                 <Input
                   value={rev.revisionNo}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRevisionEntry(i, "revisionNo", e.target.value)}
                   placeholder="0.0"
-                  className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] font-semibold text-[13px]"
+                  aria-label={`Revision ${i + 1} number`}
+                  className={`${ui.inline} ${ui.revisionNo}`}
                 />
                 <Input
                   value={rev.date}
@@ -252,44 +270,48 @@ export function StepResponsibilities() {
                   readOnly={rev.source === "scheduled"}
                   aria-label={`Revision ${rev.revisionNo} date`}
                   title={rev.source === "scheduled" ? "Set by the effective and last review dates" : undefined}
-                  className={`border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] ${rev.source === "scheduled" ? "cursor-not-allowed opacity-70" : ""}`}
+                  className={`${ui.inline} ${ui.revisionDate}`}
                 />
-                <Textarea
-                  rows={Math.max(2, Math.ceil((rev.description || "").length / 60))}
+                <AutosizeTextarea
                   value={rev.description}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateRevisionEntry(i, "description", e.target.value)}
                   placeholder="Description of change..."
-                  className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] resize-y"
+                  aria-label={`Revision ${rev.revisionNo} description`}
+                  className={`${ui.inline} ${ui.revisionText}`}
                 />
-                <div className="flex items-center gap-1 self-center">
+                <div className={ui.rowActions}>
                   <button
+                    type="button"
                     onClick={() => insertRevisionEntry(i)}
-                    className="text-[var(--color-muted)] hover:text-[var(--color-forest)] hover:bg-[var(--color-paper)] p-2 rounded-md transition-colors"
+                    className={ui.iconButton}
+                    data-tone="brand"
                     aria-label={`Insert revision after ${rev.revisionNo}`}
                     title="Insert revision"
                   >
-                    <Plus size={14} />
+                    <Plus size={15} />
                   </button>
                   <button
+                    type="button"
                     onClick={() => removeRevisionEntry(i)}
                     disabled={rev.source !== "custom"}
-                    className="text-[var(--color-muted)] hover:text-[#9b2929] hover:bg-[#fdecec] p-2 rounded-md transition-colors disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-[var(--color-muted)]"
+                    className={ui.iconButton}
+                    data-tone="danger"
                     aria-label={rev.source === "custom" ? "Remove revision" : `Scheduled revision ${rev.revisionNo} cannot be removed`}
                     title={rev.source === "custom" ? "Remove revision" : "Scheduled revisions follow the effective and last review dates"}
                   >
-                    <Trash2 size={14} />
+                    <Trash2 size={15} />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </AnimatePresence>
         </Panel>
       )}
       <Panel
         title="Employee acknowledgement form"
-        icon={<Users size={17} strokeWidth={1.8} />}
+        icon={<UserCheck size={17} strokeWidth={1.8} />}
       >
-        <div className="grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
+        <div className={ui.ackGrid}>
           {([
             ["employeeName", "Employee name", "text"],
             ["employeeId", "Employee ID", "text"],
@@ -298,29 +320,34 @@ export function StepResponsibilities() {
           ] as const).map(([field, label, type]) => {
             const id = `employee-acknowledgement-${field}`;
             return (
-              <div key={field} className="flex min-w-0 flex-col gap-2">
-                <label
-                  htmlFor={id}
-                  className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]"
-                >
+              <div key={field} className="flex min-w-0 flex-col gap-1.5">
+                <label htmlFor={id} className={ui.ackLabel}>
                   {label}
                 </label>
-                <Input
-                  id={id}
-                  name={id}
-                  type={type}
-                  value={policy.employeeAcknowledgement?.[field] ?? ""}
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => updateAcknowledgementDetail(field, event.target.value)}
-                  aria-label={label}
-                  autoComplete="off"
-                  className="h-10 rounded-lg border-[var(--color-line-2)] bg-[var(--color-paper)] px-3.5 text-[13px] shadow-none focus-visible:border-[var(--color-forest)] focus-visible:ring-2 focus-visible:ring-[var(--color-forest)]/15"
-                />
+                {type === "date" ? (
+                  <DatePicker
+                    id={id}
+                    value={policy.employeeAcknowledgement?.date ?? ""}
+                    onChange={(date) => updateAcknowledgementDetail(field, date)}
+                    ariaLabel={label}
+                  />
+                ) : (
+                  <Input
+                    id={id}
+                    name={id}
+                    type={type}
+                    value={policy.employeeAcknowledgement?.[field] ?? ""}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => updateAcknowledgementDetail(field, event.target.value)}
+                    aria-label={label}
+                    autoComplete="off"
+                  />
+                )}
               </div>
             );
           })}
         </div>
       </Panel>
       <SignatureMaker />
-    </div>
+    </StepRoot>
   );
 }

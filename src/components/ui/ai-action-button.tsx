@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import { createPortal } from "react-dom";
-import { Sparkles, Wand2, MessageSquarePlus, Send, X, Loader2 } from "lucide-react";
+import { ArrowLeft, ChevronDown, PenLine, Sparkles, WandSparkles } from "lucide-react";
 import { clsx } from "clsx";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Textarea } from "./input";
 import { useApplicationSurface } from "./application-surface";
-import { motion, useReducedMotion } from "motion/react";
+import styles from "./ai-action-button.module.css";
 
 interface AIActionButtonProps {
   onGenerate: (customPrompt?: string) => Promise<void> | void;
@@ -17,6 +18,8 @@ interface AIActionButtonProps {
   className?: string;
   placeholder?: string;
 }
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export function AIActionButton({
   onGenerate,
@@ -33,8 +36,9 @@ export function AIActionButton({
   const [open, setOpen] = React.useState(false);
   const [mode, setMode] = React.useState<"menu" | "custom">("menu");
   const [customPrompt, setCustomPrompt] = React.useState("");
-  const [coords, setCoords] = React.useState<{ top: number; right: number }>({ top: 0, right: 0 });
+  const [coords, setCoords] = React.useState<{ top: number; right: number; above: boolean }>({ top: 0, right: 0, above: false });
   const mounted = React.useSyncExternalStore(() => () => undefined, () => true, () => false);
+  const quiet = variant === "ghost";
 
   const buttonRef = React.useRef<HTMLButtonElement>(null);
   const popoverRef = React.useRef<HTMLDivElement>(null);
@@ -43,10 +47,12 @@ export function AIActionButton({
     if (buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
       const height = popoverRef.current?.getBoundingClientRect().height || 220;
-      const below = rect.bottom + 6;
+      const below = rect.bottom + 8;
+      const above = application && below + height > window.innerHeight - 12;
       setCoords({
-        top: application && below + height > window.innerHeight - 12 ? Math.max(12, rect.top - height - 6) : below,
+        top: above ? Math.max(12, rect.top - height - 8) : below,
         right: Math.max(12, window.innerWidth - rect.right),
+        above,
       });
     }
   }, [application]);
@@ -118,19 +124,17 @@ export function AIActionButton({
     await onGenerate(promptToSend || undefined);
   };
 
-  const btnClasses = clsx(
-    "inline-flex items-center justify-center gap-1.5 font-semibold rounded-lg transition-all duration-200 shadow-sm cursor-pointer relative select-none",
-    size === "sm" ? "h-8 px-3 text-[12.5px]" : "h-9 px-3.5 text-[13.5px]",
-    variant === "primary" &&
-      "bg-gradient-to-br from-[#185335] to-[#0f3823] text-white border border-[#0f3823] hover:from-[#206c46] hover:to-[#154d2f] hover:text-white hover:shadow-md active:scale-[0.98]",
-    variant === "secondary" &&
-      "bg-[var(--color-paper)] text-[var(--color-ink)] border border-[var(--color-line-2)] hover:bg-[var(--color-cream-2)]",
-    variant === "outline" &&
-      "border border-[var(--color-forest)] text-[var(--color-forest)] bg-transparent hover:bg-[var(--color-forest-soft)]",
-    variant === "ghost" &&
-      "text-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] bg-transparent shadow-none",
-    className
-  );
+  const iconSize = quiet ? 14 : size === "md" ? 16 : 15;
+  const panelMotion = reduceMotion
+    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 } }
+    : {
+        initial: { opacity: 0, y: coords.above ? 6 : -6, scale: 0.97 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        exit: { opacity: 0, y: coords.above ? 4 : -4, scale: 0.98 },
+      };
+  const contentMotion = reduceMotion
+    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 } }
+    : { initial: { opacity: 0, x: mode === "custom" ? 12 : -12 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0 } };
 
   return (
     <div className="inline-flex items-center shrink-0">
@@ -142,125 +146,97 @@ export function AIActionButton({
           if (!open) updateCoords();
           setOpen(!open);
         }}
-        className={btnClasses}
+        className={clsx(styles.trigger, quiet && styles.quiet, className)}
         aria-expanded={open}
-        aria-controls={popoverId}
+        aria-controls={open ? popoverId : undefined}
         aria-haspopup="dialog"
         aria-busy={loading || undefined}
-        data-pc-ai-action={application ? variant : undefined}
+        data-ai-trigger={variant}
       >
-        {loading ? (
-          <Loader2 size={13} className="animate-spin" />
-        ) : (
-          <Wand2 size={13} className={application ? "text-current" : "text-amber-300"} />
-        )}
+        <span className={styles.icon} aria-hidden="true">
+          {loading ? <svg viewBox="0 0 20 20" className={styles.spinner}><circle cx="10" cy="10" r="7.5" className={styles.spinnerTrack} /><circle cx="10" cy="10" r="7.5" className={styles.spinnerArc} /></svg> : quiet ? <WandSparkles size={iconSize} /> : <Sparkles size={iconSize} />}
+        </span>
         <span>{loading ? "Generating…" : label}</span>
+        {!quiet && !loading && <ChevronDown size={14} aria-hidden="true" className={styles.chevron} />}
       </button>
 
-      {open &&
-        mounted &&
+      {mounted &&
         createPortal(
-          <motion.div
-            ref={popoverRef}
-            id={popoverId}
-            role="dialog"
-            aria-label="Policy generation"
-            style={{
-              position: "fixed",
-              top: `${coords.top}px`,
-              right: `${coords.right}px`,
-              zIndex: 999999,
-            }}
-            className={clsx("w-80 sm:w-96 rounded-xl bg-white border border-[var(--color-line)] shadow-2xl overflow-hidden text-left font-sans text-[13px]", application ? "pc-ui pc-builder-authoring pc-generation-popover" : "animate-in fade-in zoom-in-95 duration-150")}
-            initial={application ? {opacity: 0, ...(reduceMotion ? {} : {scale: .98})} : false}
-            animate={application ? {opacity: 1, scale: 1} : undefined}
-            transition={{duration: .15, ease: "easeOut"}}
-          >
-            {mode === "menu" ? (
-              <div className="p-2 space-y-1">
-                <div className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-[var(--color-muted)]">
-                  Select Generation Option
-                </div>
-                <button
-                  type="button"
-                  onClick={handleSuggest}
-                  className="w-full text-left flex items-start gap-3 p-2.5 rounded-lg hover:bg-[var(--color-cream-2)] transition-colors group cursor-pointer"
-                >
-                  <div className="p-2 rounded-lg bg-[var(--color-forest-soft)] text-[var(--color-forest)] group-hover:bg-[var(--color-forest)] group-hover:text-white transition-colors shrink-0">
-                    <Sparkles size={16} />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-forest-deep)]">
-                      Suggest for me
-                    </div>
-                    <div className="text-[11.5px] text-[var(--color-muted)] leading-tight mt-0.5">
-                      Automatically write based on company profile & standards.
-                    </div>
-                  </div>
-                </button>
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                key="ai-popover"
+                ref={popoverRef}
+                id={popoverId}
+                role="dialog"
+                aria-label="Policy generation"
+                style={{
+                  position: "fixed",
+                  top: `${coords.top}px`,
+                  right: `${coords.right}px`,
+                  zIndex: 999999,
+                  transformOrigin: coords.above ? "bottom right" : "top right",
+                }}
+                className={clsx(styles.popover, application && "pc-ui pc-builder-authoring")}
+                {...panelMotion}
+                transition={{ duration: 0.18, ease }}
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  {mode === "menu" ? (
+                    <motion.div key="menu" className={styles.menu} {...contentMotion} transition={{ duration: 0.16, ease }}>
+                      <button type="button" onClick={handleSuggest} className={styles.option}>
+                        <span className={styles.optionIcon} aria-hidden="true"><Sparkles size={16} /></span>
+                        <span className={styles.optionText}>
+                          <span className={styles.optionTitle}>Suggest for me</span>
+                          <span className={styles.optionHint}>Writes from the company profile and the standards you selected.</span>
+                        </span>
+                      </button>
+                      <button type="button" onClick={() => setMode("custom")} className={styles.option}>
+                        <span className={styles.optionIcon} aria-hidden="true"><PenLine size={16} /></span>
+                        <span className={styles.optionText}>
+                          <span className={styles.optionTitle}>Custom instructions</span>
+                          <span className={styles.optionHint}>Tell the AI what to focus on, include or leave out.</span>
+                        </span>
+                      </button>
+                    </motion.div>
+                  ) : (
+                    <motion.form key="custom" onSubmit={handleCustomSubmit} className={styles.form} {...contentMotion} transition={{ duration: 0.16, ease }}>
+                      <div className={styles.formHead}>
+                        <button
+                          type="button"
+                          onClick={() => setMode("menu")}
+                          aria-label="Back to generation options"
+                          className={styles.back}
+                        >
+                          <ArrowLeft size={15} />
+                        </button>
+                        <span className={styles.formTitle}>Custom instructions</span>
+                      </div>
 
-                <button
-                  type="button"
-                  onClick={() => setMode("custom")}
-                  className="w-full text-left flex items-start gap-3 p-2.5 rounded-lg hover:bg-[var(--color-cream-2)] transition-colors group cursor-pointer"
-                >
-                  <div className="p-2 rounded-lg bg-amber-50 text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-colors shrink-0">
-                    <MessageSquarePlus size={16} />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-[var(--color-ink)]">
-                      Custom prompt
-                    </div>
-                    <div className="text-[11.5px] text-[var(--color-muted)] leading-tight mt-0.5">
-                      Write specific instructions to personalize the output.
-                    </div>
-                  </div>
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleCustomSubmit} className="p-3 space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[12px] font-semibold text-[var(--color-ink)] flex items-center gap-1.5">
-                    <MessageSquarePlus size={14} className="text-amber-600" /> Custom Instructions
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setMode("menu")}
-                    aria-label="Back to generation options"
-                    className="p-1 rounded-md text-[var(--color-muted)] hover:bg-[var(--color-cream-2)]"
-                  >
-                    <X size={14} />
-                  </button>
-                </div>
+                      <Textarea
+                        autoFocus
+                        aria-label="Custom generation instructions"
+                        rows={4}
+                        value={customPrompt}
+                        onChange={(e) => setCustomPrompt(e.target.value)}
+                        placeholder={placeholder}
+                        className={styles.prompt}
+                      />
 
-                <Textarea
-                  autoFocus
-                  aria-label="Custom generation instructions"
-                  rows={3}
-                  value={customPrompt}
-                  onChange={(e) => setCustomPrompt(e.target.value)}
-                  placeholder={placeholder}
-                  className="w-full text-[12.5px] p-2.5 rounded-lg border border-[var(--color-line-2)] focus:outline-none focus:ring-2 focus:ring-[var(--color-forest)]/30 focus:border-[var(--color-forest)] bg-[var(--color-paper)] resize-none"
-                />
-
-                <div className="flex items-center justify-end gap-2 pt-1">
-                  <button
-                    type="button"
-                    onClick={() => setMode("menu")}
-                    className="px-3 py-1.5 rounded-md text-[12px] font-medium text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)]"
-                  >
-                    Back
-                  </button>
-                  <button
-                    type="submit"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-br from-[#185335] to-[#0f3823] text-white text-[12px] font-semibold hover:from-[#206c46] hover:to-[#154d2f] hover:text-white shadow-sm cursor-pointer transition-all"
-                  >
-                    <Send size={12} /> Generate
-                  </button>
-                </div>
-              </form>
+                      <div className={styles.formFoot}>
+                        <button type="button" onClick={() => setMode("menu")} className={styles.cancel}>
+                          Back
+                        </button>
+                        <button type="submit" className={styles.generate}>
+                          <Sparkles size={14} aria-hidden="true" /> Generate
+                        </button>
+                      </div>
+                    </motion.form>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             )}
-          </motion.div>,
+          </AnimatePresence>,
           document.body
         )}
     </div>

@@ -3,13 +3,12 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel } from "@/components/ui/panel";
-import { Field, Textarea } from "@/components/ui/input";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI } from "@/lib/ai/client";
 import { BookOpen, Flag, MapPin } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
-import { clsx } from "clsx";
 import { getSection } from "@/lib/sections";
+import { StepRoot, WritingField } from "./authoring-ui";
 
 const SECTIONS: {
   key: "preface" | "declaration" | "scope";
@@ -37,43 +36,6 @@ const SECTIONS: {
   },
 ];
 
-function AutosizingDeclarationTextarea({
-  value,
-  onChange,
-  placeholder,
-  className,
-}: {
-  value: string;
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  placeholder: string;
-  className?: string;
-}) {
-  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
-
-  const resize = React.useCallback(() => {
-    const textarea = textareaRef.current;
-    if (!textarea) return;
-    textarea.style.height = "0px";
-    textarea.style.height = `${textarea.scrollHeight}px`;
-  }, []);
-
-  React.useLayoutEffect(resize, [resize, value]);
-
-  return (
-    <Textarea
-      ref={textareaRef}
-      value={value}
-      onChange={(event) => {
-        onChange(event);
-        resize();
-      }}
-      placeholder={placeholder}
-      rows={3}
-      className={clsx("min-h-20 overflow-hidden", className)}
-    />
-  );
-}
-
 export function StepDeclaration() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
@@ -96,8 +58,7 @@ export function StepDeclaration() {
   };
 
   return (
-    <div className="space-y-6">
-
+    <StepRoot>
       {SECTIONS.filter((s) => getSection(policy, s.key)?.enabled).map((s) => {
         const value = policy.declaration[s.key];
         const isBusy = busy[s.key];
@@ -115,27 +76,28 @@ export function StepDeclaration() {
               />
             }
           >
-            <Field>
-              <AutosizingDeclarationTextarea
-                value={value}
-                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                  updatePolicy((p) => ({ declaration: { ...p.declaration, [s.key]: e.target.value } }))
-                }
-                placeholder={s.hint}
-                className={clsx(isBusy && "opacity-60")}
-              />
-            </Field>
+            <WritingField
+              value={value}
+              label={configured?.title || s.title}
+              busy={isBusy}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                updatePolicy((p) => ({ declaration: { ...p.declaration, [s.key]: e.target.value } }))
+              }
+              placeholder={s.hint}
+            />
           </Panel>
         );
       })}
 
       {getSection(policy, "definitions")?.enabled && (
         <Panel title={getSection(policy, "definitions")?.title || "Definition & Methodology"} icon={<BookOpen size={17} strokeWidth={1.8} />}>
-          <Field>
-            <Textarea value={policy.definitions?.content || ""} onChange={(e) => updatePolicy((p) => ({ definitions: { title: p.definitions?.title || "Living Wage", content: e.target.value } }))} rows={9} />
-          </Field>
+          <WritingField
+            value={policy.definitions?.content || ""}
+            label={getSection(policy, "definitions")?.title || "Definition & Methodology"}
+            onChange={(e) => updatePolicy((p) => ({ definitions: { title: p.definitions?.title || "Living Wage", content: e.target.value } }))}
+          />
         </Panel>
       )}
-    </div>
+    </StepRoot>
   );
 }

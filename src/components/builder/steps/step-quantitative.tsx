@@ -3,15 +3,18 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel } from "@/components/ui/panel";
-import { Input, Select, Textarea } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
+import { SelectMenu } from "@/components/ui/select-menu";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, syncQuantitativeAreas, TARGET_PERIOD, validateQuantitativeTarget } from "@/lib/quantitative";
-import { Plus, Target, Trash2 } from "lucide-react";
+import { Plus, Target, Trash2, TriangleAlert } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import { useToast } from "@/components/ui/toast";
 import { visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
+import { AutosizeTextarea, StepRoot, authoring as ui } from "./authoring-ui";
 
 export function StepQuantitative() {
   const { policy, updatePolicy } = useBuilder();
@@ -157,52 +160,67 @@ export function StepQuantitative() {
   };
 
   return (
-    <div className="space-y-6">
-
-      <div className="flex justify-end">
-        {!addingTopic ? (
-          <Button variant="secondary" size="sm" icon={<Plus size={13} />} onClick={() => setAddingTopic(true)}>Add topic</Button>
-        ) : (
-          <div className="flex w-full max-w-xl gap-2 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]/50 p-2">
-            <Input value={topicName} data-grammar-checking={checkingTopic ? "true" : undefined} disabled={checkingTopic || busy.topic} onChange={(e) => setTopicName(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); void addTopic(); } }} placeholder="Name a new quantitative-only topic..." />
-            <Button variant="primary" size="sm" loading={busy.topic} disabled={checkingTopic} onClick={() => { void addTopic(); }}>Generate targets</Button>
-            <Button variant="ghost" size="sm" onClick={() => { setAddingTopic(false); setTopicName(""); }}>Cancel</Button>
-          </div>
-        )}
+    <StepRoot>
+      <div className={ui.toolbar}>
+        <AnimatePresence mode="wait" initial={false}>
+          {!addingTopic ? (
+            <motion.div key="add-topic" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.14 }}>
+              <Button variant="secondary" size="sm" icon={<Plus size={14} />} onClick={() => setAddingTopic(true)}>Add topic</Button>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="topic-composer"
+              className={`${ui.composer} ${ui.topicComposer}`}
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <span className={ui.composerIcon} aria-hidden="true"><Plus size={16} /></span>
+              <Input autoFocus value={topicName} data-grammar-checking={checkingTopic ? "true" : undefined} disabled={checkingTopic || busy.topic} onChange={(e) => setTopicName(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); void addTopic(); } }} placeholder="Name a new quantitative-only topic..." aria-label="New quantitative topic" className={ui.composerInput} />
+              <Button variant="ghost" size="sm" onClick={() => { setAddingTopic(false); setTopicName(""); }}>Cancel</Button>
+              <Button variant="primary" size="sm" loading={busy.topic} disabled={checkingTopic} onClick={() => { void addTopic(); }} className={ui.composerAdd}>Generate targets</Button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {visibleQuantitative.map(({ area: q, index: qi }) => (
         <Panel
           key={`${q.area}-${qi}`}
-          title={`${qi + 1}. ${q.area}`}
+          title={<><span className={ui.areaIndex}>{qi + 1}</span>{q.area}</>}
           description={`${q.targets.length} target${q.targets.length === 1 ? "" : "s"}`}
           icon={<Target size={17} strokeWidth={1.8} />}
-          actions={<><Button variant="secondary" size="sm" icon={<Plus size={13} />} onClick={() => addRow(qi)}>Add row</Button><AIActionButton label="AI Generate" loading={busy[`area-${qi}`]} onGenerate={(prompt) => generate(qi, prompt)} /></>}
+          actions={<><Button variant="secondary" size="sm" icon={<Plus size={14} />} onClick={() => addRow(qi)}>Add row</Button><AIActionButton label="AI Generate" loading={busy[`area-${qi}`]} onGenerate={(prompt) => generate(qi, prompt)} /></>}
         >
-          <div className="overflow-x-auto rounded-lg border border-[var(--color-line)]">
-            <table className="w-full min-w-[840px] text-[13px]">
-              <thead><tr className="border-b border-[var(--color-line)] bg-[var(--color-cream-2)]">
-                <th className="w-[39%] px-4 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Target description</th>
-                <th className="w-[17%] px-3 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Baseline year</th>
-                <th className="w-[16%] px-3 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Deadline</th>
-                <th className="w-[16%] px-3 py-2.5 text-left font-semibold text-[var(--color-ink-2)]">Reporting basis</th>
-                <th className="w-[10%] px-3 py-2.5 text-right font-semibold text-[var(--color-ink-2)]"></th>
+          <div className={ui.tableWrap}>
+            <table className={ui.table}>
+              <thead><tr>
+                <th className="w-[41%]">Target description</th>
+                <th className="w-[16%]">Baseline year</th>
+                <th className="w-[15%]">Deadline</th>
+                <th className="w-[16%]">Reporting basis</th>
+                <th className="w-[12%]"><span className="sr-only">Actions</span></th>
               </tr></thead>
               <tbody>{q.targets.map((target, ti) => (
-                <tr key={ti} className="border-t border-[var(--color-line)] hover:bg-[#fafaf5]">
-                  <td className="px-3 py-2"><Textarea rows={Math.max(2, Math.ceil((target.target || "").length / 45))} value={target.target} onChange={(e) => updateCell(qi, ti, "target", e.target.value)} placeholder="e.g. Reduce specific energy consumption by 15%" className="resize-y border-transparent bg-transparent py-1.5 text-[13px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]" />
-                    {validateQuantitativeTarget(target).map((issue) => <p key={issue} className="mt-1 text-[11px] text-amber-700">{issue}</p>)}
+                <tr key={ti} className={ui.tableRow}>
+                  <td><AutosizeTextarea value={target.target} onChange={(e) => updateCell(qi, ti, "target", e.target.value)} placeholder="e.g. Reduce specific energy consumption by 15%" aria-label={`${q.area} target ${ti + 1}`} className={`${ui.inline} ${ui.cellText}`} />
+                    {validateQuantitativeTarget(target).length > 0 && (
+                      <div className={ui.cellIssues}>
+                        {validateQuantitativeTarget(target).map((issue) => <p key={issue} className={ui.warning}><TriangleAlert size={13} aria-hidden="true" />{issue}</p>)}
+                      </div>
+                    )}
                   </td>
-                  <td className="px-3 py-2">{target.reportingFrequency === REPORTING_FREQUENCY ? <span className="text-[12px] text-[var(--color-muted)]">—</span> : <Select value={target.baseline} onChange={(e) => updateCell(qi, ti, "baseline", e.target.value)} className="border-transparent bg-transparent text-[12px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]">{yearOptions.baseline.map((year) => <option key={year}>{year}</option>)}</Select>}</td>
-                  <td className="px-3 py-2">{target.reportingFrequency === REPORTING_FREQUENCY ? <span className="text-[12px] text-[var(--color-muted)]">—</span> : <Select value={target.deadline} onChange={(e) => updateCell(qi, ti, "deadline", e.target.value)} className="border-transparent bg-transparent text-[12px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]">{yearOptions.deadline.map((year) => <option key={year}>{year}</option>)}</Select>}</td>
-                  <td className="px-3 py-2"><Select value={target.reportingFrequency || TARGET_PERIOD} onChange={(e) => updateReportingFrequency(qi, ti, e.target.value as typeof REPORTING_FREQUENCY | typeof TARGET_PERIOD)} className="border-transparent bg-transparent text-[12px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"><option value={TARGET_PERIOD}>Target period</option><option value={REPORTING_FREQUENCY}>Annually</option></Select></td>
-                  <td className="px-3 py-2 text-right"><div className="flex items-center justify-end gap-1"><AIActionButton label="Refine" variant="ghost" loading={busy[`target-${qi}-${ti}`]} onGenerate={(prompt) => refineTarget(qi, ti, prompt)} className="text-[12px]" /><button onClick={() => removeRow(qi, ti)} className="rounded-md p-1.5 text-[var(--color-muted)] transition-colors hover:bg-[#fdecec] hover:text-[#9b2929]" aria-label="Remove row"><Trash2 size={13} /></button></div></td>
+                  <td>{target.reportingFrequency === REPORTING_FREQUENCY ? <span className={ui.cellEmpty}>—</span> : <SelectMenu size="compact" value={target.baseline} onValueChange={(value) => updateCell(qi, ti, "baseline", value)} options={yearOptions.baseline.map((year) => ({ value: year, label: year }))} placeholder="Year" searchable={false} aria-label="Baseline year" className={ui.cellSelect} />}</td>
+                  <td>{target.reportingFrequency === REPORTING_FREQUENCY ? <span className={ui.cellEmpty}>—</span> : <SelectMenu size="compact" value={target.deadline} onValueChange={(value) => updateCell(qi, ti, "deadline", value)} options={yearOptions.deadline.map((year) => ({ value: year, label: year }))} placeholder="Year" searchable={false} aria-label="Deadline" className={ui.cellSelect} />}</td>
+                  <td><SelectMenu size="compact" value={target.reportingFrequency || TARGET_PERIOD} onValueChange={(value) => updateReportingFrequency(qi, ti, value as typeof REPORTING_FREQUENCY | typeof TARGET_PERIOD)} options={[{ value: TARGET_PERIOD, label: "Target period" }, { value: REPORTING_FREQUENCY, label: "Annually" }]} aria-label="Reporting basis" className={ui.cellSelect} /></td>
+                  <td><div className={ui.rowActions}><AIActionButton label="Refine" variant="ghost" loading={busy[`target-${qi}-${ti}`]} onGenerate={(prompt) => refineTarget(qi, ti, prompt)} /><button type="button" onClick={() => removeRow(qi, ti)} className={ui.iconButton} data-tone="danger" aria-label="Remove row"><Trash2 size={15} /></button></div></td>
                 </tr>
               ))}</tbody>
             </table>
           </div>
         </Panel>
       ))}
-    </div>
+    </StepRoot>
   );
 }
