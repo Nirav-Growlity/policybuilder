@@ -10,7 +10,7 @@ import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
 import { getQuantitativeYearOptions, normalizeQuantitativeTarget, REPORTING_FREQUENCY, syncQuantitativeAreas, TARGET_PERIOD, validateQuantitativeTarget } from "@/lib/quantitative";
-import { Plus, Target, Trash2, TriangleAlert } from "lucide-react";
+import { Plus, Trash2, TriangleAlert } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useToast } from "@/components/ui/toast";
 import { visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
@@ -188,11 +188,14 @@ export function StepQuantitative() {
       {visibleQuantitative.map(({ area: q, index: qi }) => (
         <Panel
           key={`${q.area}-${qi}`}
-          title={<><span className={ui.areaIndex}>{qi + 1}</span>{q.area}</>}
+          title={q.area}
           description={`${q.targets.length} target${q.targets.length === 1 ? "" : "s"}`}
-          icon={<Target size={17} strokeWidth={1.8} />}
+          icon={<span className={ui.areaNumber} aria-label={`Topic ${qi + 1}`}>{qi + 1}</span>}
           actions={<><Button variant="secondary" size="sm" icon={<Plus size={14} />} onClick={() => addRow(qi)}>Add row</Button><AIActionButton label="AI Generate" loading={busy[`area-${qi}`]} onGenerate={(prompt) => generate(qi, prompt)} /></>}
         >
+          {q.targets.length === 0 ? (
+            <div className={ui.empty}>No targets yet. Add a row or use AI Generate.</div>
+          ) : (
           <div className={ui.tableWrap}>
             <table className={ui.table}>
               <thead><tr>
@@ -219,6 +222,7 @@ export function StepQuantitative() {
               ))}</tbody>
             </table>
           </div>
+          )}
         </Panel>
       ))}
     </StepRoot>

@@ -186,7 +186,6 @@ export function StepResponsibilities() {
           </div>
         ) : (
           <div className={ui.empty}>
-            <Users size={18} aria-hidden="true" />
             No roles yet. Add one or use AI Generate.
           </div>
         )}

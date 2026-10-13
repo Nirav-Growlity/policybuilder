@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { useBuilder } from "@/lib/store";
 import { SDG_DATA } from "@/lib/constants";
 import { Panel, Badge } from "@/components/ui/panel";
@@ -11,13 +12,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { useToast } from "@/components/ui/toast";
 import { StepRoot, authoring as ui } from "./authoring-ui";
 
-// Text colour on a filled goal tile: dark ink on light goal colours, white otherwise.
-function inkOn(hex: string) {
-  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
-    .map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
-  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  return luminance > 0.179 ? "#0b1220" : "#ffffff";
-}
+// The official UN goal icons, also used by the document preview.
+const sdgIcon = (goal: number) => `/E SDG Icons WEB/E-WEB-Goal-${String(goal).padStart(2, "0")}.png`;
 
 export function StepSDG() {
   const { policy, updatePolicy } = useBuilder();
@@ -75,11 +71,9 @@ export function StepSDG() {
                 aria-pressed={sel}
                 aria-label={`SDG ${s.n}: ${s.label}`}
                 className={ui.goal}
-                style={{ "--goal": s.c, "--goal-ink": inkOn(s.c) } as React.CSSProperties}
                 whileTap={{ scale: 0.96 }}
               >
-                <span className={ui.goalNumber}>{s.n}</span>
-                <span className={ui.goalLabel}>{s.label}</span>
+                <Image src={sdgIcon(s.n)} alt="" width={1500} height={1500} sizes="(max-width: 640px) 30vw, 150px" className={ui.goalIcon} />
                 <AnimatePresence initial={false}>
                   {sel && (
                     <motion.span
@@ -91,7 +85,7 @@ export function StepSDG() {
                       exit={{ scale: 0.4, opacity: 0 }}
                       transition={{ type: "spring", stiffness: 520, damping: 28 }}
                     >
-                      <Check size={13} strokeWidth={3} />
+                      <Check size={14} strokeWidth={3} />
                     </motion.span>
                   )}
                 </AnimatePresence>
@@ -116,14 +110,13 @@ export function StepSDG() {
                       key={n}
                       layout="position"
                       className={ui.chip}
-                      style={{ "--goal": s.c, "--goal-ink": inkOn(s.c) } as React.CSSProperties}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.9 }}
                       transition={{ duration: 0.18 }}
                     >
-                      <span className={ui.chipNumber}>{s.n}</span>
-                      {s.label}
+                      <Image src={sdgIcon(s.n)} alt="" width={1500} height={1500} sizes="28px" className={ui.chipIcon} />
+                      <span>SDG {s.n}: {s.label}</span>
                       <button type="button" onClick={() => toggle(n)} className={ui.chipRemove} aria-label={`Remove SDG ${s.n}: ${s.label}`}>
                         <X size={13} />
                       </button>

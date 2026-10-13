@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
 import { callAI, correctGrammar } from "@/lib/ai/client";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { ListChecks, Plus, X } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import { AnimatePresence, motion } from "motion/react";
 import { AutosizeTextarea, StepRoot, authoring as ui, itemEnter } from "./authoring-ui";
@@ -148,9 +148,9 @@ export function StepQualitative() {
         return (
           <Panel
             key={area}
-            title={<><span className={ui.areaIndex}>{i + 1}</span>{area}</>}
+            title={area}
             description={`${objs.length} objective${objs.length === 1 ? "" : "s"}`}
-            icon={<ListChecks size={17} strokeWidth={1.8} />}
+            icon={<span className={ui.areaNumber} aria-label={`Focus area ${i + 1}`}>{i + 1}</span>}
             actions={
               <AIActionButton
                 label="AI Generate"
@@ -194,7 +194,6 @@ export function StepQualitative() {
               </ol>
             ) : (
               <div className={`${ui.empty} mb-3`}>
-                <ListChecks size={18} aria-hidden="true" />
                 No objectives yet. Add one below or use AI Generate.
               </div>
             )}
