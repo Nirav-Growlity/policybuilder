@@ -447,9 +447,9 @@ html[data-pc-shell] div.pc-ui:has(> #workspace-main) { background: var(--pc-page
 
 .pc-toast-region { position: fixed; z-index: 150; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 8px; width: min(380px, calc(100vw - 32px)); pointer-events: none; }
 .pc-toast { pointer-events: auto; display: flex; align-items: flex-start; gap: 10px; padding: 14px 12px 14px 16px; border: 1px solid var(--pc-divider); border-radius: 12px; background: var(--pc-panel); box-shadow: 0 12px 32px rgb(0 0 0 / 12%); font-size: 14px; line-height: 1.5; }
-.pc-toast-success { color: var(--pc-success); background: var(--pc-success-surface); }
+/* Confirmations and notes speak in the brand blue; only errors take a status colour. */
+.pc-toast-success, .pc-toast-info { color: var(--pc-selection-text); background: var(--pc-selection); border-color: color-mix(in srgb, var(--pc-brand) 30%, var(--pc-divider)); }
 .pc-toast-error { color: var(--pc-error); background: var(--pc-error-surface); }
-.pc-toast-info { color: var(--pc-selection-text); background: var(--pc-selection); }
 .pc-toast-icon { flex-shrink: 0; margin-top: 2px; }
 .pc-toast-text { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .pc-toast-close { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px; margin-top: -3px; border: 0; border-radius: 6px; color: inherit; background: transparent; cursor: pointer; transition: background-color 150ms; }
