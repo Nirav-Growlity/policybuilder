@@ -419,7 +419,7 @@ function SignatureMakerForScope({ scope, scopeKey }: { scope: PolicyCraftWorkspa
                 <h4 id="signature-library-heading" className="text-[13px] font-semibold text-[var(--color-ink)]">Saved signature</h4>
                 <p className="mt-1 text-[12px] leading-5 text-[var(--color-muted)]">This mark is saved for this organization and policy.</p>
               </div>
-              <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-medium ${signature ? "bg-[var(--color-blue-bg)] text-[var(--color-blue-ink)]" : "bg-[var(--color-cream-2)] text-[var(--color-muted)]"}`}>{signature ? "Saved" : "Empty"}</span>
+              <span className={`shrink-0 text-[12px] font-semibold ${signature ? "text-[var(--color-blue-ink)]" : "text-[var(--color-muted)]"}`}>{signature ? "Saved" : "Empty"}</span>
             </div>
             {signature ? <>
               <div className="mt-4 flex min-h-40 items-center justify-center overflow-hidden rounded-lg border border-[var(--color-line)] bg-white px-4 py-5" data-signature-preview>

@@ -16,7 +16,7 @@ export function CompanySetupScreen({ onContinue }: { onContinue: () => void }) {
           <span className="font-display text-[18px] font-semibold tracking-tight">PolicyCraft</span>
         </Link>
         <div className="flex items-center gap-3">
-          <span className="text-[12px] font-medium text-[var(--color-muted)] bg-[var(--pc-inset)] px-3 py-2 rounded-full border border-[var(--color-line)]">
+          <span className="text-[13px] font-medium text-[var(--color-muted)]">
             Step 1 of 2: Company Setup
           </span>
         </div>

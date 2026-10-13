@@ -4,13 +4,13 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { Building2, Check, Loader2, Plus, RefreshCw, Search, X } from "lucide-react";
+import { Archive, Building2, CalendarX2, Check, Loader2, Plus, RefreshCw, Search, X } from "lucide-react";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
 import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { OrganizationManagerAssignment } from "@/components/workspace/organization-manager-assignment";
 import { OrganizationSectionNavigation } from "@/components/workspace/organization-section-navigation";
-import { OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
+import { organizationSourceName } from "@/components/workspace/organization-source-label";
 import { Avatar, useRecordMotion, WorkspaceHero, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
 import { DelayedLoading, ListRegion, Pagination, usePagination } from "@/components/workspace/workspace-list";
 import type { PolicyCraftOrganization } from "@/lib/policycraft-access-types";
@@ -125,8 +125,11 @@ function OrganizationRowContent({ organization }: { organization: OrganizationSu
     <div className={styles.identity}>
       <Avatar name={organization.name} seed={`organization-${organization.id}`} size={40} />
       <div className={styles.rowDetails}>
-        <div className={styles.nameLine}><h2 className={styles.organizationName}>{organization.name}</h2><OrganizationSourceBadge organization={organization} className={styles.sourceBadge} /></div>
-        <p className={styles.organizationCode}>{organization.code || `ID ${organization.id}`}{organization.deleted ? " · deleted" : organization.expired ? " · expired" : ""}</p>
+        <h2 className={styles.organizationName}>{organization.name}</h2>
+        <p className={styles.organizationMeta}>
+          <span>{organization.code || `ID ${organization.id}`}</span>
+          {organization.deleted ? <span className={`${styles.organizationState} ${styles.stateDeleted}`}><Archive size={13} aria-hidden="true" />Deleted</span> : organization.expired ? <span className={`${styles.organizationState} ${styles.stateExpired}`}><CalendarX2 size={13} aria-hidden="true" />Subscription expired</span> : null}
+        </p>
       </div>
     </div>
     <div className={styles.rowActions}>

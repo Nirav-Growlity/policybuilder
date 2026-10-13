@@ -71,16 +71,16 @@ interface BadgeProps {
 export function Badge({ variant = "muted", children, icon, className }: BadgeProps) {
   const application = useApplicationSurface();
   const styles = {
-    forest: "bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)] border border-[#cfe2d7]",
-    amber: "bg-[var(--color-amber-bg)] text-[var(--color-amber-ink)] border border-[var(--color-amber-line)]",
-    blue: "bg-[var(--color-blue-bg)] text-[var(--color-blue-ink)] border border-[var(--color-blue-line)]",
-    muted: "bg-[var(--color-cream-2)] text-[var(--color-ink-2)] border border-[var(--color-line)]",
-    danger: "bg-[#fdecec] text-[#9b2929] border border-[#f1c2c2]",
+    forest: "text-[var(--color-forest-deep)]",
+    amber: "text-[var(--color-amber-ink)]",
+    blue: "text-[var(--color-blue-ink)]",
+    muted: "text-[var(--color-muted)]",
+    danger: "text-[#9b2929]",
   };
   return (
     <span
       className={clsx(
-        "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide",
+        "inline-flex items-center gap-1.5 text-[12px] font-semibold",
         styles[variant],
         application && "pc-feature-badge",
         className

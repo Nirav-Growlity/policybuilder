@@ -145,27 +145,16 @@
 .managerEmail { margin: 2px 0 0; color: var(--pc-muted); font-size: 12.5px; word-break: break-all; }
 .busyNote { display: inline-flex; align-items: center; gap: 6px; margin: 4px 0 0; color: var(--pc-selection-text); font-size: 12px; font-weight: 550; }
 
-.orgList { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 6px; }
-.orgChip {
-  display: inline-flex;
-  max-width: 100%;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 5px 4px 9px;
-  border: 1px solid var(--pc-divider);
-  border-radius: 9px;
-  color: var(--pc-text);
-  background: var(--pc-panel);
-  font-size: 12px;
-  line-height: 1.35;
-  transition: border-color 160ms ease, transform 240ms var(--ws-ease), box-shadow 240ms var(--ws-ease);
-}
-
-.orgChip:hover { border-color: var(--pc-control); transform: translateY(-1px); box-shadow: 0 6px 14px -10px rgb(12 22 40 / 40%); }
-.orgChipIcon { flex: none; color: var(--pc-muted); }
-.orgChipDeleted { color: var(--pc-muted); background: var(--pc-inset); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--pc-muted) 60%, transparent); }
-.orgCode { margin-left: 4px; color: var(--pc-muted); font-size: 11px; }
+/* Assigned organizations read as a plain stacked list: icon, name, then quiet source text. */
+.orgList { min-width: 0; }
+.orgItems { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.orgItem { display: flex; min-width: 0; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; color: var(--pc-text); font-size: 13px; line-height: 1.4; }
+.orgItemIcon { flex: none; align-self: center; color: var(--pc-muted); }
+.orgItemName { min-width: 0; overflow-wrap: anywhere; font-weight: 550; }
+.orgItemSource { font-size: 12px; }
+.orgItemState { color: var(--pc-muted); font-size: 12px; font-weight: 550; }
+.orgItemDeleted .orgItemName { color: var(--pc-muted); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--pc-muted) 60%, transparent); }
+.orgCode { margin-left: 6px; color: var(--pc-muted); font-size: 12px; font-weight: 400; font-variant-numeric: tabular-nums; }
 .noOrgs { color: var(--pc-muted); font-size: 13px; font-style: italic; }
 
 .accessCell { display: grid; justify-items: start; gap: 8px; }
@@ -238,6 +227,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .primaryLink, .primaryLink svg, .orgChip, .assignButton, .assignButton svg { transition: none; }
-  .primaryLink:hover, .primaryLink:hover svg, .orgChip:hover, .assignButton:hover:not(:disabled) svg { transform: none; }
+  .primaryLink, .primaryLink svg, .assignButton, .assignButton svg { transition: none; }
+  .primaryLink:hover, .primaryLink:hover svg, .assignButton:hover:not(:disabled) svg { transform: none; }
 }

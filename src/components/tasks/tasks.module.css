@@ -591,35 +591,20 @@
 }
 
 /* ── Status and deadline (shared with the builder: scoped to the workspace) ── */
-.statusPill {
-  border-radius: 999px;
-  white-space: nowrap;
-}
+.taskStatus { white-space: nowrap; }
 
-.workspace .statusPill {
-  min-height: 26px;
-  padding-inline: 10px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
+/* Deadlines are plain dated text; urgency shifts the colour and weight, not a container. */
 .workspace [data-deadline] {
-  display: inline-flex;
-  min-height: 26px;
-  padding: 0 9px;
-  border-radius: 999px;
-  background: var(--pc-inset);
   color: var(--pc-muted);
   font-weight: 550;
 }
 
 .workspace [data-deadline="today"] {
-  background: var(--pc-selection);
   color: var(--pc-selection-text);
+  font-weight: 650;
 }
 
 .workspace [data-deadline="overdue"] {
-  background: var(--pc-error-surface);
   color: var(--pc-error);
   font-weight: 650;
 }

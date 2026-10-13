@@ -56,21 +56,20 @@
 .fieldHint { color: var(--pc-muted); }
 .fieldError { color: var(--pc-error); font-weight: 500; }
 
+/* Status reads as an icon plus text in the tone colour; no filled capsule behind it. */
 .status {
   display: inline-flex;
-  min-height: 24px;
   align-items: center;
   gap: 6px;
-  padding: 2px 9px;
-  border-radius: 999px;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.3;
 }
-.statusSuccess { color: var(--pc-success); background: var(--pc-success-surface); }
-.statusWarning { color: var(--pc-warning); background: var(--pc-warning-surface); }
-.statusError { color: var(--pc-error); background: var(--pc-error-surface); }
-.statusInfo { color: var(--pc-selection-text); background: var(--pc-selection); }
-.statusAi { color: var(--pc-ai); background: color-mix(in srgb, var(--pc-ai) 12%, var(--pc-panel)); }
-.statusNeutral { color: var(--pc-muted); background: var(--pc-inset); }
+.status > svg { flex: none; }
+.statusSuccess { color: var(--pc-success); }
+.statusWarning { color: var(--pc-warning); }
+.statusError { color: var(--pc-error); }
+.statusInfo { color: var(--pc-selection-text); }
+.statusAi { color: var(--pc-ai); }
+.statusNeutral { color: var(--pc-muted); }
 

@@ -248,17 +248,11 @@
 }
 
 .taskBadge {
-  display: inline-grid;
-  min-width: 20px;
-  height: 20px;
-  place-items: center;
-  border-radius: 999px;
-  background: var(--ws-cta);
-  padding: 0 6px;
-  color: #fff;
-  font-size: 11px;
+  display: inline-block;
+  color: var(--ws-cta);
+  font-size: 12.5px;
   font-variant-numeric: tabular-nums;
-  font-weight: 650;
+  font-weight: 700;
 }
 
 .headerActions {

@@ -1,4 +1,4 @@
-/* OrganizationSourceBadge reads these legacy names, so map them onto the workspace tokens here. */
+/* Legacy token names still read by shared children, mapped onto the workspace tokens. */
 .surface {
   --color-forest: var(--pc-primary);
   --color-forest-soft: var(--pc-selection);
@@ -146,10 +146,13 @@
 
 .identity { display: flex; min-width: 0; align-items: center; gap: 14px; }
 .rowDetails { min-width: 0; }
-.nameLine { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .organizationName { margin: 0; overflow-wrap: anywhere; color: var(--pc-text); font-family: var(--pc-font); font-size: 15px; font-weight: 620; letter-spacing: -.01em; line-height: 1.35; }
-.organizationCode { margin: 3px 0 0; overflow-wrap: anywhere; color: var(--pc-muted); font-size: 12.5px; line-height: 1.45; }
-.sourceBadge { max-width: 100%; white-space: normal; }
+/* Code and lifecycle state read as one quiet line; state carries its own icon and tone instead of a pill. */
+.organizationMeta { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 14px; margin: 3px 0 0; overflow-wrap: anywhere; color: var(--pc-muted); font-size: 12.5px; line-height: 1.45; }
+.organizationState { display: inline-flex; align-items: center; gap: 5px; font-weight: 550; }
+.organizationState svg { flex: none; }
+.stateExpired { color: var(--pc-warning); }
+.stateDeleted { color: var(--pc-muted); }
 .rowActions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px; }
 .managedLabel { display: inline-flex; min-height: 40px; align-items: center; padding: 0 10px; color: var(--pc-muted); font-size: 12.5px; }
 

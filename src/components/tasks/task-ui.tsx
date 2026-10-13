@@ -48,18 +48,18 @@ export function TaskStatus({ status, dueDate }: { status: PolicyCraftTaskStatus;
   const label = overdue ? "Overdue" : taskStatusLabel(status);
   if (!applicationSurface) {
     const colors = status === "completed"
-      ? "border-emerald-200 bg-emerald-50 text-emerald-900"
+      ? "text-emerald-800"
       : status === "cancelled"
-        ? "border-[var(--color-line)] bg-[var(--color-cream-2)] text-[var(--color-ink-2)]"
+        ? "text-[var(--color-muted)]"
         : overdue
-          ? "border-red-200 bg-red-50 text-red-900"
+          ? "text-red-800"
           : status === "in_progress"
-            ? "border-[var(--color-forest)]/25 bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)]"
-            : "border-[var(--pc-brand)]/30 bg-[var(--pc-brand)]/10 text-[var(--pc-text,#0b1220)]";
-    return <span className={`inline-flex min-h-7 items-center gap-1.5 whitespace-nowrap rounded-md border px-2.5 text-[11px] font-semibold ${colors}`}><Icon size={13} aria-hidden="true" />{label}</span>;
+            ? "text-[var(--color-forest-deep)]"
+            : "text-[var(--color-ink-2)]";
+    return <span className={`inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-semibold ${colors}`}><Icon size={14} aria-hidden="true" />{label}</span>;
   }
   const tone = overdue ? "error" : status === "completed" ? "success" : status === "in_progress" ? "info" : "neutral";
-  return <ApplicationStatus tone={tone} icon={<Icon size={14} aria-hidden="true" />} className={styles.statusPill}>{label}</ApplicationStatus>;
+  return <ApplicationStatus tone={tone} icon={<Icon size={14} aria-hidden="true" />} className={styles.taskStatus}>{label}</ApplicationStatus>;
 }
 
 export function TaskProgress({ progress, unavailableReason, savedAt, compact = false, showSavedAt = false }: {

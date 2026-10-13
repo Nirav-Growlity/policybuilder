@@ -101,12 +101,8 @@
   flex: none;
   align-items: center;
   gap: 6px;
-  min-height: 28px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--pc-success-surface);
   color: var(--pc-success);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
 }
 

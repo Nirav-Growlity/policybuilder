@@ -44,7 +44,7 @@
 .groups { display: flex; flex-direction: column; gap: 30px; }
 .groupHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
 .groupTitle { display: inline-flex; align-items: center; gap: 11px; margin: 0; color: var(--pc-text); font-family: var(--pc-font); font-size: 18px; font-weight: 620; letter-spacing: -.02em; }
-.groupCount { padding: 3px 10px; color: var(--pc-muted); background: var(--pc-inset); border-radius: 999px; font-size: 12px; font-weight: 550; font-variant-numeric: tabular-nums; }
+.groupCount { color: var(--pc-muted); font-size: 13px; font-weight: 550; font-variant-numeric: tabular-nums; }
 
 .recordList { overflow: hidden; border: 1px solid var(--pc-divider); border-radius: 14px; }
 .record { --ws-type: var(--pc-brand); position: relative; display: flex; min-width: 0; align-items: center; gap: 22px; padding: 18px 20px 18px 22px; background: var(--pc-panel); transition: background-color 200ms ease; }

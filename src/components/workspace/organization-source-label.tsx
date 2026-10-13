@@ -12,9 +12,9 @@ export function organizationSourceName(organization: OrganizationSource): string
   return isStandaloneOrganization(organization) ? "PolicyCraft organization" : "ESG organization";
 }
 
-export function OrganizationSourceBadge({ organization, className = "" }: { organization: OrganizationSource; className?: string }) {
-  const standalone = organization.source === "standalone";
-  return <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold leading-4 ${standalone ? "border-[var(--color-forest)]/20 bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)] bg-[var(--color-cream-2)] text-[var(--color-muted)]"} ${className}`}>
-    {organizationSourceName(organization)}
+/** Source shown as quiet secondary text beside an organization name, never as a pill. */
+export function OrganizationSourceLabel({ organization, className = "" }: { organization: OrganizationSource; className?: string }) {
+  return <span className={`text-[12px] font-medium leading-4 text-[var(--pc-muted,var(--color-muted))] ${className}`}>
+    {isStandaloneOrganization(organization) ? "PolicyCraft" : "ESG"}
   </span>;
 }

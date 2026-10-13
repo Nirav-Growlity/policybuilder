@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Archive, ArrowRight, Building2, CheckCircle2, FileText, Loader2, PencilLine, Plus, RefreshCw, Search } from "lucide-react";
 import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { Modal } from "@/components/ui/modal";
-import { isStandaloneOrganization, OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
+import { isStandaloneOrganization, OrganizationSourceLabel, organizationSourceName } from "@/components/workspace/organization-source-label";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
 import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
 import { DelayedLoading, ListFooter, ListRegion, useProgressiveList } from "@/components/workspace/workspace-list";
@@ -264,7 +264,7 @@ export default function ManagerWorkspacePage() {
         <div className={styles.sectionHeader}>
           <div className={styles.sectionIdentity}>
             <AnimatePresence mode="wait" initial={false}>
-              <motion.h2 key={organization?.id ?? "all"} className={styles.organizationName} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25, ease: WS_EASE }}>{organization?.name || "All organizations"}{organization ? <OrganizationSourceBadge organization={organization} className={styles.sourceBadge} /> : null}</motion.h2>
+              <motion.h2 key={organization?.id ?? "all"} className={styles.organizationName} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25, ease: WS_EASE }}>{organization?.name || "All organizations"}{organization ? <OrganizationSourceLabel organization={organization} className={styles.sourceLabel} /> : null}</motion.h2>
             </AnimatePresence>
             <p className={styles.recordCount} aria-live="polite">{visibleDocuments.length} of {documents.length} {view === "archived" ? "archived" : "active"} {documents.length === 1 ? "policy" : "policies"}</p>
           </div>

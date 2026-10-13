@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import type { PolicyCraftManagerSummary, PolicyCraftOrganization } from "@/lib/policycraft-access-types";
-import { OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
+import { OrganizationSourceLabel, organizationSourceName } from "@/components/workspace/organization-source-label";
 import { AnimatedNumber, WorkspaceHero, WorkspaceSheet } from "@/components/workspace/workspace-motion";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
@@ -193,7 +193,7 @@ export default function CreateManagerPage() {
                     {loading ? <p className={styles.listNotice} aria-live="polite"><Loader2 size={14} className={styles.spinner} aria-hidden="true" />Loading organizations…</p> : loadingError ? <p className={styles.listNotice}>Organizations could not be loaded. Retry above to continue.</p> : visibleOrganizations.map((organization) => <label key={organization.id} className={styles.organizationOption}>
                       <input type="checkbox" disabled={submitting} checked={organizationIds.includes(organization.id)} onChange={(event) => setValue("organizationIds", event.target.checked ? [...new Set([...organizationIds, organization.id])] : organizationIds.filter((id) => id !== organization.id), { shouldDirty: true })} className={styles.checkbox} />
                       <span className={styles.organizationName}>{organization.name}</span>
-                      <OrganizationSourceBadge organization={organization} />
+                      <OrganizationSourceLabel organization={organization} className={styles.organizationSource} />
                       <span className={styles.organizationCode}>{organization.code}</span>
                     </label>)}
                     {!loading && !loadingError && activeOrganizations.length === 0 ? <p className={styles.listNotice}>No active organizations are available to assign.</p> : null}

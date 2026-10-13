@@ -26,7 +26,7 @@ export function DocumentThemePicker() {
       description="Switch the visual template (composition only) beside the full document preview. Brand stays separate."
       icon={<Palette size={17} strokeWidth={1.8} />}
       actions={
-        <span className="rounded-full bg-[var(--color-forest-soft)] px-3 py-1 text-[10.5px] font-semibold text-[var(--color-forest)]">
+        <span className="text-[12px] font-semibold text-[var(--color-forest)]">
           {selectedTheme.name}{customized ? " · Customized" : ""}
         </span>
       }

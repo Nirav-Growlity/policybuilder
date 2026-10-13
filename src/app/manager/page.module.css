@@ -12,7 +12,7 @@
 .sectionHeader { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 22px; border-bottom: 1px solid var(--pc-divider); }
 .sectionIdentity { min-width: 0; }
 .organizationName { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0; color: var(--pc-text); font-family: var(--pc-font); font-size: 20px; font-weight: 620; letter-spacing: -.02em; overflow-wrap: anywhere; }
-.sourceBadge { color: var(--pc-selection-text) !important; background: var(--pc-selection) !important; border-color: transparent !important; }
+.sourceLabel { padding-left: 10px; border-left: 1px solid var(--pc-divider); font-size: 13px; letter-spacing: 0; }
 .recordCount { margin: 5px 0 0; color: var(--pc-muted); font-size: 12.5px; font-variant-numeric: tabular-nums; }
 .headerActions { display: flex; flex: none; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
 .viewSegments { display: inline-flex; gap: 2px; padding: 4px; border-radius: 12px; background: var(--pc-inset); }
