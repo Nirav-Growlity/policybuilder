@@ -75,9 +75,8 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
   const currentFailure = failure?.key === key ? failure : null;
   const ready = hasPaintedActive && active?.key === key && retryCount === 0;
   const updating = !ready && !currentFailure;
-  const visible = updating ? hasPaintedActive ? currentActive : null : hasPaintedActive ? currentActive : currentCandidate || currentActive;
-  // While a newer render is prepared, the painted version stays readable underneath.
-  const refreshing = updating && hasPaintedActive;
+  // Every render, first or not, shows the rendering animation in place of the pages until it paints.
+  const visible = updating ? null : hasPaintedActive ? currentActive : currentCandidate || currentActive;
   const status: PreviewStatus = currentFailure ? "failed" : updating ? "updating" : "ready";
   const failureMessage = currentFailure ? `${currentFailure.message}${hasPaintedActive && active?.key !== key ? " Showing the previous version." : ""}` : null;
   const results = [currentActive, currentCandidate].filter((result): result is PreviewResult => result !== null);
@@ -109,14 +108,13 @@ export function PdfPolicyPreview({ policy, includeAuthorSignature = false, autho
           onViewChange={setView}
           interactive={result.id === visible?.id}
           status={status}
-          refreshing={refreshing && result.id === active?.id}
           failureMessage={failureMessage}
           onRetry={retryPreview}
           onRendered={() => onRendered(result)}
           onError={() => onRenderError(result)}
         />
       </div>)}
-      {!refreshing && (updating || !visible) && <div className={styles.loaderStage}>
+      {(updating || !visible) &&<div className={styles.loaderStage}>
         <PdfRenderLoader updating={hasPaintedActive && updating} still={!!currentFailure} />
         {currentFailure && <div className="-mt-4 flex flex-col items-center gap-3 px-6 pb-10 text-center">
           <p className="max-w-sm text-[12px] text-[var(--pc-error)]">{currentFailure.message}</p>
@@ -142,14 +140,13 @@ type PdfPagesProps = {
   onViewChange: React.Dispatch<React.SetStateAction<PdfViewState>>;
   interactive: boolean;
   status?: PreviewStatus;
-  refreshing?: boolean;
   failureMessage?: string | null;
   onRetry?: () => void;
   onRendered?: () => void;
   onError?: () => void;
 };
 
-export function PdfPages({ bytes, view, onViewChange, interactive, status = "ready", refreshing = false, failureMessage = null, onRetry, onRendered, onError }: PdfPagesProps) {
+export function PdfPages({ bytes, view, onViewChange, interactive, status = "ready", failureMessage = null, onRetry, onRendered, onError }: PdfPagesProps) {
   const reduceMotion = useReducedMotion() ?? false;
   const instanceId = React.useId();
   const errorHandler = React.useRef(onError);
@@ -287,6 +284,17 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
     if (viewMode === "continuous") { mountPages([page]); scrollToPage(page, scrollBehavior); }
     else revealViewerTop(scrollBehavior);
   };
+  // A re-rendered version replaces the loader at the top; return the reader to their page.
+  const wasInteractive = React.useRef(interactive);
+  React.useEffect(() => {
+    const promoted = interactive && !wasInteractive.current;
+    wasInteractive.current = interactive;
+    if (!promoted || !document || viewMode !== "continuous" || pageNumber <= 1) return;
+    const frame = requestAnimationFrame(() => scrollToPage(pageNumber, "auto"));
+    return () => cancelAnimationFrame(frame);
+    // Only the moment this version becomes the visible one matters.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [interactive, document]);
   const setViewMode = (mode: PdfViewState["viewMode"]) => {
     if (mode === viewMode) return;
     onViewChange(current => ({ ...current, viewMode: mode }));
@@ -450,7 +458,6 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
           </div>
         </div>
       </div>
-      {refreshing && <span className={styles.progress} aria-hidden="true" />}
       <AnimatePresence>
         {pagesOpen && document && <PageGrid
           id={panelId}
@@ -485,7 +492,6 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
       ref={stage}
       className={styles.stage}
       data-mode={viewMode}
-      data-refreshing={refreshing || undefined}
       tabIndex={0}
       role="region"
       aria-label={viewMode === "paged" ? `Document page ${pageNumber} of ${pageCount}. Use the left and right arrow keys to turn pages.` : "Document pages. Use the left and right arrow keys to jump between pages."}

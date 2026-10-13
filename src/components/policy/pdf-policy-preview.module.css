@@ -251,27 +251,6 @@
   outline-offset: 2px;
 }
 
-/* Indeterminate line under the bar while a fresh render is prepared. */
-.progress {
-  position: absolute;
-  right: 10px;
-  bottom: -1px;
-  left: 10px;
-  height: 2px;
-  overflow: hidden;
-  border-radius: 2px;
-}
-
-.progress::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 35%;
-  border-radius: inherit;
-  background: var(--pc-primary);
-  animation: pdf-progress 1.15s var(--pdf-ease) infinite;
-}
-
 /* ── All-pages panel ─────────────────────────────────────────────────────── */
 
 .pagePanel {
@@ -408,18 +387,12 @@
   gap: 28px;
   overflow-x: auto;
   padding: 24px 20px 40px;
-  transition: opacity 220ms ease, filter 220ms ease;
 }
 
 .stage:focus-visible {
   outline: 2px solid var(--pc-primary);
   outline-offset: -2px;
   border-radius: 14px;
-}
-
-.stage[data-refreshing] {
-  opacity: .55;
-  filter: saturate(.7);
 }
 
 .turn {
@@ -515,7 +488,7 @@
     padding-inline: .5rem .25rem;
   }
 
-  /* The progress line and the error notice carry status here. */
+  /* The error notice carries status here. */
   .status {
     display: none;
   }
@@ -536,19 +509,12 @@
   50% { opacity: .62; }
 }
 
-
-@keyframes pdf-progress {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(290%); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .iconButton,
   .segment,
   .pageInput,
   .retryButton,
   .thumbPaper,
-  .stage,
   .viewer[data-zooming] .sheet {
     transition: none;
   }
@@ -558,11 +524,4 @@
   .paper canvas[data-enter],
   .thumbImage {
     animation: none;
-  }
-
-  .progress::after {
-    width: 100%;
-    opacity: .5;
-    animation: none;
-  }
-}
+  }}
