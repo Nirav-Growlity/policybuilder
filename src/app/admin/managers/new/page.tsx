@@ -9,6 +9,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
 import type { PolicyCraftManagerSummary, PolicyCraftOrganization } from "@/lib/policycraft-access-types";
 import { OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
+import { AnimatedNumber, WorkspaceHero, WorkspaceSheet } from "@/components/workspace/workspace-motion";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
 import styles from "./page.module.css";
@@ -118,58 +119,116 @@ export default function CreateManagerPage() {
           ? "Select at least 1 organization to enable manager access."
           : "";
 
+  const granted = success?.mode === "existing";
+  const deliverySent = success?.mode === "invited" && success.deliverySent;
+  const heroBack = <nav aria-label="Breadcrumb"><Link href="/admin" className={styles.heroLink}><ArrowLeft size={15} aria-hidden="true" />Managers</Link></nav>;
+
   if (success) {
-    const granted = success.mode === "existing";
-    const deliverySent = success.mode === "invited" && success.deliverySent;
-    return <ApplicationSurface data-pc-workspace="manager-create" className={`${styles.surface} mx-auto max-w-2xl`} role="status" aria-live="polite">
-      <div className={`grid h-12 w-12 place-items-center rounded-xl ${granted || deliverySent ? "bg-emerald-50 text-emerald-800" : "bg-amber-50 text-amber-900"}`}>
-        {granted || deliverySent ? <Check size={20} aria-hidden="true" /> : <AlertTriangle size={20} aria-hidden="true" />}
-      </div>
-      <h1 className="mt-5 font-display text-3xl font-semibold tracking-tight">{granted ? "Manager access granted" : deliverySent ? "Invitation sent" : "Invitation created"}</h1>
-      <p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]">{granted
-        ? `${success.email} can sign in with their existing ESG password. No invitation email was sent, and their account name and organization details stay unchanged.`
-        : deliverySent
-          ? `An invitation link was sent to ${success.email}. They will choose a password when they accept.`
-          : `The invitation for ${success.email} is ready, but the email could not be delivered. Resend it from the Managers list after checking the address.`}</p>
-      <div className="mt-6 flex flex-wrap gap-3"><Link href="/admin" className={styles.primaryLink}><ArrowLeft size={14} aria-hidden="true" />Back to managers</Link><Link href="/admin/policies" className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">View policies</Link></div>
+    return <ApplicationSurface data-pc-workspace="manager-create" className={styles.surface}>
+      <section className={styles.page} aria-labelledby="manager-create-title">
+        <WorkspaceHero titleId="manager-create-title" title={granted ? "Manager access granted" : deliverySent ? "Invitation sent" : "Invitation created"} actions={heroBack} />
+        <WorkspaceSheet className={styles.sheet} role="status" aria-live="polite">
+          <div className={styles.successBody}>
+            <span className={`${styles.successIcon} ${granted || deliverySent ? styles.successOk : styles.successWarn}`}>{granted || deliverySent ? <Check size={20} aria-hidden="true" /> : <AlertTriangle size={20} aria-hidden="true" />}</span>
+            <p className={styles.successText}>{granted
+              ? `${success.email} can sign in with their existing ESG password. No invitation email was sent, and their account name and organization details stay unchanged.`
+              : deliverySent
+                ? `An invitation link was sent to ${success.email}. They will choose a password when they accept.`
+                : `The invitation for ${success.email} is ready, but the email could not be delivered. Resend it from the Managers list after checking the address.`}</p>
+            <div className={styles.successActions}>
+              <Link href="/admin" className={styles.primaryLink}><ArrowLeft size={14} aria-hidden="true" />Back to managers</Link>
+              <Link href="/admin/policies" className={styles.secondaryLink}>View policies</Link>
+            </div>
+          </div>
+        </WorkspaceSheet>
+      </section>
     </ApplicationSurface>;
   }
 
-  return <ApplicationSurface data-pc-workspace="manager-create" className={`${styles.surface} mx-auto max-w-5xl`}>
-    <nav aria-label="Breadcrumb"><Link href="/admin" className="inline-flex min-h-9 items-center gap-1.5 text-[12px] font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowLeft size={14} aria-hidden="true" />Managers</Link></nav>
-    <div className="mt-4"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Manager access</p><h1 className="mt-1 font-display text-3xl font-semibold tracking-tight sm:text-[32px]">Add manager</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Set up a manager account and choose which client organizations they can access.</p></div>
+  return <ApplicationSurface data-pc-workspace="manager-create" className={styles.surface}>
+    <section className={styles.page} aria-labelledby="manager-create-title">
+      <WorkspaceHero titleId="manager-create-title" title="Add manager" description="Set up a manager account and choose which client organizations they can access." actions={heroBack} stats={loading && organizations.length === 0 ? undefined : [
+        { label: "Organizations available", value: activeOrganizations.length },
+        { label: "Selected", value: organizationIds.length },
+      ]} />
 
-    {loadingError ? <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900" role="alert" aria-live="polite"><p>{loadingError}</p><button type="button" onClick={() => void loadOrganizations()} className="inline-flex min-h-11 items-center gap-2 rounded-md px-3 font-semibold hover:bg-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700"><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : error ? <p className="mt-5 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900" role="alert" aria-live="polite">{error}</p> : null}
-    {existingConfirmation ? <section className={styles.existingAccount} aria-labelledby="existing-account-title" aria-live="polite"><div className={styles.existingAccountContent}><AlertTriangle size={18} aria-hidden="true" /><div className="min-w-0"><h2 id="existing-account-title">This email already has an ESG account</h2><p className="mt-1 break-words text-sm">{existingConfirmation.account.name} · {existingConfirmation.account.email}</p><p className="mt-2 text-xs leading-5">Granting access adds this existing account as a manager. They keep their current password, account name, and organization details. No invitation or new password email will be sent. This confirms the {organizationIds.length} organization{organizationIds.length === 1 ? "" : "s"} currently selected.</p><div className="mt-4 flex flex-wrap gap-2"><ApplicationButton type="button" variant="primary" size="lg" className={styles.grantButton} onClick={() => void createManager(getValues(), existingConfirmation)} busy={submitting} busyLabel="Granting access…" leadingIcon={<ShieldCheck size={14} aria-hidden="true" />}>Grant manager access</ApplicationButton><ApplicationButton type="button" variant="outline" size="lg" onClick={() => setExistingConfirmation(null)} disabled={submitting}>Use another email</ApplicationButton></div></div></div></section> : null}
+      <WorkspaceSheet className={styles.sheet}>
+        {loadingError ? <div className={styles.alert} role="alert" aria-live="polite"><p>{loadingError}</p><button type="button" onClick={() => void loadOrganizations()} className={styles.retry}><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : error ? <p className={styles.alert} role="alert" aria-live="polite">{error}</p> : null}
 
-    <form className={`${styles.form} mt-6`} onSubmit={submitManager} aria-busy={submitting}>
-      <div className="grid lg:grid-cols-[minmax(0,1.65fr)_minmax(17rem,.85fr)]">
-        <div className="min-w-0 p-5 sm:p-7">
-          <section aria-labelledby="manager-details-title"><div className="flex items-baseline justify-between gap-3"><h2 id="manager-details-title" className="text-base font-semibold">Account details</h2><span className="text-xs text-[var(--color-muted)]">Step 1 of 2</span></div><p className="mt-1 text-sm text-[var(--color-muted)]">Enter the person’s name and work email.</p><div className="mt-5 grid gap-4 sm:grid-cols-2">
-            <label className={styles.field}>Full name<ApplicationInput {...register("name", { required: true, minLength: 2, maxLength: 120 })} autoComplete="name" required minLength={2} maxLength={120} disabled={submitting} /></label>
-            <label className={styles.field}>Work email<ApplicationInput {...register("email", { required: true, maxLength: 254 })} type="email" autoComplete="email" spellCheck={false} required maxLength={254} disabled={submitting} onChange={(event) => { register("email").onChange(event); setExistingConfirmation(null); }} /></label>
-          </div></section>
+        {existingConfirmation ? <section className={styles.existingAccount} aria-labelledby="existing-account-title" aria-live="polite">
+          <div className={styles.existingContent}>
+            <AlertTriangle size={18} aria-hidden="true" />
+            <div className={styles.existingBody}>
+              <h2 id="existing-account-title">This email already has an ESG account</h2>
+              <p className={styles.existingIdentity}>{existingConfirmation.account.name} · {existingConfirmation.account.email}</p>
+              <p className={styles.existingText}>Granting access adds this existing account as a manager. They keep their current password, account name, and organization details. No invitation or new password email will be sent. This confirms the {organizationIds.length} organization{organizationIds.length === 1 ? "" : "s"} currently selected.</p>
+              <div className={styles.existingActions}>
+                <ApplicationButton type="button" variant="primary" size="lg" className={`${styles.ctaButton} ${styles.grantButton}`} onClick={() => void createManager(getValues(), existingConfirmation)} busy={submitting} busyLabel="Granting access…" leadingIcon={<ShieldCheck size={14} aria-hidden="true" />}>Grant manager access</ApplicationButton>
+                <ApplicationButton type="button" variant="outline" size="lg" onClick={() => setExistingConfirmation(null)} disabled={submitting}>Use another email</ApplicationButton>
+              </div>
+            </div>
+          </div>
+        </section> : null}
 
-          <section className="mt-8 border-t border-[var(--color-line)] pt-6" aria-labelledby="organization-access-title"><div className="flex items-baseline justify-between gap-3"><h2 id="organization-access-title" className="text-base font-semibold">Organization access</h2><span className="text-xs text-[var(--color-muted)]">Step 2 of 2</span></div><p className="mt-1 text-sm leading-5 text-[var(--color-muted)]">Choose the client organizations this manager can open. Their policies are shared with assigned users.</p>
-            <label htmlFor="invite-org-search" className="mt-4 mb-2 block text-xs font-semibold text-[var(--color-ink-2)]">Search organizations</label><ApplicationInput id="invite-org-search" name="organizationSearch" autoComplete="off" type="search" value={organizationSearch} onChange={(event) => setOrganizationSearch(event.target.value)} disabled={submitting} placeholder="Search by name or code" />
-            <fieldset><legend className="sr-only">Assigned organizations</legend><div className="max-h-72 divide-y divide-[var(--color-line)] overflow-y-auto rounded-lg border border-[var(--color-line)] bg-white" aria-busy={loading}>
-              {loading ? <p className="flex min-h-16 items-center gap-2 px-4 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organizations…</p> : loadingError ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">Organizations could not be loaded. Retry above to continue.</p> : visibleOrganizations.map((organization) => <label key={organization.id} className={styles.organizationOption}><input type="checkbox" disabled={submitting} checked={organizationIds.includes(organization.id)} onChange={(event) => setValue("organizationIds", event.target.checked ? [...new Set([...organizationIds, organization.id])] : organizationIds.filter((id) => id !== organization.id), { shouldDirty: true })} className="h-4 w-4 shrink-0 accent-[var(--color-forest)] disabled:opacity-60" /><span className="min-w-0 flex-1 break-words">{organization.name}</span><OrganizationSourceBadge organization={organization} /><span className="shrink-0 text-[10px] text-[var(--color-muted)]">{organization.code}</span></label>)}
-              {!loading && !loadingError && activeOrganizations.length === 0 ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">No active organizations are available to assign.</p> : null}
-              {!loading && !loadingError && activeOrganizations.length > 0 && visibleOrganizations.length === 0 ? <p className="px-4 py-8 text-center text-sm text-[var(--color-muted)]">No organizations match your search.</p> : null}
-            </div></fieldset>
-          </section>
-        </div>
+        <form className={styles.form} onSubmit={submitManager} aria-busy={submitting}>
+          <div className={styles.columns}>
+            <div className={styles.main}>
+              <section className={styles.section} aria-labelledby="manager-details-title">
+                <div className={styles.sectionHeading}><h2 id="manager-details-title">Account details</h2><span>Step 1 of 2</span></div>
+                <p className={styles.sectionText}>Enter the person’s name and work email.</p>
+                <div className={styles.fieldGrid}>
+                  <label className={styles.field}>Full name<ApplicationInput {...register("name", { required: true, minLength: 2, maxLength: 120 })} autoComplete="name" required minLength={2} maxLength={120} disabled={submitting} /></label>
+                  <label className={styles.field}>Work email<ApplicationInput {...register("email", { required: true, maxLength: 254 })} type="email" autoComplete="email" spellCheck={false} required maxLength={254} disabled={submitting} onChange={(event) => { register("email").onChange(event); setExistingConfirmation(null); }} /></label>
+                </div>
+              </section>
 
-        <aside className="border-t border-[var(--color-line)] bg-[var(--color-cream-2)] p-5 sm:p-7 lg:border-l lg:border-t-0" aria-labelledby="manager-access-summary-title">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[var(--color-forest)]"><ShieldCheck size={18} aria-hidden="true" /></div>
-          <h2 id="manager-access-summary-title" className="mt-4 font-display text-xl font-semibold">Access summary</h2>
-          <p className="mt-1 text-sm leading-5 text-[var(--color-muted)]">The manager will be able to open the organizations selected here.</p>
-          <div className="mt-5 rounded-lg border border-[var(--color-line)] bg-white p-4" aria-live="polite" aria-atomic="true"><p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--color-muted)]">Organizations selected</p><p className="mt-1 font-display text-3xl font-semibold tabular-nums text-[var(--color-forest)]">{organizationIds.length}</p><p className="text-sm text-[var(--color-ink-2)]">{organizationIds.length === 1 ? "organization" : "organizations"}</p></div>
-          <div className="mt-5 border-t border-[var(--color-line)] pt-4"><h3 className="text-sm font-semibold">Account setup</h3>{existingConfirmation ? <p className="mt-2 break-words text-sm leading-5 text-[var(--color-muted)]">This person already has an ESG account. Granting access keeps their existing password and sends no invitation.</p> : <p className="mt-2 text-sm leading-5 text-[var(--color-muted)]">A new account receives an invitation to set a password. Existing accounts keep their current password and receive no invitation.</p>}</div>
-          {!submitting && createDisabledReason ? <p className={styles.disabledReason}>{createDisabledReason}</p> : null}
-        </aside>
-      </div>
-      <div className={styles.formFooter}><p className="text-xs text-[var(--color-muted)]" aria-live="polite" aria-atomic="true">{organizationIds.length} organization{organizationIds.length === 1 ? "" : "s"} selected</p><div className="flex flex-wrap gap-2"><Link href="/admin" className="inline-flex min-h-11 items-center rounded-lg border border-[var(--color-line-2)] px-4 text-sm font-medium hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Cancel</Link><ApplicationButton type="submit" variant="primary" size="lg" className={styles.submitButton} disabled={loading || Boolean(loadingError) || submitting || !name.trim() || !email.trim() || organizationIds.length === 0} busy={submitting} busyLabel="Adding manager…" leadingIcon={<UserPlus size={14} aria-hidden="true" />}>Add manager</ApplicationButton></div></div>
-    </form>
+              <section className={styles.section} aria-labelledby="organization-access-title">
+                <div className={styles.sectionHeading}><h2 id="organization-access-title">Organization access</h2><span>Step 2 of 2</span></div>
+                <p className={styles.sectionText}>Choose the client organizations this manager can open. Their policies are shared with assigned users.</p>
+                <label htmlFor="invite-org-search" className={styles.searchLabel}>Search organizations</label>
+                <ApplicationInput id="invite-org-search" name="organizationSearch" autoComplete="off" type="search" value={organizationSearch} onChange={(event) => setOrganizationSearch(event.target.value)} disabled={submitting} placeholder="Search by name or code" />
+                <fieldset className={styles.fieldset}>
+                  <legend className={styles.visuallyHidden}>Assigned organizations</legend>
+                  <div className={styles.organizationList} aria-busy={loading}>
+                    {loading ? <p className={styles.listNotice} aria-live="polite"><Loader2 size={14} className={styles.spinner} aria-hidden="true" />Loading organizations…</p> : loadingError ? <p className={styles.listNotice}>Organizations could not be loaded. Retry above to continue.</p> : visibleOrganizations.map((organization) => <label key={organization.id} className={styles.organizationOption}>
+                      <input type="checkbox" disabled={submitting} checked={organizationIds.includes(organization.id)} onChange={(event) => setValue("organizationIds", event.target.checked ? [...new Set([...organizationIds, organization.id])] : organizationIds.filter((id) => id !== organization.id), { shouldDirty: true })} className={styles.checkbox} />
+                      <span className={styles.organizationName}>{organization.name}</span>
+                      <OrganizationSourceBadge organization={organization} />
+                      <span className={styles.organizationCode}>{organization.code}</span>
+                    </label>)}
+                    {!loading && !loadingError && activeOrganizations.length === 0 ? <p className={styles.listNotice}>No active organizations are available to assign.</p> : null}
+                    {!loading && !loadingError && activeOrganizations.length > 0 && visibleOrganizations.length === 0 ? <p className={styles.listNotice}>No organizations match your search.</p> : null}
+                  </div>
+                </fieldset>
+              </section>
+            </div>
+
+            <aside className={styles.aside} aria-labelledby="manager-access-summary-title">
+              <span className={styles.asideIcon}><ShieldCheck size={18} aria-hidden="true" /></span>
+              <h2 id="manager-access-summary-title" className={styles.asideTitle}>Access summary</h2>
+              <p className={styles.asideText}>The manager will be able to open the organizations selected here.</p>
+              <div className={styles.summary} aria-live="polite" aria-atomic="true">
+                <p className={styles.summaryLabel}>Organizations selected</p>
+                <p className={styles.summaryValue}><AnimatedNumber value={organizationIds.length} /></p>
+                <p className={styles.summaryUnit}>{organizationIds.length === 1 ? "organization" : "organizations"}</p>
+              </div>
+              <div className={styles.accountSetup}>
+                <h3>Account setup</h3>
+                {existingConfirmation ? <p>This person already has an ESG account. Granting access keeps their existing password and sends no invitation.</p> : <p>A new account receives an invitation to set a password. Existing accounts keep their current password and receive no invitation.</p>}
+              </div>
+              {!submitting && createDisabledReason ? <p className={styles.disabledReason}>{createDisabledReason}</p> : null}
+            </aside>
+          </div>
+
+          <div className={styles.formFooter}>
+            <p className={styles.footerStatus} aria-live="polite" aria-atomic="true">{organizationIds.length} organization{organizationIds.length === 1 ? "" : "s"} selected</p>
+            <div className={styles.footerActions}>
+              <Link href="/admin" className={styles.cancelLink}>Cancel</Link>
+              <ApplicationButton type="submit" variant="primary" size="lg" className={`${styles.ctaButton} ${styles.submitButton}`} disabled={loading || Boolean(loadingError) || submitting || !name.trim() || !email.trim() || organizationIds.length === 0} busy={submitting} busyLabel="Adding manager…" leadingIcon={<UserPlus size={14} aria-hidden="true" />}>Add manager</ApplicationButton>
+            </div>
+          </div>
+        </form>
+      </WorkspaceSheet>
+    </section>
   </ApplicationSurface>;
 }

@@ -3,7 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Archive, ArchiveRestore, ArrowRight, Check, FileText, Loader2, Pencil, Plus, RefreshCw, Trash2 } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { Archive, ArchiveRestore, ArrowRight, Building2, Check, FileText, House, Loader2, Pencil, Plus, RefreshCw, Trash2 } from "lucide-react";
 import { Modal } from "@/components/ui/modal";
 import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { PolicyCoverPreview } from "@/components/policy/policy-preview";
@@ -13,6 +14,8 @@ import { initialPolicy } from "@/lib/store";
 import type { Policy, PolicyType } from "@/lib/types";
 import type { PolicyDocumentSummary } from "@/lib/policycraft-types";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
+import { DelayedLoading, ListFooter, ListRegion, useProgressiveList } from "@/components/workspace/workspace-list";
+import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
 import { policyCraftScopedUrl } from "@/lib/policycraft-scope-utils";
 import { ApplicationButton, ApplicationField, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
@@ -48,6 +51,8 @@ export default function DashboardPage() {
   const [renaming, setRenaming] = React.useState(false);
   const [actionId, setActionId] = React.useState<string | null>(null);
   const [deleteDocument, setDeleteDocument] = React.useState<PolicyDocumentSummary | null>(null);
+  // The view whose drafts are on screen; they stay visible while the next view loads.
+  const [loadedView, setLoadedView] = React.useState<DocumentView | null>(null);
 
   const load = React.useCallback(async () => {
     setLoading(true);
@@ -65,6 +70,7 @@ export default function DashboardPage() {
     }
     const documentData = await documentsResponse.json();
     setDocuments(documentData.documents || []);
+    setLoadedView(view);
     setLoading(false);
   }, [organization, router, view]);
 
@@ -170,89 +176,112 @@ export default function DashboardPage() {
   const isArchived = view === "archived";
   const filteredDocuments = policyFilter === "all" ? documents : documents.filter((document) => document.policyType === policyFilter);
   const displayTitles = React.useMemo(() => getDraftDisplayTitles(filteredDocuments), [filteredDocuments]);
-  const policyGroups = groupDraftsByPolicyType(filteredDocuments, policyFilter);
+  const pager = useProgressiveList(filteredDocuments, `${loadedView}|${policyFilter}`);
+  // Group only the batch on screen so later batches extend the groups in place.
+  const visibleIds = new Set(pager.visible.map((document) => document.id));
+  const policyGroups = groupDraftsByPolicyType(filteredDocuments, policyFilter)
+    .map((group) => ({ ...group, documents: group.documents.filter((document) => visibleIds.has(document.id)) }))
+    .filter((group) => group.documents.length > 0);
+  const recordMotion = useRecordMotion();
+  const latestUpdate = documents.reduce<Date | null>((latest, document) => {
+    const updated = new Date(document.updatedAt);
+    return Number.isNaN(updated.valueOf()) || (latest && latest >= updated) ? latest : updated;
+  }, null);
 
   return (
     <ApplicationSurface data-pc-workspace="drafts" className={styles.surface}>
       <section className={styles.page} aria-labelledby="drafts-page-title">
-        <header className={styles.header}>
-          <div className={styles.headingGroup}>
-            <p className={styles.eyebrow}>Organization workspace</p>
-            <h1 id="drafts-page-title" className={styles.pageTitle}>Your policy drafts</h1>
-            <p className={styles.description}>{organization?.name || "Loading organization…"}</p>
-          </div>
-          <div className={styles.headerActions}>
-            <Link href="/" className={styles.homeLink}>Home</Link>
+        <WorkspaceHero
+          titleId="drafts-page-title"
+          eyebrow={organization?.name || "Loading organization…"}
+          eyebrowIcon={<Building2 size={14} />}
+          title="Your policy drafts"
+          description="Resume a draft where you left off, or start a new policy for your organization."
+          stats={[
+            { label: isArchived ? "Archived drafts" : "Active drafts", value: loading && documents.length === 0 ? null : documents.length },
+            { label: "Policy types", value: loading && documents.length === 0 ? null : new Set(documents.map((document) => document.policyType)).size },
+            { label: "Last edited", value: loading && documents.length === 0 ? null : latestUpdate ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(latestUpdate) : "–" },
+          ]}
+          actions={<>
+            <Link href="/" className={styles.homeLink}><House size={15} aria-hidden="true" />Home</Link>
             <Link href={organization ? `/builder?orgId=${organization.id}` : "#"} aria-disabled={!organization} tabIndex={organization ? undefined : -1} className={`${styles.newPolicy} ${organization ? "" : styles.newPolicyDisabled}`}><Plus size={16} aria-hidden="true" />New policy</Link>
-          </div>
-        </header>
+          </>}
+        />
 
-        <section className={styles.toolbar} aria-label="Draft controls">
-          <div className={styles.viewSegments} role="tablist" aria-label="Draft views">
-            <button type="button" role="tab" aria-selected={!isArchived} onClick={() => setView("active")} className={`${styles.segment} ${!isArchived ? styles.segmentSelected : ""}`}>Active drafts</button>
-            <button type="button" role="tab" aria-selected={isArchived} onClick={() => setView("archived")} className={`${styles.segment} ${isArchived ? styles.segmentSelected : ""}`}><Archive size={15} aria-hidden="true" /> Archived</button>
-          </div>
-          <div className={styles.filters} role="group" aria-label="Filter drafts by policy type">
-            <button type="button" aria-pressed={policyFilter === "all"} onClick={() => setPolicyFilter("all")} className={`${styles.filter} ${policyFilter === "all" ? styles.filterSelected : ""}`}>All <span>{documents.length}</span></button>
-            {POLICY_TYPES.map((policyType) => {
-              const count = documents.filter((document) => document.policyType === policyType).length;
-              return <button key={policyType} type="button" aria-pressed={policyFilter === policyType} onClick={() => setPolicyFilter(policyType)} className={`${styles.filter} ${policyFilter === policyType ? styles.filterSelected : ""}`}>{POLICY_PROFILES[policyType].short} <span>{count}</span></button>;
-            })}
-          </div>
-        </section>
+        <WorkspaceSheet className={styles.sheet}>
+          <section className={styles.toolbar} aria-label="Draft controls">
+            <div className={styles.viewSegments} role="tablist" aria-label="Draft views">
+              <button type="button" role="tab" aria-selected={!isArchived} onClick={() => setView("active")} className={`${styles.segment} ${!isArchived ? styles.segmentSelected : ""}`}>{!isArchived ? <SelectionPill layoutId="drafts-view" /> : null}<FileText size={15} aria-hidden="true" />Active drafts</button>
+              <button type="button" role="tab" aria-selected={isArchived} onClick={() => setView("archived")} className={`${styles.segment} ${isArchived ? styles.segmentSelected : ""}`}>{isArchived ? <SelectionPill layoutId="drafts-view" /> : null}<Archive size={15} aria-hidden="true" />Archived</button>
+            </div>
+            <div className={styles.filters} role="group" aria-label="Filter drafts by policy type">
+              <button type="button" aria-pressed={policyFilter === "all"} onClick={() => setPolicyFilter("all")} className={`${styles.filter} ${policyFilter === "all" ? styles.filterSelected : ""}`}>{policyFilter === "all" ? <SelectionPill layoutId="drafts-filter" className={styles.filterPill} /> : null}All <span>{documents.length}</span></button>
+              {POLICY_TYPES.map((policyType) => {
+                const count = documents.filter((document) => document.policyType === policyType).length;
+                return <button key={policyType} type="button" aria-pressed={policyFilter === policyType} onClick={() => setPolicyFilter(policyType)} className={`${styles.filter} ${policyFilter === policyType ? styles.filterSelected : ""}`}>{policyFilter === policyType ? <SelectionPill layoutId="drafts-filter" className={styles.filterPill} /> : null}{POLICY_PROFILES[policyType].short} <span>{count}</span></button>;
+              })}
+            </div>
+          </section>
 
-        {error && !renameDocument && !deleteDocument ? <div role="alert" className={styles.alert}><span>{error}</span><button type="button" onClick={() => void load()} aria-label="Refresh drafts" className={styles.iconButton}><RefreshCw size={16} aria-hidden="true" /></button></div> : null}
+          <div className={styles.sheetBody}>
+            <AnimatePresence>
+              {error && !renameDocument && !deleteDocument ? <motion.div key="error" role="alert" className={styles.alert} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}><span>{error}</span><button type="button" onClick={() => void load()} aria-label="Refresh drafts" className={styles.iconButton}><RefreshCw size={16} aria-hidden="true" /></button></motion.div> : null}
+            </AnimatePresence>
 
-        {loading ? documents.length === 0 ? (
-          <div className={styles.loadingRecords}>
-            <div className={styles.loading} role="status" aria-live="polite" aria-busy="true"><Loader2 className={styles.spinner} size={20} aria-hidden="true" /><span>Loading drafts…</span></div>
-            <RecordSkeleton />
-          </div>
-        ) : (
-          <div className={styles.loading} role="status" aria-live="polite" aria-busy="true"><Loader2 className={styles.spinner} size={20} aria-hidden="true" /><span>Loading drafts…</span></div>
-        )
-        : error && documents.length === 0 ? null : filteredDocuments.length === 0 ? (
-          <div className={styles.emptyState}>
-            {isArchived ? <Archive className={styles.emptyIcon} size={28} aria-hidden="true" /> : <FileText className={styles.emptyIcon} size={28} aria-hidden="true" />}
-            <h2>{policyFilter !== "all" ? `No ${POLICY_PROFILES[policyFilter].label.toLowerCase()} drafts here` : isArchived ? "No archived drafts" : "No saved drafts yet"}</h2>
-            <p>{isArchived ? "Archived drafts will appear here." : "Start a policy and it will appear here automatically."}</p>
-          </div>
-        ) : (
-          <div className={styles.groups}>
-            {policyGroups.map(({ policyType, documents: groupDocuments }) => (
-              <section key={policyType} aria-labelledby={`drafts-${policyType}`}>
-                <div className={styles.groupHeading}>
-                  <div><p className={styles.groupEyebrow}>Policy type</p><h2 id={`drafts-${policyType}`} className={styles.groupTitle}>{POLICY_PROFILES[policyType].label}</h2></div>
-                  <span className={styles.groupCount}>{groupDocuments.length} {groupDocuments.length === 1 ? "draft" : "drafts"}</span>
-                </div>
-                <div className={styles.recordList}>
-                  {groupDocuments.map((document) => (
-                    <article key={document.id} className={styles.record}>
-                      <div role="img" aria-label={`Cover preview for ${displayTitles.get(document.id) || document.title}`} className={styles.coverThumbnail} onErrorCapture={(event) => { if (event.target instanceof HTMLImageElement) event.target.style.visibility = "hidden"; }}>
-                        <div className={styles.coverPage} aria-hidden="true"><PolicyCoverPreview policy={previewPolicy(document)} assetScope={scopeFor(document)} /></div>
+            {loading && documents.length === 0 ? (
+              <DelayedLoading label="Loading drafts…"><div className={styles.loadingRecords}>
+                <div className={styles.loading} role="status" aria-live="polite" aria-busy="true"><Loader2 className={styles.spinner} size={20} aria-hidden="true" /><span>Loading drafts…</span></div>
+                <RecordSkeleton />
+              </div></DelayedLoading>
+            )
+            : error && documents.length === 0 ? null : <ListRegion busy={loading} contentKey={loadedView || ""}>{filteredDocuments.length === 0 ? (
+              <motion.div className={styles.emptyState} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: WS_EASE }}>
+                <motion.span className={styles.emptyIcon} initial={{ scale: 0.6, rotate: -8 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }}>
+                  {isArchived ? <Archive size={24} aria-hidden="true" /> : <FileText size={24} aria-hidden="true" />}
+                </motion.span>
+                <h2>{policyFilter !== "all" ? `No ${POLICY_PROFILES[policyFilter].label.toLowerCase()} drafts here` : isArchived ? "No archived drafts" : "No saved drafts yet"}</h2>
+                <p>{isArchived ? "Archived drafts will appear here." : "Start a policy and it will appear here automatically."}</p>
+              </motion.div>
+            ) : (
+              <div className={styles.groups}>
+                {policyGroups.map(({ policyType, documents: groupDocuments }) => (
+                  <section key={policyType} aria-labelledby={`drafts-${policyType}`}>
+                      <div className={styles.groupHeading}>
+                        <h2 id={`drafts-${policyType}`} className={styles.groupTitle}>{POLICY_PROFILES[policyType].label}</h2>
+                        <span className={styles.groupCount}>{groupDocuments.length} {groupDocuments.length === 1 ? "draft" : "drafts"}</span>
                       </div>
-                      <div className={styles.recordBody}>
-                        <h3 className={styles.recordTitle}>{displayTitles.get(document.id) || document.title}</h3>
-                        <p className={styles.recordMeta}>{label(document.currentStep)} · Updated {new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(document.updatedAt))}</p>
-                        {!isArchived ? <Link href={`/builder?draft=${encodeURIComponent(document.id)}&orgId=${document.organization?.id || organization?.id || ""}`} className={styles.resumeLink}>Resume <ArrowRight size={15} aria-hidden="true" /></Link> : <p className={styles.archivedLabel}><Archive size={14} aria-hidden="true" /> Archived</p>}
+                      <div className={styles.recordList}>
+                        <AnimatePresence>
+                          {groupDocuments.map((document, index) => (
+                            <motion.article key={document.id} className={styles.record} data-ws-row="" style={{ "--ws-type": POLICY_PROFILES[document.policyType]?.accent } as React.CSSProperties} {...recordMotion(index)}>
+                              <TiltCover label={`Cover preview for ${displayTitles.get(document.id) || document.title}`} className={styles.coverThumbnail} coverKey={`${document.id}:${document.updatedAt}`}>
+                                <span className={styles.coverPage} aria-hidden="true"><PolicyCoverPreview policy={previewPolicy(document)} assetScope={scopeFor(document)} /></span>
+                              </TiltCover>
+                              <div className={styles.recordBody}>
+                                <h3 className={styles.recordTitle}>{displayTitles.get(document.id) || document.title}</h3>
+                                <p className={styles.recordMeta}><span className={styles.stepChip}>{label(document.currentStep)}</span><span>Updated {new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(document.updatedAt))}</span></p>
+                                {!isArchived ? <Link href={`/builder?draft=${encodeURIComponent(document.id)}&orgId=${document.organization?.id || organization?.id || ""}`} className={styles.resumeLink}>Resume<ArrowRight size={15} aria-hidden="true" /></Link> : <p className={styles.archivedLabel}><Archive size={14} aria-hidden="true" /> Archived</p>}
+                              </div>
+                              <div className={styles.recordActions}>
+                                {!isArchived ? <button type="button" title="Rename draft" onClick={() => openRename(document)} className={styles.textAction}><Pencil size={14} aria-hidden="true" /> Rename</button> : null}
+                                <button type="button" title={isArchived ? "Restore draft" : "Archive draft"} onClick={() => void setArchived(document.id, isArchived ? false : true)} disabled={actionId === document.id} className={styles.textAction}>
+                                  {actionId === document.id ? <Loader2 size={15} className={styles.spinner} aria-hidden="true" /> : isArchived ? <ArchiveRestore size={15} aria-hidden="true" /> : <Archive size={15} aria-hidden="true" />}
+                                  {isArchived ? "Restore" : "Archive"}
+                                </button>
+                                {isArchived ? <button type="button" title="Delete archived draft" onClick={() => setDeleteDocument(document)} disabled={actionId === document.id} className={`${styles.textAction} ${styles.dangerAction}`}><Trash2 size={14} aria-hidden="true" /> Delete</button> : null}
+                              </div>
+                            </motion.article>
+                          ))}
+                        </AnimatePresence>
                       </div>
-                      <div className={styles.recordActions}>
-                        {!isArchived ? <button type="button" title="Rename draft" onClick={() => openRename(document)} className={styles.textAction}><Pencil size={14} aria-hidden="true" /> Rename</button> : null}
-                        <button type="button" title={isArchived ? "Restore draft" : "Archive draft"} onClick={() => void setArchived(document.id, isArchived ? false : true)} disabled={actionId === document.id} className={styles.textAction}>
-                          {actionId === document.id ? <Loader2 size={15} className={styles.spinner} aria-hidden="true" /> : isArchived ? <ArchiveRestore size={15} aria-hidden="true" /> : <Archive size={15} aria-hidden="true" />}
-                          {isArchived ? "Restore" : "Archive"}
-                        </button>
-                        {isArchived ? <button type="button" title="Delete archived draft" onClick={() => setDeleteDocument(document)} disabled={actionId === document.id} className={`${styles.textAction} ${styles.dangerAction}`}><Trash2 size={14} aria-hidden="true" /> Delete</button> : null}
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-            ))}
+                  </section>
+                ))}
+                <ListFooter shown={pager.shown} total={pager.total} hasMore={pager.hasMore} onMore={pager.showMore} noun="drafts" />
+              </div>
+            )}</ListRegion>}
           </div>
-        )}
+        </WorkspaceSheet>
       </section>
-
       <Modal open={Boolean(renameDocument)} onClose={() => { if (!renaming) setRenameDocument(null); }} title="Rename draft" description="Choose a name for this policy draft." width={460} hideClose={renaming}>
         <form className={styles.dialogForm} onSubmit={(event) => void submitRename(event)}>
           {error ? <p role="alert" className={styles.inlineError}>{error}</p> : null}

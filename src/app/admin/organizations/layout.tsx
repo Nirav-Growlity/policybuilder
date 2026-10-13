@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
-import { OrganizationSectionNavigation } from "@/components/workspace/organization-section-navigation";
 
+// Each organization page renders its own WorkspaceHero, which carries the section navigation,
+// so the layout must not add anything above it.
 export default function OrganizationsLayout({ children }: Readonly<{ children: ReactNode }>) {
-  return <div className="mx-auto max-w-6xl">
-    <OrganizationSectionNavigation />
-    {children}
-  </div>;
+  return <>{children}</>;
 }

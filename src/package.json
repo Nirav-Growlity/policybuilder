@@ -17,6 +17,7 @@
     "test:organizations": "node --import tsx --test --test-force-exit lib/policycraft-organization-repository.test.ts lib/policycraft-access-policy.test.ts lib/policycraft-mapping.test.ts lib/policycraft-admin-documents.test.ts lib/policycraft-task-persistence.test.ts lib/policycraft-organization-upload.test.ts"
   },
   "dependencies": {
+    "@fontsource-variable/instrument-sans": "^5.3.0",
     "@fontsource/allura": "^5.3.0",
     "@fontsource/bad-script": "^5.3.0",
     "@fontsource/caveat": "^5.3.0",
@@ -24,6 +25,7 @@
     "@fontsource/pacifico": "^5.3.0",
     "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.9.1",
+    "@number-flow/react": "^0.6.2",
     "@react-pdf/renderer": "^4.5.1",
     "@sparticuz/chromium": "^147.0.0",
     "bcryptjs": "^3.0.2",

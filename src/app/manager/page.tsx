@@ -3,11 +3,14 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Archive, ArrowRight, Building2, FileText, Loader2, Plus, RefreshCw, Search } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { Archive, ArrowRight, Building2, CheckCircle2, FileText, Loader2, PencilLine, Plus, RefreshCw, Search } from "lucide-react";
 import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { Modal } from "@/components/ui/modal";
 import { isStandaloneOrganization, OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
+import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
+import { DelayedLoading, ListFooter, ListRegion, useProgressiveList } from "@/components/workspace/workspace-list";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
 import { RecordSkeleton } from "@/components/ui/record-skeleton";
@@ -207,7 +210,7 @@ export default function ManagerWorkspacePage() {
   }
 
   const filteredDocuments = filter === "all" ? documents : documents.filter((document) => document.policyType === filter);
-  const scopedDocuments = loadedScope === scopeKey ? filteredDocuments : [];
+  const scopedDocuments = loadedScope ? filteredDocuments : [];
   const normalizedQuery = searchDraft.trim().toLocaleLowerCase();
   const activeActionId = actionId?.scopeKey === scopeKey && actionId.generation === requestEpoch ? actionId.id : null;
   const activeArchiveTarget = archiveTarget?.scopeKey === scopeKey && archiveTarget.generation === requestEpoch ? archiveTarget.document : null;
@@ -222,58 +225,63 @@ export default function ManagerWorkspacePage() {
     organizationId: document.organizationId, organizationName: document.organizationName,
   } : null;
 
+  const recordMotion = useRecordMotion();
+  const pager = useProgressiveList(visibleDocuments, `${loadedScope}|${filter}|${normalizedQuery}`);
+  const switchingScope = isLoading && documents.length > 0;
+
   if (!organizations.length) return (
     <ApplicationSurface data-pc-workspace="manager" className={styles.surface}>
       <section className={styles.page} aria-labelledby="manager-page-title">
-        <section className={styles.emptyOrganizations}>
-          <div className={styles.emptyIcon}><Building2 size={22} aria-hidden="true" /></div>
-          <h1 id="manager-page-title" className={styles.pageTitle}>No organizations assigned</h1>
+        <WorkspaceHero titleId="manager-page-title" title="No organizations assigned" description="Your administrator assigns the organizations you can open." />
+        <WorkspaceSheet className={styles.emptyOrganizations}>
+          <motion.span className={styles.emptyIcon} initial={{ scale: 0.6, rotate: -8 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.2 }}><Building2 size={22} aria-hidden="true" /></motion.span>
           <p>Ask your PolicyCraft administrator to assign an organization. Its shared policies will appear here when access is ready.</p>
-        </section>
+        </WorkspaceSheet>
       </section>
     </ApplicationSurface>
   );
 
   return <ApplicationSurface data-pc-workspace="manager" className={styles.surface}>
     <section className={styles.page} aria-labelledby="manager-page-title">
-      <header className={styles.header}>
-        <div className={styles.headingGroup}>
-          <p className={styles.eyebrow}>Manager workspace</p>
-          <h1 id="manager-page-title" className={styles.pageTitle}>Organizations &amp; policies</h1>
-          <p className={styles.description}>View shared policies across all assigned organizations or focus on one.</p>
-        </div>
-        <div className={styles.headerControls}>
+      <WorkspaceHero
+        titleId="manager-page-title"
+        title="Organizations & policies"
+        description="View shared policies across all assigned organizations or focus on one."
+        stats={[
+          { label: organizations.length === 1 ? "Organization" : "Organizations", value: organizations.length },
+          { label: view === "archived" ? "Archived policies" : "Active policies", value: isLoading && !documents.length ? null : visibleError ? "–" : documents.length },
+        ]}
+        actions={<div className={styles.headerControls}>
           <label htmlFor="manager-organization" className={styles.filterLabel}>Organization</label>
           <select id="manager-organization" name="organizationId" value={organization ? String(organization.id) : "all"} onChange={(event) => selectOrganization(event.target.value)} className={styles.select}>
             <option value="all">All organizations</option>
             {organizations.map((item) => <option key={item.id} value={item.id}>{item.name} · {organizationSourceName(item)}</option>)}
           </select>
-        </div>
-      </header>
+        </div>}
+      />
 
-      {visibleError ? <div role="alert" className={styles.alert}><span>{visibleError}</span><button type="button" onClick={() => void load()} aria-label="Retry loading policies" className={styles.alertAction}><RefreshCw size={15} aria-hidden="true" />Retry</button></div> : null}
-      {visibleNotice ? <p role="status" aria-live="polite" className={styles.notice}>{visibleNotice}</p> : null}
-
-      <section className={styles.recordsSection} aria-label="Policy records">
+      <WorkspaceSheet as="section" className={styles.recordsSection} aria-label="Policy records">
         <div className={styles.sectionHeader}>
           <div className={styles.sectionIdentity}>
-            <h2 className={styles.organizationName}>{organization?.name || "All organizations"}{organization ? <OrganizationSourceBadge organization={organization} className={styles.sourceBadge} /> : null}</h2>
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.h2 key={organization?.id ?? "all"} className={styles.organizationName} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25, ease: WS_EASE }}>{organization?.name || "All organizations"}{organization ? <OrganizationSourceBadge organization={organization} className={styles.sourceBadge} /> : null}</motion.h2>
+            </AnimatePresence>
             <p className={styles.recordCount} aria-live="polite">{visibleDocuments.length} of {documents.length} {view === "archived" ? "archived" : "active"} {documents.length === 1 ? "policy" : "policies"}</p>
           </div>
           <div className={styles.headerActions}>
             <div className={styles.viewSegments} role="group" aria-label="Policy status">
-              {(["active", "archived"] as const).map((item) => <button key={item} type="button" aria-pressed={view === item} onClick={() => { setNotice(null); updateQuery({ view: item }, "push"); }} className={`${styles.segment} ${view === item ? styles.segmentSelected : ""}`}>{item === "archived" ? <><Archive size={13} aria-hidden="true" />Archived</> : "Active"}</button>)}
+              {(["active", "archived"] as const).map((item) => <button key={item} type="button" aria-pressed={view === item} onClick={() => { setNotice(null); updateQuery({ view: item }, "push"); }} className={`${styles.segment} ${view === item ? styles.segmentSelected : ""}`}>{view === item ? <SelectionPill layoutId="manager-view" /> : null}{item === "archived" ? <><Archive size={14} aria-hidden="true" />Archived</> : <><FileText size={14} aria-hidden="true" />Active</>}</button>)}
             </div>
             {view === "active" ? organization ? <>
+              {isStandaloneOrganization(organization) ? <Link href={`/manager/organizations/${organization.id}`} className={styles.editLink}><PencilLine size={14} aria-hidden="true" />Edit organization details</Link> : null}
               <Link href={`/builder?orgId=${organization.id}`} className={styles.newPolicy}><Plus size={15} aria-hidden="true" />New policy</Link>
-              {isStandaloneOrganization(organization) ? <Link href={`/manager/organizations/${organization.id}`} className={styles.editLink}>Edit organization details</Link> : null}
-            </> : <ApplicationButton variant="primary" size="md" leadingIcon={<Plus size={15} aria-hidden="true" />} onClick={() => { setNewPolicyOrgId(String(organizations[0]?.id || "")); setNewPolicyOpen(true); }}>New policy</ApplicationButton> : null}
+            </> : <ApplicationButton variant="primary" size="md" className={styles.newPolicyButton} leadingIcon={<Plus size={15} aria-hidden="true" />} onClick={() => { setNewPolicyOrgId(String(organizations[0]?.id || "")); setNewPolicyOpen(true); }}>New policy</ApplicationButton> : null}
           </div>
         </div>
 
         <div className={styles.filterBar}>
           <div className={styles.typeFilters} role="group" aria-label="Filter by policy type">
-            {["all", ...TYPES].map((type) => <button key={type} type="button" aria-pressed={filter === type} onClick={() => updateQuery({ type: type as Filter }, "push")} className={`${styles.filter} ${filter === type ? styles.filterSelected : ""}`}>{type === "all" ? "All" : POLICY_PROFILES[type as PolicyType].short}</button>)}
+            {["all", ...TYPES].map((type) => <button key={type} type="button" aria-pressed={filter === type} onClick={() => updateQuery({ type: type as Filter }, "push")} className={`${styles.filter} ${filter === type ? styles.filterSelected : ""}`}>{filter === type ? <SelectionPill layoutId="manager-type-filter" className={styles.filterPill} /> : null}{type === "all" ? "All" : <>{POLICY_PROFILES[type as PolicyType].short}</>}</button>)}
           </div>
           <label htmlFor="manager-policy-search" className={styles.searchField}>
             <Search size={15} aria-hidden="true" className={styles.searchIcon} />
@@ -282,28 +290,39 @@ export default function ManagerWorkspacePage() {
           </label>
         </div>
 
-        {isLoading ? documents.length === 0 ? (
-          <div className={styles.loadingRecords}>
-            <div className={styles.loading} role="status" aria-live="polite" aria-busy="true"><Loader2 size={20} className={styles.spinner} aria-hidden="true" /><span>Loading policies…</span></div>
-            <RecordSkeleton />
-          </div>
-        ) : (
-          <div className={styles.loading} role="status" aria-live="polite" aria-busy="true"><Loader2 size={20} className={styles.spinner} aria-hidden="true" /><span>Loading policies…</span></div>
-        ) : visibleError ? null : visibleDocuments.length === 0 ? <div className={styles.emptyState}><FileText size={24} className={styles.emptyStateIcon} aria-hidden="true" /><h2>{documents.length === 0 ? view === "archived" ? "No archived policies" : "No policies yet" : "No matching policies"}</h2><p>{documents.length === 0 ? view === "archived" ? "Archived policies will be listed here." : allOrganizationsSelected ? "Create a policy in an assigned organization to start the shared workspace." : "Create a policy for this organization to start the shared workspace." : "Try another title or policy type filter."}</p>{documents.length > 0 && (searchDraft || filter !== "all") ? <button type="button" onClick={() => { setSearchDraft(""); updateQuery({ q: "", type: "all" }, "push"); }} className={styles.clearFilters}>Clear filters</button> : null}</div> : <div className={styles.records}>
-          {visibleDocuments.map((document) => <article key={`${document.organizationId}:${document.id}`} className={styles.record}>
-            <div role="img" aria-label={`Cover preview for ${document.title}`} className={styles.coverThumbnail}><div className={styles.coverPage} aria-hidden="true"><PolicyCoverPreview policy={policyFromSummary(document)} assetScope={policyScopeForDocument(document)} /></div></div>
-            <div className={styles.recordBody}>
-              <h3 className={styles.policyTitle} title={document.title}>{document.title}</h3>
-              <p className={styles.policyMeta}><span>{POLICY_PROFILES[document.policyType]?.label || readable(document.policyType)}</span><span aria-hidden="true">·</span><span>Updated {new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(document.updatedAt))}</span></p>
-              {allOrganizationsSelected ? <p className={styles.organizationMeta}>{document.organizationName} · {document.organizationSource === "standalone" ? "PolicyCraft organization" : "ESG organization"}</p> : null}
-              <p className={styles.ownerMeta}>Created by <span>{document.createdBy?.name || document.createdBy?.email || "Workspace member"}</span></p>
-            </div>
-            <div className={styles.actionRow}>
-              {view === "active" ? <><button type="button" aria-label={`Archive ${document.title}`} disabled={Boolean(activeActionId)} onClick={() => { setNotice(null); setArchiveError(""); setArchiveTarget({ document, scopeKey, generation: requestGeneration.current }); }} className={styles.textAction}><Archive size={14} aria-hidden="true" />Archive</button><Link href={`/builder?draft=${encodeURIComponent(document.id)}&orgId=${document.organizationId}`} className={styles.openLink}>Open <ArrowRight size={14} aria-hidden="true" /></Link></> : <span className={styles.archivedLabel}>Archived · contact an administrator to restore</span>}
-            </div>
-          </article>)}
-        </div>}
-      </section>
+        <div className={styles.sheetBody}>
+          <AnimatePresence>
+            {visibleError ? <motion.div key="error" role="alert" className={styles.alert} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}><span>{visibleError}</span><button type="button" onClick={() => void load()} aria-label="Retry loading policies" className={styles.alertAction}><RefreshCw size={15} aria-hidden="true" />Retry</button></motion.div> : null}
+            {visibleNotice ? <motion.p key="notice" role="status" aria-live="polite" className={styles.notice} initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}><CheckCircle2 size={16} aria-hidden="true" />{visibleNotice}</motion.p> : null}
+          </AnimatePresence>
+
+          {isLoading && documents.length === 0 ? (
+            <DelayedLoading label="Loading policies…"><div className={styles.loadingRecords}>
+              <div className={styles.loading} role="status" aria-live="polite" aria-busy="true"><Loader2 size={20} className={styles.spinner} aria-hidden="true" /><span>Loading policies…</span></div>
+              <RecordSkeleton />
+            </div></DelayedLoading>
+          ) : visibleError && !switchingScope ? null : <ListRegion busy={switchingScope} contentKey={loadedScope}>{visibleDocuments.length === 0 ? <motion.div className={styles.emptyState} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: WS_EASE }}><motion.span className={styles.emptyStateIcon} initial={{ scale: 0.6, rotate: -8 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }}><FileText size={22} aria-hidden="true" /></motion.span><h2>{documents.length === 0 ? view === "archived" ? "No archived policies" : "No policies yet" : "No matching policies"}</h2><p>{documents.length === 0 ? view === "archived" ? "Archived policies will be listed here." : allOrganizationsSelected ? "Create a policy in an assigned organization to start the shared workspace." : "Create a policy for this organization to start the shared workspace." : "Try another title or policy type filter."}</p>{documents.length > 0 && (searchDraft || filter !== "all") ? <button type="button" onClick={() => { setSearchDraft(""); updateQuery({ q: "", type: "all" }, "push"); }} className={styles.clearFilters}>Clear filters</button> : null}</motion.div> : <div className={styles.records}>
+            <AnimatePresence>
+              {pager.visible.map((document, index) => <motion.article key={`${document.organizationId}:${document.id}`} className={styles.record} data-ws-row="" style={{ "--ws-type": POLICY_PROFILES[document.policyType]?.accent } as React.CSSProperties} {...recordMotion(index)}>
+                <TiltCover label={`Cover preview for ${document.title}`} className={styles.coverThumbnail} coverKey={`${document.organizationId}:${document.id}:${document.updatedAt}`}><span className={styles.coverPage} aria-hidden="true"><PolicyCoverPreview policy={policyFromSummary(document)} assetScope={policyScopeForDocument(document)} /></span></TiltCover>
+                <div className={styles.recordBody}>
+                  <h3 className={styles.policyTitle} title={document.title}>{document.title}</h3>
+                  <p className={styles.policyMeta}><span className={styles.typeLabel}>{POLICY_PROFILES[document.policyType]?.label || readable(document.policyType)}</span><span>Updated {new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(new Date(document.updatedAt))}</span></p>
+                  <p className={styles.ownerLine}>
+                    {allOrganizationsSelected ? <span className={styles.organizationMeta}><Building2 size={13} aria-hidden="true" />{document.organizationName} · {document.organizationSource === "standalone" ? "PolicyCraft organization" : "ESG organization"}</span> : null}
+                    <span className={styles.ownerMeta}>Created by <span>{document.createdBy?.name || document.createdBy?.email || "Workspace member"}</span></span>
+                  </p>
+                </div>
+                <div className={styles.actionRow}>
+                  {view === "active" ? <><button type="button" aria-label={`Archive ${document.title}`} disabled={Boolean(activeActionId)} onClick={() => { setNotice(null); setArchiveError(""); setArchiveTarget({ document, scopeKey, generation: requestGeneration.current }); }} className={styles.textAction}><Archive size={14} aria-hidden="true" />Archive</button><Link href={`/builder?draft=${encodeURIComponent(document.id)}&orgId=${document.organizationId}`} className={styles.openLink}>Open<ArrowRight size={14} aria-hidden="true" /></Link></> : <span className={styles.archivedLabel}>Archived · contact an administrator to restore</span>}
+                </div>
+              </motion.article>)}
+            </AnimatePresence>
+          </div>}
+          {visibleDocuments.length ? <ListFooter shown={pager.shown} total={pager.total} hasMore={pager.hasMore} onMore={pager.showMore} noun="policies" /> : null}
+          </ListRegion>}
+        </div>
+      </WorkspaceSheet>
 
       <Modal open={newPolicyOpen} onClose={() => setNewPolicyOpen(false)} title="Choose an organization" description="Select where to create this policy. The builder will open with that organization selected." width={460}>
         <label htmlFor="new-policy-organization" className={styles.modalLabel}>Organization</label>

@@ -1,13 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { ArrowLeft, Loader2, RefreshCw } from "lucide-react";
-import { normalizeStandaloneOrganization, StandaloneOrganizationEditor, type StandaloneOrganization } from "@/components/workspace/standalone-organization-editor";
-import { ApplicationSurface } from "@/components/ui/application-surface";
-import { ApplicationButton } from "@/components/ui/app-primitives";
-import styles from "@/components/workspace/standalone-organization-editor.module.css";
+import { normalizeStandaloneOrganization, StandaloneOrganizationEditor, StandaloneOrganizationStatus, type StandaloneOrganization } from "@/components/workspace/standalone-organization-editor";
 
 export default function ManagerEditOrganizationPage() {
   const params = useParams<{ id: string }>();
@@ -35,5 +30,5 @@ export default function ManagerEditOrganizationPage() {
   React.useEffect(() => { const timer = window.setTimeout(() => void load(), 0); return () => { window.clearTimeout(timer); requestGeneration.current += 1; }; }, [load]);
 
   if (organization?.id === organizationId) return <StandaloneOrganizationEditor key={`${organization.id}:${organization.lockVersion}`} organizationId={organization.id} initial={organization} backHref={`/manager?orgId=${organization.id}`} />;
-  return <ApplicationSurface data-pc-workspace="organization-editor" className={styles.surface}><div className={styles.page}><Link href="/manager" className={styles.backLink}><ArrowLeft size={14} aria-hidden="true" />Organizations & policies</Link>{loading ? <p className={styles.loading} role="status"><Loader2 size={16} className="animate-spin" aria-hidden="true" />Loading organization…</p> : error ? <div className={styles.error} role="alert" aria-live="polite"><p>{error}</p><ApplicationButton type="button" variant="outline" onClick={() => void load()} leadingIcon={<RefreshCw size={14} aria-hidden="true" />}>Retry</ApplicationButton></div> : null}</div></ApplicationSurface>;
+  return <StandaloneOrganizationStatus backHref="/manager" backLabel="Organizations & policies" loading={loading} error={error} onRetry={() => void load()} />;
 }

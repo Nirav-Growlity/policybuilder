@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, UserRound } from "lucide-react";
+import { ArrowLeft, ArrowRight, ShieldCheck, UserRound } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
+import { WorkspaceHero, WorkspaceSheet } from "@/components/workspace/workspace-motion";
 import { Modal } from "@/components/ui/modal";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
@@ -14,7 +15,6 @@ import styles from "./page.module.css";
 
 type Recipient = { id: string; name: string; email: string; role: "admin" | "manager" | "user" };
 const endpoint = "/api/policycraft/admin/administrator";
-const focusClass = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]";
 const alreadyAdminMessage = "This account is already a PolicyCraft administrator. Search for another account to add.";
 const lookupSchema = z.object({ email: z.string() });
 const passwordSchema = z.object({ password: z.string() });
@@ -141,69 +141,75 @@ export default function AdministrationPage() {
   const recipientIsAdmin = recipient?.role === "admin";
   const lookupRegistration = lookupForm.register("email", { required: true, maxLength: 254 });
 
-  return <ApplicationSurface data-pc-workspace="administration" className={`${styles.surface} max-w-5xl`}>
-    <nav aria-label="Breadcrumb"><Link href="/admin" className={`inline-flex min-h-9 items-center gap-1.5 text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)] ${focusClass}`}><ArrowRight size={14} className="rotate-180" aria-hidden="true" />Admin</Link></nav>
-    <div className="mt-4"><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Administration</p><h1 className="mt-1 font-display text-3xl font-semibold tracking-tight sm:text-[32px]">Administration</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Add another administrator to PolicyCraft while keeping your own access.</p></div>
+  return <ApplicationSurface data-pc-workspace="administration" className={styles.surface}>
+    <section className={styles.page} aria-labelledby="administration-title">
+      <WorkspaceHero
+        titleId="administration-title"
+        title="Administration"
+        description="Add another administrator to PolicyCraft while keeping your own access."
+        actions={<nav aria-label="Breadcrumb"><Link href="/admin" className={styles.heroLink}><ArrowLeft size={15} aria-hidden="true" />Admin</Link></nav>}
+      />
 
-    <div className="mt-6 overflow-hidden rounded-xl border border-[var(--color-line)] bg-white shadow-sm">
-      <div className="grid lg:grid-cols-[minmax(0,1.55fr)_minmax(17rem,.85fr)]">
-        <div className="min-w-0 p-5 sm:p-7">
-          <section aria-labelledby="current-admin-title">
-            <h2 id="current-admin-title" className="text-base font-semibold">Signed-in administrator</h2>
-            <div className="mt-4 flex min-w-0 items-center gap-3 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream)] p-4">
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[var(--color-forest-soft)] text-[var(--color-forest)]"><ShieldCheck size={19} aria-hidden="true" /></span>
-              <div className="min-w-0"><p className="break-words font-semibold">{access.actor.name || "Administrator"}</p><p className="mt-1 break-all text-sm text-[var(--color-muted)]">{access.actor.email}</p></div>
-            </div>
-          </section>
-
-          {successMessage ? <p role="status" aria-live="polite" className={`${styles.successMessage} mt-5 rounded-lg px-4 py-3 text-sm leading-6`}>{successMessage}</p> : null}
-
-          <form onSubmit={submitLookup} className={`${styles.lookupForm} mt-7 border-t border-[var(--color-line)] pt-6`}>
-            <h2 className="text-base font-semibold">Add an administrator</h2>
-            <p className="mt-1 text-sm leading-5 text-[var(--color-muted)]">Find an active account, including an existing manager account, and grant it administrator access.</p>
-            <label htmlFor="admin-recipient-email" className="mt-5 block text-xs font-semibold text-[var(--color-ink-2)]">New administrator email</label>
-            <div className="mt-1.5 flex flex-col gap-3 sm:flex-row">
-              <ApplicationInput {...lookupRegistration} ref={(element) => { lookupRegistration.ref(element); emailInput.current = element; }} id="admin-recipient-email" name="email" type="email" required maxLength={254} autoComplete="off" spellCheck={false} onChange={(event) => { lookupRegistration.onChange(event); changeEmail(event.target.value); }} disabled={adding} aria-invalid={!!lookupError} aria-describedby={lookupError ? "admin-lookup-error" : "admin-recipient-help"} placeholder="person@company.com" />
-              <ApplicationButton type="submit" variant="primary" size="lg" className={styles.lookupButton} disabled={lookingUp || adding} busy={lookingUp} busyLabel="Finding account…" leadingIcon={<UserRound size={16} aria-hidden="true" />}>Find account</ApplicationButton>
-            </div>
-            <p id="admin-recipient-help" className="mt-3 text-xs leading-5 text-[var(--color-muted)]">The person needs an active account with a working password login. For someone new, <Link href="/admin/managers/new" className={`rounded font-semibold text-[var(--color-forest)] underline underline-offset-4 ${focusClass}`}>invite them as a manager</Link> and wait for them to accept first.</p>
-            {lookupError ? <p id="admin-lookup-error" role="alert" className="mt-3 text-sm text-red-800">{lookupError}</p> : null}
-          </form>
-
-          <div aria-live="polite" aria-atomic="true">
-            {recipient ? <section className="mt-7 border-t border-[var(--color-line)] pt-6" aria-labelledby="admin-recipient-title">
-              <h2 id="admin-recipient-title" className="text-base font-semibold">Review administrator access</h2>
-              <div className="mt-4 flex items-start gap-3 rounded-lg border border-[var(--color-line)] bg-white p-4">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-[var(--color-forest-soft)] text-[var(--color-forest)]"><UserRound size={19} aria-hidden="true" /></span>
-                <div className="min-w-0"><p className="break-words font-semibold">{recipient.name || "Account holder"}</p><p className="mt-1 break-all text-sm text-[var(--color-muted)]">{recipient.email}</p><p className="mt-2 text-xs text-[var(--color-muted)]">Current PolicyCraft role: <span className="capitalize">{recipient.role === "user" ? "Client user" : recipient.role}</span></p></div>
+      <WorkspaceSheet className={styles.sheet}>
+        <div className={styles.columns}>
+          <div className={styles.main}>
+            <section className={styles.section} aria-labelledby="current-admin-title">
+              <h2 id="current-admin-title" className={styles.sectionTitle}>Signed-in administrator</h2>
+              <div className={styles.identityCard}>
+                <span className={styles.identityIcon}><ShieldCheck size={19} aria-hidden="true" /></span>
+                <div className={styles.identityBody}><p className={styles.identityName}>{access.actor.name || "Administrator"}</p><p className={styles.identityEmail}>{access.actor.email}</p></div>
               </div>
-              {recipientIsAdmin ? <p role="status" className="mt-4 text-sm leading-6 text-[var(--color-muted)]">{alreadyAdminMessage}</p> : <ApplicationButton type="button" variant="outline" size="lg" onClick={() => { setAddError(""); passwordForm.resetField("password"); setConfirming(true); }} className="mt-5">Add administrator <ArrowRight size={15} aria-hidden="true" /></ApplicationButton>}
-            </section> : null}
-          </div>
-        </div>
+            </section>
 
-        <aside className="border-t border-[var(--color-line)] bg-[var(--color-cream-2)] p-5 sm:p-7 lg:border-l lg:border-t-0" aria-labelledby="admin-add-info-title">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-[var(--color-forest)]"><ShieldCheck size={18} aria-hidden="true" /></div>
-          <h2 id="admin-add-info-title" className="mt-4 font-display text-xl font-semibold">Adding an administrator</h2>
-          <p className="mt-1 text-sm leading-5 text-[var(--color-muted)]">Review the access change before you confirm it.</p>
-          <ol className="mt-5 space-y-4 text-sm leading-5 text-[var(--color-ink-2)]">
-            <li className="flex gap-3"><span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-white text-xs font-semibold text-[var(--color-forest)]">1</span><span>The recipient must already have an active account and working password login.</span></li>
-            <li className="flex gap-3"><span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-white text-xs font-semibold text-[var(--color-forest)]">2</span><span>They receive full PolicyCraft administrator access.</span></li>
-            <li className="flex gap-3"><span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-white text-xs font-semibold text-[var(--color-forest)]">3</span><span>Your administrator access stays active, and you remain signed in.</span></li>
-          </ol>
-          <div className="mt-5 border-t border-[var(--color-line)] pt-4"><p className="text-xs leading-5 text-[var(--color-muted)]">Their existing account email and password stay the same.</p></div>
-        </aside>
-      </div>
-    </div>
+            {successMessage ? <p role="status" aria-live="polite" className={styles.successMessage}>{successMessage}</p> : null}
+
+            <form onSubmit={submitLookup} className={styles.lookupForm}>
+              <h2 className={styles.sectionTitle}>Add an administrator</h2>
+              <p className={styles.sectionText}>Find an active account, including an existing manager account, and grant it administrator access.</p>
+              <label htmlFor="admin-recipient-email" className={styles.label}>New administrator email</label>
+              <div className={styles.lookupRow}>
+                <ApplicationInput {...lookupRegistration} ref={(element) => { lookupRegistration.ref(element); emailInput.current = element; }} id="admin-recipient-email" name="email" type="email" required maxLength={254} autoComplete="off" spellCheck={false} onChange={(event) => { lookupRegistration.onChange(event); changeEmail(event.target.value); }} disabled={adding} aria-invalid={!!lookupError} aria-describedby={lookupError ? "admin-lookup-error" : "admin-recipient-help"} placeholder="person@company.com" />
+                <ApplicationButton type="submit" variant="primary" size="lg" className={`${styles.ctaButton} ${styles.lookupButton}`} disabled={lookingUp || adding} busy={lookingUp} busyLabel="Finding account…" leadingIcon={<UserRound size={16} aria-hidden="true" />}>Find account</ApplicationButton>
+              </div>
+              <p id="admin-recipient-help" className={styles.helpText}>The person needs an active account with a working password login. For someone new, <Link href="/admin/managers/new" className={styles.inlineLink}>invite them as a manager</Link> and wait for them to accept first.</p>
+              {lookupError ? <p id="admin-lookup-error" role="alert" className={styles.errorText}>{lookupError}</p> : null}
+            </form>
+
+            <div aria-live="polite" aria-atomic="true">
+              {recipient ? <section className={styles.section} aria-labelledby="admin-recipient-title">
+                <h2 id="admin-recipient-title" className={styles.sectionTitle}>Review administrator access</h2>
+                <div className={styles.recipientCard}>
+                  <span className={styles.identityIcon}><UserRound size={19} aria-hidden="true" /></span>
+                  <div className={styles.identityBody}><p className={styles.identityName}>{recipient.name || "Account holder"}</p><p className={styles.identityEmail}>{recipient.email}</p><p className={styles.roleLine}>Current PolicyCraft role: <span className={styles.roleValue}>{recipient.role === "user" ? "Client user" : recipient.role}</span></p></div>
+                </div>
+                {recipientIsAdmin ? <p role="status" className={styles.helpText}>{alreadyAdminMessage}</p> : <ApplicationButton type="button" variant="outline" size="lg" onClick={() => { setAddError(""); passwordForm.resetField("password"); setConfirming(true); }} className={styles.reviewAction}>Add administrator <ArrowRight size={15} aria-hidden="true" /></ApplicationButton>}
+              </section> : null}
+            </div>
+          </div>
+
+          <aside className={styles.aside} aria-labelledby="admin-add-info-title">
+            <span className={styles.asideIcon}><ShieldCheck size={18} aria-hidden="true" /></span>
+            <h2 id="admin-add-info-title" className={styles.asideTitle}>Adding an administrator</h2>
+            <p className={styles.asideText}>Review the access change before you confirm it.</p>
+            <ol className={styles.steps}>
+              <li><span>1</span><p>The recipient must already have an active account and working password login.</p></li>
+              <li><span>2</span><p>They receive full PolicyCraft administrator access.</p></li>
+              <li><span>3</span><p>Your administrator access stays active, and you remain signed in.</p></li>
+            </ol>
+            <p className={styles.asideNote}>Their existing account email and password stay the same.</p>
+          </aside>
+        </div>
+      </WorkspaceSheet>
+    </section>
 
     <Modal open={confirming} onClose={closeConfirmation} title="Add administrator access?" description="Confirm the account and enter your password to grant administrator access." hideClose={adding} width={500}>
-      <form className={styles.surface} onSubmit={submitAdd}>
-        <p className="break-all text-sm font-semibold">{recipient?.email}</p>
-        <p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]">This account will receive full PolicyCraft administrator access. Your access and current session will stay active.</p>
-        <label htmlFor="admin-add-password" className="mt-5 block text-sm font-semibold">Your password</label>
-        <ApplicationInput {...passwordRegistration} ref={(element) => { passwordRegistration.ref(element); passwordInput.current = element; }} id="admin-add-password" type="password" name="password" required autoComplete="current-password" disabled={adding} aria-invalid={!!addError} aria-describedby={addError ? "admin-add-error" : undefined} className="mt-2 w-full" />
-        {addError ? <p id="admin-add-error" role="alert" className="mt-3 text-sm text-red-800">{addError}</p> : null}
-        <div className={styles.dialogFooter}><ApplicationButton type="button" variant="outline" size="lg" onClick={closeConfirmation} disabled={adding}>Cancel</ApplicationButton><ApplicationButton type="submit" variant="primary" size="lg" className={styles.addButton} busy={adding} busyLabel="Adding…" leadingIcon={<ShieldCheck size={15} aria-hidden="true" />}>Confirm add</ApplicationButton></div>
+      <form className={styles.modalForm} onSubmit={submitAdd}>
+        <p className={styles.modalEmail}>{recipient?.email}</p>
+        <p className={styles.modalText}>This account will receive full PolicyCraft administrator access. Your access and current session will stay active.</p>
+        <label htmlFor="admin-add-password" className={styles.modalLabel}>Your password</label>
+        <ApplicationInput {...passwordRegistration} ref={(element) => { passwordRegistration.ref(element); passwordInput.current = element; }} id="admin-add-password" type="password" name="password" required autoComplete="current-password" disabled={adding} aria-invalid={!!addError} aria-describedby={addError ? "admin-add-error" : undefined} className={styles.modalInput} />
+        {addError ? <p id="admin-add-error" role="alert" className={styles.modalError}>{addError}</p> : null}
+        <div className={styles.dialogFooter}><ApplicationButton type="button" variant="outline" size="lg" onClick={closeConfirmation} disabled={adding}>Cancel</ApplicationButton><ApplicationButton type="submit" variant="primary" size="lg" className={`${styles.ctaButton} ${styles.addButton}`} busy={adding} busyLabel="Adding…" leadingIcon={<ShieldCheck size={15} aria-hidden="true" />}>Confirm add</ApplicationButton></div>
       </form>
     </Modal>
   </ApplicationSurface>;

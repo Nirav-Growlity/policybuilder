@@ -1,38 +1,126 @@
-.surface {
-  --font-display: var(--pc-font);
-  --color-forest: var(--pc-primary);
-  --color-forest-deep: var(--pc-primary);
-  --color-forest-soft: var(--pc-selection);
-  --color-line: var(--pc-divider);
-  --color-line-2: var(--pc-control);
-  --color-cream: var(--pc-inset);
-  --color-cream-2: var(--pc-inset);
-  --color-ink: var(--pc-text);
-  --color-ink-2: var(--pc-text);
-  --color-muted: var(--pc-muted);
-  color: var(--pc-text);
-  font-family: var(--pc-font);
+.surface { min-width: 0; color: var(--pc-text); font-family: var(--pc-font); }
+.page { display: flex; min-width: 0; flex-direction: column; color: var(--pc-text); font-family: var(--pc-font); }
+.sheet { min-width: 0; }
+
+/* Masthead link: only masthead tokens, since it sits on the band. */
+.heroLink {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--ws-on-ink-muted);
+  font-size: 14px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
-.surface :global(h1), .surface :global(h2), .surface :global(h3) { font-family: var(--pc-font); }
-.surface :global(.bg-white) { background-color: var(--pc-panel) !important; }
-.surface :global(.bg-red-50) { background-color: var(--pc-error-surface) !important; }
-.surface :global(.text-red-800) { color: var(--pc-error) !important; }
-.surface :global(.rounded-xl) { border-radius: 12px; }
-.surface :global(.rounded-lg) { border-radius: 8px; }
-.surface :global(.shadow-sm) { box-shadow: none; }
-.surface :global(fieldset) { min-inline-size: 0; }
-.lookupForm { display: flex; flex-direction: column; gap: 0; }
-.lookupForm :global(input) { min-width: 0; }
-.lookupForm :global(button) { flex: none; }
-.lookupButton { min-width: 160px; }
-.addButton { min-width: 142px; }
-.dialogFooter { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 24px; }
-.successMessage { border: 1px solid color-mix(in srgb, var(--pc-success) 26%, var(--pc-divider)); background: var(--pc-success-surface); color: var(--pc-success); }
+.heroLink:hover { color: var(--ws-on-ink); background: var(--ws-ink-hover); border-color: var(--ws-ink-line); }
+.heroLink:focus-visible { outline: 2px solid var(--ws-on-ink); outline-offset: 2px; }
 
-@media (max-width: 639px) {
+/* Filled CTA: --ws-cta with white text, per the masthead contract. */
+.surface .ctaButton, .modalForm .ctaButton { border-color: var(--ws-cta); background: var(--ws-cta); color: #fff; }
+.surface .ctaButton:hover:not(:disabled), .modalForm .ctaButton:hover:not(:disabled) { filter: brightness(1.06); }
+.lookupButton { min-width: 168px; }
+.addButton { min-width: 142px; }
+.reviewAction { margin-top: 20px; }
+
+.columns { display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr); }
+.main { display: flex; min-width: 0; flex-direction: column; gap: 30px; padding: 28px 26px 26px; }
+.section { min-width: 0; }
+.sectionTitle { margin: 0; color: var(--pc-text); font-family: var(--pc-font); font-size: 17px; font-weight: 640; letter-spacing: -.01em; }
+.sectionText { margin: 6px 0 0; color: var(--pc-muted); font-size: 14px; line-height: 1.55; }
+
+.identityCard,
+.recipientCard {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--pc-divider);
+  border-radius: 14px;
+  background: var(--pc-inset);
+}
+
+.recipientCard { background: var(--pc-panel); }
+.identityIcon { display: grid; width: 40px; height: 40px; flex: none; place-items: center; border-radius: 11px; background: var(--pc-selection); color: var(--pc-selection-text); }
+.identityBody { min-width: 0; }
+.identityName { margin: 0; overflow-wrap: anywhere; color: var(--pc-text); font-size: 15px; font-weight: 620; }
+.identityEmail { margin: 3px 0 0; overflow-wrap: anywhere; color: var(--pc-muted); font-size: 13.5px; }
+.roleLine { margin: 8px 0 0; color: var(--pc-muted); font-size: 12.5px; }
+.roleValue { color: var(--pc-text); font-weight: 600; text-transform: capitalize; }
+
+.successMessage {
+  margin: 0;
+  padding: 13px 16px;
+  border: 1px solid color-mix(in srgb, var(--pc-success) 30%, var(--pc-divider));
+  border-radius: 12px;
+  background: var(--pc-success-surface);
+  color: var(--pc-success);
+  font-size: 14px;
+  line-height: 1.6;
+  animation: noticeIn 320ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.lookupForm { display: flex; min-width: 0; flex-direction: column; padding-top: 26px; border-top: 1px solid var(--pc-divider); }
+.label { display: block; margin-top: 18px; margin-bottom: 8px; color: var(--pc-text); font-size: 13px; font-weight: 600; }
+.lookupRow { display: flex; min-width: 0; flex-direction: column; gap: 10px; }
+.lookupRow > input { min-width: 0; }
+.lookupRow > button { flex: none; }
+.helpText { margin: 12px 0 0; color: var(--pc-muted); font-size: 13px; line-height: 1.55; }
+.inlineLink { border-radius: 4px; color: var(--pc-selection-text); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.inlineLink:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+.errorText { margin: 12px 0 0; color: var(--pc-error); font-size: 14px; }
+
+/* Side column: the access change, stacked below on narrow screens. */
+.aside {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 28px 26px;
+  border-top: 1px solid var(--pc-divider);
+  background: var(--pc-inset);
+}
+
+.asideIcon { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 11px; background: var(--pc-panel); color: var(--pc-selection-text); box-shadow: 0 0 0 1px var(--pc-divider); }
+.asideTitle { margin: 18px 0 0; color: var(--pc-text); font-family: var(--pc-font); font-size: 19px; font-weight: 640; letter-spacing: -.02em; }
+.asideText { margin: 6px 0 0; color: var(--pc-muted); font-size: 14px; line-height: 1.55; }
+.steps { display: flex; flex-direction: column; gap: 16px; margin: 22px 0 0; padding: 0; list-style: none; counter-reset: none; }
+.steps li { display: flex; align-items: flex-start; gap: 12px; }
+.steps li > span { display: grid; width: 26px; height: 26px; flex: none; place-items: center; border-radius: 999px; background: var(--pc-panel); box-shadow: 0 0 0 1px var(--pc-divider); color: var(--pc-selection-text); font-size: 12px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.steps li > p { margin: 3px 0 0; color: var(--pc-text); font-size: 14px; line-height: 1.55; }
+.asideNote { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--pc-divider); color: var(--pc-muted); font-size: 13px; line-height: 1.55; }
+
+/* Modal content */
+.modalForm { min-width: 0; color: var(--pc-text); font-family: var(--pc-font); }
+.modalEmail { margin: 0; overflow-wrap: anywhere; color: var(--pc-text); font-size: 14px; font-weight: 600; }
+.modalText { margin: 8px 0 0; color: var(--pc-muted); font-size: 14px; line-height: 1.6; }
+.modalLabel { display: block; margin-top: 20px; color: var(--pc-text); font-size: 14px; font-weight: 600; }
+.modalInput { width: 100%; margin-top: 8px; }
+.modalError { margin: 12px 0 0; color: var(--pc-error); font-size: 14px; }
+.dialogFooter { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+
+@media (min-width: 1024px) {
+  .columns { grid-template-columns: minmax(0, 1.55fr) minmax(17rem, .85fr); }
+  .aside { border-top: 0; border-left: 1px solid var(--pc-divider); }
+}
+
+@media (max-width: 640px) {
+  .main { padding: 22px 18px; }
+  .aside { padding: 22px 18px; }
+  .lookupRow > button { width: 100%; }
   .dialogFooter { flex-direction: column; }
-  .dialogFooter :global(button) { width: 100%; }
-  .lookupForm > div { align-items: stretch; flex-direction: column; }
-  .lookupForm > div button { width: 100%; }
+  .dialogFooter > button { width: 100%; }
+}
+
+@keyframes noticeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .successMessage { animation: none; }
+  .heroLink { transition: none; }
 }

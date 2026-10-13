@@ -1,22 +1,46 @@
 .workspaceRoot {
   min-height: 100vh;
-  color: var(--color-ink);
-  background: var(--color-cream);
+  overflow-x: clip;
+  color: var(--pc-text);
+  background: var(--pc-page);
 }
 
-.chrome {
-  position: relative;
-  z-index: 20;
+.main {
+  width: min(100%, 1280px);
+  margin-inline: auto;
+  padding: 0 40px 96px;
 }
+
+.page { min-width: 0; }
 
 .accessState {
   display: grid;
   min-height: 100vh;
-  place-items: center;
-  padding: 24px;
+  grid-template-rows: auto 1fr;
   color: var(--pc-text);
   background: var(--pc-page);
 }
+
+.accessBand {
+  display: flex;
+  height: 220px;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px max(20px, calc(50vw - 600px));
+  background: var(--ws-ink);
+}
+
+.accessShimmer {
+  width: 120px;
+  height: 12px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ws-ink-hover), var(--ws-ink-line), var(--ws-ink-hover));
+  background-size: 200% 100%;
+  animation: shell-shimmer 1.4s linear infinite;
+}
+
+@keyframes shell-shimmer { to { background-position: -200% 0; } }
 
 .accessMessage,
 .loading {
@@ -24,7 +48,15 @@
   max-width: 440px;
   flex-direction: column;
   align-items: center;
+  align-self: start;
+  justify-self: center;
   gap: 16px;
+  margin-top: -40px;
+  padding: 20px 24px;
+  border: 1px solid var(--pc-divider);
+  border-radius: 16px;
+  background: var(--pc-panel);
+  box-shadow: var(--ws-sheet-shadow);
   text-align: center;
 }
 
@@ -69,15 +101,37 @@
 }
 
 .header {
-  position: relative;
-  border-bottom: 1px solid var(--pc-divider);
-  background: var(--pc-panel);
+  position: sticky;
+  z-index: 40;
+  top: 0;
+  color: var(--ws-on-ink);
+  background: var(--ws-ink);
+  transition: background-color 300ms ease, box-shadow 300ms ease;
 }
+
+.header[data-scrolled] {
+  background: var(--ws-ink-scrolled);
+  box-shadow: 0 1px 0 var(--ws-ink-line), 0 12px 32px -20px rgb(8 17 33 / 35%);
+}
+
+.scrollProgress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--pc-brand), #7fb0ff);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.header[data-scrolled] .scrollProgress { opacity: 1; }
 
 .headerInner {
   display: grid;
   width: min(100%, 1280px);
-  min-height: 67px;
+  min-height: 68px;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 20px;
@@ -89,14 +143,11 @@
   display: inline-flex;
   min-width: 0;
   align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  color: var(--pc-text);
+  gap: 11px;
+  border-radius: 10px;
+  color: inherit;
   text-decoration: none;
 }
-
-.brandName { transition: color 150ms ease; }
-.brand:hover .brandName { color: var(--pc-brand); }
 
 .brand:focus-visible,
 .navLink:focus-visible,
@@ -114,26 +165,29 @@
   flex: 0 0 auto;
   place-items: center;
   border-radius: 11px;
-  background: var(--pc-primary);
-  color: var(--pc-primary-text);
+  background: var(--pc-brand);
+  color: #fff;
+  box-shadow: 0 8px 22px -8px var(--ws-glow);
+  transition: transform 420ms var(--ws-ease);
 }
+
+.brand:hover .brandMark { transform: rotate(-8deg) scale(1.05); }
 
 .brandName {
   display: block;
   font-family: var(--pc-font);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 650;
+  letter-spacing: -.01em;
   line-height: 1.2;
 }
 
 .brandCaption {
   display: block;
   margin-top: 2px;
-  color: var(--pc-muted);
-  font-size: 10px;
-  letter-spacing: .12em;
+  color: var(--ws-on-ink-muted);
+  font-size: 11px;
   line-height: 1.2;
-  text-transform: uppercase;
 }
 
 .desktopNav {
@@ -141,7 +195,7 @@
   min-width: 0;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: 2px;
 }
 
 .navLink,
@@ -151,34 +205,41 @@
   min-height: 38px;
   align-items: center;
   gap: 8px;
-  overflow: hidden;
-  border-radius: 8px;
-  padding: 0 11px;
-  color: var(--pc-muted);
-  font-size: 13px;
+  border-radius: 10px;
+  padding: 0 12px;
+  color: var(--ws-on-ink-muted);
+  font-size: 13.5px;
   font-weight: 550;
   text-decoration: none;
-  transition: color 150ms ease, background-color 150ms ease;
+  transition: color 180ms ease, background-color 180ms ease;
   touch-action: manipulation;
 }
 
-.navLink:hover,
-.mobileNavLink:hover {
-  background: var(--pc-inset);
-  color: var(--pc-text);
-}
+.navLink:hover { color: var(--ws-on-ink); background: var(--ws-ink-hover); }
+.navLinkActive { color: var(--ws-ink-active-text); }
+.navLinkActive:hover { background: transparent; }
 
-.navLinkActive,
-.mobileNavLinkActive {
-  color: var(--pc-text);
-}
+.navLink > svg { transition: transform 300ms var(--ws-ease); }
+.navLink:hover > svg { transform: translateY(-1px); }
 
 .navMarker {
   position: absolute;
   z-index: 0;
   inset: 0;
   border-radius: inherit;
-  background: var(--pc-selection);
+  background: var(--ws-ink-active);
+}
+
+.navMarker::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--pc-brand);
+  transform: translateX(-50%);
 }
 
 .navLink > *:not(.navMarker) {
@@ -192,12 +253,12 @@
   height: 20px;
   place-items: center;
   border-radius: 999px;
-  background: var(--pc-primary);
-  padding: 0 5px;
-  color: var(--pc-primary-text);
-  font-size: 10px;
+  background: var(--ws-cta);
+  padding: 0 6px;
+  color: #fff;
+  font-size: 11px;
   font-variant-numeric: tabular-nums;
-  font-weight: 700;
+  font-weight: 650;
 }
 
 .headerActions {
@@ -216,50 +277,53 @@
   min-width: 0;
   min-height: 44px;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 12px;
   background: transparent;
-  padding: 4px 8px;
-  color: var(--pc-text);
+  padding: 4px 8px 4px 5px;
+  color: var(--ws-on-ink);
   cursor: pointer;
   text-align: left;
   touch-action: manipulation;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 
 .accountTrigger:hover,
 .accountTrigger[aria-expanded="true"] {
-  border-color: var(--pc-divider);
-  background: var(--pc-inset);
+  border-color: var(--ws-ink-line);
+  background: var(--ws-ink-hover);
 }
+
+.accountAvatar { box-shadow: 0 0 0 2px var(--ws-ink-line); }
 
 .accountIdentity {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .accountName {
   max-width: 170px;
   overflow: hidden;
-  font-size: 12px;
-  font-weight: 650;
+  font-size: 13px;
+  font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .accountRole {
-  color: var(--pc-muted);
-  font-size: 10px;
+  color: var(--ws-on-ink-muted);
+  font-size: 11px;
   line-height: 1.35;
   text-transform: capitalize;
 }
 
 .accountTrigger > svg {
   flex: 0 0 auto;
-  color: var(--pc-muted);
-  transition: transform 150ms ease;
+  color: var(--ws-on-ink-muted);
+  transition: transform 260ms var(--ws-ease);
 }
 
 .chevronOpen { transform: rotate(180deg); }
@@ -267,7 +331,7 @@
 .accountMenu {
   position: absolute;
   z-index: 50;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   right: 0;
   display: grid;
   width: min(340px, calc(100vw - 32px));
@@ -277,22 +341,25 @@
   overscroll-behavior: contain;
   transform-origin: top right;
   border: 1px solid var(--pc-divider);
-  border-radius: 12px;
+  border-radius: 16px;
   background: var(--pc-panel);
   padding: 16px;
-  box-shadow: 0 16px 40px rgb(16 24 40 / 14%);
+  color: var(--pc-text);
+  box-shadow: 0 24px 56px -20px rgb(8 17 33 / 40%);
 }
+
+.accountCard { display: flex; min-width: 0; align-items: center; gap: 12px; }
 
 .accountDetails {
   display: grid;
   min-width: 0;
-  gap: 3px;
+  gap: 2px;
   color: var(--pc-text);
 }
 
-.accountDetails strong { font-size: 13px; }
+.accountDetails strong { font-size: 14px; font-weight: 650; }
 .accountDetails > span:not(.roleLabel) { overflow-wrap: anywhere; color: var(--pc-muted); font-size: 12px; }
-.roleLabel { color: var(--pc-muted); font-size: 11px; text-transform: capitalize; }
+.roleLabel { color: var(--pc-selection-text); font-size: 11px; font-weight: 600; text-transform: capitalize; }
 
 .signOutButton { justify-content: flex-start; }
 
@@ -302,10 +369,10 @@
   height: 44px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid var(--pc-divider);
-  border-radius: 8px;
-  background: var(--pc-panel);
-  color: var(--pc-text);
+  border: 1px solid var(--ws-ink-line);
+  border-radius: 10px;
+  background: var(--ws-ink-hover);
+  color: var(--ws-on-ink);
   cursor: pointer;
   touch-action: manipulation;
 }
@@ -323,9 +390,10 @@
   gap: 20px;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: var(--pc-panel);
+  color: var(--ws-on-ink);
+  background: var(--ws-ink);
   padding: max(18px, env(safe-area-inset-top)) 20px max(18px, env(safe-area-inset-bottom));
-  box-shadow: -12px 0 36px rgb(16 24 40 / 14%);
+  box-shadow: -24px 0 60px rgb(8 17 33 / 40%);
 }
 
 .drawerLayer {
@@ -339,7 +407,8 @@
   inset: 0;
   width: 100%;
   border: 0;
-  background: rgb(12 20 32 / 48%);
+  background: rgb(8 17 33 / 52%);
+  backdrop-filter: blur(4px);
   cursor: pointer;
   touch-action: manipulation;
 }
@@ -369,7 +438,7 @@
 .drawerAccount {
   display: grid;
   gap: 14px;
-  border-block: 1px solid var(--pc-divider);
+  border-block: 1px solid var(--ws-ink-line);
   padding-block: 16px;
 }
 
@@ -377,11 +446,13 @@
   display: grid;
   min-width: 0;
   gap: 3px;
-  color: var(--pc-text);
+  color: var(--ws-on-ink);
 }
 
 .drawerIdentity strong { overflow: hidden; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
-.drawerIdentity > span:not(.roleLabel) { overflow-wrap: anywhere; color: var(--pc-muted); font-size: 12px; }
+.drawerIdentity > span:not(.roleLabel) { overflow-wrap: anywhere; color: var(--ws-on-ink-muted); font-size: 12px; }
+.drawerIdentity .roleLabel { color: var(--pc-selection-text); }
+.drawerAccount .signOutButton { color: var(--ws-on-ink-muted); }
 
 .mobileNav { display: grid; align-content: start; gap: 3px; }
 
@@ -392,7 +463,8 @@
   padding-inline: 12px;
 }
 
-.mobileNavLinkActive { background: var(--pc-selection); }
+.mobileNavLink:hover { color: var(--ws-on-ink); background: var(--ws-ink-hover); }
+.mobileNavLinkActive { color: var(--ws-ink-active-text); background: var(--ws-ink-active); box-shadow: inset 3px 0 0 var(--pc-brand); }
 .mobileNavLink .taskBadge { margin-left: auto; }
 
 .signOutError {
@@ -410,6 +482,7 @@
 .signOutError p { min-width: 0; overflow-wrap: anywhere; }
 
 @media (max-width: 1023px) {
+  .main { padding-inline: 20px; }
   .headerInner {
     min-height: 67px;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -420,6 +493,7 @@
   .desktopNav { display: none; }
   .mobileNavTrigger { display: grid; }
   .accountMenu { position: fixed; top: 76px; right: 8px; }
+  .accountIdentity { display: none; }
   .accountName { max-width: clamp(72px, 24vw, 160px); }
 }
 
@@ -438,6 +512,10 @@
 @media (prefers-reduced-motion: reduce) {
   .navLink,
   .mobileNavLink,
+  .brandMark,
+  .navLink > svg,
   .accountTrigger > svg { transition-duration: 0.01ms; }
+  .brand:hover .brandMark, .navLink:hover > svg { transform: none; }
+  .accessShimmer { animation: none; }
   .spinner { animation-duration: 1s; }
 }

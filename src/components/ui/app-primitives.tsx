@@ -45,6 +45,7 @@ export const ApplicationButton = React.forwardRef<HTMLButtonElement, Application
       className={twMerge(buttonVariants({ variant, size }), className)}
       disabled={disabled || busy}
       aria-busy={busy || undefined}
+      data-pc-button={variant ?? "secondary"}
       {...props}
     >
       {busy ? <LoaderCircle className={styles.spinner} size={16} aria-hidden="true" /> : leadingIcon}

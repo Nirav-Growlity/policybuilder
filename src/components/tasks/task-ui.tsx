@@ -178,12 +178,12 @@ function TaskEditorModalContent({
 export function DeadlineLabel({ value, status }: { value: string; status: PolicyCraftTaskStatus }) {
   const state = deadlineState(value, status);
   const date = value.slice(0, 10);
-  return <span className={`inline-flex items-center gap-1.5 text-xs tabular-nums ${state === "overdue" ? "font-semibold text-red-800" : "text-[var(--color-ink-2)]"}`}>
+  return <span data-deadline={state} className={`inline-flex items-center gap-1.5 text-xs tabular-nums ${state === "overdue" ? "font-semibold text-red-800" : "text-[var(--color-ink-2)]"}`}>
     {state === "overdue" ? <AlertCircle size={13} aria-hidden="true" /> : <CalendarClock size={13} aria-hidden="true" />}
     {formatTaskDate(`${date}T12:00:00+05:30`)}{state === "overdue" ? " · overdue" : ""}
   </span>;
 }
 
 export function ManagerWorkTitle({ item }: { item: PolicyCraftManagerWork }) {
-  return <div className="min-w-0"><p className="break-words font-semibold text-[var(--color-ink)]">{item.title || "Untitled policy"}</p><p className="mt-1 text-xs font-normal text-[var(--color-ink-2)]">{POLICY_PROFILES[item.policyType]?.label || item.policyType}</p></div>;
+  return <div className="min-w-0"><p className="break-words font-semibold text-[var(--color-ink)]">{item.title || "Untitled policy"}</p><p className="mt-1 flex items-center gap-2 text-xs font-normal text-[var(--color-ink-2)]">{POLICY_PROFILES[item.policyType]?.label || item.policyType}</p></div>;
 }

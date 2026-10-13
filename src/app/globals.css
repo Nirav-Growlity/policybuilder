@@ -392,6 +392,7 @@ div:has(> #workspace-main > [data-pc-pilot="inventory"]),
 div:has(> #workspace-main [data-pc-workspace]) { background: #f8fafc; }
 [data-pc-theme="dark"] div:has(> #workspace-main > [data-pc-pilot="inventory"]),
 [data-pc-theme="dark"] div:has(> #workspace-main [data-pc-workspace]) { background: #0b1220; }
+html[data-pc-shell] div.pc-ui:has(> #workspace-main) { background: var(--pc-page); }
 
 .pc-theme-control {
   display: inline-flex;
@@ -476,4 +477,137 @@ div:has(> #workspace-main [data-pc-workspace]) { background: #f8fafc; }
   .pc-modal-overlay, .pc-modal-panel { opacity: 1 !important; }
   .pc-modal-panel { transform: none !important; }
   .pc-ui .pc-auth-entrance { opacity: 1 !important; transform: none !important; }
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+   Workspace redesign (admin, manager and organization-user logins).
+   Every rule is gated on html[data-pc-shell], which only WorkspaceShell sets,
+   so the builder, login and document planes keep their existing look even
+   though Next.js keeps global stylesheets loaded across navigations.
+   ─────────────────────────────────────────────────────────────────────────── */
+html[data-pc-shell] { background: #f3f5f9; }
+html[data-pc-shell] .pc-ui { color-scheme: light; }
+html[data-pc-shell][data-pc-theme="dark"] .pc-ui { color-scheme: dark; }
+html[data-pc-shell][data-pc-theme="dark"] { background: #0a1120; }
+
+html[data-pc-shell] .pc-ui {
+  --pc-page: #f3f5f9;
+  --pc-panel: #ffffff;
+  --pc-inset: #eef2f7;
+  --pc-text: #0c1628;
+  --pc-muted: #52607a;
+  --pc-divider: #dde3ec;
+  --pc-control: #8495aa;
+  --pc-selection: #e9f1fe;
+  --pc-selection-text: #1d5bd0;
+  --pc-font: "Instrument Sans Variable", "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  /* Masthead: the band the navigation and page heroes sit on. Light in
+     light mode, deep ink in dark mode. */
+  --ws-ink: #ffffff;
+  --ws-ink-line: #e3e8f0;
+  --ws-ink-hover: #f1f4f9;
+  --ws-ink-active: #e9f1fe;
+  --ws-ink-active-text: #1d5bd0;
+  --ws-ink-field: #f6f8fb;
+  --ws-ink-field-border: #c7d0dd;
+  --ws-ink-rule: rgb(29 91 208 / 7%);
+  --ws-ink-scrolled: rgb(255 255 255 / 97%);
+  --ws-on-ink: #0c1628;
+  --ws-on-ink-muted: #52607a;
+  --ws-glow: rgb(65 134 243 / 30%);
+  --ws-spot: rgb(65 134 243 / 13%);
+  /* Filled CTAs: a deeper step of the brand blue so white labels pass 4.5:1. */
+  --ws-cta: #2f6fe4;
+  --ws-sheet-shadow: 0 1px 0 rgb(12 22 40 / 4%), 0 18px 48px -18px rgb(12 22 40 / 22%);
+  --ws-row-hover: #f6f8fc;
+  --ws-ease: cubic-bezier(.22, 1, .36, 1);
+  font-feature-settings: "ss01", "cv11";
+}
+
+html[data-pc-shell][data-pc-theme="dark"] .pc-ui {
+  --pc-page: #0a1120;
+  --pc-panel: #0f1a2d;
+  --pc-inset: #16243b;
+  --pc-text: #eef3fa;
+  --pc-muted: #a2b1c8;
+  --pc-divider: #24354f;
+  --pc-control: #5d7393;
+  --pc-selection: #182e52;
+  --pc-selection-text: #8db6ff;
+  --ws-ink: #0d1a30;
+  --ws-ink-line: rgb(255 255 255 / 9%);
+  --ws-ink-hover: rgb(255 255 255 / 6%);
+  --ws-ink-active: rgb(255 255 255 / 11%);
+  --ws-ink-active-text: #f3f7fd;
+  --ws-ink-field: rgb(255 255 255 / 7%);
+  --ws-ink-field-border: rgb(255 255 255 / 16%);
+  --ws-ink-rule: rgb(255 255 255 / 5.5%);
+  --ws-ink-scrolled: rgb(13 26 48 / 97%);
+  --ws-on-ink: #f3f7fd;
+  --ws-on-ink-muted: #a3b3cc;
+  --ws-glow: rgb(65 134 243 / 26%);
+  --ws-spot: rgb(65 134 243 / 24%);
+  --ws-sheet-shadow: 0 0 0 1px rgb(255 255 255 / 4%), 0 24px 56px -20px rgb(0 0 0 / 60%);
+  --ws-row-hover: #132139;
+}
+
+html[data-pc-shell] .pc-ui :is(h1, h2, h3, h4) { font-family: var(--pc-font); }
+
+/* Buttons get a tactile lift; the primary keeps the brand fill. */
+html[data-pc-shell] .pc-ui [data-pc-button] {
+  transition: transform 220ms var(--ws-ease), box-shadow 220ms var(--ws-ease), background-color 160ms ease, border-color 160ms ease, color 160ms ease, filter 160ms ease;
+}
+html[data-pc-shell] .pc-ui [data-pc-button="primary"] { color: #fff; background: var(--ws-cta); border-color: var(--ws-cta); }
+html[data-pc-shell] .pc-ui [data-pc-button="primary"]:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 20px -8px var(--ws-glow); filter: brightness(1.04); }
+html[data-pc-shell] .pc-ui [data-pc-button]:active:not(:disabled) { transform: translateY(0) scale(.98); }
+
+/* Dialogs rise from a blurred ink veil. */
+html[data-pc-shell] .pc-modal-overlay { background: rgb(8 17 33 / 52%); backdrop-filter: blur(8px) saturate(120%); }
+html[data-pc-shell] .pc-modal-panel { border-radius: 20px; border-color: var(--pc-divider); box-shadow: 0 2px 0 rgb(255 255 255 / 4%) inset, 0 32px 80px -24px rgb(8 17 33 / 45%); }
+html[data-pc-shell] .pc-modal-title { font-size: 21px; letter-spacing: -.02em; }
+html[data-pc-shell] .pc-modal-close { transition: background-color 150ms ease, color 150ms ease, transform 220ms var(--ws-ease); }
+html[data-pc-shell] .pc-modal-close:hover { transform: rotate(90deg); }
+
+/* Action menus unfold from their trigger. */
+html[data-pc-shell] .pc-disclosure-panel { border-radius: 14px; box-shadow: 0 20px 48px -16px rgb(8 17 33 / 30%); transform-origin: top right; animation: ws-menu-in 180ms var(--ws-ease); }
+html[data-pc-shell] .pc-disclosure-trigger { border-radius: 10px; transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease, transform 200ms var(--ws-ease); }
+html[data-pc-shell] .pc-disclosure-trigger:hover { border-color: var(--pc-selection-text); color: var(--pc-selection-text); }
+html[data-pc-shell] .pc-disclosure-trigger[aria-expanded="true"] { background: var(--pc-selection); color: var(--pc-selection-text); border-color: var(--pc-selection-text); }
+html[data-pc-shell] .pc-disclosure-item { transition: background-color 150ms ease, padding-left 200ms var(--ws-ease); }
+html[data-pc-shell] .pc-disclosure-item:hover:not(:disabled) { padding-left: 16px; }
+@keyframes ws-menu-in { from { opacity: 0; transform: translateY(-4px) scale(.97); } to { opacity: 1; transform: none; } }
+
+html[data-pc-shell] .pc-toast { border-radius: 14px; box-shadow: 0 20px 48px -16px rgb(8 17 33 / 32%); backdrop-filter: blur(10px); }
+
+/* Form controls inside the workspace share one focus treatment: a soft brand ring. */
+html[data-pc-shell] .pc-ui :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]), select, textarea) {
+  transition: border-color 160ms ease, box-shadow 200ms var(--ws-ease), background-color 160ms ease;
+}
+html[data-pc-shell] .pc-ui :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea):hover:not(:disabled):not(:focus-visible) { border-color: color-mix(in srgb, var(--pc-selection-text) 55%, var(--pc-control)); }
+html[data-pc-shell] .pc-ui :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus-visible { outline: none; border-color: var(--pc-brand); box-shadow: 0 0 0 4px color-mix(in srgb, var(--pc-brand) 22%, transparent); }
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-pc-shell] .pc-disclosure-panel { animation: none; }
+  html[data-pc-shell] .pc-ui [data-pc-button],
+  html[data-pc-shell] .pc-modal-close,
+  html[data-pc-shell] .pc-disclosure-item { transition-duration: .01ms; }
+  html[data-pc-shell] .pc-ui [data-pc-button]:hover:not(:disabled),
+  html[data-pc-shell] .pc-modal-close:hover { transform: none; }
+}
+
+/* ── Workspace page transitions (React <ViewTransition> in WorkspaceShell) ──
+   The header is anchored; the page underneath leaves fast and the next one
+   settles in with a short rise and a blur-to-sharp resolve. */
+html[data-pc-shell]::view-transition-old(root),
+html[data-pc-shell]::view-transition-new(root) { animation: none; }
+::view-transition-group(ws-header) { z-index: 100; animation: none; }
+::view-transition-old(ws-header) { display: none; }
+::view-transition-new(ws-header) { animation: none; }
+/* The new page is shown live (its own Motion entrance plays); the old page
+   lifts and fades over it, so the hand-off reads as one continuous move. */
+::view-transition-old(.ws-page-exit) { z-index: 1; animation: 220ms cubic-bezier(.4, 0, .2, 1) both ws-page-out; }
+::view-transition-new(.ws-page-enter) { animation: none; }
+@keyframes ws-page-out { to { opacity: 0; transform: translate3d(0, -10px, 0); } }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(.ws-page-exit) { animation-duration: 0s; }
 }

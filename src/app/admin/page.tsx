@@ -3,7 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Check, Loader2, Mail, Pencil, Plus, RefreshCw, Search, UserRound, UserRoundX, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { Building2, Check, Loader2, Mail, Pencil, Plus, RefreshCw, Search, UserRound, UserRoundX, X } from "lucide-react";
 import type { PolicyCraftManagerSummary, PolicyCraftOrganization } from "@/lib/policycraft-access-types";
 import { Modal } from "@/components/ui/modal";
 import { ApplicationButton, ApplicationInput, ApplicationStatus } from "@/components/ui/app-primitives";
@@ -11,6 +12,8 @@ import { ApplicationSurface } from "@/components/ui/application-surface";
 import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { ActionDisclosure, ActionDisclosureItem } from "@/components/ui/action-disclosure";
 import { OrganizationSourceBadge, organizationSourceName } from "@/components/workspace/organization-source-label";
+import { DelayedLoading, ListRegion } from "@/components/workspace/workspace-list";
+import { Avatar, SelectionPill, useRecordMotion, WorkspaceHero, WorkspaceSheet, WS_EASE } from "@/components/workspace/workspace-motion";
 import styles from "./page.module.css";
 
 type AdminManagersResponse = { managers: PolicyCraftManagerSummary[]; organizations: PolicyCraftOrganization[] };
@@ -189,6 +192,7 @@ function AdminManagersContent() {
     }
   }
 
+  const recordMotion = useRecordMotion();
   const organizations = data?.organizations ?? [];
   const managers = data?.managers ?? [];
   const filteredManagers = managers.filter((manager) => {
@@ -197,8 +201,8 @@ function AdminManagersContent() {
     return matchesQuery && (statusFilter === "all" || manager.status === statusFilter);
   });
 
-  const renderManagerActions = (manager: PolicyCraftManagerSummary) => <div className="flex items-center justify-start gap-2 xl:justify-end">
-    <button type="button" disabled={Boolean(busyId)} onClick={() => startEdit(manager)} className="inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm font-semibold text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:opacity-50"><Pencil size={14} aria-hidden="true" />Assignments</button>
+  const renderManagerActions = (manager: PolicyCraftManagerSummary) => <div className={styles.actions}>
+    <button type="button" disabled={Boolean(busyId)} onClick={() => startEdit(manager)} className={styles.assignButton}><Pencil size={14} aria-hidden="true" />Assignments</button>
     <ActionDisclosure label={`More actions for ${manager.name}`} disabled={Boolean(busyId)}>
       {(manager.status === "active" || manager.status === "disabled") ? <ActionDisclosureItem disabled={Boolean(busyId)} onClick={() => { if (manager.status === "active") { setStatusTarget(manager); setStatusError(""); } else void updateManager(manager.id, { active: true }); }}>{manager.status === "active" ? <UserRoundX size={15} aria-hidden="true" /> : <UserRound size={15} aria-hidden="true" />}{manager.status === "active" ? "Disable access" : "Enable access"}</ActionDisclosureItem> : null}
       {manager.invitationId ? <>
@@ -217,38 +221,62 @@ function AdminManagersContent() {
   const renderOrganizations = (manager: PolicyCraftManagerSummary) => {
     const nameCounts = new Map<string, number>();
     for (const organization of manager.organizations) nameCounts.set(organization.name, (nameCounts.get(organization.name) || 0) + 1);
-    return manager.organizations.map((organization) => <span key={organization.id} title={`${organization.name} (${organization.code})`} className={`inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-md border border-[var(--color-line)] px-2 py-1 text-[11px] leading-4 ${organization.deleted ? "bg-slate-100 text-slate-600" : "bg-[var(--color-cream-2)] text-[var(--color-ink-2)]"}`}><span className="break-words">{organization.name}{nameCounts.get(organization.name)! > 1 ? <span className="ml-1 text-[10px] text-[var(--color-muted)]">[{organization.code}]</span> : null}{organization.deleted ? " · deleted" : ""}</span><OrganizationSourceBadge organization={organization} /></span>);
+    return manager.organizations.map((organization) => <span key={organization.id} title={`${organization.name} (${organization.code})`} className={`${styles.orgChip} ${organization.deleted ? styles.orgChipDeleted : ""}`}><Building2 size={12} aria-hidden="true" className={styles.orgChipIcon} /><span className="break-words">{organization.name}{nameCounts.get(organization.name)! > 1 ? <span className={styles.orgCode}>[{organization.code}]</span> : null}{organization.deleted ? " · deleted" : ""}</span><OrganizationSourceBadge organization={organization} /></span>);
   };
 
-  const renderManagerIdentity = (manager: PolicyCraftManagerSummary) => <div className="flex min-w-0 items-center gap-3"><span aria-hidden="true" className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--color-forest-soft)] text-xs font-semibold text-[var(--color-forest)]">{manager.name.trim().split(/\s+/).map((part) => part[0]).join("").slice(0, 2).toUpperCase() || "?"}</span><div className="min-w-0"><h3 className="break-words font-display text-base font-semibold leading-snug text-[var(--color-ink)]">{manager.name}</h3><p className="mt-0.5 break-all text-xs text-[var(--color-muted)]">{manager.email}</p>{busyId === manager.id ? <p role="status" aria-live="polite" className="mt-1 inline-flex items-center gap-1.5 text-xs font-medium text-[var(--color-forest)]"><Loader2 size={12} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />{busyAction === "resend" ? "Sending invitation…" : busyAction === "status" ? "Updating access…" : "Saving assignments…"}</p> : null}</div></div>;
+  const renderManagerIdentity = (manager: PolicyCraftManagerSummary) => <div className={styles.identity}><Avatar name={manager.name} seed={manager.email} size={40} /><div className="min-w-0"><h3 className={styles.managerName}>{manager.name}</h3><p className={styles.managerEmail}>{manager.email}</p>{busyId === manager.id ? <p role="status" aria-live="polite" className={styles.busyNote}><Loader2 size={12} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />{busyAction === "resend" ? "Sending invitation…" : busyAction === "status" ? "Updating access…" : "Saving assignments…"}</p> : null}</div></div>;
+
+  const policyCountLabel = (manager: PolicyCraftManagerSummary) => <><span className={styles.policyCount}>{manager.policyCount}</span> {manager.policyCount === 1 ? "policy" : "policies"}</>;
+  const statusOptions = [["all", "All managers"], ["active", "Active"], ["disabled", "Disabled"], ["pending", "Invitation pending"], ["delivery_failed", "Invitation not sent"]] as const;
+  const statusCount = (value: string) => value === "all" ? managers.length : managers.filter((manager) => manager.status === value).length;
 
   return (
     <ApplicationSurface className={styles.surface} data-pc-workspace="admin-managers">
-      <div className="flex flex-wrap items-end justify-between gap-5">
-        <div><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">Administration</p><h1 className={`${styles.pageTitle} mt-1 text-pretty font-semibold tracking-tight`}>Managers</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-muted)]">Add manager access and control the organizations each manager can open.</p></div>
-        <Link href="/admin/managers/new" className={styles.primaryLink}><Plus size={15} aria-hidden="true" />Add manager</Link>
-      </div>
+      <WorkspaceHero
+        title="Managers"
+        description="Add manager access and control the organizations each manager can open."
+        stats={[
+          { label: "Managers", value: data ? managers.length : loading ? null : "–" },
+          { label: "Active", value: data ? statusCount("active") : loading ? null : "–" },
+          { label: "Awaiting invitation", value: data ? statusCount("pending") + statusCount("delivery_failed") : loading ? null : "–" },
+          { label: "Organizations", value: data ? organizations.length : loading ? null : "–" },
+        ]}
+        actions={<Link href="/admin/managers/new" className={styles.primaryLink}><Plus size={16} aria-hidden="true" />Add manager</Link>}
+      />
 
-      {error && data ? <div className="mt-6 flex items-start justify-between gap-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900" role="alert" aria-live="polite"><p>{error}</p><button type="button" onClick={() => void load()} className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-md px-3 text-sm font-semibold hover:bg-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700"><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : null}
-
-      <section aria-label="Manager accounts" className={`${styles.roster} relative mt-7 rounded-xl border bg-white`}>
-        <div className="grid items-end gap-3 border-b border-[var(--color-line)] bg-[var(--color-cream-2)]/55 p-4 sm:grid-cols-[minmax(220px,1fr)_minmax(190px,240px)] sm:p-5">
-          <label className="block text-xs font-semibold text-[var(--color-muted)]"><span className="mb-1 block">Search managers</span><span className={styles.searchField}><Search size={16} aria-hidden="true" className={styles.searchIcon} /><ApplicationInput type="search" name="managerSearch" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search by name, email or organization…" className={styles.searchInput} /></span></label>
-          <label className="text-xs font-semibold text-[var(--color-muted)]">Status<select name="managerStatus" value={statusFilter} onChange={(event) => setStatusFilter(event.target.value)} className={`${styles.statusSelect} mt-1 block h-11 w-full rounded-lg border bg-white px-3 text-sm font-normal`}><option value="all">All managers</option><option value="active">Active</option><option value="disabled">Disabled</option><option value="pending">Invitation pending</option><option value="delivery_failed">Invitation not sent</option></select></label>
+      <WorkspaceSheet as="section" aria-label="Manager accounts" className={styles.roster}>
+        <div className={styles.filterBar}>
+          <label className={styles.searchLabel}><span className={styles.visuallyHidden}>Search managers</span><span className={styles.searchField}><Search size={16} aria-hidden="true" className={styles.searchIcon} /><ApplicationInput type="search" name="managerSearch" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search by name, email or organization…" className={styles.searchInput} /></span></label>
+          <div className={styles.statusFilters} role="group" aria-label="Filter managers by status">
+            {statusOptions.map(([value, label]) => <button key={value} type="button" aria-pressed={statusFilter === value} onClick={() => setStatusFilter(value)} className={`${styles.statusFilter} ${statusFilter === value ? styles.statusFilterSelected : ""}`}>{statusFilter === value ? <SelectionPill layoutId="manager-status-filter" className={styles.statusPill} /> : null}{label}{data ? <span>{statusCount(value)}</span> : null}</button>)}
+          </div>
         </div>
-        {loading && !data ? <div className={styles.initialLoading} role="status" aria-live="polite" aria-busy="true"><span className={styles.loadingStatus}><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading managers…</span><RecordSkeleton /></div> : loading ? <div className="flex min-h-24 items-center justify-center gap-2 text-sm text-[var(--color-muted)]" role="status" aria-live="polite" aria-busy="true"><Loader2 size={17} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Refreshing managers…</div> : !data ? (
-          <div className="px-6 py-12 text-center" role="alert" aria-live="polite"><h2 className="text-xl font-semibold">Managers could not be loaded</h2><p className="mt-2 text-sm text-[var(--color-muted)]">{error || "Retry to load manager accounts and their organization assignments."}</p><ApplicationButton type="button" variant="outline" leadingIcon={<RefreshCw size={14} aria-hidden="true" />} onClick={() => void load()} className="mt-5">Retry</ApplicationButton></div>
-        ) : managers.length === 0 ? <div className="px-6 py-16 text-center"><UsersIcon /><h2 className="mt-4 text-xl font-semibold">No managers yet</h2><p className="mx-auto mt-2 max-w-md text-sm text-[var(--color-muted)]">Add an existing account or invite someone new, then assign their organizations.</p><Link href="/admin/managers/new" className={`${styles.primaryLink} mt-5`}><Plus size={15} aria-hidden="true" />Add manager</Link></div> : filteredManagers.length ? (
+
+        <AnimatePresence>
+          {error && data ? <motion.div key="error" className={styles.alert} role="alert" aria-live="polite" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}><p>{error}</p><button type="button" onClick={() => void load()} className={styles.alertAction}><RefreshCw size={14} aria-hidden="true" />Retry</button></motion.div> : null}
+        </AnimatePresence>
+
+        {loading && !data ? <DelayedLoading label="Loading managers…"><div className={styles.initialLoading} role="status" aria-live="polite" aria-busy="true"><span className={styles.loadingStatus}><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading managers…</span><RecordSkeleton /></div></DelayedLoading> : !data ? (
+          <div className={styles.emptyState} role="alert" aria-live="polite"><span className={styles.emptyIcon}><RefreshCw size={22} aria-hidden="true" /></span><h2>Managers could not be loaded</h2><p>{error || "Retry to load manager accounts and their organization assignments."}</p><ApplicationButton type="button" variant="outline" leadingIcon={<RefreshCw size={14} aria-hidden="true" />} onClick={() => void load()} className="mt-5">Retry</ApplicationButton></div>
+        ) : <ListRegion busy={loading} contentKey="managers">{managers.length === 0 ? <motion.div className={styles.emptyState} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: WS_EASE }}><UsersIcon /><h2>No managers yet</h2><p>Add an existing account or invite someone new, then assign their organizations.</p><Link href="/admin/managers/new" className={`${styles.primaryLink} ${styles.emptyAction}`}><Plus size={15} aria-hidden="true" />Add manager</Link></motion.div> : filteredManagers.length ? (
           <>
-            <div className="hidden xl:block"><table className="w-full table-fixed border-collapse text-left text-sm">
-              <colgroup><col className="w-[28%]" /><col className="w-[40%]" /><col className="w-[12%]" /><col className="w-[20%]" /></colgroup>
-              <thead className="bg-[var(--color-cream-2)]/65 text-[11px] text-[var(--color-muted)]"><tr><th scope="col" className="border-r border-[var(--color-line)] px-5 py-4 font-semibold">Manager</th><th scope="col" className="border-r border-[var(--color-line)] px-4 py-4 font-semibold">Organizations</th><th scope="col" className="border-r border-[var(--color-line)] px-4 py-4 font-semibold">Access</th><th scope="col" className="px-4 py-4 font-semibold">Actions</th></tr></thead>
-              <tbody className="divide-y divide-[var(--color-line)]">{filteredManagers.map((manager) => <tr key={manager.id} className="align-top"><th scope="row" className="px-5 py-4 font-medium">{renderManagerIdentity(manager)}</th><td className="px-4 py-4 align-top"><div className="flex flex-wrap content-start gap-1.5">{manager.organizations.length ? renderOrganizations(manager) : <span className="text-xs text-[var(--color-muted)]">No organizations assigned</span>}</div></td><td className="px-4 py-4 align-top"><div className="space-y-2">{renderManagerStatus(manager)}<p className="whitespace-nowrap text-xs text-[var(--color-muted)]"><span className="font-mono tabular-nums">{manager.policyCount}</span> {manager.policyCount === 1 ? "policy" : "policies"}</p>{manager.expiresAt ? <p className="text-[10px] leading-4 text-[var(--color-muted)]">{expiredInvitationIds.includes(manager.id) ? "Invitation expired" : `Expires ${dateLabel(manager.expiresAt)}`}</p> : null}</div></td><td className="px-4 py-4 align-top">{renderManagerActions(manager)}</td></tr>)}</tbody>
+            <div className={styles.tableWrap}><table className={styles.table}>
+              <colgroup><col className="w-[30%]" /><col className="w-[38%]" /><col className="w-[14%]" /><col className="w-[18%]" /></colgroup>
+              <thead><tr><th scope="col">Manager</th><th scope="col">Organizations</th><th scope="col">Access</th><th scope="col" className={styles.actionsHeading}>Actions</th></tr></thead>
+              <tbody>
+                <AnimatePresence>
+                  {filteredManagers.map((manager, index) => <motion.tr key={manager.id} className={styles.row} {...recordMotion(index)}><th scope="row">{renderManagerIdentity(manager)}</th><td><div className={styles.orgList}>{manager.organizations.length ? renderOrganizations(manager) : <span className={styles.noOrgs}>No organizations assigned</span>}</div></td><td><div className={styles.accessCell}>{renderManagerStatus(manager)}<p className={styles.accessMeta}>{policyCountLabel(manager)}</p>{manager.expiresAt ? <p className={styles.expiry}>{expiredInvitationIds.includes(manager.id) ? "Invitation expired" : `Expires ${dateLabel(manager.expiresAt)}`}</p> : null}</div></td><td>{renderManagerActions(manager)}</td></motion.tr>)}
+                </AnimatePresence>
+              </tbody>
             </table></div>
-            <div className="divide-y divide-[var(--color-line)] xl:hidden">{filteredManagers.map((manager) => <article key={manager.id} className="px-4 py-5 sm:px-6"><div>{renderManagerIdentity(manager)}</div><div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">{renderManagerStatus(manager)}<span className="text-sm text-[var(--color-muted)]"><span className="font-mono tabular-nums">{manager.policyCount}</span> {manager.policyCount === 1 ? "policy" : "policies"}</span>{manager.expiresAt ? <span className="text-xs text-[var(--color-muted)]">{expiredInvitationIds.includes(manager.id) ? "Invitation expired" : `Expires ${dateLabel(manager.expiresAt)}`}</span> : null}</div><div className="mt-4"><p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-muted)]">Organizations</p><div className="mt-2 flex flex-wrap gap-1.5">{manager.organizations.length ? renderOrganizations(manager) : <span className="text-sm text-[var(--color-muted)]">No organizations assigned</span>}</div></div><div className="mt-4 border-t border-[var(--color-line)] pt-3">{renderManagerActions(manager)}</div></article>)}</div>
+            <div className={styles.cards}>
+              <AnimatePresence>
+                {filteredManagers.map((manager, index) => <motion.article key={manager.id} className={styles.card} {...recordMotion(index)}><div>{renderManagerIdentity(manager)}</div><div className={styles.cardMeta}>{renderManagerStatus(manager)}<span className={styles.accessMeta}>{policyCountLabel(manager)}</span>{manager.expiresAt ? <span className={styles.expiry}>{expiredInvitationIds.includes(manager.id) ? "Invitation expired" : `Expires ${dateLabel(manager.expiresAt)}`}</span> : null}</div><div className={styles.cardOrgs}><p className={styles.cardLabel}>Organizations</p><div className={styles.orgList}>{manager.organizations.length ? renderOrganizations(manager) : <span className={styles.noOrgs}>No organizations assigned</span>}</div></div><div className={styles.cardActions}>{renderManagerActions(manager)}</div></motion.article>)}
+              </AnimatePresence>
+            </div>
           </>
-        ) : <div className="px-6 py-12 text-center"><h2 className="text-xl font-semibold">No managers match these filters</h2><p className="mt-2 text-sm text-[var(--color-muted)]">Clear the search or choose another status to see manager accounts.</p><ApplicationButton type="button" variant="ghost" onClick={() => { setQuery(""); setStatusFilter("all"); }} className="mt-4">Clear filters</ApplicationButton></div>}
-      </section>
+        ) : <motion.div className={styles.emptyState} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: WS_EASE }}><span className={styles.emptyIcon}><Search size={22} aria-hidden="true" /></span><h2>No managers match these filters</h2><p>Clear the search or choose another status to see manager accounts.</p><ApplicationButton type="button" variant="ghost" onClick={() => { setQuery(""); setStatusFilter("all"); }} className="mt-4">Clear filters</ApplicationButton></motion.div>}</ListRegion>}
+      </WorkspaceSheet>
 
       <Modal open={Boolean(managerToEdit)} onClose={() => { if (!busyId) setManagerToEdit(null); }} hideClose={Boolean(busyId)} title="Assign organizations" description={`Choose the organizations ${managerToEdit?.name || "this manager"} can access.`} width={560}>
         {managerToEdit ? <ApplicationSurface className={styles.surface}><form onSubmit={(event) => { event.preventDefault(); void updateManager(managerToEdit.id, { organizationIds: selectedOrganizations }); }}>
@@ -274,7 +302,7 @@ function AdminManagersContent() {
   );
 }
 
-function UsersIcon() { return <div className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-[var(--color-forest-soft)] text-[var(--color-forest)]"><UserRound size={20} aria-hidden="true" /></div>; }
+function UsersIcon() { return <span className={styles.emptyIcon}><UserRound size={22} aria-hidden="true" /></span>; }
 
 export default function AdminManagersPage() {
   return <React.Suspense fallback={<div className="min-h-48" aria-busy="true" aria-label="Loading manager filters" />}><AdminManagersContent /></React.Suspense>;

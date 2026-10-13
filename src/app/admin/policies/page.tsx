@@ -3,15 +3,19 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { AnimatePresence, motion } from "motion/react";
 import { Archive, ArchiveRestore, ArrowDownToLine, ArrowUpRight, FileText, Loader2, Plus, RefreshCw, Search, Trash2 } from "lucide-react";
 import { PolicyCoverPreview } from "@/components/policy/policy-preview";
 import { ActionDisclosure, ActionDisclosureItem } from "@/components/ui/action-disclosure";
 import { Modal } from "@/components/ui/modal";
 import { ApplicationStatus } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
+import { RecordSkeleton } from "@/components/ui/record-skeleton";
 import { POLICY_PROFILES } from "@/lib/constants";
 import { initialPolicy } from "@/lib/store";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
+import { SelectionPill, TiltCover, useRecordMotion, WorkspaceHero, WorkspaceSheet } from "@/components/workspace/workspace-motion";
+import { DelayedLoading, ListRegion, Pagination, useMediaQuery, usePagination } from "@/components/workspace/workspace-list";
 import { policyCraftExportContext } from "@/lib/policycraft-client-scope";
 import { organizationSourceName } from "@/components/workspace/organization-source-label";
 import type { PolicyCraftDocumentState, PolicyDocumentSummary } from "@/lib/policycraft-types";
@@ -26,7 +30,7 @@ type AdminDocumentResponse = { documents: AdminPolicy[]; creators?: Creator[] };
 const PolicyCoverThumbnail = React.memo(function PolicyCoverThumbnail({ document, userId }: { document: AdminPolicy; userId: string }) {
   const policy = React.useMemo(() => policyFromSummary(document), [document]);
   const assetScope = React.useMemo(() => ({ userId, role: "admin" as const, organizationId: document.organization.id, organizationName: document.organization.name, documentId: document.id, readOnly: !!document.organization.deleted }), [document, userId]);
-  return <div role="img" aria-label={`Cover preview for ${document.title || "Untitled policy"}`} className={styles.coverThumbnail}><div className="absolute left-1/2 top-1/2 origin-center [transform:translate(-50%,-50%)_scale(.055)] sm:[transform:translate(-50%,-50%)_scale(.06)]" style={{ width: "210mm", height: "297mm" }} aria-hidden="true"><PolicyCoverPreview policy={policy} assetScope={assetScope} /></div></div>;
+  return <TiltCover label={`Cover preview for ${document.title || "Untitled policy"}`} className={styles.coverThumbnail} coverKey={`${document.id}:${document.updatedAt}`}><div className="absolute left-1/2 top-1/2 origin-center [transform:translate(-50%,-50%)_scale(.055)] sm:[transform:translate(-50%,-50%)_scale(.06)]" style={{ width: "210mm", height: "297mm" }} aria-hidden="true"><PolicyCoverPreview policy={policy} assetScope={assetScope} /></div></TiltCover>;
 });
 
 const POLICY_TYPES = Object.keys(POLICY_PROFILES) as PolicyType[];
@@ -49,6 +53,10 @@ function filenameFromResponse(response: Response, fallback: string) {
   const disposition = response.headers.get("content-disposition") || "";
   const match = disposition.match(/filename\*?=(?:UTF-8''|\")?([^\";]+)/i);
   return match ? decodeURIComponent(match[1].replace(/"/g, "")) : fallback;
+}
+
+function accentStyle(policyType: PolicyType): React.CSSProperties {
+  return { "--ws-type": POLICY_PROFILES[policyType]?.accent } as React.CSSProperties;
 }
 
 function AdminPoliciesContent() {
@@ -75,6 +83,9 @@ function AdminPoliciesContent() {
   const [filtersOpen, setFiltersOpen] = React.useState(false);
   const searchUrlTimer = React.useRef<number | null>(null);
   const selfAuthoredSearches = React.useRef(new Set<string>());
+  const recordMotion = useRecordMotion();
+  // Which query the rows on screen belong to; they stay visible while the next one loads.
+  const [loadedKey, setLoadedKey] = React.useState("");
 
   React.useEffect(() => {
     const current = searchParams.toString();
@@ -119,6 +130,7 @@ function AdminPoliciesContent() {
       const documentData = await documentsResponse.json() as AdminDocumentResponse;
       if (!active) return null;
       setDocuments(documentData.documents || []);
+      setLoadedKey(queryKey);
       setCreators(documentData.creators || []);
       setLoading(false);
       return true;
@@ -156,6 +168,9 @@ function AdminPoliciesContent() {
     if (!search) return documents;
     return documents.filter((document) => [document.title, document.organization?.name, document.createdBy?.name, document.createdBy?.email, POLICY_PROFILES[document.policyType]?.label].some((value) => value?.toLowerCase().includes(search)));
   }, [documents, query]);
+  // Ten policies per page; only the layout that fits the screen is rendered.
+  const pager = usePagination(filtered, `${loadedKey}|${query.trim().toLowerCase()}`);
+  const wide = useMediaQuery("(min-width: 1024px)");
   const hasFilters = Boolean(query.trim()) || orgId !== "all" || creatorId !== "all" || policyType !== "all";
 
   async function setArchived(document: AdminPolicy, archived: boolean) {
@@ -276,17 +291,35 @@ function AdminPoliciesContent() {
   const renderPolicyIdentity = (document: AdminPolicy) => {
     return <div className={styles.policyIdentity}>
       <PolicyCoverThumbnail document={document} userId={access.actor.id} />
-      <div className={styles.identityText}><h3 className={styles.policyTitle}>{document.title || "Untitled policy"}</h3><p className={styles.policyMeta}><span>{POLICY_PROFILES[document.policyType]?.label || label(document.policyType)}</span><span aria-hidden="true">·</span><ApplicationStatus tone="neutral" icon={<FileText size={14} aria-hidden="true" />}>{document.archivedAt ? "Archived" : label(document.currentStep)}</ApplicationStatus></p>{actionId === document.id ? <p className={styles.actionStatus} role="status" aria-live="polite"><Loader2 size={13} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />{actionLabel}</p> : null}</div>
+      <div className={styles.identityText}><h3 className={styles.policyTitle}>{document.title || "Untitled policy"}</h3><p className={styles.policyMeta}><span className={styles.metaType}>{POLICY_PROFILES[document.policyType]?.label || label(document.policyType)}</span><span aria-hidden="true">·</span><ApplicationStatus tone="neutral" icon={<FileText size={14} aria-hidden="true" />}>{document.archivedAt ? "Archived" : label(document.currentStep)}</ApplicationStatus></p>{actionId === document.id ? <p className={styles.actionStatus} role="status" aria-live="polite"><Loader2 size={13} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />{actionLabel}</p> : null}</div>
   </div>;
   };
 
-  return <ApplicationSurface className={styles.surface} data-pc-pilot="inventory"><div className={styles.page}>
-    <header className={styles.header}><div><p className={styles.eyebrow}>Administration</p><h1 className={styles.pageTitle}>All policies</h1><p className={styles.description}>Browse, manage, and export policies across organizations.</p></div><div className={styles.headerActions}><Link href="/builder" className={styles.newPolicy}><Plus size={16} aria-hidden="true" />New policy</Link></div></header>
-    {error ? <div className={styles.alert} role="alert" aria-live="polite"><p>{error}</p><button type="button" onClick={() => void retryLoad()} aria-label="Retry loading policies" className={styles.alertAction}><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : null}
-    {loadError ? <div className={styles.alert} role="alert" aria-live="polite"><p>{loadError}</p><button type="button" onClick={() => void retryLoad()} className={styles.alertAction}><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : null}
+  // Counts come from the server response for the current view; they stay honest while loading or on failure.
+  const statValue = (value: number) => (loadError && !documents.length ? "–" : loading && !documents.length ? null : value);
+  const heroStats = [
+    { label: view === "archived" ? "Archived policies" : "Active policies", value: statValue(documents.length) },
+    { label: "Organizations", value: statValue(new Set(documents.map((document) => document.organization?.id)).size) },
+    { label: "Policy types", value: statValue(new Set(documents.map((document) => document.policyType)).size) },
+  ];
 
-    <section aria-label="Policy library" className={styles.panel}>
-    <div className={styles.viewBar}><div className={styles.segments} role="group" aria-label="Policy status"><button type="button" aria-pressed={view === "active"} onClick={() => setView("active")} className={`${styles.segment} ${view === "active" ? styles.segmentSelected : ""}`}>Active</button><button type="button" aria-pressed={view === "archived"} onClick={() => setView("archived")} className={`${styles.segment} ${view === "archived" ? styles.segmentSelected : ""}`}>Archived</button></div><p className={styles.recordCount} aria-live="polite">{loading ? "Loading policies…" : `${filtered.length} ${filtered.length === 1 ? "policy" : "policies"}`}</p></div>
+  return <ApplicationSurface className={styles.surface} data-pc-pilot="inventory"><div className={styles.page}>
+    <WorkspaceHero
+      titleId="admin-policies-title"
+      title="All policies"
+      description="Browse, manage, and export policies across organizations."
+      stats={heroStats}
+      actions={<Link href="/builder" className={styles.heroCta}><Plus size={16} aria-hidden="true" />New policy</Link>}
+    />
+
+    <WorkspaceSheet as="section" aria-label="Policy register">
+    {error || loadError ? <div className={styles.messages}>
+      {error ? <div className={styles.alert} role="alert" aria-live="polite"><p>{error}</p><button type="button" onClick={() => void retryLoad()} aria-label="Retry loading policies" className={styles.alertAction}><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : null}
+      {loadError ? <div className={styles.alert} role="alert" aria-live="polite"><p>{loadError}</p><button type="button" onClick={() => void retryLoad()} className={styles.alertAction}><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : null}
+    </div> : null}
+
+    <section id="policy-library" aria-label="Policy library" className={styles.library}>
+    <div className={styles.viewBar}><div className={styles.segments} role="group" aria-label="Policy status"><button type="button" aria-pressed={view === "active"} onClick={() => setView("active")} className={`${styles.segment} ${view === "active" ? styles.segmentSelected : ""}`}>{view === "active" ? <SelectionPill layoutId="policy-view" /> : null}Active</button><button type="button" aria-pressed={view === "archived"} onClick={() => setView("archived")} className={`${styles.segment} ${view === "archived" ? styles.segmentSelected : ""}`}>{view === "archived" ? <SelectionPill layoutId="policy-view" /> : null}Archived</button></div><p className={styles.recordCount} aria-live="polite">{loading && !documents.length ? "Loading policies…" : `${filtered.length} ${filtered.length === 1 ? "policy" : "policies"}`}</p></div>
     <div className={styles.filterBar}>
       <div className={styles.searchAndToggle}><label className={styles.searchField}><span className="sr-only">Search policies</span><Search size={15} aria-hidden="true" className={styles.searchIcon} /><input name="policySearch" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search policies…" className={styles.filterInput} /></label><button type="button" aria-expanded={filtersOpen} aria-controls="policy-filter-options" onClick={() => setFiltersOpen((open) => !open)} className={styles.filterToggle}>Filters</button></div>
       <div id="policy-filter-options" className={`${styles.filterFields} ${filtersOpen ? styles.filterFieldsOpen : styles.filterFieldsClosed}`}>
@@ -296,11 +329,13 @@ function AdminPoliciesContent() {
       </div>
     </div>
 
-    {loading ? <div className={styles.loadingState} aria-live="polite"><Loader2 size={19} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading policies…</div> : loadError ? <div className={styles.emptyState} role="status"><FileText size={25} className={styles.emptyIcon} aria-hidden="true" /><h2>Policies could not be loaded</h2><p>The policy list will appear after the request succeeds.</p></div> : filtered.length === 0 ? <div className={styles.emptyState}><FileText size={25} className={styles.emptyIcon} aria-hidden="true" /><h2>{hasFilters ? "No policies match these filters" : view === "archived" ? "No archived policies" : "No policies yet"}</h2><p>{hasFilters ? "Try another search or clear your filters." : view === "archived" ? "Archived policies will appear here." : "Create a new policy for an organization to get started."}</p>{hasFilters ? <button type="button" onClick={() => { setQuery(""); setOrgId("all"); setCreatorId("all"); setPolicyType("all"); setView("active"); }} className={styles.clearFilters}>Clear filters</button> : null}</div> : <>
-      <div className={styles.tableScroll}><table className={styles.table}><colgroup><col className="w-[42%]" /><col className="w-[22%]" /><col className="w-[18%]" /><col className="w-[18%]" /></colgroup><thead className="text-[11px] uppercase tracking-wider text-[var(--pc-muted)]"><tr><th scope="col" className="px-6 py-3 font-semibold">Policy</th><th scope="col" className="px-4 py-3 font-semibold">Organization</th><th scope="col" className="px-4 py-3 font-semibold">Owner / updated</th><th scope="col" className="px-4 py-3 text-right font-semibold">Actions</th></tr></thead><tbody className="divide-y divide-[var(--pc-divider)]">{filtered.map((document) => <tr key={document.id} className={document.organization?.deleted ? styles.tableRowDeleted : undefined}><th scope="row" className="px-6 py-4 font-medium">{renderPolicyIdentity(document)}</th><td className="px-4 py-4"><span className="block break-words font-medium text-[var(--pc-text)]">{document.organization?.name || "Unknown organization"}</span><span className="mt-1 block text-[10px] text-[var(--pc-muted)]">{organizationSourceName(document.organization || { id: 0, name: "" })}</span>{document.organization?.deleted ? <span className="mt-1 block"><ApplicationStatus tone="info">Deleted · read only</ApplicationStatus></span> : document.organization?.expired ? <span className="mt-1 block"><ApplicationStatus tone="warning">Expired · admin editing allowed</ApplicationStatus></span> : null}</td><td className="px-4 py-4"><span className="block break-words font-medium">{document.createdBy?.name || "Unknown"}</span><span className="mt-1 block break-all text-xs text-[var(--pc-muted)]">{document.createdBy?.email || ""}</span><span className="mt-1 block text-xs text-[var(--pc-muted)]">Updated {formatDate(document.updatedAt)}</span></td><td className="px-3 py-4">{renderPolicyActions(document)}</td></tr>)}</tbody></table></div>
-      <div className={styles.mobileRecords}>{filtered.map((document) => <article key={document.id} className={styles.mobileRecord}><div className={styles.mobileRecordHeader}><div className="min-w-0 w-full">{renderPolicyIdentity(document)}</div><div className={styles.mobileRecordActions}>{renderPolicyActions(document)}</div></div><dl className={styles.mobileDetails}><div className="min-w-0"><dt className="text-xs font-semibold uppercase tracking-wide text-[var(--pc-muted)]">Organization</dt><dd className="mt-1 break-words font-medium">{document.organization?.name || "Unknown organization"}<span className="block text-xs font-normal text-[var(--pc-muted)]">{organizationSourceName(document.organization || { id: 0, name: "" })}</span>{document.organization?.deleted ? <span className="block mt-1"><ApplicationStatus tone="info">Deleted · read only</ApplicationStatus></span> : document.organization?.expired ? <span className="block mt-1"><ApplicationStatus tone="warning">Expired · admin editing allowed</ApplicationStatus></span> : null}</dd></div><div className="min-w-0"><dt className="text-xs font-semibold uppercase tracking-wide text-[var(--pc-muted)]">Owner</dt><dd className="mt-1 break-words">{document.createdBy?.name || "Unknown"}<span className="block break-all text-xs text-[var(--pc-muted)]">{document.createdBy?.email || ""}</span></dd></div><div><dt className="text-xs font-semibold uppercase tracking-wide text-[var(--pc-muted)]">Updated</dt><dd className="mt-1">{formatDate(document.updatedAt)}</dd></div></dl></article>)}</div>
-    </>}
+    {loading && !documents.length ? <DelayedLoading label="Loading policies…"><div className={styles.loadingState} aria-live="polite"><span className={styles.loadingLine}><Loader2 size={19} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading policies…</span><RecordSkeleton /></div></DelayedLoading> : <ListRegion busy={loading} contentKey={`${loadedKey}|${pager.page}`}>{loadError ? <div className={styles.emptyState} role="status"><span className={styles.emptyIcon} aria-hidden="true"><FileText size={24} /></span><h2>Policies could not be loaded</h2><p>The policy list will appear after the request succeeds.</p></div> : filtered.length === 0 ? <div className={styles.emptyState}><span className={styles.emptyIcon} aria-hidden="true"><FileText size={24} /></span><h2>{hasFilters ? "No policies match these filters" : view === "archived" ? "No archived policies" : "No policies yet"}</h2><p>{hasFilters ? "Try another search or clear your filters." : view === "archived" ? "Archived policies will appear here." : "Create a new policy for an organization to get started."}</p>{hasFilters ? <button type="button" onClick={() => { setQuery(""); setOrgId("all"); setCreatorId("all"); setPolicyType("all"); setView("active"); }} className={styles.clearFilters}>Clear filters</button> : null}</div> : <>
+      {wide ? <div className={styles.tableScroll}><table className={styles.table}><colgroup><col className="w-[42%]" /><col className="w-[22%]" /><col className="w-[18%]" /><col className="w-[18%]" /></colgroup><thead><tr><th scope="col">Policy</th><th scope="col">Organization</th><th scope="col">Owner / updated</th><th scope="col">Actions</th></tr></thead><tbody><AnimatePresence initial={false}>{pager.visible.map((document, index) => <motion.tr key={document.id} data-ws-row="" className={`${styles.row} ${document.organization?.deleted ? styles.tableRowDeleted : ""}`} style={accentStyle(document.policyType)} {...recordMotion(index)}><th scope="row" className="font-medium">{renderPolicyIdentity(document)}</th><td><span className="block break-words font-medium text-[var(--pc-text)]">{document.organization?.name || "Unknown organization"}</span><span className="mt-1 block text-[10px] text-[var(--pc-muted)]">{organizationSourceName(document.organization || { id: 0, name: "" })}</span>{document.organization?.deleted ? <span className="mt-1 block"><ApplicationStatus tone="info">Deleted · read only</ApplicationStatus></span> : document.organization?.expired ? <span className="mt-1 block"><ApplicationStatus tone="warning">Expired · admin editing allowed</ApplicationStatus></span> : null}</td><td><span className="block break-words font-medium">{document.createdBy?.name || "Unknown"}</span><span className="mt-1 block break-all text-xs text-[var(--pc-muted)]">{document.createdBy?.email || ""}</span><span className="mt-1 block text-xs text-[var(--pc-muted)]">Updated {formatDate(document.updatedAt)}</span></td><td className="text-right">{renderPolicyActions(document)}</td></motion.tr>)}</AnimatePresence></tbody></table></div> : null}
+      {!wide ? <div className={styles.mobileRecords}><AnimatePresence initial={false}>{pager.visible.map((document, index) => <motion.article key={document.id} data-ws-row="" className={styles.mobileRecord} style={accentStyle(document.policyType)} {...recordMotion(index)}><div className={styles.mobileRecordHeader}><div className="min-w-0 w-full">{renderPolicyIdentity(document)}</div><div className={styles.mobileRecordActions}>{renderPolicyActions(document)}</div></div><dl className={styles.mobileDetails}><div className="min-w-0"><dt>Organization</dt><dd className="mt-1 break-words font-medium">{document.organization?.name || "Unknown organization"}<span className="block text-xs font-normal text-[var(--pc-muted)]">{organizationSourceName(document.organization || { id: 0, name: "" })}</span>{document.organization?.deleted ? <span className="mt-1 block"><ApplicationStatus tone="info">Deleted · read only</ApplicationStatus></span> : document.organization?.expired ? <span className="mt-1 block"><ApplicationStatus tone="warning">Expired · admin editing allowed</ApplicationStatus></span> : null}</dd></div><div className="min-w-0"><dt>Owner</dt><dd className="mt-1 break-words">{document.createdBy?.name || "Unknown"}<span className="block break-all text-xs text-[var(--pc-muted)]">{document.createdBy?.email || ""}</span></dd></div><div><dt>Updated</dt><dd className="mt-1">{formatDate(document.updatedAt)}</dd></div></dl></motion.article>)}</AnimatePresence></div> : null}
+      <Pagination page={pager.page} pageCount={pager.pageCount} first={pager.first} last={pager.last} total={pager.total} noun="policies" onChange={pager.setPage} anchorId="policy-library" />
+    </>}</ListRegion>}
     </section>
+    </WorkspaceSheet>
 
     <Modal open={Boolean(deleteTarget)} onClose={() => { if (!actionId) setDeleteTarget(null); }} title="Delete archived policy?" description="This permanently deletes the selected archived policy and its saved content." hideClose={Boolean(actionId)} width={480}>
       <p className="break-words text-sm text-[var(--pc-muted)]">{deleteTarget?.title}</p>{deleteError ? <p role="alert" aria-live="polite" className={styles.inlineError}>{deleteError}</p> : null}<div className={styles.dialogActions}><button type="button" disabled={Boolean(actionId)} onClick={() => setDeleteTarget(null)} className={styles.cancelAction}>Cancel</button><button type="button" onClick={() => void removeDocument()} disabled={Boolean(actionId)} className={styles.confirmAction + " " + styles.confirmDanger}>{actionId ? <Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true" /> : <Trash2 size={14} aria-hidden="true" />}{actionId ? actionLabel : "Delete permanently"}</button></div>
