@@ -7,7 +7,6 @@ import { CoverEditor } from "@/components/builder/cover-editor";
 import { AICoverGenerationLoader } from "@/components/builder/ai-cover-generation-loader";
 import type { CoverComposition } from "@/lib/types";
 import { getPolicyProfile } from "@/lib/constants";
-import { visibleQualitativeEntries, visibleQuantitativeAreas } from "@/lib/focus-area-catalog";
 import { generateAndApplyAICover } from "@/components/builder/ai-cover-workflow";
 import { saveAICoverToLibrary } from "@/lib/ai-cover-library";
 import { policyCraftScopeKey, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
@@ -69,40 +68,8 @@ export function StepExport({ onCoverEditingChange }: { onCoverEditingChange?: (e
     return () => window.cancelAnimationFrame(frame);
   }, [clearCoverEditorRequest, coverEditorRequest, onCoverEditingChange, updatePolicy]);
 
-  const co = policy.company;
-  const areas = policy.focusAreas.filter(Boolean);
-  const qualEntries = visibleQualitativeEntries(policy).filter(([, v]) => v && v.length);
-  const quantEntries = visibleQuantitativeAreas(policy).filter((q) => q.targets && q.targets.some((t) => t.target));
-
-  const completeness = [
-    !!co.name,
-    !!policy.declaration.preface,
-    !!policy.declaration.declaration,
-    !!policy.declaration.scope,
-    areas.length > 0,
-    qualEntries.length > 0,
-    quantEntries.length > 0,
-    policy.sdgs.length > 0,
-    policy.responsibilities.length > 0,
-  ].filter(Boolean).length;
-
   return (
     <div className="space-y-6">
-      {aiCoverState !== "generating" ? <div data-cover-readiness className="grid gap-y-2 rounded-[14px] border border-[var(--pc-divider)] bg-[var(--pc-panel)] p-4 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center lg:gap-x-4">
-        <div className="min-w-0">
-          <p className="text-[13px] font-semibold text-[var(--pc-text)]">Policy readiness</p>
-          <p className="mt-0.5 text-[14px] leading-5 text-[var(--pc-muted)]">
-            {completeness < 7 ? "Add more completed sections for a more comprehensive policy." : "Your policy is ready to export. You can still refine the cover."}
-          </p>
-        </div>
-        <div className="min-w-0 lg:w-[220px]">
-          <p className="mb-1 text-right text-[13px] text-[var(--pc-muted)]"><span className="font-semibold tabular-nums text-[var(--pc-text)]">{completeness} of 9</span> sections complete</p>
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-[var(--pc-selection)]" role="progressbar" aria-label="Policy completeness" aria-valuemin={0} aria-valuemax={9} aria-valuenow={completeness} aria-valuetext={`${completeness} of 9 sections complete`}>
-            <span className="block h-full rounded-full bg-[var(--pc-primary)] transition-[width] duration-300 motion-reduce:transition-none" style={{ width: `${(completeness / 9) * 100}%` }} />
-          </div>
-        </div>
-      </div> : null}
-
       {editingCover ? <CoverEditor
         initialComposition={editingCover === "ai" ? policy.aiCoverComposition : policy.coverComposition}
         policy={{ ...policy, activeCoverVariant: "manual", aiCoverComposition: undefined }}

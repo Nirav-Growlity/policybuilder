@@ -315,7 +315,6 @@
 }
 
 /* Cover tooling opts in by region; paper, canvas nodes and Moveable stay independent. */
-.pc-ui [data-cover-readiness] { font-family: var(--pc-font); }
 .pc-ui [data-cover-editor] { isolation: isolate; border-color: var(--pc-divider); border-radius: 14px; background: var(--pc-inset); box-shadow: none; }
 .pc-ui [data-cover-canvas] { background: var(--pc-inset); }
 .pc-ui [data-cover-canvas] .moveable-control-box { --moveable-color: var(--pc-brand); }

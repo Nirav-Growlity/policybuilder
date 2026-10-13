@@ -326,27 +326,29 @@ export function BuilderShell({
               <div className={styles.main}>
                 <div id="builder-content" ref={contentRef} className={styles.scrollRegion}>
                   <div className={styles.frame}>
-                    <div className={styles.stepHeading}>
-                      <h1 className={styles.title}>{currentStep?.label}</h1>
-                      {currentStep?.desc ? <p className={styles.subtitle}>{currentStep.desc}</p> : null}
+                    <div className={clsx(styles.stepHeading, reviewing && styles.stepHeadingWithActions)}>
+                      <div className="min-w-0">
+                        <h1 className={styles.title}>{currentStep?.label}</h1>
+                        {currentStep?.desc ? <p className={styles.subtitle}>{currentStep.desc}</p> : null}
+                      </div>
+                      {reviewing && <div role="group" aria-label="Export document" className={styles.exportActions}>
+                        <Button variant="secondary" size="md" disabled={!!exporting} loading={exporting === "docx"} icon={<FileText size={14} aria-hidden="true" />} onClick={() => download("docx")}>{exporting === "docx" ? "Downloading Word…" : "Download Word"}</Button>
+                        <Button variant="primary" size="md" disabled={!!exporting} loading={exporting === "pdf"} icon={<FileDown size={14} aria-hidden="true" />} onClick={() => download("pdf")}>{exporting === "pdf" ? "Downloading PDF…" : "Download PDF"}</Button>
+                        <span className="sr-only" role="status" aria-live="polite">{exporting ? `Preparing ${exporting === "pdf" ? "PDF" : "Word"} download.` : ""}</span>
+                      </div>}
                     </div>
                     {children}
                   </div>
                 </div>
-                <div className={styles.footer}>
-                  <p className={styles.stepCount}>{reviewing ? "Review & export" : `Step ${stepNumber} of ${railSteps.length}`}</p>
+                {!reviewing && <div className={styles.footer}>
+                  <p className={styles.stepCount}>Step {stepNumber} of {railSteps.length}</p>
                   <div className={styles.footerActions}>
                     <Button variant="secondary" size="md" icon={<ArrowLeft size={14} aria-hidden="true" />} onClick={prev} disabled={isFirstStep}>Back</Button>
-                    {mode === "review" && <div role="group" aria-label="Export document" className={styles.exportActions}>
-                      <Button variant="secondary" size="md" disabled={!!exporting} loading={exporting === "docx"} icon={<FileText size={14} aria-hidden="true" />} onClick={() => download("docx")}>{exporting === "docx" ? "Downloading Word…" : "Download Word"}</Button>
-                      <Button variant="primary" size="md" disabled={!!exporting} loading={exporting === "pdf"} icon={<FileDown size={14} aria-hidden="true" />} onClick={() => download("pdf")}>{exporting === "pdf" ? "Downloading PDF…" : "Download PDF"}</Button>
-                      <span className="sr-only" role="status" aria-live="polite">{exporting ? `Preparing ${exporting === "pdf" ? "PDF" : "Word"} download.` : ""}</span>
-                    </div>}
-                    {!reviewing && (nextStep
+                    {nextStep
                       ? <Button variant="primary" size="md" trailingIcon={<ArrowRight size={14} aria-hidden="true" />} onClick={next}>Next: {nextStep.label}</Button>
-                      : <Button variant="primary" size="md" trailingIcon={<ArrowRight size={14} aria-hidden="true" />} onClick={enterDesign}>Next: Design</Button>)}
+                      : <Button variant="primary" size="md" trailingIcon={<ArrowRight size={14} aria-hidden="true" />} onClick={enterDesign}>Next: Design</Button>}
                   </div>
-                </div>
+                </div>}
               </div>
               {showPreview && (
                 <aside ref={previewPanel} tabIndex={-1} id="builder-preview" aria-label="Live PDF preview" role={narrowViewport ? "dialog" : undefined} aria-modal={narrowViewport || undefined} className={styles.previewPane}>
