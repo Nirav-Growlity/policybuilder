@@ -11,7 +11,23 @@ export const FONT_FAMILY_OPTIONS = [
   "Times New Roman",
   "Trebuchet MS",
   "Verdana",
-  // Self-hosted OFL document fonts (see public/fonts + app/document-fonts.css).
+  // Self-hosted OFL document fonts, embedded in Word exports and drawn from
+  // the same files in PDFs (see scripts/build-document-fonts.py).
+  "Roboto",
+  "Open Sans",
+  "Lato",
+  "Noto Sans",
+  "PT Sans",
+  "Montserrat",
+  "Nunito Sans",
+  "Poppins",
+  "Libre Franklin",
+  "Merriweather",
+  "Lora",
+  "Noto Serif",
+  "PT Serif",
+  "Libre Baskerville",
+  "EB Garamond",
   "Inter",
   "Fraunces",
   "Space Grotesk",
@@ -29,6 +45,15 @@ export const FONT_FAMILY_OPTIONS = [
   "Public Sans",
   "JetBrains Mono",
 ] as const;
+
+// Still valid on saved policies, but no longer offered: no open look-alike
+// exists, so the PDF cannot draw them the way Word does.
+const HIDDEN_PICKER_FONTS: readonly string[] = ["Tahoma", "Trebuchet MS", "Verdana"];
+
+/** Fonts the picker offers, keeping a hidden font visible while it is the current choice. */
+export function pickerFontFamilies(current?: string): string[] {
+  return FONT_FAMILY_OPTIONS.filter((font) => !HIDDEN_PICKER_FONTS.includes(font) || font === current);
+}
 
 export const DEFAULT_TYPOGRAPHY: DocumentTypography = {
   fontFamily: "Arial",

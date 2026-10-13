@@ -18,7 +18,7 @@ import {
 import { resolvePolicyListFormatting } from "@/lib/list-formatting";
 import { getSection } from "@/lib/sections";
 import { useBuilder } from "@/lib/store";
-import { FONT_FAMILY_OPTIONS } from "@/lib/typography";
+import { pickerFontFamilies } from "@/lib/typography";
 import type { DocumentThemePalette, ListMarkerStyle, PageBorder, Policy, PolicyListFormatting, ThemeBackground } from "@/lib/types";
 import { ColorField, Disclosure, EASE_OUT, Group, Notice, Row, Segmented, Slider, Stepper, SwitchRow, TextButton } from "./controls";
 import styles from "./design-studio.module.css";
@@ -198,7 +198,7 @@ function BackgroundEditor({ background, onChange }: { background: ThemeBackgroun
 /* ───────────────────────────── Text ───────────────────────────── */
 
 const LINE_SPACING = [1.15, 1.25, 1.35, 1.4, 1.5, 1.75, 2] as const;
-const FONT_OPTIONS = FONT_FAMILY_OPTIONS.map((font) => ({ value: font, label: font }));
+const fontOptions = (current: string) => pickerFontFamilies(current).map((font) => ({ value: font, label: font }));
 
 export function TextSection() {
   const { policy, updatePolicy } = useBuilder();
@@ -226,10 +226,10 @@ export function TextSection() {
 
       <Group title="Fonts">
         <Row label="Headings" stacked>
-          <SelectMenu aria-label="Heading font" value={headingFont} options={FONT_OPTIONS} onValueChange={(value) => set({ headingFontFamily: value })} />
+          <SelectMenu aria-label="Heading font" value={headingFont} options={fontOptions(headingFont)} onValueChange={(value) => set({ headingFontFamily: value })} />
         </Row>
         <Row label="Body" stacked>
-          <SelectMenu aria-label="Body font" value={typography.fontFamily} options={FONT_OPTIONS} onValueChange={(value) => set({ fontFamily: value })} />
+          <SelectMenu aria-label="Body font" value={typography.fontFamily} options={fontOptions(typography.fontFamily)} onValueChange={(value) => set({ fontFamily: value })} />
         </Row>
       </Group>
 

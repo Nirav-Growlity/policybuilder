@@ -46,7 +46,7 @@ import { formatQuantitativeTargetSentence, groupQuantitativeTargets, normalizePo
 import { getCoverBindingValue, getCoverTextPresentation } from "../cover-composition";
 import type { DocumentTextAlignment, Policy, QuantitativeArea, RichTextBlock } from "../types";
 import { DEFAULT_TYPOGRAPHY } from "../typography";
-import { embeddedDocumentFonts } from "./document-fonts";
+import { embedDocumentFontStyles, embeddedDocumentFonts } from "./document-fonts";
 import { createCoverCompositionSvg, resolveCoverTextLayout } from "../cover-renderer";
 import { listMarkerText } from "../list-formatting";
 
@@ -161,14 +161,15 @@ async function generateDocxDocument(inputPolicy: Policy, authorApproval?: Author
       footer: Math.round(pageFooterDistanceMm(theme.pageBorder) * A4.pointsPerMm * 20),
     },
   };
+  const fontFamilies = [
+    typography.fontFamily,
+    typography.headingFontFamily || typography.fontFamily,
+    ...(model.cover.composition?.elements.flatMap((element) => element.type === "text"
+      ? [getCoverTextPresentation(element, model.cover.composition!.sourceTemplateId).fontFamily]
+      : []) || []),
+  ];
   const doc = new Document({
-    fonts: await embeddedDocumentFonts([
-      typography.fontFamily,
-      typography.headingFontFamily || typography.fontFamily,
-      ...(model.cover.composition?.elements.flatMap((element) => element.type === "text"
-        ? [getCoverTextPresentation(element, model.cover.composition!.sourceTemplateId).fontFamily]
-        : []) || []),
-    ]),
+    fonts: await embeddedDocumentFonts(fontFamilies),
     creator: "PolicyCraft",
     title: `${model.cover.policyLabel} - ${model.cover.companyName}`,
     styles: {
@@ -192,7 +193,7 @@ async function generateDocxDocument(inputPolicy: Policy, authorApproval?: Author
           next: "PolicyBody",
           quickFormat: true,
           run: { font: typography.fontFamily, size: Math.round(typography.paragraphSize * 2), color: ink },
-          paragraph: { alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: Math.round(150 * spacingScale), line: Math.round(240 * typography.lineSpacing) } },
+          paragraph: { alignment: docxContentAlignment(model.theme.textAlignment), spacing: { after: Math.round(150 * spacingScale), ...bodyLineSpacing(typography) } },
         },
       ],
     },
@@ -207,7 +208,7 @@ async function generateDocxDocument(inputPolicy: Policy, authorApproval?: Author
             alignment: AlignmentType.LEFT,
             style: {
               run: { color: primary, font: typography.fontFamily },
-              paragraph: { indent: { left: 420, hanging: 220 }, spacing: { after: 90, line: Math.round(240 * typography.lineSpacing) } },
+              paragraph: { indent: { left: 420, hanging: 220 }, spacing: { after: 90, ...bodyLineSpacing(typography) } },
             },
           }],
         },
@@ -220,7 +221,7 @@ async function generateDocxDocument(inputPolicy: Policy, authorApproval?: Author
             alignment: AlignmentType.LEFT,
             style: {
               run: { color: primary, bold: true, font: typography.fontFamily },
-              paragraph: { indent: { left: 420, hanging: 220 }, spacing: { after: 90, line: Math.round(240 * typography.lineSpacing) } },
+              paragraph: { indent: { left: 420, hanging: 220 }, spacing: { after: 90, ...bodyLineSpacing(typography) } },
             },
           }],
         },
@@ -250,7 +251,7 @@ async function generateDocxDocument(inputPolicy: Policy, authorApproval?: Author
     }],
   });
 
-  return (await Packer.toBuffer(doc)) as Buffer;
+  return embedDocumentFontStyles((await Packer.toBuffer(doc)) as Buffer, fontFamilies);
 }
 
 
@@ -662,7 +663,7 @@ function quantitativeTable(groups: QuantitativeTargetGroup[], availableWidth: nu
   const headerColor = lightHeader ? documentHex(model.theme.colors.primary) : documentHex(model.theme.colors.onPrimary);
   return fixedTable([
     new TableRow({ tableHeader: true, cantSplit: true, children: headers.map((header, index) => tableCell([
-      new Paragraph({ children: [new TextRun({ text: header, bold: true, color: headerColor, size: 17 })] }),
+      new Paragraph({ children: [new TextRun({ text: header, bold: true, color: headerColor, size: tableTextSize(model.theme) })] }),
     ], widths[index], { fill: headerFill, borders })) }),
     // Target groups can exceed a page. Let Word flow these rows so it does
     // not push the heading, header and first row onto separate pages.
@@ -716,6 +717,11 @@ function entryRow(number: string, text: string, width: number, theme: DocumentTh
   ] })], [numberWidth, width - numberWidth]);
 }
 
+// Professional PDF tables are 9.5pt (half-points here).
+function tableTextSize(theme: DocumentThemeDefinition) {
+  return theme.collection === "professional" ? 19 : 17;
+}
+
 function dataTable(headers: string[], rows: string[][], widths: number[], theme: DocumentThemeDefinition) {
   const lightHeader = theme.collection === "professional" || theme.layout.dataLayout === "compact-ledger" || theme.layout.dataLayout === "quiet-rules";
   const headerFill = lightHeader ? documentHex(theme.colors.soft) : documentHex(theme.colors.primary);
@@ -731,12 +737,19 @@ function dataTable(headers: string[], rows: string[][], widths: number[], theme:
   } : allBorders(documentHex(theme.colors.line), BorderStyle.SINGLE, 5);
   return fixedTable([
     new TableRow({ tableHeader: true, cantSplit: true, children: headers.map((header, index) => tableCell([
-      new Paragraph({ children: [new TextRun({ text: header, bold: true, color: headerColor, size: 17 })] }),
+      new Paragraph({ children: [new TextRun({ text: header, bold: true, color: headerColor, size: tableTextSize(theme) })] }),
     ], widths[index], { fill: quiet ? undefined : headerFill, borders })) }),
     ...rows.map((row, rowIndex) => new TableRow({ cantSplit: true, children: headers.map((_, columnIndex) => tableCell([
-      new Paragraph({ children: [new TextRun({ text: row[columnIndex] || "", bold: columnIndex === 0 && headers.length <= 3, size: 17 })] }),
+      new Paragraph({ children: [new TextRun({ text: row[columnIndex] || "", bold: theme.collection !== "professional" && columnIndex === 0 && headers.length <= 3, size: tableTextSize(theme) })] }),
     ], widths[columnIndex], { fill: theme.layout.dataLayout === "target-bands" && rowIndex % 2 === 1 ? documentHex(theme.colors.soft) : undefined, borders })) })),
   ], widths);
+}
+
+// The PDF sets line-height as a multiple of the font size. Word's "auto"
+// spacing multiplies each font's own line gap instead, which renders far
+// looser, so pin the same distance and let taller runs grow past it.
+function bodyLineSpacing(typography: Typography) {
+  return { line: Math.round(typography.paragraphSize * typography.lineSpacing * 20), lineRule: LineRuleType.AT_LEAST };
 }
 
 function bodyParagraphs(text: string, typography: Typography = DEFAULT_TYPOGRAPHY, editorialLead = false, alignment: typeof AlignmentType[keyof typeof AlignmentType] = AlignmentType.JUSTIFIED): Paragraph[] {
@@ -749,7 +762,7 @@ function bodyParagraphs(text: string, typography: Typography = DEFAULT_TYPOGRAPH
     } else {
       children.push(new TextRun({ text: paragraph, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily }));
     }
-    return new Paragraph({ style: "PolicyBody", alignment, spacing: { after: 150, line: Math.round(240 * typography.lineSpacing) }, children });
+    return new Paragraph({ style: "PolicyBody", alignment, spacing: { after: 150, ...bodyLineSpacing(typography) }, children });
   });
 }
 
@@ -757,7 +770,7 @@ function listParagraph(text: string, kind: "bullet" | "number", typography: Typo
   return new Paragraph({
     style: "PolicyBody",
     numbering: { reference: kind === "bullet" ? "policy-bullets" : "policy-numbering", level: 0 },
-    spacing: { after: 90, line: Math.round(240 * typography.lineSpacing) },
+    spacing: { after: 90, ...bodyLineSpacing(typography) },
     children: [new TextRun({ text, color: documentHex(theme.colors.ink), font: typography.fontFamily, size: Math.round(typography.paragraphSize * 2) })],
   });
 }
@@ -766,7 +779,7 @@ async function buildAcknowledgement(model: DocumentRenderModel): Promise<DocBloc
   const acknowledgement = model.acknowledgement!;
   const { theme, typography } = model;
   const title = new Paragraph({ pageBreakBefore: theme.collection === "professional", alignment: docxContentAlignment(theme.textAlignment), spacing: { after: 180 }, children: [new Bookmark({ id: "acknowledgement", children: [] }), new TextRun({ text: acknowledgement.title, bold: true, italics: theme.layout.acknowledgement === "affidavit", color: documentHex(theme.colors.primary), size: 36, font: typography.headingFontFamily || typography.fontFamily })] });
-  const statement = new Paragraph({ alignment: docxContentAlignment(theme.textAlignment), spacing: { after: 260, line: Math.round(240 * typography.lineSpacing) }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
+  const statement = new Paragraph({ alignment: docxContentAlignment(theme.textAlignment), spacing: { after: 260, line: Math.round(typography.paragraphSize * typography.lineSpacing * 1.22 * 20), lineRule: LineRuleType.AT_LEAST }, children: [new TextRun({ text: acknowledgement.statement, size: Math.round(typography.paragraphSize * 2), font: typography.fontFamily })] });
   const kicker = new Paragraph({ spacing: { after: 100 }, children: [new TextRun({ text: "ACKNOWLEDGEMENT - FINAL PAGE", bold: true, color: documentHex(theme.colors.primary), size: 15, characterSpacing: 50, font: typography.fontFamily })] });
   const approval = acknowledgement.authorApproval
     ? await logoFromDataUrl(acknowledgement.authorApproval.signatureDataUrl)

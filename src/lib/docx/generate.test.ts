@@ -8,6 +8,9 @@ import { templatePreviewPolicy } from "../sample-policies";
 import { generateDocx } from "./generate";
 import { preparePolicyForDocxExport } from "./export-assets";
 import { usePolicyCraftScope } from "../policycraft-client-scope";
+import { FONT_FAMILY_OPTIONS, pickerFontFamilies } from "../typography";
+import { fontFaceCssFor } from "../document-fonts";
+import { embeddedDocumentFonts } from "./document-fonts";
 
 const svg = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40"><rect width="120" height="40" fill="#126845"/></svg>');
 
@@ -37,34 +40,60 @@ test("long quantitative target groups can flow across Word pages with repeating 
   }
 });
 
-test("active theme fonts are named and embedded as regular Word fonts", async () => {
+test("active theme fonts are embedded with real bold faces so Word does not synthesize them", async () => {
   for (const fixture of [
-    { theme: "standard-pack", families: ["Source Sans 3", "Source Serif 4"] },
-    { theme: "executive-brief", families: ["IBM Plex Sans", "IBM Plex Serif"] },
-    { theme: "controlled-manual", families: ["Public Sans", "Archivo"] },
-    { theme: "governance-register", families: ["Inter", "Playfair Display"] },
-    { theme: "operations-guide", families: ["Atkinson Hyperlegible", "Space Grotesk"] },
-    { theme: "sustainability-charter", families: ["Libre Caslon Text", "Fraunces"] },
-    { theme: "people-charter", families: ["Cormorant Garamond", "Source Serif 4"] },
-    { theme: "metrics-ledger", families: ["IBM Plex Mono", "IBM Plex Sans"] },
+    { theme: "standard-pack", family: "Source Sans 3", italic: true },
+    { theme: "executive-brief", family: "IBM Plex Sans", italic: false },
+    { theme: "controlled-manual", family: "Public Sans", italic: false },
+    { theme: "governance-register", family: "Inter", italic: false },
+    { theme: "operations-guide", family: "Atkinson Hyperlegible", italic: true },
+    { theme: "sustainability-charter", family: "Libre Caslon Text", italic: true },
+    { theme: "people-charter", family: "Source Serif 4", italic: true },
+    { theme: "metrics-ledger", family: "IBM Plex Mono", italic: false },
   ]) {
     const zip = await JSZip.loadAsync(await generateDocx(templatePreviewPolicy(fixture.theme, "environmental")));
     const document = await zip.file("word/document.xml")!.async("string");
     const fontTable = await zip.file("word/fontTable.xml")!.async("string");
     const relationships = await zip.file("word/_rels/fontTable.xml.rels")!.async("string");
+    const settings = await zip.file("word/settings.xml")!.async("string");
+    assert.match(settings, /<w:embedTrueTypeFonts\/>/, `${fixture.theme}: Word should keep the embedded fonts on save`);
 
-    for (const family of fixture.families) {
-      assert.ok(document.includes(`w:ascii="${family}"`), `${fixture.theme}: document runs should request ${family}`);
-      const escapedFamily = family.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      const fontRecord = fontTable.match(new RegExp(`<w:font w:name="${escapedFamily}">[\\s\\S]*?<\\/w:font>`));
-      assert.ok(fontRecord, `${fixture.theme}: font table should declare ${family}`);
-      const relationshipId = fontRecord[0].match(/<w:embedRegular r:id="([^"]+)"/);
-      assert.ok(relationshipId, `${fixture.theme}: font table should embed ${family} as a regular face`);
+    const family = fixture.family;
+    assert.ok(document.includes(`w:ascii="${family}"`), `${fixture.theme}: document runs should request ${family}`);
+    const escapedFamily = family.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const fontRecord = fontTable.match(new RegExp(`<w:font w:name="${escapedFamily}">[\\s\\S]*?<\\/w:font>`));
+    assert.ok(fontRecord, `${fixture.theme}: font table should declare ${family}`);
+    assert.equal(/<w:embedItalic\b/.test(fontRecord[0]), fixture.italic, `${fixture.theme}: italic embedding should follow the faces the PDF loads`);
+    const faces: Buffer[] = [];
+    for (const element of ["embedRegular", "embedBold"]) {
+      const relationshipId = fontRecord[0].match(new RegExp(`<w:${element} r:id="([^"]+)"`));
+      assert.ok(relationshipId, `${fixture.theme}: font table should embed ${family} through ${element}`);
       const relationship = relationships.match(new RegExp(`<Relationship[^>]*Id="${relationshipId[1]}"[^>]*Target="fonts/font(\\d+)\\.odttf"`));
-      assert.ok(relationship, `${fixture.theme}: ${family} should reference an embedded OpenType part`);
+      assert.ok(relationship, `${fixture.theme}: ${family} ${element} should reference an embedded OpenType part`);
       const embeddedFont = await zip.file(`word/fonts/font${relationship[1]}.odttf`)!.async("nodebuffer");
       assert.ok(embeddedFont.length > 10_000, `${fixture.theme}: ${family} embedded data should contain the font face`);
+      faces.push(embeddedFont);
     }
+    assert.ok(!faces[0].equals(faces[1]), `${fixture.theme}: the bold face should carry its own glyphs`);
+  }
+});
+
+test("every bundled picker font ships matching PDF and Word faces", async () => {
+  // Office families stay as names in Word; the PDF draws them from metric-compatible stand-ins.
+  const office = new Set(["Arial", "Aptos", "Calibri", "Cambria", "Georgia", "Garamond", "Tahoma", "Times New Roman", "Trebuchet MS", "Verdana"]);
+  for (const family of FONT_FAMILY_OPTIONS.filter((name) => !office.has(name))) {
+    assert.match(fontFaceCssFor([family]), new RegExp(`font-family:'${family}'`), `${family}: the PDF should load a bundled face`);
+    assert.equal((await embeddedDocumentFonts([family])).length, 1, `${family}: Word should embed a bundled face`);
+  }
+  for (const family of ["Arial", "Calibri", "Cambria", "Georgia", "Garamond", "Times New Roman"]) {
+    assert.match(fontFaceCssFor([family]), new RegExp(`font-family:'${family}'`), `${family}: the PDF should draw a stand-in face`);
+  }
+});
+
+test("the font picker hides fonts the PDF cannot draw unless a policy already uses one", () => {
+  for (const hidden of ["Tahoma", "Trebuchet MS", "Verdana"]) {
+    assert.ok(!pickerFontFamilies("Arial").includes(hidden), `${hidden} should not be offered`);
+    assert.ok(pickerFontFamilies(hidden).includes(hidden), `${hidden} should stay visible while selected`);
   }
 });
 
