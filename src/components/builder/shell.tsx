@@ -159,7 +159,8 @@ export function BuilderShell({
   // hidden, matching the inspector toggles that this replaces.
   const coverEditingNow = coverEditing && step === "export";
   const mode: BuilderMode = designOpen ? "design" : step === "export" ? "review" : "write";
-  const showRail = mode !== "design";
+  // The step rail belongs to writing; Design and Review & export use the full width.
+  const showRail = mode === "write";
   const railExpanded = narrowViewport || !sidebarCollapsed || !sidebarPreferenceLoaded;
   const showPreview = mode === "write" && previewOpen;
   const previewDrawer = showPreview && narrowViewport;
@@ -208,6 +209,7 @@ export function BuilderShell({
     setDesignOpen(true);
   };
   const enterReview = () => {
+    setWorkflowOpen(false);
     setDesignOpen(false);
     if (step !== "export") setStep("export");
   };
@@ -301,7 +303,7 @@ export function BuilderShell({
             {policyMenu}
             {mode === "write" && <button ref={previewTrigger} type="button" aria-pressed={previewOpen} aria-controls={previewOpen ? "builder-preview" : undefined} onClick={togglePreview} className={clsx(styles.headerButton, previewOpen && styles.headerButtonActive)}>Preview</button>}
             <ApplicationSessionMenu workspaceHref={workspaceHref} />
-            {mode !== "design" && <button ref={workflowTrigger} type="button" aria-expanded={workflowOpen} aria-controls="builder-workflow" onClick={toggleWorkflow} className={clsx(styles.headerButton, styles.mobileWorkflow)}>{workflowOpen ? "Hide workflow" : "Workflow"}</button>}
+            {mode === "write" && <button ref={workflowTrigger} type="button" aria-expanded={workflowOpen} aria-controls="builder-workflow" onClick={toggleWorkflow} className={clsx(styles.headerButton, styles.mobileWorkflow)}>{workflowOpen ? "Hide workflow" : "Workflow"}</button>}
           </div>
         </header>
 
