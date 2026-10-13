@@ -28,6 +28,7 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
+import { AppTransitionScreen } from "@/components/ui/app-transition-screen";
 import styles from "./page.module.css";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -290,6 +291,7 @@ export default function Home() {
 
   return (
     <main className={styles.page} id="main-content" ref={pageRef}>
+      {signingOut ? <AppTransitionScreen overlay title="Signing you out" detail="Closing your session securely." /> : null}
       <a className={styles.skipLink} href="#home-heading">Skip to content</a>
       <header className={styles.header}>
         <div className={styles.headerInner}>

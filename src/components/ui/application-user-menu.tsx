@@ -10,6 +10,7 @@ import { signOut, useSession } from "@/lib/auth-client";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { policyCraftBuilderStorage } from "@/lib/policycraft-builder-storage";
 import { flushPendingNavigation } from "@/lib/policycraft-navigation-flush";
+import { AppTransitionScreen } from "@/components/ui/app-transition-screen";
 import styles from "./application-user-menu.module.css";
 
 type UserMenuProps = {
@@ -80,13 +81,12 @@ export function ApplicationSessionMenu({ workspaceHref }: { workspaceHref: strin
       if (result.error) throw new Error("Could not sign out. Please try again.");
       setScope(null);
       policyCraftBuilderStorage.clearScope();
-      router.push("/login");
+      router.replace("/");
       router.refresh();
     } catch {
       setError("Could not sign out. Please try again.");
-    } finally {
       setSigningOut(false);
     }
   }
-  return <div className={styles.session}><ApplicationUserMenu user={session.user} workspaceHref={workspaceHref} signingOut={signingOut} onSignOut={handleSignOut} />{error ? <p role="alert" className={styles.error}>{error}</p> : null}</div>;
+  return <div className={styles.session}>{signingOut ? <AppTransitionScreen overlay title="Signing you out" detail="Saving your work and closing your session." /> : null}<ApplicationUserMenu user={session.user} workspaceHref={workspaceHref} signingOut={signingOut} onSignOut={handleSignOut} />{error ? <p role="alert" className={styles.error}>{error}</p> : null}</div>;
 }

@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "createdAt": "2026-10-13T06:19:35.463Z",
+        "reason": "Claude: existing PolicyCraft workspace typeface (--pc-font in src/app/globals.css, imported by workspace-shell.tsx); transition screen must match the shell it hands off to"
+      }
+    ]
+  }
+}

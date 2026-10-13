@@ -30,20 +30,7 @@
   background: var(--ws-ink);
 }
 
-.accessShimmer {
-  width: 120px;
-  height: 12px;
-  margin-top: 12px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--ws-ink-hover), var(--ws-ink-line), var(--ws-ink-hover));
-  background-size: 200% 100%;
-  animation: shell-shimmer 1.4s linear infinite;
-}
-
-@keyframes shell-shimmer { to { background-position: -200% 0; } }
-
-.accessMessage,
-.loading {
+.accessMessage {
   display: flex;
   max-width: 440px;
   flex-direction: column;
@@ -64,20 +51,6 @@
   color: var(--pc-error);
   font-size: 14px;
   line-height: 1.55;
-}
-
-.loading {
-  flex-direction: row;
-  color: var(--pc-muted);
-  font-size: 14px;
-}
-
-.spinner {
-  animation: shell-spin 1s linear infinite;
-}
-
-@keyframes shell-spin {
-  to { transform: rotate(360deg); }
 }
 
 .skipLink {
@@ -510,6 +483,4 @@
   .navLink > svg,
   .accountTrigger > svg { transition-duration: 0.01ms; }
   .brand:hover .brandMark, .navLink:hover > svg { transform: none; }
-  .accessShimmer { animation: none; }
-  .spinner { animation-duration: 1s; }
 }

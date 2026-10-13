@@ -11,6 +11,7 @@ import { signIn } from "@/lib/auth-client";
 import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
 import { ApplicationButton, ApplicationField, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
+import { AppTransitionScreen } from "@/components/ui/app-transition-screen";
 import styles from "./login-scene.module.css";
 
 const loginSchema = z.object({
@@ -44,6 +45,7 @@ export function LoginScene({ variant, sheetRef, contentRef, onClose }: LoginScen
   const searchParams = useSearchParams();
   const invitedEmail = searchParams.get("email")?.trim() || "";
   const [emailLocked, setEmailLocked] = React.useState(Boolean(invitedEmail));
+  const [opening, setOpening] = React.useState(false);
   const {
     clearErrors,
     formState: { errors, isSubmitting },
@@ -83,6 +85,7 @@ export function LoginScene({ variant, sheetRef, contentRef, onClose }: LoginScen
         return;
       }
       const access = await accessResponse.json() as PolicyCraftAccess;
+      setOpening(true);
       router.replace(safeNext(searchParams.get("next"), access));
       router.refresh();
     } catch {
@@ -96,6 +99,7 @@ export function LoginScene({ variant, sheetRef, contentRef, onClose }: LoginScen
 
   return (
     <ApplicationSurface className={`${styles.scene} ${variant === "page" ? styles.page : ""}`}>
+      {opening ? <AppTransitionScreen overlay title="Opening your workspace" detail="Signed in. Preparing your organizations and policies." /> : null}
       <div className={styles.image} aria-hidden="true">
         <Image src="/home/coastline.webp" alt="" fill priority sizes="100vw" className={styles.imageFill} />
       </div>

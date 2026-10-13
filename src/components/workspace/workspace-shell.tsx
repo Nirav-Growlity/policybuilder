@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring } from "motion/react";
 import "@fontsource-variable/instrument-sans/wdth.css";
-import { Building2, ChevronDown, ClipboardList, FileText, Loader2, LogOut, Menu, Settings2, Shield, Users, X } from "lucide-react";
+import { Building2, ChevronDown, ClipboardList, FileText, LogOut, Menu, Settings2, Shield, Users, X } from "lucide-react";
 import { signOut } from "@/lib/auth-client";
 import type { PolicyCraftAccess, PolicyCraftRole } from "@/lib/policycraft-access-types";
 import type { PolicyCraftManagerTaskCollection } from "@/lib/policycraft-task-types";
@@ -14,6 +14,7 @@ import { policyCraftBuilderStorage } from "@/lib/policycraft-builder-storage";
 import { ApplicationSurface } from "@/components/ui/application-surface";
 import { ApplicationThemeControl } from "@/components/ui/application-theme-control";
 import { ApplicationButton } from "@/components/ui/app-primitives";
+import { AppTransitionScreen } from "@/components/ui/app-transition-screen";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import { Avatar, WorkspaceVisitContext, WS_SPRING } from "./workspace-motion";
@@ -276,7 +277,7 @@ export function WorkspaceShell({
       policyCraftBuilderStorage.clearScope();
       const result = await signOut();
       if (result.error) throw new Error(result.error.message || "Could not sign out. Try again.");
-      router.replace("/login");
+      router.replace("/");
       router.refresh();
     } catch (cause) {
       setError(cause instanceof Error ? `Could not sign out: ${cause.message}` : "Could not sign out. Try again.");
@@ -291,10 +292,11 @@ export function WorkspaceShell({
     : null;
 
   if (!access) {
+    if (!error) return <AppTransitionScreen title="Loading your workspace" detail="Checking your organization and policy access." />;
     return (
-      <ApplicationSurface className={styles.accessState} aria-busy={!error}>
-        <div className={styles.accessBand} aria-hidden="true"><span className={styles.brandMark}><Shield size={17} /></span><span className={styles.accessShimmer} /></div>
-        {error ? <main className={styles.accessMessage}><p role="alert">{error}</p><ApplicationButton type="button" onClick={() => setRetryAccess((attempt) => attempt + 1)} leadingIcon={<Shield size={14} aria-hidden="true" />}>Retry loading workspace</ApplicationButton></main> : <main className={styles.loading} role="status" aria-live="polite"><Loader2 size={16} className={styles.spinner} aria-hidden="true" />Loading workspace…</main>}
+      <ApplicationSurface className={styles.accessState}>
+        <div className={styles.accessBand} aria-hidden="true"><span className={styles.brandMark}><Shield size={17} /></span></div>
+        <main className={styles.accessMessage}><p role="alert">{error}</p><ApplicationButton type="button" onClick={() => setRetryAccess((attempt) => attempt + 1)} leadingIcon={<Shield size={14} aria-hidden="true" />}>Retry loading workspace</ApplicationButton></main>
       </ApplicationSurface>
     );
   }
@@ -304,6 +306,7 @@ export function WorkspaceShell({
   return (
     <WorkspaceContext.Provider value={{ access }}>
       <ApplicationSurface className={styles.workspaceRoot} style={role === "user" ? undefined : { "--color-muted": "#5f6e65" } as React.CSSProperties}>
+        {signingOut ? <AppTransitionScreen overlay title="Signing you out" detail="Closing your session securely." /> : null}
         <a href="#workspace-main" className={styles.skipLink}>Skip to workspace</a>
         <header className={styles.header} data-scrolled={scrolled || undefined} inert={mobileNavOpen} style={{ viewTransitionName: "ws-header" }}>
           <div className={styles.headerInner}>
