@@ -16,6 +16,7 @@ import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
 import { policyCraftBuilderStorage } from "@/lib/policycraft-builder-storage";
 import { ApplicationUserMenu } from "@/components/ui/application-user-menu";
 import { PublicWalkthrough } from "@/components/public/public-walkthrough";
+import { PolicyPhotoMorph, type PolicyPhotoMorphHandle } from "@/components/public/policy-photo-morph";
 import {
   ArrowDown,
   ArrowRight,
@@ -78,20 +79,28 @@ const POLICIES = [
   },
 ];
 
+// Share of a screen height the reader scrolls to move from one pinned policy to the next.
+const POLICY_SCROLL_PER_STEP = 0.38;
+// Extra hold, in steps, on the first and last policy so the pin does not start or end mid-change.
+const POLICY_SCROLL_LEAD = 0.3;
+const POLICY_STEPS = POLICIES.length - 1;
+const POLICY_PHOTOS = POLICIES.map((policy) => policy.photo);
+
 const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 const EASE_IN_OUT = [0.76, 0, 0.24, 1] as const;
 
-// The incoming photo wipes in from the side the reader is scrolling towards; the outgoing one sinks and dims beneath it.
-const PHOTO_WIPE: Variants = {
-  enter: (direction: number) => ({ clipPath: direction > 0 ? "inset(100% 0% 0% 0%)" : "inset(0% 0% 100% 0%)", zIndex: 2 }),
-  center: { clipPath: "inset(0% 0% 0% 0%)", zIndex: 2, transition: { duration: 0.95, ease: EASE_IN_OUT, zIndex: { duration: 0 } } },
-  exit: { zIndex: 1, transition: { duration: 0.95, zIndex: { duration: 0 } } },
+// The incoming photo fades in over the outgoing one while it drifts into place and comes into focus.
+// The outgoing photo stays fully visible underneath until it is covered, so the frame never flashes empty.
+const PHOTO_FADE: Variants = {
+  enter: { opacity: 0, zIndex: 2 },
+  center: { opacity: 1, zIndex: 2, transition: { duration: 0.75, ease: "easeOut", zIndex: { duration: 0 } } },
+  exit: { zIndex: 1, transition: { zIndex: { duration: 0 } } },
 };
 
 const PHOTO_DEPTH: Variants = {
-  enter: { scale: 1.22 },
-  center: { scale: 1, filter: "brightness(1)", transition: { duration: 1.25, ease: EASE_OUT_EXPO } },
-  exit: (direction: number) => ({ scale: 1.08, y: direction > 0 ? "-7%" : "7%", filter: "brightness(0.55)", transition: { duration: 0.95, ease: EASE_IN_OUT } }),
+  enter: (direction: number) => ({ scale: 1.06, y: direction > 0 ? "2%" : "-2%", filter: "blur(10px)" }),
+  center: { scale: 1, y: "0%", filter: "blur(0px)", transition: { duration: 1.1, ease: EASE_OUT_EXPO } },
+  exit: (direction: number) => ({ scale: 1.03, y: direction > 0 ? "-1.5%" : "1.5%", transition: { duration: 0.8, ease: EASE_IN_OUT } }),
 };
 
 const DETAIL_GROUP: Variants = {
@@ -131,6 +140,10 @@ export default function Home() {
   const [{ index: activePolicy, direction: policyDirection }, setPolicyState] = React.useState({ index: 0, direction: 1 });
   const policyTabRefs = React.useRef<(HTMLButtonElement | null)[]>([]);
   const policyTriggerRef = React.useRef<ScrollTrigger | null>(null);
+  const policyMorphRef = React.useRef<PolicyPhotoMorphHandle>(null);
+  const policyPositionRef = React.useRef(0);
+  const [policyScrolly, setPolicyScrolly] = React.useState(false);
+  const [policyMorphReady, setPolicyMorphReady] = React.useState(false);
   const activePolicyData = POLICIES[activePolicy];
 
   // Direction decides which way the next photo wipes in.
@@ -145,7 +158,8 @@ export default function Home() {
       selectPolicy(index);
       return;
     }
-    const target = trigger.start + ((index + 0.5) / POLICIES.length) * (trigger.end - trigger.start);
+    const progress = (index + POLICY_SCROLL_LEAD) / (POLICY_STEPS + POLICY_SCROLL_LEAD * 2);
+    const target = trigger.start + progress * (trigger.end - trigger.start);
     if (lenisRef.current) lenisRef.current.scrollTo(target, { duration: 1.1 });
     else window.scrollTo({ top: target });
   }
@@ -363,30 +377,32 @@ export default function Home() {
       const frame = page.querySelector<HTMLElement>("[data-policy-frame]");
       if (!showcase || !frame) return;
       const tabs = policyTabRefs.current.filter((tab): tab is HTMLButtonElement => Boolean(tab));
-      const count = POLICIES.length;
       const pinOffset = () => Math.max(24, (window.innerHeight - showcase.offsetHeight) / 2);
       showcase.dataset.scrolly = "true";
+      setPolicyScrolly(true);
 
-      gsap.fromTo(frame, { clipPath: "inset(9% 7% 9% 7% round 1.5rem)" }, {
-        clipPath: "inset(0% 0% 0% 0% round 1rem)",
-        ease: "none",
-        scrollTrigger: { trigger: showcase, start: "top bottom", end: () => `top top+=${pinOffset()}`, scrub: 0.6, invalidateOnRefresh: true, refreshPriority: 1 },
-      });
+      // One settled entrance as the showcase arrives, rather than an effect tied to every pixel of scroll.
+      gsap.timeline({ scrollTrigger: { trigger: showcase, start: "top 78%", once: true, refreshPriority: 1 } })
+        .fromTo(frame, { autoAlpha: 0, y: 40, scale: 0.97 }, { autoAlpha: 1, y: 0, scale: 1, duration: 1.1, ease: "expo.out", clearProps: "transform" })
+        .fromTo(tabs, { autoAlpha: 0, x: -16 }, { autoAlpha: 1, x: 0, duration: 0.7, stagger: 0.06, ease: "power3.out", clearProps: "transform" }, "<0.1");
 
       policyTriggerRef.current = ScrollTrigger.create({
         trigger: showcase,
         start: () => `top top+=${pinOffset()}`,
-        end: () => `+=${window.innerHeight * 0.75 * count}`,
+        end: () => `+=${window.innerHeight * POLICY_SCROLL_PER_STEP * (POLICY_STEPS + POLICY_SCROLL_LEAD * 2)}`,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         // The walkthrough below registers its own pin first (child effects run before ours), so this pin must be
         // measured first; otherwise everything below ignores its added scroll distance and the two pins overlap.
         refreshPriority: 1,
+        // Scroll drives the photo morph frame by frame; the copy switches as the morph passes its midpoint.
         onUpdate: (self) => {
-          const position = self.progress * count;
+          const position = gsap.utils.clamp(0, POLICY_STEPS, self.progress * (POLICY_STEPS + POLICY_SCROLL_LEAD * 2) - POLICY_SCROLL_LEAD);
+          policyPositionRef.current = position;
+          policyMorphRef.current?.setPosition(position);
           tabs.forEach((tab, index) => tab.style.setProperty("--policy-fill", String(gsap.utils.clamp(0, 1, position - index))));
-          selectPolicy(Math.min(count - 1, Math.floor(position)));
+          selectPolicy(Math.round(position));
         },
       });
       ScrollTrigger.sort();
@@ -395,6 +411,8 @@ export default function Home() {
       return () => {
         policyTriggerRef.current = null;
         delete showcase.dataset.scrolly;
+        setPolicyScrolly(false);
+        setPolicyMorphReady(false);
         tabs.forEach((tab) => tab.style.removeProperty("--policy-fill"));
       };
     });
@@ -556,8 +574,19 @@ export default function Home() {
                 <div className={styles.policyPreload}>
                   {POLICIES.map((policy) => <Image key={policy.id} src={policy.photo} alt="" fill sizes="(max-width: 720px) 100vw, 58vw" loading="eager" />)}
                 </div>
+                {policyScrolly ? (
+                  <PolicyPhotoMorph
+                    ref={policyMorphRef}
+                    photos={POLICY_PHOTOS}
+                    className={`${styles.policyMorph} ${policyMorphReady ? styles.policyMorphReady : ""}`}
+                    onReadyChange={(ready) => {
+                      setPolicyMorphReady(ready);
+                      if (ready) policyMorphRef.current?.setPosition(policyPositionRef.current);
+                    }}
+                  />
+                ) : null}
                 <AnimatePresence initial={false} custom={policyDirection}>
-                  <motion.div key={activePolicyData.id} className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_WIPE} initial="enter" animate="center" exit="exit">
+                  <motion.div key={activePolicyData.id} className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_FADE} initial="enter" animate="center" exit="exit">
                     <motion.div className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_DEPTH}>
                       <Image src={activePolicyData.photo} alt="" fill sizes="(max-width: 720px) 100vw, 58vw" />
                     </motion.div>
