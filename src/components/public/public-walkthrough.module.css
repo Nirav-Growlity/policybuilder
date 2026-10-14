@@ -4,7 +4,7 @@
   --walkthrough-muted: var(--home-muted, #68768c);
   --walkthrough-line: var(--home-border, #d3dce9);
   --walkthrough-tint: var(--home-surface-muted, #eaf0f8);
-  --walkthrough-accent: var(--home-accent, #2563eb);
+  --walkthrough-accent: var(--home-accent, var(--pc-brand));
   border-bottom: 1px solid var(--walkthrough-line);
   background: var(--home-background, #f5f8fd);
   color: var(--walkthrough-ink);
@@ -125,7 +125,7 @@
   --artifact-muted: #68768c;
   --artifact-rule: #d9e1ec;
   --artifact-border: #d8e1ed;
-  --artifact-accent: #2563eb;
+  --artifact-accent: var(--pc-brand);
   --artifact-accent-soft: #e6efff;
   --artifact-strong: #243650;
   --artifact-secondary: #33435c;
@@ -148,7 +148,7 @@
   --artifact-muted: #a9b8cc;
   --artifact-rule: #354963;
   --artifact-border: #3b526f;
-  --artifact-accent: #9bbcff;
+  --artifact-accent: var(--pc-brand);
   --artifact-accent-soft: #243b5c;
   --artifact-strong: #e1eaf7;
   --artifact-secondary: #d0dced;

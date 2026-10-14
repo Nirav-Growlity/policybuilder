@@ -12,7 +12,7 @@
   --login-ink: #111c30;
   --login-body: #46546b;
   --login-faint: #61718a;
-  --login-accent: #2563eb;
+  --login-accent: var(--pc-brand);
   --pc-page: var(--login-bg);
   --pc-panel: var(--login-sheet);
   --pc-text: var(--login-ink);
@@ -30,8 +30,8 @@
   --login-ink: #f1f5fb;
   --login-body: #bdc9dc;
   --login-faint: #94a4bc;
-  --login-accent: #79a6ff;
-  --pc-selection-text: #a8c4ff;
+  --login-accent: var(--pc-brand);
+  --pc-selection-text: var(--pc-brand);
 }
 
 .skipLink {

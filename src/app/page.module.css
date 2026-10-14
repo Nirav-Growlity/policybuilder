@@ -31,19 +31,18 @@
   --home-body: #46546b;
   --home-muted: #68768c;
   --home-border: #d3dce9;
-  --home-accent: #2563eb;
-  --home-accent-deep: #174cc3;
+  --home-accent: var(--pc-brand);
+  --home-accent-deep: var(--pc-brand);
   --home-accent-soft: #e6efff;
-  --home-focus: #2563eb;
+  --home-focus: var(--pc-brand);
   --home-on-accent: #ffffff;
   --pc-panel: #ffffff;
   --pc-text: var(--home-text);
-  --pc-brand: var(--home-accent);
   --pc-inset: #eaf0f8;
   --pc-divider: #d3dce9;
   --pc-muted: #46546b;
   --pc-selection: #e6efff;
-  --pc-selection-text: #174cc3;
+  --pc-selection-text: var(--pc-brand);
   min-height: 100dvh;
   overflow: clip;
   background: var(--home-background);
@@ -63,17 +62,17 @@
   --home-body: #bdc9dc;
   --home-muted: #94a4bc;
   --home-border: #31425c;
-  --home-accent: #79a6ff;
-  --home-accent-deep: #92b6ff;
+  --home-accent: var(--pc-brand);
+  --home-accent-deep: var(--pc-brand);
   --home-accent-soft: #1c3153;
-  --home-focus: #92b6ff;
+  --home-focus: var(--pc-brand);
   --home-on-accent: #0d1728;
   --pc-panel: #121f34;
   --pc-inset: #1a2a43;
   --pc-divider: #31425c;
   --pc-muted: #bdc9dc;
   --pc-selection: #1c3153;
-  --pc-selection-text: #a8c4ff;
+  --pc-selection-text: var(--pc-brand);
 }
 
 .skipLink {
@@ -161,7 +160,7 @@
 .heroDocumentTop,
 .heroDocumentFoot { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; color: #61718a; font-family: var(--font-mono); font-size: 0.48rem; letter-spacing: 0.035em; }
 .heroDocumentRule { height: 1px; margin-top: 0.75rem; background: #d9e2ef; }
-.heroDocumentKicker { margin: 1.15rem 0 0; color: #2563eb; font-family: var(--font-mono); font-size: 0.5rem; font-weight: 600; letter-spacing: 0.1em; }
+.heroDocumentKicker { margin: 1.15rem 0 0; color: var(--pc-brand); font-family: var(--font-mono); font-size: 0.5rem; font-weight: 600; letter-spacing: 0.1em; }
 .heroDocument h2 { margin: 0.4rem 0 0; color: #111c30; font-family: var(--font-sans); font-size: clamp(1.8rem, 3vw, 2.45rem); font-weight: 600; letter-spacing: -0.065em; line-height: 0.98; }
 .heroDocumentIntro { max-width: 18rem; margin: 0.8rem 0 0; color: #4b5b72; font-size: 0.61rem; line-height: 1.5; }
 .heroDocumentFoot { margin-top: 1.2rem; padding-top: 0.6rem; border-top: 1px solid #d9e2ef; font-size: 0.43rem; }
@@ -188,33 +187,33 @@
 .coverTop { position: absolute; z-index: 2; inset: 0 0 auto; display: flex; min-height: 18%; align-items: center; justify-content: space-between; gap: 0.5rem; padding-inline: clamp(1rem, 1.8vw, 1.45rem); color: #43536c; font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.08em; }
 .coverArtwork { position: absolute; z-index: 1; top: 18%; right: 0; left: 0; height: 43%; overflow: hidden; }
 .coverArtworkDepth { position: absolute; inset: 0; }
-.orbitMark { position: absolute; top: 14%; right: 2%; width: 78%; aspect-ratio: 1.35; border: 1px solid rgb(37 99 235 / 52%); border-radius: 50%; transform: rotate(-28deg); }
+.orbitMark { position: absolute; top: 14%; right: 2%; width: 78%; aspect-ratio: 1.35; border: 1px solid rgb(65 134 243 / 52%); border-radius: 50%; transform: rotate(-28deg); }
 .orbitMark::before,
-.orbitMark::after { position: absolute; inset: 11%; border: 1px solid rgb(37 99 235 / 38%); border-radius: 50%; content: ""; }
-.orbitMark::after { inset: 24%; border-color: rgb(37 99 235 / 25%); }
+.orbitMark::after { position: absolute; inset: 11%; border: 1px solid rgb(65 134 243 / 38%); border-radius: 50%; content: ""; }
+.orbitMark::after { inset: 24%; border-color: rgb(65 134 243 / 25%); }
 .peopleCover .coverArtwork { inset: 9% -2% 18%; }
 .archMark { position: absolute; right: 0; bottom: -8%; display: flex; width: 100%; height: 90%; align-items: end; justify-content: center; gap: 3%; }
 .archMark i { display: block; width: 25%; height: 78%; border: 1px solid #536485; border-bottom: 0; border-radius: 50% 50% 0 0; background: rgb(255 255 255 / 16%); }
-.archMark i:nth-child(2) { height: 95%; border-color: #384e7a; background: rgb(37 99 235 / 16%); }
+.archMark i:nth-child(2) { height: 95%; border-color: var(--pc-brand); background: rgb(65 134 243 / 16%); }
 .archMark i:nth-child(3) { height: 65%; }
 .wageCover .coverArtwork { inset: 15% 5% 19%; }
 .columnMark { position: absolute; inset: 4% 0 0; display: flex; align-items: center; justify-content: space-around; transform: rotate(-13deg); }
-.columnMark i { width: 1px; height: 100%; background: rgb(37 99 235 / 46%); }
+.columnMark i { width: 1px; height: 100%; background: rgb(65 134 243 / 46%); }
 .columnMark i:nth-child(2), .columnMark i:nth-child(4) { height: 80%; }
-.columnMark i:nth-child(3) { width: 1.5px; height: 112%; background: #2563eb; }
-.ethicsMark { position: absolute; top: 7%; left: 19%; width: 61%; aspect-ratio: 1; border: 1px solid rgb(37 99 235 / 36%); border-radius: 50%; }
+.columnMark i:nth-child(3) { width: 1.5px; height: 112%; background: var(--pc-brand); }
+.ethicsMark { position: absolute; top: 7%; left: 19%; width: 61%; aspect-ratio: 1; border: 1px solid rgb(65 134 243 / 36%); border-radius: 50%; }
 .ethicsMark::before,
-.ethicsMark::after { position: absolute; inset: 13%; border: 1px solid rgb(37 99 235 / 43%); border-radius: 50%; content: ""; }
-.ethicsMark::after { inset: 28%; border-color: #2563eb; }
-.ethicsMark i { position: absolute; top: 49%; left: 49%; width: 2px; height: 52%; background: rgb(37 99 235 / 44%); transform-origin: top center; }
+.ethicsMark::after { position: absolute; inset: 13%; border: 1px solid rgb(65 134 243 / 43%); border-radius: 50%; content: ""; }
+.ethicsMark::after { inset: 28%; border-color: var(--pc-brand); }
+.ethicsMark i { position: absolute; top: 49%; left: 49%; width: 2px; height: 52%; background: rgb(65 134 243 / 44%); transform-origin: top center; }
 .ethicsMark i:nth-child(1) { transform: rotate(0deg); }
 .ethicsMark i:nth-child(2) { transform: rotate(120deg); }
 .ethicsMark i:nth-child(3) { transform: rotate(240deg); }
 .procurementMark { position: absolute; inset: 14% 0 0; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; justify-items: center; }
-.procurementMark i { width: 1px; height: 80%; background: rgb(37 99 235 / 42%); transform: rotate(32deg); }
+.procurementMark i { width: 1px; height: 80%; background: rgb(65 134 243 / 42%); transform: rotate(32deg); }
 .procurementMark i:nth-child(2),
 .procurementMark i:nth-child(4) { height: 54%; }
-.procurementMark i:nth-child(3) { width: 2px; height: 100%; background: #2563eb; }
+.procurementMark i:nth-child(3) { width: 2px; height: 100%; background: var(--pc-brand); }
 .coverBottom { position: absolute; z-index: 2; inset: auto 0 0; display: flex; height: 39%; flex-direction: column; justify-content: center; padding: 0 clamp(1rem, 1.8vw, 1.45rem); background: #fff; }
 .coverBottom h3 { margin: 0; color: #111c30; font-family: var(--font-sans); font-size: clamp(2rem, 3.6vw, 3.25rem); font-weight: 600; letter-spacing: -0.07em; line-height: 0.95; }
 .coverBottom p { margin: 0.7rem 0 0; color: #4c5b72; font-size: 0.68rem; line-height: 1.45; }
@@ -267,7 +266,7 @@
 .exportRail { display: flex; justify-content: space-between; padding: 0 0 0.8rem; color: #68768c; font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.08em; }
 .exportPaper { position: relative; z-index: 1; min-height: 390px; padding: clamp(1.7rem, 3.5vw, 3rem); border: 1px solid #d6dfeb; border-radius: 0.5rem; background: #fff; color: #111c30; box-shadow: 0 20px 60px rgb(36 60 96 / 12%); transform: rotate(-1.7deg); }
 .exportPaperTop { display: flex; justify-content: space-between; gap: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid #d9e1ec; color: #596983; font-family: var(--font-mono); font-size: 0.52rem; letter-spacing: 0.07em; }
-.exportPaperKicker { margin: 1.6rem 0 0; color: #2563eb; font-family: var(--font-mono); font-size: 0.56rem; font-weight: 600; letter-spacing: 0.11em; }
+.exportPaperKicker { margin: 1.6rem 0 0; color: var(--pc-brand); font-family: var(--font-mono); font-size: 0.56rem; font-weight: 600; letter-spacing: 0.11em; }
 .exportPaper h3 { margin: 0.45rem 0 0; font-family: var(--font-sans); font-size: clamp(1.9rem, 3.5vw, 3.05rem); font-weight: 600; letter-spacing: -0.07em; line-height: 1; }
 .exportPaperLead { max-width: 34rem; margin: 0.85rem 0 0; color: #4b5b72; font-size: 0.74rem; line-height: 1.6; }
 .exportPaperColumns { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; padding-top: 1.15rem; border-top: 1px solid #d9e1ec; }

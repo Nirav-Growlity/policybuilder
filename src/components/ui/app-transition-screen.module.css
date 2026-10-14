@@ -4,10 +4,10 @@
   --ts-sheet: #ffffff;
   --ts-sheet-edge: #dde3ec;
   --ts-line: #d3dbe7;
-  --ts-heading: #2f6fe4;
+  --ts-heading: #4186f3;
   --ts-text: #0c1628;
   --ts-muted: #52607a;
-  --ts-rule: rgb(29 91 208 / 7%);
+  --ts-rule: rgb(65 134 243 / 7%);
   --ts-glow: rgb(65 134 243 / 16%);
   --ts-shadow: 0 1px 0 rgb(12 22 40 / 4%), 0 22px 44px -20px rgb(12 22 40 / 28%);
   --ts-ease: cubic-bezier(.22, 1, .36, 1);
@@ -29,7 +29,7 @@
   --ts-sheet: #0f1a2d;
   --ts-sheet-edge: #24354f;
   --ts-line: #34507a;
-  --ts-heading: #8db6ff;
+  --ts-heading: #4186f3;
   --ts-text: #eef3fa;
   --ts-muted: #a2b1c8;
   --ts-rule: rgb(255 255 255 / 5.5%);
@@ -89,7 +89,7 @@
   margin-bottom: 3px;
   border-radius: 6px;
   color: #fff;
-  background: #2f6fe4;
+  background: var(--ts-heading);
 }
 
 /* Lines write in one after another, hold, then clear for the next pass. */

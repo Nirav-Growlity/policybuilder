@@ -22,7 +22,7 @@
   --color-amber-ink: #7a5b00;
   --color-blue-bg: #e8f0fb;
   --color-blue-line: #b8d0ef;
-  --color-blue-ink: #1c4e8a;
+  --color-blue-ink: #4186f3;
 
   /* Fonts */
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -484,7 +484,7 @@ html[data-pc-shell] .pc-ui {
   --pc-divider: #dde3ec;
   --pc-control: #8495aa;
   --pc-selection: #e9f1fe;
-  --pc-selection-text: #1d5bd0;
+  --pc-selection-text: var(--pc-brand);
   --pc-font: "Instrument Sans Variable", "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
   /* Masthead: the band the navigation and page heroes sit on. Light in
      light mode, deep ink in dark mode. */
@@ -492,17 +492,17 @@ html[data-pc-shell] .pc-ui {
   --ws-ink-line: #e3e8f0;
   --ws-ink-hover: #f1f4f9;
   --ws-ink-active: #e9f1fe;
-  --ws-ink-active-text: #1d5bd0;
+  --ws-ink-active-text: var(--pc-brand);
   --ws-ink-field: #f6f8fb;
   --ws-ink-field-border: #c7d0dd;
-  --ws-ink-rule: rgb(29 91 208 / 7%);
+  --ws-ink-rule: rgb(65 134 243 / 7%);
   --ws-ink-scrolled: rgb(255 255 255 / 97%);
   --ws-on-ink: #0c1628;
   --ws-on-ink-muted: #52607a;
   --ws-glow: rgb(65 134 243 / 30%);
   --ws-spot: rgb(65 134 243 / 13%);
-  /* Filled CTAs: a deeper step of the brand blue so white labels pass 4.5:1. */
-  --ws-cta: #2f6fe4;
+  /* Filled CTAs use the brand blue itself; no other blue appears in the UI. */
+  --ws-cta: var(--pc-brand);
   --ws-sheet-shadow: 0 1px 0 rgb(12 22 40 / 4%), 0 18px 48px -18px rgb(12 22 40 / 22%);
   --ws-row-hover: #f6f8fc;
   --ws-ease: cubic-bezier(.22, 1, .36, 1);
@@ -518,7 +518,7 @@ html[data-pc-shell][data-pc-theme="dark"] .pc-ui {
   --pc-divider: #24354f;
   --pc-control: #5d7393;
   --pc-selection: #182e52;
-  --pc-selection-text: #8db6ff;
+  --pc-selection-text: var(--pc-brand);
   --ws-ink: #0d1a30;
   --ws-ink-line: rgb(255 255 255 / 9%);
   --ws-ink-hover: rgb(255 255 255 / 6%);
