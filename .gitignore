@@ -14,3 +14,9 @@ graphify-out/
 
 # Claude Code project subagents
 .claude/agents/
+
+# /brag demo videos, captures and Remotion/Hyperframes projects
+brag-output*/
+
+# Local preview server config
+.claude/launch.json
