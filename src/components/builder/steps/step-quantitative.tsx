@@ -38,9 +38,9 @@ function TargetTableHead() {
   return (
     <thead><tr>
       <th className="w-[41%]">Target description</th>
+      <th className="w-[16%]">Reporting target</th>
       <th className="w-[16%]">Baseline year</th>
       <th className="w-[15%]">Deadline</th>
-      <th className="w-[16%]">Reporting basis</th>
       <th className="w-[12%]"><span className="sr-only">Actions</span></th>
     </tr></thead>
   );
@@ -64,9 +64,9 @@ function StreamingTargetRows({ reveal, yearOptions }: { reveal: TextReveal; year
         return (
           <tr key={`streaming-${index}`} className={ui.tableRow} aria-busy={writing || undefined}>
             <td><StreamField text={text} writing={writing && !baseline && !deadline && !basis} className={`${ui.cellText} ${ui.streamCell}`} /></td>
+            <td>{cell(basis, basisKnown)}</td>
             <td>{annual ? <span className={ui.cellEmpty}>—</span> : cell(baseline, yearOptions.baseline.includes(baseline))}</td>
             <td>{annual ? <span className={ui.cellEmpty}>—</span> : cell(deadline, yearOptions.deadline.includes(deadline))}</td>
-            <td>{cell(basis, basisKnown)}</td>
             <td><div className={`${ui.rowActions} ${ui.streamSpacer}`} aria-hidden="true" inert><AIActionButton label="Refine" variant="ghost" onGenerate={() => undefined} /><span className={ui.iconButton}><Trash2 size={15} /></span></div></td>
           </tr>
         );
@@ -301,9 +301,9 @@ export function StepQuantitative() {
                       </div>
                     )}
                   </td>
+                  <td><SelectMenu size="compact" value={target.reportingFrequency || TARGET_PERIOD} onValueChange={(value) => updateReportingFrequency(qi, ti, value as typeof REPORTING_FREQUENCY | typeof TARGET_PERIOD)} options={[{ value: TARGET_PERIOD, label: "Target period" }, { value: REPORTING_FREQUENCY, label: "Annually" }]} aria-label="Reporting target" className={ui.cellSelect} /></td>
                   <td>{target.reportingFrequency === REPORTING_FREQUENCY ? <span className={ui.cellEmpty}>—</span> : <SelectMenu size="compact" value={target.baseline} onValueChange={(value) => updateCell(qi, ti, "baseline", value)} options={yearOptions.baseline.map((year) => ({ value: year, label: year }))} placeholder="Year" searchable={false} aria-label="Baseline year" className={ui.cellSelect} />}</td>
                   <td>{target.reportingFrequency === REPORTING_FREQUENCY ? <span className={ui.cellEmpty}>—</span> : <SelectMenu size="compact" value={target.deadline} onValueChange={(value) => updateCell(qi, ti, "deadline", value)} options={yearOptions.deadline.map((year) => ({ value: year, label: year }))} placeholder="Year" searchable={false} aria-label="Deadline" className={ui.cellSelect} />}</td>
-                  <td><SelectMenu size="compact" value={target.reportingFrequency || TARGET_PERIOD} onValueChange={(value) => updateReportingFrequency(qi, ti, value as typeof REPORTING_FREQUENCY | typeof TARGET_PERIOD)} options={[{ value: TARGET_PERIOD, label: "Target period" }, { value: REPORTING_FREQUENCY, label: "Annually" }]} aria-label="Reporting basis" className={ui.cellSelect} /></td>
                   <td><div className={ui.rowActions}><AIActionButton label="Refine" variant="ghost" loading={Boolean(refineStream)} onGenerate={(prompt) => refineTarget(qi, ti, prompt)} onStop={() => streams.stop(`target-${qi}-${ti}`)} /><button type="button" onClick={() => removeRow(qi, ti)} className={ui.iconButton} data-tone="danger" aria-label="Remove row"><Trash2 size={15} /></button></div></td>
                 </tr>
                 );
