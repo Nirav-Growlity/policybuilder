@@ -8,7 +8,7 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { animate, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, MotionConfig, animate, motion, useReducedMotion, type Variants } from "motion/react";
 import { HomeLoginOverlay } from "@/components/auth/home-login-overlay";
 import { signOut, useSession } from "@/lib/auth-client";
 import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
@@ -36,12 +36,79 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const FRAMEWORKS = ["GRI", "EcoVadis", "CDP", "BRSR", "CSRD", "UNGC", "ISO 14001", "ISO 26000", "SA8000", "TCFD", "SBTi"];
 
 const POLICIES = [
-  { number: "01", title: "Environmental", line: "Protect resources and improve performance", category: "PLANET", className: "environmentCover", photo: "/home/coastline.webp", artwork: "orbitMark" },
-  { number: "02", title: "Labour &\nHuman Rights", line: "Fair conditions across the value chain", category: "PEOPLE", className: "peopleCover", photo: "/home/architecture.webp", artwork: "archMark" },
-  { number: "03", title: "Living Wage", line: "Pay that reflects local living costs", category: "PAY", className: "wageCover", photo: "/home/workspace.webp", artwork: "columnMark" },
-  { number: "04", title: "Ethics", line: "Integrity in every decision", category: "CONDUCT", className: "ethicsCover", photo: "/home/ethics.webp", artwork: "ethicsMark" },
-  { number: "05", title: "Sustainable\nProcurement", line: "Responsible sourcing, end to end", category: "SUPPLY CHAIN", className: "procurementCover", photo: "/home/procurement.webp", artwork: "procurementMark" },
+  {
+    id: "environmental",
+    title: "Environmental",
+    summary: "Cut emissions, use resources well and stay ready for climate risk.",
+    covers: ["Energy and greenhouse gas emissions", "Water and biodiversity", "Waste and circular materials", "Climate risk preparedness"],
+    standards: ["GRI", "ISO 14001", "UN SDGs"],
+    photo: "/home/coastline.webp",
+  },
+  {
+    id: "labour-human-rights",
+    title: "Labour & human rights",
+    summary: "Safe, fair and dignified work for everyone in your value chain.",
+    covers: ["Health and safety at work", "Fair hours, pay and benefits", "No child or forced labour", "Inclusion and grievance channels"],
+    standards: ["UNGC", "ILO", "SA8000", "ISO 45001"],
+    photo: "/home/architecture.webp",
+  },
+  {
+    id: "living-wage",
+    title: "Living wage",
+    summary: "Pay that covers what it really costs to live where your people work.",
+    covers: ["Living-wage benchmark and method", "Benefits and total pay", "Pay equity and transparency", "Regular cost-of-living review"],
+    standards: ["ILO", "UNGC", "SA8000", "EcoVadis"],
+    photo: "/home/workspace.webp",
+  },
+  {
+    id: "ethics",
+    title: "Ethics",
+    summary: "Clear rules for honest business, and a safe way to speak up.",
+    covers: ["Anti-bribery and corruption", "Conflicts of interest", "Gifts and hospitality", "Whistleblowing"],
+    standards: ["ISO 37001", "UNGC", "BRSR"],
+    photo: "/home/ethics.webp",
+  },
+  {
+    id: "sustainable-procurement",
+    title: "Sustainable procurement",
+    summary: "Hold your suppliers to the standards you hold yourself.",
+    covers: ["Supplier code of conduct", "Due diligence and risk checks", "Supply chain traceability", "Supplier audits and improvement"],
+    standards: ["ISO 20400", "EcoVadis", "UNGC"],
+    photo: "/home/procurement.webp",
+  },
 ];
+
+const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
+const EASE_IN_OUT = [0.76, 0, 0.24, 1] as const;
+
+// The incoming photo wipes in from the side the reader is scrolling towards; the outgoing one sinks and dims beneath it.
+const PHOTO_WIPE: Variants = {
+  enter: (direction: number) => ({ clipPath: direction > 0 ? "inset(100% 0% 0% 0%)" : "inset(0% 0% 100% 0%)", zIndex: 2 }),
+  center: { clipPath: "inset(0% 0% 0% 0%)", zIndex: 2, transition: { duration: 0.95, ease: EASE_IN_OUT, zIndex: { duration: 0 } } },
+  exit: { zIndex: 1, transition: { duration: 0.95, zIndex: { duration: 0 } } },
+};
+
+const PHOTO_DEPTH: Variants = {
+  enter: { scale: 1.22 },
+  center: { scale: 1, filter: "brightness(1)", transition: { duration: 1.25, ease: EASE_OUT_EXPO } },
+  exit: (direction: number) => ({ scale: 1.08, y: direction > 0 ? "-7%" : "7%", filter: "brightness(0.55)", transition: { duration: 0.95, ease: EASE_IN_OUT } }),
+};
+
+const DETAIL_GROUP: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.035, delayChildren: 0.18 } },
+  exit: { opacity: 0, y: -12, filter: "blur(4px)", transition: { duration: 0.22, ease: "easeIn" } },
+};
+
+const SUMMARY_WORD: Variants = {
+  hidden: { y: "110%" },
+  show: { y: "0%", transition: { duration: 0.7, ease: EASE_OUT_EXPO } },
+};
+
+const DETAIL_ITEM: Variants = {
+  hidden: { opacity: 0, y: 14, filter: "blur(6px)" },
+  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.55, ease: EASE_OUT_EXPO } },
+};
 
 export default function Home() {
   const reduceMotion = useReducedMotion();
@@ -61,6 +128,37 @@ export default function Home() {
   const [loginPhase, setLoginPhase] = React.useState<"closed" | "open" | "closing">("closed");
   const loginActive = loginPhase !== "closed";
   const loginUsedRef = React.useRef(false);
+  const [{ index: activePolicy, direction: policyDirection }, setPolicyState] = React.useState({ index: 0, direction: 1 });
+  const policyTabRefs = React.useRef<(HTMLButtonElement | null)[]>([]);
+  const policyTriggerRef = React.useRef<ScrollTrigger | null>(null);
+  const activePolicyData = POLICIES[activePolicy];
+
+  // Direction decides which way the next photo wipes in.
+  const selectPolicy = React.useCallback((index: number) => {
+    setPolicyState((state) => state.index === index ? state : { index, direction: index > state.index ? 1 : -1 });
+  }, []);
+
+  // While the showcase is pinned, scroll position owns the selection, so choosing a policy scrolls to its stretch.
+  function goToPolicy(index: number) {
+    const trigger = policyTriggerRef.current;
+    if (!trigger) {
+      selectPolicy(index);
+      return;
+    }
+    const target = trigger.start + ((index + 0.5) / POLICIES.length) * (trigger.end - trigger.start);
+    if (lenisRef.current) lenisRef.current.scrollTo(target, { duration: 1.1 });
+    else window.scrollTo({ top: target });
+  }
+
+  // Arrow keys move between policies, as in any vertical tab list.
+  function handlePolicyKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
+    const last = POLICIES.length - 1;
+    const next = { ArrowDown: activePolicy === last ? 0 : activePolicy + 1, ArrowUp: activePolicy === 0 ? last : activePolicy - 1, Home: 0, End: last }[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    goToPolicy(next);
+    policyTabRefs.current[next]?.focus();
+  }
 
   // Closing goes through history so the Back button and the Close control agree.
   const requestCloseLogin = React.useCallback(() => {
@@ -237,38 +335,13 @@ export default function Home() {
       });
       if (coast) introTimeline.fromTo(coast, { scale: 1.05 }, { scale: 1, duration: 1.1, ease: "power2.out" }, "<");
 
-      page.querySelectorAll<HTMLElement>("[data-home-reveal]:not([data-home-cover-reveal])").forEach((element) => {
+      page.querySelectorAll<HTMLElement>("[data-home-reveal]").forEach((element) => {
         gsap.fromTo(element, { autoAlpha: 0, y: 18 }, {
           autoAlpha: 1,
           y: 0,
           duration: 0.6,
           ease: "power2.out",
           scrollTrigger: { trigger: element, start: "top 88%", once: true },
-        });
-      });
-
-      const policyGrid = page.querySelector<HTMLElement>("[data-policy-grid]");
-      const covers = page.querySelectorAll<HTMLElement>("[data-home-cover-reveal]");
-      if (policyGrid && covers.length) {
-        gsap.fromTo(covers, { autoAlpha: 0, y: 24, rotateX: 4 }, {
-          autoAlpha: 1,
-          y: 0,
-          rotateX: 0,
-          transformPerspective: 900,
-          duration: 0.72,
-          stagger: 0.13,
-          ease: "power2.out",
-          scrollTrigger: { trigger: policyGrid, start: "top 84%", once: true },
-        });
-      }
-
-      page.querySelectorAll<HTMLElement>("[data-cover]").forEach((cover) => {
-        const image = cover.querySelector<HTMLElement>("[data-cover-art]");
-        if (!image) return;
-        gsap.to(image, {
-          yPercent: -7,
-          ease: "none",
-          scrollTrigger: { trigger: cover, start: "top bottom", end: "bottom top", scrub: 0.6 },
         });
       });
 
@@ -282,6 +355,48 @@ export default function Home() {
           scrollTrigger: { trigger: exportPaper, start: "top 88%", end: "center 45%", scrub: 0.7 },
         });
       }
+    });
+
+    // On wide screens the showcase holds still and scrolling walks through the policies one by one.
+    media.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
+      const showcase = page.querySelector<HTMLElement>("[data-policy-showcase]");
+      const frame = page.querySelector<HTMLElement>("[data-policy-frame]");
+      if (!showcase || !frame) return;
+      const tabs = policyTabRefs.current.filter((tab): tab is HTMLButtonElement => Boolean(tab));
+      const count = POLICIES.length;
+      const pinOffset = () => Math.max(24, (window.innerHeight - showcase.offsetHeight) / 2);
+      showcase.dataset.scrolly = "true";
+
+      gsap.fromTo(frame, { clipPath: "inset(9% 7% 9% 7% round 1.5rem)" }, {
+        clipPath: "inset(0% 0% 0% 0% round 1rem)",
+        ease: "none",
+        scrollTrigger: { trigger: showcase, start: "top bottom", end: () => `top top+=${pinOffset()}`, scrub: 0.6, invalidateOnRefresh: true, refreshPriority: 1 },
+      });
+
+      policyTriggerRef.current = ScrollTrigger.create({
+        trigger: showcase,
+        start: () => `top top+=${pinOffset()}`,
+        end: () => `+=${window.innerHeight * 0.75 * count}`,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        // The walkthrough below registers its own pin first (child effects run before ours), so this pin must be
+        // measured first; otherwise everything below ignores its added scroll distance and the two pins overlap.
+        refreshPriority: 1,
+        onUpdate: (self) => {
+          const position = self.progress * count;
+          tabs.forEach((tab, index) => tab.style.setProperty("--policy-fill", String(gsap.utils.clamp(0, 1, position - index))));
+          selectPolicy(Math.min(count - 1, Math.floor(position)));
+        },
+      });
+      ScrollTrigger.sort();
+      ScrollTrigger.refresh();
+
+      return () => {
+        policyTriggerRef.current = null;
+        delete showcase.dataset.scrolly;
+        tabs.forEach((tab) => tab.style.removeProperty("--policy-fill"));
+      };
     });
 
     return () => media.revert();
@@ -396,12 +511,9 @@ export default function Home() {
           </div>
         </div>
         <figure className={styles.heroDocument} ref={docRef} data-home-intro inert={loginActive}>
-          <div className={styles.heroDocumentTop}><span>POLICYCRAFT&nbsp; / &nbsp;SAMPLE</span><span>01 / 08</span></div>
-          <div className={styles.heroDocumentRule} />
-          <p className={styles.heroDocumentKicker}>ENVIRONMENTAL POLICY</p>
+          <p className={styles.heroDocumentKicker}>Environmental policy</p>
           <h2>Responsible<br />by design.</h2>
           <p className={styles.heroDocumentIntro}>A clear framework for the choices we make, the resources we use, and the future we share.</p>
-          <div className={styles.heroDocumentFoot}><span>Scope · Commitments · Review</span><span>2026</span></div>
         </figure>
         {loginActive ? (
           <React.Suspense fallback={null}>
@@ -412,39 +524,70 @@ export default function Home() {
 
       <section id="collection" className={styles.collection} aria-labelledby="collection-heading">
         <div className={styles.collectionHeading} data-home-reveal>
-          <h2 id="collection-heading">Choose the commitment<br />you’re ready to make.</h2>
-          <p>Start with a practical foundation. Shape every policy around the realities of your organization.</p>
+          <h2 id="collection-heading">Five policies, one builder.</h2>
+          <p>Each one starts from what your stakeholders expect it to cover. You shape the rest around how your organization works.</p>
         </div>
-        <div className={styles.policyGrid} data-policy-grid>
-          {POLICIES.map((policy) => (
-            <motion.article
-              key={policy.number}
-              className={styles.policyItem}
-              data-cover
-              variants={{ rest: { y: 0, rotateZ: 0 }, hover: { y: -7, rotateZ: -0.45 } }}
-              initial="rest"
-              whileHover={reduceMotion ? undefined : "hover"}
-              transition={{ duration: 0.24, ease: "easeOut" }}
-            >
-              <div className={`${styles.policyCover} ${styles[policy.className]}`} data-home-cover-reveal>
-                {policy.photo && <motion.div className={styles.coverPhoto} aria-hidden="true" variants={{ rest: { scale: 1 }, hover: { scale: 1.045 } }} transition={{ duration: 0.32, ease: "easeOut" }}><Image src={policy.photo} alt="" fill sizes="(max-width: 720px) 85vw, 34vw" data-cover-art /></motion.div>}
-                <div className={styles.coverTop}><span>{policy.category}</span><span>PC&nbsp; / &nbsp;{policy.number}</span></div>
-                {!policy.photo && (
-                  <motion.div className={styles.coverArtwork} aria-hidden="true" variants={{ rest: { y: 0 }, hover: { y: -5 } }} transition={{ duration: 0.32, ease: "easeOut" }}>
-                    <span className={styles.coverArtworkDepth} data-cover-art>
-                      {policy.artwork === "ethicsMark" ? <span className={styles.ethicsMark}><i /><i /><i /></span> : <span className={styles.procurementMark}><i /><i /><i /><i /><i /></span>}
-                    </span>
-                  </motion.div>
-                )}
-                <div className={styles.coverBottom}>
-                  <h3>{policy.title.split("\n").map((line, index) => <React.Fragment key={line}>{index > 0 && <br />}{line}</React.Fragment>)}</h3>
-                  <p>{policy.line}</p>
+        <MotionConfig reducedMotion="user">
+          <div className={styles.showcase} data-policy-showcase>
+            <div className={styles.policyTabs} role="tablist" aria-label="Policies" aria-orientation="vertical" onKeyDown={handlePolicyKeyDown}>
+              {POLICIES.map((policy, index) => {
+                const selected = index === activePolicy;
+                return (
+                  <button
+                    key={policy.id}
+                    ref={(element) => { policyTabRefs.current[index] = element; }}
+                    type="button"
+                    role="tab"
+                    id={`policy-tab-${policy.id}`}
+                    aria-selected={selected}
+                    aria-controls="policy-panel"
+                    tabIndex={selected ? 0 : -1}
+                    className={styles.policyTab}
+                    onClick={() => goToPolicy(index)}
+                  >
+                    {selected ? <motion.span layoutId="policy-marker" className={styles.policyMarker} transition={{ type: "spring", stiffness: 420, damping: 34 }} aria-hidden="true" /> : null}
+                    {policy.title}
+                  </button>
+                );
+              })}
+            </div>
+            <div className={styles.policyPanel} role="tabpanel" id="policy-panel" aria-labelledby={`policy-tab-${activePolicyData.id}`}>
+              <div className={styles.policyPhoto} data-policy-frame aria-hidden="true">
+                <div className={styles.policyPreload}>
+                  {POLICIES.map((policy) => <Image key={policy.id} src={policy.photo} alt="" fill sizes="(max-width: 720px) 100vw, 58vw" loading="eager" />)}
                 </div>
+                <AnimatePresence initial={false} custom={policyDirection}>
+                  <motion.div key={activePolicyData.id} className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_WIPE} initial="enter" animate="center" exit="exit">
+                    <motion.div className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_DEPTH}>
+                      <Image src={activePolicyData.photo} alt="" fill sizes="(max-width: 720px) 100vw, 58vw" />
+                    </motion.div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
-              <div className={styles.policyMeta}><span>POLICY PROFILE&nbsp; / &nbsp;{policy.number} / 05</span></div>
-            </motion.article>
-          ))}
-        </div>
+              <div className={styles.policyDetailStage}>
+                <AnimatePresence initial={false}>
+                  <motion.div key={activePolicyData.id} className={styles.policyDetail} variants={DETAIL_GROUP} initial="hidden" animate="show" exit="exit">
+                    <p className={styles.policySummary}>
+                      {activePolicyData.summary.split(" ").map((word, index) => (
+                        <React.Fragment key={`${word}-${index}`}>{index > 0 ? " " : null}<span className={styles.summaryWord}><motion.span variants={SUMMARY_WORD}>{word}</motion.span></span></React.Fragment>
+                      ))}
+                    </p>
+                    <div className={styles.policyFacts}>
+                      <div>
+                        <motion.h3 variants={DETAIL_ITEM}>What it covers</motion.h3>
+                        <ul>{activePolicyData.covers.map((item) => <motion.li key={item} variants={DETAIL_ITEM}>{item}</motion.li>)}</ul>
+                      </div>
+                      <div>
+                        <motion.h3 variants={DETAIL_ITEM}>Aligned with</motion.h3>
+                        <ul className={styles.policyStandards}>{activePolicyData.standards.map((item) => <motion.li key={item} variants={DETAIL_ITEM}>{item}</motion.li>)}</ul>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+        </MotionConfig>
       </section>
 
       <PublicWalkthrough />
