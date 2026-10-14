@@ -140,8 +140,13 @@ export function DatePicker({
     setOpen(false);
   };
 
-  const moveFocus = (next: string, keyboard = false) => {
-    setDirection(next > focusIso ? 1 : next < focusIso ? -1 : 0);
+  // The selectable range is contiguous, so clamping always lands on an enabled day.
+  const clampIso = (iso: string) => (minDate && iso < minDate ? minDate : maxDate && iso > maxDate ? maxDate : iso);
+
+  const moveFocus = (target: string, keyboard = false) => {
+    const next = clampIso(target);
+    if (next === focusIso) return;
+    setDirection(next > focusIso ? 1 : -1);
     keyboardMove.current = keyboard;
     setFocusIso(next);
   };
@@ -304,7 +309,7 @@ export function DatePicker({
                       data-current={(index === new Date().getMonth() && viewYear === new Date().getFullYear()) || undefined}
                       tabIndex={index === viewMonth ? 0 : -1}
                       disabled={monthDisabled(viewYear, index)}
-                      onClick={() => { setDirection(0); setFocusIso(shiftIso(focusIso, { months: index - viewMonth })); setView("days"); }}
+                      onClick={() => { setDirection(0); setFocusIso(clampIso(shiftIso(focusIso, { months: index - viewMonth }))); setView("days"); }}
                       className={styles.cell}
                     >
                       {month}
@@ -321,7 +326,7 @@ export function DatePicker({
                       data-current={year === new Date().getFullYear() || undefined}
                       tabIndex={year === viewYear ? 0 : -1}
                       disabled={yearDisabled(year)}
-                      onClick={() => { setDirection(0); setFocusIso(shiftIso(focusIso, { months: (year - viewYear) * 12 })); setView("months"); }}
+                      onClick={() => { setDirection(0); setFocusIso(clampIso(shiftIso(focusIso, { months: (year - viewYear) * 12 }))); setView("months"); }}
                       className={styles.cell}
                     >
                       {year}
