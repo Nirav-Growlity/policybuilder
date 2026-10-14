@@ -55,23 +55,23 @@
 :global(html.lenis.lenis-stopped) { overflow: clip; }
 
 :global([data-pc-theme="dark"]) .page {
-  --home-background: #0d1728;
-  --home-surface: #121f34;
-  --home-surface-muted: #1a2a43;
-  --home-text: #f1f5fb;
-  --home-body: #bdc9dc;
-  --home-muted: #94a4bc;
-  --home-border: #31425c;
+  --home-background: #000000;
+  --home-surface: #0a0a0a;
+  --home-surface-muted: #111111;
+  --home-text: #ededed;
+  --home-body: #a1a1a1;
+  --home-muted: #8f8f8f;
+  --home-border: #262626;
   --home-accent: var(--pc-brand);
   --home-accent-deep: var(--pc-brand);
-  --home-accent-soft: #1c3153;
+  --home-accent-soft: #1a1a1a;
   --home-focus: var(--pc-brand);
-  --home-on-accent: #0d1728;
-  --pc-panel: #121f34;
-  --pc-inset: #1a2a43;
-  --pc-divider: #31425c;
-  --pc-muted: #bdc9dc;
-  --pc-selection: #1c3153;
+  --home-on-accent: #000000;
+  --pc-panel: #0a0a0a;
+  --pc-inset: #111111;
+  --pc-divider: #262626;
+  --pc-muted: #a1a1a1;
+  --pc-selection: #1a1a1a;
   --pc-selection-text: var(--pc-brand);
 }
 
@@ -248,15 +248,15 @@
 :global([data-pc-theme="dark"]) .coverPhoto img { filter: saturate(0.78) brightness(0.88); }
 
 .exportStory { background: #e8eef7; color: #111c30; }
-:global([data-pc-theme="dark"]) .exportStory { background: #121f34; color: #f1f5fb; }
+:global([data-pc-theme="dark"]) .exportStory { background: #0a0a0a; color: #ededed; }
 .exportInner { display: grid; width: min(100% - 3.5rem, 1296px); min-height: 660px; grid-template-columns: minmax(270px, 0.78fr) minmax(0, 1.22fr); align-items: center; gap: clamp(3rem, 9vw, 9rem); margin-inline: auto; padding-block: clamp(5rem, 9vw, 8rem); }
 .exportCopy { max-width: 29rem; }
 .exportCopy h2,
 .standardsCopy h2 { margin: 0; font-family: var(--font-sans); font-size: clamp(2.55rem, 4.7vw, 4.4rem); font-weight: 600; letter-spacing: -0.07em; line-height: 0.99; text-wrap: balance; }
 .exportCopy > p { max-width: 28rem; margin: 1.2rem 0 0; color: #46546b; font-size: 0.94rem; line-height: 1.7; }
-:global([data-pc-theme="dark"]) .exportCopy > p { color: #bdc9dc; }
+:global([data-pc-theme="dark"]) .exportCopy > p { color: #a1a1a1; }
 .exportBenefits { display: grid; gap: 0.75rem; margin: 1.5rem 0 0; padding: 0; color: #33435c; font-size: 0.75rem; list-style: none; }
-:global([data-pc-theme="dark"]) .exportBenefits { color: #bdc9dc; }
+:global([data-pc-theme="dark"]) .exportBenefits { color: #a1a1a1; }
 .exportBenefits li { display: flex; align-items: center; gap: 0.55rem; }
 .exportBenefits svg { color: var(--home-accent); }
 .textLink { display: inline-flex; min-height: 2.8rem; align-items: center; gap: 0.45rem; margin-top: 1.45rem; color: var(--home-accent); font-size: 0.8rem; font-weight: 650; text-decoration: none; }

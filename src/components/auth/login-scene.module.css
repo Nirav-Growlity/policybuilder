@@ -26,12 +26,12 @@
   font-family: var(--login-sans);
 }
 :global([data-pc-theme="dark"]) .scene {
-  --login-bg: #0d1728;
-  --login-border: #31425c;
-  --login-sheet: #121f34;
-  --login-ink: #f1f5fb;
-  --login-body: #bdc9dc;
-  --login-faint: #94a4bc;
+  --login-bg: #000000;
+  --login-border: #262626;
+  --login-sheet: #0a0a0a;
+  --login-ink: #ededed;
+  --login-body: #a1a1a1;
+  --login-faint: #8f8f8f;
   --login-accent: var(--pc-brand);
   --pc-selection-text: var(--pc-brand);
 }

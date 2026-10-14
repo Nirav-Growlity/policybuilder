@@ -215,25 +215,25 @@
 }
 
 [data-pc-theme="dark"] .pc-ui {
-  --pc-page: #0b1220;
-  --pc-panel: #111d32;
-  --pc-inset: #182842;
-  --pc-text: #f1f5f9;
-  --pc-muted: #a8b6cd;
-  --pc-divider: #334765;
-  --pc-control: #647a98;
+  --pc-page: #000000;
+  --pc-panel: #0a0a0a;
+  --pc-inset: #111111;
+  --pc-text: #ededed;
+  --pc-muted: #a1a1a1;
+  --pc-divider: #262626;
+  --pc-control: #454545;
   --pc-primary: var(--pc-brand);
-  --pc-primary-text: #0b1220;
-  --pc-selection: #1b3157;
+  --pc-primary-text: #000000;
+  --pc-selection: #1a1a1a;
   --pc-selection-text: var(--pc-brand);
   --pc-success: #86efac;
   --pc-warning: #fcd34d;
   --pc-error: #fca5a5;
-  --pc-error-text: #0b1220;
+  --pc-error-text: #000000;
   --pc-ai: #5eead4;
-  --pc-success-surface: #14342b;
-  --pc-warning-surface: #352d1d;
-  --pc-error-surface: #3b202b;
+  --pc-success-surface: #0d1f14;
+  --pc-warning-surface: #261c06;
+  --pc-error-surface: #2a1215;
   color-scheme: dark;
 }
 
@@ -376,7 +376,7 @@
 div:has(> #workspace-main > [data-pc-pilot="inventory"]),
 div:has(> #workspace-main [data-pc-workspace]) { background: #f8fafc; }
 [data-pc-theme="dark"] div:has(> #workspace-main > [data-pc-pilot="inventory"]),
-[data-pc-theme="dark"] div:has(> #workspace-main [data-pc-workspace]) { background: #0b1220; }
+[data-pc-theme="dark"] div:has(> #workspace-main [data-pc-workspace]) { background: #000000; }
 html[data-pc-shell] div.pc-ui:has(> #workspace-main) { background: var(--pc-page); }
 
 .pc-theme-control {
@@ -473,7 +473,7 @@ html[data-pc-shell] div.pc-ui:has(> #workspace-main) { background: var(--pc-page
 html[data-pc-shell] { background: #f3f5f9; }
 html[data-pc-shell] .pc-ui { color-scheme: light; }
 html[data-pc-shell][data-pc-theme="dark"] .pc-ui { color-scheme: dark; }
-html[data-pc-shell][data-pc-theme="dark"] { background: #0a1120; }
+html[data-pc-shell][data-pc-theme="dark"] { background: #000000; }
 
 html[data-pc-shell] .pc-ui {
   --pc-page: #f3f5f9;
@@ -510,30 +510,30 @@ html[data-pc-shell] .pc-ui {
 }
 
 html[data-pc-shell][data-pc-theme="dark"] .pc-ui {
-  --pc-page: #0a1120;
-  --pc-panel: #0f1a2d;
-  --pc-inset: #16243b;
-  --pc-text: #eef3fa;
-  --pc-muted: #a2b1c8;
-  --pc-divider: #24354f;
-  --pc-control: #5d7393;
-  --pc-selection: #182e52;
+  --pc-page: #000000;
+  --pc-panel: #0a0a0a;
+  --pc-inset: #111111;
+  --pc-text: #ededed;
+  --pc-muted: #a1a1a1;
+  --pc-divider: #262626;
+  --pc-control: #454545;
+  --pc-selection: #1a1a1a;
   --pc-selection-text: var(--pc-brand);
-  --ws-ink: #0d1a30;
+  --ws-ink: #000000;
   --ws-ink-line: rgb(255 255 255 / 9%);
   --ws-ink-hover: rgb(255 255 255 / 6%);
   --ws-ink-active: rgb(255 255 255 / 11%);
-  --ws-ink-active-text: #f3f7fd;
+  --ws-ink-active-text: #ededed;
   --ws-ink-field: rgb(255 255 255 / 7%);
   --ws-ink-field-border: rgb(255 255 255 / 16%);
   --ws-ink-rule: rgb(255 255 255 / 5.5%);
-  --ws-ink-scrolled: rgb(13 26 48 / 97%);
-  --ws-on-ink: #f3f7fd;
-  --ws-on-ink-muted: #a3b3cc;
+  --ws-ink-scrolled: rgb(0 0 0 / 97%);
+  --ws-on-ink: #ededed;
+  --ws-on-ink-muted: #a1a1a1;
   --ws-glow: rgb(65 134 243 / 26%);
-  --ws-spot: rgb(65 134 243 / 24%);
+  --ws-spot: rgb(255 255 255 / 6%);
   --ws-sheet-shadow: 0 0 0 1px rgb(255 255 255 / 4%), 0 24px 56px -20px rgb(0 0 0 / 60%);
-  --ws-row-hover: #132139;
+  --ws-row-hover: #111111;
 }
 
 html[data-pc-shell] .pc-ui :is(h1, h2, h3, h4) { font-family: var(--pc-font); }

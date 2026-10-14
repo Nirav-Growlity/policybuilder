@@ -142,16 +142,16 @@
   color-scheme: light;
 }
 :global([data-pc-theme="dark"]) .artifact {
-  --artifact-paper: #15243b;
-  --artifact-ink: #f1f5fb;
-  --artifact-body: #c2cede;
-  --artifact-muted: #a9b8cc;
-  --artifact-rule: #354963;
-  --artifact-border: #3b526f;
+  --artifact-paper: #0a0a0a;
+  --artifact-ink: #ededed;
+  --artifact-body: #a1a1a1;
+  --artifact-muted: #8f8f8f;
+  --artifact-rule: #262626;
+  --artifact-border: #2e2e2e;
   --artifact-accent: var(--pc-brand);
-  --artifact-accent-soft: #243b5c;
-  --artifact-strong: #e1eaf7;
-  --artifact-secondary: #d0dced;
+  --artifact-accent-soft: #1a1a1a;
+  --artifact-strong: #ededed;
+  --artifact-secondary: #c7c7c7;
   box-shadow: 0 12px 30px rgb(0 0 0 / 18%);
   color-scheme: dark;
 }

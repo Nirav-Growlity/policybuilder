@@ -25,13 +25,13 @@
 }
 
 :global([data-pc-theme="dark"]) .screen {
-  --ts-page: #0a1120;
-  --ts-sheet: #0f1a2d;
-  --ts-sheet-edge: #24354f;
-  --ts-line: #34507a;
+  --ts-page: #000000;
+  --ts-sheet: #0a0a0a;
+  --ts-sheet-edge: #262626;
+  --ts-line: #2e2e2e;
   --ts-heading: #4186f3;
-  --ts-text: #eef3fa;
-  --ts-muted: #a2b1c8;
+  --ts-text: #ededed;
+  --ts-muted: #a1a1a1;
   --ts-rule: rgb(255 255 255 / 5.5%);
   --ts-glow: rgb(65 134 243 / 22%);
   --ts-shadow: 0 0 0 1px rgb(255 255 255 / 3%), 0 24px 52px -20px rgb(0 0 0 / 70%);
