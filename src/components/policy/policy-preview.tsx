@@ -76,7 +76,17 @@ export function PolicyPreview({ policy, customCoverPng, authorApproval, assetSco
  * same theme variables and cover component as the complete preview so the
  * inline editor never invents a second visual language for page one.
  */
-export function PolicyCoverPreview({ policy, customCoverPng, showElements = true, assetScope }: { policy: Policy; customCoverPng?: string; showElements?: boolean; assetScope?: PolicyCraftWorkspaceScope | null }) {
+/**
+ * The preview stylesheet on its own. A list of many cover thumbnails renders it
+ * once and passes `thumbnail` to each cover, instead of every cover inserting
+ * its own copy (~70 KB each) and forcing a page-wide style recalculation.
+ */
+export function PolicyCoverStyles() {
+  return <style>{`${previewStyles}${previewEntranceStyles}`}</style>;
+}
+
+/** `thumbnail` is for small list covers: it relies on a page-level PolicyCoverStyles and requests downscaled images. */
+export function PolicyCoverPreview({ policy, customCoverPng, showElements = true, assetScope, thumbnail = false }: { policy: Policy; customCoverPng?: string; showElements?: boolean; assetScope?: PolicyCraftWorkspaceScope | null; thumbnail?: boolean }) {
   const model = buildDocumentRenderModel(policy);
   const { theme, typography } = model;
   return (
@@ -91,8 +101,8 @@ export function PolicyCoverPreview({ policy, customCoverPng, showElements = true
       data-preview-entrance="true"
       className="policy-preview-document cover-preview-only overflow-hidden bg-[var(--doc-paper)] text-[var(--doc-ink)]"
     >
-      <style>{`${fontFaceCssFor(coverFontFamilies(model))}${previewStyles}${previewEntranceStyles}`}</style>
-      <PolicyCover model={model} policy={policy} customCoverPng={customCoverPng} showElements={showElements} assetScope={assetScope} />
+      <style>{thumbnail ? fontFaceCssFor(coverFontFamilies(model)) : `${fontFaceCssFor(coverFontFamilies(model))}${previewStyles}${previewEntranceStyles}`}</style>
+      <PolicyCover model={model} policy={policy} customCoverPng={customCoverPng} showElements={showElements} assetScope={assetScope} thumbnail={thumbnail} />
     </article>
   );
 }
@@ -121,11 +131,11 @@ function coverFontFamilies(model: DocumentRenderModel): string[] {
   ];
 }
 
-export function PolicyCover({ model, policy, customCoverPng, showElements = true, assetScope }: { model: DocumentRenderModel; policy: Policy; customCoverPng?: string; showElements?: boolean; assetScope?: PolicyCraftWorkspaceScope | null }) {
+export function PolicyCover({ model, policy, customCoverPng, showElements = true, assetScope, thumbnail = false }: { model: DocumentRenderModel; policy: Policy; customCoverPng?: string; showElements?: boolean; assetScope?: PolicyCraftWorkspaceScope | null; thumbnail?: boolean }) {
   if (model.cover.composition) {
     return customCoverPng
       ? <section className="policy-cover policy-custom-cover" data-cover-mode="custom"><img src={customCoverPng} alt="Custom cover" className="policy-custom-cover-rendered" /></section>
-      : <CustomCover model={model} policy={policy} showElements={showElements} assetScope={assetScope} />;
+      : <CustomCover model={model} policy={policy} showElements={showElements} assetScope={assetScope} thumbnail={thumbnail} />;
   }
 
   const { theme } = model;
@@ -147,7 +157,7 @@ export function PolicyCover({ model, policy, customCoverPng, showElements = true
     {feature}
     <div className="policy-cover-simplified-brand">
       {brand.kind === "logo"
-        ? <img src={coverAssetSource(brand.source, assetScope)} alt="Company logo" className="policy-cover-logo object-contain" />
+        ? <img src={coverAssetSource(brand.source, assetScope, thumbnail)} alt="Company logo" className="policy-cover-logo object-contain" />
         : <p className="policy-cover-company">{brand.text}</p>}
     </div>
     <h1>{model.cover.policyLabel}</h1>
@@ -155,29 +165,36 @@ export function PolicyCover({ model, policy, customCoverPng, showElements = true
   </header>;
 }
 
-function CustomCover({ model, policy, showElements = true, assetScope }: { model: DocumentRenderModel; policy: Policy; showElements?: boolean; assetScope?: PolicyCraftWorkspaceScope | null }) {
+function CustomCover({ model, policy, showElements = true, assetScope, thumbnail = false }: { model: DocumentRenderModel; policy: Policy; showElements?: boolean; assetScope?: PolicyCraftWorkspaceScope | null; thumbnail?: boolean }) {
   const composition = model.cover.composition!;
   return <section className="policy-cover policy-custom-cover" style={{ backgroundColor: composition.background.color }} data-cover-mode="custom">
-    <CoverCompositionElements composition={composition} policy={policy} showElements={showElements} assetScope={assetScope} />
+    <CoverCompositionElements composition={composition} policy={policy} showElements={showElements} assetScope={assetScope} thumbnail={thumbnail} />
   </section>;
 }
 
-function coverAssetSource(reference: string | undefined, scope?: PolicyCraftWorkspaceScope | null): string | undefined {
+function coverAssetSource(reference: string | undefined, scope?: PolicyCraftWorkspaceScope | null, thumbnail = false): string | undefined {
   if (!reference) return undefined;
   const assetId = coverAssetIdFromReference(reference);
   if (!assetId || assetId.startsWith("data:")) return assetId;
   if (/^(?:https?:)?\/\//i.test(reference)) return reference;
-  if (reference.startsWith("/") && !reference.startsWith("/api/policycraft/cover-assets/")) return reference;
+  if (reference.startsWith("/") && !reference.startsWith("/api/policycraft/cover-assets/")) return thumbnail ? thumbnailUrl(reference) : reference;
   const path = `/api/policycraft/cover-assets/${encodeURIComponent(assetId)}`;
-  if (!scope) return reference.startsWith("/") ? reference : path;
-  return policyCraftScopedUrl(path, scope.organizationId);
+  const source = !scope ? (reference.startsWith("/") ? reference : path) : policyCraftScopedUrl(path, scope.organizationId);
+  return thumbnail ? thumbnailUrl(source) : source;
+}
+
+function thumbnailUrl(source: string): string {
+  if (!source.startsWith("/api/policycraft/")) return source;
+  const url = new URL(source, "https://policycraft.invalid");
+  url.searchParams.set("thumb", "1");
+  return `${url.pathname}${url.search}`;
 }
 
 /* eslint-disable @next/next/no-img-element */
-function CoverCompositionElements({ composition, policy, showElements, assetScope }: { composition: NonNullable<DocumentRenderModel["cover"]["composition"]>; policy: Policy; showElements: boolean; assetScope?: PolicyCraftWorkspaceScope | null }) {
+function CoverCompositionElements({ composition, policy, showElements, assetScope, thumbnail = false }: { composition: NonNullable<DocumentRenderModel["cover"]["composition"]>; policy: Policy; showElements: boolean; assetScope?: PolicyCraftWorkspaceScope | null; thumbnail?: boolean }) {
   const background = composition.background.assetId;
   return <>
-    {background ? <img src={coverAssetSource(background, assetScope)} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit, transform: `scale(${COVER_BACKGROUND_OVERSCAN})`, transformOrigin: "center" }} /> : null}
+    {background ? <img src={coverAssetSource(background, assetScope, thumbnail)} alt="" className="policy-custom-cover-background" style={{ objectPosition: `${composition.background.focalPoint.x}% ${composition.background.focalPoint.y}%`, objectFit: composition.background.fit, transform: `scale(${COVER_BACKGROUND_OVERSCAN})`, transformOrigin: "center" }} /> : null}
     {composition.elements.filter((element) => element.visible && (showElements || element.type !== "text")).sort((a, b) => a.zIndex - b.zIndex).map((element) => {
       const style: CSSProperties = { left: `${(element.x / 210) * 100}%`, top: `${(element.y / 297) * 100}%`, width: `${(element.width / 210) * 100}%`, height: `${(element.height / 297) * 100}%`, opacity: element.opacity, zIndex: element.zIndex, transform: `rotate(${element.rotation}deg)` };
       if (element.type === "text") {
@@ -188,7 +205,7 @@ function CoverCompositionElements({ composition, policy, showElements, assetScop
         return <div key={element.id} className="policy-custom-cover-text" style={{ ...style, color: presentation.color, fontFamily: presentation.fontFamily, fontSize: responsivePointSize(presentation.fontSize), fontWeight: presentation.bold ? 700 : 400, fontStyle: element.italic ? "italic" : "normal", textDecoration: element.underline ? "underline" : "none", textAlign: element.align, lineHeight: element.lineHeight, letterSpacing: responsivePointSize(presentation.letterSpacing), textShadow: presentation.textShadow, whiteSpace: "pre-line", overflowWrap: "anywhere" }}>{layout.lines.join("\n")}</div>;
       }
       const rawSource = element.type === "logo" ? element.assetId || policy.company.companyLogo : element.assetId;
-      const source = coverAssetSource(rawSource, assetScope);
+      const source = coverAssetSource(rawSource, assetScope, thumbnail);
       const imageStyle = composition.sourceTemplateId === "ai-generated" && element.id === "ai-cover-metadata-rule"
         ? { ...style, filter: "drop-shadow(0 1px 3px rgba(0,0,0,.8)) brightness(1.7)" }
         : style;

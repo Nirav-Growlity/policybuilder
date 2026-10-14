@@ -246,17 +246,19 @@ export function Reveal({ className, children, delay = 0, ...props }: { delay?: n
  * Motion props for a record (row, card, table row). Records rise in with a
  * short stagger as they scroll into view and fade on exit. Compositor-only
  * properties keep this smooth on long, cover-heavy lists.
+ * Pass `rise: false` for table rows: a collapsed table paints the row borders
+ * itself, so a sliding row drifts across its own dividers and reads as jitter.
  * Wrap the list in <AnimatePresence initial={false}> for exits.
  */
-export function useRecordMotion() {
+export function useRecordMotion({ rise = true }: { rise?: boolean } = {}) {
   const reduced = useReducedMotion();
   return React.useCallback((index: number) => reduced ? {} : {
-    initial: { opacity: 0, transform: lift(18) },
-    whileInView: { opacity: 1, transform: SETTLED },
+    initial: rise ? { opacity: 0, transform: lift(18) } : { opacity: 0 },
+    whileInView: rise ? { opacity: 1, transform: SETTLED } : { opacity: 1 },
     viewport: { once: true, margin: "0px 0px -24px 0px" },
     exit: { opacity: 0, transition: { duration: 0.15 } },
     transition: { duration: 0.8, ease: WS_EASE, delay: (index % 10) * 0.05 },
-  }, [reduced]);
+  }, [reduced, rise]);
 }
 
 /**

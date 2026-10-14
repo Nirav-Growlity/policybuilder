@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import type { ResultSetHeader, RowDataPacket } from "mysql2";
 import { policyCraftPool } from "./db";
 import type { PolicyCraftAuthContext } from "./policycraft-auth";
@@ -92,6 +92,14 @@ function coverAssetUrl(value: string | undefined): string | undefined {
   return `/api/policycraft/cover-assets/${encodeURIComponent(value)}`;
 }
 
+// List thumbnails would otherwise carry each embedded logo inline (often hundreds
+// of KB per row); point them at a cacheable per-document URL instead.
+function coverLogoPreviewUrl(value: string | undefined, documentId: string, organizationId: number): string | undefined {
+  if (!value?.startsWith("data:")) return coverAssetUrl(value);
+  const version = createHash("sha1").update(value).digest("hex").slice(0, 16);
+  return `/api/policycraft/documents/${encodeURIComponent(documentId)}/cover-logo?orgId=${organizationId}&v=${version}`;
+}
+
 function coverCompositionPreview(composition: Policy["coverComposition"]): Policy["coverComposition"] {
   if (!composition) return undefined;
   return {
@@ -103,7 +111,7 @@ function coverCompositionPreview(composition: Policy["coverComposition"]): Polic
   };
 }
 
-function toCoverPreview(policy: Policy): PolicyCoverPreviewSnapshot {
+function toCoverPreview(policy: Policy, documentId: string, organizationId: number): PolicyCoverPreviewSnapshot {
   return {
     policyType: policy.policyType,
     presentationTemplate: policy.presentationTemplate,
@@ -121,7 +129,7 @@ function toCoverPreview(policy: Policy): PolicyCoverPreviewSnapshot {
     activeCoverVariant: policy.activeCoverVariant,
     company: {
       name: policy.company.name,
-      companyLogo: coverAssetUrl(policy.company.companyLogo),
+      companyLogo: coverLogoPreviewUrl(policy.company.companyLogo, documentId, organizationId),
       logoPalette: policy.company.logoPalette,
       docNum: policy.company.docNum,
       effectiveDate: policy.company.effectiveDate,
@@ -171,7 +179,7 @@ export async function listDocuments(orgId: number, archived = false): Promise<Po
     const row = rowsById.get(id);
     if (!row) return [];
     const policy = parseJson<Policy>(row.policy_json);
-    return [{ ...toSummary(row), coverPreview: toCoverPreview(policy) }];
+    return [{ ...toSummary(row), coverPreview: toCoverPreview(policy, id, orgId) }];
   });
 }
 
@@ -186,6 +194,19 @@ export async function getDocument(orgId: number, id: string, includeArchived = f
     [id, orgId],
   );
   return rows[0] ? toDocument(rows[0]) : null;
+}
+
+/** The embedded data-URI company logo of one document, decoded for an image response. */
+export async function getDocumentCoverLogo(orgId: number, id: string): Promise<{ content: Buffer; mimeType: string } | null> {
+  const [rows] = await policyCraftPool.execute<(RowDataPacket & { logo: string | null })[]>(
+    `SELECT JSON_UNQUOTE(JSON_EXTRACT(policy_json, '$.company.companyLogo')) AS logo
+       FROM policycraft_documents
+      WHERE id = ? AND org_id = ?
+      LIMIT 1`,
+    [id, orgId],
+  );
+  const match = rows[0]?.logo?.match(/^data:(image\/[\w.+-]+);base64,([\s\S]+)$/);
+  return match ? { content: Buffer.from(match[2], "base64"), mimeType: match[1] } : null;
 }
 
 export async function listAllAdminDocuments(filters: { organizationId?: number; creatorId?: number; policyType?: string; archived?: boolean }) {
@@ -219,7 +240,7 @@ export async function listAllAdminDocuments(filters: { organizationId?: number; 
   return orderedIds.flatMap(({ id }) => {
     const row = rowsById.get(id);
     if (!row) return [];
-    return [{ ...toSummary(row), coverPreview: toCoverPreview(parseJson<Policy>(row.policy_json)) }];
+    return [{ ...toSummary(row), coverPreview: toCoverPreview(parseJson<Policy>(row.policy_json), id, Number(row.organization_id)) }];
   });
 }
 
