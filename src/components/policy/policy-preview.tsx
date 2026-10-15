@@ -1,7 +1,6 @@
 import type { CSSProperties } from "react";
 import { documentThemeCssVariables } from "@/lib/document-themes";
 import { fontFaceCssFor } from "@/lib/document-fonts";
-import { CoverArt, type CoverMotifScene } from "@/components/policy/cover-art";
 import {
   buildDocumentRenderModel,
   getRunningHeaderBrand,
@@ -140,18 +139,9 @@ export function PolicyCover({ model, policy, customCoverPng, showElements = true
 
   const { theme } = model;
   const brand = getRunningHeaderBrand(policy.company);
-  const scene = theme.layout.cover as CoverMotifScene;
   const feature = model.featureImage?.placement === "cover"
     ? <FeatureImage image={model.featureImage} className={`policy-cover-feature feature-${theme.layout.imageTreatment}`} />
     : null;
-  const motifColors = {
-    primary: theme.colors.primary,
-    accent: theme.colors.accent,
-    soft: theme.colors.soft,
-    line: theme.colors.line,
-    paper: theme.colors.paper,
-    ink: theme.colors.ink,
-  };
 
   return <header className="policy-cover policy-cover-simplified" data-cover-mode="standard">
     {feature}
@@ -161,7 +151,6 @@ export function PolicyCover({ model, policy, customCoverPng, showElements = true
         : <p className="policy-cover-company">{brand.text}</p>}
     </div>
     <h1>{model.cover.policyLabel}</h1>
-    <div className="policy-cover-simplified-art"><CoverArt scene={scene} colors={motifColors} className="cover-motif" /></div>
   </header>;
 }
 
@@ -423,8 +412,6 @@ const previewStyles = `
   .policy-cover-simplified-brand .policy-cover-logo { max-width:38%; max-height:64px; }
   .policy-cover-simplified-brand .policy-cover-company { margin:0; color:var(--doc-primary); font-size:14px; font-weight:700; }
   .policy-cover-simplified h1 { position:relative; z-index:2; max-width:76%; margin:42px 0 0; color:var(--doc-primary); }
-  .policy-cover-simplified-art { display:flex; align-items:flex-end; justify-content:center; width:100%; margin-top:auto; }
-  .policy-cover-simplified-art .cover-motif { width:min(72%, 540px); }
   .policy-cover > :not(.policy-cover-feature) { z-index: 1; }
   .policy-cover-feature { position: absolute; inset: 0; z-index: 0; margin: 0; pointer-events: none; }
   .policy-cover-feature img { width: 100%; height: 100%; object-fit: cover; opacity: .22; filter: saturate(.72); }
