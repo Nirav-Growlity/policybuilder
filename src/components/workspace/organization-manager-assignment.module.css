@@ -138,10 +138,3 @@
   .row { flex-wrap: wrap; }
   .assign, .assigned { margin-left: 48px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .spinner { animation: none; }
-  .row, .success, .error { animation: none; }
-  .trigger, .assign, .close, .newManager, .row { transition: none; }
-  .trigger:active:not(:disabled), .assign:active:not(:disabled), .close:active:not(:disabled), .newManager:active, .assign:hover:not(:disabled) { transform: none; }
-}

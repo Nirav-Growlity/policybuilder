@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import styles from "@/components/policy/pdf-render-loader.module.css";
 
 type PdfRenderLoaderProps = { updating?: boolean; still?: boolean };
@@ -100,8 +100,7 @@ function PageContent({ animated, tones, glowId }: { animated: boolean; tones: Re
 }
 
 export function PdfRenderLoader({ updating = false, still = false }: PdfRenderLoaderProps) {
-  const reduceMotion = useReducedMotion();
-  const animated = !still && !reduceMotion;
+  const animated = !still;
   const glowId = `pdf-loader-glow-${React.useId().replace(/[^a-zA-Z0-9_-]/g, "")}`;
   const [cycle, setCycle] = React.useState(0);
   React.useEffect(() => {

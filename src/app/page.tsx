@@ -8,7 +8,7 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { AnimatePresence, MotionConfig, animate, motion, useReducedMotion, type Variants } from "motion/react";
+import { AnimatePresence, animate, motion, type Variants } from "motion/react";
 import { HomeLoginOverlay } from "@/components/auth/home-login-overlay";
 import { signOut, useSession } from "@/lib/auth-client";
 import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
@@ -120,7 +120,6 @@ const DETAIL_ITEM: Variants = {
 };
 
 export default function Home() {
-  const reduceMotion = useReducedMotion();
   const router = useRouter();
   const { data: session, isPending } = useSession();
   const [workspaceHref, setWorkspaceHref] = React.useState("/login");
@@ -298,7 +297,7 @@ export default function Home() {
   }, [menuOpen]);
 
   React.useEffect(() => {
-    if (reduceMotion || !pageRef.current) return;
+    if (!pageRef.current) return;
 
     const lenis = new Lenis({
       autoRaf: false,
@@ -321,7 +320,7 @@ export default function Home() {
       lenis.destroy();
       if (lenisRef.current === lenis) lenisRef.current = null;
     };
-  }, [menuOpen, reduceMotion]);
+  }, [menuOpen]);
 
   React.useEffect(() => {
     const desktop = window.matchMedia("(min-width: 1024px)");
@@ -334,45 +333,44 @@ export default function Home() {
     const page = pageRef.current;
     if (!page) return;
 
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      const intro = page.querySelectorAll<HTMLElement>("[data-home-intro]");
-      const coast = page.querySelector<HTMLElement>("[data-coast-image]");
-      const introTimeline = gsap.timeline();
-      introTimeline.fromTo(intro, { autoAlpha: 0, y: 18 }, {
+    const intro = page.querySelectorAll<HTMLElement>("[data-home-intro]");
+    const coast = page.querySelector<HTMLElement>("[data-coast-image]");
+    const introTimeline = gsap.timeline();
+    introTimeline.fromTo(intro, { autoAlpha: 0, y: 18 }, {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.72,
+      stagger: 0.09,
+      ease: "power2.out",
+      clearProps: "transform,opacity,visibility",
+    });
+    if (coast) introTimeline.fromTo(coast, { scale: 1.05 }, { scale: 1, duration: 1.1, ease: "power2.out" }, "<");
+
+    page.querySelectorAll<HTMLElement>("[data-home-reveal]").forEach((element) => {
+      gsap.fromTo(element, { autoAlpha: 0, y: 18 }, {
         autoAlpha: 1,
         y: 0,
-        duration: 0.72,
-        stagger: 0.09,
+        duration: 0.6,
         ease: "power2.out",
-        clearProps: "transform,opacity,visibility",
+        scrollTrigger: { trigger: element, start: "top 88%", once: true },
       });
-      if (coast) introTimeline.fromTo(coast, { scale: 1.05 }, { scale: 1, duration: 1.1, ease: "power2.out" }, "<");
-
-      page.querySelectorAll<HTMLElement>("[data-home-reveal]").forEach((element) => {
-        gsap.fromTo(element, { autoAlpha: 0, y: 18 }, {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power2.out",
-          scrollTrigger: { trigger: element, start: "top 88%", once: true },
-        });
-      });
-
-      const exportPaper = page.querySelector<HTMLElement>("[data-export-paper-depth]");
-      if (exportPaper) {
-        gsap.fromTo(exportPaper, { y: 22, rotateX: 1.5, rotateY: -1.5 }, {
-          y: 0,
-          rotateX: 0,
-          rotateY: 0,
-          ease: "none",
-          scrollTrigger: { trigger: exportPaper, start: "top 88%", end: "center 45%", scrub: 0.7 },
-        });
-      }
     });
 
+    const exportPaper = page.querySelector<HTMLElement>("[data-export-paper-depth]");
+    if (exportPaper) {
+      gsap.fromTo(exportPaper, { y: 22, rotateX: 1.5, rotateY: -1.5 }, {
+        y: 0,
+        rotateX: 0,
+        rotateY: 0,
+        ease: "none",
+        scrollTrigger: { trigger: exportPaper, start: "top 88%", end: "center 45%", scrub: 0.7 },
+      });
+    }
+
+    const media = gsap.matchMedia();
+
     // On wide screens the showcase holds still and scrolling walks through the policies one by one.
-    media.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
+    media.add("(min-width: 1024px)", () => {
       const showcase = page.querySelector<HTMLElement>("[data-policy-showcase]");
       const frame = page.querySelector<HTMLElement>("[data-policy-frame]");
       if (!showcase || !frame) return;
@@ -545,78 +543,76 @@ export default function Home() {
           <h2 id="collection-heading">Five policies, one builder.</h2>
           <p>Each one starts from what your stakeholders expect it to cover. You shape the rest around how your organization works.</p>
         </div>
-        <MotionConfig reducedMotion="user">
-          <div className={styles.showcase} data-policy-showcase>
-            <div className={styles.policyTabs} role="tablist" aria-label="Policies" aria-orientation="vertical" onKeyDown={handlePolicyKeyDown}>
-              {POLICIES.map((policy, index) => {
-                const selected = index === activePolicy;
-                return (
-                  <button
-                    key={policy.id}
-                    ref={(element) => { policyTabRefs.current[index] = element; }}
-                    type="button"
-                    role="tab"
-                    id={`policy-tab-${policy.id}`}
-                    aria-selected={selected}
-                    aria-controls="policy-panel"
-                    tabIndex={selected ? 0 : -1}
-                    className={styles.policyTab}
-                    onClick={() => goToPolicy(index)}
-                  >
-                    {selected ? <motion.span layoutId="policy-marker" className={styles.policyMarker} transition={{ type: "spring", stiffness: 420, damping: 34 }} aria-hidden="true" /> : null}
-                    {policy.title}
-                  </button>
-                );
-              })}
+        <div className={styles.showcase} data-policy-showcase>
+          <div className={styles.policyTabs} role="tablist" aria-label="Policies" aria-orientation="vertical" onKeyDown={handlePolicyKeyDown}>
+            {POLICIES.map((policy, index) => {
+              const selected = index === activePolicy;
+              return (
+                <button
+                  key={policy.id}
+                  ref={(element) => { policyTabRefs.current[index] = element; }}
+                  type="button"
+                  role="tab"
+                  id={`policy-tab-${policy.id}`}
+                  aria-selected={selected}
+                  aria-controls="policy-panel"
+                  tabIndex={selected ? 0 : -1}
+                  className={styles.policyTab}
+                  onClick={() => goToPolicy(index)}
+                >
+                  {selected ? <motion.span layoutId="policy-marker" className={styles.policyMarker} transition={{ type: "spring", stiffness: 420, damping: 34 }} aria-hidden="true" /> : null}
+                  {policy.title}
+                </button>
+              );
+            })}
+          </div>
+          <div className={styles.policyPanel} role="tabpanel" id="policy-panel" aria-labelledby={`policy-tab-${activePolicyData.id}`}>
+            <div className={styles.policyPhoto} data-policy-frame aria-hidden="true">
+              <div className={styles.policyPreload}>
+                {POLICIES.map((policy) => <Image key={policy.id} src={policy.photo} alt="" fill sizes="(max-width: 720px) 100vw, 58vw" loading="eager" />)}
+              </div>
+              {policyScrolly ? (
+                <PolicyPhotoMorph
+                  ref={policyMorphRef}
+                  photos={POLICY_PHOTOS}
+                  className={`${styles.policyMorph} ${policyMorphReady ? styles.policyMorphReady : ""}`}
+                  onReadyChange={(ready) => {
+                    setPolicyMorphReady(ready);
+                    if (ready) policyMorphRef.current?.setPosition(policyPositionRef.current);
+                  }}
+                />
+              ) : null}
+              <AnimatePresence initial={false} custom={policyDirection}>
+                <motion.div key={activePolicyData.id} className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_FADE} initial="enter" animate="center" exit="exit">
+                  <motion.div className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_DEPTH}>
+                    <Image src={activePolicyData.photo} alt="" fill sizes="(max-width: 720px) 100vw, 58vw" />
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
             </div>
-            <div className={styles.policyPanel} role="tabpanel" id="policy-panel" aria-labelledby={`policy-tab-${activePolicyData.id}`}>
-              <div className={styles.policyPhoto} data-policy-frame aria-hidden="true">
-                <div className={styles.policyPreload}>
-                  {POLICIES.map((policy) => <Image key={policy.id} src={policy.photo} alt="" fill sizes="(max-width: 720px) 100vw, 58vw" loading="eager" />)}
-                </div>
-                {policyScrolly ? (
-                  <PolicyPhotoMorph
-                    ref={policyMorphRef}
-                    photos={POLICY_PHOTOS}
-                    className={`${styles.policyMorph} ${policyMorphReady ? styles.policyMorphReady : ""}`}
-                    onReadyChange={(ready) => {
-                      setPolicyMorphReady(ready);
-                      if (ready) policyMorphRef.current?.setPosition(policyPositionRef.current);
-                    }}
-                  />
-                ) : null}
-                <AnimatePresence initial={false} custom={policyDirection}>
-                  <motion.div key={activePolicyData.id} className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_FADE} initial="enter" animate="center" exit="exit">
-                    <motion.div className={styles.policyPhotoLayer} custom={policyDirection} variants={PHOTO_DEPTH}>
-                      <Image src={activePolicyData.photo} alt="" fill sizes="(max-width: 720px) 100vw, 58vw" />
-                    </motion.div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-              <div className={styles.policyDetailStage}>
-                <AnimatePresence initial={false}>
-                  <motion.div key={activePolicyData.id} className={styles.policyDetail} variants={DETAIL_GROUP} initial="hidden" animate="show" exit="exit">
-                    <p className={styles.policySummary}>
-                      {activePolicyData.summary.split(" ").map((word, index) => (
-                        <React.Fragment key={`${word}-${index}`}>{index > 0 ? " " : null}<span className={styles.summaryWord}><motion.span variants={SUMMARY_WORD}>{word}</motion.span></span></React.Fragment>
-                      ))}
-                    </p>
-                    <div className={styles.policyFacts}>
-                      <div>
-                        <motion.h3 variants={DETAIL_ITEM}>What it covers</motion.h3>
-                        <ul>{activePolicyData.covers.map((item) => <motion.li key={item} variants={DETAIL_ITEM}>{item}</motion.li>)}</ul>
-                      </div>
-                      <div>
-                        <motion.h3 variants={DETAIL_ITEM}>Aligned with</motion.h3>
-                        <ul className={styles.policyStandards}>{activePolicyData.standards.map((item) => <motion.li key={item} variants={DETAIL_ITEM}>{item}</motion.li>)}</ul>
-                      </div>
+            <div className={styles.policyDetailStage}>
+              <AnimatePresence initial={false}>
+                <motion.div key={activePolicyData.id} className={styles.policyDetail} variants={DETAIL_GROUP} initial="hidden" animate="show" exit="exit">
+                  <p className={styles.policySummary}>
+                    {activePolicyData.summary.split(" ").map((word, index) => (
+                      <React.Fragment key={`${word}-${index}`}>{index > 0 ? " " : null}<span className={styles.summaryWord}><motion.span variants={SUMMARY_WORD}>{word}</motion.span></span></React.Fragment>
+                    ))}
+                  </p>
+                  <div className={styles.policyFacts}>
+                    <div>
+                      <motion.h3 variants={DETAIL_ITEM}>What it covers</motion.h3>
+                      <ul>{activePolicyData.covers.map((item) => <motion.li key={item} variants={DETAIL_ITEM}>{item}</motion.li>)}</ul>
                     </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+                    <div>
+                      <motion.h3 variants={DETAIL_ITEM}>Aligned with</motion.h3>
+                      <ul className={styles.policyStandards}>{activePolicyData.standards.map((item) => <motion.li key={item} variants={DETAIL_ITEM}>{item}</motion.li>)}</ul>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
-        </MotionConfig>
+        </div>
       </section>
 
       <PublicWalkthrough />

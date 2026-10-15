@@ -167,11 +167,6 @@
   .stagger-5 { animation-delay: 300ms; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-in, .animate-fade-up { animation: none; }
-  :is(input, textarea)[data-grammar-checking="true"] { animation: none; }
-}
-
 @media (min-width: 1400px) {
   .cover-editor {
     height: calc(100vh - 12rem);
@@ -301,7 +296,6 @@
 .pc-feature-textarea { font-size: 14px; }
 .pc-feature-input[data-grammar-checking="true"] { border-color: var(--pc-ai); animation: pc-grammar-feedback 1.2s ease-in-out 4; }
 @keyframes pc-grammar-feedback { 50% { border-color: var(--pc-control); } }
-@media (prefers-reduced-motion: reduce) { .pc-feature-input[data-grammar-checking="true"] { animation: none; } }
 .pc-feature-field-label { color: var(--pc-text); font-size: 13px; font-weight: 600; letter-spacing: 0; text-transform: none; }
 .pc-feature-field-label > span { color: var(--pc-error); }
 .pc-feature-field-error { color: var(--pc-error); }
@@ -458,12 +452,6 @@ html[data-pc-shell] div.pc-ui:has(> #workspace-main) { background: var(--pc-page
   .pc-toast-region { right: auto; left: 50%; transform: translateX(-50%); bottom: max(16px, env(safe-area-inset-bottom)); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .pc-modal-overlay, .pc-modal-panel { opacity: 1 !important; }
-  .pc-modal-panel { transform: none !important; }
-  .pc-ui .pc-auth-entrance { opacity: 1 !important; transform: none !important; }
-}
-
 /* ───────────────────────────────────────────────────────────────────────────
    Workspace redesign (admin, manager and organization-user logins).
    Every rule is gated on html[data-pc-shell], which only WorkspaceShell sets,
@@ -571,15 +559,6 @@ html[data-pc-shell] .pc-ui :is(input:not([type="checkbox"]):not([type="radio"]):
 html[data-pc-shell] .pc-ui :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea):hover:not(:disabled):not(:focus-visible) { border-color: color-mix(in srgb, var(--pc-selection-text) 55%, var(--pc-control)); }
 html[data-pc-shell] .pc-ui :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea):focus-visible { outline: none; border-color: var(--pc-brand); box-shadow: 0 0 0 4px color-mix(in srgb, var(--pc-brand) 22%, transparent); }
 
-@media (prefers-reduced-motion: reduce) {
-  html[data-pc-shell] .pc-disclosure-panel { animation: none; }
-  html[data-pc-shell] .pc-ui [data-pc-button],
-  html[data-pc-shell] .pc-modal-close,
-  html[data-pc-shell] .pc-disclosure-item { transition-duration: .01ms; }
-  html[data-pc-shell] .pc-ui [data-pc-button]:hover:not(:disabled),
-  html[data-pc-shell] .pc-modal-close:hover { transform: none; }
-}
-
 /* Always reserve the scrollbar's space. During a page change the document is
    briefly too short to scroll (old page gone, new one still loading); without
    this the scrollbar vanished and the centred layout slid sideways by half its
@@ -599,6 +578,3 @@ html[data-pc-shell]::view-transition-new(root) { animation: none; }
 ::view-transition-old(.ws-page-exit) { z-index: 1; animation: 220ms cubic-bezier(.4, 0, .2, 1) both ws-page-out; }
 ::view-transition-new(.ws-page-enter) { animation: none; }
 @keyframes ws-page-out { to { opacity: 0; transform: translate3d(0, -10px, 0); } }
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(.ws-page-exit) { animation-duration: 0s; }
-}

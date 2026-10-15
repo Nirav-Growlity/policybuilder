@@ -2,6 +2,7 @@
 import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 import { chromium } from "playwright-core";
+import { settleMotion } from "./settle-motion.mjs";
 import { initialPolicy } from "../lib/store.ts";
 import { calculatePolicyProgress } from "../lib/policycraft-progress.ts";
 
@@ -56,7 +57,7 @@ const work = [
 ];
 const events = new Map(tasks.map((item) => [item.id, [{ id: `event-${item.id}`, taskId: item.id, eventType: "assigned", actor: { id: "7", name: "Alex Administrator", role: "admin" }, details: {}, createdAt: item.createdAt }]]));
 const browser = await chromium.launch({ channel: "msedge", headless: true });
-const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce" });
+const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
 await context.addCookies([{ name: "better-auth.session_token", value: "mock-task-ui-only", url: base }]);
 await context.route("**/api/**", async (route) => {
   const request = route.request();
@@ -121,8 +122,8 @@ await context.route("**/api/**", async (route) => {
 const page = await context.newPage();
 page.on("pageerror", (error) => pageErrors.push(error.message));
 await mkdir(output, { recursive: true });
-async function noOverflow() { assert(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), `Page overflows at ${JSON.stringify(page.viewportSize())}`); }
-async function screenshot(name, fullPage = true) { await page.screenshot({ path: `${output}/${name}.png`, fullPage, animations: "disabled" }); }
+async function noOverflow() { await settleMotion(page); assert(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), `Page overflows at ${JSON.stringify(page.viewportSize())}`); }
+async function screenshot(name, fullPage = true) { await settleMotion(page); await page.screenshot({ path: `${output}/${name}.png`, fullPage, animations: "disabled" }); }
 // The assignment summary lives in the builder task chip popover.
 async function openAssignedTask() {
   const markComplete = page.getByRole("button", { name: "Mark task complete", exact: true });
@@ -174,6 +175,7 @@ try {
   await taskLayout();
   await taskSummary(tasks);
   const actionIcon = page.getByRole("button", { name: `Edit ${tasks[0].title}`, exact: true }).filter({ visible: true }).locator("svg");
+  await settleMotion(page);
   assert((await actionIcon.boundingBox()).width >= 13, "compact action icons must retain their intended size");
   await screenshot("admin-desktop");
   for (const width of [320, 768, 1024]) {
@@ -306,6 +308,7 @@ try {
   await screenshot("builder-mobile");
   await page.setViewportSize({ width: 1440, height: 1000 });
   await openAssignedTask();
+  await settleMotion(page);
   const headingBox = await page.getByRole("region", { name: "Assigned task", exact: true }).getByRole("heading").boundingBox();
   assert(headingBox.width > 350, "builder assignment title must have readable space in the task popover");
   assert((await page.getByRole("region", { name: "Assigned task", exact: true }).getByRole("heading").evaluate((element) => getComputedStyle(element).fontFamily)).includes("Fraunces"), "task workspace styling must not leak into the builder");

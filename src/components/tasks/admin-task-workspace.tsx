@@ -7,7 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useWatch } from "react-hook-form";
 import { z } from "zod";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, ClipboardList, Clock3, History, Loader2, Pencil, Plus, RefreshCw, RotateCcw, Search, UserRoundCog, X } from "lucide-react";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
 import { POLICY_PROFILES } from "@/lib/constants";
@@ -63,7 +63,7 @@ function TaskHistory({ taskId, expanded, loadKey }: { taskId: string; expanded: 
   }, [attempt, expanded, requestKey, taskId]);
   return <div className={`${styles.historyExpand} ${expanded ? styles.historyExpanded : ""}`} aria-hidden={!expanded} inert={!expanded}>
     <div className={styles.historyInner}><div className="mt-3 border-t border-[var(--color-line)] pt-3">
-    {!events && !error ? <p className="flex items-center gap-2 text-xs text-[var(--color-muted)]" role="status"><Loader2 size={13} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading history…</p> : null}
+    {!events && !error ? <p className="flex items-center gap-2 text-xs text-[var(--color-muted)]" role="status"><Loader2 size={13} className="animate-spin" aria-hidden="true" />Loading history…</p> : null}
     {error ? <p role="alert" className="text-xs text-red-800">{error} <button type="button" onClick={() => setAttempt((value) => value + 1)} className="font-semibold underline">Retry</button></p> : null}
     {events ? events.length ? <ol className="space-y-2">{events.map((event) => <li key={event.id} className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-xs"><span className="font-semibold text-[var(--color-ink)]">{event.actor.name || event.actor.role}</span><span className="text-[var(--color-ink-2)]">{event.eventType.replaceAll("_", " ")}</span><time className="text-[var(--color-muted)]">{formatTaskDate(event.createdAt, { dateStyle: "medium", timeStyle: "short" })}</time></li>)}</ol> : <p className="text-xs text-[var(--color-muted)]">No task history yet.</p> : null}
     </div></div>
@@ -71,7 +71,6 @@ function TaskHistory({ taskId, expanded, loadKey }: { taskId: string; expanded: 
 }
 
 export function AdminTaskWorkspace() {
-  const reduceMotion = useReducedMotion();
   const router = useRouter();
   const searchParams = useSearchParams();
   const query = searchParams.toString();
@@ -261,8 +260,8 @@ export function AdminTaskWorkspace() {
         <h2 id="admin-task-results-heading" className="sr-only">{filters.tab === "tasks" ? "Task results" : "Manager work results"}</h2>
         <div className={styles.resultsBar} aria-live="polite"><p className={styles.resultsCount}>{loading && !loaded ? "Loading task progress…" : !loaded && error ? "Task data unavailable" : `Showing ${visibleCount} of ${totalCount} ${filters.tab === "tasks" ? "tasks" : "policies"}`}</p>{hasFilters && loaded ? <button type="button" onClick={clearFilters} className={styles.clearFilters}>Clear filters</button> : null}</div>
         <div id="admin-task-panel" className={styles.panelBody} role="tabpanel" aria-labelledby={`admin-task-tab-${filters.tab}`} aria-busy={loading && !loaded} tabIndex={0}>
-          <motion.div key={filters.tab} initial={reduceMotion ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reduceMotion ? 0 : 0.28, ease: [0.22, 1, 0.36, 1] }}>
-            {loading && !loaded ? <DelayedLoading label="Loading task progress…"><div className={styles.loadingBlock} role="status" aria-live="polite"><span className={styles.loadingLine}><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true"/>Loading task progress…</span><RecordSkeleton /></div></DelayedLoading> : !loaded && error ? <div className={styles.empty}><span className={styles.emptyIcon} aria-hidden="true"><ClipboardList size={22}/></span><h2>{filters.tab === "tasks" ? "Tasks unavailable" : "Manager work unavailable"}</h2><p>Use Retry above to load task data.</p></div> : filters.tab === "tasks" ? <TaskTable tasks={tasks} hasTasks={collection.tasks.length > 0} hasFilters={hasFilters} onEdit={(task) => { setMutationError(""); setModalTask(task); }} onReassign={(task) => { setMutationError(""); setReassignTarget(task); }} onStateChange={(task, action) => { setMutationError(""); setConfirmTask({ task, action }); }} onHistory={(id) => { const opening = expandedHistory !== id; setExpandedHistory(opening ? id : ""); if (opening) setHistoryLoadKey((value) => value + 1); }} expandedHistory={expandedHistory} historyLoadKey={historyLoadKey} /> : <ManagerWorkTable work={managerWork} hasWork={collection.managerWork.length > 0} hasFilters={hasFilters} />}
+          <motion.div key={filters.tab} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}>
+            {loading && !loaded ? <DelayedLoading label="Loading task progress…"><div className={styles.loadingBlock} role="status" aria-live="polite"><span className={styles.loadingLine}><Loader2 size={16} className="animate-spin" aria-hidden="true"/>Loading task progress…</span><RecordSkeleton /></div></DelayedLoading> : !loaded && error ? <div className={styles.empty}><span className={styles.emptyIcon} aria-hidden="true"><ClipboardList size={22}/></span><h2>{filters.tab === "tasks" ? "Tasks unavailable" : "Manager work unavailable"}</h2><p>Use Retry above to load task data.</p></div> : filters.tab === "tasks" ? <TaskTable tasks={tasks} hasTasks={collection.tasks.length > 0} hasFilters={hasFilters} onEdit={(task) => { setMutationError(""); setModalTask(task); }} onReassign={(task) => { setMutationError(""); setReassignTarget(task); }} onStateChange={(task, action) => { setMutationError(""); setConfirmTask({ task, action }); }} onHistory={(id) => { const opening = expandedHistory !== id; setExpandedHistory(opening ? id : ""); if (opening) setHistoryLoadKey((value) => value + 1); }} expandedHistory={expandedHistory} historyLoadKey={historyLoadKey} /> : <ManagerWorkTable work={managerWork} hasWork={collection.managerWork.length > 0} hasFilters={hasFilters} />}
           </motion.div>
         </div>
       </section>

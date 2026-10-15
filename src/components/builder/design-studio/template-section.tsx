@@ -80,7 +80,7 @@ function BuiltInTemplates() {
     // Switching template changes composition only; brand colors and fonts are kept.
     updatePolicy((current) => getDocumentTemplatePatch(theme.id as NonNullable<Policy["documentTemplate"]>, current));
     const card = cardRefs.current.get(theme.id);
-    if (card && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (card) {
       gsap.fromTo(card.querySelector("[data-theme-preview]"), { scale: 0.965 }, { scale: 1, duration: 0.55, ease: "elastic.out(1, 0.55)", clearProps: "transform" });
     }
   };

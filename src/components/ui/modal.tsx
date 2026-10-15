@@ -4,7 +4,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { clsx } from "clsx";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { useApplicationSurface } from "./application-surface";
 
 interface ModalProps {
@@ -19,7 +19,6 @@ interface ModalProps {
 
 export function Modal({ open, onClose, title, description, children, width = 460, hideClose }: ModalProps) {
   const application = useApplicationSurface();
-  const reduceMotion = useReducedMotion();
   const mounted = React.useSyncExternalStore(() => () => undefined, () => true, () => false);
   const dialogRef = React.useRef<HTMLDivElement>(null);
   const onCloseRef = React.useRef(onClose);
@@ -71,16 +70,16 @@ export function Modal({ open, onClose, title, description, children, width = 460
 
   return createPortal(
     <motion.div
-      className={clsx("fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overscroll-contain p-4", application ? "pc-ui pc-modal-overlay" : "bg-[rgba(14,26,20,0.4)] backdrop-blur-sm animate-fade-in motion-reduce:animate-none")}
+      className={clsx("fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overscroll-contain p-4", application ? "pc-ui pc-modal-overlay" : "bg-[rgba(14,26,20,0.4)] backdrop-blur-sm animate-fade-in")}
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) {
           event.preventDefault();
           dialogRef.current?.focus();
         }
       }}
-      initial={application && !reduceMotion ? { opacity: 0 } : false}
+      initial={application ? { opacity: 0 } : false}
       animate={application ? { opacity: 1 } : undefined}
-      transition={{ duration: reduceMotion ? 0 : 0.2, ease: "easeOut" }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
     >
       <motion.div
         ref={dialogRef}
@@ -90,11 +89,11 @@ export function Modal({ open, onClose, title, description, children, width = 460
         aria-describedby={description ? descriptionId : undefined}
         aria-label={title ? undefined : "Dialog"}
         tabIndex={-1}
-        className={application ? "pc-modal-panel pc-focus overflow-hidden" : "bg-[var(--color-paper)] rounded-2xl shadow-[var(--shadow-lift)] overflow-hidden animate-fade-up focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] motion-reduce:animate-none"}
+        className={application ? "pc-modal-panel pc-focus overflow-hidden" : "bg-[var(--color-paper)] rounded-2xl shadow-[var(--shadow-lift)] overflow-hidden animate-fade-up focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"}
         style={{ width, maxWidth: "calc(100vw - 32px)", maxHeight: "calc(100dvh - 32px)", overflowY: "auto" }}
-        initial={application && !reduceMotion ? { opacity: 0, scale: 0.98 } : false}
+        initial={application ? { opacity: 0, scale: 0.98 } : false}
         animate={application ? { opacity: 1, scale: 1 } : undefined}
-        transition={{ duration: reduceMotion ? 0 : 0.2, ease: "easeOut" }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
       >
         {(title || !hideClose) && (
           <header className={application ? "pc-modal-header" : "flex items-start justify-between gap-4 px-7 pt-6"}>

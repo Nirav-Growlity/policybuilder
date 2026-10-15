@@ -42,7 +42,7 @@ export function createTextReveal({ charsPerSecond = MIN_CHARS_PER_SECOND, catchU
   let text = "";
   const listeners = new Set<() => void>();
   const waiting: (() => void)[] = [];
-  const instant = typeof window === "undefined" || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  const instant = typeof window === "undefined";
 
   const emit = () => { listeners.forEach((listener) => listener()); };
   const settleWaiting = () => { if (shown >= target.length) waiting.splice(0).forEach((resolve) => resolve()); };

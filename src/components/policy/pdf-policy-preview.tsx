@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import type { PDFDocumentProxy, PDFPageProxy } from "pdfjs-dist";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, LayoutGrid, Minus, Plus, RectangleVertical, RotateCw, Rows3 } from "lucide-react";
 import { getPdfCanvasTransform, getPdfPageWidth } from "@/lib/pdf-preview-layout";
 import { PdfRenderLoader } from "@/components/policy/pdf-render-loader";
@@ -147,7 +147,6 @@ type PdfPagesProps = {
 };
 
 export function PdfPages({ bytes, view, onViewChange, interactive, status = "ready", failureMessage = null, onRetry, onRendered, onError }: PdfPagesProps) {
-  const reduceMotion = useReducedMotion() ?? false;
   const instanceId = React.useId();
   const errorHandler = React.useRef(onError);
   React.useEffect(() => { errorHandler.current = onError; }, [onError]);
@@ -262,7 +261,6 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
     return () => { target.removeEventListener("scroll", onScroll); cancelAnimationFrame(frame); };
   }, [document, viewMode, interactive, onViewChange]);
 
-  const scrollBehavior: ScrollBehavior = reduceMotion ? "auto" : "smooth";
   const scrollToPage = (number: number, behavior: ScrollBehavior) => {
     navigating.current = true;
     window.clearTimeout(settleTimer.current);
@@ -281,8 +279,8 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
     if (page === pageNumber) return;
     setDirection(page > pageNumber ? 1 : -1);
     onViewChange(current => ({ ...current, pageNumber: page }));
-    if (viewMode === "continuous") { mountPages([page]); scrollToPage(page, scrollBehavior); }
-    else revealViewerTop(scrollBehavior);
+    if (viewMode === "continuous") { mountPages([page]); scrollToPage(page, "smooth"); }
+    else revealViewerTop("smooth");
   };
   // A re-rendered version replaces the loader at the top; return the reader to their page.
   const wasInteractive = React.useRef(interactive);
@@ -306,7 +304,7 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
   const setZoom = (value: string) => {
     if (value === zoom) return;
     // Pages ease to the new size, then repaint sharply at it.
-    if (!reduceMotion && root.current) {
+    if (root.current) {
       root.current.dataset.zooming = "";
       window.clearTimeout(zoomTimer.current);
       zoomTimer.current = window.setTimeout(() => { delete root.current?.dataset.zooming; }, 320);
@@ -367,9 +365,9 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
     </div>;
   };
   const turn = {
-    enter: (dir: number) => ({ opacity: 0, x: reduceMotion ? 0 : dir * 28 }),
+    enter: (dir: number) => ({ opacity: 0, x: dir * 28 }),
     center: { opacity: 1, x: 0 },
-    exit: (dir: number) => ({ opacity: 0, x: reduceMotion ? 0 : dir * -28 }),
+    exit: (dir: number) => ({ opacity: 0, x: dir * -28 }),
   };
   const notice = error || failureMessage;
   const panelId = `${instanceId}-pages`;
@@ -429,9 +427,9 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
               <motion.span
                 key={status}
                 className={styles.statusText}
-                initial={{ opacity: 0, y: reduceMotion ? 0 : 4 }}
+                initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: reduceMotion ? 0 : -4 }}
+                exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.16, ease: EASE }}
               >{STATUS_LABEL[status]}</motion.span>
             </AnimatePresence>
@@ -446,7 +444,7 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
               onClick={() => setViewMode(mode)}
               className={styles.segment}
             >
-              {viewMode === mode && <motion.span layoutId={`${instanceId}-view`} className={styles.segmentThumb} transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 520, damping: 40 }} />}
+              {viewMode === mode && <motion.span layoutId={`${instanceId}-view`} className={styles.segmentThumb} transition={{ type: "spring", stiffness: 520, damping: 40 }} />}
               <Icon size={14} aria-hidden="true" className={styles.segmentIcon} />
               <span className={styles.segmentLabel}>{label}</span>
             </button>)}
@@ -463,7 +461,6 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
           id={panelId}
           document={document}
           pageNumber={pageNumber}
-          reduceMotion={reduceMotion}
           onSelect={number => { setPagesOpen(false); goToPage(number); }}
           onClose={(restoreFocus) => { setPagesOpen(false); if (restoreFocus) pagesButton.current?.focus(); }}
           anchor={pagesButton}
@@ -479,7 +476,7 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: "auto", opacity: 1 }}
         exit={{ height: 0, opacity: 0 }}
-        transition={{ duration: reduceMotion ? 0 : 0.22, ease: EASE }}
+        transition={{ duration: 0.22, ease: EASE }}
       >
         <div className={styles.notice}>
           <span className="min-w-0">{notice}</span>
@@ -507,7 +504,7 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: reduceMotion ? 0.12 : 0.26, ease: EASE }}
+            transition={{ duration: 0.26, ease: EASE }}
             className={styles.turn}
           >{renderSheet(pageNumber)}</motion.div>
         </AnimatePresence>)}
@@ -515,7 +512,7 @@ export function PdfPages({ bytes, view, onViewChange, interactive, status = "rea
   </div>;
 }
 
-function PageGrid({ id, document: pdf, pageNumber, reduceMotion, onSelect, onClose, anchor }: { id: string; document: PDFDocumentProxy; pageNumber: number; reduceMotion: boolean; onSelect: (page: number) => void; onClose: (restoreFocus: boolean) => void; anchor: React.RefObject<HTMLButtonElement | null> }) {
+function PageGrid({ id, document: pdf, pageNumber, onSelect, onClose, anchor }: { id: string; document: PDFDocumentProxy; pageNumber: number; onSelect: (page: number) => void; onClose: (restoreFocus: boolean) => void; anchor: React.RefObject<HTMLButtonElement | null> }) {
   const panel = React.useRef<HTMLDivElement>(null);
   const pages = Array.from({ length: pdf.numPages }, (_, index) => index + 1);
   React.useEffect(() => {
@@ -550,9 +547,9 @@ function PageGrid({ id, document: pdf, pageNumber, reduceMotion, onSelect, onClo
     aria-label="All pages"
     className={styles.pagePanel}
     onKeyDown={onKeyDown}
-    initial={{ opacity: 0, y: reduceMotion ? 0 : -6, scale: reduceMotion ? 1 : 0.98 }}
+    initial={{ opacity: 0, y: -6, scale: 0.98 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
-    exit={{ opacity: 0, y: reduceMotion ? 0 : -4, scale: reduceMotion ? 1 : 0.99, transition: { duration: 0.12 } }}
+    exit={{ opacity: 0, y: -4, scale: 0.99, transition: { duration: 0.12 } }}
     transition={{ duration: 0.2, ease: EASE }}
   >
     <div className={styles.pagePanelGrid}>

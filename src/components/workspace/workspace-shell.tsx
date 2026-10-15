@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring } from "motion/react";
 import "@fontsource-variable/instrument-sans/wdth.css";
 import { Building2, ChevronDown, ClipboardList, FileText, LogOut, Menu, Settings2, Shield, Users, X } from "lucide-react";
 import { signOut } from "@/lib/auth-client";
@@ -77,7 +77,6 @@ export function WorkspaceShell({
   const mobileTriggerRef = React.useRef<HTMLButtonElement>(null);
   const drawerRef = React.useRef<HTMLElement>(null);
   const drawerCloseRef = React.useRef<HTMLButtonElement>(null);
-  const reducedMotion = useReducedMotion();
   const setScope = usePolicyCraftScope((state) => state.setScope);
   const [scrolled, setScrolled] = React.useState(false);
   const { scrollY, scrollYProgress } = useScroll();
@@ -98,7 +97,6 @@ export function WorkspaceShell({
   // nested scroll areas keep native scrolling.
   const lenisRef = React.useRef<Lenis | null>(null);
   React.useEffect(() => {
-    if (reducedMotion) return;
     const lenis = new Lenis({
       autoRaf: true,
       lerp: 0.12,
@@ -108,7 +106,7 @@ export function WorkspaceShell({
     });
     lenisRef.current = lenis;
     return () => { lenis.destroy(); lenisRef.current = null; };
-  }, [reducedMotion]);
+  }, []);
 
   // A new id per page visit; page entrances play once per visit.
   const [visit, setVisit] = React.useState({ path: pathname, id: 0 });
@@ -288,7 +286,7 @@ export function WorkspaceShell({
   const isActive = (href: string) => pathname === href || (href === "/manager" && pathname.startsWith("/manager/") && !pathname.startsWith("/manager/tasks")) || (href !== "/admin" && href !== "/manager" && pathname.startsWith(`${href}/`)) || (href === "/admin" && pathname.startsWith("/admin/managers/"));
   const taskLabel = (href: string) => role === "manager" && href === "/manager/tasks" ? `Tasks${openTaskCount ? `, ${openTaskCount} open` : ""}` : undefined;
   const taskBadge = (href: string) => role === "manager" && href === "/manager/tasks" && openTaskCount > 0
-    ? <motion.span key={openTaskCount} className={styles.taskBadge} aria-hidden="true" initial={reducedMotion ? false : { scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={WS_SPRING}>{openTaskCount > 99 ? "99+" : openTaskCount}</motion.span>
+    ? <motion.span key={openTaskCount} className={styles.taskBadge} aria-hidden="true" initial={{ scale: 0.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={WS_SPRING}>{openTaskCount > 99 ? "99+" : openTaskCount}</motion.span>
     : null;
 
   if (!access) {
@@ -315,7 +313,7 @@ export function WorkspaceShell({
               {NAVIGATION[role].map(({ href, label, icon: Icon }) => {
                 const active = isActive(href);
                 return <Link key={href} href={href} aria-current={active ? "page" : undefined} aria-label={taskLabel(href)} className={`${styles.navLink} ${active ? styles.navLinkActive : ""}`}>
-                  {active ? <motion.span className={styles.navMarker} layoutId="workspace-nav-marker" transition={reducedMotion ? { duration: 0 } : WS_SPRING} aria-hidden="true" /> : null}
+                  {active ? <motion.span className={styles.navMarker} layoutId="workspace-nav-marker" transition={WS_SPRING} aria-hidden="true" /> : null}
                   <Icon size={15} aria-hidden="true" /><span>{label}</span>{taskBadge(href)}
                 </Link>;
               })}
@@ -328,7 +326,7 @@ export function WorkspaceShell({
                   <ChevronDown size={16} aria-hidden="true" className={accountOpen ? styles.chevronOpen : ""} />
                 </button>
                 <AnimatePresence>
-                  {accountOpen ? <motion.div key="account-menu" id="workspace-account-menu" className={styles.accountMenu} role="group" aria-label="Account actions" initial={reducedMotion ? false : { opacity: 0, scale: 0.96, y: -6 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={reducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.97, y: -4, transition: { duration: 0.12 } }} transition={reducedMotion ? { duration: 0 } : { type: "spring", stiffness: 520, damping: 34 }}>
+                  {accountOpen ? <motion.div key="account-menu" id="workspace-account-menu" className={styles.accountMenu} role="group" aria-label="Account actions" initial={{ opacity: 0, scale: 0.96, y: -6 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.97, y: -4, transition: { duration: 0.12 } }} transition={{ type: "spring", stiffness: 520, damping: 34 }}>
                     <div className={styles.accountCard}>
                       <Avatar name={displayName} seed={access.actor.email} size={44} />
                       <div className={styles.accountDetails}><strong>{access.actor.name || "Your account"}</strong><span title={access.actor.email}>{access.actor.email}</span><span className={styles.roleLabel}>{role}</span></div>
@@ -348,8 +346,8 @@ export function WorkspaceShell({
         {error ? <div role="alert" className={styles.signOutError} inert={mobileNavOpen}><p>{error}</p><ApplicationButton type="button" variant="ghost" size="sm" onClick={() => void handleSignOut()} disabled={signingOut} leadingIcon={<LogOut size={14} aria-hidden="true" />}>Retry sign out</ApplicationButton></div> : null}
         <AnimatePresence>
           {mobileNavOpen ? <div key="drawer" className={styles.drawerLayer} data-lenis-prevent="">
-            <motion.button type="button" className={styles.drawerBackdrop} aria-hidden="true" tabIndex={-1} onClick={closeMobileDrawer} initial={reducedMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reducedMotion ? 0 : 0.2 }} />
-            <motion.aside ref={drawerRef} id="workspace-mobile-navigation" className={styles.mobileDrawer} role="dialog" aria-modal="true" aria-labelledby="workspace-drawer-title" initial={reducedMotion ? false : { x: "100%" }} animate={{ x: 0 }} exit={reducedMotion ? { opacity: 0 } : { x: "100%" }} transition={reducedMotion ? { duration: 0 } : { type: "spring", stiffness: 380, damping: 40 }} onKeyDown={handleDrawerKeyDown}>
+            <motion.button type="button" className={styles.drawerBackdrop} aria-hidden="true" tabIndex={-1} onClick={closeMobileDrawer} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} />
+            <motion.aside ref={drawerRef} id="workspace-mobile-navigation" className={styles.mobileDrawer} role="dialog" aria-modal="true" aria-labelledby="workspace-drawer-title" initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "spring", stiffness: 380, damping: 40 }} onKeyDown={handleDrawerKeyDown}>
               <div className={styles.drawerHeader}>
                 <BrandLink href={safeInternalPath(access.homeHref)} onClick={closeMobileDrawer} />
                 <h2 id="workspace-drawer-title" className={styles.visuallyHidden}>Workspace navigation</h2>
@@ -365,7 +363,7 @@ export function WorkspaceShell({
               <nav aria-label="Workspace navigation" className={styles.mobileNav}>
                 {NAVIGATION[role].map(({ href, label, icon: Icon }, index) => {
                   const active = isActive(href);
-                  return <motion.div key={href} initial={reducedMotion ? false : { opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: reducedMotion ? 0 : 0.35, delay: reducedMotion ? 0 : 0.08 + index * 0.04, ease: [0.22, 1, 0.36, 1] }}>
+                  return <motion.div key={href} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.35, delay: 0.08 + index * 0.04, ease: [0.22, 1, 0.36, 1] }}>
                     <Link href={href} aria-current={active ? "page" : undefined} aria-label={taskLabel(href)} className={`${styles.mobileNavLink} ${active ? styles.mobileNavLinkActive : ""}`} onClick={closeMobileDrawer}><Icon size={17} aria-hidden="true" /><span>{label}</span>{taskBadge(href)}</Link>
                   </motion.div>;
                 })}

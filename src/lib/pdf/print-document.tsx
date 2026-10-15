@@ -340,6 +340,10 @@ export function createPrintDocument(markup: string, policy: Policy, topMargin = 
     .policy-preview-document { width:${210 - horizontalMargin * 2}mm; max-width:none; margin:0; box-shadow:none; animation:none!important; opacity:1!important; transform:none!important; overflow:visible; color:var(--doc-ink); }
     .policy-cover { break-after:page; }
     .policy-custom-cover { height:${297 - topMargin - horizontalMargin}mm; min-height:0; width:100%; break-after:page; }
+    /* The on-screen standard cover is a full 297mm sheet; in print it sits
+       inside the @page margins, so fit it to the printable area or it spills
+       onto a blank second page. */
+    .policy-cover-simplified { height:${297 - topMargin - horizontalMargin - 1}mm; min-height:0; }
     [data-collection="professional"] :is(.professional-cover, .editorial-policy-cover) { height:${297 - topMargin - horizontalMargin - 1}mm; min-height:0; break-inside:avoid; }
     [data-collection="professional"] .professional-cover-frame { min-height:0; }
     [data-collection="professional"] .professional-meta { break-inside:avoid; flex-shrink:0; }

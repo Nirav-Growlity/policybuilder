@@ -63,9 +63,7 @@
   font-family: var(--pc-font, inherit);
   transform-origin: var(--radix-popover-content-transform-origin);
 }
-@media (prefers-reduced-motion: no-preference) {
-  .panel[data-state="open"] { animation: calendar-in 170ms cubic-bezier(.16, 1, .3, 1); }
-}
+.panel[data-state="open"] { animation: calendar-in 170ms cubic-bezier(.16, 1, .3, 1); }
 @keyframes calendar-in { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: none; } }
 
 .head { display: grid; grid-template-columns: 32px minmax(0, 1fr) 32px; align-items: center; gap: 4px; margin-bottom: 10px; }
@@ -151,7 +149,3 @@
 .footPrimary { color: var(--pc-selection-text, #1a5c3a); }
 .footButton:disabled { cursor: not-allowed; opacity: .4; }
 .footButton:focus-visible, .nav:focus-visible, .title:focus-visible { outline: 2px solid var(--pc-brand, #4186f3); outline-offset: 1px; }
-
-@media (prefers-reduced-motion: reduce) {
-  .trigger, .title svg, .day, .cell { transition: none; }
-}

@@ -178,7 +178,7 @@ test("cover-only preview renders the standard policy cover", () => {
     policy,
   }));
   assert.match(markup, /data-cover-mode="standard"/);
-  assert.match(markup, /class="cover-motif"/);
+  assert.doesNotMatch(markup, /class="cover-motif"/);
   assert.match(markup, /Environmental Policy/);
   assert.match(markup, /policy-cover-company/);
   assert.doesNotMatch(markup, /alt="Company logo"/);

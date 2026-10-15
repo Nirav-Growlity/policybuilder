@@ -286,10 +286,6 @@
   .roleRows > div { grid-template-columns: 1fr; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .stepTab { transition: none; }
-}
-
 /* Keep document labels comfortably readable at normal zoom. */
 .artifactSample,
 .artifactEyebrow,

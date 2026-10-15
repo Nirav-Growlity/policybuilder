@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring, useTransform, type HTMLMotionProps, type Transition } from "motion/react";
+import { AnimatePresence, motion, useScroll, useSpring, useTransform, type HTMLMotionProps, type Transition } from "motion/react";
 import NumberFlow from "@number-flow/react";
 import { clsx } from "clsx";
 import styles from "./workspace-ui.module.css";
@@ -29,14 +29,13 @@ export const WorkspaceVisitContext = React.createContext("initial");
 const playedEntrances = new Set<string>();
 
 function useEntranceOnce(slot: string) {
-  const reduced = useReducedMotion();
   const key = `${React.useContext(WorkspaceVisitContext)}:${slot}`;
   const [play] = React.useState(() => !playedEntrances.has(key));
   React.useEffect(() => {
     playedEntrances.add(key);
     if (playedEntrances.size > 64) playedEntrances.delete(playedEntrances.values().next().value!);
   }, [key]);
-  return play && !reduced;
+  return play;
 }
 const SETTLED = "translate3d(0, 0px, 0)";
 
@@ -69,13 +68,12 @@ export function WorkspaceHero({
   children?: React.ReactNode;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
   const entrance = useEntranceOnce("hero");
   const heroRef = React.useRef<HTMLElement>(null);
   const spotRef = React.useRef<HTMLSpanElement>(null);
   const { scrollY } = useScroll();
   // A gentle parallax: the hero copy settles back as the sheet scrolls over it.
-  const drift = useTransform(scrollY, [0, 320], [0, reduced ? 0 : -28]);
+  const drift = useTransform(scrollY, [0, 320], [0, -28]);
   const words = title.split(/\s+/).filter(Boolean);
 
   const rise = (delay: number) => entrance ? {
@@ -86,7 +84,7 @@ export function WorkspaceHero({
 
   // The backdrop light follows the pointer, eased by CSS so it trails softly.
   const handlePointerMove = (event: React.PointerEvent<HTMLElement>) => {
-    if (reduced || event.pointerType !== "mouse" || !heroRef.current || !spotRef.current) return;
+    if (event.pointerType !== "mouse" || !heroRef.current || !spotRef.current) return;
     const bounds = heroRef.current.getBoundingClientRect();
     spotRef.current.style.transform = `translate3d(${event.clientX - bounds.left}px, ${event.clientY - bounds.top}px, 0)`;
   };
@@ -166,7 +164,6 @@ function RollingNumber({ value }: { value: number | null }) {
 
 /** A stat value: numbers roll, text (dates, "–") slides into place. */
 function StatValue({ value }: { value: number | string | null }) {
-  const reduced = useReducedMotion();
   if (value === null || typeof value === "number") return <RollingNumber value={value} />;
   return (
     <span className={styles.statValue}>
@@ -174,7 +171,7 @@ function StatValue({ value }: { value: number | string | null }) {
         <motion.span
           key={value}
           className={styles.number}
-          initial={reduced ? false : { opacity: 0, transform: lift(10) }}
+          initial={{ opacity: 0, transform: lift(10) }}
           animate={{ opacity: 1, transform: SETTLED }}
           exit={{ opacity: 0, transition: { duration: 0.15 } }}
           transition={{ duration: 0.6, ease: WS_EASE }}
@@ -227,11 +224,10 @@ export function WorkspaceSheet({ as = "div", className, children, ...props }: { 
 
 /** Fades a block up the first time it scrolls into view. */
 export function Reveal({ className, children, delay = 0, ...props }: { delay?: number } & Omit<HTMLMotionProps<"div">, "ref">) {
-  const reduced = useReducedMotion();
   return (
     <motion.div
       className={className}
-      initial={reduced ? false : { opacity: 0, transform: lift(20) }}
+      initial={{ opacity: 0, transform: lift(20) }}
       whileInView={{ opacity: 1, transform: SETTLED }}
       viewport={{ once: true, margin: "0px 0px -48px 0px" }}
       transition={{ duration: 0.9, ease: WS_EASE, delay }}
@@ -251,14 +247,13 @@ export function Reveal({ className, children, delay = 0, ...props }: { delay?: n
  * Wrap the list in <AnimatePresence initial={false}> for exits.
  */
 export function useRecordMotion({ rise = true }: { rise?: boolean } = {}) {
-  const reduced = useReducedMotion();
-  return React.useCallback((index: number) => reduced ? {} : {
+  return React.useCallback((index: number) => ({
     initial: rise ? { opacity: 0, transform: lift(18) } : { opacity: 0 },
     whileInView: rise ? { opacity: 1, transform: SETTLED } : { opacity: 1 },
     viewport: { once: true, margin: "0px 0px -24px 0px" },
     exit: { opacity: 0, transition: { duration: 0.15 } },
     transition: { duration: 0.8, ease: WS_EASE, delay: (index % 10) * 0.05 },
-  }, [reduced, rise]);
+  }), [rise]);
 }
 
 /**
@@ -267,8 +262,7 @@ export function useRecordMotion({ rise = true }: { rise?: boolean } = {}) {
  * travel between options. The button needs `position: relative; isolation: isolate`.
  */
 export function SelectionPill({ layoutId, className }: { layoutId: string; className?: string }) {
-  const reduced = useReducedMotion();
-  return <motion.span layoutId={layoutId} className={clsx(styles.pill, className)} transition={reduced ? { duration: 0 } : WS_SPRING} aria-hidden="true" />;
+  return <motion.span layoutId={layoutId} className={clsx(styles.pill, className)} transition={WS_SPRING} aria-hidden="true" />;
 }
 
 /** A number that rolls to each new value. */
@@ -314,7 +308,6 @@ function useNearViewport<T extends Element>() {
  * re-rendered by unrelated list updates.
  */
 export function TiltCover({ className, children, label, coverKey }: { className?: string; children: React.ReactNode; label: string; coverKey?: string }) {
-  const reduced = useReducedMotion();
   const rotateX = useSpring(0, { stiffness: 260, damping: 24 });
   const rotateY = useSpring(0, { stiffness: 260, damping: 24 });
   const [lazyRef, near] = useNearViewport<HTMLSpanElement>();
@@ -325,9 +318,9 @@ export function TiltCover({ className, children, label, coverKey }: { className?
         role="img"
         aria-label={label}
         className={clsx(styles.cover, className)}
-        style={reduced ? undefined : { rotateX, rotateY, transformPerspective: 600 }}
+        style={{ rotateX, rotateY, transformPerspective: 600 }}
         onPointerMove={(event) => {
-          if (reduced || event.pointerType !== "mouse") return;
+          if (event.pointerType !== "mouse") return;
           const bounds = event.currentTarget.getBoundingClientRect();
           rotateY.set(((event.clientX - bounds.left) / bounds.width - 0.5) * 14);
           rotateX.set(-((event.clientY - bounds.top) / bounds.height - 0.5) * 10);

@@ -54,7 +54,7 @@ export function PolicySelector({ onSelect, onBack }: { onSelect: (type: PolicyTy
                   <button
                     type="button"
                     onClick={() => onSelect(profile.id)}
-                    className="group flex w-full flex-col items-start rounded-xl border border-[var(--pc-divider)] bg-[var(--pc-panel)] p-5 text-left transition-[border-color,background-color,transform] duration-200 cursor-pointer hover:-translate-y-0.5 hover:border-[var(--pc-control)] hover:bg-[var(--pc-inset)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                    className="group flex w-full flex-col items-start rounded-xl border border-[var(--pc-divider)] bg-[var(--pc-panel)] p-5 text-left transition-[border-color,background-color,transform] duration-200 cursor-pointer hover:-translate-y-0.5 hover:border-[var(--pc-control)] hover:bg-[var(--pc-inset)]"
                   >
                     <span className="flex w-full items-center justify-between">
                       <span className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: profile.accentSoft, color: profile.accent }}>
@@ -77,7 +77,7 @@ export function PolicySelector({ onSelect, onBack }: { onSelect: (type: PolicyTy
                         <span className="text-[12px] text-[var(--color-muted)]">{profile.focusAreas.length} focus areas</span>
                         <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--pc-primary)]">
                           Start
-                          <ArrowRight size={14} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" />
+                          <ArrowRight size={14} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5" />
                         </span>
                       </span>
                     </span>

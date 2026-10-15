@@ -184,10 +184,3 @@
 .generate:hover { box-shadow: 0 10px 22px -12px var(--ai); filter: brightness(1.06); transform: translateY(-1px); }
 .generate:active { transform: scale(.97); }
 :is(.cancel, .generate, .back):focus-visible { outline: 2px solid var(--pc-brand, #4186f3); outline-offset: 2px; }
-
-@media (prefers-reduced-motion: reduce) {
-  .trigger, .icon, .chevron, .optionIcon, .generate { transition-duration: .01ms; }
-  .orbitArc { animation-duration: 3s; }
-  .orbitStar, .trigger[aria-busy="true"]::before { animation: none; }
-  .trigger[aria-busy="true"]::before { display: none; }
-}

@@ -259,9 +259,3 @@
   .footerActions > * { width: 100%; justify-content: center; }
   .statusError { margin: 18px 20px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .spinner { animation: none; }
-  .heroLink, .periodButton, .fileButton, .cancelLink, .removeCell button { transition: none; }
-  .surface .ctaButton:hover:not(:disabled) { filter: none; }
-}

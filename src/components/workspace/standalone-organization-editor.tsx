@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { Controller, useFieldArray, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { ArrowLeft, Check, Loader2, MapPin, Plus, RefreshCw, Trash2, Upload } from "lucide-react";
 import { Combobox } from "@/components/ui/input";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
@@ -130,7 +130,6 @@ export function StandaloneOrganizationStatus({ backHref, backLabel, navigation, 
 
 export function StandaloneOrganizationEditor({ organizationId, initial, backHref = "/admin/organizations/policycraft", navigation }: { organizationId?: number; initial?: StandaloneOrganization; backHref?: string; navigation?: React.ReactNode }) {
   const router = useRouter();
-  const reduced = useReducedMotion();
   const [lockVersion, setLockVersion] = React.useState(initial?.lockVersion ?? 1);
   const [logoPreview, setLogoPreview] = React.useState("");
   const logoPreviewRef = React.useRef("");
@@ -267,7 +266,7 @@ export function StandaloneOrganizationEditor({ organizationId, initial, backHref
                 <div><h2 id="organization-sites-title"><MapPin size={16} aria-hidden="true" />Operating sites</h2><p>Add at least one location covered by future policies.</p></div>
                 <ApplicationButton type="button" variant="primary" size="md" className={`${styles.ctaButton} ${styles.addSite}`} onClick={() => { siteFields.append({ location: "", address: "", primaryFunction: "" }); setSaved(false); }} disabled={saving} leadingIcon={<Plus size={14} aria-hidden="true" />}>Add site</ApplicationButton>
               </div>
-              <div className={styles.siteList}>{siteFields.fields.map((site, index) => <motion.fieldset key={site.fieldKey} className={styles.siteRow} initial={reduced ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: WS_EASE }}>
+              <div className={styles.siteList}>{siteFields.fields.map((site, index) => <motion.fieldset key={site.fieldKey} className={styles.siteRow} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: WS_EASE }}>
                 <legend className={styles.visuallyHidden}>Operating site {index + 1}</legend>
                 <label className={styles.field}>Location / unit<ApplicationInput {...register(`sites.${index}.location`, { required: true, maxLength: 180 })} required maxLength={180} disabled={saving} placeholder="e.g. Surat manufacturing unit" /></label>
                 <label className={styles.field}>Address<ApplicationInput {...register(`sites.${index}.address`, { required: true, maxLength: 500 })} autoComplete="street-address" required maxLength={500} disabled={saving} placeholder="Full site address" /></label>

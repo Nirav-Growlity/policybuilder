@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { AnimatePresence, animate, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, animate, motion } from "motion/react";
 import styles from "@/components/builder/ai-cover-generation-loader.module.css";
 
 type AICoverGenerationLoaderProps = { title?: string; company?: string; accent?: string };
@@ -42,7 +42,7 @@ function Motif({ kind, accent }: { kind: Study["motif"]; accent: string }) {
   </>;
 }
 
-function TypesetLine({ text, delay, animated, className }: { text: string; delay: number; animated: boolean; className: string }) {
+function TypesetLine({ text, delay, className }: { text: string; delay: number; className: string }) {
   const words = text.split(" ");
   const starts = words.map((_, index) => words.slice(0, index).join("").length);
   return <p className={className}>
@@ -51,7 +51,7 @@ function TypesetLine({ text, delay, animated, className }: { text: string; delay
         {Array.from(word).map((character, characterIndex) => <motion.span
           key={characterIndex}
           className="inline-block"
-          initial={animated ? { opacity: 0, y: "0.4em", filter: "blur(6px)" } : false}
+          initial={{ opacity: 0, y: "0.4em", filter: "blur(6px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ delay: delay + (starts[wordIndex] + characterIndex) * 0.035, duration: 0.5, ease: EASE }}
         >{character}</motion.span>)}
@@ -62,22 +62,19 @@ function TypesetLine({ text, delay, animated, className }: { text: string; delay
 }
 
 export function AICoverGenerationLoader({ title = "Policy", company = "", accent = "#4186f3" }: AICoverGenerationLoaderProps) {
-  const reduceMotion = useReducedMotion();
-  const animated = !reduceMotion;
   const grainId = `ai-cover-grain-${React.useId().replace(/[^a-zA-Z0-9_-]/g, "")}`;
   const [cycle, setCycle] = React.useState(0);
   const fields = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
-    if (!animated) return;
     const timer = setInterval(() => setCycle(current => current + 1), CYCLE_MS);
     return () => clearInterval(timer);
-  }, [animated]);
+  }, []);
   // Each new study starts out of focus and develops while the colour fields move.
   React.useEffect(() => {
-    if (!animated || !fields.current) return;
+    if (!fields.current) return;
     const controls = animate(fields.current, { filter: ["blur(30px)", "blur(30px)", "blur(16px)"] }, { duration: 1.4, times: [0, 0.2, 1], ease: "easeOut" });
     return () => controls.stop();
-  }, [animated, cycle]);
+  }, [cycle]);
   const study = STUDIES[cycle % STUDIES.length];
   const palette = [accent, "#4186f3", "#5eead4", "#ffffff"];
   const companyName = company.trim();
@@ -88,13 +85,13 @@ export function AICoverGenerationLoader({ title = "Policy", company = "", accent
         <motion.span
           className={styles.halo}
           style={{ background: `radial-gradient(closest-side, color-mix(in srgb, ${accent} 26%, transparent), transparent)` }}
-          animate={animated ? { scale: [1, 1.07, 1], opacity: [0.75, 1, 0.75] } : undefined}
+          animate={{ scale: [1, 1.07, 1], opacity: [0.75, 1, 0.75] }}
           transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           data-ai-cover-page
           className={styles.cover}
-          initial={animated ? { opacity: 0, y: 18, scale: 0.97 } : false}
+          initial={{ opacity: 0, y: 18, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: EASE }}
         >
@@ -108,7 +105,7 @@ export function AICoverGenerationLoader({ title = "Policy", company = "", accent
                 transition={{ duration: 1.3, ease: EASE }}
               />)}
             </div>
-            <AnimatePresence initial={animated}>
+            <AnimatePresence>
               <motion.svg
                 key={study.motif}
                 className={styles.motif}
@@ -123,32 +120,32 @@ export function AICoverGenerationLoader({ title = "Policy", company = "", accent
               </motion.svg>
             </AnimatePresence>
             <motion.svg
-              key={animated ? `grain-${cycle}` : "grain"}
+              key={`grain-${cycle}`}
               className={styles.grain}
-              initial={animated ? { opacity: 0.75 } : false}
+              initial={{ opacity: 0.75 }}
               animate={{ opacity: 0.12 }}
               transition={{ duration: 1.7, ease: "easeOut" }}
             >
               <filter id={grainId}><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" /><feColorMatrix type="saturate" values="0" /></filter>
               <rect width="100%" height="100%" filter={`url(#${grainId})`} />
             </motion.svg>
-            {animated && <motion.span
+            <motion.span
               key={`sheen-${cycle}`}
               className={styles.sheen}
               initial={{ x: "-120%" }}
               animate={{ x: "120%" }}
               transition={{ delay: 1.5, duration: 1.1, ease: "easeInOut" }}
-            />}
+            />
           </div>
           <div className={styles.copy}>
-            <TypesetLine text={title} delay={0.5} animated={animated} className={styles.title} />
+            <TypesetLine text={title} delay={0.5} className={styles.title} />
             {companyName
-              ? <TypesetLine text={companyName} delay={0.5 + title.length * 0.035 + 0.15} animated={animated} className={styles.company} />
+              ? <TypesetLine text={companyName} delay={0.5 + title.length * 0.035 + 0.15} className={styles.company} />
               : <span className={styles.placeholder} />}
             <motion.span
               className={styles.rule}
               style={{ backgroundColor: accent }}
-              initial={animated ? { scaleX: 0 } : false}
+              initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 1.3, duration: 0.7, ease: EASE }}
             />
@@ -156,7 +153,7 @@ export function AICoverGenerationLoader({ title = "Policy", company = "", accent
               {[38, 26].map((width, index) => <motion.span
                 key={width}
                 style={{ width: `${width}%` }}
-                initial={animated ? { opacity: 0, x: -6 } : false}
+                initial={{ opacity: 0, x: -6 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.6 + index * 0.12, duration: 0.4, ease: EASE }}
               />)}

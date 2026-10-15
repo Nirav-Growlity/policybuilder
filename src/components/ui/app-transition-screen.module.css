@@ -132,9 +132,3 @@
 }
 @keyframes ts-appear { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @keyframes ts-cover { from { opacity: 0; } to { opacity: 1; } }
-
-@media (prefers-reduced-motion: reduce) {
-  .stack, .screen[data-overlay] { animation: none; }
-  .line { animation: ts-breathe 2.4s ease-in-out infinite; animation-delay: 0ms; }
-  @keyframes ts-breathe { 50% { opacity: .55; } }
-}

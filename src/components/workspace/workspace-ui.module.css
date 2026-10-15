@@ -398,12 +398,3 @@
   .heroStat dd { font-size: 20px; }
   .sheet { border-radius: 16px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .coverPlaceholder, .coverReveal, .statPending, .listProgress::after { animation: none; }
-  .listRegion > div { transition: none; }
-  .coverLift,
-  .coverLift::before,
-  .coverLift::after { transition: none; }
-  :global([data-ws-row]:hover) .coverLift { transform: none; }
-}

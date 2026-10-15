@@ -41,7 +41,6 @@ import path from "node:path";
 import sharp from "sharp";
 import { buildDocumentRenderModel, getRunningHeaderBrand, type AuthorApprovalRenderData, type DocumentRenderModel, type DocumentRenderSection } from "../document-render-model";
 import { documentHex, tableLabelAlignment, type DocumentThemeDefinition, type ResolvedDocumentThemeDefinition } from "../document-themes";
-import { motifSvg, type CoverMotifScene, type MotifColors } from "../cover-motifs";
 import { formatQuantitativeTargetSentence, groupQuantitativeTargets, normalizePolicyQuantitative, type QuantitativeTargetGroup } from "../quantitative";
 import { typesetProse } from "../hyphenation";
 import { convertSoftHyphens } from "./soft-hyphens";
@@ -262,44 +261,6 @@ async function generateDocxDocument(inputPolicy: Policy, authorApproval?: Author
 }
 
 
-/** Native aspect ratio (width, height) of each motif viewBox for Word sizing. */
-const MOTIF_ASPECT: Record<CoverMotifScene, [number, number]> = {
-  "sample-quiet-title": [240, 70], "sample-control-grid": [220, 120], "sample-table-ledger": [240, 96],
-  "sample-editorial-image": [220, 120], "sample-framework-map": [240, 110], "sample-compact-strip": [240, 58],
-  "sample-heritage-crest": [130, 140], "sample-operating-tabs": [240, 100],
-  "civic-plain": [220, 28], "signal-split": [200, 120], "open-broad": [220, 72], "swiss-poster": [120, 120],
-  "ledger-rail": [120, 160], "decision-stamp": [180, 120], "routing-slip": [220, 96],
-  "seal-medallion": [140, 140], "clause-code": [160, 120], "exhibit-file": [200, 110],
-  "gazette-masthead": [120, 140], "colonnade-rule": [200, 90], "indenture-margin": [160, 140],
-  "chapterhouse-drop": [120, 120], "broadsheet-columns": [220, 110], "fieldbook-grid": [160, 120],
-  "canopy-band": [220, 84], "summit-target": [140, 140], "commons-card": [200, 110],
-  "scoreboard-tiles": [200, 120], "tape-ledger": [220, 100], "dial-review": [160, 100],
-  "proceedings-abstract": [200, 120], "blueprint-spec": [160, 120], "docket-matrix": [180, 120],
-};
-
-function motifColorsFor(theme: DocumentThemeDefinition): MotifColors {
-  return {
-    primary: `#${documentHex(theme.colors.primary)}`,
-    accent: `#${documentHex(theme.colors.accent)}`,
-    soft: `#${documentHex(theme.colors.soft)}`,
-    line: `#${documentHex(theme.colors.line)}`,
-    paper: `#${documentHex(theme.colors.paper)}`,
-    ink: `#${documentHex(theme.colors.ink)}`,
-  };
-}
-
-function motifCoverParagraph(scene: CoverMotifScene, theme: DocumentThemeDefinition, width: number, alignment: typeof AlignmentType[keyof typeof AlignmentType] = AlignmentType.LEFT): Paragraph {
-  const [viewWidth, viewHeight] = MOTIF_ASPECT[scene];
-  return svgParagraph(
-    motifSvg(scene, motifColorsFor(theme)),
-    width,
-    Math.max(24, Math.round((width * viewHeight) / viewWidth)),
-    alignment,
-    `${scene} cover motif`,
-  );
-}
-
-
 function coverTitleParagraph(text: string, theme: DocumentThemeDefinition, typography: Typography, size = 64, color?: string, alignment: typeof AlignmentType[keyof typeof AlignmentType] = AlignmentType.LEFT): Paragraph {
   return new Paragraph({
     alignment,
@@ -319,7 +280,6 @@ function coverCompanyParagraph(text: string, theme: DocumentThemeDefinition, typ
 
 function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: typeof AlignmentType[keyof typeof AlignmentType]): DocBlock[] {
   const { theme, typography, cover } = model;
-  const scene = theme.layout.cover as CoverMotifScene;
   const logoScale = theme.logoScale === "small" ? .72 : theme.logoScale === "large" ? 1.28 : 1;
   const brand = logo
     ? imageParagraph(logo, logoAlignment, Math.round(165 * logoScale), Math.round(76 * logoScale), 360, "Company logo")
@@ -330,8 +290,6 @@ function buildCover(model: DocumentRenderModel, logo: LogoImage, logoAlignment: 
     brand,
     spacer(520),
     coverTitleParagraph(cover.policyLabel, theme, typography, 72, undefined, logoAlignment),
-    spacer(440),
-    motifCoverParagraph(scene, theme, 360, logoAlignment),
   ];
 }
 
@@ -1105,20 +1063,6 @@ function pageBackgroundParagraph(model: DocumentRenderModel) {
 
 function densityScale(density: DocumentRenderModel["theme"]["density"]): number {
   return density === "compact" ? .82 : density === "spacious" ? 1.18 : 1;
-}
-
-function svgParagraph(svg: string, width: number, height: number, alignment: typeof AlignmentType[keyof typeof AlignmentType], description: string) {
-  return new Paragraph({
-    alignment,
-    spacing: { after: 0 },
-    children: [new ImageRun({
-      data: Buffer.from(svg),
-      type: "svg",
-      fallback: { data: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4z8DwHwAFgAI/ScL3zgAAAABJRU5ErkJggg==", "base64"), type: "png" },
-      transformation: { width, height },
-      altText: drawingAltText(description),
-    })],
-  });
 }
 
 function spacer(before: number) {

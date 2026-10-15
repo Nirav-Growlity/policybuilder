@@ -4,7 +4,7 @@ import * as React from "react";
 import { clsx } from "clsx";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { MotionConfig, motion } from "motion/react";
+import { motion } from "motion/react";
 import { Textarea } from "@/components/ui/input";
 import styles from "./authoring.module.css";
 import { StreamingProse, useRevealText } from "@/components/ui/ai-stream";
@@ -20,17 +20,11 @@ export function StepRoot({ children, className }: { children: React.ReactNode; c
   useGSAP(() => {
     const root = ref.current;
     if (!root) return;
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.from(Array.from(root.children), { y: 14, autoAlpha: 0, duration: 0.46, ease: "power3.out", stagger: 0.06, clearProps: "opacity,visibility,transform" });
-    });
-    return () => media.revert();
+    gsap.from(Array.from(root.children), { y: 14, autoAlpha: 0, duration: 0.46, ease: "power3.out", stagger: 0.06, clearProps: "opacity,visibility,transform" });
   }, { scope: ref });
 
   return (
-    <MotionConfig reducedMotion="user">
-      <div ref={ref} data-authoring-root="" className={clsx(styles.root, className)}>{children}</div>
-    </MotionConfig>
+    <div ref={ref} data-authoring-root="" className={clsx(styles.root, className)}>{children}</div>
   );
 }
 

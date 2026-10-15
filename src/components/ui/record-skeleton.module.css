@@ -15,4 +15,3 @@
 .action { width: 76px; height: 32px; border-radius: 10px; }
 @keyframes shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
 @media (max-width: 639px) { .row { padding: 18px 16px; gap: 12px; } .action { width: 40px; } }
-@media (prefers-reduced-motion: reduce) { .identity, .title, .detail, .action { animation: none; } }

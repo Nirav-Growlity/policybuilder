@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -47,14 +47,14 @@ const stages: Stage[] = [
   },
 ];
 
-function PolicyArtifact({ stage, reduceMotion }: { stage: StageId; reduceMotion: boolean | null }) {
+function PolicyArtifact({ stage }: { stage: StageId }) {
   const fragmentContainer = {
     initial: {},
-    animate: { transition: { staggerChildren: reduceMotion ? 0 : 0.075, delayChildren: reduceMotion ? 0 : 0.025 } },
+    animate: { transition: { staggerChildren: 0.075, delayChildren: 0.025 } },
   };
   const fragment = {
-    initial: reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 7 },
-    animate: { opacity: 1, y: 0, transition: { duration: reduceMotion ? 0 : 0.2, ease: "easeOut" as const } },
+    initial: { opacity: 0, y: 7 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" as const } },
   };
   return (
     <div className={styles.artifact} aria-label="Sample policy content">
@@ -123,62 +123,57 @@ export function PublicWalkthrough() {
   const tabRefs = React.useRef<Array<HTMLButtonElement | null>>([]);
   const storyTriggerRef = React.useRef<ScrollTrigger | null>(null);
   const [activeStage, setActiveStage] = React.useState<StageId>("structure");
-  const reduceMotion = useReducedMotion();
   const stageIndex = stages.findIndex((stage) => stage.id === activeStage);
   const selectedStage = stages[stageIndex] ?? stages[0];
 
   useGSAP(() => {
     const root = rootRef.current;
     if (!root) return;
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      const intro = root.querySelectorAll<HTMLElement>("[data-walkthrough-enter]");
-      gsap.fromTo(intro, { autoAlpha: 0, y: 14 }, {
-        autoAlpha: 1,
-        y: 0,
-        duration: 0.62,
-        stagger: 0.08,
-        ease: "power2.out",
-        scrollTrigger: { trigger: root, start: "top 84%", once: true },
-      });
-      const desktop = gsap.matchMedia();
-      desktop.add("(min-width: 1024px) and (min-height: 640px)", () => {
-        const story = storyRef.current;
-        if (!story || story.offsetHeight > window.innerHeight - 48) return;
+    const intro = root.querySelectorAll<HTMLElement>("[data-walkthrough-enter]");
+    gsap.fromTo(intro, { autoAlpha: 0, y: 14 }, {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.62,
+      stagger: 0.08,
+      ease: "power2.out",
+      scrollTrigger: { trigger: root, start: "top 84%", once: true },
+    });
+    const desktop = gsap.matchMedia();
+    desktop.add("(min-width: 1024px) and (min-height: 640px)", () => {
+      const story = storyRef.current;
+      if (!story || story.offsetHeight > window.innerHeight - 48) return;
 
-        let lastStageIndex = -1;
-        const trigger = ScrollTrigger.create({
-          id: "policycraft-public-walkthrough",
-          trigger: story,
-          start: "center center",
-          end: () => `+=${Math.max(window.innerHeight * 1.5, 1120)}`,
-          pin: story,
-          pinSpacing: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            const nextIndex = Math.round(self.progress * (stages.length - 1));
-            if (nextIndex === lastStageIndex) return;
-            lastStageIndex = nextIndex;
-            setActiveStage(stages[nextIndex].id);
-          },
-        });
-        storyTriggerRef.current = trigger;
-        return () => {
-          trigger.kill();
-          if (storyTriggerRef.current === trigger) storyTriggerRef.current = null;
-        };
-      }, root);
-      return () => desktop.revert();
+      let lastStageIndex = -1;
+      const trigger = ScrollTrigger.create({
+        id: "policycraft-public-walkthrough",
+        trigger: story,
+        start: "center center",
+        end: () => `+=${Math.max(window.innerHeight * 1.5, 1120)}`,
+        pin: story,
+        pinSpacing: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          const nextIndex = Math.round(self.progress * (stages.length - 1));
+          if (nextIndex === lastStageIndex) return;
+          lastStageIndex = nextIndex;
+          setActiveStage(stages[nextIndex].id);
+        },
+      });
+      storyTriggerRef.current = trigger;
+      return () => {
+        trigger.kill();
+        if (storyTriggerRef.current === trigger) storyTriggerRef.current = null;
+      };
     }, root);
-    return () => media.revert();
+    return () => desktop.revert();
   }, { scope: rootRef });
 
   function activateTab(index: number) {
     const nextIndex = (index + stages.length) % stages.length;
     const nextStage = stages[nextIndex];
     const storyTrigger = storyTriggerRef.current;
-    if (storyTrigger && !reduceMotion) {
+    if (storyTrigger) {
       const progress = nextIndex / (stages.length - 1);
       const top = storyTrigger.start + (storyTrigger.end - storyTrigger.start) * progress;
       window.scrollTo({ top, behavior: "smooth" });
@@ -235,7 +230,7 @@ export function PublicWalkthrough() {
               >
                 <span className={styles.stepNumber}>{String(index + 1).padStart(2, "0")}</span>
                 <span>{stage.label}</span>
-                {selected && <motion.span className={styles.activeTabMark} layoutId="active-policy-step" transition={{ duration: reduceMotion ? 0 : 0.24 }} aria-hidden="true" />}
+                {selected && <motion.span className={styles.activeTabMark} layoutId="active-policy-step" transition={{ duration: 0.24 }} aria-hidden="true" />}
               </button>
             );
           })}
@@ -250,10 +245,10 @@ export function PublicWalkthrough() {
             role="tabpanel"
             aria-labelledby={`policy-step-${selectedStage.id}`}
             tabIndex={0}
-            initial={reduceMotion ? false : { opacity: 0, y: 7 }}
+            initial={{ opacity: 0, y: 7 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? { opacity: 1 } : { opacity: 0, y: -5 }}
-            transition={{ duration: reduceMotion ? 0 : 0.22, ease: "easeOut" }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
           >
             <div className={styles.stageBrief}>
               <div className={styles.stageStepIcon}><selectedStage.icon size={18} strokeWidth={1.7} aria-hidden="true" /></div>
@@ -266,7 +261,7 @@ export function PublicWalkthrough() {
             </div>
 
             <div className={styles.artifactStage}>
-              <PolicyArtifact stage={selectedStage.id} reduceMotion={reduceMotion} />
+              <PolicyArtifact stage={selectedStage.id} />
             </div>
           </motion.div>
         </AnimatePresence>

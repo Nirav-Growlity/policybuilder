@@ -2,6 +2,7 @@
 import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 import { chromium } from "playwright-core";
+import { settleMotion } from "./settle-motion.mjs";
 import { initialPolicy } from "../lib/store.ts";
 
 const base = process.env.POLICYCRAFT_UI_URL || "http://localhost:3000";
@@ -61,7 +62,7 @@ const mutations = [];
 const managerListRequests = [];
 const errors = [];
 const browser = await chromium.launch({ channel: "msedge", headless: true });
-const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce" });
+const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
 await context.addCookies([{ name: "better-auth.session_token", value: "mock-workspace-polish", url: base }]);
 await context.route("**/api/**", async (route) => {
   const url = new URL(route.request().url());
@@ -124,11 +125,13 @@ await mkdir(output, { recursive: true });
 async function open(path, heading) {
   await page.goto(`${base}${path}`);
   await page.getByRole("heading", { name: heading, exact: true }).waitFor();
+  await settleMotion(page);
 }
 function policyTitle(title) { return page.getByText(title, { exact: true }).filter({ visible: true }); }
 function policyRecord(title) { return page.locator("tr, article").filter({ has: page.getByText(title, { exact: true }) }).filter({ visible: true }); }
 async function moreActions(name) { await page.getByRole("button", { name: `More actions for ${name}`, exact: true }).click(); }
 async function checkAdminRecords() {
+  await settleMotion(page);
   await page.locator("main").evaluate((main) => {
     for (const table of main.querySelectorAll("table")) {
       if (table.getClientRects().length && table.scrollWidth > table.clientWidth + 1) throw new Error("Admin table requires horizontal scrolling");
@@ -150,6 +153,7 @@ async function checkAdminRecords() {
   });
 }
 async function screenshot(name) {
+  await settleMotion(page);
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), `${name}: page overflow`);
   await page.screenshot({ path: `${output}/${name}.png`, fullPage: true, animations: "disabled" });
 }
@@ -164,6 +168,7 @@ try {
       if (name === "admin-policies") {
         await policyTitle(documents[0].title).waitFor();
         await page.getByRole("img", { name: `Cover preview for ${documents[0].title}`, exact: true }).filter({ visible: true }).waitFor();
+        await settleMotion(page);
         assert.equal(await page.getByRole("img", { name: `Cover preview for ${documents[0].title}`, exact: true }).filter({ visible: true }).evaluate((preview) => {
           const frame = preview.getBoundingClientRect();
           const canvas = preview.firstElementChild.getBoundingClientRect();
@@ -174,6 +179,7 @@ try {
       if (name === "admin-policies" || name === "managers") await checkAdminRecords();
       if (name === "managers" && viewport.width >= 1280) {
         const compactRow = page.getByRole("row").filter({ has: page.getByText("Dev", { exact: true }) });
+        await settleMotion(page);
         const bounds = await compactRow.boundingBox();
         assert(bounds && bounds.height <= 160, "six organization assignments stay compact instead of creating a giant row");
         await compactRow.getByText("TEST-A", { exact: false }).waitFor();
@@ -229,6 +235,7 @@ try {
   await screenshot("assignment-error-mobile");
   await page.setViewportSize({ width: 720, height: 450 });
   await dialog.getByRole("button", { name: "Save assignments", exact: true }).scrollIntoViewIfNeeded();
+  await settleMotion(page);
   const saveBounds = await dialog.getByRole("button", { name: "Save assignments", exact: true }).boundingBox();
   assert(saveBounds && saveBounds.y >= 0 && saveBounds.y + saveBounds.height <= 450, "dialog footer remains reachable in a short viewport");
   await screenshot("assignment-error-short-height");

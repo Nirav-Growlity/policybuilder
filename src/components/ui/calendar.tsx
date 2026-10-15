@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Popover } from "radix-ui";
 import { clsx } from "clsx";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { CalendarDays, ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useApplicationSurface } from "./application-surface";
 import { useFieldAccessibility } from "./field-accessibility";
@@ -96,7 +96,6 @@ export function DatePicker({
   ariaLabel,
 }: DatePickerProps) {
   const application = useApplicationSurface();
-  const reduceMotion = useReducedMotion();
   const accessibility = useFieldAccessibility({ "aria-label": ariaLabel, "aria-invalid": hasError || undefined });
   const [open, setOpen] = React.useState(false);
   const [view, setView] = React.useState<View>("days");
@@ -195,7 +194,7 @@ export function DatePicker({
 
   const title = view === "days" ? `${MONTH_NAMES[viewMonth]} ${viewYear}` : view === "months" ? String(viewYear) : `${yearPageStart} – ${yearPageStart + YEARS_PER_PAGE - 1}`;
   const pageKey = view === "days" ? `d-${viewYear}-${viewMonth}` : view === "months" ? `m-${viewYear}` : `y-${yearPageStart}`;
-  const slide = reduceMotion || direction === 0
+  const slide = direction === 0
     ? { initial: { opacity: 0 }, animate: { opacity: 1 } }
     : { initial: { opacity: 0, x: direction * 18 }, animate: { opacity: 1, x: 0 } };
   const selectedYear = isIso(value) ? Number(value.slice(0, 4)) : null;

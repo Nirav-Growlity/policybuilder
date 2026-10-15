@@ -92,8 +92,3 @@
   .dialogActions { flex-direction: column; }
   .dialogActions > button { width: 100%; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .resumeLink svg, .newPolicy, .newPolicy svg, .iconButton { transition: none; }
-  .newPolicy:hover, .newPolicy:hover svg, .iconButton:hover, .resumeLink:hover svg, .record:hover .resumeLink svg { transform: none; }
-}

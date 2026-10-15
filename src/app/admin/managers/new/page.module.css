@@ -257,9 +257,3 @@
   .alert, .existingAccount { margin-inline: 18px; }
   .successBody { padding: 24px 18px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .spinner { animation: none; }
-  .existingAccount, .successIcon { animation: none; }
-  .heroLink, .organizationOption, .cancelLink, .primaryLink, .secondaryLink { transition: none; }
-}

@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { AnimatePresence, MotionConfig, motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Files, Image as ImageIcon, LayoutTemplate, Rows3, X } from "lucide-react";
@@ -67,11 +67,7 @@ export function DesignInspector({ open, mobile, onClose }: { open: boolean; mobi
   // One entrance moment: the rail settles in when the panel opens.
   useGSAP(() => {
     if (!open) return;
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.from("[data-rail-item]", { x: -10, autoAlpha: 0, duration: 0.42, ease: "power3.out", stagger: 0.045, clearProps: "all" });
-    });
-    return () => media.revert();
+    gsap.from("[data-rail-item]", { x: -10, autoAlpha: 0, duration: 0.42, ease: "power3.out", stagger: 0.045, clearProps: "all" });
   }, { scope: railRef, dependencies: [open] });
 
   React.useEffect(() => {
@@ -104,64 +100,62 @@ export function DesignInspector({ open, mobile, onClose }: { open: boolean; mobi
   if (!open) return null;
 
   return (
-    <MotionConfig reducedMotion="user">
-      <div className={styles.inspector}>
-        <button type="button" aria-label="Close design controls" onClick={onClose} className={styles.scrim} />
-        <aside ref={panel} tabIndex={-1} id="design-inspector" role={mobile ? "dialog" : undefined} aria-modal={mobile || undefined} aria-label="Document design" className={styles.frame}>
-          <nav className={styles.rail} aria-label="Design sections">
-            <div ref={railRef} role="tablist" aria-orientation="vertical" aria-label="Design sections" onKeyDown={onRailKeyDown} className={styles.railList}>
-              {SECTIONS.map((item, index) => {
-                const selected = item.id === section;
-                return (
-                  <button
-                    key={item.id}
-                    ref={(element) => { tabRefs.current[index] = element; }}
-                    type="button"
-                    role="tab"
-                    data-rail-item
-                    id={`design-tab-${item.id}`}
-                    aria-controls="design-section"
-                    aria-selected={selected}
-                    tabIndex={selected ? 0 : -1}
-                    onClick={() => select(item.id)}
-                    className={styles.railItem}
-                  >
-                    {selected ? <motion.span layoutId="design-rail-marker" transition={SPRING} className={styles.railMarker} /> : null}
-                    <span className={styles.railGlyph}><RailGlyph id={item.id} /></span>
-                    <span className={styles.railLabel}>{item.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-            {mobile ? <button type="button" aria-label="Close design controls" onClick={onClose} className={styles.close}><X size={18} aria-hidden="true" /></button> : null}
-          </nav>
-
-          <div className={styles.stage}>
-            <AnimatePresence mode="wait" initial={false} custom={direction}>
-              <motion.div
-                key={section}
-                custom={direction}
-                variants={{
-                  enter: (dir: number) => ({ opacity: 0, y: dir * 14 }),
-                  center: { opacity: 1, y: 0 },
-                  exit: (dir: number) => ({ opacity: 0, y: dir * -10 }),
-                }}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.2, ease: EASE_OUT }}
-                id="design-section"
-                role="tabpanel"
-                aria-labelledby={`design-tab-${section}`}
-                className={styles.panel}
-              >
-                <SectionStage section={section} />
-              </motion.div>
-            </AnimatePresence>
+    <div className={styles.inspector}>
+      <button type="button" aria-label="Close design controls" onClick={onClose} className={styles.scrim} />
+      <aside ref={panel} tabIndex={-1} id="design-inspector" role={mobile ? "dialog" : undefined} aria-modal={mobile || undefined} aria-label="Document design" className={styles.frame}>
+        <nav className={styles.rail} aria-label="Design sections">
+          <div ref={railRef} role="tablist" aria-orientation="vertical" aria-label="Design sections" onKeyDown={onRailKeyDown} className={styles.railList}>
+            {SECTIONS.map((item, index) => {
+              const selected = item.id === section;
+              return (
+                <button
+                  key={item.id}
+                  ref={(element) => { tabRefs.current[index] = element; }}
+                  type="button"
+                  role="tab"
+                  data-rail-item
+                  id={`design-tab-${item.id}`}
+                  aria-controls="design-section"
+                  aria-selected={selected}
+                  tabIndex={selected ? 0 : -1}
+                  onClick={() => select(item.id)}
+                  className={styles.railItem}
+                >
+                  {selected ? <motion.span layoutId="design-rail-marker" transition={SPRING} className={styles.railMarker} /> : null}
+                  <span className={styles.railGlyph}><RailGlyph id={item.id} /></span>
+                  <span className={styles.railLabel}>{item.label}</span>
+                </button>
+              );
+            })}
           </div>
-        </aside>
-      </div>
-    </MotionConfig>
+          {mobile ? <button type="button" aria-label="Close design controls" onClick={onClose} className={styles.close}><X size={18} aria-hidden="true" /></button> : null}
+        </nav>
+
+        <div className={styles.stage}>
+          <AnimatePresence mode="wait" initial={false} custom={direction}>
+            <motion.div
+              key={section}
+              custom={direction}
+              variants={{
+                enter: (dir: number) => ({ opacity: 0, y: dir * 14 }),
+                center: { opacity: 1, y: 0 },
+                exit: (dir: number) => ({ opacity: 0, y: dir * -10 }),
+              }}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.2, ease: EASE_OUT }}
+              id="design-section"
+              role="tabpanel"
+              aria-labelledby={`design-tab-${section}`}
+              className={styles.panel}
+            >
+              <SectionStage section={section} />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </aside>
+    </div>
   );
 }
 
@@ -169,11 +163,7 @@ export function DesignInspector({ open, mobile, onClose }: { open: boolean; mobi
 function SectionStage({ section }: { section: SectionId }) {
   const scope = React.useRef<HTMLDivElement>(null);
   useGSAP(() => {
-    const media = gsap.matchMedia();
-    media.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.from("[data-reveal]", { y: 10, autoAlpha: 0, duration: 0.4, ease: "power3.out", stagger: 0.04, delay: 0.05, clearProps: "opacity,visibility,transform" });
-    });
-    return () => media.revert();
+    gsap.from("[data-reveal]", { y: 10, autoAlpha: 0, duration: 0.4, ease: "power3.out", stagger: 0.04, delay: 0.05, clearProps: "opacity,visibility,transform" });
   }, { scope });
   return (
     <div ref={scope} data-studio-scroll className={styles.scroll}>

@@ -225,8 +225,3 @@
   .dialogActions > button { width: 100%; }
   .initialLoading { gap: 12px; padding: 16px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .primaryLink, .primaryLink svg, .assignButton, .assignButton svg { transition: none; }
-  .primaryLink:hover, .primaryLink:hover svg, .assignButton:hover:not(:disabled) svg { transform: none; }
-}

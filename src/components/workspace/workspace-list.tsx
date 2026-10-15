@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { clsx } from "clsx";
 import { WS_EASE } from "./workspace-motion";
@@ -93,14 +93,13 @@ export function Pagination({ page, pageCount, first, last, total, noun, onChange
   onChange: (page: number) => void;
   anchorId?: string;
 }) {
-  const reduced = useReducedMotion();
   if (total === 0) return null;
   const go = (next: number) => {
     if (next < 1 || next > pageCount || next === page) return;
     onChange(next);
     const anchor = anchorId ? document.getElementById(anchorId) : null;
     if (anchor && anchor.getBoundingClientRect().top < 72) {
-      window.scrollTo({ top: window.scrollY + anchor.getBoundingClientRect().top - 84, behavior: reduced ? "auto" : "smooth" });
+      window.scrollTo({ top: window.scrollY + anchor.getBoundingClientRect().top - 84, behavior: "smooth" });
     }
   };
   return (
@@ -112,7 +111,7 @@ export function Pagination({ page, pageCount, first, last, total, noun, onChange
           {pageWindow(page, pageCount).map((value, index) => value === null
             ? <span key={`gap-${index}`} className={styles.pageGap} aria-hidden="true">…</span>
             : <button key={value} type="button" className={clsx(styles.pageNumber, value === page && styles.pageNumberCurrent)} aria-current={value === page ? "page" : undefined} aria-label={`Page ${value}`} onClick={() => go(value)}>
-                {value === page ? <motion.span layoutId={`${noun}-page-marker`} className={styles.pageMarker} transition={reduced ? { duration: 0 } : { type: "spring", stiffness: 520, damping: 40 }} aria-hidden="true" /> : null}
+                {value === page ? <motion.span layoutId={`${noun}-page-marker`} className={styles.pageMarker} transition={{ type: "spring", stiffness: 520, damping: 40 }} aria-hidden="true" /> : null}
                 <span>{value}</span>
               </button>)}
           <button type="button" className={styles.pageStep} onClick={() => go(page + 1)} disabled={page === pageCount} aria-label="Next page"><span>Next</span><ChevronRight size={16} aria-hidden="true" /></button>
@@ -142,7 +141,6 @@ export function useMediaQuery(query: string, serverValue = true) {
  * instead of after a skeleton flash: the page loads once, not twice.
  */
 export function DelayedLoading({ children, delay = 450, label = "Loading…", minHeight = 320 }: { children: React.ReactNode; delay?: number; label?: string; minHeight?: number }) {
-  const reduced = useReducedMotion();
   const [visible, setVisible] = React.useState(false);
   React.useEffect(() => {
     const timer = window.setTimeout(() => setVisible(true), delay);
@@ -150,7 +148,7 @@ export function DelayedLoading({ children, delay = 450, label = "Loading…", mi
   }, [delay]);
   if (!visible) return <div className={styles.loadingHold} style={{ minHeight }} role="status" aria-live="polite" aria-busy="true"><span className={styles.visuallyHidden}>{label}</span></div>;
   return (
-    <motion.div initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, ease: WS_EASE }}>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, ease: WS_EASE }}>
       {children}
     </motion.div>
   );
@@ -161,13 +159,12 @@ export function DelayedLoading({ children, delay = 450, label = "Loading…", mi
  * page never collapses into a spinner and back. New results crossfade in.
  */
 export function ListRegion({ busy, contentKey, className, children }: { busy: boolean; contentKey: string; className?: string; children: React.ReactNode }) {
-  const reduced = useReducedMotion();
   return (
     <div className={clsx(styles.listRegion, className)} aria-busy={busy || undefined} data-busy={busy || undefined}>
       <span className={styles.listProgress} aria-hidden="true" />
       <motion.div
         key={contentKey}
-        initial={reduced ? false : { opacity: 0 }}
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.28, ease: WS_EASE }}
       >

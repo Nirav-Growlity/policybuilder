@@ -222,11 +222,5 @@
 @keyframes shimmer { to { background-position: -150% 0; } }
 @keyframes sheen { from { background-position: 100% 0; } to { background-position: -60% 0; } }
 
-@media (prefers-reduced-motion: reduce) {
-  .templateCard, .coverThumb, .railGlyph { transition: none; }
-  .templateCard:hover, .coverThumb:hover:not(:disabled) { transform: none; }
-  .coverSkeleton, :global(.pc-studio-ai-button):hover:not(:disabled)::after { animation: none; }
-}
-
 /* Dark theme: lift the selected segment above the track instead of sinking it. */
 :global([data-pc-theme="dark"]) .segmentPill { background: color-mix(in srgb, var(--pc-text) 12%, var(--pc-inset)); box-shadow: 0 1px 2px rgb(0 0 0 / 35%); }
