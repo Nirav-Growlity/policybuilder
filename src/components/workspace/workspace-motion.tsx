@@ -98,7 +98,7 @@ export function WorkspaceHero({
         <div className={styles.heroText}>
           {eyebrow ? (
             <motion.p className={styles.heroEyebrow} {...rise(0)}>
-              {eyebrowIcon ? <span className={styles.heroEyebrowIcon} aria-hidden="true">{eyebrowIcon}</span> : <span className={styles.heroEyebrowDot} aria-hidden="true" />}
+              {eyebrowIcon ? <span className={styles.heroEyebrowIcon} aria-hidden="true">{eyebrowIcon}</span> : null}
               {eyebrow}
             </motion.p>
           ) : null}

@@ -66,14 +66,6 @@
   letter-spacing: .01em;
 }
 
-.heroEyebrowDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: var(--pc-brand);
-  box-shadow: 0 0 0 4px rgb(65 134 243 / 22%);
-}
-
 .heroEyebrowIcon { display: inline-grid; color: var(--pc-selection-text); }
 
 .heroTitle {
