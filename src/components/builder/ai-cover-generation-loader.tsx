@@ -1,63 +1,173 @@
 "use client";
 
-export function AICoverGenerationLoader() {
+import * as React from "react";
+import { AnimatePresence, animate, motion, useReducedMotion } from "motion/react";
+import styles from "@/components/builder/ai-cover-generation-loader.module.css";
+
+type AICoverGenerationLoaderProps = { title?: string; company?: string; accent?: string };
+type Blob = { left: number; top: number; scale: number; color: number };
+type Study = { blobs: Blob[]; motif: "horizon" | "orbit" | "bands" };
+
+const CYCLE_MS = 3400;
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+// Each study moves the same colour fields into a new arrangement, then sharpens a motif over them.
+const STUDIES: Study[] = [
+  { motif: "horizon", blobs: [{ left: 56, top: -12, scale: 1.05, color: 2 }, { left: -22, top: 28, scale: 1.3, color: 0 }, { left: 38, top: 50, scale: 1, color: 1 }, { left: 4, top: -18, scale: 0.8, color: 3 }] },
+  { motif: "orbit", blobs: [{ left: -16, top: -14, scale: 1.2, color: 1 }, { left: 48, top: 38, scale: 1.3, color: 0 }, { left: 58, top: -22, scale: 0.9, color: 3 }, { left: -4, top: 52, scale: 0.85, color: 2 }] },
+  { motif: "bands", blobs: [{ left: 28, top: -26, scale: 1.2, color: 0 }, { left: -26, top: 42, scale: 1, color: 2 }, { left: 54, top: 48, scale: 1.1, color: 1 }, { left: -12, top: -8, scale: 0.75, color: 3 }] },
+];
+
+function Motif({ kind, accent }: { kind: Study["motif"]; accent: string }) {
+  const deep = `color-mix(in srgb, ${accent} 72%, #020617)`;
+  if (kind === "horizon") return <>
+    <circle cx="86" cy="30" r="14" fill="#fff" fillOpacity=".9" />
+    <path d="M0 72C22 54 44 58 64 69s36 9 53-7v38H0Z" fill={accent} fillOpacity=".88" />
+    <path d="M0 86c30-11 58 6 117-7v21H0Z" fill={deep} />
+  </>;
+  if (kind === "orbit") return <>
+    <g stroke="#fff" strokeOpacity=".8" strokeWidth="1.3" fill="none">
+      {[28, 42, 56, 70, 84].map(radius => <circle key={radius} cx="0" cy="100" r={radius} />)}
+    </g>
+    <circle cx="88" cy="28" r="10" fill={accent} />
+    <circle cx="88" cy="28" r="17" stroke={accent} strokeOpacity=".5" fill="none" />
+  </>;
+  return <>
+    <path d="M-12 70 58 0h22L10 70Z" fill="#fff" fillOpacity=".55" />
+    <path d="M22 100 117 5v28l-67 67Z" fill={accent} fillOpacity=".88" />
+    <path d="M58 100 117 41v18l-41 41Z" fill={deep} />
+    <g fill="#fff" fillOpacity=".85">
+      {[0, 1, 2, 3].flatMap(column => [0, 1, 2].map(row => <circle key={`${column}-${row}`} cx={14 + column * 7} cy={14 + row * 7} r="1.2" />))}
+    </g>
+  </>;
+}
+
+function TypesetLine({ text, delay, animated, className }: { text: string; delay: number; animated: boolean; className: string }) {
+  const words = text.split(" ");
+  const starts = words.map((_, index) => words.slice(0, index).join("").length);
+  return <p className={className}>
+    {words.map((word, wordIndex) => <React.Fragment key={wordIndex}>
+      <span className="inline-block whitespace-nowrap">
+        {Array.from(word).map((character, characterIndex) => <motion.span
+          key={characterIndex}
+          className="inline-block"
+          initial={animated ? { opacity: 0, y: "0.4em", filter: "blur(6px)" } : false}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: delay + (starts[wordIndex] + characterIndex) * 0.035, duration: 0.5, ease: EASE }}
+        >{character}</motion.span>)}
+      </span>
+      {wordIndex < words.length - 1 ? " " : null}
+    </React.Fragment>)}
+  </p>;
+}
+
+export function AICoverGenerationLoader({ title = "Policy", company = "", accent = "#4186f3" }: AICoverGenerationLoaderProps) {
+  const reduceMotion = useReducedMotion();
+  const animated = !reduceMotion;
+  const grainId = `ai-cover-grain-${React.useId().replace(/[^a-zA-Z0-9_-]/g, "")}`;
+  const [cycle, setCycle] = React.useState(0);
+  const fields = React.useRef<HTMLDivElement>(null);
+  React.useEffect(() => {
+    if (!animated) return;
+    const timer = setInterval(() => setCycle(current => current + 1), CYCLE_MS);
+    return () => clearInterval(timer);
+  }, [animated]);
+  // Each new study starts out of focus and develops while the colour fields move.
+  React.useEffect(() => {
+    if (!animated || !fields.current) return;
+    const controls = animate(fields.current, { filter: ["blur(30px)", "blur(30px)", "blur(16px)"] }, { duration: 1.4, times: [0, 0.2, 1], ease: "easeOut" });
+    return () => controls.stop();
+  }, [animated, cycle]);
+  const study = STUDIES[cycle % STUDIES.length];
+  const palette = [accent, "#4186f3", "#5eead4", "#ffffff"];
+  const companyName = company.trim();
+
   return (
-    <div className="absolute inset-0 z-20 flex min-h-full w-full flex-col items-center justify-center overflow-hidden bg-[#f4f7f3] px-6 py-10 text-center" aria-label="AI cover generation in progress" aria-busy="true">
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 -z-0 h-[min(72vh,680px)] w-[min(72vh,680px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(45,138,94,.13)_0%,rgba(45,138,94,0)_70%)]" />
-      <svg className="cover-loader-illustration relative z-10" width="330" height="285" viewBox="0 0 220 190" role="presentation" aria-hidden="true">
-        <defs>
-          <radialGradient id="cover-loader-aura"><stop stopColor="#dceade" stopOpacity=".9" /><stop offset="1" stopColor="#f4f7f3" stopOpacity="0" /></radialGradient>
-          <linearGradient id="cover-loader-artwork" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#103822" /><stop offset="1" stopColor="#2d8a5e" /></linearGradient>
-          <linearGradient id="cover-loader-gloss"><stop stopColor="#fff" stopOpacity="0" /><stop offset=".5" stopColor="#fff" stopOpacity=".55" /><stop offset="1" stopColor="#fff" stopOpacity="0" /></linearGradient>
-          <clipPath id="cover-loader-art-clip"><rect x="67" y="29" width="86" height="65" rx="4" /></clipPath>
-        </defs>
-        <ellipse cx="110" cy="94" rx="94" ry="88" fill="url(#cover-loader-aura)" className="cover-loader-halo" />
-        <ellipse cx="112" cy="164" rx="48" ry="6" fill="#183d2b" opacity=".1" />
-        <g className="cover-loader-back"><rect x="66" y="20" width="100" height="137" rx="7" fill="#e8eee7" stroke="#d8e2d8" /><path d="M79 139h42" stroke="#d2ddd3" strokeWidth="2" strokeLinecap="round" /></g>
-        <g className="cover-loader-page">
-          <rect x="58" y="16" width="100" height="140" rx="7" fill="#fff" stroke="#dce5dc" />
-          <rect x="65" y="23" width="86" height="72" rx="5" fill="url(#cover-loader-artwork)" />
-          <g clipPath="url(#cover-loader-art-clip)">
-            <circle cx="139" cy="43" r="29" fill="none" stroke="#fff" strokeOpacity=".22" />
-            <circle cx="139" cy="43" r="21" fill="#c6a85a" />
-            <path d="M61 90c18-29 35-24 50-14 11 7 21 7 45-5v29H61z" fill="#4a966d" />
-            <path d="M70 82h22" stroke="#fff" strokeOpacity=".72" strokeWidth="1.4" strokeLinecap="round" />
-            <path d="M70 87h38" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
-            <path className="cover-loader-sweep" d="M78 22h15l-31 75H47z" fill="url(#cover-loader-gloss)" />
-          </g>
-          <rect x="68" y="103" width="22" height="3" rx="1.5" fill="#c6a85a" />
-          <rect className="cover-loader-rule" x="68" y="112" width="64" height="5" rx="2.5" fill="#244c38" />
-          <rect className="cover-loader-rule" x="68" y="121" width="49" height="3" rx="1.5" fill="#dce5dd" style={{ animationDelay: "140ms" }} />
-          <path d="M68 132h80" stroke="#edf0eb" />
-          <rect className="cover-loader-rule" x="68" y="138" width="56" height="3" rx="1.5" fill="#dce5dd" style={{ animationDelay: "280ms" }} />
-          <rect className="cover-loader-rule" x="68" y="145" width="43" height="3" rx="1.5" fill="#dce5dd" style={{ animationDelay: "420ms" }} />
-        </g>
-        <path className="cover-loader-glint" d="M171 34v8m-4-4h8" stroke="#a77b16" strokeWidth="1.5" strokeLinecap="round" />
-        <circle className="cover-loader-glint cover-loader-glint-late" cx="45" cy="132" r="2" fill="#2d8a5e" />
-      </svg>
-      <div className="relative z-10 mt-1" role="status" aria-live="polite">
-        <p className="flex items-center justify-center gap-2 text-[10px] font-semibold uppercase tracking-[.18em] text-[var(--color-forest)]"><span className="cover-loader-status-dot h-1.5 w-1.5 rounded-full bg-[var(--color-forest-mid)]" />PolicyCraft · Cover studio</p>
-        <h2 className="mt-2 font-display text-[24px] font-semibold leading-tight text-[var(--color-ink)] sm:text-[28px]">Creating your AI cover</h2>
-        <p className="mt-2 text-[13px] text-[var(--color-muted)]">Laying out your policy details and artwork.</p>
+    <div data-ai-cover-loader role="region" style={{ fontFamily: "var(--pc-font)" }} className="absolute inset-0 z-20 flex min-h-full w-full flex-col items-center justify-center overflow-auto bg-[var(--pc-page)] px-6 py-8 text-center text-[var(--pc-text)]" aria-label="Cover design in progress" aria-busy="true">
+      <div className={styles.stage} aria-hidden="true">
+        <motion.span
+          className={styles.halo}
+          style={{ background: `radial-gradient(closest-side, color-mix(in srgb, ${accent} 26%, transparent), transparent)` }}
+          animate={animated ? { scale: [1, 1.07, 1], opacity: [0.75, 1, 0.75] } : undefined}
+          transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          data-ai-cover-page
+          className={styles.cover}
+          initial={animated ? { opacity: 0, y: 18, scale: 0.97 } : false}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6, ease: EASE }}
+        >
+          <div className={styles.art} style={{ backgroundColor: `color-mix(in srgb, ${accent} 16%, white)` }}>
+            <div ref={fields} className={styles.fields}>
+              {study.blobs.map((blob, index) => <motion.span
+                key={index}
+                className={styles.field}
+                initial={false}
+                animate={{ left: `${blob.left}%`, top: `${blob.top}%`, scale: blob.scale, backgroundColor: palette[blob.color] }}
+                transition={{ duration: 1.3, ease: EASE }}
+              />)}
+            </div>
+            <AnimatePresence initial={animated}>
+              <motion.svg
+                key={study.motif}
+                className={styles.motif}
+                viewBox="0 0 117 100"
+                preserveAspectRatio="xMidYMid slice"
+                initial={{ opacity: 0, clipPath: "inset(0% 0% 100% 0%)" }}
+                animate={{ opacity: 1, clipPath: "inset(0% 0% 0% 0%)" }}
+                exit={{ opacity: 0, transition: { duration: 0.45 } }}
+                transition={{ delay: 0.55, duration: 0.9, ease: EASE }}
+              >
+                <Motif kind={study.motif} accent={accent} />
+              </motion.svg>
+            </AnimatePresence>
+            <motion.svg
+              key={animated ? `grain-${cycle}` : "grain"}
+              className={styles.grain}
+              initial={animated ? { opacity: 0.75 } : false}
+              animate={{ opacity: 0.12 }}
+              transition={{ duration: 1.7, ease: "easeOut" }}
+            >
+              <filter id={grainId}><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" /><feColorMatrix type="saturate" values="0" /></filter>
+              <rect width="100%" height="100%" filter={`url(#${grainId})`} />
+            </motion.svg>
+            {animated && <motion.span
+              key={`sheen-${cycle}`}
+              className={styles.sheen}
+              initial={{ x: "-120%" }}
+              animate={{ x: "120%" }}
+              transition={{ delay: 1.5, duration: 1.1, ease: "easeInOut" }}
+            />}
+          </div>
+          <div className={styles.copy}>
+            <TypesetLine text={title} delay={0.5} animated={animated} className={styles.title} />
+            {companyName
+              ? <TypesetLine text={companyName} delay={0.5 + title.length * 0.035 + 0.15} animated={animated} className={styles.company} />
+              : <span className={styles.placeholder} />}
+            <motion.span
+              className={styles.rule}
+              style={{ backgroundColor: accent }}
+              initial={animated ? { scaleX: 0 } : false}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 1.3, duration: 0.7, ease: EASE }}
+            />
+            <div className={styles.meta}>
+              {[38, 26].map((width, index) => <motion.span
+                key={width}
+                style={{ width: `${width}%` }}
+                initial={animated ? { opacity: 0, x: -6 } : false}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.6 + index * 0.12, duration: 0.4, ease: EASE }}
+              />)}
+            </div>
+          </div>
+        </motion.div>
       </div>
-      <style>{`
-        @keyframes policyCoverFloat { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-5px) rotate(1deg); } }
-        @keyframes policyCoverGlow { 0%, 100% { opacity: .55; transform: scale(.94); } 50% { opacity: .95; transform: scale(1.06); } }
-        @keyframes policyCoverSweep { 0%, 18% { transform: translateX(0) skewX(-18deg); opacity: 0; } 26% { opacity: 1; } 54%, 100% { transform: translateX(155px) skewX(-18deg); opacity: 0; } }
-        @keyframes policyCoverRule { 0%, 12% { transform: scaleX(.15); opacity: .35; } 38%, 100% { transform: scaleX(1); opacity: 1; } }
-        @keyframes policyCoverGlint { 0%, 22%, 100% { opacity: .25; transform: scale(.7); } 38%, 58% { opacity: 1; transform: scale(1.2); } }
-        @keyframes policyCoverDot { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
-        .cover-loader-illustration { display: block; width: min(330px, 72vw); height: auto; overflow: visible; }
-        .cover-loader-page { transform-box: fill-box; transform-origin: center; animation: policyCoverFloat 4.8s ease-in-out infinite; }
-        .cover-loader-back { transform-box: fill-box; transform-origin: center; animation: policyCoverFloat 4.8s ease-in-out infinite reverse; }
-        .cover-loader-halo { transform-box: fill-box; transform-origin: center; animation: policyCoverGlow 4.8s ease-in-out infinite; }
-        .cover-loader-sweep { transform-box: fill-box; transform-origin: center; animation: policyCoverSweep 3.6s ease-in-out infinite; }
-        .cover-loader-rule { transform-box: fill-box; transform-origin: left center; animation: policyCoverRule 2.8s cubic-bezier(.2,.7,.2,1) infinite; }
-        .cover-loader-glint { transform-box: fill-box; transform-origin: center; animation: policyCoverGlint 2.8s ease-in-out infinite; }
-        .cover-loader-glint-late { animation-delay: .8s; }
-        .cover-loader-status-dot { animation: policyCoverDot 1.8s ease-in-out infinite; }
-        @media (prefers-reduced-motion: reduce) { .cover-loader-page, .cover-loader-back, .cover-loader-halo, .cover-loader-sweep, .cover-loader-rule, .cover-loader-glint, .cover-loader-status-dot { animation: none; } }
-      `}</style>
+      <div className="relative z-10 mt-8" role="status" aria-live="polite">
+        <p className="text-[17px] font-semibold leading-snug text-[var(--pc-text)]">Designing your cover</p>
+        <p className="mt-1 text-[13px] text-[var(--pc-muted)]">Arranging artwork and details for your {title}.</p>
+      </div>
     </div>
   );
 }

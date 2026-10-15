@@ -180,6 +180,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unsupported policy type" }, { status: 400 });
   }
   const apiKey = process.env.OPENAI_API_KEY;
+  const streaming = req.headers.get("accept")?.includes(NDJSON) ?? false;
+
+  if (streaming) return streamGeneration(ctx, apiKey, req.signal);
 
   if (!apiKey) {
     return NextResponse.json(mockGenerate(ctx));
@@ -187,20 +190,10 @@ export async function POST(req: NextRequest) {
 
   try {
     const { user, system } = buildPrompt(ctx);
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    const res = await fetch(OPENAI_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-6-luna",
-        response_format: { type: "json_object" },
-        messages: [
-          { role: "system", content: system },
-          { role: "user", content: user }
-        ],
-      }),
+      headers: openAIHeaders(apiKey),
+      body: JSON.stringify(openAIBody(system, user)),
     });
     if (!res.ok) {
       const err = await res.text();
@@ -209,20 +202,134 @@ export async function POST(req: NextRequest) {
     }
     const data = await res.json();
     const text = data.choices?.[0]?.message?.content || "";
-    const clean = text.replace(/```json|```/g, "").trim();
-    try {
-      const parsed = JSON.parse(clean);
-      if (Array.isArray(parsed.targets)) {
-        parsed.targets = parsed.targets.map((target: Record<string, unknown>) =>
-          normalizeQuantitativeTarget(target, ctx.policy.company.reportingPeriod || "FY")
-        );
-      }
-      return NextResponse.json({ ...parsed, source: "openai" });
-    } catch {
-      return NextResponse.json({ text: clean, source: "openai" });
-    }
+    return NextResponse.json(finalizeModelOutput(text, ctx));
   } catch (e) {
     console.error("AI route failed", e);
     return NextResponse.json(mockGenerate(ctx));
   }
+}
+
+const NDJSON = "application/x-ndjson";
+const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
+const MODEL = "gpt-6-luna";
+
+const openAIHeaders = (apiKey: string) => ({ "Content-Type": "application/json", "Authorization": `Bearer ${apiKey}` });
+const openAIBody = (system: string, user: string, stream = false) => ({
+  model: MODEL,
+  response_format: { type: "json_object" },
+  ...(stream ? { stream: true } : {}),
+  messages: [
+    { role: "system", content: system },
+    { role: "user", content: user },
+  ],
+});
+
+/** Turns the model's raw JSON text into the response the builder expects. */
+function finalizeModelOutput(text: string, ctx: AIContext) {
+  const clean = text.replace(/```json|```/g, "").trim();
+  try {
+    const parsed = JSON.parse(clean);
+    if (Array.isArray(parsed.targets)) {
+      parsed.targets = parsed.targets.map((target: Record<string, unknown>) =>
+        normalizeQuantitativeTarget(target, ctx.policy.company.reportingPeriod || "FY")
+      );
+    }
+    return { ...parsed, source: "openai" };
+  } catch {
+    return { text: clean, source: "openai" };
+  }
+}
+
+type StreamEvent = { delta: string } | { done: true; result: unknown } | { error: string };
+
+/**
+ * Streams a generation as newline-delimited JSON: `delta` events carry the
+ * model's raw JSON text as it arrives, and one `done` event carries the final,
+ * normalised result. Without an API key the mock answer is streamed the same
+ * way so the writing experience matches.
+ */
+function streamGeneration(ctx: AIContext, apiKey: string | undefined, signal: AbortSignal) {
+  const encoder = new TextEncoder();
+  const body = new ReadableStream<Uint8Array>({
+    async start(controller) {
+      const send = (event: StreamEvent) => {
+        if (!signal.aborted) controller.enqueue(encoder.encode(`${JSON.stringify(event)}\n`));
+      };
+      try {
+        if (apiKey && await streamFromOpenAI(ctx, apiKey, signal, send)) return;
+        await streamMock(ctx, signal, send);
+      } catch (error) {
+        if (!signal.aborted) {
+          console.error("AI stream failed", error);
+          send({ error: "Generation failed." });
+        }
+      } finally {
+        try { controller.close(); } catch { /* the client already went away */ }
+      }
+    },
+  });
+  return new Response(body, {
+    headers: {
+      "Content-Type": `${NDJSON}; charset=utf-8`,
+      "Cache-Control": "no-cache, no-transform",
+      "X-Accel-Buffering": "no",
+    },
+  });
+}
+
+/** Returns false when OpenAI refuses the request before any text, so the caller can fall back. */
+async function streamFromOpenAI(ctx: AIContext, apiKey: string, signal: AbortSignal, send: (event: StreamEvent) => void) {
+  const { user, system } = buildPrompt(ctx);
+  const res = await fetch(OPENAI_URL, {
+    method: "POST",
+    headers: openAIHeaders(apiKey),
+    body: JSON.stringify(openAIBody(system, user, true)),
+    signal,
+  });
+  if (!res.ok || !res.body) {
+    console.error("OpenAI error", await res.text().catch(() => res.statusText));
+    return false;
+  }
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  let text = "";
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop() ?? "";
+    for (const line of lines) {
+      const data = line.startsWith("data:") ? line.slice(5).trim() : "";
+      if (!data || data === "[DONE]") continue;
+      try {
+        const delta = JSON.parse(data).choices?.[0]?.delta?.content;
+        if (typeof delta === "string" && delta) {
+          text += delta;
+          send({ delta });
+        }
+      } catch { /* keep-alive or partial line */ }
+    }
+  }
+  send({ done: true, result: finalizeModelOutput(text, ctx) });
+  return true;
+}
+
+const pause = (ms: number, signal: AbortSignal) => new Promise<void>((resolve) => {
+  const timer = setTimeout(resolve, ms);
+  signal.addEventListener("abort", () => { clearTimeout(timer); resolve(); }, { once: true });
+});
+
+/** Streams the mock answer in word-sized pieces at a model-like pace. */
+async function streamMock(ctx: AIContext, signal: AbortSignal, send: (event: StreamEvent) => void) {
+  const result = mockGenerate(ctx);
+  const pieces = JSON.stringify(result).match(/\s*\S{1,7}/g) ?? [];
+  await pause(450, signal);
+  for (const piece of pieces) {
+    if (signal.aborted) return;
+    send({ delta: piece });
+    await pause(16 + Math.random() * 34, signal);
+  }
+  send({ done: true, result });
 }

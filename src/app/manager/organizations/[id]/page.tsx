@@ -1,10 +1,8 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { ArrowLeft, Loader2, RefreshCw } from "lucide-react";
-import { normalizeStandaloneOrganization, StandaloneOrganizationEditor, type StandaloneOrganization } from "@/components/workspace/standalone-organization-editor";
+import { normalizeStandaloneOrganization, StandaloneOrganizationEditor, StandaloneOrganizationStatus, type StandaloneOrganization } from "@/components/workspace/standalone-organization-editor";
 
 export default function ManagerEditOrganizationPage() {
   const params = useParams<{ id: string }>();
@@ -32,5 +30,5 @@ export default function ManagerEditOrganizationPage() {
   React.useEffect(() => { const timer = window.setTimeout(() => void load(), 0); return () => { window.clearTimeout(timer); requestGeneration.current += 1; }; }, [load]);
 
   if (organization?.id === organizationId) return <StandaloneOrganizationEditor key={`${organization.id}:${organization.lockVersion}`} organizationId={organization.id} initial={organization} backHref={`/manager?orgId=${organization.id}`} />;
-  return <div className="mx-auto max-w-3xl"><Link href="/manager" className="inline-flex min-h-9 items-center gap-2 text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]"><ArrowLeft size={14} aria-hidden="true" />Organizations & policies</Link>{loading ? <p className="mt-8 flex items-center gap-3 text-sm text-[var(--color-muted)]" aria-live="polite"><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true" />Loading organization…</p> : error ? <div className="mt-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900" role="alert" aria-live="polite"><p>{error}</p><button type="button" onClick={() => void load()} className="mt-2 inline-flex min-h-10 items-center gap-2 rounded-md px-2 font-semibold hover:bg-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-800"><RefreshCw size={14} aria-hidden="true" />Retry</button></div> : null}</div>;
+  return <StandaloneOrganizationStatus backHref="/manager" backLabel="Organizations & policies" loading={loading} error={error} onRetry={() => void load()} />;
 }

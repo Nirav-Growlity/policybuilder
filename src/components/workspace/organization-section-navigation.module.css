@@ -1,0 +1,42 @@
+/* Sits on the masthead band. Only masthead tokens: the band flips light/dark with the theme. */
+.navigation { margin-top: 26px; }
+
+.links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid var(--ws-ink-field-border);
+  border-radius: 12px;
+  background: var(--ws-ink-field);
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 9px;
+  color: var(--ws-on-ink-muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 180ms ease;
+  touch-action: manipulation;
+}
+
+button.link { border: 0; background: transparent; font-family: inherit; cursor: pointer; }
+
+.link:hover { color: var(--ws-on-ink); background: var(--ws-ink-hover); }
+.current, .link[aria-current="page"] { color: var(--ws-on-ink); }
+.pill { --ws-pill-bg: var(--ws-ink-active); --ws-pill-shadow: inset 0 0 0 1px var(--ws-ink-field-border); }
+.link:focus-visible { outline: 2px solid var(--ws-cta); outline-offset: 2px; }
+
+@media (max-width: 480px) {
+  .links { display: flex; width: 100%; }
+  .link { flex: 1 1 auto; justify-content: center; padding: 0 10px; }
+}

@@ -2,19 +2,30 @@
 
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
-import { Panel, InfoBar } from "@/components/ui/panel";
-import { Input, Textarea } from "@/components/ui/input";
+import { Panel } from "@/components/ui/panel";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI, correctGrammar } from "@/lib/ai/client";
+import { correctGrammar, streamAI } from "@/lib/ai/client";
+import { ITEM_BREAK, keepFinishedSentences, useGenerationStreams } from "@/lib/ai/use-generation-streams";
+import { Composing, StreamField, StreamingItems, StreamingProse } from "@/components/ui/ai-stream";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { ListChecks, Plus, Sparkles, X } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
+import { AnimatePresence, motion } from "motion/react";
+import { AutosizeTextarea, StepRoot, authoring as ui, itemEnter } from "./authoring-ui";
 
 export function StepQualitative() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
-  const [busy, setBusy] = React.useState<Record<string, boolean>>({});
+  const streams = useGenerationStreams();
+  // Objectives that replace a streamed preview appear without an entrance, so the hand-off is invisible.
+  const [settledFrom, setSettledFrom] = React.useState<{ area: string; from: number } | null>(null);
+  React.useEffect(() => {
+    if (!settledFrom) return;
+    const frame = requestAnimationFrame(() => setSettledFrom(null));
+    return () => cancelAnimationFrame(frame);
+  }, [settledFrom]);
   const [newObj, setNewObj] = React.useState<Record<number, string>>({});
   const [checkingNewObjective, setCheckingNewObjective] = React.useState<Record<number, boolean>>({});
 
@@ -37,30 +48,37 @@ export function StepQualitative() {
   const generate = async (idx: number, customPrompt?: string) => {
     const area = areas[idx];
     if (!area) return;
-    const busyKey = `area-${idx}`;
-    setBusy((b) => ({ ...b, [busyKey]: true }));
+    const { reveal, signal } = streams.start(`area-${idx}`);
     try {
       const existing = policy.qualitative[area] || [];
-      const r = await callAI({
+      const r = await streamAI({
         type: "qualitative",
         policy,
         areaIndex: policy.focusAreas.indexOf(area),
         customPrompt,
         existingContent: existing,
+      }, {
+        signal,
+        onPartial: (partial) => reveal.set((partial.objectives ?? []).filter((item) => typeof item === "string").join(ITEM_BREAK)),
       });
-      if (r.objectives) {
+      let objectives = (r.objectives ?? []).filter((item) => typeof item === "string" && item.trim());
+      // A stopped stream keeps only the objectives that were finished.
+      if (signal.aborted) objectives = objectives.filter((item, i) => i < objectives.length - 1 || /[.!?]$/.test(item.trim()));
+      if (r.objectives || signal.aborted) {
         const existingLower = new Set(existing.map((s) => s.toLowerCase().trim()));
-        let uniqueNew = r.objectives.filter(
+        let uniqueNew = objectives.filter(
           (item) => !existingLower.has(item.toLowerCase().trim())
         );
         const reqCount = parseRequestedCount(customPrompt);
         if (reqCount && reqCount > 0) {
           uniqueNew = uniqueNew.slice(0, reqCount);
         }
-        if (uniqueNew.length === 0 && r.objectives.length > 0) {
-          push("No new unique objectives generated", "info");
+        if (uniqueNew.length === 0) {
+          push(signal.aborted ? "Stopped before an objective was finished" : "No new unique objectives generated", "info");
           return;
         }
+        await reveal.finish(uniqueNew.join(ITEM_BREAK));
+        setSettledFrom({ area, from: existing.length });
         updatePolicy((p) => ({
           qualitative: { ...p.qualitative, [area]: [...(p.qualitative[area] || []), ...uniqueNew] },
         }));
@@ -69,7 +87,7 @@ export function StepQualitative() {
     } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy((b) => ({ ...b, [busyKey]: false }));
+      streams.end(`area-${idx}`, reveal);
     }
   };
 
@@ -78,26 +96,31 @@ export function StepQualitative() {
     if (!current) return;
 
     const busyKey = `objective-${areaIndex}-${objectiveIndex}`;
-    setBusy((b) => ({ ...b, [busyKey]: true }));
+    const { reveal, signal } = streams.start(busyKey);
     try {
-      const r = await callAI({
+      const r = await streamAI({
         type: "qualitative",
         policy,
         areaIndex: policy.focusAreas.indexOf(area),
         customPrompt: `Generate exactly 1 new objective to replace this objective: "${current}".${customPrompt ? ` ${customPrompt}` : ""}`,
         existingContent: policy.qualitative[area] || [],
+      }, {
+        signal,
+        onPartial: (partial) => reveal.set(typeof partial.objectives?.[0] === "string" ? partial.objectives[0] : ""),
       });
-      const replacement = r.objectives?.[0]?.trim();
-      if (!replacement) {
-        push("No objective was generated", "info");
+      const generated = r.objectives?.[0]?.trim();
+      const replacement = signal.aborted && generated ? keepFinishedSentences(generated) : generated;
+      if (!replacement || (signal.aborted && !/[.!?]$/.test(replacement))) {
+        push(signal.aborted ? "Refine stopped. The objective was left unchanged." : "No objective was generated", "info");
         return;
       }
+      await reveal.finish(replacement);
       update(area, objectiveIndex, replacement);
       push("Objective updated", "success");
     } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy((b) => ({ ...b, [busyKey]: false }));
+      streams.end(busyKey, reveal);
     }
   };
 
@@ -139,70 +162,95 @@ export function StepQualitative() {
   };
 
   return (
-    <div className="space-y-6">
-      <InfoBar icon={<Sparkles size={16} className="text-[var(--color-forest)]" />}>
-        Write policy commitment statements for each focus area. These are qualitative — what the company commits to
-        doing, not measurable numbers.
-      </InfoBar>
-
+    <StepRoot>
       {areas.map((area, i) => {
         const objs = policy.qualitative[area] || [];
-        const isBusy = busy[`area-${i}`];
+        const areaStream = streams.reveal(`area-${i}`);
+        const isBusy = Boolean(areaStream);
         return (
           <Panel
             key={area}
-            title={`${i + 1}. ${area}`}
+            title={area}
             description={`${objs.length} objective${objs.length === 1 ? "" : "s"}`}
-            icon={<ListChecks size={17} strokeWidth={1.8} />}
+            icon={<span className={ui.areaNumber} aria-label={`Focus area ${i + 1}`}>{i + 1}</span>}
             actions={
               <AIActionButton
                 label="AI Generate"
                 loading={isBusy}
                 onGenerate={(prompt) => generate(i, prompt)}
+                onStop={() => streams.stop(`area-${i}`)}
               />
             }
           >
-            <ol className="space-y-2">
-              {objs.map((obj, oi) => (
-                <li
-                  key={oi}
-                  className="group flex items-start gap-3 rounded-lg border border-[var(--color-line)] bg-[var(--color-cream-2)]/45 px-3.5 py-2.5 transition-colors hover:border-[var(--color-line-2)]"
-                >
-                  <div className="w-5 h-5 rounded-full bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)] flex items-center justify-center flex-shrink-0 mt-1 text-[10px] font-bold">
-                    •
-                  </div>
-                  <Textarea
-                    rows={Math.max(1, Math.ceil((obj || "").length / 110))}
-                    value={obj}
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => update(area, oi, e.target.value)}
-                    className="min-w-0 border-transparent bg-transparent px-1.5 -mx-1.5 py-1 leading-6 text-[13px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] resize-y"
+            {objs.length > 0 || areaStream ? (
+              <ol className={ui.objectives}>
+                <AnimatePresence initial={false}>
+                  {objs.map((obj, oi) => {
+                    const refineStream = streams.reveal(`objective-${i}-${oi}`);
+                    const settled = settledFrom?.area === area && oi >= settledFrom.from;
+                    return (
+                    <motion.li key={oi} className={ui.objective} {...itemEnter} initial={settled ? false : itemEnter.initial}>
+                      {refineStream ? (
+                        <StreamingProse
+                          reveal={refineStream}
+                          label={`${area} objective ${oi + 1}`}
+                          className={`${ui.objectiveText} ${ui.streamCell}`}
+                          fallback={<span className={ui.dimmed}>{obj}</span>}
+                        />
+                      ) : (
+                      <AutosizeTextarea
+                        value={obj}
+                        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => update(area, oi, e.target.value)}
+                        aria-label={`${area} objective ${oi + 1}`}
+                        className={`${ui.inline} ${ui.objectiveText}`}
+                      />
+                      )}
+                      <div className={ui.rowActions}>
+                        <AIActionButton
+                          label="Refine"
+                          variant="ghost"
+                          loading={Boolean(refineStream)}
+                          onGenerate={(prompt) => generateObjective(area, i, oi, prompt)}
+                          onStop={() => streams.stop(`objective-${i}-${oi}`)}
+                          placeholder="e.g. Make this more specific to our manufacturing operations..."
+                        />
+                        <button
+                          type="button"
+                          onClick={() => remove(area, oi)}
+                          className={ui.iconButton}
+                          data-tone="danger"
+                          aria-label="Remove objective"
+                        >
+                          <X size={15} />
+                        </button>
+                      </div>
+                    </motion.li>
+                    );
+                  })}
+                </AnimatePresence>
+                {areaStream ? (
+                  <StreamingItems
+                    reveal={areaStream}
+                    waiting={<li className={ui.objective} aria-busy="true"><div className={`${ui.objectiveText} ${ui.streamCell}`}><Composing lines={2} compact note="Writing objectives for this focus area" /></div></li>}
+                    render={([text], index, writing) => (
+                      <li key={`streaming-${index}`} className={ui.objective} aria-busy={writing || undefined}>
+                        <StreamField text={text ?? ""} writing={writing} className={`${ui.objectiveText} ${ui.streamCell}`} />
+                        <div className={`${ui.rowActions} ${ui.streamSpacer}`} aria-hidden="true" inert>
+                          <AIActionButton label="Refine" variant="ghost" onGenerate={() => undefined} />
+                          <span className={ui.iconButton}><X size={15} /></span>
+                        </div>
+                      </li>
+                    )}
                   />
-                  <div className="flex shrink-0 items-center gap-1 self-center">
-                    <AIActionButton
-                      label="Refine"
-                      variant="ghost"
-                      loading={busy[`objective-${i}-${oi}`]}
-                      onGenerate={(prompt) => generateObjective(area, i, oi, prompt)}
-                      placeholder="e.g. Make this more specific to our manufacturing operations..."
-                      className="text-[12px]"
-                    />
-                    <button
-                      onClick={() => remove(area, oi)}
-                      className="rounded-md p-1.5 text-[var(--color-muted)] transition-colors hover:bg-[#fdecec] hover:text-[#9b2929]"
-                      aria-label="Remove objective"
-                    >
-                      <X size={14} />
-                    </button>
-                  </div>
-                </li>
-              ))}
-              {objs.length === 0 && (
-                <li className="text-[12.5px] text-[var(--color-muted)] italic px-1">
-                  No objectives yet. Add one below or use AI Generate.
-                </li>
-              )}
-            </ol>
-            <div className="mt-4 flex gap-2 border-t border-[var(--color-line)] pt-4">
+                ) : null}
+              </ol>
+            ) : (
+              <div className={`${ui.empty} mb-3`}>
+                No objectives yet. Add one below or use AI Generate.
+              </div>
+            )}
+            <div className={ui.composer}>
+              <span className={ui.composerIcon} aria-hidden="true"><Plus size={16} /></span>
               <Input
                 value={newObj[i] || ""}
                 data-grammar-checking={checkingNewObjective[i] ? "true" : undefined}
@@ -214,16 +262,17 @@ export function StepQualitative() {
                   }
                 }}
                 placeholder="Add a qualitative objective..."
-                className="border-dashed text-[13px]"
+                aria-label={`Add an objective to ${area}`}
+                className={ui.composerInput}
                 disabled={checkingNewObjective[i]}
               />
-              <Button variant="primary" size="md" icon={<Plus size={14} />} onClick={() => { void add(area, i); }} disabled={checkingNewObjective[i]}>
-                Add Objective
+              <Button variant="primary" size="sm" loading={checkingNewObjective[i]} onClick={() => { void add(area, i); }} disabled={checkingNewObjective[i]} className={ui.composerAdd}>
+                Add objective
               </Button>
             </div>
           </Panel>
         );
       })}
-    </div>
+    </StepRoot>
   );
 }

@@ -1,0 +1,76 @@
+/* The sign-in sheet over the coastline photo. Geometry matches the home hero so the two read as one scene. */
+.scene {
+  --login-sans: "PolicyCraft Home Sans", system-ui, sans-serif;
+  --login-mono: var(--font-mono, ui-monospace, "SFMono-Regular", Menlo, monospace);
+  --login-bg: #f5f8fd;
+  --login-border: #d3dce9;
+  --login-sheet: #ffffff;
+  --login-ink: #111c30;
+  --login-body: #46546b;
+  --login-faint: #61718a;
+  --login-accent: var(--pc-brand);
+  --pc-page: var(--login-bg);
+  --pc-panel: var(--login-sheet);
+  --pc-text: var(--login-ink);
+  --pc-muted: var(--login-body);
+  --pc-divider: var(--login-border);
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 100%;
+  padding: clamp(2.5rem, 7vh, 4.5rem) 1.25rem 3rem;
+  place-items: start center;
+  overflow: hidden;
+  color: var(--login-ink);
+  background: var(--login-bg);
+  font-family: var(--login-sans);
+}
+:global([data-pc-theme="dark"]) .scene {
+  --login-bg: #000000;
+  --login-border: #262626;
+  --login-sheet: #0a0a0a;
+  --login-ink: #ededed;
+  --login-body: #a1a1a1;
+  --login-faint: #8f8f8f;
+  --login-accent: var(--pc-brand);
+  --pc-selection-text: var(--pc-brand);
+}
+.page { min-height: clamp(650px, calc(100svh - 74px), 820px); }
+
+.image { position: absolute; z-index: 0; inset: 24% 0 0; overflow: hidden; mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 74%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); mask-composite: intersect; }
+.imageFill { object-fit: cover; object-position: center 58%; }
+.shade { position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, var(--login-bg) 0%, var(--login-bg) 30%, color-mix(in srgb, var(--login-bg) 82%, transparent) 42%, transparent 67%); }
+
+.sheet {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 420px);
+  padding: 1.15rem 1.6rem 1.25rem;
+  color: var(--login-ink);
+  background: var(--login-sheet);
+  border: 1px solid var(--login-border);
+  border-radius: 0.8rem;
+  box-shadow: 0 22px 55px rgb(8 23 46 / 20%);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.sheetTopRow { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 1.5rem; }
+.sheetTop { color: var(--login-faint); font-family: var(--login-mono); font-size: 0.56rem; letter-spacing: 0.035em; }
+.close { display: inline-flex; align-items: center; gap: 0.35rem; margin: -0.25rem -0.4rem -0.25rem 0; padding: 0.35rem 0.45rem; color: var(--login-body); background: none; border: 0; border-radius: 0.5rem; font: inherit; font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: color 160ms ease, background-color 160ms ease; }
+.close:hover { color: var(--login-accent); background: color-mix(in srgb, var(--login-accent) 8%, transparent); }
+.close:focus-visible { outline: 2px solid var(--login-accent); outline-offset: 2px; }
+.sheetRule { height: 1px; margin-top: 0.75rem; background: var(--login-border); }
+.title { margin: 1.5rem 0 0; font-family: var(--login-sans); font-size: clamp(2rem, 4.6vw, 2.45rem); font-weight: 600; letter-spacing: -0.065em; line-height: 1; text-wrap: balance; }
+.description { margin: 0.8rem 0 0; color: var(--login-body); font-size: 0.9rem; line-height: 1.55; text-wrap: pretty; }
+.form { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.6rem; }
+.emailAction { align-self: flex-start; margin-top: -0.7rem; padding: 2px 0; color: var(--login-accent); background: none; border: 0; font: inherit; font-size: 12px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.emailAction:focus-visible { outline: 2px solid var(--login-accent); outline-offset: 2px; border-radius: 2px; }
+.error { margin: -2px 0 0; padding: 10px 12px; color: var(--pc-error); background: var(--pc-error-surface); border-radius: 8px; font-size: 13px; line-height: 1.45; }
+.submit { width: 100%; min-height: 48px; margin-top: 0.2rem; border-radius: 0.75rem; }
+.sheetFoot { margin: 1.4rem 0 0; padding-top: 0.75rem; color: var(--login-faint); border-top: 1px solid var(--login-border); font-size: 0.72rem; line-height: 1.5; }
+
+@media (max-width: 1023px) { .page { min-height: clamp(650px, calc(100svh - 68px), 790px); } }
+@media (max-width: 480px) {
+  .scene { padding-inline: 1rem; }
+  .sheet { padding-inline: 1.2rem; }
+}

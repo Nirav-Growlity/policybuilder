@@ -3,9 +3,9 @@
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
 import { Panel, InfoBar, Badge } from "@/components/ui/panel";
-import { Field, Input, Textarea } from "@/components/ui/input";
+import { Field, Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Check, Plus, RefreshCw, Target, Trash2, LockKeyhole } from "lucide-react";
+import { Plus, RefreshCw, Target, Trash2, LockKeyhole } from "lucide-react";
 import { useToast } from "@/components/ui/toast";
 import type { FocusAreaSelectionItem, Policy } from "@/lib/types";
 import { getPolicyProfile } from "@/lib/constants";
@@ -17,6 +17,7 @@ import {
   policyFocusAreaCatalog,
   withFocusAreaCatalogSelection,
 } from "@/lib/focus-area-catalog";
+import { AutosizeTextarea, Checkmark, StepRoot, authoring as ui } from "./authoring-ui";
 
 type PolicyDraft = ReturnType<typeof useBuilder.getState>["policy"];
 
@@ -83,19 +84,6 @@ function newFocusAreaItem(label: string): FocusAreaSelectionItem {
   };
 }
 
-function FocusAreaCheckmark({ checked }: { checked: boolean }) {
-  return (
-    <span
-      aria-hidden="true"
-      className={`grid h-[18px] w-[18px] shrink-0 place-items-center rounded-[5px] border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--color-forest)]/35 peer-focus-visible:ring-offset-2 ${checked
-        ? "border-[var(--color-forest)] bg-[var(--color-forest)] text-white"
-        : "border-[var(--color-line-2)] bg-[var(--color-paper)] text-transparent group-hover:border-[var(--color-forest)]"
-      }`}
-    >
-      {checked ? <Check size={12} strokeWidth={3} /> : null}
-    </span>
-  );
-}
 
 export function StepFocus() {
   const { policy, updatePolicy } = useBuilder();
@@ -114,7 +102,6 @@ export function StepFocus() {
   const editableAreas = editableFocusAreaItems(policy, catalogIsApplied);
   const currentCompanyCatalog = getCompanyFocusAreaCatalog(policy.company, policy.policyType);
   const preservedOldCatalog = Boolean(appliedCatalog && currentCompanyCatalog?.key !== appliedCatalog.key);
-  const coverageDescription = policy.company.industryDetail || policy.company.subCategory || policy.company.industry;
 
   const refreshSynonym = (
     currentLabel: string,
@@ -244,75 +231,71 @@ export function StepFocus() {
     });
   };
 
-  return (
-    <div className="space-y-6">
-      <InfoBar icon={<Target size={16} className="text-[var(--color-forest)]" />}>
-        {catalog
-          ? "Select the areas to include in this policy. Workbook-defined areas can be checked or unchecked but cannot be renamed or removed. Add your own areas below."
-          : "Select the policy areas to include. You can rename or remove the profile areas, and add your own below."}
-      </InfoBar>
+  const selectedFixedCount = catalog ? catalog.areas.filter((area) => selectedFixedIds.has(area.id)).length : 0;
+  const selectedEditableCount = editableAreas.filter((area) => area.selected).length;
 
+  return (
+    <StepRoot>
       <Panel
         title="Key focus areas"
-        description={coverageDescription ? `Policy coverage for ${coverageDescription}.` : "Choose the themes this policy will cover."}
         icon={<Target size={17} strokeWidth={1.8} />}
         actions={<Badge variant="muted">{policy.focusAreas.filter(Boolean).length} selected</Badge>}
       >
         {catalog ? (
-          <section aria-labelledby="fixed-focus-areas-heading" className="space-y-3">
-            <div>
-              <h4 id="fixed-focus-areas-heading" className="text-[12px] font-semibold uppercase tracking-wide text-[var(--color-ink-2)]">
+          <section aria-labelledby="fixed-focus-areas-heading">
+            <div className={ui.groupHead}>
+              <h4 id="fixed-focus-areas-heading" className={ui.groupTitle}>
                 Fixed areas for {catalog.subSector}
               </h4>
-              <p className="mt-1 text-[12px] text-[var(--color-muted)]">These workbook-defined labels are fixed. Select the ones to include.</p>
+              <span className={ui.groupCount}>{selectedFixedCount} of {catalog.areas.length}</span>
             </div>
             {preservedOldCatalog ? (
-              <InfoBar variant="warn" icon={<LockKeyhole size={14} />}>
-                The company sub-sector has changed. This draft keeps the fixed set it was already using; changing company details does not replace saved focus areas.
-              </InfoBar>
+              <div className="mb-3">
+                <InfoBar variant="warn" icon={<LockKeyhole size={14} />}>
+                  The company sub-sector has changed. This draft keeps the fixed set it was already using; changing company details does not replace saved focus areas.
+                </InfoBar>
+              </div>
             ) : null}
             {!catalogIsApplied && policy.focusAreaSelection?.mode !== "profile-default" ? (
-              <InfoBar>
-                Existing focus areas are preserved. Select any fixed areas you want to add to this draft.
-              </InfoBar>
+              <div className="mb-3">
+                <InfoBar>
+                  Existing focus areas are preserved. Select any fixed areas you want to add to this draft.
+                </InfoBar>
+              </div>
             ) : null}
-            <ul className="space-y-2">
+            <ul className={ui.itemList}>
               {catalog.areas.map((area) => {
                 const checked = selectedFixedIds.has(area.id);
                 const currentLabel = catalogIsApplied && selection?.mode === "catalog"
                   ? selection.fixedAreaLabelOverrides?.[area.id] ?? area.label
                   : area.label;
                 return (
-                  <li key={area.id}>
-                    <div className={`group flex min-h-[52px] items-center gap-3 rounded-xl border px-4 py-2.5 transition-colors duration-150 ${checked
-                      ? "border-[#c7ded1] bg-[var(--color-forest-soft)]/55"
-                      : "border-[var(--color-line)] bg-[var(--color-cream-2)]/50 hover:border-[var(--color-line-2)] hover:bg-[var(--color-paper)]"
-                    }`}>
-                      <label className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 py-1">
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          onChange={(event) => toggleFixedArea(area.id, event.target.checked)}
-                          className="peer sr-only appearance-none"
-                          aria-label={`Include ${currentLabel}`}
-                        />
-                        <FocusAreaCheckmark checked={checked} />
-                        <span className="min-w-0 flex-1 text-[13.5px] leading-relaxed text-[var(--color-ink)]">{currentLabel}</span>
-                      </label>
-                      <button
-                        type="button"
-                        onClick={() => refreshSynonym(
-                          currentLabel,
-                          area.label,
-                          (nextLabel) => updateFixedAreaLabel(area.id, area.label, nextLabel),
-                        )}
-                        className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[var(--color-muted)] transition-colors hover:bg-[var(--color-forest-soft)] hover:text-[var(--color-forest)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-forest)]/30"
-                        aria-label={`Show a random alternative for ${currentLabel}`}
-                        title="Show a random alternative"
-                      >
-                        <RefreshCw size={14} />
-                      </button>
-                    </div>
+                  <li key={area.id} className={ui.itemRow} data-selected={checked || undefined}>
+                    <label className={ui.itemLabel}>
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={(event) => toggleFixedArea(area.id, event.target.checked)}
+                        className="sr-only"
+                        aria-label={`Include ${currentLabel}`}
+                      />
+                      <Checkmark checked={checked} />
+                      <span className="min-w-0 flex-1">{currentLabel}</span>
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => refreshSynonym(
+                        currentLabel,
+                        area.label,
+                        (nextLabel) => updateFixedAreaLabel(area.id, area.label, nextLabel),
+                      )}
+                      className={ui.iconButton}
+                      data-tone="brand"
+                      aria-label={`Show a random alternative for ${currentLabel}`}
+                      title="Show a random alternative"
+                    >
+                      <RefreshCw size={15} className={ui.spin} />
+                    </button>
                   </li>
                 );
               })}
@@ -321,107 +304,105 @@ export function StepFocus() {
         ) : null}
 
         {editableAreas.length > 0 ? (
-          <section aria-labelledby="custom-focus-areas-heading" className="mt-5 space-y-3">
-            <div>
-              <div className="flex items-center justify-between gap-3">
-                <h4 id="custom-focus-areas-heading" className="text-[12px] font-semibold uppercase tracking-wide text-[var(--color-ink-2)]">
-                  {catalog ? "Your focus areas" : "Default focus areas"}
-                </h4>
-                <span className="text-[11px] text-[var(--color-muted)]">Editable</span>
-              </div>
-              {!catalog ? (
-                <p className="mt-1 text-[12px] text-[var(--color-muted)]">Choose which profile areas to include, or edit and remove them.</p>
-              ) : null}
+          <section aria-labelledby="custom-focus-areas-heading" className={catalog ? "mt-6" : undefined}>
+            <div className={ui.groupHead}>
+              <h4 id="custom-focus-areas-heading" className={ui.groupTitle}>
+                {catalog ? "Your focus areas" : "Default focus areas"}
+              </h4>
+              <span className={ui.groupCount}>{selectedEditableCount} of {editableAreas.length}</span>
             </div>
-            <ul className="space-y-2">
-              {editableAreas.map((area, i) => {
-                const profileDefaultIndex = /^profile-(\d+)$/.exec(area.id);
-                const profileDefaultLabel = profileDefaultIndex
-                  ? getPolicyProfile(policy.policyType).focusAreas[Number(profileDefaultIndex[1])]
-                  : undefined;
-                const profileDefaultSynonyms = profileDefaultLabel
-                  ? getSystemFocusAreaSynonyms(profileDefaultLabel)
-                  : null;
-                const canRefresh = Boolean(profileDefaultLabel && profileDefaultSynonyms?.some(
-                  (label) => normalizeSubSector(label) === normalizeSubSector(area.label),
-                )) || Boolean(profileDefaultLabel && normalizeSubSector(profileDefaultLabel) === normalizeSubSector(area.label));
-                return (
-                  <li
-                    key={area.id}
-                    className={`group flex min-h-[52px] items-center gap-3 rounded-xl border px-4 py-2.5 transition-colors duration-150 ${area.selected
-                      ? "border-[#c7ded1] bg-[var(--color-forest-soft)]/55"
-                      : "border-[var(--color-line)] bg-[var(--color-cream-2)]/50 hover:border-[var(--color-line-2)] hover:bg-[var(--color-paper)]"
-                    }`}
-                  >
-                    <label htmlFor={`focus-area-${area.id}`} className="grid shrink-0 cursor-pointer place-items-center">
-                      <input
-                        id={`focus-area-${area.id}`}
-                        type="checkbox"
-                        checked={area.selected}
-                        onChange={(event) => toggleEditableArea(area.id, event.target.checked)}
-                        className="peer sr-only appearance-none"
-                        aria-label={`Include ${area.label || `focus area ${i + 1}`}`}
+            <ul className={ui.itemList}>
+                {editableAreas.map((area, i) => {
+                  const profileDefaultIndex = /^profile-(\d+)$/.exec(area.id);
+                  const profileDefaultLabel = profileDefaultIndex
+                    ? getPolicyProfile(policy.policyType).focusAreas[Number(profileDefaultIndex[1])]
+                    : undefined;
+                  const profileDefaultSynonyms = profileDefaultLabel
+                    ? getSystemFocusAreaSynonyms(profileDefaultLabel)
+                    : null;
+                  const canRefresh = Boolean(profileDefaultLabel && profileDefaultSynonyms?.some(
+                    (label) => normalizeSubSector(label) === normalizeSubSector(area.label),
+                  )) || Boolean(profileDefaultLabel && normalizeSubSector(profileDefaultLabel) === normalizeSubSector(area.label));
+                  return (
+                    <li
+                      key={area.id}
+                      className={ui.itemRow}
+                      data-selected={area.selected || undefined}
+                    >
+                      <label htmlFor={`focus-area-${area.id}`} className="grid shrink-0 cursor-pointer place-items-center">
+                        <input
+                          id={`focus-area-${area.id}`}
+                          type="checkbox"
+                          checked={area.selected}
+                          onChange={(event) => toggleEditableArea(area.id, event.target.checked)}
+                          className="sr-only"
+                          aria-label={`Include ${area.label || `focus area ${i + 1}`}`}
+                        />
+                        <Checkmark checked={area.selected} />
+                      </label>
+                      <AutosizeTextarea
+                        value={area.label}
+                        onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => updateEditableArea(area.id, event.target.value)}
+                        aria-label={`Edit focus area ${i + 1}`}
+                        className={`${ui.inline} ${ui.itemText}`}
                       />
-                      <FocusAreaCheckmark checked={area.selected} />
-                    </label>
-                    <Textarea
-                      rows={Math.max(1, Math.ceil((area.label || "").length / 72))}
-                      value={area.label}
-                      onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => updateEditableArea(area.id, event.target.value)}
-                      aria-label={`Edit focus area ${i + 1}`}
-                      className="min-w-0 flex-1 resize-y border-transparent bg-transparent px-2 text-[13.5px] hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)]"
-                    />
-                    {canRefresh ? (
-                    <button
-                      type="button"
-                      onClick={() => refreshSynonym(
-                        area.label,
-                        profileDefaultLabel!,
-                        (nextLabel) => updateEditableArea(area.id, nextLabel, area.label),
-                      )}
-                      className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[var(--color-muted)] transition-colors hover:bg-[var(--color-forest-soft)] hover:text-[var(--color-forest)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-forest)]/30"
-                      aria-label={`Show a random alternative for ${area.label}`}
-                      title="Show a random alternative"
-                    >
-                      <RefreshCw size={14} />
-                    </button>
-                    ) : null}
-                    <button
-                      type="button"
-                      onClick={() => removeEditableArea(area.id)}
-                      className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-[var(--color-muted)] transition-colors hover:bg-[#fdecec] hover:text-[#9b2929] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9b2929]/30"
-                      aria-label={`Remove focus area ${i + 1}`}
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </li>
-                );
-              })}
+                      <div className={ui.rowActions}>
+                        {canRefresh ? (
+                          <button
+                            type="button"
+                            onClick={() => refreshSynonym(
+                              area.label,
+                              profileDefaultLabel!,
+                              (nextLabel) => updateEditableArea(area.id, nextLabel, area.label),
+                            )}
+                            className={ui.iconButton}
+                            data-tone="brand"
+                            aria-label={`Show a random alternative for ${area.label}`}
+                            title="Show a random alternative"
+                          >
+                            <RefreshCw size={15} className={ui.spin} />
+                          </button>
+                        ) : null}
+                        <button
+                          type="button"
+                          onClick={() => removeEditableArea(area.id)}
+                          className={ui.iconButton}
+                          data-tone="danger"
+                          aria-label={`Remove focus area ${i + 1}`}
+                        >
+                          <Trash2 size={15} />
+                        </button>
+                      </div>
+                    </li>
+                  );
+                })}
             </ul>
           </section>
         ) : null}
 
-        <div className="mt-6 border-t border-[var(--color-line)] pt-5">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
-            <Field label="Add your own focus area" className="min-w-0">
-              <Input
-                value={newArea}
-                onChange={(event) => setNewArea(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    event.preventDefault();
-                    add();
-                  }
-                }}
-                placeholder="Type a focus area and press Enter…"
-              />
-            </Field>
-            <Button variant="primary" size="md" icon={<Plus size={15} />} onClick={add} disabled={!newArea.trim()} className="w-full sm:w-auto">
+        <hr className={ui.divider} />
+        <Field label="Add your own focus area" className="min-w-0" htmlFor="focus-area-new">
+          <div className={ui.composer}>
+            <span className={ui.composerIcon} aria-hidden="true"><Plus size={16} /></span>
+            <Input
+              id="focus-area-new"
+              value={newArea}
+              onChange={(event) => setNewArea(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  add();
+                }
+              }}
+              placeholder="Type a focus area and press Enter…"
+              className={ui.composerInput}
+            />
+            <Button variant="primary" size="sm" onClick={add} disabled={!newArea.trim()} className={ui.composerAdd}>
               Add
             </Button>
           </div>
-        </div>
+        </Field>
       </Panel>
-    </div>
+    </StepRoot>
   );
 }

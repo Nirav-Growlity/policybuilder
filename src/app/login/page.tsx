@@ -1,104 +1,31 @@
 "use client";
 
 import * as React from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { ArrowRight, Leaf, Loader2, LockKeyhole } from "lucide-react";
-import { signIn } from "@/lib/auth-client";
-import type { PolicyCraftAccess } from "@/lib/policycraft-access-types";
+import Link from "next/link";
+import { ArrowLeft, Leaf } from "lucide-react";
+import { LoginScene } from "@/components/auth/login-scene";
+import { ApplicationSurface } from "@/components/ui/application-surface";
+import styles from "./page.module.css";
 
-function safeNext(value: string | null, access: PolicyCraftAccess): string {
-  const path = value?.startsWith("/") && !value.startsWith("//") ? value : "";
-  if (path.startsWith("/builder")) return path;
-  if (access.actor.role === "admin" && path.startsWith("/admin")) return path;
-  if (access.actor.role === "manager" && path.startsWith("/manager")) return path;
-  if (access.actor.role === "user" && (path.startsWith("/drafts") || path.startsWith("/dashboard"))) return path.replace(/^\/dashboard/, "/drafts");
-  return access.homeHref.startsWith("/") && !access.homeHref.startsWith("//") ? access.homeHref : "/";
-}
-
-function LoginPageContent() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const invitedEmail = searchParams.get("email")?.trim() || "";
-  const [email, setEmail] = React.useState(invitedEmail);
-  const [emailLocked, setEmailLocked] = React.useState(Boolean(invitedEmail));
-  const [password, setPassword] = React.useState("");
-  const [error, setError] = React.useState("");
-  const [submitting, setSubmitting] = React.useState(false);
-
-  React.useEffect(() => {
-    let active = true;
-    void fetch("/api/policycraft/access", { cache: "no-store" }).then(async (response) => {
-      if (!response.ok) return null;
-      return response.json() as Promise<PolicyCraftAccess>;
-    }).then((access) => {
-      if (active && access) router.replace(safeNext(searchParams.get("next"), access));
-    }).catch(() => undefined);
-    return () => { active = false; };
-  }, [router, searchParams]);
-
-  async function submit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitting(true);
-    setError("");
-    const result = await signIn.email({ email: email.trim(), password });
-    if (result.error) {
-      setError(result.error.message || "Email or password is incorrect.");
-      setSubmitting(false);
-      return;
-    }
-    const accessResponse = await fetch("/api/policycraft/access", { cache: "no-store" });
-    if (!accessResponse.ok) {
-      setError("You signed in, but your workspace could not be loaded. Contact an administrator.");
-      setSubmitting(false);
-      return;
-    }
-    const access = await accessResponse.json() as PolicyCraftAccess;
-    router.replace(safeNext(searchParams.get("next"), access));
-    router.refresh();
-  }
-
-  return (
-    <main className="min-h-screen bg-[var(--color-cream)] px-6 py-12 text-[var(--color-ink)]">
-      <div className="mx-auto flex min-h-[75vh] max-w-md items-center justify-center">
-        <section className="w-full rounded-3xl border border-[var(--color-line)] bg-white p-8 shadow-[var(--shadow-lift)]">
-          <div className="mb-8 flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-forest)] text-white">
-              <Leaf size={20} />
-            </div>
-            <div>
-              <div className="font-display text-lg font-semibold">PolicyCraft</div>
-              <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)]">Sustainability Suite</div>
-            </div>
-          </div>
-          <h1 className="font-display text-3xl font-semibold tracking-tight">Sign in to your workspace</h1>
-          <p className="mt-2 text-sm leading-6 text-[var(--color-ink-2)]">Use your existing ESG account. The ESG application does not need to be running.</p>
-          <form className="mt-7 space-y-4" onSubmit={submit}>
-            <label className="block text-sm font-medium">
-              Email
-              <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)] read-only:bg-[var(--color-cream-2)]" type="email" name="email" required autoComplete="username" spellCheck={false} readOnly={emailLocked} value={email} onChange={(event) => setEmail(event.target.value)} />
-            </label>
-            {emailLocked ? <button type="button" className="text-xs font-semibold text-[var(--color-forest)] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]" onClick={() => { setEmailLocked(false); setEmail(""); }}>Use another email</button> : null}
-            <label className="block text-sm font-medium">
-              Password
-              <input className="mt-1.5 h-11 w-full rounded-lg border border-[var(--color-line-2)] px-3 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]" type="password" name="password" required autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
-            </label>
-            {error ? <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p> : null}
-            <button className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] text-sm font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] disabled:cursor-wait disabled:opacity-70" type="submit" disabled={submitting}>
-              {submitting ? <Loader2 size={16} className="animate-spin" /> : <LockKeyhole size={16} />}
-              {submitting ? "Signing in…" : "Sign in"}
-              {!submitting ? <ArrowRight size={16} /> : null}
-            </button>
-          </form>
-        </section>
-      </div>
-    </main>
-  );
-}
-
+// Hard loads and shared links land here. From the home page the sheet opens in place instead.
 export default function LoginPage() {
   return (
-    <React.Suspense fallback={<main className="min-h-screen bg-[var(--color-cream)]" />}>
-      <LoginPageContent />
-    </React.Suspense>
+    <ApplicationSurface className={styles.surface}>
+      <a className={styles.skipLink} href="#login-main">Skip to sign in</a>
+      <header className={styles.header}>
+        <div className={styles.headerInner}>
+          <Link href="/" className={styles.brand} aria-label="PolicyCraft home">
+            <span className={styles.brandMark}><Leaf size={17} strokeWidth={1.8} aria-hidden="true" /></span>
+            <span className={styles.brandText}><strong>PolicyCraft</strong><small>Sustainability Suite</small></span>
+          </Link>
+          <Link href="/" className={styles.backLink}><ArrowLeft size={14} aria-hidden="true" />Back to home</Link>
+        </div>
+      </header>
+      <main id="login-main" aria-label="Sign in">
+        <React.Suspense fallback={null}>
+          <LoginScene variant="page" />
+        </React.Suspense>
+      </main>
+    </ApplicationSurface>
   );
 }

@@ -8,8 +8,98 @@ import { templatePreviewPolicy } from "../sample-policies";
 import { generateDocx } from "./generate";
 import { preparePolicyForDocxExport } from "./export-assets";
 import { usePolicyCraftScope } from "../policycraft-client-scope";
+import { FONT_FAMILY_OPTIONS, pickerFontFamilies } from "../typography";
+import { fontFaceCssFor } from "../document-fonts";
+import { embeddedDocumentFonts } from "./document-fonts";
+
+// Justified prose is split around native optional hyphens; rejoin it to
+// compare the text a reader sees.
+const visibleText = (xml: string) => xml.replaceAll(`</w:t><w:softHyphen/><w:t xml:space="preserve">`, "");
 
 const svg = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40"><rect width="120" height="40" fill="#126845"/></svg>');
+
+test("long quantitative target groups can flow across Word pages with repeating headers", async () => {
+  for (const theme of ["operations-guide", "sustainability-charter", "people-charter"]) {
+    const policy = templatePreviewPolicy(theme, "environmental");
+    policy.quantitative = [{
+      ...policy.quantitative[0],
+      targets: Array.from({ length: 4 }, (_, index) => ({
+        ...policy.quantitative[0].targets[0],
+        target: `Long target ${index + 1}: ${"Keep documented evidence and accountable owners across all operating locations. ".repeat(12)}`,
+      })),
+    }];
+    const zip = await JSZip.loadAsync(await generateDocx(policy));
+    const xml = visibleText(await zip.file("word/document.xml")!.async("string"));
+    const table = [...xml.matchAll(/<w:tbl>[\s\S]*?<\/w:tbl>/g)].find(([value]) => value.includes("Long target 1:"))?.[0];
+    assert.ok(table, "the long target group should remain a table");
+    const rows = [...table.matchAll(/<w:tr>[\s\S]*?<\/w:tr>/g)].map(([value]) => value);
+    if (theme === "operations-guide") {
+      assert.equal(rows.length, 2, "one header and one target-group row should be retained");
+      assert.match(rows[0], /<w:tblHeader\b/, "continuation pages should repeat the table header");
+      assert.match(rows[0], /<w:cantSplit\b/, "the compact header should remain together");
+    } else assert.equal(rows.length, 1, "the target-group band should retain its single row");
+    const targetRow = rows[rows.length - 1];
+    assert.doesNotMatch(targetRow, /<w:cantSplit\b/, `${theme}: an oversized target group must be allowed to flow`);
+    for (let index = 1; index <= 4; index++) assert.ok(targetRow.includes(`Long target ${index}:`), "flowing the row must retain every target");
+  }
+});
+
+test("active theme fonts are embedded with real bold faces so Word does not synthesize them", async () => {
+  for (const fixture of [
+    { theme: "standard-pack", family: "Source Sans 3", italic: true },
+    { theme: "executive-brief", family: "IBM Plex Sans", italic: false },
+    { theme: "controlled-manual", family: "Public Sans", italic: false },
+    { theme: "governance-register", family: "Inter", italic: false },
+    { theme: "operations-guide", family: "Atkinson Hyperlegible", italic: true },
+    { theme: "sustainability-charter", family: "Libre Caslon Text", italic: true },
+    { theme: "people-charter", family: "Source Serif 4", italic: true },
+    { theme: "metrics-ledger", family: "IBM Plex Mono", italic: false },
+  ]) {
+    const zip = await JSZip.loadAsync(await generateDocx(templatePreviewPolicy(fixture.theme, "environmental")));
+    const document = await zip.file("word/document.xml")!.async("string");
+    const fontTable = await zip.file("word/fontTable.xml")!.async("string");
+    const relationships = await zip.file("word/_rels/fontTable.xml.rels")!.async("string");
+    const settings = await zip.file("word/settings.xml")!.async("string");
+    assert.match(settings, /<w:embedTrueTypeFonts\/>/, `${fixture.theme}: Word should keep the embedded fonts on save`);
+
+    const family = fixture.family;
+    assert.ok(document.includes(`w:ascii="${family}"`), `${fixture.theme}: document runs should request ${family}`);
+    const escapedFamily = family.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const fontRecord = fontTable.match(new RegExp(`<w:font w:name="${escapedFamily}">[\\s\\S]*?<\\/w:font>`));
+    assert.ok(fontRecord, `${fixture.theme}: font table should declare ${family}`);
+    assert.equal(/<w:embedItalic\b/.test(fontRecord[0]), fixture.italic, `${fixture.theme}: italic embedding should follow the faces the PDF loads`);
+    const faces: Buffer[] = [];
+    for (const element of ["embedRegular", "embedBold"]) {
+      const relationshipId = fontRecord[0].match(new RegExp(`<w:${element} r:id="([^"]+)"`));
+      assert.ok(relationshipId, `${fixture.theme}: font table should embed ${family} through ${element}`);
+      const relationship = relationships.match(new RegExp(`<Relationship[^>]*Id="${relationshipId[1]}"[^>]*Target="fonts/font(\\d+)\\.odttf"`));
+      assert.ok(relationship, `${fixture.theme}: ${family} ${element} should reference an embedded OpenType part`);
+      const embeddedFont = await zip.file(`word/fonts/font${relationship[1]}.odttf`)!.async("nodebuffer");
+      assert.ok(embeddedFont.length > 10_000, `${fixture.theme}: ${family} embedded data should contain the font face`);
+      faces.push(embeddedFont);
+    }
+    assert.ok(!faces[0].equals(faces[1]), `${fixture.theme}: the bold face should carry its own glyphs`);
+  }
+});
+
+test("every bundled picker font ships matching PDF and Word faces", async () => {
+  // Office families stay as names in Word; the PDF draws them from metric-compatible stand-ins.
+  const office = new Set(["Arial", "Aptos", "Calibri", "Cambria", "Georgia", "Garamond", "Tahoma", "Times New Roman", "Trebuchet MS", "Verdana"]);
+  for (const family of FONT_FAMILY_OPTIONS.filter((name) => !office.has(name))) {
+    assert.match(fontFaceCssFor([family]), new RegExp(`font-family:'${family}'`), `${family}: the PDF should load a bundled face`);
+    assert.equal((await embeddedDocumentFonts([family])).length, 1, `${family}: Word should embed a bundled face`);
+  }
+  for (const family of ["Arial", "Calibri", "Cambria", "Georgia", "Garamond", "Times New Roman"]) {
+    assert.match(fontFaceCssFor([family]), new RegExp(`font-family:'${family}'`), `${family}: the PDF should draw a stand-in face`);
+  }
+});
+
+test("the font picker hides fonts the PDF cannot draw unless a policy already uses one", () => {
+  for (const hidden of ["Tahoma", "Trebuchet MS", "Verdana"]) {
+    assert.ok(!pickerFontFamilies("Arial").includes(hidden), `${hidden} should not be offered`);
+    assert.ok(pickerFontFamilies(hidden).includes(hidden), `${hidden} should stay visible while selected`);
+  }
+});
 
 test("page borders use Word's native page-edge border with valid spacing", async () => {
   for (const insetMm of [5, 10, 20]) {
@@ -65,7 +155,7 @@ test("quantitative Word output groups repeated areas and omits metadata columns"
     ],
   }];
   const zip = await JSZip.loadAsync(await generateDocx(policy));
-  const document = await zip.file("word/document.xml")!.async("string");
+  const document = visibleText(await zip.file("word/document.xml")!.async("string"));
   assert.equal((document.match(/Gifts &amp; Hospitality/g) || []).length, 1);
   assert.match(document, />01<\/w:t>/, "quantitative area numbers should be zero-padded");
   assert.equal((document.match(/Achieve 100%/g) || []).length, 1);
@@ -146,6 +236,24 @@ test("author signature image appears inside the employee Signature field in Word
   assert.ok(Object.keys(zip.files).some((name) => /^word\/media\//.test(name)), "the signature artwork should be embedded as an image");
 });
 
+test("professional acknowledgement starts on a new page without a trailing section spacer", async () => {
+  const policy = templatePreviewPolicy("people-charter", "environmental");
+  policy.showTableOfContents = false;
+  policy.sections = [{ id: "standard-preface", kind: "preface", title: "Preface", enabled: true }];
+  policy.declaration.preface = "Short body content before the acknowledgement.";
+
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = await zip.file("word/document.xml")!.async("string");
+  const paragraphs = [...document.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map(([paragraph]) => paragraph);
+  const acknowledgementIndex = paragraphs.findIndex((paragraph) => paragraph.includes("Employee Acknowledgement Form"));
+  const acknowledgementParagraph = paragraphs[acknowledgementIndex];
+  const precedingParagraph = paragraphs[acknowledgementIndex - 1] ?? "";
+
+  assert.ok(acknowledgementParagraph, "the employee acknowledgement title should remain present");
+  assert.match(acknowledgementParagraph!, /<w:pPr>[\s\S]*?<w:pageBreakBefore\/>[\s\S]*?<\/w:pPr>/, "the acknowledgement title should own its page break");
+  assert.doesNotMatch(precedingParagraph, /<w:t xml:space="preserve"> <\/w:t>/, "there should be no trailing spacer paragraph before the acknowledgement page");
+});
+
 test("except-cover Word borders use the native not-first-page display", async () => {
   const policy = templatePreviewPolicy("standard-pack", "environmental");
   policy.templateBrandOverrides = { schemaVersion: 1, pageBorder: { enabled: true, widthPt: 1, insetMm: 10, scope: "all-except-cover", color: "#234567" } };
@@ -199,7 +307,7 @@ test("Word applies independent marker choices without changing semantic numbers"
   };
 
   const zip = await JSZip.loadAsync(await generateDocx(policy));
-  const document = await zip.file("word/document.xml")!.async("string");
+  const document = visibleText(await zip.file("word/document.xml")!.async("string"));
   const numbering = await zip.file("word/numbering.xml")!.async("string");
   const paragraphContaining = (text: string) => [...document.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map((match) => match[0]).find((paragraph) => paragraph.includes(text)) || "";
   const numberingIdFor = (text: string) => paragraphContaining(text).match(/<w:numId w:val="(\d+)"/)?.[1];
@@ -593,4 +701,15 @@ test("DOCX cover hydration requests every private asset in the captured organiza
     usePolicyCraftScope.getState().setScope(originalScope);
     globalThis.fetch = originalFetch;
   }
+});
+
+test("justified Word tables keep label columns start-aligned and justify the prose column", async () => {
+  const policy = templatePreviewPolicy("standard-pack", "environmental");
+  policy.visualStyle = "corporate";
+  policy.responsibilities = [{ role: "Waste Management & Pollution Control", duty: "Follow environmental procedures and report incidents or concerns." }];
+  const zip = await JSZip.loadAsync(await generateDocx(policy));
+  const document = visibleText(await zip.file("word/document.xml")!.async("string"));
+  const paragraphContaining = (text: string) => [...document.matchAll(/<w:p(?:\s[^>]*)?>[\s\S]*?<\/w:p>/g)].map((match) => match[0]).find((paragraph) => paragraph.includes(text)) || "";
+  assert.match(paragraphContaining("Waste Management &amp; Pollution Control"), /<w:jc w:val="left"\/>/);
+  assert.doesNotMatch(paragraphContaining("Follow environmental procedures"), /<w:jc /, "the prose cell inherits the justified document default");
 });

@@ -1,3 +1,4 @@
+import type { SelectMenuOption } from "@/components/ui/select-menu";
 import type { PolicyCraftOrganization } from "@/lib/policycraft-access-types";
 
 type OrganizationSource = Pick<PolicyCraftOrganization, "id" | "name"> & {
@@ -12,9 +13,26 @@ export function organizationSourceName(organization: OrganizationSource): string
   return isStandaloneOrganization(organization) ? "PolicyCraft organization" : "ESG organization";
 }
 
-export function OrganizationSourceBadge({ organization, className = "" }: { organization: OrganizationSource; className?: string }) {
-  const standalone = organization.source === "standalone";
-  return <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold leading-4 ${standalone ? "border-[var(--color-forest)]/20 bg-[var(--color-forest-soft)] text-[var(--color-forest)]" : "border-[var(--color-line)] bg-[var(--color-cream-2)] text-[var(--color-muted)]"} ${className}`}>
-    {organizationSourceName(organization)}
+/**
+ * Dropdown options for organizations. Mixed lists are grouped by source instead of
+ * repeating the source on every row; the code stays searchable.
+ */
+export function organizationSelectOptions(organizations: (OrganizationSource & { code?: string; deleted?: boolean; expired?: boolean })[]): SelectMenuOption[] {
+  const mixed = new Set(organizations.map((organization) => isStandaloneOrganization(organization))).size > 1;
+  return [...organizations]
+    .sort((a, b) => (mixed ? Number(isStandaloneOrganization(a)) - Number(isStandaloneOrganization(b)) : 0))
+    .map((organization) => ({
+      value: String(organization.id),
+      label: organization.name,
+      description: organization.deleted ? "Deleted" : organization.expired ? "Subscription expired" : undefined,
+      group: mixed ? `${organizationSourceName(organization)}s` : undefined,
+      keywords: `${organization.code ?? ""} ${organizationSourceName(organization)}`,
+    }));
+}
+
+/** Source shown as quiet secondary text beside an organization name, never as a pill. */
+export function OrganizationSourceLabel({ organization, className = "" }: { organization: OrganizationSource; className?: string }) {
+  return <span className={`text-[12px] font-medium leading-4 text-[var(--pc-muted,var(--color-muted))] ${className}`}>
+    {isStandaloneOrganization(organization) ? "PolicyCraft" : "ESG"}
   </span>;
 }

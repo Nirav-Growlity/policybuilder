@@ -1,0 +1,267 @@
+.surface { min-width: 0; color: var(--pc-text); background: var(--pc-page); font-family: var(--pc-font); }
+.page { display: flex; min-width: 0; flex-direction: column; color: var(--pc-text); font-family: var(--pc-font); }
+.sheet { min-width: 0; }
+
+.visuallyHidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Masthead link: only masthead tokens, since it sits on the band. */
+.heroLink {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--ws-on-ink-muted);
+  font-size: 14px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.heroLink:hover { color: var(--ws-on-ink); background: var(--ws-ink-hover); border-color: var(--ws-ink-line); }
+.heroLink:focus-visible { outline: 2px solid var(--ws-on-ink); outline-offset: 2px; }
+
+/* Filled CTA: --ws-cta with white text, per the masthead contract. */
+.surface .ctaButton {
+  border-color: var(--ws-cta);
+  background: var(--ws-cta);
+  color: #fff;
+}
+
+.surface .ctaButton:hover:not(:disabled) { filter: brightness(1.06); }
+
+.statusLoading {
+  display: flex;
+  min-height: 120px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 20px 24px;
+  color: var(--pc-muted);
+  font-size: 14px;
+}
+
+.statusError {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin: 22px 24px;
+  padding: 12px 16px;
+  border: 1px solid color-mix(in srgb, var(--pc-error) 30%, var(--pc-divider));
+  border-radius: 12px;
+  background: var(--pc-error-surface);
+  color: var(--pc-error);
+  font-size: 14px;
+}
+
+.statusError p { margin: 0; }
+.spinner { animation: spin 1s linear infinite; }
+
+.form { display: flex; flex-direction: column; min-width: 0; }
+.formBody { display: flex; flex-direction: column; gap: 30px; padding: 26px 26px 12px; }
+.section { min-width: 0; }
+.sectionHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.sectionHeading h2, .sitesHeading h2 { margin: 0; color: var(--pc-text); font-family: var(--pc-font); font-size: 17px; font-weight: 640; letter-spacing: -.01em; }
+.sectionHeading > span { color: var(--pc-muted); font-size: 12px; }
+.profileGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 22px; margin-top: 20px; }
+.field { display: flex; min-width: 0; flex-direction: column; gap: 7px; color: var(--pc-text); font-size: 13px; font-weight: 600; }
+.field > label, .fieldLabel, .periodField legend { color: var(--pc-text); font-size: 13px; font-weight: 600; }
+.field > label span, .periodField legend span { color: var(--pc-error); }
+.field :global(input), .field :global([role="combobox"]) { min-width: 0; }
+.field :global(input) { font-weight: 400; font-size: 14px; }
+.periodField { min-width: 0; margin: 0; padding: 0; border: 0; }
+.periodField legend { margin-bottom: 7px; padding: 0; }
+.periodControl {
+  --ws-pill-bg: var(--pc-selection);
+  --ws-pill-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pc-selection-text) 28%, transparent);
+  display: flex;
+  min-height: 44px;
+  overflow: hidden;
+  border: 1px solid var(--pc-control);
+  border-radius: 10px;
+}
+
+.periodButton {
+  position: relative;
+  isolation: isolate;
+  min-height: 44px;
+  flex: 1;
+  border: 0;
+  background: var(--pc-panel);
+  color: var(--pc-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 180ms ease, background-color 160ms ease;
+}
+
+.periodButton + .periodButton { border-left: 1px solid var(--pc-divider); }
+.periodButton:hover:not(:disabled):not(.periodSelected) { background: var(--pc-inset); }
+.periodButton:disabled { cursor: not-allowed; opacity: .6; }
+.periodSelected { color: var(--pc-selection-text); }
+.periodButton:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: -2px; }
+
+.logoField { min-width: 0; }
+.logoRow { display: flex; min-height: 44px; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 7px; }
+.logoPreview { width: 64px; height: 44px; border: 1px solid var(--pc-divider); border-radius: 8px; background: var(--pc-panel); object-fit: contain; }
+.fileButton {
+  position: relative;
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid var(--pc-control);
+  border-radius: 10px;
+  background: var(--pc-panel);
+  color: var(--pc-text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.fileButton:hover { background: var(--pc-inset); }
+.fileButton:focus-within { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+.hint { color: var(--pc-muted); font-size: 12px; }
+
+.sitesSection { min-width: 0; padding-top: 24px; border-top: 1px solid var(--pc-divider); }
+.sitesHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.sitesHeading h2 { display: flex; align-items: center; gap: 8px; }
+.sitesHeading h2 svg { color: var(--pc-selection-text); }
+.sitesHeading p { margin: 6px 0 0; color: var(--pc-muted); font-size: 14px; }
+.addSite { flex: none; }
+.siteList { display: flex; flex-direction: column; margin-top: 10px; }
+
+/* Sites read as rows on the sheet, not as a stack of cards. */
+.siteRow {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 3fr) 40px;
+  align-items: end;
+  gap: 14px;
+  margin: 0;
+  padding: 18px 0;
+  border: 0;
+  border-top: 1px solid var(--pc-divider);
+}
+
+.siteRow:first-child { border-top: 0; }
+.removeCell { display: flex; justify-content: flex-end; }
+.removeCell button {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--pc-muted);
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.removeCell button:hover:not(:disabled) { background: var(--pc-error-surface); color: var(--pc-error); }
+.removeCell button:disabled { cursor: not-allowed; opacity: .4; }
+.removeCell button:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+
+.formError { padding: 0 26px 16px; }
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 12px 16px;
+  border: 1px solid color-mix(in srgb, var(--pc-error) 30%, var(--pc-divider));
+  border-radius: 12px;
+  background: var(--pc-error-surface);
+  color: var(--pc-error);
+  font-size: 14px;
+}
+
+.error p { margin: 0; }
+.error button { min-height: 36px; border: 0; background: transparent; color: inherit; font: inherit; font-size: 12px; font-weight: 650; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.error button:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+
+/* Sticky save bar: stays reachable on long forms and keeps the sheet's bottom corners. */
+.formFooter {
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  padding: 16px 26px;
+  border-top: 1px solid var(--pc-divider);
+  border-radius: 0 0 20px 20px;
+  background: var(--pc-panel);
+  box-shadow: 0 -10px 24px -18px rgb(12 22 40 / 30%);
+}
+
+.status { display: inline-flex; align-items: center; gap: 8px; margin: 0; color: var(--pc-muted); font-size: 13px; }
+.status svg { color: var(--pc-success); }
+.footerActions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cancelLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid var(--pc-control);
+  border-radius: 10px;
+  background: var(--pc-panel);
+  color: var(--pc-text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.cancelLink:hover { background: var(--pc-inset); }
+.cancelLink:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+.submitButton { min-width: 180px; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 760px) {
+  .formBody { padding: 22px 20px 10px; }
+  .formError { padding: 0 20px 14px; }
+  .formFooter { padding: 14px 20px; }
+  .siteRow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .removeCell { grid-column: 2; }
+}
+
+@media (max-width: 600px) {
+  .profileGrid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .sectionHeading, .sitesHeading { align-items: flex-start; flex-direction: column; }
+  .siteRow { grid-template-columns: minmax(0, 1fr); }
+  .removeCell { grid-column: auto; justify-content: flex-start; }
+  .formFooter { align-items: stretch; flex-direction: column; }
+  .footerActions { width: 100%; flex-direction: column; align-items: stretch; }
+  .footerActions > * { width: 100%; justify-content: center; }
+  .statusError { margin: 18px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+  .heroLink, .periodButton, .fileButton, .cancelLink, .removeCell button { transition: none; }
+  .surface .ctaButton:hover:not(:disabled) { filter: none; }
+}

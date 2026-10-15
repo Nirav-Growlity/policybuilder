@@ -1,19 +1,38 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { useBuilder } from "@/lib/store";
 import { SDG_DATA } from "@/lib/constants";
-import { Panel, InfoBar, Badge } from "@/components/ui/panel";
+import { Panel, Badge } from "@/components/ui/panel";
 import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI } from "@/lib/ai/client";
-import { Globe2, Sparkles, X } from "lucide-react";
+import { streamAI } from "@/lib/ai/client";
+import { ITEM_BREAK, useGenerationStreams } from "@/lib/ai/use-generation-streams";
+import { useRevealText } from "@/components/ui/ai-stream";
+import { Check, Globe2, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import { useToast } from "@/components/ui/toast";
-import { clsx } from "clsx";
+import { StepRoot, authoring as ui } from "./authoring-ui";
+
+// The official UN goal icons, also used by the document preview.
+const sdgIcon = (goal: number) => `/E SDG Icons WEB/E-WEB-Goal-${String(goal).padStart(2, "0")}.png`;
+
+const isGoal = (n: unknown): n is number => typeof n === "number" && Number.isInteger(n) && n >= 1 && n <= 17;
+// Suggested goals stream through a paced reveal as two-digit codes, so they light up one at a time
+// at an even rhythm (about one every 200ms) however quickly the model names them.
+const GOAL_PACE = { charsPerSecond: 15, catchUpMs: Infinity };
+const encodeGoals = (goals: unknown[] = []) => goals.filter(isGoal).map((n) => String(n).padStart(2, "0")).join(ITEM_BREAK);
+const decodeGoals = (text: string) => text.split(ITEM_BREAK).filter((code) => code.length === 2).map(Number);
 
 export function StepSDG() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
-  const [busy, setBusy] = React.useState(false);
+  const streams = useGenerationStreams();
+  const reveal = streams.reveal("sdg");
+  const streamed = useRevealText(reveal);
+  const suggesting = Boolean(reveal);
+  // While goals stream in they replace the current selection on screen; the policy changes once at the end.
+  const goals = suggesting ? decodeGoals(streamed) : policy.sdgs;
 
   const toggle = (n: number) => {
     updatePolicy((p) => {
@@ -25,104 +44,115 @@ export function StepSDG() {
   };
 
   const generate = async (customPrompt?: string) => {
-    setBusy(true);
+    const { reveal, signal } = streams.start("sdg", GOAL_PACE);
     try {
-      const r = await callAI({ type: "sdg", policy, customPrompt });
-      if (r.sdgs) {
-        updatePolicy((p) => ({ sdgs: r.sdgs!.filter((n) => n >= 1 && n <= 17).sort((a, b) => a - b) }));
-        push("SDGs suggested", "success");
+      const r = await streamAI({ type: "sdg", policy, customPrompt }, {
+        signal,
+        onPartial: (partial) => reveal.set(encodeGoals(partial.sdgs)),
+      });
+      const sdgs = Array.from(new Set((r.sdgs ?? []).filter(isGoal)));
+      if (sdgs.length) {
+        await reveal.finish(encodeGoals(sdgs));
+        updatePolicy(() => ({ sdgs: [...sdgs].sort((a, b) => a - b) }));
+        push(signal.aborted ? `Stopped with ${sdgs.length} goal${sdgs.length === 1 ? "" : "s"} suggested` : "SDGs suggested", signal.aborted ? "info" : "success");
+      } else if (signal.aborted) {
+        push("Stopped before any goals were suggested", "info");
       }
     } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy(false);
+      streams.end("sdg", reveal);
     }
   };
 
   return (
-    <div className="space-y-6">
-      <InfoBar icon={<Sparkles size={16} className="text-[var(--color-forest)]" />}>
-        Click the goals your policy contributes to, or use AI Suggest to infer from your focus areas.
-      </InfoBar>
-
+    <StepRoot>
       <Panel
         title="UN Sustainable Development Goals alignment"
-        description="Selected goals are shown as colored chips in the published document."
         icon={<Globe2 size={17} strokeWidth={1.8} />}
         actions={
           <>
-            <Badge variant="muted">{policy.sdgs.length} selected</Badge>
+            <Badge variant="muted">{goals.length} selected</Badge>
             <AIActionButton
               label="AI Suggest"
-              loading={busy}
+              loading={suggesting}
               onGenerate={generate}
+              onStop={() => streams.stop("sdg")}
             />
           </>
         }
       >
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
-          {SDG_DATA.map((s) => {
-            const sel = policy.sdgs.includes(s.n);
+        <div className={ui.goals} data-scanning={suggesting || undefined} aria-busy={suggesting || undefined}>
+          {SDG_DATA.map((s, index) => {
+            const sel = goals.includes(s.n);
             return (
-              <button
+              <motion.button
+                type="button"
                 key={s.n}
                 onClick={() => toggle(s.n)}
-                className={clsx(
-                  "relative p-3 rounded-lg text-left transition-all duration-200 group",
-                  sel
-                    ? "shadow-[var(--shadow-card)] ring-2 ring-offset-2 ring-offset-[var(--color-paper)]"
-                    : "opacity-55 hover:opacity-90"
-                )}
-                style={{
-                  background: `${s.c}14`,
-                  color: s.c,
-                  // @ts-ignore
-                  "--tw-ring-color": s.c,
-                }}
+                disabled={suggesting}
+                aria-pressed={sel}
+                aria-label={`SDG ${s.n}: ${s.label}`}
+                className={ui.goal}
+                data-picked={(suggesting && sel) || undefined}
+                style={{ "--n": index } as React.CSSProperties}
+                whileTap={{ scale: 0.96 }}
               >
-                <div className="text-[20px] font-display font-bold leading-none">{s.n}</div>
-                <div className="text-[10.5px] mt-1.5 leading-tight font-medium line-clamp-2">{s.label}</div>
-                {sel && (
-                  <div className="absolute top-1.5 right-1.5 w-4 h-4 rounded-full flex items-center justify-center" style={{ background: s.c }}>
-                    <X size={9} className="text-white" />
-                  </div>
-                )}
-              </button>
+                <Image src={sdgIcon(s.n)} alt="" width={1500} height={1500} sizes="(max-width: 640px) 30vw, 150px" className={ui.goalIcon} />
+                <AnimatePresence initial={false}>
+                  {sel && (
+                    <motion.span
+                      key="mark"
+                      className={ui.goalMark}
+                      aria-hidden="true"
+                      initial={{ scale: 0.4, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.4, opacity: 0 }}
+                      transition={{ type: "spring", stiffness: 520, damping: 28 }}
+                    >
+                      <Check size={14} strokeWidth={3} />
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </motion.button>
             );
           })}
         </div>
 
-        {policy.sdgs.length > 0 && (
-          <div className="mt-6 pt-5 border-t border-[var(--color-line)]">
-            <div className="text-[11.5px] font-semibold uppercase tracking-wider text-[var(--color-ink-2)] mb-3">
-              Selected ({policy.sdgs.length})
+        {goals.length > 0 && (
+          <>
+            <hr className={ui.divider} />
+            <div className={ui.groupHead}>
+              <h4 className={ui.groupTitle}>Selected goals</h4>
+              <span className={ui.groupCount}>{goals.length} of {SDG_DATA.length}</span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {policy.sdgs.map((n) => {
-                const s = SDG_DATA.find((d) => d.n === n)!;
-                return (
-                  <span
-                    key={n}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11.5px] font-semibold border"
-                    style={{ background: `${s.c}15`, color: s.c, borderColor: `${s.c}40` }}
-                  >
-                    <span
-                      className="w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold text-white"
-                      style={{ background: s.c }}
+            <div className={ui.chips}>
+              <AnimatePresence initial={false}>
+                {goals.map((n) => {
+                  const s = SDG_DATA.find((d) => d.n === n)!;
+                  return (
+                    <motion.span
+                      key={n}
+                      layout="position"
+                      className={ui.chip}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.18 }}
                     >
-                      {s.n}
-                    </span>
-                    SDG {s.n}: {s.label}
-                    <button onClick={() => toggle(n)} className="ml-1 opacity-60 hover:opacity-100">
-                      <X size={11} />
-                    </button>
-                  </span>
-                );
-              })}
+                      <Image src={sdgIcon(s.n)} alt="" width={1500} height={1500} sizes="28px" className={ui.chipIcon} />
+                      <span>SDG {s.n}: {s.label}</span>
+                      <button type="button" onClick={() => toggle(n)} disabled={suggesting} className={ui.chipRemove} aria-label={`Remove SDG ${s.n}: ${s.label}`}>
+                        <X size={13} />
+                      </button>
+                    </motion.span>
+                  );
+                })}
+              </AnimatePresence>
             </div>
-          </div>
+          </>
         )}
       </Panel>
-    </div>
+    </StepRoot>
   );
 }

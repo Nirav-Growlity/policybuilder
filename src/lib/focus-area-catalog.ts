@@ -293,9 +293,15 @@ export function visibleQuantitativeAreas(policy: Policy): Policy["quantitative"]
     : policy.quantitative;
 }
 
+// Write lists qualitative objectives in focus-area order, so the document does
+// too. The record's own key order only reflects when each area first received
+// an objective. Areas that are no longer focus areas follow in that order.
 export function visibleQualitativeEntries(policy: Policy): [string, string[]][] {
   const inactive = getInactiveFixedFocusAreaLabels(policy);
-  return Object.entries(policy.qualitative).filter(([area]) => !inactive.has(normalizeSubSector(area)));
+  const rank = new Map(policy.focusAreas.map((area, index) => [area, index]));
+  return Object.entries(policy.qualitative)
+    .filter(([area]) => !inactive.has(normalizeSubSector(area)))
+    .sort(([left], [right]) => (rank.get(left) ?? rank.size) - (rank.get(right) ?? rank.size));
 }
 
 export function policyFocusAreaCatalog(policy: Policy): FocusAreaCatalog | null {

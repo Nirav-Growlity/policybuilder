@@ -16,6 +16,7 @@ import {
   getDocumentTheme,
   getDocumentThemePatch,
   getPolicyDocumentTheme,
+  documentThemeCssVariables,
   getPolicyColorResetPatch,
   isDocumentThemeCustomized,
   normalizeDocumentThemeOverrides,
@@ -51,10 +52,11 @@ test("defines eight universal visual templates with unique IDs and structural fi
   assert.equal(new Set(DOCUMENT_THEMES.map((theme) => theme.layout.controlTreatment)).size, 4);
 });
 
-test("built-in templates use distinct bundled typography pairs", () => {
-  const pairs = DOCUMENT_THEMES.map((theme) => `${theme.defaults.typography.fontFamily}|${theme.defaults.typography.headingFontFamily}`);
-  assert.equal(new Set(pairs).size, DOCUMENT_THEMES.length);
+test("built-in templates each use one bundled family that no other template uses", () => {
+  const families = DOCUMENT_THEMES.map((theme) => theme.defaults.typography.fontFamily);
+  assert.equal(new Set(families).size, DOCUMENT_THEMES.length);
   for (const theme of DOCUMENT_THEMES) {
+    assert.equal(theme.defaults.typography.headingFontFamily, theme.defaults.typography.fontFamily, `${theme.id}: headings and body should share one family`);
     assert.ok(DOCUMENT_FONT_FAMILIES.includes(theme.defaults.typography.fontFamily), `${theme.id}: body font is not bundled`);
     assert.ok(DOCUMENT_FONT_FAMILIES.includes(theme.defaults.typography.headingFontFamily || ""), `${theme.id}: heading font is not bundled`);
   }
@@ -117,6 +119,19 @@ test("applying another template preserves branding unless reset explicitly", () 
   assert.equal(switched.declaration.preface, current.declaration.preface);
   const reset = normalizePolicyStructure({ ...current, ...getDocumentTemplatePatch("board-paper", current, { resetBrand: true }) });
   assert.equal(reset.documentThemeOverrides, undefined);
+});
+
+test("switching templates applies the new template's fonts and keeps manual sizes", () => {
+  const current = normalizePolicyStructure({
+    ...initialPolicy(),
+    typography: { ...initialPolicy().typography!, fontFamily: "Arial", headingFontFamily: "Arial", paragraphSize: 12.5 },
+  });
+  for (const theme of DOCUMENT_THEMES) {
+    const switched = normalizePolicyStructure({ ...current, ...getDocumentTemplatePatch(theme.id, current) });
+    assert.equal(switched.typography?.fontFamily, theme.defaults.typography.fontFamily, `${theme.id}: body font`);
+    assert.equal(switched.typography?.headingFontFamily, theme.defaults.typography.headingFontFamily, `${theme.id}: heading font`);
+    assert.equal(switched.typography?.paragraphSize, 12.5, `${theme.id}: manual size`);
+  }
 });
 
 test("manual typography changes are detected and can be reset", () => {
@@ -451,4 +466,11 @@ test("manual logo colors survive reload and reset restores source without changi
   assert.equal(getPolicyDocumentTheme(reset).logoScale, 140);
   assert.deepEqual(reset.company, policy.company);
   assert.equal(getPolicyDocumentTheme({ ...reset, brandColorSource: "template" }).colors.primary, getDocumentTheme(policy.documentTemplate).colors.primary);
+});
+
+test("table labels fall back to left only when the document is justified", () => {
+  const policy = initialPolicy("environmental");
+  assert.equal(documentThemeCssVariables(getPolicyDocumentTheme(policy))["--doc-table-label-align"], "left");
+  policy.documentThemeOverrides = { schemaVersion: 1, textAlignment: "center" };
+  assert.equal(documentThemeCssVariables(getPolicyDocumentTheme(policy))["--doc-table-label-align"], "center");
 });

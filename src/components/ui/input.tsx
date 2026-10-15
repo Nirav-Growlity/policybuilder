@@ -4,6 +4,8 @@ import * as React from "react";
 import { clsx } from "clsx";
 import { useToast } from "./toast";
 import { policyCraftScopeKey, policyCraftUrl, usePolicyCraftScope } from "@/lib/policycraft-client-scope";
+import { useApplicationSurface } from "./application-surface";
+import { FieldAccessibilityContext, useFieldAccessibility } from "./field-accessibility";
 
 interface FieldProps {
   label?: React.ReactNode;
@@ -12,24 +14,41 @@ interface FieldProps {
   required?: boolean;
   children: React.ReactNode;
   className?: string;
+  htmlFor?: string;
 }
 
-export function Field({ label, hint, error, required, children, className }: FieldProps) {
+export function Field({ label, hint, error, required, children, className, htmlFor }: FieldProps) {
+  const application = useApplicationSurface();
+  const fieldId = React.useId();
+  const labelId = application && label ? `${fieldId}-label` : undefined;
+  const descriptionId = application && (error || hint) ? `${fieldId}-description` : undefined;
+  const child = React.Children.count(children) === 1 ? React.Children.toArray(children)[0] : undefined;
+  const singleControl = React.isValidElement<{ id?: string }>(child) &&
+    (child.type === Input || child.type === Textarea || child.type === Select || child.type === Combobox ||
+      child.type === "input" || child.type === "textarea" || child.type === "select");
+  const controlId = htmlFor || (application && singleControl ? child.props.id || `${fieldId}-control` : undefined);
+  const grouped = application && Boolean(label) && !controlId;
+  const Container = grouped ? "fieldset" : "div";
+  const Label = grouped ? "legend" : "label";
+  const content = application && singleControl && !child.props.id
+    ? React.cloneElement(child, { id: controlId }) : children;
   return (
-    <div className={clsx("flex flex-col gap-1.5", className)}>
+    <FieldAccessibilityContext.Provider value={application ? {labelId, descriptionId, invalid: Boolean(error)} : {}}>
+    <Container className={clsx("flex min-w-0 flex-col gap-1.5", application && "pc-feature-field", className)}>
       {label && (
-        <label className="text-[11.5px] font-semibold tracking-wide text-[var(--color-ink-2)] uppercase">
+        <Label id={labelId} htmlFor={grouped ? undefined : controlId} className={clsx("text-[11.5px] font-semibold tracking-wide text-[var(--color-ink-2)] uppercase", application && "pc-feature-field-label")}>
           {label}
           {required && <span className="text-[#c43a3a] ml-0.5">*</span>}
-        </label>
+        </Label>
       )}
-      {children}
+      {content}
       {error ? (
-        <p className="text-[11.5px] text-[#c43a3a] font-medium leading-snug">{error}</p>
+        <p id={descriptionId} className={clsx("text-[11.5px] text-[#c43a3a] font-medium leading-snug", application && "pc-feature-field-error")}>{error}</p>
       ) : hint ? (
-        <p className="text-[11.5px] text-[var(--color-muted)] leading-snug">{hint}</p>
+        <p id={descriptionId} className={clsx("text-[11.5px] text-[var(--color-muted)] leading-snug", application && "pc-feature-field-hint")}>{hint}</p>
       ) : null}
-    </div>
+    </Container>
+    </FieldAccessibilityContext.Provider>
   );
 }
 
@@ -39,7 +58,9 @@ const baseInput =
 type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input({ className, ...rest }, ref) {
-  return <input ref={ref} className={clsx(baseInput, className)} {...rest} />;
+  const application = useApplicationSurface();
+  const accessibility = useFieldAccessibility(rest);
+  return <input ref={ref} className={clsx(baseInput, application && "pc-feature-input", className)} {...rest} {...accessibility} />;
 });
 
 interface ComboboxProps {
@@ -57,6 +78,9 @@ interface ComboboxProps {
 
 /** An editable dropdown with app-native styling, rather than a browser datalist. */
 export function Combobox({ value, options, onValueChange, id, name, required, ariaLabel, placeholder, emptyMessage = "No matching options", disabled = false }: ComboboxProps) {
+  const application = useApplicationSurface();
+  const listboxId = React.useId();
+  const [activeIndex, setActiveIndex] = React.useState(-1);
   const [open, setOpen] = React.useState(false);
   const [showAll, setShowAll] = React.useState(false);
   const rootRef = React.useRef<HTMLDivElement>(null);
@@ -70,6 +94,12 @@ export function Combobox({ value, options, onValueChange, id, name, required, ar
     return () => document.removeEventListener("mousedown", close);
   }, []);
 
+  React.useEffect(() => {
+    if (application && open && activeIndex >= 0) {
+      document.getElementById(`${listboxId}-${activeIndex}`)?.scrollIntoView({ block: "nearest" });
+    }
+  }, [activeIndex, application, listboxId, open]);
+
   return (
     <div ref={rootRef} className="relative">
       <Input
@@ -80,15 +110,32 @@ export function Combobox({ value, options, onValueChange, id, name, required, ar
         aria-label={ariaLabel}
         placeholder={placeholder}
         disabled={disabled}
-        onFocus={() => { setShowAll(false); setOpen(true); }}
+        onFocus={() => { setShowAll(false); setActiveIndex(-1); setOpen(true); }}
         onChange={(event) => {
           onValueChange(event.target.value);
           setShowAll(false);
+          setActiveIndex(-1);
           setOpen(true);
         }}
+        onKeyDown={application ? (event) => {
+          if (event.key === "Escape") { event.preventDefault(); setOpen(false); setActiveIndex(-1); }
+          else if (event.key === "Tab") { setOpen(false); setActiveIndex(-1); }
+          else if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+            event.preventDefault(); setOpen(true);
+            setActiveIndex(index => filtered.length ? (index < 0
+              ? event.key === "ArrowDown" ? 0 : filtered.length - 1
+              : (index + (event.key === "ArrowDown" ? 1 : -1) + filtered.length) % filtered.length) : -1);
+          } else if (event.key === "Enter" && open && activeIndex >= 0 && filtered[activeIndex]) {
+            event.preventDefault(); onValueChange(filtered[activeIndex]); setShowAll(false); setOpen(false); setActiveIndex(-1);
+          }
+        } : undefined}
         className={clsx(value ? "pr-[4.5rem]" : "pr-10", disabled && "cursor-not-allowed bg-[var(--color-cream)] text-[var(--color-muted)]")}
         aria-expanded={open}
         aria-haspopup="listbox"
+        role={application ? "combobox" : undefined}
+        aria-autocomplete={application ? "list" : undefined}
+        aria-controls={application && open ? listboxId : undefined}
+        aria-activedescendant={application && open && filtered[activeIndex] ? `${listboxId}-${activeIndex}` : undefined}
       />
       {value && !disabled && (
         <button
@@ -112,13 +159,15 @@ export function Combobox({ value, options, onValueChange, id, name, required, ar
         <svg className={`mx-auto transition-transform ${open ? "rotate-180" : ""}`} width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </button>}
       {open && (
-        <div role="listbox" className="absolute z-30 mt-1.5 w-full max-h-56 overflow-y-auto scrollbar-thin rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] p-1.5 shadow-[0_12px_28px_rgba(38,50,42,0.16)]">
-          {filtered.length ? filtered.map((option) => (
+        <div id={listboxId} role="listbox" aria-label={ariaLabel || "Available options"} className="absolute z-30 mt-1.5 w-full max-h-56 overflow-y-auto scrollbar-thin rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] p-1.5 shadow-[0_12px_28px_rgba(38,50,42,0.16)]">
+          {filtered.length ? filtered.map((option, index) => (
             <button
               type="button"
               role="option"
               aria-selected={option === value}
               key={option}
+              id={`${listboxId}-${index}`}
+              data-pc-active={application && activeIndex === index ? "true" : undefined}
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => { onValueChange(option); setShowAll(false); setOpen(false); }}
               className={`w-full rounded-md px-3 py-2 text-left text-[12.5px] transition-colors cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)] ${option === value ? "bg-[var(--color-forest-soft)] text-[var(--color-forest)] font-semibold" : "text-[var(--color-ink-2)] hover:bg-[var(--color-cream)]"}`}
@@ -139,6 +188,8 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(fun
   ref
 ) {
   const { push } = useToast();
+  const application = useApplicationSurface();
+  const accessibility = useFieldAccessibility(rest);
   const [checking, setChecking] = React.useState(false);
   const manuallyEdited = React.useRef(false);
   const editVersion = React.useRef(0);
@@ -199,11 +250,14 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(fun
         baseInput,
         "h-auto py-2 leading-relaxed resize-y",
         !rows && "min-h-[100px]",
+        application && "pc-feature-input pc-feature-textarea",
         className
       )}
       onChange={handleChange}
       onBlur={handleBlur}
       {...rest}
+      {...accessibility}
+      aria-busy={checking || rest["aria-busy"] || undefined}
     />
   );
 });
@@ -211,12 +265,15 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(fun
 type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement>;
 
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select({ className, children, ...rest }, ref) {
+  const application = useApplicationSurface();
+  const accessibility = useFieldAccessibility(rest);
   return (
     <div className="relative">
       <select
         ref={ref}
-        className={clsx(baseInput, "appearance-none pr-9 cursor-pointer", className)}
+        className={clsx(baseInput, "appearance-none pr-9 cursor-pointer", application && "pc-feature-input", className)}
         {...rest}
+        {...accessibility}
       >
         {children}
       </select>

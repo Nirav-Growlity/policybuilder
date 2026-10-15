@@ -59,6 +59,7 @@ export function CompanyInfoForm() {
 
   return (
     <Panel
+      className="pc-company-info-panel"
       title="Company information"
       description="The legal entity, Sector, Subsector, Industry and operating sites."
       icon={<Building2 size={17} strokeWidth={1.8} />}
@@ -131,8 +132,8 @@ export function CompanyInfoForm() {
                 onClick={() => updatePolicy((p) => ({ company: { ...p.company, reportingPeriod: period } }))}
                 className={`flex-1 text-[12px] font-semibold transition-colors cursor-pointer ${
                   (co.reportingPeriod || "FY") === period
-                    ? "bg-[var(--color-forest)] text-white"
-                    : "bg-white text-[var(--color-ink-2)] hover:bg-[var(--color-cream)]"
+                    ? "bg-[var(--color-forest)] text-[var(--pc-primary-text)]"
+                    : "bg-[var(--pc-panel)] text-[var(--color-ink-2)] hover:bg-[var(--pc-inset)]"
                 }`}
               >
                 {period === "FY" ? "Financial Year (FY)" : "Calendar Year (CY)"}
@@ -146,7 +147,7 @@ export function CompanyInfoForm() {
             {co.companyLogo ? (
               <Image src={logoSource || ""} alt="Company logo" width={56} height={36} unoptimized className="h-9 w-14 object-contain rounded border border-[var(--color-line)] bg-white" />
             ) : null}
-            <label className="inline-flex items-center gap-1.5 px-3 h-9 rounded-lg border border-[var(--color-line-2)] bg-white text-[12px] font-medium text-[var(--color-ink-2)] cursor-pointer hover:bg-[var(--color-cream)]">
+            <label className="inline-flex items-center gap-1.5 px-3 h-9 rounded-lg border border-[var(--color-line-2)] bg-[var(--pc-panel)] text-[12px] font-medium text-[var(--color-ink-2)] cursor-pointer hover:bg-[var(--pc-inset)]">
               <Upload size={14} /> {co.companyLogo ? "Replace logo" : "Upload logo"}
               <input
                 type="file"
@@ -210,7 +211,7 @@ export function CompanyInfoForm() {
                 },
               }));
             }}
-            className="inline-flex items-center gap-1.5 h-8 px-3.5 rounded-lg bg-[var(--color-forest)] text-white text-[12px] font-medium hover:bg-[var(--color-forest-hover)] transition-colors shadow-sm self-start sm:self-auto cursor-pointer"
+            className="inline-flex items-center gap-1.5 h-8 px-3.5 rounded-lg bg-[var(--color-forest)] text-[var(--pc-primary-text)] text-[12px] font-medium hover:bg-[var(--color-forest-hover)] transition-colors shadow-sm self-start sm:self-auto cursor-pointer"
           >
             <Plus size={14} /> Add site row
           </button>
@@ -241,6 +242,7 @@ export function CompanyInfoForm() {
                       Location / Unit
                     </label>
                     <Input
+                      aria-label={`Location or unit for operating site ${idx + 1}`}
                       value={siteItem.location || ""}
                       onChange={(e) => {
                         const updated = sitesList.map((s, i) =>
@@ -255,7 +257,7 @@ export function CompanyInfoForm() {
                         }));
                       }}
                       placeholder="e.g. Sachin Unit 1"
-                      className="bg-white text-[12.5px]"
+                      className="bg-[var(--pc-panel)] text-[12.5px]"
                     />
                   </div>
                   <div className="col-span-12 md:col-span-5">
@@ -263,6 +265,7 @@ export function CompanyInfoForm() {
                       Address
                     </label>
                     <Input
+                      aria-label={`Address for operating site ${idx + 1}`}
                       value={siteItem.address || ""}
                       onChange={(e) => {
                         const updated = sitesList.map((s, i) =>
@@ -277,7 +280,7 @@ export function CompanyInfoForm() {
                         }));
                       }}
                       placeholder="e.g. Plot No. 8109, GIDC Sachin, Surat, Gujarat"
-                      className="bg-white text-[12.5px]"
+                      className="bg-[var(--pc-panel)] text-[12.5px]"
                     />
                   </div>
                   <div className="col-span-12 md:col-span-3">
@@ -285,6 +288,7 @@ export function CompanyInfoForm() {
                       Primary Function
                     </label>
                     <Input
+                      aria-label={`Primary function for operating site ${idx + 1}`}
                       value={siteItem.primaryFunction || ""}
                       onChange={(e) => {
                         const updated = sitesList.map((s, i) =>
@@ -299,7 +303,7 @@ export function CompanyInfoForm() {
                         }));
                       }}
                       placeholder="e.g. Manufacturing Site"
-                      className="bg-white text-[12.5px]"
+                      className="bg-[var(--pc-panel)] text-[12.5px]"
                     />
                   </div>
                   <div className="col-span-12 md:col-span-1 flex justify-end md:justify-center">

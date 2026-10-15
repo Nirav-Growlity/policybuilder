@@ -1,4 +1,6 @@
-﻿// Auto-generated per-family @font-face CSS for PDF export filtering. Do not hand-edit.
+﻿import { LIBRARY_FONT_FACES } from "./document-font-library";
+
+// Auto-generated per-family @font-face CSS for PDF export filtering. Do not hand-edit.
 const FACES: Record<string, string> = {
   'IBM Plex Serif': '@font-face{font-family:\'IBM Plex Serif\';font-style:italic;font-weight:400;font-display:swap;src:url("/fonts/ibm-plex-serif-400i.woff2") format(\'woff2\');}@font-face{font-family:\'IBM Plex Serif\';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/ibm-plex-serif-400.woff2") format(\'woff2\');}@font-face{font-family:\'IBM Plex Serif\';font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/ibm-plex-serif-600.woff2") format(\'woff2\');}@font-face{font-family:\'IBM Plex Serif\';font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/ibm-plex-serif-700.woff2") format(\'woff2\');}',
   'Cormorant Garamond': '@font-face{font-family:\'Cormorant Garamond\';font-style:italic;font-weight:500;font-display:swap;src:url("/fonts/cormorant-garamond-500i.woff2") format(\'woff2\');}@font-face{font-family:\'Cormorant Garamond\';font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/cormorant-garamond-500.woff2") format(\'woff2\');}@font-face{font-family:\'Cormorant Garamond\';font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/cormorant-garamond-600.woff2") format(\'woff2\');}@font-face{font-family:\'Cormorant Garamond\';font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/cormorant-garamond-700.woff2") format(\'woff2\');}',
@@ -18,17 +20,24 @@ const FACES: Record<string, string> = {
   'Inter': '@font-face{font-family:\'Inter\';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2") format(\'woff2\');}@font-face{font-family:\'Inter\';font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/inter-500.woff2") format(\'woff2\');}@font-face{font-family:\'Inter\';font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/inter-600.woff2") format(\'woff2\');}@font-face{font-family:\'Inter\';font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/inter-700.woff2") format(\'woff2\');}@font-face{font-family:\'Inter\';font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/inter-800.woff2") format(\'woff2\');}',
 };
 
-// Sample documents use Office-native families. Keep those names available in
-// preview/PDF by serving the closest bundled face, while DOCX continues to
-// retain the familiar sample family names.
+// The shared library (scripts/build-document-fonts.py) builds these faces
+// from the same files Word embeds.
+Object.assign(FACES, LIBRARY_FONT_FACES);
+
+// Sample documents and the font picker use Office-native families. Serve
+// them in preview/PDF from metric-compatible stand-ins so lines break where
+// Word breaks them, while DOCX keeps the familiar family names.
 for (const [alias, source] of Object.entries({
   Aptos: "Public Sans",
   "Aptos Display": "Public Sans",
-  Arial: "IBM Plex Sans",
-  Calibri: "Source Sans 3",
+  Arial: "Arimo",
+  Calibri: "Carlito",
+  Cambria: "Caladea",
+  Georgia: "Gelasio",
+  Garamond: "EB Garamond",
   "Bell MT": "Cormorant Garamond",
   "Book Antiqua": "Libre Caslon Text",
-  "Times New Roman": "Source Serif 4",
+  "Times New Roman": "Tinos",
 })) {
   const css = FACES[source];
   if (css) FACES[alias] = css.replaceAll(source, alias);

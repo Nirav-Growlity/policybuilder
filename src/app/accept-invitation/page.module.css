@@ -1,0 +1,206 @@
+.surface {
+  position: relative;
+  min-height: 100vh;
+  color: var(--pc-text);
+  background: var(--pc-page);
+  font-family: var(--pc-font);
+}
+
+.themeControl {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: max(20px, calc((100vw - 1280px) / 2));
+}
+
+.skipLink {
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  left: 12px;
+  padding: 8px 12px;
+  transform: translateY(-150%);
+  border: 1px solid var(--pc-divider);
+  border-radius: 7px;
+  background: var(--pc-panel);
+  color: var(--pc-selection-text);
+  font-size: 13px;
+}
+
+.skipLink:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--pc-brand);
+  outline-offset: 2px;
+}
+
+.main {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 88px 24px 40px;
+}
+
+.card {
+  width: min(100%, 480px);
+  border: 1px solid var(--pc-divider);
+  border-radius: 24px;
+  background: var(--pc-panel);
+  padding: 32px;
+  box-shadow: 0 16px 44px rgb(16 24 40 / 9%);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.brandMark {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--pc-primary);
+  color: var(--pc-primary-text);
+}
+
+.brandName {
+  display: block;
+  color: var(--pc-text);
+  font-family: var(--pc-font);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.brandCaption {
+  display: block;
+  margin-top: 2px;
+  color: var(--pc-muted);
+  font-size: 10px;
+  letter-spacing: .12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--pc-text);
+  font-family: var(--pc-font);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 1.24;
+  text-wrap: balance;
+}
+
+.title:focus-visible {
+  border-radius: 3px;
+  outline: 2px solid var(--pc-brand);
+  outline-offset: 2px;
+}
+
+.copy,
+.errorCopy {
+  margin-top: 9px;
+  color: var(--pc-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.errorCopy { color: var(--pc-error); }
+
+.invitee {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+  border: 1px solid var(--pc-divider);
+  border-radius: 9px;
+  background: var(--pc-inset);
+  padding: 10px 12px;
+  color: var(--pc-muted);
+  font-size: 12px;
+}
+
+.invitee > svg { flex: 0 0 auto; }
+.inviteeEmail { min-width: 0; overflow: hidden; color: var(--pc-text); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.inviteeName { max-width: 110px; margin-left: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.form {
+  display: grid;
+  gap: 17px;
+  margin-top: 20px;
+}
+
+.formField { gap: 7px; }
+.formField > label { color: var(--pc-text); font-size: 12px; font-weight: 650; }
+.formField input { min-height: 44px; }
+.formField input:focus-visible { outline-offset: 2px; }
+.formField input[readonly] { color: var(--pc-muted); }
+
+.formError,
+.warning {
+  border: 1px solid color-mix(in srgb, var(--pc-error) 25%, transparent);
+  border-radius: 9px;
+  background: var(--pc-error-surface);
+  padding: 10px 12px;
+  color: var(--pc-error);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.warning {
+  margin-top: 16px;
+  border-color: color-mix(in srgb, var(--pc-warning) 28%, transparent);
+  background: var(--pc-warning-surface);
+  color: var(--pc-warning);
+}
+
+.fullButton { width: 100%; min-height: 44px; margin-top: 2px; }
+
+.successIcon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--pc-success-surface);
+  color: var(--pc-success);
+}
+
+.loading {
+  display: flex;
+  min-height: 176px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: var(--pc-muted);
+  font-size: 14px;
+}
+
+.spinner { animation: invitation-spin 1s linear infinite; }
+@keyframes invitation-spin { to { transform: rotate(360deg); } }
+
+.fallback { min-height: 100vh; }
+
+@media (max-width: 520px) {
+  .themeControl { top: 14px; right: 14px; }
+  .main { padding: 78px 16px 24px; }
+  .card { padding: 25px 22px; }
+  .skipLink:focus-visible { position: static; display: inline-block; margin: 8px 0 0 12px; transform: none; }
+}
+
+@media (max-width: 360px) {
+  .card { padding: 22px 18px; }
+  .title { font-size: 23px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation-duration: 1s; }
+}

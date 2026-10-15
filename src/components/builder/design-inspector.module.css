@@ -1,0 +1,98 @@
+/* Breakpoint: 1199px / 1200px. Keep in sync with shell.tsx and shell.module.css. */
+.inspector {
+  --color-ink: var(--pc-text);
+  --color-ink-2: var(--pc-muted);
+  --color-muted: var(--pc-muted);
+  --color-paper: var(--pc-panel);
+  --color-cream: var(--pc-page);
+  --color-cream-2: var(--pc-inset);
+  --color-line: var(--pc-divider);
+  --color-line-2: var(--pc-control);
+  --color-forest: var(--pc-primary);
+  --color-forest-deep: var(--pc-selection-text);
+  --color-forest-soft: var(--pc-selection);
+  --rail-surface: color-mix(in srgb, var(--pc-inset) 60%, var(--pc-panel));
+  display: contents;
+  color: var(--pc-text);
+  font-family: var(--pc-font);
+}
+
+/* Template thumbnails always render as paper, whatever the app theme. */
+.inspector :global([data-theme-preview]) {
+  --color-ink: #0e1a14;
+  --color-paper: #ffffff;
+  --color-line: #e7e2d4;
+  color-scheme: light;
+  color: #0e1a14;
+}
+.inspector :global([data-theme-preview] .bg-white) { background-color: #fff; }
+
+.inspector :is(button, a[href], input, select, textarea):focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+
+.scrim { position: fixed; inset: 0; z-index: 30; border: 0; background: rgb(15 23 42 / 36%); animation: scrim-in 220ms ease both; }
+
+.frame {
+  position: fixed;
+  inset: 0 0 0 auto;
+  z-index: 41;
+  display: grid;
+  width: min(400px, calc(100vw - 16px));
+  grid-template-columns: 72px minmax(0, 1fr);
+  border-left: 1px solid var(--pc-divider);
+  background: var(--pc-panel);
+  box-shadow: -16px 0 40px rgb(15 23 42 / 16%);
+  animation: drawer-in 320ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+/* Rail: one click to any section. */
+.rail { display: flex; min-height: 0; flex-direction: column; justify-content: space-between; gap: 8px; border-right: 1px solid var(--pc-divider); background: var(--rail-surface); padding: 12px 8px; }
+.railList { display: flex; flex-direction: column; gap: 4px; }
+.railItem {
+  position: relative;
+  display: flex;
+  min-height: 62px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--pc-muted);
+  cursor: pointer;
+  font: 600 11.5px/1 var(--pc-font);
+  transition: color 160ms ease;
+}
+.railItem:hover { color: var(--pc-text); }
+.railItem:hover .railGlyph { transform: translateY(-1px); }
+.railItem[aria-selected="true"] { color: var(--pc-selection-text); }
+.railMarker { position: absolute; inset: 0; z-index: 0; border-radius: 12px; background: var(--pc-selection); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pc-brand) 28%, transparent); }
+.railGlyph { position: relative; z-index: 1; display: grid; width: 30px; height: 26px; place-items: center; transition: transform 180ms cubic-bezier(.22, 1, .36, 1); }
+.railLabel { position: relative; z-index: 1; }
+
+.brandGlyph { position: relative; display: block; width: 26px; height: 20px; }
+.brandGlyph > span { position: absolute; top: 1px; width: 18px; height: 18px; border-radius: 999px; box-shadow: 0 0 0 2px var(--rail-surface); }
+.brandGlyph > span:first-child { left: 0; z-index: 1; }
+.brandGlyph > span:last-child { right: 0; }
+.railItem[aria-selected="true"] .brandGlyph > span { box-shadow: 0 0 0 2px var(--pc-selection); }
+.textGlyph { display: block; font-size: 18px; font-weight: 600; letter-spacing: -.01em; line-height: 1; }
+
+.close { display: inline-flex; width: 100%; height: 44px; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 10px; background: transparent; color: var(--pc-muted); cursor: pointer; }
+.close:hover { border-color: var(--pc-divider); background: var(--pc-panel); color: var(--pc-text); }
+
+.stage { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+.panel { height: 100%; min-height: 0; }
+.scroll { height: 100%; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: 20px 20px 40px; scrollbar-width: thin; scrollbar-color: var(--pc-divider) transparent; }
+
+@keyframes drawer-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+@keyframes scrim-in { from { opacity: 0; } to { opacity: 1; } }
+
+@media (min-width: 1200px) {
+  .frame { position: relative; inset: auto; z-index: auto; width: 412px; min-width: 412px; min-height: 0; border-left: 0; border-right: 1px solid var(--pc-divider); box-shadow: none; animation: none; }
+  .scrim { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame, .scrim { animation-duration: 1ms; }
+  .railGlyph { transition: none; }
+}

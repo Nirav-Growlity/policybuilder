@@ -89,7 +89,6 @@ export function StepSetup() {
 
       <Panel
         title="Sustainability standards to align with"
-        description="Pick the frameworks your policy should reference."
         icon={<Award size={17} strokeWidth={1.8} />}
         actions={
           <Badge variant="muted">
@@ -116,12 +115,6 @@ export function StepSetup() {
             );
           })}
         </div>
-        <p className="text-[12px] text-[var(--color-muted)] mt-4">
-          Selected:{" "}
-          <span className="text-[var(--color-ink-2)] font-medium">
-            {policy.standards.length ? policy.standards.join(", ") : "None"}
-          </span>
-        </p>
         <div className="mt-4 rounded-lg border border-[var(--color-line)] bg-[var(--color-paper)] p-3">
           <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-muted)] mb-1.5">Dynamic framework alignment</p>
           <ul className="space-y-1 text-[12px] text-[var(--color-ink-2)]">
@@ -129,14 +122,6 @@ export function StepSetup() {
             {!policy.standards.some((standard) => FRAMEWORK_ALIGNMENT[standard]) && <li>Select a framework to see the relevant policy coverage.</li>}
           </ul>
         </div>
-      </Panel>
-
-      <Panel
-        title="Next: document structure"
-        description="After saving company details, use the Document Structure step to rename, hide, and arrange the final policy outline."
-        icon={<Sparkles size={17} strokeWidth={1.8} />}
-      >
-        <div className="flex items-center justify-between gap-4 py-2"><p className="text-[12.5px] text-[var(--color-ink-2)]">Choose the final Corporate or Modern output format in the Preview & Export step.</p><span className="text-[11px] font-semibold text-[var(--color-forest)]">Custom outline enabled</span></div>
       </Panel>
 
       {false && <Panel
@@ -278,13 +263,6 @@ export function StepSetup() {
           <PdfPolicyPreview policy={{ ...makeTemplatePolicy(), presentationTemplate: policy.presentationTemplate, visualStyle: policy.visualStyle }} />
         </div>
       </Modal>
-
-      <div className="text-[12px] text-[var(--color-muted)] text-center pt-2">
-        <kbd className="px-1.5 py-0.5 rounded border border-[var(--color-line-2)] bg-[var(--color-paper)] font-mono text-[11px]">
-          Continue
-        </kbd>{" "}
-        to proceed to declaration & scope.
-      </div>
     </div>
   );
 }

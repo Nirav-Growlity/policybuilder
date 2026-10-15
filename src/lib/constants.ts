@@ -125,7 +125,7 @@ export interface PolicyProfile {
   id: PolicyType;
   label: string;
   short: string;
-  icon: "Leaf" | "Users" | "BadgeIndianRupee" | "ShieldCheck";
+  icon: "Leaf" | "Users" | "BadgeIndianRupee" | "ShieldCheck" | "PackageCheck";
   accent: string;
   accentSoft: string;
   documentPrefix: string;
@@ -206,7 +206,7 @@ export const POLICY_PROFILES: Record<PolicyType, PolicyProfile> = {
     responsibilities: ethicsResponsibilities, sdgs: [8, 10, 12, 16, 17], aiRole: "ethics policy documents",
   },
   "sustainable-procurement": {
-    id: "sustainable-procurement", label: "Sustainable Procurement Policy", short: "Sustainable Procurement", icon: "Leaf",
+    id: "sustainable-procurement", label: "Sustainable Procurement Policy", short: "Sustainable Procurement", icon: "PackageCheck",
     accent: "#854f0b", accentSoft: "#faf3e0", documentPrefix: "SP", exportName: "Sustainable-Procurement-Policy",
     standards: ["ISO 20400", "EcoVadis", "UNGC", "BRSR", "SDGs"],
     focusAreas: ["Supplier Code of Conduct & Onboarding", "Supplier Due Diligence & Risk Assessment", "Environmental Requirements for Suppliers", "Ethical Sourcing & Anti-Corruption", "Labour & Human Rights in Supply Chain", "Supply Chain Transparency & Traceability", "Supplier Capacity Building & Training", "Monitoring, Auditing & Continuous Improvement"],

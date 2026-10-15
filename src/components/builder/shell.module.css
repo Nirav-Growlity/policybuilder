@@ -1,0 +1,192 @@
+/* Breakpoint: 1199px / 1200px. Keep in sync with shell.tsx and design-inspector.module.css. */
+.shell {
+  --shell-border: var(--pc-divider);
+  --shell-panel: var(--pc-panel);
+  --shell-page: var(--pc-page);
+  --shell-inset: var(--pc-inset);
+  --shell-text: var(--pc-text);
+  --shell-muted: var(--pc-muted);
+  --shell-primary: var(--pc-primary);
+  --shell-selection: var(--pc-selection);
+  display: flex;
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  color: var(--shell-text);
+  background: var(--shell-page);
+  font-family: var(--pc-font);
+}
+
+.scrim { position: fixed; inset: 0; z-index: 30; border: 0; background: rgb(15 23 42 / 32%); }
+
+/* Rail: 272px expanded, 68px collapsed. */
+.rail {
+  z-index: 40;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid var(--shell-border);
+  background: var(--shell-panel);
+  transition: width 200ms ease;
+}
+.railExpanded { width: 272px; }
+.railCollapsed { width: 68px; }
+.brandRow { display: flex; height: 56px; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid var(--shell-border); padding: 0 14px; }
+.collapsedBrand { display: flex; height: 56px; flex: 0 0 auto; align-items: center; justify-content: center; border-bottom: 1px solid var(--shell-border); }
+.brand, .brandMarkLink { display: flex; min-width: 0; align-items: center; gap: 10px; border-radius: 8px; color: var(--shell-text); text-decoration: none; }
+.brandMark { display: grid; width: 32px; height: 32px; flex: 0 0 auto; place-items: center; border-radius: 8px; background: var(--pc-selection); color: var(--pc-selection-text); }
+.brandTitle { display: block; overflow: hidden; font-size: 15px; font-weight: 650; line-height: 1.1; text-overflow: ellipsis; white-space: nowrap; }
+.brandSub { display: block; margin-top: 3px; color: var(--shell-muted); font-size: 10px; line-height: 1.1; }
+.railButton, .navButton, .stepIcon {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--shell-muted);
+  cursor: pointer;
+  font: inherit;
+  transition: color 150ms, background-color 150ms, border-color 150ms;
+}
+.railButton { width: 36px; height: 36px; min-height: 36px; flex: 0 0 auto; }
+.railButton:hover { border-color: var(--shell-border); background: var(--shell-inset); color: var(--shell-text); }
+.policyMeta { display: flex; align-items: center; gap: 10px; margin: 12px 12px 0; border: 1px solid var(--shell-border); border-radius: 8px; padding: 8px 10px; }
+.policyIcon { display: grid; width: 30px; height: 30px; flex: 0 0 auto; place-items: center; border-radius: 7px; background: var(--shell-selection); color: var(--pc-selection-text); }
+.metaEyebrow { display: block; color: var(--shell-muted); font-size: 10px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; }
+.metaLabel { display: block; overflow: hidden; margin-top: 2px; font-size: 13px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.progress { margin: 12px 14px 0; }
+.progressLabels { display: flex; justify-content: space-between; color: var(--shell-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.progressTrack { height: 4px; margin-top: 7px; overflow: hidden; border-radius: 999px; background: var(--shell-inset); }
+.progressBar { height: 100%; border-radius: inherit; background: var(--shell-primary); transition: width 300ms ease; }
+.nav { min-height: 0; flex: 1 1 auto; overflow-x: hidden; overflow-y: auto; padding: 10px 8px; }
+.navList { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.navButton { position: relative; width: 100%; min-height: 36px; justify-content: flex-start; padding: 5px 8px; text-align: left; color: var(--shell-text); }
+.navButton:hover { background: var(--shell-inset); }
+.navButton[aria-current="step"] { background: var(--shell-selection); color: var(--shell-text); font-weight: 650; }
+.workflowMarker { position: absolute; top: 7px; bottom: 7px; left: 0; width: 3px; border-radius: 0 3px 3px 0; background: var(--shell-primary); pointer-events: none; }
+.stepNumber { display: grid; width: 22px; height: 22px; flex: 0 0 auto; place-items: center; border: 1px solid var(--shell-border); border-radius: 6px; color: var(--shell-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.navButton[aria-current="step"] .stepNumber, .stepDone { border-color: var(--shell-primary); background: var(--shell-primary); color: var(--pc-primary-text); }
+.stepTitle { min-width: 0; overflow: hidden; font-size: 13px; font-weight: 500; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+.collapsedContent { display: flex; min-height: 0; flex: 1 1 auto; flex-direction: column; align-items: center; gap: 10px; overflow-y: auto; padding: 10px 0; }
+.miniPolicy { display: grid; width: 36px; height: 36px; flex: 0 0 auto; place-items: center; border: 1px solid var(--shell-border); border-radius: 8px; background: var(--shell-selection); color: var(--pc-selection-text); }
+.miniProgress { color: var(--shell-muted); font-size: 10px; font-variant-numeric: tabular-nums; text-align: center; }
+.miniNav { display: grid; align-content: start; justify-items: center; gap: 4px; width: 100%; }
+.stepIcon { position: relative; width: 36px; height: 36px; min-height: 36px; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stepIcon[aria-current="step"] { border-color: var(--shell-primary); background: var(--shell-selection); color: var(--shell-text); }
+.workflowMarkerCompact { position: absolute; top: 4px; bottom: 4px; left: 0; width: 3px; border-radius: 0 3px 3px 0; background: var(--shell-primary); pointer-events: none; }
+
+/* Content column: header, body row (content or design or preview), and footer. */
+.contentColumn { display: flex; min-width: 0; min-height: 0; flex: 1 1 auto; flex-direction: column; overflow: hidden; }
+.header { z-index: 10; display: flex; min-height: 56px; flex: 0 0 auto; flex-wrap: wrap; align-items: center; gap: 8px 14px; border-bottom: 1px solid var(--shell-border); background: var(--shell-panel); padding: 8px 16px; }
+/* Title block and actions share the row; the mode switch sits between them and the row wraps only when space runs out. */
+.headerStart { display: flex; min-width: 0; flex: 1 1 320px; align-items: center; gap: 10px; }
+.expandButton { flex: 0 0 auto; }
+/* Explicit rules: module display rules would otherwise override Tailwind's hidden utilities. */
+.wideOnly { display: none; }
+.narrowOnly { display: inline-flex; }
+@media (min-width: 1200px) {
+  .wideOnly { display: inline-flex; }
+  .narrowOnly { display: none; }
+}
+.workspaceLink { display: inline-flex; min-height: 36px; flex: 0 0 auto; align-items: center; gap: 4px; border-radius: 8px; padding: 0 6px; color: var(--shell-muted); font-size: 13px; text-decoration: none; white-space: nowrap; }
+.workspaceLink:hover { background: var(--shell-inset); color: var(--shell-text); }
+.divider { width: 1px; height: 20px; flex: 0 0 auto; background: var(--shell-border); }
+.identity { min-width: 0; overflow: hidden; margin: 0; font-size: 13px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.policyLabel { color: var(--shell-text); }
+.separator { margin: 0 6px; color: var(--shell-muted); font-weight: 400; }
+.orgName { color: var(--shell-muted); font-weight: 500; }
+.saveStatus { flex: 0 0 auto; color: var(--shell-muted); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.modeSwitch { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 2px; border: 1px solid var(--shell-border); border-radius: 10px; background: var(--shell-inset); padding: 3px; }
+.modeButton { min-height: 34px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: var(--shell-muted); cursor: pointer; font: 600 13px/1 var(--pc-font); padding: 0 12px; white-space: nowrap; transition: color 150ms, background-color 150ms, border-color 150ms; }
+.modeButton:hover { color: var(--shell-text); }
+.modeButton[aria-pressed="true"] { border-color: var(--shell-primary); background: var(--shell-panel); color: var(--shell-text); }
+.headerEnd { display: flex; min-width: 0; flex: 1 1 auto; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.headerButton { display: inline-flex; min-height: 40px; align-items: center; gap: 6px; border: 1px solid var(--shell-border); border-radius: 8px; background: transparent; color: var(--shell-text); cursor: pointer; font: 500 13px/1 var(--pc-font); padding: 0 12px; white-space: nowrap; transition: background-color 150ms, border-color 150ms; }
+.headerButton:hover { background: var(--shell-inset); }
+.headerButtonActive { border-color: var(--shell-primary); background: var(--shell-selection); }
+.mobileWorkflow { display: none; }
+/* The mode switch keeps one position whichever mode is open and whatever the header holds.
+   Desktop: centred in the header between equal columns. Wide: centred on the window, so it
+   also stays put when the rail appears or collapses (--rail-offset is the rail's width). */
+@media (min-width: 1200px) {
+  .header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .headerStart { grid-column: 1; }
+  .modeSwitch { grid-column: 2; }
+  .headerEnd { grid-column: 3; }
+}
+@media (min-width: 1440px) {
+  .header { position: relative; display: flex; flex-wrap: nowrap; }
+  .modeSwitch { position: absolute; top: 50%; left: calc(50vw - var(--rail-offset, 0px)); transform: translate(-50%, -50%); }
+  .headerStart { flex: 0 1 auto; max-width: calc(50vw - var(--rail-offset, 0px) - 172px); }
+  .headerEnd { flex: 0 1 auto; max-width: calc(50vw - 172px); margin-left: auto; }
+}
+
+.body { display: flex; min-height: 0; flex: 1 1 auto; overflow: hidden; }
+.main { display: flex; min-width: 0; min-height: 0; flex: 1 1 auto; flex-direction: column; }
+.scrollRegion { min-height: 0; flex: 1 1 auto; overflow: auto; overscroll-behavior: contain; scroll-behavior: auto; }
+.frame { box-sizing: border-box; width: 100%; max-width: 80rem; margin: 0 auto; padding: 22px 24px 28px; }
+/* Write steps hold running text, so they keep a readable measure. */
+.frame:has(:global([data-authoring-root])) { max-width: 62rem; padding-top: 28px; }
+.stepHeading { margin-bottom: 18px; }
+/* Review & export: the downloads sit beside the heading, replacing the footer. */
+.stepHeadingWithActions { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 16px; }
+.title { margin: 0; font-family: var(--pc-font); font-size: 20px; font-weight: 650; letter-spacing: -.015em; line-height: 1.25; color: var(--shell-text); }
+.subtitle { margin: 4px 0 0; color: var(--shell-muted); font-size: 13px; line-height: 1.45; }
+
+/* Sticky footer: sits under the scroll region, not over it. */
+.footer { display: flex; flex: 0 0 auto; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; border-top: 1px solid var(--shell-border); background: var(--shell-panel); padding: 10px 24px; }
+.stepCount { margin: 0; color: var(--shell-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.footerActions { display: flex; min-width: 0; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.exportActions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+/* Live preview pane (Write mode). Right column at 1200px and up. */
+.previewPane { display: flex; min-width: 0; min-height: 0; flex: 0 0 clamp(380px, 40%, 640px); flex-direction: column; border-left: 1px solid var(--shell-border); background: var(--shell-page); }
+.paneHeader { display: flex; min-height: 48px; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid var(--shell-border); background: var(--shell-panel); padding: 0 10px 0 16px; }
+.paneTitle { margin: 0; color: var(--shell-text); font-family: var(--pc-font); font-size: 14px; font-weight: 650; letter-spacing: 0; }
+.previewBody { min-height: 0; flex: 1 1 auto; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+/* Design mode: inspector beside a large preview. */
+.designLayout { display: flex; min-width: 0; min-height: 0; flex: 1 1 auto; overflow: hidden; }
+.designPreview { display: flex; min-width: 0; min-height: 0; flex: 1 1 auto; flex-direction: column; background: var(--shell-page); }
+.designPreviewBody { min-height: 0; flex: 1 1 auto; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+
+.shell :global(.pc-theme-option) { min-height: 40px; }
+.shell :is(button, a[href]):focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 2px; }
+
+@media (max-width: 1199px) {
+  .rail { position: fixed; inset: 0 auto 0 0; width: min(280px, calc(100vw - 40px)); height: 100dvh; transform: translateX(-102%); transition: transform 250ms ease; }
+  .railOpen { transform: translateX(0); }
+  .railExpanded, .railCollapsed { width: min(280px, calc(100vw - 40px)); }
+  .collapsedContent, .collapsedBrand { display: none; }
+  .expandButton { display: none; }
+  .mobileWorkflow { display: inline-flex; }
+  .header { padding-inline: 14px; }
+  .previewPane { position: fixed; inset: 0 0 0 auto; z-index: 41; width: min(640px, calc(100vw - 24px)); flex: none; box-shadow: -12px 0 28px rgb(15 23 42 / 12%); animation: shell-drawer-in 250ms ease both; }
+  .frame { padding-inline: 18px; }
+  .footer { padding-inline: 16px; }
+}
+@media (min-width: 1200px) {
+  .scrim { display: none; }
+}
+@media (max-width: 599px) {
+  .header { align-items: stretch; flex-direction: column; gap: 10px; }
+  .headerStart, .modeSwitch, .headerEnd { width: 100%; }
+  .modeSwitch { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .modeButton { min-height: 40px; padding: 0 6px; font-size: 12.5px; }
+  .headerEnd { justify-content: space-between; }
+  .title { font-size: 18px; }
+  .subtitle { white-space: normal; }
+  .footer { flex-direction: column; align-items: stretch; }
+  .footerActions { justify-content: space-between; }
+  .exportActions { width: 100%; flex-wrap: nowrap; }
+  .exportActions > button { flex: 1 1 0; min-width: 0; }
+}
+@keyframes shell-drawer-in { from { opacity: .86; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .rail, .progressBar { transition: none; animation: none; }
+  .previewPane { animation: none; }
+}

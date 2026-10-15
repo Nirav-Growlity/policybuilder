@@ -5,6 +5,8 @@ import { useBuilder, getStepOrder, initialPolicy } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/toast";
 import { BuilderShell } from "@/components/builder/shell";
+import { PolicyMenu } from "@/components/builder/policy-menu";
+import { TaskPopover } from "@/components/builder/task-popover";
 import { StepStructure } from "@/components/builder/steps/step-structure";
 import { StepCustom } from "@/components/builder/steps/step-custom";
 import { StepDeclaration } from "@/components/builder/steps/step-declaration";
@@ -14,7 +16,7 @@ import { StepQuantitative } from "@/components/builder/steps/step-quantitative";
 import { StepSDG } from "@/components/builder/steps/step-sdg";
 import { StepResponsibilities } from "@/components/builder/steps/step-responsibilities";
 import { StepExport } from "@/components/builder/steps/step-export";
-import { ArrowLeft, ArrowRight, FileCheck2, FileUp, Loader2, RefreshCw, X } from "lucide-react";
+import { FileCheck2, FileUp, Loader2, RefreshCw } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { PolicySelector } from "@/components/builder/policy-selector";
@@ -26,7 +28,8 @@ import { extractLogoPalette } from "@/lib/logo-palette";
 import { applyCompanyMaster } from "@/lib/policycraft-mapping";
 import type { PolicyCraftDocumentState, StoredPolicyDocument } from "@/lib/policycraft-types";
 import { createDraftAutosave } from "@/lib/policycraft-autosave";
-import { AlertTriangle, Building2 } from "lucide-react";
+import { registerNavigationFlush } from "@/lib/policycraft-navigation-flush";
+import { AlertTriangle } from "lucide-react";
 import Link from "next/link";
 import { PolicyPreview } from "@/components/policy/policy-preview";
 import type { PolicyCraftAccess, PolicyCraftOrganization, PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
@@ -37,6 +40,9 @@ import type { PolicyCraftTask } from "@/lib/policycraft-task-types";
 import { DeadlineLabel, TaskProgress, TaskStatus } from "@/components/tasks/task-ui";
 import { POLICY_PROFILES } from "@/lib/constants";
 import { organizationSourceName } from "@/components/workspace/organization-source-label";
+import { ApplicationSurface } from "@/components/ui/application-surface";
+import { AppTransitionScreen } from "@/components/ui/app-transition-screen";
+import styles from "./builder-client.module.css";
 
 const STEP_RENDERERS: Record<string, React.ComponentType<{ onCoverEditingChange?: (editing: boolean) => void }>> = {
   structure: StepStructure,
@@ -59,7 +65,7 @@ type BuilderDocument = StoredPolicyDocument & {
 export function BuilderClient() {
   const params = useSearchParams();
   const key = `${params.get("draft") || "new"}:${params.get("orgId") || "auto"}`;
-  return <BuilderClientWorkspace key={key} />;
+  return <ApplicationSurface className={styles.application}><BuilderClientWorkspace key={key} /></ApplicationSurface>;
 }
 
 function BuilderClientWorkspace() {
@@ -68,8 +74,6 @@ function BuilderClientWorkspace() {
     policy,
     importedPolicy,
     setStep,
-    next,
-    prev,
     setPolicy,
     setImportedPolicy,
     clearImportedPolicy,
@@ -254,7 +258,6 @@ function BuilderClientWorkspace() {
   const order = getStepOrder(policy);
   const currentIndex = Math.max(0, order.indexOf(step));
   const isFirst = currentIndex === 0;
-  const isLast = currentIndex === order.length - 1;
   const StepCmp = STEP_RENDERERS[step] || StepStructure;
 
   React.useEffect(() => {
@@ -306,6 +309,11 @@ function BuilderClientWorkspace() {
           if (requestedId && !targetOrganization) throw new Error("This organization is not assigned to your account.");
           if (targetOrganization?.deleted || (access.actor.role !== "admin" && targetOrganization?.expired)) throw new Error("This organization is not available for new policies.");
           if (!targetOrganization) {
+            // Admins choose from the full organization picker in the admin workspace.
+            if (access.actor.role === "admin") {
+              router.replace("/admin/policies/new");
+              return;
+            }
             setWorkspaceState("choose");
             return;
           }
@@ -526,6 +534,7 @@ function BuilderClientWorkspace() {
     }
 
     flushDraftForTaskRef.current = flushForNavigation;
+    const unregisterNavigationFlush = registerNavigationFlush(() => flushForNavigation());
 
     const beforeUnload = (event: BeforeUnloadEvent) => {
       const stateChanged = JSON.stringify(currentState()) !== lastSavedState.current;
@@ -577,6 +586,7 @@ function BuilderClientWorkspace() {
     document.addEventListener("click", interceptInternalNavigation, true);
     return () => {
       if (flushDraftForTaskRef.current === flushForNavigation) flushDraftForTaskRef.current = null;
+      unregisterNavigationFlush();
       window.removeEventListener("beforeunload", beforeUnload);
       window.removeEventListener("popstate", interceptHistoryNavigation, true);
       document.removeEventListener("click", interceptInternalNavigation, true);
@@ -640,18 +650,18 @@ function BuilderClientWorkspace() {
   const [showCompanyEditor, setShowCompanyEditor] = React.useState(false);
   const [coverEditing, setCoverEditing] = React.useState(false);
 
-  if (workspaceState === "loading") return <div className="grid min-h-screen place-items-center bg-[var(--color-cream)] text-sm text-[var(--color-muted)]" aria-busy="true">Loading organization and policy access…</div>;
-  if (workspaceState === "error") return <main className="mx-auto grid min-h-screen max-w-xl content-center px-5 text-center"><h1 className="font-display text-2xl font-semibold">Workspace unavailable</h1><p className="mt-2 text-sm leading-6 text-[var(--color-muted)]" role="alert">{workspaceError}</p><Link href={workspaceAccess?.homeHref || "/login"} className="mx-auto mt-5 inline-flex min-h-10 items-center rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)]">Return to workspace</Link></main>;
+  if (workspaceState === "loading") return <AppTransitionScreen title="Opening the policy builder" detail="Checking your organization and policy access." />;
+  if (workspaceState === "error") return <main className="pc-builder-authoring mx-auto grid min-h-screen max-w-xl content-center px-5 text-center"><h1 className="font-display text-2xl font-semibold">Workspace unavailable</h1><p className="mt-2 text-sm leading-6 text-[var(--color-muted)]" role="alert">{workspaceError}</p><Link href={workspaceAccess?.homeHref || "/login"} className="mx-auto mt-5 inline-flex min-h-10 items-center rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-[var(--pc-primary-text)] hover:bg-[var(--color-forest-deep)]">Return to workspace</Link></main>;
   if (workspaceState === "choose") {
     const candidates = workspaceOrganizations.filter((organization) => !organization.deleted && (workspaceAccess?.actor.role === "admin" || !organization.expired));
-    return <main className="mx-auto min-h-screen max-w-2xl px-5 py-12 text-[var(--color-ink)]"><Link href={workspaceAccess?.homeHref || "/"} className="text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)]">← Workspace</Link><p className="mt-8 text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">New policy</p><h1 className="mt-1 font-display text-3xl font-semibold">Choose an organization</h1><p className="mt-2 text-sm text-[var(--color-muted)]">Each policy belongs to one organization. You can switch organizations from the workspace after this draft is saved.</p>{candidates.length ? <ul className="mt-6 divide-y divide-[var(--color-line)] rounded-xl border border-[var(--color-line)] bg-white">{candidates.map((organization) => <li key={organization.id} className="flex flex-wrap items-center justify-between gap-3 px-4 py-3"><div className="min-w-0"><p className="truncate text-sm font-semibold">{organization.name}</p><p className="mt-0.5 text-[11px] text-[var(--color-muted)]">{organization.code} · {organizationSourceName(organization)}{organization.expired ? " · expired · admin access" : ""}</p></div><button type="button" onClick={() => router.replace(`/builder?orgId=${organization.id}`)} className="min-h-9 shrink-0 rounded-lg bg-[var(--color-forest)] px-3 text-xs font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Use organization</button></li>)}</ul> : <div className="mt-6 rounded-xl border border-dashed border-[var(--color-line-2)] bg-white px-5 py-10 text-center"><h2 className="font-display text-lg font-semibold">No available organizations</h2><p className="mt-1 text-sm text-[var(--color-muted)]">Ask an administrator to assign an active organization to your account.</p></div>}</main>;
+    return <main className="pc-builder-authoring mx-auto min-h-screen max-w-2xl px-5 py-12 text-[var(--color-ink)]"><Link href={workspaceAccess?.homeHref || "/"} className="text-xs font-semibold text-[var(--color-muted)] hover:text-[var(--color-forest)]">← Workspace</Link><p className="mt-8 text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-forest)]">New policy</p><h1 className="mt-1 font-display text-3xl font-semibold">Choose an organization</h1><p className="mt-2 text-sm text-[var(--color-muted)]">Each policy belongs to one organization. You can switch organizations from the workspace after this draft is saved.</p>{candidates.length ? <ul className="mt-6 divide-y divide-[var(--color-line)] rounded-xl border border-[var(--color-line)] bg-[var(--pc-panel)]">{candidates.map((organization) => <li key={organization.id} className="flex flex-wrap items-center justify-between gap-3 px-4 py-3"><div className="min-w-0"><p className="truncate text-sm font-semibold">{organization.name}</p><p className="mt-0.5 text-[11px] text-[var(--color-muted)]">{organization.code} · {organizationSourceName(organization)}{organization.expired ? " · expired · admin access" : ""}</p></div><button type="button" onClick={() => router.replace(`/builder?orgId=${organization.id}`)} className="min-h-11 shrink-0 rounded-lg bg-[var(--color-forest)] px-3 text-xs font-semibold text-[var(--pc-primary-text)] hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Use organization</button></li>)}</ul> : <div className="mt-6 rounded-xl border border-dashed border-[var(--color-line-2)] bg-[var(--pc-panel)] px-5 py-10 text-center"><h2 className="font-display text-lg font-semibold">No available organizations</h2><p className="mt-1 text-sm text-[var(--color-muted)]">Ask an administrator to assign an active organization to your account.</p></div>}</main>;
   }
 
-  if (!companyLoaded || (draftId && !documentLoaded)) return <div className="grid min-h-screen place-items-center bg-[var(--color-cream)] text-sm text-[var(--color-muted)]" aria-busy="true">Loading policy…</div>;
-  if (workspaceScope?.readOnly && draftId) return <main className="min-h-screen bg-[var(--color-cream)] px-5 py-7 text-[var(--color-ink)]"><div className="mx-auto max-w-5xl"><div className="mb-5 flex flex-wrap items-center justify-between gap-3"><div><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-muted)]">Deleted organization · read only</p><h1 className="mt-1 font-display text-2xl font-semibold">{workspaceScope.organizationName}</h1></div><Link href="/admin/policies" className="min-h-9 rounded-lg border border-[var(--color-line-2)] bg-white px-3 py-2 text-xs font-semibold hover:bg-[var(--color-cream-2)]">Back to policies</Link></div><PolicyPreview policy={policy} assetScope={workspaceScope} /></div></main>;
+  if (!companyLoaded || (draftId && !documentLoaded)) return <AppTransitionScreen title={draftId ? "Opening your policy" : "Preparing a new policy"} detail={draftId ? "Loading the latest saved draft." : "Loading your company details."} />;
+  if (workspaceScope?.readOnly && draftId) return <main className="min-h-screen bg-[var(--pc-page)] px-5 py-7 text-[var(--pc-text)]"><div className="mx-auto max-w-5xl"><div className="pc-builder-authoring mb-5 flex flex-wrap items-center justify-between gap-3"><div><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[var(--color-muted)]">Deleted organization · read only</p><h1 className="mt-1 font-display text-2xl font-semibold">{workspaceScope.organizationName}</h1></div><Link href="/admin/policies" className="min-h-9 rounded-lg border border-[var(--color-line-2)] bg-[var(--pc-panel)] px-3 py-2 text-xs font-semibold hover:bg-[var(--pc-inset)]">Back to policies</Link></div><PolicyPreview policy={policy} assetScope={workspaceScope} /></div></main>;
 
   if (step === "export" && !authorSignatureLoaded) {
-    return <div className="min-h-screen bg-[var(--color-cream)]" />;
+    return <div className="pc-builder-authoring min-h-screen bg-[var(--pc-page)]" />;
   }
 
   if (!draftId && !selectedType) {
@@ -669,77 +679,40 @@ function BuilderClientWorkspace() {
     );
   }
 
-  const topActions = (
-    <>
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept=".docx"
-        className="hidden"
-        onChange={(e) => {
-          const f = e.target.files?.[0];
-          if (f) uploadFile(f);
-          e.target.value = "";
-        }}
-      />
-      {importedPolicy ? (
-        <div className="flex items-center gap-1.5 rounded-lg border border-[var(--color-line-2)] bg-white/70 px-2 py-1">
-          <FileCheck2 size={14} className="shrink-0 text-[var(--color-forest)]" />
-          <button
-            type="button"
-            className="max-w-44 truncate text-left text-[12px] font-medium text-[var(--color-ink)]"
-            title={`${importedPolicy.fileName} is the primary AI context. Click to replace it.`}
-            onClick={() => fileInputRef.current?.click()}
-          >
-            {importedPolicy.fileName}
-          </button>
-          <button
-            type="button"
-            aria-label="Remove imported policy context"
-            title="Remove imported policy context"
-            className="rounded p-1 text-[var(--color-muted)] transition-colors hover:bg-black/5 hover:text-[var(--color-ink)]"
-            onClick={clearImportedPolicy}
-          >
-            <X size={13} />
-          </button>
-        </div>
-      ) : (
-        <Button
-          variant="secondary"
-          size={step === "export" ? "sm" : "md"}
-          className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined}
-          icon={<FileUp size={14} />}
-          onClick={() => fileInputRef.current?.click()}
-        >
-          Add policy context
-        </Button>
-      )}
-      {(draftId || backendDocumentId) ? (
-        <Button
-          variant="secondary"
-          size={step === "export" ? "sm" : "md"}
-          className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined}
-          icon={<Building2 size={14} />}
-          onClick={() => setShowCompanyWarning(true)}
-        >
-          Company details
-        </Button>
-      ) : null}
-      <div className="w-px h-6 bg-[var(--color-line-2)] mx-1" />
-      <Button variant="secondary" size={step === "export" ? "sm" : "md"} className={step === "export" ? "min-h-11 min-[1200px]:min-h-8" : undefined} icon={<ArrowLeft size={14} />} onClick={prev} disabled={isFirst}>
-        Back
-      </Button>
-      {!isLast && (<Button
-        variant="primary"
-        size="md"
-        trailingIcon={<ArrowRight size={14} />}
-        onClick={next}
-        disabled={isLast}
-      >
-        Continue
-      </Button>)}
-    </>
+  // Builder chrome slots. The shell owns layout, modes, rail and footer; these
+  // nodes keep the existing handlers and state.
+  const taskState: "loading" | "error" | "ready" = taskContext ? "ready" : taskContextError ? "error" : "loading";
+  const taskChip = workspaceScope?.role === "manager" && (taskContext || taskContextLoading || taskContextError) ? (
+    <TaskPopover state={taskState} complete={taskContext?.status === "completed"} percentage={taskContext?.progress?.percentage ?? 0}>
+      <section aria-label="Assigned task" className={`pc-builder-authoring ${styles.taskSummary} mb-4 rounded-lg border border-[var(--color-line)] bg-[var(--pc-panel)] px-3 py-2.5 sm:px-4`}>
+            {taskContextLoading && !taskContext ? <p className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)]" role="status"><Loader2 size={15} className="animate-spin" aria-hidden="true"/>Loading task details…</p> : null}
+            {taskContextError ? <div role="alert" className="flex flex-wrap items-center justify-between gap-3 text-sm text-red-900"><span>{taskContextError}</span><button type="button" onClick={() => void loadTaskContext()} className="inline-flex min-h-9 items-center gap-2 rounded-md px-2 font-semibold text-red-900 hover:bg-red-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]"><RefreshCw size={14} aria-hidden="true"/>Retry</button></div> : null}
+            {taskContext ? <div className={styles.taskSummaryGrid}>
+              <div className={styles.taskSummaryHeading}>
+                <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                  <p className="shrink-0 text-[10px] font-semibold uppercase text-[var(--color-forest)]">Assigned task</p>
+                  <span className="min-w-0 break-words text-[11px] text-[var(--color-muted)]">{taskContext.organization.name}</span>
+                </div>
+                <h2 className="mt-0.5 break-words text-[15px] font-semibold leading-snug">{taskContext.title}</h2>
+                <p className="mt-0.5 flex flex-wrap items-center gap-x-1 text-xs text-[var(--color-ink-2)]">{POLICY_PROFILES[taskContext.policyType]?.label || taskContext.policyType}<span aria-hidden="true">·</span><DeadlineLabel value={taskContext.dueDate} status={taskContext.status}/></p>
+              </div>
+              <div className={styles.taskSummaryProgress}><TaskProgress progress={taskContext.progress} unavailableReason={taskContext.unavailableReason} compact showSavedAt/></div>
+              <div className={styles.taskSummaryActions}><TaskStatus status={taskContext.status} dueDate={taskContext.dueDate}/>{taskContext.status === "in_progress" ? <Button variant="primary" size="sm" loading={taskCompleting} disabled={!taskContext.available || taskCompleting} onClick={() => void prepareTaskCompletion()}>Mark task complete</Button> : taskContext.status === "completed" ? <span className="text-xs font-medium text-emerald-900">Completed</span> : null}</div>
+            </div> : null}
+          </section>
+    </TaskPopover>
+  ) : null;
+  const policyMenu = (
+    <PolicyMenu
+      contextFileName={importedPolicy?.fileName ?? null}
+      onChooseContext={() => fileInputRef.current?.click()}
+      onRemoveContext={clearImportedPolicy}
+      onCompanyDetails={draftId || backendDocumentId ? () => setShowCompanyWarning(true) : undefined}
+    />
   );
+  const saveStatusLabel = backendDocumentId
+    ? saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""
+    : null;
 
   return (
     <div
@@ -754,29 +727,24 @@ function BuilderClientWorkspace() {
       onDrop={handleDrop}
       className="relative"
     >
-      <BuilderShell hideDesignInspector={coverEditing} topActions={<>{backendDocumentId ? <span className="mr-2 text-[11px] text-[var(--color-muted)]">{saveStatus === "saving" ? "Saving…" : saveStatus === "saved" ? "Saved" : saveStatus === "conflict" ? "Conflict" : saveStatus === "offline" ? "Offline" : ""}</span> : null}{topActions}</>}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8">
-          {workspaceScope?.role === "manager" && (taskContext || taskContextLoading || taskContextError) ? <section aria-label="Assigned task" className="mb-4 rounded-lg border border-[var(--color-line)] bg-white px-3 py-2.5 sm:px-4">
-            {taskContextLoading && !taskContext ? <p className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)]" role="status"><Loader2 size={15} className="animate-spin" aria-hidden="true"/>Loading task details…</p> : null}
-            {taskContextError ? <div role="alert" className="flex flex-wrap items-center justify-between gap-3 text-sm text-red-900"><span>{taskContextError}</span><button type="button" onClick={() => void loadTaskContext()} className="inline-flex min-h-9 items-center gap-2 rounded-md px-2 font-semibold text-red-900 hover:bg-red-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]"><RefreshCw size={14} aria-hidden="true"/>Retry</button></div> : null}
-            {taskContext ? <div className="grid gap-x-4 gap-y-2 lg:grid-cols-[minmax(0,1fr)_minmax(150px,220px)_auto] lg:items-center">
-              <div className="min-w-0">
-                <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                  <p className="shrink-0 text-[10px] font-semibold uppercase text-[var(--color-forest)]">Assigned task</p>
-                  <span className="min-w-0 break-words text-[11px] text-[var(--color-muted)]">{taskContext.organization.name}</span>
-                </div>
-                <h2 className="mt-0.5 break-words text-[15px] font-semibold leading-snug">{taskContext.title}</h2>
-                <p className="mt-0.5 flex flex-wrap items-center gap-x-1 text-xs text-[var(--color-ink-2)]">{POLICY_PROFILES[taskContext.policyType]?.label || taskContext.policyType}<span aria-hidden="true">·</span><DeadlineLabel value={taskContext.dueDate} status={taskContext.status}/></p>
-              </div>
-              <TaskProgress progress={taskContext.progress} unavailableReason={taskContext.unavailableReason} compact showSavedAt/>
-              <div className="flex flex-wrap items-center gap-2 sm:justify-end"><TaskStatus status={taskContext.status} dueDate={taskContext.dueDate}/>{taskContext.status === "in_progress" ? <Button variant="primary" size="sm" loading={taskCompleting} disabled={!taskContext.available || taskCompleting} onClick={() => void prepareTaskCompletion()}>Mark task complete</Button> : taskContext.status === "completed" ? <span className="text-xs font-medium text-emerald-900">Completed</span> : null}</div>
-            </div> : null}
-          </section> : null}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".docx"
+        className="hidden"
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) uploadFile(f);
+          e.target.value = "";
+        }}
+      />
+      <BuilderShell coverEditing={coverEditing} saveStatus={saveStatusLabel} policyMenu={policyMenu} taskChip={taskChip} isFirstStep={isFirst}>
+        <div key={step} className={step === "export" ? undefined : `pc-builder-authoring ${styles.stepContent}`}>
           <StepCmp onCoverEditingChange={step === "export" ? setCoverEditing : undefined} />
         </div>
       </BuilderShell>
       <Modal open={taskCompleteOpen} onClose={() => { if (!taskCompleting) setTaskCompleteOpen(false); }} title="Mark this task complete?" description="Your current policy has been saved and its progress refreshed." width={520} hideClose={taskCompleting}>
-        {taskContext && taskHasIncompleteProgress ? <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-950"><p className="font-semibold">{taskContext.progress ? `${taskContext.progress.totalSections - taskContext.progress.filledSections} sections are still empty.` : "Saved section progress is not available yet."}</p><p className="mt-1 text-xs leading-5">The admin will see the saved section count and completion status.</p><label className="mt-3 flex items-start gap-2.5 font-medium"><input type="checkbox" checked={taskIncompleteAcknowledged} onChange={(event) => setTaskIncompleteAcknowledged(event.target.checked)} className="mt-0.5 size-4 shrink-0 accent-[var(--color-forest)]"/><span>I understand and want to complete the task with empty sections.</span></label></div> : <p className="text-sm text-[var(--color-ink-2)]">The admin will see this task as completed after your latest save succeeds.</p>}
+        <div className="pc-builder-authoring">{taskContext && taskHasIncompleteProgress ? <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-950"><p className="font-semibold">{taskContext.progress ? `${taskContext.progress.totalSections - taskContext.progress.filledSections} sections are still empty.` : "Saved section progress is not available yet."}</p><p className="mt-1 text-xs leading-5">The admin will see the saved section count and completion status.</p><label className="mt-3 flex items-start gap-2.5 font-medium"><input type="checkbox" checked={taskIncompleteAcknowledged} onChange={(event) => setTaskIncompleteAcknowledged(event.target.checked)} className="mt-0.5 size-4 shrink-0 accent-[var(--color-forest)]"/><span>I understand and want to complete the task with empty sections.</span></label></div> : <p className="text-sm text-[var(--color-ink-2)]">The admin will see this task as completed after your latest save succeeds.</p>}</div>
         {taskContextError ? <p role="alert" className="mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-900">{taskContextError}</p> : null}
         <div className="mt-5 flex flex-col-reverse justify-end gap-2 sm:flex-row"><Button variant="secondary" size="md" disabled={taskCompleting} onClick={() => setTaskCompleteOpen(false)}>Keep editing</Button><Button variant="primary" size="md" loading={taskCompleting} disabled={taskCompleting || (!!taskContext && taskHasIncompleteProgress && !taskIncompleteAcknowledged)} icon={taskCompleting ? undefined : <FileCheck2 size={14} aria-hidden="true"/>} onClick={() => void completeAssignedTask()}>{taskCompleting ? "Saving & completing…" : "Confirm completion"}</Button></div>
       </Modal>
@@ -831,7 +799,7 @@ function BuilderClientWorkspace() {
         width={980}
       >
         <div className="max-h-[calc(100vh-170px)] overflow-y-auto pr-1 scrollbar-thin">
-          <CompanyInfoForm />
+          <div className="pc-builder-authoring"><CompanyInfoForm /></div>
         </div>
         <div className="mt-5 flex justify-end border-t border-[var(--color-line)] pt-4">
           <Button variant="primary" size="md" onClick={() => setShowCompanyEditor(false)}>

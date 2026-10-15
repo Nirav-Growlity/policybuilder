@@ -2,85 +2,224 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useBuilder, getStepOrder } from "@/lib/store";
-import { getPolicyProfile, getPolicySteps } from "@/lib/constants";
-import { Icon } from "@/components/icons";
-import {
-  Leaf,
-  ArrowLeft,
-  RotateCcw,
-  Users,
-  BadgeIndianRupee,
-  PanelLeftClose,
-  PanelLeftOpen,
-  X,
-  FileDown,
-  FileText,
-  Loader2,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, FileDown, FileText, Leaf, PanelLeftClose, PanelLeftOpen, X } from "lucide-react";
+import { POLICY_ICONS } from "./policy-icons";
 import { clsx } from "clsx";
+import { motion, useReducedMotion } from "motion/react";
+import { useBuilder, getStepOrder } from "@/lib/store";
+import type { StepId } from "@/lib/types";
+import { getPolicyProfile, getPolicySteps } from "@/lib/constants";
 import { DesignInspector } from "@/components/builder/design-inspector";
 import { usePolicyDownload } from "@/components/builder/dock-sections";
+import { DebouncedPolicyPreview } from "@/components/builder/live-preview";
+import { AICoverGenerationLoader } from "@/components/builder/ai-cover-generation-loader";
 import { usePolicyCraftScope } from "@/lib/policycraft-client-scope";
+import { ApplicationSessionMenu } from "@/components/ui/application-user-menu";
+import { Button } from "@/components/ui/button";
+import styles from "./shell.module.css";
+
+// Keep these breakpoints in sync with shell.module.css and design-inspector.module.css.
+const NARROW_QUERY = "(max-width: 1199px)";
+const COLLAPSE_KEY = "policycraft_sidebar_collapsed";
+const COLLAPSE_EVENT = "policycraft-sidebar-collapse";
+const PREVIEW_KEY = "policycraft_builder_preview_open";
+const PREVIEW_EVENT = "policycraft-builder-preview";
+
+type BuilderMode = "write" | "design" | "review";
+
+function subscribeToPreference(eventName: string) {
+  return (callback: () => void) => {
+    window.addEventListener("storage", callback);
+    window.addEventListener(eventName, callback);
+    return () => {
+      window.removeEventListener("storage", callback);
+      window.removeEventListener(eventName, callback);
+    };
+  };
+}
+const subscribeSidebarPreference = subscribeToPreference(COLLAPSE_EVENT);
+const subscribePreviewPreference = subscribeToPreference(PREVIEW_EVENT);
+const readStoredFlag = (key: string) => {
+  try { return window.localStorage.getItem(key) === "true"; }
+  catch { return false; }
+};
+const writeStoredFlag = (key: string, eventName: string, value: boolean) => {
+  try { window.localStorage.setItem(key, String(value)); }
+  catch { /* Preference storage is optional. */ }
+  window.dispatchEvent(new Event(eventName));
+};
+const getSidebarPreference = () => readStoredFlag(COLLAPSE_KEY);
+const getPreviewPreference = () => readStoredFlag(PREVIEW_KEY);
+const getServerFlag = () => false;
+const subscribeHydration = () => () => undefined;
+const getHydratedPreference = () => true;
+const getServerHydratedPreference = () => false;
+const subscribeViewport = (callback: () => void) => {
+  const media = window.matchMedia(NARROW_QUERY);
+  media.addEventListener("change", callback);
+  return () => media.removeEventListener("change", callback);
+};
+const getNarrowViewport = () => window.matchMedia(NARROW_QUERY).matches;
+
+// Focus handling shared by the workflow and preview drawers: focus moves into
+// the panel, Tab cycles inside it, Escape closes it, and focus returns afterwards.
+function useDrawerFocus({ active, panel, trigger, onClose }: {
+  active: boolean;
+  panel: React.RefObject<HTMLElement | null>;
+  trigger: React.RefObject<HTMLElement | null>;
+  onClose: () => void;
+}) {
+  React.useEffect(() => {
+    if (!active) return;
+    const previousActive = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const triggerElement = trigger.current;
+    panel.current?.focus();
+    const key = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); onClose(); return; }
+      if (event.key !== "Tab") return;
+      const elements = Array.from(panel.current?.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]') || []).filter((element) => element.getClientRects().length);
+      const first = elements[0];
+      const last = elements.at(-1);
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === panel.current)) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener("keydown", key);
+    return () => {
+      document.removeEventListener("keydown", key);
+      const restoreTarget = previousActive?.isConnected ? previousActive : triggerElement;
+      if (restoreTarget?.isConnected) restoreTarget.focus();
+    };
+  }, [active, onClose, panel, trigger]);
+}
 
 export function BuilderShell({
   children,
-  topActions,
-  showSidebar = true,
-  hideDesignInspector = false,
+  coverEditing = false,
+  saveStatus = null,
+  policyMenu,
+  taskChip,
+  isFirstStep = false,
 }: {
   children: React.ReactNode;
-  topActions?: React.ReactNode;
-  showSidebar?: boolean;
-  hideDesignInspector?: boolean;
+  coverEditing?: boolean;
+  saveStatus?: string | null;
+  policyMenu?: React.ReactNode;
+  taskChip?: React.ReactNode;
+  // The first-step flag comes from the builder, which owns the step order.
+  isFirstStep?: boolean;
 }) {
-  const { step, setStep, policy, reset } = useBuilder();
+  const { step, setStep, policy, next, prev, coverEditorRequest, includeAuthorSignature, authorSignatureDate, authorSignatureUpdatedAt, isAICoverGenerating } = useBuilder();
   const workspaceScope = usePolicyCraftScope((state) => state.scope);
-
-  const policyMeta = getPolicyProfile(policy.policyType);
-  const PolicyIcon = policyMeta.icon === "Users" ? Users : policyMeta.icon === "BadgeIndianRupee" ? BadgeIndianRupee : Leaf;
-
-  const order = getStepOrder(policy);
-  const visibleSteps = getPolicySteps(policy.policyType).filter((s) => order.includes(s.id));
-  const currentIndex = Math.max(0, visibleSteps.findIndex((s) => s.id === step));
-  const progress = ((currentIndex + 1) / visibleSteps.length) * 100;
-
-  const currentStep = visibleSteps[currentIndex];
-  const workspaceHref = workspaceScope?.role === "admin"
-    ? "/admin/policies"
-    : workspaceScope?.role === "manager"
-      ? `/manager?orgId=${workspaceScope.organizationId}`
-      : "/drafts";
-  const contentRef = React.useRef<HTMLDivElement>(null);
-  const [inspectorOpen, setInspectorOpen] = React.useState(true);
-  const [workflowOpen, setWorkflowOpen] = React.useState(false);
-  const [sidebarCollapsed, setSidebarCollapsed] = React.useState(() => {
-    if (typeof window === "undefined") return false;
-    try {
-      return localStorage.getItem("policycraft_sidebar_collapsed") === "true";
-    } catch {
-      return false;
-    }
-  });
-  const workflowPanel = React.useRef<HTMLElement>(null);
-  const closeInspector = React.useCallback(() => setInspectorOpen(false), [setInspectorOpen]);
   const { download, exporting } = usePolicyDownload();
+  const policyMeta = getPolicyProfile(policy.policyType);
+  const PolicyIcon = POLICY_ICONS[policyMeta.icon];
+  const order = getStepOrder(policy);
+  const visibleSteps = getPolicySteps(policy.policyType).filter((item) => order.includes(item.id));
+  // The rail lists the writing steps only; review and export lives behind its own mode tab.
+  const railSteps = visibleSteps.filter((item) => item.id !== "export");
+  const reviewing = step === "export";
+  const currentIndex = reviewing ? railSteps.length : Math.max(0, railSteps.findIndex((item) => item.id === step));
+  const currentStep = visibleSteps.find((item) => item.id === step) ?? railSteps[currentIndex];
+  const nextStep = railSteps[currentIndex + 1];
+  const progress = reviewing ? 100 : railSteps.length ? ((currentIndex + 1) / railSteps.length) * 100 : 0;
+  const stepNumber = Math.min(currentIndex + 1, railSteps.length);
+  const workspaceHref = workspaceScope?.role === "admin" ? "/admin/policies" : workspaceScope?.role === "manager" ? `/manager?orgId=${workspaceScope.organizationId}` : "/drafts";
+  const narrowViewport = React.useSyncExternalStore(subscribeViewport, getNarrowViewport, getServerFlag);
+  const sidebarCollapsed = React.useSyncExternalStore(subscribeSidebarPreference, getSidebarPreference, getServerFlag);
+  const sidebarPreferenceLoaded = React.useSyncExternalStore(subscribeHydration, getHydratedPreference, getServerHydratedPreference);
+  const previewOpen = React.useSyncExternalStore(subscribePreviewPreference, getPreviewPreference, getServerFlag);
+  const reduceMotion = useReducedMotion();
+  const markerTransition = { duration: reduceMotion ? 0 : 0.2, ease: "easeOut" as const };
+
+  const [designOpen, setDesignOpen] = React.useState(false);
+  const [workflowOpen, setWorkflowOpen] = React.useState(false);
+  // Render-time adjustments: a step change to export, or a cover edit request,
+  // always lands in Review, even when Design was open.
+  const [seenStep, setSeenStep] = React.useState<StepId>(step);
+  const [seenCoverRequest, setSeenCoverRequest] = React.useState(coverEditorRequest);
+  if (step !== seenStep) {
+    setSeenStep(step);
+    if (step === "export") setDesignOpen(false);
+  }
+  if (coverEditorRequest !== seenCoverRequest) {
+    setSeenCoverRequest(coverEditorRequest);
+    if (coverEditorRequest) setDesignOpen(false);
+  }
+
+  // The last write step is remembered so Write can return to it from Review.
+  const [rememberedWriteStep, setRememberedWriteStep] = React.useState<StepId | null>(step === "export" ? null : step);
+  if (step !== "export" && step !== rememberedWriteStep) setRememberedWriteStep(step);
+
+  const workflowPanel = React.useRef<HTMLElement>(null);
+  const workflowTrigger = React.useRef<HTMLButtonElement>(null);
+  const previewPanel = React.useRef<HTMLElement>(null);
+  const previewTrigger = React.useRef<HTMLButtonElement>(null);
+  const contentRef = React.useRef<HTMLDivElement>(null);
+
+  // While the cover editor is open, the mode switcher and Design shortcut are
+  // hidden, matching the inspector toggles that this replaces.
+  const coverEditingNow = coverEditing && step === "export";
+  const mode: BuilderMode = designOpen ? "design" : step === "export" ? "review" : "write";
+  // The step rail belongs to writing; Design and Review & export use the full width.
+  const showRail = mode === "write";
+  const railExpanded = narrowViewport || !sidebarCollapsed || !sidebarPreferenceLoaded;
+  const showPreview = mode === "write" && previewOpen;
+  const previewDrawer = showPreview && narrowViewport;
+  const signatureUpdatedAt = authorSignatureUpdatedAt ?? null;
+
+  const closeWorkflow = React.useCallback(() => setWorkflowOpen(false), []);
+  const closePreview = React.useCallback(() => writeStoredFlag(PREVIEW_KEY, PREVIEW_EVENT, false), []);
+  const exitDesign = React.useCallback(() => setDesignOpen(false), []);
+  useDrawerFocus({ active: showRail && narrowViewport && workflowOpen, panel: workflowPanel, trigger: workflowTrigger, onClose: closeWorkflow });
+  useDrawerFocus({ active: previewDrawer, panel: previewPanel, trigger: previewTrigger, onClose: closePreview });
 
   const toggleSidebar = React.useCallback(() => {
-    setSidebarCollapsed((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem("policycraft_sidebar_collapsed", String(next));
-      } catch {}
-      return next;
-    });
+    writeStoredFlag(COLLAPSE_KEY, COLLAPSE_EVENT, !getSidebarPreference());
   }, []);
+
+  const toggleWorkflow = () => {
+    if (!workflowOpen) {
+      // Only one drawer is open at a time on narrow screens.
+      if (previewOpen) writeStoredFlag(PREVIEW_KEY, PREVIEW_EVENT, false);
+      setWorkflowOpen(true);
+    } else {
+      setWorkflowOpen(false);
+    }
+  };
+
+  const togglePreview = () => {
+    if (!previewOpen) {
+      if (narrowViewport) setWorkflowOpen(false);
+      writeStoredFlag(PREVIEW_KEY, PREVIEW_EVENT, true);
+    } else {
+      closePreview();
+    }
+  };
+
+  const enterWrite = () => {
+    setDesignOpen(false);
+    if (step !== "export") return;
+    const remembered = rememberedWriteStep;
+    const target = remembered && visibleSteps.some((item) => item.id === remembered)
+      ? remembered
+      : visibleSteps.filter((item) => item.id !== "export").at(-1)?.id ?? step;
+    setStep(target);
+  };
+  const enterDesign = () => {
+    setWorkflowOpen(false);
+    setDesignOpen(true);
+  };
+  const enterReview = () => {
+    setWorkflowOpen(false);
+    setDesignOpen(false);
+    if (step !== "export") setStep("export");
+  };
 
   React.useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "b") {
         event.preventDefault();
-        setInspectorOpen((value) => !value);
+        if (!coverEditingNow) setDesignOpen((open) => !open);
       }
       if ((event.ctrlKey || event.metaKey) && (event.key === "\\" || event.key === "[")) {
         event.preventDefault();
@@ -89,388 +228,145 @@ export function BuilderShell({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [toggleSidebar]);
-
-  React.useEffect(() => {
-    const mobile = window.matchMedia("(max-width:1199px)").matches;
-    const previous = document.activeElement as HTMLElement | null;
-    if (!mobile || !workflowOpen) return;
-    workflowPanel.current?.focus();
-    const key = (event: KeyboardEvent) => {
-      if (event.key === "Escape") { event.preventDefault(); setWorkflowOpen(false); return; }
-      if (event.key !== "Tab") return;
-      const elements = Array.from(workflowPanel.current?.querySelectorAll<HTMLElement>('button:not([disabled]),a[href],[tabindex="0"]') || []).filter(el => el.getClientRects().length);
-      const first = elements[0];
-      const last = elements.at(-1);
-      if (event.shiftKey && (document.activeElement === first || document.activeElement === workflowPanel.current)) { event.preventDefault(); last?.focus(); }
-      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
-    };
-    document.addEventListener("keydown", key);
-    return () => { document.removeEventListener("keydown", key); previous?.focus(); };
-  }, [workflowOpen]);
+  }, [coverEditingNow, toggleSidebar]);
 
   React.useLayoutEffect(() => {
-    contentRef.current?.scrollTo(0, 0);
+    contentRef.current?.scrollTo({ top: 0, behavior: "auto" });
   }, [step]);
 
+  const modeButton = (value: BuilderMode, label: string, onSelect: () => void) => (
+    <button type="button" aria-pressed={mode === value} onClick={onSelect} className={styles.modeButton}>{label}</button>
+  );
+
   return (
-    <div className="flex h-screen overflow-hidden bg-[var(--color-cream)]">
-      {showSidebar && workflowOpen && <button type="button" aria-label="Close workflow navigation" onClick={() => setWorkflowOpen(false)} className="fixed inset-0 z-30 bg-black/25 min-[1200px]:hidden" />}
-      {showSidebar && (
-        <aside
-          ref={workflowPanel}
-          tabIndex={-1}
-          id="builder-workflow"
-          className={clsx(
-            "flex flex-shrink-0 flex-col border-r border-[var(--color-line)] bg-[var(--color-paper)] outline-none select-none",
-            "transition-[width] duration-200 ease-in-out",
-            "max-[1199px]:fixed max-[1199px]:inset-y-0 max-[1199px]:left-0 max-[1199px]:z-40 max-[1199px]:w-[280px] max-[1199px]:shadow-2xl",
-            workflowOpen ? "max-[1199px]:translate-x-0" : "max-[1199px]:-translate-x-full",
-            sidebarCollapsed ? "min-[1200px]:w-[68px]" : "min-[1200px]:w-[272px]"
-          )}
-        >
-          {/* Collapsed Mini-Rail View (Desktop only, minimal controls seen) */}
-          {sidebarCollapsed && (
-            <div className="hidden min-[1200px]:flex flex-col h-full w-full">
-              {/* Header with expand toggle */}
-              <div className="h-[65px] px-2 border-b border-[var(--color-line)] flex items-center justify-center flex-shrink-0">
-                <button
-                  type="button"
-                  onClick={toggleSidebar}
-                  title="Expand sidebar (Ctrl+\)"
-                  aria-label="Expand sidebar"
-                  className="w-10 h-10 rounded-xl bg-[var(--color-cream-2)] hover:bg-[var(--color-forest-soft)] text-[var(--color-ink-2)] hover:text-[var(--color-forest-deep)] border border-[var(--color-line-2)] flex items-center justify-center transition-all shadow-xs group"
-                >
-                  <PanelLeftOpen size={18} className="group-hover:scale-110 transition-transform" />
-                </button>
-              </div>
-
-              {/* Active policy mini badge */}
-              <div className="px-2 pt-3 flex justify-center flex-shrink-0">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center cursor-default shadow-xs transition-transform hover:scale-105"
-                  style={{
-                    background: policyMeta.accentSoft,
-                    border: "1px solid #cfe2d7",
-                    color: policyMeta.accent,
-                  }}
-                  title={`Active policy: ${policyMeta.label}`}
-                >
-                  <PolicyIcon size={17} strokeWidth={2.2} />
-                </div>
-              </div>
-
-              {/* Mini progress */}
-              <div
-                className="px-2 pt-3 pb-1 flex flex-col items-center cursor-default flex-shrink-0"
-                title={`Progress: ${Math.round(progress)}% (Step ${currentIndex + 1} of ${visibleSteps.length})`}
-              >
-                <span className="text-[10px] font-mono text-[var(--color-forest)] font-bold">
-                  {Math.round(progress)}%
-                </span>
-                <div className="w-9 h-1 rounded-full bg-[var(--color-line)] mt-1.5 overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-[var(--color-forest)] to-[var(--color-forest-mid)] transition-all duration-300"
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-              </div>
-
-              {/* Compact Step Icons */}
-              <nav className="flex-1 overflow-y-auto py-3 px-2 scrollbar-none flex flex-col items-center gap-1.5">
-                {visibleSteps.map((s, i) => {
-                  const done = i < currentIndex;
-                  const active = i === currentIndex;
-                  return (
-                    <button
-                      key={s.id}
-                      type="button"
-                      onClick={() => setStep(s.id)}
-                      title={`Step ${i + 1}: ${s.label} — ${s.desc}`}
-                      aria-label={`Step ${i + 1}: ${s.label}`}
-                      aria-current={active ? "step" : undefined}
-                      className={clsx(
-                        "w-9 h-9 rounded-xl flex items-center justify-center text-[11px] font-semibold transition-all duration-150 relative",
-                        active
-                          ? "bg-[var(--color-forest)] text-white shadow-sm ring-2 ring-[var(--color-forest)]/25 scale-105"
-                          : done
-                          ? "bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)] hover:bg-[var(--color-forest)] hover:text-white"
-                          : "bg-[var(--color-cream-2)] text-[var(--color-muted)] hover:bg-[var(--color-paper)] hover:text-[var(--color-ink)] border border-[var(--color-line-2)]"
-                      )}
-                    >
-                      {done ? <Icon name="Check" size={13} /> : String(i + 1).padStart(2, "0")}
-                    </button>
-                  );
-                })}
-              </nav>
-
-              {/* Bottom Minimal Actions */}
-              <div className="border-t border-[var(--color-line)] p-2 flex flex-col items-center gap-2 flex-shrink-0">
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (confirm("Reset all fields and start over?")) reset();
-                  }}
-                  title="Reset all fields"
-                  aria-label="Reset all fields"
-                  className="w-9 h-9 rounded-xl text-[var(--color-muted)] hover:bg-red-50 hover:text-red-600 flex items-center justify-center transition-colors"
-                >
-                  <RotateCcw size={14} />
-                </button>
-                <div
-                  className="w-8 h-8 rounded-full bg-[var(--color-ink)] text-white flex items-center justify-center text-[11px] font-semibold shadow-xs select-none"
-                  title="User account"
-                >
-                  N
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Full Expanded View (Default on desktop, and inside mobile slide-over) */}
-          <div className={clsx("flex-col h-full w-full", sidebarCollapsed ? "flex min-[1200px]:hidden" : "flex")}>
-            {/* Brand Header with collapse toggle */}
-            <div className="h-[65px] px-5 py-3.5 border-b border-[var(--color-line)] flex items-center justify-between gap-2 flex-shrink-0">
-              <Link href="/" className="flex items-center gap-2.5 group min-w-0">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[var(--color-forest)] to-[var(--color-forest-mid)] flex items-center justify-center shadow-[0_2px_8px_rgba(26,92,58,0.25)] group-hover:scale-105 transition-transform flex-shrink-0">
-                  <Leaf size={17} className="text-white" strokeWidth={2.2} />
-                </div>
-                <div className="min-w-0">
-                  <div className="font-display text-[16px] font-semibold tracking-tight leading-none truncate">PolicyCraft</div>
-                  <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--color-muted)] mt-1 truncate">Sustainability Suite</div>
-                </div>
+    <div className={styles.shell} data-sidebar-preference-loaded={sidebarPreferenceLoaded || undefined} data-builder-mode={mode} style={{ "--rail-offset": `${showRail && !narrowViewport ? (railExpanded ? 272 : 68) : 0}px` } as React.CSSProperties}>
+      {showRail && workflowOpen && <button type="button" aria-label="Close workflow navigation" onClick={closeWorkflow} className={styles.scrim} />}
+      {showRail && (
+        <aside ref={workflowPanel} tabIndex={-1} id="builder-workflow" role={narrowViewport ? "dialog" : undefined} aria-modal={narrowViewport && workflowOpen || undefined} aria-label="Builder workflow navigation" aria-hidden={narrowViewport && !workflowOpen || undefined} inert={narrowViewport && !workflowOpen}
+          className={clsx(styles.rail, railExpanded ? styles.railExpanded : styles.railCollapsed, workflowOpen && styles.railOpen)}>
+          {railExpanded ? <>
+            <div className={styles.brandRow}>
+              <Link href="/" className={styles.brand} aria-label="PolicyCraft home">
+                <span className={styles.brandMark}><Leaf size={16} aria-hidden="true" /></span>
+                <span className="min-w-0"><span className={styles.brandTitle}>PolicyCraft</span><span className={styles.brandSub}>Sustainability suite</span></span>
               </Link>
-              <div className="flex items-center gap-1">
-                <button
-                  type="button"
-                  onClick={toggleSidebar}
-                  title="Collapse sidebar (Ctrl+\)"
-                  aria-label="Collapse sidebar"
-                  className="hidden min-[1200px]:flex w-8 h-8 items-center justify-center rounded-lg text-[var(--color-muted)] hover:text-[var(--color-ink)] hover:bg-[var(--color-cream-2)] transition-colors flex-shrink-0"
-                >
-                  <PanelLeftClose size={17} />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setWorkflowOpen(false)}
-                  aria-label="Close navigation"
-                  className="min-[1200px]:hidden w-8 h-8 flex items-center justify-center rounded-lg text-[var(--color-muted)] hover:text-[var(--color-ink)] hover:bg-[var(--color-cream-2)] transition-colors flex-shrink-0"
-                >
-                  <X size={17} />
-                </button>
-              </div>
+              <button type="button" onClick={toggleSidebar} title="Collapse sidebar (Ctrl+\\)" aria-label="Collapse sidebar" className={clsx(styles.railButton, styles.wideOnly)}><PanelLeftClose size={16} aria-hidden="true" /></button>
+              <button type="button" onClick={closeWorkflow} aria-label="Close navigation" className={clsx(styles.railButton, styles.narrowOnly)}><X size={16} aria-hidden="true" /></button>
             </div>
-
-            {/* Policy type badge */}
-            <div className="px-4 pt-4 flex-shrink-0">
-              <div
-                className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg border"
-                style={{
-                  background: policyMeta.accentSoft,
-                  borderColor: "#cfe2d7",
-                  color: policyMeta.accent,
-                }}
-              >
-                <div
-                  className="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0"
-                  style={{ background: policyMeta.accent }}
-                >
-                  <PolicyIcon size={14} className="text-white" strokeWidth={2.2} />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-[10px] font-semibold uppercase tracking-wider opacity-70">Active policy</div>
-                  <div className="text-[13px] font-semibold truncate">{policyMeta.label}</div>
-                </div>
-              </div>
+            <div className={styles.policyMeta}><span className={styles.policyIcon}><PolicyIcon size={15} aria-hidden="true" /></span><span className="min-w-0"><span className={styles.metaEyebrow}>Active policy</span><span className={styles.metaLabel}>{policyMeta.label}</span></span></div>
+            <div className={styles.progress} role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress)} aria-valuetext={`${Math.round(progress)} percent, step ${stepNumber} of ${railSteps.length}`} aria-label="Builder progress">
+              <div className={styles.progressLabels}><span>{String(stepNumber).padStart(2, "0")} / {String(railSteps.length).padStart(2, "0")}</span><span>{Math.round(progress)}%</span></div>
+              <div className={styles.progressTrack}><div className={styles.progressBar} style={{ width: `${progress}%` }} /></div>
             </div>
-
-            {/* Progress */}
-            <div className="px-4 pt-4 flex-shrink-0">
-              <div className="flex items-center justify-between text-[11px] text-[var(--color-muted)] mb-2 font-mono">
-                <span>
-                  {String(currentIndex + 1).padStart(2, "0")} / {String(visibleSteps.length).padStart(2, "0")}
-                </span>
-                <span>{Math.round(progress)}%</span>
-              </div>
-              <div className="h-1 rounded-full bg-[var(--color-line)] overflow-hidden">
-                <div
-                  className="h-full bg-gradient-to-r from-[var(--color-forest)] to-[var(--color-forest-mid)] transition-all duration-500"
-                  style={{ width: `${progress}%` }}
-                />
-              </div>
-            </div>
-
-            {/* Steps */}
-            <nav className="flex-1 overflow-y-auto py-4 px-3 scrollbar-thin">
-              <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)] px-2 mb-2">
-                Workflow
-              </div>
-              <ul className="space-y-0.5">
-                {visibleSteps.map((s, i) => {
-                  const done = i < currentIndex;
-                  const active = i === currentIndex;
-                  return (
-                    <li key={s.id}>
-                      <button
-                        onClick={() => setStep(s.id)}
-                        className={clsx(
-                          "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all duration-150 group",
-                          active
-                            ? "bg-[var(--color-forest-soft)] text-[var(--color-forest-deep)]"
-                            : "hover:bg-[var(--color-cream-2)] text-[var(--color-ink-2)]"
-                        )}
-                      >
-                        <div
-                          className={clsx(
-                            "w-6 h-6 rounded-md flex items-center justify-center text-[10.5px] font-semibold flex-shrink-0 transition-colors",
-                            done && "bg-[var(--color-forest)] text-white",
-                            active && "bg-[var(--color-forest)] text-white",
-                            !done && !active && "bg-[var(--color-cream-2)] text-[var(--color-muted)] border border-[var(--color-line-2)]"
-                          )}
-                        >
-                          {done ? <Icon name="Check" size={12} /> : String(i + 1).padStart(2, "0")}
-                        </div>
-                        <div className="min-w-0">
-                          <div
-                            className={clsx(
-                              "text-[13px] font-medium leading-tight",
-                              active && "font-semibold"
-                            )}
-                          >
-                            {s.label}
-                          </div>
-                          <div
-                            className={clsx(
-                              "text-[11px] leading-tight mt-0.5 truncate",
-                              active ? "text-[var(--color-forest-deep)]/70" : "text-[var(--color-muted)]"
-                            )}
-                          >
-                            {s.desc}
-                          </div>
-                        </div>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
+            <nav className={styles.nav} aria-label="Policy sections">
+              <ul className={styles.navList}>{railSteps.map((item, index) => {
+                const active = item.id === step;
+                const done = index < currentIndex;
+                return <li key={item.id}><button type="button" onClick={() => setStep(item.id)} aria-current={active ? "step" : undefined} title={item.desc} className={styles.navButton}>
+                  {active && <motion.span layoutId="builder-workflow-selection" aria-hidden="true" className={styles.workflowMarker} transition={markerTransition} />}
+                  <span className={clsx(styles.stepNumber, done && styles.stepDone)}>{done ? <Check size={12} aria-hidden="true" /> : String(index + 1).padStart(2, "0")}</span>
+                  <span className={styles.stepTitle}>{item.label}</span>
+                </button></li>;
+              })}</ul>
             </nav>
-
-            {/* Footer actions */}
-            <div className="border-t border-[var(--color-line)] p-3 space-y-2 flex-shrink-0">
-              <div className="flex items-center gap-2">
-                <div
-                  className="w-8 h-8 rounded-full bg-[var(--color-ink)] text-white flex items-center justify-center text-[11px] font-semibold shadow-xs flex-shrink-0 select-none"
-                  title="User account"
-                >
-                  N
-                </div>
-                <button
-                  onClick={() => {
-                    if (confirm("Reset all fields and start over?")) reset();
-                  }}
-                  className="flex-1 inline-flex items-center justify-center gap-2 h-8 px-2.5 rounded-lg text-[var(--color-muted)] hover:bg-[var(--color-cream-2)] text-[12px] font-medium transition-colors"
-                >
-                  <RotateCcw size={12} /> Reset all fields
-                </button>
-              </div>
+          </> : <>
+            <div className={styles.collapsedBrand}>
+              <Link href="/" className={styles.brandMarkLink} aria-label="PolicyCraft home"><span className={styles.brandMark}><Leaf size={16} aria-hidden="true" /></span></Link>
             </div>
-          </div>
+            <div className={styles.collapsedContent}>
+              <span className={styles.miniPolicy} title={`Active policy: ${policyMeta.label}`}><PolicyIcon size={15} aria-hidden="true" /></span>
+              <span className={styles.miniProgress} title={`Progress ${Math.round(progress)}%`}>{Math.round(progress)}%</span>
+              <nav className={styles.miniNav} aria-label="Policy sections">{railSteps.map((item, index) => <button type="button" key={item.id} onClick={() => setStep(item.id)} title={`Step ${index + 1}: ${item.label} — ${item.desc}`} aria-label={`Step ${index + 1}: ${item.label}`} aria-current={item.id === step ? "step" : undefined} className={styles.stepIcon}>{item.id === step && <motion.span layoutId="builder-workflow-selection" aria-hidden="true" className={styles.workflowMarkerCompact} transition={markerTransition} />}{index < currentIndex ? <Check size={13} aria-hidden="true" /> : String(index + 1).padStart(2, "0")}</button>)}</nav>
+            </div>
+          </>}
         </aside>
       )}
 
-      <main className="flex-1 flex flex-col overflow-hidden">
-        {/* Top bar */}
-        <header className="px-7 py-4 border-b border-[var(--color-line)] bg-[var(--color-paper)]/85 backdrop-blur-md flex flex-wrap items-center justify-between gap-4">
-          <div className={clsx("flex items-center gap-3 min-w-0", step === "export" && "w-full min-[1200px]:w-[230px] min-[1200px]:flex-none")}>
-            {showSidebar && sidebarCollapsed && (
-              <button
-                type="button"
-                onClick={toggleSidebar}
-                title="Expand sidebar (Ctrl+\)"
-                aria-label="Expand sidebar"
-                className="hidden min-[1200px]:inline-flex items-center justify-center w-8 h-8 rounded-lg border border-[var(--color-line)] hover:bg-[var(--color-cream-2)] text-[var(--color-muted)] hover:text-[var(--color-ink)] transition-colors flex-shrink-0"
-              >
-                <PanelLeftOpen size={16} />
-              </button>
-            )}
-            <div className="min-w-0">
-              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)] font-semibold">
-                <Link href={workspaceHref} className="hover:text-[var(--color-ink)] inline-flex items-center gap-1">
-                  <ArrowLeft size={11} /> Workspace
-                </Link>
-                <span className="text-[var(--color-line-2)]">/</span>
-                <span>Builder</span>
-              </div>
-              <h1 className="font-display text-[22px] font-semibold tracking-tight mt-1 truncate">
-                {currentStep?.label}
-              </h1>
-              <p className="text-[12.5px] text-[var(--color-muted)] mt-0.5 truncate">
-                {workspaceScope?.organizationName ? <><span className="font-medium text-[var(--color-ink-2)]">{workspaceScope.organizationName}</span><span aria-hidden="true"> · </span></> : null}Step {currentIndex + 1} of {visibleSteps.length} — {currentStep?.desc}
-              </p>
-            </div>
+      <main className={styles.contentColumn}>
+        <header className={styles.header}>
+          <div className={styles.headerStart}>
+            {showRail && sidebarCollapsed && sidebarPreferenceLoaded && <button type="button" onClick={toggleSidebar} title="Expand sidebar (Ctrl+\\)" aria-label="Expand sidebar" className={clsx(styles.railButton, styles.expandButton)}><PanelLeftOpen size={16} aria-hidden="true" /></button>}
+            <Link href={workspaceHref} className={styles.workspaceLink}><ArrowLeft size={13} aria-hidden="true" />Workspace</Link>
+            <span aria-hidden="true" className={styles.divider} />
+            <p className={styles.identity}>
+              <span className={styles.policyLabel}>{policyMeta.label}</span>
+              {workspaceScope?.organizationName ? <><span aria-hidden="true" className={styles.separator}>·</span><span className={styles.orgName}>{workspaceScope.organizationName}</span></> : null}
+            </p>
+            {saveStatus !== null && <span role="status" aria-live="polite" className={styles.saveStatus}>{saveStatus}</span>}
           </div>
-          <div className={clsx("flex flex-wrap items-center", step === "export" ? "gap-1.5 w-full min-w-0 justify-end min-[1200px]:w-auto min-[1200px]:flex-1" : "gap-2")}>
-            {topActions}
-            {step === "export" && (
-              <div className="flex flex-wrap items-center gap-2">
-                <button
-                  type="button"
-                  disabled={!!exporting}
-                  onClick={() => download("pdf")}
-                  aria-busy={exporting === "pdf"}
-                  className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55 motion-reduce:transition-none min-[1200px]:min-h-9 min-[1200px]:min-w-[140px] min-[1200px]:px-3 min-[1200px]:text-[12px]"
-                >
-                  <span className="inline-flex w-4 shrink-0 justify-center" aria-hidden="true">
-                    {exporting === "pdf" ? <Loader2 size={16} className="animate-spin motion-reduce:animate-none" /> : <FileDown size={16} />}
-                  </span>
-                  <span>{exporting === "pdf" ? "Downloading PDF…" : "Download PDF"}</span>
-                </button>
-                <button
-                  type="button"
-                  disabled={!!exporting}
-                  onClick={() => download("docx")}
-                  aria-busy={exporting === "docx"}
-                  className="inline-flex min-h-11 min-w-44 items-center justify-center gap-2 rounded-lg border border-[var(--color-line-2)] bg-[var(--color-paper)] px-4 text-[13px] font-semibold text-[var(--color-forest-deep)] transition-colors hover:border-[var(--color-forest)] hover:bg-[var(--color-forest-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-wait disabled:opacity-55 motion-reduce:transition-none min-[1200px]:min-h-9 min-[1200px]:min-w-[140px] min-[1200px]:px-3 min-[1200px]:text-[12px]"
-                >
-                  <span className="inline-flex w-4 shrink-0 justify-center" aria-hidden="true">
-                    {exporting === "docx" ? <Loader2 size={16} className="animate-spin motion-reduce:animate-none" /> : <FileText size={16} />}
-                  </span>
-                  <span>{exporting === "docx" ? "Downloading Word…" : "Download Word"}</span>
-                </button>
-                <span className="sr-only" role="status" aria-live="polite">
-                  {exporting ? `Preparing ${exporting === "pdf" ? "PDF" : "Word"} download.` : ""}
-                </span>
-              </div>
-            )}
-            {showSidebar && !hideDesignInspector && (
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  aria-expanded={workflowOpen}
-                  aria-controls="builder-workflow"
-                  onClick={() => setWorkflowOpen((value) => !value)}
-                  className={clsx("rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px] min-[1200px]:hidden", step === "export" && "min-[1200px]:py-2 min-[1200px]:text-[12px]")}
-                >
-                  {workflowOpen ? "Hide workflow" : "Workflow"}
-                </button>
-                <button
-                  type="button"
-                  aria-expanded={inspectorOpen}
-                  aria-controls="design-inspector"
-                  onClick={() => setInspectorOpen((value) => !value)}
-                  className={clsx("rounded-lg border border-[var(--color-line)] px-3 py-2.5 text-[13px]", step === "export" && "min-[1200px]:py-2 min-[1200px]:text-[12px]")}
-                >
-                  {inspectorOpen ? "Hide controls" : "Design controls"}
-                </button>
-              </div>
-            )}
+          {!coverEditingNow && <div role="group" aria-label="Builder mode" className={styles.modeSwitch}>
+            {modeButton("write", "Write", enterWrite)}
+            {modeButton("design", "Design", enterDesign)}
+            {modeButton("review", "Review & export", enterReview)}
+          </div>}
+          <div className={styles.headerEnd}>
+            {taskChip}
+            {mode === "write" && policyMenu}
+            {mode === "write" && <button ref={previewTrigger} type="button" aria-pressed={previewOpen} aria-controls={previewOpen ? "builder-preview" : undefined} onClick={togglePreview} className={clsx(styles.headerButton, previewOpen && styles.headerButtonActive)}>Preview</button>}
+            <ApplicationSessionMenu workspaceHref={workspaceHref} />
+            {mode === "write" && <button ref={workflowTrigger} type="button" aria-expanded={workflowOpen} aria-controls="builder-workflow" onClick={toggleWorkflow} className={clsx(styles.headerButton, styles.mobileWorkflow)}>{workflowOpen ? "Hide workflow" : "Workflow"}</button>}
           </div>
         </header>
 
-        <div ref={contentRef} className="flex-1 overflow-y-auto scrollbar-thin">{children}</div>
+        <div className={styles.body}>
+          {mode === "design" ? (
+            <div className={styles.designLayout}>
+              <h1 className="sr-only">Document design</h1>
+              <DesignInspector open mobile={narrowViewport} onClose={exitDesign} />
+              <section aria-label="Document preview" className={styles.designPreview}>
+                <div className={styles.paneHeader}><h2 className={styles.paneTitle}>Document preview</h2></div>
+                <div className={styles.designPreviewBody}>
+                  {isAICoverGenerating
+                    ? <div className="relative h-full min-h-[clamp(520px,70vh,760px)]"><AICoverGenerationLoader title={policyMeta.label} company={policy.company.name} accent={policyMeta.accent} /></div>
+                    : <DebouncedPolicyPreview policy={policy} includeAuthorSignature={includeAuthorSignature} authorSignatureDate={authorSignatureDate} signatureUpdatedAt={signatureUpdatedAt} />}
+                </div>
+              </section>
+            </div>
+          ) : (
+            <>
+              <div className={styles.main}>
+                <div id="builder-content" ref={contentRef} className={styles.scrollRegion}>
+                  <div className={styles.frame}>
+                    <div className={clsx(styles.stepHeading, reviewing && styles.stepHeadingWithActions)}>
+                      <div className="min-w-0">
+                        <h1 className={styles.title}>{currentStep?.label}</h1>
+                        {currentStep?.desc ? <p className={styles.subtitle}>{currentStep.desc}</p> : null}
+                      </div>
+                      {reviewing && <div role="group" aria-label="Export document" className={styles.exportActions}>
+                        <Button variant="secondary" size="md" disabled={!!exporting} loading={exporting === "docx"} icon={<FileText size={14} aria-hidden="true" />} onClick={() => download("docx")}>{exporting === "docx" ? "Downloading Word…" : "Download Word"}</Button>
+                        <Button variant="primary" size="md" disabled={!!exporting} loading={exporting === "pdf"} icon={<FileDown size={14} aria-hidden="true" />} onClick={() => download("pdf")}>{exporting === "pdf" ? "Downloading PDF…" : "Download PDF"}</Button>
+                        <span className="sr-only" role="status" aria-live="polite">{exporting ? `Preparing ${exporting === "pdf" ? "PDF" : "Word"} download.` : ""}</span>
+                      </div>}
+                    </div>
+                    {children}
+                  </div>
+                </div>
+                {!reviewing && <div className={styles.footer}>
+                  <p className={styles.stepCount}>Step {stepNumber} of {railSteps.length}</p>
+                  <div className={styles.footerActions}>
+                    <Button variant="secondary" size="md" icon={<ArrowLeft size={14} aria-hidden="true" />} onClick={prev} disabled={isFirstStep}>Back</Button>
+                    {nextStep
+                      ? <Button variant="primary" size="md" trailingIcon={<ArrowRight size={14} aria-hidden="true" />} onClick={next}>Next: {nextStep.label}</Button>
+                      : <Button variant="primary" size="md" trailingIcon={<ArrowRight size={14} aria-hidden="true" />} onClick={enterDesign}>Next: Design</Button>}
+                  </div>
+                </div>}
+              </div>
+              {showPreview && (
+                <aside ref={previewPanel} tabIndex={-1} id="builder-preview" aria-label="Live PDF preview" role={narrowViewport ? "dialog" : undefined} aria-modal={narrowViewport || undefined} className={styles.previewPane}>
+                  <div className={styles.paneHeader}>
+                    <h2 className={styles.paneTitle}>Live preview</h2>
+                    <button type="button" onClick={closePreview} aria-label="Close preview" className={styles.railButton}><X size={16} aria-hidden="true" /></button>
+                  </div>
+                  <div className={styles.previewBody}>
+                    <DebouncedPolicyPreview policy={policy} includeAuthorSignature={includeAuthorSignature} authorSignatureDate={authorSignatureDate} signatureUpdatedAt={signatureUpdatedAt} />
+                  </div>
+                </aside>
+              )}
+              {previewDrawer && <button type="button" aria-label="Dismiss live preview" onClick={closePreview} className={styles.scrim} />}
+            </>
+          )}
+        </div>
       </main>
-
-      {showSidebar && !hideDesignInspector && <DesignInspector open={inspectorOpen} onClose={closeInspector} />}
     </div>
   );
 }

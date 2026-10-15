@@ -2,23 +2,35 @@
 
 import * as React from "react";
 import { useBuilder } from "@/lib/store";
-import { Panel, InfoBar } from "@/components/ui/panel";
-import { Input, Textarea } from "@/components/ui/input";
+import { Panel } from "@/components/ui/panel";
+import { Input } from "@/components/ui/input";
+import { DatePicker } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { AIActionButton } from "@/components/ui/ai-action-button";
-import { callAI } from "@/lib/ai/client";
+import { streamAI } from "@/lib/ai/client";
+import { FIELD_BREAK, ITEM_BREAK, keepFinishedSentences, useGenerationStreams } from "@/lib/ai/use-generation-streams";
+import { Composing, StreamField, StreamingItems } from "@/components/ui/ai-stream";
 import { parseRequestedCount } from "@/lib/ai/prompts";
-import { BarChart3, History, Plus, RefreshCw, Trash2, Users } from "lucide-react";
+import { BarChart3, History, Plus, RefreshCw, Trash2, UserCheck, Users } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import { useToast } from "@/components/ui/toast";
 import { getSection } from "@/lib/sections";
 import type { RevisionEntry } from "@/lib/types";
 import { resolveRevisionHistory, scheduleAnchorAfter, suggestMinorRevisionNumber } from "@/lib/revision-history";
 import { SignatureMaker } from "@/components/builder/signature-maker";
+import { AutosizeTextarea, StepRoot, WritingField, authoring as ui, itemEnter } from "./authoring-ui";
 
 export function StepResponsibilities() {
   const { policy, updatePolicy } = useBuilder();
   const { push } = useToast();
-  const [busy, setBusy] = React.useState<Record<string, boolean>>({});
+  const streams = useGenerationStreams();
+  // Roles that replace a streamed preview appear without an entrance, so the hand-off is invisible.
+  const [settledFrom, setSettledFrom] = React.useState<number | null>(null);
+  React.useEffect(() => {
+    if (settledFrom === null) return;
+    const frame = requestAnimationFrame(() => setSettledFrom(null));
+    return () => cancelAnimationFrame(frame);
+  }, [settledFrom]);
 
   const updateAcknowledgementDetail = (field: "employeeName" | "employeeId" | "department" | "date", value: string) => {
     updatePolicy((current) => ({
@@ -62,56 +74,63 @@ export function StepResponsibilities() {
   };
 
   const generateResp = async (customPrompt?: string) => {
-    setBusy((b) => ({ ...b, resp: true }));
+    const { reveal, signal } = streams.start("resp");
     try {
       const existing = policy.responsibilities;
-      const r = await callAI({ type: "responsibilities", policy, customPrompt, existingContent: existing });
-      if (r.responsibilities) {
+      const r = await streamAI({ type: "responsibilities", policy, customPrompt, existingContent: existing }, {
+        signal,
+        onPartial: (partial) => reveal.set((partial.responsibilities ?? [])
+          .filter((item) => item && typeof item === "object")
+          .map((item) => `${typeof item.role === "string" ? item.role : ""}${typeof item.duty === "string" ? `${FIELD_BREAK}${item.duty}` : ""}`)
+          .join(ITEM_BREAK)),
+      });
+      let generated = (r.responsibilities ?? []).filter((item) => typeof item?.role === "string" && typeof item?.duty === "string" && item.role.trim());
+      // A stopped stream keeps only the roles whose duty was finished.
+      if (signal.aborted) generated = generated.filter((item, i) => i < generated.length - 1 || /[.!?]$/.test(item.duty.trim()));
+      if (r.responsibilities || signal.aborted) {
         const existingRolesLower = new Set(existing.map((x) => x.role.toLowerCase().trim()));
-        let uniqueNew = r.responsibilities.filter((x) => !existingRolesLower.has(x.role.toLowerCase().trim()));
+        let uniqueNew = generated.filter((x) => !existingRolesLower.has(x.role.toLowerCase().trim()));
         const reqCount = parseRequestedCount(customPrompt);
         if (reqCount && reqCount > 0) {
           uniqueNew = uniqueNew.slice(0, reqCount);
         }
+        if (uniqueNew.length === 0) {
+          push(signal.aborted ? "Stopped before a role was finished" : "No new roles generated", "info");
+          return;
+        }
+        await reveal.finish(uniqueNew.map((x) => `${x.role}${FIELD_BREAK}${x.duty}`).join(ITEM_BREAK));
+        setSettledFrom(existing.length);
         updatePolicy((p) => ({ responsibilities: [...p.responsibilities, ...uniqueNew] }));
         push(`Added ${uniqueNew.length} role responsibility details`, "success");
       }
     } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy((b) => ({ ...b, resp: false }));
+      streams.end("resp", reveal);
     }
   };
 
-  const generateMonitoring = async (customPrompt?: string) => {
-    setBusy((b) => ({ ...b, monitoring: true }));
+  const generateText = async (key: "monitoring" | "review", customPrompt?: string) => {
+    const { reveal, signal } = streams.start(key);
+    const field = key === "monitoring" ? "monitoring" : "reviewMechanism";
+    const name = key === "monitoring" ? "Monitoring section" : "Review section";
     try {
-      const existing = policy.monitoring;
-      const r = await callAI({ type: "monitoring", policy, customPrompt, existingContent: existing });
-      if (r.text) {
-        updatePolicy(() => ({ monitoring: r.text! }));
-        push("Monitoring section generated", "success");
+      const r = await streamAI({ type: key, policy, customPrompt, existingContent: policy[field] }, {
+        signal,
+        onPartial: (partial) => reveal.set(partial.text ?? ""),
+      });
+      const text = signal.aborted ? keepFinishedSentences(r.text ?? "") : r.text;
+      if (text) {
+        await reveal.finish(text);
+        updatePolicy(() => ({ [field]: text }));
+        push(signal.aborted ? `${name} stopped. Finished sentences were kept.` : `${name} generated`, signal.aborted ? "info" : "success");
+      } else if (signal.aborted) {
+        push(`${name} stopped before any text was written`, "info");
       }
     } catch {
       push("AI generation failed", "error");
     } finally {
-      setBusy((b) => ({ ...b, monitoring: false }));
-    }
-  };
-
-  const generateReview = async (customPrompt?: string) => {
-    setBusy((b) => ({ ...b, review: true }));
-    try {
-      const existing = policy.reviewMechanism;
-      const r = await callAI({ type: "review", policy, customPrompt, existingContent: existing });
-      if (r.text) {
-        updatePolicy(() => ({ reviewMechanism: r.text! }));
-        push("Review section generated", "success");
-      }
-    } catch {
-      push("AI generation failed", "error");
-    } finally {
-      setBusy((b) => ({ ...b, review: false }));
+      streams.end(key, reveal);
     }
   };
 
@@ -130,95 +149,118 @@ export function StepResponsibilities() {
   };
 
   return (
-    <div className="space-y-6">
-      <InfoBar icon={<Users size={16} className="text-[var(--color-forest)]" />}>
-        Define who owns the policy, how performance is monitored, and how the policy is reviewed over time.
-      </InfoBar>
-
+    <StepRoot>
       {getSection(policy, "responsibilities")?.enabled && <Panel
         title="Roles & responsibilities"
-        description="Assign ownership of the policy across the organization."
         icon={<Users size={17} strokeWidth={1.8} />}
         actions={
           <>
-            <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={addRole}>
+            <Button variant="secondary" size="sm" icon={<Plus size={14} />} onClick={addRole}>
               Add role
             </Button>
             <AIActionButton
               label="AI Generate"
-              loading={busy.resp}
+              loading={streams.busy("resp")}
               onGenerate={(prompt) => generateResp(prompt)}
+              onStop={() => streams.stop("resp")}
             />
           </>
         }
       >
-        <div className="space-y-2.5">
-          {policy.responsibilities.map((r, i) => (
-            <div
-              key={i}
-              className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-2 px-3 py-2.5 rounded-lg bg-[var(--color-cream-2)]/60 border border-[var(--color-line)]"
-            >
-              <Input
-                value={r.role}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRole(i, "role", e.target.value)}
-                placeholder="Role / department"
-                className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] font-semibold text-[13px]"
+        {policy.responsibilities.length > 0 || streams.busy("resp") ? (
+          <div className={ui.roles}>
+            <AnimatePresence initial={false}>
+              {policy.responsibilities.map((r, i) => (
+                <motion.div key={i} className={ui.roleRow} {...itemEnter} initial={settledFrom !== null && i >= settledFrom ? false : itemEnter.initial}>
+                  <Input
+                    value={r.role}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRole(i, "role", e.target.value)}
+                    placeholder="Role / department"
+                    aria-label={`Role ${i + 1}`}
+                    className={`${ui.inline} ${ui.roleName}`}
+                  />
+                  <AutosizeTextarea
+                    value={r.duty}
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateRole(i, "duty", e.target.value)}
+                    placeholder="Responsibility description"
+                    aria-label={`${r.role || `Role ${i + 1}`} responsibilities`}
+                    className={`${ui.inline} ${ui.roleDuty}`}
+                  />
+                  <div className={ui.rowActions}>
+                    <button
+                      type="button"
+                      onClick={() => removeRole(i)}
+                      className={ui.iconButton}
+                      data-tone="danger"
+                      aria-label={`Remove ${r.role || `role ${i + 1}`}`}
+                    >
+                      <Trash2 size={15} />
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+            {streams.reveal("resp") ? (
+              <StreamingItems
+                reveal={streams.reveal("resp")!}
+                waiting={<div className={ui.roleRow} aria-busy="true"><Composing lines={1} compact note="" /><Composing lines={2} compact note="Writing roles and their duties" /></div>}
+                render={([role, duty], index, writing) => (
+                  <div key={`streaming-${index}`} className={ui.roleRow} aria-busy={writing || undefined}>
+                    <StreamField text={role ?? ""} writing={writing && duty === undefined} className={`${ui.roleName} ${ui.streamCell}`} />
+                    <StreamField text={duty ?? ""} writing={writing && duty !== undefined} className={`${ui.roleDuty} ${ui.streamCell}`} />
+                    <div className={`${ui.rowActions} ${ui.streamSpacer}`} aria-hidden="true"><span className={ui.iconButton}><Trash2 size={15} /></span></div>
+                  </div>
+                )}
               />
-              <Textarea
-                rows={Math.max(2, Math.ceil((r.duty || "").length / 50))}
-                value={r.duty}
-                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateRole(i, "duty", e.target.value)}
-                placeholder="Responsibility description"
-                className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] resize-y"
-              />
-              <button
-                onClick={() => removeRole(i)}
-                className="text-[var(--color-muted)] hover:text-[#9b2929] hover:bg-[#fdecec] p-2 rounded-md transition-colors opacity-0 group-hover:opacity-100 self-center"
-                aria-label="Remove"
-              >
-                <Trash2 size={14} />
-              </button>
-            </div>
-          ))}
-        </div>
+            ) : null}
+          </div>
+        ) : (
+          <div className={ui.empty}>
+            No roles yet. Add one or use AI Generate.
+          </div>
+        )}
       </Panel>}
 
       {getSection(policy, "monitoring")?.enabled && <Panel
         title="Monitoring, reporting & transparency"
-        description="How performance is tracked, reviewed and disclosed."
         icon={<BarChart3 size={17} strokeWidth={1.8} />}
         actions={
           <AIActionButton
             label="AI Write"
-            loading={busy.monitoring}
-            onGenerate={(prompt) => generateMonitoring(prompt)}
+            loading={streams.busy("monitoring")}
+            onGenerate={(prompt) => generateText("monitoring", prompt)}
+            onStop={() => streams.stop("monitoring")}
           />
         }
       >
-        <Textarea
+        <WritingField
           value={policy.monitoring}
+          label="Monitoring, reporting & transparency"
+          busy={streams.busy("monitoring")}
+          stream={streams.reveal("monitoring")}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy(() => ({ monitoring: e.target.value }))}
-          rows={5}
           placeholder="Describe how performance is monitored, which KPIs are tracked, review frequency, and how findings are reported..."
         />
       </Panel>}
 
       {getSection(policy, "review")?.enabled && <Panel
         title="Review mechanism & continuous improvement"
-        description="When and how this policy is revisited."
         icon={<RefreshCw size={17} strokeWidth={1.8} />}
         actions={
           <AIActionButton
             label="AI Write"
-            loading={busy.review}
-            onGenerate={(prompt) => generateReview(prompt)}
+            loading={streams.busy("review")}
+            onGenerate={(prompt) => generateText("review", prompt)}
+            onStop={() => streams.stop("review")}
           />
         }
       >
-        <Textarea
+        <WritingField
           value={policy.reviewMechanism}
+          label="Review mechanism & continuous improvement"
+          busy={streams.busy("review")}
+          stream={streams.reveal("review")}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updatePolicy(() => ({ reviewMechanism: e.target.value }))}
-          rows={5}
           placeholder="Describe how and when this policy is reviewed, who owns the review, and how changes are communicated..."
         />
       </Panel>}
@@ -226,31 +268,33 @@ export function StepResponsibilities() {
       {getSection(policy, "revision")?.enabled && (
         <Panel
           title={getSection(policy, "revision")?.title || "Revision history"}
-          description="Track version history, revision dates, and change logs."
           icon={<History size={17} strokeWidth={1.8} />}
           actions={
-            <Button variant="primary" size="sm" icon={<Plus size={13} />} onClick={() => insertRevisionEntry(revisionHistory.length - 1)}>
+            <Button variant="secondary" size="sm" icon={<Plus size={14} />} onClick={() => insertRevisionEntry(revisionHistory.length - 1)}>
               Add revision
             </Button>
           }
         >
-          <div className="space-y-2.5">
-            <div className="hidden md:grid grid-cols-[100px_130px_1fr_auto] gap-2 px-3 py-1 text-[11px] font-semibold text-[var(--color-muted)] uppercase tracking-wider">
-              <span>Rev No.</span>
-              <span>Date</span>
-              <span>Description of Change</span>
-              <span className="w-8"></span>
-            </div>
+          <div className={ui.revisionHead} aria-hidden="true">
+            <span>Rev no.</span>
+            <span>Date</span>
+            <span>Description of change</span>
+            <span className="w-[70px]"></span>
+          </div>
+          <AnimatePresence initial={false}>
             {revisionHistory.map((rev, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="group grid grid-cols-1 md:grid-cols-[100px_130px_1fr_auto] gap-2 px-3 py-2.5 rounded-lg bg-[var(--color-cream-2)]/60 border border-[var(--color-line)]"
+                className={ui.revisionRow}
+                data-scheduled={rev.source === "scheduled" || undefined}
+                {...itemEnter}
               >
                 <Input
                   value={rev.revisionNo}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateRevisionEntry(i, "revisionNo", e.target.value)}
                   placeholder="0.0"
-                  className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] font-semibold text-[13px]"
+                  aria-label={`Revision ${i + 1} number`}
+                  className={`${ui.inline} ${ui.revisionNo}`}
                 />
                 <Input
                   value={rev.date}
@@ -259,45 +303,48 @@ export function StepResponsibilities() {
                   readOnly={rev.source === "scheduled"}
                   aria-label={`Revision ${rev.revisionNo} date`}
                   title={rev.source === "scheduled" ? "Set by the effective and last review dates" : undefined}
-                  className={`border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] ${rev.source === "scheduled" ? "cursor-not-allowed opacity-70" : ""}`}
+                  className={`${ui.inline} ${ui.revisionDate}`}
                 />
-                <Textarea
-                  rows={Math.max(2, Math.ceil((rev.description || "").length / 60))}
+                <AutosizeTextarea
                   value={rev.description}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateRevisionEntry(i, "description", e.target.value)}
                   placeholder="Description of change..."
-                  className="border-transparent bg-transparent hover:bg-[var(--color-paper)] focus:bg-[var(--color-paper)] text-[13px] resize-y"
+                  aria-label={`Revision ${rev.revisionNo} description`}
+                  className={`${ui.inline} ${ui.revisionText}`}
                 />
-                <div className="flex items-center gap-1 self-center">
+                <div className={ui.rowActions}>
                   <button
+                    type="button"
                     onClick={() => insertRevisionEntry(i)}
-                    className="text-[var(--color-muted)] hover:text-[var(--color-forest)] hover:bg-[var(--color-paper)] p-2 rounded-md transition-colors"
+                    className={ui.iconButton}
+                    data-tone="brand"
                     aria-label={`Insert revision after ${rev.revisionNo}`}
                     title="Insert revision"
                   >
-                    <Plus size={14} />
+                    <Plus size={15} />
                   </button>
                   <button
+                    type="button"
                     onClick={() => removeRevisionEntry(i)}
                     disabled={rev.source !== "custom"}
-                    className="text-[var(--color-muted)] hover:text-[#9b2929] hover:bg-[#fdecec] p-2 rounded-md transition-colors disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-[var(--color-muted)]"
+                    className={ui.iconButton}
+                    data-tone="danger"
                     aria-label={rev.source === "custom" ? "Remove revision" : `Scheduled revision ${rev.revisionNo} cannot be removed`}
                     title={rev.source === "custom" ? "Remove revision" : "Scheduled revisions follow the effective and last review dates"}
                   >
-                    <Trash2 size={14} />
+                    <Trash2 size={15} />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </AnimatePresence>
         </Panel>
       )}
       <Panel
         title="Employee acknowledgement form"
-        description="Details employees complete when acknowledging this policy."
-        icon={<Users size={17} strokeWidth={1.8} />}
+        icon={<UserCheck size={17} strokeWidth={1.8} />}
       >
-        <div className="grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
+        <div className={ui.ackGrid}>
           {([
             ["employeeName", "Employee name", "text"],
             ["employeeId", "Employee ID", "text"],
@@ -306,29 +353,34 @@ export function StepResponsibilities() {
           ] as const).map(([field, label, type]) => {
             const id = `employee-acknowledgement-${field}`;
             return (
-              <div key={field} className="flex min-w-0 flex-col gap-2">
-                <label
-                  htmlFor={id}
-                  className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]"
-                >
+              <div key={field} className="flex min-w-0 flex-col gap-1.5">
+                <label htmlFor={id} className={ui.ackLabel}>
                   {label}
                 </label>
-                <Input
-                  id={id}
-                  name={id}
-                  type={type}
-                  value={policy.employeeAcknowledgement?.[field] ?? ""}
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => updateAcknowledgementDetail(field, event.target.value)}
-                  aria-label={label}
-                  autoComplete="off"
-                  className="h-10 rounded-lg border-[var(--color-line-2)] bg-[var(--color-paper)] px-3.5 text-[13px] shadow-none focus-visible:border-[var(--color-forest)] focus-visible:ring-2 focus-visible:ring-[var(--color-forest)]/15"
-                />
+                {type === "date" ? (
+                  <DatePicker
+                    id={id}
+                    value={policy.employeeAcknowledgement?.date ?? ""}
+                    onChange={(date) => updateAcknowledgementDetail(field, date)}
+                    ariaLabel={label}
+                  />
+                ) : (
+                  <Input
+                    id={id}
+                    name={id}
+                    type={type}
+                    value={policy.employeeAcknowledgement?.[field] ?? ""}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => updateAcknowledgementDetail(field, event.target.value)}
+                    aria-label={label}
+                    autoComplete="off"
+                  />
+                )}
               </div>
             );
           })}
         </div>
       </Panel>
       <SignatureMaker />
-    </div>
+    </StepRoot>
   );
 }

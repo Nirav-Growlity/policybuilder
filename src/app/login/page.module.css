@@ -1,0 +1,69 @@
+@font-face { font-family: "PolicyCraft Home Sans"; src: url("/fonts/archivo-400.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: "PolicyCraft Home Sans"; src: url("/fonts/archivo-600.woff2") format("woff2"); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: "PolicyCraft Home Sans"; src: url("/fonts/archivo-700.woff2") format("woff2"); font-style: normal; font-weight: 700; font-display: swap; }
+
+/* The page is the home hero, continued: same header, same photo, same palette. */
+.surface {
+  --login-sans: "PolicyCraft Home Sans", system-ui, sans-serif;
+  --login-mono: var(--font-mono, ui-monospace, "SFMono-Regular", Menlo, monospace);
+  --login-bg: #f5f8fd;
+  --login-border: #d3dce9;
+  --login-sheet: #ffffff;
+  --login-ink: #111c30;
+  --login-body: #46546b;
+  --login-faint: #61718a;
+  --login-accent: var(--pc-brand);
+  --pc-page: var(--login-bg);
+  --pc-panel: var(--login-sheet);
+  --pc-text: var(--login-ink);
+  --pc-muted: var(--login-body);
+  --pc-divider: var(--login-border);
+  min-height: 100svh;
+  color: var(--login-ink);
+  background: var(--login-bg);
+  font-family: var(--login-sans);
+}
+:global([data-pc-theme="dark"]) .surface {
+  --login-bg: #000000;
+  --login-border: #262626;
+  --login-sheet: #0a0a0a;
+  --login-ink: #ededed;
+  --login-body: #a1a1a1;
+  --login-faint: #8f8f8f;
+  --login-accent: var(--pc-brand);
+  --pc-selection-text: var(--pc-brand);
+}
+
+.skipLink {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  z-index: 20;
+  padding: 8px 12px;
+  color: var(--login-ink);
+  background: var(--login-sheet);
+  border: 1px solid var(--login-border);
+  border-radius: 7px;
+  font-size: 13px;
+  transform: translateY(-150%);
+}
+.skipLink:focus-visible { transform: translateY(0); outline: 2px solid var(--login-accent); outline-offset: 2px; }
+
+.header { position: relative; z-index: 5; border-bottom: 1px solid var(--login-border); background: var(--login-bg); }
+.headerInner { display: flex; width: min(100% - 3.5rem, 1296px); min-height: 74px; margin-inline: auto; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { display: inline-flex; align-items: center; gap: 0.65rem; color: var(--login-ink); text-decoration: none; }
+.brandMark { display: grid; width: 2.25rem; height: 2.25rem; place-items: center; border-radius: 0.75rem; background: var(--login-accent); color: var(--login-bg); }
+.brandText { display: grid; gap: 0.22rem; }
+.brandText strong { font-size: 1.02rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+.brandText small { color: var(--login-faint); font-family: var(--login-mono); font-size: 0.54rem; letter-spacing: 0.06em; line-height: 1.3; text-transform: uppercase; }
+.backLink { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 2.5rem; color: var(--login-body); font-size: 0.78rem; font-weight: 600; text-decoration: none; transition: color 160ms ease; }
+.backLink:hover { color: var(--login-accent); }
+.brand:focus-visible, .backLink:focus-visible { outline: 2px solid var(--login-accent); outline-offset: 3px; border-radius: 6px; }
+
+@media (max-width: 1023px) {
+  .headerInner { min-height: 68px; }
+}
+@media (max-width: 480px) {
+  .headerInner { width: min(100% - 2.5rem, 1296px); }
+  .skipLink:focus-visible { position: static; display: inline-block; margin: 8px; transform: none; }
+}

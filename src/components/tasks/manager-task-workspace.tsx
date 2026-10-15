@@ -1,25 +1,35 @@
 "use client";
 
+import { DelayedLoading } from "@/components/workspace/workspace-list";
 import * as React from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight, CalendarClock, ClipboardList, Loader2, RefreshCw, Search } from "lucide-react";
 import { usePolicyCraftWorkspace } from "@/components/workspace/workspace-shell";
-import { organizationSourceName } from "@/components/workspace/organization-source-label";
+import { organizationSelectOptions, organizationSourceName } from "@/components/workspace/organization-source-label";
 import { POLICY_PROFILES } from "@/lib/constants";
 import type { PolicyCraftTask, PolicyCraftTaskStatus } from "@/lib/policycraft-task-types";
+import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
+import { SelectMenu } from "@/components/ui/select-menu";
+import { ApplicationSurface } from "@/components/ui/application-surface";
+import { RecordSkeleton } from "@/components/ui/record-skeleton";
+import { useRecordMotion, WorkspaceHero, WorkspaceSheet } from "@/components/workspace/workspace-motion";
 import { deadlineState, DeadlineLabel, TaskProgress, TaskStatus } from "./task-ui";
 import styles from "./tasks.module.css";
 
 type Filters = { orgId: string; type: string; status: string; q: string };
-const input = "h-10 w-full rounded-lg border border-[var(--color-line-2)] bg-white px-3 text-sm text-[var(--color-ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[var(--color-forest)]";
-const action = "inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-[var(--color-forest)] px-4 text-sm font-semibold text-white hover:bg-[var(--color-forest-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)] disabled:cursor-not-allowed disabled:opacity-55";
+const button = "inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg px-3 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--pc-brand)]";
 
 function readFilters(params: URLSearchParams): Filters {
   return { orgId: params.get("orgId") || "all", type: params.get("type") || "all", status: params.get("status") || "all", q: params.get("q") || "" };
 }
 
 function terminal(status: PolicyCraftTaskStatus) { return status === "completed" || status === "cancelled"; }
+
+function accentStyle(policyType: keyof typeof POLICY_PROFILES): React.CSSProperties {
+  return { "--ws-type": POLICY_PROFILES[policyType]?.accent } as React.CSSProperties;
+}
 
 export function ManagerTaskWorkspace() {
   const router = useRouter();
@@ -104,43 +114,63 @@ export function ManagerTaskWorkspace() {
     completed: work.filter((task) => task.status === "completed").length,
   };
   const hasFilters = filters.orgId !== "all" || filters.type !== "all" || filters.status !== "all" || !!filters.q.trim();
+  const statValue = (value: number) => (loaded ? value : loading ? null : "–");
 
   function clearFilters() {
     updateFilters({ orgId: "all", type: "all", status: "all", q: "" });
   }
 
-  return <div className={`${styles.workspace} min-w-0`}>
-    <header className={`${styles.header} flex flex-col justify-between gap-4 border-b border-[var(--color-line)] pb-5 sm:flex-row sm:items-end`}>
-      <div className="min-w-0"><p className="text-[11px] font-semibold uppercase tracking-[.14em] text-[var(--color-forest)]">Manager workspace</p><h1 className="mt-1 text-3xl font-semibold text-pretty">My tasks</h1><p className="mt-1 text-sm text-[var(--color-ink-2)]">Start an assignment or continue the policy you’re working on.</p></div>
-      <p className="inline-flex items-center gap-2 text-xs font-medium text-[var(--color-muted)]"><CalendarClock size={14} aria-hidden="true"/>Deadlines use India Standard Time</p>
-    </header>
+  return <ApplicationSurface data-pc-workspace="tasks" className={`${styles.workspace} min-w-0`}>
+    <WorkspaceHero
+      titleId="manager-tasks-title"
+      title="My tasks"
+      description="Start an assignment or continue the policy you’re working on."
+      stats={[
+        { label: "Active", value: statValue(counts.active) },
+        { label: "In progress", value: statValue(counts.inProgress) },
+        { label: "Overdue", value: statValue(counts.overdue) },
+        { label: "Completed", value: statValue(counts.completed) },
+      ]}
+    >
+      <p className={styles.heroNote}><CalendarClock size={14} aria-hidden="true"/>Deadlines use India Standard Time</p>
+    </WorkspaceHero>
 
-    <dl className={`${styles.summary} mt-5`} aria-label="Task summary">
-      {([ ["Active", "active"], ["In progress", "inProgress"], ["Overdue", "overdue"], ["Completed", "completed"] ] as const).map(([label, key]) => <div key={key}><dt>{label}</dt><dd className={key === "overdue" && counts.overdue > 0 ? "text-red-800" : undefined}>{loaded ? counts[key] : loading ? <span className="animate-pulse" aria-label="Loading">…</span> : <span><span aria-hidden="true">-</span><span className="sr-only">Unavailable</span></span>}</dd></div>)}
-    </dl>
-
-    <div className={`${styles.filters} mt-5 grid gap-2 sm:grid-cols-2 xl:grid-cols-[minmax(220px,1fr)_minmax(160px,220px)_minmax(160px,220px)_minmax(150px,200px)]`}>
-      <label className="text-[11px] font-semibold text-[var(--color-ink-2)]"><span>Search</span><span className="relative block"><Search size={15} aria-hidden="true" className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-muted)]"/><input name="q" autoComplete="off" aria-label="Search tasks" value={filters.q} onChange={(event) => updateFilters({ q: event.target.value }, "replace")} placeholder="Task or organization…" className={`${input} pl-9`}/></span></label>
-      <label className="text-[11px] font-semibold text-[var(--color-ink-2)]">Organization<select name="orgId" value={filters.orgId} onChange={(event) => updateFilters({ orgId: event.target.value })} className={`${input} mt-1`}><option value="all">All organizations</option>{activeOrganizations.map((organization) => <option key={organization.id} value={organization.id}>{organization.name} · {organizationSourceName(organization)}</option>)}</select></label>
-      <label className="text-[11px] font-semibold text-[var(--color-ink-2)]">Policy type<select name="type" value={filters.type} onChange={(event) => updateFilters({ type: event.target.value })} className={`${input} mt-1`}><option value="all">All policy types</option>{Object.entries(POLICY_PROFILES).map(([type, profile]) => <option key={type} value={type}>{profile.label}</option>)}</select></label>
-      <label className="text-[11px] font-semibold text-[var(--color-ink-2)]">Status<select name="status" value={filters.status} onChange={(event) => updateFilters({ status: event.target.value })} className={`${input} mt-1`}><option value="all">All tasks</option><option value="assigned">Assigned</option><option value="in_progress">In progress</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select></label>
-    </div>
-    {error ? <div role="alert" className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900"><span>{error}</span><button type="button" onClick={() => void load()} className="inline-flex min-h-9 items-center gap-2 rounded-md px-3 font-semibold text-red-900 hover:bg-red-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-forest)]"><RefreshCw size={14} aria-hidden="true"/>Retry</button></div> : null}
-    {notice ? <p role="status" aria-live="polite" className="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">{notice}</p> : null}
-    <section className={`${styles.results} mt-5`} aria-labelledby="manager-task-results-heading">
-      <h2 id="manager-task-results-heading" className="sr-only">Task results</h2>
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2" aria-live="polite"><p className="text-xs font-medium text-[var(--color-ink-2)]">{loading && !loaded ? "Loading tasks…" : !loaded && error ? "Task data unavailable" : `Showing ${tasks.length} of ${work.length} tasks`}</p>{hasFilters && loaded ? <button type="button" onClick={clearFilters} className="min-h-9 px-2 text-xs font-semibold text-[var(--color-forest)] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-forest)]">Clear filters</button> : null}</div>
-      <div aria-busy={loading && !loaded}>
-        {loading && !loaded ? <div className="grid min-h-52 place-items-center" role="status" aria-live="polite"><span className="inline-flex items-center gap-2 text-sm text-[var(--color-muted)]"><Loader2 size={16} className="animate-spin" aria-hidden="true"/>Loading tasks…</span></div> : !loaded && error ? <div className={`${styles.empty} mt-7`}><ClipboardList size={24} aria-hidden="true"/><h2 className="mt-3 text-lg font-semibold">Tasks unavailable</h2><p className="mx-auto mt-1 max-w-md text-sm text-[var(--color-ink-2)]">Use Retry above to load your assigned tasks.</p></div> : tasks.length ? <div className="overflow-hidden rounded-lg border border-[var(--color-line)] bg-white"><div className="hidden overflow-x-auto lg:block"><table className={`${styles.table} w-full table-fixed border-collapse text-left text-sm`}><colgroup><col className="w-[30%]"/><col className="w-[16%]"/><col className="w-[22%]"/><col className="w-[16%]"/><col className="w-[16%]"/></colgroup><thead className="border-b border-[var(--color-line)] bg-[var(--color-cream-2)]/70 text-[10px] uppercase tracking-wide text-[var(--color-muted)]"><tr>{["Task / policy", "Deadline", "Your progress", "Status", "Action"].map((label) => <th key={label} scope="col" className="px-4 py-3 font-semibold">{label}</th>)}</tr></thead><tbody className="divide-y divide-[var(--color-line)]">{tasks.map((task) => <tr key={task.id} className="align-top"><th scope="row" className="px-4 py-4 text-left"><p className="break-words font-semibold">{task.title}</p><p className="mt-1 text-xs text-[var(--color-ink-2)]">{POLICY_PROFILES[task.policyType]?.label || task.policyType} · {task.organization.name} · {organizationSourceName(task.organization)}</p>{task.instructions ? <p className="mt-2 line-clamp-2 text-xs font-normal text-[var(--color-muted)]">{task.instructions}</p> : null}</th><td className="px-4 py-4"><DeadlineLabel value={task.dueDate} status={task.status}/></td><td className="px-4 py-4"><TaskProgress progress={task.progress} unavailableReason={task.unavailableReason} compact showSavedAt/></td><td className="px-4 py-4"><TaskStatus status={task.status} dueDate={task.dueDate}/></td><td className="px-4 py-4"><TaskAction task={task} loading={loadingTask === task.id} onStart={() => void startTask(task)}/></td></tr>)}</tbody></table></div><div className={`${styles.mobileRows} divide-y divide-[var(--color-line)] lg:hidden`}>{tasks.map((task) => <article key={task.id} className="min-w-0 p-4 sm:p-5"><div className="flex flex-wrap items-start justify-between gap-3"><div className="min-w-0 flex-1"><h2 className="break-words font-semibold">{task.title}</h2><p className="mt-1 text-xs text-[var(--color-ink-2)]">{POLICY_PROFILES[task.policyType]?.label || task.policyType} · {task.organization.name} · {organizationSourceName(task.organization)}</p></div><TaskStatus status={task.status} dueDate={task.dueDate}/></div>{task.instructions ? <p className="mt-2 text-xs leading-5 text-[var(--color-ink-2)]">{task.instructions}</p> : null}<div className="mt-4 grid gap-3 sm:grid-cols-2"><div><p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--color-muted)]">Deadline</p><DeadlineLabel value={task.dueDate} status={task.status}/></div><div><p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--color-muted)]">Progress</p><TaskProgress progress={task.progress} unavailableReason={task.unavailableReason}/></div></div><TaskAction task={task} loading={loadingTask === task.id} onStart={() => void startTask(task)}/></article>)}</div></div> : <div className={`${styles.empty} mt-7 border-y border-[var(--color-line)] py-14 text-center`}><ClipboardList size={24} className="mx-auto text-[var(--color-muted)]" aria-hidden="true"/><h2 className="mt-3 text-lg font-semibold">{hasFilters ? "No tasks match these filters" : work.length ? "No tasks found" : "No tasks assigned yet"}</h2><p className="mx-auto mt-1 max-w-md text-sm text-[var(--color-ink-2)]">{hasFilters ? "Clear a filter to see your assigned policy work." : "Tasks assigned to you will appear here."}</p>{hasFilters ? <button type="button" onClick={clearFilters} className="mt-4 min-h-10 px-3 text-sm font-semibold text-[var(--color-forest)] underline-offset-2 hover:underline">Clear filters</button> : null}</div>}
+    <WorkspaceSheet as="section" aria-label="Assigned tasks">
+      <div className={styles.filterBand}>
+        <label className={`${styles.fieldLabel} ${styles.searchField}`}><span>Search</span><span className={styles.searchControl}><Search size={15} aria-hidden="true" className={styles.searchIcon}/><ApplicationInput aria-label="Search tasks" autoComplete="off" name="q" value={filters.q} onChange={(event) => updateFilters({ q: event.target.value }, "replace")} placeholder="Task or organization…" size="compact"/></span></label>
+        <label className={styles.fieldLabel}>Organization<SelectMenu name="orgId" value={filters.orgId} onValueChange={(orgId) => updateFilters({ orgId })} options={[{ value: "all", label: "All organizations" }, ...organizationSelectOptions(activeOrganizations)]} searchPlaceholder="Search organizations…" /></label>
+        <label className={styles.fieldLabel}>Policy type<SelectMenu name="type" value={filters.type} onValueChange={(type) => updateFilters({ type })} options={[{ value: "all", label: "All policy types" }, ...Object.entries(POLICY_PROFILES).map(([type, profile]) => ({ value: type, label: profile.label }))]} /></label>
+        <label className={styles.fieldLabel}>Status<SelectMenu name="status" value={filters.status} onValueChange={(status) => updateFilters({ status })} options={[{ value: "all", label: "All tasks" }, { value: "assigned", label: "Assigned" }, { value: "in_progress", label: "In progress" }, { value: "completed", label: "Completed" }, { value: "cancelled", label: "Cancelled" }]} /></label>
       </div>
-    </section>
+
+      <div className={styles.messages}>
+        {error ? <div role="alert" className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900"><span>{error}</span><button type="button" onClick={() => void load()} className={`${button} text-red-900 hover:bg-red-100`}><RefreshCw size={14} aria-hidden="true"/>Retry</button></div> : null}
+        {notice ? <p role="status" aria-live="polite" className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">{notice}</p> : null}
+      </div>
+
+      <section className={styles.results} aria-labelledby="manager-task-results-heading">
+        <h2 id="manager-task-results-heading" className="sr-only">Task results</h2>
+        <div className={styles.resultsBar} aria-live="polite"><p className={styles.resultsCount}>{loading && !loaded ? "Loading tasks…" : !loaded && error ? "Task data unavailable" : `Showing ${tasks.length} of ${work.length} tasks`}</p>{hasFilters && loaded ? <button type="button" onClick={clearFilters} className={styles.clearFilters}>Clear filters</button> : null}</div>
+        <div className={styles.panelBody} aria-busy={loading && !loaded}>
+          {loading && !loaded ? <DelayedLoading label="Loading tasks…"><div className={styles.loadingBlock} role="status" aria-live="polite"><span className={styles.loadingLine}><Loader2 size={16} className="animate-spin motion-reduce:animate-none" aria-hidden="true"/>Loading tasks…</span><RecordSkeleton /></div></DelayedLoading> : !loaded && error ? <div className={styles.empty}><span className={styles.emptyIcon} aria-hidden="true"><ClipboardList size={22}/></span><h2>Tasks unavailable</h2><p>Use Retry above to load your assigned tasks.</p></div> : tasks.length ? <TaskList tasks={tasks} loadingTask={loadingTask} onStart={(task) => void startTask(task)}/> : <div className={styles.empty}><span className={styles.emptyIcon} aria-hidden="true"><ClipboardList size={22}/></span><h2>{hasFilters ? "No tasks match these filters" : work.length ? "No tasks found" : "No tasks assigned yet"}</h2><p>{hasFilters ? "Clear a filter to see your assigned policy work." : "Tasks assigned to you will appear here."}</p>{hasFilters ? <button type="button" onClick={clearFilters} className={styles.clearFilters}>Clear filters</button> : null}</div>}
+        </div>
+      </section>
+    </WorkspaceSheet>
+  </ApplicationSurface>;
+}
+
+function TaskList({ tasks, loadingTask, onStart }: { tasks: PolicyCraftTask[]; loadingTask: string; onStart: (task: PolicyCraftTask) => void }) {
+  const recordMotion = useRecordMotion();
+  return <div className={styles.recordList}>
+    <div className={`${styles.tableScroll} hidden lg:block`}><table className={styles.table}><colgroup><col className="w-[30%]"/><col className="w-[16%]"/><col className="w-[22%]"/><col className="w-[16%]"/><col className="w-[16%]"/></colgroup><thead><tr>{["Task / policy", "Deadline", "Your progress", "Status", "Action"].map((label) => <th key={label} scope="col">{label}</th>)}</tr></thead><tbody><AnimatePresence initial={false}>{tasks.map((task, index) => <motion.tr key={task.id} data-ws-row="" className={styles.row} style={accentStyle(task.policyType)} {...recordMotion(index)}><th scope="row"><p className={styles.rowTitle}>{task.title}</p><p className={styles.rowMeta}>{POLICY_PROFILES[task.policyType]?.label || task.policyType} · {task.organization.name} · {organizationSourceName(task.organization)}</p>{task.instructions ? <p className="mt-2 line-clamp-2 text-xs font-normal text-[var(--color-muted)]">{task.instructions}</p> : null}</th><td><DeadlineLabel value={task.dueDate} status={task.status}/></td><td><TaskProgress progress={task.progress} unavailableReason={task.unavailableReason} compact showSavedAt/></td><td><TaskStatus status={task.status} dueDate={task.dueDate}/></td><td><TaskAction task={task} loading={loadingTask === task.id} onStart={() => onStart(task)}/></td></motion.tr>)}</AnimatePresence></tbody></table></div>
+    <div className={`${styles.mobileRows} lg:hidden`}><AnimatePresence initial={false}>{tasks.map((task, index) => <motion.article key={task.id} data-ws-row="" className={styles.mobileRow} style={accentStyle(task.policyType)} {...recordMotion(index)}><div className={styles.mobileHead}><div className="min-w-0 flex-1"><h2 className={styles.rowTitle}>{task.title}</h2><p className={styles.rowMeta}>{POLICY_PROFILES[task.policyType]?.label || task.policyType} · {task.organization.name} · {organizationSourceName(task.organization)}</p></div><TaskStatus status={task.status} dueDate={task.dueDate}/></div>{task.instructions ? <p className="mt-2 text-xs leading-5 text-[var(--color-ink-2)]">{task.instructions}</p> : null}<div className="mt-4 grid gap-3 sm:grid-cols-2"><div><p className={styles.fieldKicker}>Deadline</p><DeadlineLabel value={task.dueDate} status={task.status}/></div><div><p className={styles.fieldKicker}>Progress</p><TaskProgress progress={task.progress} unavailableReason={task.unavailableReason}/></div></div><TaskAction task={task} loading={loadingTask === task.id} onStart={() => onStart(task)}/></motion.article>)}</AnimatePresence></div>
   </div>;
 }
 
 function TaskAction({ task, loading, onStart }: { task: PolicyCraftTask; loading: boolean; onStart: () => void }) {
-  if (task.status === "assigned" && task.available) return <button type="button" onClick={onStart} disabled={loading} className={`${action} mt-2`}>{loading ? <Loader2 size={14} className="animate-spin motion-reduce:animate-none" aria-hidden="true"/> : <ArrowRight size={14} aria-hidden="true"/>}{loading ? "Starting…" : "Start task"}</button>;
+  if (task.status === "assigned" && task.available) return <ApplicationButton type="button" onClick={onStart} busy={loading} busyLabel="Starting…" variant="primary" className={`${styles.taskAction} mt-2`} leadingIcon={<ArrowRight size={14} aria-hidden="true"/>}>Start task</ApplicationButton>;
   if (task.status === "assigned") return <p className="mt-2 max-w-xs text-xs text-[var(--color-muted)]">Unavailable</p>;
-  if (task.status === "in_progress" && task.documentId && task.available) return <Link href={`/builder?draft=${encodeURIComponent(task.documentId)}&orgId=${task.organization.id}&taskId=${encodeURIComponent(task.id)}`} className={`${action} mt-2`}>Resume<ArrowRight size={14} aria-hidden="true"/></Link>;
+  if (task.status === "in_progress" && task.documentId && task.available) return <Link href={`/builder?draft=${encodeURIComponent(task.documentId)}&orgId=${task.organization.id}&taskId=${encodeURIComponent(task.id)}`} className={styles.resumeLink}>Resume<ArrowRight size={14} aria-hidden="true"/></Link>;
   if (task.status === "completed") return <span className="mt-2 block text-xs font-medium text-emerald-900">Completed {task.completedAt ? new Intl.DateTimeFormat("en-IN", { dateStyle: "medium", timeZone: "Asia/Kolkata" }).format(new Date(task.completedAt)) : ""}</span>;
   return <span className="mt-2 block max-w-44 text-xs text-[var(--color-muted)]">{task.status === "cancelled" ? "Cancelled" : "Unavailable"}</span>;
 }

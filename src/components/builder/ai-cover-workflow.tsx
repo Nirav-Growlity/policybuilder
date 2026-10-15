@@ -122,21 +122,15 @@ export function AICoverWorkflow({
     }
   }, [generated, saveGenerated]);
 
-  return <section aria-label="AI cover workflow" className="rounded-xl border border-[var(--color-line)] bg-white p-3">
-    <div className="flex flex-wrap items-center justify-between gap-3">
-      <div className="min-w-0">
-        <p className="text-[10px] font-semibold uppercase tracking-[.14em] text-[var(--color-muted)]">AI cover</p>
-        <p className="mt-1 text-[13px] leading-5 text-[var(--color-muted)]">Generate and apply an AI first page. Every saved result remains available in Document design and will not change your manual cover.</p>
-      </div>
-      <button type="button" disabled={busy || savingLibrary || generatedNeedsSaving} onClick={() => void generate()} className="inline-flex min-h-9 items-center gap-2 rounded-lg bg-[var(--color-forest)] px-3 text-[13px] font-semibold text-white shadow-sm disabled:cursor-wait disabled:opacity-60">
-        {busy || savingLibrary ? <RefreshCw size={14} className="animate-spin" /> : <Sparkles size={14} />}
-        {saved || generated ? "Regenerate" : "Generate AI cover"}
-      </button>
-    </div>
-    {error ? <p role="alert" className="mt-3 rounded-md bg-red-50 px-3 py-2 text-[12px] leading-5 text-red-800">{error}</p> : null}
-    {generatedNeedsSaving ? <div className="mt-3 flex items-center justify-between gap-3 rounded-lg bg-[#f3f4f2] px-3 py-2">
-      <p className="text-[12px] leading-5 text-[var(--color-muted)]">AI cover applied; library save pending.</p>
-      <button type="button" disabled={busy || savingLibrary} onClick={() => void retrySave()} className="shrink-0 rounded-md bg-[var(--color-forest)] px-2.5 py-1.5 text-[12px] font-semibold text-white disabled:opacity-50">Retry save</button>
+  return <section aria-label="AI cover workflow" className="pc-ai-cover-workflow" aria-busy={busy || savingLibrary}>
+    <button data-cover-action="primary" type="button" disabled={busy || savingLibrary || generatedNeedsSaving} onClick={() => void generate()} className="pc-studio-ai-button">
+      {busy || savingLibrary ? <RefreshCw size={15} aria-hidden="true" className="animate-spin" /> : <Sparkles size={15} aria-hidden="true" />}
+      {busy ? "Generating…" : saved || generated ? "Generate another" : "Generate AI cover"}
+    </button>
+    {error ? <p role="alert" className="pc-studio-notice" data-tone="warning">{error}</p> : null}
+    {generatedNeedsSaving ? <div className="pc-studio-pending">
+      <p>Cover applied but not saved to the library yet.</p>
+      <button data-cover-action="primary" type="button" disabled={busy || savingLibrary} onClick={() => void retrySave()} className="pc-studio-button-primary">Retry save</button>
     </div> : null}
   </section>;
 }

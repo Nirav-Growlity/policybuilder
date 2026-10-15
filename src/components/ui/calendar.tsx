@@ -1,8 +1,13 @@
 "use client";
 
 import * as React from "react";
+import { Popover } from "radix-ui";
 import { clsx } from "clsx";
-import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { CalendarDays, ChevronDown, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { useApplicationSurface } from "./application-surface";
+import { useFieldAccessibility } from "./field-accessibility";
+import styles from "./calendar.module.css";
 
 export interface DatePickerProps {
   value?: string; // Format: "YYYY-MM-DD"
@@ -21,8 +26,9 @@ const MONTH_NAMES = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
-
+const MONTH_SHORT = MONTH_NAMES.map((month) => month.slice(0, 3));
 const WEEKDAY_NAMES = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+const YEARS_PER_PAGE = 12;
 
 /** Pads number to 2 digits */
 function pad2(n: number): string {
@@ -48,16 +54,34 @@ export function parseToIso(dateStr?: string): string {
   return "";
 }
 
+const isIso = (value?: string): value is string => !!value && /^\d{4}-\d{2}-\d{2}$/.test(value);
+const toIso = (date: Date) => `${date.getFullYear()}-${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}`;
+const fromIso = (iso: string) => { const [y, m, d] = iso.split("-").map(Number); return new Date(y, m - 1, d); };
+
 /** Gets today's date in YYYY-MM-DD */
 function getTodayIso(): string {
-  const now = new Date();
-  return `${now.getFullYear()}-${pad2(now.getMonth() + 1)}-${pad2(now.getDate())}`;
+  return toIso(new Date());
 }
 
+/** Moves an ISO date by days or months; month moves keep the day where the target month allows. */
+function shiftIso(iso: string, { days = 0, months = 0 }: { days?: number; months?: number }) {
+  const date = fromIso(iso);
+  if (months) {
+    const day = date.getDate();
+    date.setDate(1);
+    date.setMonth(date.getMonth() + months);
+    date.setDate(Math.min(day, new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()));
+  }
+  if (days) date.setDate(date.getDate() + days);
+  return toIso(date);
+}
+
+type View = "days" | "months" | "years";
+
 /**
- * Reusable, accessible Calendar and DatePicker component.
- * Supports baseline date constraints (minDate/maxDate), keyboard/click outside dismissal,
- * quick navigation, and matches the application's forest/paper design system.
+ * Accessible date picker shared by the application. The trigger matches the other inputs;
+ * the calendar opens in a popover with day, month and year views, keyboard navigation and
+ * optional minimum/maximum dates.
  */
 export function DatePicker({
   value = "",
@@ -71,317 +95,267 @@ export function DatePicker({
   id,
   ariaLabel,
 }: DatePickerProps) {
+  const application = useApplicationSurface();
+  const reduceMotion = useReducedMotion();
+  const accessibility = useFieldAccessibility({ "aria-label": ariaLabel, "aria-invalid": hasError || undefined });
   const [open, setOpen] = React.useState(false);
-  const rootRef = React.useRef<HTMLDivElement>(null);
+  const [view, setView] = React.useState<View>("days");
+  const [focusIso, setFocusIso] = React.useState(() => initialFocus(value, minDate, maxDate));
+  const [direction, setDirection] = React.useState(0);
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const gridRef = React.useRef<HTMLDivElement>(null);
+  const keyboardMove = React.useRef(false);
+  const popoverId = React.useId();
 
-  // Normalize initial viewing month/year from current value or today
-  const initialDate = value || minDate || getTodayIso();
-  const [viewYear, setViewYear] = React.useState<number>(() => {
-    const parts = initialDate.split("-");
-    return parts.length === 3 ? parseInt(parts[0], 10) : new Date().getFullYear();
-  });
-  const [viewMonth, setViewMonth] = React.useState<number>(() => {
-    const parts = initialDate.split("-");
-    return parts.length === 3 ? parseInt(parts[1], 10) - 1 : new Date().getMonth();
-  });
+  const todayIso = getTodayIso();
+  const focusDate = fromIso(focusIso);
+  const viewYear = focusDate.getFullYear();
+  const viewMonth = focusDate.getMonth();
+  const displayValue = formatToDisplay(value);
 
-  // Keep view synchronized when value changes and popover opens
-  React.useEffect(() => {
-    if (value && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
-      const [y, m] = value.split("-");
-      setViewYear(parseInt(y, 10));
-      setViewMonth(parseInt(m, 10) - 1);
-    }
-  }, [value]);
-
-  // Dismiss popover on outside click
-  React.useEffect(() => {
-    if (!open) return;
-    const handleOutsideClick = (e: MouseEvent) => {
-      if (!rootRef.current?.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
-  }, [open]);
-
-  // Navigate months
-  const prevMonth = () => {
-    if (viewMonth === 0) {
-      setViewMonth(11);
-      setViewYear((y) => y - 1);
-    } else {
-      setViewMonth((m) => m - 1);
-    }
-  };
-
-  const nextMonth = () => {
-    if (viewMonth === 11) {
-      setViewMonth(0);
-      setViewYear((y) => y + 1);
-    } else {
-      setViewMonth((m) => m + 1);
-    }
-  };
-
-  // Generate day cells for the current viewMonth
-  const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
-  // Monday = 0, Sunday = 6
-  const firstDayIndex = (new Date(viewYear, viewMonth, 1).getDay() + 6) % 7;
-
-  // Year options for quick select dropdown (e.g. current - 15 to + 15)
-  const currentYear = new Date().getFullYear();
-  const yearOptions = React.useMemo(() => {
-    const years: number[] = [];
-    for (let y = currentYear - 10; y <= currentYear + 15; y++) {
-      years.push(y);
-    }
-    return years;
-  }, [currentYear]);
-
-  // Check if a specific ISO date string is disabled
   const isDateDisabled = React.useCallback(
-    (isoString: string): boolean => {
-      if (minDate && isoString < minDate) return true;
-      if (maxDate && isoString > maxDate) return true;
-      return false;
-    },
+    (iso: string) => (!!minDate && iso < minDate) || (!!maxDate && iso > maxDate),
     [minDate, maxDate]
   );
+  const monthDisabled = (year: number, month: number) => {
+    const first = `${year}-${pad2(month + 1)}-01`;
+    const last = toIso(new Date(year, month + 1, 0));
+    return (!!minDate && last < minDate) || (!!maxDate && first > maxDate);
+  };
+  const yearDisabled = (year: number) => (!!minDate && `${year}-12-31` < minDate) || (!!maxDate && `${year}-01-01` > maxDate);
 
-  const handleSelectDay = (day: number) => {
-    const isoString = `${viewYear}-${pad2(viewMonth + 1)}-${pad2(day)}`;
-    if (isDateDisabled(isoString)) return;
-    onChange(isoString);
+  const openChange = (next: boolean) => {
+    if (disabled) return;
+    if (next) {
+      setFocusIso(initialFocus(value, minDate, maxDate));
+      setView("days");
+      setDirection(0);
+    }
+    setOpen(next);
+  };
+
+  const select = (iso: string) => {
+    if (isDateDisabled(iso)) return;
+    onChange(iso);
     setOpen(false);
   };
 
-  const handleClear = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (!disabled) {
-      onChange("");
-    }
+  // The selectable range is contiguous, so clamping always lands on an enabled day.
+  const clampIso = (iso: string) => (minDate && iso < minDate ? minDate : maxDate && iso > maxDate ? maxDate : iso);
+
+  const moveFocus = (target: string, keyboard = false) => {
+    const next = clampIso(target);
+    if (next === focusIso) return;
+    setDirection(next > focusIso ? 1 : -1);
+    keyboardMove.current = keyboard;
+    setFocusIso(next);
   };
 
-  const handleSetToday = () => {
-    const today = getTodayIso();
-    if (!isDateDisabled(today)) {
-      onChange(today);
-      const [y, m] = today.split("-");
-      setViewYear(parseInt(y, 10));
-      setViewMonth(parseInt(m, 10) - 1);
-      setOpen(false);
-    }
+  // Keyboard moves keep DOM focus on the active day, including across months.
+  React.useEffect(() => {
+    if (!open || view !== "days" || !keyboardMove.current) return;
+    keyboardMove.current = false;
+    gridRef.current?.querySelector<HTMLButtonElement>(`[data-iso="${focusIso}"]`)?.focus();
+  }, [focusIso, open, view]);
+
+  const onDayKeyDown = (event: React.KeyboardEvent) => {
+    const steps: Record<string, { days?: number; months?: number }> = {
+      ArrowLeft: { days: -1 }, ArrowRight: { days: 1 }, ArrowUp: { days: -7 }, ArrowDown: { days: 7 },
+      PageUp: { months: event.shiftKey ? -12 : -1 }, PageDown: { months: event.shiftKey ? 12 : 1 },
+    };
+    const weekday = (focusDate.getDay() + 6) % 7;
+    if (event.key === "Home") steps.Home = { days: -weekday };
+    if (event.key === "End") steps.End = { days: 6 - weekday };
+    const step = steps[event.key];
+    if (!step) return;
+    event.preventDefault();
+    moveFocus(shiftIso(focusIso, step), true);
   };
 
-  const todayIso = getTodayIso();
-  const displayVal = formatToDisplay(value);
+  // Six full weeks from the Monday on or before the 1st, so the grid never changes height.
+  const firstOfMonth = new Date(viewYear, viewMonth, 1);
+  const gridStart = toIso(new Date(viewYear, viewMonth, 1 - ((firstOfMonth.getDay() + 6) % 7)));
+  const cells = Array.from({ length: 42 }, (_, index) => shiftIso(gridStart, { days: index }));
+  const yearPageStart = viewYear - (viewYear % YEARS_PER_PAGE);
+
+  const headPrev = () => {
+    if (view === "days") moveFocus(shiftIso(focusIso, { months: -1 }));
+    else if (view === "months") moveFocus(shiftIso(focusIso, { months: -12 }));
+    else moveFocus(shiftIso(focusIso, { months: -12 * YEARS_PER_PAGE }));
+  };
+  const headNext = () => {
+    if (view === "days") moveFocus(shiftIso(focusIso, { months: 1 }));
+    else if (view === "months") moveFocus(shiftIso(focusIso, { months: 12 }));
+    else moveFocus(shiftIso(focusIso, { months: 12 * YEARS_PER_PAGE }));
+  };
+  const prevDisabled = view === "days" ? monthDisabled(viewMonth === 0 ? viewYear - 1 : viewYear, (viewMonth + 11) % 12)
+    : view === "months" ? yearDisabled(viewYear - 1) : yearDisabled(yearPageStart - 1);
+  const nextDisabled = view === "days" ? monthDisabled(viewMonth === 11 ? viewYear + 1 : viewYear, (viewMonth + 1) % 12)
+    : view === "months" ? yearDisabled(viewYear + 1) : yearDisabled(yearPageStart + YEARS_PER_PAGE);
+
+  const title = view === "days" ? `${MONTH_NAMES[viewMonth]} ${viewYear}` : view === "months" ? String(viewYear) : `${yearPageStart} – ${yearPageStart + YEARS_PER_PAGE - 1}`;
+  const pageKey = view === "days" ? `d-${viewYear}-${viewMonth}` : view === "months" ? `m-${viewYear}` : `y-${yearPageStart}`;
+  const slide = reduceMotion || direction === 0
+    ? { initial: { opacity: 0 }, animate: { opacity: 1 } }
+    : { initial: { opacity: 0, x: direction * 18 }, animate: { opacity: 1, x: 0 } };
+  const selectedYear = isIso(value) ? Number(value.slice(0, 4)) : null;
+  const selectedMonth = isIso(value) ? Number(value.slice(5, 7)) - 1 : null;
 
   return (
-    <div ref={rootRef} className={clsx("relative inline-block w-full", className)}>
-      {/* Trigger input field */}
-      <div
-        role="button"
-        tabIndex={disabled ? -1 : 0}
-        id={id}
-        aria-label={ariaLabel || "Date picker"}
-        aria-expanded={open}
-        aria-haspopup="dialog"
-        onClick={() => {
-          if (!disabled) setOpen((prev) => !prev);
-        }}
-        onKeyDown={(e) => {
-          if ((e.key === "Enter" || e.key === " ") && !disabled) {
-            e.preventDefault();
-            setOpen((prev) => !prev);
-          }
-          if (e.key === "Escape" && open) {
-            setOpen(false);
-          }
-        }}
-        className={clsx(
-          "w-full h-10 px-3.5 pr-16 rounded-lg border bg-[var(--color-paper)] text-[13.5px] transition-colors flex items-center justify-between select-none relative",
-          disabled
-            ? "cursor-not-allowed bg-[var(--color-cream)] text-[var(--color-muted)] border-[var(--color-line)]"
-            : hasError
-            ? "border-[#c43a3a] ring-2 ring-[#c43a3a]/15 text-[var(--color-ink)] cursor-pointer"
-            : open
-            ? "border-[var(--color-forest)] ring-2 ring-[var(--color-forest)]/15 text-[var(--color-ink)] cursor-pointer"
-            : "border-[var(--color-line-2)] hover:border-[var(--color-forest)]/60 text-[var(--color-ink)] cursor-pointer"
+    <Popover.Root open={open} onOpenChange={openChange}>
+      <div className={clsx(styles.root, application && "pc-calendar-control", className)}>
+        <Popover.Trigger asChild disabled={disabled}>
+          <button
+            ref={triggerRef}
+            type="button"
+            id={id}
+            aria-label={ariaLabel ? `${ariaLabel}${displayValue ? `, ${displayValue}` : ""}` : undefined}
+            aria-haspopup="dialog"
+            aria-expanded={open}
+            aria-controls={open ? popoverId : undefined}
+            {...accessibility}
+            onKeyDown={(event) => { if (event.key === "ArrowDown" && !disabled) { event.preventDefault(); openChange(true); } }}
+            className={styles.trigger}
+          >
+            <span className={styles.triggerIcon} aria-hidden="true"><CalendarDays size={16} /></span>
+            <span className={clsx(styles.value, !displayValue && styles.placeholder)}>{displayValue || placeholder}</span>
+          </button>
+        </Popover.Trigger>
+        {value && !disabled && (
+          <button type="button" onClick={() => { onChange(""); triggerRef.current?.focus(); }} aria-label="Clear date" className={styles.clear}>
+            <X size={14} />
+          </button>
         )}
-      >
-        <span className={clsx(!displayVal && "text-[var(--color-muted)]")}>
-          {displayVal || placeholder}
-        </span>
-
-        <div className="absolute right-2.5 flex items-center gap-1.5 text-[var(--color-muted)]">
-          {value && !disabled && (
-            <button
-              type="button"
-              onClick={handleClear}
-              aria-label="Clear date"
-              className="p-1 rounded hover:bg-[var(--color-cream-2)] hover:text-red-600 transition-colors cursor-pointer"
-            >
-              <X size={14} />
-            </button>
-          )}
-          <CalendarIcon
-            size={16}
-            className={clsx(
-              "transition-colors",
-              open ? "text-[var(--color-forest)]" : "text-[var(--color-muted)]"
-            )}
-          />
-        </div>
       </div>
 
-      {/* Popover Calendar Modal/Dropdown */}
-      {open && (
-        <div
+      <Popover.Portal>
+        <Popover.Content
+          id={popoverId}
           role="dialog"
-          aria-label="Calendar date picker"
-          className="absolute z-50 mt-1.5 left-0 w-[290px] sm:w-[310px] p-3.5 rounded-xl border border-[var(--color-line-2)] bg-[var(--color-paper)] shadow-[0_12px_32px_rgba(35,52,42,0.16)] animate-in fade-in zoom-in-95 duration-100"
+          aria-label="Choose a date"
+          className={clsx(application && "pc-ui", styles.panel)}
+          side="bottom"
+          align="start"
+          sideOffset={6}
+          collisionPadding={12}
+          onOpenAutoFocus={(event) => {
+            event.preventDefault();
+            requestAnimationFrame(() => gridRef.current?.querySelector<HTMLButtonElement>("[tabindex='0']")?.focus());
+          }}
+          onKeyDown={(event) => { if (event.key === "Escape") event.stopPropagation(); }}
         >
-          {/* Header with Month/Year Navigation */}
-          <div className="flex items-center justify-between gap-1 mb-3">
-            <button
-              type="button"
-              onClick={prevMonth}
-              aria-label="Previous month"
-              className="p-1.5 rounded-lg text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)] transition-colors cursor-pointer"
-            >
+          <div className={styles.head}>
+            <button type="button" onClick={headPrev} disabled={prevDisabled} className={styles.nav} aria-label={view === "days" ? "Previous month" : view === "months" ? "Previous year" : "Previous years"}>
               <ChevronLeft size={16} />
             </button>
-
-            <div className="flex items-center gap-1.5">
-              <select
-                value={viewMonth}
-                onChange={(e) => setViewMonth(parseInt(e.target.value, 10))}
-                aria-label="Select month"
-                className="text-[13px] font-semibold text-[var(--color-ink)] bg-transparent rounded px-1.5 py-1 hover:bg-[var(--color-cream-2)] border-0 focus:outline-none cursor-pointer"
-              >
-                {MONTH_NAMES.map((m, idx) => (
-                  <option key={m} value={idx}>
-                    {m}
-                  </option>
-                ))}
-              </select>
-
-              <select
-                value={viewYear}
-                onChange={(e) => setViewYear(parseInt(e.target.value, 10))}
-                aria-label="Select year"
-                className="text-[13px] font-semibold text-[var(--color-ink)] bg-transparent rounded px-1.5 py-1 hover:bg-[var(--color-cream-2)] border-0 focus:outline-none cursor-pointer font-mono"
-              >
-                {yearOptions.map((y) => (
-                  <option key={y} value={y}>
-                    {y}
-                  </option>
-                ))}
-              </select>
-            </div>
-
             <button
               type="button"
-              onClick={nextMonth}
-              aria-label="Next month"
-              className="p-1.5 rounded-lg text-[var(--color-ink-2)] hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)] transition-colors cursor-pointer"
+              className={styles.title}
+              aria-expanded={view !== "days"}
+              aria-label={view === "days" ? `${title}, choose month` : view === "months" ? `${title}, choose year` : `${title}, back to days`}
+              onClick={() => { setDirection(0); setView(view === "days" ? "months" : view === "months" ? "years" : "days"); }}
             >
+              <span aria-live="polite">{title}</span>
+              <ChevronDown size={14} aria-hidden="true" />
+            </button>
+            <button type="button" onClick={headNext} disabled={nextDisabled} className={styles.nav} aria-label={view === "days" ? "Next month" : view === "months" ? "Next year" : "Next years"}>
               <ChevronRight size={16} />
             </button>
           </div>
 
-          {/* Weekday Labels */}
-          <div className="grid grid-cols-7 gap-1 text-center mb-1.5">
-            {WEEKDAY_NAMES.map((wd) => (
-              <span
-                key={wd}
-                className="text-[10.5px] font-bold uppercase tracking-wider text-[var(--color-muted)] py-0.5"
-              >
-                {wd}
-              </span>
-            ))}
-          </div>
-
-          {/* Day Grid */}
-          <div className="grid grid-cols-7 gap-1">
-            {/* Empty slots before first day */}
-            {Array.from({ length: firstDayIndex }).map((_, i) => (
-              <div key={`empty-${i}`} className="h-8 w-8" />
-            ))}
-
-            {/* Days of month */}
-            {Array.from({ length: daysInMonth }).map((_, i) => {
-              const day = i + 1;
-              const dateIso = `${viewYear}-${pad2(viewMonth + 1)}-${pad2(day)}`;
-              const isSelected = value === dateIso;
-              const isToday = todayIso === dateIso;
-              const disabledDay = isDateDisabled(dateIso);
-
-              return (
-                <button
-                  key={day}
-                  type="button"
-                  disabled={disabledDay}
-                  onClick={() => handleSelectDay(day)}
-                  className={clsx(
-                    "h-8 w-8 rounded-lg text-[12px] font-medium transition-all flex items-center justify-center relative",
-                    isSelected
-                      ? "bg-[var(--color-forest)] text-white font-bold shadow-sm"
-                      : disabledDay
-                      ? "text-stone-300 line-through cursor-not-allowed opacity-40 bg-stone-100/50"
-                      : isToday
-                      ? "border border-[var(--color-forest)] text-[var(--color-forest)] font-semibold hover:bg-[var(--color-forest-soft)] cursor-pointer"
-                      : "text-[var(--color-ink)] hover:bg-[var(--color-cream-2)] hover:text-[var(--color-forest)] cursor-pointer"
-                  )}
-                  title={disabledDay && minDate && dateIso < minDate ? `Must be on or after ${formatToDisplay(minDate)}` : undefined}
-                >
-                  {day}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Baseline info notice when minDate is active */}
-          {minDate && (
-            <div className="mt-2.5 pt-2 border-t border-[var(--color-line)] text-[11px] text-[var(--color-muted)] flex items-center justify-between">
-              <span>Baseline: <strong className="text-[var(--color-ink-2)]">{formatToDisplay(minDate)}</strong></span>
-              <button
-                type="button"
-                onClick={handleSetToday}
-                disabled={isDateDisabled(todayIso)}
-                className="text-[11px] font-semibold text-[var(--color-forest)] hover:underline disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
-              >
-                Today
-              </button>
-            </div>
-          )}
-
-          {!minDate && (
-            <div className="mt-2.5 pt-2 border-t border-[var(--color-line)] flex items-center justify-between text-[11px]">
-              <button
-                type="button"
-                onClick={handleSetToday}
-                className="font-semibold text-[var(--color-forest)] hover:underline cursor-pointer"
-              >
-                Select Today
-              </button>
-              {value && (
-                <button
-                  type="button"
-                  onClick={handleClear}
-                  className="text-[var(--color-muted)] hover:text-red-600 transition-colors cursor-pointer"
-                >
-                  Clear
-                </button>
+          <div className={styles.viewport} ref={gridRef}>
+            <motion.div key={pageKey} {...slide} transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}>
+              {view === "days" ? (
+                <>
+                  <div className={styles.weekdays} aria-hidden="true">
+                    {WEEKDAY_NAMES.map((weekday) => <span key={weekday} className={styles.weekday}>{weekday}</span>)}
+                  </div>
+                  <div className={styles.days} role="group" aria-label={title} onKeyDown={onDayKeyDown}>
+                    {cells.map((iso) => {
+                      const date = fromIso(iso);
+                      const outside = date.getMonth() !== viewMonth;
+                      const unavailable = isDateDisabled(iso);
+                      return (
+                        <button
+                          key={iso}
+                          type="button"
+                          data-iso={iso}
+                          data-calendar-day={outside ? undefined : date.getDate()}
+                          data-outside={outside || undefined}
+                          data-today={iso === todayIso || undefined}
+                          aria-pressed={iso === value}
+                          aria-current={iso === todayIso ? "date" : undefined}
+                          aria-label={`${date.getDate()} ${MONTH_NAMES[date.getMonth()]} ${date.getFullYear()}`}
+                          title={unavailable && minDate && iso < minDate ? `Must be on or after ${formatToDisplay(minDate)}` : undefined}
+                          tabIndex={iso === focusIso ? 0 : -1}
+                          disabled={unavailable}
+                          onClick={() => select(iso)}
+                          className={styles.day}
+                        >
+                          {date.getDate()}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </>
+              ) : view === "months" ? (
+                <div className={styles.grid3} role="group" aria-label={`Months of ${viewYear}`}>
+                  {MONTH_SHORT.map((month, index) => (
+                    <button
+                      key={month}
+                      type="button"
+                      aria-pressed={selectedYear === viewYear && selectedMonth === index}
+                      aria-label={`${MONTH_NAMES[index]} ${viewYear}`}
+                      data-current={(index === new Date().getMonth() && viewYear === new Date().getFullYear()) || undefined}
+                      tabIndex={index === viewMonth ? 0 : -1}
+                      disabled={monthDisabled(viewYear, index)}
+                      onClick={() => { setDirection(0); setFocusIso(clampIso(shiftIso(focusIso, { months: index - viewMonth }))); setView("days"); }}
+                      className={styles.cell}
+                    >
+                      {month}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <div className={styles.grid3} role="group" aria-label="Years">
+                  {Array.from({ length: YEARS_PER_PAGE }, (_, index) => yearPageStart + index).map((year) => (
+                    <button
+                      key={year}
+                      type="button"
+                      aria-pressed={selectedYear === year}
+                      data-current={year === new Date().getFullYear() || undefined}
+                      tabIndex={year === viewYear ? 0 : -1}
+                      disabled={yearDisabled(year)}
+                      onClick={() => { setDirection(0); setFocusIso(clampIso(shiftIso(focusIso, { months: (year - viewYear) * 12 }))); setView("months"); }}
+                      className={styles.cell}
+                    >
+                      {year}
+                    </button>
+                  ))}
+                </div>
               )}
+            </motion.div>
+          </div>
+
+          <div className={styles.foot}>
+            {minDate ? <span className={styles.note}>From <strong>{formatToDisplay(minDate)}</strong></span> : null}
+            <div className={styles.footActions}>
+              {value ? <button type="button" className={styles.footButton} onClick={() => { onChange(""); setOpen(false); }}>Clear</button> : null}
+              <button type="button" className={clsx(styles.footButton, styles.footPrimary)} disabled={isDateDisabled(todayIso)} onClick={() => select(todayIso)}>Today</button>
             </div>
-          )}
-        </div>
-      )}
-    </div>
+          </div>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
+}
+
+function initialFocus(value: string, minDate?: string, maxDate?: string) {
+  if (isIso(value)) return value;
+  const today = getTodayIso();
+  if (minDate && today < minDate) return minDate;
+  if (maxDate && today > maxDate) return maxDate;
+  return today;
 }
 
 export const Calendar = DatePicker;

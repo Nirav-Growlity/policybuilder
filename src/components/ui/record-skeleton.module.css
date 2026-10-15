@@ -1,0 +1,18 @@
+.records { width: 100%; overflow: hidden; border: 1px solid var(--pc-divider); border-radius: 14px; background: var(--pc-panel); }
+.row { display: flex; align-items: center; gap: 16px; padding: 20px 24px; }
+.row + .row { border-top: 1px solid var(--pc-divider); }
+.identity, .title, .detail, .action {
+  background: linear-gradient(100deg, var(--pc-inset) 30%, color-mix(in srgb, var(--pc-inset) 40%, var(--pc-panel)) 50%, var(--pc-inset) 70%);
+  background-size: 300% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+.row:nth-child(2) > * , .row:nth-child(2) .copy > * { animation-delay: 120ms; }
+.row:nth-child(3) > *, .row:nth-child(3) .copy > * { animation-delay: 240ms; }
+.identity { width: 40px; height: 52px; flex-shrink: 0; border-radius: 6px; }
+.copy { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 9px; background: none; animation: none; }
+.title { width: min(68%, 380px); height: 12px; border-radius: 6px; }
+.detail { width: min(48%, 250px); height: 9px; border-radius: 6px; }
+.action { width: 76px; height: 32px; border-radius: 10px; }
+@keyframes shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@media (max-width: 639px) { .row { padding: 18px 16px; gap: 12px; } .action { width: 40px; } }
+@media (prefers-reduced-motion: reduce) { .identity, .title, .detail, .action { animation: none; } }

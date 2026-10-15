@@ -35,6 +35,7 @@ async function main() {
     await page.getByRole("button", { name: "Continuous scroll", exact: true }).click();
     if (await page.locator("canvas[aria-label]").count() < 2) throw new Error("Continuous PDF view did not restore all pages.");
     await page.screenshot({ path: `${out}/desktop-templates.png` });
+    await page.getByRole("button", { name: "Design", exact: true }).click();
     await page.locator("#inspector-tab-design").click();
     await page.getByRole("tab", { name: "design", exact: true }).last().click();
     await page.getByLabel("Show page border").check();
@@ -44,6 +45,7 @@ async function main() {
     await page.getByLabel("Border pages").selectOption("cover");
     await page.locator('.pdf-preview[aria-busy="false"]').waitFor({ timeout: 60000 });
     await page.screenshot({ path: `${out}/desktop-border.png` });
+    await page.getByRole("button", { name: "Review & export", exact: true }).click();
     const downloadPromise = page.waitForEvent("download");
     await page.getByRole("button", { name: "Download PDF", exact: true }).click();
     await (await downloadPromise).saveAs(`${out}/downloaded-preview.pdf`);
@@ -53,7 +55,7 @@ async function main() {
     if (!text.includes("Procurement")) throw new Error("Selectable PDF text is missing.");
     await page.setViewportSize({ width: 390, height: 844 });
     await page.getByRole("button", { name: "Close controls", exact: true }).click();
-    await page.getByRole("button", { name: "Design controls", exact: true }).click();
+    await page.getByRole("button", { name: "Design", exact: true }).click();
     await page.screenshot({ path: `${out}/mobile-inspector.png` });
     await page.keyboard.press("Escape");
     if (await page.locator("#design-inspector").count()) throw new Error("Escape did not dismiss the inspector.");
@@ -65,18 +67,19 @@ async function main() {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);
     if (overflow) throw new Error("Mobile workspace overflows horizontally.");
     await page.setViewportSize({ width: 1024, height: 900 });
-    await page.getByRole("button", { name: "Design controls", exact: true }).click();
+    await page.getByRole("button", { name: "Design", exact: true }).click();
     await page.locator("#inspector-tab-design").click();
     await page.getByRole("tab", { name: "design", exact: true }).last().click();
     await page.route("**/api/export/pdf", route => route.fulfill({ status: 503, body: "QA simulated failure" }));
     await page.getByLabel("Border thickness").fill("6");
     await page.getByRole("button", { name: "Retry", exact: true }).waitFor({ timeout: 60000 });
+    await page.getByRole("button", { name: "Review & export", exact: true }).click();
+    await page.getByRole("button", { name: "Retry", exact: true }).waitFor({ timeout: 60000 });
     if (await page.getByRole("button", { name: "Download PDF", exact: true }).isEnabled()) throw new Error("Outdated download is enabled after preview failure.");
     await page.unroute("**/api/export/pdf");
-    await page.keyboard.press("Escape");
     await page.getByRole("button", { name: "Retry", exact: true }).click();
     await page.locator('.pdf-preview[aria-busy="false"]').waitFor({ timeout: 60000 });
-    await page.getByRole("button", { name: "Design controls", exact: true }).click();
+    await page.getByRole("button", { name: "Design", exact: true }).click();
     await page.screenshot({ path: `${out}/tablet-inspector.png` });
     errors.splice(0, errors.length, ...errors.filter(error => !error.includes("503")));
     await writeFile(`${out}/errors.json`, JSON.stringify(errors, null, 2));

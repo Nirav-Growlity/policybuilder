@@ -1,0 +1,458 @@
+/* Write-mode steps (document structure through responsibilities).
+   Colours come from the application tokens (--pc-*), so light and dark themes
+   both follow the builder. Rules that must beat the unlayered .pc-feature-*
+   globals double a class to raise specificity. */
+
+.root {
+  --w-line: color-mix(in srgb, var(--pc-divider) 78%, transparent);
+  --w-field: color-mix(in srgb, var(--pc-inset) 58%, var(--pc-panel));
+  --w-hover: color-mix(in srgb, var(--pc-inset) 72%, transparent);
+  --w-brand-soft: color-mix(in srgb, var(--pc-brand) 13%, transparent);
+  --w-brand-line: color-mix(in srgb, var(--pc-brand) 55%, var(--pc-divider));
+  --w-ring: 0 0 0 3px color-mix(in srgb, var(--pc-brand) 22%, transparent);
+  --w-danger-soft: color-mix(in srgb, var(--pc-error) 14%, transparent);
+  --w-ease: cubic-bezier(.22, 1, .36, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--pc-font);
+}
+
+.root :is(h3, h4) { margin: 0; }
+
+/* ── Sheets (Panel) ───────────────────────────────────── */
+.root :global(.pc-authoring-panel) {
+  position: relative;
+  border: 1px solid var(--w-line);
+  border-radius: 16px;
+  background: var(--pc-panel);
+  transition: border-color 200ms ease, box-shadow 260ms var(--w-ease);
+}
+.root :global(.pc-authoring-panel):focus-within {
+  border-color: var(--w-brand-line);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--pc-brand) 7%, transparent), 0 22px 44px -32px rgb(2 8 23 / 55%);
+}
+.root :global(.pc-authoring-panel-header) {
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 2px 18px;
+  border-bottom: 0;
+  background: transparent;
+}
+.root :global(.pc-authoring-panel-header) > div:first-child { gap: 12px; }
+@media (max-width: 640px) {
+  .root :global(.pc-authoring-panel-header) { flex-wrap: wrap; }
+  .root :global(.pc-authoring-panel-header) > div:last-child { flex-wrap: wrap; margin-left: 46px; }
+}
+.root :global(.pc-authoring-panel-header) > div:first-child > span:first-child {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--w-brand-soft);
+  color: var(--pc-selection-text);
+}
+.root :global(.pc-authoring-panel-header) h3 { overflow: visible; white-space: normal; text-wrap: balance; font-size: 15.5px; font-weight: 650; letter-spacing: -.01em; line-height: 1.3; }
+.root :global(.pc-authoring-panel-header) p { margin-top: 2px; font-size: 12.5px; line-height: 1.45; }
+.root :global(.pc-authoring-panel-body) { padding: 14px 18px 18px; }
+
+/* While a section's AI action runs, a single arc of light travels around the sheet's edge. */
+@property --ai-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.root :global(.pc-authoring-panel):has(> header [data-ai-trigger][aria-busy="true"]) {
+  border-color: color-mix(in srgb, var(--pc-brand) 30%, var(--pc-divider));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--pc-brand) 7%, transparent);
+}
+.root :global(.pc-authoring-panel):has(> header [data-ai-trigger][aria-busy="true"])::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--ai-angle), transparent 0deg 200deg, color-mix(in srgb, var(--pc-brand) 35%, transparent) 260deg, var(--pc-brand) 330deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: ai-orbit 2.6s linear infinite;
+  pointer-events: none;
+}
+@keyframes ai-orbit { to { --ai-angle: 360deg; } }
+
+/* The text being rewritten dims and a soft band of light passes over it. */
+.root .writing.writing:is(textarea)[data-busy],
+.root :is(.objective, .tableRow):has([data-ai-trigger][aria-busy="true"]) :is(.objectiveText, .cellText).inline {
+  color: color-mix(in srgb, var(--pc-text) 45%, transparent);
+  background-image: linear-gradient(100deg, transparent 0 30%, color-mix(in srgb, var(--pc-brand) 14%, transparent) 50%, transparent 70% 100%);
+  background-size: 260% 100%;
+  background-repeat: no-repeat;
+  animation: ai-shimmer 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes ai-shimmer { from { background-position: 130% 0; } to { background-position: -30% 0; } }
+
+/* ── Buttons and counters inside the steps ────────────── */
+.root :global(.pc-feature-button) {
+  border-radius: 9px;
+  font-weight: 600;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 220ms var(--w-ease), box-shadow 220ms var(--w-ease);
+}
+.root :global(.pc-feature-button[data-pc-size="sm"]) { height: 34px; padding: 0 12px; }
+.root :global(.pc-feature-button[data-pc-variant="primary"]):hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -12px color-mix(in srgb, var(--pc-brand) 80%, transparent);
+}
+.root :global(.pc-feature-button[data-pc-variant="secondary"]):hover:not(:disabled) { border-color: var(--pc-control); }
+.root :global(.pc-feature-button):active:not(:disabled) { transform: translateY(0) scale(.98); }
+.root :global(.pc-feature-badge) {
+  display: inline-flex;
+  height: 26px;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--pc-inset);
+  padding: 0 10px;
+  color: var(--pc-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Fields ───────────────────────────────────────────── */
+/* One corner radius for every boxed control in the steps (inputs, dropdowns, dates). */
+.root :global(.pc-feature-input) { border-radius: 10px; }
+/* Inline: reads as text until hovered or focused. */
+.root .inline.inline:is(input, textarea, select) {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 200ms var(--w-ease);
+}
+.root .inline.inline:is(input, textarea, select):hover:not(:disabled):not(:focus) { background: var(--w-hover); }
+.root .inline.inline:is(input, textarea, select):focus-visible,
+.root .writing.writing:is(textarea):focus-visible,
+.root .composerInput.composerInput:focus-visible {
+  outline: none;
+  border-color: var(--pc-brand);
+  background: var(--pc-panel);
+  box-shadow: var(--w-ring);
+}
+.root .inline.inline:is(input, textarea, select)[readonly] { cursor: not-allowed; color: var(--pc-muted); }
+.root .inline.inline:is(input, textarea, select)[readonly]:hover { background: transparent; }
+
+/* Writing surface for long-form sections. The div form holds text while the AI streams it in. */
+.root .writing.writing:is(textarea, div) {
+  display: block;
+  min-height: 112px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--w-field);
+  padding: 14px 16px;
+  color: var(--pc-text);
+  font-size: 14.5px;
+  line-height: 1.7;
+  resize: none;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 200ms var(--w-ease), opacity 200ms ease;
+}
+.root .writing.writing:is(textarea):hover:not(:focus) { border-color: var(--w-line); }
+.root .writing.writing:is(div) { margin: 0; color: var(--pc-text); }
+.root .writing.writing:is(textarea)::placeholder { color: var(--pc-muted); opacity: .8; }
+
+.fieldMeta { display: flex; min-height: 20px; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 8px; padding: 0 4px; color: var(--pc-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+/* Add-item composer: one field with its action docked inside. */
+.composer {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  gap: 8px;
+  border: 1px dashed var(--pc-control);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--pc-inset) 35%, transparent);
+  padding: 4px 4px 4px 12px;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+.composer:focus-within { border-style: solid; border-color: var(--pc-brand); background: var(--pc-panel); box-shadow: var(--w-ring); }
+.composerIcon { display: grid; flex: none; place-items: center; color: var(--pc-muted); }
+.composer:focus-within .composerIcon { color: var(--pc-brand); }
+.root .composerInput.composerInput {
+  min-width: 0;
+  height: 36px;
+  flex: 1 1 auto;
+  border: 0;
+  background: transparent;
+  padding: 0 4px;
+  box-shadow: none;
+}
+.root .composerInput.composerInput:focus-visible { border: 0; background: transparent; box-shadow: none; }
+.composerAdd { flex: none; }
+
+/* ── Small controls ───────────────────────────────────── */
+.iconButton {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  place-items: center;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--pc-muted);
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, transform 200ms var(--w-ease);
+}
+.iconButton:hover:not(:disabled) { background: var(--pc-inset); color: var(--pc-text); }
+.iconButton:active:not(:disabled) { transform: scale(.92); }
+.iconButton:disabled { cursor: not-allowed; opacity: .3; }
+.iconButton[data-tone="danger"]:hover:not(:disabled) { background: var(--w-danger-soft); color: var(--pc-error); }
+.iconButton[data-tone="brand"]:hover:not(:disabled) { background: var(--w-brand-soft); color: var(--pc-selection-text); }
+.iconButton[aria-pressed="true"] { color: var(--pc-selection-text); }
+
+/* Row actions stay visible for touch and keyboard, and step back for pointer users until the row is in use. */
+.rowActions { display: flex; flex: none; align-items: center; gap: 2px; }
+@media (hover: hover) {
+  .rowActions { opacity: .5; transition: opacity 160ms ease; }
+  :is(.outlineRow, .itemRow, .roleRow, .revisionRow, .tableRow):is(:hover, :focus-within) .rowActions { opacity: 1; }
+}
+
+.check {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  place-items: center;
+  border: 1.5px solid var(--pc-control);
+  border-radius: 6px;
+  background: var(--pc-panel);
+  color: var(--pc-primary-text);
+  transition: background-color 160ms ease, border-color 160ms ease, transform 200ms var(--w-ease);
+}
+.check svg { width: 13px; height: 13px; overflow: visible; }
+.check path { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.check[data-checked] { border-color: var(--pc-brand); background: var(--pc-brand); }
+:is(label, .itemRow):hover > .check:not([data-checked]), label:hover .check:not([data-checked]) { border-color: var(--pc-brand); }
+input:focus-visible + .check { box-shadow: var(--w-ring); }
+label:active .check { transform: scale(.9); }
+
+.warning { display: flex; align-items: flex-start; gap: 8px; margin: 0; color: var(--pc-warning); font-size: 12px; line-height: 1.45; }
+.warning svg { flex: none; margin-top: 1px; }
+
+.groupHead { display: flex; min-height: 28px; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.groupTitle { color: var(--pc-text); font-size: 13px; font-weight: 650; }
+.groupCount { color: var(--pc-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.divider { height: 1px; margin: 18px 0; border: 0; background: var(--w-line); }
+.empty { border-radius: 12px; background: color-mix(in srgb, var(--pc-inset) 45%, transparent); padding: 14px 16px; color: var(--pc-muted); font-size: 13px; }
+
+/* ── Step 1: header metadata ──────────────────────────── */
+.facts { display: grid; flex: 1 1 auto; min-width: 0; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 2px; margin: 0; }
+.fact { min-width: 0; border-radius: 10px; padding: 8px 12px 9px; }
+.fact:first-child { padding-left: 0; }
+.fact dt { color: var(--pc-muted); font-size: 12px; }
+.fact dd { overflow: hidden; margin: 3px 0 0; color: var(--pc-text); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; text-overflow: ellipsis; white-space: nowrap; }
+.fact dd[data-empty] { color: var(--pc-muted); font-weight: 500; }
+.factsRow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; }
+.chevron { transition: transform 240ms var(--w-ease); }
+[aria-expanded="true"] > .chevron { transform: rotate(180deg); }
+.details { border-top: 1px solid var(--w-line); margin-top: 14px; padding-top: 18px; }
+.reviewers { margin-top: 18px; border-radius: 12px; background: var(--w-field); padding: 14px; }
+.reviewerList { display: flex; flex-direction: column; gap: 6px; }
+.reviewerRow { display: flex; align-items: center; gap: 6px; }
+
+/* ── Step 1: outline ──────────────────────────────────── */
+.outlineMeta { color: var(--pc-muted); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.outline { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.outlineItem { position: relative; }
+.outlineItem + .outlineItem::before { content: ""; position: absolute; top: 0; right: 10px; left: 64px; height: 1px; background: var(--w-line); }
+.outlineRow {
+  position: relative;
+  display: grid;
+  min-height: 56px;
+  grid-template-columns: 18px 26px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 6px 8px;
+  border-radius: 12px;
+  padding: 6px 6px 6px 8px;
+  cursor: default;
+  transition: background-color 160ms ease, opacity 200ms ease, box-shadow 200ms ease;
+}
+.outlineRow:hover { background: var(--w-hover); }
+.outlineRow[data-active] { background: var(--w-brand-soft); }
+.outlineRow[data-dragging] { opacity: .4; }
+.outlineRow[data-drop-target] { box-shadow: inset 0 2px 0 var(--pc-brand); }
+.grip { display: grid; place-items: center; color: var(--pc-control); cursor: grab; }
+.grip[data-locked] { cursor: default; opacity: .35; }
+.outlineNumber { color: var(--pc-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.outlineMain { display: flex; min-width: 0; align-items: center; gap: 10px; }
+.root .outlineTitle.outlineTitle { height: 38px; min-width: 0; flex: 1 1 auto; padding: 0 8px; color: var(--pc-text); font-size: 14px; font-weight: 600; }
+.outlineRow[data-hidden] .outlineTitle { color: var(--pc-muted); }
+.pillSlot { display: flex; min-width: 64px; justify-content: flex-end; }
+.pill { display: inline-flex; height: 24px; align-items: center; gap: 5px; border-radius: 999px; padding: 0 9px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.pill[data-tone="empty"] { background: color-mix(in srgb, var(--pc-warning) 14%, transparent); color: var(--pc-warning); }
+.pill[data-tone="hidden"] { background: var(--pc-inset); color: var(--pc-muted); }
+.outlineFixed { display: grid; min-height: 52px; grid-template-columns: 18px 26px minmax(0, 1fr); align-items: center; gap: 8px; padding: 6px 6px 6px 8px; color: var(--pc-muted); font-size: 13.5px; }
+.outlineFixedText { display: flex; min-width: 0; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; margin: 0; padding: 0 8px; }
+.outlineFixedText strong { color: var(--pc-text); font-size: 14px; font-weight: 600; }
+.outlineFixedText span { color: var(--pc-muted); font-size: 12.5px; }
+.outlineFixed .grip { opacity: .6; cursor: default; }
+.outlineTip { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; border-top: 1px solid var(--w-line); padding: 14px 8px 0; color: var(--pc-muted); font-size: 12.5px; }
+
+@media (max-width: 640px) {
+  .outlineRow { grid-template-columns: 18px 22px minmax(0, 1fr) auto; }
+  .outlineRow .pillSlot { grid-column: 3; grid-row: 2; min-width: 0; justify-content: flex-start; padding-left: 8px; }
+  .outlineRow .pillSlot:not(:has(.pill)) { display: none; }
+  .outlineRow .rowActions { grid-column: 4; grid-row: 1 / span 2; flex-wrap: wrap; justify-content: flex-end; width: 72px; }
+  .outlineItem + .outlineItem::before { left: 48px; }
+}
+
+/* ── Step 3: selectable rows ──────────────────────────── */
+.itemList { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.itemRow {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--w-line);
+  border-radius: 12px;
+  background: transparent;
+  padding: 6px 6px 6px 14px;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+.itemRow:hover { border-color: var(--pc-divider); background: var(--w-hover); }
+.itemRow[data-selected] { border-color: color-mix(in srgb, var(--pc-brand) 42%, var(--pc-divider)); background: color-mix(in srgb, var(--pc-brand) 8%, transparent); }
+.itemLabel { display: flex; min-width: 0; flex: 1 1 auto; cursor: pointer; align-items: center; gap: 12px; padding: 6px 0; color: var(--pc-text); font-size: 14px; line-height: 1.5; }
+.itemRow:not([data-selected]) .itemLabel > span:last-child { color: var(--pc-muted); }
+.root .itemText.itemText { min-width: 0; flex: 1 1 auto; padding: 6px 8px; font-size: 14px; line-height: 1.5; resize: none; }
+.itemRow:not([data-selected]) .itemText { color: var(--pc-muted); }
+.spin { transition: transform 420ms var(--w-ease); }
+.iconButton:active .spin { transform: rotate(-180deg); }
+
+/* ── Step 4: objectives ───────────────────────────────── */
+/* The area number takes the icon tile's place in the sheet header. */
+.areaNumber { color: var(--pc-selection-text); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1; }
+.objectives { display: flex; flex-direction: column; margin: 0 0 14px; padding: 0; list-style: none; }
+.objective { position: relative; display: flex; align-items: flex-start; gap: 6px; border-radius: 10px; padding: 4px 4px 4px 22px; transition: background-color 160ms ease; }
+.objective::before { content: ""; position: absolute; top: 20px; left: 9px; width: 6px; height: 6px; border-radius: 999px; background: var(--pc-brand); opacity: .75; }
+.objective + .objective { margin-top: 2px; }
+.root .objectiveText.objectiveText { min-width: 0; flex: 1 1 auto; padding: 8px 10px; font-size: 14px; line-height: 1.6; resize: none; }
+.objective .rowActions { padding-top: 5px; }
+@media (hover: hover) {
+  .objective .rowActions { opacity: .45; transition: opacity 160ms ease; }
+  .objective:is(:hover, :focus-within) .rowActions { opacity: 1; }
+}
+
+/* ── Step 5: targets table ────────────────────────────── */
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.topicComposer { width: min(100%, 620px); }
+.tableWrap { overflow-x: auto; margin: 0 -18px -18px; border-top: 1px solid var(--w-line); }
+.table { width: 100%; min-width: 840px; border-collapse: collapse; table-layout: fixed; font-size: 13px; }
+.table th { padding: 10px 10px 8px; color: var(--pc-muted); font-size: 12px; font-weight: 600; text-align: left; white-space: nowrap; }
+.table th:first-child, .table td:first-child { padding-left: 18px; }
+.table th:last-child, .table td:last-child { padding-right: 14px; }
+.tableRow { border-top: 1px solid var(--w-line); transition: background-color 160ms ease; }
+.tableRow:hover { background: color-mix(in srgb, var(--pc-inset) 40%, transparent); }
+.table td { padding: 8px 6px; vertical-align: top; }
+.root .cellText.cellText { padding: 8px 10px; font-size: 13.5px; line-height: 1.55; resize: none; }
+.root .cellSelect.cellSelect { height: 38px; border-color: transparent; background: transparent; padding-left: 10px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.root .cellSelect.cellSelect:hover:not(:disabled) { border-color: transparent; background: var(--w-hover); }
+.root .cellSelect.cellSelect[aria-expanded="true"] { border-color: var(--pc-brand); background: var(--pc-panel); }
+.cellEmpty { display: block; padding: 9px 10px; color: var(--pc-muted); }
+.table .rowActions { justify-content: flex-end; padding-top: 2px; }
+.cellIssues { display: flex; flex-direction: column; gap: 4px; padding: 2px 10px 4px; }
+/* Table cells the AI is still filling: a short pending bar until the value is known, then the value settles in. */
+.cellValue { display: flex; height: 38px; align-items: center; padding: 0 11px; color: var(--pc-text); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; animation: cell-settle 520ms cubic-bezier(.22, 1, .36, 1) both; }
+.cellPending { display: flex; height: 38px; align-items: center; padding: 0 11px; }
+.cellPending::before { content: ""; width: min(72px, 100%); height: 8px; border-radius: 999px; background: linear-gradient(90deg, color-mix(in srgb, var(--pc-divider) 70%, transparent) 0 35%, color-mix(in srgb, var(--pc-brand) 35%, transparent) 50%, color-mix(in srgb, var(--pc-divider) 70%, transparent) 65% 100%); background-size: 300% 100%; animation: cell-pending 1.8s ease-in-out infinite; }
+@keyframes cell-settle { 0% { opacity: 0; filter: blur(3px); color: var(--pc-brand); } 40% { opacity: 1; filter: blur(0); color: var(--pc-brand); } 100% { opacity: 1; color: var(--pc-text); } }
+@keyframes cell-pending { from { background-position: 100% 0; } to { background-position: 0 0; } }
+
+/* ── Step 6: goals ────────────────────────────────────── */
+/* Official goal icons: muted until chosen, full colour with a check once selected. */
+.goals { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; }
+.goal {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 12px;
+  background: var(--pc-inset);
+  padding: 0;
+  cursor: pointer;
+  transition: box-shadow 220ms var(--w-ease);
+}
+.goalIcon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  filter: grayscale(.85);
+  opacity: .5;
+  transition: filter 260ms ease, opacity 260ms ease;
+}
+.goal:hover .goalIcon { filter: grayscale(.25); opacity: .85; }
+.goal[aria-pressed="true"] .goalIcon { filter: none; opacity: 1; }
+.goal[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--pc-panel), 0 0 0 4px var(--pc-brand); }
+.root .goal:focus-visible { outline: 2px solid var(--pc-brand); outline-offset: 4px; }
+/* While the AI suggests goals, a light reads across the grid and each chosen goal settles in. */
+.goals[data-scanning] .goal { cursor: progress; }
+.goals[data-scanning] .goal:not([aria-pressed="true"]) .goalIcon { animation: goal-scan 2.6s ease-in-out calc(var(--n) * 60ms) infinite; }
+.goal[data-picked] { animation: goal-pick 560ms cubic-bezier(.34, 1.56, .64, 1) both; }
+@keyframes goal-scan { 0%, 22%, 100% { filter: grayscale(.85); opacity: .5; } 8% { filter: grayscale(.5); opacity: .78; } }
+@keyframes goal-pick { 0% { scale: .9; } 60% { scale: 1.05; } 100% { scale: 1; } }
+.goalMark {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 2px solid var(--pc-panel);
+  border-radius: 999px;
+  background: var(--pc-brand);
+  color: var(--pc-primary-text);
+}
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; min-height: 34px; align-items: center; gap: 8px; border: 1px solid var(--w-line); border-radius: 999px; background: var(--pc-panel); padding: 0 4px 0 4px; color: var(--pc-text); font-size: 12.5px; font-weight: 550; }
+.chipIcon { width: 26px; height: 26px; flex: none; border-radius: 7px; object-fit: cover; }
+.chipRemove { display: grid; width: 26px; height: 26px; place-items: center; border: 0; border-radius: 999px; background: transparent; color: var(--pc-muted); cursor: pointer; transition: background-color 150ms ease, color 150ms ease; }
+.chipRemove:hover { background: var(--pc-inset); color: var(--pc-text); }
+
+/* ── Step 7: roles and revisions ──────────────────────── */
+.roles { display: flex; flex-direction: column; }
+.roleRow { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr) auto; align-items: start; gap: 8px; border-top: 1px solid var(--w-line); padding: 10px 0; }
+.roleRow:first-child { border-top: 0; padding-top: 0; }
+.root .roleName.roleName { height: auto; min-height: 40px; padding: 8px 10px; font-size: 14px; font-weight: 650; }
+.root .roleDuty.roleDuty { padding: 8px 10px; font-size: 14px; line-height: 1.6; resize: none; }
+.roleRow .rowActions { padding-top: 3px; }
+
+/* Rows the AI is still writing. Cells keep the metrics of the inline fields they become. */
+.root .streamCell.streamCell { margin: 0; border: 1px solid transparent; color: var(--pc-text); white-space: pre-wrap; overflow-wrap: anywhere; }
+.root .roleName.streamCell { display: flex; align-items: center; }
+.streamSpacer { visibility: hidden; }
+/* In a table cell the textarea sits on a text line (inline-block), which adds space beneath it; streamed cells match that. */
+.root .table td > .streamCell.streamCell { display: inline-block; width: 100%; box-sizing: border-box; overflow: hidden; vertical-align: baseline; }
+.dimmed { color: color-mix(in srgb, var(--pc-text) 45%, transparent); }
+.revisionHead, .revisionRow { display: grid; grid-template-columns: 96px 136px minmax(0, 1fr) auto; align-items: start; gap: 8px; }
+.revisionHead { padding: 0 0 6px; color: var(--pc-muted); font-size: 12px; font-weight: 600; }
+.revisionHead > span { padding-left: 10px; }
+.revisionRow { border-top: 1px solid var(--w-line); padding: 8px 0; }
+.revisionRow[data-scheduled] .revisionNo { color: var(--pc-text); }
+.root .revisionNo.revisionNo { font-weight: 650; font-variant-numeric: tabular-nums; }
+.root .revisionDate.revisionDate { font-variant-numeric: tabular-nums; }
+.root .revisionText.revisionText { padding: 8px 10px; font-size: 13.5px; line-height: 1.55; resize: none; }
+.revisionRow .rowActions { padding-top: 2px; }
+.ackGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; }
+.ackLabel { color: var(--pc-text); font-size: 13px; font-weight: 600; }
+
+@media (max-width: 767px) {
+  .roleRow, .revisionRow { grid-template-columns: minmax(0, 1fr) auto; }
+  .roleRow > :nth-child(2), .revisionRow > :nth-child(2), .revisionRow > :nth-child(3) { grid-column: 1; }
+  .roleRow .rowActions, .revisionRow .rowActions { grid-column: 2; grid-row: 1; }
+  .revisionHead { display: none; }
+  .ackGrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root *, .root *::before, .root *::after { transition-duration: .01ms !important; }
+  .goals[data-scanning] .goal .goalIcon, .goal[data-picked], .cellValue, .cellPending::before { animation: none; }
+  .root :global(.pc-authoring-panel):has(> header [data-ai-trigger][aria-busy="true"])::after { animation: none; --ai-angle: 90deg; }
+  .root .writing.writing:is(textarea)[data-busy],
+  .root :is(.objective, .tableRow):has([data-ai-trigger][aria-busy="true"]) :is(.objectiveText, .cellText).inline { animation: none; background-image: none; }
+}
