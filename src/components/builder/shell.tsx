@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BadgeIndianRupee, Check, FileDown, FileText, Leaf, PanelLeftClose, PanelLeftOpen, Users, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, FileDown, FileText, Leaf, PanelLeftClose, PanelLeftOpen, X } from "lucide-react";
+import { POLICY_ICONS } from "./policy-icons";
 import { clsx } from "clsx";
 import { motion, useReducedMotion } from "motion/react";
 import { useBuilder, getStepOrder } from "@/lib/store";
@@ -111,7 +112,7 @@ export function BuilderShell({
   const workspaceScope = usePolicyCraftScope((state) => state.scope);
   const { download, exporting } = usePolicyDownload();
   const policyMeta = getPolicyProfile(policy.policyType);
-  const PolicyIcon = policyMeta.icon === "Users" ? Users : policyMeta.icon === "BadgeIndianRupee" ? BadgeIndianRupee : Leaf;
+  const PolicyIcon = POLICY_ICONS[policyMeta.icon];
   const order = getStepOrder(policy);
   const visibleSteps = getPolicySteps(policy.policyType).filter((item) => order.includes(item.id));
   // The rail lists the writing steps only; review and export lives behind its own mode tab.
