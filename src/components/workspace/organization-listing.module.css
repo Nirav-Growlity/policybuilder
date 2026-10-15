@@ -65,6 +65,9 @@
 .primaryAction svg { transition: transform 320ms var(--ws-ease); }
 .primaryAction:hover svg { transform: rotate(90deg); }
 
+/* Start-policy CTA in picker rows: the arrow nudges forward instead of the plus-sign spin. */
+.startAction:hover svg { transform: translateX(2px); }
+
 .outlineAction { border-color: var(--pc-control); color: var(--pc-selection-text); }
 .outlineAction:hover { background: var(--pc-selection); }
 

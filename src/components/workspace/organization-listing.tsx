@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { Archive, Building2, CalendarX2, Check, Loader2, Plus, RefreshCw, Search, X } from "lucide-react";
+import { Archive, ArrowLeft, ArrowRight, Building2, CalendarX2, Check, Loader2, Plus, RefreshCw, Search, X } from "lucide-react";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
 import { RecordSkeleton } from "@/components/ui/record-skeleton";
@@ -19,8 +19,14 @@ import styles from "./organization-listing.module.css";
 type OrganizationSummary = PolicyCraftOrganization;
 type OrganizationSource = PolicyCraftOrganization["source"];
 
-export function OrganizationListing({ source }: { source: OrganizationSource }) {
+/**
+ * `manage` lists one source for administration. `pick` lists both sources (switched in
+ * place) so an admin can choose which organization a new policy belongs to.
+ */
+export function OrganizationListing({ source: initialSource, mode = "manage" }: { source: OrganizationSource; mode?: "manage" | "pick" }) {
   const router = useRouter();
+  const picking = mode === "pick";
+  const [source, setSource] = React.useState(initialSource);
   const reduced = useReducedMotion();
   const recordMotion = useRecordMotion();
   const [organizations, setOrganizations] = React.useState<OrganizationSummary[]>([]);
@@ -35,7 +41,7 @@ export function OrganizationListing({ source }: { source: OrganizationSource }) 
     try {
       const response = await fetch("/api/policycraft/admin/organizations", { cache: "no-store" });
       if (response.status === 401) {
-        const next = source === "standalone" ? "/admin/organizations/policycraft" : "/admin/organizations";
+        const next = picking ? "/admin/policies/new" : source === "standalone" ? "/admin/organizations/policycraft" : "/admin/organizations";
         router.replace(`/login?next=${encodeURIComponent(next)}`);
         return;
       }
@@ -48,12 +54,13 @@ export function OrganizationListing({ source }: { source: OrganizationSource }) 
       setCreatedOrganizationId(source === "standalone" && Number.isSafeInteger(createdId) && sourceOrganizations.some((organization) => organization.id === createdId) ? createdId : null);
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Organizations could not be loaded."); }
     finally { setLoading(false); }
-  }, [router, source]);
+  }, [router, source, picking]);
 
   React.useEffect(() => { const timer = window.setTimeout(() => void load(), 0); return () => window.clearTimeout(timer); }, [load]);
 
-  const sourceOrganizations = organizations.filter((organization) => organization.source === source);
-  const createdOrganization = source === "standalone" ? sourceOrganizations.find((organization) => organization.id === createdOrganizationId) || null : null;
+  // Deleted organizations cannot receive new policies, so the picker leaves them out.
+  const sourceOrganizations = organizations.filter((organization) => organization.source === source && !(picking && organization.deleted));
+  const createdOrganization = source === "standalone" && !picking ? sourceOrganizations.find((organization) => organization.id === createdOrganizationId) || null : null;
   const normalizedQuery = query.trim().toLocaleLowerCase();
   const visibleOrganizations = sourceOrganizations.filter((organization) => `${organization.name} ${organization.code} ${organizationSourceName(organization)}`.toLocaleLowerCase().includes(normalizedQuery));
   const activeCount = sourceOrganizations.filter((organization) => !organization.deleted && !organization.expired).length;
@@ -61,20 +68,22 @@ export function OrganizationListing({ source }: { source: OrganizationSource }) 
   const hasNoData = organizations.length === 0;
   // Twenty organizations per page keeps long lists light to render and scroll.
   const pager = usePagination(visibleOrganizations, `${source}|${normalizedQuery}`, 20);
+  const sourceLabel = policyCraft ? "PolicyCraft" : "ESG";
 
   return <ApplicationSurface data-pc-workspace="organizations" className={styles.surface}>
     <section className={styles.page} aria-labelledby="organizations-page-title">
       <WorkspaceHero
         titleId="organizations-page-title"
-        title={policyCraft ? "PolicyCraft organizations" : "Organizations"}
-        description={policyCraft ? "Manage PolicyCraft company profiles and assign managers." : "Manage ESG organizations and assign PolicyCraft managers."}
+        eyebrow={picking ? "New policy" : undefined}
+        title={picking ? "Choose an organization" : policyCraft ? "PolicyCraft organizations" : "Organizations"}
+        description={picking ? "Each policy belongs to one organization. Pick the one this policy is for, then set up its company details." : policyCraft ? "Manage PolicyCraft company profiles and assign managers." : "Manage ESG organizations and assign PolicyCraft managers."}
         stats={[
           { label: "Organizations", value: loading && hasNoData ? null : error && hasNoData ? "–" : sourceOrganizations.length },
           { label: "Active", value: loading && hasNoData ? null : error && hasNoData ? "–" : activeCount },
         ]}
-        actions={policyCraft ? <Link href="/admin/organizations/new" className={`${styles.actionLink} ${styles.primaryAction}`}><Plus size={15} aria-hidden="true" />Create organization</Link> : undefined}
+        actions={picking ? <Link href="/admin/policies" className={styles.actionLink}><ArrowLeft size={15} aria-hidden="true" />Back to policies</Link> : policyCraft ? <Link href="/admin/organizations/new" className={`${styles.actionLink} ${styles.primaryAction}`}><Plus size={15} aria-hidden="true" />Create organization</Link> : undefined}
       >
-        <OrganizationSectionNavigation />
+        {picking ? <OrganizationSectionNavigation value={source} onChange={(next) => { setSource(next); setQuery(""); }} /> : <OrganizationSectionNavigation />}
       </WorkspaceHero>
 
       <WorkspaceSheet className={styles.sheet}>
@@ -92,9 +101,9 @@ export function OrganizationListing({ source }: { source: OrganizationSource }) 
           <span className={styles.loadingStatus}><Loader2 size={16} className={styles.spinner} aria-hidden="true" />Loading organizations…</span>
           <RecordSkeleton />
         </div></DelayedLoading> : error ? null : <ListRegion busy={loading} contentKey={`organizations|${pager.page}`}>
-          <section className={styles.toolbar} aria-label={`Search ${policyCraft ? "PolicyCraft" : "ESG"} organizations`}>
+          <section className={styles.toolbar} aria-label={`Search ${sourceLabel} organizations`}>
             <label className={styles.searchLabel}>
-              <span className={styles.visuallyHidden}>Search {policyCraft ? "PolicyCraft" : "ESG"} organizations by name, code, or source</span>
+              <span className={styles.visuallyHidden}>Search {sourceLabel} organizations by name, code, or source</span>
               <span className={styles.searchField}><Search size={16} aria-hidden="true" className={styles.searchIcon} /><ApplicationInput type="search" name="organizationSearch" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search by name, code, or source…" className={styles.searchInput} /></span>
             </label>
             <div className={styles.toolbarMeta}>
@@ -108,7 +117,7 @@ export function OrganizationListing({ source }: { source: OrganizationSource }) 
             <ul className={styles.items}>
               <AnimatePresence initial={false}>
                 {pager.visible.map((organization, index) => <motion.li key={organization.id} className={styles.organizationRow} {...recordMotion(index)}>
-                  <OrganizationRowContent organization={organization} />
+                  <OrganizationRowContent organization={organization} picking={picking} />
                 </motion.li>)}
               </AnimatePresence>
             </ul>
@@ -120,7 +129,7 @@ export function OrganizationListing({ source }: { source: OrganizationSource }) 
   </ApplicationSurface>;
 }
 
-function OrganizationRowContent({ organization }: { organization: OrganizationSummary }) {
+function OrganizationRowContent({ organization, picking }: { organization: OrganizationSummary; picking: boolean }) {
   return <>
     <div className={styles.identity}>
       <Avatar name={organization.name} seed={`organization-${organization.id}`} size={40} />
@@ -133,9 +142,11 @@ function OrganizationRowContent({ organization }: { organization: OrganizationSu
       </div>
     </div>
     <div className={styles.rowActions}>
+      {picking ? <Link href={`/builder?orgId=${organization.id}`} className={`${styles.actionLink} ${styles.primaryAction} ${styles.startAction}`} aria-label={`Start a policy for ${organization.name}`}>Start policy<ArrowRight size={15} aria-hidden="true" /></Link> : <>
       {organization.source === "standalone" ? <Link href={`/admin/organizations/${organization.id}`} className={`${styles.actionLink} ${styles.outlineAction}`}>Edit details</Link> : <span className={styles.managedLabel}>Managed in ESG</span>}
       <OrganizationManagerAssignment organization={organization} />
       <Link href={`/admin/managers/new?organizationId=${organization.id}`} className={styles.actionLink}>Add new manager</Link>
+      </>}
     </div>
   </>;
 }

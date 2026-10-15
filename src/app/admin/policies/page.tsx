@@ -312,7 +312,7 @@ function AdminPoliciesContent() {
       title="All policies"
       description="Browse, manage, and export policies across organizations."
       stats={heroStats}
-      actions={<Link href="/builder" className={styles.heroCta}><Plus size={16} aria-hidden="true" />New policy</Link>}
+      actions={<Link href="/admin/policies/new" className={styles.heroCta}><Plus size={16} aria-hidden="true" />New policy</Link>}
     />
 
     <WorkspaceSheet as="section" aria-label="Policy register">

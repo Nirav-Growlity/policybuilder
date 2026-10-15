@@ -29,6 +29,8 @@
   touch-action: manipulation;
 }
 
+button.link { border: 0; background: transparent; font-family: inherit; cursor: pointer; }
+
 .link:hover { color: var(--ws-on-ink); background: var(--ws-ink-hover); }
 .current, .link[aria-current="page"] { color: var(--ws-on-ink); }
 .pill { --ws-pill-bg: var(--ws-ink-active); --ws-pill-shadow: inset 0 0 0 1px var(--ws-ink-field-border); }

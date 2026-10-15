@@ -309,6 +309,11 @@ function BuilderClientWorkspace() {
           if (requestedId && !targetOrganization) throw new Error("This organization is not assigned to your account.");
           if (targetOrganization?.deleted || (access.actor.role !== "admin" && targetOrganization?.expired)) throw new Error("This organization is not available for new policies.");
           if (!targetOrganization) {
+            // Admins choose from the full organization picker in the admin workspace.
+            if (access.actor.role === "admin") {
+              router.replace("/admin/policies/new");
+              return;
+            }
             setWorkspaceState("choose");
             return;
           }
