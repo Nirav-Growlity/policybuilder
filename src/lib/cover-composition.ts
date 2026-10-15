@@ -111,6 +111,9 @@ export function normalizeCoverComposition(input: unknown): CoverComposition | un
     ? candidate.elements.slice(0, COVER_MAX_ELEMENTS).map(normalizeElement).filter((item): item is CoverElement => {
       if (!item) return false;
       if (sourceTemplateId === "ai-generated" && item.id === "ai-cover-metadata-backdrop") return false;
+      // Template covers no longer carry decorative motif artwork; drop the one
+      // older compositions were seeded with.
+      if (item.type === "image" && item.id === "cover-template-art") return false;
       if (item.type === "image") { imageCount += 1; return imageCount <= COVER_MAX_IMAGES; }
       return true;
     })

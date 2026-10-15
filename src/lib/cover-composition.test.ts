@@ -60,6 +60,15 @@ test("removes the retired AI cover readability panel while preserving editable l
   assert.equal(result?.elements.some((element) => element.id === "ai-cover-policyTitle"), true);
 });
 
+test("saved template covers drop the retired motif artwork and keep everything else", () => {
+  const result = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "standard-pack", background: { color: "#FFFFFF" }, elements: [
+    { id: "cover-template-art", type: "image", assetId: "data:image/svg+xml;base64,PHN2Zy8+", zIndex: 1 },
+    { id: "cover-metadata-rule", type: "image", assetId: "data:image/svg+xml;base64,PHN2Zy8+", zIndex: 8 },
+    { id: "cover-policy-title", type: "text", content: { kind: "binding", binding: "policyTitle" }, zIndex: 10 },
+  ] });
+  assert.deepEqual(result?.elements.map((element) => element.id), ["cover-metadata-rule", "cover-policy-title"]);
+});
+
 test("AI cover text presentation preserves saved styles and adds only the contrast shadow", () => {
   const composition = normalizeCoverComposition({ schemaVersion: 1, sourceTemplateId: "ai-generated", background: { color: "#FFFFFF", assetId: "art" }, elements: [
     { id: "ai-cover-policyTitle", type: "text", fontFamily: "Arial", fontSize: 20, color: "#315C49", bold: false, letterSpacing: 0.25, content: { kind: "literal", text: "Policy" } },

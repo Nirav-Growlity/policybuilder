@@ -5,7 +5,6 @@ import type {
 } from "./types";
 import { normalizePageBorder } from "./page-geometry";
 import type { PageBorder } from "./types";
-import type { CoverMotifScene } from "./cover-motifs";
 import { normalizeLogoPalette } from "./logo-palette";
 
 export type { DocumentTemplateId, TemplateBrandOverrides, TemplateComposition };
@@ -17,9 +16,18 @@ export type DocumentThemeFamily = "Policy Pack" | "Executive" | "Controlled" | "
 export type UniversalTemplateFamily = "Standard" | "Executive" | "Controlled" | "Governance" | "Operations" | "Sustainability" | "People" | "Metrics";
 export type DocumentThemeIntent = "minimal" | "corporate" | "regulatory" | "editorial" | "impact" | "data-heavy" | "research";
 export type DocumentSectionRecipe = "charter-narrative" | "charter-ledger" | "charter-mosaic" | "dossier-narrative" | "dossier-columns" | "dossier-ledger" | "atlas-statement" | "atlas-modules" | "atlas-bands" | "atlas-mosaic" | "journal-narrative" | "journal-entries" | "journal-ledger";
-// Cover scenes share the motif inventory so sample-derived artwork can flow
-// through the same theme and renderer contracts as the legacy scenes.
-export type CoverScene = CoverMotifScene;
+export type CoverScene =
+  | "sample-quiet-title" | "sample-control-grid" | "sample-table-ledger"
+  | "sample-editorial-image" | "sample-framework-map" | "sample-compact-strip"
+  | "sample-heritage-crest" | "sample-operating-tabs"
+  | "civic-plain" | "signal-split" | "open-broad" | "swiss-poster"
+  | "ledger-rail" | "decision-stamp" | "routing-slip"
+  | "seal-medallion" | "clause-code" | "exhibit-file"
+  | "gazette-masthead" | "colonnade-rule" | "indenture-margin"
+  | "chapterhouse-drop" | "broadsheet-columns" | "fieldbook-grid"
+  | "canopy-band" | "summit-target" | "commons-card"
+  | "scoreboard-tiles" | "tape-ledger" | "dial-review"
+  | "proceedings-abstract" | "blueprint-spec" | "docket-matrix";
 export type ContentsScene = "dotted-leaders" | "rail-index" | "tile-index" | "editorial-index";
 export type PageZone = "single-folio" | "numbered-rail" | "modular-grid" | "editorial-margin";
 export type DocumentControlTreatment = "cover-metadata" | "control-panel" | "approval-record" | "footer-register";
@@ -35,7 +43,7 @@ export type DocumentThemeLayout = {
   dataLayout: "formal-grid" | "compact-ledger" | "target-bands" | "quiet-rules" | "scorecard-bands" | "ledger-trails" | "evidence-matrix" | "spec-table";
   acknowledgement: "legal-form" | "approval-block" | "signature-panel" | "affidavit" | "approval-stamp" | "decision-record" | "conclusion-panel";
   controlTreatment: DocumentControlTreatment; runningFurniture: "centered-folio" | "breadcrumb-bar" | "edge-folio" | "outer-folio" | "traceability-rail" | "clause-folio";
-  motif: CoverMotifScene; imageTreatment: "none" | "restrained-cover" | "full-bleed-cover" | "section-led"; sectionRecipes: Record<DocumentSectionKind, DocumentSectionRecipe>;
+  motif: CoverScene; imageTreatment: "none" | "restrained-cover" | "full-bleed-cover" | "section-led"; sectionRecipes: Record<DocumentSectionKind, DocumentSectionRecipe>;
 };
 export type DocumentThemeDefinition = {
   collection?: "professional"; id: DocumentTemplateId; name: string; description: string; family: DocumentThemeFamily; universalFamily: UniversalTemplateFamily; intent: DocumentThemeIntent; sourceReferences?: readonly string[];
@@ -97,7 +105,7 @@ const SAMPLE_VARIANT_BY_LAYOUT: Record<DocumentLayoutId, NonNullable<DocumentThe
   "clean-essentials": "minimal", executive: "governance", governance: "corporate", institutional: "institutional",
   editorial: "minimal", impact: "sustainability", data: "governance", technical: "editorial",
 };
-function makeLayout(input: { layoutId: DocumentLayoutId; bestFor: string; descriptors: readonly [string, string, string]; cover: CoverScene; toc: ContentsScene; pageFrame: PageZone; sectionOpener: DocumentThemeLayout["sectionOpener"]; bodyGrid: DocumentThemeLayout["bodyGrid"]; dataLayout: DocumentThemeLayout["dataLayout"]; acknowledgement: DocumentThemeLayout["acknowledgement"]; controlTreatment: DocumentControlTreatment; runningFurniture: DocumentThemeLayout["runningFurniture"]; motif: CoverMotifScene; imageTreatment: DocumentThemeLayout["imageTreatment"]; recipes: keyof typeof RECIPES }): DocumentThemeLayout {
+function makeLayout(input: { layoutId: DocumentLayoutId; bestFor: string; descriptors: readonly [string, string, string]; cover: CoverScene; toc: ContentsScene; pageFrame: PageZone; sectionOpener: DocumentThemeLayout["sectionOpener"]; bodyGrid: DocumentThemeLayout["bodyGrid"]; dataLayout: DocumentThemeLayout["dataLayout"]; acknowledgement: DocumentThemeLayout["acknowledgement"]; controlTreatment: DocumentControlTreatment; runningFurniture: DocumentThemeLayout["runningFurniture"]; motif: CoverScene; imageTreatment: DocumentThemeLayout["imageTreatment"]; recipes: keyof typeof RECIPES }): DocumentThemeLayout {
   return { layoutId: input.layoutId, professionalVariant: SAMPLE_VARIANT_BY_LAYOUT[input.layoutId], archetype: "universal-composition", bestFor: input.bestFor, descriptors: input.descriptors, cover: input.cover, toc: input.toc, pageFrame: input.pageFrame, sectionOpener: input.sectionOpener, bodyGrid: input.bodyGrid, dataLayout: input.dataLayout, acknowledgement: input.acknowledgement, controlTreatment: input.controlTreatment, runningFurniture: input.runningFurniture, motif: input.motif, imageTreatment: input.imageTreatment, sectionRecipes: RECIPES[input.recipes] };
 }
 type ThemeSpec = Omit<DocumentThemeDefinition, "structuralSignature" | "compositionFingerprint" | "composition">;
