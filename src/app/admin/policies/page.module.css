@@ -125,8 +125,3 @@
   .dialogActions button { width: 100%; }
   .heroCta { width: 100%; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .heroCta, .heroCta svg, .row, .mobileRecord, .emptyIcon { transition: none; animation: none; }
-  .heroCta:hover, .heroCta:hover svg { transform: none; }
-}

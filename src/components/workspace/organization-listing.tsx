@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { Archive, ArrowLeft, ArrowRight, Building2, CalendarX2, Check, Loader2, Plus, RefreshCw, Search, X } from "lucide-react";
 import { ApplicationButton, ApplicationInput } from "@/components/ui/app-primitives";
 import { ApplicationSurface } from "@/components/ui/application-surface";
@@ -27,7 +27,6 @@ export function OrganizationListing({ source: initialSource, mode = "manage" }: 
   const router = useRouter();
   const picking = mode === "pick";
   const [source, setSource] = React.useState(initialSource);
-  const reduced = useReducedMotion();
   const recordMotion = useRecordMotion();
   const [organizations, setOrganizations] = React.useState<OrganizationSummary[]>([]);
   const [loading, setLoading] = React.useState(true);
@@ -87,12 +86,12 @@ export function OrganizationListing({ source: initialSource, mode = "manage" }: 
       </WorkspaceHero>
 
       <WorkspaceSheet className={styles.sheet}>
-        {error ? <motion.div role="alert" aria-live="polite" className={styles.alert} initial={reduced ? false : { opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: WS_EASE }}>
+        {error ? <motion.div role="alert" aria-live="polite" className={styles.alert} initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: WS_EASE }}>
           <span>{error}</span>
           <ApplicationButton type="button" variant="ghost" size="sm" onClick={() => void load()} leadingIcon={<RefreshCw size={14} aria-hidden="true" />}>Retry</ApplicationButton>
         </motion.div> : null}
 
-        {createdOrganization ? <motion.div role="status" aria-live="polite" className={styles.createdNotice} initial={reduced ? false : { opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, ease: WS_EASE }}>
+        {createdOrganization ? <motion.div role="status" aria-live="polite" className={styles.createdNotice} initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, ease: WS_EASE }}>
           <span className={styles.createdText}><Check size={16} aria-hidden="true" />{createdOrganization.name} is ready. Assign a manager to grant access.</span>
           <div className={styles.createdActions}><OrganizationManagerAssignment organization={createdOrganization} label="Assign existing manager" /><Link href={`/admin/managers/new?organizationId=${createdOrganization.id}`} className={styles.actionLink}>Add new manager</Link></div>
         </motion.div> : null}
@@ -152,7 +151,6 @@ function OrganizationRowContent({ organization, picking }: { organization: Organ
 }
 
 function OrganizationEmptyState({ source, hasOrganizations, onClear }: { source: OrganizationSource; hasOrganizations: boolean; onClear: () => void }) {
-  const reduced = useReducedMotion();
   const policyCraft = source === "standalone";
   const sourceLabel = policyCraft ? "PolicyCraft" : "ESG";
   if (hasOrganizations) return <section className={styles.emptyState} aria-live="polite">
@@ -162,7 +160,7 @@ function OrganizationEmptyState({ source, hasOrganizations, onClear }: { source:
   </section>;
 
   return <section className={styles.emptyState}>
-    <motion.span className={styles.emptyIcon} initial={reduced ? false : { scale: 0.6, rotate: -8 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }}>
+    <motion.span className={styles.emptyIcon} initial={{ scale: 0.6, rotate: -8 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }}>
       <Building2 size={22} aria-hidden="true" />
     </motion.span>
     <h2 className={styles.emptyTitle}>{policyCraft ? "No PolicyCraft organizations yet" : "No ESG organizations available"}</h2>

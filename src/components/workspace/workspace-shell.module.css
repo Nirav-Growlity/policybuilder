@@ -475,12 +475,3 @@
   .accountName { max-width: 68px; }
   .signOutError { align-items: flex-start; flex-direction: column; padding-inline: 16px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .navLink,
-  .mobileNavLink,
-  .brandMark,
-  .navLink > svg,
-  .accountTrigger > svg { transition-duration: 0.01ms; }
-  .brand:hover .brandMark, .navLink:hover > svg { transform: none; }
-}

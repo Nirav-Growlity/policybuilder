@@ -19,11 +19,11 @@ import { listMarkerText } from "@/lib/list-formatting";
 import type { PolicyCraftWorkspaceScope } from "@/lib/policycraft-access-types";
 
 const previewEntranceStyles = `
-  @media screen and (prefers-reduced-motion: no-preference) {
+  @media screen {
     .policy-preview-document[data-preview-entrance="true"] { animation: policyPreviewEnter 220ms ease-out both; }
   }
   @keyframes policyPreviewEnter { from { opacity: 0; } to { opacity: 1; } }
-  @media print, (prefers-reduced-motion: reduce) {
+  @media print {
     .policy-preview-document[data-preview-entrance="true"] { animation: none !important; opacity: 1; }
   }
 `;
@@ -841,7 +841,6 @@ const previewStyles = `
     .recipe-dossier-columns.policy-focus-list, .recipe-atlas-modules.policy-focus-list, .recipe-dossier-columns.policy-objective-groups, .recipe-atlas-modules.policy-objective-groups, .responsibility-numbered-rail, .responsibility-modular-grid, .sdg-atlas-mosaic { grid-template-columns: 1fr; }
     .policy-target-bands > div { grid-template-columns: 42px 1fr; }
   }
-  @media (prefers-reduced-motion: reduce) { .policy-preview-document { animation: none; } }
 
   [data-collection="professional"] .professional-cover { min-height: 230mm; display: flex; flex-direction: column; padding: 0; background: transparent; overflow: visible; }
   [data-collection="professional"] .sample-cover-art { display: block; width: 42mm; max-height: 24mm; margin: 4mm 0 6mm; }

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, Check, Leaf, Loader2, LockKeyhole, Mail } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -49,7 +49,6 @@ function AcceptInvitationContent() {
   const acceptanceStarted = React.useRef(false);
   const signInRedirectStarted = React.useRef(false);
   const newAccountAcceptedHeading = React.useRef<HTMLHeadingElement>(null);
-  const reducedMotion = useReducedMotion();
   const schema = React.useMemo(() => invitation?.mode === "new" ? newInvitationSchema : existingInvitationSchema, [invitation?.mode]);
   const {
     clearErrors,
@@ -176,7 +175,7 @@ function AcceptInvitationContent() {
   return <ApplicationSurface className={styles.surface}>
     <a className={styles.skipLink} href="#invitation-main">Skip to invitation</a>
     <main className={styles.main} id="invitation-main">
-      <motion.section className={`${styles.card} pc-auth-entrance`} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion ? 0 : 0.2, ease: "easeOut" }}>
+      <motion.section className={`${styles.card} pc-auth-entrance`} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, ease: "easeOut" }}>
         <div className={styles.brand}><span className={styles.brandMark}><Leaf size={19} aria-hidden="true" /></span><span><span className={styles.brandName}>PolicyCraft</span><span className={styles.brandCaption}>Manager invitation</span></span></div>
         {loading ? <div className={styles.loading} aria-live="polite"><Loader2 size={16} className={styles.spinner} aria-hidden="true" />Checking invitation…</div> : newAccountAccepted ? <div role="status" aria-live="polite"><span className={styles.successIcon}><Check size={19} aria-hidden="true" /></span><h1 ref={newAccountAcceptedHeading} tabIndex={-1} className={styles.title}>Manager account created</h1><p className={styles.copy}>Your invitation was accepted. Sign in with the password you just created to open your manager workspace.</p>{signInRedirectError ? <p className={styles.warning} role="alert">{signInRedirectError}</p> : null}<ApplicationButton type="button" variant="primary" className={styles.fullButton} onClick={() => void continueNewAccountToSignIn()} busy={redirectingToSignIn} busyLabel="Signing out…" leadingIcon={!redirectingToSignIn ? <ArrowRight size={15} aria-hidden="true" /> : undefined}>{signInRedirectError ? "Retry sign in" : "Continue to sign in"}</ApplicationButton></div> : accepted ? <><span className={styles.successIcon}><Check size={19} aria-hidden="true" /></span><h1 className={styles.title}>Invitation accepted</h1><p className={styles.copy}>Your manager access is ready. Opening your workspace…</p>{notice ? <p className={styles.warning} role="status">{notice}</p> : null}</> : !invitation ? <><h1 className={styles.title}>Invitation unavailable</h1><p className={styles.errorCopy} role="alert">{notice || "Ask your administrator to send a new link."}</p>{token ? <ApplicationButton type="button" variant="outline" className={styles.fullButton} onClick={retryInvitationLookup} leadingIcon={<ArrowRight size={15} aria-hidden="true" />}>Try this link again</ApplicationButton> : null}</> : <>
           <h1 className={styles.title}>Accept your invitation</h1>

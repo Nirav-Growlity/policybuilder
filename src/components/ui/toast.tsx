@@ -4,7 +4,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import { CheckCircle2, X, Info, AlertTriangle, CircleAlert } from "lucide-react";
 import { clsx } from "clsx";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 type ToastType = "success" | "error" | "info";
 
@@ -58,7 +58,6 @@ export function Toaster({ children }: { children: React.ReactNode }) {
 }
 
 function ToastNotification({ item, dismiss }: { item: ToastItem; dismiss: (id: number) => void }) {
-  const reduceMotion = useReducedMotion();
   const [hovered, setHovered] = React.useState(false);
   const [focused, setFocused] = React.useState(false);
   const remaining = React.useRef(5000);
@@ -81,9 +80,9 @@ function ToastNotification({ item, dismiss }: { item: ToastItem; dismiss: (id: n
       role="status"
       aria-live="polite"
       aria-atomic="true"
-      initial={{ opacity: 0, y: reduceMotion ? 0 : 6 }}
+      initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: reduceMotion ? 0 : 6 }}
+      exit={{ opacity: 0, y: 6 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       onPointerEnter={() => setHovered(true)}
       onPointerLeave={() => setHovered(false)}

@@ -448,11 +448,3 @@ label:active .check { transform: scale(.9); }
   .revisionHead { display: none; }
   .ackGrid { grid-template-columns: minmax(0, 1fr); }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .root *, .root *::before, .root *::after { transition-duration: .01ms !important; }
-  .goals[data-scanning] .goal .goalIcon, .goal[data-picked], .cellValue, .cellPending::before { animation: none; }
-  .root :global(.pc-authoring-panel):has(> header [data-ai-trigger][aria-busy="true"])::after { animation: none; --ai-angle: 90deg; }
-  .root .writing.writing:is(textarea)[data-busy],
-  .root :is(.objective, .tableRow):has([data-ai-trigger][aria-busy="true"]) :is(.objectiveText, .cellText).inline { animation: none; background-image: none; }
-}

@@ -857,27 +857,3 @@
     height: auto;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .workspace [role="progressbar"] > div,
-  .emptyIcon {
-    animation: none;
-    transition: none;
-  }
-
-  .historyExpand {
-    transition: opacity 150ms ease;
-  }
-
-  .row,
-  .mobileRow,
-  .workspace .heroCta,
-  .workspace .heroCta svg {
-    transition: none;
-  }
-
-  .workspace .heroCta:hover:not(:disabled),
-  .workspace .heroCta:hover:not(:disabled) svg {
-    transform: none;
-  }
-}

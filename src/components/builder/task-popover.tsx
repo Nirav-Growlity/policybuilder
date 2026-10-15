@@ -20,7 +20,7 @@ export function TaskPopover({ state, complete, percentage, children }: TaskPopov
   return (
     <Popover.Root>
       <Popover.Trigger className={styles.trigger}>
-        <Icon size={15} aria-hidden="true" className={state === "loading" ? "animate-spin motion-reduce:animate-none" : undefined} />
+        <Icon size={15} aria-hidden="true" className={state === "loading" ? "animate-spin" : undefined} />
         <span>Task</span>
         <span className={styles.value}>{value}</span>
       </Popover.Trigger>

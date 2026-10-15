@@ -508,20 +508,3 @@
   0%, 100% { opacity: 1; }
   50% { opacity: .62; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .iconButton,
-  .segment,
-  .pageInput,
-  .retryButton,
-  .thumbPaper,
-  .viewer[data-zooming] .sheet {
-    transition: none;
-  }
-
-  .sheet:not(:has([data-painted])),
-  .thumbPaper:not(:has(img)),
-  .paper canvas[data-enter],
-  .thumbImage {
-    animation: none;
-  }}

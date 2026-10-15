@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, FileDown, FileText, Leaf, PanelLeftClose, PanelLeftOpen, X } from "lucide-react";
 import { POLICY_ICONS } from "./policy-icons";
 import { clsx } from "clsx";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { useBuilder, getStepOrder } from "@/lib/store";
 import type { StepId } from "@/lib/types";
 import { getPolicyProfile, getPolicySteps } from "@/lib/constants";
@@ -128,8 +128,7 @@ export function BuilderShell({
   const sidebarCollapsed = React.useSyncExternalStore(subscribeSidebarPreference, getSidebarPreference, getServerFlag);
   const sidebarPreferenceLoaded = React.useSyncExternalStore(subscribeHydration, getHydratedPreference, getServerHydratedPreference);
   const previewOpen = React.useSyncExternalStore(subscribePreviewPreference, getPreviewPreference, getServerFlag);
-  const reduceMotion = useReducedMotion();
-  const markerTransition = { duration: reduceMotion ? 0 : 0.2, ease: "easeOut" as const };
+  const markerTransition = { duration: 0.2, ease: "easeOut" as const };
 
   const [designOpen, setDesignOpen] = React.useState(false);
   const [workflowOpen, setWorkflowOpen] = React.useState(false);

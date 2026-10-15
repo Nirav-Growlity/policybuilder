@@ -6,4 +6,4 @@
 .content { z-index: 100; width: min(420px, calc(100vw - 24px)); max-height: var(--radix-popover-content-available-height); overflow-y: auto; padding: 12px; border: 1px solid var(--pc-divider, #cbd5e1); border-radius: 12px; background: var(--pc-panel, #fff); color: var(--pc-text, #0f172a); box-shadow: 0 12px 36px rgb(0 0 0 / 12%); font-family: var(--pc-font, system-ui); font-size: 13px; overscroll-behavior: contain; }
 /* The assignment summary keeps its markup and aria-label; the popover supplies the card. */
 .content > section { margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; }
-@media (prefers-reduced-motion: no-preference) { .content[data-state="open"] { animation: task-popover-appear 160ms ease-out; } @keyframes task-popover-appear { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } } }
+.content[data-state="open"] { animation: task-popover-appear 160ms ease-out; } @keyframes task-popover-appear { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }

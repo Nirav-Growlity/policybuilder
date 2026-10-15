@@ -183,10 +183,3 @@
   .toolbarMeta { width: 100%; justify-content: space-between; }
   .searchLabel { max-width: none; flex-basis: 100%; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .spinner { animation: none; }
-  .actionLink, .primaryAction svg, .organizationRow { transition: none; }
-  .primaryAction:hover, .actionLink:active { transform: none; }
-  .primaryAction:hover svg { transform: none; }
-}

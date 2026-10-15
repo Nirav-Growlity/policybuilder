@@ -119,8 +119,3 @@
   .dialogActions { flex-direction: column; }
   .dialogActions > button { width: 100%; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .openLink svg, .newPolicy, .newPolicy svg, .newPolicyButton svg { transition: none; }
-  .newPolicy:hover, .newPolicy:hover svg, .newPolicyButton:hover svg, .openLink:hover svg, .record:hover .openLink svg { transform: none; }
-}

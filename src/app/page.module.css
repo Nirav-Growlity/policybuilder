@@ -384,22 +384,3 @@
   .exportFile,
   .exportFileWord { min-width: 132px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .statusIcon { animation: none; }
-  .mobileDrawer { animation: none; }
-  .policyTab { transition: none; }
-  .brandMark,
-  .primaryNavLink,
-  .primaryCta,
-  .secondaryCta,
-  .menuButton,
-  .desktopNav a,
-  .mobileNav a { transition: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .primaryCta svg,
-  .primaryNavLink svg,
-  .textLink svg { transition: none; }
-}

@@ -79,7 +79,7 @@ export function TaskProgress({ progress, unavailableReason, savedAt, compact = f
       <span className="font-semibold tabular-nums text-[var(--color-forest)]">{value}%</span>
     </div>
     <div role="progressbar" aria-label="Filled policy sections" aria-valuemin={0} aria-valuemax={100} aria-valuenow={value} className={`overflow-hidden rounded-full bg-[var(--color-cream-2)] ${compact ? "h-1.5" : "h-2"}`}>
-      <div className="h-full rounded-full bg-[var(--color-forest)] transition-[width] duration-300 motion-reduce:transition-none" style={{ width: `${value}%` }} />
+      <div className="h-full rounded-full bg-[var(--color-forest)] transition-[width] duration-300" style={{ width: `${value}%` }} />
     </div>
     {(!compact || showSavedAt) && (savedAt || progress.savedAt) ? <p className="mt-1.5 text-[10px] text-[var(--color-muted)]">Manager saved {formatTaskDate(savedAt || progress.savedAt, { dateStyle: "medium", timeStyle: "short" })}</p> : null}
     {unavailableReason ? <p className="mt-2 text-xs text-amber-900">Unavailable: {unavailableReason}</p> : null}

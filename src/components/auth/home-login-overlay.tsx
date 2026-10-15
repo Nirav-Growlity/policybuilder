@@ -8,10 +8,6 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const OPEN_MS = 700;
 const CLOSE_MS = 650;
 
-export function prefersReducedMotion() {
-  return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
 type Flip = { x: number; y: number; scaleX: number; scaleY: number };
 
 /** Offset and scale that place `element` exactly over `target`. Both are measured in the viewport. */
@@ -55,7 +51,6 @@ export function HomeLoginOverlay({ docRef, phase, onRequestClose, onClosed }: Ho
     if (!root || !sheet || !content || openedRef.current) return;
     openedRef.current = true;
     const focusFirstField = () => root.querySelector<HTMLInputElement>("input:not([readonly])")?.focus({ preventScroll: true });
-    if (prefersReducedMotion()) { window.setTimeout(focusFirstField, 0); return; }
     const doc = docRef.current;
     const flip = doc ? flipOnto(sheet, doc) : null;
     root.style.opacity = "0";
@@ -75,7 +70,7 @@ export function HomeLoginOverlay({ docRef, phase, onRequestClose, onClosed }: Ho
     const root = rootRef.current;
     const sheet = sheetRef.current;
     const content = contentRef.current;
-    if (!root || !sheet || !content || prefersReducedMotion()) { onClosed(); return; }
+    if (!root || !sheet || !content) { onClosed(); return; }
     const doc = docRef.current;
     const flip = doc ? flipOnto(sheet, doc) : null;
     void animate(content, { opacity: 0 }, { duration: 0.14, ease: "easeOut" });

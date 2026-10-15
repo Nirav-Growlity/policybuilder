@@ -186,7 +186,3 @@
   .exportActions > button { flex: 1 1 0; min-width: 0; }
 }
 @keyframes shell-drawer-in { from { opacity: .86; transform: translateX(16px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .rail, .progressBar { transition: none; animation: none; }
-  .previewPane { animation: none; }
-}

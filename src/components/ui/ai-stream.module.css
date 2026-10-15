@@ -69,10 +69,3 @@
 .compact { gap: 10px; padding: 2px 0; }
 .compact .rules { gap: 10px; }
 .compact .rules i { height: 7px; }
-
-@media (prefers-reduced-motion: reduce) {
-  .word { animation: none; }
-  .caret { animation: none; }
-  .rules i, .rules i::after, .note { animation: none; }
-  .rules i::after { display: none; }
-}

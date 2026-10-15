@@ -4,7 +4,7 @@ import * as React from "react";
 import { createPortal } from "react-dom";
 import { ArrowLeft, ChevronDown, PenLine, Sparkles, WandSparkles } from "lucide-react";
 import { clsx } from "clsx";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { Textarea } from "./input";
 import { useApplicationSurface } from "./application-surface";
 import styles from "./ai-action-button.module.css";
@@ -34,7 +34,6 @@ export function AIActionButton({
   onStop,
 }: AIActionButtonProps) {
   const application = useApplicationSurface();
-  const reduceMotion = useReducedMotion();
   const popoverId = React.useId();
   const [open, setOpen] = React.useState(false);
   const [mode, setMode] = React.useState<"menu" | "custom">("menu");
@@ -129,16 +128,12 @@ export function AIActionButton({
   };
 
   const iconSize = quiet ? 14 : size === "md" ? 16 : 15;
-  const panelMotion = reduceMotion
-    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 } }
-    : {
-        initial: { opacity: 0, y: coords.above ? 6 : -6, scale: 0.97 },
-        animate: { opacity: 1, y: 0, scale: 1 },
-        exit: { opacity: 0, y: coords.above ? 4 : -4, scale: 0.98 },
-      };
-  const contentMotion = reduceMotion
-    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 } }
-    : { initial: { opacity: 0, x: mode === "custom" ? 12 : -12 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0 } };
+  const panelMotion = {
+    initial: { opacity: 0, y: coords.above ? 6 : -6, scale: 0.97 },
+    animate: { opacity: 1, y: 0, scale: 1 },
+    exit: { opacity: 0, y: coords.above ? 4 : -4, scale: 0.98 },
+  };
+  const contentMotion = { initial: { opacity: 0, x: mode === "custom" ? 12 : -12 }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0 } };
 
   return (
     <div className="inline-flex items-center shrink-0">
