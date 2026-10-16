@@ -137,10 +137,26 @@
 .mobileActions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
 .mobileDrawer > .primaryNavLink { min-height: 2.9rem; margin-top: auto; }
 
-.hero { position: relative; isolation: isolate; display: grid; min-height: clamp(650px, calc(100svh - 74px), 820px); align-items: start; overflow: hidden; background: var(--home-background); }
-.heroImage { position: absolute; z-index: 0; inset: 24% 0 0; overflow: hidden; mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 74%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); mask-composite: intersect; }
+/* The photo runs past the bottom of the hero and dissolves behind the next section, so the two read as one
+   surface; only the sides are clipped. */
+.hero { position: relative; z-index: 0; isolation: isolate; display: grid; min-height: clamp(650px, calc(100svh - 74px), 820px); align-items: start; overflow-x: clip; overflow-y: visible; background: var(--home-background); }
+/* Eased (many-stop) fades: a two-stop linear fade leaves a visible edge where it starts and stops. */
+.heroImage {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 -24%;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image:
+    linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 5%) 4%, rgb(0 0 0 / 14%) 8%, rgb(0 0 0 / 27%) 12%, rgb(0 0 0 / 42%) 16%, rgb(0 0 0 / 58%) 20%, rgb(0 0 0 / 74%) 24%, rgb(0 0 0 / 88%) 28%, #000 32%, #000 62%, rgb(0 0 0 / 88%) 68%, rgb(0 0 0 / 68%) 75%, rgb(0 0 0 / 44%) 82%, rgb(0 0 0 / 22%) 89%, rgb(0 0 0 / 7%) 95%, rgb(0 0 0 / 0%) 100%),
+    linear-gradient(to right, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 35%) 4%, rgb(0 0 0 / 75%) 9%, #000 14%, #000 86%, rgb(0 0 0 / 75%) 91%, rgb(0 0 0 / 35%) 96%, rgb(0 0 0 / 0%) 100%);
+  mask-composite: intersect;
+}
+.hero + .collection { position: relative; z-index: 1; }
+.heroImageInner { position: absolute; inset: 0; }
 .coastImage { object-fit: cover; object-position: center 58%; }
-.heroShade { position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, var(--home-background) 0%, var(--home-background) 30%, color-mix(in srgb, var(--home-background) 82%, transparent) 42%, transparent 67%); }
+/* Light enough that the photo shows behind the headline; a soft oval behind the copy keeps the smaller lines readable. */
+.heroShade { --shade: var(--home-background); position: absolute; z-index: 1; inset: 0; pointer-events: none; background: radial-gradient(ellipse 46% 30% at 50% 36%, color-mix(in srgb, var(--shade) 72%, transparent) 0%, color-mix(in srgb, var(--shade) 62%, transparent) 30%, color-mix(in srgb, var(--shade) 42%, transparent) 55%, color-mix(in srgb, var(--shade) 20%, transparent) 76%, color-mix(in srgb, var(--shade) 6%, transparent) 90%, transparent 100%), linear-gradient(180deg, color-mix(in srgb, var(--shade) 96%, transparent) 0%, color-mix(in srgb, var(--shade) 90%, transparent) 6%, color-mix(in srgb, var(--shade) 78%, transparent) 12%, color-mix(in srgb, var(--shade) 64%, transparent) 18%, color-mix(in srgb, var(--shade) 50%, transparent) 24%, color-mix(in srgb, var(--shade) 36%, transparent) 30%, color-mix(in srgb, var(--shade) 24%, transparent) 36%, color-mix(in srgb, var(--shade) 14%, transparent) 42%, color-mix(in srgb, var(--shade) 6%, transparent) 50%, transparent 58%); }
 .heroContent { position: relative; z-index: 2; width: min(100% - 2.5rem, 930px); margin: 0 auto; padding-top: clamp(3.5rem, 9vh, 6rem); text-align: center; }
 .heroEyebrow { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin: 0 0 1.15rem; color: var(--home-accent); font-family: var(--font-mono); font-size: 0.64rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; }
 .hero h1 { max-width: 15ch; margin: 0 auto; color: var(--home-text); font-family: var(--font-sans); font-size: clamp(3.6rem, 7.4vw, 6.4rem); font-weight: 650; letter-spacing: -0.075em; line-height: 0.96; text-wrap: balance; }
@@ -162,17 +178,19 @@
 .heroDocumentIntro { max-width: 18rem; margin: 0.9rem 0 0; color: #4b5b72; font-size: 0.72rem; line-height: 1.5; }
 
 .collection { padding-block: clamp(5.5rem, 9vw, 8.25rem); }
-.collectionHeading { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-block: 2rem 3rem; }
-.collectionHeading h2 { margin: 0; color: var(--home-text); font-family: var(--font-sans); font-size: clamp(2.3rem, 4.3vw, 3.8rem); font-weight: 600; letter-spacing: -0.065em; line-height: 1.02; text-wrap: balance; }
-.collectionHeading p { max-width: 42rem; margin: 0; color: var(--home-body); font-size: 0.94rem; line-height: 1.65; }
+/* Title and list share the left column of the pinned showcase. */
+.showcaseAside { position: sticky; top: 2rem; display: grid; min-width: 0; }
+.showcase[data-scrolly] .showcaseAside { position: static; }
+.collectionHeading { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.9rem; margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
+.collectionHeading h2 { margin: 0; color: var(--home-text); font-family: var(--font-sans); font-size: clamp(2.3rem, 3.3vw, 3.2rem); font-weight: 600; letter-spacing: -0.065em; line-height: 1.02; text-wrap: balance; }
+.collectionHeading p { max-width: 26rem; margin: 0; color: var(--home-body); font-size: 0.92rem; line-height: 1.6; }
 .showcase { display: grid; grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr); align-items: start; gap: clamp(2rem, 5vw, 5rem); }
-.policyTabs { position: sticky; top: 2rem; display: grid; border-top: 1px solid var(--home-border); }
+.policyTabs { display: grid; border-top: 1px solid var(--home-border); }
 .policyTab { position: relative; display: flex; min-height: 4.6rem; align-items: center; padding: 0.9rem 0 0.9rem 1.25rem; border: 0; border-bottom: 1px solid var(--home-border); background: none; color: var(--home-muted); cursor: pointer; font-family: var(--font-sans); font-size: clamp(1.35rem, 2.1vw, 1.85rem); font-weight: 600; letter-spacing: -0.045em; line-height: 1.05; text-align: left; transition: color 180ms ease; }
 .policyMarker { position: absolute; top: calc(50% - 0.25rem); left: 0; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--home-accent); }
 /* While pinned, each divider fills as the reader scrolls through that policy. */
 .policyTab::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 1px; background: var(--home-accent); content: ""; transform: scaleX(var(--policy-fill, 0)); transform-origin: left; }
 .showcase:not([data-scrolly]) .policyTab::after { display: none; }
-.showcase[data-scrolly] .policyTabs { position: static; }
 .policyTab:hover,
 .policyTab[aria-selected="true"] { color: var(--home-text); }
 .page .policyTab:focus-visible { outline-offset: -2px; }
@@ -217,8 +235,8 @@
 :global([data-pc-theme="dark"]) .policyPhotoLayer img,
 :global([data-pc-theme="dark"]) .policyMorph { filter: saturate(0.85) brightness(0.9); }
 
-.exportStory { background: #e8eef7; color: #111c30; }
-:global([data-pc-theme="dark"]) .exportStory { background: #0a0a0a; color: #ededed; }
+.exportStory { --home-tone: #e8eef7; background: var(--home-tone); color: #111c30; }
+:global([data-pc-theme="dark"]) .exportStory { --home-tone: #0a0a0a; color: #ededed; }
 .exportInner { display: grid; width: min(100% - 3.5rem, 1296px); min-height: 660px; grid-template-columns: minmax(270px, 0.78fr) minmax(0, 1.22fr); align-items: center; gap: clamp(3rem, 9vw, 9rem); margin-inline: auto; padding-block: clamp(5rem, 9vw, 8rem); }
 .exportCopy { max-width: 29rem; }
 .exportCopy h2,
@@ -259,8 +277,12 @@
 .standardsCopy { max-width: 31rem; }
 .standardsCopy h2 { font-size: clamp(2.2rem, 3.8vw, 3.3rem); }
 .standardsCopy > p:last-child { max-width: 26rem; margin: 1rem 0 0; color: var(--home-body); font-size: 0.9rem; line-height: 1.65; }
-.frameworkList { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1.15rem; margin: 0; padding: 0; list-style: none; }
-.frameworkList li { padding-block: 0.8rem; border-bottom: 1px solid var(--home-border); color: var(--home-body); font-family: var(--font-sans); font-size: clamp(0.82rem, 1vw, 0.98rem); font-weight: 570; white-space: nowrap; }
+/* Two rows of framework names drift in opposite directions and speed up with scrolling; the list beside them is what assistive tech reads. */
+.frameworkStrip { position: relative; min-width: 0; border-top: 1px solid var(--home-border); }
+.frameworkRow { padding-block: 1.05rem; border-bottom: 1px solid var(--home-border); }
+.frameworkName { display: inline-block; margin-right: clamp(1.75rem, 3.2vw, 3rem); color: var(--home-text); font-family: var(--font-sans); font-size: clamp(1.45rem, 2.5vw, 2.3rem); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; }
+.frameworkRow + .frameworkRow .frameworkName { color: var(--home-muted); }
+.visuallyHidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; border: 0; clip-path: inset(50%); white-space: nowrap; }
 
 .finalCta { position: relative; overflow: hidden; padding: clamp(5.5rem, 10vw, 9rem) 1.5rem; background: var(--home-surface-muted); color: var(--home-text); text-align: center; }
 .finalCta::before { position: absolute; top: -17rem; left: 50%; width: 44rem; height: 44rem; border: 1px solid var(--home-border); border-radius: 50%; content: ""; transform: translateX(-50%); }
@@ -271,6 +293,14 @@
 .finalCta .primaryCta { margin-top: 1.8rem; }
 
 .footer { border-top: 1px solid var(--home-border); background: var(--home-background); }
+
+/* Section tones. Once the page script runs, the bands go transparent and the page eases between these colours. */
+.hero,
+.collection,
+.footer { --home-tone: var(--home-background); }
+.standards { --home-tone: var(--home-surface); }
+.finalCta { --home-tone: var(--home-surface-muted); }
+.page[data-tone-shift] [data-home-tone] { background: transparent; }
 .footerInner { display: flex; min-height: 5rem; align-items: center; justify-content: space-between; gap: 1rem; color: var(--home-muted); font-size: 0.7rem; }
 .footerBrand,
 .footerInner > a:last-child { display: inline-flex; align-items: center; gap: 0.48rem; color: var(--home-text); text-decoration: none; }
@@ -301,7 +331,12 @@
   .heroContent { padding-top: 3.6rem; }
   .hero h1 { font-size: clamp(3.55rem, 9vw, 5.6rem); }
   .heroDocument { right: 7%; bottom: 7%; width: 250px; }
-  .showcase { grid-template-columns: minmax(13rem, 0.8fr) minmax(0, 1.2fr); gap: 2rem; }
+  /* No pin below desktop, so the title spans the full width above the list and the panel again. */
+  .showcase { grid-template-columns: minmax(13rem, 0.8fr) minmax(0, 1.2fr); grid-template-areas: "head head" "tabs panel"; gap: 0 2rem; }
+  .showcaseAside { display: contents; }
+  .collectionHeading { grid-area: head; }
+  .policyTabs { grid-area: tabs; align-self: start; }
+  .policyPanel { grid-area: panel; }
   .policyFacts { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .policyPhoto { height: auto; aspect-ratio: 16 / 10; }
   .exportInner { width: min(100% - 2.25rem, 800px); grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.18fr); gap: 2rem; }
@@ -322,8 +357,8 @@
   .mobilePublicCta { width: 2.6rem; gap: 0; padding: 0; font-size: 0; }
   .mobilePublicCta svg { width: 16px; height: 16px; }
   .hero { min-height: 720px; }
-  .heroImage { inset: 38% 0 0; }
-  .heroShade { background: linear-gradient(180deg, var(--home-background) 0%, var(--home-background) 36%, color-mix(in srgb, var(--home-background) 76%, transparent) 50%, transparent 68%); }
+  .heroImage { inset: 0 0 -18%; }
+  .heroShade { background: radial-gradient(ellipse 90% 30% at 50% 36%, color-mix(in srgb, var(--shade) 70%, transparent) 0%, color-mix(in srgb, var(--shade) 58%, transparent) 35%, color-mix(in srgb, var(--shade) 36%, transparent) 60%, color-mix(in srgb, var(--shade) 14%, transparent) 82%, transparent 100%), linear-gradient(180deg, color-mix(in srgb, var(--shade) 96%, transparent) 0%, color-mix(in srgb, var(--shade) 90%, transparent) 10%, color-mix(in srgb, var(--shade) 78%, transparent) 20%, color-mix(in srgb, var(--shade) 60%, transparent) 30%, color-mix(in srgb, var(--shade) 42%, transparent) 38%, color-mix(in srgb, var(--shade) 24%, transparent) 46%, color-mix(in srgb, var(--shade) 10%, transparent) 54%, transparent 62%); }
   .heroContent { width: min(100% - 2rem, 540px); padding-top: 3.2rem; }
   .heroEyebrow { font-size: 0.56rem; }
   .hero h1 { font-size: clamp(3.1rem, 12vw, 4.5rem); }
@@ -336,10 +371,11 @@
   .heroDocumentIntro { font-size: 0.68rem; }
   .collection { padding-block: 4.5rem; }
   .collectionHeading { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; margin-block: 1.6rem 2rem; }
+  .showcaseAside { position: static; }
   .collectionHeading h2 { font-size: clamp(2.35rem, 9vw, 3.25rem); }
   .collectionHeading p { max-width: 28rem; font-size: 0.85rem; }
-  .showcase { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
-  .policyTabs { position: static; }
+  .showcase { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "tabs" "panel"; gap: 0; }
+  .policyTabs { margin-bottom: 1.5rem; }
   .policyTab { min-height: 3.4rem; padding-block: 0.7rem; font-size: 1.3rem; }
   .policySummary { margin-top: 1.4rem; }
   .exportInner { width: min(100% - 2rem, 540px); min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 3rem; padding-block: 4.6rem; }
@@ -358,8 +394,8 @@
   .exportFileWord { left: -0.25rem; }
   .standardsInner { grid-template-columns: minmax(0, 1fr); gap: 2rem; padding-block: 4.5rem; }
   .standardsCopy h2 { font-size: clamp(2.3rem, 8.7vw, 3rem); }
-  .frameworkList { gap: 0.25rem 1rem; }
-  .frameworkList li { padding-block: 0.65rem; font-size: 0.78rem; }
+  .frameworkRow { padding-block: 0.8rem; }
+  .frameworkName { font-size: 1.35rem; }
   .finalCta { padding-block: 5.5rem; }
   .finalCta h2 { font-size: clamp(3.1rem, 11.5vw, 4.5rem); }
   .finalCta::before { width: 34rem; height: 34rem; }
