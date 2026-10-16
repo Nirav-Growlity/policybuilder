@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ArrowRight, LockKeyhole, X } from "lucide-react";
+import { ArrowRight, Leaf, LockKeyhole, X } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -98,19 +98,23 @@ export function LoginScene({ variant, sheetRef, contentRef, onClose }: LoginScen
   const Title = variant === "page" ? "h1" : "h2";
 
   return (
-    <ApplicationSurface className={`${styles.scene} ${variant === "page" ? styles.page : ""}`}>
+    <ApplicationSurface className={`${styles.scene} ${variant === "page" ? styles.page : styles.overlay}`}>
       {opening ? <AppTransitionScreen overlay title="Opening your workspace" detail="Signed in. Preparing your organizations and policies." /> : null}
-      <div className={styles.image} aria-hidden="true">
-        <Image src="/home/coastline.webp" alt="" fill priority sizes="100vw" className={styles.imageFill} />
-      </div>
-      <div className={styles.shade} aria-hidden="true" />
+      {/* Over the home page the hero's own photo shows through, so the scene and the page stay one surface. */}
+      {variant === "page" ? (
+        <>
+          <div className={styles.image} aria-hidden="true">
+            <Image src="/home/coastline.webp" alt="" fill priority sizes="100vw" className={styles.imageFill} />
+          </div>
+          <div className={styles.shade} aria-hidden="true" />
+        </>
+      ) : null}
       <section className={styles.sheet} ref={sheetRef} aria-labelledby="login-title">
         <div ref={contentRef}>
           <div className={styles.sheetTopRow}>
-            <div className={styles.sheetTop}><span>POLICYCRAFT&nbsp; / &nbsp;SIGN IN</span></div>
+            <span className={styles.brand}><span className={styles.brandMark}><Leaf size={15} strokeWidth={1.8} aria-hidden="true" /></span>PolicyCraft</span>
             {onClose ? <button type="button" className={styles.close} onClick={onClose}><X size={14} aria-hidden="true" />Close</button> : null}
           </div>
-          <div className={styles.sheetRule} />
           <Title className={styles.title} id="login-title">Sign in to your workspace</Title>
           <p className={styles.description}>Use your existing ESG account to pick up your policies where you left them.</p>
           <form className={styles.form} onSubmit={submit} aria-describedby={serverError ? "login-error" : undefined}>

@@ -25,6 +25,7 @@
   background: var(--login-bg);
   font-family: var(--login-sans);
 }
+:global([data-pc-theme="dark"]) .sheet { box-shadow: 0 1px 0 rgb(255 255 255 / 4%) inset, 0 40px 80px -44px rgb(0 0 0 / 85%); }
 :global([data-pc-theme="dark"]) .scene {
   --login-bg: #000000;
   --login-border: #262626;
@@ -36,38 +37,50 @@
   --pc-selection-text: var(--pc-brand);
 }
 .page { min-height: clamp(650px, calc(100svh - 74px), 820px); }
+/* Over the home hero the scene is see-through: the hero's photo and its fade into the next section show behind the sheet. */
+.overlay { background: transparent; }
 
-.image { position: absolute; z-index: 0; inset: 24% 0 0; overflow: hidden; mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 74%, transparent), linear-gradient(to right, transparent, #000 12%, #000 88%, transparent); mask-composite: intersect; }
+/* Same eased fades as the home hero, so the standalone page matches it. */
+.image {
+  position: absolute;
+  z-index: 0;
+  inset: 12% 0 0;
+  overflow: hidden;
+  mask-image:
+    linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 3%) 7%, rgb(0 0 0 / 10%) 14%, rgb(0 0 0 / 22%) 21%, rgb(0 0 0 / 38%) 28%, rgb(0 0 0 / 57%) 35%, rgb(0 0 0 / 76%) 42%, rgb(0 0 0 / 91%) 49%, #000 56%, #000 64%, rgb(0 0 0 / 86%) 71%, rgb(0 0 0 / 62%) 79%, rgb(0 0 0 / 34%) 87%, rgb(0 0 0 / 11%) 94%, rgb(0 0 0 / 0%) 100%),
+    linear-gradient(to right, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 35%) 4%, rgb(0 0 0 / 75%) 9%, #000 14%, #000 86%, rgb(0 0 0 / 75%) 91%, rgb(0 0 0 / 35%) 96%, rgb(0 0 0 / 0%) 100%);
+  mask-composite: intersect;
+}
 .imageFill { object-fit: cover; object-position: center 58%; }
-.shade { position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, var(--login-bg) 0%, var(--login-bg) 30%, color-mix(in srgb, var(--login-bg) 82%, transparent) 42%, transparent 67%); }
+.shade { --shade: var(--login-bg); position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(180deg, var(--shade) 0%, var(--shade) 24%, color-mix(in srgb, var(--shade) 94%, transparent) 30%, color-mix(in srgb, var(--shade) 82%, transparent) 36%, color-mix(in srgb, var(--shade) 64%, transparent) 42%, color-mix(in srgb, var(--shade) 44%, transparent) 48%, color-mix(in srgb, var(--shade) 26%, transparent) 54%, color-mix(in srgb, var(--shade) 12%, transparent) 60%, color-mix(in srgb, var(--shade) 4%, transparent) 66%, transparent 72%); }
 
 .sheet {
   position: relative;
   z-index: 2;
   width: min(100%, 420px);
-  padding: 1.15rem 1.6rem 1.25rem;
+  padding: 1.4rem 1.75rem 1.5rem;
   color: var(--login-ink);
   background: var(--login-sheet);
   border: 1px solid var(--login-border);
-  border-radius: 0.8rem;
-  box-shadow: 0 22px 55px rgb(8 23 46 / 20%);
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 0 rgb(255 255 255 / 70%) inset, 0 1px 2px rgb(23 44 74 / 5%), 0 40px 80px -44px rgb(23 44 74 / 50%);
   will-change: transform;
   backface-visibility: hidden;
 }
 .sheetTopRow { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 1.5rem; }
-.sheetTop { color: var(--login-faint); font-family: var(--login-mono); font-size: 0.56rem; letter-spacing: 0.035em; }
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--login-ink); font-size: 0.92rem; font-weight: 650; letter-spacing: -0.02em; }
+.brandMark { display: grid; width: 2.1rem; height: 2.1rem; place-items: center; border-radius: 0.6rem; background: color-mix(in srgb, var(--login-accent) 10%, var(--login-sheet)); color: var(--login-accent); }
 .close { display: inline-flex; align-items: center; gap: 0.35rem; margin: -0.25rem -0.4rem -0.25rem 0; padding: 0.35rem 0.45rem; color: var(--login-body); background: none; border: 0; border-radius: 0.5rem; font: inherit; font-size: 0.72rem; font-weight: 600; cursor: pointer; transition: color 160ms ease, background-color 160ms ease; }
 .close:hover { color: var(--login-accent); background: color-mix(in srgb, var(--login-accent) 8%, transparent); }
 .close:focus-visible { outline: 2px solid var(--login-accent); outline-offset: 2px; }
-.sheetRule { height: 1px; margin-top: 0.75rem; background: var(--login-border); }
-.title { margin: 1.5rem 0 0; font-family: var(--login-sans); font-size: clamp(2rem, 4.6vw, 2.45rem); font-weight: 600; letter-spacing: -0.065em; line-height: 1; text-wrap: balance; }
+.title { margin: 1.6rem 0 0; font-family: var(--login-sans); font-size: clamp(2rem, 4.6vw, 2.45rem); font-weight: 600; letter-spacing: -0.065em; line-height: 1; text-wrap: balance; }
 .description { margin: 0.8rem 0 0; color: var(--login-body); font-size: 0.9rem; line-height: 1.55; text-wrap: pretty; }
 .form { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.6rem; }
 .emailAction { align-self: flex-start; margin-top: -0.7rem; padding: 2px 0; color: var(--login-accent); background: none; border: 0; font: inherit; font-size: 12px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .emailAction:focus-visible { outline: 2px solid var(--login-accent); outline-offset: 2px; border-radius: 2px; }
 .error { margin: -2px 0 0; padding: 10px 12px; color: var(--pc-error); background: var(--pc-error-surface); border-radius: 8px; font-size: 13px; line-height: 1.45; }
 .submit { width: 100%; min-height: 48px; margin-top: 0.2rem; border-radius: 0.75rem; }
-.sheetFoot { margin: 1.4rem 0 0; padding-top: 0.75rem; color: var(--login-faint); border-top: 1px solid var(--login-border); font-size: 0.72rem; line-height: 1.5; }
+.sheetFoot { margin: 1.1rem 0 0; color: var(--login-faint); font-size: 0.76rem; line-height: 1.5; text-align: center; }
 
 @media (max-width: 1023px) { .page { min-height: clamp(650px, calc(100svh - 68px), 790px); } }
 @media (max-width: 480px) {
