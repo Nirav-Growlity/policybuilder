@@ -47,6 +47,8 @@ export class PolicyCraftAccessUnavailableError extends Error {
 type OrganizationRequest = {
   organizationId?: number;
   documentId?: string;
+  /** A Documents-area manual (SOP manual, handbook); resolved against policycraft_manuals. */
+  manualId?: string;
   operation: "read" | "write";
 };
 
@@ -189,6 +191,15 @@ export async function resolvePolicyCraftOrganization(
     const documentOrgId = documents[0]?.org_id;
     if (!documentOrgId || (organizationId !== undefined && organizationId !== documentOrgId)) return null;
     organizationId = documentOrgId;
+  }
+  if (request.manualId) {
+    const [manuals] = await policyCraftPool.execute<DocumentOrganizationRow[]>(
+      `SELECT org_id FROM policycraft_manuals WHERE id = ? LIMIT 1`,
+      [request.manualId],
+    );
+    const manualOrgId = manuals[0]?.org_id;
+    if (!manualOrgId || (organizationId !== undefined && organizationId !== manualOrgId)) return null;
+    organizationId = manualOrgId;
   }
   if (organizationId === undefined) organizationId = actor.homeOrganizationId;
   if (typeof organizationId !== "number" || !Number.isInteger(organizationId) || organizationId <= 0) return null;

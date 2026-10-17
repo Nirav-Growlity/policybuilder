@@ -1,0 +1,2728 @@
+{
+  "front": {
+    "introduction": [
+      "Meridian Textiles Pvt Ltd is a cotton yarn dyeing and knitted fabric finishing company supplying export brands. Its operations are carried out across three locations: Unit 1 Dyeing House at SIPCOT Perundurai, Erode, Tamil Nadu, where dyeing and finishing take place; Unit 2 Effluent Treatment Plant and Warehouse on the same campus, which houses the effluent treatment plant and the storage of chemicals and finished goods; and the Head Office on Avinashi Road, Coimbatore, which accommodates administration, human resources, procurement and information technology.",
+      "This Standard Operating Procedures manual, reference MTPL/SOP/01, consolidates the procedures through which the Environment, Health and Safety, Production, Quality, Human Resources, Procurement, Finance, Information Technology and Administration departments conduct their day-to-day work. It sets out the responsibilities of each department and role, the sequence of activities, the records to be maintained and the controls applied at each stage of the process.",
+      "This document is Revision 01. It replaces any earlier unnumbered procedures or informal working practices in the areas it covers, and it is intended to be read alongside site-specific work instructions, permits and records that reference it."
+    ],
+    "objective": "To establish a consistent, documented and controlled framework of procedures across Meridian Textiles Pvt Ltd, so that every site and department performs its activities in a planned, repeatable and verifiable manner, with clear accountability for environmental, health and safety, quality, resource and compliance outcomes.",
+    "benefits": [
+      "Provides a single, version-controlled reference for staff at Unit 1, Unit 2 and the Head Office, reducing variation in how the same task is performed between sites.",
+      "Clarifies roles and responsibilities between departments, so that handovers, approvals and escalations are traceable to a named function.",
+      "Supports consistent control of chemicals, effluent and waste handling at Unit 2 and Unit 1, reducing the likelihood of unplanned releases and non-conformities.",
+      "Gives buyers, auditors and internal reviewers a clear basis against which to verify that work is carried out as documented.",
+      "Enables new and transferred employees to be inducted and assessed against a defined standard, shortening the time needed to reach competence.",
+      "Creates a structured basis for continual improvement, as deviations and near misses recorded against these procedures can be analysed and the procedures revised accordingly."
+    ],
+    "coreValues": [
+      {
+        "title": "Safety First",
+        "description": "No task is so urgent that it may be performed without the controls set out for it, and every employee is empowered to stop work where a risk is not adequately controlled."
+      },
+      {
+        "title": "Accountability",
+        "description": "Each procedure names the function responsible for carrying it out and for the records that evidence it, so that ownership of every outcome is clear."
+      },
+      {
+        "title": "Environmental Stewardship",
+        "description": "Meridian manages water, effluent, chemicals and waste responsibly, treating environmental performance as an integral part of production rather than a separate activity."
+      },
+      {
+        "title": "Transparency",
+        "description": "Deviations, incidents and non-conformities are recorded accurately and reported through the defined channels, without concealment, so that they can be investigated and learned from."
+      }
+    ],
+    "howToUse": "Users should first identify the procedure relevant to their task from the contents list and read it in full before starting work, including its scope, referenced documents and records. Where a procedure refers to a site-specific work instruction or permit, that document must be consulted and followed alongside this manual. Printed copies are uncontrolled unless stamped with a controlled copy number; the current controlled version is held electronically by the Head Office and must be checked before use. Any suggested improvement or query should be raised with the responsible department head rather than acted upon informally.",
+    "reviewMechanism": "This manual shall be reviewed at least annually, and additionally following any significant incident, audit finding, change in process or equipment, change in legal or customer requirement, or change in organisational responsibility. Each department head shall submit proposed amendments to the Quality function, which shall coordinate review with EHS and the relevant department, record the changes in the revision history, and issue the revised version under a new revision number with the superseded copies withdrawn from use. Review outcomes, including decisions not to change a procedure, shall be recorded and retained.",
+    "approvalStatement": "This Standard Operating Procedures manual, MTPL/SOP/01 Revision 01, is approved for implementation across Meridian Textiles Pvt Ltd with effect from the date of signature by the authorised management representative."
+  },
+  "sops": [
+    {
+      "code": "MTPL-EHS-001",
+      "title": "Waste Segregation and Disposal",
+      "pillar": "E",
+      "department": "EHS",
+      "owner": "EHS Manager",
+      "purpose": "To define how solid, hazardous and effluent-related wastes arising at Meridian Textiles Pvt Ltd are identified, segregated at source, stored, collected, documented and disposed of through authorised channels, so that environmental harm and statutory non-compliance are prevented and the company can evidence control of its waste streams.",
+      "scope": "Applies to all waste generated at Unit 1 Dyeing House (dyeing and finishing), Unit 2 Effluent Treatment Plant and Warehouse (ETP, chemical and finished goods storage), and Head Office, Avinashi Road, Coimbatore (administration, HR, procurement, IT), both during routine operations and during maintenance, shutdowns and chemical changeovers. It covers all personnel and contractors who handle, transport or dispose of waste on the SIPCOT Perundurai campus or on behalf of the company.",
+      "definitions": [
+        {
+          "term": "Waste",
+          "definition": "Any material generated by company activities that is discarded, intended for discard, or no longer usable in its original purpose, including solid, liquid and sludge forms."
+        },
+        {
+          "term": "Segregation at source",
+          "definition": "The separation of waste into defined categories at the point of generation, using labelled and colour-coded containers, before any mixing can occur."
+        },
+        {
+          "term": "Hazardous waste",
+          "definition": "Waste carrying chemical, physical or toxic properties that require special handling, including spent dye liquors, chemical containers, spent solvents and oily rags, as identified in the site hazardous waste inventory."
+        },
+        {
+          "term": "Effluent sludge",
+          "definition": "Residual solids separated from wastewater in the Effluent Treatment Plant, including chemical sludge from primary and secondary treatment."
+        },
+        {
+          "term": "Waste Manifest Register",
+          "definition": "The controlled log in which each consignment of waste leaving site is recorded with category, quantity, date, collector and receiving facility details."
+        },
+        {
+          "term": "Authorised Collector",
+          "definition": "A transporter or disposal facility approved by the EHS Manager and holding the permissions required for the relevant waste category, whose approval status is reviewed annually."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "EHS Manager",
+          "responsibilities": [
+            "Owns this SOP and maintains the site waste inventory and hazardous waste category list.",
+            "Approves Authorised Collectors and reviews their permissions annually.",
+            "Reviews the Waste Manifest Register and reports waste KPIs to management."
+          ]
+        },
+        {
+          "role": "Production Supervisor (Unit 1 Dyeing House)",
+          "responsibilities": [
+            "Ensures segregation bins are placed, labelled and used correctly at every dyeing and finishing station.",
+            "Reports spills, container damage and unlabelled waste to the EHS Manager the same shift."
+          ]
+        },
+        {
+          "role": "ETP Supervisor (Unit 2)",
+          "responsibilities": [
+            "Manages effluent sludge drying, storage and dispatch and records quantities generated.",
+            "Keeps the ETP waste storage area free of incompatible materials."
+          ]
+        },
+        {
+          "role": "Quality Team",
+          "responsibilities": [
+            "Notifies EHS before rejected or off-specification fabric and yarn lots are scrapped, so that textile waste can be routed correctly."
+          ]
+        },
+        {
+          "role": "Procurement Lead",
+          "responsibilities": [
+            "Ensures contracts with waste collectors and disposal facilities require valid permissions and provision of disposal certificates before onboarding."
+          ]
+        },
+        {
+          "role": "Administration and HR",
+          "responsibilities": [
+            "Ensure office waste streams at Head Office are segregated and collected, and that new staff receive waste segregation induction."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Waste identification and categorisation",
+          "body": "The EHS Manager maintains the site waste inventory, listing each waste stream by source, physical form and category. Each category is assigned a colour-coded container and a storage location. The inventory is reviewed whenever a new process, chemical or product is introduced.",
+          "responsible": "EHS Manager",
+          "substeps": [
+            "Record new waste streams before first generation.",
+            "Confirm hazardous status using chemical safety data sheets supplied by Procurement."
+          ]
+        },
+        {
+          "heading": "Segregation at source",
+          "body": "Production and ETP personnel place waste directly into the designated container for its category at the point of generation. Mixing of hazardous and non-hazardous waste, or of incompatible chemicals, is not permitted. Containers must carry a label showing waste category, source and date.",
+          "responsible": "Production Supervisor and ETP Supervisor",
+          "substeps": [
+            "Keep lids closed when containers are not in use.",
+            "Do not overfill; containers are replaced when about three-quarters full."
+          ]
+        },
+        {
+          "heading": "Interim storage",
+          "body": "Segregated waste is moved to the designated storage area at Unit 2 or the relevant Unit 1 holding point at least once per shift. Hazardous waste is stored on impervious surfaces with secondary containment, away from drains and from finished goods. Storage areas are inspected weekly for leaks, labelling and housekeeping.",
+          "responsible": "ETP Supervisor",
+          "substeps": [
+            "Segregate stored materials by compatibility.",
+            "Record weekly inspection results on the storage checklist."
+          ]
+        },
+        {
+          "heading": "Effluent sludge handling",
+          "body": "Effluent sludge from the ETP is dewatered, weighed and stored in lined, labelled bays pending collection. Quantities generated each month are recorded against the ETP log. Sludge is not released to any drain, open ground or unauthorised location.",
+          "responsible": "ETP Supervisor",
+          "substeps": [
+            "Record weight at point of dispatch.",
+            "Check moisture and labelling before loading."
+          ]
+        },
+        {
+          "heading": "Collection and dispatch",
+          "body": "Waste is dispatched only to Authorised Collectors. Before loading, the EHS Manager or a delegated officer confirms the collector's current permissions and checks the consignment category against the inventory. Each dispatch is entered in the Waste Manifest Register before the vehicle leaves site.",
+          "responsible": "EHS Manager",
+          "substeps": [
+            "Verify collector permission validity on the day of dispatch.",
+            "Sign the manifest on departure and retain the copy."
+          ]
+        },
+        {
+          "heading": "Disposal documentation",
+          "body": "Disposal certificates or receipts from the receiving facility are obtained for every consignment and filed against the corresponding Waste Manifest Register entry. Any consignment without a returned receipt within the agreed period is escalated to the EHS Manager for follow-up with the collector.",
+          "responsible": "EHS Manager",
+          "substeps": [
+            "Chase outstanding receipts within five working days."
+          ]
+        },
+        {
+          "heading": "Head Office waste",
+          "body": "Office waste at Head Office, Avinashi Road, is segregated into dry recyclables, general waste and electronic waste. Electronic waste from IT is held in a secure area and disposed of only through an Authorised Collector, with the disposal recorded in the Waste Manifest Register.",
+          "responsible": "Administration and IT",
+          "substeps": [
+            "Log all decommissioned IT equipment before removal from site."
+          ]
+        },
+        {
+          "heading": "Incident and spill response",
+          "body": "Any spill, leak or mis-disposal of waste is reported immediately to the EHS Manager and contained using the spill kit at the relevant location. The incident is recorded, root cause is established and corrective action is agreed and tracked to closure.",
+          "responsible": "Production Supervisor and EHS Manager",
+          "substeps": [
+            "Isolate the area and prevent entry into drains.",
+            "Complete an incident report within 24 hours."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Percentage of waste containers correctly labelled and segregated at audit",
+          "target": "100 per cent",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Number of consignments dispatched without a valid Authorised Collector check",
+          "target": "Zero",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Percentage of consignments with disposal receipt filed within five working days",
+          "target": "100 per cent",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Number of spills or mis-disposal incidents involving waste",
+          "target": "Zero",
+          "frequency": "Monthly",
+          "owner": "Production Supervisor"
+        },
+        {
+          "indicator": "Weekly storage inspection completion rate at Unit 2 hazardous storage",
+          "target": "100 per cent",
+          "frequency": "Weekly",
+          "owner": "ETP Supervisor"
+        }
+      ],
+      "training": "All Unit 1 and Unit 2 operators, supervisors and contractors receive waste segregation and spill response induction before handling waste, with refresher training annually and when this SOP is revised. Head Office staff receive a briefing on office waste segregation during induction. Attendance is recorded by HR and the EHS Manager confirms competence through observation at the first site visit.",
+      "records": [
+        {
+          "record": "Site waste inventory",
+          "owner": "EHS Manager",
+          "retention": "Current version plus three years after superseded",
+          "format": "Controlled electronic document"
+        },
+        {
+          "record": "Waste Manifest Register",
+          "owner": "EHS Manager",
+          "retention": "Minimum five years from last entry",
+          "format": "Electronic log with signed paper copies"
+        },
+        {
+          "record": "Disposal certificates and receipts",
+          "owner": "EHS Manager",
+          "retention": "Minimum five years from date of issue",
+          "format": "Scanned copies filed against manifest entries"
+        },
+        {
+          "record": "Storage and ETP weekly inspection checklists",
+          "owner": "ETP Supervisor",
+          "retention": "Two years",
+          "format": "Paper checklists, scanned monthly"
+        },
+        {
+          "record": "Waste incident reports",
+          "owner": "EHS Manager",
+          "retention": "Five years",
+          "format": "Controlled form with corrective action log"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Standard Operating Procedure Manual, Revision 01",
+        "MTPL-EHS-002 Spill Response and Containment Procedure",
+        "MTPL-PRC-003 Chemical Storage and Handling Procedure",
+        "ISO 14001 Environmental Management Systems"
+      ],
+      "review": "This SOP is reviewed annually by the EHS Manager and approved by the Head of Operations, or earlier following any waste-related incident, change in waste stream, change in collector or regulatory change. Revision history is recorded against MTPL/SOP/01 Revision 01."
+    },
+    {
+      "code": "MTPL-EHS-002",
+      "title": "Hazardous Chemical Storage and Handling",
+      "pillar": "E",
+      "department": "EHS",
+      "owner": "EHS Manager",
+      "purpose": "To define the controls for receiving, storing, handling, dispensing, transporting within site and disposing of hazardous chemicals at Meridian Textiles Pvt Ltd, so that risks to people, the environment and the ETP are minimised and the company can demonstrate compliance with its internal EHS requirements.",
+      "scope": "Applies to all hazardous chemicals, dye auxiliaries, process chemicals and wastes handled at Unit 1 Dyeing House and Unit 2 Effluent Treatment Plant and Warehouse, SIPCOT Perundurai, Erode, including chemical stores, dosing areas, laboratories, ETP chemical dosing and waste storage. It covers all employees, contractors and visitors who handle or are exposed to these chemicals. Head Office procurement activities that initiate chemical purchases are included only insofar as they affect receipt and storage at site.",
+      "definitions": [
+        {
+          "term": "Hazardous chemical",
+          "definition": "Any substance or preparation that is flammable, corrosive, toxic, oxidising, reactive or otherwise presents a risk to health, safety or the environment, as identified on its Safety Data Sheet (SDS)."
+        },
+        {
+          "term": "Safety Data Sheet (SDS)",
+          "definition": "The supplier-issued document describing the hazards, handling, storage, first-aid and emergency measures for a chemical, held current in the chemical register for each product."
+        },
+        {
+          "term": "Chemical register",
+          "definition": "The controlled, site-specific list of all hazardous chemicals held on site, showing quantity, location, SDS reference, compatibility group and responsible area."
+        },
+        {
+          "term": "Compatibility group",
+          "definition": "A classification assigned to each chemical so that incompatible materials, such as acids and alkalis or oxidisers and organics, are segregated during storage and transport."
+        },
+        {
+          "term": "Bund",
+          "definition": "A secondary containment area, sized to hold the volume of the largest container in the stored group plus an allowance for rainfall, to contain leaks or spills."
+        },
+        {
+          "term": "Dispensing point",
+          "definition": "A designated, ventilated and bunded location within the Dyeing House where chemicals are weighed, measured or transferred into process vessels."
+        },
+        {
+          "term": "Spill kit",
+          "definition": "A stocked set of absorbents, neutralisers, personal protective equipment and disposal bags positioned at each storage and dispensing location."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "EHS Manager",
+          "responsibilities": [
+            "Owns this SOP and maintains the chemical register and compatibility matrix.",
+            "Approves new chemicals before receipt and reviews SDS currency quarterly.",
+            "Audits storage areas, dispensing points and the ETP chemical store and tracks corrective actions.",
+            "Reports KPI performance to management review."
+          ]
+        },
+        {
+          "role": "Production Manager (Unit 1)",
+          "responsibilities": [
+            "Ensures dyeing and finishing staff use only approved dispensing points and quantities.",
+            "Confirms that process chemical requirements are issued from the store against approved batch sheets.",
+            "Stops work where unsafe chemical handling is observed."
+          ]
+        },
+        {
+          "role": "Quality Manager",
+          "responsibilities": [
+            "Verifies incoming chemical batch conformity and checks that certificates of analysis are filed with the chemical register entry.",
+            "Controls sampling and retention of chemical samples in the laboratory."
+          ]
+        },
+        {
+          "role": "Procurement Officer (Head Office)",
+          "responsibilities": [
+            "Places orders only for chemicals that have been cleared by EHS and that carry a current SDS.",
+            "Ensures suppliers deliver with labelled containers and SDS copies."
+          ]
+        },
+        {
+          "role": "Store Keeper and ETP Supervisor (Unit 2)",
+          "responsibilities": [
+            "Receives, inspects and stores chemicals in designated compatible locations.",
+            "Maintains stock records, inspects containers and bunds weekly, and manages waste chemical storage."
+          ]
+        },
+        {
+          "role": "HR and Training Coordinator",
+          "responsibilities": [
+            "Schedules chemical handling training and PPE issue, and keeps training records current."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Approval of new chemicals",
+          "body": "No hazardous chemical may be purchased or introduced to site until the EHS Manager has reviewed its SDS and assigned a compatibility group. The EHS Manager records the approval in the chemical register before the Procurement Officer raises the order.",
+          "responsible": "EHS Manager and Procurement Officer",
+          "substeps": [
+            "Requesting department submits the product name, SDS and proposed quantity.",
+            "EHS Manager assigns hazard class, compatibility group and storage requirement."
+          ]
+        },
+        {
+          "heading": "Receipt and inspection",
+          "body": "On arrival at Unit 2, the Store Keeper checks each delivery against the purchase order and the SDS, and inspects containers for damage, leaks and correct labelling. Non-conforming or unlabelled containers are refused or quarantined and reported to EHS the same shift. Accepted goods are logged in the stock record before being moved to storage.",
+          "responsible": "Store Keeper (Unit 2)",
+          "substeps": [
+            "Confirm labels show product name, hazard pictograms and batch number.",
+            "Quarantine damaged containers in the designated quarantine bay."
+          ]
+        },
+        {
+          "heading": "Segregated storage",
+          "body": "Chemicals are stored by compatibility group in the labelled location shown on the chemical register, with acids, alkalis, oxidisers and flammables kept apart. Containers are kept closed, off the floor on pallets, and within bunded areas sized to contain the largest container in each group. Storage areas are kept clear of combustible waste and ignition sources.",
+          "responsible": "Store Keeper (Unit 2) and Production Manager (Unit 1)",
+          "substeps": [
+            "Display the compatibility group sign at each bay entrance.",
+            "Keep aisle access and emergency exits unobstructed at all times."
+          ]
+        },
+        {
+          "heading": "Dispensing and use in production",
+          "body": "Chemicals are issued to Unit 1 only against an approved batch sheet, and are dispensed only at designated dispensing points using the required personal protective equipment. Operators confirm the chemical identity and quantity against the batch sheet before dispensing and return unused quantities and empty containers to the store. Spills at dispensing points are cleaned immediately using the spill kit and recorded.",
+          "responsible": "Production Manager (Unit 1) and dyeing operators",
+          "substeps": [
+            "Wear PPE as specified on the SDS and batch sheet before opening any container.",
+            "Use secondary containers that are labelled with contents and hazard information."
+          ]
+        },
+        {
+          "heading": "Internal transport",
+          "body": "Chemicals moved between Unit 2 and Unit 1 are carried in sealed, secured and labelled containers on approved trolleys or vehicles, and never carried in unmarked vessels. Transfers are logged with date, time, quantity and receiving person. Drivers and operators are trained in the spill response procedure before undertaking transfers.",
+          "responsible": "Store Keeper (Unit 2) and Production Manager (Unit 1)",
+          "substeps": [
+            "Load only containers that are closed and in good condition.",
+            "Record each transfer on the movement log."
+          ]
+        },
+        {
+          "heading": "Inspection and housekeeping",
+          "body": "Storage areas, bunds, spill kits, labels and dispensing points are inspected weekly by the Store Keeper or ETP Supervisor, with monthly audits by the EHS Manager. Defects, leaks, missing labels and expired SDS are recorded and corrected within the timescale set on the action log. Overdue corrective actions are escalated to the EHS Manager.",
+          "responsible": "Store Keeper and ETP Supervisor (Unit 2); EHS Manager",
+          "substeps": [
+            "Check bund integrity and drain valves are closed where required.",
+            "Verify spill kit contents against the inventory list."
+          ]
+        },
+        {
+          "heading": "Spill and emergency response",
+          "body": "Any spill or leak is reported immediately to the nearest supervisor and EHS, and the area is isolated while the spill kit is used by trained staff. Spilt material and contaminated absorbents are placed in labelled waste containers and not washed into drains. Serious spills or exposures trigger the site emergency response plan, and an incident report is raised within 24 hours.",
+          "responsible": "All employees; EHS Manager",
+          "substeps": [
+            "Consult the SDS first-aid and firefighting sections before responding.",
+            "Keep spilt material out of the ETP inlet unless ETP operations have approved it."
+          ]
+        },
+        {
+          "heading": "Waste chemical storage and disposal",
+          "body": "Waste chemicals and contaminated materials are stored in labelled, compatible and closed containers in the designated waste store, separated from usable stock. Disposal is only through authorised contractors, with each consignment supported by a waste transfer record reconciled against the waste register. The EHS Manager reviews waste records monthly.",
+          "responsible": "ETP Supervisor (Unit 2) and EHS Manager",
+          "substeps": [
+            "Record waste type, quantity and date on the waste register before collection.",
+            "Retain signed transfer notes with the waste register."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Chemical register entries with current SDS and compatibility group",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Weekly storage and bund inspections completed on schedule",
+          "target": "100%",
+          "frequency": "Weekly",
+          "owner": "Store Keeper (Unit 2)"
+        },
+        {
+          "indicator": "Spills or leaks recorded at storage and dispensing points",
+          "target": "Zero reportable spills; all minor spills recorded",
+          "frequency": "Monthly",
+          "owner": "Production Manager (Unit 1)"
+        },
+        {
+          "indicator": "Corrective actions closed within agreed timescale",
+          "target": "95% or more",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Staff trained in chemical handling and spill response before handling chemicals",
+          "target": "100%",
+          "frequency": "Quarterly",
+          "owner": "HR and Training Coordinator"
+        },
+        {
+          "indicator": "Incoming deliveries received with correct labels and SDS",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "Store Keeper (Unit 2)"
+        }
+      ],
+      "training": "All staff who store, dispense, transport or handle hazardous chemicals, including drivers and contractors, must complete induction training on this SOP, the SDS system, PPE use and spill response before first handling chemicals. Refresher training is given annually and after any significant incident or procedure change. The HR and Training Coordinator keeps attendance records and the EHS Manager verifies content.",
+      "records": [
+        {
+          "record": "Chemical register",
+          "owner": "EHS Manager",
+          "retention": "Current version plus life of the chemical on site, minimum five years after last use",
+          "format": "Controlled electronic register"
+        },
+        {
+          "record": "Goods receipt and inspection log",
+          "owner": "Store Keeper (Unit 2)",
+          "retention": "Three years",
+          "format": "Electronic log or signed register"
+        },
+        {
+          "record": "Weekly storage and bund inspection checklist",
+          "owner": "Store Keeper (Unit 2)",
+          "retention": "Three years",
+          "format": "Signed checklist"
+        },
+        {
+          "record": "Spill and incident report",
+          "owner": "EHS Manager",
+          "retention": "Five years",
+          "format": "Incident report form"
+        },
+        {
+          "record": "Waste register and transfer notes",
+          "owner": "ETP Supervisor (Unit 2)",
+          "retention": "Five years",
+          "format": "Register and signed transfer notes"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Revision 01 Manual",
+        "Site emergency response plan, Unit 1 and Unit 2",
+        "Safety Data Sheets supplied by chemical manufacturers",
+        "Chemical register and compatibility matrix, MTPL-EHS"
+      ],
+      "review": "This SOP is reviewed annually by the EHS Manager, or earlier after any significant incident, regulatory change or change to chemical inventory, and is re-approved by the management team with the revision number recorded in the MTPL/SOP/01 manual."
+    },
+    {
+      "code": "MTPL-PRD-001",
+      "title": "Energy Efficiency in Dyeing Operations",
+      "pillar": "E",
+      "department": "Production",
+      "owner": "Production Head",
+      "purpose": "To define how Meridian Textiles Pvt Ltd plans, controls, measures and improves energy use in cotton yarn dyeing and knitted fabric finishing at Unit 1 Dyeing House, so that energy consumption per kilogram of processed fabric is reduced in a controlled and verifiable way without compromising shade, fastness or quality requirements.",
+      "scope": "This procedure applies to all dyeing, washing, drying, stentering and related finishing operations at Unit 1 Dyeing House, SIPCOT Perundurai, Erode, including steam, electricity, diesel and compressed air consumed by these operations. It covers batch and continuous process lines and the associated utilities. It does not cover effluent treatment energy at Unit 2 Effluent Treatment Plant and Warehouse, which is managed under the ETP operating procedures, nor administrative energy use at the Head Office, Avinashi Road, Coimbatore.",
+      "definitions": [
+        {
+          "term": "Specific Energy Consumption (SEC)",
+          "definition": "The total energy consumed by the dyeing and finishing operations in a defined period, divided by the good production output in kilograms for the same period, expressed as kWh or MJ per kg of fabric or yarn processed."
+        },
+        {
+          "term": "Energy Baseline",
+          "definition": "The reference value of SEC for a process route, product group or machine, established from at least one month of metered data under normal operating conditions and approved by the Production Head before any improvement is credited."
+        },
+        {
+          "term": "Energy Audit Action",
+          "definition": "A recorded opportunity to reduce energy use, such as liquor ratio reduction, steam trap repair, heat recovery installation or batch loading optimisation, that has an assigned owner, target date and verified outcome."
+        },
+        {
+          "term": "Liquor Ratio",
+          "definition": "The weight ratio of dye liquor or process water to textile material in a dyeing machine, which directly affects the heating and pumping energy required per batch."
+        },
+        {
+          "term": "Critical Process Parameter",
+          "definition": "A dyeing or finishing setting, such as temperature ramp rate, hold time, pH or stenter temperature, that must remain within the approved recipe window to ensure shade, fastness and dimensional quality, and that therefore may not be altered for energy saving without quality approval."
+        },
+        {
+          "term": "Energy Meter Reading",
+          "definition": "A recorded value from a sub-meter or utility meter for steam, electricity, diesel or compressed air, taken at a defined frequency and attributed to a specific machine or line."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "Production Head (SOP owner)",
+          "responsibilities": [
+            "Owns this SOP and approves energy baselines and SEC targets for Unit 1 Dyeing House.",
+            "Approves energy audit actions and resourcing for their implementation.",
+            "Reviews monthly SEC performance and escalates deviations to the Unit management review."
+          ]
+        },
+        {
+          "role": "Dyeing Shift Supervisors",
+          "responsibilities": [
+            "Record batch-level energy data and machine loading information for every batch processed.",
+            "Ensure machines are run to approved liquor ratios and loading limits.",
+            "Report steam leaks, trap failures and abnormal consumption to the Production Head the same shift."
+          ]
+        },
+        {
+          "role": "Quality Manager",
+          "responsibilities": [
+            "Approve any change to a Critical Process Parameter proposed for energy reduction.",
+            "Confirm that shade, fastness and dimensional results are unaffected before a new recipe is released."
+          ]
+        },
+        {
+          "role": "EHS Officer",
+          "responsibilities": [
+            "Verify that boiler, steam and compressed air systems are operated and maintained safely during energy improvement works.",
+            "Include energy-related hazards in the Unit 1 risk assessments."
+          ]
+        },
+        {
+          "role": "Administration (Maintenance Lead)",
+          "responsibilities": [
+            "Maintain energy sub-meters, calibration records and the planned maintenance schedule for steam traps, insulation, pumps and motors.",
+            "Procure approved energy-saving spares and services through the Procurement department."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Establish the energy baseline",
+          "body": "For each dyeing machine, finishing line and utility system, the Dyeing Shift Supervisors shall collect metered energy and production data for a minimum of one calendar month under normal operating conditions. The Production Head shall review the data, exclude abnormal periods such as breakdowns, and approve the resulting SEC baseline for each process route.",
+          "responsible": "Dyeing Shift Supervisors / Production Head",
+          "substeps": [
+            "Confirm sub-meter identification and calibration status before data collection starts.",
+            "Record the baseline in the Energy Baseline Register."
+          ]
+        },
+        {
+          "heading": "Set SEC targets and improvement plan",
+          "body": "The Production Head shall set an annual SEC reduction target for Unit 1 and break it down by process route. Each target shall be supported by a list of energy audit actions with owners, resources and target dates, reviewed against the approved baseline.",
+          "responsible": "Production Head",
+          "substeps": []
+        },
+        {
+          "heading": "Plan batches to reduce energy use",
+          "body": "Production planning shall group batches of similar shade depth and temperature profile to minimise machine idle time and repeated heating or cooling cycles. Full-load batching shall be used wherever the approved recipe permits, and batches shall not exceed the machine's rated loading.",
+          "responsible": "Production Head / Dyeing Shift Supervisors",
+          "substeps": [
+            "Use the approved liquor ratio for each recipe and do not increase water volume without a documented reason.",
+            "Schedule pre-heating of common utilities to coincide with batch start times."
+          ]
+        },
+        {
+          "heading": "Control critical process parameters",
+          "body": "Any proposal to change a Critical Process Parameter for energy saving shall be submitted in writing to the Quality Manager. Energy trials shall be run only after written approval, and the resulting shade, fastness and dimensional results shall be recorded before the new settings are released to routine production.",
+          "responsible": "Quality Manager / Production Head",
+          "substeps": []
+        },
+        {
+          "heading": "Operate and monitor utilities",
+          "body": "Dyeing Shift Supervisors shall record steam, electricity and compressed air readings at the frequency set in the Energy Monitoring Plan and log all batches against their energy data. Abnormal readings or consumption above the SEC baseline by a defined tolerance shall be investigated the same shift.",
+          "responsible": "Dyeing Shift Supervisors",
+          "substeps": [
+            "Check steam traps, insulation and condensate return during each shift walk-down.",
+            "Isolate idle machines and pumps where the process allows."
+          ]
+        },
+        {
+          "heading": "Maintain energy equipment",
+          "body": "The Maintenance Lead shall carry out planned maintenance of steam traps, boiler controls, pumps, motors, insulation and sub-meters. Defects found shall be repaired within the agreed timeframe, and the work shall be recorded against the equipment identification.",
+          "responsible": "Administration (Maintenance Lead) / EHS Officer",
+          "substeps": []
+        },
+        {
+          "heading": "Review performance and close actions",
+          "body": "The Production Head shall review monthly SEC data against target and baseline at the Unit management review. Each energy audit action shall be closed only when the saving has been verified against the baseline, and any action not achieved shall be re-planned with a revised date.",
+          "responsible": "Production Head",
+          "substeps": [
+            "Record verified savings in the Energy Audit Action log.",
+            "Share lessons learned with all dyeing shifts."
+          ]
+        },
+        {
+          "heading": "Review and revise this SOP",
+          "body": "This SOP shall be reviewed at least annually, or earlier after a significant change in machines, fuels, recipes or regulatory requirements. Revisions shall be approved by the Production Head and issued under MTPL/SOP/01 document control.",
+          "responsible": "Production Head",
+          "substeps": []
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Specific Energy Consumption (kWh or MJ per kg processed) by process route",
+          "target": "Reduction against the approved annual target set by the Production Head",
+          "frequency": "Monthly",
+          "owner": "Production Head"
+        },
+        {
+          "indicator": "Percentage of batches with complete energy and loading data recorded",
+          "target": "100 per cent",
+          "frequency": "Weekly",
+          "owner": "Dyeing Shift Supervisors"
+        },
+        {
+          "indicator": "Percentage of energy audit actions closed on time with verified savings",
+          "target": "Target to be set by the Production Head at baseline approval",
+          "frequency": "Monthly",
+          "owner": "Production Head"
+        },
+        {
+          "indicator": "Percentage of planned steam trap and sub-meter maintenance completed on schedule",
+          "target": "Target to be set by the Production Head at baseline approval",
+          "frequency": "Monthly",
+          "owner": "Administration (Maintenance Lead)"
+        },
+        {
+          "indicator": "Number of energy trials released without Quality Manager written approval",
+          "target": "Zero",
+          "frequency": "Monthly",
+          "owner": "Quality Manager"
+        }
+      ],
+      "training": "All Dyeing Shift Supervisors, dyeing machine operators and Maintenance Lead staff shall be trained on this SOP before working unsupervised on Unit 1 processes, and refresher training shall be given annually or after revision. Training shall cover baseline data collection, batch loading rules, critical process parameter controls and the escalation of abnormal energy readings. Attendance shall be recorded by the HR department.",
+      "records": [
+        {
+          "record": "Energy Baseline Register",
+          "owner": "Production Head",
+          "retention": "Duration of the baseline period plus three years, or as set by the document control procedure",
+          "format": "Electronic spreadsheet or Energy Management System entry"
+        },
+        {
+          "record": "Batch Energy and Loading Log",
+          "owner": "Dyeing Shift Supervisors",
+          "retention": "Three years",
+          "format": "Electronic log or shift register"
+        },
+        {
+          "record": "Energy Audit Action Log",
+          "owner": "Production Head",
+          "retention": "Three years after action closure",
+          "format": "Electronic log"
+        },
+        {
+          "record": "Energy Meter Calibration and Maintenance Records",
+          "owner": "Administration (Maintenance Lead)",
+          "retention": "Life of the equipment plus one year",
+          "format": "Maintenance management system or register"
+        },
+        {
+          "record": "Energy Trial and Quality Approval Record",
+          "owner": "Quality Manager",
+          "retention": "Three years after the recipe is retired",
+          "format": "Signed form or electronic approval"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Document Control Procedure",
+        "Energy Monitoring Plan, Unit 1 Dyeing House",
+        "Unit 1 Dyeing House Recipe and Critical Process Parameter Register",
+        "ISO 50001 Energy Management Systems"
+      ],
+      "review": "This SOP shall be reviewed annually by the Production Head with the Quality Manager and EHS Officer, and at any time after a significant change to machines, fuels, recipes or applicable requirements. Each review shall be recorded under MTPL/SOP/01 Revision control, with the revision number advanced and the change summary noted."
+    },
+    {
+      "code": "MTPL-EHS-003",
+      "title": "Water Conservation and Effluent Treatment",
+      "pillar": "E",
+      "department": "EHS",
+      "owner": "ETP In-charge",
+      "purpose": "To define how Meridian Textiles Pvt Ltd conserves water across the Dyeing House and finishing operations at Unit 1 and how process effluent is collected, treated at the Effluent Treatment Plant (ETP) in Unit 2, monitored and discharged or reused in a controlled manner that keeps every discharge within the limits set in the applicable consent to operate and the company's internal limits.",
+      "scope": "Applies to all water abstraction, distribution, dyeing and finishing water use, wastewater collection, ETP operation, sludge handling, treated water reuse and effluent discharge at Unit 1 Dyeing House and Unit 2 Effluent Treatment Plant and Warehouse, SIPCOT Perundurai, Erode. It covers the EHS, Production, Quality and Administration functions involved in these activities. Head Office procurement of chemicals and equipment for the ETP is covered only where it affects effluent characteristics.",
+      "definitions": [
+        {
+          "term": "Process water",
+          "definition": "Water supplied to dyeing, bleaching, washing, rinsing and finishing machines at Unit 1, excluding domestic and cooling water."
+        },
+        {
+          "term": "Effluent",
+          "definition": "Wastewater generated from dyeing and finishing processes, including spent dye liquor, rinse water and chemical wash water, before and after treatment at Unit 2."
+        },
+        {
+          "term": "ETP",
+          "definition": "The Effluent Treatment Plant at Unit 2, comprising equalisation, primary and secondary treatment, sludge handling and treated water holding tanks."
+        },
+        {
+          "term": "Specific water consumption",
+          "definition": "Litres of fresh water consumed per kilogram of fabric or yarn processed, calculated monthly from metered inflow and production records."
+        },
+        {
+          "term": "Treated water reuse",
+          "definition": "Use of ETP-treated effluent for approved non-contact applications such as washing of floors or yard cleaning, under written approval from the EHS Head."
+        },
+        {
+          "term": "Parameter exceedance",
+          "definition": "Any ETP outlet result that is above the discharge limit set in the applicable consent or the company's internal action limit for that parameter."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "ETP In-charge (EHS)",
+          "responsibilities": [
+            "Own this SOP and ensure the ETP is operated and maintained as described.",
+            "Review daily ETP logs, approve treated water reuse and authorise any corrective action on exceedances.",
+            "Maintain the water balance and specific water consumption records."
+          ]
+        },
+        {
+          "role": "EHS Head",
+          "responsibilities": [
+            "Approve water conservation targets, reuse applications and any discharge deviation requests.",
+            "Review monthly KPI results and escalate exceedances to the Plant Head."
+          ]
+        },
+        {
+          "role": "Production Manager (Unit 1)",
+          "responsibilities": [
+            "Ensure machine operators follow water-saving recipes, flow settings and bath-ratio standards.",
+            "Report leaks, overflows and unplanned discharges to the ETP In-charge immediately."
+          ]
+        },
+        {
+          "role": "Quality Lead",
+          "responsibilities": [
+            "Provide laboratory or sampling support for effluent parameters and confirm recipe chemical changes do not affect ETP performance."
+          ]
+        },
+        {
+          "role": "Administration (Facilities)",
+          "responsibilities": [
+            "Maintain water meters, pumps, pipelines and tanks at Unit 1 and Unit 2 and arrange repairs through the work order system."
+          ]
+        },
+        {
+          "role": "Procurement (Head Office)",
+          "responsibilities": [
+            "Purchase ETP chemicals and dyes only from suppliers approved by Quality and check that technical data sheets are on file."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Water balance and metering",
+          "body": "The ETP In-charge shall maintain a water balance for Unit 1 covering fresh water inflow, process water use, effluent generated and treated water reused or discharged. Meters at the main inlet, each process line and the ETP outlet shall be read at a fixed time each day and recorded in the water log. Any meter found to be defective shall be reported to Administration the same day.",
+          "responsible": "ETP In-charge (EHS)",
+          "substeps": [
+            "Record daily readings at 07:00 for the previous 24 hours.",
+            "Reconcile inflow and outflow weekly and investigate any gap above 5 per cent."
+          ]
+        },
+        {
+          "heading": "Water conservation at source",
+          "body": "Production shall apply the approved bath-ratio, flow-rate and rinse-sequence standards for each recipe, using counter-current rinsing where the machine allows. Operators shall not run machines with partial loads below the minimum load set in the recipe card. Recipe changes that increase water use shall be approved by the EHS Head before release.",
+          "responsible": "Production Manager (Unit 1)",
+          "substeps": []
+        },
+        {
+          "heading": "Leak detection and housekeeping",
+          "body": "Supervisors shall inspect process lines, valves, hoses and machine seals at the start of each shift and record findings on the shift checklist. Leaks and overflows shall be isolated and repaired by Administration through a work order, with priority given to any that discharge to drains. Hosing down of floors shall use a trigger nozzle and shall not be carried out with continuous running water.",
+          "responsible": "Production Manager (Unit 1)",
+          "substeps": []
+        },
+        {
+          "heading": "Effluent segregation and collection",
+          "body": "Concentrated dye liquors, rinse waters and chemical wash waters shall be segregated into separate collection sumps at Unit 1 where practicable and conveyed to the ETP equalisation tank. No effluent shall be discharged to storm water drains. Any spill of dye, auxiliary chemical or effluent shall be contained immediately and reported to the ETP In-charge.",
+          "responsible": "Production Manager (Unit 1)",
+          "substeps": []
+        },
+        {
+          "heading": "ETP operation and monitoring",
+          "body": "The ETP shall be operated in line with its operating manual, with equalisation, primary, secondary treatment and sludge handling stages run and logged each shift. Outlet samples shall be taken at the frequency set in the monitoring schedule and tested for pH, colour, COD, BOD, total suspended solids and any consent parameter specified for Unit 2. Results shall be entered in the ETP monitoring register on the day they are received.",
+          "responsible": "ETP In-charge (EHS)",
+          "substeps": [
+            "Compare each result against the consent limit and the internal action limit.",
+            "Record the sample time, operator name and sampling point on each entry."
+          ]
+        },
+        {
+          "heading": "Management of parameter exceedances",
+          "body": "Where any outlet result is a parameter exceedance, the ETP In-charge shall immediately hold the discharge in the treated water tank, inform the EHS Head and Quality Lead, and take corrective action such as adjusting dosing, re-treating the batch or identifying the source. A re-sample shall be taken after corrective action and discharge shall resume only when the result is within limits. Each exceedance shall be recorded with root cause and corrective action in the non-conformity log.",
+          "responsible": "ETP In-charge (EHS)",
+          "substeps": [
+            "Do not discharge held water until a within-limit result is confirmed.",
+            "Report any exceedance that could affect the consent to the EHS Head within 24 hours."
+          ]
+        },
+        {
+          "heading": "Sludge handling and treated water reuse",
+          "body": "Sludge from the ETP shall be dewatered, weighed and stored in the designated sludge area at Unit 2 before disposal through an authorised contractor. Treated water may be reused only for applications approved in writing by the EHS Head, and reuse volumes shall be recorded in the water balance. Records of sludge dispatch and reuse shall be kept as defined in the records section.",
+          "responsible": "ETP In-charge (EHS)",
+          "substeps": []
+        },
+        {
+          "heading": "Monthly review and reporting",
+          "body": "The ETP In-charge shall compile the monthly water and effluent summary, including specific water consumption, reuse volume, exceedances and corrective actions. The EHS Head shall review the summary, approve targets for the following month and present the results at the monthly management review.",
+          "responsible": "EHS Head",
+          "substeps": []
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Specific water consumption (litres per kg of fabric processed)",
+          "target": "Reduction against the previous year baseline as set by the EHS Head each financial year",
+          "frequency": "Monthly",
+          "owner": "ETP In-charge (EHS)"
+        },
+        {
+          "indicator": "ETP outlet results within consent and internal limits",
+          "target": "100 per cent of samples within limits",
+          "frequency": "Daily sampling, reported monthly",
+          "owner": "ETP In-charge (EHS)"
+        },
+        {
+          "indicator": "Number of parameter exceedances",
+          "target": "Zero",
+          "frequency": "Monthly",
+          "owner": "EHS Head"
+        },
+        {
+          "indicator": "Water balance reconciliation gap",
+          "target": "Below 5 per cent of inflow",
+          "frequency": "Weekly",
+          "owner": "ETP In-charge (EHS)"
+        },
+        {
+          "indicator": "Leak and overflow work orders closed within 48 hours",
+          "target": "90 per cent or more",
+          "frequency": "Monthly",
+          "owner": "Production Manager (Unit 1)"
+        }
+      ],
+      "training": "All Production operators, supervisors and ETP staff shall be trained on this SOP, the ETP operating manual and spill response before working in the areas concerned. Training shall be delivered by the ETP In-charge, recorded in the training register, and refreshed annually or after any revision of this SOP.",
+      "records": [
+        {
+          "record": "Daily water meter log and water balance",
+          "owner": "ETP In-charge (EHS)",
+          "retention": "Three years from the date of entry",
+          "format": "Electronic log with printed copy on file"
+        },
+        {
+          "record": "ETP monitoring register and laboratory reports",
+          "owner": "ETP In-charge (EHS)",
+          "retention": "Five years from the date of sampling",
+          "format": "Electronic register and signed laboratory reports"
+        },
+        {
+          "record": "Non-conformity log for parameter exceedances",
+          "owner": "ETP In-charge (EHS)",
+          "retention": "Five years from closure of the entry",
+          "format": "Controlled register"
+        },
+        {
+          "record": "Sludge dispatch and treated water reuse approvals",
+          "owner": "EHS Head",
+          "retention": "Five years from the date of dispatch or approval",
+          "format": "Signed forms and dispatch notes"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Manual Control Procedure",
+        "MTPL-EHS-001 Environmental Monitoring Procedure",
+        "ETP Operating and Maintenance Manual, Unit 2",
+        "Consent to Operate conditions for Unit 1 and Unit 2"
+      ],
+      "review": "This SOP shall be reviewed annually by the ETP In-charge and EHS Head, and earlier after any change in consent conditions, ETP process, recipe standards or following an incident. Revision 01 is the current issue under manual MTPL/SOP/01."
+    },
+    {
+      "code": "MTPL-EHS-004",
+      "title": "Air Emissions Monitoring",
+      "pillar": "E",
+      "department": "EHS",
+      "owner": "EHS Manager",
+      "purpose": "To define how Meridian Textiles Pvt Ltd monitors, records and reports point-source and fugitive air emissions from the Unit 1 Dyeing House and associated boiler and thermal fluid systems at SIPCOT Perundurai, so that emissions are kept within the limits set by the applicable consent to operate and are managed in a controlled, traceable manner.",
+      "scope": "This procedure applies to all stacks, vents and boiler flues at Unit 1 Dyeing House, and to fugitive emissions from chemical storage and handling areas at Unit 2 Effluent Treatment Plant and Warehouse, on the SIPCOT Perundurai campus. It covers stack sampling, continuous or periodic monitoring, data review, exceedance response and reporting. It does not cover effluent discharge, solid waste or occupational air quality within the workplace, which are addressed in separate procedures. Head Office, Avinashi Road, Coimbatore is outside the scope of this procedure.",
+      "definitions": [
+        {
+          "term": "Point-source emission",
+          "definition": "Emission of a air pollutant released through a defined stack, vent or flue at Unit 1 Dyeing House or a boiler house."
+        },
+        {
+          "term": "Fugitive emission",
+          "definition": "Unintended release of airborne substances from equipment, storage, handling or process areas that is not discharged through a defined stack or vent."
+        },
+        {
+          "term": "Emission limit",
+          "definition": "Maximum permissible concentration or mass rate of a parameter as stated in the consent to operate currently in force for the Unit, or a stricter internal limit set by the EHS Manager."
+        },
+        {
+          "term": "Exceedance",
+          "definition": "Any measured or calculated result that is above the applicable emission limit, or any reading that triggers an internal alert level defined in the monitoring plan."
+        },
+        {
+          "term": "Monitoring plan",
+          "definition": "Controlled document listing each emission point, parameter, method, frequency, sampling location, responsible person and applicable limit, maintained by the EHS Manager."
+        },
+        {
+          "term": "Calibration record",
+          "definition": "Documented evidence that monitoring instruments, including portable analysers and continuous monitoring systems, have been checked against traceable reference standards at the interval specified in the monitoring plan."
+        },
+        {
+          "term": "Accredited laboratory",
+          "definition": "External laboratory engaged by Meridian Textiles to perform stack sampling and analysis, whose accreditation status is verified and recorded by the EHS Department before use."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "EHS Manager",
+          "responsibilities": [
+            "Owns this procedure and maintains the monitoring plan for Unit 1 and Unit 2.",
+            "Approves the selection of external laboratories and reviews their reports.",
+            "Reviews monthly emission data, investigates exceedances and reports them to the Unit Head and management review.",
+            "Ensures the consent to operate conditions are tracked and renewal dates are calendared."
+          ]
+        },
+        {
+          "role": "EHS Executive, Unit 1",
+          "responsibilities": [
+            "Carries out routine readings, portable analyser checks and visual inspections of stacks and boiler flues.",
+            "Records all readings in the emission log within the same shift as they are taken.",
+            "Escalates any reading above an internal alert level to the EHS Manager immediately."
+          ]
+        },
+        {
+          "role": "Production Manager, Dyeing House",
+          "responsibilities": [
+            "Ensures dyeing and finishing batches and boiler operation follow approved parameters that minimise emissions.",
+            "Provides the EHS Executive with access to stacks and scheduled production stoppages for sampling.",
+            "Stops or reduces relevant processes when directed following an exceedance."
+          ]
+        },
+        {
+          "role": "Quality Manager",
+          "responsibilities": [
+            "Ensures that monitoring instruments and reference materials are calibrated and that calibration records are retained.",
+            "Verifies that external laboratory certificates and sampling reports are filed in the controlled document system."
+          ]
+        },
+        {
+          "role": "Administration Manager",
+          "responsibilities": [
+            "Arranges purchase orders for external laboratory services and maintenance of monitoring equipment at the Perundurai campus.",
+            "Maintains the statutory filing calendar with the Head Office and ensures submissions are dispatched on time."
+          ]
+        },
+        {
+          "role": "IT Department",
+          "responsibilities": [
+            "Maintains the continuous monitoring data server, access controls and data backup for electronic emission logs."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Maintain the monitoring plan",
+          "body": "The EHS Manager shall prepare and maintain a monitoring plan that lists every emission point at Unit 1 and the fugitive sources at Unit 2, together with the parameters, methods, frequencies and limits. The plan shall be reviewed at least annually and whenever a process, fuel or consent condition changes.",
+          "responsible": "EHS Manager",
+          "substeps": [
+            "Confirm each parameter and limit against the current consent to operate.",
+            "Record the revision number and date of approval on the plan."
+          ]
+        },
+        {
+          "heading": "Carry out routine monitoring",
+          "body": "The EHS Executive shall take readings and inspections at the frequencies stated in the monitoring plan. Readings shall be taken under the operating conditions normal for the relevant process, and any abnormal operating condition shall be noted alongside the result.",
+          "responsible": "EHS Executive, Unit 1",
+          "substeps": [
+            "Check instrument calibration status before each use.",
+            "Record stack temperature, flow and fuel type where relevant."
+          ]
+        },
+        {
+          "heading": "Arrange periodic stack sampling",
+          "body": "Stack sampling for parameters that cannot be read on site shall be performed by an accredited laboratory at the frequency set in the monitoring plan. The EHS Manager shall approve the laboratory and the sampling scope before work begins, and the Production Manager shall schedule the required process conditions.",
+          "responsible": "EHS Manager",
+          "substeps": [
+            "Verify laboratory accreditation and retain the evidence on file.",
+            "Confirm sampling ports and access platforms are safe before sampling."
+          ]
+        },
+        {
+          "heading": "Record and validate data",
+          "body": "All results shall be entered in the emission log or continuous monitoring system without alteration. Each entry shall be checked against the previous reading and the limit, and any missing or invalid data shall be annotated with a reason.",
+          "responsible": "EHS Executive, Unit 1",
+          "substeps": [
+            "Do not overwrite entries; corrections are made by annotation with initials and date.",
+            "Flag any continuous monitor downtime exceeding the period stated in the monitoring plan."
+          ]
+        },
+        {
+          "heading": "Respond to exceedances",
+          "body": "When a reading exceeds an emission limit or alert level, the EHS Executive shall inform the EHS Manager and the Production Manager immediately. The Production Manager shall take the corrective action directed, and the EHS Manager shall decide whether the condition requires reporting to the regulator.",
+          "responsible": "EHS Manager",
+          "substeps": [
+            "Record the time, parameter, process condition and immediate action taken.",
+            "Repeat the measurement once conditions are restored to confirm the outcome."
+          ]
+        },
+        {
+          "heading": "Review data and report",
+          "body": "The EHS Manager shall review the monthly emission data, summarise trends and exceedances, and present them at the monthly EHS review meeting. Regulatory returns shall be prepared and submitted within the deadlines stated in the consent to operate.",
+          "responsible": "EHS Manager",
+          "substeps": [
+            "Coordinate with the Administration Manager for the dispatch of submissions from Head Office.",
+            "Retain copies of all submissions with proof of dispatch."
+          ]
+        },
+        {
+          "heading": "Calibrate and maintain equipment",
+          "body": "Portable analysers and continuous monitors shall be calibrated against traceable reference standards at the interval stated in the monitoring plan. Equipment found out of calibration shall be tagged, withdrawn and any data taken since the last valid check shall be assessed for impact.",
+          "responsible": "Quality Manager",
+          "substeps": [
+            "Keep calibration certificates with the equipment register.",
+            "Record the date of the last successful check on the equipment tag."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Percentage of scheduled monitoring readings completed on time",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Number of emission limit exceedances at Unit 1 stacks",
+          "target": "Zero",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Percentage of exceedances reported to the EHS Manager within one hour of detection",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "EHS Executive, Unit 1"
+        },
+        {
+          "indicator": "Percentage of monitoring instruments within calibration validity",
+          "target": "100%",
+          "frequency": "Quarterly",
+          "owner": "Quality Manager"
+        },
+        {
+          "indicator": "Continuous monitor data availability",
+          "target": "As stated in the monitoring plan",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Percentage of regulatory submissions dispatched by due date",
+          "target": "100%",
+          "frequency": "Per submission",
+          "owner": "Administration Manager"
+        }
+      ],
+      "training": "All EHS Executives and Production Managers assigned to emission monitoring shall complete induction on this procedure, the monitoring plan and the exceedance response steps before undertaking any monitoring duties. Refresher training shall be given annually and whenever this procedure is revised. Training attendance shall be recorded by the EHS Manager.",
+      "records": [
+        {
+          "record": "Emission monitoring log (manual readings and inspections)",
+          "owner": "EHS Executive, Unit 1",
+          "retention": "As required by the consent to operate, and not less than five years",
+          "format": "Controlled electronic log with dated and initialled annotations"
+        },
+        {
+          "record": "Continuous monitoring data and downtime log",
+          "owner": "EHS Manager",
+          "retention": "Not less than five years",
+          "format": "Electronic data files held on the IT-managed server with backup"
+        },
+        {
+          "record": "External laboratory sampling reports and accreditation evidence",
+          "owner": "EHS Manager",
+          "retention": "Not less than five years",
+          "format": "Original signed reports filed in the controlled document system"
+        },
+        {
+          "record": "Exceedance and corrective action register",
+          "owner": "EHS Manager",
+          "retention": "Not less than five years",
+          "format": "Controlled register with dated entries"
+        },
+        {
+          "record": "Instrument calibration certificates and equipment register",
+          "owner": "Quality Manager",
+          "retention": "Life of the equipment plus three years",
+          "format": "Paper certificates filed with an electronic register"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Manual Control Procedure, Revision 01",
+        "Monitoring Plan for Unit 1 Dyeing House and Unit 2 ETP and Warehouse",
+        "Consent to Operate for Unit 1 Dyeing House, SIPCOT Perundurai",
+        "Calibration and Equipment Register, Quality Department"
+      ],
+      "review": "This procedure shall be reviewed annually by the EHS Manager, or earlier following a change in consent conditions, process, fuel, equipment or a significant exceedance. Revisions shall be approved and issued under MTPL/SOP/01 Revision 01 control, and superseded copies withdrawn."
+    },
+    {
+      "code": "MTPL-EHS-005",
+      "title": "Workplace Safety Incident Reporting",
+      "pillar": "S",
+      "department": "EHS",
+      "owner": "Safety Officer",
+      "purpose": "To define a consistent, timely and auditable method for reporting, recording, investigating and closing workplace safety incidents, near misses and unsafe conditions at Meridian Textiles Pvt Ltd, so that injuries are treated, causes are identified and corrective actions prevent recurrence across Unit 1 Dyeing House, Unit 2 Effluent Treatment Plant and Warehouse, and the Head Office.",
+      "scope": "This SOP applies to all employees, contract workers, visitors and transport or service providers present at Unit 1 Dyeing House, Unit 2 Effluent Treatment Plant and Warehouse (both at SIPCOT Perundurai, Erode, Tamil Nadu) and the Head Office at Avinashi Road, Coimbatore. It covers injuries, occupational illnesses, chemical exposures and spills, fire and dye-house process hazards, near misses and unsafe conditions observed in any department.",
+      "definitions": [
+        {
+          "term": "Incident",
+          "definition": "Any unplanned event that results in or could have resulted in injury, ill health, property damage, environmental release or disruption to operations."
+        },
+        {
+          "term": "Near miss",
+          "definition": "An unplanned event that had the potential to cause harm but did not result in injury, damage or release, for example a slipped load that was caught before falling."
+        },
+        {
+          "term": "Unsafe condition",
+          "definition": "A physical state, arrangement or defect in the workplace, equipment or process that could lead to an incident if not corrected, such as a damaged chemical drum lid or a blocked emergency exit."
+        },
+        {
+          "term": "Lost-time incident",
+          "definition": "A work-related injury that prevents the affected person from attending work on the day after the injury or any subsequent scheduled shift, as recorded by the Safety Officer."
+        },
+        {
+          "term": "Immediate containment",
+          "definition": "Actions taken at the time of an incident to protect people, stop further harm and secure the scene, before root cause analysis begins."
+        },
+        {
+          "term": "Root cause analysis",
+          "definition": "A structured review method, such as the five whys or a fishbone diagram, used to identify the underlying system or process failures behind an incident."
+        },
+        {
+          "term": "Corrective and preventive action (CAPA)",
+          "definition": "An action assigned to remove the identified root cause of an incident or to prevent its recurrence, with a named owner and a due date."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "Safety Officer (EHS)",
+          "responsibilities": [
+            "Owns this SOP and maintains the incident register for all sites.",
+            "Reviews every reported incident and near miss within the timeline set in this SOP.",
+            "Leads or approves root cause analysis and verifies closure of CAPA.",
+            "Prepares the monthly EHS incident summary for management review."
+          ]
+        },
+        {
+          "role": "Unit Head or Department Manager (Production, Quality, Administration)",
+          "responsibilities": [
+            "Ensures immediate containment and first aid are provided in their area.",
+            "Completes the initial incident report with the affected employee within the stated timeline.",
+            "Implements assigned CAPA within agreed due dates and reports progress to the Safety Officer."
+          ]
+        },
+        {
+          "role": "Shift Supervisor",
+          "responsibilities": [
+            "Records the incident in the shift log and informs the Unit Head and Safety Officer without delay.",
+            "Ensures the incident site is secured and unsafe conditions are isolated until cleared.",
+            "Confirms that witnesses are identified and available for statements."
+          ]
+        },
+        {
+          "role": "Employee and Contract Worker",
+          "responsibilities": [
+            "Reports every injury, near miss and unsafe condition immediately to their supervisor, regardless of severity.",
+            "Co-operates with investigations and provides an accurate account of events.",
+            "Does not remove or alter the incident scene except to prevent further harm."
+          ]
+        },
+        {
+          "role": "HR Department",
+          "responsibilities": [
+            "Supports the affected employee with medical referral, compensation records and return-to-work arrangements.",
+            "Maintains personnel data needed for incident records and treats health information confidentially."
+          ]
+        },
+        {
+          "role": "Finance and Administration (Head Office)",
+          "responsibilities": [
+            "Ensures that first aid stock, emergency contact lists and incident reporting forms are available at each site.",
+            "Records costs of property damage or replacement items linked to incidents when requested by the Safety Officer."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Immediate response and first aid",
+          "body": "The supervisor or nearest trained person must attend the casualty and provide first aid where required, and must call for medical help if the injury is serious. The area is made safe and any hazardous material is contained before anything else is done. Persons not needed for the response are moved away from the scene.",
+          "responsible": "Shift Supervisor",
+          "substeps": [
+            "Stop the activity and isolate the energy source or chemical supply if relevant.",
+            "Record the time and location of the event in the shift log."
+          ]
+        },
+        {
+          "heading": "Initial reporting",
+          "body": "The person who witnessed or experienced the incident reports it to their supervisor verbally without delay. The supervisor then completes the Incident Report Form within the same shift, recording the facts only and avoiding assumptions about cause. Near misses and unsafe conditions are reported using the same form.",
+          "responsible": "Employee and Shift Supervisor",
+          "substeps": [
+            "Form to be completed within the same shift as the event.",
+            "Photographs of the scene are taken where safe to do so."
+          ]
+        },
+        {
+          "heading": "Notification to the Safety Officer",
+          "body": "The Shift Supervisor notifies the Unit Head and the Safety Officer by the fastest available means, followed by submission of the completed form. Serious injuries, chemical spills, fires and any event that may require external notification are escalated immediately to the Safety Officer and the Unit Head by telephone.",
+          "responsible": "Shift Supervisor",
+          "substeps": [
+            "Notify within two hours for injuries requiring medical treatment beyond first aid.",
+            "Escalate immediately for fatalities, hospitalisation or environmental releases."
+          ]
+        },
+        {
+          "heading": "Witness statements and evidence",
+          "body": "The Safety Officer or a delegated investigator collects written statements from witnesses and the affected person while memories are fresh. Equipment, records and process settings relevant to the event are preserved and labelled. Statements are signed and dated.",
+          "responsible": "Safety Officer",
+          "substeps": [
+            "Preserve damaged equipment until the investigation is complete.",
+            "Record the names of all persons present at the time."
+          ]
+        },
+        {
+          "heading": "Investigation and root cause analysis",
+          "body": "The Safety Officer leads an investigation proportionate to the severity and potential of the event, with input from the Unit Head and a technical representative from Production or Quality where needed. The root cause analysis identifies system, process and human factors rather than attributing blame to individuals. Serious and recurring incidents require a documented analysis.",
+          "responsible": "Safety Officer",
+          "substeps": [
+            "Investigation to begin within 24 hours of reporting.",
+            "Draft findings are reviewed with the Unit Head before closure."
+          ]
+        },
+        {
+          "heading": "Corrective and preventive action",
+          "body": "Each root cause is linked to one or more CAPA actions with a named owner, a due date and a method of verifying effectiveness. The Unit Head is accountable for implementing actions in their area, and the Safety Officer tracks them in the incident register. Actions affecting more than one site are shared across all relevant units.",
+          "responsible": "Unit Head and Safety Officer",
+          "substeps": [
+            "Target completion for high-priority CAPA is 30 days from the investigation date.",
+            "Effectiveness is checked after a defined period, normally 90 days."
+          ]
+        },
+        {
+          "heading": "Closure, communication and review",
+          "body": "An incident is closed only when containment is complete, root cause is identified, CAPA is verified and the affected person's welfare requirements are recorded. Lessons learned are shared at toolbox talks and in the monthly EHS summary to management. Recurring or trend-related patterns are reviewed at the management review meeting.",
+          "responsible": "Safety Officer",
+          "substeps": [
+            "Closure is signed by the Safety Officer and the Unit Head.",
+            "Trend analysis is reviewed quarterly by the Safety Officer."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Percentage of incidents reported to the Safety Officer within two hours of occurrence",
+          "target": "100 per cent for injuries requiring medical treatment",
+          "frequency": "Monthly",
+          "owner": "Safety Officer"
+        },
+        {
+          "indicator": "Number of near misses and unsafe conditions reported per month across all sites",
+          "target": "Increasing trend quarter on quarter, to be set by management review",
+          "frequency": "Monthly",
+          "owner": "Safety Officer"
+        },
+        {
+          "indicator": "Percentage of investigations started within 24 hours of reporting",
+          "target": "100 per cent",
+          "frequency": "Monthly",
+          "owner": "Safety Officer"
+        },
+        {
+          "indicator": "Percentage of CAPA actions completed by due date",
+          "target": "90 per cent or higher",
+          "frequency": "Monthly",
+          "owner": "Unit Head or Department Manager"
+        },
+        {
+          "indicator": "Percentage of closed incidents with verified CAPA effectiveness",
+          "target": "100 per cent",
+          "frequency": "Quarterly",
+          "owner": "Safety Officer"
+        },
+        {
+          "indicator": "Lost-time incident frequency per site",
+          "target": "Reduction against previous period, target set by management review",
+          "frequency": "Quarterly",
+          "owner": "Safety Officer"
+        }
+      ],
+      "training": "All employees and contract workers receive induction training on incident and near miss reporting before starting work at any site. Shift supervisors and Unit Heads complete additional training on incident investigation and root cause analysis, refreshed every two years. Records of attendance are kept by the HR Department and training effectiveness is reviewed by the Safety Officer.",
+      "records": [
+        {
+          "record": "Incident Report Form",
+          "owner": "Safety Officer",
+          "retention": "As defined in the company record retention schedule",
+          "format": "Paper form at site, scanned to the EHS shared folder"
+        },
+        {
+          "record": "Incident and near miss register",
+          "owner": "Safety Officer",
+          "retention": "As defined in the company record retention schedule",
+          "format": "Electronic register maintained by the EHS department"
+        },
+        {
+          "record": "Witness statements and investigation report",
+          "owner": "Safety Officer",
+          "retention": "As defined in the company record retention schedule",
+          "format": "Signed paper or scanned PDF"
+        },
+        {
+          "record": "CAPA tracking log",
+          "owner": "Safety Officer",
+          "retention": "As defined in the company record retention schedule",
+          "format": "Electronic spreadsheet linked to the incident register"
+        },
+        {
+          "record": "Shift log entries and training attendance records",
+          "owner": "Shift Supervisor and HR Department",
+          "retention": "As defined in the company record retention schedule",
+          "format": "Shift log book and HR training database"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Revision 01, Manual control and document numbering procedure",
+        "Company Record Retention Schedule",
+        "Company Emergency Response Procedure",
+        "ISO 45001 Occupational health and safety management systems"
+      ],
+      "review": "This SOP is reviewed annually by the Safety Officer and approved by the Head of EHS, or earlier following a serious incident, a change in legislation applicable to the company, or a change in site processes. Revision history is recorded in the MTPL/SOP/01 document control register."
+    },
+    {
+      "code": "MTPL-HR-001",
+      "title": "Recruitment and Onboarding",
+      "pillar": "S",
+      "department": "HR",
+      "owner": "HR Manager",
+      "purpose": "To define a consistent, fair and audit-ready method for recruiting, selecting, and onboarding employees at Meridian Textiles Pvt Ltd so that every appointment is documented, competence-checked, and inducted to site-specific safety and quality requirements before work begins.",
+      "scope": "Applies to all recruitment and onboarding of permanent, fixed-term, contract and temporary staff for Unit 1 Dyeing House, Unit 2 Effluent Treatment Plant and Warehouse, and the Head Office at Avinashi Road, Coimbatore, across all departments: EHS, Production, Quality, HR, Procurement, Finance, IT and Administration. Includes internal transfers into a new role. Excludes labour supplied through third-party agencies, which is governed by the contractor management arrangements held by Procurement.",
+      "definitions": [
+        {
+          "term": "Requisition",
+          "definition": "A written request raised by a department head to fill a vacancy or new position, approved by the HR Manager and the relevant department head before advertising begins."
+        },
+        {
+          "term": "Job Description",
+          "definition": "A document stating the purpose, key duties, reporting line, site location, qualifications, and safety-critical responsibilities of a role."
+        },
+        {
+          "term": "Safety-Critical Role",
+          "definition": "Any role whose holder handles chemicals, operates dyeing, finishing or ETP equipment, works at height or in confined spaces, or otherwise has a direct effect on process safety or effluent compliance."
+        },
+        {
+          "term": "Induction",
+          "definition": "The structured introduction to the company, site rules, emergency arrangements, and role-specific hazards delivered before an employee performs unsupervised work."
+        },
+        {
+          "term": "Probation Period",
+          "definition": "The defined initial period of employment during which performance, conduct and competence are assessed before confirmation in post."
+        },
+        {
+          "term": "Personnel File",
+          "definition": "The confidential HR record for an individual, held in hard copy or electronically under HR control, containing all onboarding documents and training records."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "HR Manager",
+          "responsibilities": [
+            "Owns this SOP and maintains its currency.",
+            "Approves requisitions and job descriptions jointly with the requesting department head.",
+            "Coordinates shortlisting, interviews, offers and pre-employment checks.",
+            "Confirms that the onboarding checklist is complete before the employee starts work."
+          ]
+        },
+        {
+          "role": "Department Head (EHS, Production, Quality, Procurement, Finance, IT, Administration)",
+          "responsibilities": [
+            "Raises requisitions and defines technical and competence requirements for the role.",
+            "Sits on selection panels for technical and safety-critical roles.",
+            "Delivers role-specific on-the-job induction and confirms competence before unsupervised work."
+          ]
+        },
+        {
+          "role": "EHS Manager",
+          "responsibilities": [
+            "Defines site-specific safety content for the induction of safety-critical roles at Unit 1 and Unit 2.",
+            "Verifies that safety-critical candidates receive required site safety induction and training before the work is assigned.",
+            "Maintains records of safety induction completion."
+          ]
+        },
+        {
+          "role": "Interview Panel",
+          "responsibilities": [
+            "Assesses candidates against the job description using agreed, structured criteria.",
+            "Records scores and reasons for selection or rejection in the approved format."
+          ]
+        },
+        {
+          "role": "Line Supervisor or Reporting Manager",
+          "responsibilities": [
+            "Acts as the buddy and day-to-day point of contact for the new employee during probation.",
+            "Reviews progress at the probation checkpoints and reports concerns to HR."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Raise and Approve Requisition",
+          "body": "The department head completes a requisition stating the role, site, reporting line, headcount, and whether the role is safety-critical. The HR Manager reviews the request against the approved establishment and budget before advertising begins.",
+          "responsible": "Department Head / HR Manager",
+          "substeps": [
+            "Confirm the role is included in the approved headcount.",
+            "Flag safety-critical roles on the requisition."
+          ]
+        },
+        {
+          "heading": "Prepare Job Description",
+          "body": "The job description is drafted or updated for the role and must reflect the actual duties, including any chemical handling, equipment operation, or environmental responsibilities. Both the department head and HR Manager approve it before use.",
+          "responsible": "Department Head / HR Manager",
+          "substeps": []
+        },
+        {
+          "heading": "Attract and Shortlist Candidates",
+          "body": "Vacancies are advertised through approved channels and applications are screened against minimum qualifications and experience in the job description. Shortlisted candidates are invited to interview with the time and location confirmed in writing.",
+          "responsible": "HR Manager",
+          "substeps": [
+            "Apply equal screening criteria to all applicants.",
+            "Record reasons for rejecting shortlisted candidates at this stage."
+          ]
+        },
+        {
+          "heading": "Structured Interview and Selection",
+          "body": "The interview panel assesses each shortlisted candidate against the same job-related criteria, including a practical or safety-awareness question for safety-critical roles. The panel records scores and a recommendation on the selection form, which is retained with the requisition file.",
+          "responsible": "Interview Panel",
+          "substeps": [
+            "Include at least one technical assessor for Production, Quality and EHS roles.",
+            "Record the selection decision and rationale."
+          ]
+        },
+        {
+          "heading": "Pre-Employment Checks and Offer",
+          "body": "Before an offer is confirmed, HR verifies identity, qualifications, and previous employment references, and obtains any medical fitness declaration required for the role. A written offer stating the terms, start date, site, and probation period is then issued and signed by the candidate.",
+          "responsible": "HR Manager",
+          "substeps": [
+            "Obtain medical fitness confirmation for safety-critical roles.",
+            "Verify original qualifications against the candidate's documents."
+          ]
+        },
+        {
+          "heading": "Pre-Joining Preparation and Personnel File",
+          "body": "A Personnel File is opened and the onboarding checklist is issued to the relevant departments before the start date. IT provisions accounts, Administration issues access cards and personal protective equipment as applicable, and HR confirms that all signed documents are on file.",
+          "responsible": "HR Manager / IT / Administration",
+          "substeps": [
+            "Issue PPE sizing and access requests at least three working days before start date.",
+            "Confirm policy acknowledgements are on file."
+          ]
+        },
+        {
+          "heading": "Induction and Competence Sign-Off",
+          "body": "On the first day, the employee attends a general induction covering company policies, emergency arrangements and the relevant site. Safety-critical employees complete the site safety induction and role-specific training before they undertake any task, and the line manager confirms competence before unsupervised work is allowed.",
+          "responsible": "HR Manager / EHS Manager / Department Head",
+          "substeps": [
+            "Deliver site induction specific to Unit 1, Unit 2 or Head Office.",
+            "Record competence sign-off for each safety-critical task.",
+            "Hold the employee on supervised duties until sign-off is recorded."
+          ]
+        },
+        {
+          "heading": "Probation Review and Confirmation",
+          "body": "Performance, conduct and competence are reviewed at defined checkpoints during the probation period. The line manager and HR jointly decide whether to confirm the employee, extend probation, or end the appointment, and record the outcome in the Personnel File.",
+          "responsible": "Line Supervisor / HR Manager",
+          "substeps": [
+            "Hold a formal review at the midpoint and at the end of probation.",
+            "Record any extension with its reason and new end date."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Percentage of onboarding checklists fully completed before the start date",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Percentage of safety-critical employees with site safety induction and competence sign-off before unsupervised work",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Percentage of pre-employment checks completed before the offer is confirmed",
+          "target": "100%",
+          "frequency": "Per requisition",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Voluntary turnover within the first six months of employment",
+          "target": "To be set by HR Manager and Management after baseline review",
+          "frequency": "Quarterly",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Percentage of probation reviews completed on schedule",
+          "target": "100%",
+          "frequency": "Quarterly",
+          "owner": "HR Manager"
+        }
+      ],
+      "training": "All HR staff and interview panel members receive training on this SOP, structured interviewing, and equal opportunity principles before sitting on a panel. Department heads receive briefing on competence sign-off requirements. EHS Manager provides site induction content training to line managers who deliver on-the-job induction. Training records are kept in the Personnel File or training log.",
+      "records": [
+        {
+          "record": "Approved Requisition and Job Description",
+          "owner": "HR Manager",
+          "retention": "Duration of the role plus six years",
+          "format": "Electronic, HRIS or shared HR drive"
+        },
+        {
+          "record": "Interview Selection Form",
+          "owner": "HR Manager",
+          "retention": "Twelve months from closure of the vacancy",
+          "format": "Electronic or signed hard copy"
+        },
+        {
+          "record": "Onboarding Checklist and Signed Offer",
+          "owner": "HR Manager",
+          "retention": "Duration of employment plus six years",
+          "format": "Personnel File, hard copy or electronic"
+        },
+        {
+          "record": "Site Safety Induction and Competence Sign-Off Record",
+          "owner": "EHS Manager",
+          "retention": "Duration of employment plus six years",
+          "format": "EHS training log, electronic or signed hard copy"
+        },
+        {
+          "record": "Probation Review Form",
+          "owner": "HR Manager",
+          "retention": "Duration of employment plus six years",
+          "format": "Personnel File, signed hard copy or electronic"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Manual, Revision 01 (Document Control and Records)",
+        "MTPL-EHS Site Induction Standard (internal)",
+        "MTPL-HR Equal Opportunity and Non-Discrimination Policy (internal)",
+        "MTPL-IT Access Provisioning Procedure (internal)"
+      ],
+      "review": "This SOP is reviewed by the HR Manager at least annually, and earlier following any change in legislation, site layout, process, or organisational structure. Revisions are approved by the Head Office management team and issued under MTPL/SOP/01 document control."
+    },
+    {
+      "code": "MTPL-HR-002",
+      "title": "Employee Performance Evaluation",
+      "pillar": "S",
+      "department": "HR",
+      "owner": "HR Manager",
+      "purpose": "To define a consistent, fair and documented process for evaluating the performance of all employees at Meridian Textiles Pvt Ltd, so that performance is measured against agreed objectives, development needs are identified, and outcomes inform pay, promotion and training decisions across Unit 1 Dyeing House, Unit 2 Effluent Treatment Plant and Warehouse, and the Head Office.",
+      "scope": "This procedure applies to all permanent, probationary and fixed-term employees of Meridian Textiles Pvt Ltd at Unit 1 Dyeing House (SIPCOT Perundurai, Erode), Unit 2 Effluent Treatment Plant and Warehouse (same campus), and the Head Office (Avinashi Road, Coimbatore), across the EHS, Production, Quality, HR, Procurement, Finance, IT and Administration departments. It does not cover contract labour supplied through third-party agencies, whose performance is managed under their service agreements.",
+      "definitions": [
+        {
+          "term": "Performance Evaluation",
+          "definition": "A formal, periodic review in which an employee's results, behaviours and development are assessed against agreed objectives and role expectations."
+        },
+        {
+          "term": "Evaluation Cycle",
+          "definition": "The defined review period, comprising a mid-year review and an annual year-end review, during which objectives are set, monitored and assessed."
+        },
+        {
+          "term": "Objective",
+          "definition": "A specific, measurable and time-bound goal agreed between the employee and reviewer at the start of an evaluation cycle, linked to departmental plans."
+        },
+        {
+          "term": "Reviewer",
+          "definition": "The line manager or supervisor who holds direct responsibility for the employee's day-to-day work and who conducts the evaluation."
+        },
+        {
+          "term": "Performance Rating",
+          "definition": "The overall outcome grade assigned at year-end on the company's five-point scale, derived from objective achievement and competency assessment."
+        },
+        {
+          "term": "Development Plan",
+          "definition": "A documented set of training, coaching and experience actions agreed to address identified skill gaps or support career progression."
+        },
+        {
+          "term": "Calibration Panel",
+          "definition": "A review group convened by the HR Manager, with department heads, to check consistency of ratings across departments and sites before they are finalised."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "HR Manager (SOP owner)",
+          "responsibilities": [
+            "Owns, maintains and revises this SOP and the associated evaluation forms.",
+            "Schedules evaluation cycles and communicates timelines to all departments and sites.",
+            "Chairs the Calibration Panel and approves final ratings.",
+            "Maintains evaluation records and reports KPIs to the management review."
+          ]
+        },
+        {
+          "role": "Department Heads (EHS, Production, Quality, Procurement, Finance, IT, Administration)",
+          "responsibilities": [
+            "Ensure every employee in their department has a named Reviewer and agreed objectives.",
+            "Participate in calibration to ensure consistent ratings across departments.",
+            "Review and countersign completed evaluations for their teams."
+          ]
+        },
+        {
+          "role": "Reviewers (line managers and supervisors)",
+          "responsibilities": [
+            "Set objectives with employees at the start of each cycle and record them on the evaluation form.",
+            "Conduct mid-year and year-end review meetings and document evidence of performance.",
+            "Agree development plans and ensure follow-up actions are tracked."
+          ]
+        },
+        {
+          "role": "Employees",
+          "responsibilities": [
+            "Prepare a self-assessment before each review meeting.",
+            "Raise concerns about objectives or ratings through the grievance route.",
+            "Complete agreed development actions within the agreed timescales."
+          ]
+        },
+        {
+          "role": "Finance Department",
+          "responsibilities": [
+            "Applies approved ratings to variable pay and increment calculations.",
+            "Confirms that pay outcomes match the ratings recorded by HR."
+          ]
+        },
+        {
+          "role": "IT Department",
+          "responsibilities": [
+            "Maintains the HR information system or secure electronic form used for evaluation records, including access control and backup."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Cycle planning",
+          "body": "The HR Manager issues the evaluation calendar at least four weeks before each cycle opens, specifying the mid-year and year-end review windows for all three locations. The calendar is circulated to department heads and posted on the HR notice board at each site.",
+          "responsible": "HR Manager",
+          "substeps": [
+            "Confirm the review windows for Unit 1, Unit 2 and Head Office.",
+            "Issue the calendar and evaluation forms to all Reviewers."
+          ]
+        },
+        {
+          "heading": "Objective setting",
+          "body": "Each Reviewer meets the employee within the first three weeks of the cycle to agree between three and five objectives, each linked to a departmental goal. Objectives are recorded on the evaluation form and signed by both parties.",
+          "responsible": "Reviewer",
+          "substeps": [
+            "Ensure objectives are specific, measurable and time-bound.",
+            "Record any role-specific competencies to be assessed."
+          ]
+        },
+        {
+          "heading": "Ongoing monitoring",
+          "body": "Reviewers record evidence of performance throughout the cycle, including output and quality data, safety observations and feedback received. Where performance falls below expectation, the Reviewer raises the matter promptly in a private discussion and agrees support actions.",
+          "responsible": "Reviewer",
+          "substeps": []
+        },
+        {
+          "heading": "Employee self-assessment",
+          "body": "The employee completes a self-assessment against each objective and competency at least five working days before the review meeting. The self-assessment is submitted to the Reviewer and forms part of the discussion.",
+          "responsible": "Employee",
+          "substeps": []
+        },
+        {
+          "heading": "Review meeting",
+          "body": "The Reviewer conducts a documented meeting, comparing evidence with the agreed objectives and discussing the employee's self-assessment. Both parties record agreed comments, and the employee is given the opportunity to add their own remarks before the form is signed.",
+          "responsible": "Reviewer",
+          "substeps": [
+            "Hold the meeting in private and allow sufficient time for discussion.",
+            "Record any disagreement in the employee's comments section."
+          ]
+        },
+        {
+          "heading": "Calibration and approval",
+          "body": "Department heads check proposed ratings for consistency at the Calibration Panel, which the HR Manager chairs. The panel may adjust ratings where evidence does not support the proposed grade, and the reason for any change is recorded.",
+          "responsible": "HR Manager",
+          "substeps": [
+            "Compare rating distributions across departments and sites.",
+            "Record the reason for every adjusted rating."
+          ]
+        },
+        {
+          "heading": "Development planning and pay linkage",
+          "body": "Reviewers agree a development plan with each employee addressing identified gaps, and HR records it against the employee's file. Approved ratings are passed to Finance for application to pay and increments, and the outcome is communicated to the employee in writing.",
+          "responsible": "HR Manager",
+          "substeps": [
+            "Log training actions in the training plan.",
+            "Confirm pay outcomes with Finance before the cycle closes."
+          ]
+        },
+        {
+          "heading": "Records and appeals",
+          "body": "Signed evaluation forms are filed in the employee's personnel record within ten working days of final approval. An employee who disagrees with a rating may appeal in writing to the HR Manager within ten working days, and the appeal is reviewed by a manager not involved in the original rating.",
+          "responsible": "HR Manager",
+          "substeps": [
+            "Retain records in line with the retention schedule in this manual.",
+            "Log and close all appeals with a written outcome."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Percentage of employees with signed objectives within three weeks of cycle start",
+          "target": "100%",
+          "frequency": "Each evaluation cycle",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Percentage of year-end evaluations completed by the review deadline",
+          "target": "100%",
+          "frequency": "Each evaluation cycle",
+          "owner": "Department Heads"
+        },
+        {
+          "indicator": "Percentage of ratings adjusted at calibration",
+          "target": "Below 10% and reasons recorded for 100% of changes",
+          "frequency": "Each evaluation cycle",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Percentage of development plans with actions completed on time",
+          "target": "At least 85%",
+          "frequency": "Quarterly",
+          "owner": "Reviewers"
+        },
+        {
+          "indicator": "Number of evaluation appeals upheld, as a share of appeals received",
+          "target": "Tracked and reported to management review; no fixed target",
+          "frequency": "Each evaluation cycle",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Percentage of employee self-assessments submitted five working days before review",
+          "target": "At least 90%",
+          "frequency": "Each evaluation cycle",
+          "owner": "Employees via Reviewers"
+        }
+      ],
+      "training": "Reviewers receive training on objective setting, evidence recording, constructive feedback and fair rating before their first cycle, and refresher training at least every two years. HR records attendance and retains it with the training file. New employees receive a briefing on the evaluation process during induction.",
+      "records": [
+        {
+          "record": "Evaluation form with signed objectives, review notes and final rating",
+          "owner": "Reviewer and HR Manager",
+          "retention": "As defined in the company record retention schedule in MTPL/SOP/01",
+          "format": "Signed paper form or secure electronic form in the HR information system"
+        },
+        {
+          "record": "Employee self-assessment",
+          "owner": "Reviewer",
+          "retention": "Same as evaluation form",
+          "format": "Paper or electronic, attached to evaluation form"
+        },
+        {
+          "record": "Calibration Panel minutes and rating adjustment log",
+          "owner": "HR Manager",
+          "retention": "As defined in the company record retention schedule in MTPL/SOP/01",
+          "format": "Signed minutes and electronic log"
+        },
+        {
+          "record": "Development plans and training attendance",
+          "owner": "HR Manager",
+          "retention": "As defined in the company record retention schedule in MTPL/SOP/01",
+          "format": "Electronic training plan and attendance register"
+        },
+        {
+          "record": "Appeal correspondence and outcome",
+          "owner": "HR Manager",
+          "retention": "As defined in the company record retention schedule in MTPL/SOP/01",
+          "format": "Written correspondence filed in personnel record"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Company Operations Manual, including the record retention schedule",
+        "MTPL-HR-001 Recruitment and Onboarding Procedure",
+        "MTPL-HR-003 Grievance Handling Procedure",
+        "Company Performance Rating Scale (current issue)"
+      ],
+      "review": "This SOP is reviewed by the HR Manager annually, at the close of each evaluation cycle, and whenever a change in organisational structure, rating scale or pay policy affects the process. Revisions are approved by the Managing Director and recorded in the manual revision log for MTPL/SOP/01, Revision 01."
+    },
+    {
+      "code": "MTPL-HR-003",
+      "title": "Grievance Handling",
+      "pillar": "S",
+      "department": "HR",
+      "owner": "HR Manager",
+      "purpose": "To establish a fair, confidential and timely process for receiving, recording, investigating and resolving grievances raised by employees, workers and contract labour at Meridian Textiles Pvt Ltd, so that concerns are addressed without reprisal and lessons are fed back into HR and operational practice.",
+      "scope": "Applies to all permanent employees, trainees, contract labour and visiting workers at Unit 1 Dyeing House, Unit 2 Effluent Treatment Plant and Warehouse, and the Head Office, Avinashi Road, Coimbatore. Covers individual and collective grievances on terms of employment, working conditions, pay, shift allocation, harassment, discrimination, health and safety concerns raised as personal grievances, and conduct of supervisors. Matters of statutory compliance audits and whistleblowing on fraud are handled under their own procedures but must be referred to HR where they involve a worker's personal complaint.",
+      "definitions": [
+        {
+          "term": "Grievance",
+          "definition": "Any concern, complaint or dissatisfaction raised by an individual or group about their employment, working conditions, treatment or workplace relationships, whether raised verbally or in writing."
+        },
+        {
+          "term": "Complainant",
+          "definition": "The employee, worker or contract labourer who raises a grievance under this SOP."
+        },
+        {
+          "term": "Respondent",
+          "definition": "The person or department whose action, decision or omission is the subject of a grievance."
+        },
+        {
+          "term": "Grievance Officer",
+          "definition": "The HR executive nominated by the HR Manager to receive, log and coordinate grievances at the relevant site."
+        },
+        {
+          "term": "Investigating Officer",
+          "definition": "A manager independent of the grievance subject, appointed by the HR Manager to establish facts and recommend a resolution."
+        },
+        {
+          "term": "Escalation",
+          "definition": "Referral of an unresolved grievance to the next level of management or to the HR Manager, as set out in this SOP."
+        },
+        {
+          "term": "Grievance Register",
+          "definition": "The controlled log, held by HR, in which every grievance is recorded with its date, category, status, owner and closure date."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "HR Manager",
+          "responsibilities": [
+            "Owns this SOP and ensures it is reviewed and approved as set out in the review section.",
+            "Appoints Investigating Officers and approves final outcomes of grievances that are escalated.",
+            "Reviews the Grievance Register monthly and reports trends to site leadership."
+          ]
+        },
+        {
+          "role": "HR Executive (Grievance Officer)",
+          "responsibilities": [
+            "Receives, logs and acknowledges grievances at Unit 1, Unit 2 and Head Office.",
+            "Maintains confidentiality and keeps the complainant informed of progress.",
+            "Tracks timelines and prompts escalation where closure targets are at risk."
+          ]
+        },
+        {
+          "role": "Production Manager and Unit Supervisors",
+          "responsibilities": [
+            "Cooperate with investigations and provide records of shift, task and performance data when requested.",
+            "Take immediate interim measures to protect the complainant where safety or harassment is alleged.",
+            "Implement agreed corrective actions within the agreed timeframe."
+          ]
+        },
+        {
+          "role": "EHS Manager",
+          "responsibilities": [
+            "Advises on grievances with health and safety content and ensures they are linked to the incident reporting process where relevant.",
+            "Confirms that effluent treatment and chemical handling concerns raised as grievances are assessed for safety impact."
+          ]
+        },
+        {
+          "role": "Investigating Officer",
+          "responsibilities": [
+            "Conducts impartial fact-finding, interviews relevant parties and documents evidence.",
+            "Submits a written findings report with recommended outcome within the timeline set in this SOP."
+          ]
+        },
+        {
+          "role": "Site Leadership and Department Heads",
+          "responsibilities": [
+            "Ensure workers are aware of the grievance route and that no reprisal occurs.",
+            "Review repeated or systemic grievances and address root causes in their departments."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Raising a grievance",
+          "body": "Any worker may raise a grievance verbally or in writing with a supervisor, the HR Executive at the site, or through the grievance box located at each unit. Supervisors receiving a grievance must refer it to the Grievance Officer within one working day and must not attempt to resolve it informally without recording it.",
+          "responsible": "Complainant and Supervisors",
+          "substeps": [
+            "Grievance forms are available in English and Tamil at each unit gate and HR office.",
+            "Anonymous submissions are accepted and logged, though their investigation may be limited."
+          ]
+        },
+        {
+          "heading": "Logging and acknowledgement",
+          "body": "The Grievance Officer records each grievance in the Grievance Register, assigns a reference number and classifies it by category and urgency. Written acknowledgement is provided to the complainant within two working days, confirming the reference number and the expected timeline.",
+          "responsible": "HR Executive (Grievance Officer)",
+          "substeps": [
+            "Urgent matters involving safety, harassment or threats are flagged for same-day review by the HR Manager."
+          ]
+        },
+        {
+          "heading": "Interim protection",
+          "body": "Where a grievance alleges harassment, discrimination, unsafe conditions or retaliation, the HR Manager determines within one working day whether interim measures are required, such as temporary change of shift, reporting line or work area. Interim measures must not disadvantage the complainant in pay or status.",
+          "responsible": "HR Manager",
+          "substeps": []
+        },
+        {
+          "heading": "Assessment and appointment of investigator",
+          "body": "The Grievance Officer assesses whether the grievance can be resolved informally by the line manager within five working days. Where it cannot, the HR Manager appoints an Investigating Officer who has no direct reporting connection to the complainant or respondent.",
+          "responsible": "HR Manager and Grievance Officer",
+          "substeps": [
+            "Informal resolution is recorded in the register with the agreed outcome and the complainant's confirmation."
+          ]
+        },
+        {
+          "heading": "Investigation",
+          "body": "The Investigating Officer interviews the complainant, respondent and relevant witnesses, reviews attendance, shift, pay and other relevant records, and documents all evidence. Respondents are given the right to respond to the allegations in writing before findings are made. The investigation should be completed within fifteen working days of appointment, or the HR Manager must approve and record an extension with reasons.",
+          "responsible": "Investigating Officer",
+          "substeps": [
+            "Interview notes are signed by the interviewee and held confidentially by HR.",
+            "Companion or union representation is permitted where the complainant or respondent requests it under company policy."
+          ]
+        },
+        {
+          "heading": "Decision and communication of outcome",
+          "body": "The Investigating Officer submits a findings report to the HR Manager, who decides on the outcome and any corrective or disciplinary action. The complainant receives a written response explaining the outcome, reasons and any action taken, without disclosing confidential information about other individuals.",
+          "responsible": "HR Manager",
+          "substeps": []
+        },
+        {
+          "heading": "Appeal and escalation",
+          "body": "A complainant who is dissatisfied with the outcome may submit a written appeal to the Head of Administration within ten working days of receiving the outcome. The appeal is reviewed by a manager not previously involved, and a final decision is communicated in writing within fifteen working days.",
+          "responsible": "Complainant and Head of Administration",
+          "substeps": [
+            "Appeals must state the grounds for disagreement with the outcome or the process followed."
+          ]
+        },
+        {
+          "heading": "Closure, follow-up and learning",
+          "body": "The Grievance Officer closes the entry in the Grievance Register only after the agreed corrective actions are verified as implemented. The HR Manager reviews closed cases monthly for recurring themes and reports systemic issues to site leadership for preventive action.",
+          "responsible": "HR Manager and Grievance Officer",
+          "substeps": [
+            "Follow-up with the complainant is held at 30 and 90 days after closure to confirm no reprisal has occurred."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Percentage of grievances acknowledged in writing within two working days",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Percentage of investigations completed within fifteen working days or with approved extension",
+          "target": "95% or above",
+          "frequency": "Monthly",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Average days from receipt to closure of grievances",
+          "target": "Less than 25 working days",
+          "frequency": "Quarterly",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Percentage of appeals upheld after review",
+          "target": "Tracked for trend; no fixed target",
+          "frequency": "Quarterly",
+          "owner": "Head of Administration"
+        },
+        {
+          "indicator": "Number of reported reprisal incidents linked to grievances",
+          "target": "Zero",
+          "frequency": "Monthly",
+          "owner": "HR Manager"
+        },
+        {
+          "indicator": "Percentage of grievances resolved at informal stage",
+          "target": "Tracked for trend; no fixed target",
+          "frequency": "Quarterly",
+          "owner": "Grievance Officer"
+        }
+      ],
+      "training": "All supervisors and managers complete grievance handling training covering this SOP, confidentiality and non-retaliation before being given responsibility for teams, and refresher training is delivered annually. Grievance Officers and Investigating Officers receive structured training on interview technique and evidence recording before first appointment. Training records are maintained by HR and are reviewed at the annual SOP review.",
+      "records": [
+        {
+          "record": "Grievance Register",
+          "owner": "HR Manager",
+          "retention": "Duration of employment plus three years, or as required by applicable law",
+          "format": "Controlled electronic register held on HR system, with restricted access"
+        },
+        {
+          "record": "Grievance forms and written submissions",
+          "owner": "Grievance Officer",
+          "retention": "Duration of employment plus three years, or as required by applicable law",
+          "format": "Signed paper originals filed securely at HR office and scanned copies"
+        },
+        {
+          "record": "Investigation report and interview notes",
+          "owner": "Investigating Officer",
+          "retention": "Duration of employment plus three years, or as required by applicable law",
+          "format": "Signed paper and electronic copies in confidential HR file"
+        },
+        {
+          "record": "Outcome letters and appeal decisions",
+          "owner": "HR Manager",
+          "retention": "Duration of employment plus three years, or as required by applicable law",
+          "format": "Signed letters held in personnel file and HR system"
+        },
+        {
+          "record": "Supervisor and manager grievance training records",
+          "owner": "HR Manager",
+          "retention": "Duration of employment plus three years, or as required by applicable law",
+          "format": "Training attendance sheets and HR training matrix"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Manual, Revision 01",
+        "MTPL-HR-001 Code of Conduct and Disciplinary Procedure",
+        "MTPL-HR-002 Anti-Harassment and Anti-Discrimination Policy",
+        "Prevention of Sexual Harassment Policy (internal)"
+      ],
+      "review": "This SOP is reviewed annually by the HR Manager or earlier following any significant grievance trend, legal change or organisational restructuring, and is re-approved by site leadership and recorded as a new revision in the MTPL/SOP/01 manual."
+    },
+    {
+      "code": "MTPL-FIN-001",
+      "title": "Approval of Sensitive Transactions",
+      "pillar": "G",
+      "department": "Finance",
+      "owner": "Chief Financial Officer",
+      "purpose": "To define how sensitive financial transactions at Meridian Textiles Pvt Ltd are identified, authorised, executed and recorded, so that payments, bank changes, journal adjustments and other high-risk entries receive independent approval before they are processed across Unit 1 Dyeing House, Unit 2 Effluent Treatment Plant and Warehouse, and the Head Office at Avinashi Road, Coimbatore.",
+      "scope": "This SOP applies to all transactions classed as sensitive under this procedure that are initiated, approved or posted by Finance, Procurement, Production, Administration and HR personnel at all three sites. It covers vendor master changes, bank detail changes, payments above the delegated limits, manual journal entries, write-offs, credit note issues outside standard terms, payroll master changes and any transaction the CFO designates as sensitive. It does not cover routine, system-generated transactions within approved limits.",
+      "definitions": [
+        {
+          "term": "Sensitive Transaction",
+          "definition": "A financial transaction or master data change that carries elevated risk of error or misappropriation, as listed in the Sensitive Transaction Register maintained by Finance, and requiring approval under this SOP before processing."
+        },
+        {
+          "term": "Initiator",
+          "definition": "The authorised employee who raises a sensitive transaction request, supplies supporting documents and confirms its business purpose."
+        },
+        {
+          "term": "Independent Approver",
+          "definition": "A person who approves a sensitive transaction and who is not the initiator, does not hold the same request in another workflow step, and holds delegated authority for the value and type of transaction."
+        },
+        {
+          "term": "Delegation of Authority Matrix",
+          "definition": "The approved schedule, issued by the CFO, setting out monetary limits and transaction types each role may approve."
+        },
+        {
+          "term": "Segregation of Duties",
+          "definition": "The separation of initiation, approval, execution and recording of a transaction so that no single person controls all stages."
+        },
+        {
+          "term": "Dual Verification",
+          "definition": "Confirmation of a payee or bank detail change through a call-back to a contact already held on the vendor master, independent of details supplied in the request."
+        },
+        {
+          "term": "Approval Log",
+          "definition": "The register, maintained in the finance system or as a controlled spreadsheet, recording each sensitive transaction, its approvers, dates and outcome."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "Chief Financial Officer",
+          "responsibilities": [
+            "Owns this SOP and the Sensitive Transaction Register.",
+            "Issues and revises the Delegation of Authority Matrix.",
+            "Approves transactions above the highest delegated limit and reviews the Approval Log monthly."
+          ]
+        },
+        {
+          "role": "Finance Manager",
+          "responsibilities": [
+            "Checks completeness of requests and supporting documents before routing for approval.",
+            "Performs dual verification for bank and vendor changes.",
+            "Maintains the Approval Log and prepares monthly exception reports for the CFO."
+          ]
+        },
+        {
+          "role": "Initiators (Production, Procurement, HR, Administration)",
+          "responsibilities": [
+            "Raise sensitive transaction requests with accurate business justification and supporting documents.",
+            "Do not approve their own requests or split transactions to avoid limits."
+          ]
+        },
+        {
+          "role": "Independent Approvers",
+          "responsibilities": [
+            "Review each request against the Delegation of Authority Matrix and supporting evidence.",
+            "Approve, reject or return requests with a recorded reason within two working days."
+          ]
+        },
+        {
+          "role": "IT Department",
+          "responsibilities": [
+            "Configures system workflow so that initiators cannot approve their own requests.",
+            "Restricts edit rights on vendor and bank master data to authorised Finance staff and maintains access logs."
+          ]
+        },
+        {
+          "role": "Internal Audit (or nominated reviewer)",
+          "responsibilities": [
+            "Samples approved transactions each quarter to test compliance with this SOP.",
+            "Reports exceptions to the CFO and the Audit Committee where one exists."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Identification of sensitive transactions",
+          "body": "Finance identifies each transaction type that meets the sensitive criteria and records it in the Sensitive Transaction Register. The register is reviewed by the CFO every six months and whenever a new transaction type or site process is introduced.",
+          "responsible": "Finance Manager, approved by CFO",
+          "substeps": [
+            "Confirm the transaction type against the register before submission.",
+            "Record any new type with its approval threshold."
+          ]
+        },
+        {
+          "heading": "Raising the request",
+          "body": "The initiator completes the Sensitive Transaction Request form, stating the purpose, amount, payee or account affected and supporting documents such as invoices, contracts or bank confirmation letters. The request must be submitted through the finance workflow or the controlled request form at the initiating site. Incomplete requests are not accepted for review.",
+          "responsible": "Initiator",
+          "substeps": [
+            "Attach all supporting documents before submission.",
+            "Do not split a transaction to avoid a delegated limit."
+          ]
+        },
+        {
+          "heading": "Completeness check",
+          "body": "The Finance Manager checks that the request is complete, that the transaction type is correctly classified and that the initiator is authorised for that type. Requests failing the check are returned to the initiator with the reason recorded in the Approval Log. Each request is checked within one working day of receipt.",
+          "responsible": "Finance Manager",
+          "substeps": []
+        },
+        {
+          "heading": "Dual verification of payee or bank changes",
+          "body": "For any new or changed vendor bank detail, the Finance Manager contacts the vendor using a telephone number already held on the approved vendor master, not one supplied in the request. The call-back outcome, the name of the person contacted and the date are recorded on the request before approval. Changes that cannot be verified are rejected.",
+          "responsible": "Finance Manager",
+          "substeps": [
+            "Use only contact details held before the change request was received.",
+            "Record the call-back outcome on the request form."
+          ]
+        },
+        {
+          "heading": "Independent approval",
+          "body": "The request is routed to an Independent Approver whose delegated authority covers the amount and type. Approval is recorded electronically or on the signed form. Where the amount exceeds the highest delegated limit, the CFO approves. Approvers must not approve requests they initiated or that they prepared for posting.",
+          "responsible": "Independent Approver / CFO",
+          "substeps": [
+            "Confirm the approver is not the initiator or the preparer.",
+            "Return or reject the request with a written reason where evidence is inadequate."
+          ]
+        },
+        {
+          "heading": "Execution and posting",
+          "body": "Only after approval is recorded may the transaction be executed or posted. The person executing the payment or journal must be different from the approver. The executed reference, date and amount are entered against the approval record so that the two can be matched.",
+          "responsible": "Finance Executive (executor)",
+          "substeps": [
+            "Compare executed amount and payee with the approved request before release.",
+            "Record the bank or journal reference on the Approval Log."
+          ]
+        },
+        {
+          "heading": "Monitoring and exception reporting",
+          "body": "The Finance Manager reviews the Approval Log monthly to identify approvals outside authority, late approvals, repeated returns and transactions without matching execution records. Exceptions are reported to the CFO with proposed corrective action. Access rights found to be excessive are referred to IT for correction.",
+          "responsible": "Finance Manager, CFO",
+          "substeps": [
+            "Investigate any approval outside delegated authority within five working days.",
+            "Confirm closure of each exception in the next monthly report."
+          ]
+        },
+        {
+          "heading": "Internal audit review",
+          "body": "Internal Audit or a nominated reviewer samples approved sensitive transactions each quarter across all three sites and checks the request, verification evidence, approval and execution match. Findings are reported to the CFO and tracked to closure. Results inform the next revision of this SOP.",
+          "responsible": "Internal Audit",
+          "substeps": []
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Sensitive transactions approved by an Independent Approver with proper delegated authority",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "Finance Manager"
+        },
+        {
+          "indicator": "Vendor and bank change requests verified by call-back before approval",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "Finance Manager"
+        },
+        {
+          "indicator": "Requests approved within two working days of completeness check",
+          "target": "At least 95%",
+          "frequency": "Monthly",
+          "owner": "Finance Manager"
+        },
+        {
+          "indicator": "Executed transactions matched to approval record",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "CFO"
+        },
+        {
+          "indicator": "Audit sample exceptions outstanding beyond agreed closure date",
+          "target": "Zero",
+          "frequency": "Quarterly",
+          "owner": "Internal Audit"
+        },
+        {
+          "indicator": "Finance system users with self-approval rights identified",
+          "target": "Zero",
+          "frequency": "Quarterly",
+          "owner": "IT Department"
+        }
+      ],
+      "training": "All Initiators, Finance staff and Independent Approvers receive training on this SOP and the Delegation of Authority Matrix before taking up their roles, and refresher training annually or after any revision. Training attendance is recorded by HR and retained with training records. IT provides training on the workflow system to users with approval rights.",
+      "records": [
+        {
+          "record": "Sensitive Transaction Request form with supporting documents",
+          "owner": "Finance Manager",
+          "retention": "Seven years from transaction date or as required by applicable law, whichever is longer",
+          "format": "Electronic workflow record or signed paper form, scanned and indexed"
+        },
+        {
+          "record": "Approval Log",
+          "owner": "Finance Manager",
+          "retention": "Seven years from last entry",
+          "format": "Controlled spreadsheet or finance system register with restricted edit access"
+        },
+        {
+          "record": "Dual verification call-back record",
+          "owner": "Finance Manager",
+          "retention": "Seven years from vendor record closure",
+          "format": "Annotated request form or verification entry in vendor master"
+        },
+        {
+          "record": "Sensitive Transaction Register",
+          "owner": "Chief Financial Officer",
+          "retention": "Current version plus all superseded versions for seven years",
+          "format": "Controlled document with version history"
+        },
+        {
+          "record": "Internal audit sample working papers",
+          "owner": "Internal Audit",
+          "retention": "Seven years from audit closure",
+          "format": "Electronic working papers with signed conclusions"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Manual Revision 01",
+        "Delegation of Authority Matrix (CFO issued)",
+        "Sensitive Transaction Register",
+        "Finance system user access policy"
+      ],
+      "review": "This SOP is reviewed annually by the CFO, or earlier after any significant audit finding, control failure, system change or change in organisational structure. Each revision is recorded in the manual with its date and approver."
+    },
+    {
+      "code": "MTPL-IT-001",
+      "title": "Confidential Data Breach Response",
+      "pillar": "G",
+      "department": "IT",
+      "owner": "IT Manager",
+      "purpose": "To define a controlled, timely and auditable response to any actual or suspected breach of confidential data held by Meridian Textiles Pvt Ltd, so that incidents are contained, assessed, reported internally and externally where required, and used to strengthen controls across Unit 1 Dyeing House, Unit 2 Effluent Treatment Plant and Warehouse, and the Head Office at Avinashi Road, Coimbatore.",
+      "scope": "This SOP applies to all confidential data held in any form by Meridian Textiles Pvt Ltd, including customer and export buyer specifications, costing and pricing data, supplier and procurement records, employee and HR personal data, production recipes and formulations, and financial information. It applies to all employees, contractors and third-party service providers with access to company systems or information at all three sites, and to all IT systems, email, shared drives, mobile devices and paper records.",
+      "definitions": [
+        {
+          "term": "Confidential data",
+          "definition": "Any information held by the company that is not intended for public disclosure, including buyer specifications, dye recipes, pricing, employee personal data and financial records."
+        },
+        {
+          "term": "Data breach",
+          "definition": "A security incident that leads to accidental or unlawful loss, destruction, alteration, unauthorised disclosure of, or access to confidential data, whether in electronic or paper form."
+        },
+        {
+          "term": "Suspected breach",
+          "definition": "A situation reported or observed where there are reasonable grounds to believe a data breach may have occurred, pending confirmation by the IT Manager."
+        },
+        {
+          "term": "Incident Response Team (IRT)",
+          "definition": "The standing group comprising the IT Manager, EHS representative, HR representative, Quality representative and Finance representative, convened to manage a confirmed or suspected breach."
+        },
+        {
+          "term": "Containment",
+          "definition": "Actions taken to stop a breach from spreading or continuing, such as disabling compromised accounts, isolating devices or recalling misdirected documents."
+        },
+        {
+          "term": "Incident log",
+          "definition": "The controlled register in which every reported breach, suspected breach and near miss is recorded with its timeline, actions and closure details."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "IT Manager (SOP owner, IT department)",
+          "responsibilities": [
+            "Owns this SOP and chairs the Incident Response Team.",
+            "Confirms or rejects suspected breaches and directs technical containment and forensic review.",
+            "Maintains the incident log and ensures records are retained as specified."
+          ]
+        },
+        {
+          "role": "All employees and contractors",
+          "responsibilities": [
+            "Report any actual or suspected breach immediately to the IT helpdesk or IT Manager, without attempting to investigate independently.",
+            "Do not delete, alter or forward affected data or evidence unless instructed by the IT Manager."
+          ]
+        },
+        {
+          "role": "HR Manager",
+          "responsibilities": [
+            "Advises on breaches involving employee personal data and manages staff-related communications.",
+            "Ensures disciplinary matters arising from a breach are handled under company procedure."
+          ]
+        },
+        {
+          "role": "EHS Manager",
+          "responsibilities": [
+            "Represents the Incident Response Team for physical records and site-based incidents across Unit 1 and Unit 2.",
+            "Supports the investigation where a breach involves unauthorised access to controlled premises or storage areas."
+          ]
+        },
+        {
+          "role": "Finance Manager and Procurement Manager",
+          "responsibilities": [
+            "Assess financial and commercial impact of a breach, including exposure of pricing or supplier terms.",
+            "Notify affected commercial partners where contractual confidentiality clauses require it, as approved by the Managing Director."
+          ]
+        },
+        {
+          "role": "Administration Manager",
+          "responsibilities": [
+            "Manages physical security controls and retrieval of misdirected paper records at Head Office and the Unit 2 Warehouse.",
+            "Supports the IT Manager in confirming access logs for physical areas."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Identify and report",
+          "body": "Any person who discovers or suspects a breach of confidential data must report it immediately to the IT helpdesk or the IT Manager, by phone or email, and note the time of discovery. The report should describe what data is involved, where it was found and who may be affected. Reports must be made within one hour of discovery, including outside normal working hours via the on-call IT contact.",
+          "responsible": "Employee or contractor who discovers the breach",
+          "substeps": [
+            "State the site, system or document involved.",
+            "Preserve the device or record as found; do not switch off devices unless instructed."
+          ]
+        },
+        {
+          "heading": "Log and triage",
+          "body": "The IT Manager records the report in the incident log with a unique reference number, date, time and reporter details. The IT Manager then classifies the event as a confirmed breach, a suspected breach or a non-incident within four working hours. Classification determines the urgency and the members of the Incident Response Team to be convened.",
+          "responsible": "IT Manager",
+          "substeps": [
+            "Assign a severity rating based on data sensitivity and number of individuals affected.",
+            "Close non-incidents with a documented reason and record them as near misses where relevant."
+          ]
+        },
+        {
+          "heading": "Contain",
+          "body": "The IT Manager directs immediate containment to prevent further loss, including suspending affected user accounts, revoking shared links, isolating compromised devices and blocking outbound transfers. Physical containment, such as securing paper records or locking affected areas, is directed through the Administration Manager and EHS Manager. Containment actions must be completed as soon as practicable and no later than four hours after classification.",
+          "responsible": "IT Manager with Administration Manager and EHS Manager",
+          "substeps": [
+            "Retrieve or request deletion of misdirected emails or files from unintended recipients, obtaining written confirmation.",
+            "Change credentials for any accounts or systems that may have been compromised."
+          ]
+        },
+        {
+          "heading": "Convene the Incident Response Team and investigate",
+          "body": "The IT Manager convenes the Incident Response Team, which meets within 24 hours for severe incidents and within three working days for minor incidents. The team establishes what data was affected, how the breach occurred, the time window involved and the number and category of data subjects or commercial partners potentially impacted. Evidence is preserved, including system logs, access records and affected documents, under chain-of-custody controls.",
+          "responsible": "IT Manager (chair) with Incident Response Team",
+          "substeps": [
+            "Obtain relevant access and audit logs from system administrators.",
+            "Record all findings in the incident log against the reference number."
+          ]
+        },
+        {
+          "heading": "Assess impact and decide on notifications",
+          "body": "The Incident Response Team assesses the likely harm to individuals, customers, suppliers and the company, taking account of the nature and sensitivity of the data. The Managing Director decides whether affected individuals, export buyers or other third parties must be notified, and whether any regulatory notification is required under applicable law. The legal basis and decision for each notification are documented in the incident log.",
+          "responsible": "IT Manager, HR Manager, Finance Manager and Managing Director",
+          "substeps": [
+            "Confirm contractual confidentiality obligations to buyers and suppliers before any notification is issued.",
+            "Use only approved wording for external communications, reviewed by the Managing Director."
+          ]
+        },
+        {
+          "heading": "Recover and remediate",
+          "body": "Once containment is confirmed, the IT Manager oversees restoration of affected systems and data from verified backups, and confirms that the vulnerability used has been closed. Corrective actions, such as access reviews, configuration changes, retraining or updated controls, are assigned with named owners and target dates. Restoration and corrective actions are verified before the incident is closed.",
+          "responsible": "IT Manager with relevant department heads",
+          "substeps": [
+            "Confirm that restored data has integrity and has been checked against the last known good state.",
+            "Assign corrective actions with owner and due date in the incident log."
+          ]
+        },
+        {
+          "heading": "Review and close",
+          "body": "The IT Manager prepares a written incident report summarising the cause, timeline, impact, actions taken and lessons learned, and presents it to the Managing Director and the Incident Response Team. The incident is formally closed only when all corrective actions are verified and notifications are complete. Lessons learned are fed into the risk register and training plan.",
+          "responsible": "IT Manager and Managing Director",
+          "substeps": [
+            "Record closure date and approver in the incident log.",
+            "Share relevant lessons with all three sites through departmental briefings."
+          ]
+        },
+        {
+          "heading": "Monitor and report KPIs",
+          "body": "The IT Manager reviews breach metrics monthly and reports trends to the Managing Director, including response times and open corrective actions. Any repeated incident category triggers a focused review of the relevant control. Results are used to revise this SOP at the scheduled review.",
+          "responsible": "IT Manager",
+          "substeps": [
+            "Compile KPI data from the incident log at the end of each month.",
+            "Escalate overdue corrective actions to the responsible department head."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Percentage of breach reports made to the IT Manager within one hour of discovery",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "IT Manager"
+        },
+        {
+          "indicator": "Percentage of reported events classified within four working hours",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "IT Manager"
+        },
+        {
+          "indicator": "Percentage of containment actions completed within four hours of classification",
+          "target": "100%",
+          "frequency": "Monthly",
+          "owner": "IT Manager"
+        },
+        {
+          "indicator": "Percentage of corrective actions closed by their due date",
+          "target": "95% or above",
+          "frequency": "Monthly",
+          "owner": "IT Manager"
+        },
+        {
+          "indicator": "Number of confirmed breaches involving confidential data, by site and category",
+          "target": "Downward trend against previous quarter",
+          "frequency": "Quarterly",
+          "owner": "IT Manager"
+        }
+      ],
+      "training": "All employees and contractors at Unit 1, Unit 2 and Head Office receive induction training on identifying and reporting data breaches before accessing company systems. Incident Response Team members complete role-specific training on containment, evidence preservation and notification decisions annually. Refresher awareness briefings are delivered at least annually and after any significant incident, with attendance recorded by the HR department.",
+      "records": [
+        {
+          "record": "Incident log with reference numbers, classification and timeline",
+          "owner": "IT Manager",
+          "retention": "Minimum seven years from closure",
+          "format": "Controlled electronic register"
+        },
+        {
+          "record": "Written incident reports and root cause analyses",
+          "owner": "IT Manager",
+          "retention": "Minimum seven years from closure",
+          "format": "Electronic document in IT incident folder"
+        },
+        {
+          "record": "Evidence chain-of-custody forms and retained logs",
+          "owner": "IT Manager",
+          "retention": "Minimum seven years from closure, or as directed by legal advice",
+          "format": "Signed form and secured electronic archive"
+        },
+        {
+          "record": "Notification approvals and communications issued to external parties",
+          "owner": "Managing Director",
+          "retention": "Minimum seven years from closure",
+          "format": "Electronic copies in controlled folder"
+        },
+        {
+          "record": "Training attendance records for breach response",
+          "owner": "HR Manager",
+          "retention": "Duration of employment plus three years",
+          "format": "HR training register"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Manual, Revision 01, Information Security and Access Control section",
+        "MTPL-IT-002 Access Control and User Account Management SOP",
+        "MTPL-IT-003 Data Backup and Restoration SOP",
+        "ISO/IEC 27001 Information security management systems"
+      ],
+      "review": "This SOP is reviewed annually by the IT Manager, or earlier after any confirmed breach, change in IT systems, or change in applicable data protection requirements. Revisions are approved by the Managing Director and recorded under MTPL/SOP/01, Revision 01 document control."
+    },
+    {
+      "code": "MTPL-PUR-001",
+      "title": "Supplier ESG Due Diligence",
+      "pillar": "G",
+      "department": "Procurement",
+      "owner": "Procurement Head",
+      "purpose": "To define how Meridian Textiles Pvt Ltd assesses, approves, monitors and re-assesses environmental, social and governance (ESG) risk in its suppliers of dyes, chemicals, auxiliaries, yarn, greige fabric, packaging and services, so that supply to export brands is sourced only from suppliers whose risk is understood, documented and within the company's accepted limits.",
+      "scope": "This procedure applies to all new and existing suppliers of materials and services to Unit 1 Dyeing House, Unit 2 Effluent Treatment Plant and Warehouse, and the Head Office, Avinashi Road, Coimbatore, at SIPCOT Perundurai, Erode, and Head Office. It covers chemical and dye suppliers, raw cotton yarn and greige fabric suppliers, subcontracted finishing or logistics providers, and ETP and waste contractors. It is owned by the Procurement Head within the Procurement department and is read with the wider Meridian manual, MTPL/SOP/01, Revision 01.",
+      "definitions": [
+        {
+          "term": "Supplier",
+          "definition": "Any external organisation that supplies goods or services to Meridian Textiles Pvt Ltd, including direct and sub-tier suppliers where known."
+        },
+        {
+          "term": "ESG Due Diligence",
+          "definition": "The documented process of identifying, assessing and recording environmental, social and governance risks associated with a supplier before and during the business relationship."
+        },
+        {
+          "term": "Critical Supplier",
+          "definition": "A supplier whose failure or non-compliance would materially affect production, effluent compliance, product safety or delivery to export brands, as classified by the Procurement Head with EHS input."
+        },
+        {
+          "term": "Restricted Substance",
+          "definition": "Any chemical, dye or auxiliary that is prohibited or restricted under the company's Restricted Substances List or under a customer's requirement, and which must not be supplied to or used at Meridian sites without written approval."
+        },
+        {
+          "term": "ESG Risk Rating",
+          "definition": "The score allocated to a supplier, classed as Low, Medium or High, derived from the completed assessment questionnaire, document review and any site verification."
+        },
+        {
+          "term": "Corrective Action Plan (CAP)",
+          "definition": "A written plan agreed with a supplier that sets out the non-conformity, the required corrective action, the responsible person and the agreed completion date."
+        },
+        {
+          "term": "Approved Supplier List (ASL)",
+          "definition": "The controlled register of suppliers cleared for use, showing each supplier's ESG Risk Rating, approval status and next review date."
+        }
+      ],
+      "responsibilities": [
+        {
+          "role": "Procurement Head",
+          "responsibilities": [
+            "Owns this procedure and the Approved Supplier List.",
+            "Classifies Critical Suppliers and approves or rejects supplier onboarding.",
+            "Issues and tracks Corrective Action Plans and decides on suspension or removal of suppliers."
+          ]
+        },
+        {
+          "role": "EHS Manager",
+          "responsibilities": [
+            "Reviews environmental and health and safety evidence, including effluent, emissions, chemical handling and waste contractor credentials.",
+            "Carries out or directs site verification visits for High-risk and dyeing-related suppliers.",
+            "Advises on Restricted Substance status of chemicals and dyes."
+          ]
+        },
+        {
+          "role": "HR Head",
+          "responsibilities": [
+            "Reviews labour practice evidence, including working hours, wages, freedom of association and child and forced labour controls.",
+            "Advises on grievance handling and supplier workforce concerns raised through company channels."
+          ]
+        },
+        {
+          "role": "Quality Head",
+          "responsibilities": [
+            "Confirms that product safety and customer restricted substance requirements are reflected in supplier documentation.",
+            "Approves or rejects materials for production use where a Restricted Substance concern is raised."
+          ]
+        },
+        {
+          "role": "Finance Head",
+          "responsibilities": [
+            "Confirms supplier legal entity, banking and governance details and flags conflicts of interest or payment irregularities.",
+            "Holds supplier master data controls to prevent onboarding without completed due diligence."
+          ]
+        },
+        {
+          "role": "Head of IT",
+          "responsibilities": [
+            "Maintains the supplier questionnaire platform and access controls, and the retention of electronic supplier records."
+          ]
+        }
+      ],
+      "procedure": [
+        {
+          "heading": "Supplier Identification and Categorisation",
+          "body": "The requesting department raises a supplier onboarding request on the company's approved form, stating the goods or services, the site of use and the expected annual value. The Procurement Head classifies the supplier as Critical or standard and records the classification in the ASL.",
+          "responsible": "Procurement Head",
+          "substeps": [
+            "Confirm whether the supplier will handle chemicals, dyes, effluent or wastes.",
+            "Record any known sub-tier suppliers for high-risk inputs."
+          ]
+        },
+        {
+          "heading": "Issue of ESG Questionnaire",
+          "body": "The Procurement team issues the supplier ESG self-assessment questionnaire covering environment, labour, health and safety, ethics, governance and supply chain transparency. The supplier must return the completed questionnaire with supporting documents within the period stated in the request.",
+          "responsible": "Procurement Head",
+          "substeps": [
+            "Use the current questionnaire version held on the IT-controlled platform.",
+            "Record the date of issue and the response deadline in the supplier file."
+          ]
+        },
+        {
+          "heading": "Document Review and Risk Scoring",
+          "body": "Procurement reviews the returned questionnaire and evidence against the company's ESG criteria. EHS, HR and Quality review their respective sections, and each scores the supplier, after which the Procurement Head allocates an overall ESG Risk Rating of Low, Medium or High.",
+          "responsible": "Procurement Head",
+          "substeps": [
+            "Check Restricted Substance declarations against the current list and customer requirements.",
+            "Check effluent and waste contractor licences and disposal records where applicable."
+          ]
+        },
+        {
+          "heading": "Site Verification",
+          "body": "Where a supplier is rated High, is a Critical Supplier handling dyeing chemicals, or has provided incomplete evidence, EHS or Procurement arranges a site verification visit or an agreed remote review. The visit findings are recorded on the verification checklist and shared with the supplier.",
+          "responsible": "EHS Manager",
+          "substeps": [
+            "Observe chemical storage, labelling and effluent discharge points where relevant.",
+            "Interview workers on working hours, wages and grievance access, where practicable."
+          ]
+        },
+        {
+          "heading": "Approval Decision and Corrective Action",
+          "body": "The Procurement Head decides whether to approve, approve with conditions or reject the supplier based on the risk rating and verification findings. Any non-conformity must be recorded with a Corrective Action Plan agreed with the supplier before first order or within an agreed period for conditional approval.",
+          "responsible": "Procurement Head",
+          "substeps": [
+            "Reject suppliers that refuse to disclose Restricted Substance data or that hold unresolved serious non-compliance.",
+            "Record conditional approvals with a re-review date no later than six months ahead."
+          ]
+        },
+        {
+          "heading": "Contractual Commitments",
+          "body": "Approved suppliers must sign the company's supplier code of conduct and accept ESG clauses covering restricted substances, effluent and waste compliance, labour standards and audit rights. No purchase order is released to a supplier without a signed code and an active ASL entry.",
+          "responsible": "Procurement Head",
+          "substeps": [
+            "Confirm that the Finance Head has completed supplier master data checks before the first payment.",
+            "Store the signed code in the supplier file."
+          ]
+        },
+        {
+          "heading": "Ongoing Monitoring and Re-assessment",
+          "body": "Approved suppliers are monitored through performance reviews, incident reports, complaints and periodic re-assessment. High-risk suppliers are re-assessed annually, Medium-risk suppliers every two years, and Low-risk suppliers every three years, or sooner after any material incident or change in supply.",
+          "responsible": "Procurement Head",
+          "substeps": [
+            "Trigger an immediate re-assessment after any effluent exceedance, chemical incident or customer complaint linked to the supplier.",
+            "Suspend or remove suppliers from the ASL where a CAP is not met by the agreed date."
+          ]
+        }
+      ],
+      "kpis": [
+        {
+          "indicator": "Percentage of active suppliers with a completed ESG due diligence record in the ASL",
+          "target": "100% for Critical Suppliers and 95% for all others",
+          "frequency": "Monthly",
+          "owner": "Procurement Head"
+        },
+        {
+          "indicator": "Percentage of purchase orders released to suppliers without a current ASL entry",
+          "target": "0%",
+          "frequency": "Monthly",
+          "owner": "Procurement Head"
+        },
+        {
+          "indicator": "Number of open Corrective Action Plans past their agreed completion date",
+          "target": "Zero",
+          "frequency": "Monthly",
+          "owner": "Procurement Head"
+        },
+        {
+          "indicator": "Percentage of High-risk and dyeing-chemical suppliers verified on site or by agreed remote review within the last twelve months",
+          "target": "100%",
+          "frequency": "Quarterly",
+          "owner": "EHS Manager"
+        },
+        {
+          "indicator": "Percentage of scheduled supplier re-assessments completed on time",
+          "target": "95% or above",
+          "frequency": "Quarterly",
+          "owner": "Procurement Head"
+        }
+      ],
+      "training": "Procurement staff, requesting department staff and reviewers from EHS, HR, Quality and Finance shall complete training on this procedure, the questionnaire platform and the Restricted Substances List before carrying out any assessment. Training is recorded in the training matrix, refreshed annually and on any revision of this SOP.",
+      "records": [
+        {
+          "record": "Supplier onboarding request and classification form",
+          "owner": "Procurement Head",
+          "retention": "Duration of supplier relationship plus five years",
+          "format": "Electronic, on the controlled procurement platform"
+        },
+        {
+          "record": "Completed ESG questionnaire and supporting evidence",
+          "owner": "Procurement Head",
+          "retention": "Duration of supplier relationship plus five years",
+          "format": "Electronic, on the controlled procurement platform"
+        },
+        {
+          "record": "Site verification checklist and report",
+          "owner": "EHS Manager",
+          "retention": "Five years from the date of visit",
+          "format": "Electronic, with signed hard copy where required"
+        },
+        {
+          "record": "Approved Supplier List and Corrective Action Plan log",
+          "owner": "Procurement Head",
+          "retention": "Current version plus five years of superseded versions",
+          "format": "Electronic register"
+        },
+        {
+          "record": "Signed supplier code of conduct",
+          "owner": "Procurement Head",
+          "retention": "Duration of supplier relationship plus five years",
+          "format": "Scanned copy in supplier file"
+        }
+      ],
+      "references": [
+        "MTPL/SOP/01 Revision 01, Meridian Textiles Standard Operating Procedures Manual",
+        "Meridian Restricted Substances List",
+        "Meridian Supplier Code of Conduct",
+        "Meridian Supplier ESG Questionnaire"
+      ],
+      "review": "This procedure shall be reviewed by the Procurement Head at least annually, and sooner after a material supplier incident, a change in customer requirements or a change in the Restricted Substances List. Revisions are approved by the Managing Director and recorded in the document control register of MTPL/SOP/01."
+    }
+  ]
+}

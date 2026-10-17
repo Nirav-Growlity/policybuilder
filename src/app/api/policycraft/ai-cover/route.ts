@@ -4,7 +4,6 @@ import { getPolicyProfile, POLICY_PROFILES } from "@/lib/constants";
 import {
   AI_COVER_IMAGE_MODEL,
   AI_COVER_IMAGE_SIZE,
-  AI_COVER_LAYOUT_MODEL,
   buildAICoverDesignPrompt,
   buildAICoverArtworkContext,
   buildAICoverImagePrompt,
@@ -16,6 +15,7 @@ import {
   normalizeAICoverLayout,
 } from "@/lib/ai/cover";
 import type { AICoverDesign } from "@/lib/ai/cover";
+import { cleanJsonText, createClaudeText, hasClaudeKey } from "@/lib/ai/claude";
 import type { Policy } from "@/lib/types";
 import { getPolicyCraftAuthResult, parsePolicyCraftOrganizationSelector, policyCraftMutationFailure } from "@/lib/policycraft-auth";
 
@@ -53,60 +53,49 @@ async function responseError(response: Response, fallback: string): Promise<Erro
   return new Error(fallback);
 }
 
-async function analyzeAICoverLayout(imageDataUrl: string, artworkContext: string, apiKey: string) {
+type CoverPreview = { mediaType: "image/jpeg"; data: string };
+
+/** A smaller JPEG of the artwork: enough detail to judge text zones, far fewer tokens than the full PNG. */
+async function coverPreviewForAnalysis(encodedPng: string): Promise<CoverPreview> {
+  const jpeg = await sharp(Buffer.from(encodedPng, "base64"))
+    .resize({ height: 1152, withoutEnlargement: true })
+    .jpeg({ quality: 82 })
+    .toBuffer();
+  return { mediaType: "image/jpeg", data: jpeg.toString("base64") };
+}
+
+async function analyzeAICoverLayout(preview: CoverPreview, artworkContext: string) {
   const fallback = fallbackAICoverLayout();
   const prompt = buildAICoverLayoutPrompt(artworkContext);
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify({
-        model: AI_COVER_LAYOUT_MODEL,
-        response_format: { type: "json_object" },
-        messages: [
-          { role: "system", content: prompt.system },
-          { role: "user", content: [
-            { type: "text", text: prompt.user },
-            { type: "image_url", image_url: { url: imageDataUrl, detail: "high" } },
-          ] },
-        ],
-      }),
+    const { text } = await createClaudeText({
+      system: prompt.system,
+      user: prompt.user,
+      images: [preview],
+      maxTokens: 2_000,
+      effort: "low",
     });
-    if (!response.ok) return fallback;
-    const body = await response.json() as { choices?: Array<{ message?: { content?: unknown } }> };
-    const content = body.choices?.[0]?.message?.content;
-    if (typeof content !== "string" || !content.trim()) return fallback;
-    return normalizeAICoverLayout(JSON.parse(content.replace(/```json|```/g, "").trim()));
+    if (!text.trim()) return fallback;
+    return normalizeAICoverLayout(JSON.parse(cleanJsonText(text)));
   } catch (error) {
     console.warn("AI cover layout analysis fell back to the safe default", error instanceof Error ? error.message : error);
     return fallback;
   }
 }
 
-async function analyzeAICoverDesign(policy: Policy, imageDataUrl: string, artworkContext: string, layout: ReturnType<typeof fallbackAICoverLayout>, apiKey: string): Promise<AICoverDesign> {
+async function analyzeAICoverDesign(policy: Policy, preview: CoverPreview, artworkContext: string, layout: ReturnType<typeof fallbackAICoverLayout>): Promise<AICoverDesign> {
   const fallback = fallbackAICoverDesign(policy);
   const prompt = buildAICoverDesignPrompt(artworkContext, layout);
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
-      body: JSON.stringify({
-        model: AI_COVER_LAYOUT_MODEL,
-        response_format: { type: "json_object" },
-        messages: [
-          { role: "system", content: prompt.system },
-          { role: "user", content: [
-            { type: "text", text: prompt.user },
-            { type: "image_url", image_url: { url: imageDataUrl, detail: "high" } },
-          ] },
-        ],
-      }),
+    const { text } = await createClaudeText({
+      system: prompt.system,
+      user: prompt.user,
+      images: [preview],
+      maxTokens: 2_000,
+      effort: "low",
     });
-    if (!response.ok) return fallback;
-    const body = await response.json() as { choices?: Array<{ message?: { content?: unknown } }> };
-    const content = body.choices?.[0]?.message?.content;
-    if (typeof content !== "string" || !content.trim()) return fallback;
-    return normalizeAICoverDesign(JSON.parse(content.replace(/```json|```/g, "").trim()), fallback);
+    if (!text.trim()) return fallback;
+    return normalizeAICoverDesign(JSON.parse(cleanJsonText(text)), fallback);
   } catch (error) {
     console.warn("AI cover design analysis fell back to the document theme", error instanceof Error ? error.message : error);
     return fallback;
@@ -150,8 +139,9 @@ export async function POST(request: Request) {
     const metadata = await sharp(Buffer.from(encoded, "base64")).metadata();
     if (metadata.format !== "png" || !metadata.width || !metadata.height || metadata.width >= metadata.height) throw new Error("The image service returned artwork with invalid A4 portrait dimensions.");
     const imageDataUrl = `data:image/png;base64,${encoded}`;
-    const layout = await analyzeAICoverLayout(imageDataUrl, artworkContext, apiKey);
-    const design = await analyzeAICoverDesign(policy, imageDataUrl, artworkContext, layout, apiKey);
+    const preview = await coverPreviewForAnalysis(encoded);
+    const layout = hasClaudeKey() ? await analyzeAICoverLayout(preview, artworkContext) : fallbackAICoverLayout();
+    const design = hasClaudeKey() ? await analyzeAICoverDesign(policy, preview, artworkContext, layout) : fallbackAICoverDesign(policy);
     const revisedPrompt = typeof imageData.data?.[0]?.revised_prompt === "string" ? imageData.data[0].revised_prompt : undefined;
 
     const composition = createAICoverComposition(policy, imageDataUrl, layout, design);
